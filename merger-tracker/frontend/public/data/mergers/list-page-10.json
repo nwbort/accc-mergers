@@ -1127,6 +1127,64 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/expedia-cartrawler"
     },
     {
+      "merger_id": "MN-05036",
+      "merger_name": "Vertex \u2013 Crinetics",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-21T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-01T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Vertex Pharmaceuticals Incorporated",
+          "identifier_type": null,
+          "identifier": "EIN  043039129",
+          "party_page": {
+            "id": "vertex-pharmaceuticals-incorporated",
+            "name": "Vertex Pharmaceuticals Incorporated"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Crinetics Pharmaceuticals Inc.",
+          "identifier_type": null,
+          "identifier": "EIN 263744114",
+          "party_page": {
+            "id": "crinetics-pharmaceuticals-inc",
+            "name": "Crinetics Pharmaceuticals Inc."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Clark Merger Sub, Inc",
+          "identifier_type": null,
+          "identifier": "DE File Number: 10678660",
+          "party_page": {
+            "id": "clark-merger-sub-inc",
+            "name": "Clark Merger Sub, Inc"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1841",
+          "name": "Human Pharmaceutical and Medicinal Product Manufacturing"
+        },
+        {
+          "code": "6910",
+          "name": "Scientific Research Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/vertex-%E2%80%93-crinetics"
+    },
+    {
       "merger_id": "MN-35029",
       "merger_name": "L'Or\u00e9al - Innovist",
       "status": "Under assessment",

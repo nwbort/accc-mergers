@@ -19,7 +19,7 @@
       "code": "691",
       "name": "Scientific Research Services",
       "level": "group",
-      "merger_count": 13
+      "merger_count": 14
     },
     {
       "code": "692",
@@ -65,6 +65,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-05036",
+      "merger_name": "Vertex \u2013 Crinetics",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-21T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-95030",
       "merger_name": "Origin \u2013 Climatech Zero",
@@ -781,11 +792,11 @@
       "determination_date": null
     }
   ],
-  "count": 65,
-  "phase_1_count": 23,
+  "count": 66,
+  "phase_1_count": 24,
   "phase_2_count": 2,
   "waiver_count": 40,
-  "active_count": 6,
+  "active_count": 7,
   "phase_duration": {
     "average_days": 36.4,
     "median_days": 30.5,

@@ -84,6 +84,16 @@
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
       "date": "2026-07-29T12:00:00Z",
+      "merger_id": "MN-05036",
+      "merger_name": "Vertex \u2013 Crinetics",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-07-21T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-07-29T12:00:00Z",
       "merger_id": "MN-35029",
       "merger_name": "L'Or\u00e9al - Innovist",
       "status": "Under assessment",
@@ -483,6 +493,16 @@
     {
       "type": "determination_due",
       "event_type_display": "Determination due",
+      "date": "2026-09-01T12:00:00Z",
+      "merger_id": "MN-05036",
+      "merger_name": "Vertex \u2013 Crinetics",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-07-21T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
       "date": "2026-09-08T12:00:00Z",
       "merger_id": "MN-40013",
       "merger_name": "Calvary - Hobart Private Hospital",
@@ -491,6 +511,6 @@
       "effective_notification_datetime": "2026-06-16T12:00:00Z"
     }
   ],
-  "count": 49,
+  "count": 51,
   "days_ahead": 60
 }

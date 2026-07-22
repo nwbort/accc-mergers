@@ -37,7 +37,7 @@
       "code": "184",
       "name": "Pharmaceutical and Medicinal Product Manufacturing",
       "level": "group",
-      "merger_count": 11
+      "merger_count": 12
     },
     {
       "code": "185",
@@ -53,6 +53,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-05036",
+      "merger_name": "Vertex \u2013 Crinetics",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-21T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-70026",
       "merger_name": "Parker-Hannifin \u2013 CIRCOR A&D",
@@ -241,11 +252,11 @@
       "determination_date": "2026-02-05T12:00:00Z"
     }
   ],
-  "count": 17,
-  "phase_1_count": 9,
+  "count": 18,
+  "phase_1_count": 10,
   "phase_2_count": 1,
   "waiver_count": 7,
-  "active_count": 2,
+  "active_count": 3,
   "phase_duration": {
     "average_days": 30.77777777777778,
     "median_days": 26,
