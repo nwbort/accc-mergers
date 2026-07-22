@@ -47,6 +47,8 @@ def _appeal_card(merger: dict) -> dict | None:
         # Reused as the sort key so the appeal interleaves with notifications;
         # the frontend shows it as the "Appeal filed" date, not a notification.
         "effective_notification_datetime": activity_date,
+        # Same same-day tie-break as notification cards (see _merger_sort_key).
+        "page_modified_datetime": merger.get('page_modified_datetime', ''),
         "is_appeal": True,
         "under_appeal": bool(merger.get('under_appeal')),
         "appeal_type": appeal.get('appeal_type'),
@@ -162,11 +164,18 @@ def generate(mergers: list) -> dict:
     # in as their own activity cards (see _appeal_card) so a freshly-lodged appeal
     # surfaces on the dashboard alongside recent notifications, ranked by the same
     # date. A card slice of 12 is taken after merging the two streams.
-    sorted_mergers = sorted(
-        mergers,
-        key=lambda x: x.get('effective_notification_datetime', ''),
-        reverse=True,
-    )
+    # Notification datetimes are stored at a nominal midday, so same-day
+    # notifications all tie on effective_notification_datetime. Break the tie by
+    # page_modified_datetime — the real register timestamp — so a merger that
+    # lands later on the same day sorts above one added earlier, rather than
+    # falling back to insertion (roughly name) order.
+    def _merger_sort_key(x: dict) -> tuple:
+        return (
+            x.get('effective_notification_datetime') or '',
+            x.get('page_modified_datetime') or '',
+        )
+
+    sorted_mergers = sorted(mergers, key=_merger_sort_key, reverse=True)
     merger_cards = [
         {
             "merger_id": m['merger_id'],
@@ -174,6 +183,7 @@ def generate(mergers: list) -> dict:
             "status": m.get('status'),
             "accc_determination": m.get('accc_determination'),
             "effective_notification_datetime": m.get('effective_notification_datetime'),
+            "page_modified_datetime": m.get('page_modified_datetime', ''),
             "is_waiver": m.get('is_waiver', False),
             "is_refiled": (m.get('related_merger') or {}).get('relationship') in BACKWARD_REFILE_RELATIONSHIPS,
         }
@@ -182,7 +192,7 @@ def generate(mergers: list) -> dict:
     appeal_cards = [card for card in (_appeal_card(m) for m in mergers) if card]
     recent_mergers = sorted(
         merger_cards + appeal_cards,
-        key=lambda x: x.get('effective_notification_datetime') or '',
+        key=_merger_sort_key,
         reverse=True,
     )[:12]
 
