@@ -3,12 +3,12 @@
   "total_waivers": 283,
   "total_conditional_approvals": 1,
   "by_status": {
-    "Assessment completed": 139,
-    "Under assessment": 43,
+    "Assessment completed": 140,
+    "Under assessment": 42,
     "Assessment ceased": 3
   },
   "by_determination": {
-    "Approved": 137,
+    "Approved": 138,
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
@@ -16,27 +16,27 @@
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 138,
+    "cleared": 139,
     "not_cleared": 1,
-    "total": 139,
+    "total": 140,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.786206896551725,
-    "median_days": 26,
-    "average_business_days": 19.6,
-    "median_business_days": 17,
+    "average_days": 29.732876712328768,
+    "median_days": 26.0,
+    "average_business_days": 19.575342465753426,
+    "median_business_days": 17.0,
     "percentiles": {
       "day15": {
         "count": 36,
-        "percentage": 24.8
+        "percentage": 24.7
       },
       "day20": {
-        "count": 113,
-        "percentage": 77.9
+        "count": 114,
+        "percentage": 78.1
       },
       "day30": {
-        "count": 137,
+        "count": 138,
         "percentage": 94.5
       }
     }
@@ -228,6 +228,16 @@
       "stage": "Phase 1 - initial assessment"
     },
     {
+      "merger_id": "MN-65022",
+      "merger_name": "Hapag-Lloyd - ZIM",
+      "determination": "Approved",
+      "determination_date": "2026-07-21T12:00:00Z",
+      "page_modified_datetime": "2026-07-22T14:51:05+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-50024",
       "merger_name": "AkzoNobel - Axalta",
       "determination": "Approved",
@@ -323,16 +333,6 @@
       "determination": "Approved",
       "determination_date": "2026-07-17T12:00:00Z",
       "page_modified_datetime": "2026-07-17T16:39:37+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-15029",
-      "merger_name": "National Dental Care \u2013 business assets comprising the BDF Dental clinic, Beaudesert, Queensland",
-      "determination": "Approved",
-      "determination_date": "2026-07-17T12:00:00Z",
-      "page_modified_datetime": "2026-07-17T16:37:41+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
