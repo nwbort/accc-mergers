@@ -1,5 +1,6 @@
+import { useMemo } from 'react';
 import { formatDate } from '../utils/dates';
-import { isNewItem } from '../utils/lastVisit';
+import { isNewItem, sortUnseenFirst } from '../utils/lastVisit';
 import { MERGER_STATUS } from '../constants/mergerStatus';
 import { getCardStyle, NEW_ITEM_BORDER } from '../constants/cardStyles';
 import CardCollapseGrid from './CardCollapseGrid';
@@ -46,7 +47,16 @@ function getMergerCardStyle(merger) {
 const cardKey = (item) => (item.is_appeal ? `${item.merger_id}-appeal` : item.merger_id);
 
 function RecentMergersCards({ mergers }) {
-  if (!mergers || mergers.length === 0) {
+  // Float unseen ("New") cards to the top so freshly-notified mergers — which
+  // the register may have backdated below older ones — aren't missed. Computed
+  // once per data load so the order stays put after items are marked seen
+  // mid-session.
+  const orderedMergers = useMemo(
+    () => sortUnseenFirst(mergers, (item) => item.merger_id),
+    [mergers]
+  );
+
+  if (orderedMergers.length === 0) {
     return (
       <EmptyStateCard
         heading="Recently notified mergers"
@@ -64,7 +74,7 @@ function RecentMergersCards({ mergers }) {
         Recently notified mergers
       </h2>
       <CardCollapseGrid
-        items={mergers}
+        items={orderedMergers}
         getKey={cardKey}
         getStyle={getMergerCardStyle}
         renderBody={(merger, style) =>
