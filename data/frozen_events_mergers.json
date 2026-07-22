@@ -1,5 +1,5 @@
 {
-  "_comment": "Override data for specific mergers. An entry with an empty dict or 'freeze_events: true' preserves the ENTIRE existing events array rather than overwriting from the scraped page (use this when the ACCC events table is incorrect). To freeze only some events, set 'freeze_events' to a list of event titles (e.g. \"freeze_events\": [\"Questionnaire - IAG - RACI\"]) — only those events are preserved verbatim while the rest are still updated from the page. Any other keys are treated as field overrides — the scraper will use these values instead of whatever it finds on the page.",
+  "_comment": "Override data for specific mergers. An entry with an empty dict or 'freeze_events: true' preserves the ENTIRE existing events array rather than overwriting from the scraped page (use this when the ACCC events table is incorrect). To freeze only some events, set 'freeze_events' to a list of event titles (e.g. \"freeze_events\": [\"Questionnaire - IAG - RACI\"]) \u2014 only those events are preserved verbatim while the rest are still updated from the page. Any other keys are treated as field overrides \u2014 the scraper will use these values instead of whatever it finds on the page.",
   "MN-65005": {
     "_comment": "ACCC events table has duplicate/buggy rows: 'Summary of Notice of Competition Concerns' is listed twice (14 May and 25 May) for the same byte-identical re-uploaded document, and the timeline-extension row is scraped without its '20' day count ('Timeline extended by business days ...'), which would otherwise be appended as a duplicate of the corrected '20 business days' entry. Freezing only these events keeps the deduped/corrected rows while letting any later events (e.g. the Phase 2 determination) flow through from the page. The bare 'Timeline extended by business days ...' title is listed so the buggy scraped variant is dropped.",
     "freeze_events": [
@@ -12,6 +12,12 @@
     "_comment": "Event date missing from ACCC page (Laundy-Woy Woy Hotel Third-party questionnaire (15 Jul 2026)); freezing this event to preserve the automatically set date while later events still update from the page.",
     "freeze_events": [
       "Laundy-Woy Woy Hotel Third-party questionnaire"
+    ]
+  },
+  "MN-65026": {
+    "_comment": "Event date(s) missing from ACCC page (McCarroll's - Kinghorn Motors and Country Motors - Questionnaire (22 Jul 2026)); freezing these specific events to preserve the automatically set date(s) while other events still update from the page.",
+    "freeze_events": [
+      "McCarroll's - Kinghorn Motors and Country Motors - Questionnaire"
     ]
   }
 }
