@@ -1,6 +1,68 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-05032",
+      "merger_name": "Motorola Solutions - D-Fend Solutions",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-08T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-08-19T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Motorola Solutions Finance EMEA Limited",
+          "identifier_type": null,
+          "identifier": "05540794",
+          "canonical": {
+            "id": "motorola-solutions",
+            "name": "Motorola Solutions"
+          },
+          "party_page": {
+            "id": "motorola-solutions",
+            "name": "Motorola Solutions"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "D-Fend Solutions AD Ltd.",
+          "identifier_type": null,
+          "identifier": "515600963",
+          "party_page": {
+            "id": "d-fend-solutions-ad-ltd",
+            "name": "D-Fend Solutions AD Ltd."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Motorola Solutions, Inc.",
+          "identifier_type": null,
+          "identifier": "IRS Number  361115800",
+          "canonical": {
+            "id": "motorola-solutions",
+            "name": "Motorola Solutions"
+          },
+          "party_page": {
+            "id": "motorola-solutions",
+            "name": "Motorola Solutions"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2429",
+          "name": "Other Electronic Equipment Manufacturing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/motorola-solutions-d-fend-solutions"
+    },
+    {
       "merger_id": "MN-75029",
       "merger_name": "Analogic - Leidos SES business",
       "status": "Under assessment",

@@ -1109,6 +1109,68 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/akzonobel-axalta"
     },
     {
+      "merger_id": "WA-75030",
+      "merger_name": "Coles - supermarket site in Palmwoods, QLD",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-06-24T12:00:00Z",
+      "determination_publication_date": "2026-07-21T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "COLES GROUP PROPERTY DEVELOPMENTS LTD",
+          "identifier_type": "ABN",
+          "identifier": "72 004 428 326",
+          "canonical": {
+            "id": "coles",
+            "name": "Coles Group"
+          },
+          "party_page": {
+            "id": "coles",
+            "name": "Coles Group"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Neubau Holdings No 22 Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "20 122 754 496",
+          "party_page": {
+            "id": "neubau-holdings-no-22-pty-ltd",
+            "name": "Neubau Holdings No 22 Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Coles Group Limited",
+          "identifier_type": "ABN",
+          "identifier": "11 004 089 936",
+          "canonical": {
+            "id": "coles",
+            "name": "Coles Group"
+          },
+          "party_page": {
+            "id": "coles",
+            "name": "Coles Group"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4110",
+          "name": "Supermarket and Grocery Stores"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/coles-supermarket-site-in-palmwoods-qld"
+    },
+    {
       "merger_id": "MN-40027",
       "merger_name": "Sika AG - Akkim",
       "status": "Assessment completed",
@@ -3183,14 +3245,14 @@
     {
       "merger_id": "MN-50030",
       "merger_name": "Symal Group - Shamrock Engineering and Equipment",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "has_conditions": false,
       "is_waiver": false,
       "under_appeal": false,
       "is_refiled": false,
       "effective_notification_datetime": "2026-07-01T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-07-22T12:00:00Z",
       "end_of_determination_period": "2026-08-12T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -3852,68 +3914,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/vsa-sprayline"
-    },
-    {
-      "merger_id": "MN-05032",
-      "merger_name": "Motorola Solutions - D-Fend Solutions",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-07-08T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-08-19T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Motorola Solutions Finance EMEA Limited",
-          "identifier_type": null,
-          "identifier": "05540794",
-          "canonical": {
-            "id": "motorola-solutions",
-            "name": "Motorola Solutions"
-          },
-          "party_page": {
-            "id": "motorola-solutions",
-            "name": "Motorola Solutions"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "D-Fend Solutions AD Ltd.",
-          "identifier_type": null,
-          "identifier": "515600963",
-          "party_page": {
-            "id": "d-fend-solutions-ad-ltd",
-            "name": "D-Fend Solutions AD Ltd."
-          }
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "Motorola Solutions, Inc.",
-          "identifier_type": null,
-          "identifier": "IRS Number  361115800",
-          "canonical": {
-            "id": "motorola-solutions",
-            "name": "Motorola Solutions"
-          },
-          "party_page": {
-            "id": "motorola-solutions",
-            "name": "Motorola Solutions"
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "2429",
-          "name": "Other Electronic Equipment Manufacturing"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/motorola-solutions-d-fend-solutions"
     }
   ],
   "page": 9,

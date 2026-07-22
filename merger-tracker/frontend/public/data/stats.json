@@ -1,51 +1,51 @@
 {
   "total_mergers": 185,
-  "total_waivers": 284,
+  "total_waivers": 285,
   "total_conditional_approvals": 1,
   "by_status": {
-    "Assessment completed": 140,
-    "Under assessment": 42,
+    "Assessment completed": 141,
+    "Under assessment": 41,
     "Assessment ceased": 3
   },
   "by_determination": {
-    "Approved": 138,
+    "Approved": 139,
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 270,
+    "Approved": 271,
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 139,
+    "cleared": 140,
     "not_cleared": 1,
-    "total": 140,
+    "total": 141,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.732876712328768,
-    "median_days": 26.0,
-    "average_business_days": 19.575342465753426,
-    "median_business_days": 17.0,
+    "average_days": 29.6734693877551,
+    "median_days": 26,
+    "average_business_days": 19.54421768707483,
+    "median_business_days": 17,
     "percentiles": {
       "day15": {
-        "count": 36,
-        "percentage": 24.7
+        "count": 37,
+        "percentage": 25.2
       },
       "day20": {
-        "count": 114,
-        "percentage": 78.1
+        "count": 115,
+        "percentage": 78.2
       },
       "day30": {
-        "count": 138,
-        "percentage": 94.5
+        "count": 139,
+        "percentage": 94.6
       }
     }
   },
   "waiver_duration": {
-    "average_days": 18.619718309859156,
-    "median_days": 18.0,
-    "average_business_days": 12.419014084507042,
-    "median_business_days": 12.0
+    "average_days": 18.649122807017545,
+    "median_days": 18,
+    "average_business_days": 12.442105263157895,
+    "median_business_days": 12
   },
   "top_industries": [
     {
@@ -218,6 +218,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-50030",
+      "merger_name": "Symal Group - Shamrock Engineering and Equipment",
+      "determination": "Approved",
+      "determination_date": "2026-07-22T12:00:00Z",
+      "page_modified_datetime": "2026-07-22T16:46:38+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-01110",
       "merger_name": "KKR - FYihealth group",
       "determination": "Approved",
@@ -236,6 +246,16 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
+    },
+    {
+      "merger_id": "WA-75030",
+      "merger_name": "Coles - supermarket site in Palmwoods, QLD",
+      "determination": "Approved",
+      "determination_date": "2026-07-21T12:00:00Z",
+      "page_modified_datetime": "2026-07-22T16:38:22+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
     },
     {
       "merger_id": "MN-65022",
@@ -316,26 +336,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-01113",
-      "merger_name": "Hillhouse \u2013 LRQA Group",
-      "determination": "Approved",
-      "determination_date": "2026-07-20T12:00:00Z",
-      "page_modified_datetime": "2026-07-20T16:58:30+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-45020",
-      "merger_name": "Vets Central \u2013 Willunga & Aldinga Veterinary Services",
-      "determination": "Approved",
-      "determination_date": "2026-07-17T12:00:00Z",
-      "page_modified_datetime": "2026-07-17T16:40:57+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }
