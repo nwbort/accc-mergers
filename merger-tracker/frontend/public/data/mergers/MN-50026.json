@@ -1,13 +1,16 @@
 {
   "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/stonepeak-led-consortium-estia-health",
   "merger_name": "Stonepeak-led consortium - Estia Health",
-  "status": "Under assessment",
+  "status": "Assessment completed",
   "merger_id": "MN-50026",
   "effective_notification_datetime": "2026-06-29T12:00:00Z",
   "original_notification_datetime": "2026-06-29T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-08-10T12:00:00Z",
-  "page_modified_datetime": "2026-07-09T09:21:42+10:00",
+  "determination_publication_date": "2026-07-22T12:00:00Z",
+  "accc_determination": "Approved",
+  "accc_determination_raw": "ACCC determinationApproved",
+  "page_modified_datetime": "2026-07-22T16:23:06+10:00",
   "consultation_response_due_date": "2026-07-07T12:00:00Z",
   "acquirers": [
     {
@@ -37,12 +40,21 @@
   ],
   "other_parties": [
     {
-      "name": "Perpetual Corporate Trust Limited as trustee for Volarae Living (Australia) Holdings 2 Trust",
+      "name": "Wisdom MIT",
       "identifier_type": null,
       "identifier": "",
       "party_page": {
-        "id": "perpetual-corporate-trust-limited-as-trustee-for-volarae-living-australia-holdin",
-        "name": "Perpetual Corporate Trust Limited as trustee for Volarae Living (Australia) Holdings 2 Trust"
+        "id": "wisdom-mit",
+        "name": "Wisdom MIT"
+      }
+    },
+    {
+      "name": "Perpetual Corporate Trust Limited as trustee for SP-Plus (Australia) Holdings 2 Trust",
+      "identifier_type": "ABN",
+      "identifier": "99 000 341 533",
+      "party_page": {
+        "id": "perpetual-corporate-trust-limited-as-trustee-for-sp-plus-australia-holdings-2-tr",
+        "name": "Perpetual Corporate Trust Limited as trustee for SP-Plus (Australia) Holdings 2 Trust"
       }
     },
     {
@@ -59,15 +71,6 @@
       }
     },
     {
-      "name": "Wisdom TopCo Pty Ltd",
-      "identifier_type": "ACN",
-      "identifier": "696 888 552",
-      "party_page": {
-        "id": "wisdom-topco-pty-ltd",
-        "name": "Wisdom TopCo Pty Ltd"
-      }
-    },
-    {
       "name": "Aura Australia Holdings Pty Ltd",
       "identifier_type": "ABN",
       "identifier": "41 614 139 589",
@@ -77,21 +80,21 @@
       }
     },
     {
-      "name": "Wisdom MIT",
+      "name": "Perpetual Corporate Trust Limited as trustee for Volarae Living (Australia) Holdings 2 Trust",
       "identifier_type": null,
       "identifier": "",
       "party_page": {
-        "id": "wisdom-mit",
-        "name": "Wisdom MIT"
+        "id": "perpetual-corporate-trust-limited-as-trustee-for-volarae-living-australia-holdin",
+        "name": "Perpetual Corporate Trust Limited as trustee for Volarae Living (Australia) Holdings 2 Trust"
       }
     },
     {
-      "name": "Perpetual Corporate Trust Limited as trustee for SP-Plus (Australia) Holdings 2 Trust",
-      "identifier_type": "ABN",
-      "identifier": "99 000 341 533",
+      "name": "Wisdom TopCo Pty Ltd",
+      "identifier_type": "ACN",
+      "identifier": "696 888 552",
       "party_page": {
-        "id": "perpetual-corporate-trust-limited-as-trustee-for-sp-plus-australia-holdings-2-tr",
-        "name": "Perpetual Corporate Trust Limited as trustee for SP-Plus (Australia) Holdings 2 Trust"
+        "id": "wisdom-topco-pty-ltd",
+        "name": "Wisdom TopCo Pty Ltd"
       }
     }
   ],
@@ -116,13 +119,48 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-07-22T12:00:00Z",
+      "title": "Stonepeak - Estia Health - Phase 1 Determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Stonepeak-Estia%20Health%20-%20Phase%201%20determination.pdf",
+      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+      "determination_table_content": [
+        {
+          "item": "Notified acquisition",
+          "details": "A consortium comprising investment funds advised and/or\nmanaged by affiliates of Stonepeak Partners LP (together with its\naffiliates, Stonepeak), and a fund managed by Axight Capital Limited\n(Axight), propose to acquire 100% of the issued share capital of\nEstia Health Holdings Ltd (Estia) (the Acquisition)."
+        },
+        {
+          "item": "Determination",
+          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+        },
+        {
+          "item": "Parties to the Acquisition",
+          "details": "Stonepeak is a global alternative investment firm specialising in\ninfrastructure and real assets. Stonepeak has an interest in Aura\nHoldings, a retirement village developer and operator in Queensland.\nEstia is the ultimate holding company of the Estia corporate group,\nwhich operates residential aged care homes in Australia. Estia\noperates 94 homes nationally, with operations in Queensland, New\nSouth Wales, Victoria and South Australia. Estia is currently majority\nowned by Bain Capital Private Equity.\nAxight is an Abu Dhabi-based investment fund manager established\nby Lunate, an Abu Dhabi asset management firm. Axight operates as\nLunate\u2019s dedicated Asia-Pacific investment platform. Axight and\nLunate do not hold any interests in any residential aged care\nbusiness in Australia"
+        },
+        {
+          "item": "Overlap between the\nparties",
+          "details": "There is no overlap in Australia between Estia\u2019s activities and the\nactivities of either Stonepeak and its connected entities, or Axight\nand its connected entities."
+        },
+        {
+          "item": "Reasons for determination",
+          "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 The services provided by Aura Holdings (retirement villages), in\nwhich Stonepeak has an interest and Estia (aged care) are\nseparate product markets.\n\u2022 There are no relevant competitive overlaps between Estia and\neither of Stonepeak or Axight (or their connected entities)."
+        },
+        {
+          "item": "Applications for review",
+          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+        }
+      ],
+      "url_gh": "/mergers/MN-50026/Stonepeak-Estia Health - Phase 1 determination.pdf",
+      "is_determination_event": true,
+      "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
-  "accc_determination": null,
   "has_conditions": false,
-  "phase_1_determination": null,
-  "phase_1_determination_date": null,
+  "phase_1_determination": "Approved",
+  "phase_1_determination_date": "2026-07-22T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
