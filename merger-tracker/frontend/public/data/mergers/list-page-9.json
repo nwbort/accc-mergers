@@ -1797,26 +1797,17 @@
     {
       "merger_id": "MN-90020",
       "merger_name": "OpenAI - Ona",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "has_conditions": false,
       "is_waiver": false,
       "under_appeal": false,
       "is_refiled": false,
       "effective_notification_datetime": "2026-06-26T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-07-21T12:00:00Z",
       "end_of_determination_period": "2026-08-07T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
-        {
-          "name": "OpenAI Group PBC",
-          "identifier_type": null,
-          "identifier": "Delaware File Number  10381551",
-          "party_page": {
-            "id": "openai-group-pbc",
-            "name": "OpenAI Group PBC"
-          }
-        },
         {
           "name": "Wave Merger Sub II, LLC",
           "identifier_type": null,
@@ -1824,6 +1815,15 @@
           "party_page": {
             "id": "wave-merger-sub-ii-llc",
             "name": "Wave Merger Sub II, LLC"
+          }
+        },
+        {
+          "name": "OpenAI Group PBC",
+          "identifier_type": null,
+          "identifier": "Delaware File Number  10381551",
+          "party_page": {
+            "id": "openai-group-pbc",
+            "name": "OpenAI Group PBC"
           }
         },
         {
@@ -1853,15 +1853,6 @@
       ],
       "other_parties": [
         {
-          "name": "OpenAI Foundation",
-          "identifier_type": null,
-          "identifier": "Delaware File Number  5902936",
-          "party_page": {
-            "id": "openai-foundation",
-            "name": "OpenAI Foundation"
-          }
-        },
-        {
           "name": "Gitpod GmbH",
           "identifier_type": null,
           "identifier": "HRB  22228",
@@ -1872,6 +1863,15 @@
           "party_page": {
             "id": "gitpod-gmbh",
             "name": "Gitpod GmbH"
+          }
+        },
+        {
+          "name": "OpenAI Foundation",
+          "identifier_type": null,
+          "identifier": "Delaware File Number  5902936",
+          "party_page": {
+            "id": "openai-foundation",
+            "name": "OpenAI Foundation"
           }
         }
       ],

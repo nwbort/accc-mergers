@@ -47722,24 +47722,18 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/openai-ona",
       "merger_name": "OpenAI - Ona",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-90020",
       "effective_notification_datetime": "2026-06-26T12:00:00Z",
       "original_notification_datetime": "2026-06-26T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-08-07T12:00:00Z",
-      "page_modified_datetime": "2026-07-03T16:02:23+10:00",
+      "determination_publication_date": "2026-07-21T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-07-21T13:33:29+10:00",
       "consultation_response_due_date": "2026-07-03T12:00:00Z",
       "acquirers": [
-        {
-          "name": "OpenAI Group PBC",
-          "identifier_type": null,
-          "identifier": "Delaware File Number  10381551",
-          "party_page": {
-            "id": "openai-group-pbc",
-            "name": "OpenAI Group PBC"
-          }
-        },
         {
           "name": "Wave Merger Sub II, LLC",
           "identifier_type": null,
@@ -47747,6 +47741,15 @@
           "party_page": {
             "id": "wave-merger-sub-ii-llc",
             "name": "Wave Merger Sub II, LLC"
+          }
+        },
+        {
+          "name": "OpenAI Group PBC",
+          "identifier_type": null,
+          "identifier": "Delaware File Number  10381551",
+          "party_page": {
+            "id": "openai-group-pbc",
+            "name": "OpenAI Group PBC"
           }
         },
         {
@@ -47776,15 +47779,6 @@
       ],
       "other_parties": [
         {
-          "name": "OpenAI Foundation",
-          "identifier_type": null,
-          "identifier": "Delaware File Number  5902936",
-          "party_page": {
-            "id": "openai-foundation",
-            "name": "OpenAI Foundation"
-          }
-        },
-        {
           "name": "Gitpod GmbH",
           "identifier_type": null,
           "identifier": "HRB  22228",
@@ -47795,6 +47789,15 @@
           "party_page": {
             "id": "gitpod-gmbh",
             "name": "Gitpod GmbH"
+          }
+        },
+        {
+          "name": "OpenAI Foundation",
+          "identifier_type": null,
+          "identifier": "Delaware File Number  5902936",
+          "party_page": {
+            "id": "openai-foundation",
+            "name": "OpenAI Foundation"
           }
         }
       ],
@@ -47823,13 +47826,48 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-07-21T12:00:00Z",
+          "title": "OpenAI-Ona - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/OpenAI%20-%20Ona%20Phase%201%20determination.pdf",
+          "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "The proposed acquisition of 100% of the share capital of Gitpod, Inc. (known as Ona) by OpenAI Group PBC, an entity controlled by the OpenAI Foundation (OpenAI) (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has determined under section 51ABZE(1) of the Competition and Consumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, OpenAI, develops artificial intelligence (AI) foundation models, including its GPT family of models, as well as foundation model-based services such as ChatGPT.\n\nOpenAI also supplies Codex, an AI-powered agent designed to enable software developers to perform and automate various software engineering tasks, subject to human direction and review.\n\nCodex is typically accessed through user-facing interfaces and developer tools and is powered by OpenAI’s own foundation models.\n\nThe target, Ona, supplies a platform that enables enterprise customers to deploy and orchestrate AI-powered agents to run software engineering tasks within the customer’s own infrastructure or cloud environment. These agents can run autonomously in the background and at scale, including when individual developers are not actively using their laptops. Ona’s platform works across multiple cloud platforms and with multiple foundation models."
+            },
+            {
+              "item": "Overlap between the parties",
+              "details": "OpenAI and Ona (together, the Parties) overlap in the supply of AI software development tools. However, their offerings address different use cases. In particular, OpenAI’s Codex appears to be primarily used interactively by developers to assist with discrete coding tasks, while the Ona platform focuses on and enables background execution of software engineering workflows within the customer’s own infrastructure or cloud environment.\n\nThe Ona platform can integrate third-party foundation models, including OpenAI’s GPT models."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition and Consumer Commission (ACCC) undertakes a competition assessment and considers whether it is appropriate for an acquisition to be approved or subject to further assessment in Phase 2 in accordance with section 51ABZJ of the Competition and Consumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have regard to the object of the Act and all relevant matters, including the interests of consumers.\n\nFor more information about the ACCC’s approach to considering notified acquisitions, see the ACCC’s merger assessment guidelines and interim merger process guidelines.\n\nIn conducting its competition assessment, the ACCC has considered the information and documents that were submitted with the notification form and information from third parties.\n\nThe ACCC has determined that the Acquisition may be put into effect as it considers that the Acquisition is unlikely to have the effect of substantially lessening competition in any market. In reaching its decision, and based on the material before it, the ACCC makes the following findings.\n\n• OpenAI and Ona do not appear to compete closely in the supply of AI software development tools in Australia, given their offerings address different use cases and Ona has a limited presence in Australia.\n\n• Post-Acquisition, the merged entity would likely continue to face competition from multiple alternative suppliers of AI software development tools, including both developer-facing coding assistants and automation-focused solutions.\n\n• Post-Acquisition, the merged entity would be unlikely to have an ability and incentive to foreclose rival AI software development product providers’ access to AI foundation models given there are multiple alternative suppliers of AI foundation models."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by the Australian Competition Tribunal, may apply for review if they are dissatisfied with the determination. Pursuant to section 100C of the Act, applications for review of the determination are to be made to the Australian Competition Tribunal before the end of 14 calendar days after this statement of reasons was included on the ACCC’s Acquisitions Register. To confirm whether there has been any application for review, please contact the Australian Competition Tribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-90020/OpenAI - Ona Phase 1 determination.pdf",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
       "has_conditions": false,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-07-21T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -127495,12 +127533,12 @@
     "total_waivers": 283,
     "total_conditional_approvals": 1,
     "by_status": {
-      "Assessment completed": 137,
-      "Under assessment": 42,
+      "Assessment completed": 138,
+      "Under assessment": 41,
       "Assessment ceased": 3
     },
     "by_determination": {
-      "Approved": 135,
+      "Approved": 136,
       "Referred to phase 2": 8
     },
     "by_waiver_determination": {
@@ -127508,27 +127546,27 @@
       "Not approved": 14
     },
     "clearance_rate": {
-      "cleared": 136,
+      "cleared": 137,
       "not_cleared": 1,
-      "total": 137,
+      "total": 138,
       "rate": 0.993
     },
     "phase_duration": {
-      "average_days": 29.874125874125873,
-      "median_days": 26,
-      "average_business_days": 19.643356643356643,
-      "median_business_days": 17,
+      "average_days": 29.84027777777778,
+      "median_days": 26.0,
+      "average_business_days": 19.625,
+      "median_business_days": 17.0,
       "percentiles": {
         "day15": {
           "count": 36,
-          "percentage": 25.2
+          "percentage": 25.0
         },
         "day20": {
-          "count": 111,
-          "percentage": 77.6
+          "count": 112,
+          "percentage": 77.8
         },
         "day30": {
-          "count": 135,
+          "count": 136,
           "percentage": 94.4
         }
       }
@@ -127748,6 +127786,16 @@
         "stage": "Phase 1 - initial assessment"
       },
       {
+        "merger_id": "MN-90020",
+        "merger_name": "OpenAI - Ona",
+        "determination": "Approved",
+        "determination_date": "2026-07-21T12:00:00Z",
+        "page_modified_datetime": "2026-07-21T13:33:29+10:00",
+        "determination_type": "final",
+        "is_waiver": false,
+        "stage": "Phase 1 - initial assessment"
+      },
+      {
         "merger_id": "MN-70020",
         "merger_name": "CVS Group – Paws at Prospect Vet and Eyes at Prospect Vet",
         "determination": "Approved",
@@ -127803,16 +127851,6 @@
         "determination": "Approved",
         "determination_date": "2026-07-17T12:00:00Z",
         "page_modified_datetime": "2026-07-17T16:35:57+10:00",
-        "determination_type": "final",
-        "is_waiver": true,
-        "stage": "Waiver application"
-      },
-      {
-        "merger_id": "WA-10020",
-        "merger_name": "Apollo Capital – Curia",
-        "determination": "Approved",
-        "determination_date": "2026-07-17T12:00:00Z",
-        "page_modified_datetime": "2026-07-17T16:34:44+10:00",
         "determination_type": "final",
         "is_waiver": true,
         "stage": "Waiver application"
