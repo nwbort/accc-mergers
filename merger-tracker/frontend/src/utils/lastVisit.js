@@ -66,37 +66,3 @@ export function isNewItem(itemId) {
   return !seenItems.has(itemId);
 }
 
-/**
- * Floats unseen ("New") items to the top of a list while preserving the
- * incoming order within the seen and unseen groups.
- *
- * The dashboard lists arrive sorted by event date (determination date /
- * notification datetime), but the ACCC register frequently backdates records,
- * so a brand-new card can carry an older date and get buried mid-list even
- * though it shows a "New" badge. Partitioning unseen items to the front keeps
- * the "New" cards where the eye lands first. The partition is stable, so within
- * each group the original date ordering is untouched; once an item is marked
- * seen it settles back into chronological order on the next load.
- *
- * @param {Array} items - The items to order (already date-sorted).
- * @param {(item: any) => string} getId - Extracts the merger ID used to test
- *   whether the item has been seen.
- * @returns {Array} A new array with unseen items first.
- */
-export function sortUnseenFirst(items, getId) {
-  if (!items || items.length === 0) return [];
-
-  const seenItems = getSeenItems();
-  const unseen = [];
-  const seen = [];
-  for (const item of items) {
-    const id = getId(item);
-    if (id && !seenItems.has(id)) {
-      unseen.push(item);
-    } else {
-      seen.push(item);
-    }
-  }
-  return [...unseen, ...seen];
-}
-

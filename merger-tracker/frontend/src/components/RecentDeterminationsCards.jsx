@@ -1,6 +1,5 @@
-import { useMemo } from 'react';
 import { formatDate } from '../utils/dates';
-import { isNewItem, sortUnseenFirst } from '../utils/lastVisit';
+import { isNewItem } from '../utils/lastVisit';
 import { DETERMINATION_LABELS } from '../constants/mergerStatus';
 import { getCardStyle, NEW_ITEM_BORDER } from '../constants/cardStyles';
 import CardCollapseGrid from './CardCollapseGrid';
@@ -15,16 +14,7 @@ function getDeterminationCardStyle(item) {
 }
 
 function RecentDeterminationsCards({ determinations }) {
-  // Float unseen ("New") cards to the top so freshly-appeared determinations —
-  // which the register may have backdated below older ones — aren't missed.
-  // Computed once per data load so the order stays put after items are marked
-  // seen mid-session.
-  const orderedDeterminations = useMemo(
-    () => sortUnseenFirst(determinations, (item) => item.merger_id),
-    [determinations]
-  );
-
-  if (orderedDeterminations.length === 0) {
+  if (!determinations || determinations.length === 0) {
     return (
       <EmptyStateCard heading="Recent determinations" message="No recent determinations." />
     );
@@ -39,7 +29,7 @@ function RecentDeterminationsCards({ determinations }) {
         Recent determinations
       </h2>
       <CardCollapseGrid
-        items={orderedDeterminations}
+        items={determinations}
         getKey={(item) =>
           `${item.merger_id}-${item.determination_date}-${item.determination_type}`
         }
