@@ -1,15 +1,27 @@
 {
   "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/slb-%E2%80%93-sp-global%E2%80%99s-geoscience-software-portfolio",
   "merger_name": "SLB \u2013 S&P Global\u2019s Geoscience Software Portfolio",
-  "status": "Under assessment",
+  "status": "Assessment completed",
   "merger_id": "MN-75027",
   "effective_notification_datetime": "2026-06-30T12:00:00Z",
   "original_notification_datetime": "2026-06-30T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-08-11T12:00:00Z",
-  "page_modified_datetime": "2026-07-08T16:06:06+10:00",
+  "determination_publication_date": "2026-07-22T12:00:00Z",
+  "accc_determination": "Approved",
+  "accc_determination_raw": "ACCC determinationApproved",
+  "page_modified_datetime": "2026-07-22T13:55:15+10:00",
   "consultation_response_due_date": "2026-07-08T12:00:00Z",
   "acquirers": [
+    {
+      "name": "Geoquest Systems BV",
+      "identifier_type": null,
+      "identifier": "KVK  27176644",
+      "party_page": {
+        "id": "geoquest-systems-bv",
+        "name": "Geoquest Systems BV"
+      }
+    },
     {
       "name": "Schlumberger Canada Limited",
       "identifier_type": null,
@@ -17,15 +29,6 @@
       "party_page": {
         "id": "schlumberger-canada-limited",
         "name": "Schlumberger Canada Limited"
-      }
-    },
-    {
-      "name": "SLB N.V. (SLB Limited)",
-      "identifier_type": null,
-      "identifier": "EIN  520684746",
-      "party_page": {
-        "id": "slb-n-v-slb-limited",
-        "name": "SLB N.V. (SLB Limited)"
       }
     },
     {
@@ -38,12 +41,12 @@
       }
     },
     {
-      "name": "Geoquest Systems BV",
+      "name": "SLB N.V. (SLB Limited)",
       "identifier_type": null,
-      "identifier": "KVK  27176644",
+      "identifier": "EIN  520684746",
       "party_page": {
-        "id": "geoquest-systems-bv",
-        "name": "Geoquest Systems BV"
+        "id": "slb-n-v-slb-limited",
+        "name": "SLB N.V. (SLB Limited)"
       }
     }
   ],
@@ -90,7 +93,7 @@
       "name": "Computer System Design and Related Services"
     }
   ],
-  "merger_description": "SLB N.V. (together with its subsidiaries,\u00a0**SLB**) is proposing to acquire S&P Global Inc.\u2019s (**S&P Global**) geoscience software portfolio (the\u00a0**Acquisition**).\n\nSLB is a global technology company that provides equipment, software and technical services, including subsurface evaluation, drilling and production services, to customers in the energy sector. Relevantly, SLB supplies exploration and production software including Petrel, Eclipse, Intersect, OFM, Techlog, Omega, Petromod, DrillPlan, Pipesim and Olga.\n\nS&P Global is an information, data, analytics, ratings, indices and commodity-information business. S&P Global also operates an energy division which provides independent information and benchmark prices for the energy and commodity markets; and geoscience software used to scope, plan and monitor oil and gas well development.\n\nS&P Global\u2019s geoscience portfolio (the target of the Acquisition) comprises the following software, used in upstream oil and gas exploration and production workflows: Kingdom, Petra, Harmony Enterprise, Analytics Explorer, SubPUMP, PowerTools, FieldDIRECT, Piper, WellTest and Element.",
+  "merger_description": "SLB N.V. (together with its subsidiaries,\u00a0**SLB**) is proposing to acquire S&P Global Inc.\u2019s (**S&P Global**) geoscience and engineering software portfolio (the\u00a0**Acquisition**).\n\nSLB is a global technology company that provides equipment, software and technical services, including subsurface evaluation, drilling and production services, to customers in the energy sector. Relevantly, SLB supplies exploration and production software including Petrel, Eclipse, Intersect, OFM, Techlog, Omega, Petromod, DrillPlan, Pipesim and Olga.\n\nS&P Global is an information, data, analytics, ratings, indices and commodity-information business. This includes an energy division which provides independent information and benchmark prices for the energy and commodity markets. S&P Global also offers geoscience software used to scope, plan and monitor oil and gas well development.\n\nS&P Global\u2019s geoscience and engineering portfolio (the target of the Acquisition) comprises the following software products, used in upstream oil and gas exploration and production workflows: Kingdom, Petra, Harmony Enterprise, Analytics Explorer, SubPUMP, PowerTools, FieldDIRECT, Piper, WellTest and Element.",
   "events": [
     {
       "date": "2026-07-01T12:00:00Z",
@@ -105,13 +108,48 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-07-22T12:00:00Z",
+      "title": "SLB - S&P Global's geoscience software portfolio - Phase 1 determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/SLB%20-%20S%26P%20Global%27s%20geoscience%20software%20portfolio%20-%20Phase%201%20determination.pdf",
+      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+      "determination_table_content": [
+        {
+          "item": "Notified acquisition",
+          "details": "SLB N.V. (together with its subsidiaries, SLB) is proposing to acquire\nS&P Global Inc.\u2019s (S&P Global) geoscience and engineering software\nportfolio (the Acquisition)."
+        },
+        {
+          "item": "Determination",
+          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+        },
+        {
+          "item": "Parties to the Acquisition",
+          "details": "The acquirer, SLB, is a global technology company that provides\nequipment, software and technical services, including subsurface\nevaluation, drilling and production services, to customers in the\nenergy sector. Relevantly, SLB supplies exploration and production\nsoftware including Petrel, Eclipse, Intersect, OFM, Techlog, Omega,\nPetromod, DrillPlan, Pipesim and Olga.\nThe target, S&P Global, is an information, data, analytics, ratings,\nindices and commodity-information business. This includes an\nenergy division which provides independent information and\nbenchmark prices for the energy and commodity markets. S&P\nGlobal also offers geoscience software used to scope, plan and\nmonitor oil and gas well development.\nS&P Global\u2019s geoscience and engineering portfolio (the target of the\nAcquisition) comprises the following software products, used in\nupstream oil and gas exploration and production workflows:\nKingdom, Petra, Harmony Enterprise, Analytics Explorer, SubPUMP,\nPowerTools, FieldDIRECT, Piper, WellTest and Element."
+        },
+        {
+          "item": "Overlap and relationship\nbetween the parties",
+          "details": "The ACCC considers there are both horizontal and non-horizontal\nrelationships between SLB software and the S&P Global geoscience\nand engineering software, the subject of the Acquisition."
+        },
+        {
+          "item": "Reasons for determination",
+          "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, information from third partes and publicly available\ninformation.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 S&P Global\u2019s geoscience and engineering software portfolio has\na very limited presence in Australia.\n\u2022 The increase in SLB\u2019s share of geoscience and engineering\nsoftware in Australia as a result of the Acquisition is estimated\nto be low.\n\u2022 Post Acquisition, the merged firm would continue to face\ncompetition from multiple alternative suppliers of geoscience\nand engineering software.\n\u2022 Post Acquisition, the merged firm is unlikely to have the ability\nand incentive to harm the competitiveness of rival geoscience\nand engineering software providers through, for example,\ndegrading interoperability with the merged firm\u2019s software\nproducts, given the availability of alternative products to the\nmerged firm\u2019s software offerings."
+        },
+        {
+          "item": "Applications for review",
+          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+        }
+      ],
+      "url_gh": "/mergers/MN-75027/SLB - SandP Global's geoscience software portfolio - Phase 1 determination.pdf",
+      "is_determination_event": true,
+      "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
-  "accc_determination": null,
   "has_conditions": false,
-  "phase_1_determination": null,
-  "phase_1_determination_date": null,
+  "phase_1_determination": "Approved",
+  "phase_1_determination_date": "2026-07-22T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,

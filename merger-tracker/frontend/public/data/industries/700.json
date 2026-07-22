@@ -40,17 +40,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-75027",
-      "merger_name": "SLB \u2013 S&P Global\u2019s Geoscience Software Portfolio",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-06-30T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-85036",
       "merger_name": "SpaceX - Anysphere",
       "is_waiver": false,
@@ -60,6 +49,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-06-30T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-75027",
+      "merger_name": "SLB \u2013 S&P Global\u2019s Geoscience Software Portfolio",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-06-30T12:00:00Z",
+      "determination_date": "2026-07-22T12:00:00Z"
     },
     {
       "merger_id": "WA-75032",
@@ -550,13 +550,13 @@
   "phase_1_count": 18,
   "phase_2_count": 0,
   "waiver_count": 29,
-  "active_count": 3,
+  "active_count": 2,
   "phase_duration": {
-    "average_days": 30.666666666666668,
-    "median_days": 27,
-    "average_business_days": 19.733333333333334,
-    "median_business_days": 18,
-    "completed_count": 15
+    "average_days": 30.125,
+    "median_days": 27.0,
+    "average_business_days": 19.5,
+    "median_business_days": 17.5,
+    "completed_count": 16
   },
   "waiver_duration": {
     "average_days": 18.448275862068964,
