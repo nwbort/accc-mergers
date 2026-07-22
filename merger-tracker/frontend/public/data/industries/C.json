@@ -81,7 +81,7 @@
       "code": "23",
       "name": "Transport Equipment Manufacturing",
       "level": "subdivision",
-      "merger_count": 8
+      "merger_count": 9
     },
     {
       "code": "24",
@@ -100,6 +100,17 @@
     {
       "merger_id": "MN-05036",
       "merger_name": "Vertex \u2013 Crinetics",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-21T12:00:00Z",
+      "determination_date": null
+    },
+    {
+      "merger_id": "MN-25037",
+      "merger_name": "Sanad Services and Tikehau Capital \u2013 Revima",
       "is_waiver": false,
       "status": "Under assessment",
       "determination": null,
@@ -1330,11 +1341,11 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 112,
-  "phase_1_count": 50,
+  "count": 113,
+  "phase_1_count": 51,
   "phase_2_count": 2,
   "waiver_count": 60,
-  "active_count": 10,
+  "active_count": 11,
   "phase_duration": {
     "average_days": 29.511627906976745,
     "median_days": 26,

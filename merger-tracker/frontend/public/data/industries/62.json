@@ -37,10 +37,21 @@
       "code": "624",
       "name": "Financial Asset Investing",
       "level": "group",
-      "merger_count": 59
+      "merger_count": 60
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-25037",
+      "merger_name": "Sanad Services and Tikehau Capital \u2013 Revima",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-21T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "WA-30024",
       "merger_name": "Centerbridge Partners \u2013 Ebury Partners Limited",
@@ -779,11 +790,11 @@
       "determination_date": null
     }
   ],
-  "count": 67,
-  "phase_1_count": 10,
+  "count": 68,
+  "phase_1_count": 11,
   "phase_2_count": 1,
   "waiver_count": 56,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": {
     "average_days": 30.181818181818183,
     "median_days": 23,
