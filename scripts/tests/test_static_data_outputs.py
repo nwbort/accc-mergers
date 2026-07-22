@@ -183,6 +183,22 @@ class TestStatsGenerate:
         assert by_id['MN-0002']['is_refiled'] is True
         assert by_id['MN-0001']['is_refiled'] is False
 
+    def test_recent_mergers_break_same_day_ties_by_register_timestamp(self):
+        # Two notifications on the same (nominal-midday) day. The one that
+        # actually landed on the register later — higher page_modified_datetime —
+        # must sort above the earlier one, rather than by insertion/name order.
+        mergers = _raw_fixture()
+        for m in mergers:
+            m['effective_notification_datetime'] = '2026-05-01T12:00:00Z'
+        early = next(m for m in mergers if m['merger_id'] == 'MN-0001')
+        late = next(m for m in mergers if m['merger_id'] == 'MN-0002')
+        early['page_modified_datetime'] = '2026-05-01T09:00:00+10:00'
+        late['page_modified_datetime'] = '2026-05-01T16:30:00+10:00'
+        enriched = [enrich_merger(m) for m in mergers]
+        payload = stats.generate(enriched)
+        order = [m['merger_id'] for m in payload['recent_mergers']]
+        assert order.index('MN-0002') < order.index('MN-0001')
+
     def test_recent_determinations_includes_ceased_assessments(self):
         mergers = _raw_fixture()
         mergers.append({
