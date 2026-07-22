@@ -453,6 +453,11 @@ def link_tribunal_appeals(enriched_mergers: list, appeals: dict) -> int:
             # appeal-aware status badge, e.g. "Approved · on appeal".
             'effective_determination': appeal.get('effective_determination'),
             'filed_date': appeal.get('filed_date'),
+            # Scheduled tribunal hearing start date (bare 'YYYY-MM-DD', optional).
+            # Surfaced as a future "Tribunal hearing" event while the appeal is
+            # current — see static_data.outputs.upcoming_events and the frontend
+            # TrackingContext.
+            'hearing_date': appeal.get('hearing_date'),
             'concluded_date': appeal.get('concluded_date'),
             'documents': appeal.get('documents', []),
         }

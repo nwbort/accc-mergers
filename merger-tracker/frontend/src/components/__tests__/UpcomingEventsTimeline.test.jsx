@@ -132,4 +132,32 @@ describe('UpcomingEventsTimeline', () => {
     expect(link).toHaveAttribute('href', expect.stringContaining('MN-00001'));
     expect(within(link).getByText('Determination')).toBeInTheDocument();
   });
+
+  it('renders a tribunal hearing event with its own label, ordered first in the day', () => {
+    renderTimeline([
+      makeEvent({
+        date: '2026-06-30T12:00:00Z',
+        merger_id: 'MN-D',
+        merger_name: 'Zed – Determination',
+        type: 'determination_due',
+        stage: 'Phase 2 - in-depth review',
+      }),
+      makeEvent({
+        date: '2026-06-30T12:00:00Z',
+        merger_id: 'MN-H',
+        merger_name: 'Coles – Kalgoorlie',
+        type: 'tribunal_hearing',
+        stage: 'Phase 2 - detailed assessment',
+      }),
+    ]);
+
+    // Its own chip label is shown…
+    const link = screen.getByRole('link', { name: /Coles – Kalgoorlie/ });
+    expect(within(link).getByText('Tribunal hearing')).toBeInTheDocument();
+
+    // …and a hearing outranks a determination within the same day.
+    const links = screen.getAllByRole('link');
+    const names = links.map((l) => within(l).getByText(/–/).textContent);
+    expect(names).toEqual(['Coles – Kalgoorlie', 'Zed – Determination']);
+  });
 });

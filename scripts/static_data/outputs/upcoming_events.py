@@ -115,6 +115,42 @@ def generate(mergers: list, days_ahead: int = 60) -> dict:
             except (ValueError, AttributeError):
                 pass
 
+    # Tribunal hearing start dates. A matter under a *current* Australian
+    # Competition Tribunal appeal can have a scheduled hearing start date
+    # (data/processed/tribunal_appeals.json → appeal.hearing_date). These are
+    # surfaced regardless of the days_ahead window: a hearing is listed months
+    # in advance, is rare, and is worth flagging as soon as it is known. The
+    # matter is already ACCC-determined by this stage, so it is handled
+    # separately from the not-yet-determined candidate list above (waivers and
+    # suspended assessments are still excluded).
+    for m in exclude_for_public_output(mergers):
+        appeal = m.get('appeal')
+        if not appeal or not m.get('under_appeal'):
+            continue
+        hearing_date = appeal.get('hearing_date')
+        if not hearing_date:
+            continue
+        try:
+            parsed = parse_iso_datetime(hearing_date)
+            if parsed is None:
+                raise ValueError("unparseable date")
+            parsed = parsed.replace(tzinfo=None)
+        except (ValueError, AttributeError):
+            continue
+        if parsed < now:
+            continue
+        events.append({
+            "type": "tribunal_hearing",
+            "event_type_display": "Tribunal hearing",
+            "date": parsed.strftime('%Y-%m-%dT12:00:00Z'),
+            "merger_id": m['merger_id'],
+            "merger_name": m['merger_name'],
+            "status": m.get('status'),
+            "stage": m.get('stage'),
+            "effective_notification_datetime": m.get('effective_notification_datetime'),
+            "tribunal_number": appeal.get('tribunal_number'),
+        })
+
     events.sort(key=lambda x: x['date'])
 
     return {

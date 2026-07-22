@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { FaRegComments, FaGavel, FaTriangleExclamation } from 'react-icons/fa6';
+import { FaRegComments, FaGavel, FaTriangleExclamation, FaScaleBalanced } from 'react-icons/fa6';
 import { mergerPath } from '../utils/slug';
 import { formatWeekday, getCalendarDaysUntil } from '../utils/dates';
 import { PHASES } from '../constants/mergerStatus';
@@ -29,6 +29,12 @@ const EVENT_TYPES = {
     tile: 'bg-purple-50 text-purple-600',
     chip: 'bg-purple-50 text-purple-700 border-purple-200/60',
   },
+  tribunal_hearing: {
+    label: 'Tribunal hearing',
+    Icon: FaScaleBalanced,
+    tile: 'bg-rose-50 text-rose-600',
+    chip: 'bg-rose-50 text-rose-700 border-rose-200/60',
+  },
 };
 
 const DEFAULT_EVENT_TYPE = {
@@ -41,13 +47,14 @@ const DEFAULT_EVENT_TYPE = {
 const getEventType = (type) => EVENT_TYPES[type] || DEFAULT_EVENT_TYPE;
 
 // Within a single calendar day, surface the most consequential deadlines
-// first: determinations rank above concerns notices, which rank above
-// consultations; Phase 2 outranks Phase 1; ties fall back to the merger name
-// so the order is stable.
+// first: a tribunal hearing outranks a determination, which ranks above
+// concerns notices, which rank above consultations; Phase 2 outranks Phase 1;
+// ties fall back to the merger name so the order is stable.
 const EVENT_TYPE_ORDER = {
-  determination_due: 0,
-  notice_of_competition_concerns: 1,
-  consultation_due: 2,
+  tribunal_hearing: 0,
+  determination_due: 1,
+  notice_of_competition_concerns: 2,
+  consultation_due: 3,
 };
 
 const phaseRank = (stage) => (stage && stage.includes(PHASES.PHASE_2) ? 0 : 1);
