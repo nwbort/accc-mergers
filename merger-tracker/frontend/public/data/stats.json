@@ -1,10 +1,10 @@
 {
-  "total_mergers": 182,
+  "total_mergers": 183,
   "total_waivers": 283,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 138,
-    "Under assessment": 41,
+    "Under assessment": 42,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -90,6 +90,15 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-35029",
+      "merger_name": "L'Or\u00e9al - Innovist",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-21T12:00:00Z",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-90022",
       "merger_name": "Expedia - CarTrawler",
@@ -191,15 +200,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-07-13T12:00:00Z",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-01105",
-      "merger_name": "Siemens Mobility - MerMec",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-10T12:00:00Z",
       "is_waiver": false,
       "is_refiled": false
     }
