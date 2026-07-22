@@ -88,6 +88,22 @@ class TestLinkTribunalAppeals:
         assert m['appeal']['status'] == tribunal.APPEAL_STATUS_CURRENT
         assert len(m['appeal']['documents']) == 1
 
+    def test_hearing_date_propagated(self):
+        # An optional scheduled hearing start date is carried through onto the
+        # merger's appeal record so it can drive a "Tribunal hearing" event.
+        appeal = _appeal()
+        appeal['MN-0001']['hearing_date'] = '2026-11-09'
+        mergers = [enrich_merger(_phase2_not_approved())]
+        link_tribunal_appeals(mergers, appeal)
+        assert mergers[0]['appeal']['hearing_date'] == '2026-11-09'
+
+    def test_hearing_date_absent_is_none(self):
+        # The fixture has no hearing_date → the key is present but null, never
+        # missing, so downstream consumers can read it unconditionally.
+        mergers = [enrich_merger(_phase2_not_approved())]
+        link_tribunal_appeals(mergers, _appeal())
+        assert mergers[0]['appeal']['hearing_date'] is None
+
     def test_missing_status_defaults_to_current(self):
         # The fixture has no explicit status → treated as a live appeal.
         appeal = _appeal()

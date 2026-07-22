@@ -1704,6 +1704,79 @@ class TestUpcomingEventsGenerate:
         ]
         assert len(nocc_events) == 1
 
+    def _appealed_merger(self, hearing_date, status='current'):
+        # A Phase 2 refusal now under (or past) tribunal appeal, with a
+        # scheduled hearing. Built through the real link step so under_appeal /
+        # appeal.hearing_date are populated the way the pipeline sets them.
+        from static_data.enrichment import link_tribunal_appeals
+        merger = {
+            'merger_id': 'MN-7777',
+            'merger_name': 'Appealed refusal',
+            'status': 'Assessment completed',
+            'accc_determination': 'Not approved',
+            'stage': 'Phase 2 - detailed assessment',
+            'effective_notification_datetime': '2025-11-27T12:00:00Z',
+            'determination_publication_date': '2026-07-01T12:00:00Z',
+            'end_of_determination_period': '2026-07-02T12:00:00Z',
+            'page_modified_datetime': '2026-01-01T12:00:00Z',
+            'anzsic_codes': [],
+            'acquirers': [],
+            'targets': [],
+            'other_parties': [],
+            'url': 'https://example.com/MN-7777',
+            'events': [{'title': 'Phase 2 determination', 'date': '2026-07-01T12:00:00Z'}],
+        }
+        enriched = [enrich_merger(merger)]
+        link_tribunal_appeals(enriched, {
+            'MN-7777': {
+                'tribunal_number': 'ACT 1 of 2026',
+                'tribunal_url': 'https://www.competitiontribunal.gov.au/current-matters/act-1-of-2026',
+                'appeal_type': 'party_denial',
+                'appellant': 'Coles',
+                'status': status,
+                'outcome': 'affirmed' if status == 'concluded' else None,
+                'effective_determination': 'Not approved' if status == 'concluded' else None,
+                'filed_date': '2026-07-15',
+                'hearing_date': hearing_date,
+                'documents': [],
+            }
+        })
+        return enriched
+
+    def test_tribunal_hearing_surfaces_beyond_window(self):
+        # A hearing months out (past the days_ahead window) must still appear —
+        # hearings are listed far in advance and are worth flagging immediately.
+        from datetime import datetime, timedelta, timezone
+        far = (datetime.now(timezone.utc) + timedelta(days=180)).strftime('%Y-%m-%d')
+        payload = upcoming_events.generate(self._appealed_merger(far), days_ahead=60)
+        hearings = [e for e in payload['events'] if e['type'] == 'tribunal_hearing']
+        assert len(hearings) == 1
+        ev = hearings[0]
+        assert ev['merger_id'] == 'MN-7777'
+        assert ev['event_type_display'] == 'Tribunal hearing'
+        assert ev['tribunal_number'] == 'ACT 1 of 2026'
+        # Bare date is stamped at noon Z so it groups/sorts like other events.
+        assert ev['date'] == f'{far}T12:00:00Z'
+
+    def test_tribunal_hearing_excluded_when_concluded(self):
+        # A concluded appeal is no longer "under appeal" → no hearing event.
+        from datetime import datetime, timedelta, timezone
+        far = (datetime.now(timezone.utc) + timedelta(days=180)).strftime('%Y-%m-%d')
+        payload = upcoming_events.generate(
+            self._appealed_merger(far, status='concluded'), days_ahead=60
+        )
+        assert not any(e['type'] == 'tribunal_hearing' for e in payload['events'])
+
+    def test_tribunal_hearing_excluded_when_past(self):
+        from datetime import datetime, timedelta, timezone
+        past = (datetime.now(timezone.utc) - timedelta(days=5)).strftime('%Y-%m-%d')
+        payload = upcoming_events.generate(self._appealed_merger(past), days_ahead=60)
+        assert not any(e['type'] == 'tribunal_hearing' for e in payload['events'])
+
+    def test_no_hearing_date_means_no_hearing_event(self):
+        payload = upcoming_events.generate(self._appealed_merger(None), days_ahead=60)
+        assert not any(e['type'] == 'tribunal_hearing' for e in payload['events'])
+
 
 # ---------------------------------------------------------------------------
 # questionnaires

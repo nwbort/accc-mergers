@@ -53,7 +53,7 @@ function MergerEventGroup({ group, onClose, wasUnseenOnOpen }) {
           // Calendar-day count so the chip agrees with UpcomingEventsTimeline,
           // which counts day boundaries rather than full 24-hour periods.
           const daysRemaining = getCalendarDaysUntil(event.date);
-          const isUpcoming = event.type === 'consultation_due' || event.type === 'determination_due' || event.type === 'notice_of_competition_concerns';
+          const isUpcoming = event.type === 'consultation_due' || event.type === 'determination_due' || event.type === 'notice_of_competition_concerns' || event.type === 'tribunal_hearing';
           const isNew = wasUnseenOnOpen(event);
 
           return (

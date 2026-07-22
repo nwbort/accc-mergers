@@ -284,6 +284,32 @@ export function TrackingProvider({ children }) {
         const syntheticUpcomingEvents = [];
         mergers.forEach(merger => {
           if (!merger) return;
+
+          // Tribunal hearing start date for a matter under a *current* appeal.
+          // Handled before the "already determined" guards below because an
+          // appealed matter is, by definition, ACCC-determined — the hearing is
+          // a future event layered on top of that outcome. Not subject to any
+          // look-ahead window (mirrors scripts/static_data/outputs/upcoming_events.py).
+          if (merger.under_appeal && merger.appeal && merger.appeal.hearing_date) {
+            const hearingDate = new Date(merger.appeal.hearing_date);
+            if (hearingDate > now) {
+              syntheticUpcomingEvents.push({
+                type: 'tribunal_hearing',
+                event_type_display: 'Tribunal hearing',
+                display_title: 'Tribunal hearing',
+                title: 'Tribunal hearing',
+                date: merger.appeal.hearing_date,
+                merger_id: merger.merger_id,
+                merger_name: merger.merger_name,
+                status: merger.status,
+                stage: merger.stage,
+                effective_notification_datetime: merger.effective_notification_datetime,
+                is_waiver: merger.is_waiver,
+                tribunal_number: merger.appeal.tribunal_number,
+              });
+            }
+          }
+
           // Skip if already determined, a waiver, or assessment is no longer active.
           // Check accc_determination as well as the date: the register sometimes
           // publishes the outcome before the publication-date field is scraped,
