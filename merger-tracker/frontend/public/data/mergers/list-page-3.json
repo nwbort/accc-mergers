@@ -380,15 +380,6 @@
       ],
       "targets": [
         {
-          "name": "RACI PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "40 008 671 805",
-          "party_page": {
-            "id": "raci-pty-limited",
-            "name": "Raci Pty Limited"
-          }
-        },
-        {
           "name": "RAC INSURANCE PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "59 094 685 882",
@@ -396,18 +387,18 @@
             "id": "rac-insurance-pty-limited",
             "name": "Rac Insurance Pty Limited"
           }
+        },
+        {
+          "name": "RACI PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "40 008 671 805",
+          "party_page": {
+            "id": "raci-pty-limited",
+            "name": "Raci Pty Limited"
+          }
         }
       ],
       "other_parties": [
-        {
-          "name": "THE ROYAL AUTOMOBILE CLUB OF WA INC",
-          "identifier_type": "ABN",
-          "identifier": "33 212 133 120",
-          "party_page": {
-            "id": "the-royal-automobile-club-of-wa-inc",
-            "name": "The Royal Automobile Club Of Wa Inc"
-          }
-        },
         {
           "name": "RACWA HOLDINGS PTY LTD",
           "identifier_type": "ABN",
@@ -415,6 +406,15 @@
           "party_page": {
             "id": "racwa-holdings-pty-ltd",
             "name": "Racwa Holdings Pty Ltd"
+          }
+        },
+        {
+          "name": "THE ROYAL AUTOMOBILE CLUB OF WA INC",
+          "identifier_type": "ABN",
+          "identifier": "33 212 133 120",
+          "party_page": {
+            "id": "the-royal-automobile-club-of-wa-inc",
+            "name": "The Royal Automobile Club Of Wa Inc"
           }
         }
       ],
