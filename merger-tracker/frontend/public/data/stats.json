@@ -1,6 +1,6 @@
 {
   "total_mergers": 185,
-  "total_waivers": 283,
+  "total_waivers": 284,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 140,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 269,
+    "Approved": 270,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,10 +42,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.597173144876326,
-    "median_days": 18,
-    "average_business_days": 12.39929328621908,
-    "median_business_days": 12
+    "average_days": 18.619718309859156,
+    "median_days": 18.0,
+    "average_business_days": 12.419014084507042,
+    "median_business_days": 12.0
   },
   "top_industries": [
     {
@@ -218,6 +218,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-01110",
+      "merger_name": "KKR - FYihealth group",
+      "determination": "Approved",
+      "determination_date": "2026-07-22T12:00:00Z",
+      "page_modified_datetime": "2026-07-22T16:37:26+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-75027",
       "merger_name": "SLB \u2013 S&P Global\u2019s Geoscience Software Portfolio",
       "determination": "Approved",
@@ -323,16 +333,6 @@
       "determination": "Approved",
       "determination_date": "2026-07-17T12:00:00Z",
       "page_modified_datetime": "2026-07-17T16:40:57+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-95031",
-      "merger_name": "IFM Fiduciary \u2013 PM Fresh",
-      "determination": "Approved",
-      "determination_date": "2026-07-17T12:00:00Z",
-      "page_modified_datetime": "2026-07-17T16:39:37+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

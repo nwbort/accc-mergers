@@ -30,7 +30,7 @@
       "code": "8532",
       "name": "Optometry and Optical Dispensing",
       "level": "class",
-      "merger_count": 2
+      "merger_count": 3
     },
     {
       "code": "8533",
@@ -62,6 +62,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-13T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-01110",
+      "merger_name": "KKR - FYihealth group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-06-27T12:00:00Z",
+      "determination_date": "2026-07-22T12:00:00Z"
     },
     {
       "merger_id": "WA-15029",
@@ -196,10 +207,10 @@
       "determination_date": "2026-02-26T12:00:00Z"
     }
   ],
-  "count": 13,
+  "count": 14,
   "phase_1_count": 4,
   "phase_2_count": 0,
-  "waiver_count": 9,
+  "waiver_count": 10,
   "active_count": 1,
   "phase_duration": {
     "average_days": 26.0,
@@ -209,10 +220,10 @@
     "completed_count": 3
   },
   "waiver_duration": {
-    "average_days": 17.11111111111111,
-    "median_days": 15,
-    "average_business_days": 11.777777777777779,
-    "median_business_days": 11,
-    "completed_count": 9
+    "average_days": 17.9,
+    "median_days": 17.0,
+    "average_business_days": 12.4,
+    "median_business_days": 12.0,
+    "completed_count": 10
   }
 }

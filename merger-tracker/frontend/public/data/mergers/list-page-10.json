@@ -1,6 +1,125 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-75029",
+      "merger_name": "Analogic - Leidos SES business",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-08T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-08-19T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "AHP-ANLG IV, LLC",
+          "identifier_type": null,
+          "identifier": "EFN  6840942",
+          "party_page": {
+            "id": "ahp-anlg-iv-llc",
+            "name": "Ahp-Anlg Iv, Llc"
+          }
+        },
+        {
+          "name": "Analogic Corporation",
+          "identifier_type": null,
+          "identifier": "EFN  5450449",
+          "party_page": {
+            "id": "analogic-corporation",
+            "name": "Analogic Corporation"
+          }
+        },
+        {
+          "name": "Leidos, Inc.",
+          "identifier_type": null,
+          "identifier": "EFN  901386",
+          "canonical": {
+            "id": "leidos-inc",
+            "name": "Leidos, Inc."
+          },
+          "party_page": {
+            "id": "leidos-inc",
+            "name": "Leidos, Inc."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "ANLG Holding Company, Inc.",
+          "identifier_type": null,
+          "identifier": "EFN  6831336",
+          "party_page": {
+            "id": "anlg-holding-company-inc",
+            "name": "ANLG Holding Company, Inc."
+          }
+        },
+        {
+          "name": "LSD&A, Inc.",
+          "identifier_type": null,
+          "identifier": "Charter ID  2663695",
+          "party_page": {
+            "id": "lsd-a-inc",
+            "name": "LSD&A, Inc."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Altaris Partners, LLC",
+          "identifier_type": null,
+          "identifier": "EFN  4261614",
+          "party_page": {
+            "id": "altaris-partners-llc",
+            "name": "Altaris Partners, LLC"
+          }
+        },
+        {
+          "name": "ANLG Intermediate Company, LLC",
+          "identifier_type": null,
+          "identifier": "EFN  6831160",
+          "party_page": {
+            "id": "anlg-intermediate-company-llc",
+            "name": "ANLG Intermediate Company, LLC"
+          }
+        },
+        {
+          "name": "Leidos Holdings, Inc.",
+          "identifier_type": null,
+          "identifier": "EFN  4014717",
+          "canonical": {
+            "id": "leidos-inc",
+            "name": "Leidos, Inc."
+          },
+          "party_page": {
+            "id": "leidos-inc",
+            "name": "Leidos, Inc."
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2469",
+          "name": "Other Specialised Machinery and Equipment Manufacturing"
+        },
+        {
+          "code": "3499",
+          "name": "Other Machinery and Equipment Wholesaling n.e.c."
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "9422",
+          "name": "Electronic (except Domestic Appliance) and Precision Equipment Repair and Maintenance"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/analogic-leidos-ses-business"
+    },
+    {
       "merger_id": "WA-25036",
       "merger_name": "L Catterton Europe \u2013 HYROX",
       "status": "Assessment completed",

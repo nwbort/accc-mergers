@@ -15,7 +15,7 @@
       "code": "85",
       "name": "Medical and Other Health Care Services",
       "level": "subdivision",
-      "merger_count": 21
+      "merger_count": 22
     },
     {
       "code": "86",
@@ -85,6 +85,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-06-16T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-01110",
+      "merger_name": "KKR - FYihealth group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-06-27T12:00:00Z",
+      "determination_date": "2026-07-22T12:00:00Z"
     },
     {
       "merger_id": "WA-15029",
@@ -406,10 +417,10 @@
       "determination_date": "2026-02-10T12:00:00Z"
     }
   ],
-  "count": 34,
+  "count": 35,
   "phase_1_count": 15,
   "phase_2_count": 0,
-  "waiver_count": 19,
+  "waiver_count": 20,
   "active_count": 5,
   "phase_duration": {
     "average_days": 24.7,
@@ -419,10 +430,10 @@
     "completed_count": 10
   },
   "waiver_duration": {
-    "average_days": 16.31578947368421,
-    "median_days": 15,
-    "average_business_days": 10.736842105263158,
-    "median_business_days": 11,
-    "completed_count": 19
+    "average_days": 16.75,
+    "median_days": 15.5,
+    "average_business_days": 11.1,
+    "median_business_days": 11.0,
+    "completed_count": 20
   }
 }
