@@ -478,16 +478,21 @@
       ],
       "targets": [
         {
-          "name": "WAKELING HOLDINGS PTY LTD",
+          "name": "HURRIKAYNE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "41 160 814 040",
-          "canonical": {
-            "id": "wakeling-motos",
-            "name": "Wakeling Motos"
-          },
+          "identifier": "74 118 744 915",
           "party_page": {
-            "id": "wakeling-motos",
-            "name": "Wakeling Motos"
+            "id": "hurrikayne-pty-ltd",
+            "name": "Hurrikayne Pty Ltd"
+          }
+        },
+        {
+          "name": "WOLLONGONG CITY MOTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "22 002 019 598",
+          "party_page": {
+            "id": "wollongong-city-motors-pty-ltd",
+            "name": "Wollongong City Motors Pty Ltd"
           }
         },
         {
@@ -530,12 +535,16 @@
           }
         },
         {
-          "name": "HURRIKAYNE PTY LTD",
+          "name": "WAKELING HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "74 118 744 915",
+          "identifier": "41 160 814 040",
+          "canonical": {
+            "id": "wakeling-motos",
+            "name": "Wakeling Motos"
+          },
           "party_page": {
-            "id": "hurrikayne-pty-ltd",
-            "name": "Hurrikayne Pty Ltd"
+            "id": "wakeling-motos",
+            "name": "Wakeling Motos"
           }
         },
         {
@@ -545,15 +554,6 @@
           "party_page": {
             "id": "paul-burgess-nominees-pty-ltd-as-trustee-for-paul-burgess-trust",
             "name": "Paul Burgess Nominees Pty Ltd as trustee for Paul Burgess Trust"
-          }
-        },
-        {
-          "name": "WOLLONGONG CITY MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "22 002 019 598",
-          "party_page": {
-            "id": "wollongong-city-motors-pty-ltd",
-            "name": "Wollongong City Motors Pty Ltd"
           }
         }
       ],
