@@ -19,7 +19,7 @@
       "code": "731",
       "name": "Building Cleaning, Pest Control and Gardening Services",
       "level": "group",
-      "merger_count": 0
+      "merger_count": 1
     },
     {
       "code": "732",
@@ -29,6 +29,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-10021",
+      "merger_name": "Ambrose Construct Group \u2013 Major Loss Builders",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-22T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "WA-10008",
       "merger_name": "Premier Fresh \u2013 Charles Domenico Group",
@@ -41,11 +52,11 @@
       "determination_date": "2026-03-13T12:00:00Z"
     }
   ],
-  "count": 1,
-  "phase_1_count": 0,
+  "count": 2,
+  "phase_1_count": 1,
   "phase_2_count": 0,
   "waiver_count": 1,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": null,
   "waiver_duration": {
     "average_days": 21.0,

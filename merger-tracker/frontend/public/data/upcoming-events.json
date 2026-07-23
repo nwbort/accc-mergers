@@ -3,16 +3,6 @@
     {
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
-      "date": "2026-07-22T12:00:00Z",
-      "merger_id": "MN-15028",
-      "merger_name": "Total Drain Group - Pipe Management Australia",
-      "status": "Under assessment",
-      "stage": "Phase 1 - initial assessment",
-      "effective_notification_datetime": "2026-07-15T12:00:00Z"
-    },
-    {
-      "type": "consultation_due",
-      "event_type_display": "Consultation responses due",
       "date": "2026-07-23T12:00:00Z",
       "merger_id": "MN-30023",
       "merger_name": "UPM-Kymmene \u2013 Sappi joint venture",
@@ -116,6 +106,16 @@
       "date": "2026-07-29T12:00:00Z",
       "merger_id": "MN-65026",
       "merger_name": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-07-22T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-07-30T12:00:00Z",
+      "merger_id": "MN-10021",
+      "merger_name": "Ambrose Construct Group \u2013 Major Loss Builders",
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-07-22T12:00:00Z"
@@ -494,6 +494,16 @@
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-09-02T12:00:00Z",
+      "merger_id": "MN-10021",
+      "merger_name": "Ambrose Construct Group \u2013 Major Loss Builders",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-07-22T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-09-02T12:00:00Z",
       "merger_id": "MN-65026",
       "merger_name": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company",
       "status": "Under assessment",
@@ -522,6 +532,6 @@
       "tribunal_number": "ACT 1 of 2026"
     }
   ],
-  "count": 52,
+  "count": 53,
   "days_ahead": 60
 }

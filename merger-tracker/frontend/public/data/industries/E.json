@@ -9,7 +9,7 @@
       "code": "30",
       "name": "Building Construction",
       "level": "subdivision",
-      "merger_count": 5
+      "merger_count": 6
     },
     {
       "code": "31",
@@ -25,6 +25,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-10021",
+      "merger_name": "Ambrose Construct Group \u2013 Major Loss Builders",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-22T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-60025",
       "merger_name": "Acrow - Ausgroup Industrial Services",
@@ -422,11 +433,11 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 36,
-  "phase_1_count": 15,
+  "count": 37,
+  "phase_1_count": 16,
   "phase_2_count": 1,
   "waiver_count": 20,
-  "active_count": 7,
+  "active_count": 8,
   "phase_duration": {
     "average_days": 27.6,
     "median_days": 22.5,

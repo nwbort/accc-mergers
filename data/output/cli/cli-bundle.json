@@ -12421,6 +12421,205 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ambrose-construct-group-%E2%80%93-major-loss-builders",
+      "merger_name": "Ambrose Construct Group – Major Loss Builders",
+      "status": "Under assessment",
+      "merger_id": "MN-10021",
+      "effective_notification_datetime": "2026-07-22T12:00:00Z",
+      "original_notification_datetime": "2026-07-22T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-09-02T12:00:00Z",
+      "page_modified_datetime": "2026-07-23T11:29:49+10:00",
+      "consultation_response_due_date": "2026-07-30T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Insurance Building Australia Operations Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "80 661 826 026",
+          "party_page": {
+            "id": "insurance-building-australia-operations-pty-ltd",
+            "name": "Insurance Building Australia Operations Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Major LB Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "72 611 974 540",
+          "party_page": {
+            "id": "major-lb-pty-ltd",
+            "name": "Major LB Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3011",
+          "name": "House Construction"
+        },
+        {
+          "code": "3019",
+          "name": "Other Residential Building Construction"
+        },
+        {
+          "code": "3020",
+          "name": "Non-Residential Building Construction"
+        },
+        {
+          "code": "7311",
+          "name": "Building and Other Industrial Cleaning Services"
+        }
+      ],
+      "merger_description": "Insurance Building Australia Operations Pty Ltd (the **Acquirer**), the operating entity for Ambrose Construct Group, proposes to acquire 100% of the issued shares in Major LB Pty Ltd, the operating entity for Major Loss Builders (the **Target**).\n\nAmbrose Construct Group (**ACG**) is a national insurance repair and restoration company with a focus on services provided under insurance claims, servicing contracts directly with insurers and indirectly with insurance loss adjusters. ACG is comprised of the Ambrose Construct, Construct Services, Xtreme Clean, FEN Australia, Nexus Project Group and Abril Building Solutions and Restorations brands. ACG is majority owned by funds managed or advised by CPE Capital, an Australian private capital manager.\n\nMajor Loss Builders (**MLB**) is an insurance building specialist supplying large loss commercial and residential insurance building services in Western Australia, South Australia and the Northern Territory.\n\nBoth ACG and MLB overlap in the supply of insurance repair and restoration services for insurance claims, including business-as-usual repairs, emergency ‘make-safe’ services and associated services.",
+      "events": [
+        {
+          "date": "2026-07-23T12:00:00Z",
+          "title": "Ambrose Construct Group - Major Loss Builders - Questionnaire",
+          "display_title": "Ambrose Construct Group - Major Loss Builders - Questionnaire",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Ambrose%20Construct%20Group%20-%20Major%20Loss%20Builders%20-%20Questionnaire.docx",
+          "url_gh": "/mergers/MN-10021/Ambrose Construct Group - Major Loss Builders - Questionnaire.pdf",
+          "phase": null
+        },
+        {
+          "date": "2026-07-22T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-50020",
+          "merger_name": "Envest Group – MA Insurance Brokers",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "PSC TRANSPORT INSURANCE BROKERS PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "47 001 768 190",
+              "party_page": {
+                "id": "psc-transport-insurance-brokers-pty-ltd",
+                "name": "Psc Transport Insurance Brokers Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "MA INSURANCE BROKERS PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "14 650 784 204",
+              "party_page": {
+                "id": "ma-insurance-brokers-pty-limited",
+                "name": "Ma Insurance Brokers Pty Limited"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-30016",
+          "merger_name": "Zurich - Beazley",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Zurich Insurance Company Ltd",
+              "identifier_type": null,
+              "identifier": "",
+              "canonical": {
+                "id": "zurich-assure-australia-pty-ltd",
+                "name": "Zurich"
+              },
+              "party_page": {
+                "id": "zurich-assure-australia-pty-ltd",
+                "name": "Zurich"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Beazley plc",
+              "identifier_type": null,
+              "identifier": "",
+              "party_page": {
+                "id": "beazley-plc",
+                "name": "Beazley plc"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-10006",
+          "merger_name": "Australian Venue Co. – four licensed venues in metropolitan Sydney (Public House Petersham, The Erko, The Golden Sheaf and Barangaroo House)",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "AVC Operations Pty Limited",
+              "identifier_type": "ABN",
+              "identifier": "81 607 832 299",
+              "canonical": {
+                "id": "australian-venue-co",
+                "name": "Australian Venue Co"
+              },
+              "party_page": {
+                "id": "australian-venue-co",
+                "name": "Australian Venue Co"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
+              "identifier_type": "ABN",
+              "identifier": "70 075 074 930",
+              "party_page": {
+                "id": "sherilyn-pty-limited-as-trustee-for-solotrust-unit-trust",
+                "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust"
+              }
+            },
+            {
+              "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust",
+              "identifier_type": "ACN",
+              "identifier": "604 221 801",
+              "party_page": {
+                "id": "barangaroo-pty-limited-as-trustee-for-barangaroo-trust",
+                "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust"
+              }
+            }
+          ]
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 16,
+        "range_business_days": [
+          15,
+          19
+        ],
+        "basis": "industry",
+        "anzsic_level": "division",
+        "anzsic_codes": [
+          "E",
+          "N"
+        ],
+        "sample_size": 12,
+        "estimated_at": "2026-07-23",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/google-wiz",
       "merger_name": "Google - Wiz",
       "status": "Assessment completed",
@@ -121470,6 +121669,30 @@
       ],
       "questions_count": 3
     },
+    "MN-10021": {
+      "deadline": "30 July 2026",
+      "deadline_iso": "2026-07-30",
+      "file_name": "Ambrose Construct Group - Major Loss Builders - Questionnaire.pdf",
+      "questions": [
+        {
+          "number": 1,
+          "text": "Outline any concerns regarding the impact of the Acquisition on competition, including if Ambrose Construct Group and Major Loss Builders are close competitors and there are not many alternatives or if one is a major supplier to competitors of the other."
+        },
+        {
+          "number": 2,
+          "text": "Provide any additional information or comments that you consider relevant to the ACCC’s assessment of the Acquisition."
+        },
+        {
+          "number": 3,
+          "text": "Provide any additional information or comments on any barriers that might exist for general construction, repair or building companies to provide services to insurers or insurance loss adjusters."
+        },
+        {
+          "number": 4,
+          "text": "Provide a brief description of your business or organisation, including any commercial relationships with Ambrose Construct Group and/or Major Loss Builders."
+        }
+      ],
+      "questions_count": 4
+    },
     "MN-15002": {
       "deadline": "23 January 2026",
       "deadline_iso": "2026-01-23",
@@ -129143,12 +129366,12 @@
     }
   },
   "stats": {
-    "total_mergers": 186,
+    "total_mergers": 187,
     "total_waivers": 285,
     "total_conditional_approvals": 1,
     "by_status": {
       "Assessment completed": 142,
-      "Under assessment": 41,
+      "Under assessment": 42,
       "Assessment ceased": 3
     },
     "by_determination": {
@@ -129234,6 +129457,16 @@
       }
     ],
     "recent_mergers": [
+      {
+        "merger_id": "MN-10021",
+        "merger_name": "Ambrose Construct Group – Major Loss Builders",
+        "status": "Under assessment",
+        "accc_determination": null,
+        "effective_notification_datetime": "2026-07-22T12:00:00Z",
+        "page_modified_datetime": "2026-07-23T11:29:49+10:00",
+        "is_waiver": false,
+        "is_refiled": false
+      },
       {
         "merger_id": "MN-65026",
         "merger_name": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company",
@@ -129348,16 +129581,6 @@
         "page_modified_datetime": "2026-07-16T17:05:46+10:00",
         "is_waiver": false,
         "is_refiled": false
-      },
-      {
-        "merger_id": "MN-40029",
-        "merger_name": "Laundy – Woy Woy Hotel",
-        "status": "Under assessment",
-        "accc_determination": null,
-        "effective_notification_datetime": "2026-07-15T12:00:00Z",
-        "page_modified_datetime": "2026-07-16T09:30:16+10:00",
-        "is_waiver": false,
-        "is_refiled": true
       }
     ],
     "recent_determinations": [
@@ -129666,6 +129889,11 @@
         "merger_count": 6
       },
       {
+        "code": "3020",
+        "name": "Non-Residential Building Construction",
+        "merger_count": 6
+      },
+      {
         "code": "3491",
         "name": "Professional and Scientific Goods Wholesaling",
         "merger_count": 6
@@ -129751,11 +129979,6 @@
         "merger_count": 5
       },
       {
-        "code": "3020",
-        "name": "Non-Residential Building Construction",
-        "merger_count": 5
-      },
-      {
         "code": "6932",
         "name": "Accounting Services",
         "merger_count": 5
@@ -129798,6 +130021,11 @@
       {
         "code": "5299",
         "name": "Other Transport Support Services n.e.c.",
+        "merger_count": 4
+      },
+      {
+        "code": "3019",
+        "name": "Other Residential Building Construction",
         "merger_count": 4
       },
       {
@@ -130078,11 +130306,6 @@
       {
         "code": "2299",
         "name": "Other Fabricated Metal Product Manufacturing n.e.c.",
-        "merger_count": 3
-      },
-      {
-        "code": "3019",
-        "name": "Other Residential Building Construction",
         "merger_count": 3
       },
       {
@@ -130433,6 +130656,16 @@
       {
         "code": "4231",
         "name": "Hardware and Building Supplies Retailing",
+        "merger_count": 1
+      },
+      {
+        "code": "3011",
+        "name": "House Construction",
+        "merger_count": 1
+      },
+      {
+        "code": "7311",
+        "name": "Building and Other Industrial Cleaning Services",
         "merger_count": 1
       },
       {
@@ -130871,7 +131104,7 @@
         "merger_count": 1
       }
     ],
-    "total_mergers": 471,
-    "total_industries": 277
+    "total_mergers": 472,
+    "total_industries": 279
   }
 }

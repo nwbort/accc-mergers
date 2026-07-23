@@ -634,6 +634,22 @@
     "estimated_at": "2026-07-17",
     "method_version": 1
   },
+  "MN-10021": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "industry",
+    "anzsic_level": "division",
+    "anzsic_codes": [
+      "E",
+      "N"
+    ],
+    "sample_size": 12,
+    "estimated_at": "2026-07-23",
+    "method_version": 1
+  },
   "MN-15002": {
     "expected_business_days": 18,
     "range_business_days": [
