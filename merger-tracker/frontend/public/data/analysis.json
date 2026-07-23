@@ -102,6 +102,11 @@
         "in_progress": false
       },
       {
+        "business_days": 24,
+        "calendar_days": 34,
+        "in_progress": false
+      },
+      {
         "business_days": 19,
         "calendar_days": 27,
         "in_progress": false
@@ -748,18 +753,18 @@
       }
     ],
     "stats": {
-      "average": 19.5,
-      "median": 17,
+      "average": 19.6,
+      "median": 17.0,
       "min": 15,
       "max": 59,
-      "count": 149
+      "count": 150
     },
     "calendar_stats": {
       "average": 29.6,
-      "median": 26,
+      "median": 26.0,
       "min": 21,
       "max": 103,
-      "count": 149
+      "count": 150
     }
   },
   "waiver_duration": {
@@ -2118,21 +2123,21 @@
     {
       "code": "Q",
       "name": "Health Care and Social Assistance",
-      "average_business_days": 15.9,
-      "median_business_days": 15,
-      "average_calendar_days": 24.5,
-      "median_calendar_days": 24,
-      "count": 11
+      "average_business_days": 16.6,
+      "median_business_days": 15.0,
+      "average_calendar_days": 25.3,
+      "median_calendar_days": 24.5,
+      "count": 12
     }
   ],
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 318,
+      "count": 319,
       "outcome_mix": {
-        "Approved": 318
+        "Approved": 319
       },
-      "median_phase_1_business_days": 16.0
+      "median_phase_1_business_days": 16
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -2146,9 +2151,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 39,
+      "count": 38,
       "outcome_mix": {
-        "Unknown": 39
+        "Unknown": 38
       },
       "median_phase_1_business_days": 36.5
     },
@@ -2189,7 +2194,7 @@
       "20": 6,
       "21": 3,
       "22": 5,
-      "24": 2,
+      "24": 3,
       "25": 3,
       "26": 1,
       "27": 2,
@@ -2201,10 +2206,10 @@
       "4": 1
     },
     "stats": {
-      "mean_used_bd": 17.8,
-      "median_used_bd": 17.0,
+      "mean_used_bd": 17.9,
+      "median_used_bd": 17,
       "pct_decided_final_3_bd": 3.6,
-      "count": 138
+      "count": 139
     },
     "extended_count": 3
   },
@@ -2353,10 +2358,10 @@
     {
       "code": "Q",
       "name": "Health Care and Social Assistance",
-      "approved": 11,
+      "approved": 12,
       "not_approved": 0,
       "referred": 0,
-      "in_progress": 4,
+      "in_progress": 3,
       "phase2_referral_rate": 0.0
     },
     {
