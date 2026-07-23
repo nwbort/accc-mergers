@@ -1027,15 +1027,6 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "Sappi Limited",
-          "identifier_type": null,
-          "identifier": "Registration number  1936/008963/06",
-          "party_page": {
-            "id": "sappi-limited",
-            "name": "Sappi Limited"
-          }
-        },
-        {
           "name": "UPM-Kymmene Corporation",
           "identifier_type": null,
           "identifier": "Finnish Business ID  10410900",
@@ -1046,6 +1037,15 @@
           "party_page": {
             "id": "upm-kymmene-pty-ltd",
             "name": "Upm-Kymmene Pty Ltd"
+          }
+        },
+        {
+          "name": "Sappi Limited",
+          "identifier_type": null,
+          "identifier": "Registration number  1936/008963/06",
+          "party_page": {
+            "id": "sappi-limited",
+            "name": "Sappi Limited"
           }
         }
       ],
@@ -1071,6 +1071,15 @@
           }
         },
         {
+          "name": "UPM Communication Papers Oy",
+          "identifier_type": null,
+          "identifier": "27606416",
+          "party_page": {
+            "id": "upm-communication-papers-oy",
+            "name": "UPM Communication Papers Oy"
+          }
+        },
+        {
           "name": "UPM-KYMMENE PTY LTD",
           "identifier_type": "ABN",
           "identifier": "99 001 255 661",
@@ -1081,15 +1090,6 @@
           "party_page": {
             "id": "upm-kymmene-pty-ltd",
             "name": "Upm-Kymmene Pty Ltd"
-          }
-        },
-        {
-          "name": "UPM Communication Papers Oy",
-          "identifier_type": null,
-          "identifier": "27606416",
-          "party_page": {
-            "id": "upm-communication-papers-oy",
-            "name": "UPM Communication Papers Oy"
           }
         }
       ],
