@@ -24,16 +24,27 @@
       "code": "7211",
       "name": "Employment Placement and Recruitment Services",
       "level": "class",
-      "merger_count": 3
+      "merger_count": 4
     },
     {
       "code": "7212",
       "name": "Labour Supply Services",
       "level": "class",
-      "merger_count": 3
+      "merger_count": 4
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-25039",
+      "merger_name": "Tasmea \u2013 JPS Holdings",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-03T12:00:00Z",
+      "determination_date": "2026-07-24T12:00:00Z"
+    },
     {
       "merger_id": "WA-95029",
       "merger_name": "Blackstone \u2013 Acacium Group",
@@ -90,17 +101,17 @@
       "determination_date": "2026-05-04T12:00:00Z"
     }
   ],
-  "count": 5,
+  "count": 6,
   "phase_1_count": 0,
   "phase_2_count": 0,
-  "waiver_count": 5,
+  "waiver_count": 6,
   "active_count": 0,
   "phase_duration": null,
   "waiver_duration": {
-    "average_days": 19.4,
-    "median_days": 17,
-    "average_business_days": 13.0,
-    "median_business_days": 12,
-    "completed_count": 5
+    "average_days": 19.666666666666668,
+    "median_days": 19.0,
+    "average_business_days": 13.333333333333334,
+    "median_business_days": 13.5,
+    "completed_count": 6
   }
 }

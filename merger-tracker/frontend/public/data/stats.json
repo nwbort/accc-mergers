@@ -1,6 +1,6 @@
 {
   "total_mergers": 189,
-  "total_waivers": 285,
+  "total_waivers": 286,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 144,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 271,
+    "Approved": 272,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,10 +42,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.649122807017545,
-    "median_days": 18,
-    "average_business_days": 12.442105263157895,
-    "median_business_days": 12
+    "average_days": 18.657342657342657,
+    "median_days": 18.0,
+    "average_business_days": 12.451048951048952,
+    "median_business_days": 12.0
   },
   "top_industries": [
     {
@@ -77,15 +77,15 @@
       "count": 17
     },
     {
+      "name": "Engineering Design and Engineering Consulting Services",
+      "count": 15
+    },
+    {
       "name": "Supermarket and Grocery Stores",
       "count": 14
     },
     {
       "name": "Liquor Retailing",
-      "count": 14
-    },
-    {
-      "name": "Engineering Design and Engineering Consulting Services",
       "count": 14
     }
   ],
@@ -218,6 +218,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-25039",
+      "merger_name": "Tasmea \u2013 JPS Holdings",
+      "determination": "Approved",
+      "determination_date": "2026-07-24T12:00:00Z",
+      "page_modified_datetime": "2026-07-24T16:55:28+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-01104",
       "merger_name": "Genea - Care Fertility Greenslopes",
       "determination": "Approved",
@@ -323,16 +333,6 @@
       "determination": "Approved",
       "determination_date": "2026-07-21T12:00:00Z",
       "page_modified_datetime": "2026-07-21T16:34:55+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-25036",
-      "merger_name": "L Catterton Europe \u2013 HYROX",
-      "determination": "Approved",
-      "determination_date": "2026-07-21T12:00:00Z",
-      "page_modified_datetime": "2026-07-21T16:34:19+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
