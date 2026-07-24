@@ -389,31 +389,47 @@ def _content_root(soup: BeautifulSoup):
     return soup
 
 
-def _header_field_map(table) -> dict[int, str]:
-    """Map column index → document field name from a table's header row."""
-    header_cells = table.select("thead th")
-    if not header_cells:
-        first_row = table.find("tr")
-        if first_row is not None:
-            header_cells = first_row.find_all(["th", "td"])
+def _header_row(table):
+    """Return the row whose cells are the column headers.
+
+    Prefers an explicit ``<thead>`` row; otherwise the table's first ``<tr>``,
+    which on the tribunal site lives inside ``<tbody>`` (there's no separate
+    ``<thead>``). Returned so the caller can both read the header for column
+    mapping and exclude that exact row from the data rows.
+    """
+    thead = table.find("thead")
+    if thead is not None:
+        tr = thead.find("tr")
+        if tr is not None:
+            return tr
+    return table.find("tr")
+
+
+def _header_field_map(table) -> tuple[dict[int, str], object]:
+    """Return (column index → document field name, header row element)."""
+    header_row = _header_row(table)
     field_map: dict[int, str] = {}
-    for idx, cell in enumerate(header_cells):
+    if header_row is None:
+        return field_map, None
+    for idx, cell in enumerate(header_row.find_all(["th", "td"])):
         header = " ".join(cell.get_text(" ", strip=True).split()).lower()
         for field, keyword in _COLUMN_KEYWORDS:
             if keyword in header and idx not in field_map:
                 field_map[idx] = field
                 break
-    return field_map
+    return field_map, header_row
 
 
-def _body_rows(table):
-    """Yield the data rows of a table (skipping the header row if there's no tbody)."""
+def _body_rows(table, header_row=None):
+    """Yield a table's data rows, excluding the header row.
+
+    The header row is excluded by identity, which matters on the tribunal site:
+    its header row sits inside ``<tbody>`` (no ``<thead>``), so a naive "all
+    tbody rows" would return the header as a bogus data row.
+    """
     body = table.find("tbody")
-    if body is not None:
-        return body.find_all("tr")
-    rows = table.find_all("tr")
-    # No explicit tbody: assume the first row was the header.
-    return rows[1:] if rows else []
+    rows = body.find_all("tr") if body is not None else table.find_all("tr")
+    return [row for row in rows if row is not header_row]
 
 
 def parse_document_row(row, field_map: dict[int, str], base_url: str) -> dict | None:
@@ -475,12 +491,12 @@ def parse_matter_page(html: str, base_url: str) -> list[dict]:
         section = None if table_index == 0 else current_section
         table_index += 1
 
-        field_map = _header_field_map(node)
+        field_map, header_row = _header_field_map(node)
         if not field_map:
             # Not a recognisable document table (no matching headers); skip it.
             continue
 
-        for row in _body_rows(node):
+        for row in _body_rows(node, header_row):
             doc = parse_document_row(row, field_map, base_url)
             if doc is None:
                 continue

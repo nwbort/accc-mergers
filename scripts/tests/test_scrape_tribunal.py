@@ -53,6 +53,32 @@ class TestParseMatterPageSingleTable:
         # The first (main) table's documents carry no section.
         assert 'section' not in doc
 
+    def test_header_row_inside_tbody_is_not_parsed_as_document(self):
+        # The live tribunal table has no <thead>: its header row sits inside
+        # <tbody> as the first <tr>. That row must drive column mapping without
+        # also being returned as a bogus "Date filed / Description" document.
+        html = """
+        <main>
+          <table class="table-bordered">
+            <tbody>
+              <tr>
+                <th>Date filed</th><th>Filed by</th>
+                <th>Document</th><th>Confidentiality</th>
+              </tr>
+              <tr>
+                <td>21 July 2026</td><td>-</td>
+                <td><a href="/x/Directions.pdf">Directions</a></td>
+                <td>Non-confidential</td>
+              </tr>
+            </tbody>
+          </table>
+        </main>
+        """
+        docs = scrape_tribunal.parse_matter_page(html, BASE_URL)
+        assert len(docs) == 1
+        assert docs[0]['description'] == 'Directions'
+        assert docs[0]['date'] == '2026-07-21'
+
     def test_reordered_columns_still_matched(self):
         # Column order varies across matter pages; matching is by header text.
         html = """
