@@ -1,6 +1,6 @@
 {
   "total_mergers": 189,
-  "total_waivers": 286,
+  "total_waivers": 287,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 144,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 272,
+    "Approved": 273,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,10 +42,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.657342657342657,
-    "median_days": 18.0,
-    "average_business_days": 12.451048951048952,
-    "median_business_days": 12.0
+    "average_days": 18.665505226480835,
+    "median_days": 18,
+    "average_business_days": 12.45993031358885,
+    "median_business_days": 12
   },
   "top_industries": [
     {
@@ -218,6 +218,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-85037",
+      "merger_name": "Tata Motors - Iveco",
+      "determination": "Approved",
+      "determination_date": "2026-07-24T12:00:00Z",
+      "page_modified_datetime": "2026-07-24T16:56:50+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-25039",
       "merger_name": "Tasmea \u2013 JPS Holdings",
       "determination": "Approved",
@@ -323,16 +333,6 @@
       "determination": "Approved",
       "determination_date": "2026-07-21T12:00:00Z",
       "page_modified_datetime": "2026-07-21T16:36:12+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-30024",
-      "merger_name": "Centerbridge Partners \u2013 Ebury Partners Limited",
-      "determination": "Approved",
-      "determination_date": "2026-07-21T12:00:00Z",
-      "page_modified_datetime": "2026-07-21T16:34:55+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

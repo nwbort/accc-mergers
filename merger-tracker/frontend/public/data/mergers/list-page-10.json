@@ -1,6 +1,63 @@
 {
   "mergers": [
     {
+      "merger_id": "WA-85037",
+      "merger_name": "Tata Motors - Iveco",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-03T12:00:00Z",
+      "determination_publication_date": "2026-07-24T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "TML CV Holdings B.V.",
+          "identifier_type": null,
+          "identifier": "868490945",
+          "party_page": {
+            "id": "tml-cv-holdings-b-v",
+            "name": "TML CV Holdings B.V."
+          }
+        },
+        {
+          "name": "Tata Motors Limited",
+          "identifier_type": null,
+          "identifier": "U29102MH2024PLC427506",
+          "party_page": {
+            "id": "tata-motors-limited",
+            "name": "Tata Motors Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Iveco Group N.V.",
+          "identifier_type": null,
+          "identifier": "KVK 83102701",
+          "party_page": {
+            "id": "iveco-group-n-v",
+            "name": "Iveco Group N.V."
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "2311",
+          "name": "Motor Vehicle Manufacturing"
+        },
+        {
+          "code": "3502",
+          "name": "Commercial Vehicle Wholesaling"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/tata-motors-iveco"
+    },
+    {
       "merger_id": "MN-30022",
       "merger_name": "VSA - SprayLine",
       "status": "Under assessment",
