@@ -35834,7 +35834,7 @@
       "original_notification_datetime": "2026-07-16T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-08-27T12:00:00Z",
-      "page_modified_datetime": "2026-07-17T10:32:27+10:00",
+      "page_modified_datetime": "2026-07-24T17:29:34+10:00",
       "consultation_response_due_date": "2026-07-24T12:00:00Z",
       "acquirers": [
         {
@@ -45344,13 +45344,16 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/allianz-%E2%80%93-certain-assets-of-nib%E2%80%99s-australian-travel-insurance-business",
       "merger_name": "Allianz – certain assets of nib’s Australian travel insurance business",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-80024",
       "effective_notification_datetime": "2026-07-03T12:00:00Z",
       "original_notification_datetime": "2026-07-03T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-08-14T12:00:00Z",
-      "page_modified_datetime": "2026-07-03T16:44:06+10:00",
+      "determination_publication_date": "2026-07-24T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-07-24T17:07:29+10:00",
       "consultation_response_due_date": "2026-07-10T12:00:00Z",
       "acquirers": [
         {
@@ -45384,48 +45387,9 @@
       ],
       "other_parties": [
         {
-          "name": "Suresave Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "82 137 885 262",
-          "canonical": {
-            "id": "nib",
-            "name": "nib"
-          },
-          "party_page": {
-            "id": "nib",
-            "name": "nib"
-          }
-        },
-        {
-          "name": "nib Travel Services (Australia) Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "81 115 932 173",
-          "canonical": {
-            "id": "nib",
-            "name": "nib"
-          },
-          "party_page": {
-            "id": "nib",
-            "name": "nib"
-          }
-        },
-        {
           "name": "nib Travel Insurance Distribution Pty Ltd",
           "identifier_type": "ABN",
           "identifier": "40 129 262 175",
-          "canonical": {
-            "id": "nib",
-            "name": "nib"
-          },
-          "party_page": {
-            "id": "nib",
-            "name": "nib"
-          }
-        },
-        {
-          "name": "nib International Assistance Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "72 164 763 884",
           "canonical": {
             "id": "nib",
             "name": "nib"
@@ -45449,6 +45413,19 @@
           }
         },
         {
+          "name": "Suresave Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "82 137 885 262",
+          "canonical": {
+            "id": "nib",
+            "name": "nib"
+          },
+          "party_page": {
+            "id": "nib",
+            "name": "nib"
+          }
+        },
+        {
           "name": "nib Holdings Ltd",
           "identifier_type": "ABN",
           "identifier": "51 125 633 856",
@@ -45462,9 +45439,35 @@
           }
         },
         {
+          "name": "nib Travel Services (Australia) Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "81 115 932 173",
+          "canonical": {
+            "id": "nib",
+            "name": "nib"
+          },
+          "party_page": {
+            "id": "nib",
+            "name": "nib"
+          }
+        },
+        {
           "name": "Travel Insurance Direct Pty Ltd",
           "identifier_type": "ABN",
           "identifier": "30 121 659 470",
+          "canonical": {
+            "id": "nib",
+            "name": "nib"
+          },
+          "party_page": {
+            "id": "nib",
+            "name": "nib"
+          }
+        },
+        {
+          "name": "nib International Assistance Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "72 164 763 884",
           "canonical": {
             "id": "nib",
             "name": "nib"
@@ -45496,13 +45499,48 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-07-24T12:00:00Z",
+          "title": "Allianz - certain assets of nib’s Australian travel insurance business - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Allianz%20-%20certain%20assets%20of%20nib%E2%80%99s%20Australian%20travel%20insurance%20business%20-%20Phase%201%20determination.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "AWP Australia Pty Ltd (AWP), trading as Allianz Global Assistance, proposes to acquire certain assets of the travel insurance distribution portfolio of nib Travel Pty Limited (nib). The assets to be acquired are limited to specified intellectual property rights, the benefit of a portion of nib’s existing intermediary contracts, and a small number of nib travel insurance sales employees, excluding nib’s World Nomads travel insurance business (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has determined under section 51ABZE(1) of the Competition and Consumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, AWP, is part of the Allianz Group (Allianz), a global insurance provider whose holding company, Allianz SE, is based in Germany. AWP issues travel insurance products underwritten by Allianz Australia Insurance Limited. nib is part of the nib Group, a general insurance provider operating in Australia and New Zealand. nib Group primarily supplies health insurance. It also manages and distributes travel insurance policies in Australia under different brands, which are underwritten by Pacific International Insurance.\n\nAWP and a nib Group entity also propose to enter into a distribution agreement as part of the transaction. This agreement will enable nib Group to continue distributing white-labelled Allianz travel insurance products to its health insurance customers as an authorised representative of AWP."
+            },
+            {
+              "item": "Overlap and relationship between the parties",
+              "details": "AWP and nib overlap in the supply of travel insurance products."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition and Consumer Commission (ACCC) undertakes a competition assessment and considers whether it is appropriate for an acquisition to be approved or subject to further assessment in Phase 2 in accordance with section 51ABZJ of the Competition and Consumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have regard to the object of the Act and all relevant matters, including the interests of consumers.\n\nFor more information about the ACCC’s approach to considering notified acquisitions, see the ACCC’s merger assessment guidelines and interim merger process guidelines.\n\nIn conducting its competition assessment, the ACCC has considered the information and documents that were submitted with the notification form and information from third partes.\n\nThe ACCC has determined that the Acquisition may be put into effect as it considers that the Acquisition is unlikely to have the effect of substantially lessening competition in any market. In reaching its decision, and based on the material before it, the ACCC makes the following findings.\n\n• AWP and nib do not appear to compete particularly closely in the supply of travel insurance in Australia.\n\n• The merged firm would continue to face competition from multiple alternative suppliers of travel insurance in Australia."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by the Australian Competition Tribunal, may apply for review if they are dissatisfied with the determination. Pursuant to section 100C of the Act, applications for review of the determination are to be made to the Australian Competition Tribunal before the end of 14 calendar days after this statement of reasons was included on the ACCC’s Acquisitions Register. To confirm whether there has been any application for review, please contact the Australian Competition Tribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-80024/Allianz - certain assets of nib’s Australian travel insurance business - Phase 1 determination.pdf",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
       "has_conditions": false,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-07-24T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -130637,12 +130675,12 @@
     "total_waivers": 288,
     "total_conditional_approvals": 1,
     "by_status": {
-      "Assessment completed": 145,
-      "Under assessment": 41,
+      "Assessment completed": 146,
+      "Under assessment": 40,
       "Assessment ceased": 3
     },
     "by_determination": {
-      "Approved": 143,
+      "Approved": 144,
       "Referred to phase 2": 8
     },
     "by_waiver_determination": {
@@ -130650,27 +130688,27 @@
       "Not approved": 14
     },
     "clearance_rate": {
-      "cleared": 144,
+      "cleared": 145,
       "not_cleared": 1,
-      "total": 145,
+      "total": 146,
       "rate": 0.993
     },
     "phase_duration": {
-      "average_days": 29.629139072847682,
-      "median_days": 26,
-      "average_business_days": 19.556291390728475,
-      "median_business_days": 17,
+      "average_days": 29.57236842105263,
+      "median_days": 26.0,
+      "average_business_days": 19.526315789473685,
+      "median_business_days": 17.0,
       "percentiles": {
         "day15": {
-          "count": 37,
-          "percentage": 24.5
+          "count": 38,
+          "percentage": 25.0
         },
         "day20": {
-          "count": 118,
-          "percentage": 78.1
+          "count": 119,
+          "percentage": 78.3
         },
         "day30": {
-          "count": 143,
+          "count": 144,
           "percentage": 94.7
         }
       }
@@ -130830,6 +130868,16 @@
         "is_refiled": false
       },
       {
+        "merger_id": "MN-60025",
+        "merger_name": "Acrow - Ausgroup Industrial Services",
+        "status": "Under assessment",
+        "accc_determination": null,
+        "effective_notification_datetime": "2026-07-16T12:00:00Z",
+        "page_modified_datetime": "2026-07-24T17:29:34+10:00",
+        "is_waiver": false,
+        "is_refiled": false
+      },
+      {
         "merger_id": "MN-30023",
         "merger_name": "UPM-Kymmene – Sappi joint venture",
         "status": "Under assessment",
@@ -130838,19 +130886,19 @@
         "page_modified_datetime": "2026-07-23T16:22:52+10:00",
         "is_waiver": false,
         "is_refiled": false
-      },
-      {
-        "merger_id": "MN-60025",
-        "merger_name": "Acrow - Ausgroup Industrial Services",
-        "status": "Under assessment",
-        "accc_determination": null,
-        "effective_notification_datetime": "2026-07-16T12:00:00Z",
-        "page_modified_datetime": "2026-07-17T10:32:27+10:00",
-        "is_waiver": false,
-        "is_refiled": false
       }
     ],
     "recent_determinations": [
+      {
+        "merger_id": "MN-80024",
+        "merger_name": "Allianz – certain assets of nib’s Australian travel insurance business",
+        "determination": "Approved",
+        "determination_date": "2026-07-24T12:00:00Z",
+        "page_modified_datetime": "2026-07-24T17:07:29+10:00",
+        "determination_type": "final",
+        "is_waiver": false,
+        "stage": "Phase 1 - initial assessment"
+      },
       {
         "merger_id": "MN-01106",
         "merger_name": "Midea - Residentia Group",
@@ -130960,16 +131008,6 @@
         "determination_type": "final",
         "is_waiver": true,
         "stage": "Waiver application"
-      },
-      {
-        "merger_id": "MN-65022",
-        "merger_name": "Hapag-Lloyd - ZIM",
-        "determination": "Approved",
-        "determination_date": "2026-07-21T12:00:00Z",
-        "page_modified_datetime": "2026-07-22T14:51:05+10:00",
-        "determination_type": "final",
-        "is_waiver": false,
-        "stage": "Phase 1 - initial assessment"
       }
     ]
   },

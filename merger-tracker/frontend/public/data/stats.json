@@ -3,12 +3,12 @@
   "total_waivers": 288,
   "total_conditional_approvals": 1,
   "by_status": {
-    "Assessment completed": 145,
-    "Under assessment": 41,
+    "Assessment completed": 146,
+    "Under assessment": 40,
     "Assessment ceased": 3
   },
   "by_determination": {
-    "Approved": 143,
+    "Approved": 144,
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
@@ -16,27 +16,27 @@
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 144,
+    "cleared": 145,
     "not_cleared": 1,
-    "total": 145,
+    "total": 146,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.629139072847682,
-    "median_days": 26,
-    "average_business_days": 19.556291390728475,
-    "median_business_days": 17,
+    "average_days": 29.57236842105263,
+    "median_days": 26.0,
+    "average_business_days": 19.526315789473685,
+    "median_business_days": 17.0,
     "percentiles": {
       "day15": {
-        "count": 37,
-        "percentage": 24.5
+        "count": 38,
+        "percentage": 25.0
       },
       "day20": {
-        "count": 118,
-        "percentage": 78.1
+        "count": 119,
+        "percentage": 78.3
       },
       "day30": {
-        "count": 143,
+        "count": 144,
         "percentage": 94.7
       }
     }
@@ -196,6 +196,16 @@
       "is_refiled": false
     },
     {
+      "merger_id": "MN-60025",
+      "merger_name": "Acrow - Ausgroup Industrial Services",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-16T12:00:00Z",
+      "page_modified_datetime": "2026-07-24T17:29:34+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
+    {
       "merger_id": "MN-30023",
       "merger_name": "UPM-Kymmene \u2013 Sappi joint venture",
       "status": "Under assessment",
@@ -204,19 +214,19 @@
       "page_modified_datetime": "2026-07-23T16:22:52+10:00",
       "is_waiver": false,
       "is_refiled": false
-    },
-    {
-      "merger_id": "MN-60025",
-      "merger_name": "Acrow - Ausgroup Industrial Services",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-16T12:00:00Z",
-      "page_modified_datetime": "2026-07-17T10:32:27+10:00",
-      "is_waiver": false,
-      "is_refiled": false
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "MN-80024",
+      "merger_name": "Allianz \u2013 certain assets of nib\u2019s Australian travel insurance business",
+      "determination": "Approved",
+      "determination_date": "2026-07-24T12:00:00Z",
+      "page_modified_datetime": "2026-07-24T17:07:29+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
     {
       "merger_id": "MN-01106",
       "merger_name": "Midea - Residentia Group",
@@ -326,16 +336,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-65022",
-      "merger_name": "Hapag-Lloyd - ZIM",
-      "determination": "Approved",
-      "determination_date": "2026-07-21T12:00:00Z",
-      "page_modified_datetime": "2026-07-22T14:51:05+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }

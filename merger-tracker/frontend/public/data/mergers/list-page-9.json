@@ -3703,14 +3703,14 @@
     {
       "merger_id": "MN-80024",
       "merger_name": "Allianz \u2013 certain assets of nib\u2019s Australian travel insurance business",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "has_conditions": false,
       "is_waiver": false,
       "under_appeal": false,
       "is_refiled": false,
       "effective_notification_datetime": "2026-07-03T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-07-24T12:00:00Z",
       "end_of_determination_period": "2026-08-14T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -3745,48 +3745,9 @@
       ],
       "other_parties": [
         {
-          "name": "Suresave Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "82 137 885 262",
-          "canonical": {
-            "id": "nib",
-            "name": "nib"
-          },
-          "party_page": {
-            "id": "nib",
-            "name": "nib"
-          }
-        },
-        {
-          "name": "nib Travel Services (Australia) Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "81 115 932 173",
-          "canonical": {
-            "id": "nib",
-            "name": "nib"
-          },
-          "party_page": {
-            "id": "nib",
-            "name": "nib"
-          }
-        },
-        {
           "name": "nib Travel Insurance Distribution Pty Ltd",
           "identifier_type": "ABN",
           "identifier": "40 129 262 175",
-          "canonical": {
-            "id": "nib",
-            "name": "nib"
-          },
-          "party_page": {
-            "id": "nib",
-            "name": "nib"
-          }
-        },
-        {
-          "name": "nib International Assistance Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "72 164 763 884",
           "canonical": {
             "id": "nib",
             "name": "nib"
@@ -3810,6 +3771,19 @@
           }
         },
         {
+          "name": "Suresave Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "82 137 885 262",
+          "canonical": {
+            "id": "nib",
+            "name": "nib"
+          },
+          "party_page": {
+            "id": "nib",
+            "name": "nib"
+          }
+        },
+        {
           "name": "nib Holdings Ltd",
           "identifier_type": "ABN",
           "identifier": "51 125 633 856",
@@ -3823,9 +3797,35 @@
           }
         },
         {
+          "name": "nib Travel Services (Australia) Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "81 115 932 173",
+          "canonical": {
+            "id": "nib",
+            "name": "nib"
+          },
+          "party_page": {
+            "id": "nib",
+            "name": "nib"
+          }
+        },
+        {
           "name": "Travel Insurance Direct Pty Ltd",
           "identifier_type": "ABN",
           "identifier": "30 121 659 470",
+          "canonical": {
+            "id": "nib",
+            "name": "nib"
+          },
+          "party_page": {
+            "id": "nib",
+            "name": "nib"
+          }
+        },
+        {
+          "name": "nib International Assistance Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "72 164 763 884",
           "canonical": {
             "id": "nib",
             "name": "nib"
