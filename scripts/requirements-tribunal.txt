@@ -1,0 +1,8 @@
+# Dependencies for scripts/scrape_tribunal.py (the "Scrape Tribunal" workflow).
+# Kept separate from scripts/requirements.txt because nodriver drives a real
+# Chrome to get past the tribunal site's Cloudflare challenge — a heavy
+# dependency the rest of the pipeline doesn't need.
+nodriver>=0.38
+beautifulsoup4==4.12.3
+lxml==6.1.0
+requests==2.32.3

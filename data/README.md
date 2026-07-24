@@ -44,15 +44,6 @@ offline analysis and external consumers.
   [`accc-mergers-cli`](https://github.com/nwbort/accc-mergers-cli) tool
   (`cli-bundle.json`, `cli-manifest.json`, `cli-merger-manifest.json`)
 
-### `incoming/tribunal_snapshots/`
-
-Drop folder for JSON snapshots downloaded by `scripts/bookmarklet/` (see
-that directory's README). Any `*.json` file added or changed here on `main`
-is picked up automatically by the **Ingest Tribunal Snapshots** workflow,
-which runs `scripts/ingest_tribunal_snapshot.py` on it, folds the result
-into `processed/tribunal_appeals.json`, and deletes the snapshot once it's
-been consumed.
-
 ### `digest-archive/`
 
 Past weekly digests (`digest-YYYY-MM-DD.json`), retained so the next run

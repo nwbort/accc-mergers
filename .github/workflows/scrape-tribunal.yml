@@ -1,10 +1,11 @@
-# NOTE: the tribunal site is behind Cloudflare bot management, which serves
-# GitHub Actions' hosted-runner IPs a JS challenge instead of the real page —
-# no header/client change gets past that. This will very likely fail with a
-# clear ::warning:: annotation rather than actually scrape anything. Prefer
-# running scripts/scrape_tribunal.py locally instead; see
-# docs/deployment.md#running-the-tribunal-scraper-locally.
 name: Scrape Tribunal
+
+# Fills in each tribunal_appeals.json entry's documents[] from the live
+# Australian Competition Tribunal matter pages. The tribunal site is behind
+# Cloudflare's managed challenge, so scripts/scrape_tribunal.py drives a real
+# Chrome (headful, under Xvfb) via nodriver to solve it — which means this runs
+# unattended in CI, unlike the old curl-based scraper. See that script's
+# docstring and docs/deployment.md.
 
 on:
   workflow_dispatch:
@@ -13,9 +14,16 @@ on:
         description: 'Optional space-separated merger_ids to scrape (default: all with a tribunal_url)'
         required: false
         default: ''
+  schedule:
+    # Daily at 6:23 AM UTC.
+    - cron: '23 6 * * *'
 
 permissions:
   contents: write
+
+concurrency:
+  group: scrape-tribunal
+  cancel-in-progress: false
 
 jobs:
   scrape-tribunal:
@@ -28,20 +36,45 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: '3.12'
+        cache: 'pip'
 
     - name: Install dependencies
-      run: pip install requests beautifulsoup4 lxml
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r scripts/requirements-tribunal.txt
+
+    - name: Install Chrome and Xvfb
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y xvfb
+        # google-chrome-stable is normally pre-installed on ubuntu-latest; make
+        # sure it (or chromium) is present for nodriver to drive.
+        if ! command -v google-chrome >/dev/null 2>&1; then
+          sudo apt-get install -y chromium-browser || sudo apt-get install -y chromium
+        fi
+        CHROME_PATH=$(command -v google-chrome || command -v google-chrome-stable || command -v chromium-browser || command -v chromium || true)
+        echo "Resolved CHROME_PATH=$CHROME_PATH"
+        "$CHROME_PATH" --version || true
+        echo "CHROME_PATH=$CHROME_PATH" >> "$GITHUB_ENV"
 
     - name: Run the tribunal scraper
-      run: python scripts/scrape_tribunal.py ${{ github.event.inputs.merger_ids }}
+      # xvfb-run gives Chrome a display so it runs headful, which is far less
+      # likely to be flagged by Cloudflare than headless.
+      run: |
+        xvfb-run -a python scripts/scrape_tribunal.py ${{ github.event.inputs.merger_ids }}
 
     - name: Commit and push changes
+      # Always run so any matters that did scrape are committed even if others
+      # failed to clear the challenge (the run step exits non-zero in that case).
+      if: always()
       run: |-
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
-        git add -A
-        timestamp=$(TZ='Australia/Sydney' date)
-        git diff --staged --quiet || true
-        git commit -m "Update scraped tribunal data: ${timestamp}" || exit 0
+        git add data/processed/tribunal_appeals.json data/raw/matters
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+          exit 0
+        fi
+        git commit -m "Update scraped tribunal data: $(TZ='Australia/Sydney' date)"
         git pull --rebase || { git rebase --abort; exit 1; }
         git push

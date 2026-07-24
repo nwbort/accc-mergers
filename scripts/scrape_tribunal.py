@@ -10,10 +10,32 @@ record per merger (keyed by ACCC merger_id) with the tribunal number, URL,
 appeal type, appellant, status and a ``documents[]`` list that is folded into
 the merger's event timeline (see ``static_data.enrichment.link_tribunal_appeals``).
 
-Until now the ``documents[]`` list has been edited by hand. This script fills
+Until now the ``documents[]`` list was maintained by hand. This script fills
 it in from the live tribunal pages. The "list of pages to scrape" is simply the
 set of entries in tribunal_appeals.json that carry a ``tribunal_url`` — that
 file is the manual list, maintained by hand when a new matter is added.
+
+Getting past Cloudflare — a real browser, in CI
+-----------------------------------------------
+The tribunal site sits behind Cloudflare's "managed challenge": a plain curl
+or ``requests.get()`` only ever sees the "Just a moment..." interstitial,
+because the challenge requires a real browser to run JavaScript (and sometimes
+click a Turnstile checkbox). That is why the old curl-based scraper could not
+run from GitHub Actions at all.
+
+This version drives a real Chrome via `nodriver <https://github.com/ultrafunkamsterdam/nodriver>`_,
+waits for the challenge to clear, then parses the filings table(s). Because a
+genuine (headful, under Xvfb) browser solves the challenge, this runs
+unattended in CI — see ``.github/workflows/scrape-tribunal.yml``. We launch
+Chrome ourselves with a remote-debugging port and wait until the DevTools
+endpoint is actually ready before attaching nodriver (nodriver's own launcher
+only waits ~2.5s, which loses a race against Chrome's cold start on CI runners).
+
+The browser is launched once and reused across every matter page in one run,
+so the Cloudflare cookies obtained solving the first challenge carry over to
+the rest. Those same cookies (and the browser's User-Agent) are reused when
+downloading each linked document, so the document requests aren't bounced back
+to the challenge either.
 
 Page format
 -----------
@@ -34,17 +56,12 @@ Each linked document is also downloaded into ``data/raw/matters/{merger_id}/``
 and served exactly like ACCC attachments. Files already present are not
 re-downloaded; off-domain links are kept but not mirrored.
 
-Usage — run this locally, not from CI
---------------------------------------
-The tribunal site sits behind Cloudflare bot management, which serves
-GitHub Actions' hosted-runner IPs a JS challenge page ("Just a moment...",
-``cf-mitigated: challenge``) instead of the real content. No amount of
-User-Agent or header tweaking gets past that — it requires an actual
-JS-executing browser to solve, which nothing in this script does. A normal
-residential/office IP is not challenged, so **run this from your own
-machine**, then commit and push the result:
+Usage
+-----
+Normally this runs from CI on a schedule (the "Scrape Tribunal" workflow), but
+it works anywhere a Chrome/Chromium binary is available::
 
-  pip install -r scripts/requirements.txt   # requests, beautifulsoup4, lxml
+  pip install -r scripts/requirements-tribunal.txt   # nodriver, requests, bs4, lxml
   python scripts/scrape_tribunal.py                 # scrape + download every entry with a tribunal_url
   python scripts/scrape_tribunal.py MN-01068 ...    # scrape only these merger_ids
   python scripts/scrape_tribunal.py --no-download   # record metadata only, skip file downloads
@@ -52,67 +69,47 @@ machine**, then commit and push the result:
   git add data/processed/tribunal_appeals.json data/raw/matters
   git commit -m "Update scraped tribunal data" && git push
 
-Also requires ``curl`` on PATH (see "Fetching via curl" below) — already
-present on macOS/Linux; on Windows use Git Bash or WSL.
+On a headless machine (a CI runner) run it under an X server so Chrome runs
+headful, which is far less likely to be flagged than headless::
 
-To run this on a recurring schedule (e.g. from a home server via cron)
-rather than by hand, use ``scripts/cron_scrape_tribunal.sh``, which resets
-a branch onto fresh ``main``, runs this script, and opens/updates a pull
-request via the ``gh`` CLI if anything changed — see
-docs/deployment.md#running-it-on-a-schedule-cron.
-
-If even a local/residential run gets JS-challenged — for the matter page
-itself, or (as also happens) for the linked document files that
-``download_document`` above would otherwise fetch — ``scripts/bookmarklet/``
-provides a browser-bookmarklet alternative that makes no HTTP request of its
-own. It reads the page you're already looking at *and* fetches each linked
-document's bytes from inside that same page (so Cloudflare sees your
-browser, not a script), then ships both in one snapshot file. See
-``scripts/bookmarklet/README.md`` and its companion
-``scripts/ingest_tribunal_snapshot.py``.
-
-The ``scrape-tribunal.yml`` workflow (``workflow_dispatch``) still exists and
-can be triggered from the Actions tab, but expect it to fail with the
-Cloudflare challenge diagnostics described below rather than actually
-scraping anything — it's kept mainly so a run makes the failure visible
-(``::warning::`` annotation) rather than silent, in case Cloudflare's
-treatment of the runner IPs ever changes.
+  xvfb-run -a python scripts/scrape_tribunal.py
 
 Existing ``url_gh`` local-mirror paths are preserved across a re-scrape (matched
-by document URL). If a page yields no rows (e.g. the layout changed), that
-entry is left untouched rather than wiped.
-
-Fetching via curl
-------------------
-Matter pages are fetched by shelling out to ``curl`` rather than using the
-``requests`` library (``download_document`` still uses ``requests`` for the
-document files themselves, which aren't behind the same protection) because
-curl's TLS fingerprint gets past a plain block/reputation check the way
-``scrape.sh``'s curl-based ACCC fetch does — but it can't solve a Cloudflare
-JS challenge either way, which is what's actually happening here (see above).
-If a fetch fails, the response status, a few identifying response headers
-(``server``, ``cf-*``, ``x-akamai-*``, etc.) and a body snippet are logged,
-and a ``::warning::`` annotation is emitted under GitHub Actions so the
-failure is visible on the run summary rather than only in the raw logs.
+by document URL). If a page yields no rows (e.g. the layout changed) or its
+Cloudflare challenge never clears, that entry is left untouched rather than
+wiped.
 """
 
 from __future__ import annotations
 
 import argparse
-import base64
+import asyncio
 import json
 import os
 import re
+import socket
 import subprocess
 import sys
 import tempfile
+import time
 import unicodedata
+import urllib.request
 from datetime import datetime
 from pathlib import Path
+from shutil import which
 from urllib.parse import unquote, urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup
+
+# nodriver is only needed to actually fetch pages (it drives Chrome). Import it
+# lazily so the parsing/download helpers below stay importable — and unit
+# testable — in environments that only install requests + bs4 + lxml (e.g. the
+# main test job), without pulling in a browser-automation dependency.
+try:
+    import nodriver as uc
+except ImportError:  # pragma: no cover - exercised only where nodriver is absent
+    uc = None
 
 SCRIPT_DIR = Path(__file__).parent
 REPO_ROOT = SCRIPT_DIR.parent
@@ -123,7 +120,7 @@ TRIBUNAL_APPEALS_JSON = REPO_ROOT / "data" / "processed" / "tribunal_appeals.jso
 MATTERS_DIR = REPO_ROOT / "data" / "raw" / "matters"
 
 USER_AGENT = "Mozilla/5.0 (compatible; mergers-fyi/1.0; +https://mergers.fyi)"
-REQUEST_TIMEOUT = 30
+REQUEST_TIMEOUT = 60
 
 # Header-text keyword → document field. Matched case-insensitively as a
 # substring of the (stripped) column header, so slight wording changes on the
@@ -159,6 +156,42 @@ _DATE_FORMATS = [
     "%d/%m/%Y",   # 15/07/2026
     "%d-%m-%Y",   # 15-07-2026
     "%Y-%m-%d",   # 2026-07-15
+]
+
+# --- Cloudflare challenge / browser handling ---------------------------------
+
+# Markers that indicate we're still looking at the Cloudflare challenge rather
+# than the real matter page.
+CHALLENGE_MARKERS = (
+    "Just a moment",
+    "challenge-platform",
+    "cf_chl_opt",
+    "Enable JavaScript and cookies to continue",
+    "Verifying you are human",
+)
+
+# How long to wait for a single page's challenge to clear before giving up.
+MAX_WAIT_SECONDS = 90
+
+# nodriver's default args, which help the browser look like a normal user
+# session rather than an automated one.
+CHROME_ARGS = [
+    "--remote-allow-origins=*",
+    "--no-first-run",
+    "--no-service-autorun",
+    "--no-default-browser-check",
+    "--homepage=about:blank",
+    "--no-pings",
+    "--password-store=basic",
+    "--disable-infobars",
+    "--disable-breakpad",
+    "--disable-dev-shm-usage",
+    "--disable-session-crashed-bubble",
+    "--disable-search-engine-choice-screen",
+    "--disable-features=IsolateOrigins,site-per-process",
+    "--disable-gpu",
+    "--window-size=1920,1080",
+    "--no-sandbox",  # CI runs as root
 ]
 
 
@@ -227,8 +260,8 @@ def is_safe_document_url(url: str) -> bool:
 
 def _document_local_path(merger_id: str, url: str) -> tuple[Path, str] | None:
     """Derive (local_path, url_gh) for a document URL, or None if no safe
-    filename can be derived. Shared by download_document and
-    save_document_content."""
+    filename can be derived. Shared by download_document and the browser
+    session download path."""
     decoded = unquote(urlparse(url).path)
     original = os.path.basename(decoded).strip()
     filename = original if is_safe_filename(original) else sanitize_filename(original)
@@ -238,19 +271,20 @@ def _document_local_path(merger_id: str, url: str) -> tuple[Path, str] | None:
     return matter_dir / filename, f"/mergers/{merger_id}/{get_serve_filename(filename)}"
 
 
-def download_document(merger_id: str, url: str) -> str | None:
+def download_document(
+    merger_id: str, url: str, extra_headers: dict | None = None
+) -> str | None:
     """Download a tribunal document into data/raw/matters/{merger_id}/.
 
     Returns the ``url_gh`` serve path (``/mergers/{id}/{file}``) on success, or
     None if the link is off-domain, unsafe, or the download fails. Existing
     files are left in place (never re-downloaded).
 
-    Note: the tribunal's Cloudflare bot management can JS-challenge these
-    file requests too (not just the matter page itself), in which case this
-    will fail the same way ``fetch()`` in this module's docstring describes.
-    ``scripts/bookmarklet/`` sidesteps that entirely by downloading the file
-    bytes in-browser and shipping them in the snapshot — see
-    ``save_document_content``.
+    ``extra_headers`` carries the live browser's Cookie + User-Agent (see
+    ``browser_session_headers``); passing them lets the request reuse the
+    Cloudflare clearance the browser already obtained, so the document fetch
+    isn't bounced back to the challenge the way a bare ``requests.get()`` would
+    be.
     """
     if not is_safe_document_url(url):
         # Off-domain link (e.g. a party's own site) — keep the url, no mirror.
@@ -265,14 +299,30 @@ def download_document(merger_id: str, url: str) -> str | None:
     if local_path.exists():
         return url_gh
 
+    headers = {"User-Agent": USER_AGENT}
+    if extra_headers:
+        headers.update(extra_headers)
+
     try:
         local_path.parent.mkdir(parents=True, exist_ok=True)
         resp = requests.get(
-            url, headers={"User-Agent": USER_AGENT}, stream=True, timeout=REQUEST_TIMEOUT
+            url, headers=headers, stream=True, timeout=REQUEST_TIMEOUT
         )
         resp.raise_for_status()
+        # A challenge page comes back as 200 text/html, not the PDF we asked
+        # for — peek at the first chunk and don't save it under a .pdf name.
+        chunks = resp.iter_content(chunk_size=8192)
+        first = next(chunks, b"")
+        if b"Just a moment" in first[:2048] or b"challenge-platform" in first:
+            print(
+                f"    Warning: {url} returned a Cloudflare challenge, not saving",
+                file=sys.stderr,
+            )
+            return None
         with open(local_path, "wb") as f:
-            for chunk in resp.iter_content(chunk_size=8192):
+            if first:
+                f.write(first)
+            for chunk in chunks:
                 f.write(chunk)
     except requests.RequestException as e:
         print(f"    Warning: failed to download {url}: {e}", file=sys.stderr)
@@ -282,43 +332,6 @@ def download_document(merger_id: str, url: str) -> str | None:
         return None
 
     print(f"    Downloaded {local_path.name}")
-    return url_gh
-
-
-def save_document_content(merger_id: str, url: str, content_base64: str) -> str | None:
-    """Write document bytes captured client-side by the bookmarklet.
-
-    The bookmarklet fetches each document's bytes itself, from inside the
-    already-loaded tribunal page (past Cloudflare's browser challenge, which
-    a server-side ``requests.get()`` can't solve), and ships them
-    base64-encoded in the snapshot as ``content_base64``. This writes those
-    bytes to the same ``data/raw/matters/{merger_id}/`` location
-    ``download_document`` would have, without making any HTTP request of its
-    own. Returns the ``url_gh`` serve path, or None if the link is
-    off-domain, unsafe, or the write fails. Existing files are left in place.
-    """
-    if not is_safe_document_url(url):
-        return None
-
-    result = _document_local_path(merger_id, url)
-    if result is None:
-        print(f"    Warning: unsafe document filename for {url}", file=sys.stderr)
-        return None
-    local_path, url_gh = result
-
-    if local_path.exists():
-        return url_gh
-
-    try:
-        content = base64.b64decode(content_base64)
-        local_path.parent.mkdir(parents=True, exist_ok=True)
-        with open(local_path, "wb") as f:
-            f.write(content)
-    except (ValueError, OSError) as e:
-        print(f"    Warning: failed to save {local_path}: {e}", file=sys.stderr)
-        return None
-
-    print(f"    Saved {local_path.name} ({len(content)} bytes, from bookmarklet snapshot)")
     return url_gh
 
 
@@ -376,31 +389,47 @@ def _content_root(soup: BeautifulSoup):
     return soup
 
 
-def _header_field_map(table) -> dict[int, str]:
-    """Map column index → document field name from a table's header row."""
-    header_cells = table.select("thead th")
-    if not header_cells:
-        first_row = table.find("tr")
-        if first_row is not None:
-            header_cells = first_row.find_all(["th", "td"])
+def _header_row(table):
+    """Return the row whose cells are the column headers.
+
+    Prefers an explicit ``<thead>`` row; otherwise the table's first ``<tr>``,
+    which on the tribunal site lives inside ``<tbody>`` (there's no separate
+    ``<thead>``). Returned so the caller can both read the header for column
+    mapping and exclude that exact row from the data rows.
+    """
+    thead = table.find("thead")
+    if thead is not None:
+        tr = thead.find("tr")
+        if tr is not None:
+            return tr
+    return table.find("tr")
+
+
+def _header_field_map(table) -> tuple[dict[int, str], object]:
+    """Return (column index → document field name, header row element)."""
+    header_row = _header_row(table)
     field_map: dict[int, str] = {}
-    for idx, cell in enumerate(header_cells):
+    if header_row is None:
+        return field_map, None
+    for idx, cell in enumerate(header_row.find_all(["th", "td"])):
         header = " ".join(cell.get_text(" ", strip=True).split()).lower()
         for field, keyword in _COLUMN_KEYWORDS:
             if keyword in header and idx not in field_map:
                 field_map[idx] = field
                 break
-    return field_map
+    return field_map, header_row
 
 
-def _body_rows(table):
-    """Yield the data rows of a table (skipping the header row if there's no tbody)."""
+def _body_rows(table, header_row=None):
+    """Yield a table's data rows, excluding the header row.
+
+    The header row is excluded by identity, which matters on the tribunal site:
+    its header row sits inside ``<tbody>`` (no ``<thead>``), so a naive "all
+    tbody rows" would return the header as a bogus data row.
+    """
     body = table.find("tbody")
-    if body is not None:
-        return body.find_all("tr")
-    rows = table.find_all("tr")
-    # No explicit tbody: assume the first row was the header.
-    return rows[1:] if rows else []
+    rows = body.find_all("tr") if body is not None else table.find_all("tr")
+    return [row for row in rows if row is not header_row]
 
 
 def parse_document_row(row, field_map: dict[int, str], base_url: str) -> dict | None:
@@ -462,12 +491,12 @@ def parse_matter_page(html: str, base_url: str) -> list[dict]:
         section = None if table_index == 0 else current_section
         table_index += 1
 
-        field_map = _header_field_map(node)
+        field_map, header_row = _header_field_map(node)
         if not field_map:
             # Not a recognisable document table (no matching headers); skip it.
             continue
 
-        for row in _body_rows(node):
+        for row in _body_rows(node, header_row):
             doc = parse_document_row(row, field_map, base_url)
             if doc is None:
                 continue
@@ -478,10 +507,8 @@ def parse_matter_page(html: str, base_url: str) -> list[dict]:
     return documents
 
 
-# Response headers worth echoing on a failed fetch: they're the cheapest way
-# to tell a WAF/bot-protection block (cf-*, x-akamai-*, server: cloudflare...)
-# apart from an ordinary server error.
-_DIAGNOSTIC_HEADER_PREFIXES = ("server:", "cf-", "x-akamai", "x-waf", "retry-after:")
+def looks_like_challenge(html: str) -> bool:
+    return any(marker in html for marker in CHALLENGE_MARKERS)
 
 
 def gha_warning(message: str) -> None:
@@ -494,51 +521,157 @@ def gha_warning(message: str) -> None:
         print(f"::warning::{message}")
 
 
-def fetch(url: str) -> str:
-    """Fetch a tribunal page via curl.
+def find_chrome() -> str:
+    """Locate a Chrome/Chromium binary (CHROME_PATH env wins)."""
+    env = os.environ.get("CHROME_PATH")
+    if env and os.path.exists(env):
+        return env
+    for candidate in (
+        "google-chrome",
+        "google-chrome-stable",
+        "chromium-browser",
+        "chromium",
+    ):
+        path = which(candidate)
+        if path:
+            return path
+    raise FileNotFoundError("Could not find a Chrome/Chromium binary")
 
-    Uses curl rather than ``requests`` — see the "Fetching via curl" note in
-    the module docstring for why. Raises RuntimeError on any non-2xx/transport
-    failure, with diagnostics (status, relevant headers, body snippet)
-    attached to the message.
+
+def free_port() -> int:
+    s = socket.socket()
+    s.bind(("127.0.0.1", 0))
+    port = s.getsockname()[1]
+    s.close()
+    return port
+
+
+def launch_chrome(chrome_path: str, port: int, user_data_dir: str):
+    args = [
+        chrome_path,
+        *CHROME_ARGS,
+        f"--user-data-dir={user_data_dir}",
+        "--remote-debugging-host=127.0.0.1",
+        f"--remote-debugging-port={port}",
+        "about:blank",
+    ]
+    print(f"Launching Chrome: {chrome_path} (port {port})", flush=True)
+    return subprocess.Popen(
+        args, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
+    )
+
+
+def wait_for_devtools(port: int, timeout: float = 30.0) -> bool:
+    """Wait until Chrome's DevTools endpoint answers before attaching nodriver.
+
+    nodriver's own launcher only waits ~2.5s for the port, which loses a race
+    against Chrome's ~3s cold start on CI runners, so we manage the readiness
+    wait ourselves.
     """
-    with tempfile.TemporaryDirectory() as tmp:
-        body_path = os.path.join(tmp, "body")
-        headers_path = os.path.join(tmp, "headers")
-        result = subprocess.run(
-            [
-                "curl", "-sS", "-L", "--compressed",
-                "-A", USER_AGENT,
-                "--max-time", str(REQUEST_TIMEOUT),
-                "--retry", "1", "--retry-delay", "5", "--retry-max-time", "90",
-                "-D", headers_path,
-                "-o", body_path,
-                "-w", "%{http_code}",
-                url,
-            ],
-            capture_output=True,
-            text=True,
-        )
-        status = result.stdout.strip()
-        body = Path(body_path).read_text(encoding="utf-8", errors="replace") if os.path.exists(body_path) else ""
-        headers_text = Path(headers_path).read_text(encoding="utf-8", errors="replace") if os.path.exists(headers_path) else ""
+    deadline = time.time() + timeout
+    url = f"http://127.0.0.1:{port}/json/version"
+    while time.time() < deadline:
+        try:
+            with urllib.request.urlopen(url, timeout=2) as r:
+                data = json.load(r)
+                print(f"DevTools ready: {data.get('Browser')}", flush=True)
+                return True
+        except Exception:
+            time.sleep(0.5)
+    return False
 
-        if result.returncode == 0 and status.startswith("2"):
-            return body
 
-        interesting_headers = [
-            line.strip()
-            for line in headers_text.splitlines()
-            if line.strip().lower().startswith(_DIAGNOSTIC_HEADER_PREFIXES)
-        ]
-        snippet = " ".join(body.split())[:300]
-        detail = (
-            f"curl exit={result.returncode} http={status or 'n/a'}"
-            f" curl_stderr={result.stderr.strip()[:200]!r}"
-            f" headers=[{'; '.join(interesting_headers) or 'none'}]"
-            f" body={snippet!r}"
+async def try_click_turnstile(tab) -> bool:
+    """Best-effort click of the Cloudflare Turnstile / 'Verify you are human'
+    checkbox. Managed challenges often auto-clear, but some render a checkbox
+    that must be clicked."""
+    for text in ("Verify you are human", "Verify you are a human", "human"):
+        try:
+            el = await tab.find(text, best_match=True, timeout=3)
+            if el:
+                await el.mouse_click()
+                print(f"    clicked element matching '{text}'", flush=True)
+                return True
+        except Exception:
+            pass
+    try:
+        iframe = await tab.find("challenges.cloudflare.com", best_match=True, timeout=3)
+        if iframe:
+            await iframe.mouse_click()
+            print("    clicked cloudflare iframe", flush=True)
+            return True
+    except Exception:
+        pass
+    return False
+
+
+async def fetch_page(browser, url: str):
+    """Navigate the browser to ``url`` and wait for the Cloudflare challenge to
+    clear. Returns ``(tab, html)`` — ``html`` is None if the challenge never
+    cleared within ``MAX_WAIT_SECONDS``."""
+    tab = await browser.get(url)
+
+    deadline = time.time() + MAX_WAIT_SECONDS
+    html = ""
+    cleared = False
+    attempt = 0
+    while time.time() < deadline:
+        attempt += 1
+        await tab.sleep(3)
+        try:
+            html = await tab.get_content()
+        except Exception as e:
+            print(f"    get_content failed: {e}", flush=True)
+            continue
+
+        title = ""
+        m = re.search(r"<title[^>]*>(.*?)</title>", html, re.I | re.S)
+        if m:
+            title = m.group(1).strip()
+        print(
+            f"    attempt {attempt}: {len(html)} bytes, title={title!r}",
+            flush=True,
         )
-        raise RuntimeError(detail)
+
+        if not looks_like_challenge(html):
+            cleared = True
+            break
+
+        await try_click_turnstile(tab)
+
+    if not cleared:
+        return tab, None
+
+    try:
+        html = await tab.get_content()
+    except Exception:
+        pass
+    return tab, html
+
+
+async def browser_session_headers(browser, tab) -> dict:
+    """Build the Cookie + User-Agent headers from the live browser session.
+
+    Reused for the document downloads so they carry the same Cloudflare
+    clearance the browser obtained solving the challenge.
+    """
+    headers: dict = {}
+    try:
+        cookies = await browser.cookies.get_all()
+        cookie_header = "; ".join(
+            f"{c.name}={c.value}" for c in cookies if getattr(c, "name", None)
+        )
+        if cookie_header:
+            headers["Cookie"] = cookie_header
+    except Exception as e:
+        print(f"    could not read cookies: {e}", flush=True)
+    try:
+        user_agent = await tab.evaluate("navigator.userAgent")
+        if user_agent:
+            headers["User-Agent"] = user_agent
+    except Exception:
+        pass
+    return headers
 
 
 def merge_documents(existing: list[dict], scraped: list[dict]) -> list[dict]:
@@ -560,6 +693,105 @@ def merge_documents(existing: list[dict], scraped: list[dict]) -> list[dict]:
     return scraped
 
 
+async def scrape_matters(
+    targets: list[str], records: dict, do_download: bool
+) -> tuple[dict[str, list[dict]], list[str]]:
+    """Drive one Chrome across every target matter page.
+
+    Returns ``(scraped_by_id, failed)`` where ``scraped_by_id`` maps merger_id →
+    parsed document list (already carrying ``url_gh`` for anything downloaded),
+    and ``failed`` lists the merger_ids whose page couldn't be fetched. Matters
+    whose page parsed to zero documents are omitted from both (left untouched).
+    """
+    if uc is None:
+        raise RuntimeError(
+            "nodriver is not installed; run "
+            "`pip install -r scripts/requirements-tribunal.txt`"
+        )
+
+    chrome_path = find_chrome()
+    port = free_port()
+    user_data_dir = tempfile.mkdtemp(prefix="cf-tribunal-")
+    proc = launch_chrome(chrome_path, port, user_data_dir)
+
+    if not wait_for_devtools(port):
+        print("ERROR: Chrome DevTools endpoint never became ready", flush=True)
+        try:
+            proc.terminate()
+        except Exception:
+            pass
+        # Nothing could be fetched — every target is a failure.
+        return {}, list(targets)
+
+    browser = await uc.start(
+        host="127.0.0.1", port=port, browser_executable_path=chrome_path
+    )
+
+    scraped_by_id: dict[str, list[dict]] = {}
+    failed: list[str] = []
+    session_headers: dict | None = None
+
+    try:
+        for mid in targets:
+            url = records[mid].get("tribunal_url")
+            if not url:
+                print(f"Skipping {mid}: no tribunal_url")
+                continue
+
+            print(f"Scraping {mid}: {url}", flush=True)
+            tab, html = await fetch_page(browser, url)
+            if html is None:
+                print(
+                    f"  FAILED: challenge did not clear for {mid} ({url})",
+                    file=sys.stderr,
+                )
+                gha_warning(
+                    f"scrape_tribunal: Cloudflare challenge did not clear for "
+                    f"{mid} ({url})"
+                )
+                failed.append(mid)
+                continue
+
+            scraped = parse_matter_page(html, url)
+            if not scraped:
+                print(
+                    f"  Warning: no documents parsed for {mid}; leaving existing "
+                    f"entry untouched (the page layout may have changed).",
+                    file=sys.stderr,
+                )
+                continue
+
+            # Mirror each document into data/raw/matters/{mid}/, reusing the
+            # browser's Cloudflare cookies + user-agent so the file requests
+            # aren't bounced back to the challenge.
+            if do_download:
+                if session_headers is None:
+                    session_headers = await browser_session_headers(browser, tab)
+                for doc in scraped:
+                    if doc.get("url"):
+                        url_gh = download_document(mid, doc["url"], session_headers)
+                        if url_gh:
+                            doc["url_gh"] = url_gh
+
+            scraped_by_id[mid] = scraped
+            sections = sorted({d["section"] for d in scraped if d.get("section")})
+            summary = f"  Parsed {len(scraped)} document(s)"
+            if sections:
+                summary += f" across sections: {', '.join(sections)}"
+            print(summary, flush=True)
+    finally:
+        try:
+            browser.stop()
+        except Exception:
+            pass
+        try:
+            proc.terminate()
+        except Exception:
+            pass
+
+    return scraped_by_id, failed
+
+
 def scrape(
     merger_ids: list[str] | None, dry_run: bool, download: bool = True
 ) -> int:
@@ -579,51 +811,14 @@ def scrape(
         print("No tribunal matters with a tribunal_url to scrape.")
         return 0
 
+    scraped_by_id, failed = uc.loop().run_until_complete(
+        scrape_matters(targets, records, do_download=download and not dry_run)
+    )
+
     changed = 0
-    failed: list[str] = []
-    for mid in targets:
+    for mid, scraped in scraped_by_id.items():
         record = records[mid]
-        url = record.get("tribunal_url")
-        if not url:
-            print(f"Skipping {mid}: no tribunal_url")
-            continue
-
-        print(f"Scraping {mid}: {url}")
-        try:
-            html = fetch(url)
-        except (RuntimeError, OSError) as e:
-            print(f"  FAILED to fetch {url}: {e}", file=sys.stderr)
-            gha_warning(f"scrape_tribunal: failed to fetch {mid} ({url}): {e}")
-            failed.append(mid)
-            continue
-
-        scraped = parse_matter_page(html, url)
-        if not scraped:
-            print(
-                f"  Warning: no documents parsed for {mid}; leaving existing "
-                f"entry untouched (the page layout may have changed).",
-                file=sys.stderr,
-            )
-            continue
-
-        # Mirror each document's PDF into data/raw/matters/{mid}/ and record its
-        # url_gh serve path. Skipped on a dry run so the run stays side-effect
-        # free. merge_documents then carries over any existing url_gh for docs
-        # that weren't (or couldn't be) downloaded.
-        if download and not dry_run:
-            for doc in scraped:
-                if doc.get("url"):
-                    url_gh = download_document(mid, doc["url"])
-                    if url_gh:
-                        doc["url_gh"] = url_gh
-
         merged = merge_documents(record.get("documents"), scraped)
-        sections = sorted({d["section"] for d in merged if d.get("section")})
-        summary = f"  Parsed {len(merged)} document(s)"
-        if sections:
-            summary += f" across sections: {', '.join(sections)}"
-        print(summary)
-
         if merged != record.get("documents"):
             record["documents"] = merged
             changed += 1
@@ -639,11 +834,10 @@ def scrape(
         print("\nNo changes.")
 
     if failed:
-        # A distinct, non-zero exit so callers (the cron wrapper, in
-        # particular) can tell "ran clean, genuinely nothing new" apart from
-        # "one or more fetches failed" — both otherwise print similar-looking
-        # "no changes" output. See the FAILED lines above (and any GitHub
-        # Actions ::warning:: annotations) for per-matter diagnostics.
+        # A distinct, non-zero exit so callers (the workflow, in particular)
+        # can tell "ran clean, genuinely nothing new" apart from "one or more
+        # fetches failed". See the FAILED lines above (and any GitHub Actions
+        # ::warning:: annotations) for per-matter diagnostics.
         print(
             f"\n{len(failed)} of {len(targets)} matter(s) failed to fetch: "
             f"{', '.join(failed)}",
@@ -672,6 +866,15 @@ def main() -> int:
         help="Record document metadata only; do not download the linked files.",
     )
     args = parser.parse_args()
+
+    if uc is None:
+        print(
+            "ERROR: nodriver is not installed; run "
+            "`pip install -r scripts/requirements-tribunal.txt`",
+            file=sys.stderr,
+        )
+        return 1
+
     return scrape(args.merger_ids or None, args.dry_run, download=not args.no_download)
 
 
