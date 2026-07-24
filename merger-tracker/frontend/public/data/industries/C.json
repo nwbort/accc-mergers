@@ -197,17 +197,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-01106",
-      "merger_name": "Midea - Residentia Group",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-06-26T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-50009",
       "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
       "is_waiver": false,
@@ -228,6 +217,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-05-12T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-01106",
+      "merger_name": "Midea - Residentia Group",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-06-26T12:00:00Z",
+      "determination_date": "2026-07-24T12:00:00Z"
     },
     {
       "merger_id": "WA-85037",
@@ -1367,13 +1367,13 @@
   "phase_1_count": 52,
   "phase_2_count": 2,
   "waiver_count": 61,
-  "active_count": 12,
+  "active_count": 11,
   "phase_duration": {
-    "average_days": 29.511627906976745,
-    "median_days": 26,
-    "average_business_days": 19.46511627906977,
-    "median_business_days": 17,
-    "completed_count": 43
+    "average_days": 29.477272727272727,
+    "median_days": 26.0,
+    "average_business_days": 19.477272727272727,
+    "median_business_days": 17.0,
+    "completed_count": 44
   },
   "waiver_duration": {
     "average_days": 17.524590163934427,

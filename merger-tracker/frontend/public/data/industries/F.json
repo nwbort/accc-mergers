@@ -80,12 +80,12 @@
       "merger_id": "MN-01106",
       "merger_name": "Midea - Residentia Group",
       "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
+      "status": "Assessment completed",
+      "determination": "Approved",
       "has_conditions": false,
       "phase": "Phase 1",
       "notification_date": "2026-06-26T12:00:00Z",
-      "determination_date": null
+      "determination_date": "2026-07-24T12:00:00Z"
     },
     {
       "merger_id": "WA-25039",
@@ -543,13 +543,13 @@
   "phase_1_count": 24,
   "phase_2_count": 2,
   "waiver_count": 19,
-  "active_count": 4,
+  "active_count": 3,
   "phase_duration": {
-    "average_days": 34.81818181818182,
-    "median_days": 27.0,
-    "average_business_days": 21.636363636363637,
-    "median_business_days": 18.0,
-    "completed_count": 22
+    "average_days": 34.52173913043478,
+    "median_days": 27,
+    "average_business_days": 21.565217391304348,
+    "median_business_days": 18,
+    "completed_count": 23
   },
   "waiver_duration": {
     "average_days": 18.894736842105264,

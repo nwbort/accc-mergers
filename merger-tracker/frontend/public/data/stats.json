@@ -1,51 +1,51 @@
 {
   "total_mergers": 189,
-  "total_waivers": 287,
+  "total_waivers": 288,
   "total_conditional_approvals": 1,
   "by_status": {
-    "Assessment completed": 144,
-    "Under assessment": 42,
+    "Assessment completed": 145,
+    "Under assessment": 41,
     "Assessment ceased": 3
   },
   "by_determination": {
-    "Approved": 142,
+    "Approved": 143,
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 273,
+    "Approved": 274,
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 143,
+    "cleared": 144,
     "not_cleared": 1,
-    "total": 144,
+    "total": 145,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.64,
-    "median_days": 26.0,
-    "average_business_days": 19.553333333333335,
-    "median_business_days": 17.0,
+    "average_days": 29.629139072847682,
+    "median_days": 26,
+    "average_business_days": 19.556291390728475,
+    "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 37,
-        "percentage": 24.7
+        "percentage": 24.5
       },
       "day20": {
-        "count": 117,
-        "percentage": 78.0
+        "count": 118,
+        "percentage": 78.1
       },
       "day30": {
-        "count": 142,
+        "count": 143,
         "percentage": 94.7
       }
     }
   },
   "waiver_duration": {
-    "average_days": 18.665505226480835,
-    "median_days": 18,
-    "average_business_days": 12.45993031358885,
-    "median_business_days": 12
+    "average_days": 18.663194444444443,
+    "median_days": 18.0,
+    "average_business_days": 12.465277777777779,
+    "median_business_days": 12.0
   },
   "top_industries": [
     {
@@ -70,7 +70,7 @@
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 21
+      "count": 22
     },
     {
       "name": "Accommodation",
@@ -218,6 +218,26 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-01106",
+      "merger_name": "Midea - Residentia Group",
+      "determination": "Approved",
+      "determination_date": "2026-07-24T12:00:00Z",
+      "page_modified_datetime": "2026-07-24T17:03:54+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
+      "merger_id": "WA-75033",
+      "merger_name": "Sonnel Hospitality Group \u2013 Peakhurst Inn Hotel",
+      "determination": "Approved",
+      "determination_date": "2026-07-24T12:00:00Z",
+      "page_modified_datetime": "2026-07-24T16:58:14+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-85037",
       "merger_name": "Tata Motors - Iveco",
       "determination": "Approved",
@@ -316,26 +336,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-50024",
-      "merger_name": "AkzoNobel - Axalta",
-      "determination": "Approved",
-      "determination_date": "2026-07-21T12:00:00Z",
-      "page_modified_datetime": "2026-07-22T09:53:19+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-50031",
-      "merger_name": "New Forests Australia New Zealand Landscapes and Forestry Fund \u2013 Benditi Pastoral",
-      "determination": "Approved",
-      "determination_date": "2026-07-21T12:00:00Z",
-      "page_modified_datetime": "2026-07-21T16:36:12+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }
