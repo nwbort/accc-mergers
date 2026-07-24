@@ -19,7 +19,7 @@
       "code": "411",
       "name": "Supermarket and Grocery Stores",
       "level": "group",
-      "merger_count": 13
+      "merger_count": 14
     },
     {
       "code": "412",
@@ -29,6 +29,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-05030",
+      "merger_name": "Coles \u2013 supermarket site in Upper Swan, WA",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-24T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-40029",
       "merger_name": "Laundy \u2013 Woy Woy Hotel",
@@ -294,11 +305,11 @@
       "determination_date": "2026-03-13T12:00:00Z"
     }
   ],
-  "count": 24,
-  "phase_1_count": 8,
+  "count": 25,
+  "phase_1_count": 9,
   "phase_2_count": 2,
   "waiver_count": 14,
-  "active_count": 2,
+  "active_count": 3,
   "phase_duration": {
     "average_days": 38.875,
     "median_days": 26.0,

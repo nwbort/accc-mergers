@@ -21,7 +21,7 @@
       "code": "41",
       "name": "Food Retailing",
       "level": "subdivision",
-      "merger_count": 24
+      "merger_count": 25
     },
     {
       "code": "42",
@@ -37,6 +37,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-05030",
+      "merger_name": "Coles \u2013 supermarket site in Upper Swan, WA",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-24T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-65026",
       "merger_name": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company",
@@ -643,11 +654,11 @@
       "determination_date": null
     }
   ],
-  "count": 55,
-  "phase_1_count": 18,
+  "count": 56,
+  "phase_1_count": 19,
   "phase_2_count": 3,
   "waiver_count": 34,
-  "active_count": 6,
+  "active_count": 7,
   "phase_duration": {
     "average_days": 38.53333333333333,
     "median_days": 27,

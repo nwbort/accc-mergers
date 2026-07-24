@@ -1,10 +1,10 @@
 {
-  "total_mergers": 188,
+  "total_mergers": 189,
   "total_waivers": 285,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 144,
-    "Under assessment": 41,
+    "Under assessment": 42,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -77,19 +77,29 @@
       "count": 17
     },
     {
+      "name": "Supermarket and Grocery Stores",
+      "count": 14
+    },
+    {
       "name": "Liquor Retailing",
       "count": 14
     },
     {
       "name": "Engineering Design and Engineering Consulting Services",
       "count": 14
-    },
-    {
-      "name": "Scientific Research Services",
-      "count": 14
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-05030",
+      "merger_name": "Coles \u2013 supermarket site in Upper Swan, WA",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-24T12:00:00Z",
+      "page_modified_datetime": "2026-07-24T15:52:13+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-90024",
       "merger_name": "Petalite \u2013 Envu",
@@ -204,16 +214,6 @@
       "page_modified_datetime": "2026-07-17T10:32:27+10:00",
       "is_waiver": false,
       "is_refiled": false
-    },
-    {
-      "merger_id": "MN-40029",
-      "merger_name": "Laundy \u2013 Woy Woy Hotel",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-15T12:00:00Z",
-      "page_modified_datetime": "2026-07-24T10:18:54+10:00",
-      "is_waiver": false,
-      "is_refiled": true
     }
   ],
   "recent_determinations": [
