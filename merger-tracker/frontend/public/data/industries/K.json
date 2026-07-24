@@ -9,7 +9,7 @@
       "code": "62",
       "name": "Finance",
       "level": "subdivision",
-      "merger_count": 68
+      "merger_count": 69
     },
     {
       "code": "63",
@@ -25,6 +25,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-90024",
+      "merger_name": "Petalite \u2013 Envu",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-24T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-25037",
       "merger_name": "Sanad Services and Tikehau Capital \u2013 Revima",
@@ -1192,11 +1203,11 @@
       "determination_date": null
     }
   ],
-  "count": 106,
-  "phase_1_count": 23,
+  "count": 107,
+  "phase_1_count": 24,
   "phase_2_count": 2,
   "waiver_count": 81,
-  "active_count": 5,
+  "active_count": 6,
   "phase_duration": {
     "average_days": 28.666666666666668,
     "median_days": 24,

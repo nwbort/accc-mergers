@@ -31,7 +31,7 @@
       "code": "183",
       "name": "Fertiliser and Pesticide Manufacturing",
       "level": "group",
-      "merger_count": 1
+      "merger_count": 2
     },
     {
       "code": "184",
@@ -53,6 +53,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-90024",
+      "merger_name": "Petalite \u2013 Envu",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-24T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-05036",
       "merger_name": "Vertex \u2013 Crinetics",
@@ -252,11 +263,11 @@
       "determination_date": "2026-02-05T12:00:00Z"
     }
   ],
-  "count": 18,
-  "phase_1_count": 10,
+  "count": 19,
+  "phase_1_count": 11,
   "phase_2_count": 1,
   "waiver_count": 7,
-  "active_count": 3,
+  "active_count": 4,
   "phase_duration": {
     "average_days": 30.77777777777778,
     "median_days": 26,

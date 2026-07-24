@@ -1,10 +1,10 @@
 {
-  "total_mergers": 187,
+  "total_mergers": 188,
   "total_waivers": 285,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 144,
-    "Under assessment": 40,
+    "Under assessment": 41,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -50,7 +50,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 60
+      "count": 61
     },
     {
       "name": "Computer System Design and Related Services",
@@ -90,6 +90,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-90024",
+      "merger_name": "Petalite \u2013 Envu",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-24T12:00:00Z",
+      "page_modified_datetime": "2026-07-24T15:11:32+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-10021",
       "merger_name": "Ambrose Construct Group \u2013 Major Loss Builders",
@@ -204,16 +214,6 @@
       "page_modified_datetime": "2026-07-24T10:18:54+10:00",
       "is_waiver": false,
       "is_refiled": true
-    },
-    {
-      "merger_id": "MN-70026",
-      "merger_name": "Parker-Hannifin \u2013 CIRCOR A&D",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-15T12:00:00Z",
-      "page_modified_datetime": "2026-07-23T19:06:58+10:00",
-      "is_waiver": false,
-      "is_refiled": false
     }
   ],
   "recent_determinations": [
