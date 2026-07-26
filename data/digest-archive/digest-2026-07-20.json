@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-26T09:34:50.312350+10:00",
+  "generated_at": "2026-07-27T07:35:15.428096+10:00",
   "period_start": "2026-07-20T00:00:00+10:00",
   "period_end": "2026-07-26T23:59:59.999999+10:00",
   "new_deals_notified": [
@@ -4815,6 +4815,262 @@
       ],
       "under_appeal": false,
       "appeal": null
+    }
+  ],
+  "ongoing_tribunal_appeals": [
+    {
+      "merger_id": "MN-01068",
+      "merger_name": "Coles – supermarket and liquor site in Kalgoorlie, WA",
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/coles-%E2%80%93-supermarket-and-liquor-site-in-kalgoorlie-wa",
+      "acquirers": [
+        {
+          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "45 004 189 708"
+        }
+      ],
+      "targets": [
+        {
+          "name": "M Holdings 4 Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "652 075 799"
+        }
+      ],
+      "effective_notification_datetime": "2025-11-27T12:00:00Z",
+      "determination_publication_date": "2026-07-01T12:00:00Z",
+      "end_of_determination_period": "2026-07-02T12:00:00Z",
+      "accc_determination": "Not approved",
+      "stage": "Phase 2 - detailed assessment",
+      "status": "Assessment completed",
+      "is_waiver": false,
+      "phase_1_determination": "Referred to phase 2",
+      "phase_1_determination_date": "2026-01-29T12:00:00Z",
+      "phase_2_determination": "Not approved",
+      "ceased_date": null,
+      "merger_description": "Coles Group Limited (Coles), via its subsidiary Coles Supermarkets Australia Pty Ltd, has signed a Letter of Offer to facilitate Coles acquiring a leasehold interest in a new neighbourhood centre at Lots 95-106 Great Western Highway, Somerville, Kalgoorlie (the **Property**).",
+      "events": [
+        {
+          "date": "2025-11-28T12:00:00Z",
+          "title": "Questionnaire – Coles - supermarket and liquor site in Kalgoorlie, WA",
+          "display_title": "Questionnaire released for Coles acquisition of supermarket and liquor site in Kalgoorlie, WA",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20%E2%80%93%20Coles%20-%20supermarket%20and%20liquor%20site%20in%20Kalgoorlie%2C%20WA%20-%2028.11.2025.docx",
+          "url_gh": "/mergers/MN-01068/Questionnaire – Coles - supermarket and liquor site in Kalgoorlie, WA - 28.11.2025.pdf",
+          "status": "removed",
+          "phase": null
+        },
+        {
+          "date": "2025-11-27T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-05-13T12:00:00Z",
+          "title": "Timeline extended by 6 business days – following request for further information",
+          "display_title": "Timeline extended by 6 business days – following request for further information",
+          "phase": null
+        },
+        {
+          "date": "2026-05-25T12:00:00Z",
+          "title": "Timeline extended by 4 business days – following request for further information",
+          "display_title": "Timeline extended by 4 business days – following request for further information",
+          "phase": null
+        },
+        {
+          "date": "2026-05-18T12:00:00Z",
+          "title": "Timeline extended by 4 business days – following request for further information",
+          "display_title": "Timeline extended by 4 business days – following request for further information",
+          "phase": null
+        },
+        {
+          "date": "2026-06-30T12:00:00Z",
+          "title": "Phase 2 determination - Statement of reasons",
+          "display_title": "Phase 2 determination - Statement of reasons",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Coles%20Kalgoorlie%20-%20PUBLIC%20VERSION%20-%20FINAL%20-%20Phase%202%20-%20Statement%20of%20Reasons%20-%2030%20June%202026.pdf",
+          "determination_commission_division": null,
+          "determination_table_content": [
+            {
+              "item": "",
+              "details": "Combined Coles\nCombined Coles"
+            }
+          ],
+          "url_gh": "/mergers/MN-01068/Coles Kalgoorlie - PUBLIC VERSION - FINAL - Phase 2 - Statement of Reasons - 30 June 2026.pdf",
+          "status": "live",
+          "phase": "Phase 2"
+        },
+        {
+          "date": "2026-06-30T12:00:00Z",
+          "title": "Phase 2 determination - Summary of reasons",
+          "display_title": "Phase 2 determination - Summary of reasons",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Coles%20Kalgoorlie%20-%20FINAL%20-%20Phase%202%20-%20Determination%20-%20Summary%20of%20Reasons%20-%20AR%20version%20-%2030%20June%202026_1.pdf",
+          "determination_commission_division": null,
+          "determination_table_content": [],
+          "url_gh": "/mergers/MN-01068/Coles Kalgoorlie - FINAL - Phase 2 - Determination - Summary of Reasons - AR version - 30 June 2026_1.pdf",
+          "status": "live",
+          "phase": "Phase 2"
+        },
+        {
+          "date": "2026-06-30T12:00:00Z",
+          "title": "Phase 2 determination",
+          "display_title": "Phase 2 - detailed assessment determination: Not approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Coles%20Kalgoorlie%20-%20FINAL%20-%20Phase%202%20-%20Determination%20-%20AR%20version%20-%2030%20June%202026_0.pdf",
+          "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
+          "determination_table_content": [
+            {
+              "item": "Determination",
+              "details": "made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act 1"
+            }
+          ],
+          "url_gh": "/mergers/MN-01068/Coles Kalgoorlie - FINAL - Phase 2 - Determination - AR version - 30 June 2026_0.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Phase 2"
+        },
+        {
+          "date": "2026-03-06T12:00:00Z",
+          "title": "Summary of Notice of Competition Concerns",
+          "display_title": "Summary of Notice of Competition Concerns",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Coles_Kalgoorlie%20-%20Final%20-%20Summary%20of%20Notice%20of%20Competition%20Concerns%20-%20March%202026_5.pdf",
+          "url_gh": "/mergers/MN-01068/Coles_Kalgoorlie - Final - Summary of Notice of Competition Concerns - March 2026_5.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-01-29T12:00:00Z",
+          "title": "ACCC decided notification is subject to Phase 2 review",
+          "display_title": "ACCC decided notification is subject to Phase 2 review",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/%20Kalgoorlie%20-%20Decision%20to%20Proceed%20to%20Phase%202%20review%20-%2029%20January%202026_5.pdf",
+          "phase2_notice_matters_to_investigate": [
+            {
+              "heading": "Relevant areas of competition",
+              "items": [
+                "The extent convenience stores and small supermarkets compete with full-line supermarkets such as the Proposed Supermarket.",
+                "The extent to which consumers in Kalgoorlie routinely travel to do their grocery shopping, and how far they do so."
+              ]
+            },
+            {
+              "heading": "Potential over-supply of supermarket capacity that could induce the exit of effective competitors",
+              "items": [
+                "The level of market concentration in the south/south-western end of Kalgoorlie and Kalgoorlie generally before and after the Acquisition.",
+                "The competitive offerings of each supermarket competitor in Kalgoorlie (including but not limited to price, quality, product range and service) and the intensity with which they compete in the relevant markets.",
+                "Price, quality, product range and service differentials between the major and independent supermarkets in Kalgoorlie.",
+                "The likelihood and viability of new entry and expansion in Kalgoorlie to increase competitive intensity with the Proposed Supermarket, including further consideration of suitable supermarket sites, planning and zoning requirements, and likely population growth.",
+                "The profitability of Coles and independent supermarket(s) in Kalgoorlie should the Acquisition proceed.",
+                "The impact on the level of competitive constraint imposed by existing rival supermarkets in Kalgoorlie should the Acquisition proceed.",
+                "The effect on competition should one or more competitor supermarket(s) exit following the expansion of Coles via the Proposed Supermarket."
+              ]
+            },
+            {
+              "heading": "Creating, strengthening or entrenching a substantial degree of market power",
+              "items": [
+                "Whether or not Coles has, or is likely to have, substantial market power.",
+                "The likely economic rationale for Coles opening the Proposed Supermarket, including its dependence on the level and nature of future competition in the relevant market.",
+                "Whether the Acquisition is likely to reduce competitive constraint.",
+                "Whether the Acquisition would, in all the circumstances, be likely to have the effect of creating, strengthening or entrenching a substantial degree of power in the local market."
+              ]
+            }
+          ],
+          "phase2_notice_commission_division": null,
+          "url_gh": "/mergers/MN-01068/Kalgoorlie - Decision to Proceed to Phase 2 review - 29 January 2026_5.pdf",
+          "status": "live",
+          "phase": "Phase 2"
+        },
+        {
+          "date": "2026-07-21T12:00:00Z",
+          "title": "Directions",
+          "display_title": "Tribunal appeal – Directions",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0020/600284/Directions.pdf",
+          "url_gh": "/mergers/MN-01068/Directions.pdf",
+          "is_appeal": true,
+          "appeal_filed_by": "-",
+          "appeal_confidentiality": "Non-confidential",
+          "tribunal_number": "ACT 1 of 2026",
+          "phase": null
+        },
+        {
+          "date": "2026-07-20T12:00:00Z",
+          "title": "Application for Leave to Intervene",
+          "display_title": "Tribunal appeal – Application for Leave to Intervene",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0003/600285/OConnor-Fresh-IGA-Application-for-Leave-to-Intervene.pdf",
+          "url_gh": "/mergers/MN-01068/OConnor-Fresh-IGA-Application-for-Leave-to-Intervene.pdf",
+          "is_appeal": true,
+          "appeal_filed_by": "O'Connor Fresh IGA",
+          "appeal_confidentiality": "Non-confidential",
+          "tribunal_number": "ACT 1 of 2026",
+          "phase": null
+        },
+        {
+          "date": "2026-07-15T12:00:00Z",
+          "title": "Notice of address for service",
+          "display_title": "Tribunal appeal – Notice of address for service",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0012/599808/Notice-of-Address-for-Service-ACCC.pdf",
+          "url_gh": "/mergers/MN-01068/Notice-of-Address-for-Service-ACCC.pdf",
+          "is_appeal": true,
+          "appeal_filed_by": "Australian Competition and Consumer Commission",
+          "appeal_confidentiality": "Non-confidential",
+          "tribunal_number": "ACT 1 of 2026",
+          "phase": null
+        },
+        {
+          "date": "2026-07-15T12:00:00Z",
+          "title": "Application for review",
+          "display_title": "Tribunal appeal – Application for review",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0008/599732/Application-for-Review.pdf",
+          "url_gh": "/mergers/MN-01068/Application-for-Review.pdf",
+          "is_appeal": true,
+          "appeal_filed_by": "Coles Supermarkets",
+          "appeal_confidentiality": "Non-confidential",
+          "tribunal_number": "ACT 1 of 2026",
+          "phase": null
+        }
+      ],
+      "under_appeal": true,
+      "appeal": {
+        "tribunal_number": "ACT 1 of 2026",
+        "tribunal_url": "https://www.competitiontribunal.gov.au/current-matters/act-1-of-2026",
+        "appeal_type": "party_denial",
+        "appellant": "Coles",
+        "status": "current",
+        "outcome": null,
+        "effective_determination": null,
+        "filed_date": "2026-07-15",
+        "hearing_date": "2026-11-09",
+        "concluded_date": null,
+        "documents": [
+          {
+            "date": "2026-07-21",
+            "filed_by": "-",
+            "description": "Directions",
+            "confidentiality": "Non-confidential",
+            "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0020/600284/Directions.pdf",
+            "url_gh": "/mergers/MN-01068/Directions.pdf"
+          },
+          {
+            "date": "2026-07-20",
+            "filed_by": "O'Connor Fresh IGA",
+            "description": "Application for Leave to Intervene",
+            "confidentiality": "Non-confidential",
+            "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0003/600285/OConnor-Fresh-IGA-Application-for-Leave-to-Intervene.pdf",
+            "url_gh": "/mergers/MN-01068/OConnor-Fresh-IGA-Application-for-Leave-to-Intervene.pdf"
+          },
+          {
+            "date": "2026-07-15",
+            "filed_by": "Australian Competition and Consumer Commission",
+            "description": "Notice of address for service",
+            "confidentiality": "Non-confidential",
+            "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0012/599808/Notice-of-Address-for-Service-ACCC.pdf",
+            "url_gh": "/mergers/MN-01068/Notice-of-Address-for-Service-ACCC.pdf"
+          },
+          {
+            "date": "2026-07-15",
+            "filed_by": "Coles Supermarkets",
+            "description": "Application for review",
+            "confidentiality": "Non-confidential",
+            "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0008/599732/Application-for-Review.pdf",
+            "url_gh": "/mergers/MN-01068/Application-for-Review.pdf"
+          }
+        ]
+      }
     }
   ]
 }

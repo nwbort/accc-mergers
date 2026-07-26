@@ -394,6 +394,7 @@ function Digest() {
 
   const ceasedMergers = digest.deals_assessment_ceased || [];
   const appealedMergers = digest.deals_appealed_to_tribunal || [];
+  const ongoingAppeals = digest.ongoing_tribunal_appeals || [];
 
   const summaryCards = [
     { id: 'new-mergers', colorKey: DIGEST_COLOR_KEYS.NEW_MERGER, count: digest.new_deals_notified.length, label: 'New deals notified' },
@@ -404,6 +405,7 @@ function Digest() {
     ...(appealedMergers.length > 0 ? [{ id: 'mergers-appealed', colorKey: DIGEST_COLOR_KEYS.TRIBUNAL_APPEAL, count: appealedMergers.length, label: 'Appealed to tribunal' }] : []),
     { id: 'ongoing-phase-1', colorKey: DIGEST_COLOR_KEYS.PHASE_1, count: digest.ongoing_phase_1.length, label: 'Ongoing phase 1' },
     { id: 'ongoing-phase-2', colorKey: DIGEST_COLOR_KEYS.PHASE_2, count: digest.ongoing_phase_2.length, label: 'Ongoing phase 2' },
+    ...(ongoingAppeals.length > 0 ? [{ id: 'ongoing-tribunal-appeals', colorKey: DIGEST_COLOR_KEYS.TRIBUNAL_APPEAL, count: ongoingAppeals.length, label: 'Ongoing tribunal appeals' }] : []),
   ];
 
   return (
@@ -634,6 +636,42 @@ function Digest() {
               </tr>
             )}
           />
+
+          {ongoingAppeals.length > 0 && (
+            <DigestSection
+              id="ongoing-tribunal-appeals"
+              title="Ongoing - tribunal appeals"
+              emptyMessage="No ongoing tribunal appeals"
+              colorKey={DIGEST_COLOR_KEYS.TRIBUNAL_APPEAL}
+              mergers={ongoingAppeals}
+              columns={['Merger', 'Filed', 'Hearing', 'Appeal']}
+              renderRow={(merger) => {
+                const appeal = merger.appeal || {};
+                return (
+                  <tr key={merger.merger_id} className="relative hover:bg-tribunal-appeal-pale/40 transition-colors">
+                    <MergerNameCell merger={merger} colorKey={DIGEST_COLOR_KEYS.TRIBUNAL_APPEAL} />
+                    <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                      {appeal.filed_date ? formatDate(appeal.filed_date) : 'N/A'}
+                    </td>
+                    <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                      {appeal.hearing_date ? formatDate(appeal.hearing_date) : 'TBC'}
+                    </td>
+                    <td className="px-5 sm:px-6 py-4 text-sm text-gray-600">
+                      <div>{APPEAL_TYPE_LABELS[appeal.appeal_type] || DEFAULT_APPEAL_LABEL}</div>
+                      {(appeal.tribunal_number || appeal.appellant) && (
+                        <div className="text-xs text-gray-500 mt-0.5">
+                          {[
+                            appeal.appellant ? `Lodged by ${appeal.appellant}` : null,
+                            appeal.tribunal_number,
+                          ].filter(Boolean).join(' · ')}
+                        </div>
+                      )}
+                    </td>
+                  </tr>
+                );
+              }}
+            />
+          )}
         </div>
       </div>
     </div>

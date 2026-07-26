@@ -521,6 +521,44 @@ class TestWeeklyDigestBuckets:
         digest = self._run([merger], monkeypatch, previous_digest=previous_digest)
         assert [m['merger_id'] for m in digest['ongoing_phase_1']] == ['MN-400']
 
+    # -----------------------------------------------------------------
+    # Ongoing tribunal appeals (current snapshot, not week-scoped)
+    # -----------------------------------------------------------------
+
+    def test_current_appeal_is_in_ongoing_snapshot(self, monkeypatch):
+        # An old filing date must not exclude a still-current appeal from the
+        # ongoing snapshot; unlike the week-scoped bucket, it is not time-scoped.
+        merger = self._appealed_merger('MN-40010', '2025-01-05')
+        digest = self._run([merger], monkeypatch)
+        assert [m['merger_id'] for m in digest['ongoing_tribunal_appeals']] == ['MN-40010']
+
+    def test_concluded_appeal_absent_from_ongoing_snapshot(self, monkeypatch):
+        # `under_appeal` is False for concluded matters, so they drop out of the
+        # ongoing snapshot even though the appeal record lingers.
+        merger = self._appealed_merger('MN-40011', '2025-01-05', under_appeal=False)
+        digest = self._run([merger], monkeypatch)
+        assert digest['ongoing_tribunal_appeals'] == []
+
+    def test_merger_without_appeal_absent_from_ongoing_snapshot(self, monkeypatch):
+        merger = {
+            'merger_id': 'MN-40012',
+            'merger_name': 'No appeal',
+            'status': merger_status.UNDER_ASSESSMENT,
+            'stage': 'Phase 1 - initial assessment',
+            'effective_notification_datetime': '2025-03-20T00:00:00Z',
+            'events': [],
+        }
+        digest = self._run([merger], monkeypatch)
+        assert digest['ongoing_tribunal_appeals'] == []
+
+    def test_ongoing_appeals_not_deduplicated(self, monkeypatch):
+        # Like the ongoing phase lists, the appeal snapshot reflects current
+        # state and ignores what last week's digest listed.
+        merger = self._appealed_merger('MN-40013', '2025-04-11')
+        previous_digest = {'ongoing_tribunal_appeals': [{'merger_id': 'MN-40013'}]}
+        digest = self._run([merger], monkeypatch, previous_digest=previous_digest)
+        assert [m['merger_id'] for m in digest['ongoing_tribunal_appeals']] == ['MN-40013']
+
 
 class TestMainWritesArchive:
     """main() should write both the live digest and a dated archive snapshot,
