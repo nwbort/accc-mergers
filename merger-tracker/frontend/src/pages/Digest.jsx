@@ -434,7 +434,7 @@ function Digest() {
     ...(appealedMergers.length > 0 ? [{ id: 'mergers-appealed', colorKey: DIGEST_COLOR_KEYS.TRIBUNAL_APPEAL, count: appealedMergers.length, label: 'Appealed to tribunal' }] : []),
     { id: 'ongoing-phase-1', colorKey: DIGEST_COLOR_KEYS.PHASE_1, count: digest.ongoing_phase_1.length, label: 'Ongoing phase 1' },
     { id: 'ongoing-phase-2', colorKey: DIGEST_COLOR_KEYS.PHASE_2, count: digest.ongoing_phase_2.length, label: 'Ongoing phase 2' },
-    ...(ongoingAppeals.length > 0 ? [{ id: 'ongoing-tribunal-appeals', colorKey: DIGEST_COLOR_KEYS.TRIBUNAL_APPEAL, count: ongoingAppeals.length, label: 'Ongoing tribunal appeals' }] : []),
+    ...(ongoingAppeals.length > 0 ? [{ id: 'ongoing-tribunal-appeals', colorKey: DIGEST_COLOR_KEYS.TRIBUNAL_APPEAL, count: ongoingAppeals.length, label: 'Ongoing ACT appeals' }] : []),
   ];
 
   return (
