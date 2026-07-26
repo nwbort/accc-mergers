@@ -589,13 +589,17 @@ function Digest() {
               emptyMessage="No deals appealed to the tribunal this week"
               colorKey={DIGEST_COLOR_KEYS.TRIBUNAL_APPEAL}
               mergers={appealedMergers}
-              columns={['Merger', 'Filed', 'Appeal']}
+              columns={['Merger', { label: 'Filed', thClassName: 'hidden sm:table-cell' }, 'Appeal']}
               renderRow={(merger) => {
                 const appeal = merger.appeal || {};
                 return (
                   <tr key={merger.merger_id} className="relative hover:bg-tribunal-appeal-pale/40 transition-colors">
-                    <MergerNameCell merger={merger} colorKey={DIGEST_COLOR_KEYS.TRIBUNAL_APPEAL} />
-                    <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                    <MergerNameCell
+                      merger={merger}
+                      colorKey={DIGEST_COLOR_KEYS.TRIBUNAL_APPEAL}
+                      mobileMeta={<span>Filed {appeal.filed_date ? formatDate(appeal.filed_date) : 'N/A'}</span>}
+                    />
+                    <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600 hidden sm:table-cell">
                       {appeal.filed_date ? formatDate(appeal.filed_date) : 'N/A'}
                     </td>
                     <td className="px-5 sm:px-6 py-4 text-sm text-gray-600">
@@ -718,16 +722,25 @@ function Digest() {
               emptyMessage="No ongoing tribunal appeals"
               colorKey={DIGEST_COLOR_KEYS.TRIBUNAL_APPEAL}
               mergers={ongoingAppeals}
-              columns={['Merger', 'Filed', 'Hearing', 'Appeal']}
+              columns={['Merger', { label: 'Filed', thClassName: 'hidden sm:table-cell' }, { label: 'Hearing', thClassName: 'hidden sm:table-cell' }, 'Appeal']}
               renderRow={(merger) => {
                 const appeal = merger.appeal || {};
                 return (
                   <tr key={merger.merger_id} className="relative hover:bg-tribunal-appeal-pale/40 transition-colors">
-                    <MergerNameCell merger={merger} colorKey={DIGEST_COLOR_KEYS.TRIBUNAL_APPEAL} />
-                    <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                    <MergerNameCell
+                      merger={merger}
+                      colorKey={DIGEST_COLOR_KEYS.TRIBUNAL_APPEAL}
+                      mobileMeta={
+                        <>
+                          <div>Filed {appeal.filed_date ? formatDate(appeal.filed_date) : 'N/A'}</div>
+                          <div>Hearing {appeal.hearing_date ? formatDate(appeal.hearing_date) : 'TBC'}</div>
+                        </>
+                      }
+                    />
+                    <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600 hidden sm:table-cell">
                       {appeal.filed_date ? formatDate(appeal.filed_date) : 'N/A'}
                     </td>
-                    <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                    <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600 hidden sm:table-cell">
                       {appeal.hearing_date ? formatDate(appeal.hearing_date) : 'TBC'}
                     </td>
                     <td className="px-5 sm:px-6 py-4 text-sm text-gray-600">
