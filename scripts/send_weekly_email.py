@@ -425,7 +425,7 @@ def build_lede(c: dict) -> str:
     if c["appealed"]:
         mid.append(
             f"{bw(c['appealed'])} {pluralise(c['appealed'], 'deal was', 'deals were')} "
-            "appealed to the tribunal"
+            "appealed to the Tribunal"
         )
     if mid:
         sentence = join_and(mid)
@@ -448,7 +448,7 @@ def build_lede(c: dict) -> str:
     if c["on_appeal"]:
         sentences.append(
             f"{b(c['on_appeal'])} {pluralise(c['on_appeal'], 'matter remains', 'matters remain')} "
-            "under appeal at the tribunal."
+            "under appeal at the Tribunal."
         )
 
     return " ".join(sentences)
