@@ -596,16 +596,33 @@ function Digest() {
             emptyMessage="No ongoing phase 1 mergers"
             colorKey={DIGEST_COLOR_KEYS.PHASE_1}
             mergers={digest.ongoing_phase_1}
-            columns={['Merger', 'Notification date', 'Determination due date', 'Summary']}
+            columns={['Merger', { label: 'Notification date', thClassName: 'hidden sm:table-cell' }, { label: 'Determination due date', thClassName: 'hidden sm:table-cell' }, 'Summary']}
             renderRow={(merger) => (
               <tr key={merger.merger_id} className="relative hover:bg-phase-1-pale/40 transition-colors">
-                <MergerNameCell merger={merger} colorKey={DIGEST_COLOR_KEYS.PHASE_1} />
-                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                <MergerNameCell
+                  merger={merger}
+                  colorKey={DIGEST_COLOR_KEYS.PHASE_1}
+                  mobileMeta={
+                    <>
+                      <div>
+                        Notified {merger.effective_notification_datetime
+                          ? formatDate(merger.effective_notification_datetime)
+                          : 'N/A'}
+                      </div>
+                      <div>
+                        Determination due {merger.end_of_determination_period
+                          ? formatDate(merger.end_of_determination_period)
+                          : 'N/A'}
+                      </div>
+                    </>
+                  }
+                />
+                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600 hidden sm:table-cell">
                   {merger.effective_notification_datetime
                     ? formatDate(merger.effective_notification_datetime)
                     : 'N/A'}
                 </td>
-                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600 hidden sm:table-cell">
                   {merger.end_of_determination_period
                     ? formatDate(merger.end_of_determination_period)
                     : 'N/A'}
@@ -627,16 +644,33 @@ function Digest() {
             emptyMessage="No ongoing phase 2 mergers"
             colorKey={DIGEST_COLOR_KEYS.PHASE_2}
             mergers={digest.ongoing_phase_2}
-            columns={['Merger', 'Notification date', 'Determination due date', 'Summary']}
+            columns={['Merger', { label: 'Notification date', thClassName: 'hidden sm:table-cell' }, { label: 'Determination due date', thClassName: 'hidden sm:table-cell' }, 'Summary']}
             renderRow={(merger) => (
               <tr key={merger.merger_id} className="relative hover:bg-phase-2-pale/40 transition-colors">
-                <MergerNameCell merger={merger} colorKey={DIGEST_COLOR_KEYS.PHASE_2} />
-                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                <MergerNameCell
+                  merger={merger}
+                  colorKey={DIGEST_COLOR_KEYS.PHASE_2}
+                  mobileMeta={
+                    <>
+                      <div>
+                        Notified {merger.effective_notification_datetime
+                          ? formatDate(merger.effective_notification_datetime)
+                          : 'N/A'}
+                      </div>
+                      <div>
+                        Determination due {merger.end_of_determination_period
+                          ? formatDate(merger.end_of_determination_period)
+                          : 'N/A'}
+                      </div>
+                    </>
+                  }
+                />
+                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600 hidden sm:table-cell">
                   {merger.effective_notification_datetime
                     ? formatDate(merger.effective_notification_datetime)
                     : 'N/A'}
                 </td>
-                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600 hidden sm:table-cell">
                   {merger.end_of_determination_period
                     ? formatDate(merger.end_of_determination_period)
                     : 'N/A'}
