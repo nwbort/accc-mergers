@@ -312,7 +312,7 @@ def build_text_email(digest: dict) -> str:
             ]
             for m in ongoing_appeals
         ]
-        lines.append(_text_section("ONGOING TRIBUNAL APPEALS", ["Merger", "Filed", "Hearing", "Type"], appeal_rows, ""))
+        lines.append(_text_section("ONGOING ACT APPEALS", ["Merger", "Filed", "Hearing", "Type"], appeal_rows, ""))
         lines.append("")
         lines.append("")
 
@@ -780,7 +780,7 @@ def build_ongoing_appeals(mergers: list) -> str:
     """Deals with a current appeal on foot at the Australian Competition
     Tribunal — a live snapshot, not just this week's new filings."""
     c = COLORS["tribunal_appeal"]
-    rows = section_head("Ongoing tribunal appeals", c["border"],
+    rows = section_head("Ongoing ACT appeals", c["border"],
                         f"{len(mergers)} on foot" if mergers else "")
     if not mergers:
         rows += empty_section_row("No matters are currently under appeal.")
