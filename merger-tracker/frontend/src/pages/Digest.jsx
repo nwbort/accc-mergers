@@ -125,18 +125,25 @@ function DeterminationCell({ merger, colorKey, defaultDetermination, getDetermin
   );
 }
 
-function ClearedSection({ mergers, getDeterminationPdf }) {
-  const colorKey = DIGEST_COLOR_KEYS.CLEARED;
+function GroupedDeterminationSection({
+  id,
+  title,
+  emptyMessage,
+  colorKey,
+  mergers,
+  matchValues,
+  defaultDetermination,
+  getDeterminationPdf,
+  rowHoverClass,
+  groupHeaderBgClass,
+}) {
   const c = COLOR_CLASSES[colorKey];
   const columns = ['Merger', { label: 'Determination date', thClassName: 'hidden sm:table-cell' }, 'Determination'];
 
-  const phase2 = mergers.filter(m => m.phase_2_determination === MERGER_STATUS.APPROVED);
-  const phase1 = mergers.filter(
-    m => m.phase_1_determination === MERGER_STATUS.APPROVED && m.phase_2_determination !== MERGER_STATUS.APPROVED
-  );
-  const general = mergers.filter(
-    m => m.phase_2_determination !== MERGER_STATUS.APPROVED && m.phase_1_determination !== MERGER_STATUS.APPROVED
-  );
+  const isMatch = (value) => matchValues.includes(value);
+  const phase2 = mergers.filter(m => isMatch(m.phase_2_determination));
+  const phase1 = mergers.filter(m => isMatch(m.phase_1_determination) && !isMatch(m.phase_2_determination));
+  const general = mergers.filter(m => !isMatch(m.phase_2_determination) && !isMatch(m.phase_1_determination));
 
   const groups = [
     { label: 'Phase 2 – detailed assessment', items: phase2 },
@@ -145,7 +152,7 @@ function ClearedSection({ mergers, getDeterminationPdf }) {
   ].filter(g => g.items.length > 0);
 
   const renderRow = (merger) => (
-    <tr key={merger.merger_id} className="relative hover:bg-cleared-pale/40 transition-colors">
+    <tr key={merger.merger_id} className={`relative ${rowHoverClass} transition-colors`}>
       <MergerNameCell
         merger={merger}
         colorKey={colorKey}
@@ -166,23 +173,23 @@ function ClearedSection({ mergers, getDeterminationPdf }) {
       <DeterminationCell
         merger={merger}
         colorKey={colorKey}
-        defaultDetermination={MERGER_STATUS.APPROVED}
+        defaultDetermination={defaultDetermination}
         getDeterminationPdf={getDeterminationPdf}
       />
     </tr>
   );
 
   return (
-    <div id="mergers-approved" className={`bg-white rounded-2xl border-l-4 ${c.borderLeft} border-t border-r border-b border-gray-100 shadow-card overflow-hidden`}>
+    <div id={id} className={`bg-white rounded-2xl border-l-4 ${c.borderLeft} border-t border-r border-b border-gray-100 shadow-card overflow-hidden`}>
       <div className={`px-5 sm:px-6 py-4 border-b ${c.borderLight} bg-gradient-to-r ${c.headerBg} to-transparent`}>
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-semibold text-gray-900">Mergers approved</h2>
+          <h2 className="text-lg font-semibold text-gray-900">{title}</h2>
           <ScrollToTopButton />
         </div>
       </div>
       {mergers.length === 0 ? (
         <div className="px-5 sm:px-6 py-4">
-          <p className={`${c.emptyText} text-sm`}>No mergers approved this week</p>
+          <p className={`${c.emptyText} text-sm`}>{emptyMessage}</p>
         </div>
       ) : (
         <div className="overflow-x-auto">
@@ -204,7 +211,7 @@ function ClearedSection({ mergers, getDeterminationPdf }) {
               {groups.map((group) => (
                 <Fragment key={group.label}>
                   <tr>
-                    <td colSpan={3} className="px-5 sm:px-6 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider bg-cleared-pale/20 border-t border-gray-100">
+                    <td colSpan={3} className={`px-5 sm:px-6 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider ${groupHeaderBgClass} border-t border-gray-100`}>
                       {group.label}
                     </td>
                   </tr>
@@ -505,9 +512,17 @@ function Digest() {
             )}
           />
 
-          <ClearedSection
+          <GroupedDeterminationSection
+            id="mergers-approved"
+            title="Mergers approved"
+            emptyMessage="No mergers approved this week"
+            colorKey={DIGEST_COLOR_KEYS.CLEARED}
             mergers={digest.deals_cleared}
+            matchValues={[MERGER_STATUS.APPROVED]}
+            defaultDetermination={MERGER_STATUS.APPROVED}
             getDeterminationPdf={getDeterminationPdf}
+            rowHoverClass="hover:bg-cleared-pale/40"
+            groupHeaderBgClass="bg-cleared-pale/20"
           />
 
           {ceasedMergers.length > 0 && (
@@ -552,35 +567,17 @@ function Digest() {
             )}
           />
 
-          <DigestSection
+          <GroupedDeterminationSection
             id="mergers-declined"
             title="Mergers declined"
             emptyMessage="No mergers declined this week"
             colorKey={DIGEST_COLOR_KEYS.DECLINED}
             mergers={digest.deals_declined}
-            columns={['Merger', { label: 'Determination date', thClassName: 'hidden sm:table-cell' }, 'Determination']}
-            renderRow={(merger) => (
-              <tr key={merger.merger_id} className="relative hover:bg-declined-pale/40 transition-colors">
-                <MergerNameCell
-                  merger={merger}
-                  colorKey={DIGEST_COLOR_KEYS.DECLINED}
-                  hideWaiverBadge
-                  mobileMeta={
-                    <span>
-                      Determined {merger.determination_publication_date
-                        ? formatDate(merger.determination_publication_date)
-                        : 'N/A'}
-                    </span>
-                  }
-                />
-                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600 hidden sm:table-cell">
-                  {merger.determination_publication_date
-                    ? formatDate(merger.determination_publication_date)
-                    : 'N/A'}
-                </td>
-                <DeterminationCell merger={merger} colorKey={DIGEST_COLOR_KEYS.DECLINED} defaultDetermination={MERGER_STATUS.NOT_APPROVED} getDeterminationPdf={getDeterminationPdf} />
-              </tr>
-            )}
+            matchValues={[MERGER_STATUS.NOT_APPROVED, MERGER_STATUS.DECLINED]}
+            defaultDetermination={MERGER_STATUS.NOT_APPROVED}
+            getDeterminationPdf={getDeterminationPdf}
+            rowHoverClass="hover:bg-declined-pale/40"
+            groupHeaderBgClass="bg-declined-pale/20"
           />
 
           {appealedMergers.length > 0 && (
