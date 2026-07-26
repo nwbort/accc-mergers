@@ -10,6 +10,7 @@ This script creates a summary showing:
 - Deals appealed to the Australian Competition Tribunal in the last week
 - Ongoing phase 1 deals
 - Ongoing phase 2 deals
+- Deals currently under appeal at the Australian Competition Tribunal
 
 To account for the discrepancy between when a decision is "made" and when it
 appears on the ACCC's acquisitions register (a decision dated Friday often
@@ -289,6 +290,7 @@ def generate_weekly_digest(
         'deals_appealed_to_tribunal': [],
         'ongoing_phase_1': [],
         'ongoing_phase_2': [],
+        'ongoing_tribunal_appeals': [],
     }
 
     for merger in mergers:
@@ -354,6 +356,12 @@ def generate_weekly_digest(
             stage == 'Phase 2 - detailed assessment'):
             digest['ongoing_phase_2'].append(create_merger_summary(merger))
 
+        # Deals with a *current* Australian Competition Tribunal appeal. Like
+        # the ongoing phase lists, this is a live snapshot (not week-scoped),
+        # so no dedup applies — a matter stays here until the appeal concludes.
+        if merger.get('under_appeal'):
+            digest['ongoing_tribunal_appeals'].append(create_merger_summary(merger))
+
     # Sort new deals by notification date (ascending)
     digest['new_deals_notified'].sort(
         key=lambda x: x.get('effective_notification_datetime') or ''
@@ -386,6 +394,11 @@ def generate_weekly_digest(
     )
     digest['ongoing_phase_2'].sort(
         key=lambda x: x.get('effective_notification_datetime') or ''
+    )
+
+    # Sort ongoing tribunal appeals by the date the appeal was filed (ascending)
+    digest['ongoing_tribunal_appeals'].sort(
+        key=lambda x: (x.get('appeal') or {}).get('filed_date') or ''
     )
 
     return digest
@@ -424,6 +437,7 @@ def main():
     print(f"  Appealed to tribunal (last week): {len(digest['deals_appealed_to_tribunal'])}")
     print(f"  Ongoing phase 1 deals: {len(digest['ongoing_phase_1'])}")
     print(f"  Ongoing phase 2 deals: {len(digest['ongoing_phase_2'])}")
+    print(f"  Ongoing tribunal appeals: {len(digest['ongoing_tribunal_appeals'])}")
 
 
 if __name__ == '__main__':
