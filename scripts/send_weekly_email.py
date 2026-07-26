@@ -195,6 +195,7 @@ def build_text_email(digest: dict) -> str:
     referred = digest.get("deals_referred_to_phase_2") or []
     ceased = digest.get("deals_assessment_ceased") or []
     appealed = digest.get("deals_appealed_to_tribunal") or []
+    ongoing_appeals = digest.get("ongoing_tribunal_appeals") or []
 
     lines = [
         "Australian Merger Tracker weekly digest",
@@ -217,8 +218,10 @@ def build_text_email(digest: dict) -> str:
     lines += [
         f"Ongoing phase 1      : {len(digest['ongoing_phase_1'])}",
         f"Ongoing phase 2      : {len(digest['ongoing_phase_2'])}",
-        "",
     ]
+    if ongoing_appeals:
+        lines.append(f"Under appeal         : {len(ongoing_appeals)}")
+    lines.append("")
 
     new_rows = [
         [m.get("merger_name", m["merger_id"]), format_date(m.get("effective_notification_datetime"))]
@@ -299,6 +302,20 @@ def build_text_email(digest: dict) -> str:
     lines.append(_text_section("ONGOING – PHASE 2 – DETAILED ASSESSMENT", ["Merger", "Notified"], phase2_rows, "No ongoing phase 2 mergers."))
     lines.append("")
 
+    if ongoing_appeals:
+        appeal_rows = [
+            [
+                m.get("merger_name", m["merger_id"]),
+                format_date((m.get("appeal") or {}).get("filed_date")),
+                format_date(hearing) if (hearing := (m.get("appeal") or {}).get("hearing_date")) else "TBC",
+                APPEAL_TYPE_LABELS.get((m.get("appeal") or {}).get("appeal_type"), "Tribunal appeal"),
+            ]
+            for m in ongoing_appeals
+        ]
+        lines.append(_text_section("ONGOING TRIBUNAL APPEALS", ["Merger", "Filed", "Hearing", "Type"], appeal_rows, ""))
+        lines.append("")
+        lines.append("")
+
     unsub_var = "{{{RESEND_UNSUBSCRIBE_URL}}}"
     footer = [
         "--",
@@ -355,6 +372,7 @@ def _counts(digest: dict) -> dict:
         "appealed": len(digest.get("deals_appealed_to_tribunal") or []),
         "p1": len(digest["ongoing_phase_1"]),
         "p2": len(digest["ongoing_phase_2"]),
+        "on_appeal": len(digest.get("ongoing_tribunal_appeals") or []),
     }
 
 
@@ -427,6 +445,12 @@ def build_lede(c: dict) -> str:
             f"on foot{split}."
         )
 
+    if c["on_appeal"]:
+        sentences.append(
+            f"{b(c['on_appeal'])} {pluralise(c['on_appeal'], 'matter remains', 'matters remain')} "
+            "under appeal at the tribunal."
+        )
+
     return " ".join(sentences)
 
 
@@ -446,6 +470,8 @@ def build_scoreboard(c: dict) -> str:
         (c["p1"], "PHASE 1", COLORS["phase_1"], "ongoing-phase-1"),
         (c["p2"], "PHASE 2", COLORS["phase_2"], "ongoing-phase-2"),
     ]
+    if c["on_appeal"]:
+        cells.append((c["on_appeal"], "ON APPEAL", COLORS["tribunal_appeal"], "ongoing-tribunal-appeals"))
     width = str(100 // len(cells)) + "%"
     tds = "".join(
         f'<td width="{width}" align="center" style="padding:10px 2px;">'
@@ -749,6 +775,50 @@ def build_pipeline(digest: dict) -> str:
             )
     return section_table(rows)
 
+
+def build_ongoing_appeals(mergers: list) -> str:
+    """Deals with a current appeal on foot at the Australian Competition
+    Tribunal — a live snapshot, not just this week's new filings."""
+    c = COLORS["tribunal_appeal"]
+    rows = section_head("Ongoing tribunal appeals", c["border"],
+                        f"{len(mergers)} on foot" if mergers else "")
+    if not mergers:
+        rows += empty_section_row("No matters are currently under appeal.")
+    else:
+        for i, m in enumerate(mergers):
+            divider = "" if i == len(mergers) - 1 else f"border-bottom:1px solid {ROW_LINE};"
+            appeal = m.get("appeal") or {}
+            type_label = APPEAL_TYPE_LABELS.get(appeal.get("appeal_type"), "Tribunal appeal")
+            hearing = (
+                f"Hearing {esc(format_date(appeal['hearing_date']))}"
+                if appeal.get("hearing_date") else ""
+            )
+            meta_bits = [x for x in (
+                type_label,
+                f"Filed {esc(format_date(appeal.get('filed_date')))}",
+                hearing,
+                esc(m.get("merger_id", "")),
+            ) if x]
+            detail_bits = []
+            if appeal.get("appellant"):
+                detail_bits.append(f"Lodged by {esc(appeal['appellant'])}")
+            if appeal.get("tribunal_number"):
+                detail_bits.append(esc(appeal["tribunal_number"]))
+            detail_html = (
+                f'<div style="font-size:12px;color:{BODY_TEXT};line-height:18px;'
+                f'margin-top:4px;">{" &middot; ".join(detail_bits)}</div>'
+                if detail_bits else ""
+            )
+            rows += (
+                f'<tr><td colspan="2" style="padding:13px 0 12px;{divider}">'
+                f'<a href="{merger_url(m)}" style="color:{c["dark"]};font-size:14px;'
+                f'font-weight:700;text-decoration:none;line-height:1.4;">{merger_name(m)}</a>'
+                f'<div style="margin-top:4px;">{chip("ON APPEAL", c["pale"], c["dark"])}'
+                f' <span style="font-size:11px;color:{FAINT};">{" &middot; ".join(meta_bits)}</span></div>'
+                f"{detail_html}</td></tr>"
+            )
+    return section_table(rows)
+
 # ---------------------------------------------------------------------------
 # Full email builder
 # ---------------------------------------------------------------------------
@@ -759,11 +829,13 @@ def build_html_email(digest: dict) -> str:
     c = _counts(digest)
 
     appealed = digest.get("deals_appealed_to_tribunal") or []
+    ongoing_appeals = digest.get("ongoing_tribunal_appeals") or []
     sections = (
         build_new_deals(digest["new_deals_notified"])
         + build_decisions(digest)
         + (build_tribunal_appeals(appealed) if appealed else "")
         + build_pipeline(digest)
+        + (build_ongoing_appeals(ongoing_appeals) if ongoing_appeals else "")
     )
 
     if show_feedback:
@@ -788,6 +860,8 @@ def build_html_email(digest: dict) -> str:
     if c["appealed"]:
         preheader_bits.append(f"{c['appealed']} appealed to tribunal")
     preheader_bits.append(f"{c['p1'] + c['p2']} ongoing")
+    if c["on_appeal"]:
+        preheader_bits.append(f"{c['on_appeal']} under appeal")
     preheader = ", ".join(preheader_bits) + "."
 
     # Resend replaces {{{RESEND_UNSUBSCRIBE_URL}}} with the real link
