@@ -56,11 +56,15 @@ function DigestSection({ id, title, emptyMessage, colorKey, mergers, columns, re
           <table className="min-w-full divide-y divide-gray-100">
             <thead>
               <tr className="bg-gray-50/80">
-                {columns.map((col) => (
-                  <th key={col} scope="col" className={`px-5 sm:px-6 py-3.5 text-left ${SECTION_HEADING}`}>
-                    {col}
-                  </th>
-                ))}
+                {columns.map((col) => {
+                  const label = typeof col === 'string' ? col : col.label;
+                  const thClassName = typeof col === 'string' ? '' : (col.thClassName || '');
+                  return (
+                    <th key={label} scope="col" className={`px-5 sm:px-6 py-3.5 text-left ${SECTION_HEADING} ${thClassName}`}>
+                      {label}
+                    </th>
+                  );
+                })}
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-50">
@@ -73,7 +77,7 @@ function DigestSection({ id, title, emptyMessage, colorKey, mergers, columns, re
   );
 }
 
-function MergerNameCell({ merger, colorKey }) {
+function MergerNameCell({ merger, colorKey, mobileMeta, hideWaiverBadge }) {
   const c = COLOR_CLASSES[colorKey];
   return (
     <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
@@ -85,11 +89,14 @@ function MergerNameCell({ merger, colorKey }) {
         >
           {merger.merger_name}
         </Link>
-        {merger.is_waiver && <WaiverBadge className="relative z-10" />}
+        {merger.is_waiver && !hideWaiverBadge && <WaiverBadge className="relative z-10" />}
       </div>
       <div className="text-xs text-gray-500 mt-0.5">
         <span>{merger.merger_id}</span>
       </div>
+      {mobileMeta && (
+        <div className="text-xs text-gray-500 mt-1 sm:hidden">{mobileMeta}</div>
+      )}
     </td>
   );
 }
@@ -118,18 +125,25 @@ function DeterminationCell({ merger, colorKey, defaultDetermination, getDetermin
   );
 }
 
-function ClearedSection({ mergers, getDeterminationPdf }) {
-  const colorKey = DIGEST_COLOR_KEYS.CLEARED;
+function GroupedDeterminationSection({
+  id,
+  title,
+  emptyMessage,
+  colorKey,
+  mergers,
+  matchValues,
+  defaultDetermination,
+  getDeterminationPdf,
+  rowHoverClass,
+  groupHeaderBgClass,
+}) {
   const c = COLOR_CLASSES[colorKey];
-  const columns = ['Merger', 'Determination date', 'Determination'];
+  const columns = ['Merger', { label: 'Determination date', thClassName: 'hidden sm:table-cell' }, 'Determination'];
 
-  const phase2 = mergers.filter(m => m.phase_2_determination === MERGER_STATUS.APPROVED);
-  const phase1 = mergers.filter(
-    m => m.phase_1_determination === MERGER_STATUS.APPROVED && m.phase_2_determination !== MERGER_STATUS.APPROVED
-  );
-  const general = mergers.filter(
-    m => m.phase_2_determination !== MERGER_STATUS.APPROVED && m.phase_1_determination !== MERGER_STATUS.APPROVED
-  );
+  const isMatch = (value) => matchValues.includes(value);
+  const phase2 = mergers.filter(m => isMatch(m.phase_2_determination));
+  const phase1 = mergers.filter(m => isMatch(m.phase_1_determination) && !isMatch(m.phase_2_determination));
+  const general = mergers.filter(m => !isMatch(m.phase_2_determination) && !isMatch(m.phase_1_determination));
 
   const groups = [
     { label: 'Phase 2 – detailed assessment', items: phase2 },
@@ -138,9 +152,20 @@ function ClearedSection({ mergers, getDeterminationPdf }) {
   ].filter(g => g.items.length > 0);
 
   const renderRow = (merger) => (
-    <tr key={merger.merger_id} className="relative hover:bg-cleared-pale/40 transition-colors">
-      <MergerNameCell merger={merger} colorKey={colorKey} />
-      <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+    <tr key={merger.merger_id} className={`relative ${rowHoverClass} transition-colors`}>
+      <MergerNameCell
+        merger={merger}
+        colorKey={colorKey}
+        hideWaiverBadge
+        mobileMeta={
+          <span>
+            Determined {merger.determination_publication_date
+              ? formatDate(merger.determination_publication_date)
+              : 'N/A'}
+          </span>
+        }
+      />
+      <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600 hidden sm:table-cell">
         {merger.determination_publication_date
           ? formatDate(merger.determination_publication_date)
           : 'N/A'}
@@ -148,41 +173,45 @@ function ClearedSection({ mergers, getDeterminationPdf }) {
       <DeterminationCell
         merger={merger}
         colorKey={colorKey}
-        defaultDetermination={MERGER_STATUS.APPROVED}
+        defaultDetermination={defaultDetermination}
         getDeterminationPdf={getDeterminationPdf}
       />
     </tr>
   );
 
   return (
-    <div id="mergers-approved" className={`bg-white rounded-2xl border-l-4 ${c.borderLeft} border-t border-r border-b border-gray-100 shadow-card overflow-hidden`}>
+    <div id={id} className={`bg-white rounded-2xl border-l-4 ${c.borderLeft} border-t border-r border-b border-gray-100 shadow-card overflow-hidden`}>
       <div className={`px-5 sm:px-6 py-4 border-b ${c.borderLight} bg-gradient-to-r ${c.headerBg} to-transparent`}>
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-semibold text-gray-900">Mergers approved</h2>
+          <h2 className="text-lg font-semibold text-gray-900">{title}</h2>
           <ScrollToTopButton />
         </div>
       </div>
       {mergers.length === 0 ? (
         <div className="px-5 sm:px-6 py-4">
-          <p className={`${c.emptyText} text-sm`}>No mergers approved this week</p>
+          <p className={`${c.emptyText} text-sm`}>{emptyMessage}</p>
         </div>
       ) : (
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-gray-100">
             <thead>
               <tr className="bg-gray-50/80">
-                {columns.map((col) => (
-                  <th key={col} scope="col" className={`px-5 sm:px-6 py-3.5 text-left ${SECTION_HEADING}`}>
-                    {col}
-                  </th>
-                ))}
+                {columns.map((col) => {
+                  const label = typeof col === 'string' ? col : col.label;
+                  const thClassName = typeof col === 'string' ? '' : (col.thClassName || '');
+                  return (
+                    <th key={label} scope="col" className={`px-5 sm:px-6 py-3.5 text-left ${SECTION_HEADING} ${thClassName}`}>
+                      {label}
+                    </th>
+                  );
+                })}
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-50">
               {groups.map((group) => (
                 <Fragment key={group.label}>
                   <tr>
-                    <td colSpan={3} className="px-5 sm:px-6 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider bg-cleared-pale/20 border-t border-gray-100">
+                    <td colSpan={3} className={`px-5 sm:px-6 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider ${groupHeaderBgClass} border-t border-gray-100`}>
                       {group.label}
                     </td>
                   </tr>
@@ -429,7 +458,7 @@ function Digest() {
         <DigestSignup />
 
         {/* Summary Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
           {summaryCards.map(({ id, colorKey, count, label }) => {
             const c = COLOR_CLASSES[colorKey];
             return (
@@ -455,11 +484,21 @@ function Digest() {
             emptyMessage="No new mergers this week"
             colorKey={DIGEST_COLOR_KEYS.NEW_MERGER}
             mergers={digest.new_deals_notified}
-            columns={['Merger', 'Notification date', 'Summary']}
+            columns={['Merger', { label: 'Notification date', thClassName: 'hidden sm:table-cell' }, 'Summary']}
             renderRow={(merger) => (
               <tr key={merger.merger_id} className="relative hover:bg-new-merger-pale/40 transition-colors">
-                <MergerNameCell merger={merger} colorKey={DIGEST_COLOR_KEYS.NEW_MERGER} />
-                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                <MergerNameCell
+                  merger={merger}
+                  colorKey={DIGEST_COLOR_KEYS.NEW_MERGER}
+                  mobileMeta={
+                    <span>
+                      Notified {merger.effective_notification_datetime
+                        ? formatDate(merger.effective_notification_datetime)
+                        : 'N/A'}
+                    </span>
+                  }
+                />
+                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600 hidden sm:table-cell">
                   {merger.effective_notification_datetime
                     ? formatDate(merger.effective_notification_datetime)
                     : 'N/A'}
@@ -475,9 +514,17 @@ function Digest() {
             )}
           />
 
-          <ClearedSection
+          <GroupedDeterminationSection
+            id="mergers-approved"
+            title="Mergers approved"
+            emptyMessage="No mergers approved this week"
+            colorKey={DIGEST_COLOR_KEYS.CLEARED}
             mergers={digest.deals_cleared}
+            matchValues={[MERGER_STATUS.APPROVED]}
+            defaultDetermination={MERGER_STATUS.APPROVED}
             getDeterminationPdf={getDeterminationPdf}
+            rowHoverClass="hover:bg-cleared-pale/40"
+            groupHeaderBgClass="bg-cleared-pale/20"
           />
 
           {ceasedMergers.length > 0 && (
@@ -522,24 +569,17 @@ function Digest() {
             )}
           />
 
-          <DigestSection
+          <GroupedDeterminationSection
             id="mergers-declined"
             title="Mergers declined"
             emptyMessage="No mergers declined this week"
             colorKey={DIGEST_COLOR_KEYS.DECLINED}
             mergers={digest.deals_declined}
-            columns={['Merger', 'Determination date', 'Determination']}
-            renderRow={(merger) => (
-              <tr key={merger.merger_id} className="relative hover:bg-declined-pale/40 transition-colors">
-                <MergerNameCell merger={merger} colorKey={DIGEST_COLOR_KEYS.DECLINED} />
-                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
-                  {merger.determination_publication_date
-                    ? formatDate(merger.determination_publication_date)
-                    : 'N/A'}
-                </td>
-                <DeterminationCell merger={merger} colorKey={DIGEST_COLOR_KEYS.DECLINED} defaultDetermination={MERGER_STATUS.NOT_APPROVED} getDeterminationPdf={getDeterminationPdf} />
-              </tr>
-            )}
+            matchValues={[MERGER_STATUS.NOT_APPROVED, MERGER_STATUS.DECLINED]}
+            defaultDetermination={MERGER_STATUS.NOT_APPROVED}
+            getDeterminationPdf={getDeterminationPdf}
+            rowHoverClass="hover:bg-declined-pale/40"
+            groupHeaderBgClass="bg-declined-pale/20"
           />
 
           {appealedMergers.length > 0 && (
@@ -581,16 +621,33 @@ function Digest() {
             emptyMessage="No ongoing phase 1 mergers"
             colorKey={DIGEST_COLOR_KEYS.PHASE_1}
             mergers={digest.ongoing_phase_1}
-            columns={['Merger', 'Notification date', 'Determination due date', 'Summary']}
+            columns={['Merger', { label: 'Notification date', thClassName: 'hidden sm:table-cell' }, { label: 'Determination due date', thClassName: 'hidden sm:table-cell' }, 'Summary']}
             renderRow={(merger) => (
               <tr key={merger.merger_id} className="relative hover:bg-phase-1-pale/40 transition-colors">
-                <MergerNameCell merger={merger} colorKey={DIGEST_COLOR_KEYS.PHASE_1} />
-                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                <MergerNameCell
+                  merger={merger}
+                  colorKey={DIGEST_COLOR_KEYS.PHASE_1}
+                  mobileMeta={
+                    <>
+                      <div>
+                        Notified {merger.effective_notification_datetime
+                          ? formatDate(merger.effective_notification_datetime)
+                          : 'N/A'}
+                      </div>
+                      <div>
+                        Determination due {merger.end_of_determination_period
+                          ? formatDate(merger.end_of_determination_period)
+                          : 'N/A'}
+                      </div>
+                    </>
+                  }
+                />
+                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600 hidden sm:table-cell">
                   {merger.effective_notification_datetime
                     ? formatDate(merger.effective_notification_datetime)
                     : 'N/A'}
                 </td>
-                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600 hidden sm:table-cell">
                   {merger.end_of_determination_period
                     ? formatDate(merger.end_of_determination_period)
                     : 'N/A'}
@@ -612,16 +669,33 @@ function Digest() {
             emptyMessage="No ongoing phase 2 mergers"
             colorKey={DIGEST_COLOR_KEYS.PHASE_2}
             mergers={digest.ongoing_phase_2}
-            columns={['Merger', 'Notification date', 'Determination due date', 'Summary']}
+            columns={['Merger', { label: 'Notification date', thClassName: 'hidden sm:table-cell' }, { label: 'Determination due date', thClassName: 'hidden sm:table-cell' }, 'Summary']}
             renderRow={(merger) => (
               <tr key={merger.merger_id} className="relative hover:bg-phase-2-pale/40 transition-colors">
-                <MergerNameCell merger={merger} colorKey={DIGEST_COLOR_KEYS.PHASE_2} />
-                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                <MergerNameCell
+                  merger={merger}
+                  colorKey={DIGEST_COLOR_KEYS.PHASE_2}
+                  mobileMeta={
+                    <>
+                      <div>
+                        Notified {merger.effective_notification_datetime
+                          ? formatDate(merger.effective_notification_datetime)
+                          : 'N/A'}
+                      </div>
+                      <div>
+                        Determination due {merger.end_of_determination_period
+                          ? formatDate(merger.end_of_determination_period)
+                          : 'N/A'}
+                      </div>
+                    </>
+                  }
+                />
+                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600 hidden sm:table-cell">
                   {merger.effective_notification_datetime
                     ? formatDate(merger.effective_notification_datetime)
                     : 'N/A'}
                 </td>
-                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600 hidden sm:table-cell">
                   {merger.end_of_determination_period
                     ? formatDate(merger.end_of_determination_period)
                     : 'N/A'}
