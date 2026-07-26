@@ -1,6 +1,7 @@
 /// <reference types="vitest" />
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import prerenderMergers from './prerender.js'
 
 // Inlines the build CSS into index.html so first paint isn't blocked on a
 // separate stylesheet round-trip. The SPA only ships one CSS chunk and it's
@@ -23,7 +24,7 @@ function inlineCss() {
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), inlineCss()],
+  plugins: [react(), inlineCss(), prerenderMergers()],
   build: {
     rollupOptions: {
       output: {
