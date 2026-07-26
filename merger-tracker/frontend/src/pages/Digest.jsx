@@ -56,11 +56,15 @@ function DigestSection({ id, title, emptyMessage, colorKey, mergers, columns, re
           <table className="min-w-full divide-y divide-gray-100">
             <thead>
               <tr className="bg-gray-50/80">
-                {columns.map((col) => (
-                  <th key={col} scope="col" className={`px-5 sm:px-6 py-3.5 text-left ${SECTION_HEADING}`}>
-                    {col}
-                  </th>
-                ))}
+                {columns.map((col) => {
+                  const label = typeof col === 'string' ? col : col.label;
+                  const thClassName = typeof col === 'string' ? '' : (col.thClassName || '');
+                  return (
+                    <th key={label} scope="col" className={`px-5 sm:px-6 py-3.5 text-left ${SECTION_HEADING} ${thClassName}`}>
+                      {label}
+                    </th>
+                  );
+                })}
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-50">
@@ -73,7 +77,7 @@ function DigestSection({ id, title, emptyMessage, colorKey, mergers, columns, re
   );
 }
 
-function MergerNameCell({ merger, colorKey }) {
+function MergerNameCell({ merger, colorKey, mobileMeta }) {
   const c = COLOR_CLASSES[colorKey];
   return (
     <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
@@ -90,6 +94,9 @@ function MergerNameCell({ merger, colorKey }) {
       <div className="text-xs text-gray-500 mt-0.5">
         <span>{merger.merger_id}</span>
       </div>
+      {mobileMeta && (
+        <div className="text-xs text-gray-500 mt-1 sm:hidden">{mobileMeta}</div>
+      )}
     </td>
   );
 }
@@ -453,11 +460,21 @@ function Digest() {
             emptyMessage="No new mergers this week"
             colorKey={DIGEST_COLOR_KEYS.NEW_MERGER}
             mergers={digest.new_deals_notified}
-            columns={['Merger', 'Notification date', 'Summary']}
+            columns={['Merger', { label: 'Notification date', thClassName: 'hidden sm:table-cell' }, 'Summary']}
             renderRow={(merger) => (
               <tr key={merger.merger_id} className="relative hover:bg-new-merger-pale/40 transition-colors">
-                <MergerNameCell merger={merger} colorKey={DIGEST_COLOR_KEYS.NEW_MERGER} />
-                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                <MergerNameCell
+                  merger={merger}
+                  colorKey={DIGEST_COLOR_KEYS.NEW_MERGER}
+                  mobileMeta={
+                    <span>
+                      Notified {merger.effective_notification_datetime
+                        ? formatDate(merger.effective_notification_datetime)
+                        : 'N/A'}
+                    </span>
+                  }
+                />
+                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600 hidden sm:table-cell">
                   {merger.effective_notification_datetime
                     ? formatDate(merger.effective_notification_datetime)
                     : 'N/A'}
