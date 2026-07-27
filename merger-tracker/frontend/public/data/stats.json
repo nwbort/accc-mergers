@@ -3,12 +3,12 @@
   "total_waivers": 288,
   "total_conditional_approvals": 1,
   "by_status": {
-    "Assessment completed": 146,
-    "Under assessment": 40,
+    "Assessment completed": 147,
+    "Under assessment": 39,
     "Assessment ceased": 3
   },
   "by_determination": {
-    "Approved": 144,
+    "Approved": 145,
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
@@ -16,28 +16,28 @@
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 145,
+    "cleared": 146,
     "not_cleared": 1,
-    "total": 146,
+    "total": 147,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.57236842105263,
-    "median_days": 26.0,
-    "average_business_days": 19.526315789473685,
-    "median_business_days": 17.0,
+    "average_days": 29.647058823529413,
+    "median_days": 26,
+    "average_business_days": 19.58823529411765,
+    "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 38,
-        "percentage": 25.0
+        "percentage": 24.8
       },
       "day20": {
         "count": 119,
-        "percentage": 78.3
+        "percentage": 77.8
       },
       "day30": {
-        "count": 144,
-        "percentage": 94.7
+        "count": 145,
+        "percentage": 94.8
       }
     }
   },
@@ -218,6 +218,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-25019",
+      "merger_name": "Transocean - Valaris",
+      "determination": "Approved",
+      "determination_date": "2026-07-27T12:00:00Z",
+      "page_modified_datetime": "2026-07-27T09:59:26+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-80024",
       "merger_name": "Allianz \u2013 certain assets of nib\u2019s Australian travel insurance business",
       "determination": "Approved",
@@ -326,16 +336,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-75030",
-      "merger_name": "Coles - supermarket site in Palmwoods, QLD",
-      "determination": "Approved",
-      "determination_date": "2026-07-21T12:00:00Z",
-      "page_modified_datetime": "2026-07-22T16:38:22+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }
