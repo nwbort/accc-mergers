@@ -3052,14 +3052,14 @@
     {
       "merger_id": "MN-35018",
       "merger_name": "Hewitt \u2013 Nolan Meats",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "has_conditions": false,
       "is_waiver": false,
       "under_appeal": false,
       "is_refiled": false,
       "effective_notification_datetime": "2026-07-01T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-07-27T12:00:00Z",
       "end_of_determination_period": "2026-08-12T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -3084,21 +3084,21 @@
       ],
       "targets": [
         {
-          "name": "Tolobex Pty Ltd as trustee for Tolobex Unit Trust",
-          "identifier_type": "ACN",
-          "identifier": "081 765 228",
-          "party_page": {
-            "id": "tolobex-pty-ltd-as-trustee-for-tolobex-unit-trust",
-            "name": "Tolobex Pty Ltd as trustee for Tolobex Unit Trust"
-          }
-        },
-        {
           "name": "NOLAN MEATS PTY. LTD.",
           "identifier_type": "ABN",
           "identifier": "81 096 869 304",
           "party_page": {
             "id": "nolan-meats-pty-ltd",
             "name": "Nolan Meats Pty. Ltd."
+          }
+        },
+        {
+          "name": "Tolobex Pty Ltd as trustee for Tolobex Unit Trust",
+          "identifier_type": "ACN",
+          "identifier": "081 765 228",
+          "party_page": {
+            "id": "tolobex-pty-ltd-as-trustee-for-tolobex-unit-trust",
+            "name": "Tolobex Pty Ltd as trustee for Tolobex Unit Trust"
           }
         }
       ],

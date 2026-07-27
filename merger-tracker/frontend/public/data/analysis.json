@@ -347,6 +347,11 @@
         "in_progress": false
       },
       {
+        "business_days": 18,
+        "calendar_days": 26,
+        "in_progress": false
+      },
+      {
         "business_days": 15,
         "calendar_days": 22,
         "in_progress": false
@@ -769,17 +774,17 @@
     ],
     "stats": {
       "average": 19.6,
-      "median": 17,
+      "median": 17.0,
       "min": 15,
       "max": 59,
-      "count": 153
+      "count": 154
     },
     "calendar_stats": {
       "average": 29.6,
-      "median": 26,
+      "median": 26.0,
       "min": 21,
       "max": 103,
-      "count": 153
+      "count": 154
     }
   },
   "waiver_duration": {
@@ -2015,11 +2020,11 @@
     {
       "code": "A",
       "name": "Agriculture, Forestry and Fishing",
-      "average_business_days": 23.2,
-      "median_business_days": 18,
-      "average_calendar_days": 34.0,
-      "median_calendar_days": 27,
-      "count": 5
+      "average_business_days": 22.3,
+      "median_business_days": 18.0,
+      "average_calendar_days": 32.7,
+      "median_calendar_days": 27.0,
+      "count": 6
     },
     {
       "code": "I",
@@ -2078,11 +2083,11 @@
     {
       "code": "C",
       "name": "Manufacturing",
-      "average_business_days": 19.5,
-      "median_business_days": 17.0,
-      "average_calendar_days": 29.5,
-      "median_calendar_days": 26.0,
-      "count": 44
+      "average_business_days": 19.4,
+      "median_business_days": 17,
+      "average_calendar_days": 29.4,
+      "median_calendar_days": 26,
+      "count": 45
     },
     {
       "code": "K",
@@ -2160,11 +2165,11 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 325,
+      "count": 326,
       "outcome_mix": {
-        "Approved": 325
+        "Approved": 326
       },
-      "median_phase_1_business_days": 16.0
+      "median_phase_1_business_days": 16
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -2178,9 +2183,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 38,
+      "count": 37,
       "outcome_mix": {
-        "Unknown": 38
+        "Unknown": 37
       },
       "median_phase_1_business_days": 36.5
     },
@@ -2216,7 +2221,7 @@
       "15": 38,
       "16": 29,
       "17": 18,
-      "18": 15,
+      "18": 16,
       "19": 12,
       "20": 7,
       "21": 3,
@@ -2236,9 +2241,9 @@
     },
     "stats": {
       "mean_used_bd": 17.9,
-      "median_used_bd": 17.0,
+      "median_used_bd": 17,
       "pct_decided_final_3_bd": 4.2,
-      "count": 142
+      "count": 143
     },
     "extended_count": 3
   },
@@ -2286,15 +2291,6 @@
       "phase2_referral_rate": 0.2
     },
     {
-      "code": "A",
-      "name": "Agriculture, Forestry and Fishing",
-      "approved": 4,
-      "not_approved": 0,
-      "referred": 1,
-      "in_progress": 2,
-      "phase2_referral_rate": 0.2
-    },
-    {
       "code": "L",
       "name": "Rental, Hiring and Real Estate Services",
       "approved": 9,
@@ -2302,6 +2298,15 @@
       "referred": 2,
       "in_progress": 4,
       "phase2_referral_rate": 0.182
+    },
+    {
+      "code": "A",
+      "name": "Agriculture, Forestry and Fishing",
+      "approved": 5,
+      "not_approved": 0,
+      "referred": 1,
+      "in_progress": 1,
+      "phase2_referral_rate": 0.167
     },
     {
       "code": "E",
@@ -2342,11 +2347,11 @@
     {
       "code": "C",
       "name": "Manufacturing",
-      "approved": 42,
+      "approved": 43,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 10,
-      "phase2_referral_rate": 0.045
+      "in_progress": 9,
+      "phase2_referral_rate": 0.044
     },
     {
       "code": "D",

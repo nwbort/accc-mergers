@@ -23661,13 +23661,16 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/hewitt-%E2%80%93-nolan-meats",
       "merger_name": "Hewitt – Nolan Meats",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-35018",
       "effective_notification_datetime": "2026-07-01T12:00:00Z",
       "original_notification_datetime": "2026-07-01T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-08-12T12:00:00Z",
-      "page_modified_datetime": "2026-07-08T16:04:13+10:00",
+      "determination_publication_date": "2026-07-27T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-07-27T13:36:25+10:00",
       "consultation_response_due_date": "2026-07-08T12:00:00Z",
       "acquirers": [
         {
@@ -23691,21 +23694,21 @@
       ],
       "targets": [
         {
-          "name": "Tolobex Pty Ltd as trustee for Tolobex Unit Trust",
-          "identifier_type": "ACN",
-          "identifier": "081 765 228",
-          "party_page": {
-            "id": "tolobex-pty-ltd-as-trustee-for-tolobex-unit-trust",
-            "name": "Tolobex Pty Ltd as trustee for Tolobex Unit Trust"
-          }
-        },
-        {
           "name": "NOLAN MEATS PTY. LTD.",
           "identifier_type": "ABN",
           "identifier": "81 096 869 304",
           "party_page": {
             "id": "nolan-meats-pty-ltd",
             "name": "Nolan Meats Pty. Ltd."
+          }
+        },
+        {
+          "name": "Tolobex Pty Ltd as trustee for Tolobex Unit Trust",
+          "identifier_type": "ACN",
+          "identifier": "081 765 228",
+          "party_page": {
+            "id": "tolobex-pty-ltd-as-trustee-for-tolobex-unit-trust",
+            "name": "Tolobex Pty Ltd as trustee for Tolobex Unit Trust"
           }
         }
       ],
@@ -23749,13 +23752,48 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-07-27T12:00:00Z",
+          "title": "Hewitt - Nolan Meats - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Hewitt%20-%20Nolan%20Meats%20-%20%20Phase%201%20determination.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "An entity within the Hewitt group (Hewitt), Sapphire Cattle Company’s proposed acquisition of Nolan Meats Pty Ltd (Nolan Meats), including land and assets, via connected entities (the Acquisition).\n\nHewitt is a majority-owned subsidiary of the Public Sector Pension Investment Board, an investment management fund established by the Parliament of Canada. The remaining shares in Hewitt are owned by the Hewitt family."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has determined under section 51ABZE(1) of the Competition and Consumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, Hewitt, is a red meat producer, headquartered in Brisbane, which farms cattle and sheep, undertakes secondary processing of beef into value-added products (such as beef patties), and distributes (including the packaging, marketing and sale of) beef to supermarkets, the food service industry, butchers and international customers. Hewitt predominantly produces organic beef products.\n\nThe target, Nolan Meats, is a beef producer headquartered in Gympie, Queensland. Nolan Meats undertakes lot feeding where cattle are grain-fed, primary processing of cattle (initial slaughter and carcass handling), and the wholesale distribution (including packaging, marketing and sale) of beef to supermarkets, the food service industry, butchers and international customers.\n\nNolan Meats’ core assets include a primary processing facility with an annual capacity of 260,000 head of cattle, located in Gympie, and a 4,000 standard cattle unit-licensed beef cattle feedlot situated 65 kilometres west of the processing facility."
+            },
+            {
+              "item": "Overlap and relationship between the Parties",
+              "details": "The parties overlap in the supply of fattened cattle and the supply of wholesale and retail beef products to both domestic and export customers.\n\nThe parties also have a vertical relationship, as Hewitt uses Nolan Meats’ primary processing facility in Gympie, Queensland, to process some of its fattened cattle."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition and Consumer Commission (ACCC) undertakes a competition assessment and considers whether it is appropriate for an acquisition to be approved or subject to further assessment in Phase 2 in accordance with section 51ABZJ of the Competition and Consumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have regard to the object of the Act and all relevant matters, including the interests of consumers.\n\nFor more information about the ACCC’s approach to considering notified acquisitions, see the ACCC’s merger assessment guidelines and interim merger process guidelines.\n\nIn conducting its competition assessment, the ACCC has considered the information and documents that were submitted with the notification form and information from third parties.\n\nThe ACCC has determined that the Acquisition may be put into effect as it considers that the Acquisition is unlikely to have the effect of substantially lessening competition in any market. In reaching its decision, and based on the material before it, the ACCC makes the following findings.\n\n• The parties are not close competitors in the supply of fattened cattle. Hewitt produces and acquires predominantly organic, grass-fed fattened cattle, while Nolan Meats acquires feeder cattle for grain finishing, on its own feedlot and third party-contracted feedlots, to produce grain-fed fattened cattle.\n\n• The parties are not close competitors in the distribution of beef products as Hewitt predominantly supplies organic grass-fed and other ‘high claims’ certified beef products for export (and to limited extent, domestically) and Nolan Meats predominantly supplies beef products for domestic sale (and to a limited extent, for export).\n\n• Post-Acquisition, the merged entity would be unlikely to have the ability and incentive to foreclose rival fattened cattle suppliers’ access to primary processing services, as there are multiple alternative primary processing service suppliers available in the relevant region surrounding Nolan Meats’ Gympie processing facility."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by the Australian Competition Tribunal, may apply for review if they are dissatisfied with the determination. Pursuant to section 100C of the Act, applications for review of the determination are to be made to the Australian Competition Tribunal before the end of 14 calendar days after this statement of reasons was included on the ACCC’s Acquisitions Register. To confirm whether there has been any application for review, please contact the Australian Competition Tribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-35018/Hewitt - Nolan Meats - Phase 1 determination.pdf",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
       "has_conditions": false,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-07-27T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -131091,12 +131129,12 @@
     "total_waivers": 288,
     "total_conditional_approvals": 1,
     "by_status": {
-      "Assessment completed": 147,
-      "Under assessment": 40,
+      "Assessment completed": 148,
+      "Under assessment": 39,
       "Assessment ceased": 3
     },
     "by_determination": {
-      "Approved": 145,
+      "Approved": 146,
       "Referred to phase 2": 8
     },
     "by_waiver_determination": {
@@ -131104,27 +131142,27 @@
       "Not approved": 14
     },
     "clearance_rate": {
-      "cleared": 146,
+      "cleared": 147,
       "not_cleared": 1,
-      "total": 147,
+      "total": 148,
       "rate": 0.993
     },
     "phase_duration": {
-      "average_days": 29.647058823529413,
-      "median_days": 26,
-      "average_business_days": 19.58823529411765,
-      "median_business_days": 17,
+      "average_days": 29.623376623376622,
+      "median_days": 26.0,
+      "average_business_days": 19.57792207792208,
+      "median_business_days": 17.0,
       "percentiles": {
         "day15": {
           "count": 38,
-          "percentage": 24.8
+          "percentage": 24.7
         },
         "day20": {
-          "count": 119,
-          "percentage": 77.8
+          "count": 120,
+          "percentage": 77.9
         },
         "day30": {
-          "count": 145,
+          "count": 146,
           "percentage": 94.8
         }
       }
@@ -131306,6 +131344,16 @@
     ],
     "recent_determinations": [
       {
+        "merger_id": "MN-35018",
+        "merger_name": "Hewitt – Nolan Meats",
+        "determination": "Approved",
+        "determination_date": "2026-07-27T12:00:00Z",
+        "page_modified_datetime": "2026-07-27T13:36:25+10:00",
+        "determination_type": "final",
+        "is_waiver": false,
+        "stage": "Phase 1 - initial assessment"
+      },
+      {
         "merger_id": "MN-25019",
         "merger_name": "Transocean - Valaris",
         "determination": "Approved",
@@ -131411,16 +131459,6 @@
         "determination": "Approved",
         "determination_date": "2026-07-22T12:00:00Z",
         "page_modified_datetime": "2026-07-22T16:23:06+10:00",
-        "determination_type": "final",
-        "is_waiver": false,
-        "stage": "Phase 1 - initial assessment"
-      },
-      {
-        "merger_id": "MN-75027",
-        "merger_name": "SLB – S&P Global’s Geoscience Software Portfolio",
-        "determination": "Approved",
-        "determination_date": "2026-07-22T12:00:00Z",
-        "page_modified_datetime": "2026-07-22T13:55:15+10:00",
         "determination_type": "final",
         "is_waiver": false,
         "stage": "Phase 1 - initial assessment"
