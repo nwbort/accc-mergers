@@ -1,28 +1,28 @@
 {
-  "id": "dolphin-bidco-pty-ltd",
-  "canonical_name": "Dolphin Bidco Pty Ltd",
+  "id": "chess-holdings-llc",
+  "canonical_name": "Chess Holdings, LLC",
   "members": [
     {
-      "name": "DOLPHIN BIDCO PTY LTD",
-      "identifier": "67 691 954 382",
-      "identifier_type": "ABN"
+      "name": "Chess Holdings, LLC",
+      "identifier": "6374364",
+      "identifier_type": null
     }
   ],
   "mergers": {
-    "acquirer": [
+    "acquirer": [],
+    "target": [
       {
-        "merger_id": "WA-01112",
-        "merger_name": "State Swim \u2013 In2Swim",
+        "merger_id": "WA-05033",
+        "merger_name": "CVC Capital Partners \u2013 Chess.com",
         "is_waiver": true,
         "status": "Assessment completed",
         "determination": "Approved",
         "has_conditions": false,
         "phase": "Waiver",
-        "notification_date": "2026-07-02T12:00:00Z",
+        "notification_date": "2026-07-03T12:00:00Z",
         "determination_date": "2026-07-27T12:00:00Z"
       }
     ],
-    "target": [],
     "other": []
   },
   "merger_count": 1,
@@ -32,10 +32,10 @@
   "active_count": 0,
   "phase_duration": null,
   "waiver_duration": {
-    "average_days": 25.0,
-    "median_days": 25,
-    "average_business_days": 17.0,
-    "median_business_days": 17,
+    "average_days": 24.0,
+    "median_days": 24,
+    "average_business_days": 16.0,
+    "median_business_days": 16,
     "completed_count": 1
   }
 }

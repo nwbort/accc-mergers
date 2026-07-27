@@ -1,6 +1,176 @@
 {
   "mergers": [
     {
+      "merger_id": "WA-05033",
+      "merger_name": "CVC Capital Partners \u2013 Chess.com",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-03T12:00:00Z",
+      "determination_publication_date": "2026-07-27T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Squares Blocker, inc.",
+          "identifier_type": null,
+          "identifier": "10665193",
+          "party_page": {
+            "id": "squares-blocker-inc",
+            "name": "Squares Blocker, inc."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Chess Holdings, LLC",
+          "identifier_type": null,
+          "identifier": "6374364",
+          "party_page": {
+            "id": "chess-holdings-llc",
+            "name": "Chess Holdings, LLC"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "General Atlantic, L.P.",
+          "identifier_type": null,
+          "identifier": "6377934",
+          "party_page": {
+            "id": "general-atlantic-l-p",
+            "name": "General Atlantic, L.P."
+          }
+        },
+        {
+          "name": "CVC Capital Partners plc",
+          "identifier_type": null,
+          "identifier": "140080",
+          "canonical": {
+            "id": "cvc-capital-partners",
+            "name": "CVC Capital Partners"
+          },
+          "party_page": {
+            "id": "cvc-capital-partners",
+            "name": "CVC Capital Partners"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5921",
+          "name": "Data Processing and Web Hosting Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/cvc-capital-partners-%E2%80%93-chesscom"
+    },
+    {
+      "merger_id": "WA-25039",
+      "merger_name": "Tasmea \u2013 JPS Holdings",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-03T12:00:00Z",
+      "determination_publication_date": "2026-07-24T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "TASMEA LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "22 088 588 425",
+          "party_page": {
+            "id": "tasmea-limited",
+            "name": "Tasmea Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "JPS HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "50 661 247 178",
+          "party_page": {
+            "id": "jps-holdings-pty-ltd",
+            "name": "Jps Holdings Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "JPS Management & Execution Pty Ltd",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "jps-management-execution-pty-ltd",
+            "name": "JPS Management & Execution Pty Ltd"
+          }
+        },
+        {
+          "name": "Safe Isolation Australia Pty Ltd",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "safe-isolation-australia-pty-ltd",
+            "name": "Safe Isolation Australia Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1090",
+          "name": "Other Mining Support Services"
+        },
+        {
+          "code": "2630",
+          "name": "Electricity Distribution"
+        },
+        {
+          "code": "3109",
+          "name": "Other Heavy and Civil Engineering Construction"
+        },
+        {
+          "code": "3224",
+          "name": "Structural Steel Erection Services"
+        },
+        {
+          "code": "3232",
+          "name": "Electrical Services"
+        },
+        {
+          "code": "3299",
+          "name": "Other Construction Services n.e.c."
+        },
+        {
+          "code": "3332",
+          "name": "Plumbing Goods Wholesaling"
+        },
+        {
+          "code": "6923",
+          "name": "Engineering Design and Engineering Consulting Services"
+        },
+        {
+          "code": "6962",
+          "name": "Management Advice and Related Consulting Services"
+        },
+        {
+          "code": "7211",
+          "name": "Employment Placement and Recruitment Services"
+        },
+        {
+          "code": "7212",
+          "name": "Labour Supply Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/tasmea-%E2%80%93-jps-holdings"
+    },
+    {
       "merger_id": "WA-85037",
       "merger_name": "Tata Motors - Iveco",
       "status": "Assessment completed",
@@ -276,7 +446,7 @@
           "identifier_type": null,
           "identifier": "",
           "party_page": {
-            "id": "dolphin-bidco-pty-ltd",
+            "id": "dolphin-bidco-pty-ltd-2",
             "name": "Dolphin BidCo Pty Ltd"
           }
         }

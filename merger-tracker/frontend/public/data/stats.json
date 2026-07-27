@@ -1,6 +1,6 @@
 {
   "total_mergers": 190,
-  "total_waivers": 289,
+  "total_waivers": 291,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 150,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 275,
+    "Approved": 277,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,9 +42,9 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.67128027681661,
+    "average_days": 18.711340206185568,
     "median_days": 18,
-    "average_business_days": 12.474048442906575,
+    "average_business_days": 12.50171821305842,
     "median_business_days": 12
   },
   "top_industries": [
@@ -218,6 +218,26 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-05033",
+      "merger_name": "CVC Capital Partners \u2013 Chess.com",
+      "determination": "Approved",
+      "determination_date": "2026-07-27T12:00:00Z",
+      "page_modified_datetime": "2026-07-27T17:09:29+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-01112",
+      "merger_name": "State Swim \u2013 In2Swim",
+      "determination": "Approved",
+      "determination_date": "2026-07-27T12:00:00Z",
+      "page_modified_datetime": "2026-07-27T17:06:21+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-95032",
       "merger_name": "State Swim \u2013 Swim Plus",
       "determination": "Approved",
@@ -316,26 +336,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-01104",
-      "merger_name": "Genea - Care Fertility Greenslopes",
-      "determination": "Approved",
-      "determination_date": "2026-07-23T12:00:00Z",
-      "page_modified_datetime": "2026-07-23T12:29:08+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-01107",
-      "merger_name": "WSP - Geotechnical Testing and Interpretation",
-      "determination": "Approved",
-      "determination_date": "2026-07-23T12:00:00Z",
-      "page_modified_datetime": "2026-07-23T09:32:43+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }
