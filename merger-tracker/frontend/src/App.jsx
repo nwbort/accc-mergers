@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
@@ -7,27 +7,32 @@ import ErrorBoundary from './components/ErrorBoundary';
 import KeyboardShortcutsHelp from './components/KeyboardShortcutsHelp';
 import CommandPalette from './components/CommandPalette';
 import FeedbackPopup from './components/FeedbackPopup';
+import LoadingSpinner from './components/LoadingSpinner';
 import { TrackingProvider } from './context/TrackingContext';
 import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts';
 import ScrollToTop from './components/ScrollToTop';
-import Dashboard from './pages/Dashboard';
-import Mergers from './pages/Mergers';
-import MergerDetail from './pages/MergerDetail';
-import Timeline from './pages/Timeline';
-import Industries from './pages/Industries';
-import IndustryDetail from './pages/IndustryDetail';
-import Parties from './pages/Parties';
-import PartyDetail from './pages/PartyDetail';
-import Commentary from './pages/Commentary';
-import Digest from './pages/Digest';
-import NickTwort from './pages/NickTwort';
-import Analysis from './pages/Analysis';
-import Phase2 from './pages/Phase2';
-import RefiledNotifications from './pages/RefiledNotifications';
-import Extensions from './pages/Extensions';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import Feedback from './pages/Feedback';
-import NotFound from './pages/NotFound';
+
+// Route components are code-split so the initial bundle only carries the app
+// shell. Heavy, page-specific dependencies (charts, react-markdown) then load
+// on demand with the route that needs them instead of on first paint.
+const Dashboard = lazy(() => import('./pages/Dashboard'));
+const Mergers = lazy(() => import('./pages/Mergers'));
+const MergerDetail = lazy(() => import('./pages/MergerDetail'));
+const Timeline = lazy(() => import('./pages/Timeline'));
+const Industries = lazy(() => import('./pages/Industries'));
+const IndustryDetail = lazy(() => import('./pages/IndustryDetail'));
+const Parties = lazy(() => import('./pages/Parties'));
+const PartyDetail = lazy(() => import('./pages/PartyDetail'));
+const Commentary = lazy(() => import('./pages/Commentary'));
+const Digest = lazy(() => import('./pages/Digest'));
+const NickTwort = lazy(() => import('./pages/NickTwort'));
+const Analysis = lazy(() => import('./pages/Analysis'));
+const Phase2 = lazy(() => import('./pages/Phase2'));
+const RefiledNotifications = lazy(() => import('./pages/RefiledNotifications'));
+const Extensions = lazy(() => import('./pages/Extensions'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const Feedback = lazy(() => import('./pages/Feedback'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 function AppContent() {
   const [showShortcuts, setShowShortcuts] = useState(false);
@@ -44,6 +49,7 @@ function AppContent() {
       <div className="min-h-screen gradient-mesh flex flex-col">
         <Navbar onOpenSearch={openPalette} />
         <main id="main-content" className="flex-grow pt-16">
+          <Suspense fallback={<LoadingSpinner />}>
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/mergers" element={<Mergers />} />
@@ -67,6 +73,7 @@ function AppContent() {
             <Route path="/feedback" element={<Feedback />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          </Suspense>
         </main>
         <Footer />
       </div>
