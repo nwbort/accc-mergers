@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { mergerPath } from '../utils/slug';
 
 // Shared chip base for the small inline badges (the top-right "New" flag and

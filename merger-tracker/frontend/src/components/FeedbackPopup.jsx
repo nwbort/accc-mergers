@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { FaTimes } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 // Set to false to hide the popup entirely (e.g. between feedback campaigns).
 const ENABLED = false;

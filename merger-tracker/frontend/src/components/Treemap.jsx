@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { FaArrowRightLong } from 'react-icons/fa6';
 
 // A treemap-style heatmap: cells packed by deal volume (flex-grow

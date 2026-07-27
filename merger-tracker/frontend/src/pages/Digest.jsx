@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { mergerPath } from '../utils/slug';
 import ReactMarkdown from 'react-markdown';
 import LoadingSpinner from '../components/LoadingSpinner';

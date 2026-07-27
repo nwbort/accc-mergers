@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { differenceInCalendarDays, parseISO, isValid } from 'date-fns';
 import { mergerPath } from '../utils/slug';
 import { formatDateMedium } from '../utils/dates';

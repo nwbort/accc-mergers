@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { differenceInCalendarDays, parseISO, isValid } from 'date-fns';
 import { FaArrowRightArrowLeft, FaHourglassHalf, FaCalendarDays, FaCircleCheck } from 'react-icons/fa6';
 import LoadingSpinner from '../components/LoadingSpinner';

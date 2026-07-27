@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router';
 
 /**
  * Reads a route param and URI-decodes it, falling back to the raw value if
