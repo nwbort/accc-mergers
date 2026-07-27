@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { Scatter, Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,

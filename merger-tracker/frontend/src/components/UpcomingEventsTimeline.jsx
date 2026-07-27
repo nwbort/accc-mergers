@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { FaRegComments, FaGavel, FaTriangleExclamation, FaScaleBalanced } from 'react-icons/fa6';
 import { mergerPath } from '../utils/slug';
 import { formatWeekday, getCalendarDaysUntil } from '../utils/dates';

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { mergerPath } from '../utils/slug';
 import { FaComment } from 'react-icons/fa';
 import ReactMarkdown from 'react-markdown';

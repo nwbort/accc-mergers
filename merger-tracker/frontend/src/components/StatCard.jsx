@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { CARD } from '../utils/classNames';
 
 function StatCard({ title, value, subtitle, icon, href }) {

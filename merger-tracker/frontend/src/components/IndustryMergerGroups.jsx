@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import StatusBadge from './StatusBadge';
 import { mergerPath } from '../utils/slug';
 import { groupMergersByPhase } from '../utils/industryGroups';
