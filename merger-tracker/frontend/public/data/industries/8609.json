@@ -27,6 +27,17 @@
   "children": [],
   "mergers": [
     {
+      "merger_id": "MN-55029",
+      "merger_name": "Estia Health \u2013 AnglicareSA residential aged care business",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-24T12:00:00Z",
+      "determination_date": null
+    },
+    {
       "merger_id": "WA-95022",
       "merger_name": "Life Without Barriers \u2013 Mallacoota District Health & Support Service",
       "is_waiver": true,
@@ -49,11 +60,11 @@
       "determination_date": "2026-05-04T12:00:00Z"
     }
   ],
-  "count": 2,
-  "phase_1_count": 1,
+  "count": 3,
+  "phase_1_count": 2,
   "phase_2_count": 0,
   "waiver_count": 1,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": {
     "average_days": 24.0,
     "median_days": 24,

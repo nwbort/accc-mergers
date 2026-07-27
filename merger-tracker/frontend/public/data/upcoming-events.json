@@ -101,6 +101,16 @@
       "effective_notification_datetime": "2026-05-28T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-08-03T12:00:00Z",
+      "merger_id": "MN-55029",
+      "merger_name": "Estia Health \u2013 AnglicareSA residential aged care business",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-07-24T12:00:00Z"
+    },
+    {
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-08-06T12:00:00Z",
@@ -454,6 +464,16 @@
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-09-04T12:00:00Z",
+      "merger_id": "MN-55029",
+      "merger_name": "Estia Health \u2013 AnglicareSA residential aged care business",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-07-24T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-09-04T12:00:00Z",
       "merger_id": "MN-90024",
       "merger_name": "Petalite \u2013 Envu",
       "status": "Under assessment",
@@ -492,6 +512,6 @@
       "tribunal_number": "ACT 1 of 2026"
     }
   ],
-  "count": 49,
+  "count": 51,
   "days_ahead": 60
 }

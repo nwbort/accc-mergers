@@ -1,10 +1,10 @@
 {
-  "total_mergers": 189,
+  "total_mergers": 190,
   "total_waivers": 288,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 147,
-    "Under assessment": 39,
+    "Under assessment": 40,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -90,6 +90,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-55029",
+      "merger_name": "Estia Health \u2013 AnglicareSA residential aged care business",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-24T12:00:00Z",
+      "page_modified_datetime": "2026-07-27T11:10:27+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-05030",
       "merger_name": "Coles \u2013 supermarket site in Upper Swan, WA",
@@ -202,16 +212,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-07-16T12:00:00Z",
       "page_modified_datetime": "2026-07-24T17:29:34+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-30023",
-      "merger_name": "UPM-Kymmene \u2013 Sappi joint venture",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-16T12:00:00Z",
-      "page_modified_datetime": "2026-07-23T16:22:52+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

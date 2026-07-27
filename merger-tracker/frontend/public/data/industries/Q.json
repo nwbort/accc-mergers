@@ -21,7 +21,7 @@
       "code": "86",
       "name": "Residential Care Services",
       "level": "subdivision",
-      "merger_count": 8
+      "merger_count": 9
     },
     {
       "code": "87",
@@ -31,6 +31,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-55029",
+      "merger_name": "Estia Health \u2013 AnglicareSA residential aged care business",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-24T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-20017",
       "merger_name": "Amplifon \u2013 GN Hearing",
@@ -417,11 +428,11 @@
       "determination_date": "2026-02-10T12:00:00Z"
     }
   ],
-  "count": 35,
-  "phase_1_count": 15,
+  "count": 36,
+  "phase_1_count": 16,
   "phase_2_count": 0,
   "waiver_count": 20,
-  "active_count": 3,
+  "active_count": 4,
   "phase_duration": {
     "average_days": 25.333333333333332,
     "median_days": 24.5,

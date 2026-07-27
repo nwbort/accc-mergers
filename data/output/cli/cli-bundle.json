@@ -34238,6 +34238,206 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/estia-health-%E2%80%93-anglicaresa-residential-aged-care-business",
+      "merger_name": "Estia Health – AnglicareSA residential aged care business",
+      "status": "Under assessment",
+      "merger_id": "MN-55029",
+      "effective_notification_datetime": "2026-07-24T12:00:00Z",
+      "original_notification_datetime": "2026-07-24T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-09-04T12:00:00Z",
+      "page_modified_datetime": "2026-07-27T11:10:27+10:00",
+      "consultation_response_due_date": "2026-08-03T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "ESTIA INVESTMENTS PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "87 164 350 387",
+          "party_page": {
+            "id": "estia-investments-pty-ltd",
+            "name": "Estia Investments Pty. Ltd."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "ANGLICARE SA LTD.",
+          "identifier_type": "ABN",
+          "identifier": "69 187 578 153",
+          "party_page": {
+            "id": "anglicare-sa-ltd",
+            "name": "Anglicare Sa Ltd."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "ESTIA HEALTH TOPCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "47 669 884 244",
+          "canonical": {
+            "id": "estia-health-holdings-ltd",
+            "name": "Estia Health Holdings Ltd"
+          },
+          "party_page": {
+            "id": "estia-health-holdings-ltd",
+            "name": "Estia Health Holdings Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "8601",
+          "name": "Aged Care Residential Services"
+        },
+        {
+          "code": "8609",
+          "name": "Other Residential Care Services"
+        }
+      ],
+      "merger_description": "Estia Investments Pty Ltd (**Estia**) proposes to acquire substantially all the business assets of six residential aged care homes from Anglicare SA Ltd (**AnglicareSA**):\n\n* AnglicareSA Grange\n* AnglicareSA Trott Park\n* AnglicareSA Elizabeth East\n* AnglicareSA Brompton\n* AnglicareSA Elizabeth – Dutton Court, and\n* AnglicareSA Westbourne Park\n\n(**Proposed Acquisition**).\n\nEstia is a registered provider of residential care services. Estia and its wholly owned subsidiaries currently operate over 90 residential aged care homes across Victoria, New South Wales, Queensland, and South Australia. Estia is currently majority owned by Bain Capital Private Equity. On 22 July 2026, the ACCC determined under section 51ABZE(1) that the acquisition of Estia by a Stonepeak-led consortium may be put into effect, see https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/stonepeak-led-consortium-estia-health.\n\nAnglicareSA is an independent not-for-profit organisation and a registered provider of care services. It operates six residential aged care homes in Adelaide (being the homes Estia Health proposes to acquire). AnglicareSA also provides other services to the community, including community aged care, NDIS services, foster care, mental health, financial counselling, community housing and support for vulnerable individuals. AnglicareSA intends to continue providing these other services following the Proposed Acquisition.\n\nEstia and AnglicareSA both operate residential aged care homes in certain areas within, and in the outer suburbs of, metropolitan Adelaide.",
+      "events": [
+        {
+          "date": "2026-07-27T12:00:00Z",
+          "title": "Questionnaire - Estia Health - Anglicare SA",
+          "display_title": "Questionnaire - Estia Health - Anglicare SA",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Estia%20Health-AnglicareSA%20-%20third-party%20questionnaire.docx",
+          "url_gh": "/mergers/MN-55029/Estia Health-AnglicareSA - third-party questionnaire.pdf",
+          "phase": null
+        },
+        {
+          "date": "2026-07-24T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-35013",
+          "merger_name": "Estia Health – Norsan residential aged care business",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "ESTIA INVESTMENTS PTY. LTD.",
+              "identifier_type": "ABN",
+              "identifier": "87 164 350 387",
+              "party_page": {
+                "id": "estia-investments-pty-ltd",
+                "name": "Estia Investments Pty. Ltd."
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "NORSAN PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "33 076 143 596",
+              "party_page": {
+                "id": "norsan-pty-ltd",
+                "name": "Norsan Pty Ltd"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-50026",
+          "merger_name": "Stonepeak-led consortium - Estia Health",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Wisdom BidCo Pty Ltd",
+              "identifier_type": "ABN",
+              "identifier": "19 696 888 730",
+              "party_page": {
+                "id": "wisdom-bidco-pty-ltd",
+                "name": "Wisdom BidCo Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Estia Health Holdings Ltd",
+              "identifier_type": "ABN",
+              "identifier": "47 669 884 244",
+              "canonical": {
+                "id": "estia-health-holdings-ltd",
+                "name": "Estia Health Holdings Ltd"
+              },
+              "party_page": {
+                "id": "estia-health-holdings-ltd",
+                "name": "Estia Health Holdings Ltd"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-05017",
+          "merger_name": "Tony White Group - Sharton Motors dealerships in Maitland, Port Stephens and Cardiff",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "TWG HUNTER DEALERSHIPS PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "18 695 726 348",
+              "party_page": {
+                "id": "twg-hunter-dealerships-pty-ltd",
+                "name": "Twg Hunter Dealerships Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "SHARTON MOTORS PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "55 001 345 384",
+              "party_page": {
+                "id": "sharton-motors-pty-ltd",
+                "name": "Sharton Motors Pty Ltd"
+              }
+            },
+            {
+              "name": "N&M Burton Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "125 935 944",
+              "party_page": {
+                "id": "n-m-burton-pty-ltd",
+                "name": "N&M Burton Pty Ltd"
+              }
+            }
+          ]
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 15,
+        "range_business_days": [
+          15,
+          18
+        ],
+        "basis": "industry",
+        "anzsic_level": "division",
+        "anzsic_codes": [
+          "Q"
+        ],
+        "sample_size": 12,
+        "estimated_at": "2026-07-27",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ior-delta-specialised-energy-assets",
       "merger_name": "IOR - Delta Specialised Energy assets",
       "status": "Assessment completed",
@@ -125513,6 +125713,49 @@
       ],
       "questions_count": 3
     },
+    "MN-55029": {
+      "deadline": "3 August 2026",
+      "deadline_iso": "2026-08-03",
+      "file_name": "Estia Health-AnglicareSA - third-party questionnaire.pdf",
+      "questions": [
+        {
+          "number": 1,
+          "section": null,
+          "text": "Outline any concerns regarding the impact of the Acquisition on competition, including if the Estia and AnglicareSA facilities in South Australia are close competitors and there are not many alternatives."
+        },
+        {
+          "number": 2,
+          "section": null,
+          "text": "Provide any additional information or comments that you consider relevant to the ACCC’s assessment of the Acquisition."
+        },
+        {
+          "number": 3,
+          "section": null,
+          "text": "Provide a brief description of your business or organisation, including any commercial relationships with Estia and/or AnglicareSA."
+        },
+        {
+          "number": 4,
+          "section": "Questions for operators of residential aged care homes",
+          "text": "Identify the residential aged care homes you operate that are located within metropolitan Adelaide or its outer suburbs and their location."
+        },
+        {
+          "number": 5,
+          "section": "Questions for operators of residential aged care homes",
+          "text": "Identify the characteristics of your residential aged care homes listed in response to question 4 that you consider are most important in attracting new residents (e.g. pricing, staff/patient ratios, the variety or quality of service offerings, the quality of physical facilities including frequency of upgrades, any religious affiliation, etc.)."
+        },
+        {
+          "number": 6,
+          "section": "Questions for operators of residential aged care homes",
+          "text": "To what extent do you compete with Estia and/or Anglicare in the supply of residential aged care services in metropolitan Adelaide or its outer suburbs? If possible, provide estimated market shares."
+        },
+        {
+          "number": 7,
+          "section": "Questions for operators of residential aged care homes",
+          "text": "Identify the characteristics of AnglicareSA’s residential aged care homes that you consider are most important in attracting new residents (e.g. its Anglican religious affiliation, pricing, staff/patient ratios, the variety or quality of service offerings, the quality of physical facilities including frequency of upgrades, etc.)."
+        }
+      ],
+      "questions_count": 7
+    },
     "MN-60004": {
       "deadline": null,
       "deadline_iso": null,
@@ -130844,12 +131087,12 @@
     }
   },
   "stats": {
-    "total_mergers": 189,
+    "total_mergers": 190,
     "total_waivers": 288,
     "total_conditional_approvals": 1,
     "by_status": {
       "Assessment completed": 147,
-      "Under assessment": 39,
+      "Under assessment": 40,
       "Assessment ceased": 3
     },
     "by_determination": {
@@ -130935,6 +131178,16 @@
       }
     ],
     "recent_mergers": [
+      {
+        "merger_id": "MN-55029",
+        "merger_name": "Estia Health – AnglicareSA residential aged care business",
+        "status": "Under assessment",
+        "accc_determination": null,
+        "effective_notification_datetime": "2026-07-24T12:00:00Z",
+        "page_modified_datetime": "2026-07-27T11:10:27+10:00",
+        "is_waiver": false,
+        "is_refiled": false
+      },
       {
         "merger_id": "MN-05030",
         "merger_name": "Coles – supermarket site in Upper Swan, WA",
@@ -131047,16 +131300,6 @@
         "accc_determination": null,
         "effective_notification_datetime": "2026-07-16T12:00:00Z",
         "page_modified_datetime": "2026-07-24T17:29:34+10:00",
-        "is_waiver": false,
-        "is_refiled": false
-      },
-      {
-        "merger_id": "MN-30023",
-        "merger_name": "UPM-Kymmene – Sappi joint venture",
-        "status": "Under assessment",
-        "accc_determination": null,
-        "effective_notification_datetime": "2026-07-16T12:00:00Z",
-        "page_modified_datetime": "2026-07-23T16:22:52+10:00",
         "is_waiver": false,
         "is_refiled": false
       }
@@ -131282,6 +131525,11 @@
         "merger_count": 10
       },
       {
+        "code": "8601",
+        "name": "Aged Care Residential Services",
+        "merger_count": 9
+      },
+      {
         "code": "9539",
         "name": "Other Personal Services n.e.c.",
         "merger_count": 9
@@ -131299,11 +131547,6 @@
       {
         "code": "6940",
         "name": "Advertising Services",
-        "merger_count": 8
-      },
-      {
-        "code": "8601",
-        "name": "Aged Care Residential Services",
         "merger_count": 8
       },
       {
@@ -131692,6 +131935,11 @@
         "merger_count": 3
       },
       {
+        "code": "8609",
+        "name": "Other Residential Care Services",
+        "merger_count": 3
+      },
+      {
         "code": "4271",
         "name": "Pharmaceutical, Cosmetic and Toiletry Goods Retailing",
         "merger_count": 3
@@ -131879,11 +132127,6 @@
       {
         "code": "1510",
         "name": "Pulp, Paper and Paperboard Manufacturing",
-        "merger_count": 2
-      },
-      {
-        "code": "8609",
-        "name": "Other Residential Care Services",
         "merger_count": 2
       },
       {
@@ -132602,7 +132845,7 @@
         "merger_count": 1
       }
     ],
-    "total_mergers": 477,
+    "total_mergers": 478,
     "total_industries": 283
   }
 }

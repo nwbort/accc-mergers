@@ -1936,6 +1936,68 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/coles-%E2%80%93-supermarket-site-in-upper-swan-wa"
     },
     {
+      "merger_id": "MN-55029",
+      "merger_name": "Estia Health \u2013 AnglicareSA residential aged care business",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-24T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-04T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "ESTIA INVESTMENTS PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "87 164 350 387",
+          "party_page": {
+            "id": "estia-investments-pty-ltd",
+            "name": "Estia Investments Pty. Ltd."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "ANGLICARE SA LTD.",
+          "identifier_type": "ABN",
+          "identifier": "69 187 578 153",
+          "party_page": {
+            "id": "anglicare-sa-ltd",
+            "name": "Anglicare Sa Ltd."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "ESTIA HEALTH TOPCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "47 669 884 244",
+          "canonical": {
+            "id": "estia-health-holdings-ltd",
+            "name": "Estia Health Holdings Ltd"
+          },
+          "party_page": {
+            "id": "estia-health-holdings-ltd",
+            "name": "Estia Health Holdings Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "8601",
+          "name": "Aged Care Residential Services"
+        },
+        {
+          "code": "8609",
+          "name": "Other Residential Care Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/estia-health-%E2%80%93-anglicaresa-residential-aged-care-business"
+    },
+    {
       "merger_id": "MN-90024",
       "merger_name": "Petalite \u2013 Envu",
       "status": "Under assessment",
