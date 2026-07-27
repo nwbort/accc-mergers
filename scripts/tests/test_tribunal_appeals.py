@@ -164,6 +164,26 @@ class TestLinkTribunalAppeals:
         assert ev['tribunal_number'] == 'ACT 1 of 2026'
         assert 'Application for Review' in ev['display_title']
 
+    def test_blank_filed_by_defaults_to_tribunal(self):
+        # A tribunal-issued document (order/direction/reasons) has no filing
+        # party; the matter page leaves the column blank or shows a lone dash.
+        # Each such value should surface as "Tribunal" in the event timeline.
+        for placeholder in (None, '', '  ', '-', '–', '—', ' - '):
+            appeal = _appeal()
+            appeal['MN-0001']['documents'][0]['filed_by'] = placeholder
+            mergers = [enrich_merger(_phase2_not_approved())]
+            link_tribunal_appeals(mergers, appeal)
+            ev = next(e for e in mergers[0]['events'] if e.get('is_appeal'))
+            assert ev['appeal_filed_by'] == 'Tribunal', repr(placeholder)
+
+    def test_real_filed_by_preserved(self):
+        appeal = _appeal()
+        appeal['MN-0001']['documents'][0]['filed_by'] = '  Coles  '
+        mergers = [enrich_merger(_phase2_not_approved())]
+        link_tribunal_appeals(mergers, appeal)
+        ev = next(e for e in mergers[0]['events'] if e.get('is_appeal'))
+        assert ev['appeal_filed_by'] == 'Coles'
+
     def test_no_appeal_leaves_merger_untouched(self):
         mergers = [enrich_merger(_phase2_not_approved('MN-9999'))]
         original_event_count = len(mergers[0]['events'])

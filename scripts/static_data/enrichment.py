@@ -388,6 +388,21 @@ def _normalise_appeal_date(value: str | None) -> str | None:
     return value
 
 
+def _normalise_appeal_filed_by(value: str | None) -> str:
+    """Resolve a tribunal document's "filed by" to a display value.
+
+    Tribunal matter pages leave the "filed by" column blank — or fill it with a
+    placeholder dash — for documents the Tribunal itself issues (orders,
+    directions, reasons). Those show up scraped as ``None``, an empty string or
+    a lone dash. Treat any such value as filed by the Tribunal so the event
+    timeline never shows a bare "–".
+    """
+    text = (value or '').strip()
+    if not text or text.strip('-–—') == '':
+        return 'Tribunal'
+    return text
+
+
 def _appeal_event(doc: dict, appeal: dict) -> dict:
     """Turn a tribunal appeal document into a merger timeline event."""
     description = doc.get('description') or 'Tribunal document'
@@ -400,7 +415,7 @@ def _appeal_event(doc: dict, appeal: dict) -> dict:
         # Flags the event as originating from the tribunal appeal rather than
         # the ACCC register, so the frontend can style/label it distinctly.
         'is_appeal': True,
-        'appeal_filed_by': doc.get('filed_by'),
+        'appeal_filed_by': _normalise_appeal_filed_by(doc.get('filed_by')),
         'appeal_confidentiality': doc.get('confidentiality'),
         'tribunal_number': appeal.get('tribunal_number'),
         'phase': None,
