@@ -2708,14 +2708,14 @@
     {
       "merger_id": "MN-85036",
       "merger_name": "SpaceX - Anysphere",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "has_conditions": false,
       "is_waiver": false,
       "under_appeal": false,
       "is_refiled": false,
       "effective_notification_datetime": "2026-06-30T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-07-27T12:00:00Z",
       "end_of_determination_period": "2026-08-11T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -2742,30 +2742,30 @@
       ],
       "other_parties": [
         {
-          "name": "X Global LLC",
-          "identifier_type": null,
-          "identifier": "Delaware File Number  6028653",
-          "party_page": {
-            "id": "x-global-llc",
-            "name": "X Global LLC"
-          }
-        },
-        {
-          "name": "X ASIA PACIFIC INTERNET PTE. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "97 712 692 946",
-          "party_page": {
-            "id": "x-asia-pacific-internet-pte-ltd",
-            "name": "X Asia Pacific Internet Pte. Ltd."
-          }
-        },
-        {
           "name": "STARLINK AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
           "identifier": "68 636 841 533",
           "party_page": {
             "id": "starlink-australia-pty-ltd",
             "name": "Starlink Australia Pty Ltd"
+          }
+        },
+        {
+          "name": "STARLINK INTERNET SERVICES PTE. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "44 658 489 582",
+          "party_page": {
+            "id": "starlink-internet-services-pte-ltd",
+            "name": "Starlink Internet Services Pte. Ltd."
+          }
+        },
+        {
+          "name": "X Global LLC",
+          "identifier_type": null,
+          "identifier": "Delaware File Number  6028653",
+          "party_page": {
+            "id": "x-global-llc",
+            "name": "X Global LLC"
           }
         },
         {
@@ -2787,12 +2787,12 @@
           }
         },
         {
-          "name": "STARLINK INTERNET SERVICES PTE. LTD.",
+          "name": "X ASIA PACIFIC INTERNET PTE. LTD.",
           "identifier_type": "ABN",
-          "identifier": "44 658 489 582",
+          "identifier": "97 712 692 946",
           "party_page": {
-            "id": "starlink-internet-services-pte-ltd",
-            "name": "Starlink Internet Services Pte. Ltd."
+            "id": "x-asia-pacific-internet-pte-ltd",
+            "name": "X Asia Pacific Internet Pte. Ltd."
           }
         }
       ],

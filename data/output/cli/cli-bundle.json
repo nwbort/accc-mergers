@@ -47772,13 +47772,16 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/spacex-anysphere",
       "merger_name": "SpaceX - Anysphere",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-85036",
       "effective_notification_datetime": "2026-06-30T12:00:00Z",
       "original_notification_datetime": "2026-06-30T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-08-11T12:00:00Z",
-      "page_modified_datetime": "2026-07-08T16:05:52+10:00",
+      "determination_publication_date": "2026-07-27T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-07-27T16:14:02+10:00",
       "consultation_response_due_date": "2026-07-08T12:00:00Z",
       "acquirers": [
         {
@@ -47804,30 +47807,30 @@
       ],
       "other_parties": [
         {
-          "name": "X Global LLC",
-          "identifier_type": null,
-          "identifier": "Delaware File Number  6028653",
-          "party_page": {
-            "id": "x-global-llc",
-            "name": "X Global LLC"
-          }
-        },
-        {
-          "name": "X ASIA PACIFIC INTERNET PTE. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "97 712 692 946",
-          "party_page": {
-            "id": "x-asia-pacific-internet-pte-ltd",
-            "name": "X Asia Pacific Internet Pte. Ltd."
-          }
-        },
-        {
           "name": "STARLINK AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
           "identifier": "68 636 841 533",
           "party_page": {
             "id": "starlink-australia-pty-ltd",
             "name": "Starlink Australia Pty Ltd"
+          }
+        },
+        {
+          "name": "STARLINK INTERNET SERVICES PTE. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "44 658 489 582",
+          "party_page": {
+            "id": "starlink-internet-services-pte-ltd",
+            "name": "Starlink Internet Services Pte. Ltd."
+          }
+        },
+        {
+          "name": "X Global LLC",
+          "identifier_type": null,
+          "identifier": "Delaware File Number  6028653",
+          "party_page": {
+            "id": "x-global-llc",
+            "name": "X Global LLC"
           }
         },
         {
@@ -47849,12 +47852,12 @@
           }
         },
         {
-          "name": "STARLINK INTERNET SERVICES PTE. LTD.",
+          "name": "X ASIA PACIFIC INTERNET PTE. LTD.",
           "identifier_type": "ABN",
-          "identifier": "44 658 489 582",
+          "identifier": "97 712 692 946",
           "party_page": {
-            "id": "starlink-internet-services-pte-ltd",
-            "name": "Starlink Internet Services Pte. Ltd."
+            "id": "x-asia-pacific-internet-pte-ltd",
+            "name": "X Asia Pacific Internet Pte. Ltd."
           }
         }
       ],
@@ -47879,13 +47882,48 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-07-27T12:00:00Z",
+          "title": "SpaceX-Anysphere - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/SpaceX-Anysphere%20-%20Phase%201%20determination.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Space Exploration Technologies Corp. (SpaceX)’s proposed acquisition, via its subsidiary, of acquire 100% of the shares in Anysphere, Inc. (Anysphere) (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has determined under section 51ABZE(1) of the Competition and Consumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, SpaceX, is the ultimate parent company of the SpaceX group, which includes, among other businesses, X.AI Corp (xAI), an artificial intelligence (AI) company, and X Corp., which owns and operates the X social media platform (formerly Twitter). xAI develops the Grok family of large language models and offers Grok Build, a terminal-native AI coding tool, to Grok and X subscribers.\n\nGrok Build currently runs on xAI’s Grok model family.\n\nThe target, Anysphere, develops and operates Cursor, an AI coding tool used by software developers to write and review code with the assistance of AI models. Cursor users can select from a range of third-party large language models (including Grok models) or Anysphere’s proprietary Composer model to power Cursor’s AI assistant features. Composer is purpose-built for Cursor and is not offered as a standalone model for other purposes."
+            },
+            {
+              "item": "Overlap between the Parties",
+              "details": "SpaceX and Anysphere (together, the Parties) overlap in the supply of AI large language models, and in the supply of AI coding tools.\n\nCursor users can use SpaceX’s Grok models to power Cursor’s AI assistant features."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition and Consumer Commission (ACCC) undertakes a competition assessment and considers whether it is appropriate for an acquisition to be approved or subject to further assessment in Phase 2 in accordance with section 51ABZJ of the Competition and Consumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have regard to the object of the Act and all relevant matters, including the interests of consumers.\n\nFor more information about the ACCC’s approach to considering notified acquisitions, see the ACCC’s merger assessment guidelines and interim merger process guidelines.\n\nIn conducting its competition assessment, the ACCC has considered the information and documents that were submitted with the notification form, information from third partes, market share data from prior matters and publicly available information.\n\nThe ACCC has determined that the Acquisition may be put into effect as it considers that the Acquisition is unlikely to have the effect of substantially lessening competition in any market. In reaching its decision, and based on the material before it, the ACCC makes the following findings.\n\n• There is limited horizontal overlap between the AI large language model services offered by the Parties, given Anysphere’s proprietary Composer model is only available for use with Cursor and is not offered as a standalone model for other purposes.\n\n• Post-Acquisition, the merged entity would continue to face competition from multiple alternative suppliers of AI coding tools.\n\n• Post-Acquisition, the merged entity would be unlikely to have the ability and incentive to foreclose rival AI large language model suppliers’ access to the Cursor platform, given the multiple alternative suppliers of AI coding tools used by software developers.\n\n• Post-Acquisition, the merged entity would be unlikely to have the ability and incentive to foreclose rival AI coding tool suppliers’ access to the merged entity’s AI large language models, given the availability of alternative suppliers of large language models such as Anthropic, Google and OpenAI."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by the Australian Competition Tribunal, may apply for review if they are dissatisfied with the determination. Pursuant to section 100C of the Act, applications for review of the determination are to be made to the Australian Competition Tribunal before the end of 14 calendar days after this statement of reasons was included on the ACCC’s Acquisitions Register. To confirm whether there has been any application for review, please contact the Australian Competition Tribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-85036/SpaceX-Anysphere - Phase 1 determination.pdf",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
       "has_conditions": false,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-07-27T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -53197,8 +53235,8 @@
         {
           "merger_id": "MN-85036",
           "merger_name": "SpaceX - Anysphere",
-          "status": "Under assessment",
-          "accc_determination": null,
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
           "acquirers": [
             {
               "name": "Space Exploration Technologies Corp.",
@@ -131129,12 +131167,12 @@
     "total_waivers": 288,
     "total_conditional_approvals": 1,
     "by_status": {
-      "Assessment completed": 148,
-      "Under assessment": 39,
+      "Assessment completed": 149,
+      "Under assessment": 38,
       "Assessment ceased": 3
     },
     "by_determination": {
-      "Approved": 146,
+      "Approved": 147,
       "Referred to phase 2": 8
     },
     "by_waiver_determination": {
@@ -131142,27 +131180,27 @@
       "Not approved": 14
     },
     "clearance_rate": {
-      "cleared": 147,
+      "cleared": 148,
       "not_cleared": 1,
-      "total": 148,
+      "total": 149,
       "rate": 0.993
     },
     "phase_duration": {
-      "average_days": 29.623376623376622,
-      "median_days": 26.0,
-      "average_business_days": 19.57792207792208,
-      "median_business_days": 17.0,
+      "average_days": 29.606451612903225,
+      "median_days": 26,
+      "average_business_days": 19.574193548387097,
+      "median_business_days": 17,
       "percentiles": {
         "day15": {
           "count": 38,
-          "percentage": 24.7
+          "percentage": 24.5
         },
         "day20": {
-          "count": 120,
-          "percentage": 77.9
+          "count": 121,
+          "percentage": 78.1
         },
         "day30": {
-          "count": 146,
+          "count": 147,
           "percentage": 94.8
         }
       }
@@ -131344,6 +131382,16 @@
     ],
     "recent_determinations": [
       {
+        "merger_id": "MN-85036",
+        "merger_name": "SpaceX - Anysphere",
+        "determination": "Approved",
+        "determination_date": "2026-07-27T12:00:00Z",
+        "page_modified_datetime": "2026-07-27T16:14:02+10:00",
+        "determination_type": "final",
+        "is_waiver": false,
+        "stage": "Phase 1 - initial assessment"
+      },
+      {
         "merger_id": "MN-35018",
         "merger_name": "Hewitt – Nolan Meats",
         "determination": "Approved",
@@ -131452,16 +131500,6 @@
         "determination_type": "final",
         "is_waiver": true,
         "stage": "Waiver application"
-      },
-      {
-        "merger_id": "MN-50026",
-        "merger_name": "Stonepeak-led consortium - Estia Health",
-        "determination": "Approved",
-        "determination_date": "2026-07-22T12:00:00Z",
-        "page_modified_datetime": "2026-07-22T16:23:06+10:00",
-        "determination_type": "final",
-        "is_waiver": false,
-        "stage": "Phase 1 - initial assessment"
       }
     ]
   },

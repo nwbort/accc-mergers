@@ -3,12 +3,12 @@
   "total_waivers": 288,
   "total_conditional_approvals": 1,
   "by_status": {
-    "Assessment completed": 148,
-    "Under assessment": 39,
+    "Assessment completed": 149,
+    "Under assessment": 38,
     "Assessment ceased": 3
   },
   "by_determination": {
-    "Approved": 146,
+    "Approved": 147,
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
@@ -16,27 +16,27 @@
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 147,
+    "cleared": 148,
     "not_cleared": 1,
-    "total": 148,
+    "total": 149,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.623376623376622,
-    "median_days": 26.0,
-    "average_business_days": 19.57792207792208,
-    "median_business_days": 17.0,
+    "average_days": 29.606451612903225,
+    "median_days": 26,
+    "average_business_days": 19.574193548387097,
+    "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 38,
-        "percentage": 24.7
+        "percentage": 24.5
       },
       "day20": {
-        "count": 120,
-        "percentage": 77.9
+        "count": 121,
+        "percentage": 78.1
       },
       "day30": {
-        "count": 146,
+        "count": 147,
         "percentage": 94.8
       }
     }
@@ -218,6 +218,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-85036",
+      "merger_name": "SpaceX - Anysphere",
+      "determination": "Approved",
+      "determination_date": "2026-07-27T12:00:00Z",
+      "page_modified_datetime": "2026-07-27T16:14:02+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-35018",
       "merger_name": "Hewitt \u2013 Nolan Meats",
       "determination": "Approved",
@@ -326,16 +336,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-50026",
-      "merger_name": "Stonepeak-led consortium - Estia Health",
-      "determination": "Approved",
-      "determination_date": "2026-07-22T12:00:00Z",
-      "page_modified_datetime": "2026-07-22T16:23:06+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }

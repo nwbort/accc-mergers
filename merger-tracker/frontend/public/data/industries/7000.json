@@ -41,12 +41,12 @@
       "merger_id": "MN-85036",
       "merger_name": "SpaceX - Anysphere",
       "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
+      "status": "Assessment completed",
+      "determination": "Approved",
       "has_conditions": false,
       "phase": "Phase 1",
       "notification_date": "2026-06-30T12:00:00Z",
-      "determination_date": null
+      "determination_date": "2026-07-27T12:00:00Z"
     },
     {
       "merger_id": "MN-75027",
@@ -548,13 +548,13 @@
   "phase_1_count": 18,
   "phase_2_count": 0,
   "waiver_count": 29,
-  "active_count": 2,
+  "active_count": 1,
   "phase_duration": {
-    "average_days": 30.125,
-    "median_days": 27.0,
-    "average_business_days": 19.5,
-    "median_business_days": 17.5,
-    "completed_count": 16
+    "average_days": 29.941176470588236,
+    "median_days": 27,
+    "average_business_days": 19.470588235294116,
+    "median_business_days": 18,
+    "completed_count": 17
   },
   "waiver_duration": {
     "average_days": 18.448275862068964,

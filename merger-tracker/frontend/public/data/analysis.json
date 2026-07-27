@@ -707,6 +707,11 @@
         "in_progress": false
       },
       {
+        "business_days": 19,
+        "calendar_days": 27,
+        "in_progress": false
+      },
+      {
         "business_days": 15,
         "calendar_days": 24,
         "in_progress": false
@@ -774,17 +779,17 @@
     ],
     "stats": {
       "average": 19.6,
-      "median": 17.0,
+      "median": 17,
       "min": 15,
       "max": 59,
-      "count": 154
+      "count": 155
     },
     "calendar_stats": {
       "average": 29.6,
-      "median": 26.0,
+      "median": 26,
       "min": 21,
       "max": 103,
-      "count": 154
+      "count": 155
     }
   },
   "waiver_duration": {
@@ -2047,11 +2052,11 @@
     {
       "code": "M",
       "name": "Professional, Scientific and Technical Services",
-      "average_business_days": 21.3,
-      "median_business_days": 17.5,
-      "average_calendar_days": 32.9,
-      "median_calendar_days": 27.0,
-      "count": 34
+      "average_business_days": 21.2,
+      "median_business_days": 18,
+      "average_calendar_days": 32.7,
+      "median_calendar_days": 27,
+      "count": 35
     },
     {
       "code": "B",
@@ -2165,11 +2170,11 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 326,
+      "count": 327,
       "outcome_mix": {
-        "Approved": 326
+        "Approved": 327
       },
-      "median_phase_1_business_days": 16
+      "median_phase_1_business_days": 16.0
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -2183,9 +2188,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 37,
+      "count": 36,
       "outcome_mix": {
-        "Unknown": 37
+        "Unknown": 36
       },
       "median_phase_1_business_days": 36.5
     },
@@ -2222,7 +2227,7 @@
       "16": 29,
       "17": 18,
       "18": 16,
-      "19": 12,
+      "19": 13,
       "20": 7,
       "21": 3,
       "22": 5,
@@ -2241,9 +2246,9 @@
     },
     "stats": {
       "mean_used_bd": 17.9,
-      "median_used_bd": 17,
+      "median_used_bd": 17.0,
       "pct_decided_final_3_bd": 4.2,
-      "count": 143
+      "count": 144
     },
     "extended_count": 3
   },
@@ -2338,11 +2343,11 @@
     {
       "code": "M",
       "name": "Professional, Scientific and Technical Services",
-      "approved": 32,
+      "approved": 33,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 6,
-      "phase2_referral_rate": 0.059
+      "in_progress": 5,
+      "phase2_referral_rate": 0.057
     },
     {
       "code": "C",
