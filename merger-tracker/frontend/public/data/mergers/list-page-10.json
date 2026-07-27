@@ -191,6 +191,105 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/sonnel-hospitality-group-%E2%80%93-peakhurst-inn-hotel"
     },
     {
+      "merger_id": "WA-95032",
+      "merger_name": "State Swim \u2013 Swim Plus",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-06T12:00:00Z",
+      "determination_publication_date": "2026-07-27T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "STATE SWIM FINDON PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "73 698 337 209",
+          "party_page": {
+            "id": "state-swim-findon-pty-ltd",
+            "name": "State Swim Findon Pty Ltd"
+          }
+        },
+        {
+          "name": "STATE SWIM MOUNT BARKER PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "64 698 337 174",
+          "party_page": {
+            "id": "state-swim-mount-barker-pty-ltd",
+            "name": "State Swim Mount Barker Pty Ltd"
+          }
+        },
+        {
+          "name": "STATE SWIM NORWOOD PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "89 698 337 281",
+          "party_page": {
+            "id": "state-swim-norwood-pty-ltd",
+            "name": "State Swim Norwood Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Findon Swim School Pty Ltd as trustee for the Findon Swim School Trust",
+          "identifier_type": "ACN",
+          "identifier": "608 401 716",
+          "party_page": {
+            "id": "findon-swim-school-pty-ltd-as-trustee-for-the-findon-swim-school-trust",
+            "name": "Findon Swim School Pty Ltd as trustee for the Findon Swim School Trust"
+          }
+        },
+        {
+          "name": "SWIM PLUS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "26 073 687 224",
+          "party_page": {
+            "id": "swim-plus-pty-ltd",
+            "name": "Swim Plus Pty Ltd"
+          }
+        },
+        {
+          "name": "Mt Barker Swimming School Pty Ltd as trustee for the Mt Barker Swim School Trust",
+          "identifier_type": "ACN",
+          "identifier": "103 334 194",
+          "party_page": {
+            "id": "mt-barker-swimming-school-pty-ltd-as-trustee-for-the-mt-barker-swim-school-trust",
+            "name": "Mt Barker Swimming School Pty Ltd as trustee for the Mt Barker Swim School Trust"
+          }
+        },
+        {
+          "name": "NORWOOD SWIM SCHOOL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "29 104 947 551",
+          "party_page": {
+            "id": "norwood-swim-school-pty-ltd",
+            "name": "Norwood Swim School Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Dolphin BidCo Pty Ltd",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "dolphin-bidco-pty-ltd",
+            "name": "Dolphin BidCo Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "8211",
+          "name": "Sports and Physical Recreation Instruction"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/state-swim-%E2%80%93-swim-plus"
+    },
+    {
       "merger_id": "MN-05032",
       "merger_name": "Motorola Solutions - D-Fend Solutions",
       "status": "Under assessment",
@@ -1395,21 +1494,21 @@
       ],
       "other_parties": [
         {
-          "name": "Sinochem Holdings Corporation Ltd",
-          "identifier_type": null,
-          "identifier": "USCC  91133100MA0GBL5F38",
-          "party_page": {
-            "id": "sinochem-holdings-corporation-ltd",
-            "name": "Sinochem Holdings Corporation Ltd"
-          }
-        },
-        {
           "name": "Stichting Administratiekantoor Casper Holdco",
           "identifier_type": null,
           "identifier": "KVK  93565348",
           "party_page": {
             "id": "stichting-administratiekantoor-casper-holdco",
             "name": "Stichting Administratiekantoor Casper Holdco"
+          }
+        },
+        {
+          "name": "Sinochem Holdings Corporation Ltd",
+          "identifier_type": null,
+          "identifier": "USCC  91133100MA0GBL5F38",
+          "party_page": {
+            "id": "sinochem-holdings-corporation-ltd",
+            "name": "Sinochem Holdings Corporation Ltd"
           }
         }
       ],

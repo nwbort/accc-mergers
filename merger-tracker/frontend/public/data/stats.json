@@ -1,6 +1,6 @@
 {
   "total_mergers": 190,
-  "total_waivers": 288,
+  "total_waivers": 289,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 149,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 274,
+    "Approved": 275,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,10 +42,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.663194444444443,
-    "median_days": 18.0,
-    "average_business_days": 12.465277777777779,
-    "median_business_days": 12.0
+    "average_days": 18.67128027681661,
+    "median_days": 18,
+    "average_business_days": 12.474048442906575,
+    "median_business_days": 12
   },
   "top_industries": [
     {
@@ -201,7 +201,7 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-07-17T12:00:00Z",
-      "page_modified_datetime": "2026-07-20T14:07:26+10:00",
+      "page_modified_datetime": "2026-07-27T16:09:19+10:00",
       "is_waiver": false,
       "is_refiled": false
     },
@@ -217,6 +217,16 @@
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "WA-95032",
+      "merger_name": "State Swim \u2013 Swim Plus",
+      "determination": "Approved",
+      "determination_date": "2026-07-27T12:00:00Z",
+      "page_modified_datetime": "2026-07-27T17:03:41+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
     {
       "merger_id": "MN-85036",
       "merger_name": "SpaceX - Anysphere",
@@ -326,16 +336,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-01110",
-      "merger_name": "KKR - FYihealth group",
-      "determination": "Approved",
-      "determination_date": "2026-07-22T12:00:00Z",
-      "page_modified_datetime": "2026-07-22T16:37:26+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }

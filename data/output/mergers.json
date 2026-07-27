@@ -7281,7 +7281,7 @@
       "original_notification_datetime": "2026-07-17T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-08-28T12:00:00Z",
-      "page_modified_datetime": "2026-07-20T14:07:26+10:00",
+      "page_modified_datetime": "2026-07-27T16:09:19+10:00",
       "consultation_response_due_date": "2026-07-27T12:00:00Z",
       "acquirers": [
         {
@@ -7316,21 +7316,21 @@
       ],
       "other_parties": [
         {
-          "name": "Sinochem Holdings Corporation Ltd",
-          "identifier_type": null,
-          "identifier": "USCC  91133100MA0GBL5F38",
-          "party_page": {
-            "id": "sinochem-holdings-corporation-ltd",
-            "name": "Sinochem Holdings Corporation Ltd"
-          }
-        },
-        {
           "name": "Stichting Administratiekantoor Casper Holdco",
           "identifier_type": null,
           "identifier": "KVK  93565348",
           "party_page": {
             "id": "stichting-administratiekantoor-casper-holdco",
             "name": "Stichting Administratiekantoor Casper Holdco"
+          }
+        },
+        {
+          "name": "Sinochem Holdings Corporation Ltd",
+          "identifier_type": null,
+          "identifier": "USCC  91133100MA0GBL5F38",
+          "party_page": {
+            "id": "sinochem-holdings-corporation-ltd",
+            "name": "Sinochem Holdings Corporation Ltd"
           }
         }
       ],
@@ -122026,6 +122026,265 @@
               "party_page": {
                 "id": "timms-contracting-pty-ltd",
                 "name": "Timms Contracting Pty Ltd"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/state-swim-%E2%80%93-swim-plus",
+      "merger_name": "State Swim \u2013 Swim Plus",
+      "status": "Assessment completed",
+      "merger_id": "WA-95032",
+      "effective_notification_datetime": "2026-07-06T12:00:00Z",
+      "original_notification_datetime": "2026-07-06T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-07-27T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-07-27T17:03:41+10:00",
+      "acquirers": [
+        {
+          "name": "STATE SWIM FINDON PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "73 698 337 209",
+          "party_page": {
+            "id": "state-swim-findon-pty-ltd",
+            "name": "State Swim Findon Pty Ltd"
+          }
+        },
+        {
+          "name": "STATE SWIM MOUNT BARKER PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "64 698 337 174",
+          "party_page": {
+            "id": "state-swim-mount-barker-pty-ltd",
+            "name": "State Swim Mount Barker Pty Ltd"
+          }
+        },
+        {
+          "name": "STATE SWIM NORWOOD PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "89 698 337 281",
+          "party_page": {
+            "id": "state-swim-norwood-pty-ltd",
+            "name": "State Swim Norwood Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Findon Swim School Pty Ltd as trustee for the Findon Swim School Trust",
+          "identifier_type": "ACN",
+          "identifier": "608 401 716",
+          "party_page": {
+            "id": "findon-swim-school-pty-ltd-as-trustee-for-the-findon-swim-school-trust",
+            "name": "Findon Swim School Pty Ltd as trustee for the Findon Swim School Trust"
+          }
+        },
+        {
+          "name": "SWIM PLUS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "26 073 687 224",
+          "party_page": {
+            "id": "swim-plus-pty-ltd",
+            "name": "Swim Plus Pty Ltd"
+          }
+        },
+        {
+          "name": "Mt Barker Swimming School Pty Ltd as trustee for the Mt Barker Swim School Trust",
+          "identifier_type": "ACN",
+          "identifier": "103 334 194",
+          "party_page": {
+            "id": "mt-barker-swimming-school-pty-ltd-as-trustee-for-the-mt-barker-swim-school-trust",
+            "name": "Mt Barker Swimming School Pty Ltd as trustee for the Mt Barker Swim School Trust"
+          }
+        },
+        {
+          "name": "NORWOOD SWIM SCHOOL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "29 104 947 551",
+          "party_page": {
+            "id": "norwood-swim-school-pty-ltd",
+            "name": "Norwood Swim School Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Dolphin BidCo Pty Ltd",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "dolphin-bidco-pty-ltd",
+            "name": "Dolphin BidCo Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "8211",
+          "name": "Sports and Physical Recreation Instruction"
+        }
+      ],
+      "merger_description": "Dolphin BidCo Pty Ltd (together with its connected entities, **Dolphin**), via the newly created entities of State Swim Mount Barker Pty Ltd, State Swim Norwood Pty Ltd, and State Swim Findon Pty Ltd, proposes to acquire the swim school businesses of Mt Barker Swimming School Pty Ltd, Norwood Swim School Pty Ltd, and Findon Swim School Pty Ltd, together with the associated intellectual property of Swim Plus Pty Ltd (collectively, the **Targets**).\n\nDolphin operates a number of swim schools in Western Australia, Victoria, South Australia (including six swimming schools across Greater Adelaide) and Singapore under the \u2018State Swim\u2019 brand.\n\nThe Targets operate 'Swim Plus' branded swimming schools in Mount Barker, Norwood, and Findon, in Greater Adelaide.\n\nBoth State Swim and Swim Plus branded swimming schools primarily offer swimming lessons to children between the ages of 6 months to 10 years.",
+      "events": [
+        {
+          "date": "2026-07-27T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/State%20Swim%20-%20Swim%20Plus%20%28WA-95032%29%20-%20Notification%20waiver%20determination%20-%2027%20July%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "State Swim Mount Barker Pty Ltd, State Swim Norwood Pty Ltd, and\nState Swim Findon Pty Ltd (collectively, the Buyers), applied for a\nnotification waiver in respect of their proposed acquisition of the\nswim school businesses of Mt Barker Swimming School Pty Ltd,\nNorwood Swim School Pty Ltd, and Findon Swim School Pty Ltd,\ntogether with the associated intellectual property of Swim Plus Pty\nLtd (collectively, the Targets), as described in the transaction\ndocuments provided as part of the application (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "27 July 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The Buyers are newly formed entities of Dolphin BidCo Pty Ltd\n(together with its connected entities, Dolphin). Dolphin operates six\nswimming schools across Greater Adelaide, and other swimming\nschools in Western Australia, Victoria, and Singapore under the State\nSwim brand. The State Swim swimming schools in Greater Adelaide\nare located in Clovercrest, Glen Osmond, Golden Grove, Morphett\nRoad, Seaford, and Unley.\nThe Targets operate \u2018Swim Plus\u2019 branded swimming schools in\nMount Barker, Norwood, and Findon, in Greater Adelaide.\nBoth State Swim and Swim Plus swimming schools primarily offer\nswimming lessons to children between the ages of 6 months to 10\nyears (learn-to-swim lessons)."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\ncertain publicly available information, and had regard to the factors\nin section 51ABV(2)(b) of the Competition and Consumer Act 2010\n(Cth) (the Act).\nBased on the information currently before it, the ACCC considers\nthat the Acquisition is unlikely to give rise to any material lessening\nof competition. In particular:\na. there is a small geographic overlap between the parties in\nthe supply of learn-to-swim lessons on a local basis\nb. there are alternative providers of learn-to-swim lessons in\nthe local areas surrounding each Swim Plus swimming\nschool and in Greater Adelaide more broadly.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-95032/State Swim - Swim Plus (WA-95032) - Notification waiver determination - 27 July 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-07-06T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-20023",
+          "merger_name": "Sony Music - Recognition Music",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "SMG-Three LLC",
+              "identifier_type": null,
+              "identifier": "DDC  10277876",
+              "party_page": {
+                "id": "smg-three-llc",
+                "name": "SMG-Three LLC"
+              }
+            },
+            {
+              "name": "Sony Music Publishing (US) LLC",
+              "identifier_type": null,
+              "identifier": "DDC  2558200",
+              "party_page": {
+                "id": "sony-music-publishing-us-llc",
+                "name": "Sony Music Publishing (US) LLC"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Recognition Music Group (Delaware) L.P.",
+              "identifier_type": null,
+              "identifier": "DDC  6193972",
+              "party_page": {
+                "id": "recognition-music-group-delaware-l-p",
+                "name": "Recognition Music Group (Delaware) L.P."
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-25016",
+          "merger_name": "Hostplus \u2013 CH Investment Holding Trust",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "HOST-PLUS PTY. LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "79 008 634 704",
+              "party_page": {
+                "id": "host-plus-pty-limited",
+                "name": "Host-Plus Pty. Limited"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "CH Investment Holding Trust",
+              "identifier_type": null,
+              "identifier": "",
+              "party_page": {
+                "id": "ch-investment-holding-trust",
+                "name": "CH Investment Holding Trust"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-40022",
+          "merger_name": "Integris & related entities - First Focus",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Apollo Australia Bidco Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "697 230 096",
+              "party_page": {
+                "id": "apollo-australia-bidco-pty-ltd",
+                "name": "Apollo Australia Bidco Pty Ltd"
+              }
+            },
+            {
+              "name": "Apollo Australia Bidco Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "697 230 096",
+              "party_page": {
+                "id": "apollo-australia-bidco-pty-ltd",
+                "name": "Apollo Australia Bidco Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "FIRST FOCUS IT PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "73 106 912 350",
+              "party_page": {
+                "id": "first-focus-it-pty-limited",
+                "name": "First Focus It Pty Limited"
+              }
+            },
+            {
+              "name": "The Trustee for FUTURE FOCUS TRUST",
+              "identifier_type": "ABN",
+              "identifier": "22 698 604 264",
+              "party_page": {
+                "id": "the-trustee-for-future-focus-trust",
+                "name": "The Trustee for FUTURE FOCUS TRUST"
               }
             }
           ]
