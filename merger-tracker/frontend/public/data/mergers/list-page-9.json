@@ -2491,14 +2491,14 @@
     {
       "merger_id": "MN-35017",
       "merger_name": "KINETIC - DYSONS BUS SERVICES",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "has_conditions": false,
       "is_waiver": false,
       "under_appeal": false,
       "is_refiled": false,
       "effective_notification_datetime": "2026-06-30T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-07-27T12:00:00Z",
       "end_of_determination_period": "2026-08-11T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -2525,48 +2525,12 @@
       ],
       "other_parties": [
         {
-          "name": "KINETIC (MELBOURNE URBAN) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "88 632 522 233",
-          "party_page": {
-            "id": "kinetic-melbourne-urban-pty-ltd",
-            "name": "Kinetic (Melbourne Urban) Pty Ltd"
-          }
-        },
-        {
-          "name": "KACM 3A PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "24 674 151 118",
-          "party_page": {
-            "id": "kacm-3a-pty-ltd",
-            "name": "Kacm 3A Pty Ltd"
-          }
-        },
-        {
           "name": "KINETIC (MELBOURNE) PTY LTD",
           "identifier_type": "ABN",
           "identifier": "89 644 690 522",
           "party_page": {
             "id": "kinetic-melbourne-pty-ltd",
             "name": "Kinetic (Melbourne) Pty Ltd"
-          }
-        },
-        {
-          "name": "DYSONS MZF (ASSETCO) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "18 680 323 291",
-          "party_page": {
-            "id": "dysons-mzf-assetco-pty-ltd",
-            "name": "Dysons Mzf (Assetco) Pty Ltd"
-          }
-        },
-        {
-          "name": "SURFSIDE BUSLINES PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "25 010 957 552",
-          "party_page": {
-            "id": "surfside-buslines-pty-ltd",
-            "name": "Surfside Buslines Pty. Ltd."
           }
         },
         {
@@ -2579,12 +2543,48 @@
           }
         },
         {
+          "name": "SURFSIDE BUSLINES PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "25 010 957 552",
+          "party_page": {
+            "id": "surfside-buslines-pty-ltd",
+            "name": "Surfside Buslines Pty. Ltd."
+          }
+        },
+        {
           "name": "KOCM 3 PTY LTD",
           "identifier_type": "ABN",
           "identifier": "60 679 737 510",
           "party_page": {
             "id": "kocm-3-pty-ltd",
             "name": "Kocm 3 Pty Ltd"
+          }
+        },
+        {
+          "name": "DYSONS MZF (ASSETCO) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "18 680 323 291",
+          "party_page": {
+            "id": "dysons-mzf-assetco-pty-ltd",
+            "name": "Dysons Mzf (Assetco) Pty Ltd"
+          }
+        },
+        {
+          "name": "KACM 3A PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "24 674 151 118",
+          "party_page": {
+            "id": "kacm-3a-pty-ltd",
+            "name": "Kacm 3A Pty Ltd"
+          }
+        },
+        {
+          "name": "KINETIC (MELBOURNE URBAN) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "88 632 522 233",
+          "party_page": {
+            "id": "kinetic-melbourne-urban-pty-ltd",
+            "name": "Kinetic (Melbourne Urban) Pty Ltd"
           }
         },
         {

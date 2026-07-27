@@ -3,12 +3,12 @@
   "total_waivers": 289,
   "total_conditional_approvals": 1,
   "by_status": {
-    "Assessment completed": 149,
-    "Under assessment": 38,
+    "Assessment completed": 150,
+    "Under assessment": 37,
     "Assessment ceased": 3
   },
   "by_determination": {
-    "Approved": 147,
+    "Approved": 148,
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
@@ -16,28 +16,28 @@
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 148,
+    "cleared": 149,
     "not_cleared": 1,
-    "total": 149,
+    "total": 150,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.606451612903225,
-    "median_days": 26,
-    "average_business_days": 19.574193548387097,
-    "median_business_days": 17,
+    "average_days": 29.58974358974359,
+    "median_days": 26.0,
+    "average_business_days": 19.57051282051282,
+    "median_business_days": 17.0,
     "percentiles": {
       "day15": {
         "count": 38,
-        "percentage": 24.5
+        "percentage": 24.4
       },
       "day20": {
-        "count": 121,
-        "percentage": 78.1
+        "count": 122,
+        "percentage": 78.2
       },
       "day30": {
-        "count": 147,
-        "percentage": 94.8
+        "count": 148,
+        "percentage": 94.9
       }
     }
   },
@@ -228,6 +228,16 @@
       "stage": "Waiver application"
     },
     {
+      "merger_id": "MN-35017",
+      "merger_name": "KINETIC - DYSONS BUS SERVICES",
+      "determination": "Approved",
+      "determination_date": "2026-07-27T12:00:00Z",
+      "page_modified_datetime": "2026-07-27T17:01:58+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-85036",
       "merger_name": "SpaceX - Anysphere",
       "determination": "Approved",
@@ -323,16 +333,6 @@
       "determination": "Approved",
       "determination_date": "2026-07-23T12:00:00Z",
       "page_modified_datetime": "2026-07-23T09:32:43+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-50030",
-      "merger_name": "Symal Group - Shamrock Engineering and Equipment",
-      "determination": "Approved",
-      "determination_date": "2026-07-22T12:00:00Z",
-      "page_modified_datetime": "2026-07-22T16:46:38+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
