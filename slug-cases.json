@@ -1,0 +1,85 @@
+{
+  "_comment": "Golden fixture pinning the slugify() algorithm across all three hand-synced implementations: merger-tracker/frontend/src/utils/slug.js (SPA links + canonical + prerender), scripts/slug.py (sitemap), and the inline copy in functions/mergers/[matter]/[[path]].js (OG handler). Exercised by merger-tracker/frontend/src/utils/__tests__/slug.test.js and scripts/tests/test_slug.py. Every {name -> slug} pair must hold in every implementation; if you change the algorithm, update all three and regenerate this file.",
+  "cases": [
+    {
+      "name": "Asahi – Warehouse site on Tilburn Rd, Deer Park (Vic)",
+      "slug": "asahi-warehouse-site-on-tilburn-rd-deer-park-vic"
+    },
+    {
+      "name": "Lawrence & Hanson - Gordon Macdonald",
+      "slug": "lawrence-hanson-gordon-macdonald"
+    },
+    {
+      "name": "Hexagon - Waygate Technologies",
+      "slug": "hexagon-waygate-technologies"
+    },
+    {
+      "name": "Macquarie Asset Management-led consortium / Qube",
+      "slug": "macquarie-asset-management-led-consortium-qube"
+    },
+    {
+      "name": "ACME Corp.",
+      "slug": "acme-corp"
+    },
+    {
+      "name": "  Leading and trailing spaces  ",
+      "slug": "leading-and-trailing-spaces"
+    },
+    {
+      "name": "Multiple---hyphens___and   spaces",
+      "slug": "multiple-hyphens-and-spaces"
+    },
+    {
+      "name": "Café Öland Ăē accents",
+      "slug": "caf-land-accents"
+    },
+    {
+      "name": "100% Pure / Co.",
+      "slug": "100-pure-co"
+    },
+    {
+      "name": "O'Brien Group",
+      "slug": "o-brien-group"
+    },
+    {
+      "name": "Foo—Bar (em dash)",
+      "slug": "foo-bar-em-dash"
+    },
+    {
+      "name": "MergerCo (2024)",
+      "slug": "mergerco-2024"
+    },
+    {
+      "name": "A very long merger name that goes well beyond the eighty character truncation limit yes indeed",
+      "slug": "a-very-long-merger-name-that-goes-well-beyond-the-eighty-character-truncation-li"
+    },
+    {
+      "name": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa extra words here",
+      "slug": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "name": "!!!",
+      "slug": ""
+    },
+    {
+      "name": "---",
+      "slug": ""
+    },
+    {
+      "name": "",
+      "slug": ""
+    },
+    {
+      "name": "UPPERCASE NAME",
+      "slug": "uppercase-name"
+    },
+    {
+      "name": "Trailing punctuation!!!",
+      "slug": "trailing-punctuation"
+    },
+    {
+      "name": "ABC Pty Ltd & XYZ Holdings (No. 2)",
+      "slug": "abc-pty-ltd-xyz-holdings-no-2"
+    }
+  ]
+}

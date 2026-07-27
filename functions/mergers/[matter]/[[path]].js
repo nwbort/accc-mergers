@@ -10,8 +10,12 @@ function isBotRequest(request) {
 // Build the readable slug for a merger name. MUST stay in sync with
 // merger-tracker/frontend/src/utils/slug.js and scripts/slug.py so the OG
 // canonical matches the SPA's <link rel="canonical"> and the sitemap entry.
+// slugify/mergerPath are exported solely so the sync test in
+// merger-tracker/frontend/src/utils/__tests__/slug.test.js can assert this copy
+// hasn't drifted; Cloudflare Pages only invokes `onRequest`, so the extra named
+// exports are inert at runtime.
 const MAX_SLUG_LENGTH = 80;
-function slugify(name) {
+export function slugify(name) {
   if (!name) return '';
   return String(name)
     .toLowerCase()
@@ -21,7 +25,7 @@ function slugify(name) {
     .replace(/-+$/g, '');
 }
 
-function mergerPath(id, name) {
+export function mergerPath(id, name) {
   const slug = slugify(name);
   return slug ? `/mergers/${id}/${slug}` : `/mergers/${id}`;
 }
