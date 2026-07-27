@@ -9,7 +9,7 @@
       "code": "30",
       "name": "Building Construction",
       "level": "subdivision",
-      "merger_count": 6
+      "merger_count": 7
     },
     {
       "code": "31",
@@ -25,6 +25,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-05031",
+      "merger_name": "Obayashi Corporation \u2013 Multiplex",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-27T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-10021",
       "merger_name": "Ambrose Construct Group \u2013 Major Loss Builders",
@@ -444,11 +455,11 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 38,
-  "phase_1_count": 16,
+  "count": 39,
+  "phase_1_count": 17,
   "phase_2_count": 1,
   "waiver_count": 21,
-  "active_count": 8,
+  "active_count": 9,
   "phase_duration": {
     "average_days": 27.6,
     "median_days": 22.5,

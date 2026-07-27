@@ -2332,6 +2332,63 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/petalite-%E2%80%93-envu"
+    },
+    {
+      "merger_id": "MN-05031",
+      "merger_name": "Obayashi Corporation \u2013 Multiplex",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-27T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-07T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Obayashi Corporation",
+          "identifier_type": "ABN",
+          "identifier": "86 002 932 756",
+          "party_page": {
+            "id": "obayashi-corporation",
+            "name": "Obayashi Corporation"
+          }
+        },
+        {
+          "name": "Obayashi UK Holdings Limited",
+          "identifier_type": null,
+          "identifier": "UK Company No.17229281",
+          "party_page": {
+            "id": "obayashi-uk-holdings-limited",
+            "name": "Obayashi UK Holdings Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "BCI UK Holdings Ltd",
+          "identifier_type": null,
+          "identifier": "UK Company No 9945869",
+          "party_page": {
+            "id": "bci-uk-holdings-ltd",
+            "name": "BCI UK Holdings Ltd"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3019",
+          "name": "Other Residential Building Construction"
+        },
+        {
+          "code": "3020",
+          "name": "Non-Residential Building Construction"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/obayashi-corporation-%E2%80%93-multiplex"
     }
   ],
   "page": 10,

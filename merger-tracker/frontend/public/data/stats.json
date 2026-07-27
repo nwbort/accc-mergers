@@ -1,10 +1,10 @@
 {
-  "total_mergers": 190,
+  "total_mergers": 191,
   "total_waivers": 291,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 150,
-    "Under assessment": 37,
+    "Under assessment": 38,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -90,6 +90,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-05031",
+      "merger_name": "Obayashi Corporation \u2013 Multiplex",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-27T12:00:00Z",
+      "page_modified_datetime": "2026-07-27T17:10:42+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-55029",
       "merger_name": "Estia Health \u2013 AnglicareSA residential aged care business",
@@ -202,16 +212,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-07-17T12:00:00Z",
       "page_modified_datetime": "2026-07-27T16:09:19+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-60025",
-      "merger_name": "Acrow - Ausgroup Industrial Services",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-16T12:00:00Z",
-      "page_modified_datetime": "2026-07-24T17:29:34+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

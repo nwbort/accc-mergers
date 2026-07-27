@@ -9723,6 +9723,206 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/obayashi-corporation-%E2%80%93-multiplex",
+      "merger_name": "Obayashi Corporation \u2013 Multiplex",
+      "status": "Under assessment",
+      "merger_id": "MN-05031",
+      "effective_notification_datetime": "2026-07-27T12:00:00Z",
+      "original_notification_datetime": "2026-07-27T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-09-07T12:00:00Z",
+      "page_modified_datetime": "2026-07-27T17:10:42+10:00",
+      "consultation_response_due_date": "2026-08-03T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Obayashi Corporation",
+          "identifier_type": "ABN",
+          "identifier": "86 002 932 756",
+          "party_page": {
+            "id": "obayashi-corporation",
+            "name": "Obayashi Corporation"
+          }
+        },
+        {
+          "name": "Obayashi UK Holdings Limited",
+          "identifier_type": null,
+          "identifier": "UK Company No.17229281",
+          "party_page": {
+            "id": "obayashi-uk-holdings-limited",
+            "name": "Obayashi UK Holdings Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "BCI UK Holdings Ltd",
+          "identifier_type": null,
+          "identifier": "UK Company No 9945869",
+          "party_page": {
+            "id": "bci-uk-holdings-ltd",
+            "name": "BCI UK Holdings Ltd"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3019",
+          "name": "Other Residential Building Construction"
+        },
+        {
+          "code": "3020",
+          "name": "Non-Residential Building Construction"
+        }
+      ],
+      "merger_description": "Obayashi Corporation (**Obayashi**), through its subsidiary, proposes to acquire 100% of the shares in BCI UK Holdings Ltd which, together with its subsidiaries, makes up the Multiplex Group (**Multiplex**).\n\nObayashi is a Japanese construction contractor that carries out and participates in building construction, infrastructure development and renewable energy projects in Japan and elsewhere, including in Australia. Obayashi is involved in the development of large-scale projects including stadiums, mixed-use developments, and transport infrastructure. In Australia, Obayashi participates in certain large-scale construction projects through an arrangement with Built Pty Limited, an Australian construction company.\n\nMultiplex is a construction company that supplies building construction services across Australia, Canada and the UK. In Australia, Multiplex\u2019s services primarily involve the delivery of large-scale construction projects, including high-rise developments, across sectors such as commercial offices, retail, health and social infrastructure.",
+      "events": [
+        {
+          "date": "2026-07-27T12:00:00Z",
+          "title": "Questionnaire - Obayashi Corporation - Multiplex",
+          "display_title": "Questionnaire - Obayashi Corporation - Multiplex",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Obayashi-Multiplex%20-%20Phase%201%20questionnaire.docx",
+          "url_gh": "/mergers/MN-05031/Obayashi-Multiplex - Phase 1 questionnaire.pdf",
+          "phase": null
+        },
+        {
+          "date": "2026-07-27T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-65004",
+          "merger_name": "Kee Safety - RIS Safety",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Cielo TopCo Limited",
+              "identifier_type": null,
+              "identifier": "CRN  16320933",
+              "party_page": {
+                "id": "cielo-topco-limited",
+                "name": "Cielo TopCo Limited"
+              }
+            },
+            {
+              "name": "Kee Safety (Australia) Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "694 369 116",
+              "party_page": {
+                "id": "kee-safety-australia-pty-ltd",
+                "name": "Kee Safety (Australia) Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "HALLWELD BENNETT PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "15 161 086 595",
+              "party_page": {
+                "id": "hallweld-bennett-pty-ltd",
+                "name": "Hallweld Bennett Pty Ltd"
+              }
+            },
+            {
+              "name": "RIS SAFETY HOLDINGS PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "19 668 836 351",
+              "party_page": {
+                "id": "ris-safety-holdings-pty-ltd",
+                "name": "Ris Safety Holdings Pty Ltd"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-01016",
+          "merger_name": "Asahi \u2013 Warehouse site on Tilburn Rd, Deer Park (Vic)",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "ASAHI HOLDINGS (AUSTRALIA) PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "48 135 315 767",
+              "party_page": {
+                "id": "asahi-holdings-australia-pty-ltd",
+                "name": "Asahi Holdings (Australia) Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "GPT PLATFORM PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "51 164 839 061",
+              "party_page": {
+                "id": "gpt-platform-pty-limited",
+                "name": "Gpt Platform Pty Limited"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-01035",
+          "merger_name": "Asahi \u2013 Warehouse site on Weedman and Montgomery Streets, Redbank (Qld)",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "ASAHI HOLDINGS (AUSTRALIA) PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "48 135 315 767",
+              "party_page": {
+                "id": "asahi-holdings-australia-pty-ltd",
+                "name": "Asahi Holdings (Australia) Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "GTA INDUSTRIAL CUSTODIAN PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "45 081 823 743",
+              "party_page": {
+                "id": "gta-industrial-custodian-pty-limited",
+                "name": "Gta Industrial Custodian Pty Limited"
+              }
+            }
+          ]
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 16,
+        "range_business_days": [
+          15,
+          18
+        ],
+        "basis": "industry",
+        "anzsic_level": "division",
+        "anzsic_codes": [
+          "E"
+        ],
+        "sample_size": 10,
+        "estimated_at": "2026-07-27",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/motorola-solutions-d-fend-solutions",
       "merger_name": "Motorola Solutions - D-Fend Solutions",
       "status": "Under assessment",
