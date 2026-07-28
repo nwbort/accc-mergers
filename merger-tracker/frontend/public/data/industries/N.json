@@ -9,7 +9,7 @@
       "code": "72",
       "name": "Administrative Services",
       "level": "subdivision",
-      "merger_count": 17
+      "merger_count": 18
     },
     {
       "code": "73",
@@ -19,6 +19,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-05027",
+      "merger_name": "Protech - ActivateRail",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-28T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-10021",
       "merger_name": "Ambrose Construct Group \u2013 Major Loss Builders",
@@ -229,11 +240,11 @@
       "determination_date": "2026-01-30T12:00:00Z"
     }
   ],
-  "count": 19,
-  "phase_1_count": 5,
+  "count": 20,
+  "phase_1_count": 6,
   "phase_2_count": 0,
   "waiver_count": 14,
-  "active_count": 3,
+  "active_count": 4,
   "phase_duration": {
     "average_days": 26.5,
     "median_days": 26.5,

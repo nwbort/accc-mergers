@@ -2683,6 +2683,60 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/abbvie-apogee"
+    },
+    {
+      "merger_id": "MN-05027",
+      "merger_name": "Protech - ActivateRail",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-28T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-08T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "PROTECH GROUP (AUST) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "38 163 904 694",
+          "party_page": {
+            "id": "protech-group-aust-pty-ltd",
+            "name": "Protech Group (Aust) Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "ACTIVATERAIL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "46 617 749 809",
+          "party_page": {
+            "id": "activaterail-pty-ltd",
+            "name": "Activaterail Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "RIPPERS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "90 600 268 031",
+          "party_page": {
+            "id": "rippers-pty-ltd",
+            "name": "Rippers Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "7212",
+          "name": "Labour Supply Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/protech-activaterail"
     }
   ],
   "page": 10,

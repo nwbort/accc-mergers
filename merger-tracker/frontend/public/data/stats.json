@@ -1,10 +1,10 @@
 {
-  "total_mergers": 193,
+  "total_mergers": 194,
   "total_waivers": 292,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 151,
-    "Under assessment": 39,
+    "Under assessment": 40,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -90,6 +90,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-05027",
+      "merger_name": "Protech - ActivateRail",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-28T12:00:00Z",
+      "page_modified_datetime": "2026-07-28T18:10:08+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-90027",
       "merger_name": "AbbVie - Apogee",
@@ -199,21 +209,6 @@
       "page_modified_datetime": "2026-07-22T11:14:11+10:00",
       "is_waiver": false,
       "is_refiled": false
-    },
-    {
-      "merger_id": "MN-01068",
-      "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
-      "effective_notification_datetime": "2026-07-21T12:00:00Z",
-      "page_modified_datetime": "2026-07-01T18:32:20+10:00",
-      "is_appeal": true,
-      "under_appeal": true,
-      "appeal_type": "party_denial",
-      "appeal_status": "current",
-      "effective_determination": null,
-      "tribunal_number": "ACT 1 of 2026",
-      "appeal_date": "2026-07-21T12:00:00Z"
     }
   ],
   "recent_determinations": [
