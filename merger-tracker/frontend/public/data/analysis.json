@@ -682,6 +682,11 @@
         "in_progress": false
       },
       {
+        "business_days": 22,
+        "calendar_days": 32,
+        "in_progress": false
+      },
+      {
         "business_days": 15,
         "calendar_days": 21,
         "in_progress": false
@@ -784,17 +789,17 @@
     ],
     "stats": {
       "average": 19.6,
-      "median": 17.0,
+      "median": 17,
       "min": 15,
       "max": 59,
-      "count": 156
+      "count": 157
     },
     "calendar_stats": {
       "average": 29.6,
-      "median": 26.0,
+      "median": 26,
       "min": 21,
       "max": 103,
-      "count": 156
+      "count": 157
     }
   },
   "waiver_duration": {
@@ -2112,6 +2117,15 @@
       "count": 45
     },
     {
+      "code": "E",
+      "name": "Construction",
+      "average_business_days": 19.3,
+      "median_business_days": 16,
+      "average_calendar_days": 28.0,
+      "median_calendar_days": 23,
+      "count": 11
+    },
+    {
       "code": "K",
       "name": "Financial and Insurance Services",
       "average_business_days": 19.1,
@@ -2119,15 +2133,6 @@
       "average_calendar_days": 28.3,
       "median_calendar_days": 23.5,
       "count": 22
-    },
-    {
-      "code": "E",
-      "name": "Construction",
-      "average_business_days": 19.0,
-      "median_business_days": 15.5,
-      "average_calendar_days": 27.6,
-      "median_calendar_days": 22.5,
-      "count": 10
     },
     {
       "code": "J",
@@ -2187,11 +2192,11 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 331,
+      "count": 332,
       "outcome_mix": {
-        "Approved": 331
+        "Approved": 332
       },
-      "median_phase_1_business_days": 16
+      "median_phase_1_business_days": 16.0
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -2205,9 +2210,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 37,
+      "count": 36,
       "outcome_mix": {
-        "Unknown": 37
+        "Unknown": 36
       },
       "median_phase_1_business_days": 36.5
     },
@@ -2247,7 +2252,7 @@
       "19": 14,
       "20": 7,
       "21": 3,
-      "22": 5,
+      "22": 6,
       "24": 3,
       "25": 3,
       "26": 1,
@@ -2263,9 +2268,9 @@
     },
     "stats": {
       "mean_used_bd": 18.0,
-      "median_used_bd": 17,
+      "median_used_bd": 17.0,
       "pct_decided_final_3_bd": 4.1,
-      "count": 145
+      "count": 146
     },
     "extended_count": 3
   },
@@ -2333,11 +2338,11 @@
     {
       "code": "E",
       "name": "Construction",
-      "approved": 9,
+      "approved": 10,
       "not_approved": 0,
       "referred": 1,
-      "in_progress": 8,
-      "phase2_referral_rate": 0.1
+      "in_progress": 7,
+      "phase2_referral_rate": 0.091
     },
     {
       "code": "K",

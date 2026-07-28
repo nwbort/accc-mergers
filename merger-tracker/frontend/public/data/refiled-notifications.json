@@ -47,7 +47,9 @@
       "notification_status": "Under assessment",
       "notification_determination": null,
       "notification_determination_date": null
-    },
+    }
+  ],
+  "completed": [
     {
       "waiver_id": "WA-25010",
       "waiver_name": "INNIO Group \u2013 Enerflex",
@@ -56,12 +58,10 @@
       "notification_id": "MN-80021",
       "notification_name": "INNIO Group \u2013 Enerflex",
       "notification_filed_date": "2026-06-25T12:00:00Z",
-      "notification_status": "Under assessment",
-      "notification_determination": null,
-      "notification_determination_date": null
-    }
-  ],
-  "completed": [
+      "notification_status": "Assessment completed",
+      "notification_determination": "Approved",
+      "notification_determination_date": "2026-07-27T12:00:00Z"
+    },
     {
       "waiver_id": "WA-10008",
       "waiver_name": "Premier Fresh \u2013 Charles Domenico Group",
@@ -148,21 +148,21 @@
     }
   ],
   "count": {
-    "current": 5,
-    "completed": 7
+    "current": 4,
+    "completed": 8
   },
   "clearance_rate": {
-    "cleared": 7,
+    "cleared": 8,
     "not_cleared": 0,
-    "total": 7,
+    "total": 8,
     "rate": 1.0
   },
   "phase_duration": {
-    "average_days": 27.857142857142858,
-    "median_days": 26,
-    "average_business_days": 18.428571428571427,
-    "median_business_days": 17,
-    "completed_count": 7
+    "average_days": 28.375,
+    "median_days": 26.5,
+    "average_business_days": 18.875,
+    "median_business_days": 17.5,
+    "completed_count": 8
   },
   "straight_phase_duration": {
     "average_days": 29.671140939597315,
