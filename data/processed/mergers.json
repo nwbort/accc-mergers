@@ -22413,6 +22413,7 @@
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-09-07T12:00:00Z",
     "page_modified_datetime": "2026-07-28T17:17:36+10:00",
+    "consultation_response_due_date": "2026-08-04T12:00:00Z",
     "acquirers": [
       {
         "name": "AbbVie Inc.",
@@ -22477,8 +22478,7 @@
         "display_title": "Merger notified to ACCC"
       }
     ],
-    "is_waiver": false,
-    "consultation_response_due_date": "2026-08-04T12:00:00Z"
+    "is_waiver": false
   },
   {
     "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/peter-warren-wakeling-automotive-0",
@@ -47186,6 +47186,140 @@
       },
       {
         "date": "2026-07-02T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": true
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/black-kite-partners-led-consortium-dr2",
+    "merger_name": "Black Kite Partners led consortium - DR2",
+    "status": "Assessment completed",
+    "merger_id": "WA-80025",
+    "effective_notification_datetime": "2026-06-30T12:00:00Z",
+    "original_notification_datetime": "2026-06-30T12:00:00Z",
+    "stage": "Waiver application",
+    "determination_publication_date": "2026-07-28T12:00:00Z",
+    "accc_determination": "Approved",
+    "accc_determination_raw": "ACCC determinationApproved",
+    "page_modified_datetime": "2026-07-28T17:28:35+10:00",
+    "acquirers": [
+      {
+        "name": "Galileo BidCo Pty Ltd",
+        "identifier_type": "ACN",
+        "identifier": "698 274 609"
+      },
+      {
+        "name": "HGPS-DPE Luxembourg Holdings SCSp",
+        "identifier_type": null,
+        "identifier": "B273812"
+      },
+      {
+        "name": "BLACK KITE MAGELLAN SERVICES PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "75 697 793 794"
+      },
+      {
+        "name": "Galileo HoldCo Pty Ltd",
+        "identifier_type": "ACN",
+        "identifier": "698 270 905"
+      },
+      {
+        "name": "MAAM GP PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "22 164 411 607"
+      },
+      {
+        "name": "MA ASSET MANAGEMENT LTD",
+        "identifier_type": "ABN",
+        "identifier": "93 142 008 535"
+      },
+      {
+        "name": "BLACK KITE MAGELLAN WAREHOUSE PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "47 697 886 829"
+      }
+    ],
+    "targets": [
+      {
+        "name": "DR2 HOLDINGS PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "85 671 808 558"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "HarbourVest Global Private Solutions SICAV S.A",
+        "identifier_type": null,
+        "identifier": "B272336"
+      },
+      {
+        "name": "MA FINANCIAL GROUP LIMITED",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "BLACK KITE PARTNERS PTY LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "66 693 437 482"
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "6240",
+        "name": "Financial Asset Investing"
+      },
+      {
+        "code": "6419",
+        "name": "Other Auxiliary Finance and Investment Services"
+      },
+      {
+        "code": "8511",
+        "name": "General Practice Medical Services"
+      },
+      {
+        "code": "8512",
+        "name": "Specialist Medical Services"
+      }
+    ],
+    "merger_description": "Black Kite Partners Pty Ltd (**Black Kite**), HarbourVest Global Private Solution SICAV S.A. (**HarbourVest**) and MA Financial Group Limited (**MA Financial**) are private capital investors (together, the **Acquirers**).\n\nDR2 Holdings Pty Ltd (**DR2**) is the holding company of businesses primarily involved in the supply of telehealth and face-to-face consultations. Its bulk-billed after-hours consultations are completed through approved medical deputising services, National Home Doctor Service Pty Ltd (trading as 13Sick) and Doctorsquare Pty Ltd (trading as DoctorDoctor). Its in-hours (daytime) consultations are completed through 24-7Medcare and are either bulk-billed or privately paid. DR2 also conducts a surgical assistant placement service through Australia Surgical Assisting.\n\nThe Acquisition consists of two parts:\n\n* HoldCo acquisition: related entities of Black Kite, HarbourVest, MA Financial and some current management shareholders of DR2 will acquire interests in Galileo HoldCo Pty Ltd\u00a0(**HoldCo**)\n* DR2 acquisition: Galileo BidCo Pty Ltd (**BidCo**), a wholly owned subsidiary of HoldCo, will acquire 100% of the share capital in DR2.\n\nTogether, the Acquisition involves:\n\n* related entities of Black Kite and HarbourVest acquiring new interests in DR2\n* MA Financial rolling over its existing interest in DR2, and transferring its interest in DR2 to another related entity and MA-managed fund\n* some individual shareholders rolling over their existing interest in DR2\n* other existing investors in DR2 exiting their interests in DR2.",
+    "events": [
+      {
+        "date": "2026-07-28T12:00:00Z",
+        "title": "Notification waiver determination published",
+        "display_title": "Waiver application determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Black%20Kite%20Partners%20led%20consortium%20-%20DR2%20%28WA-80025%29%20-%20Notification%20waiver%20determination%20-%2028%20July%202026.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Acquisition",
+            "details": "Black Kite Warehouse Pty Ltd, Black Kite Magellan Services Pty Ltd,\nMA Asset Management Ltd, HGPS-DPE Luxembourg Holdings SCSp,\nGalileo HoldCo Pty Ltd, Galileo BidCo Pty Ltd, and MAAM GP Pty Ltd\napplied for a notification waiver in respect of the proposed\nacquisition of 100% of the share capital in DR2 Holdings Pty Ltd\n(DR2) by a consortium including Black Kite Partners Pty Ltd (Black\nKite), HarbourVest Global Private Solution SICAV S.A. (HarbourVest)\nand MA Financial Group Limited (MA Financial), as described in the\ntransaction documents provided as part of the application (the\nAcquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+          },
+          {
+            "item": "Date of determination",
+            "details": "28 July 2026"
+          },
+          {
+            "item": "Parties to the\nAcquisition",
+            "details": "The acquirers, Black Kite, HarbourVest and MA Financial, are private\ncapital investors.\nThe target, DR2, is the holding company of businesses primarily\ninvolved in the supply of telehealth and face-to-face consultations.\nIts bulk-billed after-hours consultations are completed through\napproved medical deputising services, National Home Doctor\nService Pty Ltd (trading as 13Sick) and Doctorsquare Pty Ltd (trading\nas DoctorDoctor). Its in-hours (daytime) consultations are completed\nthrough 24-7Medcare and are either bulk-billed or privately paid. DR2\nalso conducts a surgical assistant placement service through\nAustralia Surgical Assisting.\nRelevantly, HarbourVest has a minority interest in HotDoc, a provider\nof healthcare booking management software and telehealth\nservices."
+          },
+          {
+            "item": "Explanation for\ndetermination",
+            "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. there is a small horizontal overlap between parties in the\nsupply of telehealth services in Australia\nb. there are alternative suppliers of telehealth services in\nAustralia\nc. there is a low risk of foreclosure or other concerning vertical\nor conglomerate effects resulting from exclusionary\nconduct, bundling or tying of telehealth services in Australia\npost-acquisition.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+          }
+        ],
+        "url_gh": "/mergers/WA-80025/Black Kite Partners led consortium - DR2 (WA-80025) - Notification waiver determination - 28 July 2026.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Waiver"
+      },
+      {
+        "date": "2026-06-30T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
       }

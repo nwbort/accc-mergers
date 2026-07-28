@@ -1,6 +1,6 @@
 {
   "total_mergers": 193,
-  "total_waivers": 291,
+  "total_waivers": 292,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 151,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 277,
+    "Approved": 278,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,15 +42,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.711340206185568,
-    "median_days": 18,
-    "average_business_days": 12.50171821305842,
-    "median_business_days": 12
+    "average_days": 18.743150684931507,
+    "median_days": 18.0,
+    "average_business_days": 12.527397260273972,
+    "median_business_days": 12.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 61
+      "count": 62
     },
     {
       "name": "Computer System Design and Related Services",
@@ -58,7 +58,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 40
+      "count": 41
     },
     {
       "name": "Software Publishing",
@@ -218,6 +218,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-80025",
+      "merger_name": "Black Kite Partners led consortium - DR2",
+      "determination": "Approved",
+      "determination_date": "2026-07-28T12:00:00Z",
+      "page_modified_datetime": "2026-07-28T17:28:35+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-05033",
       "merger_name": "CVC Capital Partners \u2013 Chess.com",
       "determination": "Approved",
@@ -323,16 +333,6 @@
       "determination": "Approved",
       "determination_date": "2026-07-24T12:00:00Z",
       "page_modified_datetime": "2026-07-24T16:58:14+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-85037",
-      "merger_name": "Tata Motors - Iveco",
-      "determination": "Approved",
-      "determination_date": "2026-07-24T12:00:00Z",
-      "page_modified_datetime": "2026-07-24T16:56:50+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

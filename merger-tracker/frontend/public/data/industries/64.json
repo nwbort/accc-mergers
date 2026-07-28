@@ -19,7 +19,7 @@
       "code": "641",
       "name": "Auxiliary Finance and Investment Services",
       "level": "group",
-      "merger_count": 40
+      "merger_count": 41
     },
     {
       "code": "642",
@@ -50,6 +50,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-08T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-80025",
+      "merger_name": "Black Kite Partners led consortium - DR2",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-06-30T12:00:00Z",
+      "determination_date": "2026-07-28T12:00:00Z"
     },
     {
       "merger_id": "WA-30024",
@@ -481,10 +492,10 @@
       "determination_date": "2025-12-18T12:00:00Z"
     }
   ],
-  "count": 41,
+  "count": 42,
   "phase_1_count": 11,
   "phase_2_count": 0,
-  "waiver_count": 30,
+  "waiver_count": 31,
   "active_count": 2,
   "phase_duration": {
     "average_days": 25.11111111111111,
@@ -494,10 +505,10 @@
     "completed_count": 9
   },
   "waiver_duration": {
-    "average_days": 18.933333333333334,
-    "median_days": 19.0,
-    "average_business_days": 12.8,
-    "median_business_days": 12.5,
-    "completed_count": 30
+    "average_days": 19.225806451612904,
+    "median_days": 19,
+    "average_business_days": 13.03225806451613,
+    "median_business_days": 13,
+    "completed_count": 31
   }
 }

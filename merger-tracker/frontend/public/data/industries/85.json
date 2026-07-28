@@ -19,7 +19,7 @@
       "code": "851",
       "name": "Medical Services",
       "level": "group",
-      "merger_count": 10
+      "merger_count": 11
     },
     {
       "code": "852",
@@ -62,6 +62,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-03T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-80025",
+      "merger_name": "Black Kite Partners led consortium - DR2",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-06-30T12:00:00Z",
+      "determination_date": "2026-07-28T12:00:00Z"
     },
     {
       "merger_id": "MN-01104",
@@ -284,10 +295,10 @@
       "determination_date": "2026-02-26T12:00:00Z"
     }
   ],
-  "count": 22,
+  "count": 23,
   "phase_1_count": 7,
   "phase_2_count": 0,
-  "waiver_count": 15,
+  "waiver_count": 16,
   "active_count": 2,
   "phase_duration": {
     "average_days": 26.6,
@@ -297,10 +308,10 @@
     "completed_count": 5
   },
   "waiver_duration": {
-    "average_days": 16.8,
-    "median_days": 15,
-    "average_business_days": 11.333333333333334,
-    "median_business_days": 11,
-    "completed_count": 15
+    "average_days": 17.5,
+    "median_days": 15.5,
+    "average_business_days": 11.875,
+    "median_business_days": 11.0,
+    "completed_count": 16
   }
 }
