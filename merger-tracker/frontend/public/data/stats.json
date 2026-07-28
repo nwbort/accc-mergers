@@ -1,10 +1,10 @@
 {
-  "total_mergers": 191,
+  "total_mergers": 192,
   "total_waivers": 291,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 150,
-    "Under assessment": 38,
+    "Under assessment": 39,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -54,7 +54,7 @@
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 47
+      "count": 48
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -90,6 +90,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-60026",
+      "merger_name": "Publicis Groupe - LiveRamp",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-27T12:00:00Z",
+      "page_modified_datetime": "2026-07-28T15:16:43+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-05031",
       "merger_name": "Obayashi Corporation \u2013 Multiplex",
@@ -202,16 +212,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-07-20T12:00:00Z",
       "page_modified_datetime": "2026-07-21T10:26:30+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-01109",
-      "merger_name": "Syngenta Crop Protection and D\u00fcmmen Orange \u2013 Joint Venture Formation",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-17T12:00:00Z",
-      "page_modified_datetime": "2026-07-27T16:09:19+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

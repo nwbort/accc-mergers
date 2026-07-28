@@ -2389,6 +2389,81 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/obayashi-corporation-%E2%80%93-multiplex"
+    },
+    {
+      "merger_id": "MN-60026",
+      "merger_name": "Publicis Groupe - LiveRamp",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-27T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-07T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "MMS USA Holdings, Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware ID 3497138",
+          "party_page": {
+            "id": "mms-usa-holdings-inc",
+            "name": "MMS USA Holdings, Inc."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "LiveRamp Holdings, Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware ID 00138669",
+          "party_page": {
+            "id": "liveramp-holdings-inc",
+            "name": "LiveRamp Holdings, Inc."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Covey Merger Sub, Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware ID 10622331",
+          "party_page": {
+            "id": "covey-merger-sub-inc",
+            "name": "Covey Merger Sub, Inc."
+          }
+        },
+        {
+          "name": "Publicis Groupe S.A.",
+          "identifier_type": null,
+          "identifier": "Paris Trade and Companies Registry no. 542 080 601",
+          "party_page": {
+            "id": "publicis-groupe-s-a",
+            "name": "Publicis Groupe S.A."
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5921",
+          "name": "Data Processing and Web Hosting Services"
+        },
+        {
+          "code": "6940",
+          "name": "Advertising Services"
+        },
+        {
+          "code": "6950",
+          "name": "Market Research and Statistical Services"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/publicis-groupe-liveramp"
     }
   ],
   "page": 10,

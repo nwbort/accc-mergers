@@ -1,0 +1,225 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/publicis-groupe-liveramp",
+  "merger_name": "Publicis Groupe - LiveRamp",
+  "status": "Under assessment",
+  "merger_id": "MN-60026",
+  "effective_notification_datetime": "2026-07-27T12:00:00Z",
+  "original_notification_datetime": "2026-07-27T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-09-07T12:00:00Z",
+  "page_modified_datetime": "2026-07-28T15:16:43+10:00",
+  "consultation_response_due_date": "2026-08-04T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "MMS USA Holdings, Inc.",
+      "identifier_type": null,
+      "identifier": "Delaware ID 3497138",
+      "party_page": {
+        "id": "mms-usa-holdings-inc",
+        "name": "MMS USA Holdings, Inc."
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "LiveRamp Holdings, Inc.",
+      "identifier_type": null,
+      "identifier": "Delaware ID 00138669",
+      "party_page": {
+        "id": "liveramp-holdings-inc",
+        "name": "LiveRamp Holdings, Inc."
+      }
+    }
+  ],
+  "other_parties": [
+    {
+      "name": "Covey Merger Sub, Inc.",
+      "identifier_type": null,
+      "identifier": "Delaware ID 10622331",
+      "party_page": {
+        "id": "covey-merger-sub-inc",
+        "name": "Covey Merger Sub, Inc."
+      }
+    },
+    {
+      "name": "Publicis Groupe S.A.",
+      "identifier_type": null,
+      "identifier": "Paris Trade and Companies Registry no. 542 080 601",
+      "party_page": {
+        "id": "publicis-groupe-s-a",
+        "name": "Publicis Groupe S.A."
+      }
+    }
+  ],
+  "anzsic_codes": [
+    {
+      "code": "5921",
+      "name": "Data Processing and Web Hosting Services"
+    },
+    {
+      "code": "6940",
+      "name": "Advertising Services"
+    },
+    {
+      "code": "6950",
+      "name": "Market Research and Statistical Services"
+    },
+    {
+      "code": "7000",
+      "name": "Computer System Design and Related Services"
+    }
+  ],
+  "merger_description": "Publicis Groupe S.A. (**Publicis**) is a media and communications group that offers a wide range of services, including advertising, media planning and buying, data and analytics, digital transformation, and technology consulting services.\n\nPublicis provides data collaboration services, including data ingestion and unification capabilities in Australia through Publicis\u2019 Epsilon Data Management, LLC (**Epsilon**) (which includes its Lotame division (**Lotame**)).\n\nLiveRamp Holdings, Inc (**LiveRamp**) provides a platform that enables companies to unify, manage and activate data across the digital ecosystem.\u00a0LiveRamp's data collaboration network unites data across advertisers, ad-tech platforms, publishers, data providers, and commerce media networks.\n\nPublicis (through Epsilon and Lotame) and LiveRamp\u2019s activities overlap in the supply of data collaboration services. The processes and/or services involved in data collaboration are also used as inputs for media activation into channels including paid media, social media, and broader agency services (i.e. \u2018ad-tech\u2019).\n\nOn 16 May 2026, Publicis entered an agreement to acquire 100% of the outstanding shares of LiveRamp (the **Acquisition**).",
+  "events": [
+    {
+      "date": "2026-07-28T12:00:00Z",
+      "title": "Publicis Groupe - LiveRamp - Questionnaire",
+      "display_title": "Publicis Groupe - LiveRamp - Questionnaire",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Publicis%20-%20LiveRamp%20-%20third-party%20questionnaire.docx",
+      "url_gh": "/mergers/MN-60026/Publicis - LiveRamp - third-party questionnaire.pdf",
+      "phase": null
+    },
+    {
+      "date": "2026-07-27T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "public_benefits_determination": null,
+  "public_benefits_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-95014",
+      "merger_name": "Publicis \u2013 160over90",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "PUBLICIS MEDIA AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "40 001 786 858",
+          "party_page": {
+            "id": "publicis-media-australia-pty-ltd",
+            "name": "Publicis Media Australia Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "INTERNATIONAL MANAGEMENT GROUP OF AMERICA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "23 001 788 343",
+          "party_page": {
+            "id": "international-management-group-of-america-pty-ltd",
+            "name": "International Management Group Of America Pty Ltd"
+          }
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-90020",
+      "merger_name": "OpenAI - Ona",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Wave Merger Sub II, LLC",
+          "identifier_type": null,
+          "identifier": "Delaware File Number  7007085",
+          "party_page": {
+            "id": "wave-merger-sub-ii-llc",
+            "name": "Wave Merger Sub II, LLC"
+          }
+        },
+        {
+          "name": "OpenAI Group PBC",
+          "identifier_type": null,
+          "identifier": "Delaware File Number  10381551",
+          "party_page": {
+            "id": "openai-group-pbc",
+            "name": "OpenAI Group PBC"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Gitpod, Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware File Number  3353320",
+          "canonical": {
+            "id": "gitpod-gmbh",
+            "name": "Gitpod GmbH"
+          },
+          "party_page": {
+            "id": "gitpod-gmbh",
+            "name": "Gitpod GmbH"
+          }
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-30005",
+      "merger_name": "Adobe - Semrush",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Adobe Inc. (NASDAQ: ADBE)",
+          "identifier_type": null,
+          "identifier": "2748129",
+          "party_page": {
+            "id": "adobe-inc-nasdaq-adbe",
+            "name": "Adobe Inc. (NASDAQ: ADBE)"
+          }
+        },
+        {
+          "name": "Fenway Merger Sub, Inc.",
+          "identifier_type": null,
+          "identifier": "10389477",
+          "party_page": {
+            "id": "fenway-merger-sub-inc",
+            "name": "Fenway Merger Sub, Inc."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Semrush Holdings, Inc.",
+          "identifier_type": null,
+          "identifier": "7690622",
+          "party_page": {
+            "id": "semrush-holdings-inc",
+            "name": "Semrush Holdings, Inc."
+          }
+        }
+      ]
+    }
+  ],
+  "phase_1_estimate": {
+    "expected_business_days": 18,
+    "range_business_days": [
+      17,
+      23
+    ],
+    "basis": "industry",
+    "anzsic_level": "class",
+    "anzsic_codes": [
+      "5921",
+      "6940",
+      "6950",
+      "7000"
+    ],
+    "sample_size": 20,
+    "estimated_at": "2026-07-28",
+    "method_version": 1
+  }
+}

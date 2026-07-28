@@ -2018,6 +2018,24 @@
     "estimated_at": "2026-07-17",
     "method_version": 1
   },
+  "MN-60026": {
+    "expected_business_days": 18,
+    "range_business_days": [
+      17,
+      23
+    ],
+    "basis": "industry",
+    "anzsic_level": "class",
+    "anzsic_codes": [
+      "5921",
+      "6940",
+      "6950",
+      "7000"
+    ],
+    "sample_size": 20,
+    "estimated_at": "2026-07-28",
+    "method_version": 1
+  },
   "MN-65005": {
     "expected_business_days": 16,
     "range_business_days": [
