@@ -19,7 +19,7 @@
       "code": "691",
       "name": "Scientific Research Services",
       "level": "group",
-      "merger_count": 14
+      "merger_count": 15
     },
     {
       "code": "692",
@@ -68,6 +68,17 @@
     {
       "merger_id": "MN-60026",
       "merger_name": "Publicis Groupe - LiveRamp",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-27T12:00:00Z",
+      "determination_date": null
+    },
+    {
+      "merger_id": "MN-90027",
+      "merger_name": "AbbVie - Apogee",
       "is_waiver": false,
       "status": "Under assessment",
       "determination": null,
@@ -814,11 +825,11 @@
       "determination_date": null
     }
   ],
-  "count": 68,
-  "phase_1_count": 25,
+  "count": 69,
+  "phase_1_count": 26,
   "phase_2_count": 2,
   "waiver_count": 41,
-  "active_count": 6,
+  "active_count": 7,
   "phase_duration": {
     "average_days": 35.31818181818182,
     "median_days": 27.5,

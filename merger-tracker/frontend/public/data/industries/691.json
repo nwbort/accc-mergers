@@ -24,10 +24,21 @@
       "code": "6910",
       "name": "Scientific Research Services",
       "level": "class",
-      "merger_count": 14
+      "merger_count": 15
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-90027",
+      "merger_name": "AbbVie - Apogee",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-27T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-05036",
       "merger_name": "Vertex \u2013 Crinetics",
@@ -183,11 +194,11 @@
       "determination_date": "2026-02-10T12:00:00Z"
     }
   ],
-  "count": 14,
-  "phase_1_count": 9,
+  "count": 15,
+  "phase_1_count": 10,
   "phase_2_count": 0,
   "waiver_count": 5,
-  "active_count": 1,
+  "active_count": 2,
   "phase_duration": {
     "average_days": 25.375,
     "median_days": 25.0,

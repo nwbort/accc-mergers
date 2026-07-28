@@ -9,7 +9,7 @@
       "code": "69",
       "name": "Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",
       "level": "subdivision",
-      "merger_count": 68
+      "merger_count": 69
     },
     {
       "code": "70",
@@ -22,6 +22,17 @@
     {
       "merger_id": "MN-60026",
       "merger_name": "Publicis Groupe - LiveRamp",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-27T12:00:00Z",
+      "determination_date": null
+    },
+    {
+      "merger_id": "MN-90027",
+      "merger_name": "AbbVie - Apogee",
       "is_waiver": false,
       "status": "Under assessment",
       "determination": null,
@@ -1186,11 +1197,11 @@
       "determination_date": null
     }
   ],
-  "count": 106,
-  "phase_1_count": 39,
+  "count": 107,
+  "phase_1_count": 40,
   "phase_2_count": 2,
   "waiver_count": 65,
-  "active_count": 7,
+  "active_count": 8,
   "phase_duration": {
     "average_days": 32.74285714285714,
     "median_days": 27,

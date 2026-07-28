@@ -37,7 +37,7 @@
       "code": "184",
       "name": "Pharmaceutical and Medicinal Product Manufacturing",
       "level": "group",
-      "merger_count": 12
+      "merger_count": 13
     },
     {
       "code": "185",
@@ -53,6 +53,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-90027",
+      "merger_name": "AbbVie - Apogee",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-27T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-90024",
       "merger_name": "Petalite \u2013 Envu",
@@ -263,11 +274,11 @@
       "determination_date": "2026-02-05T12:00:00Z"
     }
   ],
-  "count": 19,
-  "phase_1_count": 11,
+  "count": 20,
+  "phase_1_count": 12,
   "phase_2_count": 1,
   "waiver_count": 7,
-  "active_count": 4,
+  "active_count": 5,
   "phase_duration": {
     "average_days": 30.77777777777778,
     "median_days": 26,

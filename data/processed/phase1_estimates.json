@@ -2857,6 +2857,22 @@
     "estimated_at": "2026-07-24",
     "method_version": 1
   },
+  "MN-90027": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      18
+    ],
+    "basis": "industry",
+    "anzsic_level": "class",
+    "anzsic_codes": [
+      "1841",
+      "6910"
+    ],
+    "sample_size": 9,
+    "estimated_at": "2026-07-28",
+    "method_version": 1
+  },
   "MN-90028": {
     "expected_business_days": 20,
     "range_business_days": [

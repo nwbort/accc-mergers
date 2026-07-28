@@ -1,10 +1,10 @@
 {
-  "total_mergers": 192,
+  "total_mergers": 193,
   "total_waivers": 291,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 151,
-    "Under assessment": 38,
+    "Under assessment": 39,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -81,15 +81,25 @@
       "count": 15
     },
     {
-      "name": "Supermarket and Grocery Stores",
-      "count": 14
+      "name": "Scientific Research Services",
+      "count": 15
     },
     {
-      "name": "Liquor Retailing",
+      "name": "Supermarket and Grocery Stores",
       "count": 14
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-90027",
+      "merger_name": "AbbVie - Apogee",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-27T12:00:00Z",
+      "page_modified_datetime": "2026-07-28T17:17:36+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-60026",
       "merger_name": "Publicis Groupe - LiveRamp",
@@ -204,16 +214,6 @@
       "effective_determination": null,
       "tribunal_number": "ACT 1 of 2026",
       "appeal_date": "2026-07-21T12:00:00Z"
-    },
-    {
-      "merger_id": "MN-90022",
-      "merger_name": "Expedia - CarTrawler",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-20T12:00:00Z",
-      "page_modified_datetime": "2026-07-28T17:05:03+10:00",
-      "is_waiver": false,
-      "is_refiled": false
     }
   ],
   "recent_determinations": [
