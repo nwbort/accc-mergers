@@ -33,9 +33,14 @@ only waits ~2.5s, which loses a race against Chrome's cold start on CI runners).
 
 The browser is launched once and reused across every matter page in one run,
 so the Cloudflare cookies obtained solving the first challenge carry over to
-the rest. Those same cookies (and the browser's User-Agent) are reused when
-downloading each linked document, so the document requests aren't bounced back
-to the challenge either.
+the rest.
+
+Linked documents are downloaded *by the browser itself*, via a ``fetch()``
+evaluated in the matter page's own context (``download_document_via_browser``).
+Handing the browser's cookies and User-Agent to ``requests`` is not enough:
+Cloudflare ties the clearance to the client that earned it, down to its TLS
+fingerprint, so a Python-side fetch carrying those cookies is still answered
+with 403. That requests-based path survives only as a fallback.
 
 Page format
 -----------
@@ -84,6 +89,8 @@ from __future__ import annotations
 
 import argparse
 import asyncio
+import base64
+import binascii
 import json
 import os
 import re
@@ -271,20 +278,21 @@ def _document_local_path(merger_id: str, url: str) -> tuple[Path, str] | None:
     return matter_dir / filename, f"/mergers/{merger_id}/{get_serve_filename(filename)}"
 
 
-def download_document(
-    merger_id: str, url: str, extra_headers: dict | None = None
-) -> str | None:
-    """Download a tribunal document into data/raw/matters/{merger_id}/.
+def _is_challenge_payload(data: bytes) -> bool:
+    """True if downloaded bytes are a Cloudflare interstitial, not the file.
 
-    Returns the ``url_gh`` serve path (``/mergers/{id}/{file}``) on success, or
-    None if the link is off-domain, unsafe, or the download fails. Existing
-    files are left in place (never re-downloaded).
+    A challenge comes back as 200 text/html, so without this check it would be
+    saved under the document's .pdf name.
+    """
+    return b"Just a moment" in data[:2048] or b"challenge-platform" in data
 
-    ``extra_headers`` carries the live browser's Cookie + User-Agent (see
-    ``browser_session_headers``); passing them lets the request reuse the
-    Cloudflare clearance the browser already obtained, so the document fetch
-    isn't bounced back to the challenge the way a bare ``requests.get()`` would
-    be.
+
+def _resolve_download_target(merger_id: str, url: str) -> tuple[Path, str] | None:
+    """Shared preflight for both download paths.
+
+    Returns (local_path, url_gh) when the URL should be fetched, or None when it
+    must be skipped — off-domain, an unsafe filename, or already mirrored (in
+    which case the caller's ``already_have`` check applies).
     """
     if not is_safe_document_url(url):
         # Off-domain link (e.g. a party's own site) — keep the url, no mirror.
@@ -293,6 +301,127 @@ def download_document(
     result = _document_local_path(merger_id, url)
     if result is None:
         print(f"    Warning: unsafe document filename for {url}", file=sys.stderr)
+        return None
+    return result
+
+
+# Fetches a document from inside the page's own JS context and hands the bytes
+# back base64-encoded. %s is the JSON-quoted URL. Same-origin with the matter
+# page, so the browser attaches its Cloudflare cookies automatically.
+#
+# The result is a single prefixed *string* rather than an object on purpose:
+# nodriver asks CDP for deep serialization, which (per the protocol) overrides
+# returnByValue, so an object comes back as a nested RemoteObject tree instead
+# of a dict. A plain string passes through Tab.evaluate untouched.
+_BROWSER_FETCH_OK = "ok:"
+_BROWSER_FETCH_ERROR = "error:"
+_BROWSER_FETCH_JS = """
+(async () => {
+  try {
+    const resp = await fetch(%s, {credentials: 'include', redirect: 'follow'});
+    if (!resp.ok) return 'error:HTTP ' + resp.status;
+    const bytes = new Uint8Array(await resp.arrayBuffer());
+    let binary = '';
+    const CHUNK = 0x8000;
+    for (let i = 0; i < bytes.length; i += CHUNK) {
+      binary += String.fromCharCode.apply(null, bytes.subarray(i, i + CHUNK));
+    }
+    return 'ok:' + btoa(binary);
+  } catch (e) {
+    return 'error:' + String(e);
+  }
+})()
+"""
+
+
+async def download_document_via_browser(tab, merger_id: str, url: str) -> str | None:
+    """Download a tribunal document by fetching it from inside the live browser.
+
+    This is the primary download path. Cloudflare binds the clearance it issues
+    to the client that solved the challenge — its TLS/HTTP fingerprint, not just
+    the ``cf_clearance`` cookie — so replaying that cookie from ``requests`` is
+    still answered with 403 even when the browser's User-Agent is sent along.
+    Running the fetch in the page's own context means the request comes from
+    Chrome itself, and is served normally.
+
+    Returns the ``url_gh`` serve path on success, or None so the caller can fall
+    back to :func:`download_document`.
+    """
+    result = _resolve_download_target(merger_id, url)
+    if result is None:
+        return None
+    local_path, url_gh = result
+
+    if local_path.exists():
+        return url_gh
+
+    try:
+        payload = await tab.evaluate(
+            _BROWSER_FETCH_JS % json.dumps(url), await_promise=True
+        )
+    except Exception as e:
+        print(f"    Warning: browser fetch failed for {url}: {e}", file=sys.stderr)
+        return None
+
+    if not isinstance(payload, str) or not payload.startswith(_BROWSER_FETCH_OK):
+        # Either the page reported a failure ("error:HTTP 403") or evaluate gave
+        # back something other than our string (a CDP ExceptionDetails, say).
+        if isinstance(payload, str) and payload.startswith(_BROWSER_FETCH_ERROR):
+            detail = payload[len(_BROWSER_FETCH_ERROR):]
+        else:
+            detail = f"unexpected result {type(payload).__name__}"
+        print(
+            f"    Warning: browser fetch of {url} failed: {detail}",
+            file=sys.stderr,
+        )
+        return None
+
+    try:
+        data = base64.b64decode(payload[len(_BROWSER_FETCH_OK):], validate=True)
+    except (ValueError, binascii.Error) as e:
+        print(f"    Warning: undecodable browser payload for {url}: {e}", file=sys.stderr)
+        return None
+
+    if not data:
+        print(f"    Warning: browser fetch of {url} returned no bytes", file=sys.stderr)
+        return None
+    if _is_challenge_payload(data):
+        print(
+            f"    Warning: {url} returned a Cloudflare challenge, not saving",
+            file=sys.stderr,
+        )
+        return None
+
+    try:
+        local_path.parent.mkdir(parents=True, exist_ok=True)
+        local_path.write_bytes(data)
+    except OSError as e:
+        print(f"    Warning: failed to save {local_path}: {e}", file=sys.stderr)
+        return None
+
+    print(f"    Downloaded {local_path.name}")
+    return url_gh
+
+
+def download_document(
+    merger_id: str, url: str, extra_headers: dict | None = None
+) -> str | None:
+    """Download a tribunal document into data/raw/matters/{merger_id}/.
+
+    Fallback for :func:`download_document_via_browser`, used when the in-page
+    fetch is unavailable or fails. Returns the ``url_gh`` serve path
+    (``/mergers/{id}/{file}``) on success, or None if the link is off-domain,
+    unsafe, or the download fails. Existing files are left in place (never
+    re-downloaded).
+
+    ``extra_headers`` carries the live browser's Cookie + User-Agent (see
+    ``browser_session_headers``). Note that these are not always enough on their
+    own: Cloudflare fingerprints the client, so a document fetch replaying the
+    browser's cookies from ``requests`` can still be answered with 403 — which
+    is exactly why the browser path above is tried first.
+    """
+    result = _resolve_download_target(merger_id, url)
+    if result is None:
         return None
     local_path, url_gh = result
 
@@ -313,7 +442,7 @@ def download_document(
         # for — peek at the first chunk and don't save it under a .pdf name.
         chunks = resp.iter_content(chunk_size=8192)
         first = next(chunks, b"")
-        if b"Just a moment" in first[:2048] or b"challenge-platform" in first:
+        if _is_challenge_payload(first):
             print(
                 f"    Warning: {url} returned a Cloudflare challenge, not saving",
                 file=sys.stderr,
@@ -761,17 +890,24 @@ async def scrape_matters(
                 )
                 continue
 
-            # Mirror each document into data/raw/matters/{mid}/, reusing the
-            # browser's Cloudflare cookies + user-agent so the file requests
-            # aren't bounced back to the challenge.
+            # Mirror each document into data/raw/matters/{mid}/. The fetch runs
+            # inside the page that just cleared the challenge, so Cloudflare
+            # serves it as an ordinary browser request; the requests-based path
+            # is only a fallback, since replaying the browser's cookies from
+            # Python is fingerprinted and answered with 403.
             if do_download:
-                if session_headers is None:
-                    session_headers = await browser_session_headers(browser, tab)
                 for doc in scraped:
-                    if doc.get("url"):
+                    if not doc.get("url"):
+                        continue
+                    url_gh = await download_document_via_browser(tab, mid, doc["url"])
+                    if url_gh is None:
+                        if session_headers is None:
+                            session_headers = await browser_session_headers(
+                                browser, tab
+                            )
                         url_gh = download_document(mid, doc["url"], session_headers)
-                        if url_gh:
-                            doc["url_gh"] = url_gh
+                    if url_gh:
+                        doc["url_gh"] = url_gh
 
             scraped_by_id[mid] = scraped
             sections = sorted({d["section"] for d in scraped if d.get("section")})

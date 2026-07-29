@@ -4,9 +4,12 @@ The browser-driving half (nodriver → Chrome, Cloudflare challenge) can only be
 exercised end-to-end from CI against the live site; these cover the pure logic
 that turns a fetched matter page into document records and mirrors the linked
 files: parse_matter_page (including the multiple-table / section handling) and
-download_document's url_gh derivation.
+download_document's url_gh derivation, and the in-page fetch that
+download_document_via_browser decodes into a mirrored file.
 """
 
+import asyncio
+import base64
 import os
 import sys
 
@@ -215,3 +218,124 @@ class TestDownloadDocument:
         )
         # DOCX is served as the PDF the convert workflow produces.
         assert url_gh == '/mergers/MN-0001/Submission.pdf'
+
+
+class FakeTab:
+    """Stands in for a nodriver Tab: records the JS it was asked to evaluate
+    and replays a canned result (or raises)."""
+
+    def __init__(self, result=None, error=None):
+        self.result = result
+        self.error = error
+        self.expressions = []
+
+    async def evaluate(self, expression, await_promise=False):
+        self.expressions.append(expression)
+        if self.error is not None:
+            raise self.error
+        return self.result
+
+
+class NotAString:
+    """What nodriver hands back when evaluate() can't return a plain value —
+    e.g. a RemoteObject or a CDP ExceptionDetails."""
+
+
+class TestDownloadDocumentViaBrowser:
+    def test_base64_payload_is_written_to_disk(self, tmp_path, monkeypatch):
+        monkeypatch.setattr(scrape_tribunal, 'MATTERS_DIR', tmp_path)
+        tab = FakeTab('ok:' + base64.b64encode(b'%PDF-1.7 body').decode())
+
+        url_gh = asyncio.run(scrape_tribunal.download_document_via_browser(
+            tab,
+            'MN-0001',
+            'https://www.competitiontribunal.gov.au/x/Application.pdf',
+        ))
+
+        assert url_gh == '/mergers/MN-0001/Application.pdf'
+        assert (tmp_path / 'MN-0001' / 'Application.pdf').read_bytes() == b'%PDF-1.7 body'
+        # The URL must reach the page as a JSON string literal, not interpolated raw.
+        assert '"https://www.competitiontribunal.gov.au/x/Application.pdf"' in tab.expressions[0]
+
+    def test_http_error_returns_none_so_caller_can_fall_back(self, tmp_path, monkeypatch):
+        monkeypatch.setattr(scrape_tribunal, 'MATTERS_DIR', tmp_path)
+        tab = FakeTab('error:HTTP 403')
+
+        url_gh = asyncio.run(scrape_tribunal.download_document_via_browser(
+            tab,
+            'MN-0001',
+            'https://www.competitiontribunal.gov.au/x/Application.pdf',
+        ))
+
+        assert url_gh is None
+        assert not (tmp_path / 'MN-0001' / 'Application.pdf').exists()
+
+    def test_challenge_html_is_not_saved_under_the_document_name(self, tmp_path, monkeypatch):
+        monkeypatch.setattr(scrape_tribunal, 'MATTERS_DIR', tmp_path)
+        challenge = b'<html><title>Just a moment...</title><body>checking</body></html>'
+        tab = FakeTab('ok:' + base64.b64encode(challenge).decode())
+
+        url_gh = asyncio.run(scrape_tribunal.download_document_via_browser(
+            tab,
+            'MN-0001',
+            'https://www.competitiontribunal.gov.au/x/Application.pdf',
+        ))
+
+        assert url_gh is None
+        assert not (tmp_path / 'MN-0001' / 'Application.pdf').exists()
+
+    def test_off_domain_url_is_not_fetched(self, tmp_path, monkeypatch):
+        monkeypatch.setattr(scrape_tribunal, 'MATTERS_DIR', tmp_path)
+        tab = FakeTab('ok:' + base64.b64encode(b'x').decode())
+
+        url_gh = asyncio.run(scrape_tribunal.download_document_via_browser(
+            tab, 'MN-0001', 'https://example.com/doc.pdf'
+        ))
+
+        assert url_gh is None
+        assert tab.expressions == []
+
+    def test_existing_file_is_not_refetched(self, tmp_path, monkeypatch):
+        monkeypatch.setattr(scrape_tribunal, 'MATTERS_DIR', tmp_path)
+        matter_dir = tmp_path / 'MN-0001'
+        matter_dir.mkdir(parents=True)
+        (matter_dir / 'Application.pdf').write_bytes(b'original')
+        tab = FakeTab('ok:' + base64.b64encode(b'replacement').decode())
+
+        url_gh = asyncio.run(scrape_tribunal.download_document_via_browser(
+            tab,
+            'MN-0001',
+            'https://www.competitiontribunal.gov.au/x/Application.pdf',
+        ))
+
+        assert url_gh == '/mergers/MN-0001/Application.pdf'
+        assert tab.expressions == []
+        assert (matter_dir / 'Application.pdf').read_bytes() == b'original'
+
+    def test_non_string_result_returns_none(self, tmp_path, monkeypatch):
+        # The JS deliberately returns a string, not an object: nodriver asks CDP
+        # for deep serialization, which overrides returnByValue, so an object
+        # would arrive as a RemoteObject tree and silently never download.
+        monkeypatch.setattr(scrape_tribunal, 'MATTERS_DIR', tmp_path)
+        tab = FakeTab(NotAString())
+
+        url_gh = asyncio.run(scrape_tribunal.download_document_via_browser(
+            tab,
+            'MN-0001',
+            'https://www.competitiontribunal.gov.au/x/Application.pdf',
+        ))
+
+        assert url_gh is None
+        assert not (tmp_path / 'MN-0001' / 'Application.pdf').exists()
+
+    def test_evaluate_raising_returns_none(self, tmp_path, monkeypatch):
+        monkeypatch.setattr(scrape_tribunal, 'MATTERS_DIR', tmp_path)
+        tab = FakeTab(error=RuntimeError('devtools connection lost'))
+
+        url_gh = asyncio.run(scrape_tribunal.download_document_via_browser(
+            tab,
+            'MN-0001',
+            'https://www.competitiontribunal.gov.au/x/Application.pdf',
+        ))
+
+        assert url_gh is None

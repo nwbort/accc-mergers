@@ -198,6 +198,8 @@ The scraper drives a real Chrome via nodriver to get past the tribunal site's Cl
 xvfb-run -a python scripts/scrape_tribunal.py
 ```
 
+The linked PDFs are downloaded by that same browser, via a `fetch()` run inside the matter page once its challenge has cleared. Handing the browser's cookies to `requests` is *not* sufficient — Cloudflare ties the clearance to the client that earned it (down to its TLS fingerprint), so a Python-side download replaying those cookies comes back `403 Forbidden` and the document is recorded in `documents[]` with no `url_gh` mirror. The `requests` path is kept only as a fallback. A document that failed to mirror is retried on the next run, so a transient failure heals itself.
+
 New matters are still added to `tribunal_appeals.json` by hand (tribunal number, URL, appeal type, appellant) — the scraper only fills in the `documents[]` list for entries that already have a `tribunal_url`.
 
 ## Local development
