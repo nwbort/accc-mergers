@@ -83,6 +83,11 @@ Existing ``url_gh`` local-mirror paths are preserved across a re-scrape (matched
 by document URL). If a page yields no rows (e.g. the layout changed) or its
 Cloudflare challenge never clears, that entry is left untouched rather than
 wiped.
+
+A document whose file can't be downloaded is still recorded (with its tribunal
+``url``, just no ``url_gh``) and raises a ``::warning::`` annotation, so it is
+visible on the run summary rather than hiding behind a green run. The next run
+retries it, since anything without a local file is re-fetched.
 """
 
 from __future__ import annotations
@@ -640,6 +645,20 @@ def looks_like_challenge(html: str) -> bool:
     return any(marker in html for marker in CHALLENGE_MARKERS)
 
 
+def summarise_urls(urls: list[str], limit: int = 5) -> str:
+    """Render document URLs as a short, readable list for a warning message.
+
+    Uses just the filename — the tribunal's ``/__data/assets/pdf_file/0008/...``
+    URLs are far too long to read in a run annotation — and truncates so one
+    badly-broken matter can't flood the summary.
+    """
+    names = [os.path.basename(unquote(urlparse(url).path)) or url for url in urls]
+    shown = ", ".join(names[:limit])
+    if len(names) > limit:
+        shown += f", and {len(names) - limit} more"
+    return shown
+
+
 def gha_warning(message: str) -> None:
     """Emit a GitHub Actions warning annotation (visible on the run summary).
 
@@ -824,13 +843,15 @@ def merge_documents(existing: list[dict], scraped: list[dict]) -> list[dict]:
 
 async def scrape_matters(
     targets: list[str], records: dict, do_download: bool
-) -> tuple[dict[str, list[dict]], list[str]]:
+) -> tuple[dict[str, list[dict]], list[str], list[tuple[str, str]]]:
     """Drive one Chrome across every target matter page.
 
-    Returns ``(scraped_by_id, failed)`` where ``scraped_by_id`` maps merger_id →
-    parsed document list (already carrying ``url_gh`` for anything downloaded),
-    and ``failed`` lists the merger_ids whose page couldn't be fetched. Matters
-    whose page parsed to zero documents are omitted from both (left untouched).
+    Returns ``(scraped_by_id, failed, unmirrored)`` where ``scraped_by_id`` maps
+    merger_id → parsed document list (already carrying ``url_gh`` for anything
+    downloaded), ``failed`` lists the merger_ids whose page couldn't be fetched,
+    and ``unmirrored`` holds ``(merger_id, url)`` for each tribunal-hosted
+    document that was recorded but couldn't be downloaded. Matters whose page
+    parsed to zero documents are omitted from all three (left untouched).
     """
     if uc is None:
         raise RuntimeError(
@@ -850,7 +871,7 @@ async def scrape_matters(
         except Exception:
             pass
         # Nothing could be fetched — every target is a failure.
-        return {}, list(targets)
+        return {}, list(targets), []
 
     browser = await uc.start(
         host="127.0.0.1", port=port, browser_executable_path=chrome_path
@@ -858,6 +879,7 @@ async def scrape_matters(
 
     scraped_by_id: dict[str, list[dict]] = {}
     failed: list[str] = []
+    unmirrored: list[tuple[str, str]] = []
     session_headers: dict | None = None
 
     try:
@@ -896,6 +918,7 @@ async def scrape_matters(
             # is only a fallback, since replaying the browser's cookies from
             # Python is fingerprinted and answered with 403.
             if do_download:
+                missing: list[str] = []
                 for doc in scraped:
                     if not doc.get("url"):
                         continue
@@ -908,6 +931,18 @@ async def scrape_matters(
                         url_gh = download_document(mid, doc["url"], session_headers)
                     if url_gh:
                         doc["url_gh"] = url_gh
+                    elif is_safe_document_url(doc["url"]):
+                        # Off-domain links are deliberately never mirrored, so
+                        # only a tribunal-hosted file that didn't land counts.
+                        missing.append(doc["url"])
+
+                if missing:
+                    unmirrored.extend((mid, url) for url in missing)
+                    gha_warning(
+                        f"scrape_tribunal: {len(missing)} document(s) for {mid} "
+                        f"were recorded without a local mirror: "
+                        f"{summarise_urls(missing)}"
+                    )
 
             scraped_by_id[mid] = scraped
             sections = sorted({d["section"] for d in scraped if d.get("section")})
@@ -925,7 +960,7 @@ async def scrape_matters(
         except Exception:
             pass
 
-    return scraped_by_id, failed
+    return scraped_by_id, failed, unmirrored
 
 
 def scrape(
@@ -947,7 +982,7 @@ def scrape(
         print("No tribunal matters with a tribunal_url to scrape.")
         return 0
 
-    scraped_by_id, failed = uc.loop().run_until_complete(
+    scraped_by_id, failed, unmirrored = uc.loop().run_until_complete(
         scrape_matters(targets, records, do_download=download and not dry_run)
     )
 
@@ -968,6 +1003,19 @@ def scrape(
         print(f"\nUpdated {changed} entr(y/ies) in {TRIBUNAL_APPEALS_JSON}")
     else:
         print("\nNo changes.")
+
+    if unmirrored:
+        # Not fatal: the document is still recorded with its tribunal ``url``,
+        # and the next run retries anything without a local file. Surfaced so a
+        # persistently unmirrored document doesn't sit unnoticed behind a green
+        # run — each one also raised a ::warning:: annotation above.
+        print(
+            f"\n{len(unmirrored)} document(s) recorded without a local mirror "
+            f"(will be retried next run):",
+            file=sys.stderr,
+        )
+        for mid, url in unmirrored:
+            print(f"  {mid}: {url}", file=sys.stderr)
 
     if failed:
         # A distinct, non-zero exit so callers (the workflow, in particular)
