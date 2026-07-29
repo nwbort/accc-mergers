@@ -261,8 +261,9 @@ class TestDashboardRecentActivity:
         assert card['appeal_date'] == '2026-07-15T12:00:00Z'
 
     def test_appeal_date_stays_the_filing_date(self):
-        # Later documents keep the card "recent" (they drive the sort key) but
-        # must not shift the "Appeal filed" date shown on the card.
+        # Later documents must not shift the "Appeal filed" date shown on the
+        # card, nor refloat the card to the top of the dashboard: the card is
+        # ranked by when the appeal was lodged, so it ages off like any other.
         appeal = _appeal()
         appeal['MN-0001']['documents'].append({
             'date': '2026-07-28',
@@ -275,7 +276,7 @@ class TestDashboardRecentActivity:
         link_tribunal_appeals(mergers, appeal)
         card = [c for c in stats.generate(mergers)['recent_mergers'] if c.get('is_appeal')][0]
         assert card['appeal_date'] == '2026-07-15T12:00:00Z'
-        assert card['effective_notification_datetime'] == '2026-07-28T12:00:00Z'
+        assert card['effective_notification_datetime'] == '2026-07-15T12:00:00Z'
 
     def test_appeal_date_falls_back_to_earliest_document(self):
         # No recorded filing date → the first document stands in for it.

@@ -22,25 +22,15 @@ def _as_event_datetime(value: str | None) -> str | None:
     return value
 
 
-def _appeal_activity_date(appeal: dict) -> str | None:
-    """Most recent dated activity on a tribunal appeal.
-
-    The latest document date, falling back to the application's filing date, so
-    the appeal stays "recent" on the dashboard as new filings land. This is a
-    sort key only — the card displays the filing date (see ``_appeal_filed_date``).
-    """
-    doc_dates = [d.get('date') for d in appeal.get('documents', []) if d.get('date')]
-    activity = max(doc_dates) if doc_dates else appeal.get('filed_date')
-    return _as_event_datetime(activity)
-
-
 def _appeal_filed_date(appeal: dict) -> str | None:
     """When the appeal was lodged with the tribunal.
 
-    This is what the card labels "Appeal filed", so it must be the application's
-    own filing date rather than the latest activity — a document filed weeks
-    later must not move the stated filing date. Falls back to the earliest
-    document date when the overlay records no ``filed_date``.
+    Both what the card labels "Appeal filed" and how it ranks among the recent
+    cards, so it must be the application's own filing date rather than its
+    latest activity — a document filed weeks later must neither move the stated
+    filing date nor refloat a stale appeal to the top of the dashboard. Falls
+    back to the earliest document date when the overlay records no
+    ``filed_date``.
     """
     filed = appeal.get('filed_date')
     if not filed:
@@ -59,17 +49,18 @@ def _appeal_card(merger: dict) -> dict | None:
     appeal = merger.get('appeal')
     if not appeal:
         return None
-    activity_date = _appeal_activity_date(appeal)
-    if not activity_date:
+    filed_date = _appeal_filed_date(appeal)
+    if not filed_date:
         return None
     return {
         "merger_id": merger['merger_id'],
         "merger_name": merger['merger_name'],
         "status": merger.get('status'),
         "accc_determination": merger.get('accc_determination'),
-        # Latest appeal activity, used only as the sort key so the appeal
-        # interleaves with notification cards and resurfaces as filings land.
-        "effective_notification_datetime": activity_date,
+        # The lodgement date doubles as the sort key so the appeal interleaves
+        # with notification cards by when it was filed, then ages off the
+        # dashboard like any other card.
+        "effective_notification_datetime": filed_date,
         # Same same-day tie-break as notification cards (see _merger_sort_key).
         "page_modified_datetime": merger.get('page_modified_datetime', ''),
         "is_appeal": True,
@@ -78,9 +69,8 @@ def _appeal_card(merger: dict) -> dict | None:
         "appeal_status": appeal.get('status'),
         "effective_determination": appeal.get('effective_determination'),
         "tribunal_number": appeal.get('tribunal_number'),
-        # Displayed on the card as "Appeal filed", so it tracks the lodgement
-        # date and stays put as later documents arrive.
-        "appeal_date": _appeal_filed_date(appeal) or activity_date,
+        # Displayed on the card as "Appeal filed".
+        "appeal_date": filed_date,
     }
 
 
@@ -187,8 +177,8 @@ def generate(mergers: list) -> dict:
 
     # Recent mergers (include all but mark waivers). Tribunal appeals are folded
     # in as their own activity cards (see _appeal_card) so a freshly-lodged appeal
-    # surfaces on the dashboard alongside recent notifications, ranked by the same
-    # date. A card slice of 12 is taken after merging the two streams.
+    # surfaces on the dashboard alongside recent notifications, ranked by its
+    # filing date. A card slice of 12 is taken after merging the two streams.
     # Notification datetimes are stored at a nominal midday, so same-day
     # notifications all tie on effective_notification_datetime. Break the tie by
     # page_modified_datetime — the real register timestamp — so a merger that
