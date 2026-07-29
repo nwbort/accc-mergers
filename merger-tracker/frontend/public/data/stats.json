@@ -1,6 +1,6 @@
 {
   "total_mergers": 196,
-  "total_waivers": 293,
+  "total_waivers": 294,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 152,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 279,
+    "Approved": 280,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,10 +42,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.7679180887372,
-    "median_days": 18,
-    "average_business_days": 12.546075085324231,
-    "median_business_days": 12
+    "average_days": 18.775510204081634,
+    "median_days": 18.0,
+    "average_business_days": 12.554421768707483,
+    "median_business_days": 12.0
   },
   "top_industries": [
     {
@@ -213,6 +213,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-70028",
+      "merger_name": "Kalari \u2013 De Gunst\u2019s Gracemere Assets",
+      "determination": "Approved",
+      "determination_date": "2026-07-29T12:00:00Z",
+      "page_modified_datetime": "2026-07-29T17:11:44+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-90026",
       "merger_name": "Abu Dhabi Investment Authority \u2013 Barings Darling Square Holding Trust",
       "determination": "Approved",
@@ -318,16 +328,6 @@
       "determination": "Approved",
       "determination_date": "2026-07-27T12:00:00Z",
       "page_modified_datetime": "2026-07-27T09:59:26+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-80024",
-      "merger_name": "Allianz \u2013 certain assets of nib\u2019s Australian travel insurance business",
-      "determination": "Approved",
-      "determination_date": "2026-07-24T12:00:00Z",
-      "page_modified_datetime": "2026-07-24T17:07:29+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"

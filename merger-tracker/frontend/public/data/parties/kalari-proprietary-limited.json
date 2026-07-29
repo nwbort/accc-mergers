@@ -1,0 +1,41 @@
+{
+  "id": "kalari-proprietary-limited",
+  "canonical_name": "Kalari Proprietary Limited",
+  "members": [
+    {
+      "name": "KALARI PROPRIETARY LIMITED",
+      "identifier": "14 004 595 395",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [
+      {
+        "merger_id": "WA-70028",
+        "merger_name": "Kalari \u2013 De Gunst\u2019s Gracemere Assets",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Waiver",
+        "notification_date": "2026-07-08T12:00:00Z",
+        "determination_date": "2026-07-29T12:00:00Z"
+      }
+    ],
+    "target": [],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null,
+  "waiver_duration": {
+    "average_days": 21.0,
+    "median_days": 21,
+    "average_business_days": 15.0,
+    "median_business_days": 15,
+    "completed_count": 1
+  }
+}
