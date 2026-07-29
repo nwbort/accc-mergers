@@ -1,13 +1,15 @@
 {
   "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/motorola-solutions-d-fend-solutions",
   "merger_name": "Motorola Solutions - D-Fend Solutions",
-  "status": "Under assessment",
+  "status": "Assessment completed",
   "merger_id": "MN-05032",
   "effective_notification_datetime": "2026-07-08T12:00:00Z",
   "original_notification_datetime": "2026-07-08T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-08-19T12:00:00Z",
-  "page_modified_datetime": "2026-07-16T16:38:50+10:00",
+  "accc_determination": "Approved",
+  "accc_determination_raw": "ACCC determinationApproved",
+  "page_modified_datetime": "2026-07-29T14:44:27+10:00",
   "consultation_response_due_date": "2026-07-16T12:00:00Z",
   "acquirers": [
     {
@@ -71,13 +73,49 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-07-29T12:00:00Z",
+      "title": "Motorola Solutions - D-Fend Solutions - Phase 1 determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Motorola%20Solutions%20-%20D-Fend%20Solutions%20-%20Phase%201%20determination.pdf",
+      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+      "determination_table_content": [
+        {
+          "item": "Notified acquisition",
+          "details": "Motorola Solutions, Inc. (MSI), through its subsidiary Motorola\nSolutions Finance EMEA Limited (MSF EMEA), proposes to acquire\nall of the issued and outstanding shares of D-Fend Solutions AD Ltd.\n(D-Fend Solutions) (the Acquisition)."
+        },
+        {
+          "item": "Determination",
+          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+        },
+        {
+          "item": "Parties to the Acquisition",
+          "details": "The acquirer, MSF EMEA. is the holding entity for MSI's operating\nsubsidiaries in the UK, EU, Israel, and Norway.\nMSI is a US-domiciled company that supplies mission-critical\ncommunications, video security and access control, and command\ncentre software products and solutions for public safety,\ngovernment (including defence), and enterprise customers.\nThe target, D-Fend Solutions, is an Israel-based technology company\nspecialising in counter-unmanned aircraft system (C-UAS)\ntechnology. D-Fend Solutions supplies devices that detect, identify\nand mitigate unauthorised drones, including through radio\nfrequency, radar and optical detection technologies. Its products are\nsupplied primarily to public safety and critical infrastructure\ncustomers."
+        },
+        {
+          "item": "Overlap and relationship\nbetween the Parties",
+          "details": "There are no horizontal overlaps or vertical relationships between\nMSI (and its connected entities) and D-Fend Solutions in Australia."
+        },
+        {
+          "item": "Reasons for determination",
+          "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and information from third parties.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 There are no horizontal overlaps or vertical relationships\nbetween MSI and D-Fend Solutions.\n\u2022 The merged entity would be unlikely to have the ability or\nincentive to engage in anti-competitive bundling or tying."
+        },
+        {
+          "item": "Applications for review",
+          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+        }
+      ],
+      "url_gh": "/mergers/MN-05032/Motorola Solutions - D-Fend Solutions - Phase 1 determination.pdf",
+      "is_determination_event": true,
+      "phase": "Phase 1"
     }
   ],
+  "determination_publication_date": "2026-07-29T12:00:00Z",
   "is_waiver": false,
-  "accc_determination": null,
   "has_conditions": false,
-  "phase_1_determination": null,
-  "phase_1_determination_date": null,
+  "phase_1_determination": "Approved",
+  "phase_1_determination_date": "2026-07-29T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,

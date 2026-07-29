@@ -10126,13 +10126,15 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/motorola-solutions-d-fend-solutions",
       "merger_name": "Motorola Solutions - D-Fend Solutions",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-05032",
       "effective_notification_datetime": "2026-07-08T12:00:00Z",
       "original_notification_datetime": "2026-07-08T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-08-19T12:00:00Z",
-      "page_modified_datetime": "2026-07-16T16:38:50+10:00",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-07-29T14:44:27+10:00",
       "consultation_response_due_date": "2026-07-16T12:00:00Z",
       "acquirers": [
         {
@@ -10196,13 +10198,49 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-07-29T12:00:00Z",
+          "title": "Motorola Solutions - D-Fend Solutions - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Motorola%20Solutions%20-%20D-Fend%20Solutions%20-%20Phase%201%20determination.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Motorola Solutions, Inc. (MSI), through its subsidiary Motorola Solutions Finance EMEA Limited (MSF EMEA), proposes to acquire all of the issued and outstanding shares of D-Fend Solutions AD Ltd. (D-Fend Solutions) (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has determined under section 51ABZE(1) of the Competition and Consumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, MSF EMEA. is the holding entity for MSI's operating subsidiaries in the UK, EU, Israel, and Norway.\n\nMSI is a US-domiciled company that supplies mission-critical communications, video security and access control, and command centre software products and solutions for public safety, government (including defence), and enterprise customers.\n\nThe target, D-Fend Solutions, is an Israel-based technology company specialising in counter-unmanned aircraft system (C-UAS) technology. D-Fend Solutions supplies devices that detect, identify and mitigate unauthorised drones, including through radio frequency, radar and optical detection technologies. Its products are supplied primarily to public safety and critical infrastructure customers."
+            },
+            {
+              "item": "Overlap and relationship between the Parties",
+              "details": "There are no horizontal overlaps or vertical relationships between MSI (and its connected entities) and D-Fend Solutions in Australia."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition and Consumer Commission (ACCC) undertakes a competition assessment and considers whether it is appropriate for an acquisition to be approved or subject to further assessment in Phase 2 in accordance with section 51ABZJ of the Competition and Consumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have regard to the object of the Act and all relevant matters, including the interests of consumers.\n\nFor more information about the ACCC’s approach to considering notified acquisitions, see the ACCC’s merger assessment guidelines and interim merger process guidelines.\n\nIn conducting its competition assessment, the ACCC has considered the information and documents that were submitted with the notification form and information from third parties.\n\nThe ACCC has determined that the Acquisition may be put into effect as it considers that the Acquisition is unlikely to have the effect of substantially lessening competition in any market. In reaching its decision, and based on the material before it, the ACCC makes the following findings.\n\n• There are no horizontal overlaps or vertical relationships between MSI and D-Fend Solutions.\n\n• The merged entity would be unlikely to have the ability or incentive to engage in anti-competitive bundling or tying."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by the Australian Competition Tribunal, may apply for review if they are dissatisfied with the determination. Pursuant to section 100C of the Act, applications for review of the determination are to be made to the Australian Competition Tribunal before the end of 14 calendar days after this statement of reasons was included on the ACCC’s Acquisitions Register. To confirm whether there has been any application for review, please contact the Australian Competition Tribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-05032/Motorola Solutions - D-Fend Solutions - Phase 1 determination.pdf",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
+      "determination_publication_date": "2026-07-29T12:00:00Z",
       "is_waiver": false,
-      "accc_determination": null,
       "has_conditions": false,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-07-29T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -133495,12 +133533,12 @@
     "total_waivers": 292,
     "total_conditional_approvals": 1,
     "by_status": {
-      "Assessment completed": 151,
-      "Under assessment": 41,
+      "Assessment completed": 152,
+      "Under assessment": 40,
       "Assessment ceased": 3
     },
     "by_determination": {
-      "Approved": 149,
+      "Approved": 150,
       "Referred to phase 2": 8
     },
     "by_waiver_determination": {
@@ -133508,27 +133546,27 @@
       "Not approved": 14
     },
     "clearance_rate": {
-      "cleared": 150,
+      "cleared": 151,
       "not_cleared": 1,
-      "total": 151,
+      "total": 152,
       "rate": 0.993
     },
     "phase_duration": {
-      "average_days": 29.605095541401273,
-      "median_days": 26,
-      "average_business_days": 19.585987261146496,
-      "median_business_days": 17,
+      "average_days": 29.550632911392405,
+      "median_days": 26.0,
+      "average_business_days": 19.556962025316455,
+      "median_business_days": 17.0,
       "percentiles": {
         "day15": {
-          "count": 38,
-          "percentage": 24.2
+          "count": 39,
+          "percentage": 24.7
         },
         "day20": {
-          "count": 122,
-          "percentage": 77.7
+          "count": 123,
+          "percentage": 77.8
         },
         "day30": {
-          "count": 149,
+          "count": 150,
           "percentage": 94.9
         }
       }
@@ -133710,6 +133748,16 @@
     ],
     "recent_determinations": [
       {
+        "merger_id": "MN-05032",
+        "merger_name": "Motorola Solutions - D-Fend Solutions",
+        "determination": "Approved",
+        "determination_date": "2026-07-29T12:00:00Z",
+        "page_modified_datetime": "2026-07-29T14:44:27+10:00",
+        "determination_type": "final",
+        "is_waiver": false,
+        "stage": "Phase 1 - initial assessment"
+      },
+      {
         "merger_id": "WA-80025",
         "merger_name": "Black Kite Partners led consortium - DR2",
         "determination": "Approved",
@@ -133818,16 +133866,6 @@
         "determination_type": "final",
         "is_waiver": false,
         "stage": "Phase 1 - initial assessment"
-      },
-      {
-        "merger_id": "WA-75033",
-        "merger_name": "Sonnel Hospitality Group – Peakhurst Inn Hotel",
-        "determination": "Approved",
-        "determination_date": "2026-07-24T12:00:00Z",
-        "page_modified_datetime": "2026-07-24T16:58:14+10:00",
-        "determination_type": "final",
-        "is_waiver": true,
-        "stage": "Waiver application"
       }
     ]
   },
