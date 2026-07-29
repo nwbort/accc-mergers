@@ -11,19 +11,42 @@ from ..filters import filter_notifications, filter_waivers
 from ..loaders import BACKWARD_REFILE_RELATIONSHIPS
 
 
+def _as_event_datetime(value: str | None) -> str | None:
+    """Promote a bare ``YYYY-MM-DD`` to the event datetime format.
+
+    Tribunal dates are recorded as plain dates; padding them to midday UTC lets
+    them sort cleanly against the ISO notification datetimes.
+    """
+    if value and len(value) == 10 and value[4] == '-' and value[7] == '-':
+        return f"{value}T12:00:00Z"
+    return value
+
+
 def _appeal_activity_date(appeal: dict) -> str | None:
     """Most recent dated activity on a tribunal appeal.
 
     The latest document date, falling back to the application's filing date, so
-    the appeal stays "recent" on the dashboard as new filings land. A bare
-    ``YYYY-MM-DD`` is promoted to the event datetime format so it sorts cleanly
-    against the ISO notification datetimes.
+    the appeal stays "recent" on the dashboard as new filings land. This is a
+    sort key only — the card displays the filing date (see ``_appeal_filed_date``).
     """
     doc_dates = [d.get('date') for d in appeal.get('documents', []) if d.get('date')]
     activity = max(doc_dates) if doc_dates else appeal.get('filed_date')
-    if activity and len(activity) == 10 and activity[4] == '-' and activity[7] == '-':
-        return f"{activity}T12:00:00Z"
-    return activity
+    return _as_event_datetime(activity)
+
+
+def _appeal_filed_date(appeal: dict) -> str | None:
+    """When the appeal was lodged with the tribunal.
+
+    This is what the card labels "Appeal filed", so it must be the application's
+    own filing date rather than the latest activity — a document filed weeks
+    later must not move the stated filing date. Falls back to the earliest
+    document date when the overlay records no ``filed_date``.
+    """
+    filed = appeal.get('filed_date')
+    if not filed:
+        doc_dates = [d.get('date') for d in appeal.get('documents', []) if d.get('date')]
+        filed = min(doc_dates) if doc_dates else None
+    return _as_event_datetime(filed)
 
 
 def _appeal_card(merger: dict) -> dict | None:
@@ -44,8 +67,8 @@ def _appeal_card(merger: dict) -> dict | None:
         "merger_name": merger['merger_name'],
         "status": merger.get('status'),
         "accc_determination": merger.get('accc_determination'),
-        # Reused as the sort key so the appeal interleaves with notifications;
-        # the frontend shows it as the "Appeal filed" date, not a notification.
+        # Latest appeal activity, used only as the sort key so the appeal
+        # interleaves with notification cards and resurfaces as filings land.
         "effective_notification_datetime": activity_date,
         # Same same-day tie-break as notification cards (see _merger_sort_key).
         "page_modified_datetime": merger.get('page_modified_datetime', ''),
@@ -55,7 +78,9 @@ def _appeal_card(merger: dict) -> dict | None:
         "appeal_status": appeal.get('status'),
         "effective_determination": appeal.get('effective_determination'),
         "tribunal_number": appeal.get('tribunal_number'),
-        "appeal_date": activity_date,
+        # Displayed on the card as "Appeal filed", so it tracks the lodgement
+        # date and stays put as later documents arrive.
+        "appeal_date": _appeal_filed_date(appeal) or activity_date,
     }
 
 
