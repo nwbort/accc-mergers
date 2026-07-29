@@ -49,6 +49,17 @@
       "determination_date": null
     },
     {
+      "merger_id": "WA-90026",
+      "merger_name": "Abu Dhabi Investment Authority \u2013 Barings Darling Square Holding Trust",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-03T12:00:00Z",
+      "determination_date": "2026-07-29T12:00:00Z"
+    },
+    {
       "merger_id": "WA-80025",
       "merger_name": "Black Kite Partners led consortium - DR2",
       "is_waiver": true,
@@ -709,10 +720,10 @@
       "determination_date": "2026-01-30T12:00:00Z"
     }
   ],
-  "count": 62,
+  "count": 63,
   "phase_1_count": 11,
   "phase_2_count": 0,
-  "waiver_count": 51,
+  "waiver_count": 52,
   "active_count": 2,
   "phase_duration": {
     "average_days": 24.444444444444443,
@@ -722,10 +733,10 @@
     "completed_count": 9
   },
   "waiver_duration": {
-    "average_days": 18.647058823529413,
-    "median_days": 18,
-    "average_business_days": 12.372549019607844,
-    "median_business_days": 12,
-    "completed_count": 51
+    "average_days": 18.78846153846154,
+    "median_days": 18.0,
+    "average_business_days": 12.48076923076923,
+    "median_business_days": 12.0,
+    "completed_count": 52
   }
 }

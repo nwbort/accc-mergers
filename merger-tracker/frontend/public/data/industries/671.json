@@ -30,7 +30,7 @@
       "code": "6712",
       "name": "Non-Residential Property Operators",
       "level": "class",
-      "merger_count": 24
+      "merger_count": 25
     }
   ],
   "mergers": [
@@ -66,6 +66,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-05-21T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-90026",
+      "merger_name": "Abu Dhabi Investment Authority \u2013 Barings Darling Square Holding Trust",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-03T12:00:00Z",
+      "determination_date": "2026-07-29T12:00:00Z"
     },
     {
       "merger_id": "WA-50029",
@@ -321,10 +332,10 @@
       "determination_date": "2025-11-18T12:00:00Z"
     }
   ],
-  "count": 26,
+  "count": 27,
   "phase_1_count": 8,
   "phase_2_count": 1,
-  "waiver_count": 17,
+  "waiver_count": 18,
   "active_count": 3,
   "phase_duration": {
     "average_days": 34.166666666666664,
@@ -334,10 +345,10 @@
     "completed_count": 6
   },
   "waiver_duration": {
-    "average_days": 19.88235294117647,
-    "median_days": 18,
-    "average_business_days": 13.235294117647058,
-    "median_business_days": 12,
-    "completed_count": 17
+    "average_days": 20.22222222222222,
+    "median_days": 18.0,
+    "average_business_days": 13.5,
+    "median_business_days": 12.5,
+    "completed_count": 18
   }
 }
