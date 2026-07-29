@@ -3,8 +3,18 @@
   "canonical_name": "Salesforce, Inc",
   "members": [
     {
+      "name": "Salesforce Holdings LLC",
+      "identifier": "5673469",
+      "identifier_type": null
+    },
+    {
       "name": "Salesforce, Inc",
       "identifier": null,
+      "identifier_type": null
+    },
+    {
+      "name": "Salesforce, Inc.",
+      "identifier": "0001108524",
       "identifier_type": null
     },
     {
@@ -50,13 +60,25 @@
       }
     ],
     "target": [],
-    "other": []
+    "other": [
+      {
+        "merger_id": "MN-40031",
+        "merger_name": "Salesforce - Intercom",
+        "is_waiver": false,
+        "status": "Under assessment",
+        "determination": null,
+        "has_conditions": false,
+        "phase": "Phase 1",
+        "notification_date": "2026-07-28T12:00:00Z",
+        "determination_date": null
+      }
+    ]
   },
-  "merger_count": 3,
-  "phase_1_count": 2,
+  "merger_count": 4,
+  "phase_1_count": 3,
   "phase_2_count": 0,
   "waiver_count": 1,
-  "active_count": 1,
+  "active_count": 2,
   "phase_duration": {
     "average_days": 26.0,
     "median_days": 26,

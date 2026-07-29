@@ -1,10 +1,10 @@
 {
-  "total_mergers": 195,
+  "total_mergers": 196,
   "total_waivers": 292,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 152,
-    "Under assessment": 40,
+    "Under assessment": 41,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -54,7 +54,7 @@
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 48
+      "count": 49
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -90,6 +90,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-40031",
+      "merger_name": "Salesforce - Intercom",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-28T12:00:00Z",
+      "page_modified_datetime": "2026-07-29T17:06:29+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-80005",
       "merger_name": "Kimberly-Clark Corporation - Kenvue Inc.",
@@ -191,22 +201,12 @@
       "is_refiled": true
     },
     {
-      "merger_id": "MN-25037",
-      "merger_name": "Sanad Services and Tikehau Capital \u2013 Revima",
+      "merger_id": "MN-35029",
+      "merger_name": "L'Or\u00e9al - Innovist",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-07-21T12:00:00Z",
-      "page_modified_datetime": "2026-07-22T14:47:16+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-05036",
-      "merger_name": "Vertex \u2013 Crinetics",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-21T12:00:00Z",
-      "page_modified_datetime": "2026-07-22T11:26:33+10:00",
+      "page_modified_datetime": "2026-07-29T17:06:36+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

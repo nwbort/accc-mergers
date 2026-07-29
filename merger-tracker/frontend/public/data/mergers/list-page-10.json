@@ -2739,6 +2739,86 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/protech-activaterail"
     },
     {
+      "merger_id": "MN-40031",
+      "merger_name": "Salesforce - Intercom",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-28T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-08T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Ireland Acquisition Sub Inc.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "ireland-acquisition-sub-inc",
+            "name": "Ireland Acquisition Sub Inc."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Intercom, Inc.",
+          "identifier_type": null,
+          "identifier": "453543961",
+          "party_page": {
+            "id": "intercom-inc",
+            "name": "Intercom, Inc."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Intercom R&D Unlimited Company",
+          "identifier_type": null,
+          "identifier": "538158",
+          "party_page": {
+            "id": "intercom-r-d-unlimited-company",
+            "name": "Intercom R&D Unlimited Company"
+          }
+        },
+        {
+          "name": "Salesforce Holdings LLC",
+          "identifier_type": null,
+          "identifier": "5673469",
+          "canonical": {
+            "id": "salesforce-inc",
+            "name": "Salesforce, Inc"
+          },
+          "party_page": {
+            "id": "salesforce-inc",
+            "name": "Salesforce, Inc"
+          }
+        },
+        {
+          "name": "Salesforce, Inc.",
+          "identifier_type": null,
+          "identifier": "0001108524",
+          "canonical": {
+            "id": "salesforce-inc",
+            "name": "Salesforce, Inc"
+          },
+          "party_page": {
+            "id": "salesforce-inc",
+            "name": "Salesforce, Inc"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/salesforce-intercom"
+    },
+    {
       "merger_id": "MN-80005",
       "merger_name": "Kimberly-Clark Corporation - Kenvue Inc.",
       "status": "Under assessment",

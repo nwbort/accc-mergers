@@ -1,0 +1,217 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/salesforce-intercom",
+  "merger_name": "Salesforce - Intercom",
+  "status": "Under assessment",
+  "merger_id": "MN-40031",
+  "effective_notification_datetime": "2026-07-28T12:00:00Z",
+  "original_notification_datetime": "2026-07-28T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-09-08T12:00:00Z",
+  "page_modified_datetime": "2026-07-29T17:06:29+10:00",
+  "acquirers": [
+    {
+      "name": "Ireland Acquisition Sub Inc.",
+      "identifier_type": null,
+      "identifier": "",
+      "party_page": {
+        "id": "ireland-acquisition-sub-inc",
+        "name": "Ireland Acquisition Sub Inc."
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "Intercom, Inc.",
+      "identifier_type": null,
+      "identifier": "453543961",
+      "party_page": {
+        "id": "intercom-inc",
+        "name": "Intercom, Inc."
+      }
+    }
+  ],
+  "other_parties": [
+    {
+      "name": "Intercom R&D Unlimited Company",
+      "identifier_type": null,
+      "identifier": "538158",
+      "party_page": {
+        "id": "intercom-r-d-unlimited-company",
+        "name": "Intercom R&D Unlimited Company"
+      }
+    },
+    {
+      "name": "Salesforce Holdings LLC",
+      "identifier_type": null,
+      "identifier": "5673469",
+      "canonical": {
+        "id": "salesforce-inc",
+        "name": "Salesforce, Inc"
+      },
+      "party_page": {
+        "id": "salesforce-inc",
+        "name": "Salesforce, Inc"
+      }
+    },
+    {
+      "name": "Salesforce, Inc.",
+      "identifier_type": null,
+      "identifier": "0001108524",
+      "canonical": {
+        "id": "salesforce-inc",
+        "name": "Salesforce, Inc"
+      },
+      "party_page": {
+        "id": "salesforce-inc",
+        "name": "Salesforce, Inc"
+      }
+    }
+  ],
+  "anzsic_codes": [
+    {
+      "code": "7000",
+      "name": "Computer System Design and Related Services"
+    }
+  ],
+  "merger_description": "Salesforce, Inc. (**Salesforce**), through its wholly owned subsidiary, proposes to acquire 100% of the shares in Intercom, Inc. (**Intercom**).\n\nSalesforce is a global supplier of customer relationship management (**CRM**) software and other software-as-a-service solutions that enable companies to manage and improve their relationships with customers. Salesforce\u2019s core offerings are CRM solutions designed for the sales, service, marketing and commerce functions within a company. Salesforce also offers the following products:\n\n* **Agentforce Service** (formerly Service Cloud), a CRM solution for service functions which offers a set of tools, including case management, omnichannel support, workflow automation and analytics, for both external customer use cases and internal stakeholder use cases. Agentforce Service is designed to work with Salesforce\u2019s broader CRM environment.\n* **Agentforce Service Agent** and **Agentforce Help Agent**, AI agent solutions that have been built to support the Agentforce Service suite of offerings. These products are autonomous AI agents for conversational customer service that can understand and respond to customer inquiries without human intervention.\n* **Qualified\u2019s \u2018Piper\u2019**, an inbound AI-based sales development representative agent solution designed to engage and convert inbound buyers.\n\nIntercom (recently rebranded as Fin) is a global provider of customer service software. Its core products include:\n\n* **Intercom Helpdesk**, a customer service management solution used by human customer support agents. Its features including an omnichannel inbox, AI-enhanced ticketing, knowledge management, proactive customer engagement tools, and reporting and analytics.\n* **Fin**, an agentic AI product for customer service that typically works on top of Intercom\u2019s Helpdesk or another provider\u2019s helpdesk solution.",
+  "events": [
+    {
+      "date": "2026-07-29T12:00:00Z",
+      "title": "Questionnaire - Salesforce - Intercom",
+      "display_title": "Questionnaire - Salesforce - Intercom",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Salesforce%20-%20Intercom%20-%20Third-party%20questionnaire.docx",
+      "url_gh": "/mergers/MN-40031/Salesforce - Intercom - Third-party questionnaire.pdf",
+      "phase": null
+    },
+    {
+      "date": "2026-07-28T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "consultation_response_due_date": "2026-08-05T12:00:00Z",
+  "accc_determination": null,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "public_benefits_determination": null,
+  "public_benefits_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-85007",
+      "merger_name": "Salesforce \u2013 Qualified",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Salesforce, Inc",
+          "identifier_type": null,
+          "identifier": "",
+          "canonical": {
+            "id": "salesforce-inc",
+            "name": "Salesforce, Inc"
+          },
+          "party_page": {
+            "id": "salesforce-inc",
+            "name": "Salesforce, Inc"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Qualified.com, Inc",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "qualified-com-inc",
+            "name": "Qualified.com, Inc"
+          }
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-95025",
+      "merger_name": "Salesforce - Contentful",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "Salesforce, Inc.",
+          "identifier_type": null,
+          "identifier": "U.S. EIN: 943320693",
+          "canonical": {
+            "id": "salesforce-inc",
+            "name": "Salesforce, Inc"
+          },
+          "party_page": {
+            "id": "salesforce-inc",
+            "name": "Salesforce, Inc"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Contentful Global, Inc.",
+          "identifier_type": null,
+          "identifier": "U.S. EIN: 862273457",
+          "party_page": {
+            "id": "contentful-global-inc",
+            "name": "Contentful Global, Inc."
+          }
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-35003",
+      "merger_name": "Salesforce \u2013 Qualified",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "acquirers": [
+        {
+          "name": "Salesforce, Inc",
+          "identifier_type": null,
+          "identifier": "",
+          "canonical": {
+            "id": "salesforce-inc",
+            "name": "Salesforce, Inc"
+          },
+          "party_page": {
+            "id": "salesforce-inc",
+            "name": "Salesforce, Inc"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Qualified.com, Inc",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "qualified-com-inc",
+            "name": "Qualified.com, Inc"
+          }
+        }
+      ]
+    }
+  ],
+  "phase_1_estimate": {
+    "expected_business_days": 18,
+    "range_business_days": [
+      17,
+      22
+    ],
+    "basis": "industry",
+    "anzsic_level": "class",
+    "anzsic_codes": [
+      "7000"
+    ],
+    "sample_size": 17,
+    "estimated_at": "2026-07-29",
+    "method_version": 1
+  }
+}

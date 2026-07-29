@@ -134,6 +134,16 @@
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
       "date": "2026-08-05T12:00:00Z",
+      "merger_id": "MN-40031",
+      "merger_name": "Salesforce - Intercom",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-07-28T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-08-05T12:00:00Z",
       "merger_id": "MN-80005",
       "merger_name": "Kimberly-Clark Corporation - Kenvue Inc.",
       "status": "Under assessment",
@@ -514,6 +524,16 @@
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-09-08T12:00:00Z",
+      "merger_id": "MN-40031",
+      "merger_name": "Salesforce - Intercom",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-07-28T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-09-08T12:00:00Z",
       "merger_id": "MN-80005",
       "merger_name": "Kimberly-Clark Corporation - Kenvue Inc.",
       "status": "Under assessment",
@@ -542,6 +562,6 @@
       "tribunal_number": "ACT 1 of 2026"
     }
   ],
-  "count": 54,
+  "count": 56,
   "days_ahead": 60
 }
