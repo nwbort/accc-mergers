@@ -260,6 +260,39 @@ class TestDashboardRecentActivity:
         # A bare filing date is promoted so it sorts against ISO datetimes.
         assert card['appeal_date'] == '2026-07-15T12:00:00Z'
 
+    def test_appeal_date_stays_the_filing_date(self):
+        # Later documents keep the card "recent" (they drive the sort key) but
+        # must not shift the "Appeal filed" date shown on the card.
+        appeal = _appeal()
+        appeal['MN-0001']['documents'].append({
+            'date': '2026-07-28',
+            'filed_by': 'Australian Competition and Consumer Commission',
+            'description': 'Documentary Index',
+            'confidentiality': 'Non-confidential',
+            'url': 'https://www.competitiontribunal.gov.au/x/Documentary-Index.pdf',
+        })
+        mergers = [enrich_merger(_phase2_not_approved())]
+        link_tribunal_appeals(mergers, appeal)
+        card = [c for c in stats.generate(mergers)['recent_mergers'] if c.get('is_appeal')][0]
+        assert card['appeal_date'] == '2026-07-15T12:00:00Z'
+        assert card['effective_notification_datetime'] == '2026-07-28T12:00:00Z'
+
+    def test_appeal_date_falls_back_to_earliest_document(self):
+        # No recorded filing date → the first document stands in for it.
+        appeal = _appeal()
+        del appeal['MN-0001']['filed_date']
+        appeal['MN-0001']['documents'].append({
+            'date': '2026-07-28',
+            'filed_by': 'Australian Competition and Consumer Commission',
+            'description': 'Documentary Index',
+            'confidentiality': 'Non-confidential',
+            'url': 'https://www.competitiontribunal.gov.au/x/Documentary-Index.pdf',
+        })
+        mergers = [enrich_merger(_phase2_not_approved())]
+        link_tribunal_appeals(mergers, appeal)
+        card = [c for c in stats.generate(mergers)['recent_mergers'] if c.get('is_appeal')][0]
+        assert card['appeal_date'] == '2026-07-15T12:00:00Z'
+
     def test_no_appeal_means_no_appeal_card(self):
         mergers = [enrich_merger(_phase2_not_approved())]
         payload = stats.generate(mergers)
