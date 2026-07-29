@@ -1,10 +1,10 @@
 {
-  "total_mergers": 194,
+  "total_mergers": 195,
   "total_waivers": 292,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 151,
-    "Under assessment": 40,
+    "Under assessment": 41,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -90,6 +90,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-80005",
+      "merger_name": "Kimberly-Clark Corporation - Kenvue Inc.",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-28T12:00:00Z",
+      "page_modified_datetime": "2026-07-29T12:36:34+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-05027",
       "merger_name": "Protech - ActivateRail",
@@ -197,16 +207,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-07-21T12:00:00Z",
       "page_modified_datetime": "2026-07-22T11:26:33+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-35029",
-      "merger_name": "L'Or\u00e9al - Innovist",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-21T12:00:00Z",
-      "page_modified_datetime": "2026-07-22T11:14:11+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

@@ -33,7 +33,7 @@
       "code": "15",
       "name": "Pulp, Paper and Converted Paper Product Manufacturing",
       "level": "subdivision",
-      "merger_count": 2
+      "merger_count": 3
     },
     {
       "code": "16",
@@ -97,6 +97,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-80005",
+      "merger_name": "Kimberly-Clark Corporation - Kenvue Inc.",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-28T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-90027",
       "merger_name": "AbbVie - Apogee",
@@ -1374,11 +1385,11 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 116,
-  "phase_1_count": 53,
+  "count": 117,
+  "phase_1_count": 54,
   "phase_2_count": 2,
   "waiver_count": 61,
-  "active_count": 11,
+  "active_count": 12,
   "phase_duration": {
     "average_days": 29.4,
     "median_days": 26,

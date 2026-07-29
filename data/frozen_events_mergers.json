@@ -13,5 +13,12 @@
     "freeze_events": [
       "McCarroll's - Kinghorn Motors and Country Motors - Questionnaire"
     ]
+  },
+  "MN-80005": {
+    "_comment": "Event date(s) missing from ACCC page (Kimberly-Clark - Kenvue - Questionnaire (29 Jul 2026), Remedy offer - Kimberly-Clark - Kenvue - 28 July 2026 (28 Jul 2026)); freezing these specific events to preserve the automatically set date(s) while other events still update from the page.",
+    "freeze_events": [
+      "Kimberly-Clark - Kenvue - Questionnaire",
+      "Remedy offer - Kimberly-Clark - Kenvue - 28 July 2026"
+    ]
   }
 }
