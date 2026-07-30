@@ -33371,8 +33371,12 @@
           "name": "Accenture Venture Holdings, LLC",
           "identifier_type": null,
           "identifier": "Delaware registered number  10429510",
+          "canonical": {
+            "id": "accenture-venture-holdings-llc",
+            "name": "Accenture Venture Holdings, LLC"
+          },
           "party_page": {
-            "id": "accenture-venture-holdings-llc-2",
+            "id": "accenture-venture-holdings-llc",
             "name": "Accenture Venture Holdings, LLC"
           }
         }
@@ -33382,6 +33386,10 @@
           "name": "Dragos, Inc.",
           "identifier_type": null,
           "identifier": "Delaware file number  6028773",
+          "canonical": {
+            "id": "dragos-inc",
+            "name": "Dragos, Inc."
+          },
           "party_page": {
             "id": "dragos-inc",
             "name": "Dragos, Inc."
@@ -33409,9 +33417,13 @@
           "name": "DRAGOS AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
           "identifier": "62 638 810 616",
+          "canonical": {
+            "id": "dragos-inc",
+            "name": "Dragos, Inc."
+          },
           "party_page": {
-            "id": "dragos-australia-pty-ltd",
-            "name": "Dragos Australia Pty Ltd"
+            "id": "dragos-inc",
+            "name": "Dragos, Inc."
           }
         }
       ],
@@ -33554,6 +33566,10 @@
               "name": "Accenture Venture Holdings, LLC",
               "identifier_type": null,
               "identifier": "Delaware file number  10429510",
+              "canonical": {
+                "id": "accenture-venture-holdings-llc",
+                "name": "Accenture Venture Holdings, LLC"
+              },
               "party_page": {
                 "id": "accenture-venture-holdings-llc",
                 "name": "Accenture Venture Holdings, LLC"
@@ -37854,6 +37870,10 @@
           "name": "Accenture Venture Holdings, LLC",
           "identifier_type": null,
           "identifier": "Delaware file number  10429510",
+          "canonical": {
+            "id": "accenture-venture-holdings-llc",
+            "name": "Accenture Venture Holdings, LLC"
+          },
           "party_page": {
             "id": "accenture-venture-holdings-llc",
             "name": "Accenture Venture Holdings, LLC"
@@ -38010,8 +38030,12 @@
               "name": "Accenture Venture Holdings, LLC",
               "identifier_type": null,
               "identifier": "Delaware registered number  10429510",
+              "canonical": {
+                "id": "accenture-venture-holdings-llc",
+                "name": "Accenture Venture Holdings, LLC"
+              },
               "party_page": {
-                "id": "accenture-venture-holdings-llc-2",
+                "id": "accenture-venture-holdings-llc",
                 "name": "Accenture Venture Holdings, LLC"
               }
             }
@@ -38021,6 +38045,10 @@
               "name": "Dragos, Inc.",
               "identifier_type": null,
               "identifier": "Delaware file number  6028773",
+              "canonical": {
+                "id": "dragos-inc",
+                "name": "Dragos, Inc."
+              },
               "party_page": {
                 "id": "dragos-inc",
                 "name": "Dragos, Inc."
