@@ -1,6 +1,6 @@
 {
   "total_mergers": 199,
-  "total_waivers": 295,
+  "total_waivers": 297,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 152,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 281,
+    "Approved": 283,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,9 +42,9 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.779661016949152,
+    "average_days": 18.794612794612796,
     "median_days": 18,
-    "average_business_days": 12.559322033898304,
+    "average_business_days": 12.575757575757576,
     "median_business_days": 12
   },
   "top_industries": [
@@ -213,6 +213,26 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-60029",
+      "merger_name": "PT AP Investment \u2013 Vitrinite",
+      "determination": "Approved",
+      "determination_date": "2026-07-30T12:00:00Z",
+      "page_modified_datetime": "2026-07-30T17:33:01+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-80028",
+      "merger_name": "AngloGold Ashanti Australia \u2013 Matsa Lake Carey tenements",
+      "determination": "Approved",
+      "determination_date": "2026-07-30T12:00:00Z",
+      "page_modified_datetime": "2026-07-30T17:29:56+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-60028",
       "merger_name": "EQT Fund Management S.\u00e0 r.l. \u2013 Orikan Group",
       "determination": "Approved",
@@ -308,26 +328,6 @@
       "determination": "Approved",
       "determination_date": "2026-07-27T12:00:00Z",
       "page_modified_datetime": "2026-07-27T16:14:02+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-80021",
-      "merger_name": "INNIO Group \u2013 Enerflex",
-      "determination": "Approved",
-      "determination_date": "2026-07-27T12:00:00Z",
-      "page_modified_datetime": "2026-07-27T14:32:51+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-35018",
-      "merger_name": "Hewitt \u2013 Nolan Meats",
-      "determination": "Approved",
-      "determination_date": "2026-07-27T12:00:00Z",
-      "page_modified_datetime": "2026-07-27T13:36:25+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"

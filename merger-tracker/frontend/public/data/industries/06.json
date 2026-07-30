@@ -19,10 +19,21 @@
       "code": "060",
       "name": "Coal Mining",
       "level": "group",
-      "merger_count": 3
+      "merger_count": 4
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-60029",
+      "merger_name": "PT AP Investment \u2013 Vitrinite",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-10T12:00:00Z",
+      "determination_date": "2026-07-30T12:00:00Z"
+    },
     {
       "merger_id": "WA-85035",
       "merger_name": "Dhilmar \u2013 Anglo American steelmaking coal business",
@@ -57,10 +68,10 @@
       "determination_date": "2026-04-01T12:00:00Z"
     }
   ],
-  "count": 3,
+  "count": 4,
   "phase_1_count": 1,
   "phase_2_count": 0,
-  "waiver_count": 2,
+  "waiver_count": 3,
   "active_count": 0,
   "phase_duration": {
     "average_days": 22.0,
@@ -70,10 +81,10 @@
     "completed_count": 1
   },
   "waiver_duration": {
-    "average_days": 19.0,
-    "median_days": 19.0,
-    "average_business_days": 12.5,
-    "median_business_days": 12.5,
-    "completed_count": 2
+    "average_days": 19.333333333333332,
+    "median_days": 20,
+    "average_business_days": 13.0,
+    "median_business_days": 13,
+    "completed_count": 3
   }
 }

@@ -9,7 +9,7 @@
       "code": "06",
       "name": "Coal Mining",
       "level": "subdivision",
-      "merger_count": 3
+      "merger_count": 4
     },
     {
       "code": "07",
@@ -21,7 +21,7 @@
       "code": "08",
       "name": "Metal Ore Mining",
       "level": "subdivision",
-      "merger_count": 9
+      "merger_count": 10
     },
     {
       "code": "09",
@@ -33,7 +33,7 @@
       "code": "10",
       "name": "Exploration and Other Mining Support Services",
       "level": "subdivision",
-      "merger_count": 8
+      "merger_count": 9
     }
   ],
   "mergers": [
@@ -47,6 +47,28 @@
       "phase": "Phase 1",
       "notification_date": "2026-05-28T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-60029",
+      "merger_name": "PT AP Investment \u2013 Vitrinite",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-10T12:00:00Z",
+      "determination_date": "2026-07-30T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-80028",
+      "merger_name": "AngloGold Ashanti Australia \u2013 Matsa Lake Carey tenements",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-08T12:00:00Z",
+      "determination_date": "2026-07-30T12:00:00Z"
     },
     {
       "merger_id": "WA-70028",
@@ -280,10 +302,10 @@
       "determination_date": null
     }
   ],
-  "count": 22,
+  "count": 24,
   "phase_1_count": 9,
   "phase_2_count": 0,
-  "waiver_count": 13,
+  "waiver_count": 15,
   "active_count": 1,
   "phase_duration": {
     "average_days": 30.571428571428573,
@@ -293,10 +315,10 @@
     "completed_count": 7
   },
   "waiver_duration": {
-    "average_days": 17.846153846153847,
-    "median_days": 18,
-    "average_business_days": 11.76923076923077,
-    "median_business_days": 12,
-    "completed_count": 13
+    "average_days": 18.266666666666666,
+    "median_days": 20,
+    "average_business_days": 12.2,
+    "median_business_days": 13,
+    "completed_count": 15
   }
 }
