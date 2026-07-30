@@ -19,7 +19,7 @@
       "code": "321",
       "name": "Land Development and Site Preparation Services",
       "level": "group",
-      "merger_count": 10
+      "merger_count": 11
     },
     {
       "code": "322",
@@ -68,6 +68,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-10T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-35024",
+      "merger_name": "HB Land and Satterley \u2013 Elimbah Land Joint Venture",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-09T12:00:00Z",
+      "determination_date": "2026-07-30T12:00:00Z"
     },
     {
       "merger_id": "MN-80021",
@@ -301,10 +312,10 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 23,
+  "count": 24,
   "phase_1_count": 8,
   "phase_2_count": 0,
-  "waiver_count": 15,
+  "waiver_count": 16,
   "active_count": 2,
   "phase_duration": {
     "average_days": 25.0,
@@ -314,10 +325,10 @@
     "completed_count": 6
   },
   "waiver_duration": {
-    "average_days": 21.266666666666666,
-    "median_days": 21,
-    "average_business_days": 13.866666666666667,
-    "median_business_days": 13,
-    "completed_count": 15
+    "average_days": 21.25,
+    "median_days": 21.0,
+    "average_business_days": 13.9375,
+    "median_business_days": 13.5,
+    "completed_count": 16
   }
 }

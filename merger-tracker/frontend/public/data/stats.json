@@ -1,6 +1,6 @@
 {
   "total_mergers": 199,
-  "total_waivers": 297,
+  "total_waivers": 298,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 152,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 283,
+    "Approved": 284,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,10 +42,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.794612794612796,
-    "median_days": 18,
-    "average_business_days": 12.575757575757576,
-    "median_business_days": 12
+    "average_days": 18.802013422818792,
+    "median_days": 18.0,
+    "average_business_days": 12.583892617449665,
+    "median_business_days": 12.0
   },
   "top_industries": [
     {
@@ -213,6 +213,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-35024",
+      "merger_name": "HB Land and Satterley \u2013 Elimbah Land Joint Venture",
+      "determination": "Approved",
+      "determination_date": "2026-07-30T12:00:00Z",
+      "page_modified_datetime": "2026-07-30T17:34:40+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-60029",
       "merger_name": "PT AP Investment \u2013 Vitrinite",
       "determination": "Approved",
@@ -318,16 +328,6 @@
       "determination": "Approved",
       "determination_date": "2026-07-27T12:00:00Z",
       "page_modified_datetime": "2026-07-27T17:01:58+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-85036",
-      "merger_name": "SpaceX - Anysphere",
-      "determination": "Approved",
-      "determination_date": "2026-07-27T12:00:00Z",
-      "page_modified_datetime": "2026-07-27T16:14:02+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"

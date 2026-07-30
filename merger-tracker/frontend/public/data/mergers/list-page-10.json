@@ -1145,6 +1145,59 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/coles-paydock"
     },
     {
+      "merger_id": "WA-35024",
+      "merger_name": "HB Land and Satterley \u2013 Elimbah Land Joint Venture",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-09T12:00:00Z",
+      "determination_publication_date": "2026-07-30T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "ELIMBAH LAND PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "24 694 564 899",
+          "party_page": {
+            "id": "elimbah-land-pty-ltd",
+            "name": "Elimbah Land Pty Ltd"
+          }
+        },
+        {
+          "name": "SATTERLEY ELIMBAH PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "45 693 905 136",
+          "party_page": {
+            "id": "satterley-elimbah-pty-ltd",
+            "name": "Satterley Elimbah Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Elimbah Land JV Pty Ltd",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "elimbah-land-jv-pty-ltd",
+            "name": "Elimbah Land JV Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3211",
+          "name": "Land Development and Subdivision"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/hb-land-and-satterley-%E2%80%93-elimbah-land-joint-venture"
+    },
+    {
       "merger_id": "MN-01105",
       "merger_name": "Siemens Mobility - MerMec",
       "status": "Under assessment",
