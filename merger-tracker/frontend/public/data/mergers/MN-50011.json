@@ -7,8 +7,8 @@
   "original_notification_datetime": "2026-07-01T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-08-12T12:00:00Z",
-  "page_modified_datetime": "2026-07-10T16:21:24+10:00",
-  "consultation_response_due_date": "2026-07-10T12:00:00Z",
+  "page_modified_datetime": "2026-07-30T17:49:13+10:00",
+  "consultation_response_due_date": "2026-07-29T12:00:00Z",
   "acquirers": [
     {
       "name": "EXPERIENCE AUSTRALIA GROUP PTY LTD",
@@ -26,21 +26,21 @@
   ],
   "targets": [
     {
-      "name": "KELSIAN GROUP LIMITED",
-      "identifier_type": "ABN",
-      "identifier": "49 109 078 257",
-      "party_page": {
-        "id": "kelsian-group-limited",
-        "name": "Kelsian Group Limited"
-      }
-    },
-    {
       "name": "VYSCOT PTY. LIMITED",
       "identifier_type": "ABN",
       "identifier": "25 009 241 972",
       "party_page": {
         "id": "vyscot-pty-limited",
         "name": "Vyscot Pty. Limited"
+      }
+    },
+    {
+      "name": "KELSIAN GROUP LIMITED",
+      "identifier_type": "ABN",
+      "identifier": "49 109 078 257",
+      "party_page": {
+        "id": "kelsian-group-limited",
+        "name": "Kelsian Group Limited"
       }
     }
   ],
