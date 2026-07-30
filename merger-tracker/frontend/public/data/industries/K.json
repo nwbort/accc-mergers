@@ -9,13 +9,13 @@
       "code": "62",
       "name": "Finance",
       "level": "subdivision",
-      "merger_count": 72
+      "merger_count": 73
     },
     {
       "code": "63",
       "name": "Insurance and Superannuation Funds",
       "level": "subdivision",
-      "merger_count": 14
+      "merger_count": 15
     },
     {
       "code": "64",
@@ -79,6 +79,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-03-03T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-35032",
+      "merger_name": "AustralianSuper \u2013 Advanced Navigation",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-10T12:00:00Z",
+      "determination_date": "2026-07-30T12:00:00Z"
     },
     {
       "merger_id": "WA-60028",
@@ -1236,10 +1247,10 @@
       "determination_date": null
     }
   ],
-  "count": 110,
+  "count": 111,
   "phase_1_count": 24,
   "phase_2_count": 2,
-  "waiver_count": 84,
+  "waiver_count": 85,
   "active_count": 5,
   "phase_duration": {
     "average_days": 28.318181818181817,
@@ -1249,10 +1260,10 @@
     "completed_count": 22
   },
   "waiver_duration": {
-    "average_days": 18.797619047619047,
-    "median_days": 18.0,
-    "average_business_days": 12.452380952380953,
-    "median_business_days": 12.0,
-    "completed_count": 84
+    "average_days": 18.811764705882354,
+    "median_days": 18,
+    "average_business_days": 12.470588235294118,
+    "median_business_days": 12,
+    "completed_count": 85
   }
 }
