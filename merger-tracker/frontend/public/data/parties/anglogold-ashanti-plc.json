@@ -3,15 +3,18 @@
   "canonical_name": "AngloGold Ashanti plc",
   "members": [
     {
+      "name": "ANGLOGOLD ASHANTI AUSTRALIA LIMITED",
+      "identifier": "42 008 737 424",
+      "identifier_type": "ABN"
+    },
+    {
       "name": "AngloGold Ashanti plc",
       "identifier": "CRN  14654651",
       "identifier_type": null
     }
   ],
   "mergers": {
-    "acquirer": [],
-    "target": [],
-    "other": [
+    "acquirer": [
       {
         "merger_id": "WA-80028",
         "merger_name": "AngloGold Ashanti Australia \u2013 Matsa Lake Carey tenements",
@@ -23,7 +26,9 @@
         "notification_date": "2026-07-08T12:00:00Z",
         "determination_date": "2026-07-30T12:00:00Z"
       }
-    ]
+    ],
+    "target": [],
+    "other": []
   },
   "merger_count": 1,
   "phase_1_count": 0,
