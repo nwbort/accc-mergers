@@ -143,17 +143,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-50009",
-      "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-05-28T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-01072",
       "merger_name": "Saipem S.p.A - Subsea7 S.A.",
       "is_waiver": false,
@@ -163,6 +152,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-04-27T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-50009",
+      "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": true,
+      "phase": "Phase 1",
+      "notification_date": "2026-05-28T12:00:00Z",
+      "determination_date": "2026-07-30T12:00:00Z"
     },
     {
       "merger_id": "WA-25039",
@@ -851,13 +851,13 @@
   "phase_1_count": 28,
   "phase_2_count": 2,
   "waiver_count": 41,
-  "active_count": 9,
+  "active_count": 8,
   "phase_duration": {
-    "average_days": 35.31818181818182,
-    "median_days": 27.5,
-    "average_business_days": 23.0,
-    "median_business_days": 18.0,
-    "completed_count": 22
+    "average_days": 36.52173913043478,
+    "median_days": 28,
+    "average_business_days": 23.869565217391305,
+    "median_business_days": 18,
+    "completed_count": 23
   },
   "waiver_duration": {
     "average_days": 18.414634146341463,

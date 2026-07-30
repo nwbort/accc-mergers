@@ -3129,14 +3129,14 @@
     {
       "merger_id": "MN-50009",
       "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": true,
       "is_waiver": false,
       "under_appeal": false,
       "is_refiled": false,
       "effective_notification_datetime": "2026-05-28T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-07-30T12:00:00Z",
       "end_of_determination_period": "2026-08-03T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -3152,21 +3152,21 @@
       ],
       "targets": [
         {
-          "name": "MACHINERY SALES PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "13 074 358 277",
-          "party_page": {
-            "id": "machinery-sales-pty-limited",
-            "name": "Machinery Sales Pty Limited"
-          }
-        },
-        {
           "name": "MACQUARIE GEOTECHNICAL PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "73 102 691 056",
           "party_page": {
             "id": "macquarie-geotechnical-pty-limited",
             "name": "Macquarie Geotechnical Pty Limited"
+          }
+        },
+        {
+          "name": "MAAS GROUP HOLDINGS LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "84 632 994 542",
+          "party_page": {
+            "id": "maas-group-holdings-limited",
+            "name": "Maas Group Holdings Limited"
           }
         },
         {
@@ -3179,12 +3179,12 @@
           }
         },
         {
-          "name": "MAAS GROUP HOLDINGS LIMITED",
+          "name": "MACHINERY SALES PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "84 632 994 542",
+          "identifier": "13 074 358 277",
           "party_page": {
-            "id": "maas-group-holdings-limited",
-            "name": "Maas Group Holdings Limited"
+            "id": "machinery-sales-pty-limited",
+            "name": "Machinery Sales Pty Limited"
           }
         }
       ],

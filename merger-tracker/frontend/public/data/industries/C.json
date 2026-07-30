@@ -197,17 +197,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-50009",
-      "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-05-28T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-05013",
       "merger_name": "Zoetis \u2013 Neogen Genomics Business",
       "is_waiver": false,
@@ -217,6 +206,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-05-12T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-50009",
+      "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": true,
+      "phase": "Phase 1",
+      "notification_date": "2026-05-28T12:00:00Z",
+      "determination_date": "2026-07-30T12:00:00Z"
     },
     {
       "merger_id": "WA-35032",
@@ -1400,13 +1400,13 @@
   "phase_1_count": 54,
   "phase_2_count": 2,
   "waiver_count": 62,
-  "active_count": 11,
+  "active_count": 10,
   "phase_duration": {
-    "average_days": 29.217391304347824,
-    "median_days": 26.0,
-    "average_business_days": 19.347826086956523,
-    "median_business_days": 17.0,
-    "completed_count": 46
+    "average_days": 29.93617021276596,
+    "median_days": 26,
+    "average_business_days": 19.851063829787233,
+    "median_business_days": 17,
+    "completed_count": 47
   },
   "waiver_duration": {
     "average_days": 17.56451612903226,

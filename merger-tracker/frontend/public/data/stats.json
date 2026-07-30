@@ -1,14 +1,14 @@
 {
   "total_mergers": 199,
   "total_waivers": 299,
-  "total_conditional_approvals": 1,
+  "total_conditional_approvals": 2,
   "by_status": {
-    "Assessment completed": 152,
-    "Under assessment": 44,
+    "Assessment completed": 153,
+    "Under assessment": 43,
     "Assessment ceased": 3
   },
   "by_determination": {
-    "Approved": 150,
+    "Approved": 151,
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
@@ -16,28 +16,28 @@
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 151,
+    "cleared": 152,
     "not_cleared": 1,
-    "total": 152,
+    "total": 153,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.550632911392405,
-    "median_days": 26.0,
-    "average_business_days": 19.556962025316455,
-    "median_business_days": 17.0,
+    "average_days": 29.761006289308177,
+    "median_days": 26,
+    "average_business_days": 19.70440251572327,
+    "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 39,
-        "percentage": 24.7
+        "percentage": 24.5
       },
       "day20": {
         "count": 123,
-        "percentage": 77.8
+        "percentage": 77.4
       },
       "day30": {
         "count": 150,
-        "percentage": 94.9
+        "percentage": 94.3
       }
     }
   },
@@ -213,6 +213,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-50009",
+      "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
+      "determination": "Approved",
+      "determination_date": "2026-07-30T12:00:00Z",
+      "page_modified_datetime": "2026-07-31T09:18:21+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-35032",
       "merger_name": "AustralianSuper \u2013 Advanced Navigation",
       "determination": "Approved",
@@ -318,16 +328,6 @@
       "determination": "Approved",
       "determination_date": "2026-07-27T12:00:00Z",
       "page_modified_datetime": "2026-07-27T17:06:21+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-95032",
-      "merger_name": "State Swim \u2013 Swim Plus",
-      "determination": "Approved",
-      "determination_date": "2026-07-27T12:00:00Z",
-      "page_modified_datetime": "2026-07-27T17:03:41+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
