@@ -1,10 +1,10 @@
 {
-  "total_mergers": 196,
+  "total_mergers": 197,
   "total_waivers": 294,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 152,
-    "Under assessment": 41,
+    "Under assessment": 42,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -90,6 +90,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-01115",
+      "merger_name": "MM Security \u2013 Micron Security Products",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-29T12:00:00Z",
+      "page_modified_datetime": "2026-07-30T10:11:56+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-40031",
       "merger_name": "Salesforce - Intercom",
@@ -199,16 +209,6 @@
       "page_modified_datetime": "2026-07-22T16:59:59+10:00",
       "is_waiver": false,
       "is_refiled": true
-    },
-    {
-      "merger_id": "MN-05036",
-      "merger_name": "Vertex \u2013 Crinetics",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-21T12:00:00Z",
-      "page_modified_datetime": "2026-07-29T21:21:06+10:00",
-      "is_waiver": false,
-      "is_refiled": false
     }
   ],
   "recent_determinations": [
