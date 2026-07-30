@@ -38,6 +38,16 @@
       "identifier_type": null
     },
     {
+      "name": "Accenture Venture Holdings, LLC",
+      "identifier": "Delaware file number  10429510",
+      "identifier_type": null
+    },
+    {
+      "name": "Accenture Venture Holdings, LLC",
+      "identifier": "Delaware registered number  10429510",
+      "identifier_type": null
+    },
+    {
       "name": "Accenture plc",
       "identifier": "CRN  471706",
       "identifier_type": null
@@ -50,6 +60,28 @@
   ],
   "mergers": {
     "acquirer": [
+      {
+        "merger_id": "MN-50032",
+        "merger_name": "Accenture - Dragos",
+        "is_waiver": false,
+        "status": "Under assessment",
+        "determination": null,
+        "has_conditions": false,
+        "phase": "Phase 1",
+        "notification_date": "2026-07-29T12:00:00Z",
+        "determination_date": null
+      },
+      {
+        "merger_id": "MN-60031",
+        "merger_name": "Accenture - runZero",
+        "is_waiver": false,
+        "status": "Under assessment",
+        "determination": null,
+        "has_conditions": false,
+        "phase": "Phase 1",
+        "notification_date": "2026-07-29T12:00:00Z",
+        "determination_date": null
+      },
       {
         "merger_id": "WA-20028",
         "merger_name": "Accenture \u2013 Whalar Agency",
@@ -85,30 +117,7 @@
       }
     ],
     "target": [],
-    "other": [
-      {
-        "merger_id": "MN-50032",
-        "merger_name": "Accenture - Dragos",
-        "is_waiver": false,
-        "status": "Under assessment",
-        "determination": null,
-        "has_conditions": false,
-        "phase": "Phase 1",
-        "notification_date": "2026-07-29T12:00:00Z",
-        "determination_date": null
-      },
-      {
-        "merger_id": "MN-60031",
-        "merger_name": "Accenture - runZero",
-        "is_waiver": false,
-        "status": "Under assessment",
-        "determination": null,
-        "has_conditions": false,
-        "phase": "Phase 1",
-        "notification_date": "2026-07-29T12:00:00Z",
-        "determination_date": null
-      }
-    ]
+    "other": []
   },
   "merger_count": 5,
   "phase_1_count": 3,
