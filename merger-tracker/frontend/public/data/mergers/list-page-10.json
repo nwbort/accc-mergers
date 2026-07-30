@@ -1305,6 +1305,68 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/origin-%E2%80%93-climatech-zero"
     },
     {
+      "merger_id": "WA-60028",
+      "merger_name": "EQT Fund Management S.\u00e0 r.l. \u2013 Orikan Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-10T12:00:00Z",
+      "determination_publication_date": "2026-07-30T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "ULEXITE GROUP PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "55 684 998 070",
+          "party_page": {
+            "id": "ulexite-group-pty-limited",
+            "name": "Ulexite Group Pty Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "IGNITION TOPCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "86 661 447 847",
+          "party_page": {
+            "id": "ignition-topco-pty-ltd",
+            "name": "Ignition Topco Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "EQT Fund Management S.\u00e0 r.l.",
+          "identifier_type": null,
+          "identifier": "Luxembourg Company Registration Number  B167972",
+          "canonical": {
+            "id": "eqt-fund-management-s-r-l",
+            "name": "EQT Fund Management S.\u00e0 r.l."
+          },
+          "party_page": {
+            "id": "eqt-fund-management-s-r-l",
+            "name": "EQT Fund Management S.\u00e0 r.l."
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/eqt-fund-management-s%C3%A0-rl-%E2%80%93-orikan-group"
+    },
+    {
       "merger_id": "MN-20017",
       "merger_name": "Amplifon \u2013 GN Hearing",
       "status": "Under assessment",

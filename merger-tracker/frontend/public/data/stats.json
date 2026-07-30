@@ -1,6 +1,6 @@
 {
   "total_mergers": 199,
-  "total_waivers": 294,
+  "total_waivers": 295,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 152,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 280,
+    "Approved": 281,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,19 +42,19 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.775510204081634,
-    "median_days": 18.0,
-    "average_business_days": 12.554421768707483,
-    "median_business_days": 12.0
+    "average_days": 18.779661016949152,
+    "median_days": 18,
+    "average_business_days": 12.559322033898304,
+    "median_business_days": 12
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 63
+      "count": 64
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 51
+      "count": 52
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -213,6 +213,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-60028",
+      "merger_name": "EQT Fund Management S.\u00e0 r.l. \u2013 Orikan Group",
+      "determination": "Approved",
+      "determination_date": "2026-07-30T12:00:00Z",
+      "page_modified_datetime": "2026-07-30T17:27:55+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-70028",
       "merger_name": "Kalari \u2013 De Gunst\u2019s Gracemere Assets",
       "determination": "Approved",
@@ -318,16 +328,6 @@
       "determination": "Approved",
       "determination_date": "2026-07-27T12:00:00Z",
       "page_modified_datetime": "2026-07-27T13:36:25+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-25019",
-      "merger_name": "Transocean - Valaris",
-      "determination": "Approved",
-      "determination_date": "2026-07-27T12:00:00Z",
-      "page_modified_datetime": "2026-07-27T09:59:26+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"

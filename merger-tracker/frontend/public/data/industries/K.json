@@ -9,7 +9,7 @@
       "code": "62",
       "name": "Finance",
       "level": "subdivision",
-      "merger_count": 71
+      "merger_count": 72
     },
     {
       "code": "63",
@@ -79,6 +79,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-03-03T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-60028",
+      "merger_name": "EQT Fund Management S.\u00e0 r.l. \u2013 Orikan Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-10T12:00:00Z",
+      "determination_date": "2026-07-30T12:00:00Z"
     },
     {
       "merger_id": "WA-90026",
@@ -1225,10 +1236,10 @@
       "determination_date": null
     }
   ],
-  "count": 109,
+  "count": 110,
   "phase_1_count": 24,
   "phase_2_count": 2,
-  "waiver_count": 83,
+  "waiver_count": 84,
   "active_count": 5,
   "phase_duration": {
     "average_days": 28.318181818181817,
@@ -1238,10 +1249,10 @@
     "completed_count": 22
   },
   "waiver_duration": {
-    "average_days": 18.783132530120483,
-    "median_days": 18,
-    "average_business_days": 12.433734939759036,
-    "median_business_days": 12,
-    "completed_count": 83
+    "average_days": 18.797619047619047,
+    "median_days": 18.0,
+    "average_business_days": 12.452380952380953,
+    "median_business_days": 12.0,
+    "completed_count": 84
   }
 }
