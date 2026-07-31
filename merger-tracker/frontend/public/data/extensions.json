@@ -1,15 +1,15 @@
 {
   "summary": {
     "notifications_total": 202,
-    "matters_extended": 14,
-    "share_extended_pct": 6.9,
-    "extension_events_total": 20,
-    "total_extension_bd": 222,
-    "median_matter_extension_bd": 18,
+    "matters_extended": 15,
+    "share_extended_pct": 7.4,
+    "extension_events_total": 21,
+    "total_extension_bd": 237,
+    "median_matter_extension_bd": 16.5,
     "longest_single_bd": 30,
     "phase_2_total": 8,
     "extended_escalated_to_phase_2": 7,
-    "escalation_rate_given_extension_pct": 50.0,
+    "escalation_rate_given_extension_pct": 46.7,
     "phase_2_preceded_by_extension_pct": 87.5,
     "base_phase_2_rate_pct": 4.0,
     "statutory_phase_1_bd": 30
@@ -27,8 +27,8 @@
     },
     {
       "category": "Remedy under consideration",
-      "events": 2,
-      "business_days": 30
+      "events": 3,
+      "business_days": 45
     }
   ],
   "by_month": [
@@ -54,7 +54,7 @@
     },
     {
       "month": "2026-07",
-      "count": 4
+      "count": 5
     }
   ],
   "matters": [
@@ -230,6 +230,27 @@
           "reason_category": "Requested by the merger parties",
           "reason_detail": "request by parties",
           "title": "Timeline extended by 18 business days \u2013 following request by parties"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-50011",
+      "merger_name": "Journey Beyond - SeaLink Rottnest",
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "notification_date": "2026-07-01T12:00:00Z",
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "escalated_to_phase_2": false,
+      "total_extension_bd": 15,
+      "extension_count": 1,
+      "extensions": [
+        {
+          "date": "2026-07-31T12:00:00Z",
+          "business_days": 15,
+          "reason_category": "Remedy under consideration",
+          "reason_detail": "remedy offered by parties",
+          "title": "Timeline extended by 15 business days \u2013 following remedy offered by parties"
         }
       ]
     },
