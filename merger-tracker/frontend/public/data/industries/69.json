@@ -31,7 +31,7 @@
       "code": "693",
       "name": "Legal and Accounting Services",
       "level": "group",
-      "merger_count": 5
+      "merger_count": 6
     },
     {
       "code": "694",
@@ -65,6 +65,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-10022",
+      "merger_name": "M Resources and Golden Energy and Resources \u2013 Tahmoor Coal Mine",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-30T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-50032",
       "merger_name": "Accenture - Dragos",
@@ -847,11 +858,11 @@
       "determination_date": null
     }
   ],
-  "count": 71,
-  "phase_1_count": 28,
+  "count": 72,
+  "phase_1_count": 29,
   "phase_2_count": 2,
   "waiver_count": 41,
-  "active_count": 8,
+  "active_count": 9,
   "phase_duration": {
     "average_days": 36.52173913043478,
     "median_days": 28,

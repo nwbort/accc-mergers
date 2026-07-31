@@ -3604,6 +3604,108 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/accenture-runzero"
+    },
+    {
+      "merger_id": "MN-10022",
+      "merger_name": "M Resources and Golden Energy and Resources \u2013 Tahmoor Coal Mine",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-30T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-10T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "M Resources Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "67 151 351 790",
+          "party_page": {
+            "id": "m-resources-pty-ltd",
+            "name": "M Resources Pty Ltd"
+          }
+        },
+        {
+          "name": "Golden M Tahmoor Coal Holdings Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "697 956 791",
+          "party_page": {
+            "id": "golden-m-tahmoor-coal-holdings-pty-ltd",
+            "name": "Golden M Tahmoor Coal Holdings Pty Ltd"
+          }
+        },
+        {
+          "name": "Golden Energy and Resources Pte Ltd",
+          "identifier_type": null,
+          "identifier": "UEN  199508589E",
+          "party_page": {
+            "id": "golden-energy-and-resources-pte-ltd",
+            "name": "Golden Energy and Resources Pte Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Bargo Collieries Pty Ltd (In Liquidation)",
+          "identifier_type": "ABN",
+          "identifier": "34 000 970 276",
+          "party_page": {
+            "id": "bargo-collieries-pty-ltd-in-liquidation",
+            "name": "Bargo Collieries Pty Ltd (In Liquidation)"
+          }
+        },
+        {
+          "name": "Tahmoor Coal Pty Ltd (In Liquidation)",
+          "identifier_type": "ABN",
+          "identifier": "97 076 663 968",
+          "party_page": {
+            "id": "tahmoor-coal-pty-ltd-in-liquidation",
+            "name": "Tahmoor Coal Pty Ltd (In Liquidation)"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Shaun Fraser",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "shaun-fraser",
+            "name": "Shaun Fraser"
+          }
+        },
+        {
+          "name": "Jonathan Henry",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "jonathan-henry",
+            "name": "Jonathan Henry"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0600",
+          "name": "Coal Mining"
+        },
+        {
+          "code": "2110",
+          "name": "Iron Smelting and Steel Manufacturing"
+        },
+        {
+          "code": "2611",
+          "name": "Fossil Fuel Electricity Generation"
+        },
+        {
+          "code": "6932",
+          "name": "Accounting Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/m-resources-and-golden-energy-and-resources-%E2%80%93-tahmoor-coal-mine"
     }
   ],
   "page": 10,

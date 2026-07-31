@@ -1,10 +1,10 @@
 {
-  "total_mergers": 199,
+  "total_mergers": 200,
   "total_waivers": 299,
   "total_conditional_approvals": 2,
   "by_status": {
     "Assessment completed": 153,
-    "Under assessment": 43,
+    "Under assessment": 44,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -90,6 +90,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-10022",
+      "merger_name": "M Resources and Golden Energy and Resources \u2013 Tahmoor Coal Mine",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-30T12:00:00Z",
+      "page_modified_datetime": "2026-07-31T10:20:15+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-60031",
       "merger_name": "Accenture - runZero",
@@ -197,16 +207,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-07-24T12:00:00Z",
       "page_modified_datetime": "2026-07-24T15:52:13+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-90024",
-      "merger_name": "Petalite \u2013 Envu",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-24T12:00:00Z",
-      "page_modified_datetime": "2026-07-24T15:11:32+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

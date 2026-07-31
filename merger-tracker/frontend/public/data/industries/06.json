@@ -19,10 +19,21 @@
       "code": "060",
       "name": "Coal Mining",
       "level": "group",
-      "merger_count": 4
+      "merger_count": 5
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-10022",
+      "merger_name": "M Resources and Golden Energy and Resources \u2013 Tahmoor Coal Mine",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-30T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "WA-60029",
       "merger_name": "PT AP Investment \u2013 Vitrinite",
@@ -68,11 +79,11 @@
       "determination_date": "2026-04-01T12:00:00Z"
     }
   ],
-  "count": 4,
-  "phase_1_count": 1,
+  "count": 5,
+  "phase_1_count": 2,
   "phase_2_count": 0,
   "waiver_count": 3,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": {
     "average_days": 22.0,
     "median_days": 22,

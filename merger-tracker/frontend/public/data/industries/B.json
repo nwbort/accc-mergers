@@ -9,7 +9,7 @@
       "code": "06",
       "name": "Coal Mining",
       "level": "subdivision",
-      "merger_count": 4
+      "merger_count": 5
     },
     {
       "code": "07",
@@ -37,6 +37,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-10022",
+      "merger_name": "M Resources and Golden Energy and Resources \u2013 Tahmoor Coal Mine",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-30T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-50009",
       "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
@@ -302,11 +313,11 @@
       "determination_date": null
     }
   ],
-  "count": 24,
-  "phase_1_count": 9,
+  "count": 25,
+  "phase_1_count": 10,
   "phase_2_count": 0,
   "waiver_count": 15,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": {
     "average_days": 34.625,
     "median_days": 31.0,

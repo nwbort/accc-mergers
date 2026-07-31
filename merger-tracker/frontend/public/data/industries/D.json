@@ -9,7 +9,7 @@
       "code": "26",
       "name": "Electricity Supply",
       "level": "subdivision",
-      "merger_count": 16
+      "merger_count": 17
     },
     {
       "code": "27",
@@ -31,6 +31,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-10022",
+      "merger_name": "M Resources and Golden Energy and Resources \u2013 Tahmoor Coal Mine",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-30T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-15028",
       "merger_name": "Total Drain Group - Pipe Management Australia",
@@ -296,11 +307,11 @@
       "determination_date": "2025-11-26T12:00:00Z"
     }
   ],
-  "count": 24,
-  "phase_1_count": 6,
+  "count": 25,
+  "phase_1_count": 7,
   "phase_2_count": 0,
   "waiver_count": 18,
-  "active_count": 2,
+  "active_count": 3,
   "phase_duration": {
     "average_days": 35.5,
     "median_days": 28.5,
