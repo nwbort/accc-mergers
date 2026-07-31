@@ -2410,6 +2410,25 @@
     "estimated_at": "2026-07-17",
     "method_version": 1
   },
+  "MN-70027": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      20
+    ],
+    "basis": "industry",
+    "anzsic_level": "class",
+    "anzsic_codes": [
+      "2439",
+      "2619",
+      "2630",
+      "3109",
+      "6240"
+    ],
+    "sample_size": 17,
+    "estimated_at": "2026-07-31",
+    "method_version": 1
+  },
   "MN-75002": {
     "expected_business_days": 15,
     "range_business_days": [

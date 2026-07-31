@@ -1,0 +1,35 @@
+{
+  "id": "5b-holdings-pty-ltd",
+  "canonical_name": "5B Holdings Pty. Ltd.",
+  "members": [
+    {
+      "name": "5B HOLDINGS PTY. LTD.",
+      "identifier": "97 606 402 699",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [],
+    "other": [
+      {
+        "merger_id": "MN-70027",
+        "merger_name": "Global Infrastructure Management and EQT led consortium - AES Corporation",
+        "is_waiver": false,
+        "status": "Under assessment",
+        "determination": null,
+        "has_conditions": false,
+        "phase": "Phase 1",
+        "notification_date": "2026-07-30T12:00:00Z",
+        "determination_date": null
+      }
+    ]
+  },
+  "merger_count": 1,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 1,
+  "phase_duration": null,
+  "waiver_duration": null
+}

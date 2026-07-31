@@ -7,7 +7,7 @@
   "original_notification_datetime": "2026-07-01T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-08-12T12:00:00Z",
-  "page_modified_datetime": "2026-07-30T17:49:13+10:00",
+  "page_modified_datetime": "2026-07-31T10:05:05+10:00",
   "consultation_response_due_date": "2026-07-29T12:00:00Z",
   "acquirers": [
     {
@@ -26,21 +26,21 @@
   ],
   "targets": [
     {
-      "name": "VYSCOT PTY. LIMITED",
-      "identifier_type": "ABN",
-      "identifier": "25 009 241 972",
-      "party_page": {
-        "id": "vyscot-pty-limited",
-        "name": "Vyscot Pty. Limited"
-      }
-    },
-    {
       "name": "KELSIAN GROUP LIMITED",
       "identifier_type": "ABN",
       "identifier": "49 109 078 257",
       "party_page": {
         "id": "kelsian-group-limited",
         "name": "Kelsian Group Limited"
+      }
+    },
+    {
+      "name": "VYSCOT PTY. LIMITED",
+      "identifier_type": "ABN",
+      "identifier": "25 009 241 972",
+      "party_page": {
+        "id": "vyscot-pty-limited",
+        "name": "Vyscot Pty. Limited"
       }
     }
   ],
@@ -70,6 +70,22 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-07-30T12:00:00Z",
+      "title": "Questionnaire - Journey Beyond - SeaLink Rottnest - 29 July 2026 - Remedy Offer",
+      "display_title": "Questionnaire - Journey Beyond - SeaLink Rottnest - 29 July 2026 - Remedy Offer",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Journey%20Beyond%20-%20SeaLink%20Rottnest%20-%2029%20July%202026%20-%20Remedy%20Offer.docx",
+      "url_gh": "/mergers/MN-50011/Questionnaire - Journey Beyond - SeaLink Rottnest - 29 July 2026 - Remedy Offer.pdf",
+      "phase": null
+    },
+    {
+      "date": "2026-07-30T12:00:00Z",
+      "title": "Remedy offer - 29 July 2026 - Journey Beyond (EAG) - SeaLink Rottnest",
+      "display_title": "Remedy offer - 29 July 2026 - Journey Beyond (EAG) - SeaLink Rottnest",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Remedy%20offer%20-%2029%20July%202026%20-%20Journey%20Beyond%20%28EAG%29%20-%20SeaLink%20Rottnest.pdf",
+      "url_gh": "/mergers/MN-50011/Remedy offer - 29 July 2026 - Journey Beyond (EAG) - SeaLink Rottnest.pdf",
+      "phase": null
     }
   ],
   "is_waiver": false,

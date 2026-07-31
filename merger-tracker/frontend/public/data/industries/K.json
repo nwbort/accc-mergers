@@ -9,7 +9,7 @@
       "code": "62",
       "name": "Finance",
       "level": "subdivision",
-      "merger_count": 73
+      "merger_count": 74
     },
     {
       "code": "63",
@@ -25,6 +25,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-70027",
+      "merger_name": "Global Infrastructure Management and EQT led consortium - AES Corporation",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-30T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-90024",
       "merger_name": "Petalite \u2013 Envu",
@@ -1247,11 +1258,11 @@
       "determination_date": null
     }
   ],
-  "count": 111,
-  "phase_1_count": 24,
+  "count": 112,
+  "phase_1_count": 25,
   "phase_2_count": 2,
   "waiver_count": 85,
-  "active_count": 5,
+  "active_count": 6,
   "phase_duration": {
     "average_days": 28.318181818181817,
     "median_days": 23.5,

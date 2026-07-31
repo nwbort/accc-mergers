@@ -1,10 +1,10 @@
 {
-  "total_mergers": 200,
+  "total_mergers": 201,
   "total_waivers": 299,
   "total_conditional_approvals": 2,
   "by_status": {
     "Assessment completed": 153,
-    "Under assessment": 44,
+    "Under assessment": 45,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -50,7 +50,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 65
+      "count": 66
     },
     {
       "name": "Computer System Design and Related Services",
@@ -90,6 +90,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-70027",
+      "merger_name": "Global Infrastructure Management and EQT led consortium - AES Corporation",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-30T12:00:00Z",
+      "page_modified_datetime": "2026-07-31T10:33:02+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-10022",
       "merger_name": "M Resources and Golden Energy and Resources \u2013 Tahmoor Coal Mine",
@@ -197,16 +207,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-07-24T12:00:00Z",
       "page_modified_datetime": "2026-07-27T11:10:27+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-05030",
-      "merger_name": "Coles \u2013 supermarket site in Upper Swan, WA",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-24T12:00:00Z",
-      "page_modified_datetime": "2026-07-24T15:52:13+10:00",
       "is_waiver": false,
       "is_refiled": false
     }
