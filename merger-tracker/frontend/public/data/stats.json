@@ -1,10 +1,10 @@
 {
-  "total_mergers": 201,
+  "total_mergers": 202,
   "total_waivers": 299,
   "total_conditional_approvals": 2,
   "by_status": {
     "Assessment completed": 153,
-    "Under assessment": 45,
+    "Under assessment": 46,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -90,6 +90,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-01116",
+      "merger_name": "Silk Contract Logistics \u2013 Toll Transport bulk logistics (glass and plastic) assets",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-30T12:00:00Z",
+      "page_modified_datetime": "2026-07-31T16:45:12+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-70027",
       "merger_name": "Global Infrastructure Management and EQT led consortium - AES Corporation",
@@ -197,16 +207,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-07-27T12:00:00Z",
       "page_modified_datetime": "2026-07-27T17:10:42+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-55029",
-      "merger_name": "Estia Health \u2013 AnglicareSA residential aged care business",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-24T12:00:00Z",
-      "page_modified_datetime": "2026-07-27T11:10:27+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

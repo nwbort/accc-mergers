@@ -9,7 +9,7 @@
       "code": "46",
       "name": "Road Transport",
       "level": "subdivision",
-      "merger_count": 9
+      "merger_count": 10
     },
     {
       "code": "47",
@@ -45,7 +45,7 @@
       "code": "52",
       "name": "Transport Support Services",
       "level": "subdivision",
-      "merger_count": 11
+      "merger_count": 12
     },
     {
       "code": "53",
@@ -55,6 +55,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-01116",
+      "merger_name": "Silk Contract Logistics \u2013 Toll Transport bulk logistics (glass and plastic) assets",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-30T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-50011",
       "merger_name": "Journey Beyond - SeaLink Rottnest",
@@ -397,11 +408,11 @@
       "determination_date": "2026-02-05T12:00:00Z"
     }
   ],
-  "count": 31,
-  "phase_1_count": 14,
+  "count": 32,
+  "phase_1_count": 15,
   "phase_2_count": 0,
   "waiver_count": 17,
-  "active_count": 2,
+  "active_count": 3,
   "phase_duration": {
     "average_days": 32.083333333333336,
     "median_days": 29.0,

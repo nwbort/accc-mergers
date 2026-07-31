@@ -2051,7 +2051,7 @@
       26,
       33,
       36,
-      43
+      44
     ],
     "waivers": [
       0,
@@ -2252,9 +2252,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 43,
+      "count": 44,
       "outcome_mix": {
-        "Unknown": 43
+        "Unknown": 44
       },
       "median_phase_1_business_days": 36.5
     },
@@ -2468,21 +2468,21 @@
       "phase2_referral_rate": 0.0
     },
     {
+      "code": "I",
+      "name": "Transport, Postal and Warehousing",
+      "approved": 12,
+      "not_approved": 0,
+      "referred": 0,
+      "in_progress": 3,
+      "phase2_referral_rate": 0.0
+    },
+    {
       "code": "N",
       "name": "Administrative and Support Services",
       "approved": 2,
       "not_approved": 0,
       "referred": 0,
       "in_progress": 4,
-      "phase2_referral_rate": 0.0
-    },
-    {
-      "code": "I",
-      "name": "Transport, Postal and Warehousing",
-      "approved": 12,
-      "not_approved": 0,
-      "referred": 0,
-      "in_progress": 2,
       "phase2_referral_rate": 0.0
     },
     {
@@ -2527,7 +2527,7 @@
     },
     {
       "quarter": "2026-Q3",
-      "notifications": 43,
+      "notifications": 44,
       "referred": 0
     }
   ]
