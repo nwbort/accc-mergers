@@ -10,6 +10,11 @@ import { dataCache } from '../utils/dataCache';
 import { useFetchData } from '../hooks/useFetchData';
 import { industryPath } from '../utils/slug';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
+import { STATIC_PAGE_META } from '../utils/pageMeta';
+
+// Title and description live in the shared table so this page and the
+// build-time prerenderer emit the same <head>.
+const PAGE_META = STATIC_PAGE_META['/industries'];
 
 const SCROLL_THRESHOLD = 6; // Show scrollable container when industry has more than this many mergers
 
@@ -113,8 +118,8 @@ function Industries() {
   return (
     <>
       <SEO
-        title="Industries"
-        description="Explore Australian merger activity by industry sector. See which ANZSIC industries attract the most ACCC scrutiny and how deal outcomes compare across sectors."
+        title={PAGE_META.title}
+        description={PAGE_META.description}
         url="/industries"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">

@@ -9,7 +9,7 @@ import DetailStatGrid from '../components/DetailStatGrid';
 import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
 import { useDecodedParam } from '../hooks/useDecodedParam';
-import { partyPath } from '../utils/slug';
+import { partyMeta } from '../utils/pageMeta';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
 
 const ROLE_LABELS = {
@@ -56,10 +56,13 @@ function PartyDetail() {
 
   if (!data) return null;
 
-  const partyName = data.canonical_name || decodedId;
+  // Built by the same helper the build-time prerenderer uses, so the raw HTML
+  // crawlers read and the head React renders here cannot drift apart.
+  const meta = partyMeta(data, decodedId);
+  const partyName = meta.name;
+  const mergerCount = meta.mergerCount;
   const members = data.members || [];
   const mergersByRole = data.mergers || {};
-  const mergerCount = data.merger_count ?? 0;
 
   const statCards = [
     { label: 'Total reviews', value: mergerCount },
@@ -85,9 +88,10 @@ function PartyDetail() {
   return (
     <>
       <SEO
-        title={partyName}
-        description={`${partyName} has been involved in ${mergerCount} ACCC merger review${mergerCount !== 1 ? 's' : ''}${data.phase_2_count ? `, including ${data.phase_2_count} Phase 2 review${data.phase_2_count !== 1 ? 's' : ''}` : ''}.`}
-        url={partyPath(decodedId, partyName)}
+        title={meta.title}
+        description={meta.description}
+        url={meta.path}
+        structuredData={meta.structuredData}
       />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
         <Breadcrumb

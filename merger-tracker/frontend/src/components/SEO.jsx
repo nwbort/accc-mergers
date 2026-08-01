@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { serialiseJsonLd } from '../utils/pageMeta';
 
 /**
  * SEO component for managing meta tags, Open Graph, Twitter Cards, and structured data
@@ -73,10 +74,12 @@ export default function SEO({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
 
-      {/* Structured Data (JSON-LD) */}
+      {/* Structured Data (JSON-LD). Helmet writes script children as raw
+          innerHTML, so the payload is serialised with `<` escaped — see
+          serialiseJsonLd for why. */}
       {structuredData && (
         <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
+          {serialiseJsonLd(structuredData)}
         </script>
       )}
     </Helmet>

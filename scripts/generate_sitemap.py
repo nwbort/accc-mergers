@@ -5,12 +5,31 @@ Generate sitemap.xml for mergers.fyi.
 Lists every merger detail page plus the static SPA routes, for search
 engine crawlers.
 
-Sitemap policy: unlike the weekly digest and RSS feed — which exclude
-suspended assessments via :func:`merger_filters.filter_active` — this
-generator does NOT apply any filter. The detail page ``/mergers/<id>``
-is publicly served for every merger, including waivers *and* suspended
-mergers, and removing those URLs from the sitemap would hurt
-discoverability without affecting what the site actually renders.
+Sitemap policy — mergers: unlike the weekly digest and RSS feed — which
+exclude suspended assessments via :func:`merger_filters.filter_active` —
+this generator does NOT apply any filter to merger pages. The detail page
+``/mergers/<id>`` is publicly served for every merger, including waivers
+*and* suspended mergers, and removing those URLs from the sitemap would
+hurt discoverability without affecting what the site actually renders.
+
+Sitemap policy — parties and industries: these ARE filtered, because the
+pipeline generates a page for every party appearance and every ANZSIC node
+whether or not there is anything on it. Listing all of them spends crawl
+budget on ~1,800 single-merger shelf companies and ~290 empty ANZSIC nodes
+at the expense of the merger pages that matter. Included are:
+
+* every hand-declared canonical party group in ``related_parties.json``
+  (curated, so notable by definition, even at one merger); plus
+* every synthesised party with two or more mergers — repeat acquirers that
+  simply have not been grouped by hand yet, and the exact candidates
+  ``detect_related_parties.py`` surfaces for grouping; plus
+* every ANZSIC node with at least one merger somewhere in its subtree.
+
+Excluded pages are still built, prerendered with their own title/canonical
+by ``merger-tracker/frontend/prerender.js``, linked from merger detail
+pages and served normally — they are simply not advertised for crawling.
+They are deliberately NOT ``noindex``: each is a factually distinct record
+and can still answer a long-tail "was <company> acquired" query.
 
 Output: merger-tracker/frontend/public/sitemap.xml
 """
@@ -38,6 +57,7 @@ STATIC_PAGES = [
     {"path": "/timeline",    "changefreq": "daily",   "priority": "0.8"},
     {"path": "/industries",  "changefreq": "weekly",  "priority": "0.8"},
     {"path": "/parties",     "changefreq": "weekly",  "priority": "0.8"},
+    {"path": "/analysis",    "changefreq": "weekly",  "priority": "0.7"},
     {"path": "/phase-2",     "changefreq": "daily",   "priority": "0.7"},
     {"path": "/refiled-notifications", "changefreq": "daily", "priority": "0.6"},
     {"path": "/extensions",  "changefreq": "daily",   "priority": "0.6"},
@@ -53,6 +73,7 @@ STATIC_COMMENTS = {
     "/timeline":    "Timeline Page",
     "/industries":  "Industries Page",
     "/parties":     "Parties Page",
+    "/analysis":    "Analysis Page",
     "/phase-2":     "Phase 2 Tracker Page",
     "/refiled-notifications": "Refiled Notifications Page",
     "/extensions":  "Phase 1 Extensions Page",
@@ -103,6 +124,48 @@ def industry_lastmods(mergers):
     return latest
 
 
+def industry_codes_with_mergers(mergers):
+    """Return the set of ANZSIC codes with at least one merger in their subtree.
+
+    A merger counts towards every code it is tagged with *and* all of that
+    code's ancestors, so a division is included whenever anything beneath it
+    has activity. Deliberately independent of ``page_modified_datetime`` (which
+    :func:`industry_lastmods` keys on) so an industry with mergers but no
+    timestamps is still listed.
+    """
+    codes = set()
+    for merger in mergers:
+        for entry in merger.get("anzsic_codes", []) or []:
+            code = entry.get("code")
+            if not code:
+                continue
+            codes.add(code)
+            codes.update(ancestor.code for ancestor in anzsic.ancestors(code))
+    return codes
+
+
+def group_merger_count(group):
+    """Distinct mergers on a party page, counted across all three roles."""
+    return len({
+        merger_id
+        for role_mergers in group["mergers_by_role"].values()
+        for merger_id in role_mergers
+    })
+
+
+def sitemap_party_groups(party_groups, related_parties):
+    """Filter party pages down to the ones worth advertising for crawling.
+
+    Keeps hand-declared canonical groups plus any synthesised group with two
+    or more mergers — see the module docstring for the reasoning.
+    """
+    canonical_ids = {g.get("id") for g in related_parties if g.get("id")}
+    return [
+        g for g in party_groups
+        if g["id"] in canonical_ids or group_merger_count(g) >= 2
+    ]
+
+
 def party_lastmods(party_groups):
     """Return ``{party_id: latest_page_modified_datetime}`` across each group's mergers."""
     latest = {}
@@ -129,7 +192,8 @@ def url_entry(loc, lastmod, changefreq, priority):
     )
 
 
-def generate_sitemap(mergers, party_groups):
+def generate_sitemap(mergers, party_groups, related_parties):
+    listed_party_groups = sitemap_party_groups(party_groups, related_parties)
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
@@ -147,10 +211,12 @@ def generate_sitemap(mergers, party_groups):
         ))
         lines.append("")
 
-    lines.append("  <!-- Individual Industry Detail Pages (full ANZSIC tree) -->")
+    lines.append("  <!-- Industry Detail Pages (ANZSIC nodes with merger activity) -->")
     industry_latest = industry_lastmods(mergers)
-    # One URL per ANZSIC node, plus any tagged codes outside the tree.
-    all_codes = set(anzsic.hierarchy()) | set(industry_latest)
+    # Only nodes with mergers in their subtree; empty nodes are built and
+    # served, just not advertised. Tagged codes outside the known tree are
+    # included by the same rule.
+    all_codes = industry_codes_with_mergers(mergers)
     for code in sorted(all_codes):
         raw = industry_latest.get(code)
         # Append the readable slug derived from the ANZSIC name, matching what
@@ -166,9 +232,9 @@ def generate_sitemap(mergers, party_groups):
         ))
     lines.append("")
 
-    lines.append("  <!-- Individual Party Pages (canonical groups + single parties) -->")
+    lines.append("  <!-- Party Pages (canonical groups + repeat parties) -->")
     party_latest = party_lastmods(party_groups)
-    for group in sorted(party_groups, key=lambda g: g["id"]):
+    for group in sorted(listed_party_groups, key=lambda g: g["id"]):
         path = party_path(group["id"], group["canonical_name"])
         raw = party_latest.get(group["id"])
         lines.append(url_entry(
@@ -200,12 +266,14 @@ def main():
     mergers = load_mergers()
     related_parties = load_related_parties()
     party_groups = build_party_pages(mergers, related_parties)
-    sitemap = generate_sitemap(mergers, party_groups)
+    sitemap = generate_sitemap(mergers, party_groups, related_parties)
     SITEMAP_OUT.write_text(sitemap, encoding="utf-8")
-    industry_count = len(set(anzsic.hierarchy()) | set(industry_lastmods(mergers)))
+    industry_count = len(industry_codes_with_mergers(mergers))
+    listed_parties = len(sitemap_party_groups(party_groups, related_parties))
     print(
         f"Wrote sitemap with {len(STATIC_PAGES)} static pages, "
-        f"{industry_count} industry pages, {len(party_groups)} party pages "
+        f"{industry_count} industry pages, "
+        f"{listed_parties} of {len(party_groups)} party pages "
         f"and {len(mergers)} merger pages -> {SITEMAP_OUT}"
     )
 

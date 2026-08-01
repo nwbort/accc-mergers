@@ -20,6 +20,11 @@ import { useFetchData } from '../hooks/useFetchData';
 import { industryPath } from '../utils/slug';
 import { CHART_PALETTE as COLORS } from '../constants/chartColors';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
+import { STATIC_PAGE_META } from '../utils/pageMeta';
+
+// Title and description live in the shared table so this page and the
+// build-time prerenderer emit the same <head>.
+const PAGE_META = STATIC_PAGE_META['/analysis'];
 
 ChartJS.register(
   CategoryScale,
@@ -419,8 +424,8 @@ function Analysis() {
   return (
     <>
       <SEO
-        title="Analysis"
-        description="Data-driven analysis of ACCC merger reviews: Phase 1 and Phase 2 durations, waiver processing times, clearance rates, and year-on-year determination trends."
+        title={PAGE_META.title}
+        description={PAGE_META.description}
         url="/analysis"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">

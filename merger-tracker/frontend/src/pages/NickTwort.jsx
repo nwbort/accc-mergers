@@ -1,6 +1,11 @@
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 import SEO from '../components/SEO';
 import { CARD } from '../utils/classNames';
+import { STATIC_PAGE_META } from '../utils/pageMeta';
+
+// Title and description live in the shared table so this page and the
+// build-time prerenderer emit the same <head>.
+const PAGE_META = STATIC_PAGE_META['/nick-twort'];
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -44,8 +49,8 @@ export default function NickTwort() {
   return (
     <>
       <SEO
-        title="Nick Twort – Competition Economist | Australian Merger & Antitrust Expert"
-        description="Nick Twort is an Australian competition economist with eight years of experience advising on merger clearance, antitrust matters, and regulatory issues for the ACCC and New Zealand Commerce Commission. Expert in empirical analysis across airlines, digital platforms, supermarkets, telecoms and more."
+        title={PAGE_META.title}
+        description={PAGE_META.description}
         url="/nick-twort"
         type="profile"
         structuredData={structuredData}

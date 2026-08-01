@@ -15,16 +15,9 @@ import { useFetchData } from '../hooks/useFetchData';
 import { useDecodedParam } from '../hooks/useDecodedParam';
 import { useTracking } from '../context/TrackingContext';
 import { industryPath } from '../utils/slug';
+import { industryMeta } from '../utils/pageMeta';
 import { MERGER_STATUS, PHASES } from '../constants/mergerStatus';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
-
-// ANZSIC level → human label for the page subtitle and breadcrumb.
-const LEVEL_LABELS = {
-  division: 'Division',
-  subdivision: 'Subdivision',
-  group: 'Group',
-  class: 'Class',
-};
 
 function IndustryDetail() {
   const decodedCode = useDecodedParam('code');
@@ -95,14 +88,16 @@ function IndustryDetail() {
 
   if (!data) return null;
 
-  // Prefer the name baked into the detail file; fall back to the index, then code.
-  const industryName = data.name
-    || (industries ? industries.find((i) => i.code === decodedCode)?.name : null)
-    || decodedCode;
+  // Built by the same helper the build-time prerenderer uses, so the raw HTML
+  // crawlers read and the head React renders here cannot drift apart. The name
+  // prefers the detail file, then the index, then the bare code.
+  const indexName = industries ? industries.find((i) => i.code === decodedCode)?.name : null;
+  const meta = industryMeta(data, decodedCode, indexName);
+  const industryName = meta.name;
 
   const following = isIndustryTracked(decodedCode);
 
-  const levelLabel = data.level ? LEVEL_LABELS[data.level] : null;
+  const levelLabel = meta.levelLabel;
   const ancestors = data.ancestors || [];
   const children = data.children || [];
 
@@ -160,9 +155,10 @@ function IndustryDetail() {
   return (
     <>
       <SEO
-        title={industryName}
-        description={`${mergers.length} merger${mergers.length !== 1 ? 's' : ''} in the ${industryName} industry${levelLabel ? ` (ANZSIC ${levelLabel.toLowerCase()} ${decodedCode})` : ''} reviewed by the ACCC.`}
-        url={industryPath(decodedCode, industryName)}
+        title={meta.title}
+        description={meta.description}
+        url={meta.path}
+        structuredData={meta.structuredData}
       />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
         {/* Breadcrumb: Industries → division → … → current node */}

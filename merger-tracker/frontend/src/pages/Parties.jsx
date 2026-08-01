@@ -11,6 +11,11 @@ import { useFetchData } from '../hooks/useFetchData';
 import { useDebounce } from '../hooks/useDebounce';
 import { partyPath } from '../utils/slug';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
+import { STATIC_PAGE_META } from '../utils/pageMeta';
+
+// Title and description live in the shared table so this page and the
+// build-time prerenderer emit the same <head>.
+const PAGE_META = STATIC_PAGE_META['/parties'];
 
 // How many search results to render at once. The full index runs to well over a
 // thousand parties (mostly one-deal entities), so we never render the whole
@@ -55,8 +60,8 @@ function Parties() {
   return (
     <>
       <SEO
-        title="Parties"
-        description="Explore the companies and investors behind Australian merger activity. See which acquirers and targets appear most often in ACCC merger reviews, and search for any party."
+        title={PAGE_META.title}
+        description={PAGE_META.description}
         url="/parties"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">

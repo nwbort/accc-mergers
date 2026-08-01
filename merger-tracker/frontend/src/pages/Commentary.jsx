@@ -13,6 +13,11 @@ import { formatDate } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
 import { PROSE_MARKDOWN, CARD } from '../utils/classNames';
+import { STATIC_PAGE_META } from '../utils/pageMeta';
+
+// Title and description live in the shared table so this page and the
+// build-time prerenderer emit the same <head>.
+const PAGE_META = STATIC_PAGE_META['/commentary'];
 
 function Commentary() {
   const { data, loading, error } = useFetchData(API_ENDPOINTS.commentary, {
@@ -26,8 +31,8 @@ function Commentary() {
   return (
     <>
       <SEO
-        title="Commentary"
-        description="In-depth analysis of Australian merger cases — examining ACCC decisions, competitive concerns, economic reasoning, and M&A policy implications."
+        title={PAGE_META.title}
+        description={PAGE_META.description}
         url="/commentary"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">

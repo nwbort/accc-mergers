@@ -22,6 +22,11 @@ import { markItemsAsSeen } from '../utils/lastVisit';
 import { formatMedian } from '../utils/formatMedian';
 import { CHART_PALETTE, CHART_PALETTE_ORDER, DETERMINATION_COLORS } from '../constants/chartColors';
 import { MERGER_STATUS } from '../constants/mergerStatus';
+import { STATIC_PAGE_META } from '../utils/pageMeta';
+
+// Title and description live in the shared table so this page and the
+// build-time prerenderer emit the same <head>.
+const PAGE_META = STATIC_PAGE_META['/'];
 
 ChartJS.register(
   Title,
@@ -129,8 +134,8 @@ function Dashboard() {
   return (
     <>
       <SEO
-        title="Australian Merger Tracker | ACCC Merger Reviews & M&A Data"
-        description="Live stats on every ACCC merger review — recent clearances, upcoming deadlines, phase durations, and determination trends across Australian industries."
+        title={PAGE_META.title}
+        description={PAGE_META.description}
         url="/"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
