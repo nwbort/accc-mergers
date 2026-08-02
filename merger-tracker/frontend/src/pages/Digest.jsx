@@ -430,12 +430,12 @@ function Digest() {
     { id: 'mergers-approved', colorKey: DIGEST_COLOR_KEYS.CLEARED, count: digest.deals_cleared.length, label: 'Deals cleared' },
     { id: 'mergers-referred', colorKey: DIGEST_COLOR_KEYS.PHASE_2_REFERRAL, count: (digest.deals_referred_to_phase_2 || []).length, label: 'Referred to phase 2' },
     { id: 'mergers-declined', colorKey: DIGEST_COLOR_KEYS.DECLINED, count: digest.deals_declined.length, label: 'Deals declined' },
-    ...(ceasedMergers.length > 0 ? [{ id: 'mergers-ceased', colorKey: DIGEST_COLOR_KEYS.CEASED, count: ceasedMergers.length, label: 'Assessment ceased' }] : []),
-    ...(appealedMergers.length > 0 ? [{ id: 'mergers-appealed', colorKey: DIGEST_COLOR_KEYS.TRIBUNAL_APPEAL, count: appealedMergers.length, label: 'Appealed to tribunal' }] : []),
+    { id: 'mergers-ceased', colorKey: DIGEST_COLOR_KEYS.CEASED, count: ceasedMergers.length, label: 'Assessment ceased' },
+    { id: 'mergers-appealed', colorKey: DIGEST_COLOR_KEYS.TRIBUNAL_APPEAL, count: appealedMergers.length, label: 'Appealed to tribunal' },
     { id: 'ongoing-phase-1', colorKey: DIGEST_COLOR_KEYS.PHASE_1, count: digest.ongoing_phase_1.length, label: 'Ongoing phase 1' },
     { id: 'ongoing-phase-2', colorKey: DIGEST_COLOR_KEYS.PHASE_2, count: digest.ongoing_phase_2.length, label: 'Ongoing phase 2' },
-    ...(ongoingAppeals.length > 0 ? [{ id: 'ongoing-tribunal-appeals', colorKey: DIGEST_COLOR_KEYS.TRIBUNAL_APPEAL, count: ongoingAppeals.length, label: 'Ongoing ACT appeals' }] : []),
-  ];
+    { id: 'ongoing-tribunal-appeals', colorKey: DIGEST_COLOR_KEYS.TRIBUNAL_APPEAL, count: ongoingAppeals.length, label: 'Ongoing ACT appeals' },
+  ].filter(({ count }) => count > 0);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -458,23 +458,25 @@ function Digest() {
         <DigestSignup />
 
         {/* Summary Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
-          {summaryCards.map(({ id, colorKey, count, label }) => {
-            const c = COLOR_CLASSES[colorKey];
-            return (
-              <button
-                key={id}
-                onClick={() => scrollToSection(id)}
-                className={`bg-gradient-to-br ${c.cardFrom} ${c.cardTo} rounded-lg shadow-card border ${c.cardBorder} p-4 hover:shadow-card-hover hover:scale-105 transition-all cursor-pointer text-left group`}
-              >
-                <div className={`text-2xl font-bold ${c.text} ${c.groupHoverText} transition-colors`}>
-                  {count}
-                </div>
-                <div className={`text-sm ${c.labelText} font-medium`}>{label}</div>
-              </button>
-            );
-          })}
-        </div>
+        {summaryCards.length > 0 && (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
+            {summaryCards.map(({ id, colorKey, count, label }) => {
+              const c = COLOR_CLASSES[colorKey];
+              return (
+                <button
+                  key={id}
+                  onClick={() => scrollToSection(id)}
+                  className={`bg-gradient-to-br ${c.cardFrom} ${c.cardTo} rounded-lg shadow-card border ${c.cardBorder} p-4 hover:shadow-card-hover hover:scale-105 transition-all cursor-pointer text-left group`}
+                >
+                  <div className={`text-2xl font-bold ${c.text} ${c.groupHoverText} transition-colors`}>
+                    {count}
+                  </div>
+                  <div className={`text-sm ${c.labelText} font-medium`}>{label}</div>
+                </button>
+              );
+            })}
+          </div>
+        )}
 
         {/* Tables */}
         <div className="space-y-6">
