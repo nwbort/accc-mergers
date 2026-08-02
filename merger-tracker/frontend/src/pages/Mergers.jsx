@@ -19,6 +19,11 @@ import { useDebounce } from '../hooks/useDebounce';
 import { buildSearchIndex, searchMergers, clearSearchIndex } from '../utils/searchIndex';
 import { PHASES } from '../constants/mergerStatus';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
+import { STATIC_PAGE_META } from '../utils/pageMeta';
+
+// Title and description live in the shared table so this page and the
+// build-time prerenderer emit the same <head>.
+const PAGE_META = STATIC_PAGE_META['/mergers'];
 
 const SORT_FIELDS = [
   { value: 'notification', label: 'Notification date' },
@@ -358,8 +363,8 @@ function Mergers() {
   return (
     <>
       <SEO
-        title="All Mergers"
-        description="Search every Australian merger notified to the ACCC. Filter by status, industry, acquirer, or outcome — cleared, declined, Phase 2, or under review."
+        title={PAGE_META.title}
+        description={PAGE_META.description}
         url="/mergers"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">

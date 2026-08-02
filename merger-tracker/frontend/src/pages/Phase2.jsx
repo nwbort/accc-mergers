@@ -7,6 +7,11 @@ import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
 import { useTracking } from '../context/TrackingContext';
 import { CARD } from '../utils/classNames';
+import { STATIC_PAGE_META } from '../utils/pageMeta';
+
+// Title and description live in the shared table so this page and the
+// build-time prerenderer emit the same <head>.
+const PAGE_META = STATIC_PAGE_META['/phase-2'];
 
 function Phase2() {
   const { data, loading, error } = useFetchData(API_ENDPOINTS.phase2, { cacheKey: 'phase2' });
@@ -21,8 +26,8 @@ function Phase2() {
   return (
     <>
       <SEO
-        title="Phase 2 tracker"
-        description="Track Australian mergers under ACCC Phase 2 (detailed) assessment, with referral dates, notice-of-competition-concerns milestones and determination deadlines."
+        title={PAGE_META.title}
+        description={PAGE_META.description}
         url="/phase-2"
       />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">

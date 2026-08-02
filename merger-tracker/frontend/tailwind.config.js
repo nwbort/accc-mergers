@@ -3,6 +3,11 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+    // The build-time prerenderer emits Tailwind classes of its own for the
+    // static HTML crawlers and first paint see. Without this entry those
+    // classes are purged from the stylesheet and the prerendered pages render
+    // as unstyled text until React mounts.
+    "./prerender.js",
   ],
   theme: {
     extend: {

@@ -1,12 +1,17 @@
 import SEO from '../components/SEO';
 import { CARD } from '../utils/classNames';
+import { STATIC_PAGE_META } from '../utils/pageMeta';
+
+// Title and description live in the shared table so this page and the
+// build-time prerenderer emit the same <head>.
+const PAGE_META = STATIC_PAGE_META['/privacy'];
 
 export default function PrivacyPolicy() {
   return (
     <>
       <SEO
-        title="Privacy policy"
-        description="How mergers.fyi collects, uses, and protects your personal information."
+        title={PAGE_META.title}
+        description={PAGE_META.description}
         url="/privacy"
       />
 

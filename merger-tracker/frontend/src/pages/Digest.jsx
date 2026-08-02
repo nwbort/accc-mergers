@@ -17,6 +17,11 @@ import {
 } from '../constants/mergerStatus';
 import { SECTION_HEADING } from '../utils/classNames';
 import { APPEAL_TYPE_LABELS, DEFAULT_APPEAL_LABEL } from '../constants/appeal';
+import { STATIC_PAGE_META } from '../utils/pageMeta';
+
+// Title and description live in the shared table so this page and the
+// build-time prerenderer emit the same <head>.
+const PAGE_META = STATIC_PAGE_META['/digest'];
 
 // Zero-count chips are hidden, so the number of summary cards varies week to
 // week. Match the desktop column count to the number of cards so the row always
@@ -455,8 +460,8 @@ function Digest() {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="Catch me up - ACCC Merger Tracker"
-        description="Weekly roundup of Australian merger activity: new ACCC notifications, Phase 1 clearances, Phase 2 launches, and upcoming consultation deadlines — all in one digest."
+        title={PAGE_META.title}
+        description={PAGE_META.description}
         url="/digest"
       />
 

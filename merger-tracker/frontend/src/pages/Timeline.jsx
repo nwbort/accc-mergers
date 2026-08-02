@@ -13,6 +13,11 @@ import { useFetchData } from '../hooks/useFetchData';
 import { MERGER_STATUS } from '../constants/mergerStatus';
 import { OUTCOME_DOT_COLORS, DEFAULT_OUTCOME_DOT } from '../constants/outcomeDotColors';
 import { CARD } from '../utils/classNames';
+import { STATIC_PAGE_META } from '../utils/pageMeta';
+
+// Title and description live in the shared table so this page and the
+// build-time prerenderer emit the same <head>.
+const PAGE_META = STATIC_PAGE_META['/timeline'];
 
 const ITEMS_PER_PAGE = 15;
 const LOAD_MORE_COUNT = 10;
@@ -270,8 +275,8 @@ function Timeline() {
   return (
     <>
       <SEO
-        title="Timeline"
-        description="Chronological feed of every ACCC merger event — notifications, Phase 2 launches, public consultation windows, and final determinations in date order."
+        title={PAGE_META.title}
+        description={PAGE_META.description}
         url="/timeline"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">

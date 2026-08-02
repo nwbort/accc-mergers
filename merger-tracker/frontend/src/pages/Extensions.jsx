@@ -16,6 +16,11 @@ import { mergerPath } from '../utils/slug';
 import { formatDateMedium } from '../utils/dates';
 import { THEME_HEXES } from '../constants/chartColors';
 import { CARD } from '../utils/classNames';
+import { STATIC_PAGE_META } from '../utils/pageMeta';
+
+// Title and description live in the shared table so this page and the
+// build-time prerenderer emit the same <head>.
+const PAGE_META = STATIC_PAGE_META['/extensions'];
 
 // Reason categories map to a fixed colour so the clock bars, the legend and the
 // "why the clock was extended" breakdown all read as one palette.
@@ -182,8 +187,8 @@ function Extensions() {
   return (
     <>
       <SEO
-        title="Phase 1 extensions"
-        description="How often, how long and why the ACCC extends its 30-business-day Phase 1 merger clock — and how strongly an extension foreshadows a Phase 2 escalation."
+        title={PAGE_META.title}
+        description={PAGE_META.description}
         url="/extensions"
       />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">

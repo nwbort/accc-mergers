@@ -12,6 +12,11 @@ import { useFetchData } from '../hooks/useFetchData';
 import { mergerPath } from '../utils/slug';
 import { formatDateMedium, calculateDuration } from '../utils/dates';
 import { CARD } from '../utils/classNames';
+import { STATIC_PAGE_META } from '../utils/pageMeta';
+
+// Title and description live in the shared table so this page and the
+// build-time prerenderer emit the same <head>.
+const PAGE_META = STATIC_PAGE_META['/refiled-notifications'];
 
 // Position of `date` along the waiver-filed -> track-end axis, clamped to
 // [0, 100] so a milestone landing outside the span (bad data) still renders
@@ -197,8 +202,8 @@ function RefiledNotifications() {
   return (
     <>
       <SEO
-        title="Refiled notifications"
-        description="Mergers originally filed with the ACCC as a waiver application, declined, and then re-filed as a formal notification."
+        title={PAGE_META.title}
+        description={PAGE_META.description}
         url="/refiled-notifications"
       />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
