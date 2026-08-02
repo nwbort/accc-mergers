@@ -11,7 +11,13 @@ import {
   mergerMeta,
   partyMeta,
 } from '../pageMeta.js';
-import { renderPage, staticBody } from '../../../prerender.js';
+import {
+  industryBody,
+  mergerBody,
+  partyBody,
+  renderPage,
+  staticBody,
+} from '../../../prerender.js';
 
 // Vitest runs with the frontend project dir as cwd.
 const frontendRoot = process.cwd();
@@ -207,7 +213,7 @@ describe('renderPage stamping against the real index.html', () => {
   it('keeps the SPA bootable and fills #root with real content', () => {
     expect(html).toContain('src="/src/main.jsx"');
     expect(html).not.toContain('<div id="root"></div>');
-    expect(html).toContain('<h1>Timeline</h1>');
+    expect(html).toContain('>Timeline</h1>');
   });
 
   it('only emits article tags for article pages', () => {
@@ -249,5 +255,91 @@ describe('renderPage stamping against the real index.html', () => {
     // Still valid JSON, and the escape decodes back to the original text.
     const parsed = JSON.parse(ldBlocks[1].replace(/^<script[^>]*>|<\/script>$/g, ''));
     expect(parsed[0].description).toBe('</script><img src=x onerror=alert(1)>');
+  });
+});
+
+// The prerendered markup is what a user looks at until React mounts. Unclassed
+// markup renders as raw browser-default text for that whole window, which is
+// what these tests exist to stop regressing.
+describe('prerendered bodies are styled', () => {
+  const PARTY = {
+    canonical_name: 'Coles Group',
+    merger_count: 11,
+    phase_2_count: 1,
+    waiver_count: 4,
+    active_count: 2,
+    members: [
+      { name: 'COLES GROUP LIMITED', identifier: '11 004 089 936', identifier_type: 'ABN' },
+      { name: 'COLES SUPERMARKETS AUSTRALIA PTY LTD' },
+      { name: 'Coles Group Limited' },
+      { name: 'Retail Payment Solutions Pty Ltd' },
+    ],
+    mergers: {
+      acquirer: [{ merger_id: 'MN-1', merger_name: 'Coles - Paydock', status: 'Under assessment' }],
+      target: [],
+      other: [],
+    },
+  };
+
+  const INDUSTRY = {
+    name: 'Financial Asset Investing',
+    level: 'class',
+    count: 66,
+    phase_2_count: 0,
+    waiver_count: 54,
+    active_count: 3,
+    ancestors: [{ code: 'K', name: 'Financial and Insurance Services', level: 'division' }],
+    children: [],
+    mergers: [{ merger_id: 'MN-2', merger_name: 'Some deal', determination: 'Approved' }],
+  };
+
+  const bodies = {
+    merger: mergerBody(MERGER, mergerMeta(MERGER)),
+    party: partyBody(PARTY, partyMeta(PARTY, 'coles')),
+    industry: industryBody(INDUSTRY, '6240', industryMeta(INDUSTRY, '6240')),
+    static: staticBody({ ...STATIC_PAGE_META['/timeline'], path: '/timeline' }),
+  };
+
+  it.each(Object.entries(bodies))('%s body wraps content in the app shell', (_name, body) => {
+    // Same background, same fixed-header offset as App.jsx, so nothing jumps
+    // vertically when React replaces the markup.
+    expect(body).toContain('min-h-screen gradient-mesh');
+    expect(body).toContain('class="flex-grow pt-16"');
+    expect(body).toContain('max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8');
+  });
+
+  it.each(Object.entries(bodies))('%s body styles its heading', (_name, body) => {
+    expect(body).toContain('<h1 class="text-2xl font-bold text-gray-900 tracking-tight">');
+  });
+
+  it('keeps a zero-valued stat card rather than dropping it', () => {
+    // DetailStatGrid renders "0"; hiding the card here would leave the
+    // prerendered grid one card short and shift the page on hydration.
+    expect(bodies.industry).toContain('Phase 2 reviews');
+    expect(bodies.industry).toMatch(/Phase 2 reviews<\/p><p[^>]*>0</);
+  });
+
+  it('shows the same member preview count as PartyDetail', () => {
+    // PartyDetail previews 3 behind a "show more" toggle.
+    expect(bodies.party).toContain('COLES GROUP LIMITED');
+    expect(bodies.party).toContain('ABN: 11 004 089 936');
+    expect(bodies.party).not.toContain('Retail Payment Solutions Pty Ltd');
+    expect(bodies.party).toContain('Show 1 more');
+  });
+
+  it('links mergers by their canonical slugged path', () => {
+    expect(bodies.party).toContain('href="/mergers/MN-1/coles-paydock"');
+    expect(bodies.industry).toContain('href="/mergers/MN-2/some-deal"');
+  });
+});
+
+// Tailwind only emits classes it finds in the files listed under `content`.
+// Drop prerender.js from that list and every class above is purged from the
+// stylesheet — the build still succeeds and the pages silently render as
+// unstyled text.
+describe('tailwind config', () => {
+  it('scans prerender.js for classes', () => {
+    const config = readFixture('tailwind.config.js');
+    expect(config).toContain('./prerender.js');
   });
 });

@@ -70,16 +70,67 @@ function formatDate(value) {
   });
 }
 
-function list(items) {
-  return items.length ? `<ul>${items.map((i) => `<li>${i}</li>`).join('')}</ul>` : '';
+// ---------------------------------------------------------------------------
+// Styling
+//
+// The prerendered markup is what the user looks at between first paint and
+// React mounting — measured at roughly 400ms on a fast connection and about a
+// second when the bundles are slow. Unclassed markup spends that window as raw
+// browser-default text, which is a visibly broken-looking page, so these
+// helpers reuse the same Tailwind classes as the real components.
+//
+// The class strings are duplicated rather than imported because the components
+// build them inside JSX; the goal is only that the static page reads as a
+// plausible version of the real one, not that it matches pixel for pixel.
+//
+// IMPORTANT: Tailwind only emits classes it finds in the files listed under
+// `content` in tailwind.config.js. This file is listed there for that reason —
+// a class used only here is otherwise purged from the stylesheet and silently
+// does nothing.
+// ---------------------------------------------------------------------------
+
+const CARD = 'bg-white rounded-2xl border border-gray-100 shadow-card';
+const SECTION_HEADING = 'text-xs font-medium text-gray-500 uppercase tracking-wider';
+const PAGE_WRAP = 'max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8';
+const LINK = 'text-gray-900 hover:text-primary transition-colors';
+
+function list(items, itemClass = 'text-sm text-gray-700') {
+  if (!items.length) return '';
+  return `<ul class="space-y-1">${items
+    .map((i) => `<li class="${itemClass}">${i}</li>`)
+    .join('')}</ul>`;
 }
 
-function definitions(pairs) {
-  const kept = pairs.filter(([, v]) => v);
+// The 2x4 stat grid the party and industry pages render through DetailStatGrid.
+// A zero is a real value there — DetailStatGrid renders "0" rather than hiding
+// the card — so only null/undefined/empty count as absent. Dropping zeros here
+// would give the prerendered page fewer cards than the hydrated one and shove
+// everything below the grid upwards when React mounts.
+function statGrid(pairs) {
+  const kept = pairs
+    .filter(([, v]) => v != null && v !== '')
+    .map(([k, v]) => [k, String(v)]);
   if (!kept.length) return '';
-  return `<dl>${kept
-    .map(([k, v]) => `<dt>${escapeHtml(k)}</dt><dd>${escapeHtml(v)}</dd>`)
-    .join('')}</dl>`;
+  const cards = kept
+    .map(
+      ([label, value]) =>
+        `<div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-card">` +
+        `<p class="${SECTION_HEADING}">${escapeHtml(label)}</p>` +
+        `<p class="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight tabular-nums">${escapeHtml(value)}</p>` +
+        `</div>`,
+    )
+    .join('');
+  return `<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">${cards}</div>`;
+}
+
+function section(heading, inner) {
+  if (!inner) return '';
+  return (
+    `<div class="mb-8">` +
+    `<h2 class="${SECTION_HEADING} mb-3">${escapeHtml(heading)}</h2>` +
+    inner +
+    `</div>`
+  );
 }
 
 // Merger rows appear on both party and industry pages with the same shape.
@@ -87,23 +138,66 @@ function definitions(pairs) {
 // rather than the bare `/mergers/{id}` form, which the SPA only rewrites once
 // JavaScript runs and which has no prerendered file of its own.
 function mergerLinks(mergers) {
-  return list(
-    mergers.slice(0, MAX_BODY_LINKS).map((m) => {
-      const href = mergerPath(m.merger_id, m.merger_name);
-      const outcome = m.determination || m.status;
-      return (
-        `<a href="${escapeHtml(href)}">${escapeHtml(m.merger_name)}</a>` +
-        (outcome ? ` — ${escapeHtml(outcome)}` : '')
-      );
-    }),
+  const rows = mergers.slice(0, MAX_BODY_LINKS).map((m) => {
+    const href = mergerPath(m.merger_id, m.merger_name);
+    const outcome = m.determination || m.status;
+    return (
+      `<a href="${escapeHtml(href)}" class="text-base font-semibold ${LINK}">${escapeHtml(m.merger_name)}</a>` +
+      (outcome ? `<span class="block text-sm text-gray-500 mt-0.5">${escapeHtml(outcome)}</span>` : '')
+    );
+  });
+  if (!rows.length) return '';
+  return (
+    `<div class="${CARD} p-5"><ul class="space-y-3">` +
+    rows.map((r) => `<li>${r}</li>`).join('') +
+    `</ul></div>`
   );
 }
 
 function breadcrumbHtml(trail, current) {
-  const links = trail
-    .map((c) => `<a href="${escapeHtml(c.path)}">${escapeHtml(c.name)}</a>`)
-    .join(' / ');
-  return `<nav aria-label="Breadcrumb">${links} / ${escapeHtml(current)}</nav>`;
+  const crumbs = trail.map(
+    (c) =>
+      `<li><a href="${escapeHtml(c.path)}" class="hover:text-primary transition-colors">${escapeHtml(c.name)}</a></li>`,
+  );
+  crumbs.push(`<li aria-current="page"><span class="font-medium text-gray-700">${escapeHtml(current)}</span></li>`);
+  return (
+    `<nav aria-label="Breadcrumb" class="mb-5">` +
+    `<ol class="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-sm text-gray-500">${crumbs.join(
+      '<li aria-hidden="true" class="text-gray-300">/</li>',
+    )}</ol>` +
+    `</nav>`
+  );
+}
+
+// The page header card, matching the `card-accent` treatment the detail pages
+// use (a gradient hairline along the top edge).
+function headerCard(title, subtitle, extra = '') {
+  return (
+    `<div class="${CARD} p-6 mb-6 card-accent">` +
+    `<h1 class="text-2xl font-bold text-gray-900 tracking-tight">${escapeHtml(title)}</h1>` +
+    (subtitle ? `<p class="text-sm text-gray-500 mt-1">${escapeHtml(subtitle)}</p>` : '') +
+    extra +
+    `</div>`
+  );
+}
+
+// Mirrors App.jsx's shell: the gradient background, and a fixed bar matching
+// the navbar's height so content sits at the same offset before and after
+// React mounts. The bar carries the brand only — the real navbar's links are
+// interactive and stateful, and a static copy of them would go stale.
+function shell(inner) {
+  return (
+    `<div class="min-h-screen gradient-mesh flex flex-col">` +
+    `<div class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">` +
+    `<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">` +
+    `<div class="flex items-center h-16">` +
+    `<a href="/" class="text-lg font-bold tracking-tight text-gray-900">australian merger tracker</a>` +
+    `</div></div></div>` +
+    `<main id="main-content" class="flex-grow pt-16">` +
+    `<div class="${PAGE_WRAP}">${inner}</div>` +
+    `</main>` +
+    `</div>`
+  );
 }
 
 // Bodies rendered into #root so the raw HTML carries unique, crawlable content
@@ -111,25 +205,30 @@ function breadcrumbHtml(trail, current) {
 // so they never have to match the live DOM — only to be accurate and unique.
 
 export function mergerBody(merger, meta) {
-  const facts = [
+  const stats = [
     ['Status', merger.status],
-    ['ACCC determination', merger.accc_determination],
+    ['Determination', merger.accc_determination],
     ['Stage', merger.stage],
     ['Notified', formatDate(merger.effective_notification_datetime)],
-    ['Determination published', formatDate(merger.determination_publication_date)],
   ];
 
-  return `<main>
-${breadcrumbHtml([{ name: 'Home', path: '/' }, { name: 'Mergers', path: '/mergers' }], merger.merger_name)}
-<article>
-<h1>${escapeHtml(merger.merger_name)}</h1>
-<p>${escapeHtml(meta.description)}</p>
-${definitions(facts)}
-${meta.acquirers.length ? `<section><h2>Acquirers</h2>${list(meta.acquirers.map(escapeHtml))}</section>` : ''}
-${meta.targets.length ? `<section><h2>Targets</h2>${list(meta.targets.map(escapeHtml))}</section>` : ''}
-<p><a href="${escapeHtml(SITE_URL + meta.path)}">View full merger details on mergers.fyi</a></p>
-</article>
-</main>`;
+  const parties = (heading, values) =>
+    section(heading, values.length ? `<div class="${CARD} p-5">${list(values.map(escapeHtml))}</div>` : '');
+
+  return shell(
+    breadcrumbHtml(
+      [{ name: 'Home', path: '/' }, { name: 'Mergers', path: '/mergers' }],
+      merger.merger_name,
+    ) +
+      headerCard(
+        merger.merger_name,
+        merger.merger_id,
+        `<p class="text-sm text-gray-600 mt-3">${escapeHtml(meta.description)}</p>`,
+      ) +
+      statGrid(stats) +
+      parties('Acquirers', meta.acquirers) +
+      parties('Targets', meta.targets),
+  );
 }
 
 export function partyBody(party, meta) {
@@ -138,77 +237,100 @@ export function partyBody(party, meta) {
     ['target', 'As target'],
     ['other', 'As other party'],
   ]
-    .map(([role, heading]) => {
-      const mergers = party.mergers?.[role] || [];
-      if (!mergers.length) return '';
-      return `<section><h2>${heading}</h2>${mergerLinks(mergers)}</section>`;
-    })
+    .map(([role, heading]) => section(heading, mergerLinks(party.mergers?.[role] || [])))
     .join('');
 
-  const members = (party.members || []).map((m) => m?.name).filter(Boolean);
+  // PartyDetail shows the first MEMBERS_PREVIEW_COUNT members behind a "show
+  // more" toggle. Matching that count (and the ABN suffix) keeps the card the
+  // same height before and after React mounts, so hydration doesn't shove the
+  // rest of the page down.
+  const MEMBERS_PREVIEW_COUNT = 3;
+  const allMembers = (party.members || []).filter((m) => m?.name);
+  const memberRows = allMembers.slice(0, MEMBERS_PREVIEW_COUNT).map((m) => {
+    const id = m.identifier
+      ? `<span class="text-gray-500"> &middot; ${escapeHtml(
+          m.identifier_type ? `${m.identifier_type}: ` : '',
+        )}${escapeHtml(m.identifier)}</span>`
+      : '';
+    return `${escapeHtml(m.name)}${id}`;
+  });
+  const remaining = allMembers.length - MEMBERS_PREVIEW_COUNT;
+  const relatedEntities =
+    allMembers.length > 1
+      ? `<div class="mt-4 pt-4 border-t border-gray-100">` +
+        `<h2 class="${SECTION_HEADING} mb-2">Related parties</h2>` +
+        list(memberRows) +
+        (remaining > 0
+          ? `<p class="text-sm text-primary font-medium mt-2">Show ${remaining} more</p>`
+          : '') +
+        `</div>`
+      : '';
 
-  const facts = [
+  const stats = [
     ['Total reviews', party.merger_count],
-    ['Phase 1 reviews', party.phase_1_count],
     ['Phase 2 reviews', party.phase_2_count],
     ['Waivers', party.waiver_count],
     ['Under assessment', party.active_count],
-  ].map(([k, v]) => [k, v ? String(v) : '']);
+  ];
 
-  return `<main>
-${breadcrumbHtml([{ name: 'Home', path: '/' }, { name: 'Parties', path: '/parties' }], meta.name)}
-<article>
-<h1>${escapeHtml(meta.name)}</h1>
-<p>${escapeHtml(meta.description)}</p>
-${definitions(facts)}
-${members.length > 1 ? `<section><h2>Related entities</h2>${list(members.map(escapeHtml))}</section>` : ''}
-${roleSections}
-</article>
-</main>`;
+  return shell(
+    breadcrumbHtml([{ name: 'Home', path: '/' }, { name: 'Parties', path: '/parties' }], meta.name) +
+      headerCard(
+        meta.name,
+        `${meta.mergerCount} merger${meta.mergerCount !== 1 ? 's' : ''}`,
+        relatedEntities,
+      ) +
+      statGrid(stats) +
+      roleSections,
+  );
 }
 
 export function industryBody(industry, code, meta) {
-  const trail = [
-    { name: 'Home', path: '/' },
-    { name: 'Industries', path: '/industries' },
-  ];
-
   const children = (industry.children || [])
     .filter((c) => c?.code)
     .map((c) => {
       const href = industryPath(c.code, c.name);
-      return `<a href="${escapeHtml(href)}">${escapeHtml(c.name || c.code)}</a>`;
+      return `<a href="${escapeHtml(href)}" class="text-sm font-medium ${LINK}">${escapeHtml(c.name || c.code)}</a>`;
     });
 
-  const facts = [
-    ['ANZSIC code', code],
-    ['Level', meta.levelLabel],
+  const stats = [
     ['Total reviews', industry.count],
     ['Phase 2 reviews', industry.phase_2_count],
     ['Waivers', industry.waiver_count],
     ['Under assessment', industry.active_count],
-  ].map(([k, v]) => [k, v ? String(v) : '']);
+  ];
 
-  return `<main>
-${breadcrumbHtml(trail, meta.name)}
-<article>
-<h1>${escapeHtml(meta.name)}</h1>
-<p>${escapeHtml(meta.description)}</p>
-${definitions(facts)}
-${children.length ? `<section><h2>Sub-industries</h2>${list(children)}</section>` : ''}
-${meta.mergers.length ? `<section><h2>Mergers in this industry</h2>${mergerLinks(meta.mergers)}</section>` : ''}
-</article>
-</main>`;
+  const subtitle =
+    `ANZSIC ${meta.levelLabel ? `${meta.levelLabel.toLowerCase()} ` : 'code: '}${code}` +
+    ` · ${meta.mergers.length} merger${meta.mergers.length !== 1 ? 's' : ''}`;
+
+  // The ANZSIC ancestors are the crumb trail the real page renders.
+  const trail = [
+    { name: 'Home', path: '/' },
+    { name: 'Industries', path: '/industries' },
+    ...(industry.ancestors || []).map((a) => ({
+      name: a.name,
+      path: industryPath(a.code, a.name),
+    })),
+  ];
+
+  return shell(
+    breadcrumbHtml(trail, meta.name) +
+      headerCard(meta.name, subtitle) +
+      statGrid(stats) +
+      section('Sub-industries', children.length ? `<div class="${CARD} p-5">${list(children)}</div>` : '') +
+      section('Mergers in this industry', mergerLinks(meta.mergers)),
+  );
 }
 
 export function staticBody(meta) {
-  return `<main>
-<article>
-<h1>${escapeHtml(meta.title)}</h1>
-<p>${escapeHtml(meta.description)}</p>
-<p><a href="${escapeHtml(SITE_URL + meta.path)}">Open on mergers.fyi</a></p>
-</article>
-</main>`;
+  return shell(
+    headerCard(
+      meta.title,
+      '',
+      `<p class="text-sm text-gray-600 mt-3">${escapeHtml(meta.description)}</p>`,
+    ),
+  );
 }
 
 // Produce the page HTML by stamping page-specific values into the shared built
