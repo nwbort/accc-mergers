@@ -1,6 +1,6 @@
 {
   "total_mergers": 202,
-  "total_waivers": 301,
+  "total_waivers": 302,
   "total_conditional_approvals": 2,
   "by_status": {
     "Assessment completed": 153,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 287,
+    "Approved": 288,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,10 +42,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.837209302325583,
-    "median_days": 18,
-    "average_business_days": 12.614617940199336,
-    "median_business_days": 12
+    "average_days": 18.844370860927153,
+    "median_days": 18.0,
+    "average_business_days": 12.62251655629139,
+    "median_business_days": 12.0
   },
   "top_industries": [
     {
@@ -213,6 +213,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-20029",
+      "merger_name": "Impression Dental Group \u2013 Kingston Beach Dental, TAS",
+      "determination": "Approved",
+      "determination_date": "2026-08-03T12:00:00Z",
+      "page_modified_datetime": "2026-08-03T16:35:45+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-10023",
       "merger_name": "Infoblox \u2013 Kentik Technologies",
       "determination": "Approved",
@@ -321,16 +331,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-80025",
-      "merger_name": "Black Kite Partners led consortium - DR2",
-      "determination": "Approved",
-      "determination_date": "2026-07-28T12:00:00Z",
-      "page_modified_datetime": "2026-07-28T17:28:35+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }

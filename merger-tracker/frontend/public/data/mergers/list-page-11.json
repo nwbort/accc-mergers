@@ -1,6 +1,107 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-60031",
+      "merger_name": "Accenture - runZero",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-29T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-09T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Accenture Venture Holdings, LLC",
+          "identifier_type": null,
+          "identifier": "Delaware file number  10429510",
+          "canonical": {
+            "id": "accenture-plc",
+            "name": "Accenture"
+          },
+          "party_page": {
+            "id": "accenture-plc",
+            "name": "Accenture"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "runZero, Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware registered number  7045767",
+          "party_page": {
+            "id": "runzero-inc",
+            "name": "runZero, Inc."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "CYBERCX PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "90 629 363 328",
+          "party_page": {
+            "id": "cybercx-pty-ltd",
+            "name": "Cybercx Pty Ltd"
+          }
+        },
+        {
+          "name": "ACCENTURE AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "49 096 776 895",
+          "canonical": {
+            "id": "accenture-plc",
+            "name": "Accenture"
+          },
+          "party_page": {
+            "id": "accenture-plc",
+            "name": "Accenture"
+          }
+        },
+        {
+          "name": "Accenture Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware registered number  3387477",
+          "canonical": {
+            "id": "accenture-plc",
+            "name": "Accenture"
+          },
+          "party_page": {
+            "id": "accenture-plc",
+            "name": "Accenture"
+          }
+        },
+        {
+          "name": "Accenture plc",
+          "identifier_type": null,
+          "identifier": "Ireland registered number  471706",
+          "canonical": {
+            "id": "accenture-plc",
+            "name": "Accenture"
+          },
+          "party_page": {
+            "id": "accenture-plc",
+            "name": "Accenture"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6962",
+          "name": "Management Advice and Related Consulting Services"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/accenture-runzero"
+    },
+    {
       "merger_id": "MN-01116",
       "merger_name": "Silk Contract Logistics \u2013 Toll Transport bulk logistics (glass and plastic) assets",
       "status": "Under assessment",

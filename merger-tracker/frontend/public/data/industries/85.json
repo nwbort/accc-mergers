@@ -31,7 +31,7 @@
       "code": "853",
       "name": "Allied Health Services",
       "level": "group",
-      "merger_count": 14
+      "merger_count": 15
     },
     {
       "code": "859",
@@ -62,6 +62,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-03T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-20029",
+      "merger_name": "Impression Dental Group \u2013 Kingston Beach Dental, TAS",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-13T12:00:00Z",
+      "determination_date": "2026-08-03T12:00:00Z"
     },
     {
       "merger_id": "WA-80025",
@@ -295,10 +306,10 @@
       "determination_date": "2026-02-26T12:00:00Z"
     }
   ],
-  "count": 23,
+  "count": 24,
   "phase_1_count": 7,
   "phase_2_count": 0,
-  "waiver_count": 16,
+  "waiver_count": 17,
   "active_count": 2,
   "phase_duration": {
     "average_days": 26.6,
@@ -308,10 +319,10 @@
     "completed_count": 5
   },
   "waiver_duration": {
-    "average_days": 17.5,
-    "median_days": 15.5,
-    "average_business_days": 11.875,
-    "median_business_days": 11.0,
-    "completed_count": 16
+    "average_days": 17.705882352941178,
+    "median_days": 16,
+    "average_business_days": 12.058823529411764,
+    "median_business_days": 11,
+    "completed_count": 17
   }
 }
