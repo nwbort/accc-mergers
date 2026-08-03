@@ -37,7 +37,7 @@
       "code": "664",
       "name": "Non-Financial Intangible Assets (Except Copyrights) Leasing",
       "level": "group",
-      "merger_count": 2
+      "merger_count": 3
     }
   ],
   "mergers": [
@@ -62,6 +62,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-02-20T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-80030",
+      "merger_name": "IKEA Australia \u2013 IP rights from Inter IKEA under new franchise agreement package",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-15T12:00:00Z",
+      "determination_date": "2026-08-03T12:00:00Z"
     },
     {
       "merger_id": "WA-65027",
@@ -141,10 +152,10 @@
       "determination_date": "2026-03-19T12:00:00Z"
     }
   ],
-  "count": 9,
+  "count": 10,
   "phase_1_count": 4,
   "phase_2_count": 1,
-  "waiver_count": 4,
+  "waiver_count": 5,
   "active_count": 2,
   "phase_duration": {
     "average_days": 31.75,
@@ -154,10 +165,10 @@
     "completed_count": 4
   },
   "waiver_duration": {
-    "average_days": 24.75,
-    "median_days": 25.5,
-    "average_business_days": 17.0,
-    "median_business_days": 17.0,
-    "completed_count": 4
+    "average_days": 23.6,
+    "median_days": 22,
+    "average_business_days": 16.2,
+    "median_business_days": 15,
+    "completed_count": 5
   }
 }

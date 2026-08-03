@@ -27,6 +27,17 @@
   "children": [],
   "mergers": [
     {
+      "merger_id": "WA-80030",
+      "merger_name": "IKEA Australia \u2013 IP rights from Inter IKEA under new franchise agreement package",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-15T12:00:00Z",
+      "determination_date": "2026-08-03T12:00:00Z"
+    },
+    {
       "merger_id": "WA-55019",
       "merger_name": "Allegro - Fantastic Furniture",
       "is_waiver": true,
@@ -49,17 +60,17 @@
       "determination_date": "2026-05-15T12:00:00Z"
     }
   ],
-  "count": 2,
+  "count": 3,
   "phase_1_count": 0,
   "phase_2_count": 0,
-  "waiver_count": 2,
+  "waiver_count": 3,
   "active_count": 0,
   "phase_duration": null,
   "waiver_duration": {
-    "average_days": 14.0,
-    "median_days": 14.0,
-    "average_business_days": 10.0,
-    "median_business_days": 10.0,
-    "completed_count": 2
+    "average_days": 15.666666666666666,
+    "median_days": 17,
+    "average_business_days": 11.0,
+    "median_business_days": 13,
+    "completed_count": 3
   }
 }

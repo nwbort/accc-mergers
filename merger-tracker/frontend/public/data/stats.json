@@ -1,6 +1,6 @@
 {
   "total_mergers": 202,
-  "total_waivers": 302,
+  "total_waivers": 303,
   "total_conditional_approvals": 2,
   "by_status": {
     "Assessment completed": 153,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 288,
+    "Approved": 289,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,10 +42,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.844370860927153,
-    "median_days": 18.0,
-    "average_business_days": 12.62251655629139,
-    "median_business_days": 12.0
+    "average_days": 18.844884488448844,
+    "median_days": 18,
+    "average_business_days": 12.623762376237623,
+    "median_business_days": 12
   },
   "top_industries": [
     {
@@ -213,6 +213,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-80030",
+      "merger_name": "IKEA Australia \u2013 IP rights from Inter IKEA under new franchise agreement package",
+      "determination": "Approved",
+      "determination_date": "2026-08-03T12:00:00Z",
+      "page_modified_datetime": "2026-08-03T16:37:01+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-20029",
       "merger_name": "Impression Dental Group \u2013 Kingston Beach Dental, TAS",
       "determination": "Approved",
@@ -321,16 +331,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-05032",
-      "merger_name": "Motorola Solutions - D-Fend Solutions",
-      "determination": "Approved",
-      "determination_date": "2026-07-29T12:00:00Z",
-      "page_modified_datetime": "2026-07-29T14:44:27+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }
