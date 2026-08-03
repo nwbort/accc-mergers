@@ -9,13 +9,13 @@
       "code": "69",
       "name": "Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",
       "level": "subdivision",
-      "merger_count": 72
+      "merger_count": 73
     },
     {
       "code": "70",
       "name": "Computer System Design and Related Services",
       "level": "subdivision",
-      "merger_count": 52
+      "merger_count": 53
     }
   ],
   "mergers": [
@@ -139,6 +139,28 @@
       "phase": "Phase 2",
       "notification_date": "2026-04-27T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-10023",
+      "merger_name": "Infoblox \u2013 Kentik Technologies",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-06T12:00:00Z",
+      "determination_date": "2026-08-03T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-40032",
+      "merger_name": "Vets Central \u2013 Lava Street Veterinary Clinic and Doggy Kinder",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-15T12:00:00Z",
+      "determination_date": "2026-08-03T12:00:00Z"
     },
     {
       "merger_id": "MN-50009",
@@ -1252,10 +1274,10 @@
       "determination_date": null
     }
   ],
-  "count": 112,
+  "count": 114,
   "phase_1_count": 44,
   "phase_2_count": 2,
-  "waiver_count": 66,
+  "waiver_count": 68,
   "active_count": 11,
   "phase_duration": {
     "average_days": 33.583333333333336,
@@ -1265,10 +1287,10 @@
     "completed_count": 36
   },
   "waiver_duration": {
-    "average_days": 18.439393939393938,
-    "median_days": 18.5,
-    "average_business_days": 12.409090909090908,
+    "average_days": 18.58823529411765,
+    "median_days": 19.0,
+    "average_business_days": 12.529411764705882,
     "median_business_days": 13.0,
-    "completed_count": 66
+    "completed_count": 68
   }
 }

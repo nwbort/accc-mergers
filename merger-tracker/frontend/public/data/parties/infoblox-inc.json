@@ -1,17 +1,15 @@
 {
-  "id": "vista-equity-partners-management-llc",
-  "canonical_name": "Vista Equity Partners Management, LLC",
+  "id": "infoblox-inc",
+  "canonical_name": "Infoblox Inc.",
   "members": [
     {
-      "name": "Vista Equity Partners Management, LLC",
-      "identifier": "4326765",
+      "name": "Infoblox Inc.",
+      "identifier": "3662067",
       "identifier_type": null
     }
   ],
   "mergers": {
-    "acquirer": [],
-    "target": [],
-    "other": [
+    "acquirer": [
       {
         "merger_id": "WA-10023",
         "merger_name": "Infoblox \u2013 Kentik Technologies",
@@ -23,7 +21,9 @@
         "notification_date": "2026-07-06T12:00:00Z",
         "determination_date": "2026-08-03T12:00:00Z"
       }
-    ]
+    ],
+    "target": [],
+    "other": []
   },
   "merger_count": 1,
   "phase_1_count": 0,

@@ -1,6 +1,6 @@
 {
   "total_mergers": 202,
-  "total_waivers": 299,
+  "total_waivers": 301,
   "total_conditional_approvals": 2,
   "by_status": {
     "Assessment completed": 153,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 285,
+    "Approved": 287,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,9 +42,9 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.806020066889634,
+    "average_days": 18.837209302325583,
     "median_days": 18,
-    "average_business_days": 12.588628762541806,
+    "average_business_days": 12.614617940199336,
     "median_business_days": 12
   },
   "top_industries": [
@@ -54,7 +54,7 @@
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 52
+      "count": 53
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -62,7 +62,7 @@
     },
     {
       "name": "Software Publishing",
-      "count": 34
+      "count": 35
     },
     {
       "name": "Non-Residential Property Operators",
@@ -213,6 +213,26 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-10023",
+      "merger_name": "Infoblox \u2013 Kentik Technologies",
+      "determination": "Approved",
+      "determination_date": "2026-08-03T12:00:00Z",
+      "page_modified_datetime": "2026-08-03T16:31:44+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-40032",
+      "merger_name": "Vets Central \u2013 Lava Street Veterinary Clinic and Doggy Kinder",
+      "determination": "Approved",
+      "determination_date": "2026-08-03T12:00:00Z",
+      "page_modified_datetime": "2026-08-03T16:30:14+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-50009",
       "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
       "determination": "Approved",
@@ -308,26 +328,6 @@
       "determination": "Approved",
       "determination_date": "2026-07-28T12:00:00Z",
       "page_modified_datetime": "2026-07-28T17:28:35+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-05033",
-      "merger_name": "CVC Capital Partners \u2013 Chess.com",
-      "determination": "Approved",
-      "determination_date": "2026-07-27T12:00:00Z",
-      "page_modified_datetime": "2026-07-27T17:09:29+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-01112",
-      "merger_name": "State Swim \u2013 In2Swim",
-      "determination": "Approved",
-      "determination_date": "2026-07-27T12:00:00Z",
-      "page_modified_datetime": "2026-07-27T17:06:21+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

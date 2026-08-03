@@ -7712,6 +7712,7 @@
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-09-10T12:00:00Z",
       "page_modified_datetime": "2026-08-03T10:30:43+10:00",
+      "consultation_response_due_date": "2026-08-10T12:00:00Z",
       "acquirers": [
         {
           "name": "SILK CONTRACT LOGISTICS PTY LTD",
@@ -7767,7 +7768,6 @@
         }
       ],
       "is_waiver": false,
-      "consultation_response_due_date": "2026-08-10T12:00:00Z",
       "accc_determination": null,
       "has_conditions": false,
       "phase_1_determination": null,
@@ -64562,6 +64562,231 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/infoblox-%E2%80%93-kentik-technologies",
+      "merger_name": "Infoblox – Kentik Technologies",
+      "status": "Assessment completed",
+      "merger_id": "WA-10023",
+      "effective_notification_datetime": "2026-07-06T12:00:00Z",
+      "original_notification_datetime": "2026-07-06T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-08-03T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-08-03T16:31:44+10:00",
+      "acquirers": [
+        {
+          "name": "Infoblox Inc.",
+          "identifier_type": null,
+          "identifier": "3662067",
+          "party_page": {
+            "id": "infoblox-inc",
+            "name": "Infoblox Inc."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Kentik Technologies, Inc",
+          "identifier_type": null,
+          "identifier": "5468887",
+          "party_page": {
+            "id": "kentik-technologies-inc",
+            "name": "Kentik Technologies, Inc"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Warburg Pincus LLC",
+          "identifier_type": null,
+          "identifier": "2097098",
+          "canonical": {
+            "id": "warburg-pincus-llc",
+            "name": "Warburg Pincus LLC"
+          },
+          "party_page": {
+            "id": "warburg-pincus-llc",
+            "name": "Warburg Pincus LLC"
+          }
+        },
+        {
+          "name": "Vista Equity Partners Management, LLC",
+          "identifier_type": null,
+          "identifier": "4326765",
+          "party_page": {
+            "id": "vista-equity-partners-management-llc",
+            "name": "Vista Equity Partners Management, LLC"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5420",
+          "name": "Software Publishing"
+        },
+        {
+          "code": "5921",
+          "name": "Data Processing and Web Hosting Services"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "merger_description": "Infoblox Inc. (**Infoblox**), a company jointly owned by Warburg Pincus LLC (**Warburg Pincus**) and by funds managed and/or controlled by Vista Equity Partners Management, LLC (**Vista**), proposes to acquire 100% of the equity interests in Kentik Technologies, Inc. (**Kentik**).\n\nWarburg Pincus is a global private equity firm headquartered in New York City with more than USD 100 billion in assets under management.\n\nVista is a US-based private equity firm that focuses on financing enterprise software, data and technology-enabled businesses.\n\nInfoblox is a global provider of IT automation and security services. Infoblox offers core network management and security solutions for Domain Name System (**DNS**), Dynamic Host Configuration Protocol (**DHCP**), and Internet Protocol (**IP**) address management across on-premise, hybrid, and multi-cloud environments. It also offers asset discovery, DNS-layer threat protection, security analytics, threat intelligence, and related support, professional, education, and managed services delivered directly and through partners. It is headquartered in Santa Clara, California.\n\nKentik is a US-based network observability and intelligence software supplier, offering a cloud-based platform that collects, analyses, and contextualises network telemetry data across on-premise, hybrid, and cloud environments. Its network monitoring tools help network administrators to keep track of the health and performance of modern, complex networks. It is headquartered in San Francisco, California.",
+      "events": [
+        {
+          "date": "2026-08-03T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Infoblox%20%E2%80%93%20Kentik%20Technologies%20%28WA-10023%29%20-%20Notification%20waiver%20determination%20-%203%20August%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Infoblox Inc. (Infoblox) applied for a notification waiver in respect of its proposed acquisition of 100% of the equity interests in Kentik Technologies, Inc. (Kentik), as described in the transaction documents provided as part of the application (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has determined under section 51ABV(1)(a) of the Competition and Consumer Act 2010 (Cth) that the Acquisition is not required to be notified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "3 August 2026"
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, Infoblox, is jointly owned by Warburg Pincus LLC (Warburg Pincus) and by funds managed and/or controlled by Vista Equity Partners Management, LLC (Vista).\n\nInfoblox is a provider of IT automation and security services.\n\nInfoblox offers core network management and security solutions for Domain Name System (DNS), Dynamic Host Configuration Protocol (DHCP), and Internet Protocol (IP) address management across on-premise, hybrid, and multi-cloud environments. It also offers asset discovery, DNS-layer threat protection, security analytics, threat intelligence, and related support, professional, education, and managed services delivered directly and through partners. Infoblox is headquartered in Santa Clara, California.\n\nThe target, Kentik, is a US-based network observability and intelligence software supplier, offering a cloud-based platform that collects, analyses, and contextualises network telemetry data across on-premise, hybrid, and cloud environments. Its network monitoring tools help network administrators to keep track of the health and performance of modern, complex networks. Kentik is headquartered in San Francisco, California.\n\nVista also holds a controlling equity position in LogicMonitor, Inc. (LogicMonitor), a SaaS-based performance monitoring platform for hybrid IT infrastructures and cloud services, which supplies observability software."
+            },
+            {
+              "item": "Explanation for determination",
+              "details": "In making this notification waiver determination, the Australian Competition and Consumer Commission (the ACCC) has considered the information provided with the notification waiver application and had regard to the factors in section 51ABV(2)(b) of the Competition and Consumer Act 2010 (Cth) (the Act).\n\nBased on the information currently before it, the ACCC considers that the Acquisition is unlikely to give rise to any material lessening of competition. In particular:\n\na. there is no horizontal overlap between Infoblox and Kentik in the supply of observability solutions and network performance monitoring\n\nb. there is a low risk of foreclosure or other concerning vertical or conglomerate effects resulting from exclusionary conduct, bundling or tying of core network management and security solutions, and observability and network performance monitoring solutions, post-acquisition\n\nc. LogicMonitor and Kentik’s combined share in the supply of observability and network performance monitoring solutions in the Asia-Pacific region, and globally, is low and the increase in share of supply arising from the Acquisition would be small\n\nd. there are alternative global suppliers of both core network management and security solutions, and observability and network performance monitoring solutions, in Australia.\n\nIn these circumstances, the ACCC does not consider it necessary to reach a concluded view on the likelihood of the notification thresholds being met.\n\nGiven that material competition concerns are unlikely to arise, the ACCC has determined that the Acquisition is not required to be notified.\n\nThe ACCC considers that the determination is consistent with the object of the Act and the interests of consumers in promoting competition.\n\nFor more information about the ACCC’s approach to considering notification waiver applications and to assessing competition effects more generally, see the ACCC’s interim guidance on notification waivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-10023/Infoblox – Kentik Technologies (WA-10023) - Notification waiver determination - 3 August 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-07-06T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-10019",
+          "merger_name": "Warburg Pincus – JSB",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Ursa 4 Kabushiki Kaisha (Japan)",
+              "identifier_type": null,
+              "identifier": "010001265801",
+              "party_page": {
+                "id": "ursa-4-kabushiki-kaisha-japan",
+                "name": "Ursa 4 Kabushiki Kaisha (Japan)"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "J.S.B. Co., Ltd.",
+              "identifier_type": null,
+              "identifier": "130001017499",
+              "canonical": {
+                "id": "j-s-b-co",
+                "name": "J.S.B. Co"
+              },
+              "party_page": {
+                "id": "j-s-b-co",
+                "name": "J.S.B. Co"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-40010",
+          "merger_name": "Permira and Warburg Pincus - Clearwater Analytics",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "GT Silver BidCo, Inc.",
+              "identifier_type": null,
+              "identifier": "413417606",
+              "party_page": {
+                "id": "gt-silver-bidco-inc",
+                "name": "GT Silver BidCo, Inc."
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Clearwater Analytics Holdings, Inc.",
+              "identifier_type": null,
+              "identifier": "00140838",
+              "canonical": {
+                "id": "clearwater-analytics-llc",
+                "name": "Clearwater Analytics, LLC"
+              },
+              "party_page": {
+                "id": "clearwater-analytics-llc",
+                "name": "Clearwater Analytics, LLC"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-75006",
+          "merger_name": "Playlist – EGYM",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Saturn NewCo, Inc",
+              "identifier_type": null,
+              "identifier": "DE File number: 10449592",
+              "party_page": {
+                "id": "saturn-newco-inc",
+                "name": "Saturn NewCo, Inc"
+              }
+            },
+            {
+              "name": "ClassPass Aggregator, LLC",
+              "identifier_type": null,
+              "identifier": "DE File number: 6177870",
+              "party_page": {
+                "id": "classpass-aggregator-llc",
+                "name": "ClassPass Aggregator, LLC"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "EGYM SE",
+              "identifier_type": null,
+              "identifier": "HRB: 186394",
+              "party_page": {
+                "id": "egym-se",
+                "name": "Egym Se"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/coforge-encora",
       "merger_name": "Coforge - Encora",
       "status": "Assessment completed",
@@ -86933,6 +87158,238 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/vets-central-%E2%80%93-lava-street-veterinary-clinic-and-doggy-kinder",
+      "merger_name": "Vets Central – Lava Street Veterinary Clinic and Doggy Kinder",
+      "status": "Assessment completed",
+      "merger_id": "WA-40032",
+      "effective_notification_datetime": "2026-07-15T12:00:00Z",
+      "original_notification_datetime": "2026-07-15T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-08-03T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-08-03T16:30:14+10:00",
+      "acquirers": [
+        {
+          "name": "VC OPERATIONS (WA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "28 646 499 005",
+          "canonical": {
+            "id": "vets-central-holdings-pty-ltd",
+            "name": "Vets Central Holdings Pty Ltd"
+          },
+          "party_page": {
+            "id": "vets-central-holdings-pty-ltd",
+            "name": "Vets Central Holdings Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "DOGGY KINDER PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "60 665 736 265",
+          "party_page": {
+            "id": "doggy-kinder-pty-ltd",
+            "name": "Doggy Kinder Pty Ltd"
+          }
+        },
+        {
+          "name": "The Trustee for Longyester Unit Trust",
+          "identifier_type": "ABN",
+          "identifier": "18 762 651 022",
+          "party_page": {
+            "id": "the-trustee-for-longyester-unit-trust",
+            "name": "The Trustee for Longyester Unit Trust"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "6970",
+          "name": "Veterinary Services"
+        },
+        {
+          "code": "9539",
+          "name": "Other Personal Services n.e.c."
+        }
+      ],
+      "merger_description": "VC Operations (WA) Pty Ltd (together with its associated entities, **Vets Central**) propose to acquire 100% of the business assets (both tangible and intangible) of Lava Street Veterinary Clinic and Doggy Kinder from Longyester Pty Ltd as trustee for the Longyester Unit Trust and Doggy Kinder Pty Ltd (the **Proposed Acquisition**).\n\nVets Central is an Australian-owned veterinary group that owns and operates 84 first opinion veterinary practices across Australia and New Zealand. In Australia, Vets Central’s practices provide core and ancillary veterinary services, for household pets as well as livestock, and other exotic species. The services primarily include routine, planned, and emergency veterinary services (excluding after-hours services).\n\nLava Street Veterinary Clinic and Doggy Kinder is full-service veterinary practice which also provides a dog daycare facility in the Warrnambool area of Victoria. The business provides a range of first opinion core and ancillary veterinary services for household pets (extending to exotic pets) in the local area.",
+      "events": [
+        {
+          "date": "2026-08-03T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Vets%20Central%20%E2%80%93%20Lava%20Street%20Veterinary%20Clinic%20and%20Doggy%20Kinder%20%28WA-40032%29%20%E2%80%93%20Notification%20waiver%20determination%20%E2%80%93%203%20August%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "VC Operations (WA) Pty Ltd (together with its associated entities, Vets Central) applied for a notification waiver in respect of its proposed acquisition of 100% of the business assets of Lava Street Veterinary Clinic and Doggy Kinder from Longyester Pty Ltd as trustee for the Longyester Unit Trust and Doggy Kinder Pty Ltd, as described in the transaction documents provided as part of the application (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has determined under section 51ABV(1)(a) of the Competition and Consumer Act 2010 (Cth) that the Acquisition is not required to be notified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "3 August 2026"
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, Vets Central, is an Australian-owned veterinary group that owns and operates 84 first opinion veterinary practices across Australia and New Zealand. In Australia, Vets Central’s practices provide core and ancillary veterinary services, for household pets as well as livestock, and other exotic species. The services primarily include routine, planned, and emergency veterinary services (excluding after-hours services). Vets Central currently operates 9 veterinary clinics in Victoria.\n\nThe target, Lava Street Veterinary Clinic and Doggy Kinder, is a full-service veterinary practice which also provides a dog daycare facility in the Warrnambool area of Victoria. The business provides a range of first opinion core and ancillary veterinary services for household pets (extending to exotic pets) in the local area."
+            },
+            {
+              "item": "Explanation for determination",
+              "details": "In making this notification waiver determination, the Australian Competition and Consumer Commission (the ACCC) has considered the information provided with the notification waiver application and had regard to the factors in section 51ABV(2)(b) of the Competition and Consumer Act 2010 (Cth) (the Act).\n\nBased on the information provided in the application, the ACCC considers that the Acquisition is unlikely to give rise to any material lessening of competition. In particular:\n\na. there is no horizontal overlap between Vets Central and Lava Street Veterinary Clinic and Doggy Kinder in the supply of veterinary services in the Warrnambool area and a small horizontal overlap by number of clinics in Victoria; and\n\nb. there are alternative suppliers of veterinary services in the Warrnambool area and more broadly at the state (Victoria) and national level."
+            },
+            {
+              "item": "1.",
+              "details": "The ACCC has also had regard to the likelihood that, if the Acquisition were put into effect, the notification thresholds determined under section 51ABP(1) of the Act would apply.\n\nWhile the ACCC considers that the notification thresholds are likely to be met, given that material competition concerns are unlikely to arise, the ACCC has determined that the Acquisition is not required to be notified.\n\nThe ACCC considers that the determination is consistent with the object of the Act and the interests of consumers in promoting competition.\n\nFor more information about the ACCC’s approach to considering notification waiver applications and to assessing competition effects more generally, see the ACCC’s interim guidance on notification waivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-40032/Vets Central – Lava Street Veterinary Clinic and Doggy Kinder (WA-40032) – Notification waiver determination – 3 August 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-07-15T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-40017",
+          "merger_name": "Vets Central – Hills Veterinary Centre",
+          "status": "Under assessment",
+          "accc_determination": null,
+          "acquirers": [
+            {
+              "name": "VC OPERATIONS (WA) PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "28 646 499 005",
+              "canonical": {
+                "id": "vets-central-holdings-pty-ltd",
+                "name": "Vets Central Holdings Pty Ltd"
+              },
+              "party_page": {
+                "id": "vets-central-holdings-pty-ltd",
+                "name": "Vets Central Holdings Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "CARRUTHERS, JONATHAN JULIAN",
+              "identifier_type": "ABN",
+              "identifier": "22 148 400 175",
+              "party_page": {
+                "id": "carruthers-jonathan-julian",
+                "name": "Carruthers, Jonathan Julian"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-15022",
+          "merger_name": "Vets Central - Morley Veterinary Hospital",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "VC OPERATIONS (WA) PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "28 646 499 005",
+              "canonical": {
+                "id": "vets-central-holdings-pty-ltd",
+                "name": "Vets Central Holdings Pty Ltd"
+              },
+              "party_page": {
+                "id": "vets-central-holdings-pty-ltd",
+                "name": "Vets Central Holdings Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "The Trustee for THE MVH UNIT TRUST",
+              "identifier_type": "ABN",
+              "identifier": "44 887 760 871",
+              "party_page": {
+                "id": "the-trustee-for-the-mvh-unit-trust",
+                "name": "The Trustee for THE MVH UNIT TRUST"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-40004",
+          "merger_name": "Vets Central – Gawler Animal Hospital and Animalia Vet Clinic",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "VC OPERATIONS (WA) PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "28 646 499 005",
+              "canonical": {
+                "id": "vets-central-holdings-pty-ltd",
+                "name": "Vets Central Holdings Pty Ltd"
+              },
+              "party_page": {
+                "id": "vets-central-holdings-pty-ltd",
+                "name": "Vets Central Holdings Pty Ltd"
+              }
+            },
+            {
+              "name": "VETS CENTRAL HOLDINGS PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "60 652 812 256",
+              "canonical": {
+                "id": "vets-central-holdings-pty-ltd",
+                "name": "Vets Central Holdings Pty Ltd"
+              },
+              "party_page": {
+                "id": "vets-central-holdings-pty-ltd",
+                "name": "Vets Central Holdings Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Gawler Animal Hospital Pty Ltd",
+              "identifier_type": "ABN",
+              "identifier": "87 160 265 109",
+              "party_page": {
+                "id": "gawler-animal-hospital-pty-ltd",
+                "name": "Gawler Animal Hospital Pty Ltd"
+              }
+            },
+            {
+              "name": "GAH 2.0 PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "76 666 800 666",
+              "party_page": {
+                "id": "gah-2-0-pty-ltd",
+                "name": "Gah 2.0 Pty Ltd"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/paragon-care-%E2%80%93-presidental",
       "merger_name": "Paragon Care – Presidental",
       "status": "Assessment completed",
@@ -107546,7 +108003,7 @@
           "identifier_type": null,
           "identifier": "DE File number: 4326765",
           "party_page": {
-            "id": "vista-equity-partners-management-llc",
+            "id": "vista-equity-partners-management-llc-2",
             "name": "Vista Equity Partners Management, LLC"
           }
         }
@@ -137058,7 +137515,7 @@
   },
   "stats": {
     "total_mergers": 202,
-    "total_waivers": 299,
+    "total_waivers": 301,
     "total_conditional_approvals": 2,
     "by_status": {
       "Assessment completed": 153,
@@ -137070,7 +137527,7 @@
       "Referred to phase 2": 8
     },
     "by_waiver_determination": {
-      "Approved": 285,
+      "Approved": 287,
       "Not approved": 14
     },
     "clearance_rate": {
@@ -137100,9 +137557,9 @@
       }
     },
     "waiver_duration": {
-      "average_days": 18.806020066889634,
+      "average_days": 18.837209302325583,
       "median_days": 18,
-      "average_business_days": 12.588628762541806,
+      "average_business_days": 12.614617940199336,
       "median_business_days": 12
     },
     "top_industries": [
@@ -137112,7 +137569,7 @@
       },
       {
         "name": "Computer System Design and Related Services",
-        "count": 52
+        "count": 53
       },
       {
         "name": "Other Auxiliary Finance and Investment Services",
@@ -137120,7 +137577,7 @@
       },
       {
         "name": "Software Publishing",
-        "count": 34
+        "count": 35
       },
       {
         "name": "Non-Residential Property Operators",
@@ -137271,6 +137728,26 @@
     ],
     "recent_determinations": [
       {
+        "merger_id": "WA-10023",
+        "merger_name": "Infoblox – Kentik Technologies",
+        "determination": "Approved",
+        "determination_date": "2026-08-03T12:00:00Z",
+        "page_modified_datetime": "2026-08-03T16:31:44+10:00",
+        "determination_type": "final",
+        "is_waiver": true,
+        "stage": "Waiver application"
+      },
+      {
+        "merger_id": "WA-40032",
+        "merger_name": "Vets Central – Lava Street Veterinary Clinic and Doggy Kinder",
+        "determination": "Approved",
+        "determination_date": "2026-08-03T12:00:00Z",
+        "page_modified_datetime": "2026-08-03T16:30:14+10:00",
+        "determination_type": "final",
+        "is_waiver": true,
+        "stage": "Waiver application"
+      },
+      {
         "merger_id": "MN-50009",
         "merger_name": "Heidelberg Materials Australia – construction materials business of MAAS",
         "determination": "Approved",
@@ -137369,26 +137846,6 @@
         "determination_type": "final",
         "is_waiver": true,
         "stage": "Waiver application"
-      },
-      {
-        "merger_id": "WA-05033",
-        "merger_name": "CVC Capital Partners – Chess.com",
-        "determination": "Approved",
-        "determination_date": "2026-07-27T12:00:00Z",
-        "page_modified_datetime": "2026-07-27T17:09:29+10:00",
-        "determination_type": "final",
-        "is_waiver": true,
-        "stage": "Waiver application"
-      },
-      {
-        "merger_id": "WA-01112",
-        "merger_name": "State Swim – In2Swim",
-        "determination": "Approved",
-        "determination_date": "2026-07-27T12:00:00Z",
-        "page_modified_datetime": "2026-07-27T17:06:21+10:00",
-        "determination_type": "final",
-        "is_waiver": true,
-        "stage": "Waiver application"
       }
     ]
   },
@@ -137402,7 +137859,7 @@
       {
         "code": "7000",
         "name": "Computer System Design and Related Services",
-        "merger_count": 52
+        "merger_count": 53
       },
       {
         "code": "6419",
@@ -137412,7 +137869,7 @@
       {
         "code": "5420",
         "name": "Software Publishing",
-        "merger_count": 34
+        "merger_count": 35
       },
       {
         "code": "6712",
@@ -137450,6 +137907,11 @@
         "merger_count": 14
       },
       {
+        "code": "5921",
+        "name": "Data Processing and Web Hosting Services",
+        "merger_count": 14
+      },
+      {
         "code": "3109",
         "name": "Other Heavy and Civil Engineering Construction",
         "merger_count": 13
@@ -137457,11 +137919,6 @@
       {
         "code": "3911",
         "name": "Car Retailing",
-        "merger_count": 13
-      },
-      {
-        "code": "5921",
-        "name": "Data Processing and Web Hosting Services",
         "merger_count": 13
       },
       {
@@ -137475,13 +137932,13 @@
         "merger_count": 12
       },
       {
-        "code": "2619",
-        "name": "Other Electricity Generation",
-        "merger_count": 11
-      },
-      {
         "code": "6970",
         "name": "Veterinary Services",
+        "merger_count": 12
+      },
+      {
+        "code": "2619",
+        "name": "Other Electricity Generation",
         "merger_count": 11
       },
       {
@@ -137492,6 +137949,11 @@
       {
         "code": "8531",
         "name": "Dental Services",
+        "merger_count": 10
+      },
+      {
+        "code": "9539",
+        "name": "Other Personal Services n.e.c.",
         "merger_count": 10
       },
       {
@@ -137507,11 +137969,6 @@
       {
         "code": "8511",
         "name": "General Practice Medical Services",
-        "merger_count": 9
-      },
-      {
-        "code": "9539",
-        "name": "Other Personal Services n.e.c.",
         "merger_count": 9
       },
       {
@@ -138820,7 +139277,7 @@
         "merger_count": 1
       }
     ],
-    "total_mergers": 501,
+    "total_mergers": 503,
     "total_industries": 285
   }
 }

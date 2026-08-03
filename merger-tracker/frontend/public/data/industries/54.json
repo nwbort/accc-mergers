@@ -25,7 +25,7 @@
       "code": "542",
       "name": "Software Publishing",
       "level": "group",
-      "merger_count": 34
+      "merger_count": 35
     }
   ],
   "mergers": [
@@ -39,6 +39,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-09T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-10023",
+      "merger_name": "Infoblox \u2013 Kentik Technologies",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-06T12:00:00Z",
+      "determination_date": "2026-08-03T12:00:00Z"
     },
     {
       "merger_id": "MN-90020",
@@ -415,10 +426,10 @@
       "determination_date": "2025-12-18T12:00:00Z"
     }
   ],
-  "count": 35,
+  "count": 36,
   "phase_1_count": 13,
   "phase_2_count": 0,
-  "waiver_count": 22,
+  "waiver_count": 23,
   "active_count": 1,
   "phase_duration": {
     "average_days": 31.0,
@@ -428,10 +439,10 @@
     "completed_count": 12
   },
   "waiver_duration": {
-    "average_days": 18.40909090909091,
-    "median_days": 18.0,
-    "average_business_days": 12.318181818181818,
-    "median_business_days": 12.0,
-    "completed_count": 22
+    "average_days": 18.82608695652174,
+    "median_days": 18,
+    "average_business_days": 12.652173913043478,
+    "median_business_days": 12,
+    "completed_count": 23
   }
 }

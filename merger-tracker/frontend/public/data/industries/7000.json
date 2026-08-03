@@ -82,6 +82,17 @@
       "determination_date": null
     },
     {
+      "merger_id": "WA-10023",
+      "merger_name": "Infoblox \u2013 Kentik Technologies",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-06T12:00:00Z",
+      "determination_date": "2026-08-03T12:00:00Z"
+    },
+    {
       "merger_id": "WA-60028",
       "merger_name": "EQT Fund Management S.\u00e0 r.l. \u2013 Orikan Group",
       "is_waiver": true,
@@ -599,10 +610,10 @@
       "determination_date": "2026-01-20T12:00:00Z"
     }
   ],
-  "count": 52,
+  "count": 53,
   "phase_1_count": 22,
   "phase_2_count": 0,
-  "waiver_count": 30,
+  "waiver_count": 31,
   "active_count": 5,
   "phase_duration": {
     "average_days": 29.941176470588236,
@@ -612,10 +623,10 @@
     "completed_count": 17
   },
   "waiver_duration": {
-    "average_days": 18.5,
-    "median_days": 18.0,
-    "average_business_days": 12.9,
-    "median_business_days": 13.0,
-    "completed_count": 30
+    "average_days": 18.806451612903224,
+    "median_days": 19,
+    "average_business_days": 13.129032258064516,
+    "median_business_days": 13,
+    "completed_count": 31
   }
 }

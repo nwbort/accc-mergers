@@ -1,29 +1,29 @@
 {
-  "id": "vista-equity-partners-management-llc",
+  "id": "vista-equity-partners-management-llc-2",
   "canonical_name": "Vista Equity Partners Management, LLC",
   "members": [
     {
       "name": "Vista Equity Partners Management, LLC",
-      "identifier": "4326765",
+      "identifier": "DE File number: 4326765",
       "identifier_type": null
     }
   ],
   "mergers": {
-    "acquirer": [],
-    "target": [],
-    "other": [
+    "acquirer": [
       {
-        "merger_id": "WA-10023",
-        "merger_name": "Infoblox \u2013 Kentik Technologies",
+        "merger_id": "WA-75006",
+        "merger_name": "Playlist \u2013 EGYM",
         "is_waiver": true,
         "status": "Assessment completed",
         "determination": "Approved",
         "has_conditions": false,
         "phase": "Waiver",
-        "notification_date": "2026-07-06T12:00:00Z",
-        "determination_date": "2026-08-03T12:00:00Z"
+        "notification_date": "2026-02-05T12:00:00Z",
+        "determination_date": "2026-02-19T12:00:00Z"
       }
-    ]
+    ],
+    "target": [],
+    "other": []
   },
   "merger_count": 1,
   "phase_1_count": 0,
@@ -32,10 +32,10 @@
   "active_count": 0,
   "phase_duration": null,
   "waiver_duration": {
-    "average_days": 28.0,
-    "median_days": 28,
-    "average_business_days": 20.0,
-    "median_business_days": 20,
+    "average_days": 14.0,
+    "median_days": 14,
+    "average_business_days": 10.0,
+    "median_business_days": 10,
     "completed_count": 1
   }
 }

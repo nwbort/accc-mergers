@@ -9,7 +9,7 @@
       "code": "54",
       "name": "Publishing (except Internet and Music Publishing)",
       "level": "subdivision",
-      "merger_count": 35
+      "merger_count": 36
     },
     {
       "code": "55",
@@ -39,7 +39,7 @@
       "code": "59",
       "name": "Internet Service Providers, Web Search Portals and Data Processing Services",
       "level": "subdivision",
-      "merger_count": 15
+      "merger_count": 16
     },
     {
       "code": "60",
@@ -70,6 +70,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-09T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-10023",
+      "merger_name": "Infoblox \u2013 Kentik Technologies",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-06T12:00:00Z",
+      "determination_date": "2026-08-03T12:00:00Z"
     },
     {
       "merger_id": "WA-05033",
@@ -688,10 +699,10 @@
       "determination_date": "2025-12-18T12:00:00Z"
     }
   ],
-  "count": 58,
+  "count": 59,
   "phase_1_count": 25,
   "phase_2_count": 0,
-  "waiver_count": 33,
+  "waiver_count": 34,
   "active_count": 2,
   "phase_duration": {
     "average_days": 29.391304347826086,
@@ -701,10 +712,10 @@
     "completed_count": 23
   },
   "waiver_duration": {
-    "average_days": 19.151515151515152,
-    "median_days": 19,
-    "average_business_days": 12.93939393939394,
-    "median_business_days": 12,
-    "completed_count": 33
+    "average_days": 19.41176470588235,
+    "median_days": 19.0,
+    "average_business_days": 13.147058823529411,
+    "median_business_days": 12.5,
+    "completed_count": 34
   }
 }
