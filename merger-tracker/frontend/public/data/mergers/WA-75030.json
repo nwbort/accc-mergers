@@ -110,8 +110,8 @@
     {
       "merger_id": "MN-65028",
       "merger_name": "Coles - Paydock",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "acquirers": [
         {
           "name": "Retail Payment Solutions Pty Ltd",
@@ -129,9 +129,9 @@
       ],
       "targets": [
         {
-          "name": "Paydock AUNZ Pty Limited",
+          "name": "Paydock Holdings Pty Limited",
           "identifier_type": "ABN",
-          "identifier": "96 607 219 116",
+          "identifier": "31 607 215 163",
           "canonical": {
             "id": "paydock",
             "name": "Paydock"
@@ -142,9 +142,9 @@
           }
         },
         {
-          "name": "Paydock Ltd",
-          "identifier_type": null,
-          "identifier": "",
+          "name": "Paydock AUNZ Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "96 607 219 116",
           "canonical": {
             "id": "paydock",
             "name": "Paydock"

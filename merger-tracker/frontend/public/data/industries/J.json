@@ -64,12 +64,12 @@
       "merger_id": "MN-65028",
       "merger_name": "Coles - Paydock",
       "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
+      "status": "Assessment completed",
+      "determination": "Approved",
       "has_conditions": false,
       "phase": "Phase 1",
       "notification_date": "2026-07-09T12:00:00Z",
-      "determination_date": null
+      "determination_date": "2026-08-03T12:00:00Z"
     },
     {
       "merger_id": "WA-01114",
@@ -714,13 +714,13 @@
   "phase_1_count": 25,
   "phase_2_count": 0,
   "waiver_count": 35,
-  "active_count": 2,
+  "active_count": 1,
   "phase_duration": {
-    "average_days": 29.391304347826086,
-    "median_days": 27,
-    "average_business_days": 19.0,
-    "median_business_days": 17,
-    "completed_count": 23
+    "average_days": 29.208333333333332,
+    "median_days": 26.0,
+    "average_business_days": 18.916666666666668,
+    "median_business_days": 17.0,
+    "completed_count": 24
   },
   "waiver_duration": {
     "average_days": 19.6,

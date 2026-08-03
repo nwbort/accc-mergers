@@ -40856,13 +40856,16 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/coles-paydock",
       "merger_name": "Coles - Paydock",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-65028",
       "effective_notification_datetime": "2026-07-09T12:00:00Z",
       "original_notification_datetime": "2026-07-09T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-08-20T12:00:00Z",
-      "page_modified_datetime": "2026-07-16T09:43:11+10:00",
+      "determination_publication_date": "2026-08-03T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-08-03T16:25:57+10:00",
       "consultation_response_due_date": "2026-07-16T12:00:00Z",
       "acquirers": [
         {
@@ -40881,6 +40884,19 @@
       ],
       "targets": [
         {
+          "name": "Paydock Holdings Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "31 607 215 163",
+          "canonical": {
+            "id": "paydock",
+            "name": "Paydock"
+          },
+          "party_page": {
+            "id": "paydock",
+            "name": "Paydock"
+          }
+        },
+        {
           "name": "Paydock AUNZ Pty Limited",
           "identifier_type": "ABN",
           "identifier": "96 607 219 116",
@@ -40897,19 +40913,6 @@
           "name": "Paydock Ltd",
           "identifier_type": null,
           "identifier": "",
-          "canonical": {
-            "id": "paydock",
-            "name": "Paydock"
-          },
-          "party_page": {
-            "id": "paydock",
-            "name": "Paydock"
-          }
-        },
-        {
-          "name": "Paydock Holdings Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "31 607 215 163",
           "canonical": {
             "id": "paydock",
             "name": "Paydock"
@@ -40964,13 +40967,48 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-08-03T12:00:00Z",
+          "title": "Coles - Paydock - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Coles%20-%20Paydock%20-%20Phase%201%20determination.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Retail Payment Solutions Pty Ltd (RPS), which is owned by Coles\nGroup Limited (Coles), proposes to acquire the business assets of\nPaydock Ltd, Paydock Holdings Pty Limited and Paydock AUNZ Pty\nLimited (together, Paydock) (Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "Coles is an Australian public company (ASX: COL) that primarily\noperates supermarkets and retail liquor stores trading under the\nLiquorland banner.\nRPS provides payment acquiring services to Coles and a limited\nnumber of other Australian retailers through its own payment\ninfrastructure, which supports the routing, processing and\nsettlement of in-store and online card transactions.\nPaydock is a software group based in both Australia and the United\nKingdom. Paydock provides a payment orchestration platform to\nmerchants and financial institutions, which integrates multiple online\npayment methods and payment service providers."
+            },
+            {
+              "item": "Overlap and relationship\nbetween the Parties",
+              "details": "Paydock supplies payment orchestration services, which RPS uses\nin its supply of payment processing services."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and information from third partes.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 There are no material horizontal overlaps between RPS and\nPaydock.\n\u2022 The merged firm would be unlikely to have the ability and\nincentive to foreclose rivals\u2019 access to payment orchestration\nservices given the presence of multiple alternative suppliers of\nthose services.\n\u2022 The merged firm would be unlikely to have the ability and\nincentive to foreclose rivals\u2019 access to distribution of their\npayment orchestration services and/or payment processing\nservices given the presence of multiple alternative acquirers of\nthose services."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-65028/Coles - Paydock - Phase 1 determination.pdf",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
       "has_conditions": false,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-08-03T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -111964,8 +112002,8 @@
         {
           "merger_id": "MN-65028",
           "merger_name": "Coles - Paydock",
-          "status": "Under assessment",
-          "accc_determination": null,
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
           "acquirers": [
             {
               "name": "Retail Payment Solutions Pty Ltd",
@@ -111983,9 +112021,9 @@
           ],
           "targets": [
             {
-              "name": "Paydock AUNZ Pty Limited",
+              "name": "Paydock Holdings Pty Limited",
               "identifier_type": "ABN",
-              "identifier": "96 607 219 116",
+              "identifier": "31 607 215 163",
               "canonical": {
                 "id": "paydock",
                 "name": "Paydock"
@@ -111996,9 +112034,9 @@
               }
             },
             {
-              "name": "Paydock Ltd",
-              "identifier_type": null,
-              "identifier": "",
+              "name": "Paydock AUNZ Pty Limited",
+              "identifier_type": "ABN",
+              "identifier": "96 607 219 116",
               "canonical": {
                 "id": "paydock",
                 "name": "Paydock"
