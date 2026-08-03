@@ -7711,7 +7711,7 @@
       "original_notification_datetime": "2026-07-30T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-09-10T12:00:00Z",
-      "page_modified_datetime": "2026-07-31T16:45:12+10:00",
+      "page_modified_datetime": "2026-08-03T10:30:43+10:00",
       "acquirers": [
         {
           "name": "SILK CONTRACT LOGISTICS PTY LTD",
@@ -7756,9 +7756,18 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-08-03T12:00:00Z",
+          "title": "Questionnaire - Silk Contract Logistics – Toll Transport bulk logistics (glass and plastic) assets",
+          "display_title": "Questionnaire - Silk Contract Logistics – Toll Transport bulk logistics (glass and plastic) assets",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Silk%20Contract%20Logistics%20%E2%80%93%20Toll%20Transport%20bulk%20logistics%20%28glass%20and%20plastic%29%20assets_0.docx",
+          "url_gh": "/mergers/MN-01116/Questionnaire - Silk Contract Logistics – Toll Transport bulk logistics (glass and plastic) assets_0.pdf",
+          "phase": null
         }
       ],
       "is_waiver": false,
+      "consultation_response_due_date": "2026-08-10T12:00:00Z",
       "accc_determination": null,
       "has_conditions": false,
       "phase_1_determination": null,
@@ -7767,6 +7776,7 @@
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
+      "has_questionnaire": true,
       "similar_mergers": [
         {
           "merger_id": "WA-70028",
@@ -128413,6 +128423,26 @@
       ],
       "questions_count": 4
     },
+    "MN-01116": {
+      "deadline": "10 August 2026",
+      "deadline_iso": "2026-08-10",
+      "file_name": "Questionnaire - Silk Contract Logistics – Toll Transport bulk logistics (glass and plastic) assets_0.pdf",
+      "questions": [
+        {
+          "number": 1,
+          "text": "Outline any concerns regarding the impact of the Acquisition on competition, including if Silk and Toll are close competitors and there are not many alternatives or if one is a major supplier to competitors of the other."
+        },
+        {
+          "number": 2,
+          "text": "Provide any additional information or comments that you consider relevant to the ACCC’s assessment of the Acquisition."
+        },
+        {
+          "number": 3,
+          "text": "Provide a brief description of your business or organisation, including any commercial relationships with Silk and/or Toll."
+        }
+      ],
+      "questions_count": 3
+    },
     "MN-05004": {
       "deadline": "23 March 2026",
       "deadline_iso": "2026-03-23",
@@ -137124,7 +137154,7 @@
         "status": "Under assessment",
         "accc_determination": null,
         "effective_notification_datetime": "2026-07-30T12:00:00Z",
-        "page_modified_datetime": "2026-07-31T16:45:12+10:00",
+        "page_modified_datetime": "2026-08-03T10:30:43+10:00",
         "is_waiver": false,
         "is_refiled": false
       },
