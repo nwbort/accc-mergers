@@ -55,7 +55,7 @@
       "code": "249",
       "name": "Other Machinery and Equipment Manufacturing",
       "level": "group",
-      "merger_count": 7
+      "merger_count": 8
     }
   ],
   "mergers": [
@@ -91,6 +91,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-08T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-80029",
+      "merger_name": "NPM Capital \u2013 AmbaFlex Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-10T12:00:00Z",
+      "determination_date": "2026-08-03T12:00:00Z"
     },
     {
       "merger_id": "WA-35032",
@@ -544,10 +555,10 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 44,
+  "count": 45,
   "phase_1_count": 18,
   "phase_2_count": 0,
-  "waiver_count": 26,
+  "waiver_count": 27,
   "active_count": 3,
   "phase_duration": {
     "average_days": 26.866666666666667,
@@ -557,10 +568,10 @@
     "completed_count": 15
   },
   "waiver_duration": {
-    "average_days": 19.26923076923077,
-    "median_days": 18.5,
-    "average_business_days": 12.76923076923077,
-    "median_business_days": 12.5,
-    "completed_count": 26
+    "average_days": 19.444444444444443,
+    "median_days": 19,
+    "average_business_days": 12.88888888888889,
+    "median_business_days": 13,
+    "completed_count": 27
   }
 }

@@ -1,6 +1,6 @@
 {
   "total_mergers": 202,
-  "total_waivers": 304,
+  "total_waivers": 306,
   "total_conditional_approvals": 2,
   "by_status": {
     "Assessment completed": 153,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 290,
+    "Approved": 292,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,15 +42,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.86842105263158,
+    "average_days": 18.924836601307188,
     "median_days": 18.0,
-    "average_business_days": 12.641447368421053,
+    "average_business_days": 12.679738562091503,
     "median_business_days": 12.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 67
+      "count": 68
     },
     {
       "name": "Computer System Design and Related Services",
@@ -70,7 +70,7 @@
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 22
+      "count": 23
     },
     {
       "name": "Accommodation",
@@ -213,6 +213,26 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-80026",
+      "merger_name": "Australian Venue Co \u2013 assets of Chequers Hotel, Bullsbrook WA",
+      "determination": "Approved",
+      "determination_date": "2026-08-03T12:00:00Z",
+      "page_modified_datetime": "2026-08-03T16:42:49+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-80029",
+      "merger_name": "NPM Capital \u2013 AmbaFlex Group",
+      "determination": "Approved",
+      "determination_date": "2026-08-03T12:00:00Z",
+      "page_modified_datetime": "2026-08-03T16:41:28+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-01114",
       "merger_name": "EQT Fund Management \u2013 Exolaunch",
       "determination": "Approved",
@@ -308,26 +328,6 @@
       "determination": "Approved",
       "determination_date": "2026-07-30T12:00:00Z",
       "page_modified_datetime": "2026-07-30T17:29:56+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-60028",
-      "merger_name": "EQT Fund Management S.\u00e0 r.l. \u2013 Orikan Group",
-      "determination": "Approved",
-      "determination_date": "2026-07-30T12:00:00Z",
-      "page_modified_datetime": "2026-07-30T17:27:55+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-70028",
-      "merger_name": "Kalari \u2013 De Gunst\u2019s Gracemere Assets",
-      "determination": "Approved",
-      "determination_date": "2026-07-29T12:00:00Z",
-      "page_modified_datetime": "2026-07-29T17:11:44+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

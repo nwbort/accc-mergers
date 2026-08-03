@@ -49,6 +49,17 @@
       "determination_date": null
     },
     {
+      "merger_id": "WA-80026",
+      "merger_name": "Australian Venue Co \u2013 assets of Chequers Hotel, Bullsbrook WA",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-03T12:00:00Z",
+      "determination_date": "2026-08-03T12:00:00Z"
+    },
+    {
       "merger_id": "WA-75033",
       "merger_name": "Sonnel Hospitality Group \u2013 Peakhurst Inn Hotel",
       "is_waiver": true,
@@ -269,10 +280,10 @@
       "determination_date": "2026-02-02T12:00:00Z"
     }
   ],
-  "count": 22,
+  "count": 23,
   "phase_1_count": 4,
   "phase_2_count": 0,
-  "waiver_count": 18,
+  "waiver_count": 19,
   "active_count": 2,
   "phase_duration": {
     "average_days": 23.5,
@@ -282,10 +293,10 @@
     "completed_count": 2
   },
   "waiver_duration": {
-    "average_days": 18.77777777777778,
-    "median_days": 18.0,
-    "average_business_days": 12.666666666666666,
-    "median_business_days": 12.0,
-    "completed_count": 18
+    "average_days": 19.42105263157895,
+    "median_days": 18,
+    "average_business_days": 13.105263157894736,
+    "median_business_days": 12,
+    "completed_count": 19
   }
 }
