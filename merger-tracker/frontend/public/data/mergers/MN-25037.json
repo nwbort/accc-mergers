@@ -128,18 +128,26 @@
           "name": "FDH Group Intermediate Holdings, LP",
           "identifier_type": null,
           "identifier": "US incorporation number  6336375",
+          "canonical": {
+            "id": "fdh-group",
+            "name": "FDH Group"
+          },
           "party_page": {
-            "id": "fdh-group-intermediate-holdings-lp",
-            "name": "FDH Group Intermediate Holdings, LP"
+            "id": "fdh-group",
+            "name": "FDH Group"
           }
         },
         {
           "name": "FDH Group Intermediate, Inc.",
           "identifier_type": null,
           "identifier": "US incorporation number  6310370",
+          "canonical": {
+            "id": "fdh-group",
+            "name": "FDH Group"
+          },
           "party_page": {
-            "id": "fdh-group-intermediate-inc",
-            "name": "FDH Group Intermediate, Inc."
+            "id": "fdh-group",
+            "name": "FDH Group"
           }
         }
       ]

@@ -45,9 +45,13 @@
       "name": "Publicis Groupe S.A.",
       "identifier_type": null,
       "identifier": "Paris Trade and Companies Registry no. 542 080 601",
+      "canonical": {
+        "id": "publicis-groupe",
+        "name": "Publicis Groupe"
+      },
       "party_page": {
-        "id": "publicis-groupe-s-a",
-        "name": "Publicis Groupe S.A."
+        "id": "publicis-groupe",
+        "name": "Publicis Groupe"
       }
     }
   ],
@@ -107,9 +111,13 @@
           "name": "PUBLICIS MEDIA AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
           "identifier": "40 001 786 858",
+          "canonical": {
+            "id": "publicis-groupe",
+            "name": "Publicis Groupe"
+          },
           "party_page": {
-            "id": "publicis-media-australia-pty-ltd",
-            "name": "Publicis Media Australia Pty Ltd"
+            "id": "publicis-groupe",
+            "name": "Publicis Groupe"
           }
         }
       ],
@@ -144,9 +152,13 @@
           "name": "OpenAI Group PBC",
           "identifier_type": null,
           "identifier": "Delaware File Number  10381551",
+          "canonical": {
+            "id": "openai",
+            "name": "OpenAI"
+          },
           "party_page": {
-            "id": "openai-group-pbc",
-            "name": "OpenAI Group PBC"
+            "id": "openai",
+            "name": "OpenAI"
           }
         }
       ],

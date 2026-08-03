@@ -113,9 +113,13 @@
           "name": "Genea Bidco SA Pty Ltd",
           "identifier_type": "ACN",
           "identifier": "695 694 458",
+          "canonical": {
+            "id": "genea",
+            "name": "Genea"
+          },
           "party_page": {
-            "id": "genea-bidco-sa-pty-ltd",
-            "name": "Genea Bidco SA Pty Ltd"
+            "id": "genea",
+            "name": "Genea"
           }
         }
       ],
@@ -191,11 +195,11 @@
           "identifier": "Cayman Islands Company Registration Number CF172438",
           "canonical": {
             "id": "derbysoft-inc",
-            "name": "DerbySoft Inc."
+            "name": "DerbySoft"
           },
           "party_page": {
             "id": "derbysoft-inc",
-            "name": "DerbySoft Inc."
+            "name": "DerbySoft"
           }
         }
       ]

@@ -17,9 +17,13 @@
       "name": "OpenAI Group PBC",
       "identifier_type": null,
       "identifier": "Delaware file number  10381551",
+      "canonical": {
+        "id": "openai",
+        "name": "OpenAI"
+      },
       "party_page": {
-        "id": "openai-group-pbc",
-        "name": "OpenAI Group PBC"
+        "id": "openai",
+        "name": "OpenAI"
       }
     }
   ],
@@ -39,9 +43,13 @@
       "name": "OpenAI Foundation",
       "identifier_type": null,
       "identifier": "Delaware file number  5902936",
+      "canonical": {
+        "id": "openai",
+        "name": "OpenAI"
+      },
       "party_page": {
-        "id": "openai-foundation",
-        "name": "OpenAI Foundation"
+        "id": "openai",
+        "name": "OpenAI"
       }
     }
   ],
@@ -141,11 +149,11 @@
           "identifier": "00140838",
           "canonical": {
             "id": "clearwater-analytics-llc",
-            "name": "Clearwater Analytics, LLC"
+            "name": "Clearwater Analytics"
           },
           "party_page": {
             "id": "clearwater-analytics-llc",
-            "name": "Clearwater Analytics, LLC"
+            "name": "Clearwater Analytics"
           }
         }
       ]

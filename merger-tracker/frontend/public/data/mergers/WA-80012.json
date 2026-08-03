@@ -129,9 +129,13 @@
           "name": "eBay Inc.",
           "identifier_type": null,
           "identifier": "I.R.S. Employer Identification No. \u2013 United States  770430924",
+          "canonical": {
+            "id": "ebay",
+            "name": "eBay"
+          },
           "party_page": {
-            "id": "ebay-inc",
-            "name": "eBay Inc."
+            "id": "ebay",
+            "name": "eBay"
           }
         }
       ],

@@ -1,0 +1,51 @@
+{
+  "id": "uber",
+  "canonical_name": "Uber",
+  "members": [
+    {
+      "name": "UBER AUSTRALIA HOLDINGS PTY LTD",
+      "identifier": "54 622 364 318",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "UBER PACIFIC PTY LTD",
+      "identifier": "96 622 366 116",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "Uber Technologies, Inc",
+      "identifier": "USID  4849283",
+      "identifier_type": null
+    }
+  ],
+  "mergers": {
+    "acquirer": [
+      {
+        "merger_id": "MN-20018",
+        "merger_name": "Uber - Blacklane",
+        "is_waiver": false,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Phase 1",
+        "notification_date": "2026-06-05T12:00:00Z",
+        "determination_date": "2026-07-15T12:00:00Z"
+      }
+    ],
+    "target": [],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 40.0,
+    "median_days": 40,
+    "average_business_days": 27.0,
+    "median_business_days": 27,
+    "completed_count": 1
+  },
+  "waiver_duration": null
+}

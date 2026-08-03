@@ -1,0 +1,51 @@
+{
+  "id": "fdh-group",
+  "canonical_name": "FDH Group",
+  "members": [
+    {
+      "name": "FDH Defense Aftermarket, Inc.",
+      "identifier": "US incorporation number  6267156",
+      "identifier_type": null
+    },
+    {
+      "name": "FDH Group Intermediate Holdings, LP",
+      "identifier": "US incorporation number  6336375",
+      "identifier_type": null
+    },
+    {
+      "name": "FDH Group Intermediate, Inc.",
+      "identifier": "US incorporation number  6310370",
+      "identifier_type": null
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [
+      {
+        "merger_id": "WA-25033",
+        "merger_name": "Bain Capital \u2013 FDH",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Waiver",
+        "notification_date": "2026-06-17T12:00:00Z",
+        "determination_date": "2026-06-25T12:00:00Z"
+      }
+    ],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null,
+  "waiver_duration": {
+    "average_days": 8.0,
+    "median_days": 8,
+    "average_business_days": 6.0,
+    "median_business_days": 6,
+    "completed_count": 1
+  }
+}

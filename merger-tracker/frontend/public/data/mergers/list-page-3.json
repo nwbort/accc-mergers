@@ -773,11 +773,11 @@
           "identifier": "CRN  00329377",
           "canonical": {
             "id": "fenner-international-limited",
-            "name": "Fenner International Limited"
+            "name": "Fenner International"
           },
           "party_page": {
             "id": "fenner-international-limited",
-            "name": "Fenner International Limited"
+            "name": "Fenner International"
           }
         },
         {
@@ -786,11 +786,11 @@
           "identifier": "CRN  00527338",
           "canonical": {
             "id": "fenner-international-limited",
-            "name": "Fenner International Limited"
+            "name": "Fenner International"
           },
           "party_page": {
             "id": "fenner-international-limited",
-            "name": "Fenner International Limited"
+            "name": "Fenner International"
           }
         },
         {
@@ -2181,11 +2181,11 @@
           "identifier": "3229725",
           "canonical": {
             "id": "bain-capital-investors-llc",
-            "name": "Bain Capital Investors LLC"
+            "name": "Bain Capital Investors"
           },
           "party_page": {
             "id": "bain-capital-investors-llc",
-            "name": "Bain Capital Investors LLC"
+            "name": "Bain Capital Investors"
           }
         }
       ],
@@ -2228,11 +2228,11 @@
           "identifier": "00140838",
           "canonical": {
             "id": "clearwater-analytics-llc",
-            "name": "Clearwater Analytics, LLC"
+            "name": "Clearwater Analytics"
           },
           "party_page": {
             "id": "clearwater-analytics-llc",
-            "name": "Clearwater Analytics, LLC"
+            "name": "Clearwater Analytics"
           }
         }
       ],
@@ -2252,11 +2252,11 @@
           "identifier": "4909156",
           "canonical": {
             "id": "clearwater-analytics-llc",
-            "name": "Clearwater Analytics, LLC"
+            "name": "Clearwater Analytics"
           },
           "party_page": {
             "id": "clearwater-analytics-llc",
-            "name": "Clearwater Analytics, LLC"
+            "name": "Clearwater Analytics"
           }
         },
         {
@@ -2877,27 +2877,39 @@
           "name": "INNIO Jenbacher International B.V.",
           "identifier_type": null,
           "identifier": "KVK90210352",
+          "canonical": {
+            "id": "innio",
+            "name": "INNIO"
+          },
           "party_page": {
-            "id": "innio-jenbacher-international-b-v",
-            "name": "INNIO Jenbacher International B.V."
+            "id": "innio",
+            "name": "INNIO"
           }
         },
         {
           "name": "INNIO Jenbacher Netherlands B.V.",
           "identifier_type": null,
           "identifier": "KVK90209982",
+          "canonical": {
+            "id": "innio",
+            "name": "INNIO"
+          },
           "party_page": {
-            "id": "innio-jenbacher-netherlands-b-v",
-            "name": "INNIO Jenbacher Netherlands B.V."
+            "id": "innio",
+            "name": "INNIO"
           }
         },
         {
           "name": "INNIO Holding GmbH",
           "identifier_type": null,
           "identifier": "HRB305810",
+          "canonical": {
+            "id": "innio",
+            "name": "INNIO"
+          },
           "party_page": {
-            "id": "innio-holding-gmbh",
-            "name": "INNIO Holding GmbH"
+            "id": "innio",
+            "name": "INNIO"
           }
         }
       ],
@@ -4295,18 +4307,26 @@
           "name": "FalconPoint Non-U.S./USTE Feeder II L.P",
           "identifier_type": null,
           "identifier": "934704164",
+          "canonical": {
+            "id": "falcon-point",
+            "name": "Falcon Point"
+          },
           "party_page": {
-            "id": "falconpoint-non-u-s-uste-feeder-ii-l-p",
-            "name": "FalconPoint Non-U.S./USTE Feeder II L.P"
+            "id": "falcon-point",
+            "name": "Falcon Point"
           }
         },
         {
           "name": "FalconPoint Partners II, LP",
           "identifier_type": null,
           "identifier": "933979415",
+          "canonical": {
+            "id": "falcon-point",
+            "name": "Falcon Point"
+          },
           "party_page": {
-            "id": "falconpoint-partners-ii-lp",
-            "name": "FalconPoint Partners II, LP"
+            "id": "falcon-point",
+            "name": "Falcon Point"
           }
         }
       ],

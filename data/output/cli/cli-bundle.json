@@ -406,18 +406,26 @@
               "name": "INNIO Jenbacher International B.V.",
               "identifier_type": null,
               "identifier": "KVK90210352",
+              "canonical": {
+                "id": "innio",
+                "name": "INNIO"
+              },
               "party_page": {
-                "id": "innio-jenbacher-international-b-v",
-                "name": "INNIO Jenbacher International B.V."
+                "id": "innio",
+                "name": "INNIO"
               }
             },
             {
               "name": "INNIO Jenbacher Netherlands B.V.",
               "identifier_type": null,
               "identifier": "KVK90209982",
+              "canonical": {
+                "id": "innio",
+                "name": "INNIO"
+              },
               "party_page": {
-                "id": "innio-jenbacher-netherlands-b-v",
-                "name": "INNIO Jenbacher Netherlands B.V."
+                "id": "innio",
+                "name": "INNIO"
               }
             }
           ],
@@ -1518,9 +1526,13 @@
               "name": "Genea Bidco SA Pty Ltd",
               "identifier_type": "ACN",
               "identifier": "695 694 458",
+              "canonical": {
+                "id": "genea",
+                "name": "Genea"
+              },
               "party_page": {
-                "id": "genea-bidco-sa-pty-ltd",
-                "name": "Genea Bidco SA Pty Ltd"
+                "id": "genea",
+                "name": "Genea"
               }
             }
           ],
@@ -1778,9 +1790,13 @@
               "name": "eBay Inc.",
               "identifier_type": null,
               "identifier": "I.R.S. Employer Identification No. – United States  770430924",
+              "canonical": {
+                "id": "ebay",
+                "name": "eBay"
+              },
               "party_page": {
-                "id": "ebay-inc",
-                "name": "eBay Inc."
+                "id": "ebay",
+                "name": "eBay"
               }
             }
           ],
@@ -2265,9 +2281,13 @@
               "name": "PUBLICIS MEDIA AUSTRALIA PTY LTD",
               "identifier_type": "ABN",
               "identifier": "40 001 786 858",
+              "canonical": {
+                "id": "publicis-groupe",
+                "name": "Publicis Groupe"
+              },
               "party_page": {
-                "id": "publicis-media-australia-pty-ltd",
-                "name": "Publicis Media Australia Pty Ltd"
+                "id": "publicis-groupe",
+                "name": "Publicis Groupe"
               }
             }
           ],
@@ -4839,11 +4859,11 @@
               "identifier": "350470950 (IRS Employer Identification Number)",
               "canonical": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               },
               "party_page": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               }
             }
           ],
@@ -4952,9 +4972,13 @@
           "name": "L'Oreal S.A.",
           "identifier_type": null,
           "identifier": "Paris Trade and Companies Register number 632 012 100",
+          "canonical": {
+            "id": "l-oreal",
+            "name": "L'Oreal"
+          },
           "party_page": {
-            "id": "l-oreal-s-a",
-            "name": "L'Oreal S.A."
+            "id": "l-oreal",
+            "name": "L'Oreal"
           }
         }
       ],
@@ -6272,9 +6296,13 @@
           "name": "GENEA PTY LTD",
           "identifier_type": "ABN",
           "identifier": "82 002 844 448",
+          "canonical": {
+            "id": "genea",
+            "name": "Genea"
+          },
           "party_page": {
-            "id": "genea-pty-ltd",
-            "name": "Genea Pty Ltd"
+            "id": "genea",
+            "name": "Genea"
           }
         }
       ],
@@ -6369,9 +6397,13 @@
               "name": "Genea Bidco SA Pty Ltd",
               "identifier_type": "ACN",
               "identifier": "695 694 458",
+              "canonical": {
+                "id": "genea",
+                "name": "Genea"
+              },
               "party_page": {
-                "id": "genea-bidco-sa-pty-ltd",
-                "name": "Genea Bidco SA Pty Ltd"
+                "id": "genea",
+                "name": "Genea"
               }
             }
           ],
@@ -8183,9 +8215,13 @@
           "name": "Genea Bidco SA Pty Ltd",
           "identifier_type": "ACN",
           "identifier": "695 694 458",
+          "canonical": {
+            "id": "genea",
+            "name": "Genea"
+          },
           "party_page": {
-            "id": "genea-bidco-sa-pty-ltd",
-            "name": "Genea Bidco SA Pty Ltd"
+            "id": "genea",
+            "name": "Genea"
           }
         }
       ],
@@ -8223,9 +8259,13 @@
           "name": "Genea HoldCo SA Pty Ltd",
           "identifier_type": "ACN",
           "identifier": "695 660 701",
+          "canonical": {
+            "id": "genea",
+            "name": "Genea"
+          },
           "party_page": {
-            "id": "genea-holdco-sa-pty-ltd",
-            "name": "Genea HoldCo SA Pty Ltd"
+            "id": "genea",
+            "name": "Genea"
           }
         },
         {
@@ -8882,9 +8922,13 @@
               "name": "eBay Inc.",
               "identifier_type": null,
               "identifier": "I.R.S. Employer Identification No. – United States  770430924",
+              "canonical": {
+                "id": "ebay",
+                "name": "eBay"
+              },
               "party_page": {
-                "id": "ebay-inc",
-                "name": "eBay Inc."
+                "id": "ebay",
+                "name": "eBay"
               }
             }
           ],
@@ -9437,11 +9481,11 @@
               "identifier": "55 646 760 367",
               "canonical": {
                 "id": "general-dental-holdings-pty-ltd",
-                "name": "General Dental Holdings Pty Ltd"
+                "name": "General Dental Holdings"
               },
               "party_page": {
                 "id": "general-dental-holdings-pty-ltd",
-                "name": "General Dental Holdings Pty Ltd"
+                "name": "General Dental Holdings"
               }
             }
           ],
@@ -10885,11 +10929,11 @@
               "identifier": "EIN 854115816",
               "canonical": {
                 "id": "excellergy-inc",
-                "name": "Excellergy Inc."
+                "name": "Excellergy"
               },
               "party_page": {
                 "id": "excellergy-inc",
-                "name": "Excellergy Inc."
+                "name": "Excellergy"
               }
             }
           ]
@@ -13913,11 +13957,11 @@
               "identifier": "42 008 737 424",
               "canonical": {
                 "id": "anglogold-ashanti-plc",
-                "name": "AngloGold Ashanti plc"
+                "name": "AngloGold Ashanti"
               },
               "party_page": {
                 "id": "anglogold-ashanti-plc",
-                "name": "AngloGold Ashanti plc"
+                "name": "AngloGold Ashanti"
               }
             }
           ],
@@ -14034,11 +14078,11 @@
           "identifier": "",
           "canonical": {
             "id": "google-llc",
-            "name": "Google LLC"
+            "name": "Google"
           },
           "party_page": {
             "id": "google-llc",
-            "name": "Google LLC"
+            "name": "Google"
           }
         }
       ],
@@ -15095,11 +15139,11 @@
           "identifier": "56 614 713 003",
           "canonical": {
             "id": "experience-co-limited",
-            "name": "Experience Co Limited"
+            "name": "Experience Co"
           },
           "party_page": {
             "id": "experience-co-limited",
-            "name": "Experience Co Limited"
+            "name": "Experience Co"
           }
         }
       ],
@@ -15212,11 +15256,11 @@
               "identifier": "56 167 320 470",
               "canonical": {
                 "id": "experience-co-limited",
-                "name": "Experience Co Limited"
+                "name": "Experience Co"
               },
               "party_page": {
                 "id": "experience-co-limited",
-                "name": "Experience Co Limited"
+                "name": "Experience Co"
               }
             }
           ]
@@ -15244,11 +15288,11 @@
               "identifier": "56 167 320 470",
               "canonical": {
                 "id": "experience-co-limited",
-                "name": "Experience Co Limited"
+                "name": "Experience Co"
               },
               "party_page": {
                 "id": "experience-co-limited",
-                "name": "Experience Co Limited"
+                "name": "Experience Co"
               }
             },
             {
@@ -15352,11 +15396,11 @@
           "identifier": "IRS EIN  812878769",
           "canonical": {
             "id": "bain-capital-investors-llc",
-            "name": "Bain Capital Investors LLC"
+            "name": "Bain Capital Investors"
           },
           "party_page": {
             "id": "bain-capital-investors-llc",
-            "name": "Bain Capital Investors LLC"
+            "name": "Bain Capital Investors"
           }
         },
         {
@@ -16636,11 +16680,11 @@
           "identifier": "3229725",
           "canonical": {
             "id": "bain-capital-investors-llc",
-            "name": "Bain Capital Investors LLC"
+            "name": "Bain Capital Investors"
           },
           "party_page": {
             "id": "bain-capital-investors-llc",
-            "name": "Bain Capital Investors LLC"
+            "name": "Bain Capital Investors"
           }
         }
       ],
@@ -17383,11 +17427,11 @@
           "identifier": "IRS Employer Identification Number  350470950",
           "canonical": {
             "id": "eli-lilly-and-company",
-            "name": "Eli Lilly and Company"
+            "name": "Eli Lilly"
           },
           "party_page": {
             "id": "eli-lilly-and-company",
-            "name": "Eli Lilly and Company"
+            "name": "Eli Lilly"
           }
         }
       ],
@@ -17512,11 +17556,11 @@
               "identifier": "350470950 (IRS Employer Identification Number)",
               "canonical": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               },
               "party_page": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               }
             }
           ],
@@ -18060,9 +18104,13 @@
           "name": "Uber Technologies, Inc",
           "identifier_type": null,
           "identifier": "USID  4849283",
+          "canonical": {
+            "id": "uber",
+            "name": "Uber"
+          },
           "party_page": {
-            "id": "uber-technologies-inc",
-            "name": "Uber Technologies, Inc"
+            "id": "uber",
+            "name": "Uber"
           }
         }
       ],
@@ -18082,9 +18130,13 @@
           "name": "UBER PACIFIC PTY LTD",
           "identifier_type": "ABN",
           "identifier": "96 622 366 116",
+          "canonical": {
+            "id": "uber",
+            "name": "Uber"
+          },
           "party_page": {
-            "id": "uber-pacific-pty-ltd",
-            "name": "Uber Pacific Pty Ltd"
+            "id": "uber",
+            "name": "Uber"
           }
         },
         {
@@ -18100,9 +18152,13 @@
           "name": "UBER AUSTRALIA HOLDINGS PTY LTD",
           "identifier_type": "ABN",
           "identifier": "54 622 364 318",
+          "canonical": {
+            "id": "uber",
+            "name": "Uber"
+          },
           "party_page": {
-            "id": "uber-australia-holdings-pty-ltd",
-            "name": "Uber Australia Holdings Pty Ltd"
+            "id": "uber",
+            "name": "Uber"
           }
         }
       ],
@@ -20080,11 +20136,11 @@
               "identifier": "EIN 854115816",
               "canonical": {
                 "id": "excellergy-inc",
-                "name": "Excellergy Inc."
+                "name": "Excellergy"
               },
               "party_page": {
                 "id": "excellergy-inc",
-                "name": "Excellergy Inc."
+                "name": "Excellergy"
               }
             }
           ]
@@ -20151,9 +20207,13 @@
           "name": "OpenAI Group PBC",
           "identifier_type": null,
           "identifier": "Delaware file number  10381551",
+          "canonical": {
+            "id": "openai",
+            "name": "OpenAI"
+          },
           "party_page": {
-            "id": "openai-group-pbc",
-            "name": "OpenAI Group PBC"
+            "id": "openai",
+            "name": "OpenAI"
           }
         }
       ],
@@ -20173,9 +20233,13 @@
           "name": "OpenAI Foundation",
           "identifier_type": null,
           "identifier": "Delaware file number  5902936",
+          "canonical": {
+            "id": "openai",
+            "name": "OpenAI"
+          },
           "party_page": {
-            "id": "openai-foundation",
-            "name": "OpenAI Foundation"
+            "id": "openai",
+            "name": "OpenAI"
           }
         }
       ],
@@ -20275,11 +20339,11 @@
               "identifier": "00140838",
               "canonical": {
                 "id": "clearwater-analytics-llc",
-                "name": "Clearwater Analytics, LLC"
+                "name": "Clearwater Analytics"
               },
               "party_page": {
                 "id": "clearwater-analytics-llc",
-                "name": "Clearwater Analytics, LLC"
+                "name": "Clearwater Analytics"
               }
             }
           ]
@@ -21006,18 +21070,26 @@
               "name": "FDH Group Intermediate Holdings, LP",
               "identifier_type": null,
               "identifier": "US incorporation number  6336375",
+              "canonical": {
+                "id": "fdh-group",
+                "name": "FDH Group"
+              },
               "party_page": {
-                "id": "fdh-group-intermediate-holdings-lp",
-                "name": "FDH Group Intermediate Holdings, LP"
+                "id": "fdh-group",
+                "name": "FDH Group"
               }
             },
             {
               "name": "FDH Group Intermediate, Inc.",
               "identifier_type": null,
               "identifier": "US incorporation number  6310370",
+              "canonical": {
+                "id": "fdh-group",
+                "name": "FDH Group"
+              },
               "party_page": {
-                "id": "fdh-group-intermediate-inc",
-                "name": "FDH Group Intermediate, Inc."
+                "id": "fdh-group",
+                "name": "FDH Group"
               }
             }
           ]
@@ -23850,11 +23922,11 @@
           "identifier": "47 669 884 244",
           "canonical": {
             "id": "estia-health-holdings-ltd",
-            "name": "Estia Health Holdings Ltd"
+            "name": "Estia Health"
           },
           "party_page": {
             "id": "estia-health-holdings-ltd",
-            "name": "Estia Health Holdings Ltd"
+            "name": "Estia Health"
           }
         }
       ],
@@ -24509,9 +24581,13 @@
           "name": "KINETIC HOLDING COMPANY PTY LTD",
           "identifier_type": "ABN",
           "identifier": "49 601 254 880",
+          "canonical": {
+            "id": "kinetic",
+            "name": "Kinetic"
+          },
           "party_page": {
-            "id": "kinetic-holding-company-pty-ltd",
-            "name": "Kinetic Holding Company Pty Ltd"
+            "id": "kinetic",
+            "name": "Kinetic"
           }
         }
       ],
@@ -24531,9 +24607,13 @@
           "name": "KINETIC (MELBOURNE) PTY LTD",
           "identifier_type": "ABN",
           "identifier": "89 644 690 522",
+          "canonical": {
+            "id": "kinetic",
+            "name": "Kinetic"
+          },
           "party_page": {
-            "id": "kinetic-melbourne-pty-ltd",
-            "name": "Kinetic (Melbourne) Pty Ltd"
+            "id": "kinetic",
+            "name": "Kinetic"
           }
         },
         {
@@ -24585,18 +24665,26 @@
           "name": "KINETIC (MELBOURNE URBAN) PTY LTD",
           "identifier_type": "ABN",
           "identifier": "88 632 522 233",
+          "canonical": {
+            "id": "kinetic",
+            "name": "Kinetic"
+          },
           "party_page": {
-            "id": "kinetic-melbourne-urban-pty-ltd",
-            "name": "Kinetic (Melbourne Urban) Pty Ltd"
+            "id": "kinetic",
+            "name": "Kinetic"
           }
         },
         {
           "name": "KINETIC ASSETCO (MELBOURNE) PTY LTD",
           "identifier_type": "ABN",
           "identifier": "72 644 633 303",
+          "canonical": {
+            "id": "kinetic",
+            "name": "Kinetic"
+          },
           "party_page": {
-            "id": "kinetic-assetco-melbourne-pty-ltd",
-            "name": "Kinetic Assetco (Melbourne) Pty Ltd"
+            "id": "kinetic",
+            "name": "Kinetic"
           }
         }
       ],
@@ -25268,11 +25356,11 @@
               "identifier": "3390142",
               "canonical": {
                 "id": "mastercard-incorporated",
-                "name": "Mastercard Incorporated"
+                "name": "MasterCard"
               },
               "party_page": {
                 "id": "mastercard-incorporated",
-                "name": "Mastercard Incorporated"
+                "name": "MasterCard"
               }
             },
             {
@@ -25374,9 +25462,13 @@
           "name": "L'Oréal India Private Limited",
           "identifier_type": null,
           "identifier": "",
+          "canonical": {
+            "id": "l-oreal",
+            "name": "L'Oreal"
+          },
           "party_page": {
-            "id": "l-or-al-india-private-limited",
-            "name": "L'Oréal India Private Limited"
+            "id": "l-oreal",
+            "name": "L'Oreal"
           }
         }
       ],
@@ -25396,9 +25488,13 @@
           "name": "L'Oréal S.A.",
           "identifier_type": null,
           "identifier": "SIREN  632 012 100",
+          "canonical": {
+            "id": "l-oreal",
+            "name": "L'Oreal"
+          },
           "party_page": {
-            "id": "l-or-al-s-a",
-            "name": "L'Oréal S.A."
+            "id": "l-oreal",
+            "name": "L'Oreal"
           }
         }
       ],
@@ -25450,9 +25546,13 @@
               "name": "L'Oreal S.A.",
               "identifier_type": null,
               "identifier": "Paris Trade and Companies Register number 632 012 100",
+              "canonical": {
+                "id": "l-oreal",
+                "name": "L'Oreal"
+              },
               "party_page": {
-                "id": "l-oreal-s-a",
-                "name": "L'Oreal S.A."
+                "id": "l-oreal",
+                "name": "L'Oreal"
               }
             }
           ],
@@ -26017,11 +26117,11 @@
           "identifier": "56 167 320 470",
           "canonical": {
             "id": "experience-co-limited",
-            "name": "Experience Co Limited"
+            "name": "Experience Co"
           },
           "party_page": {
             "id": "experience-co-limited",
-            "name": "Experience Co Limited"
+            "name": "Experience Co"
           }
         }
       ],
@@ -26422,11 +26522,11 @@
               "identifier": "IRS Employer Identification Number  350470950",
               "canonical": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               },
               "party_page": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               }
             }
           ],
@@ -26481,11 +26581,11 @@
           "identifier": "350470950 (IRS Employer Identification Number)",
           "canonical": {
             "id": "eli-lilly-and-company",
-            "name": "Eli Lilly and Company"
+            "name": "Eli Lilly"
           },
           "party_page": {
             "id": "eli-lilly-and-company",
-            "name": "Eli Lilly and Company"
+            "name": "Eli Lilly"
           }
         }
       ],
@@ -26586,11 +26686,11 @@
               "identifier": "IRS Employer Identification Number  350470950",
               "canonical": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               },
               "party_page": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               }
             }
           ],
@@ -26618,11 +26718,11 @@
               "identifier": "IRS Employer Identification Number  350470950",
               "canonical": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               },
               "party_page": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               }
             }
           ],
@@ -27467,11 +27567,11 @@
           "identifier": "EIN 854115816",
           "canonical": {
             "id": "excellergy-inc",
-            "name": "Excellergy Inc."
+            "name": "Excellergy"
           },
           "party_page": {
             "id": "excellergy-inc",
-            "name": "Excellergy Inc."
+            "name": "Excellergy"
           }
         }
       ],
@@ -27509,11 +27609,11 @@
           "identifier": "50 690 676 941",
           "canonical": {
             "id": "excellergy-inc",
-            "name": "Excellergy Inc."
+            "name": "Excellergy"
           },
           "party_page": {
             "id": "excellergy-inc",
-            "name": "Excellergy Inc."
+            "name": "Excellergy"
           }
         }
       ],
@@ -28929,9 +29029,13 @@
           "name": "eBay Inc.",
           "identifier_type": null,
           "identifier": "I.R.S. Employer Identification No. – United States  770430924",
+          "canonical": {
+            "id": "ebay",
+            "name": "eBay"
+          },
           "party_page": {
-            "id": "ebay-inc",
-            "name": "eBay Inc."
+            "id": "ebay",
+            "name": "eBay"
           }
         }
       ],
@@ -28960,27 +29064,39 @@
           "name": "EBAY COMMERCE AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
           "identifier": "62 634 460 969",
+          "canonical": {
+            "id": "ebay",
+            "name": "eBay"
+          },
           "party_page": {
-            "id": "ebay-commerce-australia-pty-ltd",
-            "name": "Ebay Commerce Australia Pty Ltd"
+            "id": "ebay",
+            "name": "eBay"
           }
         },
         {
           "name": "EBAY AUSTRALIA AND NEW ZEALAND PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "22 086 288 888",
+          "canonical": {
+            "id": "ebay",
+            "name": "eBay"
+          },
           "party_page": {
-            "id": "ebay-australia-and-new-zealand-pty-limited",
-            "name": "Ebay Australia And New Zealand Pty Limited"
+            "id": "ebay",
+            "name": "eBay"
           }
         },
         {
           "name": "eBay Marketplaces GmbH",
           "identifier_type": null,
           "identifier": "Swiss Enterprise Identification Number  CHE205764206",
+          "canonical": {
+            "id": "ebay",
+            "name": "eBay"
+          },
           "party_page": {
-            "id": "ebay-marketplaces-gmbh",
-            "name": "eBay Marketplaces GmbH"
+            "id": "ebay",
+            "name": "eBay"
           }
         }
       ],
@@ -30046,11 +30162,11 @@
               "identifier": "00140838",
               "canonical": {
                 "id": "clearwater-analytics-llc",
-                "name": "Clearwater Analytics, LLC"
+                "name": "Clearwater Analytics"
               },
               "party_page": {
                 "id": "clearwater-analytics-llc",
-                "name": "Clearwater Analytics, LLC"
+                "name": "Clearwater Analytics"
               }
             }
           ]
@@ -31069,11 +31185,11 @@
           "identifier": "56 614 713 003",
           "canonical": {
             "id": "experience-co-limited",
-            "name": "Experience Co Limited"
+            "name": "Experience Co"
           },
           "party_page": {
             "id": "experience-co-limited",
-            "name": "Experience Co Limited"
+            "name": "Experience Co"
           }
         }
       ],
@@ -31198,11 +31314,11 @@
               "identifier": "56 614 713 003",
               "canonical": {
                 "id": "experience-co-limited",
-                "name": "Experience Co Limited"
+                "name": "Experience Co"
               },
               "party_page": {
                 "id": "experience-co-limited",
-                "name": "Experience Co Limited"
+                "name": "Experience Co"
               }
             }
           ],
@@ -31250,11 +31366,11 @@
               "identifier": "56 167 320 470",
               "canonical": {
                 "id": "experience-co-limited",
-                "name": "Experience Co Limited"
+                "name": "Experience Co"
               },
               "party_page": {
                 "id": "experience-co-limited",
-                "name": "Experience Co Limited"
+                "name": "Experience Co"
               }
             }
           ]
@@ -31574,11 +31690,11 @@
           "identifier": "3390142",
           "canonical": {
             "id": "mastercard-incorporated",
-            "name": "Mastercard Incorporated"
+            "name": "MasterCard"
           },
           "party_page": {
             "id": "mastercard-incorporated",
-            "name": "Mastercard Incorporated"
+            "name": "MasterCard"
           }
         },
         {
@@ -31596,11 +31712,11 @@
           "identifier": "648928",
           "canonical": {
             "id": "mastercard-incorporated",
-            "name": "Mastercard Incorporated"
+            "name": "MasterCard"
           },
           "party_page": {
             "id": "mastercard-incorporated",
-            "name": "Mastercard Incorporated"
+            "name": "MasterCard"
           }
         }
       ],
@@ -32570,11 +32686,11 @@
           "identifier": "Commercial registration # 46832",
           "canonical": {
             "id": "axalta-coating-systems-ltd",
-            "name": "Axalta Coating Systems Ltd."
+            "name": "Axalta Coating Systems"
           },
           "party_page": {
             "id": "axalta-coating-systems-ltd",
-            "name": "Axalta Coating Systems Ltd."
+            "name": "Axalta Coating Systems"
           }
         }
       ],
@@ -32585,11 +32701,11 @@
           "identifier": "53 158 497 655",
           "canonical": {
             "id": "axalta-coating-systems-ltd",
-            "name": "Axalta Coating Systems Ltd."
+            "name": "Axalta Coating Systems"
           },
           "party_page": {
             "id": "axalta-coating-systems-ltd",
-            "name": "Axalta Coating Systems Ltd."
+            "name": "Axalta Coating Systems"
           }
         },
         {
@@ -33087,11 +33203,11 @@
           "identifier": "47 669 884 244",
           "canonical": {
             "id": "estia-health-holdings-ltd",
-            "name": "Estia Health Holdings Ltd"
+            "name": "Estia Health"
           },
           "party_page": {
             "id": "estia-health-holdings-ltd",
-            "name": "Estia Health Holdings Ltd"
+            "name": "Estia Health"
           }
         }
       ],
@@ -33891,11 +34007,11 @@
           "identifier": "Delaware file number  6028773",
           "canonical": {
             "id": "dragos-inc",
-            "name": "Dragos, Inc."
+            "name": "Dragos"
           },
           "party_page": {
             "id": "dragos-inc",
-            "name": "Dragos, Inc."
+            "name": "Dragos"
           }
         },
         {
@@ -33922,11 +34038,11 @@
           "identifier": "62 638 810 616",
           "canonical": {
             "id": "dragos-inc",
-            "name": "Dragos, Inc."
+            "name": "Dragos"
           },
           "party_page": {
             "id": "dragos-inc",
-            "name": "Dragos, Inc."
+            "name": "Dragos"
           }
         }
       ],
@@ -36018,11 +36134,11 @@
           "identifier": "47 669 884 244",
           "canonical": {
             "id": "estia-health-holdings-ltd",
-            "name": "Estia Health Holdings Ltd"
+            "name": "Estia Health"
           },
           "party_page": {
             "id": "estia-health-holdings-ltd",
-            "name": "Estia Health Holdings Ltd"
+            "name": "Estia Health"
           }
         }
       ],
@@ -36115,11 +36231,11 @@
               "identifier": "47 669 884 244",
               "canonical": {
                 "id": "estia-health-holdings-ltd",
-                "name": "Estia Health Holdings Ltd"
+                "name": "Estia Health"
               },
               "party_page": {
                 "id": "estia-health-holdings-ltd",
-                "name": "Estia Health Holdings Ltd"
+                "name": "Estia Health"
               }
             }
           ]
@@ -37393,11 +37509,11 @@
               "identifier": "IRS Employer Identification Number  350470950",
               "canonical": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               },
               "party_page": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               }
             }
           ],
@@ -38179,9 +38295,13 @@
           "name": "Publicis Groupe S.A.",
           "identifier_type": null,
           "identifier": "Paris Trade and Companies Registry no. 542 080 601",
+          "canonical": {
+            "id": "publicis-groupe",
+            "name": "Publicis Groupe"
+          },
           "party_page": {
-            "id": "publicis-groupe-s-a",
-            "name": "Publicis Groupe S.A."
+            "id": "publicis-groupe",
+            "name": "Publicis Groupe"
           }
         }
       ],
@@ -38241,9 +38361,13 @@
               "name": "PUBLICIS MEDIA AUSTRALIA PTY LTD",
               "identifier_type": "ABN",
               "identifier": "40 001 786 858",
+              "canonical": {
+                "id": "publicis-groupe",
+                "name": "Publicis Groupe"
+              },
               "party_page": {
-                "id": "publicis-media-australia-pty-ltd",
-                "name": "Publicis Media Australia Pty Ltd"
+                "id": "publicis-groupe",
+                "name": "Publicis Groupe"
               }
             }
           ],
@@ -38278,9 +38402,13 @@
               "name": "OpenAI Group PBC",
               "identifier_type": null,
               "identifier": "Delaware File Number  10381551",
+              "canonical": {
+                "id": "openai",
+                "name": "OpenAI"
+              },
               "party_page": {
-                "id": "openai-group-pbc",
-                "name": "OpenAI Group PBC"
+                "id": "openai",
+                "name": "OpenAI"
               }
             }
           ],
@@ -38550,11 +38678,11 @@
               "identifier": "Delaware file number  6028773",
               "canonical": {
                 "id": "dragos-inc",
-                "name": "Dragos, Inc."
+                "name": "Dragos"
               },
               "party_page": {
                 "id": "dragos-inc",
-                "name": "Dragos, Inc."
+                "name": "Dragos"
               }
             },
             {
@@ -41378,18 +41506,26 @@
               "name": "INNIO Jenbacher International B.V.",
               "identifier_type": null,
               "identifier": "KVK90210352",
+              "canonical": {
+                "id": "innio",
+                "name": "INNIO"
+              },
               "party_page": {
-                "id": "innio-jenbacher-international-b-v",
-                "name": "INNIO Jenbacher International B.V."
+                "id": "innio",
+                "name": "INNIO"
               }
             },
             {
               "name": "INNIO Jenbacher Netherlands B.V.",
               "identifier_type": null,
               "identifier": "KVK90209982",
+              "canonical": {
+                "id": "innio",
+                "name": "INNIO"
+              },
               "party_page": {
-                "id": "innio-jenbacher-netherlands-b-v",
-                "name": "INNIO Jenbacher Netherlands B.V."
+                "id": "innio",
+                "name": "INNIO"
               }
             }
           ],
@@ -42476,9 +42612,13 @@
               "name": "eBay Inc.",
               "identifier_type": null,
               "identifier": "I.R.S. Employer Identification No. – United States  770430924",
+              "canonical": {
+                "id": "ebay",
+                "name": "eBay"
+              },
               "party_page": {
-                "id": "ebay-inc",
-                "name": "eBay Inc."
+                "id": "ebay",
+                "name": "eBay"
               }
             }
           ],
@@ -44934,11 +45074,11 @@
           "identifier": "Delaware File Number  10492811",
           "canonical": {
             "id": "helix-sub-llc",
-            "name": "Helix Sub LLC"
+            "name": "Helix Sub"
           },
           "party_page": {
             "id": "helix-sub-llc",
-            "name": "Helix Sub LLC"
+            "name": "Helix Sub"
           }
         },
         {
@@ -44960,11 +45100,11 @@
           "identifier": "Delaware File Number  10492813",
           "canonical": {
             "id": "helix-sub-llc",
-            "name": "Helix Sub LLC"
+            "name": "Helix Sub"
           },
           "party_page": {
             "id": "helix-sub-llc",
-            "name": "Helix Sub LLC"
+            "name": "Helix Sub"
           }
         }
       ],
@@ -45776,9 +45916,13 @@
               "name": "Genea Bidco SA Pty Ltd",
               "identifier_type": "ACN",
               "identifier": "695 694 458",
+              "canonical": {
+                "id": "genea",
+                "name": "Genea"
+              },
               "party_page": {
-                "id": "genea-bidco-sa-pty-ltd",
-                "name": "Genea Bidco SA Pty Ltd"
+                "id": "genea",
+                "name": "Genea"
               }
             }
           ],
@@ -46605,9 +46749,13 @@
               "name": "KINETIC HOLDING COMPANY PTY LTD",
               "identifier_type": "ABN",
               "identifier": "49 601 254 880",
+              "canonical": {
+                "id": "kinetic",
+                "name": "Kinetic"
+              },
               "party_page": {
-                "id": "kinetic-holding-company-pty-ltd",
-                "name": "Kinetic Holding Company Pty Ltd"
+                "id": "kinetic",
+                "name": "Kinetic"
               }
             }
           ],
@@ -46727,11 +46875,11 @@
           "identifier": "3229725",
           "canonical": {
             "id": "bain-capital-investors-llc",
-            "name": "Bain Capital Investors LLC"
+            "name": "Bain Capital Investors"
           },
           "party_page": {
             "id": "bain-capital-investors-llc",
-            "name": "Bain Capital Investors LLC"
+            "name": "Bain Capital Investors"
           }
         }
       ],
@@ -47818,9 +47966,13 @@
               "name": "eBay Inc.",
               "identifier_type": null,
               "identifier": "I.R.S. Employer Identification No. – United States  770430924",
+              "canonical": {
+                "id": "ebay",
+                "name": "eBay"
+              },
               "party_page": {
-                "id": "ebay-inc",
-                "name": "eBay Inc."
+                "id": "ebay",
+                "name": "eBay"
               }
             }
           ],
@@ -48327,9 +48479,13 @@
           "name": "INNIO Holding GmbH",
           "identifier_type": null,
           "identifier": "HRB 305810",
+          "canonical": {
+            "id": "innio",
+            "name": "INNIO"
+          },
           "party_page": {
-            "id": "innio-holding-gmbh",
-            "name": "INNIO Holding GmbH"
+            "id": "innio",
+            "name": "INNIO"
           }
         }
       ],
@@ -48532,11 +48688,11 @@
           "identifier": "52 097 227 177",
           "canonical": {
             "id": "awp-australia-pty-ltd",
-            "name": "AWP Australia Pty Ltd"
+            "name": "AWP Australia"
           },
           "party_page": {
             "id": "awp-australia-pty-ltd",
-            "name": "AWP Australia Pty Ltd"
+            "name": "AWP Australia"
           }
         }
       ],
@@ -48575,11 +48731,11 @@
           "identifier": "75 097 227 211",
           "canonical": {
             "id": "awp-australia-pty-ltd",
-            "name": "AWP Australia Pty Ltd"
+            "name": "AWP Australia"
           },
           "party_page": {
             "id": "awp-australia-pty-ltd",
-            "name": "AWP Australia Pty Ltd"
+            "name": "AWP Australia"
           }
         },
         {
@@ -50007,11 +50163,11 @@
           "identifier": "56 614 713 003",
           "canonical": {
             "id": "experience-co-limited",
-            "name": "Experience Co Limited"
+            "name": "Experience Co"
           },
           "party_page": {
             "id": "experience-co-limited",
-            "name": "Experience Co Limited"
+            "name": "Experience Co"
           }
         }
       ],
@@ -50109,11 +50265,11 @@
               "identifier": "56 167 320 470",
               "canonical": {
                 "id": "experience-co-limited",
-                "name": "Experience Co Limited"
+                "name": "Experience Co"
               },
               "party_page": {
                 "id": "experience-co-limited",
-                "name": "Experience Co Limited"
+                "name": "Experience Co"
               }
             }
           ]
@@ -50141,11 +50297,11 @@
               "identifier": "56 167 320 470",
               "canonical": {
                 "id": "experience-co-limited",
-                "name": "Experience Co Limited"
+                "name": "Experience Co"
               },
               "party_page": {
                 "id": "experience-co-limited",
-                "name": "Experience Co Limited"
+                "name": "Experience Co"
               }
             },
             {
@@ -51299,9 +51455,13 @@
               "name": "Genea Bidco SA Pty Ltd",
               "identifier_type": "ACN",
               "identifier": "695 694 458",
+              "canonical": {
+                "id": "genea",
+                "name": "Genea"
+              },
               "party_page": {
-                "id": "genea-bidco-sa-pty-ltd",
-                "name": "Genea Bidco SA Pty Ltd"
+                "id": "genea",
+                "name": "Genea"
               }
             }
           ],
@@ -51688,11 +51848,11 @@
           "identifier": "Registration number B167972",
           "canonical": {
             "id": "eqt-fund-management-s-r-l",
-            "name": "EQT Fund Management S.à r.l."
+            "name": "EQT Fund Management"
           },
           "party_page": {
             "id": "eqt-fund-management-s-r-l",
-            "name": "EQT Fund Management S.à r.l."
+            "name": "EQT Fund Management"
           }
         },
         {
@@ -52300,11 +52460,11 @@
           "identifier": "55 646 760 367",
           "canonical": {
             "id": "general-dental-holdings-pty-ltd",
-            "name": "General Dental Holdings Pty Ltd"
+            "name": "General Dental Holdings"
           },
           "party_page": {
             "id": "general-dental-holdings-pty-ltd",
-            "name": "General Dental Holdings Pty Ltd"
+            "name": "General Dental Holdings"
           }
         }
       ],
@@ -52420,11 +52580,11 @@
               "identifier": "55 646 760 367",
               "canonical": {
                 "id": "general-dental-holdings-pty-ltd",
-                "name": "General Dental Holdings Pty Ltd"
+                "name": "General Dental Holdings"
               },
               "party_page": {
                 "id": "general-dental-holdings-pty-ltd",
-                "name": "General Dental Holdings Pty Ltd"
+                "name": "General Dental Holdings"
               }
             }
           ],
@@ -52562,9 +52722,13 @@
           "name": "OpenAI Group PBC",
           "identifier_type": null,
           "identifier": "Delaware File Number  10381551",
+          "canonical": {
+            "id": "openai",
+            "name": "OpenAI"
+          },
           "party_page": {
-            "id": "openai-group-pbc",
-            "name": "OpenAI Group PBC"
+            "id": "openai",
+            "name": "OpenAI"
           }
         },
         {
@@ -52610,9 +52774,13 @@
           "name": "OpenAI Foundation",
           "identifier_type": null,
           "identifier": "Delaware File Number  5902936",
+          "canonical": {
+            "id": "openai",
+            "name": "OpenAI"
+          },
           "party_page": {
-            "id": "openai-foundation",
-            "name": "OpenAI Foundation"
+            "id": "openai",
+            "name": "OpenAI"
           }
         }
       ],
@@ -52699,9 +52867,13 @@
               "name": "OpenAI Group PBC",
               "identifier_type": null,
               "identifier": "Delaware file number  10381551",
+              "canonical": {
+                "id": "openai",
+                "name": "OpenAI"
+              },
               "party_page": {
-                "id": "openai-group-pbc",
-                "name": "OpenAI Group PBC"
+                "id": "openai",
+                "name": "OpenAI"
               }
             }
           ],
@@ -52941,11 +53113,11 @@
               "identifier": "56 167 320 470",
               "canonical": {
                 "id": "experience-co-limited",
-                "name": "Experience Co Limited"
+                "name": "Experience Co"
               },
               "party_page": {
                 "id": "experience-co-limited",
-                "name": "Experience Co Limited"
+                "name": "Experience Co"
               }
             }
           ]
@@ -52973,11 +53145,11 @@
               "identifier": "56 167 320 470",
               "canonical": {
                 "id": "experience-co-limited",
-                "name": "Experience Co Limited"
+                "name": "Experience Co"
               },
               "party_page": {
                 "id": "experience-co-limited",
-                "name": "Experience Co Limited"
+                "name": "Experience Co"
               }
             },
             {
@@ -53373,11 +53545,11 @@
               "identifier": "IRS Employer Identification Number  350470950",
               "canonical": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               },
               "party_page": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               }
             }
           ],
@@ -53405,11 +53577,11 @@
               "identifier": "IRS Employer Identification Number  350470950",
               "canonical": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               },
               "party_page": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               }
             }
           ],
@@ -53437,11 +53609,11 @@
               "identifier": "IRS Employer Identification Number  350470950",
               "canonical": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               },
               "party_page": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               }
             }
           ],
@@ -55456,11 +55628,11 @@
           "identifier": "IRS Employer Identification Number  350470950",
           "canonical": {
             "id": "eli-lilly-and-company",
-            "name": "Eli Lilly and Company"
+            "name": "Eli Lilly"
           },
           "party_page": {
             "id": "eli-lilly-and-company",
-            "name": "Eli Lilly and Company"
+            "name": "Eli Lilly"
           }
         }
       ],
@@ -55581,11 +55753,11 @@
               "identifier": "350470950 (IRS Employer Identification Number)",
               "canonical": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               },
               "party_page": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               }
             }
           ],
@@ -55613,11 +55785,11 @@
               "identifier": "IRS Employer Identification Number  350470950",
               "canonical": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               },
               "party_page": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               }
             }
           ],
@@ -55645,11 +55817,11 @@
               "identifier": "IRS Employer Identification Number  350470950",
               "canonical": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               },
               "party_page": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               }
             }
           ],
@@ -56299,11 +56471,11 @@
           "identifier": "70 623 828 508",
           "canonical": {
             "id": "climatech-zero-pty-ltd",
-            "name": "Climatech Zero Pty Ltd"
+            "name": "Climatech Zero"
           },
           "party_page": {
             "id": "climatech-zero-pty-ltd",
-            "name": "Climatech Zero Pty Ltd"
+            "name": "Climatech Zero"
           }
         },
         {
@@ -56312,11 +56484,11 @@
           "identifier": "35 623 827 930",
           "canonical": {
             "id": "climatech-zero-pty-ltd",
-            "name": "Climatech Zero Pty Ltd"
+            "name": "Climatech Zero"
           },
           "party_page": {
             "id": "climatech-zero-pty-ltd",
-            "name": "Climatech Zero Pty Ltd"
+            "name": "Climatech Zero"
           }
         }
       ],
@@ -56704,11 +56876,11 @@
           "identifier": "IRS Employer Identification Number  350470950",
           "canonical": {
             "id": "eli-lilly-and-company",
-            "name": "Eli Lilly and Company"
+            "name": "Eli Lilly"
           },
           "party_page": {
             "id": "eli-lilly-and-company",
-            "name": "Eli Lilly and Company"
+            "name": "Eli Lilly"
           }
         }
       ],
@@ -56820,11 +56992,11 @@
               "identifier": "350470950 (IRS Employer Identification Number)",
               "canonical": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               },
               "party_page": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               }
             }
           ],
@@ -57067,9 +57239,13 @@
               "name": "Genea Bidco SA Pty Ltd",
               "identifier_type": "ACN",
               "identifier": "695 694 458",
+              "canonical": {
+                "id": "genea",
+                "name": "Genea"
+              },
               "party_page": {
-                "id": "genea-bidco-sa-pty-ltd",
-                "name": "Genea Bidco SA Pty Ltd"
+                "id": "genea",
+                "name": "Genea"
               }
             }
           ],
@@ -58311,36 +58487,52 @@
           "name": "Daly Waters FSDA North Pty Ltd",
           "identifier_type": "ACN",
           "identifier": "696 136 295",
+          "canonical": {
+            "id": "daly-waters",
+            "name": "Daly Waters"
+          },
           "party_page": {
-            "id": "daly-waters-fsda-north-pty-ltd",
-            "name": "Daly Waters FSDA North Pty Ltd"
+            "id": "daly-waters",
+            "name": "Daly Waters"
           }
         },
         {
           "name": "Daly Waters Energy, LP",
           "identifier_type": null,
           "identifier": "",
+          "canonical": {
+            "id": "daly-waters",
+            "name": "Daly Waters"
+          },
           "party_page": {
-            "id": "daly-waters-energy-lp",
-            "name": "Daly Waters Energy, LP"
+            "id": "daly-waters",
+            "name": "Daly Waters"
           }
         },
         {
           "name": "Daly Waters BCD Pty Ltd",
           "identifier_type": "ACN",
           "identifier": "696 136 277",
+          "canonical": {
+            "id": "daly-waters",
+            "name": "Daly Waters"
+          },
           "party_page": {
-            "id": "daly-waters-bcd-pty-ltd",
-            "name": "Daly Waters BCD Pty Ltd"
+            "id": "daly-waters",
+            "name": "Daly Waters"
           }
         },
         {
           "name": "Daly Waters FSDA South Pty Ltd",
           "identifier_type": "ACN",
           "identifier": "696 136 302",
+          "canonical": {
+            "id": "daly-waters",
+            "name": "Daly Waters"
+          },
           "party_page": {
-            "id": "daly-waters-fsda-south-pty-ltd",
-            "name": "Daly Waters FSDA South Pty Ltd"
+            "id": "daly-waters",
+            "name": "Daly Waters"
           }
         }
       ],
@@ -59693,11 +59885,11 @@
           "identifier": "B167972",
           "canonical": {
             "id": "eqt-fund-management-s-r-l",
-            "name": "EQT Fund Management S.à r.l."
+            "name": "EQT Fund Management"
           },
           "party_page": {
             "id": "eqt-fund-management-s-r-l",
-            "name": "EQT Fund Management S.à r.l."
+            "name": "EQT Fund Management"
           }
         }
       ],
@@ -61250,11 +61442,11 @@
               "identifier": "00140838",
               "canonical": {
                 "id": "clearwater-analytics-llc",
-                "name": "Clearwater Analytics, LLC"
+                "name": "Clearwater Analytics"
               },
               "party_page": {
                 "id": "clearwater-analytics-llc",
-                "name": "Clearwater Analytics, LLC"
+                "name": "Clearwater Analytics"
               }
             }
           ]
@@ -61697,11 +61889,11 @@
               "identifier": "Cayman Islands Company Registration Number CF172438",
               "canonical": {
                 "id": "derbysoft-inc",
-                "name": "DerbySoft Inc."
+                "name": "DerbySoft"
               },
               "party_page": {
                 "id": "derbysoft-inc",
-                "name": "DerbySoft Inc."
+                "name": "DerbySoft"
               }
             }
           ]
@@ -63554,9 +63746,13 @@
               "name": "Genea Bidco SA Pty Ltd",
               "identifier_type": "ACN",
               "identifier": "695 694 458",
+              "canonical": {
+                "id": "genea",
+                "name": "Genea"
+              },
               "party_page": {
-                "id": "genea-bidco-sa-pty-ltd",
-                "name": "Genea Bidco SA Pty Ltd"
+                "id": "genea",
+                "name": "Genea"
               }
             }
           ],
@@ -64518,11 +64714,11 @@
               "identifier": "00140838",
               "canonical": {
                 "id": "clearwater-analytics-llc",
-                "name": "Clearwater Analytics, LLC"
+                "name": "Clearwater Analytics"
               },
               "party_page": {
                 "id": "clearwater-analytics-llc",
-                "name": "Clearwater Analytics, LLC"
+                "name": "Clearwater Analytics"
               }
             }
           ]
@@ -65000,11 +65196,11 @@
               "identifier": "00140838",
               "canonical": {
                 "id": "clearwater-analytics-llc",
-                "name": "Clearwater Analytics, LLC"
+                "name": "Clearwater Analytics"
               },
               "party_page": {
                 "id": "clearwater-analytics-llc",
-                "name": "Clearwater Analytics, LLC"
+                "name": "Clearwater Analytics"
               }
             }
           ]
@@ -65227,9 +65423,13 @@
               "name": "Genea Bidco SA Pty Ltd",
               "identifier_type": "ACN",
               "identifier": "695 694 458",
+              "canonical": {
+                "id": "genea",
+                "name": "Genea"
+              },
               "party_page": {
-                "id": "genea-bidco-sa-pty-ltd",
-                "name": "Genea Bidco SA Pty Ltd"
+                "id": "genea",
+                "name": "Genea"
               }
             }
           ],
@@ -66713,11 +66913,11 @@
               "identifier": "55 646 760 367",
               "canonical": {
                 "id": "general-dental-holdings-pty-ltd",
-                "name": "General Dental Holdings Pty Ltd"
+                "name": "General Dental Holdings"
               },
               "party_page": {
                 "id": "general-dental-holdings-pty-ltd",
-                "name": "General Dental Holdings Pty Ltd"
+                "name": "General Dental Holdings"
               }
             }
           ],
@@ -67368,11 +67568,11 @@
               "identifier": "IRS Employer Identification Number  350470950",
               "canonical": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               },
               "party_page": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               }
             }
           ],
@@ -70740,11 +70940,11 @@
               "identifier": "00140838",
               "canonical": {
                 "id": "clearwater-analytics-llc",
-                "name": "Clearwater Analytics, LLC"
+                "name": "Clearwater Analytics"
               },
               "party_page": {
                 "id": "clearwater-analytics-llc",
-                "name": "Clearwater Analytics, LLC"
+                "name": "Clearwater Analytics"
               }
             }
           ]
@@ -72038,11 +72238,11 @@
           "identifier": "55 646 760 367",
           "canonical": {
             "id": "general-dental-holdings-pty-ltd",
-            "name": "General Dental Holdings Pty Ltd"
+            "name": "General Dental Holdings"
           },
           "party_page": {
             "id": "general-dental-holdings-pty-ltd",
-            "name": "General Dental Holdings Pty Ltd"
+            "name": "General Dental Holdings"
           }
         }
       ],
@@ -72145,11 +72345,11 @@
               "identifier": "55 646 760 367",
               "canonical": {
                 "id": "general-dental-holdings-pty-ltd",
-                "name": "General Dental Holdings Pty Ltd"
+                "name": "General Dental Holdings"
               },
               "party_page": {
                 "id": "general-dental-holdings-pty-ltd",
-                "name": "General Dental Holdings Pty Ltd"
+                "name": "General Dental Holdings"
               }
             }
           ],
@@ -72186,11 +72386,11 @@
               "identifier": "55 646 760 367",
               "canonical": {
                 "id": "general-dental-holdings-pty-ltd",
-                "name": "General Dental Holdings Pty Ltd"
+                "name": "General Dental Holdings"
               },
               "party_page": {
                 "id": "general-dental-holdings-pty-ltd",
-                "name": "General Dental Holdings Pty Ltd"
+                "name": "General Dental Holdings"
               }
             }
           ],
@@ -73542,27 +73742,39 @@
           "name": "INNIO Jenbacher International B.V.",
           "identifier_type": null,
           "identifier": "KVK90210352",
+          "canonical": {
+            "id": "innio",
+            "name": "INNIO"
+          },
           "party_page": {
-            "id": "innio-jenbacher-international-b-v",
-            "name": "INNIO Jenbacher International B.V."
+            "id": "innio",
+            "name": "INNIO"
           }
         },
         {
           "name": "INNIO Jenbacher Netherlands B.V.",
           "identifier_type": null,
           "identifier": "KVK90209982",
+          "canonical": {
+            "id": "innio",
+            "name": "INNIO"
+          },
           "party_page": {
-            "id": "innio-jenbacher-netherlands-b-v",
-            "name": "INNIO Jenbacher Netherlands B.V."
+            "id": "innio",
+            "name": "INNIO"
           }
         },
         {
           "name": "INNIO Holding GmbH",
           "identifier_type": null,
           "identifier": "HRB305810",
+          "canonical": {
+            "id": "innio",
+            "name": "INNIO"
+          },
           "party_page": {
-            "id": "innio-holding-gmbh",
-            "name": "INNIO Holding GmbH"
+            "id": "innio",
+            "name": "INNIO"
           }
         }
       ],
@@ -75203,11 +75415,11 @@
               "identifier": "55 646 760 367",
               "canonical": {
                 "id": "general-dental-holdings-pty-ltd",
-                "name": "General Dental Holdings Pty Ltd"
+                "name": "General Dental Holdings"
               },
               "party_page": {
                 "id": "general-dental-holdings-pty-ltd",
-                "name": "General Dental Holdings Pty Ltd"
+                "name": "General Dental Holdings"
               }
             }
           ],
@@ -75709,18 +75921,26 @@
               "name": "INNIO Jenbacher International B.V.",
               "identifier_type": null,
               "identifier": "KVK90210352",
+              "canonical": {
+                "id": "innio",
+                "name": "INNIO"
+              },
               "party_page": {
-                "id": "innio-jenbacher-international-b-v",
-                "name": "INNIO Jenbacher International B.V."
+                "id": "innio",
+                "name": "INNIO"
               }
             },
             {
               "name": "INNIO Jenbacher Netherlands B.V.",
               "identifier_type": null,
               "identifier": "KVK90209982",
+              "canonical": {
+                "id": "innio",
+                "name": "INNIO"
+              },
               "party_page": {
-                "id": "innio-jenbacher-netherlands-b-v",
-                "name": "INNIO Jenbacher Netherlands B.V."
+                "id": "innio",
+                "name": "INNIO"
               }
             }
           ],
@@ -76649,11 +76869,11 @@
               "identifier": "00140838",
               "canonical": {
                 "id": "clearwater-analytics-llc",
-                "name": "Clearwater Analytics, LLC"
+                "name": "Clearwater Analytics"
               },
               "party_page": {
                 "id": "clearwater-analytics-llc",
-                "name": "Clearwater Analytics, LLC"
+                "name": "Clearwater Analytics"
               }
             }
           ]
@@ -77277,27 +77497,39 @@
           "name": "FDH Group Intermediate Holdings, LP",
           "identifier_type": null,
           "identifier": "US incorporation number  6336375",
+          "canonical": {
+            "id": "fdh-group",
+            "name": "FDH Group"
+          },
           "party_page": {
-            "id": "fdh-group-intermediate-holdings-lp",
-            "name": "FDH Group Intermediate Holdings, LP"
+            "id": "fdh-group",
+            "name": "FDH Group"
           }
         },
         {
           "name": "FDH Group Intermediate, Inc.",
           "identifier_type": null,
           "identifier": "US incorporation number  6310370",
+          "canonical": {
+            "id": "fdh-group",
+            "name": "FDH Group"
+          },
           "party_page": {
-            "id": "fdh-group-intermediate-inc",
-            "name": "FDH Group Intermediate, Inc."
+            "id": "fdh-group",
+            "name": "FDH Group"
           }
         },
         {
           "name": "FDH Defense Aftermarket, Inc.",
           "identifier_type": null,
           "identifier": "US incorporation number  6267156",
+          "canonical": {
+            "id": "fdh-group",
+            "name": "FDH Group"
+          },
           "party_page": {
-            "id": "fdh-defense-aftermarket-inc",
-            "name": "FDH Defense Aftermarket, Inc."
+            "id": "fdh-group",
+            "name": "FDH Group"
           }
         }
       ],
@@ -77308,11 +77540,11 @@
           "identifier": "US incorporation number  3229725",
           "canonical": {
             "id": "bain-capital-investors-llc",
-            "name": "Bain Capital Investors LLC"
+            "name": "Bain Capital Investors"
           },
           "party_page": {
             "id": "bain-capital-investors-llc",
-            "name": "Bain Capital Investors LLC"
+            "name": "Bain Capital Investors"
           }
         },
         {
@@ -77709,9 +77941,13 @@
               "name": "KINETIC HOLDING COMPANY PTY LTD",
               "identifier_type": "ABN",
               "identifier": "49 601 254 880",
+              "canonical": {
+                "id": "kinetic",
+                "name": "Kinetic"
+              },
               "party_page": {
-                "id": "kinetic-holding-company-pty-ltd",
-                "name": "Kinetic Holding Company Pty Ltd"
+                "id": "kinetic",
+                "name": "Kinetic"
               }
             }
           ],
@@ -81307,11 +81543,11 @@
               "identifier": "00140838",
               "canonical": {
                 "id": "clearwater-analytics-llc",
-                "name": "Clearwater Analytics, LLC"
+                "name": "Clearwater Analytics"
               },
               "party_page": {
                 "id": "clearwater-analytics-llc",
-                "name": "Clearwater Analytics, LLC"
+                "name": "Clearwater Analytics"
               }
             }
           ]
@@ -82486,11 +82722,11 @@
               "identifier": "94 006 457 987",
               "canonical": {
                 "id": "australiansuper-pty-ltd",
-                "name": "Australiansuper Pty Ltd"
+                "name": "AustralianSuper"
               },
               "party_page": {
                 "id": "australiansuper-pty-ltd",
-                "name": "Australiansuper Pty Ltd"
+                "name": "AustralianSuper"
               }
             }
           ],
@@ -83943,11 +84179,11 @@
           "identifier": "94 006 457 987",
           "canonical": {
             "id": "australiansuper-pty-ltd",
-            "name": "Australiansuper Pty Ltd"
+            "name": "AustralianSuper"
           },
           "party_page": {
             "id": "australiansuper-pty-ltd",
-            "name": "Australiansuper Pty Ltd"
+            "name": "AustralianSuper"
           }
         }
       ],
@@ -84027,11 +84263,11 @@
               "identifier": "94 006 457 987",
               "canonical": {
                 "id": "australiansuper-pty-ltd",
-                "name": "Australiansuper Pty Ltd"
+                "name": "AustralianSuper"
               },
               "party_page": {
                 "id": "australiansuper-pty-ltd",
-                "name": "Australiansuper Pty Ltd"
+                "name": "AustralianSuper"
               }
             }
           ],
@@ -84845,11 +85081,11 @@
           "identifier": "00140838",
           "canonical": {
             "id": "clearwater-analytics-llc",
-            "name": "Clearwater Analytics, LLC"
+            "name": "Clearwater Analytics"
           },
           "party_page": {
             "id": "clearwater-analytics-llc",
-            "name": "Clearwater Analytics, LLC"
+            "name": "Clearwater Analytics"
           }
         }
       ],
@@ -84869,11 +85105,11 @@
           "identifier": "4909156",
           "canonical": {
             "id": "clearwater-analytics-llc",
-            "name": "Clearwater Analytics, LLC"
+            "name": "Clearwater Analytics"
           },
           "party_page": {
             "id": "clearwater-analytics-llc",
-            "name": "Clearwater Analytics, LLC"
+            "name": "Clearwater Analytics"
           }
         },
         {
@@ -85789,11 +86025,11 @@
           "identifier": "94 006 457 987",
           "canonical": {
             "id": "australiansuper-pty-ltd",
-            "name": "Australiansuper Pty Ltd"
+            "name": "AustralianSuper"
           },
           "party_page": {
             "id": "australiansuper-pty-ltd",
-            "name": "Australiansuper Pty Ltd"
+            "name": "AustralianSuper"
           }
         }
       ],
@@ -86217,11 +86453,11 @@
               "identifier": "55 646 760 367",
               "canonical": {
                 "id": "general-dental-holdings-pty-ltd",
-                "name": "General Dental Holdings Pty Ltd"
+                "name": "General Dental Holdings"
               },
               "party_page": {
                 "id": "general-dental-holdings-pty-ltd",
-                "name": "General Dental Holdings Pty Ltd"
+                "name": "General Dental Holdings"
               }
             }
           ],
@@ -86378,11 +86614,11 @@
               "identifier": "3390142",
               "canonical": {
                 "id": "mastercard-incorporated",
-                "name": "Mastercard Incorporated"
+                "name": "MasterCard"
               },
               "party_page": {
                 "id": "mastercard-incorporated",
-                "name": "Mastercard Incorporated"
+                "name": "MasterCard"
               }
             },
             {
@@ -87049,9 +87285,13 @@
               "name": "GENEA PTY LTD",
               "identifier_type": "ABN",
               "identifier": "82 002 844 448",
+              "canonical": {
+                "id": "genea",
+                "name": "Genea"
+              },
               "party_page": {
-                "id": "genea-pty-ltd",
-                "name": "Genea Pty Ltd"
+                "id": "genea",
+                "name": "Genea"
               }
             }
           ],
@@ -87397,9 +87637,13 @@
               "name": "Genea Bidco SA Pty Ltd",
               "identifier_type": "ACN",
               "identifier": "695 694 458",
+              "canonical": {
+                "id": "genea",
+                "name": "Genea"
+              },
               "party_page": {
-                "id": "genea-bidco-sa-pty-ltd",
-                "name": "Genea Bidco SA Pty Ltd"
+                "id": "genea",
+                "name": "Genea"
               }
             }
           ],
@@ -87491,11 +87735,11 @@
           "identifier": "",
           "canonical": {
             "id": "google-llc",
-            "name": "Google LLC"
+            "name": "Google"
           },
           "party_page": {
             "id": "google-llc",
-            "name": "Google LLC"
+            "name": "Google"
           }
         }
       ],
@@ -87576,11 +87820,11 @@
               "identifier": "",
               "canonical": {
                 "id": "google-llc",
-                "name": "Google LLC"
+                "name": "Google"
               },
               "party_page": {
                 "id": "google-llc",
-                "name": "Google LLC"
+                "name": "Google"
               }
             }
           ],
@@ -88661,18 +88905,26 @@
               "name": "INNIO Jenbacher International B.V.",
               "identifier_type": null,
               "identifier": "KVK90210352",
+              "canonical": {
+                "id": "innio",
+                "name": "INNIO"
+              },
               "party_page": {
-                "id": "innio-jenbacher-international-b-v",
-                "name": "INNIO Jenbacher International B.V."
+                "id": "innio",
+                "name": "INNIO"
               }
             },
             {
               "name": "INNIO Jenbacher Netherlands B.V.",
               "identifier_type": null,
               "identifier": "KVK90209982",
+              "canonical": {
+                "id": "innio",
+                "name": "INNIO"
+              },
               "party_page": {
-                "id": "innio-jenbacher-netherlands-b-v",
-                "name": "INNIO Jenbacher Netherlands B.V."
+                "id": "innio",
+                "name": "INNIO"
               }
             }
           ],
@@ -89387,9 +89639,13 @@
               "name": "Genea Bidco SA Pty Ltd",
               "identifier_type": "ACN",
               "identifier": "695 694 458",
+              "canonical": {
+                "id": "genea",
+                "name": "Genea"
+              },
               "party_page": {
-                "id": "genea-bidco-sa-pty-ltd",
-                "name": "Genea Bidco SA Pty Ltd"
+                "id": "genea",
+                "name": "Genea"
               }
             }
           ],
@@ -90116,11 +90372,11 @@
           "identifier": "Luxembourg Company Registration Number  B167972",
           "canonical": {
             "id": "eqt-fund-management-s-r-l",
-            "name": "EQT Fund Management S.à r.l."
+            "name": "EQT Fund Management"
           },
           "party_page": {
             "id": "eqt-fund-management-s-r-l",
-            "name": "EQT Fund Management S.à r.l."
+            "name": "EQT Fund Management"
           }
         }
       ],
@@ -90628,11 +90884,11 @@
               "identifier": "Cayman Islands Company Registration Number CF172438",
               "canonical": {
                 "id": "derbysoft-inc",
-                "name": "DerbySoft Inc."
+                "name": "DerbySoft"
               },
               "party_page": {
                 "id": "derbysoft-inc",
-                "name": "DerbySoft Inc."
+                "name": "DerbySoft"
               }
             }
           ]
@@ -91945,11 +92201,11 @@
               "identifier": "00140838",
               "canonical": {
                 "id": "clearwater-analytics-llc",
-                "name": "Clearwater Analytics, LLC"
+                "name": "Clearwater Analytics"
               },
               "party_page": {
                 "id": "clearwater-analytics-llc",
-                "name": "Clearwater Analytics, LLC"
+                "name": "Clearwater Analytics"
               }
             }
           ]
@@ -92425,9 +92681,13 @@
               "name": "Genea Bidco SA Pty Ltd",
               "identifier_type": "ACN",
               "identifier": "695 694 458",
+              "canonical": {
+                "id": "genea",
+                "name": "Genea"
+              },
               "party_page": {
-                "id": "genea-bidco-sa-pty-ltd",
-                "name": "Genea Bidco SA Pty Ltd"
+                "id": "genea",
+                "name": "Genea"
               }
             }
           ],
@@ -94430,9 +94690,13 @@
           "name": "BROOKFIELD CAPITAL MANAGEMENT LIMITED",
           "identifier_type": "ABN",
           "identifier": "32 094 936 866",
+          "canonical": {
+            "id": "brookfield-corporation",
+            "name": "Brookfield Corporation"
+          },
           "party_page": {
-            "id": "brookfield-capital-management-limited",
-            "name": "Brookfield Capital Management Limited"
+            "id": "brookfield-corporation",
+            "name": "Brookfield Corporation"
           }
         },
         {
@@ -95282,11 +95546,11 @@
               "identifier": "00140838",
               "canonical": {
                 "id": "clearwater-analytics-llc",
-                "name": "Clearwater Analytics, LLC"
+                "name": "Clearwater Analytics"
               },
               "party_page": {
                 "id": "clearwater-analytics-llc",
-                "name": "Clearwater Analytics, LLC"
+                "name": "Clearwater Analytics"
               }
             }
           ]
@@ -95893,18 +96157,26 @@
           "name": "FalconPoint Non-U.S./USTE Feeder II L.P",
           "identifier_type": null,
           "identifier": "934704164",
+          "canonical": {
+            "id": "falcon-point",
+            "name": "Falcon Point"
+          },
           "party_page": {
-            "id": "falconpoint-non-u-s-uste-feeder-ii-l-p",
-            "name": "FalconPoint Non-U.S./USTE Feeder II L.P"
+            "id": "falcon-point",
+            "name": "Falcon Point"
           }
         },
         {
           "name": "FalconPoint Partners II, LP",
           "identifier_type": null,
           "identifier": "933979415",
+          "canonical": {
+            "id": "falcon-point",
+            "name": "Falcon Point"
+          },
           "party_page": {
-            "id": "falconpoint-partners-ii-lp",
-            "name": "FalconPoint Partners II, LP"
+            "id": "falcon-point",
+            "name": "Falcon Point"
           }
         }
       ],
@@ -96581,11 +96853,11 @@
           "identifier": "66 003 688 855",
           "canonical": {
             "id": "fantastic-furniture-limited",
-            "name": "Fantastic Furniture Limited"
+            "name": "Fantastic Furniture"
           },
           "party_page": {
             "id": "fantastic-furniture-limited",
-            "name": "Fantastic Furniture Limited"
+            "name": "Fantastic Furniture"
           }
         },
         {
@@ -96603,11 +96875,11 @@
           "identifier": "NZCN  1015180",
           "canonical": {
             "id": "fantastic-furniture-limited",
-            "name": "Fantastic Furniture Limited"
+            "name": "Fantastic Furniture"
           },
           "party_page": {
             "id": "fantastic-furniture-limited",
-            "name": "Fantastic Furniture Limited"
+            "name": "Fantastic Furniture"
           }
         },
         {
@@ -97908,11 +98180,11 @@
               "identifier": "Cayman Islands Company Registration Number CF172438",
               "canonical": {
                 "id": "derbysoft-inc",
-                "name": "DerbySoft Inc."
+                "name": "DerbySoft"
               },
               "party_page": {
                 "id": "derbysoft-inc",
-                "name": "DerbySoft Inc."
+                "name": "DerbySoft"
               }
             }
           ]
@@ -98310,11 +98582,11 @@
               "identifier": "94 006 457 987",
               "canonical": {
                 "id": "australiansuper-pty-ltd",
-                "name": "Australiansuper Pty Ltd"
+                "name": "AustralianSuper"
               },
               "party_page": {
                 "id": "australiansuper-pty-ltd",
-                "name": "Australiansuper Pty Ltd"
+                "name": "AustralianSuper"
               }
             }
           ],
@@ -98767,11 +99039,11 @@
               "identifier": "00140838",
               "canonical": {
                 "id": "clearwater-analytics-llc",
-                "name": "Clearwater Analytics, LLC"
+                "name": "Clearwater Analytics"
               },
               "party_page": {
                 "id": "clearwater-analytics-llc",
-                "name": "Clearwater Analytics, LLC"
+                "name": "Clearwater Analytics"
               }
             }
           ]
@@ -98928,11 +99200,11 @@
           "identifier": "CRN  00329377",
           "canonical": {
             "id": "fenner-international-limited",
-            "name": "Fenner International Limited"
+            "name": "Fenner International"
           },
           "party_page": {
             "id": "fenner-international-limited",
-            "name": "Fenner International Limited"
+            "name": "Fenner International"
           }
         },
         {
@@ -98941,11 +99213,11 @@
           "identifier": "CRN  00527338",
           "canonical": {
             "id": "fenner-international-limited",
-            "name": "Fenner International Limited"
+            "name": "Fenner International"
           },
           "party_page": {
             "id": "fenner-international-limited",
-            "name": "Fenner International Limited"
+            "name": "Fenner International"
           }
         },
         {
@@ -99087,11 +99359,11 @@
               "identifier": "IRS Employer Identification Number  350470950",
               "canonical": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               },
               "party_page": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               }
             }
           ],
@@ -99119,11 +99391,11 @@
               "identifier": "IRS Employer Identification Number  350470950",
               "canonical": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               },
               "party_page": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               }
             }
           ],
@@ -101145,11 +101417,11 @@
           "identifier": "Luxembourg Company Registration Number  B167972",
           "canonical": {
             "id": "eqt-fund-management-s-r-l",
-            "name": "EQT Fund Management S.à r.l."
+            "name": "EQT Fund Management"
           },
           "party_page": {
             "id": "eqt-fund-management-s-r-l",
-            "name": "EQT Fund Management S.à r.l."
+            "name": "EQT Fund Management"
           }
         }
       ],
@@ -103177,11 +103449,11 @@
               "identifier": "00140838",
               "canonical": {
                 "id": "clearwater-analytics-llc",
-                "name": "Clearwater Analytics, LLC"
+                "name": "Clearwater Analytics"
               },
               "party_page": {
                 "id": "clearwater-analytics-llc",
-                "name": "Clearwater Analytics, LLC"
+                "name": "Clearwater Analytics"
               }
             }
           ]
@@ -104781,11 +105053,11 @@
           "identifier": "56 167 320 470",
           "canonical": {
             "id": "experience-co-limited",
-            "name": "Experience Co Limited"
+            "name": "Experience Co"
           },
           "party_page": {
             "id": "experience-co-limited",
-            "name": "Experience Co Limited"
+            "name": "Experience Co"
           }
         },
         {
@@ -104991,11 +105263,11 @@
           "identifier": "55 646 760 367",
           "canonical": {
             "id": "general-dental-holdings-pty-ltd",
-            "name": "General Dental Holdings Pty Ltd"
+            "name": "General Dental Holdings"
           },
           "party_page": {
             "id": "general-dental-holdings-pty-ltd",
-            "name": "General Dental Holdings Pty Ltd"
+            "name": "General Dental Holdings"
           }
         }
       ],
@@ -105596,11 +105868,11 @@
               "identifier": "IRS Employer Identification Number  350470950",
               "canonical": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               },
               "party_page": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               }
             }
           ],
@@ -105628,11 +105900,11 @@
               "identifier": "IRS Employer Identification Number  350470950",
               "canonical": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               },
               "party_page": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               }
             }
           ],
@@ -108034,11 +108306,11 @@
               "identifier": "IRS Employer Identification Number  350470950",
               "canonical": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               },
               "party_page": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               }
             }
           ],
@@ -108798,11 +109070,11 @@
           "identifier": "36 608 589 037",
           "canonical": {
             "id": "classpass-llc",
-            "name": "ClassPass LLC"
+            "name": "ClassPass"
           },
           "party_page": {
             "id": "classpass-llc",
-            "name": "ClassPass LLC"
+            "name": "ClassPass"
           }
         },
         {
@@ -108820,11 +109092,11 @@
           "identifier": "CIN: 451439319",
           "canonical": {
             "id": "classpass-llc",
-            "name": "ClassPass LLC"
+            "name": "ClassPass"
           },
           "party_page": {
             "id": "classpass-llc",
-            "name": "ClassPass LLC"
+            "name": "ClassPass"
           }
         },
         {
@@ -109115,9 +109387,13 @@
               "name": "Genea Bidco SA Pty Ltd",
               "identifier_type": "ACN",
               "identifier": "695 694 458",
+              "canonical": {
+                "id": "genea",
+                "name": "Genea"
+              },
               "party_page": {
-                "id": "genea-bidco-sa-pty-ltd",
-                "name": "Genea Bidco SA Pty Ltd"
+                "id": "genea",
+                "name": "Genea"
               }
             }
           ],
@@ -109341,11 +109617,11 @@
               "identifier": "00140838",
               "canonical": {
                 "id": "clearwater-analytics-llc",
-                "name": "Clearwater Analytics, LLC"
+                "name": "Clearwater Analytics"
               },
               "party_page": {
                 "id": "clearwater-analytics-llc",
-                "name": "Clearwater Analytics, LLC"
+                "name": "Clearwater Analytics"
               }
             }
           ]
@@ -112392,18 +112668,26 @@
           "name": "JDA Peakhurst Hotel Trading Pty Ltd as trustee for JDA Peakhurst Hotel Trading Unit Trust",
           "identifier_type": "ABN",
           "identifier": "30 258 368 694",
+          "canonical": {
+            "id": "jda-peakhurst-hotel",
+            "name": "JDA Peakhurst Hotel"
+          },
           "party_page": {
-            "id": "jda-peakhurst-hotel-trading-pty-ltd-as-trustee-for-jda-peakhurst-hotel-trading-u",
-            "name": "JDA Peakhurst Hotel Trading Pty Ltd as trustee for JDA Peakhurst Hotel Trading Unit Trust"
+            "id": "jda-peakhurst-hotel",
+            "name": "JDA Peakhurst Hotel"
           }
         },
         {
           "name": "JDA Peakhurst Hotel Investments Pty Ltd as trustee for JDA Peakhurst Hotel Investments Unit Trust",
           "identifier_type": "ABN",
           "identifier": "97 966 437 953",
+          "canonical": {
+            "id": "jda-peakhurst-hotel",
+            "name": "JDA Peakhurst Hotel"
+          },
           "party_page": {
-            "id": "jda-peakhurst-hotel-investments-pty-ltd-as-trustee-for-jda-peakhurst-hotel-inves",
-            "name": "JDA Peakhurst Hotel Investments Pty Ltd as trustee for JDA Peakhurst Hotel Investments Unit Trust"
+            "id": "jda-peakhurst-hotel",
+            "name": "JDA Peakhurst Hotel"
           }
         }
       ],
@@ -112862,9 +113146,13 @@
               "name": "Genea Bidco SA Pty Ltd",
               "identifier_type": "ACN",
               "identifier": "695 694 458",
+              "canonical": {
+                "id": "genea",
+                "name": "Genea"
+              },
               "party_page": {
-                "id": "genea-bidco-sa-pty-ltd",
-                "name": "Genea Bidco SA Pty Ltd"
+                "id": "genea",
+                "name": "Genea"
               }
             }
           ],
@@ -113315,9 +113603,13 @@
               "name": "Genea Bidco SA Pty Ltd",
               "identifier_type": "ACN",
               "identifier": "695 694 458",
+              "canonical": {
+                "id": "genea",
+                "name": "Genea"
+              },
               "party_page": {
-                "id": "genea-bidco-sa-pty-ltd",
-                "name": "Genea Bidco SA Pty Ltd"
+                "id": "genea",
+                "name": "Genea"
               }
             }
           ],
@@ -114146,9 +114438,13 @@
               "name": "eBay Inc.",
               "identifier_type": null,
               "identifier": "I.R.S. Employer Identification No. – United States  770430924",
+              "canonical": {
+                "id": "ebay",
+                "name": "eBay"
+              },
               "party_page": {
-                "id": "ebay-inc",
-                "name": "eBay Inc."
+                "id": "ebay",
+                "name": "eBay"
               }
             }
           ],
@@ -114893,11 +115189,11 @@
               "identifier": "66 003 688 855",
               "canonical": {
                 "id": "fantastic-furniture-limited",
-                "name": "Fantastic Furniture Limited"
+                "name": "Fantastic Furniture"
               },
               "party_page": {
                 "id": "fantastic-furniture-limited",
-                "name": "Fantastic Furniture Limited"
+                "name": "Fantastic Furniture"
               }
             }
           ]
@@ -115152,11 +115448,11 @@
               "identifier": "55 646 760 367",
               "canonical": {
                 "id": "general-dental-holdings-pty-ltd",
-                "name": "General Dental Holdings Pty Ltd"
+                "name": "General Dental Holdings"
               },
               "party_page": {
                 "id": "general-dental-holdings-pty-ltd",
-                "name": "General Dental Holdings Pty Ltd"
+                "name": "General Dental Holdings"
               }
             }
           ],
@@ -115599,11 +115895,11 @@
               "identifier": "IRS Employer Identification Number  350470950",
               "canonical": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               },
               "party_page": {
                 "id": "eli-lilly-and-company",
-                "name": "Eli Lilly and Company"
+                "name": "Eli Lilly"
               }
             }
           ],
@@ -115707,11 +116003,11 @@
           "identifier": "Delaware File Number  3229725",
           "canonical": {
             "id": "bain-capital-investors-llc",
-            "name": "Bain Capital Investors LLC"
+            "name": "Bain Capital Investors"
           },
           "party_page": {
             "id": "bain-capital-investors-llc",
-            "name": "Bain Capital Investors LLC"
+            "name": "Bain Capital Investors"
           }
         },
         {
@@ -115805,18 +116101,26 @@
               "name": "FDH Group Intermediate Holdings, LP",
               "identifier_type": null,
               "identifier": "US incorporation number  6336375",
+              "canonical": {
+                "id": "fdh-group",
+                "name": "FDH Group"
+              },
               "party_page": {
-                "id": "fdh-group-intermediate-holdings-lp",
-                "name": "FDH Group Intermediate Holdings, LP"
+                "id": "fdh-group",
+                "name": "FDH Group"
               }
             },
             {
               "name": "FDH Group Intermediate, Inc.",
               "identifier_type": null,
               "identifier": "US incorporation number  6310370",
+              "canonical": {
+                "id": "fdh-group",
+                "name": "FDH Group"
+              },
               "party_page": {
-                "id": "fdh-group-intermediate-inc",
-                "name": "FDH Group Intermediate, Inc."
+                "id": "fdh-group",
+                "name": "FDH Group"
               }
             }
           ]
@@ -116635,11 +116939,11 @@
           "identifier": "42 008 737 424",
           "canonical": {
             "id": "anglogold-ashanti-plc",
-            "name": "AngloGold Ashanti plc"
+            "name": "AngloGold Ashanti"
           },
           "party_page": {
             "id": "anglogold-ashanti-plc",
-            "name": "AngloGold Ashanti plc"
+            "name": "AngloGold Ashanti"
           }
         }
       ],
@@ -116661,11 +116965,11 @@
           "identifier": "CRN  14654651",
           "canonical": {
             "id": "anglogold-ashanti-plc",
-            "name": "AngloGold Ashanti plc"
+            "name": "AngloGold Ashanti"
           },
           "party_page": {
             "id": "anglogold-ashanti-plc",
-            "name": "AngloGold Ashanti plc"
+            "name": "AngloGold Ashanti"
           }
         },
         {
@@ -118608,11 +118912,11 @@
               "identifier": "55 646 760 367",
               "canonical": {
                 "id": "general-dental-holdings-pty-ltd",
-                "name": "General Dental Holdings Pty Ltd"
+                "name": "General Dental Holdings"
               },
               "party_page": {
                 "id": "general-dental-holdings-pty-ltd",
-                "name": "General Dental Holdings Pty Ltd"
+                "name": "General Dental Holdings"
               }
             }
           ],
@@ -120761,11 +121065,11 @@
               "identifier": "3390142",
               "canonical": {
                 "id": "mastercard-incorporated",
-                "name": "Mastercard Incorporated"
+                "name": "MasterCard"
               },
               "party_page": {
                 "id": "mastercard-incorporated",
-                "name": "Mastercard Incorporated"
+                "name": "MasterCard"
               }
             },
             {
@@ -123448,11 +123752,11 @@
           "identifier": "Cayman Islands Company Registration Number CF172438",
           "canonical": {
             "id": "derbysoft-inc",
-            "name": "DerbySoft Inc."
+            "name": "DerbySoft"
           },
           "party_page": {
             "id": "derbysoft-inc",
-            "name": "DerbySoft Inc."
+            "name": "DerbySoft"
           }
         }
       ],
@@ -123507,11 +123811,11 @@
           "identifier": "Wyoming Filing ID 2011000595814",
           "canonical": {
             "id": "derbysoft-inc",
-            "name": "DerbySoft Inc."
+            "name": "DerbySoft"
           },
           "party_page": {
             "id": "derbysoft-inc",
-            "name": "DerbySoft Inc."
+            "name": "DerbySoft"
           }
         },
         {
@@ -124327,9 +124631,13 @@
               "name": "Genea Bidco SA Pty Ltd",
               "identifier_type": "ACN",
               "identifier": "695 694 458",
+              "canonical": {
+                "id": "genea",
+                "name": "Genea"
+              },
               "party_page": {
-                "id": "genea-bidco-sa-pty-ltd",
-                "name": "Genea Bidco SA Pty Ltd"
+                "id": "genea",
+                "name": "Genea"
               }
             }
           ],
@@ -124405,11 +124713,11 @@
               "identifier": "Cayman Islands Company Registration Number CF172438",
               "canonical": {
                 "id": "derbysoft-inc",
-                "name": "DerbySoft Inc."
+                "name": "DerbySoft"
               },
               "party_page": {
                 "id": "derbysoft-inc",
-                "name": "DerbySoft Inc."
+                "name": "DerbySoft"
               }
             }
           ]
@@ -125114,9 +125422,13 @@
               "name": "Genea Bidco SA Pty Ltd",
               "identifier_type": "ACN",
               "identifier": "695 694 458",
+              "canonical": {
+                "id": "genea",
+                "name": "Genea"
+              },
               "party_page": {
-                "id": "genea-bidco-sa-pty-ltd",
-                "name": "Genea Bidco SA Pty Ltd"
+                "id": "genea",
+                "name": "Genea"
               }
             }
           ],
@@ -125297,11 +125609,11 @@
               "identifier": "94 006 457 987",
               "canonical": {
                 "id": "australiansuper-pty-ltd",
-                "name": "Australiansuper Pty Ltd"
+                "name": "AustralianSuper"
               },
               "party_page": {
                 "id": "australiansuper-pty-ltd",
-                "name": "Australiansuper Pty Ltd"
+                "name": "AustralianSuper"
               }
             }
           ],
@@ -126728,11 +127040,11 @@
               "identifier": "55 646 760 367",
               "canonical": {
                 "id": "general-dental-holdings-pty-ltd",
-                "name": "General Dental Holdings Pty Ltd"
+                "name": "General Dental Holdings"
               },
               "party_page": {
                 "id": "general-dental-holdings-pty-ltd",
-                "name": "General Dental Holdings Pty Ltd"
+                "name": "General Dental Holdings"
               }
             }
           ],
@@ -126808,9 +127120,13 @@
           "name": "PUBLICIS MEDIA AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
           "identifier": "40 001 786 858",
+          "canonical": {
+            "id": "publicis-groupe",
+            "name": "Publicis Groupe"
+          },
           "party_page": {
-            "id": "publicis-media-australia-pty-ltd",
-            "name": "Publicis Media Australia Pty Ltd"
+            "id": "publicis-groupe",
+            "name": "Publicis Groupe"
           }
         }
       ],
@@ -126830,9 +127146,13 @@
           "name": "Publicis Groupe S.A.",
           "identifier_type": null,
           "identifier": "Paris Trade and Companies Registry no. 542 080 601",
+          "canonical": {
+            "id": "publicis-groupe",
+            "name": "Publicis Groupe"
+          },
           "party_page": {
-            "id": "publicis-groupe-s-a",
-            "name": "Publicis Groupe S.A."
+            "id": "publicis-groupe",
+            "name": "Publicis Groupe"
           }
         }
       ],
@@ -127027,11 +127347,11 @@
           "identifier": "",
           "canonical": {
             "id": "dp-world-limited",
-            "name": "DP World Limited"
+            "name": "DP World"
           },
           "party_page": {
             "id": "dp-world-limited",
-            "name": "DP World Limited"
+            "name": "DP World"
           }
         },
         {
@@ -127040,11 +127360,11 @@
           "identifier": "549300M3U2DNF4QVSS04",
           "canonical": {
             "id": "dp-world-limited",
-            "name": "DP World Limited"
+            "name": "DP World"
           },
           "party_page": {
             "id": "dp-world-limited",
-            "name": "DP World Limited"
+            "name": "DP World"
           }
         },
         {
@@ -127429,11 +127749,11 @@
               "identifier": "94 006 457 987",
               "canonical": {
                 "id": "australiansuper-pty-ltd",
-                "name": "Australiansuper Pty Ltd"
+                "name": "AustralianSuper"
               },
               "party_page": {
                 "id": "australiansuper-pty-ltd",
-                "name": "Australiansuper Pty Ltd"
+                "name": "AustralianSuper"
               }
             }
           ],
@@ -128180,11 +128500,11 @@
           "identifier": "33 102 417 032",
           "canonical": {
             "id": "google-llc",
-            "name": "Google LLC"
+            "name": "Google"
           },
           "party_page": {
             "id": "google-llc",
-            "name": "Google LLC"
+            "name": "Google"
           }
         },
         {
@@ -128232,11 +128552,11 @@
           "identifier": "FEIN 770493581",
           "canonical": {
             "id": "google-llc",
-            "name": "Google LLC"
+            "name": "Google"
           },
           "party_page": {
             "id": "google-llc",
-            "name": "Google LLC"
+            "name": "Google"
           }
         }
       ],
@@ -128402,11 +128722,11 @@
               "identifier": "",
               "canonical": {
                 "id": "google-llc",
-                "name": "Google LLC"
+                "name": "Google"
               },
               "party_page": {
                 "id": "google-llc",
-                "name": "Google LLC"
+                "name": "Google"
               }
             }
           ],
@@ -128454,11 +128774,11 @@
           "identifier": "5406274",
           "canonical": {
             "id": "marc-jacobs-holdings-llc",
-            "name": "Marc Jacobs Holdings, LLC"
+            "name": "Marc Jacobs"
           },
           "party_page": {
             "id": "marc-jacobs-holdings-llc",
-            "name": "Marc Jacobs Holdings, LLC"
+            "name": "Marc Jacobs"
           }
         },
         {
@@ -128478,11 +128798,11 @@
           "identifier": "2684319",
           "canonical": {
             "id": "marc-jacobs-holdings-llc",
-            "name": "Marc Jacobs Holdings, LLC"
+            "name": "Marc Jacobs"
           },
           "party_page": {
             "id": "marc-jacobs-holdings-llc",
-            "name": "Marc Jacobs Holdings, LLC"
+            "name": "Marc Jacobs"
           }
         },
         {

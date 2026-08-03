@@ -75,7 +75,7 @@
       "count": 3
     },
     {
-      "acquirer_name": "Eli Lilly and Company",
+      "acquirer_name": "Eli Lilly",
       "canonical_id": "eli-lilly-and-company",
       "anzsic_code": "184",
       "anzsic_name": "Pharmaceutical and Medicinal Product Manufacturing",
@@ -92,7 +92,7 @@
       "count": 3
     },
     {
-      "acquirer_name": "Eli Lilly and Company",
+      "acquirer_name": "Eli Lilly",
       "canonical_id": "eli-lilly-and-company",
       "anzsic_code": "691",
       "anzsic_name": "Scientific Research Services",
@@ -135,6 +135,21 @@
       "dates": [
         "2026-04-10T12:00:00Z",
         "2026-07-24T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "L'Oreal",
+      "canonical_id": "l-oreal",
+      "anzsic_code": "372",
+      "anzsic_name": "Pharmaceutical and Toiletry Goods Wholesaling",
+      "merger_ids": [
+        "MN-01080",
+        "MN-35029"
+      ],
+      "dates": [
+        "2026-01-15T12:00:00Z",
+        "2026-07-21T12:00:00Z"
       ],
       "count": 2
     },
@@ -229,7 +244,7 @@
       "count": 2
     },
     {
-      "acquirer_name": "Experience Co Limited",
+      "acquirer_name": "Experience Co",
       "canonical_id": "experience-co-limited",
       "anzsic_code": "482",
       "anzsic_name": "Water Passenger Transport",
@@ -244,7 +259,7 @@
       "count": 2
     },
     {
-      "acquirer_name": "Experience Co Limited",
+      "acquirer_name": "Experience Co",
       "canonical_id": "experience-co-limited",
       "anzsic_code": "501",
       "anzsic_name": "Scenic and Sightseeing Transport",
@@ -274,8 +289,8 @@
       "count": 2
     },
     {
-      "acquirer_name": "OpenAI Group PBC",
-      "canonical_id": null,
+      "acquirer_name": "OpenAI",
+      "canonical_id": "openai",
       "anzsic_code": "592",
       "anzsic_name": "Data Processing, Web Hosting and Electronic Information Storage Services",
       "merger_ids": [
@@ -300,6 +315,21 @@
       "dates": [
         "2026-05-22T12:00:00Z",
         "2026-06-22T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "Genea",
+      "canonical_id": "genea",
+      "anzsic_code": "851",
+      "anzsic_name": "Medical Services",
+      "merger_ids": [
+        "MN-05009",
+        "MN-01104"
+      ],
+      "dates": [
+        "2026-04-27T12:00:00Z",
+        "2026-06-19T12:00:00Z"
       ],
       "count": 2
     },
@@ -484,5 +514,5 @@
       "count": 2
     }
   ],
-  "count": 31
+  "count": 33
 }

@@ -237,18 +237,26 @@
           "name": "INNIO Jenbacher International B.V.",
           "identifier_type": null,
           "identifier": "KVK90210352",
+          "canonical": {
+            "id": "innio",
+            "name": "INNIO"
+          },
           "party_page": {
-            "id": "innio-jenbacher-international-b-v",
-            "name": "INNIO Jenbacher International B.V."
+            "id": "innio",
+            "name": "INNIO"
           }
         },
         {
           "name": "INNIO Jenbacher Netherlands B.V.",
           "identifier_type": null,
           "identifier": "KVK90209982",
+          "canonical": {
+            "id": "innio",
+            "name": "INNIO"
+          },
           "party_page": {
-            "id": "innio-jenbacher-netherlands-b-v",
-            "name": "INNIO Jenbacher Netherlands B.V."
+            "id": "innio",
+            "name": "INNIO"
           }
         }
       ],

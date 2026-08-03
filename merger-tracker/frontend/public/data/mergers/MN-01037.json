@@ -202,9 +202,13 @@
           "name": "PUBLICIS MEDIA AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
           "identifier": "40 001 786 858",
+          "canonical": {
+            "id": "publicis-groupe",
+            "name": "Publicis Groupe"
+          },
           "party_page": {
-            "id": "publicis-media-australia-pty-ltd",
-            "name": "Publicis Media Australia Pty Ltd"
+            "id": "publicis-groupe",
+            "name": "Publicis Groupe"
           }
         }
       ],
