@@ -81,13 +81,13 @@
       "code": "23",
       "name": "Transport Equipment Manufacturing",
       "level": "subdivision",
-      "merger_count": 10
+      "merger_count": 11
     },
     {
       "code": "24",
       "name": "Machinery and Equipment Manufacturing",
       "level": "subdivision",
-      "merger_count": 45
+      "merger_count": 46
     },
     {
       "code": "25",
@@ -238,6 +238,17 @@
       "has_conditions": false,
       "phase": "Waiver",
       "notification_date": "2026-07-08T12:00:00Z",
+      "determination_date": "2026-08-03T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-40033",
+      "merger_name": "Bain Capital - Everllence",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-20T12:00:00Z",
       "determination_date": "2026-08-03T12:00:00Z"
     },
     {
@@ -1440,10 +1451,10 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 122,
+  "count": 123,
   "phase_1_count": 56,
   "phase_2_count": 2,
-  "waiver_count": 64,
+  "waiver_count": 65,
   "active_count": 12,
   "phase_duration": {
     "average_days": 29.93617021276596,
@@ -1453,10 +1464,10 @@
     "completed_count": 47
   },
   "waiver_duration": {
-    "average_days": 17.796875,
-    "median_days": 17.0,
-    "average_business_days": 11.78125,
-    "median_business_days": 11.0,
-    "completed_count": 64
+    "average_days": 17.73846153846154,
+    "median_days": 17,
+    "average_business_days": 11.753846153846155,
+    "median_business_days": 11,
+    "completed_count": 65
   }
 }

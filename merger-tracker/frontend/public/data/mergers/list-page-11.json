@@ -1,6 +1,81 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-90027",
+      "merger_name": "AbbVie - Apogee",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-27T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-07T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "AbbVie Inc.",
+          "identifier_type": null,
+          "identifier": "DELAWARE FILE NO.  5126809",
+          "party_page": {
+            "id": "abbvie-inc",
+            "name": "AbbVie Inc."
+          }
+        },
+        {
+          "name": "Andor Merger Co.",
+          "identifier_type": null,
+          "identifier": "DELAWARE FILE NO.  10659205",
+          "party_page": {
+            "id": "andor-merger-co",
+            "name": "Andor Merger Co."
+          }
+        },
+        {
+          "name": "Andor LLC",
+          "identifier_type": null,
+          "identifier": "DELAWARE FILE NO.  10659200",
+          "party_page": {
+            "id": "andor-llc",
+            "name": "Andor LLC"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Apogee Therapeutics, Inc.",
+          "identifier_type": null,
+          "identifier": "EIN  934958665",
+          "party_page": {
+            "id": "apogee-therapeutics-inc",
+            "name": "Apogee Therapeutics, Inc."
+          }
+        },
+        {
+          "name": "Apogee Therapeutics Securities Corporation",
+          "identifier_type": null,
+          "identifier": "EIN  332083626",
+          "party_page": {
+            "id": "apogee-therapeutics-securities-corporation",
+            "name": "Apogee Therapeutics Securities Corporation"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "1841",
+          "name": "Human Pharmaceutical and Medicinal Product Manufacturing"
+        },
+        {
+          "code": "6910",
+          "name": "Scientific Research Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/abbvie-apogee"
+    },
+    {
       "merger_id": "MN-05027",
       "merger_name": "Protech - ActivateRail",
       "status": "Under assessment",

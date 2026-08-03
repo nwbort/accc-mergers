@@ -2941,6 +2941,101 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/expedia-cartrawler"
     },
     {
+      "merger_id": "WA-40033",
+      "merger_name": "Bain Capital - Everllence",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-20T12:00:00Z",
+      "determination_publication_date": "2026-08-03T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Bain Capital Investors, LLC",
+          "identifier_type": null,
+          "identifier": "Delaware File No.  3229725",
+          "canonical": {
+            "id": "bain-capital-investors-llc",
+            "name": "Bain Capital Investors"
+          },
+          "party_page": {
+            "id": "bain-capital-investors-llc",
+            "name": "Bain Capital Investors"
+          }
+        },
+        {
+          "name": "Nikolaus (BC) Bidco GmbH",
+          "identifier_type": null,
+          "identifier": "Handelsregister (HRB)  312146",
+          "party_page": {
+            "id": "nikolaus-bc-bidco-gmbh",
+            "name": "Nikolaus (BC) Bidco GmbH"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Volkswagen Aktiengesellschaft",
+          "identifier_type": null,
+          "identifier": "Handelsregister (HRB)  100484",
+          "party_page": {
+            "id": "volkswagen-aktiengesellschaft",
+            "name": "Volkswagen Aktiengesellschaft"
+          }
+        },
+        {
+          "name": "Everllence SE",
+          "identifier_type": null,
+          "identifier": "Handelsregister (HRB)  22056",
+          "party_page": {
+            "id": "everllence-se",
+            "name": "Everllence SE"
+          }
+        },
+        {
+          "name": "Volkswagen Verm\u00f6gensverwaltungs GmbH",
+          "identifier_type": null,
+          "identifier": "Handelsregister (HRB)  200525",
+          "party_page": {
+            "id": "volkswagen-verm-gensverwaltungs-gmbh",
+            "name": "Volkswagen Verm\u00f6gensverwaltungs GmbH"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "2311",
+          "name": "Motor Vehicle Manufacturing"
+        },
+        {
+          "code": "2469",
+          "name": "Other Specialised Machinery and Equipment Manufacturing"
+        },
+        {
+          "code": "2499",
+          "name": "Other Machinery and Equipment Manufacturing n.e.c."
+        },
+        {
+          "code": "2611",
+          "name": "Fossil Fuel Electricity Generation"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "9429",
+          "name": "Other Machinery and Equipment Repair and Maintenance"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/bain-capital-everllence"
+    },
+    {
       "merger_id": "MN-05036",
       "merger_name": "Vertex \u2013 Crinetics",
       "status": "Under assessment",
@@ -3650,81 +3745,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/publicis-groupe-liveramp"
-    },
-    {
-      "merger_id": "MN-90027",
-      "merger_name": "AbbVie - Apogee",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-07-27T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-09-07T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "AbbVie Inc.",
-          "identifier_type": null,
-          "identifier": "DELAWARE FILE NO.  5126809",
-          "party_page": {
-            "id": "abbvie-inc",
-            "name": "AbbVie Inc."
-          }
-        },
-        {
-          "name": "Andor Merger Co.",
-          "identifier_type": null,
-          "identifier": "DELAWARE FILE NO.  10659205",
-          "party_page": {
-            "id": "andor-merger-co",
-            "name": "Andor Merger Co."
-          }
-        },
-        {
-          "name": "Andor LLC",
-          "identifier_type": null,
-          "identifier": "DELAWARE FILE NO.  10659200",
-          "party_page": {
-            "id": "andor-llc",
-            "name": "Andor LLC"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "Apogee Therapeutics, Inc.",
-          "identifier_type": null,
-          "identifier": "EIN  934958665",
-          "party_page": {
-            "id": "apogee-therapeutics-inc",
-            "name": "Apogee Therapeutics, Inc."
-          }
-        },
-        {
-          "name": "Apogee Therapeutics Securities Corporation",
-          "identifier_type": null,
-          "identifier": "EIN  332083626",
-          "party_page": {
-            "id": "apogee-therapeutics-securities-corporation",
-            "name": "Apogee Therapeutics Securities Corporation"
-          }
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "1841",
-          "name": "Human Pharmaceutical and Medicinal Product Manufacturing"
-        },
-        {
-          "code": "6910",
-          "name": "Scientific Research Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/abbvie-apogee"
     }
   ],
   "page": 10,

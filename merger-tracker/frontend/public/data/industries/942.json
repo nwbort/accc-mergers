@@ -36,7 +36,7 @@
       "code": "9429",
       "name": "Other Machinery and Equipment Repair and Maintenance",
       "level": "class",
-      "merger_count": 4
+      "merger_count": 5
     }
   ],
   "mergers": [
@@ -50,6 +50,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-08T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-40033",
+      "merger_name": "Bain Capital - Everllence",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-20T12:00:00Z",
+      "determination_date": "2026-08-03T12:00:00Z"
     },
     {
       "merger_id": "MN-50022",
@@ -107,10 +118,10 @@
       "determination_date": null
     }
   ],
-  "count": 6,
+  "count": 7,
   "phase_1_count": 3,
   "phase_2_count": 1,
-  "waiver_count": 2,
+  "waiver_count": 3,
   "active_count": 1,
   "phase_duration": {
     "average_days": 40.333333333333336,
@@ -120,10 +131,10 @@
     "completed_count": 3
   },
   "waiver_duration": {
-    "average_days": 15.0,
-    "median_days": 15.0,
-    "average_business_days": 9.5,
-    "median_business_days": 9.5,
-    "completed_count": 2
+    "average_days": 14.666666666666666,
+    "median_days": 14,
+    "average_business_days": 9.666666666666666,
+    "median_business_days": 10,
+    "completed_count": 3
   }
 }

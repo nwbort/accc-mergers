@@ -1,6 +1,6 @@
 {
   "total_mergers": 202,
-  "total_waivers": 307,
+  "total_waivers": 308,
   "total_conditional_approvals": 2,
   "by_status": {
     "Assessment completed": 154,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 293,
+    "Approved": 294,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,15 +42,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.964169381107492,
-    "median_days": 18,
-    "average_business_days": 12.70684039087948,
-    "median_business_days": 12
+    "average_days": 18.948051948051948,
+    "median_days": 18.0,
+    "average_business_days": 12.698051948051948,
+    "median_business_days": 12.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 68
+      "count": 69
     },
     {
       "name": "Computer System Design and Related Services",
@@ -213,6 +213,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-40033",
+      "merger_name": "Bain Capital - Everllence",
+      "determination": "Approved",
+      "determination_date": "2026-08-03T12:00:00Z",
+      "page_modified_datetime": "2026-08-03T22:10:59+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-45021",
       "merger_name": "McDonald\u2019s Australia \u2013 McDonald\u2019s Restaurants in North West Sydney",
       "determination": "Approved",
@@ -318,16 +328,6 @@
       "determination": "Approved",
       "determination_date": "2026-07-30T12:00:00Z",
       "page_modified_datetime": "2026-07-30T17:36:46+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-35024",
-      "merger_name": "HB Land and Satterley \u2013 Elimbah Land Joint Venture",
-      "determination": "Approved",
-      "determination_date": "2026-07-30T12:00:00Z",
-      "page_modified_datetime": "2026-07-30T17:34:40+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

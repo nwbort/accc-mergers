@@ -14,6 +14,11 @@
     },
     {
       "name": "Bain Capital Investors, LLC",
+      "identifier": "Delaware File No.  3229725",
+      "identifier_type": null
+    },
+    {
+      "name": "Bain Capital Investors, LLC",
       "identifier": "Delaware File Number  3229725",
       "identifier_type": null
     },
@@ -29,7 +34,19 @@
     }
   ],
   "mergers": {
-    "acquirer": [],
+    "acquirer": [
+      {
+        "merger_id": "WA-40033",
+        "merger_name": "Bain Capital - Everllence",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Waiver",
+        "notification_date": "2026-07-20T12:00:00Z",
+        "determination_date": "2026-08-03T12:00:00Z"
+      }
+    ],
     "target": [],
     "other": [
       {
@@ -89,10 +106,10 @@
       }
     ]
   },
-  "merger_count": 5,
+  "merger_count": 6,
   "phase_1_count": 3,
   "phase_2_count": 0,
-  "waiver_count": 2,
+  "waiver_count": 3,
   "active_count": 0,
   "phase_duration": {
     "average_days": 25.0,
@@ -102,10 +119,10 @@
     "completed_count": 3
   },
   "waiver_duration": {
-    "average_days": 17.5,
-    "median_days": 17.5,
-    "average_business_days": 12.0,
-    "median_business_days": 12.0,
-    "completed_count": 2
+    "average_days": 16.333333333333332,
+    "median_days": 14,
+    "average_business_days": 11.333333333333334,
+    "median_business_days": 10,
+    "completed_count": 3
   }
 }
