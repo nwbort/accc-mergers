@@ -918,6 +918,84 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/analogic-leidos-ses-business"
     },
     {
+      "merger_id": "WA-01114",
+      "merger_name": "EQT Fund Management \u2013 Exolaunch",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-08T12:00:00Z",
+      "determination_publication_date": "2026-08-03T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Elevate BidCo GmbH",
+          "identifier_type": null,
+          "identifier": "HRB 141746",
+          "party_page": {
+            "id": "elevate-bidco-gmbh",
+            "name": "Elevate BidCo GmbH"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Exolaunch GmbH",
+          "identifier_type": null,
+          "identifier": "HRB 134539 B",
+          "party_page": {
+            "id": "exolaunch-gmbh",
+            "name": "Exolaunch GmbH"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "EQT Fund Management S.\u00e0 r.l.",
+          "identifier_type": null,
+          "identifier": "B167972",
+          "canonical": {
+            "id": "eqt-fund-management-s-r-l",
+            "name": "EQT Fund Management S.\u00e0 r.l."
+          },
+          "party_page": {
+            "id": "eqt-fund-management-s-r-l",
+            "name": "EQT Fund Management S.\u00e0 r.l."
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2299",
+          "name": "Other Fabricated Metal Product Manufacturing n.e.c."
+        },
+        {
+          "code": "5292",
+          "name": "Freight Forwarding Services"
+        },
+        {
+          "code": "5802",
+          "name": "Other Telecommunications Network Operation"
+        },
+        {
+          "code": "5809",
+          "name": "Other Telecommunications Services"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6924",
+          "name": "Other Specialised Design Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/eqt-fund-management-%E2%80%93-exolaunch"
+    },
+    {
       "merger_id": "WA-25036",
       "merger_name": "L Catterton Europe \u2013 HYROX",
       "status": "Assessment completed",
@@ -3564,60 +3642,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/kimberly-clark-corporation-kenvue-inc"
-    },
-    {
-      "merger_id": "MN-01115",
-      "merger_name": "MM Security \u2013 Micron Security Products",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-07-29T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-09-09T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "MM SECURITY SUPPLIES PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "14 670 314 913",
-          "party_page": {
-            "id": "mm-security-supplies-pty-limited",
-            "name": "Mm Security Supplies Pty Limited"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "MICRON ALARM SUPPLIES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "39 002 553 406",
-          "party_page": {
-            "id": "micron-alarm-supplies-pty-ltd",
-            "name": "Micron Alarm Supplies Pty Ltd"
-          }
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "MML HOLDINGS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "55 084 402 380",
-          "party_page": {
-            "id": "mml-holdings-limited",
-            "name": "Mml Holdings Limited"
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "3494",
-          "name": "Other Electrical and Electronic Goods Wholesaling"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/mm-security-%E2%80%93-micron-security-products"
     }
   ],
   "page": 10,

@@ -1,6 +1,6 @@
 {
   "total_mergers": 202,
-  "total_waivers": 303,
+  "total_waivers": 304,
   "total_conditional_approvals": 2,
   "by_status": {
     "Assessment completed": 153,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 289,
+    "Approved": 290,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,15 +42,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.844884488448844,
-    "median_days": 18,
-    "average_business_days": 12.623762376237623,
-    "median_business_days": 12
+    "average_days": 18.86842105263158,
+    "median_days": 18.0,
+    "average_business_days": 12.641447368421053,
+    "median_business_days": 12.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 66
+      "count": 67
     },
     {
       "name": "Computer System Design and Related Services",
@@ -213,6 +213,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-01114",
+      "merger_name": "EQT Fund Management \u2013 Exolaunch",
+      "determination": "Approved",
+      "determination_date": "2026-08-03T12:00:00Z",
+      "page_modified_datetime": "2026-08-03T16:38:45+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-80030",
       "merger_name": "IKEA Australia \u2013 IP rights from Inter IKEA under new franchise agreement package",
       "determination": "Approved",
@@ -318,16 +328,6 @@
       "determination": "Approved",
       "determination_date": "2026-07-29T12:00:00Z",
       "page_modified_datetime": "2026-07-29T17:11:44+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-90026",
-      "merger_name": "Abu Dhabi Investment Authority \u2013 Barings Darling Square Holding Trust",
-      "determination": "Approved",
-      "determination_date": "2026-07-29T12:00:00Z",
-      "page_modified_datetime": "2026-07-29T17:10:05+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

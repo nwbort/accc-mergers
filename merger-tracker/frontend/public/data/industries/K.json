@@ -9,7 +9,7 @@
       "code": "62",
       "name": "Finance",
       "level": "subdivision",
-      "merger_count": 74
+      "merger_count": 75
     },
     {
       "code": "63",
@@ -90,6 +90,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-03-03T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-01114",
+      "merger_name": "EQT Fund Management \u2013 Exolaunch",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-08T12:00:00Z",
+      "determination_date": "2026-08-03T12:00:00Z"
     },
     {
       "merger_id": "WA-35032",
@@ -1258,10 +1269,10 @@
       "determination_date": null
     }
   ],
-  "count": 112,
+  "count": 113,
   "phase_1_count": 25,
   "phase_2_count": 2,
-  "waiver_count": 85,
+  "waiver_count": 86,
   "active_count": 6,
   "phase_duration": {
     "average_days": 28.318181818181817,
@@ -1271,10 +1282,10 @@
     "completed_count": 22
   },
   "waiver_duration": {
-    "average_days": 18.811764705882354,
-    "median_days": 18,
-    "average_business_days": 12.470588235294118,
-    "median_business_days": 12,
-    "completed_count": 85
+    "average_days": 18.8953488372093,
+    "median_days": 18.0,
+    "average_business_days": 12.534883720930232,
+    "median_business_days": 12.0,
+    "completed_count": 86
   }
 }

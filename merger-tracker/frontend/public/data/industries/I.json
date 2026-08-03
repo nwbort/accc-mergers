@@ -45,7 +45,7 @@
       "code": "52",
       "name": "Transport Support Services",
       "level": "subdivision",
-      "merger_count": 12
+      "merger_count": 13
     },
     {
       "code": "53",
@@ -87,6 +87,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-01T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-01114",
+      "merger_name": "EQT Fund Management \u2013 Exolaunch",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-08T12:00:00Z",
+      "determination_date": "2026-08-03T12:00:00Z"
     },
     {
       "merger_id": "WA-70028",
@@ -408,10 +419,10 @@
       "determination_date": "2026-02-05T12:00:00Z"
     }
   ],
-  "count": 32,
+  "count": 33,
   "phase_1_count": 15,
   "phase_2_count": 0,
-  "waiver_count": 17,
+  "waiver_count": 18,
   "active_count": 3,
   "phase_duration": {
     "average_days": 32.083333333333336,
@@ -421,10 +432,10 @@
     "completed_count": 12
   },
   "waiver_duration": {
-    "average_days": 16.58823529411765,
-    "median_days": 16,
-    "average_business_days": 11.058823529411764,
-    "median_business_days": 10,
-    "completed_count": 17
+    "average_days": 17.11111111111111,
+    "median_days": 16.5,
+    "average_business_days": 11.444444444444445,
+    "median_business_days": 10.5,
+    "completed_count": 18
   }
 }
