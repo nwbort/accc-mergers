@@ -10395,18 +10395,9 @@
       "original_notification_datetime": "2026-07-27T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-09-07T12:00:00Z",
-      "page_modified_datetime": "2026-07-27T17:10:42+10:00",
+      "page_modified_datetime": "2026-08-03T18:19:05+10:00",
       "consultation_response_due_date": "2026-08-03T12:00:00Z",
       "acquirers": [
-        {
-          "name": "Obayashi Corporation",
-          "identifier_type": "ABN",
-          "identifier": "86 002 932 756",
-          "party_page": {
-            "id": "obayashi-corporation",
-            "name": "Obayashi Corporation"
-          }
-        },
         {
           "name": "Obayashi UK Holdings Limited",
           "identifier_type": null,
@@ -10414,6 +10405,15 @@
           "party_page": {
             "id": "obayashi-uk-holdings-limited",
             "name": "Obayashi UK Holdings Limited"
+          }
+        },
+        {
+          "name": "Obayashi Corporation",
+          "identifier_type": "ABN",
+          "identifier": "86 002 932 756",
+          "party_page": {
+            "id": "obayashi-corporation",
+            "name": "Obayashi Corporation"
           }
         }
       ],
@@ -139451,6 +139451,16 @@
         "is_refiled": false
       },
       {
+        "merger_id": "MN-05031",
+        "merger_name": "Obayashi Corporation – Multiplex",
+        "status": "Under assessment",
+        "accc_determination": null,
+        "effective_notification_datetime": "2026-07-27T12:00:00Z",
+        "page_modified_datetime": "2026-08-03T18:19:05+10:00",
+        "is_waiver": false,
+        "is_refiled": false
+      },
+      {
         "merger_id": "MN-90027",
         "merger_name": "AbbVie - Apogee",
         "status": "Under assessment",
@@ -139467,16 +139477,6 @@
         "accc_determination": null,
         "effective_notification_datetime": "2026-07-27T12:00:00Z",
         "page_modified_datetime": "2026-07-28T15:16:43+10:00",
-        "is_waiver": false,
-        "is_refiled": false
-      },
-      {
-        "merger_id": "MN-05031",
-        "merger_name": "Obayashi Corporation – Multiplex",
-        "status": "Under assessment",
-        "accc_determination": null,
-        "effective_notification_datetime": "2026-07-27T12:00:00Z",
-        "page_modified_datetime": "2026-07-27T17:10:42+10:00",
         "is_waiver": false,
         "is_refiled": false
       }

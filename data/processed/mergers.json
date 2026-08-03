@@ -4852,18 +4852,18 @@
     "original_notification_datetime": "2026-07-27T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-09-07T12:00:00Z",
-    "page_modified_datetime": "2026-07-27T17:10:42+10:00",
+    "page_modified_datetime": "2026-08-03T18:19:05+10:00",
     "consultation_response_due_date": "2026-08-03T12:00:00Z",
     "acquirers": [
-      {
-        "name": "Obayashi Corporation",
-        "identifier_type": "ABN",
-        "identifier": "86 002 932 756"
-      },
       {
         "name": "Obayashi UK Holdings Limited",
         "identifier_type": null,
         "identifier": "UK Company No.17229281"
+      },
+      {
+        "name": "Obayashi Corporation",
+        "identifier_type": "ABN",
+        "identifier": "86 002 932 756"
       }
     ],
     "targets": [
@@ -4892,7 +4892,7 @@
         "display_title": "Questionnaire - Obayashi Corporation - Multiplex",
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Obayashi-Multiplex%20-%20Phase%201%20questionnaire.docx",
         "url_gh": "/mergers/MN-05031/Obayashi-Multiplex - Phase 1 questionnaire.pdf",
-        "status": "live"
+        "status": "removed"
       },
       {
         "date": "2026-07-27T12:00:00Z",
