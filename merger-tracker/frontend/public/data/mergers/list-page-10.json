@@ -315,6 +315,105 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/tasmea-%E2%80%93-jps-holdings"
     },
     {
+      "merger_id": "WA-45021",
+      "merger_name": "McDonald\u2019s Australia \u2013 McDonald\u2019s Restaurants in North West Sydney",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-03T12:00:00Z",
+      "determination_publication_date": "2026-08-03T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "MCDONALD'S AUSTRALIA LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "43 008 496 928",
+          "party_page": {
+            "id": "mcdonald-s-australia-limited",
+            "name": "Mcdonald'S Australia Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "FRYGIRL PTY LTD as trustee for FRYGIRL TRUST",
+          "identifier_type": "ACN",
+          "identifier": "168 841 423",
+          "party_page": {
+            "id": "frygirl-pty-ltd-as-trustee-for-frygirl-trust",
+            "name": "FRYGIRL PTY LTD as trustee for FRYGIRL TRUST"
+          }
+        },
+        {
+          "name": "GOZOBOY PTY LTD as trustee for GOZOBOY TRUST",
+          "identifier_type": "ACN",
+          "identifier": "649 957 844",
+          "party_page": {
+            "id": "gozoboy-pty-ltd-as-trustee-for-gozoboy-trust",
+            "name": "GOZOBOY PTY LTD as trustee for GOZOBOY TRUST"
+          }
+        },
+        {
+          "name": "SHERLEE PTY LIMITED as trustee for SHERLEE TRUST",
+          "identifier_type": "ABN",
+          "identifier": "69 126 563 817",
+          "party_page": {
+            "id": "sherlee-pty-limited-as-trustee-for-sherlee-trust",
+            "name": "SHERLEE PTY LIMITED as trustee for SHERLEE TRUST"
+          }
+        },
+        {
+          "name": "JAYARK PTY LIMITED as trustee for JAYARK TRUST",
+          "identifier_type": "ABN",
+          "identifier": "77 126 563 853",
+          "party_page": {
+            "id": "jayark-pty-limited-as-trustee-for-jayark-trust",
+            "name": "JAYARK PTY LIMITED as trustee for JAYARK TRUST"
+          }
+        },
+        {
+          "name": "KRAMFORD PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "164 960 534",
+          "party_page": {
+            "id": "kramford-pty-ltd",
+            "name": "Kramford Pty Ltd"
+          }
+        },
+        {
+          "name": "PIPMAY PTY LIMITED as trustee for PIPMAY TRUST",
+          "identifier_type": "ABN",
+          "identifier": "97 126 676 597",
+          "party_page": {
+            "id": "pipmay-pty-limited-as-trustee-for-pipmay-trust",
+            "name": "PIPMAY PTY LIMITED as trustee for PIPMAY TRUST"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Mark Halford",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "mark-halford",
+            "name": "Mark Halford"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4512",
+          "name": "Takeaway Food Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/mcdonald%E2%80%99s-australia-%E2%80%93-mcdonald%E2%80%99s-restaurants-in-north-west-sydney"
+    },
+    {
       "merger_id": "WA-80026",
       "merger_name": "Australian Venue Co \u2013 assets of Chequers Hotel, Bullsbrook WA",
       "status": "Assessment completed",
@@ -601,6 +700,10 @@
           "name": "Vista Equity Partners Management, LLC",
           "identifier_type": null,
           "identifier": "4326765",
+          "canonical": {
+            "id": "vista-equity-partners-management-llc",
+            "name": "Vista Equity Partners Management, LLC"
+          },
           "party_page": {
             "id": "vista-equity-partners-management-llc",
             "name": "Vista Equity Partners Management, LLC"
@@ -3602,60 +3705,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/abbvie-apogee"
-    },
-    {
-      "merger_id": "MN-05027",
-      "merger_name": "Protech - ActivateRail",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-07-28T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-09-08T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "PROTECH GROUP (AUST) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "38 163 904 694",
-          "party_page": {
-            "id": "protech-group-aust-pty-ltd",
-            "name": "Protech Group (Aust) Pty Ltd"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "ACTIVATERAIL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "46 617 749 809",
-          "party_page": {
-            "id": "activaterail-pty-ltd",
-            "name": "Activaterail Pty Ltd"
-          }
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "RIPPERS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "90 600 268 031",
-          "party_page": {
-            "id": "rippers-pty-ltd",
-            "name": "Rippers Pty Ltd"
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "7212",
-          "name": "Labour Supply Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/protech-activaterail"
     }
   ],
   "page": 10,
