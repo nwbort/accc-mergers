@@ -1,6 +1,6 @@
 {
   "total_mergers": 203,
-  "total_waivers": 308,
+  "total_waivers": 309,
   "total_conditional_approvals": 2,
   "by_status": {
     "Assessment completed": 155,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 294,
+    "Approved": 295,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,10 +42,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.948051948051948,
-    "median_days": 18.0,
-    "average_business_days": 12.698051948051948,
-    "median_business_days": 12.0
+    "average_days": 18.95145631067961,
+    "median_days": 18,
+    "average_business_days": 12.702265372168284,
+    "median_business_days": 12
   },
   "top_industries": [
     {
@@ -213,6 +213,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-05038",
+      "merger_name": "AUB \u2013 further interest in Sura Technology",
+      "determination": "Approved",
+      "determination_date": "2026-08-04T12:00:00Z",
+      "page_modified_datetime": "2026-08-04T17:20:54+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-95025",
       "merger_name": "Salesforce - Contentful",
       "determination": "Approved",
@@ -318,16 +328,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-03T12:00:00Z",
       "page_modified_datetime": "2026-08-03T16:25:57+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-50009",
-      "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
-      "determination": "Approved",
-      "determination_date": "2026-07-30T12:00:00Z",
-      "page_modified_datetime": "2026-07-31T09:18:21+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"

@@ -2537,6 +2537,60 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/parker-hannifin-%E2%80%93-circor-ad"
     },
     {
+      "merger_id": "WA-05038",
+      "merger_name": "AUB \u2013 further interest in Sura Technology",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-15T12:00:00Z",
+      "determination_publication_date": "2026-08-04T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "AUSTAGENCIES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "76 006 090 464",
+          "party_page": {
+            "id": "austagencies-pty-ltd",
+            "name": "Austagencies Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "SURA TECHNOLOGY RISKS (AUST) PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "84 664 644 482",
+          "party_page": {
+            "id": "sura-technology-risks-aust-pty-limited",
+            "name": "Sura Technology Risks (Aust) Pty Limited"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "AUB GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "60 000 000 715",
+          "party_page": {
+            "id": "aub-group-limited",
+            "name": "Aub Group Limited"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6420",
+          "name": "Auxiliary Insurance Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/aub-%E2%80%93-further-interest-in-sura-technology"
+    },
+    {
       "merger_id": "WA-40032",
       "merger_name": "Vets Central \u2013 Lava Street Veterinary Clinic and Doggy Kinder",
       "status": "Assessment completed",
@@ -3666,89 +3720,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/obayashi-corporation-%E2%80%93-multiplex"
-    },
-    {
-      "merger_id": "MN-60026",
-      "merger_name": "Publicis Groupe - LiveRamp",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-07-27T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-09-07T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "MMS USA Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware ID 3497138",
-          "canonical": {
-            "id": "publicis-groupe",
-            "name": "Publicis Groupe"
-          },
-          "party_page": {
-            "id": "publicis-groupe",
-            "name": "Publicis Groupe"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "LiveRamp Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware ID 00138669",
-          "party_page": {
-            "id": "liveramp-holdings-inc",
-            "name": "LiveRamp Holdings, Inc."
-          }
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "Covey Merger Sub, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware ID 10622331",
-          "party_page": {
-            "id": "covey-merger-sub-inc",
-            "name": "Covey Merger Sub, Inc."
-          }
-        },
-        {
-          "name": "Publicis Groupe S.A.",
-          "identifier_type": null,
-          "identifier": "Paris Trade and Companies Registry no. 542 080 601",
-          "canonical": {
-            "id": "publicis-groupe",
-            "name": "Publicis Groupe"
-          },
-          "party_page": {
-            "id": "publicis-groupe",
-            "name": "Publicis Groupe"
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "5921",
-          "name": "Data Processing and Web Hosting Services"
-        },
-        {
-          "code": "6940",
-          "name": "Advertising Services"
-        },
-        {
-          "code": "6950",
-          "name": "Market Research and Statistical Services"
-        },
-        {
-          "code": "7000",
-          "name": "Computer System Design and Related Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/publicis-groupe-liveramp"
     }
   ],
   "page": 10,
