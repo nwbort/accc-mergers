@@ -19,7 +19,7 @@
       "code": "641",
       "name": "Auxiliary Finance and Investment Services",
       "level": "group",
-      "merger_count": 41
+      "merger_count": 42
     },
     {
       "code": "642",
@@ -49,6 +49,17 @@
       "has_conditions": false,
       "phase": "Waiver",
       "notification_date": "2026-07-15T12:00:00Z",
+      "determination_date": "2026-08-04T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-30026",
+      "merger_name": "Count \u2013 O\u2019Brien Accountants & Advisors",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-10T12:00:00Z",
       "determination_date": "2026-08-04T12:00:00Z"
     },
     {
@@ -503,10 +514,10 @@
       "determination_date": "2025-12-18T12:00:00Z"
     }
   ],
-  "count": 43,
+  "count": 44,
   "phase_1_count": 11,
   "phase_2_count": 0,
-  "waiver_count": 32,
+  "waiver_count": 33,
   "active_count": 1,
   "phase_duration": {
     "average_days": 25.1,
@@ -516,10 +527,10 @@
     "completed_count": 10
   },
   "waiver_duration": {
-    "average_days": 19.25,
-    "median_days": 19.5,
-    "average_business_days": 13.0625,
-    "median_business_days": 13.0,
-    "completed_count": 32
+    "average_days": 19.424242424242426,
+    "median_days": 20,
+    "average_business_days": 13.181818181818182,
+    "median_business_days": 13,
+    "completed_count": 33
   }
 }

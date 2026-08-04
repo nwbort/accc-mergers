@@ -1,0 +1,41 @@
+{
+  "id": "obm-financial-services-pty-ltd",
+  "canonical_name": "OBM Financial Services Pty Ltd",
+  "members": [
+    {
+      "name": "OBM Financial Services Pty Ltd",
+      "identifier": "629 954 981",
+      "identifier_type": "ACN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [
+      {
+        "merger_id": "WA-30026",
+        "merger_name": "Count \u2013 O\u2019Brien Accountants & Advisors",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Waiver",
+        "notification_date": "2026-07-10T12:00:00Z",
+        "determination_date": "2026-08-04T12:00:00Z"
+      }
+    ],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null,
+  "waiver_duration": {
+    "average_days": 25.0,
+    "median_days": 25,
+    "average_business_days": 17.0,
+    "median_business_days": 17,
+    "completed_count": 1
+  }
+}

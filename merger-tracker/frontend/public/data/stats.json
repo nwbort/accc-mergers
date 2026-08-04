@@ -1,6 +1,6 @@
 {
   "total_mergers": 203,
-  "total_waivers": 309,
+  "total_waivers": 310,
   "total_conditional_approvals": 2,
   "by_status": {
     "Assessment completed": 155,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 295,
+    "Approved": 296,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,10 +42,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.95145631067961,
-    "median_days": 18,
-    "average_business_days": 12.702265372168284,
-    "median_business_days": 12
+    "average_days": 18.970967741935485,
+    "median_days": 18.0,
+    "average_business_days": 12.716129032258065,
+    "median_business_days": 12.0
   },
   "top_industries": [
     {
@@ -58,7 +58,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 41
+      "count": 42
     },
     {
       "name": "Software Publishing",
@@ -213,6 +213,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-30026",
+      "merger_name": "Count \u2013 O\u2019Brien Accountants & Advisors",
+      "determination": "Approved",
+      "determination_date": "2026-08-04T12:00:00Z",
+      "page_modified_datetime": "2026-08-04T17:23:08+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-05038",
       "merger_name": "AUB \u2013 further interest in Sura Technology",
       "determination": "Approved",
@@ -321,16 +331,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-65028",
-      "merger_name": "Coles - Paydock",
-      "determination": "Approved",
-      "determination_date": "2026-08-03T12:00:00Z",
-      "page_modified_datetime": "2026-08-03T16:25:57+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }

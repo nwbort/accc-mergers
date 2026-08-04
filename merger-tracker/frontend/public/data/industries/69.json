@@ -31,7 +31,7 @@
       "code": "693",
       "name": "Legal and Accounting Services",
       "level": "group",
-      "merger_count": 6
+      "merger_count": 7
     },
     {
       "code": "694",
@@ -163,6 +163,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-04-27T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-30026",
+      "merger_name": "Count \u2013 O\u2019Brien Accountants & Advisors",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-10T12:00:00Z",
+      "determination_date": "2026-08-04T12:00:00Z"
     },
     {
       "merger_id": "WA-01114",
@@ -880,10 +891,10 @@
       "determination_date": null
     }
   ],
-  "count": 74,
+  "count": 75,
   "phase_1_count": 29,
   "phase_2_count": 2,
-  "waiver_count": 43,
+  "waiver_count": 44,
   "active_count": 9,
   "phase_duration": {
     "average_days": 36.52173913043478,
@@ -893,10 +904,10 @@
     "completed_count": 23
   },
   "waiver_duration": {
-    "average_days": 18.6046511627907,
-    "median_days": 19,
-    "average_business_days": 12.255813953488373,
-    "median_business_days": 13,
-    "completed_count": 43
+    "average_days": 18.75,
+    "median_days": 19.5,
+    "average_business_days": 12.363636363636363,
+    "median_business_days": 13.0,
+    "completed_count": 44
   }
 }

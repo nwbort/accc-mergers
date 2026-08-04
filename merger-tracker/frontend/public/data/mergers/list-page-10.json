@@ -1750,6 +1750,54 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/origin-%E2%80%93-climatech-zero"
     },
     {
+      "merger_id": "WA-30026",
+      "merger_name": "Count \u2013 O\u2019Brien Accountants & Advisors",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-10T12:00:00Z",
+      "determination_publication_date": "2026-08-04T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Count Limited",
+          "identifier_type": "ABN",
+          "identifier": "11 126 990 832",
+          "party_page": {
+            "id": "count-limited",
+            "name": "Count Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "OBM Financial Services Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "629 954 981",
+          "party_page": {
+            "id": "obm-financial-services-pty-ltd",
+            "name": "OBM Financial Services Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "6932",
+          "name": "Accounting Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/count-%E2%80%93-o%E2%80%99brien-accountants-advisors"
+    },
+    {
       "merger_id": "WA-35032",
       "merger_name": "AustralianSuper \u2013 Advanced Navigation",
       "status": "Assessment completed",
@@ -3663,63 +3711,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/petalite-%E2%80%93-envu"
-    },
-    {
-      "merger_id": "MN-05031",
-      "merger_name": "Obayashi Corporation \u2013 Multiplex",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-07-27T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-09-07T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Obayashi UK Holdings Limited",
-          "identifier_type": null,
-          "identifier": "UK Company No.17229281",
-          "party_page": {
-            "id": "obayashi-uk-holdings-limited",
-            "name": "Obayashi UK Holdings Limited"
-          }
-        },
-        {
-          "name": "Obayashi Corporation",
-          "identifier_type": "ABN",
-          "identifier": "86 002 932 756",
-          "party_page": {
-            "id": "obayashi-corporation",
-            "name": "Obayashi Corporation"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "BCI UK Holdings Ltd",
-          "identifier_type": null,
-          "identifier": "UK Company No 9945869",
-          "party_page": {
-            "id": "bci-uk-holdings-ltd",
-            "name": "BCI UK Holdings Ltd"
-          }
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "3019",
-          "name": "Other Residential Building Construction"
-        },
-        {
-          "code": "3020",
-          "name": "Non-Residential Building Construction"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/obayashi-corporation-%E2%80%93-multiplex"
     }
   ],
   "page": 10,
