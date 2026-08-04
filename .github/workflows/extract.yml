@@ -63,7 +63,8 @@ jobs:
           git add data/processed/mergers.json data/processed/questionnaire_data.json \
             data/processed/similar_mergers.json \
             data/raw/matters/ merger-tracker/frontend/public/data/ \
-            merger-tracker/frontend/public/feed.xml data/output/
+            merger-tracker/frontend/public/feed.xml \
+            merger-tracker/frontend/public/_redirects data/output/
           timestamp=$(TZ='Australia/Sydney' date)
           git diff --staged --quiet || true
           git commit -m "Update scraped data and static files: ${timestamp}" || exit 0

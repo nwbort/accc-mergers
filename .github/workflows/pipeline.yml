@@ -232,7 +232,8 @@ jobs:
             data/processed/nocc_data.json data/processed/similar_mergers.json \
             data/processed/phase1_estimates.json \
             data/raw/matters/ merger-tracker/frontend/public/data/ \
-            merger-tracker/frontend/public/feed.xml data/output/ \
+            merger-tracker/frontend/public/feed.xml \
+            merger-tracker/frontend/public/_redirects data/output/ \
             data/frozen_events_mergers.json
 
       # --- Single commit ---

@@ -147,6 +147,12 @@ data/
 │                         #   the global median), then frozen so it stays an at-filing
 │                         #   snapshot. Attached to each notification merger as
 │                         #   phase_1_estimate (see mergers/{id}.json). Backend-only.
+│   processed/party_redirects.json # Hand-maintained party page redirects, merged
+│                         #   over the ones derived from related_parties.json and
+│                         #   rendered into public/_redirects as 301s. Only for ids
+│                         #   the derived map cannot reproduce: collision-suffixed
+│                         #   ids (-2, -3) and parties the ACCC later renamed. A
+│                         #   plain fold-in into a canonical group needs no entry.
 ├── digest-archive/       # Past weekly digest.json snapshots
 └── output/               # Not deployed. Full enriched mergers.json (offline analysis)
     └── cli/              # Bundled data files for accc-mergers-cli (manifest + bundle)
@@ -201,6 +207,17 @@ standalone page when it is folded into a canonical group in
 `related_parties.json`, and what drops a trailing paginated page when a list
 shrinks. A generator that wrote nothing prunes nothing, so a failed or empty
 load can never empty a directory.
+
+A pruned party page does not just vanish: `static_data/outputs/redirects.py`
+writes 301s for its old URLs into `merger-tracker/frontend/public/_redirects`,
+inside a `# BEGIN generated party redirects` block (hand-written rules in that
+file are preserved). Most targets are derived automatically —
+`parties.build_party_aliases` works out the id each grouped party would have
+had on its own — so **folding a party into a group in `related_parties.json`
+needs no redirect bookkeeping**. The exceptions live in
+`data/processed/party_redirects.json`, a hand-maintained overlay for ids the
+derived map cannot reproduce: collision-suffixed ids (`-2`, `-3`) and parties
+the ACCC later renamed.
 
 | File | Description |
 |------|-------------|
