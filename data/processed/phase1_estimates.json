@@ -2860,6 +2860,21 @@
     "estimated_at": "2026-07-17",
     "method_version": 1
   },
+  "MN-85038": {
+    "expected_business_days": 15,
+    "range_business_days": [
+      15,
+      18
+    ],
+    "basis": "industry",
+    "anzsic_level": "division",
+    "anzsic_codes": [
+      "Q"
+    ],
+    "sample_size": 12,
+    "estimated_at": "2026-08-04",
+    "method_version": 1
+  },
   "MN-90006": {
     "expected_business_days": 17,
     "range_business_days": [
