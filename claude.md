@@ -211,7 +211,12 @@ load can never empty a directory.
 A pruned party page does not just vanish: `static_data/outputs/redirects.py`
 writes 301s for its old URLs into `merger-tracker/frontend/public/_redirects`,
 inside a `# BEGIN generated party redirects` block (hand-written rules in that
-file are preserved). Most targets are derived automatically —
+file are preserved, below the block). Every generated rule is **static**, and
+the block is written **above** any splat/`:placeholder` rule: a `_redirects`
+file allows 2,000 static rules but only 100 dynamic ones, and with a dynamic
+rule leading the file, rules past the 100th can be dropped silently — no build
+warning, no dashboard error. The generator warns if a hand-written static rule
+is left stranded below a dynamic one. Most targets are derived automatically —
 `parties.build_party_aliases` works out the id each grouped party would have
 had on its own — so **folding a party into a group in `related_parties.json`
 needs no redirect bookkeeping**. The exceptions live in

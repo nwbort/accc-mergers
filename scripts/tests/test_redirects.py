@@ -161,6 +161,39 @@ class TestGenerate:
         assert '/matters/*  /mergers/:splat  301' in text
         assert '/parties/coles-group-limited  /parties/coles/coles-group  301' in text
 
+    def test_generated_static_rules_sort_above_a_dynamic_rule(self, tmp_path):
+        # Cloudflare wants static redirects first; with a dynamic rule leading
+        # the file, rules past the 100th can be dropped silently.
+        path = tmp_path / '_redirects'
+        path.write_text(self.HAND_WRITTEN)
+        redirects.generate({'coles-group-limited': 'coles'}, self.PAGES, path)
+        lines = [l for l in path.read_text().splitlines() if l.startswith('/')]
+        first_dynamic = next(i for i, l in enumerate(lines) if redirects.is_dynamic(l))
+        last_static = max(i for i, l in enumerate(lines) if not redirects.is_dynamic(l))
+        assert last_static < first_dynamic
+
+    def test_no_generated_rule_is_dynamic(self, tmp_path):
+        path = tmp_path / '_redirects'
+        redirects.generate({'a-party': 'coles', 'b-party': 'coles'}, self.PAGES, path)
+        rules = [l for l in path.read_text().splitlines() if l.startswith('/')]
+        assert rules and not any(redirects.is_dynamic(l) for l in rules)
+
+    def test_warns_when_a_hand_written_static_rule_sits_below_a_dynamic_one(
+        self, tmp_path, capsys
+    ):
+        path = tmp_path / '_redirects'
+        path.write_text('/matters/*  /mergers/:splat  301\n/old  /new  301\n')
+        redirects.generate({'coles-group-limited': 'coles'}, self.PAGES, path)
+        assert 'WARNING' in capsys.readouterr().out
+
+    def test_no_warning_when_hand_written_rules_are_ordered_correctly(
+        self, tmp_path, capsys
+    ):
+        path = tmp_path / '_redirects'
+        path.write_text('/old  /new  301\n/matters/*  /mergers/:splat  301\n')
+        redirects.generate({'coles-group-limited': 'coles'}, self.PAGES, path)
+        assert 'WARNING' not in capsys.readouterr().out
+
     def test_rerunning_replaces_the_block_rather_than_appending(self, tmp_path):
         path = tmp_path / '_redirects'
         path.write_text(self.HAND_WRITTEN)
@@ -257,3 +290,48 @@ class TestRealDataFile:
         for entry in self._entries():
             assert entry['to'] in live, f"{entry['from']} redirects to missing page {entry['to']}"
             assert entry['from'] not in live, f"{entry['from']} is a live page — it must not be redirected"
+
+
+class TestIsDynamic:
+    def test_splat_source_is_dynamic(self):
+        assert redirects.is_dynamic('/matters/*  /mergers/:splat  301')
+
+    def test_placeholder_source_is_dynamic(self):
+        assert redirects.is_dynamic('/parties/:id  /p/:id  301')
+
+    def test_plain_source_is_static(self):
+        # A ':splat' in the destination does not make the rule dynamic —
+        # only the source pattern decides which budget it comes out of.
+        assert not redirects.is_dynamic('/parties/old  /parties/new/slug  301')
+
+    def test_comments_and_blanks_are_not_rules(self):
+        assert not redirects.is_dynamic('# a comment with * in it')
+        assert not redirects.is_dynamic('')
+
+
+class TestCommittedRedirectsFile:
+    """The file that actually ships has to satisfy Cloudflare's limits."""
+
+    @staticmethod
+    def _rules():
+        repo_root = Path(__file__).resolve().parent.parent.parent
+        path = repo_root / 'merger-tracker' / 'frontend' / 'public' / '_redirects'
+        return [l.strip() for l in path.read_text().splitlines()
+                if l.strip().startswith('/')]
+
+    def test_static_rules_all_precede_dynamic_rules(self):
+        rules = self._rules()
+        dynamic_seen = False
+        for rule in rules:
+            if redirects.is_dynamic(rule):
+                dynamic_seen = True
+            else:
+                assert not dynamic_seen, f"static rule '{rule}' sits below a dynamic rule"
+
+    def test_within_cloudflare_limits(self):
+        rules = self._rules()
+        static = [r for r in rules if not redirects.is_dynamic(r)]
+        dynamic = [r for r in rules if redirects.is_dynamic(r)]
+        assert len(static) <= 2000, f"{len(static)} static rules exceeds the 2,000 limit"
+        assert len(dynamic) <= 100, f"{len(dynamic)} dynamic rules exceeds the 100 limit"
+        assert all(len(r) <= 1000 for r in rules), 'a rule exceeds the 1,000-character limit'
