@@ -16603,6 +16603,223 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/karmosimplr",
+      "merger_name": "Karmo/Simplr",
+      "status": "Under assessment",
+      "merger_id": "MN-15030",
+      "effective_notification_datetime": "2026-08-03T12:00:00Z",
+      "original_notification_datetime": "2026-08-03T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-09-14T12:00:00Z",
+      "page_modified_datetime": "2026-08-04T17:47:29+10:00",
+      "consultation_response_due_date": "2026-08-11T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "KARMO HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "93 667 511 480",
+          "party_page": {
+            "id": "karmo-holdings-pty-ltd",
+            "name": "Karmo Holdings Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "SUBMO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "19 637 015 457",
+          "party_page": {
+            "id": "submo-pty-ltd",
+            "name": "Submo Pty Ltd"
+          }
+        },
+        {
+          "name": "EAGERS AUTOMOTIVE LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "87 009 680 013",
+          "party_page": {
+            "id": "eagers-automotive-limited",
+            "name": "Eagers Automotive Limited"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3911",
+          "name": "Car Retailing"
+        },
+        {
+          "code": "3912",
+          "name": "Motorcycle Retailing"
+        },
+        {
+          "code": "3913",
+          "name": "Trailer and Other Motor Vehicle Retailing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "6611",
+          "name": "Passenger Car Rental and Hiring"
+        },
+        {
+          "code": "9412",
+          "name": "Automotive Body, Paint and Interior Repair"
+        },
+        {
+          "code": "9419",
+          "name": "Other Automotive Repair and Maintenance"
+        }
+      ],
+      "merger_description": "Karmo Holdings Pty Ltd (Karmo) proposes to acquire 100% of the shares in Submo Pty Ltd (trading under the name Simplr) (proposed acquisition).\n\nKarmo supplies vehicle subscription services for new vehicles in Australia from its hubs in metropolitan areas (including Sydney, Melbourne, Brisbane, Perth and Adelaide).\n\nKarmo is a subsidiary of Autoleague Pty Ltd (Autoleague). Autoleague is an automotive retail company which owns and operates motor vehicle dealerships across Australia.\n\nSimplr supplies vehicle subscription services for used vehicles across Australia.\n\nSimplr is a wholly owned subsidiary of Eagers Automotive Limited (Eagers), an automotive retail group which owns and operates motor vehicle dealerships across Australia.\n\nSimplr sources its vehicles from its connected entity and sole supplier, Easy Auto 123 Pty Ltd (Easy Auto) in which Eagers has a 75% interest. Customers access Simplr’s vehicles from Easy Auto’s premises located in Sydney and regional New South Wales, Melbourne, Brisbane, Perth, Adelaide and Tasmania.",
+      "events": [
+        {
+          "date": "2026-08-04T12:00:00Z",
+          "title": "Questionnaire - Karmo/Simplr",
+          "display_title": "Questionnaire - Karmo/Simplr",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Simplr%20-%20Questionnaire_1.docx",
+          "url_gh": "/mergers/MN-15030/Simplr - Questionnaire_1.pdf",
+          "phase": null
+        },
+        {
+          "date": "2026-08-03T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-05012",
+          "merger_name": "Eagers - Audi Melbourne and Audi Richmond",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "EAGERS VIC PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "29 616 989 596",
+              "party_page": {
+                "id": "eagers-vic-pty-ltd",
+                "name": "Eagers Vic Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Zagame Automotive Group Pty Ltd",
+              "identifier_type": "ABN",
+              "identifier": "85 085 950 063",
+              "party_page": {
+                "id": "zagame-automotive-group-pty-ltd",
+                "name": "Zagame Automotive Group Pty Ltd"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-90006",
+          "merger_name": "CARe – MotorOne Autobody",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "CARE AUTOBODY PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "99 692 619 962",
+              "party_page": {
+                "id": "care-autobody-pty-ltd",
+                "name": "Care Autobody Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "MOTORONE AUTOBODY PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "98 077 935 614",
+              "party_page": {
+                "id": "motorone-autobody-pty-ltd",
+                "name": "Motorone Autobody Pty Ltd"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-85017",
+          "merger_name": "Regent Motors Group - Lane Group's Mandurah Dealerships",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "MANDURAH AUTO GROUP PTY LTD",
+              "identifier_type": "ACN",
+              "identifier": "693 645 699",
+              "party_page": {
+                "id": "mandurah-auto-group-pty-ltd",
+                "name": "Mandurah Auto Group Pty Ltd"
+              }
+            },
+            {
+              "name": "PEEL MOTOR GROUP PTY LTD",
+              "identifier_type": "ACN",
+              "identifier": "693 645 742",
+              "party_page": {
+                "id": "peel-motor-group-pty-ltd",
+                "name": "Peel Motor Group Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "WA AUTOMOTIVE PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "20 158 702 740",
+              "party_page": {
+                "id": "wa-automotive-pty-ltd",
+                "name": "Wa Automotive Pty Ltd"
+              }
+            }
+          ]
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 17,
+        "range_business_days": [
+          15,
+          21
+        ],
+        "basis": "industry",
+        "anzsic_level": "class",
+        "anzsic_codes": [
+          "3911",
+          "3912",
+          "3913",
+          "6419",
+          "6611",
+          "9412",
+          "9419"
+        ],
+        "sample_size": 15,
+        "estimated_at": "2026-08-04",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/rocket-software-%E2%80%93-vertica",
       "merger_name": "Rocket Software – Vertica",
       "status": "Assessment completed",
@@ -133276,6 +133493,40 @@
       ],
       "questions_count": 7
     },
+    "MN-15030": {
+      "deadline": "11 August 2026",
+      "deadline_iso": "2026-08-11",
+      "file_name": "Simplr - Questionnaire_1.pdf",
+      "questions": [
+        {
+          "number": 1,
+          "subpoints": [
+            {
+              "letter": "a",
+              "text": "Are Karmo and Simplr close competitors?"
+            },
+            {
+              "letter": "b",
+              "text": "Are there alternative car subscription service providers?"
+            },
+            {
+              "letter": "c",
+              "text": "Do Karmo and Simplr compete with traditional car rental companies?"
+            }
+          ],
+          "text": "Outline any concerns regarding the impact of the Acquisition on competition, for example:"
+        },
+        {
+          "number": 2,
+          "text": "Provide any additional information or comments that you consider relevant to the ACCC’s assessment of the Acquisition."
+        },
+        {
+          "number": 3,
+          "text": "Provide a brief description of your business or organisation, including any commercial relationships with Karmo and/or Simplr."
+        }
+      ],
+      "questions_count": 3
+    },
     "MN-20009": {
       "deadline": "19 March 2026",
       "deadline_iso": "2026-03-19",
@@ -141075,12 +141326,12 @@
     }
   },
   "stats": {
-    "total_mergers": 203,
+    "total_mergers": 204,
     "total_waivers": 314,
     "total_conditional_approvals": 2,
     "by_status": {
       "Assessment completed": 155,
-      "Under assessment": 45,
+      "Under assessment": 46,
       "Assessment ceased": 3
     },
     "by_determination": {
@@ -141134,7 +141385,7 @@
       },
       {
         "name": "Other Auxiliary Finance and Investment Services",
-        "count": 42
+        "count": 43
       },
       {
         "name": "Software Publishing",
@@ -141166,6 +141417,16 @@
       }
     ],
     "recent_mergers": [
+      {
+        "merger_id": "MN-15030",
+        "merger_name": "Karmo/Simplr",
+        "status": "Under assessment",
+        "accc_determination": null,
+        "effective_notification_datetime": "2026-08-03T12:00:00Z",
+        "page_modified_datetime": "2026-08-04T17:47:29+10:00",
+        "is_waiver": false,
+        "is_refiled": false
+      },
       {
         "merger_id": "MN-85038",
         "merger_name": "HammondCare - Anglican Community Services' Support at Home business",
@@ -141273,16 +141534,6 @@
         "accc_determination": null,
         "effective_notification_datetime": "2026-07-27T12:00:00Z",
         "page_modified_datetime": "2026-08-04T16:23:30+10:00",
-        "is_waiver": false,
-        "is_refiled": false
-      },
-      {
-        "merger_id": "MN-05031",
-        "merger_name": "Obayashi Corporation – Multiplex",
-        "status": "Under assessment",
-        "accc_determination": null,
-        "effective_notification_datetime": "2026-07-27T12:00:00Z",
-        "page_modified_datetime": "2026-08-03T18:19:05+10:00",
         "is_waiver": false,
         "is_refiled": false
       }
@@ -141425,7 +141676,7 @@
       {
         "code": "6419",
         "name": "Other Auxiliary Finance and Investment Services",
-        "merger_count": 42
+        "merger_count": 43
       },
       {
         "code": "5420",
@@ -141473,14 +141724,14 @@
         "merger_count": 14
       },
       {
-        "code": "5921",
-        "name": "Data Processing and Web Hosting Services",
+        "code": "3911",
+        "name": "Car Retailing",
         "merger_count": 14
       },
       {
-        "code": "3911",
-        "name": "Car Retailing",
-        "merger_count": 13
+        "code": "5921",
+        "name": "Data Processing and Web Hosting Services",
+        "merger_count": 14
       },
       {
         "code": "1841",
@@ -141533,6 +141784,11 @@
         "merger_count": 9
       },
       {
+        "code": "9419",
+        "name": "Other Automotive Repair and Maintenance",
+        "merger_count": 9
+      },
+      {
         "code": "3211",
         "name": "Land Development and Subdivision",
         "merger_count": 8
@@ -141555,11 +141811,6 @@
       {
         "code": "2469",
         "name": "Other Specialised Machinery and Equipment Manufacturing",
-        "merger_count": 8
-      },
-      {
-        "code": "9419",
-        "name": "Other Automotive Repair and Maintenance",
         "merger_count": 8
       },
       {
@@ -141793,6 +142044,11 @@
         "merger_count": 4
       },
       {
+        "code": "9412",
+        "name": "Automotive Body, Paint and Interior Repair",
+        "merger_count": 4
+      },
+      {
         "code": "3212",
         "name": "Site Preparation Services",
         "merger_count": 4
@@ -141990,11 +142246,6 @@
       {
         "code": "9422",
         "name": "Electronic (except Domestic Appliance) and Precision Equipment Repair and Maintenance",
-        "merger_count": 3
-      },
-      {
-        "code": "9412",
-        "name": "Automotive Body, Paint and Interior Repair",
         "merger_count": 3
       },
       {
@@ -142418,6 +142669,21 @@
         "merger_count": 1
       },
       {
+        "code": "3912",
+        "name": "Motorcycle Retailing",
+        "merger_count": 1
+      },
+      {
+        "code": "3913",
+        "name": "Trailer and Other Motor Vehicle Retailing",
+        "merger_count": 1
+      },
+      {
+        "code": "6611",
+        "name": "Passenger Car Rental and Hiring",
+        "merger_count": 1
+      },
+      {
         "code": "4623",
         "name": "Taxi and Other Road Transport",
         "merger_count": 1
@@ -142838,7 +143104,7 @@
         "merger_count": 1
       }
     ],
-    "total_mergers": 517,
-    "total_industries": 285
+    "total_mergers": 518,
+    "total_industries": 288
   }
 }

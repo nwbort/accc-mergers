@@ -1,10 +1,10 @@
 {
-  "total_mergers": 203,
+  "total_mergers": 204,
   "total_waivers": 314,
   "total_conditional_approvals": 2,
   "by_status": {
     "Assessment completed": 155,
-    "Under assessment": 45,
+    "Under assessment": 46,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -58,7 +58,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 42
+      "count": 43
     },
     {
       "name": "Software Publishing",
@@ -90,6 +90,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-15030",
+      "merger_name": "Karmo/Simplr",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-03T12:00:00Z",
+      "page_modified_datetime": "2026-08-04T17:47:29+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-85038",
       "merger_name": "HammondCare - Anglican Community Services' Support at Home business",
@@ -197,16 +207,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-07-27T12:00:00Z",
       "page_modified_datetime": "2026-08-04T16:23:30+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-05031",
-      "merger_name": "Obayashi Corporation \u2013 Multiplex",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-27T12:00:00Z",
-      "page_modified_datetime": "2026-08-03T18:19:05+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

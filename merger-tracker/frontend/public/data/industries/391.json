@@ -24,22 +24,33 @@
       "code": "3911",
       "name": "Car Retailing",
       "level": "class",
-      "merger_count": 13
+      "merger_count": 14
     },
     {
       "code": "3912",
       "name": "Motorcycle Retailing",
       "level": "class",
-      "merger_count": 0
+      "merger_count": 1
     },
     {
       "code": "3913",
       "name": "Trailer and Other Motor Vehicle Retailing",
       "level": "class",
-      "merger_count": 0
+      "merger_count": 1
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-15030",
+      "merger_name": "Karmo/Simplr",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-03T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-65026",
       "merger_name": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company",
@@ -184,11 +195,11 @@
       "determination_date": null
     }
   ],
-  "count": 13,
-  "phase_1_count": 4,
+  "count": 14,
+  "phase_1_count": 5,
   "phase_2_count": 1,
   "waiver_count": 8,
-  "active_count": 2,
+  "active_count": 3,
   "phase_duration": {
     "average_days": 50.666666666666664,
     "median_days": 35,

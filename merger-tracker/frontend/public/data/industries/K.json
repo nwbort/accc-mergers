@@ -21,10 +21,21 @@
       "code": "64",
       "name": "Auxiliary Finance and Insurance Services",
       "level": "subdivision",
-      "merger_count": 44
+      "merger_count": 45
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-15030",
+      "merger_name": "Karmo/Simplr",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-03T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-70027",
       "merger_name": "Global Infrastructure Management and EQT led consortium - AES Corporation",
@@ -1335,11 +1346,11 @@
       "determination_date": null
     }
   ],
-  "count": 119,
-  "phase_1_count": 25,
+  "count": 120,
+  "phase_1_count": 26,
   "phase_2_count": 2,
   "waiver_count": 92,
-  "active_count": 5,
+  "active_count": 6,
   "phase_duration": {
     "average_days": 28.17391304347826,
     "median_days": 24,

@@ -124,6 +124,16 @@
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
       "date": "2026-08-11T12:00:00Z",
+      "merger_id": "MN-15030",
+      "merger_name": "Karmo/Simplr",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-08-03T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-08-11T12:00:00Z",
       "merger_id": "MN-85038",
       "merger_name": "HammondCare - Anglican Community Services' Support at Home business",
       "status": "Under assessment",
@@ -554,6 +564,16 @@
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-09-14T12:00:00Z",
+      "merger_id": "MN-15030",
+      "merger_name": "Karmo/Simplr",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-08-03T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-09-14T12:00:00Z",
       "merger_id": "MN-85038",
       "merger_name": "HammondCare - Anglican Community Services' Support at Home business",
       "status": "Under assessment",
@@ -582,6 +602,6 @@
       "tribunal_number": "ACT 1 of 2026"
     }
   ],
-  "count": 58,
+  "count": 60,
   "days_ahead": 60
 }
