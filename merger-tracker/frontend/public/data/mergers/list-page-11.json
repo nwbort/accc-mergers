@@ -816,6 +816,64 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/global-infrastructure-management-and-eqt-led-consortium-aes-corporation"
+    },
+    {
+      "merger_id": "MN-85038",
+      "merger_name": "HammondCare - Anglican Community Services' Support at Home business",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-03T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-14T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "HAMMONDCARE",
+          "identifier_type": "ABN",
+          "identifier": "48 000 026 219",
+          "party_page": {
+            "id": "hammondcare",
+            "name": "Hammondcare"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "ANGLICAN COMMUNITY SERVICES",
+          "identifier_type": "ABN",
+          "identifier": "39 922 848 563",
+          "party_page": {
+            "id": "anglican-community-services",
+            "name": "Anglican Community Services"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "HAMMONDCARE HEALTH AND HOSPITALS LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "72 074 354 028",
+          "party_page": {
+            "id": "hammondcare-health-and-hospitals-limited",
+            "name": "Hammondcare Health And Hospitals Limited"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "8601",
+          "name": "Aged Care Residential Services"
+        },
+        {
+          "code": "8790",
+          "name": "Other Social Assistance Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/hammondcare-anglican-community-services-support-at-home-business"
     }
   ],
   "page": 11,

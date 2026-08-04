@@ -121,6 +121,16 @@
       "effective_notification_datetime": "2026-07-30T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-08-11T12:00:00Z",
+      "merger_id": "MN-85038",
+      "merger_name": "HammondCare - Anglican Community Services' Support at Home business",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-08-03T12:00:00Z"
+    },
+    {
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-08-12T12:00:00Z",
@@ -236,16 +246,6 @@
       "date": "2026-08-24T12:00:00Z",
       "merger_id": "MN-90028",
       "merger_name": "Peter Warren - Wakeling Automotive",
-      "status": "Under assessment",
-      "stage": "Phase 1 - initial assessment",
-      "effective_notification_datetime": "2026-07-13T12:00:00Z"
-    },
-    {
-      "type": "determination_due",
-      "event_type_display": "Determination due",
-      "date": "2026-08-24T12:00:00Z",
-      "merger_id": "MN-95025",
-      "merger_name": "Salesforce - Contentful",
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-07-13T12:00:00Z"
@@ -553,6 +553,16 @@
     {
       "type": "determination_due",
       "event_type_display": "Determination due",
+      "date": "2026-09-14T12:00:00Z",
+      "merger_id": "MN-85038",
+      "merger_name": "HammondCare - Anglican Community Services' Support at Home business",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-08-03T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
       "date": "2026-09-23T12:00:00Z",
       "merger_id": "MN-65005",
       "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
@@ -572,6 +582,6 @@
       "tribunal_number": "ACT 1 of 2026"
     }
   ],
-  "count": 57,
+  "count": 58,
   "days_ahead": 60
 }
