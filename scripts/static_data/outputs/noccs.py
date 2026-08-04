@@ -8,6 +8,8 @@ the CLI data bundle (``generate-cli-data.sh`` → ``build_cli_sqlite.py``).
 import json
 from pathlib import Path
 
+from ..prune import prune_stale_files
+
 
 def _nocc_record(data: dict) -> dict:
     return {
@@ -23,11 +25,15 @@ def _nocc_record(data: dict) -> dict:
 
 
 def generate(nocc_data: dict, output_dir: Path) -> int:
-    """Write individual NOCC files. Returns count written."""
+    """Write individual NOCC files. Returns count written.
+
+    Files for matters that no longer have a parsed NOCC summary are pruned.
+    """
     noccs_dir = Path(output_dir) / "noccs"
     noccs_dir.mkdir(parents=True, exist_ok=True)
 
     count = 0
+    written: set[str] = set()
     for merger_id, data in nocc_data.items():
         # Skip error entries (which contain only ``error`` and ``file_path``).
         if not data.get('sections'):
@@ -47,6 +53,9 @@ def generate(nocc_data: dict, output_dir: Path) -> int:
         out_path = noccs_dir / f"{merger_id}.json"
         with open(out_path, 'w', encoding='utf-8') as f:
             json.dump(output, f, indent=2)
+        written.add(out_path.name)
         count += 1
+
+    prune_stale_files(noccs_dir, written)
 
     return count

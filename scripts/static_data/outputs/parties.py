@@ -29,6 +29,7 @@ from party_matching import build_group_lookups, match_party, normalise_identifie
 from slug import slugify
 
 from ..durations import collect_phase_1_durations, collect_waiver_durations, median_or_none
+from ..prune import prune_stale_files
 from .industries import classify_phase, is_active
 
 PARTY_ROLE_FIELDS = ("acquirers", "targets", "other_parties")
@@ -231,18 +232,25 @@ def _waiver_duration(unique_mergers: list) -> dict | None:
     }
 
 
-def _write_detail_file(parties_dir: Path, group_id: str, payload: dict) -> None:
+def _write_detail_file(parties_dir: Path, group_id: str, payload: dict) -> str:
+    """Write one party page; returns the file name written."""
     safe_id = group_id.replace('/', '-').replace('\\', '-')
     out_path = parties_dir / f"{safe_id}.json"
     with open(out_path, 'w', encoding='utf-8') as f:
         json.dump(payload, f, indent=2)
+    return out_path.name
 
 
 def generate_detail_files(groups: list, output_dir: Path) -> int:
-    """Write one JSON file per party group. Returns the number of files written."""
+    """Write one JSON file per party group. Returns the number of files written.
+
+    Party pages left over from a previous run are pruned — folding a party into
+    a canonical group in ``related_parties.json`` retires its standalone page.
+    """
     parties_dir = Path(output_dir) / "parties"
     parties_dir.mkdir(parents=True, exist_ok=True)
 
+    written: set[str] = set()
     for g in groups:
         merger_map: dict = {}
         for role_mergers in g['mergers_by_role'].values():
@@ -272,6 +280,8 @@ def generate_detail_files(groups: list, output_dir: Path) -> int:
             'phase_duration': _phase_duration(all_mergers),
             'waiver_duration': _waiver_duration(all_mergers),
         }
-        _write_detail_file(parties_dir, g['id'], payload)
+        written.add(_write_detail_file(parties_dir, g['id'], payload))
+
+    prune_stale_files(parties_dir, written)
 
     return len(groups)

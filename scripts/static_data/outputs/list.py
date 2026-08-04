@@ -9,6 +9,7 @@ import json
 from pathlib import Path
 
 from ..loaders import FORWARD_REFILE_RELATIONSHIPS
+from ..prune import prune_stale_files
 
 
 def _appeal_summary(m: dict) -> dict | None:
@@ -59,7 +60,11 @@ def _lightweight(m: dict) -> dict:
 
 
 def generate(mergers: list, output_dir: Path, page_size: int = 50) -> int:
-    """Generate paginated merger list files. Returns number of pages written."""
+    """Generate paginated merger list files. Returns number of pages written.
+
+    Page files beyond the current last page are pruned, so a list that shrinks
+    (e.g. after a dedup) doesn't keep serving a trailing page of stale entries.
+    """
     mergers_dir = Path(output_dir) / "mergers"
     mergers_dir.mkdir(parents=True, exist_ok=True)
 
@@ -94,5 +99,14 @@ def generate(mergers: list, output_dir: Path, page_size: int = 50) -> int:
     meta_path = mergers_dir / "list-meta.json"
     with open(meta_path, 'w', encoding='utf-8') as f:
         json.dump(meta_data, f, indent=2)
+
+    # Only the paginated list is ours to prune — the per-merger detail files in
+    # this same directory belong to :mod:`.individual`.
+    prune_stale_files(
+        mergers_dir,
+        {f"list-page-{n}.json" for n in range(1, total_pages + 1)},
+        pattern="list-page-*.json",
+        label="mergers",
+    )
 
     return total_pages

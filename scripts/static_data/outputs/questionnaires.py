@@ -8,6 +8,8 @@ import json
 import re
 from pathlib import Path
 
+from ..prune import prune_stale_files
+
 
 def _norm_filename(name: str) -> str:
     """Strip re-download suffixes (_0, _1 …) before the extension.
@@ -65,7 +67,11 @@ def _active_questionnaire_filenames(merger: dict) -> set:
 
 
 def generate(questionnaire_data: dict, output_dir: Path, mergers: list | None = None) -> int:
-    """Write individual questionnaire files. Returns count written."""
+    """Write individual questionnaire files. Returns count written.
+
+    Files for matters whose questionnaires are no longer parsed (or no longer
+    have any questions) are pruned.
+    """
     active_by_merger = {}
     if mergers:
         for merger in mergers:
@@ -77,6 +83,7 @@ def generate(questionnaire_data: dict, output_dir: Path, mergers: list | None = 
     questionnaires_dir.mkdir(parents=True, exist_ok=True)
 
     count = 0
+    written: set[str] = set()
     for merger_id, q_data in questionnaire_data.items():
         # All distinct versions parsed for this matter (the primary entry is
         # also the first element of all_questionnaires when it exists).
@@ -106,6 +113,9 @@ def generate(questionnaire_data: dict, output_dir: Path, mergers: list | None = 
         out_path = questionnaires_dir / f"{merger_id}.json"
         with open(out_path, 'w', encoding='utf-8') as f:
             json.dump(output, f, indent=2)
+        written.add(out_path.name)
         count += 1
+
+    prune_stale_files(questionnaires_dir, written)
 
     return count

@@ -1539,6 +1539,23 @@ class TestIndividualGenerate:
         assert data['merger_id'] == 'MN-0001'
         assert data['is_waiver'] is False
 
+    def test_prunes_detail_file_for_a_merger_that_is_gone(self, tmp_path):
+        # A merger deduped away (or dropped from the register) shouldn't keep
+        # being served from a previous run's file.
+        mergers_dir = tmp_path / 'mergers'
+        mergers_dir.mkdir(parents=True)
+        (mergers_dir / 'MN-9999.json').write_text('{"merger_id": "MN-9999"}')
+        individual.generate(_enriched_fixture(), tmp_path)
+        assert not (mergers_dir / 'MN-9999.json').exists()
+        assert (mergers_dir / 'MN-0001.json').exists()
+
+    def test_does_not_prune_the_paginated_list(self, tmp_path):
+        # mergers/ is shared with the list generator; those files aren't ours.
+        list_out.generate(_enriched_fixture(), tmp_path, page_size=2)
+        individual.generate(_enriched_fixture(), tmp_path)
+        assert (tmp_path / 'mergers' / 'list-page-1.json').exists()
+        assert (tmp_path / 'mergers' / 'list-meta.json').exists()
+
 
 # ---------------------------------------------------------------------------
 # list (paginated)
@@ -1582,6 +1599,19 @@ class TestListGenerate:
         assert by_id['MN-0001']['is_refiled'] is True
         assert by_id['WA-0003']['is_refiled'] is False
 
+    def test_prunes_pages_beyond_the_last(self, tmp_path):
+        list_out.generate(_enriched_fixture(), tmp_path, page_size=2)
+        assert (tmp_path / 'mergers' / 'list-page-2.json').exists()
+        # Same data, bigger pages — page 2 no longer exists.
+        list_out.generate(_enriched_fixture(), tmp_path, page_size=50)
+        assert not (tmp_path / 'mergers' / 'list-page-2.json').exists()
+        assert (tmp_path / 'mergers' / 'list-page-1.json').exists()
+
+    def test_does_not_prune_individual_merger_files(self, tmp_path):
+        individual.generate(_enriched_fixture(), tmp_path)
+        list_out.generate(_enriched_fixture(), tmp_path, page_size=50)
+        assert (tmp_path / 'mergers' / 'MN-0001.json').exists()
+
 
 # ---------------------------------------------------------------------------
 # timeline (paginated)
@@ -1606,6 +1636,13 @@ class TestTimelineGenerate:
             page = json.load(f)
         dates = [e['date'] for e in page['events']]
         assert dates == sorted(dates)
+
+    def test_prunes_pages_beyond_the_last(self, tmp_path):
+        timeline.generate(_enriched_fixture(), tmp_path, page_size=2)
+        assert (tmp_path / 'timeline' / 'timeline-page-2.json').exists()
+        timeline.generate(_enriched_fixture(), tmp_path, page_size=100)
+        assert not (tmp_path / 'timeline' / 'timeline-page-2.json').exists()
+        assert (tmp_path / 'timeline' / 'timeline-meta.json').exists()
 
 
 # ---------------------------------------------------------------------------
@@ -1796,6 +1833,22 @@ class TestQuestionnairesGenerate:
         n = questionnaires.generate(q_data, tmp_path)
         assert n == 1
         assert (tmp_path / 'questionnaires' / 'MN-0001.json').exists()
+
+    def test_prunes_file_for_a_matter_with_no_questionnaire_left(self, tmp_path):
+        q_dir = tmp_path / 'questionnaires'
+        q_dir.mkdir(parents=True)
+        (q_dir / 'MN-9999.json').write_text('{}')
+        q_data = {
+            'MN-0001': {
+                'deadline_iso': '2025-08-25',
+                'file_name': 'Q.pdf',
+                'questions': [{'number': 1, 'text': 'Q?'}],
+                'questions_count': 1,
+            },
+        }
+        questionnaires.generate(q_data, tmp_path)
+        assert not (q_dir / 'MN-9999.json').exists()
+        assert (q_dir / 'MN-0001.json').exists()
 
     def test_skips_empty_questions(self, tmp_path):
         q_data = {
@@ -2327,6 +2380,23 @@ class TestPartiesDetailFiles:
         assert n == len(groups)
         written = {p.stem for p in (tmp_path / 'parties').glob('*.json')}
         assert written == {g['id'] for g in groups}
+
+    def test_prunes_page_of_a_party_folded_into_a_group(self, tmp_path):
+        # Before: COLES SUPERMARKETS is ungrouped and has its own page.
+        no_group = parties.build_party_pages(_party_mergers_fixture(), [])
+        parties.generate_detail_files(no_group, tmp_path)
+        supermarkets_id = next(
+            g['id'] for g in no_group
+            if 'COLES SUPERMARKETS AUSTRALIA PTY LTD' in [m['name'] for m in g['members']]
+        )
+        assert (tmp_path / 'parties' / f'{supermarkets_id}.json').exists()
+
+        # After: it's declared a member of the Coles group, so its standalone
+        # page is retired in favour of coles.json.
+        grouped = parties.build_party_pages(_party_mergers_fixture(), [_COLES_GROUP])
+        parties.generate_detail_files(grouped, tmp_path)
+        assert not (tmp_path / 'parties' / f'{supermarkets_id}.json').exists()
+        assert (tmp_path / 'parties' / 'coles.json').exists()
 
     def test_coles_file_contents(self, tmp_path):
         groups = parties.build_party_pages(_party_mergers_fixture(), [_COLES_GROUP])
