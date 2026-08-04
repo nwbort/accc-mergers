@@ -3,6 +3,11 @@
   "canonical_name": "Publicis Groupe",
   "members": [
     {
+      "name": "MMS USA Holdings, Inc.",
+      "identifier": "Delaware ID 3497138",
+      "identifier_type": null
+    },
+    {
       "name": "PUBLICIS MEDIA AUSTRALIA PTY LTD",
       "identifier": "40 001 786 858",
       "identifier_type": "ABN"
@@ -16,6 +21,17 @@
   "mergers": {
     "acquirer": [
       {
+        "merger_id": "MN-60026",
+        "merger_name": "Publicis Groupe - LiveRamp",
+        "is_waiver": false,
+        "status": "Under assessment",
+        "determination": null,
+        "has_conditions": false,
+        "phase": "Phase 1",
+        "notification_date": "2026-07-27T12:00:00Z",
+        "determination_date": null
+      },
+      {
         "merger_id": "WA-95014",
         "merger_name": "Publicis \u2013 160over90",
         "is_waiver": true,
@@ -28,19 +44,7 @@
       }
     ],
     "target": [],
-    "other": [
-      {
-        "merger_id": "MN-60026",
-        "merger_name": "Publicis Groupe - LiveRamp",
-        "is_waiver": false,
-        "status": "Under assessment",
-        "determination": null,
-        "has_conditions": false,
-        "phase": "Phase 1",
-        "notification_date": "2026-07-27T12:00:00Z",
-        "determination_date": null
-      }
-    ]
+    "other": []
   },
   "merger_count": 2,
   "phase_1_count": 1,
