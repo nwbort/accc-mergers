@@ -13,6 +13,7 @@ from constants import merger_status
 
 from .. import anzsic
 from ..durations import collect_phase_1_durations, collect_waiver_durations, median_or_none
+from ..prune import prune_stale_files
 
 
 def classify_phase(m: dict) -> str:
@@ -157,11 +158,13 @@ def _node_ref(node: anzsic.Node, merger_count: int | None = None) -> dict:
     return ref
 
 
-def _write_detail_file(industries_dir: Path, code: str, payload: dict) -> None:
+def _write_detail_file(industries_dir: Path, code: str, payload: dict) -> str:
+    """Write one industry page; returns the file name written."""
     safe_code = code.replace('/', '-').replace('\\', '-')
     out_path = industries_dir / f"{safe_code}.json"
     with open(out_path, 'w', encoding='utf-8') as f:
         json.dump(payload, f, indent=2)
+    return out_path.name
 
 
 def generate_detail_files(mergers: list, output_dir: Path) -> int:
@@ -180,6 +183,7 @@ def generate_detail_files(mergers: list, output_dir: Path) -> int:
     """
     industries_dir = Path(output_dir) / "industries"
     industries_dir.mkdir(parents=True, exist_ok=True)
+    written: set[str] = set()
 
     # Records aggregated onto each hierarchy node. A merger tagged at a class
     # rolls up to its group/subdivision/division too. code -> {merger_id: (summary, full)}
@@ -251,7 +255,7 @@ def generate_detail_files(mergers: list, output_dir: Path) -> int:
             "phase_duration": _phase_duration(full_mergers),
             "waiver_duration": _waiver_duration(full_mergers),
         }
-        _write_detail_file(industries_dir, code, payload)
+        written.add(_write_detail_file(industries_dir, code, payload))
 
     # Standalone files for any tagged codes outside the ANZSIC tree.
     for code, records in orphan_records.items():
@@ -270,6 +274,10 @@ def generate_detail_files(mergers: list, output_dir: Path) -> int:
             "phase_duration": _phase_duration(full_mergers),
             "waiver_duration": _waiver_duration(full_mergers),
         }
-        _write_detail_file(industries_dir, code, payload)
+        written.add(_write_detail_file(industries_dir, code, payload))
+
+    # An orphan code that stops being tagged (usually an ACCC typo, later
+    # corrected) leaves a file behind that nothing links to any more.
+    prune_stale_files(industries_dir, written)
 
     return len(hierarchy) + len(orphan_records)

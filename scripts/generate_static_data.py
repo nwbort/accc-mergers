@@ -31,6 +31,11 @@ Output files:
   - noccs/{id}.json             - NOCC summary files (consumed by the CLI bundle, not the frontend)
   - referral-probability-by-day.json - P(Phase 2 referral | still undecided at
                         business day N); not consumed by the frontend yet
+
+Each per-item directory is self-pruning: a generator removes the files it no
+longer writes (see static_data/prune.py), so pages retired by a data change —
+a party folded into a canonical group, a deduped matter, a shrinking paginated
+list — stop being served instead of lingering.
 """
 
 import json

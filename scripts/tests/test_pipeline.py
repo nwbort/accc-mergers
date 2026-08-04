@@ -2988,8 +2988,23 @@ class TestGenerateNoccFiles:
         assert not (tmp_path / 'noccs' / 'MN-01069.json').exists()
         assert not (tmp_path / 'noccs' / 'MN-01070.json').exists()
 
+    def test_prunes_file_for_a_matter_with_no_nocc_left(self, tmp_path):
+        (tmp_path / 'noccs').mkdir(parents=True)
+        (tmp_path / 'noccs' / 'MN-09999.json').write_text('{}')
+        nocc_data = {
+            'MN-01068': {'sections': [{'number': '1', 'title': 'X', 'blocks': []}]},
+        }
+        generate_nocc_files(nocc_data, tmp_path)
+        assert not (tmp_path / 'noccs' / 'MN-09999.json').exists()
+        assert (tmp_path / 'noccs' / 'MN-01068.json').exists()
+
     def test_empty_data(self, tmp_path):
+        # Nothing written means nothing pruned — an empty load must not wipe
+        # the directory.
+        (tmp_path / 'noccs').mkdir(parents=True)
+        (tmp_path / 'noccs' / 'MN-01068.json').write_text('{}')
         assert generate_nocc_files({}, tmp_path) == 0
+        assert (tmp_path / 'noccs' / 'MN-01068.json').exists()
 
 
 # ---------------------------------------------------------------------------

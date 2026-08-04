@@ -9,10 +9,15 @@ import json
 from pathlib import Path
 
 from ..enrichment import extract_phase_from_event
+from ..prune import prune_stale_files
 
 
 def generate(mergers: list, output_dir: Path, page_size: int = 100) -> int:
-    """Generate paginated timeline files. Returns number of pages written."""
+    """Generate paginated timeline files. Returns number of pages written.
+
+    Page files beyond the current last page are pruned, so a timeline that
+    shrinks doesn't keep serving a trailing page of stale events.
+    """
     timeline_dir = Path(output_dir) / "timeline"
     timeline_dir.mkdir(parents=True, exist_ok=True)
 
@@ -72,5 +77,12 @@ def generate(mergers: list, output_dir: Path, page_size: int = 100) -> int:
     meta_path = timeline_dir / "timeline-meta.json"
     with open(meta_path, 'w', encoding='utf-8') as f:
         json.dump(meta_data, f, indent=2)
+
+    prune_stale_files(
+        timeline_dir,
+        {f"timeline-page-{n}.json" for n in range(1, total_pages + 1)},
+        pattern="timeline-page-*.json",
+        label="timeline",
+    )
 
     return total_pages

@@ -1639,9 +1639,13 @@
           "name": "BLACK RHINO (GRANVILLE) PTY LTD",
           "identifier_type": "ABN",
           "identifier": "68 693 147 063",
+          "canonical": {
+            "id": "black-rhino-group",
+            "name": "Black Rhino Group"
+          },
           "party_page": {
-            "id": "black-rhino-granville-pty-ltd",
-            "name": "Black Rhino (Granville) Pty Ltd"
+            "id": "black-rhino-group",
+            "name": "Black Rhino Group"
           }
         },
         {
@@ -2741,9 +2745,13 @@
           "name": "Blackstone Alternative Credit Advisors LP",
           "identifier_type": null,
           "identifier": "",
+          "canonical": {
+            "id": "blackstone-inc",
+            "name": "Blackstone Inc."
+          },
           "party_page": {
-            "id": "blackstone-alternative-credit-advisors-lp-2",
-            "name": "Blackstone Alternative Credit Advisors LP"
+            "id": "blackstone-inc",
+            "name": "Blackstone Inc."
           }
         }
       ],
