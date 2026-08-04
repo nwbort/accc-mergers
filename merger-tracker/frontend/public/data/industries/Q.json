@@ -27,7 +27,7 @@
       "code": "87",
       "name": "Social Assistance Services",
       "level": "subdivision",
-      "merger_count": 3
+      "merger_count": 4
     }
   ],
   "mergers": [
@@ -85,6 +85,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-06-16T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-75034",
+      "merger_name": "Kanda Healthcare \u2013 Live Your Way, QLD",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-14T12:00:00Z",
+      "determination_date": "2026-08-04T12:00:00Z"
     },
     {
       "merger_id": "WA-20029",
@@ -461,10 +472,10 @@
       "determination_date": "2026-02-10T12:00:00Z"
     }
   ],
-  "count": 39,
+  "count": 40,
   "phase_1_count": 17,
   "phase_2_count": 0,
-  "waiver_count": 22,
+  "waiver_count": 23,
   "active_count": 5,
   "phase_duration": {
     "average_days": 25.333333333333332,
@@ -474,10 +485,10 @@
     "completed_count": 12
   },
   "waiver_duration": {
-    "average_days": 17.454545454545453,
-    "median_days": 16.0,
-    "average_business_days": 11.681818181818182,
-    "median_business_days": 11.0,
-    "completed_count": 22
+    "average_days": 17.608695652173914,
+    "median_days": 16,
+    "average_business_days": 11.826086956521738,
+    "median_business_days": 11,
+    "completed_count": 23
   }
 }

@@ -1,6 +1,6 @@
 {
   "total_mergers": 203,
-  "total_waivers": 311,
+  "total_waivers": 312,
   "total_conditional_approvals": 2,
   "by_status": {
     "Assessment completed": 155,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 297,
+    "Approved": 298,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,10 +42,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.95498392282958,
-    "median_days": 18,
-    "average_business_days": 12.707395498392282,
-    "median_business_days": 12
+    "average_days": 18.96153846153846,
+    "median_days": 18.0,
+    "average_business_days": 12.71474358974359,
+    "median_business_days": 12.0
   },
   "top_industries": [
     {
@@ -213,6 +213,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-75034",
+      "merger_name": "Kanda Healthcare \u2013 Live Your Way, QLD",
+      "determination": "Approved",
+      "determination_date": "2026-08-04T12:00:00Z",
+      "page_modified_datetime": "2026-08-04T17:28:14+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-20030",
       "merger_name": "Baupost \u2013 McDermott",
       "determination": "Approved",
@@ -318,16 +328,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-03T12:00:00Z",
       "page_modified_datetime": "2026-08-03T16:35:45+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-10023",
-      "merger_name": "Infoblox \u2013 Kentik Technologies",
-      "determination": "Approved",
-      "determination_date": "2026-08-03T12:00:00Z",
-      "page_modified_datetime": "2026-08-03T16:31:44+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
