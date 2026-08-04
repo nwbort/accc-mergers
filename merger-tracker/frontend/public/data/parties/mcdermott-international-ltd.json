@@ -1,0 +1,41 @@
+{
+  "id": "mcdermott-international-ltd",
+  "canonical_name": "McDermott International, Ltd",
+  "members": [
+    {
+      "name": "McDermott International, Ltd",
+      "identifier": "Bermuda company number  55624",
+      "identifier_type": null
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [
+      {
+        "merger_id": "WA-20030",
+        "merger_name": "Baupost \u2013 McDermott",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Waiver",
+        "notification_date": "2026-07-21T12:00:00Z",
+        "determination_date": "2026-08-04T12:00:00Z"
+      }
+    ],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null,
+  "waiver_duration": {
+    "average_days": 14.0,
+    "median_days": 14,
+    "average_business_days": 10.0,
+    "median_business_days": 10,
+    "completed_count": 1
+  }
+}

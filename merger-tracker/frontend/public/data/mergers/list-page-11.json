@@ -1,6 +1,73 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-90024",
+      "merger_name": "Petalite \u2013 Envu",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-24T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-04T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Petalite Investment Pte. Ltd",
+          "identifier_type": null,
+          "identifier": "Singapore Unique Identifier  202021849G",
+          "party_page": {
+            "id": "petalite-investment-pte-ltd",
+            "name": "Petalite Investment Pte. Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Cinven Discovery Holdings Limited Partnership",
+          "identifier_type": null,
+          "identifier": "Guernsey registration number  LP4308",
+          "party_page": {
+            "id": "cinven-discovery-holdings-limited-partnership",
+            "name": "Cinven Discovery Holdings Limited Partnership"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Envu Group",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "envu-group",
+            "name": "Envu Group"
+          }
+        },
+        {
+          "name": "GIC Pte. Ltd",
+          "identifier_type": null,
+          "identifier": "Singapore Unique Identifier  198102265N",
+          "party_page": {
+            "id": "gic-pte-ltd",
+            "name": "GIC Pte. Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1832",
+          "name": "Pesticide Manufacturing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/petalite-%E2%80%93-envu"
+    },
+    {
       "merger_id": "MN-05031",
       "merger_name": "Obayashi Corporation \u2013 Multiplex",
       "status": "Under assessment",

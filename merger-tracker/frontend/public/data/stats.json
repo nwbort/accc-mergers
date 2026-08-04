@@ -1,6 +1,6 @@
 {
   "total_mergers": 203,
-  "total_waivers": 310,
+  "total_waivers": 311,
   "total_conditional_approvals": 2,
   "by_status": {
     "Assessment completed": 155,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 296,
+    "Approved": 297,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,15 +42,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.970967741935485,
-    "median_days": 18.0,
-    "average_business_days": 12.716129032258065,
-    "median_business_days": 12.0
+    "average_days": 18.95498392282958,
+    "median_days": 18,
+    "average_business_days": 12.707395498392282,
+    "median_business_days": 12
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 69
+      "count": 70
     },
     {
       "name": "Computer System Design and Related Services",
@@ -78,7 +78,7 @@
     },
     {
       "name": "Engineering Design and Engineering Consulting Services",
-      "count": 15
+      "count": 16
     },
     {
       "name": "Scientific Research Services",
@@ -213,6 +213,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-20030",
+      "merger_name": "Baupost \u2013 McDermott",
+      "determination": "Approved",
+      "determination_date": "2026-08-04T12:00:00Z",
+      "page_modified_datetime": "2026-08-04T17:24:49+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-30026",
       "merger_name": "Count \u2013 O\u2019Brien Accountants & Advisors",
       "determination": "Approved",
@@ -318,16 +328,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-03T12:00:00Z",
       "page_modified_datetime": "2026-08-03T16:31:44+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-40032",
-      "merger_name": "Vets Central \u2013 Lava Street Veterinary Clinic and Doggy Kinder",
-      "determination": "Approved",
-      "determination_date": "2026-08-03T12:00:00Z",
-      "page_modified_datetime": "2026-08-03T16:30:14+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

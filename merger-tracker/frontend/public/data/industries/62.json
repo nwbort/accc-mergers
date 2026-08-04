@@ -37,7 +37,7 @@
       "code": "624",
       "name": "Financial Asset Investing",
       "level": "group",
-      "merger_count": 69
+      "merger_count": 70
     }
   ],
   "mergers": [
@@ -73,6 +73,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-21T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-20030",
+      "merger_name": "Baupost \u2013 McDermott",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-21T12:00:00Z",
+      "determination_date": "2026-08-04T12:00:00Z"
     },
     {
       "merger_id": "WA-01114",
@@ -889,10 +900,10 @@
       "determination_date": null
     }
   ],
-  "count": 77,
+  "count": 78,
   "phase_1_count": 13,
   "phase_2_count": 1,
-  "waiver_count": 63,
+  "waiver_count": 64,
   "active_count": 3,
   "phase_duration": {
     "average_days": 30.181818181818183,
@@ -902,10 +913,10 @@
     "completed_count": 11
   },
   "waiver_duration": {
-    "average_days": 18.92063492063492,
-    "median_days": 18,
-    "average_business_days": 12.587301587301587,
-    "median_business_days": 12,
-    "completed_count": 63
+    "average_days": 18.84375,
+    "median_days": 18.0,
+    "average_business_days": 12.546875,
+    "median_business_days": 12.0,
+    "completed_count": 64
   }
 }
