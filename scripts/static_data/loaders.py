@@ -13,7 +13,6 @@ QUESTIONNAIRE_JSON = REPO_ROOT / "data" / "processed" / "questionnaire_data.json
 NOCC_JSON = REPO_ROOT / "data" / "processed" / "nocc_data.json"
 RELATED_MERGERS_JSON = REPO_ROOT / "data" / "processed" / "related_mergers.json"
 RELATED_PARTIES_JSON = REPO_ROOT / "data" / "processed" / "related_parties.json"
-PARTY_REDIRECTS_JSON = REPO_ROOT / "data" / "processed" / "party_redirects.json"
 SIMILAR_MERGERS_JSON = REPO_ROOT / "data" / "processed" / "similar_mergers.json"
 TRIBUNAL_APPEALS_JSON = REPO_ROOT / "data" / "processed" / "tribunal_appeals.json"
 
@@ -106,31 +105,6 @@ def load_related_parties() -> list:
     except (json.JSONDecodeError, IOError) as e:
         print(f"Warning: Could not load related_parties.json: {e}")
         return []
-
-
-def load_party_redirects() -> dict:
-    """Load the hand-maintained party page redirects overlay.
-
-    Returns ``{retired_page_id: live_page_id}``. These supplement the redirects
-    derived from ``related_parties.json`` for ids the derived map cannot
-    reproduce — collision-suffixed ids, and parties the ACCC later renamed. See
-    the file's own ``_README``. Returns an empty dict if missing or malformed.
-    """
-    if not PARTY_REDIRECTS_JSON.exists():
-        return {}
-
-    try:
-        with open(PARTY_REDIRECTS_JSON, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-    except (json.JSONDecodeError, IOError) as e:
-        print(f"Warning: Could not load party_redirects.json: {e}")
-        return {}
-
-    return {
-        entry['from']: entry['to']
-        for entry in data.get('redirects', [])
-        if entry.get('from') and entry.get('to')
-    }
 
 
 def load_similar_mergers() -> dict:

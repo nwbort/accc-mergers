@@ -44,28 +44,6 @@ def _title_case_name(name: str) -> str:
     return cleaned
 
 
-def _synth_key(party: dict) -> str:
-    """Identity a party clusters on when it belongs to no declared group.
-
-    Its normalised ABN when it has one, else its normalised name, so repeat
-    appearances of the same unlisted entity share a page. Empty when the party
-    has neither and cannot be clustered at all.
-    """
-    return normalise_identifier(party.get('identifier', '')) or normalise_name(party.get('name') or '')
-
-
-def _best_name(name_counts: Counter, fallback: str) -> str:
-    """The name a cluster is displayed under: most common, then shortest."""
-    if not name_counts:
-        return fallback
-    return min(name_counts.items(), key=lambda item: (-item[1], len(item[0]), item[0]))[0]
-
-
-def _base_slug(canonical_name: str) -> str:
-    """The page id a cluster takes, before any collision suffix."""
-    return slugify(canonical_name) or 'party'
-
-
 def build_party_pages(mergers: list, party_groups: list) -> list:
     """Cluster every party appearance into a page group.
 
@@ -92,7 +70,8 @@ def build_party_pages(mergers: list, party_groups: list) -> list:
                 if group:
                     key = ('canonical', group['id'])
                 else:
-                    synth_key = _synth_key(party)
+                    ident = normalise_identifier(party.get('identifier', ''))
+                    synth_key = ident or normalise_name(name)
                     if not synth_key:
                         continue
                     key = ('synth', synth_key)
@@ -115,8 +94,15 @@ def build_party_pages(mergers: list, party_groups: list) -> list:
             group_id = entry['canonical_group']['id']
             canonical_name = entry['canonical_group'].get('canonical_name') or ''
         else:
-            canonical_name = _title_case_name(_best_name(entry['name_counts'], key[1]))
-            base_slug = _base_slug(canonical_name)
+            if entry['name_counts']:
+                best_name = min(
+                    entry['name_counts'].items(),
+                    key=lambda item: (-item[1], len(item[0]), item[0]),
+                )[0]
+            else:
+                best_name = key[1]
+            canonical_name = _title_case_name(best_name)
+            base_slug = slugify(canonical_name) or 'party'
             group_id = base_slug
             n = 2
             while group_id in used_ids:
@@ -157,50 +143,6 @@ def build_party_pages(mergers: list, party_groups: list) -> list:
 
     groups.sort(key=lambda g: g['id'])
     return groups
-
-
-def build_party_aliases(mergers: list, party_groups: list, pages: list) -> dict:
-    """Map a grouped party's would-be page id → the id of the page it now shares.
-
-    A party that matches a declared group in ``related_parties.json`` has no
-    page of its own: it is folded into the group's page. Before it was declared
-    a member it had one, at the id its own name produces — the id this returns
-    the mapping for. Those retired ids are what the redirect rules point at the
-    surviving group page (see :mod:`.redirects`), so old links and bookmarks
-    keep working instead of hitting "Party not found".
-
-    Returns ``{retired_id: canonical_id}``, sorted by key. Ids that are a live
-    page in their own right are never aliased — a live page always wins.
-    """
-    by_identifier, by_name = build_group_lookups(party_groups)
-
-    # synth key -> {'names': Counter, 'group_id': str}. Only parties that
-    # matched a declared group can have had a page retired.
-    clusters: dict[str, dict] = {}
-    for merger in mergers:
-        for field in PARTY_ROLE_FIELDS:
-            for party in merger.get(field) or []:
-                group = match_party(party, by_identifier, by_name)
-                if not group or not group.get('id'):
-                    continue
-                key = _synth_key(party)
-                if not key:
-                    continue
-                cluster = clusters.setdefault(key, {'names': Counter(), 'group_id': group['id']})
-                name = party.get('name') or ''
-                if name:
-                    cluster['names'][name] += 1
-
-    live_ids = {p['id'] for p in pages}
-
-    aliases = {}
-    for key, cluster in clusters.items():
-        retired_id = _base_slug(_title_case_name(_best_name(cluster['names'], key)))
-        if retired_id in live_ids or retired_id == cluster['group_id']:
-            continue
-        aliases[retired_id] = cluster['group_id']
-
-    return dict(sorted(aliases.items()))
 
 
 def generate_index(groups: list) -> dict:

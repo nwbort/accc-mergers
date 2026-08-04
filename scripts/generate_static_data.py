@@ -32,15 +32,10 @@ Output files:
   - referral-probability-by-day.json - P(Phase 2 referral | still undecided at
                         business day N); not consumed by the frontend yet
 
-  merger-tracker/frontend/public/ (deployed to Cloudflare Pages):
-  - _redirects                  - 301s for retired party page URLs, written into
-                        a marked block; hand-written rules are preserved
-
 Each per-item directory is self-pruning: a generator removes the files it no
 longer writes (see static_data/prune.py), so pages retired by a data change —
 a party folded into a canonical group, a deduped matter, a shrinking paginated
-list — stop being served instead of lingering. Retired party URLs then redirect
-to the page that absorbed them rather than 404 (see static_data/outputs/redirects.py).
+list — stop being served instead of lingering.
 """
 
 import json
@@ -62,7 +57,6 @@ from static_data.loaders import (
     load_commentary,
     load_mergers,
     load_nocc_data,
-    load_party_redirects,
     load_questionnaire_data,
     load_related_mergers,
     load_related_parties,
@@ -81,7 +75,6 @@ from static_data.outputs import (
     parties,
     phase2,
     questionnaires,
-    redirects,
     refiled,
     serial_acquirers,
     stats,
@@ -94,7 +87,6 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 REPO_ROOT = SCRIPT_DIR.parent
 OUTPUT_DIR = REPO_ROOT / "merger-tracker" / "frontend" / "public" / "data"
 DATA_OUTPUT_DIR = REPO_ROOT / "data" / "output"
-REDIRECTS_PATH = REPO_ROOT / "merger-tracker" / "frontend" / "public" / "_redirects"
 
 
 def main():
@@ -138,10 +130,6 @@ def main():
     related_parties = load_related_parties()
     if related_parties:
         print(f"Loaded {len(related_parties)} related party group(s)")
-
-    party_redirect_overlay = load_party_redirects()
-    if party_redirect_overlay:
-        print(f"Loaded {len(party_redirect_overlay)} hand-maintained party redirect(s)")
 
     tribunal_appeals = load_tribunal_appeals()
     if tribunal_appeals:
@@ -230,15 +218,6 @@ def main():
     print("\nGenerating individual party files...")
     n = parties.generate_detail_files(party_groups, OUTPUT_DIR)
     print(f"✓ Generated {n} individual party files in {OUTPUT_DIR / 'parties'}")
-
-    # Party pages retired by a fold-in are pruned above; these keep their old
-    # URLs answering with a 301 to the page that absorbed them.
-    party_aliases = {
-        **parties.build_party_aliases(enriched, related_parties, party_groups),
-        **party_redirect_overlay,
-    }
-    rules = redirects.generate(party_aliases, party_groups, REDIRECTS_PATH)
-    print(f"✓ Generated {rules} party redirect rule(s) in {REDIRECTS_PATH}")
 
     if questionnaire_data:
         print("\nGenerating questionnaire files...")
