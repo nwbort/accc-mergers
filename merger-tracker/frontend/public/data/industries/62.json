@@ -37,7 +37,7 @@
       "code": "624",
       "name": "Financial Asset Investing",
       "level": "group",
-      "merger_count": 70
+      "merger_count": 71
     }
   ],
   "mergers": [
@@ -77,6 +77,17 @@
     {
       "merger_id": "WA-20030",
       "merger_name": "Baupost \u2013 McDermott",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-21T12:00:00Z",
+      "determination_date": "2026-08-04T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-55030",
+      "merger_name": "CRH - Arcosa",
       "is_waiver": true,
       "status": "Assessment completed",
       "determination": "Approved",
@@ -900,10 +911,10 @@
       "determination_date": null
     }
   ],
-  "count": 78,
+  "count": 79,
   "phase_1_count": 13,
   "phase_2_count": 1,
-  "waiver_count": 64,
+  "waiver_count": 65,
   "active_count": 3,
   "phase_duration": {
     "average_days": 30.181818181818183,
@@ -913,10 +924,10 @@
     "completed_count": 11
   },
   "waiver_duration": {
-    "average_days": 18.84375,
-    "median_days": 18.0,
-    "average_business_days": 12.546875,
-    "median_business_days": 12.0,
-    "completed_count": 64
+    "average_days": 18.76923076923077,
+    "median_days": 18,
+    "average_business_days": 12.507692307692308,
+    "median_business_days": 12,
+    "completed_count": 65
   }
 }

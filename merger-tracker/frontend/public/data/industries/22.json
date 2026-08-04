@@ -25,7 +25,7 @@
       "code": "222",
       "name": "Structural Metal Product Manufacturing",
       "level": "group",
-      "merger_count": 1
+      "merger_count": 2
     },
     {
       "code": "223",
@@ -47,6 +47,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-55030",
+      "merger_name": "CRH - Arcosa",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-21T12:00:00Z",
+      "determination_date": "2026-08-04T12:00:00Z"
+    },
     {
       "merger_id": "WA-01114",
       "merger_name": "EQT Fund Management \u2013 Exolaunch",
@@ -114,17 +125,17 @@
       "determination_date": "2026-03-16T12:00:00Z"
     }
   ],
-  "count": 6,
+  "count": 7,
   "phase_1_count": 0,
   "phase_2_count": 0,
-  "waiver_count": 6,
+  "waiver_count": 7,
   "active_count": 0,
   "phase_duration": null,
   "waiver_duration": {
-    "average_days": 20.166666666666668,
-    "median_days": 18.5,
-    "average_business_days": 13.0,
-    "median_business_days": 12.0,
-    "completed_count": 6
+    "average_days": 19.285714285714285,
+    "median_days": 18,
+    "average_business_days": 12.571428571428571,
+    "median_business_days": 11,
+    "completed_count": 7
   }
 }

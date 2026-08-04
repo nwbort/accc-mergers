@@ -1,6 +1,6 @@
 {
   "total_mergers": 203,
-  "total_waivers": 312,
+  "total_waivers": 314,
   "total_conditional_approvals": 2,
   "by_status": {
     "Assessment completed": 155,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 298,
+    "Approved": 300,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,15 +42,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.96153846153846,
+    "average_days": 18.952229299363058,
     "median_days": 18.0,
-    "average_business_days": 12.71474358974359,
+    "average_business_days": 12.713375796178344,
     "median_business_days": 12.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 70
+      "count": 71
     },
     {
       "name": "Computer System Design and Related Services",
@@ -81,12 +81,12 @@
       "count": 16
     },
     {
-      "name": "Scientific Research Services",
+      "name": "Supermarket and Grocery Stores",
       "count": 15
     },
     {
-      "name": "Supermarket and Grocery Stores",
-      "count": 14
+      "name": "Scientific Research Services",
+      "count": 15
     }
   ],
   "recent_mergers": [
@@ -213,6 +213,26 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-55030",
+      "merger_name": "CRH - Arcosa",
+      "determination": "Approved",
+      "determination_date": "2026-08-04T12:00:00Z",
+      "page_modified_datetime": "2026-08-04T17:30:40+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-95034",
+      "merger_name": "Community Enterprise Queensland - Island & Cape Community Stores (Aurukun, Hope Vale & Badu)",
+      "determination": "Approved",
+      "determination_date": "2026-08-04T12:00:00Z",
+      "page_modified_datetime": "2026-08-04T17:29:51+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-75034",
       "merger_name": "Kanda Healthcare \u2013 Live Your Way, QLD",
       "determination": "Approved",
@@ -308,26 +328,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-03T12:00:00Z",
       "page_modified_datetime": "2026-08-03T16:38:45+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-80030",
-      "merger_name": "IKEA Australia \u2013 IP rights from Inter IKEA under new franchise agreement package",
-      "determination": "Approved",
-      "determination_date": "2026-08-03T12:00:00Z",
-      "page_modified_datetime": "2026-08-03T16:37:01+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-20029",
-      "merger_name": "Impression Dental Group \u2013 Kingston Beach Dental, TAS",
-      "determination": "Approved",
-      "determination_date": "2026-08-03T12:00:00Z",
-      "page_modified_datetime": "2026-08-03T16:35:45+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
