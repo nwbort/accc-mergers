@@ -9,7 +9,7 @@
       "code": "30",
       "name": "Building Construction",
       "level": "subdivision",
-      "merger_count": 7
+      "merger_count": 8
     },
     {
       "code": "31",
@@ -25,6 +25,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-75035",
+      "merger_name": "Johns Lyng Group \u2013 C&M Build Group",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-05T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-70027",
       "merger_name": "Global Infrastructure Management and EQT led consortium - AES Corporation",
@@ -488,11 +499,11 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 42,
-  "phase_1_count": 18,
+  "count": 43,
+  "phase_1_count": 19,
   "phase_2_count": 1,
   "waiver_count": 23,
-  "active_count": 8,
+  "active_count": 9,
   "phase_duration": {
     "average_days": 27.833333333333332,
     "median_days": 24.5,

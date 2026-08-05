@@ -1,10 +1,10 @@
 {
-  "total_mergers": 206,
+  "total_mergers": 207,
   "total_waivers": 314,
   "total_conditional_approvals": 2,
   "by_status": {
     "Assessment completed": 156,
-    "Under assessment": 47,
+    "Under assessment": 48,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -50,7 +50,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 71
+      "count": 72
     },
     {
       "name": "Computer System Design and Related Services",
@@ -90,6 +90,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-75035",
+      "merger_name": "Johns Lyng Group \u2013 C&M Build Group",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-05T12:00:00Z",
+      "page_modified_datetime": "2026-08-05T15:03:33+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-35033",
       "merger_name": "MERIVALE \u2013 THE SACKVILLE HOTEL",
@@ -197,16 +207,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-07-28T12:00:00Z",
       "page_modified_datetime": "2026-07-29T17:06:29+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-80005",
-      "merger_name": "Kimberly-Clark Corporation - Kenvue Inc.",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-28T12:00:00Z",
-      "page_modified_datetime": "2026-07-29T12:36:34+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

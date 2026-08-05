@@ -131,6 +131,16 @@
       "effective_notification_datetime": "2026-08-04T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-08-12T12:00:00Z",
+      "merger_id": "MN-75035",
+      "merger_name": "Johns Lyng Group \u2013 C&M Build Group",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-08-05T12:00:00Z"
+    },
+    {
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-08-12T12:00:00Z",
@@ -593,6 +603,16 @@
     {
       "type": "determination_due",
       "event_type_display": "Determination due",
+      "date": "2026-09-16T12:00:00Z",
+      "merger_id": "MN-75035",
+      "merger_name": "Johns Lyng Group \u2013 C&M Build Group",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-08-05T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
       "date": "2026-09-23T12:00:00Z",
       "merger_id": "MN-65005",
       "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
@@ -612,6 +632,6 @@
       "tribunal_number": "ACT 1 of 2026"
     }
   ],
-  "count": 61,
+  "count": 63,
   "days_ahead": 60
 }
