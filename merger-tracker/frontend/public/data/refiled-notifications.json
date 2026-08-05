@@ -25,18 +25,6 @@
       "notification_determination_date": null
     },
     {
-      "waiver_id": "WA-01094",
-      "waiver_name": "Energy Bay - Rights to install/operate embedded networks and other assets from Centuria Capital Group members",
-      "waiver_filed_date": "2026-04-02T12:00:00Z",
-      "waiver_declined_date": "2026-05-11T12:00:00Z",
-      "notification_id": "MN-65023",
-      "notification_name": "Energy Bay - certain assets required to operate embedded networks for Centuria Capital Group members",
-      "notification_filed_date": "2026-07-10T12:00:00Z",
-      "notification_status": "Under assessment",
-      "notification_determination": null,
-      "notification_determination_date": null
-    },
-    {
       "waiver_id": "WA-85016",
       "waiver_name": "Vets Central \u2013 Hills Veterinary Centre",
       "waiver_filed_date": "2026-03-16T12:00:00Z",
@@ -50,6 +38,18 @@
     }
   ],
   "completed": [
+    {
+      "waiver_id": "WA-01094",
+      "waiver_name": "Energy Bay - Rights to install/operate embedded networks and other assets from Centuria Capital Group members",
+      "waiver_filed_date": "2026-04-02T12:00:00Z",
+      "waiver_declined_date": "2026-05-11T12:00:00Z",
+      "notification_id": "MN-65023",
+      "notification_name": "Energy Bay - certain assets required to operate embedded networks for Centuria Capital Group members",
+      "notification_filed_date": "2026-07-10T12:00:00Z",
+      "notification_status": "Assessment completed",
+      "notification_determination": "Approved",
+      "notification_determination_date": "2026-08-05T12:00:00Z"
+    },
     {
       "waiver_id": "WA-25010",
       "waiver_name": "INNIO Group \u2013 Enerflex",
@@ -148,21 +148,21 @@
     }
   ],
   "count": {
-    "current": 4,
-    "completed": 8
+    "current": 3,
+    "completed": 9
   },
   "clearance_rate": {
-    "cleared": 8,
+    "cleared": 9,
     "not_cleared": 0,
-    "total": 8,
+    "total": 9,
     "rate": 1.0
   },
   "phase_duration": {
-    "average_days": 28.375,
-    "median_days": 26.5,
-    "average_business_days": 18.875,
-    "median_business_days": 17.5,
-    "completed_count": 8
+    "average_days": 28.11111111111111,
+    "median_days": 26,
+    "average_business_days": 18.77777777777778,
+    "median_business_days": 18,
+    "completed_count": 9
   },
   "straight_phase_duration": {
     "average_days": 29.751633986928105,
