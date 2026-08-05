@@ -19,7 +19,7 @@
       "code": "671",
       "name": "Property Operators",
       "level": "group",
-      "merger_count": 27
+      "merger_count": 28
     },
     {
       "code": "672",
@@ -29,6 +29,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-35033",
+      "merger_name": "MERIVALE \u2013 THE SACKVILLE HOTEL",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-04T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-65026",
       "merger_name": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company",
@@ -360,11 +371,11 @@
       "determination_date": "2025-09-05T12:00:00Z"
     }
   ],
-  "count": 30,
-  "phase_1_count": 9,
+  "count": 31,
+  "phase_1_count": 10,
   "phase_2_count": 1,
   "waiver_count": 20,
-  "active_count": 3,
+  "active_count": 4,
   "phase_duration": {
     "average_days": 32.285714285714285,
     "median_days": 29,

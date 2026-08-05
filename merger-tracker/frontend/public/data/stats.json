@@ -1,10 +1,10 @@
 {
-  "total_mergers": 205,
+  "total_mergers": 206,
   "total_waivers": 314,
   "total_conditional_approvals": 2,
   "by_status": {
     "Assessment completed": 155,
-    "Under assessment": 47,
+    "Under assessment": 48,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -66,11 +66,11 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 25
+      "count": 26
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 23
+      "count": 24
     },
     {
       "name": "Accommodation",
@@ -90,6 +90,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-35033",
+      "merger_name": "MERIVALE \u2013 THE SACKVILLE HOTEL",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-04T12:00:00Z",
+      "page_modified_datetime": "2026-08-05T12:43:56+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-95033",
       "merger_name": "bp - bp Gateway",
@@ -197,16 +207,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-07-28T12:00:00Z",
       "page_modified_datetime": "2026-07-29T12:36:34+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-05027",
-      "merger_name": "Protech - ActivateRail",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-28T12:00:00Z",
-      "page_modified_datetime": "2026-07-28T18:10:08+10:00",
       "is_waiver": false,
       "is_refiled": false
     }
