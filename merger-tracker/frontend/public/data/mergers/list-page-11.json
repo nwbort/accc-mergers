@@ -1495,9 +1495,13 @@
           "name": "BP AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
           "identifier": "53 004 085 616",
+          "canonical": {
+            "id": "bp-plc",
+            "name": "BP plc"
+          },
           "party_page": {
-            "id": "bp-australia-pty-ltd",
-            "name": "Bp Australia Pty Ltd"
+            "id": "bp-plc",
+            "name": "BP plc"
           }
         }
       ],
@@ -1517,6 +1521,10 @@
           "name": "BP plc",
           "identifier_type": null,
           "identifier": "UK company number: 00102498",
+          "canonical": {
+            "id": "bp-plc",
+            "name": "BP plc"
+          },
           "party_page": {
             "id": "bp-plc",
             "name": "BP plc"
