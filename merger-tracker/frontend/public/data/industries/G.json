@@ -15,7 +15,7 @@
       "code": "40",
       "name": "Fuel Retailing",
       "level": "subdivision",
-      "merger_count": 5
+      "merger_count": 6
     },
     {
       "code": "41",
@@ -37,6 +37,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-95033",
+      "merger_name": "bp - bp Gateway",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-04T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-15030",
       "merger_name": "Karmo/Simplr",
@@ -687,11 +698,11 @@
       "determination_date": null
     }
   ],
-  "count": 59,
-  "phase_1_count": 20,
+  "count": 60,
+  "phase_1_count": 21,
   "phase_2_count": 3,
   "waiver_count": 36,
-  "active_count": 7,
+  "active_count": 8,
   "phase_duration": {
     "average_days": 37.6875,
     "median_days": 27.0,

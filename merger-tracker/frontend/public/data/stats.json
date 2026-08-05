@@ -1,10 +1,10 @@
 {
-  "total_mergers": 204,
+  "total_mergers": 205,
   "total_waivers": 314,
   "total_conditional_approvals": 2,
   "by_status": {
     "Assessment completed": 155,
-    "Under assessment": 46,
+    "Under assessment": 47,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -90,6 +90,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-95033",
+      "merger_name": "bp - bp Gateway",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-04T12:00:00Z",
+      "page_modified_datetime": "2026-08-05T12:32:12+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-15030",
       "merger_name": "Karmo/Simplr",
@@ -197,16 +207,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-07-28T12:00:00Z",
       "page_modified_datetime": "2026-07-28T18:10:08+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-90027",
-      "merger_name": "AbbVie - Apogee",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-27T12:00:00Z",
-      "page_modified_datetime": "2026-08-05T10:38:01+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

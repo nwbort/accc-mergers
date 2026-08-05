@@ -24,10 +24,21 @@
       "code": "4000",
       "name": "Fuel Retailing",
       "level": "class",
-      "merger_count": 5
+      "merger_count": 6
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-95033",
+      "merger_name": "bp - bp Gateway",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-04T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "WA-85034",
       "merger_name": "Freedom Fuels \u2013 Rennic",
@@ -84,11 +95,11 @@
       "determination_date": "2026-05-14T12:00:00Z"
     }
   ],
-  "count": 5,
-  "phase_1_count": 0,
+  "count": 6,
+  "phase_1_count": 1,
   "phase_2_count": 1,
   "waiver_count": 4,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": {
     "average_days": 103.0,
     "median_days": 103,
