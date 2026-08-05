@@ -465,15 +465,6 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "AbbVie Inc.",
-          "identifier_type": null,
-          "identifier": "DELAWARE FILE NO.  5126809",
-          "party_page": {
-            "id": "abbvie-inc",
-            "name": "AbbVie Inc."
-          }
-        },
-        {
           "name": "Andor Merger Co.",
           "identifier_type": null,
           "identifier": "DELAWARE FILE NO.  10659205",
@@ -490,18 +481,18 @@
             "id": "andor-llc",
             "name": "Andor LLC"
           }
+        },
+        {
+          "name": "AbbVie Inc.",
+          "identifier_type": null,
+          "identifier": "DELAWARE FILE NO.  5126809",
+          "party_page": {
+            "id": "abbvie-inc",
+            "name": "AbbVie Inc."
+          }
         }
       ],
       "targets": [
-        {
-          "name": "Apogee Therapeutics, Inc.",
-          "identifier_type": null,
-          "identifier": "EIN  934958665",
-          "party_page": {
-            "id": "apogee-therapeutics-inc",
-            "name": "Apogee Therapeutics, Inc."
-          }
-        },
         {
           "name": "Apogee Therapeutics Securities Corporation",
           "identifier_type": null,
@@ -509,6 +500,15 @@
           "party_page": {
             "id": "apogee-therapeutics-securities-corporation",
             "name": "Apogee Therapeutics Securities Corporation"
+          }
+        },
+        {
+          "name": "Apogee Therapeutics, Inc.",
+          "identifier_type": null,
+          "identifier": "EIN  934958665",
+          "party_page": {
+            "id": "apogee-therapeutics-inc",
+            "name": "Apogee Therapeutics, Inc."
           }
         }
       ],
