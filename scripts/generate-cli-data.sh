@@ -18,19 +18,35 @@
 #     future per-record incremental sync path; the CLI only fetches this
 #     when the main manifest's merger_manifest_sha256 has changed.
 #
-# These live under data/output/ (not deployed to Cloudflare Pages); the CLI
-# fetches them directly from raw.githubusercontent.com.
+# These live under data/output/. Only cli-manifest.json is tracked in git — it
+# carries the version counter and bundle checksum this script needs to detect
+# change across runs. The bundle and per-merger manifest are gitignored build
+# intermediates: the pipeline feeds the bundle straight to build_cli_sqlite.py
+# in the same job, and the CLI downloads the resulting cli.sqlite (plus its own
+# manifest) from the orphan `cli-dist` branch, not from main.
 #
 # Usage:
-#   ./scripts/generate-cli-data.sh          # no-op if data unchanged
-#   ./scripts/generate-cli-data.sh --force  # always regenerate + bump version
+#   ./scripts/generate-cli-data.sh            # no-op if data unchanged
+#   ./scripts/generate-cli-data.sh --force    # always regenerate + bump version
+#   ./scripts/generate-cli-data.sh --rebuild  # rewrite the bundle only, no bump
+#
+# --rebuild exists because the bundle is gitignored: a fresh checkout has the
+# manifest but no bundle, so anything needing the bundle (e.g. the manual
+# publish-cli-sqlite workflow) has to reconstruct it without disturbing the
+# version counter.
 #
 # Dependencies: jq (>=1.6), python3, sha256sum (Linux) or shasum (macOS)
 
 set -euo pipefail
 
 FORCE=0
-[[ "${1:-}" == "--force" ]] && FORCE=1
+REBUILD=0
+case "${1:-}" in
+    --force)   FORCE=1 ;;
+    --rebuild) REBUILD=1 ;;
+    "")        ;;
+    *)         echo "ERROR: unknown option: $1" >&2; exit 2 ;;
+esac
 
 # ---------------------------------------------------------------------------
 # Paths
@@ -188,6 +204,27 @@ PREV_VERSION=0
 if [[ -f "$MANIFEST_PATH" ]]; then
     PREV_SHA256=$(jq -r '.bundle_sha256 // ""' "$MANIFEST_PATH")
     PREV_VERSION=$(jq -r '.version // 0' "$MANIFEST_PATH")
+fi
+
+# --rebuild reconstructs the gitignored bundle to match the tracked manifest and
+# stops there: no version bump, no manifest rewrite. A checksum mismatch means
+# the frontend data in this checkout no longer matches what produced the
+# recorded version, so the caller would be publishing something other than
+# v${PREV_VERSION} — fail rather than silently mislabel it.
+if [[ "$REBUILD" -eq 1 ]]; then
+    if [[ -z "$PREV_SHA256" ]]; then
+        die "--rebuild needs an existing $MANIFEST_PATH to rebuild against"
+    fi
+    if [[ "$BUNDLE_SHA256" != "$PREV_SHA256" ]]; then
+        die "--rebuild produced a bundle that does not match v${PREV_VERSION}
+  manifest sha256: $PREV_SHA256
+  rebuilt sha256:  $BUNDLE_SHA256
+Run without --rebuild to regenerate and bump the version."
+    fi
+    mv "$BUNDLE_TMP" "$BUNDLE_PATH"
+    echo "Bundle rebuilt at v${PREV_VERSION} (sha256 matches manifest)."
+    echo "  Bundle: $BUNDLE_PATH"
+    exit 0
 fi
 
 if [[ "$BUNDLE_SHA256" == "$PREV_SHA256" && "$FORCE" -eq 0 ]]; then

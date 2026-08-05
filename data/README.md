@@ -40,9 +40,14 @@ offline analysis and external consumers.
 
 - `mergers.json` — full enriched merger data (the same shape served to
   the frontend, but as one file)
-- `cli/` — bundle and manifests for the
-  [`accc-mergers-cli`](https://github.com/nwbort/accc-mergers-cli) tool
-  (`cli-bundle.json`, `cli-manifest.json`, `cli-merger-manifest.json`)
+- `cli/` — build inputs for the
+  [`accc-mergers-cli`](https://github.com/nwbort/accc-mergers-cli) tool.
+  Only `cli-manifest.json` is tracked; it holds the version counter and
+  bundle checksum that `generate-cli-data.sh` uses to detect change between
+  runs. `cli-bundle.json` and `cli-merger-manifest.json` are gitignored —
+  regenerate them with `./scripts/generate-cli-data.sh`. The CLI itself
+  downloads `cli.sqlite` from the orphan `cli-dist` branch, built from the
+  bundle during the pipeline run; nothing consumes these files from `main`.
 
 ### `digest-archive/`
 
