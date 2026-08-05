@@ -1,7 +1,7 @@
 name: Publish CLI SQLite
 
-# Manual republish of cli.sqlite + cli-manifest.json from the latest
-# cli-bundle.json on main, force-pushed to the orphan `cli-dist` branch.
+# Manual republish of cli.sqlite + cli-manifest.json at the data version
+# recorded on main, force-pushed to the orphan `cli-dist` branch.
 # The accc-mergers-cli reads those two files directly from
 # raw.githubusercontent.com:
 #
@@ -36,6 +36,13 @@ jobs:
         uses: actions/setup-python@v6
         with:
           python-version: '3.11'
+
+      # cli-bundle.json is gitignored, so a fresh checkout of main doesn't have
+      # one. Rebuild it from the committed frontend data. --rebuild fails if the
+      # result doesn't match the checksum in the tracked cli-manifest.json,
+      # which keeps this republish pinned to the version already on main.
+      - name: Rebuild CLI bundle
+        run: ./scripts/generate-cli-data.sh --rebuild
 
       - name: Build SQLite database
         run: |

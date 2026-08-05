@@ -270,12 +270,15 @@ jobs:
             fi
 
             git push
-            # Flag downstream cli-sqlite publish if cli-bundle.json is in
-            # the pushed commit. Pushes from GITHUB_TOKEN don't fire other
+            # Flag downstream cli-sqlite publish if cli-manifest.json is in
+            # the pushed commit. The manifest is the tracked stand-in for the
+            # bundle, which is gitignored — generate-cli-data.sh only rewrites
+            # the manifest when the bundle content actually changed, so it is
+            # an exact signal. Pushes from GITHUB_TOKEN don't fire other
             # workflows, so we publish inline rather than relying on a
             # paths-filtered push trigger on publish-cli-sqlite.yml.
             if git diff HEAD^..HEAD --name-only \
-                | grep -qx "data/output/cli/cli-bundle.json"; then
+                | grep -qx "data/output/cli/cli-manifest.json"; then
               echo "publish_cli=true" >> "$GITHUB_OUTPUT"
             fi
           fi

@@ -65,6 +65,20 @@ node_modules/
 # tracked (see scripts/tools/advisors_crypto.py).
 data/processed/advisors.json
 
+# CLI build intermediates. The bundle (~7 MB) is regenerated from the frontend
+# data on every pipeline run and consumed in-process by build_cli_sqlite.py to
+# produce the cli.sqlite that ships on the orphan `cli-dist` branch — nothing
+# reads the committed copy, so tracking it just added ~7 MB of blob per data
+# commit. cli-merger-manifest.json backs a not-yet-implemented per-record sync
+# path and has no reader either.
+#
+# cli-manifest.json IS still tracked: generate-cli-data.sh reads its
+# `version` and `bundle_sha256` to decide whether the data changed and what
+# version to stamp next. Without it every run would look changed and reset to
+# v1. Regenerate the bundle locally with `./scripts/generate-cli-data.sh`.
+data/output/cli/cli-bundle.json
+data/output/cli/cli-merger-manifest.json
+
 # Scraper working artifact: the paginated register index is re-fetched fresh at
 # the start of every scrape run and only used within that run to derive matter
 # links. It changes on every fetch (session token / ordering) even when no

@@ -163,7 +163,9 @@ All data files are pre-generated into `merger-tracker/frontend/public/data/`:
 
 Additional output:
 - `merger-tracker/frontend/public/feed.xml` — RSS feed
-- `data/output/cli/` — CLI bundle (manifest + data files)
+- `data/output/cli/` — CLI build inputs. Only `cli-manifest.json` is tracked
+  (version counter + bundle checksum); `cli-bundle.json` and
+  `cli-merger-manifest.json` are gitignored and regenerated on demand.
 
 ### Regenerating data locally
 

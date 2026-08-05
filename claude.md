@@ -95,7 +95,7 @@ scripts/
 ├── generate_weekly_digest.py  # Generate digest.json for weekly summary
 ├── generate_sitemap.py   # Generate sitemap.xml
 ├── generate_rss_feed.py  # Generate RSS feed
-├── generate-cli-data.sh  # Build/version-bump the accc-mergers-cli bundle + manifest
+├── generate-cli-data.sh  # Build/version-bump the accc-mergers-cli bundle (gitignored) + tracked manifest
 ├── build_cli_sqlite.py   # Build cli.sqlite from the CLI bundle
 ├── embed.py              # Generate semantic search embeddings (Stage 1)
 ├── send_weekly_email.py  # Send weekly digest email via Cloudflare Worker
