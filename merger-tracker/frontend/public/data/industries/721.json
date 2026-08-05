@@ -24,16 +24,27 @@
       "code": "7211",
       "name": "Employment Placement and Recruitment Services",
       "level": "class",
-      "merger_count": 4
+      "merger_count": 5
     },
     {
       "code": "7212",
       "name": "Labour Supply Services",
       "level": "class",
-      "merger_count": 5
+      "merger_count": 6
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-95038",
+      "merger_name": "HiTech Group Australia - Hudson Global Resources",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-04T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-05027",
       "merger_name": "Protech - ActivateRail",
@@ -112,11 +123,11 @@
       "determination_date": "2026-05-04T12:00:00Z"
     }
   ],
-  "count": 7,
-  "phase_1_count": 1,
+  "count": 8,
+  "phase_1_count": 2,
   "phase_2_count": 0,
   "waiver_count": 6,
-  "active_count": 1,
+  "active_count": 2,
   "phase_duration": null,
   "waiver_duration": {
     "average_days": 19.666666666666668,

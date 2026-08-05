@@ -1549,6 +1549,68 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/bp-bp-gateway"
     },
     {
+      "merger_id": "MN-95038",
+      "merger_name": "HiTech Group Australia - Hudson Global Resources",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-04T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-15T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "HITECH GROUP AUSTRALIA LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "41 062 067 878",
+          "party_page": {
+            "id": "hitech-group-australia-limited",
+            "name": "Hitech Group Australia Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Hudson Global Resources (Aust) Pty Limited (Administrators Appointed)",
+          "identifier_type": "ABN",
+          "identifier": "21 002 888 762",
+          "party_page": {
+            "id": "hudson-global-resources-aust-pty-limited",
+            "name": "Hudson Global Resources (Aust) Pty Limited"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Glenn Ian Livingstone in his capacity as Administrator of Hudson Global Resources (Aust) Pty Limited",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "glenn-ian-livingstone-in-his-capacity-as-administrator-of-hudson-global-resource",
+            "name": "Glenn Ian Livingstone in his capacity as Administrator of Hudson Global Resources (Aust) Pty Limited"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6932",
+          "name": "Accounting Services"
+        },
+        {
+          "code": "7211",
+          "name": "Employment Placement and Recruitment Services"
+        },
+        {
+          "code": "7212",
+          "name": "Labour Supply Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/hitech-group-australia-hudson-global-resources"
+    },
+    {
       "merger_id": "MN-75035",
       "merger_name": "Johns Lyng Group \u2013 C&M Build Group",
       "status": "Under assessment",
