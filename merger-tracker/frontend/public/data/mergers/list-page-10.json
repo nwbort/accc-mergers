@@ -1750,6 +1750,50 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/origin-%E2%80%93-climatech-zero"
     },
     {
+      "merger_id": "WA-05037",
+      "merger_name": "The State of Western Australia \u2013 Mount Lawley Hospital",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-10T12:00:00Z",
+      "determination_publication_date": "2026-08-05T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "The State of Western Australia",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "the-state-of-western-australia",
+            "name": "The State of Western Australia"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "ST JOHN OF GOD HEALTH CARE INC",
+          "identifier_type": "ABN",
+          "identifier": "21 930 207 958",
+          "party_page": {
+            "id": "st-john-of-god-health-care-inc",
+            "name": "St John Of God Health Care Inc"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "8401",
+          "name": "Hospitals (Except Psychiatric Hospitals)"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/the-state-of-western-australia-%E2%80%93-mount-lawley-hospital"
+    },
+    {
       "merger_id": "WA-30026",
       "merger_name": "Count \u2013 O\u2019Brien Accountants & Advisors",
       "status": "Assessment completed",
@@ -3553,62 +3597,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/crh-arcosa"
-    },
-    {
-      "merger_id": "MN-10021",
-      "merger_name": "Ambrose Construct Group \u2013 Major Loss Builders",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-07-22T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-09-02T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Insurance Building Australia Operations Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "80 661 826 026",
-          "party_page": {
-            "id": "insurance-building-australia-operations-pty-ltd",
-            "name": "Insurance Building Australia Operations Pty Ltd"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "Major LB Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "72 611 974 540",
-          "party_page": {
-            "id": "major-lb-pty-ltd",
-            "name": "Major LB Pty Ltd"
-          }
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "3011",
-          "name": "House Construction"
-        },
-        {
-          "code": "3019",
-          "name": "Other Residential Building Construction"
-        },
-        {
-          "code": "3020",
-          "name": "Non-Residential Building Construction"
-        },
-        {
-          "code": "7311",
-          "name": "Building and Other Industrial Cleaning Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ambrose-construct-group-%E2%80%93-major-loss-builders"
     }
   ],
   "page": 10,

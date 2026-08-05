@@ -1,6 +1,6 @@
 {
   "total_mergers": 208,
-  "total_waivers": 314,
+  "total_waivers": 315,
   "total_conditional_approvals": 2,
   "by_status": {
     "Assessment completed": 156,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 300,
+    "Approved": 301,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,10 +42,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.955414012738853,
-    "median_days": 18.0,
-    "average_business_days": 12.71656050955414,
-    "median_business_days": 12.0
+    "average_days": 18.977777777777778,
+    "median_days": 18,
+    "average_business_days": 12.733333333333333,
+    "median_business_days": 12
   },
   "top_industries": [
     {
@@ -213,6 +213,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-05037",
+      "merger_name": "The State of Western Australia \u2013 Mount Lawley Hospital",
+      "determination": "Approved",
+      "determination_date": "2026-08-05T12:00:00Z",
+      "page_modified_datetime": "2026-08-05T16:44:06+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-65023",
       "merger_name": "Energy Bay - certain assets required to operate embedded networks for Centuria Capital Group members",
       "determination": "Approved",
@@ -318,16 +328,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-03T12:00:00Z",
       "page_modified_datetime": "2026-08-03T16:47:06+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-80029",
-      "merger_name": "NPM Capital \u2013 AmbaFlex Group",
-      "determination": "Approved",
-      "determination_date": "2026-08-03T12:00:00Z",
-      "page_modified_datetime": "2026-08-03T16:41:28+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
