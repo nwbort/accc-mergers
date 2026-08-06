@@ -9,7 +9,7 @@
       "code": "69",
       "name": "Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",
       "level": "subdivision",
-      "merger_count": 77
+      "merger_count": 78
     },
     {
       "code": "70",
@@ -19,6 +19,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-30030",
+      "merger_name": "Eli Lilly and Company / AtaiBeckley Inc.",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-05T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-95038",
       "merger_name": "HiTech Group Australia - Hudson Global Resources",
@@ -1318,11 +1329,11 @@
       "determination_date": null
     }
   ],
-  "count": 118,
-  "phase_1_count": 45,
+  "count": 119,
+  "phase_1_count": 46,
   "phase_2_count": 2,
   "waiver_count": 71,
-  "active_count": 11,
+  "active_count": 12,
   "phase_duration": {
     "average_days": 33.270270270270274,
     "median_days": 27,

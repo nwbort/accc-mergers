@@ -1,10 +1,10 @@
 {
-  "total_mergers": 210,
+  "total_mergers": 211,
   "total_waivers": 315,
   "total_conditional_approvals": 2,
   "by_status": {
     "Assessment completed": 156,
-    "Under assessment": 51,
+    "Under assessment": 52,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -50,7 +50,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 72
+      "count": 73
     },
     {
       "name": "Computer System Design and Related Services",
@@ -81,15 +81,25 @@
       "count": 16
     },
     {
-      "name": "Supermarket and Grocery Stores",
-      "count": 15
+      "name": "Scientific Research Services",
+      "count": 16
     },
     {
-      "name": "Scientific Research Services",
+      "name": "Supermarket and Grocery Stores",
       "count": 15
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-30030",
+      "merger_name": "Eli Lilly and Company / AtaiBeckley Inc.",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-05T12:00:00Z",
+      "page_modified_datetime": "2026-08-06T13:20:38+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-55031",
       "merger_name": "Danone \u2013 MADE",
@@ -197,16 +207,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-07-30T12:00:00Z",
       "page_modified_datetime": "2026-07-31T10:20:15+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-60031",
-      "merger_name": "Accenture - runZero",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-29T12:00:00Z",
-      "page_modified_datetime": "2026-07-30T15:35:29+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

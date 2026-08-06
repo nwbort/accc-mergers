@@ -94,6 +94,16 @@
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
       "date": "2026-08-12T12:00:00Z",
+      "merger_id": "MN-30030",
+      "merger_name": "Eli Lilly and Company / AtaiBeckley Inc.",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-08-05T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-08-12T12:00:00Z",
       "merger_id": "MN-35033",
       "merger_name": "MERIVALE \u2013 THE SACKVILLE HOTEL",
       "status": "Under assessment",
@@ -624,6 +634,16 @@
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-09-16T12:00:00Z",
+      "merger_id": "MN-30030",
+      "merger_name": "Eli Lilly and Company / AtaiBeckley Inc.",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-08-05T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-09-16T12:00:00Z",
       "merger_id": "MN-55031",
       "merger_name": "Danone \u2013 MADE",
       "status": "Under assessment",
@@ -662,6 +682,6 @@
       "tribunal_number": "ACT 1 of 2026"
     }
   ],
-  "count": 66,
+  "count": 68,
   "days_ahead": 60
 }

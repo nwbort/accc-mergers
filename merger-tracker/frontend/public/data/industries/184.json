@@ -24,7 +24,7 @@
       "code": "1841",
       "name": "Human Pharmaceutical and Medicinal Product Manufacturing",
       "level": "class",
-      "merger_count": 12
+      "merger_count": 13
     },
     {
       "code": "1842",
@@ -34,6 +34,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-30030",
+      "merger_name": "Eli Lilly and Company / AtaiBeckley Inc.",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-05T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-90027",
       "merger_name": "AbbVie - Apogee",
@@ -178,11 +189,11 @@
       "determination_date": "2026-03-12T12:00:00Z"
     }
   ],
-  "count": 13,
-  "phase_1_count": 8,
+  "count": 14,
+  "phase_1_count": 9,
   "phase_2_count": 1,
   "waiver_count": 4,
-  "active_count": 3,
+  "active_count": 4,
   "phase_duration": {
     "average_days": 31.0,
     "median_days": 26,

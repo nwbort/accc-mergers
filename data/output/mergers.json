@@ -10037,7 +10037,7 @@
       "original_notification_datetime": "2026-07-28T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-09-08T12:00:00Z",
-      "page_modified_datetime": "2026-07-28T18:10:08+10:00",
+      "page_modified_datetime": "2026-08-06T12:54:28+10:00",
       "consultation_response_due_date": "2026-08-05T12:00:00Z",
       "acquirers": [
         {
@@ -10078,7 +10078,7 @@
           "name": "Labour Supply Services"
         }
       ],
-      "merger_description": "Protech Group (Aust) Pty Ltd (**Protech**) proposes to acquire 100% of the shares of ActivateRail Pty Ltd (**ActivateRail**).\n\nProtech is an Australian based workforce provider to technical industries including renewables, building and construction, civil construction and infrastructure, industrial maintenance and engineering, mining and resources, traffic management, rail operations, asphalt and road surfacing, warehousing and manufacturing and defence.\n\nActivateRail supplies rail safety and site management and supervision services to utilities, engineering and professional service organisations.",
+      "merger_description": "Protech Group (Aust) Pty Ltd (**Protech**) proposes to acquire 100% of the shares of ActivateRail Pty Ltd ACN 617 749 809 (**ActivateRail**).\n\nProtech is an Australian based workforce provider to technical industries including renewables, building and construction, civil construction and infrastructure, industrial maintenance and engineering, mining and resources, traffic management, rail operations, asphalt and road surfacing, warehousing and manufacturing and defence.\n\nActivateRail supplies rail safety and site management and supervision services to utilities, engineering and professional service organisations.",
       "events": [
         {
           "date": "2026-07-28T12:00:00Z",
@@ -24317,6 +24317,209 @@
         ],
         "sample_size": 41,
         "estimated_at": "2026-07-17",
+        "method_version": 1
+      }
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/eli-lilly-and-company-ataibeckley-inc",
+      "merger_name": "Eli Lilly and Company / AtaiBeckley Inc.",
+      "status": "Under assessment",
+      "merger_id": "MN-30030",
+      "effective_notification_datetime": "2026-08-05T12:00:00Z",
+      "original_notification_datetime": "2026-08-05T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-09-16T12:00:00Z",
+      "page_modified_datetime": "2026-08-06T13:20:38+10:00",
+      "consultation_response_due_date": "2026-08-12T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Eli Lilly and Company",
+          "identifier_type": null,
+          "identifier": "350470950 (IRS Employer Identification Number)",
+          "canonical": {
+            "id": "eli-lilly-and-company",
+            "name": "Eli Lilly"
+          },
+          "party_page": {
+            "id": "eli-lilly-and-company",
+            "name": "Eli Lilly"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "AtaiBeckley Inc.",
+          "identifier_type": null,
+          "identifier": "413357923 (IRS Employer Identification Number)",
+          "party_page": {
+            "id": "ataibeckley-inc",
+            "name": "AtaiBeckley Inc."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Albali Acquisition Corporation",
+          "identifier_type": null,
+          "identifier": "10665981(Delaware File Number)",
+          "party_page": {
+            "id": "albali-acquisition-corporation",
+            "name": "Albali Acquisition Corporation"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1841",
+          "name": "Human Pharmaceutical and Medicinal Product Manufacturing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6910",
+          "name": "Scientific Research Services"
+        }
+      ],
+      "merger_description": "Eli Lilly and Company (Eli Lilly) proposes to acquire 100% of the issued shares in AtaiBeckley Inc. (AtaiBeckley) (the Acquisition).\n\nEli Lilly is a US-based pharmaceutical company which discovers, develops, manufactures and markets human pharmaceutical products for various therapeutic areas, including diabetes, oncology, immunology and neuroscience. Eli Lilly is headquartered in Indianapolis, the US and is publicly listed on the New York Stock Exchange.\n\nAtaiBeckley is a clinical-stage biotechnology company focused on developing rapid-acting psychedelic and non-psychedelic treatments for difficult-to-treat mental health conditions. It was founded in 2025 through the combination of Atai Life Sciences N.V. and Beckley Psytech Limited. AtaiBeckley is headquartered in New York, the US and listed on NASDAQ (ATAI).\n\nBoth Eli Lilly and AtaiBeckley are active in the development of therapies for the treatment of Alcohol Use Disorder (AUD). Eli Lilly is trialling brenipatide which is in Phase 3 development for AUD, and AtaiBeckley is trialling BPL-003 which is in Phase 2a development for AUD.",
+      "events": [
+        {
+          "date": "2026-08-06T12:00:00Z",
+          "title": "Questionnaire - Eli Lilly - AtaiBeckley",
+          "display_title": "Questionnaire - Eli Lilly - AtaiBeckley",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Eli%20Lilly%20and%20Company%20-%20AtaiBeckley%20Inc..docx",
+          "phase": null
+        },
+        {
+          "date": "2026-08-05T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-20013",
+          "merger_name": "Eli Lilly - Orna Therapeutics",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Eli Lilly and Company",
+              "identifier_type": null,
+              "identifier": "IRS Employer Identification Number  350470950",
+              "canonical": {
+                "id": "eli-lilly-and-company",
+                "name": "Eli Lilly"
+              },
+              "party_page": {
+                "id": "eli-lilly-and-company",
+                "name": "Eli Lilly"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Orna Therapeutics Holdings, LLC",
+              "identifier_type": null,
+              "identifier": "",
+              "party_page": {
+                "id": "orna-therapeutics-holdings-llc-2",
+                "name": "Orna Therapeutics Holdings, LLC"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-95016",
+          "merger_name": "Eli Lilly - Kelonia Therapeutics",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Eli Lilly and Company",
+              "identifier_type": null,
+              "identifier": "IRS Employer Identification Number  350470950",
+              "canonical": {
+                "id": "eli-lilly-and-company",
+                "name": "Eli Lilly"
+              },
+              "party_page": {
+                "id": "eli-lilly-and-company",
+                "name": "Eli Lilly"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Kelonia Therapeutics, Inc.",
+              "identifier_type": null,
+              "identifier": "",
+              "party_page": {
+                "id": "kelonia-therapeutics-inc",
+                "name": "Kelonia Therapeutics, Inc."
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-01087",
+          "merger_name": "Eli Lilly \u2013 Orna Therapeutics",
+          "status": "Assessment completed",
+          "accc_determination": "Not approved",
+          "acquirers": [
+            {
+              "name": "Eli Lilly and Company",
+              "identifier_type": null,
+              "identifier": "IRS Employer Identification Number  350470950",
+              "canonical": {
+                "id": "eli-lilly-and-company",
+                "name": "Eli Lilly"
+              },
+              "party_page": {
+                "id": "eli-lilly-and-company",
+                "name": "Eli Lilly"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Orna Therapeutics Holdings, LLC",
+              "identifier_type": null,
+              "identifier": "IRS Employer Identification Number  861182936",
+              "party_page": {
+                "id": "orna-therapeutics-holdings-llc",
+                "name": "Orna Therapeutics Holdings, LLC"
+              }
+            }
+          ]
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 16,
+        "range_business_days": [
+          15,
+          17
+        ],
+        "basis": "industry",
+        "anzsic_level": "class",
+        "anzsic_codes": [
+          "1841",
+          "6240",
+          "6910"
+        ],
+        "sample_size": 16,
+        "estimated_at": "2026-08-06",
         "method_version": 1
       }
     },
