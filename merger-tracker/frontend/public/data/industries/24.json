@@ -19,7 +19,7 @@
       "code": "241",
       "name": "Professional and Scientific Equipment Manufacturing",
       "level": "group",
-      "merger_count": 12
+      "merger_count": 13
     },
     {
       "code": "242",
@@ -59,6 +59,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-15031",
+      "merger_name": "Danaher (Leica Biosystems) - StatLab",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-05T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-70027",
       "merger_name": "Global Infrastructure Management and EQT led consortium - AES Corporation",
@@ -566,11 +577,11 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 46,
-  "phase_1_count": 18,
+  "count": 47,
+  "phase_1_count": 19,
   "phase_2_count": 0,
   "waiver_count": 28,
-  "active_count": 3,
+  "active_count": 4,
   "phase_duration": {
     "average_days": 26.866666666666667,
     "median_days": 25,

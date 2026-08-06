@@ -9,7 +9,7 @@
       "code": "11",
       "name": "Food Product Manufacturing",
       "level": "subdivision",
-      "merger_count": 12
+      "merger_count": 13
     },
     {
       "code": "12",
@@ -87,7 +87,7 @@
       "code": "24",
       "name": "Machinery and Equipment Manufacturing",
       "level": "subdivision",
-      "merger_count": 46
+      "merger_count": 47
     },
     {
       "code": "25",
@@ -97,6 +97,28 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-15031",
+      "merger_name": "Danaher (Leica Biosystems) - StatLab",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-05T12:00:00Z",
+      "determination_date": null
+    },
+    {
+      "merger_id": "MN-55031",
+      "merger_name": "Danone \u2013 MADE",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-05T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-10022",
       "merger_name": "M Resources and Golden Energy and Resources \u2013 Tahmoor Coal Mine",
@@ -1462,11 +1484,11 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 124,
-  "phase_1_count": 56,
+  "count": 126,
+  "phase_1_count": 58,
   "phase_2_count": 2,
   "waiver_count": 66,
-  "active_count": 12,
+  "active_count": 14,
   "phase_duration": {
     "average_days": 29.93617021276596,
     "median_days": 26,

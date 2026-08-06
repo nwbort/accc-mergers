@@ -15,7 +15,7 @@
       "code": "34",
       "name": "Machinery and Equipment Wholesaling",
       "level": "subdivision",
-      "merger_count": 19
+      "merger_count": 20
     },
     {
       "code": "35",
@@ -27,7 +27,7 @@
       "code": "36",
       "name": "Grocery, Liquor and Tobacco Product Wholesaling",
       "level": "subdivision",
-      "merger_count": 3
+      "merger_count": 4
     },
     {
       "code": "37",
@@ -43,6 +43,28 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-15031",
+      "merger_name": "Danaher (Leica Biosystems) - StatLab",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-05T12:00:00Z",
+      "determination_date": null
+    },
+    {
+      "merger_id": "MN-55031",
+      "merger_name": "Danone \u2013 MADE",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-05T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-01115",
       "merger_name": "MM Security \u2013 Micron Security Products",
@@ -561,11 +583,11 @@
       "determination_date": null
     }
   ],
-  "count": 47,
-  "phase_1_count": 26,
+  "count": 49,
+  "phase_1_count": 28,
   "phase_2_count": 2,
   "waiver_count": 19,
-  "active_count": 5,
+  "active_count": 7,
   "phase_duration": {
     "average_days": 34.52173913043478,
     "median_days": 27,

@@ -1,0 +1,204 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/danaher-leica-biosystems-statlab",
+  "merger_name": "Danaher (Leica Biosystems) - StatLab",
+  "status": "Under assessment",
+  "merger_id": "MN-15031",
+  "effective_notification_datetime": "2026-08-05T12:00:00Z",
+  "original_notification_datetime": "2026-08-05T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-09-16T12:00:00Z",
+  "page_modified_datetime": "2026-08-06T10:40:57+10:00",
+  "consultation_response_due_date": "2026-08-13T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "Danaher Corporation",
+      "identifier_type": null,
+      "identifier": "EIN591995548",
+      "party_page": {
+        "id": "danaher-corporation-2",
+        "name": "Danaher Corporation"
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "SLMP Intermediate Holdings Inc",
+      "identifier_type": null,
+      "identifier": "EIN861436842",
+      "party_page": {
+        "id": "slmp-intermediate-holdings-inc",
+        "name": "SLMP Intermediate Holdings Inc"
+      }
+    }
+  ],
+  "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "2412",
+      "name": "Medical and Surgical Equipment Manufacturing"
+    },
+    {
+      "code": "2419",
+      "name": "Other Professional and Scientific Equipment Manufacturing"
+    },
+    {
+      "code": "3491",
+      "name": "Professional and Scientific Goods Wholesaling"
+    },
+    {
+      "code": "8520",
+      "name": "Pathology and Diagnostic Imaging Services"
+    }
+  ],
+  "merger_description": "Danaher Corporation (**Danaher**) proposes to acquire StatLab Medical Products (**StatLab**) through a Stock Purchase Agreement with SLMP Intermediate Holdings, Inc and StatLab (the **Acquisition**).\n\nDanaher is a global science and technology company that designs, manufactures and markets professional, medical, industrial and commercial products and services under three core segments: biotechnology, life sciences and diagnostics. Danaher, through its subsidiary Leica Biosystems, supplies anatomical pathology equipment, consumables and workflow solutions, including core histology instruments and consumables.\n\nStatLab develops, manufactures, distributes and services pre-analytical and staining consumables and instruments that support the anatomical pathology workflow. StatLab primarily supplies core histology consumables, but also supplies core histology instruments.",
+  "events": [
+    {
+      "date": "2026-08-06T12:00:00Z",
+      "title": "Questionnaire - Danaher (Leica Biosystems) - StatLab",
+      "display_title": "Questionnaire - Danaher (Leica Biosystems) - StatLab",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Danaher%20%28Leica%20Biosystems%29%20-%20StatLab.docx",
+      "url_gh": "/mergers/MN-15031/Questionnaire - Danaher (Leica Biosystems) - StatLab.pdf",
+      "phase": null
+    },
+    {
+      "date": "2026-08-05T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "public_benefits_determination": null,
+  "public_benefits_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-15011",
+      "merger_name": "Danaher - Masimo",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Danaher Corporation",
+          "identifier_type": null,
+          "identifier": "213594",
+          "party_page": {
+            "id": "danaher-corporation",
+            "name": "Danaher Corporation"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Masimo Corporation",
+          "identifier_type": null,
+          "identifier": "2614702",
+          "party_page": {
+            "id": "masimo-corporation",
+            "name": "Masimo Corporation"
+          }
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-25033",
+      "merger_name": "Bain Capital \u2013 FDH",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "BCPE Lightning Buyer, Inc.",
+          "identifier_type": null,
+          "identifier": "US incorporation number  10644291",
+          "party_page": {
+            "id": "bcpe-lightning-buyer-inc",
+            "name": "BCPE Lightning Buyer, Inc."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "FDH Group Intermediate Holdings, LP",
+          "identifier_type": null,
+          "identifier": "US incorporation number  6336375",
+          "canonical": {
+            "id": "fdh-group",
+            "name": "FDH Group"
+          },
+          "party_page": {
+            "id": "fdh-group",
+            "name": "FDH Group"
+          }
+        },
+        {
+          "name": "FDH Group Intermediate, Inc.",
+          "identifier_type": null,
+          "identifier": "US incorporation number  6310370",
+          "canonical": {
+            "id": "fdh-group",
+            "name": "FDH Group"
+          },
+          "party_page": {
+            "id": "fdh-group",
+            "name": "FDH Group"
+          }
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-85025",
+      "merger_name": "Francisco Partners - Blackline Safety",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Apollo Purchaser, Inc.",
+          "identifier_type": null,
+          "identifier": "Registration number 2027954573",
+          "party_page": {
+            "id": "apollo-purchaser-inc",
+            "name": "Apollo Purchaser, Inc."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Blackline Safety Corp.",
+          "identifier_type": null,
+          "identifier": "Corporate access number 2016380855 and business number 860968577",
+          "canonical": {
+            "id": "blackline-safety-corp",
+            "name": "Blackline Safety Corp."
+          },
+          "party_page": {
+            "id": "blackline-safety-corp",
+            "name": "Blackline Safety Corp."
+          }
+        }
+      ]
+    }
+  ],
+  "phase_1_estimate": {
+    "expected_business_days": 18,
+    "range_business_days": [
+      16,
+      22
+    ],
+    "basis": "industry",
+    "anzsic_level": "group",
+    "anzsic_codes": [
+      "241",
+      "349",
+      "852"
+    ],
+    "sample_size": 10,
+    "estimated_at": "2026-08-06",
+    "method_version": 1
+  }
+}

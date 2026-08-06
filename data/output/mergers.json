@@ -16820,6 +16820,210 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/danaher-leica-biosystems-statlab",
+      "merger_name": "Danaher (Leica Biosystems) - StatLab",
+      "status": "Under assessment",
+      "merger_id": "MN-15031",
+      "effective_notification_datetime": "2026-08-05T12:00:00Z",
+      "original_notification_datetime": "2026-08-05T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-09-16T12:00:00Z",
+      "page_modified_datetime": "2026-08-06T10:40:57+10:00",
+      "consultation_response_due_date": "2026-08-13T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Danaher Corporation",
+          "identifier_type": null,
+          "identifier": "EIN591995548",
+          "party_page": {
+            "id": "danaher-corporation-2",
+            "name": "Danaher Corporation"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "SLMP Intermediate Holdings Inc",
+          "identifier_type": null,
+          "identifier": "EIN861436842",
+          "party_page": {
+            "id": "slmp-intermediate-holdings-inc",
+            "name": "SLMP Intermediate Holdings Inc"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "2412",
+          "name": "Medical and Surgical Equipment Manufacturing"
+        },
+        {
+          "code": "2419",
+          "name": "Other Professional and Scientific Equipment Manufacturing"
+        },
+        {
+          "code": "3491",
+          "name": "Professional and Scientific Goods Wholesaling"
+        },
+        {
+          "code": "8520",
+          "name": "Pathology and Diagnostic Imaging Services"
+        }
+      ],
+      "merger_description": "Danaher Corporation (**Danaher**) proposes to acquire StatLab Medical Products (**StatLab**) through a Stock Purchase Agreement with SLMP Intermediate Holdings, Inc and StatLab (the **Acquisition**).\n\nDanaher is a global science and technology company that designs, manufactures and markets professional, medical, industrial and commercial products and services under three core segments: biotechnology, life sciences and diagnostics. Danaher, through its subsidiary Leica Biosystems, supplies anatomical pathology equipment, consumables and workflow solutions, including core histology instruments and consumables.\n\nStatLab develops, manufactures, distributes and services pre-analytical and staining consumables and instruments that support the anatomical pathology workflow. StatLab primarily supplies core histology consumables, but also supplies core histology instruments.",
+      "events": [
+        {
+          "date": "2026-08-06T12:00:00Z",
+          "title": "Questionnaire - Danaher (Leica Biosystems) - StatLab",
+          "display_title": "Questionnaire - Danaher (Leica Biosystems) - StatLab",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Danaher%20%28Leica%20Biosystems%29%20-%20StatLab.docx",
+          "url_gh": "/mergers/MN-15031/Questionnaire - Danaher (Leica Biosystems) - StatLab.pdf",
+          "phase": null
+        },
+        {
+          "date": "2026-08-05T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-15011",
+          "merger_name": "Danaher - Masimo",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Danaher Corporation",
+              "identifier_type": null,
+              "identifier": "213594",
+              "party_page": {
+                "id": "danaher-corporation",
+                "name": "Danaher Corporation"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Masimo Corporation",
+              "identifier_type": null,
+              "identifier": "2614702",
+              "party_page": {
+                "id": "masimo-corporation",
+                "name": "Masimo Corporation"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-25033",
+          "merger_name": "Bain Capital \u2013 FDH",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "BCPE Lightning Buyer, Inc.",
+              "identifier_type": null,
+              "identifier": "US incorporation number  10644291",
+              "party_page": {
+                "id": "bcpe-lightning-buyer-inc",
+                "name": "BCPE Lightning Buyer, Inc."
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "FDH Group Intermediate Holdings, LP",
+              "identifier_type": null,
+              "identifier": "US incorporation number  6336375",
+              "canonical": {
+                "id": "fdh-group",
+                "name": "FDH Group"
+              },
+              "party_page": {
+                "id": "fdh-group",
+                "name": "FDH Group"
+              }
+            },
+            {
+              "name": "FDH Group Intermediate, Inc.",
+              "identifier_type": null,
+              "identifier": "US incorporation number  6310370",
+              "canonical": {
+                "id": "fdh-group",
+                "name": "FDH Group"
+              },
+              "party_page": {
+                "id": "fdh-group",
+                "name": "FDH Group"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-85025",
+          "merger_name": "Francisco Partners - Blackline Safety",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Apollo Purchaser, Inc.",
+              "identifier_type": null,
+              "identifier": "Registration number 2027954573",
+              "party_page": {
+                "id": "apollo-purchaser-inc",
+                "name": "Apollo Purchaser, Inc."
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Blackline Safety Corp.",
+              "identifier_type": null,
+              "identifier": "Corporate access number 2016380855 and business number 860968577",
+              "canonical": {
+                "id": "blackline-safety-corp",
+                "name": "Blackline Safety Corp."
+              },
+              "party_page": {
+                "id": "blackline-safety-corp",
+                "name": "Blackline Safety Corp."
+              }
+            }
+          ]
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 18,
+        "range_business_days": [
+          16,
+          22
+        ],
+        "basis": "industry",
+        "anzsic_level": "group",
+        "anzsic_codes": [
+          "241",
+          "349",
+          "852"
+        ],
+        "sample_size": 10,
+        "estimated_at": "2026-08-06",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/rocket-software-%E2%80%93-vertica",
       "merger_name": "Rocket Software \u2013 Vertica",
       "status": "Assessment completed",
@@ -36720,6 +36924,273 @@
         ],
         "sample_size": 12,
         "estimated_at": "2026-07-27",
+        "method_version": 1
+      }
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/danone-%E2%80%93-made",
+      "merger_name": "Danone \u2013 MADE",
+      "status": "Under assessment",
+      "merger_id": "MN-55031",
+      "effective_notification_datetime": "2026-08-05T12:00:00Z",
+      "original_notification_datetime": "2026-08-05T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-09-16T12:00:00Z",
+      "page_modified_datetime": "2026-08-06T11:00:12+10:00",
+      "consultation_response_due_date": "2026-08-13T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Minogue BidCo",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "minogue-bidco",
+            "name": "Minogue BidCo"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Made (MJV) Pte Ltd",
+          "identifier_type": null,
+          "identifier": "UEN 202321698C",
+          "party_page": {
+            "id": "made-mjv-pte-ltd",
+            "name": "Made (MJV) Pte Ltd"
+          }
+        },
+        {
+          "name": "TUCKER HOLDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "85 644 211 772",
+          "party_page": {
+            "id": "tucker-holdco-pty-ltd",
+            "name": "Tucker Holdco Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Compagnie Gervais Danone",
+          "identifier_type": null,
+          "identifier": "SIREN 552 067 092",
+          "party_page": {
+            "id": "compagnie-gervais-danone",
+            "name": "Compagnie Gervais Danone"
+          }
+        },
+        {
+          "name": "Soci\u00e9t\u00e9 Anonyme des Eaux Min\u00e9rales d\u2019\u00c9vian S.A.",
+          "identifier_type": null,
+          "identifier": "SIREN 797 080 850",
+          "party_page": {
+            "id": "soci-t-anonyme-des-eaux-min-rales-d-vian-s-a",
+            "name": "Soci\u00e9t\u00e9 Anonyme des Eaux Min\u00e9rales d\u2019\u00c9vian S.A."
+          }
+        },
+        {
+          "name": "NUTRICIA AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "99 076 246 752",
+          "party_page": {
+            "id": "nutricia-australia-pty-limited",
+            "name": "Nutricia Australia Pty Limited"
+          }
+        },
+        {
+          "name": "DANONE SAPUTO DAIRY AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "32 143 172 258",
+          "party_page": {
+            "id": "danone-saputo-dairy-australia-pty-ltd",
+            "name": "Danone Saputo Dairy Australia Pty Ltd"
+          }
+        },
+        {
+          "name": "Made Brands Pte Ltd",
+          "identifier_type": null,
+          "identifier": "UEN 202239762W",
+          "party_page": {
+            "id": "made-brands-pte-ltd",
+            "name": "Made Brands Pte Ltd"
+          }
+        },
+        {
+          "name": "Minogue HoldCo",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "minogue-holdco",
+            "name": "Minogue HoldCo"
+          }
+        },
+        {
+          "name": "Danone S.A.",
+          "identifier_type": null,
+          "identifier": "SIREN 552 032 534",
+          "party_page": {
+            "id": "danone-s-a",
+            "name": "Danone S.A."
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1131",
+          "name": "Milk and Cream Processing"
+        },
+        {
+          "code": "1133",
+          "name": "Cheese and Other Dairy Product Manufacturing"
+        },
+        {
+          "code": "1140",
+          "name": "Fruit and Vegetable Processing"
+        },
+        {
+          "code": "1199",
+          "name": "Other Food Product Manufacturing n.e.c."
+        },
+        {
+          "code": "3603",
+          "name": "Dairy Produce Wholesaling"
+        },
+        {
+          "code": "3609",
+          "name": "Other Grocery Wholesaling"
+        }
+      ],
+      "merger_description": "Danone S.A. (together with its subsidiaries, **Danone**) proposes to acquire 100% of the issued share capital in Tucker Holdco Pty Ltd (together with its subsidiaries, **MADE**).\n\nDanone is a global food-products corporation, headquartered in France. Globally, Danone supplies dairy products, plant-based foods, bottled plain water and specialised nutrition solutions. In Australia, Danone supplies dairy-based yoghurt under brands such as Activia, Liddells, Ultimate and YoPro. Danone also supplies specialised nutrition solutions under its Nutricia brand (including AptaGrow, Aptamil, Fortijuice, Fortini, Fortisip, Karicare, Loprofin, Souvenaide) and bottled plain water under its Evian brand.\n\nMADE is an Australian food and beverages company headquartered in Melbourne, Australia. MADE supplies dairy-based products under the Rokeby brand, coconut-based beverages and yoghurt under the Cocobella and Nakula brands, pressed juices under the Impressed Juices brand, and flavoured multi-vitamin bottled water under the NutrientWater brand.\n\nIn parallel with Danone\u2019s acquisition of MADE, MADE proposes to acquire the remaining 50% of shares that it does not already own in Made (MJV) Pte. Ltd. (**Made JV**). Made JV is a joint venture entity that is part of MADE\u2019s Thailand-based manufacturing operation and held pursuant to a joint venture with Magna Access Co. Ltd, an entity associated with Thailand-based food products manufacturer Chabaa Group. Made JV's operating subsidiary, Made Manufacturing (Thailand) Ltd, manufactures coconut-based products sold by MADE.",
+      "events": [
+        {
+          "date": "2026-08-06T12:00:00Z",
+          "title": "Questionnaire - Danone - MADE",
+          "display_title": "Questionnaire - Danone - MADE",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Danone%20-%20MADE.docx",
+          "url_gh": "/mergers/MN-55031/Questionnaire - Danone - MADE.pdf",
+          "phase": null
+        },
+        {
+          "date": "2026-08-05T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-01069",
+          "merger_name": "Danone \u2013 further 1% interest in Danone Saputo Dairy Australia",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Danone Asia Pte Ltd",
+              "identifier_type": null,
+              "identifier": "UEN 198905732N",
+              "party_page": {
+                "id": "danone-asia-pte-ltd",
+                "name": "Danone Asia Pte Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "DANONE SAPUTO DAIRY AUSTRALIA PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "32 143 172 258",
+              "party_page": {
+                "id": "danone-saputo-dairy-australia-pty-ltd",
+                "name": "Danone Saputo Dairy Australia Pty Ltd"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-90019",
+          "merger_name": "Jardines - I-MED",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Kent Image Australia Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "698 274 396",
+              "party_page": {
+                "id": "kent-image-australia-pty-ltd",
+                "name": "Kent Image Australia Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "IMAGE HOLDCO PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "18 623 028 740",
+              "party_page": {
+                "id": "image-holdco-pty-ltd",
+                "name": "Image Holdco Pty Ltd"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-45011",
+          "merger_name": "Signant - ActiGraph",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Signant Health Holding Corp.",
+              "identifier_type": null,
+              "identifier": "Delaware File Number  5354678",
+              "party_page": {
+                "id": "signant-health-holding-corp",
+                "name": "Signant Health Holding Corp."
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "ActiGraph Holdings, LLC",
+              "identifier_type": null,
+              "identifier": "Delaware File Number  7952013",
+              "canonical": {
+                "id": "actigraph-llc",
+                "name": "ActiGraph"
+              },
+              "party_page": {
+                "id": "actigraph-llc",
+                "name": "ActiGraph"
+              }
+            }
+          ]
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 17,
+        "range_business_days": [
+          15,
+          20
+        ],
+        "basis": "industry",
+        "anzsic_level": "division",
+        "anzsic_codes": [
+          "C",
+          "F"
+        ],
+        "sample_size": 58,
+        "estimated_at": "2026-08-06",
         "method_version": 1
       }
     },

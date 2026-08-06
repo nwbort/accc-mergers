@@ -109,6 +109,36 @@
       "count": 3
     },
     {
+      "acquirer_name": "Danaher Corporation",
+      "canonical_id": null,
+      "anzsic_code": "241",
+      "anzsic_name": "Professional and Scientific Equipment Manufacturing",
+      "merger_ids": [
+        "MN-15011",
+        "MN-15031"
+      ],
+      "dates": [
+        "2026-04-02T12:00:00Z",
+        "2026-08-05T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "Danaher Corporation",
+      "canonical_id": null,
+      "anzsic_code": "349",
+      "anzsic_name": "Other Machinery and Equipment Wholesaling",
+      "merger_ids": [
+        "MN-15011",
+        "MN-15031"
+      ],
+      "dates": [
+        "2026-04-02T12:00:00Z",
+        "2026-08-05T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
       "acquirer_name": "Accenture",
       "canonical_id": "accenture-plc",
       "anzsic_code": "696",
@@ -514,5 +544,5 @@
       "count": 2
     }
   ],
-  "count": 33
+  "count": 35
 }

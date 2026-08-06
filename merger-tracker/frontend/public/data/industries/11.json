@@ -31,13 +31,13 @@
       "code": "113",
       "name": "Dairy Product Manufacturing",
       "level": "group",
-      "merger_count": 1
+      "merger_count": 2
     },
     {
       "code": "114",
       "name": "Fruit and Vegetable Processing",
       "level": "group",
-      "merger_count": 3
+      "merger_count": 4
     },
     {
       "code": "115",
@@ -67,10 +67,21 @@
       "code": "119",
       "name": "Other Food Product Manufacturing",
       "level": "group",
-      "merger_count": 5
+      "merger_count": 6
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-55031",
+      "merger_name": "Danone \u2013 MADE",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-05T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-35018",
       "merger_name": "Hewitt \u2013 Nolan Meats",
@@ -204,11 +215,11 @@
       "determination_date": "2026-01-28T12:00:00Z"
     }
   ],
-  "count": 12,
-  "phase_1_count": 7,
+  "count": 13,
+  "phase_1_count": 8,
   "phase_2_count": 0,
   "waiver_count": 5,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": {
     "average_days": 28.714285714285715,
     "median_days": 27,
