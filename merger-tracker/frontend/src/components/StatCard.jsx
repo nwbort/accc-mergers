@@ -18,8 +18,12 @@ function StatCard({ title, value, subtitle, icon, href }) {
             </div>
           )}
           <div className="flex-1 min-w-0">
+            {/* The label reserves two lines so the value below it starts at the
+                same height in every card of a row, whether or not that card's
+                label wraps. Without it, a one-line label lifts its number 20px
+                above its neighbours'. */}
             <dl>
-              <dt className="text-sm font-medium text-gray-500 mb-1">
+              <dt className="text-sm font-medium text-gray-500 leading-5 min-h-10 mb-1">
                 {title}
               </dt>
               <dd>
@@ -28,7 +32,7 @@ function StatCard({ title, value, subtitle, icon, href }) {
                 </div>
               </dd>
               {subtitle && (
-                <dd className="text-sm text-gray-500 mt-1">{subtitle}</dd>
+                <dd className="text-sm text-gray-500 leading-5 mt-1">{subtitle}</dd>
               )}
             </dl>
           </div>

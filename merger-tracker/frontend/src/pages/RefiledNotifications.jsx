@@ -214,11 +214,22 @@ function RefiledNotifications() {
         </header>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-          <StatCard title="Waivers re-filed" value={totalPairs} icon={<FaArrowRightArrowLeft />} />
-          <StatCard title="Awaiting a determination" value={current.length} icon={<FaHourglassHalf />} />
+          <StatCard
+            title="Waivers re-filed"
+            value={totalPairs}
+            subtitle="Waiver declined, then notified"
+            icon={<FaArrowRightArrowLeft />}
+          />
+          <StatCard
+            title="Awaiting a determination"
+            value={current.length}
+            subtitle={`${completed.length} already determined`}
+            icon={<FaHourglassHalf />}
+          />
           <StatCard
             title="Median time to re-file"
             value={medianDaysToRefile !== null ? `${medianDaysToRefile} days` : 'N/A'}
+            subtitle="From decline to re-filing"
             icon={<FaCalendarDays />}
           />
           <StatCard
