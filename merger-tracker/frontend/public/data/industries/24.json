@@ -82,17 +82,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-70026",
-      "merger_name": "Parker-Hannifin \u2013 CIRCOR A&D",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-07-15T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-75029",
       "merger_name": "Analogic - Leidos SES business",
       "is_waiver": false,
@@ -102,6 +91,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-08T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-70026",
+      "merger_name": "Parker-Hannifin \u2013 CIRCOR A&D",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-15T12:00:00Z",
+      "determination_date": "2026-08-06T12:00:00Z"
     },
     {
       "merger_id": "WA-40033",
@@ -581,13 +581,13 @@
   "phase_1_count": 19,
   "phase_2_count": 0,
   "waiver_count": 28,
-  "active_count": 4,
+  "active_count": 3,
   "phase_duration": {
-    "average_days": 26.866666666666667,
-    "median_days": 25,
-    "average_business_days": 18.6,
-    "median_business_days": 17,
-    "completed_count": 15
+    "average_days": 26.5625,
+    "median_days": 24.0,
+    "average_business_days": 18.4375,
+    "median_business_days": 17.0,
+    "completed_count": 16
   },
   "waiver_duration": {
     "average_days": 19.25,
