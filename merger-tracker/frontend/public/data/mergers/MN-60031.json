@@ -186,9 +186,18 @@
       ],
       "targets": [
         {
-          "name": "Dragos, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware file number  6028773",
+          "name": "PHOSPHORUS (AUS) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "58 678 218 356",
+          "party_page": {
+            "id": "phosphorus-aus-pty-ltd",
+            "name": "Phosphorus (Aus) Pty Ltd"
+          }
+        },
+        {
+          "name": "DRAGOS AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "62 638 810 616",
           "canonical": {
             "id": "dragos-inc",
             "name": "Dragos"
@@ -196,15 +205,6 @@
           "party_page": {
             "id": "dragos-inc",
             "name": "Dragos"
-          }
-        },
-        {
-          "name": "Phosphorus Security LLC",
-          "identifier_type": null,
-          "identifier": "Delaware file number  10549306",
-          "party_page": {
-            "id": "phosphorus-security-llc",
-            "name": "Phosphorus Security LLC"
           }
         }
       ]

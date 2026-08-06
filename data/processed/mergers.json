@@ -15573,7 +15573,7 @@
     "original_notification_datetime": "2026-07-29T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-09-09T12:00:00Z",
-    "page_modified_datetime": "2026-07-30T15:34:40+10:00",
+    "page_modified_datetime": "2026-08-06T15:23:43+10:00",
     "consultation_response_due_date": "2026-08-06T12:00:00Z",
     "acquirers": [
       {
@@ -15584,16 +15584,6 @@
     ],
     "targets": [
       {
-        "name": "Dragos, Inc.",
-        "identifier_type": null,
-        "identifier": "Delaware file number  6028773"
-      },
-      {
-        "name": "Phosphorus Security LLC",
-        "identifier_type": null,
-        "identifier": "Delaware file number  10549306"
-      },
-      {
         "name": "PHOSPHORUS (AUS) PTY LTD",
         "identifier_type": "ABN",
         "identifier": "58 678 218 356"
@@ -15602,19 +15592,19 @@
         "name": "DRAGOS AUSTRALIA PTY LTD",
         "identifier_type": "ABN",
         "identifier": "62 638 810 616"
+      },
+      {
+        "name": "Dragos, Inc.",
+        "identifier_type": null,
+        "identifier": "Delaware file number  6028773"
+      },
+      {
+        "name": "Phosphorus Security LLC",
+        "identifier_type": null,
+        "identifier": "Delaware file number  10549306"
       }
     ],
     "other_parties": [
-      {
-        "name": "Accenture plc",
-        "identifier_type": null,
-        "identifier": "Ireland registered number  471706"
-      },
-      {
-        "name": "Accenture Inc.",
-        "identifier_type": null,
-        "identifier": "Delaware registered number  3387477"
-      },
       {
         "name": "ACCENTURE AUSTRALIA PTY LIMITED",
         "identifier_type": "ABN",
@@ -15624,6 +15614,16 @@
         "name": "CYBERCX PTY LTD",
         "identifier_type": "ABN",
         "identifier": "90 629 363 328"
+      },
+      {
+        "name": "Accenture Inc.",
+        "identifier_type": null,
+        "identifier": "Delaware registered number  3387477"
+      },
+      {
+        "name": "Accenture plc",
+        "identifier_type": null,
+        "identifier": "Ireland registered number  471706"
       }
     ],
     "anzsic_codes": [
@@ -15644,7 +15644,7 @@
         "display_title": "Questionnaire - Accenture - Acquisitions",
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Accenture%20-%20Acquisitions.docx",
         "url_gh": "/mergers/MN-50032/Questionnaire - Accenture - Acquisitions.pdf",
-        "status": "live"
+        "status": "removed"
       },
       {
         "date": "2026-07-29T12:00:00Z",

@@ -847,28 +847,6 @@
       ],
       "targets": [
         {
-          "name": "Dragos, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware file number  6028773",
-          "canonical": {
-            "id": "dragos-inc",
-            "name": "Dragos"
-          },
-          "party_page": {
-            "id": "dragos-inc",
-            "name": "Dragos"
-          }
-        },
-        {
-          "name": "Phosphorus Security LLC",
-          "identifier_type": null,
-          "identifier": "Delaware file number  10549306",
-          "party_page": {
-            "id": "phosphorus-security-llc",
-            "name": "Phosphorus Security LLC"
-          }
-        },
-        {
           "name": "PHOSPHORUS (AUS) PTY LTD",
           "identifier_type": "ABN",
           "identifier": "58 678 218 356",
@@ -889,35 +867,31 @@
             "id": "dragos-inc",
             "name": "Dragos"
           }
+        },
+        {
+          "name": "Dragos, Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware file number  6028773",
+          "canonical": {
+            "id": "dragos-inc",
+            "name": "Dragos"
+          },
+          "party_page": {
+            "id": "dragos-inc",
+            "name": "Dragos"
+          }
+        },
+        {
+          "name": "Phosphorus Security LLC",
+          "identifier_type": null,
+          "identifier": "Delaware file number  10549306",
+          "party_page": {
+            "id": "phosphorus-security-llc",
+            "name": "Phosphorus Security LLC"
+          }
         }
       ],
       "other_parties": [
-        {
-          "name": "Accenture plc",
-          "identifier_type": null,
-          "identifier": "Ireland registered number  471706",
-          "canonical": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          },
-          "party_page": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          }
-        },
-        {
-          "name": "Accenture Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware registered number  3387477",
-          "canonical": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          },
-          "party_page": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          }
-        },
         {
           "name": "ACCENTURE AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
@@ -938,6 +912,32 @@
           "party_page": {
             "id": "cybercx-pty-ltd",
             "name": "Cybercx Pty Ltd"
+          }
+        },
+        {
+          "name": "Accenture Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware registered number  3387477",
+          "canonical": {
+            "id": "accenture-plc",
+            "name": "Accenture"
+          },
+          "party_page": {
+            "id": "accenture-plc",
+            "name": "Accenture"
+          }
+        },
+        {
+          "name": "Accenture plc",
+          "identifier_type": null,
+          "identifier": "Ireland registered number  471706",
+          "canonical": {
+            "id": "accenture-plc",
+            "name": "Accenture"
+          },
+          "party_page": {
+            "id": "accenture-plc",
+            "name": "Accenture"
           }
         }
       ],
