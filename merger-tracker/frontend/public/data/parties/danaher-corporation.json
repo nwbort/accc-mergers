@@ -6,10 +6,26 @@
       "name": "Danaher Corporation",
       "identifier": "213594",
       "identifier_type": null
+    },
+    {
+      "name": "Danaher Corporation",
+      "identifier": "EIN591995548",
+      "identifier_type": null
     }
   ],
   "mergers": {
     "acquirer": [
+      {
+        "merger_id": "MN-15031",
+        "merger_name": "Danaher (Leica Biosystems) - StatLab",
+        "is_waiver": false,
+        "status": "Under assessment",
+        "determination": null,
+        "has_conditions": false,
+        "phase": "Phase 1",
+        "notification_date": "2026-08-05T12:00:00Z",
+        "determination_date": null
+      },
       {
         "merger_id": "MN-15011",
         "merger_name": "Danaher - Masimo",
@@ -25,11 +41,11 @@
     "target": [],
     "other": []
   },
-  "merger_count": 1,
-  "phase_1_count": 1,
+  "merger_count": 2,
+  "phase_1_count": 2,
   "phase_2_count": 0,
   "waiver_count": 0,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": {
     "average_days": 33.0,
     "median_days": 33,
