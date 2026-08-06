@@ -19,10 +19,21 @@
       "code": "700",
       "name": "Computer System Design and Related Services",
       "level": "group",
-      "merger_count": 53
+      "merger_count": 54
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-25040",
+      "merger_name": "Modaxo - Conduent",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-05T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-50032",
       "merger_name": "Accenture - Dragos",
@@ -607,11 +618,11 @@
       "determination_date": "2026-01-20T12:00:00Z"
     }
   ],
-  "count": 53,
-  "phase_1_count": 22,
+  "count": 54,
+  "phase_1_count": 23,
   "phase_2_count": 0,
   "waiver_count": 31,
-  "active_count": 4,
+  "active_count": 5,
   "phase_duration": {
     "average_days": 29.5,
     "median_days": 27.0,

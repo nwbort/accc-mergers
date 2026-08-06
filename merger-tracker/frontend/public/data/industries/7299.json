@@ -27,6 +27,17 @@
   "children": [],
   "mergers": [
     {
+      "merger_id": "MN-25040",
+      "merger_name": "Modaxo - Conduent",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-05T12:00:00Z",
+      "determination_date": null
+    },
+    {
       "merger_id": "WA-05023",
       "merger_name": "Apollo Capital Management \u2013 Questex Holdings Group",
       "is_waiver": true,
@@ -38,11 +49,11 @@
       "determination_date": "2026-06-04T12:00:00Z"
     }
   ],
-  "count": 1,
-  "phase_1_count": 0,
+  "count": 2,
+  "phase_1_count": 1,
   "phase_2_count": 0,
   "waiver_count": 1,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": null,
   "waiver_duration": {
     "average_days": 15.0,

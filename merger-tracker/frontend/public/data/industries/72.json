@@ -31,10 +31,21 @@
       "code": "729",
       "name": "Other Administrative Services",
       "level": "group",
-      "merger_count": 3
+      "merger_count": 4
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-25040",
+      "merger_name": "Modaxo - Conduent",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-05T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-95038",
       "merger_name": "HiTech Group Australia - Hudson Global Resources",
@@ -245,11 +256,11 @@
       "determination_date": "2026-01-30T12:00:00Z"
     }
   ],
-  "count": 19,
-  "phase_1_count": 6,
+  "count": 20,
+  "phase_1_count": 7,
   "phase_2_count": 0,
   "waiver_count": 13,
-  "active_count": 4,
+  "active_count": 5,
   "phase_duration": {
     "average_days": 26.5,
     "median_days": 26.5,
