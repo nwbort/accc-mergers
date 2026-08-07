@@ -45,15 +45,23 @@
       "name": "Wesfarmers Holdings Pty Ltd",
       "identifier_type": "ABN",
       "identifier": "23 094 800 665",
+      "canonical": {
+        "id": "wesfarmers-limited",
+        "name": "Wesfarmers Limited"
+      },
       "party_page": {
-        "id": "wesfarmers-holdings-pty-ltd",
-        "name": "Wesfarmers Holdings Pty Ltd"
+        "id": "wesfarmers-limited",
+        "name": "Wesfarmers Limited"
       }
     },
     {
       "name": "Wesfarmers Limited",
       "identifier_type": "ABN",
       "identifier": "28 008 984 049",
+      "canonical": {
+        "id": "wesfarmers-limited",
+        "name": "Wesfarmers Limited"
+      },
       "party_page": {
         "id": "wesfarmers-limited",
         "name": "Wesfarmers Limited"
