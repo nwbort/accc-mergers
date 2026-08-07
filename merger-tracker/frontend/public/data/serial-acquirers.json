@@ -62,6 +62,40 @@
       "count": 4
     },
     {
+      "acquirer_name": "Australian Venue Co",
+      "canonical_id": "australian-venue-co",
+      "anzsic_code": "451",
+      "anzsic_name": "Cafes, Restaurants and Takeaway Food Services",
+      "merger_ids": [
+        "MN-10006",
+        "MN-65007",
+        "MN-15034"
+      ],
+      "dates": [
+        "2026-02-06T12:00:00Z",
+        "2026-02-23T12:00:00Z",
+        "2026-08-06T12:00:00Z"
+      ],
+      "count": 3
+    },
+    {
+      "acquirer_name": "Australian Venue Co",
+      "canonical_id": "australian-venue-co",
+      "anzsic_code": "452",
+      "anzsic_name": "Pubs, Taverns and Bars",
+      "merger_ids": [
+        "MN-10006",
+        "MN-65007",
+        "MN-15034"
+      ],
+      "dates": [
+        "2026-02-06T12:00:00Z",
+        "2026-02-23T12:00:00Z",
+        "2026-08-06T12:00:00Z"
+      ],
+      "count": 3
+    },
+    {
       "acquirer_name": "Accenture",
       "canonical_id": "accenture-plc",
       "anzsic_code": "700",
@@ -111,6 +145,21 @@
         "2026-05-20T12:00:00Z"
       ],
       "count": 3
+    },
+    {
+      "acquirer_name": "Australian Venue Co",
+      "canonical_id": "australian-venue-co",
+      "anzsic_code": "440",
+      "anzsic_name": "Accommodation",
+      "merger_ids": [
+        "MN-10006",
+        "MN-15034"
+      ],
+      "dates": [
+        "2026-02-06T12:00:00Z",
+        "2026-08-06T12:00:00Z"
+      ],
+      "count": 2
     },
     {
       "acquirer_name": "Danaher Corporation",
@@ -488,36 +537,6 @@
       "count": 2
     },
     {
-      "acquirer_name": "Australian Venue Co",
-      "canonical_id": "australian-venue-co",
-      "anzsic_code": "451",
-      "anzsic_name": "Cafes, Restaurants and Takeaway Food Services",
-      "merger_ids": [
-        "MN-10006",
-        "MN-65007"
-      ],
-      "dates": [
-        "2026-02-06T12:00:00Z",
-        "2026-02-23T12:00:00Z"
-      ],
-      "count": 2
-    },
-    {
-      "acquirer_name": "Australian Venue Co",
-      "canonical_id": "australian-venue-co",
-      "anzsic_code": "452",
-      "anzsic_name": "Pubs, Taverns and Bars",
-      "merger_ids": [
-        "MN-10006",
-        "MN-65007"
-      ],
-      "dates": [
-        "2026-02-06T12:00:00Z",
-        "2026-02-23T12:00:00Z"
-      ],
-      "count": 2
-    },
-    {
       "acquirer_name": "ServiceNow, Inc.",
       "canonical_id": "servicenow-inc",
       "anzsic_code": "542",
@@ -548,5 +567,5 @@
       "count": 2
     }
   ],
-  "count": 35
+  "count": 36
 }

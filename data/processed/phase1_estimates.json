@@ -930,6 +930,24 @@
     "estimated_at": "2026-08-06",
     "method_version": 1
   },
+  "MN-15034": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      20
+    ],
+    "basis": "industry",
+    "anzsic_level": "class",
+    "anzsic_codes": [
+      "4123",
+      "4400",
+      "4511",
+      "4520"
+    ],
+    "sample_size": 8,
+    "estimated_at": "2026-08-07",
+    "method_version": 1
+  },
   "MN-20009": {
     "expected_business_days": 19,
     "range_business_days": [

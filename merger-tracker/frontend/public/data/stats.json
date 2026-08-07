@@ -1,10 +1,10 @@
 {
-  "total_mergers": 213,
+  "total_mergers": 214,
   "total_waivers": 315,
   "total_conditional_approvals": 2,
   "by_status": {
     "Assessment completed": 158,
-    "Under assessment": 52,
+    "Under assessment": 53,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -70,11 +70,11 @@
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 24
+      "count": 25
     },
     {
       "name": "Accommodation",
-      "count": 17
+      "count": 18
     },
     {
       "name": "Engineering Design and Engineering Consulting Services",
@@ -90,6 +90,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-15034",
+      "merger_name": "Australian Venue Co \u2013 assets of Black Nugget Hotel Motel, Bartletts Tavern and all associated detached bottle shops",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-06T12:00:00Z",
+      "page_modified_datetime": "2026-08-07T15:59:28+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-65021",
       "merger_name": "Wesfarmers and Built Group - Built Living Joint Venture",
@@ -197,16 +207,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-03T12:00:00Z",
       "page_modified_datetime": "2026-08-04T11:40:36+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-01116",
-      "merger_name": "Silk Contract Logistics \u2013 Toll Transport bulk logistics (glass and plastic) assets",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-30T12:00:00Z",
-      "page_modified_datetime": "2026-08-03T10:30:43+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

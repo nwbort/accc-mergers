@@ -3,6 +3,11 @@
   "canonical_name": "Australian Venue Co",
   "members": [
     {
+      "name": "AUSTRALIAN VENUE CO LIMITED",
+      "identifier": "14 607 666 348",
+      "identifier_type": "ABN"
+    },
+    {
       "name": "AVC OPERATIONS PTY LIMITED",
       "identifier": "81 607 832 299",
       "identifier_type": "ABN"
@@ -25,6 +30,17 @@
   ],
   "mergers": {
     "acquirer": [
+      {
+        "merger_id": "MN-15034",
+        "merger_name": "Australian Venue Co \u2013 assets of Black Nugget Hotel Motel, Bartletts Tavern and all associated detached bottle shops",
+        "is_waiver": false,
+        "status": "Under assessment",
+        "determination": null,
+        "has_conditions": false,
+        "phase": "Phase 1",
+        "notification_date": "2026-08-06T12:00:00Z",
+        "determination_date": null
+      },
       {
         "merger_id": "WA-80026",
         "merger_name": "Australian Venue Co \u2013 assets of Chequers Hotel, Bullsbrook WA",
@@ -128,11 +144,11 @@
     "target": [],
     "other": []
   },
-  "merger_count": 9,
-  "phase_1_count": 2,
+  "merger_count": 10,
+  "phase_1_count": 3,
   "phase_2_count": 0,
   "waiver_count": 7,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": {
     "average_days": 23.5,
     "median_days": 23.5,
