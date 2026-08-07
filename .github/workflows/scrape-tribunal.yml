@@ -63,6 +63,27 @@ jobs:
       run: |
         xvfb-run -a python scripts/scrape_tribunal.py ${{ github.event.inputs.merger_ids }}
 
+    - name: Compress oversized PDFs
+      # Cloudflare Pages rejects an entire deployment if any single asset is
+      # over 25 MiB, and tribunal exhibits are the documents most likely to
+      # exceed it — scanned affidavits run to tens of megabytes. Shrink them
+      # before they're committed, or the next site build fails. Runs on the same
+      # always() basis as the commit below, so a partial scrape still gets it.
+      if: always()
+      run: |
+        if find data/raw/matters -type f -name '*.pdf' -size +25M | grep -q .; then
+          sudo apt-get update
+          sudo apt-get install -y ghostscript --no-install-recommends
+          # requirements-tribunal.txt is deliberately lean and has no PDF
+          # library; compress_pdfs.py validates its output with pdfplumber, so
+          # pull the main pipeline's pinned set in on the rare run that needs it
+          # rather than pinning pdfplumber a second time in its own file.
+          pip install -r scripts/requirements.txt
+          python scripts/compress_pdfs.py
+        else
+          echo "No PDFs over the 25 MiB Pages asset limit"
+        fi
+
     - name: Commit and push changes
       # Always run so any matters that did scrape are committed even if others
       # failed to clear the challenge (the run step exits non-zero in that case).

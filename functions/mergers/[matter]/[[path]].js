@@ -96,6 +96,80 @@ async function serveOgPage(matterId, origin, env) {
   });
 }
 
+function safeDecode(str) {
+  try {
+    return decodeURIComponent(str);
+  } catch {
+    return str;
+  }
+}
+
+// Normalise the matter ID to uppercase: the static data files and SPA routes
+// are uppercase, so a hand-typed lowercase URL would otherwise produce a viewer
+// whose PDF fetch and back-link 404.
+function canonicalisePath(path) {
+  const match = path.match(/^\/mergers\/((MN|WA)-\d+)\//i);
+  if (!match) return path;
+  return path.replace(/^\/mergers\/(?:MN|WA)-\d+\//i, `/mergers/${match[1].toUpperCase()}/`);
+}
+
+// The source URL on the ACCC/Tribunal site that this document was scraped from,
+// or null if we don't have one. Each event in the matter's JSON carries both the
+// upstream `url` and the `url_gh` path we serve it under.
+async function sourceUrlForDocument(path, origin, env) {
+  const match = path.match(/^\/mergers\/((MN|WA)-\d+)\//i);
+  if (!match) return null;
+  const matterId = match[1].toUpperCase();
+
+  let merger;
+  try {
+    const dataUrl = new URL(`/data/mergers/${matterId}.json`, origin);
+    const resp = await env.ASSETS.fetch(new Request(dataUrl.toString()));
+    if (!resp.ok) return null;
+    merger = await resp.json();
+  } catch {
+    return null;
+  }
+
+  // url_gh is stored unencoded ("/mergers/MN-01068/NOCC - March 2026.pdf") while
+  // the request path arrives percent-encoded, so compare both sides decoded.
+  const wanted = safeDecode(canonicalisePath(path));
+  const event = (merger.events || []).find(
+    (e) => e.url_gh && e.url && safeDecode(canonicalisePath(e.url_gh)) === wanted,
+  );
+  if (!event) return null;
+
+  // Only ever bounce to http(s) — the events are scraped from accc.gov.au and
+  // competitiontribunal.gov.au, but this is a redirect built from data, so it
+  // shouldn't be able to emit anything but a web URL.
+  try {
+    const parsed = new URL(event.url);
+    return parsed.protocol === 'https:' || parsed.protocol === 'http:' ? parsed.toString() : null;
+  } catch {
+    return null;
+  }
+}
+
+// Serve the PDF itself from the deployment's static assets.
+//
+// Documents over Cloudflare Pages' 25 MiB per-asset limit are left out of the
+// deployment by scripts/build.sh (the whole deploy is rejected otherwise), so
+// for those the asset lookup misses and Pages answers with the SPA shell rather
+// than a 404. Treat "didn't come back as a PDF" as the miss and redirect to the
+// document's source URL, so the link still resolves for the reader.
+async function serveRawPdf(path, origin, env) {
+  const assetUrl = new URL(path, origin);
+  const response = await env.ASSETS.fetch(new Request(assetUrl.toString()));
+
+  const contentType = response.headers.get('Content-Type') || '';
+  if (response.ok && contentType.toLowerCase().includes('application/pdf')) {
+    return response;
+  }
+
+  const sourceUrl = await sourceUrlForDocument(path, origin, env);
+  return sourceUrl ? Response.redirect(sourceUrl, 302) : response;
+}
+
 export async function onRequest(context) {
   const { request, env } = context;
   const url = new URL(request.url);
@@ -123,16 +197,14 @@ export async function onRequest(context) {
   // If ?raw param is present, serve the actual PDF from static assets
   // (used by the embedded viewer and direct download links)
   if (url.searchParams.has('raw')) {
-    const assetUrl = new URL(path, url.origin);
-    return env.ASSETS.fetch(new Request(assetUrl.toString()));
+    return serveRawPdf(path, url.origin, env);
   }
 
   // Mobile browsers (Android, iPhone, iPod) don't support inline PDF rendering
   // via <object> tags — serve the raw PDF directly instead of the viewer wrapper
   const ua = request.headers.get('User-Agent') || '';
   if (/Android|iPhone|iPod/i.test(ua)) {
-    const assetUrl = new URL(path, url.origin);
-    return env.ASSETS.fetch(new Request(assetUrl.toString()));
+    return serveRawPdf(path, url.origin, env);
   }
 
   // Extract matter ID from the path: /mergers/{MN,WA}-XXXXX/filename.pdf
@@ -141,12 +213,9 @@ export async function onRequest(context) {
     return context.next();
   }
 
-  // Normalise the matter ID to uppercase (as the OG branch above does): the
-  // static data files and SPA routes are uppercase, so a hand-typed lowercase
-  // URL would otherwise produce a viewer whose PDF fetch and back-link 404.
   const matterId = match[1].toUpperCase();
-  const canonicalPath = path.replace(/^\/mergers\/(?:MN|WA)-\d+\//i, `/mergers/${matterId}/`);
-  const displayName = decodeURIComponent(path.split('/').pop()).replace(/\.pdf$/i, '');
+  const canonicalPath = canonicalisePath(path);
+  const displayName = safeDecode(path.split('/').pop()).replace(/\.pdf$/i, '');
 
   const html = renderViewer({
     matterId,
