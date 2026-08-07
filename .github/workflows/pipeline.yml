@@ -222,6 +222,25 @@ jobs:
           ./scripts/generate-cli-data.sh
           python scripts/generate_rss_feed.py
 
+      # Cloudflare Pages rejects an entire deployment if any single asset is
+      # over 25 MiB, so a scanned exhibit that lands over it takes the site
+      # build down until it's shrunk. Do that before the files are committed.
+      # Ghostscript is only installed when there's something to compress, which
+      # is rare — the same pattern as the Tesseract step above.
+      - name: Compress oversized PDFs
+        if: |
+          steps.scrape-changes.outputs.changed == 'true'
+          || steps.find-docx.outputs.has_unconverted == 'true'
+          || github.event_name != 'schedule'
+        run: |
+          if find data/raw/matters -type f -name '*.pdf' -size +25M | grep -q .; then
+            sudo apt-get update
+            sudo apt-get install -y ghostscript --no-install-recommends
+            python scripts/compress_pdfs.py
+          else
+            echo "No PDFs over the 25 MiB Pages asset limit"
+          fi
+
       - name: Stage extracted data
         if: |
           steps.scrape-changes.outputs.changed == 'true'
