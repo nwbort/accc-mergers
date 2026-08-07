@@ -7,18 +7,9 @@
   "original_notification_datetime": "2026-07-30T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-09-10T12:00:00Z",
-  "page_modified_datetime": "2026-07-31T10:20:15+10:00",
+  "page_modified_datetime": "2026-08-07T15:56:51+10:00",
   "consultation_response_due_date": "2026-08-07T12:00:00Z",
   "acquirers": [
-    {
-      "name": "M Resources Pty Ltd",
-      "identifier_type": "ABN",
-      "identifier": "67 151 351 790",
-      "party_page": {
-        "id": "m-resources-pty-ltd",
-        "name": "M Resources Pty Ltd"
-      }
-    },
     {
       "name": "Golden M Tahmoor Coal Holdings Pty Ltd",
       "identifier_type": "ACN",
@@ -36,18 +27,18 @@
         "id": "golden-energy-and-resources-pte-ltd",
         "name": "Golden Energy and Resources Pte Ltd"
       }
+    },
+    {
+      "name": "M Resources Pty Ltd",
+      "identifier_type": "ABN",
+      "identifier": "67 151 351 790",
+      "party_page": {
+        "id": "m-resources-pty-ltd",
+        "name": "M Resources Pty Ltd"
+      }
     }
   ],
   "targets": [
-    {
-      "name": "Bargo Collieries Pty Ltd (In Liquidation)",
-      "identifier_type": "ABN",
-      "identifier": "34 000 970 276",
-      "party_page": {
-        "id": "bargo-collieries-pty-ltd-in-liquidation",
-        "name": "Bargo Collieries Pty Ltd (In Liquidation)"
-      }
-    },
     {
       "name": "Tahmoor Coal Pty Ltd (In Liquidation)",
       "identifier_type": "ABN",
@@ -55,6 +46,15 @@
       "party_page": {
         "id": "tahmoor-coal-pty-ltd-in-liquidation",
         "name": "Tahmoor Coal Pty Ltd (In Liquidation)"
+      }
+    },
+    {
+      "name": "Bargo Collieries Pty Ltd (In Liquidation)",
+      "identifier_type": "ABN",
+      "identifier": "34 000 970 276",
+      "party_page": {
+        "id": "bargo-collieries-pty-ltd-in-liquidation",
+        "name": "Bargo Collieries Pty Ltd (In Liquidation)"
       }
     }
   ],
