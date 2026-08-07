@@ -896,6 +896,78 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/state-swim-%E2%80%93-swim-plus"
     },
     {
+      "merger_id": "WA-05035",
+      "merger_name": "Alter Domus - MSC Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-07T12:00:00Z",
+      "determination_publication_date": "2026-08-07T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Alter Domus Nederland B. V.",
+          "identifier_type": null,
+          "identifier": "KVK  34270994",
+          "party_page": {
+            "id": "alter-domus-nederland-b-v",
+            "name": "Alter Domus Nederland B. V."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "MSC GROUP CO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "82 640 870 962",
+          "party_page": {
+            "id": "msc-group-co-pty-ltd",
+            "name": "Msc Group Co Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Cinven Limited",
+          "identifier_type": null,
+          "identifier": "UK Company Number  02192937",
+          "party_page": {
+            "id": "cinven-limited-2",
+            "name": "Cinven Limited"
+          }
+        },
+        {
+          "name": "Alter Domus Singapore Pte Ltd",
+          "identifier_type": null,
+          "identifier": "UEN  201009728E",
+          "party_page": {
+            "id": "alter-domus-singapore-pte-ltd",
+            "name": "Alter Domus Singapore Pte Ltd"
+          }
+        },
+        {
+          "name": "Alter Domus Global S.\u00e0 r.l.",
+          "identifier_type": null,
+          "identifier": "Luxembourg Trade and Companies Register  B210191",
+          "party_page": {
+            "id": "alter-domus-global-s-r-l",
+            "name": "Alter Domus Global S.\u00e0 r.l."
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/alter-domus-msc-group"
+    },
+    {
       "merger_id": "MN-05032",
       "merger_name": "Motorola Solutions - D-Fend Solutions",
       "status": "Assessment completed",
@@ -3539,64 +3611,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/baupost-%E2%80%93-mcdermott"
-    },
-    {
-      "merger_id": "WA-55030",
-      "merger_name": "CRH - Arcosa",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "has_conditions": false,
-      "is_waiver": true,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-07-21T12:00:00Z",
-      "determination_publication_date": "2026-08-04T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "Neon Merger Sub, Inc.",
-          "identifier_type": null,
-          "identifier": "10667310",
-          "party_page": {
-            "id": "neon-merger-sub-inc",
-            "name": "Neon Merger Sub, Inc."
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "Arcosa, Inc.",
-          "identifier_type": null,
-          "identifier": "6852687",
-          "party_page": {
-            "id": "arcosa-inc",
-            "name": "Arcosa, Inc."
-          }
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "CRH Americas, Inc.",
-          "identifier_type": null,
-          "identifier": "3443923",
-          "party_page": {
-            "id": "crh-americas-inc",
-            "name": "CRH Americas, Inc."
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "2221",
-          "name": "Structural Steel Fabricating"
-        },
-        {
-          "code": "6240",
-          "name": "Financial Asset Investing"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/crh-arcosa"
     }
   ],
   "page": 10,

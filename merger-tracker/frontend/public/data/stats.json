@@ -1,6 +1,6 @@
 {
   "total_mergers": 214,
-  "total_waivers": 315,
+  "total_waivers": 316,
   "total_conditional_approvals": 2,
   "by_status": {
     "Assessment completed": 158,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 301,
+    "Approved": 302,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,10 +42,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.977777777777778,
-    "median_days": 18,
-    "average_business_days": 12.733333333333333,
-    "median_business_days": 12
+    "average_days": 19.015822784810126,
+    "median_days": 18.0,
+    "average_business_days": 12.765822784810126,
+    "median_business_days": 12.0
   },
   "top_industries": [
     {
@@ -58,7 +58,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 43
+      "count": 44
     },
     {
       "name": "Software Publishing",
@@ -213,6 +213,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-05035",
+      "merger_name": "Alter Domus - MSC Group",
+      "determination": "Approved",
+      "determination_date": "2026-08-07T12:00:00Z",
+      "page_modified_datetime": "2026-08-07T16:41:43+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-30003",
       "merger_name": "MicroStar Logistics - Konvoy",
       "determination": "Not approved",
@@ -321,16 +331,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-80026",
-      "merger_name": "Australian Venue Co \u2013 assets of Chequers Hotel, Bullsbrook WA",
-      "determination": "Approved",
-      "determination_date": "2026-08-03T12:00:00Z",
-      "page_modified_datetime": "2026-08-04T17:28:38+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }

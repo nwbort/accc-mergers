@@ -1,6 +1,64 @@
 {
   "mergers": [
     {
+      "merger_id": "WA-55030",
+      "merger_name": "CRH - Arcosa",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-21T12:00:00Z",
+      "determination_publication_date": "2026-08-04T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Neon Merger Sub, Inc.",
+          "identifier_type": null,
+          "identifier": "10667310",
+          "party_page": {
+            "id": "neon-merger-sub-inc",
+            "name": "Neon Merger Sub, Inc."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Arcosa, Inc.",
+          "identifier_type": null,
+          "identifier": "6852687",
+          "party_page": {
+            "id": "arcosa-inc",
+            "name": "Arcosa, Inc."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "CRH Americas, Inc.",
+          "identifier_type": null,
+          "identifier": "3443923",
+          "party_page": {
+            "id": "crh-americas-inc",
+            "name": "CRH Americas, Inc."
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2221",
+          "name": "Structural Steel Fabricating"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/crh-arcosa"
+    },
+    {
       "merger_id": "MN-10021",
       "merger_name": "Ambrose Construct Group \u2013 Major Loss Builders",
       "status": "Under assessment",

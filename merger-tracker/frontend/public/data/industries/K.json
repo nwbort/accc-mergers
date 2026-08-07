@@ -21,7 +21,7 @@
       "code": "64",
       "name": "Auxiliary Finance and Insurance Services",
       "level": "subdivision",
-      "merger_count": 45
+      "merger_count": 46
     }
   ],
   "mergers": [
@@ -123,6 +123,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-03-03T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-05035",
+      "merger_name": "Alter Domus - MSC Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-07T12:00:00Z",
+      "determination_date": "2026-08-07T12:00:00Z"
     },
     {
       "merger_id": "WA-05038",
@@ -1379,10 +1390,10 @@
       "determination_date": null
     }
   ],
-  "count": 123,
+  "count": 124,
   "phase_1_count": 29,
   "phase_2_count": 2,
-  "waiver_count": 92,
+  "waiver_count": 93,
   "active_count": 9,
   "phase_duration": {
     "average_days": 28.17391304347826,
@@ -1392,10 +1403,10 @@
     "completed_count": 23
   },
   "waiver_duration": {
-    "average_days": 18.869565217391305,
-    "median_days": 18.0,
-    "average_business_days": 12.554347826086957,
-    "median_business_days": 12.0,
-    "completed_count": 92
+    "average_days": 19.0,
+    "median_days": 18,
+    "average_business_days": 12.666666666666666,
+    "median_business_days": 12,
+    "completed_count": 93
   }
 }

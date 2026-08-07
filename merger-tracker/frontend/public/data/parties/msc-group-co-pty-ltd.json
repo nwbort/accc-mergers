@@ -1,0 +1,41 @@
+{
+  "id": "msc-group-co-pty-ltd",
+  "canonical_name": "Msc Group Co Pty Ltd",
+  "members": [
+    {
+      "name": "MSC GROUP CO PTY LTD",
+      "identifier": "82 640 870 962",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [
+      {
+        "merger_id": "WA-05035",
+        "merger_name": "Alter Domus - MSC Group",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Waiver",
+        "notification_date": "2026-07-07T12:00:00Z",
+        "determination_date": "2026-08-07T12:00:00Z"
+      }
+    ],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null,
+  "waiver_duration": {
+    "average_days": 31.0,
+    "median_days": 31,
+    "average_business_days": 23.0,
+    "median_business_days": 23,
+    "completed_count": 1
+  }
+}
