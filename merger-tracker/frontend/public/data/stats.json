@@ -1,10 +1,10 @@
 {
-  "total_mergers": 212,
+  "total_mergers": 213,
   "total_waivers": 315,
   "total_conditional_approvals": 2,
   "by_status": {
     "Assessment completed": 157,
-    "Under assessment": 52,
+    "Under assessment": 53,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -50,7 +50,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 73
+      "count": 74
     },
     {
       "name": "Computer System Design and Related Services",
@@ -90,6 +90,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-65021",
+      "merger_name": "Wesfarmers and Built Group - Built Living Joint Venture",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-06T12:00:00Z",
+      "page_modified_datetime": "2026-08-07T09:45:31+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-25040",
       "merger_name": "Modaxo - Conduent",
@@ -197,16 +207,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-07-30T12:00:00Z",
       "page_modified_datetime": "2026-08-03T10:30:43+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-70027",
-      "merger_name": "Global Infrastructure Management and EQT led consortium - AES Corporation",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-30T12:00:00Z",
-      "page_modified_datetime": "2026-07-31T10:33:02+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

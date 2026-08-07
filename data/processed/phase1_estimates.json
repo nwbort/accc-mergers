@@ -2340,6 +2340,29 @@
     "estimated_at": "2026-07-17",
     "method_version": 1
   },
+  "MN-65021": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      17
+    ],
+    "basis": "industry",
+    "anzsic_level": "class",
+    "anzsic_codes": [
+      "1831",
+      "3019",
+      "3020",
+      "4222",
+      "4231",
+      "4260",
+      "4271",
+      "4272",
+      "6240"
+    ],
+    "sample_size": 11,
+    "estimated_at": "2026-08-07",
+    "method_version": 1
+  },
   "MN-65022": {
     "expected_business_days": 22,
     "range_business_days": [

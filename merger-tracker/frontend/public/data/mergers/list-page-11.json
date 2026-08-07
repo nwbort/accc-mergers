@@ -1757,6 +1757,10 @@
           "name": "Modaxo Group, Inc",
           "identifier_type": null,
           "identifier": "",
+          "canonical": {
+            "id": "modaxo-group-inc",
+            "name": "Modaxo Group, Inc"
+          },
           "party_page": {
             "id": "modaxo-group-inc",
             "name": "Modaxo Group, Inc"
@@ -1786,6 +1790,10 @@
           "name": "Conduent Business Services, LLC",
           "identifier_type": null,
           "identifier": "",
+          "canonical": {
+            "id": "conduent-business-services-llc",
+            "name": "Conduent Business Services, LLC"
+          },
           "party_page": {
             "id": "conduent-business-services-llc",
             "name": "Conduent Business Services, LLC"
@@ -1795,9 +1803,13 @@
           "name": "CONDUENT BUSINESS SERVICES (AUSTRALIA) PTY. LTD.",
           "identifier_type": "ABN",
           "identifier": "58 136 828 914",
+          "canonical": {
+            "id": "conduent-business-services-llc",
+            "name": "Conduent Business Services, LLC"
+          },
           "party_page": {
-            "id": "conduent-business-services-australia-pty-ltd",
-            "name": "Conduent Business Services (Australia) Pty. Ltd."
+            "id": "conduent-business-services-llc",
+            "name": "Conduent Business Services, LLC"
           }
         },
         {
@@ -1837,9 +1849,13 @@
           "name": "MODAXO GROUP AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
           "identifier": "44 166 272 724",
+          "canonical": {
+            "id": "modaxo-group-inc",
+            "name": "Modaxo Group, Inc"
+          },
           "party_page": {
-            "id": "modaxo-group-australia-pty-ltd",
-            "name": "Modaxo Group Australia Pty Ltd"
+            "id": "modaxo-group-inc",
+            "name": "Modaxo Group, Inc"
           }
         },
         {
@@ -2159,6 +2175,119 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/johns-lyng-group-%E2%80%93-cm-build-group"
+    },
+    {
+      "merger_id": "MN-65021",
+      "merger_name": "Wesfarmers and Built Group - Built Living Joint Venture",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-06T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-17T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Wesfarmers Built Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "698 309 509",
+          "party_page": {
+            "id": "wesfarmers-built-pty-ltd",
+            "name": "Wesfarmers Built Pty Ltd"
+          }
+        },
+        {
+          "name": "Built Living (Built Investor) Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "71 698 095 831",
+          "party_page": {
+            "id": "built-living-built-investor-pty-limited",
+            "name": "Built Living (Built Investor) Pty Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Built Living Holdings Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "39 698 096 945",
+          "party_page": {
+            "id": "built-living-holdings-pty-limited",
+            "name": "Built Living Holdings Pty Limited"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Wesfarmers Holdings Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "23 094 800 665",
+          "party_page": {
+            "id": "wesfarmers-holdings-pty-ltd",
+            "name": "Wesfarmers Holdings Pty Ltd"
+          }
+        },
+        {
+          "name": "Wesfarmers Limited",
+          "identifier_type": "ABN",
+          "identifier": "28 008 984 049",
+          "party_page": {
+            "id": "wesfarmers-limited",
+            "name": "Wesfarmers Limited"
+          }
+        },
+        {
+          "name": "Built Group Holdings Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "88 163 462 637",
+          "party_page": {
+            "id": "built-group-holdings-pty-limited",
+            "name": "Built Group Holdings Pty Limited"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1831",
+          "name": "Fertiliser Manufacturing"
+        },
+        {
+          "code": "3019",
+          "name": "Other Residential Building Construction"
+        },
+        {
+          "code": "3020",
+          "name": "Non-Residential Building Construction"
+        },
+        {
+          "code": "4222",
+          "name": "Computer and Computer Peripheral Retailing"
+        },
+        {
+          "code": "4231",
+          "name": "Hardware and Building Supplies Retailing"
+        },
+        {
+          "code": "4260",
+          "name": "Department Stores"
+        },
+        {
+          "code": "4271",
+          "name": "Pharmaceutical, Cosmetic and Toiletry Goods Retailing"
+        },
+        {
+          "code": "4272",
+          "name": "Stationery Goods Retailing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/wesfarmers-and-built-group-built-living-joint-venture"
     }
   ],
   "page": 11,

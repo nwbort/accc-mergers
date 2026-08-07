@@ -23,6 +23,10 @@
       "name": "Modaxo Group, Inc",
       "identifier_type": null,
       "identifier": "",
+      "canonical": {
+        "id": "modaxo-group-inc",
+        "name": "Modaxo Group, Inc"
+      },
       "party_page": {
         "id": "modaxo-group-inc",
         "name": "Modaxo Group, Inc"
@@ -52,6 +56,10 @@
       "name": "Conduent Business Services, LLC",
       "identifier_type": null,
       "identifier": "",
+      "canonical": {
+        "id": "conduent-business-services-llc",
+        "name": "Conduent Business Services, LLC"
+      },
       "party_page": {
         "id": "conduent-business-services-llc",
         "name": "Conduent Business Services, LLC"
@@ -61,9 +69,13 @@
       "name": "CONDUENT BUSINESS SERVICES (AUSTRALIA) PTY. LTD.",
       "identifier_type": "ABN",
       "identifier": "58 136 828 914",
+      "canonical": {
+        "id": "conduent-business-services-llc",
+        "name": "Conduent Business Services, LLC"
+      },
       "party_page": {
-        "id": "conduent-business-services-australia-pty-ltd",
-        "name": "Conduent Business Services (Australia) Pty. Ltd."
+        "id": "conduent-business-services-llc",
+        "name": "Conduent Business Services, LLC"
       }
     },
     {
@@ -103,9 +115,13 @@
       "name": "MODAXO GROUP AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
       "identifier": "44 166 272 724",
+      "canonical": {
+        "id": "modaxo-group-inc",
+        "name": "Modaxo Group, Inc"
+      },
       "party_page": {
-        "id": "modaxo-group-australia-pty-ltd",
-        "name": "Modaxo Group Australia Pty Ltd"
+        "id": "modaxo-group-inc",
+        "name": "Modaxo Group, Inc"
       }
     },
     {

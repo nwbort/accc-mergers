@@ -24,13 +24,13 @@
       "code": "4271",
       "name": "Pharmaceutical, Cosmetic and Toiletry Goods Retailing",
       "level": "class",
-      "merger_count": 3
+      "merger_count": 4
     },
     {
       "code": "4272",
       "name": "Stationery Goods Retailing",
       "level": "class",
-      "merger_count": 0
+      "merger_count": 1
     },
     {
       "code": "4273",
@@ -52,6 +52,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-65021",
+      "merger_name": "Wesfarmers and Built Group - Built Living Joint Venture",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-06T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-35029",
       "merger_name": "L'Or\u00e9al - Innovist",
@@ -119,11 +130,11 @@
       "determination_date": "2026-02-04T12:00:00Z"
     }
   ],
-  "count": 6,
-  "phase_1_count": 3,
+  "count": 7,
+  "phase_1_count": 4,
   "phase_2_count": 0,
   "waiver_count": 3,
-  "active_count": 1,
+  "active_count": 2,
   "phase_duration": {
     "average_days": 26.0,
     "median_days": 26.0,

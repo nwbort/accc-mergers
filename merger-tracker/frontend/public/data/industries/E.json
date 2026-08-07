@@ -9,7 +9,7 @@
       "code": "30",
       "name": "Building Construction",
       "level": "subdivision",
-      "merger_count": 8
+      "merger_count": 9
     },
     {
       "code": "31",
@@ -25,6 +25,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-65021",
+      "merger_name": "Wesfarmers and Built Group - Built Living Joint Venture",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-06T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-75035",
       "merger_name": "Johns Lyng Group \u2013 C&M Build Group",
@@ -499,11 +510,11 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 43,
-  "phase_1_count": 19,
+  "count": 44,
+  "phase_1_count": 20,
   "phase_2_count": 1,
   "waiver_count": 23,
-  "active_count": 9,
+  "active_count": 10,
   "phase_duration": {
     "average_days": 27.833333333333332,
     "median_days": 24.5,
