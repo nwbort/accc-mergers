@@ -1,0 +1,102 @@
+name: Check Deploy Assets
+
+# Cloudflare Pages won't deploy an asset over 25 MiB. scripts/build.sh leaves
+# those out so the rest of the site still ships and the Pages Function redirects
+# them to their source URL — which means an oversized file no longer announces
+# itself as a failed build. It just quietly stops being hosted. This workflow is
+# the notification for that: it opens a tracking issue, updates it as the set of
+# offending files changes, and closes it once they're gone.
+#
+# It runs on push to main rather than inside the scrape workflows so it catches
+# files arriving by any route — the pipeline, the tribunal scraper, a manual
+# workflow run, or a direct commit. scripts/compress_pdfs.py has already had its
+# go by this point, so anything reported here is something compression couldn't
+# fix or never saw.
+
+on:
+  push:
+    branches:
+      - main
+    # Mirrors DEPLOY_SOURCES in scripts/check_deploy_assets.py — the only trees
+    # that end up in the deployment. Keep the two in step.
+    paths:
+      - 'data/raw/matters/**'
+      - 'merger-tracker/frontend/public/**'
+      - 'scripts/check_deploy_assets.py'
+      - '.github/workflows/check-deploy-assets.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: check-deploy-assets
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      # Writes the findings and a ready-to-post issue body to the runner's temp
+      # dir. Exits 0 either way — an oversized file is reported as an issue, not
+      # as a red workflow run, since the site itself is still fine.
+      - name: Find oversized deployable files
+        run: |
+          python scripts/check_deploy_assets.py --json "$RUNNER_TEMP/oversized.json"
+
+      - name: Open, update or close the tracking issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          FILE="$RUNNER_TEMP/oversized.json"
+          COUNT=$(jq '.count' "$FILE")
+
+          gh label create "oversized-asset" \
+            --description "File too large for Cloudflare Pages to deploy" \
+            --color "d93f0b" \
+            --force
+
+          # At most one issue is ever open for this — it lists every offending
+          # file, so a second file doesn't warrant a second issue.
+          NUMBER=$(gh issue list \
+            --label "oversized-asset" \
+            --state open \
+            --json number \
+            --jq '.[0].number // empty')
+
+          if [ "$COUNT" -eq 0 ]; then
+            if [ -n "$NUMBER" ]; then
+              gh issue comment "$NUMBER" \
+                --body "Nothing is over the Pages asset limit any more — closing automatically."
+              gh issue close "$NUMBER"
+              echo "Closed #$NUMBER"
+            else
+              echo "Nothing over the limit, no open issue"
+            fi
+            exit 0
+          fi
+
+          jq -r '.body' "$FILE" > issue_body.md
+          TITLE=$(jq -r '.title' "$FILE")
+
+          if [ -n "$NUMBER" ]; then
+            # Refresh the existing issue so it always reflects the current set
+            # rather than whatever was true when it was first opened.
+            gh issue edit "$NUMBER" --title "$TITLE" --body-file issue_body.md
+            echo "Updated #$NUMBER ($COUNT file(s) over the limit)"
+          else
+            gh issue create \
+              --label "oversized-asset" \
+              --title "$TITLE" \
+              --body-file issue_body.md
+            echo "Opened a tracking issue ($COUNT file(s) over the limit)"
+          fi
