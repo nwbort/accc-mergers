@@ -7,7 +7,7 @@
   "original_notification_datetime": "2026-04-27T12:00:00Z",
   "stage": "Phase 2 - detailed assessment",
   "end_of_determination_period": "2026-11-10T12:00:00Z",
-  "page_modified_datetime": "2026-07-08T08:17:10+10:00",
+  "page_modified_datetime": "2026-08-10T16:02:39+10:00",
   "consultation_response_due_date": "2026-05-04T12:00:00Z",
   "acquirers": [
     {
@@ -68,7 +68,8 @@
       "date": "2026-07-02T12:00:00Z",
       "title": "ACCC decided notification is subject to Phase 2 review",
       "display_title": "ACCC decided notification is subject to Phase 2 review",
-      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Saipem%20-%20Subsea7%20-%20Decision%20Acquisition%20is%20to%20be%20subject%20to%20Phase%202%20review.pdf",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Saipem%20-%20Subsea7%20-%20Decision%20Acquisition%20is%20to%20be%20subject%20to%20Phase%202%20review_1.pdf",
+      "url_gh": "/mergers/MN-01072/Saipem - Subsea7 - Decision Acquisition is to be subject to Phase 2 review_1.pdf",
       "phase2_notice_matters_to_investigate": [
         {
           "heading": "Relevant areas of competition",
@@ -87,9 +88,16 @@
           ]
         }
       ],
-      "phase2_notice_commission_division": null,
-      "url_gh": "/mergers/MN-01072/Saipem - Subsea7 - Decision Acquisition is to be subject to Phase 2 review.pdf",
+      "phase2_notice_commission_division": "Decision made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Competition and Consumer Act 2010 (Cth)",
       "phase": "Phase 2"
+    },
+    {
+      "date": "2026-08-10T12:00:00Z",
+      "title": "Summary of Notice of Competition Concerns",
+      "display_title": "Summary of Notice of Competition Concerns",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Saipem%20-%20Subsea7%20-%20Summary%20of%20Notice%20of%20Competition%20Concerns_0.pdf",
+      "url_gh": "/mergers/MN-01072/Saipem - Subsea7 - Summary of Notice of Competition Concerns_0.pdf",
+      "phase": null
     }
   ],
   "is_waiver": false,
@@ -101,8 +109,8 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "competition_concerns_notice_date": "2026-08-10T12:00:00Z",
   "has_questionnaire": true,
+  "has_nocc": true,
   "similar_mergers": [
     {
       "merger_id": "WA-45007",
