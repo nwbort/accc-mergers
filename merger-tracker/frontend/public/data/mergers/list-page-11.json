@@ -1281,30 +1281,12 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "QIA Infrastructure Holding LLC",
+          "name": "GIP Granite Co-Underwrite, L.P.",
           "identifier_type": null,
-          "identifier": "Qatar Financial Centre no. 01821",
+          "identifier": "10651649 (Corporation registration number)",
           "party_page": {
-            "id": "qia-infrastructure-holding-llc",
-            "name": "QIA Infrastructure Holding LLC"
-          }
-        },
-        {
-          "name": "EQT Keystone TopCo, LP",
-          "identifier_type": null,
-          "identifier": "EIN 414395672",
-          "party_page": {
-            "id": "eqt-keystone-topco-lp",
-            "name": "EQT Keystone TopCo, LP"
-          }
-        },
-        {
-          "name": "Qatar Holding LLC",
-          "identifier_type": null,
-          "identifier": "CIK: 0001539025, Qatar Financial Centre no. 00004",
-          "party_page": {
-            "id": "qatar-holding-llc",
-            "name": "Qatar Holding LLC"
+            "id": "gip-granite-co-underwrite-l-p",
+            "name": "GIP Granite Co-Underwrite, L.P."
           }
         },
         {
@@ -1317,12 +1299,30 @@
           }
         },
         {
-          "name": "GIP Granite Co-Underwrite, L.P.",
+          "name": "EQT Keystone TopCo, LP",
           "identifier_type": null,
-          "identifier": "10651649 (Corporation registration number)",
+          "identifier": "EIN 414395672",
           "party_page": {
-            "id": "gip-granite-co-underwrite-l-p",
-            "name": "GIP Granite Co-Underwrite, L.P."
+            "id": "eqt-keystone-topco-lp",
+            "name": "EQT Keystone TopCo, LP"
+          }
+        },
+        {
+          "name": "QIA Infrastructure Holding LLC",
+          "identifier_type": null,
+          "identifier": "Qatar Financial Centre no. 01821",
+          "party_page": {
+            "id": "qia-infrastructure-holding-llc",
+            "name": "QIA Infrastructure Holding LLC"
+          }
+        },
+        {
+          "name": "Qatar Holding LLC",
+          "identifier_type": null,
+          "identifier": "CIK: 0001539025, Qatar Financial Centre no. 00004",
+          "party_page": {
+            "id": "qatar-holding-llc",
+            "name": "Qatar Holding LLC"
           }
         }
       ],
