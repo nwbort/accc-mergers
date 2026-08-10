@@ -23,3 +23,4 @@ without network or PDF tooling installed.
 | `test_static_data_filters.py` | `static_data/filters.py`. |
 | `test_static_data_outputs.py` | Per-merger / list / stats writers in `static_data/outputs/`. |
 | `test_utils.py` | `date_utils.py` and `normalization.py`. |
+| `test_commit_message_hook.py` | `.claude/hooks/check_commit_message.py` — which commit messages the Claude Code hook blocks. |
