@@ -9,7 +9,7 @@
       "code": "62",
       "name": "Finance",
       "level": "subdivision",
-      "merger_count": 82
+      "merger_count": 83
     },
     {
       "code": "63",
@@ -25,6 +25,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-35034",
+      "merger_name": "The Independents Group \u2013 acquisition of entities within the Smuggler Group",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-07T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-65021",
       "merger_name": "Wesfarmers and Built Group - Built Living Joint Venture",
@@ -1390,11 +1401,11 @@
       "determination_date": null
     }
   ],
-  "count": 124,
-  "phase_1_count": 29,
+  "count": 125,
+  "phase_1_count": 30,
   "phase_2_count": 2,
   "waiver_count": 93,
-  "active_count": 9,
+  "active_count": 10,
   "phase_duration": {
     "average_days": 28.17391304347826,
     "median_days": 24,

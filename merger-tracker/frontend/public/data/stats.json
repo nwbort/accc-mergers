@@ -1,10 +1,10 @@
 {
-  "total_mergers": 215,
+  "total_mergers": 216,
   "total_waivers": 316,
   "total_conditional_approvals": 2,
   "by_status": {
     "Assessment completed": 159,
-    "Under assessment": 53,
+    "Under assessment": 54,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -50,7 +50,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 74
+      "count": 75
     },
     {
       "name": "Computer System Design and Related Services",
@@ -90,6 +90,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-35034",
+      "merger_name": "The Independents Group \u2013 acquisition of entities within the Smuggler Group",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-07T12:00:00Z",
+      "page_modified_datetime": "2026-08-10T13:42:05+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-35031",
       "merger_name": "Osmoflo Water Management - Guidera O'Connor",
@@ -197,16 +207,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-04T12:00:00Z",
       "page_modified_datetime": "2026-08-05T12:32:12+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-15030",
-      "merger_name": "Karmo/Simplr",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-03T12:00:00Z",
-      "page_modified_datetime": "2026-08-04T17:47:29+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

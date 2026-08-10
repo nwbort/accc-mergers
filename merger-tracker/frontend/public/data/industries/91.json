@@ -31,10 +31,21 @@
       "code": "913",
       "name": "Amusement and Other Recreation Activities",
       "level": "group",
-      "merger_count": 2
+      "merger_count": 3
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-35034",
+      "merger_name": "The Independents Group \u2013 acquisition of entities within the Smuggler Group",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-07T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-85015",
       "merger_name": "Journey Beyond - Kelsian Tourism Portfolio",
@@ -91,11 +102,11 @@
       "determination_date": "2026-01-29T12:00:00Z"
     }
   ],
-  "count": 5,
-  "phase_1_count": 2,
+  "count": 6,
+  "phase_1_count": 3,
   "phase_2_count": 0,
   "waiver_count": 3,
-  "active_count": 1,
+  "active_count": 2,
   "phase_duration": {
     "average_days": 28.0,
     "median_days": 28,

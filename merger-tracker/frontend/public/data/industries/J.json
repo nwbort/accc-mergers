@@ -15,7 +15,7 @@
       "code": "55",
       "name": "Motion Picture and Sound Recording Activities",
       "level": "subdivision",
-      "merger_count": 7
+      "merger_count": 8
     },
     {
       "code": "56",
@@ -49,6 +49,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-35034",
+      "merger_name": "The Independents Group \u2013 acquisition of entities within the Smuggler Group",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-07T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-60026",
       "merger_name": "Publicis Groupe - LiveRamp",
@@ -710,11 +721,11 @@
       "determination_date": "2025-12-18T12:00:00Z"
     }
   ],
-  "count": 60,
-  "phase_1_count": 25,
+  "count": 61,
+  "phase_1_count": 26,
   "phase_2_count": 0,
   "waiver_count": 35,
-  "active_count": 1,
+  "active_count": 2,
   "phase_duration": {
     "average_days": 29.208333333333332,
     "median_days": 26.0,
