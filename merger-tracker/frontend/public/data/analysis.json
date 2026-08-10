@@ -557,6 +557,11 @@
         "in_progress": false
       },
       {
+        "business_days": 17,
+        "calendar_days": 25,
+        "in_progress": false
+      },
+      {
         "business_days": 29,
         "calendar_days": 44,
         "in_progress": false
@@ -823,18 +828,18 @@
       }
     ],
     "stats": {
-      "average": 19.7,
-      "median": 17.0,
+      "average": 19.6,
+      "median": 17,
       "min": 15,
       "max": 59,
-      "count": 164
+      "count": 165
     },
     "calendar_stats": {
-      "average": 29.7,
-      "median": 26.0,
+      "average": 29.6,
+      "median": 26,
       "min": 21,
       "max": 103,
-      "count": 164
+      "count": 165
     }
   },
   "waiver_duration": {
@@ -2243,11 +2248,11 @@
     {
       "code": "L",
       "name": "Rental, Hiring and Real Estate Services",
-      "average_business_days": 20.5,
-      "median_business_days": 19,
-      "average_calendar_days": 32.1,
-      "median_calendar_days": 29,
-      "count": 11
+      "average_business_days": 20.2,
+      "median_business_days": 18.5,
+      "average_calendar_days": 31.5,
+      "median_calendar_days": 28.0,
+      "count": 12
     },
     {
       "code": "O",
@@ -2270,11 +2275,11 @@
     {
       "code": "E",
       "name": "Construction",
-      "average_business_days": 19.2,
-      "median_business_days": 16.0,
-      "average_calendar_days": 27.8,
-      "median_calendar_days": 24.5,
-      "count": 12
+      "average_business_days": 19.0,
+      "median_business_days": 16,
+      "average_calendar_days": 27.6,
+      "median_calendar_days": 25,
+      "count": 13
     },
     {
       "code": "K",
@@ -2334,11 +2339,11 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 362,
+      "count": 363,
       "outcome_mix": {
-        "Approved": 362
+        "Approved": 363
       },
-      "median_phase_1_business_days": 16
+      "median_phase_1_business_days": 16.0
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -2352,9 +2357,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 51,
+      "count": 50,
       "outcome_mix": {
-        "Unknown": 51
+        "Unknown": 50
       },
       "median_phase_1_business_days": null
     },
@@ -2389,7 +2394,7 @@
     "histogram": {
       "15": 39,
       "16": 31,
-      "17": 19,
+      "17": 20,
       "18": 17,
       "19": 14,
       "20": 7,
@@ -2410,9 +2415,9 @@
     },
     "stats": {
       "mean_used_bd": 18.0,
-      "median_used_bd": 17.0,
+      "median_used_bd": 17,
       "pct_decided_final_3_bd": 3.9,
-      "count": 152
+      "count": 153
     },
     "extended_count": 4
   },
@@ -2462,11 +2467,11 @@
     {
       "code": "L",
       "name": "Rental, Hiring and Real Estate Services",
-      "approved": 9,
+      "approved": 10,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 6,
-      "phase2_referral_rate": 0.182
+      "in_progress": 5,
+      "phase2_referral_rate": 0.167
     },
     {
       "code": "A",
@@ -2498,11 +2503,11 @@
     {
       "code": "E",
       "name": "Construction",
-      "approved": 11,
+      "approved": 12,
       "not_approved": 0,
       "referred": 1,
-      "in_progress": 10,
-      "phase2_referral_rate": 0.083
+      "in_progress": 9,
+      "phase2_referral_rate": 0.077
     },
     {
       "code": "M",

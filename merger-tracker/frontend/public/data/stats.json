@@ -3,12 +3,12 @@
   "total_waivers": 317,
   "total_conditional_approvals": 2,
   "by_status": {
-    "Assessment completed": 159,
-    "Under assessment": 54,
+    "Assessment completed": 160,
+    "Under assessment": 53,
     "Assessment ceased": 3
   },
   "by_determination": {
-    "Approved": 156,
+    "Approved": 157,
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
@@ -16,27 +16,27 @@
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 157,
+    "cleared": 158,
     "not_cleared": 2,
-    "total": 159,
-    "rate": 0.987
+    "total": 160,
+    "rate": 0.988
   },
   "phase_duration": {
-    "average_days": 29.652439024390244,
-    "median_days": 26.0,
-    "average_business_days": 19.664634146341463,
-    "median_business_days": 17.0,
+    "average_days": 29.624242424242425,
+    "median_days": 26,
+    "average_business_days": 19.64848484848485,
+    "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 39,
-        "percentage": 23.8
+        "percentage": 23.6
       },
       "day20": {
-        "count": 127,
-        "percentage": 77.4
+        "count": 128,
+        "percentage": 77.6
       },
       "day30": {
-        "count": 155,
+        "count": 156,
         "percentage": 94.5
       }
     }
@@ -213,6 +213,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-60025",
+      "merger_name": "Acrow - Ausgroup Industrial Services",
+      "determination": "Approved",
+      "determination_date": "2026-08-10T12:00:00Z",
+      "page_modified_datetime": "2026-08-10T16:40:55+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-70029",
       "merger_name": "Apollo - Bayer Asset Management",
       "determination": "Approved",
@@ -318,16 +328,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-04T12:00:00Z",
       "page_modified_datetime": "2026-08-04T17:24:49+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-30026",
-      "merger_name": "Count \u2013 O\u2019Brien Accountants & Advisors",
-      "determination": "Approved",
-      "determination_date": "2026-08-04T12:00:00Z",
-      "page_modified_datetime": "2026-08-04T17:23:08+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
