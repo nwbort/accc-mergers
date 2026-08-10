@@ -2211,6 +2211,129 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/npm-capital-%E2%80%93-ambaflex-group"
     },
     {
+      "merger_id": "WA-70029",
+      "merger_name": "Apollo - Bayer Asset Management",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-11T12:00:00Z",
+      "determination_publication_date": "2026-08-10T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Apollo Capital Management, L.P.",
+          "identifier_type": null,
+          "identifier": "USDE  4293091",
+          "canonical": {
+            "id": "apollo-capital-management-l-p",
+            "name": "Apollo Capital Management, L.P."
+          },
+          "party_page": {
+            "id": "apollo-capital-management-l-p",
+            "name": "Apollo Capital Management, L.P."
+          }
+        },
+        {
+          "name": "AP Emerald (Luxembourg) S.\u00e0 r.l.",
+          "identifier_type": null,
+          "identifier": "RCS  B307795",
+          "party_page": {
+            "id": "ap-emerald-luxembourg-s-r-l",
+            "name": "AP Emerald (Luxembourg) S.\u00e0 r.l."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Bayer Global Investments B.V.",
+          "identifier_type": null,
+          "identifier": "KVK  51490986",
+          "party_page": {
+            "id": "bayer-global-investments-b-v",
+            "name": "Bayer Global Investments B.V."
+          }
+        },
+        {
+          "name": "Bayer Asset Management B.V.",
+          "identifier_type": null,
+          "identifier": "KVK  42012880",
+          "party_page": {
+            "id": "bayer-asset-management-b-v",
+            "name": "Bayer Asset Management B.V."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Bayer Nordic SE",
+          "identifier_type": null,
+          "identifier": "Finnish Patent and Registration Office  24305802",
+          "party_page": {
+            "id": "bayer-nordic-se",
+            "name": "Bayer Nordic SE"
+          }
+        },
+        {
+          "name": "Apollo Global Management, Inc.",
+          "identifier_type": null,
+          "identifier": "CIK 0001858681",
+          "party_page": {
+            "id": "apollo-global-management-inc",
+            "name": "Apollo Global Management, Inc."
+          }
+        },
+        {
+          "name": "Bayer Oy",
+          "identifier_type": null,
+          "identifier": "Finnish Patent and Registration Office  17037774",
+          "party_page": {
+            "id": "bayer-oy",
+            "name": "Bayer Oy"
+          }
+        },
+        {
+          "name": "Bayer Aktiengesellschaft",
+          "identifier_type": null,
+          "identifier": "HRB  48248",
+          "party_page": {
+            "id": "bayer-aktiengesellschaft",
+            "name": "Bayer Aktiengesellschaft"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0149",
+          "name": "Other Grain Growing"
+        },
+        {
+          "code": "1832",
+          "name": "Pesticide Manufacturing"
+        },
+        {
+          "code": "1841",
+          "name": "Human Pharmaceutical and Medicinal Product Manufacturing"
+        },
+        {
+          "code": "1852",
+          "name": "Cosmetic and Toiletry Preparation Manufacturing"
+        },
+        {
+          "code": "3720",
+          "name": "Pharmaceutical and Toiletry Goods Wholesaling"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/apollo-bayer-asset-management"
+    },
+    {
       "merger_id": "MN-20017",
       "merger_name": "Amplifon \u2013 GN Hearing",
       "status": "Under assessment",
@@ -3563,58 +3686,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/lor%C3%A9al-innovist"
-    },
-    {
-      "merger_id": "WA-20030",
-      "merger_name": "Baupost \u2013 McDermott",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "has_conditions": false,
-      "is_waiver": true,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-07-21T12:00:00Z",
-      "determination_publication_date": "2026-08-04T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "Baupost Group Securities, L.L.C.",
-          "identifier_type": null,
-          "identifier": "Legal Entity Identifier 549300B87FCL68LWRE04",
-          "party_page": {
-            "id": "baupost-group-securities-l-l-c",
-            "name": "Baupost Group Securities, L.L.C."
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "McDermott International, Ltd",
-          "identifier_type": null,
-          "identifier": "Bermuda company number  55624",
-          "party_page": {
-            "id": "mcdermott-international-ltd",
-            "name": "McDermott International, Ltd"
-          }
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "3109",
-          "name": "Other Heavy and Civil Engineering Construction"
-        },
-        {
-          "code": "6240",
-          "name": "Financial Asset Investing"
-        },
-        {
-          "code": "6923",
-          "name": "Engineering Design and Engineering Consulting Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/baupost-%E2%80%93-mcdermott"
     }
   ],
   "page": 10,

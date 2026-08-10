@@ -31,19 +31,19 @@
       "code": "183",
       "name": "Fertiliser and Pesticide Manufacturing",
       "level": "group",
-      "merger_count": 3
+      "merger_count": 4
     },
     {
       "code": "184",
       "name": "Pharmaceutical and Medicinal Product Manufacturing",
       "level": "group",
-      "merger_count": 14
+      "merger_count": 15
     },
     {
       "code": "185",
       "name": "Cleaning Compound and Toiletry Preparation Manufacturing",
       "level": "group",
-      "merger_count": 3
+      "merger_count": 4
     },
     {
       "code": "189",
@@ -118,6 +118,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-05-12T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-70029",
+      "merger_name": "Apollo - Bayer Asset Management",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-11T12:00:00Z",
+      "determination_date": "2026-08-10T12:00:00Z"
     },
     {
       "merger_id": "MN-70026",
@@ -296,10 +307,10 @@
       "determination_date": "2026-02-05T12:00:00Z"
     }
   ],
-  "count": 22,
+  "count": 23,
   "phase_1_count": 14,
   "phase_2_count": 1,
-  "waiver_count": 7,
+  "waiver_count": 8,
   "active_count": 6,
   "phase_duration": {
     "average_days": 29.9,
@@ -309,10 +320,10 @@
     "completed_count": 10
   },
   "waiver_duration": {
-    "average_days": 19.571428571428573,
-    "median_days": 17,
-    "average_business_days": 13.428571428571429,
-    "median_business_days": 12,
-    "completed_count": 7
+    "average_days": 20.875,
+    "median_days": 17.0,
+    "average_business_days": 14.375,
+    "median_business_days": 12.5,
+    "completed_count": 8
   }
 }

@@ -25,7 +25,7 @@
       "code": "372",
       "name": "Pharmaceutical and Toiletry Goods Wholesaling",
       "level": "group",
-      "merger_count": 8
+      "merger_count": 9
     },
     {
       "code": "373",
@@ -56,6 +56,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-21T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-70029",
+      "merger_name": "Apollo - Bayer Asset Management",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-11T12:00:00Z",
+      "determination_date": "2026-08-10T12:00:00Z"
     },
     {
       "merger_id": "MN-30020",
@@ -201,10 +212,10 @@
       "determination_date": "2026-02-04T12:00:00Z"
     }
   ],
-  "count": 15,
+  "count": 16,
   "phase_1_count": 10,
   "phase_2_count": 0,
-  "waiver_count": 5,
+  "waiver_count": 6,
   "active_count": 2,
   "phase_duration": {
     "average_days": 25.375,
@@ -214,10 +225,10 @@
     "completed_count": 8
   },
   "waiver_duration": {
-    "average_days": 14.0,
-    "median_days": 13,
-    "average_business_days": 9.6,
-    "median_business_days": 8,
-    "completed_count": 5
+    "average_days": 16.666666666666668,
+    "median_days": 13.5,
+    "average_business_days": 11.5,
+    "median_business_days": 9.0,
+    "completed_count": 6
   }
 }

@@ -9,7 +9,7 @@
       "code": "01",
       "name": "Agriculture",
       "level": "subdivision",
-      "merger_count": 12
+      "merger_count": 13
     },
     {
       "code": "02",
@@ -58,6 +58,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-05-12T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-70029",
+      "merger_name": "Apollo - Bayer Asset Management",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-11T12:00:00Z",
+      "determination_date": "2026-08-10T12:00:00Z"
     },
     {
       "merger_id": "MN-35018",
@@ -203,10 +214,10 @@
       "determination_date": "2026-03-06T12:00:00Z"
     }
   ],
-  "count": 15,
+  "count": 16,
   "phase_1_count": 6,
   "phase_2_count": 1,
-  "waiver_count": 8,
+  "waiver_count": 9,
   "active_count": 2,
   "phase_duration": {
     "average_days": 32.666666666666664,
@@ -216,10 +227,10 @@
     "completed_count": 6
   },
   "waiver_duration": {
-    "average_days": 21.375,
-    "median_days": 21.0,
-    "average_business_days": 14.625,
-    "median_business_days": 14.5,
-    "completed_count": 8
+    "average_days": 22.333333333333332,
+    "median_days": 21,
+    "average_business_days": 15.333333333333334,
+    "median_business_days": 15,
+    "completed_count": 9
   }
 }

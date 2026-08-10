@@ -24,7 +24,7 @@
       "code": "1841",
       "name": "Human Pharmaceutical and Medicinal Product Manufacturing",
       "level": "class",
-      "merger_count": 13
+      "merger_count": 14
     },
     {
       "code": "1842",
@@ -77,6 +77,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-05-12T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-70029",
+      "merger_name": "Apollo - Bayer Asset Management",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-11T12:00:00Z",
+      "determination_date": "2026-08-10T12:00:00Z"
     },
     {
       "merger_id": "WA-10020",
@@ -189,10 +200,10 @@
       "determination_date": "2026-03-12T12:00:00Z"
     }
   ],
-  "count": 14,
+  "count": 15,
   "phase_1_count": 9,
   "phase_2_count": 1,
-  "waiver_count": 4,
+  "waiver_count": 5,
   "active_count": 4,
   "phase_duration": {
     "average_days": 31.0,
@@ -202,10 +213,10 @@
     "completed_count": 7
   },
   "waiver_duration": {
-    "average_days": 18.25,
-    "median_days": 16.5,
-    "average_business_days": 12.5,
-    "median_business_days": 12.0,
-    "completed_count": 4
+    "average_days": 20.6,
+    "median_days": 17,
+    "average_business_days": 14.2,
+    "median_business_days": 13,
+    "completed_count": 5
   }
 }
