@@ -27,7 +27,7 @@
       "code": "09",
       "name": "Non-Metallic Mineral Mining and Quarrying",
       "level": "subdivision",
-      "merger_count": 2
+      "merger_count": 3
     },
     {
       "code": "10",
@@ -37,6 +37,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-05044",
+      "merger_name": "Holcim Australia \u2013 Burdetts Group",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-10T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-10022",
       "merger_name": "M Resources and Golden Energy and Resources \u2013 Tahmoor Coal Mine",
@@ -313,11 +324,11 @@
       "determination_date": null
     }
   ],
-  "count": 25,
-  "phase_1_count": 10,
+  "count": 26,
+  "phase_1_count": 11,
   "phase_2_count": 0,
   "waiver_count": 15,
-  "active_count": 1,
+  "active_count": 2,
   "phase_duration": {
     "average_days": 34.625,
     "median_days": 31.0,
