@@ -1,5 +1,7 @@
+import { useLayoutEffect, useRef } from 'react';
 import { Link } from 'react-router';
 import { FaArrowRightLong } from 'react-icons/fa6';
+import { tailCellsToHide } from '../utils/treemapTail';
 
 // A treemap-style heatmap: cells packed by deal volume (flex-grow
 // proportional to the merger count) and shaded by intensity. Acts as the
@@ -29,9 +31,51 @@ function Treemap({
   desktopLimit = DEFAULT_DESKTOP_LIMIT,
   mobileLimit = DEFAULT_MOBILE_LIMIT,
 }) {
+  const containerRef = useRef(null);
+
   const cells = [...items]
     .sort((a, b) => b.merger_count - a.merger_count)
     .slice(0, desktopLimit);
+  // Re-measure whenever the cells themselves change, not just their number.
+  const cellSizes = cells.map((item) => item.merger_count).join(',');
+
+  // Trimming happens in the DOM rather than in React state: the decision needs
+  // the laid-out rows, and re-rendering the full set to re-measure would flash
+  // the tail back in. Hiding a trailing row can't reflow the rows above it, so
+  // one pass per width settles it.
+  useLayoutEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    let lastWidth = null;
+    const trimTail = () => {
+      const children = Array.from(container.children);
+      for (const child of children) child.style.display = '';
+      const gap = parseFloat(getComputedStyle(container).columnGap) || 0;
+      // offsetParent is null for the cells the mobile cap has hidden.
+      const measured = children
+        .filter((child) => child.offsetParent !== null)
+        .map((child) => ({
+          el: child,
+          top: child.offsetTop,
+          basis: parseFloat(child.style.flexBasis) || child.getBoundingClientRect().width,
+        }));
+      lastWidth = container.clientWidth;
+      const hidden = tailCellsToHide(measured, lastWidth, gap);
+      for (const { el } of measured.slice(measured.length - hidden)) {
+        el.style.display = 'none';
+      }
+    };
+
+    trimTail();
+    const observer = new ResizeObserver(() => {
+      // Hiding the tail changes the container's height, which would otherwise
+      // re-enter this callback and fight itself. Only width can change the answer.
+      if (container.clientWidth !== lastWidth) trimTail();
+    });
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, [cellSizes, mobileLimit]);
 
   if (cells.length === 0) return null;
 
@@ -39,7 +83,7 @@ function Treemap({
 
   return (
     <div>
-      <div className="flex flex-wrap gap-2">
+      <div ref={containerRef} className="flex flex-wrap gap-2">
         {cells.map((item, i) => {
           const intensity = item.merger_count / maxCount;
           const hideOnMobile = i >= mobileLimit;
