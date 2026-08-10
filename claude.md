@@ -181,6 +181,7 @@ python -m pytest scripts/tests/
 - **Python**: Type hints in function signatures. Docstrings for modules and functions. ProcessPoolExecutor for concurrent extraction in extract_mergers.py.
 - **ESLint**: Flat config (eslint.config.js). Unused vars ignore pattern `^[A-Z_]`.
 - **Node version**: 20.19.0 (see `.nvmrc`)
+- **Commit messages**: describe the change only — no Claude/AI attribution. `.claude/settings.json` turns the default trailers off (`attribution.commit`/`pr` empty, `sessionUrl` false) and a `PreToolUse` hook (`.claude/hooks/check_commit_message.py`) denies any `git commit` whose message carries a `Co-Authored-By: Claude` trailer, a "Generated with Claude Code" line, or a claude.ai session link. Mentioning Claude Code in a message is fine; claiming it as the author is not.
 
 ## Key Data Flow
 
