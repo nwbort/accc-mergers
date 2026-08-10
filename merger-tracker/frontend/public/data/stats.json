@@ -1,10 +1,10 @@
 {
-  "total_mergers": 214,
+  "total_mergers": 215,
   "total_waivers": 316,
   "total_conditional_approvals": 2,
   "by_status": {
     "Assessment completed": 159,
-    "Under assessment": 52,
+    "Under assessment": 53,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -90,6 +90,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-35031",
+      "merger_name": "Osmoflo Water Management - Guidera O'Connor",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-06T12:00:00Z",
+      "page_modified_datetime": "2026-08-10T11:00:01+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-15034",
       "merger_name": "Australian Venue Co \u2013 assets of Black Nugget Hotel Motel, Bartletts Tavern and all associated detached bottle shops",
@@ -197,16 +207,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-03T12:00:00Z",
       "page_modified_datetime": "2026-08-04T17:47:29+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-85038",
-      "merger_name": "HammondCare - Anglican Community Services' Support at Home business",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-03T12:00:00Z",
-      "page_modified_datetime": "2026-08-04T11:40:36+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

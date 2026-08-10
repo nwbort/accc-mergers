@@ -55,10 +55,21 @@
       "code": "249",
       "name": "Other Machinery and Equipment Manufacturing",
       "level": "group",
-      "merger_count": 9
+      "merger_count": 10
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-35031",
+      "merger_name": "Osmoflo Water Management - Guidera O'Connor",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-06T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-15031",
       "merger_name": "Danaher (Leica Biosystems) - StatLab",
@@ -577,11 +588,11 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 47,
-  "phase_1_count": 19,
+  "count": 48,
+  "phase_1_count": 20,
   "phase_2_count": 0,
   "waiver_count": 28,
-  "active_count": 3,
+  "active_count": 4,
   "phase_duration": {
     "average_days": 26.5625,
     "median_days": 24.0,

@@ -87,7 +87,7 @@
       "code": "24",
       "name": "Machinery and Equipment Manufacturing",
       "level": "subdivision",
-      "merger_count": 47
+      "merger_count": 48
     },
     {
       "code": "25",
@@ -97,6 +97,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-35031",
+      "merger_name": "Osmoflo Water Management - Guidera O'Connor",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-06T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-65021",
       "merger_name": "Wesfarmers and Built Group - Built Living Joint Venture",
@@ -1506,11 +1517,11 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 128,
-  "phase_1_count": 60,
+  "count": 129,
+  "phase_1_count": 61,
   "phase_2_count": 2,
   "waiver_count": 66,
-  "active_count": 15,
+  "active_count": 16,
   "phase_duration": {
     "average_days": 29.770833333333332,
     "median_days": 26.0,

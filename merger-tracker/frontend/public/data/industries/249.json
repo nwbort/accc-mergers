@@ -30,10 +30,21 @@
       "code": "2499",
       "name": "Other Machinery and Equipment Manufacturing n.e.c.",
       "level": "class",
-      "merger_count": 7
+      "merger_count": 8
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-35031",
+      "merger_name": "Osmoflo Water Management - Guidera O'Connor",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-06T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-70026",
       "merger_name": "Parker-Hannifin \u2013 CIRCOR A&D",
@@ -134,11 +145,11 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 9,
-  "phase_1_count": 3,
+  "count": 10,
+  "phase_1_count": 4,
   "phase_2_count": 0,
   "waiver_count": 6,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": {
     "average_days": 25.333333333333332,
     "median_days": 22,
