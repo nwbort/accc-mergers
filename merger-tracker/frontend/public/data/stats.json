@@ -3,12 +3,12 @@
   "total_waivers": 316,
   "total_conditional_approvals": 2,
   "by_status": {
-    "Assessment completed": 158,
-    "Under assessment": 53,
+    "Assessment completed": 159,
+    "Under assessment": 52,
     "Assessment ceased": 3
   },
   "by_determination": {
-    "Approved": 155,
+    "Approved": 156,
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
@@ -16,27 +16,27 @@
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 156,
+    "cleared": 157,
     "not_cleared": 2,
-    "total": 158,
+    "total": 159,
     "rate": 0.987
   },
   "phase_duration": {
-    "average_days": 29.613496932515336,
-    "median_days": 26,
-    "average_business_days": 19.631901840490798,
-    "median_business_days": 17,
+    "average_days": 29.652439024390244,
+    "median_days": 26.0,
+    "average_business_days": 19.664634146341463,
+    "median_business_days": 17.0,
     "percentiles": {
       "day15": {
         "count": 39,
-        "percentage": 23.9
+        "percentage": 23.8
       },
       "day20": {
         "count": 127,
-        "percentage": 77.9
+        "percentage": 77.4
       },
       "day30": {
-        "count": 154,
+        "count": 155,
         "percentage": 94.5
       }
     }
@@ -213,6 +213,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-15027",
+      "merger_name": "Partnered Health - Ryan Plaza Medical Services",
+      "determination": "Approved",
+      "determination_date": "2026-08-08T12:00:00Z",
+      "page_modified_datetime": "2026-08-10T09:20:51+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-05035",
       "merger_name": "Alter Domus - MSC Group",
       "determination": "Approved",
@@ -321,16 +331,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-95025",
-      "merger_name": "Salesforce - Contentful",
-      "determination": "Approved",
-      "determination_date": "2026-08-04T12:00:00Z",
-      "page_modified_datetime": "2026-08-04T11:31:45+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }
