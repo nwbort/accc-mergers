@@ -2976,7 +2976,7 @@
       "is_refiled": false,
       "effective_notification_datetime": "2026-07-16T12:00:00Z",
       "determination_publication_date": null,
-      "end_of_determination_period": "2026-08-27T12:00:00Z",
+      "end_of_determination_period": "2026-09-10T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
@@ -3015,12 +3015,16 @@
       ],
       "other_parties": [
         {
-          "name": "SAPPI TRADING AUSTRALIA PTY LIMITED",
+          "name": "UPM-KYMMENE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "17 086 317 071",
+          "identifier": "99 001 255 661",
+          "canonical": {
+            "id": "upm-kymmene-pty-ltd",
+            "name": "Upm-Kymmene Pty Ltd"
+          },
           "party_page": {
-            "id": "sappi-trading-australia-pty-limited",
-            "name": "Sappi Trading Australia Pty Limited"
+            "id": "upm-kymmene-pty-ltd",
+            "name": "Upm-Kymmene Pty Ltd"
           }
         },
         {
@@ -3033,16 +3037,12 @@
           }
         },
         {
-          "name": "UPM-KYMMENE PTY LTD",
+          "name": "SAPPI TRADING AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "99 001 255 661",
-          "canonical": {
-            "id": "upm-kymmene-pty-ltd",
-            "name": "Upm-Kymmene Pty Ltd"
-          },
+          "identifier": "17 086 317 071",
           "party_page": {
-            "id": "upm-kymmene-pty-ltd",
-            "name": "Upm-Kymmene Pty Ltd"
+            "id": "sappi-trading-australia-pty-limited",
+            "name": "Sappi Trading Australia Pty Limited"
           }
         }
       ],
