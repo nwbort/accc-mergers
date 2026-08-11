@@ -19,7 +19,7 @@
       "code": "181",
       "name": "Basic Chemical Manufacturing",
       "level": "group",
-      "merger_count": 2
+      "merger_count": 3
     },
     {
       "code": "182",
@@ -53,6 +53,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-80027",
+      "merger_name": "Supagas \u2013 Heeson Medical",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-11T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-65021",
       "merger_name": "Wesfarmers and Built Group - Built Living Joint Venture",
@@ -307,11 +318,11 @@
       "determination_date": "2026-02-05T12:00:00Z"
     }
   ],
-  "count": 23,
-  "phase_1_count": 14,
+  "count": 24,
+  "phase_1_count": 15,
   "phase_2_count": 1,
   "waiver_count": 8,
-  "active_count": 6,
+  "active_count": 7,
   "phase_duration": {
     "average_days": 29.9,
     "median_days": 26.0,

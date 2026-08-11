@@ -33,7 +33,7 @@
       "code": "37",
       "name": "Other Goods Wholesaling",
       "level": "subdivision",
-      "merger_count": 17
+      "merger_count": 18
     },
     {
       "code": "38",
@@ -43,6 +43,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-80027",
+      "merger_name": "Supagas \u2013 Heeson Medical",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-11T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-15031",
       "merger_name": "Danaher (Leica Biosystems) - StatLab",
@@ -605,11 +616,11 @@
       "determination_date": null
     }
   ],
-  "count": 51,
-  "phase_1_count": 28,
+  "count": 52,
+  "phase_1_count": 29,
   "phase_2_count": 2,
   "waiver_count": 21,
-  "active_count": 7,
+  "active_count": 8,
   "phase_duration": {
     "average_days": 34.52173913043478,
     "median_days": 27,

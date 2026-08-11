@@ -177,9 +177,18 @@
     {
       "merger_id": "MN-90008",
       "merger_name": "Black Rhino - Club Hotel Motel Roma",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "acquirers": [
+        {
+          "name": "The Trustee for Light Them Up (Roma) Trust",
+          "identifier_type": "ABN",
+          "identifier": "17 705 523 498",
+          "party_page": {
+            "id": "the-trustee-for-light-them-up-roma-trust",
+            "name": "The Trustee for Light Them Up (Roma) Trust"
+          }
+        },
         {
           "name": "BLACK RHINO (CLUB ROMA) PTY LTD",
           "identifier_type": "ABN",
@@ -191,15 +200,6 @@
           "party_page": {
             "id": "black-rhino-group",
             "name": "Black Rhino Group"
-          }
-        },
-        {
-          "name": "The Trustee for Light Them Up (Roma) Trust",
-          "identifier_type": "ABN",
-          "identifier": "17 705 523 498",
-          "party_page": {
-            "id": "the-trustee-for-light-them-up-roma-trust",
-            "name": "The Trustee for Light Them Up (Roma) Trust"
           }
         }
       ],

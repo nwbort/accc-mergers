@@ -2980,6 +2980,22 @@
     "estimated_at": "2026-07-17",
     "method_version": 1
   },
+  "MN-80027": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      16,
+      18
+    ],
+    "basis": "industry",
+    "anzsic_level": "subdivision",
+    "anzsic_codes": [
+      "18",
+      "37"
+    ],
+    "sample_size": 17,
+    "estimated_at": "2026-08-11",
+    "method_version": 1
+  },
   "MN-85002": {
     "expected_business_days": 18,
     "range_business_days": [

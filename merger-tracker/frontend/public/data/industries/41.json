@@ -66,12 +66,12 @@
       "merger_id": "MN-90008",
       "merger_name": "Black Rhino - Club Hotel Motel Roma",
       "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": true,
       "phase": "Phase 1",
       "notification_date": "2026-05-21T12:00:00Z",
-      "determination_date": null
+      "determination_date": "2026-08-11T12:00:00Z"
     },
     {
       "merger_id": "WA-95034",
@@ -331,13 +331,13 @@
   "phase_1_count": 10,
   "phase_2_count": 2,
   "waiver_count": 15,
-  "active_count": 4,
+  "active_count": 3,
   "phase_duration": {
-    "average_days": 38.875,
-    "median_days": 26.0,
-    "average_business_days": 23.375,
-    "median_business_days": 17.0,
-    "completed_count": 8
+    "average_days": 43.666666666666664,
+    "median_days": 27,
+    "average_business_days": 27.0,
+    "median_business_days": 18,
+    "completed_count": 9
   },
   "waiver_duration": {
     "average_days": 19.2,
