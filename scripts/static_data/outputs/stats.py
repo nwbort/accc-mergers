@@ -6,7 +6,7 @@ from statistics import median
 from constants import merger_status
 
 from ..durations import collect_phase_1_durations, collect_waiver_durations
-from ..enrichment import is_phase_2_referral_event
+from ..enrichment import is_phase_2_referral_event, phase_2_outcome
 from ..filters import filter_notifications, filter_waivers
 from ..loaders import BACKWARD_REFILE_RELATIONSHIPS
 
@@ -98,6 +98,19 @@ def generate(mergers: list) -> dict:
         det = m.get('phase_1_determination')
         if det:
             by_determination[det] += 1
+
+    # By Phase 2 outcome (notifications only). Counts the Phase 2 reviews that
+    # have concluded — including the ones the parties withdrew from, which end
+    # as a ceased assessment rather than a determination. Matters still in
+    # Phase 2 are excluded, so this reconciles with the completed matters on
+    # the Phase 2 tracker (phase2.json).
+    by_phase_2_determination = defaultdict(int)
+    for m in notification_mergers:
+        if merger_status.PHASE_2 not in (m.get('stage') or ''):
+            continue
+        det, det_date = phase_2_outcome(m)
+        if det and det_date:
+            by_phase_2_determination[det] += 1
 
     # By waiver determination
     by_waiver_determination = defaultdict(int)
@@ -300,6 +313,7 @@ def generate(mergers: list) -> dict:
         "total_conditional_approvals": total_conditional_approvals,
         "by_status": dict(by_status),
         "by_determination": dict(by_determination),
+        "by_phase_2_determination": dict(by_phase_2_determination),
         "by_waiver_determination": dict(by_waiver_determination),
         "clearance_rate": clearance_rate_data,
         "phase_duration": phase_duration_data,

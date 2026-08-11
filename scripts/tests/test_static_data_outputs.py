@@ -28,6 +28,7 @@ from static_data.outputs import (
     industries,
     list as list_out,
     parties,
+    phase2,
     questionnaires,
     stats,
     theories_of_harm,
@@ -264,6 +265,98 @@ class TestStatsGenerate:
         phase_2 = next(d for d in phase_transitions if d['merger_id'] == 'MN-0005')
         assert phase_2['determination'] == merger_status.REFERRED_TO_PHASE_2
         assert phase_2['determination_date'] == '2026-04-16T12:00:00Z'
+
+
+def _phase_2_fixture():
+    """Three Phase 2 matters: one determined, one ceased, one still running."""
+    return _raw_fixture() + [
+        {
+            'merger_id': 'MN-0007',
+            'merger_name': 'Nu not approved in phase 2',
+            'status': merger_status.ASSESSMENT_COMPLETED,
+            'accc_determination': merger_status.NOT_APPROVED,
+            'stage': 'Phase 2 - detailed assessment',
+            'effective_notification_datetime': '2026-01-05T09:00:00Z',
+            'determination_publication_date': '2026-06-10T12:00:00Z',
+            'page_modified_datetime': '2026-06-10T12:30:00Z',
+            'anzsic_codes': [],
+            'acquirers': ['Nu'],
+            'targets': ['Xi'],
+            'other_parties': [],
+            'url': 'https://example.com/MN-0007',
+            'events': [
+                {'title': 'Merger notified to ACCC', 'date': '2026-01-05T09:00:00Z'},
+                {'title': 'Decision to Proceed to a Phase 2 review', 'date': '2026-03-02T12:00:00Z'},
+            ],
+        },
+        {
+            'merger_id': 'MN-0008',
+            'merger_name': 'Omicron withdrew from phase 2',
+            'status': merger_status.ASSESSMENT_CEASED,
+            'accc_determination': None,
+            'stage': 'Phase 2 - detailed assessment',
+            'effective_notification_datetime': '2026-01-20T09:00:00Z',
+            'determination_publication_date': None,
+            'page_modified_datetime': '2026-07-01T12:30:00Z',
+            'anzsic_codes': [],
+            'acquirers': ['Omicron'],
+            'targets': ['Pi'],
+            'other_parties': [],
+            'url': 'https://example.com/MN-0008',
+            'events': [
+                {'title': 'Merger notified to ACCC', 'date': '2026-01-20T09:00:00Z'},
+                {'title': 'Decision to Proceed to a Phase 2 review', 'date': '2026-03-16T12:00:00Z'},
+                {'title': 'Consideration of Notification ceased', 'date': '2026-07-01T12:00:00Z'},
+            ],
+        },
+        {
+            'merger_id': 'MN-0009',
+            'merger_name': 'Rho still in phase 2',
+            'status': merger_status.UNDER_ASSESSMENT,
+            'accc_determination': None,
+            'stage': 'Phase 2 - detailed assessment',
+            'effective_notification_datetime': '2026-04-01T09:00:00Z',
+            'determination_publication_date': None,
+            'end_of_determination_period': '2026-11-02T12:00:00Z',
+            'page_modified_datetime': '2026-06-01T12:30:00Z',
+            'anzsic_codes': [],
+            'acquirers': ['Rho'],
+            'targets': ['Sigma'],
+            'other_parties': [],
+            'url': 'https://example.com/MN-0009',
+            'events': [
+                {'title': 'Merger notified to ACCC', 'date': '2026-04-01T09:00:00Z'},
+                {'title': 'Decision to Proceed to a Phase 2 review', 'date': '2026-05-20T12:00:00Z'},
+            ],
+        },
+    ]
+
+
+class TestStatsPhase2Determinations:
+    """by_phase_2_determination: the dashboard's Phase 2 outcome doughnut."""
+
+    def test_counts_determinations_and_withdrawals(self):
+        payload = stats.generate([enrich_merger(m) for m in _phase_2_fixture()])
+        # The ceased matter is charted as its own outcome — a Phase 2 review
+        # the parties dropped out of, never determined — while MN-0009, still
+        # in Phase 2, has no outcome to count yet.
+        assert payload['by_phase_2_determination'] == {
+            merger_status.NOT_APPROVED: 1,
+            merger_status.ASSESSMENT_CEASED: 1,
+        }
+
+    def test_phase_1_determinations_stay_separate(self):
+        payload = stats.generate([enrich_merger(m) for m in _phase_2_fixture()])
+        # A Phase 2 outcome must not leak into the Phase 1 chart: all three
+        # referred matters count once there, as "Referred to phase 2".
+        assert payload['by_determination'][merger_status.REFERRED_TO_PHASE_2] == 3
+        assert merger_status.ASSESSMENT_CEASED not in payload['by_determination']
+
+    def test_reconciles_with_phase_2_tracker(self):
+        enriched = [enrich_merger(m) for m in _phase_2_fixture()]
+        payload = stats.generate(enriched)
+        tracker = phase2.generate(enriched)
+        assert sum(payload['by_phase_2_determination'].values()) == tracker['count']['completed']
 
 
 class TestStatsMedianMatchesAnalysis:

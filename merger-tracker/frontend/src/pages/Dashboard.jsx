@@ -35,6 +35,17 @@ ChartJS.register(
   ArcElement
 );
 
+// Fixed segment order for the Phase 2 doughnut, so the chart doesn't reshuffle
+// as determinations land. "Assessment ceased" sits last because it isn't a
+// determination at all — it's a Phase 2 review the parties withdrew from.
+const PHASE_2_OUTCOME_ORDER = [
+  MERGER_STATUS.APPROVED,
+  MERGER_STATUS.NOT_OPPOSED,
+  MERGER_STATUS.NOT_APPROVED,
+  MERGER_STATUS.DECLINED,
+  MERGER_STATUS.ASSESSMENT_CEASED,
+];
+
 function Dashboard() {
   const { data: stats, loading, error } = useFetchData(API_ENDPOINTS.stats, {
     cacheKey: 'dashboard-stats',
@@ -76,6 +87,28 @@ function Dashboard() {
       {
         data: Object.values(stats.by_determination),
         backgroundColor: determinationLabels.map((label, i) =>
+          DETERMINATION_COLORS[label] || CHART_PALETTE_ORDER[i % CHART_PALETTE_ORDER.length]
+        ),
+        borderWidth: 0,
+        borderRadius: 4,
+      },
+    ],
+  };
+
+  // Concluded Phase 2 reviews only — matters still in Phase 2 have no outcome
+  // to chart yet. Any outcome the fixed order doesn't know about is appended
+  // rather than dropped.
+  const phase2Counts = stats.by_phase_2_determination || {};
+  const phase2Labels = [
+    ...PHASE_2_OUTCOME_ORDER.filter((label) => phase2Counts[label]),
+    ...Object.keys(phase2Counts).filter((label) => !PHASE_2_OUTCOME_ORDER.includes(label)),
+  ];
+  const phase2DeterminationData = {
+    labels: phase2Labels,
+    datasets: [
+      {
+        data: phase2Labels.map((label) => phase2Counts[label]),
+        backgroundColor: phase2Labels.map((label, i) =>
           DETERMINATION_COLORS[label] || CHART_PALETTE_ORDER[i % CHART_PALETTE_ORDER.length]
         ),
         borderWidth: 0,
@@ -214,7 +247,7 @@ function Dashboard() {
       })()}
 
       {/* Charts */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-6">
         {/* Phase 1 Duration Table */}
         {stats.phase_duration.percentiles && (
           <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-card flex flex-col">
@@ -258,6 +291,27 @@ function Dashboard() {
               <tbody>
                 {Object.entries(stats.by_determination).map(([det, count]) => (
                   <tr key={det}><td>{det}</td><td>{count}</td></tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+
+        {/* Phase 2 Determination Distribution */}
+        {phase2Labels.length > 0 && (
+          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-card">
+            <h2 id="chart-phase2-title" className="text-base font-semibold text-gray-900 mb-5">
+              Phase 2 determinations
+            </h2>
+            <div className="h-64" role="img" aria-labelledby="chart-phase2-title" aria-describedby="chart-phase2-summary">
+              <Doughnut data={phase2DeterminationData} options={chartOptions} />
+            </div>
+            <table id="chart-phase2-summary" className="sr-only">
+              <caption>Phase 2 determination breakdown, including ceased assessments</caption>
+              <thead><tr><th>Outcome</th><th>Count</th></tr></thead>
+              <tbody>
+                {phase2Labels.map((det) => (
+                  <tr key={det}><td>{det}</td><td>{phase2Counts[det]}</td></tr>
                 ))}
               </tbody>
             </table>
