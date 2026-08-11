@@ -3371,6 +3371,68 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/syngenta-crop-protection-and-d%C3%BCmmen-orange-%E2%80%93-joint-venture-formation"
     },
     {
+      "merger_id": "WA-50033",
+      "merger_name": "Koch \u2013 additional interest in Victoria PLC",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-17T12:00:00Z",
+      "determination_publication_date": "2026-08-11T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Koch Equity Development LLC",
+          "identifier_type": null,
+          "identifier": "US Employer Identification Number: 371473024",
+          "party_page": {
+            "id": "koch-equity-development-llc",
+            "name": "Koch Equity Development LLC"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Victoria PLC",
+          "identifier_type": null,
+          "identifier": "England and Wales company number 00282204",
+          "party_page": {
+            "id": "victoria-plc",
+            "name": "Victoria PLC"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Koch, Inc.",
+          "identifier_type": null,
+          "identifier": "US Employer Identification Number: 992449504",
+          "party_page": {
+            "id": "koch-inc-2",
+            "name": "Koch, Inc."
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1331",
+          "name": "Textile Floor Covering Manufacturing"
+        },
+        {
+          "code": "3731",
+          "name": "Furniture and Floor Covering Wholesaling"
+        },
+        {
+          "code": "4212",
+          "name": "Floor Coverings Retailing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/koch-%E2%80%93-additional-interest-in-victoria-plc"
+    },
+    {
       "merger_id": "MN-90022",
       "merger_name": "Expedia - CarTrawler",
       "status": "Under assessment",
@@ -3598,91 +3660,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/vertex-%E2%80%93-crinetics"
-    },
-    {
-      "merger_id": "MN-25037",
-      "merger_name": "Sanad Services and Tikehau Capital \u2013 Revima",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-07-21T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-09-01T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Dream BidCo",
-          "identifier_type": null,
-          "identifier": "RCS Paris  102 698 263",
-          "party_page": {
-            "id": "dream-bidco",
-            "name": "Dream BidCo"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "Revima Holding SAS",
-          "identifier_type": null,
-          "identifier": "RCS Rouen  845 266 725",
-          "party_page": {
-            "id": "revima-holding-sas",
-            "name": "Revima Holding SAS"
-          }
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "Ace A\u00e9ro Partenaires II S.L.P. represented by Tikehau Investment Management SAS",
-          "identifier_type": null,
-          "identifier": "RCS Paris  982 137 812",
-          "party_page": {
-            "id": "ace-a-ro-partenaires-ii-s-l-p-represented-by-tikehau-investment-management-sas",
-            "name": "Ace A\u00e9ro Partenaires II S.L.P. represented by Tikehau Investment Management SAS"
-          }
-        },
-        {
-          "name": "Sanad Services Group owned by One Hundred and Seven Investment RSC LTD \u2013 Sole Proprietorship L.L.C.",
-          "identifier_type": null,
-          "identifier": "CN2969483",
-          "party_page": {
-            "id": "sanad-services-group-owned-by-one-hundred-and-seven-investment-rsc-ltd-sole-prop",
-            "name": "Sanad Services Group owned by One Hundred and Seven Investment RSC LTD \u2013 Sole Proprietorship L.L.C."
-          }
-        },
-        {
-          "name": "Mubadala Investment Company PJSC",
-          "identifier_type": null,
-          "identifier": "CN\u20112302788",
-          "party_page": {
-            "id": "mubadala-investment-company-pjsc",
-            "name": "Mubadala Investment Company PJSC"
-          }
-        },
-        {
-          "name": "Tikehau Capital SCA",
-          "identifier_type": null,
-          "identifier": "RCS Paris  477 599 104",
-          "party_page": {
-            "id": "tikehau-capital-sca",
-            "name": "Tikehau Capital SCA"
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "2394",
-          "name": "Aircraft Manufacturing and Repair Services"
-        },
-        {
-          "code": "6240",
-          "name": "Financial Asset Investing"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/sanad-services-and-tikehau-capital-%E2%80%93-revima"
     }
   ],
   "page": 10,

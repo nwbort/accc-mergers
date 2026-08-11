@@ -1,6 +1,6 @@
 {
   "total_mergers": 218,
-  "total_waivers": 318,
+  "total_waivers": 319,
   "total_conditional_approvals": 2,
   "by_status": {
     "Assessment completed": 160,
@@ -17,7 +17,7 @@
     "Assessment ceased": 2
   },
   "by_waiver_determination": {
-    "Approved": 304,
+    "Approved": 305,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -47,10 +47,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.09433962264151,
-    "median_days": 18.0,
-    "average_business_days": 12.823899371069182,
-    "median_business_days": 12.5
+    "average_days": 19.112852664576803,
+    "median_days": 18,
+    "average_business_days": 12.836990595611285,
+    "median_business_days": 13
   },
   "top_industries": [
     {
@@ -218,6 +218,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-50033",
+      "merger_name": "Koch \u2013 additional interest in Victoria PLC",
+      "determination": "Approved",
+      "determination_date": "2026-08-11T12:00:00Z",
+      "page_modified_datetime": "2026-08-11T18:18:10+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-10024",
       "merger_name": "Triton \u2013 Flender",
       "determination": "Approved",
@@ -323,16 +333,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-04T12:00:00Z",
       "page_modified_datetime": "2026-08-04T17:29:51+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-75034",
-      "merger_name": "Kanda Healthcare \u2013 Live Your Way, QLD",
-      "determination": "Approved",
-      "determination_date": "2026-08-04T12:00:00Z",
-      "page_modified_datetime": "2026-08-04T17:28:14+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

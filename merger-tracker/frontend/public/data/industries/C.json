@@ -21,7 +21,7 @@
       "code": "13",
       "name": "Textile, Leather, Clothing and Footwear Manufacturing",
       "level": "subdivision",
-      "merger_count": 0
+      "merger_count": 1
     },
     {
       "code": "14",
@@ -283,6 +283,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-05-12T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-50033",
+      "merger_name": "Koch \u2013 additional interest in Victoria PLC",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-17T12:00:00Z",
+      "determination_date": "2026-08-11T12:00:00Z"
     },
     {
       "merger_id": "WA-70029",
@@ -1539,10 +1550,10 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 131,
+  "count": 132,
   "phase_1_count": 62,
   "phase_2_count": 2,
-  "waiver_count": 67,
+  "waiver_count": 68,
   "active_count": 17,
   "phase_duration": {
     "average_days": 29.770833333333332,
@@ -1552,10 +1563,10 @@
     "completed_count": 48
   },
   "waiver_duration": {
-    "average_days": 17.865671641791046,
-    "median_days": 17,
-    "average_business_days": 11.865671641791044,
-    "median_business_days": 11,
-    "completed_count": 67
+    "average_days": 17.970588235294116,
+    "median_days": 17.0,
+    "average_business_days": 11.941176470588236,
+    "median_business_days": 11.0,
+    "completed_count": 68
   }
 }
