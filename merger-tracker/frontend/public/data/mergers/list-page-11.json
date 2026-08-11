@@ -1501,7 +1501,7 @@
     },
     {
       "merger_id": "MN-15030",
-      "merger_name": "Karmo/Simplr",
+      "merger_name": "KARMO/SIMPLR",
       "status": "Under assessment",
       "accc_determination": null,
       "has_conditions": false,
@@ -1525,21 +1525,21 @@
       ],
       "targets": [
         {
-          "name": "SUBMO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "19 637 015 457",
-          "party_page": {
-            "id": "submo-pty-ltd",
-            "name": "Submo Pty Ltd"
-          }
-        },
-        {
           "name": "EAGERS AUTOMOTIVE LIMITED",
           "identifier_type": "ABN",
           "identifier": "87 009 680 013",
           "party_page": {
             "id": "eagers-automotive-limited",
             "name": "Eagers Automotive Limited"
+          }
+        },
+        {
+          "name": "SUBMO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "19 637 015 457",
+          "party_page": {
+            "id": "submo-pty-ltd",
+            "name": "Submo Pty Ltd"
           }
         }
       ],
