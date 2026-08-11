@@ -1,6 +1,72 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-35029",
+      "merger_name": "L'Or\u00e9al - Innovist",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-21T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-08-31T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "L'Or\u00e9al India Private Limited",
+          "identifier_type": null,
+          "identifier": "",
+          "canonical": {
+            "id": "l-oreal",
+            "name": "L'Oreal"
+          },
+          "party_page": {
+            "id": "l-oreal",
+            "name": "L'Oreal"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Onesto Labs Private Limited",
+          "identifier_type": null,
+          "identifier": "CIN  U74999DL2018PTC340749",
+          "party_page": {
+            "id": "onesto-labs-private-limited",
+            "name": "Onesto Labs Private Limited"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "L'Or\u00e9al S.A.",
+          "identifier_type": null,
+          "identifier": "SIREN  632 012 100",
+          "canonical": {
+            "id": "l-oreal",
+            "name": "L'Oreal"
+          },
+          "party_page": {
+            "id": "l-oreal",
+            "name": "L'Oreal"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3720",
+          "name": "Pharmaceutical and Toiletry Goods Wholesaling"
+        },
+        {
+          "code": "4271",
+          "name": "Pharmaceutical, Cosmetic and Toiletry Goods Retailing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/lor%C3%A9al-innovist"
+    },
+    {
       "merger_id": "WA-20030",
       "merger_name": "Baupost \u2013 McDermott",
       "status": "Assessment completed",
