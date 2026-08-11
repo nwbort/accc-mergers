@@ -18,7 +18,11 @@ function statsFixture(overrides = {}) {
     total_waivers: 4,
     by_status: { 'Under assessment': 2 },
     by_determination: { Approved: 6, 'Referred to phase 2': 3 },
-    by_phase_2_determination: { Approved: 1, 'Not approved': 1, 'Assessment ceased': 1 },
+    by_phase_2_determination: {
+      'Assessment ceased': 1,
+      'Not approved': 1,
+      'Approved with conditions': 1,
+    },
     by_waiver_determination: { Approved: 4 },
     phase_duration: { average_business_days: 20, median_business_days: 18 },
     ...overrides,
@@ -51,15 +55,17 @@ describe('Dashboard phase 2 determination chart', () => {
     dataCache.clear();
   });
 
-  it('charts ceased assessments alongside the phase 2 determinations', async () => {
+  it('charts conditional approvals and ceased assessments as their own outcomes', async () => {
     renderDashboard(statsFixture());
 
     const summary = await screen.findByRole('table', {
       name: /Phase 2 determination breakdown/,
     });
     const rows = within(summary).getAllByRole('row').slice(1); // drop the header
+    // Fixed cleared → blocked → withdrawn order, whatever order stats.json
+    // happens to list the outcomes in.
     expect(rows.map((row) => row.textContent)).toEqual([
-      'Approved1',
+      'Approved with conditions1',
       'Not approved1',
       'Assessment ceased1',
     ]);

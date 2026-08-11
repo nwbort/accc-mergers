@@ -268,7 +268,7 @@ class TestStatsGenerate:
 
 
 def _phase_2_fixture():
-    """Three Phase 2 matters: one determined, one ceased, one still running."""
+    """Four Phase 2 matters: two determined, one ceased, one still running."""
     return _raw_fixture() + [
         {
             'merger_id': 'MN-0007',
@@ -329,6 +329,26 @@ def _phase_2_fixture():
                 {'title': 'Decision to Proceed to a Phase 2 review', 'date': '2026-05-20T12:00:00Z'},
             ],
         },
+        {
+            'merger_id': 'MN-0010',
+            'merger_name': 'Mu approved in phase 2 on undertakings',
+            'status': merger_status.ASSESSMENT_COMPLETED,
+            'accc_determination': merger_status.APPROVED,
+            'stage': 'Phase 2 - detailed assessment',
+            'effective_notification_datetime': '2025-12-01T09:00:00Z',
+            'determination_publication_date': '2026-05-11T12:00:00Z',
+            'page_modified_datetime': '2026-05-11T12:30:00Z',
+            'anzsic_codes': [],
+            'acquirers': ['Mu'],
+            'targets': ['Tau'],
+            'other_parties': [],
+            'url': 'https://example.com/MN-0010',
+            'events': [
+                {'title': 'Merger notified to ACCC', 'date': '2025-12-01T09:00:00Z'},
+                {'title': 'Decision to Proceed to a Phase 2 review', 'date': '2026-02-02T12:00:00Z'},
+                {'title': 'ACCC accepted s 87B undertaking', 'date': '2026-05-11T12:00:00Z'},
+            ],
+        },
     ]
 
 
@@ -337,19 +357,31 @@ class TestStatsPhase2Determinations:
 
     def test_counts_determinations_and_withdrawals(self):
         payload = stats.generate([enrich_merger(m) for m in _phase_2_fixture()])
-        # The ceased matter is charted as its own outcome — a Phase 2 review
-        # the parties dropped out of, never determined — while MN-0009, still
-        # in Phase 2, has no outcome to count yet.
+        # MN-0010's approval came with a s 87B undertaking, so it counts apart
+        # from an unconditional clearance. The ceased matter is charted as its
+        # own outcome — a Phase 2 review the parties dropped out of, never
+        # determined — while MN-0009, still in Phase 2, has none to count yet.
         assert payload['by_phase_2_determination'] == {
+            merger_status.APPROVED_WITH_CONDITIONS: 1,
             merger_status.NOT_APPROVED: 1,
             merger_status.ASSESSMENT_CEASED: 1,
         }
 
+    def test_unconditional_approval_keeps_the_plain_label(self):
+        mergers = _phase_2_fixture()
+        conditional = next(m for m in mergers if m['merger_id'] == 'MN-0010')
+        conditional['events'] = [
+            e for e in conditional['events'] if '87B' not in e['title']
+        ]
+        payload = stats.generate([enrich_merger(m) for m in mergers])
+        assert payload['by_phase_2_determination'][merger_status.APPROVED] == 1
+        assert merger_status.APPROVED_WITH_CONDITIONS not in payload['by_phase_2_determination']
+
     def test_phase_1_determinations_stay_separate(self):
         payload = stats.generate([enrich_merger(m) for m in _phase_2_fixture()])
-        # A Phase 2 outcome must not leak into the Phase 1 chart: all three
+        # A Phase 2 outcome must not leak into the Phase 1 chart: all four
         # referred matters count once there, as "Referred to phase 2".
-        assert payload['by_determination'][merger_status.REFERRED_TO_PHASE_2] == 3
+        assert payload['by_determination'][merger_status.REFERRED_TO_PHASE_2] == 4
         assert merger_status.ASSESSMENT_CEASED not in payload['by_determination']
 
     def test_reconciles_with_phase_2_tracker(self):

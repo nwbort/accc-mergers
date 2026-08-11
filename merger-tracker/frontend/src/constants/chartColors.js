@@ -16,6 +16,10 @@ export const CHART_PALETTE = {
   teal: '#6b8f7f',
   tealLight: 'rgba(107, 143, 127, 0.15)',
   sage: '#8cafa0',
+  // Approvals granted subject to conditions — a lighter primary, so a
+  // conditional clearance reads as the same family as an outright one while
+  // staying its own segment.
+  primarySoft: '#5f8a76',
   // Ceased assessments — the purple the rest of the site marks them with
   // (badges, timeline dots, digest), muted to sit beside the earth tones
   // above rather than dominate the chart.
@@ -33,10 +37,12 @@ export const CHART_PALETTE_ORDER = [
 
 // merger.accc_determination -> chart colour, so "Approved" is always the
 // primary green regardless of key order in the underlying stats object.
-// Also keyed by "Assessment ceased", which the Phase 2 chart plots as an
-// outcome in its own right (a review the parties dropped out of).
+// Also keyed by the two outcomes the Phase 2 chart plots in their own right:
+// "Approved with conditions", and "Assessment ceased" (a review the parties
+// dropped out of).
 export const DETERMINATION_COLORS = {
   [MERGER_STATUS.APPROVED]: CHART_PALETTE.primary,
+  [MERGER_STATUS.APPROVED_WITH_CONDITIONS]: CHART_PALETTE.primarySoft,
   [MERGER_STATUS.NOT_APPROVED]: CHART_PALETTE.accent,
   [MERGER_STATUS.DECLINED]: CHART_PALETTE.accent,
   [MERGER_STATUS.NOT_OPPOSED]: CHART_PALETTE.teal,

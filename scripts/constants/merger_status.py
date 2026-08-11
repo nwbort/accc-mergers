@@ -31,6 +31,14 @@ REFERRED_TO_PHASE_2 = 'Referred to phase 2'
 CLEARED_DETERMINATIONS = frozenset({APPROVED, NOT_OPPOSED})
 BLOCKED_DETERMINATIONS = frozenset({NOT_APPROVED, DECLINED})
 
+# Display label, not an ACCC-published value: the register records a
+# conditional clearance as a plain "Approved" and carries the conditions
+# separately (merger['has_conditions'], set by enrichment.detect_has_conditions).
+# Used where the two need to read as distinct outcomes — currently stats.json's
+# Phase 2 outcome counts. Mirrors the "· with conditions" the frontend's
+# StatusBadge appends elsewhere.
+APPROVED_WITH_CONDITIONS = 'Approved with conditions'
+
 # Values that appear in merger['stage'].
 PHASE_1 = 'Phase 1'
 PHASE_2 = 'Phase 2'

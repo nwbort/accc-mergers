@@ -103,14 +103,20 @@ def generate(mergers: list) -> dict:
     # have concluded — including the ones the parties withdrew from, which end
     # as a ceased assessment rather than a determination. Matters still in
     # Phase 2 are excluded, so this reconciles with the completed matters on
-    # the Phase 2 tracker (phase2.json).
+    # the Phase 2 tracker (phase2.json). Approvals split by whether conditions
+    # were imposed: at Phase 2 that distinction is the point, since a clearance
+    # bought with a s 87B undertaking or a divestiture is a different result
+    # from an unconditional one.
     by_phase_2_determination = defaultdict(int)
     for m in notification_mergers:
         if merger_status.PHASE_2 not in (m.get('stage') or ''):
             continue
         det, det_date = phase_2_outcome(m)
-        if det and det_date:
-            by_phase_2_determination[det] += 1
+        if not (det and det_date):
+            continue
+        if det == merger_status.APPROVED and m.get('has_conditions'):
+            det = merger_status.APPROVED_WITH_CONDITIONS
+        by_phase_2_determination[det] += 1
 
     # By waiver determination
     by_waiver_determination = defaultdict(int)

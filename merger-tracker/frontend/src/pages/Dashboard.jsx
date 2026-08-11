@@ -35,11 +35,13 @@ ChartJS.register(
   ArcElement
 );
 
-// Fixed segment order for the Phase 2 doughnut, so the chart doesn't reshuffle
-// as determinations land. "Assessment ceased" sits last because it isn't a
-// determination at all — it's a Phase 2 review the parties withdrew from.
+// Fixed segment order for the Phase 2 doughnut, running cleared → blocked, so
+// the chart doesn't reshuffle as determinations land. "Assessment ceased" sits
+// last because it isn't a determination at all — it's a Phase 2 review the
+// parties withdrew from.
 const PHASE_2_OUTCOME_ORDER = [
   MERGER_STATUS.APPROVED,
+  MERGER_STATUS.APPROVED_WITH_CONDITIONS,
   MERGER_STATUS.NOT_OPPOSED,
   MERGER_STATUS.NOT_APPROVED,
   MERGER_STATUS.DECLINED,
