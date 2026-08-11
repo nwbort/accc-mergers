@@ -8,7 +8,7 @@ are already computed by :func:`static_data.enrichment.enrich_merger`.
 
 from constants import merger_status
 
-from ..enrichment import is_phase_2_referral_event
+from ..enrichment import is_phase_2_referral_event, phase_2_outcome
 from ..filters import filter_notifications
 from ..loaders import FORWARD_REFILE_RELATIONSHIPS
 
@@ -37,13 +37,9 @@ def _entry(merger: dict) -> dict:
     nocc_date, nocc_issued = _nocc(merger)
 
     # A ceased assessment ends the Phase 2 review without a formal
-    # determination, so treat the cessation itself as the outcome (mirrors
-    # stats.py's "recent determinations" handling of ceased assessments).
-    determination = merger.get('phase_2_determination')
-    determination_date = merger.get('phase_2_determination_date')
-    if not determination and merger.get('status') == merger_status.ASSESSMENT_CEASED:
-        determination = merger_status.ASSESSMENT_CEASED
-        determination_date = merger.get('ceased_date')
+    # determination, so the cessation counts as the outcome — see
+    # enrichment.phase_2_outcome, shared with stats.json's outcome counts.
+    determination, determination_date = phase_2_outcome(merger)
 
     return {
         'merger_id': merger.get('merger_id'),

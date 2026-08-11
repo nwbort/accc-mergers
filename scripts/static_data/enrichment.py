@@ -104,6 +104,23 @@ def is_phase_2_referral_event(event_title: str) -> bool:
     )
 
 
+def phase_2_outcome(merger: dict) -> tuple:
+    """Return ``(determination, date)`` for a Phase 2 review that has concluded.
+
+    A ceased assessment ends the review without a formal determination, so the
+    cessation itself is treated as the outcome (mirroring how stats.py's
+    "recent determinations" handles ceased assessments). Returns ``(None, None)``
+    while a matter is still in Phase 2. Shared by phase2.json's completed-matter
+    cards and stats.json's Phase 2 outcome counts so the two can't drift.
+    """
+    determination = merger.get('phase_2_determination')
+    determination_date = merger.get('phase_2_determination_date')
+    if not determination and merger.get('status') == merger_status.ASSESSMENT_CEASED:
+        determination = merger_status.ASSESSMENT_CEASED
+        determination_date = merger.get('ceased_date')
+    return determination, determination_date
+
+
 def strip_event_status(merger: dict) -> dict:
     """Return a copy of ``merger`` with each event's 'status' key dropped.
 

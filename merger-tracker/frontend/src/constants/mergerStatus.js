@@ -24,6 +24,12 @@ export const MERGER_STATUS = {
   DECLINED: 'Declined',
   NOT_OPPOSED: 'Not opposed',
   REFERRED_TO_PHASE_2: 'Referred to phase 2',
+
+  // Display label rather than a register value — the ACCC records a
+  // conditional clearance as a plain "Approved" with merger.has_conditions set
+  // alongside. Charts that need the two to read as separate outcomes get this
+  // label from the data pipeline (see scripts/constants/merger_status.py).
+  APPROVED_WITH_CONDITIONS: 'Approved with conditions',
 };
 
 // Values that appear in merger.stage.
