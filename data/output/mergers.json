@@ -2902,6 +2902,10 @@
           "name": "Koch, Inc.",
           "identifier_type": null,
           "identifier": "Company number  992449504",
+          "canonical": {
+            "id": "koch-inc",
+            "name": "Koch, Inc."
+          },
           "party_page": {
             "id": "koch-inc",
             "name": "Koch, Inc."
@@ -13149,9 +13153,13 @@
           "name": "The Trustee for AWARE SUPER",
           "identifier_type": "ABN",
           "identifier": "53 226 460 365",
+          "canonical": {
+            "id": "aware-super-pty-limited",
+            "name": "Aware Super Pty Limited"
+          },
           "party_page": {
-            "id": "the-trustee-for-aware-super",
-            "name": "The Trustee for AWARE SUPER"
+            "id": "aware-super-pty-limited",
+            "name": "Aware Super Pty Limited"
           }
         },
         {
@@ -47026,6 +47034,10 @@
           "name": "AWARE SUPER PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "11 118 202 672",
+          "canonical": {
+            "id": "aware-super-pty-limited",
+            "name": "Aware Super Pty Limited"
+          },
           "party_page": {
             "id": "aware-super-pty-limited",
             "name": "Aware Super Pty Limited"
@@ -101284,8 +101296,12 @@
           "name": "Koch, Inc.",
           "identifier_type": null,
           "identifier": "US Employer Identification Number: 992449504",
+          "canonical": {
+            "id": "koch-inc",
+            "name": "Koch, Inc."
+          },
           "party_page": {
-            "id": "koch-inc-2",
+            "id": "koch-inc",
             "name": "Koch, Inc."
           }
         }
