@@ -37,10 +37,21 @@
       "code": "624",
       "name": "Financial Asset Investing",
       "level": "group",
-      "merger_count": 76
+      "merger_count": 77
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-70030",
+      "merger_name": "Aware Super \u2013 Increased interest in Keyton",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-10T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-35034",
       "merger_name": "The Independents Group \u2013 acquisition of entities within the Smuggler Group",
@@ -966,11 +977,11 @@
       "determination_date": null
     }
   ],
-  "count": 84,
-  "phase_1_count": 17,
+  "count": 85,
+  "phase_1_count": 18,
   "phase_2_count": 1,
   "waiver_count": 66,
-  "active_count": 7,
+  "active_count": 8,
   "phase_duration": {
     "average_days": 30.181818181818183,
     "median_days": 23,

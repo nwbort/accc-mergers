@@ -1,10 +1,10 @@
 {
-  "total_mergers": 217,
+  "total_mergers": 218,
   "total_waivers": 318,
   "total_conditional_approvals": 2,
   "by_status": {
     "Assessment completed": 160,
-    "Under assessment": 54,
+    "Under assessment": 55,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -55,7 +55,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 76
+      "count": 77
     },
     {
       "name": "Computer System Design and Related Services",
@@ -95,6 +95,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-70030",
+      "merger_name": "Aware Super \u2013 Increased interest in Keyton",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-10T12:00:00Z",
+      "page_modified_datetime": "2026-08-11T17:23:51+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-05044",
       "merger_name": "Holcim Australia \u2013 Burdetts Group",
@@ -202,16 +212,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-04T12:00:00Z",
       "page_modified_datetime": "2026-08-05T16:35:42+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-35033",
-      "merger_name": "MERIVALE \u2013 THE SACKVILLE HOTEL",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-04T12:00:00Z",
-      "page_modified_datetime": "2026-08-05T12:43:56+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

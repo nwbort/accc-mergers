@@ -24,7 +24,7 @@
       "code": "6711",
       "name": "Residential Property Operators",
       "level": "class",
-      "merger_count": 4
+      "merger_count": 5
     },
     {
       "code": "6712",
@@ -34,6 +34,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-70030",
+      "merger_name": "Aware Super \u2013 Increased interest in Keyton",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-10T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-35033",
       "merger_name": "MERIVALE \u2013 THE SACKVILLE HOTEL",
@@ -343,11 +354,11 @@
       "determination_date": "2025-11-18T12:00:00Z"
     }
   ],
-  "count": 28,
-  "phase_1_count": 9,
+  "count": 29,
+  "phase_1_count": 10,
   "phase_2_count": 1,
   "waiver_count": 18,
-  "active_count": 4,
+  "active_count": 5,
   "phase_duration": {
     "average_days": 34.166666666666664,
     "median_days": 29.5,
