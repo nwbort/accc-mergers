@@ -1,6 +1,6 @@
 import { formatDate } from '../utils/dates';
 import { isNewItem } from '../utils/lastVisit';
-import { DETERMINATION_LABELS } from '../constants/mergerStatus';
+import { DETERMINATION_LABELS, isConditionalApproval } from '../constants/mergerStatus';
 import { getCardStyle, NEW_ITEM_BORDER } from '../constants/cardStyles';
 import CardCollapseGrid from './CardCollapseGrid';
 import MergerCardBody, { CHIP_BASE_CLASS } from './MergerCardBody';
@@ -45,6 +45,11 @@ function RecentDeterminationsCards({ determinations }) {
             <span>{item.merger_id}</span>
             <span aria-hidden="true">·</span>
             <span>{formatDate(item.determination_date)}</span>
+            {isConditionalApproval(item) && (
+              <span className={`${CHIP_BASE_CLASS} font-medium ${style.chip}`}>
+                With conditions
+              </span>
+            )}
             {item.is_waiver && (
               <span className={`${CHIP_BASE_CLASS} font-medium ${style.chip}`}>
                 Waiver

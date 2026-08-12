@@ -46,6 +46,15 @@ export const DETERMINATION_LABELS = {
   [MERGER_STATUS.ASSESSMENT_CEASED]: 'Ceased',
 };
 
+// True when a card entry records a clearance granted subject to conditions.
+// The register publishes those as a plain "Approved" with has_conditions set
+// alongside, so the card grids spell the difference out rather than letting a
+// conditional clearance read as an unconditional one. The determination check
+// keeps a stale flag from surfacing on any other outcome (mirrors StatusBadge).
+export function isConditionalApproval(item) {
+  return Boolean(item?.has_conditions) && item?.determination === MERGER_STATUS.APPROVED;
+}
+
 // Fallback Tailwind classes for StatusBadge when no specific status matches.
 export const DEFAULT_STATUS_STYLE = 'bg-gray-50 text-gray-600 border-gray-200/60';
 

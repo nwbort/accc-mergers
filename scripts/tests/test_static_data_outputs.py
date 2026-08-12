@@ -200,6 +200,22 @@ class TestStatsGenerate:
         order = [m['merger_id'] for m in payload['recent_mergers']]
         assert order.index('MN-0002') < order.index('MN-0001')
 
+    def test_recent_determinations_flag_conditional_approvals(self):
+        # A conditional clearance is published as a plain "Approved"; the card
+        # grid needs has_conditions to tell the two apart.
+        mergers = _raw_fixture()
+        conditional = next(m for m in mergers if m['merger_id'] == 'MN-0001')
+        conditional['accc_determination_raw'] = 'Approved subject to conditions'
+        enriched = [enrich_merger(m) for m in mergers]
+        payload = stats.generate(enriched)
+        by_id = {
+            d['merger_id']: d for d in payload['recent_determinations']
+            if d['determination_type'] == 'final'
+        }
+        assert by_id['MN-0001']['determination'] == merger_status.APPROVED
+        assert by_id['MN-0001']['has_conditions'] is True
+        assert by_id['WA-0003']['has_conditions'] is False
+
     def test_recent_determinations_includes_ceased_assessments(self):
         mergers = _raw_fixture()
         mergers.append({

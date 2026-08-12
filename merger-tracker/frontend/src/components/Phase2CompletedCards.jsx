@@ -1,5 +1,5 @@
 import { calculateDuration } from '../utils/dates';
-import { DETERMINATION_LABELS } from '../constants/mergerStatus';
+import { DETERMINATION_LABELS, isConditionalApproval } from '../constants/mergerStatus';
 import { getCardStyle } from '../constants/cardStyles';
 import CardCollapseGrid from './CardCollapseGrid';
 import MergerCardBody, { CHIP_BASE_CLASS } from './MergerCardBody';
@@ -28,6 +28,11 @@ function Phase2CompletedCards({ matters }) {
                 <span aria-hidden="true">·</span>
                 <span className="tabular-nums">{duration} days in Phase 2</span>
               </>
+            )}
+            {isConditionalApproval(item) && (
+              <span className={`${CHIP_BASE_CLASS} font-medium ${style.chip}`}>
+                With conditions
+              </span>
             )}
             {item.is_refiled && (
               <span className={`${CHIP_BASE_CLASS} font-medium ${style.chip}`}>
