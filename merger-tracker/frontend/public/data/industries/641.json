@@ -49,12 +49,12 @@
       "merger_id": "MN-75029",
       "merger_name": "Analogic - Leidos SES business",
       "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
+      "status": "Assessment completed",
+      "determination": "Approved",
       "has_conditions": false,
       "phase": "Phase 1",
       "notification_date": "2026-07-08T12:00:00Z",
-      "determination_date": null
+      "determination_date": "2026-08-11T12:00:00Z"
     },
     {
       "merger_id": "WA-05035",
@@ -523,13 +523,13 @@
   "phase_1_count": 12,
   "phase_2_count": 0,
   "waiver_count": 32,
-  "active_count": 2,
+  "active_count": 1,
   "phase_duration": {
-    "average_days": 25.1,
-    "median_days": 24.5,
-    "average_business_days": 17.0,
-    "median_business_days": 16.0,
-    "completed_count": 10
+    "average_days": 25.90909090909091,
+    "median_days": 25,
+    "average_business_days": 17.636363636363637,
+    "median_business_days": 16,
+    "completed_count": 11
   },
   "waiver_duration": {
     "average_days": 19.5,

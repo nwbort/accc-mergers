@@ -692,6 +692,11 @@
         "in_progress": false
       },
       {
+        "business_days": 24,
+        "calendar_days": 34,
+        "in_progress": false
+      },
+      {
         "business_days": 17,
         "calendar_days": 25,
         "in_progress": false
@@ -834,17 +839,17 @@
     ],
     "stats": {
       "average": 19.9,
-      "median": 17.0,
+      "median": 17,
       "min": 15,
       "max": 59,
-      "count": 166
+      "count": 167
     },
     "calendar_stats": {
-      "average": 29.9,
-      "median": 26.0,
+      "average": 30.0,
+      "median": 26,
       "min": 21,
       "max": 103,
-      "count": 166
+      "count": 167
     }
   },
   "waiver_duration": {
@@ -2189,11 +2194,11 @@
     {
       "code": "S",
       "name": "Other Services",
-      "average_business_days": 29.5,
-      "median_business_days": 18.5,
-      "average_calendar_days": 44.3,
-      "median_calendar_days": 28.0,
-      "count": 6
+      "average_business_days": 28.7,
+      "median_business_days": 21,
+      "average_calendar_days": 42.9,
+      "median_calendar_days": 32,
+      "count": 7
     },
     {
       "code": "G",
@@ -2261,11 +2266,11 @@
     {
       "code": "F",
       "name": "Wholesale Trade",
-      "average_business_days": 21.6,
-      "median_business_days": 18,
+      "average_business_days": 21.7,
+      "median_business_days": 18.0,
       "average_calendar_days": 34.5,
-      "median_calendar_days": 27,
-      "count": 23
+      "median_calendar_days": 27.5,
+      "count": 24
     },
     {
       "code": "M",
@@ -2288,11 +2293,20 @@
     {
       "code": "C",
       "name": "Manufacturing",
-      "average_business_days": 19.8,
-      "median_business_days": 17.0,
-      "average_calendar_days": 29.8,
-      "median_calendar_days": 26.0,
-      "count": 48
+      "average_business_days": 19.9,
+      "median_business_days": 17,
+      "average_calendar_days": 29.9,
+      "median_calendar_days": 26,
+      "count": 49
+    },
+    {
+      "code": "K",
+      "name": "Financial and Insurance Services",
+      "average_business_days": 19.2,
+      "median_business_days": 16.0,
+      "average_calendar_days": 28.4,
+      "median_calendar_days": 24.5,
+      "count": 24
     },
     {
       "code": "E",
@@ -2302,15 +2316,6 @@
       "average_calendar_days": 27.6,
       "median_calendar_days": 25,
       "count": 13
-    },
-    {
-      "code": "K",
-      "name": "Financial and Insurance Services",
-      "average_business_days": 19.0,
-      "median_business_days": 16,
-      "average_calendar_days": 28.2,
-      "median_calendar_days": 24,
-      "count": 23
     },
     {
       "code": "J",
@@ -2360,19 +2365,19 @@
     },
     {
       "division": "A division of the Commission (s19 direction)",
-      "count": 91,
+      "count": 92,
       "outcome_mix": {
-        "Approved": 71,
+        "Approved": 72,
         "Not approved": 15,
         "Unknown": 5
       },
-      "median_phase_1_business_days": 19
+      "median_phase_1_business_days": 19.0
     },
     {
       "division": "Not yet determined",
-      "count": 52,
+      "count": 51,
       "outcome_mix": {
-        "Unknown": 52
+        "Unknown": 51
       },
       "median_phase_1_business_days": null
     },
@@ -2413,7 +2418,7 @@
       "20": 7,
       "21": 3,
       "22": 6,
-      "24": 3,
+      "24": 4,
       "25": 4,
       "26": 1,
       "27": 2,
@@ -2428,9 +2433,9 @@
     },
     "stats": {
       "mean_used_bd": 18.0,
-      "median_used_bd": 17,
+      "median_used_bd": 17.0,
       "pct_decided_final_3_bd": 3.9,
-      "count": 153
+      "count": 154
     },
     "extended_count": 5
   },
@@ -2462,11 +2467,11 @@
     {
       "code": "S",
       "name": "Other Services",
-      "approved": 4,
+      "approved": 5,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 5,
-      "phase2_referral_rate": 0.333
+      "in_progress": 4,
+      "phase2_referral_rate": 0.286
     },
     {
       "code": "G",
@@ -2498,20 +2503,20 @@
     {
       "code": "F",
       "name": "Wholesale Trade",
-      "approved": 21,
+      "approved": 22,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 8,
-      "phase2_referral_rate": 0.087
+      "in_progress": 7,
+      "phase2_referral_rate": 0.083
     },
     {
       "code": "K",
       "name": "Financial and Insurance Services",
-      "approved": 21,
+      "approved": 22,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 10,
-      "phase2_referral_rate": 0.087
+      "in_progress": 9,
+      "phase2_referral_rate": 0.083
     },
     {
       "code": "E",
@@ -2534,11 +2539,11 @@
     {
       "code": "C",
       "name": "Manufacturing",
-      "approved": 46,
+      "approved": 47,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 17,
-      "phase2_referral_rate": 0.042
+      "in_progress": 16,
+      "phase2_referral_rate": 0.041
     },
     {
       "code": "D",
