@@ -27159,7 +27159,7 @@
     "original_notification_datetime": "2026-08-04T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-09-15T12:00:00Z",
-    "page_modified_datetime": "2026-08-05T12:32:12+10:00",
+    "page_modified_datetime": "2026-08-12T15:17:56+10:00",
     "consultation_response_due_date": "2026-08-12T12:00:00Z",
     "acquirers": [
       {
@@ -27177,14 +27177,14 @@
     ],
     "other_parties": [
       {
-        "name": "BP plc",
-        "identifier_type": null,
-        "identifier": "UK company number: 00102498"
-      },
-      {
         "name": "BP Australia Investments Pty Ltd",
         "identifier_type": "ABN",
         "identifier": "66 102 991 551"
+      },
+      {
+        "name": "BP plc",
+        "identifier_type": null,
+        "identifier": "UK company number: 00102498"
       }
     ],
     "anzsic_codes": [
@@ -27201,7 +27201,7 @@
         "display_title": "Questionnaire - bp - bp Gateway",
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20bp%20-%20bp%20Gateway.docx",
         "url_gh": "/mergers/MN-95033/Questionnaire - bp - bp Gateway.pdf",
-        "status": "live"
+        "status": "removed"
       },
       {
         "date": "2026-08-04T12:00:00Z",
