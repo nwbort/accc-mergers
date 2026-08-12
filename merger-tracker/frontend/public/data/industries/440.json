@@ -24,7 +24,7 @@
       "code": "4400",
       "name": "Accommodation",
       "level": "class",
-      "merger_count": 18
+      "merger_count": 19
     }
   ],
   "mergers": [
@@ -60,6 +60,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-01T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-85039",
+      "merger_name": "Iris Capital \u2013 Revesby Pacific Hotel and Crown Hotel",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-21T12:00:00Z",
+      "determination_date": "2026-08-12T12:00:00Z"
     },
     {
       "merger_id": "MN-90008",
@@ -227,10 +238,10 @@
       "determination_date": "2026-02-02T12:00:00Z"
     }
   ],
-  "count": 18,
+  "count": 19,
   "phase_1_count": 8,
   "phase_2_count": 0,
-  "waiver_count": 10,
+  "waiver_count": 11,
   "active_count": 3,
   "phase_duration": {
     "average_days": 37.4,
@@ -240,10 +251,10 @@
     "completed_count": 5
   },
   "waiver_duration": {
-    "average_days": 18.8,
-    "median_days": 17.5,
-    "average_business_days": 12.5,
-    "median_business_days": 12.0,
-    "completed_count": 10
+    "average_days": 19.09090909090909,
+    "median_days": 19,
+    "average_business_days": 12.818181818181818,
+    "median_business_days": 12,
+    "completed_count": 11
   }
 }

@@ -60,6 +60,17 @@
       "determination_date": null
     },
     {
+      "merger_id": "WA-85039",
+      "merger_name": "Iris Capital \u2013 Revesby Pacific Hotel and Crown Hotel",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-21T12:00:00Z",
+      "determination_date": "2026-08-12T12:00:00Z"
+    },
+    {
       "merger_id": "MN-90008",
       "merger_name": "Black Rhino - Club Hotel Motel Roma",
       "is_waiver": false,
@@ -302,10 +313,10 @@
       "determination_date": "2026-02-02T12:00:00Z"
     }
   ],
-  "count": 25,
+  "count": 26,
   "phase_1_count": 6,
   "phase_2_count": 0,
-  "waiver_count": 19,
+  "waiver_count": 20,
   "active_count": 3,
   "phase_duration": {
     "average_days": 43.0,
@@ -315,10 +326,10 @@
     "completed_count": 3
   },
   "waiver_duration": {
-    "average_days": 19.42105263157895,
-    "median_days": 18,
-    "average_business_days": 13.105263157894736,
-    "median_business_days": 12,
-    "completed_count": 19
+    "average_days": 19.55,
+    "median_days": 18.5,
+    "average_business_days": 13.25,
+    "median_business_days": 12.0,
+    "completed_count": 20
   }
 }

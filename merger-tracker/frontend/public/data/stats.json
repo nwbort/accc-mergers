@@ -1,6 +1,6 @@
 {
   "total_mergers": 219,
-  "total_waivers": 320,
+  "total_waivers": 321,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 162,
@@ -17,7 +17,7 @@
     "Assessment ceased": 2
   },
   "by_waiver_determination": {
-    "Approved": 306,
+    "Approved": 307,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -47,10 +47,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.090625,
-    "median_days": 18.0,
-    "average_business_days": 12.821875,
-    "median_business_days": 12.5
+    "average_days": 19.09968847352025,
+    "median_days": 18,
+    "average_business_days": 12.83177570093458,
+    "median_business_days": 13
   },
   "top_industries": [
     {
@@ -75,11 +75,11 @@
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 25
+      "count": 26
     },
     {
       "name": "Accommodation",
-      "count": 18
+      "count": 19
     },
     {
       "name": "Engineering Design and Engineering Consulting Services",
@@ -218,6 +218,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-85039",
+      "merger_name": "Iris Capital \u2013 Revesby Pacific Hotel and Crown Hotel",
+      "determination": "Approved",
+      "determination_date": "2026-08-12T12:00:00Z",
+      "page_modified_datetime": "2026-08-12T16:35:51+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-70033",
       "merger_name": "EQT Fund Management \u2013 Corza Biosurgery",
       "determination": "Approved",
@@ -336,17 +347,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-05037",
-      "merger_name": "The State of Western Australia \u2013 Mount Lawley Hospital",
-      "determination": "Approved",
-      "determination_date": "2026-08-05T12:00:00Z",
-      "page_modified_datetime": "2026-08-05T16:44:06+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]

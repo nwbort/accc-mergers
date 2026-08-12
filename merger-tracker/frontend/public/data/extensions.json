@@ -1,15 +1,15 @@
 {
   "summary": {
     "notifications_total": 219,
-    "matters_extended": 16,
-    "share_extended_pct": 7.3,
-    "extension_events_total": 22,
-    "total_extension_bd": 247,
-    "median_matter_extension_bd": 15,
+    "matters_extended": 17,
+    "share_extended_pct": 7.8,
+    "extension_events_total": 23,
+    "total_extension_bd": 259,
+    "median_matter_extension_bd": 15.0,
     "longest_single_bd": 30,
     "phase_2_total": 8,
     "extended_escalated_to_phase_2": 7,
-    "escalation_rate_given_extension_pct": 43.8,
+    "escalation_rate_given_extension_pct": 41.2,
     "phase_2_preceded_by_extension_pct": 87.5,
     "base_phase_2_rate_pct": 3.7,
     "statutory_phase_1_bd": 30
@@ -17,8 +17,8 @@
   "reasons": [
     {
       "category": "Requested by the merger parties",
-      "events": 14,
-      "business_days": 163
+      "events": 15,
+      "business_days": 175
     },
     {
       "category": "ACCC information request",
@@ -58,7 +58,7 @@
     },
     {
       "month": "2026-08",
-      "count": 1
+      "count": 2
     }
   ],
   "matters": [
@@ -311,6 +311,27 @@
           "reason_category": "ACCC information request",
           "reason_detail": "request for further information",
           "title": "Timeline extended by 4 business days \u2013 following request for further information"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-20017",
+      "merger_name": "Amplifon \u2013 GN Hearing",
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "notification_date": "2026-07-13T12:00:00Z",
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "escalated_to_phase_2": false,
+      "total_extension_bd": 12,
+      "extension_count": 1,
+      "extensions": [
+        {
+          "date": "2026-08-12T12:00:00Z",
+          "business_days": 12,
+          "reason_category": "Requested by the merger parties",
+          "reason_detail": "request by parties",
+          "title": "Timeline extended by 12 business days \u2013 following request by parties"
         }
       ]
     },
