@@ -814,6 +814,23 @@ class TestExtractDeadline:
         result = extract_deadline(text)
         assert result == "6 May 2026"
 
+    def test_deadline_with_day_name_without_comma(self):
+        # The ACCC template usually omits the comma (e.g. MN-60026).
+        text = "Deadline to respond: Tuesday 4 August 2026"
+        result = extract_deadline(text)
+        assert result == "4 August 2026"
+
+    def test_deadline_with_unbracketed_timezone(self):
+        # e.g. MN-30003 / MN-65005 — same template, no brackets on the zone.
+        text = "Deadline to respond: 5:00pm AEST on 1 July 2026"
+        result = extract_deadline(text)
+        assert result == "1 July 2026"
+
+    def test_deadline_with_time_but_no_timezone(self):
+        text = "Deadline to respond: 5pm on 1 July 2026"
+        result = extract_deadline(text)
+        assert result == "1 July 2026"
+
     def test_deadline_with_newline_in_date(self):
         text = "Deadline to respond: 25\nAugust 2025"
         # The regex uses DOTALL so \s+ matches newlines

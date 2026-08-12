@@ -62,6 +62,29 @@ def _build_caches_from_existing(json_path: Path):
     return cache, neg_cache
 
 
+# Optional "5.00pm (AEDT) on" / "5:00pm AEST on" / "10:00am on" prefix that
+# some questionnaires put between the "Deadline to respond:" label and the
+# date. The timezone's brackets are optional because the ACCC template is
+# inconsistent about them (e.g. MN-90008 brackets it, MN-30003 does not).
+_TIME_OF_DAY = r'\d{1,2}(?:[:.]\d{2})?\s*[ap]\.?m\.?'
+_TIMEZONE = r'\(?[A-Z]{2,5}\)?'
+_DEADLINE_TIME_PREFIX = rf'(?:{_TIME_OF_DAY})\s*(?:{_TIMEZONE})?\s*on\s+'
+
+# Optional word before the date — a weekday ("Tuesday 4 August 2026",
+# "Wednesday, 6 May 2026") or a linking word ("by 4 August 2026"). The comma
+# is optional: most questionnaires omit it, and requiring it previously lost
+# the deadline for every "Deadline to respond: <Weekday> <date>" matter.
+_DEADLINE_WORD_PREFIX = r'[A-Za-z]+,?\s+'
+
+_DEADLINE_RE = re.compile(
+    r'Deadline to respond:\s*'
+    rf'(?:{_DEADLINE_TIME_PREFIX})?'
+    rf'(?:{_DEADLINE_WORD_PREFIX})?'
+    r'(\d{1,2}\s+[A-Za-z]+\s+\d{4})',
+    re.IGNORECASE | re.DOTALL,
+)
+
+
 def extract_deadline(text: str) -> Optional[str]:
     """
     Extract the consultation closing date from the questionnaire.
@@ -69,7 +92,10 @@ def extract_deadline(text: str) -> Optional[str]:
     Looks for patterns like:
     - "Deadline to respond: 25 August 2025"
     - "Deadline to respond: 3 November 2025"
+    - "Deadline to respond: Tuesday 4 August 2026"
+    - "Deadline to respond: Wednesday, 6 May 2026"
     - "Deadline to respond: 5.00pm (AEDT) on 20 October 2025"
+    - "Deadline to respond: 5:00pm AEST on 1 July 2026"
 
     Args:
         text: Full text of the questionnaire PDF
@@ -77,12 +103,7 @@ def extract_deadline(text: str) -> Optional[str]:
     Returns:
         The deadline date as a string, or None if not found
     """
-    # Look for "Deadline to respond:" followed by optional time/timezone, then a date
-    # Pattern handles both formats:
-    # 1. "Deadline to respond: 25 August 2025"
-    # 2. "Deadline to respond: 5.00pm (AEDT) on 20 October 2025"
-    pattern = r'Deadline to respond:\s*(?:[\d:.apm]+\s*\([A-Z]+\)\s+on\s+)?(?:[A-Za-z]+,\s*)?(\d{1,2}\s+[A-Za-z]+\s+\d{4})'
-    match = re.search(pattern, text, re.IGNORECASE | re.DOTALL)
+    match = _DEADLINE_RE.search(text)
 
     if match:
         # Clean up the deadline by removing extra whitespace and newlines
