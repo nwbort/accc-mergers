@@ -1,6 +1,6 @@
 {
   "total_mergers": 219,
-  "total_waivers": 321,
+  "total_waivers": 322,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 164,
@@ -17,7 +17,7 @@
     "Assessment ceased": 2
   },
   "by_waiver_determination": {
-    "Approved": 307,
+    "Approved": 308,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -47,10 +47,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.09968847352025,
-    "median_days": 18,
-    "average_business_days": 12.83177570093458,
-    "median_business_days": 13
+    "average_days": 19.099378881987576,
+    "median_days": 18.5,
+    "average_business_days": 12.832298136645962,
+    "median_business_days": 13.0
   },
   "top_industries": [
     {
@@ -70,16 +70,20 @@
       "count": 35
     },
     {
+      "name": "Pubs, Taverns and Bars",
+      "count": 27
+    },
+    {
       "name": "Non-Residential Property Operators",
       "count": 26
     },
     {
-      "name": "Pubs, Taverns and Bars",
-      "count": 26
+      "name": "Accommodation",
+      "count": 20
     },
     {
-      "name": "Accommodation",
-      "count": 19
+      "name": "Liquor Retailing",
+      "count": 16
     },
     {
       "name": "Engineering Design and Engineering Consulting Services",
@@ -88,10 +92,6 @@
     {
       "name": "Scientific Research Services",
       "count": 16
-    },
-    {
-      "name": "Supermarket and Grocery Stores",
-      "count": 15
     }
   ],
   "recent_mergers": [
@@ -218,6 +218,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-85040",
+      "merger_name": "MA Financial (Redcape Fund) \u2013 Seven hospitality venues in NSW",
+      "determination": "Approved",
+      "determination_date": "2026-08-12T12:00:00Z",
+      "page_modified_datetime": "2026-08-12T16:49:11+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-85039",
       "merger_name": "Iris Capital \u2013 Revesby Pacific Hotel and Crown Hotel",
       "determination": "Approved",
@@ -336,17 +347,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-30003",
-      "merger_name": "MicroStar Logistics - Konvoy",
-      "determination": "Not approved",
-      "determination_date": "2026-08-07T12:00:00Z",
-      "page_modified_datetime": "2026-08-10T18:23:56+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 2 - detailed assessment",
       "has_conditions": false
     }
   ]

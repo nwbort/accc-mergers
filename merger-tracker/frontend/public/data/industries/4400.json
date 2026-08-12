@@ -71,6 +71,17 @@
       "determination_date": "2026-08-12T12:00:00Z"
     },
     {
+      "merger_id": "WA-85040",
+      "merger_name": "MA Financial (Redcape Fund) \u2013 Seven hospitality venues in NSW",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-24T12:00:00Z",
+      "determination_date": "2026-08-12T12:00:00Z"
+    },
+    {
       "merger_id": "MN-90008",
       "merger_name": "Black Rhino - Club Hotel Motel Roma",
       "is_waiver": false,
@@ -236,10 +247,10 @@
       "determination_date": "2026-02-02T12:00:00Z"
     }
   ],
-  "count": 19,
+  "count": 20,
   "phase_1_count": 8,
   "phase_2_count": 0,
-  "waiver_count": 11,
+  "waiver_count": 12,
   "active_count": 3,
   "phase_duration": {
     "average_days": 37.4,
@@ -249,10 +260,10 @@
     "completed_count": 5
   },
   "waiver_duration": {
-    "average_days": 19.09090909090909,
-    "median_days": 19,
-    "average_business_days": 12.818181818181818,
-    "median_business_days": 12,
-    "completed_count": 11
+    "average_days": 19.083333333333332,
+    "median_days": 19.0,
+    "average_business_days": 12.833333333333334,
+    "median_business_days": 12.5,
+    "completed_count": 12
   }
 }

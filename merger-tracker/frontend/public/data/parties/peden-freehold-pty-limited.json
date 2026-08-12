@@ -1,0 +1,41 @@
+{
+  "id": "peden-freehold-pty-limited",
+  "canonical_name": "Peden Freehold Pty Limited",
+  "members": [
+    {
+      "name": "Peden Freehold Pty Limited",
+      "identifier": "626 902 645",
+      "identifier_type": "ACN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [
+      {
+        "merger_id": "WA-85040",
+        "merger_name": "MA Financial (Redcape Fund) \u2013 Seven hospitality venues in NSW",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Waiver",
+        "notification_date": "2026-07-24T12:00:00Z",
+        "determination_date": "2026-08-12T12:00:00Z"
+      }
+    ],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null,
+  "waiver_duration": {
+    "average_days": 19.0,
+    "median_days": 19,
+    "average_business_days": 13.0,
+    "median_business_days": 13,
+    "completed_count": 1
+  }
+}
