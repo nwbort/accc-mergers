@@ -3,12 +3,12 @@
   "total_waivers": 321,
   "total_conditional_approvals": 3,
   "by_status": {
-    "Assessment completed": 163,
-    "Under assessment": 53,
+    "Assessment completed": 164,
+    "Under assessment": 52,
     "Assessment ceased": 3
   },
   "by_determination": {
-    "Approved": 160,
+    "Approved": 161,
     "Referred to phase 2": 8
   },
   "by_phase_2_determination": {
@@ -21,28 +21,28 @@
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 161,
+    "cleared": 162,
     "not_cleared": 2,
-    "total": 163,
+    "total": 164,
     "rate": 0.988
   },
   "phase_duration": {
-    "average_days": 29.910714285714285,
-    "median_days": 26.0,
-    "average_business_days": 19.863095238095237,
-    "median_business_days": 17.0,
+    "average_days": 29.928994082840237,
+    "median_days": 26,
+    "average_business_days": 19.881656804733726,
+    "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 40,
-        "percentage": 23.8
+        "percentage": 23.7
       },
       "day20": {
         "count": 129,
-        "percentage": 76.8
+        "percentage": 76.3
       },
       "day30": {
-        "count": 158,
-        "percentage": 94.0
+        "count": 159,
+        "percentage": 94.1
       }
     }
   },
@@ -251,6 +251,17 @@
       "has_conditions": false
     },
     {
+      "merger_id": "MN-01105",
+      "merger_name": "Siemens Mobility - MerMec",
+      "determination": "Approved",
+      "determination_date": "2026-08-12T12:00:00Z",
+      "page_modified_datetime": "2026-08-12T16:11:32+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-90008",
       "merger_name": "Black Rhino - Club Hotel Motel Roma",
       "determination": "Approved",
@@ -336,17 +347,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 2 - detailed assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-05035",
-      "merger_name": "Alter Domus - MSC Group",
-      "determination": "Approved",
-      "determination_date": "2026-08-07T12:00:00Z",
-      "page_modified_datetime": "2026-08-07T16:41:43+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]

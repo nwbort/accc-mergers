@@ -1659,14 +1659,14 @@
     {
       "merger_id": "MN-01105",
       "merger_name": "Siemens Mobility - MerMec",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "has_conditions": false,
       "is_waiver": false,
       "under_appeal": false,
       "is_refiled": false,
       "effective_notification_datetime": "2026-07-10T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-08-12T12:00:00Z",
       "end_of_determination_period": "2026-08-21T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -1702,22 +1702,18 @@
           }
         },
         {
-          "name": "SIEMENS MOBILITY PTY. LTD.",
+          "name": "MERMEC AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "39 625 304 556",
-          "canonical": {
-            "id": "siemens-mobility-gmbh",
-            "name": "Siemens Mobility GmbH"
-          },
+          "identifier": "42 619 285 988",
           "party_page": {
-            "id": "siemens-mobility-gmbh",
-            "name": "Siemens Mobility GmbH"
+            "id": "mermec-australia-pty-ltd",
+            "name": "Mermec Australia Pty Ltd"
           }
         },
         {
-          "name": "Siemens Mobility GmbH",
-          "identifier_type": null,
-          "identifier": "LEI  529900LT6G2TUO3TZB94",
+          "name": "SIEMENS MOBILITY PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "39 625 304 556",
           "canonical": {
             "id": "siemens-mobility-gmbh",
             "name": "Siemens Mobility GmbH"
@@ -1737,12 +1733,16 @@
           }
         },
         {
-          "name": "MERMEC AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "42 619 285 988",
+          "name": "Siemens Mobility GmbH",
+          "identifier_type": null,
+          "identifier": "LEI  529900LT6G2TUO3TZB94",
+          "canonical": {
+            "id": "siemens-mobility-gmbh",
+            "name": "Siemens Mobility GmbH"
+          },
           "party_page": {
-            "id": "mermec-australia-pty-ltd",
-            "name": "Mermec Australia Pty Ltd"
+            "id": "siemens-mobility-gmbh",
+            "name": "Siemens Mobility GmbH"
           }
         }
       ],
