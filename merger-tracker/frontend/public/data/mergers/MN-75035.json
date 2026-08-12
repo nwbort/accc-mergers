@@ -7,7 +7,7 @@
   "original_notification_datetime": "2026-08-05T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-09-16T12:00:00Z",
-  "page_modified_datetime": "2026-08-05T15:03:33+10:00",
+  "page_modified_datetime": "2026-08-12T17:06:34+10:00",
   "consultation_response_due_date": "2026-08-12T12:00:00Z",
   "acquirers": [
     {
@@ -22,15 +22,6 @@
   ],
   "targets": [
     {
-      "name": "C&M Central Pty Ltd",
-      "identifier_type": "ACN",
-      "identifier": "649 711 053",
-      "party_page": {
-        "id": "c-m-central-pty-ltd",
-        "name": "C&M Central Pty Ltd"
-      }
-    },
-    {
       "name": "C&M Central Unit Trust",
       "identifier_type": "ABN",
       "identifier": "47 351 736 164",
@@ -38,18 +29,18 @@
         "id": "c-m-central-unit-trust",
         "name": "C&M Central Unit Trust"
       }
+    },
+    {
+      "name": "C&M Central Pty Ltd",
+      "identifier_type": "ACN",
+      "identifier": "649 711 053",
+      "party_page": {
+        "id": "c-m-central-pty-ltd",
+        "name": "C&M Central Pty Ltd"
+      }
     }
   ],
   "other_parties": [
-    {
-      "name": "JOHNS LYNG GROUP LIMITED",
-      "identifier_type": "ABN",
-      "identifier": "86 620 466 248",
-      "party_page": {
-        "id": "johns-lyng-group-limited",
-        "name": "Johns Lyng Group Limited"
-      }
-    },
     {
       "name": "SHERWOOD TOPCO LTD",
       "identifier_type": "ABN",
@@ -57,6 +48,15 @@
       "party_page": {
         "id": "sherwood-topco-ltd",
         "name": "Sherwood Topco Ltd"
+      }
+    },
+    {
+      "name": "JOHNS LYNG GROUP LIMITED",
+      "identifier_type": "ABN",
+      "identifier": "86 620 466 248",
+      "party_page": {
+        "id": "johns-lyng-group-limited",
+        "name": "Johns Lyng Group Limited"
       }
     }
   ],
