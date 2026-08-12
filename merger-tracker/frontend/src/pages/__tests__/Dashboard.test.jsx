@@ -71,6 +71,20 @@ describe('Dashboard phase 2 determination chart', () => {
     ]);
   });
 
+  // `sr-only`'s width: 1px is only a minimum for a table box, so an sr-only
+  // table lays out at its full content width and, being absolutely positioned,
+  // widens the whole page on mobile. The clipping has to happen on a div.
+  it('hides each chart summary table behind an sr-only wrapper, not on the table', async () => {
+    renderDashboard(statsFixture());
+
+    const summaries = await screen.findAllByRole('table', { hidden: true });
+    expect(summaries).toHaveLength(3);
+    for (const table of summaries) {
+      expect(table).not.toHaveClass('sr-only');
+      expect(table.parentElement).toHaveClass('sr-only');
+    }
+  });
+
   it('omits the chart until a phase 2 review has concluded', async () => {
     renderDashboard(statsFixture({ by_phase_2_determination: {} }));
 
