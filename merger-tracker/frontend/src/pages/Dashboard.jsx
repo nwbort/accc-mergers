@@ -287,15 +287,22 @@ function Dashboard() {
             <div className="h-64" role="img" aria-labelledby="chart-phase1-title" aria-describedby="chart-phase1-summary">
               <Doughnut data={determinationData} options={chartOptions} />
             </div>
-            <table id="chart-phase1-summary" className="sr-only">
-              <caption>Phase 1 determination breakdown</caption>
-              <thead><tr><th>Determination</th><th>Count</th></tr></thead>
-              <tbody>
-                {Object.entries(stats.by_determination).map(([det, count]) => (
-                  <tr key={det}><td>{det}</td><td>{count}</td></tr>
-                ))}
-              </tbody>
-            </table>
+            {/* The sr-only wrapper has to be a div: `sr-only`'s width: 1px is
+                only a minimum for a table box, so a bare sr-only table lays
+                out at its full content width and — being absolutely
+                positioned against the viewport — widens the whole page on
+                mobile. The div clips it for real. */}
+            <div className="sr-only">
+              <table id="chart-phase1-summary">
+                <caption>Phase 1 determination breakdown</caption>
+                <thead><tr><th>Determination</th><th>Count</th></tr></thead>
+                <tbody>
+                  {Object.entries(stats.by_determination).map(([det, count]) => (
+                    <tr key={det}><td>{det}</td><td>{count}</td></tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         )}
 
@@ -308,15 +315,17 @@ function Dashboard() {
             <div className="h-64" role="img" aria-labelledby="chart-phase2-title" aria-describedby="chart-phase2-summary">
               <Doughnut data={phase2DeterminationData} options={chartOptions} />
             </div>
-            <table id="chart-phase2-summary" className="sr-only">
-              <caption>Phase 2 determination breakdown, including ceased assessments</caption>
-              <thead><tr><th>Outcome</th><th>Count</th></tr></thead>
-              <tbody>
-                {phase2Labels.map((det) => (
-                  <tr key={det}><td>{det}</td><td>{phase2Counts[det]}</td></tr>
-                ))}
-              </tbody>
-            </table>
+            <div className="sr-only">
+              <table id="chart-phase2-summary">
+                <caption>Phase 2 determination breakdown, including ceased assessments</caption>
+                <thead><tr><th>Outcome</th><th>Count</th></tr></thead>
+                <tbody>
+                  {phase2Labels.map((det) => (
+                    <tr key={det}><td>{det}</td><td>{phase2Counts[det]}</td></tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         )}
 
@@ -329,15 +338,17 @@ function Dashboard() {
             <div className="h-64" role="img" aria-labelledby="chart-waiver-title" aria-describedby="chart-waiver-summary">
               <Doughnut data={waiverDeterminationData} options={chartOptions} />
             </div>
-            <table id="chart-waiver-summary" className="sr-only">
-              <caption>Waiver determination breakdown</caption>
-              <thead><tr><th>Determination</th><th>Count</th></tr></thead>
-              <tbody>
-                {Object.entries(stats.by_waiver_determination).map(([det, count]) => (
-                  <tr key={det}><td>{det}</td><td>{count}</td></tr>
-                ))}
-              </tbody>
-            </table>
+            <div className="sr-only">
+              <table id="chart-waiver-summary">
+                <caption>Waiver determination breakdown</caption>
+                <thead><tr><th>Determination</th><th>Count</th></tr></thead>
+                <tbody>
+                  {Object.entries(stats.by_waiver_determination).map(([det, count]) => (
+                    <tr key={det}><td>{det}</td><td>{count}</td></tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         )}
       </div>
