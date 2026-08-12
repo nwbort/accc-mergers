@@ -3,12 +3,12 @@
   "total_waivers": 321,
   "total_conditional_approvals": 3,
   "by_status": {
-    "Assessment completed": 162,
-    "Under assessment": 54,
+    "Assessment completed": 163,
+    "Under assessment": 53,
     "Assessment ceased": 3
   },
   "by_determination": {
-    "Approved": 159,
+    "Approved": 160,
     "Referred to phase 2": 8
   },
   "by_phase_2_determination": {
@@ -21,27 +21,27 @@
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 160,
+    "cleared": 161,
     "not_cleared": 2,
-    "total": 162,
+    "total": 163,
     "rate": 0.988
   },
   "phase_duration": {
-    "average_days": 29.964071856287426,
-    "median_days": 26,
-    "average_business_days": 19.892215568862277,
-    "median_business_days": 17,
+    "average_days": 29.910714285714285,
+    "median_days": 26.0,
+    "average_business_days": 19.863095238095237,
+    "median_business_days": 17.0,
     "percentiles": {
       "day15": {
-        "count": 39,
-        "percentage": 23.4
+        "count": 40,
+        "percentage": 23.8
       },
       "day20": {
-        "count": 128,
-        "percentage": 76.6
+        "count": 129,
+        "percentage": 76.8
       },
       "day30": {
-        "count": 157,
+        "count": 158,
         "percentage": 94.0
       }
     }
@@ -229,6 +229,17 @@
       "has_conditions": false
     },
     {
+      "merger_id": "MN-10021",
+      "merger_name": "Ambrose Construct Group \u2013 Major Loss Builders",
+      "determination": "Approved",
+      "determination_date": "2026-08-12T12:00:00Z",
+      "page_modified_datetime": "2026-08-12T16:23:42+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-70033",
       "merger_name": "EQT Fund Management \u2013 Corza Biosurgery",
       "determination": "Approved",
@@ -336,17 +347,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-70026",
-      "merger_name": "Parker-Hannifin \u2013 CIRCOR A&D",
-      "determination": "Approved",
-      "determination_date": "2026-08-06T12:00:00Z",
-      "page_modified_datetime": "2026-08-06T17:14:51+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]

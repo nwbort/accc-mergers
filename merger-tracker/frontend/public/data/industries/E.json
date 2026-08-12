@@ -81,17 +81,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-10021",
-      "merger_name": "Ambrose Construct Group \u2013 Major Loss Builders",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-07-22T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-15028",
       "merger_name": "Total Drain Group - Pipe Management Australia",
       "is_waiver": false,
@@ -134,6 +123,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-04-27T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-10021",
+      "merger_name": "Ambrose Construct Group \u2013 Major Loss Builders",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-22T12:00:00Z",
+      "determination_date": "2026-08-12T12:00:00Z"
     },
     {
       "merger_id": "MN-60025",
@@ -525,13 +525,13 @@
   "phase_1_count": 21,
   "phase_2_count": 1,
   "waiver_count": 23,
-  "active_count": 10,
+  "active_count": 9,
   "phase_duration": {
-    "average_days": 27.615384615384617,
-    "median_days": 25,
-    "average_business_days": 19.0,
-    "median_business_days": 16,
-    "completed_count": 13
+    "average_days": 27.142857142857142,
+    "median_days": 24.0,
+    "average_business_days": 18.714285714285715,
+    "median_business_days": 16.0,
+    "completed_count": 14
   },
   "waiver_duration": {
     "average_days": 20.217391304347824,

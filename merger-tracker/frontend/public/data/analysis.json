@@ -192,6 +192,11 @@
         "in_progress": false
       },
       {
+        "business_days": 15,
+        "calendar_days": 21,
+        "in_progress": false
+      },
+      {
         "business_days": 28,
         "calendar_days": 41,
         "in_progress": false
@@ -839,17 +844,17 @@
     ],
     "stats": {
       "average": 19.9,
-      "median": 17,
+      "median": 17.0,
       "min": 15,
       "max": 59,
-      "count": 167
+      "count": 168
     },
     "calendar_stats": {
-      "average": 30.0,
-      "median": 26,
+      "average": 29.9,
+      "median": 26.0,
       "min": 21,
       "max": 103,
-      "count": 167
+      "count": 168
     }
   },
   "waiver_duration": {
@@ -2317,15 +2322,6 @@
       "count": 24
     },
     {
-      "code": "E",
-      "name": "Construction",
-      "average_business_days": 19.0,
-      "median_business_days": 16,
-      "average_calendar_days": 27.6,
-      "median_calendar_days": 25,
-      "count": 13
-    },
-    {
       "code": "J",
       "name": "Information Media and Telecommunications",
       "average_business_days": 18.9,
@@ -2335,13 +2331,13 @@
       "count": 24
     },
     {
-      "code": "N",
-      "name": "Administrative and Support Services",
-      "average_business_days": 17.5,
-      "median_business_days": 17.5,
-      "average_calendar_days": 26.5,
-      "median_calendar_days": 26.5,
-      "count": 2
+      "code": "E",
+      "name": "Construction",
+      "average_business_days": 18.7,
+      "median_business_days": 16.0,
+      "average_calendar_days": 27.1,
+      "median_calendar_days": 24.0,
+      "count": 14
     },
     {
       "code": "R",
@@ -2360,16 +2356,25 @@
       "average_calendar_days": 26.2,
       "median_calendar_days": 25,
       "count": 13
+    },
+    {
+      "code": "N",
+      "name": "Administrative and Support Services",
+      "average_business_days": 16.7,
+      "median_business_days": 16,
+      "average_calendar_days": 24.7,
+      "median_calendar_days": 24,
+      "count": 3
     }
   ],
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 367,
+      "count": 368,
       "outcome_mix": {
-        "Approved": 367
+        "Approved": 368
       },
-      "median_phase_1_business_days": 16.0
+      "median_phase_1_business_days": 16
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -2383,9 +2388,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 51,
+      "count": 50,
       "outcome_mix": {
-        "Unknown": 51
+        "Unknown": 50
       },
       "median_phase_1_business_days": null
     },
@@ -2418,7 +2423,7 @@
   ],
   "deadline_utilisation": {
     "histogram": {
-      "15": 39,
+      "15": 40,
       "16": 31,
       "17": 20,
       "18": 17,
@@ -2441,9 +2446,9 @@
     },
     "stats": {
       "mean_used_bd": 18.0,
-      "median_used_bd": 17.0,
+      "median_used_bd": 17,
       "pct_decided_final_3_bd": 3.9,
-      "count": 154
+      "count": 155
     },
     "extended_count": 5
   },
@@ -2529,11 +2534,11 @@
     {
       "code": "E",
       "name": "Construction",
-      "approved": 12,
+      "approved": 13,
       "not_approved": 0,
       "referred": 1,
-      "in_progress": 9,
-      "phase2_referral_rate": 0.077
+      "in_progress": 8,
+      "phase2_referral_rate": 0.071
     },
     {
       "code": "M",
@@ -2610,10 +2615,10 @@
     {
       "code": "N",
       "name": "Administrative and Support Services",
-      "approved": 2,
+      "approved": 3,
       "not_approved": 0,
       "referred": 0,
-      "in_progress": 6,
+      "in_progress": 5,
       "phase2_referral_rate": 0.0
     },
     {
