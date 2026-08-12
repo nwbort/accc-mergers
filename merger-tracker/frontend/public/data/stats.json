@@ -1,6 +1,6 @@
 {
   "total_mergers": 219,
-  "total_waivers": 319,
+  "total_waivers": 320,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 162,
@@ -17,7 +17,7 @@
     "Assessment ceased": 2
   },
   "by_waiver_determination": {
-    "Approved": 305,
+    "Approved": 306,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -47,15 +47,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.112852664576803,
-    "median_days": 18,
-    "average_business_days": 12.836990595611285,
-    "median_business_days": 13
+    "average_days": 19.090625,
+    "median_days": 18.0,
+    "average_business_days": 12.821875,
+    "median_business_days": 12.5
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 77
+      "count": 78
     },
     {
       "name": "Computer System Design and Related Services",
@@ -218,6 +218,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-70033",
+      "merger_name": "EQT Fund Management \u2013 Corza Biosurgery",
+      "determination": "Approved",
+      "determination_date": "2026-08-12T12:00:00Z",
+      "page_modified_datetime": "2026-08-12T16:20:04+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-90008",
       "merger_name": "Black Rhino - Club Hotel Motel Roma",
       "determination": "Approved",
@@ -336,17 +347,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-65023",
-      "merger_name": "Energy Bay - certain assets required to operate embedded networks for Centuria Capital Group members",
-      "determination": "Approved",
-      "determination_date": "2026-08-05T12:00:00Z",
-      "page_modified_datetime": "2026-08-05T12:51:47+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]

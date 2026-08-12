@@ -87,7 +87,7 @@
       "code": "24",
       "name": "Machinery and Equipment Manufacturing",
       "level": "subdivision",
-      "merger_count": 48
+      "merger_count": 49
     },
     {
       "code": "25",
@@ -283,6 +283,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-05-12T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-70033",
+      "merger_name": "EQT Fund Management \u2013 Corza Biosurgery",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-31T12:00:00Z",
+      "determination_date": "2026-08-12T12:00:00Z"
     },
     {
       "merger_id": "MN-75029",
@@ -1561,10 +1572,10 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 133,
+  "count": 134,
   "phase_1_count": 63,
   "phase_2_count": 2,
-  "waiver_count": 68,
+  "waiver_count": 69,
   "active_count": 17,
   "phase_duration": {
     "average_days": 29.857142857142858,
@@ -1574,10 +1585,10 @@
     "completed_count": 49
   },
   "waiver_duration": {
-    "average_days": 17.970588235294116,
-    "median_days": 17.0,
-    "average_business_days": 11.941176470588236,
-    "median_business_days": 11.0,
-    "completed_count": 68
+    "average_days": 17.884057971014492,
+    "median_days": 17,
+    "average_business_days": 11.884057971014492,
+    "median_business_days": 11,
+    "completed_count": 69
   }
 }

@@ -37,7 +37,7 @@
       "code": "624",
       "name": "Financial Asset Investing",
       "level": "group",
-      "merger_count": 77
+      "merger_count": 78
     }
   ],
   "mergers": [
@@ -128,6 +128,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-21T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-70033",
+      "merger_name": "EQT Fund Management \u2013 Corza Biosurgery",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-31T12:00:00Z",
+      "determination_date": "2026-08-12T12:00:00Z"
     },
     {
       "merger_id": "WA-70029",
@@ -977,10 +988,10 @@
       "determination_date": null
     }
   ],
-  "count": 85,
+  "count": 86,
   "phase_1_count": 18,
   "phase_2_count": 1,
-  "waiver_count": 66,
+  "waiver_count": 67,
   "active_count": 8,
   "phase_duration": {
     "average_days": 30.181818181818183,
@@ -990,10 +1001,10 @@
     "completed_count": 11
   },
   "waiver_duration": {
-    "average_days": 18.939393939393938,
-    "median_days": 18.0,
-    "average_business_days": 12.636363636363637,
-    "median_business_days": 12.0,
-    "completed_count": 66
+    "average_days": 18.83582089552239,
+    "median_days": 18,
+    "average_business_days": 12.567164179104477,
+    "median_business_days": 12,
+    "completed_count": 67
   }
 }
