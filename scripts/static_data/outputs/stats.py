@@ -252,6 +252,9 @@ def generate(mergers: list) -> dict:
                 "determination_type": "final",
                 "is_waiver": is_waiver,
                 "stage": m.get('stage'),
+                # The register records a conditional clearance as a plain
+                # "Approved"; the dashboard cards flag the difference.
+                "has_conditions": bool(m.get('has_conditions', False)),
             })
 
         # Check for Phase 2 referrals (stage transitions)
