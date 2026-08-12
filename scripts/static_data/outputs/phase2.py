@@ -50,6 +50,9 @@ def _entry(merger: dict) -> dict:
         'end_of_determination_period': merger.get('end_of_determination_period'),
         'determination': determination,
         'determination_date': determination_date,
+        # The register records a conditional clearance as a plain "Approved";
+        # the completed-matter card flags the difference.
+        'has_conditions': bool(merger.get('has_conditions', False)),
         'phase_2_inferred': bool(merger.get('phase_2_inferred')),
         # Whether the matter is under review at the Australian Competition
         # Tribunal — surfaces an "Under appeal" chip on the completed card.

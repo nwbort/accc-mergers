@@ -1,6 +1,6 @@
 import { formatDate } from '../utils/dates';
 import { isNewItem } from '../utils/lastVisit';
-import { DETERMINATION_LABELS, MERGER_STATUS } from '../constants/mergerStatus';
+import { DETERMINATION_LABELS, isConditionalApproval } from '../constants/mergerStatus';
 import { getCardStyle, NEW_ITEM_BORDER } from '../constants/cardStyles';
 import CardCollapseGrid from './CardCollapseGrid';
 import MergerCardBody, { CHIP_BASE_CLASS } from './MergerCardBody';
@@ -11,13 +11,6 @@ function getDeterminationCardStyle(item) {
   // Highlight recent determinations the visitor hasn't seen yet (those that
   // also show a "New" badge) with a blue ring so they stand out.
   return isNewItem(item.merger_id) ? { ...base, border: NEW_ITEM_BORDER } : base;
-}
-
-// The register publishes a conditional clearance as a plain "Approved" with
-// has_conditions set alongside (see mergerStatus.js), so the card spells the
-// difference out rather than letting it read as an unconditional approval.
-function hasConditionalApproval(item) {
-  return Boolean(item.has_conditions) && item.determination === MERGER_STATUS.APPROVED;
 }
 
 function RecentDeterminationsCards({ determinations }) {
@@ -52,7 +45,7 @@ function RecentDeterminationsCards({ determinations }) {
             <span>{item.merger_id}</span>
             <span aria-hidden="true">·</span>
             <span>{formatDate(item.determination_date)}</span>
-            {hasConditionalApproval(item) && (
+            {isConditionalApproval(item) && (
               <span className={`${CHIP_BASE_CLASS} font-medium ${style.chip}`}>
                 With conditions
               </span>

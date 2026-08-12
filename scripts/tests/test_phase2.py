@@ -108,7 +108,7 @@ class TestReturnsValidShape:
         assert set(entry.keys()) == {
             'merger_id', 'merger_name', 'referral_date', 'nocc_date', 'nocc_issued',
             'end_of_determination_period', 'determination', 'determination_date',
-            'phase_2_inferred', 'is_refiled', 'under_appeal',
+            'phase_2_inferred', 'is_refiled', 'under_appeal', 'has_conditions',
         }
 
 
@@ -135,6 +135,18 @@ class TestCurrentVsCompleted:
         entry = payload['completed'][0]
         assert entry['determination'] == 'Approved'
         assert entry['determination_date'] == '2025-08-01T12:00:00Z'
+
+    def test_completed_conditional_approval_is_flagged(self):
+        # A conditional clearance is published as a plain "Approved"; the
+        # completed-matter card needs has_conditions to tell the two apart.
+        conditional = _completed_phase2('MN-0004')
+        conditional['accc_determination_raw'] = 'Approved subject to conditions'
+        mergers = [enrich_merger(conditional), enrich_merger(_completed_phase2('MN-0005'))]
+        payload = phase2.generate(mergers)
+        by_id = {e['merger_id']: e for e in payload['completed']}
+        assert by_id['MN-0004']['determination'] == 'Approved'
+        assert by_id['MN-0004']['has_conditions'] is True
+        assert by_id['MN-0005']['has_conditions'] is False
 
     def test_waivers_excluded(self):
         mergers = [enrich_merger(_waiver())]
