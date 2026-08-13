@@ -57,17 +57,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-15028",
-      "merger_name": "Total Drain Group - Pipe Management Australia",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-07-15T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-30022",
       "merger_name": "VSA - SprayLine",
       "is_waiver": false,
@@ -88,6 +77,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-04-27T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-15028",
+      "merger_name": "Total Drain Group - Pipe Management Australia",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-15T12:00:00Z",
+      "determination_date": "2026-08-13T12:00:00Z"
     },
     {
       "merger_id": "MN-01105",
@@ -237,13 +237,13 @@
   "phase_1_count": 11,
   "phase_2_count": 1,
   "waiver_count": 6,
-  "active_count": 5,
+  "active_count": 4,
   "phase_duration": {
-    "average_days": 29.875,
-    "median_days": 24.5,
-    "average_business_days": 20.5,
-    "median_business_days": 16.0,
-    "completed_count": 8
+    "average_days": 29.77777777777778,
+    "median_days": 26,
+    "average_business_days": 20.555555555555557,
+    "median_business_days": 16,
+    "completed_count": 9
   },
   "waiver_duration": {
     "average_days": 21.666666666666668,
