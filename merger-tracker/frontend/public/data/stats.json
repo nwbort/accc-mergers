@@ -1,10 +1,10 @@
 {
-  "total_mergers": 219,
+  "total_mergers": 220,
   "total_waivers": 322,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 168,
-    "Under assessment": 48,
+    "Under assessment": 49,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -95,6 +95,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-50035",
+      "merger_name": "Opal HealthCare - Canberra Nursing Home (Lidcombe, NSW)",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-12T12:00:00Z",
+      "page_modified_datetime": "2026-08-13T18:47:59+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-80027",
       "merger_name": "Supagas \u2013 Heeson Medical",
@@ -202,16 +212,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-05T12:00:00Z",
       "page_modified_datetime": "2026-08-12T17:06:34+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-15031",
-      "merger_name": "Danaher (Leica Biosystems) - StatLab",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-05T12:00:00Z",
-      "page_modified_datetime": "2026-08-06T10:40:57+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

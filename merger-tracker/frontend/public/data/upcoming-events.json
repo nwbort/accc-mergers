@@ -101,6 +101,16 @@
       "effective_notification_datetime": "2026-08-11T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-08-20T12:00:00Z",
+      "merger_id": "MN-50035",
+      "merger_name": "Opal HealthCare - Canberra Nursing Home (Lidcombe, NSW)",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-08-12T12:00:00Z"
+    },
+    {
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-08-21T12:00:00Z",
@@ -554,6 +564,16 @@
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-09-23T12:00:00Z",
+      "merger_id": "MN-50035",
+      "merger_name": "Opal HealthCare - Canberra Nursing Home (Lidcombe, NSW)",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-08-12T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-09-23T12:00:00Z",
       "merger_id": "MN-65005",
       "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
       "status": "Under assessment",
@@ -572,6 +592,6 @@
       "tribunal_number": "ACT 1 of 2026"
     }
   ],
-  "count": 57,
+  "count": 59,
   "days_ahead": 60
 }

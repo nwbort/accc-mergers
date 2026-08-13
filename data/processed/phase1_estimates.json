@@ -2056,6 +2056,21 @@
     "estimated_at": "2026-07-30",
     "method_version": 1
   },
+  "MN-50035": {
+    "expected_business_days": 15,
+    "range_business_days": [
+      15,
+      18
+    ],
+    "basis": "industry",
+    "anzsic_level": "division",
+    "anzsic_codes": [
+      "Q"
+    ],
+    "sample_size": 13,
+    "estimated_at": "2026-08-13",
+    "method_version": 1
+  },
   "MN-55003": {
     "expected_business_days": 16,
     "range_business_days": [
