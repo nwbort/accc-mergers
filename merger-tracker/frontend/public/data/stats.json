@@ -3,12 +3,12 @@
   "total_waivers": 322,
   "total_conditional_approvals": 3,
   "by_status": {
-    "Assessment completed": 167,
-    "Under assessment": 49,
+    "Assessment completed": 168,
+    "Under assessment": 48,
     "Assessment ceased": 3
   },
   "by_determination": {
-    "Approved": 164,
+    "Approved": 165,
     "Referred to phase 2": 8
   },
   "by_phase_2_determination": {
@@ -21,27 +21,27 @@
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 165,
+    "cleared": 166,
     "not_cleared": 2,
-    "total": 167,
+    "total": 168,
     "rate": 0.988
   },
   "phase_duration": {
-    "average_days": 29.877906976744185,
-    "median_days": 26.0,
-    "average_business_days": 19.877906976744185,
-    "median_business_days": 17.0,
+    "average_days": 29.84393063583815,
+    "median_days": 26,
+    "average_business_days": 19.86705202312139,
+    "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 40,
-        "percentage": 23.3
+        "percentage": 23.1
       },
       "day20": {
-        "count": 130,
-        "percentage": 75.6
+        "count": 131,
+        "percentage": 75.7
       },
       "day30": {
-        "count": 162,
+        "count": 163,
         "percentage": 94.2
       }
     }
@@ -218,6 +218,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-90022",
+      "merger_name": "Expedia - CarTrawler",
+      "determination": "Approved",
+      "determination_date": "2026-08-13T12:00:00Z",
+      "page_modified_datetime": "2026-08-13T16:51:55+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-05036",
       "merger_name": "Vertex \u2013 Crinetics",
       "determination": "Approved",
@@ -333,17 +344,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-11T12:00:00Z",
       "page_modified_datetime": "2026-08-11T18:18:10+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-10024",
-      "merger_name": "Triton \u2013 Flender",
-      "determination": "Approved",
-      "determination_date": "2026-08-11T12:00:00Z",
-      "page_modified_datetime": "2026-08-11T16:56:13+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

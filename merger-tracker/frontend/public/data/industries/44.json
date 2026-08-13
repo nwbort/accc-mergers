@@ -35,17 +35,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-90022",
-      "merger_name": "Expedia - CarTrawler",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-07-20T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-85015",
       "merger_name": "Journey Beyond - Kelsian Tourism Portfolio",
       "is_waiver": false,
@@ -55,6 +44,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-01T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-90022",
+      "merger_name": "Expedia - CarTrawler",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-20T12:00:00Z",
+      "determination_date": "2026-08-13T12:00:00Z"
     },
     {
       "merger_id": "WA-85039",
@@ -248,13 +248,13 @@
   "phase_1_count": 8,
   "phase_2_count": 0,
   "waiver_count": 12,
-  "active_count": 3,
+  "active_count": 2,
   "phase_duration": {
-    "average_days": 37.4,
-    "median_days": 28,
-    "average_business_days": 25.6,
-    "median_business_days": 19,
-    "completed_count": 5
+    "average_days": 35.166666666666664,
+    "median_days": 26.5,
+    "average_business_days": 24.333333333333332,
+    "median_business_days": 18.5,
+    "completed_count": 6
   },
   "waiver_duration": {
     "average_days": 19.083333333333332,
