@@ -17355,7 +17355,7 @@
     "original_notification_datetime": "2026-08-05T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-09-16T12:00:00Z",
-    "page_modified_datetime": "2026-08-06T11:00:12+10:00",
+    "page_modified_datetime": "2026-08-13T10:17:32+10:00",
     "consultation_response_due_date": "2026-08-13T12:00:00Z",
     "acquirers": [
       {
@@ -17366,17 +17366,27 @@
     ],
     "targets": [
       {
-        "name": "Made (MJV) Pte Ltd",
-        "identifier_type": null,
-        "identifier": "UEN 202321698C"
-      },
-      {
         "name": "TUCKER HOLDCO PTY LTD",
         "identifier_type": "ABN",
         "identifier": "85 644 211 772"
+      },
+      {
+        "name": "Made (MJV) Pte Ltd",
+        "identifier_type": null,
+        "identifier": "UEN 202321698C"
       }
     ],
     "other_parties": [
+      {
+        "name": "DANONE SAPUTO DAIRY AUSTRALIA PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "32 143 172 258"
+      },
+      {
+        "name": "NUTRICIA AUSTRALIA PTY LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "99 076 246 752"
+      },
       {
         "name": "Compagnie Gervais Danone",
         "identifier_type": null,
@@ -17388,14 +17398,9 @@
         "identifier": "SIREN 797 080 850"
       },
       {
-        "name": "NUTRICIA AUSTRALIA PTY LIMITED",
-        "identifier_type": "ABN",
-        "identifier": "99 076 246 752"
-      },
-      {
-        "name": "DANONE SAPUTO DAIRY AUSTRALIA PTY LTD",
-        "identifier_type": "ABN",
-        "identifier": "32 143 172 258"
+        "name": "Danone S.A.",
+        "identifier_type": null,
+        "identifier": "SIREN 552 032 534"
       },
       {
         "name": "Made Brands Pte Ltd",
@@ -17406,11 +17411,6 @@
         "name": "Minogue HoldCo",
         "identifier_type": null,
         "identifier": ""
-      },
-      {
-        "name": "Danone S.A.",
-        "identifier_type": null,
-        "identifier": "SIREN 552 032 534"
       }
     ],
     "anzsic_codes": [
@@ -17447,7 +17447,7 @@
         "display_title": "Questionnaire - Danone - MADE",
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Danone%20-%20MADE.docx",
         "url_gh": "/mergers/MN-55031/Questionnaire - Danone - MADE.pdf",
-        "status": "live"
+        "status": "removed"
       },
       {
         "date": "2026-08-05T12:00:00Z",

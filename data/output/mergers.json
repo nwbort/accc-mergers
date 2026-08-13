@@ -39195,7 +39195,7 @@
       "original_notification_datetime": "2026-08-05T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-09-16T12:00:00Z",
-      "page_modified_datetime": "2026-08-06T11:00:12+10:00",
+      "page_modified_datetime": "2026-08-13T10:17:32+10:00",
       "consultation_response_due_date": "2026-08-13T12:00:00Z",
       "acquirers": [
         {
@@ -39210,15 +39210,6 @@
       ],
       "targets": [
         {
-          "name": "Made (MJV) Pte Ltd",
-          "identifier_type": null,
-          "identifier": "UEN 202321698C",
-          "party_page": {
-            "id": "made-mjv-pte-ltd",
-            "name": "Made (MJV) Pte Ltd"
-          }
-        },
-        {
           "name": "TUCKER HOLDCO PTY LTD",
           "identifier_type": "ABN",
           "identifier": "85 644 211 772",
@@ -39226,9 +39217,36 @@
             "id": "tucker-holdco-pty-ltd",
             "name": "Tucker Holdco Pty Ltd"
           }
+        },
+        {
+          "name": "Made (MJV) Pte Ltd",
+          "identifier_type": null,
+          "identifier": "UEN 202321698C",
+          "party_page": {
+            "id": "made-mjv-pte-ltd",
+            "name": "Made (MJV) Pte Ltd"
+          }
         }
       ],
       "other_parties": [
+        {
+          "name": "DANONE SAPUTO DAIRY AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "32 143 172 258",
+          "party_page": {
+            "id": "danone-saputo-dairy-australia-pty-ltd",
+            "name": "Danone Saputo Dairy Australia Pty Ltd"
+          }
+        },
+        {
+          "name": "NUTRICIA AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "99 076 246 752",
+          "party_page": {
+            "id": "nutricia-australia-pty-limited",
+            "name": "Nutricia Australia Pty Limited"
+          }
+        },
         {
           "name": "Compagnie Gervais Danone",
           "identifier_type": null,
@@ -39248,21 +39266,12 @@
           }
         },
         {
-          "name": "NUTRICIA AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "99 076 246 752",
+          "name": "Danone S.A.",
+          "identifier_type": null,
+          "identifier": "SIREN 552 032 534",
           "party_page": {
-            "id": "nutricia-australia-pty-limited",
-            "name": "Nutricia Australia Pty Limited"
-          }
-        },
-        {
-          "name": "DANONE SAPUTO DAIRY AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "32 143 172 258",
-          "party_page": {
-            "id": "danone-saputo-dairy-australia-pty-ltd",
-            "name": "Danone Saputo Dairy Australia Pty Ltd"
+            "id": "danone-s-a",
+            "name": "Danone S.A."
           }
         },
         {
@@ -39281,15 +39290,6 @@
           "party_page": {
             "id": "minogue-holdco",
             "name": "Minogue HoldCo"
-          }
-        },
-        {
-          "name": "Danone S.A.",
-          "identifier_type": null,
-          "identifier": "SIREN 552 032 534",
-          "party_page": {
-            "id": "danone-s-a",
-            "name": "Danone S.A."
           }
         }
       ],
