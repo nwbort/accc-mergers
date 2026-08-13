@@ -3,12 +3,12 @@
   "total_waivers": 322,
   "total_conditional_approvals": 3,
   "by_status": {
-    "Assessment completed": 166,
-    "Under assessment": 50,
+    "Assessment completed": 167,
+    "Under assessment": 49,
     "Assessment ceased": 3
   },
   "by_determination": {
-    "Approved": 163,
+    "Approved": 164,
     "Referred to phase 2": 8
   },
   "by_phase_2_determination": {
@@ -21,27 +21,27 @@
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 164,
+    "cleared": 165,
     "not_cleared": 2,
-    "total": 166,
+    "total": 167,
     "rate": 0.988
   },
   "phase_duration": {
-    "average_days": 29.91812865497076,
-    "median_days": 26,
-    "average_business_days": 19.894736842105264,
-    "median_business_days": 17,
+    "average_days": 29.877906976744185,
+    "median_days": 26.0,
+    "average_business_days": 19.877906976744185,
+    "median_business_days": 17.0,
     "percentiles": {
       "day15": {
         "count": 40,
-        "percentage": 23.4
+        "percentage": 23.3
       },
       "day20": {
-        "count": 129,
-        "percentage": 75.4
+        "count": 130,
+        "percentage": 75.6
       },
       "day30": {
-        "count": 161,
+        "count": 162,
         "percentage": 94.2
       }
     }
@@ -218,6 +218,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-05036",
+      "merger_name": "Vertex \u2013 Crinetics",
+      "determination": "Approved",
+      "determination_date": "2026-08-13T12:00:00Z",
+      "page_modified_datetime": "2026-08-13T15:38:06+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-15028",
       "merger_name": "Total Drain Group - Pipe Management Australia",
       "determination": "Approved",
@@ -336,17 +347,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-60025",
-      "merger_name": "Acrow - Ausgroup Industrial Services",
-      "determination": "Approved",
-      "determination_date": "2026-08-10T12:00:00Z",
-      "page_modified_datetime": "2026-08-10T16:40:55+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]
