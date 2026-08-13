@@ -2355,15 +2355,6 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "Modaxo France Holdings SAS",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "modaxo-france-holdings-sas",
-            "name": "Modaxo France Holdings SAS"
-          }
-        },
-        {
           "name": "Modaxo Group, Inc",
           "identifier_type": null,
           "identifier": "",
@@ -2384,6 +2375,15 @@
             "id": "modaxo-usa-holdings-inc",
             "name": "Modaxo USA Holdings, Inc"
           }
+        },
+        {
+          "name": "Modaxo France Holdings SAS",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "modaxo-france-holdings-sas",
+            "name": "Modaxo France Holdings SAS"
+          }
         }
       ],
       "targets": [
@@ -2397,16 +2397,12 @@
           }
         },
         {
-          "name": "Conduent Business Services, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "conduent-business-services-llc",
-            "name": "Conduent Business Services, LLC"
-          },
+          "name": "CONDUENT BUSINESS SOLUTIONS (FRANCE) SAS",
+          "identifier_type": "ABN",
+          "identifier": "20 251 484 486",
           "party_page": {
-            "id": "conduent-business-services-llc",
-            "name": "Conduent Business Services, LLC"
+            "id": "conduent-business-solutions-france-sas",
+            "name": "Conduent Business Solutions (France) Sas"
           }
         },
         {
@@ -2423,12 +2419,16 @@
           }
         },
         {
-          "name": "CONDUENT BUSINESS SOLUTIONS (FRANCE) SAS",
-          "identifier_type": "ABN",
-          "identifier": "20 251 484 486",
+          "name": "Conduent Business Services, LLC",
+          "identifier_type": null,
+          "identifier": "",
+          "canonical": {
+            "id": "conduent-business-services-llc",
+            "name": "Conduent Business Services, LLC"
+          },
           "party_page": {
-            "id": "conduent-business-solutions-france-sas",
-            "name": "Conduent Business Solutions (France) Sas"
+            "id": "conduent-business-services-llc",
+            "name": "Conduent Business Services, LLC"
           }
         }
       ],
