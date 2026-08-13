@@ -1,15 +1,15 @@
 {
   "summary": {
     "notifications_total": 219,
-    "matters_extended": 17,
-    "share_extended_pct": 7.8,
-    "extension_events_total": 23,
-    "total_extension_bd": 259,
-    "median_matter_extension_bd": 15.0,
+    "matters_extended": 18,
+    "share_extended_pct": 8.2,
+    "extension_events_total": 24,
+    "total_extension_bd": 265,
+    "median_matter_extension_bd": 15,
     "longest_single_bd": 30,
     "phase_2_total": 8,
     "extended_escalated_to_phase_2": 7,
-    "escalation_rate_given_extension_pct": 41.2,
+    "escalation_rate_given_extension_pct": 38.9,
     "phase_2_preceded_by_extension_pct": 87.5,
     "base_phase_2_rate_pct": 3.7,
     "statutory_phase_1_bd": 30
@@ -17,8 +17,8 @@
   "reasons": [
     {
       "category": "Requested by the merger parties",
-      "events": 15,
-      "business_days": 175
+      "events": 16,
+      "business_days": 181
     },
     {
       "category": "ACCC information request",
@@ -58,7 +58,7 @@
     },
     {
       "month": "2026-08",
-      "count": 2
+      "count": 3
     }
   ],
   "matters": [
@@ -374,6 +374,27 @@
           "reason_category": "Requested by the merger parties",
           "reason_detail": "request by parties",
           "title": "Timeline extended by 10 business days \u2013 following request by parties"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-30022",
+      "merger_name": "VSA - SprayLine",
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "notification_date": "2026-07-06T12:00:00Z",
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "escalated_to_phase_2": false,
+      "total_extension_bd": 6,
+      "extension_count": 1,
+      "extensions": [
+        {
+          "date": "2026-08-13T12:00:00Z",
+          "business_days": 6,
+          "reason_category": "Requested by the merger parties",
+          "reason_detail": "request by parties",
+          "title": "Timeline extended by 6 business days - following request by parties"
         }
       ]
     },
