@@ -3,12 +3,12 @@
   "total_waivers": 322,
   "total_conditional_approvals": 3,
   "by_status": {
-    "Assessment completed": 165,
-    "Under assessment": 51,
+    "Assessment completed": 166,
+    "Under assessment": 50,
     "Assessment ceased": 3
   },
   "by_determination": {
-    "Approved": 162,
+    "Approved": 163,
     "Referred to phase 2": 8
   },
   "by_phase_2_determination": {
@@ -21,28 +21,28 @@
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 163,
+    "cleared": 164,
     "not_cleared": 2,
-    "total": 165,
+    "total": 166,
     "rate": 0.988
   },
   "phase_duration": {
-    "average_days": 29.923529411764704,
-    "median_days": 26.0,
-    "average_business_days": 19.888235294117646,
-    "median_business_days": 17.0,
+    "average_days": 29.91812865497076,
+    "median_days": 26,
+    "average_business_days": 19.894736842105264,
+    "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 40,
-        "percentage": 23.5
+        "percentage": 23.4
       },
       "day20": {
         "count": 129,
-        "percentage": 75.9
+        "percentage": 75.4
       },
       "day30": {
-        "count": 160,
-        "percentage": 94.1
+        "count": 161,
+        "percentage": 94.2
       }
     }
   },
@@ -229,6 +229,17 @@
       "has_conditions": false
     },
     {
+      "merger_id": "MN-40029",
+      "merger_name": "Laundy \u2013 Woy Woy Hotel",
+      "determination": "Approved",
+      "determination_date": "2026-08-13T12:00:00Z",
+      "page_modified_datetime": "2026-08-13T14:47:04+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-85040",
       "merger_name": "MA Financial (Redcape Fund) \u2013 Seven hospitality venues in NSW",
       "determination": "Approved",
@@ -336,17 +347,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-70029",
-      "merger_name": "Apollo - Bayer Asset Management",
-      "determination": "Approved",
-      "determination_date": "2026-08-10T12:00:00Z",
-      "page_modified_datetime": "2026-08-10T16:34:12+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]

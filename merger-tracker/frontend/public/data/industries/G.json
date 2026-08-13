@@ -115,17 +115,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-40029",
-      "merger_name": "Laundy \u2013 Woy Woy Hotel",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-07-15T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-90028",
       "merger_name": "Peter Warren - Wakeling Automotive",
       "is_waiver": false,
@@ -135,6 +124,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-13T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-40029",
+      "merger_name": "Laundy \u2013 Woy Woy Hotel",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-15T12:00:00Z",
+      "determination_date": "2026-08-13T12:00:00Z"
     },
     {
       "merger_id": "WA-85040",
@@ -746,13 +746,13 @@
   "phase_1_count": 23,
   "phase_2_count": 3,
   "waiver_count": 38,
-  "active_count": 9,
+  "active_count": 8,
   "phase_duration": {
-    "average_days": 40.294117647058826,
-    "median_days": 27,
-    "average_business_days": 25.470588235294116,
-    "median_business_days": 18,
-    "completed_count": 17
+    "average_days": 39.666666666666664,
+    "median_days": 27.5,
+    "average_business_days": 25.22222222222222,
+    "median_business_days": 18.0,
+    "completed_count": 18
   },
   "waiver_duration": {
     "average_days": 19.894736842105264,
