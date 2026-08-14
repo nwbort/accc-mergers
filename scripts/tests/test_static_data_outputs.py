@@ -216,6 +216,20 @@ class TestStatsGenerate:
         assert by_id['MN-0001']['has_conditions'] is True
         assert by_id['WA-0003']['has_conditions'] is False
 
+    def test_by_determination_splits_conditional_phase_1_approvals(self):
+        # Mirrors the Phase 2 chart: a Phase 1 clearance granted subject to
+        # conditions counts apart from an unconditional "Approved", instead of
+        # being folded into the same doughnut segment.
+        mergers = _raw_fixture()
+        conditional = next(m for m in mergers if m['merger_id'] == 'MN-0001')
+        conditional['accc_determination_raw'] = 'Approved subject to conditions'
+        enriched = [enrich_merger(m) for m in mergers]
+        payload = stats.generate(enriched)
+        assert payload['by_determination'][merger_status.APPROVED_WITH_CONDITIONS] == 1
+        assert merger_status.APPROVED_WITH_CONDITIONS not in payload.get(
+            'by_phase_2_determination', {}
+        )
+
     def test_recent_determinations_includes_ceased_assessments(self):
         mergers = _raw_fixture()
         mergers.append({
