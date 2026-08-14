@@ -467,8 +467,8 @@
         "in_progress": false
       },
       {
-        "business_days": 43,
-        "calendar_days": 63,
+        "business_days": 44,
+        "calendar_days": 64,
         "in_progress": false
       },
       {
@@ -2254,11 +2254,20 @@
     {
       "code": "B",
       "name": "Mining",
-      "average_business_days": 23.9,
+      "average_business_days": 24.0,
       "median_business_days": 21.0,
-      "average_calendar_days": 34.6,
+      "average_calendar_days": 34.8,
       "median_calendar_days": 31.0,
       "count": 8
+    },
+    {
+      "code": "D",
+      "name": "Electricity, Gas, Water and Waste Services",
+      "average_business_days": 23.0,
+      "median_business_days": 20.0,
+      "average_calendar_days": 33.0,
+      "median_calendar_days": 28.5,
+      "count": 6
     },
     {
       "code": "L",
@@ -2268,15 +2277,6 @@
       "average_calendar_days": 34.9,
       "median_calendar_days": 29.0,
       "count": 14
-    },
-    {
-      "code": "D",
-      "name": "Electricity, Gas, Water and Waste Services",
-      "average_business_days": 22.8,
-      "median_business_days": 20.0,
-      "average_calendar_days": 32.8,
-      "median_calendar_days": 28.5,
-      "count": 6
     },
     {
       "code": "A",
@@ -2317,7 +2317,7 @@
     {
       "code": "M",
       "name": "Professional, Scientific and Technical Services",
-      "average_business_days": 21.5,
+      "average_business_days": 21.6,
       "median_business_days": 17.5,
       "average_calendar_days": 33.0,
       "median_calendar_days": 27.0,
