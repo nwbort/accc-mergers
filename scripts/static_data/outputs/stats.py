@@ -92,12 +92,18 @@ def generate(mergers: list) -> dict:
         by_status[status] += 1
 
     # By Phase 1 determination (notifications only)
-    # Use pre-enriched phase_1_determination which correctly identifies "Referred to phase 2"
+    # Use pre-enriched phase_1_determination which correctly identifies "Referred to phase 2".
+    # Approvals split by whether conditions were imposed, mirroring the Phase 2
+    # breakdown below — a clearance bought with a s 87B undertaking is a
+    # different result from an unconditional one.
     by_determination = defaultdict(int)
     for m in notification_mergers:
         det = m.get('phase_1_determination')
-        if det:
-            by_determination[det] += 1
+        if not det:
+            continue
+        if det == merger_status.APPROVED and m.get('has_conditions'):
+            det = merger_status.APPROVED_WITH_CONDITIONS
+        by_determination[det] += 1
 
     # By Phase 2 outcome (notifications only). Counts the Phase 2 reviews that
     # have concluded — including the ones the parties withdrew from, which end
