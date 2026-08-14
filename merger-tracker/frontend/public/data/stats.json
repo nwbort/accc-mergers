@@ -1,10 +1,10 @@
 {
-  "total_mergers": 220,
+  "total_mergers": 221,
   "total_waivers": 322,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 168,
-    "Under assessment": 49,
+    "Under assessment": 50,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -59,7 +59,7 @@
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 54
+      "count": 55
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -67,7 +67,7 @@
     },
     {
       "name": "Software Publishing",
-      "count": 35
+      "count": 36
     },
     {
       "name": "Pubs, Taverns and Bars",
@@ -95,6 +95,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-30028",
+      "merger_name": "Adobe - Topaz Labs",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-13T12:00:00Z",
+      "page_modified_datetime": "2026-08-14T11:40:00+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-50035",
       "merger_name": "Opal HealthCare - Canberra Nursing Home (Lidcombe, NSW)",
@@ -202,16 +212,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-05T12:00:00Z",
       "page_modified_datetime": "2026-08-13T09:20:09+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-30030",
-      "merger_name": "Eli Lilly and Company / AtaiBeckley Inc.",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-05T12:00:00Z",
-      "page_modified_datetime": "2026-08-13T09:17:42+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

@@ -91,6 +91,16 @@
       "effective_notification_datetime": "2026-08-12T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-08-21T12:00:00Z",
+      "merger_id": "MN-30028",
+      "merger_name": "Adobe - Topaz Labs",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-08-13T12:00:00Z"
+    },
+    {
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-08-21T12:00:00Z",
@@ -561,6 +571,16 @@
       "effective_notification_datetime": "2026-03-03T12:00:00Z"
     },
     {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-09-24T12:00:00Z",
+      "merger_id": "MN-30028",
+      "merger_name": "Adobe - Topaz Labs",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-08-13T12:00:00Z"
+    },
+    {
       "type": "tribunal_hearing",
       "event_type_display": "Tribunal hearing",
       "date": "2026-11-09T12:00:00Z",
@@ -572,6 +592,6 @@
       "tribunal_number": "ACT 1 of 2026"
     }
   ],
-  "count": 57,
+  "count": 59,
   "days_ahead": 60
 }

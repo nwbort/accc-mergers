@@ -1399,6 +1399,22 @@
     "estimated_at": "2026-07-17",
     "method_version": 1
   },
+  "MN-30028": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      16,
+      20
+    ],
+    "basis": "industry",
+    "anzsic_level": "class",
+    "anzsic_codes": [
+      "5420",
+      "7000"
+    ],
+    "sample_size": 25,
+    "estimated_at": "2026-08-14",
+    "method_version": 1
+  },
   "MN-30030": {
     "expected_business_days": 16,
     "range_business_days": [

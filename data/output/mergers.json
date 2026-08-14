@@ -25696,6 +25696,206 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/adobe-topaz-labs",
+      "merger_name": "Adobe - Topaz Labs",
+      "status": "Under assessment",
+      "merger_id": "MN-30028",
+      "effective_notification_datetime": "2026-08-13T12:00:00Z",
+      "original_notification_datetime": "2026-08-13T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-09-24T12:00:00Z",
+      "page_modified_datetime": "2026-08-14T11:40:00+10:00",
+      "consultation_response_due_date": "2026-08-21T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Adobe Inc.",
+          "identifier_type": null,
+          "identifier": "NASDAQ: ADBE (2748129)",
+          "party_page": {
+            "id": "adobe-inc",
+            "name": "Adobe Inc."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Topaz Labs Inc.",
+          "identifier_type": null,
+          "identifier": "EIN 043849304",
+          "party_page": {
+            "id": "topaz-labs-inc",
+            "name": "Topaz Labs Inc."
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "5420",
+          "name": "Software Publishing"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "merger_description": "Adobe Inc. (**Adobe**) proposes to acquire 100% of the issued share capital of Topaz Labs Inc. (**Topaz Labs**).\n\nAdobe is a global technology company that supplies creativity and productivity software and business intelligence services.\u00a0Adobe supplies image and video generation and editing software, through products such as Firefly, Photoshop, Lightroom and Premiere Pro.\n\nTopaz Labs supplies artificial intelligence-based photo and video enhancement software. The software has functions such as upscaling, image sharpening, video frame interpolation, denoising and image restoration. The software is typically accessed via desktop applications, cloud and application programming interfaces.",
+      "events": [
+        {
+          "date": "2026-08-14T12:00:00Z",
+          "title": "Questionnaire - Adobe - Topaz Labs",
+          "display_title": "Questionnaire - Adobe - Topaz Labs",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Adobe%20-%20Topaz%20Labs.docx",
+          "url_gh": "/mergers/MN-30028/Questionnaire - Adobe - Topaz Labs.pdf",
+          "phase": null
+        },
+        {
+          "date": "2026-08-13T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-60022",
+          "merger_name": "Autodesk - MaintainX",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Autodesk, Inc.",
+              "identifier_type": null,
+              "identifier": "",
+              "party_page": {
+                "id": "autodesk-inc",
+                "name": "Autodesk, Inc."
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "MaintainX, Inc.",
+              "identifier_type": null,
+              "identifier": "",
+              "party_page": {
+                "id": "maintainx-inc",
+                "name": "MaintainX, Inc."
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-30005",
+          "merger_name": "Adobe - Semrush",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Adobe Inc. (NASDAQ: ADBE)",
+              "identifier_type": null,
+              "identifier": "2748129",
+              "party_page": {
+                "id": "adobe-inc-nasdaq-adbe",
+                "name": "Adobe Inc. (NASDAQ: ADBE)"
+              }
+            },
+            {
+              "name": "Fenway Merger Sub, Inc.",
+              "identifier_type": null,
+              "identifier": "10389477",
+              "party_page": {
+                "id": "fenway-merger-sub-inc",
+                "name": "Fenway Merger Sub, Inc."
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Semrush Holdings, Inc.",
+              "identifier_type": null,
+              "identifier": "7690622",
+              "party_page": {
+                "id": "semrush-holdings-inc",
+                "name": "Semrush Holdings, Inc."
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-45019",
+          "merger_name": "Blackbird Ventures \u2013 Baseten Labs",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Blackbird HP Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "621 829 534",
+              "canonical": {
+                "id": "blackbird-ventures",
+                "name": "Blackbird Ventures"
+              },
+              "party_page": {
+                "id": "blackbird-ventures",
+                "name": "Blackbird Ventures"
+              }
+            },
+            {
+              "name": "Blackbird FSA Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "692 309 032",
+              "canonical": {
+                "id": "blackbird-ventures",
+                "name": "Blackbird Ventures"
+              },
+              "party_page": {
+                "id": "blackbird-ventures",
+                "name": "Blackbird Ventures"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Baseten Labs, Inc.",
+              "identifier_type": null,
+              "identifier": "EIN 371950658",
+              "party_page": {
+                "id": "baseten-labs-inc",
+                "name": "Baseten Labs, Inc"
+              }
+            }
+          ]
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 17,
+        "range_business_days": [
+          16,
+          20
+        ],
+        "basis": "industry",
+        "anzsic_level": "class",
+        "anzsic_codes": [
+          "5420",
+          "7000"
+        ],
+        "sample_size": 25,
+        "estimated_at": "2026-08-14",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/eli-lilly-and-company-ataibeckley-inc",
       "merger_name": "Eli Lilly and Company / AtaiBeckley Inc.",
       "status": "Under assessment",
