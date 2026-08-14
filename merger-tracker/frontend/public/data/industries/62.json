@@ -37,10 +37,21 @@
       "code": "624",
       "name": "Financial Asset Investing",
       "level": "group",
-      "merger_count": 80
+      "merger_count": 81
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-05043",
+      "merger_name": "Incubeta - Datisan",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-13T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-70030",
       "merger_name": "Aware Super \u2013 Increased interest in Keyton",
@@ -1010,11 +1021,11 @@
       "determination_date": null
     }
   ],
-  "count": 88,
-  "phase_1_count": 18,
+  "count": 89,
+  "phase_1_count": 19,
   "phase_2_count": 1,
   "waiver_count": 69,
-  "active_count": 8,
+  "active_count": 9,
   "phase_duration": {
     "average_days": 30.181818181818183,
     "median_days": 23,

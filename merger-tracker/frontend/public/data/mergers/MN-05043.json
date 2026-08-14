@@ -1,0 +1,221 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/incubeta-datisan",
+  "merger_name": "Incubeta - Datisan",
+  "status": "Under assessment",
+  "merger_id": "MN-05043",
+  "effective_notification_datetime": "2026-08-13T12:00:00Z",
+  "original_notification_datetime": "2026-08-13T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-09-24T12:00:00Z",
+  "page_modified_datetime": "2026-08-14T17:47:01+10:00",
+  "consultation_response_due_date": "2026-08-21T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "INCUBETA AUSTRALIA PTY LIMITED",
+      "identifier_type": "ABN",
+      "identifier": "54 138 482 916",
+      "party_page": {
+        "id": "incubeta-australia-pty-limited",
+        "name": "Incubeta Australia Pty Limited"
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "MAVERICK DATA GROUP PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "16 141 779 893",
+      "party_page": {
+        "id": "maverick-data-group-pty-ltd",
+        "name": "Maverick Data Group Pty Ltd"
+      }
+    },
+    {
+      "name": "DATISAN PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "73 622 804 228",
+      "party_page": {
+        "id": "datisan-pty-ltd",
+        "name": "Datisan Pty Ltd"
+      }
+    }
+  ],
+  "other_parties": [
+    {
+      "name": "XPON TECHNOLOGIES GROUP LIMITED",
+      "identifier_type": "ABN",
+      "identifier": "37 635 810 258",
+      "party_page": {
+        "id": "xpon-technologies-group-limited",
+        "name": "Xpon Technologies Group Limited"
+      }
+    }
+  ],
+  "anzsic_codes": [
+    {
+      "code": "5921",
+      "name": "Data Processing and Web Hosting Services"
+    },
+    {
+      "code": "6240",
+      "name": "Financial Asset Investing"
+    },
+    {
+      "code": "6940",
+      "name": "Advertising Services"
+    },
+    {
+      "code": "6950",
+      "name": "Market Research and Statistical Services"
+    },
+    {
+      "code": "7000",
+      "name": "Computer System Design and Related Services"
+    }
+  ],
+  "merger_description": "Incubeta Australia Pty Limited (**Incubeta**) proposes to acquire the entire issued share capital of Datisan Pty Ltd (**Datisan**).\n\nIncubeta is part of the Incubeta Group, an international digital marketing group. In Australia, Incubeta supplies Google Marketing Platform and Google Analytics licence resale. Incubeta also supplies professional consulting services related to implementing and operating advertising and marketing platforms. Incubator is a subsidiary of entities controlled by Carlyle Group Inc., a global alternative asset manager.\n\nDatisan is a Brisbane-based authorised reseller of Google Marketing Platform and Google Cloud Platform products and a provider of related professional marketing technology services. Datisan\u2019s services include Google Analytics services. Datisan is part of XPON Technologies Group Limited, an Australian marketing technology group.",
+  "events": [
+    {
+      "date": "2026-08-14T12:00:00Z",
+      "title": "Incubeta - Datisan - Questionnaire",
+      "display_title": "Incubeta - Datisan - Questionnaire",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Incubeta%20-%20Datisan%20-%20Questionnaire.docx",
+      "url_gh": "/mergers/MN-05043/Incubeta - Datisan - Questionnaire.pdf",
+      "phase": null
+    },
+    {
+      "date": "2026-08-13T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "public_benefits_determination": null,
+  "public_benefits_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-25008",
+      "merger_name": "Five V Capital - FTP Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "OVERWATCH BIDCO PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "695 739 970",
+          "party_page": {
+            "id": "overwatch-bidco-pty-ltd",
+            "name": "Overwatch Bidco Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "FTP GROUP HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "82 626 217 614",
+          "party_page": {
+            "id": "ftp-group-holdings-pty-ltd",
+            "name": "Ftp Group Holdings Pty Ltd"
+          }
+        },
+        {
+          "name": "FAARM BIDCO PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "695 834 390",
+          "canonical": {
+            "id": "farrm-solutions",
+            "name": "Farrm Solutions"
+          },
+          "party_page": {
+            "id": "farrm-solutions",
+            "name": "Farrm Solutions"
+          }
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-10023",
+      "merger_name": "Infoblox \u2013 Kentik Technologies",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Infoblox Inc.",
+          "identifier_type": null,
+          "identifier": "3662067",
+          "party_page": {
+            "id": "infoblox-inc",
+            "name": "Infoblox Inc."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Kentik Technologies, Inc",
+          "identifier_type": null,
+          "identifier": "5468887",
+          "party_page": {
+            "id": "kentik-technologies-inc",
+            "name": "Kentik Technologies, Inc"
+          }
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-95005",
+      "merger_name": "HCLTech - Jaspersoft",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "HCL Technologies Limited",
+          "identifier_type": "ABN",
+          "identifier": "37 541 578 951",
+          "party_page": {
+            "id": "hcl-technologies-limited",
+            "name": "HCL Technologies Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "CLOUD SOFTWARE GROUP AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "94 092 002 321",
+          "party_page": {
+            "id": "cloud-software-group-australia-pty-ltd",
+            "name": "Cloud Software Group Australia Pty Ltd"
+          }
+        }
+      ]
+    }
+  ],
+  "phase_1_estimate": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      16,
+      19
+    ],
+    "basis": "industry",
+    "anzsic_level": "class",
+    "anzsic_codes": [
+      "5921",
+      "6240",
+      "6940",
+      "6950",
+      "7000"
+    ],
+    "sample_size": 29,
+    "estimated_at": "2026-08-14",
+    "method_version": 1
+  }
+}

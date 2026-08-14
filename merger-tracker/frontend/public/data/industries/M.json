@@ -9,16 +9,27 @@
       "code": "69",
       "name": "Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",
       "level": "subdivision",
-      "merger_count": 79
+      "merger_count": 80
     },
     {
       "code": "70",
       "name": "Computer System Design and Related Services",
       "level": "subdivision",
-      "merger_count": 55
+      "merger_count": 56
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-05043",
+      "merger_name": "Incubeta - Datisan",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-13T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-30028",
       "merger_name": "Adobe - Topaz Labs",
@@ -1362,11 +1373,11 @@
       "determination_date": null
     }
   ],
-  "count": 122,
-  "phase_1_count": 49,
+  "count": 123,
+  "phase_1_count": 50,
   "phase_2_count": 2,
   "waiver_count": 71,
-  "active_count": 14,
+  "active_count": 15,
   "phase_duration": {
     "average_days": 33.026315789473685,
     "median_days": 27.0,

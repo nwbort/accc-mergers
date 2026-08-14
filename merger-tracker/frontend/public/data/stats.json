@@ -1,10 +1,10 @@
 {
-  "total_mergers": 221,
+  "total_mergers": 222,
   "total_waivers": 324,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 168,
-    "Under assessment": 50,
+    "Under assessment": 51,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -56,11 +56,11 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 80
+      "count": 81
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 55
+      "count": 56
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-05043",
+      "merger_name": "Incubeta - Datisan",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-13T12:00:00Z",
+      "page_modified_datetime": "2026-08-14T17:47:01+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-30028",
       "merger_name": "Adobe - Topaz Labs",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-05T12:00:00Z",
       "page_modified_datetime": "2026-08-13T10:16:07+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-15031",
-      "merger_name": "Danaher (Leica Biosystems) - StatLab",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-05T12:00:00Z",
-      "page_modified_datetime": "2026-08-13T09:20:09+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

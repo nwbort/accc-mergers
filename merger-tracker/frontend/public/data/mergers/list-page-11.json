@@ -3737,6 +3737,85 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/opal-healthcare-canberra-nursing-home-lidcombe-nsw"
     },
     {
+      "merger_id": "MN-05043",
+      "merger_name": "Incubeta - Datisan",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-13T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-24T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "INCUBETA AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "54 138 482 916",
+          "party_page": {
+            "id": "incubeta-australia-pty-limited",
+            "name": "Incubeta Australia Pty Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "MAVERICK DATA GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "16 141 779 893",
+          "party_page": {
+            "id": "maverick-data-group-pty-ltd",
+            "name": "Maverick Data Group Pty Ltd"
+          }
+        },
+        {
+          "name": "DATISAN PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "73 622 804 228",
+          "party_page": {
+            "id": "datisan-pty-ltd",
+            "name": "Datisan Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "XPON TECHNOLOGIES GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "37 635 810 258",
+          "party_page": {
+            "id": "xpon-technologies-group-limited",
+            "name": "Xpon Technologies Group Limited"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5921",
+          "name": "Data Processing and Web Hosting Services"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6940",
+          "name": "Advertising Services"
+        },
+        {
+          "code": "6950",
+          "name": "Market Research and Statistical Services"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/incubeta-datisan"
+    },
+    {
       "merger_id": "MN-30028",
       "merger_name": "Adobe - Topaz Labs",
       "status": "Under assessment",
