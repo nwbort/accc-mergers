@@ -1782,6 +1782,81 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/global-infrastructure-management-and-eqt-led-consortium-aes-corporation"
     },
     {
+      "merger_id": "WA-60034",
+      "merger_name": "Bain Capital \u2013 Kakaku.com",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-30T12:00:00Z",
+      "determination_publication_date": "2026-08-14T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "BCPE Blitz Cayman, L.P.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "bcpe-blitz-cayman-l-p",
+            "name": "BCPE Blitz Cayman, L.P."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Kakaku.com, Inc.",
+          "identifier_type": null,
+          "identifier": "Japan Corporate Number  011001065997",
+          "party_page": {
+            "id": "kakaku-com-inc",
+            "name": "Kakaku.com, Inc."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Bain Capital Investors, LLC.",
+          "identifier_type": null,
+          "identifier": "Delaware File Number  3229725",
+          "canonical": {
+            "id": "bain-capital-investors-llc",
+            "name": "Bain Capital Investors"
+          },
+          "party_page": {
+            "id": "bain-capital-investors-llc",
+            "name": "Bain Capital Investors"
+          }
+        },
+        {
+          "name": "Time Design International Pte Ltd",
+          "identifier_type": null,
+          "identifier": "UEN  201736394D",
+          "party_page": {
+            "id": "time-design-international-pte-ltd-2",
+            "name": "Time Design International Pte Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5700",
+          "name": "Internet Publishing and Broadcasting"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "7220",
+          "name": "Travel Agency and Tour Arrangement Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/bain-capital-%E2%80%93-kakakucom"
+    },
+    {
       "merger_id": "WA-70033",
       "merger_name": "EQT Fund Management \u2013 Corza Biosurgery",
       "status": "Assessment completed",

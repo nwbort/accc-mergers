@@ -19,10 +19,21 @@
       "code": "570",
       "name": "Internet Publishing and Broadcasting",
       "level": "group",
-      "merger_count": 5
+      "merger_count": 6
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-60034",
+      "merger_name": "Bain Capital \u2013 Kakaku.com",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-30T12:00:00Z",
+      "determination_date": "2026-08-14T12:00:00Z"
+    },
     {
       "merger_id": "WA-45019",
       "merger_name": "Blackbird Ventures \u2013 Baseten Labs",
@@ -79,10 +90,10 @@
       "determination_date": "2026-02-10T12:00:00Z"
     }
   ],
-  "count": 5,
+  "count": 6,
   "phase_1_count": 1,
   "phase_2_count": 0,
-  "waiver_count": 4,
+  "waiver_count": 5,
   "active_count": 0,
   "phase_duration": {
     "average_days": 41.0,
@@ -92,10 +103,10 @@
     "completed_count": 1
   },
   "waiver_duration": {
-    "average_days": 17.5,
-    "median_days": 16.0,
-    "average_business_days": 12.0,
-    "median_business_days": 11.0,
-    "completed_count": 4
+    "average_days": 17.0,
+    "median_days": 15,
+    "average_business_days": 11.8,
+    "median_business_days": 11,
+    "completed_count": 5
   }
 }

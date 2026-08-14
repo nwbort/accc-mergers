@@ -37,7 +37,7 @@
       "code": "624",
       "name": "Financial Asset Investing",
       "level": "group",
-      "merger_count": 78
+      "merger_count": 79
     }
   ],
   "mergers": [
@@ -128,6 +128,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-21T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-60034",
+      "merger_name": "Bain Capital \u2013 Kakaku.com",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-30T12:00:00Z",
+      "determination_date": "2026-08-14T12:00:00Z"
     },
     {
       "merger_id": "WA-70033",
@@ -988,10 +999,10 @@
       "determination_date": null
     }
   ],
-  "count": 86,
+  "count": 87,
   "phase_1_count": 18,
   "phase_2_count": 1,
-  "waiver_count": 67,
+  "waiver_count": 68,
   "active_count": 8,
   "phase_duration": {
     "average_days": 30.181818181818183,
@@ -1001,10 +1012,10 @@
     "completed_count": 11
   },
   "waiver_duration": {
-    "average_days": 18.83582089552239,
-    "median_days": 18,
-    "average_business_days": 12.567164179104477,
-    "median_business_days": 12,
-    "completed_count": 67
+    "average_days": 18.779411764705884,
+    "median_days": 18.0,
+    "average_business_days": 12.544117647058824,
+    "median_business_days": 12.0,
+    "completed_count": 68
   }
 }
