@@ -37,7 +37,7 @@
       "code": "624",
       "name": "Financial Asset Investing",
       "level": "group",
-      "merger_count": 79
+      "merger_count": 80
     }
   ],
   "mergers": [
@@ -128,6 +128,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-21T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-05040",
+      "merger_name": "Vitamin Well - EMPWR Nutrition Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-19T12:00:00Z",
+      "determination_date": "2026-08-14T12:00:00Z"
     },
     {
       "merger_id": "WA-60034",
@@ -999,10 +1010,10 @@
       "determination_date": null
     }
   ],
-  "count": 87,
+  "count": 88,
   "phase_1_count": 18,
   "phase_2_count": 1,
-  "waiver_count": 68,
+  "waiver_count": 69,
   "active_count": 8,
   "phase_duration": {
     "average_days": 30.181818181818183,
@@ -1012,10 +1023,10 @@
     "completed_count": 11
   },
   "waiver_duration": {
-    "average_days": 18.779411764705884,
-    "median_days": 18.0,
-    "average_business_days": 12.544117647058824,
-    "median_business_days": 12.0,
-    "completed_count": 68
+    "average_days": 18.884057971014492,
+    "median_days": 18,
+    "average_business_days": 12.652173913043478,
+    "median_business_days": 12,
+    "completed_count": 69
   }
 }
