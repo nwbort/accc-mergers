@@ -1,10 +1,10 @@
 {
-  "total_mergers": 222,
+  "total_mergers": 223,
   "total_waivers": 324,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 168,
-    "Under assessment": 51,
+    "Under assessment": 52,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -56,11 +56,11 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 81
+      "count": 82
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 56
+      "count": 57
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-45024",
+      "merger_name": "OEConnection - Epyx",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-15T12:00:00Z",
+      "page_modified_datetime": "2026-08-17T12:29:29+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-05043",
       "merger_name": "Incubeta - Datisan",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-05T12:00:00Z",
       "page_modified_datetime": "2026-08-13T10:17:32+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-25040",
-      "merger_name": "Modaxo - Conduent",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-05T12:00:00Z",
-      "page_modified_datetime": "2026-08-13T10:16:07+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

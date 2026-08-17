@@ -3862,6 +3862,77 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/adobe-topaz-labs"
+    },
+    {
+      "merger_id": "MN-45024",
+      "merger_name": "OEConnection - Epyx",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-15T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-25T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "OEC Bidco Limited",
+          "identifier_type": null,
+          "identifier": "17225784",
+          "party_page": {
+            "id": "oec-bidco-limited",
+            "name": "OEC Bidco Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Quadrum Investments Group Ltd (trading as \"Epyx\")",
+          "identifier_type": null,
+          "identifier": "06861230",
+          "party_page": {
+            "id": "quadrum-investments-group-ltd-trading-as-epyx",
+            "name": "Quadrum Investments Group Ltd (trading as \"Epyx\")"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Francisco Partners Management, LP.",
+          "identifier_type": null,
+          "identifier": "SEC reference number  80173955",
+          "canonical": {
+            "id": "francisco-partners-management-l-p",
+            "name": "Francisco Partners Management"
+          },
+          "party_page": {
+            "id": "francisco-partners-management-l-p",
+            "name": "Francisco Partners Management"
+          }
+        },
+        {
+          "name": "OEConnection, LLC",
+          "identifier_type": null,
+          "identifier": "1196674",
+          "party_page": {
+            "id": "oeconnection-llc",
+            "name": "OEConnection, LLC"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/oeconnection-epyx"
     }
   ],
   "page": 11,

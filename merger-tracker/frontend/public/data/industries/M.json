@@ -15,10 +15,21 @@
       "code": "70",
       "name": "Computer System Design and Related Services",
       "level": "subdivision",
-      "merger_count": 56
+      "merger_count": 57
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-45024",
+      "merger_name": "OEConnection - Epyx",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-15T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-05043",
       "merger_name": "Incubeta - Datisan",
@@ -1373,11 +1384,11 @@
       "determination_date": null
     }
   ],
-  "count": 123,
-  "phase_1_count": 50,
+  "count": 124,
+  "phase_1_count": 51,
   "phase_2_count": 2,
   "waiver_count": 71,
-  "active_count": 15,
+  "active_count": 16,
   "phase_duration": {
     "average_days": 33.026315789473685,
     "median_days": 27.0,
