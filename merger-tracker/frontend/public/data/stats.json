@@ -3,12 +3,12 @@
   "total_waivers": 328,
   "total_conditional_approvals": 3,
   "by_status": {
-    "Assessment completed": 168,
-    "Under assessment": 55,
+    "Assessment completed": 169,
+    "Under assessment": 54,
     "Assessment ceased": 3
   },
   "by_determination": {
-    "Approved": 163,
+    "Approved": 164,
     "Referred to phase 2": 8,
     "Approved with conditions": 2
   },
@@ -22,28 +22,28 @@
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 166,
+    "cleared": 167,
     "not_cleared": 2,
-    "total": 168,
+    "total": 169,
     "rate": 0.988
   },
   "phase_duration": {
-    "average_days": 29.84971098265896,
-    "median_days": 26,
-    "average_business_days": 19.872832369942195,
-    "median_business_days": 17,
+    "average_days": 29.816091954022987,
+    "median_days": 26.0,
+    "average_business_days": 19.850574712643677,
+    "median_business_days": 17.0,
     "percentiles": {
       "day15": {
         "count": 40,
-        "percentage": 23.1
+        "percentage": 23.0
       },
       "day20": {
-        "count": 131,
-        "percentage": 75.7
+        "count": 132,
+        "percentage": 75.9
       },
       "day30": {
-        "count": 163,
-        "percentage": 94.2
+        "count": 164,
+        "percentage": 94.3
       }
     }
   },
@@ -263,6 +263,17 @@
       "has_conditions": false
     },
     {
+      "merger_id": "MN-05030",
+      "merger_name": "Coles \u2013 supermarket site in Upper Swan, WA",
+      "determination": "Approved",
+      "determination_date": "2026-08-17T12:00:00Z",
+      "page_modified_datetime": "2026-08-17T17:33:45+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-05040",
       "merger_name": "Vitamin Well - EMPWR Nutrition Group",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-12T12:00:00Z",
       "page_modified_datetime": "2026-08-12T16:49:11+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-85039",
-      "merger_name": "Iris Capital \u2013 Revesby Pacific Hotel and Crown Hotel",
-      "determination": "Approved",
-      "determination_date": "2026-08-12T12:00:00Z",
-      "page_modified_datetime": "2026-08-12T16:35:51+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

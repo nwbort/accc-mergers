@@ -10382,13 +10382,15 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/coles-%E2%80%93-supermarket-site-in-upper-swan-wa",
       "merger_name": "Coles \u2013 supermarket site in Upper Swan, WA",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-05030",
       "effective_notification_datetime": "2026-07-24T12:00:00Z",
       "original_notification_datetime": "2026-07-24T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-09-04T12:00:00Z",
-      "page_modified_datetime": "2026-08-03T10:40:08+10:00",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-08-17T17:33:45+10:00",
       "consultation_response_due_date": "2026-07-31T12:00:00Z",
       "acquirers": [
         {
@@ -10438,13 +10440,49 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-08-17T12:00:00Z",
+          "title": "Coles \u2013 supermarket site in Upper Swan, WA - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Coles%20%E2%80%93%20supermarket%20site%20in%20Upper%20Swan%2C%20WA%20-%20Phase%201%20determination.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Coles Supermarkets Australia Pty Ltd, a subsidiary of Coles Group\nLimited (Coles), proposes to acquire a leasehold interest for a Coles\nsupermarket within a new neighbourhood centre at Clementine\nVillage in Upper Swan WA 6069 (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, Coles, is an Australian public company (ASX: COL) that\nprimarily operates:\n\u2022 supermarkets nationwide through its subsidiary, Coles\nSupermarkets Australia Pty Ltd; and\n\u2022 retail liquor stores nationwide, trading under the Liquorland,\nLiquorland Warehouse and Liquorland Cellars brands.\nThe lessor, Saracen Properties Pty Ltd is an Australian private\nproperty development and building company. It is based in Perth,\nWA.\nThe Target Site is in Upper Swan, WA, approximately 33km northeast\nof Perth."
+            },
+            {
+              "item": "Overlap and relationship\nbetween the parties",
+              "details": "The leasehold interest is an input to Coles\u2019 existing supermarket\nretailing operations, which would facilitate Coles establishing the\nnew supermarket."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, other information provided by the parties and\npublicly available sources.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 The proposed Coles supermarket would face competition from\nmultiple alternative suppliers in the surrounding area.\n\u2022 The aggregation arising from the Acquisition is not sufficient to\nmeaningfully change competition in the relevant local market.\n\u2022 The Acquisition does not involve Coles acquiring a competitor."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-05030/Coles \u2013 supermarket site in Upper Swan, WA - Phase 1 determination.pdf",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
+      "determination_publication_date": "2026-08-17T12:00:00Z",
       "is_waiver": false,
-      "accc_determination": null,
       "has_conditions": false,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-08-17T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -141797,8 +141835,8 @@
         {
           "merger_id": "MN-05030",
           "merger_name": "Coles \u2013 supermarket site in Upper Swan, WA",
-          "status": "Under assessment",
-          "accc_determination": null,
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
           "acquirers": [
             {
               "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",

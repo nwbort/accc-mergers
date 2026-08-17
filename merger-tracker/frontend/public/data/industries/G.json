@@ -93,17 +93,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-05030",
-      "merger_name": "Coles \u2013 supermarket site in Upper Swan, WA",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-07-24T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-65026",
       "merger_name": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company",
       "is_waiver": false,
@@ -135,6 +124,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-13T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-05030",
+      "merger_name": "Coles \u2013 supermarket site in Upper Swan, WA",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-24T12:00:00Z",
+      "determination_date": "2026-08-17T12:00:00Z"
     },
     {
       "merger_id": "WA-20032",
@@ -768,13 +768,13 @@
   "phase_1_count": 24,
   "phase_2_count": 3,
   "waiver_count": 39,
-  "active_count": 9,
+  "active_count": 8,
   "phase_duration": {
-    "average_days": 39.666666666666664,
-    "median_days": 27.5,
-    "average_business_days": 25.22222222222222,
-    "median_business_days": 18.0,
-    "completed_count": 18
+    "average_days": 38.8421052631579,
+    "median_days": 27,
+    "average_business_days": 24.736842105263158,
+    "median_business_days": 18,
+    "completed_count": 19
   },
   "waiver_duration": {
     "average_days": 19.923076923076923,
