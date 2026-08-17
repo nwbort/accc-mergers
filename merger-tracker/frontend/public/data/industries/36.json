@@ -19,10 +19,21 @@
       "code": "360",
       "name": "Grocery, Liquor and Tobacco Product Wholesaling",
       "level": "group",
-      "merger_count": 5
+      "merger_count": 6
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-10027",
+      "merger_name": "Endeavour Group \u2013 retail liquor site in Horsham, VIC",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-14T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-55031",
       "merger_name": "Danone \u2013 MADE",
@@ -79,11 +90,11 @@
       "determination_date": "2026-01-28T12:00:00Z"
     }
   ],
-  "count": 5,
-  "phase_1_count": 3,
+  "count": 6,
+  "phase_1_count": 4,
   "phase_2_count": 0,
   "waiver_count": 2,
-  "active_count": 1,
+  "active_count": 2,
   "phase_duration": {
     "average_days": 37.0,
     "median_days": 37.0,

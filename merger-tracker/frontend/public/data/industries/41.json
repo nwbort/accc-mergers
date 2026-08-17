@@ -25,10 +25,21 @@
       "code": "412",
       "name": "Specialised Food Retailing",
       "level": "group",
-      "merger_count": 17
+      "merger_count": 18
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-10027",
+      "merger_name": "Endeavour Group \u2013 retail liquor site in Horsham, VIC",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-14T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-15034",
       "merger_name": "Australian Venue Co \u2013 assets of Black Nugget Hotel Motel, Bartletts Tavern and all associated detached bottle shops",
@@ -338,11 +349,11 @@
       "determination_date": "2026-03-13T12:00:00Z"
     }
   ],
-  "count": 28,
-  "phase_1_count": 10,
+  "count": 29,
+  "phase_1_count": 11,
   "phase_2_count": 2,
   "waiver_count": 16,
-  "active_count": 2,
+  "active_count": 3,
   "phase_duration": {
     "average_days": 42.2,
     "median_days": 28.0,

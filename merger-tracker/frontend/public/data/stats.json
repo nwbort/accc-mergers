@@ -1,10 +1,10 @@
 {
-  "total_mergers": 224,
+  "total_mergers": 225,
   "total_waivers": 324,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 168,
-    "Under assessment": 53,
+    "Under assessment": 54,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -72,11 +72,11 @@
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 27
+      "count": 28
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 26
+      "count": 27
     },
     {
       "name": "Accommodation",
@@ -84,7 +84,7 @@
     },
     {
       "name": "Liquor Retailing",
-      "count": 16
+      "count": 17
     },
     {
       "name": "Engineering Design and Engineering Consulting Services",
@@ -103,6 +103,16 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-15T12:00:00Z",
       "page_modified_datetime": "2026-08-17T12:29:29+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
+    {
+      "merger_id": "MN-10027",
+      "merger_name": "Endeavour Group \u2013 retail liquor site in Horsham, VIC",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-14T12:00:00Z",
+      "page_modified_datetime": "2026-08-17T16:33:56+10:00",
       "is_waiver": false,
       "is_refiled": false
     },
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-06T12:00:00Z",
       "page_modified_datetime": "2026-08-14T09:00:10+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-35031",
-      "merger_name": "Osmoflo Water Management - Guidera O'Connor",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-06T12:00:00Z",
-      "page_modified_datetime": "2026-08-10T11:00:01+10:00",
       "is_waiver": false,
       "is_refiled": false
     }
