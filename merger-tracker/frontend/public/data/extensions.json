@@ -1,15 +1,15 @@
 {
   "summary": {
     "notifications_total": 226,
-    "matters_extended": 18,
-    "share_extended_pct": 8.0,
-    "extension_events_total": 24,
-    "total_extension_bd": 265,
-    "median_matter_extension_bd": 15,
+    "matters_extended": 19,
+    "share_extended_pct": 8.4,
+    "extension_events_total": 25,
+    "total_extension_bd": 280,
+    "median_matter_extension_bd": 15.0,
     "longest_single_bd": 30,
     "phase_2_total": 8,
     "extended_escalated_to_phase_2": 7,
-    "escalation_rate_given_extension_pct": 38.9,
+    "escalation_rate_given_extension_pct": 36.8,
     "phase_2_preceded_by_extension_pct": 87.5,
     "base_phase_2_rate_pct": 3.5,
     "statutory_phase_1_bd": 30
@@ -17,8 +17,8 @@
   "reasons": [
     {
       "category": "Requested by the merger parties",
-      "events": 16,
-      "business_days": 181
+      "events": 17,
+      "business_days": 196
     },
     {
       "category": "ACCC information request",
@@ -58,7 +58,7 @@
     },
     {
       "month": "2026-08",
-      "count": 3
+      "count": 4
     }
   ],
   "matters": [
@@ -255,6 +255,27 @@
           "reason_category": "Remedy under consideration",
           "reason_detail": "remedy offered by parties",
           "title": "Timeline extended by 15 business days \u2013 following remedy offered by parties"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-85015",
+      "merger_name": "Journey Beyond - Kelsian Tourism Portfolio",
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "notification_date": "2026-07-01T12:00:00Z",
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "escalated_to_phase_2": false,
+      "total_extension_bd": 15,
+      "extension_count": 1,
+      "extensions": [
+        {
+          "date": "2026-08-11T12:00:00Z",
+          "business_days": 15,
+          "reason_category": "Requested by the merger parties",
+          "reason_detail": "request by parties",
+          "title": "Timeline extended by 15 business days - following request by parties"
         }
       ]
     },

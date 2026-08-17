@@ -15,7 +15,7 @@
       "code": "70",
       "name": "Computer System Design and Related Services",
       "level": "subdivision",
-      "merger_count": 57
+      "merger_count": 58
     }
   ],
   "mergers": [
@@ -205,6 +205,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-04-27T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-35028",
+      "merger_name": "efex - OnPlatinum",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-15T12:00:00Z",
+      "determination_date": "2026-08-17T12:00:00Z"
     },
     {
       "merger_id": "MN-05036",
@@ -1395,10 +1406,10 @@
       "determination_date": null
     }
   ],
-  "count": 125,
+  "count": 126,
   "phase_1_count": 52,
   "phase_2_count": 2,
-  "waiver_count": 71,
+  "waiver_count": 72,
   "active_count": 17,
   "phase_duration": {
     "average_days": 33.026315789473685,
@@ -1408,10 +1419,10 @@
     "completed_count": 38
   },
   "waiver_duration": {
-    "average_days": 18.718309859154928,
-    "median_days": 19,
-    "average_business_days": 12.633802816901408,
-    "median_business_days": 13,
-    "completed_count": 71
+    "average_days": 18.916666666666668,
+    "median_days": 19.0,
+    "average_business_days": 12.777777777777779,
+    "median_business_days": 13.0,
+    "completed_count": 72
   }
 }

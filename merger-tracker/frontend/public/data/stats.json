@@ -1,6 +1,6 @@
 {
   "total_mergers": 226,
-  "total_waivers": 324,
+  "total_waivers": 325,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 168,
@@ -18,7 +18,7 @@
     "Assessment ceased": 2
   },
   "by_waiver_determination": {
-    "Approved": 310,
+    "Approved": 311,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.108024691358025,
-    "median_days": 18.5,
-    "average_business_days": 12.848765432098766,
-    "median_business_days": 13.0
+    "average_days": 19.15076923076923,
+    "median_days": 19,
+    "average_business_days": 12.88,
+    "median_business_days": 13
   },
   "top_industries": [
     {
@@ -60,7 +60,7 @@
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 57
+      "count": 58
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-35028",
+      "merger_name": "efex - OnPlatinum",
+      "determination": "Approved",
+      "determination_date": "2026-08-17T12:00:00Z",
+      "page_modified_datetime": "2026-08-17T17:35:13+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-05040",
       "merger_name": "Vitamin Well - EMPWR Nutrition Group",
       "determination": "Approved",
@@ -338,17 +349,6 @@
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
       "has_conditions": false
-    },
-    {
-      "merger_id": "MN-90008",
-      "merger_name": "Black Rhino - Club Hotel Motel Roma",
-      "determination": "Approved",
-      "determination_date": "2026-08-11T12:00:00Z",
-      "page_modified_datetime": "2026-08-12T09:46:14+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": true
     }
   ]
 }
