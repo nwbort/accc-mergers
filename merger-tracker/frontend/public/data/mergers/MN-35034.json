@@ -7,7 +7,7 @@
   "original_notification_datetime": "2026-08-07T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-09-18T12:00:00Z",
-  "page_modified_datetime": "2026-08-10T13:42:05+10:00",
+  "page_modified_datetime": "2026-08-17T11:16:39+10:00",
   "consultation_response_due_date": "2026-08-17T12:00:00Z",
   "acquirers": [
     {
@@ -31,12 +31,21 @@
   ],
   "targets": [
     {
-      "name": "Smuggler Experience LLC (including shell subsidiary Lux a Deo LLC)",
+      "name": "Smuggler LLC",
       "identifier_type": null,
-      "identifier": "Identifying number  202462414150",
+      "identifier": "Identifying number  6877804",
       "party_page": {
-        "id": "smuggler-experience-llc-including-shell-subsidiary-lux-a-deo-llc",
-        "name": "Smuggler Experience LLC (including shell subsidiary Lux a Deo LLC)"
+        "id": "smuggler-llc",
+        "name": "Smuggler LLC"
+      }
+    },
+    {
+      "name": "Smuggler London Ltd",
+      "identifier_type": null,
+      "identifier": "Identifying number  06806477",
+      "party_page": {
+        "id": "smuggler-london-ltd",
+        "name": "Smuggler London Ltd"
       }
     },
     {
@@ -58,34 +67,16 @@
       }
     },
     {
-      "name": "Smuggler LLC",
+      "name": "Smuggler Experience LLC (including shell subsidiary Lux a Deo LLC)",
       "identifier_type": null,
-      "identifier": "Identifying number  6877804",
+      "identifier": "Identifying number  202462414150",
       "party_page": {
-        "id": "smuggler-llc",
-        "name": "Smuggler LLC"
-      }
-    },
-    {
-      "name": "Smuggler London Ltd",
-      "identifier_type": null,
-      "identifier": "Identifying number  06806477",
-      "party_page": {
-        "id": "smuggler-london-ltd",
-        "name": "Smuggler London Ltd"
+        "id": "smuggler-experience-llc-including-shell-subsidiary-lux-a-deo-llc",
+        "name": "Smuggler Experience LLC (including shell subsidiary Lux a Deo LLC)"
       }
     }
   ],
   "other_parties": [
-    {
-      "name": "ELOCGA",
-      "identifier_type": null,
-      "identifier": "Identifying number  B209477",
-      "party_page": {
-        "id": "elocga",
-        "name": "Elocga"
-      }
-    },
     {
       "name": "K10 Holding SA",
       "identifier_type": null,
@@ -93,6 +84,15 @@
       "party_page": {
         "id": "k10-holding-sa",
         "name": "K10 Holding SA"
+      }
+    },
+    {
+      "name": "ELOCGA",
+      "identifier_type": null,
+      "identifier": "Identifying number  B209477",
+      "party_page": {
+        "id": "elocga",
+        "name": "Elocga"
       }
     },
     {

@@ -3292,12 +3292,21 @@
       ],
       "targets": [
         {
-          "name": "Smuggler Experience LLC (including shell subsidiary Lux a Deo LLC)",
+          "name": "Smuggler LLC",
           "identifier_type": null,
-          "identifier": "Identifying number  202462414150",
+          "identifier": "Identifying number  6877804",
           "party_page": {
-            "id": "smuggler-experience-llc-including-shell-subsidiary-lux-a-deo-llc",
-            "name": "Smuggler Experience LLC (including shell subsidiary Lux a Deo LLC)"
+            "id": "smuggler-llc",
+            "name": "Smuggler LLC"
+          }
+        },
+        {
+          "name": "Smuggler London Ltd",
+          "identifier_type": null,
+          "identifier": "Identifying number  06806477",
+          "party_page": {
+            "id": "smuggler-london-ltd",
+            "name": "Smuggler London Ltd"
           }
         },
         {
@@ -3319,34 +3328,16 @@
           }
         },
         {
-          "name": "Smuggler LLC",
+          "name": "Smuggler Experience LLC (including shell subsidiary Lux a Deo LLC)",
           "identifier_type": null,
-          "identifier": "Identifying number  6877804",
+          "identifier": "Identifying number  202462414150",
           "party_page": {
-            "id": "smuggler-llc",
-            "name": "Smuggler LLC"
-          }
-        },
-        {
-          "name": "Smuggler London Ltd",
-          "identifier_type": null,
-          "identifier": "Identifying number  06806477",
-          "party_page": {
-            "id": "smuggler-london-ltd",
-            "name": "Smuggler London Ltd"
+            "id": "smuggler-experience-llc-including-shell-subsidiary-lux-a-deo-llc",
+            "name": "Smuggler Experience LLC (including shell subsidiary Lux a Deo LLC)"
           }
         }
       ],
       "other_parties": [
-        {
-          "name": "ELOCGA",
-          "identifier_type": null,
-          "identifier": "Identifying number  B209477",
-          "party_page": {
-            "id": "elocga",
-            "name": "Elocga"
-          }
-        },
         {
           "name": "K10 Holding SA",
           "identifier_type": null,
@@ -3354,6 +3345,15 @@
           "party_page": {
             "id": "k10-holding-sa",
             "name": "K10 Holding SA"
+          }
+        },
+        {
+          "name": "ELOCGA",
+          "identifier_type": null,
+          "identifier": "Identifying number  B209477",
+          "party_page": {
+            "id": "elocga",
+            "name": "Elocga"
           }
         },
         {

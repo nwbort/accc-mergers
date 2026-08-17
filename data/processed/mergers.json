@@ -12877,7 +12877,7 @@
     "original_notification_datetime": "2026-08-07T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-09-18T12:00:00Z",
-    "page_modified_datetime": "2026-08-10T13:42:05+10:00",
+    "page_modified_datetime": "2026-08-17T11:16:39+10:00",
     "consultation_response_due_date": "2026-08-17T12:00:00Z",
     "acquirers": [
       {
@@ -12893,9 +12893,14 @@
     ],
     "targets": [
       {
-        "name": "Smuggler Experience LLC (including shell subsidiary Lux a Deo LLC)",
+        "name": "Smuggler LLC",
         "identifier_type": null,
-        "identifier": "Identifying number  202462414150"
+        "identifier": "Identifying number  6877804"
+      },
+      {
+        "name": "Smuggler London Ltd",
+        "identifier_type": null,
+        "identifier": "Identifying number  06806477"
       },
       {
         "name": "Sidepiece LLC",
@@ -12908,26 +12913,21 @@
         "identifier": "Identifying number  7088711"
       },
       {
-        "name": "Smuggler LLC",
+        "name": "Smuggler Experience LLC (including shell subsidiary Lux a Deo LLC)",
         "identifier_type": null,
-        "identifier": "Identifying number  6877804"
-      },
-      {
-        "name": "Smuggler London Ltd",
-        "identifier_type": null,
-        "identifier": "Identifying number  06806477"
+        "identifier": "Identifying number  202462414150"
       }
     ],
     "other_parties": [
       {
-        "name": "ELOCGA",
-        "identifier_type": null,
-        "identifier": "Identifying number  B209477"
-      },
-      {
         "name": "K10 Holding SA",
         "identifier_type": null,
         "identifier": "Identifying number  B214433"
+      },
+      {
+        "name": "ELOCGA",
+        "identifier_type": null,
+        "identifier": "Identifying number  B209477"
       },
       {
         "name": "LOV Group Invest",
