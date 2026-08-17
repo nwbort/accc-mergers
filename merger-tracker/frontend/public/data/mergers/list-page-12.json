@@ -1,6 +1,66 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-10027",
+      "merger_name": "Endeavour Group \u2013 retail liquor site in Horsham, VIC",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-14T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-25T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "ENDEAVOUR GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "77 159 767 843",
+          "party_page": {
+            "id": "endeavour-group-limited",
+            "name": "Endeavour Group Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "COLAB (AUS) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "34 664 345 751",
+          "party_page": {
+            "id": "colab-aus-pty-ltd",
+            "name": "Colab (Aus) Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "1214",
+          "name": "Wine and Other Alcoholic Beverage Manufacturing"
+        },
+        {
+          "code": "3606",
+          "name": "Liquor and Tobacco Product Wholesaling"
+        },
+        {
+          "code": "4123",
+          "name": "Liquor Retailing"
+        },
+        {
+          "code": "4520",
+          "name": "Pubs, Taverns and Bars"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/endeavour-group-%E2%80%93-retail-liquor-site-in-horsham-vic"
+    },
+    {
       "merger_id": "MN-65031",
       "merger_name": "Metal Manufactures - BayWa Solar Systems",
       "status": "Under assessment",

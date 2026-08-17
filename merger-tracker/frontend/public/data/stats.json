@@ -1,6 +1,6 @@
 {
   "total_mergers": 226,
-  "total_waivers": 327,
+  "total_waivers": 328,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 168,
@@ -18,7 +18,7 @@
     "Assessment ceased": 2
   },
   "by_waiver_determination": {
-    "Approved": 313,
+    "Approved": 314,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.134556574923547,
-    "median_days": 19,
-    "average_business_days": 12.871559633027523,
-    "median_business_days": 13
+    "average_days": 19.173780487804876,
+    "median_days": 19.0,
+    "average_business_days": 12.899390243902438,
+    "median_business_days": 13.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 84
+      "count": 85
     },
     {
       "name": "Computer System Design and Related Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-60032",
+      "merger_name": "Atlas Holdings and KPS \u2013 shares in joint venture and interest in C&D Technologies",
+      "determination": "Approved",
+      "determination_date": "2026-08-17T12:00:00Z",
+      "page_modified_datetime": "2026-08-17T17:47:01+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-20032",
       "merger_name": "Nojima Corporation \u2013 Hitachi Global Life Solutions and Ar\u00e7elik Hitachi Home Appliances",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-10021",
-      "merger_name": "Ambrose Construct Group \u2013 Major Loss Builders",
-      "determination": "Approved",
-      "determination_date": "2026-08-12T12:00:00Z",
-      "page_modified_datetime": "2026-08-12T16:23:42+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]

@@ -1,6 +1,82 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-90022",
+      "merger_name": "Expedia - CarTrawler",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-20T12:00:00Z",
+      "determination_publication_date": "2026-08-13T12:00:00Z",
+      "end_of_determination_period": "2026-08-31T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Expedia Group International Holdings II, LLC",
+          "identifier_type": null,
+          "identifier": "Delaware Secretary of State7172515 I.R.S Employer Identification No.832737894",
+          "party_page": {
+            "id": "expedia-group-international-holdings-ii-llc",
+            "name": "Expedia Group International Holdings II, LLC"
+          }
+        },
+        {
+          "name": "Expedia Group, Inc.",
+          "identifier_type": null,
+          "identifier": "I.R.S. Employer Identification No.202705720",
+          "party_page": {
+            "id": "expedia-group-inc",
+            "name": "Expedia Group, Inc."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Ballast Group Holdings Ltd",
+          "identifier_type": null,
+          "identifier": "018092V",
+          "party_page": {
+            "id": "ballast-group-holdings-ltd",
+            "name": "Ballast Group Holdings Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "trivago NV",
+          "identifier_type": null,
+          "identifier": "67222927",
+          "party_page": {
+            "id": "trivago-nv",
+            "name": "trivago NV"
+          }
+        },
+        {
+          "name": "Stayz Pty Limited",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "stayz-pty-limited",
+            "name": "Stayz Pty Limited"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4400",
+          "name": "Accommodation"
+        },
+        {
+          "code": "7220",
+          "name": "Travel Agency and Tour Arrangement Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/expedia-cartrawler"
+    },
+    {
       "merger_id": "WA-40033",
       "merger_name": "Bain Capital - Everllence",
       "status": "Assessment completed",
@@ -4149,66 +4225,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/adobe-topaz-labs"
-    },
-    {
-      "merger_id": "MN-10027",
-      "merger_name": "Endeavour Group \u2013 retail liquor site in Horsham, VIC",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-14T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-09-25T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "ENDEAVOUR GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "77 159 767 843",
-          "party_page": {
-            "id": "endeavour-group-limited",
-            "name": "Endeavour Group Limited"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "COLAB (AUS) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "34 664 345 751",
-          "party_page": {
-            "id": "colab-aus-pty-ltd",
-            "name": "Colab (Aus) Pty Ltd"
-          }
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "1214",
-          "name": "Wine and Other Alcoholic Beverage Manufacturing"
-        },
-        {
-          "code": "3606",
-          "name": "Liquor and Tobacco Product Wholesaling"
-        },
-        {
-          "code": "4123",
-          "name": "Liquor Retailing"
-        },
-        {
-          "code": "4520",
-          "name": "Pubs, Taverns and Bars"
-        },
-        {
-          "code": "6712",
-          "name": "Non-Residential Property Operators"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/endeavour-group-%E2%80%93-retail-liquor-site-in-horsham-vic"
     }
   ],
   "page": 11,
