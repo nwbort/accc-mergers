@@ -87,7 +87,7 @@
       "code": "24",
       "name": "Machinery and Equipment Manufacturing",
       "level": "subdivision",
-      "merger_count": 49
+      "merger_count": 50
     },
     {
       "code": "25",
@@ -100,6 +100,17 @@
     {
       "merger_id": "MN-10027",
       "merger_name": "Endeavour Group \u2013 retail liquor site in Horsham, VIC",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-14T12:00:00Z",
+      "determination_date": null
+    },
+    {
+      "merger_id": "MN-75041",
+      "merger_name": "Lockheed Martin \u2013 Ultra Maritime",
       "is_waiver": false,
       "status": "Under assessment",
       "determination": null,
@@ -1594,11 +1605,11 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 136,
-  "phase_1_count": 64,
+  "count": 137,
+  "phase_1_count": 65,
   "phase_2_count": 2,
   "waiver_count": 70,
-  "active_count": 16,
+  "active_count": 17,
   "phase_duration": {
     "average_days": 29.80392156862745,
     "median_days": 26,

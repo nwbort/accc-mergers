@@ -1,10 +1,10 @@
 {
-  "total_mergers": 225,
+  "total_mergers": 226,
   "total_waivers": 324,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 168,
-    "Under assessment": 54,
+    "Under assessment": 55,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -88,7 +88,7 @@
     },
     {
       "name": "Engineering Design and Engineering Consulting Services",
-      "count": 16
+      "count": 17
     },
     {
       "name": "Scientific Research Services",
@@ -103,6 +103,16 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-15T12:00:00Z",
       "page_modified_datetime": "2026-08-17T12:29:29+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
+    {
+      "merger_id": "MN-75041",
+      "merger_name": "Lockheed Martin \u2013 Ultra Maritime",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-14T12:00:00Z",
+      "page_modified_datetime": "2026-08-17T16:57:42+10:00",
       "is_waiver": false,
       "is_refiled": false
     },
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-06T12:00:00Z",
       "page_modified_datetime": "2026-08-14T09:31:25+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-65021",
-      "merger_name": "Wesfarmers and Built Group - Built Living Joint Venture",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-06T12:00:00Z",
-      "page_modified_datetime": "2026-08-14T09:00:10+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

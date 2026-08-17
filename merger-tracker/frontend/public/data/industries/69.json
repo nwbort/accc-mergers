@@ -25,7 +25,7 @@
       "code": "692",
       "name": "Architectural, Engineering and Technical Services",
       "level": "group",
-      "merger_count": 24
+      "merger_count": 25
     },
     {
       "code": "693",
@@ -65,6 +65,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-75041",
+      "merger_name": "Lockheed Martin \u2013 Ultra Maritime",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-14T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-05043",
       "merger_name": "Incubeta - Datisan",
@@ -946,11 +957,11 @@
       "determination_date": null
     }
   ],
-  "count": 80,
-  "phase_1_count": 33,
+  "count": 81,
+  "phase_1_count": 34,
   "phase_2_count": 2,
   "waiver_count": 45,
-  "active_count": 12,
+  "active_count": 13,
   "phase_duration": {
     "average_days": 36.0,
     "median_days": 27.5,

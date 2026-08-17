@@ -6986,6 +6986,7 @@
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-09-25T12:00:00Z",
     "page_modified_datetime": "2026-08-17T16:33:56+10:00",
+    "consultation_response_due_date": "2026-08-24T12:00:00Z",
     "acquirers": [
       {
         "name": "ENDEAVOUR GROUP LIMITED",
@@ -7039,8 +7040,7 @@
         "display_title": "Merger notified to ACCC"
       }
     ],
-    "is_waiver": false,
-    "consultation_response_due_date": "2026-08-24T12:00:00Z"
+    "is_waiver": false
   },
   {
     "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/google-wiz",
@@ -22774,6 +22774,71 @@
       },
       {
         "date": "2026-08-05T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": false
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/lockheed-martin-%E2%80%93-ultra-maritime",
+    "merger_name": "Lockheed Martin \u2013 Ultra Maritime",
+    "status": "Under assessment",
+    "merger_id": "MN-75041",
+    "effective_notification_datetime": "2026-08-14T12:00:00Z",
+    "original_notification_datetime": "2026-08-14T12:00:00Z",
+    "stage": "Phase 1 - initial assessment",
+    "end_of_determination_period": "2026-09-25T12:00:00Z",
+    "page_modified_datetime": "2026-08-17T16:57:42+10:00",
+    "consultation_response_due_date": "2026-08-24T12:00:00Z",
+    "acquirers": [
+      {
+        "name": "RLM SYSTEMS PTY LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "67 050 753 403"
+      }
+    ],
+    "targets": [
+      {
+        "name": "Ultra Electronics Australia Pty Ltd",
+        "identifier_type": "ABN",
+        "identifier": "48 127 336 841"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "Lockheed Martin Corporation",
+        "identifier_type": null,
+        "identifier": "US Department ID  D03964756"
+      },
+      {
+        "name": "Ultra Electronics Holdings Limited",
+        "identifier_type": null,
+        "identifier": "registered number 02830397"
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "2419",
+        "name": "Other Professional and Scientific Equipment Manufacturing"
+      },
+      {
+        "code": "6923",
+        "name": "Engineering Design and Engineering Consulting Services"
+      }
+    ],
+    "merger_description": "Lockheed Martin Corporation (**Lockheed Martin**) proposes to acquire the entire issued share capital of Ultra Electronics Australia Pty Limited, Ultra Sonar Systems Ltd., Ultra Electronics Maritime Systems, Inc., Ultra Electronics, Inc. and their direct and indirect subsidiaries (together comprising **Ultra Maritime**) (the **Acquisition**).\n\nLockheed Martin is a global aerospace and defence company headquartered in Bethesda, Maryland, US. Lockheed Martin researches, designs, develops, manufactures and sustains advanced technology systems, products and services for defence, security and aerospace customers. In Australia, Lockheed Martin's operations are predominantly conducted through its wholly owned subsidiary, Lockheed Martin Australia Pty Ltd.\n\nUltra Maritime is a naval defense technology business headquartered in Braintree, Massachusetts, US, with manufacturing facilities in the US, Canada, the UK and Australia. Ultra Maritime designs, develops and supplies maritime and undersea warfare solutions for manned and unmanned platforms, including sonar systems, sonobuoys and receivers, torpedo technologies and radars.",
+    "events": [
+      {
+        "date": "2026-08-17T12:00:00Z",
+        "title": "Questionnaire - Lockheed Martin - Ultra Maritime",
+        "display_title": "Questionnaire - Lockheed Martin - Ultra Maritime",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Lockheed%20Martin%20-%20Ultra%20Maritime%20-%20Third%20Party%20Questionnaire.docx",
+        "url_gh": "/mergers/MN-75041/Lockheed Martin - Ultra Maritime - Third Party Questionnaire.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2026-08-14T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
       }

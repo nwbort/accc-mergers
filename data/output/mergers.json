@@ -14737,6 +14737,7 @@
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-09-25T12:00:00Z",
       "page_modified_datetime": "2026-08-17T16:33:56+10:00",
+      "consultation_response_due_date": "2026-08-24T12:00:00Z",
       "acquirers": [
         {
           "name": "ENDEAVOUR GROUP LIMITED",
@@ -14800,7 +14801,6 @@
         }
       ],
       "is_waiver": false,
-      "consultation_response_due_date": "2026-08-24T12:00:00Z",
       "accc_determination": null,
       "has_conditions": false,
       "phase_1_determination": null,
@@ -52259,6 +52259,199 @@
         ],
         "sample_size": 9,
         "estimated_at": "2026-08-05",
+        "method_version": 1
+      }
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/lockheed-martin-%E2%80%93-ultra-maritime",
+      "merger_name": "Lockheed Martin \u2013 Ultra Maritime",
+      "status": "Under assessment",
+      "merger_id": "MN-75041",
+      "effective_notification_datetime": "2026-08-14T12:00:00Z",
+      "original_notification_datetime": "2026-08-14T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-09-25T12:00:00Z",
+      "page_modified_datetime": "2026-08-17T16:57:42+10:00",
+      "consultation_response_due_date": "2026-08-24T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "RLM SYSTEMS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "67 050 753 403",
+          "party_page": {
+            "id": "rlm-systems-pty-limited",
+            "name": "Rlm Systems Pty Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Ultra Electronics Australia Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "48 127 336 841",
+          "party_page": {
+            "id": "ultra-electronics-australia-pty-ltd",
+            "name": "Ultra Electronics Australia Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Lockheed Martin Corporation",
+          "identifier_type": null,
+          "identifier": "US Department ID  D03964756",
+          "party_page": {
+            "id": "lockheed-martin-corporation",
+            "name": "Lockheed Martin Corporation"
+          }
+        },
+        {
+          "name": "Ultra Electronics Holdings Limited",
+          "identifier_type": null,
+          "identifier": "registered number 02830397",
+          "party_page": {
+            "id": "ultra-electronics-holdings-limited",
+            "name": "Ultra Electronics Holdings Limited"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2419",
+          "name": "Other Professional and Scientific Equipment Manufacturing"
+        },
+        {
+          "code": "6923",
+          "name": "Engineering Design and Engineering Consulting Services"
+        }
+      ],
+      "merger_description": "Lockheed Martin Corporation (**Lockheed Martin**) proposes to acquire the entire issued share capital of Ultra Electronics Australia Pty Limited, Ultra Sonar Systems Ltd., Ultra Electronics Maritime Systems, Inc., Ultra Electronics, Inc. and their direct and indirect subsidiaries (together comprising **Ultra Maritime**) (the **Acquisition**).\n\nLockheed Martin is a global aerospace and defence company headquartered in Bethesda, Maryland, US. Lockheed Martin researches, designs, develops, manufactures and sustains advanced technology systems, products and services for defence, security and aerospace customers. In Australia, Lockheed Martin's operations are predominantly conducted through its wholly owned subsidiary, Lockheed Martin Australia Pty Ltd.\n\nUltra Maritime is a naval defense technology business headquartered in Braintree, Massachusetts, US, with manufacturing facilities in the US, Canada, the UK and Australia. Ultra Maritime designs, develops and supplies maritime and undersea warfare solutions for manned and unmanned platforms, including sonar systems, sonobuoys and receivers, torpedo technologies and radars.",
+      "events": [
+        {
+          "date": "2026-08-17T12:00:00Z",
+          "title": "Questionnaire - Lockheed Martin - Ultra Maritime",
+          "display_title": "Questionnaire - Lockheed Martin - Ultra Maritime",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Lockheed%20Martin%20-%20Ultra%20Maritime%20-%20Third%20Party%20Questionnaire.docx",
+          "url_gh": "/mergers/MN-75041/Lockheed Martin - Ultra Maritime - Third Party Questionnaire.pdf",
+          "phase": null
+        },
+        {
+          "date": "2026-08-14T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-90002",
+          "merger_name": "NEC Corporation \u2013 CSG Systems International",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "NEC Corporation",
+              "identifier_type": null,
+              "identifier": "Company number 7010401022916",
+              "party_page": {
+                "id": "nec-corporation",
+                "name": "NEC Corporation"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "CSG Systems International, Inc.",
+              "identifier_type": null,
+              "identifier": "Company number 2444546",
+              "party_page": {
+                "id": "csg-systems-international-inc",
+                "name": "CSG Systems International, Inc."
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-70012",
+          "merger_name": "Quanta - PSD",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Quanta Services Australia Pty Ltd",
+              "identifier_type": "ABN",
+              "identifier": "11 164 311 997",
+              "party_page": {
+                "id": "quanta-services-australia-pty-ltd",
+                "name": "Quanta Services Australia Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "PSD Global Holdings Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "634 380 813",
+              "party_page": {
+                "id": "psd-global-holdings-pty-ltd",
+                "name": "PSD Global Holdings Pty Ltd"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-30015",
+          "merger_name": "URUS (CVC Capital Partners) \u2013 AgriWebb",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Alta Genetics Australia Pty Ltd",
+              "identifier_type": "ABN",
+              "identifier": "54 140 644 784",
+              "party_page": {
+                "id": "alta-genetics-australia-pty-ltd",
+                "name": "Alta Genetics Australia Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "AGRIWEBB PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "56 163 515 900",
+              "party_page": {
+                "id": "agriwebb-pty-ltd",
+                "name": "Agriwebb Pty Ltd"
+              }
+            }
+          ]
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 19,
+        "range_business_days": [
+          16,
+          44
+        ],
+        "basis": "industry",
+        "anzsic_level": "group",
+        "anzsic_codes": [
+          "241",
+          "692"
+        ],
+        "sample_size": 11,
+        "estimated_at": "2026-08-17",
         "method_version": 1
       }
     },

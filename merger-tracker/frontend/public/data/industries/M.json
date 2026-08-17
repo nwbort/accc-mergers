@@ -9,7 +9,7 @@
       "code": "69",
       "name": "Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",
       "level": "subdivision",
-      "merger_count": 80
+      "merger_count": 81
     },
     {
       "code": "70",
@@ -28,6 +28,17 @@
       "has_conditions": false,
       "phase": "Phase 1",
       "notification_date": "2026-08-15T12:00:00Z",
+      "determination_date": null
+    },
+    {
+      "merger_id": "MN-75041",
+      "merger_name": "Lockheed Martin \u2013 Ultra Maritime",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-14T12:00:00Z",
       "determination_date": null
     },
     {
@@ -1384,11 +1395,11 @@
       "determination_date": null
     }
   ],
-  "count": 124,
-  "phase_1_count": 51,
+  "count": 125,
+  "phase_1_count": 52,
   "phase_2_count": 2,
   "waiver_count": 71,
-  "active_count": 16,
+  "active_count": 17,
   "phase_duration": {
     "average_days": 33.026315789473685,
     "median_days": 27.0,
