@@ -1,6 +1,6 @@
 {
   "total_mergers": 226,
-  "total_waivers": 326,
+  "total_waivers": 327,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 168,
@@ -18,7 +18,7 @@
     "Assessment ceased": 2
   },
   "by_waiver_determination": {
-    "Approved": 312,
+    "Approved": 313,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.12883435582822,
-    "median_days": 18.5,
-    "average_business_days": 12.865030674846626,
-    "median_business_days": 13.0
+    "average_days": 19.134556574923547,
+    "median_days": 19,
+    "average_business_days": 12.871559633027523,
+    "median_business_days": 13
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 83
+      "count": 84
     },
     {
       "name": "Computer System Design and Related Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-20032",
+      "merger_name": "Nojima Corporation \u2013 Hitachi Global Life Solutions and Ar\u00e7elik Hitachi Home Appliances",
+      "determination": "Approved",
+      "determination_date": "2026-08-17T12:00:00Z",
+      "page_modified_datetime": "2026-08-17T17:41:45+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-75040",
       "merger_name": "Blackstone - DarkVision Technologies",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-70033",
-      "merger_name": "EQT Fund Management \u2013 Corza Biosurgery",
-      "determination": "Approved",
-      "determination_date": "2026-08-12T12:00:00Z",
-      "page_modified_datetime": "2026-08-12T16:20:04+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]

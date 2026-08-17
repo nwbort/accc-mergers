@@ -87,7 +87,7 @@
       "code": "24",
       "name": "Machinery and Equipment Manufacturing",
       "level": "subdivision",
-      "merger_count": 51
+      "merger_count": 52
     },
     {
       "code": "25",
@@ -283,6 +283,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-05-12T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-20032",
+      "merger_name": "Nojima Corporation \u2013 Hitachi Global Life Solutions and Ar\u00e7elik Hitachi Home Appliances",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-27T12:00:00Z",
+      "determination_date": "2026-08-17T12:00:00Z"
     },
     {
       "merger_id": "WA-75040",
@@ -1616,10 +1627,10 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 138,
+  "count": 139,
   "phase_1_count": 65,
   "phase_2_count": 2,
-  "waiver_count": 71,
+  "waiver_count": 72,
   "active_count": 17,
   "phase_duration": {
     "average_days": 29.80392156862745,
@@ -1629,10 +1640,10 @@
     "completed_count": 51
   },
   "waiver_duration": {
-    "average_days": 17.91549295774648,
-    "median_days": 17,
-    "average_business_days": 11.943661971830986,
-    "median_business_days": 11,
-    "completed_count": 71
+    "average_days": 17.958333333333332,
+    "median_days": 17.0,
+    "average_business_days": 11.98611111111111,
+    "median_business_days": 11.0,
+    "completed_count": 72
   }
 }

@@ -1,6 +1,60 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-65031",
+      "merger_name": "Metal Manufactures - BayWa Solar Systems",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-14T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-25T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "METAL MANUFACTURES PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "13 003 762 641",
+          "party_page": {
+            "id": "metal-manufactures-pty-limited",
+            "name": "Metal Manufactures Pty Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "BAYWA R.E. SOLAR SYSTEMS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "93 614 035 620",
+          "party_page": {
+            "id": "baywa-r-e-solar-systems-pty-ltd",
+            "name": "Baywa R.E. Solar Systems Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "MML HOLDINGS LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "55 084 402 380",
+          "party_page": {
+            "id": "mml-holdings-limited",
+            "name": "Mml Holdings Limited"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3494",
+          "name": "Other Electrical and Electronic Goods Wholesaling"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/metal-manufactures-baywa-solar-systems"
+    },
+    {
       "merger_id": "MN-75041",
       "merger_name": "Lockheed Martin \u2013 Ultra Maritime",
       "status": "Under assessment",

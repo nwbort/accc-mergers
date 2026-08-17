@@ -1193,6 +1193,128 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/abbvie-apogee"
     },
     {
+      "merger_id": "WA-20032",
+      "merger_name": "Nojima Corporation \u2013 Hitachi Global Life Solutions and Ar\u00e7elik Hitachi Home Appliances",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-27T12:00:00Z",
+      "determination_publication_date": "2026-08-17T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "NJM4 Corporation",
+          "identifier_type": null,
+          "identifier": "Commercial Registration Number  010401197785",
+          "party_page": {
+            "id": "njm4-corporation",
+            "name": "NJM4 Corporation"
+          }
+        },
+        {
+          "name": "Nojima Corporation",
+          "identifier_type": null,
+          "identifier": "Commercial Registration Number  021001013588",
+          "party_page": {
+            "id": "nojima-corporation",
+            "name": "Nojima Corporation"
+          }
+        },
+        {
+          "name": "Hitachi Global Life Solutions, Inc.",
+          "identifier_type": null,
+          "identifier": "Commercial Registration Number  010401057011",
+          "party_page": {
+            "id": "hitachi-global-life-solutions-inc",
+            "name": "Hitachi Global Life Solutions, Inc."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "GLS, Inc.",
+          "identifier_type": null,
+          "identifier": "Commercial Registration Number  010401200183",
+          "party_page": {
+            "id": "gls-inc",
+            "name": "GLS, Inc."
+          }
+        },
+        {
+          "name": "Hitachi Appliances Techno Service, Ltd.",
+          "identifier_type": null,
+          "identifier": "Commercial Registration Number  050001\u2010023775",
+          "party_page": {
+            "id": "hitachi-appliances-techno-service-ltd",
+            "name": "Hitachi Appliances Techno Service, Ltd."
+          }
+        },
+        {
+          "name": "Kantou Eco Recycle Co., Ltd.",
+          "identifier_type": null,
+          "identifier": "Commercial Registration Number  060001\u2010016749",
+          "party_page": {
+            "id": "kantou-eco-recycle-co-ltd",
+            "name": "Kantou Eco Recycle Co., Ltd."
+          }
+        },
+        {
+          "name": "Ar\u00e7elik A.\u015e.",
+          "identifier_type": null,
+          "identifier": "MERSIS No  0073001800000022",
+          "party_page": {
+            "id": "ar-elik-a",
+            "name": "Ar\u00e7elik A.\u015e."
+          }
+        },
+        {
+          "name": "Ar\u00e7elik Hitachi Home Appliances B.V.",
+          "identifier_type": null,
+          "identifier": "CCI No  81724748",
+          "party_page": {
+            "id": "ar-elik-hitachi-home-appliances-b-v",
+            "name": "Ar\u00e7elik Hitachi Home Appliances B.V."
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "2441",
+          "name": "Whiteware Appliance Manufacturing"
+        },
+        {
+          "code": "2449",
+          "name": "Other Domestic Appliance Manufacturing"
+        },
+        {
+          "code": "2911",
+          "name": "Solid Waste Collection Services"
+        },
+        {
+          "code": "3494",
+          "name": "Other Electrical and Electronic Goods Wholesaling"
+        },
+        {
+          "code": "4221",
+          "name": "Electrical, Electronic and Gas Appliance Retailing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "9421",
+          "name": "Domestic Appliance Repair and Maintenance"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/nojima-corporation-%E2%80%93-hitachi-global-life-solutions-and-ar%C3%A7elik-hitachi-home-appliances"
+    },
+    {
       "merger_id": "MN-05027",
       "merger_name": "Protech - ActivateRail",
       "status": "Under assessment",
@@ -4087,60 +4209,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/endeavour-group-%E2%80%93-retail-liquor-site-in-horsham-vic"
-    },
-    {
-      "merger_id": "MN-65031",
-      "merger_name": "Metal Manufactures - BayWa Solar Systems",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-14T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-09-25T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "METAL MANUFACTURES PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "13 003 762 641",
-          "party_page": {
-            "id": "metal-manufactures-pty-limited",
-            "name": "Metal Manufactures Pty Limited"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "BAYWA R.E. SOLAR SYSTEMS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "93 614 035 620",
-          "party_page": {
-            "id": "baywa-r-e-solar-systems-pty-ltd",
-            "name": "Baywa R.E. Solar Systems Pty Ltd"
-          }
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "MML HOLDINGS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "55 084 402 380",
-          "party_page": {
-            "id": "mml-holdings-limited",
-            "name": "Mml Holdings Limited"
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "3494",
-          "name": "Other Electrical and Electronic Goods Wholesaling"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/metal-manufactures-baywa-solar-systems"
     }
   ],
   "page": 11,

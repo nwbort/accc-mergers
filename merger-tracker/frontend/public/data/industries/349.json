@@ -42,7 +42,7 @@
       "code": "3494",
       "name": "Other Electrical and Electronic Goods Wholesaling",
       "level": "class",
-      "merger_count": 8
+      "merger_count": 9
     },
     {
       "code": "3499",
@@ -95,6 +95,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-13T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-20032",
+      "merger_name": "Nojima Corporation \u2013 Hitachi Global Life Solutions and Ar\u00e7elik Hitachi Home Appliances",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-27T12:00:00Z",
+      "determination_date": "2026-08-17T12:00:00Z"
     },
     {
       "merger_id": "MN-75029",
@@ -273,10 +284,10 @@
       "determination_date": null
     }
   ],
-  "count": 20,
+  "count": 21,
   "phase_1_count": 13,
   "phase_2_count": 1,
-  "waiver_count": 6,
+  "waiver_count": 7,
   "active_count": 4,
   "phase_duration": {
     "average_days": 35.3,
@@ -286,10 +297,10 @@
     "completed_count": 10
   },
   "waiver_duration": {
-    "average_days": 19.666666666666668,
-    "median_days": 20.0,
-    "average_business_days": 13.666666666666666,
-    "median_business_days": 13.5,
-    "completed_count": 6
+    "average_days": 19.857142857142858,
+    "median_days": 21,
+    "average_business_days": 13.857142857142858,
+    "median_business_days": 15,
+    "completed_count": 7
   }
 }
