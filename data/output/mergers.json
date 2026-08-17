@@ -22609,13 +22609,16 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/sanad-services-and-tikehau-capital-%E2%80%93-revima",
       "merger_name": "Sanad Services and Tikehau Capital \u2013 Revima",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-25037",
       "effective_notification_datetime": "2026-07-21T12:00:00Z",
       "original_notification_datetime": "2026-07-21T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-09-01T12:00:00Z",
-      "page_modified_datetime": "2026-07-30T11:48:51+10:00",
+      "determination_publication_date": "2026-08-17T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-08-17T19:24:25+10:00",
       "consultation_response_due_date": "2026-07-29T12:00:00Z",
       "acquirers": [
         {
@@ -22641,6 +22644,24 @@
       ],
       "other_parties": [
         {
+          "name": "Tikehau Capital SCA",
+          "identifier_type": null,
+          "identifier": "RCS Paris  477 599 104",
+          "party_page": {
+            "id": "tikehau-capital-sca",
+            "name": "Tikehau Capital SCA"
+          }
+        },
+        {
+          "name": "Mubadala Investment Company PJSC",
+          "identifier_type": null,
+          "identifier": "CN\u20112302788",
+          "party_page": {
+            "id": "mubadala-investment-company-pjsc",
+            "name": "Mubadala Investment Company PJSC"
+          }
+        },
+        {
           "name": "Ace A\u00e9ro Partenaires II S.L.P. represented by Tikehau Investment Management SAS",
           "identifier_type": null,
           "identifier": "RCS Paris  982 137 812",
@@ -22657,24 +22678,6 @@
             "id": "sanad-services-group-owned-by-one-hundred-and-seven-investment-rsc-ltd-sole-prop",
             "name": "Sanad Services Group owned by One Hundred and Seven Investment RSC LTD \u2013 Sole Proprietorship L.L.C."
           }
-        },
-        {
-          "name": "Mubadala Investment Company PJSC",
-          "identifier_type": null,
-          "identifier": "CN\u20112302788",
-          "party_page": {
-            "id": "mubadala-investment-company-pjsc",
-            "name": "Mubadala Investment Company PJSC"
-          }
-        },
-        {
-          "name": "Tikehau Capital SCA",
-          "identifier_type": null,
-          "identifier": "RCS Paris  477 599 104",
-          "party_page": {
-            "id": "tikehau-capital-sca",
-            "name": "Tikehau Capital SCA"
-          }
         }
       ],
       "anzsic_codes": [
@@ -22687,7 +22690,7 @@
           "name": "Financial Asset Investing"
         }
       ],
-      "merger_description": "Sanad Services Group owned by One Hundred and Seven Investment RSC LTD \u2013 Sole Proprietorship L.L.C. (**Sanad Services**) and Ace A\u00e9ro Partenaires II S.L.P. (**AAP2**) (an investment fund) propose to acquire Revima Holding SAS (**Revima**).\n\nRevima supplies maintenance, repair and overhaul (**MRO**) services for aircraft auxiliary power units (**APUs**) and aircraft landing gear systems. Revima also supplies, to a more limited extent, MRO services for engine parts (but not MRO services for complete engines). Revima services customers globally from its MRO facilities in France and Thailand.\n\nSanad Services supplies MRO services for aircraft engines and related aftermarket services. Sanad Services provides these services to customers globally from its facilities in the UAE. Samad Services is ultimately owned by Mubadala Investment Company PJSC (**MIC**), a UAE public joint stock company wholly owned by the Government of Abu Dhabi.\n\nAAP2 is an investment fund represented by Tikehau Investment Management SAS (**TIM**), in its capacity as management company. TIM is itself a wholly owned subsidiary of Tikehau Capital SCA, the parent company of the Tikehau Capital group, a France-based global asset management and investment group.",
+      "merger_description": "Sanad Services Group owned by One Hundred and Seven Investment RSC LTD \u2013 Sole Proprietorship L.L.C. (**Sanad Services**) and Ace A\u00e9ro Partenaires II S.L.P. (**AAP2**) (an investment fund) propose to acquire Revima Holding SAS (**Revima**).\n\nRevima supplies maintenance, repair and overhaul (**MRO**) services for aircraft auxiliary power units (**APUs**) and aircraft landing gear systems. Revima also supplies, to a more limited extent, MRO services for engine parts (but not MRO services for complete engines). Revima services customers globally from its MRO facilities in France and Thailand.\n\nSanad Services supplies MRO services for aircraft engines and related aftermarket services. Sanad Services provides these services to customers globally from its facilities in the UAE. Samad Services is ultimately owned by Mubadala Investment Company PJSC (**MIC**), a UAE public joint stock company wholly owned by the Government of Abu Dhabi.\n\nAAP2 is an investment fund represented by Tikehau Investment Management SAS (**TIM**), in its capacity as management company. TIM is itself a wholly owned subsidiary of Tikehau Capital SCA, the parent company of the Tikehau Capital group, a France-based global asset management and investment group (**Tikehau Capital**).",
       "events": [
         {
           "date": "2026-07-22T12:00:00Z",
@@ -22702,13 +22705,48 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-08-17T12:00:00Z",
+          "title": "Sanad Services and Tikehau Capital\u2013Revima - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Sanad%20Services%20%26%20Tikehau%20Capital-Revima%20-%20Phase%201%20determination.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Sanad Services Group, owned by One Hundred and Seven\nInvestment RSC LTD \u2013 Sole Proprietorship L.L.C. (Sanad Services)\nand Ace A\u00e9ro Partenaires II S.L.P. (AAP2) (an investment fund)\npropose to acquire Revima Holding SAS (Revima) (the Acquisition).\nThe Acquisition would result in Sanad Services and AAP2 obtaining\njoint control of Revima through a joint special purpose vehicle,\nDream BidCo."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "Sanad Services supplies maintenance, repair and overhaul services\nfor aircraft engines and related aftermarket services. Sanad Services\nprovides these services to customers globally from its facilities in\nthe UAE. Sanad Services is ultimately owned by Mubadala\nInvestment Company PJSC (MIC), a UAE public joint stock company\nwholly owned by the Government of Abu Dhabi.\nAAP2 is an investment fund represented by Tikehau Investment\nManagement SAS (TIM), in its capacity as management company.\nTIM is itself a wholly owned subsidiary of Tikehau Capital SCA, the\nparent company of the Tikehau Capital group, a France-based global\nasset management and investment group.\nThe target, Revima, supplies maintenance, repair and overhaul\nservices for aircraft auxiliary power units and aircraft landing gear\nsystems. Revima also supplies, to a more limited extent,\nmaintenance, repair and overhaul services for engine parts (but not\nfor complete engines). Revima services customers globally from its\nfacilities in France and Thailand."
+            },
+            {
+              "item": "Overlap and relationship\nbetween the Parties",
+              "details": "Revima supplies some maintenance, repair and overhaul services for\nindividual engine parts.\nSanad Services supplies maintenance, repair and overhaul services\nfor complete engines.\nProviders of engine maintenance, repair and overhaul services may,\nat times, outsource such services in respect of certain individual\nengine parts. However, there is no current subcontracting\nrelationship between Sanad Services and Revima."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and information from third parties.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market in\nAustralia. In reaching its decision, and based on the material before\nit, the ACCC makes the following findings.\n\u2022 There is minimal overlap between Sanad Services and Revima\nand they are not close competitors in the supply of maintenance,\nrepair and overhaul services.\n\u2022 Although engine parts maintenance, repair and overhaul services\nmay be supplied as an input to engine services, the Acquisition\nwould be unlikely to give rise to vertical effects, because there\nare multiple alternative suppliers of both engine maintenance,\nrepair and overhaul services and engine parts maintenance,\nrepair and overhaul services. Therefore, the merged entity would\nbe unlikely to have the ability and incentive to foreclose rivals in\neither service offering."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-25037/Sanad Services and Tikehau Capital-Revima - Phase 1 determination.pdf",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
       "has_conditions": false,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-08-17T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,

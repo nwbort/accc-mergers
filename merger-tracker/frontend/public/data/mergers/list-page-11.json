@@ -232,14 +232,14 @@
     {
       "merger_id": "MN-25037",
       "merger_name": "Sanad Services and Tikehau Capital \u2013 Revima",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "has_conditions": false,
       "is_waiver": false,
       "under_appeal": false,
       "is_refiled": false,
       "effective_notification_datetime": "2026-07-21T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-08-17T12:00:00Z",
       "end_of_determination_period": "2026-09-01T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -266,6 +266,24 @@
       ],
       "other_parties": [
         {
+          "name": "Tikehau Capital SCA",
+          "identifier_type": null,
+          "identifier": "RCS Paris  477 599 104",
+          "party_page": {
+            "id": "tikehau-capital-sca",
+            "name": "Tikehau Capital SCA"
+          }
+        },
+        {
+          "name": "Mubadala Investment Company PJSC",
+          "identifier_type": null,
+          "identifier": "CN\u20112302788",
+          "party_page": {
+            "id": "mubadala-investment-company-pjsc",
+            "name": "Mubadala Investment Company PJSC"
+          }
+        },
+        {
           "name": "Ace A\u00e9ro Partenaires II S.L.P. represented by Tikehau Investment Management SAS",
           "identifier_type": null,
           "identifier": "RCS Paris  982 137 812",
@@ -281,24 +299,6 @@
           "party_page": {
             "id": "sanad-services-group-owned-by-one-hundred-and-seven-investment-rsc-ltd-sole-prop",
             "name": "Sanad Services Group owned by One Hundred and Seven Investment RSC LTD \u2013 Sole Proprietorship L.L.C."
-          }
-        },
-        {
-          "name": "Mubadala Investment Company PJSC",
-          "identifier_type": null,
-          "identifier": "CN\u20112302788",
-          "party_page": {
-            "id": "mubadala-investment-company-pjsc",
-            "name": "Mubadala Investment Company PJSC"
-          }
-        },
-        {
-          "name": "Tikehau Capital SCA",
-          "identifier_type": null,
-          "identifier": "RCS Paris  477 599 104",
-          "party_page": {
-            "id": "tikehau-capital-sca",
-            "name": "Tikehau Capital SCA"
           }
         }
       ],
