@@ -31,10 +31,26 @@
       "name": "Blackstone, Inc.",
       "identifier": "CIK 0001393818",
       "identifier_type": null
+    },
+    {
+      "name": "Dynamo Bidco, Inc.",
+      "identifier": null,
+      "identifier_type": null
     }
   ],
   "mergers": {
     "acquirer": [
+      {
+        "merger_id": "WA-75040",
+        "merger_name": "Blackstone - DarkVision Technologies",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Waiver",
+        "notification_date": "2026-08-05T12:00:00Z",
+        "determination_date": "2026-08-17T12:00:00Z"
+      },
       {
         "merger_id": "WA-95029",
         "merger_name": "Blackstone \u2013 Acacium Group",
@@ -60,17 +76,6 @@
     ],
     "target": [],
     "other": [
-      {
-        "merger_id": "WA-75040",
-        "merger_name": "Blackstone - DarkVision Technologies",
-        "is_waiver": true,
-        "status": "Assessment completed",
-        "determination": "Approved",
-        "has_conditions": false,
-        "phase": "Waiver",
-        "notification_date": "2026-08-05T12:00:00Z",
-        "determination_date": "2026-08-17T12:00:00Z"
-      },
       {
         "merger_id": "MN-20023",
         "merger_name": "Sony Music - Recognition Music",

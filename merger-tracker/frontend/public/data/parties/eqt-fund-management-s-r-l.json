@@ -16,12 +16,20 @@
       "name": "EQT Fund Management S.\u00e0 r.l.",
       "identifier": "Registration number B167972",
       "identifier_type": null
+    },
+    {
+      "name": "Ruby BidCo GmbH",
+      "identifier": "679581i",
+      "identifier_type": null
+    },
+    {
+      "name": "Seal US Holdings Inc.",
+      "identifier": "10678816",
+      "identifier_type": null
     }
   ],
   "mergers": {
-    "acquirer": [],
-    "target": [],
-    "other": [
+    "acquirer": [
       {
         "merger_id": "WA-70033",
         "merger_name": "EQT Fund Management \u2013 Corza Biosurgery",
@@ -32,7 +40,10 @@
         "phase": "Waiver",
         "notification_date": "2026-07-31T12:00:00Z",
         "determination_date": "2026-08-12T12:00:00Z"
-      },
+      }
+    ],
+    "target": [],
+    "other": [
       {
         "merger_id": "WA-01114",
         "merger_name": "EQT Fund Management \u2013 Exolaunch",

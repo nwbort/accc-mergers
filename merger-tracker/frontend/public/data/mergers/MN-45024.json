@@ -14,9 +14,13 @@
       "name": "OEC Bidco Limited",
       "identifier_type": null,
       "identifier": "17225784",
+      "canonical": {
+        "id": "oeconnection",
+        "name": "OEConnection"
+      },
       "party_page": {
-        "id": "oec-bidco-limited",
-        "name": "OEC Bidco Limited"
+        "id": "oeconnection",
+        "name": "OEConnection"
       }
     }
   ],
@@ -49,9 +53,13 @@
       "name": "OEConnection, LLC",
       "identifier_type": null,
       "identifier": "1196674",
+      "canonical": {
+        "id": "oeconnection",
+        "name": "OEConnection"
+      },
       "party_page": {
-        "id": "oeconnection-llc",
-        "name": "OEConnection, LLC"
+        "id": "oeconnection",
+        "name": "OEConnection"
       }
     }
   ],

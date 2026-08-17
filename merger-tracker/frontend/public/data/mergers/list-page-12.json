@@ -78,9 +78,13 @@
           "name": "METAL MANUFACTURES PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "13 003 762 641",
+          "canonical": {
+            "id": "metal-manufactures",
+            "name": "Metal Manufactures"
+          },
           "party_page": {
-            "id": "metal-manufactures-pty-limited",
-            "name": "Metal Manufactures Pty Limited"
+            "id": "metal-manufactures",
+            "name": "Metal Manufactures"
           }
         }
       ],
@@ -100,9 +104,13 @@
           "name": "MML HOLDINGS LIMITED",
           "identifier_type": "ABN",
           "identifier": "55 084 402 380",
+          "canonical": {
+            "id": "metal-manufactures",
+            "name": "Metal Manufactures"
+          },
           "party_page": {
-            "id": "mml-holdings-limited",
-            "name": "Mml Holdings Limited"
+            "id": "metal-manufactures",
+            "name": "Metal Manufactures"
           }
         }
       ],
@@ -132,9 +140,13 @@
           "name": "RLM SYSTEMS PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "67 050 753 403",
+          "canonical": {
+            "id": "lockheed-martin",
+            "name": "Lockheed Martin"
+          },
           "party_page": {
-            "id": "rlm-systems-pty-limited",
-            "name": "Rlm Systems Pty Limited"
+            "id": "lockheed-martin",
+            "name": "Lockheed Martin"
           }
         }
       ],
@@ -158,9 +170,13 @@
           "name": "Lockheed Martin Corporation",
           "identifier_type": null,
           "identifier": "US Department ID  D03964756",
+          "canonical": {
+            "id": "lockheed-martin",
+            "name": "Lockheed Martin"
+          },
           "party_page": {
-            "id": "lockheed-martin-corporation",
-            "name": "Lockheed Martin Corporation"
+            "id": "lockheed-martin",
+            "name": "Lockheed Martin"
           }
         },
         {
@@ -207,9 +223,13 @@
           "name": "OEC Bidco Limited",
           "identifier_type": null,
           "identifier": "17225784",
+          "canonical": {
+            "id": "oeconnection",
+            "name": "OEConnection"
+          },
           "party_page": {
-            "id": "oec-bidco-limited",
-            "name": "OEC Bidco Limited"
+            "id": "oeconnection",
+            "name": "OEConnection"
           }
         }
       ],
@@ -242,9 +262,13 @@
           "name": "OEConnection, LLC",
           "identifier_type": null,
           "identifier": "1196674",
+          "canonical": {
+            "id": "oeconnection",
+            "name": "OEConnection"
+          },
           "party_page": {
-            "id": "oeconnection-llc",
-            "name": "OEConnection, LLC"
+            "id": "oeconnection",
+            "name": "OEConnection"
           }
         }
       ],

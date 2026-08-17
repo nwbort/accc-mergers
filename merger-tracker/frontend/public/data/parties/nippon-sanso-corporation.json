@@ -1,0 +1,50 @@
+{
+  "id": "nippon-sanso-corporation",
+  "canonical_name": "Nippon Sanso Corporation",
+  "members": [
+    {
+      "name": "Coregas Pty Ltd",
+      "identifier": "32 001 255 312",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "NSC (Australia) Pty Ltd",
+      "identifier": "71 607 111 268",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "Nippon Sanso Holdings Corporation",
+      "identifier": "LEI  353800F1K6653B4VPY57",
+      "identifier_type": null
+    },
+    {
+      "name": "Supagas Pty Limited",
+      "identifier": "50 074 008 496",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [
+      {
+        "merger_id": "MN-80027",
+        "merger_name": "Supagas \u2013 Heeson Medical",
+        "is_waiver": false,
+        "status": "Under assessment",
+        "determination": null,
+        "has_conditions": false,
+        "phase": "Phase 1",
+        "notification_date": "2026-08-11T12:00:00Z",
+        "determination_date": null
+      }
+    ],
+    "target": [],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 1,
+  "phase_duration": null,
+  "waiver_duration": null
+}

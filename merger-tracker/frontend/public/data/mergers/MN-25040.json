@@ -27,18 +27,26 @@
       "name": "Modaxo USA Holdings, Inc",
       "identifier_type": null,
       "identifier": "",
+      "canonical": {
+        "id": "modaxo-group-inc",
+        "name": "Modaxo Group, Inc"
+      },
       "party_page": {
-        "id": "modaxo-usa-holdings-inc",
-        "name": "Modaxo USA Holdings, Inc"
+        "id": "modaxo-group-inc",
+        "name": "Modaxo Group, Inc"
       }
     },
     {
       "name": "Modaxo France Holdings SAS",
       "identifier_type": null,
       "identifier": "",
+      "canonical": {
+        "id": "modaxo-group-inc",
+        "name": "Modaxo Group, Inc"
+      },
       "party_page": {
-        "id": "modaxo-france-holdings-sas",
-        "name": "Modaxo France Holdings SAS"
+        "id": "modaxo-group-inc",
+        "name": "Modaxo Group, Inc"
       }
     }
   ],
@@ -47,18 +55,26 @@
       "name": "CONDUENT VICTORIA TICKETING SYSTEM PTY LTD",
       "identifier_type": "ABN",
       "identifier": "87 667 867 950",
+      "canonical": {
+        "id": "conduent-business-services-llc",
+        "name": "Conduent Business Services, LLC"
+      },
       "party_page": {
-        "id": "conduent-victoria-ticketing-system-pty-ltd",
-        "name": "Conduent Victoria Ticketing System Pty Ltd"
+        "id": "conduent-business-services-llc",
+        "name": "Conduent Business Services, LLC"
       }
     },
     {
       "name": "CONDUENT BUSINESS SOLUTIONS (FRANCE) SAS",
       "identifier_type": "ABN",
       "identifier": "20 251 484 486",
+      "canonical": {
+        "id": "conduent-business-services-llc",
+        "name": "Conduent Business Services, LLC"
+      },
       "party_page": {
-        "id": "conduent-business-solutions-france-sas",
-        "name": "Conduent Business Solutions (France) Sas"
+        "id": "conduent-business-services-llc",
+        "name": "Conduent Business Services, LLC"
       }
     },
     {
@@ -93,9 +109,13 @@
       "name": "TRAPEZE GROUP ASIA PACIFIC PTY LTD",
       "identifier_type": "ABN",
       "identifier": "16 010 832 318",
+      "canonical": {
+        "id": "modaxo-group-inc",
+        "name": "Modaxo Group, Inc"
+      },
       "party_page": {
-        "id": "trapeze-group-asia-pacific-pty-ltd",
-        "name": "Trapeze Group Asia Pacific Pty Ltd"
+        "id": "modaxo-group-inc",
+        "name": "Modaxo Group, Inc"
       }
     },
     {
@@ -141,9 +161,13 @@
       "name": "TRAPEZE MANAGEMENT HOLDINGS PTY LTD",
       "identifier_type": "ABN",
       "identifier": "97 120 264 913",
+      "canonical": {
+        "id": "modaxo-group-inc",
+        "name": "Modaxo Group, Inc"
+      },
       "party_page": {
-        "id": "trapeze-management-holdings-pty-ltd",
-        "name": "Trapeze Management Holdings Pty Ltd"
+        "id": "modaxo-group-inc",
+        "name": "Modaxo Group, Inc"
       }
     }
   ],

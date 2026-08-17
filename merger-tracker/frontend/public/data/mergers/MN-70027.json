@@ -41,18 +41,26 @@
       "name": "QIA Infrastructure Holding LLC",
       "identifier_type": null,
       "identifier": "Qatar Financial Centre no. 01821",
+      "canonical": {
+        "id": "qatar-investment-authority",
+        "name": "Qatar Investment Authority"
+      },
       "party_page": {
-        "id": "qia-infrastructure-holding-llc",
-        "name": "QIA Infrastructure Holding LLC"
+        "id": "qatar-investment-authority",
+        "name": "Qatar Investment Authority"
       }
     },
     {
       "name": "Qatar Holding LLC",
       "identifier_type": null,
       "identifier": "CIK: 0001539025, Qatar Financial Centre no. 00004",
+      "canonical": {
+        "id": "qatar-investment-authority",
+        "name": "Qatar Investment Authority"
+      },
       "party_page": {
-        "id": "qatar-holding-llc",
-        "name": "Qatar Holding LLC"
+        "id": "qatar-investment-authority",
+        "name": "Qatar Investment Authority"
       }
     }
   ],

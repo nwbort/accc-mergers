@@ -560,9 +560,13 @@
           "name": "DANONE SAPUTO DAIRY AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
           "identifier": "32 143 172 258",
+          "canonical": {
+            "id": "danone",
+            "name": "Danone"
+          },
           "party_page": {
-            "id": "danone-saputo-dairy-australia-pty-ltd",
-            "name": "Danone Saputo Dairy Australia Pty Ltd"
+            "id": "danone",
+            "name": "Danone"
           }
         }
       ],
@@ -571,9 +575,13 @@
           "name": "NUTRICIA AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "99 076 246 752",
+          "canonical": {
+            "id": "danone",
+            "name": "Danone"
+          },
           "party_page": {
-            "id": "nutricia-australia-pty-limited",
-            "name": "Nutricia Australia Pty Limited"
+            "id": "danone",
+            "name": "Danone"
           }
         },
         {
@@ -589,9 +597,13 @@
           "name": "Soci\u00e9t\u00e9 Anonyme des Eaux Min\u00e9rales d\u2019\u00c9vian S.A.",
           "identifier_type": null,
           "identifier": "SIREN 797 080 850",
+          "canonical": {
+            "id": "danone",
+            "name": "Danone"
+          },
           "party_page": {
-            "id": "soci-t-anonyme-des-eaux-min-rales-d-vian-s-a",
-            "name": "Soci\u00e9t\u00e9 Anonyme des Eaux Min\u00e9rales d\u2019\u00c9vian S.A."
+            "id": "danone",
+            "name": "Danone"
           }
         }
       ],
@@ -1789,18 +1801,26 @@
           "name": "OHCA Property Holdings Pty Ltd",
           "identifier_type": "ABN",
           "identifier": "70 675 807 477",
+          "canonical": {
+            "id": "opal-healthcare",
+            "name": "Opal HealthCare"
+          },
           "party_page": {
-            "id": "ohca-property-holdings-pty-ltd",
-            "name": "Ohca Property Holdings Pty Ltd"
+            "id": "opal-healthcare",
+            "name": "Opal HealthCare"
           }
         },
         {
           "name": "DPG Services Pty Ltd",
           "identifier_type": "ABN",
           "identifier": "38 090 007 999",
+          "canonical": {
+            "id": "opal-healthcare",
+            "name": "Opal HealthCare"
+          },
           "party_page": {
-            "id": "dpg-services-pty-ltd",
-            "name": "Dpg Services Pty Ltd"
+            "id": "opal-healthcare",
+            "name": "Opal HealthCare"
           }
         }
       ],

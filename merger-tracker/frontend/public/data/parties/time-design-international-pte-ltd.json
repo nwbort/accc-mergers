@@ -1,7 +1,17 @@
 {
   "id": "time-design-international-pte-ltd",
-  "canonical_name": "Time Design International Pte Ltd",
+  "canonical_name": "Kakaku.com",
   "members": [
+    {
+      "name": "Kakaku.com, Inc.",
+      "identifier": "Japan Corporate Number  011001065997",
+      "identifier_type": null
+    },
+    {
+      "name": "Kakaku.com, Inc.",
+      "identifier": "Japan corporate number  011001065997",
+      "identifier_type": null
+    },
     {
       "name": "Time Design International Pte Ltd",
       "identifier": "Singapore registration number  UEN 201736394D",
@@ -17,6 +27,17 @@
     "acquirer": [],
     "target": [
       {
+        "merger_id": "WA-60034",
+        "merger_name": "Bain Capital \u2013 Kakaku.com",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Waiver",
+        "notification_date": "2026-07-30T12:00:00Z",
+        "determination_date": "2026-08-14T12:00:00Z"
+      },
+      {
         "merger_id": "WA-45015",
         "merger_name": "EQT Fund Management \u2013 Kakaku.com",
         "is_waiver": true,
@@ -28,19 +49,7 @@
         "determination_date": "2026-05-25T12:00:00Z"
       }
     ],
-    "other": [
-      {
-        "merger_id": "WA-60034",
-        "merger_name": "Bain Capital \u2013 Kakaku.com",
-        "is_waiver": true,
-        "status": "Assessment completed",
-        "determination": "Approved",
-        "has_conditions": false,
-        "phase": "Waiver",
-        "notification_date": "2026-07-30T12:00:00Z",
-        "determination_date": "2026-08-14T12:00:00Z"
-      }
-    ]
+    "other": []
   },
   "merger_count": 2,
   "phase_1_count": 0,

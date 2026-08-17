@@ -1585,9 +1585,13 @@
           "name": "The Trustee for Lendlease Victoria Cross Trust",
           "identifier_type": "ABN",
           "identifier": "26 397 448 085",
+          "canonical": {
+            "id": "lendlease",
+            "name": "Lendlease"
+          },
           "party_page": {
-            "id": "the-trustee-for-lendlease-victoria-cross-trust",
-            "name": "The Trustee for Lendlease Victoria Cross Trust"
+            "id": "lendlease",
+            "name": "Lendlease"
           }
         }
       ],
@@ -1605,9 +1609,13 @@
           "name": "LENDLEASE CORPORATION LIMITED",
           "identifier_type": "ABN",
           "identifier": "32 000 226 228",
+          "canonical": {
+            "id": "lendlease",
+            "name": "Lendlease"
+          },
           "party_page": {
-            "id": "lendlease-corporation-limited",
-            "name": "Lendlease Corporation Limited"
+            "id": "lendlease",
+            "name": "Lendlease"
           }
         }
       ],

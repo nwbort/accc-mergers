@@ -6,12 +6,20 @@
       "name": "Kanadevia Corporation",
       "identifier": null,
       "identifier_type": null
+    },
+    {
+      "name": "OSMOFLO PTY LTD",
+      "identifier": "39 050 952 175",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "OSMOFLO WATER MANAGEMENT PTY LTD",
+      "identifier": "62 608 078 459",
+      "identifier_type": "ABN"
     }
   ],
   "mergers": {
-    "acquirer": [],
-    "target": [],
-    "other": [
+    "acquirer": [
       {
         "merger_id": "MN-35031",
         "merger_name": "Osmoflo Water Management - Guidera O'Connor",
@@ -23,7 +31,9 @@
         "notification_date": "2026-08-06T12:00:00Z",
         "determination_date": null
       }
-    ]
+    ],
+    "target": [],
+    "other": []
   },
   "merger_count": 1,
   "phase_1_count": 1,

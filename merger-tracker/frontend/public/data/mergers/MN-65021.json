@@ -14,18 +14,26 @@
       "name": "Wesfarmers Built Pty Ltd",
       "identifier_type": "ACN",
       "identifier": "698 309 509",
+      "canonical": {
+        "id": "wesfarmers-limited",
+        "name": "Wesfarmers Limited"
+      },
       "party_page": {
-        "id": "wesfarmers-built-pty-ltd",
-        "name": "Wesfarmers Built Pty Ltd"
+        "id": "wesfarmers-limited",
+        "name": "Wesfarmers Limited"
       }
     },
     {
       "name": "Built Living (Built Investor) Pty Limited",
       "identifier_type": "ABN",
       "identifier": "71 698 095 831",
+      "canonical": {
+        "id": "built-group",
+        "name": "Built Group"
+      },
       "party_page": {
-        "id": "built-living-built-investor-pty-limited",
-        "name": "Built Living (Built Investor) Pty Limited"
+        "id": "built-group",
+        "name": "Built Group"
       }
     }
   ],
@@ -71,9 +79,13 @@
       "name": "Built Group Holdings Pty Limited",
       "identifier_type": "ABN",
       "identifier": "88 163 462 637",
+      "canonical": {
+        "id": "built-group",
+        "name": "Built Group"
+      },
       "party_page": {
-        "id": "built-group-holdings-pty-limited",
-        "name": "Built Group Holdings Pty Limited"
+        "id": "built-group",
+        "name": "Built Group"
       }
     }
   ],

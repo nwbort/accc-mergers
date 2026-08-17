@@ -43,18 +43,26 @@
       "name": "Tahmoor Coal Pty Ltd (In Liquidation)",
       "identifier_type": "ABN",
       "identifier": "97 076 663 968",
+      "canonical": {
+        "id": "tahmoor-colliery",
+        "name": "Tahmoor Colliery"
+      },
       "party_page": {
-        "id": "tahmoor-coal-pty-ltd-in-liquidation",
-        "name": "Tahmoor Coal Pty Ltd (In Liquidation)"
+        "id": "tahmoor-colliery",
+        "name": "Tahmoor Colliery"
       }
     },
     {
       "name": "Bargo Collieries Pty Ltd (In Liquidation)",
       "identifier_type": "ABN",
       "identifier": "34 000 970 276",
+      "canonical": {
+        "id": "tahmoor-colliery",
+        "name": "Tahmoor Colliery"
+      },
       "party_page": {
-        "id": "bargo-collieries-pty-ltd-in-liquidation",
-        "name": "Bargo Collieries Pty Ltd (In Liquidation)"
+        "id": "tahmoor-colliery",
+        "name": "Tahmoor Colliery"
       }
     }
   ],

@@ -3,6 +3,11 @@
   "canonical_name": "Wesfarmers Limited",
   "members": [
     {
+      "name": "Wesfarmers Built Pty Ltd",
+      "identifier": "698 309 509",
+      "identifier_type": "ACN"
+    },
+    {
       "name": "Wesfarmers Holdings Pty Ltd",
       "identifier": "23 094 800 665",
       "identifier_type": "ABN"
@@ -14,9 +19,7 @@
     }
   ],
   "mergers": {
-    "acquirer": [],
-    "target": [],
-    "other": [
+    "acquirer": [
       {
         "merger_id": "MN-65021",
         "merger_name": "Wesfarmers and Built Group - Built Living Joint Venture",
@@ -28,7 +31,9 @@
         "notification_date": "2026-08-06T12:00:00Z",
         "determination_date": null
       }
-    ]
+    ],
+    "target": [],
+    "other": []
   },
   "merger_count": 1,
   "phase_1_count": 1,

@@ -15,18 +15,26 @@
       "name": "Ruby BidCo GmbH",
       "identifier_type": null,
       "identifier": "679581i",
+      "canonical": {
+        "id": "eqt-fund-management-s-r-l",
+        "name": "EQT Fund Management"
+      },
       "party_page": {
-        "id": "ruby-bidco-gmbh",
-        "name": "Ruby BidCo GmbH"
+        "id": "eqt-fund-management-s-r-l",
+        "name": "EQT Fund Management"
       }
     },
     {
       "name": "Seal US Holdings Inc.",
       "identifier_type": null,
       "identifier": "10678816",
+      "canonical": {
+        "id": "eqt-fund-management-s-r-l",
+        "name": "EQT Fund Management"
+      },
       "party_page": {
-        "id": "seal-us-holdings-inc",
-        "name": "Seal US Holdings Inc."
+        "id": "eqt-fund-management-s-r-l",
+        "name": "EQT Fund Management"
       }
     }
   ],
@@ -35,90 +43,130 @@
       "name": "Corza Medical sp z.o.o.",
       "identifier_type": null,
       "identifier": "0000856259",
+      "canonical": {
+        "id": "corza-biosurgery",
+        "name": "Corza Biosurgery"
+      },
       "party_page": {
-        "id": "corza-medical-sp-z-o-o",
-        "name": "Corza Medical sp z.o.o."
+        "id": "corza-biosurgery",
+        "name": "Corza Biosurgery"
       }
     },
     {
       "name": "Corza Medical S.A.S",
       "identifier_type": null,
       "identifier": "891 013 914",
+      "canonical": {
+        "id": "corza-biosurgery",
+        "name": "Corza Biosurgery"
+      },
       "party_page": {
-        "id": "corza-medical-s-a-s",
-        "name": "Corza Medical S.A.S"
+        "id": "corza-biosurgery",
+        "name": "Corza Biosurgery"
       }
     },
     {
       "name": "GTCR (Topaz) AcquisitionCo AS",
       "identifier_type": null,
       "identifier": "",
+      "canonical": {
+        "id": "corza-biosurgery",
+        "name": "Corza Biosurgery"
+      },
       "party_page": {
-        "id": "gtcr-topaz-acquisitionco-as",
-        "name": "GTCR (Topaz) AcquisitionCo AS"
+        "id": "corza-biosurgery",
+        "name": "Corza Biosurgery"
       }
     },
     {
       "name": "Corza Medical GmbH (Switzerland)",
       "identifier_type": null,
       "identifier": "CHE466.030.519",
+      "canonical": {
+        "id": "corza-biosurgery",
+        "name": "Corza Biosurgery"
+      },
       "party_page": {
-        "id": "corza-medical-gmbh-switzerland",
-        "name": "Corza Medical GmbH (Switzerland)"
+        "id": "corza-biosurgery",
+        "name": "Corza Biosurgery"
       }
     },
     {
       "name": "Corza Medical B.V.",
       "identifier_type": null,
       "identifier": "0759493073",
+      "canonical": {
+        "id": "corza-biosurgery",
+        "name": "Corza Biosurgery"
+      },
       "party_page": {
-        "id": "corza-medical-b-v",
-        "name": "Corza Medical B.V."
+        "id": "corza-biosurgery",
+        "name": "Corza Biosurgery"
       }
     },
     {
       "name": "Seal US Holdco LLC",
       "identifier_type": null,
       "identifier": "10680341",
+      "canonical": {
+        "id": "corza-biosurgery",
+        "name": "Corza Biosurgery"
+      },
       "party_page": {
-        "id": "seal-us-holdco-llc",
-        "name": "Seal US Holdco LLC"
+        "id": "corza-biosurgery",
+        "name": "Corza Biosurgery"
       }
     },
     {
       "name": "Topaz Investment AS",
       "identifier_type": null,
       "identifier": "",
+      "canonical": {
+        "id": "corza-biosurgery",
+        "name": "Corza Biosurgery"
+      },
       "party_page": {
-        "id": "topaz-investment-as",
-        "name": "Topaz Investment AS"
+        "id": "corza-biosurgery",
+        "name": "Corza Biosurgery"
       }
     },
     {
       "name": "Corza Medical GmbH (Germany)",
       "identifier_type": null,
       "identifier": "HRB 97422",
+      "canonical": {
+        "id": "corza-biosurgery",
+        "name": "Corza Biosurgery"
+      },
       "party_page": {
-        "id": "corza-medical-gmbh-germany",
-        "name": "Corza Medical GmbH (Germany)"
+        "id": "corza-biosurgery",
+        "name": "Corza Biosurgery"
       }
     },
     {
       "name": "Corza Medical S.r.l.",
       "identifier_type": null,
       "identifier": "2605047",
+      "canonical": {
+        "id": "corza-biosurgery",
+        "name": "Corza Biosurgery"
+      },
       "party_page": {
-        "id": "corza-medical-s-r-l",
-        "name": "Corza Medical S.r.l."
+        "id": "corza-biosurgery",
+        "name": "Corza Biosurgery"
       }
     },
     {
       "name": "Corza Medical S.L.U.",
       "identifier_type": null,
       "identifier": "B42998195",
+      "canonical": {
+        "id": "corza-biosurgery",
+        "name": "Corza Biosurgery"
+      },
       "party_page": {
-        "id": "corza-medical-s-l-u",
-        "name": "Corza Medical S.L.U."
+        "id": "corza-biosurgery",
+        "name": "Corza Biosurgery"
       }
     }
   ],
@@ -218,9 +266,13 @@
           "name": "Kakaku.com, Inc.",
           "identifier_type": null,
           "identifier": "Japan corporate number  011001065997",
+          "canonical": {
+            "id": "time-design-international-pte-ltd",
+            "name": "Kakaku.com"
+          },
           "party_page": {
-            "id": "kakaku-com-inc",
-            "name": "Kakaku.com, Inc."
+            "id": "time-design-international-pte-ltd",
+            "name": "Kakaku.com"
           }
         },
         {
@@ -229,11 +281,11 @@
           "identifier": "Singapore registration number  UEN 201736394D",
           "canonical": {
             "id": "time-design-international-pte-ltd",
-            "name": "Time Design International Pte Ltd"
+            "name": "Kakaku.com"
           },
           "party_page": {
             "id": "time-design-international-pte-ltd",
-            "name": "Time Design International Pte Ltd"
+            "name": "Kakaku.com"
           }
         }
       ]

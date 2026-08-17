@@ -3,6 +3,11 @@
   "canonical_name": "Bain Capital Investors",
   "members": [
     {
+      "name": "BCPE Blitz Cayman, L.P.",
+      "identifier": null,
+      "identifier_type": null
+    },
+    {
       "name": "Bain Capital Investors LLC",
       "identifier": "3229725",
       "identifier_type": null
@@ -41,6 +46,17 @@
   "mergers": {
     "acquirer": [
       {
+        "merger_id": "WA-60034",
+        "merger_name": "Bain Capital \u2013 Kakaku.com",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Waiver",
+        "notification_date": "2026-07-30T12:00:00Z",
+        "determination_date": "2026-08-14T12:00:00Z"
+      },
+      {
         "merger_id": "WA-40033",
         "merger_name": "Bain Capital - Everllence",
         "is_waiver": true,
@@ -54,17 +70,6 @@
     ],
     "target": [],
     "other": [
-      {
-        "merger_id": "WA-60034",
-        "merger_name": "Bain Capital \u2013 Kakaku.com",
-        "is_waiver": true,
-        "status": "Assessment completed",
-        "determination": "Approved",
-        "has_conditions": false,
-        "phase": "Waiver",
-        "notification_date": "2026-07-30T12:00:00Z",
-        "determination_date": "2026-08-14T12:00:00Z"
-      },
       {
         "merger_id": "WA-80022",
         "merger_name": "Bain Capital \u2013 Perpetual Wealth Management Group",

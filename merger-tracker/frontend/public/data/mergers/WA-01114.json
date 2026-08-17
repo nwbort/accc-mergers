@@ -172,9 +172,13 @@
           "name": "Kakaku.com, Inc.",
           "identifier_type": null,
           "identifier": "Japan corporate number  011001065997",
+          "canonical": {
+            "id": "time-design-international-pte-ltd",
+            "name": "Kakaku.com"
+          },
           "party_page": {
-            "id": "kakaku-com-inc",
-            "name": "Kakaku.com, Inc."
+            "id": "time-design-international-pte-ltd",
+            "name": "Kakaku.com"
           }
         },
         {
@@ -183,11 +187,11 @@
           "identifier": "Singapore registration number  UEN 201736394D",
           "canonical": {
             "id": "time-design-international-pte-ltd",
-            "name": "Time Design International Pte Ltd"
+            "name": "Kakaku.com"
           },
           "party_page": {
             "id": "time-design-international-pte-ltd",
-            "name": "Time Design International Pte Ltd"
+            "name": "Kakaku.com"
           }
         }
       ]
