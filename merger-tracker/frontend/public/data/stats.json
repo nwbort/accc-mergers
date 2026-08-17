@@ -1,10 +1,10 @@
 {
-  "total_mergers": 223,
+  "total_mergers": 224,
   "total_waivers": 324,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 168,
-    "Under assessment": 52,
+    "Under assessment": 53,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -107,6 +107,16 @@
       "is_refiled": false
     },
     {
+      "merger_id": "MN-65031",
+      "merger_name": "Metal Manufactures - BayWa Solar Systems",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-14T12:00:00Z",
+      "page_modified_datetime": "2026-08-17T15:23:40+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
+    {
       "merger_id": "MN-05043",
       "merger_name": "Incubeta - Datisan",
       "status": "Under assessment",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-06T12:00:00Z",
       "page_modified_datetime": "2026-08-10T11:00:01+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-55031",
-      "merger_name": "Danone \u2013 MADE",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-05T12:00:00Z",
-      "page_modified_datetime": "2026-08-13T10:17:32+10:00",
       "is_waiver": false,
       "is_refiled": false
     }
