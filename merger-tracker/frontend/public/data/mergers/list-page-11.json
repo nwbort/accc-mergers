@@ -3019,6 +3019,72 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/johns-lyng-group-%E2%80%93-cm-build-group"
     },
     {
+      "merger_id": "WA-75040",
+      "merger_name": "Blackstone - DarkVision Technologies",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-05T12:00:00Z",
+      "determination_publication_date": "2026-08-17T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Dynamo Bidco, Inc.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "dynamo-bidco-inc",
+            "name": "Dynamo Bidco, Inc."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "DarkVision Technologies Inc.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "darkvision-technologies-inc",
+            "name": "DarkVision Technologies Inc."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Blackstone Inc.",
+          "identifier_type": null,
+          "identifier": "",
+          "canonical": {
+            "id": "blackstone-inc",
+            "name": "Blackstone Inc."
+          },
+          "party_page": {
+            "id": "blackstone-inc",
+            "name": "Blackstone Inc."
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2419",
+          "name": "Other Professional and Scientific Equipment Manufacturing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/blackstone-darkvision-technologies"
+    },
+    {
       "merger_id": "MN-15034",
       "merger_name": "Australian Venue Co \u2013 assets of Black Nugget Hotel Motel, Bartletts Tavern and all associated detached bottle shops",
       "status": "Under assessment",
@@ -4075,73 +4141,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/metal-manufactures-baywa-solar-systems"
-    },
-    {
-      "merger_id": "MN-75041",
-      "merger_name": "Lockheed Martin \u2013 Ultra Maritime",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-14T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-09-25T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "RLM SYSTEMS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "67 050 753 403",
-          "party_page": {
-            "id": "rlm-systems-pty-limited",
-            "name": "Rlm Systems Pty Limited"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "Ultra Electronics Australia Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "48 127 336 841",
-          "party_page": {
-            "id": "ultra-electronics-australia-pty-ltd",
-            "name": "Ultra Electronics Australia Pty Ltd"
-          }
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "Lockheed Martin Corporation",
-          "identifier_type": null,
-          "identifier": "US Department ID  D03964756",
-          "party_page": {
-            "id": "lockheed-martin-corporation",
-            "name": "Lockheed Martin Corporation"
-          }
-        },
-        {
-          "name": "Ultra Electronics Holdings Limited",
-          "identifier_type": null,
-          "identifier": "registered number 02830397",
-          "party_page": {
-            "id": "ultra-electronics-holdings-limited",
-            "name": "Ultra Electronics Holdings Limited"
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "2419",
-          "name": "Other Professional and Scientific Equipment Manufacturing"
-        },
-        {
-          "code": "6923",
-          "name": "Engineering Design and Engineering Consulting Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/lockheed-martin-%E2%80%93-ultra-maritime"
     }
   ],
   "page": 11,

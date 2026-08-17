@@ -1,6 +1,6 @@
 {
   "total_mergers": 226,
-  "total_waivers": 325,
+  "total_waivers": 326,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 168,
@@ -18,7 +18,7 @@
     "Assessment ceased": 2
   },
   "by_waiver_determination": {
-    "Approved": 311,
+    "Approved": 312,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.15076923076923,
-    "median_days": 19,
-    "average_business_days": 12.88,
-    "median_business_days": 13
+    "average_days": 19.12883435582822,
+    "median_days": 18.5,
+    "average_business_days": 12.865030674846626,
+    "median_business_days": 13.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 82
+      "count": 83
     },
     {
       "name": "Computer System Design and Related Services",
@@ -64,7 +64,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 44
+      "count": 45
     },
     {
       "name": "Software Publishing",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-75040",
+      "merger_name": "Blackstone - DarkVision Technologies",
+      "determination": "Approved",
+      "determination_date": "2026-08-17T12:00:00Z",
+      "page_modified_datetime": "2026-08-17T17:36:36+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-35028",
       "merger_name": "efex - OnPlatinum",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-01105",
-      "merger_name": "Siemens Mobility - MerMec",
-      "determination": "Approved",
-      "determination_date": "2026-08-12T12:00:00Z",
-      "page_modified_datetime": "2026-08-12T16:11:32+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]

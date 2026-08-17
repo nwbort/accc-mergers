@@ -9,7 +9,7 @@
       "code": "62",
       "name": "Finance",
       "level": "subdivision",
-      "merger_count": 90
+      "merger_count": 91
     },
     {
       "code": "63",
@@ -21,7 +21,7 @@
       "code": "64",
       "name": "Auxiliary Finance and Insurance Services",
       "level": "subdivision",
-      "merger_count": 46
+      "merger_count": 47
     }
   ],
   "mergers": [
@@ -156,6 +156,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-03-03T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-75040",
+      "merger_name": "Blackstone - DarkVision Technologies",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-05T12:00:00Z",
+      "determination_date": "2026-08-17T12:00:00Z"
     },
     {
       "merger_id": "WA-05040",
@@ -1478,10 +1489,10 @@
       "determination_date": null
     }
   ],
-  "count": 132,
+  "count": 133,
   "phase_1_count": 33,
   "phase_2_count": 2,
-  "waiver_count": 97,
+  "waiver_count": 98,
   "active_count": 12,
   "phase_duration": {
     "average_days": 28.416666666666668,
@@ -1491,10 +1502,10 @@
     "completed_count": 24
   },
   "waiver_duration": {
-    "average_days": 19.072164948453608,
-    "median_days": 18,
-    "average_business_days": 12.762886597938145,
-    "median_business_days": 12,
-    "completed_count": 97
+    "average_days": 19.0,
+    "median_days": 18.0,
+    "average_business_days": 12.714285714285714,
+    "median_business_days": 12.0,
+    "completed_count": 98
   }
 }
