@@ -143,9 +143,13 @@
           "name": "Ultra Electronics Australia Pty Ltd",
           "identifier_type": "ABN",
           "identifier": "48 127 336 841",
+          "canonical": {
+            "id": "ultra-electronics-holdings-limited",
+            "name": "Ultra Electronics Holdings Limited"
+          },
           "party_page": {
-            "id": "ultra-electronics-australia-pty-ltd",
-            "name": "Ultra Electronics Australia Pty Ltd"
+            "id": "ultra-electronics-holdings-limited",
+            "name": "Ultra Electronics Holdings Limited"
           }
         }
       ],
@@ -163,6 +167,10 @@
           "name": "Ultra Electronics Holdings Limited",
           "identifier_type": null,
           "identifier": "registered number 02830397",
+          "canonical": {
+            "id": "ultra-electronics-holdings-limited",
+            "name": "Ultra Electronics Holdings Limited"
+          },
           "party_page": {
             "id": "ultra-electronics-holdings-limited",
             "name": "Ultra Electronics Holdings Limited"

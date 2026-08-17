@@ -3,6 +3,11 @@
   "canonical_name": "Ultra Electronics Holdings Limited",
   "members": [
     {
+      "name": "Ultra Electronics Australia Pty Ltd",
+      "identifier": "48 127 336 841",
+      "identifier_type": "ABN"
+    },
+    {
       "name": "Ultra Electronics Holdings Limited",
       "identifier": "registered number 02830397",
       "identifier_type": null
@@ -10,8 +15,7 @@
   ],
   "mergers": {
     "acquirer": [],
-    "target": [],
-    "other": [
+    "target": [
       {
         "merger_id": "MN-75041",
         "merger_name": "Lockheed Martin \u2013 Ultra Maritime",
@@ -23,7 +27,8 @@
         "notification_date": "2026-08-14T12:00:00Z",
         "determination_date": null
       }
-    ]
+    ],
+    "other": []
   },
   "merger_count": 1,
   "phase_1_count": 1,
