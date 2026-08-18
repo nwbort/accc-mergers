@@ -63,6 +63,9 @@ def select_targets(listing_paths, mergers, cutoff_weeks: int = CUTOFF_WEEKS,
         (paths, stats) where paths preserves listing order (listing links
         first, then recovered ones) and stats reports what happened.
     """
+    # Merger IDs keyed by target so the run summary can name what was skipped
+    # or recovered, rather than only counting it.
+    ids_by_key = {}
     skip_keys = set()
     known_paths = []
     for merger in mergers:
@@ -72,8 +75,12 @@ def select_targets(listing_paths, mergers, cutoff_weeks: int = CUTOFF_WEEKS,
         path = urlparse(url).path
         if not path:
             continue
+        key = normalize_target(path)
+        merger_id = merger.get('merger_id')
+        if merger_id:
+            ids_by_key[key] = merger_id
         if not scrape_all and should_skip_merger(merger, cutoff_weeks=cutoff_weeks):
-            skip_keys.add(normalize_target(path))
+            skip_keys.add(key)
         else:
             known_paths.append(path)
 
@@ -83,8 +90,10 @@ def select_targets(listing_paths, mergers, cutoff_weeks: int = CUTOFF_WEEKS,
         'listing': 0,
         'duplicates': 0,
         'skipped': 0,
+        'skipped_mergers': [],
         'recovered': 0,
         'recovered_paths': [],
+        'recovered_mergers': [],
     }
 
     for path in listing_paths:
@@ -95,6 +104,9 @@ def select_targets(listing_paths, mergers, cutoff_weeks: int = CUTOFF_WEEKS,
         key = normalize_target(path)
         if key in skip_keys:
             stats['skipped'] += 1
+            stats['skipped_mergers'].append(
+                {'merger_id': ids_by_key.get(key), 'path': path}
+            )
             continue
         if key in seen:
             stats['duplicates'] += 1
@@ -112,6 +124,11 @@ def select_targets(listing_paths, mergers, cutoff_weeks: int = CUTOFF_WEEKS,
         paths.append(path)
         stats['recovered'] += 1
         stats['recovered_paths'].append(path)
+        stats['recovered_mergers'].append(
+            {'merger_id': ids_by_key.get(key), 'path': path}
+        )
+
+    stats['targets'] = len(paths)
 
     return paths, stats
 
@@ -158,6 +175,10 @@ def main():
         default=CUTOFF_WEEKS,
         help=f'Weeks after determination to cut off (default: {CUTOFF_WEEKS})'
     )
+    parser.add_argument(
+        '--stats-json',
+        help='Write the selection stats to this path as JSON (for run summaries)'
+    )
     args = parser.parse_args()
 
     listing_paths = [line.strip() for line in sys.stdin if line.strip()]
@@ -168,6 +189,10 @@ def main():
         cutoff_weeks=args.cutoff_weeks,
         scrape_all=args.all,
     )
+
+    if args.stats_json:
+        with open(args.stats_json, 'w', encoding='utf-8') as f:
+            json.dump(stats, f, indent=2)
 
     if stats['duplicates']:
         print(f"    Listing served {stats['duplicates']} duplicate link(s)", file=sys.stderr)

@@ -23,6 +23,7 @@ scrape.sh ──► extract_mergers.py ──► generate_static_data.py ──�
 | `scrape.sh` | Bash wrapper using `pup`/`curl` to fetch the ACCC acquisitions register and individual matter pages into `data/raw/`. |
 | `cutoff.py` | Determines which mergers are old enough to skip during scraping/extraction. Used as a module *and* as a CLI by `scrape.sh`. |
 | `scrape_targets.py` | Chooses which matter pages `scrape.sh` fetches: applies `cutoff.py`, de-duplicates the listing, and recovers matters the register listing dropped (its pagination sort is unstable). |
+| `scrape_summary.py` | Renders the Markdown run summary for a scrape (merger IDs fetched, which pages changed, what was skipped past cutoff) from the report `scrape.sh` writes when `SCRAPE_REPORT_DIR` is set. |
 
 ### Extract
 
@@ -83,4 +84,15 @@ pip install -r scripts/requirements.txt
 python scripts/extract_mergers.py         # → data/processed/mergers.json
 python scripts/generate_static_data.py    # → frontend public/data/
 python -m pytest scripts/tests/           # tests
+```
+
+To see which merger IDs a scrape touched — the same summary the pipeline
+writes to its GitHub Actions run summary — point the scraper at a report
+directory:
+
+```bash
+SCRAPE_REPORT_DIR=/tmp/scrape-report ./scripts/scrape.sh
+git status --porcelain -- data/raw/matters/ | awk '{print $NF}' > /tmp/changed.txt
+python scripts/scrape_summary.py --report-dir /tmp/scrape-report \
+  --changed-paths /tmp/changed.txt
 ```

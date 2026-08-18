@@ -12,6 +12,13 @@
 #                      or waiver decision)
 #   --clean-file <path>  Apply HTML cleaning to a single file and exit. Used by
 #                        the pipeline to re-clean files after a git rebase.
+#
+# Environment:
+#   SCRAPE_REPORT_DIR  If set, write a report of the run into this directory:
+#                      targets.json (what was selected, skipped and recovered)
+#                      and fetched.tsv (status, merger ID and path per fetch).
+#                      scripts/scrape_summary.py renders these for the run's
+#                      GitHub step summary.
 
 # Exit immediately if a command exits with a non-zero status.
 set -e
@@ -52,6 +59,17 @@ export USER_AGENT="Mozilla/5.0 (compatible; mergers-fyi/1.0; +https://mergers.fy
 export MERGERS_JSON="data/processed/mergers.json"
 export SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 export PARALLEL_JOBS=24
+
+# Optional run report. When SCRAPE_REPORT_DIR is set (the pipeline sets it),
+# the scraper records which matters it selected and which it actually fetched,
+# so scrape_summary.py can list the merger IDs touched by the run.
+export SCRAPE_REPORT_DIR="${SCRAPE_REPORT_DIR:-}"
+export SCRAPE_MANIFEST=""
+if [ -n "$SCRAPE_REPORT_DIR" ]; then
+  mkdir -p "$SCRAPE_REPORT_DIR"
+  export SCRAPE_MANIFEST="${SCRAPE_REPORT_DIR}/fetched.tsv"
+  : > "$SCRAPE_MANIFEST"
+fi
 
 # --- Functions ---
 
@@ -117,6 +135,16 @@ clean_html() {
   echo "Successfully cleaned $file_count HTML file(s)"
 }
 
+# Record one fetch outcome in the run manifest, if one is being kept.
+# Called from the parallel xargs subshells: a single short line written in
+# append mode is atomic, so concurrent writers cannot interleave.
+record_fetch() {
+  local status="$1" merger_id="$2" link="$3"
+  [ -n "$SCRAPE_MANIFEST" ] || return 0
+  printf '%s\t%s\t%s\n' "$status" "${merger_id:-UNKNOWN}" "$link" >> "$SCRAPE_MANIFEST"
+}
+export -f record_fetch
+
 # Function to fetch and process a single matter page.
 # It's designed to be called by xargs for parallel execution.
 fetch_matter_page() {
@@ -131,6 +159,7 @@ fetch_matter_page() {
   # Download the page. The --fail flag ensures curl exits with an error on HTTP failures (like 404).
   if ! curl -s -L --compressed -A "$USER_AGENT" --fail "$full_url" -o "$temp_html"; then
       echo "FAILED: $full_url" >&2
+      record_fetch "failed" "" "$link"
       # Returning a non-zero status will cause xargs to stop
       return 1
   fi
@@ -159,6 +188,7 @@ fetch_matter_page() {
     fallback_name=$(echo "$fallback_name" | tr -cd 'A-Za-z0-9_.-')
     if [ -z "$fallback_name" ]; then
       echo "    Warning: Skipping $full_url (no safe filename)" >&2
+      record_fetch "failed" "" "$link"
       return 1
     fi
     filename="${SUBFOLDER}/${fallback_name}.html"
@@ -168,6 +198,7 @@ fetch_matter_page() {
 
   clean_file "$filename"
 
+  record_fetch "ok" "$matter_number" "$link"
 }
 # Export the function so it's available to subshells spawned by xargs
 export -f fetch_matter_page
@@ -260,6 +291,10 @@ if [ "$SCRAPE_ALL" = true ]; then
   select_args=(--all)
 else
   select_args=()
+fi
+
+if [ -n "$SCRAPE_REPORT_DIR" ]; then
+  select_args+=(--stats-json "${SCRAPE_REPORT_DIR}/targets.json")
 fi
 
 links_to_fetch=$(printf '%s\n' "$relative_links" \

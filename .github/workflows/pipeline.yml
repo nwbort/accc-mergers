@@ -78,6 +78,8 @@ jobs:
       # --- Scrape ---
 
       - name: Run scraper
+        env:
+          SCRAPE_REPORT_DIR: ${{ runner.temp }}/scrape-report
         run: |
           chmod +x ./scripts/scrape.sh
           if [ "${{ inputs.all_mergers }}" = "true" ]; then
@@ -85,6 +87,36 @@ jobs:
           else
             ./scripts/scrape.sh
           fi
+
+      # Record which merger IDs this run actually fetched, which of their
+      # pages changed, and which matters were skipped past cutoff, so a run
+      # can be spot checked against an ACCC register notification email.
+      # Runs even when the scraper failed, to summarise what it got through.
+      - name: Summarise scraped mergers
+        if: ${{ !cancelled() }}
+        env:
+          SCRAPE_REPORT_DIR: ${{ runner.temp }}/scrape-report
+          # Passed through env, never interpolated into the script: the
+          # subject is attacker-influencable content from an inbound email.
+          TRIGGER_EVENT: ${{ github.event_name }}
+          EMAIL_SUBJECT: ${{ github.event.client_payload.email_subject }}
+        run: |
+          {
+            echo "### Scrape trigger"
+            echo ""
+            printf -- '- Event: `%s`\n' "$TRIGGER_EVENT"
+            if [ -n "$EMAIL_SUBJECT" ]; then
+              printf -- '- ACCC register email: %s\n' "$EMAIL_SUBJECT"
+            fi
+            echo ""
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          git status --porcelain -- data/raw/matters/ \
+            | awk '{print $NF}' > "${RUNNER_TEMP}/scrape-changed.txt"
+          python scripts/scrape_summary.py \
+            --report-dir "$SCRAPE_REPORT_DIR" \
+            --changed-paths "${RUNNER_TEMP}/scrape-changed.txt" \
+            | tee -a "$GITHUB_STEP_SUMMARY"
 
       - name: Verify HTML cleaning
         run: |
