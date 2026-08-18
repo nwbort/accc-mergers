@@ -22,6 +22,7 @@ scrape.sh ──► extract_mergers.py ──► generate_static_data.py ──�
 | --- | --- |
 | `scrape.sh` | Bash wrapper using `pup`/`curl` to fetch the ACCC acquisitions register and individual matter pages into `data/raw/`. |
 | `cutoff.py` | Determines which mergers are old enough to skip during scraping/extraction. Used as a module *and* as a CLI by `scrape.sh`. |
+| `scrape_targets.py` | Chooses which matter pages `scrape.sh` fetches: applies `cutoff.py`, de-duplicates the listing, and recovers matters the register listing dropped (its pagination sort is unstable). |
 
 ### Extract
 
