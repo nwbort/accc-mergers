@@ -25,7 +25,7 @@
       "code": "452",
       "name": "Pubs, Taverns and Bars",
       "level": "group",
-      "merger_count": 28
+      "merger_count": 29
     },
     {
       "code": "453",
@@ -67,6 +67,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-08-04T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-15035",
+      "merger_name": "Waymark Hotels Group \u2013 Howard Springs Tavern, Howard Springs, NT",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-27T12:00:00Z",
+      "determination_date": "2026-08-18T12:00:00Z"
     },
     {
       "merger_id": "MN-40029",
@@ -410,10 +421,10 @@
       "determination_date": "2026-02-02T12:00:00Z"
     }
   ],
-  "count": 34,
+  "count": 35,
   "phase_1_count": 8,
   "phase_2_count": 0,
-  "waiver_count": 26,
+  "waiver_count": 27,
   "active_count": 3,
   "phase_duration": {
     "average_days": 36.4,
@@ -423,10 +434,10 @@
     "completed_count": 5
   },
   "waiver_duration": {
-    "average_days": 19.615384615384617,
-    "median_days": 19.0,
-    "average_business_days": 13.307692307692308,
-    "median_business_days": 12.0,
-    "completed_count": 26
+    "average_days": 19.703703703703702,
+    "median_days": 19,
+    "average_business_days": 13.407407407407407,
+    "median_business_days": 12,
+    "completed_count": 27
   }
 }

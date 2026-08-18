@@ -1,0 +1,41 @@
+{
+  "id": "howard-springs-op-co-pty-ltd",
+  "canonical_name": "Howard Springs Op Co Pty Ltd",
+  "members": [
+    {
+      "name": "Howard Springs Op Co Pty Ltd",
+      "identifier": "78 696 555 674",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [
+      {
+        "merger_id": "WA-15035",
+        "merger_name": "Waymark Hotels Group \u2013 Howard Springs Tavern, Howard Springs, NT",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Waiver",
+        "notification_date": "2026-07-27T12:00:00Z",
+        "determination_date": "2026-08-18T12:00:00Z"
+      }
+    ],
+    "target": [],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null,
+  "waiver_duration": {
+    "average_days": 22.0,
+    "median_days": 22,
+    "average_business_days": 16.0,
+    "median_business_days": 16,
+    "completed_count": 1
+  }
+}

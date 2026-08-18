@@ -9,7 +9,19 @@
     }
   ],
   "mergers": {
-    "acquirer": [],
+    "acquirer": [
+      {
+        "merger_id": "WA-01118",
+        "merger_name": "Accent Group \u2013 The Athlete\u2019s Foot in Karrinyup, WA",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Waiver",
+        "notification_date": "2026-07-29T12:00:00Z",
+        "determination_date": "2026-08-18T12:00:00Z"
+      }
+    ],
     "target": [
       {
         "merger_id": "MN-30008",
@@ -25,10 +37,10 @@
     ],
     "other": []
   },
-  "merger_count": 1,
+  "merger_count": 2,
   "phase_1_count": 1,
   "phase_2_count": 0,
-  "waiver_count": 0,
+  "waiver_count": 1,
   "active_count": 0,
   "phase_duration": {
     "average_days": 27.0,
@@ -37,5 +49,11 @@
     "median_business_days": 17,
     "completed_count": 1
   },
-  "waiver_duration": null
+  "waiver_duration": {
+    "average_days": 20.0,
+    "median_days": 20,
+    "average_business_days": 14.0,
+    "median_business_days": 14,
+    "completed_count": 1
+  }
 }

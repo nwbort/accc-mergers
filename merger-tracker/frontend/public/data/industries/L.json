@@ -15,7 +15,7 @@
       "code": "67",
       "name": "Property Operators and Real Estate Services",
       "level": "subdivision",
-      "merger_count": 34
+      "merger_count": 35
     }
   ],
   "mergers": [
@@ -73,6 +73,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-22T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-15035",
+      "merger_name": "Waymark Hotels Group \u2013 Howard Springs Tavern, Howard Springs, NT",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-27T12:00:00Z",
+      "determination_date": "2026-08-18T12:00:00Z"
     },
     {
       "merger_id": "MN-40029",
@@ -515,10 +526,10 @@
       "determination_date": "2025-09-05T12:00:00Z"
     }
   ],
-  "count": 45,
+  "count": 46,
   "phase_1_count": 17,
   "phase_2_count": 2,
-  "waiver_count": 26,
+  "waiver_count": 27,
   "active_count": 5,
   "phase_duration": {
     "average_days": 34.92857142857143,
@@ -528,10 +539,10 @@
     "completed_count": 14
   },
   "waiver_duration": {
-    "average_days": 20.73076923076923,
-    "median_days": 19.0,
-    "average_business_days": 14.0,
-    "median_business_days": 13.0,
-    "completed_count": 26
+    "average_days": 20.77777777777778,
+    "median_days": 19,
+    "average_business_days": 14.074074074074074,
+    "median_business_days": 13,
+    "completed_count": 27
   }
 }

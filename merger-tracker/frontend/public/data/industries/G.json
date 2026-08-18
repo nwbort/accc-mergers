@@ -21,13 +21,13 @@
       "code": "41",
       "name": "Food Retailing",
       "level": "subdivision",
-      "merger_count": 29
+      "merger_count": 30
     },
     {
       "code": "42",
       "name": "Other Store-Based Retailing",
       "level": "subdivision",
-      "merger_count": 22
+      "merger_count": 23
     },
     {
       "code": "43",
@@ -134,6 +134,28 @@
       "has_conditions": false,
       "phase": "Phase 1",
       "notification_date": "2026-07-21T12:00:00Z",
+      "determination_date": "2026-08-18T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-01118",
+      "merger_name": "Accent Group \u2013 The Athlete\u2019s Foot in Karrinyup, WA",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-29T12:00:00Z",
+      "determination_date": "2026-08-18T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-15035",
+      "merger_name": "Waymark Hotels Group \u2013 Howard Springs Tavern, Howard Springs, NT",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-27T12:00:00Z",
       "determination_date": "2026-08-18T12:00:00Z"
     },
     {
@@ -775,10 +797,10 @@
       "determination_date": null
     }
   ],
-  "count": 67,
+  "count": 69,
   "phase_1_count": 25,
   "phase_2_count": 3,
-  "waiver_count": 39,
+  "waiver_count": 41,
   "active_count": 8,
   "phase_duration": {
     "average_days": 38.3,
@@ -788,10 +810,10 @@
     "completed_count": 20
   },
   "waiver_duration": {
-    "average_days": 19.923076923076923,
+    "average_days": 19.975609756097562,
     "median_days": 19,
-    "average_business_days": 13.666666666666666,
+    "average_business_days": 13.731707317073171,
     "median_business_days": 13,
-    "completed_count": 39
+    "completed_count": 41
   }
 }

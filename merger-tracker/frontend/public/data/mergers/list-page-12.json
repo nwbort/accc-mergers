@@ -1,6 +1,276 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-05044",
+      "merger_name": "Holcim Australia \u2013 Burdetts Group",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-10T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-21T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "HOLCIM (AUSTRALIA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "87 099 732 297",
+          "party_page": {
+            "id": "holcim-australia-pty-ltd",
+            "name": "Holcim (Australia) Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Burdett Group Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "158 557 718",
+          "party_page": {
+            "id": "burdett-group-pty-ltd",
+            "name": "Burdett Group Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "0911",
+          "name": "Gravel and Sand Quarrying"
+        },
+        {
+          "code": "0919",
+          "name": "Other Construction Material Mining"
+        },
+        {
+          "code": "2033",
+          "name": "Ready-Mixed Concrete Manufacturing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/holcim-australia-%E2%80%93-burdetts-group"
+    },
+    {
+      "merger_id": "MN-70030",
+      "merger_name": "Aware Super \u2013 Increased interest in Keyton",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-10T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-21T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "AWARE SUPER PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "11 118 202 672",
+          "canonical": {
+            "id": "aware-super-pty-limited",
+            "name": "Aware Super Pty Limited"
+          },
+          "party_page": {
+            "id": "aware-super-pty-limited",
+            "name": "Aware Super Pty Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "LENDLEASE CAPITAL SERVICES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "67 000 001 114",
+          "canonical": {
+            "id": "lendlease",
+            "name": "Lendlease"
+          },
+          "party_page": {
+            "id": "lendlease",
+            "name": "Lendlease"
+          }
+        },
+        {
+          "name": "LENDLEASE CAPITAL SERVICES RL LTD",
+          "identifier_type": "ABN",
+          "identifier": "47 615 893 288",
+          "canonical": {
+            "id": "lendlease",
+            "name": "Lendlease"
+          },
+          "party_page": {
+            "id": "lendlease",
+            "name": "Lendlease"
+          }
+        },
+        {
+          "name": "Keyton Trust",
+          "identifier_type": "ABN",
+          "identifier": "44 349 706 307",
+          "canonical": {
+            "id": "keyton",
+            "name": "Keyton"
+          },
+          "party_page": {
+            "id": "keyton",
+            "name": "Keyton"
+          }
+        },
+        {
+          "name": "KEYTON HOLDING PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "72 613 131 187",
+          "canonical": {
+            "id": "keyton",
+            "name": "Keyton"
+          },
+          "party_page": {
+            "id": "keyton",
+            "name": "Keyton"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "OAK TREE HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "59 161 180 230",
+          "party_page": {
+            "id": "oak-tree-holdings-pty-ltd",
+            "name": "Oak Tree Holdings Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6330",
+          "name": "Superannuation Funds"
+        },
+        {
+          "code": "6711",
+          "name": "Residential Property Operators"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/aware-super-%E2%80%93-increased-interest-in-keyton"
+    },
+    {
+      "merger_id": "MN-80027",
+      "merger_name": "Supagas \u2013 Heeson Medical",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-11T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-22T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Supagas Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "50 074 008 496",
+          "canonical": {
+            "id": "nippon-sanso-corporation",
+            "name": "Nippon Sanso Corporation"
+          },
+          "party_page": {
+            "id": "nippon-sanso-corporation",
+            "name": "Nippon Sanso Corporation"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Jacobba Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "20 088 038 340",
+          "canonical": {
+            "id": "heeson-medical",
+            "name": "Heeson Medical"
+          },
+          "party_page": {
+            "id": "heeson-medical",
+            "name": "Heeson Medical"
+          }
+        },
+        {
+          "name": "Heeson Medical Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "14 088 038 313",
+          "canonical": {
+            "id": "heeson-medical",
+            "name": "Heeson Medical"
+          },
+          "party_page": {
+            "id": "heeson-medical",
+            "name": "Heeson Medical"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "NSC (Australia) Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "71 607 111 268",
+          "canonical": {
+            "id": "nippon-sanso-corporation",
+            "name": "Nippon Sanso Corporation"
+          },
+          "party_page": {
+            "id": "nippon-sanso-corporation",
+            "name": "Nippon Sanso Corporation"
+          }
+        },
+        {
+          "name": "Nippon Sanso Holdings Corporation",
+          "identifier_type": null,
+          "identifier": "LEI  353800F1K6653B4VPY57",
+          "canonical": {
+            "id": "nippon-sanso-corporation",
+            "name": "Nippon Sanso Corporation"
+          },
+          "party_page": {
+            "id": "nippon-sanso-corporation",
+            "name": "Nippon Sanso Corporation"
+          }
+        },
+        {
+          "name": "Coregas Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "32 001 255 312",
+          "canonical": {
+            "id": "nippon-sanso-corporation",
+            "name": "Nippon Sanso Corporation"
+          },
+          "party_page": {
+            "id": "nippon-sanso-corporation",
+            "name": "Nippon Sanso Corporation"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1811",
+          "name": "Industrial Gas Manufacturing"
+        },
+        {
+          "code": "3720",
+          "name": "Pharmaceutical and Toiletry Goods Wholesaling"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/supagas-%E2%80%93-heeson-medical"
+    },
+    {
       "merger_id": "MN-50035",
       "merger_name": "Opal HealthCare - Canberra Nursing Home (Lidcombe, NSW)",
       "status": "Under assessment",

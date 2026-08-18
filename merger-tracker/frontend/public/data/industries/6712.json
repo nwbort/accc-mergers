@@ -60,6 +60,17 @@
       "determination_date": null
     },
     {
+      "merger_id": "WA-15035",
+      "merger_name": "Waymark Hotels Group \u2013 Howard Springs Tavern, Howard Springs, NT",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-27T12:00:00Z",
+      "determination_date": "2026-08-18T12:00:00Z"
+    },
+    {
       "merger_id": "MN-40029",
       "merger_name": "Laundy \u2013 Woy Woy Hotel",
       "is_waiver": false,
@@ -324,10 +335,10 @@
       "determination_date": "2025-11-18T12:00:00Z"
     }
   ],
-  "count": 27,
+  "count": 28,
   "phase_1_count": 10,
   "phase_2_count": 1,
-  "waiver_count": 16,
+  "waiver_count": 17,
   "active_count": 3,
   "phase_duration": {
     "average_days": 39.5,
@@ -337,10 +348,10 @@
     "completed_count": 8
   },
   "waiver_duration": {
-    "average_days": 21.1875,
-    "median_days": 20.0,
-    "average_business_days": 14.0,
-    "median_business_days": 13.0,
-    "completed_count": 16
+    "average_days": 21.235294117647058,
+    "median_days": 22,
+    "average_business_days": 14.117647058823529,
+    "median_business_days": 14,
+    "completed_count": 17
   }
 }

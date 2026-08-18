@@ -9,7 +9,7 @@
       "code": "69",
       "name": "Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",
       "level": "subdivision",
-      "merger_count": 81
+      "merger_count": 82
     },
     {
       "code": "70",
@@ -205,6 +205,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-04-27T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-75039",
+      "merger_name": "Ironbark - Paris Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-31T12:00:00Z",
+      "determination_date": "2026-08-18T12:00:00Z"
     },
     {
       "merger_id": "WA-35028",
@@ -1406,10 +1417,10 @@
       "determination_date": null
     }
   ],
-  "count": 126,
+  "count": 127,
   "phase_1_count": 51,
   "phase_2_count": 3,
-  "waiver_count": 72,
+  "waiver_count": 73,
   "active_count": 17,
   "phase_duration": {
     "average_days": 33.41025641025641,
@@ -1419,10 +1430,10 @@
     "completed_count": 39
   },
   "waiver_duration": {
-    "average_days": 18.916666666666668,
-    "median_days": 19.0,
-    "average_business_days": 12.777777777777779,
-    "median_business_days": 13.0,
-    "completed_count": 72
+    "average_days": 18.904109589041095,
+    "median_days": 19,
+    "average_business_days": 12.767123287671232,
+    "median_business_days": 13,
+    "completed_count": 73
   }
 }
