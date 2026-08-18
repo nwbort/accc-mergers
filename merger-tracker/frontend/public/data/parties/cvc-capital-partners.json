@@ -24,6 +24,11 @@
     },
     {
       "name": "CVC Capital Partners plc",
+      "identifier": "JFSC \u2013 140080",
+      "identifier_type": null
+    },
+    {
+      "name": "CVC Capital Partners plc",
       "identifier": "Registration number (Jersey)  140080",
       "identifier_type": null
     }
@@ -55,6 +60,17 @@
     ],
     "target": [],
     "other": [
+      {
+        "merger_id": "WA-35037",
+        "merger_name": "CVC Capital Partners \u2013 IRCA Group",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Waiver",
+        "notification_date": "2026-07-28T12:00:00Z",
+        "determination_date": "2026-08-18T12:00:00Z"
+      },
       {
         "merger_id": "WA-65030",
         "merger_name": "CVC Capital Partners \u2013 IFF\u2019s Food Ingredients business",
@@ -112,10 +128,10 @@
       }
     ]
   },
-  "merger_count": 7,
+  "merger_count": 8,
   "phase_1_count": 1,
   "phase_2_count": 0,
-  "waiver_count": 6,
+  "waiver_count": 7,
   "active_count": 0,
   "phase_duration": {
     "average_days": 29.0,
@@ -125,10 +141,10 @@
     "completed_count": 1
   },
   "waiver_duration": {
-    "average_days": 20.833333333333332,
-    "median_days": 20.5,
-    "average_business_days": 14.0,
-    "median_business_days": 14.0,
-    "completed_count": 6
+    "average_days": 20.857142857142858,
+    "median_days": 21,
+    "average_business_days": 14.142857142857142,
+    "median_business_days": 15,
+    "completed_count": 7
   }
 }

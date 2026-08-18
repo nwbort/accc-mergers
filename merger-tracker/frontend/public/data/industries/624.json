@@ -24,7 +24,7 @@
       "code": "6240",
       "name": "Financial Asset Investing",
       "level": "class",
-      "merger_count": 87
+      "merger_count": 88
     }
   ],
   "mergers": [
@@ -137,6 +137,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-24T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-35037",
+      "merger_name": "CVC Capital Partners \u2013 IRCA Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-28T12:00:00Z",
+      "determination_date": "2026-08-18T12:00:00Z"
     },
     {
       "merger_id": "WA-65030",
@@ -986,10 +997,10 @@
       "determination_date": "2026-01-30T12:00:00Z"
     }
   ],
-  "count": 87,
+  "count": 88,
   "phase_1_count": 20,
   "phase_2_count": 0,
-  "waiver_count": 67,
+  "waiver_count": 68,
   "active_count": 10,
   "phase_duration": {
     "average_days": 24.7,
@@ -999,10 +1010,10 @@
     "completed_count": 10
   },
   "waiver_duration": {
-    "average_days": 19.149253731343283,
-    "median_days": 18,
-    "average_business_days": 12.895522388059701,
-    "median_business_days": 12,
-    "completed_count": 67
+    "average_days": 19.176470588235293,
+    "median_days": 18.0,
+    "average_business_days": 12.926470588235293,
+    "median_business_days": 12.0,
+    "completed_count": 68
   }
 }

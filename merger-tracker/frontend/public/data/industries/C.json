@@ -9,7 +9,7 @@
       "code": "11",
       "name": "Food Product Manufacturing",
       "level": "subdivision",
-      "merger_count": 15
+      "merger_count": 16
     },
     {
       "code": "12",
@@ -283,6 +283,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-05-12T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-35037",
+      "merger_name": "CVC Capital Partners \u2013 IRCA Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-28T12:00:00Z",
+      "determination_date": "2026-08-18T12:00:00Z"
     },
     {
       "merger_id": "WA-65030",
@@ -1660,10 +1671,10 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 142,
+  "count": 143,
   "phase_1_count": 66,
   "phase_2_count": 2,
-  "waiver_count": 74,
+  "waiver_count": 75,
   "active_count": 17,
   "phase_duration": {
     "average_days": 29.75,
@@ -1673,10 +1684,10 @@
     "completed_count": 52
   },
   "waiver_duration": {
-    "average_days": 18.256756756756758,
-    "median_days": 17.0,
-    "average_business_days": 12.202702702702704,
-    "median_business_days": 11.0,
-    "completed_count": 74
+    "average_days": 18.293333333333333,
+    "median_days": 17,
+    "average_business_days": 12.24,
+    "median_business_days": 11,
+    "completed_count": 75
   }
 }
