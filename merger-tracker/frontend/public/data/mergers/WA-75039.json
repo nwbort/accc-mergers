@@ -44,6 +44,10 @@
       "name": "PARIS FINANCIAL PTY LTD",
       "identifier_type": "ABN",
       "identifier": "96 120 807 614",
+      "canonical": {
+        "id": "paris-financial-pty-ltd",
+        "name": "Paris Financial Pty Ltd"
+      },
       "party_page": {
         "id": "paris-financial-pty-ltd",
         "name": "Paris Financial Pty Ltd"
@@ -53,9 +57,13 @@
       "name": "PARIS FINANCIAL HOLDINGS PTY LTD",
       "identifier_type": "ABN",
       "identifier": "72 658 541 078",
+      "canonical": {
+        "id": "paris-financial-pty-ltd",
+        "name": "Paris Financial Pty Ltd"
+      },
       "party_page": {
-        "id": "paris-financial-holdings-pty-ltd",
-        "name": "Paris Financial Holdings Pty Ltd"
+        "id": "paris-financial-pty-ltd",
+        "name": "Paris Financial Pty Ltd"
       }
     },
     {
@@ -73,6 +81,10 @@
       "name": "Ironbark Investment Partners Pty Ltd",
       "identifier_type": null,
       "identifier": "",
+      "canonical": {
+        "id": "ironbark-investment-partners-pty-ltd",
+        "name": "Ironbark Investment Partners Pty Ltd"
+      },
       "party_page": {
         "id": "ironbark-investment-partners-pty-ltd",
         "name": "Ironbark Investment Partners Pty Ltd"

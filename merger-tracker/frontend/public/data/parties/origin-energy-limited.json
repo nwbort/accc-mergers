@@ -24,12 +24,12 @@
         "merger_id": "MN-95030",
         "merger_name": "Origin \u2013 Climatech Zero",
         "is_waiver": false,
-        "status": "Under assessment",
-        "determination": null,
+        "status": "Assessment completed",
+        "determination": "Approved",
         "has_conditions": false,
         "phase": "Phase 1",
         "notification_date": "2026-07-10T12:00:00Z",
-        "determination_date": null
+        "determination_date": "2026-08-18T12:00:00Z"
       },
       {
         "merger_id": "MN-20011",
@@ -50,13 +50,13 @@
   "phase_1_count": 2,
   "phase_2_count": 0,
   "waiver_count": 0,
-  "active_count": 1,
+  "active_count": 0,
   "phase_duration": {
-    "average_days": 27.0,
-    "median_days": 27,
-    "average_business_days": 17.0,
-    "median_business_days": 17,
-    "completed_count": 1
+    "average_days": 33.0,
+    "median_days": 33.0,
+    "average_business_days": 22.0,
+    "median_business_days": 22.0,
+    "completed_count": 2
   },
   "waiver_duration": null
 }

@@ -1837,30 +1837,17 @@
     {
       "merger_id": "MN-95030",
       "merger_name": "Origin \u2013 Climatech Zero",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "has_conditions": false,
       "is_waiver": false,
       "under_appeal": false,
       "is_refiled": false,
       "effective_notification_datetime": "2026-07-10T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-08-18T12:00:00Z",
       "end_of_determination_period": "2026-08-21T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
-        {
-          "name": "ORIGIN ENERGY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "30 000 051 696",
-          "canonical": {
-            "id": "origin-energy-limited",
-            "name": "Origin Energy Limited"
-          },
-          "party_page": {
-            "id": "origin-energy-limited",
-            "name": "Origin Energy Limited"
-          }
-        },
         {
           "name": "ORIGIN ZERO INVESTMENTS PTY LTD",
           "identifier_type": "ABN",
@@ -1873,13 +1860,26 @@
             "id": "origin-energy-limited",
             "name": "Origin Energy Limited"
           }
+        },
+        {
+          "name": "ORIGIN ENERGY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "30 000 051 696",
+          "canonical": {
+            "id": "origin-energy-limited",
+            "name": "Origin Energy Limited"
+          },
+          "party_page": {
+            "id": "origin-energy-limited",
+            "name": "Origin Energy Limited"
+          }
         }
       ],
       "targets": [
         {
-          "name": "CLIMATECH ZERO PTY LTD",
+          "name": "CLIMATECH ZERO HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "70 623 828 508",
+          "identifier": "35 623 827 930",
           "canonical": {
             "id": "climatech-zero-pty-ltd",
             "name": "Climatech Zero"
@@ -1890,9 +1890,9 @@
           }
         },
         {
-          "name": "CLIMATECH ZERO HOLDINGS PTY LTD",
+          "name": "CLIMATECH ZERO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "35 623 827 930",
+          "identifier": "70 623 828 508",
           "canonical": {
             "id": "climatech-zero-pty-ltd",
             "name": "Climatech Zero"

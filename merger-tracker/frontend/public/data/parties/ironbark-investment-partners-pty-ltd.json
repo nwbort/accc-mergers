@@ -3,6 +3,11 @@
   "canonical_name": "Ironbark Investment Partners Pty Ltd",
   "members": [
     {
+      "name": "Ironbark Investment Partners Pty Limited",
+      "identifier": "94 136 679 215",
+      "identifier_type": "ABN"
+    },
+    {
       "name": "Ironbark Investment Partners Pty Ltd",
       "identifier": null,
       "identifier_type": null
@@ -22,20 +27,31 @@
         "phase": "Waiver",
         "notification_date": "2026-07-31T12:00:00Z",
         "determination_date": "2026-08-18T12:00:00Z"
+      },
+      {
+        "merger_id": "WA-05005",
+        "merger_name": "Ironbark - Investment in Viola Private Wealth",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Waiver",
+        "notification_date": "2026-03-17T12:00:00Z",
+        "determination_date": "2026-04-09T12:00:00Z"
       }
     ]
   },
-  "merger_count": 1,
+  "merger_count": 2,
   "phase_1_count": 0,
   "phase_2_count": 0,
-  "waiver_count": 1,
+  "waiver_count": 2,
   "active_count": 0,
   "phase_duration": null,
   "waiver_duration": {
-    "average_days": 18.0,
-    "median_days": 18,
-    "average_business_days": 12.0,
-    "median_business_days": 12,
-    "completed_count": 1
+    "average_days": 20.5,
+    "median_days": 20.5,
+    "average_business_days": 13.5,
+    "median_business_days": 13.5,
+    "completed_count": 2
   }
 }
