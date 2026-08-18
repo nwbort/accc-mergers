@@ -1,5 +1,5 @@
 {
-  "_README": "Parties (acquirers / targets / other parties) that are the same real-world entity recorded under more than one name or ABN. Each entry in `groups` is { \"id\": \"<slug>\", \"canonical_name\": \"<display name>\", \"members\": [ { \"name\": \"...\", \"identifier\": \"...\" }, ... ] }. A party on a merger is matched to a group when its ABN matches a member's `identifier` OR its (normalised) name matches a member's `name` — see scripts/party_matching.py. On the merger detail page each matched party becomes a link to the mergers list filtered by the group's canonical_name. New candidate groups are suggested daily by scripts/detect_related_parties.py via a pull request.",
+  "_README": "Parties (acquirers / targets / other parties) that are the same real-world entity recorded under more than one name or ABN. Each entry in `groups` is { \"id\": \"<slug>\", \"canonical_name\": \"<display name>\", \"members\": [ { \"name\": \"...\", \"identifier\": \"...\" }, ... ] }. A party on a merger is matched to a group when its ABN matches a member's `identifier` OR its (normalised) name matches a member's `name` \u2014 see scripts/party_matching.py. On the merger detail page each matched party becomes a link to the mergers list filtered by the group's canonical_name. New candidate groups are suggested daily by scripts/detect_related_parties.py via a pull request.",
   "groups": [
     {
       "id": "coles",
@@ -376,11 +376,11 @@
       "canonical_name": "EQT Fund Management",
       "members": [
         {
-          "name": "EQT Fund Management S.à r.l.",
+          "name": "EQT Fund Management S.\u00e0 r.l.",
           "identifier": "Registration number B167972"
         },
         {
-          "name": "EQT Fund Management S.à r.l.",
+          "name": "EQT Fund Management S.\u00e0 r.l.",
           "identifier": "Luxembourg Company Registration Number  B167972"
         },
         {
@@ -644,7 +644,7 @@
           "identifier": ""
         },
         {
-          "name": "Blackline Safety Middle East Wireless  Equipment Trading – L.L.C. – S.P.C.",
+          "name": "Blackline Safety Middle East Wireless  Equipment Trading \u2013 L.L.C. \u2013 S.P.C.",
           "identifier": ""
         }
       ]
@@ -917,7 +917,7 @@
         },
         {
           "name": "Rocket Software, Inc.",
-          "identifier": "Companies’ Register of Delaware  3506913"
+          "identifier": "Companies\u2019 Register of Delaware  3506913"
         }
       ]
     },
@@ -1105,7 +1105,7 @@
       "members": [
         {
           "name": "Midea Group Co., Ltd.",
-          "identifier": "People’s Republic of China identifying number: 91440606722473344C"
+          "identifier": "People\u2019s Republic of China identifying number: 91440606722473344C"
         },
         {
           "name": "Midea Group Co., Ltd.",
@@ -2064,7 +2064,7 @@
           "identifier": "4293091"
         },
         {
-          "name": "AP Emerald (Luxembourg) S.à r.l.",
+          "name": "AP Emerald (Luxembourg) S.\u00e0 r.l.",
           "identifier": "RCS  B307795"
         },
         {
@@ -2177,7 +2177,7 @@
         },
         {
           "name": "eBay Inc.",
-          "identifier": "I.R.S. Employer Identification No. – United States  770430924"
+          "identifier": "I.R.S. Employer Identification No. \u2013 United States  770430924"
         },
         {
           "name": "eBay Marketplaces GmbH",
@@ -2298,11 +2298,11 @@
           "identifier": "Paris Trade and Companies Register number 632 012 100"
         },
         {
-          "name": "L'Oréal India Private Limited",
+          "name": "L'Or\u00e9al India Private Limited",
           "identifier": ""
         },
         {
-          "name": "L'Oréal S.A.",
+          "name": "L'Or\u00e9al S.A.",
           "identifier": "SIREN  632 012 100"
         }
       ]
@@ -2820,7 +2820,7 @@
           "identifier": "SIREN 552 067 092"
         },
         {
-          "name": "Société Anonyme des Eaux Minérales d’Évian S.A.",
+          "name": "Soci\u00e9t\u00e9 Anonyme des Eaux Min\u00e9rales d\u2019\u00c9vian S.A.",
           "identifier": "SIREN 797 080 850"
         },
         {
@@ -3174,7 +3174,7 @@
           "identifier": "Handelsregister (HRB)  100484"
         },
         {
-          "name": "Volkswagen Vermögensverwaltungs GmbH",
+          "name": "Volkswagen Verm\u00f6gensverwaltungs GmbH",
           "identifier": "Handelsregister (HRB)  200525"
         }
       ]
@@ -3378,6 +3378,34 @@
         {
           "name": "Angelo Holding S.r.l.",
           "identifier": "LEI  815600BFD5004E85D746"
+        }
+      ]
+    },
+    {
+      "id": "ironbark-investment-partners-pty-ltd",
+      "canonical_name": "Ironbark Investment Partners Pty Ltd",
+      "members": [
+        {
+          "name": "Ironbark Investment Partners Pty Limited",
+          "identifier": "94 136 679 215"
+        },
+        {
+          "name": "Ironbark Investment Partners Pty Ltd",
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "id": "paris-financial-pty-ltd",
+      "canonical_name": "Paris Financial Pty Ltd",
+      "members": [
+        {
+          "name": "PARIS FINANCIAL HOLDINGS PTY LTD",
+          "identifier": "72 658 541 078"
+        },
+        {
+          "name": "PARIS FINANCIAL PTY LTD",
+          "identifier": "96 120 807 614"
         }
       ]
     }
