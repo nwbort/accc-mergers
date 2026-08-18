@@ -152,6 +152,35 @@ class TestSelectTargets:
         assert stats['listing'] == 1
 
 
+class TestSelectTargetsStats:
+    """Stats feed the run summary, which is read to spot check a scrape."""
+
+    def test_names_the_mergers_skipped_past_cutoff(self):
+        mergers = [_completed('MN-2', 'settled-deal')]
+
+        _, stats = select_targets([f'{REGISTER}/settled-deal'], mergers)
+
+        assert stats['skipped_mergers'] == [
+            {'merger_id': 'MN-2', 'path': f'{REGISTER}/settled-deal'}
+        ]
+
+    def test_names_the_mergers_recovered_from_outside_the_listing(self):
+        mergers = [_active('MN-3', 'dropped-deal')]
+
+        _, stats = select_targets([], mergers)
+
+        assert stats['recovered_mergers'] == [
+            {'merger_id': 'MN-3', 'path': f'{REGISTER}/dropped-deal'}
+        ]
+
+    def test_counts_the_targets_returned(self):
+        mergers = [_active('MN-3', 'dropped-deal')]
+
+        paths, stats = select_targets([f'{REGISTER}/new-deal'], mergers)
+
+        assert stats['targets'] == len(paths) == 2
+
+
 class TestLoadMergers:
     def test_missing_file(self, tmp_path):
         assert load_mergers(str(tmp_path / 'nope.json')) == []

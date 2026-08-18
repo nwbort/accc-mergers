@@ -17,6 +17,7 @@ without network or PDF tooling installed.
 | `test_pipeline.py` | End-to-end extraction behaviour against fixture HTML. |
 | `test_cutoff_io.py` | `cutoff.py` skip logic and CLI output. |
 | `test_scrape_targets.py` | Fetch-list selection in `scrape_targets.py`: cutoff skipping, de-duplication, and recovery of matters the register listing drops. |
+| `test_scrape_summary.py` | Run-summary rendering in `scrape_summary.py`: scraped merger IDs, changed pages, cutoff skips and fetch failures. |
 | `test_embed.py` | `embed.py` chunking and metadata serialisation. |
 | `test_generate_weekly_digest.py` | Bucketing + dedup vs. the prior week's digest. |
 | `test_merger_filters.py` | Canonical loaders and predicates in `merger_filters.py`. |
