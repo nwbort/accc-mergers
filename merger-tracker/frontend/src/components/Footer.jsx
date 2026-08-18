@@ -14,7 +14,7 @@ function Footer() {
           </Link>
           . The information on this site is provided for informational purposes only and should not be relied upon for legal or business decisions. No responsibility is accepted for any errors, omissions, or reliance on the information presented. <span className="whitespace-nowrap">For official merger information, please visit the</span>{' '}
           <a
-            href="https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register"
+            href="https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register"
             target="_blank"
             rel="noopener noreferrer"
             className="text-primary hover:text-primary-dark font-medium hover:underline transition-colors"

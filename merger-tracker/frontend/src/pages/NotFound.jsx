@@ -39,7 +39,7 @@ function NotFound() {
                 View merger details
               </Link>
               <a
-                href={`https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register?init=1&query=${matterId}`}
+                href={`https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register?init=1&query=${matterId}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-5 py-2.5 text-sm font-medium rounded-xl text-gray-700 bg-white border border-gray-200 hover:bg-gray-50 transition-colors"
