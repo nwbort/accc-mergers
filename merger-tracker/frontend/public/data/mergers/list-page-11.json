@@ -813,6 +813,122 @@
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/mccarrolls-automotive-group-kinghorn-motor-group-country-motor-company"
     },
     {
+      "merger_id": "WA-65030",
+      "merger_name": "CVC Capital Partners \u2013 IFF\u2019s Food Ingredients business",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-23T12:00:00Z",
+      "determination_publication_date": "2026-08-18T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Foxtrot UK Bidco Limited",
+          "identifier_type": null,
+          "identifier": "CRN  17249252",
+          "party_page": {
+            "id": "foxtrot-uk-bidco-limited",
+            "name": "Foxtrot UK Bidco Limited"
+          }
+        },
+        {
+          "name": "Foxtrot Denmark Bidco ApS",
+          "identifier_type": null,
+          "identifier": "CVR  42580058",
+          "party_page": {
+            "id": "foxtrot-denmark-bidco-aps",
+            "name": "Foxtrot Denmark Bidco ApS"
+          }
+        },
+        {
+          "name": "Foxtrot US Bidco, Inc.",
+          "identifier_type": null,
+          "identifier": "State of Delaware \u2013 Division of Corporations 10628070",
+          "party_page": {
+            "id": "foxtrot-us-bidco-inc",
+            "name": "Foxtrot US Bidco, Inc."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "DANISCO AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "62 096 139 392",
+          "party_page": {
+            "id": "danisco-australia-pty-ltd",
+            "name": "Danisco Australia Pty Ltd"
+          }
+        },
+        {
+          "name": "Taura Natural Ingredients Holdings Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "20 123 509 017",
+          "party_page": {
+            "id": "taura-natural-ingredients-holdings-pty-ltd",
+            "name": "Taura Natural Ingredients Holdings Pty Ltd"
+          }
+        },
+        {
+          "name": "NUTRITION & BIOSCIENCES AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "59 000 716 469",
+          "party_page": {
+            "id": "nutrition-biosciences-australia-pty-ltd",
+            "name": "Nutrition & Biosciences Australia Pty Ltd"
+          }
+        },
+        {
+          "name": "SOLAE AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "54 002 096 255",
+          "party_page": {
+            "id": "solae-australia-pty-ltd",
+            "name": "Solae Australia Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "CVC Capital Partners plc",
+          "identifier_type": null,
+          "identifier": "JFSC  140080",
+          "canonical": {
+            "id": "cvc-capital-partners",
+            "name": "CVC Capital Partners"
+          },
+          "party_page": {
+            "id": "cvc-capital-partners",
+            "name": "CVC Capital Partners"
+          }
+        },
+        {
+          "name": "International Flavors & Fragrances Inc.",
+          "identifier_type": null,
+          "identifier": "DOS ID  29389",
+          "party_page": {
+            "id": "international-flavors-fragrances-inc",
+            "name": "International Flavors & Fragrances Inc."
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1199",
+          "name": "Other Food Product Manufacturing n.e.c."
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/cvc-capital-partners-%E2%80%93-iff%E2%80%99s-food-ingredients-business"
+    },
+    {
       "merger_id": "MN-05030",
       "merger_name": "Coles \u2013 supermarket site in Upper Swan, WA",
       "status": "Assessment completed",
@@ -4637,54 +4753,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/incubeta-datisan"
-    },
-    {
-      "merger_id": "MN-30028",
-      "merger_name": "Adobe - Topaz Labs",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-13T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-09-24T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Adobe Inc.",
-          "identifier_type": null,
-          "identifier": "NASDAQ: ADBE (2748129)",
-          "party_page": {
-            "id": "adobe-inc",
-            "name": "Adobe Inc."
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "Topaz Labs Inc.",
-          "identifier_type": null,
-          "identifier": "EIN 043849304",
-          "party_page": {
-            "id": "topaz-labs-inc",
-            "name": "Topaz Labs Inc."
-          }
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "5420",
-          "name": "Software Publishing"
-        },
-        {
-          "code": "7000",
-          "name": "Computer System Design and Related Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/adobe-topaz-labs"
     }
   ],
   "page": 11,

@@ -1,6 +1,54 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-30028",
+      "merger_name": "Adobe - Topaz Labs",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-13T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-24T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Adobe Inc.",
+          "identifier_type": null,
+          "identifier": "NASDAQ: ADBE (2748129)",
+          "party_page": {
+            "id": "adobe-inc",
+            "name": "Adobe Inc."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Topaz Labs Inc.",
+          "identifier_type": null,
+          "identifier": "EIN 043849304",
+          "party_page": {
+            "id": "topaz-labs-inc",
+            "name": "Topaz Labs Inc."
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "5420",
+          "name": "Software Publishing"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/adobe-topaz-labs"
+    },
+    {
       "merger_id": "MN-10027",
       "merger_name": "Endeavour Group \u2013 retail liquor site in Horsham, VIC",
       "status": "Under assessment",

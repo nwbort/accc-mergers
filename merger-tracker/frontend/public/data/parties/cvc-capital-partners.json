@@ -19,6 +19,11 @@
     },
     {
       "name": "CVC Capital Partners plc",
+      "identifier": "JFSC  140080",
+      "identifier_type": null
+    },
+    {
+      "name": "CVC Capital Partners plc",
       "identifier": "Registration number (Jersey)  140080",
       "identifier_type": null
     }
@@ -50,6 +55,17 @@
     ],
     "target": [],
     "other": [
+      {
+        "merger_id": "WA-65030",
+        "merger_name": "CVC Capital Partners \u2013 IFF\u2019s Food Ingredients business",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Waiver",
+        "notification_date": "2026-07-23T12:00:00Z",
+        "determination_date": "2026-08-18T12:00:00Z"
+      },
       {
         "merger_id": "WA-05033",
         "merger_name": "CVC Capital Partners \u2013 Chess.com",
@@ -96,10 +112,10 @@
       }
     ]
   },
-  "merger_count": 6,
+  "merger_count": 7,
   "phase_1_count": 1,
   "phase_2_count": 0,
-  "waiver_count": 5,
+  "waiver_count": 6,
   "active_count": 0,
   "phase_duration": {
     "average_days": 29.0,
@@ -109,10 +125,10 @@
     "completed_count": 1
   },
   "waiver_duration": {
-    "average_days": 19.8,
-    "median_days": 17,
-    "average_business_days": 13.2,
-    "median_business_days": 12,
-    "completed_count": 5
+    "average_days": 20.833333333333332,
+    "median_days": 20.5,
+    "average_business_days": 14.0,
+    "median_business_days": 14.0,
+    "completed_count": 6
   }
 }

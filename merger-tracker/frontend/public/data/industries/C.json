@@ -9,7 +9,7 @@
       "code": "11",
       "name": "Food Product Manufacturing",
       "level": "subdivision",
-      "merger_count": 14
+      "merger_count": 15
     },
     {
       "code": "12",
@@ -283,6 +283,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-05-12T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-65030",
+      "merger_name": "CVC Capital Partners \u2013 IFF\u2019s Food Ingredients business",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-23T12:00:00Z",
+      "determination_date": "2026-08-18T12:00:00Z"
     },
     {
       "merger_id": "MN-25037",
@@ -1649,10 +1660,10 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 141,
+  "count": 142,
   "phase_1_count": 66,
   "phase_2_count": 2,
-  "waiver_count": 73,
+  "waiver_count": 74,
   "active_count": 17,
   "phase_duration": {
     "average_days": 29.75,
@@ -1662,10 +1673,10 @@
     "completed_count": 52
   },
   "waiver_duration": {
-    "average_days": 18.15068493150685,
-    "median_days": 17,
-    "average_business_days": 12.123287671232877,
-    "median_business_days": 11,
-    "completed_count": 73
+    "average_days": 18.256756756756758,
+    "median_days": 17.0,
+    "average_business_days": 12.202702702702704,
+    "median_business_days": 11.0,
+    "completed_count": 74
   }
 }

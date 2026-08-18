@@ -1,6 +1,6 @@
 {
   "total_mergers": 227,
-  "total_waivers": 328,
+  "total_waivers": 329,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 171,
@@ -18,7 +18,7 @@
     "Assessment ceased": 2
   },
   "by_waiver_determination": {
-    "Approved": 314,
+    "Approved": 315,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.173780487804876,
-    "median_days": 19.0,
-    "average_business_days": 12.899390243902438,
-    "median_business_days": 13.0
+    "average_days": 19.194528875379937,
+    "median_days": 19,
+    "average_business_days": 12.914893617021276,
+    "median_business_days": 13
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 86
+      "count": 87
     },
     {
       "name": "Computer System Design and Related Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-65030",
+      "merger_name": "CVC Capital Partners \u2013 IFF\u2019s Food Ingredients business",
+      "determination": "Approved",
+      "determination_date": "2026-08-18T12:00:00Z",
+      "page_modified_datetime": "2026-08-18T16:45:17+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-40017",
       "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
       "determination": "Referred to phase 2",
@@ -333,17 +344,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-13T12:00:00Z",
       "page_modified_datetime": "2026-08-13T16:51:55+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-05036",
-      "merger_name": "Vertex \u2013 Crinetics",
-      "determination": "Approved",
-      "determination_date": "2026-08-13T12:00:00Z",
-      "page_modified_datetime": "2026-08-13T15:38:06+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
