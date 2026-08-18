@@ -70,6 +70,30 @@ companies that each have a subsidiary named "... Operations Pty Ltd"), so
 treat fuzzy hits as leads to check by hand in the tool, not groups to merge
 automatically.
 
+### Reviewing a batch of recent mergers by hand
+
+To work through the register newest-first and decide new groupings from the
+`merger_description` text (rather than from name-similarity signals), use
+`../related_parties_batch.py` — a plain CLI, not a web UI:
+
+```bash
+# Mergers ranked 31st-40th by notification date, newest first
+python scripts/related_parties_batch.py --start 31 --count 10
+
+# Re-check specific mergers by id, e.g. after editing related_parties.json
+python scripts/related_parties_batch.py --ids MN-50032,MN-60031
+```
+
+For each merger in range it prints every acquirer/target/other party plus
+whether it already resolves to a canonical group (via the same
+`party_matching.match_party` the site uses), and the full description — the
+usual source of "X, a subsidiary of Y" / "together, Z" evidence. It only
+*reports*; nothing is written. Once you've decided which groupings to apply,
+either use this web UI, or write a short script against the same functions it
+now shares with `related_parties_batch.py` — `party_matching.load_parties_doc`,
+`.create_group`, `.add_members_to_group` and `.save_parties_doc` — so the file
+is read, mutated and written back identically either way.
+
 ## `advisors.py`
 
 Web UI for recording the legal (and other) advisors who worked on each

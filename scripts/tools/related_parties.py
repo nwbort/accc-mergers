@@ -14,13 +14,18 @@ lists every distinct party across the register, shows which are already grouped,
 and lets you select ungrouped parties to form a new group or fold into an
 existing one. It writes directly back to ``related_parties.json``.
 
+To review mergers newest-first and decide groupings from each merger's
+description text (rather than browsing the full ungrouped-party list), see
+``scripts/related_parties_batch.py`` instead — a read-only CLI companion to
+this UI. Both share the same load/save/mutate functions in
+``scripts/party_matching.py``.
+
 Run with: python scripts/tools/related_parties.py
           # open http://127.0.0.1:8003
 """
 
 from __future__ import annotations
 
-import json
 import sys
 from pathlib import Path
 
@@ -34,18 +39,20 @@ import uvicorn
 
 from detect_related_parties import (
     DEFAULT_MERGERS,
-    DEFAULT_PARTIES,
     _title_case_name,
     collect_party_records,
 )
 from merger_filters import load_mergers as _load_mergers_from
 from party_matching import (
+    add_members_to_group,
     build_group_lookups,
+    create_group as _create_group,
     dedupe_members,
+    load_parties_doc,
     match_party,
     merge_groups,
+    save_parties_doc,
 )
-from slug import slugify
 
 app = FastAPI()
 
@@ -53,27 +60,14 @@ app = FastAPI()
 # ---------------------------------------------------------------------------
 # Data access
 # ---------------------------------------------------------------------------
+#
+# load_parties_doc / save_parties_doc / add_members_to_group / create_group
+# live in party_matching.py, shared with the batch-review CLI
+# (scripts/related_parties_batch.py) and the daily detector, so there is one
+# implementation of "how a group is created/extended and written to disk".
 
 def load_mergers() -> list[dict]:
     return _load_mergers_from(DEFAULT_MERGERS)
-
-
-def load_parties_doc() -> dict:
-    """Load related_parties.json, preserving the whole document (incl. _README)."""
-    if DEFAULT_PARTIES.exists():
-        with DEFAULT_PARTIES.open() as fh:
-            doc = json.load(fh)
-    else:
-        doc = {"groups": []}
-    doc.setdefault("groups", [])
-    return doc
-
-
-def save_parties_doc(doc: dict) -> None:
-    DEFAULT_PARTIES.parent.mkdir(parents=True, exist_ok=True)
-    with DEFAULT_PARTIES.open("w") as fh:
-        json.dump(doc, fh, indent=2)
-        fh.write("\n")
 
 
 def _find_group(doc: dict, group_id: str) -> dict:
@@ -81,16 +75,6 @@ def _find_group(doc: dict, group_id: str) -> dict:
     if group is None:
         raise HTTPException(status_code=404, detail=f"Group not found: {group_id}")
     return group
-
-
-def _new_group_id(canonical_name: str, existing_ids: set[str]) -> str:
-    base = slugify(canonical_name) or "party"
-    slug = base
-    n = 2
-    while slug in existing_ids:
-        slug = f"{base}-{n}"
-        n += 1
-    return slug
 
 
 # ---------------------------------------------------------------------------
@@ -212,13 +196,10 @@ def create_group(req: CreateGroup) -> dict:
         canonical = _title_case_name(members[0]["name"])
 
     doc = load_parties_doc()
-    existing_ids = {g.get("id") for g in doc["groups"] if g.get("id")}
-    group = {
-        "id": _new_group_id(canonical, existing_ids),
-        "canonical_name": canonical,
-        "members": members,
-    }
-    doc["groups"].append(group)
+    try:
+        group = _create_group(doc["groups"], canonical, members)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc))
     save_parties_doc(doc)
     return {"status": "success", "group": group}
 
@@ -226,9 +207,10 @@ def create_group(req: CreateGroup) -> dict:
 @app.post("/api/groups/{group_id}/members")
 def add_members(group_id: str, req: AddMembers) -> dict:
     doc = load_parties_doc()
-    group = _find_group(doc, group_id)
-    combined = list(group.get("members", [])) + [m.dict() for m in req.members]
-    group["members"] = dedupe_members(combined)
+    try:
+        group = add_members_to_group(doc["groups"], group_id, [m.dict() for m in req.members])
+    except KeyError as exc:
+        raise HTTPException(status_code=404, detail=str(exc))
     save_parties_doc(doc)
     return {"status": "success", "group": group}
 

@@ -1,5 +1,5 @@
 {
-  "_README": "Parties (acquirers / targets / other parties) that are the same real-world entity recorded under more than one name or ABN. Each entry in `groups` is { \"id\": \"<slug>\", \"canonical_name\": \"<display name>\", \"members\": [ { \"name\": \"...\", \"identifier\": \"...\" }, ... ] }. A party on a merger is matched to a group when its ABN matches a member's `identifier` OR its (normalised) name matches a member's `name` \u2014 see scripts/party_matching.py. On the merger detail page each matched party becomes a link to the mergers list filtered by the group's canonical_name. New candidate groups are suggested daily by scripts/detect_related_parties.py via a pull request.",
+  "_README": "Parties (acquirers / targets / other parties) that are the same real-world entity recorded under more than one name or ABN. Each entry in `groups` is { \"id\": \"<slug>\", \"canonical_name\": \"<display name>\", \"members\": [ { \"name\": \"...\", \"identifier\": \"...\" }, ... ] }. A party on a merger is matched to a group when its ABN matches a member's `identifier` OR its (normalised) name matches a member's `name` — see scripts/party_matching.py. On the merger detail page each matched party becomes a link to the mergers list filtered by the group's canonical_name. New candidate groups are suggested daily by scripts/detect_related_parties.py via a pull request.",
   "groups": [
     {
       "id": "coles",
@@ -286,6 +286,10 @@
         {
           "name": "BCPE Blitz Cayman, L.P.",
           "identifier": ""
+        },
+        {
+          "name": "Nikolaus (BC) Bidco GmbH",
+          "identifier": "Handelsregister (HRB)  312146"
         }
       ]
     },
@@ -372,11 +376,11 @@
       "canonical_name": "EQT Fund Management",
       "members": [
         {
-          "name": "EQT Fund Management S.\u00e0 r.l.",
+          "name": "EQT Fund Management S.à r.l.",
           "identifier": "Registration number B167972"
         },
         {
-          "name": "EQT Fund Management S.\u00e0 r.l.",
+          "name": "EQT Fund Management S.à r.l.",
           "identifier": "Luxembourg Company Registration Number  B167972"
         },
         {
@@ -640,7 +644,7 @@
           "identifier": ""
         },
         {
-          "name": "Blackline Safety Middle East Wireless  Equipment Trading \u2013 L.L.C. \u2013 S.P.C.",
+          "name": "Blackline Safety Middle East Wireless  Equipment Trading – L.L.C. – S.P.C.",
           "identifier": ""
         }
       ]
@@ -913,7 +917,7 @@
         },
         {
           "name": "Rocket Software, Inc.",
-          "identifier": "Companies\u2019 Register of Delaware  3506913"
+          "identifier": "Companies’ Register of Delaware  3506913"
         }
       ]
     },
@@ -1101,7 +1105,7 @@
       "members": [
         {
           "name": "Midea Group Co., Ltd.",
-          "identifier": "People\u2019s Republic of China identifying number: 91440606722473344C"
+          "identifier": "People’s Republic of China identifying number: 91440606722473344C"
         },
         {
           "name": "Midea Group Co., Ltd.",
@@ -1166,6 +1170,10 @@
         {
           "name": "Estia Health Holdings Ltd",
           "identifier": "47 669 884 244"
+        },
+        {
+          "name": "ESTIA INVESTMENTS PTY. LTD.",
+          "identifier": "87 164 350 387"
         }
       ]
     },
@@ -1690,6 +1698,10 @@
         {
           "name": "Salesforce, Inc.",
           "identifier": "U.S. EIN: 943320693"
+        },
+        {
+          "name": "Ireland Acquisition Sub Inc.",
+          "identifier": ""
         }
       ]
     },
@@ -2040,6 +2052,14 @@
         {
           "name": "Dragos, Inc.",
           "identifier": "Delaware file number  6028773"
+        },
+        {
+          "name": "PHOSPHORUS (AUS) PTY LTD",
+          "identifier": "58 678 218 356"
+        },
+        {
+          "name": "Phosphorus Security LLC",
+          "identifier": "Delaware file number  10549306"
         }
       ]
     },
@@ -2121,7 +2141,7 @@
         },
         {
           "name": "eBay Inc.",
-          "identifier": "I.R.S. Employer Identification No. \u2013 United States  770430924"
+          "identifier": "I.R.S. Employer Identification No. – United States  770430924"
         },
         {
           "name": "eBay Marketplaces GmbH",
@@ -2242,11 +2262,11 @@
           "identifier": "Paris Trade and Companies Register number 632 012 100"
         },
         {
-          "name": "L'Or\u00e9al India Private Limited",
+          "name": "L'Oréal India Private Limited",
           "identifier": ""
         },
         {
-          "name": "L'Or\u00e9al S.A.",
+          "name": "L'Oréal S.A.",
           "identifier": "SIREN  632 012 100"
         }
       ]
@@ -2280,6 +2300,10 @@
         {
           "name": "MMS USA Holdings, Inc.",
           "identifier": "Delaware ID 3497138"
+        },
+        {
+          "name": "Covey Merger Sub, Inc.",
+          "identifier": "Delaware ID 10622331"
         }
       ]
     },
@@ -2492,6 +2516,10 @@
         {
           "name": "Koch, Inc.",
           "identifier": "US Employer Identification Number: 992449504"
+        },
+        {
+          "name": "Koch Equity Development LLC",
+          "identifier": "US Employer Identification Number: 371473024"
         }
       ]
     },
@@ -2714,6 +2742,10 @@
         {
           "name": "MML HOLDINGS LIMITED",
           "identifier": "55 084 402 380"
+        },
+        {
+          "name": "MM SECURITY SUPPLIES PTY LIMITED",
+          "identifier": "14 670 314 913"
         }
       ]
     },
@@ -2896,6 +2928,292 @@
         {
           "name": "Qatar Holding LLC",
           "identifier": "CIK: 0001539025, Qatar Financial Centre no. 00004"
+        }
+      ]
+    },
+    {
+      "id": "intercom",
+      "canonical_name": "Intercom",
+      "members": [
+        {
+          "name": "Intercom, Inc.",
+          "identifier": "453543961"
+        },
+        {
+          "name": "Intercom R&D Unlimited Company",
+          "identifier": "538158"
+        }
+      ]
+    },
+    {
+      "id": "obayashi",
+      "canonical_name": "Obayashi",
+      "members": [
+        {
+          "name": "Obayashi Corporation",
+          "identifier": "86 002 932 756"
+        },
+        {
+          "name": "Obayashi UK Holdings Limited",
+          "identifier": "UK Company No.17229281"
+        }
+      ]
+    },
+    {
+      "id": "abbvie",
+      "canonical_name": "AbbVie",
+      "members": [
+        {
+          "name": "AbbVie Inc.",
+          "identifier": "DELAWARE FILE NO.  5126809"
+        },
+        {
+          "name": "Andor LLC",
+          "identifier": "DELAWARE FILE NO.  10659200"
+        },
+        {
+          "name": "Andor Merger Co.",
+          "identifier": "DELAWARE FILE NO.  10659205"
+        }
+      ]
+    },
+    {
+      "id": "apogee-therapeutics",
+      "canonical_name": "Apogee Therapeutics",
+      "members": [
+        {
+          "name": "Apogee Therapeutics, Inc.",
+          "identifier": "EIN  934958665"
+        },
+        {
+          "name": "Apogee Therapeutics Securities Corporation",
+          "identifier": "EIN  332083626"
+        }
+      ]
+    },
+    {
+      "id": "nojima",
+      "canonical_name": "Nojima",
+      "members": [
+        {
+          "name": "Nojima Corporation",
+          "identifier": "Commercial Registration Number  021001013588"
+        },
+        {
+          "name": "NJM4 Corporation",
+          "identifier": "Commercial Registration Number  010401197785"
+        }
+      ]
+    },
+    {
+      "id": "redcape-fund",
+      "canonical_name": "Redcape Fund",
+      "members": [
+        {
+          "name": "REDCAPE HOTEL GROUP PTY LTD",
+          "identifier": "43 139 067 244"
+        },
+        {
+          "name": "MAHF CUSTODIAN PTY LTD",
+          "identifier": "96 619 512 060"
+        }
+      ]
+    },
+    {
+      "id": "iris-capital",
+      "canonical_name": "Iris Capital",
+      "members": [
+        {
+          "name": "IRIS CAPITAL HOLDINGS PTY LTD",
+          "identifier": "44 646 759 524"
+        },
+        {
+          "name": "Gunyah Hotel Property Pty Ltd",
+          "identifier": "628 638 040"
+        },
+        {
+          "name": "Radayla Pty Ltd",
+          "identifier": "73 115 366 384"
+        },
+        {
+          "name": "Sydney Junction Hotel Property Pty Ltd",
+          "identifier": "628 636 671"
+        },
+        {
+          "name": "Argenton Hotel Property Pty Ltd",
+          "identifier": "628 638 755"
+        },
+        {
+          "name": "Peden Business Pty Ltd",
+          "identifier": "626 903 928"
+        },
+        {
+          "name": "Peden Freehold Pty Limited",
+          "identifier": "626 902 645"
+        },
+        {
+          "name": "Gunyah Hotel Operations Pty Ltd",
+          "identifier": "628 638 031"
+        },
+        {
+          "name": "Argenton Hotel Operations Pty Ltd",
+          "identifier": "628 639 270"
+        }
+      ]
+    },
+    {
+      "id": "mccarroll-s-automotive-group",
+      "canonical_name": "McCarroll's Automotive Group",
+      "members": [
+        {
+          "name": "MCCARROLL'S OF MOSS VALE PTY LTD",
+          "identifier": "60 003 411 210"
+        },
+        {
+          "name": "MAG SOUTH COAST PTY LTD",
+          "identifier": "70 683 627 590"
+        },
+        {
+          "name": "MCCARROLL PROPERTY HOLDINGS PTY LTD",
+          "identifier": "64 676 724 306"
+        }
+      ]
+    },
+    {
+      "id": "vertex-pharmaceuticals",
+      "canonical_name": "Vertex Pharmaceuticals",
+      "members": [
+        {
+          "name": "Vertex Pharmaceuticals Incorporated",
+          "identifier": "EIN  043039129"
+        },
+        {
+          "name": "Clark Merger Sub, Inc",
+          "identifier": "DE File Number: 10678660"
+        }
+      ]
+    },
+    {
+      "id": "crh",
+      "canonical_name": "CRH",
+      "members": [
+        {
+          "name": "CRH Americas, Inc.",
+          "identifier": "3443923"
+        },
+        {
+          "name": "Neon Merger Sub, Inc.",
+          "identifier": "10667310"
+        }
+      ]
+    },
+    {
+      "id": "expedia",
+      "canonical_name": "Expedia",
+      "members": [
+        {
+          "name": "Expedia Group, Inc.",
+          "identifier": "I.R.S. Employer Identification No.202705720"
+        },
+        {
+          "name": "Expedia Group International Holdings II, LLC",
+          "identifier": "Delaware Secretary of State7172515 I.R.S Employer Identification No.832737894"
+        },
+        {
+          "name": "Stayz Pty Limited",
+          "identifier": ""
+        },
+        {
+          "name": "trivago NV",
+          "identifier": "67222927"
+        }
+      ]
+    },
+    {
+      "id": "volkswagen",
+      "canonical_name": "Volkswagen",
+      "members": [
+        {
+          "name": "Volkswagen Aktiengesellschaft",
+          "identifier": "Handelsregister (HRB)  100484"
+        },
+        {
+          "name": "Volkswagen Vermögensverwaltungs GmbH",
+          "identifier": "Handelsregister (HRB)  200525"
+        }
+      ]
+    },
+    {
+      "id": "vitamin-well-group",
+      "canonical_name": "Vitamin Well Group",
+      "members": [
+        {
+          "name": "Vital Holdco AB",
+          "identifier": "5594910134"
+        },
+        {
+          "name": "Vital Bidco AB",
+          "identifier": "5594910159"
+        },
+        {
+          "name": "Vitamin Well AB",
+          "identifier": "5567016505"
+        }
+      ]
+    },
+    {
+      "id": "sappi",
+      "canonical_name": "Sappi",
+      "members": [
+        {
+          "name": "Sappi Limited",
+          "identifier": "Registration number  1936/008963/06"
+        },
+        {
+          "name": "SAPPI TRADING AUSTRALIA PTY LIMITED",
+          "identifier": "17 086 317 071"
+        }
+      ]
+    },
+    {
+      "id": "ausgroup",
+      "canonical_name": "Ausgroup",
+      "members": [
+        {
+          "name": "RADBYRN PTY LTD",
+          "identifier": "50 632 483 268"
+        },
+        {
+          "name": "AUSGROUP INDUSTRIAL SERVICES (QLD) PTY LTD",
+          "identifier": "80 144 047 263"
+        }
+      ]
+    },
+    {
+      "id": "atlas-holdings",
+      "canonical_name": "Atlas Holdings",
+      "members": [
+        {
+          "name": "ACR III Edison Holdings LLC",
+          "identifier": "Identifying number  3247524"
+        },
+        {
+          "name": "Atlas FRM LLC (trading as Atlas Holdings LLC)",
+          "identifier": "Registration number  2921947"
+        }
+      ]
+    },
+    {
+      "id": "kps-capital-partners",
+      "canonical_name": "KPS Capital Partners",
+      "members": [
+        {
+          "name": "KPS Capital Partners, LP",
+          "identifier": "CRD  157678 / SEC  80173907"
+        },
+        {
+          "name": "Ampere Holdings I B.V.",
+          "identifier": "CCI number  69397775"
         }
       ]
     }

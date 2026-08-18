@@ -175,6 +175,123 @@ def test_merge_groups_raises_on_unknown_id():
 
 
 # ---------------------------------------------------------------------------
+# party_matching: group mutation helpers (unique_group_id, add_members_to_group,
+# create_group) — shared by the batch-review workflow and the hand-editing UI.
+# ---------------------------------------------------------------------------
+
+def test_unique_group_id_slugifies_and_avoids_collisions():
+    assert pm.unique_group_id("Coles Group", set()) == "coles-group"
+    assert pm.unique_group_id("Coles Group", {"coles-group"}) == "coles-group-2"
+    assert pm.unique_group_id("Coles Group", {"coles-group", "coles-group-2"}) == "coles-group-3"
+
+
+def test_unique_group_id_falls_back_when_name_has_no_usable_characters():
+    assert pm.unique_group_id("***", set()) == "party"
+
+
+def test_add_members_to_group_dedupes_and_mutates_in_place():
+    groups = [{
+        "id": "coles",
+        "canonical_name": "Coles Group",
+        "members": [{"name": "COLES GROUP LIMITED", "identifier": "11 004 089 936"}],
+    }]
+    result = pm.add_members_to_group(groups, "coles", [
+        {"name": "COLES SUPERMARKETS AUSTRALIA PTY LTD", "identifier": "45 004 189 708"},
+        {"name": "Coles Group Limited", "identifier": "11004089936"},  # duplicate of existing member
+    ])
+    assert result is groups[0]  # mutated in place, not a copy
+    assert groups[0]["members"] == [
+        {"name": "COLES GROUP LIMITED", "identifier": "11 004 089 936"},
+        {"name": "COLES SUPERMARKETS AUSTRALIA PTY LTD", "identifier": "45 004 189 708"},
+    ]
+
+
+def test_add_members_to_group_raises_on_unknown_id():
+    with pytest.raises(KeyError):
+        pm.add_members_to_group([], "missing", [{"name": "A", "identifier": ""}])
+
+
+def test_create_group_appends_a_new_group_with_a_unique_id():
+    groups = [{"id": "coles", "canonical_name": "Coles Group", "members": []}]
+    new_group = pm.create_group(
+        groups, "Woolworths Group", [{"name": "WOOLWORTHS GROUP LIMITED", "identifier": "88 000 014 675"}]
+    )
+    assert new_group is groups[-1]  # appended
+    assert new_group["id"] == "woolworths-group"
+    assert new_group["canonical_name"] == "Woolworths Group"
+    assert len(groups) == 2
+
+
+def test_create_group_dedupes_members():
+    groups = []
+    new_group = pm.create_group(groups, "Acme", [
+        {"name": "ACME PTY LTD", "identifier": "11 111 111 111"},
+        {"name": "Acme Pty Ltd", "identifier": "11111111111"},  # duplicate
+    ])
+    assert len(new_group["members"]) == 1
+
+
+def test_create_group_raises_when_no_members_survive_dedup():
+    with pytest.raises(ValueError):
+        pm.create_group([], "Empty", [{"name": "", "identifier": ""}])
+
+
+def test_create_group_avoids_id_collision_with_existing_groups():
+    groups = [{"id": "acme", "canonical_name": "Acme (old)", "members": []}]
+    new_group = pm.create_group(groups, "Acme", [{"name": "Acme Pty Ltd", "identifier": "1"}])
+    assert new_group["id"] == "acme-2"
+
+
+def test_create_group_accepts_explicit_group_id():
+    groups = []
+    new_group = pm.create_group(
+        groups, "Acme", [{"name": "Acme Pty Ltd", "identifier": "1"}], group_id="custom-id"
+    )
+    assert new_group["id"] == "custom-id"
+
+
+# ---------------------------------------------------------------------------
+# party_matching: load_parties_doc / save_parties_doc
+# ---------------------------------------------------------------------------
+
+def test_load_parties_doc_returns_empty_groups_when_file_missing(tmp_path):
+    doc = pm.load_parties_doc(tmp_path / "nope.json")
+    assert doc == {"groups": []}
+
+
+def test_load_parties_doc_preserves_extra_top_level_keys(tmp_path):
+    path = tmp_path / "related_parties.json"
+    path.write_text(json.dumps({"_README": "some notes", "groups": [{"id": "a", "canonical_name": "A", "members": []}]}))
+    doc = pm.load_parties_doc(path)
+    assert doc["_README"] == "some notes"
+    assert doc["groups"][0]["id"] == "a"
+
+
+def test_save_parties_doc_round_trips_and_creates_parent_dirs(tmp_path):
+    path = tmp_path / "nested" / "related_parties.json"
+    doc = {"groups": [{"id": "a", "canonical_name": "A", "members": []}]}
+    pm.save_parties_doc(doc, path)
+    assert pm.load_parties_doc(path) == doc
+
+
+def test_save_parties_doc_writes_non_ascii_characters_literally(tmp_path):
+    # ensure_ascii=False: accented characters already in the file must
+    # round-trip as literal UTF-8, not be rewritten as \uXXXX escapes on
+    # every save (which would turn an unrelated edit into a huge diff).
+    path = tmp_path / "related_parties.json"
+    doc = {"groups": [{
+        "id": "loreal",
+        "canonical_name": "L'Oréal",
+        "members": [{"name": "Société Anonyme des Eaux Minérales d'Évian S.A.", "identifier": ""}],
+    }]}
+    pm.save_parties_doc(doc, path)
+    text = path.read_text(encoding="utf-8")
+    assert "Évian" in text
+    assert "\\u00c9" not in text.lower()
+    assert json.loads(text) == doc
+
+
+# ---------------------------------------------------------------------------
 # enrichment.link_related_parties
 # ---------------------------------------------------------------------------
 

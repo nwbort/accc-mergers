@@ -27,6 +27,10 @@ List filters:
     :func:`filter_notifications`
     :func:`filter_suspended`
 
+Sorting:
+    :func:`notification_sort_key`
+    :func:`sort_by_notification_date`
+
 The static-data package re-exports these from :mod:`static_data.filters` for
 backwards compatibility.
 """
@@ -197,6 +201,33 @@ def filter_notifications(mergers: Iterable[dict]) -> List[dict]:
 def filter_suspended(mergers: Iterable[dict]) -> List[dict]:
     """Return only mergers whose assessment has been suspended."""
     return [m for m in mergers if is_suspended(m)]
+
+
+# ---------------------------------------------------------------------------
+# Sorting
+# ---------------------------------------------------------------------------
+
+
+def notification_sort_key(merger: dict) -> str:
+    """Return the ISO datetime string used to order a merger by notification date.
+
+    Prefers ``effective_notification_datetime`` (updated if the ACCC resets
+    the clock, e.g. after a suspension) and falls back to
+    ``original_notification_datetime`` when the effective date is missing.
+    Returns ``""`` for a merger with neither, which sorts before every dated
+    merger in ascending order (and after every dated merger in descending
+    order, since ``sort_by_notification_date`` defaults to ``reverse=True``).
+    """
+    return merger.get("effective_notification_datetime") or merger.get("original_notification_datetime") or ""
+
+
+def sort_by_notification_date(mergers: Iterable[dict], reverse: bool = True) -> List[dict]:
+    """Return ``mergers`` sorted by :func:`notification_sort_key`.
+
+    Defaults to newest-first (``reverse=True``), matching the order used to
+    pick "the next N mergers" for manual review (e.g. related-party linking).
+    """
+    return sorted(mergers, key=notification_sort_key, reverse=reverse)
 
 
 # Backwards-compatible alias for the name originally used by
