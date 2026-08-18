@@ -402,6 +402,11 @@
         "in_progress": false
       },
       {
+        "business_days": 20,
+        "calendar_days": 28,
+        "in_progress": false
+      },
+      {
         "business_days": 15,
         "calendar_days": 22,
         "in_progress": false
@@ -879,17 +884,17 @@
     ],
     "stats": {
       "average": 19.8,
-      "median": 17,
+      "median": 17.0,
       "min": 15,
       "max": 59,
-      "count": 175
+      "count": 176
     },
     "calendar_stats": {
       "average": 29.8,
-      "median": 26,
+      "median": 26.0,
       "min": 21,
       "max": 103,
-      "count": 175
+      "count": 176
     }
   },
   "waiver_duration": {
@@ -2279,11 +2284,11 @@
     {
       "code": "G",
       "name": "Retail Trade",
-      "average_business_days": 24.7,
-      "median_business_days": 18,
-      "average_calendar_days": 38.8,
-      "median_calendar_days": 27,
-      "count": 19
+      "average_business_days": 24.5,
+      "median_business_days": 18.0,
+      "average_calendar_days": 38.3,
+      "median_calendar_days": 27.5,
+      "count": 20
     },
     {
       "code": "B",
@@ -2342,11 +2347,11 @@
     {
       "code": "F",
       "name": "Wholesale Trade",
-      "average_business_days": 21.7,
-      "median_business_days": 18.0,
-      "average_calendar_days": 34.5,
-      "median_calendar_days": 27.5,
-      "count": 24
+      "average_business_days": 21.6,
+      "median_business_days": 18,
+      "average_calendar_days": 34.2,
+      "median_calendar_days": 28,
+      "count": 25
     },
     {
       "code": "M",
@@ -2433,11 +2438,11 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 382,
+      "count": 383,
       "outcome_mix": {
-        "Approved": 382
+        "Approved": 383
       },
-      "median_phase_1_business_days": 16.0
+      "median_phase_1_business_days": 16
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -2451,9 +2456,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 50,
+      "count": 49,
       "outcome_mix": {
-        "Unknown": 50
+        "Unknown": 49
       },
       "median_phase_1_business_days": null
     },
@@ -2491,7 +2496,7 @@
       "17": 21,
       "18": 18,
       "19": 15,
-      "20": 7,
+      "20": 8,
       "21": 5,
       "22": 6,
       "23": 1,
@@ -2509,10 +2514,10 @@
       "4": 1
     },
     "stats": {
-      "mean_used_bd": 18.0,
-      "median_used_bd": 17.0,
+      "mean_used_bd": 18.1,
+      "median_used_bd": 17,
       "pct_decided_final_3_bd": 3.7,
-      "count": 162
+      "count": 163
     },
     "extended_count": 5
   },
@@ -2562,11 +2567,11 @@
     {
       "code": "G",
       "name": "Retail Trade",
-      "approved": 16,
+      "approved": 17,
       "not_approved": 0,
       "referred": 3,
-      "in_progress": 8,
-      "phase2_referral_rate": 0.158
+      "in_progress": 7,
+      "phase2_referral_rate": 0.15
     },
     {
       "code": "L",
@@ -2580,11 +2585,11 @@
     {
       "code": "F",
       "name": "Wholesale Trade",
-      "approved": 22,
+      "approved": 23,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 9,
-      "phase2_referral_rate": 0.083
+      "in_progress": 8,
+      "phase2_referral_rate": 0.08
     },
     {
       "code": "K",

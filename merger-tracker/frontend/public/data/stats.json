@@ -3,12 +3,12 @@
   "total_waivers": 328,
   "total_conditional_approvals": 3,
   "by_status": {
-    "Assessment completed": 170,
-    "Under assessment": 53,
+    "Assessment completed": 171,
+    "Under assessment": 52,
     "Assessment ceased": 3
   },
   "by_determination": {
-    "Approved": 165,
+    "Approved": 166,
     "Referred to phase 2": 8,
     "Approved with conditions": 2
   },
@@ -22,27 +22,27 @@
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 168,
+    "cleared": 169,
     "not_cleared": 2,
-    "total": 170,
+    "total": 171,
     "rate": 0.988
   },
   "phase_duration": {
-    "average_days": 29.8,
-    "median_days": 26,
-    "average_business_days": 19.845714285714287,
-    "median_business_days": 17,
+    "average_days": 29.789772727272727,
+    "median_days": 26.0,
+    "average_business_days": 19.84659090909091,
+    "median_business_days": 17.0,
     "percentiles": {
       "day15": {
         "count": 40,
-        "percentage": 22.9
+        "percentage": 22.7
       },
       "day20": {
-        "count": 133,
-        "percentage": 76.0
+        "count": 134,
+        "percentage": 76.1
       },
       "day30": {
-        "count": 165,
+        "count": 166,
         "percentage": 94.3
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-35029",
+      "merger_name": "L'Or\u00e9al - Innovist",
+      "determination": "Approved",
+      "determination_date": "2026-08-18T12:00:00Z",
+      "page_modified_datetime": "2026-08-18T12:10:19+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-25037",
       "merger_name": "Sanad Services and Tikehau Capital \u2013 Revima",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-13T12:00:00Z",
       "page_modified_datetime": "2026-08-13T14:58:54+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-40029",
-      "merger_name": "Laundy \u2013 Woy Woy Hotel",
-      "determination": "Approved",
-      "determination_date": "2026-08-13T12:00:00Z",
-      "page_modified_datetime": "2026-08-13T14:47:04+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",

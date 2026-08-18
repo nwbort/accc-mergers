@@ -121,17 +121,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-35029",
-      "merger_name": "L'Or\u00e9al - Innovist",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-07-21T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-20017",
       "merger_name": "Amplifon \u2013 GN Hearing",
       "is_waiver": false,
@@ -141,6 +130,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-13T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-35029",
+      "merger_name": "L'Or\u00e9al - Innovist",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-21T12:00:00Z",
+      "determination_date": "2026-08-18T12:00:00Z"
     },
     {
       "merger_id": "WA-20032",
@@ -664,13 +664,13 @@
   "phase_1_count": 31,
   "phase_2_count": 2,
   "waiver_count": 23,
-  "active_count": 9,
+  "active_count": 8,
   "phase_duration": {
-    "average_days": 34.5,
-    "median_days": 27.5,
-    "average_business_days": 21.666666666666668,
-    "median_business_days": 18.0,
-    "completed_count": 24
+    "average_days": 34.24,
+    "median_days": 28,
+    "average_business_days": 21.6,
+    "median_business_days": 18,
+    "completed_count": 25
   },
   "waiver_duration": {
     "average_days": 20.043478260869566,
