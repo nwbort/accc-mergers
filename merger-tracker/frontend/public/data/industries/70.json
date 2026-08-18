@@ -19,7 +19,7 @@
       "code": "700",
       "name": "Computer System Design and Related Services",
       "level": "group",
-      "merger_count": 58
+      "merger_count": 59
     }
   ],
   "mergers": [
@@ -110,6 +110,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-27T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-45023",
+      "merger_name": "Pine Australia - Evolution Business Systems",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-31T12:00:00Z",
+      "determination_date": "2026-08-18T12:00:00Z"
     },
     {
       "merger_id": "WA-35028",
@@ -662,10 +673,10 @@
       "determination_date": "2026-01-20T12:00:00Z"
     }
   ],
-  "count": 58,
+  "count": 59,
   "phase_1_count": 26,
   "phase_2_count": 0,
-  "waiver_count": 32,
+  "waiver_count": 33,
   "active_count": 8,
   "phase_duration": {
     "average_days": 29.5,
@@ -675,10 +686,10 @@
     "completed_count": 18
   },
   "waiver_duration": {
-    "average_days": 19.25,
-    "median_days": 19.0,
-    "average_business_days": 13.4375,
-    "median_business_days": 13.0,
-    "completed_count": 32
+    "average_days": 19.21212121212121,
+    "median_days": 19,
+    "average_business_days": 13.393939393939394,
+    "median_business_days": 13,
+    "completed_count": 33
   }
 }

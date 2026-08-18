@@ -1,6 +1,6 @@
 {
   "total_mergers": 227,
-  "total_waivers": 334,
+  "total_waivers": 335,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 171,
@@ -18,7 +18,7 @@
     "Assessment ceased": 2
   },
   "by_waiver_determination": {
-    "Approved": 320,
+    "Approved": 321,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -48,19 +48,19 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.224550898203592,
-    "median_days": 19.0,
-    "average_business_days": 12.94311377245509,
-    "median_business_days": 13.0
+    "average_days": 19.22089552238806,
+    "median_days": 19,
+    "average_business_days": 12.940298507462687,
+    "median_business_days": 13
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 88
+      "count": 89
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 58
+      "count": 59
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-45023",
+      "merger_name": "Pine Australia - Evolution Business Systems",
+      "determination": "Approved",
+      "determination_date": "2026-08-18T12:00:00Z",
+      "page_modified_datetime": "2026-08-18T16:55:34+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-75039",
       "merger_name": "Ironbark - Paris Group",
       "determination": "Approved",
@@ -333,17 +344,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-17T12:00:00Z",
       "page_modified_datetime": "2026-08-17T17:41:45+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-75040",
-      "merger_name": "Blackstone - DarkVision Technologies",
-      "determination": "Approved",
-      "determination_date": "2026-08-17T12:00:00Z",
-      "page_modified_datetime": "2026-08-17T17:36:36+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

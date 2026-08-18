@@ -1,6 +1,184 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-35034",
+      "merger_name": "The Independents Group \u2013 acquisition of entities within the Smuggler Group",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-07T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-18T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "The Independents Creative Collective UK Ltd.",
+          "identifier_type": null,
+          "identifier": "Identifying number  04243407",
+          "canonical": {
+            "id": "the-independents-group",
+            "name": "The Independents Group"
+          },
+          "party_page": {
+            "id": "the-independents-group",
+            "name": "The Independents Group"
+          }
+        },
+        {
+          "name": "The Independents Group Inc.",
+          "identifier_type": null,
+          "identifier": "Identifying number  3414791",
+          "canonical": {
+            "id": "the-independents-group",
+            "name": "The Independents Group"
+          },
+          "party_page": {
+            "id": "the-independents-group",
+            "name": "The Independents Group"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Smuggler LLC",
+          "identifier_type": null,
+          "identifier": "Identifying number  6877804",
+          "canonical": {
+            "id": "smuggler-group",
+            "name": "Smuggler Group"
+          },
+          "party_page": {
+            "id": "smuggler-group",
+            "name": "Smuggler Group"
+          }
+        },
+        {
+          "name": "Smuggler London Ltd",
+          "identifier_type": null,
+          "identifier": "Identifying number  06806477",
+          "canonical": {
+            "id": "smuggler-group",
+            "name": "Smuggler Group"
+          },
+          "party_page": {
+            "id": "smuggler-group",
+            "name": "Smuggler Group"
+          }
+        },
+        {
+          "name": "Sidepiece LLC",
+          "identifier_type": null,
+          "identifier": "Identifying number  5134914",
+          "canonical": {
+            "id": "smuggler-group",
+            "name": "Smuggler Group"
+          },
+          "party_page": {
+            "id": "smuggler-group",
+            "name": "Smuggler Group"
+          }
+        },
+        {
+          "name": "Division 7 LLC",
+          "identifier_type": null,
+          "identifier": "Identifying number  7088711",
+          "canonical": {
+            "id": "smuggler-group",
+            "name": "Smuggler Group"
+          },
+          "party_page": {
+            "id": "smuggler-group",
+            "name": "Smuggler Group"
+          }
+        },
+        {
+          "name": "Smuggler Experience LLC (including shell subsidiary Lux a Deo LLC)",
+          "identifier_type": null,
+          "identifier": "Identifying number  202462414150",
+          "canonical": {
+            "id": "smuggler-group",
+            "name": "Smuggler Group"
+          },
+          "party_page": {
+            "id": "smuggler-group",
+            "name": "Smuggler Group"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "K10 Holding SA",
+          "identifier_type": null,
+          "identifier": "Identifying number  B214433",
+          "canonical": {
+            "id": "the-independents-group",
+            "name": "The Independents Group"
+          },
+          "party_page": {
+            "id": "the-independents-group",
+            "name": "The Independents Group"
+          }
+        },
+        {
+          "name": "ELOCGA",
+          "identifier_type": null,
+          "identifier": "Identifying number  B209477",
+          "party_page": {
+            "id": "elocga",
+            "name": "Elocga"
+          }
+        },
+        {
+          "name": "LOV Group Invest",
+          "identifier_type": null,
+          "identifier": "Identifying number  494 031 008",
+          "party_page": {
+            "id": "lov-group-invest",
+            "name": "LOV Group Invest"
+          }
+        },
+        {
+          "name": "TowerBrook Capital Partners L.P.",
+          "identifier_type": null,
+          "identifier": "Identifying number  3922576",
+          "party_page": {
+            "id": "towerbrook-capital-partners-l-p",
+            "name": "TowerBrook Capital Partners L.P."
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5511",
+          "name": "Motion Picture and Video Production"
+        },
+        {
+          "code": "5514",
+          "name": "Post-production Services and Other Motion Picture and Video Activities"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6940",
+          "name": "Advertising Services"
+        },
+        {
+          "code": "6962",
+          "name": "Management Advice and Related Consulting Services"
+        },
+        {
+          "code": "9139",
+          "name": "Amusement and Other Recreational Activities n.e.c."
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/the-independents-group-%E2%80%93-acquisition-of-entities-within-the-smuggler-group"
+    },
+    {
       "merger_id": "MN-05044",
       "merger_name": "Holcim Australia \u2013 Burdetts Group",
       "status": "Under assessment",

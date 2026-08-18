@@ -24,7 +24,7 @@
       "code": "6240",
       "name": "Financial Asset Investing",
       "level": "class",
-      "merger_count": 88
+      "merger_count": 89
     }
   ],
   "mergers": [
@@ -147,6 +147,17 @@
       "has_conditions": false,
       "phase": "Waiver",
       "notification_date": "2026-07-28T12:00:00Z",
+      "determination_date": "2026-08-18T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-45023",
+      "merger_name": "Pine Australia - Evolution Business Systems",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-31T12:00:00Z",
       "determination_date": "2026-08-18T12:00:00Z"
     },
     {
@@ -997,10 +1008,10 @@
       "determination_date": "2026-01-30T12:00:00Z"
     }
   ],
-  "count": 88,
+  "count": 89,
   "phase_1_count": 20,
   "phase_2_count": 0,
-  "waiver_count": 68,
+  "waiver_count": 69,
   "active_count": 10,
   "phase_duration": {
     "average_days": 24.7,
@@ -1010,10 +1021,10 @@
     "completed_count": 10
   },
   "waiver_duration": {
-    "average_days": 19.176470588235293,
-    "median_days": 18.0,
-    "average_business_days": 12.926470588235293,
-    "median_business_days": 12.0,
-    "completed_count": 68
+    "average_days": 19.159420289855074,
+    "median_days": 18,
+    "average_business_days": 12.91304347826087,
+    "median_business_days": 12,
+    "completed_count": 69
   }
 }
