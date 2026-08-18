@@ -16,9 +16,13 @@
       "name": "Siemens Mobility Holding B.V.",
       "identifier_type": null,
       "identifier": "LEI  529900JJ6XL7YX9GBM87",
+      "canonical": {
+        "id": "siemens-mobility-gmbh",
+        "name": "Siemens Mobility GmbH"
+      },
       "party_page": {
-        "id": "siemens-mobility-holding-b-v",
-        "name": "Siemens Mobility Holding B.V."
+        "id": "siemens-mobility-gmbh",
+        "name": "Siemens Mobility GmbH"
       }
     }
   ],
@@ -27,9 +31,13 @@
       "name": "Mer Mec S.p.A.",
       "identifier_type": null,
       "identifier": "LEI  81560011DF7243CFC226",
+      "canonical": {
+        "id": "mermec",
+        "name": "MerMec"
+      },
       "party_page": {
-        "id": "mer-mec-s-p-a",
-        "name": "Mer Mec S.p.A."
+        "id": "mermec",
+        "name": "MerMec"
       }
     }
   ],
@@ -38,18 +46,26 @@
       "name": "Siemens Aktiengesellschaft",
       "identifier_type": null,
       "identifier": "LEI  W38RGI023J3WT1HWRP32",
+      "canonical": {
+        "id": "siemens-mobility-gmbh",
+        "name": "Siemens Mobility GmbH"
+      },
       "party_page": {
-        "id": "siemens-aktiengesellschaft",
-        "name": "Siemens Aktiengesellschaft"
+        "id": "siemens-mobility-gmbh",
+        "name": "Siemens Mobility GmbH"
       }
     },
     {
       "name": "MERMEC AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
       "identifier": "42 619 285 988",
+      "canonical": {
+        "id": "mermec",
+        "name": "MerMec"
+      },
       "party_page": {
-        "id": "mermec-australia-pty-ltd",
-        "name": "Mermec Australia Pty Ltd"
+        "id": "mermec",
+        "name": "MerMec"
       }
     },
     {
@@ -69,9 +85,13 @@
       "name": "Angelo Holding S.r.l.",
       "identifier_type": null,
       "identifier": "LEI  815600BFD5004E85D746",
+      "canonical": {
+        "id": "mermec",
+        "name": "MerMec"
+      },
       "party_page": {
-        "id": "angelo-holding-s-r-l",
-        "name": "Angelo Holding S.r.l."
+        "id": "mermec",
+        "name": "MerMec"
       }
     },
     {

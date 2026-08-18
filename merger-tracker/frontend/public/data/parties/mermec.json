@@ -1,15 +1,26 @@
 {
-  "id": "siemens-mobility-holding-b-v",
-  "canonical_name": "Siemens Mobility Holding B.V.",
+  "id": "mermec",
+  "canonical_name": "MerMec",
   "members": [
     {
-      "name": "Siemens Mobility Holding B.V.",
-      "identifier": "LEI  529900JJ6XL7YX9GBM87",
+      "name": "Angelo Holding S.r.l.",
+      "identifier": "LEI  815600BFD5004E85D746",
+      "identifier_type": null
+    },
+    {
+      "name": "MERMEC AUSTRALIA PTY LTD",
+      "identifier": "42 619 285 988",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "Mer Mec S.p.A.",
+      "identifier": "LEI  81560011DF7243CFC226",
       "identifier_type": null
     }
   ],
   "mergers": {
-    "acquirer": [
+    "acquirer": [],
+    "target": [
       {
         "merger_id": "MN-01105",
         "merger_name": "Siemens Mobility - MerMec",
@@ -22,7 +33,6 @@
         "determination_date": "2026-08-12T12:00:00Z"
       }
     ],
-    "target": [],
     "other": []
   },
   "merger_count": 1,

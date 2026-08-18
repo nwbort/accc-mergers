@@ -1,7 +1,27 @@
 {
-  "id": "bayer-oy",
-  "canonical_name": "Bayer Oy",
+  "id": "bayer",
+  "canonical_name": "Bayer",
   "members": [
+    {
+      "name": "Bayer Aktiengesellschaft",
+      "identifier": "HRB  48248",
+      "identifier_type": null
+    },
+    {
+      "name": "Bayer Asset Management B.V.",
+      "identifier": "KVK  42012880",
+      "identifier_type": null
+    },
+    {
+      "name": "Bayer Global Investments B.V.",
+      "identifier": "KVK  51490986",
+      "identifier_type": null
+    },
+    {
+      "name": "Bayer Nordic SE",
+      "identifier": "Finnish Patent and Registration Office  24305802",
+      "identifier_type": null
+    },
     {
       "name": "Bayer Oy",
       "identifier": "Finnish Patent and Registration Office  17037774",
@@ -10,8 +30,7 @@
   ],
   "mergers": {
     "acquirer": [],
-    "target": [],
-    "other": [
+    "target": [
       {
         "merger_id": "WA-70029",
         "merger_name": "Apollo - Bayer Asset Management",
@@ -23,7 +42,8 @@
         "notification_date": "2026-07-11T12:00:00Z",
         "determination_date": "2026-08-10T12:00:00Z"
       }
-    ]
+    ],
+    "other": []
   },
   "merger_count": 1,
   "phase_1_count": 0,

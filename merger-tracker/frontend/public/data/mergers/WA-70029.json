@@ -28,9 +28,13 @@
       "name": "AP Emerald (Luxembourg) S.\u00e0 r.l.",
       "identifier_type": null,
       "identifier": "RCS  B307795",
+      "canonical": {
+        "id": "apollo-capital-management-l-p",
+        "name": "Apollo Capital Management, L.P."
+      },
       "party_page": {
-        "id": "ap-emerald-luxembourg-s-r-l",
-        "name": "AP Emerald (Luxembourg) S.\u00e0 r.l."
+        "id": "apollo-capital-management-l-p",
+        "name": "Apollo Capital Management, L.P."
       }
     }
   ],
@@ -39,18 +43,26 @@
       "name": "Bayer Global Investments B.V.",
       "identifier_type": null,
       "identifier": "KVK  51490986",
+      "canonical": {
+        "id": "bayer",
+        "name": "Bayer"
+      },
       "party_page": {
-        "id": "bayer-global-investments-b-v",
-        "name": "Bayer Global Investments B.V."
+        "id": "bayer",
+        "name": "Bayer"
       }
     },
     {
       "name": "Bayer Asset Management B.V.",
       "identifier_type": null,
       "identifier": "KVK  42012880",
+      "canonical": {
+        "id": "bayer",
+        "name": "Bayer"
+      },
       "party_page": {
-        "id": "bayer-asset-management-b-v",
-        "name": "Bayer Asset Management B.V."
+        "id": "bayer",
+        "name": "Bayer"
       }
     }
   ],
@@ -59,36 +71,52 @@
       "name": "Bayer Nordic SE",
       "identifier_type": null,
       "identifier": "Finnish Patent and Registration Office  24305802",
+      "canonical": {
+        "id": "bayer",
+        "name": "Bayer"
+      },
       "party_page": {
-        "id": "bayer-nordic-se",
-        "name": "Bayer Nordic SE"
+        "id": "bayer",
+        "name": "Bayer"
       }
     },
     {
       "name": "Apollo Global Management, Inc.",
       "identifier_type": null,
       "identifier": "CIK 0001858681",
+      "canonical": {
+        "id": "apollo-capital-management-l-p",
+        "name": "Apollo Capital Management, L.P."
+      },
       "party_page": {
-        "id": "apollo-global-management-inc",
-        "name": "Apollo Global Management, Inc."
+        "id": "apollo-capital-management-l-p",
+        "name": "Apollo Capital Management, L.P."
       }
     },
     {
       "name": "Bayer Oy",
       "identifier_type": null,
       "identifier": "Finnish Patent and Registration Office  17037774",
+      "canonical": {
+        "id": "bayer",
+        "name": "Bayer"
+      },
       "party_page": {
-        "id": "bayer-oy",
-        "name": "Bayer Oy"
+        "id": "bayer",
+        "name": "Bayer"
       }
     },
     {
       "name": "Bayer Aktiengesellschaft",
       "identifier_type": null,
       "identifier": "HRB  48248",
+      "canonical": {
+        "id": "bayer",
+        "name": "Bayer"
+      },
       "party_page": {
-        "id": "bayer-aktiengesellschaft",
-        "name": "Bayer Aktiengesellschaft"
+        "id": "bayer",
+        "name": "Bayer"
       }
     }
   ],

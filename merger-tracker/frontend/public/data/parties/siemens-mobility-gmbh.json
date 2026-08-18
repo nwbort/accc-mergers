@@ -8,15 +8,23 @@
       "identifier_type": "ABN"
     },
     {
+      "name": "Siemens Aktiengesellschaft",
+      "identifier": "LEI  W38RGI023J3WT1HWRP32",
+      "identifier_type": null
+    },
+    {
       "name": "Siemens Mobility GmbH",
       "identifier": "LEI  529900LT6G2TUO3TZB94",
+      "identifier_type": null
+    },
+    {
+      "name": "Siemens Mobility Holding B.V.",
+      "identifier": "LEI  529900JJ6XL7YX9GBM87",
       "identifier_type": null
     }
   ],
   "mergers": {
-    "acquirer": [],
-    "target": [],
-    "other": [
+    "acquirer": [
       {
         "merger_id": "MN-01105",
         "merger_name": "Siemens Mobility - MerMec",
@@ -28,7 +36,9 @@
         "notification_date": "2026-07-10T12:00:00Z",
         "determination_date": "2026-08-12T12:00:00Z"
       }
-    ]
+    ],
+    "target": [],
+    "other": []
   },
   "merger_count": 1,
   "phase_1_count": 1,

@@ -1,10 +1,15 @@
 {
-  "id": "the-trustee-for-longyester-unit-trust",
-  "canonical_name": "The Trustee for Longyester Unit Trust",
+  "id": "comms-group",
+  "canonical_name": "Comms Group",
   "members": [
     {
-      "name": "The Trustee for Longyester Unit Trust",
-      "identifier": "18 762 651 022",
+      "name": "COMMS GROUP LTD",
+      "identifier": "64 619 196 539",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "ON GROUP HOLDINGS PTY LTD",
+      "identifier": "68 622 185 808",
       "identifier_type": "ABN"
     }
   ],
@@ -12,15 +17,15 @@
     "acquirer": [],
     "target": [
       {
-        "merger_id": "WA-40032",
-        "merger_name": "Vets Central \u2013 Lava Street Veterinary Clinic and Doggy Kinder",
+        "merger_id": "WA-35028",
+        "merger_name": "efex - OnPlatinum",
         "is_waiver": true,
         "status": "Assessment completed",
         "determination": "Approved",
         "has_conditions": false,
         "phase": "Waiver",
         "notification_date": "2026-07-15T12:00:00Z",
-        "determination_date": "2026-08-03T12:00:00Z"
+        "determination_date": "2026-08-17T12:00:00Z"
       }
     ],
     "other": []
@@ -32,10 +37,10 @@
   "active_count": 0,
   "phase_duration": null,
   "waiver_duration": {
-    "average_days": 19.0,
-    "median_days": 19,
-    "average_business_days": 13.0,
-    "median_business_days": 13,
+    "average_days": 33.0,
+    "median_days": 33,
+    "average_business_days": 23.0,
+    "median_business_days": 23,
     "completed_count": 1
   }
 }

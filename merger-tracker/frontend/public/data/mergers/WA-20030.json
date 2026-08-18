@@ -176,9 +176,13 @@
           "name": "Siemens Mobility Holding B.V.",
           "identifier_type": null,
           "identifier": "LEI  529900JJ6XL7YX9GBM87",
+          "canonical": {
+            "id": "siemens-mobility-gmbh",
+            "name": "Siemens Mobility GmbH"
+          },
           "party_page": {
-            "id": "siemens-mobility-holding-b-v",
-            "name": "Siemens Mobility Holding B.V."
+            "id": "siemens-mobility-gmbh",
+            "name": "Siemens Mobility GmbH"
           }
         }
       ],
@@ -187,9 +191,13 @@
           "name": "Mer Mec S.p.A.",
           "identifier_type": null,
           "identifier": "LEI  81560011DF7243CFC226",
+          "canonical": {
+            "id": "mermec",
+            "name": "MerMec"
+          },
           "party_page": {
-            "id": "mer-mec-s-p-a",
-            "name": "Mer Mec S.p.A."
+            "id": "mermec",
+            "name": "MerMec"
           }
         }
       ]
