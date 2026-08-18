@@ -45,7 +45,7 @@ done
 # --- Configuration ---
 # Export variables so they are available to subshells spawned by xargs.
 export BASE_URL="https://www.accc.gov.au"
-export REGISTER_URL="${BASE_URL}/public-registers/mergers-and-acquisitions-registers/acquisitions-register?init=1&items_per_page=50"
+export REGISTER_URL="${BASE_URL}/public-registers/acquisitions-and-mergers-registers/acquisitions-register?init=1&items_per_page=50"
 export MAIN_PAGE_FILE="data/raw/acquisitions-register.html"
 export SUBFOLDER="data/raw/matters"
 export USER_AGENT="Mozilla/5.0 (compatible; mergers-fyi/1.0; +https://mergers.fyi)"

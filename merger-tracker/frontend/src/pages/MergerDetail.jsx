@@ -139,7 +139,7 @@ function MergerDetail() {
         backTo={backToMergers}
         backLabel="← Back to all mergers"
         secondaryAction={{
-          href: `https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register?init=1&query=${id}`,
+          href: `https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register?init=1&query=${id}`,
           label: 'Check ACCC website →',
           ariaLabel: `Search for ${id} on ACCC website`,
         }}
