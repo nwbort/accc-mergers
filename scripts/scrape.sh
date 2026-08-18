@@ -248,30 +248,22 @@ if [ -z "$relative_links" ]; then
   exit 0
 fi
 
-# 4. Filter out links for mergers past cutoff (unless --all is specified)
+# 4. Work out which matters to fetch.
+#
+# scrape_targets.py drops matters past cutoff (unless --all), de-duplicates the
+# listing, and — importantly — adds back any matter we already know about that
+# this crawl's listing failed to mention. The register paginates over an
+# unstable sort, so a matter can silently drop out of the listing and then
+# never be re-scraped again; see scripts/scrape_targets.py for detail.
 if [ "$SCRAPE_ALL" = true ]; then
   echo "Scraping all mergers (--all flag specified)"
-  links_to_fetch="$relative_links"
+  select_args=(--all)
 else
-  # Get list of URL paths to skip from cutoff.py
-  skip_paths_file=$(mktemp)
-  trap 'rm -f "$skip_paths_file"' EXIT
-
-  if [ -f "$MERGERS_JSON" ]; then
-    python3 "$SCRIPT_DIR/cutoff.py" --paths "$MERGERS_JSON" > "$skip_paths_file" 2>/dev/null || true
-  fi
-
-  skip_count=$(wc -l < "$skip_paths_file" | tr -d ' ')
-  if [ "$skip_count" -gt 0 ]; then
-    echo "Skipping $skip_count merger(s) past cutoff date (use --all to scrape all)"
-
-    # Filter out links that exactly match a skip path. Single grep call vs.
-    # spawning one per link.
-    links_to_fetch=$(grep -vxFf "$skip_paths_file" <<< "$relative_links" || true)
-  else
-    links_to_fetch="$relative_links"
-  fi
+  select_args=()
 fi
+
+links_to_fetch=$(printf '%s\n' "$relative_links" \
+  | python3 "$SCRIPT_DIR/scrape_targets.py" "${select_args[@]}" "$MERGERS_JSON")
 
 link_count=$(echo "$links_to_fetch" | grep -c . || true)
 if [ "$link_count" -eq 0 ]; then
