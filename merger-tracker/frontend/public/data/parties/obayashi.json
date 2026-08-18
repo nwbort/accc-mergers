@@ -1,28 +1,33 @@
 {
-  "id": "phosphorus-security-llc",
-  "canonical_name": "Phosphorus Security LLC",
+  "id": "obayashi",
+  "canonical_name": "Obayashi",
   "members": [
     {
-      "name": "Phosphorus Security LLC",
-      "identifier": "Delaware file number  10549306",
+      "name": "Obayashi Corporation",
+      "identifier": "86 002 932 756",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "Obayashi UK Holdings Limited",
+      "identifier": "UK Company No.17229281",
       "identifier_type": null
     }
   ],
   "mergers": {
-    "acquirer": [],
-    "target": [
+    "acquirer": [
       {
-        "merger_id": "MN-50032",
-        "merger_name": "Accenture - Dragos",
+        "merger_id": "MN-05031",
+        "merger_name": "Obayashi Corporation \u2013 Multiplex",
         "is_waiver": false,
         "status": "Under assessment",
         "determination": null,
         "has_conditions": false,
         "phase": "Phase 1",
-        "notification_date": "2026-07-29T12:00:00Z",
+        "notification_date": "2026-07-27T12:00:00Z",
         "determination_date": null
       }
     ],
+    "target": [],
     "other": []
   },
   "merger_count": 1,

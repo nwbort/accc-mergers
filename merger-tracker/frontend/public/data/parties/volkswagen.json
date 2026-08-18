@@ -1,29 +1,34 @@
 {
-  "id": "crh-americas-inc",
-  "canonical_name": "CRH Americas, Inc.",
+  "id": "volkswagen",
+  "canonical_name": "Volkswagen",
   "members": [
     {
-      "name": "CRH Americas, Inc.",
-      "identifier": "3443923",
+      "name": "Volkswagen Aktiengesellschaft",
+      "identifier": "Handelsregister (HRB)  100484",
+      "identifier_type": null
+    },
+    {
+      "name": "Volkswagen Verm\u00f6gensverwaltungs GmbH",
+      "identifier": "Handelsregister (HRB)  200525",
       "identifier_type": null
     }
   ],
   "mergers": {
     "acquirer": [],
-    "target": [],
-    "other": [
+    "target": [
       {
-        "merger_id": "WA-55030",
-        "merger_name": "CRH - Arcosa",
+        "merger_id": "WA-40033",
+        "merger_name": "Bain Capital - Everllence",
         "is_waiver": true,
         "status": "Assessment completed",
         "determination": "Approved",
         "has_conditions": false,
         "phase": "Waiver",
-        "notification_date": "2026-07-21T12:00:00Z",
-        "determination_date": "2026-08-04T12:00:00Z"
+        "notification_date": "2026-07-20T12:00:00Z",
+        "determination_date": "2026-08-03T12:00:00Z"
       }
-    ]
+    ],
+    "other": []
   },
   "merger_count": 1,
   "phase_1_count": 0,

@@ -15,18 +15,26 @@
       "name": "REDCAPE HOTEL GROUP PTY LTD",
       "identifier_type": "ABN",
       "identifier": "43 139 067 244",
+      "canonical": {
+        "id": "redcape-fund",
+        "name": "Redcape Fund"
+      },
       "party_page": {
-        "id": "redcape-hotel-group-pty-ltd",
-        "name": "Redcape Hotel Group Pty Ltd"
+        "id": "redcape-fund",
+        "name": "Redcape Fund"
       }
     },
     {
       "name": "MAHF CUSTODIAN PTY LTD",
       "identifier_type": "ABN",
       "identifier": "96 619 512 060",
+      "canonical": {
+        "id": "redcape-fund",
+        "name": "Redcape Fund"
+      },
       "party_page": {
-        "id": "mahf-custodian-pty-ltd",
-        "name": "Mahf Custodian Pty Ltd"
+        "id": "redcape-fund",
+        "name": "Redcape Fund"
       }
     }
   ],
@@ -212,9 +220,13 @@
           "name": "REDCAPE HOTEL GROUP PTY LTD",
           "identifier_type": "ABN",
           "identifier": "43 139 067 244",
+          "canonical": {
+            "id": "redcape-fund",
+            "name": "Redcape Fund"
+          },
           "party_page": {
-            "id": "redcape-hotel-group-pty-ltd",
-            "name": "Redcape Hotel Group Pty Ltd"
+            "id": "redcape-fund",
+            "name": "Redcape Fund"
           }
         },
         {

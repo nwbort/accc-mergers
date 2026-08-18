@@ -1,28 +1,33 @@
 {
-  "id": "volkswagen-verm-gensverwaltungs-gmbh",
-  "canonical_name": "Volkswagen Verm\u00f6gensverwaltungs GmbH",
+  "id": "crh",
+  "canonical_name": "CRH",
   "members": [
     {
-      "name": "Volkswagen Verm\u00f6gensverwaltungs GmbH",
-      "identifier": "Handelsregister (HRB)  200525",
+      "name": "CRH Americas, Inc.",
+      "identifier": "3443923",
+      "identifier_type": null
+    },
+    {
+      "name": "Neon Merger Sub, Inc.",
+      "identifier": "10667310",
       "identifier_type": null
     }
   ],
   "mergers": {
-    "acquirer": [],
-    "target": [
+    "acquirer": [
       {
-        "merger_id": "WA-40033",
-        "merger_name": "Bain Capital - Everllence",
+        "merger_id": "WA-55030",
+        "merger_name": "CRH - Arcosa",
         "is_waiver": true,
         "status": "Assessment completed",
         "determination": "Approved",
         "has_conditions": false,
         "phase": "Waiver",
-        "notification_date": "2026-07-20T12:00:00Z",
-        "determination_date": "2026-08-03T12:00:00Z"
+        "notification_date": "2026-07-21T12:00:00Z",
+        "determination_date": "2026-08-04T12:00:00Z"
       }
     ],
+    "target": [],
     "other": []
   },
   "merger_count": 1,

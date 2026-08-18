@@ -15,18 +15,26 @@
       "name": "ACR III Edison Holdings LLC",
       "identifier_type": null,
       "identifier": "Identifying number  3247524",
+      "canonical": {
+        "id": "atlas-holdings",
+        "name": "Atlas Holdings"
+      },
       "party_page": {
-        "id": "acr-iii-edison-holdings-llc",
-        "name": "ACR III Edison Holdings LLC"
+        "id": "atlas-holdings",
+        "name": "Atlas Holdings"
       }
     },
     {
       "name": "Ampere Holdings I B.V.",
       "identifier_type": null,
       "identifier": "CCI number  69397775",
+      "canonical": {
+        "id": "kps-capital-partners",
+        "name": "KPS Capital Partners"
+      },
       "party_page": {
-        "id": "ampere-holdings-i-b-v",
-        "name": "Ampere Holdings I B.V."
+        "id": "kps-capital-partners",
+        "name": "KPS Capital Partners"
       }
     }
   ],
@@ -46,18 +54,26 @@
       "name": "Atlas FRM LLC (trading as Atlas Holdings LLC)",
       "identifier_type": null,
       "identifier": "Registration number  2921947",
+      "canonical": {
+        "id": "atlas-holdings",
+        "name": "Atlas Holdings"
+      },
       "party_page": {
-        "id": "atlas-frm-llc-trading-as-atlas-holdings-llc",
-        "name": "Atlas FRM LLC (trading as Atlas Holdings LLC)"
+        "id": "atlas-holdings",
+        "name": "Atlas Holdings"
       }
     },
     {
       "name": "KPS Capital Partners, LP",
       "identifier_type": null,
       "identifier": "CRD  157678 / SEC  80173907",
+      "canonical": {
+        "id": "kps-capital-partners",
+        "name": "KPS Capital Partners"
+      },
       "party_page": {
-        "id": "kps-capital-partners-lp",
-        "name": "KPS Capital Partners, LP"
+        "id": "kps-capital-partners",
+        "name": "KPS Capital Partners"
       }
     }
   ],
@@ -177,9 +193,13 @@
           "name": "KPS Capital Partners, LP",
           "identifier_type": null,
           "identifier": "CRD 157678 / SEC: 80173907",
+          "canonical": {
+            "id": "kps-capital-partners",
+            "name": "KPS Capital Partners"
+          },
           "party_page": {
-            "id": "kps-capital-partners-lp",
-            "name": "KPS Capital Partners, LP"
+            "id": "kps-capital-partners",
+            "name": "KPS Capital Partners"
           }
         },
         {

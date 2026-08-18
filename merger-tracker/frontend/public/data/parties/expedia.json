@@ -1,7 +1,22 @@
 {
-  "id": "trivago-nv",
-  "canonical_name": "trivago NV",
+  "id": "expedia",
+  "canonical_name": "Expedia",
   "members": [
+    {
+      "name": "Expedia Group International Holdings II, LLC",
+      "identifier": "Delaware Secretary of State7172515 I.R.S Employer Identification No.832737894",
+      "identifier_type": null
+    },
+    {
+      "name": "Expedia Group, Inc.",
+      "identifier": "I.R.S. Employer Identification No.202705720",
+      "identifier_type": null
+    },
+    {
+      "name": "Stayz Pty Limited",
+      "identifier": null,
+      "identifier_type": null
+    },
     {
       "name": "trivago NV",
       "identifier": "67222927",
@@ -9,9 +24,7 @@
     }
   ],
   "mergers": {
-    "acquirer": [],
-    "target": [],
-    "other": [
+    "acquirer": [
       {
         "merger_id": "MN-90022",
         "merger_name": "Expedia - CarTrawler",
@@ -23,7 +36,9 @@
         "notification_date": "2026-07-20T12:00:00Z",
         "determination_date": "2026-08-13T12:00:00Z"
       }
-    ]
+    ],
+    "target": [],
+    "other": []
   },
   "merger_count": 1,
   "phase_1_count": 1,

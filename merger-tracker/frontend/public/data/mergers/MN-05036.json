@@ -17,9 +17,13 @@
       "name": "Vertex Pharmaceuticals Incorporated",
       "identifier_type": null,
       "identifier": "EIN  043039129",
+      "canonical": {
+        "id": "vertex-pharmaceuticals",
+        "name": "Vertex Pharmaceuticals"
+      },
       "party_page": {
-        "id": "vertex-pharmaceuticals-incorporated",
-        "name": "Vertex Pharmaceuticals Incorporated"
+        "id": "vertex-pharmaceuticals",
+        "name": "Vertex Pharmaceuticals"
       }
     }
   ],
@@ -39,9 +43,13 @@
       "name": "Clark Merger Sub, Inc",
       "identifier_type": null,
       "identifier": "DE File Number: 10678660",
+      "canonical": {
+        "id": "vertex-pharmaceuticals",
+        "name": "Vertex Pharmaceuticals"
+      },
       "party_page": {
-        "id": "clark-merger-sub-inc",
-        "name": "Clark Merger Sub, Inc"
+        "id": "vertex-pharmaceuticals",
+        "name": "Vertex Pharmaceuticals"
       }
     }
   ],

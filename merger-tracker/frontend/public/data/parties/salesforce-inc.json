@@ -3,6 +3,11 @@
   "canonical_name": "Salesforce, Inc",
   "members": [
     {
+      "name": "Ireland Acquisition Sub Inc.",
+      "identifier": null,
+      "identifier_type": null
+    },
+    {
       "name": "Salesforce Holdings LLC",
       "identifier": "5673469",
       "identifier_type": null
@@ -25,6 +30,17 @@
   ],
   "mergers": {
     "acquirer": [
+      {
+        "merger_id": "MN-40031",
+        "merger_name": "Salesforce - Intercom",
+        "is_waiver": false,
+        "status": "Under assessment",
+        "determination": null,
+        "has_conditions": false,
+        "phase": "Phase 1",
+        "notification_date": "2026-07-28T12:00:00Z",
+        "determination_date": null
+      },
       {
         "merger_id": "MN-95025",
         "merger_name": "Salesforce - Contentful",
@@ -60,19 +76,7 @@
       }
     ],
     "target": [],
-    "other": [
-      {
-        "merger_id": "MN-40031",
-        "merger_name": "Salesforce - Intercom",
-        "is_waiver": false,
-        "status": "Under assessment",
-        "determination": null,
-        "has_conditions": false,
-        "phase": "Phase 1",
-        "notification_date": "2026-07-28T12:00:00Z",
-        "determination_date": null
-      }
-    ]
+    "other": []
   },
   "merger_count": 4,
   "phase_1_count": 3,

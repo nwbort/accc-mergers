@@ -149,6 +149,38 @@
       "count": 3
     },
     {
+      "acquirer_name": "Salesforce, Inc",
+      "canonical_id": "salesforce-inc",
+      "anzsic_code": "700",
+      "anzsic_name": "Computer System Design and Related Services",
+      "merger_ids": [
+        "MN-85007",
+        "MN-95025",
+        "MN-40031"
+      ],
+      "dates": [
+        "2026-02-19T12:00:00Z",
+        "2026-07-13T12:00:00Z",
+        "2026-07-28T12:00:00Z"
+      ],
+      "count": 3
+    },
+    {
+      "acquirer_name": "Metal Manufactures",
+      "canonical_id": "metal-manufactures",
+      "anzsic_code": "349",
+      "anzsic_name": "Other Machinery and Equipment Wholesaling",
+      "merger_ids": [
+        "MN-01115",
+        "MN-65031"
+      ],
+      "dates": [
+        "2026-07-29T12:00:00Z",
+        "2026-08-14T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
       "acquirer_name": "Australian Venue Co",
       "canonical_id": "australian-venue-co",
       "anzsic_code": "440",
@@ -209,8 +241,8 @@
       "count": 2
     },
     {
-      "acquirer_name": "ESTIA INVESTMENTS PTY. LTD.",
-      "canonical_id": null,
+      "acquirer_name": "Estia Health",
+      "canonical_id": "estia-health-holdings-ltd",
       "anzsic_code": "860",
       "anzsic_name": "Residential Care Services",
       "merger_ids": [
@@ -309,21 +341,6 @@
       ],
       "dates": [
         "2026-03-05T12:00:00Z",
-        "2026-07-13T12:00:00Z"
-      ],
-      "count": 2
-    },
-    {
-      "acquirer_name": "Salesforce, Inc",
-      "canonical_id": "salesforce-inc",
-      "anzsic_code": "700",
-      "anzsic_name": "Computer System Design and Related Services",
-      "merger_ids": [
-        "MN-85007",
-        "MN-95025"
-      ],
-      "dates": [
-        "2026-02-19T12:00:00Z",
         "2026-07-13T12:00:00Z"
       ],
       "count": 2
@@ -554,5 +571,5 @@
       "count": 2
     }
   ],
-  "count": 35
+  "count": 36
 }

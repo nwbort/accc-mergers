@@ -14,9 +14,13 @@
       "name": "Ireland Acquisition Sub Inc.",
       "identifier_type": null,
       "identifier": "",
+      "canonical": {
+        "id": "salesforce-inc",
+        "name": "Salesforce, Inc"
+      },
       "party_page": {
-        "id": "ireland-acquisition-sub-inc",
-        "name": "Ireland Acquisition Sub Inc."
+        "id": "salesforce-inc",
+        "name": "Salesforce, Inc"
       }
     }
   ],
@@ -25,9 +29,13 @@
       "name": "Intercom, Inc.",
       "identifier_type": null,
       "identifier": "453543961",
+      "canonical": {
+        "id": "intercom",
+        "name": "Intercom"
+      },
       "party_page": {
-        "id": "intercom-inc",
-        "name": "Intercom, Inc."
+        "id": "intercom",
+        "name": "Intercom"
       }
     }
   ],
@@ -36,9 +44,13 @@
       "name": "Intercom R&D Unlimited Company",
       "identifier_type": null,
       "identifier": "538158",
+      "canonical": {
+        "id": "intercom",
+        "name": "Intercom"
+      },
       "party_page": {
-        "id": "intercom-r-d-unlimited-company",
-        "name": "Intercom R&D Unlimited Company"
+        "id": "intercom",
+        "name": "Intercom"
       }
     },
     {

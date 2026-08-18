@@ -27,9 +27,13 @@
       "name": "Sappi Limited",
       "identifier_type": null,
       "identifier": "Registration number  1936/008963/06",
+      "canonical": {
+        "id": "sappi",
+        "name": "Sappi"
+      },
       "party_page": {
-        "id": "sappi-limited",
-        "name": "Sappi Limited"
+        "id": "sappi",
+        "name": "Sappi"
       }
     }
   ],
@@ -71,9 +75,13 @@
       "name": "SAPPI TRADING AUSTRALIA PTY LIMITED",
       "identifier_type": "ABN",
       "identifier": "17 086 317 071",
+      "canonical": {
+        "id": "sappi",
+        "name": "Sappi"
+      },
       "party_page": {
-        "id": "sappi-trading-australia-pty-limited",
-        "name": "Sappi Trading Australia Pty Limited"
+        "id": "sappi",
+        "name": "Sappi"
       }
     }
   ],

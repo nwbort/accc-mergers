@@ -1,28 +1,33 @@
 {
-  "id": "obayashi-uk-holdings-limited",
-  "canonical_name": "Obayashi UK Holdings Limited",
+  "id": "intercom",
+  "canonical_name": "Intercom",
   "members": [
     {
-      "name": "Obayashi UK Holdings Limited",
-      "identifier": "UK Company No.17229281",
+      "name": "Intercom R&D Unlimited Company",
+      "identifier": "538158",
+      "identifier_type": null
+    },
+    {
+      "name": "Intercom, Inc.",
+      "identifier": "453543961",
       "identifier_type": null
     }
   ],
   "mergers": {
-    "acquirer": [
+    "acquirer": [],
+    "target": [
       {
-        "merger_id": "MN-05031",
-        "merger_name": "Obayashi Corporation \u2013 Multiplex",
+        "merger_id": "MN-40031",
+        "merger_name": "Salesforce - Intercom",
         "is_waiver": false,
         "status": "Under assessment",
         "determination": null,
         "has_conditions": false,
         "phase": "Phase 1",
-        "notification_date": "2026-07-27T12:00:00Z",
+        "notification_date": "2026-07-28T12:00:00Z",
         "determination_date": null
       }
     ],
-    "target": [],
     "other": []
   },
   "merger_count": 1,

@@ -1,28 +1,33 @@
 {
-  "id": "apogee-therapeutics-securities-corporation",
-  "canonical_name": "Apogee Therapeutics Securities Corporation",
+  "id": "sappi",
+  "canonical_name": "Sappi",
   "members": [
     {
-      "name": "Apogee Therapeutics Securities Corporation",
-      "identifier": "EIN  332083626",
+      "name": "SAPPI TRADING AUSTRALIA PTY LIMITED",
+      "identifier": "17 086 317 071",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "Sappi Limited",
+      "identifier": "Registration number  1936/008963/06",
       "identifier_type": null
     }
   ],
   "mergers": {
-    "acquirer": [],
-    "target": [
+    "acquirer": [
       {
-        "merger_id": "MN-90027",
-        "merger_name": "AbbVie - Apogee",
+        "merger_id": "MN-30023",
+        "merger_name": "UPM-Kymmene \u2013 Sappi joint venture",
         "is_waiver": false,
         "status": "Under assessment",
         "determination": null,
         "has_conditions": false,
         "phase": "Phase 1",
-        "notification_date": "2026-07-27T12:00:00Z",
+        "notification_date": "2026-07-16T12:00:00Z",
         "determination_date": null
       }
     ],
+    "target": [],
     "other": []
   },
   "merger_count": 1,

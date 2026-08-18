@@ -1,7 +1,12 @@
 {
-  "id": "kps-capital-partners-lp",
-  "canonical_name": "KPS Capital Partners, LP",
+  "id": "kps-capital-partners",
+  "canonical_name": "KPS Capital Partners",
   "members": [
+    {
+      "name": "Ampere Holdings I B.V.",
+      "identifier": "CCI number  69397775",
+      "identifier_type": null
+    },
     {
       "name": "KPS Capital Partners, LP",
       "identifier": "CRD  157678 / SEC  80173907",
@@ -15,6 +20,17 @@
   ],
   "mergers": {
     "acquirer": [
+      {
+        "merger_id": "WA-60032",
+        "merger_name": "Atlas Holdings and KPS \u2013 shares in joint venture and interest in C&D Technologies",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Waiver",
+        "notification_date": "2026-07-16T12:00:00Z",
+        "determination_date": "2026-08-17T12:00:00Z"
+      },
       {
         "merger_id": "WA-55014",
         "merger_name": "KPS Capital Partners - Jennmar",
@@ -39,19 +55,7 @@
       }
     ],
     "target": [],
-    "other": [
-      {
-        "merger_id": "WA-60032",
-        "merger_name": "Atlas Holdings and KPS \u2013 shares in joint venture and interest in C&D Technologies",
-        "is_waiver": true,
-        "status": "Assessment completed",
-        "determination": "Approved",
-        "has_conditions": false,
-        "phase": "Waiver",
-        "notification_date": "2026-07-16T12:00:00Z",
-        "determination_date": "2026-08-17T12:00:00Z"
-      }
-    ]
+    "other": []
   },
   "merger_count": 3,
   "phase_1_count": 1,

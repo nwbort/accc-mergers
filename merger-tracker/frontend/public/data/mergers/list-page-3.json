@@ -1058,9 +1058,13 @@
           "name": "REDCAPE HOTEL GROUP PTY LTD",
           "identifier_type": "ABN",
           "identifier": "43 139 067 244",
+          "canonical": {
+            "id": "redcape-fund",
+            "name": "Redcape Fund"
+          },
           "party_page": {
-            "id": "redcape-hotel-group-pty-ltd",
-            "name": "Redcape Hotel Group Pty Ltd"
+            "id": "redcape-fund",
+            "name": "Redcape Fund"
           }
         },
         {
@@ -2403,9 +2407,13 @@
           "name": "KPS Capital Partners, LP",
           "identifier_type": null,
           "identifier": "CRD  157678 / SEC  80173907",
+          "canonical": {
+            "id": "kps-capital-partners",
+            "name": "KPS Capital Partners"
+          },
           "party_page": {
-            "id": "kps-capital-partners-lp",
-            "name": "KPS Capital Partners, LP"
+            "id": "kps-capital-partners",
+            "name": "KPS Capital Partners"
           }
         }
       ],
@@ -4272,9 +4280,13 @@
           "name": "KPS Capital Partners, LP",
           "identifier_type": null,
           "identifier": "CRD 157678 / SEC: 80173907",
+          "canonical": {
+            "id": "kps-capital-partners",
+            "name": "KPS Capital Partners"
+          },
           "party_page": {
-            "id": "kps-capital-partners-lp",
-            "name": "KPS Capital Partners, LP"
+            "id": "kps-capital-partners",
+            "name": "KPS Capital Partners"
           }
         },
         {

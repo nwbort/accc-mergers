@@ -1,16 +1,25 @@
 {
-  "id": "apogee-therapeutics-inc",
-  "canonical_name": "Apogee Therapeutics, Inc.",
+  "id": "abbvie",
+  "canonical_name": "AbbVie",
   "members": [
     {
-      "name": "Apogee Therapeutics, Inc.",
-      "identifier": "EIN  934958665",
+      "name": "AbbVie Inc.",
+      "identifier": "DELAWARE FILE NO.  5126809",
+      "identifier_type": null
+    },
+    {
+      "name": "Andor LLC",
+      "identifier": "DELAWARE FILE NO.  10659200",
+      "identifier_type": null
+    },
+    {
+      "name": "Andor Merger Co.",
+      "identifier": "DELAWARE FILE NO.  10659205",
       "identifier_type": null
     }
   ],
   "mergers": {
-    "acquirer": [],
-    "target": [
+    "acquirer": [
       {
         "merger_id": "MN-90027",
         "merger_name": "AbbVie - Apogee",
@@ -23,6 +32,7 @@
         "determination_date": null
       }
     ],
+    "target": [],
     "other": []
   },
   "merger_count": 1,

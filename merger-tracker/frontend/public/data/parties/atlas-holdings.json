@@ -1,7 +1,12 @@
 {
-  "id": "atlas-frm-llc-trading-as-atlas-holdings-llc",
-  "canonical_name": "Atlas FRM LLC (trading as Atlas Holdings LLC)",
+  "id": "atlas-holdings",
+  "canonical_name": "Atlas Holdings",
   "members": [
+    {
+      "name": "ACR III Edison Holdings LLC",
+      "identifier": "Identifying number  3247524",
+      "identifier_type": null
+    },
     {
       "name": "Atlas FRM LLC (trading as Atlas Holdings LLC)",
       "identifier": "Registration number  2921947",
@@ -9,9 +14,7 @@
     }
   ],
   "mergers": {
-    "acquirer": [],
-    "target": [],
-    "other": [
+    "acquirer": [
       {
         "merger_id": "WA-60032",
         "merger_name": "Atlas Holdings and KPS \u2013 shares in joint venture and interest in C&D Technologies",
@@ -23,7 +26,9 @@
         "notification_date": "2026-07-16T12:00:00Z",
         "determination_date": "2026-08-17T12:00:00Z"
       }
-    ]
+    ],
+    "target": [],
+    "other": []
   },
   "merger_count": 1,
   "phase_1_count": 0,
