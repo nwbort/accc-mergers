@@ -1,5 +1,5 @@
 {
-  "_README": "Parties (acquirers / targets / other parties) that are the same real-world entity recorded under more than one name or ABN. Each entry in `groups` is { \"id\": \"<slug>\", \"canonical_name\": \"<display name>\", \"members\": [ { \"name\": \"...\", \"identifier\": \"...\" }, ... ] }. A party on a merger is matched to a group when its ABN matches a member's `identifier` OR its (normalised) name matches a member's `name` \u2014 see scripts/party_matching.py. On the merger detail page each matched party becomes a link to the mergers list filtered by the group's canonical_name. New candidate groups are suggested daily by scripts/detect_related_parties.py via a pull request.",
+  "_README": "Parties (acquirers / targets / other parties) that are the same real-world entity recorded under more than one name or ABN. Each entry in `groups` is { \"id\": \"<slug>\", \"canonical_name\": \"<display name>\", \"members\": [ { \"name\": \"...\", \"identifier\": \"...\" }, ... ] }. A party on a merger is matched to a group when its ABN matches a member's `identifier` OR its (normalised) name matches a member's `name` — see scripts/party_matching.py. On the merger detail page each matched party becomes a link to the mergers list filtered by the group's canonical_name. New candidate groups are suggested daily by scripts/detect_related_parties.py via a pull request.",
   "groups": [
     {
       "id": "coles",
@@ -372,11 +372,11 @@
       "canonical_name": "EQT Fund Management",
       "members": [
         {
-          "name": "EQT Fund Management S.\u00e0 r.l.",
+          "name": "EQT Fund Management S.à r.l.",
           "identifier": "Registration number B167972"
         },
         {
-          "name": "EQT Fund Management S.\u00e0 r.l.",
+          "name": "EQT Fund Management S.à r.l.",
           "identifier": "Luxembourg Company Registration Number  B167972"
         },
         {
@@ -640,7 +640,7 @@
           "identifier": ""
         },
         {
-          "name": "Blackline Safety Middle East Wireless  Equipment Trading \u2013 L.L.C. \u2013 S.P.C.",
+          "name": "Blackline Safety Middle East Wireless  Equipment Trading – L.L.C. – S.P.C.",
           "identifier": ""
         }
       ]
@@ -913,7 +913,7 @@
         },
         {
           "name": "Rocket Software, Inc.",
-          "identifier": "Companies\u2019 Register of Delaware  3506913"
+          "identifier": "Companies’ Register of Delaware  3506913"
         }
       ]
     },
@@ -1101,7 +1101,7 @@
       "members": [
         {
           "name": "Midea Group Co., Ltd.",
-          "identifier": "People\u2019s Republic of China identifying number: 91440606722473344C"
+          "identifier": "People’s Republic of China identifying number: 91440606722473344C"
         },
         {
           "name": "Midea Group Co., Ltd.",
@@ -1690,6 +1690,10 @@
         {
           "name": "Salesforce, Inc.",
           "identifier": "U.S. EIN: 943320693"
+        },
+        {
+          "name": "Ireland Acquisition Sub Inc.",
+          "identifier": ""
         }
       ]
     },
@@ -2040,6 +2044,14 @@
         {
           "name": "Dragos, Inc.",
           "identifier": "Delaware file number  6028773"
+        },
+        {
+          "name": "PHOSPHORUS (AUS) PTY LTD",
+          "identifier": "58 678 218 356"
+        },
+        {
+          "name": "Phosphorus Security LLC",
+          "identifier": "Delaware file number  10549306"
         }
       ]
     },
@@ -2121,7 +2133,7 @@
         },
         {
           "name": "eBay Inc.",
-          "identifier": "I.R.S. Employer Identification No. \u2013 United States  770430924"
+          "identifier": "I.R.S. Employer Identification No. – United States  770430924"
         },
         {
           "name": "eBay Marketplaces GmbH",
@@ -2242,11 +2254,11 @@
           "identifier": "Paris Trade and Companies Register number 632 012 100"
         },
         {
-          "name": "L'Or\u00e9al India Private Limited",
+          "name": "L'Oréal India Private Limited",
           "identifier": ""
         },
         {
-          "name": "L'Or\u00e9al S.A.",
+          "name": "L'Oréal S.A.",
           "identifier": "SIREN  632 012 100"
         }
       ]
@@ -2280,6 +2292,10 @@
         {
           "name": "MMS USA Holdings, Inc.",
           "identifier": "Delaware ID 3497138"
+        },
+        {
+          "name": "Covey Merger Sub, Inc.",
+          "identifier": "Delaware ID 10622331"
         }
       ]
     },
@@ -2714,6 +2730,10 @@
         {
           "name": "MML HOLDINGS LIMITED",
           "identifier": "55 084 402 380"
+        },
+        {
+          "name": "MM SECURITY SUPPLIES PTY LIMITED",
+          "identifier": "14 670 314 913"
         }
       ]
     },
@@ -2896,6 +2916,80 @@
         {
           "name": "Qatar Holding LLC",
           "identifier": "CIK: 0001539025, Qatar Financial Centre no. 00004"
+        }
+      ]
+    },
+    {
+      "id": "intercom",
+      "canonical_name": "Intercom",
+      "members": [
+        {
+          "name": "Intercom, Inc.",
+          "identifier": "453543961"
+        },
+        {
+          "name": "Intercom R&D Unlimited Company",
+          "identifier": "538158"
+        }
+      ]
+    },
+    {
+      "id": "obayashi",
+      "canonical_name": "Obayashi",
+      "members": [
+        {
+          "name": "Obayashi Corporation",
+          "identifier": "86 002 932 756"
+        },
+        {
+          "name": "Obayashi UK Holdings Limited",
+          "identifier": "UK Company No.17229281"
+        }
+      ]
+    },
+    {
+      "id": "abbvie",
+      "canonical_name": "AbbVie",
+      "members": [
+        {
+          "name": "AbbVie Inc.",
+          "identifier": "DELAWARE FILE NO.  5126809"
+        },
+        {
+          "name": "Andor LLC",
+          "identifier": "DELAWARE FILE NO.  10659200"
+        },
+        {
+          "name": "Andor Merger Co.",
+          "identifier": "DELAWARE FILE NO.  10659205"
+        }
+      ]
+    },
+    {
+      "id": "apogee-therapeutics",
+      "canonical_name": "Apogee Therapeutics",
+      "members": [
+        {
+          "name": "Apogee Therapeutics, Inc.",
+          "identifier": "EIN  934958665"
+        },
+        {
+          "name": "Apogee Therapeutics Securities Corporation",
+          "identifier": "EIN  332083626"
+        }
+      ]
+    },
+    {
+      "id": "nojima",
+      "canonical_name": "Nojima",
+      "members": [
+        {
+          "name": "Nojima Corporation",
+          "identifier": "Commercial Registration Number  021001013588"
+        },
+        {
+          "name": "NJM4 Corporation",
+          "identifier": "Commercial Registration Number  010401197785"
         }
       ]
     }
