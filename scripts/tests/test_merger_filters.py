@@ -35,6 +35,8 @@ from merger_filters import (
     is_suspended,
     is_waiver,
     load_mergers,
+    notification_sort_key,
+    sort_by_notification_date,
 )
 
 
@@ -363,6 +365,72 @@ class TestLoadMergers:
         assert DEFAULT_MERGERS_JSON.name == "mergers.json"
         assert DEFAULT_MERGERS_JSON.parent.name == "processed"
         assert DEFAULT_MERGERS_JSON.parent.parent.name == "data"
+
+
+# ---------------------------------------------------------------------------
+# notification_sort_key / sort_by_notification_date
+# ---------------------------------------------------------------------------
+
+
+class TestNotificationSortKey:
+    def test_prefers_effective_date(self):
+        m = {
+            'effective_notification_datetime': '2026-02-01T12:00:00Z',
+            'original_notification_datetime': '2026-01-01T12:00:00Z',
+        }
+        assert notification_sort_key(m) == '2026-02-01T12:00:00Z'
+
+    def test_falls_back_to_original_date(self):
+        m = {'original_notification_datetime': '2026-01-01T12:00:00Z'}
+        assert notification_sort_key(m) == '2026-01-01T12:00:00Z'
+
+    def test_falls_back_to_original_when_effective_is_empty(self):
+        m = {
+            'effective_notification_datetime': '',
+            'original_notification_datetime': '2026-01-01T12:00:00Z',
+        }
+        assert notification_sort_key(m) == '2026-01-01T12:00:00Z'
+
+    def test_missing_both_returns_empty_string(self):
+        assert notification_sort_key({}) == ''
+
+
+class TestSortByNotificationDate:
+    def test_defaults_to_newest_first(self):
+        mergers = [
+            {'merger_id': 'A', 'effective_notification_datetime': '2026-01-01T12:00:00Z'},
+            {'merger_id': 'B', 'effective_notification_datetime': '2026-03-01T12:00:00Z'},
+            {'merger_id': 'C', 'effective_notification_datetime': '2026-02-01T12:00:00Z'},
+        ]
+        result = sort_by_notification_date(mergers)
+        assert [m['merger_id'] for m in result] == ['B', 'C', 'A']
+
+    def test_reverse_false_sorts_oldest_first(self):
+        mergers = [
+            {'merger_id': 'A', 'effective_notification_datetime': '2026-01-01T12:00:00Z'},
+            {'merger_id': 'B', 'effective_notification_datetime': '2026-03-01T12:00:00Z'},
+        ]
+        result = sort_by_notification_date(mergers, reverse=False)
+        assert [m['merger_id'] for m in result] == ['A', 'B']
+
+    def test_uses_original_date_fallback_when_mixed(self):
+        mergers = [
+            {'merger_id': 'A', 'original_notification_datetime': '2026-01-01T12:00:00Z'},
+            {'merger_id': 'B', 'effective_notification_datetime': '2026-02-01T12:00:00Z'},
+        ]
+        result = sort_by_notification_date(mergers)
+        assert [m['merger_id'] for m in result] == ['B', 'A']
+
+    def test_does_not_mutate_input_order(self):
+        mergers = [
+            {'merger_id': 'A', 'effective_notification_datetime': '2026-01-01T12:00:00Z'},
+            {'merger_id': 'B', 'effective_notification_datetime': '2026-03-01T12:00:00Z'},
+        ]
+        sort_by_notification_date(mergers)
+        assert [m['merger_id'] for m in mergers] == ['A', 'B']
+
+    def test_empty_input(self):
+        assert sort_by_notification_date([]) == []
 
 
 # ---------------------------------------------------------------------------
