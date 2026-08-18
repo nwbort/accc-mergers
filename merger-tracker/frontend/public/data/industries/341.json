@@ -30,10 +30,21 @@
       "code": "3419",
       "name": "Other Specialised Industrial Machinery and Equipment Wholesaling",
       "level": "class",
-      "merger_count": 1
+      "merger_count": 2
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-80033",
+      "merger_name": "Jungheinrich Australia - All Lift",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-24T12:00:00Z",
+      "determination_date": "2026-08-18T12:00:00Z"
+    },
     {
       "merger_id": "MN-85006",
       "merger_name": "Tega and Apollo Funds consortium - Molycop",
@@ -46,10 +57,10 @@
       "determination_date": "2026-04-28T12:00:00Z"
     }
   ],
-  "count": 1,
+  "count": 2,
   "phase_1_count": 1,
   "phase_2_count": 0,
-  "waiver_count": 0,
+  "waiver_count": 1,
   "active_count": 0,
   "phase_duration": {
     "average_days": 33.0,
@@ -58,5 +69,11 @@
     "median_business_days": 20,
     "completed_count": 1
   },
-  "waiver_duration": null
+  "waiver_duration": {
+    "average_days": 25.0,
+    "median_days": 25,
+    "average_business_days": 17.0,
+    "median_business_days": 17,
+    "completed_count": 1
+  }
 }

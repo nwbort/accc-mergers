@@ -19,7 +19,7 @@
       "code": "341",
       "name": "Specialised Industrial Machinery and Equipment Wholesaling",
       "level": "group",
-      "merger_count": 1
+      "merger_count": 2
     },
     {
       "code": "349",
@@ -72,6 +72,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-13T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-80033",
+      "merger_name": "Jungheinrich Australia - All Lift",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-24T12:00:00Z",
+      "determination_date": "2026-08-18T12:00:00Z"
     },
     {
       "merger_id": "WA-20032",
@@ -272,10 +283,10 @@
       "determination_date": null
     }
   ],
-  "count": 22,
+  "count": 23,
   "phase_1_count": 14,
   "phase_2_count": 1,
-  "waiver_count": 7,
+  "waiver_count": 8,
   "active_count": 4,
   "phase_duration": {
     "average_days": 35.09090909090909,
@@ -285,10 +296,10 @@
     "completed_count": 11
   },
   "waiver_duration": {
-    "average_days": 19.857142857142858,
-    "median_days": 21,
-    "average_business_days": 13.857142857142858,
-    "median_business_days": 15,
-    "completed_count": 7
+    "average_days": 20.5,
+    "median_days": 22.0,
+    "average_business_days": 14.25,
+    "median_business_days": 15.5,
+    "completed_count": 8
   }
 }

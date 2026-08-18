@@ -1,0 +1,41 @@
+{
+  "id": "jungheinrich-fleet-services-pty-ltd",
+  "canonical_name": "Jungheinrich Fleet Services Pty Ltd",
+  "members": [
+    {
+      "name": "JUNGHEINRICH FLEET SERVICES PTY LTD",
+      "identifier": "90 066 707 784",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [],
+    "other": [
+      {
+        "merger_id": "WA-80033",
+        "merger_name": "Jungheinrich Australia - All Lift",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Waiver",
+        "notification_date": "2026-07-24T12:00:00Z",
+        "determination_date": "2026-08-18T12:00:00Z"
+      }
+    ]
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null,
+  "waiver_duration": {
+    "average_days": 25.0,
+    "median_days": 25,
+    "average_business_days": 17.0,
+    "median_business_days": 17,
+    "completed_count": 1
+  }
+}

@@ -1110,6 +1110,82 @@
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/petalite-%E2%80%93-envu"
     },
     {
+      "merger_id": "WA-80033",
+      "merger_name": "Jungheinrich Australia - All Lift",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-24T12:00:00Z",
+      "determination_publication_date": "2026-08-18T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "JUNGHEINRICH AUSTRALIA HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "28 608 769 642",
+          "party_page": {
+            "id": "jungheinrich-australia-holdings-pty-ltd",
+            "name": "Jungheinrich Australia Holdings Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "KRETCHMER HOLDING CO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "37 634 564 926",
+          "party_page": {
+            "id": "kretchmer-holding-co-pty-ltd",
+            "name": "Kretchmer Holding Co Pty Ltd"
+          }
+        },
+        {
+          "name": "ALL LIFT EQUIPMENT SALES PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "31 632 720 006",
+          "party_page": {
+            "id": "all-lift-equipment-sales-pty-limited",
+            "name": "All Lift Equipment Sales Pty Limited"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "JUNGHEINRICH AUSTRALIA PTY LTD as trustee for The Jungheinrich Australia Trust (ABN 29 117 832 739)",
+          "identifier_type": "ABN",
+          "identifier": "22 008 024 011",
+          "party_page": {
+            "id": "jungheinrich-australia-pty-ltd-as-trustee-for-the-jungheinrich-australia-trust-a",
+            "name": "JUNGHEINRICH AUSTRALIA PTY LTD as trustee for The Jungheinrich Australia Trust (ABN 29 117 832 739)"
+          }
+        },
+        {
+          "name": "JUNGHEINRICH FLEET SERVICES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "90 066 707 784",
+          "party_page": {
+            "id": "jungheinrich-fleet-services-pty-ltd",
+            "name": "Jungheinrich Fleet Services Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2491",
+          "name": "Lifting and Material Handling Equipment Manufacturing"
+        },
+        {
+          "code": "3419",
+          "name": "Other Specialised Industrial Machinery and Equipment Wholesaling"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/jungheinrich-australia-all-lift"
+    },
+    {
       "merger_id": "WA-85040",
       "merger_name": "MA Financial (Redcape Fund) \u2013 Seven hospitality venues in NSW",
       "status": "Assessment completed",
@@ -4639,125 +4715,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/supagas-%E2%80%93-heeson-medical"
-    },
-    {
-      "merger_id": "MN-50035",
-      "merger_name": "Opal HealthCare - Canberra Nursing Home (Lidcombe, NSW)",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-12T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-09-23T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "DPG SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "38 090 007 999",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        },
-        {
-          "name": "DPG SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "38 090 007 999",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        },
-        {
-          "name": "OHCA PROPERTY HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "70 675 807 477",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "CLENDON CARE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "65 001 584 827",
-          "party_page": {
-            "id": "clendon-care-pty-ltd",
-            "name": "Clendon Care Pty Ltd"
-          }
-        },
-        {
-          "name": "CLENDON CARE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "65 001 584 827",
-          "party_page": {
-            "id": "clendon-care-pty-ltd",
-            "name": "Clendon Care Pty Ltd"
-          }
-        },
-        {
-          "name": "Michael Mooney",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "michael-mooney",
-            "name": "Michael Mooney"
-          }
-        },
-        {
-          "name": "Lynne Mooney",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "lynne-mooney",
-            "name": "Lynne Mooney"
-          }
-        },
-        {
-          "name": "Michael Mooney",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "michael-mooney",
-            "name": "Michael Mooney"
-          }
-        },
-        {
-          "name": "Lynne Mooney",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "lynne-mooney",
-            "name": "Lynne Mooney"
-          }
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "8601",
-          "name": "Aged Care Residential Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/opal-healthcare-canberra-nursing-home-lidcombe-nsw"
     }
   ],
   "page": 11,
