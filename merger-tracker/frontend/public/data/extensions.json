@@ -7,11 +7,11 @@
     "total_extension_bd": 280,
     "median_matter_extension_bd": 15.0,
     "longest_single_bd": 30,
-    "phase_2_total": 8,
-    "extended_escalated_to_phase_2": 7,
-    "escalation_rate_given_extension_pct": 36.8,
-    "phase_2_preceded_by_extension_pct": 87.5,
-    "base_phase_2_rate_pct": 3.5,
+    "phase_2_total": 9,
+    "extended_escalated_to_phase_2": 8,
+    "escalation_rate_given_extension_pct": 42.1,
+    "phase_2_preceded_by_extension_pct": 88.9,
+    "base_phase_2_rate_pct": 4.0,
     "statutory_phase_1_bd": 30
   },
   "reasons": [
@@ -422,12 +422,12 @@
     {
       "merger_id": "MN-40017",
       "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
-      "stage": "Phase 1 - initial assessment",
+      "stage": "Phase 2 - detailed assessment",
       "status": "Under assessment",
       "notification_date": "2026-07-01T12:00:00Z",
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
-      "escalated_to_phase_2": false,
+      "phase_1_determination": "Referred to phase 2",
+      "phase_1_determination_date": "2026-08-18T12:00:00Z",
+      "escalated_to_phase_2": true,
       "total_extension_bd": 5,
       "extension_count": 1,
       "extensions": [

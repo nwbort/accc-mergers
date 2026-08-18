@@ -5,9 +5,9 @@
   "merger_id": "MN-40017",
   "effective_notification_datetime": "2026-07-01T12:00:00Z",
   "original_notification_datetime": "2026-07-01T12:00:00Z",
-  "stage": "Phase 1 - initial assessment",
-  "end_of_determination_period": "2026-08-19T12:00:00Z",
-  "page_modified_datetime": "2026-07-21T16:34:31+10:00",
+  "stage": "Phase 2 - detailed assessment",
+  "end_of_determination_period": "2027-01-12T12:00:00Z",
+  "page_modified_datetime": "2026-08-18T14:52:30+10:00",
   "consultation_response_due_date": "2026-07-09T12:00:00Z",
   "acquirers": [
     {
@@ -67,17 +67,44 @@
       "title": "Timeline extended by 5 business days \u2013 following request by parties",
       "display_title": "Timeline extended by 5 business days \u2013 following request by parties",
       "phase": null
+    },
+    {
+      "date": "2026-08-18T12:00:00Z",
+      "title": "Vets Central - Hills Veterinary Centre - Phase 2 Notice",
+      "display_title": "Vets Central - Hills Veterinary Centre - Phase 2 Notice",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Vets%20Central%20-%20Hills%20Veterinary%20Centre%20-%20Phase%202%20Notice.pdf",
+      "url_gh": "/mergers/MN-40017/Vets Central - Hills Veterinary Centre - Phase 2 Notice.pdf",
+      "phase2_notice_matters_to_investigate": [
+        {
+          "heading": "Relevant areas of competition",
+          "items": [
+            "How far pet owners in Blackwood and surrounding areas are willing to travel to purchase General Veterinary Services."
+          ]
+        },
+        {
+          "heading": "Competitive effects in the supply of General Veterinary Services in the local Blackwood area",
+          "items": [
+            "The extent to which other clinics providing General Veterinary Services located north of Hills Veterinary Centre would meaningfully constrain the merged entity in the local Blackwood area.",
+            "The likelihood of timely new entry and expansion that would constrain the merged entity in the supply of General Veterinary Services in the local Blackwood area, including the extent of attachment of senior vets to existing practices and the extent to which reputation influences customers\u2019 choice of veterinary clinic.",
+            "The extent to which the Acquisition and acquisitions put into effect by Vets Central in the three years preceding notification have affected or would affect the competitive constraints faced by Vets Central in the suburbs around Blackwood."
+          ]
+        }
+      ],
+      "phase2_notice_commission_division": "Decision made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Competition and Consumer Act 2010 (Cth)",
+      "phase": "Phase 2"
     }
   ],
   "is_waiver": false,
   "accc_determination": null,
   "has_conditions": false,
-  "phase_1_determination": null,
-  "phase_1_determination_date": null,
+  "phase_1_determination": "Referred to phase 2",
+  "phase_1_determination_date": "2026-08-18T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
+  "end_of_determination_period_derived": true,
+  "phase_2_inferred": true,
   "has_questionnaire": true,
   "related_merger": {
     "merger_id": "WA-85016",
