@@ -13909,8 +13909,6 @@
         "title": "Vets Central - Hills Veterinary Centre - Phase 2 Notice",
         "display_title": "Vets Central - Hills Veterinary Centre - Phase 2 Notice",
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Vets%20Central%20-%20Hills%20Veterinary%20Centre%20-%20Phase%202%20Notice.pdf",
-        "url_gh": "/mergers/MN-40017/Vets Central - Hills Veterinary Centre - Phase 2 Notice.pdf",
-        "status": "live",
         "phase2_notice_matters_to_investigate": [
           {
             "heading": "Relevant areas of competition",
@@ -13927,7 +13925,9 @@
             ]
           }
         ],
-        "phase2_notice_commission_division": "Decision made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Competition and Consumer Act 2010 (Cth)"
+        "phase2_notice_commission_division": "Decision made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Competition and Consumer Act 2010 (Cth)",
+        "url_gh": "/mergers/MN-40017/Vets Central - Hills Veterinary Centre - Phase 2 Notice.pdf",
+        "status": "live"
       }
     ],
     "is_waiver": false
@@ -23927,6 +23927,105 @@
       },
       {
         "date": "2026-08-11T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": false
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/saint-gobain-xypex",
+    "merger_name": "Saint-Gobain - Xypex",
+    "status": "Under assessment",
+    "merger_id": "MN-80035",
+    "effective_notification_datetime": "2026-08-17T12:00:00Z",
+    "original_notification_datetime": "2026-08-17T12:00:00Z",
+    "stage": "Phase 1 - initial assessment",
+    "end_of_determination_period": "2026-09-28T12:00:00Z",
+    "page_modified_datetime": "2026-08-18T16:35:23+10:00",
+    "consultation_response_due_date": "2026-08-25T12:00:00Z",
+    "acquirers": [
+      {
+        "name": "CertainTeed Canada, Inc. (Saint-Gobain)",
+        "identifier_type": null,
+        "identifier": "Canadian Business Number  808787147"
+      },
+      {
+        "name": "GCP AUSTRALIA PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "41 080 660 117"
+      }
+    ],
+    "targets": [
+      {
+        "name": "Xypex Investment Holdings Inc. / Xypex Chemical Corporation",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "TorQuest Capital Fund V,L.P.",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "TorQuest Partners Management Inc.",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "TorQuest Partners Fund V, L.P.",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "TorQuest Partners Fund (U.S.) V, L.P.",
+        "identifier_type": null,
+        "identifier": ""
+      }
+    ],
+    "other_parties": [],
+    "anzsic_codes": [
+      {
+        "code": "1709",
+        "name": "Other Petroleum and Coal Product Manufacturing"
+      },
+      {
+        "code": "1899",
+        "name": "Other Basic Chemical Product Manufacturing n.e.c."
+      },
+      {
+        "code": "2032",
+        "name": "Plaster Product Manufacturing"
+      },
+      {
+        "code": "2090",
+        "name": "Other Non-Metallic Mineral Product Manufacturing"
+      },
+      {
+        "code": "3339",
+        "name": "Other Hardware Goods Wholesaling"
+      },
+      {
+        "code": "4231",
+        "name": "Hardware and Building Supplies Retailing"
+      },
+      {
+        "code": "6240",
+        "name": "Financial Asset Investing"
+      }
+    ],
+    "merger_description": "Saint-Gobain S.A. (Saint-Gobain), through its indirect wholly-owned Canadian subsidiary CertainTeed Canada, Inc. (CertainTeed), proposes to acquire 100% of the shares of Xypex Investment Holdings Inc. (the **Acquisition**).\n\nCertainTeed is a Canada-headquartered manufacturer of building products and an indirect wholly owned subsidiary of Saint-Gobain. In Australia, Saint-Gobain supplies a range of interior and exterior building products through its subsidiary CSR Building Products Pty Ltd and other companies. Saint-Gobain\u2019s subsidiary GCP Australia Pty Ltd (GCP) provides specialty construction chemicals and building materials in Australia across two segments: (a) chemical admixtures, supplied through its \"Chryso\" division; and (b) construction repair and renovation products, including waterproofing membranes, mortars, and other building technologies. GCP supplies its products nationally and operates three manufacturing plants in New South Wales, Queensland and Victoria.\n\nXypex Chemical Corporation (Xypex) is a Canadian manufacturer specialising in concrete waterproofing protection and repair technologies. Xypex operates in Australia through XCC Holdings Pty Ltd and its subsidiaries, Concrete Waterproofing Manufacturing Pty Ltd and National Concrete Solutions Pty Ltd. Xypex supplies (a) waterproofing chemical crystalline admixtures and (b) surface-applied fine mortars and mortar products used for concrete repair, and restoration mortars, using the same crystalline technology. Xypex supplies its products nationally from its manufacturing site in Albury, New South Wales, and maintains warehouses in Brisbane, Sydney, Melbourne and Perth. National Concrete Solutions is a specialist concrete remediation contractor that applies Xypex's products on construction projects and supplies concrete asset management services.",
+    "events": [
+      {
+        "date": "2026-08-18T12:00:00Z",
+        "title": "Questionnaire - MN-80035 - Saint-Gobain/Xypex",
+        "display_title": "Questionnaire - MN-80035 - Saint-Gobain/Xypex",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Xypex%20-%20questionnaire.docx",
+        "url_gh": "/mergers/MN-80035/Xypex - questionnaire.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2026-08-17T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
       }

@@ -9,7 +9,7 @@
       "code": "33",
       "name": "Basic Material Wholesaling",
       "level": "subdivision",
-      "merger_count": 11
+      "merger_count": 12
     },
     {
       "code": "34",
@@ -43,6 +43,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-80035",
+      "merger_name": "Saint-Gobain - Xypex",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-17T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-10027",
       "merger_name": "Endeavour Group \u2013 retail liquor site in Horsham, VIC",
@@ -660,11 +671,11 @@
       "determination_date": null
     }
   ],
-  "count": 56,
-  "phase_1_count": 31,
+  "count": 57,
+  "phase_1_count": 32,
   "phase_2_count": 2,
   "waiver_count": 23,
-  "active_count": 8,
+  "active_count": 9,
   "phase_duration": {
     "average_days": 34.24,
     "median_days": 28,
