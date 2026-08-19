@@ -63,7 +63,8 @@ class TestReturnsValidShape:
             'current': [],
             'completed': [],
             'count': {'current': 0, 'completed': 0},
-            'clearance_rate': {'cleared': 0, 'not_cleared': 0, 'total': 0, 'rate': None},
+            'phase_1_clearance_rate': {'cleared': 0, 'referred': 0, 'total': 0, 'rate': None},
+            'straight_phase_1_clearance_rate': {'cleared': 0, 'referred': 0, 'total': 0, 'rate': None},
             'phase_duration': None,
             'straight_phase_duration': None,
         }
@@ -77,6 +78,8 @@ class TestReturnsValidShape:
             'waiver_id', 'waiver_name', 'waiver_filed_date', 'waiver_declined_date',
             'notification_id', 'notification_name', 'notification_filed_date',
             'notification_status', 'notification_determination', 'notification_determination_date',
+            'notification_phase_1_determination', 'notification_phase_1_end_date',
+            'notification_end_of_determination_period',
         }
 
 
@@ -121,22 +124,98 @@ class TestCurrentVsCompleted:
         assert payload['count'] == {'current': 0, 'completed': 0}
 
 
-class TestClearanceRate:
-    def test_no_completed_pairs(self):
+class TestPhase1ClearanceRate:
+    def test_no_concluded_phase_1_reviews(self):
         payload = refiled.generate([_waiver(), _current_notification()])
-        assert payload['clearance_rate'] == {'cleared': 0, 'not_cleared': 0, 'total': 0, 'rate': None}
+        assert payload['phase_1_clearance_rate'] == {
+            'cleared': 0, 'referred': 0, 'total': 0, 'rate': None,
+        }
 
-    def test_mixed_outcomes(self):
+    def test_referral_counts_against_the_rate_before_its_determination(self):
+        # The Phase 1 outcome is what the rate measures, so a matter sitting in
+        # Phase 2 counts the moment it is referred rather than waiting months
+        # for the Phase 2 determination.
+        cleared = _completed_notification(merger_id='MN-0001', waiver_id='WA-0001')
+        cleared['phase_1_determination'] = 'Approved'
+        cleared['phase_1_determination_date'] = '2025-04-01T09:00:00Z'
+        referred = _current_notification(merger_id='MN-0002', waiver_id='WA-0002')
+        referred['phase_1_determination'] = 'Referred to phase 2'
+        referred['phase_1_determination_date'] = '2025-03-01T09:00:00Z'
         mergers = [
             _waiver(merger_id='WA-0001', notification_id='MN-0001'),
-            _completed_notification(merger_id='MN-0001', waiver_id='WA-0001', determination='Approved'),
+            cleared,
             _waiver(merger_id='WA-0002', notification_id='MN-0002'),
-            _completed_notification(merger_id='MN-0002', waiver_id='WA-0002', determination='Not opposed'),
-            _waiver(merger_id='WA-0003', notification_id='MN-0003'),
-            _completed_notification(merger_id='MN-0003', waiver_id='WA-0003', determination='Declined'),
+            referred,
         ]
         payload = refiled.generate(mergers)
-        assert payload['clearance_rate'] == {'cleared': 2, 'not_cleared': 1, 'total': 3, 'rate': round(2 / 3, 3)}
+        assert payload['phase_1_clearance_rate'] == {
+            'cleared': 1, 'referred': 1, 'total': 2, 'rate': 0.5,
+        }
+
+    def test_open_phase_1_reviews_are_excluded(self):
+        # No Phase 1 outcome yet: counts towards neither side of the rate.
+        cleared = _completed_notification(merger_id='MN-0001', waiver_id='WA-0001')
+        cleared['phase_1_determination'] = 'Approved'
+        cleared['phase_1_determination_date'] = '2025-04-01T09:00:00Z'
+        mergers = [
+            _waiver(merger_id='WA-0001', notification_id='MN-0001'),
+            cleared,
+            _waiver(merger_id='WA-0002', notification_id='MN-0002'),
+            _current_notification(merger_id='MN-0002', waiver_id='WA-0002'),
+        ]
+        payload = refiled.generate(mergers)
+        assert payload['phase_1_clearance_rate'] == {
+            'cleared': 1, 'referred': 0, 'total': 1, 'rate': 1.0,
+        }
+
+    def test_straight_baseline_covers_notifications_that_were_never_waivers(self):
+        refiled_notification = _completed_notification(merger_id='MN-0002', waiver_id='WA-0002')
+        refiled_notification['phase_1_determination'] = 'Referred to phase 2'
+        refiled_notification['phase_1_determination_date'] = '2025-03-15T09:00:00Z'
+        straight_notification = {
+            'merger_id': 'MN-9000',
+            'merger_name': 'Straight notification',
+            'status': 'Assessment completed',
+            'accc_determination': 'Approved',
+            'effective_notification_datetime': '2025-01-01T09:00:00Z',
+            'phase_1_determination': 'Approved',
+            'phase_1_determination_date': '2025-01-20T09:00:00Z',
+            'determination_publication_date': '2025-01-20T09:00:00Z',
+        }
+        mergers = [
+            _waiver(merger_id='WA-0002', notification_id='MN-0002'),
+            refiled_notification,
+            straight_notification,
+        ]
+        payload = refiled.generate(mergers)
+        assert payload['phase_1_clearance_rate'] == {
+            'cleared': 0, 'referred': 1, 'total': 1, 'rate': 0.0,
+        }
+        assert payload['straight_phase_1_clearance_rate'] == {
+            'cleared': 1, 'referred': 0, 'total': 1, 'rate': 1.0,
+        }
+
+
+class TestPhase2Milestones:
+    def test_referred_notification_carries_its_phase_2_milestones(self):
+        referred = _current_notification(merger_id='MN-0005', waiver_id='WA-0005')
+        referred['phase_1_determination'] = 'Referred to phase 2'
+        referred['phase_1_determination_date'] = '2025-03-01T09:00:00Z'
+        referred['end_of_determination_period'] = '2025-09-01T09:00:00Z'
+        mergers = [
+            _waiver(merger_id='WA-0005', notification_id='MN-0005'),
+            referred,
+        ]
+        entry = refiled.generate(mergers)['current'][0]
+        assert entry['notification_phase_1_determination'] == 'Referred to phase 2'
+        assert entry['notification_phase_1_end_date'] == '2025-03-01T09:00:00Z'
+        assert entry['notification_end_of_determination_period'] == '2025-09-01T09:00:00Z'
+
+    def test_notification_still_in_phase_1_has_no_phase_1_outcome(self):
+        mergers = [_waiver(), _current_notification()]
+        entry = refiled.generate(mergers)['current'][0]
+        assert entry['notification_phase_1_determination'] is None
+        assert entry['notification_phase_1_end_date'] is None
 
 
 class TestPhaseDuration:
