@@ -186,7 +186,7 @@ describe('MergerTimeline', () => {
     expect(screen.getByText(/originally 01 Apr 2026/i)).toBeInTheDocument();
   });
 
-  describe('expected determination tick', () => {
+  describe('expected determination band', () => {
     // Notified 18 May 2026, 30-BD statutory deadline 1 Jul 2026, "today" is
     // 1 Jun 2026. 15 business days from 18 May lands on 10 Jun 2026 (1 and 8
     // June are ACT public holidays) — still ahead of today, so the forecast
@@ -197,7 +197,7 @@ describe('MergerTimeline', () => {
       status: 'Under assessment',
     };
 
-    it('marks the expected determination date while it is still ahead', () => {
+    it('shades the expected determination window while it is still ahead', () => {
       render(
         <MergerTimeline
           merger={{
@@ -212,10 +212,34 @@ describe('MergerTimeline', () => {
         />
       );
 
-      const tick = screen.getByLabelText(/Expected determination/);
-      expect(tick).toHaveAttribute('title', expect.stringContaining('10 Jun 2026'));
-      expect(tick.getAttribute('title')).toContain('15-17 business days');
-      expect(tick.getAttribute('title')).toContain('9 comparable reviews');
+      const band = screen.getByLabelText(/Expected determination/);
+      expect(band).toHaveAttribute('title', expect.stringContaining('10 Jun 2026'));
+      expect(band.getAttribute('title')).toContain('15-17 business days');
+      expect(band.getAttribute('title')).toContain('9 comparable reviews');
+      // Shaded across a range, not pinned to a single point.
+      expect(parseFloat(band.style.width)).toBeGreaterThan(0);
+      expect(screen.getByText('Expected determination')).toBeInTheDocument();
+    });
+
+    it('holds the left edge at today so the band is never in the past', () => {
+      render(
+        <MergerTimeline
+          merger={{
+            ...running,
+            // 5-20 BDs: the bottom of the range is already behind "today".
+            phase_1_estimate: {
+              expected_business_days: 18,
+              range_business_days: [5, 20],
+              basis: 'global',
+              sample_size: 178,
+            },
+          }}
+        />
+      );
+
+      const band = screen.getByLabelText(/Expected determination/);
+      // Today (1 Jun) sits 14/44 calendar days along 18 May -> 1 Jul.
+      expect(parseFloat(band.style.left)).toBeCloseTo((14 / 44) * 100, 1);
     });
 
     it('describes a global-basis estimate by the whole-of-market pool', () => {
@@ -233,12 +257,12 @@ describe('MergerTimeline', () => {
         />
       );
 
-      const tick = screen.getByLabelText(/Expected determination/);
-      expect(tick.getAttribute('title')).toContain('median of all 178 completed phase 1 reviews');
-      expect(tick.getAttribute('title')).toContain('15 business days');
+      const band = screen.getByLabelText(/Expected determination/);
+      expect(band.getAttribute('title')).toContain('median of all 178 completed phase 1 reviews');
+      expect(band.getAttribute('title')).toContain('15 business days');
     });
 
-    it('drops the tick once the expected date has passed', () => {
+    it('drops the band once the expected date has passed', () => {
       render(
         <MergerTimeline
           merger={{
@@ -252,7 +276,7 @@ describe('MergerTimeline', () => {
       expect(screen.queryByLabelText(/Expected determination/)).not.toBeInTheDocument();
     });
 
-    it('drops the tick once phase 1 has actually concluded', () => {
+    it('drops the band once phase 1 has actually concluded', () => {
       render(
         <MergerTimeline
           merger={{
@@ -268,7 +292,7 @@ describe('MergerTimeline', () => {
       expect(screen.queryByLabelText(/Expected determination/)).not.toBeInTheDocument();
     });
 
-    it('drops the tick when the estimate runs past the statutory deadline', () => {
+    it('drops the band when the estimate runs past the statutory deadline', () => {
       render(
         <MergerTimeline
           merger={{
@@ -285,6 +309,59 @@ describe('MergerTimeline', () => {
       render(<MergerTimeline merger={running} />);
 
       expect(screen.queryByLabelText(/Expected determination/)).not.toBeInTheDocument();
+      expect(screen.queryByText('Expected determination')).not.toBeInTheDocument();
+    });
+
+    it('drops its label rather than colliding with the "Today" label', () => {
+      // A narrow track: the two fixed-width label boxes cannot both fit, so the
+      // forecast label gives way to the actual state of the matter.
+      vi.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockReturnValue({
+        width: 200, height: 96, top: 0, left: 0, right: 200, bottom: 96, x: 0, y: 0,
+        toJSON: () => ({}),
+      });
+
+      render(
+        <MergerTimeline
+          merger={{
+            ...running,
+            phase_1_estimate: {
+              expected_business_days: 15,
+              range_business_days: [15, 17],
+              basis: 'global',
+              sample_size: 178,
+            },
+          }}
+        />
+      );
+
+      // The band itself stays — only its label stands down.
+      expect(screen.getByLabelText(/Expected determination/)).toBeInTheDocument();
+      expect(screen.queryByText('Expected determination')).not.toBeInTheDocument();
+      expect(screen.getByText('Today')).toBeInTheDocument();
+    });
+
+    it('keeps its label when the track is wide enough to clear "Today"', () => {
+      vi.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockReturnValue({
+        width: 1400, height: 96, top: 0, left: 0, right: 1400, bottom: 96, x: 0, y: 0,
+        toJSON: () => ({}),
+      });
+
+      render(
+        <MergerTimeline
+          merger={{
+            ...running,
+            phase_1_estimate: {
+              expected_business_days: 25,
+              range_business_days: [24, 26],
+              basis: 'global',
+              sample_size: 178,
+            },
+          }}
+        />
+      );
+
+      expect(screen.getByText('Expected determination')).toBeInTheDocument();
+      expect(screen.getByText('Today')).toBeInTheDocument();
     });
   });
 });

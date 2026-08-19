@@ -200,7 +200,7 @@ describe('Analysis open caseload', () => {
     renderAnalysis();
 
     await waitFor(() => {
-      expect(screen.getByText('Open caseload')).toBeInTheDocument();
+      expect(screen.getByText(/Open caseload . notifications/)).toBeInTheDocument();
     });
 
     const openNow = screen.getByText('Open now').parentElement;
@@ -212,35 +212,40 @@ describe('Analysis open caseload', () => {
     expect(within(change).getByText('since Jun 2026')).toBeInTheDocument();
   });
 
-  it('flags that the final point is a mid-month reading', async () => {
-    mockAnalysis(caseloadFixture);
-    renderAnalysis();
-
-    await waitFor(() => {
-      expect(screen.getByText('Open caseload')).toBeInTheDocument();
-    });
-
-    expect(
-      screen.getByText(/final point is a reading as at 19 Aug 2026, not a completed month/)
-    ).toBeInTheDocument();
-  });
-
-  it('omits the mid-month caveat when the series ends on a completed month', async () => {
+  it('compares against six months back once the series is long enough', async () => {
     mockAnalysis({
       ...analysisFixture,
       open_caseload: {
-        labels: ['2026-06', '2026-07'],
-        notifications: [41, 46],
+        labels: [
+          '2026-01', '2026-02', '2026-03', '2026-04', '2026-05',
+          '2026-06', '2026-07', '2026-08',
+        ],
+        notifications: [11, 22, 25, 32, 42, 41, 46, 52],
         as_at: '2026-08-19',
       },
     });
     renderAnalysis();
 
     await waitFor(() => {
-      expect(screen.getByText('Open caseload')).toBeInTheDocument();
+      expect(screen.getByText(/Open caseload . notifications/)).toBeInTheDocument();
     });
 
-    expect(screen.queryByText(/not a completed month/)).not.toBeInTheDocument();
+    // Six months back from Aug 2026 is Feb 2026, at 22 open.
+    const change = screen.getByText('Change').parentElement;
+    expect(within(change).getByText('+30')).toBeInTheDocument();
+    expect(within(change).getByText('since Feb 2026')).toBeInTheDocument();
+  });
+
+  it('falls back to the start of the series when less than six months exist', async () => {
+    mockAnalysis(caseloadFixture);
+    renderAnalysis();
+
+    await waitFor(() => {
+      expect(screen.getByText(/Open caseload . notifications/)).toBeInTheDocument();
+    });
+
+    const change = screen.getByText('Change').parentElement;
+    expect(within(change).getByText('since Jun 2026')).toBeInTheDocument();
   });
 
   it('renders the rest of the page when the payload predates the caseload series', async () => {
@@ -252,6 +257,6 @@ describe('Analysis open caseload', () => {
       expect(screen.getByText('Monthly notification volume')).toBeInTheDocument();
     });
 
-    expect(screen.queryByText('Open caseload')).not.toBeInTheDocument();
+    expect(screen.queryByText(/Open caseload/)).not.toBeInTheDocument();
   });
 });

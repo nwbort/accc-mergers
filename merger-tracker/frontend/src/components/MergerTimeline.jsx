@@ -1,3 +1,4 @@
+import { useLayoutEffect, useRef, useState } from 'react';
 import { isValid } from 'date-fns';
 import {
   formatDateMedium,
@@ -34,6 +35,29 @@ const axisPct = (date, start, end) =>
 const MID_BOX = '7.5rem';
 const MID_HALF = '3.75rem'; // half of MID_BOX
 const MID_EDGE_ALIGN = 5; // within this % of an end, align text to that end
+
+// Pixel widths of the two label boxes that can compete for the same stretch of
+// track, used to decide whether they'd collide. These mirror MID_BOX and
+// EXPECTED_BOX below at a 16px root font size; they only drive the
+// hide-on-overlap check, so a non-default root size costs a little precision
+// there and nothing else.
+const MID_BOX_PX = 120;
+const EXPECTED_BOX = '9rem';
+const EXPECTED_BOX_PX = 144;
+// Clear space the two labels must keep between them to count as not colliding.
+const LABEL_GUTTER_PX = 8;
+
+// Narrowest the prediction band may be drawn. A p25-p75 band can be a single
+// business day wide (or zero, when there's no band at all), which would
+// otherwise render as an invisible sliver.
+const MIN_BAND_PX = 4;
+
+// Centre of a fixed-width label box, in px along the track, clamped to keep the
+// box inside the track exactly as the CSS clamp() on midStyle does.
+const clampedLabelCentre = (pct, boxPx, trackPx) => {
+  const half = Math.min(boxPx / 2, trackPx / 2);
+  return Math.min(Math.max((pct / 100) * trackPx, half), trackPx - half);
+};
 
 // Shown when we can't draw a proportional axis: a suspended assessment with no
 // effective notification, or a pending waiver/notification with no end date yet.
@@ -79,6 +103,28 @@ function MergerTimelineFallback({ merger, startStr }) {
  * a "today" marker and progress fill while the assessment is still running.
  */
 function MergerTimeline({ merger }) {
+  // Measured so the prediction label can stand down when it would collide with
+  // the "Today" label: both are fixed-width boxes on a fluid track, so whether
+  // they overlap depends on the rendered width and can't be decided in
+  // percentages alone. Declared before any early return so the hook order
+  // holds for the fallback view too. Width stays 0 where ResizeObserver and
+  // layout are unavailable, which reads as "can't tell" and shows the label.
+  const trackRef = useRef(null);
+  const [trackWidth, setTrackWidth] = useState(0);
+
+  useLayoutEffect(() => {
+    const el = trackRef.current;
+    if (!el) return undefined;
+
+    const measure = () => setTrackWidth(el.getBoundingClientRect().width);
+    measure();
+
+    if (typeof ResizeObserver === 'undefined') return undefined;
+    const observer = new ResizeObserver(measure);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   const startStr = merger.effective_notification_datetime || merger.original_notification_datetime;
   const isCeased = merger.status === MERGER_STATUS.ASSESSMENT_CEASED;
   // For ceased mergers the cessation date stands in for the determination date.
@@ -149,25 +195,47 @@ function MergerTimeline({ merger }) {
     }
   }
 
-  // Expected-determination tick: the at-filing estimate of how long this
+  // Expected-determination band: the at-filing estimate of how long this
   // matter's phase 1 will run (frozen per merger by the pipeline), converted
-  // back to a date and drawn on the stretch of track still ahead of today.
-  // It's a forecast, so it only earns its place while it can still come true —
-  // once the expected date passes, or phase 1 concludes, the tick disappears
-  // rather than sitting in the past contradicting the real outcome.
+  // back to dates and shaded across its p25-p75 range. It's a forecast, so it
+  // only earns its place while it can still come true — once the expected date
+  // passes, or phase 1 concludes, the band disappears rather than sitting in
+  // the past contradicting the real outcome. The left edge is held at today,
+  // so the shading always reads as "the window still ahead in which we expect
+  // the determination", narrowing as the matter runs on.
   const estimate = merger.phase_1_estimate;
-  let expectedPct = null;
+  let expectedLeftPct = null;
+  let expectedWidthPct = null;
+  let expectedCentrePct = null;
   let expectedTitle = null;
   if (
     estimate?.expected_business_days != null
     && !isComplete
     && !merger.phase_1_determination_date
   ) {
+    const today = australianToday();
     const expected = addBusinessDays(start, estimate.expected_business_days);
-    if (expected && isValid(expected) && expected >= australianToday() && expected < end) {
-      expectedPct = axisPct(expected, start, end);
 
+    if (expected && isValid(expected) && expected >= today && expected < end) {
       const [low, high] = estimate.range_business_days || [];
+      const bandStart = addBusinessDays(start, low ?? estimate.expected_business_days);
+      const bandEnd = addBusinessDays(start, high ?? estimate.expected_business_days);
+
+      // Fall back to the point estimate if either edge failed to resolve, so a
+      // malformed range degrades to a marker rather than dropping the forecast.
+      const left = Math.max(
+        axisPct(bandStart && isValid(bandStart) ? bandStart : expected, start, end),
+        axisPct(today, start, end)
+      );
+      const right = Math.min(
+        axisPct(bandEnd && isValid(bandEnd) ? bandEnd : expected, start, end),
+        100
+      );
+
+      expectedLeftPct = left;
+      expectedWidthPct = Math.max(right - left, 0);
+      expectedCentrePct = left + expectedWidthPct / 2;
+
       const band = low != null && high != null && low !== high
         ? `${low}-${high} business days`
         : `${estimate.expected_business_days} business days`;
@@ -218,6 +286,29 @@ function MergerTimeline({ merger }) {
     textAlign: midPct < MID_EDGE_ALIGN ? 'left' : midPct > 100 - MID_EDGE_ALIGN ? 'right' : 'center',
   };
 
+  // The prediction label stands down whenever it would collide with the "Today"
+  // label — the actual state of the matter outranks a forecast about it. Both
+  // are fixed-width boxes clamped inside the track, so the test is done in
+  // measured pixels; an unmeasured track (width 0) can't show a collision, so
+  // the label shows.
+  let showExpectedLabel = expectedCentrePct !== null;
+  if (showExpectedLabel && midPct !== null && trackWidth > 0) {
+    const midCentre = clampedLabelCentre(midPct, MID_BOX_PX, trackWidth);
+    const expectedCentre = clampedLabelCentre(expectedCentrePct, EXPECTED_BOX_PX, trackWidth);
+    const clearance = (MID_BOX_PX + EXPECTED_BOX_PX) / 2 + LABEL_GUTTER_PX;
+    if (Math.abs(midCentre - expectedCentre) < clearance) {
+      showExpectedLabel = false;
+    }
+  }
+
+  const expectedStyle = expectedCentrePct === null ? null : {
+    width: EXPECTED_BOX,
+    maxWidth: '100%',
+    left: `clamp(${EXPECTED_BOX_PX / 2}px, ${expectedCentrePct}%, calc(100% - ${EXPECTED_BOX_PX / 2}px))`,
+    transform: 'translateX(-50%)',
+    textAlign: 'center',
+  };
+
   const durationStr = duration !== null && businessDuration !== null
     ? `${duration} cal / ${businessDuration} bus. days`
     : null;
@@ -259,7 +350,7 @@ function MergerTimeline({ merger }) {
       </div>
 
       {/* Track region — the mid marker's label and value live inside it */}
-      <div className="relative flex-1 min-w-0 h-24">
+      <div ref={trackRef} className="relative flex-1 min-w-0 h-24">
         {/* Mid marker label, above the line */}
         {midPct !== null && (
           <span
@@ -269,6 +360,17 @@ function MergerTimeline({ merger }) {
             style={midStyle}
           >
             {midLabel}
+          </span>
+        )}
+
+        {/* Expected-determination label. Suppressed when it would collide with
+            the "Today" label above. */}
+        {showExpectedLabel && (
+          <span
+            className={`${aboveLine} text-[10px] font-semibold text-phase-1-dark uppercase tracking-wider leading-tight`}
+            style={expectedStyle}
+          >
+            Expected determination
           </span>
         )}
 
@@ -290,13 +392,18 @@ function MergerTimeline({ merger }) {
             />
           )}
 
-          {/* Expected determination tick — a forecast, so it's drawn as a
-              slim mark rather than a dot, keeping actual events (which are
-              dots) visually distinct from a prediction. */}
-          {expectedPct !== null && (
+          {/* Expected-determination band — a forecast, so it's shaded rather
+              than marked with a dot, keeping actual events (which are dots)
+              visually distinct from a prediction. Carries the phase 1 colour
+              the rest of the site uses for that stage. */}
+          {expectedLeftPct !== null && (
             <span
-              className="absolute top-1/2 h-4 w-[3px] rounded-full bg-accent cursor-help"
-              style={{ left: `${expectedPct}%`, transform: 'translate(-50%, -50%)' }}
+              className="absolute top-1/2 -translate-y-1/2 h-3 rounded-full bg-phase-1/50 cursor-help"
+              style={{
+                left: `${expectedLeftPct}%`,
+                width: `${expectedWidthPct}%`,
+                minWidth: `${MIN_BAND_PX}px`,
+              }}
               title={expectedTitle}
               aria-label={expectedTitle}
             />

@@ -357,10 +357,10 @@ function Analysis() {
     caseloadLatest = caseload.notifications[lastIndex];
     caseloadAsAtLabel = caseload.as_at ? formatDateMedium(caseload.as_at) : null;
 
-    // Year-on-year movement rather than a peak: the caseload has only ever
+    // Six-month movement rather than a peak: the caseload has only ever
     // grown, so a peak stat would just restate the latest figure. Falls back
-    // to the start of the series while less than a year of it exists.
-    const compareIndex = Math.max(0, lastIndex - 12);
+    // to the start of the series while less than six months of it exists.
+    const compareIndex = Math.max(0, lastIndex - 6);
     if (compareIndex !== lastIndex) {
       caseloadDelta = caseloadLatest - caseload.notifications[compareIndex];
       caseloadDeltaFrom = formatMonthLabel(caseload.labels[compareIndex]);
@@ -626,11 +626,11 @@ function Analysis() {
           <section className="mb-8">
             <div className={`${CARD} overflow-hidden`}>
               <div className="px-6 py-5 border-b border-gray-100">
-                <h2 className="text-base font-semibold text-gray-900">Open caseload</h2>
+                <h2 className="text-base font-semibold text-gray-900">
+                  Open caseload &ndash; notifications
+                </h2>
                 <p className="text-sm text-gray-500 mt-0.5">
-                  Notifications still before the ACCC at each month end &mdash; filed, but not yet
-                  determined. The volume chart above counts matters arriving; this counts the ones
-                  that have not yet left.
+                  Notifications still before the ACCC at each month end
                 </p>
               </div>
               <div className="p-6">
@@ -657,15 +657,6 @@ function Analysis() {
                 <div className="h-72">
                   <Line data={caseloadData} options={caseloadOptions} />
                 </div>
-                <p className="text-xs text-gray-500 mt-3">
-                  Notifications only. The register publishes a waiver application once it has been
-                  decided, so pending waivers can&apos;t be counted and are left out rather than
-                  shown as an empty queue. A matter referred to phase 2 stays in the caseload until
-                  its final determination.
-                  {caseloadPartialLast && caseloadAsAtLabel
-                    ? ` The final point is a reading as at ${caseloadAsAtLabel}, not a completed month.`
-                    : ''}
-                </p>
               </div>
             </div>
           </section>
