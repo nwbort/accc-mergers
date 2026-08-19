@@ -63,7 +63,7 @@ merger-tracker/frontend/src/
 │   ├── CollapsibleCard.jsx, CardCollapseGrid.jsx, ShowMoreDivider.jsx
 │   ├── UpcomingEventsTimeline.jsx, RecentDeterminationsCards.jsx, RecentMergersCards.jsx
 │   ├── MergerTimeline.jsx, Phase2Timeline.jsx, Phase2NoticeMattersSection.jsx
-│   ├── BusinessDayProgress.jsx, PhaseDurationComparison.jsx
+│   ├── BusinessDayProgress.jsx, PhaseDurationComparison.jsx, PreNotificationEstimate.jsx
 │   ├── DeterminationExplanationSection.jsx, QuestionnaireSection.jsx
 │   ├── IndustryTreemap.jsx, IndustryMergerGroups.jsx
 │   ├── NotificationPanel.jsx, BellIcon.jsx
@@ -75,7 +75,7 @@ merger-tracker/frontend/src/
 ├── hooks/                # useDebounce.js, useFetchData.js, useKeyboardShortcuts.js
 ├── utils/                # dates.js, dataCache.js, lastVisit.js, classNames.js, searchIndex.js,
 │                         #   businessDayProgress.js, fetchAllMergers.js, formatMedian.js,
-│                         #   industryGroups.js, slug.js
+│                         #   industryGroups.js, slug.js, preNotification.js
 └── data/                 # ACT public holidays JSON
                           #   (act-public-holidays.json — source of truth for both the Python
                           #   pipeline and the frontend; authoritative list published at
