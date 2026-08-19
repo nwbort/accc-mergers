@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import { formatDateLong } from '../utils/dates';
 import {
   getPreNotificationEstimate,
@@ -32,6 +33,18 @@ function PreNotificationEstimate({ merger }) {
       </div>
       <p className="flex-1 min-w-0 text-sm font-medium text-gray-900">
         Our market intelligence suggests that {describe(estimate)}
+        {' '}
+        {/* Kept deliberately quiet — an invitation for the handful of readers
+            who know better, not a call to action for everyone else. */}
+        <span className="text-xs font-normal text-gray-400 whitespace-nowrap">
+          Not quite right?{' '}
+          <Link
+            to="/feedback"
+            className="underline decoration-dotted underline-offset-2 hover:text-primary transition-colors"
+          >
+            Let us know
+          </Link>
+        </span>
       </p>
     </div>
   );
