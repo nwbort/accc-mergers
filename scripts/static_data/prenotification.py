@@ -69,7 +69,9 @@ with a tail reaching 34 days.
 
 Each notification therefore ends up with three numbers at three standards of
 proof — a proven floor (``min_days``), a best guess (``estimated_days``) and a
-deliberately generous ceiling (``max_days``). See :func:`compute_estimate`.
+deliberately generous ceiling (``max_days``) — each also given as the date the
+ID is reckoned to have been issued, which is where pre-notification started.
+See :func:`compute_estimate`.
 
 Unlike :mod:`static_data.phase1_estimate`, these estimates are **not** frozen.
 A bound is only as tight as the cases sitting above and below it in the
@@ -229,6 +231,11 @@ def compute_estimate(
         anchor is given the most lodgement delay any waiver is known to have
         taken. Deliberately generous rather than central.
 
+    Each is also returned as the date pre-notification is reckoned to have
+    started — ``id_issued_estimated`` for the estimate, and the dates the
+    bounds were already carrying, ``id_issued_before`` for the floor and
+    ``id_issued_after`` for the ceiling.
+
     ``None`` when the counter says nothing about this case — it sits at the top
     of its group with nothing above it and no waiver below it.
     """
@@ -267,10 +274,15 @@ def compute_estimate(
         estimated_days = max_days
         basis = "upper-bound-only"
 
+    # The same estimate as a date: the day pre-notification is reckoned to have
+    # started, derived from ``estimated_days`` so the two can never disagree.
+    id_issued_estimated = filed - timedelta(days=estimated_days)
+
     return {
         "estimated_days": estimated_days,
         "min_days": min_days,
         "max_days": max_days,
+        "id_issued_estimated": id_issued_estimated.isoformat(),
         "id_issued_before": issued_before.isoformat() if issued_before else None,
         "id_issued_after": issued_after.isoformat() if issued_after else None,
         "min_days_witness": upper_witness[1] if upper_witness else None,

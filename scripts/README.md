@@ -71,7 +71,8 @@ scrape.sh ──► extract_mergers.py ──► generate_static_data.py ──�
   `phase1_estimate.py` (`phase_1_estimate`, frozen at filing time) and
   `prenotification.py` (`pre_notification`, recomputed each run — how long a
   notification sat in pre-notification, read off the ACCC's merger ID counter,
-  as a proven floor, a best estimate and a generous ceiling).
+  as a proven floor, a best estimate and a generous ceiling, each in days and
+  as the date pre-notification started).
 
 ## Requirements
 
