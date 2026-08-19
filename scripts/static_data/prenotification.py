@@ -96,7 +96,7 @@ WAIVER_LODGEMENT_LAG_DAYS = 0
 WAIVER_LODGEMENT_LAG_MAX_DAYS = 34
 
 # Bump when the method changes so stored values are recognisable.
-METHOD_VERSION = 2
+METHOD_VERSION = 1
 
 # MN-01016 -> kind "MN", group "01", sequence 16.
 _ID_PATTERN = re.compile(r"^(?P<kind>[A-Z]{2})-(?P<group>\d{2})(?P<seq>\d{3})$")
