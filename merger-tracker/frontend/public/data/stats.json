@@ -3,12 +3,12 @@
   "total_waivers": 335,
   "total_conditional_approvals": 3,
   "by_status": {
-    "Assessment completed": 172,
-    "Under assessment": 52,
+    "Assessment completed": 173,
+    "Under assessment": 51,
     "Assessment ceased": 3
   },
   "by_determination": {
-    "Approved": 167,
+    "Approved": 168,
     "Referred to phase 2": 9,
     "Approved with conditions": 2
   },
@@ -22,28 +22,28 @@
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 170,
+    "cleared": 171,
     "not_cleared": 2,
-    "total": 172,
+    "total": 173,
     "rate": 0.988
   },
   "phase_duration": {
-    "average_days": 29.9438202247191,
-    "median_days": 26.0,
-    "average_business_days": 19.96629213483146,
-    "median_business_days": 17.0,
+    "average_days": 29.899441340782122,
+    "median_days": 26,
+    "average_business_days": 19.94413407821229,
+    "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 40,
-        "percentage": 22.5
+        "percentage": 22.3
       },
       "day20": {
-        "count": 134,
-        "percentage": 75.3
+        "count": 135,
+        "percentage": 75.4
       },
       "day30": {
-        "count": 167,
-        "percentage": 93.8
+        "count": 168,
+        "percentage": 93.9
       }
     }
   },
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-05031",
+      "merger_name": "Obayashi Corporation \u2013 Multiplex",
+      "determination": "Approved",
+      "determination_date": "2026-08-18T12:00:00Z",
+      "page_modified_datetime": "2026-08-19T10:14:15+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-45023",
       "merger_name": "Pine Australia - Evolution Business Systems",
       "determination": "Approved",
@@ -336,17 +347,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-60032",
-      "merger_name": "Atlas Holdings and KPS \u2013 shares in joint venture and interest in C&D Technologies",
-      "determination": "Approved",
-      "determination_date": "2026-08-17T12:00:00Z",
-      "page_modified_datetime": "2026-08-17T17:47:01+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]
