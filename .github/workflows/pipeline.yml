@@ -40,6 +40,13 @@ concurrency:
 jobs:
   pipeline:
     runs-on: ubuntu-latest
+    # Without this, a hung step (e.g. an apt-get fetch that stalls) runs to
+    # GitHub's default 6-hour job timeout before failing. Because runs are
+    # serialised via the concurrency group above, that also blocks every
+    # queued run behind it for the same 6 hours. 45 minutes is well above
+    # the ~1-3 minutes a normal run takes, including LibreOffice/Tesseract
+    # installs and a full --all scrape.
+    timeout-minutes: 45
     steps:
       - name: Check out repository
         uses: actions/checkout@v6
