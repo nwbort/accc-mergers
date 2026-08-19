@@ -71932,6 +71932,10 @@
           "name": "Elevate BidCo GmbH",
           "identifier_type": null,
           "identifier": "HRB 141746",
+          "canonical": {
+            "id": "elevate-bidco-gmbh",
+            "name": "Elevate BidCo GmbH"
+          },
           "party_page": {
             "id": "elevate-bidco-gmbh",
             "name": "Elevate BidCo GmbH"
@@ -76353,9 +76357,13 @@
           "name": "Elevate BidCo Pty Ltd",
           "identifier_type": "ACN",
           "identifier": "699 129 523",
+          "canonical": {
+            "id": "elevate-bidco-gmbh",
+            "name": "Elevate BidCo GmbH"
+          },
           "party_page": {
-            "id": "elevate-bidco-pty-ltd",
-            "name": "Elevate BidCo Pty Ltd"
+            "id": "elevate-bidco-gmbh",
+            "name": "Elevate BidCo GmbH"
           }
         }
       ],
@@ -76469,6 +76477,10 @@
               "name": "Elevate BidCo GmbH",
               "identifier_type": null,
               "identifier": "HRB 141746",
+              "canonical": {
+                "id": "elevate-bidco-gmbh",
+                "name": "Elevate BidCo GmbH"
+              },
               "party_page": {
                 "id": "elevate-bidco-gmbh",
                 "name": "Elevate BidCo GmbH"
@@ -127566,6 +127578,10 @@
               "name": "Elevate BidCo GmbH",
               "identifier_type": null,
               "identifier": "HRB 141746",
+              "canonical": {
+                "id": "elevate-bidco-gmbh",
+                "name": "Elevate BidCo GmbH"
+              },
               "party_page": {
                 "id": "elevate-bidco-gmbh",
                 "name": "Elevate BidCo GmbH"
