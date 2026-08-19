@@ -264,18 +264,67 @@ describe('MergerTimeline', () => {
       );
     });
 
-    it('drops the band once the expected date has passed', () => {
+    it('collapses to a "soon" pip once the forecast window has closed', () => {
       render(
         <MergerTimeline
           merger={{
             ...running,
-            // 5 BDs from 18 May is 25 May — already behind "today" (1 Jun).
-            phase_1_estimate: { expected_business_days: 5, basis: 'global', sample_size: 178 },
+            // 4-5 BDs from 18 May is 22-25 May — the whole window is behind
+            // "today" (1 Jun), but the matter is still inside its clock.
+            phase_1_estimate: {
+              expected_business_days: 5,
+              range_business_days: [4, 5],
+              basis: 'global',
+              sample_size: 178,
+            },
           }}
         />
       );
 
+      const pip = screen.getByLabelText(/Expected determination/);
+      // Fixed-size, since the window it described no longer maps to the axis.
+      expect(pip.style.width).toBe('24px');
+      expect(screen.getByText('Expected determination soon')).toBeInTheDocument();
+      expect(screen.queryByText('Expected determination')).not.toBeInTheDocument();
+    });
+
+    it('keeps the band while the window is open even though its median passed', () => {
+      render(
+        <MergerTimeline
+          merger={{
+            ...running,
+            // Median 10 BDs (1 Jun) is today, but the window runs to 20 BDs.
+            phase_1_estimate: {
+              expected_business_days: 10,
+              range_business_days: [8, 20],
+              basis: 'global',
+              sample_size: 178,
+            },
+          }}
+        />
+      );
+
+      const band = screen.getByLabelText(/Expected determination/);
+      expect(parseFloat(band.style.width)).toBeGreaterThan(0);
+      expect(screen.queryByText('Expected determination soon')).not.toBeInTheDocument();
+    });
+
+    it('shows no forecast at all once the statutory deadline has passed', () => {
+      render(
+        <MergerTimeline
+          merger={{
+            effective_notification_datetime: '2026-04-01T12:00:00Z',
+            end_of_determination_period: '2026-05-20T12:00:00Z',
+            status: 'Under assessment',
+            phase_1_estimate: { expected_business_days: 10, basis: 'global', sample_size: 178 },
+          }}
+        />
+      );
+
+      // Overdue: there's no today marker on the axis to anchor a pip to.
+      expect(screen.getByText('Overdue')).toBeInTheDocument();
       expect(screen.queryByLabelText(/Expected determination/)).not.toBeInTheDocument();
+      expect(screen.queryByText(/Expected determination/)).not.toBeInTheDocument();
     });
 
     it('drops the band once phase 1 has actually concluded', () => {
@@ -339,6 +388,32 @@ describe('MergerTimeline', () => {
       // The band itself stays — only its label stands down.
       expect(screen.getByLabelText(/Expected determination/)).toBeInTheDocument();
       expect(screen.queryByText('Expected determination')).not.toBeInTheDocument();
+      expect(screen.getByText('Today')).toBeInTheDocument();
+    });
+
+    it('drops the "soon" label when the track has no room beside "Today"', () => {
+      vi.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockReturnValue({
+        width: 200, height: 96, top: 0, left: 0, right: 200, bottom: 96, x: 0, y: 0,
+        toJSON: () => ({}),
+      });
+
+      render(
+        <MergerTimeline
+          merger={{
+            ...running,
+            phase_1_estimate: {
+              expected_business_days: 5,
+              range_business_days: [4, 5],
+              basis: 'global',
+              sample_size: 178,
+            },
+          }}
+        />
+      );
+
+      // The pip stays; only its label gives way to "Today".
+      expect(screen.getByLabelText(/Expected determination/)).toBeInTheDocument();
+      expect(screen.queryByText('Expected determination soon')).not.toBeInTheDocument();
       expect(screen.getByText('Today')).toBeInTheDocument();
     });
 
