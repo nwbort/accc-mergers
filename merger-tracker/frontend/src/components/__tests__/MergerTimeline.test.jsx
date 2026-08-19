@@ -185,4 +185,260 @@ describe('MergerTimeline', () => {
     expect(screen.getByText(/None . assessment suspended/i)).toBeInTheDocument();
     expect(screen.getByText(/originally 01 Apr 2026/i)).toBeInTheDocument();
   });
+
+  describe('expected determination band', () => {
+    // Notified 18 May 2026, 30-BD statutory deadline 1 Jul 2026, "today" is
+    // 1 Jun 2026. 15 business days from 18 May lands on 10 Jun 2026 (1 and 8
+    // June are ACT public holidays) — still ahead of today, so the forecast
+    // is live.
+    const running = {
+      effective_notification_datetime: '2026-05-18T12:00:00Z',
+      end_of_determination_period: '2026-07-01T12:00:00Z',
+      status: 'Under assessment',
+    };
+
+    it('shades the expected determination window while it is still ahead', () => {
+      render(
+        <MergerTimeline
+          merger={{
+            ...running,
+            phase_1_estimate: {
+              expected_business_days: 15,
+              range_business_days: [15, 17],
+              basis: 'industry',
+              sample_size: 9,
+            },
+          }}
+        />
+      );
+
+      const band = screen.getByLabelText(/Expected determination/);
+      expect(band).toHaveAttribute('title', expect.stringContaining('10 Jun 2026'));
+      expect(band.getAttribute('title')).toBe(
+        'Expected determination \u00b7 10 Jun 2026 \u00b7 15-17 business days'
+      );
+      // Shaded across a range, not pinned to a single point.
+      expect(parseFloat(band.style.width)).toBeGreaterThan(0);
+      expect(screen.getByText('Expected determination')).toBeInTheDocument();
+    });
+
+    it('holds the left edge at today so the band is never in the past', () => {
+      render(
+        <MergerTimeline
+          merger={{
+            ...running,
+            // 5-20 BDs: the bottom of the range is already behind "today".
+            phase_1_estimate: {
+              expected_business_days: 18,
+              range_business_days: [5, 20],
+              basis: 'global',
+              sample_size: 178,
+            },
+          }}
+        />
+      );
+
+      const band = screen.getByLabelText(/Expected determination/);
+      // Today (1 Jun) sits 14/44 calendar days along 18 May -> 1 Jul.
+      expect(parseFloat(band.style.left)).toBeCloseTo((14 / 44) * 100, 1);
+    });
+
+    it('falls back to the point estimate when the range has no width', () => {
+      render(
+        <MergerTimeline
+          merger={{
+            ...running,
+            phase_1_estimate: {
+              expected_business_days: 15,
+              range_business_days: [15, 15],
+              basis: 'global',
+              sample_size: 178,
+            },
+          }}
+        />
+      );
+
+      const band = screen.getByLabelText(/Expected determination/);
+      expect(band.getAttribute('title')).toBe(
+        'Expected determination \u00b7 10 Jun 2026 \u00b7 15 business days'
+      );
+    });
+
+    it('collapses to a "soon" pip once the forecast window has closed', () => {
+      render(
+        <MergerTimeline
+          merger={{
+            ...running,
+            // 4-5 BDs from 18 May is 22-25 May — the whole window is behind
+            // "today" (1 Jun), but the matter is still inside its clock.
+            phase_1_estimate: {
+              expected_business_days: 5,
+              range_business_days: [4, 5],
+              basis: 'global',
+              sample_size: 178,
+            },
+          }}
+        />
+      );
+
+      const pip = screen.getByLabelText(/Expected determination/);
+      // Fixed-size, since the window it described no longer maps to the axis.
+      expect(pip.style.width).toBe('24px');
+      expect(screen.getByText('Expected determination soon')).toBeInTheDocument();
+      expect(screen.queryByText('Expected determination')).not.toBeInTheDocument();
+    });
+
+    it('keeps the band while the window is open even though its median passed', () => {
+      render(
+        <MergerTimeline
+          merger={{
+            ...running,
+            // Median 10 BDs (1 Jun) is today, but the window runs to 20 BDs.
+            phase_1_estimate: {
+              expected_business_days: 10,
+              range_business_days: [8, 20],
+              basis: 'global',
+              sample_size: 178,
+            },
+          }}
+        />
+      );
+
+      const band = screen.getByLabelText(/Expected determination/);
+      expect(parseFloat(band.style.width)).toBeGreaterThan(0);
+      expect(screen.queryByText('Expected determination soon')).not.toBeInTheDocument();
+    });
+
+    it('shows no forecast at all once the statutory deadline has passed', () => {
+      render(
+        <MergerTimeline
+          merger={{
+            effective_notification_datetime: '2026-04-01T12:00:00Z',
+            end_of_determination_period: '2026-05-20T12:00:00Z',
+            status: 'Under assessment',
+            phase_1_estimate: { expected_business_days: 10, basis: 'global', sample_size: 178 },
+          }}
+        />
+      );
+
+      // Overdue: there's no today marker on the axis to anchor a pip to.
+      expect(screen.getByText('Overdue')).toBeInTheDocument();
+      expect(screen.queryByLabelText(/Expected determination/)).not.toBeInTheDocument();
+      expect(screen.queryByText(/Expected determination/)).not.toBeInTheDocument();
+    });
+
+    it('drops the band once phase 1 has actually concluded', () => {
+      render(
+        <MergerTimeline
+          merger={{
+            ...running,
+            phase_1_determination: 'Approved',
+            phase_1_determination_date: '2026-05-29T12:00:00Z',
+            determination_publication_date: '2026-05-29T12:00:00Z',
+            phase_1_estimate: { expected_business_days: 15, basis: 'global', sample_size: 178 },
+          }}
+        />
+      );
+
+      expect(screen.queryByLabelText(/Expected determination/)).not.toBeInTheDocument();
+    });
+
+    it('drops the band when the estimate runs past the statutory deadline', () => {
+      render(
+        <MergerTimeline
+          merger={{
+            ...running,
+            phase_1_estimate: { expected_business_days: 40, basis: 'global', sample_size: 178 },
+          }}
+        />
+      );
+
+      expect(screen.queryByLabelText(/Expected determination/)).not.toBeInTheDocument();
+    });
+
+    it('renders nothing extra when the merger carries no estimate', () => {
+      render(<MergerTimeline merger={running} />);
+
+      expect(screen.queryByLabelText(/Expected determination/)).not.toBeInTheDocument();
+      expect(screen.queryByText('Expected determination')).not.toBeInTheDocument();
+    });
+
+    it('drops its label rather than colliding with the "Today" label', () => {
+      // A narrow track: the two fixed-width label boxes cannot both fit, so the
+      // forecast label gives way to the actual state of the matter.
+      vi.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockReturnValue({
+        width: 200, height: 96, top: 0, left: 0, right: 200, bottom: 96, x: 0, y: 0,
+        toJSON: () => ({}),
+      });
+
+      render(
+        <MergerTimeline
+          merger={{
+            ...running,
+            phase_1_estimate: {
+              expected_business_days: 15,
+              range_business_days: [15, 17],
+              basis: 'global',
+              sample_size: 178,
+            },
+          }}
+        />
+      );
+
+      // The band itself stays — only its label stands down.
+      expect(screen.getByLabelText(/Expected determination/)).toBeInTheDocument();
+      expect(screen.queryByText('Expected determination')).not.toBeInTheDocument();
+      expect(screen.getByText('Today')).toBeInTheDocument();
+    });
+
+    it('drops the "soon" label when the track has no room beside "Today"', () => {
+      vi.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockReturnValue({
+        width: 200, height: 96, top: 0, left: 0, right: 200, bottom: 96, x: 0, y: 0,
+        toJSON: () => ({}),
+      });
+
+      render(
+        <MergerTimeline
+          merger={{
+            ...running,
+            phase_1_estimate: {
+              expected_business_days: 5,
+              range_business_days: [4, 5],
+              basis: 'global',
+              sample_size: 178,
+            },
+          }}
+        />
+      );
+
+      // The pip stays; only its label gives way to "Today".
+      expect(screen.getByLabelText(/Expected determination/)).toBeInTheDocument();
+      expect(screen.queryByText('Expected determination soon')).not.toBeInTheDocument();
+      expect(screen.getByText('Today')).toBeInTheDocument();
+    });
+
+    it('keeps its label when the track is wide enough to clear "Today"', () => {
+      vi.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockReturnValue({
+        width: 1400, height: 96, top: 0, left: 0, right: 1400, bottom: 96, x: 0, y: 0,
+        toJSON: () => ({}),
+      });
+
+      render(
+        <MergerTimeline
+          merger={{
+            ...running,
+            phase_1_estimate: {
+              expected_business_days: 25,
+              range_business_days: [24, 26],
+              basis: 'global',
+              sample_size: 178,
+            },
+          }}
+        />
+      );
+
+      expect(screen.getByText('Expected determination')).toBeInTheDocument();
+      expect(screen.getByText('Today')).toBeInTheDocument();
+    });
+  });
 });

@@ -37,8 +37,10 @@ Label normalisation for ``by_commission_division`` (see that function):
   the former.
 """
 
+import calendar
 import re
 from collections import defaultdict
+from datetime import date
 from statistics import median as stat_median
 
 from constants import merger_status
@@ -392,6 +394,85 @@ def outcomes_by_division(notification_mergers: list) -> list[dict]:
     return results
 
 
+def _caseload_span(merger: dict) -> tuple[str, str | None] | None:
+    """The ``(opened, closed)`` dates bounding a matter's time before the ACCC.
+
+    ``opened`` is the effective notification date, falling back to the original
+    one so a matter whose clock was suspended (and whose effective date is
+    therefore cleared) still counts as on the books from when it was first
+    filed. ``closed`` is the published determination, or the cessation date for
+    a matter abandoned before determination; ``None`` means it is still open.
+
+    Note this deliberately measures the *whole* review, not just phase 1: a
+    matter referred to phase 2 is still work in front of the ACCC, so it stays
+    in the caseload until its final determination lands.
+    """
+    opened = merger.get('effective_notification_datetime') or merger.get('original_notification_datetime')
+    if not opened:
+        return None
+    closed = merger.get('determination_publication_date') or merger.get('ceased_date')
+    return opened[:10], (closed[:10] if closed else None)
+
+
+def open_caseload(mergers: list, as_at: date | None = None) -> dict:
+    """Live notifications before the ACCC at the end of each month.
+
+    The monthly-volume chart counts *flow* — how many matters arrived in a
+    month. This counts *stock*: how many were still open on the ACCC's books at
+    each month end, i.e. filed on or before it and not yet determined. The two
+    answer different questions, and only the stock shows whether determinations
+    are keeping pace with filings.
+
+    Waivers are deliberately excluded. The register only publishes a waiver
+    application once it has been determined — every waiver it carries is
+    "Assessment completed" — so pending waivers are invisible to us and a
+    waiver stock line would collapse to zero at the present edge, reporting an
+    artefact of what the ACCC publishes as though it were a real emptying of
+    the queue.
+
+    The final point is cut off at ``as_at`` rather than the end of the current
+    month, so the series ends at a real observation instead of counting a
+    month-end that hasn't happened yet.
+    """
+    as_at = as_at or date.today()
+
+    spans = []
+    for m in filter_notifications(mergers):
+        span = _caseload_span(m)
+        if span is not None:
+            spans.append(span)
+
+    if not spans:
+        return {"labels": [], "notifications": [], "as_at": as_at.isoformat()}
+
+    first = min(opened for opened, _ in spans)
+    year, month = int(first[:4]), int(first[5:7])
+
+    labels: list[str] = []
+    notifications: list[int] = []
+
+    while (year, month) <= (as_at.year, as_at.month):
+        month_end = date(year, month, calendar.monthrange(year, month)[1])
+        cutoff = min(month_end, as_at).isoformat()
+
+        # Open at the cutoff: filed on or before it, and either still running or
+        # closed strictly after it (a matter determined on the cutoff itself is
+        # done, so it drops out that day rather than lingering to the month end).
+        labels.append(f"{year:04d}-{month:02d}")
+        notifications.append(sum(
+            1 for opened, closed in spans
+            if opened <= cutoff and (closed is None or closed > cutoff)
+        ))
+
+        year, month = (year + 1, 1) if month == 12 else (year, month + 1)
+
+    return {
+        "labels": labels,
+        "notifications": notifications,
+        "as_at": as_at.isoformat(),
+    }
+
+
 def referrals_by_quarter(notification_mergers: list) -> list[dict]:
     """Notification volume and subsequent Phase 2 referrals, per calendar quarter.
 
@@ -567,6 +648,7 @@ def generate(mergers: list) -> dict:
             "calendar_stats": waiver_calendar_stats,
         },
         "monthly_volume": monthly_volume,
+        "open_caseload": open_caseload(mergers),
         "industry_phase1_duration": industry_phase1_duration(mergers),
         "by_commission_division": by_commission_division(mergers),
         "deadline_utilisation": deadline_utilisation(mergers),
