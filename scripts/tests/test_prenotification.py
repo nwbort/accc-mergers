@@ -12,7 +12,8 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 from static_data.prenotification import (
     METHOD_VERSION,
-    WAIVER_LODGEMENT_SLACK_DAYS,
+    WAIVER_LODGEMENT_LAG_DAYS,
+    WAIVER_LODGEMENT_LAG_MAX_DAYS,
     attach_prenotification_estimates,
     filing_date,
     parse_merger_id,
@@ -30,8 +31,12 @@ def _merger(merger_id, notified, original=None):
     }
 
 
-def _estimates(mergers, slack=0):
-    attach_prenotification_estimates(mergers, slack=slack)
+def _estimates(mergers, lag=0, lag_max=None):
+    """Estimates with both lag settings tied together unless told otherwise, so
+    a test that isn't about the two-tier behaviour gets one coherent bracket."""
+    attach_prenotification_estimates(
+        mergers, lag=lag, lag_max=lag if lag_max is None else lag_max
+    )
     return {m['merger_id']: m.get('pre_notification') for m in mergers}
 
 
@@ -142,16 +147,18 @@ class TestWaiverAnchors:
         assert estimate['max_days'] is None
         assert estimate['basis'] == 'lower-bound-only'
 
-    def test_slack_widens_only_the_upper_bound(self):
+    def test_waiver_lag_shifts_every_number_by_the_same_amount(self):
+        # The lag is the zero the estimates are measured from, so raising it
+        # moves the whole bracket rather than changing its width.
         mergers = [
             _merger('WA-01005', '2026-01-01'),
             _merger('MN-01010', '2026-04-01'),
             _merger('WA-01011', '2026-03-01'),
         ]
-        tight = _estimates([dict(m) for m in mergers], slack=0)['MN-01010']
-        loose = _estimates([dict(m) for m in mergers], slack=10)['MN-01010']
-        assert loose['max_days'] == tight['max_days'] + 10
-        assert loose['min_days'] == tight['min_days']
+        base = _estimates([dict(m) for m in mergers], lag=0, lag_max=0)['MN-01010']
+        moved = _estimates([dict(m) for m in mergers], lag=10, lag_max=10)['MN-01010']
+        for field in ('min_days', 'max_days', 'estimated_days'):
+            assert moved[field] == base[field] + 10
 
     def test_interpolation_tracks_the_sequence_number(self):
         # Two waivers 100 days and 100 sequence numbers apart date the counter;
@@ -212,11 +219,35 @@ class TestAttachment:
         mergers = [_merger('MN-01010', '2026-04-01'), _merger('WA-01011', '2026-03-01')]
         assert _estimates(mergers)['MN-01010']['method_version'] == METHOD_VERSION
 
-    def test_default_slack_is_used_when_unspecified(self):
+    def test_defaults_prove_the_floor_and_pad_the_ceiling(self):
+        # The three numbers answer to different standards: the floor assumes
+        # nothing about waivers, the ceiling gives every anchor the most
+        # lodgement delay any waiver is known to have taken.
         mergers = [
             _merger('WA-01005', '2026-01-01'),
             _merger('MN-01010', '2026-04-01'),
             _merger('WA-01011', '2026-03-01'),
         ]
         attach_prenotification_estimates(mergers)
-        assert mergers[1]['pre_notification']['max_days'] == 90 + WAIVER_LODGEMENT_SLACK_DAYS
+        estimate = mergers[1]['pre_notification']
+        assert estimate['min_days'] == 31
+        assert estimate['max_days'] == 90 + WAIVER_LODGEMENT_LAG_MAX_DAYS
+        assert estimate['min_days'] <= estimate['estimated_days'] <= estimate['max_days']
+
+    def test_the_ceiling_alone_moves_with_the_generous_lag(self):
+        mergers = [
+            _merger('WA-01005', '2026-01-01'),
+            _merger('MN-01010', '2026-04-01'),
+            _merger('WA-01011', '2026-03-01'),
+        ]
+        tight = _estimates([dict(m) for m in mergers], lag=0, lag_max=0)['MN-01010']
+        padded = _estimates([dict(m) for m in mergers], lag=0, lag_max=20)['MN-01010']
+        assert padded['max_days'] == tight['max_days'] + 20
+        assert padded['min_days'] == tight['min_days']
+        assert padded['estimated_days'] == tight['estimated_days']
+
+    def test_min_days_is_a_hard_bound_at_the_default_lag(self):
+        # At lag 0 the lower bound rests only on a later ID having been filed
+        # first, which assumes nothing about how waivers behave.
+        mergers = [_merger('MN-01010', '2026-04-01'), _merger('MN-01011', '2026-03-01')]
+        assert _estimates(mergers, lag=WAIVER_LODGEMENT_LAG_DAYS)['MN-01010']['min_days'] == 31

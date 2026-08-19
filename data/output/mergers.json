@@ -248,7 +248,7 @@
         "min_days_witness": "MN-01017",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -528,7 +528,7 @@
         "min_days_witness": "MN-01019",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -1611,7 +1611,7 @@
         "min_days_witness": "MN-01035",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -1885,7 +1885,7 @@
         "min_days_witness": "MN-01035",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -2145,7 +2145,7 @@
         "min_days_witness": "MN-01037",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -2397,7 +2397,7 @@
         "min_days_witness": "MN-01058",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -2947,7 +2947,7 @@
         "min_days_witness": "MN-01061",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -3213,7 +3213,7 @@
         "min_days_witness": "MN-01064",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -3461,7 +3461,7 @@
         "min_days_witness": "MN-01068",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -4149,7 +4149,7 @@
         "min_days_witness": "MN-01069",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -4447,7 +4447,7 @@
         "min_days_witness": "MN-01071",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -4692,7 +4692,7 @@
         "min_days_witness": "WA-01081",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -4941,7 +4941,7 @@
         "min_days_witness": "WA-01081",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -5168,7 +5168,7 @@
         "min_days_witness": "WA-01081",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -5399,7 +5399,7 @@
         "min_days_witness": "WA-01081",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -5656,7 +5656,7 @@
         "min_days_witness": "WA-01081",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -5896,13 +5896,13 @@
       "pre_notification": {
         "estimated_days": 33,
         "min_days": 1,
-        "max_days": 76,
+        "max_days": 82,
         "id_issued_before": "2026-02-24",
-        "id_issued_after": "2025-12-11",
+        "id_issued_after": "2025-12-05",
         "min_days_witness": "WA-01087",
         "max_days_witness": "WA-01081",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -6140,13 +6140,13 @@
       "pre_notification": {
         "estimated_days": 2,
         "min_days": 0,
-        "max_days": 43,
+        "max_days": 49,
         "id_issued_before": "2026-03-12",
-        "id_issued_after": "2026-01-28",
+        "id_issued_after": "2026-01-22",
         "min_days_witness": "WA-01092",
         "max_days_witness": "WA-01088",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -6375,13 +6375,13 @@
       "pre_notification": {
         "estimated_days": 0,
         "min_days": 0,
-        "max_days": 31,
+        "max_days": 37,
         "id_issued_before": "2026-03-26",
-        "id_issued_after": "2026-02-23",
+        "id_issued_after": "2026-02-17",
         "min_days_witness": "WA-01094",
         "max_days_witness": "WA-01092",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -6772,13 +6772,13 @@
       "pre_notification": {
         "estimated_days": 21,
         "min_days": 6,
-        "max_days": 52,
+        "max_days": 58,
         "id_issued_before": "2026-06-12",
-        "id_issued_after": "2026-04-27",
+        "id_issued_after": "2026-04-21",
         "min_days_witness": "WA-01108",
         "max_days_witness": "WA-01102",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -7016,13 +7016,13 @@
       "pre_notification": {
         "estimated_days": 19,
         "min_days": 7,
-        "max_days": 53,
+        "max_days": 59,
         "id_issued_before": "2026-06-12",
-        "id_issued_after": "2026-04-27",
+        "id_issued_after": "2026-04-21",
         "min_days_witness": "WA-01108",
         "max_days_witness": "WA-01102",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -7339,13 +7339,13 @@
       "pre_notification": {
         "estimated_days": 37,
         "min_days": 28,
-        "max_days": 74,
+        "max_days": 80,
         "id_issued_before": "2026-06-12",
-        "id_issued_after": "2026-04-27",
+        "id_issued_after": "2026-04-21",
         "min_days_witness": "WA-01108",
         "max_days_witness": "WA-01102",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -7642,13 +7642,13 @@
       "pre_notification": {
         "estimated_days": 20,
         "min_days": 14,
-        "max_days": 60,
+        "max_days": 66,
         "id_issued_before": "2026-06-12",
-        "id_issued_after": "2026-04-27",
+        "id_issued_after": "2026-04-21",
         "min_days_witness": "WA-01108",
         "max_days_witness": "WA-01102",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -7921,13 +7921,13 @@
       "pre_notification": {
         "estimated_days": 17,
         "min_days": 14,
-        "max_days": 60,
+        "max_days": 66,
         "id_issued_before": "2026-06-12",
-        "id_issued_after": "2026-04-27",
+        "id_issued_after": "2026-04-21",
         "min_days_witness": "WA-01108",
         "max_days_witness": "WA-01102",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -8136,13 +8136,13 @@
       "pre_notification": {
         "estimated_days": 28,
         "min_days": 20,
-        "max_days": 63,
+        "max_days": 69,
         "id_issued_before": "2026-06-27",
-        "id_issued_after": "2026-05-15",
+        "id_issued_after": "2026-05-09",
         "min_days_witness": "WA-01110",
         "max_days_witness": "WA-01108",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -8361,13 +8361,13 @@
       "pre_notification": {
         "estimated_days": 16,
         "min_days": 0,
-        "max_days": 49,
+        "max_days": 55,
         "id_issued_before": "2026-07-29",
-        "id_issued_after": "2026-06-10",
+        "id_issued_after": "2026-06-04",
         "min_days_witness": "WA-01118",
         "max_days_witness": "WA-01114",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -8585,13 +8585,13 @@
       "pre_notification": {
         "estimated_days": 12,
         "min_days": 1,
-        "max_days": 50,
+        "max_days": 56,
         "id_issued_before": "2026-07-29",
-        "id_issued_after": "2026-06-10",
+        "id_issued_after": "2026-06-04",
         "min_days_witness": "WA-01118",
         "max_days_witness": "WA-01114",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -8849,13 +8849,13 @@
       "pre_notification": {
         "estimated_days": 30,
         "min_days": 25,
-        "max_days": 90,
+        "max_days": 96,
         "id_issued_before": "2026-02-17",
-        "id_issued_after": "2025-12-14",
+        "id_issued_after": "2025-12-08",
         "min_days_witness": "WA-05008",
         "max_days_witness": "WA-05003",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -9153,13 +9153,13 @@
       "pre_notification": {
         "estimated_days": 62,
         "min_days": 27,
-        "max_days": 69,
+        "max_days": 75,
         "id_issued_before": "2026-03-31",
-        "id_issued_after": "2026-02-17",
+        "id_issued_after": "2026-02-11",
         "min_days_witness": "MN-05012",
         "max_days_witness": "WA-05005",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -9401,13 +9401,13 @@
       "pre_notification": {
         "estimated_days": 11,
         "min_days": 0,
-        "max_days": 42,
+        "max_days": 48,
         "id_issued_before": "2026-03-31",
-        "id_issued_after": "2026-02-17",
+        "id_issued_after": "2026-02-11",
         "min_days_witness": "WA-05016",
         "max_days_witness": "WA-05005",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -9661,13 +9661,13 @@
       "pre_notification": {
         "estimated_days": 45,
         "min_days": 21,
-        "max_days": 84,
+        "max_days": 90,
         "id_issued_before": "2026-04-21",
-        "id_issued_after": "2026-02-17",
+        "id_issued_after": "2026-02-11",
         "min_days_witness": "WA-05016",
         "max_days_witness": "WA-05005",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -10264,13 +10264,13 @@
       "pre_notification": {
         "estimated_days": 51,
         "min_days": 35,
-        "max_days": 98,
+        "max_days": 104,
         "id_issued_before": "2026-04-21",
-        "id_issued_after": "2026-02-17",
+        "id_issued_after": "2026-02-11",
         "min_days_witness": "WA-05016",
         "max_days_witness": "WA-05005",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -10496,13 +10496,13 @@
       "pre_notification": {
         "estimated_days": 13,
         "min_days": 13,
-        "max_days": 49,
+        "max_days": 55,
         "id_issued_before": "2026-04-29",
-        "id_issued_after": "2026-03-24",
+        "id_issued_after": "2026-03-18",
         "min_days_witness": "WA-05019",
         "max_days_witness": "WA-05016",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -10743,13 +10743,13 @@
       "pre_notification": {
         "estimated_days": 7,
         "min_days": 0,
-        "max_days": 42,
+        "max_days": 48,
         "id_issued_before": "2026-06-09",
-        "id_issued_after": "2026-04-28",
+        "id_issued_after": "2026-04-22",
         "min_days_witness": "WA-05026",
         "max_days_witness": "WA-05024",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -10935,13 +10935,13 @@
       "pre_notification": {
         "estimated_days": 43,
         "min_days": 29,
-        "max_days": 77,
+        "max_days": 83,
         "id_issued_before": "2026-06-29",
-        "id_issued_after": "2026-05-12",
+        "id_issued_after": "2026-05-06",
         "min_days_witness": "WA-05029",
         "max_days_witness": "WA-05026",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -11169,13 +11169,13 @@
       "pre_notification": {
         "estimated_days": 24,
         "min_days": 21,
-        "max_days": 53,
+        "max_days": 59,
         "id_issued_before": "2026-07-03",
-        "id_issued_after": "2026-06-01",
+        "id_issued_after": "2026-05-26",
         "min_days_witness": "WA-05033",
         "max_days_witness": "WA-05029",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -11426,13 +11426,13 @@
       "pre_notification": {
         "estimated_days": 26,
         "min_days": 24,
-        "max_days": 56,
+        "max_days": 62,
         "id_issued_before": "2026-07-03",
-        "id_issued_after": "2026-06-01",
+        "id_issued_after": "2026-05-26",
         "min_days_witness": "WA-05033",
         "max_days_witness": "WA-05029",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -11675,13 +11675,13 @@
       "pre_notification": {
         "estimated_days": 6,
         "min_days": 5,
-        "max_days": 37,
+        "max_days": 43,
         "id_issued_before": "2026-07-03",
-        "id_issued_after": "2026-06-01",
+        "id_issued_after": "2026-05-26",
         "min_days_witness": "WA-05033",
         "max_days_witness": "WA-05029",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -11929,13 +11929,13 @@
       "pre_notification": {
         "estimated_days": 13,
         "min_days": 11,
-        "max_days": 42,
+        "max_days": 48,
         "id_issued_before": "2026-07-10",
-        "id_issued_after": "2026-06-09",
+        "id_issued_after": "2026-06-03",
         "min_days_witness": "WA-05037",
         "max_days_witness": "WA-05035",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -12159,15 +12159,15 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 28,
+        "estimated_days": 31,
         "min_days": 3,
-        "max_days": 53,
+        "max_days": 59,
         "id_issued_before": "2026-08-10",
-        "id_issued_after": "2026-06-21",
+        "id_issued_after": "2026-06-15",
         "min_days_witness": "MN-05044",
         "max_days_witness": "WA-05040",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -12361,15 +12361,15 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 50,
+        "estimated_days": 56,
         "min_days": null,
-        "max_days": 50,
+        "max_days": 56,
         "id_issued_before": null,
-        "id_issued_after": "2026-06-21",
+        "id_issued_after": "2026-06-15",
         "min_days_witness": null,
         "max_days_witness": "WA-05040",
         "basis": "upper-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -12848,7 +12848,7 @@
         "min_days_witness": "WA-10002",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -13097,13 +13097,13 @@
       "pre_notification": {
         "estimated_days": 15,
         "min_days": 11,
-        "max_days": 61,
+        "max_days": 67,
         "id_issued_before": "2026-02-06",
-        "id_issued_after": "2025-12-18",
+        "id_issued_after": "2025-12-12",
         "min_days_witness": "MN-10006",
         "max_days_witness": "WA-10002",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -13395,13 +13395,13 @@
       "pre_notification": {
         "estimated_days": 0,
         "min_days": 0,
-        "max_days": 50,
+        "max_days": 56,
         "id_issued_before": "2026-02-06",
-        "id_issued_after": "2025-12-18",
+        "id_issued_after": "2025-12-12",
         "min_days_witness": "WA-10008",
         "max_days_witness": "WA-10002",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -14149,13 +14149,13 @@
       "pre_notification": {
         "estimated_days": 81,
         "min_days": 75,
-        "max_days": 139,
+        "max_days": 145,
         "id_issued_before": "2026-02-20",
-        "id_issued_after": "2025-12-18",
+        "id_issued_after": "2025-12-12",
         "min_days_witness": "WA-10008",
         "max_days_witness": "WA-10002",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -14444,13 +14444,13 @@
       "pre_notification": {
         "estimated_days": 31,
         "min_days": 13,
-        "max_days": 68,
+        "max_days": 74,
         "id_issued_before": "2026-04-08",
-        "id_issued_after": "2026-02-12",
+        "id_issued_after": "2026-02-06",
         "min_days_witness": "WA-10014",
         "max_days_witness": "WA-10011",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -14776,13 +14776,13 @@
       "pre_notification": {
         "estimated_days": 18,
         "min_days": 9,
-        "max_days": 64,
+        "max_days": 70,
         "id_issued_before": "2026-04-08",
-        "id_issued_after": "2026-02-12",
+        "id_issued_after": "2026-02-06",
         "min_days_witness": "WA-10014",
         "max_days_witness": "WA-10011",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -15043,13 +15043,13 @@
       "pre_notification": {
         "estimated_days": 12,
         "min_days": 0,
-        "max_days": 96,
+        "max_days": 102,
         "id_issued_before": "2026-06-15",
-        "id_issued_after": "2026-03-11",
+        "id_issued_after": "2026-03-05",
         "min_days_witness": "WA-10019",
         "max_days_witness": "WA-10014",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -15291,13 +15291,13 @@
       "pre_notification": {
         "estimated_days": 20,
         "min_days": 16,
-        "max_days": 50,
+        "max_days": 56,
         "id_issued_before": "2026-07-06",
-        "id_issued_after": "2026-06-02",
+        "id_issued_after": "2026-05-27",
         "min_days_witness": "WA-10023",
         "max_days_witness": "WA-10020",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -15548,13 +15548,13 @@
       "pre_notification": {
         "estimated_days": 26,
         "min_days": 24,
-        "max_days": 58,
+        "max_days": 64,
         "id_issued_before": "2026-07-06",
-        "id_issued_after": "2026-06-02",
+        "id_issued_after": "2026-05-27",
         "min_days_witness": "WA-10023",
         "max_days_witness": "WA-10020",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -15755,15 +15755,15 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 64,
+        "estimated_days": 70,
         "min_days": null,
-        "max_days": 64,
+        "max_days": 70,
         "id_issued_before": null,
-        "id_issued_after": "2026-06-11",
+        "id_issued_after": "2026-06-05",
         "min_days_witness": null,
         "max_days_witness": "WA-10024",
         "basis": "upper-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -16316,7 +16316,7 @@
         "min_days_witness": "WA-15003",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -16569,13 +16569,13 @@
       "pre_notification": {
         "estimated_days": 25,
         "min_days": 13,
-        "max_days": 58,
+        "max_days": 64,
         "id_issued_before": "2026-02-10",
-        "id_issued_after": "2025-12-27",
+        "id_issued_after": "2025-12-21",
         "min_days_witness": "WA-15007",
         "max_days_witness": "WA-15004",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -16824,13 +16824,13 @@
       "pre_notification": {
         "estimated_days": 17,
         "min_days": 7,
-        "max_days": 55,
+        "max_days": 61,
         "id_issued_before": "2026-03-26",
-        "id_issued_after": "2026-02-06",
+        "id_issued_after": "2026-01-31",
         "min_days_witness": "WA-15012",
         "max_days_witness": "WA-15010",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -17101,13 +17101,13 @@
       "pre_notification": {
         "estimated_days": 6,
         "min_days": 0,
-        "max_days": 40,
+        "max_days": 46,
         "id_issued_before": "2026-04-07",
-        "id_issued_after": "2026-02-26",
+        "id_issued_after": "2026-02-20",
         "min_days_witness": "WA-15014",
         "max_days_witness": "WA-15012",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -17387,13 +17387,13 @@
       "pre_notification": {
         "estimated_days": 22,
         "min_days": 0,
-        "max_days": 57,
+        "max_days": 63,
         "id_issued_before": "2026-05-06",
-        "id_issued_after": "2026-03-10",
+        "id_issued_after": "2026-03-04",
         "min_days_witness": "MN-15019",
         "max_days_witness": "WA-15014",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -17696,13 +17696,13 @@
       "pre_notification": {
         "estimated_days": 40,
         "min_days": 27,
-        "max_days": 98,
+        "max_days": 104,
         "id_issued_before": "2026-05-20",
-        "id_issued_after": "2026-03-10",
+        "id_issued_after": "2026-03-04",
         "min_days_witness": "MN-15019",
         "max_days_witness": "WA-15014",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -17987,13 +17987,13 @@
       "pre_notification": {
         "estimated_days": 6,
         "min_days": 0,
-        "max_days": 71,
+        "max_days": 77,
         "id_issued_before": "2026-05-20",
-        "id_issued_after": "2026-03-10",
+        "id_issued_after": "2026-03-04",
         "min_days_witness": "WA-15020",
         "max_days_witness": "WA-15014",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -18233,13 +18233,13 @@
       "pre_notification": {
         "estimated_days": 17,
         "min_days": 8,
-        "max_days": 49,
+        "max_days": 55,
         "id_issued_before": "2026-06-25",
-        "id_issued_after": "2026-05-15",
+        "id_issued_after": "2026-05-09",
         "min_days_witness": "WA-15029",
         "max_days_witness": "WA-15026",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -18513,13 +18513,13 @@
       "pre_notification": {
         "estimated_days": 25,
         "min_days": 20,
-        "max_days": 61,
+        "max_days": 67,
         "id_issued_before": "2026-06-25",
-        "id_issued_after": "2026-05-15",
+        "id_issued_after": "2026-05-09",
         "min_days_witness": "WA-15029",
         "max_days_witness": "WA-15026",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -18741,13 +18741,13 @@
       "pre_notification": {
         "estimated_days": 34,
         "min_days": 7,
-        "max_days": 67,
+        "max_days": 73,
         "id_issued_before": "2026-07-27",
-        "id_issued_after": "2026-05-28",
+        "id_issued_after": "2026-05-22",
         "min_days_witness": "WA-15035",
         "max_days_witness": "WA-15029",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -18964,13 +18964,13 @@
       "pre_notification": {
         "estimated_days": 31,
         "min_days": 9,
-        "max_days": 69,
+        "max_days": 75,
         "id_issued_before": "2026-07-27",
-        "id_issued_after": "2026-05-28",
+        "id_issued_after": "2026-05-22",
         "min_days_witness": "WA-15035",
         "max_days_witness": "WA-15029",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -19220,13 +19220,13 @@
       "pre_notification": {
         "estimated_days": 16,
         "min_days": 10,
-        "max_days": 70,
+        "max_days": 76,
         "id_issued_before": "2026-07-27",
-        "id_issued_after": "2026-05-28",
+        "id_issued_after": "2026-05-22",
         "min_days_witness": "WA-15035",
         "max_days_witness": "WA-15029",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -19496,13 +19496,13 @@
       "pre_notification": {
         "estimated_days": 7,
         "min_days": 5,
-        "max_days": 37,
+        "max_days": 43,
         "id_issued_before": "2026-03-06",
-        "id_issued_after": "2026-02-02",
+        "id_issued_after": "2026-01-27",
         "min_days_witness": "WA-20010",
         "max_days_witness": "WA-20008",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -19750,13 +19750,13 @@
       "pre_notification": {
         "estimated_days": 11,
         "min_days": 0,
-        "max_days": 46,
+        "max_days": 52,
         "id_issued_before": "2026-03-24",
-        "id_issued_after": "2026-02-06",
+        "id_issued_after": "2026-01-31",
         "min_days_witness": "MN-20013",
         "max_days_witness": "WA-20010",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -20057,13 +20057,13 @@
       "pre_notification": {
         "estimated_days": 34,
         "min_days": 16,
-        "max_days": 77,
+        "max_days": 83,
         "id_issued_before": "2026-04-08",
-        "id_issued_after": "2026-02-06",
+        "id_issued_after": "2026-01-31",
         "min_days_witness": "MN-20013",
         "max_days_witness": "WA-20010",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -20321,13 +20321,13 @@
       "pre_notification": {
         "estimated_days": 11,
         "min_days": 0,
-        "max_days": 61,
+        "max_days": 67,
         "id_issued_before": "2026-04-08",
-        "id_issued_after": "2026-02-06",
+        "id_issued_after": "2026-01-31",
         "min_days_witness": "WA-20015",
         "max_days_witness": "WA-20010",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -20575,13 +20575,13 @@
       "pre_notification": {
         "estimated_days": 59,
         "min_days": 51,
-        "max_days": 117,
+        "max_days": 123,
         "id_issued_before": "2026-04-13",
-        "id_issued_after": "2026-02-06",
+        "id_issued_after": "2026-01-31",
         "min_days_witness": "WA-20015",
         "max_days_witness": "WA-20010",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -20775,13 +20775,13 @@
       "pre_notification": {
         "estimated_days": 79,
         "min_days": 67,
-        "max_days": 119,
+        "max_days": 125,
         "id_issued_before": "2026-05-07",
-        "id_issued_after": "2026-03-16",
+        "id_issued_after": "2026-03-10",
         "min_days_witness": "WA-20019",
         "max_days_witness": "WA-20015",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -21050,13 +21050,13 @@
       "pre_notification": {
         "estimated_days": 35,
         "min_days": 29,
-        "max_days": 81,
+        "max_days": 87,
         "id_issued_before": "2026-05-07",
-        "id_issued_after": "2026-03-16",
+        "id_issued_after": "2026-03-10",
         "min_days_witness": "WA-20019",
         "max_days_witness": "WA-20015",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -21336,13 +21336,13 @@
       "pre_notification": {
         "estimated_days": 17,
         "min_days": 14,
-        "max_days": 47,
+        "max_days": 53,
         "id_issued_before": "2026-05-19",
-        "id_issued_after": "2026-04-16",
+        "id_issued_after": "2026-04-10",
         "min_days_witness": "WA-20024",
         "max_days_witness": "WA-20022",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -21703,13 +21703,13 @@
       "pre_notification": {
         "estimated_days": 9,
         "min_days": 3,
-        "max_days": 42,
+        "max_days": 48,
         "id_issued_before": "2026-01-20",
-        "id_issued_after": "2025-12-12",
+        "id_issued_after": "2025-12-06",
         "min_days_witness": "WA-25003",
         "max_days_witness": "WA-25001",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -21961,13 +21961,13 @@
       "pre_notification": {
         "estimated_days": 21,
         "min_days": 17,
-        "max_days": 52,
+        "max_days": 58,
         "id_issued_before": "2026-01-27",
-        "id_issued_after": "2025-12-23",
+        "id_issued_after": "2025-12-17",
         "min_days_witness": "WA-25005",
         "max_days_witness": "WA-25003",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -22305,13 +22305,13 @@
       "pre_notification": {
         "estimated_days": 32,
         "min_days": 8,
-        "max_days": 72,
+        "max_days": 78,
         "id_issued_before": "2026-03-04",
-        "id_issued_after": "2025-12-30",
+        "id_issued_after": "2025-12-24",
         "min_days_witness": "WA-25008",
         "max_days_witness": "WA-25005",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -22595,13 +22595,13 @@
       "pre_notification": {
         "estimated_days": 21,
         "min_days": 18,
-        "max_days": 56,
+        "max_days": 62,
         "id_issued_before": "2026-04-30",
-        "id_issued_after": "2026-03-23",
+        "id_issued_after": "2026-03-17",
         "min_days_witness": "WA-25022",
         "max_days_witness": "WA-25017",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -22963,13 +22963,13 @@
       "pre_notification": {
         "estimated_days": 47,
         "min_days": 47,
-        "max_days": 85,
+        "max_days": 91,
         "id_issued_before": "2026-04-30",
-        "id_issued_after": "2026-03-23",
+        "id_issued_after": "2026-03-17",
         "min_days_witness": "WA-25022",
         "max_days_witness": "WA-25017",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -23248,13 +23248,13 @@
       "pre_notification": {
         "estimated_days": 12,
         "min_days": 12,
-        "max_days": 29,
+        "max_days": 35,
         "id_issued_before": "2026-04-30",
-        "id_issued_after": "2026-04-13",
+        "id_issued_after": "2026-04-07",
         "min_days_witness": "WA-25022",
         "max_days_witness": "WA-25020",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -23514,13 +23514,13 @@
       "pre_notification": {
         "estimated_days": 0,
         "min_days": 0,
-        "max_days": 31,
+        "max_days": 37,
         "id_issued_before": "2026-05-22",
-        "id_issued_after": "2026-04-21",
+        "id_issued_after": "2026-04-15",
         "min_days_witness": "WA-25027",
         "max_days_witness": "WA-25025",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -23748,13 +23748,13 @@
       "pre_notification": {
         "estimated_days": 5,
         "min_days": 4,
-        "max_days": 34,
+        "max_days": 40,
         "id_issued_before": "2026-06-05",
-        "id_issued_after": "2026-05-06",
+        "id_issued_after": "2026-04-30",
         "min_days_witness": "WA-25030",
         "max_days_witness": "WA-25028",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -24038,13 +24038,13 @@
       "pre_notification": {
         "estimated_days": 18,
         "min_days": 18,
-        "max_days": 41,
+        "max_days": 47,
         "id_issued_before": "2026-07-03",
-        "id_issued_after": "2026-06-10",
+        "id_issued_after": "2026-06-04",
         "min_days_witness": "WA-25039",
         "max_days_witness": "WA-25036",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -24382,15 +24382,15 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 56,
+        "estimated_days": 62,
         "min_days": null,
-        "max_days": 56,
+        "max_days": 62,
         "id_issued_before": null,
-        "id_issued_after": "2026-06-10",
+        "id_issued_after": "2026-06-04",
         "min_days_witness": null,
         "max_days_witness": "WA-25036",
         "basis": "upper-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -24744,7 +24744,7 @@
         "min_days_witness": "MN-30003",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -25321,7 +25321,7 @@
         "min_days_witness": "MN-30005",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -25571,7 +25571,7 @@
         "min_days_witness": "MN-30009",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -25810,7 +25810,7 @@
         "min_days_witness": "MN-30009",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -26095,7 +26095,7 @@
         "min_days_witness": "WA-30010",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -26343,13 +26343,13 @@
       "pre_notification": {
         "estimated_days": 24,
         "min_days": 16,
-        "max_days": 56,
+        "max_days": 62,
         "id_issued_before": "2026-05-06",
-        "id_issued_after": "2026-03-27",
+        "id_issued_after": "2026-03-21",
         "min_days_witness": "WA-30014",
         "max_days_witness": "WA-30011",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -26722,13 +26722,13 @@
       "pre_notification": {
         "estimated_days": 9,
         "min_days": 4,
-        "max_days": 39,
+        "max_days": 45,
         "id_issued_before": "2026-05-18",
-        "id_issued_after": "2026-04-13",
+        "id_issued_after": "2026-04-07",
         "min_days_witness": "WA-30018",
         "max_days_witness": "WA-30015",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -27003,13 +27003,13 @@
       "pre_notification": {
         "estimated_days": 19,
         "min_days": 16,
-        "max_days": 49,
+        "max_days": 55,
         "id_issued_before": "2026-05-26",
-        "id_issued_after": "2026-04-23",
+        "id_issued_after": "2026-04-17",
         "min_days_witness": "WA-30021",
         "max_days_witness": "WA-30019",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -27255,13 +27255,13 @@
       "pre_notification": {
         "estimated_days": 29,
         "min_days": 5,
-        "max_days": 69,
+        "max_days": 75,
         "id_issued_before": "2026-07-01",
-        "id_issued_after": "2026-04-28",
+        "id_issued_after": "2026-04-22",
         "min_days_witness": "WA-30024",
         "max_days_witness": "WA-30021",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -27512,13 +27512,13 @@
       "pre_notification": {
         "estimated_days": 27,
         "min_days": 15,
-        "max_days": 79,
+        "max_days": 85,
         "id_issued_before": "2026-07-01",
-        "id_issued_after": "2026-04-28",
+        "id_issued_after": "2026-04-22",
         "min_days_witness": "WA-30024",
         "max_days_witness": "WA-30021",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -27721,15 +27721,15 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 35,
+        "estimated_days": 38,
         "min_days": 8,
-        "max_days": 62,
+        "max_days": 68,
         "id_issued_before": "2026-08-05",
-        "id_issued_after": "2026-06-12",
+        "id_issued_after": "2026-06-06",
         "min_days_witness": "MN-30030",
         "max_days_witness": "WA-30026",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -27939,15 +27939,15 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 54,
+        "estimated_days": 60,
         "min_days": null,
-        "max_days": 54,
+        "max_days": 60,
         "id_issued_before": null,
-        "id_issued_after": "2026-06-12",
+        "id_issued_after": "2026-06-06",
         "min_days_witness": null,
         "max_days_witness": "WA-30026",
         "basis": "upper-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -28235,13 +28235,13 @@
       "pre_notification": {
         "estimated_days": 8,
         "min_days": 0,
-        "max_days": 57,
+        "max_days": 63,
         "id_issued_before": "2026-04-10",
-        "id_issued_after": "2026-02-12",
+        "id_issued_after": "2026-02-06",
         "min_days_witness": "WA-35015",
         "max_days_witness": "WA-35011",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -28650,13 +28650,13 @@
       "pre_notification": {
         "estimated_days": 21,
         "min_days": 10,
-        "max_days": 81,
+        "max_days": 87,
         "id_issued_before": "2026-04-24",
-        "id_issued_after": "2026-02-12",
+        "id_issued_after": "2026-02-06",
         "min_days_witness": "WA-35015",
         "max_days_witness": "WA-35011",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -28979,13 +28979,13 @@
       "pre_notification": {
         "estimated_days": 55,
         "min_days": 40,
-        "max_days": 88,
+        "max_days": 94,
         "id_issued_before": "2026-05-21",
-        "id_issued_after": "2026-04-03",
+        "id_issued_after": "2026-03-28",
         "min_days_witness": "WA-35020",
         "max_days_witness": "WA-35016",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -29256,13 +29256,13 @@
       "pre_notification": {
         "estimated_days": 51,
         "min_days": 41,
-        "max_days": 89,
+        "max_days": 95,
         "id_issued_before": "2026-05-21",
-        "id_issued_after": "2026-04-03",
+        "id_issued_after": "2026-03-28",
         "min_days_witness": "WA-35020",
         "max_days_witness": "WA-35016",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -29567,13 +29567,13 @@
       "pre_notification": {
         "estimated_days": 17,
         "min_days": 12,
-        "max_days": 60,
+        "max_days": 66,
         "id_issued_before": "2026-05-21",
-        "id_issued_after": "2026-04-03",
+        "id_issued_after": "2026-03-28",
         "min_days_witness": "WA-35020",
         "max_days_witness": "WA-35016",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -29816,13 +29816,13 @@
       "pre_notification": {
         "estimated_days": 11,
         "min_days": 11,
-        "max_days": 34,
+        "max_days": 40,
         "id_issued_before": "2026-07-10",
-        "id_issued_after": "2026-06-17",
+        "id_issued_after": "2026-06-11",
         "min_days_witness": "WA-35032",
         "max_days_witness": "WA-35028",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -30122,13 +30122,13 @@
       "pre_notification": {
         "estimated_days": 27,
         "min_days": 27,
-        "max_days": 50,
+        "max_days": 56,
         "id_issued_before": "2026-07-10",
-        "id_issued_after": "2026-06-17",
+        "id_issued_after": "2026-06-11",
         "min_days_witness": "WA-35032",
         "max_days_witness": "WA-35028",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -30357,13 +30357,13 @@
       "pre_notification": {
         "estimated_days": 22,
         "min_days": 7,
-        "max_days": 48,
+        "max_days": 54,
         "id_issued_before": "2026-07-28",
-        "id_issued_after": "2026-06-17",
+        "id_issued_after": "2026-06-11",
         "min_days_witness": "WA-35037",
         "max_days_witness": "WA-35028",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -30742,13 +30742,13 @@
       "pre_notification": {
         "estimated_days": 21,
         "min_days": 10,
-        "max_days": 51,
+        "max_days": 57,
         "id_issued_before": "2026-07-28",
-        "id_issued_after": "2026-06-17",
+        "id_issued_after": "2026-06-11",
         "min_days_witness": "WA-35037",
         "max_days_witness": "WA-35028",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -31183,13 +31183,13 @@
       "pre_notification": {
         "estimated_days": 14,
         "min_days": 0,
-        "max_days": 48,
+        "max_days": 54,
         "id_issued_before": "2026-02-18",
-        "id_issued_after": "2026-01-01",
+        "id_issued_after": "2025-12-26",
         "min_days_witness": "WA-40010",
         "max_days_witness": "WA-40004",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -31462,13 +31462,13 @@
       "pre_notification": {
         "estimated_days": 26,
         "min_days": 12,
-        "max_days": 81,
+        "max_days": 87,
         "id_issued_before": "2026-03-11",
-        "id_issued_after": "2026-01-01",
+        "id_issued_after": "2025-12-26",
         "min_days_witness": "WA-40010",
         "max_days_witness": "WA-40004",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -31689,13 +31689,13 @@
       "pre_notification": {
         "estimated_days": 15,
         "min_days": 8,
-        "max_days": 77,
+        "max_days": 83,
         "id_issued_before": "2026-03-11",
-        "id_issued_after": "2026-01-01",
+        "id_issued_after": "2025-12-26",
         "min_days_witness": "WA-40010",
         "max_days_witness": "WA-40004",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -31924,13 +31924,13 @@
       "pre_notification": {
         "estimated_days": 25,
         "min_days": 7,
-        "max_days": 61,
+        "max_days": 67,
         "id_issued_before": "2026-04-07",
-        "id_issued_after": "2026-02-12",
+        "id_issued_after": "2026-02-06",
         "min_days_witness": "WA-40014",
         "max_days_witness": "WA-40011",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -32234,13 +32234,13 @@
       "pre_notification": {
         "estimated_days": 79,
         "min_days": 70,
-        "max_days": 124,
+        "max_days": 130,
         "id_issued_before": "2026-04-07",
-        "id_issued_after": "2026-02-12",
+        "id_issued_after": "2026-02-06",
         "min_days_witness": "WA-40014",
         "max_days_witness": "WA-40011",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -32478,13 +32478,13 @@
       "pre_notification": {
         "estimated_days": 2,
         "min_days": 0,
-        "max_days": 31,
+        "max_days": 37,
         "id_issued_before": "2026-04-10",
-        "id_issued_after": "2026-03-10",
+        "id_issued_after": "2026-03-04",
         "min_days_witness": "WA-40016",
         "max_days_witness": "WA-40014",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -32739,13 +32739,13 @@
       "pre_notification": {
         "estimated_days": 77,
         "min_days": 71,
-        "max_days": 110,
+        "max_days": 116,
         "id_issued_before": "2026-04-21",
-        "id_issued_after": "2026-03-13",
+        "id_issued_after": "2026-03-07",
         "min_days_witness": "WA-40018",
         "max_days_witness": "WA-40016",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -33030,13 +33030,13 @@
       "pre_notification": {
         "estimated_days": 20,
         "min_days": 16,
-        "max_days": 49,
+        "max_days": 55,
         "id_issued_before": "2026-04-26",
-        "id_issued_after": "2026-03-24",
+        "id_issued_after": "2026-03-18",
         "min_days_witness": "WA-40021",
         "max_days_witness": "WA-40018",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -33304,13 +33304,13 @@
       "pre_notification": {
         "estimated_days": 41,
         "min_days": 39,
-        "max_days": 72,
+        "max_days": 78,
         "id_issued_before": "2026-04-26",
-        "id_issued_after": "2026-03-24",
+        "id_issued_after": "2026-03-18",
         "min_days_witness": "WA-40021",
         "max_days_witness": "WA-40018",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -33576,13 +33576,13 @@
       "pre_notification": {
         "estimated_days": 14,
         "min_days": 5,
-        "max_days": 51,
+        "max_days": 57,
         "id_issued_before": "2026-05-14",
-        "id_issued_after": "2026-03-29",
+        "id_issued_after": "2026-03-23",
         "min_days_witness": "WA-40023",
         "max_days_witness": "WA-40021",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -33842,13 +33842,13 @@
       "pre_notification": {
         "estimated_days": 18,
         "min_days": 14,
-        "max_days": 50,
+        "max_days": 56,
         "id_issued_before": "2026-06-11",
-        "id_issued_after": "2026-05-06",
+        "id_issued_after": "2026-04-30",
         "min_days_witness": "WA-40028",
         "max_days_witness": "WA-40026",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -34098,13 +34098,13 @@
       "pre_notification": {
         "estimated_days": 34,
         "min_days": 33,
-        "max_days": 62,
+        "max_days": 68,
         "id_issued_before": "2026-06-12",
-        "id_issued_after": "2026-05-14",
+        "id_issued_after": "2026-05-08",
         "min_days_witness": "WA-40030",
         "max_days_witness": "WA-40028",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -34338,13 +34338,13 @@
       "pre_notification": {
         "estimated_days": 30,
         "min_days": 13,
-        "max_days": 74,
+        "max_days": 80,
         "id_issued_before": "2026-07-15",
-        "id_issued_after": "2026-05-15",
+        "id_issued_after": "2026-05-09",
         "min_days_witness": "WA-40032",
         "max_days_witness": "WA-40030",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -34770,13 +34770,13 @@
       "pre_notification": {
         "estimated_days": 50,
         "min_days": 36,
-        "max_days": 91,
+        "max_days": 97,
         "id_issued_before": "2026-02-26",
-        "id_issued_after": "2026-01-02",
+        "id_issued_after": "2025-12-27",
         "min_days_witness": "WA-45003",
         "max_days_witness": "WA-45001",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -35105,13 +35105,13 @@
       "pre_notification": {
         "estimated_days": 17,
         "min_days": 7,
-        "max_days": 55,
+        "max_days": 61,
         "id_issued_before": "2026-03-18",
-        "id_issued_after": "2026-01-29",
+        "id_issued_after": "2026-01-23",
         "min_days_witness": "WA-45007",
         "max_days_witness": "WA-45003",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -35648,13 +35648,13 @@
       "pre_notification": {
         "estimated_days": 47,
         "min_days": 42,
-        "max_days": 90,
+        "max_days": 96,
         "id_issued_before": "2026-03-18",
-        "id_issued_after": "2026-01-29",
+        "id_issued_after": "2026-01-23",
         "min_days_witness": "WA-45007",
         "max_days_witness": "WA-45003",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -35875,15 +35875,15 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 43,
+        "estimated_days": 49,
         "min_days": null,
-        "max_days": 43,
+        "max_days": 49,
         "id_issued_before": null,
-        "id_issued_after": "2026-07-03",
+        "id_issued_after": "2026-06-27",
         "min_days_witness": null,
         "max_days_witness": "WA-45023",
         "basis": "upper-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -36212,13 +36212,13 @@
       "pre_notification": {
         "estimated_days": 14,
         "min_days": 0,
-        "max_days": 46,
+        "max_days": 52,
         "id_issued_before": "2026-03-13",
-        "id_issued_after": "2026-01-26",
+        "id_issued_after": "2026-01-20",
         "min_days_witness": "WA-50010",
         "max_days_witness": "WA-50006",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -36483,13 +36483,13 @@
       "pre_notification": {
         "estimated_days": 51,
         "min_days": 42,
-        "max_days": 88,
+        "max_days": 94,
         "id_issued_before": "2026-03-13",
-        "id_issued_after": "2026-01-26",
+        "id_issued_after": "2026-01-20",
         "min_days_witness": "WA-50010",
         "max_days_witness": "WA-50006",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -36838,13 +36838,13 @@
       "pre_notification": {
         "estimated_days": 81,
         "min_days": 76,
-        "max_days": 122,
+        "max_days": 128,
         "id_issued_before": "2026-03-13",
-        "id_issued_after": "2026-01-26",
+        "id_issued_after": "2026-01-20",
         "min_days_witness": "WA-50010",
         "max_days_witness": "WA-50006",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -37082,13 +37082,13 @@
       "pre_notification": {
         "estimated_days": 105,
         "min_days": 105,
-        "max_days": 138,
+        "max_days": 144,
         "id_issued_before": "2026-03-18",
-        "id_issued_after": "2026-02-13",
+        "id_issued_after": "2026-02-07",
         "min_days_witness": "MN-50012",
         "max_days_witness": "WA-50010",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -37370,13 +37370,13 @@
       "pre_notification": {
         "estimated_days": 0,
         "min_days": 0,
-        "max_days": 33,
+        "max_days": 39,
         "id_issued_before": "2026-03-18",
-        "id_issued_after": "2026-02-13",
+        "id_issued_after": "2026-02-07",
         "min_days_witness": "WA-50013",
         "max_days_witness": "WA-50010",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -37654,13 +37654,13 @@
       "pre_notification": {
         "estimated_days": 29,
         "min_days": 14,
-        "max_days": 72,
+        "max_days": 78,
         "id_issued_before": "2026-05-01",
-        "id_issued_after": "2026-03-04",
+        "id_issued_after": "2026-02-26",
         "min_days_witness": "WA-50016",
         "max_days_witness": "WA-50014",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -37888,13 +37888,13 @@
       "pre_notification": {
         "estimated_days": 14,
         "min_days": 14,
-        "max_days": 29,
+        "max_days": 35,
         "id_issued_before": "2026-05-21",
-        "id_issued_after": "2026-05-06",
+        "id_issued_after": "2026-04-30",
         "min_days_witness": "WA-50020",
         "max_days_witness": "WA-50018",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -38161,13 +38161,13 @@
       "pre_notification": {
         "estimated_days": 25,
         "min_days": 20,
-        "max_days": 42,
+        "max_days": 48,
         "id_issued_before": "2026-05-28",
-        "id_issued_after": "2026-05-06",
+        "id_issued_after": "2026-04-30",
         "min_days_witness": "WA-50023",
         "max_days_witness": "WA-50018",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -38399,13 +38399,13 @@
       "pre_notification": {
         "estimated_days": 17,
         "min_days": 14,
-        "max_days": 36,
+        "max_days": 42,
         "id_issued_before": "2026-05-28",
-        "id_issued_after": "2026-05-06",
+        "id_issued_after": "2026-04-30",
         "min_days_witness": "WA-50023",
         "max_days_witness": "WA-50018",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -38684,13 +38684,13 @@
       "pre_notification": {
         "estimated_days": 22,
         "min_days": 2,
-        "max_days": 49,
+        "max_days": 55,
         "id_issued_before": "2026-06-22",
-        "id_issued_after": "2026-05-06",
+        "id_issued_after": "2026-04-30",
         "min_days_witness": "MN-50027",
         "max_days_witness": "WA-50018",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -38938,13 +38938,13 @@
       "pre_notification": {
         "estimated_days": 21,
         "min_days": 7,
-        "max_days": 54,
+        "max_days": 60,
         "id_issued_before": "2026-06-22",
-        "id_issued_after": "2026-05-06",
+        "id_issued_after": "2026-04-30",
         "min_days_witness": "MN-50027",
         "max_days_witness": "WA-50018",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -39258,13 +39258,13 @@
       "pre_notification": {
         "estimated_days": 16,
         "min_days": 7,
-        "max_days": 54,
+        "max_days": 60,
         "id_issued_before": "2026-06-22",
-        "id_issued_after": "2026-05-06",
+        "id_issued_after": "2026-04-30",
         "min_days_witness": "MN-50027",
         "max_days_witness": "WA-50018",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -39489,13 +39489,13 @@
       "pre_notification": {
         "estimated_days": 3,
         "min_days": 0,
-        "max_days": 47,
+        "max_days": 53,
         "id_issued_before": "2026-06-22",
-        "id_issued_after": "2026-05-06",
+        "id_issued_after": "2026-04-30",
         "min_days_witness": "WA-50029",
         "max_days_witness": "WA-50018",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -39778,13 +39778,13 @@
       "pre_notification": {
         "estimated_days": 1,
         "min_days": 0,
-        "max_days": 29,
+        "max_days": 35,
         "id_issued_before": "2026-07-01",
-        "id_issued_after": "2026-06-02",
+        "id_issued_after": "2026-05-27",
         "min_days_witness": "WA-50031",
         "max_days_witness": "WA-50029",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -40097,13 +40097,13 @@
       "pre_notification": {
         "estimated_days": 20,
         "min_days": 12,
-        "max_days": 56,
+        "max_days": 62,
         "id_issued_before": "2026-07-17",
-        "id_issued_after": "2026-06-03",
+        "id_issued_after": "2026-05-28",
         "min_days_witness": "WA-50033",
         "max_days_witness": "WA-50031",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -40419,15 +40419,15 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 54,
+        "estimated_days": 60,
         "min_days": null,
-        "max_days": 54,
+        "max_days": 60,
         "id_issued_before": null,
-        "id_issued_after": "2026-06-19",
+        "id_issued_after": "2026-06-13",
         "min_days_witness": null,
         "max_days_witness": "WA-50033",
         "basis": "upper-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -40731,7 +40731,7 @@
         "min_days_witness": "WA-55004",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -41015,13 +41015,13 @@
       "pre_notification": {
         "estimated_days": 14,
         "min_days": 0,
-        "max_days": 49,
+        "max_days": 55,
         "id_issued_before": "2026-02-19",
-        "id_issued_after": "2026-01-01",
+        "id_issued_after": "2025-12-26",
         "min_days_witness": "WA-55009",
         "max_days_witness": "WA-55005",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -41324,13 +41324,13 @@
       "pre_notification": {
         "estimated_days": 29,
         "min_days": 29,
-        "max_days": 57,
+        "max_days": 63,
         "id_issued_before": "2026-02-26",
-        "id_issued_after": "2026-01-29",
+        "id_issued_after": "2026-01-23",
         "min_days_witness": "WA-55011",
         "max_days_witness": "WA-55009",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -41682,13 +41682,13 @@
       "pre_notification": {
         "estimated_days": 5,
         "min_days": 0,
-        "max_days": 40,
+        "max_days": 46,
         "id_issued_before": "2026-03-10",
-        "id_issued_after": "2026-01-29",
+        "id_issued_after": "2026-01-23",
         "min_days_witness": "WA-55014",
         "max_days_witness": "WA-55011",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -41940,13 +41940,13 @@
       "pre_notification": {
         "estimated_days": 32,
         "min_days": 24,
-        "max_days": 74,
+        "max_days": 80,
         "id_issued_before": "2026-03-20",
-        "id_issued_after": "2026-01-29",
+        "id_issued_after": "2026-01-23",
         "min_days_witness": "WA-55014",
         "max_days_witness": "WA-55011",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -42315,13 +42315,13 @@
       "pre_notification": {
         "estimated_days": 0,
         "min_days": 0,
-        "max_days": 26,
+        "max_days": 32,
         "id_issued_before": "2026-04-21",
-        "id_issued_after": "2026-03-26",
+        "id_issued_after": "2026-03-20",
         "min_days_witness": "WA-55017",
         "max_days_witness": "WA-55015",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -42534,13 +42534,13 @@
       "pre_notification": {
         "estimated_days": 12,
         "min_days": 3,
-        "max_days": 57,
+        "max_days": 63,
         "id_issued_before": "2026-07-21",
-        "id_issued_after": "2026-05-28",
+        "id_issued_after": "2026-05-22",
         "min_days_witness": "WA-55030",
         "max_days_witness": "WA-55027",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -42842,15 +42842,15 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 43,
+        "estimated_days": 49,
         "min_days": null,
-        "max_days": 43,
+        "max_days": 49,
         "id_issued_before": null,
-        "id_issued_after": "2026-06-23",
+        "id_issued_after": "2026-06-17",
         "min_days_witness": null,
         "max_days_witness": "WA-55030",
         "basis": "upper-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -43091,7 +43091,7 @@
         "min_days_witness": "WA-60006",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -43482,13 +43482,13 @@
       "pre_notification": {
         "estimated_days": 34,
         "min_days": 31,
-        "max_days": 65,
+        "max_days": 71,
         "id_issued_before": "2026-01-20",
-        "id_issued_after": "2025-12-17",
+        "id_issued_after": "2025-12-11",
         "min_days_witness": "WA-60008",
         "max_days_witness": "WA-60006",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -43914,13 +43914,13 @@
       "pre_notification": {
         "estimated_days": 45,
         "min_days": 34,
-        "max_days": 83,
+        "max_days": 89,
         "id_issued_before": "2026-03-25",
-        "id_issued_after": "2026-02-04",
+        "id_issued_after": "2026-01-29",
         "min_days_witness": "WA-60012",
         "max_days_witness": "WA-60010",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -44141,13 +44141,13 @@
       "pre_notification": {
         "estimated_days": 18,
         "min_days": 6,
-        "max_days": 50,
+        "max_days": 56,
         "id_issued_before": "2026-04-16",
-        "id_issued_after": "2026-03-03",
+        "id_issued_after": "2026-02-25",
         "min_days_witness": "WA-60017",
         "max_days_witness": "WA-60013",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -44452,13 +44452,13 @@
       "pre_notification": {
         "estimated_days": 43,
         "min_days": 35,
-        "max_days": 79,
+        "max_days": 85,
         "id_issued_before": "2026-04-16",
-        "id_issued_after": "2026-03-03",
+        "id_issued_after": "2026-02-25",
         "min_days_witness": "WA-60017",
         "max_days_witness": "WA-60013",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -44675,13 +44675,13 @@
       "pre_notification": {
         "estimated_days": 10,
         "min_days": 10,
-        "max_days": 43,
+        "max_days": 49,
         "id_issued_before": "2026-06-09",
-        "id_issued_after": "2026-05-07",
+        "id_issued_after": "2026-05-01",
         "min_days_witness": "WA-60024",
         "max_days_witness": "WA-60021",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -44925,13 +44925,13 @@
       "pre_notification": {
         "estimated_days": 30,
         "min_days": 6,
-        "max_days": 56,
+        "max_days": 62,
         "id_issued_before": "2026-07-10",
-        "id_issued_after": "2026-05-21",
+        "id_issued_after": "2026-05-15",
         "min_days_witness": "WA-60028",
         "max_days_witness": "WA-60023",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -45181,13 +45181,13 @@
       "pre_notification": {
         "estimated_days": 33,
         "min_days": 17,
-        "max_days": 67,
+        "max_days": 73,
         "id_issued_before": "2026-07-10",
-        "id_issued_after": "2026-05-21",
+        "id_issued_after": "2026-05-15",
         "min_days_witness": "WA-60028",
         "max_days_witness": "WA-60023",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -45474,13 +45474,13 @@
       "pre_notification": {
         "estimated_days": 15,
         "min_days": 13,
-        "max_days": 47,
+        "max_days": 53,
         "id_issued_before": "2026-07-16",
-        "id_issued_after": "2026-06-12",
+        "id_issued_after": "2026-06-06",
         "min_days_witness": "WA-60032",
         "max_days_witness": "WA-60029",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -45780,13 +45780,13 @@
       "pre_notification": {
         "estimated_days": 23,
         "min_days": 8,
-        "max_days": 57,
+        "max_days": 63,
         "id_issued_before": "2026-02-23",
-        "id_issued_after": "2026-01-05",
+        "id_issued_after": "2025-12-30",
         "min_days_witness": "MN-65007",
         "max_days_witness": "WA-65004",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -46047,13 +46047,13 @@
       "pre_notification": {
         "estimated_days": 3,
         "min_days": 0,
-        "max_days": 49,
+        "max_days": 55,
         "id_issued_before": "2026-02-23",
-        "id_issued_after": "2026-01-05",
+        "id_issued_after": "2025-12-30",
         "min_days_witness": "WA-65010",
         "max_days_witness": "WA-65004",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -46388,13 +46388,13 @@
       "pre_notification": {
         "estimated_days": 40,
         "min_days": 28,
-        "max_days": 92,
+        "max_days": 98,
         "id_issued_before": "2026-03-10",
-        "id_issued_after": "2026-01-05",
+        "id_issued_after": "2025-12-30",
         "min_days_witness": "WA-65010",
         "max_days_witness": "WA-65004",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -46667,13 +46667,13 @@
       "pre_notification": {
         "estimated_days": 14,
         "min_days": 8,
-        "max_days": 72,
+        "max_days": 78,
         "id_issued_before": "2026-03-10",
-        "id_issued_after": "2026-01-05",
+        "id_issued_after": "2025-12-30",
         "min_days_witness": "WA-65010",
         "max_days_witness": "WA-65004",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -46889,13 +46889,13 @@
       "pre_notification": {
         "estimated_days": 11,
         "min_days": 0,
-        "max_days": 46,
+        "max_days": 52,
         "id_issued_before": "2026-05-12",
-        "id_issued_after": "2026-03-27",
+        "id_issued_after": "2026-03-21",
         "min_days_witness": "WA-65017",
         "max_days_witness": "WA-65013",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -47096,13 +47096,13 @@
       "pre_notification": {
         "estimated_days": 27,
         "min_days": 3,
-        "max_days": 66,
+        "max_days": 72,
         "id_issued_before": "2026-06-19",
-        "id_issued_after": "2026-04-17",
+        "id_issued_after": "2026-04-11",
         "min_days_witness": "WA-65024",
         "max_days_witness": "WA-65018",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -47403,13 +47403,13 @@
       "pre_notification": {
         "estimated_days": 66,
         "min_days": 48,
-        "max_days": 111,
+        "max_days": 117,
         "id_issued_before": "2026-06-19",
-        "id_issued_after": "2026-04-17",
+        "id_issued_after": "2026-04-11",
         "min_days_witness": "WA-65024",
         "max_days_witness": "WA-65018",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -47647,13 +47647,13 @@
       "pre_notification": {
         "estimated_days": 22,
         "min_days": 10,
-        "max_days": 73,
+        "max_days": 79,
         "id_issued_before": "2026-06-19",
-        "id_issued_after": "2026-04-17",
+        "id_issued_after": "2026-04-11",
         "min_days_witness": "WA-65024",
         "max_days_witness": "WA-65018",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -47864,13 +47864,13 @@
       "pre_notification": {
         "estimated_days": 27,
         "min_days": 21,
-        "max_days": 84,
+        "max_days": 90,
         "id_issued_before": "2026-06-19",
-        "id_issued_after": "2026-04-17",
+        "id_issued_after": "2026-04-11",
         "min_days_witness": "WA-65024",
         "max_days_witness": "WA-65018",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -48160,13 +48160,13 @@
       "pre_notification": {
         "estimated_days": 25,
         "min_days": 23,
-        "max_days": 54,
+        "max_days": 60,
         "id_issued_before": "2026-06-29",
-        "id_issued_after": "2026-05-29",
+        "id_issued_after": "2026-05-23",
         "min_days_witness": "WA-65027",
         "max_days_witness": "WA-65025",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -48457,13 +48457,13 @@
       "pre_notification": {
         "estimated_days": 2,
         "min_days": 0,
-        "max_days": 38,
+        "max_days": 44,
         "id_issued_before": "2026-07-09",
-        "id_issued_after": "2026-06-01",
+        "id_issued_after": "2026-05-26",
         "min_days_witness": "WA-65030",
         "max_days_witness": "WA-65027",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -48666,15 +48666,15 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 50,
+        "estimated_days": 56,
         "min_days": null,
-        "max_days": 50,
+        "max_days": 56,
         "id_issued_before": null,
-        "id_issued_after": "2026-06-25",
+        "id_issued_after": "2026-06-19",
         "min_days_witness": null,
         "max_days_witness": "WA-65030",
         "basis": "upper-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -48980,13 +48980,13 @@
       "pre_notification": {
         "estimated_days": 0,
         "min_days": 0,
-        "max_days": 25,
+        "max_days": 31,
         "id_issued_before": "2026-02-09",
-        "id_issued_after": "2026-01-15",
+        "id_issued_after": "2026-01-09",
         "min_days_witness": "WA-70006",
         "max_days_witness": "WA-70004",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -49285,13 +49285,13 @@
       "pre_notification": {
         "estimated_days": 45,
         "min_days": 45,
-        "max_days": 68,
+        "max_days": 74,
         "id_issued_before": "2026-03-28",
-        "id_issued_after": "2026-03-05",
+        "id_issued_after": "2026-02-27",
         "min_days_witness": "WA-70015",
         "max_days_witness": "WA-70011",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -49580,13 +49580,13 @@
       "pre_notification": {
         "estimated_days": 18,
         "min_days": 18,
-        "max_days": 41,
+        "max_days": 47,
         "id_issued_before": "2026-03-28",
-        "id_issued_after": "2026-03-05",
+        "id_issued_after": "2026-02-27",
         "min_days_witness": "WA-70015",
         "max_days_witness": "WA-70011",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -49849,13 +49849,13 @@
       "pre_notification": {
         "estimated_days": 19,
         "min_days": 19,
-        "max_days": 42,
+        "max_days": 48,
         "id_issued_before": "2026-03-28",
-        "id_issued_after": "2026-03-05",
+        "id_issued_after": "2026-02-27",
         "min_days_witness": "WA-70015",
         "max_days_witness": "WA-70011",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -50155,13 +50155,13 @@
       "pre_notification": {
         "estimated_days": 13,
         "min_days": 11,
-        "max_days": 42,
+        "max_days": 48,
         "id_issued_before": "2026-05-07",
-        "id_issued_after": "2026-04-06",
+        "id_issued_after": "2026-03-31",
         "min_days_witness": "WA-70019",
         "max_days_witness": "WA-70017",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -50423,13 +50423,13 @@
       "pre_notification": {
         "estimated_days": 17,
         "min_days": 7,
-        "max_days": 54,
+        "max_days": 60,
         "id_issued_before": "2026-05-26",
-        "id_issued_after": "2026-04-09",
+        "id_issued_after": "2026-04-03",
         "min_days_witness": "WA-70021",
         "max_days_witness": "WA-70019",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -50657,13 +50657,13 @@
       "pre_notification": {
         "estimated_days": 24,
         "min_days": 19,
-        "max_days": 56,
+        "max_days": 62,
         "id_issued_before": "2026-06-04",
-        "id_issued_after": "2026-04-28",
+        "id_issued_after": "2026-04-22",
         "min_days_witness": "WA-70023",
         "max_days_witness": "WA-70021",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -50902,13 +50902,13 @@
       "pre_notification": {
         "estimated_days": 25,
         "min_days": 7,
-        "max_days": 61,
+        "max_days": 67,
         "id_issued_before": "2026-07-08",
-        "id_issued_after": "2026-05-15",
+        "id_issued_after": "2026-05-09",
         "min_days_witness": "WA-70028",
         "max_days_witness": "WA-70025",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -51195,13 +51195,13 @@
       "pre_notification": {
         "estimated_days": 31,
         "min_days": 22,
-        "max_days": 76,
+        "max_days": 82,
         "id_issued_before": "2026-07-08",
-        "id_issued_after": "2026-05-15",
+        "id_issued_after": "2026-05-09",
         "min_days_witness": "WA-70028",
         "max_days_witness": "WA-70025",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -51482,13 +51482,13 @@
       "pre_notification": {
         "estimated_days": 25,
         "min_days": 10,
-        "max_days": 58,
+        "max_days": 64,
         "id_issued_before": "2026-07-31",
-        "id_issued_after": "2026-06-13",
+        "id_issued_after": "2026-06-07",
         "min_days_witness": "WA-70033",
         "max_days_witness": "WA-70029",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -51757,7 +51757,7 @@
         "min_days_witness": "MN-75003",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -52095,7 +52095,7 @@
         "min_days_witness": "MN-75004",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -52371,7 +52371,7 @@
         "min_days_witness": "WA-75006",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -52668,13 +52668,13 @@
       "pre_notification": {
         "estimated_days": 0,
         "min_days": 0,
-        "max_days": 33,
+        "max_days": 39,
         "id_issued_before": "2026-02-17",
-        "id_issued_after": "2026-01-15",
+        "id_issued_after": "2026-01-09",
         "min_days_witness": "WA-75010",
         "max_days_witness": "WA-75008",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -52946,13 +52946,13 @@
       "pre_notification": {
         "estimated_days": 14,
         "min_days": 6,
-        "max_days": 49,
+        "max_days": 55,
         "id_issued_before": "2026-03-13",
-        "id_issued_after": "2026-01-29",
+        "id_issued_after": "2026-01-23",
         "min_days_witness": "WA-75013",
         "max_days_witness": "WA-75011",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -53266,13 +53266,13 @@
       "pre_notification": {
         "estimated_days": 58,
         "min_days": 56,
-        "max_days": 88,
+        "max_days": 94,
         "id_issued_before": "2026-03-17",
-        "id_issued_after": "2026-02-13",
+        "id_issued_after": "2026-02-07",
         "min_days_witness": "WA-75015",
         "max_days_witness": "WA-75013",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -53702,13 +53702,13 @@
       "pre_notification": {
         "estimated_days": 35,
         "min_days": 28,
-        "max_days": 70,
+        "max_days": 76,
         "id_issued_before": "2026-03-31",
-        "id_issued_after": "2026-02-17",
+        "id_issued_after": "2026-02-11",
         "min_days_witness": "WA-75017",
         "max_days_witness": "WA-75015",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -53974,13 +53974,13 @@
       "pre_notification": {
         "estimated_days": 25,
         "min_days": 6,
-        "max_days": 62,
+        "max_days": 68,
         "id_issued_before": "2026-04-28",
-        "id_issued_after": "2026-03-03",
+        "id_issued_after": "2026-02-25",
         "min_days_witness": "WA-75020",
         "max_days_witness": "WA-75017",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -54263,13 +54263,13 @@
       "pre_notification": {
         "estimated_days": 31,
         "min_days": 27,
-        "max_days": 63,
+        "max_days": 69,
         "id_issued_before": "2026-05-22",
-        "id_issued_after": "2026-04-16",
+        "id_issued_after": "2026-04-10",
         "min_days_witness": "WA-75024",
         "max_days_witness": "WA-75022",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -54550,13 +54550,13 @@
       "pre_notification": {
         "estimated_days": 22,
         "min_days": 6,
-        "max_days": 55,
+        "max_days": 61,
         "id_issued_before": "2026-06-24",
-        "id_issued_after": "2026-05-06",
+        "id_issued_after": "2026-04-30",
         "min_days_witness": "WA-75030",
         "max_days_witness": "WA-75026",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -54872,13 +54872,13 @@
       "pre_notification": {
         "estimated_days": 20,
         "min_days": 14,
-        "max_days": 63,
+        "max_days": 69,
         "id_issued_before": "2026-06-24",
-        "id_issued_after": "2026-05-06",
+        "id_issued_after": "2026-04-30",
         "min_days_witness": "WA-75030",
         "max_days_witness": "WA-75026",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -55142,13 +55142,13 @@
       "pre_notification": {
         "estimated_days": 19,
         "min_days": 5,
-        "max_days": 50,
+        "max_days": 56,
         "id_issued_before": "2026-07-31",
-        "id_issued_after": "2026-06-16",
+        "id_issued_after": "2026-06-10",
         "min_days_witness": "WA-75039",
         "max_days_witness": "WA-75034",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -55360,15 +55360,15 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 37,
+        "estimated_days": 43,
         "min_days": null,
-        "max_days": 37,
+        "max_days": 43,
         "id_issued_before": null,
-        "id_issued_after": "2026-07-08",
+        "id_issued_after": "2026-07-02",
         "min_days_witness": null,
         "max_days_witness": "WA-75040",
         "basis": "upper-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -55630,13 +55630,13 @@
       "pre_notification": {
         "estimated_days": 12,
         "min_days": 0,
-        "max_days": 46,
+        "max_days": 52,
         "id_issued_before": "2026-02-06",
-        "id_issued_after": "2025-12-22",
+        "id_issued_after": "2025-12-16",
         "min_days_witness": "WA-80006",
         "max_days_witness": "WA-80001",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -55946,13 +55946,13 @@
       "pre_notification": {
         "estimated_days": 14,
         "min_days": 1,
-        "max_days": 60,
+        "max_days": 66,
         "id_issued_before": "2026-02-19",
-        "id_issued_after": "2025-12-22",
+        "id_issued_after": "2025-12-16",
         "min_days_witness": "WA-80006",
         "max_days_witness": "WA-80001",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -56170,13 +56170,13 @@
       "pre_notification": {
         "estimated_days": 166,
         "min_days": 159,
-        "max_days": 218,
+        "max_days": 224,
         "id_issued_before": "2026-02-19",
-        "id_issued_after": "2025-12-22",
+        "id_issued_after": "2025-12-16",
         "min_days_witness": "WA-80006",
         "max_days_witness": "WA-80001",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -56415,13 +56415,13 @@
       "pre_notification": {
         "estimated_days": 20,
         "min_days": 11,
-        "max_days": 56,
+        "max_days": 62,
         "id_issued_before": "2026-04-24",
-        "id_issued_after": "2026-03-10",
+        "id_issued_after": "2026-03-04",
         "min_days_witness": "WA-80011",
         "max_days_witness": "WA-80009",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -56664,13 +56664,13 @@
       "pre_notification": {
         "estimated_days": 23,
         "min_days": 20,
-        "max_days": 54,
+        "max_days": 60,
         "id_issued_before": "2026-05-14",
-        "id_issued_after": "2026-04-10",
+        "id_issued_after": "2026-04-04",
         "min_days_witness": "WA-80015",
         "max_days_witness": "WA-80013",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -57057,13 +57057,13 @@
       "pre_notification": {
         "estimated_days": 10,
         "min_days": 8,
-        "max_days": 40,
+        "max_days": 46,
         "id_issued_before": "2026-05-18",
-        "id_issued_after": "2026-04-16",
+        "id_issued_after": "2026-04-10",
         "min_days_witness": "WA-80017",
         "max_days_witness": "WA-80015",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -57274,13 +57274,13 @@
       "pre_notification": {
         "estimated_days": 28,
         "min_days": 22,
-        "max_days": 62,
+        "max_days": 68,
         "id_issued_before": "2026-06-03",
-        "id_issued_after": "2026-04-24",
+        "id_issued_after": "2026-04-18",
         "min_days_witness": "WA-80022",
         "max_days_witness": "WA-80020",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -57610,13 +57610,13 @@
       "pre_notification": {
         "estimated_days": 3,
         "min_days": 3,
-        "max_days": 29,
+        "max_days": 35,
         "id_issued_before": "2026-06-30",
-        "id_issued_after": "2026-06-04",
+        "id_issued_after": "2026-05-29",
         "min_days_witness": "WA-80025",
         "max_days_witness": "WA-80023",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -57864,13 +57864,13 @@
       "pre_notification": {
         "estimated_days": 37,
         "min_days": 34,
-        "max_days": 67,
+        "max_days": 73,
         "id_issued_before": "2026-07-08",
-        "id_issued_after": "2026-06-05",
+        "id_issued_after": "2026-05-30",
         "min_days_witness": "WA-80028",
         "max_days_witness": "WA-80026",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -58130,15 +58130,15 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 52,
+        "estimated_days": 58,
         "min_days": null,
-        "max_days": 52,
+        "max_days": 58,
         "id_issued_before": null,
-        "id_issued_after": "2026-06-26",
+        "id_issued_after": "2026-06-20",
         "min_days_witness": null,
         "max_days_witness": "WA-80033",
         "basis": "upper-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -58373,7 +58373,7 @@
         "min_days_witness": "WA-85004",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -58718,7 +58718,7 @@
         "min_days_witness": "WA-85004",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -59057,13 +59057,13 @@
       "pre_notification": {
         "estimated_days": 66,
         "min_days": 52,
-        "max_days": 101,
+        "max_days": 107,
         "id_issued_before": "2026-02-02",
-        "id_issued_after": "2025-12-15",
+        "id_issued_after": "2025-12-09",
         "min_days_witness": "WA-85008",
         "max_days_witness": "WA-85005",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -59329,13 +59329,13 @@
       "pre_notification": {
         "estimated_days": 24,
         "min_days": 17,
-        "max_days": 66,
+        "max_days": 72,
         "id_issued_before": "2026-02-02",
-        "id_issued_after": "2025-12-15",
+        "id_issued_after": "2025-12-09",
         "min_days_witness": "WA-85008",
         "max_days_witness": "WA-85005",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -59564,13 +59564,13 @@
       "pre_notification": {
         "estimated_days": 114,
         "min_days": 107,
-        "max_days": 148,
+        "max_days": 154,
         "id_issued_before": "2026-03-16",
-        "id_issued_after": "2026-02-03",
+        "id_issued_after": "2026-01-28",
         "min_days_witness": "WA-85016",
         "max_days_witness": "WA-85014",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -59896,13 +59896,13 @@
       "pre_notification": {
         "estimated_days": 17,
         "min_days": 8,
-        "max_days": 54,
+        "max_days": 60,
         "id_issued_before": "2026-05-12",
-        "id_issued_after": "2026-03-27",
+        "id_issued_after": "2026-03-21",
         "min_days_witness": "WA-85027",
         "max_days_witness": "WA-85025",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -60191,13 +60191,13 @@
       "pre_notification": {
         "estimated_days": 11,
         "min_days": 0,
-        "max_days": 50,
+        "max_days": 56,
         "id_issued_before": "2026-06-30",
-        "id_issued_after": "2026-05-11",
+        "id_issued_after": "2026-05-05",
         "min_days_witness": "WA-85037",
         "max_days_witness": "WA-85034",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -60462,13 +60462,13 @@
       "pre_notification": {
         "estimated_days": 22,
         "min_days": 13,
-        "max_days": 59,
+        "max_days": 65,
         "id_issued_before": "2026-07-21",
-        "id_issued_after": "2026-06-05",
+        "id_issued_after": "2026-05-30",
         "min_days_witness": "WA-85039",
         "max_days_witness": "WA-85037",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -60731,13 +60731,13 @@
       "pre_notification": {
         "estimated_days": 3,
         "min_days": 0,
-        "max_days": 46,
+        "max_days": 52,
         "id_issued_before": "2026-03-06",
-        "id_issued_after": "2026-01-19",
+        "id_issued_after": "2026-01-13",
         "min_days_witness": "WA-90010",
         "max_days_witness": "WA-90004",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -61066,13 +61066,13 @@
       "pre_notification": {
         "estimated_days": 65,
         "min_days": 42,
-        "max_days": 115,
+        "max_days": 121,
         "id_issued_before": "2026-04-02",
-        "id_issued_after": "2026-01-19",
+        "id_issued_after": "2026-01-13",
         "min_days_witness": "WA-90010",
         "max_days_witness": "WA-90004",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -61829,13 +61829,13 @@
       "pre_notification": {
         "estimated_days": 64,
         "min_days": 49,
-        "max_days": 122,
+        "max_days": 128,
         "id_issued_before": "2026-04-02",
-        "id_issued_after": "2026-01-19",
+        "id_issued_after": "2026-01-13",
         "min_days_witness": "WA-90010",
         "max_days_witness": "WA-90004",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -62174,13 +62174,13 @@
       "pre_notification": {
         "estimated_days": 20,
         "min_days": 12,
-        "max_days": 85,
+        "max_days": 91,
         "id_issued_before": "2026-04-02",
-        "id_issued_after": "2026-01-19",
+        "id_issued_after": "2026-01-13",
         "min_days_witness": "WA-90010",
         "max_days_witness": "WA-90004",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -62482,13 +62482,13 @@
       "pre_notification": {
         "estimated_days": 26,
         "min_days": 19,
-        "max_days": 61,
+        "max_days": 67,
         "id_issued_before": "2026-04-24",
-        "id_issued_after": "2026-03-13",
+        "id_issued_after": "2026-03-07",
         "min_days_witness": "WA-90013",
         "max_days_witness": "WA-90011",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -62748,13 +62748,13 @@
       "pre_notification": {
         "estimated_days": 25,
         "min_days": 20,
-        "max_days": 57,
+        "max_days": 63,
         "id_issued_before": "2026-05-08",
-        "id_issued_after": "2026-04-01",
+        "id_issued_after": "2026-03-26",
         "min_days_witness": "WA-90016",
         "max_days_witness": "WA-90014",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -63046,13 +63046,13 @@
       "pre_notification": {
         "estimated_days": 20,
         "min_days": 17,
-        "max_days": 51,
+        "max_days": 57,
         "id_issued_before": "2026-06-09",
-        "id_issued_after": "2026-05-06",
+        "id_issued_after": "2026-04-30",
         "min_days_witness": "WA-90021",
         "max_days_witness": "WA-90019",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -63345,13 +63345,13 @@
       "pre_notification": {
         "estimated_days": 38,
         "min_days": 34,
-        "max_days": 69,
+        "max_days": 75,
         "id_issued_before": "2026-06-16",
-        "id_issued_after": "2026-05-12",
+        "id_issued_after": "2026-05-06",
         "min_days_witness": "WA-90023",
         "max_days_witness": "WA-90021",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -63567,13 +63567,13 @@
       "pre_notification": {
         "estimated_days": 34,
         "min_days": 29,
-        "max_days": 66,
+        "max_days": 72,
         "id_issued_before": "2026-06-25",
-        "id_issued_after": "2026-05-19",
+        "id_issued_after": "2026-05-13",
         "min_days_witness": "WA-90025",
         "max_days_witness": "WA-90023",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -63817,15 +63817,15 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 33,
+        "estimated_days": 36,
         "min_days": 14,
-        "max_days": 52,
+        "max_days": 58,
         "id_issued_before": "2026-07-13",
-        "id_issued_after": "2026-06-05",
+        "id_issued_after": "2026-05-30",
         "min_days_witness": "MN-90028",
         "max_days_witness": "WA-90026",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -64099,15 +64099,15 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 38,
+        "estimated_days": 44,
         "min_days": null,
-        "max_days": 38,
+        "max_days": 44,
         "id_issued_before": null,
-        "id_issued_after": "2026-06-05",
+        "id_issued_after": "2026-05-30",
         "min_days_witness": null,
         "max_days_witness": "WA-90026",
         "basis": "upper-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -64742,7 +64742,7 @@
         "min_days_witness": "MN-95002",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -64969,7 +64969,7 @@
         "min_days_witness": "WA-95005",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -65373,7 +65373,7 @@
         "min_days_witness": "WA-95005",
         "max_days_witness": null,
         "basis": "lower-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -65603,13 +65603,13 @@
       "pre_notification": {
         "estimated_days": 87,
         "min_days": 76,
-        "max_days": 125,
+        "max_days": 131,
         "id_issued_before": "2026-03-04",
-        "id_issued_after": "2026-01-14",
+        "id_issued_after": "2026-01-08",
         "min_days_witness": "WA-95008",
         "max_days_witness": "WA-95006",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -65866,13 +65866,13 @@
       "pre_notification": {
         "estimated_days": 14,
         "min_days": 10,
-        "max_days": 46,
+        "max_days": 52,
         "id_issued_before": "2026-03-31",
-        "id_issued_after": "2026-02-23",
+        "id_issued_after": "2026-02-17",
         "min_days_witness": "WA-95012",
         "max_days_witness": "WA-95010",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -66124,13 +66124,13 @@
       "pre_notification": {
         "estimated_days": 15,
         "min_days": 0,
-        "max_days": 48,
+        "max_days": 54,
         "id_issued_before": "2026-05-18",
-        "id_issued_after": "2026-03-31",
+        "id_issued_after": "2026-03-25",
         "min_days_witness": "WA-95019",
         "max_days_witness": "WA-95015",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -66528,13 +66528,13 @@
       "pre_notification": {
         "estimated_days": 0,
         "min_days": 0,
-        "max_days": 28,
+        "max_days": 34,
         "id_issued_before": "2026-05-21",
-        "id_issued_after": "2026-04-23",
+        "id_issued_after": "2026-04-17",
         "min_days_witness": "WA-95022",
         "max_days_witness": "WA-95020",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -66758,13 +66758,13 @@
       "pre_notification": {
         "estimated_days": 32,
         "min_days": 31,
-        "max_days": 60,
+        "max_days": 66,
         "id_issued_before": "2026-06-12",
-        "id_issued_after": "2026-05-14",
+        "id_issued_after": "2026-05-08",
         "min_days_witness": "WA-95026",
         "max_days_witness": "WA-95024",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -67023,13 +67023,13 @@
       "pre_notification": {
         "estimated_days": 14,
         "min_days": 10,
-        "max_days": 46,
+        "max_days": 52,
         "id_issued_before": "2026-06-30",
-        "id_issued_after": "2026-05-25",
+        "id_issued_after": "2026-05-19",
         "min_days_witness": "WA-95031",
         "max_days_witness": "WA-95029",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -67261,13 +67261,13 @@
       "pre_notification": {
         "estimated_days": 25,
         "min_days": 21,
-        "max_days": 57,
+        "max_days": 63,
         "id_issued_before": "2026-07-14",
-        "id_issued_after": "2026-06-08",
+        "id_issued_after": "2026-06-02",
         "min_days_witness": "WA-95034",
         "max_days_witness": "WA-95032",
         "basis": "bracketed",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {
@@ -67484,15 +67484,15 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 49,
+        "estimated_days": 55,
         "min_days": null,
-        "max_days": 49,
+        "max_days": 55,
         "id_issued_before": null,
-        "id_issued_after": "2026-06-16",
+        "id_issued_after": "2026-06-10",
         "min_days_witness": null,
         "max_days_witness": "WA-95034",
         "basis": "upper-bound-only",
-        "method_version": 1
+        "method_version": 2
       }
     },
     {

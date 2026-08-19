@@ -45,6 +45,32 @@ concentrate in pairs whose *earlier* ID is a notification — 21% for
 notification-then-waiver — which is the pre-notification period showing through
 rather than noise in the counter.
 
+What the counter cannot see
+---------------------------
+The counter records the *order* IDs were issued in, never the dates, so every
+date here is read off filing dates. A delay shared by every case therefore
+cancels out of the arithmetic and is invisible: simulating the real counter
+with an extra 0, 10, 30 or 90 days between issue and filing for every case
+alike produces byte-identical output. Only *differences* in that delay move
+anything.
+
+That leaves one quantity the register cannot pin down — how long a waiver
+itself sits between being opened and being lodged, which is the zero these
+estimates are measured from. ``WAIVER_LODGEMENT_LAG_DAYS`` is that zero, and
+it shifts every estimate by the same amount. It defaults to 0 because a waiver
+application has no drafting stage to sit in: the case is opened by lodging it.
+The residue if that is slightly wrong is a uniform understatement, not noise —
+so treat differences between mergers as sound and the absolute level as
+carrying an unknown common offset.
+
+The waiver-side *spread* around that zero is measurable, and it is small: the
+18 waivers (of 327) that invert against a later ID imply day-scale dispersion,
+with a tail reaching 34 days.
+
+Each notification therefore ends up with three numbers at three standards of
+proof — a proven floor (``min_days``), a best guess (``estimated_days``) and a
+deliberately generous ceiling (``max_days``). See :func:`compute_estimate`.
+
 Unlike :mod:`static_data.phase1_estimate`, these estimates are **not** frozen.
 A bound is only as tight as the cases sitting above and below it in the
 counter, so it genuinely improves as later IDs surface; recomputing every run
@@ -56,16 +82,21 @@ from datetime import date, timedelta
 
 from date_utils import parse_iso_datetime
 
-# A waiver is treated as filed the day its ID was issued, which is what lets it
-# date the counter. That is very nearly true — 95% of waivers have no provable
-# lag at all — but not exactly, so the upper bound carries slack covering
-# roughly the 90th percentile of the lag that *is* provable (p90 28d, max 34d
-# across the waivers that show one). Slack only ever widens the upper bound;
-# the lower bound doesn't depend on it.
-WAIVER_LODGEMENT_SLACK_DAYS = 28
+# Days a waiver is assumed to sit between having its ID issued and being lodged
+# — the zero every estimate here is measured from (see "What the counter cannot
+# see" above). Zero is the best central choice: a waiver has no drafting stage,
+# so opening the case and lodging it are the same act, and the measured floor
+# on the average is half a day.
+WAIVER_LODGEMENT_LAG_DAYS = 0
+
+# The same quantity at its most generous, used only for ``max_days``. No waiver
+# in the register is known to have sat longer than this between issue and
+# lodgement, so allowing every anchor the full amount makes the upper bound
+# safe rather than central.
+WAIVER_LODGEMENT_LAG_MAX_DAYS = 34
 
 # Bump when the method changes so stored values are recognisable.
-METHOD_VERSION = 1
+METHOD_VERSION = 2
 
 # MN-01016 -> kind "MN", group "01", sequence 16.
 _ID_PATTERN = re.compile(r"^(?P<kind>[A-Z]{2})-(?P<group>\d{2})(?P<seq>\d{3})$")
@@ -119,35 +150,45 @@ def _counter_positions(mergers: list) -> list[dict]:
     return positions
 
 
-def _issued_before(group: list[dict], seq: int) -> tuple[date, str] | None:
+def _issue_date(position: dict, lag: int) -> date:
+    """When a case's ID was issued, as far as its filing date reveals.
+
+    Exact for a waiver, which is opened by being lodged (less whatever
+    ``lag`` allows for). For a notification the ID predates filing by the
+    unknown period we're trying to measure, so this is only an upper bound.
+    """
+    if position["kind"] == "WA":
+        return position["filed"] - timedelta(days=lag)
+    return position["filed"]
+
+
+def _issued_before(group: list[dict], seq: int, lag: int) -> tuple[date, str] | None:
     """Tightest evidence that an ID at ``seq`` was issued before some date.
 
-    Any case further up the counter was issued later and cannot have been
-    notified before its own ID existed, so the earliest filing date above
-    ``seq`` is an upper bound on when this ID was issued.
+    Any case further up the counter was issued later, so the earliest issue
+    date above ``seq`` caps this one.
     """
     above = [p for p in group if p["seq"] > seq]
     if not above:
         return None
-    best = min(above, key=lambda p: (p["filed"], p["seq"]))
-    return best["filed"], best["merger_id"]
+    best = min(above, key=lambda p: (_issue_date(p, lag), p["seq"]))
+    return _issue_date(best, lag), best["merger_id"]
 
 
-def _issued_after(group: list[dict], seq: int, slack: int) -> tuple[date, str] | None:
+def _issued_after(group: list[dict], seq: int, lag: int) -> tuple[date, str] | None:
     """Tightest evidence that an ID at ``seq`` was issued after some date.
 
-    Only waivers can supply this: they are lodged when they are opened, so a
-    waiver below ``seq`` on the counter had its ID issued — and therefore this
-    one did too — no earlier than its own filing date, less slack.
+    Only waivers can supply this: a notification's own ID predates its filing
+    by an unknown amount, so it places no floor under anything above it.
     """
     below = [p for p in group if p["seq"] < seq and p["kind"] == "WA"]
     if not below:
         return None
-    best = max(below, key=lambda p: (p["filed"], p["seq"]))
-    return best["filed"] - timedelta(days=slack), best["merger_id"]
+    best = max(below, key=lambda p: (_issue_date(p, lag), p["seq"]))
+    return _issue_date(best, lag), best["merger_id"]
 
 
-def _interpolate_issue_date(group: list[dict], seq: int) -> date | None:
+def _interpolate_issue_date(group: list[dict], seq: int, lag: int) -> date | None:
     """Read an ID's issue date off the counter, between the waivers around it.
 
     The nearest waiver on each side of ``seq`` dates two points on the group's
@@ -162,21 +203,40 @@ def _interpolate_issue_date(group: list[dict], seq: int) -> date | None:
     steps = end["seq"] - start["seq"]
     if steps <= 0:
         return None
-    fraction = (seq - start["seq"]) / steps
-    return start["filed"] + (end["filed"] - start["filed"]) * fraction
+    first, last = _issue_date(start, lag), _issue_date(end, lag)
+    return first + (last - first) * ((seq - start["seq"]) / steps)
 
 
 def compute_estimate(
-    position: dict, group: list[dict], slack: int = WAIVER_LODGEMENT_SLACK_DAYS
+    position: dict,
+    group: list[dict],
+    lag: int = WAIVER_LODGEMENT_LAG_DAYS,
+    lag_max: int | None = None,
 ) -> dict | None:
     """Bound and estimate one notification's pre-notification period, in days.
+
+    Three numbers with three different standards of proof:
+
+    ``min_days``
+        The floor, and the only one that is genuinely proven — a later ID was
+        filed first, so this one must have waited at least the difference. It
+        rests on nothing but the counter running in order.
+    ``estimated_days``
+        The best single guess, reading the issue date off the waivers either
+        side of this sequence number using ``lag`` as their own lodgement delay.
+    ``max_days``
+        The ceiling, computed with ``lag_max`` instead so that every waiver
+        anchor is given the most lodgement delay any waiver is known to have
+        taken. Deliberately generous rather than central.
 
     ``None`` when the counter says nothing about this case — it sits at the top
     of its group with nothing above it and no waiver below it.
     """
+    if lag_max is None:
+        lag_max = max(lag, WAIVER_LODGEMENT_LAG_MAX_DAYS)
     filed = position["filed"]
-    upper_witness = _issued_before(group, position["seq"])
-    lower_witness = _issued_after(group, position["seq"], slack)
+    upper_witness = _issued_before(group, position["seq"], lag)
+    lower_witness = _issued_after(group, position["seq"], lag_max)
     if not upper_witness and not lower_witness:
         return None
 
@@ -194,7 +254,7 @@ def compute_estimate(
     # the range the bounds already proved. Falls back to the midpoint of the
     # bounds when no pair of waivers brackets the case.
     if issued_before is not None and issued_after is not None:
-        interpolated = _interpolate_issue_date(group, position["seq"])
+        interpolated = _interpolate_issue_date(group, position["seq"], lag)
         if interpolated is None:
             interpolated = issued_after + (issued_before - issued_after) / 2
         issued = min(max(interpolated, issued_after), issued_before)
@@ -221,7 +281,9 @@ def compute_estimate(
 
 
 def attach_prenotification_estimates(
-    enriched: list, slack: int = WAIVER_LODGEMENT_SLACK_DAYS
+    enriched: list,
+    lag: int = WAIVER_LODGEMENT_LAG_DAYS,
+    lag_max: int | None = None,
 ) -> int:
     """Attach ``pre_notification`` to each notification in-place; return the count.
 
@@ -238,7 +300,9 @@ def attach_prenotification_estimates(
     for position in positions:
         if position["kind"] != "MN":
             continue
-        estimate = compute_estimate(position, groups[position["group"]], slack)
+        estimate = compute_estimate(
+            position, groups[position["group"]], lag, lag_max
+        )
         if estimate is None:
             continue
         position["merger"]["pre_notification"] = estimate

@@ -311,12 +311,12 @@
   "pre_notification": {
     "estimated_days": 20,
     "min_days": 14,
-    "max_days": 63,
+    "max_days": 69,
     "id_issued_before": "2026-06-24",
-    "id_issued_after": "2026-05-06",
+    "id_issued_after": "2026-04-30",
     "min_days_witness": "WA-75030",
     "max_days_witness": "WA-75026",
     "basis": "bracketed",
-    "method_version": 1
+    "method_version": 2
   }
 }

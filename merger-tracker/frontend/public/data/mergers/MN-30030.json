@@ -205,14 +205,14 @@
     "method_version": 1
   },
   "pre_notification": {
-    "estimated_days": 54,
+    "estimated_days": 60,
     "min_days": null,
-    "max_days": 54,
+    "max_days": 60,
     "id_issued_before": null,
-    "id_issued_after": "2026-06-12",
+    "id_issued_after": "2026-06-06",
     "min_days_witness": null,
     "max_days_witness": "WA-30026",
     "basis": "upper-bound-only",
-    "method_version": 1
+    "method_version": 2
   }
 }

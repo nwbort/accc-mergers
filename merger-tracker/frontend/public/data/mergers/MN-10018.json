@@ -256,12 +256,12 @@
   "pre_notification": {
     "estimated_days": 12,
     "min_days": 0,
-    "max_days": 96,
+    "max_days": 102,
     "id_issued_before": "2026-06-15",
-    "id_issued_after": "2026-03-11",
+    "id_issued_after": "2026-03-05",
     "min_days_witness": "WA-10019",
     "max_days_witness": "WA-10014",
     "basis": "bracketed",
-    "method_version": 1
+    "method_version": 2
   }
 }
