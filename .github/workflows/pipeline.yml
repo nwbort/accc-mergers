@@ -15,6 +15,11 @@ on:
         required: false
         default: false
         type: boolean
+      conflict_retry_count:
+        description: 'Internal: chained-retry counter after a rebase conflict against main. Leave as 0.'
+        required: false
+        default: '0'
+        type: string
   push:
     branches:
       - main
@@ -28,6 +33,7 @@ permissions:
   contents: write
   issues: write
   pull-requests: write   # needed by the folded-in detect-* PR steps
+  actions: write         # needed to trigger a fresh run after a rebase conflict
 
 # Serialise pipeline runs on main. Two concurrent runs can otherwise race
 # on the same files and rely on the post-rebase HTML re-clean / commit-drop
@@ -297,6 +303,9 @@ jobs:
 
       - name: Commit all changes
         id: commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RETRY_COUNT: ${{ inputs.conflict_retry_count || '0' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -305,7 +314,25 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Update merger data: ${timestamp}"
-            git pull --rebase --autostash || { git rebase --abort; exit 1; }
+            if ! git pull --rebase --autostash; then
+              git rebase --abort
+
+              # A real conflict here means something else pushed to main while
+              # this run was scraping/extracting - hand-merging the JSON isn't
+              # safe, so give up on this run's commit and kick off a fresh run
+              # instead. It'll check out the now-current main and re-scrape/
+              # re-extract on top of it, so it won't hit the same conflict.
+              # Capped so a misbehaving concurrent writer can't cause an
+              # infinite chain of retriggers.
+              next_retry=$((RETRY_COUNT + 1))
+              if [ "$next_retry" -le 3 ]; then
+                echo "Rebase conflict against a concurrent push to main (retry ${next_retry}/3) - triggering a fresh pipeline run"
+                gh workflow run pipeline.yml --ref main -f "conflict_retry_count=${next_retry}"
+              else
+                echo "Rebase conflict against a concurrent push to main - already retried ${RETRY_COUNT} times, giving up and leaving this to the next scheduled run"
+              fi
+              exit 1
+            fi
 
             # After rebase, re-clean any HTML files that changed. A 3-way merge
             # during rebase can reintroduce raw dynamic tokens if both the local
