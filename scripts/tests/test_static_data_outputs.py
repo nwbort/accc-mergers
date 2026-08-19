@@ -1342,7 +1342,7 @@ class TestReferralProbabilityByDay:
         # by day 24 only the two referred matters (27, 35) are left — a raw share
         # of 1.0, clamped to the 0.99 ceiling.
         probs = self._probs()
-        assert probs[19] == round(2 / 3, 3)
+        assert probs[19] == 0.67  # 2/3, rounded to 2dp
         assert probs[24] == 0.99
 
     def test_probability_is_weakly_monotonic(self):
@@ -1351,6 +1351,12 @@ class TestReferralProbabilityByDay:
 
     def test_probability_is_capped_at_99_percent(self):
         assert max(self._probs()) == 0.99
+
+    def test_probabilities_are_rounded_to_two_decimals(self):
+        # The frontend renders these as whole-number percentages, so anything
+        # finer than 2dp is dead weight in the published file.
+        probs = self._probs()
+        assert all(p == round(p, 2) for p in probs)
 
     def test_ratchet_holds_probability_up_when_raw_share_dips(self):
         # One referred at 18 BD, two cleared at 9 and 27 BD. The raw share peaks
