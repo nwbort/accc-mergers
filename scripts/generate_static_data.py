@@ -5,6 +5,11 @@ Thin orchestrator: loads source data, enriches mergers once, then calls the
 generators in :mod:`static_data.outputs`. All heavy lifting lives in the
 ``static_data`` package.
 
+Every merger is also given two derived fields before any file is written:
+``phase_1_estimate`` (predicted review length, frozen at filing time) and
+``pre_notification`` (bounds on how long it spent in pre-notification, inferred
+from where its merger ID sits on the ACCC's per-group ID counter).
+
 Output files:
   data/output/ (for offline analysis, not deployed):
   - mergers.json      - All mergers wrapped in {mergers: [...]} (full enriched data)
@@ -53,6 +58,7 @@ from static_data.enrichment import (
     strip_event_status,
 )
 from static_data.phase1_estimate import attach_phase_1_estimates
+from static_data.prenotification import attach_prenotification_estimates
 from static_data.loaders import (
     load_commentary,
     load_mergers,
@@ -160,6 +166,11 @@ def main():
         f"  Phase-1 estimates: {attached_estimates} attached "
         f"({new_estimates} newly frozen)"
     )
+    # Bound how long each notification spent in pre-notification, from where
+    # its merger ID sits on the ACCC's per-group counter. Recomputed every run,
+    # not frozen: the bounds tighten as later IDs surface.
+    prenotification = attach_prenotification_estimates(enriched)
+    print(f"  Pre-notification estimates: {prenotification} attached")
     print(f"✓ Enriched {len(enriched)} mergers")
 
     party_groups = parties.build_party_pages(enriched, related_parties)

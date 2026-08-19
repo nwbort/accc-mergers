@@ -225,5 +225,16 @@
     "sample_size": 17,
     "estimated_at": "2026-07-29",
     "method_version": 1
+  },
+  "pre_notification": {
+    "estimated_days": 30,
+    "min_days": 13,
+    "max_days": 74,
+    "id_issued_before": "2026-07-15",
+    "id_issued_after": "2026-05-15",
+    "min_days_witness": "WA-40032",
+    "max_days_witness": "WA-40030",
+    "basis": "bracketed",
+    "method_version": 1
   }
 }

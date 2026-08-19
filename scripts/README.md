@@ -66,7 +66,12 @@ scrape.sh ──► extract_mergers.py ──► generate_static_data.py ──�
 - `constants/` — Canonical string constants (e.g. merger status
   values).
 - `static_data/` — Building blocks for `generate_static_data.py`
-  (loaders, filters, enrichment, individual output writers).
+  (loaders, filters, enrichment, per-merger estimators, individual output
+  writers). Two estimators attach derived fields to every merger:
+  `phase1_estimate.py` (`phase_1_estimate`, frozen at filing time) and
+  `prenotification.py` (`pre_notification`, recomputed each run — bounds on
+  how long a notification sat in pre-notification, read off the ACCC's merger
+  ID counter).
 
 ## Requirements
 
