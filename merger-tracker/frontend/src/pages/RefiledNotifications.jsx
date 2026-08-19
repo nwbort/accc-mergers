@@ -11,6 +11,7 @@ import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
 import { mergerPath } from '../utils/slug';
 import { formatDateMedium, calculateDuration } from '../utils/dates';
+import { MERGER_STATUS } from '../constants/mergerStatus';
 import { CARD } from '../utils/classNames';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
 
@@ -45,22 +46,72 @@ const BELOW_LINE = 'absolute top-1/2 mt-2';
 
 // The "days to re-file" pill sits centred between the declined and re-filed
 // dots, clamped to stay inside the track on narrow screens — the same
-// technique Phase2Timeline uses for its NOCC label.
+// technique Phase2Timeline uses for its NOCC label. The "Phase 2" label above
+// the track is centred on its own leg the same way.
 const GAP_HALF = '1.75rem';
+const PHASE_2_HALF = '1.5rem';
+
+// Centre `percent` along the track, clamped so a label sitting near either end
+// stops at the edge instead of hanging off it.
+function clampedLabelStyle(percent, half, translate) {
+  return {
+    left: `clamp(${half}, ${percent}%, calc(100% - ${half}))`,
+    transform: translate,
+  };
+}
 
 function RefiledCard({ pair, showOutcome }) {
+  // A re-filed notification can itself be referred to Phase 2 (MN-40017 was),
+  // so the track carries a third leg: waiver → notification's Phase 1 →
+  // Phase 2. phase_1_determination is the referral for referred matters, the
+  // Phase 1 determination for the rest, so it is what tells the two apart.
+  const referred = pair.notification_phase_1_determination === MERGER_STATUS.REFERRED_TO_PHASE_2;
+  const referralDate = referred ? pair.notification_phase_1_end_date : null;
+  // While a referred matter is still running, the track runs on to the
+  // statutory Phase 2 deadline — otherwise the Phase 2 leg would have nowhere
+  // to go, and the deadline is the more useful endpoint than "today".
+  const phase2Deadline = referred && !showOutcome
+    ? pair.notification_end_of_determination_period
+    : null;
+
   const start = pair.waiver_filed_date;
-  const end = showOutcome ? pair.notification_determination_date : new Date().toISOString();
+  const end = showOutcome
+    ? pair.notification_determination_date
+    : phase2Deadline || new Date().toISOString();
   const declinedPercent = percentAlong(pair.waiver_declined_date, start, end);
   const filedPercent = percentAlong(pair.notification_filed_date, start, end);
+  const referralPercent = percentAlong(referralDate, start, end);
+  // Only worth marking while the track extends past today, i.e. out to a
+  // pending Phase 2 deadline.
+  const todayPercent = phase2Deadline ? percentAlong(new Date().toISOString(), start, end) : null;
   const daysToRefile = calculateDuration(pair.waiver_declined_date, pair.notification_filed_date);
   const gapPercent = declinedPercent !== null && filedPercent !== null
     ? (declinedPercent + filedPercent) / 2
     : null;
-  const gapLabelStyle = gapPercent === null ? null : {
-    left: `clamp(${GAP_HALF}, ${gapPercent}%, calc(100% - ${GAP_HALF}))`,
-    transform: 'translate(-50%, -50%)',
-  };
+  const gapLabelStyle = gapPercent === null
+    ? null
+    : clampedLabelStyle(gapPercent, GAP_HALF, 'translate(-50%, -50%)');
+  const phase2LabelStyle = referralPercent === null
+    ? null
+    : clampedLabelStyle((referralPercent + 100) / 2, PHASE_2_HALF, 'translateX(-50%)');
+
+  const endLabel = showOutcome ? 'Determined' : phase2Deadline ? 'Due by' : 'Today';
+  const endValue = showOutcome
+    ? formatDateMedium(pair.notification_determination_date)
+    : phase2Deadline ? formatDateMedium(phase2Deadline) : 'Ongoing';
+
+  const trackDescription = [
+    `Timeline for ${pair.notification_name}`,
+    `waiver filed ${formatDateMedium(start)}`,
+    `declined ${formatDateMedium(pair.waiver_declined_date)}`,
+    `re-filed as a notification ${formatDateMedium(pair.notification_filed_date)}`,
+    ...(referralDate ? [`referred to Phase 2 ${formatDateMedium(referralDate)}`] : []),
+    showOutcome
+      ? `determined ${formatDateMedium(pair.notification_determination_date)}`
+      : phase2Deadline
+        ? `determination due by ${formatDateMedium(phase2Deadline)}`
+        : 'still under assessment',
+  ].join(', ');
 
   return (
     <li className="py-4 first:pt-0 last:pb-0">
@@ -80,9 +131,11 @@ function RefiledCard({ pair, showOutcome }) {
             {pair.notification_id}
           </p>
         </div>
-        {showOutcome && (
+        {(showOutcome || referred) && (
           <div className="flex-shrink-0">
-            <StatusBadge determination={pair.notification_determination} />
+            <StatusBadge
+              determination={showOutcome ? pair.notification_determination : MERGER_STATUS.REFERRED_TO_PHASE_2}
+            />
           </div>
         )}
       </div>
@@ -94,18 +147,35 @@ function RefiledCard({ pair, showOutcome }) {
         </div>
 
         <div className="relative flex-1 min-w-0 h-11">
+          {referralPercent !== null && (
+            <span
+              className={`${ABOVE_LINE} whitespace-nowrap text-[10px] font-semibold text-phase-2-dark`}
+              style={phase2LabelStyle}
+            >
+              Phase 2
+            </span>
+          )}
+
           <div
             className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-5 rounded-full bg-gray-100"
             role="img"
-            aria-label={`Timeline for ${pair.notification_name}: waiver filed ${formatDateMedium(start)}, declined ${formatDateMedium(pair.waiver_declined_date)}, re-filed as a notification ${formatDateMedium(pair.notification_filed_date)}${showOutcome ? `, determined ${formatDateMedium(pair.notification_determination_date)}` : ', still under assessment'}`}
+            aria-label={trackDescription}
           >
             {declinedPercent !== null && (
               <div className="absolute inset-y-0 left-0 rounded-full bg-phase-1/50" style={{ width: `${declinedPercent}%` }} />
             )}
             {filedPercent !== null && (
               <div
-                className={`absolute inset-y-0 right-0 rounded-full ${showOutcome ? 'bg-accent/60' : 'bg-accent/30'}`}
-                style={{ left: `${filedPercent}%` }}
+                className={`absolute inset-y-0 rounded-full ${showOutcome ? 'bg-accent/60' : 'bg-accent/30'}`}
+                // Stops at the referral when there is one, so the notification's
+                // Phase 1 and its Phase 2 read as separate legs.
+                style={{ left: `${filedPercent}%`, right: `${100 - (referralPercent ?? 100)}%` }}
+              />
+            )}
+            {referralPercent !== null && (
+              <div
+                className={`absolute inset-y-0 right-0 rounded-full ${showOutcome ? 'bg-phase-2/60' : 'bg-phase-2/30'}`}
+                style={{ left: `${referralPercent}%` }}
               />
             )}
             {gapPercent !== null && daysToRefile !== null && (
@@ -130,15 +200,29 @@ function RefiledCard({ pair, showOutcome }) {
                 title={`Re-filed as notification: ${formatDateMedium(pair.notification_filed_date)}`}
               />
             )}
+            {referralPercent !== null && (
+              <div
+                className="absolute top-1/2 h-3 w-3 rounded-full ring-2 ring-white bg-phase-2-dark"
+                style={{ left: `${referralPercent}%`, transform: 'translate(-50%, -50%)' }}
+                title={`Referred to Phase 2: ${formatDateMedium(referralDate)}`}
+              />
+            )}
+            {todayPercent !== null && (
+              <div
+                className="absolute top-1/2 -translate-y-1/2 h-7 w-0.5 bg-gray-900"
+                style={{ left: `${todayPercent}%` }}
+                title="Today"
+              />
+            )}
           </div>
         </div>
 
         <div className="relative w-14 sm:w-20 shrink-0 h-11">
           <span className={`${ABOVE_LINE} inset-x-0 text-left text-[11px] font-medium text-gray-500`}>
-            {showOutcome ? 'Determined' : 'Today'}
+            {endLabel}
           </span>
           <span className={`${BELOW_LINE} inset-x-0 text-left text-xs font-medium text-gray-900`}>
-            {showOutcome ? formatDateMedium(pair.notification_determination_date) : 'Ongoing'}
+            {endValue}
           </span>
         </div>
       </div>
@@ -169,13 +253,6 @@ function RefiledList({ pairs, showOutcome, emptyMessage }) {
 function RefiledNotifications() {
   const { data, loading, error } = useFetchData(API_ENDPOINTS.refiledNotifications, { cacheKey: 'refiled-notifications' });
 
-  // Overall Phase 1 clearance rate, for comparing refiled notifications
-  // against the market as a whole. Non-fatal if it fails to load.
-  const { data: statsData } = useFetchData(
-    data ? API_ENDPOINTS.stats : null,
-    data ? { cacheKey: 'dashboard-stats' } : {}
-  );
-
   if (loading) return <LoadingSpinner />;
   if (error) return <ErrorMessage error={error} />;
 
@@ -189,11 +266,14 @@ function RefiledNotifications() {
       .filter((d) => d !== null)
   );
 
-  const clearanceRate = data?.clearance_rate;
-  const overallClearanceRate = statsData?.clearance_rate;
+  // Share of concluded Phase 1 reviews that cleared rather than being referred
+  // to Phase 2, alongside the same figure for notifications that were never
+  // waivers — the comparison the duration chart below draws too.
+  const clearanceRate = data?.phase_1_clearance_rate;
+  const straightClearanceRate = data?.straight_phase_1_clearance_rate;
   const clearancePct = clearanceRate?.rate != null ? Math.round(clearanceRate.rate * 100) : null;
-  const overallClearancePct = overallClearanceRate?.rate != null
-    ? Math.round(overallClearanceRate.rate * 100)
+  const straightClearancePct = straightClearanceRate?.rate != null
+    ? Math.round(straightClearanceRate.rate * 100)
     : null;
 
   const phaseDuration = data?.phase_duration;
@@ -233,13 +313,11 @@ function RefiledNotifications() {
             icon={<FaCalendarDays />}
           />
           <StatCard
-            title="Clearance rate"
+            title="Phase 1 clearance rate"
             value={clearancePct !== null ? `${clearancePct}%` : 'N/A'}
             subtitle={
-              clearancePct !== null && overallClearancePct !== null
-                // stats.clearance_rate covers every notified merger with a
-                // published final determination, whichever phase decided it.
-                ? `${overallClearancePct}% for all notified mergers`
+              clearancePct !== null && straightClearancePct !== null
+                ? `${straightClearancePct}% filed as Phase 1 from the outset`
                 : undefined
             }
             icon={<FaCircleCheck />}
