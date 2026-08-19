@@ -51,8 +51,8 @@ jobs:
     # serialised via the concurrency group above, that also blocks every
     # queued run behind it for the same 6 hours. Normal runs take ~1-3
     # minutes; with the apt cache above, even a LibreOffice install run
-    # should stay well under this.
-    timeout-minutes: 10
+    # should stay well under this, with headroom for a cold-cache run.
+    timeout-minutes: 15
     steps:
       - name: Check out repository
         uses: actions/checkout@v6
