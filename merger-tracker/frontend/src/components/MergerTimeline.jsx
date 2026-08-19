@@ -239,11 +239,7 @@ function MergerTimeline({ merger }) {
       const band = low != null && high != null && low !== high
         ? `${low}-${high} business days`
         : `${estimate.expected_business_days} business days`;
-      const sample = estimate.sample_size;
-      const basis = estimate.basis === 'industry'
-        ? `median of ${sample} comparable review${sample === 1 ? '' : 's'} in this industry`
-        : `median of all ${sample} completed phase 1 reviews`;
-      expectedTitle = `Expected determination \u00b7 ${formatDateMedium(toDateString(expected))} \u00b7 ${band} (${basis})`;
+      expectedTitle = `Expected determination \u00b7 ${formatDateMedium(toDateString(expected))} \u00b7 ${band}`;
     }
   }
 

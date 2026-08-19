@@ -214,8 +214,9 @@ describe('MergerTimeline', () => {
 
       const band = screen.getByLabelText(/Expected determination/);
       expect(band).toHaveAttribute('title', expect.stringContaining('10 Jun 2026'));
-      expect(band.getAttribute('title')).toContain('15-17 business days');
-      expect(band.getAttribute('title')).toContain('9 comparable reviews');
+      expect(band.getAttribute('title')).toBe(
+        'Expected determination \u00b7 10 Jun 2026 \u00b7 15-17 business days'
+      );
       // Shaded across a range, not pinned to a single point.
       expect(parseFloat(band.style.width)).toBeGreaterThan(0);
       expect(screen.getByText('Expected determination')).toBeInTheDocument();
@@ -242,7 +243,7 @@ describe('MergerTimeline', () => {
       expect(parseFloat(band.style.left)).toBeCloseTo((14 / 44) * 100, 1);
     });
 
-    it('describes a global-basis estimate by the whole-of-market pool', () => {
+    it('falls back to the point estimate when the range has no width', () => {
       render(
         <MergerTimeline
           merger={{
@@ -258,8 +259,9 @@ describe('MergerTimeline', () => {
       );
 
       const band = screen.getByLabelText(/Expected determination/);
-      expect(band.getAttribute('title')).toContain('median of all 178 completed phase 1 reviews');
-      expect(band.getAttribute('title')).toContain('15 business days');
+      expect(band.getAttribute('title')).toBe(
+        'Expected determination \u00b7 10 Jun 2026 \u00b7 15 business days'
+      );
     });
 
     it('drops the band once the expected date has passed', () => {
