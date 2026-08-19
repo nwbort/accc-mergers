@@ -49,10 +49,10 @@ jobs:
     # Without this, a hung step (e.g. an apt-get fetch that stalls) runs to
     # GitHub's default 6-hour job timeout before failing. Because runs are
     # serialised via the concurrency group above, that also blocks every
-    # queued run behind it for the same 6 hours. 45 minutes is well above
-    # the ~1-3 minutes a normal run takes, including LibreOffice/Tesseract
-    # installs and a full --all scrape.
-    timeout-minutes: 45
+    # queued run behind it for the same 6 hours. Normal runs take ~1-3
+    # minutes; with the apt cache above, even a LibreOffice install run
+    # should stay well under this.
+    timeout-minutes: 10
     steps:
       - name: Check out repository
         uses: actions/checkout@v6
@@ -214,6 +214,22 @@ jobs:
             echo "No unconverted DOCX files found"
             echo "has_unconverted=false" >> $GITHUB_OUTPUT
           fi
+
+      # The runner's apt mirror has been slow enough on some days to make this
+      # install take 10+ minutes on its own (run #1690: 96.7 MB at 160 kB/s;
+      # run #1693 stalled on it entirely and hit the 6-hour job timeout).
+      # libreoffice-writer's package set rarely changes, so caching the
+      # downloaded .debs sidesteps the mirror on a cache hit. Keyed on
+      # run_id so it always saves a fresh snapshot; restore-keys falls back
+      # to the most recent one, so it still picks up upstream version bumps.
+      - name: Cache LibreOffice apt packages
+        if: steps.find-docx.outputs.has_unconverted == 'true'
+        uses: actions/cache@v5
+        with:
+          path: /var/cache/apt/archives/*.deb
+          key: ${{ runner.os }}-apt-libreoffice-writer-${{ github.run_id }}
+          restore-keys: |
+            ${{ runner.os }}-apt-libreoffice-writer-
 
       - name: Install LibreOffice
         if: steps.find-docx.outputs.has_unconverted == 'true'
