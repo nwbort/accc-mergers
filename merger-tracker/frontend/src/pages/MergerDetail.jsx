@@ -10,6 +10,7 @@ import WaiverBadge from '../components/WaiverBadge';
 import AppealBadge from '../components/AppealBadge';
 import BusinessDayProgress from '../components/BusinessDayProgress';
 import Phase2OddsReveal from '../components/Phase2OddsReveal';
+import PreNotificationEstimate from '../components/PreNotificationEstimate';
 import { getBusinessDayProgress } from '../utils/businessDayProgress';
 import SEO from '../components/SEO';
 import ExternalLinkIcon from '../components/ExternalLinkIcon';
@@ -354,6 +355,10 @@ function MergerDetail() {
             )}
           </div>
         </div>
+
+        {/* Estimated start of pre-notification (inferred, mandatory-regime
+            notifications only) */}
+        <PreNotificationEstimate merger={merger} />
 
         {/* Related Merger Link */}
         {merger.related_merger && (

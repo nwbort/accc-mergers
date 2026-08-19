@@ -1,17 +1,38 @@
 import { useState, useEffect, useRef } from 'react';
+import { useSearchParams } from 'react-router';
 import { FaCheckCircle } from 'react-icons/fa';
 import { FEEDBACK_ENDPOINT, TURNSTILE_SITE_KEY } from '../config';
 import SEO from '../components/SEO';
 import { CARD } from '../utils/classNames';
 
+// Matches the textarea's maxLength — a ?message= link can seed the box, but
+// never with more than someone could have typed into it themselves.
+const MAX_MESSAGE_LENGTH = 5000;
+
 export default function Feedback() {
-  const [message, setMessage] = useState('');
+  // Pages that know what they'd like reported (e.g. the pre-notification
+  // estimate callout) link here with the message part-written, naming the
+  // matter so the reply arrives attached to something.
+  const [searchParams] = useSearchParams();
+  const prefill = (searchParams.get('message') || '').slice(0, MAX_MESSAGE_LENGTH);
+  const [message, setMessage] = useState(prefill);
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState('idle'); // idle | loading | success | error
   const [errorMsg, setErrorMsg] = useState('');
   const [turnstileToken, setTurnstileToken] = useState('');
   const turnstileRef = useRef(null);
   const widgetIdRef = useRef(null);
+  const messageRef = useRef(null);
+
+  // Land in the message box with the caret after the part already written, so
+  // a seeded message is finished rather than edited.
+  useEffect(() => {
+    if (!prefill || !messageRef.current) return;
+    messageRef.current.focus();
+    messageRef.current.setSelectionRange(prefill.length, prefill.length);
+    // Seeded once on arrival; retyping the URL is what changes it after that.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     let scriptEl = null;
@@ -110,11 +131,12 @@ export default function Feedback() {
                 </label>
                 <textarea
                   id="feedback-message"
+                  ref={messageRef}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Your feedback…"
                   rows={5}
-                  maxLength={5000}
+                  maxLength={MAX_MESSAGE_LENGTH}
                   disabled={status === 'loading'}
                   className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary resize-none disabled:opacity-50"
                 />
