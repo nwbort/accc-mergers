@@ -271,7 +271,16 @@ def compute_estimate(
         estimated_days = min_days
         basis = "lower-bound-only"
     else:
-        estimated_days = max_days
+        # max_days deliberately uses lag_max, the most generous lodgement delay
+        # any waiver is known to have taken, to keep it a safe ceiling. Reusing
+        # that padded value as the central guess would understate id_issued_estimated,
+        # sometimes past a neighbouring, more tightly bracketed case with a
+        # lower sequence number — which can never have been issued later.
+        # Re-anchor the central guess on the same witness using the tight
+        # `lag`, matching every other basis.
+        tight_witness = _issued_after(group, position["seq"], lag)
+        issued_central = min(tight_witness[0], filed) if tight_witness else issued_after
+        estimated_days = (filed - issued_central).days
         basis = "upper-bound-only"
 
     # The same estimate as a date: the day pre-notification is reckoned to have

@@ -277,3 +277,32 @@ class TestAttachment:
         # first, which assumes nothing about how waivers behave.
         mergers = [_merger('MN-01010', '2026-04-01'), _merger('MN-01011', '2026-03-01')]
         assert _estimates(mergers, lag=WAIVER_LODGEMENT_LAG_DAYS)['MN-01010']['min_days'] == 31
+
+    def test_upper_bound_only_central_guess_uses_the_tight_lag(self):
+        # MN-01011 sits at the top of the counter (nothing above it), so its
+        # only witness is the waiver below, and its ceiling is deliberately
+        # padded with lag_max. The central guess must not inherit that
+        # padding, or it becomes more pessimistic than a same-witness case
+        # that also gets a proven floor.
+        mergers = [_merger('WA-01005', '2026-01-01'), _merger('MN-01011', '2026-04-01')]
+        estimate = _estimates(mergers, lag=0, lag_max=34)['MN-01011']
+        assert estimate['basis'] == 'upper-bound-only'
+        assert estimate['max_days'] == 90 + 34
+        assert estimate['estimated_days'] == 90
+        assert estimate['id_issued_estimated'] == '2026-01-01'
+
+    def test_upper_bound_only_stays_monotonic_with_a_bracketed_neighbour(self):
+        # MN-01028 (lower sequence) is bracketed by the waiver below it and
+        # MN-01030 above. MN-01030 (higher sequence) only has a lower
+        # witness, so it falls into upper-bound-only. Since 28 was issued no
+        # later than 30, 30's best-guess issue date must not land before
+        # 28's — which it did before this basis stopped using lag_max.
+        mergers = [
+            _merger('WA-01026', '2026-07-10'),
+            _merger('MN-01028', '2026-08-13'),
+            _merger('MN-01030', '2026-08-05'),
+        ]
+        estimates = _estimates(mergers, lag=0, lag_max=34)
+        assert estimates['MN-01028']['basis'] == 'bracketed'
+        assert estimates['MN-01030']['basis'] == 'upper-bound-only'
+        assert estimates['MN-01030']['id_issued_estimated'] >= estimates['MN-01028']['id_issued_estimated']
