@@ -91,11 +91,15 @@ describe('PreNotificationEstimate', () => {
     expect(container).toBeEmptyDOMElement();
   });
 
-  it('offers a quiet link to the feedback page', () => {
+  it('offers a quiet link to the feedback page, naming the matter', () => {
     renderCallout(merger());
 
-    expect(screen.getByText(/Not quite right\?/)).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'Let us know' })).toHaveAttribute('href', '/feedback');
+    const link = screen.getByRole('link', { name: /Not quite right/ });
+    expect(link).toHaveAttribute(
+      'href',
+      '/feedback?message=MN-01050%20pre-notification%20estimate%20looks%20wrong.%20It%20should%20be%20'
+    );
+    expect(link).toHaveAttribute('title', 'Not quite right? Let us know what it should be');
   });
 
   it('renders nothing when the merger has no estimate', () => {

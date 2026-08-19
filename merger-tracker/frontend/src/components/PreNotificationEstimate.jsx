@@ -1,4 +1,5 @@
 import { Link } from 'react-router';
+import { FaPencilAlt } from 'react-icons/fa';
 import { formatDateLong } from '../utils/dates';
 import {
   getPreNotificationEstimate,
@@ -14,6 +15,16 @@ const describe = ({ kind, startDate }) => {
     return `this merger entered pre-notification sometime after ${formatDateLong(startDate)}`;
   }
   return `this merger entered pre-notification around ${formatDateLong(startDate)}`;
+};
+
+/**
+ * The feedback page with the message box already naming the matter, so a
+ * correction arrives attached to the estimate it is about rather than as an
+ * orphaned "the date is wrong".
+ */
+const correctionLink = (mergerId) => {
+  const message = `${mergerId} pre-notification estimate looks wrong. It should be `;
+  return `/feedback?message=${encodeURIComponent(message)}`;
 };
 
 /**
@@ -33,18 +44,17 @@ function PreNotificationEstimate({ merger }) {
       </div>
       <p className="flex-1 min-w-0 text-sm font-medium text-gray-900">
         Our market intelligence suggests that {describe(estimate)}
-        {' '}
-        {/* Kept deliberately quiet — an invitation for the handful of readers
-            who know better, not a call to action for everyone else. */}
-        <span className="text-xs font-normal text-gray-400 whitespace-nowrap">
-          Not quite right?{' '}
-          <Link
-            to="/feedback"
-            className="underline decoration-dotted underline-offset-2 hover:text-primary transition-colors"
-          >
-            Let us know
-          </Link>
-        </span>
+        {/* Kept to a faint pencil: an invitation for the handful of readers who
+            know better, with the wording behind its tooltip rather than in
+            everyone's way. */}
+        <Link
+          to={correctionLink(merger.merger_id)}
+          title="Not quite right? Let us know what it should be"
+          aria-label={`Not quite right? Let us know what the pre-notification estimate for ${merger.merger_id} should be`}
+          className="inline-flex align-baseline ml-1.5 p-1 -m-1 text-gray-300 hover:text-primary transition-colors"
+        >
+          <FaPencilAlt className="h-3 w-3" aria-hidden="true" />
+        </Link>
       </p>
     </div>
   );
