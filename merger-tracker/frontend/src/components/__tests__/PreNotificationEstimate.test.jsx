@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router';
+import userEvent from '@testing-library/user-event';
+import { MemoryRouter, Route, Routes } from 'react-router';
 import { describe, expect, it } from 'vitest';
 import PreNotificationEstimate from '../PreNotificationEstimate';
 
@@ -107,6 +108,47 @@ describe('PreNotificationEstimate', () => {
     }
     expect(links.filter(l => l.className.includes('sm:hidden'))).toHaveLength(1);
     expect(links.filter(l => l.className.includes('hidden sm:inline-flex'))).toHaveLength(1);
+  });
+
+  it('spells the offer out on the first tap and follows it on the second', async () => {
+    const user = userEvent.setup();
+    render(
+      <MemoryRouter initialEntries={['/mergers/MN-01050']}>
+        <Routes>
+          <Route path="/mergers/:id" element={<PreNotificationEstimate merger={merger()} />} />
+          <Route path="/feedback" element={<p>feedback page</p>} />
+        </Routes>
+      </MemoryRouter>
+    );
+    const narrowScreenLink = screen
+      .getAllByRole('link', { name: /Not quite right/ })
+      .find(link => link.className.includes('sm:hidden'));
+
+    await user.click(narrowScreenLink);
+    expect(screen.getByText(/Not quite right\? Let us know what it should be/)).toBeInTheDocument();
+    expect(screen.queryByText('feedback page')).not.toBeInTheDocument();
+
+    await user.click(narrowScreenLink);
+    expect(screen.getByText('feedback page')).toBeInTheDocument();
+  });
+
+  it('keeps keyboard activation to a single step', async () => {
+    const user = userEvent.setup();
+    render(
+      <MemoryRouter initialEntries={['/mergers/MN-01050']}>
+        <Routes>
+          <Route path="/mergers/:id" element={<PreNotificationEstimate merger={merger()} />} />
+          <Route path="/feedback" element={<p>feedback page</p>} />
+        </Routes>
+      </MemoryRouter>
+    );
+
+    // The link's own label already carries the wording, so there's nothing to
+    // reveal first.
+    await user.tab();
+    await user.keyboard('{Enter}');
+
+    expect(screen.getByText('feedback page')).toBeInTheDocument();
   });
 
   it('renders nothing when the merger has no estimate', () => {
