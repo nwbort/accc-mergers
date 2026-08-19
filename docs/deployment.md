@@ -131,10 +131,6 @@ Manual-only (`workflow_dispatch`). Runs `pytest scripts/tests/`.
 
 Manual-only (`workflow_dispatch`). Runs the frontend test suite.
 
-### `embed.yml` — Semantic embeddings
-
-Manual-only (`workflow_dispatch`). Generates semantic embeddings for merger similarity.
-
 ### `scrape-tribunal.yml` — Tribunal matter scraper (scheduled + manual)
 
 Runs daily (6:23 AM UTC) and on demand (`workflow_dispatch`, with an optional space-separated `merger_ids` input). Runs `scrape_tribunal.py` to fill in `data/processed/tribunal_appeals.json`'s `documents[]` from the live Australian Competition Tribunal matter pages, mirrors the linked PDFs into `data/raw/matters/`, and commits the result.

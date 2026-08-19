@@ -157,6 +157,11 @@ def referral_probability_by_day(mergers: list) -> dict:
     :data:`_MAX_REFERRAL_PROBABILITY` (0.99) so the tail — where a handful of
     long referred matters push the raw share to 1.0 — never reads as certainty.
 
+    Probabilities are rounded to 2 decimal places: the only consumer renders
+    them as a whole-number percentage, so finer precision would just bloat the
+    published file. Rounding after the running maximum keeps the series weakly
+    monotonic.
+
     The result is published to ``referral-probability-by-day.json`` and read by
     the frontend's per-merger "predicted Phase 2 risk" reveal, which indexes
     this curve by an open matter's elapsed business days
@@ -177,6 +182,6 @@ def referral_probability_by_day(mergers: list) -> dict:
         still_open = sum(1 for d in all_days if d >= day)
         referred = sum(1 for d in referred_days if d >= day)
         running_max = max(running_max, referred / still_open)
-        probabilities.append(min(round(running_max, 3), _MAX_REFERRAL_PROBABILITY))
+        probabilities.append(min(round(running_max, 2), _MAX_REFERRAL_PROBABILITY))
 
     return {"probabilities": probabilities}

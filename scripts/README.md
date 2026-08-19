@@ -12,7 +12,6 @@ scrape.sh ──► extract_mergers.py ──► generate_static_data.py ──�
                                   └─► generate_rss_feed.py
                                   └─► generate_sitemap.py
                                   └─► generate_similar_mergers.py
-                                  └─► embed.py
                                   └─► generate-cli-data.sh
 ```
 
@@ -46,7 +45,6 @@ scrape.sh ──► extract_mergers.py ──► generate_static_data.py ──�
 | `generate_similar_mergers.py` | Per-merger suggestions of related mergers (party + ANZSIC overlap). |
 | `generate_rss_feed.py` | Atom feed of recent merger events. |
 | `generate_sitemap.py` | `sitemap.xml` for search-engine crawlers. |
-| `embed.py` | Sentence-Transformer embeddings used by the frontend semantic search. |
 | `generate-cli-data.sh` | Bundles processed data for the `accc-mergers-cli` consumer. |
 | `send_weekly_email.py` | Renders and sends the weekly digest via Resend. |
 | `build.sh` | Cloudflare Pages build entry point (`bash scripts/build.sh`). |
@@ -73,8 +71,6 @@ scrape.sh ──► extract_mergers.py ──► generate_static_data.py ──�
 ## Requirements
 
 - `requirements.txt` — base pipeline dependencies.
-- `requirements-embed.txt` — extra deps for `embed.py` (heavy ML
-  packages, kept separate so most workflows skip them).
 
 ## Running the pipeline locally
 

@@ -56,11 +56,6 @@ of `generate_weekly_digest.py` can deduplicate against the prior week.
 
 ### Top-level files
 
-- `embeddings.json` — sentence-level embedding metadata (one record per
-  chunk: merger_id, section label, text)
-- `embeddings.bin` — packed Float32 vectors for those chunks, in the
-  same order as `embeddings.json`. Both are produced by
-  `scripts/embed.py` and consumed by the frontend semantic-search UI.
 - `frozen_events_mergers.json` — mergers whose events are protected from
   being overwritten during extraction (manual edits). Set `freeze_events: true`
   (or use an empty object) to freeze the whole event list, or
