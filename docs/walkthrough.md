@@ -327,7 +327,7 @@ The enrichment step adds computed fields that would be expensive to recalculate 
 - Flags for whether questionnaire and NOCC data are available (`has_questionnaire`, `has_nocc`)
 - Per-event `phase` labels extracted from event titles
 
-Enriched mergers are then linked to related mergers (waiver-to-notification pairs) and semantically similar mergers (from a pre-computed embedding similarity file).
+Enriched mergers are then linked to related mergers (waiver-to-notification pairs) and similar mergers (from `similar_mergers.json`, pre-computed by `generate_similar_mergers.py` from party and ANZSIC overlap).
 
 ```bash
 sed -n '112,152p' scripts/generate_static_data.py

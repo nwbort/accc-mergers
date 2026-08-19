@@ -6,10 +6,9 @@
 # fails on import (scrape_tribunal.py needs beautifulsoup4 + lxml) and the
 # frontend has no node_modules at all.
 #
-# Deliberately skipped: scripts/requirements-tribunal.txt (nodriver drives a
-# real Chrome) and scripts/requirements-embed.txt (~750MB of torch). Neither is
-# needed by the tests — the tribunal tests only use bs4/lxml/requests from the
-# main requirements file.
+# Deliberately skipped: scripts/requirements-tribunal.txt, since nodriver
+# drives a real Chrome and no test needs it — the tribunal tests only use
+# bs4/lxml/requests from the main requirements file.
 set -euo pipefail
 
 # Local machines manage their own environments; only set up the remote one.
