@@ -215,6 +215,32 @@ class TestAttachment:
         ]
         assert attach_prenotification_estimates(mergers) == 0
 
+    def test_estimated_date_matches_the_estimated_days(self):
+        # The date is the filing date less the estimate, so a consumer reading
+        # either one gets the same answer.
+        mergers = [
+            _merger('WA-01005', '2026-01-01'),
+            _merger('MN-01010', '2026-04-01'),
+            _merger('WA-01011', '2026-03-01'),
+        ]
+        estimate = _estimates(mergers)['MN-01010']
+        assert estimate['id_issued_estimated'] == '2026-02-19'
+        assert estimate['estimated_days'] == 41
+        assert (
+            estimate['id_issued_after']
+            <= estimate['id_issued_estimated']
+            <= estimate['id_issued_before']
+        )
+
+    def test_estimated_date_is_given_without_a_waiver_below(self):
+        # Lower-bound-only cases still get a date, even though the ceiling and
+        # its date are unknown.
+        mergers = [_merger('MN-01010', '2026-04-01'), _merger('WA-01011', '2026-03-01')]
+        estimate = _estimates(mergers)['MN-01010']
+        assert estimate['basis'] == 'lower-bound-only'
+        assert estimate['id_issued_estimated'] == '2026-03-01'
+        assert estimate['id_issued_after'] is None
+
     def test_estimate_carries_the_method_version(self):
         mergers = [_merger('MN-01010', '2026-04-01'), _merger('WA-01011', '2026-03-01')]
         assert _estimates(mergers)['MN-01010']['method_version'] == METHOD_VERSION
