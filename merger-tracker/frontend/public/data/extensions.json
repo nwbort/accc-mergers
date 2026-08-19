@@ -1,15 +1,15 @@
 {
   "summary": {
-    "notifications_total": 228,
-    "matters_extended": 19,
-    "share_extended_pct": 8.3,
-    "extension_events_total": 25,
-    "total_extension_bd": 280,
-    "median_matter_extension_bd": 15.0,
+    "notifications_total": 231,
+    "matters_extended": 20,
+    "share_extended_pct": 8.7,
+    "extension_events_total": 26,
+    "total_extension_bd": 289,
+    "median_matter_extension_bd": 15,
     "longest_single_bd": 30,
     "phase_2_total": 9,
     "extended_escalated_to_phase_2": 8,
-    "escalation_rate_given_extension_pct": 42.1,
+    "escalation_rate_given_extension_pct": 40.0,
     "phase_2_preceded_by_extension_pct": 88.9,
     "base_phase_2_rate_pct": 3.9,
     "statutory_phase_1_bd": 30
@@ -27,8 +27,8 @@
     },
     {
       "category": "Remedy under consideration",
-      "events": 3,
-      "business_days": 45
+      "events": 4,
+      "business_days": 54
     }
   ],
   "by_month": [
@@ -58,7 +58,7 @@
     },
     {
       "month": "2026-08",
-      "count": 4
+      "count": 5
     }
   ],
   "matters": [
@@ -395,6 +395,27 @@
           "reason_category": "Requested by the merger parties",
           "reason_detail": "request by parties",
           "title": "Timeline extended by 10 business days \u2013 following request by parties"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-90028",
+      "merger_name": "Peter Warren - Wakeling Automotive",
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "notification_date": "2026-07-13T12:00:00Z",
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "escalated_to_phase_2": false,
+      "total_extension_bd": 9,
+      "extension_count": 1,
+      "extensions": [
+        {
+          "date": "2026-08-19T12:00:00Z",
+          "business_days": 9,
+          "reason_category": "Remedy under consideration",
+          "reason_detail": "remedy offered by parties",
+          "title": "Timeline extended by 9 business days \u2013 following remedy offered by parties"
         }
       ]
     },

@@ -9,7 +9,7 @@
       "code": "30",
       "name": "Building Construction",
       "level": "subdivision",
-      "merger_count": 9
+      "merger_count": 10
     },
     {
       "code": "31",
@@ -21,10 +21,32 @@
       "code": "32",
       "name": "Construction Services",
       "level": "subdivision",
-      "merger_count": 24
+      "merger_count": 26
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-05046",
+      "merger_name": "Coles - supermarket site in Kirkwood (QLD)",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-19T12:00:00Z",
+      "determination_date": null
+    },
+    {
+      "merger_id": "MN-90029",
+      "merger_name": "Bunnings \u2013 Intellihub \u2013 Zelora Joint Venture",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-18T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-35031",
       "merger_name": "Osmoflo Water Management - Guidera O'Connor",
@@ -521,11 +543,11 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 45,
-  "phase_1_count": 21,
+  "count": 47,
+  "phase_1_count": 23,
   "phase_2_count": 1,
   "waiver_count": 23,
-  "active_count": 6,
+  "active_count": 8,
   "phase_duration": {
     "average_days": 27.294117647058822,
     "median_days": 25,

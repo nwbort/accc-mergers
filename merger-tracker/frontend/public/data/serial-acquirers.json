@@ -11,7 +11,8 @@
         "MN-50019",
         "MN-25029",
         "MN-70022",
-        "MN-05030"
+        "MN-05030",
+        "MN-05046"
       ],
       "dates": [
         "2025-11-27T12:00:00Z",
@@ -19,9 +20,10 @@
         "2026-06-04T12:00:00Z",
         "2026-06-09T12:00:00Z",
         "2026-06-23T12:00:00Z",
-        "2026-07-24T12:00:00Z"
+        "2026-07-24T12:00:00Z",
+        "2026-08-19T12:00:00Z"
       ],
-      "count": 6
+      "count": 7
     },
     {
       "acquirer_name": "Opal HealthCare",
@@ -79,6 +81,40 @@
         "2026-08-05T12:00:00Z"
       ],
       "count": 4
+    },
+    {
+      "acquirer_name": "Coles Group",
+      "canonical_id": "coles",
+      "anzsic_code": "671",
+      "anzsic_name": "Property Operators",
+      "merger_ids": [
+        "MN-01068",
+        "MN-01090",
+        "MN-05046"
+      ],
+      "dates": [
+        "2025-11-27T12:00:00Z",
+        "2026-03-12T12:00:00Z",
+        "2026-08-19T12:00:00Z"
+      ],
+      "count": 3
+    },
+    {
+      "acquirer_name": "L'Oreal",
+      "canonical_id": "l-oreal",
+      "anzsic_code": "372",
+      "anzsic_name": "Pharmaceutical and Toiletry Goods Wholesaling",
+      "merger_ids": [
+        "MN-01080",
+        "MN-35029",
+        "MN-60035"
+      ],
+      "dates": [
+        "2026-01-15T12:00:00Z",
+        "2026-07-21T12:00:00Z",
+        "2026-08-19T12:00:00Z"
+      ],
+      "count": 3
     },
     {
       "acquirer_name": "ENDEAVOUR GROUP LIMITED",
@@ -164,6 +200,36 @@
         "2026-07-28T12:00:00Z"
       ],
       "count": 3
+    },
+    {
+      "acquirer_name": "Coles Group",
+      "canonical_id": "coles",
+      "anzsic_code": "412",
+      "anzsic_name": "Specialised Food Retailing",
+      "merger_ids": [
+        "MN-01068",
+        "MN-05046"
+      ],
+      "dates": [
+        "2025-11-27T12:00:00Z",
+        "2026-08-19T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "Coles Group",
+      "canonical_id": "coles",
+      "anzsic_code": "427",
+      "anzsic_name": "Pharmaceutical and Other Store-Based Retailing",
+      "merger_ids": [
+        "MN-65028",
+        "MN-05046"
+      ],
+      "dates": [
+        "2026-07-09T12:00:00Z",
+        "2026-08-19T12:00:00Z"
+      ],
+      "count": 2
     },
     {
       "acquirer_name": "Metal Manufactures",
@@ -252,21 +318,6 @@
       "dates": [
         "2026-04-10T12:00:00Z",
         "2026-07-24T12:00:00Z"
-      ],
-      "count": 2
-    },
-    {
-      "acquirer_name": "L'Oreal",
-      "canonical_id": "l-oreal",
-      "anzsic_code": "372",
-      "anzsic_name": "Pharmaceutical and Toiletry Goods Wholesaling",
-      "merger_ids": [
-        "MN-01080",
-        "MN-35029"
-      ],
-      "dates": [
-        "2026-01-15T12:00:00Z",
-        "2026-07-21T12:00:00Z"
       ],
       "count": 2
     },
@@ -526,21 +577,6 @@
       "count": 2
     },
     {
-      "acquirer_name": "Coles Group",
-      "canonical_id": "coles",
-      "anzsic_code": "671",
-      "anzsic_name": "Property Operators",
-      "merger_ids": [
-        "MN-01068",
-        "MN-01090"
-      ],
-      "dates": [
-        "2025-11-27T12:00:00Z",
-        "2026-03-12T12:00:00Z"
-      ],
-      "count": 2
-    },
-    {
       "acquirer_name": "ServiceNow, Inc.",
       "canonical_id": "servicenow-inc",
       "anzsic_code": "542",
@@ -571,5 +607,5 @@
       "count": 2
     }
   ],
-  "count": 36
+  "count": 38
 }

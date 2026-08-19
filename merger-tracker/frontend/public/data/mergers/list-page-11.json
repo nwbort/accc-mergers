@@ -417,6 +417,82 @@
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/lor%C3%A9al-innovist"
     },
     {
+      "merger_id": "WA-05041",
+      "merger_name": "Pemba - Hewison Private Wealth",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-21T12:00:00Z",
+      "determination_publication_date": "2026-08-19T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Elevate BidCo Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "699 129 523",
+          "party_page": {
+            "id": "elevate-bidco-pty-ltd",
+            "name": "Elevate BidCo Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Hewison & Associates Pty. Ltd.",
+          "identifier_type": "ABN",
+          "identifier": "51 006 082 257",
+          "party_page": {
+            "id": "hewison-associates-pty-ltd",
+            "name": "Hewison & Associates Pty. Ltd."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Pemba Capital Fund III, L.P.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "pemba-capital-fund-iii-l-p",
+            "name": "Pemba Capital Fund III, L.P."
+          }
+        },
+        {
+          "name": "SuperConcepts Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "21 166 393 700",
+          "party_page": {
+            "id": "superconcepts-pty-ltd",
+            "name": "SuperConcepts Pty Ltd"
+          }
+        },
+        {
+          "name": "Elevate HoldCo Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "699 127 832",
+          "party_page": {
+            "id": "elevate-holdco-pty-ltd",
+            "name": "Elevate HoldCo Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/pemba-hewison-private-wealth"
+    },
+    {
       "merger_id": "WA-20030",
       "merger_name": "Baupost \u2013 McDermott",
       "status": "Assessment completed",
@@ -1110,6 +1186,127 @@
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/petalite-%E2%80%93-envu"
     },
     {
+      "merger_id": "WA-25041",
+      "merger_name": "CVC Capital Partners \u2013 DistroKid",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-24T12:00:00Z",
+      "determination_publication_date": "2026-08-19T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Dream HoldCo LLC",
+          "identifier_type": null,
+          "identifier": "10662853",
+          "party_page": {
+            "id": "dream-holdco-llc",
+            "name": "Dream HoldCo LLC"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "DK Holdco, LLC",
+          "identifier_type": null,
+          "identifier": "6146948",
+          "party_page": {
+            "id": "dk-holdco-llc",
+            "name": "DK Holdco, LLC"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "CVC Capital Partners plc",
+          "identifier_type": null,
+          "identifier": "JFSC  140080",
+          "canonical": {
+            "id": "cvc-capital-partners",
+            "name": "CVC Capital Partners"
+          },
+          "party_page": {
+            "id": "cvc-capital-partners",
+            "name": "CVC Capital Partners"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5522",
+          "name": "Music and Other Sound Recording Activities"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/cvc-capital-partners-%E2%80%93-distrokid"
+    },
+    {
+      "merger_id": "WA-35036",
+      "merger_name": "CrowdStrike \u2013 intellectual property and associated technology assets of XM Cyber",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-24T12:00:00Z",
+      "determination_publication_date": "2026-08-19T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "CrowdStrike, Inc.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "crowdstrike-inc",
+            "name": "CrowdStrike, Inc."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Schwarz Digits KG",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "schwarz-digits-kg",
+            "name": "Schwarz Digits KG"
+          }
+        },
+        {
+          "name": "XM Cyber Ltd.",
+          "identifier_type": null,
+          "identifier": "Company number 515436756",
+          "party_page": {
+            "id": "xm-cyber-ltd",
+            "name": "XM Cyber Ltd."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "CrowdStrike Holdings, Inc.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "crowdstrike-inc",
+            "name": "CrowdStrike, Inc."
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/crowdstrike-%E2%80%93-intellectual-property-and-associated-technology-assets-of-xm-cyber"
+    },
+    {
       "merger_id": "WA-80033",
       "merger_name": "Jungheinrich Australia - All Lift",
       "status": "Assessment completed",
@@ -1356,6 +1553,199 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/ma-financial-redcape-fund-%E2%80%93-seven-hospitality-venues-in-nsw"
+    },
+    {
+      "merger_id": "WA-15033",
+      "merger_name": "Armira and TA Associates \u2013 Intersurgical Aktiengesellschaft AG",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-25T12:00:00Z",
+      "determination_publication_date": "2026-08-19T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "TA Riverside Aggregator, L.P.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "ta-riverside-aggregator-l-p",
+            "name": "TA Riverside Aggregator, L.P."
+          }
+        },
+        {
+          "name": "Armira Opportunities III GmbH & Co. geschlossene Investment KG",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "armira-opportunities-iii-gmbh-co-geschlossene-investment-kg",
+            "name": "Armira Opportunities III GmbH & Co. geschlossene Investment KG"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Intersurgical Aktiengesellschaft AG",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "intersurgical-aktiengesellschaft-ag",
+            "name": "Intersurgical Aktiengesellschaft AG"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "TA Investors 2024, L.P",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "ta-investors-2024-l-p",
+            "name": "TA Investors 2024, L.P"
+          }
+        },
+        {
+          "name": "TA Associates XV GP, L.P",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "ta-associates-xv-gp-l-p",
+            "name": "TA Associates XV GP, L.P"
+          }
+        },
+        {
+          "name": "TA XV-A, L.P",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "ta-xv-a-l-p",
+            "name": "Ta Xv-A, L.P"
+          }
+        },
+        {
+          "name": "TA Associates Management, L.P.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "ta-associates-management-l-p",
+            "name": "TA Associates Management, L.P."
+          }
+        },
+        {
+          "name": "Armira GmbH & Co. KG",
+          "identifier_type": null,
+          "identifier": "HRA  92168",
+          "party_page": {
+            "id": "armira-gmbh-co-kg",
+            "name": "Armira GmbH & Co. KG"
+          }
+        },
+        {
+          "name": "Riverside BidCo Limited",
+          "identifier_type": null,
+          "identifier": "England and Wales Company Registration Number  16880161",
+          "party_page": {
+            "id": "riverside-bidco-limited",
+            "name": "Riverside BidCo Limited"
+          }
+        },
+        {
+          "name": "TA Associates XV EU GP, SARL",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "ta-associates-xv-eu-gp-sarl",
+            "name": "TA Associates XV EU GP, SARL"
+          }
+        },
+        {
+          "name": "Riverside UK Holdco Limited",
+          "identifier_type": null,
+          "identifier": "England and Wales Company Registration Number  16986637",
+          "party_page": {
+            "id": "riverside-uk-holdco-limited",
+            "name": "Riverside UK Holdco Limited"
+          }
+        },
+        {
+          "name": "Bock Capital EU Luxembourg Will S.\u00e0.r.l,",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "bock-capital-eu-luxembourg-will-s-r-l",
+            "name": "Bock Capital EU Luxembourg Will S.\u00e0.r.l,"
+          }
+        },
+        {
+          "name": "TA XV-B L.P",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "ta-xv-b-l-p",
+            "name": "Ta Xv-B L.P"
+          }
+        },
+        {
+          "name": "Riverside TopCo Limited",
+          "identifier_type": null,
+          "identifier": "Jersey Company Registration Number  163852",
+          "party_page": {
+            "id": "riverside-topco-limited",
+            "name": "Riverside TopCo Limited"
+          }
+        },
+        {
+          "name": "Riverside Midco Limited",
+          "identifier_type": null,
+          "identifier": "England and Wales Company Registration  16986520",
+          "party_page": {
+            "id": "riverside-midco-limited",
+            "name": "Riverside Midco Limited"
+          }
+        },
+        {
+          "name": "TA Associates Cayman, LLC",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "ta-associates-cayman-llc",
+            "name": "TA Associates Cayman, LLC"
+          }
+        },
+        {
+          "name": "TA XV-C, SCSp",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "ta-xv-c-scsp",
+            "name": "TA XV-C, SCSp"
+          }
+        },
+        {
+          "name": "\u00c9tablissement Cosmeplast",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "tablissement-cosmeplast",
+            "name": "\u00c9tablissement Cosmeplast"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2412",
+          "name": "Medical and Surgical Equipment Manufacturing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/armira-and-ta-associates-%E2%80%93-intersurgical-aktiengesellschaft-ag"
     },
     {
       "merger_id": "MN-05031",
@@ -4143,434 +4533,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/johns-lyng-group-%E2%80%93-cm-build-group"
-    },
-    {
-      "merger_id": "WA-75040",
-      "merger_name": "Blackstone - DarkVision Technologies",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "has_conditions": false,
-      "is_waiver": true,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-05T12:00:00Z",
-      "determination_publication_date": "2026-08-17T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "Dynamo Bidco, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "blackstone-inc",
-            "name": "Blackstone Inc."
-          },
-          "party_page": {
-            "id": "blackstone-inc",
-            "name": "Blackstone Inc."
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "DarkVision Technologies Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "darkvision-technologies-inc",
-            "name": "DarkVision Technologies Inc."
-          }
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "Blackstone Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "blackstone-inc",
-            "name": "Blackstone Inc."
-          },
-          "party_page": {
-            "id": "blackstone-inc",
-            "name": "Blackstone Inc."
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "2419",
-          "name": "Other Professional and Scientific Equipment Manufacturing"
-        },
-        {
-          "code": "6240",
-          "name": "Financial Asset Investing"
-        },
-        {
-          "code": "6419",
-          "name": "Other Auxiliary Finance and Investment Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/blackstone-darkvision-technologies"
-    },
-    {
-      "merger_id": "MN-15034",
-      "merger_name": "Australian Venue Co \u2013 assets of Black Nugget Hotel Motel, Bartletts Tavern and all associated detached bottle shops",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-06T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-09-17T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "AVC OPERATIONS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "81 607 832 299",
-          "canonical": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          },
-          "party_page": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "Central Hospitality Services Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "644 976 045",
-          "party_page": {
-            "id": "central-hospitality-services-pty-ltd",
-            "name": "Central Hospitality Services Pty Ltd"
-          }
-        },
-        {
-          "name": "ATHENA HOSPITALITY GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "35 636 190 960",
-          "party_page": {
-            "id": "athena-hospitality-group-pty-ltd",
-            "name": "Athena Hospitality Group Pty Ltd"
-          }
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "AUSTRALIAN VENUE CO LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "14 607 666 348",
-          "canonical": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          },
-          "party_page": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "4123",
-          "name": "Liquor Retailing"
-        },
-        {
-          "code": "4400",
-          "name": "Accommodation"
-        },
-        {
-          "code": "4511",
-          "name": "Cafes and Restaurants"
-        },
-        {
-          "code": "4520",
-          "name": "Pubs, Taverns and Bars"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/australian-venue-co-%E2%80%93-assets-of-black-nugget-hotel-motel-bartletts-tavern-and-all-associated-detached-bottle-shops"
-    },
-    {
-      "merger_id": "MN-35031",
-      "merger_name": "Osmoflo Water Management - Guidera O'Connor",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-06T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-09-17T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "OSMOFLO WATER MANAGEMENT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "62 608 078 459",
-          "canonical": {
-            "id": "kanadevia-corporation",
-            "name": "Kanadevia Corporation"
-          },
-          "party_page": {
-            "id": "kanadevia-corporation",
-            "name": "Kanadevia Corporation"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "WILLCAM NOMINEES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "93 063 325 146",
-          "party_page": {
-            "id": "willcam-nominees-pty-ltd",
-            "name": "Willcam Nominees Pty Ltd"
-          }
-        },
-        {
-          "name": "Straight Talking Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "008 068 308",
-          "party_page": {
-            "id": "straight-talking-pty-ltd",
-            "name": "Straight Talking Pty Ltd"
-          }
-        },
-        {
-          "name": "Anthony Mark Guidera",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "anthony-mark-guidera",
-            "name": "Anthony Mark Guidera"
-          }
-        },
-        {
-          "name": "GUIDERA O'CONNOR PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "71 099 012 870",
-          "party_page": {
-            "id": "guidera-o-connor-pty-ltd",
-            "name": "Guidera O'Connor Pty Ltd"
-          }
-        },
-        {
-          "name": "Laszlo Richard Bachmayer",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "laszlo-richard-bachmayer",
-            "name": "Laszlo Richard Bachmayer"
-          }
-        },
-        {
-          "name": "Iain Harvey Wood",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "iain-harvey-wood",
-            "name": "Iain Harvey Wood"
-          }
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "Michael William O'Connor",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "michael-william-o-connor",
-            "name": "Michael William O'Connor"
-          }
-        },
-        {
-          "name": "Kanadevia Corporation",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "kanadevia-corporation",
-            "name": "Kanadevia Corporation"
-          },
-          "party_page": {
-            "id": "kanadevia-corporation",
-            "name": "Kanadevia Corporation"
-          }
-        },
-        {
-          "name": "OSMOFLO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "39 050 952 175",
-          "canonical": {
-            "id": "kanadevia-corporation",
-            "name": "Kanadevia Corporation"
-          },
-          "party_page": {
-            "id": "kanadevia-corporation",
-            "name": "Kanadevia Corporation"
-          }
-        },
-        {
-          "name": "Stephen Michael Palyga",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "stephen-michael-palyga",
-            "name": "Stephen Michael Palyga"
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "2499",
-          "name": "Other Machinery and Equipment Manufacturing n.e.c."
-        },
-        {
-          "code": "3109",
-          "name": "Other Heavy and Civil Engineering Construction"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/osmoflo-water-management-guidera-oconnor"
-    },
-    {
-      "merger_id": "MN-65021",
-      "merger_name": "Wesfarmers and Built Group - Built Living Joint Venture",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-06T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-09-17T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Wesfarmers Built Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "698 309 509",
-          "canonical": {
-            "id": "wesfarmers-limited",
-            "name": "Wesfarmers Limited"
-          },
-          "party_page": {
-            "id": "wesfarmers-limited",
-            "name": "Wesfarmers Limited"
-          }
-        },
-        {
-          "name": "Built Living (Built Investor) Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "71 698 095 831",
-          "canonical": {
-            "id": "built-group",
-            "name": "Built Group"
-          },
-          "party_page": {
-            "id": "built-group",
-            "name": "Built Group"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "Built Living Holdings Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "39 698 096 945",
-          "party_page": {
-            "id": "built-living-holdings-pty-limited",
-            "name": "Built Living Holdings Pty Limited"
-          }
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "Wesfarmers Limited",
-          "identifier_type": "ABN",
-          "identifier": "28 008 984 049",
-          "canonical": {
-            "id": "wesfarmers-limited",
-            "name": "Wesfarmers Limited"
-          },
-          "party_page": {
-            "id": "wesfarmers-limited",
-            "name": "Wesfarmers Limited"
-          }
-        },
-        {
-          "name": "Wesfarmers Holdings Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "23 094 800 665",
-          "canonical": {
-            "id": "wesfarmers-limited",
-            "name": "Wesfarmers Limited"
-          },
-          "party_page": {
-            "id": "wesfarmers-limited",
-            "name": "Wesfarmers Limited"
-          }
-        },
-        {
-          "name": "Built Group Holdings Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "88 163 462 637",
-          "canonical": {
-            "id": "built-group",
-            "name": "Built Group"
-          },
-          "party_page": {
-            "id": "built-group",
-            "name": "Built Group"
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "1831",
-          "name": "Fertiliser Manufacturing"
-        },
-        {
-          "code": "3019",
-          "name": "Other Residential Building Construction"
-        },
-        {
-          "code": "3020",
-          "name": "Non-Residential Building Construction"
-        },
-        {
-          "code": "4222",
-          "name": "Computer and Computer Peripheral Retailing"
-        },
-        {
-          "code": "4231",
-          "name": "Hardware and Building Supplies Retailing"
-        },
-        {
-          "code": "4260",
-          "name": "Department Stores"
-        },
-        {
-          "code": "4271",
-          "name": "Pharmaceutical, Cosmetic and Toiletry Goods Retailing"
-        },
-        {
-          "code": "4272",
-          "name": "Stationery Goods Retailing"
-        },
-        {
-          "code": "6240",
-          "name": "Financial Asset Investing"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/wesfarmers-and-built-group-built-living-joint-venture"
     }
   ],
   "page": 11,

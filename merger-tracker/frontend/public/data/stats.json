@@ -1,10 +1,10 @@
 {
-  "total_mergers": 228,
-  "total_waivers": 335,
+  "total_mergers": 231,
+  "total_waivers": 339,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 175,
-    "Under assessment": 50,
+    "Under assessment": 53,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -18,7 +18,7 @@
     "Assessment ceased": 2
   },
   "by_waiver_determination": {
-    "Approved": 321,
+    "Approved": 325,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -48,35 +48,35 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.22089552238806,
+    "average_days": 19.30678466076696,
     "median_days": 19,
-    "average_business_days": 12.940298507462687,
+    "average_business_days": 13.008849557522124,
     "median_business_days": 13
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 89
+      "count": 90
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 59
+      "count": 60
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 46
+      "count": 48
     },
     {
       "name": "Software Publishing",
       "count": 36
     },
     {
-      "name": "Pubs, Taverns and Bars",
+      "name": "Non-Residential Property Operators",
       "count": 29
     },
     {
-      "name": "Non-Residential Property Operators",
-      "count": 28
+      "name": "Pubs, Taverns and Bars",
+      "count": 29
     },
     {
       "name": "Accommodation",
@@ -91,11 +91,41 @@
       "count": 17
     },
     {
-      "name": "Scientific Research Services",
+      "name": "Supermarket and Grocery Stores",
       "count": 16
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-60035",
+      "merger_name": "L'Or\u00e9al \u2013 Gucci Beauty Licence",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-19T12:00:00Z",
+      "page_modified_datetime": "2026-08-19T17:34:27+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
+    {
+      "merger_id": "MN-05046",
+      "merger_name": "Coles - supermarket site in Kirkwood (QLD)",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-19T12:00:00Z",
+      "page_modified_datetime": "2026-08-19T17:20:42+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
+    {
+      "merger_id": "MN-90029",
+      "merger_name": "Bunnings \u2013 Intellihub \u2013 Zelora Joint Venture",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-18T12:00:00Z",
+      "page_modified_datetime": "2026-08-19T17:02:19+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-20034",
       "merger_name": "Chevron - Woodside asset swap",
@@ -182,42 +212,56 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-12T12:00:00Z",
-      "page_modified_datetime": "2026-08-13T18:47:59+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-80027",
-      "merger_name": "Supagas \u2013 Heeson Medical",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-11T12:00:00Z",
-      "page_modified_datetime": "2026-08-12T09:37:57+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-70030",
-      "merger_name": "Aware Super \u2013 Increased interest in Keyton",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-10T12:00:00Z",
-      "page_modified_datetime": "2026-08-11T17:23:51+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-05044",
-      "merger_name": "Holcim Australia \u2013 Burdetts Group",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-10T12:00:00Z",
-      "page_modified_datetime": "2026-08-10T18:02:35+10:00",
+      "page_modified_datetime": "2026-08-19T17:35:22+10:00",
       "is_waiver": false,
       "is_refiled": false
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "WA-15033",
+      "merger_name": "Armira and TA Associates \u2013 Intersurgical Aktiengesellschaft AG",
+      "determination": "Approved",
+      "determination_date": "2026-08-19T12:00:00Z",
+      "page_modified_datetime": "2026-08-19T17:50:24+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-25041",
+      "merger_name": "CVC Capital Partners \u2013 DistroKid",
+      "determination": "Approved",
+      "determination_date": "2026-08-19T12:00:00Z",
+      "page_modified_datetime": "2026-08-19T17:47:36+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-35036",
+      "merger_name": "CrowdStrike \u2013 intellectual property and associated technology assets of XM Cyber",
+      "determination": "Approved",
+      "determination_date": "2026-08-19T12:00:00Z",
+      "page_modified_datetime": "2026-08-19T16:32:05+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-05041",
+      "merger_name": "Pemba - Hewison Private Wealth",
+      "determination": "Approved",
+      "determination_date": "2026-08-19T12:00:00Z",
+      "page_modified_datetime": "2026-08-19T16:30:55+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
     {
       "merger_id": "MN-90027",
       "merger_name": "AbbVie - Apogee",
@@ -305,49 +349,6 @@
       "is_waiver": true,
       "stage": "Waiver application",
       "has_conditions": false
-    },
-    {
-      "merger_id": "WA-35037",
-      "merger_name": "CVC Capital Partners \u2013 IRCA Group",
-      "determination": "Approved",
-      "determination_date": "2026-08-18T12:00:00Z",
-      "page_modified_datetime": "2026-08-18T16:48:04+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-65030",
-      "merger_name": "CVC Capital Partners \u2013 IFF\u2019s Food Ingredients business",
-      "determination": "Approved",
-      "determination_date": "2026-08-18T12:00:00Z",
-      "page_modified_datetime": "2026-08-18T16:45:17+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-95030",
-      "merger_name": "Origin \u2013 Climatech Zero",
-      "determination": "Approved",
-      "determination_date": "2026-08-18T12:00:00Z",
-      "page_modified_datetime": "2026-08-18T16:38:08+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-40017",
-      "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
-      "determination": "Referred to phase 2",
-      "determination_date": "2026-08-18T12:00:00Z",
-      "page_modified_datetime": "2026-08-18T14:52:30+10:00",
-      "determination_type": "phase_transition",
-      "is_waiver": false,
-      "stage": "Phase 2 - detailed assessment"
     }
   ]
 }

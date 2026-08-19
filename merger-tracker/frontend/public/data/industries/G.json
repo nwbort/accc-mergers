@@ -21,13 +21,13 @@
       "code": "41",
       "name": "Food Retailing",
       "level": "subdivision",
-      "merger_count": 30
+      "merger_count": 31
     },
     {
       "code": "42",
       "name": "Other Store-Based Retailing",
       "level": "subdivision",
-      "merger_count": 23
+      "merger_count": 25
     },
     {
       "code": "43",
@@ -37,6 +37,28 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-05046",
+      "merger_name": "Coles - supermarket site in Kirkwood (QLD)",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-19T12:00:00Z",
+      "determination_date": null
+    },
+    {
+      "merger_id": "MN-90029",
+      "merger_name": "Bunnings \u2013 Intellihub \u2013 Zelora Joint Venture",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-18T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-80035",
       "merger_name": "Saint-Gobain - Xypex",
@@ -797,11 +819,11 @@
       "determination_date": null
     }
   ],
-  "count": 69,
-  "phase_1_count": 25,
+  "count": 71,
+  "phase_1_count": 27,
   "phase_2_count": 3,
   "waiver_count": 41,
-  "active_count": 8,
+  "active_count": 10,
   "phase_duration": {
     "average_days": 38.3,
     "median_days": 27.5,

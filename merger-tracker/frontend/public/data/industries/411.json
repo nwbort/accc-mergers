@@ -24,10 +24,21 @@
       "code": "4110",
       "name": "Supermarket and Grocery Stores",
       "level": "class",
-      "merger_count": 15
+      "merger_count": 16
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-05046",
+      "merger_name": "Coles - supermarket site in Kirkwood (QLD)",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-19T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-05030",
       "merger_name": "Coles \u2013 supermarket site in Upper Swan, WA",
@@ -194,11 +205,11 @@
       "determination_date": "2026-04-10T12:00:00Z"
     }
   ],
-  "count": 15,
-  "phase_1_count": 5,
+  "count": 16,
+  "phase_1_count": 6,
   "phase_2_count": 2,
   "waiver_count": 8,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": {
     "average_days": 41.285714285714285,
     "median_days": 27,

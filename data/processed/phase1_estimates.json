@@ -635,6 +635,28 @@
     "estimated_at": "2026-08-10",
     "method_version": 1
   },
+  "MN-05046": {
+    "expected_business_days": 18,
+    "range_business_days": [
+      16,
+      22
+    ],
+    "basis": "industry",
+    "anzsic_level": "class",
+    "anzsic_codes": [
+      "3019",
+      "3020",
+      "3211",
+      "4110",
+      "4122",
+      "4279",
+      "6711",
+      "6712"
+    ],
+    "sample_size": 17,
+    "estimated_at": "2026-08-19",
+    "method_version": 1
+  },
   "MN-10001": {
     "expected_business_days": 18,
     "range_business_days": [
@@ -2420,6 +2442,21 @@
     "estimated_at": "2026-07-30",
     "method_version": 1
   },
+  "MN-60035": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      16,
+      19
+    ],
+    "basis": "industry",
+    "anzsic_level": "subdivision",
+    "anzsic_codes": [
+      "37"
+    ],
+    "sample_size": 9,
+    "estimated_at": "2026-08-19",
+    "method_version": 1
+  },
   "MN-65005": {
     "expected_business_days": 16,
     "range_business_days": [
@@ -3446,6 +3483,22 @@
     ],
     "sample_size": 8,
     "estimated_at": "2026-07-17",
+    "method_version": 1
+  },
+  "MN-90029": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      16,
+      18
+    ],
+    "basis": "industry",
+    "anzsic_level": "subdivision",
+    "anzsic_codes": [
+      "32",
+      "42"
+    ],
+    "sample_size": 13,
+    "estimated_at": "2026-08-19",
     "method_version": 1
   },
   "MN-95001": {

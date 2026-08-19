@@ -2511,7 +2511,7 @@
       "is_refiled": false,
       "effective_notification_datetime": "2026-07-13T12:00:00Z",
       "determination_publication_date": null,
-      "end_of_determination_period": "2026-08-24T12:00:00Z",
+      "end_of_determination_period": "2026-09-04T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
@@ -2526,22 +2526,9 @@
       ],
       "targets": [
         {
-          "name": "HURRIKAYNE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "74 118 744 915",
-          "canonical": {
-            "id": "wakeling-motos",
-            "name": "Wakeling Motos"
-          },
-          "party_page": {
-            "id": "wakeling-motos",
-            "name": "Wakeling Motos"
-          }
-        },
-        {
-          "name": "WOLLONGONG CITY MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "22 002 019 598",
+          "name": "Wakeling South Coast Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "636 298 970",
           "canonical": {
             "id": "wakeling-motos",
             "name": "Wakeling Motos"
@@ -2565,6 +2552,19 @@
           }
         },
         {
+          "name": "HURRIKAYNE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "74 118 744 915",
+          "canonical": {
+            "id": "wakeling-motos",
+            "name": "Wakeling Motos"
+          },
+          "party_page": {
+            "id": "wakeling-motos",
+            "name": "Wakeling Motos"
+          }
+        },
+        {
           "name": "Paul Wakeling Motor Group Pty Ltd",
           "identifier_type": "ABN",
           "identifier": "47 119 908 780",
@@ -2578,9 +2578,9 @@
           }
         },
         {
-          "name": "Wakeling South Coast Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "636 298 970",
+          "name": "WAKELING HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "41 160 814 040",
           "canonical": {
             "id": "wakeling-motos",
             "name": "Wakeling Motos"
@@ -2591,9 +2591,9 @@
           }
         },
         {
-          "name": "WAKELING HOLDINGS PTY LTD",
+          "name": "WOLLONGONG CITY MOTORS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "41 160 814 040",
+          "identifier": "22 002 019 598",
           "canonical": {
             "id": "wakeling-motos",
             "name": "Wakeling Motos"

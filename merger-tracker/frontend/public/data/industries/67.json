@@ -19,7 +19,7 @@
       "code": "671",
       "name": "Property Operators",
       "level": "group",
-      "merger_count": 32
+      "merger_count": 33
     },
     {
       "code": "672",
@@ -29,6 +29,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-05046",
+      "merger_name": "Coles - supermarket site in Kirkwood (QLD)",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-19T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-10027",
       "merger_name": "Endeavour Group \u2013 retail liquor site in Horsham, VIC",
@@ -415,11 +426,11 @@
       "determination_date": "2025-09-05T12:00:00Z"
     }
   ],
-  "count": 35,
-  "phase_1_count": 12,
+  "count": 36,
+  "phase_1_count": 13,
   "phase_2_count": 1,
   "waiver_count": 22,
-  "active_count": 4,
+  "active_count": 5,
   "phase_duration": {
     "average_days": 37.44444444444444,
     "median_days": 29,

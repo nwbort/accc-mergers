@@ -12198,14 +12198,14 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 31,
+        "estimated_days": 30,
         "min_days": 3,
-        "max_days": 59,
-        "id_issued_estimated": "2026-07-13",
+        "max_days": 57,
+        "id_issued_estimated": "2026-07-14",
         "id_issued_before": "2026-08-10",
-        "id_issued_after": "2026-06-15",
+        "id_issued_after": "2026-06-17",
         "min_days_witness": "MN-05044",
-        "max_days_witness": "WA-05040",
+        "max_days_witness": "WA-05041",
         "basis": "bracketed",
         "method_version": 1
       }
@@ -12401,14 +12401,246 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 22,
+        "estimated_days": 27,
+        "min_days": 0,
+        "max_days": 54,
+        "id_issued_estimated": "2026-07-14",
+        "id_issued_before": "2026-08-10",
+        "id_issued_after": "2026-06-17",
+        "min_days_witness": "MN-05046",
+        "max_days_witness": "WA-05041",
+        "basis": "bracketed",
+        "method_version": 1
+      }
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/coles-supermarket-site-in-kirkwood-qld",
+      "merger_name": "Coles - supermarket site in Kirkwood (QLD)",
+      "status": "Under assessment",
+      "merger_id": "MN-05046",
+      "effective_notification_datetime": "2026-08-19T12:00:00Z",
+      "original_notification_datetime": "2026-08-19T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-09-30T12:00:00Z",
+      "page_modified_datetime": "2026-08-19T17:20:42+10:00",
+      "consultation_response_due_date": "2026-08-26T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "45 004 189 708",
+          "canonical": {
+            "id": "coles",
+            "name": "Coles Group"
+          },
+          "party_page": {
+            "id": "coles",
+            "name": "Coles Group"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Kirkwood LFR Development Pty Ltd as trustee of the Kirkwood LFR Development Trust (or related entity",
+          "identifier_type": "ACN",
+          "identifier": "683 516 592",
+          "party_page": {
+            "id": "kirkwood-lfr-development-pty-ltd-as-trustee-of-the-kirkwood-lfr-development-trus",
+            "name": "Kirkwood LFR Development Pty Ltd as trustee of the Kirkwood LFR Development Trust (or related entity"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3019",
+          "name": "Other Residential Building Construction"
+        },
+        {
+          "code": "3020",
+          "name": "Non-Residential Building Construction"
+        },
+        {
+          "code": "3211",
+          "name": "Land Development and Subdivision"
+        },
+        {
+          "code": "4110",
+          "name": "Supermarket and Grocery Stores"
+        },
+        {
+          "code": "4122",
+          "name": "Fruit and Vegetable Retailing"
+        },
+        {
+          "code": "4279",
+          "name": "Other Store-Based Retailing n.e.c."
+        },
+        {
+          "code": "6711",
+          "name": "Residential Property Operators"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        }
+      ],
+      "merger_description": "Coles Group Limited (**Coles**) is an Australian public company (ASX: COL) that primarily operates:\n\n* supermarkets nationwide through its subsidiary, Coles Supermarkets Australia Pty Ltd; and\n* retail liquor stores nationwide, trading under the Liquorland, Liquorland Warehouse and Liquorland Cellars brands.\n\nKirkwood LFR Development Pty Ltd (**Lessor**) is an Australian private company which is a joint venture between developer Cadre Pty Ltd (**Cadre**) and financier Argus Property Partners Pty Ltd (**Argus**). Cadre is an Australian private diversified property development and investment company specialising in large-format retail, residential, commercial, industrial and mixed-use projects. Argus is an Australian private property fund manager and investment house.\n\nColes has signed a letter of offer with the Lessor for a proposed lease of a Coles supermarket within a new neighbourhood centre at Lot 2 Kirkwood Road, Kirkwood QLD 4680 (the\u00a0**Acquisition**).\n\nThe proposed Coles supermarket is anticipated to open around November 2029.",
+      "events": [
+        {
+          "date": "2026-08-19T12:00:00Z",
+          "title": "Coles - supermarket site in Kirkwood (QLD) - Questionnaire",
+          "display_title": "Coles - supermarket site in Kirkwood (QLD) - Questionnaire",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Coles%20-%20supermarket%20site%20in%20Kirkwood%20%28QLD%29%20-%20Questionnaire.docx",
+          "url_gh": "/mergers/MN-05046/Coles - supermarket site in Kirkwood (QLD) - Questionnaire.pdf",
+          "phase": null
+        },
+        {
+          "date": "2026-08-19T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-01068",
+          "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
+          "status": "Assessment completed",
+          "accc_determination": "Not approved",
+          "acquirers": [
+            {
+              "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "45 004 189 708",
+              "canonical": {
+                "id": "coles",
+                "name": "Coles Group"
+              },
+              "party_page": {
+                "id": "coles",
+                "name": "Coles Group"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "M Holdings 4 Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "652 075 799",
+              "party_page": {
+                "id": "m-holdings-4-pty-ltd",
+                "name": "M Holdings 4 Pty Ltd"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-01090",
+          "merger_name": "Coles \u2013 supermarket site in New Norfolk (TAS)",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "45 004 189 708",
+              "canonical": {
+                "id": "coles",
+                "name": "Coles Group"
+              },
+              "party_page": {
+                "id": "coles",
+                "name": "Coles Group"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Tipalea Private No.31 Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "686 197 115",
+              "party_page": {
+                "id": "tipalea-private-no-31-pty-ltd",
+                "name": "Tipalea Private No.31 Pty Ltd"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-05030",
+          "merger_name": "Coles \u2013 supermarket site in Upper Swan, WA",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "45 004 189 708",
+              "canonical": {
+                "id": "coles",
+                "name": "Coles Group"
+              },
+              "party_page": {
+                "id": "coles",
+                "name": "Coles Group"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "The Trustee for Saracen Property Holdings Unit Trust",
+              "identifier_type": "ABN",
+              "identifier": "59 505 202 814",
+              "party_page": {
+                "id": "the-trustee-for-saracen-property-holdings-unit-trust",
+                "name": "The Trustee for Saracen Property Holdings Unit Trust"
+              }
+            }
+          ]
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 18,
+        "range_business_days": [
+          16,
+          22
+        ],
+        "basis": "industry",
+        "anzsic_level": "class",
+        "anzsic_codes": [
+          "3019",
+          "3020",
+          "3211",
+          "4110",
+          "4122",
+          "4279",
+          "6711",
+          "6712"
+        ],
+        "sample_size": 17,
+        "estimated_at": "2026-08-19",
+        "method_version": 1
+      },
+      "pre_notification": {
+        "estimated_days": 29,
         "min_days": null,
-        "max_days": 56,
-        "id_issued_estimated": "2026-07-19",
+        "max_days": 63,
+        "id_issued_estimated": "2026-07-21",
         "id_issued_before": null,
-        "id_issued_after": "2026-06-15",
+        "id_issued_after": "2026-06-17",
         "min_days_witness": null,
-        "max_days_witness": "WA-05040",
+        "max_days_witness": "WA-05041",
         "basis": "upper-bound-only",
         "method_version": 1
       }
@@ -18799,13 +19031,13 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 34,
-        "min_days": 7,
+        "estimated_days": 32,
+        "min_days": 9,
         "max_days": 73,
-        "id_issued_estimated": "2026-06-30",
-        "id_issued_before": "2026-07-27",
+        "id_issued_estimated": "2026-07-02",
+        "id_issued_before": "2026-07-25",
         "id_issued_after": "2026-05-22",
-        "min_days_witness": "WA-15035",
+        "min_days_witness": "WA-15033",
         "max_days_witness": "WA-15029",
         "basis": "bracketed",
         "method_version": 1
@@ -19023,13 +19255,13 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 31,
-        "min_days": 9,
+        "estimated_days": 26,
+        "min_days": 11,
         "max_days": 75,
-        "id_issued_estimated": "2026-07-05",
-        "id_issued_before": "2026-07-27",
+        "id_issued_estimated": "2026-07-10",
+        "id_issued_before": "2026-07-25",
         "id_issued_after": "2026-05-22",
-        "min_days_witness": "WA-15035",
+        "min_days_witness": "WA-15033",
         "max_days_witness": "WA-15029",
         "basis": "bracketed",
         "method_version": 1
@@ -19280,14 +19512,14 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 16,
+        "estimated_days": 11,
         "min_days": 10,
-        "max_days": 76,
-        "id_issued_estimated": "2026-07-21",
+        "max_days": 46,
+        "id_issued_estimated": "2026-07-26",
         "id_issued_before": "2026-07-27",
-        "id_issued_after": "2026-05-22",
+        "id_issued_after": "2026-06-21",
         "min_days_witness": "WA-15035",
-        "max_days_witness": "WA-15029",
+        "max_days_witness": "WA-15033",
         "basis": "bracketed",
         "method_version": 1
       }
@@ -24701,15 +24933,15 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 28,
-        "min_days": null,
+        "estimated_days": 23,
+        "min_days": 12,
         "max_days": 62,
-        "id_issued_estimated": "2026-07-08",
-        "id_issued_before": null,
+        "id_issued_estimated": "2026-07-13",
+        "id_issued_before": "2026-07-24",
         "id_issued_after": "2026-06-04",
-        "min_days_witness": null,
+        "min_days_witness": "WA-25041",
         "max_days_witness": "WA-25036",
-        "basis": "upper-bound-only",
+        "basis": "bracketed",
         "method_version": 1
       }
     },
@@ -30695,12 +30927,12 @@
       },
       "pre_notification": {
         "estimated_days": 22,
-        "min_days": 7,
+        "min_days": 11,
         "max_days": 54,
         "id_issued_estimated": "2026-07-13",
-        "id_issued_before": "2026-07-28",
+        "id_issued_before": "2026-07-24",
         "id_issued_after": "2026-06-11",
-        "min_days_witness": "WA-35037",
+        "min_days_witness": "WA-35036",
         "max_days_witness": "WA-35028",
         "basis": "bracketed",
         "method_version": 1
@@ -31081,12 +31313,12 @@
       },
       "pre_notification": {
         "estimated_days": 21,
-        "min_days": 10,
+        "min_days": 14,
         "max_days": 57,
         "id_issued_estimated": "2026-07-17",
-        "id_issued_before": "2026-07-28",
+        "id_issued_before": "2026-07-24",
         "id_issued_after": "2026-06-11",
-        "min_days_witness": "WA-35037",
+        "min_days_witness": "WA-35036",
         "max_days_witness": "WA-35028",
         "basis": "bracketed",
         "method_version": 1
@@ -40488,35 +40720,9 @@
       "original_notification_datetime": "2026-08-12T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-09-23T12:00:00Z",
-      "page_modified_datetime": "2026-08-13T18:47:59+10:00",
+      "page_modified_datetime": "2026-08-19T17:35:22+10:00",
       "consultation_response_due_date": "2026-08-20T12:00:00Z",
       "acquirers": [
-        {
-          "name": "DPG SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "38 090 007 999",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        },
-        {
-          "name": "DPG SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "38 090 007 999",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        },
         {
           "name": "OHCA PROPERTY HOLDINGS PTY LTD",
           "identifier_type": "ABN",
@@ -40529,28 +40735,23 @@
             "id": "opal-healthcare",
             "name": "Opal HealthCare"
           }
+        },
+        {
+          "name": "DPG SERVICES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "38 090 007 999",
+          "canonical": {
+            "id": "opal-healthcare",
+            "name": "Opal HealthCare"
+          },
+          "party_page": {
+            "id": "opal-healthcare",
+            "name": "Opal HealthCare"
+          }
         }
       ],
       "targets": [
         {
-          "name": "CLENDON CARE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "65 001 584 827",
-          "party_page": {
-            "id": "clendon-care-pty-ltd",
-            "name": "Clendon Care Pty Ltd"
-          }
-        },
-        {
-          "name": "CLENDON CARE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "65 001 584 827",
-          "party_page": {
-            "id": "clendon-care-pty-ltd",
-            "name": "Clendon Care Pty Ltd"
-          }
-        },
-        {
           "name": "Michael Mooney",
           "identifier_type": null,
           "identifier": "",
@@ -40569,21 +40770,12 @@
           }
         },
         {
-          "name": "Michael Mooney",
-          "identifier_type": null,
-          "identifier": "",
+          "name": "CLENDON CARE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "65 001 584 827",
           "party_page": {
-            "id": "michael-mooney",
-            "name": "Michael Mooney"
-          }
-        },
-        {
-          "name": "Lynne Mooney",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "lynne-mooney",
-            "name": "Lynne Mooney"
+            "id": "clendon-care-pty-ltd",
+            "name": "Clendon Care Pty Ltd"
           }
         }
       ],
@@ -45913,6 +46105,221 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/lor%C3%A9al-%E2%80%93-gucci-beauty-licence",
+      "merger_name": "L'Or\u00e9al \u2013 Gucci Beauty Licence",
+      "status": "Under assessment",
+      "merger_id": "MN-60035",
+      "effective_notification_datetime": "2026-08-19T12:00:00Z",
+      "original_notification_datetime": "2026-08-19T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-09-30T12:00:00Z",
+      "page_modified_datetime": "2026-08-19T17:34:27+10:00",
+      "consultation_response_due_date": "2026-08-26T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "L'Or\u00e9al S.A.",
+          "identifier_type": null,
+          "identifier": "632 012 100",
+          "canonical": {
+            "id": "l-oreal",
+            "name": "L'Oreal"
+          },
+          "party_page": {
+            "id": "l-oreal",
+            "name": "L'Oreal"
+          }
+        },
+        {
+          "name": "Lake Beaut\u00e9 S.A.S.",
+          "identifier_type": null,
+          "identifier": "908 463 425",
+          "party_page": {
+            "id": "lake-beaut-s-a-s",
+            "name": "Lake Beaut\u00e9 S.A.S."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Guccio Gucci S.p.A",
+          "identifier_type": null,
+          "identifier": "03031300159",
+          "party_page": {
+            "id": "guccio-gucci-s-p-a",
+            "name": "Guccio Gucci S.p.A"
+          }
+        },
+        {
+          "name": "Gucci America Inc.",
+          "identifier_type": null,
+          "identifier": "131692020",
+          "party_page": {
+            "id": "gucci-america-inc",
+            "name": "Gucci America Inc."
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3720",
+          "name": "Pharmaceutical and Toiletry Goods Wholesaling"
+        }
+      ],
+      "merger_description": "Lake Beaut\u00e9 (formerly known as Kering Beaut\u00e9), a French wholly-owned subsidiary of L'Or\u00e9al SA (L'Or\u00e9al), proposes to enter into a 50-year worldwide exclusive licence (Proposed Licence or Gucci Beauty Licence) from Guccio Gucci S.p.A. (Gucci Italy) and Gucci America Inc. (Gucci America), both wholly-owned subsidiaries of Kering SA (Kering), for the creation, development, manufacture and distribution of fragrance and beauty products under the Gucci brand.\n\nL'Or\u00e9al is the French-based parent and ultimate holding company of the L\u2019Or\u00e9al Group, which is active worldwide in the research, development, manufacturing, marketing, distribution and sale of beauty and personal care products.\n\nKering is the French-based parent and holding company of the Kering Group, a global luxury group which owns and operates a portfolio of luxury brands, including Gucci. The Gucci beauty and fragrance business is currently operated by Coty Inc. (Coty) under a long-term worldwide exclusive licence, which is now scheduled to terminate on 30 June 2027 (one year ahead of the original licence term).\n\nL'Or\u00e9al and the Gucci beauty and fragrance business (as currently operated by Coty) both supply premium fragrances and, to a lesser extent, premium colour cosmetics in Australia.",
+      "events": [
+        {
+          "date": "2026-08-19T12:00:00Z",
+          "title": "L'Or\u00e9al Gucci Beauty Licence - Questionnaire",
+          "display_title": "L'Or\u00e9al Gucci Beauty Licence - Questionnaire",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/L%27Or%C3%A9al%20Gucci%20Beauty%20Licence%20-Questionnaire.docx",
+          "url_gh": "/mergers/MN-60035/L'Or\u00e9al Gucci Beauty Licence -Questionnaire.pdf",
+          "phase": null
+        },
+        {
+          "date": "2026-08-19T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-01080",
+          "merger_name": "L\u2019Or\u00e9al \u2013 Kering Beaut\u00e9",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "L'Oreal S.A.",
+              "identifier_type": null,
+              "identifier": "Paris Trade and Companies Register number 632 012 100",
+              "canonical": {
+                "id": "l-oreal",
+                "name": "L'Oreal"
+              },
+              "party_page": {
+                "id": "l-oreal",
+                "name": "L'Oreal"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Kering Beaut\u00e9 S.A.S.",
+              "identifier_type": null,
+              "identifier": "Netherlands Chamber of Commerce registration number 33223151",
+              "party_page": {
+                "id": "kering-beaut-s-a-s",
+                "name": "Kering Beaut\u00e9 S.A.S."
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-35029",
+          "merger_name": "L'Or\u00e9al - Innovist",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "L'Or\u00e9al India Private Limited",
+              "identifier_type": null,
+              "identifier": "",
+              "canonical": {
+                "id": "l-oreal",
+                "name": "L'Oreal"
+              },
+              "party_page": {
+                "id": "l-oreal",
+                "name": "L'Oreal"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Onesto Labs Private Limited",
+              "identifier_type": null,
+              "identifier": "CIN  U74999DL2018PTC340749",
+              "party_page": {
+                "id": "onesto-labs-private-limited",
+                "name": "Onesto Labs Private Limited"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-55030",
+          "merger_name": "CRH - Arcosa",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Neon Merger Sub, Inc.",
+              "identifier_type": null,
+              "identifier": "10667310",
+              "canonical": {
+                "id": "crh",
+                "name": "CRH"
+              },
+              "party_page": {
+                "id": "crh",
+                "name": "CRH"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Arcosa, Inc.",
+              "identifier_type": null,
+              "identifier": "6852687",
+              "party_page": {
+                "id": "arcosa-inc",
+                "name": "Arcosa, Inc."
+              }
+            }
+          ]
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 17,
+        "range_business_days": [
+          16,
+          19
+        ],
+        "basis": "industry",
+        "anzsic_level": "subdivision",
+        "anzsic_codes": [
+          "37"
+        ],
+        "sample_size": 9,
+        "estimated_at": "2026-08-19",
+        "method_version": 1
+      },
+      "pre_notification": {
+        "estimated_days": 20,
+        "min_days": null,
+        "max_days": 54,
+        "id_issued_estimated": "2026-07-30",
+        "id_issued_before": null,
+        "id_issued_after": "2026-06-26",
+        "min_days_witness": null,
+        "max_days_witness": "WA-60034",
+        "basis": "upper-bound-only",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/insurance-australia-group-%E2%80%93-rac-insurance",
       "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
       "status": "Under assessment",
@@ -48503,9 +48910,9 @@
           ],
           "targets": [
             {
-              "name": "HURRIKAYNE PTY LTD",
-              "identifier_type": "ABN",
-              "identifier": "74 118 744 915",
+              "name": "Wakeling South Coast Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "636 298 970",
               "canonical": {
                 "id": "wakeling-motos",
                 "name": "Wakeling Motos"
@@ -48516,9 +48923,9 @@
               }
             },
             {
-              "name": "WOLLONGONG CITY MOTORS PTY LTD",
-              "identifier_type": "ABN",
-              "identifier": "22 002 019 598",
+              "name": "S A Wakeling Nominees Pty Ltd as trustee for S.A. Wakeling Trust",
+              "identifier_type": "ACN",
+              "identifier": "119 879 980",
               "canonical": {
                 "id": "wakeling-motos",
                 "name": "Wakeling Motos"
@@ -58100,7 +58507,7 @@
       "original_notification_datetime": "2026-08-11T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-09-22T12:00:00Z",
-      "page_modified_datetime": "2026-08-12T09:37:57+10:00",
+      "page_modified_datetime": "2026-08-19T09:37:07+10:00",
       "consultation_response_due_date": "2026-08-19T12:00:00Z",
       "acquirers": [
         {
@@ -58119,19 +58526,6 @@
       ],
       "targets": [
         {
-          "name": "Jacobba Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "20 088 038 340",
-          "canonical": {
-            "id": "heeson-medical",
-            "name": "Heeson Medical"
-          },
-          "party_page": {
-            "id": "heeson-medical",
-            "name": "Heeson Medical"
-          }
-        },
-        {
           "name": "Heeson Medical Pty Ltd",
           "identifier_type": "ABN",
           "identifier": "14 088 038 313",
@@ -58143,22 +58537,22 @@
             "id": "heeson-medical",
             "name": "Heeson Medical"
           }
+        },
+        {
+          "name": "Jacobba Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "20 088 038 340",
+          "canonical": {
+            "id": "heeson-medical",
+            "name": "Heeson Medical"
+          },
+          "party_page": {
+            "id": "heeson-medical",
+            "name": "Heeson Medical"
+          }
         }
       ],
       "other_parties": [
-        {
-          "name": "NSC (Australia) Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "71 607 111 268",
-          "canonical": {
-            "id": "nippon-sanso-corporation",
-            "name": "Nippon Sanso Corporation"
-          },
-          "party_page": {
-            "id": "nippon-sanso-corporation",
-            "name": "Nippon Sanso Corporation"
-          }
-        },
         {
           "name": "Nippon Sanso Holdings Corporation",
           "identifier_type": null,
@@ -58176,6 +58570,19 @@
           "name": "Coregas Pty Ltd",
           "identifier_type": "ABN",
           "identifier": "32 001 255 312",
+          "canonical": {
+            "id": "nippon-sanso-corporation",
+            "name": "Nippon Sanso Corporation"
+          },
+          "party_page": {
+            "id": "nippon-sanso-corporation",
+            "name": "Nippon Sanso Corporation"
+          }
+        },
+        {
+          "name": "NSC (Australia) Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "71 607 111 268",
           "canonical": {
             "id": "nippon-sanso-corporation",
             "name": "Nippon Sanso Corporation"
@@ -64366,8 +64773,8 @@
       "effective_notification_datetime": "2026-07-13T12:00:00Z",
       "original_notification_datetime": "2026-07-13T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
-      "end_of_determination_period": "2026-08-24T12:00:00Z",
-      "page_modified_datetime": "2026-07-22T10:40:25+10:00",
+      "end_of_determination_period": "2026-09-04T12:00:00Z",
+      "page_modified_datetime": "2026-08-19T17:17:46+10:00",
       "consultation_response_due_date": "2026-07-13T12:00:00Z",
       "acquirers": [
         {
@@ -64382,22 +64789,9 @@
       ],
       "targets": [
         {
-          "name": "HURRIKAYNE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "74 118 744 915",
-          "canonical": {
-            "id": "wakeling-motos",
-            "name": "Wakeling Motos"
-          },
-          "party_page": {
-            "id": "wakeling-motos",
-            "name": "Wakeling Motos"
-          }
-        },
-        {
-          "name": "WOLLONGONG CITY MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "22 002 019 598",
+          "name": "Wakeling South Coast Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "636 298 970",
           "canonical": {
             "id": "wakeling-motos",
             "name": "Wakeling Motos"
@@ -64421,6 +64815,19 @@
           }
         },
         {
+          "name": "HURRIKAYNE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "74 118 744 915",
+          "canonical": {
+            "id": "wakeling-motos",
+            "name": "Wakeling Motos"
+          },
+          "party_page": {
+            "id": "wakeling-motos",
+            "name": "Wakeling Motos"
+          }
+        },
+        {
           "name": "Paul Wakeling Motor Group Pty Ltd",
           "identifier_type": "ABN",
           "identifier": "47 119 908 780",
@@ -64434,9 +64841,9 @@
           }
         },
         {
-          "name": "Wakeling South Coast Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "636 298 970",
+          "name": "WAKELING HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "41 160 814 040",
           "canonical": {
             "id": "wakeling-motos",
             "name": "Wakeling Motos"
@@ -64447,9 +64854,9 @@
           }
         },
         {
-          "name": "WAKELING HOLDINGS PTY LTD",
+          "name": "WOLLONGONG CITY MOTORS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "41 160 814 040",
+          "identifier": "22 002 019 598",
           "canonical": {
             "id": "wakeling-motos",
             "name": "Wakeling Motos"
@@ -64511,6 +64918,12 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-08-19T12:00:00Z",
+          "title": "Timeline extended by 9 business days \u2013 following remedy offered by parties",
+          "display_title": "Timeline extended by 9 business days \u2013 following remedy offered by parties",
+          "phase": null
         }
       ],
       "is_waiver": false,
@@ -64629,9 +65042,271 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 10,
-        "min_days": null,
+        "estimated_days": 22,
+        "min_days": 0,
         "max_days": 44,
+        "id_issued_estimated": "2026-06-21",
+        "id_issued_before": "2026-07-13",
+        "id_issued_after": "2026-05-30",
+        "min_days_witness": "MN-90029",
+        "max_days_witness": "WA-90026",
+        "basis": "bracketed",
+        "method_version": 1
+      }
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/bunnings-%E2%80%93-intellihub-%E2%80%93-zelora-joint-venture",
+      "merger_name": "Bunnings \u2013 Intellihub \u2013 Zelora Joint Venture",
+      "status": "Under assessment",
+      "merger_id": "MN-90029",
+      "effective_notification_datetime": "2026-08-18T12:00:00Z",
+      "original_notification_datetime": "2026-08-18T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-09-29T12:00:00Z",
+      "page_modified_datetime": "2026-08-19T17:02:19+10:00",
+      "consultation_response_due_date": "2026-08-26T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Zelora AssetCo Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "698 335 509",
+          "party_page": {
+            "id": "zelora-assetco-pty-ltd",
+            "name": "Zelora AssetCo Pty Ltd"
+          }
+        },
+        {
+          "name": "Zelora TopCo Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "698 332 240",
+          "party_page": {
+            "id": "zelora-topco-pty-ltd",
+            "name": "Zelora TopCo Pty Ltd"
+          }
+        },
+        {
+          "name": "Zelora OpCo Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "698 334 762",
+          "party_page": {
+            "id": "zelora-opco-pty-ltd",
+            "name": "Zelora OpCo Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "INTELLIHUB AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "97 626 079 614",
+          "party_page": {
+            "id": "intellihub-australia-pty-ltd",
+            "name": "Intellihub Australia Pty Ltd"
+          }
+        },
+        {
+          "name": "BUNNINGS GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "26 008 672 179",
+          "party_page": {
+            "id": "bunnings-group-limited",
+            "name": "Bunnings Group Limited"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3232",
+          "name": "Electrical Services"
+        },
+        {
+          "code": "4231",
+          "name": "Hardware and Building Supplies Retailing"
+        },
+        {
+          "code": "4232",
+          "name": "Garden Supplies Retailing"
+        }
+      ],
+      "merger_description": "Bunnings Group Pty Ltd (**Bunnings**) and Intellihub Australia Pty Ltd (**Intellihub**) are parties to an existing unincorporated joint venture which trades as Zelora. Zelora supplies home renewable energy solutions. Its services include supplying, installing and supporting customised solar panel and battery solutions through either a subscription-based or outright purchase model.\n\nBunnings is part of the ASX listed Wesfarmers Group and is a retailer of home improvement and lifestyle products in Australia and New Zealand.\n\nIntellihub provides multi-utility services, including electricity and water metering as well as technology, installation and maintenance for other energy management services such as solar, batteries and hot water systems, EV charging and virtual power plants. Intellihub also operates the Enreal business which offers solar, battery and home energy management systems on a subscription or outright basis.\n\nBunnings and Intellihub have agreed to establish an incorporated joint venture which will operate the existing Zelora business. The transaction will involve:\n\n1. Bunnings and Intellihub (through related entities) acquiring shares in a newly incorporated entity Zelora TopCo Pty Ltd (which, together with its subsidiaries, is referred to as the **Zelora JV**); and\n2. the Zelora JV subsequently acquiring the assets used in the existing Zelora business as well as existing assets of Intellihub's Enreal business,\n\n(the **Acquisition**).",
+      "events": [
+        {
+          "date": "2026-08-19T12:00:00Z",
+          "title": "Questionnaire - Bunnings - Intellihub - Zelora Joint Venture",
+          "display_title": "Questionnaire - Bunnings - Intellihub - Zelora Joint Venture",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Bunnings%20-Intellihub%20-%20Zelora%20Joint%20Venture.docx",
+          "url_gh": "/mergers/MN-90029/Questionnaire - Bunnings -Intellihub - Zelora Joint Venture.pdf",
+          "phase": null
+        },
+        {
+          "date": "2026-08-18T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-65004",
+          "merger_name": "Kee Safety - RIS Safety",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Cielo TopCo Limited",
+              "identifier_type": null,
+              "identifier": "CRN  16320933",
+              "party_page": {
+                "id": "cielo-topco-limited",
+                "name": "Cielo TopCo Limited"
+              }
+            },
+            {
+              "name": "Kee Safety (Australia) Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "694 369 116",
+              "party_page": {
+                "id": "kee-safety-australia-pty-ltd",
+                "name": "Kee Safety (Australia) Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "HALLWELD BENNETT PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "15 161 086 595",
+              "party_page": {
+                "id": "hallweld-bennett-pty-ltd",
+                "name": "Hallweld Bennett Pty Ltd"
+              }
+            },
+            {
+              "name": "RIS SAFETY HOLDINGS PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "19 668 836 351",
+              "party_page": {
+                "id": "ris-safety-holdings-pty-ltd",
+                "name": "Ris Safety Holdings Pty Ltd"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-01092",
+          "merger_name": "Winning Group Holdings \u2013 Winning Appliances",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Herman Corp Pty Ltd (as trustee for the Herman Holdings Family Trust)",
+              "identifier_type": "ABN",
+              "identifier": "21 151 833 555",
+              "party_page": {
+                "id": "herman-corp-pty-ltd-as-trustee-for-the-herman-holdings-family-trust",
+                "name": "Herman Corp Pty Ltd (as trustee for the Herman Holdings Family Trust)"
+              }
+            },
+            {
+              "name": "Yandoo Holdings Pty Ltd",
+              "identifier_type": null,
+              "identifier": "",
+              "party_page": {
+                "id": "yandoo-holdings-pty-ltd",
+                "name": "Yandoo Holdings Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "WINNING APPLIANCES PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "94 002 193 688",
+              "party_page": {
+                "id": "winning-appliances-pty-ltd",
+                "name": "Winning Appliances Pty Ltd"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-15003",
+          "merger_name": "Coforge - Encora",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Coforge Limited",
+              "identifier_type": null,
+              "identifier": "L72100HR1992PLC128382",
+              "party_page": {
+                "id": "coforge-limited",
+                "name": "Coforge Limited"
+              }
+            },
+            {
+              "name": "Encora Holdco Limited",
+              "identifier_type": null,
+              "identifier": "",
+              "party_page": {
+                "id": "encora-holdco-limited",
+                "name": "Encora Holdco Limited"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Encora US Holdco, Inc",
+              "identifier_type": null,
+              "identifier": "",
+              "party_page": {
+                "id": "encora-us-holdco-inc",
+                "name": "Encora US Holdco, Inc"
+              }
+            },
+            {
+              "name": "Encora Holdings Limited",
+              "identifier_type": null,
+              "identifier": "",
+              "party_page": {
+                "id": "encora-holdings-limited",
+                "name": "Encora Holdings Limited"
+              }
+            }
+          ]
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 17,
+        "range_business_days": [
+          16,
+          18
+        ],
+        "basis": "industry",
+        "anzsic_level": "subdivision",
+        "anzsic_codes": [
+          "32",
+          "42"
+        ],
+        "sample_size": 13,
+        "estimated_at": "2026-08-19",
+        "method_version": 1
+      },
+      "pre_notification": {
+        "estimated_days": 46,
+        "min_days": null,
+        "max_days": 80,
         "id_issued_estimated": "2026-07-03",
         "id_issued_before": null,
         "id_issued_after": "2026-05-30",
@@ -75662,6 +76337,233 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/pemba-hewison-private-wealth",
+      "merger_name": "Pemba - Hewison Private Wealth",
+      "status": "Assessment completed",
+      "merger_id": "WA-05041",
+      "effective_notification_datetime": "2026-07-21T12:00:00Z",
+      "original_notification_datetime": "2026-07-21T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-08-19T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-08-19T16:30:55+10:00",
+      "acquirers": [
+        {
+          "name": "Elevate BidCo Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "699 129 523",
+          "party_page": {
+            "id": "elevate-bidco-pty-ltd",
+            "name": "Elevate BidCo Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Hewison & Associates Pty. Ltd.",
+          "identifier_type": "ABN",
+          "identifier": "51 006 082 257",
+          "party_page": {
+            "id": "hewison-associates-pty-ltd",
+            "name": "Hewison & Associates Pty. Ltd."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Pemba Capital Fund III, L.P.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "pemba-capital-fund-iii-l-p",
+            "name": "Pemba Capital Fund III, L.P."
+          }
+        },
+        {
+          "name": "SuperConcepts Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "21 166 393 700",
+          "party_page": {
+            "id": "superconcepts-pty-ltd",
+            "name": "SuperConcepts Pty Ltd"
+          }
+        },
+        {
+          "name": "Elevate HoldCo Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "699 127 832",
+          "party_page": {
+            "id": "elevate-holdco-pty-ltd",
+            "name": "Elevate HoldCo Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ],
+      "merger_description": "Elevate BidCo Pty Ltd (**BidCo**) proposes to acquire 100% of the issued shares in Hewison & Associates Pty Ltd (**Hewison**) from Hewison's existing founding shareholders (the **Acquisition**). BidCo is a special purpose vehicle and is an indirect wholly owned subsidiary of Elevate HoldCo Pty Ltd (**HoldCo**). HoldCo is currently wholly owned by Pemba Capital Fund III, L.P., a private equity fund managed by Pemba Capital Partners Pty Ltd (**Pemba**), based in Sydney.\n\nThe Acquisition will be implemented by way of a Share Sale Agreement. Following completion, BidCo will exercise control of Hewison.\n\nPemba is an investor in high-growth and entrepreneurial businesses, with over AUD 2 billion in assets under management. Pemba has interests across various sectors, including business services, education & training, financial services, healthcare, and technology. Relevant to the Acquisition, one of Pemba's portfolio companies is SuperConcepts Pty Ltd (**SuperConcepts**), which provides self-managed super fund administration services and software to participants in the financial advice and accounting industries.\n\nHewison is a Melbourne-based wealth management firm that provides financial advisory, investment strategy and wealth management services to private clients across Australia. Hewison currently provides self-managed super fund administration services to its clients in-house and uses a third-party self-managed super fund software provider for these accounts.",
+      "events": [
+        {
+          "date": "2026-08-19T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Pemba%20-%20Hewison%20Private%20Wealth%20%28WA-05041%29%20-%20Notification%20waiver%20determination%20-%2018%20August%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Elevate BidCo Pty Ltd (BidCo), which is indirectly wholly owned by\nPemba Capital Fund III (Pemba Fund III), applied for a notification\nwaiver in respect of its proposed acquisition of 100% of the share\ncapital in Hewison & Associates Pty. Ltd. (Hewison), as described in\nthe transaction documents provided as part of the application (the\nAcquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "18 August 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, BidCo, is a special purpose vehicle which is an\nindirectly wholly owned subsidiary of Elevate HoldCo Pty Ltd\n(HoldCo). HoldCo is currently wholly owned by Pemba Fund III, a\nprivate equity fund managed by Pemba Capital Partners Pty Ltd\n(Pemba), based in Sydney.\nPemba is an investor in high-growth and entrepreneurial businesses\nacross various sectors, with over AUD 2 billion in assets under\nmanagement. One of Pemba's portfolio companies is\nSuperConcepts Pty Ltd (SuperConcepts), which provides self-\nmanaged super fund administration services and software to\nparticipants in the financial advice and accounting industries,\nincluding advisers, accountants and unadvised individuals.\nThe target, Hewison, is a Melbourne-based wealth management firm\nthat provides financial advisory, investment strategy and wealth\nmanagement services to private clients across Australia. Hewison\ncurrently provides self-managed super fund administration services\nto its clients in-house and uses a third-party software provider for\nthese accounts."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. the parties\u2019 combined share in the supply of self-managed\nsuper fund administration services in Australia is low and\nthe increase in share of supply arising from the Acquisition\nwould be small\nb. there are alternative suppliers of self-managed super fund\nadministration and software services, and financial advice\nand wealth management services in Australia\nc. there is a low risk of foreclosure or other concerning vertical\neffects resulting from exclusionary conduct post-acquisition.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-05041/Pemba - Hewison Private Wealth (WA-05041) - Notification waiver determination - 18 August 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-07-21T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-01114",
+          "merger_name": "EQT Fund Management \u2013 Exolaunch",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Elevate BidCo GmbH",
+              "identifier_type": null,
+              "identifier": "HRB 141746",
+              "party_page": {
+                "id": "elevate-bidco-gmbh",
+                "name": "Elevate BidCo GmbH"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Exolaunch GmbH",
+              "identifier_type": null,
+              "identifier": "HRB 134539 B",
+              "party_page": {
+                "id": "exolaunch-gmbh",
+                "name": "Exolaunch GmbH"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-90007",
+          "merger_name": "Volt Managed Investment Trusts \u2013 HMC Energy Transition Platform",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Volt Managed Investment Trust 2",
+              "identifier_type": null,
+              "identifier": "",
+              "party_page": {
+                "id": "volt-managed-investment-trust-2",
+                "name": "Volt Managed Investment Trust 2"
+              }
+            },
+            {
+              "name": "Volt Managed Investment Trust 1",
+              "identifier_type": null,
+              "identifier": "",
+              "party_page": {
+                "id": "volt-managed-investment-trust-1",
+                "name": "Volt Managed Investment Trust 1"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "VOLT HOLDCO PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "54 694 754 062",
+              "party_page": {
+                "id": "volt-holdco-pty-ltd",
+                "name": "Volt Holdco Pty Ltd"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-80022",
+          "merger_name": "Bain Capital \u2013 Perpetual Wealth Management Group",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "BCPE Barton BidCo Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "694 979 041",
+              "party_page": {
+                "id": "bcpe-barton-bidco-pty-ltd",
+                "name": "BCPE Barton BidCo Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "PERPETUAL LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "86 000 431 827",
+              "party_page": {
+                "id": "perpetual-limited",
+                "name": "Perpetual Limited"
+              }
+            },
+            {
+              "name": "PERPETUAL PWM SERVICES PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "90 678 546 113",
+              "party_page": {
+                "id": "perpetual-pwm-services-pty-ltd",
+                "name": "Perpetual Pwm Services Pty Ltd"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/stockland-llc-%E2%80%93-intragroup-transfer-of-halcyon-jardin-and-evergreen-projects",
       "merger_name": "Stockland LLC \u2013 intragroup transfer of Halcyon Jardin and Evergreen projects",
       "status": "Assessment completed",
@@ -81830,6 +82732,363 @@
               "party_page": {
                 "id": "tan-dental-pty-ltd",
                 "name": "Tan Dental Pty Ltd"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/armira-and-ta-associates-%E2%80%93-intersurgical-aktiengesellschaft-ag",
+      "merger_name": "Armira and TA Associates \u2013 Intersurgical Aktiengesellschaft AG",
+      "status": "Assessment completed",
+      "merger_id": "WA-15033",
+      "effective_notification_datetime": "2026-07-25T12:00:00Z",
+      "original_notification_datetime": "2026-07-25T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-08-19T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-08-19T17:50:24+10:00",
+      "acquirers": [
+        {
+          "name": "TA Riverside Aggregator, L.P.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "ta-riverside-aggregator-l-p",
+            "name": "TA Riverside Aggregator, L.P."
+          }
+        },
+        {
+          "name": "Armira Opportunities III GmbH & Co. geschlossene Investment KG",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "armira-opportunities-iii-gmbh-co-geschlossene-investment-kg",
+            "name": "Armira Opportunities III GmbH & Co. geschlossene Investment KG"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Intersurgical Aktiengesellschaft AG",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "intersurgical-aktiengesellschaft-ag",
+            "name": "Intersurgical Aktiengesellschaft AG"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "TA Investors 2024, L.P",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "ta-investors-2024-l-p",
+            "name": "TA Investors 2024, L.P"
+          }
+        },
+        {
+          "name": "TA Associates XV GP, L.P",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "ta-associates-xv-gp-l-p",
+            "name": "TA Associates XV GP, L.P"
+          }
+        },
+        {
+          "name": "TA XV-A, L.P",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "ta-xv-a-l-p",
+            "name": "Ta Xv-A, L.P"
+          }
+        },
+        {
+          "name": "TA Associates Management, L.P.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "ta-associates-management-l-p",
+            "name": "TA Associates Management, L.P."
+          }
+        },
+        {
+          "name": "Armira GmbH & Co. KG",
+          "identifier_type": null,
+          "identifier": "HRA  92168",
+          "party_page": {
+            "id": "armira-gmbh-co-kg",
+            "name": "Armira GmbH & Co. KG"
+          }
+        },
+        {
+          "name": "Riverside BidCo Limited",
+          "identifier_type": null,
+          "identifier": "England and Wales Company Registration Number  16880161",
+          "party_page": {
+            "id": "riverside-bidco-limited",
+            "name": "Riverside BidCo Limited"
+          }
+        },
+        {
+          "name": "TA Associates XV EU GP, SARL",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "ta-associates-xv-eu-gp-sarl",
+            "name": "TA Associates XV EU GP, SARL"
+          }
+        },
+        {
+          "name": "Riverside UK Holdco Limited",
+          "identifier_type": null,
+          "identifier": "England and Wales Company Registration Number  16986637",
+          "party_page": {
+            "id": "riverside-uk-holdco-limited",
+            "name": "Riverside UK Holdco Limited"
+          }
+        },
+        {
+          "name": "Bock Capital EU Luxembourg Will S.\u00e0.r.l,",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "bock-capital-eu-luxembourg-will-s-r-l",
+            "name": "Bock Capital EU Luxembourg Will S.\u00e0.r.l,"
+          }
+        },
+        {
+          "name": "TA XV-B L.P",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "ta-xv-b-l-p",
+            "name": "Ta Xv-B L.P"
+          }
+        },
+        {
+          "name": "Riverside TopCo Limited",
+          "identifier_type": null,
+          "identifier": "Jersey Company Registration Number  163852",
+          "party_page": {
+            "id": "riverside-topco-limited",
+            "name": "Riverside TopCo Limited"
+          }
+        },
+        {
+          "name": "Riverside Midco Limited",
+          "identifier_type": null,
+          "identifier": "England and Wales Company Registration  16986520",
+          "party_page": {
+            "id": "riverside-midco-limited",
+            "name": "Riverside Midco Limited"
+          }
+        },
+        {
+          "name": "TA Associates Cayman, LLC",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "ta-associates-cayman-llc",
+            "name": "TA Associates Cayman, LLC"
+          }
+        },
+        {
+          "name": "TA XV-C, SCSp",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "ta-xv-c-scsp",
+            "name": "TA XV-C, SCSp"
+          }
+        },
+        {
+          "name": "\u00c9tablissement Cosmeplast",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "tablissement-cosmeplast",
+            "name": "\u00c9tablissement Cosmeplast"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2412",
+          "name": "Medical and Surgical Equipment Manufacturing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ],
+      "merger_description": "Armira Opportunities III GmbH & Co. geschlossene Investment KG (**Armira Opportunities III**, and together with all affiliated companies and funds **Armira**), and TA Riverside Aggregator LP (**TA Riverside Aggregator**), a special purpose vehicle created by certain funds controlled by TA Associates Cayman, LLC (the **TA Funds**, and together with all affiliated companies and funds, including TA Riverside Aggregator, **TA Associates**) intend to indirectly acquire, through Riverside BidCo Limited (**Riverside BidCo**), joint control over the whole of Intersurgical Aktiengesellschaft AG (**Intersurgical**, and together with all its controlled entities, the **Intersurgical Group**) by way of purchase of shares (the **Acquisition**).\n\nArmira is an alternative investment fund manager headquartered in Munich, Germany, which specialises in providing capital for long-term partnerships and focusing on family-owned businesses and technology companies, primarily in Europe.  \n\n  \n\nTA Associates is private equity firm headquartered in Boston, United States that invests, through the TA Funds, in companies across five target industries: technology, financial services, healthcare, consumer, and business services.\n\nIntersurgical is a Liechtenstein-based company which, through its operating subsidiaries (including Intersurgical Limited) controls the business of the Intersurgical Group.\n\nThe Intersurgical Group is a global designer, manufacturer and supplier of medical devices for respiratory support, used in anaesthesia, intensive care, emergency care and oxygen therapy in hospitals and in the home. Its product range includes medical devices used in:\n\n* Airway management\n* Anaesthesia\n* Emergency and resuscitation care\n* Critical care\n* Oxygen and aerosol therapy, nebuliser therapy, and respiratory physiotherapy.",
+      "events": [
+        {
+          "date": "2026-08-19T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Armira%20and%20TA%20Associates%20%E2%80%93%20Intersurgical%20Aktiengesellschaft%20AG%20%28WA-15033%29%20-%20Notification%20waiver%20determination%20-%2019%20August%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Armira Opportunities III GmbH & Co. geschlossene Investment KG\n(Armira Opportunities III, and together with all affiliated companies\nand funds, Armira) and TA Riverside Aggregator LP (TA Riverside\nAggregator), a special purpose vehicle created by certain funds\ncontrolled by TA Associates Cayman, LLC (the TA Funds, and\ntogether with all affiliated companies and funds, including TA\nRiverside Aggregator, TA Associates), propose to indirectly acquire,\nvia Riverside Bidco Limited, share capital in and exercise joint control\nover Intersurgical Aktiengesellschaft AG (Intersurgical, and together\nwith its controlled entities, Intersurgical Group), as described in the\ntransaction documents provided as part of the application (the\nAcquisition).\nTA Riverside Aggregator and Armira Opportunities III applied for a\nnotification waiver in respect of the Acquisition."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "19 August 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, Riverside Bidco Limited, is currently an indirect wholly\nowned subsidiary of Armira Opportunities III.\nArmira is a Munich-based alternative investment fund manager,\nwhich specialises in providing capital for long-term partnerships and\nfocusing on family-owned businesses and technology companies,\nprimarily in Europe.\nTA Associates is a private equity firm headquartered in Boston,\nUnited States, that invests, through the TA Funds, in companies\nacross five target industries: technology, financial services,\nhealthcare, consumer, and business services.\nThe target, Intersurgical, is a holding company registered in\nLiechtenstein which, through its operating subsidiaries (including\nIntersurgical Limited) controls the business of the Intersurgical\nGroup.\nThe Intersurgical Group is a global designer, manufacturer and\nsupplier of medical devices for respiratory support, used in\nanaesthesia, intensive care, emergency care and oxygen therapy in\nhospitals and in the home. Its offering includes products for airway\nmanagement, anaesthesia, emergency and resuscitation care,\ncritical care, oxygen and aerosol therapy, nebuliser therapy, and\nrespiratory physiotherapy.\nIntersurgical Limited has entered into a separate equity purchase\nagreement with Teleflex Inc. to acquire the acute care and\ninterventional urology business of Teleflex Inc. (the Teleflex\nBusiness)."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. There is no horizontal overlap or vertical\nrelationship between Armira (or its connected entities) and\nIntersurgical (including the Teleflex Business), or between TA\nAssociates (or its connected entities) and Intersurgical (including the\nTeleflex Business), in the supply of medical devices for respiratory\nsupport in Australia.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-15033/Armira and TA Associates \u2013 Intersurgical Aktiengesellschaft AG (WA-15033) - Notification waiver determination - 19 August 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-07-25T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-50015",
+          "merger_name": "Mastercard - BVNK",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Mastercard Incorporated",
+              "identifier_type": null,
+              "identifier": "3390142",
+              "canonical": {
+                "id": "mastercard-incorporated",
+                "name": "MasterCard"
+              },
+              "party_page": {
+                "id": "mastercard-incorporated",
+                "name": "MasterCard"
+              }
+            },
+            {
+              "name": "Ares UK Holdco 2 Limited",
+              "identifier_type": null,
+              "identifier": "CRN 17107097",
+              "party_page": {
+                "id": "ares-uk-holdco-2-limited",
+                "name": "Ares UK Holdco 2 Limited"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "B Corporation S.A.M",
+              "identifier_type": null,
+              "identifier": "23S09602",
+              "party_page": {
+                "id": "b-corporation-s-a-m",
+                "name": "B Corporation S.A.M"
+              }
+            },
+            {
+              "name": "BVNK Holdings Limited",
+              "identifier_type": null,
+              "identifier": "13922014",
+              "party_page": {
+                "id": "bvnk-holdings-limited",
+                "name": "BVNK Holdings Limited"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-50003",
+          "merger_name": "Francisco Partners - Sermo",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Sigrun Bidco Limited",
+              "identifier_type": null,
+              "identifier": "",
+              "party_page": {
+                "id": "sigrun-bidco-limited",
+                "name": "Sigrun Bidco Limited"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Sermo Limited (together with its subsidiaries, \u201cSermo\u201d)",
+              "identifier_type": null,
+              "identifier": "CRN 11755038",
+              "party_page": {
+                "id": "sermo-limited-together-with-its-subsidiaries-sermo",
+                "name": "Sermo Limited (together with its subsidiaries, \u201cSermo\u201d)"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-80025",
+          "merger_name": "Black Kite Partners led consortium - DR2",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Galileo BidCo Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "698 274 609",
+              "party_page": {
+                "id": "galileo-bidco-pty-ltd",
+                "name": "Galileo BidCo Pty Ltd"
+              }
+            },
+            {
+              "name": "HGPS-DPE Luxembourg Holdings SCSp",
+              "identifier_type": null,
+              "identifier": "B273812",
+              "party_page": {
+                "id": "hgps-dpe-luxembourg-holdings-scsp",
+                "name": "HGPS-DPE Luxembourg Holdings SCSp"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "DR2 HOLDINGS PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "85 671 808 558",
+              "party_page": {
+                "id": "dr2-holdings-pty-ltd",
+                "name": "Dr2 Holdings Pty Ltd"
               }
             }
           ]
@@ -91865,6 +93124,219 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/cvc-capital-partners-%E2%80%93-distrokid",
+      "merger_name": "CVC Capital Partners \u2013 DistroKid",
+      "status": "Assessment completed",
+      "merger_id": "WA-25041",
+      "effective_notification_datetime": "2026-07-24T12:00:00Z",
+      "original_notification_datetime": "2026-07-24T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-08-19T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-08-19T17:47:36+10:00",
+      "acquirers": [
+        {
+          "name": "Dream HoldCo LLC",
+          "identifier_type": null,
+          "identifier": "10662853",
+          "party_page": {
+            "id": "dream-holdco-llc",
+            "name": "Dream HoldCo LLC"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "DK Holdco, LLC",
+          "identifier_type": null,
+          "identifier": "6146948",
+          "party_page": {
+            "id": "dk-holdco-llc",
+            "name": "DK Holdco, LLC"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "CVC Capital Partners plc",
+          "identifier_type": null,
+          "identifier": "JFSC  140080",
+          "canonical": {
+            "id": "cvc-capital-partners",
+            "name": "CVC Capital Partners"
+          },
+          "party_page": {
+            "id": "cvc-capital-partners",
+            "name": "CVC Capital Partners"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5522",
+          "name": "Music and Other Sound Recording Activities"
+        }
+      ],
+      "merger_description": "The transaction concerns the proposed acquisition of 100% of the shares in DK Holdco, LLC (**Target**) by funds or vehicles managed and advised by affiliates of CVC Capital Partners plc (**CVC plc**) (**CVC Funds**, and together with its affiliates and CVC Capital Partners plc and its subsidiaries, **CVC**).\n\nThe acquirer is Dream HoldCo LLC (**Acquirer**), a newly incorporated company under the laws of Delaware. The Acquirer is controlled by funds or vehicles advised or managed by CVC.\n\nThe **CVC Network** is a global alternative investment manager focused on private equity, credit, infrastructure and secondaries, and includes CVC plc and each of its subsidiaries from time to time and the CVC Funds. CVC plc is a public limited company whose shares are listed and admitted to trading on the Euronext Amsterdam Stock Exchange. As it relates to the CVC Network\u2019s private equity activities, CVC plc, and certain of its subsidiaries from time to time, provide investment advice to and/or manage investments on behalf of CVC Funds.\n\nThe Target (trading as **DistroKid**) is an independent digital music distribution platform, enabling musicians and record labels to upload and distribute their music to digital streaming platforms such as Spotify, Apple Music and YouTube. DistroKid also provides ancillary services including royalty collection and distribution and music promotion tools.\n\nUpon completion of the transaction, the Acquirer will hold 100% of the interests in the Target, with CVC as the ultimate controlling entity.",
+      "events": [
+        {
+          "date": "2026-08-19T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/CVC%20Capital%20Partners%20%E2%80%93%20DistroKid%20%28WA-25041%29%20-%20Notification%20waiver%20determination%20-%2019%20August%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Dream HoldCo LLC, a newly incorporated company controlled by\nfunds or vehicles advised or managed by CVC Capital Partners plc\nand its subsidiaries (the CVC Funds), applied for a notification\nwaiver in respect of its proposed acquisition of 100% of the shares in\nDK Holdco, LLC (trading as DistroKid), as described in the\ntransaction documents provided as part of the application (the\nAcquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "19 August 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "CVC Capital Partners plc is a public limited company whose shares\nare listed on the Euronext Amsterdam Stock Exchange. The CVC\nNetwork is a global alternative investment manager focused on\nprivate equity, credit, infrastructure and secondaries, and includes\nCVC Capital Partners plc, each of its subsidiaries and the CVC\nFunds.\nThe target, DistroKid, is headquartered in the United States and is an\nindependent digital music distribution platform, enabling musicians\nand record labels to upload and distribute their music to digital\nstreaming platforms such as Spotify, Apple Music and YouTube.\nDistroKid also provides ancillary services including royalty collection\nand distribution and music promotion tools."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. there is no horizontal overlap or vertical relationship\nbetween the CVC Network (including its portfolio\ncompanies) and DistroKid in the wholesale digital\ndistribution of recorded music in Australia\nb. there are several alternative suppliers of digital music\ndistribution services in Australia.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-25041/CVC Capital Partners \u2013 DistroKid (WA-25041) - Notification waiver determination - 19 August 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-07-24T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-65030",
+          "merger_name": "CVC Capital Partners \u2013 IFF\u2019s Food Ingredients business",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Foxtrot UK Bidco Limited",
+              "identifier_type": null,
+              "identifier": "CRN  17249252",
+              "party_page": {
+                "id": "foxtrot-uk-bidco-limited",
+                "name": "Foxtrot UK Bidco Limited"
+              }
+            },
+            {
+              "name": "Foxtrot Denmark Bidco ApS",
+              "identifier_type": null,
+              "identifier": "CVR  42580058",
+              "party_page": {
+                "id": "foxtrot-denmark-bidco-aps",
+                "name": "Foxtrot Denmark Bidco ApS"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "DANISCO AUSTRALIA PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "62 096 139 392",
+              "party_page": {
+                "id": "danisco-australia-pty-ltd",
+                "name": "Danisco Australia Pty Ltd"
+              }
+            },
+            {
+              "name": "Taura Natural Ingredients Holdings Pty Ltd",
+              "identifier_type": "ABN",
+              "identifier": "20 123 509 017",
+              "party_page": {
+                "id": "taura-natural-ingredients-holdings-pty-ltd",
+                "name": "Taura Natural Ingredients Holdings Pty Ltd"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-65009",
+          "merger_name": "CVC Capital Partners \u2013 Marathon Asset Management",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "CVC Capital Partners plc",
+              "identifier_type": null,
+              "identifier": "140080",
+              "canonical": {
+                "id": "cvc-capital-partners",
+                "name": "CVC Capital Partners"
+              },
+              "party_page": {
+                "id": "cvc-capital-partners",
+                "name": "CVC Capital Partners"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC",
+              "identifier_type": null,
+              "identifier": "",
+              "party_page": {
+                "id": "marathon-asset-management-lp-marathon-gp-holdings-i-llc-and-marathon-gp-holdings",
+                "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-05033",
+          "merger_name": "CVC Capital Partners \u2013 Chess.com",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Squares Blocker, inc.",
+              "identifier_type": null,
+              "identifier": "10665193",
+              "party_page": {
+                "id": "squares-blocker-inc",
+                "name": "Squares Blocker, inc."
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Chess Holdings, LLC",
+              "identifier_type": null,
+              "identifier": "6374364",
+              "party_page": {
+                "id": "chess-holdings-llc",
+                "name": "Chess Holdings, LLC"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/mag-south-coast-country-motor-company-kinghorn-motors",
       "merger_name": "MAG South Coast - Country Motor Company / Kinghorn Motors",
       "status": "Assessment completed",
@@ -98479,6 +99951,227 @@
               "party_page": {
                 "id": "aegleon-holdco-pty-ltd",
                 "name": "Aegleon Holdco Pty Ltd"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/crowdstrike-%E2%80%93-intellectual-property-and-associated-technology-assets-of-xm-cyber",
+      "merger_name": "CrowdStrike \u2013 intellectual property and associated technology assets of XM Cyber",
+      "status": "Assessment completed",
+      "merger_id": "WA-35036",
+      "effective_notification_datetime": "2026-07-24T12:00:00Z",
+      "original_notification_datetime": "2026-07-24T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-08-19T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-08-19T16:32:05+10:00",
+      "acquirers": [
+        {
+          "name": "CrowdStrike, Inc.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "crowdstrike-inc",
+            "name": "CrowdStrike, Inc."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Schwarz Digits KG",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "schwarz-digits-kg",
+            "name": "Schwarz Digits KG"
+          }
+        },
+        {
+          "name": "XM Cyber Ltd.",
+          "identifier_type": null,
+          "identifier": "Company number 515436756",
+          "party_page": {
+            "id": "xm-cyber-ltd",
+            "name": "XM Cyber Ltd."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "CrowdStrike Holdings, Inc.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "crowdstrike-inc",
+            "name": "CrowdStrike, Inc."
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "merger_description": "CrowdStrike Holdings, Inc. (together with its subsidiaries, **CrowdStrike**) is a U.S. publicly listed holding company, incorporated under the laws of Delaware and headquartered in Texas, USA. CrowdStrike Holdings, Inc.\u2019s shares are listed on the Nasdaq stock exchange.\n\nCrowdStrike is active in cybersecurity services through its cloud-native Falcon platform, which provides protection for endpoints, cloud workloads, identities and data. CrowdStrike operates a software-as-a-service model, delivering its solutions via a unified cloud platform, and maintains a global presence with offices and operations across North America, Europe and Asia. CrowdStrike operates in Australia through its indirect wholly owned Australian subsidiary, CrowdStrike Australia Pty Ltd, with offices in Sydney.\n\nCrowdStrike offers a broad range of cybersecurity products and services, including endpoint detection and response, identity protection, cloud security, threat intelligence and managed security services. Its Falcon platform is used by a diverse customer base across industries such as finance, healthcare, retail and government, enabling real-time threat monitoring, prevention and incident response across distributed IT environments.\n\nXM Cyber Ltd (**XM Cyber**), including its subsidiaries, is an Israeli cybersecurity company. XM Cyber is currently an entity of the Schwarz Group.\n\nXM Cyber specialises in continuous exposure management and attack path analysis solutions.\n\nSchwarz Digits KG (**Schwarz Digits**), including its direct or indirect subsidiaries, is the digital and IT division of the Schwarz Group. Schwarz Digits\u2019 core services include cloud, cyber security, data and AI, communication and Workspace for enterprise and public sector customers. Its offering mainly includes, among other things, a sovereign cloud solution through the STACKIT platform as well as other digital and AI-based services. Schwarz Digits is a global enterprise and will retain the infrastructure, personnel and capabilities to continue offering its digital services following the Acquisition.\n\nPursuant to an Asset Purchase Agreement, CrowdStrike is acquiring XM Cyber's intellectual property (including patents, trademarks, copyrights, trade secrets, domain names and source code) and associated technology (together, the **Transferred Assets**) (the **Acquisition**). CrowdStrike is not acquiring the shares of any XM Cyber entity, nor is it acquiring XM Cyber's existing employees.\n\nAlthough XM Cyber\u2019s intellectual property is primarily developed by its in-house product team based in Tel Aviv, the Transferred Assets include certain registered intellectual property rights in Australia \u2013 three registered trademarks, as well as one abandoned patent application, one abandoned trademark and two abandoned trademark applications (together, the **Australian Registered IP**). The Acquisition does not involve the transfer of any Australian business other than the Australian Registered IP.",
+      "events": [
+        {
+          "date": "2026-08-19T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/CrowdStrike%20%E2%80%93%20intellectual%20property%20and%20associated%20technology%20assets%20of%20XM%20Cyber%20%28WA-35036%29%20-%20Notification%20waiver%20determination%20-%2019%20August%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "CrowdStrike, Inc., a wholly owned subsidiary of CrowdStrike\nHoldings, Inc. (together with its subsidiaries, CrowdStrike), applied\nfor a notification waiver in respect of its proposed acquisition of the\nintellectual property (including patents, trademarks, copyrights, trade\nsecrets, domain names and source code) and associated\ntechnology assets of XM Cyber Ltd. (XM Cyber), as described in the\ntransaction documents provided as part of the application (the\nAcquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "19 August 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, CrowdStrike, is a U.S. publicly listed holding company,\nincorporated under the laws of Delaware and headquartered in\nTexas, USA. CrowdStrike Holdings, Inc.\u2019s shares are listed on the\nNasdaq stock exchange.\nCrowdStrike is active in cybersecurity services through its cloud-\nnative Falcon platform, which provides protection for endpoints,\ncloud workloads, identities and data. CrowdStrike operates a\nsoftware-as-a-service model, delivering its solutions via a unified\ncloud platform, and maintains a global presence with offices and\noperations across North America, Europe and Asia. CrowdStrike\noperates in Australia through its indirect wholly owned Australian\nsubsidiary, CrowdStrike Australia Pty Ltd, with offices in Sydney.\nCrowdStrike offers a broad range of cybersecurity products and\nservices, including endpoint detection and response, identity\nprotection, cloud security, threat intelligence and managed security\nservices. Its Falcon platform is used by a diverse customer base\nacross industries such as finance, healthcare, retail and government,\nenabling real-time threat monitoring, prevention and incident\nresponse across distributed IT environments.\nThe target, XM Cyber, including its subsidiaries, is an Israeli\ncybersecurity company. XM Cyber is currently an entity of the\nSchwarz Group. XM Cyber, specialises in continuous exposure\nmanagement and attack path analysis solutions.\nIn Australia, both CrowdStrike and XM Cyber supply enterprise\nsecurity software.\nSchwarz Digits KG (Schwarz Digits), including its direct or indirect\nsubsidiaries, is the digital and IT division of the Schwarz Group.\nSchwarz Digits\u2019 core services include cloud, cyber security, data and\nAI, communication and Workspace for enterprise and public sector\ncustomers. Its offering mainly includes, among other things, a\nsovereign cloud solution through the STACKIT platform as well as\nother digital and AI-based services. Schwarz Digits is a global\nenterprise and will retain the infrastructure, personnel and\ncapabilities to continue offering its digital services following the\nAcquisition."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers\nthat the Acquisition is unlikely to give rise to any material lessening\nof competition, given:\na. the parties\u2019 combined share in the supply of enterprise\nsecurity software (as well as specific segments within\nenterprise security software services) to customers in\nAustralia is low and the increase in share of supply arising\nfrom the Acquisition would be small\nb. there are alternative global suppliers of enterprise security\nsoftware to customers in Australia\nc. there is a low risk of foreclosure or other concerning vertical\neffects resulting from exclusionary conduct post-acquisition.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-35036/CrowdStrike \u2013 intellectual property and associated technology assets of XM Cyber (WA-35036) - Notification waiver determination - 19 August 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-07-24T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-70009",
+          "merger_name": "Infotrust \u2013 Catalyst Cyber",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "INFOTRUST LTD",
+              "identifier_type": "ABN",
+              "identifier": "73 089 224 402",
+              "party_page": {
+                "id": "infotrust-ltd",
+                "name": "Infotrust Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "CATALYST CYBER PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "24 682 157 606",
+              "party_page": {
+                "id": "catalyst-cyber-pty-limited",
+                "name": "Catalyst Cyber Pty Limited"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-50032",
+          "merger_name": "Accenture - Dragos",
+          "status": "Under assessment",
+          "accc_determination": null,
+          "acquirers": [
+            {
+              "name": "Accenture Venture Holdings, LLC",
+              "identifier_type": null,
+              "identifier": "Delaware registered number  10429510",
+              "canonical": {
+                "id": "accenture-plc",
+                "name": "Accenture"
+              },
+              "party_page": {
+                "id": "accenture-plc",
+                "name": "Accenture"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "PHOSPHORUS (AUS) PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "58 678 218 356",
+              "canonical": {
+                "id": "dragos-inc",
+                "name": "Dragos"
+              },
+              "party_page": {
+                "id": "dragos-inc",
+                "name": "Dragos"
+              }
+            },
+            {
+              "name": "DRAGOS AUSTRALIA PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "62 638 810 616",
+              "canonical": {
+                "id": "dragos-inc",
+                "name": "Dragos"
+              },
+              "party_page": {
+                "id": "dragos-inc",
+                "name": "Dragos"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-60031",
+          "merger_name": "Accenture - runZero",
+          "status": "Under assessment",
+          "accc_determination": null,
+          "acquirers": [
+            {
+              "name": "Accenture Venture Holdings, LLC",
+              "identifier_type": null,
+              "identifier": "Delaware file number  10429510",
+              "canonical": {
+                "id": "accenture-plc",
+                "name": "Accenture"
+              },
+              "party_page": {
+                "id": "accenture-plc",
+                "name": "Accenture"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "runZero, Inc.",
+              "identifier_type": null,
+              "identifier": "Delaware registered number  7045767",
+              "party_page": {
+                "id": "runzero-inc",
+                "name": "runZero, Inc."
               }
             }
           ]

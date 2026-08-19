@@ -115,6 +115,17 @@
       "determination_date": null
     },
     {
+      "merger_id": "WA-35036",
+      "merger_name": "CrowdStrike \u2013 intellectual property and associated technology assets of XM Cyber",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-24T12:00:00Z",
+      "determination_date": "2026-08-19T12:00:00Z"
+    },
+    {
       "merger_id": "WA-45023",
       "merger_name": "Pine Australia - Evolution Business Systems",
       "is_waiver": true,
@@ -676,10 +687,10 @@
       "determination_date": "2026-01-20T12:00:00Z"
     }
   ],
-  "count": 59,
+  "count": 60,
   "phase_1_count": 26,
   "phase_2_count": 0,
-  "waiver_count": 33,
+  "waiver_count": 34,
   "active_count": 8,
   "phase_duration": {
     "average_days": 29.5,
@@ -689,10 +700,10 @@
     "completed_count": 18
   },
   "waiver_duration": {
-    "average_days": 19.21212121212121,
-    "median_days": 19,
-    "average_business_days": 13.393939393939394,
-    "median_business_days": 13,
-    "completed_count": 33
+    "average_days": 19.41176470588235,
+    "median_days": 19.0,
+    "average_business_days": 13.529411764705882,
+    "median_business_days": 13.0,
+    "completed_count": 34
   }
 }

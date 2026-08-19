@@ -15,7 +15,7 @@
       "code": "70",
       "name": "Computer System Design and Related Services",
       "level": "subdivision",
-      "merger_count": 59
+      "merger_count": 60
     }
   ],
   "mergers": [
@@ -193,6 +193,17 @@
       "has_conditions": false,
       "phase": "Phase 1",
       "notification_date": "2026-07-27T12:00:00Z",
+      "determination_date": "2026-08-19T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-35036",
+      "merger_name": "CrowdStrike \u2013 intellectual property and associated technology assets of XM Cyber",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-24T12:00:00Z",
       "determination_date": "2026-08-19T12:00:00Z"
     },
     {
@@ -1428,10 +1439,10 @@
       "determination_date": null
     }
   ],
-  "count": 128,
+  "count": 129,
   "phase_1_count": 51,
   "phase_2_count": 3,
-  "waiver_count": 74,
+  "waiver_count": 75,
   "active_count": 15,
   "phase_duration": {
     "average_days": 33.292682926829265,
@@ -1441,10 +1452,10 @@
     "completed_count": 41
   },
   "waiver_duration": {
-    "average_days": 18.89189189189189,
-    "median_days": 19.0,
-    "average_business_days": 12.756756756756756,
-    "median_business_days": 13.0,
-    "completed_count": 74
+    "average_days": 18.986666666666668,
+    "median_days": 19,
+    "average_business_days": 12.826666666666666,
+    "median_business_days": 13,
+    "completed_count": 75
   }
 }

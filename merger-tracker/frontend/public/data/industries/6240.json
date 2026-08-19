@@ -137,6 +137,17 @@
       "determination_date": null
     },
     {
+      "merger_id": "WA-05041",
+      "merger_name": "Pemba - Hewison Private Wealth",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-21T12:00:00Z",
+      "determination_date": "2026-08-19T12:00:00Z"
+    },
+    {
       "merger_id": "WA-35037",
       "merger_name": "CVC Capital Partners \u2013 IRCA Group",
       "is_waiver": true,
@@ -1006,10 +1017,10 @@
       "determination_date": "2026-01-30T12:00:00Z"
     }
   ],
-  "count": 89,
+  "count": 90,
   "phase_1_count": 20,
   "phase_2_count": 0,
-  "waiver_count": 69,
+  "waiver_count": 70,
   "active_count": 10,
   "phase_duration": {
     "average_days": 24.7,
@@ -1019,10 +1030,10 @@
     "completed_count": 10
   },
   "waiver_duration": {
-    "average_days": 19.159420289855074,
-    "median_days": 18,
-    "average_business_days": 12.91304347826087,
-    "median_business_days": 12,
-    "completed_count": 69
+    "average_days": 19.3,
+    "median_days": 18.0,
+    "average_business_days": 13.028571428571428,
+    "median_business_days": 12.0,
+    "completed_count": 70
   }
 }

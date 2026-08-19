@@ -48,10 +48,21 @@
       "code": "4279",
       "name": "Other Store-Based Retailing n.e.c.",
       "level": "class",
-      "merger_count": 3
+      "merger_count": 4
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-05046",
+      "merger_name": "Coles - supermarket site in Kirkwood (QLD)",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-19T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-65021",
       "merger_name": "Wesfarmers and Built Group - Built Living Joint Venture",
@@ -130,11 +141,11 @@
       "determination_date": "2026-02-04T12:00:00Z"
     }
   ],
-  "count": 7,
-  "phase_1_count": 4,
+  "count": 8,
+  "phase_1_count": 5,
   "phase_2_count": 0,
   "waiver_count": 3,
-  "active_count": 1,
+  "active_count": 2,
   "phase_duration": {
     "average_days": 26.666666666666668,
     "median_days": 27,

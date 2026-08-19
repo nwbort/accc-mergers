@@ -189,15 +189,15 @@
     "method_version": 1
   },
   "pre_notification": {
-    "estimated_days": 22,
-    "min_days": null,
-    "max_days": 56,
-    "id_issued_estimated": "2026-07-19",
-    "id_issued_before": null,
-    "id_issued_after": "2026-06-15",
-    "min_days_witness": null,
-    "max_days_witness": "WA-05040",
-    "basis": "upper-bound-only",
+    "estimated_days": 27,
+    "min_days": 0,
+    "max_days": 54,
+    "id_issued_estimated": "2026-07-14",
+    "id_issued_before": "2026-08-10",
+    "id_issued_after": "2026-06-17",
+    "min_days_witness": "MN-05046",
+    "max_days_witness": "WA-05041",
+    "basis": "bracketed",
     "method_version": 1
   }
 }

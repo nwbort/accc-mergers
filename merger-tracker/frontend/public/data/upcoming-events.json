@@ -3,16 +3,6 @@
     {
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
-      "date": "2026-08-19T12:00:00Z",
-      "merger_id": "MN-80027",
-      "merger_name": "Supagas \u2013 Heeson Medical",
-      "status": "Under assessment",
-      "stage": "Phase 1 - initial assessment",
-      "effective_notification_datetime": "2026-08-11T12:00:00Z"
-    },
-    {
-      "type": "consultation_due",
-      "event_type_display": "Consultation responses due",
       "date": "2026-08-20T12:00:00Z",
       "merger_id": "MN-50035",
       "merger_name": "Opal HealthCare - Canberra Nursing Home (Lidcombe, NSW)",
@@ -83,16 +73,6 @@
     {
       "type": "determination_due",
       "event_type_display": "Determination due",
-      "date": "2026-08-24T12:00:00Z",
-      "merger_id": "MN-90028",
-      "merger_name": "Peter Warren - Wakeling Automotive",
-      "status": "Under assessment",
-      "stage": "Phase 1 - initial assessment",
-      "effective_notification_datetime": "2026-07-13T12:00:00Z"
-    },
-    {
-      "type": "determination_due",
-      "event_type_display": "Determination due",
       "date": "2026-08-25T12:00:00Z",
       "merger_id": "MN-30022",
       "merger_name": "VSA - SprayLine",
@@ -114,8 +94,38 @@
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
       "date": "2026-08-26T12:00:00Z",
+      "merger_id": "MN-05046",
+      "merger_name": "Coles - supermarket site in Kirkwood (QLD)",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-08-19T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-08-26T12:00:00Z",
       "merger_id": "MN-20034",
       "merger_name": "Chevron - Woodside asset swap",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-08-18T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-08-26T12:00:00Z",
+      "merger_id": "MN-60035",
+      "merger_name": "L'Or\u00e9al \u2013 Gucci Beauty Licence",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-08-19T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-08-26T12:00:00Z",
+      "merger_id": "MN-90029",
+      "merger_name": "Bunnings \u2013 Intellihub \u2013 Zelora Joint Venture",
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-08-18T12:00:00Z"
@@ -179,6 +189,16 @@
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-07-24T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-09-04T12:00:00Z",
+      "merger_id": "MN-90028",
+      "merger_name": "Peter Warren - Wakeling Automotive",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-07-13T12:00:00Z"
     },
     {
       "type": "determination_due",
@@ -591,6 +611,36 @@
       "effective_notification_datetime": "2026-08-18T12:00:00Z"
     },
     {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-09-29T12:00:00Z",
+      "merger_id": "MN-90029",
+      "merger_name": "Bunnings \u2013 Intellihub \u2013 Zelora Joint Venture",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-08-18T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-09-30T12:00:00Z",
+      "merger_id": "MN-05046",
+      "merger_name": "Coles - supermarket site in Kirkwood (QLD)",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-08-19T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-09-30T12:00:00Z",
+      "merger_id": "MN-60035",
+      "merger_name": "L'Or\u00e9al \u2013 Gucci Beauty Licence",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-08-19T12:00:00Z"
+    },
+    {
       "type": "tribunal_hearing",
       "event_type_display": "Tribunal hearing",
       "date": "2026-11-09T12:00:00Z",
@@ -602,6 +652,6 @@
       "tribunal_number": "ACT 1 of 2026"
     }
   ],
-  "count": 60,
+  "count": 65,
   "days_ahead": 60
 }
