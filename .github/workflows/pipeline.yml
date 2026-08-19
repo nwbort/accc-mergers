@@ -65,7 +65,7 @@ jobs:
 
       - name: Cache pup binary
         id: cache-pup
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: ~/go/bin/pup
           key: ${{ runner.os }}-pup-v0.4.0
@@ -224,7 +224,7 @@ jobs:
       # to the most recent one, so it still picks up upstream version bumps.
       - name: Cache LibreOffice apt packages
         if: steps.find-docx.outputs.has_unconverted == 'true'
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: /var/cache/apt/archives/*.deb
           key: ${{ runner.os }}-apt-libreoffice-writer-${{ github.run_id }}
