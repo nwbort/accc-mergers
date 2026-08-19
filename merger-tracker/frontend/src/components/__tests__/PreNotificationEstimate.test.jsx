@@ -20,21 +20,15 @@ const merger = (overrides = {}) => ({
 });
 
 describe('PreNotificationEstimate', () => {
-  it('states the estimated date pre-notification began', () => {
-    render(<PreNotificationEstimate merger={merger()} />);
-
-    expect(screen.getByText(/entered pre-notification around 7 May 2026/)).toBeInTheDocument();
-  });
-
-  it('shows both bounds for a bracketed estimate', () => {
+  it('dates the start of pre-notification for a bracketed estimate', () => {
     render(<PreNotificationEstimate merger={merger()} />);
 
     expect(
-      screen.getByText(/Between 12 and 34 days before it was notified on 27 May 2026/)
+      screen.getByText(/Our market intelligence suggests that this merger entered pre-notification around 7 May 2026/)
     ).toBeInTheDocument();
   });
 
-  it('states a floor when only a lower bound is proven', () => {
+  it('dates the start of pre-notification when only a lower bound is proven', () => {
     render(<PreNotificationEstimate merger={merger({
       pre_notification: {
         estimated_days: 7,
@@ -45,10 +39,10 @@ describe('PreNotificationEstimate', () => {
       },
     })} />);
 
-    expect(screen.getByText(/At least 7 days before/)).toBeInTheDocument();
+    expect(screen.getByText(/entered pre-notification around 20 May 2026/)).toBeInTheDocument();
   });
 
-  it('states a ceiling when only an upper bound is known', () => {
+  it('gives the date as a floor when only an upper bound is known', () => {
     render(<PreNotificationEstimate merger={merger({
       pre_notification: {
         estimated_days: 40,
@@ -59,35 +53,14 @@ describe('PreNotificationEstimate', () => {
       },
     })} />);
 
-    expect(screen.getByText(/No more than 40 days before/)).toBeInTheDocument();
+    expect(
+      screen.getByText(/entered pre-notification sometime after 17 April 2026/)
+    ).toBeInTheDocument();
+    expect(screen.queryByText(/around/)).not.toBeInTheDocument();
   });
 
-  it('states the ceiling alone when the bracket rests on a nought-day floor', () => {
+  it('reports little or no pre-notification for a nought-day estimate', () => {
     render(<PreNotificationEstimate merger={merger({
-      pre_notification: {
-        estimated_days: 11,
-        min_days: 0,
-        max_days: 56,
-        id_issued_estimated: '2026-05-16',
-        basis: 'bracketed',
-      },
-    })} />);
-
-    expect(screen.getByText(/No more than 56 days before/)).toBeInTheDocument();
-    expect(screen.queryByText(/Between 0 and/)).not.toBeInTheDocument();
-  });
-
-  it('renders nothing for a merger notified in the voluntary period', () => {
-    const { container } = render(<PreNotificationEstimate merger={merger({
-      original_notification_datetime: '2025-11-03T12:00:00Z',
-      effective_notification_datetime: '2025-11-03T12:00:00Z',
-    })} />);
-
-    expect(container).toBeEmptyDOMElement();
-  });
-
-  it('renders nothing when the estimate collapses to the filing date', () => {
-    const { container } = render(<PreNotificationEstimate merger={merger({
       pre_notification: {
         estimated_days: 0,
         min_days: 0,
@@ -95,6 +68,17 @@ describe('PreNotificationEstimate', () => {
         id_issued_estimated: '2026-05-27',
         basis: 'lower-bound-only',
       },
+    })} />);
+
+    expect(
+      screen.getByText(/this merger had little or no pre-notification period/)
+    ).toBeInTheDocument();
+  });
+
+  it('renders nothing for a merger notified in the voluntary period', () => {
+    const { container } = render(<PreNotificationEstimate merger={merger({
+      original_notification_datetime: '2025-11-03T12:00:00Z',
+      effective_notification_datetime: '2025-11-03T12:00:00Z',
     })} />);
 
     expect(container).toBeEmptyDOMElement();
