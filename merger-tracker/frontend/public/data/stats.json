@@ -3,12 +3,12 @@
   "total_waivers": 335,
   "total_conditional_approvals": 3,
   "by_status": {
-    "Assessment completed": 173,
-    "Under assessment": 51,
+    "Assessment completed": 174,
+    "Under assessment": 50,
     "Assessment ceased": 3
   },
   "by_determination": {
-    "Approved": 168,
+    "Approved": 169,
     "Referred to phase 2": 9,
     "Approved with conditions": 2
   },
@@ -22,27 +22,27 @@
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 171,
+    "cleared": 172,
     "not_cleared": 2,
-    "total": 173,
-    "rate": 0.988
+    "total": 174,
+    "rate": 0.989
   },
   "phase_duration": {
-    "average_days": 29.899441340782122,
-    "median_days": 26,
-    "average_business_days": 19.94413407821229,
-    "median_business_days": 17,
+    "average_days": 29.872222222222224,
+    "median_days": 26.0,
+    "average_business_days": 19.927777777777777,
+    "median_business_days": 17.0,
     "percentiles": {
       "day15": {
         "count": 40,
-        "percentage": 22.3
+        "percentage": 22.2
       },
       "day20": {
-        "count": 135,
-        "percentage": 75.4
+        "count": 136,
+        "percentage": 75.6
       },
       "day30": {
-        "count": 168,
+        "count": 169,
         "percentage": 93.9
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-55029",
+      "merger_name": "Estia Health \u2013 AnglicareSA residential aged care business",
+      "determination": "Approved",
+      "determination_date": "2026-08-18T12:00:00Z",
+      "page_modified_datetime": "2026-08-19T14:51:28+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-05031",
       "merger_name": "Obayashi Corporation \u2013 Multiplex",
       "determination": "Approved",
@@ -333,17 +344,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-18T12:00:00Z",
       "page_modified_datetime": "2026-08-18T12:10:19+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-25037",
-      "merger_name": "Sanad Services and Tikehau Capital \u2013 Revima",
-      "determination": "Approved",
-      "determination_date": "2026-08-17T12:00:00Z",
-      "page_modified_datetime": "2026-08-17T19:24:25+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",

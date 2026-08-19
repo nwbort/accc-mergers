@@ -65,17 +65,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-55029",
-      "merger_name": "Estia Health \u2013 AnglicareSA residential aged care business",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-07-24T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-20017",
       "merger_name": "Amplifon \u2013 GN Hearing",
       "is_waiver": false,
@@ -96,6 +85,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-06-16T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-55029",
+      "merger_name": "Estia Health \u2013 AnglicareSA residential aged care business",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-24T12:00:00Z",
+      "determination_date": "2026-08-18T12:00:00Z"
     },
     {
       "merger_id": "MN-15027",
@@ -509,13 +509,13 @@
   "phase_1_count": 19,
   "phase_2_count": 0,
   "waiver_count": 24,
-  "active_count": 6,
+  "active_count": 5,
   "phase_duration": {
-    "average_days": 26.153846153846153,
-    "median_days": 25,
-    "average_business_days": 17.23076923076923,
-    "median_business_days": 15,
-    "completed_count": 13
+    "average_days": 26.071428571428573,
+    "median_days": 25.0,
+    "average_business_days": 17.214285714285715,
+    "median_business_days": 15.5,
+    "completed_count": 14
   },
   "waiver_duration": {
     "average_days": 17.958333333333332,
