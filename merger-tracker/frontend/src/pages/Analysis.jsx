@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { Scatter, Bar } from 'react-chartjs-2';
+import { Scatter, Bar, Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -8,6 +8,7 @@ import {
   PointElement,
   LineElement,
   BarElement,
+  Filler,
   Title,
   Tooltip,
   Legend,
@@ -17,6 +18,7 @@ import ErrorMessage from '../components/ErrorMessage';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
+import { formatDateMedium } from '../utils/dates';
 import { industryPath } from '../utils/slug';
 import { CHART_PALETTE as COLORS } from '../constants/chartColors';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
@@ -32,6 +34,7 @@ ChartJS.register(
   PointElement,
   LineElement,
   BarElement,
+  Filler,
   Title,
   Tooltip,
   Legend
@@ -332,6 +335,100 @@ function Analysis() {
     },
   };
 
+  // --- Open caseload (stock, not flow) ---
+  // Guarded on presence: analysis.json is fetched from the deployed site, so a
+  // build can be serving a payload generated before this series existed.
+  const caseload = data.open_caseload;
+  const hasCaseload = Boolean(caseload?.labels?.length);
+
+  let caseloadData = null;
+  let caseloadOptions = null;
+  let caseloadLatest = null;
+  let caseloadDelta = null;
+  let caseloadDeltaFrom = null;
+  let caseloadAsAtLabel = null;
+  let caseloadPartialLast = false;
+
+  if (hasCaseload) {
+    const lastIndex = caseload.labels.length - 1;
+    // The last point is measured at as_at rather than a month end, so it gets
+    // a hollow marker: it's a reading mid-month, not a completed month.
+    caseloadPartialLast = caseload.as_at?.slice(0, 7) === caseload.labels[lastIndex];
+    caseloadLatest = caseload.notifications[lastIndex];
+    caseloadAsAtLabel = caseload.as_at ? formatDateMedium(caseload.as_at) : null;
+
+    // Year-on-year movement rather than a peak: the caseload has only ever
+    // grown, so a peak stat would just restate the latest figure. Falls back
+    // to the start of the series while less than a year of it exists.
+    const compareIndex = Math.max(0, lastIndex - 12);
+    if (compareIndex !== lastIndex) {
+      caseloadDelta = caseloadLatest - caseload.notifications[compareIndex];
+      caseloadDeltaFrom = formatMonthLabel(caseload.labels[compareIndex]);
+    }
+
+    caseloadData = {
+      labels: caseload.labels.map(formatMonthLabel),
+      datasets: [
+        {
+          label: 'Open notifications',
+          data: caseload.notifications,
+          borderColor: COLORS.primary,
+          backgroundColor: COLORS.primaryLight,
+          fill: true,
+          tension: 0.3,
+          borderWidth: 2,
+          pointRadius: caseload.notifications.map((_, i) =>
+            i === lastIndex && caseloadPartialLast ? 5 : 3),
+          pointBackgroundColor: caseload.notifications.map((_, i) =>
+            i === lastIndex && caseloadPartialLast ? '#ffffff' : COLORS.primary),
+          pointBorderColor: COLORS.primary,
+          pointBorderWidth: 2,
+          pointHoverRadius: 6,
+        },
+      ],
+    };
+
+    caseloadOptions = {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            title: (items) => {
+              const i = items[0].dataIndex;
+              return i === lastIndex && caseloadPartialLast
+                ? `As at ${caseloadAsAtLabel}`
+                : `End of ${items[0].label}`;
+            },
+            label: (item) => {
+              const count = item.parsed.y;
+              return `${count} notification${count === 1 ? '' : 's'} still open`;
+            },
+          },
+        },
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          ticks: { font: { size: 11 } },
+        },
+        y: {
+          beginAtZero: true,
+          ticks: { precision: 0, font: { size: 11 } },
+          grid: { color: 'rgba(0,0,0,0.04)' },
+          title: {
+            display: true,
+            text: 'Open notifications',
+            font: { size: 12, family: 'Inter, sans-serif' },
+            color: '#6b7280',
+          },
+        },
+      },
+    };
+  }
+
   // --- Industry Phase 1 Duration Comparison ---
   const industryDurationField = calendarDays ? 'average_calendar_days' : 'average_business_days';
   const industryDurations = industry_phase1_duration || [];
@@ -523,6 +620,56 @@ function Analysis() {
             </div>
           </div>
         </div>
+
+        {/* Open caseload */}
+        {hasCaseload && (
+          <section className="mb-8">
+            <div className={`${CARD} overflow-hidden`}>
+              <div className="px-6 py-5 border-b border-gray-100">
+                <h2 className="text-base font-semibold text-gray-900">Open caseload</h2>
+                <p className="text-sm text-gray-500 mt-0.5">
+                  Notifications still before the ACCC at each month end &mdash; filed, but not yet
+                  determined. The volume chart above counts matters arriving; this counts the ones
+                  that have not yet left.
+                </p>
+              </div>
+              <div className="p-6">
+                <div className="flex flex-wrap gap-x-10 gap-y-3 mb-5">
+                  <div>
+                    <p className={SECTION_HEADING}>Open now</p>
+                    <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
+                      {caseloadLatest}
+                    </p>
+                    {caseloadAsAtLabel && (
+                      <p className="text-sm text-gray-500 mt-0.5">as at {caseloadAsAtLabel}</p>
+                    )}
+                  </div>
+                  {caseloadDelta !== null && (
+                    <div>
+                      <p className={SECTION_HEADING}>Change</p>
+                      <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
+                        {caseloadDelta > 0 ? '+' : ''}{caseloadDelta}
+                      </p>
+                      <p className="text-sm text-gray-500 mt-0.5">since {caseloadDeltaFrom}</p>
+                    </div>
+                  )}
+                </div>
+                <div className="h-72">
+                  <Line data={caseloadData} options={caseloadOptions} />
+                </div>
+                <p className="text-xs text-gray-500 mt-3">
+                  Notifications only. The register publishes a waiver application once it has been
+                  decided, so pending waivers can&apos;t be counted and are left out rather than
+                  shown as an empty queue. A matter referred to phase 2 stays in the caseload until
+                  its final determination.
+                  {caseloadPartialLast && caseloadAsAtLabel
+                    ? ` The final point is a reading as at ${caseloadAsAtLabel}, not a completed month.`
+                    : ''}
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Industry Phase 1 Duration Comparison */}
         {industryDurations.length > 0 && (

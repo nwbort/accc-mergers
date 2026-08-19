@@ -149,6 +149,36 @@ function MergerTimeline({ merger }) {
     }
   }
 
+  // Expected-determination tick: the at-filing estimate of how long this
+  // matter's phase 1 will run (frozen per merger by the pipeline), converted
+  // back to a date and drawn on the stretch of track still ahead of today.
+  // It's a forecast, so it only earns its place while it can still come true —
+  // once the expected date passes, or phase 1 concludes, the tick disappears
+  // rather than sitting in the past contradicting the real outcome.
+  const estimate = merger.phase_1_estimate;
+  let expectedPct = null;
+  let expectedTitle = null;
+  if (
+    estimate?.expected_business_days != null
+    && !isComplete
+    && !merger.phase_1_determination_date
+  ) {
+    const expected = addBusinessDays(start, estimate.expected_business_days);
+    if (expected && isValid(expected) && expected >= australianToday() && expected < end) {
+      expectedPct = axisPct(expected, start, end);
+
+      const [low, high] = estimate.range_business_days || [];
+      const band = low != null && high != null && low !== high
+        ? `${low}-${high} business days`
+        : `${estimate.expected_business_days} business days`;
+      const sample = estimate.sample_size;
+      const basis = estimate.basis === 'industry'
+        ? `median of ${sample} comparable review${sample === 1 ? '' : 's'} in this industry`
+        : `median of all ${sample} completed phase 1 reviews`;
+      expectedTitle = `Expected determination \u00b7 ${formatDateMedium(toDateString(expected))} \u00b7 ${band} (${basis})`;
+    }
+  }
+
   // Progress + "today" marker, only while the assessment is still running.
   // Overdue is judged on calendar days (ACCC's Australian "today") rather than
   // the raw current instant, so the deadline's own day reads as "due today"
@@ -257,6 +287,18 @@ function MergerTimeline({ merger }) {
               style={{ left: `${phase1Pct}%`, transform: 'translate(-50%, -50%)' }}
               title={`Referred to Phase 2 · ${formatDateMedium(merger.phase_1_determination_date)}`}
               aria-label={`Referred to Phase 2 on ${formatDateMedium(merger.phase_1_determination_date)}`}
+            />
+          )}
+
+          {/* Expected determination tick — a forecast, so it's drawn as a
+              slim mark rather than a dot, keeping actual events (which are
+              dots) visually distinct from a prediction. */}
+          {expectedPct !== null && (
+            <span
+              className="absolute top-1/2 h-4 w-[3px] rounded-full bg-accent cursor-help"
+              style={{ left: `${expectedPct}%`, transform: 'translate(-50%, -50%)' }}
+              title={expectedTitle}
+              aria-label={expectedTitle}
             />
           )}
 

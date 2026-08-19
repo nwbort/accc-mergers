@@ -8,6 +8,7 @@ import json
 import os
 import sys
 import unittest.mock
+from datetime import date
 
 # Add scripts directory to path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
@@ -833,7 +834,7 @@ class TestAnalysisGenerate:
             'phase1_duration', 'waiver_duration', 'monthly_volume', 'industry_phase1_duration',
             'by_commission_division',
             'deadline_utilisation', 'notification_restarts', 'restart_rate',
-            'outcomes_by_division', 'referrals_by_quarter',
+            'outcomes_by_division', 'referrals_by_quarter', 'open_caseload',
         }
         assert 'durations' in payload['phase1_duration']
         assert 'durations' in payload['waiver_duration']
@@ -864,6 +865,102 @@ class TestAnalysisGenerate:
         mining = divisions[0]
         assert mining['name'] == 'Mining'
         assert mining['count'] == 1
+
+
+class TestOpenCaseload:
+    """Stock of live matters at each month end, as opposed to monthly inflow."""
+
+    def _notification(self, merger_id, opened, closed=None, ceased=None):
+        return enrich_merger({
+            'merger_id': merger_id,
+            'merger_name': merger_id,
+            'status': 'Assessment completed' if (closed or ceased) else 'Under assessment',
+            'accc_determination': 'Approved' if closed else None,
+            'stage': 'Phase 1 - preliminary assessment',
+            'original_notification_datetime': opened,
+            'effective_notification_datetime': opened,
+            'determination_publication_date': closed,
+            'ceased_date': ceased,
+            'page_modified_datetime': opened,
+            'anzsic_codes': [],
+            'acquirers': ['A'],
+            'targets': ['B'],
+            'other_parties': [],
+            'url': f'https://example.com/{merger_id}',
+            'events': [],
+        })
+
+    def test_counts_matters_open_at_each_month_end(self):
+        mergers = [
+            # Open across Jan and Feb, determined 5 Mar.
+            self._notification('MN-1', '2026-01-10T12:00:00Z', closed='2026-03-05T12:00:00Z'),
+            # Filed and determined inside February — never open at a month end.
+            self._notification('MN-2', '2026-02-03T12:00:00Z', closed='2026-02-20T12:00:00Z'),
+            # Filed in February, still running.
+            self._notification('MN-3', '2026-02-25T12:00:00Z'),
+        ]
+        payload = analysis.open_caseload(mergers, as_at=date(2026, 3, 31))
+
+        assert payload['labels'] == ['2026-01', '2026-02', '2026-03']
+        assert payload['notifications'] == [1, 2, 1]
+        assert payload['as_at'] == '2026-03-31'
+
+    def test_matter_determined_on_the_month_end_is_already_closed(self):
+        mergers = [self._notification('MN-1', '2026-01-10T12:00:00Z', closed='2026-01-31T12:00:00Z')]
+        payload = analysis.open_caseload(mergers, as_at=date(2026, 1, 31))
+
+        assert payload['notifications'] == [0]
+
+    def test_ceased_matter_leaves_the_caseload(self):
+        mergers = [self._notification('MN-1', '2026-01-10T12:00:00Z', ceased='2026-02-10T12:00:00Z')]
+        payload = analysis.open_caseload(mergers, as_at=date(2026, 2, 28))
+
+        assert payload['notifications'] == [1, 0]
+
+    def test_final_point_is_cut_off_at_as_at_not_the_month_end(self):
+        # Determined on 20 Feb: still open as at 10 Feb, so the part-month point
+        # must count it rather than jumping ahead to the 28th.
+        mergers = [self._notification('MN-1', '2026-01-10T12:00:00Z', closed='2026-02-20T12:00:00Z')]
+        payload = analysis.open_caseload(mergers, as_at=date(2026, 2, 10))
+
+        assert payload['labels'] == ['2026-01', '2026-02']
+        assert payload['notifications'] == [1, 1]
+
+    def test_excludes_waivers(self):
+        # Every waiver on the register is already determined when published, so
+        # a waiver stock line would be an artefact of publication, not caseload.
+        payload = analysis.open_caseload(_enriched_fixture())
+        by_month = dict(zip(payload['labels'], payload['notifications']))
+        assert 'waivers' not in payload
+        assert all(count >= 0 for count in by_month.values())
+
+    def test_suspended_matter_falls_back_to_its_original_filing_date(self):
+        # A suspended matter has no effective notification date, but it is still
+        # on the ACCC's books from when it was first filed.
+        suspended = enrich_merger({
+            'merger_id': 'MN-9',
+            'merger_name': 'Suspended',
+            'status': 'Assessment suspended',
+            'accc_determination': None,
+            'stage': 'Phase 1 - preliminary assessment',
+            'original_notification_datetime': '2026-01-10T12:00:00Z',
+            'effective_notification_datetime': None,
+            'determination_publication_date': None,
+            'page_modified_datetime': '2026-01-10T12:00:00Z',
+            'anzsic_codes': [],
+            'acquirers': ['A'],
+            'targets': ['B'],
+            'other_parties': [],
+            'url': 'https://example.com/MN-9',
+            'events': [],
+        })
+        payload = analysis.open_caseload([suspended], as_at=date(2026, 2, 28))
+
+        assert payload['notifications'] == [1, 1]
+
+    def test_empty_input(self):
+        payload = analysis.open_caseload([], as_at=date(2026, 2, 28))
+        assert payload == {'labels': [], 'notifications': [], 'as_at': '2026-02-28'}
 
 
 class TestNotificationRestarts:

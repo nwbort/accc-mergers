@@ -185,4 +185,106 @@ describe('MergerTimeline', () => {
     expect(screen.getByText(/None . assessment suspended/i)).toBeInTheDocument();
     expect(screen.getByText(/originally 01 Apr 2026/i)).toBeInTheDocument();
   });
+
+  describe('expected determination tick', () => {
+    // Notified 18 May 2026, 30-BD statutory deadline 1 Jul 2026, "today" is
+    // 1 Jun 2026. 15 business days from 18 May lands on 10 Jun 2026 (1 and 8
+    // June are ACT public holidays) — still ahead of today, so the forecast
+    // is live.
+    const running = {
+      effective_notification_datetime: '2026-05-18T12:00:00Z',
+      end_of_determination_period: '2026-07-01T12:00:00Z',
+      status: 'Under assessment',
+    };
+
+    it('marks the expected determination date while it is still ahead', () => {
+      render(
+        <MergerTimeline
+          merger={{
+            ...running,
+            phase_1_estimate: {
+              expected_business_days: 15,
+              range_business_days: [15, 17],
+              basis: 'industry',
+              sample_size: 9,
+            },
+          }}
+        />
+      );
+
+      const tick = screen.getByLabelText(/Expected determination/);
+      expect(tick).toHaveAttribute('title', expect.stringContaining('10 Jun 2026'));
+      expect(tick.getAttribute('title')).toContain('15-17 business days');
+      expect(tick.getAttribute('title')).toContain('9 comparable reviews');
+    });
+
+    it('describes a global-basis estimate by the whole-of-market pool', () => {
+      render(
+        <MergerTimeline
+          merger={{
+            ...running,
+            phase_1_estimate: {
+              expected_business_days: 15,
+              range_business_days: [15, 15],
+              basis: 'global',
+              sample_size: 178,
+            },
+          }}
+        />
+      );
+
+      const tick = screen.getByLabelText(/Expected determination/);
+      expect(tick.getAttribute('title')).toContain('median of all 178 completed phase 1 reviews');
+      expect(tick.getAttribute('title')).toContain('15 business days');
+    });
+
+    it('drops the tick once the expected date has passed', () => {
+      render(
+        <MergerTimeline
+          merger={{
+            ...running,
+            // 5 BDs from 18 May is 25 May — already behind "today" (1 Jun).
+            phase_1_estimate: { expected_business_days: 5, basis: 'global', sample_size: 178 },
+          }}
+        />
+      );
+
+      expect(screen.queryByLabelText(/Expected determination/)).not.toBeInTheDocument();
+    });
+
+    it('drops the tick once phase 1 has actually concluded', () => {
+      render(
+        <MergerTimeline
+          merger={{
+            ...running,
+            phase_1_determination: 'Approved',
+            phase_1_determination_date: '2026-05-29T12:00:00Z',
+            determination_publication_date: '2026-05-29T12:00:00Z',
+            phase_1_estimate: { expected_business_days: 15, basis: 'global', sample_size: 178 },
+          }}
+        />
+      );
+
+      expect(screen.queryByLabelText(/Expected determination/)).not.toBeInTheDocument();
+    });
+
+    it('drops the tick when the estimate runs past the statutory deadline', () => {
+      render(
+        <MergerTimeline
+          merger={{
+            ...running,
+            phase_1_estimate: { expected_business_days: 40, basis: 'global', sample_size: 178 },
+          }}
+        />
+      );
+
+      expect(screen.queryByLabelText(/Expected determination/)).not.toBeInTheDocument();
+    });
+
+    it('renders nothing extra when the merger carries no estimate', () => {
+      render(<MergerTimeline merger={running} />);
+
+      expect(screen.queryByLabelText(/Expected determination/)).not.toBeInTheDocument();
+    });
+  });
 });

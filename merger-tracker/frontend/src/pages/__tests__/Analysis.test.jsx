@@ -167,3 +167,91 @@ describe('Analysis waiver duration ECDF', () => {
     expect(screen.queryByText('Waiver duration: share of applications concluded')).not.toBeInTheDocument();
   });
 });
+
+describe('Analysis open caseload', () => {
+  const caseloadFixture = {
+    ...analysisFixture,
+    open_caseload: {
+      labels: ['2026-06', '2026-07', '2026-08'],
+      notifications: [41, 56, 52],
+      as_at: '2026-08-19',
+    },
+  };
+
+  beforeEach(() => {
+    dataCache.clear();
+    vi.spyOn(console, 'error').mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+    dataCache.clear();
+  });
+
+  function mockAnalysis(payload) {
+    vi.spyOn(globalThis, 'fetch').mockImplementation((url) => {
+      if (url.includes('analysis.json')) return Promise.resolve(ok(payload));
+      return Promise.reject(new Error(`Unexpected fetch: ${url}`));
+    });
+  }
+
+  it('shows the latest open caseload and its movement', async () => {
+    mockAnalysis(caseloadFixture);
+    renderAnalysis();
+
+    await waitFor(() => {
+      expect(screen.getByText('Open caseload')).toBeInTheDocument();
+    });
+
+    const openNow = screen.getByText('Open now').parentElement;
+    expect(within(openNow).getByText('52')).toBeInTheDocument();
+    expect(within(openNow).getByText('as at 19 Aug 2026')).toBeInTheDocument();
+
+    const change = screen.getByText('Change').parentElement;
+    expect(within(change).getByText('+11')).toBeInTheDocument();
+    expect(within(change).getByText('since Jun 2026')).toBeInTheDocument();
+  });
+
+  it('flags that the final point is a mid-month reading', async () => {
+    mockAnalysis(caseloadFixture);
+    renderAnalysis();
+
+    await waitFor(() => {
+      expect(screen.getByText('Open caseload')).toBeInTheDocument();
+    });
+
+    expect(
+      screen.getByText(/final point is a reading as at 19 Aug 2026, not a completed month/)
+    ).toBeInTheDocument();
+  });
+
+  it('omits the mid-month caveat when the series ends on a completed month', async () => {
+    mockAnalysis({
+      ...analysisFixture,
+      open_caseload: {
+        labels: ['2026-06', '2026-07'],
+        notifications: [41, 46],
+        as_at: '2026-08-19',
+      },
+    });
+    renderAnalysis();
+
+    await waitFor(() => {
+      expect(screen.getByText('Open caseload')).toBeInTheDocument();
+    });
+
+    expect(screen.queryByText(/not a completed month/)).not.toBeInTheDocument();
+  });
+
+  it('renders the rest of the page when the payload predates the caseload series', async () => {
+    // A deployed analysis.json generated before open_caseload existed.
+    mockAnalysis(analysisFixture);
+    renderAnalysis();
+
+    await waitFor(() => {
+      expect(screen.getByText('Monthly notification volume')).toBeInTheDocument();
+    });
+
+    expect(screen.queryByText('Open caseload')).not.toBeInTheDocument();
+  });
+});
