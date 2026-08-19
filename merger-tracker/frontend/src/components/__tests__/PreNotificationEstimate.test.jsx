@@ -94,12 +94,19 @@ describe('PreNotificationEstimate', () => {
   it('offers a quiet link to the feedback page, naming the matter', () => {
     renderCallout(merger());
 
-    const link = screen.getByRole('link', { name: /Not quite right/ });
-    expect(link).toHaveAttribute(
-      'href',
-      '/feedback?message=MN-01050%20pre-notification%20estimate%20looks%20wrong.%20It%20should%20be%20'
-    );
-    expect(link).toHaveAttribute('title', 'Not quite right? Let us know what it should be');
+    // Two copies, one per breakpoint — inline after the sentence on a narrow
+    // screen, out at the right edge on a wide one. Only one is ever displayed.
+    const links = screen.getAllByRole('link', { name: /Not quite right/ });
+    expect(links).toHaveLength(2);
+    for (const link of links) {
+      expect(link).toHaveAttribute(
+        'href',
+        '/feedback?message=MN-01050%20pre-notification%20estimate%20looks%20wrong.%20It%20should%20be%20'
+      );
+      expect(link).toHaveAttribute('title', 'Not quite right? Let us know what it should be');
+    }
+    expect(links.filter(l => l.className.includes('sm:hidden'))).toHaveLength(1);
+    expect(links.filter(l => l.className.includes('hidden sm:inline-flex'))).toHaveLength(1);
   });
 
   it('renders nothing when the merger has no estimate', () => {
