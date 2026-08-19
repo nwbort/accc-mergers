@@ -1090,6 +1090,78 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/saint-gobain-xypex"
+    },
+    {
+      "merger_id": "MN-20034",
+      "merger_name": "Chevron - Woodside asset swap",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-18T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-29T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "CHEVRON AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "29 086 197 757",
+          "party_page": {
+            "id": "chevron-australia-pty-ltd",
+            "name": "Chevron Australia Pty Ltd"
+          }
+        },
+        {
+          "name": "WOODSIDE ENERGY (NORTH WEST SHELF) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "41 004 514 489",
+          "party_page": {
+            "id": "woodside-energy-north-west-shelf-pty-ltd",
+            "name": "Woodside Energy (North West Shelf) Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "CHEVRON AUSTRALIA NEW ENERGIES (G-10-AP) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "98 662 728 010",
+          "party_page": {
+            "id": "chevron-australia-new-energies-g-10-ap-pty-ltd",
+            "name": "Chevron Australia New Energies (G-10-Ap) Pty Ltd"
+          }
+        },
+        {
+          "name": "WOODSIDE ENERGY JULIMAR PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "56 130 391 365",
+          "party_page": {
+            "id": "woodside-energy-julimar-pty-ltd",
+            "name": "Woodside Energy Julimar Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "WOODSIDE ENERGY LTD.",
+          "identifier_type": "ABN",
+          "identifier": "63 005 482 986",
+          "party_page": {
+            "id": "woodside-energy-ltd",
+            "name": "Woodside Energy Ltd."
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0700",
+          "name": "Oil and Gas Extraction"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/chevron-woodside-asset-swap"
     }
   ],
   "page": 12,

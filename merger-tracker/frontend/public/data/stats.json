@@ -1,10 +1,10 @@
 {
-  "total_mergers": 227,
+  "total_mergers": 228,
   "total_waivers": 335,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 175,
-    "Under assessment": 49,
+    "Under assessment": 50,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-20034",
+      "merger_name": "Chevron - Woodside asset swap",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-18T12:00:00Z",
+      "page_modified_datetime": "2026-08-19T16:21:43+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-80035",
       "merger_name": "Saint-Gobain - Xypex",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-10T12:00:00Z",
       "page_modified_datetime": "2026-08-10T18:02:35+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-35034",
-      "merger_name": "The Independents Group \u2013 acquisition of entities within the Smuggler Group",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-07T12:00:00Z",
-      "page_modified_datetime": "2026-08-17T11:16:39+10:00",
       "is_waiver": false,
       "is_refiled": false
     }
