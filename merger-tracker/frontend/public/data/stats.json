@@ -3,12 +3,12 @@
   "total_waivers": 335,
   "total_conditional_approvals": 3,
   "by_status": {
-    "Assessment completed": 174,
-    "Under assessment": 50,
+    "Assessment completed": 175,
+    "Under assessment": 49,
     "Assessment ceased": 3
   },
   "by_determination": {
-    "Approved": 169,
+    "Approved": 170,
     "Referred to phase 2": 9,
     "Approved with conditions": 2
   },
@@ -22,27 +22,27 @@
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 172,
+    "cleared": 173,
     "not_cleared": 2,
-    "total": 174,
+    "total": 175,
     "rate": 0.989
   },
   "phase_duration": {
-    "average_days": 29.872222222222224,
-    "median_days": 26.0,
-    "average_business_days": 19.927777777777777,
-    "median_business_days": 17.0,
+    "average_days": 29.834254143646408,
+    "median_days": 26,
+    "average_business_days": 19.91160220994475,
+    "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 40,
-        "percentage": 22.2
+        "percentage": 22.1
       },
       "day20": {
-        "count": 136,
-        "percentage": 75.6
+        "count": 137,
+        "percentage": 75.7
       },
       "day30": {
-        "count": 169,
+        "count": 170,
         "percentage": 93.9
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-90027",
+      "merger_name": "AbbVie - Apogee",
+      "determination": "Approved",
+      "determination_date": "2026-08-19T12:00:00Z",
+      "page_modified_datetime": "2026-08-19T15:52:32+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-55029",
       "merger_name": "Estia Health \u2013 AnglicareSA residential aged care business",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "phase_transition",
       "is_waiver": false,
       "stage": "Phase 2 - detailed assessment"
-    },
-    {
-      "merger_id": "MN-35029",
-      "merger_name": "L'Or\u00e9al - Innovist",
-      "determination": "Approved",
-      "determination_date": "2026-08-18T12:00:00Z",
-      "page_modified_datetime": "2026-08-18T12:10:19+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
     }
   ]
 }
