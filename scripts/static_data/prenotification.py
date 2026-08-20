@@ -180,17 +180,41 @@ def _issued_before(group: list[dict], seq: int, lag: int) -> tuple[date, str] | 
     return _issue_date(best, lag), best["merger_id"]
 
 
+def _tautological_upper_bound(group: list[dict], position: dict) -> date:
+    """The provable ceiling on when ``position``'s own ID was issued, using
+    nothing but ``seq(A) < seq(B) => issued(A) <= issued(B)`` — no lag
+    assumption, so it holds for a waiver exactly as it does for a notification.
+
+    Every position is at least its own ceiling, since nothing is filed before
+    its ID exists.
+    """
+    witness = _issued_before(group, position["seq"], 0)
+    return min(position["filed"], witness[0]) if witness else position["filed"]
+
+
 def _issued_after(group: list[dict], seq: int, lag: int) -> tuple[date, str] | None:
     """Tightest evidence that an ID at ``seq`` was issued after some date.
 
     Only waivers can supply this: a notification's own ID predates its filing
     by an unknown amount, so it places no floor under anything above it.
+
+    A waiver below ``seq`` normally dates the counter by ``filed - lag``, but
+    that estimate is only as good as the lag assumption. Every waiver, seq
+    itself included, also has a lag-free ceiling from
+    :func:`_tautological_upper_bound` — anything with a higher sequence
+    number was filed no earlier than it. Since ``seq`` is one such witness,
+    clamping against that ceiling keeps this bound from ever landing after
+    the upper bound computed for ``seq``, however large ``lag`` is pushed.
     """
     below = [p for p in group if p["seq"] < seq and p["kind"] == "WA"]
     if not below:
         return None
-    best = max(below, key=lambda p: (_issue_date(p, lag), p["seq"]))
-    return _issue_date(best, lag), best["merger_id"]
+
+    def bounded(p: dict) -> date:
+        return min(_issue_date(p, lag), _tautological_upper_bound(group, p))
+
+    best = max(below, key=lambda p: (bounded(p), p["seq"]))
+    return bounded(best), best["merger_id"]
 
 
 def _interpolate_issue_date(group: list[dict], seq: int, lag: int) -> date | None:

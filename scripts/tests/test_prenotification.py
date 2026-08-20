@@ -291,6 +291,23 @@ class TestAttachment:
         assert estimate['estimated_days'] == 90
         assert estimate['id_issued_estimated'] == '2026-01-01'
 
+    def test_a_late_waiver_below_cannot_push_max_days_under_min_days(self):
+        # WA-01002 has a real 100-day lodgement lag, far past anything lag_max
+        # allows for. Padding its filed date alone would place its assumed
+        # issue date after MN-01003's proven ceiling (from WA-01004, seq 4),
+        # crossing the two bounds. WA-01002's own ceiling — it can't have been
+        # issued after WA-01004 either — must clamp it back into line.
+        mergers = [
+            _merger('WA-01001', '2026-01-01'),
+            _merger('WA-01002', '2026-04-12'),  # issued day 2, lodged 100 days late
+            _merger('MN-01003', '2026-04-13'),
+            _merger('WA-01004', '2026-01-05'),
+        ]
+        estimate = _estimates(mergers, lag=0, lag_max=7)['MN-01003']
+        assert estimate['min_days'] <= estimate['estimated_days'] <= estimate['max_days']
+        assert estimate['min_days'] == estimate['max_days'] == 98
+        assert estimate['id_issued_before'] == estimate['id_issued_after'] == '2026-01-05'
+
     def test_upper_bound_only_stays_monotonic_with_a_bracketed_neighbour(self):
         # MN-01028 (lower sequence) is bracketed by the waiver below it and
         # MN-01030 above. MN-01030 (higher sequence) only has a lower
