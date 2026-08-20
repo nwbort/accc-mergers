@@ -1,6 +1,76 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-30030",
+      "merger_name": "Eli Lilly and Company / AtaiBeckley Inc.",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-05T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-16T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Eli Lilly and Company",
+          "identifier_type": null,
+          "identifier": "350470950 (IRS Employer Identification Number)",
+          "canonical": {
+            "id": "eli-lilly-and-company",
+            "name": "Eli Lilly"
+          },
+          "party_page": {
+            "id": "eli-lilly-and-company",
+            "name": "Eli Lilly"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "AtaiBeckley Inc.",
+          "identifier_type": null,
+          "identifier": "413357923 (IRS Employer Identification Number)",
+          "party_page": {
+            "id": "ataibeckley-inc",
+            "name": "AtaiBeckley Inc."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Albali Acquisition Corporation",
+          "identifier_type": null,
+          "identifier": "10665981(Delaware File Number)",
+          "canonical": {
+            "id": "eli-lilly-and-company",
+            "name": "Eli Lilly"
+          },
+          "party_page": {
+            "id": "eli-lilly-and-company",
+            "name": "Eli Lilly"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1841",
+          "name": "Human Pharmaceutical and Medicinal Product Manufacturing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6910",
+          "name": "Scientific Research Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/eli-lilly-and-company-ataibeckley-inc"
+    },
+    {
       "merger_id": "MN-55031",
       "merger_name": "Danone \u2013 MADE",
       "status": "Under assessment",

@@ -1248,6 +1248,72 @@
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/cvc-capital-partners-%E2%80%93-distrokid"
     },
     {
+      "merger_id": "WA-30027",
+      "merger_name": "Apax Funds \u2013 Techoraco Limited and Institutional Investor LLC",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-24T12:00:00Z",
+      "determination_publication_date": "2026-08-20T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Assemble US Bidco Inc",
+          "identifier_type": null,
+          "identifier": "Delaware  10694188",
+          "party_page": {
+            "id": "assemble-us-bidco-inc",
+            "name": "Assemble US Bidco Inc"
+          }
+        },
+        {
+          "name": "Assemble UK Bidco Limited",
+          "identifier_type": null,
+          "identifier": "UK  17341322",
+          "party_page": {
+            "id": "assemble-uk-bidco-limited",
+            "name": "Assemble UK Bidco Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Techoraco Limited",
+          "identifier_type": null,
+          "identifier": "UK  15236387",
+          "party_page": {
+            "id": "techoraco-limited",
+            "name": "Techoraco Limited"
+          }
+        },
+        {
+          "name": "Institutional Investor LLC",
+          "identifier_type": null,
+          "identifier": "Delaware  803184",
+          "party_page": {
+            "id": "institutional-investor-llc",
+            "name": "Institutional Investor LLC"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "7299",
+          "name": "Other Administrative Services n.e.c."
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/apax-funds-%E2%80%93-techoraco-limited-and-institutional-investor-llc"
+    },
+    {
       "merger_id": "WA-35036",
       "merger_name": "CrowdStrike \u2013 intellectual property and associated technology assets of XM Cyber",
       "status": "Assessment completed",
@@ -4407,76 +4473,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/modaxo-conduent"
-    },
-    {
-      "merger_id": "MN-30030",
-      "merger_name": "Eli Lilly and Company / AtaiBeckley Inc.",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-05T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-09-16T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Eli Lilly and Company",
-          "identifier_type": null,
-          "identifier": "350470950 (IRS Employer Identification Number)",
-          "canonical": {
-            "id": "eli-lilly-and-company",
-            "name": "Eli Lilly"
-          },
-          "party_page": {
-            "id": "eli-lilly-and-company",
-            "name": "Eli Lilly"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "AtaiBeckley Inc.",
-          "identifier_type": null,
-          "identifier": "413357923 (IRS Employer Identification Number)",
-          "party_page": {
-            "id": "ataibeckley-inc",
-            "name": "AtaiBeckley Inc."
-          }
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "Albali Acquisition Corporation",
-          "identifier_type": null,
-          "identifier": "10665981(Delaware File Number)",
-          "canonical": {
-            "id": "eli-lilly-and-company",
-            "name": "Eli Lilly"
-          },
-          "party_page": {
-            "id": "eli-lilly-and-company",
-            "name": "Eli Lilly"
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "1841",
-          "name": "Human Pharmaceutical and Medicinal Product Manufacturing"
-        },
-        {
-          "code": "6240",
-          "name": "Financial Asset Investing"
-        },
-        {
-          "code": "6910",
-          "name": "Scientific Research Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/eli-lilly-and-company-ataibeckley-inc"
     }
   ],
   "page": 11,

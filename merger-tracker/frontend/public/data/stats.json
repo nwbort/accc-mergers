@@ -1,6 +1,6 @@
 {
   "total_mergers": 231,
-  "total_waivers": 341,
+  "total_waivers": 342,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 178,
@@ -18,7 +18,7 @@
     "Assessment ceased": 2
   },
   "by_waiver_determination": {
-    "Approved": 327,
+    "Approved": 328,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.319648093841643,
-    "median_days": 19,
-    "average_business_days": 13.023460410557185,
-    "median_business_days": 13
+    "average_days": 19.342105263157894,
+    "median_days": 19.0,
+    "average_business_days": 13.04093567251462,
+    "median_business_days": 13.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 90
+      "count": 91
     },
     {
       "name": "Computer System Design and Related Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-30027",
+      "merger_name": "Apax Funds \u2013 Techoraco Limited and Institutional Investor LLC",
+      "determination": "Approved",
+      "determination_date": "2026-08-20T12:00:00Z",
+      "page_modified_datetime": "2026-08-20T17:15:35+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-05034",
       "merger_name": "Aurizon \u2013 transactions related to the relocation of a rail corridor at Moranbah North",
       "determination": "Approved",
@@ -333,17 +344,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-18T12:00:00Z",
       "page_modified_datetime": "2026-08-19T14:51:28+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-05031",
-      "merger_name": "Obayashi Corporation \u2013 Multiplex",
-      "determination": "Approved",
-      "determination_date": "2026-08-18T12:00:00Z",
-      "page_modified_datetime": "2026-08-19T10:14:15+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
