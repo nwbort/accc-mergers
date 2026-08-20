@@ -1075,6 +1075,105 @@
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/cvc-capital-partners-%E2%80%93-iff%E2%80%99s-food-ingredients-business"
     },
     {
+      "merger_id": "WA-95035",
+      "merger_name": "Igneo Infrastructure Partners \u2013 Green Squares Energy",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-23T12:00:00Z",
+      "determination_publication_date": "2026-08-20T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Vertis Bidco Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "699 084 467",
+          "party_page": {
+            "id": "vertis-bidco-pty-ltd",
+            "name": "Vertis Bidco Pty Ltd"
+          }
+        },
+        {
+          "name": "FIRST SENTIER INVESTORS (AUSTRALIA) RE LTD",
+          "identifier_type": "ABN",
+          "identifier": "13 006 464 428",
+          "party_page": {
+            "id": "first-sentier-investors-australia-re-ltd",
+            "name": "First Sentier Investors (Australia) Re Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "The Trustee for Green Squares Energy Trust",
+          "identifier_type": "ABN",
+          "identifier": "84 706 057 848",
+          "party_page": {
+            "id": "the-trustee-for-green-squares-energy-trust",
+            "name": "The Trustee for Green Squares Energy Trust"
+          }
+        },
+        {
+          "name": "GREEN SQUARES ENERGY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "24 632 447 959",
+          "party_page": {
+            "id": "green-squares-energy-pty-ltd",
+            "name": "Green Squares Energy Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Mitsubishi UFJ Financial Group Inc",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "mitsubishi-ufj-financial-group-inc",
+            "name": "Mitsubishi UFJ Financial Group Inc"
+          }
+        },
+        {
+          "name": "CPE Renewables Investment Unit Trust",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "cpe-renewables-investment-unit-trust",
+            "name": "CPE Renewables Investment Unit Trust"
+          }
+        },
+        {
+          "name": "ATMOS RENEWABLES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "55 645 165 466",
+          "party_page": {
+            "id": "atmos-renewables-pty-ltd",
+            "name": "Atmos Renewables Pty Ltd"
+          }
+        },
+        {
+          "name": "FIRST SENTIER GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "49 630 725 558",
+          "party_page": {
+            "id": "first-sentier-group-limited",
+            "name": "First Sentier Group Limited"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2619",
+          "name": "Other Electricity Generation"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/igneo-infrastructure-partners-%E2%80%93-green-squares-energy"
+    },
+    {
       "merger_id": "MN-05030",
       "merger_name": "Coles \u2013 supermarket site in Upper Swan, WA",
       "status": "Assessment completed",
@@ -4292,66 +4391,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/hitech-group-australia-hudson-global-resources"
-    },
-    {
-      "merger_id": "MN-15031",
-      "merger_name": "Danaher (Leica Biosystems) - StatLab",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-05T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-09-16T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Danaher Corporation",
-          "identifier_type": null,
-          "identifier": "EIN591995548",
-          "canonical": {
-            "id": "danaher-corporation",
-            "name": "Danaher Corporation"
-          },
-          "party_page": {
-            "id": "danaher-corporation",
-            "name": "Danaher Corporation"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "SLMP Intermediate Holdings Inc",
-          "identifier_type": null,
-          "identifier": "EIN861436842",
-          "party_page": {
-            "id": "slmp-intermediate-holdings-inc",
-            "name": "SLMP Intermediate Holdings Inc"
-          }
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "2412",
-          "name": "Medical and Surgical Equipment Manufacturing"
-        },
-        {
-          "code": "2419",
-          "name": "Other Professional and Scientific Equipment Manufacturing"
-        },
-        {
-          "code": "3491",
-          "name": "Professional and Scientific Goods Wholesaling"
-        },
-        {
-          "code": "8520",
-          "name": "Pathology and Diagnostic Imaging Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/danaher-leica-biosystems-statlab"
     }
   ],
   "page": 11,

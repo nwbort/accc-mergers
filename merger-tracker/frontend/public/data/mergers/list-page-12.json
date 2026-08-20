@@ -1,6 +1,66 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-15031",
+      "merger_name": "Danaher (Leica Biosystems) - StatLab",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-05T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-16T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Danaher Corporation",
+          "identifier_type": null,
+          "identifier": "EIN591995548",
+          "canonical": {
+            "id": "danaher-corporation",
+            "name": "Danaher Corporation"
+          },
+          "party_page": {
+            "id": "danaher-corporation",
+            "name": "Danaher Corporation"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "SLMP Intermediate Holdings Inc",
+          "identifier_type": null,
+          "identifier": "EIN861436842",
+          "party_page": {
+            "id": "slmp-intermediate-holdings-inc",
+            "name": "SLMP Intermediate Holdings Inc"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "2412",
+          "name": "Medical and Surgical Equipment Manufacturing"
+        },
+        {
+          "code": "2419",
+          "name": "Other Professional and Scientific Equipment Manufacturing"
+        },
+        {
+          "code": "3491",
+          "name": "Professional and Scientific Goods Wholesaling"
+        },
+        {
+          "code": "8520",
+          "name": "Pathology and Diagnostic Imaging Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/danaher-leica-biosystems-statlab"
+    },
+    {
       "merger_id": "MN-25040",
       "merger_name": "Modaxo - Conduent",
       "status": "Under assessment",
