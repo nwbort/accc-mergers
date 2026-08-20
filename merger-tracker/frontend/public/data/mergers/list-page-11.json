@@ -3280,6 +3280,70 @@
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/pine-australia-evolution-business-systems"
     },
     {
+      "merger_id": "WA-65032",
+      "merger_name": "Coles \u2013 expansion of supermarket located within Coles head office site in Docklands, VIC",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-31T12:00:00Z",
+      "determination_publication_date": "2026-08-20T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "COLES GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "11 004 089 936",
+          "canonical": {
+            "id": "coles",
+            "name": "Coles Group"
+          },
+          "party_page": {
+            "id": "coles",
+            "name": "Coles Group"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Bourke Junction No. 1 Pty Ltd as trustee for the Bourke Junction Trust No. 1",
+          "identifier_type": "ABN",
+          "identifier": "50 230 519 968",
+          "party_page": {
+            "id": "bourke-junction-no-1-pty-ltd-as-trustee-for-the-bourke-junction-trust-no-1",
+            "name": "Bourke Junction No. 1 Pty Ltd as trustee for the Bourke Junction Trust No. 1"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "4110",
+          "name": "Supermarket and Grocery Stores"
+        },
+        {
+          "code": "4122",
+          "name": "Fruit and Vegetable Retailing"
+        },
+        {
+          "code": "4279",
+          "name": "Other Store-Based Retailing n.e.c."
+        },
+        {
+          "code": "4511",
+          "name": "Cafes and Restaurants"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/coles-%E2%80%93-expansion-of-supermarket-located-within-coles-head-office-site-in-docklands-vic"
+    },
+    {
       "merger_id": "WA-70033",
       "merger_name": "EQT Fund Management \u2013 Corza Biosurgery",
       "status": "Assessment completed",
@@ -4441,102 +4505,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/danone-%E2%80%93-made"
-    },
-    {
-      "merger_id": "MN-75035",
-      "merger_name": "Johns Lyng Group \u2013 C&M Build Group",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-05T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-09-16T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Johns Lyng Group (Nominee) Pty Ltd as trustee for the Johns Lyng Unit Trust",
-          "identifier_type": "ABN",
-          "identifier": "57 246 253 025",
-          "canonical": {
-            "id": "johns-lyng-group",
-            "name": "Johns Lyng Group"
-          },
-          "party_page": {
-            "id": "johns-lyng-group",
-            "name": "Johns Lyng Group"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "C&M Central Unit Trust",
-          "identifier_type": "ABN",
-          "identifier": "47 351 736 164",
-          "canonical": {
-            "id": "c-m-build-group",
-            "name": "C&M Build Group"
-          },
-          "party_page": {
-            "id": "c-m-build-group",
-            "name": "C&M Build Group"
-          }
-        },
-        {
-          "name": "C&M Central Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "649 711 053",
-          "canonical": {
-            "id": "c-m-build-group",
-            "name": "C&M Build Group"
-          },
-          "party_page": {
-            "id": "c-m-build-group",
-            "name": "C&M Build Group"
-          }
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "SHERWOOD TOPCO LTD",
-          "identifier_type": "ABN",
-          "identifier": "54 688 487 103",
-          "party_page": {
-            "id": "sherwood-topco-ltd",
-            "name": "Sherwood Topco Ltd"
-          }
-        },
-        {
-          "name": "JOHNS LYNG GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "86 620 466 248",
-          "canonical": {
-            "id": "johns-lyng-group",
-            "name": "Johns Lyng Group"
-          },
-          "party_page": {
-            "id": "johns-lyng-group",
-            "name": "Johns Lyng Group"
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "3019",
-          "name": "Other Residential Building Construction"
-        },
-        {
-          "code": "3020",
-          "name": "Non-Residential Building Construction"
-        },
-        {
-          "code": "6240",
-          "name": "Financial Asset Investing"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/johns-lyng-group-%E2%80%93-cm-build-group"
     }
   ],
   "page": 11,

@@ -19,7 +19,7 @@
       "code": "451",
       "name": "Cafes, Restaurants and Takeaway Food Services",
       "level": "group",
-      "merger_count": 19
+      "merger_count": 20
     },
     {
       "code": "452",
@@ -67,6 +67,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-08-04T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-65032",
+      "merger_name": "Coles \u2013 expansion of supermarket located within Coles head office site in Docklands, VIC",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-31T12:00:00Z",
+      "determination_date": "2026-08-20T12:00:00Z"
     },
     {
       "merger_id": "WA-15035",
@@ -421,10 +432,10 @@
       "determination_date": "2026-02-02T12:00:00Z"
     }
   ],
-  "count": 35,
+  "count": 36,
   "phase_1_count": 8,
   "phase_2_count": 0,
-  "waiver_count": 27,
+  "waiver_count": 28,
   "active_count": 3,
   "phase_duration": {
     "average_days": 36.4,
@@ -434,10 +445,10 @@
     "completed_count": 5
   },
   "waiver_duration": {
-    "average_days": 19.703703703703702,
-    "median_days": 19,
-    "average_business_days": 13.407407407407407,
-    "median_business_days": 12,
-    "completed_count": 27
+    "average_days": 19.714285714285715,
+    "median_days": 19.0,
+    "average_business_days": 13.428571428571429,
+    "median_business_days": 12.5,
+    "completed_count": 28
   }
 }

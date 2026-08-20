@@ -1,6 +1,6 @@
 {
   "total_mergers": 231,
-  "total_waivers": 339,
+  "total_waivers": 340,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 178,
@@ -18,7 +18,7 @@
     "Assessment ceased": 2
   },
   "by_waiver_determination": {
-    "Approved": 325,
+    "Approved": 326,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.30678466076696,
-    "median_days": 19,
-    "average_business_days": 13.008849557522124,
-    "median_business_days": 13
+    "average_days": 19.308823529411764,
+    "median_days": 19.0,
+    "average_business_days": 13.011764705882353,
+    "median_business_days": 13.0
   },
   "top_industries": [
     {
@@ -72,7 +72,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 29
+      "count": 30
     },
     {
       "name": "Pubs, Taverns and Bars",
@@ -87,12 +87,12 @@
       "count": 18
     },
     {
-      "name": "Engineering Design and Engineering Consulting Services",
+      "name": "Supermarket and Grocery Stores",
       "count": 17
     },
     {
-      "name": "Supermarket and Grocery Stores",
-      "count": 16
+      "name": "Engineering Design and Engineering Consulting Services",
+      "count": 17
     }
   ],
   "recent_mergers": [
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-65032",
+      "merger_name": "Coles \u2013 expansion of supermarket located within Coles head office site in Docklands, VIC",
+      "determination": "Approved",
+      "determination_date": "2026-08-20T12:00:00Z",
+      "page_modified_datetime": "2026-08-20T17:08:35+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-01109",
       "merger_name": "Syngenta Crop Protection and D\u00fcmmen Orange \u2013 Joint Venture Formation",
       "determination": "Approved",
@@ -333,17 +344,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-18T12:00:00Z",
       "page_modified_datetime": "2026-08-18T16:55:34+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-75039",
-      "merger_name": "Ironbark - Paris Group",
-      "determination": "Approved",
-      "determination_date": "2026-08-18T12:00:00Z",
-      "page_modified_datetime": "2026-08-18T16:54:11+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
