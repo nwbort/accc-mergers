@@ -40,8 +40,9 @@ Label normalisation for ``by_commission_division`` (see that function):
 import calendar
 import re
 from collections import defaultdict
-from datetime import date
+from datetime import date, datetime
 from statistics import median as stat_median
+from zoneinfo import ZoneInfo
 
 from constants import merger_status
 
@@ -51,6 +52,14 @@ from ..durations import collect_phase_1_durations, phase_1_end_date
 from ..filters import filter_notifications, filter_waivers
 
 _MAX_DIVISION_LABEL_LENGTH = 200
+
+# The ACCC operates on Australian Eastern time, so "today" for the caseload's
+# as-at cutoff must be Sydney's calendar date, not the build server's (the
+# static data is generated on GitHub Actions runners, which run in UTC — using
+# server-local date.today() would put the cutoff a day off from the ACCC's own
+# during the several hours each day Sydney's date has already rolled over but
+# UTC's hasn't, or vice versa).
+_SYDNEY_TZ = ZoneInfo('Australia/Sydney')
 
 # Matches "Determination/Decision made by <person> pursuant to a delegation
 # ..." so the delegate's name can be canonicalised to "<title> <surname>",
@@ -432,9 +441,11 @@ def open_caseload(mergers: list, as_at: date | None = None) -> dict:
 
     The final point is cut off at ``as_at`` rather than the end of the current
     month, so the series ends at a real observation instead of counting a
-    month-end that hasn't happened yet.
+    month-end that hasn't happened yet. When not given explicitly, ``as_at``
+    defaults to today's date in Sydney (the ACCC's own timezone), not the
+    build server's local date.
     """
-    as_at = as_at or date.today()
+    as_at = as_at or datetime.now(_SYDNEY_TZ).date()
 
     spans = []
     for m in filter_notifications(mergers):
