@@ -91,11 +91,14 @@ from date_utils import parse_iso_datetime
 # on the average is half a day.
 WAIVER_LODGEMENT_LAG_DAYS = 0
 
-# The same quantity at its most generous, used only for ``max_days``. No waiver
-# in the register is known to have sat longer than this between issue and
-# lodgement, so allowing every anchor the full amount makes the upper bound
-# safe rather than central.
-WAIVER_LODGEMENT_LAG_MAX_DAYS = 34
+# The same quantity at a generous-but-plausible level, used only for
+# ``max_days``. Of the 26 waiver-vs-waiver pairs in the register that invert
+# (i.e. show a real lodgement lag), the gap is 7 days or under for about
+# two-thirds of them and the true maximum ever observed is 34 days — a single
+# outlier. 7 favours a ceiling that stays informative over one that's
+# technically safe but rarely tight; a lag beyond it will understate max_days
+# for that case.
+WAIVER_LODGEMENT_LAG_MAX_DAYS = 7
 
 # Bump when the method changes so stored values are recognisable.
 METHOD_VERSION = 1
