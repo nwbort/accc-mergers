@@ -91,11 +91,14 @@ from date_utils import parse_iso_datetime
 # on the average is half a day.
 WAIVER_LODGEMENT_LAG_DAYS = 0
 
-# The same quantity at its most generous, used only for ``max_days``. No waiver
-# in the register is known to have sat longer than this between issue and
-# lodgement, so allowing every anchor the full amount makes the upper bound
-# safe rather than central.
-WAIVER_LODGEMENT_LAG_MAX_DAYS = 34
+# The same quantity at a generous-but-plausible level, used only for
+# ``max_days``. Of the 26 waiver-vs-waiver pairs in the register that invert
+# (i.e. show a real lodgement lag), the gap is 7 days or under for about
+# two-thirds of them and the true maximum ever observed is 34 days — a single
+# outlier. 7 favours a ceiling that stays informative over one that's
+# technically safe but rarely tight; a lag beyond it will understate max_days
+# for that case.
+WAIVER_LODGEMENT_LAG_MAX_DAYS = 7
 
 # Bump when the method changes so stored values are recognisable.
 METHOD_VERSION = 1
@@ -177,17 +180,41 @@ def _issued_before(group: list[dict], seq: int, lag: int) -> tuple[date, str] | 
     return _issue_date(best, lag), best["merger_id"]
 
 
+def _tautological_upper_bound(group: list[dict], position: dict) -> date:
+    """The provable ceiling on when ``position``'s own ID was issued, using
+    nothing but ``seq(A) < seq(B) => issued(A) <= issued(B)`` — no lag
+    assumption, so it holds for a waiver exactly as it does for a notification.
+
+    Every position is at least its own ceiling, since nothing is filed before
+    its ID exists.
+    """
+    witness = _issued_before(group, position["seq"], 0)
+    return min(position["filed"], witness[0]) if witness else position["filed"]
+
+
 def _issued_after(group: list[dict], seq: int, lag: int) -> tuple[date, str] | None:
     """Tightest evidence that an ID at ``seq`` was issued after some date.
 
     Only waivers can supply this: a notification's own ID predates its filing
     by an unknown amount, so it places no floor under anything above it.
+
+    A waiver below ``seq`` normally dates the counter by ``filed - lag``, but
+    that estimate is only as good as the lag assumption. Every waiver, seq
+    itself included, also has a lag-free ceiling from
+    :func:`_tautological_upper_bound` — anything with a higher sequence
+    number was filed no earlier than it. Since ``seq`` is one such witness,
+    clamping against that ceiling keeps this bound from ever landing after
+    the upper bound computed for ``seq``, however large ``lag`` is pushed.
     """
     below = [p for p in group if p["seq"] < seq and p["kind"] == "WA"]
     if not below:
         return None
-    best = max(below, key=lambda p: (_issue_date(p, lag), p["seq"]))
-    return _issue_date(best, lag), best["merger_id"]
+
+    def bounded(p: dict) -> date:
+        return min(_issue_date(p, lag), _tautological_upper_bound(group, p))
+
+    best = max(below, key=lambda p: (bounded(p), p["seq"]))
+    return bounded(best), best["merger_id"]
 
 
 def _interpolate_issue_date(group: list[dict], seq: int, lag: int) -> date | None:
