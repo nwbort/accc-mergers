@@ -281,7 +281,7 @@ describe('MergerTimeline', () => {
         />
       );
 
-      const pip = screen.getByLabelText(/Expected determination/);
+      const pip = screen.getByLabelText('Determination expected soon');
       // Fixed-size, since the window it described no longer maps to the axis.
       expect(pip.style.width).toBe('24px');
       expect(screen.getByText('Expected determination soon')).toBeInTheDocument();
@@ -412,7 +412,7 @@ describe('MergerTimeline', () => {
       );
 
       // The pip stays; only its label gives way to "Today".
-      expect(screen.getByLabelText(/Expected determination/)).toBeInTheDocument();
+      expect(screen.getByLabelText('Determination expected soon')).toBeInTheDocument();
       expect(screen.queryByText('Expected determination soon')).not.toBeInTheDocument();
       expect(screen.getByText('Today')).toBeInTheDocument();
     });

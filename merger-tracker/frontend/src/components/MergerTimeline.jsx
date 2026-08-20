@@ -458,7 +458,10 @@ function MergerTimeline({ merger }) {
           )}
 
           {/* The same forecast once its window has closed: a pip just clear of
-              the today marker, held inside the track's right edge. */}
+              the today marker, held inside the track's right edge. The forecast
+              window is in the past at this point, so the date/band detail in
+              expectedTitle would be describing a window we're already past —
+              the hover just confirms the "soon" label instead. */}
           {expectedSoon && (
             <span
               className="absolute top-1/2 -translate-y-1/2 h-3 rounded-full bg-phase-1/50 cursor-help"
@@ -466,8 +469,8 @@ function MergerTimeline({ merger }) {
                 left: `min(calc(${midPct}% + ${SOON_PIP_GAP_PX}px), calc(100% - ${SOON_PIP_PX}px))`,
                 width: `${SOON_PIP_PX}px`,
               }}
-              title={expectedTitle}
-              aria-label={expectedTitle}
+              title="Determination expected soon"
+              aria-label="Determination expected soon"
             />
           )}
 
