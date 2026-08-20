@@ -15,12 +15,12 @@
         "merger_id": "MN-30022",
         "merger_name": "VSA - SprayLine",
         "is_waiver": false,
-        "status": "Under assessment",
-        "determination": null,
+        "status": "Assessment completed",
+        "determination": "Approved",
         "has_conditions": false,
         "phase": "Phase 1",
         "notification_date": "2026-07-06T12:00:00Z",
-        "determination_date": null
+        "determination_date": "2026-08-20T12:00:00Z"
       }
     ],
     "other": []
@@ -29,7 +29,13 @@
   "phase_1_count": 1,
   "phase_2_count": 0,
   "waiver_count": 0,
-  "active_count": 1,
-  "phase_duration": null,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 45.0,
+    "median_days": 45,
+    "average_business_days": 33.0,
+    "median_business_days": 33,
+    "completed_count": 1
+  },
   "waiver_duration": null
 }

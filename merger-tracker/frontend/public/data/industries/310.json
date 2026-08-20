@@ -57,17 +57,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-30022",
-      "merger_name": "VSA - SprayLine",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-07-06T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-01072",
       "merger_name": "Saipem S.p.A - Subsea7 S.A.",
       "is_waiver": false,
@@ -77,6 +66,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-04-27T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-30022",
+      "merger_name": "VSA - SprayLine",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-06T12:00:00Z",
+      "determination_date": "2026-08-20T12:00:00Z"
     },
     {
       "merger_id": "MN-15028",
@@ -237,13 +237,13 @@
   "phase_1_count": 11,
   "phase_2_count": 1,
   "waiver_count": 6,
-  "active_count": 4,
+  "active_count": 3,
   "phase_duration": {
-    "average_days": 29.77777777777778,
-    "median_days": 26,
-    "average_business_days": 20.555555555555557,
-    "median_business_days": 16,
-    "completed_count": 9
+    "average_days": 31.3,
+    "median_days": 26.5,
+    "average_business_days": 21.8,
+    "median_business_days": 17.0,
+    "completed_count": 10
   },
   "waiver_duration": {
     "average_days": 21.666666666666668,

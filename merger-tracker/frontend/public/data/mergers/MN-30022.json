@@ -1,13 +1,16 @@
 {
   "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/vsa-sprayline",
   "merger_name": "VSA - SprayLine",
-  "status": "Under assessment",
+  "status": "Assessment completed",
   "merger_id": "MN-30022",
   "effective_notification_datetime": "2026-07-06T12:00:00Z",
   "original_notification_datetime": "2026-07-06T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-08-25T12:00:00Z",
-  "page_modified_datetime": "2026-08-13T18:17:47+10:00",
+  "determination_publication_date": "2026-08-20T12:00:00Z",
+  "accc_determination": "Approved",
+  "accc_determination_raw": "ACCC determinationApproved",
+  "page_modified_datetime": "2026-08-20T13:17:41+10:00",
   "consultation_response_due_date": "2026-07-14T12:00:00Z",
   "acquirers": [
     {
@@ -33,9 +36,9 @@
   ],
   "other_parties": [
     {
-      "name": "COLAS CONTRACTING PTY LTD",
+      "name": "COLAS AUSTRALIA GROUP PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "88 127 397 899",
+      "identifier": "11 000 388 161",
       "canonical": {
         "id": "colas",
         "name": "Colas"
@@ -46,9 +49,9 @@
       }
     },
     {
-      "name": "COLAS AUSTRALIA GROUP PTY LTD",
+      "name": "COLAS CONTRACTING PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "11 000 388 161",
+      "identifier": "88 127 397 899",
       "canonical": {
         "id": "colas",
         "name": "Colas"
@@ -86,13 +89,170 @@
       "title": "Timeline extended by 6 business days - following request by parties",
       "display_title": "Timeline extended by 6 business days - following request by parties",
       "phase": null
+    },
+    {
+      "date": "2026-08-20T12:00:00Z",
+      "title": "VSA\u2013SprayLine - Phase 1 determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/VSA%20-%20Sprayline%20-%20Phase%201%20determination.pdf",
+      "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
+      "determination_table_content": [
+        {
+          "item": "Notified acquisition",
+          "details": "VSA Roads Pty Ltd (VSA) proposes to acquire the assets of\nSprayLine Road Services (SprayLine), a business operated by Head,\nTransport for Victoria (Head TfV) (the Acquisition). Head TfV is a\nstatutory authority that operates and maintains the road system in\nVictoria."
+        },
+        {
+          "item": "Determination",
+          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+        },
+        {
+          "item": "Parties to the Acquisition",
+          "details": "VSA supplies quarried and bituminous products, together with\nspecialist contract paving and bituminous surfacing services\n(including spray sealing and line marking services) across South\nAustralia, Victoria, New South Wales, and the Northern Territory.\nSprayLine supplies bituminous spray sealing, line marking, and road\nmaintenance services across Victoria, New South Wales, and South\nAustralia. The Victorian Government has decided to no longer\noperate an internal road maintenance provider, which has resulted in\na decision to divest SprayLine's spray sealing and line marking\nbusiness. The Acquisition relates only to the spray sealing and line\nmarking activities of SprayLine."
+        },
+        {
+          "item": "Reasons for determination",
+          "details": "The reasons for the ACCC\u2019s determination are set out in section 2."
+        }
+      ],
+      "determination_statement_of_reasons": [
+        {
+          "type": "paragraph",
+          "number": "2.1",
+          "text": "When making a determination in Phase 1, the Australian Competition and Consumer Commission (ACCC) undertakes a competition assessment and considers whether it is appropriate for an acquisition to be approved or subject to further assessment in Phase 2 in accordance with section 51ABZJ of the Competition and Consumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have regard to the object of the Act and all relevant matters, including the interests of consumers."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.2",
+          "text": "For more information about the ACCC\u2019s approach to considering notified acquisitions, see the ACCC\u2019s merger assessment guidelines and interim merger process guidelines."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.3",
+          "text": "In conducting its competition assessment, the ACCC has considered the information and documents that were submitted with the notification form, additional information provided by the parties to the acquisition, market feedback and publicly available information."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.4",
+          "text": "For the reasons given below, the ACCC has determined that the Acquisition may be put into effect. Determination | VSA - Sprayline (MN - 30032)"
+        },
+        {
+          "type": "heading",
+          "text": "Overlap and relationship between the Parties"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.5",
+          "text": "VSA and SprayLine (the Parties) overlap in the supply of line marking and spray sealing services. VSA provides these services across South Australia, Victoria, New South Wales, and the Northern Territory. SprayLine supplies these services in Victoria, and, to a limited extent, in South Australia."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.6",
+          "text": "In respect of line marking services, the overlap between the Parties is limited as VSA has only a small presence in the supply of these services. SprayLine has a greater presence in line marking, driven primarily by services provided to the Victorian State Government. There is very limited overlap in terms of the customers to which the Parties supply line marking services."
+        },
+        {
+          "type": "heading",
+          "text": "Industry background"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.7",
+          "text": "Spray sealing is a road surfacing treatment that is generally a cheaper option compared to asphalt for medium and lightly trafficked roads. It is commonly (but not exclusively) used in regional areas. Spray sealing is completed by spraying a narrow film of bituminous binder onto a street surface and then covering it with a layer of aggregate. The bituminous binder acts as a waterproofing layer and prevents water entering the underlying road structure."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.8",
+          "text": "Most spray sealing work is undertaken for state and local governments, although there are also private sector customers (for example, for a privately-owned carpark, airport or road). Spray sealing work for local and state governments is generally completed through tender processes, including through the following processes which are specific to Victoria:"
+        },
+        {
+          "type": "bullet_list",
+          "items": [
+            "State government tender processes for Victorian road maintenance contracts (VRMCs) in 8 regions of Victoria, which (among other things) provide successful VRMC suppliers a right to tender for certain planned maintenance works, which may include spray sealing, in their allocated region.",
+            "State government tender processes for planned spray sealing works in a particular region, potentially for the duration of the spray sealing season (in Victoria, this is usually the period from November to March). These tenders are open to any provider, including (but not limited to) VRMC suppliers.",
+            "Collective or individual tenders from local councils in respect of spray sealing work required to be performed in the relevant local government area(s) for a particular period (often 1-2 years).",
+            "Tenders for panels maintained by bodies including Procurement Australia and the Municipal Association of Victoria (MAV).1 Inclusion on one of these panels, means a panel firm can be contracted by a local government requiring spray sealing works at agreed rates rather than conduct their own tender process. These panels can remain active for several years with multi-year extensions. 1 The legislated peak body for local councils in Victoria. Determination | VSA - Sprayline (MN - 30032)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "number": "2.9",
+          "text": "Spray sealing is a seasonal activity, requiring dry weather. As spray sealing equipment is mobile, firms can move equipment around the country to perform works in different parts of Australia to maximise the utilisation of their assets."
+        },
+        {
+          "type": "heading",
+          "text": "Competition assessment"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.10",
+          "text": "The ACCC has considered the effects of the Acquisition by comparing the likely future state of competition if the Acquisition proceeds against the likely future state of competition if the Acquisition does not proceed."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.11",
+          "text": "The ACCC has considered whether the Acquisition is likely to substantially lessen competition by reducing competitive constraint which would enable the merged entity to raise prices, reduce output or degrade the quality of its spray sealing or line marking service offerings post-merger."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.12",
+          "text": "The ACCC\u2019s assessment is set out below."
+        },
+        {
+          "type": "heading",
+          "text": "Relevant areas of competition"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.13",
+          "text": "The ACCC has considered the effect of the Acquisition on competition in the supply of spray sealing services and line marking services. In terms of the geographic area in which competition has been assessed, the ACCC\u2019s assessment has focused on Victoria, as this is where SprayLine is based and where it predominantly supplies services (although it also supplies services in South Australia). Any competition concerns arising out of the Acquisition are therefore likely to be most acute in Victoria. However, the ACCC considers the geographic market for the supply of spray sealing and line marking services may be broader, including at least some parts (and potentially the whole) of South Australia and New South Wales."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.14",
+          "text": "It was not necessary for the ACCC to reach a concluded view on the precise boundaries of the geographic market for the purposes of assessing the Acquisition as the adoption of a broader geographic market would not result in a different outcome of the ACCC\u2019s assessment. Noting this, for the reasons set out in the preceding paragraph, the ACCC has focused on the impact of the Acquisition in Victoria in making this Determination."
+        },
+        {
+          "type": "heading",
+          "text": "Horizontal unilateral effects in the supply of spray sealing services"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.15",
+          "text": "The ACCC considers that the Acquisition is unlikely to have the effect of substantially lessening competition in relation to the supply of spray sealing services in Victoria. In reaching its decision, and based on the materials before it, the ACCC makes the following findings:"
+        },
+        {
+          "type": "bullet_list",
+          "items": [
+            "While VSA and SprayLine are close competitors for the supply of spray sealing services in Victoria, particularly for work tendered by the Victorian Department of Transport and Planning and some local councils (depending on their location and requirements), the ACCC considers that the merged entity would be likely to be constrained by the following factors: Determination | VSA - Sprayline (MN - 30032) o Alternative suppliers of spray sealing services are available to both state and local government customers, which would likely continue to compete with the merged entity post-Acquisition. These include major firm Fulton Hogan as well as smaller spray sealing suppliers. o The ability of local councils to exercise countervailing power by developing in-house spray sealing capabilities to both self-supply and potentially supply these services to other councils (for example, Moyne Shire Council has this capability). This is likely to constrain the merged entity in the supply of local government work. o The threat of timely new entry or expansion, particularly by:",
+            "firms already supplying broader road maintenance services to state and local government customers that have existing depot networks, workforces and access to bitumen and aggregate, of which there are many active in the relevant region in circumstances where the barriers to such firms supplying spray sealing services appear relatively low, and",
+            "firms supplying spray sealing in neighbouring states such as Boral and Downer."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Horizontal unilateral effects in the supply of line marking services"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.16",
+          "text": "The ACCC considers that the Acquisition is unlikely to have the effect of substantially lessening competition in relation to the supply of line marking services in Victoria. In reaching its decision, and based on the materials before it, the ACCC makes the following findings:"
+        },
+        {
+          "type": "bullet_list",
+          "items": [
+            "VSA and SprayLine are not close competitors in the supply of line marking services, and",
+            "multiple alternative suppliers of line marking services would remain in the relevant region post-Acquisition."
+          ]
+        }
+      ],
+      "url_gh": "/mergers/MN-30022/VSA - Sprayline - Phase 1 determination.pdf",
+      "is_determination_event": true,
+      "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
-  "accc_determination": null,
   "has_conditions": false,
-  "phase_1_determination": null,
-  "phase_1_determination_date": null,
+  "phase_1_determination": "Approved",
+  "phase_1_determination_date": "2026-08-20T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,

@@ -3,12 +3,12 @@
   "total_waivers": 339,
   "total_conditional_approvals": 3,
   "by_status": {
-    "Assessment completed": 175,
-    "Under assessment": 53,
+    "Assessment completed": 176,
+    "Under assessment": 52,
     "Assessment ceased": 3
   },
   "by_determination": {
-    "Approved": 170,
+    "Approved": 171,
     "Referred to phase 2": 9,
     "Approved with conditions": 2
   },
@@ -22,28 +22,28 @@
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 173,
+    "cleared": 174,
     "not_cleared": 2,
-    "total": 175,
+    "total": 176,
     "rate": 0.989
   },
   "phase_duration": {
-    "average_days": 29.834254143646408,
-    "median_days": 26,
-    "average_business_days": 19.91160220994475,
-    "median_business_days": 17,
+    "average_days": 29.917582417582416,
+    "median_days": 26.0,
+    "average_business_days": 19.983516483516482,
+    "median_business_days": 17.0,
     "percentiles": {
       "day15": {
         "count": 40,
-        "percentage": 22.1
+        "percentage": 22.0
       },
       "day20": {
         "count": 137,
-        "percentage": 75.7
+        "percentage": 75.3
       },
       "day30": {
         "count": 170,
-        "percentage": 93.9
+        "percentage": 93.4
       }
     }
   },
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-30022",
+      "merger_name": "VSA - SprayLine",
+      "determination": "Approved",
+      "determination_date": "2026-08-20T12:00:00Z",
+      "page_modified_datetime": "2026-08-20T13:17:41+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-15033",
       "merger_name": "Armira and TA Associates \u2013 Intersurgical Aktiengesellschaft AG",
       "determination": "Approved",
@@ -333,17 +344,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-18T12:00:00Z",
       "page_modified_datetime": "2026-08-18T16:52:37+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-15035",
-      "merger_name": "Waymark Hotels Group \u2013 Howard Springs Tavern, Howard Springs, NT",
-      "determination": "Approved",
-      "determination_date": "2026-08-18T12:00:00Z",
-      "page_modified_datetime": "2026-08-18T16:51:23+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
