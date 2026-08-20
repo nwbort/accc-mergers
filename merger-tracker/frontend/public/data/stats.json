@@ -1,6 +1,6 @@
 {
   "total_mergers": 231,
-  "total_waivers": 344,
+  "total_waivers": 345,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 178,
@@ -18,7 +18,7 @@
     "Assessment ceased": 2
   },
   "by_waiver_determination": {
-    "Approved": 330,
+    "Approved": 331,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.3953488372093,
-    "median_days": 19.0,
-    "average_business_days": 13.084302325581396,
-    "median_business_days": 13.0
+    "average_days": 19.408695652173915,
+    "median_days": 19,
+    "average_business_days": 13.09855072463768,
+    "median_business_days": 13
   },
   "top_industries": [
     {
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-20031",
+      "merger_name": "Atmos \u2013 specific BayWa r.e. renewable energy projects",
+      "determination": "Approved",
+      "determination_date": "2026-08-20T12:00:00Z",
+      "page_modified_datetime": "2026-08-20T17:47:15+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-95035",
       "merger_name": "Igneo Infrastructure Partners \u2013 Green Squares Energy",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-90027",
-      "merger_name": "AbbVie - Apogee",
-      "determination": "Approved",
-      "determination_date": "2026-08-19T12:00:00Z",
-      "page_modified_datetime": "2026-08-19T15:52:32+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]

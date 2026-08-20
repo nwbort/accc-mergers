@@ -19,7 +19,7 @@
       "code": "261",
       "name": "Electricity Generation",
       "level": "group",
-      "merger_count": 16
+      "merger_count": 17
     },
     {
       "code": "262",
@@ -62,6 +62,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-30T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-20031",
+      "merger_name": "Atmos \u2013 specific BayWa r.e. renewable energy projects",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-27T12:00:00Z",
+      "determination_date": "2026-08-20T12:00:00Z"
     },
     {
       "merger_id": "WA-95035",
@@ -262,10 +273,10 @@
       "determination_date": "2025-11-26T12:00:00Z"
     }
   ],
-  "count": 20,
+  "count": 21,
   "phase_1_count": 6,
   "phase_2_count": 0,
-  "waiver_count": 14,
+  "waiver_count": 15,
   "active_count": 2,
   "phase_duration": {
     "average_days": 26.25,
@@ -275,10 +286,10 @@
     "completed_count": 4
   },
   "waiver_duration": {
-    "average_days": 20.357142857142858,
-    "median_days": 17.0,
-    "average_business_days": 13.5,
-    "median_business_days": 12.0,
-    "completed_count": 14
+    "average_days": 20.6,
+    "median_days": 18,
+    "average_business_days": 13.8,
+    "median_business_days": 12,
+    "completed_count": 15
   }
 }

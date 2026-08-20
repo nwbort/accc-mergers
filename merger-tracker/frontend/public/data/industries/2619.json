@@ -38,6 +38,17 @@
       "determination_date": null
     },
     {
+      "merger_id": "WA-20031",
+      "merger_name": "Atmos \u2013 specific BayWa r.e. renewable energy projects",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-27T12:00:00Z",
+      "determination_date": "2026-08-20T12:00:00Z"
+    },
+    {
       "merger_id": "WA-95035",
       "merger_name": "Igneo Infrastructure Partners \u2013 Green Squares Energy",
       "is_waiver": true,
@@ -159,10 +170,10 @@
       "determination_date": "2025-11-26T12:00:00Z"
     }
   ],
-  "count": 12,
+  "count": 13,
   "phase_1_count": 5,
   "phase_2_count": 0,
-  "waiver_count": 7,
+  "waiver_count": 8,
   "active_count": 1,
   "phase_duration": {
     "average_days": 26.25,
@@ -172,10 +183,10 @@
     "completed_count": 4
   },
   "waiver_duration": {
-    "average_days": 24.714285714285715,
-    "median_days": 28,
-    "average_business_days": 16.428571428571427,
-    "median_business_days": 18,
-    "completed_count": 7
+    "average_days": 24.625,
+    "median_days": 26.0,
+    "average_business_days": 16.625,
+    "median_business_days": 18.0,
+    "completed_count": 8
   }
 }
