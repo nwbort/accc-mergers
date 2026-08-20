@@ -1,6 +1,171 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-55031",
+      "merger_name": "Danone \u2013 MADE",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-05T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-16T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Minogue BidCo",
+          "identifier_type": null,
+          "identifier": "",
+          "canonical": {
+            "id": "danone",
+            "name": "Danone"
+          },
+          "party_page": {
+            "id": "danone",
+            "name": "Danone"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "TUCKER HOLDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "85 644 211 772",
+          "party_page": {
+            "id": "tucker-holdco-pty-ltd",
+            "name": "Tucker Holdco Pty Ltd"
+          }
+        },
+        {
+          "name": "Made (MJV) Pte Ltd",
+          "identifier_type": null,
+          "identifier": "UEN 202321698C",
+          "party_page": {
+            "id": "made-mjv-pte-ltd",
+            "name": "Made (MJV) Pte Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "DANONE SAPUTO DAIRY AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "32 143 172 258",
+          "canonical": {
+            "id": "danone",
+            "name": "Danone"
+          },
+          "party_page": {
+            "id": "danone",
+            "name": "Danone"
+          }
+        },
+        {
+          "name": "NUTRICIA AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "99 076 246 752",
+          "canonical": {
+            "id": "danone",
+            "name": "Danone"
+          },
+          "party_page": {
+            "id": "danone",
+            "name": "Danone"
+          }
+        },
+        {
+          "name": "Compagnie Gervais Danone",
+          "identifier_type": null,
+          "identifier": "SIREN 552 067 092",
+          "canonical": {
+            "id": "danone",
+            "name": "Danone"
+          },
+          "party_page": {
+            "id": "danone",
+            "name": "Danone"
+          }
+        },
+        {
+          "name": "Soci\u00e9t\u00e9 Anonyme des Eaux Min\u00e9rales d\u2019\u00c9vian S.A.",
+          "identifier_type": null,
+          "identifier": "SIREN 797 080 850",
+          "canonical": {
+            "id": "danone",
+            "name": "Danone"
+          },
+          "party_page": {
+            "id": "danone",
+            "name": "Danone"
+          }
+        },
+        {
+          "name": "Danone S.A.",
+          "identifier_type": null,
+          "identifier": "SIREN 552 032 534",
+          "canonical": {
+            "id": "danone",
+            "name": "Danone"
+          },
+          "party_page": {
+            "id": "danone",
+            "name": "Danone"
+          }
+        },
+        {
+          "name": "Made Brands Pte Ltd",
+          "identifier_type": null,
+          "identifier": "UEN 202239762W",
+          "party_page": {
+            "id": "made-brands-pte-ltd",
+            "name": "Made Brands Pte Ltd"
+          }
+        },
+        {
+          "name": "Minogue HoldCo",
+          "identifier_type": null,
+          "identifier": "",
+          "canonical": {
+            "id": "danone",
+            "name": "Danone"
+          },
+          "party_page": {
+            "id": "danone",
+            "name": "Danone"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1131",
+          "name": "Milk and Cream Processing"
+        },
+        {
+          "code": "1133",
+          "name": "Cheese and Other Dairy Product Manufacturing"
+        },
+        {
+          "code": "1140",
+          "name": "Fruit and Vegetable Processing"
+        },
+        {
+          "code": "1199",
+          "name": "Other Food Product Manufacturing n.e.c."
+        },
+        {
+          "code": "3603",
+          "name": "Dairy Produce Wholesaling"
+        },
+        {
+          "code": "3609",
+          "name": "Other Grocery Wholesaling"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/danone-%E2%80%93-made"
+    },
+    {
       "merger_id": "MN-75035",
       "merger_name": "Johns Lyng Group \u2013 C&M Build Group",
       "status": "Under assessment",

@@ -25,7 +25,7 @@
       "code": "752",
       "name": "State Government Administration",
       "level": "group",
-      "merger_count": 0
+      "merger_count": 1
     },
     {
       "code": "753",
@@ -48,6 +48,17 @@
   ],
   "mergers": [
     {
+      "merger_id": "WA-05034",
+      "merger_name": "Aurizon \u2013 transactions related to the relocation of a rail corridor at Moranbah North",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-28T12:00:00Z",
+      "determination_date": "2026-08-20T12:00:00Z"
+    },
+    {
       "merger_id": "WA-60012",
       "merger_name": "Coles \u2013 land around supermarket site in Balaclava, VIC",
       "is_waiver": true,
@@ -59,17 +70,17 @@
       "determination_date": "2026-04-23T12:00:00Z"
     }
   ],
-  "count": 1,
+  "count": 2,
   "phase_1_count": 0,
   "phase_2_count": 0,
-  "waiver_count": 1,
+  "waiver_count": 2,
   "active_count": 0,
   "phase_duration": null,
   "waiver_duration": {
-    "average_days": 29.0,
-    "median_days": 29,
-    "average_business_days": 19.0,
-    "median_business_days": 19,
-    "completed_count": 1
+    "average_days": 26.0,
+    "median_days": 26.0,
+    "average_business_days": 18.0,
+    "median_business_days": 18.0,
+    "completed_count": 2
   }
 }
