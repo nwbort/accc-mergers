@@ -38,6 +38,17 @@
       "determination_date": null
     },
     {
+      "merger_id": "WA-45022",
+      "merger_name": "Australian Motors Group \u2013 Mudgee Toyota",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-22T12:00:00Z",
+      "determination_date": "2026-08-20T12:00:00Z"
+    },
+    {
       "merger_id": "MN-70014",
       "merger_name": "Global Infrastructure Management \u2013 TCR",
       "is_waiver": false,
@@ -71,10 +82,10 @@
       "determination_date": null
     }
   ],
-  "count": 4,
+  "count": 5,
   "phase_1_count": 4,
   "phase_2_count": 0,
-  "waiver_count": 0,
+  "waiver_count": 1,
   "active_count": 1,
   "phase_duration": {
     "average_days": 28.0,
@@ -83,5 +94,11 @@
     "median_business_days": 18.0,
     "completed_count": 2
   },
-  "waiver_duration": null
+  "waiver_duration": {
+    "average_days": 29.0,
+    "median_days": 29,
+    "average_business_days": 21.0,
+    "median_business_days": 21,
+    "completed_count": 1
+  }
 }

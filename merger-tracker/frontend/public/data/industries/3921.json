@@ -38,6 +38,17 @@
       "determination_date": null
     },
     {
+      "merger_id": "WA-45022",
+      "merger_name": "Australian Motors Group \u2013 Mudgee Toyota",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-22T12:00:00Z",
+      "determination_date": "2026-08-20T12:00:00Z"
+    },
+    {
       "merger_id": "WA-30010",
       "merger_name": "MAG South Coast - Country Motor Company / Kinghorn Motors",
       "is_waiver": true,
@@ -82,10 +93,10 @@
       "determination_date": null
     }
   ],
-  "count": 5,
+  "count": 6,
   "phase_1_count": 3,
   "phase_2_count": 1,
-  "waiver_count": 1,
+  "waiver_count": 2,
   "active_count": 1,
   "phase_duration": {
     "average_days": 62.0,
@@ -95,10 +106,10 @@
     "completed_count": 2
   },
   "waiver_duration": {
-    "average_days": 25.0,
-    "median_days": 25,
-    "average_business_days": 18.0,
-    "median_business_days": 18,
-    "completed_count": 1
+    "average_days": 27.0,
+    "median_days": 27.0,
+    "average_business_days": 19.5,
+    "median_business_days": 19.5,
+    "completed_count": 2
   }
 }

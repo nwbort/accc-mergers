@@ -1,6 +1,193 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-25040",
+      "merger_name": "Modaxo - Conduent",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-05T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-16T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Modaxo Group, Inc",
+          "identifier_type": null,
+          "identifier": "",
+          "canonical": {
+            "id": "modaxo-group-inc",
+            "name": "Modaxo Group, Inc"
+          },
+          "party_page": {
+            "id": "modaxo-group-inc",
+            "name": "Modaxo Group, Inc"
+          }
+        },
+        {
+          "name": "Modaxo USA Holdings, Inc",
+          "identifier_type": null,
+          "identifier": "",
+          "canonical": {
+            "id": "modaxo-group-inc",
+            "name": "Modaxo Group, Inc"
+          },
+          "party_page": {
+            "id": "modaxo-group-inc",
+            "name": "Modaxo Group, Inc"
+          }
+        },
+        {
+          "name": "Modaxo France Holdings SAS",
+          "identifier_type": null,
+          "identifier": "",
+          "canonical": {
+            "id": "modaxo-group-inc",
+            "name": "Modaxo Group, Inc"
+          },
+          "party_page": {
+            "id": "modaxo-group-inc",
+            "name": "Modaxo Group, Inc"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "CONDUENT VICTORIA TICKETING SYSTEM PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "87 667 867 950",
+          "canonical": {
+            "id": "conduent-business-services-llc",
+            "name": "Conduent Business Services, LLC"
+          },
+          "party_page": {
+            "id": "conduent-business-services-llc",
+            "name": "Conduent Business Services, LLC"
+          }
+        },
+        {
+          "name": "CONDUENT BUSINESS SOLUTIONS (FRANCE) SAS",
+          "identifier_type": "ABN",
+          "identifier": "20 251 484 486",
+          "canonical": {
+            "id": "conduent-business-services-llc",
+            "name": "Conduent Business Services, LLC"
+          },
+          "party_page": {
+            "id": "conduent-business-services-llc",
+            "name": "Conduent Business Services, LLC"
+          }
+        },
+        {
+          "name": "CONDUENT BUSINESS SERVICES (AUSTRALIA) PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "58 136 828 914",
+          "canonical": {
+            "id": "conduent-business-services-llc",
+            "name": "Conduent Business Services, LLC"
+          },
+          "party_page": {
+            "id": "conduent-business-services-llc",
+            "name": "Conduent Business Services, LLC"
+          }
+        },
+        {
+          "name": "Conduent Business Services, LLC",
+          "identifier_type": null,
+          "identifier": "",
+          "canonical": {
+            "id": "conduent-business-services-llc",
+            "name": "Conduent Business Services, LLC"
+          },
+          "party_page": {
+            "id": "conduent-business-services-llc",
+            "name": "Conduent Business Services, LLC"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "TRAPEZE GROUP ASIA PACIFIC PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "16 010 832 318",
+          "canonical": {
+            "id": "modaxo-group-inc",
+            "name": "Modaxo Group, Inc"
+          },
+          "party_page": {
+            "id": "modaxo-group-inc",
+            "name": "Modaxo Group, Inc"
+          }
+        },
+        {
+          "name": "CONSTELLATION SOFTWARE AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "50 141 627 232",
+          "canonical": {
+            "id": "constellation-software-inc",
+            "name": "Constellation Software Inc."
+          },
+          "party_page": {
+            "id": "constellation-software-inc",
+            "name": "Constellation Software Inc."
+          }
+        },
+        {
+          "name": "MODAXO GROUP AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "44 166 272 724",
+          "canonical": {
+            "id": "modaxo-group-inc",
+            "name": "Modaxo Group, Inc"
+          },
+          "party_page": {
+            "id": "modaxo-group-inc",
+            "name": "Modaxo Group, Inc"
+          }
+        },
+        {
+          "name": "Constellation Software Inc",
+          "identifier_type": null,
+          "identifier": "LEI 549300B6PYHMCTDWQV29",
+          "canonical": {
+            "id": "constellation-software-inc",
+            "name": "Constellation Software Inc."
+          },
+          "party_page": {
+            "id": "constellation-software-inc",
+            "name": "Constellation Software Inc."
+          }
+        },
+        {
+          "name": "TRAPEZE MANAGEMENT HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "97 120 264 913",
+          "canonical": {
+            "id": "modaxo-group-inc",
+            "name": "Modaxo Group, Inc"
+          },
+          "party_page": {
+            "id": "modaxo-group-inc",
+            "name": "Modaxo Group, Inc"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        },
+        {
+          "code": "7299",
+          "name": "Other Administrative Services n.e.c."
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/modaxo-conduent"
+    },
+    {
       "merger_id": "MN-30030",
       "merger_name": "Eli Lilly and Company / AtaiBeckley Inc.",
       "status": "Under assessment",

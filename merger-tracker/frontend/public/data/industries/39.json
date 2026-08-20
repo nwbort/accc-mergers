@@ -19,13 +19,13 @@
       "code": "391",
       "name": "Motor Vehicle Retailing",
       "level": "group",
-      "merger_count": 14
+      "merger_count": 15
     },
     {
       "code": "392",
       "name": "Motor Vehicle Parts and Tyre Retailing",
       "level": "group",
-      "merger_count": 5
+      "merger_count": 6
     }
   ],
   "mergers": [
@@ -50,6 +50,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-13T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-45022",
+      "merger_name": "Australian Motors Group \u2013 Mudgee Toyota",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-22T12:00:00Z",
+      "determination_date": "2026-08-20T12:00:00Z"
     },
     {
       "merger_id": "WA-45016",
@@ -184,10 +195,10 @@
       "determination_date": null
     }
   ],
-  "count": 14,
+  "count": 15,
   "phase_1_count": 5,
   "phase_2_count": 1,
-  "waiver_count": 8,
+  "waiver_count": 9,
   "active_count": 2,
   "phase_duration": {
     "average_days": 50.666666666666664,
@@ -197,10 +208,10 @@
     "completed_count": 3
   },
   "waiver_duration": {
-    "average_days": 22.75,
-    "median_days": 23.5,
-    "average_business_days": 15.125,
-    "median_business_days": 16.0,
-    "completed_count": 8
+    "average_days": 23.444444444444443,
+    "median_days": 25,
+    "average_business_days": 15.777777777777779,
+    "median_business_days": 18,
+    "completed_count": 9
   }
 }

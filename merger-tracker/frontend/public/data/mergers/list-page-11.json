@@ -893,6 +893,72 @@
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/mccarrolls-automotive-group-kinghorn-motor-group-country-motor-company"
     },
     {
+      "merger_id": "WA-45022",
+      "merger_name": "Australian Motors Group \u2013 Mudgee Toyota",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-22T12:00:00Z",
+      "determination_publication_date": "2026-08-20T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "AMG HEADQUARTERS EIGHTEEN PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "698 081 819",
+          "party_page": {
+            "id": "amg-headquarters-eighteen-pty-ltd",
+            "name": "Amg Headquarters Eighteen Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "DAWNACO PTY. LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "23 003 837 643",
+          "party_page": {
+            "id": "dawnaco-pty-limited",
+            "name": "Dawnaco Pty. Limited"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Australian Motor Group Pty Ltd",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "australian-motor-group-pty-ltd",
+            "name": "Australian Motor Group Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3911",
+          "name": "Car Retailing"
+        },
+        {
+          "code": "3921",
+          "name": "Motor Vehicle Parts Retailing"
+        },
+        {
+          "code": "9412",
+          "name": "Automotive Body, Paint and Interior Repair"
+        },
+        {
+          "code": "9419",
+          "name": "Other Automotive Repair and Maintenance"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/australian-motors-group-%E2%80%93-mudgee-toyota"
+    },
+    {
       "merger_id": "WA-65030",
       "merger_name": "CVC Capital Partners \u2013 IFF\u2019s Food Ingredients business",
       "status": "Assessment completed",
@@ -4286,193 +4352,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/danaher-leica-biosystems-statlab"
-    },
-    {
-      "merger_id": "MN-25040",
-      "merger_name": "Modaxo - Conduent",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-05T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-09-16T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Modaxo Group, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "modaxo-group-inc",
-            "name": "Modaxo Group, Inc"
-          },
-          "party_page": {
-            "id": "modaxo-group-inc",
-            "name": "Modaxo Group, Inc"
-          }
-        },
-        {
-          "name": "Modaxo USA Holdings, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "modaxo-group-inc",
-            "name": "Modaxo Group, Inc"
-          },
-          "party_page": {
-            "id": "modaxo-group-inc",
-            "name": "Modaxo Group, Inc"
-          }
-        },
-        {
-          "name": "Modaxo France Holdings SAS",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "modaxo-group-inc",
-            "name": "Modaxo Group, Inc"
-          },
-          "party_page": {
-            "id": "modaxo-group-inc",
-            "name": "Modaxo Group, Inc"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "CONDUENT VICTORIA TICKETING SYSTEM PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "87 667 867 950",
-          "canonical": {
-            "id": "conduent-business-services-llc",
-            "name": "Conduent Business Services, LLC"
-          },
-          "party_page": {
-            "id": "conduent-business-services-llc",
-            "name": "Conduent Business Services, LLC"
-          }
-        },
-        {
-          "name": "CONDUENT BUSINESS SOLUTIONS (FRANCE) SAS",
-          "identifier_type": "ABN",
-          "identifier": "20 251 484 486",
-          "canonical": {
-            "id": "conduent-business-services-llc",
-            "name": "Conduent Business Services, LLC"
-          },
-          "party_page": {
-            "id": "conduent-business-services-llc",
-            "name": "Conduent Business Services, LLC"
-          }
-        },
-        {
-          "name": "CONDUENT BUSINESS SERVICES (AUSTRALIA) PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "58 136 828 914",
-          "canonical": {
-            "id": "conduent-business-services-llc",
-            "name": "Conduent Business Services, LLC"
-          },
-          "party_page": {
-            "id": "conduent-business-services-llc",
-            "name": "Conduent Business Services, LLC"
-          }
-        },
-        {
-          "name": "Conduent Business Services, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "conduent-business-services-llc",
-            "name": "Conduent Business Services, LLC"
-          },
-          "party_page": {
-            "id": "conduent-business-services-llc",
-            "name": "Conduent Business Services, LLC"
-          }
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "TRAPEZE GROUP ASIA PACIFIC PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "16 010 832 318",
-          "canonical": {
-            "id": "modaxo-group-inc",
-            "name": "Modaxo Group, Inc"
-          },
-          "party_page": {
-            "id": "modaxo-group-inc",
-            "name": "Modaxo Group, Inc"
-          }
-        },
-        {
-          "name": "CONSTELLATION SOFTWARE AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "50 141 627 232",
-          "canonical": {
-            "id": "constellation-software-inc",
-            "name": "Constellation Software Inc."
-          },
-          "party_page": {
-            "id": "constellation-software-inc",
-            "name": "Constellation Software Inc."
-          }
-        },
-        {
-          "name": "MODAXO GROUP AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "44 166 272 724",
-          "canonical": {
-            "id": "modaxo-group-inc",
-            "name": "Modaxo Group, Inc"
-          },
-          "party_page": {
-            "id": "modaxo-group-inc",
-            "name": "Modaxo Group, Inc"
-          }
-        },
-        {
-          "name": "Constellation Software Inc",
-          "identifier_type": null,
-          "identifier": "LEI 549300B6PYHMCTDWQV29",
-          "canonical": {
-            "id": "constellation-software-inc",
-            "name": "Constellation Software Inc."
-          },
-          "party_page": {
-            "id": "constellation-software-inc",
-            "name": "Constellation Software Inc."
-          }
-        },
-        {
-          "name": "TRAPEZE MANAGEMENT HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "97 120 264 913",
-          "canonical": {
-            "id": "modaxo-group-inc",
-            "name": "Modaxo Group, Inc"
-          },
-          "party_page": {
-            "id": "modaxo-group-inc",
-            "name": "Modaxo Group, Inc"
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "7000",
-          "name": "Computer System Design and Related Services"
-        },
-        {
-          "code": "7299",
-          "name": "Other Administrative Services n.e.c."
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/modaxo-conduent"
     }
   ],
   "page": 11,

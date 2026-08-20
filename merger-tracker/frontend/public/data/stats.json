@@ -1,6 +1,6 @@
 {
   "total_mergers": 231,
-  "total_waivers": 342,
+  "total_waivers": 343,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 178,
@@ -18,7 +18,7 @@
     "Assessment ceased": 2
   },
   "by_waiver_determination": {
-    "Approved": 328,
+    "Approved": 329,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.342105263157894,
-    "median_days": 19.0,
-    "average_business_days": 13.04093567251462,
-    "median_business_days": 13.0
+    "average_days": 19.370262390670554,
+    "median_days": 19,
+    "average_business_days": 13.064139941690962,
+    "median_business_days": 13
   },
   "top_industries": [
     {
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-45022",
+      "merger_name": "Australian Motors Group \u2013 Mudgee Toyota",
+      "determination": "Approved",
+      "determination_date": "2026-08-20T12:00:00Z",
+      "page_modified_datetime": "2026-08-20T17:16:44+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-30027",
       "merger_name": "Apax Funds \u2013 Techoraco Limited and Institutional Investor LLC",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "phase_transition",
       "is_waiver": false,
       "stage": "Phase 2 - detailed assessment"
-    },
-    {
-      "merger_id": "MN-55029",
-      "merger_name": "Estia Health \u2013 AnglicareSA residential aged care business",
-      "determination": "Approved",
-      "determination_date": "2026-08-18T12:00:00Z",
-      "page_modified_datetime": "2026-08-19T14:51:28+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
     }
   ]
 }

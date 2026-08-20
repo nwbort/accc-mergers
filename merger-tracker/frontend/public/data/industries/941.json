@@ -30,13 +30,13 @@
       "code": "9412",
       "name": "Automotive Body, Paint and Interior Repair",
       "level": "class",
-      "merger_count": 4
+      "merger_count": 5
     },
     {
       "code": "9419",
       "name": "Other Automotive Repair and Maintenance",
       "level": "class",
-      "merger_count": 9
+      "merger_count": 10
     }
   ],
   "mergers": [
@@ -61,6 +61,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-13T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-45022",
+      "merger_name": "Australian Motors Group \u2013 Mudgee Toyota",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-22T12:00:00Z",
+      "determination_date": "2026-08-20T12:00:00Z"
     },
     {
       "merger_id": "WA-50018",
@@ -151,10 +162,10 @@
       "determination_date": null
     }
   ],
-  "count": 10,
+  "count": 11,
   "phase_1_count": 5,
   "phase_2_count": 1,
-  "waiver_count": 4,
+  "waiver_count": 5,
   "active_count": 2,
   "phase_duration": {
     "average_days": 48.333333333333336,
@@ -164,10 +175,10 @@
     "completed_count": 3
   },
   "waiver_duration": {
-    "average_days": 17.0,
-    "median_days": 15.0,
-    "average_business_days": 11.75,
-    "median_business_days": 10.0,
-    "completed_count": 4
+    "average_days": 19.4,
+    "median_days": 15,
+    "average_business_days": 13.6,
+    "median_business_days": 10,
+    "completed_count": 5
   }
 }
