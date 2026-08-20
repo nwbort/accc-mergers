@@ -74,17 +74,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-65026",
-      "merger_name": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-07-22T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "WA-15035",
       "merger_name": "Waymark Hotels Group \u2013 Howard Springs Tavern, Howard Springs, NT",
       "is_waiver": true,
@@ -424,13 +413,24 @@
       "phase": "Phase 1",
       "notification_date": "2025-08-15T12:00:00Z",
       "determination_date": "2025-09-05T12:00:00Z"
+    },
+    {
+      "merger_id": "MN-65026",
+      "merger_name": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-22T12:00:00Z",
+      "determination_date": null
     }
   ],
   "count": 36,
   "phase_1_count": 13,
   "phase_2_count": 1,
   "waiver_count": 22,
-  "active_count": 5,
+  "active_count": 4,
   "phase_duration": {
     "average_days": 37.44444444444444,
     "median_days": 29,

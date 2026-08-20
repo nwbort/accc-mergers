@@ -48880,13 +48880,15 @@
     {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/mccarrolls-automotive-group-kinghorn-motor-group-country-motor-company",
       "merger_name": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-65026",
       "effective_notification_datetime": "2026-07-22T12:00:00Z",
       "original_notification_datetime": "2026-07-22T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-09-02T12:00:00Z",
-      "page_modified_datetime": "2026-07-30T11:56:12+10:00",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-08-20T10:53:09+10:00",
       "consultation_response_due_date": "2026-07-29T12:00:00Z",
       "acquirers": [
         {
@@ -48918,15 +48920,6 @@
       ],
       "targets": [
         {
-          "name": "Glenn Ype Buikstra Family Will Trust",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "glenn-ype-buikstra-family-will-trust",
-            "name": "Glenn Ype Buikstra Family Will Trust"
-          }
-        },
-        {
           "name": "Donna Lea Buikstra Family Will Trust",
           "identifier_type": null,
           "identifier": "",
@@ -48945,12 +48938,12 @@
           }
         },
         {
-          "name": "KJO PROPERTY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "33 169 760 178",
+          "name": "Glenn Ype Buikstra Family Will Trust",
+          "identifier_type": null,
+          "identifier": "",
           "party_page": {
-            "id": "kjo-property-pty-ltd",
-            "name": "Kjo Property Pty Ltd"
+            "id": "glenn-ype-buikstra-family-will-trust",
+            "name": "Glenn Ype Buikstra Family Will Trust"
           }
         },
         {
@@ -48960,6 +48953,15 @@
           "party_page": {
             "id": "kinghorn-motors-pty-ltd",
             "name": "Kinghorn Motors Pty Ltd"
+          }
+        },
+        {
+          "name": "KJO PROPERTY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "33 169 760 178",
+          "party_page": {
+            "id": "kjo-property-pty-ltd",
+            "name": "Kjo Property Pty Ltd"
           }
         }
       ],
@@ -49018,7 +49020,7 @@
           "name": "Other Automotive Repair and Maintenance"
         }
       ],
-      "merger_description": "McCarroll's of Moss Vale Pty Ltd (**McCarroll's**) (via a special purpose vehicle, MAG South Coast Pty Ltd) proposes to acquire:\n\n(a) substantially all of the assets of the motor vehicle dealership business owned by Kinghorn Motors Pty Ltd (**Kinghorn Motors**); and\n\n(b) substantially all of the assets of the motor vehicle dealership business of Country Motor Company Pty Ltd (**Country Motors**) (the **Acquisition**).\n\nAs part of the same transaction, McCarroll's (via McCarrolls Property Holdings Pty Ltd) also proposes to acquire the land on which the motor dealership businesses owned by Kinghorn Motors and Country Motors are operated.\n\nMcCarroll's is a private new and used car retailing business that operates 15 franchised automotive dealerships across 10 locations in the following primary market areas (PMAs): Sydney, North Shore, Hornsby and Newcastle. It does not operate in Nowra or the Illawarra region.\n\nKinghorn Motors is a new and used car retailing business that operates two franchised automotive dealerships in the Nowra PMA (located in the Illawarra region). Kinghorn Motors represents two OEM vehicle brands as an authorised dealer, being Ford and Volkswagen. Kinghorn Motors also supplies OEM spare parts, aftermarket servicing and finance solutions.\n\nCountry Motors is a new and used car retailing business that operates three franchised dealerships in Bomaderry, NSW (also located within the Nowra PMA). Country Motors represents three OEM vehicle brands: Hyundai, Isuzu and GWM. Country Motors also supplies OEM spare parts, aftermarket servicing and finance solutions.",
+      "merger_description": "McCarroll's of Moss Vale Pty Ltd (**McCarroll\u2019s**) (via a special purpose vehicle, MAG South Coast Pty Ltd) proposes to acquire, through two separate and independent transactions, substantially all of the assets (being all the assets necessary for the operation of the business) of:\n\n* the motor vehicle dealership business owned by Kinghorn Motors Pty Ltd (**KMG**)\n* the motor vehicle dealership business owned by Country Motor Company Pty Ltd (**CMC**).\n\nAs part of the same transactions, McCarroll's (via McCarroll Property Holdings Pty Ltd) proposes to acquire the land on which the KMG and CMC motor dealership businesses are operated.\n\n(together, the\u00a0**Acquisitions**)",
       "events": [
         {
           "date": "2026-07-22T12:00:00Z",
@@ -49033,10 +49035,15 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-08-20T12:00:00Z",
+          "title": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company - Phase 1 determination",
+          "display_title": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company - Phase 1 determination",
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
       "has_conditions": false,
       "phase_1_determination": null,
       "phase_1_determination_date": null,

@@ -750,8 +750,8 @@
     {
       "merger_id": "MN-65026",
       "merger_name": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "has_conditions": false,
       "is_waiver": false,
       "under_appeal": false,
@@ -790,15 +790,6 @@
       ],
       "targets": [
         {
-          "name": "Glenn Ype Buikstra Family Will Trust",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "glenn-ype-buikstra-family-will-trust",
-            "name": "Glenn Ype Buikstra Family Will Trust"
-          }
-        },
-        {
           "name": "Donna Lea Buikstra Family Will Trust",
           "identifier_type": null,
           "identifier": "",
@@ -817,12 +808,12 @@
           }
         },
         {
-          "name": "KJO PROPERTY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "33 169 760 178",
+          "name": "Glenn Ype Buikstra Family Will Trust",
+          "identifier_type": null,
+          "identifier": "",
           "party_page": {
-            "id": "kjo-property-pty-ltd",
-            "name": "Kjo Property Pty Ltd"
+            "id": "glenn-ype-buikstra-family-will-trust",
+            "name": "Glenn Ype Buikstra Family Will Trust"
           }
         },
         {
@@ -832,6 +823,15 @@
           "party_page": {
             "id": "kinghorn-motors-pty-ltd",
             "name": "Kinghorn Motors Pty Ltd"
+          }
+        },
+        {
+          "name": "KJO PROPERTY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "33 169 760 178",
+          "party_page": {
+            "id": "kjo-property-pty-ltd",
+            "name": "Kjo Property Pty Ltd"
           }
         }
       ],
