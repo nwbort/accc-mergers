@@ -73,6 +73,11 @@ deliberately generous ceiling (``max_days``) — each also given as the date the
 ID is reckoned to have been issued, which is where pre-notification started.
 See :func:`compute_estimate`.
 
+Those guesses are then reconciled along each counter by
+:func:`_enforce_counter_order`, because a case weighed on its own witnesses can
+otherwise come out ahead of one below it in the sequence — which is precisely
+what the counter says cannot happen.
+
 Unlike :mod:`static_data.phase1_estimate`, these estimates are **not** frozen.
 A bound is only as tight as the cases sitting above and below it in the
 counter, so it genuinely improves as later IDs surface; recomputing every run
@@ -263,6 +268,10 @@ def compute_estimate(
     bounds were already carrying, ``id_issued_before`` for the floor and
     ``id_issued_after`` for the ceiling.
 
+    This weighs one case against its own witnesses only;
+    :func:`_enforce_counter_order` afterwards reconciles the guesses of a whole
+    group so they run in sequence order.
+
     ``None`` when the counter says nothing about this case — it sits at the top
     of its group with nothing above it and no waiver below it.
     """
@@ -283,6 +292,16 @@ def compute_estimate(
         issued_after = min(lower_witness[0], filed)
         max_days = (filed - issued_after).days
 
+    # ``issued_after`` above is deliberately generous: it pads every waiver
+    # anchor with lag_max, the most lodgement delay any waiver is known to have
+    # taken, so that max_days stays a safe ceiling. The central guess is a
+    # different question and answers to ``lag`` throughout — the same anchor
+    # read at the lag we actually believe. Mixing the padded date into it drags
+    # the guess earlier than the method claims, and can push it past a
+    # neighbouring case's guess in a direction the counter rules out.
+    tight_witness = _issued_after(group, position["seq"], lag)
+    issued_after_tight = min(tight_witness[0], filed) if tight_witness else issued_after
+
     # Both sides known: read the issue date off the counter by interpolating
     # between the waivers bracketing this sequence number, then clamp it into
     # the range the bounds already proved. Falls back to the midpoint of the
@@ -290,24 +309,15 @@ def compute_estimate(
     if issued_before is not None and issued_after is not None:
         interpolated = _interpolate_issue_date(group, position["seq"], lag)
         if interpolated is None:
-            interpolated = issued_after + (issued_before - issued_after) / 2
-        issued = min(max(interpolated, issued_after), issued_before)
+            interpolated = issued_after_tight + (issued_before - issued_after_tight) / 2
+        issued = min(max(interpolated, issued_after_tight), issued_before)
         estimated_days = (filed - issued).days
         basis = "bracketed"
     elif min_days is not None:
         estimated_days = min_days
         basis = "lower-bound-only"
     else:
-        # max_days deliberately uses lag_max, the most generous lodgement delay
-        # any waiver is known to have taken, to keep it a safe ceiling. Reusing
-        # that padded value as the central guess would understate id_issued_estimated,
-        # sometimes past a neighbouring, more tightly bracketed case with a
-        # lower sequence number — which can never have been issued later.
-        # Re-anchor the central guess on the same witness using the tight
-        # `lag`, matching every other basis.
-        tight_witness = _issued_after(group, position["seq"], lag)
-        issued_central = min(tight_witness[0], filed) if tight_witness else issued_after
-        estimated_days = (filed - issued_central).days
+        estimated_days = (filed - issued_after_tight).days
         basis = "upper-bound-only"
 
     # The same estimate as a date: the day pre-notification is reckoned to have
@@ -328,6 +338,36 @@ def compute_estimate(
     }
 
 
+def _enforce_counter_order(estimates: list[tuple[dict, dict]]) -> None:
+    """Make estimated issue dates run in sequence order, in place.
+
+    :func:`compute_estimate` weighs each case on its own witnesses, so two
+    neighbours can come out in an order the counter forbids — most visibly
+    where a case at the very top of its group has only a waiver below it to go
+    on and lands earlier than a better-bracketed case beneath it.
+    ``seq(A) < seq(B) => issued(A) <= issued(B)`` is the assumption the whole
+    method rests on, so a case is dragged up to its predecessor's estimate
+    whenever it falls behind: the case with witnesses on both sides is the
+    better informed of the two, and its estimate is evidence about everything
+    above it.
+
+    Raising is always the safe direction. ``id_issued_before`` is itself
+    non-decreasing in sequence (anything above B is also above A, and A's own
+    ceiling includes B), so an estimate lifted to a lower-sequence neighbour's
+    can never overshoot its own proven ceiling, and lifting only ever moves an
+    estimate further from ``id_issued_after``. Both bounds therefore still hold
+    afterwards, unchanged.
+    """
+    earliest: date | None = None
+    for position, estimate in sorted(estimates, key=lambda pair: pair[0]["seq"]):
+        issued = date.fromisoformat(estimate["id_issued_estimated"])
+        if earliest is not None and issued < earliest:
+            issued = earliest
+            estimate["estimated_days"] = (position["filed"] - issued).days
+            estimate["id_issued_estimated"] = issued.isoformat()
+        earliest = issued
+
+
 def attach_prenotification_estimates(
     enriched: list,
     lag: int = WAIVER_LODGEMENT_LAG_DAYS,
@@ -344,7 +384,7 @@ def attach_prenotification_estimates(
     for position in positions:
         groups.setdefault(position["group"], []).append(position)
 
-    attached = 0
+    attached: dict[str, list[tuple[dict, dict]]] = {}
     for position in positions:
         if position["kind"] != "MN":
             continue
@@ -354,5 +394,10 @@ def attach_prenotification_estimates(
         if estimate is None:
             continue
         position["merger"]["pre_notification"] = estimate
-        attached += 1
-    return attached
+        attached.setdefault(position["group"], []).append((position, estimate))
+
+    # Each group's counter runs on its own, so the ordering is reconciled within
+    # a group and never across them.
+    for group_estimates in attached.values():
+        _enforce_counter_order(group_estimates)
+    return sum(len(group_estimates) for group_estimates in attached.values())
