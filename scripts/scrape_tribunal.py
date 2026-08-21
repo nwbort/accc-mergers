@@ -42,6 +42,16 @@ Cloudflare ties the clearance to the client that earned it, down to its TLS
 fingerprint, so a Python-side fetch carrying those cookies is still answered
 with 403. That requests-based path survives only as a fallback.
 
+Cloudflare judges each request on its own, and now and then it decides to
+challenge one of those document fetches. A subresource request has nowhere to
+display a challenge, so it is refused with a 403 (``cf-mitigated: challenge``)
+that no amount of cookie-passing can satisfy — which is how a single document
+ended up recorded but unmirrored while the seventeen alongside it downloaded
+fine. Two things answer that: the fetch is retried a few seconds apart
+(Cloudflare usually waves the next one through), and if it is still refused the
+scraper *navigates* to the document, because a top-level request can be
+challenged and cleared, and then comes back and fetches it again.
+
 Page format
 -----------
 Each matter page contains one or more document tables:
@@ -185,6 +195,22 @@ CHALLENGE_MARKERS = (
 # How long to wait for a single page's challenge to clear before giving up.
 MAX_WAIT_SECONDS = 90
 
+# How many times to ask the browser for one document, and how long to wait
+# between tries. Cloudflare decides per request: the same file that downloads
+# first go on one run is sometimes answered with a 403 carrying
+# ``cf-mitigated: challenge`` on the next. A challenge can only be *solved* by
+# a request that can display it, so a fetch() answered that way is simply
+# refused — but the refusal is transient, and asking again a few seconds later
+# usually goes straight through.
+BROWSER_FETCH_ATTEMPTS = 3
+BROWSER_FETCH_RETRY_SECONDS = 5
+
+# Statuses worth another try. 403 is here because that is how Cloudflare turns
+# away a request it wanted to challenge, not because these public documents are
+# actually forbidden. 404/410 are deliberately absent: a link that points at
+# nothing will still point at nothing in five seconds.
+RETRYABLE_FETCH_STATUSES = frozenset({403, 408, 425, 429, 500, 502, 503, 504})
+
 # nodriver's default args, which help the browser look like a normal user
 # session rather than an automated one.
 CHROME_ARGS = [
@@ -324,7 +350,10 @@ _BROWSER_FETCH_JS = """
 (async () => {
   try {
     const resp = await fetch(%s, {credentials: 'include', redirect: 'follow'});
-    if (!resp.ok) return 'error:HTTP ' + resp.status;
+    if (!resp.ok) {
+      const mitigated = resp.headers.get('cf-mitigated');
+      return 'error:HTTP ' + resp.status + (mitigated ? ' (cf-mitigated: ' + mitigated + ')' : '');
+    }
     const bytes = new Uint8Array(await resp.arrayBuffer());
     let binary = '';
     const CHUNK = 0x8000;
@@ -339,6 +368,50 @@ _BROWSER_FETCH_JS = """
 """
 
 
+def _retryable_fetch_failure(detail: str) -> bool:
+    """True if a failed in-page fetch is worth repeating.
+
+    ``detail`` is whatever the page reported — ``HTTP 403 (cf-mitigated:
+    challenge)``, a network-level ``TypeError: Failed to fetch``, or a note that
+    evaluate() handed back something unexpected. Only a status we know to be
+    durable (a 404 for a link that points at nothing) stops the retries.
+    """
+    status = re.match(r"HTTP (\d{3})", detail)
+    if status:
+        return int(status.group(1)) in RETRYABLE_FETCH_STATUSES
+    # A network error or a CDP hiccup: no status to judge, so try again.
+    return True
+
+
+async def _browser_fetch(tab, url: str) -> tuple[bytes | None, str]:
+    """Run one in-page fetch. Returns ``(bytes, "")`` or ``(None, detail)``."""
+    try:
+        payload = await tab.evaluate(
+            _BROWSER_FETCH_JS % json.dumps(url), await_promise=True
+        )
+    except Exception as e:
+        return None, f"evaluate raised {e}"
+
+    if not isinstance(payload, str) or not payload.startswith(_BROWSER_FETCH_OK):
+        # Either the page reported a failure ("error:HTTP 403") or evaluate gave
+        # back something other than our string (a CDP ExceptionDetails, say).
+        if isinstance(payload, str) and payload.startswith(_BROWSER_FETCH_ERROR):
+            return None, payload[len(_BROWSER_FETCH_ERROR):]
+        return None, f"unexpected result {type(payload).__name__}"
+
+    try:
+        data = base64.b64decode(payload[len(_BROWSER_FETCH_OK):], validate=True)
+    except (ValueError, binascii.Error) as e:
+        return None, f"undecodable payload: {e}"
+
+    if not data:
+        return None, "no bytes returned"
+    if _is_challenge_payload(data):
+        # A challenge served with a 200, which the status check can't catch.
+        return None, "Cloudflare challenge instead of the file"
+    return data, ""
+
+
 async def download_document_via_browser(tab, merger_id: str, url: str) -> str | None:
     """Download a tribunal document by fetching it from inside the live browser.
 
@@ -348,6 +421,14 @@ async def download_document_via_browser(tab, merger_id: str, url: str) -> str | 
     still answered with 403 even when the browser's User-Agent is sent along.
     Running the fetch in the page's own context means the request comes from
     Chrome itself, and is served normally.
+
+    Cloudflare still turns a fetch away now and then: it answers with a 403
+    carrying ``cf-mitigated: challenge``, a challenge no subresource request can
+    display and therefore none can solve. That verdict is per request and not
+    sticky, so the fetch is simply repeated (:data:`BROWSER_FETCH_ATTEMPTS`
+    times, :data:`BROWSER_FETCH_RETRY_SECONDS` apart) before giving up. Without
+    that, one unlucky request left a document recorded but unmirrored for a
+    whole day, until the next scheduled run happened to be luckier.
 
     Returns the ``url_gh`` serve path on success, or None so the caller can fall
     back to :func:`download_document`.
@@ -360,42 +441,21 @@ async def download_document_via_browser(tab, merger_id: str, url: str) -> str | 
     if local_path.exists():
         return url_gh
 
-    try:
-        payload = await tab.evaluate(
-            _BROWSER_FETCH_JS % json.dumps(url), await_promise=True
-        )
-    except Exception as e:
-        print(f"    Warning: browser fetch failed for {url}: {e}", file=sys.stderr)
-        return None
+    for attempt in range(1, BROWSER_FETCH_ATTEMPTS + 1):
+        data, detail = await _browser_fetch(tab, url)
+        if data is not None:
+            break
 
-    if not isinstance(payload, str) or not payload.startswith(_BROWSER_FETCH_OK):
-        # Either the page reported a failure ("error:HTTP 403") or evaluate gave
-        # back something other than our string (a CDP ExceptionDetails, say).
-        if isinstance(payload, str) and payload.startswith(_BROWSER_FETCH_ERROR):
-            detail = payload[len(_BROWSER_FETCH_ERROR):]
-        else:
-            detail = f"unexpected result {type(payload).__name__}"
+        retryable = _retryable_fetch_failure(detail)
+        last = attempt == BROWSER_FETCH_ATTEMPTS
         print(
-            f"    Warning: browser fetch of {url} failed: {detail}",
+            f"    Warning: browser fetch of {url} failed"
+            f" (attempt {attempt}/{BROWSER_FETCH_ATTEMPTS}): {detail}",
             file=sys.stderr,
         )
-        return None
-
-    try:
-        data = base64.b64decode(payload[len(_BROWSER_FETCH_OK):], validate=True)
-    except (ValueError, binascii.Error) as e:
-        print(f"    Warning: undecodable browser payload for {url}: {e}", file=sys.stderr)
-        return None
-
-    if not data:
-        print(f"    Warning: browser fetch of {url} returned no bytes", file=sys.stderr)
-        return None
-    if _is_challenge_payload(data):
-        print(
-            f"    Warning: {url} returned a Cloudflare challenge, not saving",
-            file=sys.stderr,
-        )
-        return None
+        if last or not retryable:
+            return None
+        await asyncio.sleep(BROWSER_FETCH_RETRY_SECONDS)
 
     try:
         local_path.parent.mkdir(parents=True, exist_ok=True)
@@ -797,6 +857,45 @@ async def fetch_page(browser, url: str):
     return tab, html
 
 
+async def clear_challenge_by_visiting(browser, doc_url: str, matter_url: str):
+    """Visit a document directly so Cloudflare can challenge a request that is
+    able to answer, then come back to the matter page.
+
+    A fetch() issued from the matter page is a subresource request: when
+    Cloudflare decides to challenge it there is nowhere to render the challenge,
+    so it is refused outright with a 403. A top-level navigation to the same URL
+    *can* be challenged — and cleared, by the same wait-and-click loop that gets
+    us onto the matter pages — after which the fetch is served normally.
+
+    Returns the tab showing the matter page again, or None if that page could
+    not be re-loaded, in which case the caller keeps the tab it already had.
+    """
+    print(f"    Visiting {doc_url} directly to clear the challenge", flush=True)
+    try:
+        _, doc_html = await fetch_page(browser, doc_url)
+        if doc_html is None:
+            print(
+                f"    Warning: the challenge on {doc_url} did not clear either",
+                file=sys.stderr,
+            )
+        tab, html = await fetch_page(browser, matter_url)
+    except Exception as e:
+        # Navigating to a document is best-effort: some of them are served as a
+        # download rather than a page, which Chrome reports as an aborted
+        # navigation. Never let that take the rest of the matter down with it.
+        print(f"    Warning: visiting {doc_url} failed: {e}", file=sys.stderr)
+        return None
+
+    if html is None:
+        print(
+            f"    Warning: could not return to {matter_url} after visiting the "
+            f"document",
+            file=sys.stderr,
+        )
+        return None
+    return tab
+
+
 async def browser_session_headers(browser, tab) -> dict:
     """Build the Cookie + User-Agent headers from the live browser session.
 
@@ -919,10 +1018,30 @@ async def scrape_matters(
             # Python is fingerprinted and answered with 403.
             if do_download:
                 missing: list[str] = []
+                # Visiting a document to clear a challenge costs a page load
+                # each way, and one clearance covers the whole origin, so it is
+                # worth doing at most once per matter: if it doesn't help the
+                # first document it won't help the next.
+                visited_to_clear = False
                 for doc in scraped:
                     if not doc.get("url"):
                         continue
                     url_gh = await download_document_via_browser(tab, mid, doc["url"])
+                    if (
+                        url_gh is None
+                        and not visited_to_clear
+                        and is_safe_document_url(doc["url"])
+                    ):
+                        visited_to_clear = True
+                        tab = (
+                            await clear_challenge_by_visiting(
+                                browser, doc["url"], url
+                            )
+                            or tab
+                        )
+                        url_gh = await download_document_via_browser(
+                            tab, mid, doc["url"]
+                        )
                     if url_gh is None:
                         if session_headers is None:
                             session_headers = await browser_session_headers(
