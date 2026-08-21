@@ -9,7 +9,7 @@
       "code": "62",
       "name": "Finance",
       "level": "subdivision",
-      "merger_count": 101
+      "merger_count": 102
     },
     {
       "code": "63",
@@ -189,6 +189,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-03-03T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-15038",
+      "merger_name": "Cinven \u2013 Salsify",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-06T12:00:00Z",
+      "determination_date": "2026-08-21T12:00:00Z"
     },
     {
       "merger_id": "WA-45025",
@@ -1643,10 +1654,10 @@
       "determination_date": null
     }
   ],
-  "count": 147,
+  "count": 148,
   "phase_1_count": 37,
   "phase_2_count": 2,
-  "waiver_count": 108,
+  "waiver_count": 109,
   "active_count": 15,
   "phase_duration": {
     "average_days": 28.36,
@@ -1656,10 +1667,10 @@
     "completed_count": 25
   },
   "waiver_duration": {
-    "average_days": 19.37962962962963,
-    "median_days": 18.5,
-    "average_business_days": 13.037037037037036,
-    "median_business_days": 12.0,
-    "completed_count": 108
+    "average_days": 19.339449541284402,
+    "median_days": 18,
+    "average_business_days": 13.01834862385321,
+    "median_business_days": 12,
+    "completed_count": 109
   }
 }

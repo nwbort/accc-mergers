@@ -1,6 +1,6 @@
 {
   "total_mergers": 235,
-  "total_waivers": 346,
+  "total_waivers": 347,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 179,
@@ -18,7 +18,7 @@
     "Assessment ceased": 2
   },
   "by_waiver_determination": {
-    "Approved": 332,
+    "Approved": 333,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.393063583815028,
-    "median_days": 19.0,
-    "average_business_days": 13.089595375722544,
-    "median_business_days": 13.0
+    "average_days": 19.380403458213255,
+    "median_days": 19,
+    "average_business_days": 13.0835734870317,
+    "median_business_days": 13
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 93
+      "count": 94
     },
     {
       "name": "Computer System Design and Related Services",
@@ -68,7 +68,7 @@
     },
     {
       "name": "Software Publishing",
-      "count": 37
+      "count": 38
     },
     {
       "name": "Non-Residential Property Operators",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-15038",
+      "merger_name": "Cinven \u2013 Salsify",
+      "determination": "Approved",
+      "determination_date": "2026-08-21T12:00:00Z",
+      "page_modified_datetime": "2026-08-21T17:01:10+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-45025",
       "merger_name": "Acclime Corporate Services Australia \u2013 Polar 993 Group",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-15033",
-      "merger_name": "Armira and TA Associates \u2013 Intersurgical Aktiengesellschaft AG",
-      "determination": "Approved",
-      "determination_date": "2026-08-19T12:00:00Z",
-      "page_modified_datetime": "2026-08-19T17:50:24+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]
