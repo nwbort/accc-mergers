@@ -757,14 +757,14 @@
       "under_appeal": false,
       "is_refiled": false,
       "effective_notification_datetime": "2026-07-22T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-08-20T12:00:00Z",
       "end_of_determination_period": "2026-09-02T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "MCCARROLL PROPERTY HOLDINGS PTY LTD",
+          "name": "MAG SOUTH COAST PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "64 676 724 306",
+          "identifier": "70 683 627 590",
           "canonical": {
             "id": "mccarroll-s-automotive-group",
             "name": "McCarroll's Automotive Group"
@@ -775,9 +775,9 @@
           }
         },
         {
-          "name": "MAG SOUTH COAST PTY LTD",
+          "name": "MCCARROLL PROPERTY HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "70 683 627 590",
+          "identifier": "64 676 724 306",
           "canonical": {
             "id": "mccarroll-s-automotive-group",
             "name": "McCarroll's Automotive Group"
@@ -799,6 +799,24 @@
           }
         },
         {
+          "name": "KJO PROPERTY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "33 169 760 178",
+          "party_page": {
+            "id": "kjo-property-pty-ltd",
+            "name": "Kjo Property Pty Ltd"
+          }
+        },
+        {
+          "name": "KINGHORN MOTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "33 000 220 557",
+          "party_page": {
+            "id": "kinghorn-motors-pty-ltd",
+            "name": "Kinghorn Motors Pty Ltd"
+          }
+        },
+        {
           "name": "COUNTRY MOTOR COMPANY PTY LTD",
           "identifier_type": "ABN",
           "identifier": "11 002 189 228",
@@ -815,36 +833,9 @@
             "id": "glenn-ype-buikstra-family-will-trust",
             "name": "Glenn Ype Buikstra Family Will Trust"
           }
-        },
-        {
-          "name": "KINGHORN MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "33 000 220 557",
-          "party_page": {
-            "id": "kinghorn-motors-pty-ltd",
-            "name": "Kinghorn Motors Pty Ltd"
-          }
-        },
-        {
-          "name": "KJO PROPERTY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "33 169 760 178",
-          "party_page": {
-            "id": "kjo-property-pty-ltd",
-            "name": "Kjo Property Pty Ltd"
-          }
         }
       ],
       "other_parties": [
-        {
-          "name": "MAG BODY CORP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "93 676 724 495",
-          "party_page": {
-            "id": "mag-body-corp-pty-ltd",
-            "name": "Mag Body Corp Pty Ltd"
-          }
-        },
         {
           "name": "MAG NORTHERN BEACHES PTY LTD",
           "identifier_type": "ABN",
@@ -865,6 +856,15 @@
           "party_page": {
             "id": "mccarroll-s-automotive-group",
             "name": "McCarroll's Automotive Group"
+          }
+        },
+        {
+          "name": "MAG BODY CORP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "93 676 724 495",
+          "party_page": {
+            "id": "mag-body-corp-pty-ltd",
+            "name": "Mag Body Corp Pty Ltd"
           }
         }
       ],

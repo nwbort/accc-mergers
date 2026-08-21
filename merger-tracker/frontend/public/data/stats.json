@@ -8,7 +8,7 @@
     "Assessment ceased": 3
   },
   "by_determination": {
-    "Approved": 172,
+    "Approved": 173,
     "Referred to phase 2": 9,
     "Approved with conditions": 2
   },
@@ -22,28 +22,28 @@
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 175,
+    "cleared": 176,
     "not_cleared": 2,
-    "total": 177,
+    "total": 178,
     "rate": 0.989
   },
   "phase_duration": {
-    "average_days": 29.939890710382514,
-    "median_days": 26,
-    "average_business_days": 20.005464480874316,
-    "median_business_days": 17,
+    "average_days": 29.934782608695652,
+    "median_days": 26.0,
+    "average_business_days": 20.01086956521739,
+    "median_business_days": 17.0,
     "percentiles": {
       "day15": {
         "count": 40,
-        "percentage": 21.9
+        "percentage": 21.7
       },
       "day20": {
         "count": 137,
-        "percentage": 74.9
+        "percentage": 74.5
       },
       "day30": {
-        "count": 171,
-        "percentage": 93.4
+        "count": 172,
+        "percentage": 93.5
       }
     }
   },
@@ -122,7 +122,7 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-18T12:00:00Z",
-      "page_modified_datetime": "2026-08-19T17:02:19+10:00",
+      "page_modified_datetime": "2026-08-21T10:14:50+10:00",
       "is_waiver": false,
       "is_refiled": false
     },
@@ -132,7 +132,7 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-18T12:00:00Z",
-      "page_modified_datetime": "2026-08-19T16:21:43+10:00",
+      "page_modified_datetime": "2026-08-21T09:34:57+10:00",
       "is_waiver": false,
       "is_refiled": false
     },
@@ -218,6 +218,17 @@
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "MN-65026",
+      "merger_name": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company",
+      "determination": "Approved",
+      "determination_date": "2026-08-20T12:00:00Z",
+      "page_modified_datetime": "2026-08-21T09:33:36+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
     {
       "merger_id": "WA-20031",
       "merger_name": "Atmos \u2013 specific BayWa r.e. renewable energy projects",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-19T12:00:00Z",
       "page_modified_datetime": "2026-08-19T16:32:05+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-05041",
-      "merger_name": "Pemba - Hewison Private Wealth",
-      "determination": "Approved",
-      "determination_date": "2026-08-19T12:00:00Z",
-      "page_modified_datetime": "2026-08-19T16:30:55+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

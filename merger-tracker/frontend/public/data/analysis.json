@@ -662,6 +662,11 @@
         "in_progress": false
       },
       {
+        "business_days": 21,
+        "calendar_days": 29,
+        "in_progress": false
+      },
+      {
         "business_days": 17,
         "calendar_days": 25,
         "in_progress": false
@@ -919,17 +924,17 @@
     ],
     "stats": {
       "average": 20.0,
-      "median": 17,
+      "median": 17.0,
       "min": 15,
       "max": 59,
-      "count": 183
+      "count": 184
     },
     "calendar_stats": {
       "average": 29.9,
-      "median": 26,
+      "median": 26.0,
       "min": 21,
       "max": 103,
-      "count": 183
+      "count": 184
     }
   },
   "waiver_duration": {
@@ -2403,28 +2408,28 @@
       42,
       41,
       46,
-      51
+      50
     ],
-    "as_at": "2026-08-20"
+    "as_at": "2026-08-21"
   },
   "industry_phase1_duration": [
     {
       "code": "S",
       "name": "Other Services",
-      "average_business_days": 29.4,
-      "median_business_days": 22.5,
-      "average_calendar_days": 43.5,
-      "median_calendar_days": 33.0,
-      "count": 8
+      "average_business_days": 28.4,
+      "median_business_days": 21,
+      "average_calendar_days": 41.9,
+      "median_calendar_days": 32,
+      "count": 9
     },
     {
       "code": "G",
       "name": "Retail Trade",
-      "average_business_days": 24.5,
-      "median_business_days": 18.0,
-      "average_calendar_days": 38.3,
-      "median_calendar_days": 27.5,
-      "count": 20
+      "average_business_days": 24.3,
+      "median_business_days": 18,
+      "average_calendar_days": 37.9,
+      "median_calendar_days": 28,
+      "count": 21
     },
     {
       "code": "B",
@@ -2447,11 +2452,11 @@
     {
       "code": "L",
       "name": "Rental, Hiring and Real Estate Services",
-      "average_business_days": 22.9,
-      "median_business_days": 20.0,
-      "average_calendar_days": 34.9,
-      "median_calendar_days": 29.0,
-      "count": 14
+      "average_business_days": 22.7,
+      "median_business_days": 21,
+      "average_calendar_days": 34.5,
+      "median_calendar_days": 29,
+      "count": 15
     },
     {
       "code": "A",
@@ -2574,11 +2579,11 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 404,
+      "count": 405,
       "outcome_mix": {
-        "Approved": 404
+        "Approved": 405
       },
-      "median_phase_1_business_days": 17
+      "median_phase_1_business_days": 17.0
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -2609,9 +2614,9 @@
     },
     {
       "division": "Unknown",
-      "count": 4,
+      "count": 3,
       "outcome_mix": {
-        "Approved": 3,
+        "Approved": 2,
         "Unknown": 1
       },
       "median_phase_1_business_days": 40.0
@@ -2633,7 +2638,7 @@
       "18": 18,
       "19": 15,
       "20": 8,
-      "21": 5,
+      "21": 6,
       "22": 6,
       "23": 1,
       "24": 5,
@@ -2651,9 +2656,9 @@
     },
     "stats": {
       "mean_used_bd": 18.1,
-      "median_used_bd": 17.0,
+      "median_used_bd": 17,
       "pct_decided_final_3_bd": 3.6,
-      "count": 168
+      "count": 169
     },
     "extended_count": 6
   },
@@ -2685,28 +2690,19 @@
     {
       "code": "S",
       "name": "Other Services",
-      "approved": 5,
+      "approved": 6,
       "not_approved": 0,
       "referred": 3,
-      "in_progress": 3,
-      "phase2_referral_rate": 0.375
+      "in_progress": 2,
+      "phase2_referral_rate": 0.333
     },
     {
       "code": "G",
       "name": "Retail Trade",
-      "approved": 17,
+      "approved": 18,
       "not_approved": 0,
       "referred": 3,
-      "in_progress": 10,
-      "phase2_referral_rate": 0.15
-    },
-    {
-      "code": "L",
-      "name": "Rental, Hiring and Real Estate Services",
-      "approved": 12,
-      "not_approved": 0,
-      "referred": 2,
-      "in_progress": 6,
+      "in_progress": 9,
       "phase2_referral_rate": 0.143
     },
     {
@@ -2717,6 +2713,15 @@
       "referred": 1,
       "in_progress": 0,
       "phase2_referral_rate": 0.143
+    },
+    {
+      "code": "L",
+      "name": "Rental, Hiring and Real Estate Services",
+      "approved": 13,
+      "not_approved": 0,
+      "referred": 2,
+      "in_progress": 5,
+      "phase2_referral_rate": 0.133
     },
     {
       "code": "F",

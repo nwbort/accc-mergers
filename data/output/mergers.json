@@ -21695,18 +21695,9 @@
       "original_notification_datetime": "2026-08-18T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-09-29T12:00:00Z",
-      "page_modified_datetime": "2026-08-19T16:21:43+10:00",
+      "page_modified_datetime": "2026-08-21T09:34:57+10:00",
       "consultation_response_due_date": "2026-08-26T12:00:00Z",
       "acquirers": [
-        {
-          "name": "CHEVRON AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "29 086 197 757",
-          "party_page": {
-            "id": "chevron-australia-pty-ltd",
-            "name": "Chevron Australia Pty Ltd"
-          }
-        },
         {
           "name": "WOODSIDE ENERGY (NORTH WEST SHELF) PTY LTD",
           "identifier_type": "ABN",
@@ -21714,6 +21705,15 @@
           "party_page": {
             "id": "woodside-energy-north-west-shelf-pty-ltd",
             "name": "Woodside Energy (North West Shelf) Pty Ltd"
+          }
+        },
+        {
+          "name": "CHEVRON AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "29 086 197 757",
+          "party_page": {
+            "id": "chevron-australia-pty-ltd",
+            "name": "Chevron Australia Pty Ltd"
           }
         }
       ],
@@ -21754,7 +21754,7 @@
           "name": "Oil and Gas Extraction"
         }
       ],
-      "merger_description": "Certain wholly-owned indirect subsidiaries of Chevron Corporation (**Chevron**) and certain wholly-owned direct and indirect subsidiaries of Woodside Energy Group Ltd (**Woodside**) (collectively, the **Parties**) propose to enter into multiple \"asset swap\" transactions (the **Proposed Transactions**), resulting in:\n\n* Woodside Energy (North West Shelf) Pty Ltd acquiring Chevron\u2019s interest in joint ventures comprising the Woodside-operated North West Shelf Gas Project (ownership ranging from 12.5% to 16.67%), 16.67% interest in the Woodside-operated NWS Oil Projects, and 20% interest in the Woodside-operated proposed Angel Carbon Capture and Storage project.\n* Chevron Australia Pty Ltd (**Chevron Australia**) acquiring Woodside's 13% interest in the Chevron Australia-operated Wheatstone Project and associated 65% interest in the Woodside-operated Julimar-Brunello fields. Chevron Australia will assume operatorship of the Julimar-Brunello fields.\n\nChevron explores for, produces, and transports crude oil and natural gas; refines, markets, and distributes transportation fuels and lubricants; manufactures and sells petrochemicals and additives; generates power; and develops and deploys related technologies.\n\nWoodside is a global energy company founded in Australia, with a primary focus on the production of liquefied natural gas (**LNG**), domestic gas (**domgas**), LPG, oil and condensate. Woodside is also developing a portfolio of new energy products and lower carbon services.\n\nIn Australia, the Parties overlap in the production and wholesale supply of domgas in Western Australia (WA). Domgas is natural gas supplied domestically on a wholesale basis to large industrial and commercial customers in WA, including those in the mining, minerals processing and electricity generation sectors, and the supply of carbon capture and storage services - being the capture, transport and permanent underground storage of carbon dioxide from industrial emitters.",
+      "merger_description": "Certain wholly-owned indirect subsidiaries of Chevron Corporation (**Chevron**) and certain wholly-owned direct and indirect subsidiaries of Woodside Energy Group Ltd (**Woodside**) (collectively, the **Parties**) propose to enter into multiple \"asset swap\" transactions (the **Proposed Transactions**), resulting in:\n\n1. Woodside Energy (North West Shelf) Pty Ltd acquiring Chevron\u2019s interest in joint ventures comprising the Woodside-operated North West Shelf Gas Project (ownership ranging from 12.5% to 16.67%), 16.67% interest in the Woodside-operated NWS Oil Projects, and 20% interest in the Woodside-operated proposed Angel Carbon Capture and Storage project.\n2. Chevron Australia Pty Ltd (**Chevron Australia**) acquiring Woodside's 13% interest in the Chevron Australia-operated Wheatstone Project and associated 65% interest in the Woodside-operated Julimar-Brunello fields. Chevron Australia will assume operatorship of the Julimar-Brunello fields.\n\nChevron explores for, produces, and transports crude oil and natural gas; refines, markets, and distributes transportation fuels and lubricants; manufactures and sells petrochemicals and additives; generates power; and develops and deploys related technologies.\n\nWoodside is a global energy company founded in Australia, with a primary focus on the production of liquefied natural gas (LNG), domestic gas, LPG, oil and condensate. Woodside is also developing a portfolio of new energy products and lower carbon services.\n\nIn Australia, the Parties overlap in the production and wholesale supply of domestic gas in Western Australia (**WA**). Domestic gas is natural gas supplied domestically on a wholesale basis to large industrial and commercial customers in WA, including those in the mining, minerals processing and electricity generation sectors, and the supply of carbon capture and storage services - being the capture, transport and permanent underground storage of carbon dioxide from industrial emitters.",
       "events": [
         {
           "date": "2026-08-19T12:00:00Z",
@@ -48926,13 +48926,13 @@
       "end_of_determination_period": "2026-09-02T12:00:00Z",
       "accc_determination": "Approved",
       "accc_determination_raw": "ACCC determinationApproved",
-      "page_modified_datetime": "2026-08-20T10:53:09+10:00",
+      "page_modified_datetime": "2026-08-21T09:33:36+10:00",
       "consultation_response_due_date": "2026-07-29T12:00:00Z",
       "acquirers": [
         {
-          "name": "MCCARROLL PROPERTY HOLDINGS PTY LTD",
+          "name": "MAG SOUTH COAST PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "64 676 724 306",
+          "identifier": "70 683 627 590",
           "canonical": {
             "id": "mccarroll-s-automotive-group",
             "name": "McCarroll's Automotive Group"
@@ -48943,9 +48943,9 @@
           }
         },
         {
-          "name": "MAG SOUTH COAST PTY LTD",
+          "name": "MCCARROLL PROPERTY HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "70 683 627 590",
+          "identifier": "64 676 724 306",
           "canonical": {
             "id": "mccarroll-s-automotive-group",
             "name": "McCarroll's Automotive Group"
@@ -48967,6 +48967,24 @@
           }
         },
         {
+          "name": "KJO PROPERTY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "33 169 760 178",
+          "party_page": {
+            "id": "kjo-property-pty-ltd",
+            "name": "Kjo Property Pty Ltd"
+          }
+        },
+        {
+          "name": "KINGHORN MOTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "33 000 220 557",
+          "party_page": {
+            "id": "kinghorn-motors-pty-ltd",
+            "name": "Kinghorn Motors Pty Ltd"
+          }
+        },
+        {
           "name": "COUNTRY MOTOR COMPANY PTY LTD",
           "identifier_type": "ABN",
           "identifier": "11 002 189 228",
@@ -48983,36 +49001,9 @@
             "id": "glenn-ype-buikstra-family-will-trust",
             "name": "Glenn Ype Buikstra Family Will Trust"
           }
-        },
-        {
-          "name": "KINGHORN MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "33 000 220 557",
-          "party_page": {
-            "id": "kinghorn-motors-pty-ltd",
-            "name": "Kinghorn Motors Pty Ltd"
-          }
-        },
-        {
-          "name": "KJO PROPERTY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "33 169 760 178",
-          "party_page": {
-            "id": "kjo-property-pty-ltd",
-            "name": "Kjo Property Pty Ltd"
-          }
         }
       ],
       "other_parties": [
-        {
-          "name": "MAG BODY CORP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "93 676 724 495",
-          "party_page": {
-            "id": "mag-body-corp-pty-ltd",
-            "name": "Mag Body Corp Pty Ltd"
-          }
-        },
         {
           "name": "MAG NORTHERN BEACHES PTY LTD",
           "identifier_type": "ABN",
@@ -49033,6 +49024,15 @@
           "party_page": {
             "id": "mccarroll-s-automotive-group",
             "name": "McCarroll's Automotive Group"
+          }
+        },
+        {
+          "name": "MAG BODY CORP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "93 676 724 495",
+          "party_page": {
+            "id": "mag-body-corp-pty-ltd",
+            "name": "Mag Body Corp Pty Ltd"
           }
         }
       ],
@@ -49079,12 +49079,49 @@
           "title": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company - Phase 1 determination",
           "display_title": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company - Phase 1 determination",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-08-20T12:00:00Z",
+          "title": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/McCarroll%27s%20Automotive%20Group%20-%20Kinghorn%20Motor%20Group%20%26%20Country%20Motor%20Company%20-%20Phase%201%20determination_2.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "McCarroll's of Moss Vale Pty Ltd (McCarroll\u2019s) (via a special\npurpose vehicle, MAG South Coast Pty Ltd) proposes to acquire,\nthrough two separate and independent transactions, substantially all\nof the assets (being all the assets necessary for the operation of the\nbusiness) of:\n\u2022 the motor vehicle dealership business owned by Kinghorn\nMotors Pty Ltd (KMG)\n\u2022 the motor vehicle dealership business owned by Country Motor\nCompany Pty Ltd (CMC).\nAs part of the same transactions, McCarroll's (via McCarroll Property\nHoldings Pty Ltd) proposes to acquire the land on which the KMG\nand CMC motor dealership businesses are operated.\n(together, the Acquisitions)"
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, McCarroll's, sits within the broader McCarroll's\nAutomotive Group. McCarroll's is a new and used vehicle retailing\nbusiness that operates 15 franchised automotive dealerships across\n10 locations in the following primary market areas (PMAs): Sydney,\nNorth Shore, Hornsby and Newcastle. These PMAs are in\nmetropolitan Sydney and the Newcastle region.\nMcCarroll\u2019s represents 15 Original Equipment Manufacturer (OEM)\nvehicle brands as an authorised dealer: Alfa Romeo, Fiat, BYD, GWM,\nLeap Motor, Lexus, Porsche, Ferrari, Maserati, Volkswagen, Volvo,\nGeely, RAM, Jeep and Mazda. McCarroll\u2019s also supplies OEM spare\nparts, aftermarket servicing and finance solutions.\nKMG is a new and used vehicle retailing business that operates 2\nfranchised automotive dealerships in the Nowra PMA. KMG\nrepresents 2 OEM vehicle brands as an authorised dealer: Ford and\nVolkswagen. KMG also supplies OEM spare parts, aftermarket\nservicing and finance solutions.\nCMC is a new and used vehicle retailing business that operates 3\nfranchised automotive dealerships in Bomaderry, NSW (also located\nwithin the Nowra PMA). CMC represents three OEM vehicle brands\nas an authorised dealer: Hyundai, Isuzu and GWM. CMC also\nsupplies OEM spare parts, aftermarket servicing and finance\nsolutions."
+            },
+            {
+              "item": "Overlap and relationship\nbetween the Parties",
+              "details": "McCarroll\u2019s, the acquirer, is not active in the Nowra area or broader\nIllawarra-Shoalhaven region, where KMG and CMC are located. As\nsuch, the ACCC does not consider there is an existing relevant\ngeographic overlap between McCarroll\u2019s and the target dealerships.\nMcCarroll\u2019s closest dealerships to Nowra are in the Sydney suburb\nof Alexandria, which is approximately 146km from the Nowra PMA.\nHowever, KMG and CMC overlap in Nowra (within the Illawarra-\nShoalhaven region) in the supply of:\n\u2022 new vehicles\n\u2022 used vehicles\n\u2022 OEM spare parts\n\u2022 aftermarket servicing\n\u2022 automotive finance services.\nKMG and CMC do not overlap on an intra-brand basis."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, market inquiry feedback, and publicly available\ninformation.\nThe ACCC has determined that the Acquisition may be put into\neffect, as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\nRegarding the supply of new vehicles\n\u2022 The Acquisitions are likely to give rise to a moderate\nincrease in concentration in the supply of new cars in the\nNowra area.\n\u2022 However, the merged firm would face competition from\nmultiple alternative suppliers of new cars, both on an intra-\nbrand and inter-brand basis.\nRegarding the supply of used vehicles\n\u2022 The merged firm would face competition from multiple\nalternative suppliers of used cars.\nRegarding the supply of aftermarket servicing and OEM spare parts\n\u2022 Given KMG and CMC do not overlap on an intra-brand basis,\nthey are not likely to be close competitors in the supply of\naftermarket servicing and OEM spare parts, which\ndealerships generally only provide for the OEM brands they\nsupply.\nRegarding the supply of automotive finance services\n\u2022 The merged firm would face competition from multiple\nalternative suppliers of automotive finance services."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-65026/McCarroll's Automotive Group - Kinghorn Motor Group and Country Motor Company - Phase 1 determination_2.pdf",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
+      "determination_publication_date": "2026-08-20T12:00:00Z",
       "is_waiver": false,
       "has_conditions": false,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-08-20T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -65267,7 +65304,7 @@
       "original_notification_datetime": "2026-08-18T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-09-29T12:00:00Z",
-      "page_modified_datetime": "2026-08-19T17:02:19+10:00",
+      "page_modified_datetime": "2026-08-21T10:14:50+10:00",
       "consultation_response_due_date": "2026-08-26T12:00:00Z",
       "acquirers": [
         {
@@ -65280,21 +65317,21 @@
           }
         },
         {
-          "name": "Zelora TopCo Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "698 332 240",
-          "party_page": {
-            "id": "zelora-topco-pty-ltd",
-            "name": "Zelora TopCo Pty Ltd"
-          }
-        },
-        {
           "name": "Zelora OpCo Pty Ltd",
           "identifier_type": "ACN",
           "identifier": "698 334 762",
           "party_page": {
             "id": "zelora-opco-pty-ltd",
             "name": "Zelora OpCo Pty Ltd"
+          }
+        },
+        {
+          "name": "Zelora TopCo Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "698 332 240",
+          "party_page": {
+            "id": "zelora-topco-pty-ltd",
+            "name": "Zelora TopCo Pty Ltd"
           }
         }
       ],
@@ -65333,7 +65370,7 @@
           "name": "Garden Supplies Retailing"
         }
       ],
-      "merger_description": "Bunnings Group Pty Ltd (**Bunnings**) and Intellihub Australia Pty Ltd (**Intellihub**) are parties to an existing unincorporated joint venture which trades as Zelora. Zelora supplies home renewable energy solutions. Its services include supplying, installing and supporting customised solar panel and battery solutions through either a subscription-based or outright purchase model.\n\nBunnings is part of the ASX listed Wesfarmers Group and is a retailer of home improvement and lifestyle products in Australia and New Zealand.\n\nIntellihub provides multi-utility services, including electricity and water metering as well as technology, installation and maintenance for other energy management services such as solar, batteries and hot water systems, EV charging and virtual power plants. Intellihub also operates the Enreal business which offers solar, battery and home energy management systems on a subscription or outright basis.\n\nBunnings and Intellihub have agreed to establish an incorporated joint venture which will operate the existing Zelora business. The transaction will involve:\n\n1. Bunnings and Intellihub (through related entities) acquiring shares in a newly incorporated entity Zelora TopCo Pty Ltd (which, together with its subsidiaries, is referred to as the **Zelora JV**); and\n2. the Zelora JV subsequently acquiring the assets used in the existing Zelora business as well as existing assets of Intellihub's Enreal business,\n\n(the **Acquisition**).",
+      "merger_description": "Bunnings Group Pty Ltd (Bunnings) and Intellihub Australia Pty Ltd (Intellihub) are parties to an existing unincorporated joint venture which trades as Zelora. Zelora supplies home renewable energy solutions. Its services include supplying, installing and supporting customised solar panel and battery solutions through either a subscription-based or outright purchase model.\n\nBunnings is part of the ASX listed Wesfarmers Group and is a retailer of home improvement and lifestyle products in Australia and New Zealand.\n\nIntellihub provides multi-utility services, including electricity and water metering as well as technology, installation and maintenance for other energy management services such as solar, batteries and hot water systems, EV charging and virtual power plants. Intellihub also operates the Enreal business which offers solar, battery and home energy management systems on a subscription or outright basis.\n\nBunnings and Intellihub have agreed to establish an incorporated joint venture which will operate the existing Zelora business. The transaction will involve:\n\n1. Bunnings and Intellihub (through related entities) acquiring shares in a newly incorporated entity Zelora TopCo Pty Ltd (which, together with its subsidiaries, is referred to as the Zelora JV); and\n2. the Zelora JV subsequently acquiring the assets used in the existing Zelora business as well as existing assets of Intellihub's Enreal business,\n\n(the Acquisition).",
       "events": [
         {
           "date": "2026-08-19T12:00:00Z",

@@ -46,6 +46,17 @@
       "determination_date": null
     },
     {
+      "merger_id": "MN-65026",
+      "merger_name": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-22T12:00:00Z",
+      "determination_date": "2026-08-20T12:00:00Z"
+    },
+    {
       "merger_id": "WA-45022",
       "merger_name": "Australian Motors Group \u2013 Mudgee Toyota",
       "is_waiver": true,
@@ -88,17 +99,6 @@
       "phase": "Phase 2",
       "notification_date": "2026-03-05T12:00:00Z",
       "determination_date": null
-    },
-    {
-      "merger_id": "MN-65026",
-      "merger_name": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company",
-      "is_waiver": false,
-      "status": "Assessment completed",
-      "determination": "Approved",
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-07-22T12:00:00Z",
-      "determination_date": null
     }
   ],
   "count": 6,
@@ -107,11 +107,11 @@
   "waiver_count": 2,
   "active_count": 1,
   "phase_duration": {
-    "average_days": 62.0,
-    "median_days": 62.0,
-    "average_business_days": 40.0,
-    "median_business_days": 40.0,
-    "completed_count": 2
+    "average_days": 51.0,
+    "median_days": 35,
+    "average_business_days": 33.666666666666664,
+    "median_business_days": 22,
+    "completed_count": 3
   },
   "waiver_duration": {
     "average_days": 27.0,

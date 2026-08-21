@@ -74,6 +74,17 @@
       "determination_date": null
     },
     {
+      "merger_id": "MN-65026",
+      "merger_name": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-22T12:00:00Z",
+      "determination_date": "2026-08-20T12:00:00Z"
+    },
+    {
       "merger_id": "WA-65032",
       "merger_name": "Coles \u2013 expansion of supermarket located within Coles head office site in Docklands, VIC",
       "is_waiver": true,
@@ -424,17 +435,6 @@
       "phase": "Phase 1",
       "notification_date": "2025-08-15T12:00:00Z",
       "determination_date": "2025-09-05T12:00:00Z"
-    },
-    {
-      "merger_id": "MN-65026",
-      "merger_name": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company",
-      "is_waiver": false,
-      "status": "Assessment completed",
-      "determination": "Approved",
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-07-22T12:00:00Z",
-      "determination_date": null
     }
   ],
   "count": 37,
@@ -443,11 +443,11 @@
   "waiver_count": 23,
   "active_count": 4,
   "phase_duration": {
-    "average_days": 37.44444444444444,
-    "median_days": 29,
-    "average_business_days": 24.333333333333332,
-    "median_business_days": 21,
-    "completed_count": 9
+    "average_days": 36.6,
+    "median_days": 29.0,
+    "average_business_days": 24.0,
+    "median_business_days": 21.0,
+    "completed_count": 10
   },
   "waiver_duration": {
     "average_days": 20.130434782608695,

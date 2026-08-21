@@ -1,21 +1,6 @@
 {
   "current": [
     {
-      "waiver_id": "WA-30010",
-      "waiver_name": "MAG South Coast - Country Motor Company / Kinghorn Motors",
-      "waiver_filed_date": "2026-04-20T12:00:00Z",
-      "waiver_declined_date": "2026-05-15T12:00:00Z",
-      "notification_id": "MN-65026",
-      "notification_name": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company",
-      "notification_filed_date": "2026-07-22T12:00:00Z",
-      "notification_status": "Assessment completed",
-      "notification_determination": "Approved",
-      "notification_determination_date": null,
-      "notification_phase_1_determination": null,
-      "notification_phase_1_end_date": null,
-      "notification_end_of_determination_period": "2026-09-02T12:00:00Z"
-    },
-    {
       "waiver_id": "WA-85016",
       "waiver_name": "Vets Central \u2013 Hills Veterinary Centre",
       "waiver_filed_date": "2026-03-16T12:00:00Z",
@@ -32,6 +17,21 @@
     }
   ],
   "completed": [
+    {
+      "waiver_id": "WA-30010",
+      "waiver_name": "MAG South Coast - Country Motor Company / Kinghorn Motors",
+      "waiver_filed_date": "2026-04-20T12:00:00Z",
+      "waiver_declined_date": "2026-05-15T12:00:00Z",
+      "notification_id": "MN-65026",
+      "notification_name": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company",
+      "notification_filed_date": "2026-07-22T12:00:00Z",
+      "notification_status": "Assessment completed",
+      "notification_determination": "Approved",
+      "notification_determination_date": "2026-08-20T12:00:00Z",
+      "notification_phase_1_determination": "Approved",
+      "notification_phase_1_end_date": "2026-08-20T12:00:00Z",
+      "notification_end_of_determination_period": "2026-09-02T12:00:00Z"
+    },
     {
       "waiver_id": "WA-25025",
       "waiver_name": "Laundy \u2013 Woy Woy Hotel",
@@ -184,14 +184,14 @@
     }
   ],
   "count": {
-    "current": 2,
-    "completed": 10
+    "current": 1,
+    "completed": 11
   },
   "phase_1_clearance_rate": {
-    "cleared": 10,
+    "cleared": 11,
     "referred": 1,
-    "total": 11,
-    "rate": 0.909
+    "total": 12,
+    "rate": 0.917
   },
   "straight_phase_1_clearance_rate": {
     "cleared": 164,
@@ -200,11 +200,11 @@
     "rate": 0.953
   },
   "phase_duration": {
-    "average_days": 30.0,
-    "median_days": 27,
-    "average_business_days": 20.363636363636363,
-    "median_business_days": 18,
-    "completed_count": 11
+    "average_days": 29.916666666666668,
+    "median_days": 27.5,
+    "average_business_days": 20.416666666666668,
+    "median_business_days": 18.0,
+    "completed_count": 12
   },
   "straight_phase_duration": {
     "average_days": 29.936046511627907,
