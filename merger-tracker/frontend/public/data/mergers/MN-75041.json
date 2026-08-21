@@ -1,13 +1,13 @@
 {
-  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/lockheed-martin-%E2%80%93-ultra-maritime",
-  "merger_name": "Lockheed Martin \u2013 Ultra Maritime",
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/lockheed-martin-corporation-%E2%80%93-ultra-maritime",
+  "merger_name": "Lockheed Martin Corporation \u2013 Ultra Maritime",
   "status": "Under assessment",
   "merger_id": "MN-75041",
   "effective_notification_datetime": "2026-08-14T12:00:00Z",
   "original_notification_datetime": "2026-08-14T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-09-25T12:00:00Z",
-  "page_modified_datetime": "2026-08-17T16:57:42+10:00",
+  "page_modified_datetime": "2026-08-21T13:55:44+10:00",
   "consultation_response_due_date": "2026-08-24T12:00:00Z",
   "acquirers": [
     {
@@ -83,7 +83,8 @@
       "date": "2026-08-17T12:00:00Z",
       "title": "Questionnaire - Lockheed Martin - Ultra Maritime",
       "display_title": "Questionnaire - Lockheed Martin - Ultra Maritime",
-      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Lockheed%20Martin%20-%20Ultra%20Maritime%20-%20Third%20Party%20Questionnaire.docx",
+      "is_questionnaire_event": true,
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Lockheed%20Martin%20-%20Ultra%20Maritime%20-%20Third%20Party%20Questionnaire.docx",
       "url_gh": "/mergers/MN-75041/Lockheed Martin - Ultra Maritime - Third Party Questionnaire.pdf",
       "phase": null
     },
@@ -207,15 +208,15 @@
     "method_version": 1
   },
   "pre_notification": {
-    "estimated_days": 9,
-    "min_days": null,
+    "estimated_days": 8,
+    "min_days": 0,
     "max_days": 16,
-    "id_issued_estimated": "2026-08-05",
-    "id_issued_before": null,
+    "id_issued_estimated": "2026-08-06",
+    "id_issued_before": "2026-08-14",
     "id_issued_after": "2026-07-29",
-    "min_days_witness": null,
+    "min_days_witness": "MN-75044",
     "max_days_witness": "WA-75040",
-    "basis": "upper-bound-only",
+    "basis": "bracketed",
     "method_version": 1
   }
 }

@@ -55,7 +55,7 @@
       "event_type_display": "Consultation responses due",
       "date": "2026-08-24T12:00:00Z",
       "merger_id": "MN-75041",
-      "merger_name": "Lockheed Martin \u2013 Ultra Maritime",
+      "merger_name": "Lockheed Martin Corporation \u2013 Ultra Maritime",
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-08-14T12:00:00Z"
@@ -136,6 +136,16 @@
       "date": "2026-08-28T12:00:00Z",
       "merger_id": "MN-60030",
       "merger_name": "Tencent \u2013 Happibits",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-08-20T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-08-28T12:00:00Z",
+      "merger_id": "MN-75044",
+      "merger_name": "McCormick - Unilever Foods Business",
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-08-20T12:00:00Z"
@@ -565,7 +575,7 @@
       "event_type_display": "Determination due",
       "date": "2026-09-25T12:00:00Z",
       "merger_id": "MN-75041",
-      "merger_name": "Lockheed Martin \u2013 Ultra Maritime",
+      "merger_name": "Lockheed Martin Corporation \u2013 Ultra Maritime",
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-08-14T12:00:00Z"
@@ -641,6 +651,16 @@
       "effective_notification_datetime": "2026-08-20T12:00:00Z"
     },
     {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-10-01T12:00:00Z",
+      "merger_id": "MN-75044",
+      "merger_name": "McCormick - Unilever Foods Business",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-08-20T12:00:00Z"
+    },
+    {
       "type": "tribunal_hearing",
       "event_type_display": "Tribunal hearing",
       "date": "2026-11-09T12:00:00Z",
@@ -652,6 +672,6 @@
       "tribunal_number": "ACT 1 of 2026"
     }
   ],
-  "count": 65,
+  "count": 67,
   "days_ahead": 60
 }

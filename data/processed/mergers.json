@@ -23578,15 +23578,15 @@
     "is_waiver": false
   },
   {
-    "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/lockheed-martin-%E2%80%93-ultra-maritime",
-    "merger_name": "Lockheed Martin \u2013 Ultra Maritime",
+    "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/lockheed-martin-corporation-%E2%80%93-ultra-maritime",
+    "merger_name": "Lockheed Martin Corporation \u2013 Ultra Maritime",
     "status": "Under assessment",
     "merger_id": "MN-75041",
     "effective_notification_datetime": "2026-08-14T12:00:00Z",
     "original_notification_datetime": "2026-08-14T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-09-25T12:00:00Z",
-    "page_modified_datetime": "2026-08-17T16:57:42+10:00",
+    "page_modified_datetime": "2026-08-21T13:55:44+10:00",
     "consultation_response_due_date": "2026-08-24T12:00:00Z",
     "acquirers": [
       {
@@ -23630,12 +23630,89 @@
         "date": "2026-08-17T12:00:00Z",
         "title": "Questionnaire - Lockheed Martin - Ultra Maritime",
         "display_title": "Questionnaire - Lockheed Martin - Ultra Maritime",
-        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Lockheed%20Martin%20-%20Ultra%20Maritime%20-%20Third%20Party%20Questionnaire.docx",
+        "is_questionnaire_event": true,
+        "url": "https://www.accc.gov.au/system/files/moderated_files/Lockheed%20Martin%20-%20Ultra%20Maritime%20-%20Third%20Party%20Questionnaire.docx",
         "url_gh": "/mergers/MN-75041/Lockheed Martin - Ultra Maritime - Third Party Questionnaire.pdf",
-        "status": "removed"
+        "status": "live"
       },
       {
         "date": "2026-08-14T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": false
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/mccormick-unilever-foods-business",
+    "merger_name": "McCormick - Unilever Foods Business",
+    "status": "Under assessment",
+    "merger_id": "MN-75044",
+    "effective_notification_datetime": "2026-08-20T12:00:00Z",
+    "original_notification_datetime": "2026-08-20T12:00:00Z",
+    "stage": "Phase 1 - initial assessment",
+    "end_of_determination_period": "2026-10-01T12:00:00Z",
+    "page_modified_datetime": "2026-08-21T14:09:24+10:00",
+    "consultation_response_due_date": "2026-08-28T12:00:00Z",
+    "acquirers": [
+      {
+        "name": "McCormick & Company, Incorporated",
+        "identifier_type": null,
+        "identifier": "Maryland State Department of Assessments and Taxation  D00148189"
+      }
+    ],
+    "targets": [
+      {
+        "name": "Australia Food NewCo",
+        "identifier_type": "ACN",
+        "identifier": "700 391 555"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "MCCORMICK FOODS AUSTRALIA PTY. LTD.",
+        "identifier_type": "ABN",
+        "identifier": "62 004 763 259"
+      },
+      {
+        "name": "BOTANICAL FOOD COMPANY PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "47 085 074 282"
+      },
+      {
+        "name": "McCormick Pty Ltd",
+        "identifier_type": "ACN",
+        "identifier": "088 077 016"
+      },
+      {
+        "name": "A.C.N. 065 919 495 Pty Ltd",
+        "identifier_type": "ACN",
+        "identifier": "065 919 495"
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "1140",
+        "name": "Fruit and Vegetable Processing"
+      },
+      {
+        "code": "1199",
+        "name": "Other Food Product Manufacturing n.e.c."
+      }
+    ],
+    "merger_description": "McCormick & Company, Incorporated (**McCormick**) proposes to acquire Unilever PLC\u2019s (**Unilever**) global foods business, excluding Unilever\u2019s food businesses in India, Nepal and Portugal, and Unilever\u2019s Lifestyle and Nutrition, Buavita and Lipton Ready to Drink businesses (**Unilever Foods**) (the **Acquisition**).\n\nUnilever will incorporate a new Australian entity, Australia Food NewCo, and transfer Unilever Foods\u2019 Australian business to that entity. On completion, Unilever will transfer 100% of the shares in Australia Food NewCo to a McCormick UK holding company.\n\nMcCormick is a US-headquartered, publicly listed global manufacturer, marketer and distributor of spices, herbs, seasoning mixes, sauces, condiments and other flavour-related products. McCormick operates through two business segments: Consumer, through which it supplies products to customers via retail channels, and Flavour Solutions, through which it supplies food service customers and food manufacturers with products and customised flavouring solutions.\n\nUnilever Foods is one of Unilever business groups, and it comprises a portfolio of about 75 brands. Unilever Foods\u2019 business areas can be categorised into condiments (including mayonnaise, ketchup and mustards), cooking aids and mini meals (including soups, bouillons, seasonings, recipe sauces, ready meals and gravy products), and Unilever Food Solutions, through which it provides products and solutions to food service customers.\n\nUnilever is a UK-headquartered, fast-moving consumer goods group listed on the London Stock Exchange and Euronext Amsterdam.\n\nMcCormick and Unilever Foods overlap primarily in the retail supply of recipe mixes, side dishes and bottled sauces in Australia.",
+    "events": [
+      {
+        "date": "2026-08-21T12:00:00Z",
+        "title": "McCormick - Unilever Foods Business - Phase 1 questionnaire",
+        "display_title": "McCormick - Unilever Foods Business - Phase 1 questionnaire",
+        "is_questionnaire_event": true,
+        "url": "https://www.accc.gov.au/system/files/moderated_files/McCormick%20-%20Unilever%20Foods%20-%20Questionnaires.docx",
+        "url_gh": "/mergers/MN-75044/McCormick - Unilever Foods - Questionnaires.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2026-08-20T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
       }

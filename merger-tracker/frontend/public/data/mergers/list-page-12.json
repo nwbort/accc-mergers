@@ -1850,7 +1850,7 @@
     },
     {
       "merger_id": "MN-75041",
-      "merger_name": "Lockheed Martin \u2013 Ultra Maritime",
+      "merger_name": "Lockheed Martin Corporation \u2013 Ultra Maritime",
       "status": "Under assessment",
       "accc_determination": null,
       "has_conditions": false,
@@ -1929,7 +1929,7 @@
           "name": "Engineering Design and Engineering Consulting Services"
         }
       ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/lockheed-martin-%E2%80%93-ultra-maritime"
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/lockheed-martin-corporation-%E2%80%93-ultra-maritime"
     },
     {
       "merger_id": "MN-45024",
@@ -2562,6 +2562,91 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/tencent-%E2%80%93-happibits"
+    },
+    {
+      "merger_id": "MN-75044",
+      "merger_name": "McCormick - Unilever Foods Business",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-20T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-10-01T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "McCormick & Company, Incorporated",
+          "identifier_type": null,
+          "identifier": "Maryland State Department of Assessments and Taxation  D00148189",
+          "party_page": {
+            "id": "mccormick-company-incorporated",
+            "name": "McCormick & Company, Incorporated"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Australia Food NewCo",
+          "identifier_type": "ACN",
+          "identifier": "700 391 555",
+          "party_page": {
+            "id": "australia-food-newco",
+            "name": "Australia Food NewCo"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "MCCORMICK FOODS AUSTRALIA PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "62 004 763 259",
+          "party_page": {
+            "id": "mccormick-foods-australia-pty-ltd",
+            "name": "Mccormick Foods Australia Pty. Ltd."
+          }
+        },
+        {
+          "name": "BOTANICAL FOOD COMPANY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "47 085 074 282",
+          "party_page": {
+            "id": "botanical-food-company-pty-ltd",
+            "name": "Botanical Food Company Pty Ltd"
+          }
+        },
+        {
+          "name": "McCormick Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "088 077 016",
+          "party_page": {
+            "id": "mccormick-pty-ltd",
+            "name": "McCormick Pty Ltd"
+          }
+        },
+        {
+          "name": "A.C.N. 065 919 495 Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "065 919 495",
+          "party_page": {
+            "id": "a-c-n-065-919-495-pty-ltd",
+            "name": "A.C.N. 065 919 495 Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1140",
+          "name": "Fruit and Vegetable Processing"
+        },
+        {
+          "code": "1199",
+          "name": "Other Food Product Manufacturing n.e.c."
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/mccormick-unilever-foods-business"
     }
   ],
   "page": 12,

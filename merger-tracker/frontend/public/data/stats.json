@@ -1,10 +1,10 @@
 {
-  "total_mergers": 233,
+  "total_mergers": 234,
   "total_waivers": 345,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 178,
-    "Under assessment": 52,
+    "Under assessment": 53,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -97,6 +97,16 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-75044",
+      "merger_name": "McCormick - Unilever Foods Business",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-20T12:00:00Z",
+      "page_modified_datetime": "2026-08-21T14:09:24+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
+    {
       "merger_id": "MN-40039",
       "merger_name": "Bloomberg - Canoe Intelligence",
       "status": "Under assessment",
@@ -178,11 +188,11 @@
     },
     {
       "merger_id": "MN-75041",
-      "merger_name": "Lockheed Martin \u2013 Ultra Maritime",
+      "merger_name": "Lockheed Martin Corporation \u2013 Ultra Maritime",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-14T12:00:00Z",
-      "page_modified_datetime": "2026-08-17T16:57:42+10:00",
+      "page_modified_datetime": "2026-08-21T13:55:44+10:00",
       "is_waiver": false,
       "is_refiled": false
     },
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-14T12:00:00Z",
       "page_modified_datetime": "2026-08-17T15:23:40+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-05043",
-      "merger_name": "Incubeta - Datisan",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-13T12:00:00Z",
-      "page_modified_datetime": "2026-08-21T10:44:46+10:00",
       "is_waiver": false,
       "is_refiled": false
     }
