@@ -230,17 +230,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-10022",
-      "merger_name": "M Resources and Golden Energy and Resources \u2013 Tahmoor Coal Mine",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-07-30T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-70027",
       "merger_name": "Global Infrastructure Management and EQT led consortium - AES Corporation",
       "is_waiver": false,
@@ -294,6 +283,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-05-12T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-10022",
+      "merger_name": "M Resources and Golden Energy and Resources \u2013 Tahmoor Coal Mine",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-30T12:00:00Z",
+      "determination_date": "2026-08-21T12:00:00Z"
     },
     {
       "merger_id": "MN-90027",
@@ -1719,13 +1719,13 @@
   "phase_1_count": 68,
   "phase_2_count": 2,
   "waiver_count": 77,
-  "active_count": 18,
+  "active_count": 17,
   "phase_duration": {
-    "average_days": 29.62264150943396,
-    "median_days": 26,
-    "average_business_days": 19.81132075471698,
-    "median_business_days": 17,
-    "completed_count": 53
+    "average_days": 29.48148148148148,
+    "median_days": 26.0,
+    "average_business_days": 19.74074074074074,
+    "median_business_days": 17.0,
+    "completed_count": 54
   },
   "waiver_duration": {
     "average_days": 18.467532467532468,

@@ -130,17 +130,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-10022",
-      "merger_name": "M Resources and Golden Energy and Resources \u2013 Tahmoor Coal Mine",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-07-30T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-50032",
       "merger_name": "Accenture - Dragos",
       "is_waiver": false,
@@ -194,6 +183,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-04-27T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-10022",
+      "merger_name": "M Resources and Golden Energy and Resources \u2013 Tahmoor Coal Mine",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-30T12:00:00Z",
+      "determination_date": "2026-08-21T12:00:00Z"
     },
     {
       "merger_id": "MN-40031",
@@ -1487,13 +1487,13 @@
   "phase_1_count": 53,
   "phase_2_count": 3,
   "waiver_count": 77,
-  "active_count": 16,
+  "active_count": 15,
   "phase_duration": {
-    "average_days": 33.07142857142857,
-    "median_days": 27.0,
-    "average_business_days": 21.785714285714285,
-    "median_business_days": 18.0,
-    "completed_count": 42
+    "average_days": 32.81395348837209,
+    "median_days": 27,
+    "average_business_days": 21.651162790697676,
+    "median_business_days": 18,
+    "completed_count": 43
   },
   "waiver_duration": {
     "average_days": 18.87012987012987,

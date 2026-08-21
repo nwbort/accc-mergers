@@ -7091,13 +7091,16 @@
   {
     "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/m-resources-and-golden-energy-and-resources-%E2%80%93-tahmoor-coal-mine",
     "merger_name": "M Resources and Golden Energy and Resources \u2013 Tahmoor Coal Mine",
-    "status": "Under assessment",
+    "status": "Assessment completed",
     "merger_id": "MN-10022",
     "effective_notification_datetime": "2026-07-30T12:00:00Z",
     "original_notification_datetime": "2026-07-30T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-09-10T12:00:00Z",
-    "page_modified_datetime": "2026-08-21T16:40:04+10:00",
+    "determination_publication_date": "2026-08-21T12:00:00Z",
+    "accc_determination": "Approved",
+    "accc_determination_raw": "ACCC determinationApproved",
+    "page_modified_datetime": "2026-08-21T17:19:14+10:00",
     "consultation_response_due_date": "2026-08-07T12:00:00Z",
     "acquirers": [
       {
@@ -7176,7 +7179,7 @@
       {
         "date": "2026-08-21T12:00:00Z",
         "title": "M Resources and Golden Energy and Resources - Tahmoor Coal Mine - Phase 1 determination",
-        "display_title": "M Resources and Golden Energy and Resources - Tahmoor Coal Mine - Phase 1 determination",
+        "display_title": "Phase 1 - initial assessment determination: Approved",
         "url": "https://www.accc.gov.au/system/files/moderated_files/M%20Resources%20and%20Golden%20Energy%20and%20Resources%20-%20Tahmoor%20Coal%20Mine%20-%20Phase%201%20determination.pdf",
         "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
         "determination_table_content": [
@@ -7206,7 +7209,9 @@
           }
         ],
         "url_gh": "/mergers/MN-10022/M Resources and Golden Energy and Resources - Tahmoor Coal Mine - Phase 1 determination.pdf",
-        "status": "live"
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Phase 1"
       }
     ],
     "is_waiver": false

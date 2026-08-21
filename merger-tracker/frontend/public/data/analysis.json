@@ -222,6 +222,11 @@
         "in_progress": false
       },
       {
+        "business_days": 16,
+        "calendar_days": 22,
+        "in_progress": false
+      },
+      {
         "business_days": 28,
         "calendar_days": 41,
         "in_progress": false
@@ -929,17 +934,17 @@
     ],
     "stats": {
       "average": 20.0,
-      "median": 17,
+      "median": 17.0,
       "min": 15,
       "max": 59,
-      "count": 185
+      "count": 186
     },
     "calendar_stats": {
       "average": 29.9,
-      "median": 26,
+      "median": 26.0,
       "min": 21,
       "max": 103,
-      "count": 185
+      "count": 186
     }
   },
   "waiver_duration": {
@@ -2421,7 +2426,7 @@
       42,
       41,
       46,
-      53
+      52
     ],
     "as_at": "2026-08-21"
   },
@@ -2447,20 +2452,11 @@
     {
       "code": "B",
       "name": "Mining",
-      "average_business_days": 24.0,
-      "median_business_days": 21.0,
-      "average_calendar_days": 34.8,
-      "median_calendar_days": 31.0,
-      "count": 8
-    },
-    {
-      "code": "D",
-      "name": "Electricity, Gas, Water and Waste Services",
-      "average_business_days": 23.0,
-      "median_business_days": 20.0,
-      "average_calendar_days": 33.0,
-      "median_calendar_days": 28.5,
-      "count": 6
+      "average_business_days": 23.1,
+      "median_business_days": 17,
+      "average_calendar_days": 33.3,
+      "median_calendar_days": 26,
+      "count": 9
     },
     {
       "code": "L",
@@ -2481,6 +2477,15 @@
       "count": 7
     },
     {
+      "code": "D",
+      "name": "Electricity, Gas, Water and Waste Services",
+      "average_business_days": 22.0,
+      "median_business_days": 20,
+      "average_calendar_days": 31.4,
+      "median_calendar_days": 28,
+      "count": 7
+    },
+    {
       "code": "H",
       "name": "Accommodation and Food Services",
       "average_business_days": 22.0,
@@ -2490,15 +2495,6 @@
       "count": 9
     },
     {
-      "code": "M",
-      "name": "Professional, Scientific and Technical Services",
-      "average_business_days": 21.8,
-      "median_business_days": 18.0,
-      "average_calendar_days": 33.1,
-      "median_calendar_days": 27.0,
-      "count": 42
-    },
-    {
       "code": "I",
       "name": "Transport, Postal and Warehousing",
       "average_business_days": 21.8,
@@ -2506,6 +2502,15 @@
       "average_calendar_days": 32.1,
       "median_calendar_days": 29.0,
       "count": 12
+    },
+    {
+      "code": "M",
+      "name": "Professional, Scientific and Technical Services",
+      "average_business_days": 21.7,
+      "median_business_days": 18,
+      "average_calendar_days": 32.8,
+      "median_calendar_days": 27,
+      "count": 43
     },
     {
       "code": "F",
@@ -2528,11 +2533,11 @@
     {
       "code": "C",
       "name": "Manufacturing",
-      "average_business_days": 19.8,
-      "median_business_days": 17,
-      "average_calendar_days": 29.6,
-      "median_calendar_days": 26,
-      "count": 53
+      "average_business_days": 19.7,
+      "median_business_days": 17.0,
+      "average_calendar_days": 29.5,
+      "median_calendar_days": 26.0,
+      "count": 54
     },
     {
       "code": "E",
@@ -2594,10 +2599,9 @@
       "division": "Commissioner Williams",
       "count": 409,
       "outcome_mix": {
-        "Approved": 408,
-        "Unknown": 1
+        "Approved": 409
       },
-      "median_phase_1_business_days": 17
+      "median_phase_1_business_days": 17.0
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -2647,7 +2651,7 @@
   "deadline_utilisation": {
     "histogram": {
       "15": 40,
-      "16": 33,
+      "16": 34,
       "17": 23,
       "18": 19,
       "19": 15,
@@ -2670,9 +2674,9 @@
     },
     "stats": {
       "mean_used_bd": 18.1,
-      "median_used_bd": 17.0,
+      "median_used_bd": 17,
       "pct_decided_final_3_bd": 3.5,
-      "count": 170
+      "count": 171
     },
     "extended_count": 6
   },
@@ -2758,11 +2762,11 @@
     {
       "code": "M",
       "name": "Professional, Scientific and Technical Services",
-      "approved": 39,
+      "approved": 40,
       "not_approved": 0,
       "referred": 3,
-      "in_progress": 14,
-      "phase2_referral_rate": 0.071
+      "in_progress": 13,
+      "phase2_referral_rate": 0.07
     },
     {
       "code": "E",
@@ -2776,28 +2780,28 @@
     {
       "code": "C",
       "name": "Manufacturing",
-      "approved": 51,
+      "approved": 52,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 17,
-      "phase2_referral_rate": 0.038
+      "in_progress": 16,
+      "phase2_referral_rate": 0.037
     },
     {
       "code": "D",
       "name": "Electricity, Gas, Water and Waste Services",
-      "approved": 6,
+      "approved": 7,
       "not_approved": 0,
       "referred": 0,
-      "in_progress": 2,
+      "in_progress": 1,
       "phase2_referral_rate": 0.0
     },
     {
       "code": "B",
       "name": "Mining",
-      "approved": 8,
+      "approved": 9,
       "not_approved": 0,
       "referred": 0,
-      "in_progress": 4,
+      "in_progress": 3,
       "phase2_referral_rate": 0.0
     },
     {
