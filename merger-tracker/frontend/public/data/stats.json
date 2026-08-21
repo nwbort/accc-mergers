@@ -1,6 +1,6 @@
 {
   "total_mergers": 235,
-  "total_waivers": 345,
+  "total_waivers": 346,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 179,
@@ -18,7 +18,7 @@
     "Assessment ceased": 2
   },
   "by_waiver_determination": {
-    "Approved": 331,
+    "Approved": 332,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.408695652173915,
-    "median_days": 19,
-    "average_business_days": 13.09855072463768,
-    "median_business_days": 13
+    "average_days": 19.393063583815028,
+    "median_days": 19.0,
+    "average_business_days": 13.089595375722544,
+    "median_business_days": 13.0
   },
   "top_industries": [
     {
@@ -64,7 +64,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 49
+      "count": 50
     },
     {
       "name": "Software Publishing",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-45025",
+      "merger_name": "Acclime Corporate Services Australia \u2013 Polar 993 Group",
+      "determination": "Approved",
+      "determination_date": "2026-08-21T12:00:00Z",
+      "page_modified_datetime": "2026-08-21T16:59:55+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-40031",
       "merger_name": "Salesforce - Intercom",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-19T12:00:00Z",
       "page_modified_datetime": "2026-08-19T17:50:24+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-25041",
-      "merger_name": "CVC Capital Partners \u2013 DistroKid",
-      "determination": "Approved",
-      "determination_date": "2026-08-19T12:00:00Z",
-      "page_modified_datetime": "2026-08-19T17:47:36+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

@@ -9,7 +9,7 @@
       "code": "69",
       "name": "Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",
       "level": "subdivision",
-      "merger_count": 83
+      "merger_count": 84
     },
     {
       "code": "70",
@@ -204,6 +204,17 @@
       "has_conditions": false,
       "phase": "Phase 1",
       "notification_date": "2026-07-28T12:00:00Z",
+      "determination_date": "2026-08-21T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-45025",
+      "merger_name": "Acclime Corporate Services Australia \u2013 Polar 993 Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-07T12:00:00Z",
       "determination_date": "2026-08-21T12:00:00Z"
     },
     {
@@ -1461,10 +1472,10 @@
       "determination_date": null
     }
   ],
-  "count": 131,
+  "count": 132,
   "phase_1_count": 53,
   "phase_2_count": 3,
-  "waiver_count": 75,
+  "waiver_count": 76,
   "active_count": 16,
   "phase_duration": {
     "average_days": 33.07142857142857,
@@ -1474,10 +1485,10 @@
     "completed_count": 42
   },
   "waiver_duration": {
-    "average_days": 18.986666666666668,
-    "median_days": 19,
-    "average_business_days": 12.826666666666666,
-    "median_business_days": 13,
-    "completed_count": 75
+    "average_days": 18.92105263157895,
+    "median_days": 19.0,
+    "average_business_days": 12.789473684210526,
+    "median_business_days": 13.0,
+    "completed_count": 76
   }
 }

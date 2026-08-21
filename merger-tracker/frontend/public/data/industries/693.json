@@ -30,7 +30,7 @@
       "code": "6932",
       "name": "Accounting Services",
       "level": "class",
-      "merger_count": 9
+      "merger_count": 10
     }
   ],
   "mergers": [
@@ -55,6 +55,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-30T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-45025",
+      "merger_name": "Acclime Corporate Services Australia \u2013 Polar 993 Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-07T12:00:00Z",
+      "determination_date": "2026-08-21T12:00:00Z"
     },
     {
       "merger_id": "WA-75039",
@@ -134,17 +145,17 @@
       "determination_date": "2026-01-27T12:00:00Z"
     }
   ],
-  "count": 9,
+  "count": 10,
   "phase_1_count": 2,
   "phase_2_count": 0,
-  "waiver_count": 7,
+  "waiver_count": 8,
   "active_count": 2,
   "phase_duration": null,
   "waiver_duration": {
-    "average_days": 18.428571428571427,
-    "median_days": 18,
-    "average_business_days": 11.428571428571429,
-    "median_business_days": 11,
-    "completed_count": 7
+    "average_days": 17.875,
+    "median_days": 18.0,
+    "average_business_days": 11.25,
+    "median_business_days": 10.5,
+    "completed_count": 8
   }
 }
