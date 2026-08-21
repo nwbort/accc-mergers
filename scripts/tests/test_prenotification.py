@@ -323,3 +323,71 @@ class TestAttachment:
         assert estimates['MN-01028']['basis'] == 'bracketed'
         assert estimates['MN-01030']['basis'] == 'upper-bound-only'
         assert estimates['MN-01030']['id_issued_estimated'] >= estimates['MN-01028']['id_issued_estimated']
+
+
+# ---------------------------------------------------------------------------
+# The counter's own ordering, across a whole group
+# ---------------------------------------------------------------------------
+
+class TestCounterOrder:
+    def test_midpoint_fallback_ignores_the_generous_lag(self):
+        # No waiver sits above MN-01010, so the guess falls back to the
+        # midpoint of its bounds rather than interpolating. That midpoint is a
+        # central guess and must be measured at `lag`: taking it from the
+        # lag_max-padded floor instead would drag it earlier the more generous
+        # the ceiling is allowed to be.
+        mergers = [
+            _merger('WA-01005', '2026-01-01'),
+            _merger('MN-01010', '2026-04-01'),
+            _merger('MN-01012', '2026-03-01'),  # later ID filed first: the ceiling
+        ]
+        tight = _estimates([dict(m) for m in mergers], lag=0, lag_max=0)['MN-01010']
+        padded = _estimates([dict(m) for m in mergers], lag=0, lag_max=34)['MN-01010']
+        assert tight['basis'] == 'bracketed'
+        # Halfway between 1 Jan (the waiver) and 1 Mar (the ceiling) is 30 Jan.
+        assert tight['id_issued_estimated'] == '2026-01-30'
+        assert padded['estimated_days'] == tight['estimated_days']
+        assert padded['max_days'] == tight['max_days'] + 34
+
+    def test_a_higher_sequence_cannot_be_issued_before_a_lower_one(self):
+        # The shape MN-75041/MN-75044 had on the register: 41 is bracketed by
+        # the waiver below and 44 above, while 44 tops the counter and has only
+        # that same waiver to go on, so it landed on the waiver's own date —
+        # earlier than 41's guess, which the counter forbids. 44 is dragged up
+        # to 41, the better-witnessed of the two.
+        mergers = [
+            _merger('WA-75040', '2026-08-05'),
+            _merger('MN-75041', '2026-08-14'),
+            _merger('MN-75044', '2026-08-20'),
+        ]
+        estimates = _estimates(mergers, lag=0, lag_max=7)
+        assert estimates['MN-75041']['basis'] == 'bracketed'
+        assert estimates['MN-75044']['basis'] == 'upper-bound-only'
+        assert estimates['MN-75041']['id_issued_estimated'] == '2026-08-09'
+        assert estimates['MN-75044']['id_issued_estimated'] == '2026-08-09'
+        assert estimates['MN-75044']['estimated_days'] == 11
+
+    def test_reconciling_the_order_keeps_both_bounds_intact(self):
+        mergers = [
+            _merger('WA-75040', '2026-08-05'),
+            _merger('MN-75041', '2026-08-14'),
+            _merger('MN-75044', '2026-08-20'),
+        ]
+        estimates = _estimates(mergers, lag=0, lag_max=7)
+        for merger_id in ('MN-75041', 'MN-75044'):
+            estimate = estimates[merger_id]
+            floor = estimate['min_days'] or 0
+            assert floor <= estimate['estimated_days'] <= estimate['max_days']
+
+    def test_each_group_is_reconciled_on_its_own_counter(self):
+        # Group 01's late guess must not follow the loop into group 05: the two
+        # counters run independently and say nothing about each other.
+        mergers = [
+            _merger('WA-01005', '2026-06-01'),
+            _merger('MN-01010', '2026-09-01'),
+            _merger('WA-05005', '2026-01-01'),
+            _merger('MN-05010', '2026-04-01'),
+        ]
+        estimates = _estimates(mergers, lag=0, lag_max=7)
+        assert estimates['MN-05010']['id_issued_estimated'] == '2026-01-01'
+        assert estimates['MN-01010']['id_issued_estimated'] == '2026-06-01'
