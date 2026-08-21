@@ -34,12 +34,12 @@
         "merger_id": "MN-40031",
         "merger_name": "Salesforce - Intercom",
         "is_waiver": false,
-        "status": "Under assessment",
-        "determination": null,
+        "status": "Assessment completed",
+        "determination": "Approved",
         "has_conditions": false,
         "phase": "Phase 1",
         "notification_date": "2026-07-28T12:00:00Z",
-        "determination_date": null
+        "determination_date": "2026-08-21T12:00:00Z"
       },
       {
         "merger_id": "MN-95025",
@@ -82,13 +82,13 @@
   "phase_1_count": 3,
   "phase_2_count": 0,
   "waiver_count": 1,
-  "active_count": 1,
+  "active_count": 0,
   "phase_duration": {
     "average_days": 24.0,
-    "median_days": 24.0,
-    "average_business_days": 16.5,
-    "median_business_days": 16.5,
-    "completed_count": 2
+    "median_days": 24,
+    "average_business_days": 17.0,
+    "median_business_days": 17,
+    "completed_count": 3
   },
   "waiver_duration": {
     "average_days": 13.0,

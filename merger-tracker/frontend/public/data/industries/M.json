@@ -9,7 +9,7 @@
       "code": "69",
       "name": "Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",
       "level": "subdivision",
-      "merger_count": 82
+      "merger_count": 83
     },
     {
       "code": "70",
@@ -22,6 +22,17 @@
     {
       "merger_id": "MN-60030",
       "merger_name": "Tencent \u2013 Happibits",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-20T12:00:00Z",
+      "determination_date": null
+    },
+    {
+      "merger_id": "MN-85043",
+      "merger_name": "Lone Star Funds - ContiTech",
       "is_waiver": false,
       "status": "Under assessment",
       "determination": null,
@@ -152,17 +163,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-40031",
-      "merger_name": "Salesforce - Intercom",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-07-28T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-60026",
       "merger_name": "Publicis Groupe - LiveRamp",
       "is_waiver": false,
@@ -194,6 +194,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-04-27T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-40031",
+      "merger_name": "Salesforce - Intercom",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-28T12:00:00Z",
+      "determination_date": "2026-08-21T12:00:00Z"
     },
     {
       "merger_id": "MN-90027",
@@ -1450,17 +1461,17 @@
       "determination_date": null
     }
   ],
-  "count": 130,
-  "phase_1_count": 52,
+  "count": 131,
+  "phase_1_count": 53,
   "phase_2_count": 3,
   "waiver_count": 75,
   "active_count": 16,
   "phase_duration": {
-    "average_days": 33.292682926829265,
-    "median_days": 27,
-    "average_business_days": 21.878048780487806,
-    "median_business_days": 18,
-    "completed_count": 41
+    "average_days": 33.07142857142857,
+    "median_days": 27.0,
+    "average_business_days": 21.785714285714285,
+    "median_business_days": 18.0,
+    "completed_count": 42
   },
   "waiver_duration": {
     "average_days": 18.986666666666668,

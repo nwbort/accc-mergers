@@ -2590,14 +2590,14 @@
     {
       "merger_id": "MN-40031",
       "merger_name": "Salesforce - Intercom",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "has_conditions": false,
       "is_waiver": false,
       "under_appeal": false,
       "is_refiled": false,
       "effective_notification_datetime": "2026-07-28T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-08-21T12:00:00Z",
       "end_of_determination_period": "2026-09-08T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -2645,9 +2645,9 @@
           }
         },
         {
-          "name": "Salesforce, Inc.",
+          "name": "Salesforce Holdings LLC",
           "identifier_type": null,
-          "identifier": "0001108524",
+          "identifier": "5673469",
           "canonical": {
             "id": "salesforce-inc",
             "name": "Salesforce, Inc"
@@ -2658,9 +2658,9 @@
           }
         },
         {
-          "name": "Salesforce Holdings LLC",
+          "name": "Salesforce, Inc.",
           "identifier_type": null,
-          "identifier": "5673469",
+          "identifier": "0001108524",
           "canonical": {
             "id": "salesforce-inc",
             "name": "Salesforce, Inc"

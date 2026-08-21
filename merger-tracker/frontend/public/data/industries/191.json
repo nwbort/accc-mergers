@@ -24,19 +24,19 @@
       "code": "1911",
       "name": "Polymer Film and Sheet Packaging Material Manufacturing",
       "level": "class",
-      "merger_count": 2
+      "merger_count": 3
     },
     {
       "code": "1912",
       "name": "Rigid and Semi-Rigid Polymer Product Manufacturing",
       "level": "class",
-      "merger_count": 3
+      "merger_count": 4
     },
     {
       "code": "1913",
       "name": "Polymer Foam Product Manufacturing",
       "level": "class",
-      "merger_count": 0
+      "merger_count": 1
     },
     {
       "code": "1914",
@@ -60,10 +60,21 @@
       "code": "1919",
       "name": "Other Polymer Product Manufacturing",
       "level": "class",
-      "merger_count": 3
+      "merger_count": 4
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-85043",
+      "merger_name": "Lone Star Funds - ContiTech",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-20T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-50024",
       "merger_name": "AkzoNobel - Axalta",
@@ -197,11 +208,11 @@
       "determination_date": "2025-12-18T12:00:00Z"
     }
   ],
-  "count": 12,
-  "phase_1_count": 7,
+  "count": 13,
+  "phase_1_count": 8,
   "phase_2_count": 0,
   "waiver_count": 5,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": {
     "average_days": 25.857142857142858,
     "median_days": 22,

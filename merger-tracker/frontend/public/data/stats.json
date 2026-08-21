@@ -1,14 +1,14 @@
 {
-  "total_mergers": 234,
+  "total_mergers": 235,
   "total_waivers": 345,
   "total_conditional_approvals": 3,
   "by_status": {
-    "Assessment completed": 178,
+    "Assessment completed": 179,
     "Under assessment": 53,
     "Assessment ceased": 3
   },
   "by_determination": {
-    "Approved": 173,
+    "Approved": 174,
     "Referred to phase 2": 9,
     "Approved with conditions": 2
   },
@@ -22,27 +22,27 @@
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 176,
+    "cleared": 177,
     "not_cleared": 2,
-    "total": 178,
+    "total": 179,
     "rate": 0.989
   },
   "phase_duration": {
-    "average_days": 29.934782608695652,
-    "median_days": 26.0,
-    "average_business_days": 20.01086956521739,
-    "median_business_days": 17.0,
+    "average_days": 29.9027027027027,
+    "median_days": 26,
+    "average_business_days": 20.0,
+    "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 40,
-        "percentage": 21.7
+        "percentage": 21.6
       },
       "day20": {
-        "count": 137,
-        "percentage": 74.5
+        "count": 138,
+        "percentage": 74.6
       },
       "day30": {
-        "count": 172,
+        "count": 173,
         "percentage": 93.5
       }
     }
@@ -56,7 +56,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 92
+      "count": 93
     },
     {
       "name": "Computer System Design and Related Services",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-85043",
+      "merger_name": "Lone Star Funds - ContiTech",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-20T12:00:00Z",
+      "page_modified_datetime": "2026-08-21T16:24:49+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-75044",
       "merger_name": "McCormick - Unilever Foods Business",
@@ -187,6 +197,16 @@
       "is_refiled": false
     },
     {
+      "merger_id": "MN-65031",
+      "merger_name": "Metal Manufactures - BayWa Solar Systems",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-14T12:00:00Z",
+      "page_modified_datetime": "2026-08-21T16:09:06+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
+    {
       "merger_id": "MN-75041",
       "merger_name": "Lockheed Martin Corporation \u2013 Ultra Maritime",
       "status": "Under assessment",
@@ -195,29 +215,20 @@
       "page_modified_datetime": "2026-08-21T13:55:44+10:00",
       "is_waiver": false,
       "is_refiled": false
-    },
-    {
-      "merger_id": "MN-10027",
-      "merger_name": "Endeavour Group \u2013 retail liquor site in Horsham, VIC",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-14T12:00:00Z",
-      "page_modified_datetime": "2026-08-17T16:33:56+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-65031",
-      "merger_name": "Metal Manufactures - BayWa Solar Systems",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-14T12:00:00Z",
-      "page_modified_datetime": "2026-08-17T15:23:40+10:00",
-      "is_waiver": false,
-      "is_refiled": false
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "MN-40031",
+      "merger_name": "Salesforce - Intercom",
+      "determination": "Approved",
+      "determination_date": "2026-08-21T12:00:00Z",
+      "page_modified_datetime": "2026-08-21T15:40:33+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
     {
       "merger_id": "MN-65026",
       "merger_name": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-19T12:00:00Z",
       "page_modified_datetime": "2026-08-19T17:47:36+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-35036",
-      "merger_name": "CrowdStrike \u2013 intellectual property and associated technology assets of XM Cyber",
-      "determination": "Approved",
-      "determination_date": "2026-08-19T12:00:00Z",
-      "page_modified_datetime": "2026-08-19T16:32:05+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

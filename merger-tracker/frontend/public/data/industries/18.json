@@ -49,10 +49,21 @@
       "code": "189",
       "name": "Other Basic Chemical Product Manufacturing",
       "level": "group",
-      "merger_count": 1
+      "merger_count": 2
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-85043",
+      "merger_name": "Lone Star Funds - ContiTech",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-20T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-80035",
       "merger_name": "Saint-Gobain - Xypex",
@@ -329,11 +340,11 @@
       "determination_date": "2026-02-05T12:00:00Z"
     }
   ],
-  "count": 25,
-  "phase_1_count": 16,
+  "count": 26,
+  "phase_1_count": 17,
   "phase_2_count": 1,
   "waiver_count": 8,
-  "active_count": 6,
+  "active_count": 7,
   "phase_duration": {
     "average_days": 28.75,
     "median_days": 25.5,

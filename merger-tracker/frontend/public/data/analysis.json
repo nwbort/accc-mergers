@@ -477,6 +477,11 @@
         "in_progress": false
       },
       {
+        "business_days": 18,
+        "calendar_days": 24,
+        "in_progress": false
+      },
+      {
         "business_days": 25,
         "calendar_days": 39,
         "in_progress": false
@@ -924,17 +929,17 @@
     ],
     "stats": {
       "average": 20.0,
-      "median": 17.0,
+      "median": 17,
       "min": 15,
       "max": 59,
-      "count": 184
+      "count": 185
     },
     "calendar_stats": {
       "average": 29.9,
-      "median": 26.0,
+      "median": 26,
       "min": 21,
       "max": 103,
-      "count": 184
+      "count": 185
     }
   },
   "waiver_duration": {
@@ -2362,7 +2367,7 @@
       33,
       36,
       44,
-      32
+      33
     ],
     "waivers": [
       0,
@@ -2479,11 +2484,11 @@
     {
       "code": "M",
       "name": "Professional, Scientific and Technical Services",
-      "average_business_days": 21.9,
-      "median_business_days": 18,
-      "average_calendar_days": 33.3,
-      "median_calendar_days": 27,
-      "count": 41
+      "average_business_days": 21.8,
+      "median_business_days": 18.0,
+      "average_calendar_days": 33.1,
+      "median_calendar_days": 27.0,
+      "count": 42
     },
     {
       "code": "I",
@@ -2579,11 +2584,11 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 405,
+      "count": 406,
       "outcome_mix": {
-        "Approved": 405
+        "Approved": 406
       },
-      "median_phase_1_business_days": 17.0
+      "median_phase_1_business_days": 17
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -2635,7 +2640,7 @@
       "15": 40,
       "16": 33,
       "17": 23,
-      "18": 18,
+      "18": 19,
       "19": 15,
       "20": 8,
       "21": 6,
@@ -2656,9 +2661,9 @@
     },
     "stats": {
       "mean_used_bd": 18.1,
-      "median_used_bd": 17,
-      "pct_decided_final_3_bd": 3.6,
-      "count": 169
+      "median_used_bd": 17.0,
+      "pct_decided_final_3_bd": 3.5,
+      "count": 170
     },
     "extended_count": 6
   },
@@ -2738,17 +2743,17 @@
       "approved": 23,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 13,
+      "in_progress": 14,
       "phase2_referral_rate": 0.08
     },
     {
       "code": "M",
       "name": "Professional, Scientific and Technical Services",
-      "approved": 38,
+      "approved": 39,
       "not_approved": 0,
       "referred": 3,
       "in_progress": 14,
-      "phase2_referral_rate": 0.073
+      "phase2_referral_rate": 0.071
     },
     {
       "code": "E",
@@ -2765,7 +2770,7 @@
       "approved": 51,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 16,
+      "in_progress": 17,
       "phase2_referral_rate": 0.038
     },
     {
@@ -2873,7 +2878,7 @@
     },
     {
       "quarter": "2026-Q3",
-      "notifications": 76,
+      "notifications": 77,
       "referred": 1
     }
   ]
