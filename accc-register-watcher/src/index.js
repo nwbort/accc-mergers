@@ -20,13 +20,28 @@
  *                      envelope sender and the From: header
  */
 
+import PostalMime from "postal-mime";
+
 const DISPATCH_EVENT_TYPE = "new_merger_detected";
+
+// Matter IDs on the ACCC register look like "MN-12345" or "WA-12345" (see
+// scripts/scrape.sh's matter_number handling) - two letters, a dash, five
+// digits. Kept as a loose pattern rather than a hardcoded MN|WA prefix list
+// since the register has used other two-letter prefixes historically.
+const MATTER_ID_RE = /\b[A-Z]{2}-\d{5}\b/g;
 
 // Pulls the bare address out of either a plain "user@domain" string or a
 // display-name form like "ACCC <user@domain>".
 function extractAddress(value) {
   const match = (value || "").match(/<([^>]+)>/);
   return (match ? match[1] : value || "").trim().toLowerCase();
+}
+
+// Extracts the distinct matter IDs mentioned in the email body, in the order
+// they first appear, so a run can be spot-checked against the notification
+// before the scraper even runs.
+export function extractMatterIds(text) {
+  return [...new Set((text || "").match(MATTER_ID_RE) || [])];
 }
 
 export function isAllowedSender(candidates, allowedSendersVar) {
@@ -66,6 +81,17 @@ export default {
 
     console.log(`ACCC register update email received from ${from}: ${subject}`);
 
+    // message.raw is the full raw MIME stream (headers not pre-parsed into a
+    // body) - parse it to get the plain-text body so we can pull out which
+    // matter(s) the email is actually about.
+    let matterIds = [];
+    try {
+      const email = await PostalMime.parse(message.raw);
+      matterIds = extractMatterIds(email.text || email.html || "");
+    } catch (err) {
+      console.warn(`Failed to parse email body for matter IDs: ${err}`);
+    }
+
     const resp = await fetch(
       `https://api.github.com/repos/${env.GITHUB_REPO}/dispatches`,
       {
@@ -84,6 +110,7 @@ export default {
             source: "accc-register-watcher",
             email_from: from,
             email_subject: subject,
+            matter_ids: matterIds.join(", "),
             received_at: new Date().toISOString(),
           },
         }),
