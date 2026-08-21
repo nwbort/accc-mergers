@@ -9,7 +9,7 @@
       "code": "62",
       "name": "Finance",
       "level": "subdivision",
-      "merger_count": 99
+      "merger_count": 100
     },
     {
       "code": "63",
@@ -25,6 +25,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-60030",
+      "merger_name": "Tencent \u2013 Happibits",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-20T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-80035",
       "merger_name": "Saint-Gobain - Xypex",
@@ -1599,11 +1610,11 @@
       "determination_date": null
     }
   ],
-  "count": 143,
-  "phase_1_count": 34,
+  "count": 144,
+  "phase_1_count": 35,
   "phase_2_count": 2,
   "waiver_count": 107,
-  "active_count": 12,
+  "active_count": 13,
   "phase_duration": {
     "average_days": 28.36,
     "median_days": 25,

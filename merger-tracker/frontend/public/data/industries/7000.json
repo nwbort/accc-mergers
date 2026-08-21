@@ -27,6 +27,17 @@
   "children": [],
   "mergers": [
     {
+      "merger_id": "MN-60030",
+      "merger_name": "Tencent \u2013 Happibits",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-20T12:00:00Z",
+      "determination_date": null
+    },
+    {
       "merger_id": "MN-45024",
       "merger_name": "OEConnection - Epyx",
       "is_waiver": false,
@@ -687,11 +698,11 @@
       "determination_date": "2026-01-20T12:00:00Z"
     }
   ],
-  "count": 60,
-  "phase_1_count": 26,
+  "count": 61,
+  "phase_1_count": 27,
   "phase_2_count": 0,
   "waiver_count": 34,
-  "active_count": 8,
+  "active_count": 9,
   "phase_duration": {
     "average_days": 29.5,
     "median_days": 27.0,

@@ -1,10 +1,10 @@
 {
-  "total_mergers": 231,
+  "total_mergers": 232,
   "total_waivers": 345,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 178,
-    "Under assessment": 50,
+    "Under assessment": 51,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -56,11 +56,11 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 91
+      "count": 92
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 60
+      "count": 61
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-60030",
+      "merger_name": "Tencent \u2013 Happibits",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-20T12:00:00Z",
+      "page_modified_datetime": "2026-08-21T11:16:09+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-60035",
       "merger_name": "L'Or\u00e9al \u2013 Gucci Beauty Licence",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-13T12:00:00Z",
       "page_modified_datetime": "2026-08-14T11:40:00+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-50035",
-      "merger_name": "Opal HealthCare - Canberra Nursing Home (Lidcombe, NSW)",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-12T12:00:00Z",
-      "page_modified_datetime": "2026-08-19T17:35:22+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

@@ -15,10 +15,21 @@
       "code": "70",
       "name": "Computer System Design and Related Services",
       "level": "subdivision",
-      "merger_count": 60
+      "merger_count": 61
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-60030",
+      "merger_name": "Tencent \u2013 Happibits",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-20T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-45024",
       "merger_name": "OEConnection - Epyx",
@@ -1439,11 +1450,11 @@
       "determination_date": null
     }
   ],
-  "count": 129,
-  "phase_1_count": 51,
+  "count": 130,
+  "phase_1_count": 52,
   "phase_2_count": 3,
   "waiver_count": 75,
-  "active_count": 15,
+  "active_count": 16,
   "phase_duration": {
     "average_days": 33.292682926829265,
     "median_days": 27,
