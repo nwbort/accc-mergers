@@ -7,7 +7,7 @@
   "original_notification_datetime": "2026-08-15T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-09-25T12:00:00Z",
-  "page_modified_datetime": "2026-08-17T12:29:29+10:00",
+  "page_modified_datetime": "2026-08-21T10:51:28+10:00",
   "consultation_response_due_date": "2026-08-24T12:00:00Z",
   "acquirers": [
     {
@@ -37,19 +37,6 @@
   ],
   "other_parties": [
     {
-      "name": "Francisco Partners Management, LP.",
-      "identifier_type": null,
-      "identifier": "SEC reference number  80173955",
-      "canonical": {
-        "id": "francisco-partners-management-l-p",
-        "name": "Francisco Partners Management"
-      },
-      "party_page": {
-        "id": "francisco-partners-management-l-p",
-        "name": "Francisco Partners Management"
-      }
-    },
-    {
       "name": "OEConnection, LLC",
       "identifier_type": null,
       "identifier": "1196674",
@@ -60,6 +47,19 @@
       "party_page": {
         "id": "oeconnection",
         "name": "OEConnection"
+      }
+    },
+    {
+      "name": "Francisco Partners Management, LP.",
+      "identifier_type": null,
+      "identifier": "SEC reference number  80173955",
+      "canonical": {
+        "id": "francisco-partners-management-l-p",
+        "name": "Francisco Partners Management"
+      },
+      "party_page": {
+        "id": "francisco-partners-management-l-p",
+        "name": "Francisco Partners Management"
       }
     }
   ],

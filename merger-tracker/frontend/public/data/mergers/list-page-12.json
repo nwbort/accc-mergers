@@ -1972,19 +1972,6 @@
       ],
       "other_parties": [
         {
-          "name": "Francisco Partners Management, LP.",
-          "identifier_type": null,
-          "identifier": "SEC reference number  80173955",
-          "canonical": {
-            "id": "francisco-partners-management-l-p",
-            "name": "Francisco Partners Management"
-          },
-          "party_page": {
-            "id": "francisco-partners-management-l-p",
-            "name": "Francisco Partners Management"
-          }
-        },
-        {
           "name": "OEConnection, LLC",
           "identifier_type": null,
           "identifier": "1196674",
@@ -1995,6 +1982,19 @@
           "party_page": {
             "id": "oeconnection",
             "name": "OEConnection"
+          }
+        },
+        {
+          "name": "Francisco Partners Management, LP.",
+          "identifier_type": null,
+          "identifier": "SEC reference number  80173955",
+          "canonical": {
+            "id": "francisco-partners-management-l-p",
+            "name": "Francisco Partners Management"
+          },
+          "party_page": {
+            "id": "francisco-partners-management-l-p",
+            "name": "Francisco Partners Management"
           }
         }
       ],
@@ -2045,30 +2045,12 @@
       ],
       "targets": [
         {
-          "name": "Xypex Investment Holdings Inc. / Xypex Chemical Corporation",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "xypex-investment-holdings-inc-xypex-chemical-corporation",
-            "name": "Xypex Investment Holdings Inc. / Xypex Chemical Corporation"
-          }
-        },
-        {
           "name": "TorQuest Capital Fund V,L.P.",
           "identifier_type": null,
           "identifier": "",
           "party_page": {
             "id": "torquest-capital-fund-v-l-p",
             "name": "TorQuest Capital Fund V,L.P."
-          }
-        },
-        {
-          "name": "TorQuest Partners Management Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "torquest-partners-management-inc",
-            "name": "TorQuest Partners Management Inc."
           }
         },
         {
@@ -2081,12 +2063,30 @@
           }
         },
         {
+          "name": "TorQuest Partners Management Inc.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "torquest-partners-management-inc",
+            "name": "TorQuest Partners Management Inc."
+          }
+        },
+        {
           "name": "TorQuest Partners Fund (U.S.) V, L.P.",
           "identifier_type": null,
           "identifier": "",
           "party_page": {
             "id": "torquest-partners-fund-u-s-v-l-p",
             "name": "TorQuest Partners Fund (U.S.) V, L.P."
+          }
+        },
+        {
+          "name": "Xypex Investment Holdings Inc. / Xypex Chemical Corporation",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "xypex-investment-holdings-inc-xypex-chemical-corporation",
+            "name": "Xypex Investment Holdings Inc. / Xypex Chemical Corporation"
           }
         }
       ],
