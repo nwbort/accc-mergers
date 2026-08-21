@@ -54,7 +54,7 @@ const getEventCategory = (event) => {
 
   if (title.includes('notified')) return 'notification';
   if (combined.includes('notice of competition concerns')) return 'nocc';
-  if (combined.includes('questionnaire')) return 'questionnaire';
+  if (event.is_questionnaire_event || combined.includes('questionnaire')) return 'questionnaire';
   if (
     combined.includes('determination') ||
     isPhase2ReferralTitle(combined)

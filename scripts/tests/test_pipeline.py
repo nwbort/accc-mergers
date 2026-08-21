@@ -25,6 +25,9 @@ from cutoff import is_waiver_merger, get_cutoff_date, should_skip_merger
 from extract_mergers import (
     is_safe_url,
     get_serve_filename,
+    _extract_consultations,
+    _extract_consultation_date,
+    _scrape_events,
     detect_inferred_phase_2,
     _infer_determination_date_from_events,
     _extract_anzsic_codes,
@@ -3119,3 +3122,258 @@ class TestCalculateMissingEndOfDeterminationPeriod:
         }
         _calculate_missing_end_of_determination_period(merger_data, 'MN-30008')
         assert merger_data['end_of_determination_period'] == '2026-07-01T12:00:00Z'
+
+
+# ---------------------------------------------------------------------------
+# extract_mergers: consultation section, old and new ACCC page formats
+# ---------------------------------------------------------------------------
+
+# Markup the ACCC used until Aug 2026: a prose blurb carrying the deadline, and
+# a document table sharing the "Decisions and key events" markup.
+OLD_FORMAT_CONSULTATION = '''
+<div>
+  <h3 class="border-bottom">Consultation</h3>
+  <div class="field field--name-field-acccgov-consultation-text field--type-text-long
+              field--label-hidden clearfix text-formatted field__item">
+    <p>The ACCC has prepared a questionnaire on the Acquisition. Submissions
+       should be provided by <strong>21 August 2026</strong> via email.</p>
+  </div>
+  <div class="field field--name-field-acccgov-consultations table-responsive field__items">
+    <table class="table table-striped"><tbody>
+      <tr>
+        <td class="acccgov-timeline__date"><time datetime="2026-08-14T12:00:00Z">14 Aug 2026</time></td>
+        <td>Incubeta - Datisan - Questionnaire</td>
+        <td class="acccgov-timeline__file-link">
+          <a href="/system/files/public-merger-register/documents/Incubeta%20-%20Datisan%20-%20Questionnaire.docx">Attachment</a>
+        </td>
+      </tr>
+    </tbody></table>
+  </div>
+</div>
+'''
+
+# Markup rolled out from Aug 2026 (MN-40039 among the first): the document table
+# is gone and the questionnaire hangs off a structured consultation paragraph.
+NEW_FORMAT_CONSULTATION = '''
+<div>
+  <h3 class="border-bottom">Consultation</h3>
+  <h4><div class="field field--name-field-accc-header field--type-string
+                  field--label-hidden field__item">Incubeta - Datisan - Questionnaire</div></h4>
+  <div class="field field--name-field-acccgov-description field--type-text-long
+              field--label-hidden clearfix text-formatted field__item">
+    <p>The ACCC has prepared a questionnaire on the Acquisition. Submissions
+       should be provided by <strong>21 August 2026</strong> via email.</p>
+  </div>
+  <div class="field field--label-inline clearfix">
+    <div class="field__label">Status</div>
+    <div class="field__item">Open</div>
+  </div>
+  <div class="field field--name-field-acccgov-consult-open-date field--type-datetime
+              field--label-inline clearfix">
+    <div class="field__label">Open date</div>
+    <div class="field__item"><time datetime="2026-08-14T12:00:00Z">14 Aug 2026</time></div>
+  </div>
+  <div class="field field--name-field-acccgov-consult-close-date field--type-datetime
+              field--label-inline clearfix">
+    <div class="field__label">Closing date</div>
+    <div class="field__item"><time datetime="2026-08-22T12:00:00Z">22 Aug 2026</time></div>
+  </div>
+  <div class="field field--label-inline">
+    <div class="field__label">Questionnaire</div>
+    <div class="paragraph paragraph--type--acccgov-questionnaire paragraph--view-mode--default">
+      <div class="field field--name-field-acccgov-file field__item">
+        <div class="field field--name-file field--type-file field--label-hidden field__item">
+          <a href="/system/files/moderated_files/Incubeta%20-%20Datisan%20-%20Questionnaire_0.docx">Attachment</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+'''
+
+QUESTIONNAIRE_DOCUMENTS_URL = (
+    'https://www.accc.gov.au/system/files/public-merger-register/documents/'
+    'Incubeta%20-%20Datisan%20-%20Questionnaire.docx'
+)
+QUESTIONNAIRE_MODERATED_URL = (
+    'https://www.accc.gov.au/system/files/moderated_files/'
+    'Incubeta%20-%20Datisan%20-%20Questionnaire_0.docx'
+)
+
+
+def _soup(html):
+    return BeautifulSoup(html, 'html.parser')
+
+
+class TestExtractConsultations:
+    def test_new_format_is_parsed(self):
+        consultations = _extract_consultations(_soup(NEW_FORMAT_CONSULTATION))
+        assert len(consultations) == 1
+        assert consultations[0] == {
+            'title': 'Incubeta - Datisan - Questionnaire',
+            'description': consultations[0]['description'],
+            'status': 'Open',
+            'open_date': '2026-08-14T12:00:00Z',
+            'close_date': '2026-08-22T12:00:00Z',
+            'document_url': QUESTIONNAIRE_MODERATED_URL,
+        }
+        assert '21 August 2026' in consultations[0]['description']
+
+    def test_old_format_yields_nothing(self):
+        # The old markup has no structured consultation to read; its
+        # questionnaire is picked up by the document-table scraper instead.
+        assert _extract_consultations(_soup(OLD_FORMAT_CONSULTATION)) == []
+
+    def test_page_without_a_consultation_section(self):
+        assert _extract_consultations(_soup('<div><h3 class="border-bottom">Status</h3></div>')) == []
+
+    def test_multiple_consultations_are_split_at_each_header(self):
+        second = (NEW_FORMAT_CONSULTATION
+                  .split('<h3 class="border-bottom">Consultation</h3>')[1]
+                  .rsplit('</div>', 1)[0]
+                  .replace('2026-08-22T12:00:00Z', '2026-09-30T12:00:00Z')
+                  .replace('Questionnaire_0.docx', 'Questionnaire_1.docx')
+                  .replace('Incubeta - Datisan - Questionnaire</div></h4>',
+                           'Incubeta - Datisan - Remedy questionnaire</div></h4>'))
+        html = NEW_FORMAT_CONSULTATION.rsplit('</div>', 1)[0] + second + '</div>'
+        consultations = _extract_consultations(_soup(html))
+        assert [c['title'] for c in consultations] == [
+            'Incubeta - Datisan - Questionnaire',
+            'Incubeta - Datisan - Remedy questionnaire',
+        ]
+        assert [c['close_date'] for c in consultations] == [
+            '2026-08-22T12:00:00Z', '2026-09-30T12:00:00Z',
+        ]
+
+
+class TestExtractConsultationDate:
+    def test_new_format_uses_the_closing_date_field(self):
+        assert _extract_consultation_date(_soup(NEW_FORMAT_CONSULTATION), None) == {
+            'consultation_response_due_date': '2026-08-22T12:00:00Z'
+        }
+
+    def test_old_format_still_reads_the_deadline_from_prose(self):
+        assert _extract_consultation_date(_soup(OLD_FORMAT_CONSULTATION), None) == {
+            'consultation_response_due_date': '2026-08-21T12:00:00Z'
+        }
+
+    def test_new_format_falls_back_to_prose_when_closing_date_is_empty(self):
+        html = NEW_FORMAT_CONSULTATION.replace(
+            '<time datetime="2026-08-22T12:00:00Z">22 Aug 2026</time>', '')
+        assert _extract_consultation_date(_soup(html), None) == {
+            'consultation_response_due_date': '2026-08-21T12:00:00Z'
+        }
+
+    def test_existing_value_is_preserved_once_the_section_disappears(self):
+        # The ACCC now deletes the whole consultation section when it closes.
+        existing = {'consultation_response_due_date': '2026-08-22T12:00:00Z'}
+        assert _extract_consultation_date(_soup('<div></div>'), existing) == existing
+
+
+class TestScrapeConsultationEvents:
+    """The new consultation section must yield the same timeline event the old
+    document table did, so the download, DOCX→PDF conversion, questionnaire
+    parsing and frontend all keep working unchanged."""
+
+    def _scrape(self, html, monkeypatch):
+        monkeypatch.setattr(extract_mergers, 'download_attachment',
+                            lambda *a, **k: None)
+        return _scrape_events(_soup(html), 'MN-05043')
+
+    def test_new_format_yields_a_questionnaire_event(self, monkeypatch):
+        events = self._scrape(NEW_FORMAT_CONSULTATION, monkeypatch)
+        assert len(events) == 1
+        event = events[0]
+        assert event['date'] == '2026-08-14T12:00:00Z'
+        assert event['title'] == 'Incubeta - Datisan - Questionnaire'
+        assert event['url'] == QUESTIONNAIRE_MODERATED_URL
+        assert event['url_gh'] == '/mergers/MN-05043/Incubeta - Datisan - Questionnaire_0.pdf'
+        assert event['status'] == 'live'
+        assert event['is_questionnaire_event'] is True
+
+    def test_old_format_is_unchanged_and_unflagged(self, monkeypatch):
+        events = self._scrape(OLD_FORMAT_CONSULTATION, monkeypatch)
+        assert len(events) == 1
+        assert events[0]['url'] == QUESTIONNAIRE_DOCUMENTS_URL
+        assert 'is_questionnaire_event' not in events[0]
+
+    def test_a_consultation_without_a_document_yields_no_event(self, monkeypatch):
+        html = NEW_FORMAT_CONSULTATION.replace('paragraph--type--acccgov-questionnaire', 'x')
+        assert self._scrape(html, monkeypatch) == []
+
+    def test_a_page_carrying_both_formats_yields_one_event(self, monkeypatch):
+        # Not expected during the rollout, but the same document must never be
+        # scraped twice if a page ever renders both.
+        both = OLD_FORMAT_CONSULTATION + NEW_FORMAT_CONSULTATION
+        events = self._scrape(both, monkeypatch)
+        assert len(events) == 1
+        assert events[0]['url'] == QUESTIONNAIRE_DOCUMENTS_URL
+
+
+class TestMergeConsultationQuestionnaireEvents:
+    """The questionnaire moved to a new URL — and sometimes a new title and
+    date — when a page switched format. The existing event must be re-bound to
+    it rather than left 'removed' beside a duplicate."""
+
+    def _existing(self, title='Incubeta - Datisan - Questionnaire',
+                  date='2026-08-14T12:00:00Z'):
+        return {
+            'events': [{
+                'date': date,
+                'title': title,
+                'display_title': title,
+                'url': QUESTIONNAIRE_DOCUMENTS_URL,
+                'url_gh': '/mergers/MN-05043/Incubeta - Datisan - Questionnaire.pdf',
+                'status': 'removed',
+            }],
+        }
+
+    def _scraped(self, title='Incubeta - Datisan - Questionnaire',
+                 date='2026-08-14T12:00:00Z'):
+        return [{
+            'date': date,
+            'title': title,
+            'display_title': title,
+            'url': QUESTIONNAIRE_MODERATED_URL,
+            'url_gh': '/mergers/MN-05043/Incubeta - Datisan - Questionnaire_0.pdf',
+            'status': 'live',
+            'is_questionnaire_event': True,
+        }]
+
+    def test_rebinds_to_the_new_url(self):
+        merged = _merge_events(self._scraped(), self._existing(), 'MN-05043', set())
+        assert len(merged) == 1
+        assert merged[0]['url'] == QUESTIONNAIRE_MODERATED_URL
+        assert merged[0]['status'] == 'live'
+
+    def test_rebinds_when_the_consultation_was_retitled_and_redated(self):
+        # MN-45024 ("Questionnaire - OEConnection - Epyx" became
+        # "OEConnection-Epyx - Phase 1 consultation") and MN-05046 (open date
+        # moved two days): neither title nor date survives the move.
+        merged = _merge_events(
+            self._scraped(title='Incubeta-Datisan - Phase 1 consultation',
+                          date='2026-08-21T12:00:00Z'),
+            self._existing(), 'MN-05043', set(),
+        )
+        assert len(merged) == 1
+        assert merged[0]['url'] == QUESTIONNAIRE_MODERATED_URL
+        assert merged[0]['display_title'] == 'Incubeta - Datisan - Questionnaire'
+
+    def test_a_different_document_is_not_rebound(self):
+        scraped = self._scraped()
+        scraped[0]['url'] = (
+            'https://www.accc.gov.au/system/files/moderated_files/'
+            'Incubeta%20-%20Datisan%20-%20Remedy%20questionnaire.docx'
+        )
+        scraped[0]['title'] = 'Incubeta - Datisan - Remedy questionnaire'
+        scraped[0]['date'] = '2026-09-25T12:00:00Z'
+        merged = _merge_events(scraped, self._existing(), 'MN-05043', set())
+        assert len(merged) == 2
+
+    def test_filename_matching_is_scoped_to_consultation_events(self):
+        # An ordinary timeline document keeps the stricter title+date rule, so
+        # a same-named file on a different date stays a separate event.
+        scraped = self._scraped(title='Some other document', date='2026-09-25T12:00:00Z')
+        del scraped[0]['is_questionnaire_event']
+        merged = _merge_events(scraped, self._existing(), 'MN-05043', set())
+        assert len(merged) == 2

@@ -30,7 +30,7 @@ def generate(mergers: list, output_dir: Path, page_size: int = 100) -> int:
 
         for event in m.get('events', []):
             title = event.get('title', '')
-            events.append({
+            entry = {
                 "date": event.get('date'),
                 "title": title,
                 "display_title": event.get('display_title'),
@@ -46,7 +46,14 @@ def generate(mergers: list, output_dir: Path, page_size: int = 100) -> int:
                 "is_waiver": merger_is_waiver,
                 "under_appeal": merger_under_appeal,
                 "is_appeal": event.get('is_appeal', False),
-            })
+            }
+            # Only emitted when set: questionnaires read out of the ACCC's
+            # structured consultation section carry a header that does not
+            # always say "questionnaire", so the type filter needs the flag.
+            # Written conditionally so the committed pages don't all churn.
+            if event.get('is_questionnaire_event'):
+                entry["is_questionnaire_event"] = True
+            events.append(entry)
 
     # Sort by date ascending (oldest first, newest last).
     # New events always append to the last page, so only the last page file

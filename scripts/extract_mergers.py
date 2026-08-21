@@ -423,13 +423,155 @@ def _extract_dates_and_status(soup, merger_id, existing_merger_data):
     return data
 
 
+# --- Consultation section: two ACCC page formats ----------------------------
+#
+# Old format: a free-text blurb (field_acccgov_consultation_text) stating the
+# response deadline in prose, followed by a table of consultation documents
+# using the same markup as the "Decisions and key events" table — so
+# _scrape_events picked the questionnaire up as an ordinary attachment row.
+#
+# New format (rolled out page by page from Aug 2026; MN-40039 was among the
+# first pages to be published with it): a structured consultation paragraph
+# carrying its own header, description, status, open/closing dates and a
+# questionnaire file reference. The document table is gone, so the questionnaire
+# has to be read out of this section instead, and the deadline now comes from
+# the "Closing date" field rather than from prose.
+#
+# Both formats must keep working while the rollout completes.
+
+_CONSULTATION_HEADING = 'consultation'
+
+
+def _has_class(tag, class_name):
+    return tag.name == 'div' and class_name in (tag.get('class') or [])
+
+
+def _class_matcher(class_name):
+    return lambda tag: _has_class(tag, class_name)
+
+
+def _consultation_section(soup):
+    """Return the div wrapping the page's "Consultation" section, if present."""
+    for heading in soup.find_all('h3', class_='border-bottom'):
+        if heading.get_text(strip=True).lower() == _CONSULTATION_HEADING:
+            return heading.parent
+    return None
+
+
+def _group_find(group, matcher):
+    """First tag in ``group`` (a flat list of sibling tags) matching ``matcher``,
+    searching each sibling itself and then its descendants."""
+    for node in group:
+        if matcher(node):
+            return node
+        found = node.find(matcher)
+        if found:
+            return found
+    return None
+
+
+def _group_field_time(group, field_name):
+    """ISO datetime from a ``field--name-<field_name>`` field holding a <time>."""
+    field = _group_find(group, _class_matcher(f'field--name-{field_name}'))
+    time_tag = field.find('time') if field else None
+    if time_tag and time_tag.has_attr('datetime'):
+        return time_tag['datetime']
+    return None
+
+
+def _group_inline_field(group, label):
+    """Value of a label/value pair rendered without a ``field--name-*`` class.
+
+    The new consultation markup renders "Status" as a bare
+    ``<div class="field field--label-inline">`` holding a ``field__label`` and a
+    ``field__item``, so it can only be located by its label text.
+    """
+    def is_labelled_field(tag):
+        if not _has_class(tag, 'field'):
+            return False
+        label_tag = tag.find('div', class_='field__label')
+        return bool(label_tag) and label_tag.get_text(strip=True).lower() == label.lower()
+
+    field = _group_find(group, is_labelled_field)
+    if field is None:
+        return None
+    item = field.find('div', class_='field__item')
+    return item.get_text(strip=True) if item else None
+
+
+def _extract_consultations(soup):
+    """Parse a new-format consultation section into a list of consultations.
+
+    Each entry has ``title``, ``status``, ``open_date``, ``close_date`` and
+    ``document_url`` (the questionnaire attachment, absolute).
+
+    Returns ``[]`` for old-format pages, and for pages with no consultation at
+    all — the ACCC now drops the whole section once a consultation closes,
+    where it previously left behind a "the period ... has concluded" blurb.
+
+    The section's children are flat: a consultation's fields are siblings of its
+    ``<h4>`` header rather than being wrapped per consultation, so they are
+    grouped by splitting the children at each header.
+    """
+    section = _consultation_section(soup)
+    if section is None:
+        return []
+
+    groups = []
+    current = None
+    for child in section.children:
+        if getattr(child, 'name', None) is None or child.name == 'h3':
+            continue
+        if child.name == 'h4':
+            current = [child]
+            groups.append(current)
+        elif current is not None:
+            current.append(child)
+
+    consultations = []
+    for group in groups:
+        header = _group_find(group, _class_matcher('field--name-field-accc-header'))
+        description = _group_find(
+            group, _class_matcher('field--name-field-acccgov-description'))
+        questionnaire = _group_find(
+            group, _class_matcher('paragraph--type--acccgov-questionnaire'))
+        link = questionnaire.find('a', href=True) if questionnaire else None
+
+        consultations.append({
+            'title': header.get_text(strip=True) if header else None,
+            'description': description.get_text(strip=True) if description else None,
+            'status': _group_inline_field(group, 'Status'),
+            'open_date': _group_field_time(group, 'field-acccgov-consult-open-date'),
+            'close_date': _group_field_time(group, 'field-acccgov-consult-close-date'),
+            'document_url': urljoin(BASE_URL, link['href']) if link else None,
+        })
+
+    return consultations
+
+
 def _extract_consultation_date(soup, existing_merger_data):
     """Extract consultation response due date, preserving existing data as fallback."""
-    consultation_tag = soup.find('div', class_='field--name-field-acccgov-consultation-text')
-    consultation_due_date = None
-    if consultation_tag:
-        consultation_text = consultation_tag.get_text(strip=True)
-        consultation_due_date = parse_text_to_iso(consultation_text, include_time=True)
+    # New format: the closing date is a structured field. Take the latest when a
+    # page carries more than one consultation, falling back to the deadline
+    # stated in the consultation's own prose if the field is ever left empty.
+    consultations = _extract_consultations(soup)
+    close_dates = [c['close_date'] for c in consultations if c['close_date']]
+    if not close_dates:
+        close_dates = [
+            iso for iso in (
+                parse_text_to_iso(c['description'], include_time=True)
+                for c in consultations if c['description']
+            )
+            if iso
+        ]
+    consultation_due_date = max(close_dates) if close_dates else None
+
+    # Old format: the deadline is stated in prose in the consultation blurb.
+    if not consultation_due_date:
+        consultation_tag = soup.find('div', class_='field--name-field-acccgov-consultation-text')
+        if consultation_tag:
+            consultation_text = consultation_tag.get_text(strip=True)
+            consultation_due_date = parse_text_to_iso(consultation_text, include_time=True)
 
     if consultation_due_date:
         return {'consultation_response_due_date': consultation_due_date}
@@ -566,40 +708,101 @@ def _scrape_events(soup, merger_id, existing_merger_data=None):
 
             link_tag = link_cell.find('a') if link_cell else None
             if link_tag and link_tag.has_attr('href'):
-                url = urljoin(BASE_URL, link_tag['href'])
-                event['url'] = url
-
-                determination_data = download_attachment(
-                    merger_id, url, title,
-                    cached_determination_data=cached_determination_by_url.get(url),
+                _attach_document(
+                    event, merger_id, urljoin(BASE_URL, link_tag['href']),
+                    cached_determination_by_url, cached_phase2_notice_by_url,
                 )
-                if determination_data:
-                    event['determination_commission_division'] = determination_data.get('commission_division')
-                    event['determination_table_content'] = determination_data.get('table_content')
-                    statement = determination_data.get('statement_of_reasons')
-                    if statement:
-                        event['determination_statement_of_reasons'] = statement
-
-                if url in cached_phase2_notice_by_url:
-                    cached_notice = cached_phase2_notice_by_url[url]
-                    event['phase2_notice_matters_to_investigate'] = cached_notice['matters_to_investigate']
-                    event['phase2_notice_commission_division'] = cached_notice['commission_division']
-
-                parsed_url = urlparse(url)
-                original_filename = unquote(os.path.basename(parsed_url.path)).strip()
-                if is_safe_filename(original_filename):
-                    safe_filename = original_filename
-                else:
-                    safe_filename = sanitize_filename(original_filename)
-
-                if safe_filename:
-                    serve_filename = get_serve_filename(safe_filename)
-                    event['url_gh'] = f"/mergers/{merger_id}/{serve_filename}"
-                event['status'] = 'live'
 
             scraped_events.append(event)
 
+    scraped_events.extend(_scrape_consultation_events(
+        soup, merger_id, scraped_events,
+        cached_determination_by_url, cached_phase2_notice_by_url,
+    ))
+
     return scraped_events
+
+
+def _attach_document(event, merger_id, url, cached_determination_by_url,
+                     cached_phase2_notice_by_url):
+    """Download ``url`` and record it (and anything parsed from it) on ``event``."""
+    event['url'] = url
+
+    determination_data = download_attachment(
+        merger_id, url, event.get('title'),
+        cached_determination_data=cached_determination_by_url.get(url),
+    )
+    if determination_data:
+        event['determination_commission_division'] = determination_data.get('commission_division')
+        event['determination_table_content'] = determination_data.get('table_content')
+        statement = determination_data.get('statement_of_reasons')
+        if statement:
+            event['determination_statement_of_reasons'] = statement
+
+    if url in cached_phase2_notice_by_url:
+        cached_notice = cached_phase2_notice_by_url[url]
+        event['phase2_notice_matters_to_investigate'] = cached_notice['matters_to_investigate']
+        event['phase2_notice_commission_division'] = cached_notice['commission_division']
+
+    parsed_url = urlparse(url)
+    original_filename = unquote(os.path.basename(parsed_url.path)).strip()
+    if is_safe_filename(original_filename):
+        safe_filename = original_filename
+    else:
+        safe_filename = sanitize_filename(original_filename)
+
+    if safe_filename:
+        serve_filename = get_serve_filename(safe_filename)
+        event['url_gh'] = f"/mergers/{merger_id}/{serve_filename}"
+    event['status'] = 'live'
+
+
+def _scrape_consultation_events(soup, merger_id, table_events,
+                                cached_determination_by_url,
+                                cached_phase2_notice_by_url):
+    """Build timeline events for questionnaires held in the new consultation section.
+
+    On old-format pages the questionnaire was a row in the consultation document
+    table, which _scrape_events already picks up; on new-format pages that table
+    is gone and the questionnaire hangs off the structured consultation instead
+    (see _extract_consultations). Turning it back into an ordinary attachment
+    event keeps the download, the DOCX→PDF conversion, questionnaire parsing and
+    the frontend timeline working exactly as before.
+
+    ``is_questionnaire_event`` marks these events as questionnaires structurally:
+    the consultation header the ACCC now uses as the title does not always say
+    "questionnaire" (e.g. MN-45024's "OEConnection-Epyx - Phase 1 consultation"),
+    which the title-based checks downstream rely on.
+    """
+    already_scraped = {
+        _normalize_attachment_name(e.get('url')) for e in table_events if e.get('url')
+    }
+    already_scraped.discard(None)
+
+    events = []
+    for consultation in _extract_consultations(soup):
+        url = consultation['document_url']
+        if not url:
+            continue
+        # A page carrying both formats at once (should not happen, but the
+        # rollout is page by page) must not yield the document twice.
+        if _normalize_attachment_name(url) in already_scraped:
+            continue
+
+        title = consultation['title'] or 'Questionnaire'
+        event = {
+            'date': consultation['open_date'] or '',
+            'title': title,
+            'display_title': title,
+            'is_questionnaire_event': True,
+        }
+        _attach_document(
+            event, merger_id, url,
+            cached_determination_by_url, cached_phase2_notice_by_url,
+        )
+        events.append(event)
+
+    return events
 
 
 def _merge_events(scraped_events, existing_merger_data, merger_id, frozen_events_mergers):
@@ -673,7 +876,7 @@ def _merge_events(scraped_events, existing_merger_data, merger_id, frozen_events
                     (e for e in scraped_by_url.values()
                      if e['url'] not in existing_urls
                      and e['url'] not in existing_urls_processed
-                     and _same_event_identity(e, existing_event)),
+                     and _matches_existing_event(e, existing_event)),
                     None,
                 )
                 if reuploaded is not None:
@@ -753,7 +956,7 @@ def _drop_superseded_removed_events(events):
     for event in events:
         if event.get('status') == 'removed' and 'url' in event:
             successor = next(
-                (live for live in live_url_events if _same_event_identity(live, event)),
+                (live for live in live_url_events if _matches_existing_event(live, event)),
                 None,
             )
             if successor is not None:
@@ -787,6 +990,51 @@ def _same_event_identity(event_a, event_b):
         _normalize_event_title(event_a.get('title')) == _normalize_event_title(event_b.get('title'))
         and _dates_within_one_day(event_a.get('date', ''), event_b.get('date', ''))
     )
+
+
+def _normalize_attachment_name(url):
+    """Comparable form of an attachment's filename, or None when there isn't one.
+
+    Strips the CMS re-upload suffix (_0, _1 …) and every non-alphanumeric
+    character, so the same document still matches after the ACCC re-uploads it
+    under a different directory and tweaks the spacing or punctuation of its
+    name (e.g. "L'Oréal Gucci Beauty Licence -Questionnaire.docx" versus
+    "L'Oréal Gucci Beauty Licence - Questionnaire_4.docx"). The extension is
+    kept, so a DOCX never matches its converted PDF.
+    """
+    if not url:
+        return None
+    name = unquote(os.path.basename(urlparse(url).path)).strip()
+    if not name:
+        return None
+    name = re.sub(r'_\d+(\.[^.]+)$', r'\1', name)
+    normalized = re.sub(r'[^0-9a-z]+', '', name.casefold())
+    return normalized or None
+
+
+def _same_consultation_document(scraped_event, existing_event):
+    """True when a consultation-section questionnaire event is the page's new
+    home for an existing event's document.
+
+    The Aug 2026 template change moved questionnaires out of the consultation
+    document table and into the structured consultation section, re-uploading
+    the file under /system/files/moderated_files/ and sometimes re-titling or
+    re-dating the entry (e.g. MN-45024's "Questionnaire - OEConnection - Epyx"
+    became "OEConnection-Epyx - Phase 1 consultation", and MN-05046's open date
+    moved two days). Neither the title nor the date survives, so these events
+    are matched on the attachment's own name instead. Scoped to consultation
+    events so ordinary timeline documents keep their stricter title+date rule.
+    """
+    if not scraped_event.get('is_questionnaire_event'):
+        return False
+    name = _normalize_attachment_name(scraped_event.get('url'))
+    return name is not None and name == _normalize_attachment_name(existing_event.get('url'))
+
+
+def _matches_existing_event(scraped_event, existing_event):
+    """True when a scraped event is a re-publication of an existing event."""
+    return (_same_event_identity(scraped_event, existing_event)
+            or _same_consultation_document(scraped_event, existing_event))
 
 
 def _dates_within_one_day(date1, date2):

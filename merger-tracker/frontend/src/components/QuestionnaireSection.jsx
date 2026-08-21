@@ -40,12 +40,17 @@ function QuestionnaireSection({ mergerId, events }) {
     return `${daysRemaining} day${daysRemaining === 1 ? '' : 's'}`;
   };
 
-  // Find all questionnaire document links from events (some mergers have multiple)
+  // Find all questionnaire document links from events (some mergers have multiple).
+  // is_questionnaire_event is set by the scraper for questionnaires read out of
+  // the ACCC's structured consultation section, whose title is the consultation
+  // header and does not always say "questionnaire"; older events predate the
+  // flag, so the title check remains the fallback.
   const questionnaireEvents = (events || [])
     .filter(
       (event) =>
         event.url_gh &&
-        (event.title?.toLowerCase().includes('questionnaire') ||
+        (event.is_questionnaire_event ||
+          event.title?.toLowerCase().includes('questionnaire') ||
           event.display_title?.toLowerCase().includes('questionnaire'))
     )
     .sort((a, b) => new Date(b.date) - new Date(a.date));
