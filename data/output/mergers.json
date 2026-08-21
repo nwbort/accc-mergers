@@ -12044,7 +12044,7 @@
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-09-24T12:00:00Z",
       "page_modified_datetime": "2026-08-21T10:44:46+10:00",
-      "consultation_response_due_date": "2026-08-21T12:00:00Z",
+      "consultation_response_due_date": "2026-08-22T12:00:00Z",
       "acquirers": [
         {
           "name": "INCUBETA AUSTRALIA PTY LIMITED",
@@ -12115,8 +12115,9 @@
           "date": "2026-08-14T12:00:00Z",
           "title": "Incubeta - Datisan - Questionnaire",
           "display_title": "Incubeta - Datisan - Questionnaire",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Incubeta%20-%20Datisan%20-%20Questionnaire.docx",
-          "url_gh": "/mergers/MN-05043/Incubeta - Datisan - Questionnaire.pdf",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Incubeta%20-%20Datisan%20-%20Questionnaire_0.docx",
+          "url_gh": "/mergers/MN-05043/Incubeta - Datisan - Questionnaire_0.pdf",
           "phase": null
         },
         {
@@ -12545,11 +12546,12 @@
       "merger_description": "Coles Group Limited (**Coles**) is an Australian public company (ASX: COL) that primarily operates:\n\n* supermarkets nationwide through its subsidiary, Coles Supermarkets Australia Pty Ltd; and\n* retail liquor stores nationwide, trading under the Liquorland, Liquorland Warehouse and Liquorland Cellars brands.\n\nKirkwood LFR Development Pty Ltd (**Lessor**) is an Australian private company which is a joint venture between developer Cadre Pty Ltd (**Cadre**) and financier Argus Property Partners Pty Ltd (**Argus**). Cadre is an Australian private diversified property development and investment company specialising in large-format retail, residential, commercial, industrial and mixed-use projects. Argus is an Australian private property fund manager and investment house.\n\nColes has signed a letter of offer with the Lessor for a proposed lease of a Coles supermarket within a new neighbourhood centre at Lot 2 Kirkwood Road, Kirkwood QLD 4680 (the\u00a0**Acquisition**).\n\nThe proposed Coles supermarket is anticipated to open around November 2029.",
       "events": [
         {
-          "date": "2026-08-19T12:00:00Z",
-          "title": "Coles - supermarket site in Kirkwood (QLD) - Questionnaire",
+          "date": "2026-08-21T12:00:00Z",
+          "title": "Coles - supermarket site in Kirkwood (QLD)",
           "display_title": "Coles - supermarket site in Kirkwood (QLD) - Questionnaire",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Coles%20-%20supermarket%20site%20in%20Kirkwood%20%28QLD%29%20-%20Questionnaire.docx",
-          "url_gh": "/mergers/MN-05046/Coles - supermarket site in Kirkwood (QLD) - Questionnaire.pdf",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Coles%20-%20supermarket%20site%20in%20Kirkwood%20%28QLD%29%20-%20Questionnaire_3.docx",
+          "url_gh": "/mergers/MN-05046/Coles - supermarket site in Kirkwood (QLD) - Questionnaire_3.pdf",
           "phase": null
         },
         {
@@ -21779,8 +21781,9 @@
           "date": "2026-08-19T12:00:00Z",
           "title": "Questionnaire - Chevron - Woodside asset swap",
           "display_title": "Questionnaire - Chevron - Woodside asset swap",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Chevron%20-%20Woodside%20asset%20swap%20-%20third-party%20questionnaire_0.docx",
-          "url_gh": "/mergers/MN-20034/Chevron - Woodside asset swap - third-party questionnaire_0.pdf",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Chevron%20-%20Woodside%20asset%20swap%20-%20third-party%20questionnaire_1.docx",
+          "url_gh": "/mergers/MN-20034/Chevron - Woodside asset swap - third-party questionnaire_1.pdf",
           "phase": null
         },
         {
@@ -35159,6 +35162,7 @@
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-10-01T12:00:00Z",
       "page_modified_datetime": "2026-08-21T12:19:19+10:00",
+      "consultation_response_due_date": "2026-08-28T12:00:00Z",
       "acquirers": [
         {
           "name": "Bloomberg Inc.",
@@ -35213,6 +35217,15 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-08-21T12:00:00Z",
+          "title": "Bloomberg - Canoe Intelligence - Questionnaire",
+          "display_title": "Bloomberg - Canoe Intelligence - Questionnaire",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Bloomberg%20-%20Canoe%20Intelligence%20-%20Questionnaire.docx",
+          "url_gh": "/mergers/MN-40039/Bloomberg - Canoe Intelligence - Questionnaire.pdf",
+          "phase": null
         }
       ],
       "is_waiver": false,
@@ -35224,6 +35237,7 @@
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
+      "has_questionnaire": true,
       "similar_mergers": [
         {
           "merger_id": "WA-55025",
@@ -36772,11 +36786,12 @@
       "events": [
         {
           "date": "2026-08-17T12:00:00Z",
-          "title": "Questionnaire - OEConnection - Epyx",
+          "title": "OEConnection-Epyx - Phase 1 consultation",
           "display_title": "Questionnaire - OEConnection - Epyx",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20OEConnection%20-%20Epyx_0.docx",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Questionnaire%20-%20OEConnection%20-%20Epyx_0.docx",
           "url_gh": "/mergers/MN-45024/Questionnaire - OEConnection - Epyx_0.pdf",
-          "phase": null
+          "phase": "Phase 1"
         },
         {
           "date": "2026-08-15T12:00:00Z",
@@ -46267,6 +46282,7 @@
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-10-01T12:00:00Z",
       "page_modified_datetime": "2026-08-21T12:17:01+10:00",
+      "consultation_response_due_date": "2026-08-28T12:00:00Z",
       "acquirers": [
         {
           "name": "Mount Baker Investment Limited",
@@ -46344,6 +46360,15 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-08-21T12:00:00Z",
+          "title": "Questionnaire - Tencent - Happibits",
+          "display_title": "Questionnaire - Tencent - Happibits",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Questionnaire%20-%20Tencent%20-%20Happibits.docx",
+          "url_gh": "/mergers/MN-60030/Questionnaire - Tencent - Happibits.pdf",
+          "phase": null
         }
       ],
       "is_waiver": false,
@@ -46355,6 +46380,7 @@
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
+      "has_questionnaire": true,
       "similar_mergers": [
         {
           "merger_id": "WA-15024",
@@ -46848,10 +46874,11 @@
       "events": [
         {
           "date": "2026-08-19T12:00:00Z",
-          "title": "L'Or\u00e9al Gucci Beauty Licence - Questionnaire",
+          "title": "Questionnaire - MN-60035 - L'Or\u00e9al \u2013 Gucci Beauty Licence",
           "display_title": "L'Or\u00e9al Gucci Beauty Licence - Questionnaire",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/L%27Or%C3%A9al%20Gucci%20Beauty%20Licence%20-Questionnaire.docx",
-          "url_gh": "/mergers/MN-60035/L'Or\u00e9al Gucci Beauty Licence -Questionnaire.pdf",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/L%27Or%C3%A9al%20Gucci%20Beauty%20Licence%20-%20Questionnaire_4.docx",
+          "url_gh": "/mergers/MN-60035/L'Or\u00e9al Gucci Beauty Licence - Questionnaire_4.pdf",
           "phase": null
         },
         {
@@ -59584,7 +59611,8 @@
           "date": "2026-08-18T12:00:00Z",
           "title": "Questionnaire - MN-80035 - Saint-Gobain/Xypex",
           "display_title": "Questionnaire - MN-80035 - Saint-Gobain/Xypex",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Xypex%20-%20questionnaire.docx",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Xypex%20-%20questionnaire.docx",
           "url_gh": "/mergers/MN-80035/Xypex - questionnaire.pdf",
           "phase": null
         },
@@ -65851,7 +65879,8 @@
           "date": "2026-08-19T12:00:00Z",
           "title": "Questionnaire - Bunnings - Intellihub - Zelora Joint Venture",
           "display_title": "Questionnaire - Bunnings - Intellihub - Zelora Joint Venture",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Bunnings%20-Intellihub%20-%20Zelora%20Joint%20Venture.docx",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Questionnaire%20-%20Bunnings%20-Intellihub%20-%20Zelora%20Joint%20Venture.docx",
           "url_gh": "/mergers/MN-90029/Questionnaire - Bunnings -Intellihub - Zelora Joint Venture.pdf",
           "phase": null
         },

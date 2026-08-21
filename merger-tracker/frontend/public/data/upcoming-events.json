@@ -4,8 +4,8 @@
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
       "date": "2026-08-21T12:00:00Z",
-      "merger_id": "MN-05043",
-      "merger_name": "Incubeta - Datisan",
+      "merger_id": "MN-30028",
+      "merger_name": "Adobe - Topaz Labs",
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-08-13T12:00:00Z"
@@ -13,9 +13,9 @@
     {
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
-      "date": "2026-08-21T12:00:00Z",
-      "merger_id": "MN-30028",
-      "merger_name": "Adobe - Topaz Labs",
+      "date": "2026-08-22T12:00:00Z",
+      "merger_id": "MN-05043",
+      "merger_name": "Incubeta - Datisan",
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-08-13T12:00:00Z"
@@ -119,6 +119,26 @@
       "status": "Under assessment",
       "stage": "Phase 2 - detailed assessment",
       "effective_notification_datetime": "2026-05-12T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-08-28T12:00:00Z",
+      "merger_id": "MN-40039",
+      "merger_name": "Bloomberg - Canoe Intelligence",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-08-20T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-08-28T12:00:00Z",
+      "merger_id": "MN-60030",
+      "merger_name": "Tencent \u2013 Happibits",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-08-20T12:00:00Z"
     },
     {
       "type": "determination_due",
@@ -632,6 +652,6 @@
       "tribunal_number": "ACT 1 of 2026"
     }
   ],
-  "count": 63,
+  "count": 65,
   "days_ahead": 60
 }

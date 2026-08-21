@@ -77,11 +77,12 @@
   "events": [
     {
       "date": "2026-08-17T12:00:00Z",
-      "title": "Questionnaire - OEConnection - Epyx",
+      "title": "OEConnection-Epyx - Phase 1 consultation",
       "display_title": "Questionnaire - OEConnection - Epyx",
-      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20OEConnection%20-%20Epyx_0.docx",
+      "is_questionnaire_event": true,
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Questionnaire%20-%20OEConnection%20-%20Epyx_0.docx",
       "url_gh": "/mergers/MN-45024/Questionnaire - OEConnection - Epyx_0.pdf",
-      "phase": null
+      "phase": "Phase 1"
     },
     {
       "date": "2026-08-15T12:00:00Z",

@@ -8,6 +8,7 @@
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-10-01T12:00:00Z",
   "page_modified_datetime": "2026-08-21T12:17:01+10:00",
+  "consultation_response_due_date": "2026-08-28T12:00:00Z",
   "acquirers": [
     {
       "name": "Mount Baker Investment Limited",
@@ -85,6 +86,15 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-08-21T12:00:00Z",
+      "title": "Questionnaire - Tencent - Happibits",
+      "display_title": "Questionnaire - Tencent - Happibits",
+      "is_questionnaire_event": true,
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Questionnaire%20-%20Tencent%20-%20Happibits.docx",
+      "url_gh": "/mergers/MN-60030/Questionnaire - Tencent - Happibits.pdf",
+      "phase": null
     }
   ],
   "is_waiver": false,
@@ -96,6 +106,7 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
+  "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "WA-15024",

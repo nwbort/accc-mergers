@@ -8,6 +8,7 @@
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-10-01T12:00:00Z",
   "page_modified_datetime": "2026-08-21T12:19:19+10:00",
+  "consultation_response_due_date": "2026-08-28T12:00:00Z",
   "acquirers": [
     {
       "name": "Bloomberg Inc.",
@@ -62,6 +63,15 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-08-21T12:00:00Z",
+      "title": "Bloomberg - Canoe Intelligence - Questionnaire",
+      "display_title": "Bloomberg - Canoe Intelligence - Questionnaire",
+      "is_questionnaire_event": true,
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Bloomberg%20-%20Canoe%20Intelligence%20-%20Questionnaire.docx",
+      "url_gh": "/mergers/MN-40039/Bloomberg - Canoe Intelligence - Questionnaire.pdf",
+      "phase": null
     }
   ],
   "is_waiver": false,
@@ -73,6 +83,7 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
+  "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "WA-55025",
