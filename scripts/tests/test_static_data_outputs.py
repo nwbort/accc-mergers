@@ -2191,6 +2191,40 @@ class TestQuestionnairesGenerate:
         versions = {v['file_name']: v['questions_count'] for v in data['all_questionnaires']}
         assert versions == {'Remedy_0.pdf': 1, 'Main.pdf': 12}
 
+    def test_event_flagged_as_questionnaire_counts_as_active(self, tmp_path):
+        """The ACCC's structured consultation section titles a questionnaire
+        with the consultation header, which does not always say
+        "questionnaire" (MN-45024: "OEConnection-Epyx - Phase 1 consultation").
+        The scraper's is_questionnaire_event flag identifies those events."""
+        q_data = {
+            'MN-0004': {
+                'deadline_iso': '2026-08-24',
+                'file_name': 'Q_0.pdf',
+                'questions': [{'number': 1, 'text': 'Q?'}],
+                'questions_count': 1,
+                'all_questionnaires': [
+                    {'deadline_iso': '2026-08-24', 'file_name': 'Q_0.pdf',
+                     'questions': [{'number': 1, 'text': 'Q?'}], 'questions_count': 1},
+                    {'deadline_iso': '2026-06-25', 'file_name': 'Superseded.pdf',
+                     'questions': [{'number': 1, 'text': 'S?'}], 'questions_count': 1},
+                ],
+            },
+        }
+        mergers = [{
+            'merger_id': 'MN-0004',
+            'events': [{
+                'title': 'OEConnection-Epyx - Phase 1 consultation',
+                'url_gh': '/mergers/MN-0004/Q_0.pdf',
+                'is_questionnaire_event': True,
+            }],
+        }]
+        questionnaires.generate(q_data, tmp_path, mergers=mergers)
+        with open(tmp_path / 'questionnaires' / 'MN-0004.json') as f:
+            data = json.load(f)
+        assert data['file_name'] == 'Q_0.pdf'
+        assert 'all_questionnaires' not in data, \
+            "the superseded version has no active event and should be dropped"
+
 
 # ---------------------------------------------------------------------------
 # theories_of_harm

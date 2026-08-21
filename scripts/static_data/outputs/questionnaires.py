@@ -57,12 +57,24 @@ def _questionnaire_record(q_data: dict) -> dict:
     }
 
 
+def _is_questionnaire_event(event: dict) -> bool:
+    """Whether a timeline event points at a questionnaire document.
+
+    ``is_questionnaire_event`` is set by the scraper for questionnaires read out
+    of the ACCC's structured consultation section, whose title is the
+    consultation header and does not always say "questionnaire" (e.g. MN-45024's
+    "OEConnection-Epyx - Phase 1 consultation"). Older events predate the flag,
+    so the title check remains the fallback.
+    """
+    return bool(event.get('is_questionnaire_event')) or 'questionnaire' in event.get('title', '').lower()
+
+
 def _active_questionnaire_filenames(merger: dict) -> set:
     """Return the set of questionnaire file names that have an active event."""
     return {
         Path(e['url_gh']).name
         for e in merger.get('events', [])
-        if e.get('url_gh') and 'questionnaire' in e.get('title', '').lower()
+        if e.get('url_gh') and _is_questionnaire_event(e)
     }
 
 
