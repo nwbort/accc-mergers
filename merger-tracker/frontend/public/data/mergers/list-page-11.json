@@ -3375,6 +3375,15 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
+          "name": "M Resources Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "67 151 351 790",
+          "party_page": {
+            "id": "m-resources-pty-ltd",
+            "name": "M Resources Pty Ltd"
+          }
+        },
+        {
           "name": "Golden M Tahmoor Coal Holdings Pty Ltd",
           "identifier_type": "ACN",
           "identifier": "697 956 791",
@@ -3391,31 +3400,9 @@
             "id": "golden-energy-and-resources-pte-ltd",
             "name": "Golden Energy and Resources Pte Ltd"
           }
-        },
-        {
-          "name": "M Resources Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "67 151 351 790",
-          "party_page": {
-            "id": "m-resources-pty-ltd",
-            "name": "M Resources Pty Ltd"
-          }
         }
       ],
       "targets": [
-        {
-          "name": "Tahmoor Coal Pty Ltd (In Liquidation)",
-          "identifier_type": "ABN",
-          "identifier": "97 076 663 968",
-          "canonical": {
-            "id": "tahmoor-colliery",
-            "name": "Tahmoor Colliery"
-          },
-          "party_page": {
-            "id": "tahmoor-colliery",
-            "name": "Tahmoor Colliery"
-          }
-        },
         {
           "name": "Bargo Collieries Pty Ltd (In Liquidation)",
           "identifier_type": "ABN",
@@ -3428,18 +3415,22 @@
             "id": "tahmoor-colliery",
             "name": "Tahmoor Colliery"
           }
+        },
+        {
+          "name": "Tahmoor Coal Pty Ltd (In Liquidation)",
+          "identifier_type": "ABN",
+          "identifier": "97 076 663 968",
+          "canonical": {
+            "id": "tahmoor-colliery",
+            "name": "Tahmoor Colliery"
+          },
+          "party_page": {
+            "id": "tahmoor-colliery",
+            "name": "Tahmoor Colliery"
+          }
         }
       ],
       "other_parties": [
-        {
-          "name": "Shaun Fraser",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "shaun-fraser",
-            "name": "Shaun Fraser"
-          }
-        },
         {
           "name": "Jonathan Henry",
           "identifier_type": null,
@@ -3447,6 +3438,15 @@
           "party_page": {
             "id": "jonathan-henry",
             "name": "Jonathan Henry"
+          }
+        },
+        {
+          "name": "Shaun Fraser",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "shaun-fraser",
+            "name": "Shaun Fraser"
           }
         }
       ],

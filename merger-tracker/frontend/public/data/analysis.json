@@ -2584,9 +2584,10 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 406,
+      "count": 407,
       "outcome_mix": {
-        "Approved": 406
+        "Approved": 406,
+        "Unknown": 1
       },
       "median_phase_1_business_days": 17
     },
@@ -2602,9 +2603,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 49,
+      "count": 48,
       "outcome_mix": {
-        "Unknown": 49
+        "Unknown": 48
       },
       "median_phase_1_business_days": null
     },

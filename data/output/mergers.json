@@ -15650,9 +15650,18 @@
       "original_notification_datetime": "2026-07-30T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-09-10T12:00:00Z",
-      "page_modified_datetime": "2026-08-07T15:56:51+10:00",
+      "page_modified_datetime": "2026-08-21T16:40:04+10:00",
       "consultation_response_due_date": "2026-08-07T12:00:00Z",
       "acquirers": [
+        {
+          "name": "M Resources Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "67 151 351 790",
+          "party_page": {
+            "id": "m-resources-pty-ltd",
+            "name": "M Resources Pty Ltd"
+          }
+        },
         {
           "name": "Golden M Tahmoor Coal Holdings Pty Ltd",
           "identifier_type": "ACN",
@@ -15670,31 +15679,9 @@
             "id": "golden-energy-and-resources-pte-ltd",
             "name": "Golden Energy and Resources Pte Ltd"
           }
-        },
-        {
-          "name": "M Resources Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "67 151 351 790",
-          "party_page": {
-            "id": "m-resources-pty-ltd",
-            "name": "M Resources Pty Ltd"
-          }
         }
       ],
       "targets": [
-        {
-          "name": "Tahmoor Coal Pty Ltd (In Liquidation)",
-          "identifier_type": "ABN",
-          "identifier": "97 076 663 968",
-          "canonical": {
-            "id": "tahmoor-colliery",
-            "name": "Tahmoor Colliery"
-          },
-          "party_page": {
-            "id": "tahmoor-colliery",
-            "name": "Tahmoor Colliery"
-          }
-        },
         {
           "name": "Bargo Collieries Pty Ltd (In Liquidation)",
           "identifier_type": "ABN",
@@ -15707,18 +15694,22 @@
             "id": "tahmoor-colliery",
             "name": "Tahmoor Colliery"
           }
+        },
+        {
+          "name": "Tahmoor Coal Pty Ltd (In Liquidation)",
+          "identifier_type": "ABN",
+          "identifier": "97 076 663 968",
+          "canonical": {
+            "id": "tahmoor-colliery",
+            "name": "Tahmoor Colliery"
+          },
+          "party_page": {
+            "id": "tahmoor-colliery",
+            "name": "Tahmoor Colliery"
+          }
         }
       ],
       "other_parties": [
-        {
-          "name": "Shaun Fraser",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "shaun-fraser",
-            "name": "Shaun Fraser"
-          }
-        },
         {
           "name": "Jonathan Henry",
           "identifier_type": null,
@@ -15726,6 +15717,15 @@
           "party_page": {
             "id": "jonathan-henry",
             "name": "Jonathan Henry"
+          }
+        },
+        {
+          "name": "Shaun Fraser",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "shaun-fraser",
+            "name": "Shaun Fraser"
           }
         }
       ],
@@ -15761,6 +15761,41 @@
           "date": "2026-07-30T12:00:00Z",
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-08-21T12:00:00Z",
+          "title": "M Resources and Golden Energy and Resources - Tahmoor Coal Mine - Phase 1 determination",
+          "display_title": "M Resources and Golden Energy and Resources - Tahmoor Coal Mine - Phase 1 determination",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/M%20Resources%20and%20Golden%20Energy%20and%20Resources%20-%20Tahmoor%20Coal%20Mine%20-%20Phase%201%20determination.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Golden Energy and Resources Pte Ltd (GEAR) and M Resources Pty\nLtd (M Resources) (together, the Consortium) propose to acquire,\nvia a jointly owned special purpose vehicle, the assets of the\ninsolvent Tahmoor Colliery (Tahmoor) (together, the Parties).\nTahmoor is a coal mine in the Illawarra region of NSW.\nThe relevant assets include the mining rights, plant and equipment,\nreal estate and a 16.67% equity interest in Port Kembla Coal\nTerminal Limited."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquiring entity, Golden M Tahmoor Coal Holdings Pty Ltd, will\nultimately be owned 70% by GEAR (or related entities) and 30% by M\nResources (or related entities / persons).\nGEAR and M Resources are part of an existing consortium, GM3,\nwhich operates the Appin and Dendrobium coal mines in the\nIllawarra region (through Illawarra Coal Holdings Pty Ltd) and has an\nexisting minority interest in the Port Kembla Coal Terminal (together,\nthe GM3 Assets). GEAR has a 51% economic interest in the GM3\nAssets and M Resources has 7%.\nGEAR is a Singaporean based resources company. Its activities in\nAustralia involve gold mining and metallurgical (coking) coal\nproduction, through the GM3 Assets and a 59% shareholding in\nStanmore Resources Limited (Stanmore), which produces coal in\nQueensland.\nM Resources is an Australian based coal trader and logistics\nprovider. It has interests in various businesses which service coal\nmines, including Mastermyne Limited, One Rail Australia Holdings\nLimited, Merald, M Critical Minerals and Stanmore. None of M\nResources businesses interact with mines in the Illawarra region\nexcept for the GM3 Assets.\nTahmoor produces coking coal and small amounts of thermal coal\nfor domestic and export customers. Tahmoor has been inoperative\nsince late 2024 and is in liquidation."
+            },
+            {
+              "item": "Overlap and relationship\nbetween the Parties",
+              "details": "The Parties overlap in the production and supply of thermal and\ncoking coal in the Illawarra region. GM3 and Tahmoor, before it\nceased operating, both supplied coal to export customers as well as\nBlueScope Steel Limited (BlueScope), based in Port Kembla.\nHistorically, GM3 also acquired coking coal from Tahmoor to supply\nexport customers."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, information from third parties, and publicly\navailable information.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 The Acquisition is unlikely to have an adverse impact on the only\ndomestic consumer of coking coal, taking into account long-\nterm supply arrangements being put in place and export\ncustomers of coking coal have a range of alternative options.\n\u2022 The aggregation in the supply of thermal coal resulting from the\nAcquisition is low, and both domestic and export customers\nhave a range of alternative suppliers of thermal coal post-\nacquisition.\n\u2022 The merged entity is unlikely to have the ability and incentive to\nforeclose rivals\u2019 access to the Port Kembla Coal Terminal given\nthe merged entity would not have a controlling interest post-\nacquisition."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-10022/M Resources and Golden Energy and Resources - Tahmoor Coal Mine - Phase 1 determination.pdf",
           "phase": "Phase 1"
         }
       ],
