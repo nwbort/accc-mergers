@@ -21,10 +21,21 @@
       "code": "64",
       "name": "Auxiliary Finance and Insurance Services",
       "level": "subdivision",
-      "merger_count": 50
+      "merger_count": 51
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-40039",
+      "merger_name": "Bloomberg - Canoe Intelligence",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-20T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-60030",
       "merger_name": "Tencent \u2013 Happibits",
@@ -1610,11 +1621,11 @@
       "determination_date": null
     }
   ],
-  "count": 144,
-  "phase_1_count": 35,
+  "count": 145,
+  "phase_1_count": 36,
   "phase_2_count": 2,
   "waiver_count": 107,
-  "active_count": 13,
+  "active_count": 14,
   "phase_duration": {
     "average_days": 28.36,
     "median_days": 25,

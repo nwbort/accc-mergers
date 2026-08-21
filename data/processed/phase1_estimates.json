@@ -1863,6 +1863,23 @@
     "estimated_at": "2026-07-29",
     "method_version": 1
   },
+  "MN-40039": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      16,
+      21
+    ],
+    "basis": "industry",
+    "anzsic_level": "class",
+    "anzsic_codes": [
+      "5420",
+      "6020",
+      "6419"
+    ],
+    "sample_size": 22,
+    "estimated_at": "2026-08-21",
+    "method_version": 1
+  },
   "MN-45002": {
     "expected_business_days": 18,
     "range_business_days": [

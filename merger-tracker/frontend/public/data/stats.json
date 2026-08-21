@@ -1,10 +1,10 @@
 {
-  "total_mergers": 232,
+  "total_mergers": 233,
   "total_waivers": 345,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 178,
-    "Under assessment": 51,
+    "Under assessment": 52,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -64,11 +64,11 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 48
+      "count": 49
     },
     {
       "name": "Software Publishing",
-      "count": 36
+      "count": 37
     },
     {
       "name": "Non-Residential Property Operators",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-40039",
+      "merger_name": "Bloomberg - Canoe Intelligence",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-20T12:00:00Z",
+      "page_modified_datetime": "2026-08-21T12:19:19+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-60030",
       "merger_name": "Tencent \u2013 Happibits",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-13T12:00:00Z",
       "page_modified_datetime": "2026-08-14T17:47:01+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-30028",
-      "merger_name": "Adobe - Topaz Labs",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-13T12:00:00Z",
-      "page_modified_datetime": "2026-08-14T11:40:00+10:00",
       "is_waiver": false,
       "is_refiled": false
     }
