@@ -5,7 +5,9 @@ exercised end-to-end from CI against the live site; these cover the pure logic
 that turns a fetched matter page into document records and mirrors the linked
 files: parse_matter_page (including the multiple-table / section handling) and
 download_document's url_gh derivation, and the in-page fetch that
-download_document_via_browser decodes into a mirrored file.
+download_document_via_browser decodes into a mirrored file — including how a
+fetch Cloudflare refuses is retried, and the visit that clears a challenge a
+fetch cannot.
 """
 
 import asyncio
@@ -13,6 +15,8 @@ import base64
 import os
 import sys
 import types
+
+import pytest
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
@@ -228,10 +232,14 @@ async def _async_value(value):
 
 class FakeTab:
     """Stands in for a nodriver Tab: records the JS it was asked to evaluate
-    and replays a canned result (or raises)."""
+    and replays a canned result (or raises).
 
-    def __init__(self, result=None, error=None):
-        self.result = result
+    ``results`` takes a list to answer successive calls with — the last entry
+    stands for every call after it — so a retry that recovers can be set up.
+    """
+
+    def __init__(self, result=None, error=None, results=None):
+        self.results = list(results) if results is not None else [result]
         self.error = error
         self.expressions = []
 
@@ -239,7 +247,8 @@ class FakeTab:
         self.expressions.append(expression)
         if self.error is not None:
             raise self.error
-        return self.result
+        index = min(len(self.expressions), len(self.results)) - 1
+        return self.results[index]
 
 
 class NotAString:
@@ -248,6 +257,11 @@ class NotAString:
 
 
 class TestDownloadDocumentViaBrowser:
+    @pytest.fixture(autouse=True)
+    def _no_retry_delay(self, monkeypatch):
+        """Keep the retry backoff out of the suite's runtime."""
+        monkeypatch.setattr(scrape_tribunal, 'BROWSER_FETCH_RETRY_SECONDS', 0)
+
     def test_base64_payload_is_written_to_disk(self, tmp_path, monkeypatch):
         monkeypatch.setattr(scrape_tribunal, 'MATTERS_DIR', tmp_path)
         tab = FakeTab('ok:' + base64.b64encode(b'%PDF-1.7 body').decode())
@@ -275,6 +289,42 @@ class TestDownloadDocumentViaBrowser:
 
         assert url_gh is None
         assert not (tmp_path / 'MN-0001' / 'Application.pdf').exists()
+        # Every attempt was spent before giving up.
+        assert len(tab.expressions) == scrape_tribunal.BROWSER_FETCH_ATTEMPTS
+
+    def test_a_challenged_fetch_is_retried_and_recovers(self, tmp_path, monkeypatch):
+        # Cloudflare refuses a fetch it wanted to challenge with a 403, but the
+        # verdict is per request: the next one is usually served. This is the
+        # case that left a document recorded without a local mirror.
+        monkeypatch.setattr(scrape_tribunal, 'MATTERS_DIR', tmp_path)
+        tab = FakeTab(results=[
+            'error:HTTP 403 (cf-mitigated: challenge)',
+            'ok:' + base64.b64encode(b'%PDF-1.7 body').decode(),
+        ])
+
+        url_gh = asyncio.run(scrape_tribunal.download_document_via_browser(
+            tab,
+            'MN-0001',
+            'https://www.competitiontribunal.gov.au/x/Application.pdf',
+        ))
+
+        assert url_gh == '/mergers/MN-0001/Application.pdf'
+        assert (tmp_path / 'MN-0001' / 'Application.pdf').read_bytes() == b'%PDF-1.7 body'
+        assert len(tab.expressions) == 2
+
+    def test_missing_document_is_not_retried(self, tmp_path, monkeypatch):
+        # A 404 will still be a 404 in five seconds; don't spend the attempts.
+        monkeypatch.setattr(scrape_tribunal, 'MATTERS_DIR', tmp_path)
+        tab = FakeTab('error:HTTP 404')
+
+        url_gh = asyncio.run(scrape_tribunal.download_document_via_browser(
+            tab,
+            'MN-0001',
+            'https://www.competitiontribunal.gov.au/x/Application.pdf',
+        ))
+
+        assert url_gh is None
+        assert len(tab.expressions) == 1
 
     def test_challenge_html_is_not_saved_under_the_document_name(self, tmp_path, monkeypatch):
         monkeypatch.setattr(scrape_tribunal, 'MATTERS_DIR', tmp_path)
@@ -474,3 +524,107 @@ class TestScrapeMattersUnmirroredReporting:
         assert failed == []
         assert unmirrored == []
         assert warnings == []
+
+
+class TestClearChallengeByVisiting:
+    """A fetch() can't display Cloudflare's challenge; a navigation can."""
+
+    MATTER_URL = 'https://www.competitiontribunal.gov.au/m/1'
+    DOC_URL = 'https://www.competitiontribunal.gov.au/x/Blocked.pdf'
+
+    def _patch_fetch_page(self, monkeypatch, matter_html):
+        visited = []
+
+        async def _fetch_page(browser, url):
+            visited.append(url)
+            if url == self.MATTER_URL:
+                return FakeTab(), matter_html
+            # A PDF navigation lands on Chrome's viewer, not a challenge.
+            return FakeTab(), '<html><body></body></html>'
+
+        monkeypatch.setattr(scrape_tribunal, 'fetch_page', _fetch_page)
+        return visited
+
+    def test_visits_the_document_then_returns_to_the_matter_page(self, monkeypatch):
+        visited = self._patch_fetch_page(monkeypatch, '<main></main>')
+
+        tab = asyncio.run(scrape_tribunal.clear_challenge_by_visiting(
+            FakeBrowser(), self.DOC_URL, self.MATTER_URL
+        ))
+
+        assert visited == [self.DOC_URL, self.MATTER_URL]
+        assert tab is not None
+
+    def test_returns_none_when_the_matter_page_cannot_be_reloaded(self, monkeypatch):
+        # html None means the challenge never cleared; the caller keeps its tab.
+        self._patch_fetch_page(monkeypatch, None)
+
+        tab = asyncio.run(scrape_tribunal.clear_challenge_by_visiting(
+            FakeBrowser(), self.DOC_URL, self.MATTER_URL
+        ))
+
+        assert tab is None
+
+
+class TestScrapeMattersChallengeRecovery:
+    """A document refused once is retried after the challenge is cleared, and
+    only counts as unmirrored if that fails too."""
+
+    MATTER_URL = 'https://www.competitiontribunal.gov.au/m/1'
+    MATTER_HTML = """
+    <main>
+      <table class="table-bordered">
+        <tr><th>Date</th><th>Document</th></tr>
+        <tr><td>1 July 2026</td>
+            <td><a href="https://www.competitiontribunal.gov.au/x/Blocked.pdf">Blocked</a></td></tr>
+      </table>
+    </main>
+    """
+
+    def test_the_document_is_mirrored_after_a_visit_clears_the_challenge(
+        self, monkeypatch
+    ):
+        warnings = []
+        visited = []
+        monkeypatch.setattr(scrape_tribunal, 'uc', types.SimpleNamespace(
+            start=lambda **kwargs: _async_value(FakeBrowser()),
+        ))
+        monkeypatch.setattr(scrape_tribunal, 'find_chrome', lambda: '/usr/bin/chrome')
+        monkeypatch.setattr(scrape_tribunal, 'free_port', lambda: 9999)
+        monkeypatch.setattr(scrape_tribunal, 'launch_chrome', lambda *a, **k: FakeProc())
+        monkeypatch.setattr(scrape_tribunal, 'wait_for_devtools', lambda port: True)
+
+        async def _fetch_page(browser, url):
+            visited.append(url)
+            if url == self.MATTER_URL:
+                return FakeTab(), self.MATTER_HTML
+            return FakeTab(), '<html><body></body></html>'
+
+        monkeypatch.setattr(scrape_tribunal, 'fetch_page', _fetch_page)
+
+        attempts = []
+
+        async def _via_browser(tab, mid, url):
+            attempts.append(url)
+            # Refused the first time, served once the challenge has been cleared.
+            return None if len(attempts) == 1 else f'/mergers/{mid}/Blocked.pdf'
+
+        monkeypatch.setattr(scrape_tribunal, 'download_document_via_browser', _via_browser)
+        monkeypatch.setattr(scrape_tribunal, 'download_document', lambda *a, **k: None)
+        monkeypatch.setattr(scrape_tribunal, 'gha_warning', warnings.append)
+
+        records = {'MN-0001': {'tribunal_url': self.MATTER_URL}}
+        scraped_by_id, failed, unmirrored = asyncio.run(
+            scrape_tribunal.scrape_matters(['MN-0001'], records, do_download=True)
+        )
+
+        assert failed == []
+        assert unmirrored == []
+        assert warnings == []
+        assert scraped_by_id['MN-0001'][0]['url_gh'] == '/mergers/MN-0001/Blocked.pdf'
+        # The document itself was visited, then the matter page re-loaded.
+        assert visited == [
+            self.MATTER_URL,
+            'https://www.competitiontribunal.gov.au/x/Blocked.pdf',
+            self.MATTER_URL,
+        ]
