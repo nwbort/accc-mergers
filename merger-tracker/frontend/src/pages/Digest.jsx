@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, Fragment } from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation } from 'react-router';
 import { mergerPath } from '../utils/slug';
 import ReactMarkdown from 'react-markdown';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -371,6 +371,21 @@ function Digest() {
   const { data: digest, loading, error } = useFetchData(API_ENDPOINTS.digest, {
     cacheKey: 'digest',
   });
+  const { hash } = useLocation();
+
+  // Section anchors (e.g. /digest#mergers-referred, linked from the weekly
+  // email) only exist in the DOM once `digest` has loaded and the real
+  // sections have rendered — the prerendered static HTML for this route has
+  // no section markup to jump to, so the browser's native fragment scroll on
+  // page load has nothing to find. Scroll to the target ourselves once the
+  // data (and therefore the anchor) is actually there.
+  useEffect(() => {
+    if (!digest || !hash) return;
+    const element = document.getElementById(hash.slice(1));
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [digest, hash]);
 
   const formatDateRange = (startDate, endDate) => {
     if (!startDate || !endDate) return '';
