@@ -19,6 +19,14 @@ accc-register-watcher (this Worker)
 GitHub Actions — pipeline.yml (repository_dispatch: new_merger_detected)
 ```
 
+Besides the subject and sender, the Worker parses the raw email body (via
+`postal-mime`, since Cloudflare only hands Workers the raw MIME stream) and
+regex-extracts any matter IDs mentioned (`MN-12345`/`WA-12345`-style, see
+`extractMatterIds` in `src/index.js`). Those are passed through as
+`client_payload.matter_ids` and echoed into the pipeline run's Actions
+summary, so a run can be spot-checked against the notification email before
+the scraper even finishes.
+
 ## Setup
 
 Steps 1–3 are one-time dashboard/account configuration outside this repo;

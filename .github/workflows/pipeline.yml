@@ -110,9 +110,12 @@ jobs:
         env:
           SCRAPE_REPORT_DIR: ${{ runner.temp }}/scrape-report
           # Passed through env, never interpolated into the script: the
-          # subject is attacker-influencable content from an inbound email.
+          # subject/matter IDs are attacker-influencable content from an
+          # inbound email (matter_ids is regex-extracted from the body by
+          # the accc-register-watcher Worker, but treat it the same way).
           TRIGGER_EVENT: ${{ github.event_name }}
           EMAIL_SUBJECT: ${{ github.event.client_payload.email_subject }}
+          EMAIL_MATTER_IDS: ${{ github.event.client_payload.matter_ids }}
         run: |
           {
             echo "### Scrape trigger"
@@ -120,6 +123,9 @@ jobs:
             printf -- '- Event: `%s`\n' "$TRIGGER_EVENT"
             if [ -n "$EMAIL_SUBJECT" ]; then
               printf -- '- ACCC register email: %s\n' "$EMAIL_SUBJECT"
+            fi
+            if [ -n "$EMAIL_MATTER_IDS" ]; then
+              printf -- '- Matter IDs mentioned in email: `%s`\n' "$EMAIL_MATTER_IDS"
             fi
             echo ""
           } >> "$GITHUB_STEP_SUMMARY"
