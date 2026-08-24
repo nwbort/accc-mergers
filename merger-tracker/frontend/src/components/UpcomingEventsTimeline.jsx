@@ -15,8 +15,12 @@ import EmptyStateCard from './EmptyStateCard';
 
 // A day with this many or more events of the same type collapses into a
 // single "N Consultations due" summary row, expandable on click/tap, so a
-// busy day doesn't push everything else off screen.
+// busy day doesn't push everything else off screen. The combined "Later"
+// entry already bundles a whole week, so it collapses a type as soon as
+// there's more than one — otherwise it tends to be the longest, least
+// scannable entry in the list.
 const GROUP_COLLAPSE_THRESHOLD = 3;
+const LATER_GROUP_COLLAPSE_THRESHOLD = 2;
 
 // Each event type carries its own accent (icon tile + chip) so the kind of
 // deadline is recognisable at a glance, independent of the urgency colouring
@@ -290,7 +294,10 @@ function UpcomingEventsTimeline({ events }) {
                     // A handful of same-type events on one day collapse into
                     // a single summary row so a busy day doesn't crowd out
                     // everything else on the timeline.
-                    if (group.events.length < GROUP_COLLAPSE_THRESHOLD) {
+                    const collapseThreshold = day.later
+                      ? LATER_GROUP_COLLAPSE_THRESHOLD
+                      : GROUP_COLLAPSE_THRESHOLD;
+                    if (group.events.length < collapseThreshold) {
                       return group.events.map((event) => (
                         <li key={`${event.merger_id}-${event.date}-${event.type}`}>
                           <EventRow event={event} />

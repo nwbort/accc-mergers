@@ -229,9 +229,10 @@ describe('UpcomingEventsTimeline', () => {
     renderTimeline([
       makeEvent({ date: '2026-06-29T12:00:00Z', merger_id: 'MN-1', merger_name: 'Alpha – Soon' }),
       // 8 and 12 days out: different calendar days, but both beyond the
-      // 7-day cutoff, so both land under the same "Later" heading.
-      makeEvent({ date: '2026-07-06T12:00:00Z', merger_id: 'MN-2', merger_name: 'Bravo – Later' }),
-      makeEvent({ date: '2026-07-10T12:00:00Z', merger_id: 'MN-3', merger_name: 'Charlie – Later' }),
+      // 7-day cutoff, so both land under the same "Later" heading. Different
+      // types so they don't fall into the 2+ collapse threshold.
+      makeEvent({ date: '2026-07-06T12:00:00Z', merger_id: 'MN-2', merger_name: 'Bravo – Later', type: 'consultation_due' }),
+      makeEvent({ date: '2026-07-10T12:00:00Z', merger_id: 'MN-3', merger_name: 'Charlie – Later', type: 'determination_due' }),
     ]);
 
     expect(screen.getByText('Tomorrow')).toBeInTheDocument();
@@ -245,19 +246,30 @@ describe('UpcomingEventsTimeline', () => {
     expect(screen.getByText('6 Jul – 10 Jul')).toBeInTheDocument();
   });
 
-  it('applies the same 3+ collapse threshold within the combined "Later" entry', () => {
+  it('collapses a group of just 2 same-type events within the combined "Later" entry', () => {
+    // The Later entry already bundles a whole week, so it collapses a type
+    // as soon as there's more than one, unlike the 3+ threshold used for an
+    // individual day.
     renderTimeline([
       makeEvent({ date: '2026-07-06T12:00:00Z', merger_id: 'MN-1', merger_name: 'Alpha – One' }),
-      makeEvent({ date: '2026-07-08T12:00:00Z', merger_id: 'MN-2', merger_name: 'Bravo – Two' }),
-      makeEvent({ date: '2026-07-10T12:00:00Z', merger_id: 'MN-3', merger_name: 'Charlie – Three' }),
+      makeEvent({ date: '2026-07-10T12:00:00Z', merger_id: 'MN-2', merger_name: 'Bravo – Two' }),
     ]);
 
-    const summary = screen.getByRole('button', { name: /3 consultations due/ });
+    const summary = screen.getByRole('button', { name: /2 consultations due/ });
     expect(screen.queryByText('Alpha – One')).not.toBeInTheDocument();
 
     fireEvent.click(summary);
     expect(screen.getByText('Alpha – One')).toBeInTheDocument();
-    expect(screen.getByText('Charlie – Three')).toBeInTheDocument();
+    expect(screen.getByText('Bravo – Two')).toBeInTheDocument();
+  });
+
+  it('does not collapse a single event within the combined "Later" entry', () => {
+    renderTimeline([
+      makeEvent({ date: '2026-07-06T12:00:00Z', merger_id: 'MN-1', merger_name: 'Alpha – One' }),
+    ]);
+
+    expect(screen.queryByRole('button', { name: /consultations due/ })).not.toBeInTheDocument();
+    expect(screen.getByText('Alpha – One')).toBeInTheDocument();
   });
 
   it('shows only a chevron on a collapsed group, with no expand/collapse hint text', () => {
