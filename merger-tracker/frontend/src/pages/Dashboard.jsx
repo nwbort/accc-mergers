@@ -232,18 +232,20 @@ function Dashboard() {
         </div>
       )}
 
-      {/* Upcoming Events (within 7 days) */}
+      {/* Upcoming Events: the next 7 days broken out day by day, plus the
+          week after bundled into a single trailing "Later" entry (handled
+          inside UpcomingEventsTimeline). Calendar-day counts so the cutoff
+          agrees with the day counts the timeline renders for the same
+          events. */}
       {upcomingEvents && (() => {
-        const eventsWithin7Days = upcomingEvents.filter(event => {
+        const eventsWithin14Days = upcomingEvents.filter(event => {
           if (isDatePast(event.date)) return false;
-          // Calendar-day count so the filter agrees with the day counts
-          // UpcomingEventsTimeline renders for the same events.
           const daysRemaining = getCalendarDaysUntil(event.date);
-          return daysRemaining !== null && daysRemaining <= 7;
+          return daysRemaining !== null && daysRemaining <= 14;
         });
-        return eventsWithin7Days.length > 0 ? (
+        return eventsWithin14Days.length > 0 ? (
           <div className="mb-8">
-            <UpcomingEventsTimeline events={eventsWithin7Days} />
+            <UpcomingEventsTimeline events={eventsWithin14Days} />
           </div>
         ) : null;
       })()}
