@@ -101,7 +101,7 @@ describe('UpcomingEventsTimeline', () => {
 
     // Three determination_due events collapse into a summary by default;
     // expand it to check the ordering underneath.
-    fireEvent.click(screen.getByRole('button', { name: /3 Determinations due/ }));
+    fireEvent.click(screen.getByRole('button', { name: /3 determinations due/ }));
 
     const links = screen.getAllByRole('link');
     const names = links.map((link) => within(link).getByText(/–/).textContent);
@@ -173,7 +173,7 @@ describe('UpcomingEventsTimeline', () => {
       makeEvent({ date: '2026-06-30T12:00:00Z', merger_id: 'MN-4', merger_name: 'Delta – Four' }),
     ]);
 
-    const summary = screen.getByRole('button', { name: /4 Consultations due/ });
+    const summary = screen.getByRole('button', { name: /4 consultations due/ });
     expect(summary).toHaveAttribute('aria-expanded', 'false');
     expect(screen.queryByText('Alpha – One')).not.toBeInTheDocument();
 
@@ -195,7 +195,7 @@ describe('UpcomingEventsTimeline', () => {
       makeEvent({ date: '2026-06-30T12:00:00Z', merger_id: 'MN-3', merger_name: 'Charlie – Three' }),
     ]);
 
-    const summary = screen.getByRole('button', { name: /3 Consultations due/ });
+    const summary = screen.getByRole('button', { name: /3 consultations due/ });
     const controlsId = summary.getAttribute('aria-controls');
     expect(controlsId).toBeTruthy();
 
@@ -209,7 +209,7 @@ describe('UpcomingEventsTimeline', () => {
       makeEvent({ date: '2026-06-30T12:00:00Z', merger_id: 'MN-2', merger_name: 'Bravo – Two' }),
     ]);
 
-    expect(screen.queryByRole('button', { name: /Consultations due/ })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /consultations due/ })).not.toBeInTheDocument();
     expect(screen.getByText('Alpha – One')).toBeInTheDocument();
     expect(screen.getByText('Bravo – Two')).toBeInTheDocument();
   });
@@ -241,7 +241,7 @@ describe('UpcomingEventsTimeline', () => {
       makeEvent({ date: '2026-07-10T12:00:00Z', merger_id: 'MN-3', merger_name: 'Charlie – Three' }),
     ]);
 
-    const summary = screen.getByRole('button', { name: /3 Consultations due/ });
+    const summary = screen.getByRole('button', { name: /3 consultations due/ });
     expect(screen.queryByText('Alpha – One')).not.toBeInTheDocument();
 
     fireEvent.click(summary);
@@ -257,7 +257,7 @@ describe('UpcomingEventsTimeline', () => {
     ]);
 
     expect(screen.queryByText('Tap to expand')).not.toBeInTheDocument();
-    fireEvent.click(screen.getByRole('button', { name: /3 Consultations due/ }));
+    fireEvent.click(screen.getByRole('button', { name: /3 consultations due/ }));
     expect(screen.queryByText('Tap to collapse')).not.toBeInTheDocument();
   });
 });

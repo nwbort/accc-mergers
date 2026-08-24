@@ -173,7 +173,7 @@ function EventGroupSummary({ group, expanded, onToggle, panelId }) {
         <Icon className="h-3.5 w-3.5" />
       </span>
       <div className="min-w-0 flex-1 text-sm font-semibold text-gray-900">
-        {group.events.length} {eventType.label}s due
+        {group.events.length} {eventType.label.toLowerCase()}s due
       </div>
       <FaChevronDown
         className={`h-3.5 w-3.5 flex-none text-gray-500 transition-transform ${expanded ? 'rotate-180' : ''}`}
