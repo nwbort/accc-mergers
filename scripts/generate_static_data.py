@@ -51,6 +51,7 @@ from pathlib import Path
 from static_data.business_days import check_holiday_horizon
 from static_data.enrichment import (
     enrich_merger,
+    link_judicial_reviews,
     link_related_mergers,
     link_related_parties,
     link_similar_mergers,
@@ -65,6 +66,7 @@ from static_data.loaders import (
     load_nocc_data,
     load_questionnaire_data,
     load_related_mergers,
+    load_judicial_reviews,
     load_related_parties,
     load_similar_mergers,
     load_tribunal_appeals,
@@ -141,6 +143,10 @@ def main():
     if tribunal_appeals:
         print(f"Loaded {len(tribunal_appeals)} tribunal appeal(s)")
 
+    judicial_reviews = load_judicial_reviews()
+    if judicial_reviews:
+        print(f"Loaded {len(judicial_reviews)} judicial review(s)")
+
     print("Enriching mergers...")
     enriched = [
         enrich_merger(m, commentary, questionnaire_data, nocc_data) for m in mergers
@@ -157,6 +163,9 @@ def main():
     appeal_linked = link_tribunal_appeals(enriched, tribunal_appeals)
     if appeal_linked:
         print(f"  Linked {appeal_linked} tribunal appeal(s)")
+    judicial_review_linked = link_judicial_reviews(enriched, judicial_reviews)
+    if judicial_review_linked:
+        print(f"  Linked {judicial_review_linked} judicial review(s)")
     # Freeze + attach filing-time phase-1 duration estimates. New notification
     # mergers get an estimate computed from completed-review history and frozen
     # into data/processed/phase1_estimates.json; existing entries are reused so
