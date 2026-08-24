@@ -4,7 +4,7 @@ import ExternalLinkIcon from './ExternalLinkIcon';
 import { MERGER_STATUS } from '../constants/mergerStatus';
 
 const MattersIcon = () => (
-  <FaSearch className="h-5 w-5 text-amber-600" aria-hidden="true" />
+  <FaSearch className="h-5 w-5 text-amber-700" aria-hidden="true" />
 );
 
 // Find the event carrying the parsed "Matters the ACCC intends to

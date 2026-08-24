@@ -31,16 +31,19 @@ export default {
           dark: '#3D2539',
           pale: '#F3EBF2',
         },
+        // `dark` is the shade used for text on white/pale surfaces, so it
+        // has to clear 4.5:1 there (WCAG 1.4.3) — the DEFAULT green is a fill
+        // colour and only reaches 2.5:1 as small text.
         'cleared': {
           DEFAULT: '#10b981',
           light: '#34d399',
-          dark: '#059669',
+          dark: '#047857',
           pale: '#D1FAE5',
         },
         'declined': {
           DEFAULT: '#f49097',
           light: '#F9B5BA',
-          dark: '#E8636C',
+          dark: '#C42A38',
           pale: '#FEE7E9',
         },
         'ceased': {
@@ -58,7 +61,9 @@ export default {
         'phase-1': {
           DEFAULT: '#B8935C',
           light: '#D4B384',
-          dark: '#8A6B3E',
+          // Deep enough to clear 4.5:1 as small text on both white and the
+          // pale fill it's paired with in the phase pills.
+          dark: '#6F562F',
           pale: '#FCECC9',
         },
         'phase-2': {

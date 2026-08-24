@@ -6,7 +6,7 @@ import ExternalLinkIcon from './ExternalLinkIcon';
 import { API_ENDPOINTS } from '../config';
 
 const QuestionnaireIcon = () => (
-  <FaQuestionCircle className="h-5 w-5 text-amber-600" aria-hidden="true" />
+  <FaQuestionCircle className="h-5 w-5 text-amber-700" aria-hidden="true" />
 );
 
 function QuestionnaireSection({ mergerId, events }) {
@@ -131,6 +131,7 @@ function QuestionnaireSection({ mergerId, events }) {
                     key={q.deadline_iso ?? i}
                     type="button"
                     onClick={() => setSelectedIndex(i)}
+                    aria-pressed={i === selectedIndex}
                     className={`text-xs px-3 py-1 rounded-full border transition-colors ${
                       i === selectedIndex
                         ? 'bg-amber-100 border-amber-300 text-amber-800 font-medium'

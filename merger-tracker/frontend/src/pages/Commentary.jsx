@@ -36,6 +36,11 @@ function Commentary() {
         url="/commentary"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
+        {/* The page leads straight into content, so the document's h1 is
+            visually hidden rather than dropped: it names the page for screen
+            readers and keeps the heading outline starting at level 1. */}
+        <h1 className="sr-only">Commentary</h1>
+
         {/* Results count */}
         <div className="mb-4">
           <p className="text-sm text-gray-500">

@@ -21,10 +21,10 @@ const UNDER_ASSESSMENT_STYLE = {
 // "Under appeal" badge) so they read as a distinct kind of event among the
 // recent notifications.
 const APPEAL_CARD_STYLE = {
-  bg: 'bg-indigo-600 hover:bg-indigo-700',
+  bg: 'bg-indigo-700 hover:bg-indigo-800',
   text: 'text-white',
-  sub: 'text-indigo-50/80',
-  chip: 'bg-white/20 text-white',
+  sub: 'text-indigo-100',
+  chip: 'bg-black/20 text-white',
 };
 
 function getMergerCardStyle(merger) {

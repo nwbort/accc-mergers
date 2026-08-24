@@ -300,14 +300,14 @@ function MergerDetail() {
                 : 'md:grid-cols-1'
           } gap-6 mt-6 pt-6 border-t border-gray-100`}>
             <div>
-              <h3 className={`${SECTION_HEADING} mb-1.5`}>Stage</h3>
+              <h2 className={`${SECTION_HEADING} mb-1.5`}>Stage</h2>
               <p className="text-sm font-medium text-gray-900">{merger.stage || 'N/A'}</p>
             </div>
             {merger.accc_determination && (
               <div>
-                <h3 className={`${SECTION_HEADING} mb-1.5`}>
+                <h2 className={`${SECTION_HEADING} mb-1.5`}>
                   Determination
-                </h3>
+                </h2>
                 <p className="text-sm font-medium text-gray-900">
                   {determinationDocUrl ? (
                     <a
@@ -328,9 +328,9 @@ function MergerDetail() {
             )}
             {merger.appeal && (
               <div>
-                <h3 className={`${SECTION_HEADING} mb-1.5`}>
+                <h2 className={`${SECTION_HEADING} mb-1.5`}>
                   Tribunal appeal
-                </h3>
+                </h2>
                 <p className="text-sm font-medium text-gray-900">
                   {merger.appeal.tribunal_url ? (
                     <a
@@ -367,7 +367,7 @@ function MergerDetail() {
             className="flex items-center gap-3 bg-amber-50/80 rounded-2xl border border-amber-200/60 shadow-card p-4 mb-6 hover:bg-amber-50 hover:border-amber-300/60 transition-all group"
           >
             <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-amber-100 flex items-center justify-center">
-              <FaLink className="h-5 w-5 text-amber-600" aria-hidden="true" />
+              <FaLink className="h-5 w-5 text-amber-700" aria-hidden="true" />
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-sm font-medium text-gray-900">
@@ -391,7 +391,7 @@ function MergerDetail() {
             aria-label={`View the appeal document${merger.appeal.appellant ? ` filed by ${merger.appeal.appellant}` : ''}`}
           >
             <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-amber-100 flex items-center justify-center">
-              <FaGavel className="h-4 w-4 text-amber-600" aria-hidden="true" />
+              <FaGavel className="h-4 w-4 text-amber-700" aria-hidden="true" />
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-sm font-medium text-gray-900">
@@ -411,7 +411,7 @@ function MergerDetail() {
                   : ''}
               </p>
             </div>
-            <ExternalLinkIcon className="h-3.5 w-3.5 text-amber-600 flex-shrink-0" />
+            <ExternalLinkIcon className="h-3.5 w-3.5 text-amber-700 flex-shrink-0" />
           </a>
         )}
 
@@ -553,7 +553,7 @@ function MergerDetail() {
                             {formatDate(event.date)}
                           </p>
                           {event.is_appeal && (event.appeal_filed_by || event.appeal_confidentiality) && (
-                            <p className="text-xs text-gray-400 mt-0.5">
+                            <p className="text-xs text-gray-500 mt-0.5">
                               {[event.appeal_filed_by, event.appeal_confidentiality].filter(Boolean).join(' · ')}
                             </p>
                           )}

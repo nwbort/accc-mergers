@@ -280,6 +280,11 @@ function Timeline() {
         url="/timeline"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
+        {/* The page leads straight into content, so the document's h1 is
+            visually hidden rather than dropped: it names the page for screen
+            readers and keeps the heading outline starting at level 1. */}
+        <h1 className="sr-only">Timeline</h1>
+
         <div className="mb-6 pl-14 flex flex-wrap items-center gap-2" role="group" aria-label="Filter by event type">
           {EVENT_TYPE_OPTIONS.map((opt) => {
             const active = selectedTypes.includes(opt.value);
@@ -333,15 +338,22 @@ function Timeline() {
                           </svg>
                         </span>
                       </div>
-                      <Link
-                        to={mergerPath(event.merger_id, event.merger_name)}
-                        className={`min-w-0 flex-1 ${CARD} p-4 hover:shadow-card-hover hover:border-gray-200 transition-all duration-200 block`}
-                        aria-label={`View merger details for ${event.merger_name}`}
-                      >
-                        <span className="text-sm font-semibold text-gray-900">
+                      {/* Stretched-link card rather than a <Link> wrapping the
+                          whole body: the document link below has to sit
+                          outside it, and an <a> nested in another <a> is
+                          invalid markup that assistive tech reads
+                          unpredictably. The merger link's ::after covers the
+                          card, so clicking anywhere but the document link
+                          still opens the merger. */}
+                      <div className={`min-w-0 flex-1 ${CARD} p-4 hover:shadow-card-hover hover:border-gray-200 transition-all duration-200 relative`}>
+                        <Link
+                          to={mergerPath(event.merger_id, event.merger_name)}
+                          className="text-sm font-semibold text-gray-900 after:absolute after:inset-0 after:rounded-2xl"
+                          aria-label={`View merger details for ${event.merger_name}`}
+                        >
                           {event.merger_name}
-                          {event.under_appeal && <AppealBadge className="ml-2 align-middle" />}
-                        </span>
+                        </Link>
+                        {event.under_appeal && <AppealBadge className="ml-2 align-middle relative z-10" />}
                         <p className="text-sm text-gray-500 mt-1">
                           {event.display_title || event.title}
                         </p>
@@ -350,20 +362,21 @@ function Timeline() {
                         </p>
                         {event.url_gh && (
                           <div className="mt-2">
+                            {/* py-1 -my-1 pads the hit area out to 24px tall
+                                (WCAG 2.5.8) without moving the row. */}
                             <a
                               href={event.url_gh}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1 text-xs text-primary hover:text-primary-dark transition-colors relative z-10"
+                              className="inline-flex items-center gap-1 py-1 -my-1 text-xs text-primary hover:text-primary-dark transition-colors relative z-10"
                               aria-label={`View document for ${event.merger_name}`}
-                              onClick={(e) => e.stopPropagation()}
                             >
                               View document
                               <ExternalLinkIcon className="h-3 w-3" />
                             </a>
                           </div>
                         )}
-                      </Link>
+                      </div>
                     </div>
                   </div>
                 </li>

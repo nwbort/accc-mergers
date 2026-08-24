@@ -16,10 +16,12 @@ const DEFAULT_DESKTOP_LIMIT = 24;
 const DEFAULT_MOBILE_LIMIT = 8;
 
 // Map a 0..1 intensity to a primary-tinted step. Full class strings so
-// Tailwind's scanner keeps them.
+// Tailwind's scanner keeps them. The two white-text steps use solid primary
+// shades rather than alpha tints: a /60 tint of primary is only 3.1:1 behind
+// white label text, short of WCAG 1.4.3's 4.5:1.
 function cellTone(intensity) {
   if (intensity > 0.66) return 'bg-primary text-white hover:bg-primary-dark';
-  if (intensity > 0.33) return 'bg-primary/60 text-white hover:bg-primary/70';
+  if (intensity > 0.33) return 'bg-primary-light text-white hover:bg-primary';
   if (intensity > 0.15) return 'bg-primary/25 text-primary-dark hover:bg-primary/35';
   return 'bg-primary/10 text-primary-dark hover:bg-primary/20';
 }

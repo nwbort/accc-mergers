@@ -368,6 +368,11 @@ function Mergers() {
         url="/mergers"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
+        {/* The page leads straight into content, so the document's h1 is
+            visually hidden rather than dropped: it names the page for screen
+            readers and keeps the heading outline starting at level 1. */}
+        <h1 className="sr-only">Mergers</h1>
+
         {/* Search & Filters */}
         <div className={`${CARD} p-5 mb-6`}>
           {/* Search row with filter toggle */}
@@ -394,7 +399,9 @@ function Mergers() {
                     setSearchTerm('');
                     updateParam('q', '', '');
                   }}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 transition-colors"
+                  // right-2 + p-1 pads the 16px glyph out to a 24px hit area
+                  // (WCAG 2.5.8) while leaving it where it was.
+                  className="absolute right-2 top-1/2 -translate-y-1/2 p-1 rounded text-gray-500 hover:text-gray-700 transition-colors"
                   aria-label="Clear search"
                   type="button"
                 >
@@ -598,9 +605,11 @@ function Mergers() {
                         {tracked && (
                           <FaStar className="h-4 w-4 flex-shrink-0 text-primary" aria-hidden="true" />
                         )}
-                        <h3 className="text-base font-semibold text-gray-900 truncate hover:text-primary transition-colors">
+                        {/* h2, not h3: the results list sits directly under
+                            the page h1, so an h3 would skip a level. */}
+                        <h2 className="text-base font-semibold text-gray-900 truncate hover:text-primary transition-colors">
                           {merger.merger_name}
-                        </h3>
+                        </h2>
                         {merger.is_waiver && <WaiverBadge className="flex-shrink-0" />}
                         {merger.is_refiled && <RefiledBadge className="flex-shrink-0" />}
                       </div>
@@ -665,7 +674,7 @@ function Mergers() {
                       <div className="order-2 md:order-3">
                         <p className="text-xs text-gray-500 mb-0.5">Business days</p>
                         <p className={`text-sm font-medium ${
-                          businessDayProgress.overdue ? 'text-amber-600' : 'text-gray-700'
+                          businessDayProgress.overdue ? 'text-amber-700' : 'text-gray-700'
                         }`}>
                           {businessDayProgress.overdue
                             ? 'Overdue'

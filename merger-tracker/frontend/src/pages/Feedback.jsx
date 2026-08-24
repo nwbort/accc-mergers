@@ -119,7 +119,7 @@ export default function Feedback() {
 
         <div className={`${CARD} p-8`}>
           {status === 'success' ? (
-            <div className="flex items-center gap-3 py-2">
+            <div className="flex items-center gap-3 py-2" role="status">
               <FaCheckCircle className="h-6 w-6 text-primary shrink-0" aria-hidden="true" />
               <p className="text-gray-700">Thanks for your feedback!</p>
             </div>
@@ -127,10 +127,12 @@ export default function Feedback() {
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">
               <div>
                 <label htmlFor="feedback-message" className="block text-sm font-medium text-gray-700 mb-1">
-                  Message <span className="text-red-500">*</span>
+                  Message <span className="text-red-600" aria-hidden="true">*</span>
+                  <span className="sr-only">(required)</span>
                 </label>
                 <textarea
                   id="feedback-message"
+                  required
                   ref={messageRef}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
@@ -138,7 +140,7 @@ export default function Feedback() {
                   rows={5}
                   maxLength={MAX_MESSAGE_LENGTH}
                   disabled={status === 'loading'}
-                  className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary resize-none disabled:opacity-50"
+                  className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-900 placeholder-gray-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary resize-none disabled:opacity-50"
                 />
               </div>
               <div>
@@ -152,12 +154,12 @@ export default function Feedback() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
                   disabled={status === 'loading'}
-                  className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary disabled:opacity-50"
+                  className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-900 placeholder-gray-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary disabled:opacity-50"
                 />
               </div>
               <div ref={turnstileRef} />
               {status === 'error' && (
-                <p className="text-sm text-red-600">{errorMsg}</p>
+                <p className="text-sm text-red-600" role="alert">{errorMsg}</p>
               )}
               <button
                 type="submit"

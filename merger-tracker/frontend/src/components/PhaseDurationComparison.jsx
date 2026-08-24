@@ -38,7 +38,7 @@ function DeltaChip({ current, comparison }) {
   return (
     <span
       className={`inline-flex items-center gap-1 text-[11px] font-semibold shrink-0 ${
-        longer ? 'text-amber-600' : 'text-emerald-600'
+        longer ? 'text-amber-700' : 'text-emerald-700'
       }`}
     >
       {longer ? (

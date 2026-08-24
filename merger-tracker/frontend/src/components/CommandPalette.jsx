@@ -202,7 +202,9 @@ export default function CommandPalette({ isOpen, onClose }) {
   };
 
   // Focus the input, lock body scroll, and restore focus to whatever was
-  // focused before the palette opened.
+  // focused before the palette opened. Tab is also kept inside the dialog:
+  // aria-modal hides the page behind from assistive tech, so letting focus
+  // walk out into it would leave a keyboard user on invisible controls.
   useEffect(() => {
     if (!isOpen) return;
     previouslyFocusedRef.current = document.activeElement;
@@ -211,7 +213,28 @@ export default function CommandPalette({ isOpen, onClose }) {
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
 
+    const handleTab = (e) => {
+      if (e.key !== 'Tab') return;
+      const dialog = dialogRef.current;
+      if (!dialog) return;
+      const items = dialog.querySelectorAll(
+        'button, [href], input, [tabindex]:not([tabindex="-1"])'
+      );
+      if (items.length === 0) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+    document.addEventListener('keydown', handleTab);
+
     return () => {
+      document.removeEventListener('keydown', handleTab);
       document.body.style.overflow = previousOverflow;
       previouslyFocusedRef.current?.focus?.();
     };
@@ -250,14 +273,14 @@ export default function CommandPalette({ isOpen, onClose }) {
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder="Search pages, mergers and parties…"
-            className="flex-1 bg-transparent text-sm text-gray-900 placeholder-gray-400 focus:outline-none"
+            className="flex-1 bg-transparent text-sm text-gray-900 placeholder-gray-500 focus:outline-none"
             role="combobox"
             aria-expanded="true"
             aria-controls="command-palette-listbox"
             aria-activedescendant={selectedKey}
             autoComplete="off"
           />
-          <kbd className="hidden sm:inline-flex items-center justify-center px-1.5 h-5 rounded bg-gray-100 border border-gray-200 text-[10px] font-mono font-medium text-gray-500">
+          <kbd className="hidden sm:inline-flex items-center justify-center px-1.5 h-5 rounded bg-gray-100 border border-gray-200 text-[10px] font-mono font-medium text-gray-600">
             Esc
           </kbd>
         </div>
@@ -270,7 +293,7 @@ export default function CommandPalette({ isOpen, onClose }) {
           className="max-h-[356px] overflow-y-auto py-2"
         >
           {noResults && (
-            <li className="px-4 py-6 text-sm text-gray-400 text-center" role="presentation">
+            <li className="px-4 py-6 text-sm text-gray-500 text-center" role="presentation">
               No results for &ldquo;{trimmedQuery}&rdquo;
             </li>
           )}
@@ -278,7 +301,7 @@ export default function CommandPalette({ isOpen, onClose }) {
           {pageResults.length > 0 && (
             <>
               <li
-                className="px-4 pt-1 pb-1 text-xs font-semibold text-gray-400 uppercase tracking-wide"
+                className="px-4 pt-1 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide"
                 role="presentation"
               >
                 Pages
@@ -309,13 +332,13 @@ export default function CommandPalette({ isOpen, onClose }) {
           {showMergersGroup && (
             <>
               <li
-                className="px-4 pt-3 pb-1 text-xs font-semibold text-gray-400 uppercase tracking-wide"
+                className="px-4 pt-3 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide"
                 role="presentation"
               >
                 Mergers
               </li>
               {mergersLoading && mergerResults.length === 0 && (
-                <li className="px-4 py-2 text-sm text-gray-400" role="presentation">
+                <li className="px-4 py-2 text-sm text-gray-500" role="presentation">
                   Loading mergers…
                 </li>
               )}
@@ -346,13 +369,13 @@ export default function CommandPalette({ isOpen, onClose }) {
           {showPartiesGroup && (
             <>
               <li
-                className="px-4 pt-3 pb-1 text-xs font-semibold text-gray-400 uppercase tracking-wide"
+                className="px-4 pt-3 pb-1 text-xs font-semibold text-gray-500 uppercase tracking-wide"
                 role="presentation"
               >
                 Parties
               </li>
               {partiesLoading && partyResults.length === 0 && (
-                <li className="px-4 py-2 text-sm text-gray-400" role="presentation">
+                <li className="px-4 py-2 text-sm text-gray-500" role="presentation">
                   Loading parties…
                 </li>
               )}
