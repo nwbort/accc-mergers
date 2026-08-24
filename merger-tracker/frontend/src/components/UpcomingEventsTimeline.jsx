@@ -277,9 +277,9 @@ function UpcomingEventsTimeline({ events }) {
               {/* Day content */}
               <div className={`min-w-0 flex-1 ${isLast ? '' : 'pb-6'}`}>
                 <div className="flex items-baseline gap-2">
-                  <span className={`text-sm font-semibold ${urgency.text}`}>
+                  <h3 className={`text-sm font-semibold ${urgency.text}`}>
                     {day.later ? 'Later' : relativeLabel(daysRemaining)}
-                  </span>
+                  </h3>
                   <span className="text-xs text-gray-500">
                     {day.later ? formatDateRange(day.rangeStart, day.rangeEnd) : formatWeekday(day.date)}
                   </span>

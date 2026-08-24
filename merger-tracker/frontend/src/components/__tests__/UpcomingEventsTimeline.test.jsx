@@ -36,6 +36,17 @@ describe('UpcomingEventsTimeline', () => {
     expect(screen.getByText('No upcoming events.')).toBeInTheDocument();
   });
 
+  it('exposes each day as a heading under the section heading, for screen-reader navigation', () => {
+    renderTimeline([
+      makeEvent({ date: '2026-06-28T12:00:00Z', merger_id: 'MN-1' }),
+      makeEvent({ date: '2026-06-29T12:00:00Z', merger_id: 'MN-2' }),
+    ]);
+
+    expect(screen.getByRole('heading', { level: 2, name: 'Upcoming events' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 3, name: 'Today' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 3, name: 'Tomorrow' })).toBeInTheDocument();
+  });
+
   it('groups events by day with relative labels and the event date', () => {
     renderTimeline([
       makeEvent({ date: '2026-06-28T12:00:00Z', merger_id: 'MN-1' }),
