@@ -67,6 +67,30 @@ def test_exact_duplicate_still_certain():
     assert groups[0]["kind"] == "certain"
 
 
+def test_dash_variant_title_is_certain_not_likely():
+    """A title that differs only by dash character (en dash vs hyphen) is a
+    typographic difference, not a wording difference, so it should be
+    reported as CERTAIN like any other exact duplicate rather than merely
+    LIKELY."""
+    merger = {
+        "merger_id": "MN-90008",
+        "events": [
+            {
+                "date": "2026-06-19T12:00:00Z",
+                "title": "Timeline extended by 10 business days – following request by parties",
+            },
+            {
+                "date": "2026-06-19T12:00:00Z",
+                "title": "Timeline extended by 10 business days - following request by parties",
+            },
+        ],
+    }
+    groups = find_duplicates(merger)
+    assert len(groups) == 1
+    assert groups[0]["kind"] == "certain"
+    assert set(groups[0]["indices"]) == {0, 1}
+
+
 def test_different_event_types_one_day_apart_not_grouped():
     """The tolerance must not group genuinely distinct documents."""
     merger = {

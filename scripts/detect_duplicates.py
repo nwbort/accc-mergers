@@ -35,6 +35,7 @@ from pathlib import Path
 
 from constants.site import REPO as _REPO, mergers_fyi_url
 from date_utils import parse_iso_datetime
+from normalization import normalize_dashes
 
 SCRIPT_DIR = Path(__file__).parent
 REPO_ROOT = SCRIPT_DIR.parent
@@ -44,8 +45,13 @@ SIMILARITY_THRESHOLD = 0.80
 
 
 def normalise_title(title: str) -> str:
-    """Strip leading/trailing whitespace and punctuation for fuzzy comparison."""
-    return re.sub(r"[\s\W]+$", "", title.strip()).lower()
+    """Strip leading/trailing whitespace and punctuation, and canonicalise
+    dash characters, for comparison. The ACCC site inconsistently uses
+    different dash characters for the same wording (e.g. an en dash '–' in
+    one scrape becomes a hyphen '-' in a later one), so titles that differ
+    only by dash character are treated as identical rather than merely
+    similar."""
+    return re.sub(r"[\s\W]+$", "", normalize_dashes(title).strip()).lower()
 
 
 def extract_type_prefix(title: str) -> str:
@@ -168,22 +174,28 @@ def find_duplicates(merger: dict) -> list[dict]:
     grouped: list[dict] = []
     used: set[int] = set()
 
-    # --- pass 1: exact (date, title) matches ---
+    # --- pass 1: exact (date, title) matches, ignoring dash-character choice ---
+    # Keyed on the dash-normalised title only (not full fuzzy normalisation)
+    # so titles that differ purely by dash character (e.g. an en dash '–' vs
+    # a hyphen '-') are still recognised as the same event and reported as
+    # CERTAIN. Case and punctuation differences remain in the LIKELY pass
+    # below, unchanged from before.
     from collections import defaultdict
     exact: dict[tuple, list[int]] = defaultdict(list)
     for idx, ev in enumerate(events):
         date = parse_date(ev.get("date", ""))
         title = ev.get("title", "")
         if date and title:
-            exact[(date, title)].append(idx)
+            exact[(date, normalize_dashes(title))].append(idx)
 
-    for (date, title), indices in exact.items():
+    for (date, _norm_title), indices in exact.items():
         if len(indices) > 1:
+            titles = list(dict.fromkeys(events[i].get("title", "") for i in indices))
             grouped.append({
                 "kind": "certain",
                 "indices": indices,
                 "date": date,
-                "titles": [title],
+                "titles": titles,
                 "events": [events[i] for i in indices],
             })
             used.update(indices)

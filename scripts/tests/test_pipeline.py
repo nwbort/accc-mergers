@@ -109,6 +109,57 @@ class TestMergeEventsAttachmentDropped:
 
 
 # ---------------------------------------------------------------------------
+# _merge_events: URL-less timeline rows are matched by title regardless of
+# which dash character the ACCC happens to render
+# ---------------------------------------------------------------------------
+
+class TestMergeEventsUrllessTitleDashVariant:
+    """Plain (URL-less) timeline rows, e.g. "Timeline extended by N business
+    days ...", are matched across scrapes purely by exact title. The ACCC
+    site inconsistently renders the same wording with an en dash '–' in one
+    scrape and a plain hyphen '-' in a later one. Without dash-insensitive
+    matching, that difference is invisible to a human reader but breaks the
+    exact-string match, so the scraper leaves the old title's event alone
+    and appends a fresh copy in the new dash style as a separate event —
+    and keeps doing so on every subsequent scrape (MN-90008).
+    """
+
+    TITLE_EN_DASH = "Timeline extended by 10 business days – following request by parties"
+    TITLE_HYPHEN = "Timeline extended by 10 business days - following request by parties"
+
+    def _existing(self, title):
+        return {
+            "events": [
+                {
+                    "date": "2026-06-19T12:00:00Z",
+                    "title": title,
+                    "display_title": title,
+                },
+            ],
+        }
+
+    def test_hyphen_scrape_matches_existing_en_dash_event(self):
+        scraped = [{"date": "2026-06-19T12:00:00Z", "title": self.TITLE_HYPHEN}]
+        merged = _merge_events(scraped, self._existing(self.TITLE_EN_DASH), "MN-90008", set())
+        assert len(merged) == 1, "dash-variant title must not create a duplicate event"
+
+    def test_en_dash_scrape_matches_existing_hyphen_event(self):
+        scraped = [{"date": "2026-06-19T12:00:00Z", "title": self.TITLE_EN_DASH}]
+        merged = _merge_events(scraped, self._existing(self.TITLE_HYPHEN), "MN-90008", set())
+        assert len(merged) == 1, "dash-variant title must not create a duplicate event"
+
+    def test_identical_title_still_matches(self):
+        scraped = [{"date": "2026-06-19T12:00:00Z", "title": self.TITLE_HYPHEN}]
+        merged = _merge_events(scraped, self._existing(self.TITLE_HYPHEN), "MN-90008", set())
+        assert len(merged) == 1
+
+    def test_genuinely_different_title_is_not_matched(self):
+        scraped = [{"date": "2026-06-19T12:00:00Z", "title": "A completely different event"}]
+        merged = _merge_events(scraped, self._existing(self.TITLE_EN_DASH), "MN-90008", set())
+        assert len(merged) == 2
+
+
+# ---------------------------------------------------------------------------
 # _merge_events: re-uploaded documents must not duplicate their event
 # ---------------------------------------------------------------------------
 

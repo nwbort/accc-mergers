@@ -23,7 +23,7 @@ from parse_questionnaire import (
     _DEFAULT_CACHE_PATH as _Q_CACHE_PATH,
     _NEG_CACHE_KEY as _Q_NEG_CACHE_KEY,
 )
-from normalization import normalize_determination
+from normalization import normalize_determination, normalize_dashes
 from constants.site import REPO, mergers_fyi_url
 from cutoff import get_skipped_merger_ids, is_waiver_merger
 from date_utils import parse_text_to_iso, parse_iso_datetime
@@ -899,7 +899,7 @@ def _merge_events(scraped_events, existing_merger_data, merger_id, frozen_events
                 # captured.
                 replacement_row = next(
                     (e for e in scraped_without_url
-                     if e.get('title') == existing_event.get('title')
+                     if _normalize_event_title(e.get('title')) == _normalize_event_title(existing_event.get('title'))
                      and _dates_within_one_day(
                          e.get('date', ''), existing_event.get('date', ''))),
                     None,
@@ -913,7 +913,8 @@ def _merge_events(scraped_events, existing_merger_data, merger_id, frozen_events
                     merged_events.append(existing_event)
         else:
             matching_scraped = next(
-                (e for e in scraped_without_url if e['title'] == existing_event['title']),
+                (e for e in scraped_without_url
+                 if _normalize_event_title(e['title']) == _normalize_event_title(existing_event['title'])),
                 None
             )
             if matching_scraped:
@@ -971,10 +972,12 @@ def _drop_superseded_removed_events(events):
 
 
 def _normalize_event_title(title):
-    """Whitespace- and case-insensitive form of an event title, for matching
-    the same timeline entry across scrapes (the ACCC occasionally re-cases
-    titles, e.g. "Summary of Reasons" vs "Summary of reasons")."""
-    return ' '.join((title or '').split()).casefold()
+    """Whitespace-, dash-, and case-insensitive form of an event title, for
+    matching the same timeline entry across scrapes (the ACCC occasionally
+    re-cases titles, e.g. "Summary of Reasons" vs "Summary of reasons", or
+    swaps the dash character used, e.g. an en dash '–' becoming a hyphen
+    '-')."""
+    return ' '.join(normalize_dashes(title or '').split()).casefold()
 
 
 def _mentions_reasons(event):
