@@ -1,11 +1,22 @@
-import { useMemo } from 'react';
+import { useId, useMemo, useState } from 'react';
 import { Link } from 'react-router';
-import { FaRegComments, FaGavel, FaTriangleExclamation, FaScaleBalanced } from 'react-icons/fa6';
+import {
+  FaRegComments,
+  FaGavel,
+  FaTriangleExclamation,
+  FaScaleBalanced,
+  FaChevronDown,
+} from 'react-icons/fa6';
 import { mergerPath } from '../utils/slug';
 import { formatWeekday, getCalendarDaysUntil } from '../utils/dates';
 import { PHASES } from '../constants/mergerStatus';
 import { CARD } from '../utils/classNames';
 import EmptyStateCard from './EmptyStateCard';
+
+// A day with this many or more events of the same type collapses into a
+// single "N Consultations due" summary row, expandable on click/tap, so a
+// busy day doesn't push everything else off screen.
+const GROUP_COLLAPSE_THRESHOLD = 3;
 
 // Each event type carries its own accent (icon tile + chip) so the kind of
 // deadline is recognisable at a glance, independent of the urgency colouring
@@ -88,7 +99,104 @@ function relativeLabel(daysRemaining) {
   return `In ${daysRemaining} days`;
 }
 
-function UpcomingEventsTimeline({ events }) {
+// Split a day's already-sorted events into runs of consecutive same-type
+// events. compareWithinDay sorts by type first, so each type appears in at
+// most one run per day.
+function groupByType(events) {
+  const groups = [];
+  events.forEach((event) => {
+    const current = groups[groups.length - 1];
+    if (current && current.type === event.type) {
+      current.events.push(event);
+    } else {
+      groups.push({ type: event.type, events: [event] });
+    }
+  });
+  return groups;
+}
+
+function EventRow({ event }) {
+  const eventType = getEventType(event.type);
+  const { Icon } = eventType;
+  return (
+    <Link
+      to={mergerPath(event.merger_id, event.merger_name)}
+      className="group relative flex items-center gap-3 rounded-xl -mx-2 px-2 py-2 transition-colors hover:bg-gray-50"
+      aria-label={`${eventType.label} for ${event.merger_name}`}
+    >
+      <span
+        className={`flex h-8 w-8 flex-none items-center justify-center rounded-lg ${eventType.tile}`}
+        aria-hidden="true"
+      >
+        <Icon className="h-3.5 w-3.5" />
+      </span>
+      <div className="min-w-0 flex-1">
+        <div className="truncate text-sm font-semibold text-gray-900 transition-colors group-hover:text-primary">
+          {event.merger_name}
+        </div>
+        <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-gray-500">
+          <span
+            className={`inline-flex items-center rounded-md border px-1.5 py-0.5 font-medium ${eventType.chip}`}
+          >
+            {eventType.label}
+          </span>
+          <span>{event.merger_id}</span>
+          <span aria-hidden="true">·</span>
+          <span className="truncate">{event.stage}</span>
+        </div>
+      </div>
+    </Link>
+  );
+}
+
+function EventGroupSummary({ group, expanded, onToggle }) {
+  const eventType = getEventType(group.type);
+  const { Icon } = eventType;
+  return (
+    <button
+      type="button"
+      onClick={onToggle}
+      aria-expanded={expanded}
+      className="flex w-full items-center gap-3 rounded-xl -mx-2 px-2 py-2 text-left transition-colors hover:bg-gray-50"
+    >
+      <span
+        className={`flex h-8 w-8 flex-none items-center justify-center rounded-lg ${eventType.tile}`}
+        aria-hidden="true"
+      >
+        <Icon className="h-3.5 w-3.5" />
+      </span>
+      <div className="min-w-0 flex-1">
+        <div className="text-sm font-semibold text-gray-900">
+          {group.events.length} {eventType.label}s due
+        </div>
+        <div className="mt-1 text-xs text-gray-500">
+          {expanded ? 'Tap to collapse' : 'Tap to expand'}
+        </div>
+      </div>
+      <FaChevronDown
+        className={`h-3.5 w-3.5 flex-none text-gray-400 transition-transform ${expanded ? 'rotate-180' : ''}`}
+        aria-hidden="true"
+      />
+    </button>
+  );
+}
+
+function UpcomingEventsTimeline({ events, heading = 'Upcoming events' }) {
+  const headingId = useId();
+  const [expandedGroups, setExpandedGroups] = useState(() => new Set());
+
+  const toggleGroup = (key) => {
+    setExpandedGroups((prev) => {
+      const next = new Set(prev);
+      if (next.has(key)) {
+        next.delete(key);
+      } else {
+        next.add(key);
+      }
+      return next;
+    });
+  };
+
   // Group events into one entry per calendar day, ordered earliest first. The
   // date portion (YYYY-MM-DD) is a stable key because every event is stamped at
   // the same UTC noon time.
@@ -109,16 +217,16 @@ function UpcomingEventsTimeline({ events }) {
   }, [events]);
 
   if (days.length === 0) {
-    return <EmptyStateCard heading="Upcoming events" message="No upcoming events." />;
+    return <EmptyStateCard heading={heading} message="No upcoming events." />;
   }
 
   return (
-    <section aria-labelledby="upcoming-events-heading">
+    <section aria-labelledby={headingId}>
       <h2
-        id="upcoming-events-heading"
+        id={headingId}
         className="text-lg font-semibold text-gray-900 mb-4"
       >
-        Upcoming events
+        {heading}
       </h2>
       <div className={`${CARD} overflow-hidden`}>
       <ol className="px-5 sm:px-6 py-5">
@@ -126,9 +234,10 @@ function UpcomingEventsTimeline({ events }) {
           const daysRemaining = getCalendarDaysUntil(day.date);
           const urgency = getUrgency(daysRemaining);
           const isLast = dayIndex === days.length - 1;
+          const dayKey = day.date.slice(0, 10);
 
           return (
-            <li key={day.date.slice(0, 10)} className="relative flex gap-3 sm:gap-4">
+            <li key={dayKey} className="relative flex gap-3 sm:gap-4">
               {/* Timeline rail: a node per day, joined by a line that stops at
                   the final day. */}
               <div className="relative flex w-3 flex-none justify-center">
@@ -154,40 +263,36 @@ function UpcomingEventsTimeline({ events }) {
                 </div>
 
                 <ul className="mt-1.5 space-y-1">
-                  {day.events.map((event) => {
-                    const eventType = getEventType(event.type);
-                    const { Icon } = eventType;
-                    return (
-                      <li key={`${event.merger_id}-${event.date}-${event.type}`}>
-                        <Link
-                          to={mergerPath(event.merger_id, event.merger_name)}
-                          className="group relative flex items-center gap-3 rounded-xl -mx-2 px-2 py-2 transition-colors hover:bg-gray-50"
-                          aria-label={`${eventType.label} for ${event.merger_name}`}
-                        >
-                          <span
-                            className={`flex h-8 w-8 flex-none items-center justify-center rounded-lg ${eventType.tile}`}
-                            aria-hidden="true"
-                          >
-                            <Icon className="h-3.5 w-3.5" />
-                          </span>
-                          <div className="min-w-0 flex-1">
-                            <div className="truncate text-sm font-semibold text-gray-900 transition-colors group-hover:text-primary">
-                              {event.merger_name}
-                            </div>
-                            <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-gray-500">
-                              <span
-                                className={`inline-flex items-center rounded-md border px-1.5 py-0.5 font-medium ${eventType.chip}`}
-                              >
-                                {eventType.label}
-                              </span>
-                              <span>{event.merger_id}</span>
-                              <span aria-hidden="true">·</span>
-                              <span className="truncate">{event.stage}</span>
-                            </div>
-                          </div>
-                        </Link>
-                      </li>
-                    );
+                  {groupByType(day.events).flatMap((group) => {
+                    // A handful of same-type events on one day collapse into
+                    // a single summary row so a busy day doesn't crowd out
+                    // everything else on the timeline.
+                    if (group.events.length < GROUP_COLLAPSE_THRESHOLD) {
+                      return group.events.map((event) => (
+                        <li key={`${event.merger_id}-${event.date}-${event.type}`}>
+                          <EventRow event={event} />
+                        </li>
+                      ));
+                    }
+
+                    const groupKey = `${dayKey}-${group.type}`;
+                    const expanded = expandedGroups.has(groupKey);
+                    return [
+                      <li key={groupKey}>
+                        <EventGroupSummary
+                          group={group}
+                          expanded={expanded}
+                          onToggle={() => toggleGroup(groupKey)}
+                        />
+                      </li>,
+                      ...(expanded
+                        ? group.events.map((event) => (
+                            <li key={`${event.merger_id}-${event.date}-${event.type}`} className="pl-4">
+                              <EventRow event={event} />
+                            </li>
+                          ))
+                        : []),
+                    ];
                   })}
                 </ul>
               </div>

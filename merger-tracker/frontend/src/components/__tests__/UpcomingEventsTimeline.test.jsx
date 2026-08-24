@@ -1,4 +1,4 @@
-import { render, screen, within } from '@testing-library/react';
+import { fireEvent, render, screen, within } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import UpcomingEventsTimeline from '../UpcomingEventsTimeline';
@@ -99,6 +99,10 @@ describe('UpcomingEventsTimeline', () => {
       }),
     ]);
 
+    // Three determination_due events collapse into a summary by default;
+    // expand it to check the ordering underneath.
+    fireEvent.click(screen.getByRole('button', { name: /3 Determinations due/ }));
+
     const links = screen.getAllByRole('link');
     const names = links.map((link) => within(link).getByText(/–/).textContent);
 
@@ -159,5 +163,49 @@ describe('UpcomingEventsTimeline', () => {
     const links = screen.getAllByRole('link');
     const names = links.map((l) => within(l).getByText(/–/).textContent);
     expect(names).toEqual(['Coles – Kalgoorlie', 'Zed – Determination']);
+  });
+
+  it('collapses 3+ same-type events on a day into a summary, expandable on click', () => {
+    renderTimeline([
+      makeEvent({ date: '2026-06-30T12:00:00Z', merger_id: 'MN-1', merger_name: 'Alpha – One' }),
+      makeEvent({ date: '2026-06-30T12:00:00Z', merger_id: 'MN-2', merger_name: 'Bravo – Two' }),
+      makeEvent({ date: '2026-06-30T12:00:00Z', merger_id: 'MN-3', merger_name: 'Charlie – Three' }),
+      makeEvent({ date: '2026-06-30T12:00:00Z', merger_id: 'MN-4', merger_name: 'Delta – Four' }),
+    ]);
+
+    const summary = screen.getByRole('button', { name: /4 Consultations due/ });
+    expect(summary).toHaveAttribute('aria-expanded', 'false');
+    expect(screen.queryByText('Alpha – One')).not.toBeInTheDocument();
+
+    fireEvent.click(summary);
+
+    expect(summary).toHaveAttribute('aria-expanded', 'true');
+    expect(screen.getByText('Alpha – One')).toBeInTheDocument();
+    expect(screen.getByText('Delta – Four')).toBeInTheDocument();
+
+    fireEvent.click(summary);
+    expect(summary).toHaveAttribute('aria-expanded', 'false');
+    expect(screen.queryByText('Alpha – One')).not.toBeInTheDocument();
+  });
+
+  it('does not collapse a group of fewer than 3 same-type events', () => {
+    renderTimeline([
+      makeEvent({ date: '2026-06-30T12:00:00Z', merger_id: 'MN-1', merger_name: 'Alpha – One' }),
+      makeEvent({ date: '2026-06-30T12:00:00Z', merger_id: 'MN-2', merger_name: 'Bravo – Two' }),
+    ]);
+
+    expect(screen.queryByRole('button', { name: /Consultations due/ })).not.toBeInTheDocument();
+    expect(screen.getByText('Alpha – One')).toBeInTheDocument();
+    expect(screen.getByText('Bravo – Two')).toBeInTheDocument();
+  });
+
+  it('renders a custom heading', () => {
+    render(
+      <MemoryRouter>
+        <UpcomingEventsTimeline events={[makeEvent({})]} heading="Later" />
+      </MemoryRouter>
+    );
+
+    expect(screen.getByRole('heading', { name: 'Later' })).toBeInTheDocument();
   });
 });
