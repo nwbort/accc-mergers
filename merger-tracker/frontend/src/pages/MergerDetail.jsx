@@ -424,11 +424,11 @@ function MergerDetail() {
             href={merger.judicial_review.case_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 bg-blue-50/80 rounded-2xl border border-blue-200/60 shadow-card p-4 mb-6 hover:bg-blue-50 hover:border-blue-300/60 transition-all group"
+            className="flex items-center gap-3 bg-amber-50/80 rounded-2xl border border-amber-200/60 shadow-card p-4 mb-6 hover:bg-amber-50 hover:border-amber-300/60 transition-all group"
             aria-label={`View the judicial review case${merger.judicial_review.applicant ? ` requested by ${merger.judicial_review.applicant}` : ''} on the Commonwealth Courts Portal`}
           >
-            <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-blue-100 flex items-center justify-center">
-              <FaBalanceScale className="h-4 w-4 text-blue-600" aria-hidden="true" />
+            <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-amber-100 flex items-center justify-center">
+              <FaBalanceScale className="h-4 w-4 text-amber-600" aria-hidden="true" />
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-sm font-medium text-gray-900">
@@ -439,7 +439,7 @@ function MergerDetail() {
                 {merger.judicial_review.case_number}
               </p>
             </div>
-            <ExternalLinkIcon className="h-3.5 w-3.5 text-blue-600 flex-shrink-0" />
+            <ExternalLinkIcon className="h-3.5 w-3.5 text-amber-600 flex-shrink-0" />
           </a>
         )}
 
