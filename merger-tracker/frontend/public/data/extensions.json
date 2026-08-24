@@ -3,8 +3,8 @@
     "notifications_total": 236,
     "matters_extended": 20,
     "share_extended_pct": 8.5,
-    "extension_events_total": 27,
-    "total_extension_bd": 299,
+    "extension_events_total": 26,
+    "total_extension_bd": 289,
     "median_matter_extension_bd": 15,
     "longest_single_bd": 30,
     "phase_2_total": 9,
@@ -17,8 +17,8 @@
   "reasons": [
     {
       "category": "Requested by the merger parties",
-      "events": 18,
-      "business_days": 206
+      "events": 17,
+      "business_days": 196
     },
     {
       "category": "ACCC information request",
@@ -50,7 +50,7 @@
     },
     {
       "month": "2026-06",
-      "count": 6
+      "count": 5
     },
     {
       "month": "2026-07",
@@ -63,6 +63,27 @@
   ],
   "matters": [
     {
+      "merger_id": "MN-40013",
+      "merger_name": "Calvary - Hobart Private Hospital",
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "notification_date": "2026-06-16T12:00:00Z",
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "escalated_to_phase_2": false,
+      "total_extension_bd": 30,
+      "extension_count": 1,
+      "extensions": [
+        {
+          "date": "2026-07-16T12:00:00Z",
+          "business_days": 30,
+          "reason_category": "Requested by the merger parties",
+          "reason_detail": "request by parties",
+          "title": "Timeline extended by 30 business days \u2013 following request by parties"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-90008",
       "merger_name": "Black Rhino - Club Hotel Motel Roma",
       "stage": "Phase 1 - initial assessment",
@@ -71,16 +92,9 @@
       "phase_1_determination": "Approved",
       "phase_1_determination_date": "2026-08-11T12:00:00Z",
       "escalated_to_phase_2": false,
-      "total_extension_bd": 40,
-      "extension_count": 4,
+      "total_extension_bd": 30,
+      "extension_count": 3,
       "extensions": [
-        {
-          "date": "2026-06-19T12:00:00Z",
-          "business_days": 10,
-          "reason_category": "Requested by the merger parties",
-          "reason_detail": "request by parties",
-          "title": "Timeline extended by 10 business days \u2013 following request by parties"
-        },
         {
           "date": "2026-06-19T12:00:00Z",
           "business_days": 10,
@@ -101,27 +115,6 @@
           "reason_category": "Remedy under consideration",
           "reason_detail": "remedy offered by parties",
           "title": "Timeline extended by 15 business days - following remedy offered by parties"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-40013",
-      "merger_name": "Calvary - Hobart Private Hospital",
-      "stage": "Phase 1 - initial assessment",
-      "status": "Under assessment",
-      "notification_date": "2026-06-16T12:00:00Z",
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
-      "escalated_to_phase_2": false,
-      "total_extension_bd": 30,
-      "extension_count": 1,
-      "extensions": [
-        {
-          "date": "2026-07-16T12:00:00Z",
-          "business_days": 30,
-          "reason_category": "Requested by the merger parties",
-          "reason_detail": "request by parties",
-          "title": "Timeline extended by 30 business days \u2013 following request by parties"
         }
       ]
     },
