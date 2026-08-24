@@ -502,6 +502,38 @@ def link_tribunal_appeals(enriched_mergers: list, appeals: dict) -> int:
     return linked
 
 
+def link_judicial_reviews(enriched_mergers: list, judicial_reviews: dict) -> int:
+    """Attach Federal Court judicial review data to mergers in-place.
+
+    For every merger with an entry in ``judicial_reviews`` (keyed by
+    merger_id), sets ``judicial_review`` to the review record (applicant,
+    filed date, case number, case URL) so a link-out card to the court's
+    Commonwealth Courts Portal case page can be rendered on the detail page.
+
+    Unlike tribunal appeals, no documents are scraped or mirrored, and no
+    lifecycle status is tracked — this is deliberately a much lighter overlay.
+    Returns the number of mergers linked.
+    """
+    if not judicial_reviews:
+        return 0
+
+    linked = 0
+    for merger in enriched_mergers:
+        mid = merger.get('merger_id', '')
+        review = judicial_reviews.get(mid)
+        if not review:
+            continue
+
+        merger['judicial_review'] = {
+            'applicant': review.get('applicant'),
+            'filed_date': review.get('filed_date'),
+            'case_number': review.get('case_number'),
+            'case_url': review.get('case_url'),
+        }
+        linked += 1
+    return linked
+
+
 def link_related_mergers(enriched_mergers: list, related_mergers: dict) -> int:
     """Attach ``related_merger`` entries to each merger in-place, with resolved names.
 

@@ -1,0 +1,9 @@
+{
+  "_comment": "Manually-maintained Federal Court of Australia judicial review data, keyed by ACCC merger_id. Merged into the frontend data by scripts/static_data (see loaders.load_judicial_reviews and enrichment.link_judicial_reviews). Unlike tribunal_appeals.json, no documents are scraped or mirrored here — this is just enough to surface a link-out card to the court's own case page on the Commonwealth Courts Portal. Fields: applicant (who sought the review), filed_date (bare ISO 'YYYY-MM-DD'), case_number (the Federal Court file number, e.g. 'NSD1310/2026'), case_url (the Commonwealth Courts Portal case page, e.g. https://www.comcourts.gov.au/file/Federal/P/nsd1310/2026/actions). All fields are hand-maintained.",
+  "MN-01068": {
+    "applicant": "Coles",
+    "filed_date": "2026-07-15",
+    "case_number": "NSD1310/2026",
+    "case_url": "https://www.comcourts.gov.au/file/Federal/P/nsd1310/2026/actions"
+  }
+}

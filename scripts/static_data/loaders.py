@@ -15,6 +15,7 @@ RELATED_MERGERS_JSON = REPO_ROOT / "data" / "processed" / "related_mergers.json"
 RELATED_PARTIES_JSON = REPO_ROOT / "data" / "processed" / "related_parties.json"
 SIMILAR_MERGERS_JSON = REPO_ROOT / "data" / "processed" / "similar_mergers.json"
 TRIBUNAL_APPEALS_JSON = REPO_ROOT / "data" / "processed" / "tribunal_appeals.json"
+JUDICIAL_REVIEWS_JSON = REPO_ROOT / "data" / "processed" / "judicial_reviews.json"
 
 
 def load_mergers() -> list:
@@ -142,6 +143,26 @@ def load_tribunal_appeals() -> dict:
         return {k: v for k, v in data.items() if not k.startswith('_')}
     except (json.JSONDecodeError, IOError) as e:
         print(f"Warning: Could not load tribunal_appeals.json: {e}")
+        return {}
+
+
+def load_judicial_reviews() -> dict:
+    """Load Federal Court judicial review data from judicial_reviews.json.
+
+    Returns a dict keyed by merger_id mapping to the judicial review record
+    (applicant, filed date, case number, case URL). Metadata keys (starting
+    with ``_``) are stripped. Returns an empty dict if the file is missing or
+    malformed.
+    """
+    if not JUDICIAL_REVIEWS_JSON.exists():
+        return {}
+
+    try:
+        with open(JUDICIAL_REVIEWS_JSON, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        return {k: v for k, v in data.items() if not k.startswith('_')}
+    except (json.JSONDecodeError, IOError) as e:
+        print(f"Warning: Could not load judicial_reviews.json: {e}")
         return {}
 
 

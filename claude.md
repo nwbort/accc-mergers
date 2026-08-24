@@ -134,6 +134,14 @@ data/
 │                         #   tribunal matter pages by scripts/scrape_tribunal.py (the daily
 │                         #   scrape-tribunal.yml workflow, which drives a real Chrome via
 │                         #   nodriver to clear Cloudflare); the other fields are hand-maintained.
+│                         #   judicial_reviews.json is a hand-maintained overlay of Federal Court
+│                         #   judicial reviews, keyed by merger_id, merged in at
+│                         #   generate_static_data time (loaders.load_judicial_reviews +
+│                         #   enrichment.link_judicial_reviews). Sets the merger's
+│                         #   judicial_review record (applicant, filed date, case number, case
+│                         #   URL) for a link-out card to the Commonwealth Courts Portal. Unlike
+│                         #   tribunal_appeals.json there is no scraping and no documents are
+│                         #   mirrored — every field is entered by hand.
 ├── known_notification_dates.json # Manually-confirmed/frozen notification dates
 │   processed/phase1_estimates.json # Frozen filing-time phase-1 duration estimates,
 │                         #   keyed by merger_id. Written by generate_static_data.py
