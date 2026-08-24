@@ -6,7 +6,22 @@ scripts in the data processing pipeline to ensure consistent behavior and
 avoid code duplication.
 """
 
+import re
+
 from constants import merger_status
+
+# Unicode dash-like characters the ACCC site uses interchangeably for the same
+# wording (e.g. an event title scraped with an en dash '–' can reappear later
+# with a plain hyphen '-'). Comparisons that need to recognise the "same"
+# title across scrapes should normalize through this first.
+_DASH_CHARS = "‐‑‒–—―−"
+
+
+def normalize_dashes(text: str) -> str:
+    """Replace en/em dashes and other unicode dash variants with a plain hyphen '-'."""
+    if not text:
+        return text
+    return re.sub(f"[{_DASH_CHARS}]", "-", text)
 
 
 def normalize_determination(determination: str) -> str | None:
