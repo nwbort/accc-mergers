@@ -254,7 +254,7 @@ function Dashboard() {
         {stats.phase_duration.percentiles && (
           <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-card flex flex-col">
             <h2 className="text-base font-semibold text-gray-900 mb-5">
-              Phase 1 duration
+              Phase 1 speed
             </h2>
             <div className="grid grid-cols-[auto_1fr_auto] items-center gap-x-4 flex-1 content-around">
               {[
