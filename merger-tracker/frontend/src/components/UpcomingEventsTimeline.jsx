@@ -8,7 +8,7 @@ import {
   FaChevronDown,
 } from 'react-icons/fa6';
 import { mergerPath } from '../utils/slug';
-import { formatWeekday, getCalendarDaysUntil } from '../utils/dates';
+import { formatWeekday, formatDateRange, getCalendarDaysUntil } from '../utils/dates';
 import { PHASES } from '../constants/mergerStatus';
 import { CARD } from '../utils/classNames';
 import EmptyStateCard from './EmptyStateCard';
@@ -215,9 +215,18 @@ function UpcomingEventsTimeline({ events }) {
         const isLater = daysRemaining !== null && daysRemaining > 7;
         const key = isLater ? LATER_KEY : event.date.slice(0, 10);
         if (!byDay.has(key)) {
-          byDay.set(key, isLater ? { key, later: true, events: [] } : { key, date: event.date, events: [] });
+          byDay.set(
+            key,
+            isLater
+              ? { key, later: true, events: [], rangeStart: event.date, rangeEnd: event.date }
+              : { key, date: event.date, events: [] }
+          );
         }
-        byDay.get(key).events.push(event);
+        const bucket = byDay.get(key);
+        bucket.events.push(event);
+        // Events are still date-sorted at this point, so the running range
+        // just tracks the first and most recent later event seen.
+        if (isLater) bucket.rangeEnd = event.date;
       });
     // The later bucket's events were sorted chronologically above; re-sort by
     // type/phase/name only, since it's presented as one combined entry rather
@@ -270,9 +279,9 @@ function UpcomingEventsTimeline({ events }) {
                   <span className={`text-sm font-semibold ${urgency.text}`}>
                     {day.later ? 'Later' : relativeLabel(daysRemaining)}
                   </span>
-                  {!day.later && (
-                    <span className="text-xs text-gray-500">{formatWeekday(day.date)}</span>
-                  )}
+                  <span className="text-xs text-gray-500">
+                    {day.later ? formatDateRange(day.rangeStart, day.rangeEnd) : formatWeekday(day.date)}
+                  </span>
                 </div>
 
                 <ul className="mt-1.5 space-y-1">

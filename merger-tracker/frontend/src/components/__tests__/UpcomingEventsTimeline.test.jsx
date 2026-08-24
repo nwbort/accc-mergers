@@ -214,8 +214,9 @@ describe('UpcomingEventsTimeline', () => {
     expect(screen.getAllByText('Later')).toHaveLength(1);
     expect(screen.getByText('Bravo – Later')).toBeInTheDocument();
     expect(screen.getByText('Charlie – Later')).toBeInTheDocument();
-    // No per-day weekday label for the combined entry.
-    expect(screen.queryByText(/Jul/)).not.toBeInTheDocument();
+    // Date range spans the earliest to latest event in the bundle, not a
+    // single weekday label.
+    expect(screen.getByText('6 Jul – 10 Jul')).toBeInTheDocument();
   });
 
   it('applies the same 3+ collapse threshold within the combined "Later" entry', () => {
