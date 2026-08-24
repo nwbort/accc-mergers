@@ -199,13 +199,49 @@ describe('UpcomingEventsTimeline', () => {
     expect(screen.getByText('Bravo – Two')).toBeInTheDocument();
   });
 
-  it('renders a custom heading', () => {
-    render(
-      <MemoryRouter>
-        <UpcomingEventsTimeline events={[makeEvent({})]} heading="Later" />
-      </MemoryRouter>
-    );
+  it('bundles events more than a week out into a single trailing "Later" entry', () => {
+    renderTimeline([
+      makeEvent({ date: '2026-06-29T12:00:00Z', merger_id: 'MN-1', merger_name: 'Alpha – Soon' }),
+      // 8 and 12 days out: different calendar days, but both beyond the
+      // 7-day cutoff, so both land under the same "Later" heading.
+      makeEvent({ date: '2026-07-06T12:00:00Z', merger_id: 'MN-2', merger_name: 'Bravo – Later' }),
+      makeEvent({ date: '2026-07-10T12:00:00Z', merger_id: 'MN-3', merger_name: 'Charlie – Later' }),
+    ]);
 
-    expect(screen.getByRole('heading', { name: 'Later' })).toBeInTheDocument();
+    expect(screen.getByText('Tomorrow')).toBeInTheDocument();
+    expect(screen.getByText('Alpha – Soon')).toBeInTheDocument();
+
+    expect(screen.getAllByText('Later')).toHaveLength(1);
+    expect(screen.getByText('Bravo – Later')).toBeInTheDocument();
+    expect(screen.getByText('Charlie – Later')).toBeInTheDocument();
+    // No per-day weekday label for the combined entry.
+    expect(screen.queryByText(/Jul/)).not.toBeInTheDocument();
+  });
+
+  it('applies the same 3+ collapse threshold within the combined "Later" entry', () => {
+    renderTimeline([
+      makeEvent({ date: '2026-07-06T12:00:00Z', merger_id: 'MN-1', merger_name: 'Alpha – One' }),
+      makeEvent({ date: '2026-07-08T12:00:00Z', merger_id: 'MN-2', merger_name: 'Bravo – Two' }),
+      makeEvent({ date: '2026-07-10T12:00:00Z', merger_id: 'MN-3', merger_name: 'Charlie – Three' }),
+    ]);
+
+    const summary = screen.getByRole('button', { name: /3 Consultations due/ });
+    expect(screen.queryByText('Alpha – One')).not.toBeInTheDocument();
+
+    fireEvent.click(summary);
+    expect(screen.getByText('Alpha – One')).toBeInTheDocument();
+    expect(screen.getByText('Charlie – Three')).toBeInTheDocument();
+  });
+
+  it('shows only a chevron on a collapsed group, with no expand/collapse hint text', () => {
+    renderTimeline([
+      makeEvent({ date: '2026-06-30T12:00:00Z', merger_id: 'MN-1', merger_name: 'Alpha – One' }),
+      makeEvent({ date: '2026-06-30T12:00:00Z', merger_id: 'MN-2', merger_name: 'Bravo – Two' }),
+      makeEvent({ date: '2026-06-30T12:00:00Z', merger_id: 'MN-3', merger_name: 'Charlie – Three' }),
+    ]);
+
+    expect(screen.queryByText('Tap to expand')).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: /3 Consultations due/ }));
+    expect(screen.queryByText('Tap to collapse')).not.toBeInTheDocument();
   });
 });

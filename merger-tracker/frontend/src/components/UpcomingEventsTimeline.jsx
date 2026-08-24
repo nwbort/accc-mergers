@@ -1,4 +1,4 @@
-import { useId, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Link } from 'react-router';
 import {
   FaRegComments,
@@ -99,6 +99,12 @@ function relativeLabel(daysRemaining) {
   return `In ${daysRemaining} days`;
 }
 
+// Everything more than a week out is bundled into a single trailing "Later"
+// entry rather than one row per day, so the timeline doesn't stretch across
+// two weeks of individual days. It always reads as calm/far-off.
+const LATER_URGENCY = { dot: 'bg-primary', text: 'text-gray-900' };
+const LATER_KEY = 'later';
+
 // Split a day's already-sorted events into runs of consecutive same-type
 // events. compareWithinDay sorts by type first, so each type appears in at
 // most one run per day.
@@ -165,13 +171,8 @@ function EventGroupSummary({ group, expanded, onToggle }) {
       >
         <Icon className="h-3.5 w-3.5" />
       </span>
-      <div className="min-w-0 flex-1">
-        <div className="text-sm font-semibold text-gray-900">
-          {group.events.length} {eventType.label}s due
-        </div>
-        <div className="mt-1 text-xs text-gray-500">
-          {expanded ? 'Tap to collapse' : 'Tap to expand'}
-        </div>
+      <div className="min-w-0 flex-1 text-sm font-semibold text-gray-900">
+        {group.events.length} {eventType.label}s due
       </div>
       <FaChevronDown
         className={`h-3.5 w-3.5 flex-none text-gray-400 transition-transform ${expanded ? 'rotate-180' : ''}`}
@@ -181,8 +182,7 @@ function EventGroupSummary({ group, expanded, onToggle }) {
   );
 }
 
-function UpcomingEventsTimeline({ events, heading = 'Upcoming events' }) {
-  const headingId = useId();
+function UpcomingEventsTimeline({ events }) {
   const [expandedGroups, setExpandedGroups] = useState(() => new Set());
 
   const toggleGroup = (key) => {
@@ -197,9 +197,11 @@ function UpcomingEventsTimeline({ events, heading = 'Upcoming events' }) {
     });
   };
 
-  // Group events into one entry per calendar day, ordered earliest first. The
-  // date portion (YYYY-MM-DD) is a stable key because every event is stamped at
-  // the same UTC noon time.
+  // Group events into one entry per calendar day for the coming week, ordered
+  // earliest first (the date portion, YYYY-MM-DD, is a stable key because
+  // every event is stamped at the same UTC noon time). Anything more than a
+  // week out is bundled into a single trailing "later" entry instead of one
+  // row per day.
   const days = useMemo(() => {
     if (!events) return [];
     const byDay = new Map();
@@ -209,32 +211,41 @@ function UpcomingEventsTimeline({ events, heading = 'Upcoming events' }) {
         return dayDelta !== 0 ? dayDelta : compareWithinDay(a, b);
       })
       .forEach((event) => {
-        const key = event.date.slice(0, 10);
-        if (!byDay.has(key)) byDay.set(key, { date: event.date, events: [] });
+        const daysRemaining = getCalendarDaysUntil(event.date);
+        const isLater = daysRemaining !== null && daysRemaining > 7;
+        const key = isLater ? LATER_KEY : event.date.slice(0, 10);
+        if (!byDay.has(key)) {
+          byDay.set(key, isLater ? { key, later: true, events: [] } : { key, date: event.date, events: [] });
+        }
         byDay.get(key).events.push(event);
       });
+    // The later bucket's events were sorted chronologically above; re-sort by
+    // type/phase/name only, since it's presented as one combined entry rather
+    // than day-by-day.
+    const later = byDay.get(LATER_KEY);
+    if (later) later.events.sort(compareWithinDay);
     return [...byDay.values()];
   }, [events]);
 
   if (days.length === 0) {
-    return <EmptyStateCard heading={heading} message="No upcoming events." />;
+    return <EmptyStateCard heading="Upcoming events" message="No upcoming events." />;
   }
 
   return (
-    <section aria-labelledby={headingId}>
+    <section aria-labelledby="upcoming-events-heading">
       <h2
-        id={headingId}
+        id="upcoming-events-heading"
         className="text-lg font-semibold text-gray-900 mb-4"
       >
-        {heading}
+        Upcoming events
       </h2>
       <div className={`${CARD} overflow-hidden`}>
       <ol className="px-5 sm:px-6 py-5">
         {days.map((day, dayIndex) => {
-          const daysRemaining = getCalendarDaysUntil(day.date);
-          const urgency = getUrgency(daysRemaining);
+          const daysRemaining = day.later ? null : getCalendarDaysUntil(day.date);
+          const urgency = day.later ? LATER_URGENCY : getUrgency(daysRemaining);
           const isLast = dayIndex === days.length - 1;
-          const dayKey = day.date.slice(0, 10);
+          const dayKey = day.key;
 
           return (
             <li key={dayKey} className="relative flex gap-3 sm:gap-4">
@@ -257,9 +268,11 @@ function UpcomingEventsTimeline({ events, heading = 'Upcoming events' }) {
               <div className={`min-w-0 flex-1 ${isLast ? '' : 'pb-6'}`}>
                 <div className="flex items-baseline gap-2">
                   <span className={`text-sm font-semibold ${urgency.text}`}>
-                    {relativeLabel(daysRemaining)}
+                    {day.later ? 'Later' : relativeLabel(daysRemaining)}
                   </span>
-                  <span className="text-xs text-gray-500">{formatWeekday(day.date)}</span>
+                  {!day.later && (
+                    <span className="text-xs text-gray-500">{formatWeekday(day.date)}</span>
+                  )}
                 </div>
 
                 <ul className="mt-1.5 space-y-1">
