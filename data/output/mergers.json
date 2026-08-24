@@ -16136,10 +16136,260 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 36,
-        "min_days": null,
+        "estimated_days": 18,
+        "min_days": 0,
         "max_days": 43,
-        "id_issued_estimated": "2026-07-09",
+        "id_issued_estimated": "2026-07-27",
+        "id_issued_before": "2026-08-14",
+        "id_issued_after": "2026-07-02",
+        "min_days_witness": "MN-10030",
+        "max_days_witness": "WA-10024",
+        "basis": "bracketed",
+        "method_version": 1
+      }
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/novonesis-%E2%80%93-microbiogen",
+      "merger_name": "Novonesis \u2013 Microbiogen",
+      "status": "Under assessment",
+      "merger_id": "MN-10030",
+      "effective_notification_datetime": "2026-08-21T12:00:00Z",
+      "original_notification_datetime": "2026-08-21T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-10-02T12:00:00Z",
+      "page_modified_datetime": "2026-08-24T13:02:00+10:00",
+      "consultation_response_due_date": "2026-08-31T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "NOVOZYMES AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "48 001 420 677",
+          "party_page": {
+            "id": "novozymes-australia-pty-ltd",
+            "name": "Novozymes Australia Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "MICROBIOGEN PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "91 096 059 700",
+          "party_page": {
+            "id": "microbiogen-pty-ltd",
+            "name": "Microbiogen Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Novo Holdings A/S",
+          "identifier_type": null,
+          "identifier": "CVR  24257630",
+          "party_page": {
+            "id": "novo-holdings-a-s",
+            "name": "Novo Holdings A/S"
+          }
+        },
+        {
+          "name": "Novonesis A/S",
+          "identifier_type": null,
+          "identifier": "CVR   10007127",
+          "party_page": {
+            "id": "novonesis-a-s",
+            "name": "Novonesis A/S"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1899",
+          "name": "Other Basic Chemical Product Manufacturing n.e.c."
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6910",
+          "name": "Scientific Research Services"
+        }
+      ],
+      "merger_description": "Novonesis A/S (**Novonesis**) proposes to indirectly acquire 100% of the outstanding issued and to be issued share capital of Microbiogen Pty Ltd (**Microbiogen**) through its wholly owned subsidiary, Novozymes Australia Pty Ltd (**Novozymes**) (the **Acquisition**).\n\nNovonesis is a global biotechnology company headquartered in Denmark. Novonesis manufactures and supplies enzymes and microorganisms for industrial applications across multiple sectors. In Australia, it operates through its wholly owned subsidiary Novozymes, which operates as the regional sales, distribution and technical support arm of Novonesis in Australia and New Zealand.\n\nNovonesis is majority owned and controlled by Novo Holdings A/S, which is in turn wholly owned by the Novo Nordisk Foundation, an independent enterprise foundation based in Hellerup, Denmark.\n\nMicrobiogen is a biotechnology company based in Sydney, Australia. Microbiogen is active in the research and development of yeast strains for industrial applications across a range of sectors, including biofuels, baking, food, animal feed, beverages and biochemicals.\n\nNovonesis currently holds an existing minority shareholding in Microbiogen and via the Acquisition proposes to indirectly acquire the outstanding share capital in Microbiogen that is not already owned by Novonesis.",
+      "events": [
+        {
+          "date": "2026-08-24T12:00:00Z",
+          "title": "Phase 1 consultation",
+          "display_title": "Phase 1 consultation",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Novonesis%20%E2%80%93%20Microbiogen%20-%20Questionnaire.docx",
+          "url_gh": "/mergers/MN-10030/Novonesis \u2013 Microbiogen - Questionnaire.pdf",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-08-21T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-40019",
+          "merger_name": "Novartis - Excellergy",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Elba Merger Sub, Inc.",
+              "identifier_type": null,
+              "identifier": "Delaware company number 10547479",
+              "party_page": {
+                "id": "elba-merger-sub-inc",
+                "name": "Elba Merger Sub, Inc."
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Excellergy Inc.",
+              "identifier_type": null,
+              "identifier": "EIN 854115816",
+              "canonical": {
+                "id": "excellergy-inc",
+                "name": "Excellergy"
+              },
+              "party_page": {
+                "id": "excellergy-inc",
+                "name": "Excellergy"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-85026",
+          "merger_name": "Banijay Entertainment \u2013 All3Media",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Banijay Holding UK Limited",
+              "identifier_type": null,
+              "identifier": "UK Company number 17040112",
+              "canonical": {
+                "id": "banijay-entertainment",
+                "name": "Banijay Entertainment"
+              },
+              "party_page": {
+                "id": "banijay-entertainment",
+                "name": "Banijay Entertainment"
+              }
+            },
+            {
+              "name": "Gold Rush TopCo Limited",
+              "identifier_type": null,
+              "identifier": "RN 152697",
+              "party_page": {
+                "id": "gold-rush-topco-limited",
+                "name": "Gold Rush TopCo Limited"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Gold Rush HoldCo Limited",
+              "identifier_type": null,
+              "identifier": "RN 152698",
+              "party_page": {
+                "id": "gold-rush-holdco-limited",
+                "name": "Gold Rush HoldCo Limited"
+              }
+            },
+            {
+              "name": "Banijay Holding S.A.S.",
+              "identifier_type": null,
+              "identifier": "829 295 138 RCS PARIS",
+              "canonical": {
+                "id": "banijay-entertainment",
+                "name": "Banijay Entertainment"
+              },
+              "party_page": {
+                "id": "banijay-entertainment",
+                "name": "Banijay Entertainment"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-95024",
+          "merger_name": "Carlyle \u2013 CHN Group",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Crystal Holdings Korea Co., Ltd.",
+              "identifier_type": null,
+              "identifier": "SKID  1201110153602",
+              "party_page": {
+                "id": "crystal-holdings-korea-co-ltd",
+                "name": "Crystal Holdings Korea Co., Ltd."
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Chung Ho Nais Co., Ltd.",
+              "identifier_type": null,
+              "identifier": "SKID  1101111052482",
+              "party_page": {
+                "id": "chung-ho-nais-co-ltd",
+                "name": "Chung Ho Nais Co., Ltd."
+              }
+            },
+            {
+              "name": "MCM Co., Ltd.",
+              "identifier_type": null,
+              "identifier": "SKID  1543110025062",
+              "party_page": {
+                "id": "mcm-co-ltd",
+                "name": "MCM Co., Ltd."
+              }
+            }
+          ]
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 16,
+        "range_business_days": [
+          15,
+          17
+        ],
+        "basis": "industry",
+        "anzsic_level": "class",
+        "anzsic_codes": [
+          "1899",
+          "6240",
+          "6910"
+        ],
+        "sample_size": 19,
+        "estimated_at": "2026-08-24",
+        "method_version": 1
+      },
+      "pre_notification": {
+        "estimated_days": 25,
+        "min_days": null,
+        "max_days": 50,
+        "id_issued_estimated": "2026-07-27",
         "id_issued_before": null,
         "id_issued_after": "2026-07-02",
         "min_days_witness": null,

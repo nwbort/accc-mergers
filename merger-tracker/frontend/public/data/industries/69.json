@@ -19,7 +19,7 @@
       "code": "691",
       "name": "Scientific Research Services",
       "level": "group",
-      "merger_count": 16
+      "merger_count": 17
     },
     {
       "code": "692",
@@ -65,6 +65,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-10030",
+      "merger_name": "Novonesis \u2013 Microbiogen",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-21T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-85043",
       "merger_name": "Lone Star Funds - ContiTech",
@@ -1001,11 +1012,11 @@
       "determination_date": null
     }
   ],
-  "count": 85,
-  "phase_1_count": 34,
+  "count": 86,
+  "phase_1_count": 35,
   "phase_2_count": 3,
   "waiver_count": 48,
-  "active_count": 11,
+  "active_count": 12,
   "phase_duration": {
     "average_days": 35.57142857142857,
     "median_days": 27.5,

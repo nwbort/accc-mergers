@@ -27,6 +27,17 @@
   "children": [],
   "mergers": [
     {
+      "merger_id": "MN-10030",
+      "merger_name": "Novonesis \u2013 Microbiogen",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-21T12:00:00Z",
+      "determination_date": null
+    },
+    {
       "merger_id": "MN-60030",
       "merger_name": "Tencent \u2013 Happibits",
       "is_waiver": false,
@@ -1061,11 +1072,11 @@
       "determination_date": "2026-01-30T12:00:00Z"
     }
   ],
-  "count": 94,
-  "phase_1_count": 22,
+  "count": 95,
+  "phase_1_count": 23,
   "phase_2_count": 0,
   "waiver_count": 72,
-  "active_count": 12,
+  "active_count": 13,
   "phase_duration": {
     "average_days": 24.7,
     "median_days": 23.5,

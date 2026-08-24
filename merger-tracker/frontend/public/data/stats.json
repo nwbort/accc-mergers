@@ -1,10 +1,10 @@
 {
-  "total_mergers": 235,
+  "total_mergers": 236,
   "total_waivers": 347,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 180,
-    "Under assessment": 52,
+    "Under assessment": 53,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -56,7 +56,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 94
+      "count": 95
     },
     {
       "name": "Computer System Design and Related Services",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-10030",
+      "merger_name": "Novonesis \u2013 Microbiogen",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-21T12:00:00Z",
+      "page_modified_datetime": "2026-08-24T13:02:00+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-85043",
       "merger_name": "Lone Star Funds - ContiTech",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-14T12:00:00Z",
       "page_modified_datetime": "2026-08-21T17:43:28+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-65031",
-      "merger_name": "Metal Manufactures - BayWa Solar Systems",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-14T12:00:00Z",
-      "page_modified_datetime": "2026-08-21T16:09:06+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

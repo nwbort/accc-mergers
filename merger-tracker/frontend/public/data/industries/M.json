@@ -9,7 +9,7 @@
       "code": "69",
       "name": "Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",
       "level": "subdivision",
-      "merger_count": 85
+      "merger_count": 86
     },
     {
       "code": "70",
@@ -19,6 +19,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-10030",
+      "merger_name": "Novonesis \u2013 Microbiogen",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-21T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-60030",
       "merger_name": "Tencent \u2013 Happibits",
@@ -1483,11 +1494,11 @@
       "determination_date": null
     }
   ],
-  "count": 133,
-  "phase_1_count": 53,
+  "count": 134,
+  "phase_1_count": 54,
   "phase_2_count": 3,
   "waiver_count": 77,
-  "active_count": 15,
+  "active_count": 16,
   "phase_duration": {
     "average_days": 32.81395348837209,
     "median_days": 27,
