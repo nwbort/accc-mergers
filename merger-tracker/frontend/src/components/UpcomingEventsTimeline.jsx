@@ -155,7 +155,7 @@ function EventRow({ event }) {
   );
 }
 
-function EventGroupSummary({ group, expanded, onToggle }) {
+function EventGroupSummary({ group, expanded, onToggle, panelId }) {
   const eventType = getEventType(group.type);
   const { Icon } = eventType;
   return (
@@ -163,6 +163,7 @@ function EventGroupSummary({ group, expanded, onToggle }) {
       type="button"
       onClick={onToggle}
       aria-expanded={expanded}
+      aria-controls={panelId}
       className="flex w-full items-center gap-3 rounded-xl -mx-2 px-2 py-2 text-left transition-colors hover:bg-gray-50"
     >
       <span
@@ -175,7 +176,7 @@ function EventGroupSummary({ group, expanded, onToggle }) {
         {group.events.length} {eventType.label}s due
       </div>
       <FaChevronDown
-        className={`h-3.5 w-3.5 flex-none text-gray-400 transition-transform ${expanded ? 'rotate-180' : ''}`}
+        className={`h-3.5 w-3.5 flex-none text-gray-500 transition-transform ${expanded ? 'rotate-180' : ''}`}
         aria-hidden="true"
       />
     </button>
@@ -298,6 +299,7 @@ function UpcomingEventsTimeline({ events }) {
                     }
 
                     const groupKey = `${dayKey}-${group.type}`;
+                    const panelId = `events-${groupKey}`;
                     const expanded = expandedGroups.has(groupKey);
                     return [
                       <li key={groupKey}>
@@ -305,14 +307,21 @@ function UpcomingEventsTimeline({ events }) {
                           group={group}
                           expanded={expanded}
                           onToggle={() => toggleGroup(groupKey)}
+                          panelId={panelId}
                         />
                       </li>,
                       ...(expanded
-                        ? group.events.map((event) => (
-                            <li key={`${event.merger_id}-${event.date}-${event.type}`} className="pl-4">
-                              <EventRow event={event} />
-                            </li>
-                          ))
+                        ? [
+                            <li key={panelId}>
+                              <ul id={panelId} className="space-y-1 pl-4">
+                                {group.events.map((event) => (
+                                  <li key={`${event.merger_id}-${event.date}-${event.type}`}>
+                                    <EventRow event={event} />
+                                  </li>
+                                ))}
+                              </ul>
+                            </li>,
+                          ]
                         : []),
                     ];
                   })}

@@ -188,6 +188,21 @@ describe('UpcomingEventsTimeline', () => {
     expect(screen.queryByText('Alpha – One')).not.toBeInTheDocument();
   });
 
+  it('points the summary button\'s aria-controls at the revealed events', () => {
+    renderTimeline([
+      makeEvent({ date: '2026-06-30T12:00:00Z', merger_id: 'MN-1', merger_name: 'Alpha – One' }),
+      makeEvent({ date: '2026-06-30T12:00:00Z', merger_id: 'MN-2', merger_name: 'Bravo – Two' }),
+      makeEvent({ date: '2026-06-30T12:00:00Z', merger_id: 'MN-3', merger_name: 'Charlie – Three' }),
+    ]);
+
+    const summary = screen.getByRole('button', { name: /3 Consultations due/ });
+    const controlsId = summary.getAttribute('aria-controls');
+    expect(controlsId).toBeTruthy();
+
+    fireEvent.click(summary);
+    expect(document.getElementById(controlsId)).toContainElement(screen.getByText('Alpha – One'));
+  });
+
   it('does not collapse a group of fewer than 3 same-type events', () => {
     renderTimeline([
       makeEvent({ date: '2026-06-30T12:00:00Z', merger_id: 'MN-1', merger_name: 'Alpha – One' }),
