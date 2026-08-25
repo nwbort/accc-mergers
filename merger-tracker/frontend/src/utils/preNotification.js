@@ -16,6 +16,8 @@ export const PRE_NOTIFICATION_NONE = 'none';
 export const PRE_NOTIFICATION_AROUND = 'around';
 /** Only the earliest possible start is known, so the date is a floor rather than a point. */
 export const PRE_NOTIFICATION_AFTER = 'after';
+/** Only the latest possible start is known, so the date is a ceiling rather than a point. */
+export const PRE_NOTIFICATION_BEFORE = 'before';
 
 /**
  * How a merger's pre-notification period should be described, or null when
@@ -39,11 +41,15 @@ export const getPreNotificationEstimate = (merger) => {
     return { kind: PRE_NOTIFICATION_NONE, startDate: null };
   }
 
-  // An upper bound alone says only that the case number can't have been issued
-  // before its anchor, so the date is where the period starts at the earliest.
-  const kind = estimate.basis === 'upper-bound-only'
-    ? PRE_NOTIFICATION_AFTER
-    : PRE_NOTIFICATION_AROUND;
+  // A single bound gives an endpoint, not a point: an upper bound alone says
+  // only that the case number can't have been issued before its anchor (the
+  // period starts at the earliest there), and a lower bound alone only that it
+  // was issued by the time a later case was filed (the period starts at the
+  // latest there). Only a bracketed estimate has evidence on both sides and
+  // earns "around".
+  let kind = PRE_NOTIFICATION_AROUND;
+  if (estimate.basis === 'upper-bound-only') kind = PRE_NOTIFICATION_AFTER;
+  if (estimate.basis === 'lower-bound-only') kind = PRE_NOTIFICATION_BEFORE;
 
   return { kind, startDate: estimate.id_issued_estimated };
 };

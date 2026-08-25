@@ -36,7 +36,7 @@ describe('PreNotificationEstimate', () => {
     ).toBeInTheDocument();
   });
 
-  it('dates the start of pre-notification when only a lower bound is proven', () => {
+  it('gives the date as a ceiling when only a lower bound is proven', () => {
     renderCallout(merger({
       pre_notification: {
         estimated_days: 7,
@@ -47,7 +47,10 @@ describe('PreNotificationEstimate', () => {
       },
     }));
 
-    expect(screen.getByText(/entered pre-notification around 20 May 2026/)).toBeInTheDocument();
+    expect(
+      screen.getByText(/entered pre-notification sometime before 20 May 2026/)
+    ).toBeInTheDocument();
+    expect(screen.queryByText(/around/)).not.toBeInTheDocument();
   });
 
   it('gives the date as a floor when only an upper bound is known', () => {

@@ -5,6 +5,7 @@ import { formatDateLong } from '../utils/dates';
 import {
   getPreNotificationEstimate,
   PRE_NOTIFICATION_AFTER,
+  PRE_NOTIFICATION_BEFORE,
   PRE_NOTIFICATION_NONE,
 } from '../utils/preNotification';
 
@@ -17,6 +18,9 @@ const describe = ({ kind, startDate }) => {
   }
   if (kind === PRE_NOTIFICATION_AFTER) {
     return `this merger entered pre-notification sometime after ${formatDateLong(startDate)}`;
+  }
+  if (kind === PRE_NOTIFICATION_BEFORE) {
+    return `this merger entered pre-notification sometime before ${formatDateLong(startDate)}`;
   }
   return `this merger entered pre-notification around ${formatDateLong(startDate)}`;
 };
