@@ -526,19 +526,26 @@ function Analysis() {
         url="/analysis"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
+        {/* The page leads straight into content, so the document's h1 is
+            visually hidden rather than dropped: it names the page for screen
+            readers and keeps the heading outline starting at level 1. */}
+        <h1 className="sr-only">Analysis</h1>
+
         {/* Summary Stat Cards */}
         <div className="mb-8">
           <div className="flex justify-end mb-3">
             <div className="inline-flex items-center bg-gray-100 rounded-full p-0.5 text-sm">
               <button
                 onClick={() => setCalendarDays(false)}
-                className={`px-3.5 py-1.5 rounded-full font-medium transition-all duration-150 ${!calendarDays ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
+                aria-pressed={!calendarDays}
+                className={`px-3.5 py-1.5 rounded-full font-medium transition-all duration-150 ${!calendarDays ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-600 hover:text-gray-900'}`}
               >
                 Business days
               </button>
               <button
                 onClick={() => setCalendarDays(true)}
-                className={`px-3.5 py-1.5 rounded-full font-medium transition-all duration-150 ${calendarDays ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
+                aria-pressed={calendarDays}
+                className={`px-3.5 py-1.5 rounded-full font-medium transition-all duration-150 ${calendarDays ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-600 hover:text-gray-900'}`}
               >
                 Calendar days
               </button>
@@ -605,14 +612,34 @@ function Analysis() {
         <div className="grid grid-cols-1 gap-6 mb-8">
           <div className={`${CARD} overflow-hidden`}>
             <div className="px-6 py-5 border-b border-gray-100">
-              <h2 className="text-base font-semibold text-gray-900">Monthly notification volume</h2>
+              <h2 id="chart-monthly-volume-title" className="text-base font-semibold text-gray-900">Monthly notification volume</h2>
               <p className="text-sm text-gray-500 mt-0.5">
                 Number of merger notifications and waiver applications per month
               </p>
             </div>
             <div className="p-6">
-              <div className="h-72">
-                <Bar data={monthlyVolumeData} options={monthlyVolumeOptions} />
+              <div
+                className="h-72"
+                role="img"
+                aria-labelledby="chart-monthly-volume-title"
+                aria-describedby="chart-monthly-volume-summary"
+              >
+                <Bar data={monthlyVolumeData} options={monthlyVolumeOptions} role="presentation" />
+              </div>
+              <div className="sr-only">
+                <table id="chart-monthly-volume-summary">
+                  <caption>Merger notifications and waiver applications per month</caption>
+                  <thead><tr><th>Month</th><th>Notifications</th><th>Waivers</th></tr></thead>
+                  <tbody>
+                    {monthly_volume.labels.map((month, i) => (
+                      <tr key={month}>
+                        <td>{formatMonthLabel(month)}</td>
+                        <td>{monthly_volume.notifications[i]}</td>
+                        <td>{monthly_volume.waivers[i]}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
               <p className="text-xs text-gray-500 mt-3">
                 Waivers are recorded on the ACCC's register when they are decided. This means the number of waiver applications in a month can rise for up to 25 business days after the month ends.
@@ -626,7 +653,7 @@ function Analysis() {
           <section className="mb-8">
             <div className={`${CARD} overflow-hidden`}>
               <div className="px-6 py-5 border-b border-gray-100">
-                <h2 className="text-base font-semibold text-gray-900">
+                <h2 id="chart-caseload-title" className="text-base font-semibold text-gray-900">
                   Open caseload &ndash; notifications
                 </h2>
                 <p className="text-sm text-gray-500 mt-0.5">
@@ -654,8 +681,27 @@ function Analysis() {
                     </div>
                   )}
                 </div>
-                <div className="h-72">
-                  <Line data={caseloadData} options={caseloadOptions} />
+                <div
+                  className="h-72"
+                  role="img"
+                  aria-labelledby="chart-caseload-title"
+                  aria-describedby="chart-caseload-summary"
+                >
+                  <Line data={caseloadData} options={caseloadOptions} role="presentation" />
+                </div>
+                <div className="sr-only">
+                  <table id="chart-caseload-summary">
+                    <caption>Open notifications at each month end</caption>
+                    <thead><tr><th>Month</th><th>Open notifications</th></tr></thead>
+                    <tbody>
+                      {caseload.labels.map((month, i) => (
+                        <tr key={month}>
+                          <td>{formatMonthLabel(month)}</td>
+                          <td>{caseload.notifications[i]}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
@@ -667,14 +713,34 @@ function Analysis() {
           <section className="mb-8">
             <div className={`${CARD} overflow-hidden`}>
               <div className="px-6 py-5 border-b border-gray-100">
-                <h2 className="text-lg font-semibold text-gray-900">Phase 1 duration by industry</h2>
+                <h2 id="chart-industry-duration-title" className="text-lg font-semibold text-gray-900">Phase 1 duration by industry</h2>
                 <p className="text-sm text-gray-500 mt-0.5">
                   Average phase 1 duration for completed reviews, by top-level industry. Click a bar to view that industry.
                 </p>
               </div>
               <div className="p-6">
-                <div style={{ height: `${Math.max(320, industryChartRows.length * 32)}px` }}>
-                  <Bar data={industryDurationData} options={industryDurationOptions} />
+                <div
+                  style={{ height: `${Math.max(320, industryChartRows.length * 32)}px` }}
+                  role="img"
+                  aria-labelledby="chart-industry-duration-title"
+                  aria-describedby="chart-industry-duration-summary"
+                >
+                  <Bar data={industryDurationData} options={industryDurationOptions} role="presentation" />
+                </div>
+                <div className="sr-only">
+                  <table id="chart-industry-duration-summary">
+                    <caption>Average phase 1 duration by industry, in {dayLabel}</caption>
+                    <thead><tr><th>Industry</th><th>Average duration ({dayLabel})</th><th>Completed reviews</th></tr></thead>
+                    <tbody>
+                      {industryChartRows.map((row) => (
+                        <tr key={row.name}>
+                          <td>{row.name}</td>
+                          <td>{row[industryDurationField]}</td>
+                          <td>{row.count}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
@@ -700,7 +766,7 @@ function Analysis() {
                   aria-labelledby="chart-phase1-ecdf-title"
                   aria-describedby="chart-phase1-ecdf-summary"
                 >
-                  <Scatter data={phase1EcdfData} options={phase1EcdfOptions} />
+                  <Scatter data={phase1EcdfData} options={phase1EcdfOptions} role="presentation" />
                 </div>
                 <div className="sr-only">
                   <table id="chart-phase1-ecdf-summary">
@@ -741,7 +807,7 @@ function Analysis() {
                   aria-labelledby="chart-waiver-ecdf-title"
                   aria-describedby="chart-waiver-ecdf-summary"
                 >
-                  <Scatter data={waiverEcdfData} options={waiverEcdfOptions} />
+                  <Scatter data={waiverEcdfData} options={waiverEcdfOptions} role="presentation" />
                 </div>
                 <div className="sr-only">
                   <table id="chart-waiver-ecdf-summary">

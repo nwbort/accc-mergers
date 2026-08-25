@@ -318,8 +318,8 @@ function DigestSignup() {
 
   if (status === 'success') {
     return (
-      <div className="mb-6 flex items-center gap-3 rounded-xl border border-primary/20 bg-primary/5 px-5 py-4">
-        <svg className="h-5 w-5 shrink-0 text-primary" viewBox="0 0 20 20" fill="currentColor">
+      <div className="mb-6 flex items-center gap-3 rounded-xl border border-primary/20 bg-primary/5 px-5 py-4" role="status">
+        <svg className="h-5 w-5 shrink-0 text-primary" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
         </svg>
         <p className="text-sm font-medium text-primary">
@@ -347,7 +347,7 @@ function DigestSignup() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               disabled={status === 'loading'}
-              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary disabled:opacity-50"
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-900 placeholder-gray-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary disabled:opacity-50"
             />
           </div>
           <button
@@ -361,7 +361,7 @@ function DigestSignup() {
         <div ref={turnstileRef} />
       </form>
       {status === 'error' && (
-        <p className="mt-2 text-xs text-red-600">{errorMsg}</p>
+        <p className="mt-2 text-xs text-red-600" role="alert">{errorMsg}</p>
       )}
     </div>
   );

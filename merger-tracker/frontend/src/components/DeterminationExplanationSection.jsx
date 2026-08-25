@@ -3,7 +3,7 @@ import CollapsibleCard from './CollapsibleCard';
 import ExternalLinkIcon from './ExternalLinkIcon';
 
 const ExplanationIcon = () => (
-  <FaFileAlt className="h-5 w-5 text-emerald-600" aria-hidden="true" />
+  <FaFileAlt className="h-5 w-5 text-emerald-700" aria-hidden="true" />
 );
 
 // Clean up PDF-extracted text by distinguishing layout line-breaks from real ones.

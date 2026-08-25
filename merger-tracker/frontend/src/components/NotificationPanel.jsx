@@ -79,7 +79,7 @@ function MergerEventGroup({ group, onClose, wasUnseenOnOpen }) {
                   <p className="text-gray-500">
                     {formatDate(event.date)}
                     {isUpcoming && daysRemaining > 0 && (
-                      <span className="ml-1 text-amber-600 font-medium">
+                      <span className="ml-1 text-amber-700 font-medium">
                         ({daysRemaining} day{daysRemaining !== 1 ? 's' : ''})
                       </span>
                     )}

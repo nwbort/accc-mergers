@@ -6,7 +6,7 @@ function RefiledBadge({ className = '' }) {
   return (
     <span
       className={`inline-flex items-center px-2 py-1 rounded-md text-xs font-medium leading-none bg-amber-50 text-amber-700 border border-amber-200/60 ${className}`}
-      role="status"
+      role="img"
       aria-label="Subsequently refiled as a separate matter"
     >
       Refiled

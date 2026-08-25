@@ -6,7 +6,7 @@ function AppealBadge({ className = '' }) {
   return (
     <span
       className={`inline-flex items-center px-2 py-1 rounded-md text-xs font-medium leading-none bg-indigo-50 text-indigo-700 border border-indigo-200/60 ${className}`}
-      role="status"
+      role="img"
       aria-label="Under appeal at the Australian Competition Tribunal"
     >
       Under appeal

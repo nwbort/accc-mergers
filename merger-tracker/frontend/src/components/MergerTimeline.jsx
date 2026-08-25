@@ -362,10 +362,10 @@ function MergerTimeline({ merger }) {
     endNote = durationStr;
   } else if (overdue) {
     endNote = 'Overdue';
-    endNoteClass = 'font-medium text-amber-600';
+    endNoteClass = 'font-medium text-amber-700';
   } else if (dueToday) {
     endNote = 'Due today';
-    endNoteClass = 'font-medium text-amber-600';
+    endNoteClass = 'font-medium text-amber-700';
   }
 
   // No nowrap on labels so multi-word endpoint labels wrap within the fixed
@@ -436,6 +436,7 @@ function MergerTimeline({ merger }) {
               className="absolute top-1/2 h-2.5 w-2.5 rounded-full bg-amber-500 ring-2 ring-white cursor-help"
               style={{ left: `${phase1Pct}%`, transform: 'translate(-50%, -50%)' }}
               title={`Referred to Phase 2 · ${formatDateMedium(merger.phase_1_determination_date)}`}
+              role="img"
               aria-label={`Referred to Phase 2 on ${formatDateMedium(merger.phase_1_determination_date)}`}
             />
           )}
@@ -453,6 +454,7 @@ function MergerTimeline({ merger }) {
                 minWidth: `${MIN_BAND_PX}px`,
               }}
               title={expectedTitle}
+              role="img"
               aria-label={expectedTitle}
             />
           )}
@@ -470,6 +472,7 @@ function MergerTimeline({ merger }) {
                 width: `${SOON_PIP_PX}px`,
               }}
               title="Determination expected soon"
+              role="img"
               aria-label="Determination expected soon"
             />
           )}
@@ -488,6 +491,7 @@ function MergerTimeline({ merger }) {
             <span
               className={`absolute top-1/2 h-3.5 w-3.5 rounded-full ring-2 ring-white shadow-sm ${outcomeDot}`}
               style={{ left: `${decisionPct}%`, transform: 'translate(-50%, -50%)' }}
+              role="img"
               aria-label="Determination"
             />
           )}
@@ -496,6 +500,7 @@ function MergerTimeline({ merger }) {
             <span
               className="absolute top-1/2 h-3.5 w-3.5 rounded-full bg-white ring-2 ring-primary shadow-sm"
               style={{ left: `${todayPct}%`, transform: 'translate(-50%, -50%)' }}
+              role="img"
               aria-label="Today"
             />
           )}

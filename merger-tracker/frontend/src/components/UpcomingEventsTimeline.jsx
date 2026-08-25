@@ -35,7 +35,7 @@ const EVENT_TYPES = {
   notice_of_competition_concerns: {
     label: 'Concerns notice',
     Icon: FaTriangleExclamation,
-    tile: 'bg-amber-50 text-amber-600',
+    tile: 'bg-amber-50 text-amber-700',
     chip: 'bg-amber-50 text-amber-700 border-amber-200/60',
   },
   determination_due: {
@@ -92,7 +92,7 @@ function getUrgency(daysRemaining) {
     return { dot: 'bg-red-500', ring: 'ring-red-100', text: 'text-red-600' };
   }
   if (daysRemaining <= 3) {
-    return { dot: 'bg-amber-500', ring: 'ring-amber-100', text: 'text-amber-600' };
+    return { dot: 'bg-amber-500', ring: 'ring-amber-100', text: 'text-amber-700' };
   }
   return { dot: 'bg-primary', ring: 'ring-primary/10', text: 'text-gray-900' };
 }

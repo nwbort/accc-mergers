@@ -79,9 +79,25 @@ code {
   }
 }
 
-/* Better focus styles */
+/* Better focus styles. The ring is solid primary rather than a tint of the
+   accent green: a 50%-alpha accent ring only reaches ~1.6:1 against a white
+   page, well under the 3:1 WCAG 1.4.11 asks of a focus indicator. */
 *:focus-visible {
-  @apply outline-none ring-2 ring-accent/50 ring-offset-2;
+  @apply outline-none ring-2 ring-primary ring-offset-2;
+}
+
+/* Respect the OS "reduce motion" setting: drop the looping background
+   gradient, ping and pulse animations entirely and collapse the rest to a
+   single frame (WCAG 2.2.2 / 2.3.3). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Custom scrollbar */

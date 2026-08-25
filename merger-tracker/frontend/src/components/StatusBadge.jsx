@@ -48,17 +48,19 @@ function StatusBadge({ status, determination, label, hasConditions, appeal }) {
   const ariaLabel = appealSuffix ? `${ariaLabelBase}, ${appealSuffix}` : ariaLabelBase;
 
   return (
+    // role="img" (not role="status", which would turn every badge in a list
+    // into its own live region — see WaiverBadge).
     <span
       className={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold border ${getStatusStyle()}`}
-      role="status"
+      role="img"
       aria-label={ariaLabel}
     >
       {displayText}
       {showConditions && (
-        <span className="ml-1 font-normal opacity-80">· with conditions</span>
+        <span className="ml-1 font-normal">· with conditions</span>
       )}
       {appealSuffix && (
-        <span className="ml-1 font-normal opacity-80">· {appealSuffix}</span>
+        <span className="ml-1 font-normal">· {appealSuffix}</span>
       )}
     </span>
   );

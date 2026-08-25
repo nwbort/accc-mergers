@@ -30,6 +30,7 @@ function Navbar({ onOpenSearch }) {
   const probeCondensedRef = useRef(null);
   const probeMobileRef = useRef(null);
   const moreMenuRef = useRef(null);
+  const moreButtonRef = useRef(null);
   const { unseenCount } = useTracking();
 
   useLayoutEffect(() => {
@@ -65,6 +66,19 @@ function Navbar({ onOpenSearch }) {
     };
     document.addEventListener('mousedown', handleClick);
     return () => document.removeEventListener('mousedown', handleClick);
+  }, [moreOpen]);
+
+  // Escape closes the "More" menu and puts focus back on its trigger, so a
+  // keyboard user isn't stranded inside an open dropdown.
+  useEffect(() => {
+    if (!moreOpen) return;
+    const handleEscape = (e) => {
+      if (e.key !== 'Escape') return;
+      setMoreOpen(false);
+      moreButtonRef.current?.focus();
+    };
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
   }, [moreOpen]);
 
   // Reset menu state when navMode changes (recommended pattern over useEffect:
@@ -121,6 +135,7 @@ function Navbar({ onOpenSearch }) {
 
   return (
     <nav
+      aria-label="Main"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
       } ${
@@ -203,6 +218,7 @@ function Navbar({ onOpenSearch }) {
                   <Link
                     key={path}
                     to={path}
+                    aria-current={isActive(path) ? 'page' : undefined}
                     className={`relative inline-flex items-center px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${
                       isActive(path)
                         ? 'bg-primary/10 text-primary'
@@ -227,6 +243,7 @@ function Navbar({ onOpenSearch }) {
                   <Link
                     key={path}
                     to={path}
+                    aria-current={isActive(path) ? 'page' : undefined}
                     className={`relative inline-flex items-center px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${
                       isActive(path)
                         ? 'bg-primary/10 text-primary'
@@ -243,6 +260,7 @@ function Navbar({ onOpenSearch }) {
                 ))}
                 <div ref={moreMenuRef} className="relative">
                   <button
+                    ref={moreButtonRef}
                     onClick={() => setMoreOpen(!moreOpen)}
                     className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
                       isMoreActive || moreOpen
@@ -264,6 +282,7 @@ function Navbar({ onOpenSearch }) {
                         <Link
                           key={path}
                           to={path}
+                          aria-current={isActive(path) ? 'page' : undefined}
                           className={`block px-4 py-2 text-sm font-medium transition-all duration-150 ${
                             isActive(path)
                               ? 'bg-primary/10 text-primary'
@@ -340,6 +359,7 @@ function Navbar({ onOpenSearch }) {
               <Link
                 key={path}
                 to={path}
+                aria-current={isActive(path) ? 'page' : undefined}
                 className={`block px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-150 ${
                   isActive(path)
                     ? 'bg-primary/10 text-primary'

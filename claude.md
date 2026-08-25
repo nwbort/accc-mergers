@@ -186,6 +186,7 @@ python -m pytest scripts/tests/
 - **Styling**: Utility-first Tailwind. Custom colors: primary `#335145`, accent `#10b981`. Mobile-first responsive design with sm/md/lg breakpoints. No scoped CSS — all Tailwind utility classes.
 - **Python**: Type hints in function signatures. Docstrings for modules and functions. ProcessPoolExecutor for concurrent extraction in extract_mergers.py.
 - **ESLint**: Flat config (eslint.config.js). Unused vars ignore pattern `^[A-Z_]`.
+- **Accessibility**: WCAG 2.2 AA. Colour families in `tailwind.config.js` keep text on the `dark` shade (the `DEFAULT`s are fills and several fail as small text); badges are `role="img"`, never `role="status"`; charts pair a presentational canvas with a labelled wrapper and an `sr-only` data table; every route has an `h1`. See `docs/accessibility.md` for the conventions and how to re-run the axe audit.
 - **Node version**: 20.19.0 (see `.nvmrc`)
 - **Commit messages**: describe the change only — no Claude/AI attribution. `.claude/settings.json` turns the default trailers off (`attribution.commit`/`pr` empty, `sessionUrl` false) and a `PreToolUse` hook (`.claude/hooks/check_commit_message.py`) denies any `git commit` whose message carries a `Co-Authored-By: Claude` trailer, a "Generated with Claude Code" line, or a claude.ai session link. Mentioning Claude Code in a message is fine; claiming it as the author is not.
 

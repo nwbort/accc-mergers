@@ -50,7 +50,7 @@ describe('StatusBadge', () => {
     expect(screen.getByText('Approved')).toBeInTheDocument();
     expect(screen.getByText('· on appeal')).toBeInTheDocument();
     // ... and the badge is colour-coded by that effective determination.
-    expect(screen.getByRole('status').className).toMatch(/emerald/);
+    expect(screen.getByRole('img').className).toMatch(/emerald/);
   });
 
   it('flips a cleared merger to "Not approved · on appeal" on a third-party turnaround', () => {
@@ -63,6 +63,6 @@ describe('StatusBadge', () => {
     );
     expect(screen.getByText('Not approved')).toBeInTheDocument();
     expect(screen.getByText('· on appeal')).toBeInTheDocument();
-    expect(screen.getByRole('status').className).toMatch(/red/);
+    expect(screen.getByRole('img').className).toMatch(/red/);
   });
 });
