@@ -127,6 +127,11 @@
         "in_progress": false
       },
       {
+        "business_days": 18,
+        "calendar_days": 26,
+        "in_progress": false
+      },
+      {
         "business_days": 17,
         "calendar_days": 26,
         "in_progress": false
@@ -934,17 +939,17 @@
     ],
     "stats": {
       "average": 20.0,
-      "median": 17.0,
+      "median": 17,
       "min": 15,
       "max": 59,
-      "count": 186
+      "count": 187
     },
     "calendar_stats": {
-      "average": 29.9,
-      "median": 26.0,
+      "average": 29.8,
+      "median": 26,
       "min": 21,
       "max": 103,
-      "count": 186
+      "count": 187
     }
   },
   "waiver_duration": {
@@ -2426,7 +2431,7 @@
       42,
       41,
       46,
-      53
+      52
     ],
     "as_at": "2026-08-25"
   },
@@ -2515,11 +2520,11 @@
     {
       "code": "F",
       "name": "Wholesale Trade",
-      "average_business_days": 21.6,
-      "median_business_days": 18,
-      "average_calendar_days": 34.2,
-      "median_calendar_days": 28,
-      "count": 25
+      "average_business_days": 21.5,
+      "median_business_days": 18.0,
+      "average_calendar_days": 33.9,
+      "median_calendar_days": 27.5,
+      "count": 26
     },
     {
       "code": "O",
@@ -2597,11 +2602,11 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 409,
+      "count": 410,
       "outcome_mix": {
-        "Approved": 409
+        "Approved": 410
       },
-      "median_phase_1_business_days": 17.0
+      "median_phase_1_business_days": 17
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -2615,9 +2620,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 49,
+      "count": 48,
       "outcome_mix": {
-        "Unknown": 49
+        "Unknown": 48
       },
       "median_phase_1_business_days": null
     },
@@ -2653,7 +2658,7 @@
       "15": 40,
       "16": 34,
       "17": 23,
-      "18": 19,
+      "18": 20,
       "19": 15,
       "20": 8,
       "21": 6,
@@ -2674,9 +2679,9 @@
     },
     "stats": {
       "mean_used_bd": 18.1,
-      "median_used_bd": 17,
+      "median_used_bd": 17.0,
       "pct_decided_final_3_bd": 3.5,
-      "count": 171
+      "count": 172
     },
     "extended_count": 6
   },
@@ -2742,15 +2747,6 @@
       "phase2_referral_rate": 0.133
     },
     {
-      "code": "F",
-      "name": "Wholesale Trade",
-      "approved": 23,
-      "not_approved": 0,
-      "referred": 2,
-      "in_progress": 10,
-      "phase2_referral_rate": 0.08
-    },
-    {
       "code": "K",
       "name": "Financial and Insurance Services",
       "approved": 23,
@@ -2758,6 +2754,15 @@
       "referred": 2,
       "in_progress": 15,
       "phase2_referral_rate": 0.08
+    },
+    {
+      "code": "F",
+      "name": "Wholesale Trade",
+      "approved": 24,
+      "not_approved": 0,
+      "referred": 2,
+      "in_progress": 9,
+      "phase2_referral_rate": 0.077
     },
     {
       "code": "M",

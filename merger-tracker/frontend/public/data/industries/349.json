@@ -75,17 +75,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-01115",
-      "merger_name": "MM Security \u2013 Micron Security Products",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-07-29T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-20017",
       "merger_name": "Amplifon \u2013 GN Hearing",
       "is_waiver": false,
@@ -95,6 +84,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-13T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-01115",
+      "merger_name": "MM Security \u2013 Micron Security Products",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-29T12:00:00Z",
+      "determination_date": "2026-08-24T12:00:00Z"
     },
     {
       "merger_id": "WA-20032",
@@ -288,13 +288,13 @@
   "phase_1_count": 13,
   "phase_2_count": 1,
   "waiver_count": 7,
-  "active_count": 4,
+  "active_count": 3,
   "phase_duration": {
-    "average_days": 35.3,
-    "median_days": 31.0,
-    "average_business_days": 22.8,
-    "median_business_days": 20.0,
-    "completed_count": 10
+    "average_days": 34.45454545454545,
+    "median_days": 29,
+    "average_business_days": 22.363636363636363,
+    "median_business_days": 20,
+    "completed_count": 11
   },
   "waiver_duration": {
     "average_days": 19.857142857142858,
