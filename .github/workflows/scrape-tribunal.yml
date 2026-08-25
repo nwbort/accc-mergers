@@ -23,6 +23,7 @@ on:
 
 permissions:
   contents: write
+  actions: write   # needed to trigger the pipeline workflow after a commit
 
 concurrency:
   group: scrape-tribunal
@@ -91,14 +92,28 @@ jobs:
       # Always run so any matters that did scrape are committed even if others
       # failed to clear the challenge (the run step exits non-zero in that case).
       if: always()
+      id: commit
       run: |-
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
         git add data/processed/tribunal_appeals.json data/raw/matters
         if git diff --staged --quiet; then
           echo "No changes to commit"
+          echo "committed=false" >> "$GITHUB_OUTPUT"
           exit 0
         fi
         git commit -m "Update scraped tribunal data: $(TZ='Australia/Sydney' date)"
         git pull --rebase || { git rebase --abort; exit 1; }
         git push
+        echo "committed=true" >> "$GITHUB_OUTPUT"
+
+    - name: Trigger merger pipeline
+      # Pushes made with the default GITHUB_TOKEN don't cascade to other
+      # workflows' `push` triggers, so pipeline.yml's push-to-main trigger
+      # never fires off the back of this commit. Kick it off explicitly
+      # instead, same workaround pipeline.yml itself uses for its cli-sqlite
+      # publish step.
+      if: always() && steps.commit.outputs.committed == 'true'
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: gh workflow run pipeline.yml --ref main
