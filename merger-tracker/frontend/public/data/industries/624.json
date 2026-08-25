@@ -24,7 +24,7 @@
       "code": "6240",
       "name": "Financial Asset Investing",
       "level": "class",
-      "merger_count": 95
+      "merger_count": 96
     }
   ],
   "mergers": [
@@ -170,6 +170,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-24T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-30031",
+      "merger_name": "Blackstone \u2013 Dresser Utility Solutions",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-29T12:00:00Z",
+      "determination_date": "2026-08-25T12:00:00Z"
     },
     {
       "merger_id": "WA-15038",
@@ -1074,10 +1085,10 @@
       "determination_date": "2026-01-30T12:00:00Z"
     }
   ],
-  "count": 95,
+  "count": 96,
   "phase_1_count": 23,
   "phase_2_count": 0,
-  "waiver_count": 72,
+  "waiver_count": 73,
   "active_count": 13,
   "phase_duration": {
     "average_days": 24.7,
@@ -1087,10 +1098,10 @@
     "completed_count": 10
   },
   "waiver_duration": {
-    "average_days": 19.34722222222222,
-    "median_days": 18.0,
-    "average_business_days": 13.083333333333334,
-    "median_business_days": 12.0,
-    "completed_count": 72
+    "average_days": 19.45205479452055,
+    "median_days": 18,
+    "average_business_days": 13.164383561643836,
+    "median_business_days": 12,
+    "completed_count": 73
   }
 }

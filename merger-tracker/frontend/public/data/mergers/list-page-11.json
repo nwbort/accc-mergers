@@ -3309,6 +3309,58 @@
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/accent-group-%E2%80%93-the-athlete%E2%80%99s-foot-in-karrinyup-wa"
     },
     {
+      "merger_id": "WA-30031",
+      "merger_name": "Blackstone \u2013 Dresser Utility Solutions",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-29T12:00:00Z",
+      "determination_publication_date": "2026-08-25T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Endeavor Purchaser V, Inc.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "endeavor-purchaser-v-inc",
+            "name": "Endeavor Purchaser V, Inc."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Dresser Utility Solutions, LLC",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "dresser-utility-solutions-llc",
+            "name": "Dresser Utility Solutions, LLC"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "2419",
+          "name": "Other Professional and Scientific Equipment Manufacturing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/blackstone-%E2%80%93-dresser-utility-solutions"
+    },
+    {
       "merger_id": "MN-01116",
       "merger_name": "Silk Contract Logistics \u2013 Toll Transport bulk logistics (glass and plastic) assets",
       "status": "Assessment completed",
@@ -4340,81 +4392,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/merivale-%E2%80%93-the-sackville-hotel"
-    },
-    {
-      "merger_id": "MN-95033",
-      "merger_name": "bp - bp Gateway",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-04T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-09-15T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "BP AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "53 004 085 616",
-          "canonical": {
-            "id": "bp-plc",
-            "name": "BP plc"
-          },
-          "party_page": {
-            "id": "bp-plc",
-            "name": "BP plc"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "M. & H.J. WEBB PTY. LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "56 001 662 040",
-          "party_page": {
-            "id": "m-h-j-webb-pty-limited",
-            "name": "M. & H.J. Webb Pty. Limited"
-          }
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "BP Australia Investments Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "66 102 991 551",
-          "canonical": {
-            "id": "bp-plc",
-            "name": "BP plc"
-          },
-          "party_page": {
-            "id": "bp-plc",
-            "name": "BP plc"
-          }
-        },
-        {
-          "name": "BP plc",
-          "identifier_type": null,
-          "identifier": "UK company number: 00102498",
-          "canonical": {
-            "id": "bp-plc",
-            "name": "BP plc"
-          },
-          "party_page": {
-            "id": "bp-plc",
-            "name": "BP plc"
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "4000",
-          "name": "Fuel Retailing"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/bp-bp-gateway"
     }
   ],
   "page": 11,

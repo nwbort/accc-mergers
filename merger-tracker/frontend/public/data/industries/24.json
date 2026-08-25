@@ -19,7 +19,7 @@
       "code": "241",
       "name": "Professional and Scientific Equipment Manufacturing",
       "level": "group",
-      "merger_count": 17
+      "merger_count": 18
     },
     {
       "code": "242",
@@ -113,6 +113,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-30T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-30031",
+      "merger_name": "Blackstone \u2013 Dresser Utility Solutions",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-29T12:00:00Z",
+      "determination_date": "2026-08-25T12:00:00Z"
     },
     {
       "merger_id": "WA-15033",
@@ -676,10 +687,10 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 56,
+  "count": 57,
   "phase_1_count": 22,
   "phase_2_count": 0,
-  "waiver_count": 34,
+  "waiver_count": 35,
   "active_count": 5,
   "phase_duration": {
     "average_days": 27.0,
@@ -689,10 +700,10 @@
     "completed_count": 17
   },
   "waiver_duration": {
-    "average_days": 19.58823529411765,
-    "median_days": 19.0,
-    "average_business_days": 13.117647058823529,
-    "median_business_days": 13.0,
-    "completed_count": 34
+    "average_days": 19.8,
+    "median_days": 19,
+    "average_business_days": 13.285714285714286,
+    "median_business_days": 13,
+    "completed_count": 35
   }
 }

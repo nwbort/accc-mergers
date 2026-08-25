@@ -1,6 +1,6 @@
 {
   "total_mergers": 236,
-  "total_waivers": 347,
+  "total_waivers": 348,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 182,
@@ -18,7 +18,7 @@
     "Assessment ceased": 2
   },
   "by_waiver_determination": {
-    "Approved": 333,
+    "Approved": 334,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.380403458213255,
-    "median_days": 19,
-    "average_business_days": 13.0835734870317,
-    "median_business_days": 13
+    "average_days": 19.402298850574713,
+    "median_days": 19.0,
+    "average_business_days": 13.100574712643677,
+    "median_business_days": 13.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 95
+      "count": 96
     },
     {
       "name": "Computer System Design and Related Services",
@@ -64,7 +64,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 50
+      "count": 51
     },
     {
       "name": "Software Publishing",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-30031",
+      "merger_name": "Blackstone \u2013 Dresser Utility Solutions",
+      "determination": "Approved",
+      "determination_date": "2026-08-25T12:00:00Z",
+      "page_modified_datetime": "2026-08-25T16:44:59+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-01116",
       "merger_name": "Silk Contract Logistics \u2013 Toll Transport bulk logistics (glass and plastic) assets",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-20T12:00:00Z",
       "page_modified_datetime": "2026-08-20T17:15:35+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-05034",
-      "merger_name": "Aurizon \u2013 transactions related to the relocation of a rail corridor at Moranbah North",
-      "determination": "Approved",
-      "determination_date": "2026-08-20T12:00:00Z",
-      "page_modified_datetime": "2026-08-20T17:14:30+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
