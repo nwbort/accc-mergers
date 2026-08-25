@@ -15,8 +15,11 @@ on:
         required: false
         default: ''
   schedule:
-    # Daily at 6:23 AM UTC.
-    - cron: '23 6 * * *'
+    # Hourly, minute :23, from 8am to 7pm Sydney time (AEST, UTC+10).
+    # GitHub Actions cron has no DST awareness, so this is pinned to a fixed
+    # UTC+10 offset: during AEDT (roughly Oct-Apr) the actual window is
+    # 9am-8pm Sydney rather than 8am-7pm.
+    - cron: '23 22,23,0-9 * * *'
 
 permissions:
   contents: write
