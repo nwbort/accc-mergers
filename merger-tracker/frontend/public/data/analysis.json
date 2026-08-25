@@ -945,21 +945,26 @@
         "business_days": 27,
         "calendar_days": 39,
         "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 21,
+        "in_progress": false
       }
     ],
     "stats": {
-      "average": 20.0,
-      "median": 17,
+      "average": 19.9,
+      "median": 17.0,
       "min": 15,
       "max": 59,
-      "count": 189
+      "count": 190
     },
     "calendar_stats": {
       "average": 29.8,
-      "median": 26,
+      "median": 26.0,
       "min": 21,
       "max": 103,
-      "count": 189
+      "count": 190
     }
   },
   "waiver_duration": {
@@ -2449,7 +2454,7 @@
       42,
       41,
       46,
-      50
+      49
     ],
     "as_at": "2026-08-25"
   },
@@ -2518,15 +2523,6 @@
       "count": 9
     },
     {
-      "code": "M",
-      "name": "Professional, Scientific and Technical Services",
-      "average_business_days": 21.7,
-      "median_business_days": 18,
-      "average_calendar_days": 32.8,
-      "median_calendar_days": 27,
-      "count": 43
-    },
-    {
       "code": "F",
       "name": "Wholesale Trade",
       "average_business_days": 21.5,
@@ -2534,6 +2530,15 @@
       "average_calendar_days": 33.9,
       "median_calendar_days": 27.5,
       "count": 26
+    },
+    {
+      "code": "M",
+      "name": "Professional, Scientific and Technical Services",
+      "average_business_days": 21.5,
+      "median_business_days": 17.5,
+      "average_calendar_days": 32.5,
+      "median_calendar_days": 27.0,
+      "count": 44
     },
     {
       "code": "I",
@@ -2590,15 +2595,6 @@
       "count": 24
     },
     {
-      "code": "N",
-      "name": "Administrative and Support Services",
-      "average_business_days": 17.6,
-      "median_business_days": 18,
-      "average_calendar_days": 25.2,
-      "median_calendar_days": 24,
-      "count": 5
-    },
-    {
       "code": "R",
       "name": "Arts and Recreation Services",
       "average_business_days": 17.5,
@@ -2615,16 +2611,25 @@
       "average_calendar_days": 26.1,
       "median_calendar_days": 25.0,
       "count": 14
+    },
+    {
+      "code": "N",
+      "name": "Administrative and Support Services",
+      "average_business_days": 17.2,
+      "median_business_days": 17.0,
+      "average_calendar_days": 24.5,
+      "median_calendar_days": 24.0,
+      "count": 6
     }
   ],
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 414,
+      "count": 415,
       "outcome_mix": {
-        "Approved": 414
+        "Approved": 415
       },
-      "median_phase_1_business_days": 17
+      "median_phase_1_business_days": 17.0
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -2638,9 +2643,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 46,
+      "count": 45,
       "outcome_mix": {
-        "Unknown": 46
+        "Unknown": 45
       },
       "median_phase_1_business_days": null
     },
@@ -2673,7 +2678,7 @@
   ],
   "deadline_utilisation": {
     "histogram": {
-      "15": 40,
+      "15": 41,
       "16": 34,
       "17": 23,
       "18": 21,
@@ -2697,9 +2702,9 @@
     },
     "stats": {
       "mean_used_bd": 18.1,
-      "median_used_bd": 17.0,
+      "median_used_bd": 17,
       "pct_decided_final_3_bd": 3.4,
-      "count": 174
+      "count": 175
     },
     "extended_count": 6
   },
@@ -2785,11 +2790,11 @@
     {
       "code": "M",
       "name": "Professional, Scientific and Technical Services",
-      "approved": 40,
+      "approved": 41,
       "not_approved": 0,
       "referred": 3,
-      "in_progress": 14,
-      "phase2_referral_rate": 0.07
+      "in_progress": 13,
+      "phase2_referral_rate": 0.068
     },
     {
       "code": "E",
@@ -2866,10 +2871,10 @@
     {
       "code": "N",
       "name": "Administrative and Support Services",
-      "approved": 5,
+      "approved": 6,
       "not_approved": 0,
       "referred": 0,
-      "in_progress": 3,
+      "in_progress": 2,
       "phase2_referral_rate": 0.0
     },
     {
