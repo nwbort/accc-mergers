@@ -1,6 +1,93 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-35033",
+      "merger_name": "MERIVALE \u2013 THE SACKVILLE HOTEL",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-04T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-15T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "JH 7 PROPERTIES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "41 621 226 140",
+          "canonical": {
+            "id": "merivale-group",
+            "name": "Merivale Group"
+          },
+          "party_page": {
+            "id": "merivale-group",
+            "name": "Merivale Group"
+          }
+        },
+        {
+          "name": "HEMMES TRADING PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "29 105 332 652",
+          "canonical": {
+            "id": "merivale-group",
+            "name": "Merivale Group"
+          },
+          "party_page": {
+            "id": "merivale-group",
+            "name": "Merivale Group"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "AMALGAMATED HOTELS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "82 009 604 719",
+          "party_page": {
+            "id": "amalgamated-hotels-pty-limited",
+            "name": "Amalgamated Hotels Pty Limited"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "HEMMES PROPERTY PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "87 105 332 518",
+          "canonical": {
+            "id": "merivale-group",
+            "name": "Merivale Group"
+          },
+          "party_page": {
+            "id": "merivale-group",
+            "name": "Merivale Group"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4511",
+          "name": "Cafes and Restaurants"
+        },
+        {
+          "code": "4520",
+          "name": "Pubs, Taverns and Bars"
+        },
+        {
+          "code": "6711",
+          "name": "Residential Property Operators"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/merivale-%E2%80%93-the-sackville-hotel"
+    },
+    {
       "merger_id": "MN-95033",
       "merger_name": "bp - bp Gateway",
       "status": "Under assessment",

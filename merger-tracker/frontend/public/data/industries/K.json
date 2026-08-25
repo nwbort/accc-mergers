@@ -9,13 +9,13 @@
       "code": "62",
       "name": "Finance",
       "level": "subdivision",
-      "merger_count": 104
+      "merger_count": 105
     },
     {
       "code": "63",
       "name": "Insurance and Superannuation Funds",
       "level": "subdivision",
-      "merger_count": 16
+      "merger_count": 17
     },
     {
       "code": "64",
@@ -210,6 +210,17 @@
       "has_conditions": false,
       "phase": "Waiver",
       "notification_date": "2026-07-29T12:00:00Z",
+      "determination_date": "2026-08-25T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-80034",
+      "merger_name": "Australian Retirement Trust \u2013 Westfield Mt Gravatt",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-28T12:00:00Z",
       "determination_date": "2026-08-25T12:00:00Z"
     },
     {
@@ -1676,10 +1687,10 @@
       "determination_date": null
     }
   ],
-  "count": 150,
+  "count": 151,
   "phase_1_count": 38,
   "phase_2_count": 2,
-  "waiver_count": 110,
+  "waiver_count": 111,
   "active_count": 16,
   "phase_duration": {
     "average_days": 28.36,
@@ -1689,10 +1700,10 @@
     "completed_count": 25
   },
   "waiver_duration": {
-    "average_days": 19.40909090909091,
-    "median_days": 18.5,
-    "average_business_days": 13.072727272727272,
-    "median_business_days": 12.0,
-    "completed_count": 110
+    "average_days": 19.486486486486488,
+    "median_days": 19,
+    "average_business_days": 13.135135135135135,
+    "median_business_days": 12,
+    "completed_count": 111
   }
 }

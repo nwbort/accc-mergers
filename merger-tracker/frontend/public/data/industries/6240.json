@@ -181,6 +181,17 @@
       "determination_date": "2026-08-25T12:00:00Z"
     },
     {
+      "merger_id": "WA-80034",
+      "merger_name": "Australian Retirement Trust \u2013 Westfield Mt Gravatt",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-28T12:00:00Z",
+      "determination_date": "2026-08-25T12:00:00Z"
+    },
+    {
       "merger_id": "WA-15038",
       "merger_name": "Cinven \u2013 Salsify",
       "is_waiver": true,
@@ -1083,10 +1094,10 @@
       "determination_date": "2026-01-30T12:00:00Z"
     }
   ],
-  "count": 96,
+  "count": 97,
   "phase_1_count": 23,
   "phase_2_count": 0,
-  "waiver_count": 73,
+  "waiver_count": 74,
   "active_count": 13,
   "phase_duration": {
     "average_days": 24.7,
@@ -1096,10 +1107,10 @@
     "completed_count": 10
   },
   "waiver_duration": {
-    "average_days": 19.45205479452055,
-    "median_days": 18,
-    "average_business_days": 13.164383561643836,
-    "median_business_days": 12,
-    "completed_count": 73
+    "average_days": 19.56756756756757,
+    "median_days": 18.5,
+    "average_business_days": 13.256756756756756,
+    "median_business_days": 12.0,
+    "completed_count": 74
   }
 }

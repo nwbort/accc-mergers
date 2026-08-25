@@ -9,7 +9,7 @@
       "code": "69",
       "name": "Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",
       "level": "subdivision",
-      "merger_count": 86
+      "merger_count": 87
     },
     {
       "code": "70",
@@ -194,6 +194,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-04-27T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-80034",
+      "merger_name": "Australian Retirement Trust \u2013 Westfield Mt Gravatt",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-28T12:00:00Z",
+      "determination_date": "2026-08-25T12:00:00Z"
     },
     {
       "merger_id": "MN-10022",
@@ -1494,10 +1505,10 @@
       "determination_date": null
     }
   ],
-  "count": 134,
+  "count": 135,
   "phase_1_count": 54,
   "phase_2_count": 3,
-  "waiver_count": 77,
+  "waiver_count": 78,
   "active_count": 16,
   "phase_duration": {
     "average_days": 32.81395348837209,
@@ -1507,10 +1518,10 @@
     "completed_count": 43
   },
   "waiver_duration": {
-    "average_days": 18.87012987012987,
-    "median_days": 19,
-    "average_business_days": 12.766233766233766,
-    "median_business_days": 13,
-    "completed_count": 77
+    "average_days": 18.987179487179485,
+    "median_days": 19.0,
+    "average_business_days": 12.85897435897436,
+    "median_business_days": 13.0,
+    "completed_count": 78
   }
 }

@@ -36,7 +36,7 @@
       "code": "9533",
       "name": "Parking Services",
       "level": "class",
-      "merger_count": 2
+      "merger_count": 3
     },
     {
       "code": "9534",
@@ -62,6 +62,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-07-01T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-80034",
+      "merger_name": "Australian Retirement Trust \u2013 Westfield Mt Gravatt",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-28T12:00:00Z",
+      "determination_date": "2026-08-25T12:00:00Z"
     },
     {
       "merger_id": "WA-40032",
@@ -185,10 +196,10 @@
       "determination_date": "2026-02-12T12:00:00Z"
     }
   ],
-  "count": 12,
+  "count": 13,
   "phase_1_count": 0,
   "phase_2_count": 1,
-  "waiver_count": 11,
+  "waiver_count": 12,
   "active_count": 1,
   "phase_duration": {
     "average_days": 48.0,
@@ -198,10 +209,10 @@
     "completed_count": 1
   },
   "waiver_duration": {
-    "average_days": 17.545454545454547,
-    "median_days": 19,
-    "average_business_days": 11.727272727272727,
-    "median_business_days": 13,
-    "completed_count": 11
+    "average_days": 18.416666666666668,
+    "median_days": 20.5,
+    "average_business_days": 12.416666666666666,
+    "median_business_days": 13.5,
+    "completed_count": 12
   }
 }
