@@ -1,7 +1,6 @@
 import { useState, useCallback } from 'react';
 import { Link } from 'react-router';
 import { FaEnvelope, FaArrowRight, FaXmark } from 'react-icons/fa6';
-import { CARD } from '../utils/classNames';
 
 // Set to false to hide the card entirely (e.g. once digest signups plateau).
 const ENABLED = true;
@@ -32,25 +31,25 @@ function DigestPromoCard() {
   if (!ENABLED || isDismissed) return null;
 
   return (
-    <div className={`relative mb-8 ${CARD} hover:shadow-card-hover transition-all duration-200 group`}>
-      <Link to="/digest" className="flex items-center gap-4 p-6 pr-12">
-        <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center text-xl text-primary group-hover:scale-105 transition-transform duration-200">
+    <div className="relative mb-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-200 group bg-primary hover:bg-primary-dark overflow-hidden">
+      <Link to="/digest" className="flex items-center gap-4 p-6 pr-16">
+        <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-white/15 flex items-center justify-center text-xl text-white group-hover:scale-105 transition-transform duration-200">
           <FaEnvelope />
         </div>
         <div className="flex-1 min-w-0">
-          <h2 className="text-base font-semibold text-gray-900">
+          <h2 className="text-base font-semibold text-white">
             Want a weekly round-up of ACCC merger activity?
           </h2>
-          <p className="text-sm text-gray-500 mt-0.5">
+          <p className="text-sm text-white/80 mt-0.5">
             Get the week's notifications, determinations and upcoming deadlines in one email.
           </p>
         </div>
-        <FaArrowRight className="flex-shrink-0 text-gray-400 group-hover:text-primary group-hover:translate-x-0.5 transition-all duration-200" />
+        <FaArrowRight className="flex-shrink-0 text-white/80 group-hover:text-white group-hover:translate-x-0.5 transition-all duration-200" />
       </Link>
       <button
         onClick={dismiss}
         aria-label="Dismiss"
-        className="absolute top-3 right-3 text-gray-400 hover:text-gray-600 transition-colors p-1"
+        className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors p-1"
       >
         <FaXmark className="h-3.5 w-3.5" aria-hidden="true" />
       </button>
