@@ -3,12 +3,12 @@
   "total_waivers": 349,
   "total_conditional_approvals": 3,
   "by_status": {
-    "Assessment completed": 182,
-    "Under assessment": 51,
+    "Assessment completed": 183,
+    "Under assessment": 50,
     "Assessment ceased": 3
   },
   "by_determination": {
-    "Approved": 177,
+    "Approved": 178,
     "Referred to phase 2": 9,
     "Approved with conditions": 2
   },
@@ -22,28 +22,28 @@
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 180,
+    "cleared": 181,
     "not_cleared": 2,
-    "total": 182,
+    "total": 183,
     "rate": 0.989
   },
   "phase_duration": {
-    "average_days": 29.819148936170212,
-    "median_days": 26.0,
-    "average_business_days": 19.95744680851064,
-    "median_business_days": 17.0,
+    "average_days": 29.80952380952381,
+    "median_days": 26,
+    "average_business_days": 19.95767195767196,
+    "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 40,
-        "percentage": 21.3
+        "percentage": 21.2
       },
       "day20": {
-        "count": 141,
-        "percentage": 75.0
+        "count": 142,
+        "percentage": 75.1
       },
       "day30": {
-        "count": 176,
-        "percentage": 93.6
+        "count": 177,
+        "percentage": 93.7
       }
     }
   },
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-05027",
+      "merger_name": "Protech - ActivateRail",
+      "determination": "Approved",
+      "determination_date": "2026-08-25T12:00:00Z",
+      "page_modified_datetime": "2026-08-25T16:57:43+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-80034",
       "merger_name": "Australian Retirement Trust \u2013 Westfield Mt Gravatt",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-20T12:00:00Z",
       "page_modified_datetime": "2026-08-20T17:45:51+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-45022",
-      "merger_name": "Australian Motors Group \u2013 Mudgee Toyota",
-      "determination": "Approved",
-      "determination_date": "2026-08-20T12:00:00Z",
-      "page_modified_datetime": "2026-08-20T17:16:44+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

@@ -172,6 +172,11 @@
         "in_progress": false
       },
       {
+        "business_days": 20,
+        "calendar_days": 28,
+        "in_progress": false
+      },
+      {
         "business_days": 16,
         "calendar_days": 24,
         "in_progress": false
@@ -944,17 +949,17 @@
     ],
     "stats": {
       "average": 20.0,
-      "median": 17.0,
+      "median": 17,
       "min": 15,
       "max": 59,
-      "count": 188
+      "count": 189
     },
     "calendar_stats": {
       "average": 29.8,
-      "median": 26.0,
+      "median": 26,
       "min": 21,
       "max": 103,
-      "count": 188
+      "count": 189
     }
   },
   "waiver_duration": {
@@ -2444,7 +2449,7 @@
       42,
       41,
       46,
-      51
+      50
     ],
     "as_at": "2026-08-25"
   },
@@ -2585,6 +2590,15 @@
       "count": 24
     },
     {
+      "code": "N",
+      "name": "Administrative and Support Services",
+      "average_business_days": 17.6,
+      "median_business_days": 18,
+      "average_calendar_days": 25.2,
+      "median_calendar_days": 24,
+      "count": 5
+    },
+    {
       "code": "R",
       "name": "Arts and Recreation Services",
       "average_business_days": 17.5,
@@ -2601,25 +2615,16 @@
       "average_calendar_days": 26.1,
       "median_calendar_days": 25.0,
       "count": 14
-    },
-    {
-      "code": "N",
-      "name": "Administrative and Support Services",
-      "average_business_days": 17.0,
-      "median_business_days": 17.0,
-      "average_calendar_days": 24.5,
-      "median_calendar_days": 24.0,
-      "count": 4
     }
   ],
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 413,
+      "count": 414,
       "outcome_mix": {
-        "Approved": 413
+        "Approved": 414
       },
-      "median_phase_1_business_days": 17.0
+      "median_phase_1_business_days": 17
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -2633,9 +2638,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 47,
+      "count": 46,
       "outcome_mix": {
-        "Unknown": 47
+        "Unknown": 46
       },
       "median_phase_1_business_days": null
     },
@@ -2673,7 +2678,7 @@
       "17": 23,
       "18": 21,
       "19": 15,
-      "20": 8,
+      "20": 9,
       "21": 6,
       "22": 6,
       "23": 1,
@@ -2692,9 +2697,9 @@
     },
     "stats": {
       "mean_used_bd": 18.1,
-      "median_used_bd": 17,
-      "pct_decided_final_3_bd": 3.5,
-      "count": 173
+      "median_used_bd": 17.0,
+      "pct_decided_final_3_bd": 3.4,
+      "count": 174
     },
     "extended_count": 6
   },
@@ -2861,10 +2866,10 @@
     {
       "code": "N",
       "name": "Administrative and Support Services",
-      "approved": 4,
+      "approved": 5,
       "not_approved": 0,
       "referred": 0,
-      "in_progress": 4,
+      "in_progress": 3,
       "phase2_referral_rate": 0.0
     },
     {
