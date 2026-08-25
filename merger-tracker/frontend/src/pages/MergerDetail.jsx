@@ -60,6 +60,15 @@ function MergerDetail() {
     }
   }, [merger, slug, navigate]);
   const [expandedParties, setExpandedParties] = useState({});
+  const [expandedAppealRuns, setExpandedAppealRuns] = useState(() => new Set());
+  const toggleAppealRun = (startIdx) => {
+    setExpandedAppealRuns(prev => {
+      const next = new Set(prev);
+      if (next.has(startIdx)) next.delete(startIdx);
+      else next.add(startIdx);
+      return next;
+    });
+  };
   const { isTracked, toggleTracking } = useTracking();
   const tracked = isTracked(id);
   const savedParams = sessionStorage.getItem('mergers_filter_params');
@@ -154,6 +163,39 @@ function MergerDetail() {
   const sortedEvents = merger.events
     ? [...merger.events].sort((a, b) => new Date(b.date) - new Date(a.date))
     : [];
+
+  // Tribunal appeal documents tend to arrive in a burst and clutter the
+  // timeline. When more than two land back-to-back (most recent first,
+  // since sortedEvents is date-descending), keep only the newest one visible
+  // and collapse the rest behind a toggle. appealRunLength maps the run's
+  // start index to its size; appealRunStart maps every other member of that
+  // run back to the start index so it can be hidden until expanded.
+  const appealRunLength = new Map();
+  const appealRunStart = new Map();
+  for (let i = 0; i < sortedEvents.length; i++) {
+    if (!sortedEvents[i].is_appeal) continue;
+    let j = i;
+    while (j < sortedEvents.length && sortedEvents[j].is_appeal) j++;
+    if (j - i > 2) {
+      appealRunLength.set(i, j - i);
+      for (let k = i + 1; k < j; k++) appealRunStart.set(k, i);
+    }
+    i = j - 1;
+  }
+
+  // Flatten sortedEvents into the rows the timeline actually renders: hidden
+  // run members are dropped, and a toggle row is inserted right after the
+  // visible head of each collapsed run.
+  const timelineRows = [];
+  for (let i = 0; i < sortedEvents.length; i++) {
+    const runStart = appealRunStart.get(i);
+    if (runStart !== undefined && !expandedAppealRuns.has(runStart)) continue;
+    timelineRows.push({ type: 'event', event: sortedEvents[i], idx: i });
+    const runLength = appealRunLength.get(i);
+    if (runLength) {
+      timelineRows.push({ type: 'appeal-toggle', idx: i, runLength, expanded: expandedAppealRuns.has(i) });
+    }
+  }
 
   // The event marking referral to Phase 2 — the same point the header timeline
   // flags with an amber marker (both keyed off phase_1_determination_date). It
@@ -556,17 +598,46 @@ function MergerDetail() {
             </h2>
             <div className="flow-root">
               <ul className="-mb-8">
-                {sortedEvents.map((event, idx) => {
+                {timelineRows.map((row, rowIdx) => {
+                  const isLastRow = rowIdx === timelineRows.length - 1;
+                  const connector = !isLastRow && (
+                    <span
+                      className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-100"
+                      aria-hidden="true"
+                    />
+                  );
+
+                  if (row.type === 'appeal-toggle') {
+                    return (
+                      <li key={`appeal-toggle-${row.idx}`}>
+                        <div className="relative pb-8">
+                          {connector}
+                          <div className="relative flex space-x-3">
+                            <div className="h-8 w-8 flex items-center justify-center" aria-hidden="true" />
+                            <div className="min-w-0 flex-1 pt-1">
+                              <button
+                                type="button"
+                                onClick={() => toggleAppealRun(row.idx)}
+                                className="text-xs font-medium text-primary hover:text-primary-dark transition-colors"
+                                aria-expanded={row.expanded}
+                              >
+                                {row.expanded
+                                  ? 'Show fewer tribunal appeal documents'
+                                  : `Show ${row.runLength - 1} more tribunal appeal documents`}
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    );
+                  }
+
+                  const { event, idx } = row;
                   const dot = dotStyleForEvent(event);
                   return (
                   <li key={`event-${event.date}-${event.display_title || event.title}-${idx}`}>
                     <div className="relative pb-8">
-                      {idx !== sortedEvents.length - 1 && (
-                        <span
-                          className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-100"
-                          aria-hidden="true"
-                        />
-                      )}
+                      {connector}
                       <div className="relative flex space-x-3">
                         <div>
                           <span className={`h-8 w-8 rounded-full flex items-center justify-center ring-4 ring-white ${dot.ring}`}>
