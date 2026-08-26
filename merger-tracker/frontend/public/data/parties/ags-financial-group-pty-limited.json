@@ -1,0 +1,41 @@
+{
+  "id": "ags-financial-group-pty-limited",
+  "canonical_name": "Ags Financial Group Pty Limited",
+  "members": [
+    {
+      "name": "AGS FINANCIAL GROUP PTY LIMITED",
+      "identifier": "70 093 990 946",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [
+      {
+        "merger_id": "WA-85041",
+        "merger_name": "AGS Financial Group - Hartley Financial Group",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Waiver",
+        "notification_date": "2026-07-28T12:00:00Z",
+        "determination_date": "2026-08-26T12:00:00Z"
+      }
+    ],
+    "target": [],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null,
+  "waiver_duration": {
+    "average_days": 29.0,
+    "median_days": 29,
+    "average_business_days": 21.0,
+    "median_business_days": 21,
+    "completed_count": 1
+  }
+}

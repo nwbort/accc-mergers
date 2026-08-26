@@ -27,6 +27,17 @@
   "children": [],
   "mergers": [
     {
+      "merger_id": "WA-85041",
+      "merger_name": "AGS Financial Group - Hartley Financial Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-28T12:00:00Z",
+      "determination_date": "2026-08-26T12:00:00Z"
+    },
+    {
       "merger_id": "MN-65008",
       "merger_name": "REA Group - Simplicity Loans & Advisory",
       "is_waiver": false,
@@ -38,10 +49,10 @@
       "determination_date": "2026-05-05T12:00:00Z"
     }
   ],
-  "count": 1,
+  "count": 2,
   "phase_1_count": 1,
   "phase_2_count": 0,
-  "waiver_count": 0,
+  "waiver_count": 1,
   "active_count": 0,
   "phase_duration": {
     "average_days": 28.0,
@@ -50,5 +61,11 @@
     "median_business_days": 19,
     "completed_count": 1
   },
-  "waiver_duration": null
+  "waiver_duration": {
+    "average_days": 29.0,
+    "median_days": 29,
+    "average_business_days": 21.0,
+    "median_business_days": 21,
+    "completed_count": 1
+  }
 }

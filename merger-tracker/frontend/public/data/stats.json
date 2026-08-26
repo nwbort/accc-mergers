@@ -1,6 +1,6 @@
 {
   "total_mergers": 237,
-  "total_waivers": 349,
+  "total_waivers": 350,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 186,
@@ -18,7 +18,7 @@
     "Assessment ceased": 2
   },
   "by_waiver_determination": {
-    "Approved": 335,
+    "Approved": 336,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.426934097421203,
-    "median_days": 19,
-    "average_business_days": 13.120343839541547,
-    "median_business_days": 13
+    "average_days": 19.454285714285714,
+    "median_days": 19.0,
+    "average_business_days": 13.142857142857142,
+    "median_business_days": 13.0
   },
   "top_industries": [
     {
@@ -64,7 +64,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 51
+      "count": 52
     },
     {
       "name": "Software Publishing",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-85041",
+      "merger_name": "AGS Financial Group - Hartley Financial Group",
+      "determination": "Approved",
+      "determination_date": "2026-08-26T12:00:00Z",
+      "page_modified_datetime": "2026-08-26T16:50:21+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-35033",
       "merger_name": "Merivale \u2013 The Sackville Hotel",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-40031",
-      "merger_name": "Salesforce - Intercom",
-      "determination": "Approved",
-      "determination_date": "2026-08-21T12:00:00Z",
-      "page_modified_datetime": "2026-08-21T15:40:33+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]

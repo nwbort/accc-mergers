@@ -9,7 +9,7 @@
       "code": "69",
       "name": "Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",
       "level": "subdivision",
-      "merger_count": 87
+      "merger_count": 88
     },
     {
       "code": "70",
@@ -183,6 +183,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-04-27T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-85041",
+      "merger_name": "AGS Financial Group - Hartley Financial Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-28T12:00:00Z",
+      "determination_date": "2026-08-26T12:00:00Z"
     },
     {
       "merger_id": "MN-95038",
@@ -1505,10 +1516,10 @@
       "determination_date": null
     }
   ],
-  "count": 135,
+  "count": 136,
   "phase_1_count": 54,
   "phase_2_count": 3,
-  "waiver_count": 78,
+  "waiver_count": 79,
   "active_count": 15,
   "phase_duration": {
     "average_days": 32.54545454545455,
@@ -1518,10 +1529,10 @@
     "completed_count": 44
   },
   "waiver_duration": {
-    "average_days": 18.987179487179485,
-    "median_days": 19.0,
-    "average_business_days": 12.85897435897436,
-    "median_business_days": 13.0,
-    "completed_count": 78
+    "average_days": 19.11392405063291,
+    "median_days": 19,
+    "average_business_days": 12.962025316455696,
+    "median_business_days": 13,
+    "completed_count": 79
   }
 }
