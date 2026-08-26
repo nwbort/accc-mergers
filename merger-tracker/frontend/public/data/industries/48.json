@@ -30,17 +30,6 @@
   ],
   "mergers": [
     {
-      "merger_id": "MN-50011",
-      "merger_name": "Journey Beyond - SeaLink Rottnest",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-07-01T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-85015",
       "merger_name": "Journey Beyond - Kelsian Tourism Portfolio",
       "is_waiver": false,
@@ -72,13 +61,24 @@
       "phase": "Waiver",
       "notification_date": "2026-03-06T12:00:00Z",
       "determination_date": "2026-03-19T12:00:00Z"
+    },
+    {
+      "merger_id": "MN-50011",
+      "merger_name": "Journey Beyond - SeaLink Rottnest",
+      "is_waiver": false,
+      "status": "Assessment ceased",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-01T12:00:00Z",
+      "determination_date": null
     }
   ],
   "count": 4,
   "phase_1_count": 3,
   "phase_2_count": 0,
   "waiver_count": 1,
-  "active_count": 2,
+  "active_count": 1,
   "phase_duration": {
     "average_days": 22.0,
     "median_days": 22,

@@ -4,8 +4,8 @@
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 186,
-    "Under assessment": 48,
-    "Assessment ceased": 3
+    "Under assessment": 47,
+    "Assessment ceased": 4
   },
   "by_determination": {
     "Approved": 181,
@@ -219,6 +219,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-50011",
+      "merger_name": "Journey Beyond - SeaLink Rottnest",
+      "determination": "Assessment ceased",
+      "determination_date": "2026-08-26T12:00:00Z",
+      "page_modified_datetime": "2026-08-26T17:22:45+10:00",
+      "determination_type": "ceased",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-85041",
       "merger_name": "AGS Financial Group - Hartley Financial Group",
       "determination": "Approved",
@@ -334,17 +344,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-21T12:00:00Z",
       "page_modified_datetime": "2026-08-21T17:01:10+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-45025",
-      "merger_name": "Acclime Corporate Services Australia \u2013 Polar 993 Group",
-      "determination": "Approved",
-      "determination_date": "2026-08-21T12:00:00Z",
-      "page_modified_datetime": "2026-08-21T16:59:55+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
