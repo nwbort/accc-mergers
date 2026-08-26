@@ -352,6 +352,25 @@ def pair_id(candidate: dict) -> str:
     return f"{candidate['source']}/{candidate['target']}"
 
 
+def is_certain_match(candidate: dict) -> bool:
+    """True for a waiver refile with an exact (1.0) name match on every side.
+
+    An exact match on acquirer, target, *and* merger name leaves essentially
+    no room for a false positive, so these are safe to merge without a human
+    reviewing the PR first (a follow-up issue still asks for a sanity check).
+    Suspended-refile pairs are excluded — that pattern is looser (any
+    ID/prefix), so it always waits for manual review.
+    """
+    if candidate["type"] != WAIVER_REFILED:
+        return False
+    signals = candidate["signals"]
+    return (
+        signals["acq_name_sim"] == 1.0
+        and signals["tgt_name_sim"] == 1.0
+        and signals["merger_name_sim"] == 1.0
+    )
+
+
 def _relationship_blurb(candidate: dict) -> str:
     """One-line description of the relationship pattern for the PR body."""
     if candidate["type"] == SUSPENDED_REFILED:
@@ -414,7 +433,7 @@ def apply_suggestions(related_path: Path, candidates: list[dict]) -> int:
 # PR body construction
 # ---------------------------------------------------------------------------
 
-def build_pr_body(candidates: list[dict], date: str) -> str:
+def build_pr_body(candidates: list[dict], date: str, auto_merge: bool = False) -> str:
     """Build a markdown PR body recommending the candidate pairs."""
     related_blob = f"https://github.com/{_REPO}/blob/main/{_RELATED_PATH}"
     lines = [
@@ -426,8 +445,20 @@ def build_pr_body(candidates: list[dict], date: str) -> str:
         "another. The change in this PR adds them to `related_mergers.json`; once "
         "merged, each merger detail page links to its related matter.",
         "",
-        "Review each pair, **edit or remove any that are wrong**, then merge.",
-        "",
+    ]
+    if auto_merge:
+        lines += [
+            "Every pair here is a refiled waiver with an **exact (100%) name "
+            "match** on acquirer, target, and merger name, so this PR is merged "
+            "automatically. A follow-up issue tracks manual verification.",
+            "",
+        ]
+    else:
+        lines += [
+            "Review each pair, **edit or remove any that are wrong**, then merge.",
+            "",
+        ]
+    lines += [
         "---",
         "",
     ]
@@ -460,6 +491,46 @@ def build_pr_body(candidates: list[dict], date: str) -> str:
         )
         lines.append("")
         lines.append(f"**Signals:** {_format_signals(c['signals'])}")
+        lines.append("")
+    lines.extend([
+        "---",
+        "",
+        f"*Generated automatically by the [Detect Related Mergers]"
+        f"(https://github.com/{_REPO}/actions/workflows/detect-related-mergers.yml) workflow.*",
+    ])
+    return "\n".join(lines)
+
+
+def build_issue_body(candidates: list[dict], date: str) -> str:
+    """Build a markdown issue body asking for manual verification of pairs
+    that were merged automatically because they matched exactly (see
+    ``is_certain_match``)."""
+    related_blob = f"https://github.com/{_REPO}/blob/main/{_RELATED_PATH}"
+    lines = [
+        f"The daily detector found **{len(candidates)}** refiled-waiver pair(s) "
+        f"on **{date}** with an exact (100%) name match on acquirer, target, and "
+        f"merger name, and merged them into [`{_RELATED_PATH}`]({related_blob}) "
+        "automatically.",
+        "",
+        "Please double-check each pair below is correct. Edit or remove the "
+        "entry in `related_mergers.json` if not.",
+        "",
+        "---",
+        "",
+    ]
+    for c in candidates:
+        src, tgt = c["source"], c["target"]
+        lines.append(f"### `{src}` ↔ `{tgt}`")
+        lines.append("")
+        lines.append(
+            f"- **Waiver:** [{src} — {c['source_name']}]({mergers_fyi_url(src)}) "
+            f"· filed {c['source_filed'] or 'unknown'} "
+            f"· determination: {c['source_determination'] or 'unknown'}"
+        )
+        lines.append(
+            f"- **Notification:** [{tgt} — {c['target_name']}]({mergers_fyi_url(tgt)}) "
+            f"· filed {c['target_filed'] or 'unknown'}"
+        )
         lines.append("")
     lines.extend([
         "---",
@@ -516,6 +587,27 @@ def main() -> int:
         dest="pr_markdown",
         help="Write a PR body (markdown) recommending the candidates to this path",
     )
+    parser.add_argument(
+        "--issue-markdown",
+        type=Path,
+        default=None,
+        dest="issue_markdown",
+        help=(
+            "Write a verification-issue body (markdown) to this path, if every "
+            "candidate found is an exact-match refiled waiver (see "
+            "is_certain_match)"
+        ),
+    )
+    parser.add_argument(
+        "--meta-json",
+        type=Path,
+        default=None,
+        dest="meta_json",
+        help=(
+            "Write JSON metadata ({count, certain_count, all_certain}) so CI "
+            "can decide whether to auto-merge the suggestion PR"
+        ),
+    )
     args = parser.parse_args()
 
     if not args.mergers.exists():
@@ -526,16 +618,39 @@ def main() -> int:
 
     known = load_related_pairs(args.related)
     candidates = find_candidates(mergers, known, args.threshold)
+    certain = [c for c in candidates if is_certain_match(c)]
+    all_certain = bool(candidates) and len(certain) == len(candidates)
 
     if args.summary or not (args.apply_suggestions or args.pr_markdown):
         print_summary(candidates, args.threshold)
 
-    if args.pr_markdown and candidates:
+    today = None
+    if args.pr_markdown or args.issue_markdown:
         from datetime import timezone
         today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+    if args.pr_markdown and candidates:
         args.pr_markdown.parent.mkdir(parents=True, exist_ok=True)
         with args.pr_markdown.open("w") as fh:
-            fh.write(build_pr_body(candidates, today))
+            fh.write(build_pr_body(candidates, today, auto_merge=all_certain))
+
+    if args.issue_markdown and all_certain and certain:
+        args.issue_markdown.parent.mkdir(parents=True, exist_ok=True)
+        with args.issue_markdown.open("w") as fh:
+            fh.write(build_issue_body(certain, today))
+
+    if args.meta_json:
+        args.meta_json.parent.mkdir(parents=True, exist_ok=True)
+        with args.meta_json.open("w") as fh:
+            json.dump(
+                {
+                    "count": len(candidates),
+                    "certain_count": len(certain),
+                    "all_certain": all_certain,
+                },
+                fh,
+                indent=2,
+            )
 
     if args.apply_suggestions and candidates:
         added = apply_suggestions(args.related, candidates)

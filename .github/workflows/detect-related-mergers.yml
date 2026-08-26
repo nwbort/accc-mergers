@@ -8,6 +8,7 @@ on:
 permissions:
   contents: write        # needed to push the suggestion branch
   pull-requests: write   # needed to create / update the suggestion PR
+  issues: write          # needed to open the auto-merge verification issue
 
 jobs:
   detect:
@@ -56,7 +57,9 @@ jobs:
         run: |
           python3 scripts/detect_related_mergers.py \
             --apply-suggestions \
-            --pr-markdown pr_body.md || true
+            --pr-markdown pr_body.md \
+            --issue-markdown pr_issue_body.md \
+            --meta-json pr_meta.json || true
 
       - name: Commit and push suggestion branch
         id: commit
@@ -73,6 +76,7 @@ jobs:
           fi
 
       - name: Create or update pull request
+        id: pr
         if: steps.detect.outputs.found == 'true' && steps.commit.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
@@ -89,12 +93,48 @@ jobs:
           if [ -n "$EXISTING" ]; then
             gh pr edit "$EXISTING" --title "$TITLE" --body-file pr_body.md
             echo "Updated PR #$EXISTING"
+            echo "number=$EXISTING" >> "$GITHUB_OUTPUT"
           else
-            gh pr create \
+            NUMBER=$(gh pr create \
               --head "$BRANCH" \
               --title "$TITLE" \
-              --body-file pr_body.md
+              --body-file pr_body.md \
+              | grep -oE '[0-9]+$')
+            echo "number=$NUMBER" >> "$GITHUB_OUTPUT"
           fi
+
+      # An exact (100%) name match on acquirer, target, and merger name for a
+      # refiled waiver leaves essentially no room for a false positive (see
+      # detect_related_mergers.is_certain_match), so that case is merged
+      # immediately instead of waiting on manual review. A follow-up issue
+      # still asks for a sanity check. Mixed batches (some exact, some not)
+      # are conservatively left for manual review in their entirety, since a
+      # PR merge can't be split pair-by-pair.
+      - name: Auto-merge exact-match waiver-refile PR
+        if: steps.detect.outputs.found == 'true' && steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          PR_NUMBER="${{ steps.pr.outputs.number }}"
+          if [ -z "$PR_NUMBER" ] || [ "$(jq -r '.all_certain' pr_meta.json)" != "true" ]; then
+            echo "Not an all-exact-match batch (or PR number missing) — leaving PR #$PR_NUMBER for manual review."
+            exit 0
+          fi
+
+          gh pr merge "$PR_NUMBER" --squash
+
+          gh label create "needs-verification" \
+            --description "Auto-merged by automation; needs a human to double-check" \
+            --color "fbca04" \
+            --force
+
+          TITLE="Verify auto-merged waiver refile(s) ($(date -u +%Y-%m-%d))"
+          jq -n \
+            --arg title "$TITLE" \
+            --rawfile body pr_issue_body.md \
+            '{"title": $title, "body": $body, "labels": ["needs-verification"]}' | \
+          gh api "repos/$GITHUB_REPOSITORY/issues" --method POST --input -
+          echo "Merged PR #$PR_NUMBER automatically and opened a verification issue"
 
       - name: Close suggestion PR when nothing left to recommend
         if: steps.detect.outputs.found == 'false'
