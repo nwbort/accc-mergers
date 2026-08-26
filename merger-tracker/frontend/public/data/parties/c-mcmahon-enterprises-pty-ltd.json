@@ -6,11 +6,27 @@
       "name": "C McMahon Enterprises Pty Ltd",
       "identifier": "115 024 854",
       "identifier_type": "ACN"
+    },
+    {
+      "name": "C. McMahon Enterprises Pty Ltd",
+      "identifier": "115 024 854",
+      "identifier_type": "ACN"
     }
   ],
   "mergers": {
     "acquirer": [],
     "target": [
+      {
+        "merger_id": "MN-75036",
+        "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
+        "is_waiver": false,
+        "status": "Under assessment",
+        "determination": null,
+        "has_conditions": false,
+        "phase": "Phase 1",
+        "notification_date": "2026-08-25T12:00:00Z",
+        "determination_date": null
+      },
       {
         "merger_id": "WA-20015",
         "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
@@ -25,11 +41,11 @@
     ],
     "other": []
   },
-  "merger_count": 1,
-  "phase_1_count": 0,
+  "merger_count": 2,
+  "phase_1_count": 1,
   "phase_2_count": 0,
   "waiver_count": 1,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": null,
   "waiver_duration": {
     "average_days": 24.0,

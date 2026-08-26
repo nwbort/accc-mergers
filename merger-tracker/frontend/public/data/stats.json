@@ -1,10 +1,10 @@
 {
-  "total_mergers": 236,
+  "total_mergers": 237,
   "total_waivers": 349,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 186,
-    "Under assessment": 47,
+    "Under assessment": 48,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -56,7 +56,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 97
+      "count": 98
     },
     {
       "name": "Computer System Design and Related Services",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-75036",
+      "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-25T12:00:00Z",
+      "page_modified_datetime": "2026-08-26T11:46:39+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-10030",
       "merger_name": "Novonesis \u2013 Microbiogen",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-15T12:00:00Z",
       "page_modified_datetime": "2026-08-21T10:51:28+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-10027",
-      "merger_name": "Endeavour Group \u2013 retail liquor site in Horsham, VIC",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-14T12:00:00Z",
-      "page_modified_datetime": "2026-08-25T14:32:02+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

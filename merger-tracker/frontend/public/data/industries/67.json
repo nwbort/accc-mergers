@@ -25,10 +25,21 @@
       "code": "672",
       "name": "Real Estate Services",
       "level": "group",
-      "merger_count": 4
+      "merger_count": 5
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-75036",
+      "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-25T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-05046",
       "merger_name": "Coles - supermarket site in Kirkwood (QLD)",
@@ -448,11 +459,11 @@
       "determination_date": "2025-09-05T12:00:00Z"
     }
   ],
-  "count": 38,
-  "phase_1_count": 13,
+  "count": 39,
+  "phase_1_count": 14,
   "phase_2_count": 1,
   "waiver_count": 24,
-  "active_count": 3,
+  "active_count": 4,
   "phase_duration": {
     "average_days": 35.27272727272727,
     "median_days": 29,

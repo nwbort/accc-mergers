@@ -9,7 +9,7 @@
       "code": "62",
       "name": "Finance",
       "level": "subdivision",
-      "merger_count": 105
+      "merger_count": 106
     },
     {
       "code": "63",
@@ -25,6 +25,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-75036",
+      "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-25T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-10030",
       "merger_name": "Novonesis \u2013 Microbiogen",
@@ -1687,11 +1698,11 @@
       "determination_date": null
     }
   ],
-  "count": 151,
-  "phase_1_count": 38,
+  "count": 152,
+  "phase_1_count": 39,
   "phase_2_count": 2,
   "waiver_count": 111,
-  "active_count": 16,
+  "active_count": 17,
   "phase_duration": {
     "average_days": 28.36,
     "median_days": 25,
