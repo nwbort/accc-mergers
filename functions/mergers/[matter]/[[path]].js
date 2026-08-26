@@ -175,6 +175,21 @@ export async function onRequest(context) {
   const url = new URL(request.url);
   const path = url.pathname;
 
+  // A hand-typed or pasted lowercase matter ID (e.g. /mergers/mn-01016, or
+  // with a slug/PDF filename after it) would otherwise 404 against the
+  // uppercase-named static data and SPA routes. Redirect to the canonical
+  // uppercase form before any other handling — only the ID segment is
+  // case-normalised, so a slug or filename after it is left untouched.
+  const idCaseMatch = path.match(/^(\/mergers\/)((?:MN|WA)-\d+)((?:\/.*)?)$/i);
+  if (idCaseMatch) {
+    const [, prefix, matterId, rest] = idCaseMatch;
+    const upperMatterId = matterId.toUpperCase();
+    if (matterId !== upperMatterId) {
+      url.pathname = `${prefix}${upperMatterId}${rest}`;
+      return Response.redirect(url.toString(), 301);
+    }
+  }
+
   // For social/crawler bots hitting a merger detail page, serve a minimal
   // HTML response with specific OG meta tags — bots don't run JS so they would
   // otherwise see only the generic tags in the SPA's index.html. This matches

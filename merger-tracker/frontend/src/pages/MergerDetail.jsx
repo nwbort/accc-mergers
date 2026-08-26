@@ -42,23 +42,28 @@ const RELATED_MERGER_LABELS = {
 function MergerDetail() {
   const { id, slug } = useParams();
   const navigate = useNavigate();
+  // Merger IDs (e.g. MN-01016) are always uppercase in the static data files,
+  // so a lowercase/mixed-case URL would otherwise 404. Fetch by the
+  // normalised ID and let the effect below fix up the visible URL.
+  const normalizedId = id ? id.toUpperCase() : id;
   const { data: merger, loading, error } = useFetchData(
-    API_ENDPOINTS.mergerDetail(id),
-    { cacheKey: `merger-${id}` }
+    API_ENDPOINTS.mergerDetail(normalizedId),
+    { cacheKey: `merger-${normalizedId}` }
   );
   const isNotFound = error === 'HTTP 404';
 
   // Keep the address bar on the canonical `/mergers/{id}/{slug}` form. When the
-  // page is reached via a bare-id link or a stale/incorrect slug, rewrite the
-  // URL (history replace, no extra entry) once the merger data has loaded so the
-  // visible URL matches the <link rel="canonical"> and sitemap entry.
+  // page is reached via a bare-id link, a lowercase/mixed-case ID, or a
+  // stale/incorrect slug, rewrite the URL (history replace, no extra entry)
+  // once the merger data has loaded so the visible URL matches the
+  // <link rel="canonical"> and sitemap entry.
   useEffect(() => {
     if (!merger) return;
     const canonicalSlug = slugify(merger.merger_name);
-    if ((slug || '') !== canonicalSlug) {
+    if (id !== merger.merger_id || (slug || '') !== canonicalSlug) {
       navigate(mergerPath(merger.merger_id, merger.merger_name), { replace: true });
     }
-  }, [merger, slug, navigate]);
+  }, [merger, id, slug, navigate]);
   const [expandedParties, setExpandedParties] = useState({});
   const [expandedAppealRuns, setExpandedAppealRuns] = useState(() => new Set());
   const toggleAppealRun = (startIdx) => {
@@ -70,7 +75,7 @@ function MergerDetail() {
     });
   };
   const { isTracked, toggleTracking } = useTracking();
-  const tracked = isTracked(id);
+  const tracked = isTracked(normalizedId);
   const savedParams = sessionStorage.getItem('mergers_filter_params');
   const backToMergers = savedParams ? `/mergers?${savedParams}` : '/mergers';
 
@@ -312,7 +317,7 @@ function MergerDetail() {
               </div>
               <TrackButton
                 active={tracked}
-                onClick={() => toggleTracking(id)}
+                onClick={() => toggleTracking(normalizedId)}
                 activeLabel="Tracking"
                 inactiveLabel="Track"
                 activeAriaLabel="Stop tracking this merger"

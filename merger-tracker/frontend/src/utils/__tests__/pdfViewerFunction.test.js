@@ -93,7 +93,7 @@ describe('PDF asset serving', () => {
     expect(response.headers.get('Location')).toBe(SOURCE_URL);
   });
 
-  it('matches the event by url_gh even when the request path is lowercase', async () => {
+  it('redirects a lowercase matter ID to its canonical uppercase form', async () => {
     const env = makeEnv({ [dataPath]: jsonResponse(MERGER_JSON) });
     const response = await onRequest(
       makeContext({
@@ -102,8 +102,8 @@ describe('PDF asset serving', () => {
       }),
     );
 
-    expect(response.status).toBe(302);
-    expect(response.headers.get('Location')).toBe(SOURCE_URL);
+    expect(response.status).toBe(301);
+    expect(response.headers.get('Location')).toBe(`https://mergers.fyi${encodeURI(PDF_PATH)}?raw=1`);
   });
 
   it('falls back to the asset response when no source URL is known', async () => {
@@ -137,5 +137,40 @@ describe('PDF asset serving', () => {
     expect(response.status).toBe(200);
     expect(response.headers.get('Content-Type')).toContain('text/html');
     await expect(response.text()).resolves.toContain('?raw=1');
+  });
+});
+
+describe('matter ID case redirect', () => {
+  it('redirects a bare lowercase matter ID to its uppercase form', async () => {
+    const env = makeEnv({});
+    const response = await onRequest(
+      makeContext({ url: 'https://mergers.fyi/mergers/mn-01068', env }),
+    );
+
+    expect(response.status).toBe(301);
+    expect(response.headers.get('Location')).toBe('https://mergers.fyi/mergers/MN-01068');
+  });
+
+  it('redirects a lowercase matter ID followed by a slug, preserving the slug', async () => {
+    const env = makeEnv({});
+    const response = await onRequest(
+      makeContext({ url: 'https://mergers.fyi/mergers/wa-70017/some-readable-slug', env }),
+    );
+
+    expect(response.status).toBe(301);
+    expect(response.headers.get('Location')).toBe(
+      'https://mergers.fyi/mergers/WA-70017/some-readable-slug',
+    );
+  });
+
+  it('leaves an already-uppercase matter ID alone and passes it through', async () => {
+    const env = makeEnv({ [dataPath]: jsonResponse(MERGER_JSON) });
+    const response = await onRequest(
+      makeContext({ url: 'https://mergers.fyi/mergers/MN-01068', env }),
+    );
+
+    // Not a bot, not a .pdf request — falls through to context.next(), whose
+    // stand-in here returns the 599 sentinel (see makeContext above).
+    expect(response.status).toBe(599);
   });
 });
