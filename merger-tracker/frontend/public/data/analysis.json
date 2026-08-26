@@ -950,21 +950,26 @@
         "business_days": 15,
         "calendar_days": 21,
         "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 21,
+        "in_progress": false
       }
     ],
     "stats": {
       "average": 19.9,
-      "median": 17.0,
+      "median": 17,
       "min": 15,
       "max": 59,
-      "count": 190
+      "count": 191
     },
     "calendar_stats": {
-      "average": 29.8,
-      "median": 26.0,
+      "average": 29.7,
+      "median": 26,
       "min": 21,
       "max": 103,
-      "count": 190
+      "count": 191
     }
   },
   "waiver_duration": {
@@ -2454,7 +2459,7 @@
       42,
       41,
       46,
-      49
+      48
     ],
     "as_at": "2026-08-26"
   },
@@ -2471,11 +2476,11 @@
     {
       "code": "G",
       "name": "Retail Trade",
-      "average_business_days": 24.3,
-      "median_business_days": 18,
-      "average_calendar_days": 37.9,
-      "median_calendar_days": 28,
-      "count": 21
+      "average_business_days": 23.9,
+      "median_business_days": 18.0,
+      "average_calendar_days": 37.1,
+      "median_calendar_days": 27.5,
+      "count": 22
     },
     {
       "code": "B",
@@ -2625,11 +2630,11 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 415,
+      "count": 416,
       "outcome_mix": {
-        "Approved": 415
+        "Approved": 416
       },
-      "median_phase_1_business_days": 17.0
+      "median_phase_1_business_days": 17
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -2643,9 +2648,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 45,
+      "count": 44,
       "outcome_mix": {
-        "Unknown": 45
+        "Unknown": 44
       },
       "median_phase_1_business_days": null
     },
@@ -2678,7 +2683,7 @@
   ],
   "deadline_utilisation": {
     "histogram": {
-      "15": 41,
+      "15": 42,
       "16": 34,
       "17": 23,
       "18": 21,
@@ -2702,9 +2707,9 @@
     },
     "stats": {
       "mean_used_bd": 18.1,
-      "median_used_bd": 17,
+      "median_used_bd": 17.0,
       "pct_decided_final_3_bd": 3.4,
-      "count": 175
+      "count": 176
     },
     "extended_count": 6
   },
@@ -2743,15 +2748,6 @@
       "phase2_referral_rate": 0.333
     },
     {
-      "code": "G",
-      "name": "Retail Trade",
-      "approved": 18,
-      "not_approved": 0,
-      "referred": 3,
-      "in_progress": 9,
-      "phase2_referral_rate": 0.143
-    },
-    {
       "code": "A",
       "name": "Agriculture, Forestry and Fishing",
       "approved": 6,
@@ -2759,6 +2755,15 @@
       "referred": 1,
       "in_progress": 0,
       "phase2_referral_rate": 0.143
+    },
+    {
+      "code": "G",
+      "name": "Retail Trade",
+      "approved": 19,
+      "not_approved": 0,
+      "referred": 3,
+      "in_progress": 8,
+      "phase2_referral_rate": 0.136
     },
     {
       "code": "L",
