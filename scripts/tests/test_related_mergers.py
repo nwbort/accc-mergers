@@ -233,3 +233,133 @@ def test_pr_body_describes_suspension_for_suspended_pair():
     assert "suspended" in body.lower()
     assert "MN-300" in body and "MN-400" in body
     assert drm.pair_id(suspended) == "MN-300/MN-400"
+
+
+def test_pr_body_notes_auto_merge_when_requested():
+    cands = drm.find_candidates(_mergers(), known_pairs=set(), threshold=0.70)
+    waiver = next(c for c in cands if c["type"] == drm.WAIVER_REFILED)
+    body = drm.build_pr_body([waiver], "2026-01-01", auto_merge=True)
+    assert "merged automatically" in body.lower()
+
+
+# ---------------------------------------------------------------------------
+# detector: exact-match auto-merge gate
+# ---------------------------------------------------------------------------
+
+def _waiver_candidate(**overrides):
+    base = {
+        "type": drm.WAIVER_REFILED,
+        "source": "WA-1",
+        "target": "MN-1",
+        "source_name": "Alpha / Beta waiver",
+        "target_name": "Alpha / Beta notification",
+        "source_filed": "2025-01-01T00:00:00Z",
+        "target_filed": "2025-03-01T00:00:00Z",
+        "source_determination": "Not approved",
+        "source_status": "Assessment completed",
+        "target_status": "Under assessment",
+        "score": 0.75,
+        "signals": {
+            "acq_id_overlap": False,
+            "tgt_id_overlap": False,
+            "acq_name_sim": 1.0,
+            "tgt_name_sim": 1.0,
+            "merger_name_sim": 1.0,
+        },
+    }
+    base.update(overrides)
+    return base
+
+
+def test_is_certain_match_requires_all_three_name_sims_exact():
+    assert drm.is_certain_match(_waiver_candidate())
+
+
+def test_is_certain_match_rejects_partial_merger_name_match():
+    cand = _waiver_candidate()
+    cand["signals"]["merger_name_sim"] = 0.9
+    assert not drm.is_certain_match(cand)
+
+
+def test_is_certain_match_rejects_suspended_refiled_type():
+    cand = _waiver_candidate(type=drm.SUSPENDED_REFILED)
+    assert not drm.is_certain_match(cand)
+
+
+def test_issue_body_lists_certain_pairs():
+    body = drm.build_issue_body([_waiver_candidate()], "2026-01-01")
+    assert "WA-1" in body and "MN-1" in body
+    assert "exact (100%) name match" in body
+
+
+def _exact_match_mergers():
+    """A waiver/notification pair with identical names on every side."""
+    return [
+        {
+            "merger_id": "WA-100",
+            "merger_name": "Alpha Beta deal",
+            "accc_determination": "Not approved",
+            "status": merger_status.ASSESSMENT_COMPLETED,
+            "effective_notification_datetime": "2025-01-01T00:00:00Z",
+            "acquirers": [_entity("Alpha Pty Ltd", "ABN-1")],
+            "targets": [_entity("Beta Pty Ltd", "ABN-2")],
+        },
+        {
+            "merger_id": "MN-200",
+            "merger_name": "Alpha Beta deal",
+            "accc_determination": None,
+            "status": merger_status.UNDER_ASSESSMENT,
+            "effective_notification_datetime": "2025-03-01T00:00:00Z",
+            "acquirers": [_entity("Alpha Pty Ltd", "ABN-9")],
+            "targets": [_entity("Beta Pty Ltd", "ABN-8")],
+        },
+    ]
+
+
+def test_main_writes_meta_and_issue_markdown_for_all_certain_batch(tmp_path, monkeypatch):
+    mergers_path = tmp_path / "mergers.json"
+    mergers_path.write_text(json.dumps(_exact_match_mergers()))
+    related_path = tmp_path / "related_mergers.json"
+    pr_path = tmp_path / "pr_body.md"
+    issue_path = tmp_path / "pr_issue_body.md"
+    meta_path = tmp_path / "pr_meta.json"
+
+    monkeypatch.setattr(sys, "argv", [
+        "detect_related_mergers.py",
+        "--mergers", str(mergers_path),
+        "--related", str(related_path),
+        "--pr-markdown", str(pr_path),
+        "--issue-markdown", str(issue_path),
+        "--meta-json", str(meta_path),
+    ])
+    exit_code = drm.main()
+    assert exit_code == 1
+
+    meta = json.loads(meta_path.read_text())
+    assert meta == {"count": 1, "certain_count": 1, "all_certain": True}
+    assert "merged automatically" in pr_path.read_text().lower()
+    assert "WA-100" in issue_path.read_text()
+
+
+def test_main_skips_issue_markdown_when_not_all_certain(tmp_path, monkeypatch):
+    mergers_path = tmp_path / "mergers.json"
+    mergers_path.write_text(json.dumps(_mergers()))
+    related_path = tmp_path / "related_mergers.json"
+    pr_path = tmp_path / "pr_body.md"
+    issue_path = tmp_path / "pr_issue_body.md"
+    meta_path = tmp_path / "pr_meta.json"
+
+    monkeypatch.setattr(sys, "argv", [
+        "detect_related_mergers.py",
+        "--mergers", str(mergers_path),
+        "--related", str(related_path),
+        "--pr-markdown", str(pr_path),
+        "--issue-markdown", str(issue_path),
+        "--meta-json", str(meta_path),
+    ])
+    exit_code = drm.main()
+    assert exit_code == 1
+
+    meta = json.loads(meta_path.read_text())
+    assert meta["all_certain"] is False
+    assert not issue_path.exists()
