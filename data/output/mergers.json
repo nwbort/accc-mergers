@@ -57389,44 +57389,12 @@
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
       "has_questionnaire": true,
+      "related_merger": {
+        "merger_id": "WA-20015",
+        "relationship": "refiled_from",
+        "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers"
+      },
       "similar_mergers": [
-        {
-          "merger_id": "WA-20015",
-          "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
-          "status": "Assessment completed",
-          "accc_determination": "Not approved",
-          "acquirers": [
-            {
-              "name": "HERRON TODD WHITE (BIDCO) PTY LTD",
-              "identifier_type": "ABN",
-              "identifier": "74 665 809 665",
-              "party_page": {
-                "id": "herron-todd-white-bidco-pty-ltd",
-                "name": "Herron Todd White (Bidco) Pty Ltd"
-              }
-            }
-          ],
-          "targets": [
-            {
-              "name": "CJA Lee Property Pty Ltd",
-              "identifier_type": "ACN",
-              "identifier": "113 706 826",
-              "party_page": {
-                "id": "cja-lee-property-pty-ltd",
-                "name": "CJA Lee Property Pty Ltd"
-              }
-            },
-            {
-              "name": "C McMahon Enterprises Pty Ltd",
-              "identifier_type": "ACN",
-              "identifier": "115 024 854",
-              "party_page": {
-                "id": "c-mcmahon-enterprises-pty-ltd",
-                "name": "C McMahon Enterprises Pty Ltd"
-              }
-            }
-          ]
-        },
         {
           "merger_id": "WA-05026",
           "merger_name": "Mercer Investments (Australia) Limited\u2013 Stockland Residential Rental Partnership",
@@ -87416,6 +87384,11 @@
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
+      "related_merger": {
+        "merger_id": "MN-75036",
+        "relationship": "refiled_as",
+        "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers"
+      },
       "similar_mergers": [
         {
           "merger_id": "MN-75002",
