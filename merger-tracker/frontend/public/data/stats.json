@@ -3,12 +3,12 @@
   "total_waivers": 350,
   "total_conditional_approvals": 3,
   "by_status": {
-    "Assessment completed": 186,
-    "Under assessment": 47,
+    "Assessment completed": 188,
+    "Under assessment": 45,
     "Assessment ceased": 4
   },
   "by_determination": {
-    "Approved": 181,
+    "Approved": 183,
     "Referred to phase 2": 9,
     "Approved with conditions": 2
   },
@@ -22,27 +22,27 @@
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 184,
+    "cleared": 186,
     "not_cleared": 2,
-    "total": 186,
+    "total": 188,
     "rate": 0.989
   },
   "phase_duration": {
-    "average_days": 29.677083333333332,
+    "average_days": 29.670103092783506,
     "median_days": 26.0,
-    "average_business_days": 19.885416666666668,
+    "average_business_days": 19.896907216494846,
     "median_business_days": 17.0,
     "percentiles": {
       "day15": {
         "count": 42,
-        "percentage": 21.9
+        "percentage": 21.6
       },
       "day20": {
         "count": 145,
-        "percentage": 75.5
+        "percentage": 74.7
       },
       "day30": {
-        "count": 180,
+        "count": 182,
         "percentage": 93.8
       }
     }
@@ -219,6 +219,28 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-60031",
+      "merger_name": "Accenture - runZero",
+      "determination": "Approved",
+      "determination_date": "2026-08-27T12:00:00Z",
+      "page_modified_datetime": "2026-08-27T09:56:09+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "MN-50032",
+      "merger_name": "Accenture - Dragos",
+      "determination": "Approved",
+      "determination_date": "2026-08-27T12:00:00Z",
+      "page_modified_datetime": "2026-08-27T09:51:04+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-50011",
       "merger_name": "Journey Beyond - SeaLink Rottnest",
       "determination": "Assessment ceased",
@@ -325,28 +347,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-10022",
-      "merger_name": "M Resources and Golden Energy and Resources \u2013 Tahmoor Coal Mine",
-      "determination": "Approved",
-      "determination_date": "2026-08-21T12:00:00Z",
-      "page_modified_datetime": "2026-08-21T17:19:14+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-15038",
-      "merger_name": "Cinven \u2013 Salsify",
-      "determination": "Approved",
-      "determination_date": "2026-08-21T12:00:00Z",
-      "page_modified_datetime": "2026-08-21T17:01:10+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]

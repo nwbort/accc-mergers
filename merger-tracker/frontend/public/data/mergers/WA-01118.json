@@ -170,8 +170,8 @@
     {
       "merger_id": "MN-50032",
       "merger_name": "Accenture - Dragos",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "acquirers": [
         {
           "name": "Accenture Venture Holdings, LLC",
@@ -189,9 +189,9 @@
       ],
       "targets": [
         {
-          "name": "PHOSPHORUS (AUS) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "58 678 218 356",
+          "name": "Dragos, Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware file number  6028773",
           "canonical": {
             "id": "dragos-inc",
             "name": "Dragos"
@@ -202,9 +202,9 @@
           }
         },
         {
-          "name": "DRAGOS AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "62 638 810 616",
+          "name": "Phosphorus Security LLC",
+          "identifier_type": null,
+          "identifier": "Delaware file number  10549306",
           "canonical": {
             "id": "dragos-inc",
             "name": "Dragos"
