@@ -195,6 +195,24 @@ CHALLENGE_MARKERS = (
 # How long to wait for a single page's challenge to clear before giving up.
 MAX_WAIT_SECONDS = 90
 
+# Ceiling on any single nodriver/CDP call (navigate, get_content, evaluate, ...).
+# The 2026-08-26 run got stuck on exactly this: tab.get_content() inside
+# fetch_page()'s wait loop never returned, so the loop's own MAX_WAIT_SECONDS
+# deadline (only checked *between* iterations) was never reached, and the job
+# ran until GitHub's 6-hour default job timeout killed it. Every awaited
+# nodriver call is wrapped in _with_timeout() below so a stalled CDP round-trip
+# raises instead of hanging forever.
+CDP_CALL_TIMEOUT_SECONDS = 30
+
+
+async def _with_timeout(coro, what: str, seconds: float = CDP_CALL_TIMEOUT_SECONDS):
+    """Await ``coro``, converting a hang into a TimeoutError after ``seconds``."""
+    try:
+        return await asyncio.wait_for(coro, timeout=seconds)
+    except asyncio.TimeoutError:
+        raise TimeoutError(f"{what} did not respond within {seconds}s")
+
+
 # How many times to ask the browser for one document, and how long to wait
 # between tries. Cloudflare decides per request: the same file that downloads
 # first go on one run is sometimes answered with a 403 carrying
@@ -386,8 +404,10 @@ def _retryable_fetch_failure(detail: str) -> bool:
 async def _browser_fetch(tab, url: str) -> tuple[bytes | None, str]:
     """Run one in-page fetch. Returns ``(bytes, "")`` or ``(None, detail)``."""
     try:
-        payload = await tab.evaluate(
-            _BROWSER_FETCH_JS % json.dumps(url), await_promise=True
+        payload = await _with_timeout(
+            tab.evaluate(_BROWSER_FETCH_JS % json.dumps(url), await_promise=True),
+            "tab.evaluate (document fetch)",
+            seconds=REQUEST_TIMEOUT,
         )
     except Exception as e:
         return None, f"evaluate raised {e}"
@@ -795,17 +815,22 @@ async def try_click_turnstile(tab) -> bool:
     that must be clicked."""
     for text in ("Verify you are human", "Verify you are a human", "human"):
         try:
-            el = await tab.find(text, best_match=True, timeout=3)
+            el = await _with_timeout(
+                tab.find(text, best_match=True, timeout=3), "tab.find"
+            )
             if el:
-                await el.mouse_click()
+                await _with_timeout(el.mouse_click(), "mouse_click")
                 print(f"    clicked element matching '{text}'", flush=True)
                 return True
         except Exception:
             pass
     try:
-        iframe = await tab.find("challenges.cloudflare.com", best_match=True, timeout=3)
+        iframe = await _with_timeout(
+            tab.find("challenges.cloudflare.com", best_match=True, timeout=3),
+            "tab.find",
+        )
         if iframe:
-            await iframe.mouse_click()
+            await _with_timeout(iframe.mouse_click(), "mouse_click")
             print("    clicked cloudflare iframe", flush=True)
             return True
     except Exception:
@@ -815,9 +840,14 @@ async def try_click_turnstile(tab) -> bool:
 
 async def fetch_page(browser, url: str):
     """Navigate the browser to ``url`` and wait for the Cloudflare challenge to
-    clear. Returns ``(tab, html)`` — ``html`` is None if the challenge never
-    cleared within ``MAX_WAIT_SECONDS``."""
-    tab = await browser.get(url)
+    clear. Returns ``(tab, html)`` — both None if the page couldn't even be
+    navigated to; ``html`` alone is None if the challenge never cleared within
+    ``MAX_WAIT_SECONDS``."""
+    try:
+        tab = await _with_timeout(browser.get(url), "browser.get")
+    except Exception as e:
+        print(f"    browser.get failed: {e}", flush=True)
+        return None, None
 
     deadline = time.time() + MAX_WAIT_SECONDS
     html = ""
@@ -825,9 +855,9 @@ async def fetch_page(browser, url: str):
     attempt = 0
     while time.time() < deadline:
         attempt += 1
-        await tab.sleep(3)
         try:
-            html = await tab.get_content()
+            await _with_timeout(tab.sleep(3), "tab.sleep")
+            html = await _with_timeout(tab.get_content(), "tab.get_content")
         except Exception as e:
             print(f"    get_content failed: {e}", flush=True)
             continue
@@ -851,7 +881,7 @@ async def fetch_page(browser, url: str):
         return tab, None
 
     try:
-        html = await tab.get_content()
+        html = await _with_timeout(tab.get_content(), "tab.get_content")
     except Exception:
         pass
     return tab, html
@@ -904,7 +934,7 @@ async def browser_session_headers(browser, tab) -> dict:
     """
     headers: dict = {}
     try:
-        cookies = await browser.cookies.get_all()
+        cookies = await _with_timeout(browser.cookies.get_all(), "cookies.get_all")
         cookie_header = "; ".join(
             f"{c.name}={c.value}" for c in cookies if getattr(c, "name", None)
         )
@@ -913,7 +943,9 @@ async def browser_session_headers(browser, tab) -> dict:
     except Exception as e:
         print(f"    could not read cookies: {e}", flush=True)
     try:
-        user_agent = await tab.evaluate("navigator.userAgent")
+        user_agent = await _with_timeout(
+            tab.evaluate("navigator.userAgent"), "tab.evaluate (user agent)"
+        )
         if user_agent:
             headers["User-Agent"] = user_agent
     except Exception:
@@ -972,9 +1004,19 @@ async def scrape_matters(
         # Nothing could be fetched — every target is a failure.
         return {}, list(targets), []
 
-    browser = await uc.start(
-        host="127.0.0.1", port=port, browser_executable_path=chrome_path
-    )
+    try:
+        browser = await _with_timeout(
+            uc.start(host="127.0.0.1", port=port, browser_executable_path=chrome_path),
+            "uc.start",
+        )
+    except Exception as e:
+        print(f"ERROR: could not attach to Chrome: {e}", flush=True)
+        try:
+            proc.terminate()
+        except Exception:
+            pass
+        # Nothing could be fetched — every target is a failure.
+        return {}, list(targets), []
 
     scraped_by_id: dict[str, list[dict]] = {}
     failed: list[str] = []
