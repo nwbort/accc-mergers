@@ -442,6 +442,11 @@
         "in_progress": false
       },
       {
+        "business_days": 16,
+        "calendar_days": 22,
+        "in_progress": false
+      },
+      {
         "business_days": 15,
         "calendar_days": 22,
         "in_progress": false
@@ -959,17 +964,17 @@
     ],
     "stats": {
       "average": 19.9,
-      "median": 17,
+      "median": 17.0,
       "min": 15,
       "max": 59,
-      "count": 191
+      "count": 192
     },
     "calendar_stats": {
       "average": 29.7,
-      "median": 26,
+      "median": 26.0,
       "min": 21,
       "max": 103,
-      "count": 191
+      "count": 192
     }
   },
   "waiver_duration": {
@@ -2459,7 +2464,7 @@
       42,
       41,
       46,
-      48
+      47
     ],
     "as_at": "2026-08-26"
   },
@@ -2492,15 +2497,6 @@
       "count": 9
     },
     {
-      "code": "L",
-      "name": "Rental, Hiring and Real Estate Services",
-      "average_business_days": 22.7,
-      "median_business_days": 21,
-      "average_calendar_days": 34.5,
-      "median_calendar_days": 29,
-      "count": 15
-    },
-    {
       "code": "A",
       "name": "Agriculture, Forestry and Fishing",
       "average_business_days": 22.6,
@@ -2510,6 +2506,15 @@
       "count": 7
     },
     {
+      "code": "L",
+      "name": "Rental, Hiring and Real Estate Services",
+      "average_business_days": 22.3,
+      "median_business_days": 20.0,
+      "average_calendar_days": 33.8,
+      "median_calendar_days": 29.0,
+      "count": 16
+    },
+    {
       "code": "D",
       "name": "Electricity, Gas, Water and Waste Services",
       "average_business_days": 22.0,
@@ -2517,15 +2522,6 @@
       "average_calendar_days": 31.4,
       "median_calendar_days": 28,
       "count": 7
-    },
-    {
-      "code": "H",
-      "name": "Accommodation and Food Services",
-      "average_business_days": 22.0,
-      "median_business_days": 18,
-      "average_calendar_days": 31.8,
-      "median_calendar_days": 25,
-      "count": 9
     },
     {
       "code": "F",
@@ -2553,6 +2549,15 @@
       "average_calendar_days": 31.6,
       "median_calendar_days": 28,
       "count": 13
+    },
+    {
+      "code": "H",
+      "name": "Accommodation and Food Services",
+      "average_business_days": 21.4,
+      "median_business_days": 17.5,
+      "average_calendar_days": 30.8,
+      "median_calendar_days": 24.5,
+      "count": 10
     },
     {
       "code": "O",
@@ -2630,11 +2635,11 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 416,
+      "count": 417,
       "outcome_mix": {
-        "Approved": 416
+        "Approved": 417
       },
-      "median_phase_1_business_days": 17
+      "median_phase_1_business_days": 17.0
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -2648,9 +2653,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 44,
+      "count": 43,
       "outcome_mix": {
-        "Unknown": 44
+        "Unknown": 43
       },
       "median_phase_1_business_days": null
     },
@@ -2684,7 +2689,7 @@
   "deadline_utilisation": {
     "histogram": {
       "15": 42,
-      "16": 34,
+      "16": 35,
       "17": 23,
       "18": 21,
       "19": 15,
@@ -2707,9 +2712,9 @@
     },
     "stats": {
       "mean_used_bd": 18.1,
-      "median_used_bd": 17.0,
+      "median_used_bd": 17,
       "pct_decided_final_3_bd": 3.4,
-      "count": 176
+      "count": 177
     },
     "extended_count": 6
   },
@@ -2768,11 +2773,11 @@
     {
       "code": "L",
       "name": "Rental, Hiring and Real Estate Services",
-      "approved": 13,
+      "approved": 14,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 5,
-      "phase2_referral_rate": 0.133
+      "in_progress": 4,
+      "phase2_referral_rate": 0.125
     },
     {
       "code": "K",
@@ -2849,10 +2854,10 @@
     {
       "code": "H",
       "name": "Accommodation and Food Services",
-      "approved": 9,
+      "approved": 10,
       "not_approved": 0,
       "referred": 0,
-      "in_progress": 4,
+      "in_progress": 3,
       "phase2_referral_rate": 0.0
     },
     {
