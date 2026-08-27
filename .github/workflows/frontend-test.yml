@@ -9,7 +9,7 @@ on:
       # the inline copy in functions/ against the shared golden fixture, so run
       # it when either of those change too.
       - 'functions/**'
-      - 'slug-cases.json'
+      - 'fixtures/slug-cases.json'
   workflow_dispatch:
 
 jobs:

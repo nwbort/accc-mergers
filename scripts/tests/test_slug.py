@@ -8,7 +8,7 @@ and the build-time prerender), and the inline copy in
 the sitemap, canonical tags and rendered URLs disagree and search engines pick
 the wrong canonical page.
 
-``slug-cases.json`` at the repo root is the single source of truth binding all
+``fixtures/slug-cases.json`` is the single source of truth binding all
 three. The JS side asserts against it in
 ``frontend/src/utils/__tests__/slug.test.js``; this file does the
 same for the Python copy. Change the algorithm -> update all three and
@@ -28,13 +28,15 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 from slug import merger_path, slugify  # noqa: E402
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-FIXTURE = json.loads((REPO_ROOT / "slug-cases.json").read_text(encoding="utf-8"))
+FIXTURE = json.loads(
+    (REPO_ROOT / "fixtures" / "slug-cases.json").read_text(encoding="utf-8")
+)
 CASES = FIXTURE["cases"]
 
 
 def test_fixture_is_non_empty():
     assert isinstance(CASES, list)
-    assert CASES, "slug-cases.json has no cases"
+    assert CASES, "fixtures/slug-cases.json has no cases"
 
 
 @pytest.mark.parametrize("case", CASES, ids=[c["slug"] or "<empty>" for c in CASES])
