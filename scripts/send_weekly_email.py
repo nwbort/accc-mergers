@@ -78,7 +78,7 @@ FONT = "'Segoe UI',Arial,Helvetica,sans-serif"
 def load_digest() -> dict:
     digest_path = (
         Path(__file__).parent.parent
-        / "merger-tracker" / "frontend" / "public" / "data" / "digest.json"
+        / "frontend" / "public" / "data" / "digest.json"
     )
     with open(digest_path, "r", encoding="utf-8") as f:
         return json.load(f)

@@ -6,7 +6,7 @@ A public-facing web application for tracking Australian Competition and Consumer
 
 Fully static — no backend server. Cloudflare Pages serves the React SPA plus generated JSON data files. Data is refreshed by `pipeline.yml`, which scrapes, extracts, and regenerates the static JSON files several times a day (plus on-demand via an email-triggered `repository_dispatch`) and commits the result, triggering auto-deploy.
 
-### Frontend (`merger-tracker/frontend/`)
+### Frontend (`frontend/`)
 
 - **React 19** SPA with **React Router 8** for client-side routing
 - **Vite 7** build tool, **Tailwind CSS 3** for styling
@@ -40,7 +40,7 @@ Top level:
 
 ```
 .
-├── merger-tracker/frontend/  # React SPA (the deployed site)
+├── frontend/                 # React SPA (the deployed site)
 ├── scripts/                  # Python data pipeline + its tests
 ├── data/                     # Scraped/processed data (the "database")
 ├── workers/                  # Standalone Cloudflare Workers, one dir per Worker
@@ -53,7 +53,7 @@ Top level:
 Frontend:
 
 ```
-merger-tracker/frontend/src/
+frontend/src/
 ├── main.jsx              # React root
 ├── App.jsx               # Router + layout (Navbar, Footer, KeyboardShortcutsHelp)
 ├── config.js             # API endpoint constants, SUBSCRIBE_ENDPOINT, TURNSTILE_SITE_KEY
@@ -209,7 +209,7 @@ data/
 
 ```bash
 # Frontend development
-cd merger-tracker/frontend
+cd frontend
 npm install
 npm run dev       # Vite dev server at localhost:5173
 npm run build     # Production build to dist/
@@ -251,7 +251,7 @@ npm run tail         # stream live logs
 
 1. `pipeline.yml` scrapes the ACCC website → raw HTML in `data/raw/`
 2. It extracts new/changed matters → `data/processed/mergers.json`
-3. `generate_static_data.py` produces frontend JSON files in `merger-tracker/frontend/public/data/`
+3. `generate_static_data.py` produces frontend JSON files in `frontend/public/data/`
 4. Cloudflare Pages auto-deploys on push to main
 
 ### Consultation section: two ACCC page formats
@@ -345,6 +345,6 @@ load can never empty a directory.
 | `weekly-digest.yml` | Weekly (Sunday, Sydney time), manual | Generate `digest.json` |
 | `send-weekly-email.yml` | Manual (schedule currently disabled) | Send the weekly digest email via the Cloudflare Worker |
 | `test.yml` | Manual | Run the Python test suite |
-| `frontend-test.yml` | Pull requests touching `merger-tracker/frontend/**`, `functions/**` or `slug-cases.json`, manual | Run the frontend test suite |
-| `check-deploy-assets.yml` | Push touching `data/raw/matters/**`, `merger-tracker/frontend/public/**` or the check itself, manual | Fail if any deploy asset exceeds Cloudflare Pages' 25 MiB per-file limit |
+| `frontend-test.yml` | Pull requests touching `frontend/**`, `functions/**` or `slug-cases.json`, manual | Run the frontend test suite |
+| `check-deploy-assets.yml` | Push touching `data/raw/matters/**`, `frontend/public/**` or the check itself, manual | Fail if any deploy asset exceeds Cloudflare Pages' 25 MiB per-file limit |
 | `workers-test.yml` | Manual | For each directory under `workers/`: `npm ci`, `npm test --if-present`, then `npm run deploy:dry` to bundle the Worker and validate its `wrangler.toml`. Discovers Workers by glob, so a new one is covered automatically |

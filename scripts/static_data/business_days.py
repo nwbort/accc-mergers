@@ -12,7 +12,7 @@ from date_utils import parse_iso_datetime
 
 SCRIPT_DIR = Path(__file__).resolve().parent.parent
 REPO_ROOT = SCRIPT_DIR.parent
-HOLIDAYS_JSON = REPO_ROOT / "merger-tracker" / "frontend" / "src" / "data" / "act-public-holidays.json"
+HOLIDAYS_JSON = REPO_ROOT / "frontend" / "src" / "data" / "act-public-holidays.json"
 
 PUBLIC_HOLIDAYS = None  # Loaded lazily
 

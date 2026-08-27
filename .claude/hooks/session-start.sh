@@ -22,7 +22,7 @@ echo "Installing Python dependencies (scripts/requirements.txt + pytest)..."
 python3 -m pip install --quiet --disable-pip-version-check \
   -r scripts/requirements.txt pytest
 
-echo "Installing frontend dependencies (merger-tracker/frontend)..."
-npm install --prefix merger-tracker/frontend --no-audit --no-fund --loglevel=error
+echo "Installing frontend dependencies..."
+npm install --prefix frontend --no-audit --no-fund --loglevel=error
 
 echo "Session setup complete."

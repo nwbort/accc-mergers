@@ -3,7 +3,7 @@
 The slug is purely decorative — merger pages are always looked up by their
 ``merger_id`` (e.g. ``MN-01016``). The slug exists for SEO/readability, so the
 algorithm here MUST stay in sync with the JavaScript implementation in
-``merger-tracker/frontend/src/utils/slug.js`` (used for rendered links and
+``frontend/src/utils/slug.js`` (used for rendered links and
 canonical tags) and the inline copy in
 ``functions/mergers/[matter]/[[path]].js`` (used by the social-bot OG handler).
 If these diverge, the sitemap, canonical tags and rendered URLs disagree.

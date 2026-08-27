@@ -73,7 +73,7 @@ data/raw/
     ▼
 data/processed/
     │  scripts/generate_static_data.py
-    ├──────────────► merger-tracker/frontend/public/data/   (deployed)
+    ├──────────────► frontend/public/data/                  (deployed)
     └──────────────► data/output/                           (offline analysis)
 ```
 

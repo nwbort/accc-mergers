@@ -3,7 +3,7 @@ Canonical ACCC merger status, determination, and phase labels.
 
 These strings mirror the values published by the ACCC public register and
 must match what appears in the generated JSON data consumed by the frontend
-(see merger-tracker/frontend/src/constants/mergerStatus.js for the JS
+(see frontend/src/constants/mergerStatus.js for the JS
 counterpart). Renaming any value here would invalidate data in
 public/data/*.json.
 

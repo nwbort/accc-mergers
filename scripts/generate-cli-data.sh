@@ -55,7 +55,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
 # Source: the already-generated per-merger frontend data files
-SRC_DIR="$REPO_ROOT/merger-tracker/frontend/public/data"
+SRC_DIR="$REPO_ROOT/frontend/public/data"
 MERGERS_DIR="$SRC_DIR/mergers"
 QUESTIONNAIRES_DIR="$SRC_DIR/questionnaires"
 NOCCS_DIR="$SRC_DIR/noccs"

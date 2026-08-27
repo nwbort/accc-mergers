@@ -41,7 +41,7 @@ from compress_pdfs import PAGES_ASSET_LIMIT, format_size  # noqa: E402
 # (directory, glob) pairs that feed the deployment. See the module docstring.
 DEPLOY_SOURCES = (
     ("data/raw/matters", "*.pdf"),
-    ("merger-tracker/frontend/public", "*"),
+    ("frontend/public", "*"),
 )
 
 ISSUE_LABEL = "oversized-asset"

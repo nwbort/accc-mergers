@@ -74,7 +74,7 @@ After editing `commentary.json`:
 python3 scripts/generate_static_data.py
 
 # Commit your changes
-git add commentary.json merger-tracker/frontend/public/data/
+git add commentary.json frontend/public/data/
 git commit -m "Add commentary for MN-01016"
 git push
 ```

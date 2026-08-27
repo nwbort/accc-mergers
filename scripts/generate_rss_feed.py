@@ -6,7 +6,7 @@ Produces an Atom XML feed of the most recent merger events (determinations,
 notifications, phase transitions) for consumption by RSS readers.
 
 Output:
-  merger-tracker/frontend/public/feed.xml
+  frontend/public/feed.xml
 """
 
 from datetime import datetime, timezone
@@ -17,7 +17,7 @@ from merger_filters import filter_active, load_mergers
 
 SCRIPT_DIR = Path(__file__).parent
 REPO_ROOT = SCRIPT_DIR.parent
-OUTPUT_PATH = REPO_ROOT / "merger-tracker" / "frontend" / "public" / "feed.xml"
+OUTPUT_PATH = REPO_ROOT / "frontend" / "public" / "feed.xml"
 
 SITE_URL = "https://mergers.fyi"
 FEED_TITLE = "Australian Merger Tracker"

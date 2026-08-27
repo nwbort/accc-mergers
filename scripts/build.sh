@@ -6,9 +6,9 @@ set -euo pipefail
 #   bash scripts/build.sh
 #
 # Root directory (in dashboard): /  (repo root)
-# Build output (in dashboard):   merger-tracker/frontend/dist
+# Build output (in dashboard):   frontend/dist
 
-FRONTEND_DIR="merger-tracker/frontend"
+FRONTEND_DIR="frontend"
 DATA_DIR="data/raw/matters"
 
 # 1. Install and build the frontend
@@ -40,7 +40,7 @@ npm run build
 # is exactly the limit Pages enforces.
 MAX_ASSET_SIZE="25M"
 
-data_root="$(cd "../../$DATA_DIR" 2>/dev/null && pwd -P)" || data_root=""
+data_root="$(cd "../$DATA_DIR" 2>/dev/null && pwd -P)" || data_root=""
 if [ -n "$data_root" ]; then
   dest="$PWD/dist/mergers"
   mkdir -p "$dest"

@@ -2,7 +2,7 @@
 
 The slug algorithm is hand-copied into three places — this module
 (``scripts/slug.py``, used to build the sitemap), the SPA copy in
-``merger-tracker/frontend/src/utils/slug.js`` (rendered links, canonical tags
+``frontend/src/utils/slug.js`` (rendered links, canonical tags
 and the build-time prerender), and the inline copy in
 ``functions/mergers/[matter]/[[path]].js`` (the OG handler). If they diverge,
 the sitemap, canonical tags and rendered URLs disagree and search engines pick
@@ -10,7 +10,7 @@ the wrong canonical page.
 
 ``slug-cases.json`` at the repo root is the single source of truth binding all
 three. The JS side asserts against it in
-``merger-tracker/frontend/src/utils/__tests__/slug.test.js``; this file does the
+``frontend/src/utils/__tests__/slug.test.js``; this file does the
 same for the Python copy. Change the algorithm -> update all three and
 regenerate the fixture.
 """

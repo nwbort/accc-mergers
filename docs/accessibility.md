@@ -11,7 +11,7 @@ on demand against a production build rather than in CI, so nothing in
 `package.json` carries the weight of a browser download.
 
 ```bash
-cd merger-tracker/frontend
+cd frontend
 npm run build
 npx --yes serve dist -l 4178          # or any static server rooted at dist/
 

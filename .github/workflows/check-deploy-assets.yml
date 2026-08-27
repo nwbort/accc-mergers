@@ -21,7 +21,7 @@ on:
     # that end up in the deployment. Keep the two in step.
     paths:
       - 'data/raw/matters/**'
-      - 'merger-tracker/frontend/public/**'
+      - 'frontend/public/**'
       - 'scripts/check_deploy_assets.py'
       - '.github/workflows/check-deploy-assets.yml'
   workflow_dispatch:

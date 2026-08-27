@@ -12,7 +12,7 @@ Australian Competition Tribunal for limited merits review. Three routes exist:
 These ``appeal_type`` values are stored in ``data/processed/tribunal_appeals.json``
 and surfaced on the frontend. The human-readable labels below must match the
 ``APPEAL_TYPE_LABELS`` map in
-``merger-tracker/frontend/src/constants/appeal.js``.
+``frontend/src/constants/appeal.js``.
 """
 
 # A party to the merger seeking review of a refusal (Phase 2 or public benefits).

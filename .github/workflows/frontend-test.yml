@@ -3,7 +3,7 @@ name: Frontend Tests
 on:
   pull_request:
     paths:
-      - 'merger-tracker/frontend/**'
+      - 'frontend/**'
       - '.github/workflows/frontend-test.yml'
       # The slugify sync test (src/utils/__tests__/slug.test.js) also validates
       # the inline copy in functions/ against the shared golden fixture, so run
@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: merger-tracker/frontend
+        working-directory: frontend
     steps:
       - name: Check out repository
         uses: actions/checkout@v7
@@ -25,9 +25,9 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v5
         with:
-          node-version-file: merger-tracker/frontend/.nvmrc
+          node-version-file: frontend/.nvmrc
           cache: 'npm'
-          cache-dependency-path: merger-tracker/frontend/package-lock.json
+          cache-dependency-path: frontend/package-lock.json
 
       - name: Install dependencies
         run: npm ci

@@ -317,8 +317,8 @@ jobs:
           git add data/processed/mergers.json data/processed/questionnaire_data.json \
             data/processed/nocc_data.json data/processed/similar_mergers.json \
             data/processed/phase1_estimates.json \
-            data/raw/matters/ merger-tracker/frontend/public/data/ \
-            merger-tracker/frontend/public/feed.xml data/output/ \
+            data/raw/matters/ frontend/public/data/ \
+            frontend/public/feed.xml data/output/ \
             data/frozen_events_mergers.json
 
       # --- Single commit ---

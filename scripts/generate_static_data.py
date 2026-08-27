@@ -14,7 +14,7 @@ Output files:
   data/output/ (for offline analysis, not deployed):
   - mergers.json      - All mergers wrapped in {mergers: [...]} (full enriched data)
 
-  merger-tracker/frontend/public/data/ (deployed to Cloudflare Pages):
+  frontend/public/data/ (deployed to Cloudflare Pages):
   - mergers/{id}.json           - Individual merger files (one per merger)
   - mergers/list-page-{N}.json  - Paginated lightweight merger lists (50/page)
   - mergers/list-meta.json      - Pagination metadata for merger list
@@ -93,7 +93,7 @@ from static_data.outputs import (
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 REPO_ROOT = SCRIPT_DIR.parent
-OUTPUT_DIR = REPO_ROOT / "merger-tracker" / "frontend" / "public" / "data"
+OUTPUT_DIR = REPO_ROOT / "frontend" / "public" / "data"
 DATA_OUTPUT_DIR = REPO_ROOT / "data" / "output"
 
 
