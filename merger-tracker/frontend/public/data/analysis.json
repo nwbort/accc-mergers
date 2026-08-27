@@ -627,6 +627,11 @@
         "in_progress": false
       },
       {
+        "business_days": 15,
+        "calendar_days": 21,
+        "in_progress": false
+      },
+      {
         "business_days": 18,
         "calendar_days": 27,
         "in_progress": false
@@ -979,17 +984,17 @@
     ],
     "stats": {
       "average": 19.9,
-      "median": 17,
+      "median": 17.0,
       "min": 15,
       "max": 59,
-      "count": 195
+      "count": 196
     },
     "calendar_stats": {
-      "average": 29.7,
-      "median": 26,
+      "average": 29.6,
+      "median": 26.0,
       "min": 21,
       "max": 103,
-      "count": 195
+      "count": 196
     }
   },
   "waiver_duration": {
@@ -2483,7 +2488,7 @@
       42,
       41,
       46,
-      44
+      43
     ],
     "as_at": "2026-08-27"
   },
@@ -2543,15 +2548,6 @@
       "count": 7
     },
     {
-      "code": "F",
-      "name": "Wholesale Trade",
-      "average_business_days": 21.5,
-      "median_business_days": 18.0,
-      "average_calendar_days": 33.9,
-      "median_calendar_days": 27.5,
-      "count": 26
-    },
-    {
       "code": "M",
       "name": "Professional, Scientific and Technical Services",
       "average_business_days": 21.5,
@@ -2579,6 +2575,15 @@
       "count": 10
     },
     {
+      "code": "F",
+      "name": "Wholesale Trade",
+      "average_business_days": 21.2,
+      "median_business_days": 18,
+      "average_calendar_days": 33.4,
+      "median_calendar_days": 27,
+      "count": 27
+    },
+    {
       "code": "O",
       "name": "Public Administration and Safety",
       "average_business_days": 20.0,
@@ -2590,11 +2595,11 @@
     {
       "code": "C",
       "name": "Manufacturing",
-      "average_business_days": 19.8,
-      "median_business_days": 17,
-      "average_calendar_days": 29.5,
-      "median_calendar_days": 26,
-      "count": 55
+      "average_business_days": 19.7,
+      "median_business_days": 17.0,
+      "average_calendar_days": 29.4,
+      "median_calendar_days": 26.0,
+      "count": 56
     },
     {
       "code": "E",
@@ -2654,11 +2659,11 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 421,
+      "count": 422,
       "outcome_mix": {
-        "Approved": 421
+        "Approved": 422
       },
-      "median_phase_1_business_days": 17
+      "median_phase_1_business_days": 17.0
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -2672,9 +2677,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 40,
+      "count": 39,
       "outcome_mix": {
-        "Unknown": 40
+        "Unknown": 39
       },
       "median_phase_1_business_days": null
     },
@@ -2707,7 +2712,7 @@
   ],
   "deadline_utilisation": {
     "histogram": {
-      "15": 42,
+      "15": 43,
       "16": 35,
       "17": 23,
       "18": 21,
@@ -2731,9 +2736,9 @@
     },
     "stats": {
       "mean_used_bd": 18.1,
-      "median_used_bd": 17.0,
+      "median_used_bd": 17,
       "pct_decided_final_3_bd": 3.3,
-      "count": 180
+      "count": 181
     },
     "extended_count": 6
   },
@@ -2799,15 +2804,6 @@
       "phase2_referral_rate": 0.125
     },
     {
-      "code": "F",
-      "name": "Wholesale Trade",
-      "approved": 24,
-      "not_approved": 0,
-      "referred": 2,
-      "in_progress": 9,
-      "phase2_referral_rate": 0.077
-    },
-    {
       "code": "K",
       "name": "Financial and Insurance Services",
       "approved": 24,
@@ -2815,6 +2811,15 @@
       "referred": 2,
       "in_progress": 15,
       "phase2_referral_rate": 0.077
+    },
+    {
+      "code": "F",
+      "name": "Wholesale Trade",
+      "approved": 25,
+      "not_approved": 0,
+      "referred": 2,
+      "in_progress": 8,
+      "phase2_referral_rate": 0.074
     },
     {
       "code": "M",
@@ -2837,10 +2842,10 @@
     {
       "code": "C",
       "name": "Manufacturing",
-      "approved": 53,
+      "approved": 54,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 16,
+      "in_progress": 15,
       "phase2_referral_rate": 0.036
     },
     {

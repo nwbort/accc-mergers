@@ -3,12 +3,12 @@
   "total_waivers": 350,
   "total_conditional_approvals": 3,
   "by_status": {
-    "Assessment completed": 189,
-    "Under assessment": 44,
+    "Assessment completed": 190,
+    "Under assessment": 43,
     "Assessment ceased": 4
   },
   "by_determination": {
-    "Approved": 184,
+    "Approved": 185,
     "Referred to phase 2": 9,
     "Approved with conditions": 2
   },
@@ -22,28 +22,28 @@
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 187,
+    "cleared": 188,
     "not_cleared": 2,
-    "total": 189,
+    "total": 190,
     "rate": 0.989
   },
   "phase_duration": {
-    "average_days": 29.68717948717949,
-    "median_days": 26,
-    "average_business_days": 19.912820512820513,
-    "median_business_days": 17,
+    "average_days": 29.642857142857142,
+    "median_days": 26.0,
+    "average_business_days": 19.887755102040817,
+    "median_business_days": 17.0,
     "percentiles": {
       "day15": {
-        "count": 42,
-        "percentage": 21.5
+        "count": 43,
+        "percentage": 21.9
       },
       "day20": {
-        "count": 145,
-        "percentage": 74.4
+        "count": 146,
+        "percentage": 74.5
       },
       "day30": {
-        "count": 183,
-        "percentage": 93.8
+        "count": 184,
+        "percentage": 93.9
       }
     }
   },
@@ -241,6 +241,17 @@
       "has_conditions": false
     },
     {
+      "merger_id": "MN-55031",
+      "merger_name": "Danone \u2013 MADE",
+      "determination": "Approved",
+      "determination_date": "2026-08-26T12:00:00Z",
+      "page_modified_datetime": "2026-08-27T11:31:18+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-90024",
       "merger_name": "Petalite \u2013 Envu",
       "determination": "Approved",
@@ -333,17 +344,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-25T12:00:00Z",
       "page_modified_datetime": "2026-08-25T16:37:28+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-01116",
-      "merger_name": "Silk Contract Logistics \u2013 Toll Transport bulk logistics (glass and plastic) assets",
-      "determination": "Approved",
-      "determination_date": "2026-08-25T12:00:00Z",
-      "page_modified_datetime": "2026-08-25T14:40:03+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
