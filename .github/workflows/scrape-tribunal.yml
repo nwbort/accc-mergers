@@ -32,6 +32,15 @@ concurrency:
 jobs:
   scrape-tribunal:
     runs-on: ubuntu-latest
+    # A normal run (currently one tribunal matter) finishes in well under a
+    # minute. Without an explicit cap, a stuck nodriver/CDP call runs until
+    # GitHub's 6-hour default job timeout — which is what happened on
+    # 2026-08-26 (run 32935892928): a hung tab.get_content() call burned 6
+    # hours and, because concurrency below doesn't cancel-in-progress, queued
+    # up and starved the next several scheduled runs behind it. 20 minutes is
+    # generous headroom for slow Cloudflare challenges and document retries
+    # across more matters than exist today, while failing fast on a hang.
+    timeout-minutes: 20
     steps:
     - name: Check out repository
       uses: actions/checkout@v7
