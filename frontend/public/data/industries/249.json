@@ -30,7 +30,7 @@
       "code": "2499",
       "name": "Other Machinery and Equipment Manufacturing n.e.c.",
       "level": "class",
-      "merger_count": 8
+      "merger_count": 9
     }
   ],
   "mergers": [
@@ -44,6 +44,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-08-06T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-70032",
+      "merger_name": "Movac \u2013 Advanced Navigation",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-28T12:00:00Z",
+      "determination_date": "2026-08-27T12:00:00Z"
     },
     {
       "merger_id": "WA-80033",
@@ -156,10 +167,10 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 11,
+  "count": 12,
   "phase_1_count": 4,
   "phase_2_count": 0,
-  "waiver_count": 7,
+  "waiver_count": 8,
   "active_count": 1,
   "phase_duration": {
     "average_days": 25.333333333333332,
@@ -169,10 +180,10 @@
     "completed_count": 3
   },
   "waiver_duration": {
-    "average_days": 23.0,
-    "median_days": 24,
-    "average_business_days": 15.0,
-    "median_business_days": 16,
-    "completed_count": 7
+    "average_days": 23.875,
+    "median_days": 24.0,
+    "average_business_days": 15.875,
+    "median_business_days": 16.0,
+    "completed_count": 8
   }
 }

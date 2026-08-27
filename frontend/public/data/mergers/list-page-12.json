@@ -1,6 +1,116 @@
 {
   "mergers": [
     {
+      "merger_id": "WA-75039",
+      "merger_name": "Ironbark - Paris Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-31T12:00:00Z",
+      "determination_publication_date": "2026-08-18T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "INVEST BLUE FINANCE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "35 661 784 541",
+          "party_page": {
+            "id": "invest-blue-finance-pty-ltd",
+            "name": "Invest Blue Finance Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Paris Financial Services Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "24 143 510 301",
+          "party_page": {
+            "id": "paris-financial-services-pty-ltd",
+            "name": "Paris Financial Services Pty Ltd"
+          }
+        },
+        {
+          "name": "PARIS LENDING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "48 610 493 368",
+          "party_page": {
+            "id": "paris-lending-pty-ltd",
+            "name": "Paris Lending Pty Ltd"
+          }
+        },
+        {
+          "name": "PARIS FINANCIAL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "96 120 807 614",
+          "canonical": {
+            "id": "paris-financial-pty-ltd",
+            "name": "Paris Financial Pty Ltd"
+          },
+          "party_page": {
+            "id": "paris-financial-pty-ltd",
+            "name": "Paris Financial Pty Ltd"
+          }
+        },
+        {
+          "name": "PARIS FINANCIAL HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "72 658 541 078",
+          "canonical": {
+            "id": "paris-financial-pty-ltd",
+            "name": "Paris Financial Pty Ltd"
+          },
+          "party_page": {
+            "id": "paris-financial-pty-ltd",
+            "name": "Paris Financial Pty Ltd"
+          }
+        },
+        {
+          "name": "PARIS FINANCIAL EAST MELBOURNE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "45 659 012 307",
+          "party_page": {
+            "id": "paris-financial-east-melbourne-pty-ltd",
+            "name": "Paris Financial East Melbourne Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Ironbark Investment Partners Pty Ltd",
+          "identifier_type": null,
+          "identifier": "",
+          "canonical": {
+            "id": "ironbark-investment-partners-pty-ltd",
+            "name": "Ironbark Investment Partners Pty Ltd"
+          },
+          "party_page": {
+            "id": "ironbark-investment-partners-pty-ltd",
+            "name": "Ironbark Investment Partners Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "6932",
+          "name": "Accounting Services"
+        },
+        {
+          "code": "6961",
+          "name": "Corporate Head Office Management Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/ironbark-paris-group"
+    },
+    {
       "merger_id": "MN-15030",
       "merger_name": "KARMO/SIMPLR",
       "status": "Under assessment",
@@ -370,6 +480,50 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/hitech-group-australia-hudson-global-resources"
+    },
+    {
+      "merger_id": "WA-15036",
+      "merger_name": "Regis \u2013 Home Care Business of Royal Freemasons",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-04T12:00:00Z",
+      "determination_publication_date": "2026-08-27T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "REGIS AGED CARE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "75 125 223 645",
+          "party_page": {
+            "id": "regis-aged-care-pty-ltd",
+            "name": "Regis Aged Care Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "ROYAL FREEMASONS LTD",
+          "identifier_type": "ABN",
+          "identifier": "52 082 106 821",
+          "party_page": {
+            "id": "royal-freemasons-ltd",
+            "name": "Royal Freemasons Ltd"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "8790",
+          "name": "Other Social Assistance Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/regis-%E2%80%93-home-care-business-of-royal-freemasons"
     },
     {
       "merger_id": "MN-15031",

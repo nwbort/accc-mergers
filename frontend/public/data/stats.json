@@ -1,6 +1,6 @@
 {
   "total_mergers": 238,
-  "total_waivers": 353,
+  "total_waivers": 355,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 195,
@@ -18,7 +18,7 @@
     "Assessment ceased": 2
   },
   "by_waiver_determination": {
-    "Approved": 338,
+    "Approved": 340,
     "Not approved": 15
   },
   "clearance_rate": {
@@ -48,9 +48,9 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.441926345609065,
+    "average_days": 19.48169014084507,
     "median_days": 19,
-    "average_business_days": 13.138810198300284,
+    "average_business_days": 13.174647887323944,
     "median_business_days": 13
   },
   "top_industries": [
@@ -60,11 +60,11 @@
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 61
+      "count": 62
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 53
+      "count": 54
     },
     {
       "name": "Software Publishing",
@@ -91,8 +91,8 @@
       "count": 18
     },
     {
-      "name": "Supermarket and Grocery Stores",
-      "count": 17
+      "name": "Scientific Research Services",
+      "count": 18
     }
   ],
   "recent_mergers": [
@@ -219,6 +219,28 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-70032",
+      "merger_name": "Movac \u2013 Advanced Navigation",
+      "determination": "Approved",
+      "determination_date": "2026-08-27T12:00:00Z",
+      "page_modified_datetime": "2026-08-27T17:00:46+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-15036",
+      "merger_name": "Regis \u2013 Home Care Business of Royal Freemasons",
+      "determination": "Approved",
+      "determination_date": "2026-08-27T12:00:00Z",
+      "page_modified_datetime": "2026-08-27T16:59:49+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-25043",
       "merger_name": "Eldridge \u2013 Ausenco",
       "determination": "Approved",
@@ -323,28 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-26T12:00:00Z",
       "page_modified_datetime": "2026-08-27T11:37:18+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-55031",
-      "merger_name": "Danone \u2013 MADE",
-      "determination": "Approved",
-      "determination_date": "2026-08-26T12:00:00Z",
-      "page_modified_datetime": "2026-08-27T11:31:18+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-90024",
-      "merger_name": "Petalite \u2013 Envu",
-      "determination": "Approved",
-      "determination_date": "2026-08-26T12:00:00Z",
-      "page_modified_datetime": "2026-08-27T10:46:46+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",

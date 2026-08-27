@@ -21,7 +21,7 @@
       "code": "64",
       "name": "Auxiliary Finance and Insurance Services",
       "level": "subdivision",
-      "merger_count": 55
+      "merger_count": 56
     }
   ],
   "mergers": [
@@ -199,6 +199,17 @@
       "has_conditions": false,
       "phase": "Waiver",
       "notification_date": "2026-08-13T12:00:00Z",
+      "determination_date": "2026-08-27T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-70032",
+      "merger_name": "Movac \u2013 Advanced Navigation",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-28T12:00:00Z",
       "determination_date": "2026-08-27T12:00:00Z"
     },
     {
@@ -1720,10 +1731,10 @@
       "determination_date": null
     }
   ],
-  "count": 154,
+  "count": 155,
   "phase_1_count": 39,
   "phase_2_count": 2,
-  "waiver_count": 113,
+  "waiver_count": 114,
   "active_count": 14,
   "phase_duration": {
     "average_days": 28.25,
@@ -1733,10 +1744,10 @@
     "completed_count": 28
   },
   "waiver_duration": {
-    "average_days": 19.52212389380531,
-    "median_days": 19,
-    "average_business_days": 13.176991150442477,
-    "median_business_days": 12,
-    "completed_count": 113
+    "average_days": 19.614035087719298,
+    "median_days": 19.0,
+    "average_business_days": 13.25438596491228,
+    "median_business_days": 12.0,
+    "completed_count": 114
   }
 }

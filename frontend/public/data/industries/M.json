@@ -9,13 +9,13 @@
       "code": "69",
       "name": "Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",
       "level": "subdivision",
-      "merger_count": 90
+      "merger_count": 91
     },
     {
       "code": "70",
       "name": "Computer System Design and Related Services",
       "level": "subdivision",
-      "merger_count": 61
+      "merger_count": 62
     }
   ],
   "mergers": [
@@ -204,6 +204,17 @@
       "has_conditions": false,
       "phase": "Waiver",
       "notification_date": "2026-08-13T12:00:00Z",
+      "determination_date": "2026-08-27T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-70032",
+      "merger_name": "Movac \u2013 Advanced Navigation",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-28T12:00:00Z",
       "determination_date": "2026-08-27T12:00:00Z"
     },
     {
@@ -1538,10 +1549,10 @@
       "determination_date": null
     }
   ],
-  "count": 138,
+  "count": 139,
   "phase_1_count": 55,
   "phase_2_count": 3,
-  "waiver_count": 80,
+  "waiver_count": 81,
   "active_count": 11,
   "phase_duration": {
     "average_days": 31.93877551020408,
@@ -1551,10 +1562,10 @@
     "completed_count": 49
   },
   "waiver_duration": {
-    "average_days": 19.05,
-    "median_days": 19.0,
-    "average_business_days": 12.925,
-    "median_business_days": 13.0,
-    "completed_count": 80
+    "average_days": 19.185185185185187,
+    "median_days": 19,
+    "average_business_days": 13.037037037037036,
+    "median_business_days": 13,
+    "completed_count": 81
   }
 }

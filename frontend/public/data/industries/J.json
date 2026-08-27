@@ -33,7 +33,7 @@
       "code": "58",
       "name": "Telecommunications Services",
       "level": "subdivision",
-      "merger_count": 9
+      "merger_count": 10
     },
     {
       "code": "59",
@@ -102,6 +102,17 @@
       "has_conditions": false,
       "phase": "Phase 1",
       "notification_date": "2026-07-27T12:00:00Z",
+      "determination_date": "2026-08-27T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-70032",
+      "merger_name": "Movac \u2013 Advanced Navigation",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-28T12:00:00Z",
       "determination_date": "2026-08-27T12:00:00Z"
     },
     {
@@ -787,10 +798,10 @@
       "determination_date": "2025-12-18T12:00:00Z"
     }
   ],
-  "count": 67,
+  "count": 68,
   "phase_1_count": 29,
   "phase_2_count": 0,
-  "waiver_count": 38,
+  "waiver_count": 39,
   "active_count": 4,
   "phase_duration": {
     "average_days": 29.28,
@@ -800,10 +811,10 @@
     "completed_count": 25
   },
   "waiver_duration": {
-    "average_days": 19.526315789473685,
-    "median_days": 19.0,
-    "average_business_days": 13.289473684210526,
-    "median_business_days": 12.5,
-    "completed_count": 38
+    "average_days": 19.794871794871796,
+    "median_days": 19,
+    "average_business_days": 13.512820512820513,
+    "median_business_days": 13,
+    "completed_count": 39
   }
 }
