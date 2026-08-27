@@ -21,7 +21,7 @@
       "code": "08",
       "name": "Metal Ore Mining",
       "level": "subdivision",
-      "merger_count": 10
+      "merger_count": 11
     },
     {
       "code": "09",
@@ -33,7 +33,7 @@
       "code": "10",
       "name": "Exploration and Other Mining Support Services",
       "level": "subdivision",
-      "merger_count": 9
+      "merger_count": 10
     }
   ],
   "mergers": [
@@ -58,6 +58,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-08-10T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-40036",
+      "merger_name": "Genesis Minerals \u2013 Vault Minerals",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-31T12:00:00Z",
+      "determination_date": "2026-08-27T12:00:00Z"
     },
     {
       "merger_id": "MN-10022",
@@ -346,10 +357,10 @@
       "determination_date": null
     }
   ],
-  "count": 28,
+  "count": 29,
   "phase_1_count": 12,
   "phase_2_count": 0,
-  "waiver_count": 16,
+  "waiver_count": 17,
   "active_count": 2,
   "phase_duration": {
     "average_days": 33.333333333333336,
@@ -359,10 +370,10 @@
     "completed_count": 9
   },
   "waiver_duration": {
-    "average_days": 18.5625,
-    "median_days": 20.0,
-    "average_business_days": 12.5,
-    "median_business_days": 13.0,
-    "completed_count": 16
+    "average_days": 19.058823529411764,
+    "median_days": 20,
+    "average_business_days": 12.882352941176471,
+    "median_business_days": 13,
+    "completed_count": 17
   }
 }

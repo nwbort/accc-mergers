@@ -1,6 +1,6 @@
 {
   "total_mergers": 238,
-  "total_waivers": 355,
+  "total_waivers": 356,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 195,
@@ -18,7 +18,7 @@
     "Assessment ceased": 2
   },
   "by_waiver_determination": {
-    "Approved": 340,
+    "Approved": 341,
     "Not approved": 15
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.48169014084507,
-    "median_days": 19,
-    "average_business_days": 13.174647887323944,
-    "median_business_days": 13
+    "average_days": 19.502808988764045,
+    "median_days": 19.0,
+    "average_business_days": 13.191011235955056,
+    "median_business_days": 13.0
   },
   "top_industries": [
     {
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-40036",
+      "merger_name": "Genesis Minerals \u2013 Vault Minerals",
+      "determination": "Approved",
+      "determination_date": "2026-08-27T12:00:00Z",
+      "page_modified_datetime": "2026-08-27T17:01:41+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-70032",
       "merger_name": "Movac \u2013 Advanced Navigation",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-27T12:00:00Z",
       "page_modified_datetime": "2026-08-27T09:51:04+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-70027",
-      "merger_name": "Global Infrastructure Management and EQT led consortium - AES Corporation",
-      "determination": "Approved",
-      "determination_date": "2026-08-26T12:00:00Z",
-      "page_modified_datetime": "2026-08-27T11:37:18+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",

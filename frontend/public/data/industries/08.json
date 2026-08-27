@@ -19,10 +19,21 @@
       "code": "080",
       "name": "Metal Ore Mining",
       "level": "group",
-      "merger_count": 10
+      "merger_count": 11
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-40036",
+      "merger_name": "Genesis Minerals \u2013 Vault Minerals",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-31T12:00:00Z",
+      "determination_date": "2026-08-27T12:00:00Z"
+    },
     {
       "merger_id": "WA-80028",
       "merger_name": "AngloGold Ashanti Australia \u2013 Matsa Lake Carey tenements",
@@ -134,10 +145,10 @@
       "determination_date": null
     }
   ],
-  "count": 10,
+  "count": 11,
   "phase_1_count": 2,
   "phase_2_count": 0,
-  "waiver_count": 8,
+  "waiver_count": 9,
   "active_count": 0,
   "phase_duration": {
     "average_days": 25.0,
@@ -147,10 +158,10 @@
     "completed_count": 1
   },
   "waiver_duration": {
-    "average_days": 18.0,
-    "median_days": 18.0,
-    "average_business_days": 12.125,
-    "median_business_days": 12.0,
-    "completed_count": 8
+    "average_days": 19.0,
+    "median_days": 20,
+    "average_business_days": 12.88888888888889,
+    "median_business_days": 13,
+    "completed_count": 9
   }
 }
