@@ -87,7 +87,7 @@
       "code": "24",
       "name": "Machinery and Equipment Manufacturing",
       "level": "subdivision",
-      "merger_count": 58
+      "merger_count": 59
     },
     {
       "code": "25",
@@ -271,6 +271,17 @@
       "has_conditions": false,
       "phase": "Waiver",
       "notification_date": "2026-07-28T12:00:00Z",
+      "determination_date": "2026-08-27T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-80036",
+      "merger_name": "RCT Solutions GmbH - W\u00e4rtsil\u00e4 Energy Storage Finland Oy",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-03T12:00:00Z",
       "determination_date": "2026-08-27T12:00:00Z"
     },
     {
@@ -1748,10 +1759,10 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 150,
+  "count": 151,
   "phase_1_count": 69,
   "phase_2_count": 2,
-  "waiver_count": 79,
+  "waiver_count": 80,
   "active_count": 14,
   "phase_duration": {
     "average_days": 29.224137931034484,
@@ -1761,10 +1772,10 @@
     "completed_count": 58
   },
   "waiver_duration": {
-    "average_days": 18.72151898734177,
-    "median_days": 17,
-    "average_business_days": 12.582278481012658,
-    "median_business_days": 12,
-    "completed_count": 79
+    "average_days": 18.7875,
+    "median_days": 17.5,
+    "average_business_days": 12.65,
+    "median_business_days": 12.0,
+    "completed_count": 80
   }
 }

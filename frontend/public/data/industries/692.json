@@ -36,7 +36,7 @@
       "code": "6923",
       "name": "Engineering Design and Engineering Consulting Services",
       "level": "class",
-      "merger_count": 19
+      "merger_count": 20
     },
     {
       "code": "6924",
@@ -94,6 +94,17 @@
       "has_conditions": false,
       "phase": "Waiver",
       "notification_date": "2026-08-13T12:00:00Z",
+      "determination_date": "2026-08-27T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-80036",
+      "merger_name": "RCT Solutions GmbH - W\u00e4rtsil\u00e4 Energy Storage Finland Oy",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-03T12:00:00Z",
       "determination_date": "2026-08-27T12:00:00Z"
     },
     {
@@ -350,10 +361,10 @@
       "determination_date": null
     }
   ],
-  "count": 27,
+  "count": 28,
   "phase_1_count": 9,
   "phase_2_count": 2,
-  "waiver_count": 16,
+  "waiver_count": 17,
   "active_count": 3,
   "phase_duration": {
     "average_days": 41.22222222222222,
@@ -363,10 +374,10 @@
     "completed_count": 9
   },
   "waiver_duration": {
-    "average_days": 18.1875,
-    "median_days": 18.5,
-    "average_business_days": 11.875,
-    "median_business_days": 11.5,
-    "completed_count": 16
+    "average_days": 18.529411764705884,
+    "median_days": 20,
+    "average_business_days": 12.235294117647058,
+    "median_business_days": 13,
+    "completed_count": 17
   }
 }

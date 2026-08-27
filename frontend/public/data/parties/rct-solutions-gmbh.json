@@ -1,0 +1,41 @@
+{
+  "id": "rct-solutions-gmbh",
+  "canonical_name": "RCT Solutions GmbH",
+  "members": [
+    {
+      "name": "RCT Solutions GmbH",
+      "identifier": "HRB 708952",
+      "identifier_type": null
+    }
+  ],
+  "mergers": {
+    "acquirer": [
+      {
+        "merger_id": "WA-80036",
+        "merger_name": "RCT Solutions GmbH - W\u00e4rtsil\u00e4 Energy Storage Finland Oy",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Waiver",
+        "notification_date": "2026-08-03T12:00:00Z",
+        "determination_date": "2026-08-27T12:00:00Z"
+      }
+    ],
+    "target": [],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null,
+  "waiver_duration": {
+    "average_days": 24.0,
+    "median_days": 24,
+    "average_business_days": 18.0,
+    "median_business_days": 18,
+    "completed_count": 1
+  }
+}

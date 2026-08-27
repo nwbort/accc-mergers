@@ -38,6 +38,17 @@
       "determination_date": null
     },
     {
+      "merger_id": "WA-80037",
+      "merger_name": "Australian Venue Co \u2013 Assets of Riverland Bar, The Boatbuilders Yard and General Assembly",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-03T12:00:00Z",
+      "determination_date": "2026-08-27T12:00:00Z"
+    },
+    {
       "merger_id": "MN-35033",
       "merger_name": "Merivale \u2013 The Sackville Hotel",
       "is_waiver": false,
@@ -203,10 +214,10 @@
       "determination_date": "2026-02-09T12:00:00Z"
     }
   ],
-  "count": 16,
+  "count": 17,
   "phase_1_count": 4,
   "phase_2_count": 0,
-  "waiver_count": 12,
+  "waiver_count": 13,
   "active_count": 1,
   "phase_duration": {
     "average_days": 23.0,
@@ -216,10 +227,10 @@
     "completed_count": 3
   },
   "waiver_duration": {
-    "average_days": 18.833333333333332,
-    "median_days": 18.5,
-    "average_business_days": 12.666666666666666,
-    "median_business_days": 12.5,
-    "completed_count": 12
+    "average_days": 19.23076923076923,
+    "median_days": 19,
+    "average_business_days": 13.076923076923077,
+    "median_business_days": 13,
+    "completed_count": 13
   }
 }

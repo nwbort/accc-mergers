@@ -15,7 +15,7 @@
       "code": "45",
       "name": "Food and Beverage Services",
       "level": "subdivision",
-      "merger_count": 36
+      "merger_count": 37
     }
   ],
   "mergers": [
@@ -51,6 +51,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-01T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-80037",
+      "merger_name": "Australian Venue Co \u2013 Assets of Riverland Bar, The Boatbuilders Yard and General Assembly",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-03T12:00:00Z",
+      "determination_date": "2026-08-27T12:00:00Z"
     },
     {
       "merger_id": "MN-35033",
@@ -515,10 +526,10 @@
       "determination_date": "2026-02-02T12:00:00Z"
     }
   ],
-  "count": 45,
+  "count": 46,
   "phase_1_count": 13,
   "phase_2_count": 0,
-  "waiver_count": 32,
+  "waiver_count": 33,
   "active_count": 3,
   "phase_duration": {
     "average_days": 30.8,
@@ -528,10 +539,10 @@
     "completed_count": 10
   },
   "waiver_duration": {
-    "average_days": 19.28125,
-    "median_days": 19.0,
-    "average_business_days": 13.09375,
-    "median_business_days": 12.0,
-    "completed_count": 32
+    "average_days": 19.424242424242426,
+    "median_days": 19,
+    "average_business_days": 13.242424242424242,
+    "median_business_days": 12,
+    "completed_count": 33
   }
 }
