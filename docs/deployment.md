@@ -52,21 +52,31 @@ Configure your custom domain (e.g., `mergers.fyi`) in Cloudflare Pages settings.
 
 ## Cloudflare Worker
 
-The `cloudflare-worker/` directory contains a Worker that handles digest email signup form submissions and validates Cloudflare Turnstile tokens. It is deployed separately via wrangler:
+Standalone Workers all live under [`workers/`](../workers/), one directory
+per Worker, each named after the Worker it deploys. See
+[`workers/README.md`](../workers/README.md) for the full index and the
+layout convention.
+
+`workers/mergers-digest-signup/` handles digest email signup form
+submissions (validating Cloudflare Turnstile tokens) and stores feedback
+submissions in D1. It is deployed separately via wrangler:
 
 ```bash
-cd cloudflare-worker
+cd workers/mergers-digest-signup
 npx wrangler deploy
 ```
 
+`workers/feedback-admin/` is the private read-only viewer over that same
+feedback database.
+
 ## Cloudflare Email Worker — ACCC register watcher
 
-The `accc-register-watcher/` directory contains a separate Email Worker
+`workers/accc-register-watcher/` is a separate Email Worker
 that watches a mailbox subscribed to the ACCC's register update mailing
 list. On each email it fires a `repository_dispatch` event
 (`new_merger_detected`) so `pipeline.yml` runs immediately rather than
 waiting for its next scheduled run. See
-[`accc-register-watcher/README.md`](../accc-register-watcher/README.md)
+[`workers/accc-register-watcher/README.md`](../workers/accc-register-watcher/README.md)
 for setup (Cloudflare Email Routing configuration and the GitHub token
 secret).
 
@@ -129,7 +139,17 @@ Manual-only (`workflow_dispatch`). Runs `pytest scripts/tests/`.
 
 ### `frontend-test.yml` — Frontend tests
 
-Manual-only (`workflow_dispatch`). Runs the frontend test suite.
+Runs the frontend test suite on pull requests touching
+`merger-tracker/frontend/**`, `functions/**` or `slug-cases.json`, and on
+demand (`workflow_dispatch`).
+
+### `workers-test.yml` — Cloudflare Worker tests
+
+Manual-only (`workflow_dispatch`). For every directory under `workers/`, runs
+`npm ci`, then `npm test --if-present` (only `accc-register-watcher` has a
+test suite today), then `npm run deploy:dry` to bundle the Worker and
+validate its `wrangler.toml` without deploying. Discovers Workers by
+globbing `workers/*/package.json`, so a new Worker is covered automatically.
 
 ### `scrape-tribunal.yml` — Tribunal matter scraper (scheduled + manual)
 
@@ -271,6 +291,6 @@ The static data includes raw dates; the frontend calculates business days at ren
 
 ### Build failures
 
-1. Check Node.js version matches `.nvmrc` (20.19.0)
+1. Check Node.js version matches `.nvmrc` (24.18.0)
 2. Run `npm install` locally to verify dependencies
 3. Check for errors in build output

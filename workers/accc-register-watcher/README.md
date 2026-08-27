@@ -38,7 +38,7 @@ Cloudflare Email Routing rules aren't expressible in `wrangler.toml`.
 
 2. **Deploy the Worker**:
    ```bash
-   cd accc-register-watcher
+   cd workers/accc-register-watcher
    npm install
    npx wrangler deploy
    ```

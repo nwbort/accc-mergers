@@ -1,0 +1,16 @@
+name = "feedback-admin"
+main = "src/index.js"
+compatibility_date = "2025-04-01"
+
+# Secrets — set with:
+#   wrangler secret put SECRET
+#
+# Any opaque string; the UI in ui/index.html sends it as the `x-secret`
+# header. Do NOT put real values here; wrangler.toml is committed to the repo.
+
+# Shared with ../mergers-digest-signup, which writes the rows this worker
+# reads. Keep database_id in sync with that worker's wrangler.toml.
+[[d1_databases]]
+binding = "DB"
+database_name = "mergers-feedback"
+database_id = "e3eac500-d498-4be3-b0da-d80f0fa173cd"

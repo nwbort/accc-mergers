@@ -1,6 +1,11 @@
 #:schema node_modules/wrangler/config-schema.json
 
-# Cloudflare Pages project configuration
+# Cloudflare PAGES project configuration — this is not a Worker.
+#
+# It must stay at the repository root: wrangler reads the Pages config from
+# the project root, and Pages looks for functions/ next to it. The standalone
+# Workers live one directory each under workers/ — see workers/README.md.
+#
 # Docs: https://developers.cloudflare.com/pages/functions/wrangler-configuration/
 name = "merger-tracker"
 pages_build_output_dir = "merger-tracker/frontend/dist"

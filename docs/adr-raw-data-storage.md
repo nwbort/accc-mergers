@@ -264,7 +264,7 @@ no harder (the sync source just changes from a branch to a checkout).
    the `main` push.
 4. Remove `data/raw` from `main` (`git rm -r --cached`, `.gitignore` entry) —
    only after 2–3 are verified.
-5. Update docs (`claude.md`, `docs/deployment.md`, `data/README.md`,
+5. Update docs (`CLAUDE.md`, `docs/deployment.md`, `data/README.md`,
    `scripts/README.md`) and add the local-dev fetch helper.
 6. Watch one full scheduled pipeline cycle end-to-end (scrape → convert →
    commit → deploy → PDF served) before closing.
