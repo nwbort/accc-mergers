@@ -180,17 +180,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-70027",
-      "merger_name": "Global Infrastructure Management and EQT led consortium - AES Corporation",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-07-30T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-65005",
       "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
       "is_waiver": false,
@@ -200,6 +189,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-03-03T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-70027",
+      "merger_name": "Global Infrastructure Management and EQT led consortium - AES Corporation",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-30T12:00:00Z",
+      "determination_date": "2026-08-26T12:00:00Z"
     },
     {
       "merger_id": "MN-90024",
@@ -1713,13 +1713,13 @@
   "phase_1_count": 39,
   "phase_2_count": 2,
   "waiver_count": 112,
-  "active_count": 16,
+  "active_count": 15,
   "phase_duration": {
-    "average_days": 28.53846153846154,
-    "median_days": 25.0,
-    "average_business_days": 19.346153846153847,
-    "median_business_days": 16.0,
-    "completed_count": 26
+    "average_days": 28.48148148148148,
+    "median_days": 25,
+    "average_business_days": 19.333333333333332,
+    "median_business_days": 16,
+    "completed_count": 27
   },
   "waiver_duration": {
     "average_days": 19.571428571428573,

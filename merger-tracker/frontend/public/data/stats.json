@@ -3,12 +3,12 @@
   "total_waivers": 350,
   "total_conditional_approvals": 3,
   "by_status": {
-    "Assessment completed": 190,
-    "Under assessment": 43,
+    "Assessment completed": 191,
+    "Under assessment": 42,
     "Assessment ceased": 4
   },
   "by_determination": {
-    "Approved": 185,
+    "Approved": 186,
     "Referred to phase 2": 9,
     "Approved with conditions": 2
   },
@@ -22,27 +22,27 @@
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 188,
+    "cleared": 189,
     "not_cleared": 2,
-    "total": 190,
-    "rate": 0.989
+    "total": 191,
+    "rate": 0.99
   },
   "phase_duration": {
-    "average_days": 29.642857142857142,
-    "median_days": 26.0,
-    "average_business_days": 19.887755102040817,
-    "median_business_days": 17.0,
+    "average_days": 29.629441624365484,
+    "median_days": 26,
+    "average_business_days": 19.883248730964468,
+    "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 43,
-        "percentage": 21.9
+        "percentage": 21.8
       },
       "day20": {
-        "count": 146,
-        "percentage": 74.5
+        "count": 147,
+        "percentage": 74.6
       },
       "day30": {
-        "count": 184,
+        "count": 185,
         "percentage": 93.9
       }
     }
@@ -241,6 +241,17 @@
       "has_conditions": false
     },
     {
+      "merger_id": "MN-70027",
+      "merger_name": "Global Infrastructure Management and EQT led consortium - AES Corporation",
+      "determination": "Approved",
+      "determination_date": "2026-08-26T12:00:00Z",
+      "page_modified_datetime": "2026-08-27T11:37:18+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-55031",
       "merger_name": "Danone \u2013 MADE",
       "determination": "Approved",
@@ -336,17 +347,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-95038",
-      "merger_name": "HiTech Group Australia - Hudson Global Resources",
-      "determination": "Approved",
-      "determination_date": "2026-08-25T12:00:00Z",
-      "page_modified_datetime": "2026-08-25T16:37:28+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]

@@ -10,9 +10,18 @@
   "determination_publication_date": "2026-08-11T12:00:00Z",
   "accc_determination": "Approved",
   "accc_determination_raw": "ACCC determinationApproved with conditions",
-  "page_modified_datetime": "2026-08-24T14:11:51+10:00",
+  "page_modified_datetime": "2026-08-27T11:23:10+10:00",
   "consultation_response_due_date": "2026-07-09T12:00:00Z",
   "acquirers": [
+    {
+      "name": "The Trustee for Light Them Up (Roma) Trust",
+      "identifier_type": "ABN",
+      "identifier": "17 705 523 498",
+      "party_page": {
+        "id": "the-trustee-for-light-them-up-roma-trust",
+        "name": "The Trustee for Light Them Up (Roma) Trust"
+      }
+    },
     {
       "name": "BLACK RHINO (CLUB ROMA) PTY LTD",
       "identifier_type": "ABN",
@@ -25,27 +34,9 @@
         "id": "black-rhino-group",
         "name": "Black Rhino Group"
       }
-    },
-    {
-      "name": "The Trustee for Light Them Up (Roma) Trust",
-      "identifier_type": "ABN",
-      "identifier": "17 705 523 498",
-      "party_page": {
-        "id": "the-trustee-for-light-them-up-roma-trust",
-        "name": "The Trustee for Light Them Up (Roma) Trust"
-      }
     }
   ],
   "targets": [
-    {
-      "name": "The Trustee for THE BARRY WALDRON FAMILY TRUST",
-      "identifier_type": "ABN",
-      "identifier": "95 506 126 845",
-      "party_page": {
-        "id": "the-trustee-for-the-barry-waldron-family-trust",
-        "name": "The Trustee for THE BARRY WALDRON FAMILY TRUST"
-      }
-    },
     {
       "name": "SPEEDY COCKTAILS PTY LTD",
       "identifier_type": "ABN",
@@ -53,6 +44,15 @@
       "party_page": {
         "id": "speedy-cocktails-pty-ltd",
         "name": "Speedy Cocktails Pty Ltd"
+      }
+    },
+    {
+      "name": "The Trustee for THE BARRY WALDRON FAMILY TRUST",
+      "identifier_type": "ABN",
+      "identifier": "95 506 126 845",
+      "party_page": {
+        "id": "the-trustee-for-the-barry-waldron-family-trust",
+        "name": "The Trustee for THE BARRY WALDRON FAMILY TRUST"
       }
     }
   ],
@@ -93,7 +93,7 @@
     },
     {
       "date": "2026-06-19T12:00:00Z",
-      "title": "Timeline extended by 10 business days - following request by parties",
+      "title": "Timeline extended by 10 business days \u2013 following request by parties",
       "display_title": "Timeline extended by 10 business days \u2013 following request by parties",
       "phase": null
     },
@@ -137,7 +137,7 @@
       "date": "2026-08-11T12:00:00Z",
       "title": "Black Rhino - Club Hotel Motel Roma - Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
-      "url": "https://www.accc.gov.au/system/files/moderated_files/Black%20Rhino%20-%20Club%20Hotel%20Motel%20Roma%20-%20Phase%201%20Determination%20With%20Conditions%20-%20FINAL_0.pdf",
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Black%20Rhino%20-%20Club%20Hotel%20Motel%20Roma%20-%20Phase%201%20Determination%20With%20Conditions%20-%20FINAL_1.pdf",
       "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
       "determination_table_content": [
         {
@@ -605,7 +605,7 @@
           "text": "The notifying party may also apply to the ACCC for a determination that the acquisition would be of public benefit. Pursuant to section 51ABZP(2) of the Act, this application must be made no later than 21 calendar days after the ACCC made this determination."
         }
       ],
-      "url_gh": "/mergers/MN-90008/Black Rhino - Club Hotel Motel Roma - Phase 1 Determination With Conditions - FINAL_0.pdf",
+      "url_gh": "/mergers/MN-90008/Black Rhino - Club Hotel Motel Roma - Phase 1 Determination With Conditions - FINAL_1.pdf",
       "is_determination_event": true,
       "phase": "Phase 1"
     },
@@ -613,8 +613,8 @@
       "date": "2026-08-19T12:00:00Z",
       "title": "ACCC accepted s87B undertaking",
       "display_title": "ACCC accepted s87B undertaking",
-      "url": "https://www.accc.gov.au/system/files/moderated_files/Black%20Rhino%20Group%20%E2%80%93%20s87B%20Undertaking%20%E2%80%93%20Public%20version_2.pdf",
-      "url_gh": "/mergers/MN-90008/Black Rhino Group \u2013 s87B Undertaking \u2013 Public version_2.pdf",
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Black%20Rhino%20Group%20%E2%80%93%20s87B%20Undertaking%20%E2%80%93%20Public%20version_3.pdf",
+      "url_gh": "/mergers/MN-90008/Black Rhino Group \u2013 s87B Undertaking \u2013 Public version_3.pdf",
       "phase": null
     }
   ],

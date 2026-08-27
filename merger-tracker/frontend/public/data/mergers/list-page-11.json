@@ -3733,26 +3733,17 @@
     {
       "merger_id": "MN-70027",
       "merger_name": "Global Infrastructure Management and EQT led consortium - AES Corporation",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "has_conditions": false,
       "is_waiver": false,
       "under_appeal": false,
       "is_refiled": false,
       "effective_notification_datetime": "2026-07-30T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-08-26T12:00:00Z",
       "end_of_determination_period": "2026-09-10T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
-        {
-          "name": "GIP Granite Co-Underwrite, L.P.",
-          "identifier_type": null,
-          "identifier": "10651649 (Corporation registration number)",
-          "party_page": {
-            "id": "gip-granite-co-underwrite-l-p",
-            "name": "GIP Granite Co-Underwrite, L.P."
-          }
-        },
         {
           "name": "Horizon Parent, L.P.",
           "identifier_type": null,
@@ -3772,9 +3763,9 @@
           }
         },
         {
-          "name": "QIA Infrastructure Holding LLC",
+          "name": "Qatar Holding LLC",
           "identifier_type": null,
-          "identifier": "Qatar Financial Centre no. 01821",
+          "identifier": "CIK: 0001539025, Qatar Financial Centre no. 00004",
           "canonical": {
             "id": "qatar-investment-authority",
             "name": "Qatar Investment Authority"
@@ -3785,9 +3776,18 @@
           }
         },
         {
-          "name": "Qatar Holding LLC",
+          "name": "GIP Granite Co-Underwrite, L.P.",
           "identifier_type": null,
-          "identifier": "CIK: 0001539025, Qatar Financial Centre no. 00004",
+          "identifier": "10651649 (Corporation registration number)",
+          "party_page": {
+            "id": "gip-granite-co-underwrite-l-p",
+            "name": "GIP Granite Co-Underwrite, L.P."
+          }
+        },
+        {
+          "name": "QIA Infrastructure Holding LLC",
+          "identifier_type": null,
+          "identifier": "Qatar Financial Centre no. 01821",
           "canonical": {
             "id": "qatar-investment-authority",
             "name": "Qatar Investment Authority"
@@ -3811,21 +3811,21 @@
       ],
       "other_parties": [
         {
-          "name": "Fluence Energy Pty Ltd",
-          "identifier_type": null,
-          "identifier": "871304612 (I.R.S. Employer Identification No.)",
-          "party_page": {
-            "id": "fluence-energy-pty-ltd",
-            "name": "Fluence Energy Pty Ltd"
-          }
-        },
-        {
           "name": "5B HOLDINGS PTY. LTD.",
           "identifier_type": "ABN",
           "identifier": "97 606 402 699",
           "party_page": {
             "id": "5b-holdings-pty-ltd",
             "name": "5B Holdings Pty. Ltd."
+          }
+        },
+        {
+          "name": "Fluence Energy Pty Ltd",
+          "identifier_type": null,
+          "identifier": "871304612 (I.R.S. Employer Identification No.)",
+          "party_page": {
+            "id": "fluence-energy-pty-ltd",
+            "name": "Fluence Energy Pty Ltd"
           }
         }
       ],
