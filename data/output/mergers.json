@@ -32013,6 +32013,222 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/wsp-e2m",
+      "merger_name": "WSP - e2m",
+      "status": "Under assessment",
+      "merger_id": "MN-35038",
+      "effective_notification_datetime": "2026-08-26T12:00:00Z",
+      "original_notification_datetime": "2026-08-26T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-10-08T12:00:00Z",
+      "page_modified_datetime": "2026-08-27T11:58:43+10:00",
+      "consultation_response_due_date": "2026-09-03T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "WSP AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "80 078 004 798",
+          "canonical": {
+            "id": "wsp-australia-pty-limited",
+            "name": "Wsp Australia Pty Limited"
+          },
+          "party_page": {
+            "id": "wsp-australia-pty-limited",
+            "name": "Wsp Australia Pty Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "E2M PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "88 162 154 412",
+          "party_page": {
+            "id": "e2m-pty-ltd",
+            "name": "E2M Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "WSP AUSTRALIA HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "90 169 545 395",
+          "canonical": {
+            "id": "wsp-australia-pty-limited",
+            "name": "Wsp Australia Pty Limited"
+          },
+          "party_page": {
+            "id": "wsp-australia-pty-limited",
+            "name": "Wsp Australia Pty Limited"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6923",
+          "name": "Engineering Design and Engineering Consulting Services"
+        }
+      ],
+      "merger_description": "WSP Australia Pty Limited (**WSP**) is proposing to acquire 100% of the issued share capital of E2M Pty Ltd (**e2m**) (the **Acquisition**).\n\nWSP is a subsidiary of WSP Australia Holdings Pty Ltd (**WSP Holdings**) and ultimately controlled by WSP Global Inc (**WSP Global**), a corporation listed on the Toronto Stock Exchange.\n\nWSP provides services related to planning, engineering, quality assurance, and implementation of projects in the construction, energy, transport, infrastructure, building, and natural resource sectors in Australia. WSP's services in Australia include environmental consultancy services, including ecology services such as habitat and species assessment, environmental impact assessment, ecological monitoring, as well as permits/approvals and regulatory support.\n\ne2m is an Australian environmental consulting firm that specialises in ecology, biodiversity, environmental approvals, environmental analytics, and spatial information services, which assist clients to understand, assess, manage and mitigate environmental impacts while meeting regulatory requirements and project development objectives.",
+      "events": [
+        {
+          "date": "2026-08-27T12:00:00Z",
+          "title": "Phase 1 consultation",
+          "display_title": "Phase 1 consultation",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/WSP%20-%20e2m%20-%20Questionnaire.docx",
+          "url_gh": "/mergers/MN-35038/WSP - e2m - Questionnaire.pdf",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-08-26T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-01107",
+          "merger_name": "WSP - Geotechnical Testing and Interpretation",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "WSP AUSTRALIA PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "80 078 004 798",
+              "canonical": {
+                "id": "wsp-australia-pty-limited",
+                "name": "Wsp Australia Pty Limited"
+              },
+              "party_page": {
+                "id": "wsp-australia-pty-limited",
+                "name": "Wsp Australia Pty Limited"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "GEOTECHNICAL TESTING AND INTERPRETATION PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "14 616 849 766",
+              "party_page": {
+                "id": "geotechnical-testing-and-interpretation-pty-ltd",
+                "name": "Geotechnical Testing And Interpretation Pty Ltd"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-35001",
+          "merger_name": "WSP \u2013 TRC",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "WSP Global Inc.",
+              "identifier_type": null,
+              "identifier": "Corporation No.: 7748388",
+              "canonical": {
+                "id": "wsp-australia-pty-limited",
+                "name": "Wsp Australia Pty Limited"
+              },
+              "party_page": {
+                "id": "wsp-australia-pty-limited",
+                "name": "Wsp Australia Pty Limited"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "TRC Companies, Inc.",
+              "identifier_type": null,
+              "identifier": "",
+              "party_page": {
+                "id": "trc-companies-inc",
+                "name": "TRC Companies, Inc."
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-80024",
+          "merger_name": "Allianz \u2013 certain assets of nib\u2019s Australian travel insurance business",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "AWP Australia Pty Ltd",
+              "identifier_type": "ABN",
+              "identifier": "52 097 227 177",
+              "canonical": {
+                "id": "awp-australia-pty-ltd",
+                "name": "AWP Australia"
+              },
+              "party_page": {
+                "id": "awp-australia-pty-ltd",
+                "name": "AWP Australia"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "nib Travel Pty Ltd",
+              "identifier_type": "ABN",
+              "identifier": "48 132 902 713",
+              "canonical": {
+                "id": "nib",
+                "name": "nib"
+              },
+              "party_page": {
+                "id": "nib",
+                "name": "nib"
+              }
+            }
+          ]
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 19,
+        "range_business_days": [
+          16,
+          45
+        ],
+        "basis": "industry",
+        "anzsic_level": "group",
+        "anzsic_codes": [
+          "692"
+        ],
+        "sample_size": 9,
+        "estimated_at": "2026-08-27",
+        "method_version": 1
+      },
+      "pre_notification": {
+        "estimated_days": 29,
+        "min_days": null,
+        "max_days": 36,
+        "id_issued_estimated": "2026-07-28",
+        "id_issued_before": null,
+        "id_issued_after": "2026-07-21",
+        "min_days_witness": null,
+        "max_days_witness": "WA-35037",
+        "basis": "upper-bound-only",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/henkel-%E2%80%93-atp-adhesives-systems-group",
       "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
       "status": "Assessment completed",

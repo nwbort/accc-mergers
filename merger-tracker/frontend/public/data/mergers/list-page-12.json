@@ -3329,6 +3329,68 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/herron-todd-white-%E2%80%93-cja-lee-property-valuers-0"
+    },
+    {
+      "merger_id": "MN-35038",
+      "merger_name": "WSP - e2m",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-26T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-10-08T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "WSP AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "80 078 004 798",
+          "canonical": {
+            "id": "wsp-australia-pty-limited",
+            "name": "Wsp Australia Pty Limited"
+          },
+          "party_page": {
+            "id": "wsp-australia-pty-limited",
+            "name": "Wsp Australia Pty Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "E2M PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "88 162 154 412",
+          "party_page": {
+            "id": "e2m-pty-ltd",
+            "name": "E2M Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "WSP AUSTRALIA HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "90 169 545 395",
+          "canonical": {
+            "id": "wsp-australia-pty-limited",
+            "name": "Wsp Australia Pty Limited"
+          },
+          "party_page": {
+            "id": "wsp-australia-pty-limited",
+            "name": "Wsp Australia Pty Limited"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6923",
+          "name": "Engineering Design and Engineering Consulting Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/wsp-e2m"
     }
   ],
   "page": 12,

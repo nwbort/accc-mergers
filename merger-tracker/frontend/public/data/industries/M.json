@@ -9,7 +9,7 @@
       "code": "69",
       "name": "Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",
       "level": "subdivision",
-      "merger_count": 88
+      "merger_count": 89
     },
     {
       "code": "70",
@@ -19,6 +19,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-35038",
+      "merger_name": "WSP - e2m",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-26T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-10030",
       "merger_name": "Novonesis \u2013 Microbiogen",
@@ -1516,11 +1527,11 @@
       "determination_date": null
     }
   ],
-  "count": 136,
-  "phase_1_count": 54,
+  "count": 137,
+  "phase_1_count": 55,
   "phase_2_count": 3,
   "waiver_count": 79,
-  "active_count": 13,
+  "active_count": 14,
   "phase_duration": {
     "average_days": 32.391304347826086,
     "median_days": 27.0,

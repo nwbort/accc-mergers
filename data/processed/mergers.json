@@ -13831,6 +13831,63 @@
     "is_waiver": false
   },
   {
+    "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/wsp-e2m",
+    "merger_name": "WSP - e2m",
+    "status": "Under assessment",
+    "merger_id": "MN-35038",
+    "effective_notification_datetime": "2026-08-26T12:00:00Z",
+    "original_notification_datetime": "2026-08-26T12:00:00Z",
+    "stage": "Phase 1 - initial assessment",
+    "end_of_determination_period": "2026-10-08T12:00:00Z",
+    "page_modified_datetime": "2026-08-27T11:58:43+10:00",
+    "consultation_response_due_date": "2026-09-03T12:00:00Z",
+    "acquirers": [
+      {
+        "name": "WSP AUSTRALIA PTY LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "80 078 004 798"
+      }
+    ],
+    "targets": [
+      {
+        "name": "E2M PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "88 162 154 412"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "WSP AUSTRALIA HOLDINGS PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "90 169 545 395"
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "6923",
+        "name": "Engineering Design and Engineering Consulting Services"
+      }
+    ],
+    "merger_description": "WSP Australia Pty Limited (**WSP**) is proposing to acquire 100% of the issued share capital of E2M Pty Ltd (**e2m**) (the **Acquisition**).\n\nWSP is a subsidiary of WSP Australia Holdings Pty Ltd (**WSP Holdings**) and ultimately controlled by WSP Global Inc (**WSP Global**), a corporation listed on the Toronto Stock Exchange.\n\nWSP provides services related to planning, engineering, quality assurance, and implementation of projects in the construction, energy, transport, infrastructure, building, and natural resource sectors in Australia. WSP's services in Australia include environmental consultancy services, including ecology services such as habitat and species assessment, environmental impact assessment, ecological monitoring, as well as permits/approvals and regulatory support.\n\ne2m is an Australian environmental consulting firm that specialises in ecology, biodiversity, environmental approvals, environmental analytics, and spatial information services, which assist clients to understand, assess, manage and mitigate environmental impacts while meeting regulatory requirements and project development objectives.",
+    "events": [
+      {
+        "date": "2026-08-27T12:00:00Z",
+        "title": "Phase 1 consultation",
+        "display_title": "Phase 1 consultation",
+        "is_questionnaire_event": true,
+        "url": "https://www.accc.gov.au/system/files/moderated_files/WSP%20-%20e2m%20-%20Questionnaire.docx",
+        "url_gh": "/mergers/MN-35038/WSP - e2m - Questionnaire.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2026-08-26T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": false
+  },
+  {
     "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/henkel-%E2%80%93-atp-adhesives-systems-group",
     "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
     "status": "Assessment completed",

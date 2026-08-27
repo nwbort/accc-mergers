@@ -202,6 +202,21 @@
       "count": 3
     },
     {
+      "acquirer_name": "Wsp Australia Pty Limited",
+      "canonical_id": "wsp-australia-pty-limited",
+      "anzsic_code": "692",
+      "anzsic_name": "Architectural, Engineering and Technical Services",
+      "merger_ids": [
+        "MN-01107",
+        "MN-35038"
+      ],
+      "dates": [
+        "2026-06-26T12:00:00Z",
+        "2026-08-26T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
       "acquirer_name": "Coles Group",
       "canonical_id": "coles",
       "anzsic_code": "412",
@@ -607,5 +622,5 @@
       "count": 2
     }
   ],
-  "count": 38
+  "count": 39
 }

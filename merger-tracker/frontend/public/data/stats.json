@@ -1,10 +1,10 @@
 {
-  "total_mergers": 237,
+  "total_mergers": 238,
   "total_waivers": 350,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 191,
-    "Under assessment": 42,
+    "Under assessment": 43,
     "Assessment ceased": 4
   },
   "by_determination": {
@@ -87,15 +87,25 @@
       "count": 18
     },
     {
-      "name": "Supermarket and Grocery Stores",
-      "count": 17
+      "name": "Engineering Design and Engineering Consulting Services",
+      "count": 18
     },
     {
-      "name": "Engineering Design and Engineering Consulting Services",
+      "name": "Supermarket and Grocery Stores",
       "count": 17
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-35038",
+      "merger_name": "WSP - e2m",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-26T12:00:00Z",
+      "page_modified_datetime": "2026-08-27T11:58:43+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-75036",
       "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-17T12:00:00Z",
       "page_modified_datetime": "2026-08-21T11:37:35+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-45024",
-      "merger_name": "OEConnection - Epyx",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-15T12:00:00Z",
-      "page_modified_datetime": "2026-08-21T10:51:28+10:00",
       "is_waiver": false,
       "is_refiled": false
     }
