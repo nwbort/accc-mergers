@@ -49,7 +49,8 @@ Top level:
 ├── functions/                # Cloudflare Pages Functions (must stay at root)
 ├── wrangler.toml             # Cloudflare *Pages* project config (must stay at root)
 ├── docs/                     # Deployment, walkthrough, ADRs, accessibility
-└── slug-cases.json           # Golden fixture pinning slugify() across all 3 impls
+└── fixtures/                 # Cross-language test fixtures
+    └── slug-cases.json       # Golden fixture pinning slugify() across all 3 impls
 ```
 
 Frontend:
@@ -355,6 +356,6 @@ load can never empty a directory.
 | `weekly-digest.yml` | Weekly (Sunday, Sydney time), manual | Generate `digest.json` |
 | `send-weekly-email.yml` | Manual (schedule currently disabled) | Send the weekly digest email via the Cloudflare Worker |
 | `test.yml` | Manual | Run the Python test suite |
-| `frontend-test.yml` | Pull requests touching `frontend/**`, `functions/**` or `slug-cases.json`, manual | Run the frontend test suite |
+| `frontend-test.yml` | Pull requests touching `frontend/**`, `functions/**` or `fixtures/slug-cases.json`, manual | Run the frontend test suite |
 | `check-deploy-assets.yml` | Push touching `data/raw/matters/**`, `frontend/public/**` or the check itself, manual | Fail if any deploy asset exceeds Cloudflare Pages' 25 MiB per-file limit |
 | `workers-test.yml` | Manual | For each directory under `workers/`: `npm ci`, `npm test --if-present`, then `npm run deploy:dry` to bundle the Worker and validate its `wrangler.toml`. Discovers Workers by glob, so a new one is covered automatically |

@@ -175,7 +175,7 @@ Manual-only (`workflow_dispatch`). Runs `pytest scripts/tests/`.
 ### `frontend-test.yml` — Frontend tests
 
 Runs the frontend test suite on pull requests touching
-`frontend/**`, `functions/**` or `slug-cases.json`, and on
+`frontend/**`, `functions/**` or `fixtures/slug-cases.json`, and on
 demand (`workflow_dispatch`).
 
 ### `workers-test.yml` — Cloudflare Worker tests

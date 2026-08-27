@@ -15,7 +15,9 @@ import { slugify as fnSlugify, mergerPath as fnMergerPath } from '../../../../fu
 // level up) rather than an import, so Vite's module-graph fs allowlist and
 // JSON-import handling don't come into it.
 const repoRoot = resolve(process.cwd(), '..');
-const fixture = JSON.parse(readFileSync(resolve(repoRoot, 'slug-cases.json'), 'utf8'));
+const fixture = JSON.parse(
+  readFileSync(resolve(repoRoot, 'fixtures', 'slug-cases.json'), 'utf8'),
+);
 const cases = fixture.cases;
 
 describe('slugify (SPA)', () => {
