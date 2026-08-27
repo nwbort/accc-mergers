@@ -45,7 +45,7 @@ from static_data.loaders import load_tribunal_appeals
 
 OUTPUT_PATH = (
     Path(__file__).parent.parent
-    / 'merger-tracker' / 'frontend' / 'public' / 'data' / 'digest.json'
+    / 'frontend' / 'public' / 'data' / 'digest.json'
 )
 
 # Dated snapshots of each week's digest. Reading last week's snapshot from

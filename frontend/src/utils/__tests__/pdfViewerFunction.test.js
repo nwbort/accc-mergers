@@ -3,7 +3,7 @@ import { describe, it, expect } from 'vitest';
 // The Pages Function that serves /mergers/{MN,WA}-XXXXX/<file>.pdf. Cloudflare
 // only invokes onRequest, so exercising it here means faking the two pieces of
 // the runtime it touches: the ASSETS binding and context.next().
-import { onRequest } from '../../../../../functions/mergers/[matter]/[[path]].js';
+import { onRequest } from '../../../../functions/mergers/[matter]/[[path]].js';
 
 const PDF_PATH = '/mergers/MN-01068/Affidavit of Benjamin James Welk.pdf';
 const SOURCE_URL =

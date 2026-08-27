@@ -7,14 +7,14 @@ import { slugify, mergerPath, industryPath, partyPath } from '../slug.js';
 // The inline copy the Pages Function ships to social/OG bots. It exports
 // slugify/mergerPath solely so this test can prove it hasn't drifted from the
 // SPA copy — see the note in that file.
-import { slugify as fnSlugify, mergerPath as fnMergerPath } from '../../../../../functions/mergers/[matter]/[[path]].js';
+import { slugify as fnSlugify, mergerPath as fnMergerPath } from '../../../../functions/mergers/[matter]/[[path]].js';
 
 // Golden fixture shared with scripts/tests/test_slug.py — the single source of
 // truth that pins all three slugify implementations together. Read via node fs
-// (Vitest runs with the frontend project dir as cwd, so the repo root is two
-// levels up) rather than an import, so Vite's module-graph fs allowlist and
+// (Vitest runs with the frontend project dir as cwd, so the repo root is one
+// level up) rather than an import, so Vite's module-graph fs allowlist and
 // JSON-import handling don't come into it.
-const repoRoot = resolve(process.cwd(), '..', '..');
+const repoRoot = resolve(process.cwd(), '..');
 const fixture = JSON.parse(readFileSync(resolve(repoRoot, 'slug-cases.json'), 'utf8'));
 const cases = fixture.cases;
 

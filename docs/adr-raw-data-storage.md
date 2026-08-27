@@ -73,7 +73,7 @@ verified against the current code:
    which runs `bash scripts/build.sh` from the repo root.
 3. `scripts/build.sh` runs `npm ci && npm run build`, then **copies every
    `*.pdf` under `data/raw/matters/` into
-   `merger-tracker/frontend/dist/mergers/`**, preserving the per-matter
+   `frontend/dist/mergers/`**, preserving the per-matter
    directory structure. The PDFs thereby become static assets of the deployed
    site at `/mergers/{id}/{file}.pdf`. HTML and DOCX files are *not* copied —
    only PDFs ever ship.
@@ -93,7 +93,7 @@ build time (Option A) or replace `env.ASSETS.fetch` with a different origin
 (Option B).
 
 (The same function also uses `env.ASSETS.fetch` to read merger JSON for bot
-OG pages; that data comes from `merger-tracker/frontend/public/data/` and is
+OG pages; that data comes from `frontend/public/data/` and is
 unaffected by any option here.)
 
 ### Everything else that touches `data/raw`

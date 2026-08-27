@@ -31,7 +31,7 @@ def write(path, size):
 def make_tree(root):
     """A repo-shaped tree with both deployment sources present."""
     (root / "data/raw/matters/MN-1").mkdir(parents=True)
-    (root / "merger-tracker/frontend/public").mkdir(parents=True)
+    (root / "frontend/public").mkdir(parents=True)
     return root
 
 
@@ -47,10 +47,10 @@ class TestFindOversized:
         # Vite copies publicDir into dist verbatim, so anything oversized in
         # there breaks the deploy just as a PDF would.
         make_tree(tmp_path)
-        write(tmp_path / "merger-tracker/frontend/public/huge.png", 26 * MIB)
+        write(tmp_path / "frontend/public/huge.png", 26 * MIB)
 
         assert find_oversized(tmp_path) == [
-            ("merger-tracker/frontend/public/huge.png", 26 * MIB)
+            ("frontend/public/huge.png", 26 * MIB)
         ]
 
     def test_ignores_non_pdfs_under_the_matters_dir(self, tmp_path):
@@ -92,7 +92,7 @@ class TestFindOversized:
         # into dist — the check and the workflow's paths filter both depend on it.
         assert DEPLOY_SOURCES == (
             ("data/raw/matters", "*.pdf"),
-            ("merger-tracker/frontend/public", "*"),
+            ("frontend/public", "*"),
         )
 
 

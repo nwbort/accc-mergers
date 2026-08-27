@@ -1,5 +1,5 @@
 {
-  "_comment": "Golden fixture pinning the slugify() algorithm across all three hand-synced implementations: merger-tracker/frontend/src/utils/slug.js (SPA links + canonical + prerender), scripts/slug.py (sitemap), and the inline copy in functions/mergers/[matter]/[[path]].js (OG handler). Exercised by merger-tracker/frontend/src/utils/__tests__/slug.test.js and scripts/tests/test_slug.py. Every {name -> slug} pair must hold in every implementation; if you change the algorithm, update all three and regenerate this file.",
+  "_comment": "Golden fixture pinning the slugify() algorithm across all three hand-synced implementations: frontend/src/utils/slug.js (SPA links + canonical + prerender), scripts/slug.py (sitemap), and the inline copy in functions/mergers/[matter]/[[path]].js (OG handler). Exercised by frontend/src/utils/__tests__/slug.test.js and scripts/tests/test_slug.py. Every {name -> slug} pair must hold in every implementation; if you change the algorithm, update all three and regenerate this file.",
   "cases": [
     {
       "name": "Asahi – Warehouse site on Tilburn Rd, Deer Park (Vic)",

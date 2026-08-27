@@ -26,12 +26,12 @@ at the expense of the merger pages that matter. Included are:
 * every ANZSIC node with at least one merger somewhere in its subtree.
 
 Excluded pages are still built, prerendered with their own title/canonical
-by ``merger-tracker/frontend/prerender.js``, linked from merger detail
+by ``frontend/prerender.js``, linked from merger detail
 pages and served normally — they are simply not advertised for crawling.
 They are deliberately NOT ``noindex``: each is a factually distinct record
 and can still answer a long-tail "was <company> acquired" query.
 
-Output: merger-tracker/frontend/public/sitemap.xml
+Output: frontend/public/sitemap.xml
 """
 
 from datetime import datetime, timezone
@@ -47,7 +47,7 @@ from static_data.outputs.parties import build_party_pages
 
 BASE_URL = "https://mergers.fyi"
 REPO_ROOT = Path(__file__).parent.parent
-SITEMAP_OUT = REPO_ROOT / "merger-tracker" / "frontend" / "public" / "sitemap.xml"
+SITEMAP_OUT = REPO_ROOT / "frontend" / "public" / "sitemap.xml"
 
 TODAY = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 

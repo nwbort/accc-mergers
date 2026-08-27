@@ -19,9 +19,9 @@ Scrapes ACCC → data/raw/matters/*.html
 Extracts → data/processed/mergers.json
     ↓
 Generates static data files:
-  - merger-tracker/frontend/public/data/
+  - frontend/public/data/
   - data/output/ (CLI bundle)
-  - merger-tracker/frontend/public/feed.xml (RSS)
+  - frontend/public/feed.xml (RSS)
     ↓
 Commits to main branch
     ↓
@@ -39,12 +39,47 @@ The build script runs `npm ci && npm run build`, then copies all PDFs from `data
 
 ### Dashboard settings
 
-These settings must still be configured in the Cloudflare Pages dashboard:
+These settings live only in the Cloudflare Pages dashboard — nothing in the
+repo sets them:
 
 - **Framework preset**: None
 - **Build command**: `bash scripts/build.sh`
-- **Build output directory**: `merger-tracker/frontend/dist`
 - **Root directory**: `/` (repo root)
+
+The **build output directory** is *not* one of them: `pages_build_output_dir`
+in the root [`wrangler.toml`](../wrangler.toml) is the source of truth, and the
+dashboard shows that field read-only. Change it in the repo, not the dashboard.
+
+#### Build watch paths
+
+Under **Settings → Build → Build watch paths**. Include paths:
+
+```
+frontend/*
+functions/*
+data/raw/matters/*
+scripts/build.sh
+wrangler.toml
+```
+
+Between them these cover everything that reaches the deployed output: the SPA
+and its committed JSON (`frontend/`), the Pages Function serving
+`/mergers/{matter}/*.pdf` (`functions/`), the PDFs `build.sh` copies into
+`dist/mergers/` (`data/raw/matters/`), and the two files that decide how the
+build itself runs.
+
+Two things to know before editing this list:
+
+- A push matching none of the include paths **skips the build silently** —
+  no failed deployment, no warning, just no deploy. A stale entry here
+  therefore fails in the worst possible way, and data-pipeline commits keep
+  deploying via `data/raw/matters/*` while a purely frontend change quietly
+  does not. Re-check this list whenever a top-level directory is renamed.
+- Cloudflare's wildcard is not an ordinary glob: `*` matches zero or more
+  characters **including `/`**, so `frontend/*` already covers
+  `frontend/src/App.jsx` and `frontend/public/data/stats.json`. There is no
+  need for the `dir`, `dir/*`, `dir/**` triples that accumulate if you assume
+  otherwise, and `**` is not documented as supported.
 
 ### Custom domain
 
@@ -140,7 +175,7 @@ Manual-only (`workflow_dispatch`). Runs `pytest scripts/tests/`.
 ### `frontend-test.yml` — Frontend tests
 
 Runs the frontend test suite on pull requests touching
-`merger-tracker/frontend/**`, `functions/**` or `slug-cases.json`, and on
+`frontend/**`, `functions/**` or `slug-cases.json`, and on
 demand (`workflow_dispatch`).
 
 ### `workers-test.yml` — Cloudflare Worker tests
@@ -159,7 +194,7 @@ The tribunal site is behind Cloudflare's managed challenge, so the scraper drive
 
 ## Static data files
 
-All data files are pre-generated into `merger-tracker/frontend/public/data/`:
+All data files are pre-generated into `frontend/public/data/`:
 
 | File | Description |
 |------|-------------|
@@ -178,7 +213,7 @@ All data files are pre-generated into `merger-tracker/frontend/public/data/`:
 | `similar_mergers.json` | Similarity pairs between mergers |
 
 Additional output:
-- `merger-tracker/frontend/public/feed.xml` — RSS feed
+- `frontend/public/feed.xml` — RSS feed
 - `data/output/cli/` — CLI build inputs. Only `cli-manifest.json` is tracked
   (version counter + bundle checksum); `cli-bundle.json` and
   `cli-merger-manifest.json` are gitignored and regenerated on demand.
@@ -227,7 +262,7 @@ New matters are still added to `tribunal_appeals.json` by hand (tribunal number,
 ## Local development
 
 ```bash
-cd merger-tracker/frontend
+cd frontend
 npm install
 npm run dev
 ```
@@ -249,15 +284,15 @@ python scripts/generate_static_data.py
 python scripts/generate_rss_feed.py
 
 # 4. Run frontend
-cd merger-tracker/frontend
+cd frontend
 npm run dev
 ```
 
 ## Business day calculations
 
 Business day calculations happen client-side using:
-- `merger-tracker/frontend/src/utils/dates.js`
-- `merger-tracker/frontend/src/data/act-public-holidays.json`
+- `frontend/src/utils/dates.js`
+- `frontend/src/data/act-public-holidays.json`
 
 The static data includes raw dates; the frontend calculates business days at render time.
 
@@ -286,7 +321,7 @@ The static data includes raw dates; the frontend calculates business days at ren
 
 1. Check `pipeline.yml` workflow completed successfully
 2. Verify `data/processed/mergers.json` was updated (check git history)
-3. Verify static data files were regenerated in `merger-tracker/frontend/public/data/`
+3. Verify static data files were regenerated in `frontend/public/data/`
 4. Check Cloudflare Pages deployment succeeded
 
 ### Build failures

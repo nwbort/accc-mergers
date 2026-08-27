@@ -10,7 +10,7 @@ This codebase is a fully static web application that tracks and publishes ACCC m
 The three major layers are:
 
 1. **Data pipeline** — Bash + Python scripts in `scripts/` that scrape, parse, and generate JSON
-2. **Frontend** — React 19 SPA in `merger-tracker/frontend/src/` that reads the JSON and renders the UI
+2. **Frontend** — React 19 SPA in `frontend/src/` that reads the JSON and renders the UI
 3. **Automation** — GitHub Actions workflows in `.github/workflows/` that schedule and orchestrate the pipeline
 
 ## The Data Pipeline
@@ -377,7 +377,7 @@ sed -n '112,152p' scripts/generate_static_data.py
     print("\nDone!")
 ```
 
-The output files are written directly into `merger-tracker/frontend/public/data/`, which is the Vite project's static assets folder. Because these files are committed to git, Cloudflare Pages picks them up on every push and serves them without any build step or server-side rendering.
+The output files are written directly into `frontend/public/data/`, which is the Vite project's static assets folder. Because these files are committed to git, Cloudflare Pages picks them up on every push and serves them without any build step or server-side rendering.
 
 Large collections (mergers, timeline events) are paginated: 50 mergers per list page, 100 events per timeline page. This keeps initial page loads fast — the frontend only fetches the first page and loads more on demand.
 
@@ -397,7 +397,7 @@ The entry point (`main.jsx`) mounts the React root in strict mode. `App.jsx` wra
 The keyboard shortcut system lives inside `AppContent` (the inner component) rather than at the provider level so it can reference React Router's navigation context.
 
 ```bash
-sed -n '36,50p' merger-tracker/frontend/src/App.jsx
+sed -n '36,50p' frontend/src/App.jsx
 ```
 
 ```output
@@ -429,7 +429,7 @@ Every page that needs JSON uses the `useFetchData` hook. It provides three thing
 3. **SPA 404 detection** — Cloudflare Pages serves `index.html` for any unknown path (to support client-side routing). That means a missing `.json` file returns HTTP 200 with HTML, which `JSON.parse` rejects with a `SyntaxError`. The hook catches this and converts it to an HTTP 404 error so callers can distinguish "file missing" from real network errors.
 
 ```bash
-sed -n '25,35p' merger-tracker/frontend/src/utils/dataCache.js
+sed -n '25,35p' frontend/src/utils/dataCache.js
 ```
 
 ```output
@@ -438,7 +438,7 @@ sed -n '25,35p' merger-tracker/frontend/src/utils/dataCache.js
 ```
 
 ```bash
-cat merger-tracker/frontend/src/utils/dataCache.js
+cat frontend/src/utils/dataCache.js
 ```
 
 ```output
@@ -475,7 +475,7 @@ export const dataCache = {
 All JSON file paths are defined in one place. Each endpoint is either a static string (e.g. `/data/stats.json`) or a function that produces a path from an ID (e.g. `mergerDetail(id) => `/data/mergers/${id}.json``). This means a change to the file naming convention only needs to happen in `config.js`.
 
 ```bash
-cat merger-tracker/frontend/src/config.js
+cat frontend/src/config.js
 ```
 
 ```output
@@ -529,7 +529,7 @@ The context then synthesises upcoming events directly from the individual merger
 Events are identified by a stable key: `${merger_id}_${date}_${display_title}`. When a merger is first tracked, all its current events are immediately marked as seen (via `newlyTrackedIds`), so only events that appear *after* tracking began show as new.
 
 ```bash
-sed -n '12,17p' merger-tracker/frontend/src/context/TrackingContext.jsx
+sed -n '12,17p' frontend/src/context/TrackingContext.jsx
 ```
 
 ```output
@@ -634,7 +634,7 @@ ACCC website
                       └─ generate_static_data.py
                            ├─ Enriches mergers (phase determinations, BD dates)
                            ├─ Links related + similar mergers
-                           └─ merger-tracker/frontend/public/data/*.json (committed)
+                           └─ frontend/public/data/*.json (committed)
                                 └─ Cloudflare Pages auto-deploy on git push
                                      └─ React SPA reads /data/*.json at runtime
                                           ├─ useFetchData hook + in-memory cache

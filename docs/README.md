@@ -12,5 +12,5 @@ This directory contains all project documentation for the ACCC Mergers Tracker.
 ## Related Documentation
 
 - [Main README](../README.md) - Project overview, features, and quick start
-- [Frontend README](../merger-tracker/README.md) - Frontend-specific documentation
+- [Frontend README](../frontend/README.md) - Frontend-specific documentation
 - [Workers README](../workers/README.md) - Index of the standalone Cloudflare Workers and their layout convention

@@ -24,7 +24,7 @@ A web application for tracking and analysing ACCC merger reviews. Provides an in
 
 ## Quick start
 ```bash
-cd merger-tracker/frontend
+cd frontend
 npm install
 npm run dev
 ```
@@ -33,7 +33,7 @@ The dev server runs at `http://localhost:5173` and serves static JSON from `publ
 
 ## Project structure
 ```
-merger-tracker/frontend/
+frontend/
 ├── public/
 │   └── data/          # Static JSON data files
 ├── src/

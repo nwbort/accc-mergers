@@ -105,7 +105,7 @@ unknown" when you only know the advisor worked on the deal.
 
 Unlike `commentary.py`, this data is **backend only**: it is deliberately
 not consumed by `generate_static_data.py` and is never published to
-`merger-tracker/frontend/public/data`, so it is not loaded by the
+`frontend/public/data`, so it is not loaded by the
 front-end.
 
 Because this repo is **public**, the advisor data is stored **encrypted at

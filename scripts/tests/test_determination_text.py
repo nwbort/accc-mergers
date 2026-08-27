@@ -1,7 +1,7 @@
 """Tests for determination_text cleaning heuristics.
 
 These mirror the JS heuristics in
-merger-tracker/frontend/src/components/DeterminationExplanationSection.jsx.
+frontend/src/components/DeterminationExplanationSection.jsx.
 """
 
 import os
