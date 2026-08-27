@@ -139,17 +139,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-30030",
-      "merger_name": "Eli Lilly and Company / AtaiBeckley Inc.",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-08-05T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-75035",
       "merger_name": "Johns Lyng Group \u2013 C&M Build Group",
       "is_waiver": false,
@@ -159,6 +148,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-08-05T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-30030",
+      "merger_name": "Eli Lilly - AtaiBeckley Inc.",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-05T12:00:00Z",
+      "determination_date": "2026-08-27T12:00:00Z"
     },
     {
       "merger_id": "MN-70027",
@@ -1111,13 +1111,13 @@
   "phase_1_count": 24,
   "phase_2_count": 0,
   "waiver_count": 74,
-  "active_count": 12,
+  "active_count": 11,
   "phase_duration": {
-    "average_days": 25.583333333333332,
-    "median_days": 24.5,
-    "average_business_days": 17.583333333333332,
-    "median_business_days": 16.5,
-    "completed_count": 12
+    "average_days": 25.307692307692307,
+    "median_days": 24,
+    "average_business_days": 17.46153846153846,
+    "median_business_days": 16,
+    "completed_count": 13
   },
   "waiver_duration": {
     "average_days": 19.56756756756757,

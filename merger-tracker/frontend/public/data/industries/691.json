@@ -41,14 +41,14 @@
     },
     {
       "merger_id": "MN-30030",
-      "merger_name": "Eli Lilly and Company / AtaiBeckley Inc.",
+      "merger_name": "Eli Lilly - AtaiBeckley Inc.",
       "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
+      "status": "Assessment completed",
+      "determination": "Approved",
       "has_conditions": false,
       "phase": "Phase 1",
       "notification_date": "2026-08-05T12:00:00Z",
-      "determination_date": null
+      "determination_date": "2026-08-27T12:00:00Z"
     },
     {
       "merger_id": "MN-90027",
@@ -220,13 +220,13 @@
   "phase_1_count": 12,
   "phase_2_count": 0,
   "waiver_count": 5,
-  "active_count": 2,
+  "active_count": 1,
   "phase_duration": {
-    "average_days": 24.9,
-    "median_days": 24.0,
-    "average_business_days": 16.5,
-    "median_business_days": 16.5,
-    "completed_count": 10
+    "average_days": 24.636363636363637,
+    "median_days": 23,
+    "average_business_days": 16.454545454545453,
+    "median_business_days": 16,
+    "completed_count": 11
   },
   "waiver_duration": {
     "average_days": 20.8,
