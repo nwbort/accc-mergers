@@ -1,0 +1,16 @@
+{
+  "name": "feedback-admin",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Cloudflare Worker — private read-only viewer for feedback captured by mergers-digest-signup",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "deploy:dry": "wrangler deploy --dry-run",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^4.67.0"
+  }
+}

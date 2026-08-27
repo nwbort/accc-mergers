@@ -4,6 +4,12 @@
 that run on the same project that serves the React SPA. They intercept
 specific URLs before falling through to the static asset bundle.
 
+These are **not** standalone Workers — those live under
+[`workers/`](../workers/), one directory each. This directory has to stay at
+the repository root because Pages resolves `functions/` relative to the build
+root (see the root `wrangler.toml`), and because the frontend's slug-sync test
+imports `mergers/[matter]/[[path]].js` by a root-relative path.
+
 ## Routes
 
 | Path | File | Behaviour |

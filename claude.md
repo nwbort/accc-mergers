@@ -20,19 +20,35 @@ Fully static — no backend server. Cloudflare Pages serves the React SPA plus g
 - `scrape.sh` → `extract_mergers.py` → `generate_static_data.py`
 - Dependencies: beautifulsoup4, requests, pdfplumber, markdownify
 
-### Cloudflare Worker (`cloudflare-worker/`)
+### Cloudflare Workers (`workers/`)
 
-- Handles digest email signup form submissions
-- Validates Cloudflare Turnstile tokens
-- Deployed separately via wrangler
+One directory per Worker, each named after the Worker it deploys (the directory name matches `name` in its `wrangler.toml`). All are deployed separately via wrangler — see [`workers/README.md`](workers/README.md).
 
-### ACCC Register Watcher (`accc-register-watcher/`)
+- `workers/mergers-digest-signup/` — public HTTP API: digest email signup (validates Cloudflare Turnstile tokens, adds to a Resend audience) and `POST /feedback` writes to the `mergers-feedback` D1 database
+- `workers/accc-register-watcher/` — Email Worker bound to a mailbox subscribed to the ACCC's register update mailing list; fires a `repository_dispatch` (`new_merger_detected`) to trigger `pipeline.yml` immediately on each email. See its README for the Cloudflare Email Routing setup
+- `workers/feedback-admin/` — private read-only viewer over the same feedback D1 database, gated behind an `x-secret` header
 
-- Cloudflare Email Worker bound to a mailbox subscribed to the ACCC's register update mailing list
-- Fires a `repository_dispatch` (`new_merger_detected`) to trigger `pipeline.yml` immediately on each email
-- Deployed separately via wrangler; see its README for the Cloudflare Email Routing setup
+### Cloudflare Pages Functions (`functions/`)
+
+Run on the Pages project alongside the SPA, not as standalone Workers. Pages requires this directory at the build root, so it stays out of `workers/`. Currently just the PDF viewer wrapper for `/mergers/{matter}/*.pdf`.
 
 ## Project Structure
+
+Top level:
+
+```
+.
+├── merger-tracker/frontend/  # React SPA (the deployed site)
+├── scripts/                  # Python data pipeline + its tests
+├── data/                     # Scraped/processed data (the "database")
+├── workers/                  # Standalone Cloudflare Workers, one dir per Worker
+├── functions/                # Cloudflare Pages Functions (must stay at root)
+├── wrangler.toml             # Cloudflare *Pages* project config (must stay at root)
+├── docs/                     # Deployment, walkthrough, ADRs, accessibility
+└── slug-cases.json           # Golden fixture pinning slugify() across all 3 impls
+```
+
+Frontend:
 
 ```
 merger-tracker/frontend/src/
@@ -177,6 +193,14 @@ python scripts/generate_static_data.py
 
 # Tests
 python -m pytest scripts/tests/
+
+# Cloudflare Workers (same scripts in every workers/* directory)
+cd workers/<worker-name>   # dir name == deployed Worker name
+npm install
+npm run dev          # local wrangler dev server
+npm run deploy:dry   # build without uploading
+npm run deploy       # production deploy
+npm run tail         # stream live logs
 ```
 
 ## Code Conventions

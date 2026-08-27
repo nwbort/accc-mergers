@@ -8,7 +8,10 @@ frontend:
 - `POST /feedback` — stores feedback submissions in a Cloudflare D1
   database.
 
-The corresponding admin viewer lives in [`../feedback-admin/`](../feedback-admin/).
+The corresponding admin viewer lives in [`../feedback-admin/`](../feedback-admin/),
+which reads from the same `mergers-feedback` D1 database.
+
+See [`../README.md`](../README.md) for the index of all Workers.
 
 ## Setup
 
