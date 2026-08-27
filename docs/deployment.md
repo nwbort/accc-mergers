@@ -291,6 +291,6 @@ The static data includes raw dates; the frontend calculates business days at ren
 
 ### Build failures
 
-1. Check Node.js version matches `.nvmrc` (20.19.0)
+1. Check Node.js version matches `.nvmrc` (24.18.0)
 2. Run `npm install` locally to verify dependencies
 3. Check for errors in build output

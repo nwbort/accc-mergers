@@ -8,7 +8,7 @@ Fully static — no backend server. Cloudflare Pages serves the React SPA plus g
 
 ### Frontend (`merger-tracker/frontend/`)
 
-- **React 19** SPA with **React Router 7** for client-side routing
+- **React 19** SPA with **React Router 8** for client-side routing
 - **Vite 7** build tool, **Tailwind CSS 3** for styling
 - **Chart.js 4** for data visualizations
 - **date-fns 4** for date manipulation
@@ -16,9 +16,11 @@ Fully static — no backend server. Cloudflare Pages serves the React SPA plus g
 
 ### Data Pipeline (`scripts/`)
 
-- **Python 3.10** scripts for scraping, extracting, and generating data
+- **Python 3.11/3.12** scripts for scraping, extracting, and generating data
+  (`test.yml` pins 3.11, the pipeline workflows 3.12)
 - `scrape.sh` → `extract_mergers.py` → `generate_static_data.py`
-- Dependencies: beautifulsoup4, requests, pdfplumber, markdownify
+- Dependencies (`scripts/requirements.txt`): beautifulsoup4, lxml, requests,
+  markdownify, pdfplumber, cryptography, pytesseract
 
 ### Cloudflare Workers (`workers/`)
 
@@ -58,11 +60,12 @@ merger-tracker/frontend/src/
 ├── pages/                # Route components
 │   ├── Dashboard.jsx     # /
 │   ├── Mergers.jsx       # /mergers
-│   ├── MergerDetail.jsx  # /mergers/:id
+│   ├── MergerDetail.jsx  # /mergers/:id and /mergers/:id/:slug
 │   ├── Timeline.jsx      # /timeline
 │   ├── Industries.jsx    # /industries
-│   ├── IndustryDetail.jsx # /industries/:code
-│   ├── PartyDetail.jsx   # /parties/:id
+│   ├── IndustryDetail.jsx # /industries/:code and /industries/:code/:slug
+│   ├── Parties.jsx       # /parties (not in the navbar; reachable from the command palette)
+│   ├── PartyDetail.jsx   # /parties/:id and /parties/:id/:slug
 │   ├── Commentary.jsx    # /commentary
 │   ├── Digest.jsx        # /digest
 │   ├── Analysis.jsx      # /analysis
@@ -73,25 +76,40 @@ merger-tracker/frontend/src/
 │   ├── PrivacyPolicy.jsx # /privacy
 │   ├── Feedback.jsx      # /feedback
 │   └── NotFound.jsx      # * (404)
-├── components/           # Reusable UI
-│   ├── Navbar.jsx, Footer.jsx, ErrorBoundary.jsx, ErrorCard.jsx, SEO.jsx, ScrollToTop.jsx
-│   ├── StatusBadge.jsx, WaiverBadge.jsx, NewBadge.jsx, StatCard.jsx, LoadingSpinner.jsx
-│   ├── CollapsibleCard.jsx, CardCollapseGrid.jsx, ShowMoreDivider.jsx
-│   ├── UpcomingEventsTimeline.jsx, RecentDeterminationsCards.jsx, RecentMergersCards.jsx
-│   ├── MergerTimeline.jsx, Phase2Timeline.jsx, Phase2NoticeMattersSection.jsx
-│   ├── BusinessDayProgress.jsx, PhaseDurationComparison.jsx, PreNotificationEstimate.jsx
-│   ├── DeterminationExplanationSection.jsx, QuestionnaireSection.jsx
-│   ├── IndustryTreemap.jsx, IndustryMergerGroups.jsx
-│   ├── NotificationPanel.jsx, BellIcon.jsx
-│   ├── CommandPalette.jsx, KeyboardShortcutsHelp.jsx
-│   ├── FeedbackPopup.jsx
-│   └── ExternalLinkIcon.jsx
+├── components/           # ~45 reusable components, flat (no subdirectories).
+│                         #   Deliberately not enumerated here — `ls` is accurate and
+│                         #   this list was not. The ones worth knowing before you
+│                         #   add another:
+│                         #   - Layout/chrome: Navbar, Footer, Breadcrumb, SEO,
+│                         #     ScrollToTop, ErrorBoundary, ErrorCard, ErrorMessage
+│                         #   - Badges (all role="img", never role="status"):
+│                         #     StatusBadge, WaiverBadge, NewBadge, AppealBadge,
+│                         #     RefiledBadge
+│                         #   - Card scaffolding reused across pages: CollapsibleCard,
+│                         #     CardCollapseGrid, ShowMoreDivider, EmptyStateCard,
+│                         #     StatCard, DetailStatGrid, MergerCardBody
+│                         #   - Timelines: MergerTimeline, Phase2Timeline,
+│                         #     UpcomingEventsTimeline, BusinessDayProgress
+│                         #   - Tracking/notifications: TrackButton, NotificationPanel,
+│                         #     BellIcon
+│                         #   - Global UI: CommandPalette, KeyboardShortcutsHelp,
+│                         #     SearchInput, FeedbackPopup
+│                         #   Charts live in Treemap.jsx and
+│                         #   PhaseDurationComparison.jsx; both follow the
+│                         #   canvas + sr-only data table pattern in docs/accessibility.md.
+│                         #   __tests__/ holds the vitest suites, incl. accessibility.test.jsx.
+├── constants/            # Shared literal tables: navPages.js (single source of truth for
+│                         #   the navbar, command palette and keyboard shortcuts),
+│                         #   mergerStatus.js, appeal.js, regime.js, cardStyles.js,
+│                         #   chartColors.js, outcomeDotColors.js
 ├── context/              # TrackingContext.jsx — global merger + industry follow state via localStorage
 │                         #   (industry follows flag only new filings/determinations)
-├── hooks/                # useDebounce.js, useFetchData.js, useKeyboardShortcuts.js
+├── hooks/                # useDebounce.js, useFetchData.js, useKeyboardShortcuts.js,
+│                         #   useDecodedParam.js
 ├── utils/                # dates.js, dataCache.js, lastVisit.js, classNames.js, searchIndex.js,
 │                         #   businessDayProgress.js, fetchAllMergers.js, formatMedian.js,
-│                         #   industryGroups.js, slug.js, preNotification.js
+│                         #   industryGroups.js, slug.js, preNotification.js, pageMeta.js,
+│                         #   treemapTail.js
 └── data/                 # ACT public holidays JSON
                           #   (act-public-holidays.json — source of truth for both the Python
                           #   pipeline and the frontend; authoritative list published at
@@ -103,7 +121,13 @@ merger-tracker/frontend/src/
                           #   less than ~1 year ahead — extend this file when that happens.)
 
 scripts/
+├── build.sh              # Cloudflare Pages build entry point (`bash scripts/build.sh`):
+│                         #   builds the frontend, then copies data/raw/matters PDFs into dist/
 ├── scrape.sh             # Bash wrapper using pup to scrape ACCC register
+├── scrape_targets.py     # Decide which matters need re-scraping
+├── scrape_summary.py     # Human-readable summary of a scrape run for the Actions log
+├── scrape_tribunal.py    # Scrape Australian Competition Tribunal matter pages (drives a
+│                         #   real Chrome via nodriver; deps in requirements-tribunal.txt)
 ├── extract_mergers.py    # Parse HTML → merger data JSON
 ├── enrich_pdfs.py        # Run questionnaire/NOCC/Phase 2 Notice PDF parsing, auto-fix missing dates
 ├── generate_static_data.py  # Generate all frontend JSON files
@@ -130,6 +154,11 @@ scripts/
 ├── detect_related_parties.py # Suggest same-entity party groups (daily PR)
 ├── fix_missing_notification_dates.py # Suggest freezing missing notification dates (daily PR)
 ├── party_matching.py     # Shared party normalisation + group matching
+├── related_parties_batch.py # Batch LLM-assisted related-party suggestions
+├── unfreeze_mergers.py   # Release frozen notification dates / phase-1 estimates
+├── compress_pdfs.py      # Shrink oversized PDFs so Pages will serve them
+├── check_deploy_assets.py # CI check: no deploy asset exceeds Cloudflare Pages' 25 MiB limit
+├── constants/            # Shared Python literals (merger_status.py, site.py, tribunal.py)
 ├── static_data/          # Generator package used by generate_static_data.py (outputs/, loaders, enrichment)
 ├── tools/                # Interactive admin web UIs (resolver, commentary, advisors, related_parties)
 └── tests/                # Pytest suite covering the pipeline, generators, and CI checks
@@ -158,7 +187,9 @@ data/
 │                         #   URL) for a link-out card to the Commonwealth Courts Portal. Unlike
 │                         #   tribunal_appeals.json there is no scraping and no documents are
 │                         #   mirrored — every field is entered by hand.
+├── README.md             # Layout + provenance of everything under data/
 ├── known_notification_dates.json # Manually-confirmed/frozen notification dates
+├── frozen_events_mergers.json # Mergers whose event timeline is pinned against re-scrape
 │   processed/phase1_estimates.json # Frozen filing-time phase-1 duration estimates,
 │                         #   keyed by merger_id. Written by generate_static_data.py
 │                         #   (static_data/phase1_estimate.py) and committed by the
@@ -184,6 +215,7 @@ npm run dev       # Vite dev server at localhost:5173
 npm run build     # Production build to dist/
 npm run lint      # ESLint
 npm run preview   # Preview production build
+npm test          # Vitest suite (~333 tests); npm run test:watch to iterate
 
 # Data pipeline (from repo root)
 pip install -r scripts/requirements.txt
@@ -212,7 +244,7 @@ npm run tail         # stream live logs
 - **Python**: Type hints in function signatures. Docstrings for modules and functions. ProcessPoolExecutor for concurrent extraction in extract_mergers.py.
 - **ESLint**: Flat config (eslint.config.js). Unused vars ignore pattern `^[A-Z_]`.
 - **Accessibility**: WCAG 2.2 AA. Colour families in `tailwind.config.js` keep text on the `dark` shade (the `DEFAULT`s are fills and several fail as small text); badges are `role="img"`, never `role="status"`; charts pair a presentational canvas with a labelled wrapper and an `sr-only` data table; every route has an `h1`. See `docs/accessibility.md` for the conventions and how to re-run the axe audit.
-- **Node version**: 20.19.0 (see `.nvmrc`)
+- **Node version**: 24.18.0 (pinned in both `.nvmrc` and `.node-version`)
 - **Commit messages**: describe the change only — no Claude/AI attribution. `.claude/settings.json` turns the default trailers off (`attribution.commit`/`pr` empty, `sessionUrl` false) and a `PreToolUse` hook (`.claude/hooks/check_commit_message.py`) denies any `git commit` whose message carries a `Co-Authored-By: Claude` trailer, a "Generated with Claude Code" line, or a claude.ai session link. Mentioning Claude Code in a message is fine; claiming it as the author is not.
 
 ## Key Data Flow
@@ -285,6 +317,8 @@ load can never empty a directory.
 | `commentary.json` | Mergers with user commentary |
 | `digest.json` | Weekly digest of merger activity (from `generate_weekly_digest.py`) |
 | `analysis.json` | Pre-computed analysis data |
+| `timeline.json` | Unpaginated timeline (alongside the paginated `timeline/` directory) |
+| `referral-probability-by-day.json` | Modelled probability of a Phase 2 referral by elapsed business day |
 | `serial-acquirers.json` | Serial-acquirer ("creeping acquisitions") detection |
 | `theories_of_harm.json` | Keyword-classified theory-of-harm taxonomy |
 | `phase2.json` | Current + completed Phase 2 matters with statutory milestones |
@@ -302,14 +336,15 @@ load can never empty a directory.
 | `extract.yml` | Manual | Standalone extraction of merger data from raw HTML and commit |
 | `convert.yml` | Manual | Convert any unconverted DOCX attachments to PDF and commit |
 | `publish-cli-sqlite.yml` | Manual | Republish `cli.sqlite` + manifest to the orphan `cli-dist` branch |
-| `scrape-tribunal.yml` | Daily (6:23 AM UTC), manual | Scrape Australian Competition Tribunal matter pages into `tribunal_appeals.json` and commit. Drives a real Chrome via nodriver (headful under Xvfb) to get past the tribunal site's Cloudflare challenge, so it runs in CI. Deps: `scripts/requirements-tribunal.txt` |
-| `detect-duplicates.yml` | Daily (2:00 AM UTC), manual | Detect duplicate merger entries, open a fix PR |
-| `detect-related-mergers.yml` | Daily (2:30 AM UTC), manual | Suggest waiver↔notification merger links, open a PR |
-| `detect-related-parties.yml` | Daily (2:45 AM UTC), manual | Suggest same-entity party groupings, open a PR |
+| `scrape-tribunal.yml` | Hourly at :23 from 8am-7pm Sydney (`23 22,23,0-9 * * *`, fixed UTC+10 so the window shifts an hour under AEDT), manual | Scrape Australian Competition Tribunal matter pages into `tribunal_appeals.json` and commit. Drives a real Chrome via nodriver (headful under Xvfb) to get past the tribunal site's Cloudflare challenge, so it runs in CI. Deps: `scripts/requirements-tribunal.txt` |
+| `detect-duplicates.yml` | Manual | Detect duplicate merger entries, open a fix PR. **No longer scheduled** — this now runs inside `pipeline.yml` on every run; the standalone workflow is kept for manual re-runs |
+| `detect-related-mergers.yml` | Manual | Suggest waiver↔notification merger links, open a PR. **No longer scheduled** — runs inside `pipeline.yml`; kept for manual re-runs |
+| `detect-related-parties.yml` | Manual | Suggest same-entity party groupings, open a PR. **No longer scheduled** — runs inside `pipeline.yml`; kept for manual re-runs |
 | `fix-missing-notification-dates.yml` | Daily (3:00 AM UTC), manual | Auto-fix missing notification dates, open a PR |
 | `update-sitemap.yml` | Daily (8 AM AEST), manual | Regenerate `sitemap.xml` |
 | `weekly-digest.yml` | Weekly (Sunday, Sydney time), manual | Generate `digest.json` |
 | `send-weekly-email.yml` | Manual (schedule currently disabled) | Send the weekly digest email via the Cloudflare Worker |
 | `test.yml` | Manual | Run the Python test suite |
-| `frontend-test.yml` | Pull requests touching `merger-tracker/frontend/**`, manual | Run the frontend test suite |
+| `frontend-test.yml` | Pull requests touching `merger-tracker/frontend/**`, `functions/**` or `slug-cases.json`, manual | Run the frontend test suite |
+| `check-deploy-assets.yml` | Push touching `data/raw/matters/**`, `merger-tracker/frontend/public/**` or the check itself, manual | Fail if any deploy asset exceeds Cloudflare Pages' 25 MiB per-file limit |
 | `workers-test.yml` | Manual | For each directory under `workers/`: `npm ci`, `npm test --if-present`, then `npm run deploy:dry` to bundle the Worker and validate its `wrangler.toml`. Discovers Workers by glob, so a new one is covered automatically |
