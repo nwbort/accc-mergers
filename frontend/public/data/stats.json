@@ -1,6 +1,6 @@
 {
   "total_mergers": 238,
-  "total_waivers": 358,
+  "total_waivers": 359,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 195,
@@ -19,7 +19,7 @@
   },
   "by_waiver_determination": {
     "Approved": 343,
-    "Not approved": 15
+    "Not approved": 16
   },
   "clearance_rate": {
     "cleared": 193,
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.527932960893853,
-    "median_days": 19.0,
-    "average_business_days": 13.217877094972067,
-    "median_business_days": 13.0
+    "average_days": 19.540389972144848,
+    "median_days": 19,
+    "average_business_days": 13.231197771587743,
+    "median_business_days": 13
   },
   "top_industries": [
     {
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-15037",
+      "merger_name": "Monadelphous - Tyden Power",
+      "determination": "Not approved",
+      "determination_date": "2026-08-27T12:00:00Z",
+      "page_modified_datetime": "2026-08-27T20:56:30+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-80037",
       "merger_name": "Australian Venue Co \u2013 Assets of Riverland Bar, The Boatbuilders Yard and General Assembly",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-27T12:00:00Z",
       "page_modified_datetime": "2026-08-27T13:04:12+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-60026",
-      "merger_name": "Publicis Groupe - LiveRamp",
-      "determination": "Approved",
-      "determination_date": "2026-08-27T12:00:00Z",
-      "page_modified_datetime": "2026-08-27T10:42:49+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",

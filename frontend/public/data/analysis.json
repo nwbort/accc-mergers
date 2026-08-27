@@ -1285,6 +1285,10 @@
         "calendar_days": 23
       },
       {
+        "business_days": 18,
+        "calendar_days": 24
+      },
+      {
         "business_days": 11,
         "calendar_days": 15
       },
@@ -2459,17 +2463,17 @@
     ],
     "stats": {
       "average": 13.2,
-      "median": 13.0,
+      "median": 13,
       "min": 2,
       "max": 24,
-      "count": 358
+      "count": 359
     },
     "calendar_stats": {
       "average": 19.5,
-      "median": 19.0,
+      "median": 19,
       "min": 2,
       "max": 39,
-      "count": 358
+      "count": 359
     }
   },
   "monthly_volume": {
@@ -2513,7 +2517,7 @@
       67,
       61,
       69,
-      8
+      9
     ]
   },
   "open_caseload": {
@@ -2724,10 +2728,10 @@
     },
     {
       "division": "A division of the Commission (s19 direction)",
-      "count": 98,
+      "count": 99,
       "outcome_mix": {
         "Approved": 76,
-        "Not approved": 16,
+        "Not approved": 17,
         "Unknown": 6
       },
       "median_phase_1_business_days": 19
