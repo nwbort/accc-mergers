@@ -9,7 +9,7 @@
       "code": "39",
       "name": "Motor Vehicle and Motor Vehicle Parts Retailing",
       "level": "subdivision",
-      "merger_count": 15
+      "merger_count": 16
     },
     {
       "code": "40",
@@ -124,6 +124,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-13T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-05045",
+      "merger_name": "Grafton Motor Group \u2013 Grafton Mazda",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Not approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-31T12:00:00Z",
+      "determination_date": "2026-08-27T12:00:00Z"
     },
     {
       "merger_id": "MN-95033",
@@ -841,10 +852,10 @@
       "determination_date": null
     }
   ],
-  "count": 73,
+  "count": 74,
   "phase_1_count": 27,
   "phase_2_count": 3,
-  "waiver_count": 43,
+  "waiver_count": 44,
   "active_count": 8,
   "phase_duration": {
     "average_days": 37.09090909090909,
@@ -854,10 +865,10 @@
     "completed_count": 22
   },
   "waiver_duration": {
-    "average_days": 20.186046511627907,
-    "median_days": 20,
-    "average_business_days": 13.906976744186046,
-    "median_business_days": 14,
-    "completed_count": 43
+    "average_days": 20.34090909090909,
+    "median_days": 20.0,
+    "average_business_days": 14.022727272727273,
+    "median_business_days": 14.0,
+    "completed_count": 44
   }
 }

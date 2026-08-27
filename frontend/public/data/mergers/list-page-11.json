@@ -3941,6 +3941,69 @@
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/bain-capital-%E2%80%93-kakakucom"
     },
     {
+      "merger_id": "WA-05045",
+      "merger_name": "Grafton Motor Group \u2013 Grafton Mazda",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-31T12:00:00Z",
+      "determination_publication_date": "2026-08-27T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "GTOWN MOTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "49 696 167 996",
+          "party_page": {
+            "id": "gtown-motors-pty-ltd",
+            "name": "Gtown Motors Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "KEN CASSON MOTORS PTY. LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "32 003 933 695",
+          "party_page": {
+            "id": "ken-casson-motors-pty-limited",
+            "name": "Ken Casson Motors Pty. Limited"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "HOUMA HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "44 002 590 758",
+          "party_page": {
+            "id": "houma-holdings-pty-ltd",
+            "name": "Houma Holdings Pty Ltd"
+          }
+        },
+        {
+          "name": "GRAFTON MOTOR GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "61 107 107 559",
+          "party_page": {
+            "id": "grafton-motor-group-pty-ltd",
+            "name": "Grafton Motor Group Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3911",
+          "name": "Car Retailing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/grafton-motor-group-%E2%80%93-grafton-mazda"
+    },
+    {
       "merger_id": "WA-45023",
       "merger_name": "Pine Australia - Evolution Business Systems",
       "status": "Assessment completed",
@@ -4370,83 +4433,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/ironbark-paris-group"
-    },
-    {
-      "merger_id": "MN-15030",
-      "merger_name": "KARMO/SIMPLR",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-03T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-09-14T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "KARMO HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "93 667 511 480",
-          "party_page": {
-            "id": "karmo-holdings-pty-ltd",
-            "name": "Karmo Holdings Pty Ltd"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "EAGERS AUTOMOTIVE LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "87 009 680 013",
-          "party_page": {
-            "id": "eagers-automotive-limited",
-            "name": "Eagers Automotive Limited"
-          }
-        },
-        {
-          "name": "SUBMO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "19 637 015 457",
-          "party_page": {
-            "id": "submo-pty-ltd",
-            "name": "Submo Pty Ltd"
-          }
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "3911",
-          "name": "Car Retailing"
-        },
-        {
-          "code": "3912",
-          "name": "Motorcycle Retailing"
-        },
-        {
-          "code": "3913",
-          "name": "Trailer and Other Motor Vehicle Retailing"
-        },
-        {
-          "code": "6419",
-          "name": "Other Auxiliary Finance and Investment Services"
-        },
-        {
-          "code": "6611",
-          "name": "Passenger Car Rental and Hiring"
-        },
-        {
-          "code": "9412",
-          "name": "Automotive Body, Paint and Interior Repair"
-        },
-        {
-          "code": "9419",
-          "name": "Other Automotive Repair and Maintenance"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/karmosimplr"
     }
   ],
   "page": 11,

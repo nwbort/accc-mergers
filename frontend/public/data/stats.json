@@ -1,6 +1,6 @@
 {
   "total_mergers": 238,
-  "total_waivers": 350,
+  "total_waivers": 351,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 195,
@@ -19,7 +19,7 @@
   },
   "by_waiver_determination": {
     "Approved": 336,
-    "Not approved": 14
+    "Not approved": 15
   },
   "clearance_rate": {
     "cleared": 193,
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.454285714285714,
-    "median_days": 19.0,
-    "average_business_days": 13.142857142857142,
-    "median_business_days": 13.0
+    "average_days": 19.475783475783476,
+    "median_days": 19,
+    "average_business_days": 13.15954415954416,
+    "median_business_days": 13
   },
   "top_industries": [
     {
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-05045",
+      "merger_name": "Grafton Motor Group \u2013 Grafton Mazda",
+      "determination": "Not approved",
+      "determination_date": "2026-08-27T12:00:00Z",
+      "page_modified_datetime": "2026-08-27T16:53:17+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-30030",
       "merger_name": "Eli Lilly - AtaiBeckley Inc.",
       "determination": "Approved",
@@ -336,17 +347,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-35033",
-      "merger_name": "Merivale \u2013 The Sackville Hotel",
-      "determination": "Approved",
-      "determination_date": "2026-08-26T12:00:00Z",
-      "page_modified_datetime": "2026-08-26T10:15:20+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]
