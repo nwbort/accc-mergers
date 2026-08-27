@@ -39,12 +39,47 @@ The build script runs `npm ci && npm run build`, then copies all PDFs from `data
 
 ### Dashboard settings
 
-These settings must still be configured in the Cloudflare Pages dashboard:
+These settings live only in the Cloudflare Pages dashboard — nothing in the
+repo sets them:
 
 - **Framework preset**: None
 - **Build command**: `bash scripts/build.sh`
-- **Build output directory**: `frontend/dist`
 - **Root directory**: `/` (repo root)
+
+The **build output directory** is *not* one of them: `pages_build_output_dir`
+in the root [`wrangler.toml`](../wrangler.toml) is the source of truth, and the
+dashboard shows that field read-only. Change it in the repo, not the dashboard.
+
+#### Build watch paths
+
+Under **Settings → Build → Build watch paths**. Include paths:
+
+```
+frontend/*
+functions/*
+data/raw/matters/*
+scripts/build.sh
+wrangler.toml
+```
+
+Between them these cover everything that reaches the deployed output: the SPA
+and its committed JSON (`frontend/`), the Pages Function serving
+`/mergers/{matter}/*.pdf` (`functions/`), the PDFs `build.sh` copies into
+`dist/mergers/` (`data/raw/matters/`), and the two files that decide how the
+build itself runs.
+
+Two things to know before editing this list:
+
+- A push matching none of the include paths **skips the build silently** —
+  no failed deployment, no warning, just no deploy. A stale entry here
+  therefore fails in the worst possible way, and data-pipeline commits keep
+  deploying via `data/raw/matters/*` while a purely frontend change quietly
+  does not. Re-check this list whenever a top-level directory is renamed.
+- Cloudflare's wildcard is not an ordinary glob: `*` matches zero or more
+  characters **including `/`**, so `frontend/*` already covers
+  `frontend/src/App.jsx` and `frontend/public/data/stats.json`. There is no
+  need for the `dir`, `dir/*`, `dir/**` triples that accumulate if you assume
+  otherwise, and `**` is not documented as supported.
 
 ### Custom domain
 

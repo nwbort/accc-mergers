@@ -252,7 +252,10 @@ npm run tail         # stream live logs
 1. `pipeline.yml` scrapes the ACCC website → raw HTML in `data/raw/`
 2. It extracts new/changed matters → `data/processed/mergers.json`
 3. `generate_static_data.py` produces frontend JSON files in `frontend/public/data/`
-4. Cloudflare Pages auto-deploys on push to main
+4. Cloudflare Pages auto-deploys on push to main — but only for pushes
+   matching the dashboard's **build watch paths**, which name top-level
+   directories and are not set from this repo. Renaming one silently stops
+   deploys; see [`docs/deployment.md`](docs/deployment.md#dashboard-settings).
 
 ### Consultation section: two ACCC page formats
 
