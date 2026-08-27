@@ -11,6 +11,17 @@
   "mergers": {
     "acquirer": [
       {
+        "merger_id": "WA-75047",
+        "merger_name": "Respect Group \u2013 McLean Care residential aged care homes and independent living units",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Waiver",
+        "notification_date": "2026-08-14T12:00:00Z",
+        "determination_date": "2026-08-27T12:00:00Z"
+      },
+      {
         "merger_id": "WA-35020",
         "merger_name": "Respect Group - Jallarah Homes",
         "is_waiver": true,
@@ -25,17 +36,17 @@
     "target": [],
     "other": []
   },
-  "merger_count": 1,
+  "merger_count": 2,
   "phase_1_count": 0,
   "phase_2_count": 0,
-  "waiver_count": 1,
+  "waiver_count": 2,
   "active_count": 0,
   "phase_duration": null,
   "waiver_duration": {
-    "average_days": 11.0,
-    "median_days": 11,
-    "average_business_days": 6.0,
-    "median_business_days": 6,
-    "completed_count": 1
+    "average_days": 12.0,
+    "median_days": 12.0,
+    "average_business_days": 7.5,
+    "median_business_days": 7.5,
+    "completed_count": 2
   }
 }

@@ -19,7 +19,7 @@
       "code": "860",
       "name": "Residential Care Services",
       "level": "group",
-      "merger_count": 11
+      "merger_count": 12
     }
   ],
   "mergers": [
@@ -44,6 +44,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-08-03T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-75047",
+      "merger_name": "Respect Group \u2013 McLean Care residential aged care homes and independent living units",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-14T12:00:00Z",
+      "determination_date": "2026-08-27T12:00:00Z"
     },
     {
       "merger_id": "MN-55029",
@@ -145,10 +156,10 @@
       "determination_date": "2026-02-10T12:00:00Z"
     }
   ],
-  "count": 11,
+  "count": 12,
   "phase_1_count": 9,
   "phase_2_count": 0,
-  "waiver_count": 2,
+  "waiver_count": 3,
   "active_count": 2,
   "phase_duration": {
     "average_days": 24.857142857142858,
@@ -158,10 +169,10 @@
     "completed_count": 7
   },
   "waiver_duration": {
-    "average_days": 18.5,
-    "median_days": 18.5,
-    "average_business_days": 11.0,
-    "median_business_days": 11.0,
-    "completed_count": 2
+    "average_days": 16.666666666666668,
+    "median_days": 13,
+    "average_business_days": 10.333333333333334,
+    "median_business_days": 9,
+    "completed_count": 3
   }
 }
