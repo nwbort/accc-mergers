@@ -9,7 +9,7 @@
       "code": "69",
       "name": "Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",
       "level": "subdivision",
-      "merger_count": 89
+      "merger_count": 90
     },
     {
       "code": "70",
@@ -193,6 +193,17 @@
       "has_conditions": false,
       "phase": "Phase 1",
       "notification_date": "2026-07-29T12:00:00Z",
+      "determination_date": "2026-08-27T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-25043",
+      "merger_name": "Eldridge \u2013 Ausenco",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-13T12:00:00Z",
       "determination_date": "2026-08-27T12:00:00Z"
     },
     {
@@ -1527,10 +1538,10 @@
       "determination_date": null
     }
   ],
-  "count": 137,
+  "count": 138,
   "phase_1_count": 55,
   "phase_2_count": 3,
-  "waiver_count": 79,
+  "waiver_count": 80,
   "active_count": 11,
   "phase_duration": {
     "average_days": 31.93877551020408,
@@ -1540,10 +1551,10 @@
     "completed_count": 49
   },
   "waiver_duration": {
-    "average_days": 19.11392405063291,
-    "median_days": 19,
-    "average_business_days": 12.962025316455696,
-    "median_business_days": 13,
-    "completed_count": 79
+    "average_days": 19.05,
+    "median_days": 19.0,
+    "average_business_days": 12.925,
+    "median_business_days": 13.0,
+    "completed_count": 80
   }
 }

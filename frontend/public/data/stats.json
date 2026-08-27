@@ -1,6 +1,6 @@
 {
   "total_mergers": 238,
-  "total_waivers": 352,
+  "total_waivers": 353,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 195,
@@ -18,7 +18,7 @@
     "Assessment ceased": 2
   },
   "by_waiver_determination": {
-    "Approved": 337,
+    "Approved": 338,
     "Not approved": 15
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.457386363636363,
-    "median_days": 19.0,
-    "average_business_days": 13.147727272727273,
-    "median_business_days": 13.0
+    "average_days": 19.441926345609065,
+    "median_days": 19,
+    "average_business_days": 13.138810198300284,
+    "median_business_days": 13
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 98
+      "count": 99
     },
     {
       "name": "Computer System Design and Related Services",
@@ -64,7 +64,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 52
+      "count": 53
     },
     {
       "name": "Software Publishing",
@@ -83,11 +83,11 @@
       "count": 21
     },
     {
-      "name": "Liquor Retailing",
-      "count": 18
+      "name": "Engineering Design and Engineering Consulting Services",
+      "count": 19
     },
     {
-      "name": "Engineering Design and Engineering Consulting Services",
+      "name": "Liquor Retailing",
       "count": 18
     },
     {
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-25043",
+      "merger_name": "Eldridge \u2013 Ausenco",
+      "determination": "Approved",
+      "determination_date": "2026-08-27T12:00:00Z",
+      "page_modified_datetime": "2026-08-27T16:58:42+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-75047",
       "merger_name": "Respect Group \u2013 McLean Care residential aged care homes and independent living units",
       "determination": "Approved",
@@ -338,16 +349,6 @@
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
       "has_conditions": false
-    },
-    {
-      "merger_id": "MN-50011",
-      "merger_name": "Journey Beyond - SeaLink Rottnest",
-      "determination": "Assessment ceased",
-      "determination_date": "2026-08-26T12:00:00Z",
-      "page_modified_datetime": "2026-08-26T17:22:45+10:00",
-      "determination_type": "ceased",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }

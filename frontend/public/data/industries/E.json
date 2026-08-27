@@ -15,7 +15,7 @@
       "code": "31",
       "name": "Heavy and Civil Engineering Construction",
       "level": "subdivision",
-      "merger_count": 18
+      "merger_count": 19
     },
     {
       "code": "32",
@@ -90,6 +90,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-04-27T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-25043",
+      "merger_name": "Eldridge \u2013 Ausenco",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-13T12:00:00Z",
+      "determination_date": "2026-08-27T12:00:00Z"
     },
     {
       "merger_id": "MN-70027",
@@ -543,10 +554,10 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 47,
+  "count": 48,
   "phase_1_count": 23,
   "phase_2_count": 1,
-  "waiver_count": 23,
+  "waiver_count": 24,
   "active_count": 6,
   "phase_duration": {
     "average_days": 28.210526315789473,
@@ -556,10 +567,10 @@
     "completed_count": 19
   },
   "waiver_duration": {
-    "average_days": 20.217391304347824,
-    "median_days": 21,
-    "average_business_days": 13.347826086956522,
-    "median_business_days": 13,
-    "completed_count": 23
+    "average_days": 19.958333333333332,
+    "median_days": 20.5,
+    "average_business_days": 13.208333333333334,
+    "median_business_days": 13.0,
+    "completed_count": 24
   }
 }
