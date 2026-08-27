@@ -357,30 +357,17 @@
     {
       "merger_id": "MN-25040",
       "merger_name": "Modaxo - Conduent",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "has_conditions": false,
       "is_waiver": false,
       "under_appeal": false,
       "is_refiled": false,
       "effective_notification_datetime": "2026-08-05T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-08-27T12:00:00Z",
       "end_of_determination_period": "2026-09-16T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
-        {
-          "name": "Modaxo Group, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "modaxo-group-inc",
-            "name": "Modaxo Group, Inc"
-          },
-          "party_page": {
-            "id": "modaxo-group-inc",
-            "name": "Modaxo Group, Inc"
-          }
-        },
         {
           "name": "Modaxo USA Holdings, Inc",
           "identifier_type": null,
@@ -406,9 +393,35 @@
             "id": "modaxo-group-inc",
             "name": "Modaxo Group, Inc"
           }
+        },
+        {
+          "name": "Modaxo Group, Inc",
+          "identifier_type": null,
+          "identifier": "",
+          "canonical": {
+            "id": "modaxo-group-inc",
+            "name": "Modaxo Group, Inc"
+          },
+          "party_page": {
+            "id": "modaxo-group-inc",
+            "name": "Modaxo Group, Inc"
+          }
         }
       ],
       "targets": [
+        {
+          "name": "CONDUENT BUSINESS SERVICES (AUSTRALIA) PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "58 136 828 914",
+          "canonical": {
+            "id": "conduent-business-services-llc",
+            "name": "Conduent Business Services, LLC"
+          },
+          "party_page": {
+            "id": "conduent-business-services-llc",
+            "name": "Conduent Business Services, LLC"
+          }
+        },
         {
           "name": "CONDUENT VICTORIA TICKETING SYSTEM PTY LTD",
           "identifier_type": "ABN",
@@ -436,19 +449,6 @@
           }
         },
         {
-          "name": "CONDUENT BUSINESS SERVICES (AUSTRALIA) PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "58 136 828 914",
-          "canonical": {
-            "id": "conduent-business-services-llc",
-            "name": "Conduent Business Services, LLC"
-          },
-          "party_page": {
-            "id": "conduent-business-services-llc",
-            "name": "Conduent Business Services, LLC"
-          }
-        },
-        {
           "name": "Conduent Business Services, LLC",
           "identifier_type": null,
           "identifier": "",
@@ -464,9 +464,48 @@
       ],
       "other_parties": [
         {
+          "name": "Constellation Software Inc",
+          "identifier_type": null,
+          "identifier": "LEI 549300B6PYHMCTDWQV29",
+          "canonical": {
+            "id": "constellation-software-inc",
+            "name": "Constellation Software Inc."
+          },
+          "party_page": {
+            "id": "constellation-software-inc",
+            "name": "Constellation Software Inc."
+          }
+        },
+        {
           "name": "TRAPEZE GROUP ASIA PACIFIC PTY LTD",
           "identifier_type": "ABN",
           "identifier": "16 010 832 318",
+          "canonical": {
+            "id": "modaxo-group-inc",
+            "name": "Modaxo Group, Inc"
+          },
+          "party_page": {
+            "id": "modaxo-group-inc",
+            "name": "Modaxo Group, Inc"
+          }
+        },
+        {
+          "name": "MODAXO GROUP AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "44 166 272 724",
+          "canonical": {
+            "id": "modaxo-group-inc",
+            "name": "Modaxo Group, Inc"
+          },
+          "party_page": {
+            "id": "modaxo-group-inc",
+            "name": "Modaxo Group, Inc"
+          }
+        },
+        {
+          "name": "TRAPEZE MANAGEMENT HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "97 120 264 913",
           "canonical": {
             "id": "modaxo-group-inc",
             "name": "Modaxo Group, Inc"
@@ -487,45 +526,6 @@
           "party_page": {
             "id": "constellation-software-inc",
             "name": "Constellation Software Inc."
-          }
-        },
-        {
-          "name": "MODAXO GROUP AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "44 166 272 724",
-          "canonical": {
-            "id": "modaxo-group-inc",
-            "name": "Modaxo Group, Inc"
-          },
-          "party_page": {
-            "id": "modaxo-group-inc",
-            "name": "Modaxo Group, Inc"
-          }
-        },
-        {
-          "name": "Constellation Software Inc",
-          "identifier_type": null,
-          "identifier": "LEI 549300B6PYHMCTDWQV29",
-          "canonical": {
-            "id": "constellation-software-inc",
-            "name": "Constellation Software Inc."
-          },
-          "party_page": {
-            "id": "constellation-software-inc",
-            "name": "Constellation Software Inc."
-          }
-        },
-        {
-          "name": "TRAPEZE MANAGEMENT HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "97 120 264 913",
-          "canonical": {
-            "id": "modaxo-group-inc",
-            "name": "Modaxo Group, Inc"
-          },
-          "party_page": {
-            "id": "modaxo-group-inc",
-            "name": "Modaxo Group, Inc"
           }
         }
       ],

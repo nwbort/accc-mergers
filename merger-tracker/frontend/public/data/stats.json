@@ -3,12 +3,12 @@
   "total_waivers": 350,
   "total_conditional_approvals": 3,
   "by_status": {
-    "Assessment completed": 193,
-    "Under assessment": 41,
+    "Assessment completed": 194,
+    "Under assessment": 40,
     "Assessment ceased": 4
   },
   "by_determination": {
-    "Approved": 188,
+    "Approved": 189,
     "Referred to phase 2": 9,
     "Approved with conditions": 2
   },
@@ -22,27 +22,27 @@
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 191,
+    "cleared": 192,
     "not_cleared": 2,
-    "total": 193,
+    "total": 194,
     "rate": 0.99
   },
   "phase_duration": {
-    "average_days": 29.849246231155778,
-    "median_days": 26,
-    "average_business_days": 20.060301507537687,
-    "median_business_days": 17,
+    "average_days": 29.81,
+    "median_days": 26.0,
+    "average_business_days": 20.04,
+    "median_business_days": 17.0,
     "percentiles": {
       "day15": {
         "count": 43,
-        "percentage": 21.6
+        "percentage": 21.5
       },
       "day20": {
-        "count": 147,
-        "percentage": 73.9
+        "count": 148,
+        "percentage": 74.0
       },
       "day30": {
-        "count": 186,
+        "count": 187,
         "percentage": 93.5
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-25040",
+      "merger_name": "Modaxo - Conduent",
+      "determination": "Approved",
+      "determination_date": "2026-08-27T12:00:00Z",
+      "page_modified_datetime": "2026-08-27T13:57:33+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-40013",
       "merger_name": "Calvary - Hobart Private Hospital",
       "determination": "Approved",
@@ -333,17 +344,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-25T12:00:00Z",
       "page_modified_datetime": "2026-08-26T09:52:06+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-05027",
-      "merger_name": "Protech - ActivateRail",
-      "determination": "Approved",
-      "determination_date": "2026-08-25T12:00:00Z",
-      "page_modified_datetime": "2026-08-25T16:57:43+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
