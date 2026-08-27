@@ -8,8 +8,8 @@ need it, rather than unconditionally on every run.
 
 import json
 
-from extract_mergers import find_pending_phase2_notice_events
-from parse_phase2_notice import phase2_notice_needs_ocr
+from scripts.extract_mergers import find_pending_phase2_notice_events
+from scripts.parse.parse_phase2_notice import phase2_notice_needs_ocr
 
 MERGERS_JSON = 'data/processed/mergers.json'
 

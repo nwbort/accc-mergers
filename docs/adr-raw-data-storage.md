@@ -100,9 +100,9 @@ unaffected by any option here.)
 
 | Consumer | Access |
 |---|---|
-| `scripts/scrape.sh` | writes/re-cleans matter HTML |
+| `scripts/scrape/scrape.sh` | writes/re-cleans matter HTML |
 | `scripts/extract_mergers.py` | reads **all** matter HTML each run; downloads attachments |
-| `scripts/parse_questionnaire.py`, `scripts/parse_nocc.py` | read PDFs during extraction |
+| `scripts/parse/parse_questionnaire.py`, `scripts/parse/parse_nocc.py` | read PDFs during extraction |
 | `pipeline.yml`, `extract.yml`, `convert.yml`, `scrape.yml` | shallow-checkout the repo, read/write/commit `data/raw/matters/` |
 | `scripts/build.sh` (Cloudflare Pages) | copies PDFs into build output |
 

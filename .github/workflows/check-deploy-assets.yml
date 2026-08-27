@@ -51,7 +51,7 @@ jobs:
       # as a red workflow run, since the site itself is still fine.
       - name: Find oversized deployable files
         run: |
-          python scripts/check_deploy_assets.py --json "$RUNNER_TEMP/oversized.json"
+          python -m scripts.check_deploy_assets --json "$RUNNER_TEMP/oversized.json"
 
       - name: Open, update or close the tracking issue
         env:

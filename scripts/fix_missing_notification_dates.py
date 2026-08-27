@@ -15,8 +15,8 @@ and a PR body so a human can review/correct the guessed date before it lands.
 
 Usage
 -----
-  python scripts/fix_missing_notification_dates.py [--summary]
-  python scripts/fix_missing_notification_dates.py --apply-suggestions --pr-markdown pr_body.md
+  python -m scripts.fix_missing_notification_dates [--summary]
+  python -m scripts.fix_missing_notification_dates --apply-suggestions --pr-markdown pr_body.md
 
 Exit code is 1 if new candidates are found (useful in CI), 0 otherwise.
 """
@@ -29,8 +29,8 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-from constants.site import REPO as _REPO, mergers_fyi_url
-from merger_filters import load_mergers
+from scripts.constants.site import REPO as _REPO, mergers_fyi_url
+from scripts.merger_filters import load_mergers
 
 SCRIPT_DIR = Path(__file__).parent
 REPO_ROOT = SCRIPT_DIR.parent

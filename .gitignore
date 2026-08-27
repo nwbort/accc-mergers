@@ -75,7 +75,7 @@ data/processed/advisors.json
 # cli-manifest.json IS still tracked: generate-cli-data.sh reads its
 # `version` and `bundle_sha256` to decide whether the data changed and what
 # version to stamp next. Without it every run would look changed and reset to
-# v1. Regenerate the bundle locally with `./scripts/generate-cli-data.sh`.
+# v1. Regenerate the bundle locally with `./scripts/generate/generate-cli-data.sh`.
 data/output/cli/cli-bundle.json
 data/output/cli/cli-merger-manifest.json
 

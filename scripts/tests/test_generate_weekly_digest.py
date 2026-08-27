@@ -8,22 +8,18 @@ acquisitions register the following Monday, without re-surfacing
 items every time ACCC edits an old page.
 """
 
-import os
 import sys
 import unittest.mock
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
-
-# Add scripts directory to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 # Mock heavy transitive imports before importing modules that need them
 sys.modules.setdefault('pdfplumber', unittest.mock.MagicMock())
 sys.modules.setdefault('markdownify', unittest.mock.MagicMock())
 sys.modules.setdefault('requests', unittest.mock.MagicMock())
 
-import generate_weekly_digest as gwd
-from constants import merger_status
+from scripts.generate import generate_weekly_digest as gwd
+from scripts.constants import merger_status
 
 
 SYDNEY = ZoneInfo('Australia/Sydney')

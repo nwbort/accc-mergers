@@ -18,7 +18,7 @@
 // full interactive page. Crawlers and users receive the same HTML — no
 // cloaking.
 //
-// Coverage is deliberately wider than the sitemap. `scripts/generate_sitemap.py`
+// Coverage is deliberately wider than the sitemap. `scripts/generate/generate_sitemap.py`
 // omits single-merger parties and empty industry nodes to focus crawl budget,
 // but those pages are still reachable through in-app links (every party chip on
 // a merger page links to one), so crawlers reach them regardless. Prerendering

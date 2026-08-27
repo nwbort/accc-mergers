@@ -2,23 +2,19 @@
 """
 Web UI to add and edit commentary on ACCC merger decisions.
 Writes directly to data/processed/commentary.json.
-Run with: python scripts/tools/commentary.py
+Run with: python -m scripts.tools.commentary
 """
 
 import json
-import sys
 from pathlib import Path
 from typing import List, Optional
-
-# Allow imports from the parent scripts/ directory.
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 import uvicorn
 
-from merger_filters import load_mergers as _load_mergers
+from scripts.merger_filters import load_mergers as _load_mergers
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 COMMENTARY_JSON = REPO_ROOT / "data" / "processed" / "commentary.json"

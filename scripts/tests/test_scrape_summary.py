@@ -6,17 +6,14 @@ fetched at all, and whether its page actually changed.
 """
 
 import json
-import os
 import sys
 import unittest.mock
-
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 sys.modules.setdefault('pdfplumber', unittest.mock.MagicMock())
 sys.modules.setdefault('markdownify', unittest.mock.MagicMock())
 sys.modules.setdefault('requests', unittest.mock.MagicMock())
 
-from scrape_summary import (INLINE_LIMIT, load_changed_ids, load_fetched,
+from scripts.scrape.scrape_summary import (INLINE_LIMIT, load_changed_ids, load_fetched,
                             load_stats, render)
 
 

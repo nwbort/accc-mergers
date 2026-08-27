@@ -18,7 +18,9 @@ Fully static — no backend server. Cloudflare Pages serves the React SPA plus g
 
 - **Python 3.11/3.12** scripts for scraping, extracting, and generating data
   (`test.yml` pins 3.11, the pipeline workflows 3.12)
-- `scrape.sh` → `extract_mergers.py` → `generate_static_data.py`
+- `scrape/scrape.sh` → `extract_mergers.py` → `generate/generate_static_data.py`
+- `scripts/` is a package: entry points run as `python -m scripts.…` from the
+  repo root, never by file path (the modules import each other absolutely)
 - Dependencies (`scripts/requirements.txt`): beautifulsoup4, lxml, requests,
   markdownify, pdfplumber, cryptography, pytesseract
 
@@ -120,46 +122,51 @@ frontend/src/
                           #   vitest test both fail loudly if the calendar's horizon shrinks to
                           #   less than ~1 year ahead — extend this file when that happens.)
 
-scripts/
-├── build.sh              # Cloudflare Pages build entry point (`bash scripts/build.sh`):
-│                         #   builds the frontend, then copies data/raw/matters PDFs into dist/
-├── scrape.sh             # Bash wrapper using pup to scrape ACCC register
-├── scrape_targets.py     # Decide which matters need re-scraping
-├── scrape_summary.py     # Human-readable summary of a scrape run for the Actions log
-├── scrape_tribunal.py    # Scrape Australian Competition Tribunal matter pages (drives a
-│                         #   real Chrome via nodriver; deps in requirements-tribunal.txt)
+scripts/                  # A Python package — entry points run as `python -m scripts.…`
 ├── extract_mergers.py    # Parse HTML → merger data JSON
 ├── enrich_pdfs.py        # Run questionnaire/NOCC/Phase 2 Notice PDF parsing, auto-fix missing dates
-├── generate_static_data.py  # Generate all frontend JSON files
-├── generate_similar_mergers.py # Suggest similar mergers by industry/party overlap
-├── generate_weekly_digest.py  # Generate digest.json for weekly summary
-├── generate_sitemap.py   # Generate sitemap.xml
-├── generate_rss_feed.py  # Generate RSS feed
-├── generate-cli-data.sh  # Build/version-bump the accc-mergers-cli bundle (gitignored) + tracked manifest
-├── build_cli_sqlite.py   # Build cli.sqlite from the CLI bundle
-├── send_weekly_email.py  # Send weekly digest email via Cloudflare Worker
-├── parse_determination.py   # Extract text from determination PDFs
-├── parse_questionnaire.py   # Process questionnaire documents
-├── parse_nocc.py          # Parse Notice of Competition Concerns summary PDFs
-├── parse_phase2_notice.py # Parse "decision to proceed to Phase 2" notice PDFs
 ├── check_phase2_notice_ocr_needed.py # CI helper: does a pending Phase 2 Notice need OCR?
-├── determination_text.py # Clean PDF-extracted determination text for the CLI bundle
+├── send_weekly_email.py  # Send weekly digest email via Cloudflare Worker
+├── fix_missing_notification_dates.py # Suggest freezing missing notification dates (daily PR)
+├── compress_pdfs.py      # Shrink oversized PDFs so Pages will serve them
+├── check_deploy_assets.py # CI check: no deploy asset exceeds Cloudflare Pages' 25 MiB limit
+├── unfreeze_mergers.py   # Release frozen notification dates / phase-1 estimates
 ├── normalization.py      # Data cleaning utilities
 ├── date_utils.py         # Date parsing helpers
 ├── slug.py               # Human-readable URL slugs for merger detail pages
 ├── cutoff.py             # Skip old mergers logic
 ├── merger_filters.py     # Canonical merger loading/filtering helpers (single source of truth)
-├── detect_duplicates.py  # Identify duplicate merger entries (daily PR)
-├── detect_related_mergers.py # Suggest waiver→notification pairs (daily PR)
-├── detect_related_parties.py # Suggest same-entity party groups (daily PR)
-├── fix_missing_notification_dates.py # Suggest freezing missing notification dates (daily PR)
-├── party_matching.py     # Shared party normalisation + group matching
-├── related_parties_batch.py # Batch LLM-assisted related-party suggestions
-├── unfreeze_mergers.py   # Release frozen notification dates / phase-1 estimates
-├── compress_pdfs.py      # Shrink oversized PDFs so Pages will serve them
-├── check_deploy_assets.py # CI check: no deploy asset exceeds Cloudflare Pages' 25 MiB limit
+├── paths.py              # REPO_ROOT / SCRIPTS_DIR anchors, so no module hardcodes its own depth
+├── build.sh              # Cloudflare Pages build entry point (`bash scripts/build.sh`):
+│                         #   builds the frontend, then copies data/raw/matters PDFs into dist/
+├── scrape/
+│   ├── scrape.sh         # Bash wrapper using pup to scrape ACCC register
+│   ├── scrape_targets.py # Decide which matters need re-scraping
+│   ├── scrape_summary.py # Human-readable summary of a scrape run for the Actions log
+│   └── scrape_tribunal.py # Scrape Australian Competition Tribunal matter pages (drives a
+│                         #   real Chrome via nodriver; deps in requirements-tribunal.txt)
+├── parse/
+│   ├── parse_determination.py   # Extract text from determination PDFs
+│   ├── parse_questionnaire.py   # Process questionnaire documents
+│   ├── parse_nocc.py     # Parse Notice of Competition Concerns summary PDFs
+│   ├── parse_phase2_notice.py # Parse "decision to proceed to Phase 2" notice PDFs
+│   └── determination_text.py # Clean PDF-extracted determination text for the CLI bundle
+├── detect/
+│   ├── detect_duplicates.py  # Identify duplicate merger entries (daily PR)
+│   ├── detect_related_mergers.py # Suggest waiver→notification pairs (daily PR)
+│   ├── detect_related_parties.py # Suggest same-entity party groups (daily PR)
+│   ├── related_parties_batch.py # Batch LLM-assisted related-party suggestions
+│   └── party_matching.py # Shared party normalisation + group matching
+├── generate/
+│   ├── generate_static_data.py  # Generate all frontend JSON files
+│   ├── generate_similar_mergers.py # Suggest similar mergers by industry/party overlap
+│   ├── generate_weekly_digest.py  # Generate digest.json for weekly summary
+│   ├── generate_sitemap.py   # Generate sitemap.xml
+│   ├── generate_rss_feed.py  # Generate RSS feed
+│   ├── generate-cli-data.sh  # Build/version-bump the accc-mergers-cli bundle (gitignored) + tracked manifest
+│   ├── build_cli_sqlite.py   # Build cli.sqlite from the CLI bundle
+│   └── static_data/      # Generator package used by generate_static_data.py (outputs/, loaders, enrichment)
 ├── constants/            # Shared Python literals (merger_status.py, site.py, tribunal.py)
-├── static_data/          # Generator package used by generate_static_data.py (outputs/, loaders, enrichment)
 ├── tools/                # Interactive admin web UIs (resolver, commentary, advisors, related_parties)
 └── tests/                # Pytest suite covering the pipeline, generators, and CI checks
 
@@ -176,7 +183,7 @@ data/
 │                         #   flag + appeal record and folds the appeal documents into the event
 │                         #   timeline, without touching the ACCC-scraped status/determination.
 │                         #   The documents[] list is filled in automatically from the live
-│                         #   tribunal matter pages by scripts/scrape_tribunal.py (the daily
+│                         #   tribunal matter pages by scripts/scrape/scrape_tribunal.py (the daily
 │                         #   scrape-tribunal.yml workflow, which drives a real Chrome via
 │                         #   nodriver to clear Cloudflare); the other fields are hand-maintained.
 │                         #   judicial_reviews.json is a hand-maintained overlay of Federal Court
@@ -219,9 +226,9 @@ npm test          # Vitest suite (~333 tests); npm run test:watch to iterate
 
 # Data pipeline (from repo root)
 pip install -r scripts/requirements.txt
-./scripts/scrape.sh
-python scripts/extract_mergers.py
-python scripts/generate_static_data.py
+./scripts/scrape/scrape.sh
+python -m scripts.extract_mergers
+python -m scripts.generate.generate_static_data
 
 # Tests
 python -m pytest scripts/tests/
@@ -297,7 +304,7 @@ All data files are pre-generated by `generate_static_data.py` (and other scripts
 
 Every per-item directory below (`mergers/`, `parties/`, `industries/`,
 `timeline/`, `questionnaires/`, `noccs/`) is **self-pruning**: each generator
-deletes files it no longer writes (`scripts/static_data/prune.py`), so a page
+deletes files it no longer writes (`scripts/generate/static_data/prune.py`), so a page
 that stops being generated stops being served. This is what retires a party's
 standalone page when it is folded into a canonical group in
 `related_parties.json`, and what drops a trailing paginated page when a list
@@ -313,7 +320,7 @@ load can never empty a directory.
 | `timeline/timeline-page-{N}.json` | Paginated timeline events (100/page) |
 | `timeline/timeline-meta.json` | Pagination metadata for timeline |
 | `industries.json` | ANZSIC codes (as tagged on mergers) with merger counts |
-| `industries/{code}.json` | One file per ANZSIC node (division/subdivision/group/class), with hierarchy metadata (name, level, breadcrumb ancestors, parent, children) and mergers rolled up from the node's subtree (each merger summary carries `notification_date`/`determination_date` to drive industry-follow notifications). Generated for the full ANZSIC tree from `scripts/static_data/anzsic_codes.json` |
+| `industries/{code}.json` | One file per ANZSIC node (division/subdivision/group/class), with hierarchy metadata (name, level, breadcrumb ancestors, parent, children) and mergers rolled up from the node's subtree (each merger summary carries `notification_date`/`determination_date` to drive industry-follow notifications). Generated for the full ANZSIC tree from `scripts/generate/static_data/anzsic_codes.json` |
 | `parties.json` | Every party (canonical group or single entity) with merger counts |
 | `parties/{id}.json` | Mergers per party, grouped by role |
 | `upcoming-events.json` | Future consultation/determination dates |

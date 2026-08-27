@@ -25,7 +25,7 @@ import PostalMime from "postal-mime";
 const DISPATCH_EVENT_TYPE = "new_merger_detected";
 
 // Matter IDs on the ACCC register look like "MN-12345" or "WA-12345" (see
-// scripts/scrape.sh's matter_number handling) - two letters, a dash, five
+// scripts/scrape/scrape.sh's matter_number handling) - two letters, a dash, five
 // digits. Kept as a loose pattern rather than a hardcoded MN|WA prefix list
 // since the register has used other two-letter prefixes historically.
 const MATTER_ID_RE = /\b[A-Z]{2}-\d{5}\b/g;

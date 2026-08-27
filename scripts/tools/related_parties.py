@@ -6,9 +6,9 @@ identities that are really the same real-world entity (e.g. ``COLES GROUP
 LIMITED`` and ``COLES SUPERMARKETS AUSTRALIA PTY LTD``). The static-data
 pipeline uses those groups to turn each matching party on a merger detail page
 into a link to the register filtered by the group's canonical name — see
-``scripts/party_matching.py`` for the matching rules.
+``scripts/detect/party_matching.py`` for the matching rules.
 
-New groups are normally suggested daily by ``scripts/detect_related_parties.py``
+New groups are normally suggested daily by ``scripts/detect/detect_related_parties.py``
 (via a pull request), but this tool lets you build and edit them by hand: it
 lists every distinct party across the register, shows which are already grouped,
 and lets you select ungrouped parties to form a new group or fold into an
@@ -16,34 +16,28 @@ existing one. It writes directly back to ``related_parties.json``.
 
 To review mergers newest-first and decide groupings from each merger's
 description text (rather than browsing the full ungrouped-party list), see
-``scripts/related_parties_batch.py`` instead — a read-only CLI companion to
+``scripts/detect/related_parties_batch.py`` instead — a read-only CLI companion to
 this UI. Both share the same load/save/mutate functions in
-``scripts/party_matching.py``.
+``scripts/detect/party_matching.py``.
 
-Run with: python scripts/tools/related_parties.py
+Run with: python -m scripts.tools.related_parties
           # open http://127.0.0.1:8003
 """
 
 from __future__ import annotations
-
-import sys
-from pathlib import Path
-
-# Allow imports from the parent scripts/ directory.
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 import uvicorn
 
-from detect_related_parties import (
+from scripts.detect.detect_related_parties import (
     DEFAULT_MERGERS,
     _title_case_name,
     collect_party_records,
 )
-from merger_filters import load_mergers as _load_mergers_from
-from party_matching import (
+from scripts.merger_filters import load_mergers as _load_mergers_from
+from scripts.detect.party_matching import (
     add_members_to_group,
     build_group_lookups,
     create_group as _create_group,
@@ -63,7 +57,7 @@ app = FastAPI()
 #
 # load_parties_doc / save_parties_doc / add_members_to_group / create_group
 # live in party_matching.py, shared with the batch-review CLI
-# (scripts/related_parties_batch.py) and the daily detector, so there is one
+# (scripts/detect/related_parties_batch.py) and the daily detector, so there is one
 # implementation of "how a group is created/extended and written to disk".
 
 def load_mergers() -> list[dict]:

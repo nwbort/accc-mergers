@@ -121,7 +121,7 @@ secret).
 
 The primary automated workflow. Runs end-to-end on a schedule and on every push to `main`:
 
-1. **Scrape** — runs `scripts/scrape.sh` to fetch new/updated ACCC merger pages into `data/raw/matters/`
+1. **Scrape** — runs `scripts/scrape/scrape.sh` to fetch new/updated ACCC merger pages into `data/raw/matters/`
 2. **Extract** — runs `extract_mergers.py`, `generate_similar_mergers.py`, `generate_static_data.py`, `generate-cli-data.sh`, `generate_rss_feed.py`
 3. **Convert** — detects unconverted DOCX attachments, installs LibreOffice, converts to PDF; re-runs extraction if any were converted
 4. **Commit** — commits all staged changes in a single commit, rebases, and pushes
@@ -221,24 +221,24 @@ Additional output:
 ### Regenerating data locally
 
 ```bash
-python scripts/extract_mergers.py
-python scripts/generate_similar_mergers.py
-python scripts/generate_static_data.py
-./scripts/generate-cli-data.sh
-python scripts/generate_rss_feed.py
+python -m scripts.extract_mergers
+python -m scripts.generate.generate_similar_mergers
+python -m scripts.generate.generate_static_data
+./scripts/generate/generate-cli-data.sh
+python -m scripts.generate.generate_rss_feed
 ```
 
 ### Running the tribunal scraper
 
-`scripts/scrape_tribunal.py` fills in tribunal filing documents in `data/processed/tribunal_appeals.json` from the live Australian Competition Tribunal matter pages. It normally runs unattended from the [`scrape-tribunal.yml`](#scrape-tribunalyml--tribunal-matter-scraper-scheduled--manual) workflow (daily + on demand), so there's usually nothing to do by hand — but it works anywhere a Chrome/Chromium binary is available if you want to run it yourself:
+`scripts/scrape/scrape_tribunal.py` fills in tribunal filing documents in `data/processed/tribunal_appeals.json` from the live Australian Competition Tribunal matter pages. It normally runs unattended from the [`scrape-tribunal.yml`](#scrape-tribunalyml--tribunal-matter-scraper-scheduled--manual) workflow (daily + on demand), so there's usually nothing to do by hand — but it works anywhere a Chrome/Chromium binary is available if you want to run it yourself:
 
 ```bash
 pip install -r scripts/requirements-tribunal.txt   # nodriver, requests, beautifulsoup4, lxml
 
-python scripts/scrape_tribunal.py                # scrape every entry that has a tribunal_url
-python scripts/scrape_tribunal.py MN-01068        # scrape just this merger_id
-python scripts/scrape_tribunal.py --dry-run       # parse and report only, write nothing
-python scripts/scrape_tribunal.py --no-download   # record metadata only, skip file downloads
+python -m scripts.scrape.scrape_tribunal                # scrape every entry that has a tribunal_url
+python -m scripts.scrape.scrape_tribunal MN-01068        # scrape just this merger_id
+python -m scripts.scrape.scrape_tribunal --dry-run       # parse and report only, write nothing
+python -m scripts.scrape.scrape_tribunal --no-download   # record metadata only, skip file downloads
 
 git add data/processed/tribunal_appeals.json data/raw/matters
 git commit -m "Update scraped tribunal data"
@@ -248,7 +248,7 @@ git push
 The scraper drives a real Chrome via nodriver to get past the tribunal site's Cloudflare challenge. On a headless machine run it under an X server so Chrome runs headful (far less likely to be flagged than headless), exactly as the workflow does:
 
 ```bash
-xvfb-run -a python scripts/scrape_tribunal.py
+xvfb-run -a python -m scripts.scrape.scrape_tribunal
 ```
 
 The linked PDFs are downloaded by that same browser, via a `fetch()` run inside the matter page once its challenge has cleared. Handing the browser's cookies to `requests` is *not* sufficient — Cloudflare ties the clearance to the client that earned it (down to its TLS fingerprint), so a Python-side download replaying those cookies comes back `403 Forbidden` and the document is recorded in `documents[]` with no `url_gh` mirror. The `requests` path is kept only as a fallback.
@@ -273,15 +273,15 @@ The dev server serves static JSON from `public/data/`.
 
 ```bash
 # 1. Scrape (or use existing matters/ data)
-./scripts/scrape.sh
+./scripts/scrape/scrape.sh
 
 # 2. Extract merger data
-python scripts/extract_mergers.py
+python -m scripts.extract_mergers
 
 # 3. Generate static files
-python scripts/generate_similar_mergers.py
-python scripts/generate_static_data.py
-python scripts/generate_rss_feed.py
+python -m scripts.generate.generate_similar_mergers
+python -m scripts.generate.generate_static_data
+python -m scripts.generate.generate_rss_feed
 
 # 4. Run frontend
 cd frontend

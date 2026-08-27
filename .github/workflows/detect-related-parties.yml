@@ -25,7 +25,7 @@ jobs:
       - name: Run related-party detection
         id: detect
         run: |
-          if python3 scripts/detect_related_parties.py --summary; then
+          if python3 -m scripts.detect.detect_related_parties --summary; then
             echo "found=false" >> "$GITHUB_OUTPUT"
           else
             echo "found=true" >> "$GITHUB_OUTPUT"
@@ -36,7 +36,7 @@ jobs:
           {
             echo "### Related parties detection"
             echo ""
-            python3 scripts/detect_related_parties.py --summary || true
+            python3 -m scripts.detect.detect_related_parties --summary || true
           } >> "$GITHUB_STEP_SUMMARY"
 
       # Switch to (or create/reset) the well-known suggestion branch so the
@@ -54,7 +54,7 @@ jobs:
       - name: Apply suggested groups
         if: steps.detect.outputs.found == 'true'
         run: |
-          python3 scripts/detect_related_parties.py \
+          python3 -m scripts.detect.detect_related_parties \
             --apply-suggestions \
             --pr-markdown pr_body.md || true
 

@@ -10,17 +10,17 @@ titles from its ``freeze_events`` list.
 
 Usage:
     # Remove the whole entry for a merger (unfreeze everything).
-    python scripts/unfreeze_mergers.py MN-65005
+    python -m scripts.unfreeze_mergers MN-65005
 
     # Remove only specific frozen event titles, leaving the rest frozen.
-    python scripts/unfreeze_mergers.py MN-65026 \\
+    python -m scripts.unfreeze_mergers MN-65026 \\
         --event "McCarroll's - Kinghorn Motors and Country Motors - Questionnaire"
 
     # Preview the change without writing the file.
-    python scripts/unfreeze_mergers.py MN-65005 --dry-run
+    python -m scripts.unfreeze_mergers MN-65005 --dry-run
 
     # Show what's currently frozen.
-    python scripts/unfreeze_mergers.py --list
+    python -m scripts.unfreeze_mergers --list
 """
 
 import argparse

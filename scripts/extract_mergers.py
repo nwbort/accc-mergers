@@ -10,25 +10,25 @@ import requests
 import re
 from datetime import datetime, timedelta, timezone
 from markdownify import markdownify as md
-from parse_determination import parse_determination_pdf
-from parse_phase2_notice import parse_phase2_notice_pdf
-from parse_nocc import (
+from scripts.parse.parse_determination import parse_determination_pdf
+from scripts.parse.parse_phase2_notice import parse_phase2_notice_pdf
+from scripts.parse.parse_nocc import (
     process_all_noccs,
     _build_caches_from_existing as _build_nocc_caches,
     _DEFAULT_CACHE_PATH as _NOCC_CACHE_PATH,
 )
-from parse_questionnaire import (
+from scripts.parse.parse_questionnaire import (
     process_all_questionnaires,
     _build_caches_from_existing as _build_q_caches,
     _DEFAULT_CACHE_PATH as _Q_CACHE_PATH,
     _NEG_CACHE_KEY as _Q_NEG_CACHE_KEY,
 )
-from normalization import normalize_determination, normalize_dashes
-from constants.site import REPO, mergers_fyi_url
-from cutoff import get_skipped_merger_ids, is_waiver_merger
-from date_utils import parse_text_to_iso, parse_iso_datetime
-from static_data.enrichment import is_phase_2_referral_event
-from constants import merger_status
+from scripts.normalization import normalize_determination, normalize_dashes
+from scripts.constants.site import REPO, mergers_fyi_url
+from scripts.cutoff import get_skipped_merger_ids, is_waiver_merger
+from scripts.date_utils import parse_text_to_iso, parse_iso_datetime
+from scripts.generate.static_data.enrichment import is_phase_2_referral_event
+from scripts.constants import merger_status
 
 BASE_URL = "https://www.accc.gov.au"
 MATTERS_DIR = "./data/raw/matters"
@@ -1110,7 +1110,7 @@ def _calculate_missing_end_of_determination_period(merger_data, merger_id):
         return
     start_dt = parse_iso_datetime(merger_data.get('effective_notification_datetime'))
     if start_dt:
-        from static_data.business_days import add_business_days
+        from scripts.generate.static_data.business_days import add_business_days
         # BD 1 of the review period is the day after notification (day 0), but
         # add_business_days counts its start date as day 1 - so shift the start
         # forward one day before adding 30 business days.

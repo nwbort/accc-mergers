@@ -34,10 +34,10 @@ jobs:
       run: echo "${HOME}/go/bin" >> $GITHUB_PATH
 
     - name: Make scrape.sh executable
-      run: chmod +x ./scripts/scrape.sh
+      run: chmod +x ./scripts/scrape/scrape.sh
 
     - name: Run the scraper
-      run: ./scripts/scrape.sh
+      run: ./scripts/scrape/scrape.sh
 
     - name: Commit and push changes
       run: |-

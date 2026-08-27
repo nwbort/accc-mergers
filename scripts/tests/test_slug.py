@@ -16,16 +16,11 @@ regenerate the fixture.
 """
 
 import json
-import os
-import sys
 from pathlib import Path
 
 import pytest
 
-# Import scripts/slug.py the same way the other tests here reach scripts modules.
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-
-from slug import merger_path, slugify  # noqa: E402
+from scripts.slug import merger_path, slugify  # noqa: E402
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 FIXTURE = json.loads((REPO_ROOT / "slug-cases.json").read_text(encoding="utf-8"))

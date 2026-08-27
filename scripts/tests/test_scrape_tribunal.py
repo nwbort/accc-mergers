@@ -1,4 +1,4 @@
-"""Tests for scripts/scrape_tribunal.py's parsing and download helpers.
+"""Tests for scripts/scrape/scrape_tribunal.py's parsing and download helpers.
 
 The browser-driving half (nodriver → Chrome, Cloudflare challenge) can only be
 exercised end-to-end from CI against the live site; these cover the pure logic
@@ -12,15 +12,11 @@ fetch cannot.
 
 import asyncio
 import base64
-import os
-import sys
 import types
 
 import pytest
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-
-import scrape_tribunal
+from scripts.scrape import scrape_tribunal
 
 
 BASE_URL = 'https://www.competitiontribunal.gov.au/current-matters/act-1-of-2026'

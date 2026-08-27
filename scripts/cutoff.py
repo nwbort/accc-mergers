@@ -13,8 +13,8 @@ This module can be used by:
 import json
 import os
 from datetime import datetime, timedelta
-from date_utils import parse_iso_datetime
-from constants import merger_status
+from scripts.date_utils import parse_iso_datetime
+from scripts.constants import merger_status
 
 # Default cutoff period after determination/waiver decision
 CUTOFF_WEEKS = 3

@@ -2,27 +2,23 @@
 static data generation, cutoff logic, and extraction helpers."""
 
 import sys
-import os
 import json
 import unittest.mock
 from datetime import date, datetime
-
-# Add scripts directory to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 # Mock heavy transitive imports before importing modules that need them
 sys.modules['pdfplumber'] = unittest.mock.MagicMock()
 sys.modules['markdownify'] = unittest.mock.MagicMock()
 sys.modules['requests'] = unittest.mock.MagicMock()
 
-from parse_determination import (
+from scripts.parse.parse_determination import (
     extract_commission_division,
     parse_text_as_table,
     _parse_section_blocks,
 )
-from parse_questionnaire import extract_deadline, extract_questions, extract_questions_from_text, _extract_subpoints, _extract_bullets, _has_questionnaire_header
-from cutoff import is_waiver_merger, get_cutoff_date, should_skip_merger
-from extract_mergers import (
+from scripts.parse.parse_questionnaire import extract_deadline, extract_questions, extract_questions_from_text, _extract_subpoints, _extract_bullets, _has_questionnaire_header
+from scripts.cutoff import is_waiver_merger, get_cutoff_date, should_skip_merger
+from scripts.extract_mergers import (
     is_safe_url,
     get_serve_filename,
     _extract_consultations,
@@ -39,8 +35,9 @@ from extract_mergers import (
     _calculate_missing_end_of_determination_period,
     _is_determination_attachment,
 )
-from static_data.business_days import calculate_business_days
-import extract_mergers
+from scripts.generate.static_data.business_days import calculate_business_days
+from scripts import extract_mergers
+
 from bs4 import BeautifulSoup
 
 
@@ -370,24 +367,24 @@ class TestParseFreezeSpec:
     """_parse_freeze_spec maps a frozen_events_mergers.json entry to a spec."""
 
     def test_true_and_shorthands_freeze_all(self):
-        from extract_mergers import _parse_freeze_spec
+        from scripts.extract_mergers import _parse_freeze_spec
         assert _parse_freeze_spec({"freeze_events": True}) is True
         assert _parse_freeze_spec({}) is True
         assert _parse_freeze_spec(None) is True
 
     def test_list_freezes_named_titles(self):
-        from extract_mergers import _parse_freeze_spec
+        from scripts.extract_mergers import _parse_freeze_spec
         assert _parse_freeze_spec({"freeze_events": ["A", "B"]}) == {"A", "B"}
         # An empty/garbage list is not a freeze at all.
         assert _parse_freeze_spec({"freeze_events": []}) is None
 
     def test_overrides_only_is_not_frozen(self):
-        from extract_mergers import _parse_freeze_spec
+        from scripts.extract_mergers import _parse_freeze_spec
         assert _parse_freeze_spec({"_comment": "note"}) is None
         assert _parse_freeze_spec({"status": "Approved"}) is None
 
     def test_loader_returns_specs_and_overrides(self, tmp_path):
-        from extract_mergers import _load_frozen_events_mergers
+        from scripts.extract_mergers import _load_frozen_events_mergers
         data = {
             "_comment": "top",
             "MN-1": {"freeze_events": True},
@@ -1273,7 +1270,7 @@ class TestHasQuestionnaireHeader:
 
     def _patch_pdfplumber(self, first_page_text):
         """Patch pdfplumber via the function's own __globals__ so the test is
-        immune to other test files replacing sys.modules['parse_questionnaire']."""
+        immune to other test files replacing sys.modules['scripts.parse.parse_questionnaire']."""
         page = unittest.mock.MagicMock()
         page.extract_text.return_value = first_page_text
         pdf_obj = unittest.mock.MagicMock()
@@ -1696,24 +1693,24 @@ class TestInferDeterminationDateFromEvents:
 # ---------------------------------------------------------------------------
 
 # Import after mocks are set up
-from static_data.business_days import (
+from scripts.generate.static_data.business_days import (
     is_christmas_new_year_period,
     _count_weekdays_in_range,
     calculate_calendar_days,
     check_holiday_horizon,
     get_latest_holiday_year,
 )
-from static_data.enrichment import (
+from scripts.generate.static_data.enrichment import (
     detect_has_conditions,
     enrich_merger,
     extract_phase_from_event,
     is_phase_2_referral_event,
 )
-from static_data.outputs.commentary import generate as generate_commentary_json
-from static_data.outputs.industries import generate_index as generate_industries_json
-from static_data.outputs.questionnaires import generate as generate_questionnaire_files
-from static_data.outputs.noccs import generate as generate_nocc_files
-from parse_nocc import (
+from scripts.generate.static_data.outputs.commentary import generate as generate_commentary_json
+from scripts.generate.static_data.outputs.industries import generate_index as generate_industries_json
+from scripts.generate.static_data.outputs.questionnaires import generate as generate_questionnaire_files
+from scripts.generate.static_data.outputs.noccs import generate as generate_nocc_files
+from scripts.parse.parse_nocc import (
     _parse_blocks,
     _group_blocks_into_sections,
     _is_top_level_heading,

@@ -2,14 +2,11 @@
 investigate in Phase 2" boxes from Phase 2 Notice PDFs."""
 
 import sys
-import os
 import unittest.mock
-
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 sys.modules.setdefault('pdfplumber', unittest.mock.MagicMock())
 
-from parse_phase2_notice import (
+from scripts.parse.parse_phase2_notice import (
     _extract_matters_boxes,
     _classify_line,
     _classify_ocr_line,

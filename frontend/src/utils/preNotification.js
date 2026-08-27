@@ -1,6 +1,6 @@
 /**
  * Reading the pipeline's pre-notification estimate (see
- * scripts/static_data/prenotification.py) into something displayable.
+ * scripts/generate/static_data/prenotification.py) into something displayable.
  *
  * Pre-notification — the stretch of ACCC engagement before a notification is
  * formally filed — never appears on the public register. The pipeline infers it

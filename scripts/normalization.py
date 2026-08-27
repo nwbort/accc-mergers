@@ -8,7 +8,7 @@ avoid code duplication.
 
 import re
 
-from constants import merger_status
+from scripts.constants import merger_status
 
 # Unicode dash-like characters the ACCC site uses interchangeably for the same
 # wording (e.g. an event title scraped with an en dash '–' can reappear later

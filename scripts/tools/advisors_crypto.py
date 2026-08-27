@@ -28,10 +28,10 @@ saves (the salt is preserved across re-saves):
 CLI (bootstrap / inspect):
 
     # encrypt an existing plaintext advisors.json -> advisors.json.enc
-    ADVISORS_PASSPHRASE=... python scripts/tools/advisors_crypto.py encrypt
+    ADVISORS_PASSPHRASE=... python -m scripts.tools.advisors_crypto encrypt
 
     # decrypt advisors.json.enc and print the JSON to stdout
-    ADVISORS_PASSPHRASE=... python scripts/tools/advisors_crypto.py decrypt
+    ADVISORS_PASSPHRASE=... python -m scripts.tools.advisors_crypto decrypt
 """
 
 from __future__ import annotations

@@ -7,13 +7,9 @@ the file-IO wrappers around that predicate.
 """
 
 import json
-import os
 import sys
 import unittest.mock
 from datetime import datetime, timedelta
-
-# Add scripts directory to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 # Mock heavy transitive imports (cutoff itself has none, but keeping parity
 # with test_pipeline.py in case the import graph grows).
@@ -21,7 +17,7 @@ sys.modules.setdefault('pdfplumber', unittest.mock.MagicMock())
 sys.modules.setdefault('markdownify', unittest.mock.MagicMock())
 sys.modules.setdefault('requests', unittest.mock.MagicMock())
 
-from cutoff import (
+from scripts.cutoff import (
     get_active_merger_ids,
     get_skipped_merger_ids,
     get_skipped_url_paths,
@@ -91,7 +87,7 @@ class TestGetActiveMergerIds:
 
         # We cannot easily inject reference_date through this API, so patch
         # datetime.now in the cutoff module.
-        with unittest.mock.patch('cutoff.datetime') as mock_dt:
+        with unittest.mock.patch('scripts.cutoff.datetime') as mock_dt:
             mock_dt.now.return_value = reference
             mock_dt.side_effect = lambda *args, **kw: datetime(*args, **kw)
             result = get_active_merger_ids(str(path))
@@ -129,7 +125,7 @@ class TestGetSkippedMergerIds:
         path = tmp_path / 'mergers.json'
         _write_mergers(path, _make_mergers(reference))
 
-        with unittest.mock.patch('cutoff.datetime') as mock_dt:
+        with unittest.mock.patch('scripts.cutoff.datetime') as mock_dt:
             mock_dt.now.return_value = reference
             mock_dt.side_effect = lambda *args, **kw: datetime(*args, **kw)
             result = get_skipped_merger_ids(str(path))
@@ -141,7 +137,7 @@ class TestGetSkippedMergerIds:
         path = tmp_path / 'mergers.json'
         _write_mergers(path, _make_mergers(reference))
 
-        with unittest.mock.patch('cutoff.datetime') as mock_dt:
+        with unittest.mock.patch('scripts.cutoff.datetime') as mock_dt:
             mock_dt.now.return_value = reference
             mock_dt.side_effect = lambda *args, **kw: datetime(*args, **kw)
             active = get_active_merger_ids(str(path))
@@ -158,7 +154,7 @@ class TestGetSkippedMergerIds:
         path = tmp_path / 'mergers.json'
         _write_mergers(path, _make_mergers(reference))
 
-        with unittest.mock.patch('cutoff.datetime') as mock_dt:
+        with unittest.mock.patch('scripts.cutoff.datetime') as mock_dt:
             mock_dt.now.return_value = reference
             mock_dt.side_effect = lambda *args, **kw: datetime(*args, **kw)
             result = get_skipped_merger_ids(str(path), cutoff_weeks=520)
@@ -172,7 +168,7 @@ class TestGetSkippedUrlPaths:
         path = tmp_path / 'mergers.json'
         _write_mergers(path, _make_mergers(reference))
 
-        with unittest.mock.patch('cutoff.datetime') as mock_dt:
+        with unittest.mock.patch('scripts.cutoff.datetime') as mock_dt:
             mock_dt.now.return_value = reference
             mock_dt.side_effect = lambda *args, **kw: datetime(*args, **kw)
             paths = get_skipped_url_paths(str(path))
@@ -197,7 +193,7 @@ class TestGetSkippedUrlPaths:
                 # No 'url' key
             },
         ])
-        with unittest.mock.patch('cutoff.datetime') as mock_dt:
+        with unittest.mock.patch('scripts.cutoff.datetime') as mock_dt:
             mock_dt.now.return_value = reference
             mock_dt.side_effect = lambda *args, **kw: datetime(*args, **kw)
             assert get_skipped_url_paths(str(path)) == set()

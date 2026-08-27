@@ -2,7 +2,7 @@ name: Scrape Tribunal
 
 # Fills in each tribunal_appeals.json entry's documents[] from the live
 # Australian Competition Tribunal matter pages. The tribunal site is behind
-# Cloudflare's managed challenge, so scripts/scrape_tribunal.py drives a real
+# Cloudflare's managed challenge, so scripts/scrape/scrape_tribunal.py drives a real
 # Chrome (headful, under Xvfb) via nodriver to solve it — which means this runs
 # unattended in CI, unlike the old curl-based scraper. See that script's
 # docstring and docs/deployment.md.
@@ -74,7 +74,7 @@ jobs:
       # xvfb-run gives Chrome a display so it runs headful, which is far less
       # likely to be flagged by Cloudflare than headless.
       run: |
-        xvfb-run -a python scripts/scrape_tribunal.py ${{ github.event.inputs.merger_ids }}
+        xvfb-run -a python -m scripts.scrape.scrape_tribunal ${{ github.event.inputs.merger_ids }}
 
     - name: Compress oversized PDFs
       # Cloudflare Pages rejects an entire deployment if any single asset is
@@ -92,7 +92,7 @@ jobs:
           # pull the main pipeline's pinned set in on the rare run that needs it
           # rather than pinning pdfplumber a second time in its own file.
           pip install -r scripts/requirements.txt
-          python scripts/compress_pdfs.py
+          python -m scripts.compress_pdfs
         else
           echo "No PDFs over the 25 MiB Pages asset limit"
         fi

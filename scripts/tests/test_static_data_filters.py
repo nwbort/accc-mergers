@@ -1,19 +1,15 @@
-"""Tests for scripts/static_data/filters.py."""
+"""Tests for scripts/generate/static_data/filters.py."""
 
-import os
 import sys
 import unittest.mock
-
-# Add scripts directory to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 # Mock heavy transitive imports before importing modules that need them
 sys.modules.setdefault('pdfplumber', unittest.mock.MagicMock())
 sys.modules.setdefault('markdownify', unittest.mock.MagicMock())
 sys.modules.setdefault('requests', unittest.mock.MagicMock())
 
-from constants import merger_status
-from static_data.filters import (
+from scripts.constants import merger_status
+from scripts.generate.static_data.filters import (
     exclude_for_public_output,
     filter_notifications,
     filter_suspended,

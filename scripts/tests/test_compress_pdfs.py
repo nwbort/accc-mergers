@@ -6,17 +6,14 @@ parameter, so these tests substitute a fake that writes a file of whatever size
 the scenario needs.
 """
 
-import os
 import sys
 import unittest.mock
 
 import pytest
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-
 sys.modules.setdefault('pdfplumber', unittest.mock.MagicMock())
 
-from compress_pdfs import (  # noqa: E402
+from scripts.compress_pdfs import (  # noqa: E402
     PAGES_ASSET_LIMIT,
     QUALITY_PRESETS,
     compress_file,
@@ -52,7 +49,7 @@ def fake_compressor(sizes):
 def stats(monkeypatch):
     """Make every PDF look like a valid 10-page document with a text layer, so
     validation passes unless a test says otherwise."""
-    monkeypatch.setattr('compress_pdfs.pdf_stats', lambda path: (10, 5000))
+    monkeypatch.setattr('scripts.compress_pdfs.pdf_stats', lambda path: (10, 5000))
 
 
 class TestPresetSelection:
@@ -160,7 +157,7 @@ class TestValidation:
         src = write_pdf(tmp_path / "big.pdf", 30 * MIB)
         # The original has 10 pages; anything ghostscript writes claims 9.
         monkeypatch.setattr(
-            'compress_pdfs.pdf_stats',
+            'scripts.compress_pdfs.pdf_stats',
             lambda path: (10, 5000) if path == src else (9, 5000),
         )
         result = compress_file(
@@ -174,7 +171,7 @@ class TestValidation:
     def test_rejects_a_compressed_file_that_lost_its_text_layer(self, tmp_path, monkeypatch):
         src = write_pdf(tmp_path / "big.pdf", 30 * MIB)
         monkeypatch.setattr(
-            'compress_pdfs.pdf_stats',
+            'scripts.compress_pdfs.pdf_stats',
             lambda path: (10, 5000) if path == src else (10, 100),
         )
         result = compress_file(
@@ -189,7 +186,7 @@ class TestValidation:
         # that's normal and must not block compression.
         src = write_pdf(tmp_path / "big.pdf", 30 * MIB)
         monkeypatch.setattr(
-            'compress_pdfs.pdf_stats',
+            'scripts.compress_pdfs.pdf_stats',
             lambda path: (10, 5000) if path == src else (10, 4999),
         )
         result = compress_file(
@@ -203,7 +200,7 @@ class TestValidation:
         # A pure image scan has no text to compare, so the check shouldn't
         # veto compressing it.
         src = write_pdf(tmp_path / "scan.pdf", 30 * MIB)
-        monkeypatch.setattr('compress_pdfs.pdf_stats', lambda path: (10, 0))
+        monkeypatch.setattr('scripts.compress_pdfs.pdf_stats', lambda path: (10, 0))
         result = compress_file(
             src, target=20 * MIB,
             runner=fake_compressor({p: 14 * MIB for p in QUALITY_PRESETS}),

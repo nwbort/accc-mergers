@@ -9,21 +9,17 @@ Covers two layers:
 """
 
 import json
-import os
 import sys
 import unittest.mock
-
-# Add scripts directory to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 # Mock heavy transitive imports before importing modules that need them
 sys.modules.setdefault('pdfplumber', unittest.mock.MagicMock())
 sys.modules.setdefault('markdownify', unittest.mock.MagicMock())
 sys.modules.setdefault('requests', unittest.mock.MagicMock())
 
-import detect_related_mergers as drm
-from constants import merger_status
-from static_data.loaders import build_relationship_map
+from scripts.detect import detect_related_mergers as drm
+from scripts.constants import merger_status
+from scripts.generate.static_data.loaders import build_relationship_map
 
 
 # ---------------------------------------------------------------------------

@@ -1,29 +1,25 @@
-"""Tests for scripts/related_parties_batch.py — the batch-review CLI for
+"""Tests for scripts/detect/related_parties_batch.py — the batch-review CLI for
 manually linking related parties (see also test_related_parties.py for the
 party_matching helpers it builds on)."""
 
-import os
 import sys
 import unittest.mock
 
 import pytest
-
-# Add scripts directory to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 # Mock heavy transitive imports before importing modules that need them
 sys.modules.setdefault('pdfplumber', unittest.mock.MagicMock())
 sys.modules.setdefault('markdownify', unittest.mock.MagicMock())
 sys.modules.setdefault('requests', unittest.mock.MagicMock())
 
-from related_parties_batch import (
+from scripts.detect.related_parties_batch import (
     annotate_parties,
     build_batch,
     format_batch_text,
     select_batch_by_ids,
     select_batch_by_rank,
 )
-from party_matching import build_group_lookups
+from scripts.detect.party_matching import build_group_lookups
 
 
 def _merger(mid, name, date, acquirers=None, targets=None, other=None):
