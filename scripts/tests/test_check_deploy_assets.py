@@ -2,22 +2,19 @@
 too big for Cloudflare Pages to deploy and feeds the tracking issue."""
 
 import json
-import os
 import re
 import sys
 import unittest.mock
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-
 sys.modules.setdefault('pdfplumber', unittest.mock.MagicMock())
 
-from check_deploy_assets import (  # noqa: E402
+from scripts.check_deploy_assets import (  # noqa: E402
     DEPLOY_SOURCES,
     build_issue_body,
     find_oversized,
     main,
 )
-from compress_pdfs import PAGES_ASSET_LIMIT  # noqa: E402
+from scripts.compress_pdfs import PAGES_ASSET_LIMIT  # noqa: E402
 
 MIB = 1024 * 1024
 
@@ -118,7 +115,7 @@ class TestIssueBody:
     def test_points_at_the_compression_script(self):
         body = build_issue_body([("a.pdf", 30 * MIB)])
 
-        assert "python scripts/compress_pdfs.py" in body
+        assert "python -m scripts.compress_pdfs" in body
 
     def test_escapes_characters_that_would_break_the_table(self):
         # ACCC filenames are free-form; a pipe would otherwise split the row

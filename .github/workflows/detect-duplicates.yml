@@ -31,7 +31,7 @@ jobs:
       - name: Run duplicate detection
         id: detect
         run: |
-          if python3 scripts/detect_duplicates.py --output duplicate_report.json; then
+          if python3 -m scripts.detect.detect_duplicates --output duplicate_report.json; then
             echo "found=false" >> "$GITHUB_OUTPUT"
           else
             echo "found=true" >> "$GITHUB_OUTPUT"
@@ -39,7 +39,7 @@ jobs:
 
       - name: Write job summary
         run: |
-          python3 scripts/detect_duplicates.py >> "$GITHUB_STEP_SUMMARY" || true
+          python3 -m scripts.detect.detect_duplicates >> "$GITHUB_STEP_SUMMARY" || true
 
       # Switch to (or create/reset) the well-known fix branch so the commit
       # lands on top of the current default-branch HEAD.
@@ -56,7 +56,7 @@ jobs:
       - name: Apply duplicate fixes
         if: steps.detect.outputs.found == 'true'
         run: |
-          python3 scripts/detect_duplicates.py \
+          python3 -m scripts.detect.detect_duplicates \
             --apply-fixes \
             --pr-markdown pr_body.md || true
 

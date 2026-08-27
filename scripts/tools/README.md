@@ -10,11 +10,11 @@ Run from the repo root.
 
 Web UI for resolving duplicate event entries within a merger record.
 Reads `data/processed/mergers.json`, surfaces "certain" and "likely"
-duplicates (using the detector in `scripts/detect_duplicates.py`), and
+duplicates (using the detector in `scripts/detect/detect_duplicates.py`), and
 lets you delete individual events. Writes back to `mergers.json`.
 
 ```bash
-python scripts/tools/resolver.py
+python -m scripts.tools.resolver
 # open http://127.0.0.1:8000
 ```
 
@@ -25,7 +25,7 @@ frontend renders on `/commentary` and on each merger detail page.
 Writes back to `data/processed/commentary.json`.
 
 ```bash
-python scripts/tools/commentary.py
+python -m scripts.tools.commentary
 # open http://127.0.0.1:8001
 ```
 
@@ -42,14 +42,14 @@ canonical groups (checkbox on each card) and **merge** them into one — members
 are combined and de-duplicated, and you're prompted for the merged canonical
 name. Writes back to `data/processed/related_parties.json`.
 
-This is the hand-editing counterpart to `scripts/detect_related_parties.py`,
+This is the hand-editing counterpart to `scripts/detect/detect_related_parties.py`,
 which suggests new groups daily via a pull request. The grouping rules — how a
 party is matched to a group by ABN or normalised name — live in
-`scripts/party_matching.py`; once a group is recorded, each matching party on a
+`scripts/detect/party_matching.py`; once a group is recorded, each matching party on a
 merger detail page links to the register filtered by the group's canonical name.
 
 ```bash
-python scripts/tools/related_parties.py
+python -m scripts.tools.related_parties
 # open http://127.0.0.1:8003
 ```
 
@@ -58,7 +58,7 @@ candidates to merge (e.g. two groups recorded separately before anyone
 noticed they were the same company), run the detector in group-merge mode:
 
 ```bash
-python scripts/detect_related_parties.py --group-merge-candidates
+python -m scripts.detect.detect_related_parties --group-merge-candidates
 ```
 
 This clusters every member across all recorded groups using the same
@@ -78,10 +78,10 @@ To work through the register newest-first and decide new groupings from the
 
 ```bash
 # Mergers ranked 31st-40th by notification date, newest first
-python scripts/related_parties_batch.py --start 31 --count 10
+python -m scripts.detect.related_parties_batch --start 31 --count 10
 
 # Re-check specific mergers by id, e.g. after editing related_parties.json
-python scripts/related_parties_batch.py --ids MN-50032,MN-60031
+python -m scripts.detect.related_parties_batch --ids MN-50032,MN-60031
 ```
 
 For each merger in range it prints every acquirer/target/other party plus
@@ -119,7 +119,7 @@ By default you just type the passphrase into the web UI's **unlock screen** —
 nothing to set up first:
 
 ```bash
-python scripts/tools/advisors.py
+python -m scripts.tools.advisors
 # open http://127.0.0.1:8002 and enter the passphrase to unlock
 ```
 
@@ -132,7 +132,7 @@ To skip the unlock screen (scripts, or just convenience), set
 
 ```bash
 export ADVISORS_PASSPHRASE='choose-a-strong-passphrase'
-python scripts/tools/advisors.py   # opens already unlocked
+python -m scripts.tools.advisors   # opens already unlocked
 ```
 
 The tool reads/writes `advisors.json.enc` directly; commit that file after
@@ -141,15 +141,15 @@ it. To bootstrap from the existing plaintext template instead, use the CLI
 (which honours `ADVISORS_PASSPHRASE` or prompts):
 
 ```bash
-python scripts/tools/advisors_crypto.py encrypt   # advisors.json -> advisors.json.enc
+python -m scripts.tools.advisors_crypto encrypt   # advisors.json -> advisors.json.enc
 git add data/processed/advisors.json.enc           # commit the encrypted blob
 ```
 
 To read the data outside the web UI, decrypt to stdout:
 
 ```bash
-python scripts/tools/advisors_crypto.py decrypt            # print JSON
-python scripts/tools/advisors_crypto.py decrypt --out /tmp/advisors.json
+python -m scripts.tools.advisors_crypto decrypt            # print JSON
+python -m scripts.tools.advisors_crypto decrypt --out /tmp/advisors.json
 ```
 
 **GitHub Actions:** if a workflow ever needs this data, add the passphrase as

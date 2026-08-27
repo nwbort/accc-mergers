@@ -3,18 +3,14 @@
 The sitemap deliberately advertises fewer pages than the site builds: single-
 merger shelf companies and empty ANZSIC nodes are prerendered and served, but
 kept out of the sitemap so crawl budget goes to the merger pages. See the
-module docstring in ``scripts/generate_sitemap.py`` for the full policy.
+module docstring in ``scripts/generate/generate_sitemap.py`` for the full policy.
 
 These tests pin the two filters, because getting either wrong is silent — the
 sitemap still validates, it just advertises the wrong set of URLs.
 """
 
-import os
-import sys
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-
-from generate_sitemap import (  # noqa: E402
+from scripts.generate.generate_sitemap import (  # noqa: E402
     group_merger_count,
     industry_codes_with_mergers,
     sitemap_party_groups,

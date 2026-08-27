@@ -29,8 +29,8 @@ from zoneinfo import ZoneInfo
 
 import requests
 
-from constants.tribunal import APPEAL_TYPE_LABELS
-from date_utils import parse_iso_datetime
+from scripts.constants.tribunal import APPEAL_TYPE_LABELS
+from scripts.date_utils import parse_iso_datetime
 
 # ---------------------------------------------------------------------------
 # Config

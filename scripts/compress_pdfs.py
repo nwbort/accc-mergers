@@ -25,9 +25,9 @@ those to the document's source URL, so a failure here degrades rather than
 breaks.
 
 Usage:
-    python scripts/compress_pdfs.py                  # all of data/raw/matters
-    python scripts/compress_pdfs.py path/to/file.pdf # specific files
-    python scripts/compress_pdfs.py --dry-run        # report, change nothing
+    python -m scripts.compress_pdfs                  # all of data/raw/matters
+    python -m scripts.compress_pdfs path/to/file.pdf # specific files
+    python -m scripts.compress_pdfs --dry-run        # report, change nothing
 """
 
 import argparse

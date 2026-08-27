@@ -7,23 +7,19 @@ exist in the original ``static_data.filters``).
 """
 
 import json
-import os
 import sys
 import unittest.mock
 from pathlib import Path
 
 import pytest
 
-# Add scripts directory to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-
 # Mock heavy transitive imports before importing modules that need them
 sys.modules.setdefault('pdfplumber', unittest.mock.MagicMock())
 sys.modules.setdefault('markdownify', unittest.mock.MagicMock())
 sys.modules.setdefault('requests', unittest.mock.MagicMock())
 
-from constants import merger_status
-from merger_filters import (
+from scripts.constants import merger_status
+from scripts.merger_filters import (
     DEFAULT_MERGERS_JSON,
     exclude_for_public_output,
     filter_active,

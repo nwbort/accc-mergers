@@ -1,12 +1,8 @@
 """Tests for the waiver-refile tracker output (refiled-notifications.json)."""
 
 import json
-import os
-import sys
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-
-from static_data.outputs import refiled
+from scripts.generate.static_data.outputs import refiled
 
 
 def _waiver(merger_id='WA-0001', notification_id='MN-0001'):

@@ -7,19 +7,15 @@ detect_duplicates.py and are what we exercise here.
 """
 
 import json
-import os
 import sys
 import unittest.mock
-
-# Add scripts directory to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 # Mock heavy transitive imports that some scripts modules pull in.
 sys.modules.setdefault('pdfplumber', unittest.mock.MagicMock())
 sys.modules.setdefault('markdownify', unittest.mock.MagicMock())
 sys.modules.setdefault('requests', unittest.mock.MagicMock())
 
-from detect_duplicates import (
+from scripts.detect.detect_duplicates import (
     build_report,
     event_summary,
     find_duplicates,

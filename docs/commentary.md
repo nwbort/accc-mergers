@@ -71,7 +71,7 @@ After editing `commentary.json`:
 
 ```bash
 # Regenerate static data files
-python3 scripts/generate_static_data.py
+python3 -m scripts.generate.generate_static_data
 
 # Commit your changes
 git add commentary.json frontend/public/data/

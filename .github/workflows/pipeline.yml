@@ -94,11 +94,11 @@ jobs:
         env:
           SCRAPE_REPORT_DIR: ${{ runner.temp }}/scrape-report
         run: |
-          chmod +x ./scripts/scrape.sh
+          chmod +x ./scripts/scrape/scrape.sh
           if [ "${{ inputs.all_mergers }}" = "true" ]; then
-            ./scripts/scrape.sh --all
+            ./scripts/scrape/scrape.sh --all
           else
-            ./scripts/scrape.sh
+            ./scripts/scrape/scrape.sh
           fi
 
       # Record which merger IDs this run actually fetched, which of their
@@ -132,7 +132,7 @@ jobs:
 
           git status --porcelain -- data/raw/matters/ \
             | awk '{print $NF}' > "${RUNNER_TEMP}/scrape-changed.txt"
-          python scripts/scrape_summary.py \
+          python -m scripts.scrape.scrape_summary \
             --report-dir "$SCRAPE_REPORT_DIR" \
             --changed-paths "${RUNNER_TEMP}/scrape-changed.txt" \
             | tee -a "$GITHUB_STEP_SUMMARY"
@@ -191,9 +191,9 @@ jobs:
         if: steps.scrape-changes.outputs.changed == 'true' || github.event_name != 'schedule'
         run: |
           if [ "${{ inputs.all_mergers }}" = "true" ]; then
-            python scripts/extract_mergers.py --all --skip-pdf-enrich
+            python -m scripts.extract_mergers --all --skip-pdf-enrich
           else
-            python scripts/extract_mergers.py --skip-pdf-enrich
+            python -m scripts.extract_mergers --skip-pdf-enrich
           fi
 
       # --- Convert DOCX to PDF ---
@@ -261,7 +261,7 @@ jobs:
       - name: Check if Phase 2 Notice OCR is needed
         id: check-ocr
         run: |
-          needs_ocr=$(python scripts/check_phase2_notice_ocr_needed.py)
+          needs_ocr=$(python -m scripts.check_phase2_notice_ocr_needed)
           echo "needs_ocr=$needs_ocr" >> "$GITHUB_OUTPUT"
 
       - name: Install Tesseract OCR
@@ -283,11 +283,11 @@ jobs:
           || steps.find-docx.outputs.has_unconverted == 'true'
           || github.event_name != 'schedule'
         run: |
-          python scripts/enrich_pdfs.py
-          python scripts/generate_similar_mergers.py
-          python scripts/generate_static_data.py
-          ./scripts/generate-cli-data.sh
-          python scripts/generate_rss_feed.py
+          python -m scripts.enrich_pdfs
+          python -m scripts.generate.generate_similar_mergers
+          python -m scripts.generate.generate_static_data
+          ./scripts/generate/generate-cli-data.sh
+          python -m scripts.generate.generate_rss_feed
 
       # Cloudflare Pages rejects an entire deployment if any single asset is
       # over 25 MiB, so a scanned exhibit that lands over it takes the site
@@ -303,7 +303,7 @@ jobs:
           if find data/raw/matters -type f -name '*.pdf' -size +25M | grep -q .; then
             sudo apt-get update
             sudo apt-get install -y ghostscript --no-install-recommends
-            python scripts/compress_pdfs.py
+            python -m scripts.compress_pdfs
           else
             echo "No PDFs over the 25 MiB Pages asset limit"
           fi
@@ -365,7 +365,7 @@ jobs:
               echo "$rebase_html" | sed 's/^/  /'
               while IFS= read -r f; do
                 if [ -f "$f" ]; then
-                  ./scripts/scrape.sh --clean-file "$f"
+                  ./scripts/scrape/scrape.sh --clean-file "$f"
                   git add "$f"
                   echo "Re-cleaned: $f"
                 fi
@@ -399,7 +399,7 @@ jobs:
         if: steps.commit.outputs.publish_cli == 'true' && github.ref == 'refs/heads/main'
         run: |
           mkdir -p "${RUNNER_TEMP}/cli-dist"
-          python scripts/build_cli_sqlite.py \
+          python -m scripts.generate.build_cli_sqlite \
             --bundle data/output/cli/cli-bundle.json \
             --output-dir "${RUNNER_TEMP}/cli-dist"
           echo "--- Manifest ---"
@@ -588,7 +588,7 @@ jobs:
         id: dup_detect
         run: |
           git switch -C fix/duplicate-events ${{ steps.detect_base.outputs.sha }}
-          if python3 scripts/detect_duplicates.py --output duplicate_report.json; then
+          if python3 -m scripts.detect.detect_duplicates --output duplicate_report.json; then
             echo "found=false" >> "$GITHUB_OUTPUT"
           else
             echo "found=true" >> "$GITHUB_OUTPUT"
@@ -599,13 +599,13 @@ jobs:
           {
             echo "### Duplicate events detection"
             echo ""
-            python3 scripts/detect_duplicates.py || true
+            python3 -m scripts.detect.detect_duplicates || true
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Apply duplicate fixes
         if: steps.dup_detect.outputs.found == 'true'
         run: |
-          python3 scripts/detect_duplicates.py \
+          python3 -m scripts.detect.detect_duplicates \
             --apply-fixes \
             --pr-markdown pr_body.md || true
 
@@ -665,7 +665,7 @@ jobs:
         id: relm_detect
         run: |
           git switch -C fix/related-mergers ${{ steps.detect_base.outputs.sha }}
-          if python3 scripts/detect_related_mergers.py --summary; then
+          if python3 -m scripts.detect.detect_related_mergers --summary; then
             echo "found=false" >> "$GITHUB_OUTPUT"
           else
             echo "found=true" >> "$GITHUB_OUTPUT"
@@ -676,13 +676,13 @@ jobs:
           {
             echo "### Related mergers detection"
             echo ""
-            python3 scripts/detect_related_mergers.py --summary || true
+            python3 -m scripts.detect.detect_related_mergers --summary || true
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Apply suggested related-merger pairs
         if: steps.relm_detect.outputs.found == 'true'
         run: |
-          python3 scripts/detect_related_mergers.py \
+          python3 -m scripts.detect.detect_related_mergers \
             --apply-suggestions \
             --pr-markdown pr_body.md \
             --issue-markdown pr_issue_body.md \
@@ -781,7 +781,7 @@ jobs:
         id: relp_detect
         run: |
           git switch -C fix/related-parties ${{ steps.detect_base.outputs.sha }}
-          if python3 scripts/detect_related_parties.py --summary; then
+          if python3 -m scripts.detect.detect_related_parties --summary; then
             echo "found=false" >> "$GITHUB_OUTPUT"
           else
             echo "found=true" >> "$GITHUB_OUTPUT"
@@ -792,13 +792,13 @@ jobs:
           {
             echo "### Related parties detection"
             echo ""
-            python3 scripts/detect_related_parties.py --summary || true
+            python3 -m scripts.detect.detect_related_parties --summary || true
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Apply suggested related-party groups
         if: steps.relp_detect.outputs.found == 'true'
         run: |
-          python3 scripts/detect_related_parties.py \
+          python3 -m scripts.detect.detect_related_parties \
             --apply-suggestions \
             --pr-markdown pr_body.md || true
 

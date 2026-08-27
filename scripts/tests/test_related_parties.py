@@ -9,23 +9,19 @@ Covers three layers:
 """
 
 import json
-import os
 import sys
 import unittest.mock
 
 import pytest
-
-# Add scripts directory to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 # Mock heavy transitive imports before importing modules that need them
 sys.modules.setdefault('pdfplumber', unittest.mock.MagicMock())
 sys.modules.setdefault('markdownify', unittest.mock.MagicMock())
 sys.modules.setdefault('requests', unittest.mock.MagicMock())
 
-import detect_related_parties as drp
-import party_matching as pm
-from static_data.enrichment import link_related_parties
+from scripts.detect import detect_related_parties as drp
+from scripts.detect import party_matching as pm
+from scripts.generate.static_data.enrichment import link_related_parties
 
 
 # ---------------------------------------------------------------------------

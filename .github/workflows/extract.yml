@@ -25,7 +25,7 @@ jobs:
           pip install -r scripts/requirements.txt
 
       - name: Run extraction script (download phase)
-        run: python scripts/extract_mergers.py --skip-pdf-enrich
+        run: python -m scripts.extract_mergers --skip-pdf-enrich
 
       # Install Tesseract only if a pending Phase 2 Notice actually needs the
       # OCR fallback in parse_phase2_notice.py (most have a full text layer
@@ -34,7 +34,7 @@ jobs:
       - name: Check if Phase 2 Notice OCR is needed
         id: check-ocr
         run: |
-          needs_ocr=$(python scripts/check_phase2_notice_ocr_needed.py)
+          needs_ocr=$(python -m scripts.check_phase2_notice_ocr_needed)
           echo "needs_ocr=$needs_ocr" >> "$GITHUB_OUTPUT"
 
       - name: Install Tesseract OCR
@@ -42,19 +42,19 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y tesseract-ocr --no-install-recommends
 
       - name: Run extraction script (enrich phase)
-        run: python scripts/enrich_pdfs.py
+        run: python -m scripts.enrich_pdfs
 
       - name: Generate similar mergers (incremental)
-        run: python scripts/generate_similar_mergers.py
+        run: python -m scripts.generate.generate_similar_mergers
 
       - name: Generate static data files
-        run: python scripts/generate_static_data.py
+        run: python -m scripts.generate.generate_static_data
 
       - name: Generate CLI data bundle
-        run: ./scripts/generate-cli-data.sh
+        run: ./scripts/generate/generate-cli-data.sh
 
       - name: Generate RSS feed
-        run: python scripts/generate_rss_feed.py
+        run: python -m scripts.generate.generate_rss_feed
 
       - name: Commit and push changes
         run: |-

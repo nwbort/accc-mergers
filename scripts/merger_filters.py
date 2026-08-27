@@ -41,7 +41,7 @@ import json
 from pathlib import Path
 from typing import Iterable, List, Optional, Union
 
-from constants import merger_status
+from scripts.constants import merger_status
 
 #: Default location of the processed mergers JSON, relative to the repo root.
 SCRIPT_DIR = Path(__file__).resolve().parent

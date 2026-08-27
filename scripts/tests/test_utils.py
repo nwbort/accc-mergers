@@ -1,23 +1,19 @@
 """Tests for utility functions: date parsing, filename sanitization, normalization."""
 
 import sys
-import os
 import unittest.mock
 
-# Add scripts directory to path so we can import modules directly
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-
-from date_utils import parse_iso_datetime, parse_text_to_iso
-from normalization import normalize_determination
+from scripts.date_utils import parse_iso_datetime, parse_text_to_iso
+from scripts.normalization import normalize_determination
 
 # extract_mergers has heavy transitive imports (pdfplumber, etc.)
 # Mock them so we can import just the filename functions
-sys.modules['parse_determination'] = unittest.mock.MagicMock()
-sys.modules['parse_nocc'] = unittest.mock.MagicMock()
-sys.modules['parse_questionnaire'] = unittest.mock.MagicMock()
+sys.modules['scripts.parse.parse_determination'] = unittest.mock.MagicMock()
+sys.modules['scripts.parse.parse_nocc'] = unittest.mock.MagicMock()
+sys.modules['scripts.parse.parse_questionnaire'] = unittest.mock.MagicMock()
 sys.modules['pdfplumber'] = unittest.mock.MagicMock()
 
-from extract_mergers import is_safe_filename, sanitize_filename
+from scripts.extract_mergers import is_safe_filename, sanitize_filename
 
 
 # ---------------------------------------------------------------------------

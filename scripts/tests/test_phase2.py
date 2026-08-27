@@ -1,20 +1,16 @@
 """Tests for the Phase 2 tracker output (phase2.json)."""
 
 import json
-import os
 import sys
 import unittest.mock
-
-# Add scripts directory to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 # Mock heavy transitive imports before importing modules that need them
 sys.modules.setdefault('pdfplumber', unittest.mock.MagicMock())
 sys.modules.setdefault('markdownify', unittest.mock.MagicMock())
 sys.modules.setdefault('requests', unittest.mock.MagicMock())
 
-from static_data.enrichment import enrich_merger
-from static_data.outputs import phase2
+from scripts.generate.static_data.enrichment import enrich_merger
+from scripts.generate.static_data.outputs import phase2
 
 
 def _phase1_notification(merger_id, end_of_determination_period='2026-05-01T12:00:00Z'):

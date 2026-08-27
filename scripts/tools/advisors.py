@@ -16,7 +16,7 @@ You can supply the passphrase two ways:
   * Set ADVISORS_PASSPHRASE in the environment to auto-unlock at startup
     (handy for scripts / CI secrets).
 
-    python scripts/tools/advisors.py
+    python -m scripts.tools.advisors
     # open http://127.0.0.1:8002 and enter the passphrase
 """
 
@@ -30,11 +30,8 @@ from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 import uvicorn
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-# Allow imports from the parent scripts/ directory too.
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from merger_filters import load_mergers as _load_mergers_from  # noqa: E402
-from advisors_crypto import (  # noqa: E402
+from scripts.merger_filters import load_mergers as _load_mergers_from
+from scripts.tools.advisors_crypto import (
     ADVISORS_ENC,
     ENV_PASSPHRASE,
     AdvisorsCryptoError,

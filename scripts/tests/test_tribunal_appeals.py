@@ -7,23 +7,19 @@ lightweight list, Phase 2 and timeline outputs.
 """
 
 import json
-import os
 import sys
 import unittest.mock
 from pathlib import Path
-
-# Add scripts directory to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 # Mock heavy transitive imports before importing modules that need them
 sys.modules.setdefault('pdfplumber', unittest.mock.MagicMock())
 sys.modules.setdefault('markdownify', unittest.mock.MagicMock())
 sys.modules.setdefault('requests', unittest.mock.MagicMock())
 
-from constants import tribunal
-from static_data import loaders
-from static_data.enrichment import enrich_merger, link_tribunal_appeals
-from static_data.outputs import list as list_out, phase2, stats, timeline
+from scripts.constants import tribunal
+from scripts.generate.static_data import loaders
+from scripts.generate.static_data.enrichment import enrich_merger, link_tribunal_appeals
+from scripts.generate.static_data.outputs import list as list_out, phase2, stats, timeline
 
 
 def _phase2_not_approved(merger_id='MN-0001'):

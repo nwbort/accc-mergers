@@ -4,12 +4,8 @@ These mirror the JS heuristics in
 frontend/src/components/DeterminationExplanationSection.jsx.
 """
 
-import os
-import sys
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-
-from determination_text import clean_explanation, clean_label, clean_merger
+from scripts.parse.determination_text import clean_explanation, clean_label, clean_merger
 
 
 # ---------------------------------------------------------------------------

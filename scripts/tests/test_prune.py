@@ -1,18 +1,14 @@
 """Tests for static_data.prune — removal of no-longer-generated output files."""
 
-import os
 import sys
 import unittest.mock
-
-# Add scripts directory to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 # Mock heavy transitive imports
 sys.modules.setdefault('pdfplumber', unittest.mock.MagicMock())
 sys.modules.setdefault('markdownify', unittest.mock.MagicMock())
 sys.modules.setdefault('requests', unittest.mock.MagicMock())
 
-from static_data.prune import prune_stale_files
+from scripts.generate.static_data.prune import prune_stale_files
 
 
 def _touch(directory, *names):

@@ -1,23 +1,20 @@
-"""Tests for scripts/static_data/phase1_estimate.py.
+"""Tests for scripts/generate/static_data/phase1_estimate.py.
 
 Cover the ANZSIC level resolution, the hierarchical-backoff pooling, the
 global fallback, waiver/undated exclusion, and the freeze semantics (an
 existing store entry is never recomputed).
 """
 
-import os
 import sys
 import unittest.mock
-
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 sys.modules.setdefault('pdfplumber', unittest.mock.MagicMock())
 sys.modules.setdefault('markdownify', unittest.mock.MagicMock())
 sys.modules.setdefault('requests', unittest.mock.MagicMock())
 
-from static_data import anzsic
-from static_data.enrichment import enrich_merger
-from static_data.phase1_estimate import (
+from scripts.generate.static_data import anzsic
+from scripts.generate.static_data.enrichment import enrich_merger
+from scripts.generate.static_data.phase1_estimate import (
     MIN_SUPPORT,
     attach_phase_1_estimates,
     build_completed_pool,

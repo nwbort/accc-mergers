@@ -5,13 +5,8 @@ ACCC re-publishes a document under a new version and a slightly shifted date
 (e.g. MN-01019's Phase 2 review notice appearing on both 20 and 21 Jan).
 """
 
-import os
-import sys
 
-# Add scripts directory to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-
-from detect_duplicates import dates_within_one_day, find_duplicates
+from scripts.detect.detect_duplicates import dates_within_one_day, find_duplicates
 
 
 def _kinds(groups):

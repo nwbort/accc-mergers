@@ -1,20 +1,16 @@
 """Tests for serial-acquirer ("creeping acquisitions") detection."""
 
 import json
-import os
 import sys
 import unittest.mock
-
-# Add scripts directory to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 # Mock heavy transitive imports before importing modules that need them
 sys.modules.setdefault('pdfplumber', unittest.mock.MagicMock())
 sys.modules.setdefault('markdownify', unittest.mock.MagicMock())
 sys.modules.setdefault('requests', unittest.mock.MagicMock())
 
-from static_data.enrichment import enrich_merger, link_related_parties
-from static_data.outputs import serial_acquirers
+from scripts.generate.static_data.enrichment import enrich_merger, link_related_parties
+from scripts.generate.static_data.outputs import serial_acquirers
 
 # Real ANZSIC codes used across tests: 0600 (Coal Mining, class) rolls up to
 # group 060 (also named Coal Mining); 1211 (Soft Drink Manufacturing, class)

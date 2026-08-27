@@ -7,19 +7,15 @@ already knows, or its saved HTML never refreshes again.
 """
 
 import json
-import os
 import sys
 import unittest.mock
 from datetime import datetime, timedelta
-
-# Add scripts directory to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 sys.modules.setdefault('pdfplumber', unittest.mock.MagicMock())
 sys.modules.setdefault('markdownify', unittest.mock.MagicMock())
 sys.modules.setdefault('requests', unittest.mock.MagicMock())
 
-from scrape_targets import load_mergers, normalize_target, select_targets
+from scripts.scrape.scrape_targets import load_mergers, normalize_target, select_targets
 
 REGISTER = '/public-registers/acquisitions-and-mergers-registers/acquisitions-register'
 OLD_REGISTER = '/public-registers/mergers-and-acquisitions-registers/acquisitions-register'

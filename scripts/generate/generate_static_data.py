@@ -1,0 +1,254 @@
+#!/usr/bin/env python3
+"""Generate static JSON data files for Cloudflare Pages deployment.
+
+Thin orchestrator: loads source data, enriches mergers once, then calls the
+generators in :mod:`static_data.outputs`. All heavy lifting lives in the
+``static_data`` package.
+
+Every merger is also given two derived fields before any file is written:
+``phase_1_estimate`` (predicted review length, frozen at filing time) and
+``pre_notification`` (bounds on how long it spent in pre-notification, inferred
+from where its merger ID sits on the ACCC's per-group ID counter).
+
+Output files:
+  data/output/ (for offline analysis, not deployed):
+  - mergers.json      - All mergers wrapped in {mergers: [...]} (full enriched data)
+
+  frontend/public/data/ (deployed to Cloudflare Pages):
+  - mergers/{id}.json           - Individual merger files (one per merger)
+  - mergers/list-page-{N}.json  - Paginated lightweight merger lists (50/page)
+  - mergers/list-meta.json      - Pagination metadata for merger list
+  - stats.json                  - Aggregated statistics
+  - timeline/timeline-page-{N}.json  - Paginated timeline events (100/page)
+  - timeline/timeline-meta.json      - Pagination metadata for timeline
+  - industries.json             - ANZSIC codes with merger counts
+  - industries/{code}.json      - Mergers per industry code
+  - parties.json                - Every party (canonical group or single) with merger counts
+  - parties/{id}.json           - Mergers per party, grouped by role
+  - upcoming-events.json        - Future consultation/determination dates
+  - commentary.json             - Mergers with user commentary
+  - analysis.json               - Pre-computed analysis data
+  - serial-acquirers.json       - Serial-acquirer ("creeping acquisitions") detection
+  - theories_of_harm.json       - Keyword-classified theory-of-harm taxonomy
+  - phase2.json                 - Current + completed Phase 2 matters with statutory milestones
+  - refiled-notifications.json  - Waivers declined then re-filed as notifications
+  - questionnaires/{id}.json    - Lazy-loaded questionnaire files
+  - noccs/{id}.json             - NOCC summary files (consumed by the CLI bundle, not the frontend)
+  - referral-probability-by-day.json - P(Phase 2 referral | still undecided at
+                        business day N); not consumed by the frontend yet
+
+Each per-item directory is self-pruning: a generator removes the files it no
+longer writes (see static_data/prune.py), so pages retired by a data change —
+a party folded into a canonical group, a deduped matter, a shrinking paginated
+list — stop being served instead of lingering.
+"""
+
+import json
+import os
+import sys
+
+from scripts.generate.static_data.business_days import check_holiday_horizon
+from scripts.generate.static_data.enrichment import (
+    enrich_merger,
+    link_judicial_reviews,
+    link_related_mergers,
+    link_related_parties,
+    link_similar_mergers,
+    link_tribunal_appeals,
+    strip_event_status,
+)
+from scripts.generate.static_data.phase1_estimate import attach_phase_1_estimates
+from scripts.generate.static_data.prenotification import attach_prenotification_estimates
+from scripts.generate.static_data.loaders import (
+    load_commentary,
+    load_mergers,
+    load_nocc_data,
+    load_questionnaire_data,
+    load_related_mergers,
+    load_judicial_reviews,
+    load_related_parties,
+    load_similar_mergers,
+    load_tribunal_appeals,
+)
+from scripts.generate.static_data.durations import referral_probability_by_day
+from scripts.generate.static_data.outputs import (
+    analysis,
+    commentary as commentary_out,
+    extensions,
+    individual,
+    industries,
+    list as list_out,
+    noccs,
+    parties,
+    phase2,
+    questionnaires,
+    refiled,
+    serial_acquirers,
+    stats,
+    theories_of_harm,
+    timeline,
+    upcoming_events,
+)
+from scripts.paths import REPO_ROOT
+
+OUTPUT_DIR = REPO_ROOT / "frontend" / "public" / "data"
+DATA_OUTPUT_DIR = REPO_ROOT / "data" / "output"
+
+
+def main():
+    """Generate all static data files."""
+    horizon_warning = check_holiday_horizon()
+    if horizon_warning:
+        print(f"WARNING: {horizon_warning}", file=sys.stderr)
+        if os.environ.get("CI"):
+            sys.exit(1)
+
+    print("Loading mergers.json...")
+    mergers = load_mergers()
+    print(f"Loaded {len(mergers)} mergers")
+
+    print("Loading commentary.json...")
+    commentary = load_commentary()
+    print(f"Loaded commentary for {len(commentary)} merger(s)" if commentary else "No commentary found")
+
+    print("Loading questionnaire_data.json...")
+    questionnaire_data = load_questionnaire_data()
+    print(
+        f"Loaded questionnaire data for {len(questionnaire_data)} merger(s)"
+        if questionnaire_data else "No questionnaire data found"
+    )
+
+    print("Loading nocc_data.json...")
+    nocc_data = load_nocc_data()
+    print(
+        f"Loaded NOCC data for {len(nocc_data)} merger(s)"
+        if nocc_data else "No NOCC data found"
+    )
+
+    related_mergers = load_related_mergers()
+    if related_mergers:
+        print(f"Loaded {len(related_mergers) // 2} related merger pair(s)")
+
+    similar_mergers = load_similar_mergers()
+    if similar_mergers:
+        print(f"Loaded similar merger suggestions for {len(similar_mergers)} merger(s)")
+
+    related_parties = load_related_parties()
+    if related_parties:
+        print(f"Loaded {len(related_parties)} related party group(s)")
+
+    tribunal_appeals = load_tribunal_appeals()
+    if tribunal_appeals:
+        print(f"Loaded {len(tribunal_appeals)} tribunal appeal(s)")
+
+    judicial_reviews = load_judicial_reviews()
+    if judicial_reviews:
+        print(f"Loaded {len(judicial_reviews)} judicial review(s)")
+
+    print("Enriching mergers...")
+    enriched = [
+        enrich_merger(m, commentary, questionnaire_data, nocc_data) for m in mergers
+    ]
+    linked = link_related_mergers(enriched, related_mergers)
+    if linked:
+        print(f"  Linked {linked} related merger pairs")
+    similar_linked = link_similar_mergers(enriched, similar_mergers)
+    if similar_linked:
+        print(f"  Linked similar mergers for {similar_linked} merger(s)")
+    party_linked = link_related_parties(enriched, related_parties)
+    if party_linked:
+        print(f"  Linked {party_linked} party record(s) to canonical groups")
+    appeal_linked = link_tribunal_appeals(enriched, tribunal_appeals)
+    if appeal_linked:
+        print(f"  Linked {appeal_linked} tribunal appeal(s)")
+    judicial_review_linked = link_judicial_reviews(enriched, judicial_reviews)
+    if judicial_review_linked:
+        print(f"  Linked {judicial_review_linked} judicial review(s)")
+    # Freeze + attach filing-time phase-1 duration estimates. New notification
+    # mergers get an estimate computed from completed-review history and frozen
+    # into data/processed/phase1_estimates.json; existing entries are reused so
+    # each estimate stays a filing-time snapshot rather than drifting.
+    new_estimates, attached_estimates = attach_phase_1_estimates(enriched)
+    print(
+        f"  Phase-1 estimates: {attached_estimates} attached "
+        f"({new_estimates} newly frozen)"
+    )
+    # Bound how long each notification spent in pre-notification, from where
+    # its merger ID sits on the ACCC's per-group counter. Recomputed every run,
+    # not frozen: the bounds tighten as later IDs surface.
+    prenotification = attach_prenotification_estimates(enriched)
+    print(f"  Pre-notification estimates: {prenotification} attached")
+    print(f"✓ Enriched {len(enriched)} mergers")
+
+    party_groups = parties.build_party_pages(enriched, related_parties)
+    print(f"✓ Built {len(party_groups)} party page group(s)")
+
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    DATA_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+    # Full enriched mergers.json (offline analysis, not deployed). Event-level
+    # 'live'/'removed' status is stripped here too — like the deployed UI files,
+    # this artifact is generated, and only the backend source keeps the flag.
+    mergers_json_path = DATA_OUTPUT_DIR / "mergers.json"
+    with open(mergers_json_path, 'w', encoding='utf-8') as f:
+        json.dump({"mergers": [strip_event_status(m) for m in enriched]}, f, indent=2)
+    print(f"✓ Generated {mergers_json_path}")
+
+    # Small single-file outputs: call generator → write result
+    single_file_outputs = [
+        ("stats.json", stats.generate(enriched)),
+        ("industries.json", industries.generate_index(enriched)),
+        ("parties.json", parties.generate_index(party_groups)),
+        ("upcoming-events.json", upcoming_events.generate(enriched)),
+        ("commentary.json", commentary_out.generate(enriched, commentary)),
+        ("analysis.json", analysis.generate(enriched)),
+        ("serial-acquirers.json", serial_acquirers.generate(enriched)),
+        ("theories_of_harm.json", theories_of_harm.generate(enriched, nocc_data)),
+        ("phase2.json", phase2.generate(enriched)),
+        ("refiled-notifications.json", refiled.generate(enriched)),
+        ("extensions.json", extensions.generate(enriched)),
+        # P(Phase 2 referral | still undecided at business day N); not consumed
+        # by the frontend yet — a building block for a future per-merger risk feature.
+        ("referral-probability-by-day.json", referral_probability_by_day(enriched)),
+    ]
+    for filename, payload in single_file_outputs:
+        out_path = OUTPUT_DIR / filename
+        with open(out_path, 'w', encoding='utf-8') as f:
+            json.dump(payload, f, indent=2)
+        print(f"✓ Generated {out_path}")
+
+    print("\nGenerating individual merger files...")
+    n = individual.generate(enriched, OUTPUT_DIR)
+    print(f"✓ Generated {n} individual merger files in {OUTPUT_DIR / 'mergers'}")
+
+    print("\nGenerating paginated list files...")
+    pages = list_out.generate(enriched, OUTPUT_DIR, page_size=50)
+    print(f"✓ Generated {pages} paginated list files (50 mergers/page)")
+
+    print("\nGenerating paginated timeline files...")
+    pages = timeline.generate(enriched, OUTPUT_DIR, page_size=100)
+    print(f"✓ Generated {pages} paginated timeline files (100 events/page)")
+
+    print("\nGenerating individual industry files...")
+    n = industries.generate_detail_files(enriched, OUTPUT_DIR)
+    print(f"✓ Generated {n} individual industry files in {OUTPUT_DIR / 'industries'}")
+
+    print("\nGenerating individual party files...")
+    n = parties.generate_detail_files(party_groups, OUTPUT_DIR)
+    print(f"✓ Generated {n} individual party files in {OUTPUT_DIR / 'parties'}")
+
+    if questionnaire_data:
+        print("\nGenerating questionnaire files...")
+        q_count = questionnaires.generate(questionnaire_data, OUTPUT_DIR, mergers=enriched)
+        print(f"✓ Generated {q_count} questionnaire files in {OUTPUT_DIR / 'questionnaires'}")
+
+    if nocc_data:
+        print("\nGenerating NOCC files...")
+        n_count = noccs.generate(nocc_data, OUTPUT_DIR)
+        print(f"✓ Generated {n_count} NOCC files in {OUTPUT_DIR / 'noccs'}")
+
+    print("\nDone!")
+
+
+if __name__ == "__main__":
+    main()

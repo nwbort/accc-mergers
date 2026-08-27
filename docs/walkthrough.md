@@ -15,7 +15,7 @@ The three major layers are:
 
 ## The Data Pipeline
 
-### Step 1 — Scraping (`scripts/scrape.sh`)
+### Step 1 — Scraping (`scripts/scrape/scrape.sh`)
 
 The scraper is a Bash script that fetches every merger page from the ACCC public register. It is the first stage in a three-step pipeline: **scrape → extract → generate**.
 
@@ -30,7 +30,7 @@ The scraper's job is purely about fetching and storing raw HTML. All interpretat
 - Saves each page as `data/raw/matters/{MATTER_NUMBER}.html`, where the matter number (e.g. `MN-12345` or `WA-67890`) is extracted via `pup` from the page itself.
 
 ```bash
-sed -n '46,53p' scripts/scrape.sh
+sed -n '53,63p' scripts/scrape/scrape.sh
 ```
 
 ```output
@@ -41,7 +41,10 @@ export MAIN_PAGE_FILE="data/raw/acquisitions-register.html"
 export SUBFOLDER="data/raw/matters"
 export USER_AGENT="Mozilla/5.0 (compatible; mergers-fyi/1.0; +https://mergers.fyi)"
 export MERGERS_JSON="data/processed/mergers.json"
-export SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+export REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+# The Python helpers are package modules (python -m scripts.…), so the repo
+# root has to be importable no matter where this script is invoked from.
+export PYTHONPATH="${REPO_ROOT}${PYTHONPATH:+:$PYTHONPATH}"
 ```
 
 Variables are exported (not just set) because the parallel `xargs` workers each run in a child subshell that would not otherwise inherit them. `PARALLEL_JOBS=24` drives both the matter-page fetches and the register pagination fetches.
@@ -49,7 +52,7 @@ Variables are exported (not just set) because the parallel `xargs` workers each 
 The `clean_file` function is the most important detail of the scraper. Without it every run would produce huge, noisy git diffs full of auto-generated asset fingerprints that have nothing to do with the actual merger data.
 
 ```bash
-sed -n '67,86p' scripts/scrape.sh
+sed -n '67,86p' scripts/scrape/scrape.sh
 ```
 
 ```output
@@ -80,7 +83,7 @@ The `-0777` flag puts Perl into "slurp mode" — the entire file is read as a si
 The cutoff filter runs before fetching to save bandwidth. `cutoff.py` reads the previous run's `mergers.json` and outputs the URL paths of any merger that was approved more than 3 weeks ago (or for waivers — any that received a determination more than 3 weeks ago). Those paths are passed to `grep -vxFf` to remove them from the link list before `xargs` starts fetching.
 
 ```bash
-sed -n '254,268p' scripts/scrape.sh
+sed -n '254,268p' scripts/scrape/scrape.sh
 ```
 
 ```output
@@ -316,7 +319,7 @@ def get_cutoff_date(merger: dict, cutoff_weeks: int = CUTOFF_WEEKS) -> datetime:
     return None
 ```
 
-### Step 3 — Static data generation (`scripts/generate_static_data.py`)
+### Step 3 — Static data generation (`scripts/generate/generate_static_data.py`)
 
 Once `mergers.json` is written, `generate_static_data.py` turns it into all the individual JSON files the frontend reads. This script is a thin orchestrator: it loads source data, calls `enrich_merger()` once per merger, then delegates to specialised output generators in the `static_data/outputs/` package.
 
@@ -330,7 +333,7 @@ The enrichment step adds computed fields that would be expensive to recalculate 
 Enriched mergers are then linked to related mergers (waiver-to-notification pairs) and similar mergers (from `similar_mergers.json`, pre-computed by `generate_similar_mergers.py` from party and ANZSIC overlap).
 
 ```bash
-sed -n '112,152p' scripts/generate_static_data.py
+sed -n '112,152p' scripts/generate/generate_static_data.py
 ```
 
 ```output
@@ -600,7 +603,7 @@ sed -n '231,255p' .github/workflows/pipeline.yml
               echo "$rebase_html" | sed 's/^/  /'
               while IFS= read -r f; do
                 if [ -f "$f" ]; then
-                  ./scripts/scrape.sh --clean-file "$f"
+                  ./scripts/scrape/scrape.sh --clean-file "$f"
                   git add "$f"
                   echo "Re-cleaned: $f"
                 fi

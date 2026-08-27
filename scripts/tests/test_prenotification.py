@@ -1,16 +1,12 @@
-"""Tests for scripts/static_data/prenotification.py.
+"""Tests for scripts/generate/static_data/prenotification.py.
 
 Cover ID parsing, the filing-date choice, the lower bound from any later ID,
 the waiver-anchored upper bound and interpolation, and the rules about which
 mergers get an estimate at all.
 """
 
-import os
-import sys
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-
-from static_data.prenotification import (
+from scripts.generate.static_data.prenotification import (
     METHOD_VERSION,
     WAIVER_LODGEMENT_LAG_DAYS,
     WAIVER_LODGEMENT_LAG_MAX_DAYS,

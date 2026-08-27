@@ -52,7 +52,7 @@ jobs:
           # Scheduled runs have no inputs and default to production
           AUDIENCE: ${{ inputs.audience || 'production' }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
-        run: python scripts/send_weekly_email.py
+        run: python -m scripts.send_weekly_email
 
       - name: Upload rendered HTML preview
         if: ${{ inputs.dry_run == true }}

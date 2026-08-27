@@ -1,0 +1,900 @@
+#!/usr/bin/env python3
+"""
+Parse questionnaire PDFs to extract consultation closing date and questions.
+
+Uses pdfplumber's character-level font metadata to detect bold section
+headers structurally, rather than relying on regex patterns.
+"""
+
+import hashlib
+import pdfplumber
+import re
+import json
+from typing import Optional, Dict, List
+from pathlib import Path
+from scripts.date_utils import parse_text_to_iso
+
+
+_DEFAULT_CACHE_PATH = Path('data/processed/questionnaire_data.json')
+
+
+def _file_sha256(pdf_path: Path) -> str:
+    h = hashlib.sha256()
+    with open(pdf_path, 'rb') as f:
+        for chunk in iter(lambda: f.read(65536), b''):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+_NEG_CACHE_KEY = '_not_questionnaire_shas'
+
+
+def _build_caches_from_existing(json_path: Path):
+    """Return (positive_cache, negative_cache) from a previously written JSON file.
+
+    - ``positive_cache`` maps SHA-256 → parsed entry for confirmed questionnaires
+      (walks primary entries and any ``all_questionnaires`` list).
+    - ``negative_cache`` is a set of SHA-256 hashes of PDFs that have already been
+      examined and confirmed NOT to be questionnaires (avoids re-opening them on
+      the content-detection fallback).
+    """
+    cache: Dict[str, Dict] = {}
+    neg_cache: set = set()
+    if not json_path.exists():
+        return cache, neg_cache
+    try:
+        with open(json_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+    except (json.JSONDecodeError, IOError):
+        return cache, neg_cache
+
+    for key, entry in data.items():
+        if key == _NEG_CACHE_KEY and isinstance(entry, list):
+            neg_cache.update(entry)
+            continue
+        if not isinstance(entry, dict):
+            continue
+        candidates = [entry] + list(entry.get('all_questionnaires', []))
+        for c in candidates:
+            sha = c.get('_sha256')
+            if sha:
+                cache[sha] = c
+    return cache, neg_cache
+
+
+# Optional "5.00pm (AEDT) on" / "5:00pm AEST on" / "10:00am on" prefix that
+# some questionnaires put between the "Deadline to respond:" label and the
+# date. The timezone's brackets are optional because the ACCC template is
+# inconsistent about them (e.g. MN-90008 brackets it, MN-30003 does not).
+_TIME_OF_DAY = r'\d{1,2}(?:[:.]\d{2})?\s*[ap]\.?m\.?'
+_TIMEZONE = r'\(?[A-Z]{2,5}\)?'
+_DEADLINE_TIME_PREFIX = rf'(?:{_TIME_OF_DAY})\s*(?:{_TIMEZONE})?\s*on\s+'
+
+# Optional word before the date — a weekday ("Tuesday 4 August 2026",
+# "Wednesday, 6 May 2026") or a linking word ("by 4 August 2026"). The comma
+# is optional: most questionnaires omit it, and requiring it previously lost
+# the deadline for every "Deadline to respond: <Weekday> <date>" matter.
+_DEADLINE_WORD_PREFIX = r'[A-Za-z]+,?\s+'
+
+_DEADLINE_RE = re.compile(
+    r'Deadline to respond:\s*'
+    rf'(?:{_DEADLINE_TIME_PREFIX})?'
+    rf'(?:{_DEADLINE_WORD_PREFIX})?'
+    r'(\d{1,2}\s+[A-Za-z]+\s+\d{4})',
+    re.IGNORECASE | re.DOTALL,
+)
+
+
+def extract_deadline(text: str) -> Optional[str]:
+    """
+    Extract the consultation closing date from the questionnaire.
+
+    Looks for patterns like:
+    - "Deadline to respond: 25 August 2025"
+    - "Deadline to respond: 3 November 2025"
+    - "Deadline to respond: Tuesday 4 August 2026"
+    - "Deadline to respond: Wednesday, 6 May 2026"
+    - "Deadline to respond: 5.00pm (AEDT) on 20 October 2025"
+    - "Deadline to respond: 5:00pm AEST on 1 July 2026"
+
+    Args:
+        text: Full text of the questionnaire PDF
+
+    Returns:
+        The deadline date as a string, or None if not found
+    """
+    match = _DEADLINE_RE.search(text)
+
+    if match:
+        # Clean up the deadline by removing extra whitespace and newlines
+        deadline = match.group(1).strip()
+        deadline = re.sub(r'\s+', ' ', deadline)  # Replace multiple spaces/newlines with single space
+        return deadline
+
+    return None
+
+
+def _is_bold_line(chars: list) -> bool:
+    """
+    Determine if a line is bold by examining character font names.
+
+    A line is considered bold if the majority of its non-space alphabetic
+    characters use a bold font (fontname contains "Bold").
+    """
+    if not chars:
+        return False
+
+    alpha_chars = [c for c in chars if c.get('text', '').strip()]
+    if not alpha_chars:
+        return False
+
+    bold_count = sum(
+        1 for c in alpha_chars
+        if 'bold' in c.get('fontname', '').lower()
+    )
+
+    return bold_count > len(alpha_chars) / 2
+
+
+def _get_table_bboxes(page) -> List[tuple]:
+    """Return bounding boxes of all tables detected on the page."""
+    try:
+        return [t.bbox for t in page.find_tables()]
+    except Exception:
+        return []
+
+
+def _is_in_table(line_dict: dict, table_bboxes: List[tuple]) -> bool:
+    """Return True if the line's midpoint falls within any table bounding box."""
+    if not table_bboxes:
+        return False
+    line_top = line_dict.get('top', 0)
+    line_bottom = line_dict.get('bottom', line_top)
+    mid_y = (line_top + line_bottom) / 2
+    mid_x = (line_dict.get('x0', 0) + line_dict.get('x1', 0)) / 2
+    for (tx0, ttop, tx1, tbottom) in table_bboxes:
+        if ttop <= mid_y <= tbottom and tx0 <= mid_x <= tx1:
+            return True
+    return False
+
+
+def extract_lines_with_formatting(pdf_path: str) -> List[Dict]:
+    """
+    Extract text lines from a PDF with formatting metadata.
+
+    Returns a list of dicts, each with:
+    - text: the line's text content
+    - is_bold: whether the line is predominantly bold
+    - is_table_content: whether the line falls inside a detected table region
+
+    Also returns the full plain text for deadline extraction.
+    """
+    lines = []
+    full_text = ""
+
+    with pdfplumber.open(pdf_path) as pdf:
+        for page in pdf.pages:
+            page_text = page.extract_text()
+            if page_text:
+                full_text += page_text + "\n"
+
+            table_bboxes = _get_table_bboxes(page)
+            text_lines = page.extract_text_lines(return_chars=True)
+            for tl in text_lines:
+                text = tl.get('text', '').strip()
+                if text:
+                    lines.append({
+                        'text': text,
+                        'is_bold': _is_bold_line(tl.get('chars', [])),
+                        'is_table_content': _is_in_table(tl, table_bboxes),
+                    })
+
+    return lines, full_text
+
+
+_BULLET_CHAR = ''
+
+
+def _list_stem(text: str, list_start_pos: int) -> str:
+    """Return text up to and including the last colon before list_start_pos."""
+    colon_pos = text.rfind(':', 0, list_start_pos)
+    return text[:colon_pos + 1]
+
+
+def _extract_bullets(text: str) -> tuple:
+    """
+    Extract bullet items (\\uf0b7 Wingdings bullet from PDF) from a question text.
+
+    Detects lists introduced by a colon, e.g.:
+      "…including: \\uf0b7 item one \\uf0b7 item two \\uf0b7 item three"
+
+    Returns (stem, bullets) where stem is text up to and including the
+    colon, or (None, []) if no colon precedes the first bullet.
+    """
+    if _BULLET_CHAR not in text:
+        return None, []
+
+    first_pos = text.index(_BULLET_CHAR)
+
+    if ':' not in text[:first_pos]:
+        return None, []
+
+    bullets = []
+    for part in text.split(_BULLET_CHAR)[1:]:
+        cleaned = part.strip()
+        cleaned = re.sub(r',?\s+and(?:/or)?\s*$', '', cleaned, flags=re.IGNORECASE).strip()
+        cleaned = cleaned.rstrip('.,;').strip()
+        if cleaned:
+            bullets.append(cleaned)
+
+    return (_list_stem(text, first_pos), bullets) if bullets else (None, [])
+
+
+def _extract_subpoints(text: str) -> tuple:
+    """
+    Extract lettered sub-points (a., b., c. …) from a question text.
+
+    Detects lists introduced by a colon, e.g.:
+      "…following products: a. catheters, b. stent retrievers, c. coils."
+
+    Returns (stem, subpoints) where stem is text up to and including the
+    colon, or (None, []) if no valid lettered list is found (fewer than
+    two sequential items, or no preceding colon).
+    """
+    a_match = re.search(r'\ba\.\s+\w', text)
+    if not a_match or ':' not in text[:a_match.start()]:
+        return None, []
+
+    items_raw = re.split(r'(?:\s*,\s*(?:and\s+)?|\s+)(?=[a-z]\.\s)', text[a_match.start():])
+
+    subpoints = []
+    for item in items_raw:
+        item = item.strip().rstrip('.,')
+        m = re.match(r'^([a-z])\.\s+(.+)$', item, re.DOTALL)
+        if m:
+            letter = m.group(1)
+            item_text = re.sub(r'\s+', ' ', m.group(2)).strip().rstrip('.,')
+            subpoints.append({'letter': letter, 'text': item_text})
+
+    if not subpoints or subpoints[0]['letter'] != 'a':
+        return None, []
+    expected = ord('a')
+    for sp in subpoints:
+        if ord(sp['letter']) != expected:
+            return None, []
+        expected += 1
+
+    if len(subpoints) < 2:
+        return None, []
+
+    return _list_stem(text, a_match.start()), subpoints
+
+
+_CLASSIFICATION_MARKING_RE = re.compile(
+    r'^(OFFICIAL|SENSITIVE|PROTECTED|UNCLASSIFIED)(\s*[:\-–]\s*(OFFICIAL|SENSITIVE|PROTECTED|UNCLASSIFIED))*$'
+)
+
+
+def _is_noise_line(text: str) -> bool:
+    """
+    Return True for lines that are page furniture, not document content:
+    Australian government protective-marking headers/footers (OFFICIAL,
+    SENSITIVE, ...) and bare page numbers. These can appear mid-stream
+    (e.g. between a question and the next section header, split across a
+    page break) and must be dropped rather than appended as continuation
+    text or mistaken for a section header.
+    """
+    return bool(_CLASSIFICATION_MARKING_RE.match(text) or re.match(r'^\d{1,3}$', text))
+
+
+def _looks_like_unbolded_section_header(
+    text: str, next_text: Optional[str], prev_text: Optional[str]
+) -> bool:
+    """
+    Heuristic fallback for section headers that aren't bolded in the source
+    PDF (e.g. MN-95025's "Alternative suppliers" / "The Acquisition").
+
+    A short, capitalised, unpunctuated line immediately followed by a
+    numbered question is treated as a header rather than as continuation
+    text of the preceding question. Continuation lines that happen to
+    precede the next question (e.g. "…and continues on next line.") are
+    excluded because they end in sentence punctuation or start lowercase.
+
+    Also requires the preceding line to end a sentence (or be absent).
+    Without this, a word-wrapped line orphaned onto its own line right
+    before the next question (e.g. MN-75003's sub-point wrapping "...
+    Southern Highlands Private" / "Hospital" / "4. Are there...") would be
+    misread as a header rather than as the tail of the previous line.
+    """
+    if not next_text or not re.match(r'^\d+\.\s', next_text):
+        return False
+    if not text or re.match(r'^\d+\.', text):
+        return False
+    if not text[0].isupper():
+        return False
+    if text[-1] in '.,;:?!':
+        return False
+    if len(text.split()) > 8:
+        return False
+    if prev_text and not re.search(r'[.:?!]\s*$', prev_text):
+        return False
+    return True
+
+
+def extract_questions(lines: List[Dict]) -> List[Dict[str, str]]:
+    """
+    Extract the numbered questions from annotated lines.
+
+    Uses font metadata (bold detection) to identify section headers
+    instead of regex pattern matching. A bold, non-numbered line within
+    the questions block is treated as a section header.
+
+    Args:
+        lines: List of dicts with 'text' and 'is_bold' keys,
+               as returned by extract_lines_with_formatting().
+
+    Returns:
+        List of dictionaries with 'number', 'text', and optionally 'section' keys
+    """
+    questions = []
+
+    # Find the "Questions" heading line.
+    # Prefer a plain "Questions" (or "Questions – subtitle") heading and skip it.
+    # If none exists, fall back to the first "Questions for X" heading and include
+    # it in processing so the main loop treats it as a section header (e.g. MN-10007).
+    # The heading may or may not be bold (some PDFs don't mark it as bold).
+    start_idx = None
+    fallback_idx = None
+    for i, line in enumerate(lines):
+        if re.match(r'^Questions\b', line['text']):
+            if re.match(r'^Questions\s+for\s+', line['text'], re.IGNORECASE):
+                if fallback_idx is None:
+                    fallback_idx = i
+            else:
+                start_idx = i + 1
+                break
+
+    if start_idx is None:
+        if fallback_idx is not None:
+            start_idx = fallback_idx
+        else:
+            return questions
+
+    current_question_num = None
+    current_question_text = []
+    current_section = None
+    has_sections = False
+    prev_was_section_header = False
+
+    def save_current_question():
+        """Helper to save the current question to the list."""
+        if current_question_num is not None:
+            full_text = ' '.join(current_question_text).strip()
+            full_text = re.sub(r'\s+', ' ', full_text)
+            # Remove trailing page numbers (single digit at the end)
+            full_text = re.sub(r'\s+\d$', '', full_text)
+            q = {
+                'number': current_question_num,
+                'text': full_text,
+                'section': current_section,
+            }
+            for extract_fn, key in [(_extract_bullets, 'bullets'), (_extract_subpoints, 'subpoints')]:
+                stem, items = extract_fn(full_text)
+                if items:
+                    q['text'] = stem
+                    q[key] = items
+                    break
+            questions.append(q)
+
+    remaining_lines = lines[start_idx:]
+    for idx, line in enumerate(remaining_lines):
+        text = line['text']
+        is_bold = line['is_bold']
+        next_text = remaining_lines[idx + 1]['text'] if idx + 1 < len(remaining_lines) else None
+
+        # Stop at the "Confidentiality" boilerplate that follows the questions.
+        # (A bold "Confidentiality of responses" header is also caught as a
+        # section header below, but non-bold variants — e.g. MN-25004 — need
+        # this guard so their standard-terms text isn't captured as questions.)
+        # Only stop once we've seen at least one question so preamble notes
+        # don't abort parsing before any questions are captured.
+        if (questions or current_question_num is not None) and re.match(
+            r'^Confidentiality', text, re.IGNORECASE
+        ):
+            break
+
+        # Skip standalone explanatory notes (e.g. "Note: 'on-premises
+        # hospitality services' include…"). These sit under a section header,
+        # between it and the section's first question, and are not questions.
+        # They must NOT terminate parsing — doing so truncated questionnaires
+        # like MN-40029, which drops from 10 questions to 3 when the note after
+        # its second section header ends the parse.
+        if re.match(r'^(Note:|Please note)', text, re.IGNORECASE):
+            prev_was_section_header = False
+            continue
+
+        # Skip page furniture (protective-marking headers/footers, bare page
+        # numbers) without touching state — it can appear mid-question or
+        # between a question and the following section header.
+        if _is_noise_line(text):
+            continue
+
+        # Skip lines that fall inside a detected table region. Save the current
+        # question first (on the first table line) so no table content is
+        # appended to it; leave the active section unchanged so the next real
+        # question inherits the correct section name.
+        if line.get('is_table_content', False):
+            if current_question_num is not None:
+                save_current_question()
+                current_question_num = None
+                current_question_text = []
+            prev_was_section_header = False
+            continue
+
+        # Bold non-numbered line = section header (with exceptions below)
+        if is_bold and not re.match(r'^\d+\.', text):
+            # Parenthetical acronym labels like "(SURF)" or "(IRMD)" are bold
+            # inline labels within question sub-parts, not section headers.
+            if re.match(r'^\([^)]+\)$', text):
+                if current_question_num is not None:
+                    current_question_text.append(text)
+                prev_was_section_header = False
+                continue
+
+            # Bold definitional preamble (e.g. MN-15028's "In this questionnaire,
+            # liquid waste collection and maintenance services (C&M services)
+            # includes …") is introductory prose whose sentence continues into
+            # the following non-bold lines — not a section header. Treat it as
+            # skippable intro so it isn't captured as the first question's
+            # section. Real headers start "Questions"/"General"/"Other issues".
+            if re.match(
+                r'^(In this (questionnaire|document)|For the purposes? of this)\b',
+                text, re.IGNORECASE
+            ):
+                prev_was_section_header = False
+                continue
+
+            if current_question_num is not None:
+                save_current_question()
+                current_question_num = None
+                current_question_text = []
+            # Consecutive bold lines = multi-line section header, concatenate
+            if prev_was_section_header and current_section:
+                current_section = current_section + ' ' + text
+            else:
+                current_section = text
+            has_sections = True
+            prev_was_section_header = True
+            continue
+
+        # Non-bold section header (e.g. MN-95025, where headers aren't
+        # bolded in the source PDF). Detected structurally by position
+        # (immediately precedes a numbered question) rather than font.
+        prev_text = current_question_text[-1] if current_question_text else None
+        if not re.match(r'^\d+\.', text) and _looks_like_unbolded_section_header(text, next_text, prev_text):
+            if current_question_num is not None:
+                save_current_question()
+                current_question_num = None
+                current_question_text = []
+            if prev_was_section_header and current_section:
+                current_section = current_section + ' ' + text
+            else:
+                current_section = text
+            has_sections = True
+            prev_was_section_header = True
+            continue
+
+        prev_was_section_header = False
+
+        # Check if this line starts a new question (e.g., "1.", "2.", "3.")
+        question_start_match = re.match(r'^(\d+)\.\s*(.*)$', text)
+
+        if question_start_match:
+            # Save the previous question if exists
+            save_current_question()
+
+            # Start a new question
+            current_question_num = int(question_start_match.group(1))
+            remaining_text = question_start_match.group(2)
+
+            # Check if there are inline questions in the remaining text
+            inline_questions = re.split(r'\s+(?=\d+\.\s*[A-Z])', remaining_text)
+
+            if len(inline_questions) > 1:
+                current_question_text = [inline_questions[0]]
+                save_current_question()
+                current_question_num = None
+                current_question_text = []
+
+                for inline_q in inline_questions[1:]:
+                    inline_match = re.match(r'^(\d+)\.\s*(.*)$', inline_q)
+                    if inline_match:
+                        current_question_num = int(inline_match.group(1))
+                        current_question_text = [inline_match.group(2)]
+                        save_current_question()
+                        current_question_num = None
+                        current_question_text = []
+            else:
+                current_question_text = [remaining_text] if remaining_text else []
+        elif current_question_num is not None:
+            # Continuation of current question
+            inline_split = re.split(r'\s+(?=\d+\.\s*[A-Z])', text)
+
+            if len(inline_split) > 1:
+                current_question_text.append(inline_split[0])
+                save_current_question()
+                current_question_num = None
+                current_question_text = []
+
+                for inline_q in inline_split[1:]:
+                    inline_match = re.match(r'^(\d+)\.\s*(.*)$', inline_q)
+                    if inline_match:
+                        current_question_num = int(inline_match.group(1))
+                        current_question_text = [inline_match.group(2)]
+                        save_current_question()
+                        current_question_num = None
+                        current_question_text = []
+            else:
+                current_question_text.append(text)
+
+    # Don't forget the last question
+    save_current_question()
+
+    # If no sections were found, strip the section field to keep output clean
+    if not has_sections:
+        for q in questions:
+            del q['section']
+
+    return questions
+
+
+def extract_questions_from_text(text: str) -> List[Dict[str, str]]:
+    """
+    Fallback: extract questions from plain text without formatting metadata.
+
+    Used when character-level data is unavailable (e.g., in tests).
+    Falls back to regex-based section detection for known patterns.
+
+    Args:
+        text: Full text of the questionnaire PDF
+
+    Returns:
+        List of dictionaries with 'number', 'text', and optionally 'section' keys
+    """
+    # Build annotated lines from plain text using regex heuristics
+    questions_match = re.search(r'^Questions\b', text, re.MULTILINE)
+    if not questions_match:
+        return []
+
+    annotated_lines = []
+    for raw_line in text.split('\n'):
+        stripped = raw_line.strip()
+        if not stripped:
+            continue
+        # Heuristic: detect section headers by known patterns
+        is_header = bool(
+            re.match(r'^Questions(\s+for\s+|\s*$)', stripped, re.IGNORECASE)
+            or re.match(r'^General\s+questions', stripped, re.IGNORECASE)
+            or re.match(r'^Other\s+issues', stripped, re.IGNORECASE)
+        )
+        annotated_lines.append({'text': stripped, 'is_bold': is_header})
+
+    return extract_questions(annotated_lines)
+
+
+def parse_questionnaire_pdf(pdf_path: str) -> Dict[str, any]:
+    """
+    Parse a questionnaire PDF to extract consultation deadline and questions.
+
+    Uses character-level font metadata from pdfplumber to detect bold
+    section headers structurally.
+
+    Args:
+        pdf_path: Path to the questionnaire PDF file
+
+    Returns:
+        Dictionary containing:
+        - deadline: The consultation closing date (raw format)
+        - deadline_iso: The deadline in ISO format (YYYY-MM-DD)
+        - questions: List of question dictionaries with number and text
+        - questions_count: Number of questions extracted
+    """
+    result = {
+        'deadline': None,
+        'deadline_iso': None,
+        'questions': [],
+        'questions_count': 0
+    }
+
+    pdf_file = Path(pdf_path)
+    if not pdf_file.exists():
+        raise FileNotFoundError(f"PDF file not found: {pdf_path}")
+
+    # Extract lines with formatting metadata and full text
+    annotated_lines, full_text = extract_lines_with_formatting(pdf_path)
+
+    # Extract deadline from plain text
+    result['deadline'] = extract_deadline(full_text)
+    if result['deadline']:
+        result['deadline_iso'] = parse_text_to_iso(result['deadline'], include_time=False)
+
+    # Extract questions using font-aware line data
+    result['questions'] = extract_questions(annotated_lines)
+    result['questions_count'] = len(result['questions'])
+
+    return result
+
+
+def _has_questionnaire_header(pdf_path: Path) -> bool:
+    """Return True if the PDF's first page starts with 'Questionnaire:'."""
+    try:
+        with pdfplumber.open(str(pdf_path)) as pdf:
+            if pdf.pages:
+                text = (pdf.pages[0].extract_text() or '').strip()
+                return bool(re.match(r'^Questionnaire\s*:', text))
+    except Exception:
+        pass
+    return False
+
+
+def process_all_questionnaires(
+    matters_dir: str = "data/raw/matters",
+    cache: Optional[Dict[str, Dict]] = None,
+    neg_cache: Optional[set] = None,
+) -> Dict[str, Dict]:
+    """
+    Process all questionnaire PDFs in the matters directory.
+
+    When a matter has multiple questionnaire PDFs, the one with the latest
+    deadline is used as the primary entry. Duplicates (same deadline date,
+    typically re-downloads of the same document) are collapsed to one. All
+    distinct questionnaires are preserved in an ``all_questionnaires`` list,
+    sorted latest-first, when more than one exists.
+
+    Each parsed entry is fingerprinted with a SHA-256 of the source PDF
+    (``_sha256``). Subsequent runs reuse the cached parse for unchanged
+    PDFs, avoiding the cost of re-parsing the questionnaire body.
+
+    Args:
+        matters_dir: Path to the matters directory
+        cache: Optional pre-built ``{sha256: parsed entry}`` map.
+        neg_cache: Optional mutable set of SHA-256 hashes of PDFs already
+            confirmed NOT to be questionnaires. Used to skip the content
+            detection fallback (which opens each PDF). Newly examined
+            non-questionnaire PDFs are added to this set.
+        When ``cache``/``neg_cache`` are omitted, both are loaded from
+        ``data/processed/questionnaire_data.json`` on disk.
+
+    Returns:
+        Dictionary mapping matter IDs to their questionnaire data
+    """
+    results = {}
+    matters_path = Path(matters_dir)
+
+    if not matters_path.exists():
+        raise FileNotFoundError(f"Matters directory not found: {matters_dir}")
+
+    if cache is None or neg_cache is None:
+        loaded_cache, loaded_neg = _build_caches_from_existing(_DEFAULT_CACHE_PATH)
+        if cache is None:
+            cache = loaded_cache
+        if neg_cache is None:
+            neg_cache = loaded_neg
+
+    # Find all questionnaire PDFs (case-insensitive search for "questionnaire" in filename)
+    all_pdfs = list(matters_path.glob("*/*.pdf"))
+    questionnaire_pdfs = [
+        pdf for pdf in all_pdfs
+        if "questionnaire" in pdf.name.lower()
+    ]
+
+    # Group by matter_id for deterministic processing
+    pdfs_by_matter: Dict[str, List] = {}
+    for pdf_path in questionnaire_pdfs:
+        matter_id = pdf_path.parent.name
+        pdfs_by_matter.setdefault(matter_id, []).append(pdf_path)
+
+    # Cache file hashes — we'll reuse them when parsing below.
+    sha_by_path: Dict[Path, str] = {}
+
+    def _sha(p: Path) -> Optional[str]:
+        if p in sha_by_path:
+            return sha_by_path[p]
+        try:
+            sha = _file_sha256(p)
+        except OSError:
+            return None
+        sha_by_path[p] = sha
+        return sha
+
+    # Some questionnaire PDFs are named after the merger parties rather than
+    # "questionnaire". Fall back to content detection for matter directories
+    # that yielded no questionnaire PDFs from the filename filter.
+    #
+    # Cache the verdict by SHA-256 so we don't open the same PDF on every run.
+    # ``cache`` holds confirmed questionnaires (positive); ``neg_cache`` holds
+    # PDFs already confirmed NOT to be questionnaires (negative).
+    matter_ids_with_q = set(pdfs_by_matter.keys())
+    for pdf_path in sorted(all_pdfs):
+        matter_id = pdf_path.parent.name
+        if matter_id in matter_ids_with_q:
+            continue
+
+        sha = _sha(pdf_path)
+        if sha is None:
+            continue
+
+        if sha in cache:
+            is_q = True
+        elif sha in neg_cache:
+            is_q = False
+        else:
+            is_q = _has_questionnaire_header(pdf_path)
+            if not is_q:
+                neg_cache.add(sha)
+
+        if is_q:
+            pdfs_by_matter.setdefault(matter_id, []).append(pdf_path)
+            matter_ids_with_q.add(matter_id)
+
+    for matter_id, pdf_paths in pdfs_by_matter.items():
+        parsed = []
+        last_error = None
+
+        for pdf_path in sorted(pdf_paths):  # alphabetical for determinism
+            sha = _sha(pdf_path)
+            if sha is None:
+                err = f"Unable to read {pdf_path}"
+                print(err)
+                last_error = {
+                    'error': err,
+                    'file_path': str(pdf_path.relative_to(matters_path.parent))
+                }
+                continue
+
+            cached = cache.get(sha)
+            if cached is not None:
+                data = dict(cached)
+                data.pop('all_questionnaires', None)
+                data['file_path'] = str(pdf_path.relative_to(matters_path.parent))
+                data['file_name'] = pdf_path.name
+                data['_sha256'] = sha
+                parsed.append(data)
+                continue
+
+            try:
+                data = parse_questionnaire_pdf(str(pdf_path))
+                data['file_path'] = str(pdf_path.relative_to(matters_path.parent))
+                data['file_name'] = pdf_path.name
+                data['_sha256'] = sha
+                parsed.append(data)
+            except Exception as e:
+                print(f"Error processing {pdf_path}: {e}")
+                last_error = {
+                    'error': str(e),
+                    'file_path': str(pdf_path.relative_to(matters_path.parent))
+                }
+
+        if not parsed:
+            if last_error:
+                results[matter_id] = last_error
+            continue
+
+        # Normalise filename by stripping re-download suffixes (_0, _1 …).
+        def _norm(name: str) -> str:
+            return re.sub(r'_\d+(\.[^.]+)$', r'\1', name)
+
+        # Deduplicate: collapse only when BOTH the normalised filename AND the
+        # deadline are identical (i.e. the scraper downloaded the same file
+        # twice).  Different deadlines with the same base name means the ACCC
+        # re-released the questionnaire with an extended deadline — keep both.
+        seen: set = set()
+        unique = []
+        for p in parsed:
+            key = (_norm(p['file_name']), p.get('deadline_iso') or '')
+            if key not in seen:
+                seen.add(key)
+                unique.append(p)
+
+        # Sort latest-first; treat missing deadline as oldest
+        unique.sort(
+            key=lambda p: p.get('deadline_iso') or '0000-00-00',
+            reverse=True,
+        )
+
+        primary = unique[0].copy()
+        if len(unique) > 1:
+            primary['all_questionnaires'] = unique
+
+        results[matter_id] = primary
+
+    return results
+
+
+if __name__ == "__main__":
+    import sys
+
+    if len(sys.argv) > 1 and sys.argv[1] == '--debug-lines':
+        # Dump annotated lines for a PDF to debug extraction
+        pdf_path = sys.argv[2]
+        lines, full_text = extract_lines_with_formatting(pdf_path)
+        for i, line in enumerate(lines):
+            bold = 'BOLD ' if line['is_bold'] else '     '
+            table = 'TABLE' if line.get('is_table_content') else '     '
+            print(f"{i:3d} [{bold}][{table}] {line['text']}")
+        sys.exit(0)
+
+    if len(sys.argv) > 1:
+        # Process a single PDF file
+        pdf_path = sys.argv[1]
+
+        try:
+            result = parse_questionnaire_pdf(pdf_path)
+
+            print("=" * 80)
+            print("CONSULTATION CLOSING DATE:")
+            print("=" * 80)
+            print(f"Deadline: {result['deadline'] or 'Not found'}")
+            if result['deadline_iso']:
+                print(f"ISO format: {result['deadline_iso']}")
+            print()
+
+            print("=" * 80)
+            print("QUESTIONS:")
+            print("=" * 80)
+            for q in result['questions']:
+                section = q.get('section')
+                if section:
+                    print(f"\n  [{section}]")
+                print(f"\nQuestion {q['number']}:")
+                print("-" * 40)
+                print(q['text'])
+
+            print("\n" + "=" * 80)
+            print(f"Extracted {result['questions_count']} questions")
+
+        except Exception as e:
+            print(f"Error parsing PDF: {e}")
+            import traceback
+            traceback.print_exc()
+            sys.exit(1)
+    else:
+        # Process all questionnaires in the matters directory
+        print("Processing all questionnaires in matters directory...")
+        print()
+
+        try:
+            results = process_all_questionnaires()
+
+            for matter_id, data in sorted(results.items()):
+                print("=" * 80)
+                print(f"Matter: {matter_id}")
+                print("=" * 80)
+
+                if 'error' in data:
+                    print(f"ERROR: {data['error']}")
+                else:
+                    print(f"File: {data['file_name']}")
+                    print(f"Deadline: {data['deadline'] or 'Not found'}")
+                    if data['deadline_iso']:
+                        print(f"ISO format: {data['deadline_iso']}")
+                    print(f"Questions: {data['questions_count']}")
+
+                    for q in data['questions']:
+                        print(f"\n  {q['number']}. {q['text'][:100]}{'...' if len(q['text']) > 100 else ''}")
+
+                print()
+
+            output_file = "data/processed/questionnaire_data.json"
+            with open(output_file, 'w') as f:
+                json.dump(results, f, indent=2, sort_keys=True)
+
+            print("=" * 80)
+            print(f"Results saved to {output_file}")
+            print(f"Processed {len(results)} questionnaires")
+
+        except Exception as e:
+            print(f"Error processing questionnaires: {e}")
+            import traceback
+            traceback.print_exc()
+            sys.exit(1)

@@ -23,8 +23,8 @@ import json
 import os
 import sys
 
-from cutoff import is_waiver_merger
-from extract_mergers import (
+from scripts.cutoff import is_waiver_merger
+from scripts.extract_mergers import (
     MATTERS_DIR,
     _load_frozen_events_mergers,
     auto_fix_missing_event_dates,

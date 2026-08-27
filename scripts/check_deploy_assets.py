@@ -23,20 +23,17 @@ Vite's publicDir, copied verbatim. Keep DEPLOY_SOURCES in step with those.
 limit and doesn't exist until build time, so it isn't checked here.)
 
 Usage:
-    python scripts/check_deploy_assets.py             # report; exit 0
-    python scripts/check_deploy_assets.py --fail      # exit 1 if anything is over
-    python scripts/check_deploy_assets.py --json out.json   # payload for CI
+    python -m scripts.check_deploy_assets             # report; exit 0
+    python -m scripts.check_deploy_assets --fail      # exit 1 if anything is over
+    python -m scripts.check_deploy_assets --json out.json   # payload for CI
 """
 
 import argparse
 import json
-import os
 import sys
 from pathlib import Path
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-
-from compress_pdfs import PAGES_ASSET_LIMIT, format_size  # noqa: E402
+from scripts.compress_pdfs import PAGES_ASSET_LIMIT, format_size
 
 # (directory, glob) pairs that feed the deployment. See the module docstring.
 DEPLOY_SOURCES = (
@@ -94,7 +91,7 @@ def build_issue_body(oversized, limit=PAGES_ASSET_LIMIT):
         "workflows already run automatically:",
         "",
         "```",
-        "python scripts/compress_pdfs.py",
+        "python -m scripts.compress_pdfs",
         "```",
         "",
         "If that reports it can't get the file under the limit, it's a file "
@@ -147,7 +144,7 @@ def main(argv=None):
     )
     for path, size in oversized:
         print(f"  {path} ({format_size(size)})", file=sys.stderr)
-    print("Run `python scripts/compress_pdfs.py` to try to shrink them.", file=sys.stderr)
+    print("Run `python -m scripts.compress_pdfs` to try to shrink them.", file=sys.stderr)
 
     return 1 if args.fail else 0
 

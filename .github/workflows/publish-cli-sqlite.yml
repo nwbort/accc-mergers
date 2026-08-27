@@ -42,12 +42,12 @@ jobs:
       # result doesn't match the checksum in the tracked cli-manifest.json,
       # which keeps this republish pinned to the version already on main.
       - name: Rebuild CLI bundle
-        run: ./scripts/generate-cli-data.sh --rebuild
+        run: ./scripts/generate/generate-cli-data.sh --rebuild
 
       - name: Build SQLite database
         run: |
           mkdir -p "${RUNNER_TEMP}/cli-dist"
-          python scripts/build_cli_sqlite.py \
+          python -m scripts.generate.build_cli_sqlite \
             --bundle data/output/cli/cli-bundle.json \
             --output-dir "${RUNNER_TEMP}/cli-dist"
           echo "--- Manifest ---"

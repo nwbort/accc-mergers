@@ -1,23 +1,18 @@
 #!/usr/bin/env python3
 """
 Web UI to resolve ACCC merger duplicate events.
-Run with: python scripts/tools/resolver.py
+Run with: python -m scripts.tools.resolver
 """
 
 import json
-import sys
-from pathlib import Path
-
-# Allow imports from the parent scripts/ directory.
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 import uvicorn
 
-from detect_duplicates import build_report, DEFAULT_INPUT
-from merger_filters import load_mergers
+from scripts.detect.detect_duplicates import build_report, DEFAULT_INPUT
+from scripts.merger_filters import load_mergers
 
 app = FastAPI()
 

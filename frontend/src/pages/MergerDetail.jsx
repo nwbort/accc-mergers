@@ -31,7 +31,7 @@ import { OUTCOME_DOT_COLORS, DEFAULT_OUTCOME_DOT, APPEAL_DOT, getOutcomeDot } fr
 
 // Display text for each related-merger relationship. Keys match the
 // `relationship` values produced by the data pipeline (see
-// scripts/static_data/loaders.py).
+// scripts/generate/static_data/loaders.py).
 const RELATED_MERGER_LABELS = {
   refiled_as: 'Waiver declined – subsequently notified',
   refiled_from: 'Originally filed as a waiver application',

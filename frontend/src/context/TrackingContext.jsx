@@ -20,7 +20,7 @@ const STORAGE_KEYS = {
   AUTO_TRACK_PHASE2_IDS: 'merger_tracker_auto_tracked_phase2_ids',
 };
 
-// Relationship values (from the data pipeline, see scripts/static_data/loaders.py)
+// Relationship values (from the data pipeline, see scripts/generate/static_data/loaders.py)
 // where the *tracked* merger is the earlier matter and its related merger is the
 // newer re-filed one. Tracking a merger auto-tracks its related merger only in
 // this forward direction: tracking a declined waiver / suspended matter also
@@ -289,7 +289,7 @@ export function TrackingProvider({ children }) {
           // Handled before the "already determined" guards below because an
           // appealed matter is, by definition, ACCC-determined — the hearing is
           // a future event layered on top of that outcome. Not subject to any
-          // look-ahead window (mirrors scripts/static_data/outputs/upcoming_events.py).
+          // look-ahead window (mirrors scripts/generate/static_data/outputs/upcoming_events.py).
           if (merger.under_appeal && merger.appeal && merger.appeal.hearing_date) {
             const hearingDate = new Date(merger.appeal.hearing_date);
             if (hearingDate > now) {
@@ -314,7 +314,7 @@ export function TrackingProvider({ children }) {
           // Check accc_determination as well as the date: the register sometimes
           // publishes the outcome before the publication-date field is scraped,
           // and relying on the date alone leaves stale "due" events in the panel
-          // (mirrors the candidate filter in scripts/static_data/outputs/upcoming_events.py).
+          // (mirrors the candidate filter in scripts/generate/static_data/outputs/upcoming_events.py).
           if (merger.determination_publication_date) return;
           if (merger.accc_determination) return;
           if (merger.is_waiver) return;

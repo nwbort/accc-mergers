@@ -26,7 +26,7 @@ jobs:
       - name: Run related-merger detection
         id: detect
         run: |
-          if python3 scripts/detect_related_mergers.py --summary; then
+          if python3 -m scripts.detect.detect_related_mergers --summary; then
             echo "found=false" >> "$GITHUB_OUTPUT"
           else
             echo "found=true" >> "$GITHUB_OUTPUT"
@@ -37,7 +37,7 @@ jobs:
           {
             echo "### Related mergers detection"
             echo ""
-            python3 scripts/detect_related_mergers.py --summary || true
+            python3 -m scripts.detect.detect_related_mergers --summary || true
           } >> "$GITHUB_STEP_SUMMARY"
 
       # Switch to (or create/reset) the well-known suggestion branch so the
@@ -55,7 +55,7 @@ jobs:
       - name: Apply suggested pairs
         if: steps.detect.outputs.found == 'true'
         run: |
-          python3 scripts/detect_related_mergers.py \
+          python3 -m scripts.detect.detect_related_mergers \
             --apply-suggestions \
             --pr-markdown pr_body.md \
             --issue-markdown pr_issue_body.md \

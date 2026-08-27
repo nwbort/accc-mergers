@@ -1,27 +1,23 @@
-"""Smoke tests for scripts/static_data/outputs/*.
+"""Smoke tests for scripts/generate/static_data/outputs/*.
 
 Each generator is fed a small enriched fixture and asserted to produce
 valid, schema-correct JSON.
 """
 
 import json
-import os
 import sys
 import unittest.mock
 from datetime import date
-
-# Add scripts directory to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 # Mock heavy transitive imports
 sys.modules.setdefault('pdfplumber', unittest.mock.MagicMock())
 sys.modules.setdefault('markdownify', unittest.mock.MagicMock())
 sys.modules.setdefault('requests', unittest.mock.MagicMock())
 
-from constants import merger_status
-from static_data import anzsic, durations
-from static_data.enrichment import enrich_merger
-from static_data.outputs import (
+from scripts.constants import merger_status
+from scripts.generate.static_data import anzsic, durations
+from scripts.generate.static_data.enrichment import enrich_merger
+from scripts.generate.static_data.outputs import (
     analysis,
     commentary as commentary_out,
     extensions,
@@ -757,11 +753,11 @@ class TestPhase1DurationExcludesPhase2Clock:
     """
 
     def test_collect_uses_referral_date_not_phase_2_determination(self):
-        from static_data.business_days import (
+        from scripts.generate.static_data.business_days import (
             calculate_business_days,
             calculate_calendar_days,
         )
-        from static_data.durations import collect_phase_1_durations
+        from scripts.generate.static_data.durations import collect_phase_1_durations
 
         enriched = enrich_merger(_referred_then_completed_phase_2_raw())
         cal, bus = collect_phase_1_durations([enriched])
@@ -2003,7 +1999,7 @@ class TestUpcomingEventsGenerate:
         # A Phase 2 refusal now under (or past) tribunal appeal, with a
         # scheduled hearing. Built through the real link step so under_appeal /
         # appeal.hearing_date are populated the way the pipeline sets them.
-        from static_data.enrichment import link_tribunal_appeals
+        from scripts.generate.static_data.enrichment import link_tribunal_appeals
         merger = {
             'merger_id': 'MN-7777',
             'merger_name': 'Appealed refusal',

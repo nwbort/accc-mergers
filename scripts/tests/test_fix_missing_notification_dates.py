@@ -3,13 +3,8 @@ suggests freezing today's date as the default notification date for mergers
 whose ACCC page never publishes one."""
 
 import json
-import os
-import sys
 
-# Add scripts directory to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-
-import fix_missing_notification_dates as fmnd
+from scripts import fix_missing_notification_dates as fmnd
 
 TODAY = "2026-07-02T12:00:00Z"
 
