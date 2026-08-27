@@ -467,6 +467,11 @@
         "in_progress": false
       },
       {
+        "business_days": 52,
+        "calendar_days": 72,
+        "in_progress": false
+      },
+      {
         "business_days": 17,
         "calendar_days": 26,
         "in_progress": false
@@ -993,18 +998,18 @@
       }
     ],
     "stats": {
-      "average": 19.9,
-      "median": 17.0,
+      "average": 20.1,
+      "median": 17,
       "min": 15,
       "max": 59,
-      "count": 198
+      "count": 199
     },
     "calendar_stats": {
-      "average": 29.6,
-      "median": 26.0,
+      "average": 29.8,
+      "median": 26,
       "min": 21,
       "max": 103,
-      "count": 198
+      "count": 199
     }
   },
   "waiver_duration": {
@@ -2498,7 +2503,7 @@
       42,
       41,
       46,
-      42
+      41
     ],
     "as_at": "2026-08-27"
   },
@@ -2621,6 +2626,15 @@
       "count": 19
     },
     {
+      "code": "Q",
+      "name": "Health Care and Social Assistance",
+      "average_business_days": 19.5,
+      "median_business_days": 16,
+      "average_calendar_days": 29.1,
+      "median_calendar_days": 25,
+      "count": 15
+    },
+    {
       "code": "K",
       "name": "Financial and Insurance Services",
       "average_business_days": 19.3,
@@ -2648,15 +2662,6 @@
       "count": 2
     },
     {
-      "code": "Q",
-      "name": "Health Care and Social Assistance",
-      "average_business_days": 17.2,
-      "median_business_days": 15.5,
-      "average_calendar_days": 26.1,
-      "median_calendar_days": 25.0,
-      "count": 14
-    },
-    {
       "code": "N",
       "name": "Administrative and Support Services",
       "average_business_days": 17.2,
@@ -2677,19 +2682,19 @@
     },
     {
       "division": "A division of the Commission (s19 direction)",
-      "count": 96,
+      "count": 97,
       "outcome_mix": {
-        "Approved": 75,
+        "Approved": 76,
         "Not approved": 15,
         "Unknown": 6
       },
-      "median_phase_1_business_days": 19.0
+      "median_phase_1_business_days": 19
     },
     {
       "division": "Not yet determined",
-      "count": 38,
+      "count": 37,
       "outcome_mix": {
-        "Unknown": 38
+        "Unknown": 37
       },
       "median_phase_1_business_days": null
     },
@@ -2750,7 +2755,7 @@
       "pct_decided_final_3_bd": 3.3,
       "count": 183
     },
-    "extended_count": 6
+    "extended_count": 7
   },
   "notification_restarts": [
     {
@@ -2897,10 +2902,10 @@
     {
       "code": "Q",
       "name": "Health Care and Social Assistance",
-      "approved": 14,
+      "approved": 15,
       "not_approved": 0,
       "referred": 0,
-      "in_progress": 5,
+      "in_progress": 4,
       "phase2_referral_rate": 0.0
     },
     {

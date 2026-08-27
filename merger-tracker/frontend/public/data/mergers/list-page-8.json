@@ -3352,14 +3352,14 @@
     {
       "merger_id": "MN-40013",
       "merger_name": "Calvary - Hobart Private Hospital",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "has_conditions": false,
       "is_waiver": false,
       "under_appeal": false,
       "is_refiled": false,
       "effective_notification_datetime": "2026-06-16T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-08-27T12:00:00Z",
       "end_of_determination_period": "2026-09-08T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -3374,32 +3374,6 @@
         }
       ],
       "targets": [
-        {
-          "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "80 146 342 814",
-          "canonical": {
-            "id": "healthscope",
-            "name": "Healthscope"
-          },
-          "party_page": {
-            "id": "healthscope",
-            "name": "Healthscope"
-          }
-        },
-        {
-          "name": "HEALTHSCOPE NEWCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "80 092 450 274",
-          "canonical": {
-            "id": "healthscope",
-            "name": "Healthscope"
-          },
-          "party_page": {
-            "id": "healthscope",
-            "name": "Healthscope"
-          }
-        },
         {
           "name": "HEALTHSCOPE OPERATIONS PTY LTD",
           "identifier_type": "ABN",
@@ -3421,16 +3395,42 @@
             "id": "anz-hospitals-pty-ltd",
             "name": "Anz Hospitals Pty Ltd"
           }
+        },
+        {
+          "name": "HEALTHSCOPE NEWCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "80 092 450 274",
+          "canonical": {
+            "id": "healthscope",
+            "name": "Healthscope"
+          },
+          "party_page": {
+            "id": "healthscope",
+            "name": "Healthscope"
+          }
+        },
+        {
+          "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "80 146 342 814",
+          "canonical": {
+            "id": "healthscope",
+            "name": "Healthscope"
+          },
+          "party_page": {
+            "id": "healthscope",
+            "name": "Healthscope"
+          }
         }
       ],
       "other_parties": [
         {
-          "name": "Jason Ireland (as joint and several receivers)",
+          "name": "Kathy Sozou (as joint and several receivers)",
           "identifier_type": null,
           "identifier": "",
           "party_page": {
-            "id": "jason-ireland-as-joint-and-several-receivers",
-            "name": "Jason Ireland (as joint and several receivers)"
+            "id": "kathy-sozou-as-joint-and-several-receivers",
+            "name": "Kathy Sozou (as joint and several receivers)"
           }
         },
         {
@@ -3443,21 +3443,21 @@
           }
         },
         {
+          "name": "Jason Ireland (as joint and several receivers)",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "jason-ireland-as-joint-and-several-receivers",
+            "name": "Jason Ireland (as joint and several receivers)"
+          }
+        },
+        {
           "name": "Matthew Caddy (as joint and several receivers)",
           "identifier_type": null,
           "identifier": "",
           "party_page": {
             "id": "matthew-caddy-as-joint-and-several-receivers",
             "name": "Matthew Caddy (as joint and several receivers)"
-          }
-        },
-        {
-          "name": "Kathy Sozou (as joint and several receivers)",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "kathy-sozou-as-joint-and-several-receivers",
-            "name": "Kathy Sozou (as joint and several receivers)"
           }
         }
       ],

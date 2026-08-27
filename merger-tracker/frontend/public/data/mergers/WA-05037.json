@@ -129,8 +129,8 @@
     {
       "merger_id": "MN-40013",
       "merger_name": "Calvary - Hobart Private Hospital",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "acquirers": [
         {
           "name": "LITTLE COMPANY OF MARY HEALTH CARE LIMITED",
@@ -144,9 +144,9 @@
       ],
       "targets": [
         {
-          "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
+          "name": "HEALTHSCOPE OPERATIONS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "80 146 342 814",
+          "identifier": "85 006 405 152",
           "canonical": {
             "id": "healthscope",
             "name": "Healthscope"
@@ -157,16 +157,12 @@
           }
         },
         {
-          "name": "HEALTHSCOPE NEWCO PTY LTD",
+          "name": "ANZ HOSPITALS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "80 092 450 274",
-          "canonical": {
-            "id": "healthscope",
-            "name": "Healthscope"
-          },
+          "identifier": "14 631 014 938",
           "party_page": {
-            "id": "healthscope",
-            "name": "Healthscope"
+            "id": "anz-hospitals-pty-ltd",
+            "name": "Anz Hospitals Pty Ltd"
           }
         }
       ]

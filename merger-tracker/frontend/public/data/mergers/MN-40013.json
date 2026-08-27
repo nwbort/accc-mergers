@@ -1,13 +1,16 @@
 {
   "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/calvary-hobart-private-hospital",
   "merger_name": "Calvary - Hobart Private Hospital",
-  "status": "Under assessment",
+  "status": "Assessment completed",
   "merger_id": "MN-40013",
   "effective_notification_datetime": "2026-06-16T12:00:00Z",
   "original_notification_datetime": "2026-06-16T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-09-08T12:00:00Z",
-  "page_modified_datetime": "2026-07-16T17:15:05+10:00",
+  "determination_publication_date": "2026-08-27T12:00:00Z",
+  "accc_determination": "Approved",
+  "accc_determination_raw": "ACCC determinationApproved",
+  "page_modified_datetime": "2026-08-27T13:04:12+10:00",
   "consultation_response_due_date": "2026-06-24T12:00:00Z",
   "acquirers": [
     {
@@ -21,32 +24,6 @@
     }
   ],
   "targets": [
-    {
-      "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "80 146 342 814",
-      "canonical": {
-        "id": "healthscope",
-        "name": "Healthscope"
-      },
-      "party_page": {
-        "id": "healthscope",
-        "name": "Healthscope"
-      }
-    },
-    {
-      "name": "HEALTHSCOPE NEWCO PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "80 092 450 274",
-      "canonical": {
-        "id": "healthscope",
-        "name": "Healthscope"
-      },
-      "party_page": {
-        "id": "healthscope",
-        "name": "Healthscope"
-      }
-    },
     {
       "name": "HEALTHSCOPE OPERATIONS PTY LTD",
       "identifier_type": "ABN",
@@ -68,16 +45,42 @@
         "id": "anz-hospitals-pty-ltd",
         "name": "Anz Hospitals Pty Ltd"
       }
+    },
+    {
+      "name": "HEALTHSCOPE NEWCO PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "80 092 450 274",
+      "canonical": {
+        "id": "healthscope",
+        "name": "Healthscope"
+      },
+      "party_page": {
+        "id": "healthscope",
+        "name": "Healthscope"
+      }
+    },
+    {
+      "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "80 146 342 814",
+      "canonical": {
+        "id": "healthscope",
+        "name": "Healthscope"
+      },
+      "party_page": {
+        "id": "healthscope",
+        "name": "Healthscope"
+      }
     }
   ],
   "other_parties": [
     {
-      "name": "Jason Ireland (as joint and several receivers)",
+      "name": "Kathy Sozou (as joint and several receivers)",
       "identifier_type": null,
       "identifier": "",
       "party_page": {
-        "id": "jason-ireland-as-joint-and-several-receivers",
-        "name": "Jason Ireland (as joint and several receivers)"
+        "id": "kathy-sozou-as-joint-and-several-receivers",
+        "name": "Kathy Sozou (as joint and several receivers)"
       }
     },
     {
@@ -90,21 +93,21 @@
       }
     },
     {
+      "name": "Jason Ireland (as joint and several receivers)",
+      "identifier_type": null,
+      "identifier": "",
+      "party_page": {
+        "id": "jason-ireland-as-joint-and-several-receivers",
+        "name": "Jason Ireland (as joint and several receivers)"
+      }
+    },
+    {
       "name": "Matthew Caddy (as joint and several receivers)",
       "identifier_type": null,
       "identifier": "",
       "party_page": {
         "id": "matthew-caddy-as-joint-and-several-receivers",
         "name": "Matthew Caddy (as joint and several receivers)"
-      }
-    },
-    {
-      "name": "Kathy Sozou (as joint and several receivers)",
-      "identifier_type": null,
-      "identifier": "",
-      "party_page": {
-        "id": "kathy-sozou-as-joint-and-several-receivers",
-        "name": "Kathy Sozou (as joint and several receivers)"
       }
     }
   ],
@@ -135,13 +138,169 @@
       "title": "Timeline extended by 30 business days \u2013 following request by parties",
       "display_title": "Timeline extended by 30 business days \u2013 following request by parties",
       "phase": null
+    },
+    {
+      "date": "2026-08-27T12:00:00Z",
+      "title": "Calvary - Hobart Private Hospital - Phase 1 determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Calvary%20-%20Hobart%20Private%20Hospital%20-%20Phase%201%20determination%20-%2027%20August%202026.pdf",
+      "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
+      "determination_table_content": [
+        {
+          "item": "Notified acquisition",
+          "details": "Little Company of Mary Health Care Ltd (Calvary) proposes to\nacquire the business and assets of Hobart Private Hospital (Hobart\nPrivate) from Healthscope pursuant to a business and asset sale\nagreement (the Acquisition)."
+        },
+        {
+          "item": "Determination",
+          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+        },
+        {
+          "item": "Parties to the Acquisition",
+          "details": "The acquirer, Calvary, is a not-for-profit operator of public and private\nhospitals in Australia, present in New South Wales, South Australia,\nVictoria and the Australian Capital Territory. Calvary currently\noperates four private hospitals in Tasmania: St Vincent's Hospital\n(Launceston); St Luke's Hospital (Launceston); Lenah Valley\nHospital (Lenah Valley, Hobart); and St John's Hospital (South\nHobart).\nThe target, Hobart Private, is a private hospital co-located with and\nadjacent to Hobart's main public hospital, Royal Hobart Hospital.\nHobart Private is currently operated by Healthscope, a private\nhospital operator. In May 2025, Healthscope\u2019s parent entities went\ninto voluntary administration, and receivers and administrators were\nappointed by its lenders and the Healthscope Board, respectively, to\nconduct an orderly sale of the hospitals in its network."
+        },
+        {
+          "item": "Reasons for determination",
+          "details": "The reasons for the ACCC\u2019s determination are set out in section 2."
+        }
+      ],
+      "determination_statement_of_reasons": [
+        {
+          "type": "paragraph",
+          "number": "2.1",
+          "text": "When making a determination in Phase 1, the Australian Competition and Consumer Commission (ACCC) undertakes a competition assessment and considers whether it is appropriate for an acquisition to be approved or subject to further assessment in Phase 2 in accordance with section 51ABZJ of the Competition and Consumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have regard to the object of the Act and all relevant matters, including the interests of consumers."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.2",
+          "text": "For more information about the ACCC\u2019s approach to considering notified acquisitions, see the ACCC\u2019s merger assessment guidelines and interim merger process guidelines."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.3",
+          "text": "In conducting its competition assessment, the ACCC has considered the information and documents that were submitted with the notification form, additional information provided by the parties to the Acquisition, information and submissions received from third parties, publicly available information and other information available to it."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.4",
+          "text": "For the reasons given below, the ACCC has determined that the Acquisition may be put into effect."
+        },
+        {
+          "type": "heading",
+          "text": "Overlap between the Parties"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.5",
+          "text": "Calvary (through its Lenah Valley Hospital and St John\u2019s Hospital) and Hobart Private overlap in the supply of private hospital services in the area surrounding Hobart Private. This includes the supply of medical, surgical and emergency care services across a range of medical specialties. Calvary and Hobart Private both provide private hospital services for day procedures, as well as procedures which require an overnight hospital stay."
+        },
+        {
+          "type": "heading",
+          "text": "Industry background"
+        },
+        {
+          "type": "heading",
+          "text": "Private hospital services"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.6",
+          "text": "Certain medical procedures are generally only conducted in hospitals which have facilities for overnight hospital stays. Overnight hospitals generally have more advanced facilities and infrastructure, which are particularly important for the provision of acute medical procedures. Other medical procedures, generally being less complex procedures, may be provided at either overnight hospitals or day hospitals."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.7",
+          "text": "There are three major private hospitals in Hobart that offer overnight services, two of which are operated by Calvary and one of which is currently operated by Healthscope: a) Lenah Valley Hospital is Calvary\u2019s larger, higher severity private hospital in Hobart, providing complex surgical, emergency, maternity and specialist inpatient services. Lenah Valley Hospital has 178 beds, an intensive care unit, a 24/7 emergency department, an endoscopy suite and 9 operating theatres; b) St John\u2019s Hospital, also operated by Calvary, provides a more limited range of services relative to Lenah Valley Hospital, focusing on lower severity and short stay surgical procedures, select medical services and procedural activity. St John\u2019s Hospital has 104 beds and 4 operating theatres; c) Hobart Private, currently operated by Healthscope, offers healthcare services including medical and surgical services and emergency care. Hobart Private\u2019s surgical program covers general, specialist and sub-specialty surgical procedures. General medical services delivered at Hobart Private include cardiology, gastroenterology, neurology, renal and respiratory medicine. Hobart Private has 133 beds and 9 operating theatres, and operates a 24/7 emergency department."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.8",
+          "text": "In addition to the hospitals listed above, private mental health services are provided at the Hobart Clinic, a 27-bed inpatient facility located in Rokeby. The Hobart Clinic only accepts referrals for admissions on a case-by-case basis."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.9",
+          "text": "Hobart also has four main private day hospitals which offer a more limited range of medical procedures, treatment and surgery which are delivered on a same-day basis (that is, they do not offer procedures which require an overnight hospital stay): a) Nexus Hobart Day Surgery, which provides services including ophthalmology, plastic surgery, oral & maxillofacial surgery, dental surgery, paediatric surgery, urology, vasectomy and certain in vitro fertilisation (IVF) services; b) Virtus Hobart Specialist Day Hospital, which is a Hobart-based day surgery that provides services including gastroenterology, endoscopy, gynaecology, fertility and IVF, ophthalmology, orthopaedic, urology and general surgery services; c) Icon Cancer Care Centre, which provides services including medical and radiation oncology services in central Hobart; and d) Hobart Eye Surgeons, which provides a range of ophthalmology services through four locations around Hobart."
+        },
+        {
+          "type": "heading",
+          "text": "Public hospital services"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.10",
+          "text": "Royal Hobart Hospital is Tasmania\u2019s largest public hospital and major referral centre. It provides a comprehensive range of general, specialty medical and surgical services including cardiac surgery, neurosurgery, extensive burns treatment, hyperbaric medicine, maternity care and gynaecology, neonatal and paediatric intensive care, as well as high-risk obstetrics services. Royal Hobart Hospital has approximately 500 beds and operates a 24/7 emergency department, a 24/7 intensive care unit and a high dependency unit."
+        },
+        {
+          "type": "heading",
+          "text": "Calvary\u2019s service offering"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.11",
+          "text": "Calvary operates in accordance with the Code of Ethical Standards for Catholic Health and Aged Care Services in Australia (Catholic Code). This means that certain services are generally not offered at Calvary\u2019s facilities, including IVF and other assisted reproductive services, voluntary assisted dying, elective terminations of pregnancy, and gender reassignment procedures."
+        },
+        {
+          "type": "heading",
+          "text": "Competition assessment"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.12",
+          "text": "The ACCC has considered the effects of the Acquisition by comparing the likely future state of competition if the Acquisition proceeds against the likely future state of competition if the Acquisition does not proceed."
+        },
+        {
+          "type": "heading",
+          "text": "Relevant areas of competition"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.13",
+          "text": "The ACCC has considered whether the Acquisition is likely to substantially lessen competition in the supply of private hospital services in the area surrounding Hobart Private. For the purpose of its assessment, it was not necessary to reach a definitive view on the precise product or geographic boundaries of the relevant market, as it does not materially alter the ACCC\u2019s competition assessment."
+        },
+        {
+          "type": "heading",
+          "text": "Competition effects in the supply of private hospital services"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.14",
+          "text": "The ACCC considers that the Acquisition is unlikely to have the effect of substantially lessening competition in the supply of private hospital services in the area surrounding Hobart Private."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.15",
+          "text": "As noted above, the ACCC has considered the effects of the Acquisition by comparing the likely future state of competition if the Acquisition proceeds against the likely future state of competition if the Acquisition does not proceed. This comparative exercise is a tool of analysis to assist the ACCC in assessing whether the Acquisition is likely to result in a substantial lessening of competition. The ACCC\u2019s consideration of the likely future state of competition without the Acquisition has been a central focus of its assessment of the Acquisition."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.16",
+          "text": "Based on the materials before it, the ACCC makes the following findings: a) there is not a real commercial likelihood of an alternative purchaser acquiring Hobart Private; b) in the absence of a commercially realistic alternative purchaser, and in the context of Healthscope\u2019s voluntary administration, there is a real prospect that Hobart Private would cease operating as a private hospital in the future without the Acquisition; c) Calvary would be the sole major private hospital offering overnight services in Hobart following the Acquisition."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.17",
+          "text": "The ACCC considers that there would be a material reduction in the number of suppliers of private hospital services, including day services, in the area surrounding Hobart Private in both the future with and without the Acquisition. Accordingly, the ACCC considers that the future state of competition if the Acquisition proceeds is unlikely to be substantially less than the future state of competition if the Acquisition does not proceed."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.18",
+          "text": "The ACCC has had regard to feedback received from several third parties (including medical practitioners and industry bodies) regarding certain services currently provided at Hobart Private, which Calvary would likely not provide if the Acquisition proceeds, given that Calvary operates in accordance with the Catholic Code. The services that would likely not be provided by Calvary at Hobart Private if the Acquisition proceeds include certain IVF and other assisted reproductive services, voluntary assisted dying, elective terminations of pregnancy, and gender reassignment procedures."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.19",
+          "text": "Having regard to all the material currently before it, the ACCC considers that these particular private hospital services would likely cease being provided at Hobart Private in both the future with and without the Acquisition."
+        }
+      ],
+      "url_gh": "/mergers/MN-40013/Calvary - Hobart Private Hospital - Phase 1 determination - 27 August 2026.pdf",
+      "is_determination_event": true,
+      "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
-  "accc_determination": null,
   "has_conditions": false,
-  "phase_1_determination": null,
-  "phase_1_determination_date": null,
+  "phase_1_determination": "Approved",
+  "phase_1_determination_date": "2026-08-27T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
