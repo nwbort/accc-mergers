@@ -3,12 +3,12 @@
   "total_waivers": 350,
   "total_conditional_approvals": 3,
   "by_status": {
-    "Assessment completed": 188,
-    "Under assessment": 45,
+    "Assessment completed": 189,
+    "Under assessment": 44,
     "Assessment ceased": 4
   },
   "by_determination": {
-    "Approved": 183,
+    "Approved": 184,
     "Referred to phase 2": 9,
     "Approved with conditions": 2
   },
@@ -22,27 +22,27 @@
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 186,
+    "cleared": 187,
     "not_cleared": 2,
-    "total": 188,
+    "total": 189,
     "rate": 0.989
   },
   "phase_duration": {
-    "average_days": 29.670103092783506,
-    "median_days": 26.0,
-    "average_business_days": 19.896907216494846,
-    "median_business_days": 17.0,
+    "average_days": 29.68717948717949,
+    "median_days": 26,
+    "average_business_days": 19.912820512820513,
+    "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 42,
-        "percentage": 21.6
+        "percentage": 21.5
       },
       "day20": {
         "count": 145,
-        "percentage": 74.7
+        "percentage": 74.4
       },
       "day30": {
-        "count": 182,
+        "count": 183,
         "percentage": 93.8
       }
     }
@@ -241,6 +241,17 @@
       "has_conditions": false
     },
     {
+      "merger_id": "MN-90024",
+      "merger_name": "Petalite \u2013 Envu",
+      "determination": "Approved",
+      "determination_date": "2026-08-26T12:00:00Z",
+      "page_modified_datetime": "2026-08-27T10:46:46+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-50011",
       "merger_name": "Journey Beyond - SeaLink Rottnest",
       "determination": "Assessment ceased",
@@ -333,17 +344,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-25T12:00:00Z",
       "page_modified_datetime": "2026-08-25T14:40:03+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-01115",
-      "merger_name": "MM Security \u2013 Micron Security Products",
-      "determination": "Approved",
-      "determination_date": "2026-08-24T12:00:00Z",
-      "page_modified_datetime": "2026-08-25T10:37:51+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",

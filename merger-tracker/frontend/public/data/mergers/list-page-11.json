@@ -1290,14 +1290,14 @@
     {
       "merger_id": "MN-90024",
       "merger_name": "Petalite \u2013 Envu",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "has_conditions": false,
       "is_waiver": false,
       "under_appeal": false,
       "is_refiled": false,
       "effective_notification_datetime": "2026-07-24T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-08-26T12:00:00Z",
       "end_of_determination_period": "2026-09-04T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -1324,21 +1324,21 @@
       ],
       "other_parties": [
         {
-          "name": "Envu Group",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "envu-group",
-            "name": "Envu Group"
-          }
-        },
-        {
           "name": "GIC Pte. Ltd",
           "identifier_type": null,
           "identifier": "Singapore Unique Identifier  198102265N",
           "party_page": {
             "id": "gic-pte-ltd",
             "name": "GIC Pte. Ltd"
+          }
+        },
+        {
+          "name": "Envu Group",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "envu-group",
+            "name": "Envu Group"
           }
         }
       ],
