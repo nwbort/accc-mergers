@@ -1,0 +1,59 @@
+name: Worker Tests
+
+# Manual-only (`workflow_dispatch`), matching test.yml.
+#
+# Discovers every Worker under workers/ rather than hard-coding a list, so a
+# new Worker directory is covered the moment it lands — and a Worker that
+# grows a `test` script starts running it without touching this file.
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: workers/
+    runs-on: ubuntu-latest
+    env:
+      # Wrangler phones home about usage by default; nothing to gain in CI.
+      WRANGLER_SEND_METRICS: 'false'
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version-file: .node-version
+          cache: 'npm'
+          cache-dependency-path: workers/*/package-lock.json
+
+      - name: Install, test and build each Worker
+        run: |
+          # Note: no `set -e`. A subshell on the left of `||` runs with
+          # errexit suppressed, so the steps below are chained with `&&`
+          # instead — otherwise a failing `npm test` is swallowed and the
+          # subshell reports the exit status of `deploy:dry`.
+          set -uo pipefail
+          failed=()
+          for manifest in workers/*/package.json; do
+            worker="$(dirname "$manifest")"
+            echo "::group::${worker}"
+            # --if-present so a Worker without tests is a skip, not a failure.
+            # deploy:dry bundles the Worker and validates wrangler.toml (entry
+            # point, bindings) with no Cloudflare credentials required, which
+            # catches a broken `main` path or a malformed config before a
+            # real deploy does.
+            (
+              cd "$worker" \
+                && npm ci \
+                && npm test --if-present \
+                && npm run deploy:dry
+            ) || failed+=("$worker")
+            echo "::endgroup::"
+          done
+
+          if [ ${#failed[@]} -gt 0 ]; then
+            for worker in "${failed[@]}"; do
+              echo "::error::${worker} failed"
+            done
+            exit 1
+          fi

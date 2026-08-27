@@ -193,6 +193,7 @@ python scripts/generate_static_data.py
 
 # Tests
 python -m pytest scripts/tests/
+cd workers/<worker-name> && npm test   # per-Worker suite, where one exists
 
 # Cloudflare Workers (same scripts in every workers/* directory)
 cd workers/<worker-name>   # dir name == deployed Worker name
@@ -311,3 +312,4 @@ load can never empty a directory.
 | `send-weekly-email.yml` | Manual (schedule currently disabled) | Send the weekly digest email via the Cloudflare Worker |
 | `test.yml` | Manual | Run the Python test suite |
 | `frontend-test.yml` | Pull requests touching `merger-tracker/frontend/**`, manual | Run the frontend test suite |
+| `workers-test.yml` | Manual | For each directory under `workers/`: `npm ci`, `npm test --if-present`, then `npm run deploy:dry` to bundle the Worker and validate its `wrangler.toml`. Discovers Workers by glob, so a new one is covered automatically |

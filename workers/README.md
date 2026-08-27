@@ -40,6 +40,16 @@ npm run tail         # stream live logs
 Secrets are never committed. Each `wrangler.toml` lists the
 `wrangler secret put ...` commands its Worker needs in a comment.
 
+## CI
+
+[`workers-test.yml`](../.github/workflows/workers-test.yml) (manual —
+`workflow_dispatch`) walks every directory here and runs `npm ci`,
+`npm test --if-present`, then `npm run deploy:dry`. It finds Workers by
+globbing `workers/*/package.json`, so a new Worker directory following the
+layout above is picked up with no change to the workflow. Only
+`accc-register-watcher` has a test suite today; the others are still
+covered by the `deploy:dry` bundle-and-validate step.
+
 ## What is *not* here
 
 Two pieces of Cloudflare config have to stay at the repository root and

@@ -139,7 +139,17 @@ Manual-only (`workflow_dispatch`). Runs `pytest scripts/tests/`.
 
 ### `frontend-test.yml` — Frontend tests
 
-Manual-only (`workflow_dispatch`). Runs the frontend test suite.
+Runs the frontend test suite on pull requests touching
+`merger-tracker/frontend/**`, `functions/**` or `slug-cases.json`, and on
+demand (`workflow_dispatch`).
+
+### `workers-test.yml` — Cloudflare Worker tests
+
+Manual-only (`workflow_dispatch`). For every directory under `workers/`, runs
+`npm ci`, then `npm test --if-present` (only `accc-register-watcher` has a
+test suite today), then `npm run deploy:dry` to bundle the Worker and
+validate its `wrangler.toml` without deploying. Discovers Workers by
+globbing `workers/*/package.json`, so a new Worker is covered automatically.
 
 ### `scrape-tribunal.yml` — Tribunal matter scraper (scheduled + manual)
 
