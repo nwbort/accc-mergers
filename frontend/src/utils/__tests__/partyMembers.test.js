@@ -57,7 +57,6 @@ describe('collapsePartyMembers', () => {
     expect(rows[0].identifiers).toEqual([
       { type: null, value: 'Registration number (Jersey) 140080' },
     ]);
-    expect(rows[0].members).toHaveLength(6);
   });
 
   it('keeps every distinct registration the entity holds', () => {
@@ -110,8 +109,7 @@ describe('collapsePartyMembers', () => {
       member('NDC HoldCo Pty Ltd', '13 654 148 188', 'ABN'),
     ]);
 
-    expect(rows).toHaveLength(2);
-    expect(rows[1].members).toHaveLength(2);
+    expect(rows.map((row) => row.name)).toEqual(['NDC FINCO PTY LTD', 'NDC HoldCo Pty Ltd']);
   });
 
   it('does not treat placeholder identifiers as a shared identifier', () => {
@@ -131,7 +129,7 @@ describe('collapsePartyMembers', () => {
     ]);
 
     expect(rows).toHaveLength(1);
-    expect(rows[0].members).toHaveLength(3);
+    expect(rows[0].identifiers).toEqual([{ type: null, value: 'BRN 70084973' }]);
   });
 
   it('drops empty records and tolerates a missing list', () => {

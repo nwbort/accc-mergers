@@ -6,9 +6,8 @@
  * same company written with and without its legal form, in ALL CAPS on one
  * filing and title case on the next, or with the same registration number
  * labelled four different ways ("140080", "JFSC  140080", "JFSC - 140080",
- * "Registration number (Jersey)  140080"). Grouping is a display concern only —
- * nothing here rewrites the underlying data, and every raw record stays
- * available behind the "recorded variants" toggle on the party page.
+ * "Registration number (Jersey)  140080"). Grouping is a display concern only:
+ * nothing here rewrites the underlying data.
  *
  * Two records are treated as the same entity when either
  *
@@ -178,8 +177,8 @@ function pickIdentifiers(records) {
 /**
  * Group a party's members into one row per entity.
  *
- * Returns `[{ name, identifiers: [{ type, value }], members }]` in the order the
- * entities first appear, where `members` is every raw record the row stands for.
+ * Returns `[{ name, identifiers: [{ type, value }] }]`, in the order the entities
+ * first appear.
  */
 export function collapsePartyMembers(members) {
   const records = (members || [])
@@ -210,6 +209,5 @@ export function collapsePartyMembers(members) {
   return clusters.map((cluster) => ({
     name: pickName(cluster),
     identifiers: pickIdentifiers(cluster),
-    members: cluster.map(({ base: _base, form: _form, core: _core, ...member }) => member),
   }));
 }

@@ -26,17 +26,7 @@ describe('PartyMembers', () => {
     expect(screen.getByText('CVC Capital Partners plc')).toBeInTheDocument();
     expect(screen.getByText(/Registration number \(Jersey\) 140080/)).toBeInTheDocument();
     expect(screen.queryByText(/JFSC/)).not.toBeInTheDocument();
-  });
-
-  it('keeps every raw record behind the variants toggle', async () => {
-    const user = userEvent.setup();
-    render(<PartyMembers members={CVC} partyName="CVC Capital Partners" />);
-
-    await user.click(screen.getByRole('button', { name: 'Show all 6 recorded variants' }));
-
-    expect(screen.getByText(/JFSC – 140080/)).toBeInTheDocument();
-    await user.click(screen.getByRole('button', { name: 'Hide recorded variants' }));
-    expect(screen.queryByText(/JFSC – 140080/)).not.toBeInTheDocument();
+    expect(screen.queryByRole('button')).not.toBeInTheDocument();
   });
 
   it('lists genuinely different entities, previewing the first three', async () => {
@@ -58,20 +48,6 @@ describe('PartyMembers', () => {
 
     await user.click(screen.getByRole('button', { name: 'Show 1 more' }));
     expect(screen.getAllByRole('listitem')).toHaveLength(4);
-  });
-
-  it('offers no variants toggle when nothing was grouped', () => {
-    render(
-      <PartyMembers
-        partyName="Coles Group"
-        members={[
-          member('COLES GROUP LIMITED', '11 004 089 936', 'ABN'),
-          member('COLES SUPERMARKETS AUSTRALIA PTY LTD', '45 004 189 708', 'ABN'),
-        ]}
-      />
-    );
-
-    expect(screen.queryByRole('button', { name: /recorded variants/ })).not.toBeInTheDocument();
   });
 
   it('shows only the identifier when the sole member is the party itself', () => {
