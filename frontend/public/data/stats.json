@@ -3,12 +3,12 @@
   "total_waivers": 359,
   "total_conditional_approvals": 3,
   "by_status": {
-    "Assessment completed": 195,
-    "Under assessment": 39,
+    "Assessment completed": 196,
+    "Under assessment": 38,
     "Assessment ceased": 4
   },
   "by_determination": {
-    "Approved": 190,
+    "Approved": 191,
     "Referred to phase 2": 9,
     "Approved with conditions": 2
   },
@@ -22,28 +22,28 @@
     "Not approved": 16
   },
   "clearance_rate": {
-    "cleared": 193,
+    "cleared": 194,
     "not_cleared": 2,
-    "total": 195,
+    "total": 196,
     "rate": 0.99
   },
   "phase_duration": {
-    "average_days": 29.771144278606965,
-    "median_days": 26,
-    "average_business_days": 20.019900497512438,
-    "median_business_days": 17,
+    "average_days": 29.747524752475247,
+    "median_days": 26.0,
+    "average_business_days": 20.014851485148515,
+    "median_business_days": 17.0,
     "percentiles": {
       "day15": {
         "count": 43,
-        "percentage": 21.4
+        "percentage": 21.3
       },
       "day20": {
-        "count": 149,
-        "percentage": 74.1
+        "count": 150,
+        "percentage": 74.3
       },
       "day30": {
-        "count": 188,
-        "percentage": 93.5
+        "count": 189,
+        "percentage": 93.6
       }
     }
   },
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-85038",
+      "merger_name": "Hammondcare - Anglican Community Services' Support at Home business",
+      "determination": "Approved",
+      "determination_date": "2026-08-28T12:00:00Z",
+      "page_modified_datetime": "2026-08-28T13:54:09+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-15037",
       "merger_name": "Monadelphous - Tyden Power",
       "determination": "Not approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-27T12:00:00Z",
       "page_modified_datetime": "2026-08-27T13:57:33+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-40013",
-      "merger_name": "Calvary - Hobart Private Hospital",
-      "determination": "Approved",
-      "determination_date": "2026-08-27T12:00:00Z",
-      "page_modified_datetime": "2026-08-27T13:04:12+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",

@@ -13,14 +13,14 @@
     "target": [
       {
         "merger_id": "MN-85038",
-        "merger_name": "HAMMONDCARE - ANGLICAN COMMUNITY SERVICES' SUPPORT AT HOME BUSINESS",
+        "merger_name": "Hammondcare - Anglican Community Services' Support at Home business",
         "is_waiver": false,
-        "status": "Under assessment",
-        "determination": null,
+        "status": "Assessment completed",
+        "determination": "Approved",
         "has_conditions": false,
         "phase": "Phase 1",
         "notification_date": "2026-08-03T12:00:00Z",
-        "determination_date": null
+        "determination_date": "2026-08-28T12:00:00Z"
       }
     ],
     "other": []
@@ -29,7 +29,13 @@
   "phase_1_count": 1,
   "phase_2_count": 0,
   "waiver_count": 0,
-  "active_count": 1,
-  "phase_duration": null,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 25.0,
+    "median_days": 25,
+    "average_business_days": 19.0,
+    "median_business_days": 19,
+    "completed_count": 1
+  },
   "waiver_duration": null
 }
