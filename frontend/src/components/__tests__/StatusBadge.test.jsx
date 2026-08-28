@@ -71,6 +71,27 @@ describe('StatusBadge', () => {
     expect(container.querySelector('[role="img"]').className).toMatch(/bg-emerald-50/);
   });
 
+  it('fills every outcome when asked for the solid form, clearances included', () => {
+    const { container: cleared } = render(
+      <StatusBadge status="Assessment completed" determination="Approved" solid />
+    );
+    expect(cleared.querySelector('[role="img"]').className).toMatch(/bg-emerald-700/);
+
+    const { container: live } = render(<StatusBadge status="Under assessment" solid />);
+    expect(live.querySelector('[role="img"]').className).toMatch(/bg-primary/);
+  });
+
+  it('keeps the conditions suffix readable inside the small-caps solid badge', () => {
+    render(
+      <StatusBadge status="Assessment completed" determination="Approved" hasConditions solid />
+    );
+    // The outcome is set in small caps; the qualifier that follows is not.
+    expect(screen.getByText('· with conditions').className).toMatch(/normal-case/);
+    expect(screen.getByRole('img')).toHaveAccessibleName(
+      'Determination: Approved, with conditions'
+    );
+  });
+
   it('marks a decided outcome with a glyph, so colour is not the only signal', () => {
     const { container } = render(
       <StatusBadge status="Assessment completed" determination="Approved" />

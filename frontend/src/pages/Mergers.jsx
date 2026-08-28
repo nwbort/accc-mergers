@@ -614,6 +614,19 @@ function Mergers() {
                 <div className="p-5 pl-6">
                   <div className="flex items-start justify-between gap-3">
                     <div className="flex-1 min-w-0">
+                      {/* The outcome leads the card, above the name, the way it
+                          leads the detail page. In the top-right corner it sat
+                          the width of the card away from the matter it belongs
+                          to and read as chrome next to the Track button. */}
+                      <div className="mb-2">
+                        <StatusBadge
+                          status={merger.status}
+                          determination={merger.accc_determination}
+                          hasConditions={merger.has_conditions}
+                          appeal={merger.appeal}
+                          solid
+                        />
+                      </div>
                       <div className="flex items-center gap-2">
                         {tracked && (
                           <FaStar className="h-4 w-4 flex-shrink-0 text-primary" aria-hidden="true" />
@@ -632,12 +645,6 @@ function Mergers() {
                     </div>
                     <div className="flex items-center gap-2 flex-shrink-0">
                       {merger.under_appeal && <AppealBadge />}
-                      <StatusBadge
-                        status={merger.status}
-                        determination={merger.accc_determination}
-                        hasConditions={merger.has_conditions}
-                        appeal={merger.appeal}
-                      />
                       <button
                         onClick={(e) => {
                           e.preventDefault();

@@ -89,10 +89,12 @@ frontend/src/
 │                         #     StatusBadge, WaiverBadge, NewBadge, AppealBadge,
 │                         #     RefiledBadge. StatusBadge marks each decided
 │                         #     outcome with a glyph (constants/outcomeIcons.js,
-│                         #     shared with MergerOutcomeHeading) and gives the
-│                         #     rare adverse outcomes a solid fill rather than
-│                         #     the tint the clearances get
-│                         #     (EMPHATIC_STATUS_COLORS in mergerStatus.js)
+│                         #     shared with MergerOutcomeHeading) and has two
+│                         #     forms (both in mergerStatus.js): a tint
+│                         #     (STATUS_COLORS) that fills only for the rare
+│                         #     adverse outcomes (EMPHATIC_OUTCOMES), and the
+│                         #     `solid` form (SOLID_STATUS_COLORS) that fills
+│                         #     every outcome, worn by the merger list
 │                         #   - Card scaffolding reused across pages: CollapsibleCard,
 │                         #     CardCollapseGrid, ShowMoreDivider, EmptyStateCard,
 │                         #     StatCard, DetailStatGrid, MergerCardBody
@@ -106,9 +108,11 @@ frontend/src/
 │                         #     on-dark treatment; both read the verdict from
 │                         #     utils/mergerOutcome.js. The merger list cannot
 │                         #     borrow that fill — nine in ten matters are
-│                         #     "Approved", so it would colour the whole page —
-│                         #     and marks each card with a left-edge rail in the
-│                         #     same outcome colour instead
+│                         #     "Approved", so it would colour the whole page.
+│                         #     It leads each card with a solid StatusBadge
+│                         #     above the title instead, in the outcome's
+│                         #     reading position rather than the far corner,
+│                         #     over a left-edge rail in the same outcome colour
 │                         #     (constants/outcomeRail.js).
 │                         #   - Tracking/notifications: TrackButton, NotificationPanel,
 │                         #     BellIcon

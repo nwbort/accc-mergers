@@ -1,8 +1,10 @@
 import {
   MERGER_STATUS,
   STATUS_COLORS,
-  EMPHATIC_STATUS_COLORS,
+  SOLID_STATUS_COLORS,
+  EMPHATIC_OUTCOMES,
   DEFAULT_STATUS_STYLE,
+  DEFAULT_SOLID_STATUS_STYLE,
 } from '../constants/mergerStatus';
 import { OUTCOME_ICONS } from '../constants/outcomeIcons';
 import { resolveEffectiveDetermination } from '../constants/appeal';
@@ -24,7 +26,15 @@ const STYLED_STATUSES = [
   MERGER_STATUS.ASSESSMENT_CEASED,
 ];
 
-function StatusBadge({ status, determination, label, hasConditions, appeal }) {
+/**
+ * The status or determination a matter is carrying, as a badge.
+ *
+ * `solid` asks for the loud form: the outcome filled and set in small caps
+ * rather than tinted. The merger list wears it above every card's title, where
+ * the result is what the reader came for. Everywhere else the badge is a tint,
+ * and only the few adverse outcomes (EMPHATIC_OUTCOMES) fill anyway.
+ */
+function StatusBadge({ status, determination, label, hasConditions, appeal, solid = false }) {
   // A concluded tribunal appeal can replace the ACCC's determination with the
   // one that now stands, plus a suffix noting whether it was confirmed or
   // overturned (mirrors the "· with conditions" treatment). Resolved by the
@@ -44,9 +54,10 @@ function StatusBadge({ status, determination, label, hasConditions, appeal }) {
     styleKey = status;
   }
 
+  const filled = solid || EMPHATIC_OUTCOMES.includes(styleKey);
   const statusStyle =
-    (styleKey && (EMPHATIC_STATUS_COLORS[styleKey] || STATUS_COLORS[styleKey])) ||
-    DEFAULT_STATUS_STYLE;
+    (styleKey && (filled ? SOLID_STATUS_COLORS[styleKey] : STATUS_COLORS[styleKey])) ||
+    (solid ? DEFAULT_SOLID_STATUS_STYLE : DEFAULT_STATUS_STYLE);
 
   // A glyph as well as a colour, so an outcome is not distinguished by colour
   // alone (WCAG 1.4.1) and can be picked out of a long list without reading
@@ -66,17 +77,21 @@ function StatusBadge({ status, determination, label, hasConditions, appeal }) {
     // role="img" (not role="status", which would turn every badge in a list
     // into its own live region — see WaiverBadge).
     <span
-      className={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold border ${statusStyle}`}
+      className={`inline-flex items-center border ${
+        solid
+          ? 'px-2 py-1 rounded-md text-[11px] font-bold uppercase tracking-widest'
+          : 'px-2.5 py-1 rounded-lg text-xs font-semibold'
+      } ${statusStyle}`}
       role="img"
       aria-label={ariaLabel}
     >
       {Icon && <Icon className="w-3 h-3 mr-1.5 flex-shrink-0" aria-hidden="true" />}
       {displayText}
       {showConditions && (
-        <span className="ml-1 font-normal">· with conditions</span>
+        <span className="ml-1 font-normal normal-case tracking-normal">· with conditions</span>
       )}
       {appealSuffix && (
-        <span className="ml-1 font-normal">· {appealSuffix}</span>
+        <span className="ml-1 font-normal normal-case tracking-normal">· {appealSuffix}</span>
       )}
     </span>
   );
