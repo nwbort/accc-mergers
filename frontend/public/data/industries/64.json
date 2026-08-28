@@ -19,7 +19,7 @@
       "code": "641",
       "name": "Auxiliary Finance and Investment Services",
       "level": "group",
-      "merger_count": 55
+      "merger_count": 56
     },
     {
       "code": "642",
@@ -61,6 +61,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-08-03T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-40035",
+      "merger_name": "SCM Financial Group - Strategic Wealth Services Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-30T12:00:00Z",
+      "determination_date": "2026-08-28T12:00:00Z"
     },
     {
       "merger_id": "WA-25043",
@@ -657,10 +668,10 @@
       "determination_date": "2025-12-18T12:00:00Z"
     }
   ],
-  "count": 57,
+  "count": 58,
   "phase_1_count": 14,
   "phase_2_count": 0,
-  "waiver_count": 43,
+  "waiver_count": 44,
   "active_count": 3,
   "phase_duration": {
     "average_days": 25.90909090909091,
@@ -670,10 +681,10 @@
     "completed_count": 11
   },
   "waiver_duration": {
-    "average_days": 20.232558139534884,
-    "median_days": 20,
-    "average_business_days": 13.930232558139535,
-    "median_business_days": 13,
-    "completed_count": 43
+    "average_days": 20.431818181818183,
+    "median_days": 20.0,
+    "average_business_days": 14.090909090909092,
+    "median_business_days": 13.5,
+    "completed_count": 44
   }
 }

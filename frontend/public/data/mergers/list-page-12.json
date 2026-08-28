@@ -1,6 +1,127 @@
 {
   "mergers": [
     {
+      "merger_id": "WA-45023",
+      "merger_name": "Pine Australia - Evolution Business Systems",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-31T12:00:00Z",
+      "determination_publication_date": "2026-08-18T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Pine Australia Holdings Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "697 228 309",
+          "party_page": {
+            "id": "pine-australia-holdings-pty-ltd",
+            "name": "Pine Australia Holdings Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "The Trustee for J Martin Family Trust",
+          "identifier_type": "ABN",
+          "identifier": "16 569 506 313",
+          "party_page": {
+            "id": "the-trustee-for-j-martin-family-trust",
+            "name": "The Trustee for J Martin Family Trust"
+          }
+        },
+        {
+          "name": "EVOLUTION BUSINESS SYSTEMS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "44 097 484 743",
+          "party_page": {
+            "id": "evolution-business-systems-pty-ltd",
+            "name": "Evolution Business Systems Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/pine-australia-evolution-business-systems"
+    },
+    {
+      "merger_id": "WA-65032",
+      "merger_name": "Coles \u2013 expansion of supermarket located within Coles head office site in Docklands, VIC",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-31T12:00:00Z",
+      "determination_publication_date": "2026-08-20T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "COLES GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "11 004 089 936",
+          "canonical": {
+            "id": "coles",
+            "name": "Coles Group"
+          },
+          "party_page": {
+            "id": "coles",
+            "name": "Coles Group"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Bourke Junction No. 1 Pty Ltd as trustee for the Bourke Junction Trust No. 1",
+          "identifier_type": "ABN",
+          "identifier": "50 230 519 968",
+          "party_page": {
+            "id": "bourke-junction-no-1-pty-ltd-as-trustee-for-the-bourke-junction-trust-no-1",
+            "name": "Bourke Junction No. 1 Pty Ltd as trustee for the Bourke Junction Trust No. 1"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "4110",
+          "name": "Supermarket and Grocery Stores"
+        },
+        {
+          "code": "4122",
+          "name": "Fruit and Vegetable Retailing"
+        },
+        {
+          "code": "4279",
+          "name": "Other Store-Based Retailing n.e.c."
+        },
+        {
+          "code": "4511",
+          "name": "Cafes and Restaurants"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/coles-%E2%80%93-expansion-of-supermarket-located-within-coles-head-office-site-in-docklands-vic"
+    },
+    {
       "merger_id": "WA-70033",
       "merger_name": "EQT Fund Management \u2013 Corza Biosurgery",
       "status": "Assessment completed",
@@ -4187,116 +4308,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/wsp-e2m"
-    },
-    {
-      "merger_id": "MN-85047",
-      "merger_name": "Blackstone funds and Perpetual Trustees \u2013 HSBC loan portfolio",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-27T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-10-09T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "ABF Whole Loan Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "699 486 167",
-          "party_page": {
-            "id": "abf-whole-loan-pty-ltd",
-            "name": "ABF Whole Loan Pty Ltd"
-          }
-        },
-        {
-          "name": "PERPETUAL CORPORATE TRUST LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "99 000 341 533",
-          "canonical": {
-            "id": "perpetual-corporate-trust-limited",
-            "name": "Perpetual Corporate Trust Limited"
-          },
-          "party_page": {
-            "id": "perpetual-corporate-trust-limited",
-            "name": "Perpetual Corporate Trust Limited"
-          }
-        },
-        {
-          "name": "VIRGO BIDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "89 699 487 119",
-          "party_page": {
-            "id": "virgo-bidco-pty-ltd",
-            "name": "Virgo Bidco Pty Ltd"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "HSBC BANK AUSTRALIA LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "48 006 434 162",
-          "party_page": {
-            "id": "hsbc-bank-australia-limited",
-            "name": "Hsbc Bank Australia Limited"
-          }
-        },
-        {
-          "name": "Lion Series 2024-1 Trust",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "lion-series-2024-1-trust",
-            "name": "Lion Series 2024-1 Trust"
-          }
-        },
-        {
-          "name": "Lion Series 2022-1 Trust",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "lion-series-2022-1-trust",
-            "name": "Lion Series 2022-1 Trust"
-          }
-        },
-        {
-          "name": "Lion Series 2020-1 Trust",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "lion-series-2020-1-trust",
-            "name": "Lion Series 2020-1 Trust"
-          }
-        },
-        {
-          "name": "Lion Series 2023-1 Trust",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "lion-series-2023-1-trust",
-            "name": "Lion Series 2023-1 Trust"
-          }
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "6221",
-          "name": "Banking"
-        },
-        {
-          "code": "6240",
-          "name": "Financial Asset Investing"
-        },
-        {
-          "code": "6419",
-          "name": "Other Auxiliary Finance and Investment Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/blackstone-funds-and-perpetual-trustees-%E2%80%93-hsbc-loan-portfolio"
     }
   ],
   "page": 12,

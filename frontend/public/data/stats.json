@@ -1,6 +1,6 @@
 {
   "total_mergers": 239,
-  "total_waivers": 360,
+  "total_waivers": 362,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 197,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 344,
+    "Approved": 346,
     "Not approved": 16
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.52777777777778,
+    "average_days": 19.57734806629834,
     "median_days": 19.0,
-    "average_business_days": 13.225,
+    "average_business_days": 13.265193370165745,
     "median_business_days": 13.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 100
+      "count": 101
     },
     {
       "name": "Computer System Design and Related Services",
@@ -64,7 +64,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 55
+      "count": 56
     },
     {
       "name": "Software Publishing",
@@ -219,6 +219,28 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-20033",
+      "merger_name": "ReDirect Holdings - Echo Solve",
+      "determination": "Approved",
+      "determination_date": "2026-08-28T12:00:00Z",
+      "page_modified_datetime": "2026-08-28T17:12:24+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-40035",
+      "merger_name": "SCM Financial Group - Strategic Wealth Services Group",
+      "determination": "Approved",
+      "determination_date": "2026-08-28T12:00:00Z",
+      "page_modified_datetime": "2026-08-28T17:11:21+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-50036",
       "merger_name": "Respect Group \u2013 Proserpine Nursing Home",
       "determination": "Approved",
@@ -322,28 +344,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-27T12:00:00Z",
       "page_modified_datetime": "2026-08-27T16:59:49+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-25043",
-      "merger_name": "Eldridge \u2013 Ausenco",
-      "determination": "Approved",
-      "determination_date": "2026-08-27T12:00:00Z",
-      "page_modified_datetime": "2026-08-27T16:58:42+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-75047",
-      "merger_name": "Respect Group \u2013 McLean Care residential aged care homes and independent living units",
-      "determination": "Approved",
-      "determination_date": "2026-08-27T12:00:00Z",
-      "page_modified_datetime": "2026-08-27T16:57:44+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
