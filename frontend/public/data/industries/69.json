@@ -121,17 +121,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-35034",
-      "merger_name": "The Independents Group \u2013 acquisition of entities within the Smuggler Group",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-08-07T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-40017",
       "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
       "is_waiver": false,
@@ -152,6 +141,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-04-27T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-35034",
+      "merger_name": "The Independents Group \u2013 acquisition of entities within the Smuggler Group",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-07T12:00:00Z",
+      "determination_date": "2026-08-28T12:00:00Z"
     },
     {
       "merger_id": "MN-30030",
@@ -1082,13 +1082,13 @@
   "phase_1_count": 36,
   "phase_2_count": 3,
   "waiver_count": 53,
-  "active_count": 8,
+  "active_count": 7,
   "phase_duration": {
-    "average_days": 34.18181818181818,
-    "median_days": 28,
-    "average_business_days": 22.939393939393938,
-    "median_business_days": 18,
-    "completed_count": 33
+    "average_days": 33.794117647058826,
+    "median_days": 27.5,
+    "average_business_days": 22.705882352941178,
+    "median_business_days": 18.0,
+    "completed_count": 34
   },
   "waiver_duration": {
     "average_days": 19.07547169811321,

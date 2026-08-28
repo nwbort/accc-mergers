@@ -128,17 +128,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-35034",
-      "merger_name": "The Independents Group \u2013 acquisition of entities within the Smuggler Group",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-08-07T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-65021",
       "merger_name": "Wesfarmers and Built Group - Built Living Joint Venture",
       "is_waiver": false,
@@ -159,6 +148,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-08-05T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-35034",
+      "merger_name": "The Independents Group \u2013 acquisition of entities within the Smuggler Group",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-07T12:00:00Z",
+      "determination_date": "2026-08-28T12:00:00Z"
     },
     {
       "merger_id": "MN-30030",
@@ -1133,13 +1133,13 @@
   "phase_1_count": 25,
   "phase_2_count": 0,
   "waiver_count": 75,
-  "active_count": 12,
+  "active_count": 11,
   "phase_duration": {
-    "average_days": 25.307692307692307,
-    "median_days": 24,
-    "average_business_days": 17.46153846153846,
-    "median_business_days": 16,
-    "completed_count": 13
+    "average_days": 25.0,
+    "median_days": 23.5,
+    "average_business_days": 17.285714285714285,
+    "median_business_days": 16.0,
+    "completed_count": 14
   },
   "waiver_duration": {
     "average_days": 19.493333333333332,

@@ -458,6 +458,11 @@
       },
       {
         "business_days": 15,
+        "calendar_days": 21,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
         "calendar_days": 22,
         "in_progress": false
       },
@@ -1014,17 +1019,17 @@
     ],
     "stats": {
       "average": 20.0,
-      "median": 17.0,
+      "median": 17,
       "min": 15,
       "max": 59,
-      "count": 202
+      "count": 203
     },
     "calendar_stats": {
       "average": 29.7,
-      "median": 26.0,
+      "median": 26,
       "min": 21,
       "max": 103,
-      "count": 202
+      "count": 203
     }
   },
   "waiver_duration": {
@@ -2554,7 +2559,7 @@
       42,
       41,
       46,
-      39
+      38
     ],
     "as_at": "2026-08-28"
   },
@@ -2632,15 +2637,6 @@
       "count": 10
     },
     {
-      "code": "M",
-      "name": "Professional, Scientific and Technical Services",
-      "average_business_days": 21.3,
-      "median_business_days": 18,
-      "average_calendar_days": 31.9,
-      "median_calendar_days": 27,
-      "count": 49
-    },
-    {
       "code": "F",
       "name": "Wholesale Trade",
       "average_business_days": 21.2,
@@ -2648,6 +2644,15 @@
       "average_calendar_days": 33.4,
       "median_calendar_days": 27,
       "count": 27
+    },
+    {
+      "code": "M",
+      "name": "Professional, Scientific and Technical Services",
+      "average_business_days": 21.2,
+      "median_business_days": 17.5,
+      "average_calendar_days": 31.7,
+      "median_calendar_days": 27.0,
+      "count": 50
     },
     {
       "code": "O",
@@ -2688,29 +2693,20 @@
     {
       "code": "K",
       "name": "Financial and Insurance Services",
-      "average_business_days": 19.2,
-      "median_business_days": 16.0,
-      "average_calendar_days": 28.2,
-      "median_calendar_days": 25.0,
-      "count": 28
+      "average_business_days": 19.1,
+      "median_business_days": 16,
+      "average_calendar_days": 28.0,
+      "median_calendar_days": 25,
+      "count": 29
     },
     {
       "code": "J",
       "name": "Information Media and Telecommunications",
-      "average_business_days": 19.1,
-      "median_business_days": 17,
-      "average_calendar_days": 29.3,
-      "median_calendar_days": 27,
-      "count": 25
-    },
-    {
-      "code": "R",
-      "name": "Arts and Recreation Services",
-      "average_business_days": 17.5,
-      "median_business_days": 17.5,
-      "average_calendar_days": 26.0,
+      "average_business_days": 18.9,
+      "median_business_days": 17.0,
+      "average_calendar_days": 29.0,
       "median_calendar_days": 26.0,
-      "count": 2
+      "count": 26
     },
     {
       "code": "N",
@@ -2720,16 +2716,25 @@
       "average_calendar_days": 24.1,
       "median_calendar_days": 24,
       "count": 7
+    },
+    {
+      "code": "R",
+      "name": "Arts and Recreation Services",
+      "average_business_days": 16.7,
+      "median_business_days": 16,
+      "average_calendar_days": 24.3,
+      "median_calendar_days": 24,
+      "count": 3
     }
   ],
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 433,
+      "count": 434,
       "outcome_mix": {
-        "Approved": 433
+        "Approved": 434
       },
-      "median_phase_1_business_days": 17.0
+      "median_phase_1_business_days": 17
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -2743,9 +2748,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 35,
+      "count": 34,
       "outcome_mix": {
-        "Unknown": 35
+        "Unknown": 34
       },
       "median_phase_1_business_days": null
     },
@@ -2778,7 +2783,7 @@
   ],
   "deadline_utilisation": {
     "histogram": {
-      "15": 43,
+      "15": 44,
       "16": 37,
       "17": 23,
       "18": 21,
@@ -2802,9 +2807,9 @@
     },
     "stats": {
       "mean_used_bd": 18.1,
-      "median_used_bd": 17.0,
+      "median_used_bd": 17,
       "pct_decided_final_3_bd": 3.2,
-      "count": 186
+      "count": 187
     },
     "extended_count": 7
   },
@@ -2881,20 +2886,20 @@
     {
       "code": "K",
       "name": "Financial and Insurance Services",
-      "approved": 26,
+      "approved": 27,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 14,
-      "phase2_referral_rate": 0.071
+      "in_progress": 13,
+      "phase2_referral_rate": 0.069
     },
     {
       "code": "M",
       "name": "Professional, Scientific and Technical Services",
-      "approved": 46,
+      "approved": 47,
       "not_approved": 0,
       "referred": 3,
-      "in_progress": 9,
-      "phase2_referral_rate": 0.061
+      "in_progress": 8,
+      "phase2_referral_rate": 0.06
     },
     {
       "code": "E",
@@ -2935,10 +2940,10 @@
     {
       "code": "J",
       "name": "Information Media and Telecommunications",
-      "approved": 25,
+      "approved": 26,
       "not_approved": 0,
       "referred": 0,
-      "in_progress": 4,
+      "in_progress": 3,
       "phase2_referral_rate": 0.0
     },
     {
@@ -2980,10 +2985,10 @@
     {
       "code": "R",
       "name": "Arts and Recreation Services",
-      "approved": 2,
+      "approved": 3,
       "not_approved": 0,
       "referred": 0,
-      "in_progress": 2,
+      "in_progress": 1,
       "phase2_referral_rate": 0.0
     },
     {

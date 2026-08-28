@@ -1998,14 +1998,14 @@
     {
       "merger_id": "MN-35034",
       "merger_name": "The Independents Group \u2013 acquisition of entities within the Smuggler Group",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "has_conditions": false,
       "is_waiver": false,
       "under_appeal": false,
       "is_refiled": false,
       "effective_notification_datetime": "2026-08-07T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-08-28T12:00:00Z",
       "end_of_determination_period": "2026-09-18T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -2051,9 +2051,9 @@
           }
         },
         {
-          "name": "Smuggler London Ltd",
+          "name": "Sidepiece LLC",
           "identifier_type": null,
-          "identifier": "Identifying number  06806477",
+          "identifier": "Identifying number  5134914",
           "canonical": {
             "id": "smuggler-group",
             "name": "Smuggler Group"
@@ -2064,9 +2064,9 @@
           }
         },
         {
-          "name": "Sidepiece LLC",
+          "name": "Smuggler London Ltd",
           "identifier_type": null,
-          "identifier": "Identifying number  5134914",
+          "identifier": "Identifying number  06806477",
           "canonical": {
             "id": "smuggler-group",
             "name": "Smuggler Group"
@@ -2105,6 +2105,24 @@
       ],
       "other_parties": [
         {
+          "name": "TowerBrook Capital Partners L.P.",
+          "identifier_type": null,
+          "identifier": "Identifying number  3922576",
+          "party_page": {
+            "id": "towerbrook-capital-partners-l-p",
+            "name": "TowerBrook Capital Partners L.P."
+          }
+        },
+        {
+          "name": "ELOCGA",
+          "identifier_type": null,
+          "identifier": "Identifying number  B209477",
+          "party_page": {
+            "id": "elocga",
+            "name": "Elocga"
+          }
+        },
+        {
           "name": "K10 Holding SA",
           "identifier_type": null,
           "identifier": "Identifying number  B214433",
@@ -2118,30 +2136,12 @@
           }
         },
         {
-          "name": "ELOCGA",
-          "identifier_type": null,
-          "identifier": "Identifying number  B209477",
-          "party_page": {
-            "id": "elocga",
-            "name": "Elocga"
-          }
-        },
-        {
           "name": "LOV Group Invest",
           "identifier_type": null,
           "identifier": "Identifying number  494 031 008",
           "party_page": {
             "id": "lov-group-invest",
             "name": "LOV Group Invest"
-          }
-        },
-        {
-          "name": "TowerBrook Capital Partners L.P.",
-          "identifier_type": null,
-          "identifier": "Identifying number  3922576",
-          "party_page": {
-            "id": "towerbrook-capital-partners-l-p",
-            "name": "TowerBrook Capital Partners L.P."
           }
         }
       ],

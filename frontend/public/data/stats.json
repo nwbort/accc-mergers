@@ -3,12 +3,12 @@
   "total_waivers": 359,
   "total_conditional_approvals": 3,
   "by_status": {
-    "Assessment completed": 196,
-    "Under assessment": 39,
+    "Assessment completed": 197,
+    "Under assessment": 38,
     "Assessment ceased": 4
   },
   "by_determination": {
-    "Approved": 191,
+    "Approved": 192,
     "Referred to phase 2": 9,
     "Approved with conditions": 2
   },
@@ -22,27 +22,27 @@
     "Not approved": 16
   },
   "clearance_rate": {
-    "cleared": 194,
+    "cleared": 195,
     "not_cleared": 2,
-    "total": 196,
+    "total": 197,
     "rate": 0.99
   },
   "phase_duration": {
-    "average_days": 29.747524752475247,
-    "median_days": 26.0,
-    "average_business_days": 20.014851485148515,
-    "median_business_days": 17.0,
+    "average_days": 29.704433497536947,
+    "median_days": 26,
+    "average_business_days": 19.99014778325123,
+    "median_business_days": 17,
     "percentiles": {
       "day15": {
-        "count": 43,
-        "percentage": 21.3
+        "count": 44,
+        "percentage": 21.7
       },
       "day20": {
-        "count": 150,
-        "percentage": 74.3
+        "count": 151,
+        "percentage": 74.4
       },
       "day30": {
-        "count": 189,
+        "count": 190,
         "percentage": 93.6
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-35034",
+      "merger_name": "The Independents Group \u2013 acquisition of entities within the Smuggler Group",
+      "determination": "Approved",
+      "determination_date": "2026-08-28T12:00:00Z",
+      "page_modified_datetime": "2026-08-28T15:39:25+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-85038",
       "merger_name": "Hammondcare - Anglican Community Services' Support at Home business",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-27T12:00:00Z",
       "page_modified_datetime": "2026-08-27T14:42:12+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-25040",
-      "merger_name": "Modaxo - Conduent",
-      "determination": "Approved",
-      "determination_date": "2026-08-27T12:00:00Z",
-      "page_modified_datetime": "2026-08-27T13:57:33+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
