@@ -72,6 +72,44 @@ export const STATUS_COLORS = {
   [MERGER_STATUS.ASSESSMENT_CEASED]: 'bg-purple-50 text-purple-700 border-purple-200/60',
 };
 
+// StatusBadge: status/determination → the solid treatment.
+//
+// The tints above are pitched so a list of them reads as one calm surface.
+// That is right for a page of mostly-similar outcomes and wrong wherever the
+// result is the thing the reader came for, so the badge has a second, louder
+// form that fills instead of tinting: the merger list wears it above every
+// card's title, and the tinted form keeps it for the few outcomes below.
+//
+// These are the same fills the detail page paints its header with
+// (constants/outcomeHeader.js) and the dashboard uses for its card grids
+// (constants/cardStyles.js), so a result reads as the same colour everywhere.
+// White text clears 4.5:1 on all of them (WCAG 1.4.3) except amber, which
+// takes dark text for the same reason cardStyles gives it dark text. The
+// border is set to the fill so a badge keeps its footprint in either form.
+export const SOLID_STATUS_COLORS = {
+  [MERGER_STATUS.APPROVED]: 'bg-emerald-700 text-white border-emerald-700',
+  [MERGER_STATUS.NOT_OPPOSED]: 'bg-emerald-700 text-white border-emerald-700',
+  [MERGER_STATUS.NOT_APPROVED]: 'bg-red-700 text-white border-red-700',
+  [MERGER_STATUS.DECLINED]: 'bg-red-700 text-white border-red-700',
+  [MERGER_STATUS.REFERRED_TO_PHASE_2]: 'bg-amber-400 text-amber-950 border-amber-400',
+  [MERGER_STATUS.UNDER_ASSESSMENT]: 'bg-primary text-white border-primary',
+  [MERGER_STATUS.ASSESSMENT_SUSPENDED]: 'bg-orange-700 text-white border-orange-700',
+  [MERGER_STATUS.ASSESSMENT_COMPLETED]: 'bg-gray-600 text-white border-gray-600',
+  [MERGER_STATUS.ASSESSMENT_CEASED]: 'bg-purple-700 text-white border-purple-700',
+};
+
+export const DEFAULT_SOLID_STATUS_STYLE = 'bg-gray-600 text-white border-gray-600';
+
+// The outcomes that take the solid treatment even on the tinted badge. A
+// refused or ceased matter is the one a reader is scanning a mixed list for,
+// so it gets the contrast; the clearances that make up nine in ten matters on
+// the register stay tinted and stay quiet.
+export const EMPHATIC_OUTCOMES = [
+  MERGER_STATUS.NOT_APPROVED,
+  MERGER_STATUS.DECLINED,
+  MERGER_STATUS.ASSESSMENT_CEASED,
+];
+
 // Digest.jsx color keys — correspond to the Tailwind color names declared in
 // tailwind.config.js (see the `new-merger`, `cleared`, `declined`, `phase-1`,
 // `phase-2` extensions under theme.extend.colors).

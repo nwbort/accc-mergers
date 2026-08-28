@@ -1,15 +1,8 @@
-import { FaBan, FaCheck, FaTimes } from 'react-icons/fa';
+import { FaCheck } from 'react-icons/fa';
 import { MERGER_STATUS } from '../constants/mergerStatus';
 import { getOutcomeHeaderStyle } from '../constants/outcomeHeader';
+import { OUTCOME_ICONS } from '../constants/outcomeIcons';
 import { getDecidedOutcome } from '../utils/mergerOutcome';
-
-const OUTCOME_ICONS = {
-  [MERGER_STATUS.APPROVED]: FaCheck,
-  [MERGER_STATUS.NOT_OPPOSED]: FaCheck,
-  [MERGER_STATUS.NOT_APPROVED]: FaTimes,
-  [MERGER_STATUS.DECLINED]: FaTimes,
-  [MERGER_STATUS.ASSESSMENT_CEASED]: FaBan,
-};
 
 /**
  * The result line above a decided merger's title, sitting on the outcome-

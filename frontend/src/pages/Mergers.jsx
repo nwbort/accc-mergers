@@ -18,6 +18,7 @@ import { useTracking } from '../context/TrackingContext';
 import { useDebounce } from '../hooks/useDebounce';
 import { buildSearchIndex, searchMergers, clearSearchIndex } from '../utils/searchIndex';
 import { PHASES } from '../constants/mergerStatus';
+import { getOutcomeRail } from '../constants/outcomeRail';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
 
@@ -576,6 +577,11 @@ function Mergers() {
             const tracked = isTracked(merger.merger_id);
             const isSelected = idx === selectedIndex;
             const businessDayProgress = getBusinessDayProgress(merger);
+            const railColor = getOutcomeRail({
+              status: merger.status,
+              determination: merger.accc_determination,
+              appeal: merger.appeal,
+            });
             return (
               <div
                 key={merger.merger_id}
@@ -594,13 +600,33 @@ function Mergers() {
                     navigate(mergerPath(merger.merger_id, merger.merger_name));
                   }
                 }}
-                className={`bg-white rounded-2xl border shadow-card hover:shadow-card-hover hover:border-gray-200 transition-all duration-200 cursor-pointer ${
+                className={`relative overflow-hidden bg-white rounded-2xl border shadow-card hover:shadow-card-hover hover:border-gray-200 transition-all duration-200 cursor-pointer ${
                   isSelected ? 'border-primary/40 ring-2 ring-primary/20' : 'border-gray-100'
                 }`}
               >
-                <div className="p-5">
+                {/* Outcome rail. Decoration only: the status badge below states
+                    the same outcome in words, so nothing is carried by colour
+                    alone. Clipped to the card's radius by overflow-hidden. */}
+                <span
+                  className={`absolute inset-y-0 left-0 w-1.5 ${railColor}`}
+                  aria-hidden="true"
+                />
+                <div className="p-5 pl-6">
                   <div className="flex items-start justify-between gap-3">
                     <div className="flex-1 min-w-0">
+                      {/* The outcome leads the card, above the name, the way it
+                          leads the detail page. In the top-right corner it sat
+                          the width of the card away from the matter it belongs
+                          to and read as chrome next to the Track button. */}
+                      <div className="mb-2">
+                        <StatusBadge
+                          status={merger.status}
+                          determination={merger.accc_determination}
+                          hasConditions={merger.has_conditions}
+                          appeal={merger.appeal}
+                          solid
+                        />
+                      </div>
                       <div className="flex items-center gap-2">
                         {tracked && (
                           <FaStar className="h-4 w-4 flex-shrink-0 text-primary" aria-hidden="true" />
@@ -619,12 +645,6 @@ function Mergers() {
                     </div>
                     <div className="flex items-center gap-2 flex-shrink-0">
                       {merger.under_appeal && <AppealBadge />}
-                      <StatusBadge
-                        status={merger.status}
-                        determination={merger.accc_determination}
-                        hasConditions={merger.has_conditions}
-                        appeal={merger.appeal}
-                      />
                       <button
                         onClick={(e) => {
                           e.preventDefault();

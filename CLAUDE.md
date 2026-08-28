@@ -87,7 +87,14 @@ frontend/src/
 │                         #     ScrollToTop, ErrorBoundary, ErrorCard, ErrorMessage
 │                         #   - Badges (all role="img", never role="status"):
 │                         #     StatusBadge, WaiverBadge, NewBadge, AppealBadge,
-│                         #     RefiledBadge
+│                         #     RefiledBadge. StatusBadge marks each decided
+│                         #     outcome with a glyph (constants/outcomeIcons.js,
+│                         #     shared with MergerOutcomeHeading) and has two
+│                         #     forms (both in mergerStatus.js): a tint
+│                         #     (STATUS_COLORS) that fills only for the rare
+│                         #     adverse outcomes (EMPHATIC_OUTCOMES), and the
+│                         #     `solid` form (SOLID_STATUS_COLORS) that fills
+│                         #     every outcome, worn by the merger list
 │                         #   - Card scaffolding reused across pages: CollapsibleCard,
 │                         #     CardCollapseGrid, ShowMoreDivider, EmptyStateCard,
 │                         #     StatCard, DetailStatGrid, MergerCardBody
@@ -99,7 +106,14 @@ frontend/src/
 │                         #     colour (constants/outcomeHeader.js) and flips
 │                         #     the links and TrackButton inside it to their
 │                         #     on-dark treatment; both read the verdict from
-│                         #     utils/mergerOutcome.js.
+│                         #     utils/mergerOutcome.js. The merger list cannot
+│                         #     borrow that fill — nine in ten matters are
+│                         #     "Approved", so it would colour the whole page.
+│                         #     It leads each card with a solid StatusBadge
+│                         #     above the title instead, in the outcome's
+│                         #     reading position rather than the far corner,
+│                         #     over a left-edge rail in the same outcome colour
+│                         #     (constants/outcomeRail.js).
 │                         #   - Tracking/notifications: TrackButton, NotificationPanel,
 │                         #     BellIcon
 │                         #   - Global UI: CommandPalette, KeyboardShortcutsHelp,
@@ -111,7 +125,8 @@ frontend/src/
 ├── constants/            # Shared literal tables: navPages.js (single source of truth for
 │                         #   the navbar, command palette and keyboard shortcuts),
 │                         #   mergerStatus.js, appeal.js, regime.js, cardStyles.js,
-│                         #   chartColors.js, outcomeDotColors.js, outcomeHeader.js
+│                         #   chartColors.js, outcomeDotColors.js, outcomeHeader.js,
+│                         #   outcomeIcons.js, outcomeRail.js
 ├── context/              # TrackingContext.jsx — global merger + industry follow state via localStorage
 │                         #   (industry follows flag only new filings/determinations)
 ├── hooks/                # useDebounce.js, useFetchData.js, useKeyboardShortcuts.js,
