@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorCard from '../components/ErrorCard';
 import IndustryMergerGroups from '../components/IndustryMergerGroups';
@@ -6,6 +5,7 @@ import PhaseDurationComparison from '../components/PhaseDurationComparison';
 import SEO from '../components/SEO';
 import Breadcrumb from '../components/Breadcrumb';
 import DetailStatGrid from '../components/DetailStatGrid';
+import PartyMembers from '../components/PartyMembers';
 import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
 import { useDecodedParam } from '../hooks/useDecodedParam';
@@ -18,11 +18,8 @@ const ROLE_LABELS = {
   other: 'As other party',
 };
 
-const MEMBERS_PREVIEW_COUNT = 3;
-
 function PartyDetail() {
   const decodedId = useDecodedParam('id');
-  const [showAllMembers, setShowAllMembers] = useState(false);
 
   const { data, loading, error } = useFetchData(
     API_ENDPOINTS.partyDetail(decodedId),
@@ -108,40 +105,7 @@ function PartyDetail() {
             {mergerCount} merger{mergerCount !== 1 ? 's' : ''}
           </p>
 
-          {members.length > 1 && (
-            <div className="mt-4 pt-4 border-t border-gray-100">
-              <h2 className={`${SECTION_HEADING} mb-2`}>
-                Related parties
-              </h2>
-              <ul className="space-y-1">
-                {(showAllMembers ? members : members.slice(0, MEMBERS_PREVIEW_COUNT)).map((member) => (
-                  <li key={`${member.name}-${member.identifier || ''}`} className="text-sm text-gray-700">
-                    {member.name}
-                    {member.identifier && (
-                      <span className="text-gray-500">
-                        {' '}&middot; {member.identifier_type ? `${member.identifier_type}: ` : ''}{member.identifier}
-                      </span>
-                    )}
-                  </li>
-                ))}
-              </ul>
-              {members.length > MEMBERS_PREVIEW_COUNT && (
-                <button
-                  type="button"
-                  onClick={() => setShowAllMembers((prev) => !prev)}
-                  className="text-sm text-primary hover:text-primary-dark font-medium mt-2 transition-colors"
-                  aria-expanded={showAllMembers}
-                >
-                  {showAllMembers ? 'Show less' : `Show ${members.length - MEMBERS_PREVIEW_COUNT} more`}
-                </button>
-              )}
-            </div>
-          )}
-          {members.length === 1 && members[0].identifier && (
-            <p className="text-sm text-gray-500 mt-2">
-              {members[0].identifier_type ? `${members[0].identifier_type}: ` : ''}{members[0].identifier}
-            </p>
-          )}
+          <PartyMembers members={members} partyName={partyName} />
         </div>
 
         {mergerCount > 0 && <DetailStatGrid statCards={statCards} />}
