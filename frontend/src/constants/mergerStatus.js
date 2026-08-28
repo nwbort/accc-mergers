@@ -72,6 +72,21 @@ export const STATUS_COLORS = {
   [MERGER_STATUS.ASSESSMENT_CEASED]: 'bg-purple-50 text-purple-700 border-purple-200/60',
 };
 
+// StatusBadge: the outcomes that get a solid badge instead of the tint above.
+//
+// The tints are pitched so that a list of them reads as one calm surface,
+// which is right for the clearances that make up nine in ten matters on the
+// register and wrong for the few that do not. A refused or ceased matter is
+// the thing a reader is scanning for, so it gets the contrast: the same deep
+// fills the detail page paints its header with (constants/outcomeHeader.js),
+// which is also what keeps white text on them above 4.5:1 (WCAG 1.4.3). The
+// border is set to the fill so the badge keeps its footprint either way.
+export const EMPHATIC_STATUS_COLORS = {
+  [MERGER_STATUS.NOT_APPROVED]: 'bg-red-700 text-white border-red-700',
+  [MERGER_STATUS.DECLINED]: 'bg-red-700 text-white border-red-700',
+  [MERGER_STATUS.ASSESSMENT_CEASED]: 'bg-purple-700 text-white border-purple-700',
+};
+
 // Digest.jsx color keys — correspond to the Tailwind color names declared in
 // tailwind.config.js (see the `new-merger`, `cleared`, `declined`, `phase-1`,
 // `phase-2` extensions under theme.extend.colors).

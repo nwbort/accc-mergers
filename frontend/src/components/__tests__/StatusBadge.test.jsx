@@ -53,6 +53,40 @@ describe('StatusBadge', () => {
     expect(screen.getByRole('img').className).toMatch(/emerald/);
   });
 
+  it('gives the few adverse outcomes a solid badge, not the tint the clearances get', () => {
+    const { container: refused } = render(
+      <StatusBadge status="Assessment completed" determination="Not approved" />
+    );
+    expect(refused.querySelector('[role="img"]').className).toMatch(/bg-red-700/);
+    expect(refused.querySelector('[role="img"]').className).toMatch(/text-white/);
+
+    const { container: ceased } = render(<StatusBadge status="Assessment ceased" />);
+    expect(ceased.querySelector('[role="img"]').className).toMatch(/bg-purple-700/);
+  });
+
+  it('leaves a clearance on the tint, since nine in ten matters are one', () => {
+    const { container } = render(
+      <StatusBadge status="Assessment completed" determination="Approved" />
+    );
+    expect(container.querySelector('[role="img"]').className).toMatch(/bg-emerald-50/);
+  });
+
+  it('marks a decided outcome with a glyph, so colour is not the only signal', () => {
+    const { container } = render(
+      <StatusBadge status="Assessment completed" determination="Approved" />
+    );
+    const icon = container.querySelector('svg');
+    expect(icon).not.toBeNull();
+    // Decorative: the badge's own aria-label already reads the outcome out.
+    expect(icon).toHaveAttribute('aria-hidden', 'true');
+    expect(screen.getByRole('img')).toHaveAccessibleName('Determination: Approved');
+  });
+
+  it('gives a live matter no glyph, having no result to symbolise', () => {
+    const { container } = render(<StatusBadge status="Under assessment" />);
+    expect(container.querySelector('svg')).toBeNull();
+  });
+
   it('flips a cleared merger to "Not approved · on appeal" on a third-party turnaround', () => {
     render(
       <StatusBadge

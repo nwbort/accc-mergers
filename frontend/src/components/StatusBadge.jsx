@@ -1,5 +1,28 @@
-import { MERGER_STATUS, STATUS_COLORS, DEFAULT_STATUS_STYLE } from '../constants/mergerStatus';
+import {
+  MERGER_STATUS,
+  STATUS_COLORS,
+  EMPHATIC_STATUS_COLORS,
+  DEFAULT_STATUS_STYLE,
+} from '../constants/mergerStatus';
+import { OUTCOME_ICONS } from '../constants/outcomeIcons';
 import { resolveEffectiveDetermination } from '../constants/appeal';
+
+// Determinations take precedence over statuses, so the badge is styled by
+// whichever of the two it is actually showing.
+const STYLED_DETERMINATIONS = [
+  MERGER_STATUS.APPROVED,
+  MERGER_STATUS.DECLINED,
+  MERGER_STATUS.NOT_APPROVED,
+  MERGER_STATUS.REFERRED_TO_PHASE_2,
+  MERGER_STATUS.ASSESSMENT_CEASED,
+];
+
+const STYLED_STATUSES = [
+  MERGER_STATUS.UNDER_ASSESSMENT,
+  MERGER_STATUS.ASSESSMENT_SUSPENDED,
+  MERGER_STATUS.ASSESSMENT_COMPLETED,
+  MERGER_STATUS.ASSESSMENT_CEASED,
+];
 
 function StatusBadge({ status, determination, label, hasConditions, appeal }) {
   // A concluded tribunal appeal can replace the ACCC's determination with the
@@ -10,28 +33,25 @@ function StatusBadge({ status, determination, label, hasConditions, appeal }) {
   const { determination: effectiveDetermination, appealSuffix } =
     resolveEffectiveDetermination(determination, appeal);
 
-  const getStatusStyle = () => {
-    // Determinations take precedence over statuses; 'Declined' and 'Not approved'
-    // share the same red palette (both map to the same STATUS_COLORS entry).
-    if (
-      effectiveDetermination === MERGER_STATUS.APPROVED ||
-      effectiveDetermination === MERGER_STATUS.DECLINED ||
-      effectiveDetermination === MERGER_STATUS.NOT_APPROVED ||
-      effectiveDetermination === MERGER_STATUS.REFERRED_TO_PHASE_2 ||
-      effectiveDetermination === MERGER_STATUS.ASSESSMENT_CEASED
-    ) {
-      return STATUS_COLORS[effectiveDetermination];
-    }
-    if (
-      status === MERGER_STATUS.UNDER_ASSESSMENT ||
-      status === MERGER_STATUS.ASSESSMENT_SUSPENDED ||
-      status === MERGER_STATUS.ASSESSMENT_COMPLETED ||
-      status === MERGER_STATUS.ASSESSMENT_CEASED
-    ) {
-      return STATUS_COLORS[status];
-    }
-    return DEFAULT_STATUS_STYLE;
-  };
+  // The single outcome this badge is speaking for. Everything below — colour,
+  // emphasis, glyph — keys off it, so they cannot end up describing different
+  // outcomes. 'Declined' and 'Not approved' share the same red palette (both
+  // map to the same STATUS_COLORS entry).
+  let styleKey = null;
+  if (STYLED_DETERMINATIONS.includes(effectiveDetermination)) {
+    styleKey = effectiveDetermination;
+  } else if (STYLED_STATUSES.includes(status)) {
+    styleKey = status;
+  }
+
+  const statusStyle =
+    (styleKey && (EMPHATIC_STATUS_COLORS[styleKey] || STATUS_COLORS[styleKey])) ||
+    DEFAULT_STATUS_STYLE;
+
+  // A glyph as well as a colour, so an outcome is not distinguished by colour
+  // alone (WCAG 1.4.1) and can be picked out of a long list without reading
+  // it. Only decided outcomes have one; a live matter shows text only.
+  const Icon = styleKey ? OUTCOME_ICONS[styleKey] : null;
 
   const displayText = label || effectiveDetermination || status;
   const showConditions =
@@ -46,10 +66,11 @@ function StatusBadge({ status, determination, label, hasConditions, appeal }) {
     // role="img" (not role="status", which would turn every badge in a list
     // into its own live region — see WaiverBadge).
     <span
-      className={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold border ${getStatusStyle()}`}
+      className={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold border ${statusStyle}`}
       role="img"
       aria-label={ariaLabel}
     >
+      {Icon && <Icon className="w-3 h-3 mr-1.5 flex-shrink-0" aria-hidden="true" />}
       {displayText}
       {showConditions && (
         <span className="ml-1 font-normal">· with conditions</span>
