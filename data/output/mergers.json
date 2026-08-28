@@ -34254,13 +34254,13 @@
     {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/vets-central-%E2%80%93-hills-veterinary-centre-0",
       "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
-      "status": "Under assessment",
+      "status": "Assessment ceased",
       "merger_id": "MN-40017",
       "effective_notification_datetime": "2026-07-01T12:00:00Z",
       "original_notification_datetime": "2026-07-01T12:00:00Z",
       "stage": "Phase 2 - detailed assessment",
       "end_of_determination_period": "2027-01-12T12:00:00Z",
-      "page_modified_datetime": "2026-08-19T18:19:18+10:00",
+      "page_modified_datetime": "2026-08-28T16:11:26+10:00",
       "consultation_response_due_date": "2026-07-09T12:00:00Z",
       "acquirers": [
         {
@@ -34325,7 +34325,8 @@
           "date": "2026-08-18T12:00:00Z",
           "title": "Vets Central - Hills Veterinary Centre - Phase 2 Notice",
           "display_title": "Vets Central - Hills Veterinary Centre - Phase 2 Notice",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Vets%20Central%20-%20Hills%20Veterinary%20Centre%20-%20Phase%202%20notice%20-%2018%20August%202026%20%28INTERNAL%20VERSION%29.pdf",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Vets%20Central%20-%20Hills%20Veterinary%20Centre%20-%20Phase%202%20Notice.pdf",
+          "url_gh": "/mergers/MN-40017/Vets Central - Hills Veterinary Centre - Phase 2 Notice.pdf",
           "phase2_notice_matters_to_investigate": [
             {
               "heading": "Relevant areas of competition",
@@ -34343,7 +34344,13 @@
             }
           ],
           "phase2_notice_commission_division": "Decision made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Competition and Consumer Act 2010 (Cth)",
-          "url_gh": "/mergers/MN-40017/Vets Central - Hills Veterinary Centre - Phase 2 notice - 18 August 2026 (INTERNAL VERSION).pdf",
+          "phase": "Phase 2"
+        },
+        {
+          "date": "2026-08-28T12:00:00Z",
+          "title": "Consideration of Notification ceased \u2013 Phase 2 fee not paid by due date",
+          "display_title": "Consideration of Notification ceased \u2013 Phase 2 fee not paid by due date",
+          "is_determination_event": true,
           "phase": "Phase 2"
         }
       ],
@@ -34356,6 +34363,7 @@
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
+      "ceased_date": "2026-08-28T12:00:00Z",
       "competition_concerns_notice_date": "2026-09-23T12:00:00Z",
       "has_questionnaire": true,
       "related_merger": {
@@ -42499,15 +42507,15 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 26,
-        "min_days": null,
+        "estimated_days": 8,
+        "min_days": 0,
         "max_days": 33,
-        "id_issued_estimated": "2026-07-17",
-        "id_issued_before": null,
+        "id_issued_estimated": "2026-08-04",
+        "id_issued_before": "2026-08-12",
         "id_issued_after": "2026-07-10",
-        "min_days_witness": null,
+        "min_days_witness": "WA-50036",
         "max_days_witness": "WA-50033",
-        "basis": "upper-bound-only",
+        "basis": "bracketed",
         "method_version": 1
       }
     },
@@ -109416,7 +109424,7 @@
         {
           "merger_id": "MN-40017",
           "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
-          "status": "Under assessment",
+          "status": "Assessment ceased",
           "accc_determination": null,
           "acquirers": [
             {
@@ -113524,7 +113532,7 @@
         {
           "merger_id": "MN-40017",
           "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
-          "status": "Under assessment",
+          "status": "Assessment ceased",
           "accc_determination": null,
           "acquirers": [
             {
@@ -117997,6 +118005,187 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/respect-group-%E2%80%93-proserpine-nursing-home",
+      "merger_name": "Respect Group \u2013 Proserpine Nursing Home",
+      "status": "Assessment completed",
+      "merger_id": "WA-50036",
+      "effective_notification_datetime": "2026-08-13T12:00:00Z",
+      "original_notification_datetime": "2026-08-13T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-08-28T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-08-28T17:10:02+10:00",
+      "acquirers": [
+        {
+          "name": "RESPECT GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "74 121 263 545",
+          "party_page": {
+            "id": "respect-group-limited",
+            "name": "Respect Group Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "PROSERPINE NURSING HOME INC",
+          "identifier_type": "ABN",
+          "identifier": "26 150 144 841",
+          "party_page": {
+            "id": "proserpine-nursing-home-inc",
+            "name": "Proserpine Nursing Home Inc"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "8601",
+          "name": "Aged Care Residential Services"
+        }
+      ],
+      "merger_description": "Respect Group Limited (**Respect Group**) proposes to acquire 100% of the business, business assets, and land owned by Proserpine Nursing Home Inc (**Proserpine****Nursing Home**) (the **Acquisition**).\n\nRespect Group is a not-for-profit registered charity and unlisted public company based in Tasmania, which provides residential aged care, retirement living, and support at home services focused on dignity and wellbeing for older adults. Respect Group owns and operates 41 residential aged care homes across Tasmania, New South Wales, Victoria, Western Australia, Queensland, and South Australia.\n\nProserpine Nursing Home is a not-for-profit incorporated association and registered charity operating a single-site residential aged care home with 104 beds at 42 Anzac Road, Proserpine, in the Whitsunday Region of Queensland.\n\nFollowing completion, Respect Group will continue to operate Proserpine Nursing Home for the benefit of the Proserpine community and has agreed to invest in a significant refurbishment to the facility.",
+      "events": [
+        {
+          "date": "2026-08-28T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Respect%20Group%20-%20Proserpine%20Nursing%20Home%20%28WA-50036%29%20-%20Notification%20waiver%20determination%20-%2028%20August%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Respect Group Limited (Respect Group) applied for a notification\nwaiver in respect of its proposed acquisition of 100% of the\nbusiness, assets, and land of Prosperine Nursing Home Inc\n(Proserpine Nursing Home), as described in the transaction\ndocuments provided as part of the application (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "28 August 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, Respect Group, is a not-for-profit registered charity and\nunlisted public company based in Tasmania, which provides\nresidential aged care, retirement living, and support at home services\nfocused on dignity and wellbeing for older adults. Respect Group\nowns and operates 41 residential aged care homes across\nTasmania, New South Wales, Victoria, Western Australia,\nQueensland, and South Australia.\nThe target, Prosperine Nursing Home, is a not-for-profit incorporated\nassociation and registered charity operating a single-site residential\naged care home with 104 beds at 42 Anzac Road, Prosperine, in the\nWhitsunday Region of Queensland."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application, and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition given:\na. there is limited geographic overlap between Respect Group\nand Proserpine Nursing Home, with Respect Group\u2019s closest\nexisting residential aged care facility being located\napproximately 120 kilometres away by road\nb. there are alternative providers of residential aged care\nservices in the region surrounding Proserpine Nursing\nHome.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-50036/Respect Group - Proserpine Nursing Home (WA-50036) - Notification waiver determination - 28 August 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-08-13T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-35020",
+          "merger_name": "Respect Group - Jallarah Homes",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "RESPECT GROUP LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "74 121 263 545",
+              "party_page": {
+                "id": "respect-group-limited",
+                "name": "Respect Group Limited"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "JALLARAH HOMES INC",
+              "identifier_type": "ABN",
+              "identifier": "13 238 944 953",
+              "party_page": {
+                "id": "jallarah-homes-inc",
+                "name": "Jallarah Homes Inc"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-75047",
+          "merger_name": "Respect Group \u2013 McLean Care residential aged care homes and independent living units",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "RESPECT GROUP LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "74 121 263 545",
+              "party_page": {
+                "id": "respect-group-limited",
+                "name": "Respect Group Limited"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "MCLEAN CARE LTD",
+              "identifier_type": "ABN",
+              "identifier": "88 124 860 019",
+              "party_page": {
+                "id": "mclean-care-ltd",
+                "name": "Mclean Care Ltd"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-50026",
+          "merger_name": "Stonepeak-led consortium - Estia Health",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Wisdom BidCo Pty Ltd",
+              "identifier_type": "ABN",
+              "identifier": "19 696 888 730",
+              "party_page": {
+                "id": "wisdom-bidco-pty-ltd",
+                "name": "Wisdom BidCo Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Estia Health Holdings Ltd",
+              "identifier_type": "ABN",
+              "identifier": "47 669 884 244",
+              "canonical": {
+                "id": "estia-health-holdings-ltd",
+                "name": "Estia Health"
+              },
+              "party_page": {
+                "id": "estia-health-holdings-ltd",
+                "name": "Estia Health"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/blackbird-ventures-%E2%80%93-baseten-labs",
       "merger_name": "Blackbird Ventures \u2013 Baseten Labs",
       "status": "Assessment completed",
@@ -121192,7 +121381,7 @@
         {
           "merger_id": "MN-40017",
           "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
-          "status": "Under assessment",
+          "status": "Assessment ceased",
           "accc_determination": null,
           "acquirers": [
             {

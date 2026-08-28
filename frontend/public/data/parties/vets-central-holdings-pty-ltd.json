@@ -41,17 +41,6 @@
   "mergers": {
     "acquirer": [
       {
-        "merger_id": "MN-40017",
-        "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
-        "is_waiver": false,
-        "status": "Under assessment",
-        "determination": null,
-        "has_conditions": false,
-        "phase": "Phase 2",
-        "notification_date": "2026-07-01T12:00:00Z",
-        "determination_date": null
-      },
-      {
         "merger_id": "WA-40032",
         "merger_name": "Vets Central \u2013 Lava Street Veterinary Clinic and Doggy Kinder",
         "is_waiver": true,
@@ -149,6 +138,17 @@
         "phase": "Waiver",
         "notification_date": "2026-01-29T12:00:00Z",
         "determination_date": "2026-02-12T12:00:00Z"
+      },
+      {
+        "merger_id": "MN-40017",
+        "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
+        "is_waiver": false,
+        "status": "Assessment ceased",
+        "determination": null,
+        "has_conditions": false,
+        "phase": "Phase 2",
+        "notification_date": "2026-07-01T12:00:00Z",
+        "determination_date": null
       }
     ],
     "target": [],
@@ -158,7 +158,7 @@
   "phase_1_count": 0,
   "phase_2_count": 1,
   "waiver_count": 9,
-  "active_count": 1,
+  "active_count": 0,
   "phase_duration": {
     "average_days": 48.0,
     "median_days": 48,

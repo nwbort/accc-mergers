@@ -108,17 +108,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-40017",
-      "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 2",
-      "notification_date": "2026-07-01T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-01072",
       "merger_name": "Saipem S.p.A - Subsea7 S.A.",
       "is_waiver": false,
@@ -1549,6 +1538,17 @@
       "determination_date": "2026-01-13T12:00:00Z"
     },
     {
+      "merger_id": "MN-40017",
+      "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
+      "is_waiver": false,
+      "status": "Assessment ceased",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 2",
+      "notification_date": "2026-07-01T12:00:00Z",
+      "determination_date": null
+    },
+    {
       "merger_id": "MN-90009",
       "merger_name": "Trescal \u2013 TR Calibration",
       "is_waiver": false,
@@ -1564,7 +1564,7 @@
   "phase_1_count": 55,
   "phase_2_count": 3,
   "waiver_count": 82,
-  "active_count": 10,
+  "active_count": 9,
   "phase_duration": {
     "average_days": 31.72,
     "median_days": 27.0,
