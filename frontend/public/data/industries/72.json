@@ -31,7 +31,7 @@
       "code": "729",
       "name": "Other Administrative Services",
       "level": "group",
-      "merger_count": 6
+      "merger_count": 7
     }
   ],
   "mergers": [
@@ -45,6 +45,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-01T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-25045",
+      "merger_name": "Ochre Health - Holdsworth House Medical Group & College Street Specialists, NSW",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-14T12:00:00Z",
+      "determination_date": "2026-08-28T12:00:00Z"
     },
     {
       "merger_id": "MN-25040",
@@ -289,10 +300,10 @@
       "determination_date": "2026-01-30T12:00:00Z"
     }
   ],
-  "count": 23,
+  "count": 24,
   "phase_1_count": 7,
   "phase_2_count": 0,
-  "waiver_count": 16,
+  "waiver_count": 17,
   "active_count": 1,
   "phase_duration": {
     "average_days": 24.666666666666668,
@@ -302,10 +313,10 @@
     "completed_count": 6
   },
   "waiver_duration": {
-    "average_days": 18.5625,
-    "median_days": 16.5,
-    "average_business_days": 12.625,
-    "median_business_days": 11.5,
-    "completed_count": 16
+    "average_days": 18.294117647058822,
+    "median_days": 16,
+    "average_business_days": 12.470588235294118,
+    "median_business_days": 11,
+    "completed_count": 17
   }
 }

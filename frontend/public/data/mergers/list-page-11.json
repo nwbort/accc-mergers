@@ -3669,6 +3669,113 @@
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/blackstone-%E2%80%93-dresser-utility-solutions"
     },
     {
+      "merger_id": "WA-60033",
+      "merger_name": "Verlinvest \u2013 up to 60% interest in HomeExchange",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-29T12:00:00Z",
+      "determination_publication_date": "2026-08-28T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Newco (an entity to be established by Verlinvest SA)",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "newco-an-entity-to-be-established-by-verlinvest-sa",
+            "name": "Newco (an entity to be established by Verlinvest SA)"
+          }
+        },
+        {
+          "name": "Verlinvest SA",
+          "identifier_type": null,
+          "identifier": "BE0455030364",
+          "party_page": {
+            "id": "verlinvest-sa",
+            "name": "Verlinvest SA"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Tukazza Invest ! SAS",
+          "identifier_type": null,
+          "identifier": "899 479 034 R.C.S. Paris",
+          "party_page": {
+            "id": "tukazza-invest-sas",
+            "name": "Tukazza Invest ! SAS"
+          }
+        },
+        {
+          "name": "Tukazza ! SAS",
+          "identifier_type": null,
+          "identifier": "532 000 783 R.C.S. Paris",
+          "party_page": {
+            "id": "tukazza-sas",
+            "name": "Tukazza ! SAS"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "FPCI Collaborative, managed by Capital Croissance",
+          "identifier_type": null,
+          "identifier": "753 290 865 R.C.S. Paris",
+          "party_page": {
+            "id": "fpci-collaborative-managed-by-capital-croissance",
+            "name": "FPCI Collaborative, managed by Capital Croissance"
+          }
+        },
+        {
+          "name": "Pacifica Holding",
+          "identifier_type": null,
+          "identifier": "899 214 126 R.C.S. Paris",
+          "party_page": {
+            "id": "pacifica-holding",
+            "name": "Pacifica Holding"
+          }
+        },
+        {
+          "name": "Holding Tom\u00e9",
+          "identifier_type": null,
+          "identifier": "899 161 467 R.C.S. Paris",
+          "party_page": {
+            "id": "holding-tom",
+            "name": "Holding Tom\u00e9"
+          }
+        },
+        {
+          "name": "FPCI ISAI Expansion II, managed by ISAI Gestion SAS",
+          "identifier_type": null,
+          "identifier": "508 804 507 R.C.S. Paris",
+          "party_page": {
+            "id": "fpci-isai-expansion-ii-managed-by-isai-gestion-sas",
+            "name": "FPCI ISAI Expansion II, managed by ISAI Gestion SAS"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/verlinvest-%E2%80%93-up-to-60-interest-in-homeexchange"
+    },
+    {
       "merger_id": "MN-01116",
       "merger_name": "Silk Contract Logistics \u2013 Toll Transport bulk logistics (glass and plastic) assets",
       "status": "Assessment completed",
@@ -4279,54 +4386,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/redirect-holdings-echo-solve"
-    },
-    {
-      "merger_id": "WA-40036",
-      "merger_name": "Genesis Minerals \u2013 Vault Minerals",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "has_conditions": false,
-      "is_waiver": true,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-07-31T12:00:00Z",
-      "determination_publication_date": "2026-08-27T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "GENESIS MINERALS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "72 124 772 041",
-          "party_page": {
-            "id": "genesis-minerals-limited",
-            "name": "Genesis Minerals Limited"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "VAULT MINERALS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "73 068 647 610",
-          "party_page": {
-            "id": "vault-minerals-limited",
-            "name": "Vault Minerals Limited"
-          }
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "0804",
-          "name": "Gold Ore Mining"
-        },
-        {
-          "code": "1012",
-          "name": "Mineral Exploration"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/genesis-minerals-%E2%80%93-vault-minerals"
     }
   ],
   "page": 11,

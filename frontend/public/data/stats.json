@@ -1,6 +1,6 @@
 {
   "total_mergers": 239,
-  "total_waivers": 362,
+  "total_waivers": 364,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 197,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 346,
+    "Approved": 348,
     "Not approved": 16
   },
   "clearance_rate": {
@@ -48,23 +48,23 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.57734806629834,
+    "average_days": 19.59065934065934,
     "median_days": 19.0,
-    "average_business_days": 13.265193370165745,
+    "average_business_days": 13.280219780219781,
     "median_business_days": 13.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 101
+      "count": 102
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 63
+      "count": 64
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 56
+      "count": 57
     },
     {
       "name": "Software Publishing",
@@ -219,6 +219,28 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-60033",
+      "merger_name": "Verlinvest \u2013 up to 60% interest in HomeExchange",
+      "determination": "Approved",
+      "determination_date": "2026-08-28T12:00:00Z",
+      "page_modified_datetime": "2026-08-28T17:15:10+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-25045",
+      "merger_name": "Ochre Health - Holdsworth House Medical Group & College Street Specialists, NSW",
+      "determination": "Approved",
+      "determination_date": "2026-08-28T12:00:00Z",
+      "page_modified_datetime": "2026-08-28T17:13:52+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-20033",
       "merger_name": "ReDirect Holdings - Echo Solve",
       "determination": "Approved",
@@ -322,28 +344,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-27T12:00:00Z",
       "page_modified_datetime": "2026-08-27T17:01:41+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-70032",
-      "merger_name": "Movac \u2013 Advanced Navigation",
-      "determination": "Approved",
-      "determination_date": "2026-08-27T12:00:00Z",
-      "page_modified_datetime": "2026-08-27T17:00:46+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-15036",
-      "merger_name": "Regis \u2013 Home Care Business of Royal Freemasons",
-      "determination": "Approved",
-      "determination_date": "2026-08-27T12:00:00Z",
-      "page_modified_datetime": "2026-08-27T16:59:49+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

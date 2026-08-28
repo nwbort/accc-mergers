@@ -27,6 +27,17 @@
   "children": [],
   "mergers": [
     {
+      "merger_id": "WA-25045",
+      "merger_name": "Ochre Health - Holdsworth House Medical Group & College Street Specialists, NSW",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-14T12:00:00Z",
+      "determination_date": "2026-08-28T12:00:00Z"
+    },
+    {
       "merger_id": "MN-15027",
       "merger_name": "Partnered Health - Ryan Plaza Medical Services",
       "is_waiver": false,
@@ -126,10 +137,10 @@
       "determination_date": "2026-03-19T12:00:00Z"
     }
   ],
-  "count": 9,
+  "count": 10,
   "phase_1_count": 1,
   "phase_2_count": 0,
-  "waiver_count": 8,
+  "waiver_count": 9,
   "active_count": 0,
   "phase_duration": {
     "average_days": 36.0,
@@ -139,10 +150,10 @@
     "completed_count": 1
   },
   "waiver_duration": {
-    "average_days": 17.125,
-    "median_days": 17.5,
-    "average_business_days": 11.5,
-    "median_business_days": 12.0,
-    "completed_count": 8
+    "average_days": 16.77777777777778,
+    "median_days": 16,
+    "average_business_days": 11.333333333333334,
+    "median_business_days": 11,
+    "completed_count": 9
   }
 }

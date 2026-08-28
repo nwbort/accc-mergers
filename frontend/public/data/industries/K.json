@@ -9,7 +9,7 @@
       "code": "62",
       "name": "Finance",
       "level": "subdivision",
-      "merger_count": 109
+      "merger_count": 110
     },
     {
       "code": "63",
@@ -21,7 +21,7 @@
       "code": "64",
       "name": "Auxiliary Finance and Insurance Services",
       "level": "subdivision",
-      "merger_count": 58
+      "merger_count": 59
     }
   ],
   "mergers": [
@@ -210,6 +210,17 @@
       "has_conditions": false,
       "phase": "Waiver",
       "notification_date": "2026-07-30T12:00:00Z",
+      "determination_date": "2026-08-28T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-60033",
+      "merger_name": "Verlinvest \u2013 up to 60% interest in HomeExchange",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-29T12:00:00Z",
       "determination_date": "2026-08-28T12:00:00Z"
     },
     {
@@ -1764,10 +1775,10 @@
       "determination_date": null
     }
   ],
-  "count": 158,
+  "count": 159,
   "phase_1_count": 40,
   "phase_2_count": 2,
-  "waiver_count": 116,
+  "waiver_count": 117,
   "active_count": 14,
   "phase_duration": {
     "average_days": 28.0,
@@ -1777,10 +1788,10 @@
     "completed_count": 29
   },
   "waiver_duration": {
-    "average_days": 19.767241379310345,
-    "median_days": 19.0,
-    "average_business_days": 13.379310344827585,
-    "median_business_days": 12.0,
-    "completed_count": 116
+    "average_days": 19.854700854700855,
+    "median_days": 19,
+    "average_business_days": 13.452991452991453,
+    "median_business_days": 12,
+    "completed_count": 117
   }
 }

@@ -10,7 +10,19 @@
   ],
   "mergers": {
     "acquirer": [],
-    "target": [],
+    "target": [
+      {
+        "merger_id": "WA-25045",
+        "merger_name": "Ochre Health - Holdsworth House Medical Group & College Street Specialists, NSW",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Waiver",
+        "notification_date": "2026-08-14T12:00:00Z",
+        "determination_date": "2026-08-28T12:00:00Z"
+      }
+    ],
     "other": [
       {
         "merger_id": "WA-15012",
@@ -25,17 +37,17 @@
       }
     ]
   },
-  "merger_count": 1,
+  "merger_count": 2,
   "phase_1_count": 0,
   "phase_2_count": 0,
-  "waiver_count": 1,
+  "waiver_count": 2,
   "active_count": 0,
   "phase_duration": null,
   "waiver_duration": {
-    "average_days": 12.0,
-    "median_days": 12,
-    "average_business_days": 6.0,
-    "median_business_days": 6,
-    "completed_count": 1
+    "average_days": 13.0,
+    "median_days": 13.0,
+    "average_business_days": 8.0,
+    "median_business_days": 8.0,
+    "completed_count": 2
   }
 }

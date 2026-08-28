@@ -1475,6 +1475,10 @@
         "calendar_days": 14
       },
       {
+        "business_days": 10,
+        "calendar_days": 14
+      },
+      {
         "business_days": 18,
         "calendar_days": 25
       },
@@ -1937,6 +1941,10 @@
       {
         "business_days": 22,
         "calendar_days": 32
+      },
+      {
+        "business_days": 22,
+        "calendar_days": 30
       },
       {
         "business_days": 11,
@@ -2488,14 +2496,14 @@
       "median": 13.0,
       "min": 2,
       "max": 24,
-      "count": 362
+      "count": 364
     },
     "calendar_stats": {
       "average": 19.6,
       "median": 19.0,
       "min": 2,
       "max": 39,
-      "count": 362
+      "count": 364
     }
   },
   "monthly_volume": {
@@ -2538,8 +2546,8 @@
       45,
       67,
       61,
-      71,
-      10
+      72,
+      11
     ]
   },
   "open_caseload": {
@@ -2742,9 +2750,9 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 436,
+      "count": 437,
       "outcome_mix": {
-        "Approved": 436
+        "Approved": 437
       },
       "median_phase_1_business_days": 17
     },
@@ -2768,9 +2776,9 @@
     },
     {
       "division": "Commissioner Woodward",
-      "count": 26,
+      "count": 27,
       "outcome_mix": {
-        "Approved": 25,
+        "Approved": 26,
         "Not approved": 1
       },
       "median_phase_1_business_days": 18

@@ -1,6 +1,54 @@
 {
   "mergers": [
     {
+      "merger_id": "WA-40036",
+      "merger_name": "Genesis Minerals \u2013 Vault Minerals",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-31T12:00:00Z",
+      "determination_publication_date": "2026-08-27T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "GENESIS MINERALS LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "72 124 772 041",
+          "party_page": {
+            "id": "genesis-minerals-limited",
+            "name": "Genesis Minerals Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "VAULT MINERALS LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "73 068 647 610",
+          "party_page": {
+            "id": "vault-minerals-limited",
+            "name": "Vault Minerals Limited"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "0804",
+          "name": "Gold Ore Mining"
+        },
+        {
+          "code": "1012",
+          "name": "Mineral Exploration"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/genesis-minerals-%E2%80%93-vault-minerals"
+    },
+    {
       "merger_id": "WA-45023",
       "merger_name": "Pine Australia - Evolution Business Systems",
       "status": "Assessment completed",
@@ -3218,6 +3266,63 @@
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/lockheed-martin-corporation-%E2%80%93-ultra-maritime"
     },
     {
+      "merger_id": "WA-25045",
+      "merger_name": "Ochre Health - Holdsworth House Medical Group & College Street Specialists, NSW",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-14T12:00:00Z",
+      "determination_publication_date": "2026-08-28T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "OCHRE HEALTH PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "79 101 069 452",
+          "party_page": {
+            "id": "ochre-health-pty-limited",
+            "name": "Ochre Health Pty Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Business and assets comprising Holdsworth House Medical Group & College Street Specialists",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "business-and-assets-comprising-holdsworth-house-medical-group-college-street-spe",
+            "name": "Business and assets comprising Holdsworth House Medical Group & College Street Specialists"
+          }
+        },
+        {
+          "name": "RAINLEIGH PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "41 056 364 679",
+          "party_page": {
+            "id": "rainleigh-pty-limited",
+            "name": "Rainleigh Pty Limited"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "7291",
+          "name": "Office Administrative Services"
+        },
+        {
+          "code": "8511",
+          "name": "General Practice Medical Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/ochre-health-holdsworth-house-medical-group-college-street-specialists-nsw"
+    },
+    {
       "merger_id": "WA-75047",
       "merger_name": "Respect Group \u2013 McLean Care residential aged care homes and independent living units",
       "status": "Assessment completed",
@@ -4152,162 +4257,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/novonesis-%E2%80%93-microbiogen"
-    },
-    {
-      "merger_id": "MN-75036",
-      "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-25T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-10-07T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "HERRON TODD WHITE (BIDCO) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "74 665 809 665",
-          "party_page": {
-            "id": "herron-todd-white-bidco-pty-ltd",
-            "name": "Herron Todd White (Bidco) Pty Ltd"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "C. McMahon Enterprises Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "115 024 854",
-          "party_page": {
-            "id": "c-mcmahon-enterprises-pty-ltd",
-            "name": "C McMahon Enterprises Pty Ltd"
-          }
-        },
-        {
-          "name": "CJA LEE PROPERTY PARTNERSHIP",
-          "identifier_type": "ABN",
-          "identifier": "53 968 532 362",
-          "party_page": {
-            "id": "cja-lee-property-partnership",
-            "name": "Cja Lee Property Partnership"
-          }
-        },
-        {
-          "name": "CJA Lee Property Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "113 706 826",
-          "party_page": {
-            "id": "cja-lee-property-pty-ltd",
-            "name": "CJA Lee Property Pty Ltd"
-          }
-        },
-        {
-          "name": "T.J. Shaw Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "115 022 930",
-          "party_page": {
-            "id": "t-j-shaw-pty-ltd",
-            "name": "T.J. Shaw Pty Ltd"
-          }
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "HERRON TODD WHITE (HOLDINGS) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 665 808 962",
-          "party_page": {
-            "id": "herron-todd-white-holdings-pty-ltd",
-            "name": "Herron Todd White (Holdings) Pty Ltd"
-          }
-        },
-        {
-          "name": "HERRON TODD WHITE (FINCO) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "98 665 809 325",
-          "party_page": {
-            "id": "herron-todd-white-finco-pty-ltd",
-            "name": "Herron Todd White (Finco) Pty Ltd"
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "6240",
-          "name": "Financial Asset Investing"
-        },
-        {
-          "code": "6720",
-          "name": "Real Estate Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/herron-todd-white-%E2%80%93-cja-lee-property-valuers-0"
-    },
-    {
-      "merger_id": "MN-35038",
-      "merger_name": "WSP - e2m",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-26T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-10-08T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "WSP AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "80 078 004 798",
-          "canonical": {
-            "id": "wsp-australia-pty-limited",
-            "name": "Wsp Australia Pty Limited"
-          },
-          "party_page": {
-            "id": "wsp-australia-pty-limited",
-            "name": "Wsp Australia Pty Limited"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "E2M PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "88 162 154 412",
-          "party_page": {
-            "id": "e2m-pty-ltd",
-            "name": "E2M Pty Ltd"
-          }
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "WSP AUSTRALIA HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "90 169 545 395",
-          "canonical": {
-            "id": "wsp-australia-pty-limited",
-            "name": "Wsp Australia Pty Limited"
-          },
-          "party_page": {
-            "id": "wsp-australia-pty-limited",
-            "name": "Wsp Australia Pty Limited"
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "6923",
-          "name": "Engineering Design and Engineering Consulting Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/wsp-e2m"
     }
   ],
   "page": 12,

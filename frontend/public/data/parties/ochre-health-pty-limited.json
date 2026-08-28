@@ -16,6 +16,17 @@
   "mergers": {
     "acquirer": [
       {
+        "merger_id": "WA-25045",
+        "merger_name": "Ochre Health - Holdsworth House Medical Group & College Street Specialists, NSW",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Waiver",
+        "notification_date": "2026-08-14T12:00:00Z",
+        "determination_date": "2026-08-28T12:00:00Z"
+      },
+      {
         "merger_id": "WA-01100",
         "merger_name": "Ochre Health - Airlie Women's Clinic, VIC",
         "is_waiver": true,
@@ -63,17 +74,17 @@
     "target": [],
     "other": []
   },
-  "merger_count": 4,
+  "merger_count": 5,
   "phase_1_count": 0,
   "phase_2_count": 0,
-  "waiver_count": 4,
+  "waiver_count": 5,
   "active_count": 0,
   "phase_duration": null,
   "waiver_duration": {
-    "average_days": 14.5,
-    "median_days": 14.0,
-    "average_business_days": 9.0,
-    "median_business_days": 8.5,
-    "completed_count": 4
+    "average_days": 14.4,
+    "median_days": 14,
+    "average_business_days": 9.2,
+    "median_business_days": 10,
+    "completed_count": 5
   }
 }
