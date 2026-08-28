@@ -119,7 +119,7 @@ frontend/src/
 ├── utils/                # dates.js, dataCache.js, lastVisit.js, classNames.js, searchIndex.js,
 │                         #   businessDayProgress.js, fetchAllMergers.js, formatMedian.js,
 │                         #   industryGroups.js, slug.js, preNotification.js, pageMeta.js,
-│                         #   treemapTail.js, mergerOutcome.js
+│                         #   treemapTail.js, mergerOutcome.js, partyMembers.js
 └── data/                 # ACT public holidays JSON
                           #   (act-public-holidays.json — source of truth for both the Python
                           #   pipeline and the frontend; authoritative list published at
