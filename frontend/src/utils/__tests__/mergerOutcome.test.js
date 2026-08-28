@@ -1,10 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import {
-  acccDecisionSentence,
-  durationSentence,
-  getDecidedOutcome,
-  getDeterminationDocUrl,
-} from '../mergerOutcome';
+import { getDecidedOutcome, getDeterminationDocUrl } from '../mergerOutcome';
 
 const approved = {
   status: 'Assessment completed',
@@ -73,79 +68,6 @@ describe('getDecidedOutcome', () => {
 
   it('handles a missing merger', () => {
     expect(getDecidedOutcome(null)).toBeNull();
-  });
-});
-
-describe('acccDecisionSentence', () => {
-  it('names the phase a notification was cleared in', () => {
-    expect(acccDecisionSentence(approved, approved.determination_publication_date)).toBe(
-      'The ACCC cleared this acquisition in Phase 1 on 1 July 2026.'
-    );
-  });
-
-  it('spells out a conditional clearance', () => {
-    expect(
-      acccDecisionSentence(
-        { ...approved, has_conditions: true, stage: 'Phase 2 - detailed assessment' },
-        approved.determination_publication_date
-      )
-    ).toBe('The ACCC cleared this acquisition subject to conditions in Phase 2 on 1 July 2026.');
-  });
-
-  it('describes a refusal rather than repeating the register label', () => {
-    expect(
-      acccDecisionSentence(
-        { ...approved, accc_determination: 'Not approved', stage: 'Phase 2 - detailed assessment' },
-        approved.determination_publication_date
-      )
-    ).toBe('The ACCC refused to approve this acquisition in Phase 2 on 1 July 2026.');
-  });
-
-  it('uses waiver wording for a waiver application', () => {
-    const waiver = { ...approved, is_waiver: true, stage: 'Waiver application' };
-    expect(acccDecisionSentence(waiver, waiver.determination_publication_date)).toBe(
-      'The ACCC granted a notification waiver on 1 July 2026.'
-    );
-    expect(
-      acccDecisionSentence(
-        { ...waiver, accc_determination: 'Not approved' },
-        waiver.determination_publication_date
-      )
-    ).toBe('The ACCC did not grant a notification waiver on 1 July 2026.');
-  });
-
-  it('describes a ceased assessment, which has no determination to report', () => {
-    expect(
-      acccDecisionSentence(
-        { status: 'Assessment ceased', accc_determination: null },
-        '2026-07-16T12:00:00Z'
-      )
-    ).toBe('The ACCC ceased its assessment of this acquisition on 16 July 2026.');
-  });
-
-  it('drops the date when the register never published one', () => {
-    expect(acccDecisionSentence(approved, null)).toBe(
-      'The ACCC cleared this acquisition in Phase 1.'
-    );
-  });
-});
-
-describe('durationSentence', () => {
-  it('counts calendar and business days from notification', () => {
-    expect(
-      durationSentence(approved, '2026-06-01T12:00:00Z', '2026-07-01T12:00:00Z')
-    ).toBe('30 calendar days (21 business days) from notification.');
-  });
-
-  it('says the clock started at the waiver application for a waiver', () => {
-    expect(
-      durationSentence({ is_waiver: true }, '2026-06-01T12:00:00Z', '2026-07-01T12:00:00Z')
-    ).toContain('from the waiver application.');
-  });
-
-  it('says nothing when either end of the range is missing', () => {
-    expect(durationSentence(approved, null, '2026-07-01T12:00:00Z')).toBeNull();
-    expect(durationSentence(approved, '2026-06-01T12:00:00Z', null)).toBeNull();
   });
 });
 

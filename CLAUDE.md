@@ -93,11 +93,13 @@ frontend/src/
 │                         #     StatCard, DetailStatGrid, MergerCardBody
 │                         #   - Timelines: MergerTimeline, Phase2Timeline,
 │                         #     UpcomingEventsTimeline, BusinessDayProgress
-│                         #   - Outcome: MergerOutcomeBanner — the coloured band
-│                         #     that leads a decided merger's detail page. It
-│                         #     reads its verdict from utils/mergerOutcome.js,
-│                         #     which MergerDetail also uses to lay the header
-│                         #     out around it.
+│                         #   - Outcome: MergerOutcomeHeading — the result line
+│                         #     above a decided merger's title. MergerDetail
+│                         #     fills that whole title block with the outcome's
+│                         #     colour (constants/outcomeHeader.js) and flips
+│                         #     the links and TrackButton inside it to their
+│                         #     on-dark treatment; both read the verdict from
+│                         #     utils/mergerOutcome.js.
 │                         #   - Tracking/notifications: TrackButton, NotificationPanel,
 │                         #     BellIcon
 │                         #   - Global UI: CommandPalette, KeyboardShortcutsHelp,
@@ -109,7 +111,7 @@ frontend/src/
 ├── constants/            # Shared literal tables: navPages.js (single source of truth for
 │                         #   the navbar, command palette and keyboard shortcuts),
 │                         #   mergerStatus.js, appeal.js, regime.js, cardStyles.js,
-│                         #   chartColors.js, outcomeDotColors.js, outcomeBanner.js
+│                         #   chartColors.js, outcomeDotColors.js, outcomeHeader.js
 ├── context/              # TrackingContext.jsx — global merger + industry follow state via localStorage
 │                         #   (industry follows flag only new filings/determinations)
 ├── hooks/                # useDebounce.js, useFetchData.js, useKeyboardShortcuts.js,
