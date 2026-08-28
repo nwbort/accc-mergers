@@ -57,12 +57,8 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v7
 
-      - name: Set up Go
-        uses: actions/setup-go@v6
-        with:
-          go-version: '>=1.22'
-          cache: false
-
+      # Go is only ever used to build pup, so the cache is checked first and
+      # the toolchain is installed only when the binary has to be rebuilt.
       - name: Cache pup binary
         id: cache-pup
         uses: actions/cache@v6
@@ -70,9 +66,23 @@ jobs:
           path: ~/go/bin/pup
           key: ${{ runner.os }}-pup-v0.4.0
 
+      # The floor is set by pup's dependencies, not by pup: it ships no go.mod,
+      # so `go install` resolves golang.org/x/net, fatih/color et al at their
+      # latest versions, and those now require Go 1.25. setup-go pins
+      # GOTOOLCHAIN=local, so too low a floor fails a cold-cache install.
+      - name: Set up Go
+        if: steps.cache-pup.outputs.cache-hit != 'true'
+        uses: actions/setup-go@v6
+        with:
+          go-version: '>=1.25'
+          cache: false
+
+      # Pinned rather than @latest, which resolves to this same version today:
+      # the cache key names v0.4.0, so a future pup release must not be able to
+      # install itself under a key that claims otherwise.
       - name: Install pup HTML parser
         if: steps.cache-pup.outputs.cache-hit != 'true'
-        run: go install github.com/ericchiang/pup@latest
+        run: go install github.com/ericchiang/pup@v0.4.0
 
       - name: Add Go bin to PATH
         run: echo "${HOME}/go/bin" >> $GITHUB_PATH
@@ -162,10 +172,13 @@ jobs:
               fi
             done
             if [ ${#bad_files[@]} -gt 0 ]; then
+              # ::warning:: so this surfaces as an annotation on the run rather
+              # than as a line of plain text nobody scrolls to.
+              for f in "${bad_files[@]}"; do
+                echo "::warning file=${f}::Uncleaned dynamic content in ${f} — clean_file may not have run, or a concurrent pipeline run touching the same file will reintroduce raw tokens on rebase."
+              done
               echo "WARNING: The following matter pages appear to have uncleaned dynamic content:"
               printf '  %s\n' "${bad_files[@]}"
-              echo "This may indicate clean_file did not run, or a concurrent pipeline run"
-              echo "touching the same file will cause a rebase to reintroduce raw tokens."
             else
               echo "HTML cleaning check passed (${#modified_html[@]} file(s) verified)."
             fi
@@ -204,17 +217,17 @@ jobs:
         # Always run so we also catch stragglers from a previous conversion
         # failure, even on scheduled runs that found no scrape changes.
         run: |
-          > /tmp/unconverted.txt
+          > "${RUNNER_TEMP}/unconverted.txt"
           while IFS= read -r -d '' docx; do
             pdf="${docx%.docx}.pdf"
             if [ ! -f "$pdf" ]; then
-              echo "$docx" >> /tmp/unconverted.txt
+              echo "$docx" >> "${RUNNER_TEMP}/unconverted.txt"
             fi
           done < <(find data/raw/matters -name "*.docx" -type f -print0 2>/dev/null)
 
-          if [ -s /tmp/unconverted.txt ]; then
+          if [ -s "${RUNNER_TEMP}/unconverted.txt" ]; then
             echo "Found unconverted DOCX files:"
-            cat /tmp/unconverted.txt
+            cat "${RUNNER_TEMP}/unconverted.txt"
             echo "has_unconverted=true" >> $GITHUB_OUTPUT
           else
             echo "No unconverted DOCX files found"
@@ -250,7 +263,7 @@ jobs:
               dir=$(dirname "$docx")
               libreoffice --headless --convert-to pdf --outdir "$dir" "$docx"
             fi
-          done < /tmp/unconverted.txt
+          done < "${RUNNER_TEMP}/unconverted.txt"
 
       # --- Install Tesseract OCR, only if a pending Phase 2 Notice needs it ---
       # Most notices have a full text layer and never touch the OCR fallback
@@ -467,16 +480,23 @@ jobs:
             --color "e4e669" \
             --force
 
+          # List the open issues once and match locally. Asking per merger cost
+          # an API call each to almost always learn nothing, and gh's default
+          # page size of 30 meant the guard silently stopped seeing older
+          # issues once more than 30 were open, re-creating them.
+          OPEN_TITLES="${RUNNER_TEMP}/missing-event-date-titles.txt"
+          gh issue list \
+            --label "missing-event-date" \
+            --state open \
+            --limit 500 \
+            --json title \
+            --jq '.[].title' > "$OPEN_TITLES"
+
           for i in $(seq 0 $((COUNT - 1))); do
             MERGER_ID=$(jq -r ".issues[$i].merger_id" data/processed/missing_event_dates.json)
 
             # Skip if an open issue already exists for this merger (idempotent guard)
-            EXISTING=$(gh issue list \
-              --label "missing-event-date" \
-              --state open \
-              --json title \
-              --jq '.[].title' | grep "$MERGER_ID" || true)
-            if [ -n "$EXISTING" ]; then
+            if grep -qF -- "$MERGER_ID" "$OPEN_TITLES"; then
               echo "Issue already open for $MERGER_ID — skipping"
               continue
             fi
@@ -490,6 +510,8 @@ jobs:
                 "labels": ["missing-event-date"]}' | \
             gh api "repos/$GITHUB_REPOSITORY/issues" \
               --method POST --input -
+            # Keep the local guard true for the rest of this run.
+            echo "$TITLE" >> "$OPEN_TITLES"
             echo "Created issue: $TITLE"
           done
 
@@ -514,6 +536,25 @@ jobs:
             --color "d4c5f9" \
             --force
 
+          # List this label's issues once, in both states, and match locally.
+          # Asking per merger cost an API call each, and gh's default page size
+          # of 30 meant both guards silently stopped seeing older issues once
+          # the label had more than 30.
+          ALL_TITLES="${RUNNER_TEMP}/inferred-phase-2-titles.txt"
+          gh issue list \
+            --label "inferred-phase-2" \
+            --state all \
+            --limit 500 \
+            --json title \
+            --jq '.[].title' > "$ALL_TITLES"
+
+          OPEN_ISSUES="${RUNNER_TEMP}/inferred-phase-2-open.json"
+          gh issue list \
+            --label "inferred-phase-2" \
+            --state open \
+            --limit 500 \
+            --json number,title > "$OPEN_ISSUES"
+
           # Open a tracking issue for each newly inferred Phase 2 merger.
           OPEN_COUNT=$(jq '.open | length' "$FILE")
           echo "Inferred Phase 2 mergers to open: $OPEN_COUNT"
@@ -522,12 +563,7 @@ jobs:
 
             # Skip if an issue already exists in ANY state, so we never reopen one
             # the owner deliberately closed (e.g. after parties dropped out).
-            EXISTING=$(gh issue list \
-              --label "inferred-phase-2" \
-              --state all \
-              --json title \
-              --jq '.[].title' | grep "$MERGER_ID" || true)
-            if [ -n "$EXISTING" ]; then
+            if grep -qF -- "$MERGER_ID" "$ALL_TITLES"; then
               echo "Issue already exists for $MERGER_ID — skipping"
               continue
             fi
@@ -540,26 +576,32 @@ jobs:
                 "body":  $data[0].open[$idx].body,
                 "labels": ["inferred-phase-2"]}' | \
             gh api "repos/$GITHUB_REPOSITORY/issues" --method POST --input -
+            # Keep the local guard true for the rest of this run.
+            echo "$TITLE" >> "$ALL_TITLES"
             echo "Created inferred Phase 2 issue: $TITLE"
           done
 
           # Auto-close tracking issues where the ACCC register now shows Phase 2.
+          # `confirmed` names every merger whose stage has caught up, so it only
+          # grows: nearly all of them were closed on an earlier run. Match it
+          # against the open issues already listed above rather than asking
+          # GitHub about each one, and report what was actually closed.
           CLOSE_COUNT=$(jq '.confirmed | length' "$FILE")
-          echo "Confirmed Phase 2 mergers to close: $CLOSE_COUNT"
+          CLOSED=0
           for i in $(seq 0 $((CLOSE_COUNT - 1))); do
             MERGER_ID=$(jq -r ".confirmed[$i]" "$FILE")
-            NUMBER=$(gh issue list \
-              --label "inferred-phase-2" \
-              --state open \
-              --json number,title \
-              --jq ".[] | select(.title | contains(\"$MERGER_ID\")) | .number" | head -n1)
+            NUMBER=$(jq -r --arg id "$MERGER_ID" \
+              'map(select(.title | contains($id))) | .[0].number // empty' \
+              "$OPEN_ISSUES")
             if [ -n "$NUMBER" ]; then
               gh issue comment "$NUMBER" \
                 --body "The ACCC register now shows this merger at Phase 2 — closing automatically."
               gh issue close "$NUMBER"
               echo "Closed inferred Phase 2 issue #$NUMBER for $MERGER_ID"
+              CLOSED=$((CLOSED + 1))
             fi
           done
+          echo "Confirmed Phase 2 mergers: ${CLOSE_COUNT}; tracking issues closed: ${CLOSED}"
 
       # --- Duplicate & related detection (create/refresh review PRs) ---
       # These blocks mirror the former standalone detect-duplicates.yml,
@@ -584,28 +626,29 @@ jobs:
 
       # -- Duplicate events → fix/duplicate-events --
 
+      # The detector's own stdout is the step summary, so it runs once and is
+      # tee'd rather than re-run by a separate summary step. pipefail keeps the
+      # `if` reading the detector's exit code (duplicates found) and not tee's.
       - name: Detect duplicate events
         id: dup_detect
         run: |
+          set -o pipefail
           git switch -C fix/duplicate-events ${{ steps.detect_base.outputs.sha }}
-          if python3 -m scripts.detect.detect_duplicates --output duplicate_report.json; then
+          {
+            echo "### Duplicate events detection"
+            echo ""
+          } >> "$GITHUB_STEP_SUMMARY"
+          if python -m scripts.detect.detect_duplicates \
+              | tee -a "$GITHUB_STEP_SUMMARY"; then
             echo "found=false" >> "$GITHUB_OUTPUT"
           else
             echo "found=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Write duplicate detection summary
-        run: |
-          {
-            echo "### Duplicate events detection"
-            echo ""
-            python3 -m scripts.detect.detect_duplicates || true
-          } >> "$GITHUB_STEP_SUMMARY"
-
       - name: Apply duplicate fixes
         if: steps.dup_detect.outputs.found == 'true'
         run: |
-          python3 -m scripts.detect.detect_duplicates \
+          python -m scripts.detect.detect_duplicates \
             --apply-fixes \
             --pr-markdown pr_body.md || true
 
@@ -664,25 +707,23 @@ jobs:
       - name: Detect related mergers
         id: relm_detect
         run: |
+          set -o pipefail
           git switch -C fix/related-mergers ${{ steps.detect_base.outputs.sha }}
-          if python3 -m scripts.detect.detect_related_mergers --summary; then
+          {
+            echo "### Related mergers detection"
+            echo ""
+          } >> "$GITHUB_STEP_SUMMARY"
+          if python -m scripts.detect.detect_related_mergers --summary \
+              | tee -a "$GITHUB_STEP_SUMMARY"; then
             echo "found=false" >> "$GITHUB_OUTPUT"
           else
             echo "found=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Write related-merger detection summary
-        run: |
-          {
-            echo "### Related mergers detection"
-            echo ""
-            python3 -m scripts.detect.detect_related_mergers --summary || true
-          } >> "$GITHUB_STEP_SUMMARY"
-
       - name: Apply suggested related-merger pairs
         if: steps.relm_detect.outputs.found == 'true'
         run: |
-          python3 -m scripts.detect.detect_related_mergers \
+          python -m scripts.detect.detect_related_mergers \
             --apply-suggestions \
             --pr-markdown pr_body.md \
             --issue-markdown pr_issue_body.md \
@@ -780,25 +821,23 @@ jobs:
       - name: Detect related parties
         id: relp_detect
         run: |
+          set -o pipefail
           git switch -C fix/related-parties ${{ steps.detect_base.outputs.sha }}
-          if python3 -m scripts.detect.detect_related_parties --summary; then
+          {
+            echo "### Related parties detection"
+            echo ""
+          } >> "$GITHUB_STEP_SUMMARY"
+          if python -m scripts.detect.detect_related_parties --summary \
+              | tee -a "$GITHUB_STEP_SUMMARY"; then
             echo "found=false" >> "$GITHUB_OUTPUT"
           else
             echo "found=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Write related-party detection summary
-        run: |
-          {
-            echo "### Related parties detection"
-            echo ""
-            python3 -m scripts.detect.detect_related_parties --summary || true
-          } >> "$GITHUB_STEP_SUMMARY"
-
       - name: Apply suggested related-party groups
         if: steps.relp_detect.outputs.found == 'true'
         run: |
-          python3 -m scripts.detect.detect_related_parties \
+          python -m scripts.detect.detect_related_parties \
             --apply-suggestions \
             --pr-markdown pr_body.md || true
 

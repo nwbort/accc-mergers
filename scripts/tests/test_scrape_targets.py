@@ -90,6 +90,22 @@ class TestSelectTargets:
         assert paths == [f'{REGISTER}/acme-widgets']
         assert stats['duplicates'] == 1
 
+    def test_counts_duplicate_links_to_past_cutoff_matters(self):
+        # Most listing rows are past cutoff, so a duplicate counter that only
+        # looked at fetched rows reported a stable crawl while the listing was
+        # visibly repeating itself.
+        mergers = [_completed('MN-1', 'old-deal')]
+        listing = [f'{REGISTER}/old-deal', f'{OLD_REGISTER}/old-deal']
+
+        paths, stats = select_targets(listing, mergers)
+
+        assert paths == []
+        assert stats['duplicates'] == 1
+        assert stats['skipped'] == 1
+        assert stats['skipped_mergers'] == [
+            {'merger_id': 'MN-1', 'path': f'{REGISTER}/old-deal'}
+        ]
+
     def test_skips_matters_past_cutoff(self):
         mergers = [_completed('MN-1', 'old-deal')]
         listing = [f'{REGISTER}/old-deal', f'{REGISTER}/new-deal']
