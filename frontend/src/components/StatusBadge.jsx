@@ -1,19 +1,14 @@
 import { MERGER_STATUS, STATUS_COLORS, DEFAULT_STATUS_STYLE } from '../constants/mergerStatus';
-import { APPEAL_STATUS, APPEAL_OUTCOME_BADGE_SUFFIX } from '../constants/appeal';
+import { resolveEffectiveDetermination } from '../constants/appeal';
 
 function StatusBadge({ status, determination, label, hasConditions, appeal }) {
-  // Once a tribunal appeal has concluded, the effective determination — the
-  // outcome that now stands — takes over from the ACCC's original one, with a
-  // suffix noting whether it was confirmed or overturned (mirrors the
-  // "· with conditions" treatment). A current appeal is shown separately via
-  // AppealBadge and leaves the ACCC determination untouched here.
-  const concludedAppeal =
-    appeal && appeal.status === APPEAL_STATUS.CONCLUDED ? appeal : null;
-  const effectiveDetermination =
-    concludedAppeal?.effective_determination || determination;
-  const appealSuffix = concludedAppeal
-    ? APPEAL_OUTCOME_BADGE_SUFFIX[concludedAppeal.outcome]
-    : null;
+  // A concluded tribunal appeal can replace the ACCC's determination with the
+  // one that now stands, plus a suffix noting whether it was confirmed or
+  // overturned (mirrors the "· with conditions" treatment). Resolved by the
+  // shared helper so this badge and the detail page's outcome banner always
+  // agree.
+  const { determination: effectiveDetermination, appealSuffix } =
+    resolveEffectiveDetermination(determination, appeal);
 
   const getStatusStyle = () => {
     // Determinations take precedence over statuses; 'Declined' and 'Not approved'

@@ -18,6 +18,7 @@ import QuestionnaireSection from '../components/QuestionnaireSection';
 import DeterminationExplanationSection from '../components/DeterminationExplanationSection';
 import Phase2NoticeMattersSection from '../components/Phase2NoticeMattersSection';
 import MergerTimeline from '../components/MergerTimeline';
+import MergerOutcomeBanner from '../components/MergerOutcomeBanner';
 import { useTracking } from '../context/TrackingContext';
 import { useFetchData } from '../hooks/useFetchData';
 import { formatDate, formatDateLong } from '../utils/dates';
@@ -25,9 +26,11 @@ import { API_ENDPOINTS } from '../config';
 import { PROSE_MARKDOWN, CARD, SECTION_HEADING } from '../utils/classNames';
 import { slugify, mergerPath, industryPath, partyPath } from '../utils/slug';
 import { mergerMeta } from '../utils/pageMeta';
+import { getDecidedOutcome, getDeterminationDocUrl } from '../utils/mergerOutcome';
 import { MERGER_STATUS } from '../constants/mergerStatus';
 import { APPEAL_TYPE_LABELS, DEFAULT_APPEAL_LABEL, APPEAL_STATUS, APPEAL_OUTCOME_LABELS } from '../constants/appeal';
 import { OUTCOME_DOT_COLORS, DEFAULT_OUTCOME_DOT, APPEAL_DOT, getOutcomeDot } from '../constants/outcomeDotColors';
+import { getOutcomeBannerStyle } from '../constants/outcomeBanner';
 
 // Display text for each related-merger relationship. Keys match the
 // `relationship` values produced by the data pipeline (see
@@ -230,14 +233,16 @@ function MergerDetail() {
     return DEFAULT_OUTCOME_DOT;
   };
 
-  const determinationEvent = merger.events
-    ? merger.events.find(event => event.is_determination_event)
-    : null;
-
-  const statementOfReasonsEvent = merger.phase_2_determination
-    ? merger.events?.find(e => e.url_gh && e.title?.toLowerCase().includes('statement of reasons'))
-    : null;
-  const determinationDocUrl = statementOfReasonsEvent?.url_gh ?? determinationEvent?.url_gh;
+  // A decided matter leads with the outcome banner, which restyles the header
+  // card around it: the card's top rule takes the outcome colour, the status
+  // badge and "Determination" field stand down rather than repeat the banner,
+  // and the timeline drops the divider it would draw under the coloured block.
+  const decidedOutcome = getDecidedOutcome(merger);
+  const outcomeStyle = decidedOutcome ? getOutcomeBannerStyle(decidedOutcome.outcome) : null;
+  // Kept for the rare matter that carries a determination the banner doesn't
+  // recognise as an ending; otherwise the banner is the only place it appears.
+  const showDeterminationField = Boolean(merger.accc_determination) && !decidedOutcome;
+  const determinationDocUrl = getDeterminationDocUrl(merger);
 
   // The appeal card links to the Application for Review — the document that
   // initiated the appeal — rather than the tribunal matter page itself.
@@ -278,7 +283,10 @@ function MergerDetail() {
         </Link>
 
         {/* Header */}
-        <div className={`${CARD} p-6 mb-6 card-accent`}>
+        <div
+          className={`${CARD} p-6 mb-6 card-accent`}
+          style={outcomeStyle ? { '--card-accent': outcomeStyle.accent } : undefined}
+        >
           <div className="flex items-start justify-between gap-4 pt-1">
             <div className="min-w-0">
               <div className="flex items-center gap-3 mb-2 flex-wrap">
@@ -306,14 +314,16 @@ function MergerDetail() {
             <div className="flex flex-col items-end gap-2 flex-shrink-0">
               <div className="flex items-center gap-2 flex-wrap justify-end">
                 {merger.under_appeal && <AppealBadge />}
-                <Phase2OddsReveal merger={merger}>
-                  <StatusBadge
-                    status={merger.status}
-                    determination={merger.accc_determination}
-                    hasConditions={merger.has_conditions}
-                    appeal={merger.appeal}
-                  />
-                </Phase2OddsReveal>
+                {!decidedOutcome && (
+                  <Phase2OddsReveal merger={merger}>
+                    <StatusBadge
+                      status={merger.status}
+                      determination={merger.accc_determination}
+                      hasConditions={merger.has_conditions}
+                      appeal={merger.appeal}
+                    />
+                  </Phase2OddsReveal>
+                )}
               </div>
               <TrackButton
                 active={tracked}
@@ -333,16 +343,19 @@ function MergerDetail() {
             </div>
           )}
 
+          {/* Outcome — the headline result for a decided matter */}
+          <MergerOutcomeBanner merger={merger} />
+
           {/* Assessment timeline */}
-          <div className="mt-6 pt-6 border-t border-gray-100">
+          <div className={decidedOutcome ? 'mt-6' : 'mt-6 pt-6 border-t border-gray-100'}>
             <MergerTimeline merger={merger} />
           </div>
 
           {/* Stage & determination */}
           <div className={`grid grid-cols-1 ${
-            merger.accc_determination && merger.appeal
+            showDeterminationField && merger.appeal
               ? 'md:grid-cols-3'
-              : (merger.accc_determination || merger.appeal)
+              : (showDeterminationField || merger.appeal)
                 ? 'md:grid-cols-2'
                 : 'md:grid-cols-1'
           } gap-6 mt-6 pt-6 border-t border-gray-100`}>
@@ -350,7 +363,7 @@ function MergerDetail() {
               <h2 className={`${SECTION_HEADING} mb-1.5`}>Stage</h2>
               <p className="text-sm font-medium text-gray-900">{merger.stage || 'N/A'}</p>
             </div>
-            {merger.accc_determination && (
+            {showDeterminationField && (
               <div>
                 <h2 className={`${SECTION_HEADING} mb-1.5`}>
                   Determination
