@@ -24,7 +24,7 @@
       "code": "6221",
       "name": "Banking",
       "level": "class",
-      "merger_count": 3
+      "merger_count": 4
     },
     {
       "code": "6222",
@@ -46,6 +46,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-85047",
+      "merger_name": "Blackstone funds and Perpetual Trustees \u2013 HSBC loan portfolio",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-27T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "WA-30024",
       "merger_name": "Centerbridge Partners \u2013 Ebury Partners Limited",
@@ -91,11 +102,11 @@
       "determination_date": "2026-04-28T12:00:00Z"
     }
   ],
-  "count": 4,
-  "phase_1_count": 1,
+  "count": 5,
+  "phase_1_count": 2,
   "phase_2_count": 0,
   "waiver_count": 3,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": {
     "average_days": 23.0,
     "median_days": 23,

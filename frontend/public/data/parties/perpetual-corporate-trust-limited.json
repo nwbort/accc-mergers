@@ -1,7 +1,12 @@
 {
-  "id": "perpetual-corporate-trust-limited-as-trustee-for-sp-plus-australia-holdings-2-tr",
-  "canonical_name": "Perpetual Corporate Trust Limited as trustee for SP-Plus (Australia) Holdings 2 Trust",
+  "id": "perpetual-corporate-trust-limited",
+  "canonical_name": "Perpetual Corporate Trust Limited",
   "members": [
+    {
+      "name": "PERPETUAL CORPORATE TRUST LIMITED",
+      "identifier": "99 000 341 533",
+      "identifier_type": "ABN"
+    },
     {
       "name": "Perpetual Corporate Trust Limited as trustee for SP-Plus (Australia) Holdings 2 Trust",
       "identifier": "99 000 341 533",
@@ -9,7 +14,19 @@
     }
   ],
   "mergers": {
-    "acquirer": [],
+    "acquirer": [
+      {
+        "merger_id": "MN-85047",
+        "merger_name": "Blackstone funds and Perpetual Trustees \u2013 HSBC loan portfolio",
+        "is_waiver": false,
+        "status": "Under assessment",
+        "determination": null,
+        "has_conditions": false,
+        "phase": "Phase 1",
+        "notification_date": "2026-08-27T12:00:00Z",
+        "determination_date": null
+      }
+    ],
     "target": [],
     "other": [
       {
@@ -25,11 +42,11 @@
       }
     ]
   },
-  "merger_count": 1,
-  "phase_1_count": 1,
+  "merger_count": 2,
+  "phase_1_count": 2,
   "phase_2_count": 0,
   "waiver_count": 0,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": {
     "average_days": 23.0,
     "median_days": 23,

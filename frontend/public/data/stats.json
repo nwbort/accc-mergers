@@ -1,10 +1,10 @@
 {
-  "total_mergers": 238,
+  "total_mergers": 239,
   "total_waivers": 359,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 196,
-    "Under assessment": 38,
+    "Under assessment": 39,
     "Assessment ceased": 4
   },
   "by_determination": {
@@ -56,7 +56,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 99
+      "count": 100
     },
     {
       "name": "Computer System Design and Related Services",
@@ -64,7 +64,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 54
+      "count": 55
     },
     {
       "name": "Software Publishing",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-85047",
+      "merger_name": "Blackstone funds and Perpetual Trustees \u2013 HSBC loan portfolio",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-27T12:00:00Z",
+      "page_modified_datetime": "2026-08-28T14:01:49+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-35038",
       "merger_name": "WSP - e2m",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-18T12:00:00Z",
       "page_modified_datetime": "2026-08-21T09:34:57+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-80035",
-      "merger_name": "Saint-Gobain - Xypex",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-17T12:00:00Z",
-      "page_modified_datetime": "2026-08-21T11:37:35+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

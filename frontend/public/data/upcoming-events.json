@@ -81,6 +81,16 @@
       "effective_notification_datetime": "2026-08-26T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-09-04T12:00:00Z",
+      "merger_id": "MN-85047",
+      "merger_name": "Blackstone funds and Perpetual Trustees \u2013 HSBC loan portfolio",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-08-27T12:00:00Z"
+    },
+    {
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-09-04T12:00:00Z",
@@ -431,6 +441,16 @@
       "effective_notification_datetime": "2026-08-26T12:00:00Z"
     },
     {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-10-09T12:00:00Z",
+      "merger_id": "MN-85047",
+      "merger_name": "Blackstone funds and Perpetual Trustees \u2013 HSBC loan portfolio",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-08-27T12:00:00Z"
+    },
+    {
       "type": "tribunal_hearing",
       "event_type_display": "Tribunal hearing",
       "date": "2026-11-09T12:00:00Z",
@@ -442,6 +462,6 @@
       "tribunal_number": "ACT 1 of 2026"
     }
   ],
-  "count": 44,
+  "count": 46,
   "days_ahead": 60
 }

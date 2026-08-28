@@ -41038,8 +41038,8 @@
           "identifier_type": "ABN",
           "identifier": "99 000 341 533",
           "party_page": {
-            "id": "perpetual-corporate-trust-limited-as-trustee-for-sp-plus-australia-holdings-2-tr",
-            "name": "Perpetual Corporate Trust Limited as trustee for SP-Plus (Australia) Holdings 2 Trust"
+            "id": "perpetual-corporate-trust-limited",
+            "name": "Perpetual Corporate Trust Limited"
           }
         },
         {
@@ -64074,10 +64074,278 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 23,
-        "min_days": null,
+        "estimated_days": 12,
+        "min_days": 0,
         "max_days": 30,
-        "id_issued_estimated": "2026-07-28",
+        "id_issued_estimated": "2026-08-08",
+        "id_issued_before": "2026-08-20",
+        "id_issued_after": "2026-07-21",
+        "min_days_witness": "MN-85047",
+        "max_days_witness": "WA-85041",
+        "basis": "bracketed",
+        "method_version": 1
+      }
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/blackstone-funds-and-perpetual-trustees-%E2%80%93-hsbc-loan-portfolio",
+      "merger_name": "Blackstone funds and Perpetual Trustees \u2013 HSBC loan portfolio",
+      "status": "Under assessment",
+      "merger_id": "MN-85047",
+      "effective_notification_datetime": "2026-08-27T12:00:00Z",
+      "original_notification_datetime": "2026-08-27T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-10-09T12:00:00Z",
+      "page_modified_datetime": "2026-08-28T14:01:49+10:00",
+      "consultation_response_due_date": "2026-09-04T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "ABF Whole Loan Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "699 486 167",
+          "party_page": {
+            "id": "abf-whole-loan-pty-ltd",
+            "name": "ABF Whole Loan Pty Ltd"
+          }
+        },
+        {
+          "name": "PERPETUAL CORPORATE TRUST LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "99 000 341 533",
+          "party_page": {
+            "id": "perpetual-corporate-trust-limited",
+            "name": "Perpetual Corporate Trust Limited"
+          }
+        },
+        {
+          "name": "VIRGO BIDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "89 699 487 119",
+          "party_page": {
+            "id": "virgo-bidco-pty-ltd",
+            "name": "Virgo Bidco Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "HSBC BANK AUSTRALIA LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "48 006 434 162",
+          "party_page": {
+            "id": "hsbc-bank-australia-limited",
+            "name": "Hsbc Bank Australia Limited"
+          }
+        },
+        {
+          "name": "Lion Series 2024-1 Trust",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "lion-series-2024-1-trust",
+            "name": "Lion Series 2024-1 Trust"
+          }
+        },
+        {
+          "name": "Lion Series 2022-1 Trust",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "lion-series-2022-1-trust",
+            "name": "Lion Series 2022-1 Trust"
+          }
+        },
+        {
+          "name": "Lion Series 2020-1 Trust",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "lion-series-2020-1-trust",
+            "name": "Lion Series 2020-1 Trust"
+          }
+        },
+        {
+          "name": "Lion Series 2023-1 Trust",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "lion-series-2023-1-trust",
+            "name": "Lion Series 2023-1 Trust"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "6221",
+          "name": "Banking"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ],
+      "merger_description": "Virgo BidCo Pty Ltd (**BidCo**), an affiliate of certain funds advised and/or managed by affiliates of Blackstone Inc. (**Blackstone**), proposes to acquire HSBC Bank Australia Limited\u2019s (**HBAU**) portfolio of Australian home and personal loans (the **Acquisition**).\n\nBidCo intends to direct that title in these loans be transferred at completion to Perpetual Corporate Trust Limited (**Perpetual**) in its capacity as trustee of three securitisation trusts. Perpetual will appoint Pepper Money Limited under contractual servicing arrangements to undertake the operational management and administration of the loans.\n\nCertain home loans originated by HBAU are held within four existing securitisation trusts \u2013 the Lion Series 2020-1 Trust, Lion Series 2022 1 Trust, Lion Series 2023-1 Trust and Lion Series 2024-1 Trust (together, the **Lion Trusts**). As part of the Acquisition, BidCo will nominate ABF Whole Loan Pty Ltd (an affiliate of certain funds advised and/or managed by affiliates of Blackstone, and BidCo\u2019s parent) to acquire the sole participation unit and 9 of the 10 residual units in each of the Lion Trusts. Perpetual CT Capital Pty Ltd (a Perpetual Group entity) will acquire 1 of the 10 residual units in each of these trusts.\n\nBlackstone is a US-based investment management firm.\n\nPerpetual is a Sydney-based trust company and a wholly-owned subsidiary within the Perpetual group of companies (**Perpetual Group**), of which Perpetual Limited is the ultimate parent company.\n\nHBAU is the Australian-owned subsidiary of HSBC Holdings plc (including its affiliates, **HSBC**). HBAU currently offers a range of financial services in Australia, including retail banking, private banking, asset management and corporate and institutional banking. HSBC has announced it intends to exit its retail banking operations in Australia.",
+      "events": [
+        {
+          "date": "2026-08-28T12:00:00Z",
+          "title": "Phase 1 consultation",
+          "display_title": "Phase 1 consultation",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Blackstone%20funds%20and%20Perpetual%20Trustees%20%E2%80%93%20HSBC%20loan%20portfolio%20-%20Questionnaire.docx",
+          "url_gh": "/mergers/MN-85047/Blackstone funds and Perpetual Trustees \u2013 HSBC loan portfolio - Questionnaire.pdf",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-08-27T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-50026",
+          "merger_name": "Stonepeak-led consortium - Estia Health",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Wisdom BidCo Pty Ltd",
+              "identifier_type": "ABN",
+              "identifier": "19 696 888 730",
+              "party_page": {
+                "id": "wisdom-bidco-pty-ltd",
+                "name": "Wisdom BidCo Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Estia Health Holdings Ltd",
+              "identifier_type": "ABN",
+              "identifier": "47 669 884 244",
+              "canonical": {
+                "id": "estia-health-holdings-ltd",
+                "name": "Estia Health"
+              },
+              "party_page": {
+                "id": "estia-health-holdings-ltd",
+                "name": "Estia Health"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-80022",
+          "merger_name": "Bain Capital \u2013 Perpetual Wealth Management Group",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "BCPE Barton BidCo Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "694 979 041",
+              "party_page": {
+                "id": "bcpe-barton-bidco-pty-ltd",
+                "name": "BCPE Barton BidCo Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "PERPETUAL LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "86 000 431 827",
+              "party_page": {
+                "id": "perpetual-limited",
+                "name": "Perpetual Limited"
+              }
+            },
+            {
+              "name": "PERPETUAL PWM SERVICES PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "90 678 546 113",
+              "party_page": {
+                "id": "perpetual-pwm-services-pty-ltd",
+                "name": "Perpetual Pwm Services Pty Ltd"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-65015",
+          "merger_name": "Hillhouse - Barwon Investment Partners",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "BARWON BIDCO PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "23 695 060 907",
+              "party_page": {
+                "id": "barwon-bidco-pty-ltd",
+                "name": "Barwon Bidco Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "BARWON INVESTMENT PARTNERS PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "19 116 012 009",
+              "party_page": {
+                "id": "barwon-investment-partners-pty-ltd",
+                "name": "Barwon Investment Partners Pty Ltd"
+              }
+            },
+            {
+              "name": "",
+              "identifier_type": "ACN",
+              "identifier": "620 598 745",
+              "party_page": {
+                "id": "620598745",
+                "name": "620598745"
+              }
+            }
+          ]
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 16,
+        "range_business_days": [
+          16,
+          19
+        ],
+        "basis": "industry",
+        "anzsic_level": "class",
+        "anzsic_codes": [
+          "6221",
+          "6240",
+          "6419"
+        ],
+        "sample_size": 22,
+        "estimated_at": "2026-08-28",
+        "method_version": 1
+      },
+      "pre_notification": {
+        "estimated_days": 19,
+        "min_days": null,
+        "max_days": 37,
+        "id_issued_estimated": "2026-08-08",
         "id_issued_before": null,
         "id_issued_after": "2026-07-21",
         "min_days_witness": null,

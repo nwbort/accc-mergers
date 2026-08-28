@@ -24,10 +24,21 @@
       "code": "6240",
       "name": "Financial Asset Investing",
       "level": "class",
-      "merger_count": 99
+      "merger_count": 100
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-85047",
+      "merger_name": "Blackstone funds and Perpetual Trustees \u2013 HSBC loan portfolio",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-27T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-75036",
       "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
@@ -1118,11 +1129,11 @@
       "determination_date": "2026-01-30T12:00:00Z"
     }
   ],
-  "count": 99,
-  "phase_1_count": 24,
+  "count": 100,
+  "phase_1_count": 25,
   "phase_2_count": 0,
   "waiver_count": 75,
-  "active_count": 11,
+  "active_count": 12,
   "phase_duration": {
     "average_days": 25.307692307692307,
     "median_days": 24,
