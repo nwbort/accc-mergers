@@ -61,3 +61,27 @@ export const APPEAL_TYPE_LABELS = {
 
 // Fallback used when an appeal_type is missing or unrecognised.
 export const DEFAULT_APPEAL_LABEL = 'Under review at the Competition Tribunal';
+
+/**
+ * The determination that now stands for a matter, plus the short suffix that
+ * explains why it changed.
+ *
+ * Once a tribunal appeal has concluded, the effective determination — the
+ * outcome the Tribunal left in place — takes over from the ACCC's original
+ * one, with a suffix noting whether it was confirmed or overturned. A current
+ * appeal is flagged separately (AppealBadge) and leaves the ACCC determination
+ * untouched.
+ *
+ * Shared by StatusBadge and MergerOutcomeBanner so the badge and the banner
+ * can never disagree about what a matter's outcome is.
+ */
+export function resolveEffectiveDetermination(determination, appeal) {
+  const concluded =
+    appeal && appeal.status === APPEAL_STATUS.CONCLUDED ? appeal : null;
+  return {
+    determination: concluded?.effective_determination || determination,
+    appealSuffix: concluded
+      ? APPEAL_OUTCOME_BADGE_SUFFIX[concluded.outcome] || null
+      : null,
+  };
+}

@@ -93,6 +93,13 @@ frontend/src/
 │                         #     StatCard, DetailStatGrid, MergerCardBody
 │                         #   - Timelines: MergerTimeline, Phase2Timeline,
 │                         #     UpcomingEventsTimeline, BusinessDayProgress
+│                         #   - Outcome: MergerOutcomeHeading — the result line
+│                         #     above a decided merger's title. MergerDetail
+│                         #     fills that whole title block with the outcome's
+│                         #     colour (constants/outcomeHeader.js) and flips
+│                         #     the links and TrackButton inside it to their
+│                         #     on-dark treatment; both read the verdict from
+│                         #     utils/mergerOutcome.js.
 │                         #   - Tracking/notifications: TrackButton, NotificationPanel,
 │                         #     BellIcon
 │                         #   - Global UI: CommandPalette, KeyboardShortcutsHelp,
@@ -104,7 +111,7 @@ frontend/src/
 ├── constants/            # Shared literal tables: navPages.js (single source of truth for
 │                         #   the navbar, command palette and keyboard shortcuts),
 │                         #   mergerStatus.js, appeal.js, regime.js, cardStyles.js,
-│                         #   chartColors.js, outcomeDotColors.js
+│                         #   chartColors.js, outcomeDotColors.js, outcomeHeader.js
 ├── context/              # TrackingContext.jsx — global merger + industry follow state via localStorage
 │                         #   (industry follows flag only new filings/determinations)
 ├── hooks/                # useDebounce.js, useFetchData.js, useKeyboardShortcuts.js,
@@ -112,7 +119,7 @@ frontend/src/
 ├── utils/                # dates.js, dataCache.js, lastVisit.js, classNames.js, searchIndex.js,
 │                         #   businessDayProgress.js, fetchAllMergers.js, formatMedian.js,
 │                         #   industryGroups.js, slug.js, preNotification.js, pageMeta.js,
-│                         #   treemapTail.js
+│                         #   treemapTail.js, mergerOutcome.js
 └── data/                 # ACT public holidays JSON
                           #   (act-public-holidays.json — source of truth for both the Python
                           #   pipeline and the frontend; authoritative list published at

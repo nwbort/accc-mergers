@@ -56,7 +56,10 @@ code {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Modern card with top accent border */
+/* Modern card with top accent border. `--card-accent` lets an individual card
+   repaint the rule: the merger detail header sets it to the matter's outcome
+   colour so the card's top edge matches the outcome banner inside it, instead
+   of showing the brand green above (say) a red "not approved" block. */
 .card-accent {
   position: relative;
   overflow: hidden;
@@ -69,7 +72,7 @@ code {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #335145, #10b981);
+  background: var(--card-accent, linear-gradient(90deg, #335145, #10b981));
 }
 
 /* Smooth transitions for interactive elements */
