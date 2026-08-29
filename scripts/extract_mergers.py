@@ -1600,8 +1600,12 @@ def detect_inferred_phase_2(all_mergers_data):
             file=sys.stderr,
         )
     if confirmed:
+        # Every merger whose stage has caught up, not only the newly caught-up
+        # ones: this list only grows, and almost all of them had their tracking
+        # issue closed on an earlier run. The pipeline closes the intersection
+        # with the issues actually open, so don't promise a close here.
         print(
-            f"ACCC stage now confirms Phase 2 (will close tracking issue): "
+            f"ACCC stage confirms Phase 2 (any open tracking issue will close): "
             f"{', '.join(sorted(confirmed))}",
             file=sys.stderr,
         )

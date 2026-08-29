@@ -86,6 +86,9 @@ def select_targets(listing_paths, mergers, cutoff_weeks: int = CUTOFF_WEEKS,
 
     paths = []
     seen = set()
+    # Keys seen anywhere in the listing, cutoff or not, so a repeated row is
+    # counted as a duplicate even when the matter is too cold to fetch.
+    listing_seen = set()
     stats = {
         'listing': 0,
         'duplicates': 0,
@@ -102,14 +105,20 @@ def select_targets(listing_paths, mergers, cutoff_weeks: int = CUTOFF_WEEKS,
             continue
         stats['listing'] += 1
         key = normalize_target(path)
+        # Count duplicates before the cutoff check. Most listing rows are past
+        # cutoff, so checking after it hid nearly every duplicate the listing
+        # served — the summary would report a stable crawl while the same cold
+        # matter was served twice and another was silently dropped, which is
+        # exactly the instability this counter exists to surface.
+        if key in listing_seen:
+            stats['duplicates'] += 1
+            continue
+        listing_seen.add(key)
         if key in skip_keys:
             stats['skipped'] += 1
             stats['skipped_mergers'].append(
                 {'merger_id': ids_by_key.get(key), 'path': path}
             )
-            continue
-        if key in seen:
-            stats['duplicates'] += 1
             continue
         seen.add(key)
         paths.append(path)
