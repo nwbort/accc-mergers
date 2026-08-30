@@ -15,16 +15,12 @@ on:
         required: false
         default: ''
   schedule:
-    # Hourly, minute :23, from 8am to 7pm Sydney time (AEST, UTC+10), weekdays only.
-    # GitHub Actions cron has no DST awareness, so this is pinned to a fixed
-    # UTC+10 offset: during AEDT (roughly Oct-Apr) the actual window is
-    # 9am-8pm Sydney rather than 8am-7pm.
-    #
-    # The 8am-9am Sydney slice falls on UTC hours 22-23 of the *previous*
-    # calendar day (Sydney = UTC+10), so restricting to Sydney weekdays
-    # (Mon-Fri) needs two entries with different day-of-week ranges:
-    - cron: '23 22,23 * * 0-4'  # UTC Sun-Thu 22:00/23:00 = Sydney Mon-Fri 8am/9am
-    - cron: '23 0-9 * * 1-5'    # UTC Mon-Fri 00:00-09:00 = Sydney Mon-Fri 10am-7pm
+    # Hourly, minute :23, from 8am to 7pm Sydney time, weekdays only. The
+    # `timezone` field (same pattern as pipeline.yml/weekly-digest.yml) has
+    # GitHub evaluate the cron in Australia/Sydney directly, so this tracks
+    # AEST/AEDT automatically rather than needing a fixed UTC offset.
+    - cron: '23 8-19 * * 1-5'
+      timezone: 'Australia/Sydney'
 
 permissions:
   contents: write
