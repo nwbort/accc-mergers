@@ -374,7 +374,7 @@ load can never empty a directory.
 | `detect-related-mergers.yml` | Manual | Suggest waiver↔notification merger links, open a PR. **No longer scheduled** — runs inside `pipeline.yml`; kept for manual re-runs |
 | `detect-related-parties.yml` | Manual | Suggest same-entity party groupings, open a PR. **No longer scheduled** — runs inside `pipeline.yml`; kept for manual re-runs |
 | `fix-missing-notification-dates.yml` | Daily (3:00 AM UTC), manual | Auto-fix missing notification dates, open a PR |
-| `update-sitemap.yml` | Daily (8 AM AEST), manual | Regenerate `sitemap.xml` |
+| `update-sitemap.yml` | Daily (8 AM Sydney time), manual | Regenerate `sitemap.xml` |
 | `weekly-digest.yml` | Weekly (Sunday, Sydney time), manual | Generate `digest.json` |
 | `send-weekly-email.yml` | Manual (schedule currently disabled) | Send the weekly digest email via the Cloudflare Worker |
 | `test.yml` | Manual | Run the Python test suite |
