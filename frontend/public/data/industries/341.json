@@ -24,7 +24,7 @@
       "code": "3411",
       "name": "Agricultural and Construction Machinery Wholesaling",
       "level": "class",
-      "merger_count": 0
+      "merger_count": 1
     },
     {
       "code": "3419",
@@ -34,6 +34,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-60038",
+      "merger_name": "Volvo Group Australia \u2013 Assets comprising Volvo dealership stock and assignable sales contracts of Southside Truck Centre",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-06T12:00:00Z",
+      "determination_date": "2026-08-31T12:00:00Z"
+    },
     {
       "merger_id": "WA-80033",
       "merger_name": "Jungheinrich Australia - All Lift",
@@ -57,10 +68,10 @@
       "determination_date": "2026-04-28T12:00:00Z"
     }
   ],
-  "count": 2,
+  "count": 3,
   "phase_1_count": 1,
   "phase_2_count": 0,
-  "waiver_count": 1,
+  "waiver_count": 2,
   "active_count": 0,
   "phase_duration": {
     "average_days": 33.0,
@@ -71,9 +82,9 @@
   },
   "waiver_duration": {
     "average_days": 25.0,
-    "median_days": 25,
+    "median_days": 25.0,
     "average_business_days": 17.0,
-    "median_business_days": 17,
-    "completed_count": 1
+    "median_business_days": 17.0,
+    "completed_count": 2
   }
 }

@@ -36843,15 +36843,15 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 20,
-        "min_days": null,
+        "estimated_days": 19,
+        "min_days": 13,
         "max_days": 27,
-        "id_issued_estimated": "2026-07-30",
-        "id_issued_before": null,
+        "id_issued_estimated": "2026-07-31",
+        "id_issued_before": "2026-08-06",
         "id_issued_after": "2026-07-23",
-        "min_days_witness": null,
+        "min_days_witness": "WA-60038",
         "max_days_witness": "WA-60034",
-        "basis": "upper-bound-only",
+        "basis": "bracketed",
         "method_version": 1
       }
     },
@@ -92336,6 +92336,174 @@
             "FDH Group Intermediate, Inc."
           ],
           "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/volvo-group-australia-%E2%80%93-assets-comprising-volvo-dealership-stock-and-assignable-sales-contracts-of-southside-truck-centre",
+      "merger_name": "Volvo Group Australia \u2013 Assets comprising Volvo dealership stock and assignable sales contracts of Southside Truck Centre",
+      "status": "Assessment completed",
+      "merger_id": "WA-60038",
+      "effective_notification_datetime": "2026-08-06T12:00:00Z",
+      "original_notification_datetime": "2026-08-06T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-08-31T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-08-31T18:09:12+10:00",
+      "acquirers": [
+        {
+          "name": "VOLVO GROUP AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "27 000 761 259",
+          "party_page": {
+            "id": "volvo-group-australia-pty-ltd",
+            "name": "Volvo Group Australia Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "SOUTHSIDE AGENCIES (LISMORE) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "86 001 496 626",
+          "party_page": {
+            "id": "southside-agencies-lismore-pty-ltd",
+            "name": "Southside Agencies (Lismore) Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "2311",
+          "name": "Motor Vehicle Manufacturing"
+        },
+        {
+          "code": "3411",
+          "name": "Agricultural and Construction Machinery Wholesaling"
+        },
+        {
+          "code": "3499",
+          "name": "Other Machinery and Equipment Wholesaling n.e.c."
+        },
+        {
+          "code": "3502",
+          "name": "Commercial Vehicle Wholesaling"
+        },
+        {
+          "code": "3504",
+          "name": "Motor Vehicle New Parts Wholesaling"
+        },
+        {
+          "code": "3913",
+          "name": "Trailer and Other Motor Vehicle Retailing"
+        },
+        {
+          "code": "3921",
+          "name": "Motor Vehicle Parts Retailing"
+        },
+        {
+          "code": "6230",
+          "name": "Non-Depository Financing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "9419",
+          "name": "Other Automotive Repair and Maintenance"
+        }
+      ],
+      "merger_description": "Volvo Group Australia (**VGA**) proposes to acquire, by way of an asset sale agreement, certain assets from Southside Agencies (Lismore) Pty Ltd (**Southside**) relating to Southside's Volvo truck dealership business (the **Acquisition**). The assets to be acquired comprise Volvo, Mack and UD branded trucks and genuine parts, along with certain contracts relating to the business. The Acquisition does not include any real property, employees, or liabilities of Southside.\n\nVGA, a subsidiary of Swedish-headquartered AB Volvo, is active in Australia in:\n\n* the manufacturing, assembly and wholesale supply of commercial (heavy duty) trucks and related parts under the Volvo, Mack and UD brands (**Volvo Dealership Brands**);\n* the importation and wholesale supply of heavy buses;\n* the operation of six primary commercial vehicle distribution centres across Queensland and New South Wales, which are involved in the retail supply of commercial trucks and buses, and related parts and servicing for trucks and buses under the Volvo Dealership Brands; and\n* the importation and wholesale supply of marine and industrial engines, related parts and servicing.\n\nThe broader Volvo Group is active in Australia in the wholesale supply of Volvo Construction Equipment and the provision of financial services in connection with the acquisition of trucks and buses. These activities are undertaken separately from VGA.\n\nSouthside owns and operates commercial vehicle dealerships under the name \"Southside Truck Centre\" from premises located at Coffs Harbour and South Lismore, New South Wales. The business is involved in the retail supply of new and used trucks, including the Volvo Dealership Brands together with a range of third-party brands including Hino, Western Star, MAN and Dennis Eagle, the sale of genuine parts and accessories, and the supply of after-sales services including vehicle servicing and repairs. Southside also supplies parts from premises located in Port Macquarie, but this location is not included in the Acquisition.\n\nOn completion of the Acquisition, VGA will take responsibility for the sale of commercial trucks and parts and associated servicing throughout the Coffs Harbour to Lismore region of New South Wales until a new dealer (or dealers) is appointed for the region.",
+      "events": [
+        {
+          "date": "2026-08-31T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Volvo%20Group%20Australia%20%E2%80%93%20Assets%20comprising%20Volvo%20dealership%20stock%20and%20assignable%20sales%20contracts%20of%20Southside%20Truck%20Centre%20%28WA-60038%29%20-%20Notification%20waiver%20determination%20-%2031%20August%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Volvo Group Australia Pty Ltd (VGA) applied for a notification waiver\nin respect of its proposed acquisition of certain assets from\nSouthside Agencies (Lismore) Pty Ltd (Southside), relating to\nSouthside's Volvo truck dealership business, as described in the\ntransaction documents provided as part of the application (the\nAcquisition).\nThe assets to be acquired comprise Volvo, Mack and UD branded\ntrucks and genuine parts, along with certain contracts relating to the\nbusiness. The Acquisition does not include any real property,\nemployees, or liabilities of Southside."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "31 August 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, VGA, is a subsidiary of Swedish-headquartered AB\nVolvo. VGA is active in Australia in:\n\u2022 the manufacturing, assembly and wholesale supply of\ncommercial (heavy duty) trucks and related parts under the\nVolvo, Mack and UD brands (Volvo Dealership Brands);\n\u2022 the importation and wholesale supply of heavy buses;\n\u2022 the operation of six primary commercial vehicle distribution\ncentres across Queensland and NSW, which are involved in\nthe retail supply of commercial trucks and buses, and\nrelated parts and servicing for trucks and buses under the\nVolvo Dealership Brands; and\n\u2022 the importation and wholesale supply of marine and\nindustrial engines, related parts and servicing.\nThe broader Volvo Group is active in Australia in the wholesale\nsupply of Volvo Construction Equipment and the provision of\nfinancial services in connection with the acquisition of trucks and\nbuses.\nThe target, Southside, owns and operates commercial vehicle\ndealerships under the name \"Southside Truck Centre\" from premises\nlocated at Coffs Harbour and South Lismore, NSW. The business is\ninvolved in the retail supply of new and used trucks, including the\nVolvo Dealership Brands together with a range of third-party brands\nincluding Hino, Western Star, MAN and Dennis Eagle, the sale of\ngenuine parts and accessories, and the supply of after-sales services\nincluding vehicle servicing and repairs."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition given:\na. there is very small horizontal overlap between VGA and\nSouthside in the retail supply of commercial vehicles in the\nCoffs Harbour to Lismore region of NSW\nb. there are alternative wholesale and retail suppliers of\ncommercial vehicles to customers in in the Coffs Harbour to\nLismore region of NSW, as well as in NSW and Southern\nQueensland more broadly\nc. there are alternative suppliers of commercial vehicle spare\nparts, servicing and repairs in the Coffs Harbour to Lismore\nregion of NSW\nd. there is a low risk of foreclosure or other concerning vertical\neffects resulting from exclusionary conduct post-acquisition.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-60038/Volvo Group Australia \u2013 Assets comprising Volvo dealership stock and assignable sales contracts of Southside Truck Centre (WA-60038) - Notification waiver determination - 31 August 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-08-06T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-05005",
+          "merger_name": "Ironbark - Investment in Viola Private Wealth",
+          "acquirers": [
+            "IBWM PTY LTD"
+          ],
+          "targets": [
+            "VIOLA GROUP HOLDINGS PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-70014",
+          "merger_name": "Global Infrastructure Management \u2013 TCR",
+          "acquirers": [
+            "GIP V Snow Bidco Limited"
+          ],
+          "targets": [
+            "Envol Holdings Limited"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-20034",
+          "merger_name": "Chevron - Woodside asset swap",
+          "acquirers": [
+            "WOODSIDE ENERGY (NORTH WEST SHELF) PTY LTD",
+            "CHEVRON AUSTRALIA PTY LTD"
+          ],
+          "targets": [
+            "CHEVRON AUSTRALIA NEW ENERGIES (G-10-AP) PTY LTD",
+            "WOODSIDE ENERGY JULIMAR PTY LTD"
+          ],
+          "status": "Under assessment"
         }
       ]
     },

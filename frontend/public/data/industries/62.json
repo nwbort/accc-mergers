@@ -31,13 +31,13 @@
       "code": "623",
       "name": "Non-Depository Financing",
       "level": "group",
-      "merger_count": 6
+      "merger_count": 7
     },
     {
       "code": "624",
       "name": "Financial Asset Investing",
       "level": "group",
-      "merger_count": 102
+      "merger_count": 103
     }
   ],
   "mergers": [
@@ -161,6 +161,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-08-05T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-60038",
+      "merger_name": "Volvo Group Australia \u2013 Assets comprising Volvo dealership stock and assignable sales contracts of Southside Truck Centre",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-06T12:00:00Z",
+      "determination_date": "2026-08-31T12:00:00Z"
     },
     {
       "merger_id": "MN-35034",
@@ -1252,10 +1263,10 @@
       "determination_date": null
     }
   ],
-  "count": 110,
+  "count": 111,
   "phase_1_count": 26,
   "phase_2_count": 1,
-  "waiver_count": 83,
+  "waiver_count": 84,
   "active_count": 11,
   "phase_duration": {
     "average_days": 28.875,
@@ -1265,10 +1276,10 @@
     "completed_count": 16
   },
   "waiver_duration": {
-    "average_days": 19.650602409638555,
-    "median_days": 19,
-    "average_business_days": 13.313253012048193,
-    "median_business_days": 12,
-    "completed_count": 83
+    "average_days": 19.714285714285715,
+    "median_days": 19.0,
+    "average_business_days": 13.357142857142858,
+    "median_business_days": 12.0,
+    "completed_count": 84
   }
 }

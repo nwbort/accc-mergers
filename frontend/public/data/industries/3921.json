@@ -38,6 +38,17 @@
       "determination_date": null
     },
     {
+      "merger_id": "WA-60038",
+      "merger_name": "Volvo Group Australia \u2013 Assets comprising Volvo dealership stock and assignable sales contracts of Southside Truck Centre",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-06T12:00:00Z",
+      "determination_date": "2026-08-31T12:00:00Z"
+    },
+    {
       "merger_id": "MN-65026",
       "merger_name": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company",
       "is_waiver": false,
@@ -93,10 +104,10 @@
       "determination_date": null
     }
   ],
-  "count": 6,
+  "count": 7,
   "phase_1_count": 3,
   "phase_2_count": 1,
-  "waiver_count": 2,
+  "waiver_count": 3,
   "active_count": 1,
   "phase_duration": {
     "average_days": 51.0,
@@ -106,10 +117,10 @@
     "completed_count": 3
   },
   "waiver_duration": {
-    "average_days": 27.0,
-    "median_days": 27.0,
-    "average_business_days": 19.5,
-    "median_business_days": 19.5,
-    "completed_count": 2
+    "average_days": 26.333333333333332,
+    "median_days": 25,
+    "average_business_days": 18.666666666666668,
+    "median_business_days": 18,
+    "completed_count": 3
   }
 }

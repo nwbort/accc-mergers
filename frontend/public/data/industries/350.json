@@ -30,7 +30,7 @@
       "code": "3502",
       "name": "Commercial Vehicle Wholesaling",
       "level": "class",
-      "merger_count": 1
+      "merger_count": 2
     },
     {
       "code": "3503",
@@ -42,7 +42,7 @@
       "code": "3504",
       "name": "Motor Vehicle New Parts Wholesaling",
       "level": "class",
-      "merger_count": 1
+      "merger_count": 2
     },
     {
       "code": "3505",
@@ -52,6 +52,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-60038",
+      "merger_name": "Volvo Group Australia \u2013 Assets comprising Volvo dealership stock and assignable sales contracts of Southside Truck Centre",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-06T12:00:00Z",
+      "determination_date": "2026-08-31T12:00:00Z"
+    },
     {
       "merger_id": "WA-85037",
       "merger_name": "Tata Motors - Iveco",
@@ -75,17 +86,17 @@
       "determination_date": "2026-04-01T12:00:00Z"
     }
   ],
-  "count": 2,
+  "count": 3,
   "phase_1_count": 0,
   "phase_2_count": 0,
-  "waiver_count": 2,
+  "waiver_count": 3,
   "active_count": 0,
   "phase_duration": null,
   "waiver_duration": {
-    "average_days": 21.5,
-    "median_days": 21.5,
-    "average_business_days": 15.5,
-    "median_business_days": 15.5,
-    "completed_count": 2
+    "average_days": 22.666666666666668,
+    "median_days": 22,
+    "average_business_days": 16.0,
+    "median_business_days": 16,
+    "completed_count": 3
   }
 }

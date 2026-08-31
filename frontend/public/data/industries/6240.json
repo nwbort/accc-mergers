@@ -148,6 +148,17 @@
       "determination_date": null
     },
     {
+      "merger_id": "WA-60038",
+      "merger_name": "Volvo Group Australia \u2013 Assets comprising Volvo dealership stock and assignable sales contracts of Southside Truck Centre",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-06T12:00:00Z",
+      "determination_date": "2026-08-31T12:00:00Z"
+    },
+    {
       "merger_id": "MN-35034",
       "merger_name": "The Independents Group \u2013 acquisition of entities within the Smuggler Group",
       "is_waiver": false,
@@ -1149,10 +1160,10 @@
       "determination_date": "2026-01-30T12:00:00Z"
     }
   ],
-  "count": 102,
+  "count": 103,
   "phase_1_count": 25,
   "phase_2_count": 0,
-  "waiver_count": 77,
+  "waiver_count": 78,
   "active_count": 11,
   "phase_duration": {
     "average_days": 25.0,
@@ -1162,10 +1173,10 @@
     "completed_count": 14
   },
   "waiver_duration": {
-    "average_days": 19.74025974025974,
-    "median_days": 19,
-    "average_business_days": 13.415584415584416,
-    "median_business_days": 12,
-    "completed_count": 77
+    "average_days": 19.807692307692307,
+    "median_days": 19.0,
+    "average_business_days": 13.461538461538462,
+    "median_business_days": 12.0,
+    "completed_count": 78
   }
 }

@@ -27,6 +27,17 @@
   "children": [],
   "mergers": [
     {
+      "merger_id": "WA-60038",
+      "merger_name": "Volvo Group Australia \u2013 Assets comprising Volvo dealership stock and assignable sales contracts of Southside Truck Centre",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-06T12:00:00Z",
+      "determination_date": "2026-08-31T12:00:00Z"
+    },
+    {
       "merger_id": "WA-65010",
       "merger_name": "Honda \u2013 additional shareholding in Astemo",
       "is_waiver": true,
@@ -38,17 +49,17 @@
       "determination_date": "2026-04-01T12:00:00Z"
     }
   ],
-  "count": 1,
+  "count": 2,
   "phase_1_count": 0,
   "phase_2_count": 0,
-  "waiver_count": 1,
+  "waiver_count": 2,
   "active_count": 0,
   "phase_duration": null,
   "waiver_duration": {
-    "average_days": 22.0,
-    "median_days": 22,
-    "average_business_days": 16.0,
-    "median_business_days": 16,
-    "completed_count": 1
+    "average_days": 23.5,
+    "median_days": 23.5,
+    "average_business_days": 16.5,
+    "median_business_days": 16.5,
+    "completed_count": 2
   }
 }

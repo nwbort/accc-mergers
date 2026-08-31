@@ -9,7 +9,7 @@
       "code": "94",
       "name": "Repair and Maintenance",
       "level": "subdivision",
-      "merger_count": 20
+      "merger_count": 21
     },
     {
       "code": "95",
@@ -46,6 +46,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-13T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-60038",
+      "merger_name": "Volvo Group Australia \u2013 Assets comprising Volvo dealership stock and assignable sales contracts of Southside Truck Centre",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-06T12:00:00Z",
+      "determination_date": "2026-08-31T12:00:00Z"
     },
     {
       "merger_id": "WA-80034",
@@ -389,10 +400,10 @@
       "determination_date": null
     }
   ],
-  "count": 33,
+  "count": 34,
   "phase_1_count": 8,
   "phase_2_count": 3,
-  "waiver_count": 22,
+  "waiver_count": 23,
   "active_count": 2,
   "phase_duration": {
     "average_days": 41.888888888888886,
@@ -402,10 +413,10 @@
     "completed_count": 9
   },
   "waiver_duration": {
-    "average_days": 19.318181818181817,
-    "median_days": 20.0,
-    "average_business_days": 13.181818181818182,
-    "median_business_days": 13.5,
-    "completed_count": 22
+    "average_days": 19.565217391304348,
+    "median_days": 21,
+    "average_business_days": 13.347826086956522,
+    "median_business_days": 14,
+    "completed_count": 23
   }
 }
