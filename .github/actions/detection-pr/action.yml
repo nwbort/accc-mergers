@@ -1,0 +1,160 @@
+name: Detection review PR
+description: >-
+  Run one detector on its own well-known fix branch off the latest main, then
+  open, refresh or auto-close the review PR carrying its suggestions.
+
+# The three detectors folded into pipeline.yml (duplicate events, related
+# mergers, related parties) all follow the same shape: branch off the base
+# sha, run the detector, and — if it found anything that actually changed its
+# own data file — force-push the branch and open or update a review PR;
+# otherwise close any PR left over from a previous run. Only the branch,
+# command, data file and wording differ, so they share this action rather
+# than three near-identical copies of the plumbing.
+#
+# Each detector writes only its own file (mergers.json / related_mergers.json
+# / related_parties.json) and commits only that file, so the three never
+# collide with each other or with the pipeline's own commit to main.
+
+inputs:
+  base-sha:
+    description: Commit to branch from — the latest main, so the PR diff is clean.
+    required: true
+  branch:
+    description: Well-known fix branch this detector force-pushes.
+    required: true
+  heading:
+    description: Step-summary heading for the detector's report.
+    required: true
+  command:
+    description: >-
+      The detector invocation. Run once, with its apply and --pr-markdown
+      flags already included: every detector prints its human report to
+      stdout, writes the PR body, applies its suggestions, and exits non-zero
+      if it found anything — all in a single pass. Applying is a no-op when
+      there is nothing to apply, so this is safe to run unconditionally.
+    required: true
+  data-file:
+    description: The one file this detector may change, and all that is committed.
+    required: true
+  pr-body-file:
+    description: Markdown file the command writes its PR body to.
+    required: false
+    default: pr_body.md
+  commit-message:
+    description: Commit subject. "{date}" is replaced with today's UTC date.
+    required: true
+  pr-title:
+    description: PR title. "{date}" is replaced with today's UTC date.
+    required: true
+  close-comment:
+    description: >-
+      Comment left when closing a stale PR because nothing is left to
+      recommend. "{date}" is replaced with today's UTC date.
+    required: true
+  github-token:
+    description: Token for the gh calls.
+    required: true
+
+outputs:
+  found:
+    description: "true if the detector found anything (non-zero exit)."
+    value: ${{ steps.detect.outputs.found }}
+  changed:
+    description: "true if that actually changed the data file and was pushed."
+    value: ${{ steps.commit.outputs.changed }}
+  pr-number:
+    description: Number of the PR opened or updated, empty if none.
+    value: ${{ steps.pr.outputs.number }}
+
+runs:
+  using: composite
+  steps:
+    # The detector's own stdout is the step summary, so it is tee'd rather
+    # than re-run by a separate summary step. pipefail keeps the `if` reading
+    # the detector's exit code (something found) and not tee's.
+    - name: Detect
+      id: detect
+      shell: bash
+      env:
+        BRANCH: ${{ inputs.branch }}
+        BASE_SHA: ${{ inputs.base-sha }}
+        HEADING: ${{ inputs.heading }}
+        COMMAND: ${{ inputs.command }}
+      run: |
+        set -o pipefail
+        git switch -C "$BRANCH" "$BASE_SHA"
+        {
+          echo "### ${HEADING}"
+          echo ""
+        } >> "$GITHUB_STEP_SUMMARY"
+        if eval "$COMMAND" | tee -a "$GITHUB_STEP_SUMMARY"; then
+          echo "found=false" >> "$GITHUB_OUTPUT"
+        else
+          echo "found=true" >> "$GITHUB_OUTPUT"
+        fi
+
+    - name: Commit and push fix branch
+      id: commit
+      if: steps.detect.outputs.found == 'true'
+      shell: bash
+      env:
+        BRANCH: ${{ inputs.branch }}
+        DATA_FILE: ${{ inputs.data-file }}
+        COMMIT_MESSAGE: ${{ inputs.commit-message }}
+      run: |
+        if git diff --quiet "$DATA_FILE"; then
+          echo "changed=false" >> "$GITHUB_OUTPUT"
+        else
+          git add "$DATA_FILE"
+          git commit -m "${COMMIT_MESSAGE//\{date\}/$(date -u +%Y-%m-%d)}"
+          git push origin "$BRANCH" --force
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+        fi
+
+    - name: Create or update PR
+      id: pr
+      if: steps.detect.outputs.found == 'true' && steps.commit.outputs.changed == 'true'
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.github-token }}
+        BRANCH: ${{ inputs.branch }}
+        PR_TITLE: ${{ inputs.pr-title }}
+        PR_BODY_FILE: ${{ inputs.pr-body-file }}
+      run: |
+        TITLE="${PR_TITLE//\{date\}/$(date -u +%Y-%m-%d)}"
+        EXISTING=$(gh pr list \
+          --head "$BRANCH" \
+          --state open \
+          --json number \
+          --jq '.[0].number' 2>/dev/null || echo "")
+        if [ -n "$EXISTING" ]; then
+          gh pr edit "$EXISTING" --title "$TITLE" --body-file "$PR_BODY_FILE"
+          echo "Updated PR #$EXISTING"
+          echo "number=$EXISTING" >> "$GITHUB_OUTPUT"
+        else
+          NUMBER=$(gh pr create \
+            --head "$BRANCH" \
+            --title "$TITLE" \
+            --body-file "$PR_BODY_FILE" \
+            | grep -oE '[0-9]+$')
+          echo "Created PR #$NUMBER"
+          echo "number=$NUMBER" >> "$GITHUB_OUTPUT"
+        fi
+
+    - name: Close PR when nothing left to recommend
+      if: steps.detect.outputs.found == 'false'
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.github-token }}
+        BRANCH: ${{ inputs.branch }}
+        CLOSE_COMMENT: ${{ inputs.close-comment }}
+      run: |
+        COMMENT="${CLOSE_COMMENT//\{date\}/$(date -u +%Y-%m-%d)}"
+        gh pr list \
+          --head "$BRANCH" \
+          --state open \
+          --json number \
+          --jq '.[].number' | \
+        while read -r num; do
+          gh pr close "$num" --comment "$COMMENT" || true
+        done

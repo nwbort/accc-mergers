@@ -1943,8 +1943,12 @@ def main():
     all_mergers_data.sort(key=lambda x: x.get('merger_id', ''))
 
     # 11. Write the final JSON output to mergers.json
+    # Trailing newline so this agrees byte-for-byte with the other writer of
+    # this file, detect_duplicates.py --apply-fixes. Without it the two flip
+    # the last byte back and forth and each churns a line in the other's diff.
     with open('data/processed/mergers.json', 'w', encoding='utf-8') as f:
         json.dump(all_mergers_data, f, indent=2)
+        f.write('\n')
 
 if __name__ == "__main__":
     main()
