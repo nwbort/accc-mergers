@@ -1,11 +1,22 @@
 name: Check Deploy Assets
 
-# Cloudflare Pages won't deploy an asset over 25 MiB. scripts/build.sh leaves
-# those out so the rest of the site still ships and the Pages Function redirects
-# them to their source URL — which means an oversized file no longer announces
-# itself as a failed build. It just quietly stops being hosted. This workflow is
-# the notification for that: it opens a tracking issue, updates it as the set of
-# offending files changes, and closes it once they're gone.
+# Two Cloudflare Pages limits, both of which fail silently, and this workflow is
+# the notification for both.
+#
+# 1. No asset over 25 MiB. scripts/build.sh leaves those out so the rest of the
+#    site still ships and the Pages Function redirects them to their source URL
+#    — which means an oversized file no longer announces itself as a failed
+#    build. It just quietly stops being hosted.
+#
+# 2. No more than 20,000 files in a deployment. This one is worse: Pages refuses
+#    the *entire* upload, then keeps serving the previous deployment. The site
+#    stays up but stops updating, and nothing here goes red, because the Pages
+#    build runs on Cloudflare's side in response to the push — pipeline.yml
+#    pushes, exits green, and the site is frozen. The check reports at 80% of
+#    the limit to leave lead time, and fails the run outright once over it.
+#
+# Each gets its own tracking issue, opened when the condition appears, updated
+# as it changes, and closed once it clears.
 #
 # It runs on push to main rather than inside the scrape workflows so it catches
 # files arriving by any route — the pipeline, the tribunal scraper, a manual
@@ -19,6 +30,12 @@ on:
       - main
     # Mirrors DEPLOY_SOURCES in scripts/check_deploy_assets.py — the only trees
     # that end up in the deployment. Keep the two in step.
+    #
+    # These also drive the file count: the prerendered page count is derived
+    # from the data files under frontend/public/data, so any push that changes
+    # what the pipeline generates re-measures the deployment. A change to
+    # prerender.js itself (a new static route, say) doesn't trigger a run, but
+    # those move the count by a dozen files, not a thousand.
     paths:
       - 'data/raw/matters/**'
       - 'frontend/public/**'
@@ -49,15 +66,15 @@ jobs:
       # Writes the findings and a ready-to-post issue body to the runner's temp
       # dir. Exits 0 either way — an oversized file is reported as an issue, not
       # as a red workflow run, since the site itself is still fine.
-      - name: Find oversized deployable files
+      - name: Measure the deployment
         run: |
-          python -m scripts.check_deploy_assets --json "$RUNNER_TEMP/oversized.json"
+          python -m scripts.check_deploy_assets --json "$RUNNER_TEMP/deploy.json"
 
       - name: Open, update or close the tracking issue
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          FILE="$RUNNER_TEMP/oversized.json"
+          FILE="$RUNNER_TEMP/deploy.json"
           COUNT=$(jq '.count' "$FILE")
 
           gh label create "oversized-asset" \
@@ -99,4 +116,61 @@ jobs:
               --title "$TITLE" \
               --body-file issue_body.md
             echo "Opened a tracking issue ($COUNT file(s) over the limit)"
+          fi
+
+      - name: Open, update or close the file-count issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          FILE="$RUNNER_TEMP/deploy.json"
+          APPROACHING=$(jq -r '.file_count.approaching' "$FILE")
+          TOTAL=$(jq -r '.file_count.total' "$FILE")
+          LIMIT=$(jq -r '.file_count.limit' "$FILE")
+
+          gh label create "deploy-file-count" \
+            --description "Deployment approaching Cloudflare Pages' file-count limit" \
+            --color "fbca04" \
+            --force
+
+          NUMBER=$(gh issue list \
+            --label "deploy-file-count" \
+            --state open \
+            --json number \
+            --jq '.[0].number // empty')
+
+          if [ "$APPROACHING" != "true" ]; then
+            if [ -n "$NUMBER" ]; then
+              gh issue comment "$NUMBER" \
+                --body "Back under the threshold — $TOTAL of $LIMIT files. Closing automatically."
+              gh issue close "$NUMBER"
+              echo "Closed #$NUMBER"
+            else
+              echo "$TOTAL of $LIMIT files, no open issue"
+            fi
+            exit 0
+          fi
+
+          jq -r '.file_count.body' "$FILE" > file_count_body.md
+          TITLE=$(jq -r '.file_count.title' "$FILE")
+
+          if [ -n "$NUMBER" ]; then
+            gh issue edit "$NUMBER" --title "$TITLE" --body-file file_count_body.md
+            echo "Updated #$NUMBER ($TOTAL of $LIMIT files)"
+          else
+            gh issue create \
+              --label "deploy-file-count" \
+              --title "$TITLE" \
+              --body-file file_count_body.md
+            echo "Opened a tracking issue ($TOTAL of $LIMIT files)"
+          fi
+
+      # Being over the limit means deployments are already failing, so this is
+      # the one condition worth a red run rather than just an issue. Runs last
+      # so the issues above are always filed first.
+      - name: Fail if the deployment is over the file limit
+        run: |
+          FILE="$RUNNER_TEMP/deploy.json"
+          if [ "$(jq -r '.file_count.over_limit' "$FILE")" = "true" ]; then
+            echo "::error::$(jq -r '.file_count.total' "$FILE") files exceeds Cloudflare Pages' $(jq -r '.file_count.limit' "$FILE") limit — deployments are failing and the site has stopped updating."
+            exit 1
           fi

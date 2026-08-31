@@ -406,6 +406,10 @@ export default function prerenderMergers() {
     closeBundle() {
       const template = readFileSync(join(outDir, 'index.html'), 'utf8');
       const dataDir = join(publicDir, 'data');
+      // NOTE: scripts/check_deploy_assets.py derives this same count from the
+      // data files, without running a build, to check the deployment against
+      // Cloudflare Pages' 20,000-file limit — these pages are over half of it.
+      // If you change what gets a page here, update count_deploy_files() too.
       const counts = { mergers: 0, parties: 0, industries: 0, static: 0 };
 
       // Reads every *.json in `dir`, maps it through `toPage`, and writes the

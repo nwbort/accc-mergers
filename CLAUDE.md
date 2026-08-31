@@ -339,6 +339,13 @@ paginated page when a list shrinks, and (in `parties/`) what removes a shard
 bucket once nothing hashes into it. A generator that wrote nothing prunes
 nothing, so a failed or empty load can never empty a directory.
 
+The 20,000-file cap is guarded by `check-deploy-assets.yml`, which counts the
+deployment on every push to `main` — including the prerendered HTML, derived
+from the data files rather than measured, since it doesn't exist until build
+time and is over half the total. Going over doesn't degrade gracefully: Pages
+refuses the whole upload and keeps serving the previous deployment, so the
+site stays up but silently stops updating, with every workflow still green.
+
 ### Party files are sharded
 
 `parties/` is the one directory that is not one-file-per-item. Party records
@@ -408,5 +415,5 @@ prunes the old names), but make it a deliberate choice.
 | `send-weekly-email.yml` | Manual (schedule currently disabled) | Send the weekly digest email via the Cloudflare Worker |
 | `test.yml` | Manual | Run the Python test suite |
 | `frontend-test.yml` | Pull requests touching `frontend/**`, `functions/**` or `fixtures/*.json`, manual | Run the frontend test suite |
-| `check-deploy-assets.yml` | Push touching `data/raw/matters/**`, `frontend/public/**` or the check itself, manual | Fail if any deploy asset exceeds Cloudflare Pages' 25 MiB per-file limit |
+| `check-deploy-assets.yml` | Push touching `data/raw/matters/**`, `frontend/public/**` or the check itself, manual | Guards both Cloudflare Pages limits that fail silently: opens a tracking issue for any asset over the 25 MiB per-file limit, and for the deployment approaching the 20,000-**file** cap (reports at 80%, fails the run once over). See `scripts/check_deploy_assets.py` |
 | `workers-test.yml` | Manual | For each directory under `workers/`: `npm ci`, `npm test --if-present`, then `npm run deploy:dry` to bundle the Worker and validate its `wrangler.toml`. Discovers Workers by glob, so a new one is covered automatically |
