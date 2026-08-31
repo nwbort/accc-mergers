@@ -84,8 +84,11 @@ def main():
 
     all_mergers_data.sort(key=lambda x: x.get('merger_id', ''))
 
+    # Trailing newline to match extract_mergers.py and detect_duplicates.py,
+    # the other two writers of this file.
     with open(MERGERS_JSON, 'w', encoding='utf-8') as f:
         json.dump(all_mergers_data, f, indent=2)
+        f.write('\n')
 
 
 if __name__ == "__main__":
