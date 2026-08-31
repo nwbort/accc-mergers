@@ -127,103 +127,36 @@
     {
       "merger_id": "WA-10019",
       "merger_name": "Warburg Pincus \u2013 JSB",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Ursa 4 Kabushiki Kaisha (Japan)",
-          "identifier_type": null,
-          "identifier": "010001265801",
-          "party_page": {
-            "id": "ursa-4-kabushiki-kaisha-japan",
-            "name": "Ursa 4 Kabushiki Kaisha (Japan)"
-          }
-        }
+        "Ursa 4 Kabushiki Kaisha (Japan)"
       ],
       "targets": [
-        {
-          "name": "J.S.B. Co., Ltd.",
-          "identifier_type": null,
-          "identifier": "130001017499",
-          "canonical": {
-            "id": "j-s-b-co",
-            "name": "J.S.B. Co"
-          },
-          "party_page": {
-            "id": "j-s-b-co",
-            "name": "J.S.B. Co"
-          }
-        }
-      ]
+        "J.S.B. Co., Ltd."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-40010",
       "merger_name": "Permira and Warburg Pincus - Clearwater Analytics",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "GT Silver BidCo, Inc.",
-          "identifier_type": null,
-          "identifier": "413417606",
-          "party_page": {
-            "id": "gt-silver-bidco-inc",
-            "name": "GT Silver BidCo, Inc."
-          }
-        }
+        "GT Silver BidCo, Inc."
       ],
       "targets": [
-        {
-          "name": "Clearwater Analytics Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "00140838",
-          "canonical": {
-            "id": "clearwater-analytics-llc",
-            "name": "Clearwater Analytics"
-          },
-          "party_page": {
-            "id": "clearwater-analytics-llc",
-            "name": "Clearwater Analytics"
-          }
-        }
-      ]
+        "Clearwater Analytics Holdings, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-75006",
       "merger_name": "Playlist \u2013 EGYM",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Saturn NewCo, Inc",
-          "identifier_type": null,
-          "identifier": "DE File number: 10449592",
-          "party_page": {
-            "id": "saturn-newco-inc",
-            "name": "Saturn NewCo, Inc"
-          }
-        },
-        {
-          "name": "ClassPass Aggregator, LLC",
-          "identifier_type": null,
-          "identifier": "DE File number: 6177870",
-          "party_page": {
-            "id": "classpass-aggregator-llc",
-            "name": "ClassPass Aggregator, LLC"
-          }
-        }
+        "Saturn NewCo, Inc",
+        "ClassPass Aggregator, LLC"
       ],
       "targets": [
-        {
-          "name": "EGYM SE",
-          "identifier_type": null,
-          "identifier": "HRB: 186394",
-          "party_page": {
-            "id": "egym-se",
-            "name": "Egym Se"
-          }
-        }
-      ]
+        "EGYM SE"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

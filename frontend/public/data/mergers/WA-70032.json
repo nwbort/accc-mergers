@@ -148,99 +148,36 @@
     {
       "merger_id": "WA-35032",
       "merger_name": "AustralianSuper \u2013 Advanced Navigation",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AIRTREE VENTURES OPPORTUNITY FUND 2021 TRUSCO PTY LTD atf the Airtree Ventures AS Co-invesment Oppor",
-          "identifier_type": "ABN",
-          "identifier": "90 652 901 043",
-          "canonical": {
-            "id": "australiansuper-pty-ltd",
-            "name": "AustralianSuper"
-          },
-          "party_page": {
-            "id": "australiansuper-pty-ltd",
-            "name": "AustralianSuper"
-          }
-        }
+        "AIRTREE VENTURES OPPORTUNITY FUND 2021 TRUSCO PTY LTD atf the Airtree Ventures AS Co-invesment Oppor"
       ],
       "targets": [
-        {
-          "name": "ADVANCED NAVIGATION PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "49 156 101 549",
-          "party_page": {
-            "id": "advanced-navigation-pty-ltd",
-            "name": "Advanced Navigation Pty. Ltd."
-          }
-        }
-      ]
+        "ADVANCED NAVIGATION PTY. LTD."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-45010",
       "merger_name": "Airtree and ors (additional minority co-investors) - Advanced Navigation",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "LGPE SEC S.C. Sp",
-          "identifier_type": null,
-          "identifier": "Luxembourg Company Registration Number: B281514",
-          "party_page": {
-            "id": "lgpe-sec-s-c-sp",
-            "name": "LGPE SEC S.C. Sp"
-          }
-        },
-        {
-          "name": "Crown Growth Opportunities IV SCSp-RAIF",
-          "identifier_type": null,
-          "identifier": "Luxembourg Company Registration Number: B254394",
-          "party_page": {
-            "id": "crown-growth-opportunities-iv-scsp-raif",
-            "name": "Crown Growth Opportunities IV SCSp-RAIF"
-          }
-        }
+        "LGPE SEC S.C. Sp",
+        "Crown Growth Opportunities IV SCSp-RAIF"
       ],
       "targets": [
-        {
-          "name": "ADVANCED NAVIGATION PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "49 156 101 549",
-          "party_page": {
-            "id": "advanced-navigation-pty-ltd",
-            "name": "Advanced Navigation Pty. Ltd."
-          }
-        }
-      ]
+        "ADVANCED NAVIGATION PTY. LTD."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70007",
       "merger_name": "Platinum Equity Group \u2013 Burke",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Advance Holdings II, LLC",
-          "identifier_type": null,
-          "identifier": "Delaware ID  10496142",
-          "party_page": {
-            "id": "advance-holdings-ii-llc",
-            "name": "Advance Holdings II, LLC"
-          }
-        }
+        "Advance Holdings II, LLC"
       ],
       "targets": [
-        {
-          "name": "BCI Acquisitions, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware ID  6389940",
-          "party_page": {
-            "id": "bci-acquisitions-inc",
-            "name": "BCI Acquisitions, Inc."
-          }
-        }
-      ]
+        "BCI Acquisitions, Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

@@ -200,104 +200,37 @@
     {
       "merger_id": "MN-70013",
       "merger_name": "Ventura Motors \u2013 Crown Coaches",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "VENTURA NEWCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 694 822 047",
-          "party_page": {
-            "id": "ventura-newco-pty-ltd",
-            "name": "Ventura Newco Pty Ltd"
-          }
-        }
+        "VENTURA NEWCO PTY LTD"
       ],
       "targets": [
-        {
-          "name": "CROWN HYBRID PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "47 004 550 529",
-          "party_page": {
-            "id": "crown-hybrid-pty-ltd",
-            "name": "Crown Hybrid Pty Ltd"
-          }
-        },
-        {
-          "name": "CROWN COACHES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "48 004 882 213",
-          "party_page": {
-            "id": "crown-coaches-pty-ltd",
-            "name": "Crown Coaches Pty Ltd"
-          }
-        }
-      ]
+        "CROWN HYBRID PTY LTD",
+        "CROWN COACHES PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70023",
       "merger_name": "MLPL HoldCo \u2013 shares in Marinus Link Pty Ltd",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "The Treasurer of Victoria for and on behalf of the Crown in the right of the State of Victoria",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "the-treasurer-of-victoria-for-and-on-behalf-of-the-crown-in-the-right-of-the-sta",
-            "name": "The Treasurer of Victoria for and on behalf of the Crown in the right of the State of Victoria"
-          }
-        },
-        {
-          "name": "The Commonwealth of Australia",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "the-commonwealth-of-australia",
-            "name": "The Commonwealth of Australia"
-          }
-        }
+        "The Treasurer of Victoria for and on behalf of the Crown in the right of the State of Victoria",
+        "The Commonwealth of Australia"
       ],
       "targets": [
-        {
-          "name": "MARINUS LINK PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "47 630 194 562",
-          "party_page": {
-            "id": "marinus-link-pty-ltd",
-            "name": "Marinus Link Pty Ltd"
-          }
-        }
-      ]
+        "MARINUS LINK PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-85005",
       "merger_name": "Altor Fund Manager - Evac Holding Oy",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CAVE BidCo Oy",
-          "identifier_type": null,
-          "identifier": "Business Identity Code 35317614",
-          "party_page": {
-            "id": "cave-bidco-oy",
-            "name": "CAVE BidCo Oy"
-          }
-        }
+        "CAVE BidCo Oy"
       ],
       "targets": [
-        {
-          "name": "Evac Holding Oy",
-          "identifier_type": null,
-          "identifier": "Business Identity Code 28586576",
-          "party_page": {
-            "id": "evac-holding-oy",
-            "name": "Evac Holding Oy"
-          }
-        }
-      ]
+        "Evac Holding Oy"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

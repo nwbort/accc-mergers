@@ -92,104 +92,37 @@
     {
       "merger_id": "MN-20014",
       "merger_name": "ANZ, CBA, NAB and Westpac \u2013 shares in joint venture and interests in Joint Cash Pool",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "WESTPAC BANKING CORPORATION",
-          "identifier_type": "ABN",
-          "identifier": "33 007 457 141",
-          "party_page": {
-            "id": "westpac-banking-corporation",
-            "name": "Westpac Banking Corporation"
-          }
-        },
-        {
-          "name": "AUSTRALIA AND NEW ZEALAND BANKING GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "11 005 357 522",
-          "party_page": {
-            "id": "australia-and-new-zealand-banking-group-limited",
-            "name": "Australia And New Zealand Banking Group Limited"
-          }
-        }
+        "WESTPAC BANKING CORPORATION",
+        "AUSTRALIA AND NEW ZEALAND BANKING GROUP LIMITED"
       ],
       "targets": [
-        {
-          "name": "Australian Cash Services (JVCo)",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "australian-cash-services-jvco",
-            "name": "Australian Cash Services (JVCo)"
-          }
-        }
-      ]
+        "Australian Cash Services (JVCo)"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-50009",
       "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "HEIDELBERG MATERIALS AUSTRALIA HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "98 611 565 649",
-          "party_page": {
-            "id": "heidelberg-materials-australia-holdings-pty-ltd",
-            "name": "Heidelberg Materials Australia Holdings Pty Ltd"
-          }
-        }
+        "HEIDELBERG MATERIALS AUSTRALIA HOLDINGS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "MAAS GROUP HOLDINGS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "84 632 994 542",
-          "party_page": {
-            "id": "maas-group-holdings-limited",
-            "name": "Maas Group Holdings Limited"
-          }
-        },
-        {
-          "name": "MACHINERY SALES PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "13 074 358 277",
-          "party_page": {
-            "id": "machinery-sales-pty-limited",
-            "name": "Machinery Sales Pty Limited"
-          }
-        }
-      ]
+        "MAAS GROUP HOLDINGS LIMITED",
+        "MACHINERY SALES PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70015",
       "merger_name": "Bendigo and Adelaide Bank \u2013 RACQ Bank",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BENDIGO AND ADELAIDE BANK LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "11 068 049 178",
-          "party_page": {
-            "id": "bendigo-and-adelaide-bank-limited",
-            "name": "Bendigo And Adelaide Bank Limited"
-          }
-        }
+        "BENDIGO AND ADELAIDE BANK LIMITED"
       ],
       "targets": [
-        {
-          "name": "MEMBERS BANKING GROUP LIMITED (TRADING AS RACQ BANK)",
-          "identifier_type": "ABN",
-          "identifier": "83 087 651 054",
-          "party_page": {
-            "id": "members-banking-group-limited-trading-as-racq-bank",
-            "name": "Members Banking Group Limited (Trading As Racq Bank)"
-          }
-        }
-      ]
+        "MEMBERS BANKING GROUP LIMITED (TRADING AS RACQ BANK)"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

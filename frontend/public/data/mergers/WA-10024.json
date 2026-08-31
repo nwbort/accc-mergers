@@ -111,104 +111,37 @@
     {
       "merger_id": "WA-60010",
       "merger_name": "Michelin - Flexitallic",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Compagnie Financi\u00e8re Michelin SAS",
-          "identifier_type": null,
-          "identifier": "SIREN  898 849 153",
-          "party_page": {
-            "id": "compagnie-financi-re-michelin-sas",
-            "name": "Compagnie Financi\u00e8re Michelin SAS"
-          }
-        },
-        {
-          "name": "Fenner America, Inc.",
-          "identifier_type": null,
-          "identifier": "USDOT  3744583",
-          "party_page": {
-            "id": "fenner-america-inc",
-            "name": "Fenner America, Inc."
-          }
-        }
+        "Compagnie Financi\u00e8re Michelin SAS",
+        "Fenner America, Inc."
       ],
       "targets": [
-        {
-          "name": "Flexitallic Group SAS",
-          "identifier_type": null,
-          "identifier": "SIREN  532 742 699",
-          "party_page": {
-            "id": "flexitallic-group-sas",
-            "name": "Flexitallic Group SAS"
-          }
-        }
-      ]
+        "Flexitallic Group SAS"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-20023",
       "merger_name": "Sony Music - Recognition Music",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "SMG-Three LLC",
-          "identifier_type": null,
-          "identifier": "DDC  10277876",
-          "party_page": {
-            "id": "smg-three-llc",
-            "name": "SMG-Three LLC"
-          }
-        },
-        {
-          "name": "Sony Music Publishing (US) LLC",
-          "identifier_type": null,
-          "identifier": "DDC  2558200",
-          "party_page": {
-            "id": "sony-music-publishing-us-llc",
-            "name": "Sony Music Publishing (US) LLC"
-          }
-        }
+        "SMG-Three LLC",
+        "Sony Music Publishing (US) LLC"
       ],
       "targets": [
-        {
-          "name": "Recognition Music Group (Delaware) L.P.",
-          "identifier_type": null,
-          "identifier": "DDC  6193972",
-          "party_page": {
-            "id": "recognition-music-group-delaware-l-p",
-            "name": "Recognition Music Group (Delaware) L.P."
-          }
-        }
-      ]
+        "Recognition Music Group (Delaware) L.P."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-80029",
       "merger_name": "NPM Capital \u2013 AmbaFlex Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "NPM Investments 43 B.V.",
-          "identifier_type": null,
-          "identifier": "KVK  96665335",
-          "party_page": {
-            "id": "npm-investments-43-b-v",
-            "name": "NPM Investments 43 B.V."
-          }
-        }
+        "NPM Investments 43 B.V."
       ],
       "targets": [
-        {
-          "name": "Helix Holdco B.V.",
-          "identifier_type": null,
-          "identifier": "KVK  97637785",
-          "party_page": {
-            "id": "helix-holdco-b-v",
-            "name": "Helix Holdco B.V."
-          }
-        }
-      ]
+        "Helix Holdco B.V."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

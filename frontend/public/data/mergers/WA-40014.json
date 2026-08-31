@@ -111,107 +111,36 @@
     {
       "merger_id": "WA-20007",
       "merger_name": "Telstra \u2013 Infosys Technologies",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "TELSTRA LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "64 086 174 781",
-          "canonical": {
-            "id": "telstra-limited",
-            "name": "Telstra"
-          },
-          "party_page": {
-            "id": "telstra-limited",
-            "name": "Telstra"
-          }
-        }
+        "TELSTRA LIMITED"
       ],
       "targets": [
-        {
-          "name": "INFOSYS TECHNOLOGIES LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "52 090 591 209",
-          "party_page": {
-            "id": "infosys-technologies-limited",
-            "name": "Infosys Technologies Limited"
-          }
-        }
-      ]
+        "INFOSYS TECHNOLOGIES LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25008",
       "merger_name": "Five V Capital - FTP Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OVERWATCH BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 739 970",
-          "party_page": {
-            "id": "overwatch-bidco-pty-ltd",
-            "name": "Overwatch Bidco Pty Ltd"
-          }
-        }
+        "OVERWATCH BIDCO PTY LTD"
       ],
       "targets": [
-        {
-          "name": "FTP GROUP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "82 626 217 614",
-          "party_page": {
-            "id": "ftp-group-holdings-pty-ltd",
-            "name": "Ftp Group Holdings Pty Ltd"
-          }
-        },
-        {
-          "name": "FAARM BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 834 390",
-          "canonical": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          },
-          "party_page": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          }
-        }
-      ]
+        "FTP GROUP HOLDINGS PTY LTD",
+        "FAARM BIDCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-20011",
       "merger_name": "Origin \u2013 Equity stake in Kraken",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "53 143 484 208",
-          "canonical": {
-            "id": "origin-energy-limited",
-            "name": "Origin Energy Limited"
-          },
-          "party_page": {
-            "id": "origin-energy-limited",
-            "name": "Origin Energy Limited"
-          }
-        }
+        "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "CPP Investment Board Private Holdings (4) Inc.",
-          "identifier_type": null,
-          "identifier": "BN  11089340",
-          "party_page": {
-            "id": "cpp-investment-board-private-holdings-4-inc",
-            "name": "CPP Investment Board Private Holdings (4) Inc."
-          }
-        }
-      ]
+        "CPP Investment Board Private Holdings (4) Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

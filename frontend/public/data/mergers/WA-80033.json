@@ -124,116 +124,37 @@
     {
       "merger_id": "MN-70030",
       "merger_name": "Aware Super \u2013 Increased interest in Keyton",
-      "status": "Under assessment",
-      "accc_determination": null,
       "acquirers": [
-        {
-          "name": "AWARE SUPER PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "11 118 202 672",
-          "canonical": {
-            "id": "aware-super-pty-limited",
-            "name": "Aware Super Pty Limited"
-          },
-          "party_page": {
-            "id": "aware-super-pty-limited",
-            "name": "Aware Super Pty Limited"
-          }
-        }
+        "AWARE SUPER PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "LENDLEASE CAPITAL SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "67 000 001 114",
-          "canonical": {
-            "id": "lendlease",
-            "name": "Lendlease"
-          },
-          "party_page": {
-            "id": "lendlease",
-            "name": "Lendlease"
-          }
-        },
-        {
-          "name": "LENDLEASE CAPITAL SERVICES RL LTD",
-          "identifier_type": "ABN",
-          "identifier": "47 615 893 288",
-          "canonical": {
-            "id": "lendlease",
-            "name": "Lendlease"
-          },
-          "party_page": {
-            "id": "lendlease",
-            "name": "Lendlease"
-          }
-        }
-      ]
+        "LENDLEASE CAPITAL SERVICES PTY LTD",
+        "LENDLEASE CAPITAL SERVICES RL LTD"
+      ],
+      "status": "Under assessment"
     },
     {
       "merger_id": "MN-90009",
       "merger_name": "Trescal \u2013 TR Calibration",
-      "status": "Assessment ceased",
-      "accc_determination": null,
       "acquirers": [
-        {
-          "name": "TRESCAL (AUSTRALIA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "39 117 603 835",
-          "party_page": {
-            "id": "trescal-australia-pty-ltd",
-            "name": "Trescal (Australia) Pty Ltd"
-          }
-        }
+        "TRESCAL (AUSTRALIA) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "TR PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 005 499 721",
-          "party_page": {
-            "id": "tr-pty-ltd",
-            "name": "Tr Pty Ltd"
-          }
-        }
-      ]
+        "TR PTY LTD"
+      ],
+      "status": "Assessment ceased"
     },
     {
       "merger_id": "WA-30019",
       "merger_name": "KKR \u2013 Fresha.com",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Flamingo UK LP",
-          "identifier_type": null,
-          "identifier": "UK Company Registration Number  LP024570",
-          "party_page": {
-            "id": "flamingo-uk-lp",
-            "name": "Flamingo UK LP"
-          }
-        },
-        {
-          "name": "Flamingo UK GP Ltd",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "flamingo-uk-gp-ltd",
-            "name": "Flamingo UK GP Ltd"
-          }
-        }
+        "Flamingo UK LP",
+        "Flamingo UK GP Ltd"
       ],
       "targets": [
-        {
-          "name": "Fresha.com Holding Inc.",
-          "identifier_type": null,
-          "identifier": "British Virgin Islands Company Registration Number  1862061",
-          "party_page": {
-            "id": "fresha-com-holding-inc",
-            "name": "Fresha.com Holding Inc."
-          }
-        }
-      ]
+        "Fresha.com Holding Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

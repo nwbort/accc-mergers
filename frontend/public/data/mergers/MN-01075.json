@@ -111,94 +111,35 @@
     {
       "merger_id": "MN-40012",
       "merger_name": "Eli Lilly \u2013 acquisition of licence from CSL Behring",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Eli Lilly and Company",
-          "identifier_type": null,
-          "identifier": "350470950 (IRS Employer Identification Number)",
-          "canonical": {
-            "id": "eli-lilly-and-company",
-            "name": "Eli Lilly"
-          },
-          "party_page": {
-            "id": "eli-lilly-and-company",
-            "name": "Eli Lilly"
-          }
-        }
+        "Eli Lilly and Company"
       ],
       "targets": [
-        {
-          "name": "CSL Behring LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "csl-behring-llc",
-            "name": "CSL Behring LLC"
-          }
-        }
-      ]
+        "CSL Behring LLC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-15011",
       "merger_name": "Danaher - Masimo",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Danaher Corporation",
-          "identifier_type": null,
-          "identifier": "213594",
-          "canonical": {
-            "id": "danaher-corporation",
-            "name": "Danaher Corporation"
-          },
-          "party_page": {
-            "id": "danaher-corporation",
-            "name": "Danaher Corporation"
-          }
-        }
+        "Danaher Corporation"
       ],
       "targets": [
-        {
-          "name": "Masimo Corporation",
-          "identifier_type": null,
-          "identifier": "2614702",
-          "party_page": {
-            "id": "masimo-corporation",
-            "name": "Masimo Corporation"
-          }
-        }
-      ]
+        "Masimo Corporation"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-01083",
       "merger_name": "Civilmart \u2013 Taylex",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CTC PRECAST PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "12 614 966 059",
-          "party_page": {
-            "id": "ctc-precast-pty-ltd",
-            "name": "Ctc Precast Pty Ltd"
-          }
-        }
+        "CTC PRECAST PTY LTD"
       ],
       "targets": [
-        {
-          "name": "TAYLEX GROUP HOLDING CO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "50 646 051 578",
-          "party_page": {
-            "id": "taylex-group-holding-co-pty-ltd",
-            "name": "Taylex Group Holding Co Pty Ltd"
-          }
-        }
-      ]
+        "TAYLEX GROUP HOLDING CO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

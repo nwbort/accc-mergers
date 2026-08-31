@@ -631,112 +631,37 @@
     {
       "merger_id": "WA-40002",
       "merger_name": "Star Hotels Group \u2013 Yandina Hotel, QLD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "HOTEL MAROOCHYDORE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 140 651 887",
-          "party_page": {
-            "id": "hotel-maroochydore-pty-ltd",
-            "name": "Hotel Maroochydore Pty Ltd"
-          }
-        },
-        {
-          "name": "SCHF PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 644 329 733",
-          "party_page": {
-            "id": "schf-pty-ltd",
-            "name": "Schf Pty Ltd"
-          }
-        }
+        "HOTEL MAROOCHYDORE PTY LTD",
+        "SCHF PTY LTD"
       ],
       "targets": [
-        {
-          "name": "The Trustee for Kingston Family Trust",
-          "identifier_type": "ABN",
-          "identifier": "96 328 946 230",
-          "party_page": {
-            "id": "the-trustee-for-kingston-family-trust",
-            "name": "The Trustee for Kingston Family Trust"
-          }
-        }
-      ]
+        "The Trustee for Kingston Family Trust"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-75015",
       "merger_name": "Star Hotels Group \u2013 Liquor Legends Berserker & Liquor Legends Highway A1, QLD",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "MIGALOO QLD PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "30 600 219 172",
-          "party_page": {
-            "id": "migaloo-qld-pty-ltd",
-            "name": "Migaloo Qld Pty Ltd"
-          }
-        }
+        "MIGALOO QLD PTY LTD"
       ],
       "targets": [
-        {
-          "name": "The Trustee for The Garden Holdings Trust",
-          "identifier_type": "ABN",
-          "identifier": "45 745 542 544",
-          "party_page": {
-            "id": "the-trustee-for-the-garden-holdings-trust",
-            "name": "The Trustee for The Garden Holdings Trust"
-          }
-        }
-      ]
+        "The Trustee for The Garden Holdings Trust"
+      ],
+      "accc_determination": "Not approved"
     },
     {
       "merger_id": "WA-60017",
       "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Entrance Social Club",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "REDCAPE HOTEL GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 139 067 244",
-          "canonical": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          },
-          "party_page": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          }
-        },
-        {
-          "name": "MAHF CUSTODIAN PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "96 619 512 060",
-          "canonical": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          },
-          "party_page": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          }
-        }
+        "REDCAPE HOTEL GROUP PTY LTD",
+        "MAHF CUSTODIAN PTY LTD"
       ],
       "targets": [
-        {
-          "name": "REDBRAN PTY. LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "34 003 920 232",
-          "party_page": {
-            "id": "redbran-pty-limited",
-            "name": "Redbran Pty. Limited"
-          }
-        }
-      ]
+        "REDBRAN PTY. LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

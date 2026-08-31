@@ -178,116 +178,37 @@
     {
       "merger_id": "MN-90009",
       "merger_name": "Trescal \u2013 TR Calibration",
-      "status": "Assessment ceased",
-      "accc_determination": null,
       "acquirers": [
-        {
-          "name": "TRESCAL (AUSTRALIA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "39 117 603 835",
-          "party_page": {
-            "id": "trescal-australia-pty-ltd",
-            "name": "Trescal (Australia) Pty Ltd"
-          }
-        }
+        "TRESCAL (AUSTRALIA) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "TR PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 005 499 721",
-          "party_page": {
-            "id": "tr-pty-ltd",
-            "name": "Tr Pty Ltd"
-          }
-        }
-      ]
+        "TR PTY LTD"
+      ],
+      "status": "Assessment ceased"
     },
     {
       "merger_id": "WA-80025",
       "merger_name": "Black Kite Partners led consortium - DR2",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Galileo BidCo Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "698 274 609",
-          "party_page": {
-            "id": "galileo-bidco-pty-ltd",
-            "name": "Galileo BidCo Pty Ltd"
-          }
-        },
-        {
-          "name": "HGPS-DPE Luxembourg Holdings SCSp",
-          "identifier_type": null,
-          "identifier": "B273812",
-          "party_page": {
-            "id": "hgps-dpe-luxembourg-holdings-scsp",
-            "name": "HGPS-DPE Luxembourg Holdings SCSp"
-          }
-        }
+        "Galileo BidCo Pty Ltd",
+        "HGPS-DPE Luxembourg Holdings SCSp"
       ],
       "targets": [
-        {
-          "name": "DR2 HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "85 671 808 558",
-          "party_page": {
-            "id": "dr2-holdings-pty-ltd",
-            "name": "Dr2 Holdings Pty Ltd"
-          }
-        }
-      ]
+        "DR2 HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-65028",
       "merger_name": "Coles - Paydock",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Retail Payment Solutions Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "89 683 915 657",
-          "canonical": {
-            "id": "coles",
-            "name": "Coles Group"
-          },
-          "party_page": {
-            "id": "coles",
-            "name": "Coles Group"
-          }
-        }
+        "Retail Payment Solutions Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Paydock Holdings Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "31 607 215 163",
-          "canonical": {
-            "id": "paydock",
-            "name": "Paydock"
-          },
-          "party_page": {
-            "id": "paydock",
-            "name": "Paydock"
-          }
-        },
-        {
-          "name": "Paydock AUNZ Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "96 607 219 116",
-          "canonical": {
-            "id": "paydock",
-            "name": "Paydock"
-          },
-          "party_page": {
-            "id": "paydock",
-            "name": "Paydock"
-          }
-        }
-      ]
+        "Paydock Holdings Pty Limited",
+        "Paydock AUNZ Pty Limited"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

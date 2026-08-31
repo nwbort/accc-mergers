@@ -393,117 +393,38 @@
     {
       "merger_id": "WA-40010",
       "merger_name": "Permira and Warburg Pincus - Clearwater Analytics",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "GT Silver BidCo, Inc.",
-          "identifier_type": null,
-          "identifier": "413417606",
-          "party_page": {
-            "id": "gt-silver-bidco-inc",
-            "name": "GT Silver BidCo, Inc."
-          }
-        }
+        "GT Silver BidCo, Inc."
       ],
       "targets": [
-        {
-          "name": "Clearwater Analytics Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "00140838",
-          "canonical": {
-            "id": "clearwater-analytics-llc",
-            "name": "Clearwater Analytics"
-          },
-          "party_page": {
-            "id": "clearwater-analytics-llc",
-            "name": "Clearwater Analytics"
-          }
-        }
-      ]
+        "Clearwater Analytics Holdings, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-35011",
       "merger_name": "Austral Resources Australia \u2013 Lady Loretta mine",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AUSTRAL RESOURCES AUSTRALIA LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "50 142 485 470",
-          "party_page": {
-            "id": "austral-resources-australia-limited",
-            "name": "Austral Resources Australia Limited"
-          }
-        }
+        "AUSTRAL RESOURCES AUSTRALIA LIMITED"
       ],
       "targets": [
-        {
-          "name": "NORANDA PACIFIC PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "65 006 864 802",
-          "party_page": {
-            "id": "noranda-pacific-pty-ltd",
-            "name": "Noranda Pacific Pty Ltd"
-          }
-        },
-        {
-          "name": "Noranda Pacific No. 2 Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "158 936 264",
-          "party_page": {
-            "id": "noranda-pacific-no-2-pty-ltd",
-            "name": "Noranda Pacific No. 2 Pty Ltd"
-          }
-        }
-      ]
+        "NORANDA PACIFIC PTY LTD",
+        "Noranda Pacific No. 2 Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-45001",
       "merger_name": "Paragon Care \u2013 Presidental",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "PARAGON CARE LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "76 064 551 426",
-          "party_page": {
-            "id": "paragon-care-limited",
-            "name": "Paragon Care Limited"
-          }
-        },
-        {
-          "name": "CLIFFORD HALLAM HEALTHCARE PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "38 001 655 554",
-          "party_page": {
-            "id": "clifford-hallam-healthcare-pty-limited",
-            "name": "Clifford Hallam Healthcare Pty Limited"
-          }
-        }
+        "PARAGON CARE LIMITED",
+        "CLIFFORD HALLAM HEALTHCARE PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "ROCKPAC SOUTH PACIFIC PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "40 639 100 422",
-          "party_page": {
-            "id": "rockpac-south-pacific-pty-ltd",
-            "name": "Rockpac South Pacific Pty Ltd"
-          }
-        },
-        {
-          "name": "PRESIDENTAL PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "77 002 697 896",
-          "party_page": {
-            "id": "presidental-pty-limited",
-            "name": "Presidental Pty Limited"
-          }
-        }
-      ]
+        "ROCKPAC SOUTH PACIFIC PTY LTD",
+        "PRESIDENTAL PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

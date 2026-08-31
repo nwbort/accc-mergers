@@ -118,95 +118,36 @@
     {
       "merger_id": "WA-10010",
       "merger_name": "Enverus \u2013 Spatial Business Systems",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Enverus, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "enverus-inc",
-            "name": "Enverus, Inc."
-          }
-        }
+        "Enverus, Inc."
       ],
       "targets": [
-        {
-          "name": "Spatial Business Systems Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "76 125 465 483",
-          "party_page": {
-            "id": "spatial-business-systems-pty-ltd",
-            "name": "Spatial Business Systems Pty Ltd"
-          }
-        },
-        {
-          "name": "SBS Optionco, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "sbs-optionco-llc",
-            "name": "SBS Optionco, LLC"
-          }
-        }
-      ]
+        "Spatial Business Systems Pty Ltd",
+        "SBS Optionco, LLC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-15005",
       "merger_name": "Cvent - ON24",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Cvent Atlanta, LLC",
-          "identifier_type": null,
-          "identifier": "[Delaware corporate file number  5603939]",
-          "party_page": {
-            "id": "cvent-atlanta-llc",
-            "name": "Cvent Atlanta, LLC"
-          }
-        }
+        "Cvent Atlanta, LLC"
       ],
       "targets": [
-        {
-          "name": "ON24, Inc.",
-          "identifier_type": null,
-          "identifier": "[Delaware corporate file number  2843568]",
-          "party_page": {
-            "id": "on24-inc",
-            "name": "ON24, Inc."
-          }
-        }
-      ]
+        "ON24, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25023",
       "merger_name": "EPL - Indovida India",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "EPL Limited",
-          "identifier_type": null,
-          "identifier": "Registered in India, no. L74950MH1982PLC028947",
-          "party_page": {
-            "id": "epl-limited",
-            "name": "EPL Limited"
-          }
-        }
+        "EPL Limited"
       ],
       "targets": [
-        {
-          "name": "Indovida India Private Limited",
-          "identifier_type": null,
-          "identifier": "Registered in India, no. U22203MH2025PTC455949",
-          "party_page": {
-            "id": "indovida-india-private-limited",
-            "name": "Indovida India Private Limited"
-          }
-        }
-      ]
+        "Indovida India Private Limited"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

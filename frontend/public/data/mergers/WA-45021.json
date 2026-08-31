@@ -147,112 +147,37 @@
     {
       "merger_id": "WA-95009",
       "merger_name": "McDonald\u2019s Australia \u2013 McDonald\u2019s Restaurants in Bankstown and Yagoona, NSW",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "MCDONALD'S AUSTRALIA LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "43 008 496 928",
-          "party_page": {
-            "id": "mcdonald-s-australia-limited",
-            "name": "Mcdonald'S Australia Limited"
-          }
-        }
+        "MCDONALD'S AUSTRALIA LIMITED"
       ],
       "targets": [
-        {
-          "name": "LVANT MECCA PTY LIMITED as trustee for CARMICHAEL FAMILY TRUST",
-          "identifier_type": "ACN",
-          "identifier": "601 504 590",
-          "party_page": {
-            "id": "lvant-mecca-pty-limited-as-trustee-for-carmichael-family-trust",
-            "name": "LVANT MECCA PTY LIMITED as trustee for CARMICHAEL FAMILY TRUST"
-          }
-        }
-      ]
+        "LVANT MECCA PTY LIMITED as trustee for CARMICHAEL FAMILY TRUST"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-75003",
       "merger_name": "Ramsay Health Care \u2013 National Capital Private Hospital",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "RAMSAY HEALTH CARE AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "36 003 184 889",
-          "party_page": {
-            "id": "ramsay-health-care-australia-pty-limited",
-            "name": "Ramsay Health Care Australia Pty Limited"
-          }
-        },
-        {
-          "name": "RAMSAY HEALTH CARE INVESTMENTS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "44 078 881 473",
-          "party_page": {
-            "id": "ramsay-health-care-investments-pty-limited",
-            "name": "Ramsay Health Care Investments Pty Limited"
-          }
-        }
+        "RAMSAY HEALTH CARE AUSTRALIA PTY LIMITED",
+        "RAMSAY HEALTH CARE INVESTMENTS PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "HEALTHSCOPE OPERATIONS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "85 006 405 152",
-          "canonical": {
-            "id": "healthscope",
-            "name": "Healthscope"
-          },
-          "party_page": {
-            "id": "healthscope",
-            "name": "Healthscope"
-          }
-        },
-        {
-          "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "80 146 342 814",
-          "canonical": {
-            "id": "healthscope",
-            "name": "Healthscope"
-          },
-          "party_page": {
-            "id": "healthscope",
-            "name": "Healthscope"
-          }
-        }
-      ]
+        "HEALTHSCOPE OPERATIONS PTY LTD",
+        "HEALTHSCOPE MANAGEMENT PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-70018",
       "merger_name": "Restaurant Brands and Yum! Brands \u2013 Taco Bell restaurants",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Taco Ventures Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "697 591 692",
-          "party_page": {
-            "id": "taco-ventures-pty-ltd",
-            "name": "Taco Ventures Pty Ltd"
-          }
-        }
+        "Taco Ventures Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Collins Foods Subsidiary Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "94 616 663 793",
-          "party_page": {
-            "id": "collins-foods-subsidiary-pty-ltd",
-            "name": "Collins Foods Subsidiary Pty Ltd"
-          }
-        }
-      ]
+        "Collins Foods Subsidiary Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

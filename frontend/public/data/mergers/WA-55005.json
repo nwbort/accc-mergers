@@ -124,90 +124,35 @@
     {
       "merger_id": "WA-40010",
       "merger_name": "Permira and Warburg Pincus - Clearwater Analytics",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "GT Silver BidCo, Inc.",
-          "identifier_type": null,
-          "identifier": "413417606",
-          "party_page": {
-            "id": "gt-silver-bidco-inc",
-            "name": "GT Silver BidCo, Inc."
-          }
-        }
+        "GT Silver BidCo, Inc."
       ],
       "targets": [
-        {
-          "name": "Clearwater Analytics Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "00140838",
-          "canonical": {
-            "id": "clearwater-analytics-llc",
-            "name": "Clearwater Analytics"
-          },
-          "party_page": {
-            "id": "clearwater-analytics-llc",
-            "name": "Clearwater Analytics"
-          }
-        }
-      ]
+        "Clearwater Analytics Holdings, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-75010",
       "merger_name": "Zendesk \u2013 Forethought",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Zendesk, Inc.",
-          "identifier_type": null,
-          "identifier": "EIN 264411091",
-          "party_page": {
-            "id": "zendesk-inc",
-            "name": "Zendesk, Inc."
-          }
-        }
+        "Zendesk, Inc."
       ],
       "targets": [
-        {
-          "name": "Forethought Technologies, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "forethought-technologies-inc",
-            "name": "Forethought Technologies, Inc."
-          }
-        }
-      ]
+        "Forethought Technologies, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-05005",
       "merger_name": "Ironbark - Investment in Viola Private Wealth",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "IBWM PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 621 141 026",
-          "party_page": {
-            "id": "ibwm-pty-ltd",
-            "name": "Ibwm Pty Ltd"
-          }
-        }
+        "IBWM PTY LTD"
       ],
       "targets": [
-        {
-          "name": "VIOLA GROUP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "20 680 038 180",
-          "party_page": {
-            "id": "viola-group-holdings-pty-ltd",
-            "name": "Viola Group Holdings Pty Ltd"
-          }
-        }
-      ]
+        "VIOLA GROUP HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

@@ -180,111 +180,36 @@
     {
       "merger_id": "MN-20012",
       "merger_name": "Australian Meat Group - Killara Feedlot",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Australian Meat Group Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "75 168 396 316",
-          "canonical": {
-            "id": "australian-meat-group-inc",
-            "name": "Australian Meat Group Inc"
-          },
-          "party_page": {
-            "id": "australian-meat-group-inc",
-            "name": "Australian Meat Group Inc"
-          }
-        }
+        "Australian Meat Group Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Killara Feedlot Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "18 081 072 746",
-          "party_page": {
-            "id": "killara-feedlot-pty-ltd",
-            "name": "Killara Feedlot Pty Ltd"
-          }
-        }
-      ]
+        "Killara Feedlot Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-50007",
       "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "NDC AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "49 162 955 866",
-          "canonical": {
-            "id": "national-dental-care",
-            "name": "National Dental Care"
-          },
-          "party_page": {
-            "id": "national-dental-care",
-            "name": "National Dental Care"
-          }
-        }
+        "NDC AUSTRALIA PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "The Trustee for the Comfy Dental Trust",
-          "identifier_type": "ABN",
-          "identifier": "59 865 563 072",
-          "party_page": {
-            "id": "the-trustee-for-the-comfy-dental-trust",
-            "name": "The Trustee for the Comfy Dental Trust"
-          }
-        }
-      ]
+        "The Trustee for the Comfy Dental Trust"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25005",
       "merger_name": "Australian Venue Co. \u2013 leasehold and certain other assets of Quay Restaurant, Sydney",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AVC OPERATIONS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "81 607 832 299",
-          "canonical": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          },
-          "party_page": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          }
-        },
-        {
-          "name": "Australian Venue Co. Holdings Limited",
-          "identifier_type": "ABN",
-          "identifier": "90 619 977 070",
-          "canonical": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          },
-          "party_page": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          }
-        }
+        "AVC OPERATIONS PTY LIMITED",
+        "Australian Venue Co. Holdings Limited"
       ],
       "targets": [
-        {
-          "name": "Q.R.A. PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "62 051 433 839",
-          "party_page": {
-            "id": "q-r-a-pty-limited",
-            "name": "Q.R.A. Pty Limited"
-          }
-        }
-      ]
+        "Q.R.A. PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

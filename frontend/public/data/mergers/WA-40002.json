@@ -114,117 +114,38 @@
     {
       "merger_id": "WA-50013",
       "merger_name": "Star Hotels - Fiveways Hotel Toowoomba",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "SGL HOTELS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "74 627 068 526",
-          "party_page": {
-            "id": "sgl-hotels-pty-ltd",
-            "name": "Sgl Hotels Pty Ltd"
-          }
-        },
-        {
-          "name": "SCHF PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 644 329 733",
-          "party_page": {
-            "id": "schf-pty-ltd",
-            "name": "Schf Pty Ltd"
-          }
-        }
+        "SGL HOTELS PTY LTD",
+        "SCHF PTY LTD"
       ],
       "targets": [
-        {
-          "name": "MPG FIVEWAYS PROP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "45 688 881 101",
-          "party_page": {
-            "id": "mpg-fiveways-prop-pty-ltd",
-            "name": "Mpg Fiveways Prop Pty Ltd"
-          }
-        },
-        {
-          "name": "MPG FIVEWAYS OP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "53 688 880 828",
-          "party_page": {
-            "id": "mpg-fiveways-op-pty-ltd",
-            "name": "Mpg Fiveways Op Pty Ltd"
-          }
-        }
-      ]
+        "MPG FIVEWAYS PROP PTY LTD",
+        "MPG FIVEWAYS OP PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-75015",
       "merger_name": "Star Hotels Group \u2013 Liquor Legends Berserker & Liquor Legends Highway A1, QLD",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "MIGALOO QLD PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "30 600 219 172",
-          "party_page": {
-            "id": "migaloo-qld-pty-ltd",
-            "name": "Migaloo Qld Pty Ltd"
-          }
-        }
+        "MIGALOO QLD PTY LTD"
       ],
       "targets": [
-        {
-          "name": "The Trustee for The Garden Holdings Trust",
-          "identifier_type": "ABN",
-          "identifier": "45 745 542 544",
-          "party_page": {
-            "id": "the-trustee-for-the-garden-holdings-trust",
-            "name": "The Trustee for The Garden Holdings Trust"
-          }
-        }
-      ]
+        "The Trustee for The Garden Holdings Trust"
+      ],
+      "accc_determination": "Not approved"
     },
     {
       "merger_id": "MN-10006",
       "merger_name": "Australian Venue Co. \u2013 four licensed venues in metropolitan Sydney (Public House Petersham, The Erko, The Golden Sheaf and Barangaroo House)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AVC Operations Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "81 607 832 299",
-          "canonical": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          },
-          "party_page": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          }
-        }
+        "AVC Operations Pty Limited"
       ],
       "targets": [
-        {
-          "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
-          "identifier_type": "ABN",
-          "identifier": "70 075 074 930",
-          "party_page": {
-            "id": "sherilyn-pty-limited-as-trustee-for-solotrust-unit-trust",
-            "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust"
-          }
-        },
-        {
-          "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust",
-          "identifier_type": "ACN",
-          "identifier": "604 221 801",
-          "party_page": {
-            "id": "barangaroo-pty-limited-as-trustee-for-barangaroo-trust",
-            "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust"
-          }
-        }
-      ]
+        "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
+        "Barangaroo Pty Limited as trustee for Barangaroo Trust"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

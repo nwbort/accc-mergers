@@ -114,122 +114,39 @@
     {
       "merger_id": "WA-40002",
       "merger_name": "Star Hotels Group \u2013 Yandina Hotel, QLD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "HOTEL MAROOCHYDORE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 140 651 887",
-          "party_page": {
-            "id": "hotel-maroochydore-pty-ltd",
-            "name": "Hotel Maroochydore Pty Ltd"
-          }
-        },
-        {
-          "name": "SCHF PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 644 329 733",
-          "party_page": {
-            "id": "schf-pty-ltd",
-            "name": "Schf Pty Ltd"
-          }
-        }
+        "HOTEL MAROOCHYDORE PTY LTD",
+        "SCHF PTY LTD"
       ],
       "targets": [
-        {
-          "name": "The Trustee for Kingston Family Trust",
-          "identifier_type": "ABN",
-          "identifier": "96 328 946 230",
-          "party_page": {
-            "id": "the-trustee-for-kingston-family-trust",
-            "name": "The Trustee for Kingston Family Trust"
-          }
-        }
-      ]
+        "The Trustee for Kingston Family Trust"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-50013",
       "merger_name": "Star Hotels - Fiveways Hotel Toowoomba",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "SGL HOTELS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "74 627 068 526",
-          "party_page": {
-            "id": "sgl-hotels-pty-ltd",
-            "name": "Sgl Hotels Pty Ltd"
-          }
-        },
-        {
-          "name": "SCHF PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 644 329 733",
-          "party_page": {
-            "id": "schf-pty-ltd",
-            "name": "Schf Pty Ltd"
-          }
-        }
+        "SGL HOTELS PTY LTD",
+        "SCHF PTY LTD"
       ],
       "targets": [
-        {
-          "name": "MPG FIVEWAYS PROP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "45 688 881 101",
-          "party_page": {
-            "id": "mpg-fiveways-prop-pty-ltd",
-            "name": "Mpg Fiveways Prop Pty Ltd"
-          }
-        },
-        {
-          "name": "MPG FIVEWAYS OP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "53 688 880 828",
-          "party_page": {
-            "id": "mpg-fiveways-op-pty-ltd",
-            "name": "Mpg Fiveways Op Pty Ltd"
-          }
-        }
-      ]
+        "MPG FIVEWAYS PROP PTY LTD",
+        "MPG FIVEWAYS OP PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70016",
       "merger_name": "Oceania Capital Partners - Hudson Global Resources (Aust)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OCEANIA CAPITAL PARTNERS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "52 111 554 360",
-          "party_page": {
-            "id": "oceania-capital-partners-limited",
-            "name": "Oceania Capital Partners Limited"
-          }
-        },
-        {
-          "name": "K & K RYAN PTY LTD (ACN 623119960) AS TRUSTEE FOR THE K & K RYAN FAMILY TRUST",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "k-k-ryan-pty-ltd-acn-623119960-as-trustee-for-the-k-k-ryan-family-trust",
-            "name": "K & K Ryan Pty Ltd (Acn 623119960) As Trustee For The K & K Ryan Family Trust"
-          }
-        }
+        "OCEANIA CAPITAL PARTNERS LIMITED",
+        "K & K RYAN PTY LTD (ACN 623119960) AS TRUSTEE FOR THE K & K RYAN FAMILY TRUST"
       ],
       "targets": [
-        {
-          "name": "HUDSON HIGHLAND (APAC) PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "14 074 319 396",
-          "party_page": {
-            "id": "hudson-highland-apac-pty-limited",
-            "name": "Hudson Highland (Apac) Pty Limited"
-          }
-        }
-      ]
+        "HUDSON HIGHLAND (APAC) PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

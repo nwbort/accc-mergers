@@ -241,117 +241,38 @@
     {
       "merger_id": "MN-50015",
       "merger_name": "Mastercard - BVNK",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Mastercard Incorporated",
-          "identifier_type": null,
-          "identifier": "3390142",
-          "canonical": {
-            "id": "mastercard-incorporated",
-            "name": "MasterCard"
-          },
-          "party_page": {
-            "id": "mastercard-incorporated",
-            "name": "MasterCard"
-          }
-        },
-        {
-          "name": "Ares UK Holdco 2 Limited",
-          "identifier_type": null,
-          "identifier": "CRN 17107097",
-          "party_page": {
-            "id": "ares-uk-holdco-2-limited",
-            "name": "Ares UK Holdco 2 Limited"
-          }
-        }
+        "Mastercard Incorporated",
+        "Ares UK Holdco 2 Limited"
       ],
       "targets": [
-        {
-          "name": "B Corporation S.A.M",
-          "identifier_type": null,
-          "identifier": "23S09602",
-          "party_page": {
-            "id": "b-corporation-s-a-m",
-            "name": "B Corporation S.A.M"
-          }
-        },
-        {
-          "name": "BVNK Holdings Limited",
-          "identifier_type": null,
-          "identifier": "13922014",
-          "party_page": {
-            "id": "bvnk-holdings-limited",
-            "name": "BVNK Holdings Limited"
-          }
-        }
-      ]
+        "B Corporation S.A.M",
+        "BVNK Holdings Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-50003",
       "merger_name": "Francisco Partners - Sermo",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Sigrun Bidco Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "sigrun-bidco-limited",
-            "name": "Sigrun Bidco Limited"
-          }
-        }
+        "Sigrun Bidco Limited"
       ],
       "targets": [
-        {
-          "name": "Sermo Limited (together with its subsidiaries, \u201cSermo\u201d)",
-          "identifier_type": null,
-          "identifier": "CRN 11755038",
-          "party_page": {
-            "id": "sermo-limited-together-with-its-subsidiaries-sermo",
-            "name": "Sermo Limited (together with its subsidiaries, \u201cSermo\u201d)"
-          }
-        }
-      ]
+        "Sermo Limited (together with its subsidiaries, \u201cSermo\u201d)"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-80025",
       "merger_name": "Black Kite Partners led consortium - DR2",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Galileo BidCo Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "698 274 609",
-          "party_page": {
-            "id": "galileo-bidco-pty-ltd",
-            "name": "Galileo BidCo Pty Ltd"
-          }
-        },
-        {
-          "name": "HGPS-DPE Luxembourg Holdings SCSp",
-          "identifier_type": null,
-          "identifier": "B273812",
-          "party_page": {
-            "id": "hgps-dpe-luxembourg-holdings-scsp",
-            "name": "HGPS-DPE Luxembourg Holdings SCSp"
-          }
-        }
+        "Galileo BidCo Pty Ltd",
+        "HGPS-DPE Luxembourg Holdings SCSp"
       ],
       "targets": [
-        {
-          "name": "DR2 HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "85 671 808 558",
-          "party_page": {
-            "id": "dr2-holdings-pty-ltd",
-            "name": "Dr2 Holdings Pty Ltd"
-          }
-        }
-      ]
+        "DR2 HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

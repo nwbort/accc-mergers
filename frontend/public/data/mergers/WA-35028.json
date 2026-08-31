@@ -119,122 +119,39 @@
     {
       "merger_id": "WA-70019",
       "merger_name": "Cognizant \u2013 Astreya",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Cognizant Domestic Holdings Corporation",
-          "identifier_type": null,
-          "identifier": "Delaware file number 5221744",
-          "party_page": {
-            "id": "cognizant-domestic-holdings-corporation",
-            "name": "Cognizant Domestic Holdings Corporation"
-          }
-        },
-        {
-          "name": "Asteroid Merger Sub, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware file number 10587708",
-          "party_page": {
-            "id": "asteroid-merger-sub-inc",
-            "name": "Asteroid Merger Sub, Inc."
-          }
-        }
+        "Cognizant Domestic Holdings Corporation",
+        "Asteroid Merger Sub, Inc."
       ],
       "targets": [
-        {
-          "name": "Astreya Partners, Inc.",
-          "identifier_type": null,
-          "identifier": "CIN 770570107",
-          "party_page": {
-            "id": "astreya-partners-inc",
-            "name": "Astreya Partners, Inc."
-          }
-        }
-      ]
+        "Astreya Partners, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-75032",
       "merger_name": "Summit Partners \u2013 Keyfactor",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Kite Parent Holdings, LP",
-          "identifier_type": null,
-          "identifier": "10651111",
-          "party_page": {
-            "id": "kite-parent-holdings-lp",
-            "name": "Kite Parent Holdings, LP"
-          }
-        }
+        "Kite Parent Holdings, LP"
       ],
       "targets": [
-        {
-          "name": "KF Parent, Inc.",
-          "identifier_type": null,
-          "identifier": "7187054",
-          "party_page": {
-            "id": "kf-parent-inc",
-            "name": "KF Parent, Inc."
-          }
-        },
-        {
-          "name": "Insight Venture Partners, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "insight-venture-partners-llc",
-            "name": "Insight Venture Partners, LLC"
-          }
-        }
-      ]
+        "KF Parent, Inc.",
+        "Insight Venture Partners, LLC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-15003",
       "merger_name": "Coforge - Encora",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Coforge Limited",
-          "identifier_type": null,
-          "identifier": "L72100HR1992PLC128382",
-          "party_page": {
-            "id": "coforge-limited",
-            "name": "Coforge Limited"
-          }
-        },
-        {
-          "name": "Encora Holdco Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "encora-holdco-limited",
-            "name": "Encora Holdco Limited"
-          }
-        }
+        "Coforge Limited",
+        "Encora Holdco Limited"
       ],
       "targets": [
-        {
-          "name": "Encora US Holdco, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "encora-us-holdco-inc",
-            "name": "Encora US Holdco, Inc"
-          }
-        },
-        {
-          "name": "Encora Holdings Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "encora-holdings-limited",
-            "name": "Encora Holdings Limited"
-          }
-        }
-      ]
+        "Encora US Holdco, Inc",
+        "Encora Holdings Limited"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

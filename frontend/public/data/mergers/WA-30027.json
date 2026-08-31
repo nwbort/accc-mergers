@@ -114,121 +114,38 @@
     {
       "merger_id": "WA-25014",
       "merger_name": "CVC Capital Partners \u2013 The animal nutrition and health division of the DSM-Firmenich Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Essential Bidco B.V.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "essential-bidco-b-v",
-            "name": "Essential Bidco B.V."
-          }
-        },
-        {
-          "name": "Specialty (U.S.) Bidco, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "specialty-u-s-bidco-inc",
-            "name": "Specialty (U.S.) Bidco, Inc."
-          }
-        }
+        "Essential Bidco B.V.",
+        "Specialty (U.S.) Bidco, Inc."
       ],
       "targets": [
-        {
-          "name": "SpecialtyCo US LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "specialtyco-us-llc",
-            "name": "SpecialtyCo US LLC"
-          }
-        },
-        {
-          "name": "Biomin Phytogenics GmbH (Germany)",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "biomin-phytogenics-gmbh-germany",
-            "name": "Biomin Phytogenics GmbH (Germany)"
-          }
-        }
-      ]
+        "SpecialtyCo US LLC",
+        "Biomin Phytogenics GmbH (Germany)"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-45017",
       "merger_name": "Apax Partners LLP \u2013 Sedex Information Exchange Limited",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Smith UK Bidco Limited",
-          "identifier_type": null,
-          "identifier": "UK registration number   17165099",
-          "party_page": {
-            "id": "smith-uk-bidco-limited",
-            "name": "Smith UK Bidco Limited"
-          }
-        }
+        "Smith UK Bidco Limited"
       ],
       "targets": [
-        {
-          "name": "Sedex Information Exchange Limited",
-          "identifier_type": null,
-          "identifier": "UK registration number  14708906",
-          "party_page": {
-            "id": "sedex-information-exchange-limited",
-            "name": "Sedex Information Exchange Limited"
-          }
-        }
-      ]
+        "Sedex Information Exchange Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25033",
       "merger_name": "Bain Capital \u2013 FDH",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BCPE Lightning Buyer, Inc.",
-          "identifier_type": null,
-          "identifier": "US incorporation number  10644291",
-          "party_page": {
-            "id": "bcpe-lightning-buyer-inc",
-            "name": "BCPE Lightning Buyer, Inc."
-          }
-        }
+        "BCPE Lightning Buyer, Inc."
       ],
       "targets": [
-        {
-          "name": "FDH Group Intermediate Holdings, LP",
-          "identifier_type": null,
-          "identifier": "US incorporation number  6336375",
-          "canonical": {
-            "id": "fdh-group",
-            "name": "FDH Group"
-          },
-          "party_page": {
-            "id": "fdh-group",
-            "name": "FDH Group"
-          }
-        },
-        {
-          "name": "FDH Group Intermediate, Inc.",
-          "identifier_type": null,
-          "identifier": "US incorporation number  6310370",
-          "canonical": {
-            "id": "fdh-group",
-            "name": "FDH Group"
-          },
-          "party_page": {
-            "id": "fdh-group",
-            "name": "FDH Group"
-          }
-        }
-      ]
+        "FDH Group Intermediate Holdings, LP",
+        "FDH Group Intermediate, Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

@@ -155,121 +155,38 @@
     {
       "merger_id": "MN-15005",
       "merger_name": "Cvent - ON24",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Cvent Atlanta, LLC",
-          "identifier_type": null,
-          "identifier": "[Delaware corporate file number  5603939]",
-          "party_page": {
-            "id": "cvent-atlanta-llc",
-            "name": "Cvent Atlanta, LLC"
-          }
-        }
+        "Cvent Atlanta, LLC"
       ],
       "targets": [
-        {
-          "name": "ON24, Inc.",
-          "identifier_type": null,
-          "identifier": "[Delaware corporate file number  2843568]",
-          "party_page": {
-            "id": "on24-inc",
-            "name": "ON24, Inc."
-          }
-        }
-      ]
+        "ON24, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-10010",
       "merger_name": "Enverus \u2013 Spatial Business Systems",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Enverus, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "enverus-inc",
-            "name": "Enverus, Inc."
-          }
-        }
+        "Enverus, Inc."
       ],
       "targets": [
-        {
-          "name": "Spatial Business Systems Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "76 125 465 483",
-          "party_page": {
-            "id": "spatial-business-systems-pty-ltd",
-            "name": "Spatial Business Systems Pty Ltd"
-          }
-        },
-        {
-          "name": "SBS Optionco, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "sbs-optionco-llc",
-            "name": "SBS Optionco, LLC"
-          }
-        }
-      ]
+        "Spatial Business Systems Pty Ltd",
+        "SBS Optionco, LLC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25010",
       "merger_name": "INNIO Group \u2013 Enerflex",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "INNIO Jenbacher International B.V.",
-          "identifier_type": null,
-          "identifier": "KVK90210352",
-          "canonical": {
-            "id": "innio",
-            "name": "INNIO"
-          },
-          "party_page": {
-            "id": "innio",
-            "name": "INNIO"
-          }
-        },
-        {
-          "name": "INNIO Jenbacher Netherlands B.V.",
-          "identifier_type": null,
-          "identifier": "KVK90209982",
-          "canonical": {
-            "id": "innio",
-            "name": "INNIO"
-          },
-          "party_page": {
-            "id": "innio",
-            "name": "INNIO"
-          }
-        }
+        "INNIO Jenbacher International B.V.",
+        "INNIO Jenbacher Netherlands B.V."
       ],
       "targets": [
-        {
-          "name": "Exterran (Thailand) Ltd",
-          "identifier_type": null,
-          "identifier": "0105542031616",
-          "party_page": {
-            "id": "exterran-thailand-ltd",
-            "name": "Exterran (Thailand) Ltd"
-          }
-        },
-        {
-          "name": "PT Enerflex (Indonesia)",
-          "identifier_type": null,
-          "identifier": "9120407262914",
-          "party_page": {
-            "id": "pt-enerflex-indonesia",
-            "name": "PT Enerflex (Indonesia)"
-          }
-        }
-      ]
+        "Exterran (Thailand) Ltd",
+        "PT Enerflex (Indonesia)"
+      ],
+      "accc_determination": "Not approved"
     }
   ]
 }

@@ -161,85 +161,27 @@
     {
       "merger_id": "WA-25017",
       "merger_name": "Mayfair Corporation \u2013 Phosphate Hill",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "RYOWA II GPS PTY. LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "16 063 780 058",
-          "party_page": {
-            "id": "ryowa-ii-gps-pty-limited",
-            "name": "Ryowa Ii Gps Pty. Limited"
-          }
-        }
+        "RYOWA II GPS PTY. LIMITED"
       ],
       "targets": [
-        {
-          "name": "PH QUEENSLAND GAS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "12 626 604 000",
-          "party_page": {
-            "id": "ph-queensland-gas-pty-ltd",
-            "name": "Ph Queensland Gas Pty Ltd"
-          }
-        },
-        {
-          "name": "DYNO NOBEL LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "42 004 080 264",
-          "party_page": {
-            "id": "dyno-nobel-limited",
-            "name": "Dyno Nobel Limited"
-          }
-        }
-      ]
+        "PH QUEENSLAND GAS PTY LTD",
+        "DYNO NOBEL LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-45005",
       "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "MA MARINA FUND HOLDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "96 667 241 385",
-          "party_page": {
-            "id": "ma-marina-fund-holdco-pty-ltd",
-            "name": "Ma Marina Fund Holdco Pty Ltd"
-          }
-        },
-        {
-          "name": "MA MARINA FUND TT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "65 666 902 245",
-          "party_page": {
-            "id": "ma-marina-fund-tt-pty-ltd",
-            "name": "Ma Marina Fund Tt Pty Ltd"
-          }
-        }
+        "MA MARINA FUND HOLDCO PTY LTD",
+        "MA MARINA FUND TT PTY LTD"
       ],
       "targets": [
-        {
-          "name": "GGC Marketing Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "32 105 294 228",
-          "party_page": {
-            "id": "ggc-marketing-pty-ltd",
-            "name": "GGC Marketing Pty Ltd"
-          }
-        },
-        {
-          "name": "QUEENSLAND & PACIFIC PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "72 081 370 685",
-          "party_page": {
-            "id": "queensland-pacific-pty-ltd",
-            "name": "Queensland & Pacific Pty. Ltd."
-          }
-        }
-      ]
+        "GGC Marketing Pty Ltd",
+        "QUEENSLAND & PACIFIC PTY. LTD."
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

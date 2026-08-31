@@ -130,90 +130,35 @@
     {
       "merger_id": "MN-90009",
       "merger_name": "Trescal \u2013 TR Calibration",
-      "status": "Assessment ceased",
-      "accc_determination": null,
       "acquirers": [
-        {
-          "name": "TRESCAL (AUSTRALIA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "39 117 603 835",
-          "party_page": {
-            "id": "trescal-australia-pty-ltd",
-            "name": "Trescal (Australia) Pty Ltd"
-          }
-        }
+        "TRESCAL (AUSTRALIA) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "TR PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 005 499 721",
-          "party_page": {
-            "id": "tr-pty-ltd",
-            "name": "Tr Pty Ltd"
-          }
-        }
-      ]
+        "TR PTY LTD"
+      ],
+      "status": "Assessment ceased"
     },
     {
       "merger_id": "MN-01019",
       "merger_name": "Ampol \u2013 EG Australia",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AMPOL RETAIL HOLDING PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "689 777 704",
-          "canonical": {
-            "id": "ampol-petroleum-pty-ltd",
-            "name": "Ampol"
-          },
-          "party_page": {
-            "id": "ampol-petroleum-pty-ltd",
-            "name": "Ampol"
-          }
-        }
+        "AMPOL RETAIL HOLDING PTY LTD"
       ],
       "targets": [
-        {
-          "name": "EG AsiaPac Ltd",
-          "identifier_type": null,
-          "identifier": "11658440",
-          "party_page": {
-            "id": "eg-asiapac-ltd",
-            "name": "EG AsiaPac Ltd"
-          }
-        }
-      ]
+        "EG AsiaPac Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-85005",
       "merger_name": "Altor Fund Manager - Evac Holding Oy",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CAVE BidCo Oy",
-          "identifier_type": null,
-          "identifier": "Business Identity Code 35317614",
-          "party_page": {
-            "id": "cave-bidco-oy",
-            "name": "CAVE BidCo Oy"
-          }
-        }
+        "CAVE BidCo Oy"
       ],
       "targets": [
-        {
-          "name": "Evac Holding Oy",
-          "identifier_type": null,
-          "identifier": "Business Identity Code 28586576",
-          "party_page": {
-            "id": "evac-holding-oy",
-            "name": "Evac Holding Oy"
-          }
-        }
-      ]
+        "Evac Holding Oy"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

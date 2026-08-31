@@ -96,104 +96,37 @@
     {
       "merger_id": "WA-80013",
       "merger_name": "Sydney Water - Windsor Sewerage Scheme Assets",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "SYDNEY WATER CORPORATION",
-          "identifier_type": "ABN",
-          "identifier": "49 776 225 038",
-          "party_page": {
-            "id": "sydney-water-corporation",
-            "name": "Sydney Water Corporation"
-          }
-        }
+        "SYDNEY WATER CORPORATION"
       ],
       "targets": [
-        {
-          "name": "HAWKESBURY CITY COUNCIL",
-          "identifier_type": "ABN",
-          "identifier": "54 659 038 834",
-          "party_page": {
-            "id": "hawkesbury-city-council",
-            "name": "Hawkesbury City Council"
-          }
-        }
-      ]
+        "HAWKESBURY CITY COUNCIL"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-35027",
       "merger_name": "GPS Energy \u2013 Ryowa's interest in Gladstone Power Station Joint Venture",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "GPS ENERGY PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "36 063 207 456",
-          "party_page": {
-            "id": "gps-energy-pty-limited",
-            "name": "Gps Energy Pty Limited"
-          }
-        }
+        "GPS ENERGY PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "RYOWA II GPS PTY. LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "16 063 780 058",
-          "party_page": {
-            "id": "ryowa-ii-gps-pty-limited",
-            "name": "Ryowa Ii Gps Pty. Limited"
-          }
-        }
-      ]
+        "RYOWA II GPS PTY. LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-50029",
       "merger_name": "Centuria Property Funds No. 2 Limited as the responsible entity of Centuria Sydney CBD Prime Office Fund - 680 George St/50 Goulburn St",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Centuria Investment Management (CSPOF) Pty Ltd as trustee of the CSPOF Mid Trust",
-          "identifier_type": "ABN",
-          "identifier": "35 369 738 841",
-          "party_page": {
-            "id": "centuria-investment-management-cspof-pty-ltd-as-trustee-of-the-cspof-mid-trust",
-            "name": "Centuria Investment Management (CSPOF) Pty Ltd as trustee of the CSPOF Mid Trust"
-          }
-        },
-        {
-          "name": "CENTURIA INVESTMENT MANAGEMENT (CSPOF) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "68 696 319 098",
-          "party_page": {
-            "id": "centuria-investment-management-cspof-pty-ltd",
-            "name": "Centuria Investment Management (Cspof) Pty Ltd"
-          }
-        }
+        "Centuria Investment Management (CSPOF) Pty Ltd as trustee of the CSPOF Mid Trust",
+        "CENTURIA INVESTMENT MANAGEMENT (CSPOF) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Latitude Landowner Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "106 533 715",
-          "party_page": {
-            "id": "latitude-landowner-pty-ltd",
-            "name": "Latitude Landowner Pty Ltd"
-          }
-        },
-        {
-          "name": "The Trustee for Latitude Landowning Trust",
-          "identifier_type": "ABN",
-          "identifier": "20 844 678 909",
-          "party_page": {
-            "id": "the-trustee-for-latitude-landowning-trust",
-            "name": "The Trustee for Latitude Landowning Trust"
-          }
-        }
-      ]
+        "Latitude Landowner Pty Ltd",
+        "The Trustee for Latitude Landowning Trust"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

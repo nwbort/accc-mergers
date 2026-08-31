@@ -119,117 +119,38 @@
     {
       "merger_id": "WA-65011",
       "merger_name": "Tony White Group - Sharton Motors Dealerships in Maitland and Port Stephens",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "TWG HUNTER DEALERSHIPS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "18 695 726 348",
-          "party_page": {
-            "id": "twg-hunter-dealerships-pty-ltd",
-            "name": "Twg Hunter Dealerships Pty Ltd"
-          }
-        },
-        {
-          "name": "THE TRUSTEE FOR WHITE KING CORPORATE UNIT TRUST",
-          "identifier_type": "ABN",
-          "identifier": "70 760 893 620",
-          "party_page": {
-            "id": "the-trustee-for-white-king-corporate-unit-trust",
-            "name": "The Trustee For White King Corporate Unit Trust"
-          }
-        }
+        "TWG HUNTER DEALERSHIPS PTY LTD",
+        "THE TRUSTEE FOR WHITE KING CORPORATE UNIT TRUST"
       ],
       "targets": [
-        {
-          "name": "SHARTON MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "55 001 345 384",
-          "party_page": {
-            "id": "sharton-motors-pty-ltd",
-            "name": "Sharton Motors Pty Ltd"
-          }
-        },
-        {
-          "name": "N&M BURTON PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "125 935 944",
-          "party_page": {
-            "id": "n-m-burton-pty-ltd",
-            "name": "N&M Burton Pty Ltd"
-          }
-        }
-      ]
+        "SHARTON MOTORS PTY LTD",
+        "N&M BURTON PTY LTD"
+      ],
+      "accc_determination": "Not approved"
     },
     {
       "merger_id": "WA-25008",
       "merger_name": "Five V Capital - FTP Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OVERWATCH BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 739 970",
-          "party_page": {
-            "id": "overwatch-bidco-pty-ltd",
-            "name": "Overwatch Bidco Pty Ltd"
-          }
-        }
+        "OVERWATCH BIDCO PTY LTD"
       ],
       "targets": [
-        {
-          "name": "FTP GROUP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "82 626 217 614",
-          "party_page": {
-            "id": "ftp-group-holdings-pty-ltd",
-            "name": "Ftp Group Holdings Pty Ltd"
-          }
-        },
-        {
-          "name": "FAARM BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 834 390",
-          "canonical": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          },
-          "party_page": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          }
-        }
-      ]
+        "FTP GROUP HOLDINGS PTY LTD",
+        "FAARM BIDCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-90009",
       "merger_name": "Trescal \u2013 TR Calibration",
-      "status": "Assessment ceased",
-      "accc_determination": null,
       "acquirers": [
-        {
-          "name": "TRESCAL (AUSTRALIA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "39 117 603 835",
-          "party_page": {
-            "id": "trescal-australia-pty-ltd",
-            "name": "Trescal (Australia) Pty Ltd"
-          }
-        }
+        "TRESCAL (AUSTRALIA) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "TR PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 005 499 721",
-          "party_page": {
-            "id": "tr-pty-ltd",
-            "name": "Tr Pty Ltd"
-          }
-        }
-      ]
+        "TR PTY LTD"
+      ],
+      "status": "Assessment ceased"
     }
   ]
 }

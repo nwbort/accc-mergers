@@ -129,94 +129,35 @@
     {
       "merger_id": "MN-01080",
       "merger_name": "L\u2019Or\u00e9al \u2013 Kering Beaut\u00e9",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "L'Oreal S.A.",
-          "identifier_type": null,
-          "identifier": "Paris Trade and Companies Register number 632 012 100",
-          "canonical": {
-            "id": "l-oreal",
-            "name": "L'Oreal"
-          },
-          "party_page": {
-            "id": "l-oreal",
-            "name": "L'Oreal"
-          }
-        }
+        "L'Oreal S.A."
       ],
       "targets": [
-        {
-          "name": "Kering Beaut\u00e9 S.A.S.",
-          "identifier_type": null,
-          "identifier": "Netherlands Chamber of Commerce registration number 33223151",
-          "party_page": {
-            "id": "kering-beaut-s-a-s",
-            "name": "Kering Beaut\u00e9 S.A.S."
-          }
-        }
-      ]
+        "Kering Beaut\u00e9 S.A.S."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25023",
       "merger_name": "EPL - Indovida India",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "EPL Limited",
-          "identifier_type": null,
-          "identifier": "Registered in India, no. L74950MH1982PLC028947",
-          "party_page": {
-            "id": "epl-limited",
-            "name": "EPL Limited"
-          }
-        }
+        "EPL Limited"
       ],
       "targets": [
-        {
-          "name": "Indovida India Private Limited",
-          "identifier_type": null,
-          "identifier": "Registered in India, no. U22203MH2025PTC455949",
-          "party_page": {
-            "id": "indovida-india-private-limited",
-            "name": "Indovida India Private Limited"
-          }
-        }
-      ]
+        "Indovida India Private Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-45011",
       "merger_name": "Signant - ActiGraph",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Signant Health Holding Corp.",
-          "identifier_type": null,
-          "identifier": "Delaware File Number  5354678",
-          "party_page": {
-            "id": "signant-health-holding-corp",
-            "name": "Signant Health Holding Corp."
-          }
-        }
+        "Signant Health Holding Corp."
       ],
       "targets": [
-        {
-          "name": "ActiGraph Holdings, LLC",
-          "identifier_type": null,
-          "identifier": "Delaware File Number  7952013",
-          "canonical": {
-            "id": "actigraph-llc",
-            "name": "ActiGraph"
-          },
-          "party_page": {
-            "id": "actigraph-llc",
-            "name": "ActiGraph"
-          }
-        }
-      ]
+        "ActiGraph Holdings, LLC"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

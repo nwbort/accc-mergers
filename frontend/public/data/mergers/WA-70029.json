@@ -199,103 +199,36 @@
     {
       "merger_id": "WA-10020",
       "merger_name": "Apollo Capital \u2013 Curia",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Apollo Capital Management, L.P.",
-          "identifier_type": null,
-          "identifier": "Registration No. 4293091",
-          "canonical": {
-            "id": "apollo-capital-management-l-p",
-            "name": "Apollo Capital Management, L.P."
-          },
-          "party_page": {
-            "id": "apollo-capital-management-l-p",
-            "name": "Apollo Capital Management, L.P."
-          }
-        }
+        "Apollo Capital Management, L.P."
       ],
       "targets": [
-        {
-          "name": "UIC Parent Corporation",
-          "identifier_type": null,
-          "identifier": "Registration No. 6432344",
-          "party_page": {
-            "id": "uic-parent-corporation",
-            "name": "UIC Parent Corporation"
-          }
-        },
-        {
-          "name": "Curia Global, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "curia-global-inc",
-            "name": "Curia Global, Inc."
-          }
-        }
-      ]
+        "UIC Parent Corporation",
+        "Curia Global, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-45012",
       "merger_name": "Apollo Funds - Nippon Sheet Glass",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Lumina Japan Acquisition Co., Ltd",
-          "identifier_type": null,
-          "identifier": "010401197337",
-          "party_page": {
-            "id": "lumina-japan-acquisition-co-ltd",
-            "name": "Lumina Japan Acquisition Co., Ltd"
-          }
-        }
+        "Lumina Japan Acquisition Co., Ltd"
       ],
       "targets": [
-        {
-          "name": "Nippon Sheet Glass Company, Limited",
-          "identifier_type": null,
-          "identifier": "4010401054474",
-          "party_page": {
-            "id": "nippon-sheet-glass-company-limited",
-            "name": "Nippon Sheet Glass Company, Limited"
-          }
-        }
-      ]
+        "Nippon Sheet Glass Company, Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-05023",
       "merger_name": "Apollo Capital Management \u2013 Questex Holdings Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Apollo Capital Management, L.P.",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "apollo-capital-management-l-p",
-            "name": "Apollo Capital Management, L.P."
-          },
-          "party_page": {
-            "id": "apollo-capital-management-l-p",
-            "name": "Apollo Capital Management, L.P."
-          }
-        }
+        "Apollo Capital Management, L.P."
       ],
       "targets": [
-        {
-          "name": "Questex Holdings Group, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "questex-holdings-group-inc",
-            "name": "Questex Holdings Group, Inc."
-          }
-        }
-      ]
+        "Questex Holdings Group, Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

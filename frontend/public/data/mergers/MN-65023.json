@@ -124,67 +124,25 @@
     {
       "merger_id": "WA-35008",
       "merger_name": "VFMC \u2013 CorVal Land and Operator Trusts",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "TRANSPORT ACCIDENT COMMISSION",
-          "identifier_type": "ABN",
-          "identifier": "22 033 947 623",
-          "party_page": {
-            "id": "transport-accident-commission",
-            "name": "Transport Accident Commission"
-          }
-        },
-        {
-          "name": "VICTORIAN MANAGED INSURANCE AUTHORITY",
-          "identifier_type": "ABN",
-          "identifier": "39 682 497 841",
-          "party_page": {
-            "id": "victorian-managed-insurance-authority",
-            "name": "Victorian Managed Insurance Authority"
-          }
-        }
+        "TRANSPORT ACCIDENT COMMISSION",
+        "VICTORIAN MANAGED INSURANCE AUTHORITY"
       ],
       "targets": [
-        {
-          "name": "CORVAL PARTNERS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "86 130 628 830",
-          "party_page": {
-            "id": "corval-partners-limited",
-            "name": "Corval Partners Limited"
-          }
-        }
-      ]
+        "CORVAL PARTNERS LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-85032",
       "merger_name": "Ares (Bolt S.p.A.) \u2013 Investment in Plenitude",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Bolt S.p.A",
-          "identifier_type": null,
-          "identifier": "Lodi under no. 14245060968",
-          "party_page": {
-            "id": "bolt-s-p-a",
-            "name": "Bolt S.p.A"
-          }
-        }
+        "Bolt S.p.A"
       ],
       "targets": [
-        {
-          "name": "Eni Plenitude S.p.A. Societ\u00e0 Benefit",
-          "identifier_type": null,
-          "identifier": "Lodi under no. 123 000 201 58",
-          "party_page": {
-            "id": "eni-plenitude-s-p-a-societ-benefit",
-            "name": "Eni Plenitude S.p.A. Societ\u00e0 Benefit"
-          }
-        }
-      ]
+        "Eni Plenitude S.p.A. Societ\u00e0 Benefit"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

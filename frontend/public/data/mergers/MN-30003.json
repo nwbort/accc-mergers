@@ -440,112 +440,37 @@
     {
       "merger_id": "WA-20007",
       "merger_name": "Telstra \u2013 Infosys Technologies",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "TELSTRA LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "64 086 174 781",
-          "canonical": {
-            "id": "telstra-limited",
-            "name": "Telstra"
-          },
-          "party_page": {
-            "id": "telstra-limited",
-            "name": "Telstra"
-          }
-        }
+        "TELSTRA LIMITED"
       ],
       "targets": [
-        {
-          "name": "INFOSYS TECHNOLOGIES LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "52 090 591 209",
-          "party_page": {
-            "id": "infosys-technologies-limited",
-            "name": "Infosys Technologies Limited"
-          }
-        }
-      ]
+        "INFOSYS TECHNOLOGIES LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-20009",
       "merger_name": "Rocket Software \u2013 Vertica",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Rocket Software AMC UK Ltd",
-          "identifier_type": null,
-          "identifier": "UK Company number 01504593",
-          "party_page": {
-            "id": "rocket-software-amc-uk-ltd",
-            "name": "Rocket Software AMC UK Ltd"
-          }
-        },
-        {
-          "name": "Rocket Software, Inc.",
-          "identifier_type": null,
-          "identifier": "Companies\u2019 Register of Delaware  3506913",
-          "canonical": {
-            "id": "rocket-software-inc",
-            "name": "Rocket Software, Inc."
-          },
-          "party_page": {
-            "id": "rocket-software-inc",
-            "name": "Rocket Software, Inc."
-          }
-        }
+        "Rocket Software AMC UK Ltd",
+        "Rocket Software, Inc."
       ],
       "targets": [
-        {
-          "name": "Micro Focus IP Development Limited",
-          "identifier_type": null,
-          "identifier": "UK Company number 07233975",
-          "party_page": {
-            "id": "micro-focus-ip-development-limited",
-            "name": "Micro Focus IP Development Limited"
-          }
-        },
-        {
-          "name": "Open Text Corporation",
-          "identifier_type": null,
-          "identifier": "10836044",
-          "party_page": {
-            "id": "open-text-corporation",
-            "name": "Open Text Corporation"
-          }
-        }
-      ]
+        "Micro Focus IP Development Limited",
+        "Open Text Corporation"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-70014",
       "merger_name": "Global Infrastructure Management \u2013 TCR",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "GIP V Snow Bidco Limited",
-          "identifier_type": null,
-          "identifier": "UK company number  17059583",
-          "party_page": {
-            "id": "gip-v-snow-bidco-limited",
-            "name": "GIP V Snow Bidco Limited"
-          }
-        }
+        "GIP V Snow Bidco Limited"
       ],
       "targets": [
-        {
-          "name": "Envol Holdings Limited",
-          "identifier_type": null,
-          "identifier": "Jersey registration number  121115",
-          "party_page": {
-            "id": "envol-holdings-limited",
-            "name": "Envol Holdings Limited"
-          }
-        }
-      ]
+        "Envol Holdings Limited"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

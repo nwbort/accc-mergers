@@ -144,117 +144,38 @@
     {
       "merger_id": "WA-15004",
       "merger_name": "Australian Retirement Trust \u2013 Interests in non-rental income (Westfield Sydney)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "QIC TT COMPANY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "27 694 380 973",
-          "party_page": {
-            "id": "qic-tt-company-pty-ltd",
-            "name": "Qic Tt Company Pty Ltd"
-          }
-        }
+        "QIC TT COMPANY PTY LTD"
       ],
       "targets": [
-        {
-          "name": "SCENTRE GROUP TRUST 3",
-          "identifier_type": "ABN",
-          "identifier": "11 517 229 138",
-          "party_page": {
-            "id": "scentre-group-trust-3",
-            "name": "Scentre Group Trust 3"
-          }
-        },
-        {
-          "name": "SCENTRE ALLIANCES PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "53 098 357 521",
-          "party_page": {
-            "id": "scentre-alliances-pty-limited",
-            "name": "Scentre Alliances Pty Limited"
-          }
-        }
-      ]
+        "SCENTRE GROUP TRUST 3",
+        "SCENTRE ALLIANCES PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-45010",
       "merger_name": "Airtree and ors (additional minority co-investors) - Advanced Navigation",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "LGPE SEC S.C. Sp",
-          "identifier_type": null,
-          "identifier": "Luxembourg Company Registration Number: B281514",
-          "party_page": {
-            "id": "lgpe-sec-s-c-sp",
-            "name": "LGPE SEC S.C. Sp"
-          }
-        },
-        {
-          "name": "Crown Growth Opportunities IV SCSp-RAIF",
-          "identifier_type": null,
-          "identifier": "Luxembourg Company Registration Number: B254394",
-          "party_page": {
-            "id": "crown-growth-opportunities-iv-scsp-raif",
-            "name": "Crown Growth Opportunities IV SCSp-RAIF"
-          }
-        }
+        "LGPE SEC S.C. Sp",
+        "Crown Growth Opportunities IV SCSp-RAIF"
       ],
       "targets": [
-        {
-          "name": "ADVANCED NAVIGATION PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "49 156 101 549",
-          "party_page": {
-            "id": "advanced-navigation-pty-ltd",
-            "name": "Advanced Navigation Pty. Ltd."
-          }
-        }
-      ]
+        "ADVANCED NAVIGATION PTY. LTD."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-10006",
       "merger_name": "Australian Venue Co. \u2013 four licensed venues in metropolitan Sydney (Public House Petersham, The Erko, The Golden Sheaf and Barangaroo House)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AVC Operations Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "81 607 832 299",
-          "canonical": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          },
-          "party_page": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          }
-        }
+        "AVC Operations Pty Limited"
       ],
       "targets": [
-        {
-          "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
-          "identifier_type": "ABN",
-          "identifier": "70 075 074 930",
-          "party_page": {
-            "id": "sherilyn-pty-limited-as-trustee-for-solotrust-unit-trust",
-            "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust"
-          }
-        },
-        {
-          "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust",
-          "identifier_type": "ACN",
-          "identifier": "604 221 801",
-          "party_page": {
-            "id": "barangaroo-pty-limited-as-trustee-for-barangaroo-trust",
-            "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust"
-          }
-        }
-      ]
+        "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
+        "Barangaroo Pty Limited as trustee for Barangaroo Trust"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

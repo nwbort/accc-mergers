@@ -111,104 +111,37 @@
     {
       "merger_id": "WA-60006",
       "merger_name": "Re.Group \u2013 Scouts Queensland Recycling Centre Site",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "RETURN IT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "61 615 434 869",
-          "party_page": {
-            "id": "return-it-pty-ltd",
-            "name": "Return It Pty Ltd"
-          }
-        }
+        "RETURN IT PTY LTD"
       ],
       "targets": [
-        {
-          "name": "THE SCOUT ASSOCIATION OF AUSTRALIA, SOUTH AUSTRALIAN BRANCH INCORPORATED",
-          "identifier_type": "ABN",
-          "identifier": "35 621 021 366",
-          "party_page": {
-            "id": "the-scout-association-of-australia-south-australian-branch-incorporated",
-            "name": "The Scout Association Of Australia, South Australian Branch Incorporated"
-          }
-        }
-      ]
+        "THE SCOUT ASSOCIATION OF AUSTRALIA, SOUTH AUSTRALIAN BRANCH INCORPORATED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-65005",
       "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
-      "status": "Under assessment",
-      "accc_determination": null,
       "acquirers": [
-        {
-          "name": "INSURANCE AUSTRALIA GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "60 090 739 923",
-          "party_page": {
-            "id": "insurance-australia-group-limited",
-            "name": "Insurance Australia Group Limited"
-          }
-        }
+        "INSURANCE AUSTRALIA GROUP LIMITED"
       ],
       "targets": [
-        {
-          "name": "RAC INSURANCE PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "59 094 685 882",
-          "party_page": {
-            "id": "rac-insurance-pty-limited",
-            "name": "Rac Insurance Pty Limited"
-          }
-        },
-        {
-          "name": "RACI PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "40 008 671 805",
-          "party_page": {
-            "id": "raci-pty-limited",
-            "name": "Raci Pty Limited"
-          }
-        }
-      ]
+        "RAC INSURANCE PTY LIMITED",
+        "RACI PTY LIMITED"
+      ],
+      "status": "Under assessment"
     },
     {
       "merger_id": "WA-50014",
       "merger_name": "Searchlight Capital Partners - Additional interest in KORE Group Holdings Inc.",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Searchlight Capital IV LP",
-          "identifier_type": null,
-          "identifier": "US SEC  0001954453",
-          "party_page": {
-            "id": "searchlight-capital-iv-lp",
-            "name": "Searchlight Capital IV LP"
-          }
-        },
-        {
-          "name": "KONA Merger Sub Co.",
-          "identifier_type": null,
-          "identifier": "Delaware  10525073",
-          "party_page": {
-            "id": "kona-merger-sub-co",
-            "name": "KONA Merger Sub Co."
-          }
-        }
+        "Searchlight Capital IV LP",
+        "KONA Merger Sub Co."
       ],
       "targets": [
-        {
-          "name": "KORE Group Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware  5388903",
-          "party_page": {
-            "id": "kore-group-holdings-inc",
-            "name": "KORE Group Holdings, Inc."
-          }
-        }
-      ]
+        "KORE Group Holdings, Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

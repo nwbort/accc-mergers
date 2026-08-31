@@ -139,99 +139,36 @@
     {
       "merger_id": "MN-40012",
       "merger_name": "Eli Lilly \u2013 acquisition of licence from CSL Behring",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Eli Lilly and Company",
-          "identifier_type": null,
-          "identifier": "350470950 (IRS Employer Identification Number)",
-          "canonical": {
-            "id": "eli-lilly-and-company",
-            "name": "Eli Lilly"
-          },
-          "party_page": {
-            "id": "eli-lilly-and-company",
-            "name": "Eli Lilly"
-          }
-        }
+        "Eli Lilly and Company"
       ],
       "targets": [
-        {
-          "name": "CSL Behring LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "csl-behring-llc",
-            "name": "CSL Behring LLC"
-          }
-        }
-      ]
+        "CSL Behring LLC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70007",
       "merger_name": "Platinum Equity Group \u2013 Burke",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Advance Holdings II, LLC",
-          "identifier_type": null,
-          "identifier": "Delaware ID  10496142",
-          "party_page": {
-            "id": "advance-holdings-ii-llc",
-            "name": "Advance Holdings II, LLC"
-          }
-        }
+        "Advance Holdings II, LLC"
       ],
       "targets": [
-        {
-          "name": "BCI Acquisitions, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware ID  6389940",
-          "party_page": {
-            "id": "bci-acquisitions-inc",
-            "name": "BCI Acquisitions, Inc."
-          }
-        }
-      ]
+        "BCI Acquisitions, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-60010",
       "merger_name": "Michelin - Flexitallic",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Compagnie Financi\u00e8re Michelin SAS",
-          "identifier_type": null,
-          "identifier": "SIREN  898 849 153",
-          "party_page": {
-            "id": "compagnie-financi-re-michelin-sas",
-            "name": "Compagnie Financi\u00e8re Michelin SAS"
-          }
-        },
-        {
-          "name": "Fenner America, Inc.",
-          "identifier_type": null,
-          "identifier": "USDOT  3744583",
-          "party_page": {
-            "id": "fenner-america-inc",
-            "name": "Fenner America, Inc."
-          }
-        }
+        "Compagnie Financi\u00e8re Michelin SAS",
+        "Fenner America, Inc."
       ],
       "targets": [
-        {
-          "name": "Flexitallic Group SAS",
-          "identifier_type": null,
-          "identifier": "SIREN  532 742 699",
-          "party_page": {
-            "id": "flexitallic-group-sas",
-            "name": "Flexitallic Group SAS"
-          }
-        }
-      ]
+        "Flexitallic Group SAS"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

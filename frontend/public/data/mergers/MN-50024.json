@@ -152,108 +152,37 @@
     {
       "merger_id": "WA-25017",
       "merger_name": "Mayfair Corporation \u2013 Phosphate Hill",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "RYOWA II GPS PTY. LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "16 063 780 058",
-          "party_page": {
-            "id": "ryowa-ii-gps-pty-limited",
-            "name": "Ryowa Ii Gps Pty. Limited"
-          }
-        }
+        "RYOWA II GPS PTY. LIMITED"
       ],
       "targets": [
-        {
-          "name": "PH QUEENSLAND GAS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "12 626 604 000",
-          "party_page": {
-            "id": "ph-queensland-gas-pty-ltd",
-            "name": "Ph Queensland Gas Pty Ltd"
-          }
-        },
-        {
-          "name": "DYNO NOBEL LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "42 004 080 264",
-          "party_page": {
-            "id": "dyno-nobel-limited",
-            "name": "Dyno Nobel Limited"
-          }
-        }
-      ]
+        "PH QUEENSLAND GAS PTY LTD",
+        "DYNO NOBEL LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-90002",
       "merger_name": "NEC Corporation \u2013 CSG Systems International",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "NEC Corporation",
-          "identifier_type": null,
-          "identifier": "Company number 7010401022916",
-          "party_page": {
-            "id": "nec-corporation",
-            "name": "NEC Corporation"
-          }
-        }
+        "NEC Corporation"
       ],
       "targets": [
-        {
-          "name": "CSG Systems International, Inc.",
-          "identifier_type": null,
-          "identifier": "Company number 2444546",
-          "party_page": {
-            "id": "csg-systems-international-inc",
-            "name": "CSG Systems International, Inc."
-          }
-        }
-      ]
+        "CSG Systems International, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-45007",
       "merger_name": "Henkel \u2013 Stahl",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Henkel Global Supply Chain B.V.",
-          "identifier_type": null,
-          "identifier": "Netherlands registration number, 854017447, CCI 60683945",
-          "canonical": {
-            "id": "henkel-ag-co-kgaa",
-            "name": "Henkel"
-          },
-          "party_page": {
-            "id": "henkel-ag-co-kgaa",
-            "name": "Henkel"
-          }
-        }
+        "Henkel Global Supply Chain B.V."
       ],
       "targets": [
-        {
-          "name": "Stahl Holdings B.V.",
-          "identifier_type": null,
-          "identifier": "Netherlands registration number (KVK): 34249320",
-          "party_page": {
-            "id": "stahl-holdings-b-v",
-            "name": "Stahl Holdings B.V."
-          }
-        },
-        {
-          "name": "Stahl Asia Pacific Pte. Ltd.",
-          "identifier_type": null,
-          "identifier": "Singapore registration number: 200606884Z",
-          "party_page": {
-            "id": "stahl-asia-pacific-pte-ltd",
-            "name": "Stahl Asia Pacific Pte. Ltd."
-          }
-        }
-      ]
+        "Stahl Holdings B.V.",
+        "Stahl Asia Pacific Pte. Ltd."
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

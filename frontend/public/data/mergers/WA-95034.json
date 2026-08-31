@@ -92,111 +92,36 @@
     {
       "merger_id": "MN-50019",
       "merger_name": "Coles \u2013 supermarket site in Lidcombe (NSW)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "45 004 189 708",
-          "canonical": {
-            "id": "coles",
-            "name": "Coles Group"
-          },
-          "party_page": {
-            "id": "coles",
-            "name": "Coles Group"
-          }
-        }
+        "COLES SUPERMARKETS AUSTRALIA PTY LTD"
       ],
       "targets": [
-        {
-          "name": "BUILTCOM PROPERTIES 11 PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "21 648 938 710",
-          "party_page": {
-            "id": "builtcom-properties-11-pty-ltd",
-            "name": "Builtcom Properties 11 Pty Ltd"
-          }
-        }
-      ]
+        "BUILTCOM PROPERTIES 11 PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-50030",
       "merger_name": "Symal Group - Shamrock Engineering and Equipment",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "SYMAL GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "72 615 255 466",
-          "party_page": {
-            "id": "symal-group-limited",
-            "name": "Symal Group Limited"
-          }
-        }
+        "SYMAL GROUP LIMITED"
       ],
       "targets": [
-        {
-          "name": "PHOENIX INVESTMENTS QUEENSLAND PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "85 615 285 937",
-          "canonical": {
-            "id": "shamrock-group",
-            "name": "Shamrock Group"
-          },
-          "party_page": {
-            "id": "shamrock-group",
-            "name": "Shamrock Group"
-          }
-        },
-        {
-          "name": "SHAMROCK CIVIL ENGINEERING PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "68 066 655 856",
-          "canonical": {
-            "id": "shamrock-group",
-            "name": "Shamrock Group"
-          },
-          "party_page": {
-            "id": "shamrock-group",
-            "name": "Shamrock Group"
-          }
-        }
-      ]
+        "PHOENIX INVESTMENTS QUEENSLAND PTY LTD",
+        "SHAMROCK CIVIL ENGINEERING PTY. LTD."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-05030",
       "merger_name": "Coles \u2013 supermarket site in Upper Swan, WA",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "45 004 189 708",
-          "canonical": {
-            "id": "coles",
-            "name": "Coles Group"
-          },
-          "party_page": {
-            "id": "coles",
-            "name": "Coles Group"
-          }
-        }
+        "COLES SUPERMARKETS AUSTRALIA PTY LTD"
       ],
       "targets": [
-        {
-          "name": "The Trustee for Saracen Property Holdings Unit Trust",
-          "identifier_type": "ABN",
-          "identifier": "59 505 202 814",
-          "party_page": {
-            "id": "the-trustee-for-saracen-property-holdings-unit-trust",
-            "name": "The Trustee for Saracen Property Holdings Unit Trust"
-          }
-        }
-      ]
+        "The Trustee for Saracen Property Holdings Unit Trust"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

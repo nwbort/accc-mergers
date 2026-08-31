@@ -162,108 +162,37 @@
     {
       "merger_id": "MN-01071",
       "merger_name": "CSE Crosscom \u2013 Progility",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CSE CROSSCOM PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "25 606 614 500",
-          "party_page": {
-            "id": "cse-crosscom-pty-ltd",
-            "name": "Cse Crosscom Pty Ltd"
-          }
-        },
-        {
-          "name": "CSE-Global (Australia) Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "85 109 958 090",
-          "party_page": {
-            "id": "cse-global-australia-pty-ltd",
-            "name": "Cse-Global (Australia) Pty Ltd"
-          }
-        }
+        "CSE CROSSCOM PTY LTD",
+        "CSE-Global (Australia) Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "PROGILITY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "11 131 639 837",
-          "party_page": {
-            "id": "progility-pty-ltd",
-            "name": "Progility Pty Ltd"
-          }
-        }
-      ]
+        "PROGILITY PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-20011",
       "merger_name": "Origin \u2013 Equity stake in Kraken",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "53 143 484 208",
-          "canonical": {
-            "id": "origin-energy-limited",
-            "name": "Origin Energy Limited"
-          },
-          "party_page": {
-            "id": "origin-energy-limited",
-            "name": "Origin Energy Limited"
-          }
-        }
+        "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "CPP Investment Board Private Holdings (4) Inc.",
-          "identifier_type": null,
-          "identifier": "BN  11089340",
-          "party_page": {
-            "id": "cpp-investment-board-private-holdings-4-inc",
-            "name": "CPP Investment Board Private Holdings (4) Inc."
-          }
-        }
-      ]
+        "CPP Investment Board Private Holdings (4) Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-40014",
       "merger_name": "Infosys \u2013 Optimum Healthcare IT",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Infosys Nova Holdings LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "infosys-nova-holdings-llc",
-            "name": "Infosys Nova Holdings LLC"
-          }
-        }
+        "Infosys Nova Holdings LLC"
       ],
       "targets": [
-        {
-          "name": "Optimum Achieve Holdings, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "optimum-achieve-holdings-inc",
-            "name": "Optimum Achieve Holdings, Inc"
-          }
-        },
-        {
-          "name": "OPTIMUM HEALTHCARE IT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "53 689 795 702",
-          "party_page": {
-            "id": "optimum-healthcare-it-pty-ltd",
-            "name": "Optimum Healthcare It Pty Ltd"
-          }
-        }
-      ]
+        "Optimum Achieve Holdings, Inc",
+        "OPTIMUM HEALTHCARE IT PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

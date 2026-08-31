@@ -107,90 +107,35 @@
     {
       "merger_id": "WA-15008",
       "merger_name": "Colliers International Group \u2013 Ayesa Engineering",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Global Garella, S.L.",
-          "identifier_type": null,
-          "identifier": "Spanish Tax Identification Number  B24904989",
-          "party_page": {
-            "id": "global-garella-s-l",
-            "name": "Global Garella, S.L."
-          }
-        }
+        "Global Garella, S.L."
       ],
       "targets": [
-        {
-          "name": "Ayesa Engineering, S.A.U.",
-          "identifier_type": null,
-          "identifier": "Spanish Tax Identification Number  A91379875",
-          "party_page": {
-            "id": "ayesa-engineering-s-a-u",
-            "name": "Ayesa Engineering, S.A.U."
-          }
-        }
-      ]
+        "Ayesa Engineering, S.A.U."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-35001",
       "merger_name": "WSP \u2013 TRC",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "WSP Global Inc.",
-          "identifier_type": null,
-          "identifier": "Corporation No.: 7748388",
-          "canonical": {
-            "id": "wsp-australia-pty-limited",
-            "name": "Wsp Australia Pty Limited"
-          },
-          "party_page": {
-            "id": "wsp-australia-pty-limited",
-            "name": "Wsp Australia Pty Limited"
-          }
-        }
+        "WSP Global Inc."
       ],
       "targets": [
-        {
-          "name": "TRC Companies, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "trc-companies-inc",
-            "name": "TRC Companies, Inc."
-          }
-        }
-      ]
+        "TRC Companies, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-60004",
       "merger_name": "IOR - Delta Specialised Energy assets",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "IOR PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "36 009 653 070",
-          "party_page": {
-            "id": "ior-pty-ltd",
-            "name": "Ior Pty Ltd"
-          }
-        }
+        "IOR PTY LTD"
       ],
       "targets": [
-        {
-          "name": "DELTA SPECIALISED ENERGY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "11 624 642 682",
-          "party_page": {
-            "id": "delta-specialised-energy-pty-ltd",
-            "name": "Delta Specialised Energy Pty Ltd"
-          }
-        }
-      ]
+        "DELTA SPECIALISED ENERGY PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

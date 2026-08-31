@@ -110,90 +110,35 @@
     {
       "merger_id": "WA-40023",
       "merger_name": "AUB \u2013 further interest in KJ Risk",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AUSTBROKERS CORPORATE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "29 107 477 181",
-          "party_page": {
-            "id": "austbrokers-corporate-pty-ltd",
-            "name": "Austbrokers Corporate Pty Ltd"
-          }
-        }
+        "AUSTBROKERS CORPORATE PTY LTD"
       ],
       "targets": [
-        {
-          "name": "KJ RISK GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "15 143 512 387",
-          "party_page": {
-            "id": "kj-risk-group-pty-ltd",
-            "name": "Kj Risk Group Pty Ltd"
-          }
-        }
-      ]
+        "KJ RISK GROUP PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-50020",
       "merger_name": "Envest Group \u2013 MA Insurance Brokers",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "PSC TRANSPORT INSURANCE BROKERS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "47 001 768 190",
-          "party_page": {
-            "id": "psc-transport-insurance-brokers-pty-ltd",
-            "name": "Psc Transport Insurance Brokers Pty Ltd"
-          }
-        }
+        "PSC TRANSPORT INSURANCE BROKERS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "MA INSURANCE BROKERS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "14 650 784 204",
-          "party_page": {
-            "id": "ma-insurance-brokers-pty-limited",
-            "name": "Ma Insurance Brokers Pty Limited"
-          }
-        }
-      ]
+        "MA INSURANCE BROKERS PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70025",
       "merger_name": "Mitsui \u2013 Rhodes Ridge Joint Venture",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "SPC BLUE PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "63 676 457 444",
-          "canonical": {
-            "id": "mitsui-and-co",
-            "name": "Mitsui & Co"
-          },
-          "party_page": {
-            "id": "mitsui-and-co",
-            "name": "Mitsui & Co"
-          }
-        }
+        "SPC BLUE PTY. LTD."
       ],
       "targets": [
-        {
-          "name": "RHODES RIDGE MINING (NO 1) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "55 662 559 417",
-          "party_page": {
-            "id": "rhodes-ridge-mining-no-1-pty-ltd",
-            "name": "Rhodes Ridge Mining (No 1) Pty Ltd"
-          }
-        }
-      ]
+        "RHODES RIDGE MINING (NO 1) PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

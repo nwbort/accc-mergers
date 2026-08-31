@@ -124,108 +124,37 @@
     {
       "merger_id": "WA-75025",
       "merger_name": "M&G Asia Property Fund \u2013 Stockland Coopers Paddock and Willawong Distribution Centre",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "MAP Logistics Holding Trust",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "map-logistics-holding-trust",
-            "name": "MAP Logistics Holding Trust"
-          }
-        }
+        "MAP Logistics Holding Trust"
       ],
       "targets": [
-        {
-          "name": "Stockland M&G Asia Partnership 2",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "stockland-m-g-asia-partnership-2",
-            "name": "Stockland M&G Asia Partnership 2"
-          }
-        }
-      ]
+        "Stockland M&G Asia Partnership 2"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-55012",
       "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Argo Bowen 2 Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 023 619",
-          "canonical": {
-            "id": "argo-qld-pty-ltd",
-            "name": "Mercuria Argo"
-          },
-          "party_page": {
-            "id": "argo-qld-pty-ltd",
-            "name": "Mercuria Argo"
-          }
-        }
+        "Argo Bowen 2 Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "LENTON MANAGEMENT AND MARKETING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "48 149 524 809",
-          "party_page": {
-            "id": "lenton-management-and-marketing-pty-ltd",
-            "name": "Lenton Management And Marketing Pty Ltd"
-          }
-        },
-        {
-          "name": "COKING COAL ONE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "89 615 317 907",
-          "party_page": {
-            "id": "coking-coal-one-pty-ltd",
-            "name": "Coking Coal One Pty Ltd"
-          }
-        }
-      ]
+        "LENTON MANAGEMENT AND MARKETING PTY LTD",
+        "COKING COAL ONE PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70016",
       "merger_name": "Oceania Capital Partners - Hudson Global Resources (Aust)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OCEANIA CAPITAL PARTNERS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "52 111 554 360",
-          "party_page": {
-            "id": "oceania-capital-partners-limited",
-            "name": "Oceania Capital Partners Limited"
-          }
-        },
-        {
-          "name": "K & K RYAN PTY LTD (ACN 623119960) AS TRUSTEE FOR THE K & K RYAN FAMILY TRUST",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "k-k-ryan-pty-ltd-acn-623119960-as-trustee-for-the-k-k-ryan-family-trust",
-            "name": "K & K Ryan Pty Ltd (Acn 623119960) As Trustee For The K & K Ryan Family Trust"
-          }
-        }
+        "OCEANIA CAPITAL PARTNERS LIMITED",
+        "K & K RYAN PTY LTD (ACN 623119960) AS TRUSTEE FOR THE K & K RYAN FAMILY TRUST"
       ],
       "targets": [
-        {
-          "name": "HUDSON HIGHLAND (APAC) PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "14 074 319 396",
-          "party_page": {
-            "id": "hudson-highland-apac-pty-limited",
-            "name": "Hudson Highland (Apac) Pty Limited"
-          }
-        }
-      ]
+        "HUDSON HIGHLAND (APAC) PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

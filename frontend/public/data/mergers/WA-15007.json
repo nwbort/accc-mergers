@@ -131,117 +131,38 @@
     {
       "merger_id": "MN-40005",
       "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Henkel Global Supply Chain B.V.",
-          "identifier_type": null,
-          "identifier": "Netherlands registration number: 854017447, CCI 60683945",
-          "canonical": {
-            "id": "henkel-ag-co-kgaa",
-            "name": "Henkel"
-          },
-          "party_page": {
-            "id": "henkel-ag-co-kgaa",
-            "name": "Henkel"
-          }
-        }
+        "Henkel Global Supply Chain B.V."
       ],
       "targets": [
-        {
-          "name": "Aqua Adhesives I GmbH",
-          "identifier_type": null,
-          "identifier": "Swiss registration number: CH170.4.019.1870",
-          "party_page": {
-            "id": "aqua-adhesives-i-gmbh",
-            "name": "Aqua Adhesives I GmbH"
-          }
-        }
-      ]
+        "Aqua Adhesives I GmbH"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-80001",
       "merger_name": "Alpine Software Group (ASG) \u2013 PlayHQ",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Arena BidCo Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "693 657 484",
-          "party_page": {
-            "id": "arena-bidco-pty-ltd",
-            "name": "Arena BidCo Pty Ltd"
-          }
-        }
+        "Arena BidCo Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "RFGI GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "55 630 028 974",
-          "party_page": {
-            "id": "rfgi-group-pty-ltd",
-            "name": "Rfgi Group Pty Ltd"
-          }
-        },
-        {
-          "name": "GAMEON HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "47 629 422 206",
-          "party_page": {
-            "id": "gameon-holdings-pty-ltd",
-            "name": "Gameon Holdings Pty Ltd"
-          }
-        }
-      ]
+        "RFGI GROUP PTY LTD",
+        "GAMEON HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-80007",
       "merger_name": "Arlington Capital Partners \u2013 Eptec Defence Solutions",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Admiral AU Bidco Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 801 195",
-          "party_page": {
-            "id": "admiral-au-bidco-pty-ltd",
-            "name": "Admiral AU Bidco Pty Ltd"
-          }
-        },
-        {
-          "name": "Admiral AU Holdco Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 791 710",
-          "party_page": {
-            "id": "admiral-au-holdco-pty-ltd",
-            "name": "Admiral AU Holdco Pty Ltd"
-          }
-        }
+        "Admiral AU Bidco Pty Ltd",
+        "Admiral AU Holdco Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "EPTEC MARINE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "49 118 319 547",
-          "party_page": {
-            "id": "eptec-marine-pty-ltd",
-            "name": "Eptec Marine Pty Ltd"
-          }
-        },
-        {
-          "name": "EPTEC BIDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "12 638 785 378",
-          "party_page": {
-            "id": "eptec-bidco-pty-ltd",
-            "name": "Eptec Bidco Pty Ltd"
-          }
-        }
-      ]
+        "EPTEC MARINE PTY LTD",
+        "EPTEC BIDCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

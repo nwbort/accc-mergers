@@ -155,98 +155,35 @@
     {
       "merger_id": "MN-85007",
       "merger_name": "Salesforce \u2013 Qualified",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Salesforce, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "salesforce-inc",
-            "name": "Salesforce, Inc"
-          },
-          "party_page": {
-            "id": "salesforce-inc",
-            "name": "Salesforce, Inc"
-          }
-        }
+        "Salesforce, Inc"
       ],
       "targets": [
-        {
-          "name": "Qualified.com, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "qualified-com-inc",
-            "name": "Qualified.com, Inc"
-          }
-        }
-      ]
+        "Qualified.com, Inc"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-95025",
       "merger_name": "Salesforce - Contentful",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Salesforce, Inc.",
-          "identifier_type": null,
-          "identifier": "U.S. EIN: 943320693",
-          "canonical": {
-            "id": "salesforce-inc",
-            "name": "Salesforce, Inc"
-          },
-          "party_page": {
-            "id": "salesforce-inc",
-            "name": "Salesforce, Inc"
-          }
-        }
+        "Salesforce, Inc."
       ],
       "targets": [
-        {
-          "name": "Contentful Global, Inc.",
-          "identifier_type": null,
-          "identifier": "U.S. EIN: 862273457",
-          "party_page": {
-            "id": "contentful-global-inc",
-            "name": "Contentful Global, Inc."
-          }
-        }
-      ]
+        "Contentful Global, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-35003",
       "merger_name": "Salesforce \u2013 Qualified",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "Salesforce, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "salesforce-inc",
-            "name": "Salesforce, Inc"
-          },
-          "party_page": {
-            "id": "salesforce-inc",
-            "name": "Salesforce, Inc"
-          }
-        }
+        "Salesforce, Inc"
       ],
       "targets": [
-        {
-          "name": "Qualified.com, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "qualified-com-inc",
-            "name": "Qualified.com, Inc"
-          }
-        }
-      ]
+        "Qualified.com, Inc"
+      ],
+      "accc_determination": "Not approved"
     }
   ],
   "phase_1_estimate": {

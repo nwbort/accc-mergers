@@ -625,104 +625,37 @@
     {
       "merger_id": "WA-50003",
       "merger_name": "Francisco Partners - Sermo",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Sigrun Bidco Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "sigrun-bidco-limited",
-            "name": "Sigrun Bidco Limited"
-          }
-        }
+        "Sigrun Bidco Limited"
       ],
       "targets": [
-        {
-          "name": "Sermo Limited (together with its subsidiaries, \u201cSermo\u201d)",
-          "identifier_type": null,
-          "identifier": "CRN 11755038",
-          "party_page": {
-            "id": "sermo-limited-together-with-its-subsidiaries-sermo",
-            "name": "Sermo Limited (together with its subsidiaries, \u201cSermo\u201d)"
-          }
-        }
-      ]
+        "Sermo Limited (together with its subsidiaries, \u201cSermo\u201d)"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-65005",
       "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
-      "status": "Under assessment",
-      "accc_determination": null,
       "acquirers": [
-        {
-          "name": "INSURANCE AUSTRALIA GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "60 090 739 923",
-          "party_page": {
-            "id": "insurance-australia-group-limited",
-            "name": "Insurance Australia Group Limited"
-          }
-        }
+        "INSURANCE AUSTRALIA GROUP LIMITED"
       ],
       "targets": [
-        {
-          "name": "RAC INSURANCE PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "59 094 685 882",
-          "party_page": {
-            "id": "rac-insurance-pty-limited",
-            "name": "Rac Insurance Pty Limited"
-          }
-        },
-        {
-          "name": "RACI PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "40 008 671 805",
-          "party_page": {
-            "id": "raci-pty-limited",
-            "name": "Raci Pty Limited"
-          }
-        }
-      ]
+        "RAC INSURANCE PTY LIMITED",
+        "RACI PTY LIMITED"
+      ],
+      "status": "Under assessment"
     },
     {
       "merger_id": "MN-70013",
       "merger_name": "Ventura Motors \u2013 Crown Coaches",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "VENTURA NEWCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 694 822 047",
-          "party_page": {
-            "id": "ventura-newco-pty-ltd",
-            "name": "Ventura Newco Pty Ltd"
-          }
-        }
+        "VENTURA NEWCO PTY LTD"
       ],
       "targets": [
-        {
-          "name": "CROWN HYBRID PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "47 004 550 529",
-          "party_page": {
-            "id": "crown-hybrid-pty-ltd",
-            "name": "Crown Hybrid Pty Ltd"
-          }
-        },
-        {
-          "name": "CROWN COACHES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "48 004 882 213",
-          "party_page": {
-            "id": "crown-coaches-pty-ltd",
-            "name": "Crown Coaches Pty Ltd"
-          }
-        }
-      ]
+        "CROWN HYBRID PTY LTD",
+        "CROWN COACHES PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

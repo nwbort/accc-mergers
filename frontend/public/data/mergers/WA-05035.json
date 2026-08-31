@@ -124,117 +124,38 @@
     {
       "merger_id": "WA-25013",
       "merger_name": "Cinven \u2013 Regenity",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Rosewood AG, LP",
-          "identifier_type": null,
-          "identifier": "LP5500",
-          "party_page": {
-            "id": "rosewood-ag-lp",
-            "name": "Rosewood AG, LP"
-          }
-        }
+        "Rosewood AG, LP"
       ],
       "targets": [
-        {
-          "name": "Collagen Holdings, LLC",
-          "identifier_type": null,
-          "identifier": "DE File Number  7473707",
-          "party_page": {
-            "id": "collagen-holdings-llc",
-            "name": "Collagen Holdings, LLC"
-          }
-        }
-      ]
+        "Collagen Holdings, LLC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-50015",
       "merger_name": "Mastercard - BVNK",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Mastercard Incorporated",
-          "identifier_type": null,
-          "identifier": "3390142",
-          "canonical": {
-            "id": "mastercard-incorporated",
-            "name": "MasterCard"
-          },
-          "party_page": {
-            "id": "mastercard-incorporated",
-            "name": "MasterCard"
-          }
-        },
-        {
-          "name": "Ares UK Holdco 2 Limited",
-          "identifier_type": null,
-          "identifier": "CRN 17107097",
-          "party_page": {
-            "id": "ares-uk-holdco-2-limited",
-            "name": "Ares UK Holdco 2 Limited"
-          }
-        }
+        "Mastercard Incorporated",
+        "Ares UK Holdco 2 Limited"
       ],
       "targets": [
-        {
-          "name": "B Corporation S.A.M",
-          "identifier_type": null,
-          "identifier": "23S09602",
-          "party_page": {
-            "id": "b-corporation-s-a-m",
-            "name": "B Corporation S.A.M"
-          }
-        },
-        {
-          "name": "BVNK Holdings Limited",
-          "identifier_type": null,
-          "identifier": "13922014",
-          "party_page": {
-            "id": "bvnk-holdings-limited",
-            "name": "BVNK Holdings Limited"
-          }
-        }
-      ]
+        "B Corporation S.A.M",
+        "BVNK Holdings Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-80014",
       "merger_name": "ANZ Banking Group - Worldline Australia",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AUSTRALIA AND NEW ZEALAND BANKING GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "11 005 357 522",
-          "party_page": {
-            "id": "australia-and-new-zealand-banking-group-limited",
-            "name": "Australia And New Zealand Banking Group Limited"
-          }
-        }
+        "AUSTRALIA AND NEW ZEALAND BANKING GROUP LIMITED"
       ],
       "targets": [
-        {
-          "name": "Worldline SA",
-          "identifier_type": null,
-          "identifier": "VATIN FR01378901946",
-          "party_page": {
-            "id": "worldline-sa",
-            "name": "Worldline SA"
-          }
-        },
-        {
-          "name": "WORLDLINE AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "50 645 073 034",
-          "party_page": {
-            "id": "worldline-australia-pty-ltd",
-            "name": "Worldline Australia Pty Ltd"
-          }
-        }
-      ]
+        "Worldline SA",
+        "WORLDLINE AUSTRALIA PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

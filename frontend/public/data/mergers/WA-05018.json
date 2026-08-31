@@ -100,121 +100,38 @@
     {
       "merger_id": "WA-25014",
       "merger_name": "CVC Capital Partners \u2013 The animal nutrition and health division of the DSM-Firmenich Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Essential Bidco B.V.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "essential-bidco-b-v",
-            "name": "Essential Bidco B.V."
-          }
-        },
-        {
-          "name": "Specialty (U.S.) Bidco, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "specialty-u-s-bidco-inc",
-            "name": "Specialty (U.S.) Bidco, Inc."
-          }
-        }
+        "Essential Bidco B.V.",
+        "Specialty (U.S.) Bidco, Inc."
       ],
       "targets": [
-        {
-          "name": "SpecialtyCo US LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "specialtyco-us-llc",
-            "name": "SpecialtyCo US LLC"
-          }
-        },
-        {
-          "name": "Biomin Phytogenics GmbH (Germany)",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "biomin-phytogenics-gmbh-germany",
-            "name": "Biomin Phytogenics GmbH (Germany)"
-          }
-        }
-      ]
+        "SpecialtyCo US LLC",
+        "Biomin Phytogenics GmbH (Germany)"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-45007",
       "merger_name": "Henkel \u2013 Stahl",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Henkel Global Supply Chain B.V.",
-          "identifier_type": null,
-          "identifier": "Netherlands registration number, 854017447, CCI 60683945",
-          "canonical": {
-            "id": "henkel-ag-co-kgaa",
-            "name": "Henkel"
-          },
-          "party_page": {
-            "id": "henkel-ag-co-kgaa",
-            "name": "Henkel"
-          }
-        }
+        "Henkel Global Supply Chain B.V."
       ],
       "targets": [
-        {
-          "name": "Stahl Holdings B.V.",
-          "identifier_type": null,
-          "identifier": "Netherlands registration number (KVK): 34249320",
-          "party_page": {
-            "id": "stahl-holdings-b-v",
-            "name": "Stahl Holdings B.V."
-          }
-        },
-        {
-          "name": "Stahl Asia Pacific Pte. Ltd.",
-          "identifier_type": null,
-          "identifier": "Singapore registration number: 200606884Z",
-          "party_page": {
-            "id": "stahl-asia-pacific-pte-ltd",
-            "name": "Stahl Asia Pacific Pte. Ltd."
-          }
-        }
-      ]
+        "Stahl Holdings B.V.",
+        "Stahl Asia Pacific Pte. Ltd."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-40010",
       "merger_name": "Permira and Warburg Pincus - Clearwater Analytics",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "GT Silver BidCo, Inc.",
-          "identifier_type": null,
-          "identifier": "413417606",
-          "party_page": {
-            "id": "gt-silver-bidco-inc",
-            "name": "GT Silver BidCo, Inc."
-          }
-        }
+        "GT Silver BidCo, Inc."
       ],
       "targets": [
-        {
-          "name": "Clearwater Analytics Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "00140838",
-          "canonical": {
-            "id": "clearwater-analytics-llc",
-            "name": "Clearwater Analytics"
-          },
-          "party_page": {
-            "id": "clearwater-analytics-llc",
-            "name": "Clearwater Analytics"
-          }
-        }
-      ]
+        "Clearwater Analytics Holdings, Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

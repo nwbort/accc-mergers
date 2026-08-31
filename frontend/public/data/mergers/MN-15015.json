@@ -147,112 +147,37 @@
     {
       "merger_id": "MN-20009",
       "merger_name": "Rocket Software \u2013 Vertica",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Rocket Software AMC UK Ltd",
-          "identifier_type": null,
-          "identifier": "UK Company number 01504593",
-          "party_page": {
-            "id": "rocket-software-amc-uk-ltd",
-            "name": "Rocket Software AMC UK Ltd"
-          }
-        },
-        {
-          "name": "Rocket Software, Inc.",
-          "identifier_type": null,
-          "identifier": "Companies\u2019 Register of Delaware  3506913",
-          "canonical": {
-            "id": "rocket-software-inc",
-            "name": "Rocket Software, Inc."
-          },
-          "party_page": {
-            "id": "rocket-software-inc",
-            "name": "Rocket Software, Inc."
-          }
-        }
+        "Rocket Software AMC UK Ltd",
+        "Rocket Software, Inc."
       ],
       "targets": [
-        {
-          "name": "Micro Focus IP Development Limited",
-          "identifier_type": null,
-          "identifier": "UK Company number 07233975",
-          "party_page": {
-            "id": "micro-focus-ip-development-limited",
-            "name": "Micro Focus IP Development Limited"
-          }
-        },
-        {
-          "name": "Open Text Corporation",
-          "identifier_type": null,
-          "identifier": "10836044",
-          "party_page": {
-            "id": "open-text-corporation",
-            "name": "Open Text Corporation"
-          }
-        }
-      ]
+        "Micro Focus IP Development Limited",
+        "Open Text Corporation"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-80002",
       "merger_name": "Bain Capital \u2013 MCJ",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BCPE Meta Cayman, L.P.",
-          "identifier_type": null,
-          "identifier": "MC135352",
-          "party_page": {
-            "id": "bcpe-meta-cayman-l-p",
-            "name": "BCPE Meta Cayman, L.P."
-          }
-        }
+        "BCPE Meta Cayman, L.P."
       ],
       "targets": [
-        {
-          "name": "MCJ Co., Ltd.",
-          "identifier_type": null,
-          "identifier": "9030001052005",
-          "party_page": {
-            "id": "mcj-co-ltd",
-            "name": "MCJ Co., Ltd."
-          }
-        }
-      ]
+        "MCJ Co., Ltd."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-55017",
       "merger_name": "Coles - Leasehold interest in shopping centre on Capricorn Highway, Emerald, QLD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "coles",
-            "name": "Coles Group"
-          },
-          "party_page": {
-            "id": "coles",
-            "name": "Coles Group"
-          }
-        }
+        "COLES SUPERMARKETS AUSTRALIA PTY LTD"
       ],
       "targets": [
-        {
-          "name": "BOULDER CAPITAL INVESTMENTS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "48 632 507 996",
-          "party_page": {
-            "id": "boulder-capital-investments-pty-ltd",
-            "name": "Boulder Capital Investments Pty Ltd"
-          }
-        }
-      ]
+        "BOULDER CAPITAL INVESTMENTS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

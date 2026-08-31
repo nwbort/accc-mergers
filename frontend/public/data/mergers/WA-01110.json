@@ -102,104 +102,37 @@
     {
       "merger_id": "WA-30019",
       "merger_name": "KKR \u2013 Fresha.com",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Flamingo UK LP",
-          "identifier_type": null,
-          "identifier": "UK Company Registration Number  LP024570",
-          "party_page": {
-            "id": "flamingo-uk-lp",
-            "name": "Flamingo UK LP"
-          }
-        },
-        {
-          "name": "Flamingo UK GP Ltd",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "flamingo-uk-gp-ltd",
-            "name": "Flamingo UK GP Ltd"
-          }
-        }
+        "Flamingo UK LP",
+        "Flamingo UK GP Ltd"
       ],
       "targets": [
-        {
-          "name": "Fresha.com Holding Inc.",
-          "identifier_type": null,
-          "identifier": "British Virgin Islands Company Registration Number  1862061",
-          "party_page": {
-            "id": "fresha-com-holding-inc",
-            "name": "Fresha.com Holding Inc."
-          }
-        }
-      ]
+        "Fresha.com Holding Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-50014",
       "merger_name": "Searchlight Capital Partners - Additional interest in KORE Group Holdings Inc.",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Searchlight Capital IV LP",
-          "identifier_type": null,
-          "identifier": "US SEC  0001954453",
-          "party_page": {
-            "id": "searchlight-capital-iv-lp",
-            "name": "Searchlight Capital IV LP"
-          }
-        },
-        {
-          "name": "KONA Merger Sub Co.",
-          "identifier_type": null,
-          "identifier": "Delaware  10525073",
-          "party_page": {
-            "id": "kona-merger-sub-co",
-            "name": "KONA Merger Sub Co."
-          }
-        }
+        "Searchlight Capital IV LP",
+        "KONA Merger Sub Co."
       ],
       "targets": [
-        {
-          "name": "KORE Group Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware  5388903",
-          "party_page": {
-            "id": "kore-group-holdings-inc",
-            "name": "KORE Group Holdings, Inc."
-          }
-        }
-      ]
+        "KORE Group Holdings, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-45017",
       "merger_name": "Apax Partners LLP \u2013 Sedex Information Exchange Limited",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Smith UK Bidco Limited",
-          "identifier_type": null,
-          "identifier": "UK registration number   17165099",
-          "party_page": {
-            "id": "smith-uk-bidco-limited",
-            "name": "Smith UK Bidco Limited"
-          }
-        }
+        "Smith UK Bidco Limited"
       ],
       "targets": [
-        {
-          "name": "Sedex Information Exchange Limited",
-          "identifier_type": null,
-          "identifier": "UK registration number  14708906",
-          "party_page": {
-            "id": "sedex-information-exchange-limited",
-            "name": "Sedex Information Exchange Limited"
-          }
-        }
-      ]
+        "Sedex Information Exchange Limited"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

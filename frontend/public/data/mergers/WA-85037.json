@@ -105,113 +105,38 @@
     {
       "merger_id": "WA-25001",
       "merger_name": "Regent Motors Group \u2013 Esperance Motor Group (Esperance Toyota & Ford)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ALBANY MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "95 676 040 341",
-          "party_page": {
-            "id": "albany-motors-pty-ltd",
-            "name": "Albany Motors Pty Ltd"
-          }
-        }
+        "ALBANY MOTORS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Esperance Motor Group Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "57 121 986 016",
-          "party_page": {
-            "id": "esperance-motor-group-pty-ltd",
-            "name": "Esperance Motor Group Pty Ltd"
-          }
-        },
-        {
-          "name": "BUVERIE PTY LTD as trustee for SCHWARZBACK FAMILY TRUST",
-          "identifier_type": "ABN",
-          "identifier": "80 701 405 315",
-          "party_page": {
-            "id": "buverie-pty-ltd-as-trustee-for-schwarzback-family-trust",
-            "name": "BUVERIE PTY LTD as trustee for SCHWARZBACK FAMILY TRUST"
-          }
-        }
-      ]
+        "Esperance Motor Group Pty Ltd",
+        "BUVERIE PTY LTD as trustee for SCHWARZBACK FAMILY TRUST"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-20020",
       "merger_name": "Triton - Integris",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Ivera Bidco B.V.",
-          "identifier_type": null,
-          "identifier": "Dutch Commercial Register  42000883",
-          "party_page": {
-            "id": "ivera-bidco-b-v",
-            "name": "Ivera Bidco B.V."
-          }
-        }
+        "Ivera Bidco B.V."
       ],
       "targets": [
-        {
-          "name": "Protego Holdco B.V.",
-          "identifier_type": null,
-          "identifier": "Dutch Commercial Register  80710417",
-          "party_page": {
-            "id": "protego-holdco-b-v",
-            "name": "Protego Holdco B.V."
-          }
-        },
-        {
-          "name": "Agilitas Protego 2026 Subsidiary Fund LP",
-          "identifier_type": null,
-          "identifier": "Jersey Registry  5028",
-          "party_page": {
-            "id": "agilitas-protego-2026-subsidiary-fund-lp",
-            "name": "Agilitas Protego 2026 Subsidiary Fund LP"
-          }
-        }
-      ]
+        "Protego Holdco B.V.",
+        "Agilitas Protego 2026 Subsidiary Fund LP"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-85017",
       "merger_name": "Regent Motors Group - Lane Group's Mandurah Dealerships",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "MANDURAH AUTO GROUP PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "693 645 699",
-          "party_page": {
-            "id": "mandurah-auto-group-pty-ltd",
-            "name": "Mandurah Auto Group Pty Ltd"
-          }
-        },
-        {
-          "name": "PEEL MOTOR GROUP PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "693 645 742",
-          "party_page": {
-            "id": "peel-motor-group-pty-ltd",
-            "name": "Peel Motor Group Pty Ltd"
-          }
-        }
+        "MANDURAH AUTO GROUP PTY LTD",
+        "PEEL MOTOR GROUP PTY LTD"
       ],
       "targets": [
-        {
-          "name": "WA AUTOMOTIVE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "20 158 702 740",
-          "party_page": {
-            "id": "wa-automotive-pty-ltd",
-            "name": "Wa Automotive Pty Ltd"
-          }
-        }
-      ]
+        "WA AUTOMOTIVE PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

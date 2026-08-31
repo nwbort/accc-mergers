@@ -122,107 +122,36 @@
     {
       "merger_id": "WA-75017",
       "merger_name": "Vets Central - Drovers Vet Hospital",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "VC OPERATIONS (WA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 646 499 005",
-          "canonical": {
-            "id": "vets-central-holdings-pty-ltd",
-            "name": "Vets Central Holdings Pty Ltd"
-          },
-          "party_page": {
-            "id": "vets-central-holdings-pty-ltd",
-            "name": "Vets Central Holdings Pty Ltd"
-          }
-        }
+        "VC OPERATIONS (WA) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Wayne Shipham and Raylene Shipham as trustees for McGuire Family Trust",
-          "identifier_type": "ABN",
-          "identifier": "96 315 737 133",
-          "party_page": {
-            "id": "wayne-shipham-and-raylene-shipham-as-trustees-for-mcguire-family-trust",
-            "name": "Wayne Shipham and Raylene Shipham as trustees for McGuire Family Trust"
-          }
-        },
-        {
-          "name": "DROVERS VET HOSPITAL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "67 159 300 768",
-          "party_page": {
-            "id": "drovers-vet-hospital-pty-ltd",
-            "name": "Drovers Vet Hospital Pty Ltd"
-          }
-        }
-      ]
+        "Wayne Shipham and Raylene Shipham as trustees for McGuire Family Trust",
+        "DROVERS VET HOSPITAL PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-85016",
       "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "VC OPERATIONS (WA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 646 499 005",
-          "canonical": {
-            "id": "vets-central-holdings-pty-ltd",
-            "name": "Vets Central Holdings Pty Ltd"
-          },
-          "party_page": {
-            "id": "vets-central-holdings-pty-ltd",
-            "name": "Vets Central Holdings Pty Ltd"
-          }
-        }
+        "VC OPERATIONS (WA) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "CARRUTHERS, JONATHAN JULIAN",
-          "identifier_type": "ABN",
-          "identifier": "22 148 400 175",
-          "party_page": {
-            "id": "carruthers-jonathan-julian",
-            "name": "Carruthers, Jonathan Julian"
-          }
-        }
-      ]
+        "CARRUTHERS, JONATHAN JULIAN"
+      ],
+      "accc_determination": "Not approved"
     },
     {
       "merger_id": "WA-95008",
       "merger_name": "Vets Central \u2013 West Toowoomba Veterinary Surgery in QLD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "VC OPERATIONS (WA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 646 499 005",
-          "canonical": {
-            "id": "vets-central-holdings-pty-ltd",
-            "name": "Vets Central Holdings Pty Ltd"
-          },
-          "party_page": {
-            "id": "vets-central-holdings-pty-ltd",
-            "name": "Vets Central Holdings Pty Ltd"
-          }
-        }
+        "VC OPERATIONS (WA) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "The trustee for the Burke Family Trust",
-          "identifier_type": "ABN",
-          "identifier": "35 834 715 269",
-          "party_page": {
-            "id": "the-trustee-for-the-burke-family-trust",
-            "name": "The trustee for the Burke Family Trust"
-          }
-        }
-      ]
+        "The trustee for the Burke Family Trust"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

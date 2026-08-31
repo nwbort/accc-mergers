@@ -111,94 +111,35 @@
     {
       "merger_id": "MN-85007",
       "merger_name": "Salesforce \u2013 Qualified",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Salesforce, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "salesforce-inc",
-            "name": "Salesforce, Inc"
-          },
-          "party_page": {
-            "id": "salesforce-inc",
-            "name": "Salesforce, Inc"
-          }
-        }
+        "Salesforce, Inc"
       ],
       "targets": [
-        {
-          "name": "Qualified.com, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "qualified-com-inc",
-            "name": "Qualified.com, Inc"
-          }
-        }
-      ]
+        "Qualified.com, Inc"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-35003",
       "merger_name": "Salesforce \u2013 Qualified",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "Salesforce, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "salesforce-inc",
-            "name": "Salesforce, Inc"
-          },
-          "party_page": {
-            "id": "salesforce-inc",
-            "name": "Salesforce, Inc"
-          }
-        }
+        "Salesforce, Inc"
       ],
       "targets": [
-        {
-          "name": "Qualified.com, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "qualified-com-inc",
-            "name": "Qualified.com, Inc"
-          }
-        }
-      ]
+        "Qualified.com, Inc"
+      ],
+      "accc_determination": "Not approved"
     },
     {
       "merger_id": "MN-85036",
       "merger_name": "SpaceX - Anysphere",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Space Exploration Technologies Corp.",
-          "identifier_type": null,
-          "identifier": "NASDAQ  SPCX",
-          "party_page": {
-            "id": "space-exploration-technologies-corp",
-            "name": "Space Exploration Technologies Corp."
-          }
-        }
+        "Space Exploration Technologies Corp."
       ],
       "targets": [
-        {
-          "name": "Anysphere, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware File Number  6524309",
-          "party_page": {
-            "id": "anysphere-inc",
-            "name": "Anysphere, Inc."
-          }
-        }
-      ]
+        "Anysphere, Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

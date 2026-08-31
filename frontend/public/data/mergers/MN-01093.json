@@ -107,103 +107,36 @@
     {
       "merger_id": "MN-60004",
       "merger_name": "IOR - Delta Specialised Energy assets",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "IOR PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "36 009 653 070",
-          "party_page": {
-            "id": "ior-pty-ltd",
-            "name": "Ior Pty Ltd"
-          }
-        }
+        "IOR PTY LTD"
       ],
       "targets": [
-        {
-          "name": "DELTA SPECIALISED ENERGY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "11 624 642 682",
-          "party_page": {
-            "id": "delta-specialised-energy-pty-ltd",
-            "name": "Delta Specialised Energy Pty Ltd"
-          }
-        }
-      ]
+        "DELTA SPECIALISED ENERGY PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-55012",
       "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Argo Bowen 2 Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 023 619",
-          "canonical": {
-            "id": "argo-qld-pty-ltd",
-            "name": "Mercuria Argo"
-          },
-          "party_page": {
-            "id": "argo-qld-pty-ltd",
-            "name": "Mercuria Argo"
-          }
-        }
+        "Argo Bowen 2 Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "LENTON MANAGEMENT AND MARKETING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "48 149 524 809",
-          "party_page": {
-            "id": "lenton-management-and-marketing-pty-ltd",
-            "name": "Lenton Management And Marketing Pty Ltd"
-          }
-        },
-        {
-          "name": "COKING COAL ONE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "89 615 317 907",
-          "party_page": {
-            "id": "coking-coal-one-pty-ltd",
-            "name": "Coking Coal One Pty Ltd"
-          }
-        }
-      ]
+        "LENTON MANAGEMENT AND MARKETING PTY LTD",
+        "COKING COAL ONE PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-50007",
       "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "NDC AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "49 162 955 866",
-          "canonical": {
-            "id": "national-dental-care",
-            "name": "National Dental Care"
-          },
-          "party_page": {
-            "id": "national-dental-care",
-            "name": "National Dental Care"
-          }
-        }
+        "NDC AUSTRALIA PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "The Trustee for the Comfy Dental Trust",
-          "identifier_type": "ABN",
-          "identifier": "59 865 563 072",
-          "party_page": {
-            "id": "the-trustee-for-the-comfy-dental-trust",
-            "name": "The Trustee for the Comfy Dental Trust"
-          }
-        }
-      ]
+        "The Trustee for the Comfy Dental Trust"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

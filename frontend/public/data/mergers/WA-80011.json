@@ -138,103 +138,36 @@
     {
       "merger_id": "MN-01083",
       "merger_name": "Civilmart \u2013 Taylex",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CTC PRECAST PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "12 614 966 059",
-          "party_page": {
-            "id": "ctc-precast-pty-ltd",
-            "name": "Ctc Precast Pty Ltd"
-          }
-        }
+        "CTC PRECAST PTY LTD"
       ],
       "targets": [
-        {
-          "name": "TAYLEX GROUP HOLDING CO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "50 646 051 578",
-          "party_page": {
-            "id": "taylex-group-holding-co-pty-ltd",
-            "name": "Taylex Group Holding Co Pty Ltd"
-          }
-        }
-      ]
+        "TAYLEX GROUP HOLDING CO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-20010",
       "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "Global Engage Marine Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "693 762 122",
-          "canonical": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          },
-          "party_page": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          }
-        },
-        {
-          "name": "PT Asian Bulk Logistics",
-          "identifier_type": null,
-          "identifier": "NIB   8120012130871",
-          "canonical": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          },
-          "party_page": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          }
-        }
+        "Global Engage Marine Pty Ltd",
+        "PT Asian Bulk Logistics"
       ],
       "targets": [
-        {
-          "name": "ENGAGE MARINE TOPCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "46 675 998 562",
-          "party_page": {
-            "id": "engage-marine-topco-pty-ltd",
-            "name": "Engage Marine Topco Pty Ltd"
-          }
-        }
-      ]
+        "ENGAGE MARINE TOPCO PTY LTD"
+      ],
+      "accc_determination": "Not approved"
     },
     {
       "merger_id": "WA-20003",
       "merger_name": "Carlyle \u2013 Peloton Computer Enterprises",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CG Panther Parentco, L.P.",
-          "identifier_type": null,
-          "identifier": "135095",
-          "party_page": {
-            "id": "cg-panther-parentco-l-p",
-            "name": "CG Panther Parentco, L.P."
-          }
-        }
+        "CG Panther Parentco, L.P."
       ],
       "targets": [
-        {
-          "name": "Peloton Computer Enterprises Ltd.",
-          "identifier_type": null,
-          "identifier": "2023447374  Canada",
-          "party_page": {
-            "id": "peloton-computer-enterprises-ltd",
-            "name": "Peloton Computer Enterprises Ltd."
-          }
-        }
-      ]
+        "Peloton Computer Enterprises Ltd."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

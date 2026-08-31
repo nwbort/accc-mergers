@@ -146,112 +146,37 @@
     {
       "merger_id": "WA-25008",
       "merger_name": "Five V Capital - FTP Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OVERWATCH BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 739 970",
-          "party_page": {
-            "id": "overwatch-bidco-pty-ltd",
-            "name": "Overwatch Bidco Pty Ltd"
-          }
-        }
+        "OVERWATCH BIDCO PTY LTD"
       ],
       "targets": [
-        {
-          "name": "FTP GROUP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "82 626 217 614",
-          "party_page": {
-            "id": "ftp-group-holdings-pty-ltd",
-            "name": "Ftp Group Holdings Pty Ltd"
-          }
-        },
-        {
-          "name": "FAARM BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 834 390",
-          "canonical": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          },
-          "party_page": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          }
-        }
-      ]
+        "FTP GROUP HOLDINGS PTY LTD",
+        "FAARM BIDCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-75009",
       "merger_name": "Charter Hall Holdings - JGS Private Capital",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CHARTER HALL HOLDINGS PTY. LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "15 051 363 547",
-          "canonical": {
-            "id": "charter-hall",
-            "name": "Charter Hall"
-          },
-          "party_page": {
-            "id": "charter-hall",
-            "name": "Charter Hall"
-          }
-        }
+        "CHARTER HALL HOLDINGS PTY. LIMITED"
       ],
       "targets": [
-        {
-          "name": "JGS PRIVATE CAPITAL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "20 602 602 595",
-          "party_page": {
-            "id": "jgs-private-capital-pty-ltd",
-            "name": "Jgs Private Capital Pty Ltd"
-          }
-        },
-        {
-          "name": "J.G. SERVICE PTY. LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "75 008 492 126",
-          "party_page": {
-            "id": "j-g-service-pty-limited",
-            "name": "J.G. Service Pty. Limited"
-          }
-        }
-      ]
+        "JGS PRIVATE CAPITAL PTY LTD",
+        "J.G. SERVICE PTY. LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-70018",
       "merger_name": "Restaurant Brands and Yum! Brands \u2013 Taco Bell restaurants",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Taco Ventures Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "697 591 692",
-          "party_page": {
-            "id": "taco-ventures-pty-ltd",
-            "name": "Taco Ventures Pty Ltd"
-          }
-        }
+        "Taco Ventures Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Collins Foods Subsidiary Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "94 616 663 793",
-          "party_page": {
-            "id": "collins-foods-subsidiary-pty-ltd",
-            "name": "Collins Foods Subsidiary Pty Ltd"
-          }
-        }
-      ]
+        "Collins Foods Subsidiary Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

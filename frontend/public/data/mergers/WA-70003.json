@@ -132,90 +132,35 @@
     {
       "merger_id": "MN-15013",
       "merger_name": "Journey Beyond \u2013 Kakadu Crocodile Hotel",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "JB KAKADU HOTEL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "86 692 273 591",
-          "party_page": {
-            "id": "jb-kakadu-hotel-pty-ltd",
-            "name": "Jb Kakadu Hotel Pty Ltd"
-          }
-        }
+        "JB KAKADU HOTEL PTY LTD"
       ],
       "targets": [
-        {
-          "name": "KAKADU TOURISM (GCH) PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "50 087 366 612",
-          "party_page": {
-            "id": "kakadu-tourism-gch-pty-limited",
-            "name": "Kakadu Tourism (Gch) Pty Limited"
-          }
-        }
-      ]
+        "KAKADU TOURISM (GCH) PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-95002",
       "merger_name": "Abbott Laboratories - Exact Sciences",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Badger Merger Sub I, Inc",
-          "identifier_type": null,
-          "identifier": "10389384",
-          "party_page": {
-            "id": "badger-merger-sub-i-inc",
-            "name": "Badger Merger Sub I, Inc"
-          }
-        }
+        "Badger Merger Sub I, Inc"
       ],
       "targets": [
-        {
-          "name": "Exact Sciences Corporation",
-          "identifier_type": null,
-          "identifier": "020478229",
-          "party_page": {
-            "id": "exact-sciences-corporation",
-            "name": "Exact Sciences Corporation"
-          }
-        }
-      ]
+        "Exact Sciences Corporation"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-55016",
       "merger_name": "Zurich - ClearView",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ZURICH FINANCIAL SERVICES AUSTRALIA LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "11 008 423 372",
-          "canonical": {
-            "id": "zurich-assure-australia-pty-ltd",
-            "name": "Zurich"
-          },
-          "party_page": {
-            "id": "zurich-assure-australia-pty-ltd",
-            "name": "Zurich"
-          }
-        }
+        "ZURICH FINANCIAL SERVICES AUSTRALIA LIMITED"
       ],
       "targets": [
-        {
-          "name": "CLEARVIEW WEALTH LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "83 106 248 248",
-          "party_page": {
-            "id": "clearview-wealth-limited",
-            "name": "Clearview Wealth Limited"
-          }
-        }
-      ]
+        "CLEARVIEW WEALTH LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

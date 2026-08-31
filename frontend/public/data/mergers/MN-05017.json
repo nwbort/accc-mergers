@@ -131,76 +131,26 @@
     {
       "merger_id": "WA-85017",
       "merger_name": "Regent Motors Group - Lane Group's Mandurah Dealerships",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "MANDURAH AUTO GROUP PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "693 645 699",
-          "party_page": {
-            "id": "mandurah-auto-group-pty-ltd",
-            "name": "Mandurah Auto Group Pty Ltd"
-          }
-        },
-        {
-          "name": "PEEL MOTOR GROUP PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "693 645 742",
-          "party_page": {
-            "id": "peel-motor-group-pty-ltd",
-            "name": "Peel Motor Group Pty Ltd"
-          }
-        }
+        "MANDURAH AUTO GROUP PTY LTD",
+        "PEEL MOTOR GROUP PTY LTD"
       ],
       "targets": [
-        {
-          "name": "WA AUTOMOTIVE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "20 158 702 740",
-          "party_page": {
-            "id": "wa-automotive-pty-ltd",
-            "name": "Wa Automotive Pty Ltd"
-          }
-        }
-      ]
+        "WA AUTOMOTIVE PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-75011",
       "merger_name": "Autosports Group - Solitaire Automotive Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AUTOSPORTS GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "54 614 505 261",
-          "party_page": {
-            "id": "autosports-group-limited",
-            "name": "Autosports Group Limited"
-          }
-        }
+        "AUTOSPORTS GROUP LIMITED"
       ],
       "targets": [
-        {
-          "name": "David Smoker",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "david-smoker",
-            "name": "David Smoker"
-          }
-        },
-        {
-          "name": "Russleigh Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "052 977 198",
-          "party_page": {
-            "id": "russleigh-pty-ltd",
-            "name": "Russleigh Pty Ltd"
-          }
-        }
-      ]
+        "David Smoker",
+        "Russleigh Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

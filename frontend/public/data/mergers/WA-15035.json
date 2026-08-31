@@ -132,147 +132,40 @@
     {
       "merger_id": "WA-70010",
       "merger_name": "Waymark Hotels Group \u2013 Warrego Hotel Motel Cunnamulla, Queensland",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Waymark Hotels Properties No 42 Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "692 820 143",
-          "party_page": {
-            "id": "waymark-hotels-properties-no-42-pty-ltd",
-            "name": "Waymark Hotels Properties No 42 Pty Ltd"
-          }
-        },
-        {
-          "name": "WARREGO OP CO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "29 692 796 697",
-          "party_page": {
-            "id": "warrego-op-co-pty-ltd",
-            "name": "Warrego Op Co Pty Ltd"
-          }
-        }
+        "Waymark Hotels Properties No 42 Pty Ltd",
+        "WARREGO OP CO PTY LTD"
       ],
       "targets": [
-        {
-          "name": "G.A.A. Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "131 680 790",
-          "party_page": {
-            "id": "g-a-a-pty-ltd",
-            "name": "G.A.A. Pty Ltd"
-          }
-        }
-      ]
+        "G.A.A. Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25031",
       "merger_name": "Oscars Group \u2013 South Terrace Hotel in Bankstown, NSW",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OSCARS NSW OPS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "19 686 583 451",
-          "canonical": {
-            "id": "oscars-hotels",
-            "name": "Oscars Hotels"
-          },
-          "party_page": {
-            "id": "oscars-hotels",
-            "name": "Oscars Hotels"
-          }
-        },
-        {
-          "name": "The Trustee for THE BANKSTOWN CENTRAL PROPERTY UNIT TRUST",
-          "identifier_type": "ABN",
-          "identifier": "35 764 968 745",
-          "canonical": {
-            "id": "oscars-hotels",
-            "name": "Oscars Hotels"
-          },
-          "party_page": {
-            "id": "oscars-hotels",
-            "name": "Oscars Hotels"
-          }
-        }
+        "OSCARS NSW OPS PTY LTD",
+        "The Trustee for THE BANKSTOWN CENTRAL PROPERTY UNIT TRUST"
       ],
       "targets": [
-        {
-          "name": "The Trustee for Red Lantern Hotel Trust",
-          "identifier_type": "ABN",
-          "identifier": "45 384 307 643",
-          "party_page": {
-            "id": "the-trustee-for-red-lantern-hotel-trust",
-            "name": "The Trustee for Red Lantern Hotel Trust"
-          }
-        },
-        {
-          "name": "REDCAPE HOTEL GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 139 067 244",
-          "canonical": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          },
-          "party_page": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          }
-        }
-      ]
+        "The Trustee for Red Lantern Hotel Trust",
+        "REDCAPE HOTEL GROUP PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-90008",
       "merger_name": "Black Rhino - Club Hotel Motel Roma",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "The Trustee for Light Them Up (Roma) Trust",
-          "identifier_type": "ABN",
-          "identifier": "17 705 523 498",
-          "party_page": {
-            "id": "the-trustee-for-light-them-up-roma-trust",
-            "name": "The Trustee for Light Them Up (Roma) Trust"
-          }
-        },
-        {
-          "name": "BLACK RHINO (CLUB ROMA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "21 693 060 187",
-          "canonical": {
-            "id": "black-rhino-group",
-            "name": "Black Rhino Group"
-          },
-          "party_page": {
-            "id": "black-rhino-group",
-            "name": "Black Rhino Group"
-          }
-        }
+        "The Trustee for Light Them Up (Roma) Trust",
+        "BLACK RHINO (CLUB ROMA) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "SPEEDY COCKTAILS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 619 330 255",
-          "party_page": {
-            "id": "speedy-cocktails-pty-ltd",
-            "name": "Speedy Cocktails Pty Ltd"
-          }
-        },
-        {
-          "name": "The Trustee for THE BARRY WALDRON FAMILY TRUST",
-          "identifier_type": "ABN",
-          "identifier": "95 506 126 845",
-          "party_page": {
-            "id": "the-trustee-for-the-barry-waldron-family-trust",
-            "name": "The Trustee for THE BARRY WALDRON FAMILY TRUST"
-          }
-        }
-      ]
+        "SPEEDY COCKTAILS PTY LTD",
+        "The Trustee for THE BARRY WALDRON FAMILY TRUST"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

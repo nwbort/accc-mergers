@@ -96,117 +96,38 @@
     {
       "merger_id": "WA-65011",
       "merger_name": "Tony White Group - Sharton Motors Dealerships in Maitland and Port Stephens",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "TWG HUNTER DEALERSHIPS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "18 695 726 348",
-          "party_page": {
-            "id": "twg-hunter-dealerships-pty-ltd",
-            "name": "Twg Hunter Dealerships Pty Ltd"
-          }
-        },
-        {
-          "name": "THE TRUSTEE FOR WHITE KING CORPORATE UNIT TRUST",
-          "identifier_type": "ABN",
-          "identifier": "70 760 893 620",
-          "party_page": {
-            "id": "the-trustee-for-white-king-corporate-unit-trust",
-            "name": "The Trustee For White King Corporate Unit Trust"
-          }
-        }
+        "TWG HUNTER DEALERSHIPS PTY LTD",
+        "THE TRUSTEE FOR WHITE KING CORPORATE UNIT TRUST"
       ],
       "targets": [
-        {
-          "name": "SHARTON MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "55 001 345 384",
-          "party_page": {
-            "id": "sharton-motors-pty-ltd",
-            "name": "Sharton Motors Pty Ltd"
-          }
-        },
-        {
-          "name": "N&M BURTON PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "125 935 944",
-          "party_page": {
-            "id": "n-m-burton-pty-ltd",
-            "name": "N&M Burton Pty Ltd"
-          }
-        }
-      ]
+        "SHARTON MOTORS PTY LTD",
+        "N&M BURTON PTY LTD"
+      ],
+      "accc_determination": "Not approved"
     },
     {
       "merger_id": "MN-15011",
       "merger_name": "Danaher - Masimo",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Danaher Corporation",
-          "identifier_type": null,
-          "identifier": "213594",
-          "canonical": {
-            "id": "danaher-corporation",
-            "name": "Danaher Corporation"
-          },
-          "party_page": {
-            "id": "danaher-corporation",
-            "name": "Danaher Corporation"
-          }
-        }
+        "Danaher Corporation"
       ],
       "targets": [
-        {
-          "name": "Masimo Corporation",
-          "identifier_type": null,
-          "identifier": "2614702",
-          "party_page": {
-            "id": "masimo-corporation",
-            "name": "Masimo Corporation"
-          }
-        }
-      ]
+        "Masimo Corporation"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-35002",
       "merger_name": "IFS \u2013 Softeon",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Fjord Merger Sub, Inc.",
-          "identifier_type": null,
-          "identifier": "TIN/EIN  921660460",
-          "party_page": {
-            "id": "fjord-merger-sub-inc",
-            "name": "Fjord Merger Sub, Inc."
-          }
-        },
-        {
-          "name": "IFS North America, Inc.",
-          "identifier_type": null,
-          "identifier": "TIN/EIN  391292200",
-          "party_page": {
-            "id": "ifs-north-america-inc",
-            "name": "IFS North America, Inc."
-          }
-        }
+        "Fjord Merger Sub, Inc.",
+        "IFS North America, Inc."
       ],
       "targets": [
-        {
-          "name": "Softeon Inc.",
-          "identifier_type": null,
-          "identifier": "EIN 541960847",
-          "party_page": {
-            "id": "softeon-inc",
-            "name": "Softeon Inc."
-          }
-        }
-      ]
+        "Softeon Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

@@ -220,142 +220,39 @@
     {
       "merger_id": "WA-15009",
       "merger_name": "MA Financial Group (Redcape Fund) - Hotel Brunswick",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "REDCAPE HOTEL GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 139 067 244",
-          "canonical": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          },
-          "party_page": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          }
-        },
-        {
-          "name": "MAHPT TT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "31 619 297 657",
-          "party_page": {
-            "id": "mahpt-tt-pty-ltd",
-            "name": "Mahpt Tt Pty Ltd"
-          }
-        }
+        "REDCAPE HOTEL GROUP PTY LTD",
+        "MAHPT TT PTY LTD"
       ],
       "targets": [
-        {
-          "name": "BRUNSWICK HOTEL OPCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 656 116 853",
-          "party_page": {
-            "id": "brunswick-hotel-opco-pty-ltd",
-            "name": "Brunswick Hotel Opco Pty Ltd"
-          }
-        },
-        {
-          "name": "The Trustee for Brunswick Hotel Sub-Trust",
-          "identifier_type": "ABN",
-          "identifier": "51 927 228 244",
-          "party_page": {
-            "id": "the-trustee-for-brunswick-hotel-sub-trust",
-            "name": "The Trustee for Brunswick Hotel Sub-Trust"
-          }
-        }
-      ]
+        "BRUNSWICK HOTEL OPCO PTY LTD",
+        "The Trustee for Brunswick Hotel Sub-Trust"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25027",
       "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Arthouse Hotel",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "REDCAPE HOTEL GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 139 067 244",
-          "canonical": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          },
-          "party_page": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          }
-        }
+        "REDCAPE HOTEL GROUP PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Alsimas Pty Limited",
-          "identifier_type": "ACN",
-          "identifier": "650 101 778",
-          "party_page": {
-            "id": "alsimas-pty-limited",
-            "name": "Alsimas Pty Limited"
-          }
-        }
-      ]
+        "Alsimas Pty Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25031",
       "merger_name": "Oscars Group \u2013 South Terrace Hotel in Bankstown, NSW",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OSCARS NSW OPS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "19 686 583 451",
-          "canonical": {
-            "id": "oscars-hotels",
-            "name": "Oscars Hotels"
-          },
-          "party_page": {
-            "id": "oscars-hotels",
-            "name": "Oscars Hotels"
-          }
-        },
-        {
-          "name": "The Trustee for THE BANKSTOWN CENTRAL PROPERTY UNIT TRUST",
-          "identifier_type": "ABN",
-          "identifier": "35 764 968 745",
-          "canonical": {
-            "id": "oscars-hotels",
-            "name": "Oscars Hotels"
-          },
-          "party_page": {
-            "id": "oscars-hotels",
-            "name": "Oscars Hotels"
-          }
-        }
+        "OSCARS NSW OPS PTY LTD",
+        "The Trustee for THE BANKSTOWN CENTRAL PROPERTY UNIT TRUST"
       ],
       "targets": [
-        {
-          "name": "The Trustee for Red Lantern Hotel Trust",
-          "identifier_type": "ABN",
-          "identifier": "45 384 307 643",
-          "party_page": {
-            "id": "the-trustee-for-red-lantern-hotel-trust",
-            "name": "The Trustee for Red Lantern Hotel Trust"
-          }
-        },
-        {
-          "name": "REDCAPE HOTEL GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 139 067 244",
-          "canonical": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          },
-          "party_page": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          }
-        }
-      ]
+        "The Trustee for Red Lantern Hotel Trust",
+        "REDCAPE HOTEL GROUP PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

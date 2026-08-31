@@ -92,103 +92,36 @@
     {
       "merger_id": "WA-40014",
       "merger_name": "Infosys \u2013 Optimum Healthcare IT",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Infosys Nova Holdings LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "infosys-nova-holdings-llc",
-            "name": "Infosys Nova Holdings LLC"
-          }
-        }
+        "Infosys Nova Holdings LLC"
       ],
       "targets": [
-        {
-          "name": "Optimum Achieve Holdings, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "optimum-achieve-holdings-inc",
-            "name": "Optimum Achieve Holdings, Inc"
-          }
-        },
-        {
-          "name": "OPTIMUM HEALTHCARE IT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "53 689 795 702",
-          "party_page": {
-            "id": "optimum-healthcare-it-pty-ltd",
-            "name": "Optimum Healthcare It Pty Ltd"
-          }
-        }
-      ]
+        "Optimum Achieve Holdings, Inc",
+        "OPTIMUM HEALTHCARE IT PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-85007",
       "merger_name": "Salesforce \u2013 Qualified",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Salesforce, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "salesforce-inc",
-            "name": "Salesforce, Inc"
-          },
-          "party_page": {
-            "id": "salesforce-inc",
-            "name": "Salesforce, Inc"
-          }
-        }
+        "Salesforce, Inc"
       ],
       "targets": [
-        {
-          "name": "Qualified.com, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "qualified-com-inc",
-            "name": "Qualified.com, Inc"
-          }
-        }
-      ]
+        "Qualified.com, Inc"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-35003",
       "merger_name": "Salesforce \u2013 Qualified",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "Salesforce, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "salesforce-inc",
-            "name": "Salesforce, Inc"
-          },
-          "party_page": {
-            "id": "salesforce-inc",
-            "name": "Salesforce, Inc"
-          }
-        }
+        "Salesforce, Inc"
       ],
       "targets": [
-        {
-          "name": "Qualified.com, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "qualified-com-inc",
-            "name": "Qualified.com, Inc"
-          }
-        }
-      ]
+        "Qualified.com, Inc"
+      ],
+      "accc_determination": "Not approved"
     }
   ]
 }

@@ -172,103 +172,36 @@
     {
       "merger_id": "MN-70020",
       "merger_name": "CVS Group \u2013 Paws at Prospect Vet and Eyes at Prospect Vet",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "35 667 654 686",
-          "canonical": {
-            "id": "cvs-vets",
-            "name": "CVS Group"
-          },
-          "party_page": {
-            "id": "cvs-vets",
-            "name": "CVS Group"
-          }
-        }
+        "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED"
       ],
       "targets": [
-        {
-          "name": "NEWMAN VET PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "70 633 313 149",
-          "party_page": {
-            "id": "newman-vet-pty-ltd",
-            "name": "Newman Vet Pty Ltd"
-          }
-        }
-      ]
+        "NEWMAN VET PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-95003",
       "merger_name": "CVS Group - Pittwater Animal Hospital",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "35 667 654 686",
-          "canonical": {
-            "id": "cvs-vets",
-            "name": "CVS Group"
-          },
-          "party_page": {
-            "id": "cvs-vets",
-            "name": "CVS Group"
-          }
-        }
+        "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED"
       ],
       "targets": [
-        {
-          "name": "PITTWATER ANIMAL HOSPITAL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "25 001 336 723",
-          "party_page": {
-            "id": "pittwater-animal-hospital-pty-ltd",
-            "name": "Pittwater Animal Hospital Pty Ltd"
-          }
-        }
-      ]
+        "PITTWATER ANIMAL HOSPITAL PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-05026",
       "merger_name": "Mercer Investments (Australia) Limited\u2013 Stockland Residential Rental Partnership",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "MERCER INVESTMENTS (AUSTRALIA) LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "66 008 612 397",
-          "party_page": {
-            "id": "mercer-investments-australia-limited",
-            "name": "Mercer Investments (Australia) Limited"
-          }
-        }
+        "MERCER INVESTMENTS (AUSTRALIA) LIMITED"
       ],
       "targets": [
-        {
-          "name": "One MEA Holdings Pte. Ltd",
-          "identifier_type": null,
-          "identifier": "201923882C",
-          "party_page": {
-            "id": "one-mea-holdings-pte-ltd",
-            "name": "One MEA Holdings Pte. Ltd"
-          }
-        },
-        {
-          "name": "The Trustee for Stockland Residential Rental Partnership Trust",
-          "identifier_type": "ABN",
-          "identifier": "55 773 008 463",
-          "party_page": {
-            "id": "the-trustee-for-stockland-residential-rental-partnership-trust",
-            "name": "The Trustee for Stockland Residential Rental Partnership Trust"
-          }
-        }
-      ]
+        "One MEA Holdings Pte. Ltd",
+        "The Trustee for Stockland Residential Rental Partnership Trust"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

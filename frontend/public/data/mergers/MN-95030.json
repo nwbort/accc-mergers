@@ -141,99 +141,36 @@
     {
       "merger_id": "MN-20011",
       "merger_name": "Origin \u2013 Equity stake in Kraken",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "53 143 484 208",
-          "canonical": {
-            "id": "origin-energy-limited",
-            "name": "Origin Energy Limited"
-          },
-          "party_page": {
-            "id": "origin-energy-limited",
-            "name": "Origin Energy Limited"
-          }
-        }
+        "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "CPP Investment Board Private Holdings (4) Inc.",
-          "identifier_type": null,
-          "identifier": "BN  11089340",
-          "party_page": {
-            "id": "cpp-investment-board-private-holdings-4-inc",
-            "name": "CPP Investment Board Private Holdings (4) Inc."
-          }
-        }
-      ]
+        "CPP Investment Board Private Holdings (4) Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-05007",
       "merger_name": "Eiffel and Eurazeo \u2013 Segula",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Eiffel Investment Group SAS",
-          "identifier_type": null,
-          "identifier": "SIREN 510 813 991",
-          "party_page": {
-            "id": "eiffel-investment-group-sas",
-            "name": "Eiffel Investment Group SAS"
-          }
-        },
-        {
-          "name": "Eurazeo SE",
-          "identifier_type": null,
-          "identifier": "SIREN 692 030 992",
-          "party_page": {
-            "id": "eurazeo-se",
-            "name": "Eurazeo SE"
-          }
-        }
+        "Eiffel Investment Group SAS",
+        "Eurazeo SE"
       ],
       "targets": [
-        {
-          "name": "Segula Holding SAS",
-          "identifier_type": null,
-          "identifier": "SIREN 343 166 393",
-          "party_page": {
-            "id": "segula-holding-sas",
-            "name": "Segula Holding SAS"
-          }
-        }
-      ]
+        "Segula Holding SAS"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-15008",
       "merger_name": "Colliers International Group \u2013 Ayesa Engineering",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Global Garella, S.L.",
-          "identifier_type": null,
-          "identifier": "Spanish Tax Identification Number  B24904989",
-          "party_page": {
-            "id": "global-garella-s-l",
-            "name": "Global Garella, S.L."
-          }
-        }
+        "Global Garella, S.L."
       ],
       "targets": [
-        {
-          "name": "Ayesa Engineering, S.A.U.",
-          "identifier_type": null,
-          "identifier": "Spanish Tax Identification Number  A91379875",
-          "party_page": {
-            "id": "ayesa-engineering-s-a-u",
-            "name": "Ayesa Engineering, S.A.U."
-          }
-        }
-      ]
+        "Ayesa Engineering, S.A.U."
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

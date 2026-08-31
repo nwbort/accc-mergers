@@ -110,99 +110,36 @@
     {
       "merger_id": "WA-15007",
       "merger_name": "Apollo Funds led consortium \u2013 Lecta Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Reed BidCo Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "reed-bidco-limited",
-            "name": "Reed BidCo Limited"
-          }
-        }
+        "Reed BidCo Limited"
       ],
       "targets": [
-        {
-          "name": "Lecta Paper Industries Intermediate Financing S.\u00e0 r.l.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "lecta-paper-industries-intermediate-financing-s-r-l",
-            "name": "Lecta Paper Industries Intermediate Financing S.\u00e0 r.l."
-          }
-        }
-      ]
+        "Lecta Paper Industries Intermediate Financing S.\u00e0 r.l."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-40005",
       "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Henkel Global Supply Chain B.V.",
-          "identifier_type": null,
-          "identifier": "Netherlands registration number: 854017447, CCI 60683945",
-          "canonical": {
-            "id": "henkel-ag-co-kgaa",
-            "name": "Henkel"
-          },
-          "party_page": {
-            "id": "henkel-ag-co-kgaa",
-            "name": "Henkel"
-          }
-        }
+        "Henkel Global Supply Chain B.V."
       ],
       "targets": [
-        {
-          "name": "Aqua Adhesives I GmbH",
-          "identifier_type": null,
-          "identifier": "Swiss registration number: CH170.4.019.1870",
-          "party_page": {
-            "id": "aqua-adhesives-i-gmbh",
-            "name": "Aqua Adhesives I GmbH"
-          }
-        }
-      ]
+        "Aqua Adhesives I GmbH"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-85003",
       "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "NACG WA Acquisition Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "693 678 296",
-          "party_page": {
-            "id": "nacg-wa-acquisition-pty-ltd",
-            "name": "NACG WA Acquisition Pty Ltd"
-          }
-        }
+        "NACG WA Acquisition Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "DCL CORP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "60 633 008 992",
-          "party_page": {
-            "id": "dcl-corp-pty-ltd",
-            "name": "Dcl Corp Pty Ltd"
-          }
-        },
-        {
-          "name": "IRON HIRE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 641 807 589",
-          "party_page": {
-            "id": "iron-hire-pty-ltd",
-            "name": "Iron Hire Pty Ltd"
-          }
-        }
-      ]
+        "DCL CORP PTY LTD",
+        "IRON HIRE PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

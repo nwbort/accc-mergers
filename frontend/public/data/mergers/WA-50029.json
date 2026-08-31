@@ -159,117 +159,38 @@
     {
       "merger_id": "WA-80006",
       "merger_name": "Russell Investment Group \u2013 Zurich Investment Management",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "RUSSELL INVESTMENT GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "92 003 066 859",
-          "party_page": {
-            "id": "russell-investment-group-pty-ltd",
-            "name": "Russell Investment Group Pty Ltd"
-          }
-        }
+        "RUSSELL INVESTMENT GROUP PTY LTD"
       ],
       "targets": [
-        {
-          "name": "ZURICH INVESTMENT MANAGEMENT LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "56 063 278 400",
-          "canonical": {
-            "id": "zurich-assure-australia-pty-ltd",
-            "name": "Zurich"
-          },
-          "party_page": {
-            "id": "zurich-assure-australia-pty-ltd",
-            "name": "Zurich"
-          }
-        }
-      ]
+        "ZURICH INVESTMENT MANAGEMENT LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-45018",
       "merger_name": "Count \u2013 Oracle Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Count Holdings No. 4 Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "48 111 695 357",
-          "party_page": {
-            "id": "count-holdings-no-4-pty-ltd",
-            "name": "Count Holdings No. 4 Pty Ltd"
-          }
-        },
-        {
-          "name": "Count Holdings No. 3 Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "37 696 339 161",
-          "party_page": {
-            "id": "count-holdings-no-3-pty-ltd",
-            "name": "Count Holdings No. 3 Pty Ltd"
-          }
-        }
+        "Count Holdings No. 4 Pty Ltd",
+        "Count Holdings No. 3 Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Tamarama Advisory Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "36 696 563 596",
-          "party_page": {
-            "id": "tamarama-advisory-pty-ltd",
-            "name": "Tamarama Advisory Pty Ltd"
-          }
-        },
-        {
-          "name": "Tamarama Investment Management Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "25 696 539 625",
-          "party_page": {
-            "id": "tamarama-investment-management-pty-ltd",
-            "name": "Tamarama Investment Management Pty Ltd"
-          }
-        }
-      ]
+        "Tamarama Advisory Pty Ltd",
+        "Tamarama Investment Management Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-90007",
       "merger_name": "Volt Managed Investment Trusts \u2013 HMC Energy Transition Platform",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Volt Managed Investment Trust 2",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "volt-managed-investment-trust-2",
-            "name": "Volt Managed Investment Trust 2"
-          }
-        },
-        {
-          "name": "Volt Managed Investment Trust 1",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "volt-managed-investment-trust-1",
-            "name": "Volt Managed Investment Trust 1"
-          }
-        }
+        "Volt Managed Investment Trust 2",
+        "Volt Managed Investment Trust 1"
       ],
       "targets": [
-        {
-          "name": "VOLT HOLDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "54 694 754 062",
-          "party_page": {
-            "id": "volt-holdco-pty-ltd",
-            "name": "Volt Holdco Pty Ltd"
-          }
-        }
-      ]
+        "VOLT HOLDCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

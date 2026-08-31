@@ -108,107 +108,36 @@
     {
       "merger_id": "WA-65018",
       "merger_name": "Blackstone - Medallia",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Blackstone Alternative Credit Advisors LP",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "blackstone-inc",
-            "name": "Blackstone Inc."
-          },
-          "party_page": {
-            "id": "blackstone-inc",
-            "name": "Blackstone Inc."
-          }
-        }
+        "Blackstone Alternative Credit Advisors LP"
       ],
       "targets": [
-        {
-          "name": "Medallia Parent, LP",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "medallia-parent-lp",
-            "name": "Medallia Parent, LP"
-          }
-        }
-      ]
+        "Medallia Parent, LP"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-60008",
       "merger_name": "Warburg Pincus \u2013 Acclime",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Achronite Bidco Ltd",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "achronite-bidco-ltd",
-            "name": "Achronite Bidco Ltd"
-          }
-        }
+        "Achronite Bidco Ltd"
       ],
       "targets": [
-        {
-          "name": "Acclime Holdings HK Limited",
-          "identifier_type": null,
-          "identifier": "BRN  70084973",
-          "canonical": {
-            "id": "acclime-holdings-limited",
-            "name": "Acclime"
-          },
-          "party_page": {
-            "id": "acclime-holdings-limited",
-            "name": "Acclime"
-          }
-        },
-        {
-          "name": "Acclime Holdings Limited",
-          "identifier_type": null,
-          "identifier": "BRN  70084973",
-          "canonical": {
-            "id": "acclime-holdings-limited",
-            "name": "Acclime"
-          },
-          "party_page": {
-            "id": "acclime-holdings-limited",
-            "name": "Acclime"
-          }
-        }
-      ]
+        "Acclime Holdings HK Limited",
+        "Acclime Holdings Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-70012",
       "merger_name": "Quanta - PSD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Quanta Services Australia Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "11 164 311 997",
-          "party_page": {
-            "id": "quanta-services-australia-pty-ltd",
-            "name": "Quanta Services Australia Pty Ltd"
-          }
-        }
+        "Quanta Services Australia Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "PSD Global Holdings Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "634 380 813",
-          "party_page": {
-            "id": "psd-global-holdings-pty-ltd",
-            "name": "PSD Global Holdings Pty Ltd"
-          }
-        }
-      ]
+        "PSD Global Holdings Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

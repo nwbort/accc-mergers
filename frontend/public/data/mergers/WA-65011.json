@@ -115,113 +115,38 @@
     {
       "merger_id": "WA-85017",
       "merger_name": "Regent Motors Group - Lane Group's Mandurah Dealerships",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "MANDURAH AUTO GROUP PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "693 645 699",
-          "party_page": {
-            "id": "mandurah-auto-group-pty-ltd",
-            "name": "Mandurah Auto Group Pty Ltd"
-          }
-        },
-        {
-          "name": "PEEL MOTOR GROUP PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "693 645 742",
-          "party_page": {
-            "id": "peel-motor-group-pty-ltd",
-            "name": "Peel Motor Group Pty Ltd"
-          }
-        }
+        "MANDURAH AUTO GROUP PTY LTD",
+        "PEEL MOTOR GROUP PTY LTD"
       ],
       "targets": [
-        {
-          "name": "WA AUTOMOTIVE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "20 158 702 740",
-          "party_page": {
-            "id": "wa-automotive-pty-ltd",
-            "name": "Wa Automotive Pty Ltd"
-          }
-        }
-      ]
+        "WA AUTOMOTIVE PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-75011",
       "merger_name": "Autosports Group - Solitaire Automotive Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AUTOSPORTS GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "54 614 505 261",
-          "party_page": {
-            "id": "autosports-group-limited",
-            "name": "Autosports Group Limited"
-          }
-        }
+        "AUTOSPORTS GROUP LIMITED"
       ],
       "targets": [
-        {
-          "name": "David Smoker",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "david-smoker",
-            "name": "David Smoker"
-          }
-        },
-        {
-          "name": "Russleigh Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "052 977 198",
-          "party_page": {
-            "id": "russleigh-pty-ltd",
-            "name": "Russleigh Pty Ltd"
-          }
-        }
-      ]
+        "David Smoker",
+        "Russleigh Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25001",
       "merger_name": "Regent Motors Group \u2013 Esperance Motor Group (Esperance Toyota & Ford)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ALBANY MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "95 676 040 341",
-          "party_page": {
-            "id": "albany-motors-pty-ltd",
-            "name": "Albany Motors Pty Ltd"
-          }
-        }
+        "ALBANY MOTORS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Esperance Motor Group Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "57 121 986 016",
-          "party_page": {
-            "id": "esperance-motor-group-pty-ltd",
-            "name": "Esperance Motor Group Pty Ltd"
-          }
-        },
-        {
-          "name": "BUVERIE PTY LTD as trustee for SCHWARZBACK FAMILY TRUST",
-          "identifier_type": "ABN",
-          "identifier": "80 701 405 315",
-          "party_page": {
-            "id": "buverie-pty-ltd-as-trustee-for-schwarzback-family-trust",
-            "name": "BUVERIE PTY LTD as trustee for SCHWARZBACK FAMILY TRUST"
-          }
-        }
-      ]
+        "Esperance Motor Group Pty Ltd",
+        "BUVERIE PTY LTD as trustee for SCHWARZBACK FAMILY TRUST"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

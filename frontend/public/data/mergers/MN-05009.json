@@ -165,113 +165,38 @@
     {
       "merger_id": "WA-80001",
       "merger_name": "Alpine Software Group (ASG) \u2013 PlayHQ",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Arena BidCo Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "693 657 484",
-          "party_page": {
-            "id": "arena-bidco-pty-ltd",
-            "name": "Arena BidCo Pty Ltd"
-          }
-        }
+        "Arena BidCo Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "RFGI GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "55 630 028 974",
-          "party_page": {
-            "id": "rfgi-group-pty-ltd",
-            "name": "Rfgi Group Pty Ltd"
-          }
-        },
-        {
-          "name": "GAMEON HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "47 629 422 206",
-          "party_page": {
-            "id": "gameon-holdings-pty-ltd",
-            "name": "Gameon Holdings Pty Ltd"
-          }
-        }
-      ]
+        "RFGI GROUP PTY LTD",
+        "GAMEON HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-15003",
       "merger_name": "Coforge - Encora",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Coforge Limited",
-          "identifier_type": null,
-          "identifier": "L72100HR1992PLC128382",
-          "party_page": {
-            "id": "coforge-limited",
-            "name": "Coforge Limited"
-          }
-        },
-        {
-          "name": "Encora Holdco Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "encora-holdco-limited",
-            "name": "Encora Holdco Limited"
-          }
-        }
+        "Coforge Limited",
+        "Encora Holdco Limited"
       ],
       "targets": [
-        {
-          "name": "Encora US Holdco, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "encora-us-holdco-inc",
-            "name": "Encora US Holdco, Inc"
-          }
-        },
-        {
-          "name": "Encora Holdings Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "encora-holdings-limited",
-            "name": "Encora Holdings Limited"
-          }
-        }
-      ]
+        "Encora US Holdco, Inc",
+        "Encora Holdings Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-75008",
       "merger_name": "Bettergrow - HYG",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BETTERGROW HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 649 891 663",
-          "party_page": {
-            "id": "bettergrow-holdings-pty-ltd",
-            "name": "Bettergrow Holdings Pty Ltd"
-          }
-        }
+        "BETTERGROW HOLDINGS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "HYG HOLDCO PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "81 622 657 729",
-          "party_page": {
-            "id": "hyg-holdco-pty-limited",
-            "name": "Hyg Holdco Pty Limited"
-          }
-        }
-      ]
+        "HYG HOLDCO PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

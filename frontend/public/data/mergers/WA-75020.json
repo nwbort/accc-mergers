@@ -136,117 +136,38 @@
     {
       "merger_id": "MN-75009",
       "merger_name": "Charter Hall Holdings - JGS Private Capital",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CHARTER HALL HOLDINGS PTY. LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "15 051 363 547",
-          "canonical": {
-            "id": "charter-hall",
-            "name": "Charter Hall"
-          },
-          "party_page": {
-            "id": "charter-hall",
-            "name": "Charter Hall"
-          }
-        }
+        "CHARTER HALL HOLDINGS PTY. LIMITED"
       ],
       "targets": [
-        {
-          "name": "JGS PRIVATE CAPITAL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "20 602 602 595",
-          "party_page": {
-            "id": "jgs-private-capital-pty-ltd",
-            "name": "Jgs Private Capital Pty Ltd"
-          }
-        },
-        {
-          "name": "J.G. SERVICE PTY. LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "75 008 492 126",
-          "party_page": {
-            "id": "j-g-service-pty-limited",
-            "name": "J.G. Service Pty. Limited"
-          }
-        }
-      ]
+        "JGS PRIVATE CAPITAL PTY LTD",
+        "J.G. SERVICE PTY. LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-35008",
       "merger_name": "VFMC \u2013 CorVal Land and Operator Trusts",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "TRANSPORT ACCIDENT COMMISSION",
-          "identifier_type": "ABN",
-          "identifier": "22 033 947 623",
-          "party_page": {
-            "id": "transport-accident-commission",
-            "name": "Transport Accident Commission"
-          }
-        },
-        {
-          "name": "VICTORIAN MANAGED INSURANCE AUTHORITY",
-          "identifier_type": "ABN",
-          "identifier": "39 682 497 841",
-          "party_page": {
-            "id": "victorian-managed-insurance-authority",
-            "name": "Victorian Managed Insurance Authority"
-          }
-        }
+        "TRANSPORT ACCIDENT COMMISSION",
+        "VICTORIAN MANAGED INSURANCE AUTHORITY"
       ],
       "targets": [
-        {
-          "name": "CORVAL PARTNERS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "86 130 628 830",
-          "party_page": {
-            "id": "corval-partners-limited",
-            "name": "Corval Partners Limited"
-          }
-        }
-      ]
+        "CORVAL PARTNERS LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-15004",
       "merger_name": "Australian Retirement Trust \u2013 Interests in non-rental income (Westfield Sydney)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "QIC TT COMPANY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "27 694 380 973",
-          "party_page": {
-            "id": "qic-tt-company-pty-ltd",
-            "name": "Qic Tt Company Pty Ltd"
-          }
-        }
+        "QIC TT COMPANY PTY LTD"
       ],
       "targets": [
-        {
-          "name": "SCENTRE GROUP TRUST 3",
-          "identifier_type": "ABN",
-          "identifier": "11 517 229 138",
-          "party_page": {
-            "id": "scentre-group-trust-3",
-            "name": "Scentre Group Trust 3"
-          }
-        },
-        {
-          "name": "SCENTRE ALLIANCES PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "53 098 357 521",
-          "party_page": {
-            "id": "scentre-alliances-pty-limited",
-            "name": "Scentre Alliances Pty Limited"
-          }
-        }
-      ]
+        "SCENTRE GROUP TRUST 3",
+        "SCENTRE ALLIANCES PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

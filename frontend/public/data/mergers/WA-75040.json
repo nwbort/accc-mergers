@@ -118,99 +118,36 @@
     {
       "merger_id": "WA-65018",
       "merger_name": "Blackstone - Medallia",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Blackstone Alternative Credit Advisors LP",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "blackstone-inc",
-            "name": "Blackstone Inc."
-          },
-          "party_page": {
-            "id": "blackstone-inc",
-            "name": "Blackstone Inc."
-          }
-        }
+        "Blackstone Alternative Credit Advisors LP"
       ],
       "targets": [
-        {
-          "name": "Medallia Parent, LP",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "medallia-parent-lp",
-            "name": "Medallia Parent, LP"
-          }
-        }
-      ]
+        "Medallia Parent, LP"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-15005",
       "merger_name": "Cvent - ON24",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Cvent Atlanta, LLC",
-          "identifier_type": null,
-          "identifier": "[Delaware corporate file number  5603939]",
-          "party_page": {
-            "id": "cvent-atlanta-llc",
-            "name": "Cvent Atlanta, LLC"
-          }
-        }
+        "Cvent Atlanta, LLC"
       ],
       "targets": [
-        {
-          "name": "ON24, Inc.",
-          "identifier_type": null,
-          "identifier": "[Delaware corporate file number  2843568]",
-          "party_page": {
-            "id": "on24-inc",
-            "name": "ON24, Inc."
-          }
-        }
-      ]
+        "ON24, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-20023",
       "merger_name": "Sony Music - Recognition Music",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "SMG-Three LLC",
-          "identifier_type": null,
-          "identifier": "DDC  10277876",
-          "party_page": {
-            "id": "smg-three-llc",
-            "name": "SMG-Three LLC"
-          }
-        },
-        {
-          "name": "Sony Music Publishing (US) LLC",
-          "identifier_type": null,
-          "identifier": "DDC  2558200",
-          "party_page": {
-            "id": "sony-music-publishing-us-llc",
-            "name": "Sony Music Publishing (US) LLC"
-          }
-        }
+        "SMG-Three LLC",
+        "Sony Music Publishing (US) LLC"
       ],
       "targets": [
-        {
-          "name": "Recognition Music Group (Delaware) L.P.",
-          "identifier_type": null,
-          "identifier": "DDC  6193972",
-          "party_page": {
-            "id": "recognition-music-group-delaware-l-p",
-            "name": "Recognition Music Group (Delaware) L.P."
-          }
-        }
-      ]
+        "Recognition Music Group (Delaware) L.P."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

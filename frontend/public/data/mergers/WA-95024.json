@@ -144,90 +144,35 @@
     {
       "merger_id": "WA-20003",
       "merger_name": "Carlyle \u2013 Peloton Computer Enterprises",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CG Panther Parentco, L.P.",
-          "identifier_type": null,
-          "identifier": "135095",
-          "party_page": {
-            "id": "cg-panther-parentco-l-p",
-            "name": "CG Panther Parentco, L.P."
-          }
-        }
+        "CG Panther Parentco, L.P."
       ],
       "targets": [
-        {
-          "name": "Peloton Computer Enterprises Ltd.",
-          "identifier_type": null,
-          "identifier": "2023447374  Canada",
-          "party_page": {
-            "id": "peloton-computer-enterprises-ltd",
-            "name": "Peloton Computer Enterprises Ltd."
-          }
-        }
-      ]
+        "Peloton Computer Enterprises Ltd."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-80002",
       "merger_name": "Bain Capital \u2013 MCJ",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BCPE Meta Cayman, L.P.",
-          "identifier_type": null,
-          "identifier": "MC135352",
-          "party_page": {
-            "id": "bcpe-meta-cayman-l-p",
-            "name": "BCPE Meta Cayman, L.P."
-          }
-        }
+        "BCPE Meta Cayman, L.P."
       ],
       "targets": [
-        {
-          "name": "MCJ Co., Ltd.",
-          "identifier_type": null,
-          "identifier": "9030001052005",
-          "party_page": {
-            "id": "mcj-co-ltd",
-            "name": "MCJ Co., Ltd."
-          }
-        }
-      ]
+        "MCJ Co., Ltd."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-05014",
       "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Smile Partners (NSW3) Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 902 955",
-          "party_page": {
-            "id": "smile-partners-nsw3-pty-ltd",
-            "name": "Smile Partners (NSW3) Pty Ltd"
-          }
-        }
+        "Smile Partners (NSW3) Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Shrika Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "108 757 357",
-          "canonical": {
-            "id": "shrika-pty-ltd",
-            "name": "Shrika Pty Ltd"
-          },
-          "party_page": {
-            "id": "shrika-pty-ltd",
-            "name": "Shrika Pty Ltd"
-          }
-        }
-      ]
+        "Shrika Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

@@ -159,99 +159,36 @@
     {
       "merger_id": "WA-75013",
       "merger_name": "Aldus - Hilton Manufacturing",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ALDUS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "38 085 318 494",
-          "party_page": {
-            "id": "aldus-pty-ltd",
-            "name": "Aldus Pty Ltd"
-          }
-        }
+        "ALDUS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "HILTON MANUFACTURING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "89 005 551 057",
-          "party_page": {
-            "id": "hilton-manufacturing-pty-ltd",
-            "name": "Hilton Manufacturing Pty Ltd"
-          }
-        }
-      ]
+        "HILTON MANUFACTURING PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-70018",
       "merger_name": "Restaurant Brands and Yum! Brands \u2013 Taco Bell restaurants",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Taco Ventures Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "697 591 692",
-          "party_page": {
-            "id": "taco-ventures-pty-ltd",
-            "name": "Taco Ventures Pty Ltd"
-          }
-        }
+        "Taco Ventures Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Collins Foods Subsidiary Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "94 616 663 793",
-          "party_page": {
-            "id": "collins-foods-subsidiary-pty-ltd",
-            "name": "Collins Foods Subsidiary Pty Ltd"
-          }
-        }
-      ]
+        "Collins Foods Subsidiary Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25008",
       "merger_name": "Five V Capital - FTP Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OVERWATCH BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 739 970",
-          "party_page": {
-            "id": "overwatch-bidco-pty-ltd",
-            "name": "Overwatch Bidco Pty Ltd"
-          }
-        }
+        "OVERWATCH BIDCO PTY LTD"
       ],
       "targets": [
-        {
-          "name": "FTP GROUP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "82 626 217 614",
-          "party_page": {
-            "id": "ftp-group-holdings-pty-ltd",
-            "name": "Ftp Group Holdings Pty Ltd"
-          }
-        },
-        {
-          "name": "FAARM BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 834 390",
-          "canonical": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          },
-          "party_page": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          }
-        }
-      ]
+        "FTP GROUP HOLDINGS PTY LTD",
+        "FAARM BIDCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

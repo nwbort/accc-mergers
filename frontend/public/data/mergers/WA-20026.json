@@ -201,104 +201,37 @@
     {
       "merger_id": "WA-35004",
       "merger_name": "L Catterton Management \u2013 Ex Nihilo Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Saphir Holdings SAS",
-          "identifier_type": null,
-          "identifier": "Trade and Companies Registry Number 995 192 986",
-          "party_page": {
-            "id": "saphir-holdings-sas",
-            "name": "Saphir Holdings SAS"
-          }
-        }
+        "Saphir Holdings SAS"
       ],
       "targets": [
-        {
-          "name": "Ex Nihilo Group",
-          "identifier_type": null,
-          "identifier": "Trade and Companies Registry Number 981 087 646",
-          "party_page": {
-            "id": "ex-nihilo-group",
-            "name": "Ex Nihilo Group"
-          }
-        }
-      ]
+        "Ex Nihilo Group"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-25018",
       "merger_name": "Primary Wave - Kobalt",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Primary Wave KB Holdings, LP",
-          "identifier_type": null,
-          "identifier": "Registration number 136215",
-          "party_page": {
-            "id": "primary-wave-kb-holdings-lp",
-            "name": "Primary Wave KB Holdings, LP"
-          }
-        }
+        "Primary Wave KB Holdings, LP"
       ],
       "targets": [
-        {
-          "name": "Kobalt Music Group Topco L.P.",
-          "identifier_type": null,
-          "identifier": "Registration number 393466",
-          "party_page": {
-            "id": "kobalt-music-group-topco-l-p",
-            "name": "Kobalt Music Group Topco L.P."
-          }
-        }
-      ]
+        "Kobalt Music Group Topco L.P."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-55025",
       "merger_name": "Brookfield \u2013 World Freight Company",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Windrose Holdings III (DIFC) Limited",
-          "identifier_type": null,
-          "identifier": "Registered Number  12897",
-          "party_page": {
-            "id": "windrose-holdings-iii-difc-limited",
-            "name": "Windrose Holdings III (DIFC) Limited"
-          }
-        },
-        {
-          "name": "Windrose France Holdings SAS",
-          "identifier_type": null,
-          "identifier": "Registered Number  104439096",
-          "party_page": {
-            "id": "windrose-france-holdings-sas",
-            "name": "Windrose France Holdings SAS"
-          }
-        }
+        "Windrose Holdings III (DIFC) Limited",
+        "Windrose France Holdings SAS"
       ],
       "targets": [
-        {
-          "name": "Caeli Software Ltd",
-          "identifier_type": null,
-          "identifier": "Registered Number  12558916",
-          "party_page": {
-            "id": "caeli-software-ltd",
-            "name": "Caeli Software Ltd"
-          }
-        },
-        {
-          "name": "GB WFC France SAS (trading as \u201cWorld Freight Company\u201d or \u201cWFC\u201d)",
-          "identifier_type": null,
-          "identifier": "Registered Number  809546 971",
-          "party_page": {
-            "id": "gb-wfc-france-sas-trading-as-world-freight-company-or-wfc",
-            "name": "GB WFC France SAS (trading as \u201cWorld Freight Company\u201d or \u201cWFC\u201d)"
-          }
-        }
-      ]
+        "Caeli Software Ltd",
+        "GB WFC France SAS (trading as \u201cWorld Freight Company\u201d or \u201cWFC\u201d)"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

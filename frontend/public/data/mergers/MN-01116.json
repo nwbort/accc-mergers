@@ -115,121 +115,38 @@
     {
       "merger_id": "WA-70028",
       "merger_name": "Kalari \u2013 De Gunst\u2019s Gracemere Assets",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "KALARI PROPRIETARY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "14 004 595 395",
-          "party_page": {
-            "id": "kalari-proprietary-limited",
-            "name": "Kalari Proprietary Limited"
-          }
-        }
+        "KALARI PROPRIETARY LIMITED"
       ],
       "targets": [
-        {
-          "name": "DEGUNST TRANSPORT PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "12 089 249 329",
-          "party_page": {
-            "id": "degunst-transport-pty-ltd",
-            "name": "Degunst Transport Pty. Ltd."
-          }
-        }
-      ]
+        "DEGUNST TRANSPORT PTY. LTD."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-80017",
       "merger_name": "Direct Couriers \u2013 Phoenix Transport",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "DIRECT COURIERS (AUST.) PTY. LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "87 063 478 295",
-          "party_page": {
-            "id": "direct-couriers-aust-pty-limited",
-            "name": "Direct Couriers (Aust.) Pty. Limited"
-          }
-        }
+        "DIRECT COURIERS (AUST.) PTY. LIMITED"
       ],
       "targets": [
-        {
-          "name": "PHOENIX TRANSPORT HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "75 062 309 773",
-          "party_page": {
-            "id": "phoenix-transport-holdings-pty-ltd",
-            "name": "Phoenix Transport Holdings Pty Ltd"
-          }
-        },
-        {
-          "name": "PHOENIX DISTRIBUTION (NSW) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "24 073 843 982",
-          "party_page": {
-            "id": "phoenix-distribution-nsw-pty-ltd",
-            "name": "Phoenix Distribution (Nsw) Pty Ltd"
-          }
-        }
-      ]
+        "PHOENIX TRANSPORT HOLDINGS PTY LTD",
+        "PHOENIX DISTRIBUTION (NSW) PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-90012",
       "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "PT Asian Bulk Logistics",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          },
-          "party_page": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          }
-        },
-        {
-          "name": "Global Engage Marine Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "693 762 122",
-          "canonical": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          },
-          "party_page": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          }
-        }
+        "PT Asian Bulk Logistics",
+        "Global Engage Marine Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "ENGAGE MARINE FINCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "25 675 999 283",
-          "party_page": {
-            "id": "engage-marine-finco-pty-ltd",
-            "name": "Engage Marine Finco Pty Ltd"
-          }
-        },
-        {
-          "name": "ENGAGE MARINE HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 626 774 678",
-          "party_page": {
-            "id": "engage-marine-holdings-pty-ltd",
-            "name": "Engage Marine Holdings Pty Ltd"
-          }
-        }
-      ]
+        "ENGAGE MARINE FINCO PTY LTD",
+        "ENGAGE MARINE HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

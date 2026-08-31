@@ -106,134 +106,39 @@
     {
       "merger_id": "MN-45005",
       "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "MA MARINA FUND HOLDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "96 667 241 385",
-          "party_page": {
-            "id": "ma-marina-fund-holdco-pty-ltd",
-            "name": "Ma Marina Fund Holdco Pty Ltd"
-          }
-        },
-        {
-          "name": "MA MARINA FUND TT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "65 666 902 245",
-          "party_page": {
-            "id": "ma-marina-fund-tt-pty-ltd",
-            "name": "Ma Marina Fund Tt Pty Ltd"
-          }
-        }
+        "MA MARINA FUND HOLDCO PTY LTD",
+        "MA MARINA FUND TT PTY LTD"
       ],
       "targets": [
-        {
-          "name": "GGC Marketing Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "32 105 294 228",
-          "party_page": {
-            "id": "ggc-marketing-pty-ltd",
-            "name": "GGC Marketing Pty Ltd"
-          }
-        },
-        {
-          "name": "QUEENSLAND & PACIFIC PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "72 081 370 685",
-          "party_page": {
-            "id": "queensland-pacific-pty-ltd",
-            "name": "Queensland & Pacific Pty. Ltd."
-          }
-        }
-      ]
+        "GGC Marketing Pty Ltd",
+        "QUEENSLAND & PACIFIC PTY. LTD."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70011",
       "merger_name": "Egis Projects Asia Pacific - Fulton Hogan Egis O&M",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "EGIS PROJECTS ASIA PACIFIC PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "82 071 536 957",
-          "party_page": {
-            "id": "egis-projects-asia-pacific-pty-limited",
-            "name": "Egis Projects Asia Pacific Pty Limited"
-          }
-        }
+        "EGIS PROJECTS ASIA PACIFIC PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "FULTON HOGAN INDUSTRIES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "54 000 538 689",
-          "canonical": {
-            "id": "fulton-hogan",
-            "name": "Fulton Hogan"
-          },
-          "party_page": {
-            "id": "fulton-hogan",
-            "name": "Fulton Hogan"
-          }
-        },
-        {
-          "name": "FULTON HOGAN EGIS O&M PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "37 609 764 730",
-          "canonical": {
-            "id": "fulton-hogan",
-            "name": "Fulton Hogan"
-          },
-          "party_page": {
-            "id": "fulton-hogan",
-            "name": "Fulton Hogan"
-          }
-        }
-      ]
+        "FULTON HOGAN INDUSTRIES PTY LTD",
+        "FULTON HOGAN EGIS O&M PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-55010",
       "merger_name": "Calvary - Holmesglen Private Hospital",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "LITTLE COMPANY OF MARY HEALTH CARE LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "11 079 815 697",
-          "party_page": {
-            "id": "little-company-of-mary-health-care-limited",
-            "name": "Little Company Of Mary Health Care Limited"
-          }
-        }
+        "LITTLE COMPANY OF MARY HEALTH CARE LIMITED"
       ],
       "targets": [
-        {
-          "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "80 146 342 814",
-          "canonical": {
-            "id": "healthscope",
-            "name": "Healthscope"
-          },
-          "party_page": {
-            "id": "healthscope",
-            "name": "Healthscope"
-          }
-        },
-        {
-          "name": "ANZ HOSPITALS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "14 631 014 938",
-          "party_page": {
-            "id": "anz-hospitals-pty-ltd",
-            "name": "Anz Hospitals Pty Ltd"
-          }
-        }
-      ]
+        "HEALTHSCOPE MANAGEMENT PTY LTD",
+        "ANZ HOSPITALS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

@@ -105,108 +105,37 @@
     {
       "merger_id": "WA-10010",
       "merger_name": "Enverus \u2013 Spatial Business Systems",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Enverus, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "enverus-inc",
-            "name": "Enverus, Inc."
-          }
-        }
+        "Enverus, Inc."
       ],
       "targets": [
-        {
-          "name": "Spatial Business Systems Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "76 125 465 483",
-          "party_page": {
-            "id": "spatial-business-systems-pty-ltd",
-            "name": "Spatial Business Systems Pty Ltd"
-          }
-        },
-        {
-          "name": "SBS Optionco, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "sbs-optionco-llc",
-            "name": "SBS Optionco, LLC"
-          }
-        }
-      ]
+        "Spatial Business Systems Pty Ltd",
+        "SBS Optionco, LLC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-40002",
       "merger_name": "Star Hotels Group \u2013 Yandina Hotel, QLD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "HOTEL MAROOCHYDORE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 140 651 887",
-          "party_page": {
-            "id": "hotel-maroochydore-pty-ltd",
-            "name": "Hotel Maroochydore Pty Ltd"
-          }
-        },
-        {
-          "name": "SCHF PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 644 329 733",
-          "party_page": {
-            "id": "schf-pty-ltd",
-            "name": "Schf Pty Ltd"
-          }
-        }
+        "HOTEL MAROOCHYDORE PTY LTD",
+        "SCHF PTY LTD"
       ],
       "targets": [
-        {
-          "name": "The Trustee for Kingston Family Trust",
-          "identifier_type": "ABN",
-          "identifier": "96 328 946 230",
-          "party_page": {
-            "id": "the-trustee-for-kingston-family-trust",
-            "name": "The Trustee for Kingston Family Trust"
-          }
-        }
-      ]
+        "The Trustee for Kingston Family Trust"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-95008",
       "merger_name": "Vets Central \u2013 West Toowoomba Veterinary Surgery in QLD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "VC OPERATIONS (WA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 646 499 005",
-          "canonical": {
-            "id": "vets-central-holdings-pty-ltd",
-            "name": "Vets Central Holdings Pty Ltd"
-          },
-          "party_page": {
-            "id": "vets-central-holdings-pty-ltd",
-            "name": "Vets Central Holdings Pty Ltd"
-          }
-        }
+        "VC OPERATIONS (WA) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "The trustee for the Burke Family Trust",
-          "identifier_type": "ABN",
-          "identifier": "35 834 715 269",
-          "party_page": {
-            "id": "the-trustee-for-the-burke-family-trust",
-            "name": "The trustee for the Burke Family Trust"
-          }
-        }
-      ]
+        "The trustee for the Burke Family Trust"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

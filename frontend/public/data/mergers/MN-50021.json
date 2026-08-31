@@ -144,104 +144,37 @@
     {
       "merger_id": "MN-01083",
       "merger_name": "Civilmart \u2013 Taylex",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CTC PRECAST PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "12 614 966 059",
-          "party_page": {
-            "id": "ctc-precast-pty-ltd",
-            "name": "Ctc Precast Pty Ltd"
-          }
-        }
+        "CTC PRECAST PTY LTD"
       ],
       "targets": [
-        {
-          "name": "TAYLEX GROUP HOLDING CO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "50 646 051 578",
-          "party_page": {
-            "id": "taylex-group-holding-co-pty-ltd",
-            "name": "Taylex Group Holding Co Pty Ltd"
-          }
-        }
-      ]
+        "TAYLEX GROUP HOLDING CO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-60011",
       "merger_name": "Barro Group - BQC Quarries and Burdekin Concrete",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BQC Group Pty Ltd [yet to be incorporated]",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "bqc-group-pty-ltd-yet-to-be-incorporated",
-            "name": "BQC Group Pty Ltd [yet to be incorporated]"
-          }
-        }
+        "BQC Group Pty Ltd [yet to be incorporated]"
       ],
       "targets": [
-        {
-          "name": "M&T Populin Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "092 648 078",
-          "party_page": {
-            "id": "m-t-populin-pty-ltd",
-            "name": "M&T Populin Pty Ltd"
-          }
-        },
-        {
-          "name": "BQC Registrations Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "613 361 041",
-          "party_page": {
-            "id": "bqc-registrations-pty-ltd",
-            "name": "BQC Registrations Pty Ltd"
-          }
-        }
-      ]
+        "M&T Populin Pty Ltd",
+        "BQC Registrations Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-70013",
       "merger_name": "Ventura Motors \u2013 Crown Coaches",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "VENTURA NEWCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 694 822 047",
-          "party_page": {
-            "id": "ventura-newco-pty-ltd",
-            "name": "Ventura Newco Pty Ltd"
-          }
-        }
+        "VENTURA NEWCO PTY LTD"
       ],
       "targets": [
-        {
-          "name": "CROWN HYBRID PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "47 004 550 529",
-          "party_page": {
-            "id": "crown-hybrid-pty-ltd",
-            "name": "Crown Hybrid Pty Ltd"
-          }
-        },
-        {
-          "name": "CROWN COACHES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "48 004 882 213",
-          "party_page": {
-            "id": "crown-coaches-pty-ltd",
-            "name": "Crown Coaches Pty Ltd"
-          }
-        }
-      ]
+        "CROWN HYBRID PTY LTD",
+        "CROWN COACHES PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

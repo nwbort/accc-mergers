@@ -114,99 +114,36 @@
     {
       "merger_id": "WA-50014",
       "merger_name": "Searchlight Capital Partners - Additional interest in KORE Group Holdings Inc.",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Searchlight Capital IV LP",
-          "identifier_type": null,
-          "identifier": "US SEC  0001954453",
-          "party_page": {
-            "id": "searchlight-capital-iv-lp",
-            "name": "Searchlight Capital IV LP"
-          }
-        },
-        {
-          "name": "KONA Merger Sub Co.",
-          "identifier_type": null,
-          "identifier": "Delaware  10525073",
-          "party_page": {
-            "id": "kona-merger-sub-co",
-            "name": "KONA Merger Sub Co."
-          }
-        }
+        "Searchlight Capital IV LP",
+        "KONA Merger Sub Co."
       ],
       "targets": [
-        {
-          "name": "KORE Group Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware  5388903",
-          "party_page": {
-            "id": "kore-group-holdings-inc",
-            "name": "KORE Group Holdings, Inc."
-          }
-        }
-      ]
+        "KORE Group Holdings, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-40019",
       "merger_name": "Novartis - Excellergy",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Elba Merger Sub, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware company number 10547479",
-          "party_page": {
-            "id": "elba-merger-sub-inc",
-            "name": "Elba Merger Sub, Inc."
-          }
-        }
+        "Elba Merger Sub, Inc."
       ],
       "targets": [
-        {
-          "name": "Excellergy Inc.",
-          "identifier_type": null,
-          "identifier": "EIN 854115816",
-          "canonical": {
-            "id": "excellergy-inc",
-            "name": "Excellergy"
-          },
-          "party_page": {
-            "id": "excellergy-inc",
-            "name": "Excellergy"
-          }
-        }
-      ]
+        "Excellergy Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-90025",
       "merger_name": "KKR - Crowe",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Forge Merger Sub LLC",
-          "identifier_type": null,
-          "identifier": "10628991  Delaware",
-          "party_page": {
-            "id": "forge-merger-sub-llc",
-            "name": "Forge Merger Sub LLC"
-          }
-        }
+        "Forge Merger Sub LLC"
       ],
       "targets": [
-        {
-          "name": "Crowe ParentCo LLC",
-          "identifier_type": null,
-          "identifier": "350921680  Delaware",
-          "party_page": {
-            "id": "crowe-parentco-llc",
-            "name": "Crowe ParentCo LLC"
-          }
-        }
-      ]
+        "Crowe ParentCo LLC"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

@@ -111,121 +111,38 @@
     {
       "merger_id": "WA-45007",
       "merger_name": "Henkel \u2013 Stahl",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Henkel Global Supply Chain B.V.",
-          "identifier_type": null,
-          "identifier": "Netherlands registration number, 854017447, CCI 60683945",
-          "canonical": {
-            "id": "henkel-ag-co-kgaa",
-            "name": "Henkel"
-          },
-          "party_page": {
-            "id": "henkel-ag-co-kgaa",
-            "name": "Henkel"
-          }
-        }
+        "Henkel Global Supply Chain B.V."
       ],
       "targets": [
-        {
-          "name": "Stahl Holdings B.V.",
-          "identifier_type": null,
-          "identifier": "Netherlands registration number (KVK): 34249320",
-          "party_page": {
-            "id": "stahl-holdings-b-v",
-            "name": "Stahl Holdings B.V."
-          }
-        },
-        {
-          "name": "Stahl Asia Pacific Pte. Ltd.",
-          "identifier_type": null,
-          "identifier": "Singapore registration number: 200606884Z",
-          "party_page": {
-            "id": "stahl-asia-pacific-pte-ltd",
-            "name": "Stahl Asia Pacific Pte. Ltd."
-          }
-        }
-      ]
+        "Stahl Holdings B.V.",
+        "Stahl Asia Pacific Pte. Ltd."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-70005",
       "merger_name": "Freudenberg Home and Cleaning Solutions \u2013 Nilfisk",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Freudenberg Home and Cleaning Solutions GmbH",
-          "identifier_type": null,
-          "identifier": "HRB 431930",
-          "canonical": {
-            "id": "freudenberg-home-and-cleaning-solutions-gmbh",
-            "name": "Freudenberg Home and Cleaning Solutions"
-          },
-          "party_page": {
-            "id": "freudenberg-home-and-cleaning-solutions-gmbh",
-            "name": "Freudenberg Home and Cleaning Solutions"
-          }
-        }
+        "Freudenberg Home and Cleaning Solutions GmbH"
       ],
       "targets": [
-        {
-          "name": "Nilfisk Holding A/S",
-          "identifier_type": null,
-          "identifier": "CVR 38998870",
-          "party_page": {
-            "id": "nilfisk-holding-a-s",
-            "name": "Nilfisk Holding A/S"
-          }
-        }
-      ]
+        "Nilfisk Holding A/S"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-50013",
       "merger_name": "Star Hotels - Fiveways Hotel Toowoomba",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "SGL HOTELS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "74 627 068 526",
-          "party_page": {
-            "id": "sgl-hotels-pty-ltd",
-            "name": "Sgl Hotels Pty Ltd"
-          }
-        },
-        {
-          "name": "SCHF PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 644 329 733",
-          "party_page": {
-            "id": "schf-pty-ltd",
-            "name": "Schf Pty Ltd"
-          }
-        }
+        "SGL HOTELS PTY LTD",
+        "SCHF PTY LTD"
       ],
       "targets": [
-        {
-          "name": "MPG FIVEWAYS PROP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "45 688 881 101",
-          "party_page": {
-            "id": "mpg-fiveways-prop-pty-ltd",
-            "name": "Mpg Fiveways Prop Pty Ltd"
-          }
-        },
-        {
-          "name": "MPG FIVEWAYS OP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "53 688 880 828",
-          "party_page": {
-            "id": "mpg-fiveways-op-pty-ltd",
-            "name": "Mpg Fiveways Op Pty Ltd"
-          }
-        }
-      ]
+        "MPG FIVEWAYS PROP PTY LTD",
+        "MPG FIVEWAYS OP PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

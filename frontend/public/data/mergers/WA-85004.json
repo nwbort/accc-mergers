@@ -124,121 +124,38 @@
     {
       "merger_id": "WA-15010",
       "merger_name": "AZ Next Generation Advisory \u2013 Intend Financial",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AZ NEXT GENERATION ADVISORY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "57 167 960 018",
-          "party_page": {
-            "id": "az-next-generation-advisory-pty-ltd",
-            "name": "Az Next Generation Advisory Pty Ltd"
-          }
-        }
+        "AZ NEXT GENERATION ADVISORY PTY LTD"
       ],
       "targets": [
-        {
-          "name": "BMM PARTNERS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "82 649 113 959",
-          "party_page": {
-            "id": "bmm-partners-pty-ltd",
-            "name": "Bmm Partners Pty Ltd"
-          }
-        }
-      ]
+        "BMM PARTNERS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-45005",
       "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "MA MARINA FUND HOLDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "96 667 241 385",
-          "party_page": {
-            "id": "ma-marina-fund-holdco-pty-ltd",
-            "name": "Ma Marina Fund Holdco Pty Ltd"
-          }
-        },
-        {
-          "name": "MA MARINA FUND TT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "65 666 902 245",
-          "party_page": {
-            "id": "ma-marina-fund-tt-pty-ltd",
-            "name": "Ma Marina Fund Tt Pty Ltd"
-          }
-        }
+        "MA MARINA FUND HOLDCO PTY LTD",
+        "MA MARINA FUND TT PTY LTD"
       ],
       "targets": [
-        {
-          "name": "GGC Marketing Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "32 105 294 228",
-          "party_page": {
-            "id": "ggc-marketing-pty-ltd",
-            "name": "GGC Marketing Pty Ltd"
-          }
-        },
-        {
-          "name": "QUEENSLAND & PACIFIC PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "72 081 370 685",
-          "party_page": {
-            "id": "queensland-pacific-pty-ltd",
-            "name": "Queensland & Pacific Pty. Ltd."
-          }
-        }
-      ]
+        "GGC Marketing Pty Ltd",
+        "QUEENSLAND & PACIFIC PTY. LTD."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-20010",
       "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "Global Engage Marine Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "693 762 122",
-          "canonical": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          },
-          "party_page": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          }
-        },
-        {
-          "name": "PT Asian Bulk Logistics",
-          "identifier_type": null,
-          "identifier": "NIB   8120012130871",
-          "canonical": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          },
-          "party_page": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          }
-        }
+        "Global Engage Marine Pty Ltd",
+        "PT Asian Bulk Logistics"
       ],
       "targets": [
-        {
-          "name": "ENGAGE MARINE TOPCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "46 675 998 562",
-          "party_page": {
-            "id": "engage-marine-topco-pty-ltd",
-            "name": "Engage Marine Topco Pty Ltd"
-          }
-        }
-      ]
+        "ENGAGE MARINE TOPCO PTY LTD"
+      ],
+      "accc_determination": "Not approved"
     }
   ]
 }

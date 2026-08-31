@@ -128,108 +128,37 @@
     {
       "merger_id": "WA-25008",
       "merger_name": "Five V Capital - FTP Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OVERWATCH BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 739 970",
-          "party_page": {
-            "id": "overwatch-bidco-pty-ltd",
-            "name": "Overwatch Bidco Pty Ltd"
-          }
-        }
+        "OVERWATCH BIDCO PTY LTD"
       ],
       "targets": [
-        {
-          "name": "FTP GROUP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "82 626 217 614",
-          "party_page": {
-            "id": "ftp-group-holdings-pty-ltd",
-            "name": "Ftp Group Holdings Pty Ltd"
-          }
-        },
-        {
-          "name": "FAARM BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 834 390",
-          "canonical": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          },
-          "party_page": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          }
-        }
-      ]
+        "FTP GROUP HOLDINGS PTY LTD",
+        "FAARM BIDCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-90009",
       "merger_name": "Trescal \u2013 TR Calibration",
-      "status": "Assessment ceased",
-      "accc_determination": null,
       "acquirers": [
-        {
-          "name": "TRESCAL (AUSTRALIA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "39 117 603 835",
-          "party_page": {
-            "id": "trescal-australia-pty-ltd",
-            "name": "Trescal (Australia) Pty Ltd"
-          }
-        }
+        "TRESCAL (AUSTRALIA) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "TR PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 005 499 721",
-          "party_page": {
-            "id": "tr-pty-ltd",
-            "name": "Tr Pty Ltd"
-          }
-        }
-      ]
+        "TR PTY LTD"
+      ],
+      "status": "Assessment ceased"
     },
     {
       "merger_id": "WA-85020",
       "merger_name": "Francisco Partners \u2013 Capsa Healthcare",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Catalyst Blocker Merger Sub I, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "catalyst-blocker-merger-sub-i-llc",
-            "name": "Catalyst Blocker Merger Sub I, LLC"
-          }
-        },
-        {
-          "name": "Catalyst Blocker Merger Sub II, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "catalyst-blocker-merger-sub-ii-llc",
-            "name": "Catalyst Blocker Merger Sub II, LLC"
-          }
-        }
+        "Catalyst Blocker Merger Sub I, LLC",
+        "Catalyst Blocker Merger Sub II, LLC"
       ],
       "targets": [
-        {
-          "name": "CSHC Buyerco, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "cshc-buyerco-llc",
-            "name": "CSHC Buyerco, LLC"
-          }
-        }
-      ]
+        "CSHC Buyerco, LLC"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

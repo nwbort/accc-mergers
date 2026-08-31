@@ -128,108 +128,37 @@
     {
       "merger_id": "WA-25014",
       "merger_name": "CVC Capital Partners \u2013 The animal nutrition and health division of the DSM-Firmenich Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Essential Bidco B.V.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "essential-bidco-b-v",
-            "name": "Essential Bidco B.V."
-          }
-        },
-        {
-          "name": "Specialty (U.S.) Bidco, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "specialty-u-s-bidco-inc",
-            "name": "Specialty (U.S.) Bidco, Inc."
-          }
-        }
+        "Essential Bidco B.V.",
+        "Specialty (U.S.) Bidco, Inc."
       ],
       "targets": [
-        {
-          "name": "SpecialtyCo US LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "specialtyco-us-llc",
-            "name": "SpecialtyCo US LLC"
-          }
-        },
-        {
-          "name": "Biomin Phytogenics GmbH (Germany)",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "biomin-phytogenics-gmbh-germany",
-            "name": "Biomin Phytogenics GmbH (Germany)"
-          }
-        }
-      ]
+        "SpecialtyCo US LLC",
+        "Biomin Phytogenics GmbH (Germany)"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25013",
       "merger_name": "Cinven \u2013 Regenity",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Rosewood AG, LP",
-          "identifier_type": null,
-          "identifier": "LP5500",
-          "party_page": {
-            "id": "rosewood-ag-lp",
-            "name": "Rosewood AG, LP"
-          }
-        }
+        "Rosewood AG, LP"
       ],
       "targets": [
-        {
-          "name": "Collagen Holdings, LLC",
-          "identifier_type": null,
-          "identifier": "DE File Number  7473707",
-          "party_page": {
-            "id": "collagen-holdings-llc",
-            "name": "Collagen Holdings, LLC"
-          }
-        }
-      ]
+        "Collagen Holdings, LLC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-65009",
       "merger_name": "CVC Capital Partners \u2013 Marathon Asset Management",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CVC Capital Partners plc",
-          "identifier_type": null,
-          "identifier": "140080",
-          "canonical": {
-            "id": "cvc-capital-partners",
-            "name": "CVC Capital Partners"
-          },
-          "party_page": {
-            "id": "cvc-capital-partners",
-            "name": "CVC Capital Partners"
-          }
-        }
+        "CVC Capital Partners plc"
       ],
       "targets": [
-        {
-          "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "marathon-asset-management-lp-marathon-gp-holdings-i-llc-and-marathon-gp-holdings",
-            "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC"
-          }
-        }
-      ]
+        "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

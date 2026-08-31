@@ -173,108 +173,37 @@
     {
       "merger_id": "MN-01072",
       "merger_name": "Saipem S.p.A - Subsea7 S.A.",
-      "status": "Under assessment",
-      "accc_determination": null,
       "acquirers": [
-        {
-          "name": "Saipem S.p.A",
-          "identifier_type": null,
-          "identifier": "Register of Milan Monza Brianza Lodi under number 00825790157",
-          "party_page": {
-            "id": "saipem-s-p-a",
-            "name": "Saipem S.p.A"
-          }
-        }
+        "Saipem S.p.A"
       ],
       "targets": [
-        {
-          "name": "Subsea7 S.A.",
-          "identifier_type": null,
-          "identifier": "R.C.S. Luxembourg B 43172",
-          "party_page": {
-            "id": "subsea7-s-a",
-            "name": "Subsea7 S.A."
-          }
-        }
-      ]
+        "Subsea7 S.A."
+      ],
+      "status": "Under assessment"
     },
     {
       "merger_id": "WA-90014",
       "merger_name": "Constellation Software - DerbySoft Holdings",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Sail Parent Holdco Ltd",
-          "identifier_type": null,
-          "identifier": "UK Company Registration Number 17112723",
-          "party_page": {
-            "id": "sail-parent-holdco-ltd",
-            "name": "Sail Parent Holdco Ltd"
-          }
-        }
+        "Sail Parent Holdco Ltd"
       ],
       "targets": [
-        {
-          "name": "DerbySoft Holdings Limited",
-          "identifier_type": null,
-          "identifier": "Cayman Islands Company Registration Number CF172438",
-          "canonical": {
-            "id": "derbysoft-inc",
-            "name": "DerbySoft"
-          },
-          "party_page": {
-            "id": "derbysoft-inc",
-            "name": "DerbySoft"
-          }
-        }
-      ]
+        "DerbySoft Holdings Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-45001",
       "merger_name": "Paragon Care \u2013 Presidental",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "PARAGON CARE LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "76 064 551 426",
-          "party_page": {
-            "id": "paragon-care-limited",
-            "name": "Paragon Care Limited"
-          }
-        },
-        {
-          "name": "CLIFFORD HALLAM HEALTHCARE PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "38 001 655 554",
-          "party_page": {
-            "id": "clifford-hallam-healthcare-pty-limited",
-            "name": "Clifford Hallam Healthcare Pty Limited"
-          }
-        }
+        "PARAGON CARE LIMITED",
+        "CLIFFORD HALLAM HEALTHCARE PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "ROCKPAC SOUTH PACIFIC PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "40 639 100 422",
-          "party_page": {
-            "id": "rockpac-south-pacific-pty-ltd",
-            "name": "Rockpac South Pacific Pty Ltd"
-          }
-        },
-        {
-          "name": "PRESIDENTAL PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "77 002 697 896",
-          "party_page": {
-            "id": "presidental-pty-limited",
-            "name": "Presidental Pty Limited"
-          }
-        }
-      ]
+        "ROCKPAC SOUTH PACIFIC PTY LTD",
+        "PRESIDENTAL PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

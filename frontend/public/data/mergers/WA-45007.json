@@ -238,120 +238,37 @@
     {
       "merger_id": "MN-40005",
       "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Henkel Global Supply Chain B.V.",
-          "identifier_type": null,
-          "identifier": "Netherlands registration number: 854017447, CCI 60683945",
-          "canonical": {
-            "id": "henkel-ag-co-kgaa",
-            "name": "Henkel"
-          },
-          "party_page": {
-            "id": "henkel-ag-co-kgaa",
-            "name": "Henkel"
-          }
-        }
+        "Henkel Global Supply Chain B.V."
       ],
       "targets": [
-        {
-          "name": "Aqua Adhesives I GmbH",
-          "identifier_type": null,
-          "identifier": "Swiss registration number: CH170.4.019.1870",
-          "party_page": {
-            "id": "aqua-adhesives-i-gmbh",
-            "name": "Aqua Adhesives I GmbH"
-          }
-        }
-      ]
+        "Aqua Adhesives I GmbH"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-65003",
       "merger_name": "Henkel \u2013 ATP adhesive systems group",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "Henkel Global Supply Chain B.V.",
-          "identifier_type": null,
-          "identifier": "Netherlands registration number: 854017447, CCI 60683945",
-          "canonical": {
-            "id": "henkel-ag-co-kgaa",
-            "name": "Henkel"
-          },
-          "party_page": {
-            "id": "henkel-ag-co-kgaa",
-            "name": "Henkel"
-          }
-        }
+        "Henkel Global Supply Chain B.V."
       ],
       "targets": [
-        {
-          "name": "Aqua Adhesives I GmbH",
-          "identifier_type": null,
-          "identifier": "Swiss registration number  CH170.4.019.1870",
-          "party_page": {
-            "id": "aqua-adhesives-i-gmbh",
-            "name": "Aqua Adhesives I GmbH"
-          }
-        }
-      ]
+        "Aqua Adhesives I GmbH"
+      ],
+      "accc_determination": "Not approved"
     },
     {
       "merger_id": "WA-25010",
       "merger_name": "INNIO Group \u2013 Enerflex",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "INNIO Jenbacher International B.V.",
-          "identifier_type": null,
-          "identifier": "KVK90210352",
-          "canonical": {
-            "id": "innio",
-            "name": "INNIO"
-          },
-          "party_page": {
-            "id": "innio",
-            "name": "INNIO"
-          }
-        },
-        {
-          "name": "INNIO Jenbacher Netherlands B.V.",
-          "identifier_type": null,
-          "identifier": "KVK90209982",
-          "canonical": {
-            "id": "innio",
-            "name": "INNIO"
-          },
-          "party_page": {
-            "id": "innio",
-            "name": "INNIO"
-          }
-        }
+        "INNIO Jenbacher International B.V.",
+        "INNIO Jenbacher Netherlands B.V."
       ],
       "targets": [
-        {
-          "name": "Exterran (Thailand) Ltd",
-          "identifier_type": null,
-          "identifier": "0105542031616",
-          "party_page": {
-            "id": "exterran-thailand-ltd",
-            "name": "Exterran (Thailand) Ltd"
-          }
-        },
-        {
-          "name": "PT Enerflex (Indonesia)",
-          "identifier_type": null,
-          "identifier": "9120407262914",
-          "party_page": {
-            "id": "pt-enerflex-indonesia",
-            "name": "PT Enerflex (Indonesia)"
-          }
-        }
-      ]
+        "Exterran (Thailand) Ltd",
+        "PT Enerflex (Indonesia)"
+      ],
+      "accc_determination": "Not approved"
     }
   ]
 }

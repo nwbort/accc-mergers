@@ -129,95 +129,36 @@
     {
       "merger_id": "MN-01083",
       "merger_name": "Civilmart \u2013 Taylex",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CTC PRECAST PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "12 614 966 059",
-          "party_page": {
-            "id": "ctc-precast-pty-ltd",
-            "name": "Ctc Precast Pty Ltd"
-          }
-        }
+        "CTC PRECAST PTY LTD"
       ],
       "targets": [
-        {
-          "name": "TAYLEX GROUP HOLDING CO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "50 646 051 578",
-          "party_page": {
-            "id": "taylex-group-holding-co-pty-ltd",
-            "name": "Taylex Group Holding Co Pty Ltd"
-          }
-        }
-      ]
+        "TAYLEX GROUP HOLDING CO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-50021",
       "merger_name": "Adbri - Eureka Concrete",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ADBRI PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "15 007 596 018",
-          "party_page": {
-            "id": "adbri-pty-limited",
-            "name": "Adbri Pty Limited"
-          }
-        }
+        "ADBRI PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "Eureka Concrete (Holdings) Pty. Ltd.",
-          "identifier_type": "ABN",
-          "identifier": "14 005 232 342",
-          "party_page": {
-            "id": "eureka-concrete-holdings-pty-ltd",
-            "name": "Eureka Concrete (Holdings) Pty. Ltd."
-          }
-        }
-      ]
+        "Eureka Concrete (Holdings) Pty. Ltd."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-85003",
       "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "NACG WA Acquisition Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "693 678 296",
-          "party_page": {
-            "id": "nacg-wa-acquisition-pty-ltd",
-            "name": "NACG WA Acquisition Pty Ltd"
-          }
-        }
+        "NACG WA Acquisition Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "DCL CORP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "60 633 008 992",
-          "party_page": {
-            "id": "dcl-corp-pty-ltd",
-            "name": "Dcl Corp Pty Ltd"
-          }
-        },
-        {
-          "name": "IRON HIRE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 641 807 589",
-          "party_page": {
-            "id": "iron-hire-pty-ltd",
-            "name": "Iron Hire Pty Ltd"
-          }
-        }
-      ]
+        "DCL CORP PTY LTD",
+        "IRON HIRE PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

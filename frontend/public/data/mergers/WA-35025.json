@@ -128,99 +128,36 @@
     {
       "merger_id": "WA-70008",
       "merger_name": "Tetra Tech \u2013 Providence Consulting",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "TETRA TECH AUSTRALIA GROUP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "74 676 488 716",
-          "canonical": {
-            "id": "tetra-tech-inc",
-            "name": "Tetra Tech, Inc."
-          },
-          "party_page": {
-            "id": "tetra-tech-inc",
-            "name": "Tetra Tech, Inc."
-          }
-        }
+        "TETRA TECH AUSTRALIA GROUP HOLDINGS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Providence Consulting Group Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "49 117 321 552",
-          "party_page": {
-            "id": "providence-consulting-group-pty-ltd",
-            "name": "Providence Consulting Group Pty Ltd"
-          }
-        }
-      ]
+        "Providence Consulting Group Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-15008",
       "merger_name": "Colliers International Group \u2013 Ayesa Engineering",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Global Garella, S.L.",
-          "identifier_type": null,
-          "identifier": "Spanish Tax Identification Number  B24904989",
-          "party_page": {
-            "id": "global-garella-s-l",
-            "name": "Global Garella, S.L."
-          }
-        }
+        "Global Garella, S.L."
       ],
       "targets": [
-        {
-          "name": "Ayesa Engineering, S.A.U.",
-          "identifier_type": null,
-          "identifier": "Spanish Tax Identification Number  A91379875",
-          "party_page": {
-            "id": "ayesa-engineering-s-a-u",
-            "name": "Ayesa Engineering, S.A.U."
-          }
-        }
-      ]
+        "Ayesa Engineering, S.A.U."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-55006",
       "merger_name": "Hg Capital - OneStream",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Hg Pooled Management Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "hg-pooled-management-limited",
-            "name": "Hg Pooled Management Limited"
-          }
-        },
-        {
-          "name": "OnwardAcquireCo, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "onwardacquireco-inc",
-            "name": "OnwardAcquireCo, Inc"
-          }
-        }
+        "Hg Pooled Management Limited",
+        "OnwardAcquireCo, Inc"
       ],
       "targets": [
-        {
-          "name": "OneStream, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "onestream-inc",
-            "name": "OneStream, Inc."
-          }
-        }
-      ]
+        "OneStream, Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

@@ -111,86 +111,35 @@
     {
       "merger_id": "WA-75010",
       "merger_name": "Zendesk \u2013 Forethought",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Zendesk, Inc.",
-          "identifier_type": null,
-          "identifier": "EIN 264411091",
-          "party_page": {
-            "id": "zendesk-inc",
-            "name": "Zendesk, Inc."
-          }
-        }
+        "Zendesk, Inc."
       ],
       "targets": [
-        {
-          "name": "Forethought Technologies, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "forethought-technologies-inc",
-            "name": "Forethought Technologies, Inc."
-          }
-        }
-      ]
+        "Forethought Technologies, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25003",
       "merger_name": "Delinea (TPG) - StrongDM",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Delinea Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware corporation file number  3777797",
-          "party_page": {
-            "id": "delinea-inc",
-            "name": "Delinea Inc."
-          }
-        }
+        "Delinea Inc."
       ],
       "targets": [
-        {
-          "name": "StrongDM, Inc",
-          "identifier_type": null,
-          "identifier": "CIK  0001637806",
-          "party_page": {
-            "id": "strongdm-inc",
-            "name": "StrongDM, Inc"
-          }
-        }
-      ]
+        "StrongDM, Inc"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-01074",
       "merger_name": "GE Healthcare \u2013 Intelerad",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "GE Healthcare Technologies Inc.",
-          "identifier_type": null,
-          "identifier": "6772877",
-          "party_page": {
-            "id": "ge-healthcare-technologies-inc",
-            "name": "GE Healthcare Technologies Inc."
-          }
-        }
+        "GE Healthcare Technologies Inc."
       ],
       "targets": [
-        {
-          "name": "Intelerad Holdings ULC",
-          "identifier_type": null,
-          "identifier": "703693275",
-          "party_page": {
-            "id": "intelerad-holdings-ulc",
-            "name": "Intelerad Holdings ULC"
-          }
-        }
-      ]
+        "Intelerad Holdings ULC"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

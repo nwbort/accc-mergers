@@ -250,108 +250,37 @@
     {
       "merger_id": "WA-90014",
       "merger_name": "Constellation Software - DerbySoft Holdings",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Sail Parent Holdco Ltd",
-          "identifier_type": null,
-          "identifier": "UK Company Registration Number 17112723",
-          "party_page": {
-            "id": "sail-parent-holdco-ltd",
-            "name": "Sail Parent Holdco Ltd"
-          }
-        }
+        "Sail Parent Holdco Ltd"
       ],
       "targets": [
-        {
-          "name": "DerbySoft Holdings Limited",
-          "identifier_type": null,
-          "identifier": "Cayman Islands Company Registration Number CF172438",
-          "canonical": {
-            "id": "derbysoft-inc",
-            "name": "DerbySoft"
-          },
-          "party_page": {
-            "id": "derbysoft-inc",
-            "name": "DerbySoft"
-          }
-        }
-      ]
+        "DerbySoft Holdings Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-55006",
       "merger_name": "Hg Capital - OneStream",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Hg Pooled Management Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "hg-pooled-management-limited",
-            "name": "Hg Pooled Management Limited"
-          }
-        },
-        {
-          "name": "OnwardAcquireCo, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "onwardacquireco-inc",
-            "name": "OnwardAcquireCo, Inc"
-          }
-        }
+        "Hg Pooled Management Limited",
+        "OnwardAcquireCo, Inc"
       ],
       "targets": [
-        {
-          "name": "OneStream, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "onestream-inc",
-            "name": "OneStream, Inc."
-          }
-        }
-      ]
+        "OneStream, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-15026",
       "merger_name": "LTM \u2013 Randstad Digital entities including FinXL",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "LTM UK & Ireland Limited",
-          "identifier_type": null,
-          "identifier": "12817556 (UK company number)",
-          "party_page": {
-            "id": "ltm-uk-ireland-limited",
-            "name": "LTM UK & Ireland Limited"
-          }
-        }
+        "LTM UK & Ireland Limited"
       ],
       "targets": [
-        {
-          "name": "FinXL Professional Services Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "74 104 804 793",
-          "party_page": {
-            "id": "finxl-professional-services-pty-ltd",
-            "name": "FinXL Professional Services Pty Ltd"
-          }
-        },
-        {
-          "name": "Randstad Digital B.V.",
-          "identifier_type": null,
-          "identifier": "91235944",
-          "party_page": {
-            "id": "randstad-digital-b-v",
-            "name": "Randstad Digital B.V."
-          }
-        }
-      ]
+        "FinXL Professional Services Pty Ltd",
+        "Randstad Digital B.V."
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

@@ -155,112 +155,37 @@
     {
       "merger_id": "WA-25033",
       "merger_name": "Bain Capital \u2013 FDH",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BCPE Lightning Buyer, Inc.",
-          "identifier_type": null,
-          "identifier": "US incorporation number  10644291",
-          "party_page": {
-            "id": "bcpe-lightning-buyer-inc",
-            "name": "BCPE Lightning Buyer, Inc."
-          }
-        }
+        "BCPE Lightning Buyer, Inc."
       ],
       "targets": [
-        {
-          "name": "FDH Group Intermediate Holdings, LP",
-          "identifier_type": null,
-          "identifier": "US incorporation number  6336375",
-          "canonical": {
-            "id": "fdh-group",
-            "name": "FDH Group"
-          },
-          "party_page": {
-            "id": "fdh-group",
-            "name": "FDH Group"
-          }
-        },
-        {
-          "name": "FDH Group Intermediate, Inc.",
-          "identifier_type": null,
-          "identifier": "US incorporation number  6310370",
-          "canonical": {
-            "id": "fdh-group",
-            "name": "FDH Group"
-          },
-          "party_page": {
-            "id": "fdh-group",
-            "name": "FDH Group"
-          }
-        }
-      ]
+        "FDH Group Intermediate Holdings, LP",
+        "FDH Group Intermediate, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-80022",
       "merger_name": "Bain Capital \u2013 Perpetual Wealth Management Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BCPE Barton BidCo Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "694 979 041",
-          "party_page": {
-            "id": "bcpe-barton-bidco-pty-ltd",
-            "name": "BCPE Barton BidCo Pty Ltd"
-          }
-        }
+        "BCPE Barton BidCo Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "PERPETUAL LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "86 000 431 827",
-          "party_page": {
-            "id": "perpetual-limited",
-            "name": "Perpetual Limited"
-          }
-        },
-        {
-          "name": "PERPETUAL PWM SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "90 678 546 113",
-          "party_page": {
-            "id": "perpetual-pwm-services-pty-ltd",
-            "name": "Perpetual Pwm Services Pty Ltd"
-          }
-        }
-      ]
+        "PERPETUAL LIMITED",
+        "PERPETUAL PWM SERVICES PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-80002",
       "merger_name": "Bain Capital \u2013 MCJ",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BCPE Meta Cayman, L.P.",
-          "identifier_type": null,
-          "identifier": "MC135352",
-          "party_page": {
-            "id": "bcpe-meta-cayman-l-p",
-            "name": "BCPE Meta Cayman, L.P."
-          }
-        }
+        "BCPE Meta Cayman, L.P."
       ],
       "targets": [
-        {
-          "name": "MCJ Co., Ltd.",
-          "identifier_type": null,
-          "identifier": "9030001052005",
-          "party_page": {
-            "id": "mcj-co-ltd",
-            "name": "MCJ Co., Ltd."
-          }
-        }
-      ]
+        "MCJ Co., Ltd."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

@@ -151,99 +151,36 @@
     {
       "merger_id": "WA-85031",
       "merger_name": "Tasmea - Maxim",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "TASMEA LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "22 088 588 425",
-          "party_page": {
-            "id": "tasmea-limited",
-            "name": "Tasmea Limited"
-          }
-        }
+        "TASMEA LIMITED"
       ],
       "targets": [
-        {
-          "name": "MAXIM GROUP AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "83 652 585 192",
-          "party_page": {
-            "id": "maxim-group-australia-pty-ltd",
-            "name": "Maxim Group Australia Pty Ltd"
-          }
-        }
-      ]
+        "MAXIM GROUP AUSTRALIA PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-85020",
       "merger_name": "Francisco Partners \u2013 Capsa Healthcare",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Catalyst Blocker Merger Sub I, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "catalyst-blocker-merger-sub-i-llc",
-            "name": "Catalyst Blocker Merger Sub I, LLC"
-          }
-        },
-        {
-          "name": "Catalyst Blocker Merger Sub II, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "catalyst-blocker-merger-sub-ii-llc",
-            "name": "Catalyst Blocker Merger Sub II, LLC"
-          }
-        }
+        "Catalyst Blocker Merger Sub I, LLC",
+        "Catalyst Blocker Merger Sub II, LLC"
       ],
       "targets": [
-        {
-          "name": "CSHC Buyerco, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "cshc-buyerco-llc",
-            "name": "CSHC Buyerco, LLC"
-          }
-        }
-      ]
+        "CSHC Buyerco, LLC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-75004",
       "merger_name": "Parker-Hannifin \u2013 Filtration Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Parker-Hannifin Corporation",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "parker-hannifin-corporation",
-            "name": "Parker-Hannifin Corporation"
-          },
-          "party_page": {
-            "id": "parker-hannifin-corporation",
-            "name": "Parker-Hannifin Corporation"
-          }
-        }
+        "Parker-Hannifin Corporation"
       ],
       "targets": [
-        {
-          "name": "Filtration Group Corporation",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "filtration-group-corporation",
-            "name": "Filtration Group Corporation"
-          }
-        }
-      ]
+        "Filtration Group Corporation"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

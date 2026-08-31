@@ -128,121 +128,38 @@
     {
       "merger_id": "WA-85008",
       "merger_name": "Sony \u2013 Peanuts Worldwide",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Sony Music Entertainment (Japan) Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "sony-music-entertainment-japan-inc",
-            "name": "Sony Music Entertainment (Japan) Inc."
-          }
-        },
-        {
-          "name": "Sony Pictures Entertainment, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "sony-pictures-entertainment-inc",
-            "name": "Sony Pictures Entertainment, Inc."
-          }
-        }
+        "Sony Music Entertainment (Japan) Inc.",
+        "Sony Pictures Entertainment, Inc."
       ],
       "targets": [
-        {
-          "name": "DHX Entertainment (USA) Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "dhx-entertainment-usa-inc",
-            "name": "DHX Entertainment (USA) Inc."
-          }
-        }
-      ]
+        "DHX Entertainment (USA) Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-50008",
       "merger_name": "WIN Television Network - NBN Enterprises & Television Holdings Darwin",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "WIN TELEVISION NETWORK PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "90 008 589 026",
-          "party_page": {
-            "id": "win-television-network-pty-ltd",
-            "name": "Win Television Network Pty Ltd"
-          }
-        }
+        "WIN TELEVISION NETWORK PTY LTD"
       ],
       "targets": [
-        {
-          "name": "NINE NETWORK AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "88 008 685 407",
-          "canonical": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          },
-          "party_page": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          }
-        },
-        {
-          "name": "NINE NETWORK AUSTRALIA HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 124 816 093",
-          "canonical": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          },
-          "party_page": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          }
-        }
-      ]
+        "NINE NETWORK AUSTRALIA PTY LTD",
+        "NINE NETWORK AUSTRALIA HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-55009",
       "merger_name": "Resonetics \u2013 Resolution Medical",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Resonetics, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "resonetics-llc",
-            "name": "Resonetics, LLC"
-          }
-        }
+        "Resonetics, LLC"
       ],
       "targets": [
-        {
-          "name": "Resolution Medical MidCo, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "resolution-medical-midco-llc",
-            "name": "Resolution Medical MidCo, LLC"
-          }
-        },
-        {
-          "name": "Arcline Capital Partners II-A LP",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "arcline-capital-partners-ii-a-lp",
-            "name": "Arcline Capital Partners II-A LP"
-          }
-        }
-      ]
+        "Resolution Medical MidCo, LLC",
+        "Arcline Capital Partners II-A LP"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

@@ -111,122 +111,39 @@
     {
       "merger_id": "MN-05017",
       "merger_name": "Tony White Group - Sharton Motors dealerships in Maitland, Port Stephens and Cardiff",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "TWG HUNTER DEALERSHIPS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "18 695 726 348",
-          "party_page": {
-            "id": "twg-hunter-dealerships-pty-ltd",
-            "name": "Twg Hunter Dealerships Pty Ltd"
-          }
-        }
+        "TWG HUNTER DEALERSHIPS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "SHARTON MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "55 001 345 384",
-          "party_page": {
-            "id": "sharton-motors-pty-ltd",
-            "name": "Sharton Motors Pty Ltd"
-          }
-        },
-        {
-          "name": "N&M Burton Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "125 935 944",
-          "party_page": {
-            "id": "n-m-burton-pty-ltd",
-            "name": "N&M Burton Pty Ltd"
-          }
-        }
-      ]
+        "SHARTON MOTORS PTY LTD",
+        "N&M Burton Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-65011",
       "merger_name": "Tony White Group - Sharton Motors Dealerships in Maitland and Port Stephens",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "TWG HUNTER DEALERSHIPS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "18 695 726 348",
-          "party_page": {
-            "id": "twg-hunter-dealerships-pty-ltd",
-            "name": "Twg Hunter Dealerships Pty Ltd"
-          }
-        },
-        {
-          "name": "THE TRUSTEE FOR WHITE KING CORPORATE UNIT TRUST",
-          "identifier_type": "ABN",
-          "identifier": "70 760 893 620",
-          "party_page": {
-            "id": "the-trustee-for-white-king-corporate-unit-trust",
-            "name": "The Trustee For White King Corporate Unit Trust"
-          }
-        }
+        "TWG HUNTER DEALERSHIPS PTY LTD",
+        "THE TRUSTEE FOR WHITE KING CORPORATE UNIT TRUST"
       ],
       "targets": [
-        {
-          "name": "SHARTON MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "55 001 345 384",
-          "party_page": {
-            "id": "sharton-motors-pty-ltd",
-            "name": "Sharton Motors Pty Ltd"
-          }
-        },
-        {
-          "name": "N&M BURTON PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "125 935 944",
-          "party_page": {
-            "id": "n-m-burton-pty-ltd",
-            "name": "N&M Burton Pty Ltd"
-          }
-        }
-      ]
+        "SHARTON MOTORS PTY LTD",
+        "N&M BURTON PTY LTD"
+      ],
+      "accc_determination": "Not approved"
     },
     {
       "merger_id": "WA-85017",
       "merger_name": "Regent Motors Group - Lane Group's Mandurah Dealerships",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "MANDURAH AUTO GROUP PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "693 645 699",
-          "party_page": {
-            "id": "mandurah-auto-group-pty-ltd",
-            "name": "Mandurah Auto Group Pty Ltd"
-          }
-        },
-        {
-          "name": "PEEL MOTOR GROUP PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "693 645 742",
-          "party_page": {
-            "id": "peel-motor-group-pty-ltd",
-            "name": "Peel Motor Group Pty Ltd"
-          }
-        }
+        "MANDURAH AUTO GROUP PTY LTD",
+        "PEEL MOTOR GROUP PTY LTD"
       ],
       "targets": [
-        {
-          "name": "WA AUTOMOTIVE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "20 158 702 740",
-          "party_page": {
-            "id": "wa-automotive-pty-ltd",
-            "name": "Wa Automotive Pty Ltd"
-          }
-        }
-      ]
+        "WA AUTOMOTIVE PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

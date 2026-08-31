@@ -138,112 +138,37 @@
     {
       "merger_id": "WA-90025",
       "merger_name": "KKR - Crowe",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Forge Merger Sub LLC",
-          "identifier_type": null,
-          "identifier": "10628991  Delaware",
-          "party_page": {
-            "id": "forge-merger-sub-llc",
-            "name": "Forge Merger Sub LLC"
-          }
-        }
+        "Forge Merger Sub LLC"
       ],
       "targets": [
-        {
-          "name": "Crowe ParentCo LLC",
-          "identifier_type": null,
-          "identifier": "350921680  Delaware",
-          "party_page": {
-            "id": "crowe-parentco-llc",
-            "name": "Crowe ParentCo LLC"
-          }
-        }
-      ]
+        "Crowe ParentCo LLC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-10020",
       "merger_name": "Apollo Capital \u2013 Curia",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Apollo Capital Management, L.P.",
-          "identifier_type": null,
-          "identifier": "Registration No. 4293091",
-          "canonical": {
-            "id": "apollo-capital-management-l-p",
-            "name": "Apollo Capital Management, L.P."
-          },
-          "party_page": {
-            "id": "apollo-capital-management-l-p",
-            "name": "Apollo Capital Management, L.P."
-          }
-        }
+        "Apollo Capital Management, L.P."
       ],
       "targets": [
-        {
-          "name": "UIC Parent Corporation",
-          "identifier_type": null,
-          "identifier": "Registration No. 6432344",
-          "party_page": {
-            "id": "uic-parent-corporation",
-            "name": "UIC Parent Corporation"
-          }
-        },
-        {
-          "name": "Curia Global, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "curia-global-inc",
-            "name": "Curia Global, Inc."
-          }
-        }
-      ]
+        "UIC Parent Corporation",
+        "Curia Global, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25008",
       "merger_name": "Five V Capital - FTP Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OVERWATCH BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 739 970",
-          "party_page": {
-            "id": "overwatch-bidco-pty-ltd",
-            "name": "Overwatch Bidco Pty Ltd"
-          }
-        }
+        "OVERWATCH BIDCO PTY LTD"
       ],
       "targets": [
-        {
-          "name": "FTP GROUP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "82 626 217 614",
-          "party_page": {
-            "id": "ftp-group-holdings-pty-ltd",
-            "name": "Ftp Group Holdings Pty Ltd"
-          }
-        },
-        {
-          "name": "FAARM BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 834 390",
-          "canonical": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          },
-          "party_page": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          }
-        }
-      ]
+        "FTP GROUP HOLDINGS PTY LTD",
+        "FAARM BIDCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

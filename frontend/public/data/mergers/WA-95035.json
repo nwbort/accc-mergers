@@ -147,138 +147,39 @@
     {
       "merger_id": "WA-70021",
       "merger_name": "Aula Energy \u2013 Additional interest in the Boulder Creek Wind Farm",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BCWF 2 Holdings Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "697 890 207",
-          "canonical": {
-            "id": "bcwf-2-pty-limited",
-            "name": "Bcwf 2 Pty Limited"
-          },
-          "party_page": {
-            "id": "bcwf-2-pty-limited",
-            "name": "Bcwf 2 Pty Limited"
-          }
-        },
-        {
-          "name": "AULA ENERGY HOLDINGS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "13 662 726 909",
-          "party_page": {
-            "id": "aula-energy-holdings-pty-limited",
-            "name": "Aula Energy Holdings Pty Limited"
-          }
-        }
+        "BCWF 2 Holdings Pty Ltd",
+        "AULA ENERGY HOLDINGS PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "C S ENERGY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "54 078 848 745",
-          "party_page": {
-            "id": "c-s-energy-limited",
-            "name": "C S Energy Limited"
-          }
-        },
-        {
-          "name": "BCWF 2 PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "77 670 206 256",
-          "canonical": {
-            "id": "bcwf-2-pty-limited",
-            "name": "Bcwf 2 Pty Limited"
-          },
-          "party_page": {
-            "id": "bcwf-2-pty-limited",
-            "name": "Bcwf 2 Pty Limited"
-          }
-        }
-      ]
+        "C S ENERGY LIMITED",
+        "BCWF 2 PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-60023",
       "merger_name": "Siemens Energy \u2013 Camlin Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Siemens Energy Limited",
-          "identifier_type": null,
-          "identifier": "UK company number  00631825",
-          "party_page": {
-            "id": "siemens-energy-limited",
-            "name": "Siemens Energy Limited"
-          }
-        }
+        "Siemens Energy Limited"
       ],
       "targets": [
-        {
-          "name": "Camlin Limited",
-          "identifier_type": null,
-          "identifier": "UK company number  NI073204",
-          "canonical": {
-            "id": "camlin-limited",
-            "name": "Camlin Limited"
-          },
-          "party_page": {
-            "id": "camlin-limited",
-            "name": "Camlin Limited"
-          }
-        },
-        {
-          "name": "Camlin (Australia) Pty Ltd",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "camlin-limited",
-            "name": "Camlin Limited"
-          },
-          "party_page": {
-            "id": "camlin-limited",
-            "name": "Camlin Limited"
-          }
-        }
-      ]
+        "Camlin Limited",
+        "Camlin (Australia) Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70002",
       "merger_name": "Ethos (TPG) \u2013 EMIS and certain related assets",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Ethos Bidco, Ltd",
-          "identifier_type": null,
-          "identifier": "UK Company Number: 16905190",
-          "party_page": {
-            "id": "ethos-bidco-ltd",
-            "name": "Ethos Bidco, Ltd"
-          }
-        }
+        "Ethos Bidco, Ltd"
       ],
       "targets": [
-        {
-          "name": "EMIS Group Limited",
-          "identifier_type": "ABN",
-          "identifier": "75 075 102 028",
-          "party_page": {
-            "id": "emis-group-limited",
-            "name": "EMIS Group Limited"
-          }
-        },
-        {
-          "name": "UnitedHealth Group Incorporated (UHG)",
-          "identifier_type": null,
-          "identifier": "US EIN  4113221939",
-          "party_page": {
-            "id": "unitedhealth-group-incorporated-uhg",
-            "name": "UnitedHealth Group Incorporated (UHG)"
-          }
-        }
-      ]
+        "EMIS Group Limited",
+        "UnitedHealth Group Incorporated (UHG)"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

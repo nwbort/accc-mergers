@@ -106,103 +106,36 @@
     {
       "merger_id": "WA-80017",
       "merger_name": "Direct Couriers \u2013 Phoenix Transport",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "DIRECT COURIERS (AUST.) PTY. LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "87 063 478 295",
-          "party_page": {
-            "id": "direct-couriers-aust-pty-limited",
-            "name": "Direct Couriers (Aust.) Pty. Limited"
-          }
-        }
+        "DIRECT COURIERS (AUST.) PTY. LIMITED"
       ],
       "targets": [
-        {
-          "name": "PHOENIX TRANSPORT HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "75 062 309 773",
-          "party_page": {
-            "id": "phoenix-transport-holdings-pty-ltd",
-            "name": "Phoenix Transport Holdings Pty Ltd"
-          }
-        },
-        {
-          "name": "PHOENIX DISTRIBUTION (NSW) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "24 073 843 982",
-          "party_page": {
-            "id": "phoenix-distribution-nsw-pty-ltd",
-            "name": "Phoenix Distribution (Nsw) Pty Ltd"
-          }
-        }
-      ]
+        "PHOENIX TRANSPORT HOLDINGS PTY LTD",
+        "PHOENIX DISTRIBUTION (NSW) PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-70020",
       "merger_name": "CVS Group \u2013 Paws at Prospect Vet and Eyes at Prospect Vet",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "35 667 654 686",
-          "canonical": {
-            "id": "cvs-vets",
-            "name": "CVS Group"
-          },
-          "party_page": {
-            "id": "cvs-vets",
-            "name": "CVS Group"
-          }
-        }
+        "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED"
       ],
       "targets": [
-        {
-          "name": "NEWMAN VET PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "70 633 313 149",
-          "party_page": {
-            "id": "newman-vet-pty-ltd",
-            "name": "Newman Vet Pty Ltd"
-          }
-        }
-      ]
+        "NEWMAN VET PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-95003",
       "merger_name": "CVS Group - Pittwater Animal Hospital",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "35 667 654 686",
-          "canonical": {
-            "id": "cvs-vets",
-            "name": "CVS Group"
-          },
-          "party_page": {
-            "id": "cvs-vets",
-            "name": "CVS Group"
-          }
-        }
+        "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED"
       ],
       "targets": [
-        {
-          "name": "PITTWATER ANIMAL HOSPITAL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "25 001 336 723",
-          "party_page": {
-            "id": "pittwater-animal-hospital-pty-ltd",
-            "name": "Pittwater Animal Hospital Pty Ltd"
-          }
-        }
-      ]
+        "PITTWATER ANIMAL HOSPITAL PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

@@ -248,107 +248,36 @@
     {
       "merger_id": "WA-45015",
       "merger_name": "EQT Fund Management \u2013 Kakaku.com",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Kamgras 1 K.K.",
-          "identifier_type": null,
-          "identifier": "Japan corporate number  0104 01 197943",
-          "party_page": {
-            "id": "kamgras-1-k-k",
-            "name": "Kamgras 1 K.K."
-          }
-        }
+        "Kamgras 1 K.K."
       ],
       "targets": [
-        {
-          "name": "Kakaku.com, Inc.",
-          "identifier_type": null,
-          "identifier": "Japan corporate number  011001065997",
-          "canonical": {
-            "id": "time-design-international-pte-ltd",
-            "name": "Kakaku.com"
-          },
-          "party_page": {
-            "id": "time-design-international-pte-ltd",
-            "name": "Kakaku.com"
-          }
-        },
-        {
-          "name": "Time Design International Pte Ltd",
-          "identifier_type": null,
-          "identifier": "Singapore registration number  UEN 201736394D",
-          "canonical": {
-            "id": "time-design-international-pte-ltd",
-            "name": "Kakaku.com"
-          },
-          "party_page": {
-            "id": "time-design-international-pte-ltd",
-            "name": "Kakaku.com"
-          }
-        }
-      ]
+        "Kakaku.com, Inc.",
+        "Time Design International Pte Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-60028",
       "merger_name": "EQT Fund Management S.\u00e0 r.l. \u2013 Orikan Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ULEXITE GROUP PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "55 684 998 070",
-          "party_page": {
-            "id": "ulexite-group-pty-limited",
-            "name": "Ulexite Group Pty Limited"
-          }
-        }
+        "ULEXITE GROUP PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "IGNITION TOPCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "86 661 447 847",
-          "party_page": {
-            "id": "ignition-topco-pty-ltd",
-            "name": "Ignition Topco Pty Ltd"
-          }
-        }
-      ]
+        "IGNITION TOPCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-01114",
       "merger_name": "EQT Fund Management \u2013 Exolaunch",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Elevate BidCo GmbH",
-          "identifier_type": null,
-          "identifier": "HRB 141746",
-          "canonical": {
-            "id": "elevate-bidco-gmbh",
-            "name": "Elevate BidCo GmbH"
-          },
-          "party_page": {
-            "id": "elevate-bidco-gmbh",
-            "name": "Elevate BidCo GmbH"
-          }
-        }
+        "Elevate BidCo GmbH"
       ],
       "targets": [
-        {
-          "name": "Exolaunch GmbH",
-          "identifier_type": null,
-          "identifier": "HRB 134539 B",
-          "party_page": {
-            "id": "exolaunch-gmbh",
-            "name": "Exolaunch GmbH"
-          }
-        }
-      ]
+        "Exolaunch GmbH"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

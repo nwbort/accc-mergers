@@ -125,122 +125,39 @@
     {
       "merger_id": "WA-15003",
       "merger_name": "Coforge - Encora",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Coforge Limited",
-          "identifier_type": null,
-          "identifier": "L72100HR1992PLC128382",
-          "party_page": {
-            "id": "coforge-limited",
-            "name": "Coforge Limited"
-          }
-        },
-        {
-          "name": "Encora Holdco Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "encora-holdco-limited",
-            "name": "Encora Holdco Limited"
-          }
-        }
+        "Coforge Limited",
+        "Encora Holdco Limited"
       ],
       "targets": [
-        {
-          "name": "Encora US Holdco, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "encora-us-holdco-inc",
-            "name": "Encora US Holdco, Inc"
-          }
-        },
-        {
-          "name": "Encora Holdings Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "encora-holdings-limited",
-            "name": "Encora Holdings Limited"
-          }
-        }
-      ]
+        "Encora US Holdco, Inc",
+        "Encora Holdings Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-55006",
       "merger_name": "Hg Capital - OneStream",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Hg Pooled Management Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "hg-pooled-management-limited",
-            "name": "Hg Pooled Management Limited"
-          }
-        },
-        {
-          "name": "OnwardAcquireCo, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "onwardacquireco-inc",
-            "name": "OnwardAcquireCo, Inc"
-          }
-        }
+        "Hg Pooled Management Limited",
+        "OnwardAcquireCo, Inc"
       ],
       "targets": [
-        {
-          "name": "OneStream, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "onestream-inc",
-            "name": "OneStream, Inc."
-          }
-        }
-      ]
+        "OneStream, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-35011",
       "merger_name": "Austral Resources Australia \u2013 Lady Loretta mine",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AUSTRAL RESOURCES AUSTRALIA LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "50 142 485 470",
-          "party_page": {
-            "id": "austral-resources-australia-limited",
-            "name": "Austral Resources Australia Limited"
-          }
-        }
+        "AUSTRAL RESOURCES AUSTRALIA LIMITED"
       ],
       "targets": [
-        {
-          "name": "NORANDA PACIFIC PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "65 006 864 802",
-          "party_page": {
-            "id": "noranda-pacific-pty-ltd",
-            "name": "Noranda Pacific Pty Ltd"
-          }
-        },
-        {
-          "name": "Noranda Pacific No. 2 Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "158 936 264",
-          "party_page": {
-            "id": "noranda-pacific-no-2-pty-ltd",
-            "name": "Noranda Pacific No. 2 Pty Ltd"
-          }
-        }
-      ]
+        "NORANDA PACIFIC PTY LTD",
+        "Noranda Pacific No. 2 Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

@@ -124,95 +124,36 @@
     {
       "merger_id": "MN-15005",
       "merger_name": "Cvent - ON24",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Cvent Atlanta, LLC",
-          "identifier_type": null,
-          "identifier": "[Delaware corporate file number  5603939]",
-          "party_page": {
-            "id": "cvent-atlanta-llc",
-            "name": "Cvent Atlanta, LLC"
-          }
-        }
+        "Cvent Atlanta, LLC"
       ],
       "targets": [
-        {
-          "name": "ON24, Inc.",
-          "identifier_type": null,
-          "identifier": "[Delaware corporate file number  2843568]",
-          "party_page": {
-            "id": "on24-inc",
-            "name": "ON24, Inc."
-          }
-        }
-      ]
+        "ON24, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-75010",
       "merger_name": "Zendesk \u2013 Forethought",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Zendesk, Inc.",
-          "identifier_type": null,
-          "identifier": "EIN 264411091",
-          "party_page": {
-            "id": "zendesk-inc",
-            "name": "Zendesk, Inc."
-          }
-        }
+        "Zendesk, Inc."
       ],
       "targets": [
-        {
-          "name": "Forethought Technologies, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "forethought-technologies-inc",
-            "name": "Forethought Technologies, Inc."
-          }
-        }
-      ]
+        "Forethought Technologies, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-35002",
       "merger_name": "IFS \u2013 Softeon",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Fjord Merger Sub, Inc.",
-          "identifier_type": null,
-          "identifier": "TIN/EIN  921660460",
-          "party_page": {
-            "id": "fjord-merger-sub-inc",
-            "name": "Fjord Merger Sub, Inc."
-          }
-        },
-        {
-          "name": "IFS North America, Inc.",
-          "identifier_type": null,
-          "identifier": "TIN/EIN  391292200",
-          "party_page": {
-            "id": "ifs-north-america-inc",
-            "name": "IFS North America, Inc."
-          }
-        }
+        "Fjord Merger Sub, Inc.",
+        "IFS North America, Inc."
       ],
       "targets": [
-        {
-          "name": "Softeon Inc.",
-          "identifier_type": null,
-          "identifier": "EIN 541960847",
-          "party_page": {
-            "id": "softeon-inc",
-            "name": "Softeon Inc."
-          }
-        }
-      ]
+        "Softeon Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

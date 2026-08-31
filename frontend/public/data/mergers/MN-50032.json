@@ -207,124 +207,37 @@
     {
       "merger_id": "MN-10013",
       "merger_name": "Accenture - Ziff Davis' connectivity business",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Accenture Inc.",
-          "identifier_type": null,
-          "identifier": "State File Number  3387477",
-          "canonical": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          },
-          "party_page": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          }
-        }
+        "Accenture Inc."
       ],
       "targets": [
-        {
-          "name": "Ookla, LLC",
-          "identifier_type": null,
-          "identifier": "Unified Business ID  602 422 103",
-          "party_page": {
-            "id": "ookla-llc",
-            "name": "Ookla, LLC"
-          }
-        },
-        {
-          "name": "Ekahau OY",
-          "identifier_type": null,
-          "identifier": "Business ID  16108964",
-          "party_page": {
-            "id": "ekahau-oy",
-            "name": "Ekahau OY"
-          }
-        }
-      ]
+        "Ookla, LLC",
+        "Ekahau OY"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-60031",
       "merger_name": "Accenture - runZero",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Accenture Venture Holdings, LLC",
-          "identifier_type": null,
-          "identifier": "Delaware file number  10429510",
-          "canonical": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          },
-          "party_page": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          }
-        }
+        "Accenture Venture Holdings, LLC"
       ],
       "targets": [
-        {
-          "name": "runZero, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware registered number  7045767",
-          "party_page": {
-            "id": "runzero-inc",
-            "name": "runZero, Inc."
-          }
-        }
-      ]
+        "runZero, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-20028",
       "merger_name": "Accenture \u2013 Whalar Agency",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Accenture Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware registered number  3387477",
-          "canonical": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          },
-          "party_page": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          }
-        }
+        "Accenture Inc."
       ],
       "targets": [
-        {
-          "name": "Whalar GmbH",
-          "identifier_type": null,
-          "identifier": "HRB  210859",
-          "canonical": {
-            "id": "whalar-inc",
-            "name": "Whalar Inc"
-          },
-          "party_page": {
-            "id": "whalar-inc",
-            "name": "Whalar Inc"
-          }
-        },
-        {
-          "name": "Whalar Inc",
-          "identifier_type": null,
-          "identifier": "Delaware company number  6534128",
-          "canonical": {
-            "id": "whalar-inc",
-            "name": "Whalar Inc"
-          },
-          "party_page": {
-            "id": "whalar-inc",
-            "name": "Whalar Inc"
-          }
-        }
-      ]
+        "Whalar GmbH",
+        "Whalar Inc"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

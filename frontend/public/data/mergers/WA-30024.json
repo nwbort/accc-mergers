@@ -100,104 +100,37 @@
     {
       "merger_id": "WA-15010",
       "merger_name": "AZ Next Generation Advisory \u2013 Intend Financial",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AZ NEXT GENERATION ADVISORY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "57 167 960 018",
-          "party_page": {
-            "id": "az-next-generation-advisory-pty-ltd",
-            "name": "Az Next Generation Advisory Pty Ltd"
-          }
-        }
+        "AZ NEXT GENERATION ADVISORY PTY LTD"
       ],
       "targets": [
-        {
-          "name": "BMM PARTNERS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "82 649 113 959",
-          "party_page": {
-            "id": "bmm-partners-pty-ltd",
-            "name": "Bmm Partners Pty Ltd"
-          }
-        }
-      ]
+        "BMM PARTNERS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-35008",
       "merger_name": "VFMC \u2013 CorVal Land and Operator Trusts",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "TRANSPORT ACCIDENT COMMISSION",
-          "identifier_type": "ABN",
-          "identifier": "22 033 947 623",
-          "party_page": {
-            "id": "transport-accident-commission",
-            "name": "Transport Accident Commission"
-          }
-        },
-        {
-          "name": "VICTORIAN MANAGED INSURANCE AUTHORITY",
-          "identifier_type": "ABN",
-          "identifier": "39 682 497 841",
-          "party_page": {
-            "id": "victorian-managed-insurance-authority",
-            "name": "Victorian Managed Insurance Authority"
-          }
-        }
+        "TRANSPORT ACCIDENT COMMISSION",
+        "VICTORIAN MANAGED INSURANCE AUTHORITY"
       ],
       "targets": [
-        {
-          "name": "CORVAL PARTNERS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "86 130 628 830",
-          "party_page": {
-            "id": "corval-partners-limited",
-            "name": "Corval Partners Limited"
-          }
-        }
-      ]
+        "CORVAL PARTNERS LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70019",
       "merger_name": "Cognizant \u2013 Astreya",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Cognizant Domestic Holdings Corporation",
-          "identifier_type": null,
-          "identifier": "Delaware file number 5221744",
-          "party_page": {
-            "id": "cognizant-domestic-holdings-corporation",
-            "name": "Cognizant Domestic Holdings Corporation"
-          }
-        },
-        {
-          "name": "Asteroid Merger Sub, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware file number 10587708",
-          "party_page": {
-            "id": "asteroid-merger-sub-inc",
-            "name": "Asteroid Merger Sub, Inc."
-          }
-        }
+        "Cognizant Domestic Holdings Corporation",
+        "Asteroid Merger Sub, Inc."
       ],
       "targets": [
-        {
-          "name": "Astreya Partners, Inc.",
-          "identifier_type": null,
-          "identifier": "CIN 770570107",
-          "party_page": {
-            "id": "astreya-partners-inc",
-            "name": "Astreya Partners, Inc."
-          }
-        }
-      ]
+        "Astreya Partners, Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

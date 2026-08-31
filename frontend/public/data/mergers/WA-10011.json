@@ -178,117 +178,38 @@
     {
       "merger_id": "MN-45005",
       "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "MA MARINA FUND HOLDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "96 667 241 385",
-          "party_page": {
-            "id": "ma-marina-fund-holdco-pty-ltd",
-            "name": "Ma Marina Fund Holdco Pty Ltd"
-          }
-        },
-        {
-          "name": "MA MARINA FUND TT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "65 666 902 245",
-          "party_page": {
-            "id": "ma-marina-fund-tt-pty-ltd",
-            "name": "Ma Marina Fund Tt Pty Ltd"
-          }
-        }
+        "MA MARINA FUND HOLDCO PTY LTD",
+        "MA MARINA FUND TT PTY LTD"
       ],
       "targets": [
-        {
-          "name": "GGC Marketing Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "32 105 294 228",
-          "party_page": {
-            "id": "ggc-marketing-pty-ltd",
-            "name": "GGC Marketing Pty Ltd"
-          }
-        },
-        {
-          "name": "QUEENSLAND & PACIFIC PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "72 081 370 685",
-          "party_page": {
-            "id": "queensland-pacific-pty-ltd",
-            "name": "Queensland & Pacific Pty. Ltd."
-          }
-        }
-      ]
+        "GGC Marketing Pty Ltd",
+        "QUEENSLAND & PACIFIC PTY. LTD."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-80006",
       "merger_name": "Russell Investment Group \u2013 Zurich Investment Management",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "RUSSELL INVESTMENT GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "92 003 066 859",
-          "party_page": {
-            "id": "russell-investment-group-pty-ltd",
-            "name": "Russell Investment Group Pty Ltd"
-          }
-        }
+        "RUSSELL INVESTMENT GROUP PTY LTD"
       ],
       "targets": [
-        {
-          "name": "ZURICH INVESTMENT MANAGEMENT LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "56 063 278 400",
-          "canonical": {
-            "id": "zurich-assure-australia-pty-ltd",
-            "name": "Zurich"
-          },
-          "party_page": {
-            "id": "zurich-assure-australia-pty-ltd",
-            "name": "Zurich"
-          }
-        }
-      ]
+        "ZURICH INVESTMENT MANAGEMENT LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-15004",
       "merger_name": "Australian Retirement Trust \u2013 Interests in non-rental income (Westfield Sydney)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "QIC TT COMPANY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "27 694 380 973",
-          "party_page": {
-            "id": "qic-tt-company-pty-ltd",
-            "name": "Qic Tt Company Pty Ltd"
-          }
-        }
+        "QIC TT COMPANY PTY LTD"
       ],
       "targets": [
-        {
-          "name": "SCENTRE GROUP TRUST 3",
-          "identifier_type": "ABN",
-          "identifier": "11 517 229 138",
-          "party_page": {
-            "id": "scentre-group-trust-3",
-            "name": "Scentre Group Trust 3"
-          }
-        },
-        {
-          "name": "SCENTRE ALLIANCES PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "53 098 357 521",
-          "party_page": {
-            "id": "scentre-alliances-pty-limited",
-            "name": "Scentre Alliances Pty Limited"
-          }
-        }
-      ]
+        "SCENTRE GROUP TRUST 3",
+        "SCENTRE ALLIANCES PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

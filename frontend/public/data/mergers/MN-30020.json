@@ -121,134 +121,39 @@
     {
       "merger_id": "MN-95021",
       "merger_name": "Logic Technologies - Ace Communication Distributors",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CSE-GLOBAL (AUSTRALIA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "85 109 958 090",
-          "party_page": {
-            "id": "cse-global-australia-pty-ltd",
-            "name": "Cse-Global (Australia) Pty Ltd"
-          }
-        },
-        {
-          "name": "LOGIC TECHNOLOGIES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "25 071 025 084",
-          "party_page": {
-            "id": "logic-technologies-pty-ltd",
-            "name": "Logic Technologies Pty Ltd"
-          }
-        }
+        "CSE-GLOBAL (AUSTRALIA) PTY LTD",
+        "LOGIC TECHNOLOGIES PTY LTD"
       ],
       "targets": [
-        {
-          "name": "ACE COMMUNICATION DISTRIBUTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "75 103 761 011",
-          "party_page": {
-            "id": "ace-communication-distributors-pty-ltd",
-            "name": "Ace Communication Distributors Pty Ltd"
-          }
-        }
-      ]
+        "ACE COMMUNICATION DISTRIBUTORS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-55005",
       "merger_name": "General Atlantic and CPP Investments led consortium - Boats Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "General Atlantic",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "general-atlantic",
-            "name": "General Atlantic"
-          }
-        },
-        {
-          "name": "Canada Pension Plan Investment Board",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "canada-pension-plan-investment-board",
-            "name": "Canada Pension Plan Investment Board"
-          }
-        }
+        "General Atlantic",
+        "Canada Pension Plan Investment Board"
       ],
       "targets": [
-        {
-          "name": "Boats Group Holdings, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "boats-group-holdings-inc",
-            "name": "Boats Group Holdings, Inc"
-          }
-        },
-        {
-          "name": "Bimini Holdings, LP",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "bimini-holdings-lp",
-            "name": "Bimini Holdings, LP"
-          }
-        }
-      ]
+        "Boats Group Holdings, Inc",
+        "Bimini Holdings, LP"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-80016",
       "merger_name": "Henkel \u2013 Olaplex",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Henkel US Operations Corporation",
-          "identifier_type": null,
-          "identifier": "Delaware registration number: 740913",
-          "canonical": {
-            "id": "henkel-ag-co-kgaa",
-            "name": "Henkel"
-          },
-          "party_page": {
-            "id": "henkel-ag-co-kgaa",
-            "name": "Henkel"
-          }
-        }
+        "Henkel US Operations Corporation"
       ],
       "targets": [
-        {
-          "name": "Olaplex, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware registration number: 7702123 (EIN: 843736163)",
-          "canonical": {
-            "id": "olaplex-inc",
-            "name": "Olaplex, Inc."
-          },
-          "party_page": {
-            "id": "olaplex-inc",
-            "name": "Olaplex, Inc."
-          }
-        },
-        {
-          "name": "Advent International, L.P.",
-          "identifier_type": null,
-          "identifier": "Delaware registration number: 204418",
-          "canonical": {
-            "id": "advent-international",
-            "name": "Advent International"
-          },
-          "party_page": {
-            "id": "advent-international",
-            "name": "Advent International"
-          }
-        }
-      ]
+        "Olaplex, Inc.",
+        "Advent International, L.P."
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

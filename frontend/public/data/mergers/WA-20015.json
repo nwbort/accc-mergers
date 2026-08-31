@@ -143,146 +143,39 @@
     {
       "merger_id": "MN-75002",
       "merger_name": "Opal Healthcare \u2013 Sunnymeade Park Aged Care Community",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OHCA Property Holdings Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "70 675 807 477",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        },
-        {
-          "name": "DPG Services Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "38 090 007 999",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        }
+        "OHCA Property Holdings Pty Ltd",
+        "DPG Services Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "The assets and business comprising Sunnymeade Park Aged Care Community",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "the-assets-and-business-comprising-sunnymeade-park-aged-care-community",
-            "name": "The assets and business comprising Sunnymeade Park Aged Care Community"
-          }
-        }
-      ]
+        "The assets and business comprising Sunnymeade Park Aged Care Community"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-75012",
       "merger_name": "Opal HealthCare \u2013 Greenwich Place residential aged care home",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OHCA PROPERTY HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "70 675 807 477",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        },
-        {
-          "name": "DPG SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "38 090 007 999",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        }
+        "OHCA PROPERTY HOLDINGS PTY LTD",
+        "DPG SERVICES PTY LTD"
       ],
       "targets": [
-        {
-          "name": "GREENWICH PLACE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "45 000 706 249",
-          "party_page": {
-            "id": "greenwich-place-pty-ltd",
-            "name": "Greenwich Place Pty Ltd"
-          }
-        },
-        {
-          "name": "GREENWICH CARE PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "96 613 786 682",
-          "party_page": {
-            "id": "greenwich-care-pty-limited",
-            "name": "Greenwich Care Pty Limited"
-          }
-        }
-      ]
+        "GREENWICH PLACE PTY LTD",
+        "GREENWICH CARE PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-50008",
       "merger_name": "WIN Television Network - NBN Enterprises & Television Holdings Darwin",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "WIN TELEVISION NETWORK PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "90 008 589 026",
-          "party_page": {
-            "id": "win-television-network-pty-ltd",
-            "name": "Win Television Network Pty Ltd"
-          }
-        }
+        "WIN TELEVISION NETWORK PTY LTD"
       ],
       "targets": [
-        {
-          "name": "NINE NETWORK AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "88 008 685 407",
-          "canonical": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          },
-          "party_page": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          }
-        },
-        {
-          "name": "NINE NETWORK AUSTRALIA HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 124 816 093",
-          "canonical": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          },
-          "party_page": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          }
-        }
-      ]
+        "NINE NETWORK AUSTRALIA PTY LTD",
+        "NINE NETWORK AUSTRALIA HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

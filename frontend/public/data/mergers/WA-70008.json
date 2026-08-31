@@ -163,113 +163,38 @@
     {
       "merger_id": "WA-15008",
       "merger_name": "Colliers International Group \u2013 Ayesa Engineering",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Global Garella, S.L.",
-          "identifier_type": null,
-          "identifier": "Spanish Tax Identification Number  B24904989",
-          "party_page": {
-            "id": "global-garella-s-l",
-            "name": "Global Garella, S.L."
-          }
-        }
+        "Global Garella, S.L."
       ],
       "targets": [
-        {
-          "name": "Ayesa Engineering, S.A.U.",
-          "identifier_type": null,
-          "identifier": "Spanish Tax Identification Number  A91379875",
-          "party_page": {
-            "id": "ayesa-engineering-s-a-u",
-            "name": "Ayesa Engineering, S.A.U."
-          }
-        }
-      ]
+        "Ayesa Engineering, S.A.U."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-85003",
       "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "NACG WA Acquisition Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "693 678 296",
-          "party_page": {
-            "id": "nacg-wa-acquisition-pty-ltd",
-            "name": "NACG WA Acquisition Pty Ltd"
-          }
-        }
+        "NACG WA Acquisition Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "DCL CORP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "60 633 008 992",
-          "party_page": {
-            "id": "dcl-corp-pty-ltd",
-            "name": "Dcl Corp Pty Ltd"
-          }
-        },
-        {
-          "name": "IRON HIRE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 641 807 589",
-          "party_page": {
-            "id": "iron-hire-pty-ltd",
-            "name": "Iron Hire Pty Ltd"
-          }
-        }
-      ]
+        "DCL CORP PTY LTD",
+        "IRON HIRE PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-85006",
       "merger_name": "Tega and Apollo Funds consortium - Molycop",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Tega MC SG Holdings Pte. Ltd.",
-          "identifier_type": null,
-          "identifier": "202551682E",
-          "party_page": {
-            "id": "tega-mc-sg-holdings-pte-ltd",
-            "name": "Tega MC SG Holdings Pte. Ltd."
-          }
-        },
-        {
-          "name": "Tega MC Australia Holdings Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "16 147 692 840",
-          "party_page": {
-            "id": "tega-mc-australia-holdings-pty-ltd",
-            "name": "Tega MC Australia Holdings Pty Ltd"
-          }
-        }
+        "Tega MC SG Holdings Pte. Ltd.",
+        "Tega MC Australia Holdings Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Orway IQ Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "52 631 359 370",
-          "party_page": {
-            "id": "orway-iq-pty-ltd",
-            "name": "Orway IQ Pty Ltd"
-          }
-        },
-        {
-          "name": "Molycop Technologies Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "85 154 346 004",
-          "party_page": {
-            "id": "molycop-technologies-pty-ltd",
-            "name": "Molycop Technologies Pty Ltd"
-          }
-        }
-      ]
+        "Orway IQ Pty Ltd",
+        "Molycop Technologies Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

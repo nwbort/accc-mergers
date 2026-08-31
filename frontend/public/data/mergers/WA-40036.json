@@ -96,99 +96,36 @@
     {
       "merger_id": "MN-65020",
       "merger_name": "Regis Resources - Vault Minerals",
-      "status": "Assessment ceased",
-      "accc_determination": null,
       "acquirers": [
-        {
-          "name": "REGIS RESOURCES LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "28 009 174 761",
-          "party_page": {
-            "id": "regis-resources-limited",
-            "name": "Regis Resources Limited"
-          }
-        }
+        "REGIS RESOURCES LIMITED"
       ],
       "targets": [
-        {
-          "name": "VAULT MINERALS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "73 068 647 610",
-          "party_page": {
-            "id": "vault-minerals-limited",
-            "name": "Vault Minerals Limited"
-          }
-        }
-      ]
+        "VAULT MINERALS LIMITED"
+      ],
+      "status": "Assessment ceased"
     },
     {
       "merger_id": "WA-85014",
       "merger_name": "Genesis Minerals \u2013 Magnetic Resources",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "GENESIS MINERALS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "72 124 772 041",
-          "party_page": {
-            "id": "genesis-minerals-limited",
-            "name": "Genesis Minerals Limited"
-          }
-        }
+        "GENESIS MINERALS LIMITED"
       ],
       "targets": [
-        {
-          "name": "Magnetic Resources NL",
-          "identifier_type": "ABN",
-          "identifier": "34 121 370 232",
-          "party_page": {
-            "id": "magnetic-resources-nl",
-            "name": "Magnetic Resources NL"
-          }
-        }
-      ]
+        "Magnetic Resources NL"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-90015",
       "merger_name": "Impression Dental Group - Coastal Dental Care",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "GENERAL DENTAL HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "55 646 760 367",
-          "canonical": {
-            "id": "general-dental-holdings-pty-ltd",
-            "name": "General Dental Holdings"
-          },
-          "party_page": {
-            "id": "general-dental-holdings-pty-ltd",
-            "name": "General Dental Holdings"
-          }
-        }
+        "GENERAL DENTAL HOLDINGS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "COASTAL DENTAL CARE AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "39 617 360 460",
-          "party_page": {
-            "id": "coastal-dental-care-australia-pty-ltd",
-            "name": "Coastal Dental Care Australia Pty Ltd"
-          }
-        },
-        {
-          "name": "The Trustee for FRANCK PAGE #3 TRUST",
-          "identifier_type": "ABN",
-          "identifier": "65 158 640 539",
-          "party_page": {
-            "id": "the-trustee-for-franck-page-3-trust",
-            "name": "The Trustee for FRANCK PAGE #3 TRUST"
-          }
-        }
-      ]
+        "COASTAL DENTAL CARE AUSTRALIA PTY LTD",
+        "The Trustee for FRANCK PAGE #3 TRUST"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

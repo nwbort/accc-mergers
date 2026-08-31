@@ -100,129 +100,38 @@
     {
       "merger_id": "WA-60020",
       "merger_name": "Metro Petroleum \u2013 Retail sites part of divestiture remedy from Ampol-EG acquisition",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "DIB GROUP PTY. LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "87 002 889 474",
-          "party_page": {
-            "id": "dib-group-pty-limited",
-            "name": "Dib Group Pty. Limited"
-          }
-        }
+        "DIB GROUP PTY. LIMITED"
       ],
       "targets": [
-        {
-          "name": "AMPOL AUSTRALIA PETROLEUM PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "17 000 032 128",
-          "canonical": {
-            "id": "ampol-petroleum-pty-ltd",
-            "name": "Ampol"
-          },
-          "party_page": {
-            "id": "ampol-petroleum-pty-ltd",
-            "name": "Ampol"
-          }
-        },
-        {
-          "name": "AMPOL RETAIL HOLDING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "11 689 777 704",
-          "canonical": {
-            "id": "ampol-petroleum-pty-ltd",
-            "name": "Ampol"
-          },
-          "party_page": {
-            "id": "ampol-petroleum-pty-ltd",
-            "name": "Ampol"
-          }
-        }
-      ]
+        "AMPOL AUSTRALIA PETROLEUM PTY LTD",
+        "AMPOL RETAIL HOLDING PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-01019",
       "merger_name": "Ampol \u2013 EG Australia",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AMPOL RETAIL HOLDING PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "689 777 704",
-          "canonical": {
-            "id": "ampol-petroleum-pty-ltd",
-            "name": "Ampol"
-          },
-          "party_page": {
-            "id": "ampol-petroleum-pty-ltd",
-            "name": "Ampol"
-          }
-        }
+        "AMPOL RETAIL HOLDING PTY LTD"
       ],
       "targets": [
-        {
-          "name": "EG AsiaPac Ltd",
-          "identifier_type": null,
-          "identifier": "11658440",
-          "party_page": {
-            "id": "eg-asiapac-ltd",
-            "name": "EG AsiaPac Ltd"
-          }
-        }
-      ]
+        "EG AsiaPac Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-90008",
       "merger_name": "Black Rhino - Club Hotel Motel Roma",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "The Trustee for Light Them Up (Roma) Trust",
-          "identifier_type": "ABN",
-          "identifier": "17 705 523 498",
-          "party_page": {
-            "id": "the-trustee-for-light-them-up-roma-trust",
-            "name": "The Trustee for Light Them Up (Roma) Trust"
-          }
-        },
-        {
-          "name": "BLACK RHINO (CLUB ROMA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "21 693 060 187",
-          "canonical": {
-            "id": "black-rhino-group",
-            "name": "Black Rhino Group"
-          },
-          "party_page": {
-            "id": "black-rhino-group",
-            "name": "Black Rhino Group"
-          }
-        }
+        "The Trustee for Light Them Up (Roma) Trust",
+        "BLACK RHINO (CLUB ROMA) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "SPEEDY COCKTAILS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 619 330 255",
-          "party_page": {
-            "id": "speedy-cocktails-pty-ltd",
-            "name": "Speedy Cocktails Pty Ltd"
-          }
-        },
-        {
-          "name": "The Trustee for THE BARRY WALDRON FAMILY TRUST",
-          "identifier_type": "ABN",
-          "identifier": "95 506 126 845",
-          "party_page": {
-            "id": "the-trustee-for-the-barry-waldron-family-trust",
-            "name": "The Trustee for THE BARRY WALDRON FAMILY TRUST"
-          }
-        }
-      ]
+        "SPEEDY COCKTAILS PTY LTD",
+        "The Trustee for THE BARRY WALDRON FAMILY TRUST"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

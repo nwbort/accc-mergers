@@ -101,116 +101,37 @@
     {
       "merger_id": "MN-55016",
       "merger_name": "Zurich - ClearView",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ZURICH FINANCIAL SERVICES AUSTRALIA LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "11 008 423 372",
-          "canonical": {
-            "id": "zurich-assure-australia-pty-ltd",
-            "name": "Zurich"
-          },
-          "party_page": {
-            "id": "zurich-assure-australia-pty-ltd",
-            "name": "Zurich"
-          }
-        }
+        "ZURICH FINANCIAL SERVICES AUSTRALIA LIMITED"
       ],
       "targets": [
-        {
-          "name": "CLEARVIEW WEALTH LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "83 106 248 248",
-          "party_page": {
-            "id": "clearview-wealth-limited",
-            "name": "Clearview Wealth Limited"
-          }
-        }
-      ]
+        "CLEARVIEW WEALTH LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-20010",
       "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "Global Engage Marine Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "693 762 122",
-          "canonical": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          },
-          "party_page": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          }
-        },
-        {
-          "name": "PT Asian Bulk Logistics",
-          "identifier_type": null,
-          "identifier": "NIB   8120012130871",
-          "canonical": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          },
-          "party_page": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          }
-        }
+        "Global Engage Marine Pty Ltd",
+        "PT Asian Bulk Logistics"
       ],
       "targets": [
-        {
-          "name": "ENGAGE MARINE TOPCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "46 675 998 562",
-          "party_page": {
-            "id": "engage-marine-topco-pty-ltd",
-            "name": "Engage Marine Topco Pty Ltd"
-          }
-        }
-      ]
+        "ENGAGE MARINE TOPCO PTY LTD"
+      ],
+      "accc_determination": "Not approved"
     },
     {
       "merger_id": "WA-35008",
       "merger_name": "VFMC \u2013 CorVal Land and Operator Trusts",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "TRANSPORT ACCIDENT COMMISSION",
-          "identifier_type": "ABN",
-          "identifier": "22 033 947 623",
-          "party_page": {
-            "id": "transport-accident-commission",
-            "name": "Transport Accident Commission"
-          }
-        },
-        {
-          "name": "VICTORIAN MANAGED INSURANCE AUTHORITY",
-          "identifier_type": "ABN",
-          "identifier": "39 682 497 841",
-          "party_page": {
-            "id": "victorian-managed-insurance-authority",
-            "name": "Victorian Managed Insurance Authority"
-          }
-        }
+        "TRANSPORT ACCIDENT COMMISSION",
+        "VICTORIAN MANAGED INSURANCE AUTHORITY"
       ],
       "targets": [
-        {
-          "name": "CORVAL PARTNERS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "86 130 628 830",
-          "party_page": {
-            "id": "corval-partners-limited",
-            "name": "Corval Partners Limited"
-          }
-        }
-      ]
+        "CORVAL PARTNERS LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

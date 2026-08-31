@@ -190,124 +190,37 @@
     {
       "merger_id": "MN-30002",
       "merger_name": "Peter Warren - Wakeling Automotive",
-      "status": "Assessment ceased",
-      "accc_determination": null,
       "acquirers": [
-        {
-          "name": "PETER WARREN AUTOMOTIVE HOLDINGS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "57 615 674 185",
-          "party_page": {
-            "id": "peter-warren-automotive-holdings-limited",
-            "name": "Peter Warren Automotive Holdings Limited"
-          }
-        }
+        "PETER WARREN AUTOMOTIVE HOLDINGS LIMITED"
       ],
       "targets": [
-        {
-          "name": "Paul Wakeling Motor Group Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "47 119 908 780",
-          "canonical": {
-            "id": "wakeling-motos",
-            "name": "Wakeling Motos"
-          },
-          "party_page": {
-            "id": "wakeling-motos",
-            "name": "Wakeling Motos"
-          }
-        },
-        {
-          "name": "WOLLONGONG CITY MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "22 002 019 598",
-          "canonical": {
-            "id": "wakeling-motos",
-            "name": "Wakeling Motos"
-          },
-          "party_page": {
-            "id": "wakeling-motos",
-            "name": "Wakeling Motos"
-          }
-        }
-      ]
+        "Paul Wakeling Motor Group Pty Ltd",
+        "WOLLONGONG CITY MOTORS PTY LTD"
+      ],
+      "status": "Assessment ceased"
     },
     {
       "merger_id": "MN-95003",
       "merger_name": "CVS Group - Pittwater Animal Hospital",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "35 667 654 686",
-          "canonical": {
-            "id": "cvs-vets",
-            "name": "CVS Group"
-          },
-          "party_page": {
-            "id": "cvs-vets",
-            "name": "CVS Group"
-          }
-        }
+        "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED"
       ],
       "targets": [
-        {
-          "name": "PITTWATER ANIMAL HOSPITAL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "25 001 336 723",
-          "party_page": {
-            "id": "pittwater-animal-hospital-pty-ltd",
-            "name": "Pittwater Animal Hospital Pty Ltd"
-          }
-        }
-      ]
+        "PITTWATER ANIMAL HOSPITAL PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-75002",
       "merger_name": "Opal Healthcare \u2013 Sunnymeade Park Aged Care Community",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OHCA Property Holdings Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "70 675 807 477",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        },
-        {
-          "name": "DPG Services Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "38 090 007 999",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        }
+        "OHCA Property Holdings Pty Ltd",
+        "DPG Services Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "The assets and business comprising Sunnymeade Park Aged Care Community",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "the-assets-and-business-comprising-sunnymeade-park-aged-care-community",
-            "name": "The assets and business comprising Sunnymeade Park Aged Care Community"
-          }
-        }
-      ]
+        "The assets and business comprising Sunnymeade Park Aged Care Community"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

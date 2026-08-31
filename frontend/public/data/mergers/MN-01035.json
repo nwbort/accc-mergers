@@ -122,112 +122,37 @@
     {
       "merger_id": "MN-01016",
       "merger_name": "Asahi \u2013 Warehouse site on Tilburn Rd, Deer Park (Vic)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ASAHI HOLDINGS (AUSTRALIA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "48 135 315 767",
-          "party_page": {
-            "id": "asahi-holdings-australia-pty-ltd",
-            "name": "Asahi Holdings (Australia) Pty Ltd"
-          }
-        }
+        "ASAHI HOLDINGS (AUSTRALIA) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "GPT PLATFORM PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "51 164 839 061",
-          "party_page": {
-            "id": "gpt-platform-pty-limited",
-            "name": "Gpt Platform Pty Limited"
-          }
-        }
-      ]
+        "GPT PLATFORM PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-80004",
       "merger_name": "Audiotonix - Soundtech Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "A6 Audio Bidco Limited",
-          "identifier_type": null,
-          "identifier": "Company number (England and Wales)  10573578",
-          "party_page": {
-            "id": "a6-audio-bidco-limited",
-            "name": "A6 Audio Bidco Limited"
-          }
-        },
-        {
-          "name": "Sound Bidco (Denmark) ApS",
-          "identifier_type": null,
-          "identifier": "Company number (Denmark)  45697088",
-          "party_page": {
-            "id": "sound-bidco-denmark-aps",
-            "name": "Sound Bidco (Denmark) ApS"
-          }
-        }
+        "A6 Audio Bidco Limited",
+        "Sound Bidco (Denmark) ApS"
       ],
       "targets": [
-        {
-          "name": "Soundtech Group S.r.l.",
-          "identifier_type": null,
-          "identifier": "Registration number (Companies\u2019 Register of Vicenza, VAT and Tax Code )  04495290241",
-          "party_page": {
-            "id": "soundtech-group-s-r-l",
-            "name": "Soundtech Group S.r.l."
-          }
-        }
-      ]
+        "Soundtech Group S.r.l."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-60017",
       "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Entrance Social Club",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "REDCAPE HOTEL GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 139 067 244",
-          "canonical": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          },
-          "party_page": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          }
-        },
-        {
-          "name": "MAHF CUSTODIAN PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "96 619 512 060",
-          "canonical": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          },
-          "party_page": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          }
-        }
+        "REDCAPE HOTEL GROUP PTY LTD",
+        "MAHF CUSTODIAN PTY LTD"
       ],
       "targets": [
-        {
-          "name": "REDBRAN PTY. LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "34 003 920 232",
-          "party_page": {
-            "id": "redbran-pty-limited",
-            "name": "Redbran Pty. Limited"
-          }
-        }
-      ]
+        "REDBRAN PTY. LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

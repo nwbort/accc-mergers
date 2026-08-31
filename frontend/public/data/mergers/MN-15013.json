@@ -138,112 +138,37 @@
     {
       "merger_id": "MN-40008",
       "merger_name": "Intrepid Travel - Wild Bush Luxury",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "INTREPID TRAVEL PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "35 007 172 456",
-          "party_page": {
-            "id": "intrepid-travel-pty-ltd",
-            "name": "Intrepid Travel Pty Ltd"
-          }
-        }
+        "INTREPID TRAVEL PTY. LTD."
       ],
       "targets": [
-        {
-          "name": "WILD BUSH LUXURY EXPERIENCE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "47 648 431 734",
-          "party_page": {
-            "id": "wild-bush-luxury-experience-pty-ltd",
-            "name": "Wild Bush Luxury Experience Pty Ltd"
-          }
-        },
-        {
-          "name": "EXPERIENCE CO LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "56 167 320 470",
-          "canonical": {
-            "id": "experience-co-limited",
-            "name": "Experience Co"
-          },
-          "party_page": {
-            "id": "experience-co-limited",
-            "name": "Experience Co"
-          }
-        }
-      ]
+        "WILD BUSH LUXURY EXPERIENCE PTY LTD",
+        "EXPERIENCE CO LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70003",
       "merger_name": "Intrepid Travel \u2013 Wild Bush Luxury",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "INTREPID TRAVEL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "35 007 172 456",
-          "party_page": {
-            "id": "intrepid-travel-pty-ltd",
-            "name": "Intrepid Travel Pty Ltd"
-          }
-        }
+        "INTREPID TRAVEL PTY LTD"
       ],
       "targets": [
-        {
-          "name": "EXPERIENCE CO LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "56 167 320 470",
-          "canonical": {
-            "id": "experience-co-limited",
-            "name": "Experience Co"
-          },
-          "party_page": {
-            "id": "experience-co-limited",
-            "name": "Experience Co"
-          }
-        },
-        {
-          "name": "WILD BUSH LUXURY EXPERIENCE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "47 648 431 734",
-          "party_page": {
-            "id": "wild-bush-luxury-experience-pty-ltd",
-            "name": "Wild Bush Luxury Experience Pty Ltd"
-          }
-        }
-      ]
+        "EXPERIENCE CO LIMITED",
+        "WILD BUSH LUXURY EXPERIENCE PTY LTD"
+      ],
+      "accc_determination": "Not approved"
     },
     {
       "merger_id": "MN-95002",
       "merger_name": "Abbott Laboratories - Exact Sciences",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Badger Merger Sub I, Inc",
-          "identifier_type": null,
-          "identifier": "10389384",
-          "party_page": {
-            "id": "badger-merger-sub-i-inc",
-            "name": "Badger Merger Sub I, Inc"
-          }
-        }
+        "Badger Merger Sub I, Inc"
       ],
       "targets": [
-        {
-          "name": "Exact Sciences Corporation",
-          "identifier_type": null,
-          "identifier": "020478229",
-          "party_page": {
-            "id": "exact-sciences-corporation",
-            "name": "Exact Sciences Corporation"
-          }
-        }
-      ]
+        "Exact Sciences Corporation"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

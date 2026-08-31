@@ -105,99 +105,36 @@
     {
       "merger_id": "WA-85020",
       "merger_name": "Francisco Partners \u2013 Capsa Healthcare",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Catalyst Blocker Merger Sub I, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "catalyst-blocker-merger-sub-i-llc",
-            "name": "Catalyst Blocker Merger Sub I, LLC"
-          }
-        },
-        {
-          "name": "Catalyst Blocker Merger Sub II, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "catalyst-blocker-merger-sub-ii-llc",
-            "name": "Catalyst Blocker Merger Sub II, LLC"
-          }
-        }
+        "Catalyst Blocker Merger Sub I, LLC",
+        "Catalyst Blocker Merger Sub II, LLC"
       ],
       "targets": [
-        {
-          "name": "CSHC Buyerco, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "cshc-buyerco-llc",
-            "name": "CSHC Buyerco, LLC"
-          }
-        }
-      ]
+        "CSHC Buyerco, LLC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-50003",
       "merger_name": "Francisco Partners - Sermo",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Sigrun Bidco Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "sigrun-bidco-limited",
-            "name": "Sigrun Bidco Limited"
-          }
-        }
+        "Sigrun Bidco Limited"
       ],
       "targets": [
-        {
-          "name": "Sermo Limited (together with its subsidiaries, \u201cSermo\u201d)",
-          "identifier_type": null,
-          "identifier": "CRN 11755038",
-          "party_page": {
-            "id": "sermo-limited-together-with-its-subsidiaries-sermo",
-            "name": "Sermo Limited (together with its subsidiaries, \u201cSermo\u201d)"
-          }
-        }
-      ]
+        "Sermo Limited (together with its subsidiaries, \u201cSermo\u201d)"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-85025",
       "merger_name": "Francisco Partners - Blackline Safety",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Apollo Purchaser, Inc.",
-          "identifier_type": null,
-          "identifier": "Registration number 2027954573",
-          "party_page": {
-            "id": "apollo-purchaser-inc",
-            "name": "Apollo Purchaser, Inc."
-          }
-        }
+        "Apollo Purchaser, Inc."
       ],
       "targets": [
-        {
-          "name": "Blackline Safety Corp.",
-          "identifier_type": null,
-          "identifier": "Corporate access number 2016380855 and business number 860968577",
-          "canonical": {
-            "id": "blackline-safety-corp",
-            "name": "Blackline Safety Corp."
-          },
-          "party_page": {
-            "id": "blackline-safety-corp",
-            "name": "Blackline Safety Corp."
-          }
-        }
-      ]
+        "Blackline Safety Corp."
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

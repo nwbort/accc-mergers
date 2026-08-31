@@ -115,104 +115,37 @@
     {
       "merger_id": "WA-30011",
       "merger_name": "AXDI - minority interest in La Trobe Financial",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AXDI SPV 5 Ltd",
-          "identifier_type": null,
-          "identifier": "ADGM  36279",
-          "party_page": {
-            "id": "axdi-spv-5-ltd",
-            "name": "AXDI SPV 5 Ltd"
-          }
-        }
+        "AXDI SPV 5 Ltd"
       ],
       "targets": [
-        {
-          "name": "AMC AUSCO 1 PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "49 658 085 771",
-          "party_page": {
-            "id": "amc-ausco-1-pty-ltd",
-            "name": "Amc Ausco 1 Pty Ltd"
-          }
-        }
-      ]
+        "AMC AUSCO 1 PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-45012",
       "merger_name": "Apollo Funds - Nippon Sheet Glass",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Lumina Japan Acquisition Co., Ltd",
-          "identifier_type": null,
-          "identifier": "010401197337",
-          "party_page": {
-            "id": "lumina-japan-acquisition-co-ltd",
-            "name": "Lumina Japan Acquisition Co., Ltd"
-          }
-        }
+        "Lumina Japan Acquisition Co., Ltd"
       ],
       "targets": [
-        {
-          "name": "Nippon Sheet Glass Company, Limited",
-          "identifier_type": null,
-          "identifier": "4010401054474",
-          "party_page": {
-            "id": "nippon-sheet-glass-company-limited",
-            "name": "Nippon Sheet Glass Company, Limited"
-          }
-        }
-      ]
+        "Nippon Sheet Glass Company, Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-25006",
       "merger_name": "KPS \u2013 Novacel",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Desmos US Bidco, Inc.",
-          "identifier_type": null,
-          "identifier": "[ID type unknown]  10469174",
-          "party_page": {
-            "id": "desmos-us-bidco-inc",
-            "name": "Desmos US Bidco, Inc."
-          }
-        },
-        {
-          "name": "Desmos Bidco SAS",
-          "identifier_type": null,
-          "identifier": "SIREN  100 230 754",
-          "party_page": {
-            "id": "desmos-bidco-sas",
-            "name": "Desmos Bidco SAS"
-          }
-        }
+        "Desmos US Bidco, Inc.",
+        "Desmos Bidco SAS"
       ],
       "targets": [
-        {
-          "name": "Novacel Performance Coatings, Inc.",
-          "identifier_type": null,
-          "identifier": "EIN  311708662",
-          "party_page": {
-            "id": "novacel-performance-coatings-inc",
-            "name": "Novacel Performance Coatings, Inc."
-          }
-        },
-        {
-          "name": "Novacel, Inc.",
-          "identifier_type": null,
-          "identifier": "EIN  043515032",
-          "party_page": {
-            "id": "novacel-inc",
-            "name": "Novacel, Inc."
-          }
-        }
-      ]
+        "Novacel Performance Coatings, Inc.",
+        "Novacel, Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

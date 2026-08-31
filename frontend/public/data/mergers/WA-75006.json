@@ -208,99 +208,36 @@
     {
       "merger_id": "WA-25003",
       "merger_name": "Delinea (TPG) - StrongDM",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Delinea Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware corporation file number  3777797",
-          "party_page": {
-            "id": "delinea-inc",
-            "name": "Delinea Inc."
-          }
-        }
+        "Delinea Inc."
       ],
       "targets": [
-        {
-          "name": "StrongDM, Inc",
-          "identifier_type": null,
-          "identifier": "CIK  0001637806",
-          "party_page": {
-            "id": "strongdm-inc",
-            "name": "StrongDM, Inc"
-          }
-        }
-      ]
+        "StrongDM, Inc"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-85002",
       "merger_name": "ServiceNow - Veza",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ServiceNow, Inc.",
-          "identifier_type": null,
-          "identifier": "5111469",
-          "canonical": {
-            "id": "servicenow-inc",
-            "name": "ServiceNow, Inc."
-          },
-          "party_page": {
-            "id": "servicenow-inc",
-            "name": "ServiceNow, Inc."
-          }
-        }
+        "ServiceNow, Inc."
       ],
       "targets": [
-        {
-          "name": "Veza Technologies, Inc.",
-          "identifier_type": null,
-          "identifier": "7791387",
-          "party_page": {
-            "id": "veza-technologies-inc",
-            "name": "Veza Technologies, Inc."
-          }
-        }
-      ]
+        "Veza Technologies, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-35002",
       "merger_name": "IFS \u2013 Softeon",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Fjord Merger Sub, Inc.",
-          "identifier_type": null,
-          "identifier": "TIN/EIN  921660460",
-          "party_page": {
-            "id": "fjord-merger-sub-inc",
-            "name": "Fjord Merger Sub, Inc."
-          }
-        },
-        {
-          "name": "IFS North America, Inc.",
-          "identifier_type": null,
-          "identifier": "TIN/EIN  391292200",
-          "party_page": {
-            "id": "ifs-north-america-inc",
-            "name": "IFS North America, Inc."
-          }
-        }
+        "Fjord Merger Sub, Inc.",
+        "IFS North America, Inc."
       ],
       "targets": [
-        {
-          "name": "Softeon Inc.",
-          "identifier_type": null,
-          "identifier": "EIN 541960847",
-          "party_page": {
-            "id": "softeon-inc",
-            "name": "Softeon Inc."
-          }
-        }
-      ]
+        "Softeon Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

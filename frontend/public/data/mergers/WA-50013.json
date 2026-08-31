@@ -114,134 +114,39 @@
     {
       "merger_id": "WA-40002",
       "merger_name": "Star Hotels Group \u2013 Yandina Hotel, QLD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "HOTEL MAROOCHYDORE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 140 651 887",
-          "party_page": {
-            "id": "hotel-maroochydore-pty-ltd",
-            "name": "Hotel Maroochydore Pty Ltd"
-          }
-        },
-        {
-          "name": "SCHF PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 644 329 733",
-          "party_page": {
-            "id": "schf-pty-ltd",
-            "name": "Schf Pty Ltd"
-          }
-        }
+        "HOTEL MAROOCHYDORE PTY LTD",
+        "SCHF PTY LTD"
       ],
       "targets": [
-        {
-          "name": "The Trustee for Kingston Family Trust",
-          "identifier_type": "ABN",
-          "identifier": "96 328 946 230",
-          "party_page": {
-            "id": "the-trustee-for-kingston-family-trust",
-            "name": "The Trustee for Kingston Family Trust"
-          }
-        }
-      ]
+        "The Trustee for Kingston Family Trust"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-15009",
       "merger_name": "MA Financial Group (Redcape Fund) - Hotel Brunswick",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "REDCAPE HOTEL GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 139 067 244",
-          "canonical": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          },
-          "party_page": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          }
-        },
-        {
-          "name": "MAHPT TT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "31 619 297 657",
-          "party_page": {
-            "id": "mahpt-tt-pty-ltd",
-            "name": "Mahpt Tt Pty Ltd"
-          }
-        }
+        "REDCAPE HOTEL GROUP PTY LTD",
+        "MAHPT TT PTY LTD"
       ],
       "targets": [
-        {
-          "name": "BRUNSWICK HOTEL OPCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 656 116 853",
-          "party_page": {
-            "id": "brunswick-hotel-opco-pty-ltd",
-            "name": "Brunswick Hotel Opco Pty Ltd"
-          }
-        },
-        {
-          "name": "The Trustee for Brunswick Hotel Sub-Trust",
-          "identifier_type": "ABN",
-          "identifier": "51 927 228 244",
-          "party_page": {
-            "id": "the-trustee-for-brunswick-hotel-sub-trust",
-            "name": "The Trustee for Brunswick Hotel Sub-Trust"
-          }
-        }
-      ]
+        "BRUNSWICK HOTEL OPCO PTY LTD",
+        "The Trustee for Brunswick Hotel Sub-Trust"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-60017",
       "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Entrance Social Club",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "REDCAPE HOTEL GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 139 067 244",
-          "canonical": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          },
-          "party_page": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          }
-        },
-        {
-          "name": "MAHF CUSTODIAN PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "96 619 512 060",
-          "canonical": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          },
-          "party_page": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          }
-        }
+        "REDCAPE HOTEL GROUP PTY LTD",
+        "MAHF CUSTODIAN PTY LTD"
       ],
       "targets": [
-        {
-          "name": "REDBRAN PTY. LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "34 003 920 232",
-          "party_page": {
-            "id": "redbran-pty-limited",
-            "name": "Redbran Pty. Limited"
-          }
-        }
-      ]
+        "REDBRAN PTY. LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

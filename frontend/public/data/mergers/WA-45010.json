@@ -186,99 +186,36 @@
     {
       "merger_id": "WA-15004",
       "merger_name": "Australian Retirement Trust \u2013 Interests in non-rental income (Westfield Sydney)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "QIC TT COMPANY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "27 694 380 973",
-          "party_page": {
-            "id": "qic-tt-company-pty-ltd",
-            "name": "Qic Tt Company Pty Ltd"
-          }
-        }
+        "QIC TT COMPANY PTY LTD"
       ],
       "targets": [
-        {
-          "name": "SCENTRE GROUP TRUST 3",
-          "identifier_type": "ABN",
-          "identifier": "11 517 229 138",
-          "party_page": {
-            "id": "scentre-group-trust-3",
-            "name": "Scentre Group Trust 3"
-          }
-        },
-        {
-          "name": "SCENTRE ALLIANCES PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "53 098 357 521",
-          "party_page": {
-            "id": "scentre-alliances-pty-limited",
-            "name": "Scentre Alliances Pty Limited"
-          }
-        }
-      ]
+        "SCENTRE GROUP TRUST 3",
+        "SCENTRE ALLIANCES PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-85018",
       "merger_name": "Discovery Holiday Parks \u2013 Habitat Noosa Everglades Eco Camp",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "DISCOVERY HOLIDAY PARKS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "50 111 782 846",
-          "canonical": {
-            "id": "discovery-holiday-parks",
-            "name": "Discovery Holiday Parks"
-          },
-          "party_page": {
-            "id": "discovery-holiday-parks",
-            "name": "Discovery Holiday Parks"
-          }
-        }
+        "DISCOVERY HOLIDAY PARKS PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "Eco Camp Pty Ltd as trustee for the MCB Trust",
-          "identifier_type": "ACN",
-          "identifier": "615 432 016",
-          "party_page": {
-            "id": "eco-camp-pty-ltd-as-trustee-for-the-mcb-trust",
-            "name": "Eco Camp Pty Ltd as trustee for the MCB Trust"
-          }
-        }
-      ]
+        "Eco Camp Pty Ltd as trustee for the MCB Trust"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70007",
       "merger_name": "Platinum Equity Group \u2013 Burke",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Advance Holdings II, LLC",
-          "identifier_type": null,
-          "identifier": "Delaware ID  10496142",
-          "party_page": {
-            "id": "advance-holdings-ii-llc",
-            "name": "Advance Holdings II, LLC"
-          }
-        }
+        "Advance Holdings II, LLC"
       ],
       "targets": [
-        {
-          "name": "BCI Acquisitions, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware ID  6389940",
-          "party_page": {
-            "id": "bci-acquisitions-inc",
-            "name": "BCI Acquisitions, Inc."
-          }
-        }
-      ]
+        "BCI Acquisitions, Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

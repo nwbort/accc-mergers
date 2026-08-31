@@ -131,95 +131,36 @@
     {
       "merger_id": "MN-90009",
       "merger_name": "Trescal \u2013 TR Calibration",
-      "status": "Assessment ceased",
-      "accc_determination": null,
       "acquirers": [
-        {
-          "name": "TRESCAL (AUSTRALIA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "39 117 603 835",
-          "party_page": {
-            "id": "trescal-australia-pty-ltd",
-            "name": "Trescal (Australia) Pty Ltd"
-          }
-        }
+        "TRESCAL (AUSTRALIA) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "TR PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 005 499 721",
-          "party_page": {
-            "id": "tr-pty-ltd",
-            "name": "Tr Pty Ltd"
-          }
-        }
-      ]
+        "TR PTY LTD"
+      ],
+      "status": "Assessment ceased"
     },
     {
       "merger_id": "WA-01094",
       "merger_name": "Energy Bay - Rights to install/operate embedded networks and other assets from Centuria Capital Group members",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "The Trustee for Energy Bay Kappa Fund",
-          "identifier_type": "ABN",
-          "identifier": "37 949 909 024",
-          "party_page": {
-            "id": "the-trustee-for-energy-bay-kappa-fund",
-            "name": "The Trustee for Energy Bay Kappa Fund"
-          }
-        }
+        "The Trustee for Energy Bay Kappa Fund"
       ],
       "targets": [
-        {
-          "name": "CENTURIA FUNDS MANAGEMENT LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "11 607 153 588",
-          "party_page": {
-            "id": "centuria-funds-management-limited",
-            "name": "Centuria Funds Management Limited"
-          }
-        }
-      ]
+        "CENTURIA FUNDS MANAGEMENT LIMITED"
+      ],
+      "accc_determination": "Not approved"
     },
     {
       "merger_id": "WA-35008",
       "merger_name": "VFMC \u2013 CorVal Land and Operator Trusts",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "TRANSPORT ACCIDENT COMMISSION",
-          "identifier_type": "ABN",
-          "identifier": "22 033 947 623",
-          "party_page": {
-            "id": "transport-accident-commission",
-            "name": "Transport Accident Commission"
-          }
-        },
-        {
-          "name": "VICTORIAN MANAGED INSURANCE AUTHORITY",
-          "identifier_type": "ABN",
-          "identifier": "39 682 497 841",
-          "party_page": {
-            "id": "victorian-managed-insurance-authority",
-            "name": "Victorian Managed Insurance Authority"
-          }
-        }
+        "TRANSPORT ACCIDENT COMMISSION",
+        "VICTORIAN MANAGED INSURANCE AUTHORITY"
       ],
       "targets": [
-        {
-          "name": "CORVAL PARTNERS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "86 130 628 830",
-          "party_page": {
-            "id": "corval-partners-limited",
-            "name": "Corval Partners Limited"
-          }
-        }
-      ]
+        "CORVAL PARTNERS LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

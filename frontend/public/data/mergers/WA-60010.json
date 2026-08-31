@@ -192,94 +192,35 @@
     {
       "merger_id": "WA-70007",
       "merger_name": "Platinum Equity Group \u2013 Burke",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Advance Holdings II, LLC",
-          "identifier_type": null,
-          "identifier": "Delaware ID  10496142",
-          "party_page": {
-            "id": "advance-holdings-ii-llc",
-            "name": "Advance Holdings II, LLC"
-          }
-        }
+        "Advance Holdings II, LLC"
       ],
       "targets": [
-        {
-          "name": "BCI Acquisitions, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware ID  6389940",
-          "party_page": {
-            "id": "bci-acquisitions-inc",
-            "name": "BCI Acquisitions, Inc."
-          }
-        }
-      ]
+        "BCI Acquisitions, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-20013",
       "merger_name": "Eli Lilly - Orna Therapeutics",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Eli Lilly and Company",
-          "identifier_type": null,
-          "identifier": "IRS Employer Identification Number  350470950",
-          "canonical": {
-            "id": "eli-lilly-and-company",
-            "name": "Eli Lilly"
-          },
-          "party_page": {
-            "id": "eli-lilly-and-company",
-            "name": "Eli Lilly"
-          }
-        }
+        "Eli Lilly and Company"
       ],
       "targets": [
-        {
-          "name": "Orna Therapeutics Holdings, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "orna-therapeutics-holdings-llc-2",
-            "name": "Orna Therapeutics Holdings, LLC"
-          }
-        }
-      ]
+        "Orna Therapeutics Holdings, LLC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-01087",
       "merger_name": "Eli Lilly \u2013 Orna Therapeutics",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "Eli Lilly and Company",
-          "identifier_type": null,
-          "identifier": "IRS Employer Identification Number  350470950",
-          "canonical": {
-            "id": "eli-lilly-and-company",
-            "name": "Eli Lilly"
-          },
-          "party_page": {
-            "id": "eli-lilly-and-company",
-            "name": "Eli Lilly"
-          }
-        }
+        "Eli Lilly and Company"
       ],
       "targets": [
-        {
-          "name": "Orna Therapeutics Holdings, LLC",
-          "identifier_type": null,
-          "identifier": "IRS Employer Identification Number  861182936",
-          "party_page": {
-            "id": "orna-therapeutics-holdings-llc",
-            "name": "Orna Therapeutics Holdings, LLC"
-          }
-        }
-      ]
+        "Orna Therapeutics Holdings, LLC"
+      ],
+      "accc_determination": "Not approved"
     }
   ]
 }

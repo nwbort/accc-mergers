@@ -197,103 +197,36 @@
     {
       "merger_id": "MN-01037",
       "merger_name": "Anglo American - Teck Resources",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Anglo American plc",
-          "identifier_type": null,
-          "identifier": "03564138",
-          "canonical": {
-            "id": "anglo-american-plc",
-            "name": "Anglo American"
-          },
-          "party_page": {
-            "id": "anglo-american-plc",
-            "name": "Anglo American"
-          }
-        }
+        "Anglo American plc"
       ],
       "targets": [
-        {
-          "name": "Teck Resources Limited",
-          "identifier_type": null,
-          "identifier": "4460561",
-          "party_page": {
-            "id": "teck-resources-limited",
-            "name": "Teck Resources Limited"
-          }
-        }
-      ]
+        "Teck Resources Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-55012",
       "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Argo Bowen 2 Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 023 619",
-          "canonical": {
-            "id": "argo-qld-pty-ltd",
-            "name": "Mercuria Argo"
-          },
-          "party_page": {
-            "id": "argo-qld-pty-ltd",
-            "name": "Mercuria Argo"
-          }
-        }
+        "Argo Bowen 2 Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "LENTON MANAGEMENT AND MARKETING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "48 149 524 809",
-          "party_page": {
-            "id": "lenton-management-and-marketing-pty-ltd",
-            "name": "Lenton Management And Marketing Pty Ltd"
-          }
-        },
-        {
-          "name": "COKING COAL ONE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "89 615 317 907",
-          "party_page": {
-            "id": "coking-coal-one-pty-ltd",
-            "name": "Coking Coal One Pty Ltd"
-          }
-        }
-      ]
+        "LENTON MANAGEMENT AND MARKETING PTY LTD",
+        "COKING COAL ONE PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25023",
       "merger_name": "EPL - Indovida India",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "EPL Limited",
-          "identifier_type": null,
-          "identifier": "Registered in India, no. L74950MH1982PLC028947",
-          "party_page": {
-            "id": "epl-limited",
-            "name": "EPL Limited"
-          }
-        }
+        "EPL Limited"
       ],
       "targets": [
-        {
-          "name": "Indovida India Private Limited",
-          "identifier_type": null,
-          "identifier": "Registered in India, no. U22203MH2025PTC455949",
-          "party_page": {
-            "id": "indovida-india-private-limited",
-            "name": "Indovida India Private Limited"
-          }
-        }
-      ]
+        "Indovida India Private Limited"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

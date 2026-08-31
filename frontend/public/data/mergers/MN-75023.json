@@ -147,117 +147,38 @@
     {
       "merger_id": "MN-20023",
       "merger_name": "Sony Music - Recognition Music",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "SMG-Three LLC",
-          "identifier_type": null,
-          "identifier": "DDC  10277876",
-          "party_page": {
-            "id": "smg-three-llc",
-            "name": "SMG-Three LLC"
-          }
-        },
-        {
-          "name": "Sony Music Publishing (US) LLC",
-          "identifier_type": null,
-          "identifier": "DDC  2558200",
-          "party_page": {
-            "id": "sony-music-publishing-us-llc",
-            "name": "Sony Music Publishing (US) LLC"
-          }
-        }
+        "SMG-Three LLC",
+        "Sony Music Publishing (US) LLC"
       ],
       "targets": [
-        {
-          "name": "Recognition Music Group (Delaware) L.P.",
-          "identifier_type": null,
-          "identifier": "DDC  6193972",
-          "party_page": {
-            "id": "recognition-music-group-delaware-l-p",
-            "name": "Recognition Music Group (Delaware) L.P."
-          }
-        }
-      ]
+        "Recognition Music Group (Delaware) L.P."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-05014",
       "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Smile Partners (NSW3) Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 902 955",
-          "party_page": {
-            "id": "smile-partners-nsw3-pty-ltd",
-            "name": "Smile Partners (NSW3) Pty Ltd"
-          }
-        }
+        "Smile Partners (NSW3) Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Shrika Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "108 757 357",
-          "canonical": {
-            "id": "shrika-pty-ltd",
-            "name": "Shrika Pty Ltd"
-          },
-          "party_page": {
-            "id": "shrika-pty-ltd",
-            "name": "Shrika Pty Ltd"
-          }
-        }
-      ]
+        "Shrika Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-45005",
       "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "MA MARINA FUND HOLDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "96 667 241 385",
-          "party_page": {
-            "id": "ma-marina-fund-holdco-pty-ltd",
-            "name": "Ma Marina Fund Holdco Pty Ltd"
-          }
-        },
-        {
-          "name": "MA MARINA FUND TT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "65 666 902 245",
-          "party_page": {
-            "id": "ma-marina-fund-tt-pty-ltd",
-            "name": "Ma Marina Fund Tt Pty Ltd"
-          }
-        }
+        "MA MARINA FUND HOLDCO PTY LTD",
+        "MA MARINA FUND TT PTY LTD"
       ],
       "targets": [
-        {
-          "name": "GGC Marketing Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "32 105 294 228",
-          "party_page": {
-            "id": "ggc-marketing-pty-ltd",
-            "name": "GGC Marketing Pty Ltd"
-          }
-        },
-        {
-          "name": "QUEENSLAND & PACIFIC PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "72 081 370 685",
-          "party_page": {
-            "id": "queensland-pacific-pty-ltd",
-            "name": "Queensland & Pacific Pty. Ltd."
-          }
-        }
-      ]
+        "GGC Marketing Pty Ltd",
+        "QUEENSLAND & PACIFIC PTY. LTD."
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

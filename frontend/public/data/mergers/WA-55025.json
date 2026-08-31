@@ -133,90 +133,35 @@
     {
       "merger_id": "MN-25018",
       "merger_name": "Primary Wave - Kobalt",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Primary Wave KB Holdings, LP",
-          "identifier_type": null,
-          "identifier": "Registration number 136215",
-          "party_page": {
-            "id": "primary-wave-kb-holdings-lp",
-            "name": "Primary Wave KB Holdings, LP"
-          }
-        }
+        "Primary Wave KB Holdings, LP"
       ],
       "targets": [
-        {
-          "name": "Kobalt Music Group Topco L.P.",
-          "identifier_type": null,
-          "identifier": "Registration number 393466",
-          "party_page": {
-            "id": "kobalt-music-group-topco-l-p",
-            "name": "Kobalt Music Group Topco L.P."
-          }
-        }
-      ]
+        "Kobalt Music Group Topco L.P."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-90014",
       "merger_name": "Constellation Software - DerbySoft Holdings",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Sail Parent Holdco Ltd",
-          "identifier_type": null,
-          "identifier": "UK Company Registration Number 17112723",
-          "party_page": {
-            "id": "sail-parent-holdco-ltd",
-            "name": "Sail Parent Holdco Ltd"
-          }
-        }
+        "Sail Parent Holdco Ltd"
       ],
       "targets": [
-        {
-          "name": "DerbySoft Holdings Limited",
-          "identifier_type": null,
-          "identifier": "Cayman Islands Company Registration Number CF172438",
-          "canonical": {
-            "id": "derbysoft-inc",
-            "name": "DerbySoft"
-          },
-          "party_page": {
-            "id": "derbysoft-inc",
-            "name": "DerbySoft"
-          }
-        }
-      ]
+        "DerbySoft Holdings Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-95005",
       "merger_name": "HCLTech - Jaspersoft",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "HCL Technologies Limited",
-          "identifier_type": "ABN",
-          "identifier": "37 541 578 951",
-          "party_page": {
-            "id": "hcl-technologies-limited",
-            "name": "HCL Technologies Limited"
-          }
-        }
+        "HCL Technologies Limited"
       ],
       "targets": [
-        {
-          "name": "CLOUD SOFTWARE GROUP AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "94 092 002 321",
-          "party_page": {
-            "id": "cloud-software-group-australia-pty-ltd",
-            "name": "Cloud Software Group Australia Pty Ltd"
-          }
-        }
-      ]
+        "CLOUD SOFTWARE GROUP AUSTRALIA PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

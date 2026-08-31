@@ -124,146 +124,39 @@
     {
       "merger_id": "WA-25025",
       "merger_name": "Laundy \u2013 Woy Woy Hotel",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "LAUNDY WOY FREEHOLD PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "65 696 471 306",
-          "canonical": {
-            "id": "laundy-woy",
-            "name": "Laundy Woy"
-          },
-          "party_page": {
-            "id": "laundy-woy",
-            "name": "Laundy Woy"
-          }
-        },
-        {
-          "name": "LAUNDY WOY TRADING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "29 696 470 345",
-          "canonical": {
-            "id": "laundy-woy",
-            "name": "Laundy Woy"
-          },
-          "party_page": {
-            "id": "laundy-woy",
-            "name": "Laundy Woy"
-          }
-        }
+        "LAUNDY WOY FREEHOLD PTY LTD",
+        "LAUNDY WOY TRADING PTY LTD"
       ],
       "targets": [
-        {
-          "name": "HARVEST PUB OPERATIONS 2 PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "51 652 748 242",
-          "canonical": {
-            "id": "harvest-pub",
-            "name": "Harvest Pub"
-          },
-          "party_page": {
-            "id": "harvest-pub",
-            "name": "Harvest Pub"
-          }
-        },
-        {
-          "name": "AMAL TRUSTEES PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "98 609 737 064",
-          "canonical": {
-            "id": "harvest-pub",
-            "name": "Harvest Pub"
-          },
-          "party_page": {
-            "id": "harvest-pub",
-            "name": "Harvest Pub"
-          }
-        }
-      ]
+        "HARVEST PUB OPERATIONS 2 PTY LTD",
+        "AMAL TRUSTEES PTY LIMITED"
+      ],
+      "accc_determination": "Not approved"
     },
     {
       "merger_id": "MN-50012",
       "merger_name": "Maas \u2013 50% acquisition of COLAS\u2019 Caloundra asphalt plant and 100% of COLAS\u2019 Tomago asphalt plant",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ASPHALT OPERATORS AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "11 682 698 282",
-          "party_page": {
-            "id": "asphalt-operators-australia-pty-ltd",
-            "name": "Asphalt Operators Australia Pty Ltd"
-          }
-        }
+        "ASPHALT OPERATORS AUSTRALIA PTY LTD"
       ],
       "targets": [
-        {
-          "name": "COLAS QUEENSLAND PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "91 169 872 208",
-          "canonical": {
-            "id": "colas",
-            "name": "Colas"
-          },
-          "party_page": {
-            "id": "colas",
-            "name": "Colas"
-          }
-        },
-        {
-          "name": "COLAS AUSTRALIA GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "11 000 388 161",
-          "canonical": {
-            "id": "colas",
-            "name": "Colas"
-          },
-          "party_page": {
-            "id": "colas",
-            "name": "Colas"
-          }
-        }
-      ]
+        "COLAS QUEENSLAND PTY LTD",
+        "COLAS AUSTRALIA GROUP PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-05026",
       "merger_name": "Mercer Investments (Australia) Limited\u2013 Stockland Residential Rental Partnership",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "MERCER INVESTMENTS (AUSTRALIA) LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "66 008 612 397",
-          "party_page": {
-            "id": "mercer-investments-australia-limited",
-            "name": "Mercer Investments (Australia) Limited"
-          }
-        }
+        "MERCER INVESTMENTS (AUSTRALIA) LIMITED"
       ],
       "targets": [
-        {
-          "name": "One MEA Holdings Pte. Ltd",
-          "identifier_type": null,
-          "identifier": "201923882C",
-          "party_page": {
-            "id": "one-mea-holdings-pte-ltd",
-            "name": "One MEA Holdings Pte. Ltd"
-          }
-        },
-        {
-          "name": "The Trustee for Stockland Residential Rental Partnership Trust",
-          "identifier_type": "ABN",
-          "identifier": "55 773 008 463",
-          "party_page": {
-            "id": "the-trustee-for-stockland-residential-rental-partnership-trust",
-            "name": "The Trustee for Stockland Residential Rental Partnership Trust"
-          }
-        }
-      ]
+        "One MEA Holdings Pte. Ltd",
+        "The Trustee for Stockland Residential Rental Partnership Trust"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

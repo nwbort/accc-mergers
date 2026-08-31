@@ -92,113 +92,38 @@
     {
       "merger_id": "WA-80009",
       "merger_name": "Mizuho \u2013 Avendus",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Mizuho Securities Co., Ltd.",
-          "identifier_type": null,
-          "identifier": "No. 94",
-          "party_page": {
-            "id": "mizuho-securities-co-ltd",
-            "name": "Mizuho Securities Co., Ltd."
-          }
-        }
+        "Mizuho Securities Co., Ltd."
       ],
       "targets": [
-        {
-          "name": "Redpoint Investments Pte Ltd",
-          "identifier_type": null,
-          "identifier": "201536795E",
-          "party_page": {
-            "id": "redpoint-investments-pte-ltd",
-            "name": "Redpoint Investments Pte Ltd"
-          }
-        },
-        {
-          "name": "Avendus Capital Private Limited",
-          "identifier_type": null,
-          "identifier": "CIN U99999MH1999PTC123358",
-          "party_page": {
-            "id": "avendus-capital-private-limited",
-            "name": "Avendus Capital Private Limited"
-          }
-        }
-      ]
+        "Redpoint Investments Pte Ltd",
+        "Avendus Capital Private Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-01058",
       "merger_name": "Caterpillar \u2013 RPMGlobal Holdings",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Caterpillar Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "caterpillar-inc",
-            "name": "Caterpillar Inc."
-          }
-        }
+        "Caterpillar Inc."
       ],
       "targets": [
-        {
-          "name": "RPMGLOBAL HOLDINGS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "17 010 672 321",
-          "party_page": {
-            "id": "rpmglobal-holdings-limited",
-            "name": "Rpmglobal Holdings Limited"
-          }
-        }
-      ]
+        "RPMGLOBAL HOLDINGS LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-25006",
       "merger_name": "KPS \u2013 Novacel",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Desmos US Bidco, Inc.",
-          "identifier_type": null,
-          "identifier": "[ID type unknown]  10469174",
-          "party_page": {
-            "id": "desmos-us-bidco-inc",
-            "name": "Desmos US Bidco, Inc."
-          }
-        },
-        {
-          "name": "Desmos Bidco SAS",
-          "identifier_type": null,
-          "identifier": "SIREN  100 230 754",
-          "party_page": {
-            "id": "desmos-bidco-sas",
-            "name": "Desmos Bidco SAS"
-          }
-        }
+        "Desmos US Bidco, Inc.",
+        "Desmos Bidco SAS"
       ],
       "targets": [
-        {
-          "name": "Novacel Performance Coatings, Inc.",
-          "identifier_type": null,
-          "identifier": "EIN  311708662",
-          "party_page": {
-            "id": "novacel-performance-coatings-inc",
-            "name": "Novacel Performance Coatings, Inc."
-          }
-        },
-        {
-          "name": "Novacel, Inc.",
-          "identifier_type": null,
-          "identifier": "EIN  043515032",
-          "party_page": {
-            "id": "novacel-inc",
-            "name": "Novacel, Inc."
-          }
-        }
-      ]
+        "Novacel Performance Coatings, Inc.",
+        "Novacel, Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

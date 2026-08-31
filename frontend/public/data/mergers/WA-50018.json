@@ -119,112 +119,37 @@
     {
       "merger_id": "WA-55021",
       "merger_name": "Autopact - Freehold interest in commercial land in Dubbo, NSW",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AUTOPACT PROPERTY NO. 3 PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "66 687 598 278",
-          "party_page": {
-            "id": "autopact-property-no-3-pty-ltd",
-            "name": "Autopact Property No. 3 Pty Ltd"
-          }
-        }
+        "AUTOPACT PROPERTY NO. 3 PTY LTD"
       ],
       "targets": [
-        {
-          "name": "PETER TERRY NOMINEES PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "60 081 646 479",
-          "party_page": {
-            "id": "peter-terry-nominees-pty-limited",
-            "name": "Peter Terry Nominees Pty Limited"
-          }
-        }
-      ]
+        "PETER TERRY NOMINEES PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-30010",
       "merger_name": "MAG South Coast - Country Motor Company / Kinghorn Motors",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "MAG SOUTH COAST PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "70 683 627 590",
-          "canonical": {
-            "id": "mccarroll-s-automotive-group",
-            "name": "McCarroll's Automotive Group"
-          },
-          "party_page": {
-            "id": "mccarroll-s-automotive-group",
-            "name": "McCarroll's Automotive Group"
-          }
-        },
-        {
-          "name": "MCCARROLL PROPERTY HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "64 676 724 306",
-          "canonical": {
-            "id": "mccarroll-s-automotive-group",
-            "name": "McCarroll's Automotive Group"
-          },
-          "party_page": {
-            "id": "mccarroll-s-automotive-group",
-            "name": "McCarroll's Automotive Group"
-          }
-        }
+        "MAG SOUTH COAST PTY LTD",
+        "MCCARROLL PROPERTY HOLDINGS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Donna Lea Buikstra Family Will Trust",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "donna-lea-buikstra-family-will-trust",
-            "name": "Donna Lea Buikstra Family Will Trust"
-          }
-        },
-        {
-          "name": "Glenn Ype Buikstra Family Will Trust",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "glenn-ype-buikstra-family-will-trust",
-            "name": "Glenn Ype Buikstra Family Will Trust"
-          }
-        }
-      ]
+        "Donna Lea Buikstra Family Will Trust",
+        "Glenn Ype Buikstra Family Will Trust"
+      ],
+      "accc_determination": "Not approved"
     },
     {
       "merger_id": "WA-45014",
       "merger_name": "RDO Australia \u2013 freehold land and buildings of three commercial truck dealership sites in West Wodonga VIC",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "RDO AUSTRALIA PROPERTY HOLDINGS NO 2 PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 633 633 753",
-          "party_page": {
-            "id": "rdo-australia-property-holdings-no-2-pty-ltd",
-            "name": "Rdo Australia Property Holdings No 2 Pty Ltd"
-          }
-        }
+        "RDO AUSTRALIA PROPERTY HOLDINGS NO 2 PTY LTD"
       ],
       "targets": [
-        {
-          "name": "CD & JB INVESTMENTS PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "630 465 815",
-          "party_page": {
-            "id": "cd-jb-investments-pty-ltd",
-            "name": "Cd & Jb Investments Pty Ltd"
-          }
-        }
-      ]
+        "CD & JB INVESTMENTS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

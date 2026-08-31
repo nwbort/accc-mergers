@@ -340,113 +340,38 @@
     {
       "merger_id": "WA-75006",
       "merger_name": "Playlist \u2013 EGYM",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Saturn NewCo, Inc",
-          "identifier_type": null,
-          "identifier": "DE File number: 10449592",
-          "party_page": {
-            "id": "saturn-newco-inc",
-            "name": "Saturn NewCo, Inc"
-          }
-        },
-        {
-          "name": "ClassPass Aggregator, LLC",
-          "identifier_type": null,
-          "identifier": "DE File number: 6177870",
-          "party_page": {
-            "id": "classpass-aggregator-llc",
-            "name": "ClassPass Aggregator, LLC"
-          }
-        }
+        "Saturn NewCo, Inc",
+        "ClassPass Aggregator, LLC"
       ],
       "targets": [
-        {
-          "name": "EGYM SE",
-          "identifier_type": null,
-          "identifier": "HRB: 186394",
-          "party_page": {
-            "id": "egym-se",
-            "name": "Egym Se"
-          }
-        }
-      ]
+        "EGYM SE"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-10010",
       "merger_name": "Enverus \u2013 Spatial Business Systems",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Enverus, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "enverus-inc",
-            "name": "Enverus, Inc."
-          }
-        }
+        "Enverus, Inc."
       ],
       "targets": [
-        {
-          "name": "Spatial Business Systems Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "76 125 465 483",
-          "party_page": {
-            "id": "spatial-business-systems-pty-ltd",
-            "name": "Spatial Business Systems Pty Ltd"
-          }
-        },
-        {
-          "name": "SBS Optionco, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "sbs-optionco-llc",
-            "name": "SBS Optionco, LLC"
-          }
-        }
-      ]
+        "Spatial Business Systems Pty Ltd",
+        "SBS Optionco, LLC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-55006",
       "merger_name": "Hg Capital - OneStream",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Hg Pooled Management Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "hg-pooled-management-limited",
-            "name": "Hg Pooled Management Limited"
-          }
-        },
-        {
-          "name": "OnwardAcquireCo, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "onwardacquireco-inc",
-            "name": "OnwardAcquireCo, Inc"
-          }
-        }
+        "Hg Pooled Management Limited",
+        "OnwardAcquireCo, Inc"
       ],
       "targets": [
-        {
-          "name": "OneStream, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "onestream-inc",
-            "name": "OneStream, Inc."
-          }
-        }
-      ]
+        "OneStream, Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

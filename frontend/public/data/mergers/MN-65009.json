@@ -138,113 +138,38 @@
     {
       "merger_id": "WA-25014",
       "merger_name": "CVC Capital Partners \u2013 The animal nutrition and health division of the DSM-Firmenich Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Essential Bidco B.V.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "essential-bidco-b-v",
-            "name": "Essential Bidco B.V."
-          }
-        },
-        {
-          "name": "Specialty (U.S.) Bidco, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "specialty-u-s-bidco-inc",
-            "name": "Specialty (U.S.) Bidco, Inc."
-          }
-        }
+        "Essential Bidco B.V.",
+        "Specialty (U.S.) Bidco, Inc."
       ],
       "targets": [
-        {
-          "name": "SpecialtyCo US LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "specialtyco-us-llc",
-            "name": "SpecialtyCo US LLC"
-          }
-        },
-        {
-          "name": "Biomin Phytogenics GmbH (Germany)",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "biomin-phytogenics-gmbh-germany",
-            "name": "Biomin Phytogenics GmbH (Germany)"
-          }
-        }
-      ]
+        "SpecialtyCo US LLC",
+        "Biomin Phytogenics GmbH (Germany)"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-40003",
       "merger_name": "CVC Capital Partners \u2013 Smiths Detection Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Skyshield UK Bidco Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "skyshield-uk-bidco-limited",
-            "name": "Skyshield UK Bidco Limited"
-          }
-        },
-        {
-          "name": "Skyshield US Bidco Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "skyshield-us-bidco-limited",
-            "name": "Skyshield US Bidco Limited"
-          }
-        }
+        "Skyshield UK Bidco Limited",
+        "Skyshield US Bidco Limited"
       ],
       "targets": [
-        {
-          "name": "Smiths Detection Group Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "smiths-detection-group-limited",
-            "name": "Smiths Detection Group Limited"
-          }
-        }
-      ]
+        "Smiths Detection Group Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25013",
       "merger_name": "Cinven \u2013 Regenity",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Rosewood AG, LP",
-          "identifier_type": null,
-          "identifier": "LP5500",
-          "party_page": {
-            "id": "rosewood-ag-lp",
-            "name": "Rosewood AG, LP"
-          }
-        }
+        "Rosewood AG, LP"
       ],
       "targets": [
-        {
-          "name": "Collagen Holdings, LLC",
-          "identifier_type": null,
-          "identifier": "DE File Number  7473707",
-          "party_page": {
-            "id": "collagen-holdings-llc",
-            "name": "Collagen Holdings, LLC"
-          }
-        }
-      ]
+        "Collagen Holdings, LLC"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

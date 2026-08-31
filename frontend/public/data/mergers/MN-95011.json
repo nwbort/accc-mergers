@@ -117,121 +117,38 @@
     {
       "merger_id": "MN-55016",
       "merger_name": "Zurich - ClearView",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ZURICH FINANCIAL SERVICES AUSTRALIA LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "11 008 423 372",
-          "canonical": {
-            "id": "zurich-assure-australia-pty-ltd",
-            "name": "Zurich"
-          },
-          "party_page": {
-            "id": "zurich-assure-australia-pty-ltd",
-            "name": "Zurich"
-          }
-        }
+        "ZURICH FINANCIAL SERVICES AUSTRALIA LIMITED"
       ],
       "targets": [
-        {
-          "name": "CLEARVIEW WEALTH LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "83 106 248 248",
-          "party_page": {
-            "id": "clearview-wealth-limited",
-            "name": "Clearview Wealth Limited"
-          }
-        }
-      ]
+        "CLEARVIEW WEALTH LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-55012",
       "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Argo Bowen 2 Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 023 619",
-          "canonical": {
-            "id": "argo-qld-pty-ltd",
-            "name": "Mercuria Argo"
-          },
-          "party_page": {
-            "id": "argo-qld-pty-ltd",
-            "name": "Mercuria Argo"
-          }
-        }
+        "Argo Bowen 2 Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "LENTON MANAGEMENT AND MARKETING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "48 149 524 809",
-          "party_page": {
-            "id": "lenton-management-and-marketing-pty-ltd",
-            "name": "Lenton Management And Marketing Pty Ltd"
-          }
-        },
-        {
-          "name": "COKING COAL ONE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "89 615 317 907",
-          "party_page": {
-            "id": "coking-coal-one-pty-ltd",
-            "name": "Coking Coal One Pty Ltd"
-          }
-        }
-      ]
+        "LENTON MANAGEMENT AND MARKETING PTY LTD",
+        "COKING COAL ONE PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-45005",
       "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "MA MARINA FUND HOLDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "96 667 241 385",
-          "party_page": {
-            "id": "ma-marina-fund-holdco-pty-ltd",
-            "name": "Ma Marina Fund Holdco Pty Ltd"
-          }
-        },
-        {
-          "name": "MA MARINA FUND TT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "65 666 902 245",
-          "party_page": {
-            "id": "ma-marina-fund-tt-pty-ltd",
-            "name": "Ma Marina Fund Tt Pty Ltd"
-          }
-        }
+        "MA MARINA FUND HOLDCO PTY LTD",
+        "MA MARINA FUND TT PTY LTD"
       ],
       "targets": [
-        {
-          "name": "GGC Marketing Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "32 105 294 228",
-          "party_page": {
-            "id": "ggc-marketing-pty-ltd",
-            "name": "GGC Marketing Pty Ltd"
-          }
-        },
-        {
-          "name": "QUEENSLAND & PACIFIC PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "72 081 370 685",
-          "party_page": {
-            "id": "queensland-pacific-pty-ltd",
-            "name": "Queensland & Pacific Pty. Ltd."
-          }
-        }
-      ]
+        "GGC Marketing Pty Ltd",
+        "QUEENSLAND & PACIFIC PTY. LTD."
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

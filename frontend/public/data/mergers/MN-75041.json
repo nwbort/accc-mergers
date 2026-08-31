@@ -109,86 +109,35 @@
     {
       "merger_id": "WA-90002",
       "merger_name": "NEC Corporation \u2013 CSG Systems International",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "NEC Corporation",
-          "identifier_type": null,
-          "identifier": "Company number 7010401022916",
-          "party_page": {
-            "id": "nec-corporation",
-            "name": "NEC Corporation"
-          }
-        }
+        "NEC Corporation"
       ],
       "targets": [
-        {
-          "name": "CSG Systems International, Inc.",
-          "identifier_type": null,
-          "identifier": "Company number 2444546",
-          "party_page": {
-            "id": "csg-systems-international-inc",
-            "name": "CSG Systems International, Inc."
-          }
-        }
-      ]
+        "CSG Systems International, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-70012",
       "merger_name": "Quanta - PSD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Quanta Services Australia Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "11 164 311 997",
-          "party_page": {
-            "id": "quanta-services-australia-pty-ltd",
-            "name": "Quanta Services Australia Pty Ltd"
-          }
-        }
+        "Quanta Services Australia Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "PSD Global Holdings Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "634 380 813",
-          "party_page": {
-            "id": "psd-global-holdings-pty-ltd",
-            "name": "PSD Global Holdings Pty Ltd"
-          }
-        }
-      ]
+        "PSD Global Holdings Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-30015",
       "merger_name": "URUS (CVC Capital Partners) \u2013 AgriWebb",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Alta Genetics Australia Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "54 140 644 784",
-          "party_page": {
-            "id": "alta-genetics-australia-pty-ltd",
-            "name": "Alta Genetics Australia Pty Ltd"
-          }
-        }
+        "Alta Genetics Australia Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "AGRIWEBB PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "56 163 515 900",
-          "party_page": {
-            "id": "agriwebb-pty-ltd",
-            "name": "Agriwebb Pty Ltd"
-          }
-        }
-      ]
+        "AGRIWEBB PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

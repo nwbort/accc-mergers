@@ -102,126 +102,39 @@
     {
       "merger_id": "MN-20009",
       "merger_name": "Rocket Software \u2013 Vertica",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Rocket Software AMC UK Ltd",
-          "identifier_type": null,
-          "identifier": "UK Company number 01504593",
-          "party_page": {
-            "id": "rocket-software-amc-uk-ltd",
-            "name": "Rocket Software AMC UK Ltd"
-          }
-        },
-        {
-          "name": "Rocket Software, Inc.",
-          "identifier_type": null,
-          "identifier": "Companies\u2019 Register of Delaware  3506913",
-          "canonical": {
-            "id": "rocket-software-inc",
-            "name": "Rocket Software, Inc."
-          },
-          "party_page": {
-            "id": "rocket-software-inc",
-            "name": "Rocket Software, Inc."
-          }
-        }
+        "Rocket Software AMC UK Ltd",
+        "Rocket Software, Inc."
       ],
       "targets": [
-        {
-          "name": "Micro Focus IP Development Limited",
-          "identifier_type": null,
-          "identifier": "UK Company number 07233975",
-          "party_page": {
-            "id": "micro-focus-ip-development-limited",
-            "name": "Micro Focus IP Development Limited"
-          }
-        },
-        {
-          "name": "Open Text Corporation",
-          "identifier_type": null,
-          "identifier": "10836044",
-          "party_page": {
-            "id": "open-text-corporation",
-            "name": "Open Text Corporation"
-          }
-        }
-      ]
+        "Micro Focus IP Development Limited",
+        "Open Text Corporation"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70002",
       "merger_name": "Ethos (TPG) \u2013 EMIS and certain related assets",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Ethos Bidco, Ltd",
-          "identifier_type": null,
-          "identifier": "UK Company Number: 16905190",
-          "party_page": {
-            "id": "ethos-bidco-ltd",
-            "name": "Ethos Bidco, Ltd"
-          }
-        }
+        "Ethos Bidco, Ltd"
       ],
       "targets": [
-        {
-          "name": "EMIS Group Limited",
-          "identifier_type": "ABN",
-          "identifier": "75 075 102 028",
-          "party_page": {
-            "id": "emis-group-limited",
-            "name": "EMIS Group Limited"
-          }
-        },
-        {
-          "name": "UnitedHealth Group Incorporated (UHG)",
-          "identifier_type": null,
-          "identifier": "US EIN  4113221939",
-          "party_page": {
-            "id": "unitedhealth-group-incorporated-uhg",
-            "name": "UnitedHealth Group Incorporated (UHG)"
-          }
-        }
-      ]
+        "EMIS Group Limited",
+        "UnitedHealth Group Incorporated (UHG)"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-35002",
       "merger_name": "IFS \u2013 Softeon",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Fjord Merger Sub, Inc.",
-          "identifier_type": null,
-          "identifier": "TIN/EIN  921660460",
-          "party_page": {
-            "id": "fjord-merger-sub-inc",
-            "name": "Fjord Merger Sub, Inc."
-          }
-        },
-        {
-          "name": "IFS North America, Inc.",
-          "identifier_type": null,
-          "identifier": "TIN/EIN  391292200",
-          "party_page": {
-            "id": "ifs-north-america-inc",
-            "name": "IFS North America, Inc."
-          }
-        }
+        "Fjord Merger Sub, Inc.",
+        "IFS North America, Inc."
       ],
       "targets": [
-        {
-          "name": "Softeon Inc.",
-          "identifier_type": null,
-          "identifier": "EIN 541960847",
-          "party_page": {
-            "id": "softeon-inc",
-            "name": "Softeon Inc."
-          }
-        }
-      ]
+        "Softeon Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

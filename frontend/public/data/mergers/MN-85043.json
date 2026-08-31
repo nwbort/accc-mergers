@@ -130,138 +130,39 @@
     {
       "merger_id": "WA-05041",
       "merger_name": "Pemba - Hewison Private Wealth",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Elevate BidCo Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "699 129 523",
-          "canonical": {
-            "id": "elevate-bidco-gmbh",
-            "name": "Elevate BidCo GmbH"
-          },
-          "party_page": {
-            "id": "elevate-bidco-gmbh",
-            "name": "Elevate BidCo GmbH"
-          }
-        }
+        "Elevate BidCo Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Hewison & Associates Pty. Ltd.",
-          "identifier_type": "ABN",
-          "identifier": "51 006 082 257",
-          "party_page": {
-            "id": "hewison-associates-pty-ltd",
-            "name": "Hewison & Associates Pty. Ltd."
-          }
-        }
-      ]
+        "Hewison & Associates Pty. Ltd."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-80035",
       "merger_name": "Saint-Gobain - Xypex",
-      "status": "Under assessment",
-      "accc_determination": null,
       "acquirers": [
-        {
-          "name": "CertainTeed Canada, Inc. (Saint-Gobain)",
-          "identifier_type": null,
-          "identifier": "Canadian Business Number  808787147",
-          "party_page": {
-            "id": "certainteed-canada-inc-saint-gobain",
-            "name": "CertainTeed Canada, Inc. (Saint-Gobain)"
-          }
-        },
-        {
-          "name": "GCP AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "41 080 660 117",
-          "party_page": {
-            "id": "gcp-australia-pty-ltd",
-            "name": "Gcp Australia Pty Ltd"
-          }
-        }
+        "CertainTeed Canada, Inc. (Saint-Gobain)",
+        "GCP AUSTRALIA PTY LTD"
       ],
       "targets": [
-        {
-          "name": "TorQuest Capital Fund V,L.P.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "torquest-capital-fund-v-l-p",
-            "name": "TorQuest Capital Fund V,L.P."
-          }
-        },
-        {
-          "name": "TorQuest Partners Fund V, L.P.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "torquest-partners-fund-v-l-p",
-            "name": "TorQuest Partners Fund V, L.P."
-          }
-        }
-      ]
+        "TorQuest Capital Fund V,L.P.",
+        "TorQuest Partners Fund V, L.P."
+      ],
+      "status": "Under assessment"
     },
     {
       "merger_id": "WA-40033",
       "merger_name": "Bain Capital - Everllence",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Bain Capital Investors, LLC",
-          "identifier_type": null,
-          "identifier": "Delaware File No.  3229725",
-          "canonical": {
-            "id": "bain-capital-investors-llc",
-            "name": "Bain Capital Investors"
-          },
-          "party_page": {
-            "id": "bain-capital-investors-llc",
-            "name": "Bain Capital Investors"
-          }
-        },
-        {
-          "name": "Nikolaus (BC) Bidco GmbH",
-          "identifier_type": null,
-          "identifier": "Handelsregister (HRB)  312146",
-          "canonical": {
-            "id": "bain-capital-investors-llc",
-            "name": "Bain Capital Investors"
-          },
-          "party_page": {
-            "id": "bain-capital-investors-llc",
-            "name": "Bain Capital Investors"
-          }
-        }
+        "Bain Capital Investors, LLC",
+        "Nikolaus (BC) Bidco GmbH"
       ],
       "targets": [
-        {
-          "name": "Volkswagen Aktiengesellschaft",
-          "identifier_type": null,
-          "identifier": "Handelsregister (HRB)  100484",
-          "canonical": {
-            "id": "volkswagen",
-            "name": "Volkswagen"
-          },
-          "party_page": {
-            "id": "volkswagen",
-            "name": "Volkswagen"
-          }
-        },
-        {
-          "name": "Everllence SE",
-          "identifier_type": null,
-          "identifier": "Handelsregister (HRB)  22056",
-          "party_page": {
-            "id": "everllence-se",
-            "name": "Everllence SE"
-          }
-        }
-      ]
+        "Volkswagen Aktiengesellschaft",
+        "Everllence SE"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

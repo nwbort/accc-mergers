@@ -129,122 +129,39 @@
     {
       "merger_id": "WA-95032",
       "merger_name": "State Swim \u2013 Swim Plus",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "STATE SWIM FINDON PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "73 698 337 209",
-          "party_page": {
-            "id": "state-swim-findon-pty-ltd",
-            "name": "State Swim Findon Pty Ltd"
-          }
-        },
-        {
-          "name": "STATE SWIM MOUNT BARKER PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "64 698 337 174",
-          "party_page": {
-            "id": "state-swim-mount-barker-pty-ltd",
-            "name": "State Swim Mount Barker Pty Ltd"
-          }
-        }
+        "STATE SWIM FINDON PTY LTD",
+        "STATE SWIM MOUNT BARKER PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Findon Swim School Pty Ltd as trustee for the Findon Swim School Trust",
-          "identifier_type": "ACN",
-          "identifier": "608 401 716",
-          "party_page": {
-            "id": "findon-swim-school-pty-ltd-as-trustee-for-the-findon-swim-school-trust",
-            "name": "Findon Swim School Pty Ltd as trustee for the Findon Swim School Trust"
-          }
-        },
-        {
-          "name": "SWIM PLUS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "26 073 687 224",
-          "party_page": {
-            "id": "swim-plus-pty-ltd",
-            "name": "Swim Plus Pty Ltd"
-          }
-        }
-      ]
+        "Findon Swim School Pty Ltd as trustee for the Findon Swim School Trust",
+        "SWIM PLUS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-20023",
       "merger_name": "Sony Music - Recognition Music",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "SMG-Three LLC",
-          "identifier_type": null,
-          "identifier": "DDC  10277876",
-          "party_page": {
-            "id": "smg-three-llc",
-            "name": "SMG-Three LLC"
-          }
-        },
-        {
-          "name": "Sony Music Publishing (US) LLC",
-          "identifier_type": null,
-          "identifier": "DDC  2558200",
-          "party_page": {
-            "id": "sony-music-publishing-us-llc",
-            "name": "Sony Music Publishing (US) LLC"
-          }
-        }
+        "SMG-Three LLC",
+        "Sony Music Publishing (US) LLC"
       ],
       "targets": [
-        {
-          "name": "Recognition Music Group (Delaware) L.P.",
-          "identifier_type": null,
-          "identifier": "DDC  6193972",
-          "party_page": {
-            "id": "recognition-music-group-delaware-l-p",
-            "name": "Recognition Music Group (Delaware) L.P."
-          }
-        }
-      ]
+        "Recognition Music Group (Delaware) L.P."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-01092",
       "merger_name": "Winning Group Holdings \u2013 Winning Appliances",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Herman Corp Pty Ltd (as trustee for the Herman Holdings Family Trust)",
-          "identifier_type": "ABN",
-          "identifier": "21 151 833 555",
-          "party_page": {
-            "id": "herman-corp-pty-ltd-as-trustee-for-the-herman-holdings-family-trust",
-            "name": "Herman Corp Pty Ltd (as trustee for the Herman Holdings Family Trust)"
-          }
-        },
-        {
-          "name": "Yandoo Holdings Pty Ltd",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "yandoo-holdings-pty-ltd",
-            "name": "Yandoo Holdings Pty Ltd"
-          }
-        }
+        "Herman Corp Pty Ltd (as trustee for the Herman Holdings Family Trust)",
+        "Yandoo Holdings Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "WINNING APPLIANCES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "94 002 193 688",
-          "party_page": {
-            "id": "winning-appliances-pty-ltd",
-            "name": "Winning Appliances Pty Ltd"
-          }
-        }
-      ]
+        "WINNING APPLIANCES PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

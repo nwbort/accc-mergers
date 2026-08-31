@@ -136,104 +136,37 @@
     {
       "merger_id": "MN-40020",
       "merger_name": "Premier Fresh \u2013 Domenico Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "PREMIER FRESH AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "87 004 843 556",
-          "party_page": {
-            "id": "premier-fresh-australia-pty-ltd",
-            "name": "Premier Fresh Australia Pty Ltd"
-          }
-        }
+        "PREMIER FRESH AUSTRALIA PTY LTD"
       ],
       "targets": [
-        {
-          "name": "DOUBLE D PRODUCE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "86 074 625 004",
-          "party_page": {
-            "id": "double-d-produce-pty-ltd",
-            "name": "Double D Produce Pty Ltd"
-          }
-        },
-        {
-          "name": "De Domenico Carmelo",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "de-domenico-carmelo",
-            "name": "De Domenico Carmelo"
-          }
-        }
-      ]
+        "DOUBLE D PRODUCE PTY LTD",
+        "De Domenico Carmelo"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-60013",
       "merger_name": "Export Trading Group Australia \u2013 pulses and grains business and facility in Mount Tyson, QLD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ETG QUEENSLAND PROCESSING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "20 695 139 032",
-          "party_page": {
-            "id": "etg-queensland-processing-pty-ltd",
-            "name": "Etg Queensland Processing Pty Ltd"
-          }
-        }
+        "ETG QUEENSLAND PROCESSING PTY LTD"
       ],
       "targets": [
-        {
-          "name": "QUEENSLAND COTTON CORPORATION PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "26 010 944 591",
-          "party_page": {
-            "id": "queensland-cotton-corporation-pty-ltd",
-            "name": "Queensland Cotton Corporation Pty Ltd"
-          }
-        }
-      ]
+        "QUEENSLAND COTTON CORPORATION PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25017",
       "merger_name": "Mayfair Corporation \u2013 Phosphate Hill",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "RYOWA II GPS PTY. LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "16 063 780 058",
-          "party_page": {
-            "id": "ryowa-ii-gps-pty-limited",
-            "name": "Ryowa Ii Gps Pty. Limited"
-          }
-        }
+        "RYOWA II GPS PTY. LIMITED"
       ],
       "targets": [
-        {
-          "name": "PH QUEENSLAND GAS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "12 626 604 000",
-          "party_page": {
-            "id": "ph-queensland-gas-pty-ltd",
-            "name": "Ph Queensland Gas Pty Ltd"
-          }
-        },
-        {
-          "name": "DYNO NOBEL LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "42 004 080 264",
-          "party_page": {
-            "id": "dyno-nobel-limited",
-            "name": "Dyno Nobel Limited"
-          }
-        }
-      ]
+        "PH QUEENSLAND GAS PTY LTD",
+        "DYNO NOBEL LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

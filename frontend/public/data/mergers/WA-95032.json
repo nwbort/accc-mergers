@@ -147,113 +147,38 @@
     {
       "merger_id": "MN-20023",
       "merger_name": "Sony Music - Recognition Music",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "SMG-Three LLC",
-          "identifier_type": null,
-          "identifier": "DDC  10277876",
-          "party_page": {
-            "id": "smg-three-llc",
-            "name": "SMG-Three LLC"
-          }
-        },
-        {
-          "name": "Sony Music Publishing (US) LLC",
-          "identifier_type": null,
-          "identifier": "DDC  2558200",
-          "party_page": {
-            "id": "sony-music-publishing-us-llc",
-            "name": "Sony Music Publishing (US) LLC"
-          }
-        }
+        "SMG-Three LLC",
+        "Sony Music Publishing (US) LLC"
       ],
       "targets": [
-        {
-          "name": "Recognition Music Group (Delaware) L.P.",
-          "identifier_type": null,
-          "identifier": "DDC  6193972",
-          "party_page": {
-            "id": "recognition-music-group-delaware-l-p",
-            "name": "Recognition Music Group (Delaware) L.P."
-          }
-        }
-      ]
+        "Recognition Music Group (Delaware) L.P."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25016",
       "merger_name": "Hostplus \u2013 CH Investment Holding Trust",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "HOST-PLUS PTY. LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "79 008 634 704",
-          "party_page": {
-            "id": "host-plus-pty-limited",
-            "name": "Host-Plus Pty. Limited"
-          }
-        }
+        "HOST-PLUS PTY. LIMITED"
       ],
       "targets": [
-        {
-          "name": "CH Investment Holding Trust",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "ch-investment-holding-trust",
-            "name": "CH Investment Holding Trust"
-          }
-        }
-      ]
+        "CH Investment Holding Trust"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-40022",
       "merger_name": "Integris & related entities - First Focus",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Apollo Australia Bidco Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "697 230 096",
-          "party_page": {
-            "id": "apollo-australia-bidco-pty-ltd",
-            "name": "Apollo Australia Bidco Pty Ltd"
-          }
-        },
-        {
-          "name": "Apollo Australia Bidco Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "697 230 096",
-          "party_page": {
-            "id": "apollo-australia-bidco-pty-ltd",
-            "name": "Apollo Australia Bidco Pty Ltd"
-          }
-        }
+        "Apollo Australia Bidco Pty Ltd",
+        "Apollo Australia Bidco Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "FIRST FOCUS IT PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "73 106 912 350",
-          "party_page": {
-            "id": "first-focus-it-pty-limited",
-            "name": "First Focus It Pty Limited"
-          }
-        },
-        {
-          "name": "The Trustee for FUTURE FOCUS TRUST",
-          "identifier_type": "ABN",
-          "identifier": "22 698 604 264",
-          "party_page": {
-            "id": "the-trustee-for-future-focus-trust",
-            "name": "The Trustee for FUTURE FOCUS TRUST"
-          }
-        }
-      ]
+        "FIRST FOCUS IT PTY LIMITED",
+        "The Trustee for FUTURE FOCUS TRUST"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

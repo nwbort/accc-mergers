@@ -139,94 +139,35 @@
     {
       "merger_id": "MN-15002",
       "merger_name": "Google - Wiz",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Google LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "google-llc",
-            "name": "Google"
-          },
-          "party_page": {
-            "id": "google-llc",
-            "name": "Google"
-          }
-        }
+        "Google LLC"
       ],
       "targets": [
-        {
-          "name": "Wiz Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "wiz-inc",
-            "name": "Wiz Inc"
-          }
-        }
-      ]
+        "Wiz Inc"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-35005",
       "merger_name": "Superloop \u2013 Lynham Networks",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "SUPERLOOP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "96 169 263 094",
-          "party_page": {
-            "id": "superloop-limited",
-            "name": "Superloop Limited"
-          }
-        }
+        "SUPERLOOP LIMITED"
       ],
       "targets": [
-        {
-          "name": "LYNHAM NETWORKS PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "17 602 258 337",
-          "party_page": {
-            "id": "lynham-networks-pty-ltd",
-            "name": "Lynham Networks Pty. Ltd."
-          }
-        }
-      ]
+        "LYNHAM NETWORKS PTY. LTD."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-20007",
       "merger_name": "Telstra \u2013 Infosys Technologies",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "TELSTRA LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "64 086 174 781",
-          "canonical": {
-            "id": "telstra-limited",
-            "name": "Telstra"
-          },
-          "party_page": {
-            "id": "telstra-limited",
-            "name": "Telstra"
-          }
-        }
+        "TELSTRA LIMITED"
       ],
       "targets": [
-        {
-          "name": "INFOSYS TECHNOLOGIES LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "52 090 591 209",
-          "party_page": {
-            "id": "infosys-technologies-limited",
-            "name": "Infosys Technologies Limited"
-          }
-        }
-      ]
+        "INFOSYS TECHNOLOGIES LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

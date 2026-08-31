@@ -96,129 +96,38 @@
     {
       "merger_id": "MN-75016",
       "merger_name": "Fulton Hogan \u2013 Avionics",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "FULTON HOGAN INDUSTRIES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "54 000 538 689",
-          "canonical": {
-            "id": "fulton-hogan",
-            "name": "Fulton Hogan"
-          },
-          "party_page": {
-            "id": "fulton-hogan",
-            "name": "Fulton Hogan"
-          }
-        }
+        "FULTON HOGAN INDUSTRIES PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Nick Brumley Pty Limited in its capacity atf Nick Brumley Family Trust (ABN 98 415 412 572)",
-          "identifier_type": "ABN",
-          "identifier": "44 124 730 605",
-          "party_page": {
-            "id": "nick-brumley-pty-limited-in-its-capacity-atf-nick-brumley-family-trust-abn-98-41",
-            "name": "Nick Brumley Pty Limited in its capacity atf Nick Brumley Family Trust (ABN 98 415 412 572)"
-          }
-        },
-        {
-          "name": "Shane Webb Nominees Pty Ltd in its capacity at the trustee for The S & R Webb Family Trust",
-          "identifier_type": "ACN",
-          "identifier": "619 189 883",
-          "party_page": {
-            "id": "shane-webb-nominees-pty-ltd-in-its-capacity-at-the-trustee-for-the-s-r-webb-fami",
-            "name": "Shane Webb Nominees Pty Ltd in its capacity at the trustee for The S & R Webb Family Trust"
-          }
-        }
-      ]
+        "Nick Brumley Pty Limited in its capacity atf Nick Brumley Family Trust (ABN 98 415 412 572)",
+        "Shane Webb Nominees Pty Ltd in its capacity at the trustee for The S & R Webb Family Trust"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70011",
       "merger_name": "Egis Projects Asia Pacific - Fulton Hogan Egis O&M",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "EGIS PROJECTS ASIA PACIFIC PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "82 071 536 957",
-          "party_page": {
-            "id": "egis-projects-asia-pacific-pty-limited",
-            "name": "Egis Projects Asia Pacific Pty Limited"
-          }
-        }
+        "EGIS PROJECTS ASIA PACIFIC PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "FULTON HOGAN INDUSTRIES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "54 000 538 689",
-          "canonical": {
-            "id": "fulton-hogan",
-            "name": "Fulton Hogan"
-          },
-          "party_page": {
-            "id": "fulton-hogan",
-            "name": "Fulton Hogan"
-          }
-        },
-        {
-          "name": "FULTON HOGAN EGIS O&M PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "37 609 764 730",
-          "canonical": {
-            "id": "fulton-hogan",
-            "name": "Fulton Hogan"
-          },
-          "party_page": {
-            "id": "fulton-hogan",
-            "name": "Fulton Hogan"
-          }
-        }
-      ]
+        "FULTON HOGAN INDUSTRIES PTY LTD",
+        "FULTON HOGAN EGIS O&M PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25008",
       "merger_name": "Five V Capital - FTP Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OVERWATCH BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 739 970",
-          "party_page": {
-            "id": "overwatch-bidco-pty-ltd",
-            "name": "Overwatch Bidco Pty Ltd"
-          }
-        }
+        "OVERWATCH BIDCO PTY LTD"
       ],
       "targets": [
-        {
-          "name": "FTP GROUP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "82 626 217 614",
-          "party_page": {
-            "id": "ftp-group-holdings-pty-ltd",
-            "name": "Ftp Group Holdings Pty Ltd"
-          }
-        },
-        {
-          "name": "FAARM BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 834 390",
-          "canonical": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          },
-          "party_page": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          }
-        }
-      ]
+        "FTP GROUP HOLDINGS PTY LTD",
+        "FAARM BIDCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

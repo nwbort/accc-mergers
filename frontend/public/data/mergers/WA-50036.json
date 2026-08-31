@@ -92,90 +92,35 @@
     {
       "merger_id": "WA-35020",
       "merger_name": "Respect Group - Jallarah Homes",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "RESPECT GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "74 121 263 545",
-          "party_page": {
-            "id": "respect-group-limited",
-            "name": "Respect Group Limited"
-          }
-        }
+        "RESPECT GROUP LIMITED"
       ],
       "targets": [
-        {
-          "name": "JALLARAH HOMES INC",
-          "identifier_type": "ABN",
-          "identifier": "13 238 944 953",
-          "party_page": {
-            "id": "jallarah-homes-inc",
-            "name": "Jallarah Homes Inc"
-          }
-        }
-      ]
+        "JALLARAH HOMES INC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-75047",
       "merger_name": "Respect Group \u2013 McLean Care residential aged care homes and independent living units",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "RESPECT GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "74 121 263 545",
-          "party_page": {
-            "id": "respect-group-limited",
-            "name": "Respect Group Limited"
-          }
-        }
+        "RESPECT GROUP LIMITED"
       ],
       "targets": [
-        {
-          "name": "MCLEAN CARE LTD",
-          "identifier_type": "ABN",
-          "identifier": "88 124 860 019",
-          "party_page": {
-            "id": "mclean-care-ltd",
-            "name": "Mclean Care Ltd"
-          }
-        }
-      ]
+        "MCLEAN CARE LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-50026",
       "merger_name": "Stonepeak-led consortium - Estia Health",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Wisdom BidCo Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "19 696 888 730",
-          "party_page": {
-            "id": "wisdom-bidco-pty-ltd",
-            "name": "Wisdom BidCo Pty Ltd"
-          }
-        }
+        "Wisdom BidCo Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Estia Health Holdings Ltd",
-          "identifier_type": "ABN",
-          "identifier": "47 669 884 244",
-          "canonical": {
-            "id": "estia-health-holdings-ltd",
-            "name": "Estia Health"
-          },
-          "party_page": {
-            "id": "estia-health-holdings-ltd",
-            "name": "Estia Health"
-          }
-        }
-      ]
+        "Estia Health Holdings Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

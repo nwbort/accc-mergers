@@ -133,108 +133,37 @@
     {
       "merger_id": "WA-25003",
       "merger_name": "Delinea (TPG) - StrongDM",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Delinea Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware corporation file number  3777797",
-          "party_page": {
-            "id": "delinea-inc",
-            "name": "Delinea Inc."
-          }
-        }
+        "Delinea Inc."
       ],
       "targets": [
-        {
-          "name": "StrongDM, Inc",
-          "identifier_type": null,
-          "identifier": "CIK  0001637806",
-          "party_page": {
-            "id": "strongdm-inc",
-            "name": "StrongDM, Inc"
-          }
-        }
-      ]
+        "StrongDM, Inc"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70002",
       "merger_name": "Ethos (TPG) \u2013 EMIS and certain related assets",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Ethos Bidco, Ltd",
-          "identifier_type": null,
-          "identifier": "UK Company Number: 16905190",
-          "party_page": {
-            "id": "ethos-bidco-ltd",
-            "name": "Ethos Bidco, Ltd"
-          }
-        }
+        "Ethos Bidco, Ltd"
       ],
       "targets": [
-        {
-          "name": "EMIS Group Limited",
-          "identifier_type": "ABN",
-          "identifier": "75 075 102 028",
-          "party_page": {
-            "id": "emis-group-limited",
-            "name": "EMIS Group Limited"
-          }
-        },
-        {
-          "name": "UnitedHealth Group Incorporated (UHG)",
-          "identifier_type": null,
-          "identifier": "US EIN  4113221939",
-          "party_page": {
-            "id": "unitedhealth-group-incorporated-uhg",
-            "name": "UnitedHealth Group Incorporated (UHG)"
-          }
-        }
-      ]
+        "EMIS Group Limited",
+        "UnitedHealth Group Incorporated (UHG)"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25008",
       "merger_name": "Five V Capital - FTP Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OVERWATCH BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 739 970",
-          "party_page": {
-            "id": "overwatch-bidco-pty-ltd",
-            "name": "Overwatch Bidco Pty Ltd"
-          }
-        }
+        "OVERWATCH BIDCO PTY LTD"
       ],
       "targets": [
-        {
-          "name": "FTP GROUP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "82 626 217 614",
-          "party_page": {
-            "id": "ftp-group-holdings-pty-ltd",
-            "name": "Ftp Group Holdings Pty Ltd"
-          }
-        },
-        {
-          "name": "FAARM BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 834 390",
-          "canonical": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          },
-          "party_page": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          }
-        }
-      ]
+        "FTP GROUP HOLDINGS PTY LTD",
+        "FAARM BIDCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

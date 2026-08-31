@@ -96,108 +96,37 @@
     {
       "merger_id": "MN-01106",
       "merger_name": "Midea - Residentia Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Midea Electric Trading (Singapore) Co. Pte. Ltd.",
-          "identifier_type": null,
-          "identifier": "Singapore identifying number (UEN): 200800970G",
-          "party_page": {
-            "id": "midea-electric-trading-singapore-co-pte-ltd",
-            "name": "Midea Electric Trading (Singapore) Co. Pte. Ltd."
-          }
-        }
+        "Midea Electric Trading (Singapore) Co. Pte. Ltd."
       ],
       "targets": [
-        {
-          "name": "RESIDENTIA IP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "92 666 876 964",
-          "party_page": {
-            "id": "residentia-ip-pty-ltd",
-            "name": "Residentia Ip Pty Ltd"
-          }
-        },
-        {
-          "name": "RESIDENTIA HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "17 618 920 059",
-          "canonical": {
-            "id": "residentia-group-pty-ltd",
-            "name": "Residentia Group Pty Ltd"
-          },
-          "party_page": {
-            "id": "residentia-group-pty-ltd",
-            "name": "Residentia Group Pty Ltd"
-          }
-        }
-      ]
+        "RESIDENTIA IP PTY LTD",
+        "RESIDENTIA HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-70012",
       "merger_name": "Quanta - PSD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Quanta Services Australia Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "11 164 311 997",
-          "party_page": {
-            "id": "quanta-services-australia-pty-ltd",
-            "name": "Quanta Services Australia Pty Ltd"
-          }
-        }
+        "Quanta Services Australia Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "PSD Global Holdings Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "634 380 813",
-          "party_page": {
-            "id": "psd-global-holdings-pty-ltd",
-            "name": "PSD Global Holdings Pty Ltd"
-          }
-        }
-      ]
+        "PSD Global Holdings Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-05020",
       "merger_name": "Midea Group \u2013 Esaote",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Midea Imaging Technology (Shanghai) Co., Ltd.",
-          "identifier_type": null,
-          "identifier": "USCC  91310118MAEN420F3W",
-          "party_page": {
-            "id": "midea-imaging-technology-shanghai-co-ltd",
-            "name": "Midea Imaging Technology (Shanghai) Co., Ltd."
-          }
-        }
+        "Midea Imaging Technology (Shanghai) Co., Ltd."
       ],
       "targets": [
-        {
-          "name": "Esaote S.p.A.",
-          "identifier_type": null,
-          "identifier": "Codice Fiscale/Partita IVA  05131180969",
-          "party_page": {
-            "id": "esaote-s-p-a",
-            "name": "Esaote S.p.A."
-          }
-        },
-        {
-          "name": "Shanghai Lu Zi Enterprise Management Consulting Center",
-          "identifier_type": null,
-          "identifier": "USCC  91310115MA1K3D4T1W",
-          "party_page": {
-            "id": "shanghai-lu-zi-enterprise-management-consulting-center",
-            "name": "Shanghai Lu Zi Enterprise Management Consulting Center"
-          }
-        }
-      ]
+        "Esaote S.p.A.",
+        "Shanghai Lu Zi Enterprise Management Consulting Center"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

@@ -96,94 +96,35 @@
     {
       "merger_id": "MN-65008",
       "merger_name": "REA Group - Simplicity Loans & Advisory",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "REA FINANCIAL SERVICES HOLDING CO. PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "38 649 505 386",
-          "party_page": {
-            "id": "rea-financial-services-holding-co-pty-ltd",
-            "name": "Rea Financial Services Holding Co. Pty Ltd"
-          }
-        }
+        "REA FINANCIAL SERVICES HOLDING CO. PTY LTD"
       ],
       "targets": [
-        {
-          "name": "SIMPLICITY LOANS & ADVISORY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "98 616 763 878",
-          "party_page": {
-            "id": "simplicity-loans-advisory-pty-ltd",
-            "name": "Simplicity Loans & Advisory Pty Ltd"
-          }
-        }
-      ]
+        "SIMPLICITY LOANS & ADVISORY PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-30016",
       "merger_name": "Zurich - Beazley",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Zurich Insurance Company Ltd",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "zurich-assure-australia-pty-ltd",
-            "name": "Zurich"
-          },
-          "party_page": {
-            "id": "zurich-assure-australia-pty-ltd",
-            "name": "Zurich"
-          }
-        }
+        "Zurich Insurance Company Ltd"
       ],
       "targets": [
-        {
-          "name": "Beazley plc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "beazley-plc",
-            "name": "Beazley plc"
-          }
-        }
-      ]
+        "Beazley plc"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-55016",
       "merger_name": "Zurich - ClearView",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ZURICH FINANCIAL SERVICES AUSTRALIA LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "11 008 423 372",
-          "canonical": {
-            "id": "zurich-assure-australia-pty-ltd",
-            "name": "Zurich"
-          },
-          "party_page": {
-            "id": "zurich-assure-australia-pty-ltd",
-            "name": "Zurich"
-          }
-        }
+        "ZURICH FINANCIAL SERVICES AUSTRALIA LIMITED"
       ],
       "targets": [
-        {
-          "name": "CLEARVIEW WEALTH LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "83 106 248 248",
-          "party_page": {
-            "id": "clearview-wealth-limited",
-            "name": "Clearview Wealth Limited"
-          }
-        }
-      ]
+        "CLEARVIEW WEALTH LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

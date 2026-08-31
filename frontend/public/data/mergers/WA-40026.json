@@ -104,133 +104,38 @@
     {
       "merger_id": "MN-01104",
       "merger_name": "Genea - Care Fertility Greenslopes",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "GENEA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "82 002 844 448",
-          "canonical": {
-            "id": "genea",
-            "name": "Genea"
-          },
-          "party_page": {
-            "id": "genea",
-            "name": "Genea"
-          }
-        }
+        "GENEA PTY LTD"
       ],
       "targets": [
-        {
-          "name": "CARE FERTILITY GREENSLOPES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "11 128 331 797",
-          "party_page": {
-            "id": "care-fertility-greenslopes-pty-ltd",
-            "name": "Care Fertility Greenslopes Pty Ltd"
-          }
-        }
-      ]
+        "CARE FERTILITY GREENSLOPES PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-90012",
       "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "PT Asian Bulk Logistics",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          },
-          "party_page": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          }
-        },
-        {
-          "name": "Global Engage Marine Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "693 762 122",
-          "canonical": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          },
-          "party_page": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          }
-        }
+        "PT Asian Bulk Logistics",
+        "Global Engage Marine Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "ENGAGE MARINE FINCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "25 675 999 283",
-          "party_page": {
-            "id": "engage-marine-finco-pty-ltd",
-            "name": "Engage Marine Finco Pty Ltd"
-          }
-        },
-        {
-          "name": "ENGAGE MARINE HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 626 774 678",
-          "party_page": {
-            "id": "engage-marine-holdings-pty-ltd",
-            "name": "Engage Marine Holdings Pty Ltd"
-          }
-        }
-      ]
+        "ENGAGE MARINE FINCO PTY LTD",
+        "ENGAGE MARINE HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-20010",
       "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "Global Engage Marine Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "693 762 122",
-          "canonical": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          },
-          "party_page": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          }
-        },
-        {
-          "name": "PT Asian Bulk Logistics",
-          "identifier_type": null,
-          "identifier": "NIB   8120012130871",
-          "canonical": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          },
-          "party_page": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          }
-        }
+        "Global Engage Marine Pty Ltd",
+        "PT Asian Bulk Logistics"
       ],
       "targets": [
-        {
-          "name": "ENGAGE MARINE TOPCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "46 675 998 562",
-          "party_page": {
-            "id": "engage-marine-topco-pty-ltd",
-            "name": "Engage Marine Topco Pty Ltd"
-          }
-        }
-      ]
+        "ENGAGE MARINE TOPCO PTY LTD"
+      ],
+      "accc_determination": "Not approved"
     }
   ]
 }

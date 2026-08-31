@@ -102,95 +102,36 @@
     {
       "merger_id": "MN-05012",
       "merger_name": "Eagers - Audi Melbourne and Audi Richmond",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "EAGERS VIC PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "29 616 989 596",
-          "party_page": {
-            "id": "eagers-vic-pty-ltd",
-            "name": "Eagers Vic Pty Ltd"
-          }
-        }
+        "EAGERS VIC PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Zagame Automotive Group Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "85 085 950 063",
-          "party_page": {
-            "id": "zagame-automotive-group-pty-ltd",
-            "name": "Zagame Automotive Group Pty Ltd"
-          }
-        }
-      ]
+        "Zagame Automotive Group Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-90006",
       "merger_name": "CARe \u2013 MotorOne Autobody",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CARE AUTOBODY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 692 619 962",
-          "party_page": {
-            "id": "care-autobody-pty-ltd",
-            "name": "Care Autobody Pty Ltd"
-          }
-        }
+        "CARE AUTOBODY PTY LTD"
       ],
       "targets": [
-        {
-          "name": "MOTORONE AUTOBODY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "98 077 935 614",
-          "party_page": {
-            "id": "motorone-autobody-pty-ltd",
-            "name": "Motorone Autobody Pty Ltd"
-          }
-        }
-      ]
+        "MOTORONE AUTOBODY PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-85017",
       "merger_name": "Regent Motors Group - Lane Group's Mandurah Dealerships",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "MANDURAH AUTO GROUP PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "693 645 699",
-          "party_page": {
-            "id": "mandurah-auto-group-pty-ltd",
-            "name": "Mandurah Auto Group Pty Ltd"
-          }
-        },
-        {
-          "name": "PEEL MOTOR GROUP PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "693 645 742",
-          "party_page": {
-            "id": "peel-motor-group-pty-ltd",
-            "name": "Peel Motor Group Pty Ltd"
-          }
-        }
+        "MANDURAH AUTO GROUP PTY LTD",
+        "PEEL MOTOR GROUP PTY LTD"
       ],
       "targets": [
-        {
-          "name": "WA AUTOMOTIVE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "20 158 702 740",
-          "party_page": {
-            "id": "wa-automotive-pty-ltd",
-            "name": "Wa Automotive Pty Ltd"
-          }
-        }
-      ]
+        "WA AUTOMOTIVE PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

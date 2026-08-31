@@ -122,117 +122,38 @@
     {
       "merger_id": "MN-45002",
       "merger_name": "eBay - Depop",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "eBay Inc.",
-          "identifier_type": null,
-          "identifier": "I.R.S. Employer Identification No. \u2013 United States  770430924",
-          "canonical": {
-            "id": "ebay",
-            "name": "eBay"
-          },
-          "party_page": {
-            "id": "ebay",
-            "name": "eBay"
-          }
-        }
+        "eBay Inc."
       ],
       "targets": [
-        {
-          "name": "Etsy, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "etsy-inc",
-            "name": "Etsy, Inc."
-          }
-        },
-        {
-          "name": "Depop Limited",
-          "identifier_type": null,
-          "identifier": "UK Company Registration Number  08316342",
-          "party_page": {
-            "id": "depop-limited",
-            "name": "Depop Limited"
-          }
-        }
-      ]
+        "Etsy, Inc.",
+        "Depop Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-55009",
       "merger_name": "Resonetics \u2013 Resolution Medical",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Resonetics, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "resonetics-llc",
-            "name": "Resonetics, LLC"
-          }
-        }
+        "Resonetics, LLC"
       ],
       "targets": [
-        {
-          "name": "Resolution Medical MidCo, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "resolution-medical-midco-llc",
-            "name": "Resolution Medical MidCo, LLC"
-          }
-        },
-        {
-          "name": "Arcline Capital Partners II-A LP",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "arcline-capital-partners-ii-a-lp",
-            "name": "Arcline Capital Partners II-A LP"
-          }
-        }
-      ]
+        "Resolution Medical MidCo, LLC",
+        "Arcline Capital Partners II-A LP"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-60010",
       "merger_name": "Michelin - Flexitallic",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Compagnie Financi\u00e8re Michelin SAS",
-          "identifier_type": null,
-          "identifier": "SIREN  898 849 153",
-          "party_page": {
-            "id": "compagnie-financi-re-michelin-sas",
-            "name": "Compagnie Financi\u00e8re Michelin SAS"
-          }
-        },
-        {
-          "name": "Fenner America, Inc.",
-          "identifier_type": null,
-          "identifier": "USDOT  3744583",
-          "party_page": {
-            "id": "fenner-america-inc",
-            "name": "Fenner America, Inc."
-          }
-        }
+        "Compagnie Financi\u00e8re Michelin SAS",
+        "Fenner America, Inc."
       ],
       "targets": [
-        {
-          "name": "Flexitallic Group SAS",
-          "identifier_type": null,
-          "identifier": "SIREN  532 742 699",
-          "party_page": {
-            "id": "flexitallic-group-sas",
-            "name": "Flexitallic Group SAS"
-          }
-        }
-      ]
+        "Flexitallic Group SAS"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

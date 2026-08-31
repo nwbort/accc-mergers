@@ -167,108 +167,37 @@
     {
       "merger_id": "WA-35011",
       "merger_name": "Austral Resources Australia \u2013 Lady Loretta mine",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AUSTRAL RESOURCES AUSTRALIA LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "50 142 485 470",
-          "party_page": {
-            "id": "austral-resources-australia-limited",
-            "name": "Austral Resources Australia Limited"
-          }
-        }
+        "AUSTRAL RESOURCES AUSTRALIA LIMITED"
       ],
       "targets": [
-        {
-          "name": "NORANDA PACIFIC PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "65 006 864 802",
-          "party_page": {
-            "id": "noranda-pacific-pty-ltd",
-            "name": "Noranda Pacific Pty Ltd"
-          }
-        },
-        {
-          "name": "Noranda Pacific No. 2 Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "158 936 264",
-          "party_page": {
-            "id": "noranda-pacific-no-2-pty-ltd",
-            "name": "Noranda Pacific No. 2 Pty Ltd"
-          }
-        }
-      ]
+        "NORANDA PACIFIC PTY LTD",
+        "Noranda Pacific No. 2 Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-01037",
       "merger_name": "Anglo American - Teck Resources",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Anglo American plc",
-          "identifier_type": null,
-          "identifier": "03564138",
-          "canonical": {
-            "id": "anglo-american-plc",
-            "name": "Anglo American"
-          },
-          "party_page": {
-            "id": "anglo-american-plc",
-            "name": "Anglo American"
-          }
-        }
+        "Anglo American plc"
       ],
       "targets": [
-        {
-          "name": "Teck Resources Limited",
-          "identifier_type": null,
-          "identifier": "4460561",
-          "party_page": {
-            "id": "teck-resources-limited",
-            "name": "Teck Resources Limited"
-          }
-        }
-      ]
+        "Teck Resources Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-10005",
       "merger_name": "Apex - Mercer Administration Services and related assets",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Apex Group Holdings (Australia) Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "48 112 252 114",
-          "party_page": {
-            "id": "apex-group-holdings-australia-pty-ltd",
-            "name": "Apex Group Holdings (Australia) Pty Ltd"
-          }
-        }
+        "Apex Group Holdings (Australia) Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "MERCER OUTSOURCING (AUSTRALIA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "83 068 908 912",
-          "party_page": {
-            "id": "mercer-outsourcing-australia-pty-ltd",
-            "name": "Mercer Outsourcing (Australia) Pty Ltd"
-          }
-        },
-        {
-          "name": "MERCER ADMINISTRATION SERVICES (AUSTRALIA) PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "48 616 275 980",
-          "party_page": {
-            "id": "mercer-administration-services-australia-pty-limited",
-            "name": "Mercer Administration Services (Australia) Pty Limited"
-          }
-        }
-      ]
+        "MERCER OUTSOURCING (AUSTRALIA) PTY LTD",
+        "MERCER ADMINISTRATION SERVICES (AUSTRALIA) PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

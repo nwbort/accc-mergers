@@ -105,99 +105,36 @@
     {
       "merger_id": "WA-95006",
       "merger_name": "Laundy Group \u2013 Nine Radio",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "SPIKE MEDIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 694 712 699",
-          "party_page": {
-            "id": "spike-media-pty-ltd",
-            "name": "Spike Media Pty Ltd"
-          }
-        }
+        "SPIKE MEDIA PTY LTD"
       ],
       "targets": [
-        {
-          "name": "NINE RADIO PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "32 063 906 927",
-          "canonical": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          },
-          "party_page": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          }
-        }
-      ]
+        "NINE RADIO PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-85003",
       "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "NACG WA Acquisition Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "693 678 296",
-          "party_page": {
-            "id": "nacg-wa-acquisition-pty-ltd",
-            "name": "NACG WA Acquisition Pty Ltd"
-          }
-        }
+        "NACG WA Acquisition Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "DCL CORP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "60 633 008 992",
-          "party_page": {
-            "id": "dcl-corp-pty-ltd",
-            "name": "Dcl Corp Pty Ltd"
-          }
-        },
-        {
-          "name": "IRON HIRE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 641 807 589",
-          "party_page": {
-            "id": "iron-hire-pty-ltd",
-            "name": "Iron Hire Pty Ltd"
-          }
-        }
-      ]
+        "DCL CORP PTY LTD",
+        "IRON HIRE PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-35004",
       "merger_name": "L Catterton Management \u2013 Ex Nihilo Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Saphir Holdings SAS",
-          "identifier_type": null,
-          "identifier": "Trade and Companies Registry Number 995 192 986",
-          "party_page": {
-            "id": "saphir-holdings-sas",
-            "name": "Saphir Holdings SAS"
-          }
-        }
+        "Saphir Holdings SAS"
       ],
       "targets": [
-        {
-          "name": "Ex Nihilo Group",
-          "identifier_type": null,
-          "identifier": "Trade and Companies Registry Number 981 087 646",
-          "party_page": {
-            "id": "ex-nihilo-group",
-            "name": "Ex Nihilo Group"
-          }
-        }
-      ]
+        "Ex Nihilo Group"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

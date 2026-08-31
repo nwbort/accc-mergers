@@ -111,99 +111,36 @@
     {
       "merger_id": "WA-05007",
       "merger_name": "Eiffel and Eurazeo \u2013 Segula",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Eiffel Investment Group SAS",
-          "identifier_type": null,
-          "identifier": "SIREN 510 813 991",
-          "party_page": {
-            "id": "eiffel-investment-group-sas",
-            "name": "Eiffel Investment Group SAS"
-          }
-        },
-        {
-          "name": "Eurazeo SE",
-          "identifier_type": null,
-          "identifier": "SIREN 692 030 992",
-          "party_page": {
-            "id": "eurazeo-se",
-            "name": "Eurazeo SE"
-          }
-        }
+        "Eiffel Investment Group SAS",
+        "Eurazeo SE"
       ],
       "targets": [
-        {
-          "name": "Segula Holding SAS",
-          "identifier_type": null,
-          "identifier": "SIREN 343 166 393",
-          "party_page": {
-            "id": "segula-holding-sas",
-            "name": "Segula Holding SAS"
-          }
-        }
-      ]
+        "Segula Holding SAS"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-15010",
       "merger_name": "AZ Next Generation Advisory \u2013 Intend Financial",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AZ NEXT GENERATION ADVISORY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "57 167 960 018",
-          "party_page": {
-            "id": "az-next-generation-advisory-pty-ltd",
-            "name": "Az Next Generation Advisory Pty Ltd"
-          }
-        }
+        "AZ NEXT GENERATION ADVISORY PTY LTD"
       ],
       "targets": [
-        {
-          "name": "BMM PARTNERS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "82 649 113 959",
-          "party_page": {
-            "id": "bmm-partners-pty-ltd",
-            "name": "Bmm Partners Pty Ltd"
-          }
-        }
-      ]
+        "BMM PARTNERS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-35001",
       "merger_name": "WSP \u2013 TRC",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "WSP Global Inc.",
-          "identifier_type": null,
-          "identifier": "Corporation No.: 7748388",
-          "canonical": {
-            "id": "wsp-australia-pty-limited",
-            "name": "Wsp Australia Pty Limited"
-          },
-          "party_page": {
-            "id": "wsp-australia-pty-limited",
-            "name": "Wsp Australia Pty Limited"
-          }
-        }
+        "WSP Global Inc."
       ],
       "targets": [
-        {
-          "name": "TRC Companies, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "trc-companies-inc",
-            "name": "TRC Companies, Inc."
-          }
-        }
-      ]
+        "TRC Companies, Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

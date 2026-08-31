@@ -166,112 +166,37 @@
     {
       "merger_id": "MN-10013",
       "merger_name": "Accenture - Ziff Davis' connectivity business",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Accenture Inc.",
-          "identifier_type": null,
-          "identifier": "State File Number  3387477",
-          "canonical": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          },
-          "party_page": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          }
-        }
+        "Accenture Inc."
       ],
       "targets": [
-        {
-          "name": "Ookla, LLC",
-          "identifier_type": null,
-          "identifier": "Unified Business ID  602 422 103",
-          "party_page": {
-            "id": "ookla-llc",
-            "name": "Ookla, LLC"
-          }
-        },
-        {
-          "name": "Ekahau OY",
-          "identifier_type": null,
-          "identifier": "Business ID  16108964",
-          "party_page": {
-            "id": "ekahau-oy",
-            "name": "Ekahau OY"
-          }
-        }
-      ]
+        "Ookla, LLC",
+        "Ekahau OY"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-01081",
       "merger_name": "Accenture \u2013 Faculty Science",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Accenture International B.V.",
-          "identifier_type": null,
-          "identifier": "Business registration no: KVK70797285",
-          "canonical": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          },
-          "party_page": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          }
-        }
+        "Accenture International B.V."
       ],
       "targets": [
-        {
-          "name": "Faculty Science Limited",
-          "identifier_type": null,
-          "identifier": "Company registration no: CRN08873131",
-          "party_page": {
-            "id": "faculty-science-limited",
-            "name": "Faculty Science Limited"
-          }
-        }
-      ]
+        "Faculty Science Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-15004",
       "merger_name": "Australian Retirement Trust \u2013 Interests in non-rental income (Westfield Sydney)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "QIC TT COMPANY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "27 694 380 973",
-          "party_page": {
-            "id": "qic-tt-company-pty-ltd",
-            "name": "Qic Tt Company Pty Ltd"
-          }
-        }
+        "QIC TT COMPANY PTY LTD"
       ],
       "targets": [
-        {
-          "name": "SCENTRE GROUP TRUST 3",
-          "identifier_type": "ABN",
-          "identifier": "11 517 229 138",
-          "party_page": {
-            "id": "scentre-group-trust-3",
-            "name": "Scentre Group Trust 3"
-          }
-        },
-        {
-          "name": "SCENTRE ALLIANCES PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "53 098 357 521",
-          "party_page": {
-            "id": "scentre-alliances-pty-limited",
-            "name": "Scentre Alliances Pty Limited"
-          }
-        }
-      ]
+        "SCENTRE GROUP TRUST 3",
+        "SCENTRE ALLIANCES PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

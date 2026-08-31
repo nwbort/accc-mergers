@@ -101,120 +101,37 @@
     {
       "merger_id": "MN-30008",
       "merger_name": "Frasers Group \u2013 Accent Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Frasers Group plc",
-          "identifier_type": null,
-          "identifier": "Company number  06035106",
-          "party_page": {
-            "id": "frasers-group-plc",
-            "name": "Frasers Group plc"
-          }
-        }
+        "Frasers Group plc"
       ],
       "targets": [
-        {
-          "name": "ACCENT GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "85 108 096 251",
-          "party_page": {
-            "id": "accent-group-limited",
-            "name": "Accent Group Limited"
-          }
-        }
-      ]
+        "ACCENT GROUP LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-10013",
       "merger_name": "Accenture - Ziff Davis' connectivity business",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Accenture Inc.",
-          "identifier_type": null,
-          "identifier": "State File Number  3387477",
-          "canonical": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          },
-          "party_page": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          }
-        }
+        "Accenture Inc."
       ],
       "targets": [
-        {
-          "name": "Ookla, LLC",
-          "identifier_type": null,
-          "identifier": "Unified Business ID  602 422 103",
-          "party_page": {
-            "id": "ookla-llc",
-            "name": "Ookla, LLC"
-          }
-        },
-        {
-          "name": "Ekahau OY",
-          "identifier_type": null,
-          "identifier": "Business ID  16108964",
-          "party_page": {
-            "id": "ekahau-oy",
-            "name": "Ekahau OY"
-          }
-        }
-      ]
+        "Ookla, LLC",
+        "Ekahau OY"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-50032",
       "merger_name": "Accenture - Dragos",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Accenture Venture Holdings, LLC",
-          "identifier_type": null,
-          "identifier": "Delaware registered number  10429510",
-          "canonical": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          },
-          "party_page": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          }
-        }
+        "Accenture Venture Holdings, LLC"
       ],
       "targets": [
-        {
-          "name": "Dragos, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware file number  6028773",
-          "canonical": {
-            "id": "dragos-inc",
-            "name": "Dragos"
-          },
-          "party_page": {
-            "id": "dragos-inc",
-            "name": "Dragos"
-          }
-        },
-        {
-          "name": "Phosphorus Security LLC",
-          "identifier_type": null,
-          "identifier": "Delaware file number  10549306",
-          "canonical": {
-            "id": "dragos-inc",
-            "name": "Dragos"
-          },
-          "party_page": {
-            "id": "dragos-inc",
-            "name": "Dragos"
-          }
-        }
-      ]
+        "Dragos, Inc.",
+        "Phosphorus Security LLC"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

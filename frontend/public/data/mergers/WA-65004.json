@@ -177,129 +177,38 @@
     {
       "merger_id": "WA-25008",
       "merger_name": "Five V Capital - FTP Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OVERWATCH BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 739 970",
-          "party_page": {
-            "id": "overwatch-bidco-pty-ltd",
-            "name": "Overwatch Bidco Pty Ltd"
-          }
-        }
+        "OVERWATCH BIDCO PTY LTD"
       ],
       "targets": [
-        {
-          "name": "FTP GROUP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "82 626 217 614",
-          "party_page": {
-            "id": "ftp-group-holdings-pty-ltd",
-            "name": "Ftp Group Holdings Pty Ltd"
-          }
-        },
-        {
-          "name": "FAARM BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 834 390",
-          "canonical": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          },
-          "party_page": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          }
-        }
-      ]
+        "FTP GROUP HOLDINGS PTY LTD",
+        "FAARM BIDCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-25004",
       "merger_name": "ServiceNow - Armis",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ServiceNow, Inc.",
-          "identifier_type": null,
-          "identifier": "5111469",
-          "canonical": {
-            "id": "servicenow-inc",
-            "name": "ServiceNow, Inc."
-          },
-          "party_page": {
-            "id": "servicenow-inc",
-            "name": "ServiceNow, Inc."
-          }
-        }
+        "ServiceNow, Inc."
       ],
       "targets": [
-        {
-          "name": "Armis Security, Ltd.",
-          "identifier_type": null,
-          "identifier": "515335941",
-          "party_page": {
-            "id": "armis-security-ltd",
-            "name": "Armis Security, Ltd."
-          }
-        },
-        {
-          "name": "Armis, Inc.",
-          "identifier_type": null,
-          "identifier": "6021196",
-          "party_page": {
-            "id": "armis-inc",
-            "name": "Armis, Inc."
-          }
-        }
-      ]
+        "Armis Security, Ltd.",
+        "Armis, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-50008",
       "merger_name": "WIN Television Network - NBN Enterprises & Television Holdings Darwin",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "WIN TELEVISION NETWORK PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "90 008 589 026",
-          "party_page": {
-            "id": "win-television-network-pty-ltd",
-            "name": "Win Television Network Pty Ltd"
-          }
-        }
+        "WIN TELEVISION NETWORK PTY LTD"
       ],
       "targets": [
-        {
-          "name": "NINE NETWORK AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "88 008 685 407",
-          "canonical": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          },
-          "party_page": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          }
-        },
-        {
-          "name": "NINE NETWORK AUSTRALIA HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 124 816 093",
-          "canonical": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          },
-          "party_page": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          }
-        }
-      ]
+        "NINE NETWORK AUSTRALIA PTY LTD",
+        "NINE NETWORK AUSTRALIA HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

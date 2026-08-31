@@ -110,112 +110,37 @@
     {
       "merger_id": "WA-45015",
       "merger_name": "EQT Fund Management \u2013 Kakaku.com",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Kamgras 1 K.K.",
-          "identifier_type": null,
-          "identifier": "Japan corporate number  0104 01 197943",
-          "party_page": {
-            "id": "kamgras-1-k-k",
-            "name": "Kamgras 1 K.K."
-          }
-        }
+        "Kamgras 1 K.K."
       ],
       "targets": [
-        {
-          "name": "Kakaku.com, Inc.",
-          "identifier_type": null,
-          "identifier": "Japan corporate number  011001065997",
-          "canonical": {
-            "id": "time-design-international-pte-ltd",
-            "name": "Kakaku.com"
-          },
-          "party_page": {
-            "id": "time-design-international-pte-ltd",
-            "name": "Kakaku.com"
-          }
-        },
-        {
-          "name": "Time Design International Pte Ltd",
-          "identifier_type": null,
-          "identifier": "Singapore registration number  UEN 201736394D",
-          "canonical": {
-            "id": "time-design-international-pte-ltd",
-            "name": "Kakaku.com"
-          },
-          "party_page": {
-            "id": "time-design-international-pte-ltd",
-            "name": "Kakaku.com"
-          }
-        }
-      ]
+        "Kakaku.com, Inc.",
+        "Time Design International Pte Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-90009",
       "merger_name": "Trescal \u2013 TR Calibration",
-      "status": "Assessment ceased",
-      "accc_determination": null,
       "acquirers": [
-        {
-          "name": "TRESCAL (AUSTRALIA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "39 117 603 835",
-          "party_page": {
-            "id": "trescal-australia-pty-ltd",
-            "name": "Trescal (Australia) Pty Ltd"
-          }
-        }
+        "TRESCAL (AUSTRALIA) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "TR PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 005 499 721",
-          "party_page": {
-            "id": "tr-pty-ltd",
-            "name": "Tr Pty Ltd"
-          }
-        }
-      ]
+        "TR PTY LTD"
+      ],
+      "status": "Assessment ceased"
     },
     {
       "merger_id": "WA-01113",
       "merger_name": "Hillhouse \u2013 LRQA Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Atlas Investments Holdings Limited",
-          "identifier_type": null,
-          "identifier": "CR No. 434331",
-          "party_page": {
-            "id": "atlas-investments-holdings-limited",
-            "name": "Atlas Investments Holdings Limited"
-          }
-        }
+        "Atlas Investments Holdings Limited"
       ],
       "targets": [
-        {
-          "name": "Dione Topco Ltd.",
-          "identifier_type": null,
-          "identifier": "Registration number 137864 (Jersey)",
-          "party_page": {
-            "id": "dione-topco-ltd",
-            "name": "Dione Topco Ltd."
-          }
-        },
-        {
-          "name": "LRQA Group Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "lrqa-group-limited",
-            "name": "LRQA Group Limited"
-          }
-        }
-      ]
+        "Dione Topco Ltd.",
+        "LRQA Group Limited"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

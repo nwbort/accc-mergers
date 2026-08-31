@@ -118,116 +118,37 @@
     {
       "merger_id": "MN-10006",
       "merger_name": "Australian Venue Co. \u2013 four licensed venues in metropolitan Sydney (Public House Petersham, The Erko, The Golden Sheaf and Barangaroo House)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AVC Operations Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "81 607 832 299",
-          "canonical": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          },
-          "party_page": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          }
-        }
+        "AVC Operations Pty Limited"
       ],
       "targets": [
-        {
-          "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
-          "identifier_type": "ABN",
-          "identifier": "70 075 074 930",
-          "party_page": {
-            "id": "sherilyn-pty-limited-as-trustee-for-solotrust-unit-trust",
-            "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust"
-          }
-        },
-        {
-          "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust",
-          "identifier_type": "ACN",
-          "identifier": "604 221 801",
-          "party_page": {
-            "id": "barangaroo-pty-limited-as-trustee-for-barangaroo-trust",
-            "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust"
-          }
-        }
-      ]
+        "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
+        "Barangaroo Pty Limited as trustee for Barangaroo Trust"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-15034",
       "merger_name": "Australian Venue Co \u2013 assets of Black Nugget Hotel Motel, Bartletts Tavern and all associated detached bottle shops",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AVC OPERATIONS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "81 607 832 299",
-          "canonical": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          },
-          "party_page": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          }
-        }
+        "AVC OPERATIONS PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "Central Hospitality Services Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "644 976 045",
-          "party_page": {
-            "id": "central-hospitality-services-pty-ltd",
-            "name": "Central Hospitality Services Pty Ltd"
-          }
-        },
-        {
-          "name": "ATHENA HOSPITALITY GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "35 636 190 960",
-          "party_page": {
-            "id": "athena-hospitality-group-pty-ltd",
-            "name": "Athena Hospitality Group Pty Ltd"
-          }
-        }
-      ]
+        "Central Hospitality Services Pty Ltd",
+        "ATHENA HOSPITALITY GROUP PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-65007",
       "merger_name": "Australian Venue Co. \u2013 An Sibin Irish Pub",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AVC OPERATIONS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "81 607 832 299",
-          "canonical": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          },
-          "party_page": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          }
-        }
+        "AVC OPERATIONS PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "ASH PROMOTIONS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "41 601 281 510",
-          "party_page": {
-            "id": "ash-promotions-pty-ltd",
-            "name": "Ash Promotions Pty Ltd"
-          }
-        }
-      ]
+        "ASH PROMOTIONS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

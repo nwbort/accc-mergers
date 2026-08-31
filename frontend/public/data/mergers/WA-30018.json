@@ -129,126 +129,39 @@
     {
       "merger_id": "MN-85006",
       "merger_name": "Tega and Apollo Funds consortium - Molycop",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Tega MC SG Holdings Pte. Ltd.",
-          "identifier_type": null,
-          "identifier": "202551682E",
-          "party_page": {
-            "id": "tega-mc-sg-holdings-pte-ltd",
-            "name": "Tega MC SG Holdings Pte. Ltd."
-          }
-        },
-        {
-          "name": "Tega MC Australia Holdings Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "16 147 692 840",
-          "party_page": {
-            "id": "tega-mc-australia-holdings-pty-ltd",
-            "name": "Tega MC Australia Holdings Pty Ltd"
-          }
-        }
+        "Tega MC SG Holdings Pte. Ltd.",
+        "Tega MC Australia Holdings Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Orway IQ Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "52 631 359 370",
-          "party_page": {
-            "id": "orway-iq-pty-ltd",
-            "name": "Orway IQ Pty Ltd"
-          }
-        },
-        {
-          "name": "Molycop Technologies Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "85 154 346 004",
-          "party_page": {
-            "id": "molycop-technologies-pty-ltd",
-            "name": "Molycop Technologies Pty Ltd"
-          }
-        }
-      ]
+        "Orway IQ Pty Ltd",
+        "Molycop Technologies Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-95021",
       "merger_name": "Logic Technologies - Ace Communication Distributors",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CSE-GLOBAL (AUSTRALIA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "85 109 958 090",
-          "party_page": {
-            "id": "cse-global-australia-pty-ltd",
-            "name": "Cse-Global (Australia) Pty Ltd"
-          }
-        },
-        {
-          "name": "LOGIC TECHNOLOGIES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "25 071 025 084",
-          "party_page": {
-            "id": "logic-technologies-pty-ltd",
-            "name": "Logic Technologies Pty Ltd"
-          }
-        }
+        "CSE-GLOBAL (AUSTRALIA) PTY LTD",
+        "LOGIC TECHNOLOGIES PTY LTD"
       ],
       "targets": [
-        {
-          "name": "ACE COMMUNICATION DISTRIBUTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "75 103 761 011",
-          "party_page": {
-            "id": "ace-communication-distributors-pty-ltd",
-            "name": "Ace Communication Distributors Pty Ltd"
-          }
-        }
-      ]
+        "ACE COMMUNICATION DISTRIBUTORS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25008",
       "merger_name": "Five V Capital - FTP Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OVERWATCH BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 739 970",
-          "party_page": {
-            "id": "overwatch-bidco-pty-ltd",
-            "name": "Overwatch Bidco Pty Ltd"
-          }
-        }
+        "OVERWATCH BIDCO PTY LTD"
       ],
       "targets": [
-        {
-          "name": "FTP GROUP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "82 626 217 614",
-          "party_page": {
-            "id": "ftp-group-holdings-pty-ltd",
-            "name": "Ftp Group Holdings Pty Ltd"
-          }
-        },
-        {
-          "name": "FAARM BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 834 390",
-          "canonical": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          },
-          "party_page": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          }
-        }
-      ]
+        "FTP GROUP HOLDINGS PTY LTD",
+        "FAARM BIDCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

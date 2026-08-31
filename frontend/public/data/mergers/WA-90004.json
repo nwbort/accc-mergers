@@ -92,113 +92,38 @@
     {
       "merger_id": "WA-35011",
       "merger_name": "Austral Resources Australia \u2013 Lady Loretta mine",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AUSTRAL RESOURCES AUSTRALIA LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "50 142 485 470",
-          "party_page": {
-            "id": "austral-resources-australia-limited",
-            "name": "Austral Resources Australia Limited"
-          }
-        }
+        "AUSTRAL RESOURCES AUSTRALIA LIMITED"
       ],
       "targets": [
-        {
-          "name": "NORANDA PACIFIC PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "65 006 864 802",
-          "party_page": {
-            "id": "noranda-pacific-pty-ltd",
-            "name": "Noranda Pacific Pty Ltd"
-          }
-        },
-        {
-          "name": "Noranda Pacific No. 2 Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "158 936 264",
-          "party_page": {
-            "id": "noranda-pacific-no-2-pty-ltd",
-            "name": "Noranda Pacific No. 2 Pty Ltd"
-          }
-        }
-      ]
+        "NORANDA PACIFIC PTY LTD",
+        "Noranda Pacific No. 2 Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-15008",
       "merger_name": "Colliers International Group \u2013 Ayesa Engineering",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Global Garella, S.L.",
-          "identifier_type": null,
-          "identifier": "Spanish Tax Identification Number  B24904989",
-          "party_page": {
-            "id": "global-garella-s-l",
-            "name": "Global Garella, S.L."
-          }
-        }
+        "Global Garella, S.L."
       ],
       "targets": [
-        {
-          "name": "Ayesa Engineering, S.A.U.",
-          "identifier_type": null,
-          "identifier": "Spanish Tax Identification Number  A91379875",
-          "party_page": {
-            "id": "ayesa-engineering-s-a-u",
-            "name": "Ayesa Engineering, S.A.U."
-          }
-        }
-      ]
+        "Ayesa Engineering, S.A.U."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-15003",
       "merger_name": "Coforge - Encora",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Coforge Limited",
-          "identifier_type": null,
-          "identifier": "L72100HR1992PLC128382",
-          "party_page": {
-            "id": "coforge-limited",
-            "name": "Coforge Limited"
-          }
-        },
-        {
-          "name": "Encora Holdco Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "encora-holdco-limited",
-            "name": "Encora Holdco Limited"
-          }
-        }
+        "Coforge Limited",
+        "Encora Holdco Limited"
       ],
       "targets": [
-        {
-          "name": "Encora US Holdco, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "encora-us-holdco-inc",
-            "name": "Encora US Holdco, Inc"
-          }
-        },
-        {
-          "name": "Encora Holdings Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "encora-holdings-limited",
-            "name": "Encora Holdings Limited"
-          }
-        }
-      ]
+        "Encora US Holdco, Inc",
+        "Encora Holdings Limited"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

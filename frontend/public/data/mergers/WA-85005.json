@@ -102,104 +102,37 @@
     {
       "merger_id": "MN-90009",
       "merger_name": "Trescal \u2013 TR Calibration",
-      "status": "Assessment ceased",
-      "accc_determination": null,
       "acquirers": [
-        {
-          "name": "TRESCAL (AUSTRALIA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "39 117 603 835",
-          "party_page": {
-            "id": "trescal-australia-pty-ltd",
-            "name": "Trescal (Australia) Pty Ltd"
-          }
-        }
+        "TRESCAL (AUSTRALIA) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "TR PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 005 499 721",
-          "party_page": {
-            "id": "tr-pty-ltd",
-            "name": "Tr Pty Ltd"
-          }
-        }
-      ]
+        "TR PTY LTD"
+      ],
+      "status": "Assessment ceased"
     },
     {
       "merger_id": "WA-05007",
       "merger_name": "Eiffel and Eurazeo \u2013 Segula",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Eiffel Investment Group SAS",
-          "identifier_type": null,
-          "identifier": "SIREN 510 813 991",
-          "party_page": {
-            "id": "eiffel-investment-group-sas",
-            "name": "Eiffel Investment Group SAS"
-          }
-        },
-        {
-          "name": "Eurazeo SE",
-          "identifier_type": null,
-          "identifier": "SIREN 692 030 992",
-          "party_page": {
-            "id": "eurazeo-se",
-            "name": "Eurazeo SE"
-          }
-        }
+        "Eiffel Investment Group SAS",
+        "Eurazeo SE"
       ],
       "targets": [
-        {
-          "name": "Segula Holding SAS",
-          "identifier_type": null,
-          "identifier": "SIREN 343 166 393",
-          "party_page": {
-            "id": "segula-holding-sas",
-            "name": "Segula Holding SAS"
-          }
-        }
-      ]
+        "Segula Holding SAS"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-80001",
       "merger_name": "Alpine Software Group (ASG) \u2013 PlayHQ",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Arena BidCo Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "693 657 484",
-          "party_page": {
-            "id": "arena-bidco-pty-ltd",
-            "name": "Arena BidCo Pty Ltd"
-          }
-        }
+        "Arena BidCo Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "RFGI GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "55 630 028 974",
-          "party_page": {
-            "id": "rfgi-group-pty-ltd",
-            "name": "Rfgi Group Pty Ltd"
-          }
-        },
-        {
-          "name": "GAMEON HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "47 629 422 206",
-          "party_page": {
-            "id": "gameon-holdings-pty-ltd",
-            "name": "Gameon Holdings Pty Ltd"
-          }
-        }
-      ]
+        "RFGI GROUP PTY LTD",
+        "GAMEON HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

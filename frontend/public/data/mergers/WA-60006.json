@@ -102,99 +102,36 @@
     {
       "merger_id": "WA-50014",
       "merger_name": "Searchlight Capital Partners - Additional interest in KORE Group Holdings Inc.",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Searchlight Capital IV LP",
-          "identifier_type": null,
-          "identifier": "US SEC  0001954453",
-          "party_page": {
-            "id": "searchlight-capital-iv-lp",
-            "name": "Searchlight Capital IV LP"
-          }
-        },
-        {
-          "name": "KONA Merger Sub Co.",
-          "identifier_type": null,
-          "identifier": "Delaware  10525073",
-          "party_page": {
-            "id": "kona-merger-sub-co",
-            "name": "KONA Merger Sub Co."
-          }
-        }
+        "Searchlight Capital IV LP",
+        "KONA Merger Sub Co."
       ],
       "targets": [
-        {
-          "name": "KORE Group Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware  5388903",
-          "party_page": {
-            "id": "kore-group-holdings-inc",
-            "name": "KORE Group Holdings, Inc."
-          }
-        }
-      ]
+        "KORE Group Holdings, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-85005",
       "merger_name": "Altor Fund Manager - Evac Holding Oy",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CAVE BidCo Oy",
-          "identifier_type": null,
-          "identifier": "Business Identity Code 35317614",
-          "party_page": {
-            "id": "cave-bidco-oy",
-            "name": "CAVE BidCo Oy"
-          }
-        }
+        "CAVE BidCo Oy"
       ],
       "targets": [
-        {
-          "name": "Evac Holding Oy",
-          "identifier_type": null,
-          "identifier": "Business Identity Code 28586576",
-          "party_page": {
-            "id": "evac-holding-oy",
-            "name": "Evac Holding Oy"
-          }
-        }
-      ]
+        "Evac Holding Oy"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70008",
       "merger_name": "Tetra Tech \u2013 Providence Consulting",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "TETRA TECH AUSTRALIA GROUP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "74 676 488 716",
-          "canonical": {
-            "id": "tetra-tech-inc",
-            "name": "Tetra Tech, Inc."
-          },
-          "party_page": {
-            "id": "tetra-tech-inc",
-            "name": "Tetra Tech, Inc."
-          }
-        }
+        "TETRA TECH AUSTRALIA GROUP HOLDINGS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Providence Consulting Group Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "49 117 321 552",
-          "party_page": {
-            "id": "providence-consulting-group-pty-ltd",
-            "name": "Providence Consulting Group Pty Ltd"
-          }
-        }
-      ]
+        "Providence Consulting Group Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

@@ -167,120 +167,37 @@
     {
       "merger_id": "WA-60008",
       "merger_name": "Warburg Pincus \u2013 Acclime",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Achronite Bidco Ltd",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "achronite-bidco-ltd",
-            "name": "Achronite Bidco Ltd"
-          }
-        }
+        "Achronite Bidco Ltd"
       ],
       "targets": [
-        {
-          "name": "Acclime Holdings HK Limited",
-          "identifier_type": null,
-          "identifier": "BRN  70084973",
-          "canonical": {
-            "id": "acclime-holdings-limited",
-            "name": "Acclime"
-          },
-          "party_page": {
-            "id": "acclime-holdings-limited",
-            "name": "Acclime"
-          }
-        },
-        {
-          "name": "Acclime Holdings Limited",
-          "identifier_type": null,
-          "identifier": "BRN  70084973",
-          "canonical": {
-            "id": "acclime-holdings-limited",
-            "name": "Acclime"
-          },
-          "party_page": {
-            "id": "acclime-holdings-limited",
-            "name": "Acclime"
-          }
-        }
-      ]
+        "Acclime Holdings HK Limited",
+        "Acclime Holdings Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-80019",
       "merger_name": "Imagine Education \u2013 childcare centres ownership restructure",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Waterworks Education Group Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "678 086 210",
-          "party_page": {
-            "id": "waterworks-education-group-pty-ltd",
-            "name": "Waterworks Education Group Pty Ltd"
-          }
-        },
-        {
-          "name": "Imagine Education Investments Trust",
-          "identifier_type": "ABN",
-          "identifier": "54 637 909 142",
-          "canonical": {
-            "id": "imagine-education-investments",
-            "name": "Imagine Education Investments"
-          },
-          "party_page": {
-            "id": "imagine-education-investments",
-            "name": "Imagine Education Investments"
-          }
-        }
+        "Waterworks Education Group Pty Ltd",
+        "Imagine Education Investments Trust"
       ],
       "targets": [
-        {
-          "name": "Waterworks Childcare Investments Pty Ltd",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "waterworks-childcare-investments-pty-ltd",
-            "name": "Waterworks Childcare Investments Pty Ltd"
-          }
-        }
-      ]
+        "Waterworks Childcare Investments Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-40010",
       "merger_name": "Permira and Warburg Pincus - Clearwater Analytics",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "GT Silver BidCo, Inc.",
-          "identifier_type": null,
-          "identifier": "413417606",
-          "party_page": {
-            "id": "gt-silver-bidco-inc",
-            "name": "GT Silver BidCo, Inc."
-          }
-        }
+        "GT Silver BidCo, Inc."
       ],
       "targets": [
-        {
-          "name": "Clearwater Analytics Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "00140838",
-          "canonical": {
-            "id": "clearwater-analytics-llc",
-            "name": "Clearwater Analytics"
-          },
-          "party_page": {
-            "id": "clearwater-analytics-llc",
-            "name": "Clearwater Analytics"
-          }
-        }
-      ]
+        "Clearwater Analytics Holdings, Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

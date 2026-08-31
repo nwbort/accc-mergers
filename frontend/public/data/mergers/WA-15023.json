@@ -128,99 +128,36 @@
     {
       "merger_id": "WA-85027",
       "merger_name": "American Industrial Partners - Avanos Medical",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "A-AV Holdco I, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "a-av-holdco-i-inc",
-            "name": "A-AV Holdco I, Inc"
-          }
-        }
+        "A-AV Holdco I, Inc"
       ],
       "targets": [
-        {
-          "name": "Avanos Medical, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware Company Number: 5482684",
-          "canonical": {
-            "id": "avanos-medical-inc",
-            "name": "Avanos Medical, Inc."
-          },
-          "party_page": {
-            "id": "avanos-medical-inc",
-            "name": "Avanos Medical, Inc."
-          }
-        }
-      ]
+        "Avanos Medical, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-10005",
       "merger_name": "Apex - Mercer Administration Services and related assets",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Apex Group Holdings (Australia) Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "48 112 252 114",
-          "party_page": {
-            "id": "apex-group-holdings-australia-pty-ltd",
-            "name": "Apex Group Holdings (Australia) Pty Ltd"
-          }
-        }
+        "Apex Group Holdings (Australia) Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "MERCER OUTSOURCING (AUSTRALIA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "83 068 908 912",
-          "party_page": {
-            "id": "mercer-outsourcing-australia-pty-ltd",
-            "name": "Mercer Outsourcing (Australia) Pty Ltd"
-          }
-        },
-        {
-          "name": "MERCER ADMINISTRATION SERVICES (AUSTRALIA) PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "48 616 275 980",
-          "party_page": {
-            "id": "mercer-administration-services-australia-pty-limited",
-            "name": "Mercer Administration Services (Australia) Pty Limited"
-          }
-        }
-      ]
+        "MERCER OUTSOURCING (AUSTRALIA) PTY LTD",
+        "MERCER ADMINISTRATION SERVICES (AUSTRALIA) PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-20024",
       "merger_name": "KK Group Invest - PowerCon",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "KK Group Invest A/S",
-          "identifier_type": null,
-          "identifier": "CVR  66821110",
-          "party_page": {
-            "id": "kk-group-invest-a-s",
-            "name": "KK Group Invest A/S"
-          }
-        }
+        "KK Group Invest A/S"
       ],
       "targets": [
-        {
-          "name": "PowerCon Holding ApS",
-          "identifier_type": null,
-          "identifier": "CVR  32269095",
-          "party_page": {
-            "id": "powercon-holding-aps",
-            "name": "PowerCon Holding ApS"
-          }
-        }
-      ]
+        "PowerCon Holding ApS"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

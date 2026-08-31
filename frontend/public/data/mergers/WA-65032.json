@@ -112,115 +112,36 @@
     {
       "merger_id": "MN-65028",
       "merger_name": "Coles - Paydock",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Retail Payment Solutions Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "89 683 915 657",
-          "canonical": {
-            "id": "coles",
-            "name": "Coles Group"
-          },
-          "party_page": {
-            "id": "coles",
-            "name": "Coles Group"
-          }
-        }
+        "Retail Payment Solutions Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Paydock Holdings Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "31 607 215 163",
-          "canonical": {
-            "id": "paydock",
-            "name": "Paydock"
-          },
-          "party_page": {
-            "id": "paydock",
-            "name": "Paydock"
-          }
-        },
-        {
-          "name": "Paydock AUNZ Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "96 607 219 116",
-          "canonical": {
-            "id": "paydock",
-            "name": "Paydock"
-          },
-          "party_page": {
-            "id": "paydock",
-            "name": "Paydock"
-          }
-        }
-      ]
+        "Paydock Holdings Pty Limited",
+        "Paydock AUNZ Pty Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-60012",
       "merger_name": "Coles \u2013 land around supermarket site in Balaclava, VIC",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "COLES GROUP PROPERTY DEVELOPMENTS LTD",
-          "identifier_type": "ABN",
-          "identifier": "72 004 428 326",
-          "canonical": {
-            "id": "coles",
-            "name": "Coles Group"
-          },
-          "party_page": {
-            "id": "coles",
-            "name": "Coles Group"
-          }
-        }
+        "COLES GROUP PROPERTY DEVELOPMENTS LTD"
       ],
       "targets": [
-        {
-          "name": "CITY OF PORT PHILLIP",
-          "identifier_type": "ABN",
-          "identifier": "21 762 977 945",
-          "party_page": {
-            "id": "city-of-port-phillip",
-            "name": "City Of Port Phillip"
-          }
-        }
-      ]
+        "CITY OF PORT PHILLIP"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-75030",
       "merger_name": "Coles - supermarket site in Palmwoods, QLD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "COLES GROUP PROPERTY DEVELOPMENTS LTD",
-          "identifier_type": "ABN",
-          "identifier": "72 004 428 326",
-          "canonical": {
-            "id": "coles",
-            "name": "Coles Group"
-          },
-          "party_page": {
-            "id": "coles",
-            "name": "Coles Group"
-          }
-        }
+        "COLES GROUP PROPERTY DEVELOPMENTS LTD"
       ],
       "targets": [
-        {
-          "name": "Neubau Holdings No 22 Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "20 122 754 496",
-          "party_page": {
-            "id": "neubau-holdings-no-22-pty-ltd",
-            "name": "Neubau Holdings No 22 Pty Ltd"
-          }
-        }
-      ]
+        "Neubau Holdings No 22 Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

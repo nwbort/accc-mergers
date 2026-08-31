@@ -137,99 +137,36 @@
     {
       "merger_id": "WA-65012",
       "merger_name": "Savvy Games Group \u2013 Moonton",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "East Gate Games Investment Company",
-          "identifier_type": "ABN",
-          "identifier": "39 275 633 205",
-          "party_page": {
-            "id": "east-gate-games-investment-company",
-            "name": "East Gate Games Investment Company"
-          }
-        }
+        "East Gate Games Investment Company"
       ],
       "targets": [
-        {
-          "name": "Moonton Holdings Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "moonton-holdings-limited",
-            "name": "Moonton Holdings Limited"
-          }
-        }
-      ]
+        "Moonton Holdings Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-55009",
       "merger_name": "Resonetics \u2013 Resolution Medical",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Resonetics, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "resonetics-llc",
-            "name": "Resonetics, LLC"
-          }
-        }
+        "Resonetics, LLC"
       ],
       "targets": [
-        {
-          "name": "Resolution Medical MidCo, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "resolution-medical-midco-llc",
-            "name": "Resolution Medical MidCo, LLC"
-          }
-        },
-        {
-          "name": "Arcline Capital Partners II-A LP",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "arcline-capital-partners-ii-a-lp",
-            "name": "Arcline Capital Partners II-A LP"
-          }
-        }
-      ]
+        "Resolution Medical MidCo, LLC",
+        "Arcline Capital Partners II-A LP"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-20011",
       "merger_name": "Origin \u2013 Equity stake in Kraken",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "53 143 484 208",
-          "canonical": {
-            "id": "origin-energy-limited",
-            "name": "Origin Energy Limited"
-          },
-          "party_page": {
-            "id": "origin-energy-limited",
-            "name": "Origin Energy Limited"
-          }
-        }
+        "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "CPP Investment Board Private Holdings (4) Inc.",
-          "identifier_type": null,
-          "identifier": "BN  11089340",
-          "party_page": {
-            "id": "cpp-investment-board-private-holdings-4-inc",
-            "name": "CPP Investment Board Private Holdings (4) Inc."
-          }
-        }
-      ]
+        "CPP Investment Board Private Holdings (4) Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

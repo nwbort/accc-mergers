@@ -107,99 +107,36 @@
     {
       "merger_id": "MN-30012",
       "merger_name": "Endeavour Group \u2013 retail liquor store in Muswellbrook (NSW)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ENDEAVOUR GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "77 159 767 843",
-          "party_page": {
-            "id": "endeavour-group-limited",
-            "name": "Endeavour Group Limited"
-          }
-        }
+        "ENDEAVOUR GROUP LIMITED"
       ],
       "targets": [
-        {
-          "name": "UPPER HUNTER MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "53 001 740 218",
-          "party_page": {
-            "id": "upper-hunter-motors-pty-ltd",
-            "name": "Upper Hunter Motors Pty Ltd"
-          }
-        },
-        {
-          "name": "Bottlemart Muswellbrook",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "bottlemart-muswellbrook",
-            "name": "Bottlemart Muswellbrook"
-          }
-        }
-      ]
+        "UPPER HUNTER MOTORS PTY LTD",
+        "Bottlemart Muswellbrook"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-75015",
       "merger_name": "Star Hotels Group \u2013 Liquor Legends Berserker & Liquor Legends Highway A1, QLD",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "MIGALOO QLD PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "30 600 219 172",
-          "party_page": {
-            "id": "migaloo-qld-pty-ltd",
-            "name": "Migaloo Qld Pty Ltd"
-          }
-        }
+        "MIGALOO QLD PTY LTD"
       ],
       "targets": [
-        {
-          "name": "The Trustee for The Garden Holdings Trust",
-          "identifier_type": "ABN",
-          "identifier": "45 745 542 544",
-          "party_page": {
-            "id": "the-trustee-for-the-garden-holdings-trust",
-            "name": "The Trustee for The Garden Holdings Trust"
-          }
-        }
-      ]
+        "The Trustee for The Garden Holdings Trust"
+      ],
+      "accc_determination": "Not approved"
     },
     {
       "merger_id": "MN-95003",
       "merger_name": "CVS Group - Pittwater Animal Hospital",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "35 667 654 686",
-          "canonical": {
-            "id": "cvs-vets",
-            "name": "CVS Group"
-          },
-          "party_page": {
-            "id": "cvs-vets",
-            "name": "CVS Group"
-          }
-        }
+        "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED"
       ],
       "targets": [
-        {
-          "name": "PITTWATER ANIMAL HOSPITAL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "25 001 336 723",
-          "party_page": {
-            "id": "pittwater-animal-hospital-pty-ltd",
-            "name": "Pittwater Animal Hospital Pty Ltd"
-          }
-        }
-      ]
+        "PITTWATER ANIMAL HOSPITAL PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

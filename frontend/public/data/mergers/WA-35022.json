@@ -119,95 +119,36 @@
     {
       "merger_id": "MN-15015",
       "merger_name": "3M and funds managed and/or advised by Bain Capital - Madison Fire & Rescue",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Fire Safety Platform Holding, LP",
-          "identifier_type": null,
-          "identifier": "State of Delaware, Division of Corporations  10541621",
-          "party_page": {
-            "id": "fire-safety-platform-holding-lp",
-            "name": "Fire Safety Platform Holding, LP"
-          }
-        }
+        "Fire Safety Platform Holding, LP"
       ],
       "targets": [
-        {
-          "name": "Madison Safety & Flow Holdings LLC",
-          "identifier_type": null,
-          "identifier": "State of Delaware, Division of Corporations  7811257",
-          "party_page": {
-            "id": "madison-safety-flow-holdings-llc",
-            "name": "Madison Safety & Flow Holdings LLC"
-          }
-        }
-      ]
+        "Madison Safety & Flow Holdings LLC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-75013",
       "merger_name": "Aldus - Hilton Manufacturing",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ALDUS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "38 085 318 494",
-          "party_page": {
-            "id": "aldus-pty-ltd",
-            "name": "Aldus Pty Ltd"
-          }
-        }
+        "ALDUS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "HILTON MANUFACTURING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "89 005 551 057",
-          "party_page": {
-            "id": "hilton-manufacturing-pty-ltd",
-            "name": "Hilton Manufacturing Pty Ltd"
-          }
-        }
-      ]
+        "HILTON MANUFACTURING PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-85020",
       "merger_name": "Francisco Partners \u2013 Capsa Healthcare",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Catalyst Blocker Merger Sub I, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "catalyst-blocker-merger-sub-i-llc",
-            "name": "Catalyst Blocker Merger Sub I, LLC"
-          }
-        },
-        {
-          "name": "Catalyst Blocker Merger Sub II, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "catalyst-blocker-merger-sub-ii-llc",
-            "name": "Catalyst Blocker Merger Sub II, LLC"
-          }
-        }
+        "Catalyst Blocker Merger Sub I, LLC",
+        "Catalyst Blocker Merger Sub II, LLC"
       ],
       "targets": [
-        {
-          "name": "CSHC Buyerco, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "cshc-buyerco-llc",
-            "name": "CSHC Buyerco, LLC"
-          }
-        }
-      ]
+        "CSHC Buyerco, LLC"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

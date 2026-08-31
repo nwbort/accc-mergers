@@ -101,113 +101,38 @@
     {
       "merger_id": "WA-10002",
       "merger_name": "Stockland LLC \u2013 intragroup transfer of Halcyon Jardin and Evergreen projects",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "SMLLP ASSET PTY LTD (as trustee for the SMLLP Evergreen Trust)",
-          "identifier_type": "ABN",
-          "identifier": "84 693 264 649",
-          "party_page": {
-            "id": "smllp-asset-pty-ltd-as-trustee-for-the-smllp-evergreen-trust",
-            "name": "SMLLP ASSET PTY LTD (as trustee for the SMLLP Evergreen Trust)"
-          }
-        },
-        {
-          "name": "SMLLP SUB PTY LTD (as trustee of the SMLLP Development Sub Trust)",
-          "identifier_type": "ABN",
-          "identifier": "92 693 263 875",
-          "party_page": {
-            "id": "smllp-sub-pty-ltd-as-trustee-of-the-smllp-development-sub-trust",
-            "name": "SMLLP SUB PTY LTD (as trustee of the SMLLP Development Sub Trust)"
-          }
-        }
+        "SMLLP ASSET PTY LTD (as trustee for the SMLLP Evergreen Trust)",
+        "SMLLP SUB PTY LTD (as trustee of the SMLLP Development Sub Trust)"
       ],
       "targets": [
-        {
-          "name": "STOCKLAND LAND LEASE MANAGEMENT PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "31 639 714 453",
-          "party_page": {
-            "id": "stockland-land-lease-management-pty-limited",
-            "name": "Stockland Land Lease Management Pty Limited"
-          }
-        },
-        {
-          "name": "Stockland LLC No. 2 Pty Ltd (as trustee for the Stockland LLC St Germain Trust)",
-          "identifier_type": "ACN",
-          "identifier": "651 781 556",
-          "party_page": {
-            "id": "stockland-llc-no-2-pty-ltd-as-trustee-for-the-stockland-llc-st-germain-trust",
-            "name": "Stockland LLC No. 2 Pty Ltd (as trustee for the Stockland LLC St Germain Trust)"
-          }
-        }
-      ]
+        "STOCKLAND LAND LEASE MANAGEMENT PTY LIMITED",
+        "Stockland LLC No. 2 Pty Ltd (as trustee for the Stockland LLC St Germain Trust)"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-20015",
       "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "HERRON TODD WHITE (BIDCO) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "74 665 809 665",
-          "party_page": {
-            "id": "herron-todd-white-bidco-pty-ltd",
-            "name": "Herron Todd White (Bidco) Pty Ltd"
-          }
-        }
+        "HERRON TODD WHITE (BIDCO) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "CJA Lee Property Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "113 706 826",
-          "party_page": {
-            "id": "cja-lee-property-pty-ltd",
-            "name": "CJA Lee Property Pty Ltd"
-          }
-        },
-        {
-          "name": "C McMahon Enterprises Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "115 024 854",
-          "party_page": {
-            "id": "c-mcmahon-enterprises-pty-ltd",
-            "name": "C McMahon Enterprises Pty Ltd"
-          }
-        }
-      ]
+        "CJA Lee Property Pty Ltd",
+        "C McMahon Enterprises Pty Ltd"
+      ],
+      "accc_determination": "Not approved"
     },
     {
       "merger_id": "MN-95007",
       "merger_name": "Magellan Financial Group - Barrenjoey",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Magellan Financial Group Ltd",
-          "identifier_type": "ABN",
-          "identifier": "59 108 437 592",
-          "party_page": {
-            "id": "magellan-financial-group-ltd",
-            "name": "Magellan Financial Group Ltd"
-          }
-        }
+        "Magellan Financial Group Ltd"
       ],
       "targets": [
-        {
-          "name": "Barrenjoey Capital Partners Group Holdings Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "44 644 241 510",
-          "party_page": {
-            "id": "barrenjoey-capital-partners-group-holdings-pty-limited",
-            "name": "Barrenjoey Capital Partners Group Holdings Pty Limited"
-          }
-        }
-      ]
+        "Barrenjoey Capital Partners Group Holdings Pty Limited"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

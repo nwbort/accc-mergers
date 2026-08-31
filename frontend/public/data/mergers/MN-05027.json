@@ -117,90 +117,35 @@
     {
       "merger_id": "WA-75021",
       "merger_name": "Hillhouse - KMC Solutions",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Hermes Bidco Limited",
-          "identifier_type": null,
-          "identifier": "CR number  429985",
-          "canonical": {
-            "id": "hermes-bidco-limited",
-            "name": "Hermes Bidco Limited"
-          },
-          "party_page": {
-            "id": "hermes-bidco-limited",
-            "name": "Hermes Bidco Limited"
-          }
-        }
+        "Hermes Bidco Limited"
       ],
       "targets": [
-        {
-          "name": "KMC Solutions Hong Kong Limited",
-          "identifier_type": null,
-          "identifier": "Hong Kong CR number  2202455",
-          "party_page": {
-            "id": "kmc-solutions-hong-kong-limited",
-            "name": "KMC Solutions Hong Kong Limited"
-          }
-        }
-      ]
+        "KMC Solutions Hong Kong Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-01058",
       "merger_name": "Caterpillar \u2013 RPMGlobal Holdings",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Caterpillar Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "caterpillar-inc",
-            "name": "Caterpillar Inc."
-          }
-        }
+        "Caterpillar Inc."
       ],
       "targets": [
-        {
-          "name": "RPMGLOBAL HOLDINGS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "17 010 672 321",
-          "party_page": {
-            "id": "rpmglobal-holdings-limited",
-            "name": "Rpmglobal Holdings Limited"
-          }
-        }
-      ]
+        "RPMGLOBAL HOLDINGS LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-01083",
       "merger_name": "Civilmart \u2013 Taylex",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CTC PRECAST PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "12 614 966 059",
-          "party_page": {
-            "id": "ctc-precast-pty-ltd",
-            "name": "Ctc Precast Pty Ltd"
-          }
-        }
+        "CTC PRECAST PTY LTD"
       ],
       "targets": [
-        {
-          "name": "TAYLEX GROUP HOLDING CO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "50 646 051 578",
-          "party_page": {
-            "id": "taylex-group-holding-co-pty-ltd",
-            "name": "Taylex Group Holding Co Pty Ltd"
-          }
-        }
-      ]
+        "TAYLEX GROUP HOLDING CO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

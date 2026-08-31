@@ -152,95 +152,36 @@
     {
       "merger_id": "WA-65012",
       "merger_name": "Savvy Games Group \u2013 Moonton",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "East Gate Games Investment Company",
-          "identifier_type": "ABN",
-          "identifier": "39 275 633 205",
-          "party_page": {
-            "id": "east-gate-games-investment-company",
-            "name": "East Gate Games Investment Company"
-          }
-        }
+        "East Gate Games Investment Company"
       ],
       "targets": [
-        {
-          "name": "Moonton Holdings Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "moonton-holdings-limited",
-            "name": "Moonton Holdings Limited"
-          }
-        }
-      ]
+        "Moonton Holdings Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70009",
       "merger_name": "Infotrust \u2013 Catalyst Cyber",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "INFOTRUST LTD",
-          "identifier_type": "ABN",
-          "identifier": "73 089 224 402",
-          "party_page": {
-            "id": "infotrust-ltd",
-            "name": "Infotrust Ltd"
-          }
-        }
+        "INFOTRUST LTD"
       ],
       "targets": [
-        {
-          "name": "CATALYST CYBER PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "24 682 157 606",
-          "party_page": {
-            "id": "catalyst-cyber-pty-limited",
-            "name": "Catalyst Cyber Pty Limited"
-          }
-        }
-      ]
+        "CATALYST CYBER PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-55006",
       "merger_name": "Hg Capital - OneStream",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Hg Pooled Management Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "hg-pooled-management-limited",
-            "name": "Hg Pooled Management Limited"
-          }
-        },
-        {
-          "name": "OnwardAcquireCo, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "onwardacquireco-inc",
-            "name": "OnwardAcquireCo, Inc"
-          }
-        }
+        "Hg Pooled Management Limited",
+        "OnwardAcquireCo, Inc"
       ],
       "targets": [
-        {
-          "name": "OneStream, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "onestream-inc",
-            "name": "OneStream, Inc."
-          }
-        }
-      ]
+        "OneStream, Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

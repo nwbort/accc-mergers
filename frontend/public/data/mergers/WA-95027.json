@@ -167,108 +167,37 @@
     {
       "merger_id": "MN-90006",
       "merger_name": "CARe \u2013 MotorOne Autobody",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CARE AUTOBODY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 692 619 962",
-          "party_page": {
-            "id": "care-autobody-pty-ltd",
-            "name": "Care Autobody Pty Ltd"
-          }
-        }
+        "CARE AUTOBODY PTY LTD"
       ],
       "targets": [
-        {
-          "name": "MOTORONE AUTOBODY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "98 077 935 614",
-          "party_page": {
-            "id": "motorone-autobody-pty-ltd",
-            "name": "Motorone Autobody Pty Ltd"
-          }
-        }
-      ]
+        "MOTORONE AUTOBODY PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-05014",
       "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Smile Partners (NSW3) Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 902 955",
-          "party_page": {
-            "id": "smile-partners-nsw3-pty-ltd",
-            "name": "Smile Partners (NSW3) Pty Ltd"
-          }
-        }
+        "Smile Partners (NSW3) Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Shrika Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "108 757 357",
-          "canonical": {
-            "id": "shrika-pty-ltd",
-            "name": "Shrika Pty Ltd"
-          },
-          "party_page": {
-            "id": "shrika-pty-ltd",
-            "name": "Shrika Pty Ltd"
-          }
-        }
-      ]
+        "Shrika Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25032",
       "merger_name": "River Capital \u2013 YOMG",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "RC BITE BID CO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "698 175 012",
-          "party_page": {
-            "id": "rc-bite-bid-co-pty-ltd",
-            "name": "Rc Bite Bid Co Pty Ltd"
-          }
-        },
-        {
-          "name": "RIVER CAPITAL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "64 073 531 469",
-          "party_page": {
-            "id": "river-capital-pty-ltd",
-            "name": "River Capital Pty Ltd"
-          }
-        }
+        "RC BITE BID CO PTY LTD",
+        "RIVER CAPITAL PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Yo My Goodness Pty Ltd as trustee for The Yo My Goodness IP Unit Trust",
-          "identifier_type": "ACN",
-          "identifier": "603 490 035",
-          "party_page": {
-            "id": "yo-my-goodness-pty-ltd-as-trustee-for-the-yo-my-goodness-ip-unit-trust",
-            "name": "Yo My Goodness Pty Ltd as trustee for The Yo My Goodness IP Unit Trust"
-          }
-        },
-        {
-          "name": "YOMG PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "93 603 489 943",
-          "party_page": {
-            "id": "yomg-pty-ltd",
-            "name": "Yomg Pty Ltd"
-          }
-        }
-      ]
+        "Yo My Goodness Pty Ltd as trustee for The Yo My Goodness IP Unit Trust",
+        "YOMG PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

@@ -92,138 +92,39 @@
     {
       "merger_id": "WA-35020",
       "merger_name": "Respect Group - Jallarah Homes",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "RESPECT GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "74 121 263 545",
-          "party_page": {
-            "id": "respect-group-limited",
-            "name": "Respect Group Limited"
-          }
-        }
+        "RESPECT GROUP LIMITED"
       ],
       "targets": [
-        {
-          "name": "JALLARAH HOMES INC",
-          "identifier_type": "ABN",
-          "identifier": "13 238 944 953",
-          "party_page": {
-            "id": "jallarah-homes-inc",
-            "name": "Jallarah Homes Inc"
-          }
-        }
-      ]
+        "JALLARAH HOMES INC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-50035",
       "merger_name": "Opal HealthCare - Canberra Nursing Home (Lidcombe, NSW)",
-      "status": "Under assessment",
-      "accc_determination": null,
       "acquirers": [
-        {
-          "name": "OHCA PROPERTY HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "70 675 807 477",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        },
-        {
-          "name": "DPG SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "38 090 007 999",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        }
+        "OHCA PROPERTY HOLDINGS PTY LTD",
+        "DPG SERVICES PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Michael Mooney",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "michael-mooney",
-            "name": "Michael Mooney"
-          }
-        },
-        {
-          "name": "Lynne Mooney",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "lynne-mooney",
-            "name": "Lynne Mooney"
-          }
-        }
-      ]
+        "Michael Mooney",
+        "Lynne Mooney"
+      ],
+      "status": "Under assessment"
     },
     {
       "merger_id": "MN-75012",
       "merger_name": "Opal HealthCare \u2013 Greenwich Place residential aged care home",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OHCA PROPERTY HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "70 675 807 477",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        },
-        {
-          "name": "DPG SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "38 090 007 999",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        }
+        "OHCA PROPERTY HOLDINGS PTY LTD",
+        "DPG SERVICES PTY LTD"
       ],
       "targets": [
-        {
-          "name": "GREENWICH PLACE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "45 000 706 249",
-          "party_page": {
-            "id": "greenwich-place-pty-ltd",
-            "name": "Greenwich Place Pty Ltd"
-          }
-        },
-        {
-          "name": "GREENWICH CARE PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "96 613 786 682",
-          "party_page": {
-            "id": "greenwich-care-pty-limited",
-            "name": "Greenwich Care Pty Limited"
-          }
-        }
-      ]
+        "GREENWICH PLACE PTY LTD",
+        "GREENWICH CARE PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

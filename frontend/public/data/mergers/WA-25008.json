@@ -274,104 +274,37 @@
     {
       "merger_id": "WA-40014",
       "merger_name": "Infosys \u2013 Optimum Healthcare IT",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Infosys Nova Holdings LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "infosys-nova-holdings-llc",
-            "name": "Infosys Nova Holdings LLC"
-          }
-        }
+        "Infosys Nova Holdings LLC"
       ],
       "targets": [
-        {
-          "name": "Optimum Achieve Holdings, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "optimum-achieve-holdings-inc",
-            "name": "Optimum Achieve Holdings, Inc"
-          }
-        },
-        {
-          "name": "OPTIMUM HEALTHCARE IT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "53 689 795 702",
-          "party_page": {
-            "id": "optimum-healthcare-it-pty-ltd",
-            "name": "Optimum Healthcare It Pty Ltd"
-          }
-        }
-      ]
+        "Optimum Achieve Holdings, Inc",
+        "OPTIMUM HEALTHCARE IT PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-95005",
       "merger_name": "HCLTech - Jaspersoft",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "HCL Technologies Limited",
-          "identifier_type": "ABN",
-          "identifier": "37 541 578 951",
-          "party_page": {
-            "id": "hcl-technologies-limited",
-            "name": "HCL Technologies Limited"
-          }
-        }
+        "HCL Technologies Limited"
       ],
       "targets": [
-        {
-          "name": "CLOUD SOFTWARE GROUP AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "94 092 002 321",
-          "party_page": {
-            "id": "cloud-software-group-australia-pty-ltd",
-            "name": "Cloud Software Group Australia Pty Ltd"
-          }
-        }
-      ]
+        "CLOUD SOFTWARE GROUP AUSTRALIA PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-80001",
       "merger_name": "Alpine Software Group (ASG) \u2013 PlayHQ",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Arena BidCo Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "693 657 484",
-          "party_page": {
-            "id": "arena-bidco-pty-ltd",
-            "name": "Arena BidCo Pty Ltd"
-          }
-        }
+        "Arena BidCo Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "RFGI GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "55 630 028 974",
-          "party_page": {
-            "id": "rfgi-group-pty-ltd",
-            "name": "Rfgi Group Pty Ltd"
-          }
-        },
-        {
-          "name": "GAMEON HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "47 629 422 206",
-          "party_page": {
-            "id": "gameon-holdings-pty-ltd",
-            "name": "Gameon Holdings Pty Ltd"
-          }
-        }
-      ]
+        "RFGI GROUP PTY LTD",
+        "GAMEON HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

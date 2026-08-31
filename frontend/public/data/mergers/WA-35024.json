@@ -101,108 +101,37 @@
     {
       "merger_id": "WA-10002",
       "merger_name": "Stockland LLC \u2013 intragroup transfer of Halcyon Jardin and Evergreen projects",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "SMLLP ASSET PTY LTD (as trustee for the SMLLP Evergreen Trust)",
-          "identifier_type": "ABN",
-          "identifier": "84 693 264 649",
-          "party_page": {
-            "id": "smllp-asset-pty-ltd-as-trustee-for-the-smllp-evergreen-trust",
-            "name": "SMLLP ASSET PTY LTD (as trustee for the SMLLP Evergreen Trust)"
-          }
-        },
-        {
-          "name": "SMLLP SUB PTY LTD (as trustee of the SMLLP Development Sub Trust)",
-          "identifier_type": "ABN",
-          "identifier": "92 693 263 875",
-          "party_page": {
-            "id": "smllp-sub-pty-ltd-as-trustee-of-the-smllp-development-sub-trust",
-            "name": "SMLLP SUB PTY LTD (as trustee of the SMLLP Development Sub Trust)"
-          }
-        }
+        "SMLLP ASSET PTY LTD (as trustee for the SMLLP Evergreen Trust)",
+        "SMLLP SUB PTY LTD (as trustee of the SMLLP Development Sub Trust)"
       ],
       "targets": [
-        {
-          "name": "STOCKLAND LAND LEASE MANAGEMENT PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "31 639 714 453",
-          "party_page": {
-            "id": "stockland-land-lease-management-pty-limited",
-            "name": "Stockland Land Lease Management Pty Limited"
-          }
-        },
-        {
-          "name": "Stockland LLC No. 2 Pty Ltd (as trustee for the Stockland LLC St Germain Trust)",
-          "identifier_type": "ACN",
-          "identifier": "651 781 556",
-          "party_page": {
-            "id": "stockland-llc-no-2-pty-ltd-as-trustee-for-the-stockland-llc-st-germain-trust",
-            "name": "Stockland LLC No. 2 Pty Ltd (as trustee for the Stockland LLC St Germain Trust)"
-          }
-        }
-      ]
+        "STOCKLAND LAND LEASE MANAGEMENT PTY LIMITED",
+        "Stockland LLC No. 2 Pty Ltd (as trustee for the Stockland LLC St Germain Trust)"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-01017",
       "merger_name": "Kongsberg Defence \u2013 site within Newcastle Airport precinct",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "KONGSBERG DEFENCE AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "95 146 599 359",
-          "party_page": {
-            "id": "kongsberg-defence-australia-pty-ltd",
-            "name": "Kongsberg Defence Australia Pty Ltd"
-          }
-        }
+        "KONGSBERG DEFENCE AUSTRALIA PTY LTD"
       ],
       "targets": [
-        {
-          "name": "GREATER NEWCASTLE AEROTROPOLIS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "90 629 359 726",
-          "party_page": {
-            "id": "greater-newcastle-aerotropolis-pty-ltd",
-            "name": "Greater Newcastle Aerotropolis Pty Ltd"
-          }
-        }
-      ]
+        "GREATER NEWCASTLE AEROTROPOLIS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-95006",
       "merger_name": "Laundy Group \u2013 Nine Radio",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "SPIKE MEDIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 694 712 699",
-          "party_page": {
-            "id": "spike-media-pty-ltd",
-            "name": "Spike Media Pty Ltd"
-          }
-        }
+        "SPIKE MEDIA PTY LTD"
       ],
       "targets": [
-        {
-          "name": "NINE RADIO PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "32 063 906 927",
-          "canonical": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          },
-          "party_page": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          }
-        }
-      ]
+        "NINE RADIO PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

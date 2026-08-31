@@ -163,108 +163,37 @@
     {
       "merger_id": "WA-80007",
       "merger_name": "Arlington Capital Partners \u2013 Eptec Defence Solutions",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Admiral AU Bidco Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 801 195",
-          "party_page": {
-            "id": "admiral-au-bidco-pty-ltd",
-            "name": "Admiral AU Bidco Pty Ltd"
-          }
-        },
-        {
-          "name": "Admiral AU Holdco Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 791 710",
-          "party_page": {
-            "id": "admiral-au-holdco-pty-ltd",
-            "name": "Admiral AU Holdco Pty Ltd"
-          }
-        }
+        "Admiral AU Bidco Pty Ltd",
+        "Admiral AU Holdco Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "EPTEC MARINE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "49 118 319 547",
-          "party_page": {
-            "id": "eptec-marine-pty-ltd",
-            "name": "Eptec Marine Pty Ltd"
-          }
-        },
-        {
-          "name": "EPTEC BIDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "12 638 785 378",
-          "party_page": {
-            "id": "eptec-bidco-pty-ltd",
-            "name": "Eptec Bidco Pty Ltd"
-          }
-        }
-      ]
+        "EPTEC MARINE PTY LTD",
+        "EPTEC BIDCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-55016",
       "merger_name": "Zurich - ClearView",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ZURICH FINANCIAL SERVICES AUSTRALIA LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "11 008 423 372",
-          "canonical": {
-            "id": "zurich-assure-australia-pty-ltd",
-            "name": "Zurich"
-          },
-          "party_page": {
-            "id": "zurich-assure-australia-pty-ltd",
-            "name": "Zurich"
-          }
-        }
+        "ZURICH FINANCIAL SERVICES AUSTRALIA LIMITED"
       ],
       "targets": [
-        {
-          "name": "CLEARVIEW WEALTH LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "83 106 248 248",
-          "party_page": {
-            "id": "clearview-wealth-limited",
-            "name": "Clearview Wealth Limited"
-          }
-        }
-      ]
+        "CLEARVIEW WEALTH LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-90009",
       "merger_name": "Trescal \u2013 TR Calibration",
-      "status": "Assessment ceased",
-      "accc_determination": null,
       "acquirers": [
-        {
-          "name": "TRESCAL (AUSTRALIA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "39 117 603 835",
-          "party_page": {
-            "id": "trescal-australia-pty-ltd",
-            "name": "Trescal (Australia) Pty Ltd"
-          }
-        }
+        "TRESCAL (AUSTRALIA) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "TR PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 005 499 721",
-          "party_page": {
-            "id": "tr-pty-ltd",
-            "name": "Tr Pty Ltd"
-          }
-        }
-      ]
+        "TR PTY LTD"
+      ],
+      "status": "Assessment ceased"
     }
   ],
   "phase_1_estimate": {

@@ -115,95 +115,36 @@
     {
       "merger_id": "WA-35016",
       "merger_name": "Wipro - Indeco",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Wipro Pari Italy S.r.l.",
-          "identifier_type": null,
-          "identifier": "Companies Register of Emilia no. 05595980284",
-          "party_page": {
-            "id": "wipro-pari-italy-s-r-l",
-            "name": "Wipro Pari Italy S.r.l."
-          }
-        },
-        {
-          "name": "Wipro Enterprises Private Limited",
-          "identifier_type": null,
-          "identifier": "Registrar of Companies, Karnataka at Bangalore no. U15141KA2010PTC054808",
-          "party_page": {
-            "id": "wipro-enterprises-private-limited",
-            "name": "Wipro Enterprises Private Limited"
-          }
-        }
+        "Wipro Pari Italy S.r.l.",
+        "Wipro Enterprises Private Limited"
       ],
       "targets": [
-        {
-          "name": "Indeco Ind S.p.A.",
-          "identifier_type": null,
-          "identifier": "Companies Register of Bari no. 05949910722",
-          "party_page": {
-            "id": "indeco-ind-s-p-a",
-            "name": "Indeco Ind S.p.A."
-          }
-        }
-      ]
+        "Indeco Ind S.p.A."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-60013",
       "merger_name": "Export Trading Group Australia \u2013 pulses and grains business and facility in Mount Tyson, QLD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ETG QUEENSLAND PROCESSING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "20 695 139 032",
-          "party_page": {
-            "id": "etg-queensland-processing-pty-ltd",
-            "name": "Etg Queensland Processing Pty Ltd"
-          }
-        }
+        "ETG QUEENSLAND PROCESSING PTY LTD"
       ],
       "targets": [
-        {
-          "name": "QUEENSLAND COTTON CORPORATION PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "26 010 944 591",
-          "party_page": {
-            "id": "queensland-cotton-corporation-pty-ltd",
-            "name": "Queensland Cotton Corporation Pty Ltd"
-          }
-        }
-      ]
+        "QUEENSLAND COTTON CORPORATION PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-01072",
       "merger_name": "Saipem S.p.A - Subsea7 S.A.",
-      "status": "Under assessment",
-      "accc_determination": null,
       "acquirers": [
-        {
-          "name": "Saipem S.p.A",
-          "identifier_type": null,
-          "identifier": "Register of Milan Monza Brianza Lodi under number 00825790157",
-          "party_page": {
-            "id": "saipem-s-p-a",
-            "name": "Saipem S.p.A"
-          }
-        }
+        "Saipem S.p.A"
       ],
       "targets": [
-        {
-          "name": "Subsea7 S.A.",
-          "identifier_type": null,
-          "identifier": "R.C.S. Luxembourg B 43172",
-          "party_page": {
-            "id": "subsea7-s-a",
-            "name": "Subsea7 S.A."
-          }
-        }
-      ]
+        "Subsea7 S.A."
+      ],
+      "status": "Under assessment"
     }
   ]
 }

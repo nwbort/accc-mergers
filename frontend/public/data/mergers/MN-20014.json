@@ -134,95 +134,36 @@
     {
       "merger_id": "MN-80014",
       "merger_name": "ANZ Banking Group - Worldline Australia",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AUSTRALIA AND NEW ZEALAND BANKING GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "11 005 357 522",
-          "party_page": {
-            "id": "australia-and-new-zealand-banking-group-limited",
-            "name": "Australia And New Zealand Banking Group Limited"
-          }
-        }
+        "AUSTRALIA AND NEW ZEALAND BANKING GROUP LIMITED"
       ],
       "targets": [
-        {
-          "name": "Worldline SA",
-          "identifier_type": null,
-          "identifier": "VATIN FR01378901946",
-          "party_page": {
-            "id": "worldline-sa",
-            "name": "Worldline SA"
-          }
-        },
-        {
-          "name": "WORLDLINE AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "50 645 073 034",
-          "party_page": {
-            "id": "worldline-australia-pty-ltd",
-            "name": "Worldline Australia Pty Ltd"
-          }
-        }
-      ]
+        "Worldline SA",
+        "WORLDLINE AUSTRALIA PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70015",
       "merger_name": "Bendigo and Adelaide Bank \u2013 RACQ Bank",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BENDIGO AND ADELAIDE BANK LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "11 068 049 178",
-          "party_page": {
-            "id": "bendigo-and-adelaide-bank-limited",
-            "name": "Bendigo And Adelaide Bank Limited"
-          }
-        }
+        "BENDIGO AND ADELAIDE BANK LIMITED"
       ],
       "targets": [
-        {
-          "name": "MEMBERS BANKING GROUP LIMITED (TRADING AS RACQ BANK)",
-          "identifier_type": "ABN",
-          "identifier": "83 087 651 054",
-          "party_page": {
-            "id": "members-banking-group-limited-trading-as-racq-bank",
-            "name": "Members Banking Group Limited (Trading As Racq Bank)"
-          }
-        }
-      ]
+        "MEMBERS BANKING GROUP LIMITED (TRADING AS RACQ BANK)"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-60004",
       "merger_name": "IOR - Delta Specialised Energy assets",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "IOR PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "36 009 653 070",
-          "party_page": {
-            "id": "ior-pty-ltd",
-            "name": "Ior Pty Ltd"
-          }
-        }
+        "IOR PTY LTD"
       ],
       "targets": [
-        {
-          "name": "DELTA SPECIALISED ENERGY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "11 624 642 682",
-          "party_page": {
-            "id": "delta-specialised-energy-pty-ltd",
-            "name": "Delta Specialised Energy Pty Ltd"
-          }
-        }
-      ]
+        "DELTA SPECIALISED ENERGY PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

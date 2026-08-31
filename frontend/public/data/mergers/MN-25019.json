@@ -242,103 +242,36 @@
     {
       "merger_id": "MN-25004",
       "merger_name": "ServiceNow - Armis",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ServiceNow, Inc.",
-          "identifier_type": null,
-          "identifier": "5111469",
-          "canonical": {
-            "id": "servicenow-inc",
-            "name": "ServiceNow, Inc."
-          },
-          "party_page": {
-            "id": "servicenow-inc",
-            "name": "ServiceNow, Inc."
-          }
-        }
+        "ServiceNow, Inc."
       ],
       "targets": [
-        {
-          "name": "Armis Security, Ltd.",
-          "identifier_type": null,
-          "identifier": "515335941",
-          "party_page": {
-            "id": "armis-security-ltd",
-            "name": "Armis Security, Ltd."
-          }
-        },
-        {
-          "name": "Armis, Inc.",
-          "identifier_type": null,
-          "identifier": "6021196",
-          "party_page": {
-            "id": "armis-inc",
-            "name": "Armis, Inc."
-          }
-        }
-      ]
+        "Armis Security, Ltd.",
+        "Armis, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-40019",
       "merger_name": "Novartis - Excellergy",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Elba Merger Sub, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware company number 10547479",
-          "party_page": {
-            "id": "elba-merger-sub-inc",
-            "name": "Elba Merger Sub, Inc."
-          }
-        }
+        "Elba Merger Sub, Inc."
       ],
       "targets": [
-        {
-          "name": "Excellergy Inc.",
-          "identifier_type": null,
-          "identifier": "EIN 854115816",
-          "canonical": {
-            "id": "excellergy-inc",
-            "name": "Excellergy"
-          },
-          "party_page": {
-            "id": "excellergy-inc",
-            "name": "Excellergy"
-          }
-        }
-      ]
+        "Excellergy Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-01075",
       "merger_name": "Thermo Fisher - Clario Holdings",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Thermo Fisher Scientific Inc.",
-          "identifier_type": null,
-          "identifier": "042209186",
-          "party_page": {
-            "id": "thermo-fisher-scientific-inc",
-            "name": "Thermo Fisher Scientific Inc."
-          }
-        }
+        "Thermo Fisher Scientific Inc."
       ],
       "targets": [
-        {
-          "name": "Clario Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "5977148",
-          "party_page": {
-            "id": "clario-holdings-inc",
-            "name": "Clario Holdings, Inc."
-          }
-        }
-      ]
+        "Clario Holdings, Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

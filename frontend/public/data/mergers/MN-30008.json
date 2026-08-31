@@ -114,99 +114,36 @@
     {
       "merger_id": "MN-10013",
       "merger_name": "Accenture - Ziff Davis' connectivity business",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Accenture Inc.",
-          "identifier_type": null,
-          "identifier": "State File Number  3387477",
-          "canonical": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          },
-          "party_page": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          }
-        }
+        "Accenture Inc."
       ],
       "targets": [
-        {
-          "name": "Ookla, LLC",
-          "identifier_type": null,
-          "identifier": "Unified Business ID  602 422 103",
-          "party_page": {
-            "id": "ookla-llc",
-            "name": "Ookla, LLC"
-          }
-        },
-        {
-          "name": "Ekahau OY",
-          "identifier_type": null,
-          "identifier": "Business ID  16108964",
-          "party_page": {
-            "id": "ekahau-oy",
-            "name": "Ekahau OY"
-          }
-        }
-      ]
+        "Ookla, LLC",
+        "Ekahau OY"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-70012",
       "merger_name": "Quanta - PSD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Quanta Services Australia Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "11 164 311 997",
-          "party_page": {
-            "id": "quanta-services-australia-pty-ltd",
-            "name": "Quanta Services Australia Pty Ltd"
-          }
-        }
+        "Quanta Services Australia Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "PSD Global Holdings Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "634 380 813",
-          "party_page": {
-            "id": "psd-global-holdings-pty-ltd",
-            "name": "PSD Global Holdings Pty Ltd"
-          }
-        }
-      ]
+        "PSD Global Holdings Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-90013",
       "merger_name": "Cement Australia \u2013 Global Manufacturing Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "DGH DESIGN AND FABRICATION SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "44 684 719 300",
-          "party_page": {
-            "id": "dgh-design-and-fabrication-services-pty-ltd",
-            "name": "Dgh Design And Fabrication Services Pty Ltd"
-          }
-        }
+        "DGH DESIGN AND FABRICATION SERVICES PTY LTD"
       ],
       "targets": [
-        {
-          "name": "AYLWARD DOWLING AND WALL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "63 113 533 298",
-          "party_page": {
-            "id": "aylward-dowling-and-wall-pty-ltd",
-            "name": "Aylward Dowling And Wall Pty Ltd"
-          }
-        }
-      ]
+        "AYLWARD DOWLING AND WALL PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

@@ -171,117 +171,38 @@
     {
       "merger_id": "WA-05005",
       "merger_name": "Ironbark - Investment in Viola Private Wealth",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "IBWM PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 621 141 026",
-          "party_page": {
-            "id": "ibwm-pty-ltd",
-            "name": "Ibwm Pty Ltd"
-          }
-        }
+        "IBWM PTY LTD"
       ],
       "targets": [
-        {
-          "name": "VIOLA GROUP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "20 680 038 180",
-          "party_page": {
-            "id": "viola-group-holdings-pty-ltd",
-            "name": "Viola Group Holdings Pty Ltd"
-          }
-        }
-      ]
+        "VIOLA GROUP HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-50015",
       "merger_name": "Mastercard - BVNK",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Mastercard Incorporated",
-          "identifier_type": null,
-          "identifier": "3390142",
-          "canonical": {
-            "id": "mastercard-incorporated",
-            "name": "MasterCard"
-          },
-          "party_page": {
-            "id": "mastercard-incorporated",
-            "name": "MasterCard"
-          }
-        },
-        {
-          "name": "Ares UK Holdco 2 Limited",
-          "identifier_type": null,
-          "identifier": "CRN 17107097",
-          "party_page": {
-            "id": "ares-uk-holdco-2-limited",
-            "name": "Ares UK Holdco 2 Limited"
-          }
-        }
+        "Mastercard Incorporated",
+        "Ares UK Holdco 2 Limited"
       ],
       "targets": [
-        {
-          "name": "B Corporation S.A.M",
-          "identifier_type": null,
-          "identifier": "23S09602",
-          "party_page": {
-            "id": "b-corporation-s-a-m",
-            "name": "B Corporation S.A.M"
-          }
-        },
-        {
-          "name": "BVNK Holdings Limited",
-          "identifier_type": null,
-          "identifier": "13922014",
-          "party_page": {
-            "id": "bvnk-holdings-limited",
-            "name": "BVNK Holdings Limited"
-          }
-        }
-      ]
+        "B Corporation S.A.M",
+        "BVNK Holdings Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-90007",
       "merger_name": "Volt Managed Investment Trusts \u2013 HMC Energy Transition Platform",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Volt Managed Investment Trust 2",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "volt-managed-investment-trust-2",
-            "name": "Volt Managed Investment Trust 2"
-          }
-        },
-        {
-          "name": "Volt Managed Investment Trust 1",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "volt-managed-investment-trust-1",
-            "name": "Volt Managed Investment Trust 1"
-          }
-        }
+        "Volt Managed Investment Trust 2",
+        "Volt Managed Investment Trust 1"
       ],
       "targets": [
-        {
-          "name": "VOLT HOLDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "54 694 754 062",
-          "party_page": {
-            "id": "volt-holdco-pty-ltd",
-            "name": "Volt Holdco Pty Ltd"
-          }
-        }
-      ]
+        "VOLT HOLDCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

@@ -129,99 +129,36 @@
     {
       "merger_id": "WA-25013",
       "merger_name": "Cinven \u2013 Regenity",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Rosewood AG, LP",
-          "identifier_type": null,
-          "identifier": "LP5500",
-          "party_page": {
-            "id": "rosewood-ag-lp",
-            "name": "Rosewood AG, LP"
-          }
-        }
+        "Rosewood AG, LP"
       ],
       "targets": [
-        {
-          "name": "Collagen Holdings, LLC",
-          "identifier_type": null,
-          "identifier": "DE File Number  7473707",
-          "party_page": {
-            "id": "collagen-holdings-llc",
-            "name": "Collagen Holdings, LLC"
-          }
-        }
-      ]
+        "Collagen Holdings, LLC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-15007",
       "merger_name": "Apollo Funds led consortium \u2013 Lecta Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Reed BidCo Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "reed-bidco-limited",
-            "name": "Reed BidCo Limited"
-          }
-        }
+        "Reed BidCo Limited"
       ],
       "targets": [
-        {
-          "name": "Lecta Paper Industries Intermediate Financing S.\u00e0 r.l.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "lecta-paper-industries-intermediate-financing-s-r-l",
-            "name": "Lecta Paper Industries Intermediate Financing S.\u00e0 r.l."
-          }
-        }
-      ]
+        "Lecta Paper Industries Intermediate Financing S.\u00e0 r.l."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-05009",
       "merger_name": "Genea - Embrace Fertility",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Genea Bidco SA Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 694 458",
-          "canonical": {
-            "id": "genea",
-            "name": "Genea"
-          },
-          "party_page": {
-            "id": "genea",
-            "name": "Genea"
-          }
-        }
+        "Genea Bidco SA Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "EMBRACE FERTILITY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "84 135 918 580",
-          "party_page": {
-            "id": "embrace-fertility-pty-ltd",
-            "name": "Embrace Fertility Pty Ltd"
-          }
-        },
-        {
-          "name": "Histon Nelson Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "144 914 965",
-          "party_page": {
-            "id": "histon-nelson-pty-ltd",
-            "name": "Histon Nelson Pty Ltd"
-          }
-        }
-      ]
+        "EMBRACE FERTILITY PTY LTD",
+        "Histon Nelson Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

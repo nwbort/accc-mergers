@@ -111,98 +111,35 @@
     {
       "merger_id": "MN-01068",
       "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "45 004 189 708",
-          "canonical": {
-            "id": "coles",
-            "name": "Coles Group"
-          },
-          "party_page": {
-            "id": "coles",
-            "name": "Coles Group"
-          }
-        }
+        "COLES SUPERMARKETS AUSTRALIA PTY LTD"
       ],
       "targets": [
-        {
-          "name": "M Holdings 4 Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "652 075 799",
-          "party_page": {
-            "id": "m-holdings-4-pty-ltd",
-            "name": "M Holdings 4 Pty Ltd"
-          }
-        }
-      ]
+        "M Holdings 4 Pty Ltd"
+      ],
+      "accc_determination": "Not approved"
     },
     {
       "merger_id": "MN-01090",
       "merger_name": "Coles \u2013 supermarket site in New Norfolk (TAS)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "45 004 189 708",
-          "canonical": {
-            "id": "coles",
-            "name": "Coles Group"
-          },
-          "party_page": {
-            "id": "coles",
-            "name": "Coles Group"
-          }
-        }
+        "COLES SUPERMARKETS AUSTRALIA PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Tipalea Private No.31 Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "686 197 115",
-          "party_page": {
-            "id": "tipalea-private-no-31-pty-ltd",
-            "name": "Tipalea Private No.31 Pty Ltd"
-          }
-        }
-      ]
+        "Tipalea Private No.31 Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-50019",
       "merger_name": "Coles \u2013 supermarket site in Lidcombe (NSW)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "45 004 189 708",
-          "canonical": {
-            "id": "coles",
-            "name": "Coles Group"
-          },
-          "party_page": {
-            "id": "coles",
-            "name": "Coles Group"
-          }
-        }
+        "COLES SUPERMARKETS AUSTRALIA PTY LTD"
       ],
       "targets": [
-        {
-          "name": "BUILTCOM PROPERTIES 11 PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "21 648 938 710",
-          "party_page": {
-            "id": "builtcom-properties-11-pty-ltd",
-            "name": "Builtcom Properties 11 Pty Ltd"
-          }
-        }
-      ]
+        "BUILTCOM PROPERTIES 11 PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

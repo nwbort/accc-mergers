@@ -113,108 +113,37 @@
     {
       "merger_id": "WA-30011",
       "merger_name": "AXDI - minority interest in La Trobe Financial",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AXDI SPV 5 Ltd",
-          "identifier_type": null,
-          "identifier": "ADGM  36279",
-          "party_page": {
-            "id": "axdi-spv-5-ltd",
-            "name": "AXDI SPV 5 Ltd"
-          }
-        }
+        "AXDI SPV 5 Ltd"
       ],
       "targets": [
-        {
-          "name": "AMC AUSCO 1 PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "49 658 085 771",
-          "party_page": {
-            "id": "amc-ausco-1-pty-ltd",
-            "name": "Amc Ausco 1 Pty Ltd"
-          }
-        }
-      ]
+        "AMC AUSCO 1 PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-50029",
       "merger_name": "Centuria Property Funds No. 2 Limited as the responsible entity of Centuria Sydney CBD Prime Office Fund - 680 George St/50 Goulburn St",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Centuria Investment Management (CSPOF) Pty Ltd as trustee of the CSPOF Mid Trust",
-          "identifier_type": "ABN",
-          "identifier": "35 369 738 841",
-          "party_page": {
-            "id": "centuria-investment-management-cspof-pty-ltd-as-trustee-of-the-cspof-mid-trust",
-            "name": "Centuria Investment Management (CSPOF) Pty Ltd as trustee of the CSPOF Mid Trust"
-          }
-        },
-        {
-          "name": "CENTURIA INVESTMENT MANAGEMENT (CSPOF) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "68 696 319 098",
-          "party_page": {
-            "id": "centuria-investment-management-cspof-pty-ltd",
-            "name": "Centuria Investment Management (Cspof) Pty Ltd"
-          }
-        }
+        "Centuria Investment Management (CSPOF) Pty Ltd as trustee of the CSPOF Mid Trust",
+        "CENTURIA INVESTMENT MANAGEMENT (CSPOF) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Latitude Landowner Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "106 533 715",
-          "party_page": {
-            "id": "latitude-landowner-pty-ltd",
-            "name": "Latitude Landowner Pty Ltd"
-          }
-        },
-        {
-          "name": "The Trustee for Latitude Landowning Trust",
-          "identifier_type": "ABN",
-          "identifier": "20 844 678 909",
-          "party_page": {
-            "id": "the-trustee-for-latitude-landowning-trust",
-            "name": "The Trustee for Latitude Landowning Trust"
-          }
-        }
-      ]
+        "Latitude Landowner Pty Ltd",
+        "The Trustee for Latitude Landowning Trust"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-05014",
       "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Smile Partners (NSW3) Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 902 955",
-          "party_page": {
-            "id": "smile-partners-nsw3-pty-ltd",
-            "name": "Smile Partners (NSW3) Pty Ltd"
-          }
-        }
+        "Smile Partners (NSW3) Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Shrika Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "108 757 357",
-          "canonical": {
-            "id": "shrika-pty-ltd",
-            "name": "Shrika Pty Ltd"
-          },
-          "party_page": {
-            "id": "shrika-pty-ltd",
-            "name": "Shrika Pty Ltd"
-          }
-        }
-      ]
+        "Shrika Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

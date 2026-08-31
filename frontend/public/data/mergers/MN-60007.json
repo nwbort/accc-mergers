@@ -263,108 +263,37 @@
     {
       "merger_id": "WA-75011",
       "merger_name": "Autosports Group - Solitaire Automotive Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AUTOSPORTS GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "54 614 505 261",
-          "party_page": {
-            "id": "autosports-group-limited",
-            "name": "Autosports Group Limited"
-          }
-        }
+        "AUTOSPORTS GROUP LIMITED"
       ],
       "targets": [
-        {
-          "name": "David Smoker",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "david-smoker",
-            "name": "David Smoker"
-          }
-        },
-        {
-          "name": "Russleigh Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "052 977 198",
-          "party_page": {
-            "id": "russleigh-pty-ltd",
-            "name": "Russleigh Pty Ltd"
-          }
-        }
-      ]
+        "David Smoker",
+        "Russleigh Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-20012",
       "merger_name": "Australian Meat Group - Killara Feedlot",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Australian Meat Group Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "75 168 396 316",
-          "canonical": {
-            "id": "australian-meat-group-inc",
-            "name": "Australian Meat Group Inc"
-          },
-          "party_page": {
-            "id": "australian-meat-group-inc",
-            "name": "Australian Meat Group Inc"
-          }
-        }
+        "Australian Meat Group Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Killara Feedlot Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "18 081 072 746",
-          "party_page": {
-            "id": "killara-feedlot-pty-ltd",
-            "name": "Killara Feedlot Pty Ltd"
-          }
-        }
-      ]
+        "Killara Feedlot Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-10008",
       "merger_name": "Premier Fresh \u2013 Charles Domenico Group",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "PREMIER FRESH AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "87 004 843 556",
-          "party_page": {
-            "id": "premier-fresh-australia-pty-ltd",
-            "name": "Premier Fresh Australia Pty Ltd"
-          }
-        }
+        "PREMIER FRESH AUSTRALIA PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Carmelo De Domenico",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "carmelo-de-domenico",
-            "name": "Carmelo De Domenico"
-          }
-        },
-        {
-          "name": "C.A. DE DOMENICO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "18 102 487 963",
-          "party_page": {
-            "id": "c-a-de-domenico-pty-ltd",
-            "name": "C.A. De Domenico Pty Ltd"
-          }
-        }
-      ]
+        "Carmelo De Domenico",
+        "C.A. DE DOMENICO PTY LTD"
+      ],
+      "accc_determination": "Not approved"
     }
   ],
   "phase_1_estimate": {

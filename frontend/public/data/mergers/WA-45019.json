@@ -217,107 +217,36 @@
     {
       "merger_id": "WA-55004",
       "merger_name": "Blackbird Ventures \u2013 Baseten Labs",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Blackbird FOF25 Pty Ltd as trustee for Blackbird Ventures 2025 Follow-On Fund Trust",
-          "identifier_type": "ABN",
-          "identifier": "49 711 375 395",
-          "canonical": {
-            "id": "blackbird-ventures",
-            "name": "Blackbird Ventures"
-          },
-          "party_page": {
-            "id": "blackbird-ventures",
-            "name": "Blackbird Ventures"
-          }
-        }
+        "Blackbird FOF25 Pty Ltd as trustee for Blackbird Ventures 2025 Follow-On Fund Trust"
       ],
       "targets": [
-        {
-          "name": "Baseten Labs, Inc",
-          "identifier_type": null,
-          "identifier": "EIN 371950658",
-          "party_page": {
-            "id": "baseten-labs-inc",
-            "name": "Baseten Labs, Inc"
-          }
-        }
-      ]
+        "Baseten Labs, Inc"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-50010",
       "merger_name": "Blackbird Ventures \u2013 Halter",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Blackbird FSA Pty Ltd as trustee for Blackbird FSA Co-investment Trust",
-          "identifier_type": "ABN",
-          "identifier": "99 526 258 209",
-          "canonical": {
-            "id": "blackbird-ventures",
-            "name": "Blackbird Ventures"
-          },
-          "party_page": {
-            "id": "blackbird-ventures",
-            "name": "Blackbird Ventures"
-          }
-        },
-        {
-          "name": "Blackbird FOF25 Pty Ltd as trustee for Blackbird Ventures 2025 Follow-On Fund Trust",
-          "identifier_type": "ABN",
-          "identifier": "49 711 375 395",
-          "canonical": {
-            "id": "blackbird-ventures",
-            "name": "Blackbird Ventures"
-          },
-          "party_page": {
-            "id": "blackbird-ventures",
-            "name": "Blackbird Ventures"
-          }
-        }
+        "Blackbird FSA Pty Ltd as trustee for Blackbird FSA Co-investment Trust",
+        "Blackbird FOF25 Pty Ltd as trustee for Blackbird Ventures 2025 Follow-On Fund Trust"
       ],
       "targets": [
-        {
-          "name": "Halter USA Inc.",
-          "identifier_type": null,
-          "identifier": "EIN 364872517",
-          "party_page": {
-            "id": "halter-usa-inc",
-            "name": "Halter USA Inc."
-          }
-        }
-      ]
+        "Halter USA Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-70018",
       "merger_name": "Restaurant Brands and Yum! Brands \u2013 Taco Bell restaurants",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Taco Ventures Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "697 591 692",
-          "party_page": {
-            "id": "taco-ventures-pty-ltd",
-            "name": "Taco Ventures Pty Ltd"
-          }
-        }
+        "Taco Ventures Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Collins Foods Subsidiary Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "94 616 663 793",
-          "party_page": {
-            "id": "collins-foods-subsidiary-pty-ltd",
-            "name": "Collins Foods Subsidiary Pty Ltd"
-          }
-        }
-      ]
+        "Collins Foods Subsidiary Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

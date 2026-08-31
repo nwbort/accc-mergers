@@ -188,94 +188,28 @@
     {
       "merger_id": "WA-80011",
       "merger_name": "CRH - Axius Water",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CRH Americas Products, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware file number  3253282",
-          "party_page": {
-            "id": "crh-americas-products-inc",
-            "name": "CRH Americas Products, Inc."
-          }
-        },
-        {
-          "name": "OLDCASTLE INFRASTRUCTURE, INC.",
-          "identifier_type": null,
-          "identifier": "Washington UBI  171 004 504",
-          "party_page": {
-            "id": "oldcastle-infrastructure-inc",
-            "name": "Oldcastle Infrastructure, Inc."
-          }
-        }
+        "CRH Americas Products, Inc.",
+        "OLDCASTLE INFRASTRUCTURE, INC."
       ],
       "targets": [
-        {
-          "name": "NEXUS WATER HOLDINGS GP LLC",
-          "identifier_type": null,
-          "identifier": "7688735",
-          "party_page": {
-            "id": "nexus-water-holdings-gp-llc",
-            "name": "Nexus Water Holdings Gp Llc"
-          }
-        },
-        {
-          "name": "NEXUS WATER HOLDINGS LP",
-          "identifier_type": null,
-          "identifier": "7694945",
-          "party_page": {
-            "id": "nexus-water-holdings-lp",
-            "name": "Nexus Water Holdings Lp"
-          }
-        }
-      ]
+        "NEXUS WATER HOLDINGS GP LLC",
+        "NEXUS WATER HOLDINGS LP"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-80007",
       "merger_name": "Arlington Capital Partners \u2013 Eptec Defence Solutions",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Admiral AU Bidco Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 801 195",
-          "party_page": {
-            "id": "admiral-au-bidco-pty-ltd",
-            "name": "Admiral AU Bidco Pty Ltd"
-          }
-        },
-        {
-          "name": "Admiral AU Holdco Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 791 710",
-          "party_page": {
-            "id": "admiral-au-holdco-pty-ltd",
-            "name": "Admiral AU Holdco Pty Ltd"
-          }
-        }
+        "Admiral AU Bidco Pty Ltd",
+        "Admiral AU Holdco Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "EPTEC MARINE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "49 118 319 547",
-          "party_page": {
-            "id": "eptec-marine-pty-ltd",
-            "name": "Eptec Marine Pty Ltd"
-          }
-        },
-        {
-          "name": "EPTEC BIDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "12 638 785 378",
-          "party_page": {
-            "id": "eptec-bidco-pty-ltd",
-            "name": "Eptec Bidco Pty Ltd"
-          }
-        }
-      ]
+        "EPTEC MARINE PTY LTD",
+        "EPTEC BIDCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

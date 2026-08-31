@@ -115,111 +115,36 @@
     {
       "merger_id": "WA-10019",
       "merger_name": "Warburg Pincus \u2013 JSB",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Ursa 4 Kabushiki Kaisha (Japan)",
-          "identifier_type": null,
-          "identifier": "010001265801",
-          "party_page": {
-            "id": "ursa-4-kabushiki-kaisha-japan",
-            "name": "Ursa 4 Kabushiki Kaisha (Japan)"
-          }
-        }
+        "Ursa 4 Kabushiki Kaisha (Japan)"
       ],
       "targets": [
-        {
-          "name": "J.S.B. Co., Ltd.",
-          "identifier_type": null,
-          "identifier": "130001017499",
-          "canonical": {
-            "id": "j-s-b-co",
-            "name": "J.S.B. Co"
-          },
-          "party_page": {
-            "id": "j-s-b-co",
-            "name": "J.S.B. Co"
-          }
-        }
-      ]
+        "J.S.B. Co., Ltd."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-40010",
       "merger_name": "Permira and Warburg Pincus - Clearwater Analytics",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "GT Silver BidCo, Inc.",
-          "identifier_type": null,
-          "identifier": "413417606",
-          "party_page": {
-            "id": "gt-silver-bidco-inc",
-            "name": "GT Silver BidCo, Inc."
-          }
-        }
+        "GT Silver BidCo, Inc."
       ],
       "targets": [
-        {
-          "name": "Clearwater Analytics Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "00140838",
-          "canonical": {
-            "id": "clearwater-analytics-llc",
-            "name": "Clearwater Analytics"
-          },
-          "party_page": {
-            "id": "clearwater-analytics-llc",
-            "name": "Clearwater Analytics"
-          }
-        }
-      ]
+        "Clearwater Analytics Holdings, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-60008",
       "merger_name": "Warburg Pincus \u2013 Acclime",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Achronite Bidco Ltd",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "achronite-bidco-ltd",
-            "name": "Achronite Bidco Ltd"
-          }
-        }
+        "Achronite Bidco Ltd"
       ],
       "targets": [
-        {
-          "name": "Acclime Holdings HK Limited",
-          "identifier_type": null,
-          "identifier": "BRN  70084973",
-          "canonical": {
-            "id": "acclime-holdings-limited",
-            "name": "Acclime"
-          },
-          "party_page": {
-            "id": "acclime-holdings-limited",
-            "name": "Acclime"
-          }
-        },
-        {
-          "name": "Acclime Holdings Limited",
-          "identifier_type": null,
-          "identifier": "BRN  70084973",
-          "canonical": {
-            "id": "acclime-holdings-limited",
-            "name": "Acclime"
-          },
-          "party_page": {
-            "id": "acclime-holdings-limited",
-            "name": "Acclime"
-          }
-        }
-      ]
+        "Acclime Holdings HK Limited",
+        "Acclime Holdings Limited"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

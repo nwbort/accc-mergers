@@ -159,99 +159,36 @@
     {
       "merger_id": "WA-35001",
       "merger_name": "WSP \u2013 TRC",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "WSP Global Inc.",
-          "identifier_type": null,
-          "identifier": "Corporation No.: 7748388",
-          "canonical": {
-            "id": "wsp-australia-pty-limited",
-            "name": "Wsp Australia Pty Limited"
-          },
-          "party_page": {
-            "id": "wsp-australia-pty-limited",
-            "name": "Wsp Australia Pty Limited"
-          }
-        }
+        "WSP Global Inc."
       ],
       "targets": [
-        {
-          "name": "TRC Companies, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "trc-companies-inc",
-            "name": "TRC Companies, Inc."
-          }
-        }
-      ]
+        "TRC Companies, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-01071",
       "merger_name": "CSE Crosscom \u2013 Progility",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CSE CROSSCOM PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "25 606 614 500",
-          "party_page": {
-            "id": "cse-crosscom-pty-ltd",
-            "name": "Cse Crosscom Pty Ltd"
-          }
-        },
-        {
-          "name": "CSE-Global (Australia) Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "85 109 958 090",
-          "party_page": {
-            "id": "cse-global-australia-pty-ltd",
-            "name": "Cse-Global (Australia) Pty Ltd"
-          }
-        }
+        "CSE CROSSCOM PTY LTD",
+        "CSE-Global (Australia) Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "PROGILITY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "11 131 639 837",
-          "party_page": {
-            "id": "progility-pty-ltd",
-            "name": "Progility Pty Ltd"
-          }
-        }
-      ]
+        "PROGILITY PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-70012",
       "merger_name": "Quanta - PSD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Quanta Services Australia Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "11 164 311 997",
-          "party_page": {
-            "id": "quanta-services-australia-pty-ltd",
-            "name": "Quanta Services Australia Pty Ltd"
-          }
-        }
+        "Quanta Services Australia Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "PSD Global Holdings Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "634 380 813",
-          "party_page": {
-            "id": "psd-global-holdings-pty-ltd",
-            "name": "PSD Global Holdings Pty Ltd"
-          }
-        }
-      ]
+        "PSD Global Holdings Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

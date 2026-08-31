@@ -106,95 +106,36 @@
     {
       "merger_id": "WA-25022",
       "merger_name": "Nuveen \u2013 Schroders",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Pantheon LLC",
-          "identifier_type": null,
-          "identifier": "10488789",
-          "party_page": {
-            "id": "pantheon-llc",
-            "name": "Pantheon LLC"
-          }
-        }
+        "Pantheon LLC"
       ],
       "targets": [
-        {
-          "name": "Schroders plc",
-          "identifier_type": null,
-          "identifier": "03909886",
-          "party_page": {
-            "id": "schroders-plc",
-            "name": "Schroders plc"
-          }
-        }
-      ]
+        "Schroders plc"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-20005",
       "merger_name": "H-E Parts International Mining Solutions - Warehouse workshop site in Paget, QLD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "H-E PARTS INTERNATIONAL MINING SOLUTIONS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "58 007 761 499",
-          "party_page": {
-            "id": "h-e-parts-international-mining-solutions-pty-ltd",
-            "name": "H-E Parts International Mining Solutions Pty Ltd"
-          }
-        }
+        "H-E PARTS INTERNATIONAL MINING SOLUTIONS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "A.T.B. MORTON PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "34 002 684 620",
-          "party_page": {
-            "id": "a-t-b-morton-pty-limited",
-            "name": "A.T.B. Morton Pty Limited"
-          }
-        }
-      ]
+        "A.T.B. MORTON PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25001",
       "merger_name": "Regent Motors Group \u2013 Esperance Motor Group (Esperance Toyota & Ford)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ALBANY MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "95 676 040 341",
-          "party_page": {
-            "id": "albany-motors-pty-ltd",
-            "name": "Albany Motors Pty Ltd"
-          }
-        }
+        "ALBANY MOTORS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Esperance Motor Group Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "57 121 986 016",
-          "party_page": {
-            "id": "esperance-motor-group-pty-ltd",
-            "name": "Esperance Motor Group Pty Ltd"
-          }
-        },
-        {
-          "name": "BUVERIE PTY LTD as trustee for SCHWARZBACK FAMILY TRUST",
-          "identifier_type": "ABN",
-          "identifier": "80 701 405 315",
-          "party_page": {
-            "id": "buverie-pty-ltd-as-trustee-for-schwarzback-family-trust",
-            "name": "BUVERIE PTY LTD as trustee for SCHWARZBACK FAMILY TRUST"
-          }
-        }
-      ]
+        "Esperance Motor Group Pty Ltd",
+        "BUVERIE PTY LTD as trustee for SCHWARZBACK FAMILY TRUST"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

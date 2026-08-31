@@ -119,112 +119,37 @@
     {
       "merger_id": "WA-40018",
       "merger_name": "AustralianSuper - IFM Global Infrastructure (Australia) Trust",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AUSTRALIANSUPER PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "94 006 457 987",
-          "canonical": {
-            "id": "australiansuper-pty-ltd",
-            "name": "AustralianSuper"
-          },
-          "party_page": {
-            "id": "australiansuper-pty-ltd",
-            "name": "AustralianSuper"
-          }
-        }
+        "AUSTRALIANSUPER PTY LTD"
       ],
       "targets": [
-        {
-          "name": "IFM INVESTORS (NOMINEES) LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "56 003 969 891",
-          "canonical": {
-            "id": "ifm-investors",
-            "name": "Ifm Investors"
-          },
-          "party_page": {
-            "id": "ifm-investors",
-            "name": "Ifm Investors"
-          }
-        }
-      ]
+        "IFM INVESTORS (NOMINEES) LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-80022",
       "merger_name": "Bain Capital \u2013 Perpetual Wealth Management Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BCPE Barton BidCo Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "694 979 041",
-          "party_page": {
-            "id": "bcpe-barton-bidco-pty-ltd",
-            "name": "BCPE Barton BidCo Pty Ltd"
-          }
-        }
+        "BCPE Barton BidCo Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "PERPETUAL LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "86 000 431 827",
-          "party_page": {
-            "id": "perpetual-limited",
-            "name": "Perpetual Limited"
-          }
-        },
-        {
-          "name": "PERPETUAL PWM SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "90 678 546 113",
-          "party_page": {
-            "id": "perpetual-pwm-services-pty-ltd",
-            "name": "Perpetual Pwm Services Pty Ltd"
-          }
-        }
-      ]
+        "PERPETUAL LIMITED",
+        "PERPETUAL PWM SERVICES PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-35015",
       "merger_name": "Allied Retail Finance \u2013 automotive retail finance assets of Macquarie Leasing",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ALLIED RETAIL FINANCE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "31 609 859 985",
-          "party_page": {
-            "id": "allied-retail-finance-pty-ltd",
-            "name": "Allied Retail Finance Pty Ltd"
-          }
-        }
+        "ALLIED RETAIL FINANCE PTY LTD"
       ],
       "targets": [
-        {
-          "name": "MACQUARIE LEASING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "38 002 674 982",
-          "party_page": {
-            "id": "macquarie-leasing-pty-ltd",
-            "name": "Macquarie Leasing Pty Ltd"
-          }
-        },
-        {
-          "name": "The Trustee for SMART B Trust",
-          "identifier_type": "ABN",
-          "identifier": "18 229 600 756",
-          "party_page": {
-            "id": "the-trustee-for-smart-b-trust",
-            "name": "The Trustee for SMART B Trust"
-          }
-        }
-      ]
+        "MACQUARIE LEASING PTY LTD",
+        "The Trustee for SMART B Trust"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

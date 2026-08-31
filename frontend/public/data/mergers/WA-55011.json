@@ -96,126 +96,39 @@
     {
       "merger_id": "WA-05005",
       "merger_name": "Ironbark - Investment in Viola Private Wealth",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "IBWM PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 621 141 026",
-          "party_page": {
-            "id": "ibwm-pty-ltd",
-            "name": "Ibwm Pty Ltd"
-          }
-        }
+        "IBWM PTY LTD"
       ],
       "targets": [
-        {
-          "name": "VIOLA GROUP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "20 680 038 180",
-          "party_page": {
-            "id": "viola-group-holdings-pty-ltd",
-            "name": "Viola Group Holdings Pty Ltd"
-          }
-        }
-      ]
+        "VIOLA GROUP HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-55014",
       "merger_name": "KPS Capital Partners - Jennmar",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "KPS Capital Partners, LP",
-          "identifier_type": null,
-          "identifier": "CRD 157678 / SEC: 80173907",
-          "canonical": {
-            "id": "kps-capital-partners",
-            "name": "KPS Capital Partners"
-          },
-          "party_page": {
-            "id": "kps-capital-partners",
-            "name": "KPS Capital Partners"
-          }
-        },
-        {
-          "name": "Three Rivers Purchaser, LLC",
-          "identifier_type": null,
-          "identifier": "10533455",
-          "party_page": {
-            "id": "three-rivers-purchaser-llc",
-            "name": "Three Rivers Purchaser, LLC"
-          }
-        }
+        "KPS Capital Partners, LP",
+        "Three Rivers Purchaser, LLC"
       ],
       "targets": [
-        {
-          "name": "Jennmar Intermediate Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "990520173",
-          "party_page": {
-            "id": "jennmar-intermediate-holdings-inc",
-            "name": "Jennmar Intermediate Holdings, Inc."
-          }
-        },
-        {
-          "name": "Jennmar Super Holdings, LLC",
-          "identifier_type": null,
-          "identifier": "412378602",
-          "party_page": {
-            "id": "jennmar-super-holdings-llc",
-            "name": "Jennmar Super Holdings, LLC"
-          }
-        }
-      ]
+        "Jennmar Intermediate Holdings, Inc.",
+        "Jennmar Super Holdings, LLC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-55005",
       "merger_name": "General Atlantic and CPP Investments led consortium - Boats Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "General Atlantic",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "general-atlantic",
-            "name": "General Atlantic"
-          }
-        },
-        {
-          "name": "Canada Pension Plan Investment Board",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "canada-pension-plan-investment-board",
-            "name": "Canada Pension Plan Investment Board"
-          }
-        }
+        "General Atlantic",
+        "Canada Pension Plan Investment Board"
       ],
       "targets": [
-        {
-          "name": "Boats Group Holdings, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "boats-group-holdings-inc",
-            "name": "Boats Group Holdings, Inc"
-          }
-        },
-        {
-          "name": "Bimini Holdings, LP",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "bimini-holdings-lp",
-            "name": "Bimini Holdings, LP"
-          }
-        }
-      ]
+        "Boats Group Holdings, Inc",
+        "Bimini Holdings, LP"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

@@ -143,90 +143,35 @@
     {
       "merger_id": "WA-95009",
       "merger_name": "McDonald\u2019s Australia \u2013 McDonald\u2019s Restaurants in Bankstown and Yagoona, NSW",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "MCDONALD'S AUSTRALIA LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "43 008 496 928",
-          "party_page": {
-            "id": "mcdonald-s-australia-limited",
-            "name": "Mcdonald'S Australia Limited"
-          }
-        }
+        "MCDONALD'S AUSTRALIA LIMITED"
       ],
       "targets": [
-        {
-          "name": "LVANT MECCA PTY LIMITED as trustee for CARMICHAEL FAMILY TRUST",
-          "identifier_type": "ACN",
-          "identifier": "601 504 590",
-          "party_page": {
-            "id": "lvant-mecca-pty-limited-as-trustee-for-carmichael-family-trust",
-            "name": "LVANT MECCA PTY LIMITED as trustee for CARMICHAEL FAMILY TRUST"
-          }
-        }
-      ]
+        "LVANT MECCA PTY LIMITED as trustee for CARMICHAEL FAMILY TRUST"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-10009",
       "merger_name": "SoftBank \u2013 DigitalBridge",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Duncan Holdco III LLC",
-          "identifier_type": null,
-          "identifier": "State of Delaware Company File Number  10510961",
-          "party_page": {
-            "id": "duncan-holdco-iii-llc",
-            "name": "Duncan Holdco III LLC"
-          }
-        }
+        "Duncan Holdco III LLC"
       ],
       "targets": [
-        {
-          "name": "DigitalBridge Group, Inc.",
-          "identifier_type": null,
-          "identifier": "IRS  464591526",
-          "party_page": {
-            "id": "digitalbridge-group-inc",
-            "name": "DigitalBridge Group, Inc."
-          }
-        }
-      ]
+        "DigitalBridge Group, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-40005",
       "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Henkel Global Supply Chain B.V.",
-          "identifier_type": null,
-          "identifier": "Netherlands registration number: 854017447, CCI 60683945",
-          "canonical": {
-            "id": "henkel-ag-co-kgaa",
-            "name": "Henkel"
-          },
-          "party_page": {
-            "id": "henkel-ag-co-kgaa",
-            "name": "Henkel"
-          }
-        }
+        "Henkel Global Supply Chain B.V."
       ],
       "targets": [
-        {
-          "name": "Aqua Adhesives I GmbH",
-          "identifier_type": null,
-          "identifier": "Swiss registration number: CH170.4.019.1870",
-          "party_page": {
-            "id": "aqua-adhesives-i-gmbh",
-            "name": "Aqua Adhesives I GmbH"
-          }
-        }
-      ]
+        "Aqua Adhesives I GmbH"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

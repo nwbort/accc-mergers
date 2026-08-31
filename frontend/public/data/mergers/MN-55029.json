@@ -129,103 +129,36 @@
     {
       "merger_id": "MN-35013",
       "merger_name": "Estia Health \u2013 Norsan residential aged care business",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ESTIA INVESTMENTS PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "87 164 350 387",
-          "canonical": {
-            "id": "estia-health-holdings-ltd",
-            "name": "Estia Health"
-          },
-          "party_page": {
-            "id": "estia-health-holdings-ltd",
-            "name": "Estia Health"
-          }
-        }
+        "ESTIA INVESTMENTS PTY. LTD."
       ],
       "targets": [
-        {
-          "name": "NORSAN PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "33 076 143 596",
-          "party_page": {
-            "id": "norsan-pty-ltd",
-            "name": "Norsan Pty Ltd"
-          }
-        }
-      ]
+        "NORSAN PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-50026",
       "merger_name": "Stonepeak-led consortium - Estia Health",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Wisdom BidCo Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "19 696 888 730",
-          "party_page": {
-            "id": "wisdom-bidco-pty-ltd",
-            "name": "Wisdom BidCo Pty Ltd"
-          }
-        }
+        "Wisdom BidCo Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Estia Health Holdings Ltd",
-          "identifier_type": "ABN",
-          "identifier": "47 669 884 244",
-          "canonical": {
-            "id": "estia-health-holdings-ltd",
-            "name": "Estia Health"
-          },
-          "party_page": {
-            "id": "estia-health-holdings-ltd",
-            "name": "Estia Health"
-          }
-        }
-      ]
+        "Estia Health Holdings Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-05017",
       "merger_name": "Tony White Group - Sharton Motors dealerships in Maitland, Port Stephens and Cardiff",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "TWG HUNTER DEALERSHIPS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "18 695 726 348",
-          "party_page": {
-            "id": "twg-hunter-dealerships-pty-ltd",
-            "name": "Twg Hunter Dealerships Pty Ltd"
-          }
-        }
+        "TWG HUNTER DEALERSHIPS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "SHARTON MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "55 001 345 384",
-          "party_page": {
-            "id": "sharton-motors-pty-ltd",
-            "name": "Sharton Motors Pty Ltd"
-          }
-        },
-        {
-          "name": "N&M Burton Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "125 935 944",
-          "party_page": {
-            "id": "n-m-burton-pty-ltd",
-            "name": "N&M Burton Pty Ltd"
-          }
-        }
-      ]
+        "SHARTON MOTORS PTY LTD",
+        "N&M Burton Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

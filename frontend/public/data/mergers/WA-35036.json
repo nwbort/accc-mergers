@@ -111,111 +111,36 @@
     {
       "merger_id": "WA-70009",
       "merger_name": "Infotrust \u2013 Catalyst Cyber",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "INFOTRUST LTD",
-          "identifier_type": "ABN",
-          "identifier": "73 089 224 402",
-          "party_page": {
-            "id": "infotrust-ltd",
-            "name": "Infotrust Ltd"
-          }
-        }
+        "INFOTRUST LTD"
       ],
       "targets": [
-        {
-          "name": "CATALYST CYBER PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "24 682 157 606",
-          "party_page": {
-            "id": "catalyst-cyber-pty-limited",
-            "name": "Catalyst Cyber Pty Limited"
-          }
-        }
-      ]
+        "CATALYST CYBER PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-50032",
       "merger_name": "Accenture - Dragos",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Accenture Venture Holdings, LLC",
-          "identifier_type": null,
-          "identifier": "Delaware registered number  10429510",
-          "canonical": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          },
-          "party_page": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          }
-        }
+        "Accenture Venture Holdings, LLC"
       ],
       "targets": [
-        {
-          "name": "Dragos, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware file number  6028773",
-          "canonical": {
-            "id": "dragos-inc",
-            "name": "Dragos"
-          },
-          "party_page": {
-            "id": "dragos-inc",
-            "name": "Dragos"
-          }
-        },
-        {
-          "name": "Phosphorus Security LLC",
-          "identifier_type": null,
-          "identifier": "Delaware file number  10549306",
-          "canonical": {
-            "id": "dragos-inc",
-            "name": "Dragos"
-          },
-          "party_page": {
-            "id": "dragos-inc",
-            "name": "Dragos"
-          }
-        }
-      ]
+        "Dragos, Inc.",
+        "Phosphorus Security LLC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-60031",
       "merger_name": "Accenture - runZero",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Accenture Venture Holdings, LLC",
-          "identifier_type": null,
-          "identifier": "Delaware file number  10429510",
-          "canonical": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          },
-          "party_page": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          }
-        }
+        "Accenture Venture Holdings, LLC"
       ],
       "targets": [
-        {
-          "name": "runZero, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware registered number  7045767",
-          "party_page": {
-            "id": "runzero-inc",
-            "name": "runZero, Inc."
-          }
-        }
-      ]
+        "runZero, Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

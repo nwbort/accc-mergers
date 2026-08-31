@@ -92,95 +92,36 @@
     {
       "merger_id": "MN-55003",
       "merger_name": "Symal Group - 80% acquisition of Davison Earthmovers",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "SYMAL GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "72 615 255 466",
-          "party_page": {
-            "id": "symal-group-limited",
-            "name": "Symal Group Limited"
-          }
-        }
+        "SYMAL GROUP LIMITED"
       ],
       "targets": [
-        {
-          "name": "J. DAVISON NOMINEES PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "70 007 998 969",
-          "party_page": {
-            "id": "j-davison-nominees-pty-ltd",
-            "name": "J. Davison Nominees Pty. Ltd."
-          }
-        },
-        {
-          "name": "DAVISON CONTRACTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "68 675 773 896",
-          "party_page": {
-            "id": "davison-contractors-pty-ltd",
-            "name": "Davison Contractors Pty Ltd"
-          }
-        }
-      ]
+        "J. DAVISON NOMINEES PTY. LTD.",
+        "DAVISON CONTRACTORS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-30009",
       "merger_name": "Daikin - AAMS Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AIRMASTER CORPORATION PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "26 133 652 749",
-          "party_page": {
-            "id": "airmaster-corporation-pty-ltd",
-            "name": "Airmaster Corporation Pty Ltd"
-          }
-        }
+        "AIRMASTER CORPORATION PTY LTD"
       ],
       "targets": [
-        {
-          "name": "DAMDAY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "53 128 071 965",
-          "party_page": {
-            "id": "damday-pty-ltd",
-            "name": "Damday Pty Ltd"
-          }
-        }
-      ]
+        "DAMDAY PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-95011",
       "merger_name": "Dubai Aerospace Enterprise - Macquarie AirFinance",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Dubai Aerospace Enterprise (DAE) Ltd",
-          "identifier_type": null,
-          "identifier": "DIFC  0170",
-          "party_page": {
-            "id": "dubai-aerospace-enterprise-dae-ltd",
-            "name": "Dubai Aerospace Enterprise (DAE) Ltd"
-          }
-        }
+        "Dubai Aerospace Enterprise (DAE) Ltd"
       ],
       "targets": [
-        {
-          "name": "Macquarie AirFinance Limited",
-          "identifier_type": null,
-          "identifier": "UK  11958743",
-          "party_page": {
-            "id": "macquarie-airfinance-limited",
-            "name": "Macquarie AirFinance Limited"
-          }
-        }
-      ]
+        "Macquarie AirFinance Limited"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

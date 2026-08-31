@@ -158,95 +158,35 @@
     {
       "merger_id": "WA-30026",
       "merger_name": "Count \u2013 O\u2019Brien Accountants & Advisors",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Count Limited",
-          "identifier_type": "ABN",
-          "identifier": "11 126 990 832",
-          "party_page": {
-            "id": "count-limited",
-            "name": "Count Limited"
-          }
-        }
+        "Count Limited"
       ],
       "targets": [
-        {
-          "name": "OBM Financial Services Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "629 954 981",
-          "party_page": {
-            "id": "obm-financial-services-pty-ltd",
-            "name": "OBM Financial Services Pty Ltd"
-          }
-        }
-      ]
+        "OBM Financial Services Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-05005",
       "merger_name": "Ironbark - Investment in Viola Private Wealth",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "IBWM PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 621 141 026",
-          "party_page": {
-            "id": "ibwm-pty-ltd",
-            "name": "Ibwm Pty Ltd"
-          }
-        }
+        "IBWM PTY LTD"
       ],
       "targets": [
-        {
-          "name": "VIOLA GROUP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "20 680 038 180",
-          "party_page": {
-            "id": "viola-group-holdings-pty-ltd",
-            "name": "Viola Group Holdings Pty Ltd"
-          }
-        }
-      ]
+        "VIOLA GROUP HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-65015",
       "merger_name": "Hillhouse - Barwon Investment Partners",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BARWON BIDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "23 695 060 907",
-          "party_page": {
-            "id": "barwon-bidco-pty-ltd",
-            "name": "Barwon Bidco Pty Ltd"
-          }
-        }
+        "BARWON BIDCO PTY LTD"
       ],
       "targets": [
-        {
-          "name": "BARWON INVESTMENT PARTNERS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "19 116 012 009",
-          "party_page": {
-            "id": "barwon-investment-partners-pty-ltd",
-            "name": "Barwon Investment Partners Pty Ltd"
-          }
-        },
-        {
-          "name": "",
-          "identifier_type": "ACN",
-          "identifier": "620 598 745",
-          "party_page": {
-            "id": "620598745",
-            "name": "620598745"
-          }
-        }
-      ]
+        "BARWON INVESTMENT PARTNERS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

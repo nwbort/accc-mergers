@@ -135,111 +135,36 @@
     {
       "merger_id": "WA-45013",
       "merger_name": "Australian Venue Co \u2013 assets of White Cockatoo Hotel, Petersham",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AVC OPERATIONS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "81 607 832 299",
-          "canonical": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          },
-          "party_page": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          }
-        }
+        "AVC OPERATIONS PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "Petersham Pub Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "620 159 757",
-          "party_page": {
-            "id": "petersham-pub-pty-ltd",
-            "name": "Petersham Pub Pty Ltd"
-          }
-        }
-      ]
+        "Petersham Pub Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-65007",
       "merger_name": "Australian Venue Co. \u2013 An Sibin Irish Pub",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AVC OPERATIONS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "81 607 832 299",
-          "canonical": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          },
-          "party_page": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          }
-        }
+        "AVC OPERATIONS PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "ASH PROMOTIONS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "41 601 281 510",
-          "party_page": {
-            "id": "ash-promotions-pty-ltd",
-            "name": "Ash Promotions Pty Ltd"
-          }
-        }
-      ]
+        "ASH PROMOTIONS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25005",
       "merger_name": "Australian Venue Co. \u2013 leasehold and certain other assets of Quay Restaurant, Sydney",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AVC OPERATIONS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "81 607 832 299",
-          "canonical": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          },
-          "party_page": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          }
-        },
-        {
-          "name": "Australian Venue Co. Holdings Limited",
-          "identifier_type": "ABN",
-          "identifier": "90 619 977 070",
-          "canonical": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          },
-          "party_page": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          }
-        }
+        "AVC OPERATIONS PTY LIMITED",
+        "Australian Venue Co. Holdings Limited"
       ],
       "targets": [
-        {
-          "name": "Q.R.A. PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "62 051 433 839",
-          "party_page": {
-            "id": "q-r-a-pty-limited",
-            "name": "Q.R.A. Pty Limited"
-          }
-        }
-      ]
+        "Q.R.A. PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

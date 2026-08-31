@@ -155,146 +155,39 @@
     {
       "merger_id": "WA-20026",
       "merger_name": "Oaktree \u2013 Vivax Metrotech",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Vector JV Bidco, Inc.",
-          "identifier_type": null,
-          "identifier": "10619273",
-          "party_page": {
-            "id": "vector-jv-bidco-inc",
-            "name": "Vector JV Bidco, Inc."
-          }
-        }
+        "Vector JV Bidco, Inc."
       ],
       "targets": [
-        {
-          "name": "Vivax Metrotech Sdn. Bhd.",
-          "identifier_type": null,
-          "identifier": "202401054941",
-          "canonical": {
-            "id": "vivax-metrotech",
-            "name": "Vivax Metrotech"
-          },
-          "party_page": {
-            "id": "vivax-metrotech",
-            "name": "Vivax Metrotech"
-          }
-        },
-        {
-          "name": "Vivax-Metrotech Ltd.",
-          "identifier_type": null,
-          "identifier": "08253003",
-          "canonical": {
-            "id": "vivax-metrotech",
-            "name": "Vivax Metrotech"
-          },
-          "party_page": {
-            "id": "vivax-metrotech",
-            "name": "Vivax Metrotech"
-          }
-        }
-      ]
+        "Vivax Metrotech Sdn. Bhd.",
+        "Vivax-Metrotech Ltd."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70033",
       "merger_name": "EQT Fund Management \u2013 Corza Biosurgery",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Ruby BidCo GmbH",
-          "identifier_type": null,
-          "identifier": "679581i",
-          "canonical": {
-            "id": "eqt-fund-management-s-r-l",
-            "name": "EQT Fund Management"
-          },
-          "party_page": {
-            "id": "eqt-fund-management-s-r-l",
-            "name": "EQT Fund Management"
-          }
-        },
-        {
-          "name": "Seal US Holdings Inc.",
-          "identifier_type": null,
-          "identifier": "10678816",
-          "canonical": {
-            "id": "eqt-fund-management-s-r-l",
-            "name": "EQT Fund Management"
-          },
-          "party_page": {
-            "id": "eqt-fund-management-s-r-l",
-            "name": "EQT Fund Management"
-          }
-        }
+        "Ruby BidCo GmbH",
+        "Seal US Holdings Inc."
       ],
       "targets": [
-        {
-          "name": "Corza Medical sp z.o.o.",
-          "identifier_type": null,
-          "identifier": "0000856259",
-          "canonical": {
-            "id": "corza-biosurgery",
-            "name": "Corza Biosurgery"
-          },
-          "party_page": {
-            "id": "corza-biosurgery",
-            "name": "Corza Biosurgery"
-          }
-        },
-        {
-          "name": "Corza Medical S.A.S",
-          "identifier_type": null,
-          "identifier": "891 013 914",
-          "canonical": {
-            "id": "corza-biosurgery",
-            "name": "Corza Biosurgery"
-          },
-          "party_page": {
-            "id": "corza-biosurgery",
-            "name": "Corza Biosurgery"
-          }
-        }
-      ]
+        "Corza Medical sp z.o.o.",
+        "Corza Medical S.A.S"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-80014",
       "merger_name": "ANZ Banking Group - Worldline Australia",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AUSTRALIA AND NEW ZEALAND BANKING GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "11 005 357 522",
-          "party_page": {
-            "id": "australia-and-new-zealand-banking-group-limited",
-            "name": "Australia And New Zealand Banking Group Limited"
-          }
-        }
+        "AUSTRALIA AND NEW ZEALAND BANKING GROUP LIMITED"
       ],
       "targets": [
-        {
-          "name": "Worldline SA",
-          "identifier_type": null,
-          "identifier": "VATIN FR01378901946",
-          "party_page": {
-            "id": "worldline-sa",
-            "name": "Worldline SA"
-          }
-        },
-        {
-          "name": "WORLDLINE AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "50 645 073 034",
-          "party_page": {
-            "id": "worldline-australia-pty-ltd",
-            "name": "Worldline Australia Pty Ltd"
-          }
-        }
-      ]
+        "Worldline SA",
+        "WORLDLINE AUSTRALIA PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

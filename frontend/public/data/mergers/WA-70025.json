@@ -119,104 +119,37 @@
     {
       "merger_id": "WA-40023",
       "merger_name": "AUB \u2013 further interest in KJ Risk",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AUSTBROKERS CORPORATE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "29 107 477 181",
-          "party_page": {
-            "id": "austbrokers-corporate-pty-ltd",
-            "name": "Austbrokers Corporate Pty Ltd"
-          }
-        }
+        "AUSTBROKERS CORPORATE PTY LTD"
       ],
       "targets": [
-        {
-          "name": "KJ RISK GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "15 143 512 387",
-          "party_page": {
-            "id": "kj-risk-group-pty-ltd",
-            "name": "Kj Risk Group Pty Ltd"
-          }
-        }
-      ]
+        "KJ RISK GROUP PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70002",
       "merger_name": "Ethos (TPG) \u2013 EMIS and certain related assets",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Ethos Bidco, Ltd",
-          "identifier_type": null,
-          "identifier": "UK Company Number: 16905190",
-          "party_page": {
-            "id": "ethos-bidco-ltd",
-            "name": "Ethos Bidco, Ltd"
-          }
-        }
+        "Ethos Bidco, Ltd"
       ],
       "targets": [
-        {
-          "name": "EMIS Group Limited",
-          "identifier_type": "ABN",
-          "identifier": "75 075 102 028",
-          "party_page": {
-            "id": "emis-group-limited",
-            "name": "EMIS Group Limited"
-          }
-        },
-        {
-          "name": "UnitedHealth Group Incorporated (UHG)",
-          "identifier_type": null,
-          "identifier": "US EIN  4113221939",
-          "party_page": {
-            "id": "unitedhealth-group-incorporated-uhg",
-            "name": "UnitedHealth Group Incorporated (UHG)"
-          }
-        }
-      ]
+        "EMIS Group Limited",
+        "UnitedHealth Group Incorporated (UHG)"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-85020",
       "merger_name": "Francisco Partners \u2013 Capsa Healthcare",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Catalyst Blocker Merger Sub I, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "catalyst-blocker-merger-sub-i-llc",
-            "name": "Catalyst Blocker Merger Sub I, LLC"
-          }
-        },
-        {
-          "name": "Catalyst Blocker Merger Sub II, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "catalyst-blocker-merger-sub-ii-llc",
-            "name": "Catalyst Blocker Merger Sub II, LLC"
-          }
-        }
+        "Catalyst Blocker Merger Sub I, LLC",
+        "Catalyst Blocker Merger Sub II, LLC"
       ],
       "targets": [
-        {
-          "name": "CSHC Buyerco, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "cshc-buyerco-llc",
-            "name": "CSHC Buyerco, LLC"
-          }
-        }
-      ]
+        "CSHC Buyerco, LLC"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

@@ -128,99 +128,35 @@
     {
       "merger_id": "WA-50023",
       "merger_name": "Hillhouse - MGI Dobbyn Carafa",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Ascentium AU Oxygen Holdings Ltd",
-          "identifier_type": null,
-          "identifier": "Company No: 415475",
-          "party_page": {
-            "id": "ascentium-au-oxygen-holdings-ltd",
-            "name": "Ascentium AU Oxygen Holdings Ltd"
-          }
-        }
+        "Ascentium AU Oxygen Holdings Ltd"
       ],
       "targets": [
-        {
-          "name": "MGI DOBBYN CARAFA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "53 121 160 138",
-          "party_page": {
-            "id": "mgi-dobbyn-carafa-pty-ltd",
-            "name": "Mgi Dobbyn Carafa Pty Ltd"
-          }
-        }
-      ]
+        "MGI DOBBYN CARAFA PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-65015",
       "merger_name": "Hillhouse - Barwon Investment Partners",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BARWON BIDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "23 695 060 907",
-          "party_page": {
-            "id": "barwon-bidco-pty-ltd",
-            "name": "Barwon Bidco Pty Ltd"
-          }
-        }
+        "BARWON BIDCO PTY LTD"
       ],
       "targets": [
-        {
-          "name": "BARWON INVESTMENT PARTNERS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "19 116 012 009",
-          "party_page": {
-            "id": "barwon-investment-partners-pty-ltd",
-            "name": "Barwon Investment Partners Pty Ltd"
-          }
-        },
-        {
-          "name": "",
-          "identifier_type": "ACN",
-          "identifier": "620 598 745",
-          "party_page": {
-            "id": "620598745",
-            "name": "620598745"
-          }
-        }
-      ]
+        "BARWON INVESTMENT PARTNERS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-75021",
       "merger_name": "Hillhouse - KMC Solutions",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Hermes Bidco Limited",
-          "identifier_type": null,
-          "identifier": "CR number  429985",
-          "canonical": {
-            "id": "hermes-bidco-limited",
-            "name": "Hermes Bidco Limited"
-          },
-          "party_page": {
-            "id": "hermes-bidco-limited",
-            "name": "Hermes Bidco Limited"
-          }
-        }
+        "Hermes Bidco Limited"
       ],
       "targets": [
-        {
-          "name": "KMC Solutions Hong Kong Limited",
-          "identifier_type": null,
-          "identifier": "Hong Kong CR number  2202455",
-          "party_page": {
-            "id": "kmc-solutions-hong-kong-limited",
-            "name": "KMC Solutions Hong Kong Limited"
-          }
-        }
-      ]
+        "KMC Solutions Hong Kong Limited"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

@@ -115,94 +115,35 @@
     {
       "merger_id": "MN-20013",
       "merger_name": "Eli Lilly - Orna Therapeutics",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Eli Lilly and Company",
-          "identifier_type": null,
-          "identifier": "IRS Employer Identification Number  350470950",
-          "canonical": {
-            "id": "eli-lilly-and-company",
-            "name": "Eli Lilly"
-          },
-          "party_page": {
-            "id": "eli-lilly-and-company",
-            "name": "Eli Lilly"
-          }
-        }
+        "Eli Lilly and Company"
       ],
       "targets": [
-        {
-          "name": "Orna Therapeutics Holdings, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "orna-therapeutics-holdings-llc-2",
-            "name": "Orna Therapeutics Holdings, LLC"
-          }
-        }
-      ]
+        "Orna Therapeutics Holdings, LLC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-01087",
       "merger_name": "Eli Lilly \u2013 Orna Therapeutics",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "Eli Lilly and Company",
-          "identifier_type": null,
-          "identifier": "IRS Employer Identification Number  350470950",
-          "canonical": {
-            "id": "eli-lilly-and-company",
-            "name": "Eli Lilly"
-          },
-          "party_page": {
-            "id": "eli-lilly-and-company",
-            "name": "Eli Lilly"
-          }
-        }
+        "Eli Lilly and Company"
       ],
       "targets": [
-        {
-          "name": "Orna Therapeutics Holdings, LLC",
-          "identifier_type": null,
-          "identifier": "IRS Employer Identification Number  861182936",
-          "party_page": {
-            "id": "orna-therapeutics-holdings-llc",
-            "name": "Orna Therapeutics Holdings, LLC"
-          }
-        }
-      ]
+        "Orna Therapeutics Holdings, LLC"
+      ],
+      "accc_determination": "Not approved"
     },
     {
       "merger_id": "MN-40009",
       "merger_name": "Gilead - Arcellx",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Gilead Sciences, Inc.",
-          "identifier_type": null,
-          "identifier": "EIN 943047598",
-          "party_page": {
-            "id": "gilead-sciences-inc",
-            "name": "Gilead Sciences, Inc."
-          }
-        }
+        "Gilead Sciences, Inc."
       ],
       "targets": [
-        {
-          "name": "Arcellx, Inc.",
-          "identifier_type": null,
-          "identifier": "EIN 472855917",
-          "party_page": {
-            "id": "arcellx-inc",
-            "name": "Arcellx, Inc."
-          }
-        }
-      ]
+        "Arcellx, Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

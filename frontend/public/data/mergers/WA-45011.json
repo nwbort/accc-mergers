@@ -141,99 +141,36 @@
     {
       "merger_id": "WA-10009",
       "merger_name": "SoftBank \u2013 DigitalBridge",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Duncan Holdco III LLC",
-          "identifier_type": null,
-          "identifier": "State of Delaware Company File Number  10510961",
-          "party_page": {
-            "id": "duncan-holdco-iii-llc",
-            "name": "Duncan Holdco III LLC"
-          }
-        }
+        "Duncan Holdco III LLC"
       ],
       "targets": [
-        {
-          "name": "DigitalBridge Group, Inc.",
-          "identifier_type": null,
-          "identifier": "IRS  464591526",
-          "party_page": {
-            "id": "digitalbridge-group-inc",
-            "name": "DigitalBridge Group, Inc."
-          }
-        }
-      ]
+        "DigitalBridge Group, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-05009",
       "merger_name": "Genea - Embrace Fertility",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Genea Bidco SA Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 694 458",
-          "canonical": {
-            "id": "genea",
-            "name": "Genea"
-          },
-          "party_page": {
-            "id": "genea",
-            "name": "Genea"
-          }
-        }
+        "Genea Bidco SA Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "EMBRACE FERTILITY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "84 135 918 580",
-          "party_page": {
-            "id": "embrace-fertility-pty-ltd",
-            "name": "Embrace Fertility Pty Ltd"
-          }
-        },
-        {
-          "name": "Histon Nelson Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "144 914 965",
-          "party_page": {
-            "id": "histon-nelson-pty-ltd",
-            "name": "Histon Nelson Pty Ltd"
-          }
-        }
-      ]
+        "EMBRACE FERTILITY PTY LTD",
+        "Histon Nelson Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-80002",
       "merger_name": "Bain Capital \u2013 MCJ",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BCPE Meta Cayman, L.P.",
-          "identifier_type": null,
-          "identifier": "MC135352",
-          "party_page": {
-            "id": "bcpe-meta-cayman-l-p",
-            "name": "BCPE Meta Cayman, L.P."
-          }
-        }
+        "BCPE Meta Cayman, L.P."
       ],
       "targets": [
-        {
-          "name": "MCJ Co., Ltd.",
-          "identifier_type": null,
-          "identifier": "9030001052005",
-          "party_page": {
-            "id": "mcj-co-ltd",
-            "name": "MCJ Co., Ltd."
-          }
-        }
-      ]
+        "MCJ Co., Ltd."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

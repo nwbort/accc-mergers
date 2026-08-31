@@ -138,104 +138,37 @@
     {
       "merger_id": "WA-60024",
       "merger_name": "Redwood Services Group \u2013 Newtrend I.T. Specialists",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "REDWOOD SERVICES GROUP AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "15 675 368 162",
-          "party_page": {
-            "id": "redwood-services-group-australia-pty-ltd",
-            "name": "Redwood Services Group Australia Pty Ltd"
-          }
-        }
+        "REDWOOD SERVICES GROUP AUSTRALIA PTY LTD"
       ],
       "targets": [
-        {
-          "name": "NEWTREND I.T. SPECIALISTS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "54 124 502 656",
-          "party_page": {
-            "id": "newtrend-i-t-specialists-pty-ltd",
-            "name": "Newtrend I.T. Specialists Pty Ltd"
-          }
-        }
-      ]
+        "NEWTREND I.T. SPECIALISTS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-65012",
       "merger_name": "Savvy Games Group \u2013 Moonton",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "East Gate Games Investment Company",
-          "identifier_type": "ABN",
-          "identifier": "39 275 633 205",
-          "party_page": {
-            "id": "east-gate-games-investment-company",
-            "name": "East Gate Games Investment Company"
-          }
-        }
+        "East Gate Games Investment Company"
       ],
       "targets": [
-        {
-          "name": "Moonton Holdings Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "moonton-holdings-limited",
-            "name": "Moonton Holdings Limited"
-          }
-        }
-      ]
+        "Moonton Holdings Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-40022",
       "merger_name": "Integris & related entities - First Focus",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Apollo Australia Bidco Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "697 230 096",
-          "party_page": {
-            "id": "apollo-australia-bidco-pty-ltd",
-            "name": "Apollo Australia Bidco Pty Ltd"
-          }
-        },
-        {
-          "name": "Apollo Australia Bidco Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "697 230 096",
-          "party_page": {
-            "id": "apollo-australia-bidco-pty-ltd",
-            "name": "Apollo Australia Bidco Pty Ltd"
-          }
-        }
+        "Apollo Australia Bidco Pty Ltd",
+        "Apollo Australia Bidco Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "FIRST FOCUS IT PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "73 106 912 350",
-          "party_page": {
-            "id": "first-focus-it-pty-limited",
-            "name": "First Focus It Pty Limited"
-          }
-        },
-        {
-          "name": "The Trustee for FUTURE FOCUS TRUST",
-          "identifier_type": "ABN",
-          "identifier": "22 698 604 264",
-          "party_page": {
-            "id": "the-trustee-for-future-focus-trust",
-            "name": "The Trustee for FUTURE FOCUS TRUST"
-          }
-        }
-      ]
+        "FIRST FOCUS IT PTY LIMITED",
+        "The Trustee for FUTURE FOCUS TRUST"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

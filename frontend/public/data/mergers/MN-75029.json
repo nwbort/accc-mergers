@@ -182,112 +182,37 @@
     {
       "merger_id": "WA-70023",
       "merger_name": "MLPL HoldCo \u2013 shares in Marinus Link Pty Ltd",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "The Treasurer of Victoria for and on behalf of the Crown in the right of the State of Victoria",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "the-treasurer-of-victoria-for-and-on-behalf-of-the-crown-in-the-right-of-the-sta",
-            "name": "The Treasurer of Victoria for and on behalf of the Crown in the right of the State of Victoria"
-          }
-        },
-        {
-          "name": "The Commonwealth of Australia",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "the-commonwealth-of-australia",
-            "name": "The Commonwealth of Australia"
-          }
-        }
+        "The Treasurer of Victoria for and on behalf of the Crown in the right of the State of Victoria",
+        "The Commonwealth of Australia"
       ],
       "targets": [
-        {
-          "name": "MARINUS LINK PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "47 630 194 562",
-          "party_page": {
-            "id": "marinus-link-pty-ltd",
-            "name": "Marinus Link Pty Ltd"
-          }
-        }
-      ]
+        "MARINUS LINK PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-35017",
       "merger_name": "KINETIC - DYSONS BUS SERVICES",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "KINETIC HOLDING COMPANY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "49 601 254 880",
-          "canonical": {
-            "id": "kinetic",
-            "name": "Kinetic"
-          },
-          "party_page": {
-            "id": "kinetic",
-            "name": "Kinetic"
-          }
-        }
+        "KINETIC HOLDING COMPANY PTY LTD"
       ],
       "targets": [
-        {
-          "name": "L.C. DYSON'S BUS SERVICES PROPRIETARY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "99 004 436 542",
-          "party_page": {
-            "id": "l-c-dyson-s-bus-services-proprietary-limited",
-            "name": "L.C. Dyson'S Bus Services Proprietary Limited"
-          }
-        }
-      ]
+        "L.C. DYSON'S BUS SERVICES PROPRIETARY LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-55012",
       "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Argo Bowen 2 Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 023 619",
-          "canonical": {
-            "id": "argo-qld-pty-ltd",
-            "name": "Mercuria Argo"
-          },
-          "party_page": {
-            "id": "argo-qld-pty-ltd",
-            "name": "Mercuria Argo"
-          }
-        }
+        "Argo Bowen 2 Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "LENTON MANAGEMENT AND MARKETING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "48 149 524 809",
-          "party_page": {
-            "id": "lenton-management-and-marketing-pty-ltd",
-            "name": "Lenton Management And Marketing Pty Ltd"
-          }
-        },
-        {
-          "name": "COKING COAL ONE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "89 615 317 907",
-          "party_page": {
-            "id": "coking-coal-one-pty-ltd",
-            "name": "Coking Coal One Pty Ltd"
-          }
-        }
-      ]
+        "LENTON MANAGEMENT AND MARKETING PTY LTD",
+        "COKING COAL ONE PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

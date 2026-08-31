@@ -201,117 +201,38 @@
     {
       "merger_id": "WA-25008",
       "merger_name": "Five V Capital - FTP Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OVERWATCH BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 739 970",
-          "party_page": {
-            "id": "overwatch-bidco-pty-ltd",
-            "name": "Overwatch Bidco Pty Ltd"
-          }
-        }
+        "OVERWATCH BIDCO PTY LTD"
       ],
       "targets": [
-        {
-          "name": "FTP GROUP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "82 626 217 614",
-          "party_page": {
-            "id": "ftp-group-holdings-pty-ltd",
-            "name": "Ftp Group Holdings Pty Ltd"
-          }
-        },
-        {
-          "name": "FAARM BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 834 390",
-          "canonical": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          },
-          "party_page": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          }
-        }
-      ]
+        "FTP GROUP HOLDINGS PTY LTD",
+        "FAARM BIDCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-95005",
       "merger_name": "HCLTech - Jaspersoft",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "HCL Technologies Limited",
-          "identifier_type": "ABN",
-          "identifier": "37 541 578 951",
-          "party_page": {
-            "id": "hcl-technologies-limited",
-            "name": "HCL Technologies Limited"
-          }
-        }
+        "HCL Technologies Limited"
       ],
       "targets": [
-        {
-          "name": "CLOUD SOFTWARE GROUP AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "94 092 002 321",
-          "party_page": {
-            "id": "cloud-software-group-australia-pty-ltd",
-            "name": "Cloud Software Group Australia Pty Ltd"
-          }
-        }
-      ]
+        "CLOUD SOFTWARE GROUP AUSTRALIA PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-05008",
       "merger_name": "HongShan Capital Group and Temasek \u2013 Golden Goose Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Rosa Investments Pte. Ltd.",
-          "identifier_type": null,
-          "identifier": "UEN 202340014H (Accounting and Corporate Regulatory Authority of Singapore)",
-          "party_page": {
-            "id": "rosa-investments-pte-ltd",
-            "name": "Rosa Investments Pte. Ltd."
-          }
-        },
-        {
-          "name": "GG12 S.p.A.",
-          "identifier_type": null,
-          "identifier": "14436160965 (Italy)",
-          "party_page": {
-            "id": "gg12-s-p-a",
-            "name": "GG12 S.p.A."
-          }
-        }
+        "Rosa Investments Pte. Ltd.",
+        "GG12 S.p.A."
       ],
       "targets": [
-        {
-          "name": "Permira VII Investment Platform Limited",
-          "identifier_type": null,
-          "identifier": "12263614 (UK Tax number)",
-          "party_page": {
-            "id": "permira-vii-investment-platform-limited",
-            "name": "Permira VII Investment Platform Limited"
-          }
-        },
-        {
-          "name": "Golden Goose Group S.p.A.",
-          "identifier_type": null,
-          "identifier": "11212510967 (Partita IVA \u2013 Italy)",
-          "party_page": {
-            "id": "golden-goose-group-s-p-a",
-            "name": "Golden Goose Group S.p.A."
-          }
-        }
-      ]
+        "Permira VII Investment Platform Limited",
+        "Golden Goose Group S.p.A."
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

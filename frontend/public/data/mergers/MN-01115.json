@@ -125,113 +125,38 @@
     {
       "merger_id": "WA-95024",
       "merger_name": "Carlyle \u2013 CHN Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Crystal Holdings Korea Co., Ltd.",
-          "identifier_type": null,
-          "identifier": "SKID  1201110153602",
-          "party_page": {
-            "id": "crystal-holdings-korea-co-ltd",
-            "name": "Crystal Holdings Korea Co., Ltd."
-          }
-        }
+        "Crystal Holdings Korea Co., Ltd."
       ],
       "targets": [
-        {
-          "name": "Chung Ho Nais Co., Ltd.",
-          "identifier_type": null,
-          "identifier": "SKID  1101111052482",
-          "party_page": {
-            "id": "chung-ho-nais-co-ltd",
-            "name": "Chung Ho Nais Co., Ltd."
-          }
-        },
-        {
-          "name": "MCM Co., Ltd.",
-          "identifier_type": null,
-          "identifier": "SKID  1543110025062",
-          "party_page": {
-            "id": "mcm-co-ltd",
-            "name": "MCM Co., Ltd."
-          }
-        }
-      ]
+        "Chung Ho Nais Co., Ltd.",
+        "MCM Co., Ltd."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-80009",
       "merger_name": "Mizuho \u2013 Avendus",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Mizuho Securities Co., Ltd.",
-          "identifier_type": null,
-          "identifier": "No. 94",
-          "party_page": {
-            "id": "mizuho-securities-co-ltd",
-            "name": "Mizuho Securities Co., Ltd."
-          }
-        }
+        "Mizuho Securities Co., Ltd."
       ],
       "targets": [
-        {
-          "name": "Redpoint Investments Pte Ltd",
-          "identifier_type": null,
-          "identifier": "201536795E",
-          "party_page": {
-            "id": "redpoint-investments-pte-ltd",
-            "name": "Redpoint Investments Pte Ltd"
-          }
-        },
-        {
-          "name": "Avendus Capital Private Limited",
-          "identifier_type": null,
-          "identifier": "CIN U99999MH1999PTC123358",
-          "party_page": {
-            "id": "avendus-capital-private-limited",
-            "name": "Avendus Capital Private Limited"
-          }
-        }
-      ]
+        "Redpoint Investments Pte Ltd",
+        "Avendus Capital Private Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-55013",
       "merger_name": "Lawrence & Hanson - Gordon Macdonald",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "LAWRENCE & HANSON GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "69 080 350 812",
-          "party_page": {
-            "id": "lawrence-hanson-group-pty-ltd",
-            "name": "Lawrence & Hanson Group Pty Ltd"
-          }
-        }
+        "LAWRENCE & HANSON GROUP PTY LTD"
       ],
       "targets": [
-        {
-          "name": "ROBYN DAN",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "robyn-dan",
-            "name": "Robyn Dan"
-          }
-        },
-        {
-          "name": "LYNETTE ROBYN VAN ECK",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "lynette-robyn-van-eck",
-            "name": "Lynette Robyn Van Eck"
-          }
-        }
-      ]
+        "ROBYN DAN",
+        "LYNETTE ROBYN VAN ECK"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

@@ -102,117 +102,38 @@
     {
       "merger_id": "MN-90015",
       "merger_name": "Impression Dental Group - Coastal Dental Care",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "GENERAL DENTAL HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "55 646 760 367",
-          "canonical": {
-            "id": "general-dental-holdings-pty-ltd",
-            "name": "General Dental Holdings"
-          },
-          "party_page": {
-            "id": "general-dental-holdings-pty-ltd",
-            "name": "General Dental Holdings"
-          }
-        }
+        "GENERAL DENTAL HOLDINGS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "COASTAL DENTAL CARE AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "39 617 360 460",
-          "party_page": {
-            "id": "coastal-dental-care-australia-pty-ltd",
-            "name": "Coastal Dental Care Australia Pty Ltd"
-          }
-        },
-        {
-          "name": "The Trustee for FRANCK PAGE #3 TRUST",
-          "identifier_type": "ABN",
-          "identifier": "65 158 640 539",
-          "party_page": {
-            "id": "the-trustee-for-franck-page-3-trust",
-            "name": "The Trustee for FRANCK PAGE #3 TRUST"
-          }
-        }
-      ]
+        "COASTAL DENTAL CARE AUSTRALIA PTY LTD",
+        "The Trustee for FRANCK PAGE #3 TRUST"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-01100",
       "merger_name": "Ochre Health - Airlie Women's Clinic, VIC",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Ochre Health Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "79 101 069 452",
-          "party_page": {
-            "id": "ochre-health-pty-limited",
-            "name": "Ochre Health Pty Limited"
-          }
-        },
-        {
-          "name": "Ochre Group Commercial Property Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "645 244 882",
-          "party_page": {
-            "id": "ochre-group-commercial-property-pty-ltd",
-            "name": "Ochre Group Commercial Property Pty Ltd"
-          }
-        }
+        "Ochre Health Pty Limited",
+        "Ochre Group Commercial Property Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Airlie Womens Clinic Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "55 603 753 395",
-          "party_page": {
-            "id": "airlie-womens-clinic-pty-ltd",
-            "name": "Airlie Womens Clinic Pty Ltd"
-          }
-        }
-      ]
+        "Airlie Womens Clinic Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-15012",
       "merger_name": "Ochre Health - Telegraph Road Clinic, Bracken Ridge QLD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OCHRE HEALTH PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "79 101 069 452",
-          "party_page": {
-            "id": "ochre-health-pty-limited",
-            "name": "Ochre Health Pty Limited"
-          }
-        }
+        "OCHRE HEALTH PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "TELEGRAPH ROAD MEDICAL SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "53 107 416 080",
-          "party_page": {
-            "id": "telegraph-road-medical-services-pty-ltd",
-            "name": "Telegraph Road Medical Services Pty Ltd"
-          }
-        },
-        {
-          "name": "The Trustee for TELEGRAPH ROAD MEDICAL SERVICES UNIT TRUST",
-          "identifier_type": "ABN",
-          "identifier": "94 428 158 606",
-          "party_page": {
-            "id": "the-trustee-for-telegraph-road-medical-services-unit-trust",
-            "name": "The Trustee for TELEGRAPH ROAD MEDICAL SERVICES UNIT TRUST"
-          }
-        }
-      ]
+        "TELEGRAPH ROAD MEDICAL SERVICES PTY LTD",
+        "The Trustee for TELEGRAPH ROAD MEDICAL SERVICES UNIT TRUST"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

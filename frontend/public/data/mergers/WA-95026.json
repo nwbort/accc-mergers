@@ -144,120 +144,37 @@
     {
       "merger_id": "WA-40030",
       "merger_name": "Telstra \u2013 indefeasible rights over dark fibre on Tabua, Proa and Bulikula subsea cables",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "TELSTRA AUSTRALIA NETWORKS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "58 100 816 206",
-          "canonical": {
-            "id": "telstra-limited",
-            "name": "Telstra"
-          },
-          "party_page": {
-            "id": "telstra-limited",
-            "name": "Telstra"
-          }
-        },
-        {
-          "name": "TELSTRA INTERNATIONAL NETWORKS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "56 142 220 157",
-          "canonical": {
-            "id": "telstra-limited",
-            "name": "Telstra"
-          },
-          "party_page": {
-            "id": "telstra-limited",
-            "name": "Telstra"
-          }
-        }
+        "TELSTRA AUSTRALIA NETWORKS PTY LIMITED",
+        "TELSTRA INTERNATIONAL NETWORKS PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "Manta Ray Solutions LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "manta-ray-solutions-llc",
-            "name": "Manta Ray Solutions LLC"
-          }
-        },
-        {
-          "name": "PERCH INFRASTRUCTURE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "24 672 742 166",
-          "party_page": {
-            "id": "perch-infrastructure-pty-ltd",
-            "name": "Perch Infrastructure Pty Ltd"
-          }
-        }
-      ]
+        "Manta Ray Solutions LLC",
+        "PERCH INFRASTRUCTURE PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-20007",
       "merger_name": "Telstra \u2013 Infosys Technologies",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "TELSTRA LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "64 086 174 781",
-          "canonical": {
-            "id": "telstra-limited",
-            "name": "Telstra"
-          },
-          "party_page": {
-            "id": "telstra-limited",
-            "name": "Telstra"
-          }
-        }
+        "TELSTRA LIMITED"
       ],
       "targets": [
-        {
-          "name": "INFOSYS TECHNOLOGIES LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "52 090 591 209",
-          "party_page": {
-            "id": "infosys-technologies-limited",
-            "name": "Infosys Technologies Limited"
-          }
-        }
-      ]
+        "INFOSYS TECHNOLOGIES LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-15002",
       "merger_name": "Google - Wiz",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Google LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "google-llc",
-            "name": "Google"
-          },
-          "party_page": {
-            "id": "google-llc",
-            "name": "Google"
-          }
-        }
+        "Google LLC"
       ],
       "targets": [
-        {
-          "name": "Wiz Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "wiz-inc",
-            "name": "Wiz Inc"
-          }
-        }
-      ]
+        "Wiz Inc"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

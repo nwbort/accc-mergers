@@ -77,99 +77,36 @@
     {
       "merger_id": "MN-60011",
       "merger_name": "Barro Group - BQC Quarries and Burdekin Concrete",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BQC Group Pty Ltd [yet to be incorporated]",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "bqc-group-pty-ltd-yet-to-be-incorporated",
-            "name": "BQC Group Pty Ltd [yet to be incorporated]"
-          }
-        }
+        "BQC Group Pty Ltd [yet to be incorporated]"
       ],
       "targets": [
-        {
-          "name": "M&T Populin Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "092 648 078",
-          "party_page": {
-            "id": "m-t-populin-pty-ltd",
-            "name": "M&T Populin Pty Ltd"
-          }
-        },
-        {
-          "name": "BQC Registrations Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "613 361 041",
-          "party_page": {
-            "id": "bqc-registrations-pty-ltd",
-            "name": "BQC Registrations Pty Ltd"
-          }
-        }
-      ]
+        "M&T Populin Pty Ltd",
+        "BQC Registrations Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-05014",
       "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Smile Partners (NSW3) Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 902 955",
-          "party_page": {
-            "id": "smile-partners-nsw3-pty-ltd",
-            "name": "Smile Partners (NSW3) Pty Ltd"
-          }
-        }
+        "Smile Partners (NSW3) Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Shrika Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "108 757 357",
-          "canonical": {
-            "id": "shrika-pty-ltd",
-            "name": "Shrika Pty Ltd"
-          },
-          "party_page": {
-            "id": "shrika-pty-ltd",
-            "name": "Shrika Pty Ltd"
-          }
-        }
-      ]
+        "Shrika Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-90011",
       "merger_name": "Salter Brothers - Buroserv",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BUROSERV TELCO HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "17 690 175 770",
-          "party_page": {
-            "id": "buroserv-telco-holdings-pty-ltd",
-            "name": "Buroserv Telco Holdings Pty Ltd"
-          }
-        }
+        "BUROSERV TELCO HOLDINGS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "LMGPS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "48 612 519 178",
-          "party_page": {
-            "id": "lmgps-pty-ltd",
-            "name": "Lmgps Pty Ltd"
-          }
-        }
-      ]
+        "LMGPS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

@@ -139,99 +139,36 @@
     {
       "merger_id": "WA-10023",
       "merger_name": "Infoblox \u2013 Kentik Technologies",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Infoblox Inc.",
-          "identifier_type": null,
-          "identifier": "3662067",
-          "party_page": {
-            "id": "infoblox-inc",
-            "name": "Infoblox Inc."
-          }
-        }
+        "Infoblox Inc."
       ],
       "targets": [
-        {
-          "name": "Kentik Technologies, Inc",
-          "identifier_type": null,
-          "identifier": "5468887",
-          "party_page": {
-            "id": "kentik-technologies-inc",
-            "name": "Kentik Technologies, Inc"
-          }
-        }
-      ]
+        "Kentik Technologies, Inc"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-75006",
       "merger_name": "Playlist \u2013 EGYM",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Saturn NewCo, Inc",
-          "identifier_type": null,
-          "identifier": "DE File number: 10449592",
-          "party_page": {
-            "id": "saturn-newco-inc",
-            "name": "Saturn NewCo, Inc"
-          }
-        },
-        {
-          "name": "ClassPass Aggregator, LLC",
-          "identifier_type": null,
-          "identifier": "DE File number: 6177870",
-          "party_page": {
-            "id": "classpass-aggregator-llc",
-            "name": "ClassPass Aggregator, LLC"
-          }
-        }
+        "Saturn NewCo, Inc",
+        "ClassPass Aggregator, LLC"
       ],
       "targets": [
-        {
-          "name": "EGYM SE",
-          "identifier_type": null,
-          "identifier": "HRB: 186394",
-          "party_page": {
-            "id": "egym-se",
-            "name": "Egym Se"
-          }
-        }
-      ]
+        "EGYM SE"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-45024",
       "merger_name": "OEConnection - Epyx",
-      "status": "Under assessment",
-      "accc_determination": null,
       "acquirers": [
-        {
-          "name": "OEC Bidco Limited",
-          "identifier_type": null,
-          "identifier": "17225784",
-          "canonical": {
-            "id": "oeconnection",
-            "name": "OEConnection"
-          },
-          "party_page": {
-            "id": "oeconnection",
-            "name": "OEConnection"
-          }
-        }
+        "OEC Bidco Limited"
       ],
       "targets": [
-        {
-          "name": "Quadrum Investments Group Ltd (trading as \"Epyx\")",
-          "identifier_type": null,
-          "identifier": "06861230",
-          "party_page": {
-            "id": "quadrum-investments-group-ltd-trading-as-epyx",
-            "name": "Quadrum Investments Group Ltd (trading as \"Epyx\")"
-          }
-        }
-      ]
+        "Quadrum Investments Group Ltd (trading as \"Epyx\")"
+      ],
+      "status": "Under assessment"
     }
   ],
   "phase_1_estimate": {

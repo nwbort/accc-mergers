@@ -155,139 +155,40 @@
     {
       "merger_id": "WA-10011",
       "merger_name": "Wentworth Capital \u2013 Novotel Darling Harbour and Ibis Darling Harbour",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Wentworth Inn Prop TC Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 488 263",
-          "party_page": {
-            "id": "wentworth-inn-prop-tc-pty-ltd",
-            "name": "Wentworth Inn Prop TC Pty Ltd"
-          }
-        },
-        {
-          "name": "Wentworth Inn OpCo II Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 554 262",
-          "party_page": {
-            "id": "wentworth-inn-opco-ii-pty-ltd",
-            "name": "Wentworth Inn OpCo II Pty Ltd"
-          }
-        }
+        "Wentworth Inn Prop TC Pty Ltd",
+        "Wentworth Inn OpCo II Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "THE TRUST COMPANY (AUSTRALIA) LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "21 000 000 993",
-          "canonical": {
-            "id": "the-trust-company-australia-limited",
-            "name": "The Trust Company (Australia) Limited"
-          },
-          "party_page": {
-            "id": "the-trust-company-australia-limited",
-            "name": "The Trust Company (Australia) Limited"
-          }
-        },
-        {
-          "name": "PEARL HOTELS D 1993 PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "25 060 896 568",
-          "party_page": {
-            "id": "pearl-hotels-d-1993-pty-limited",
-            "name": "Pearl Hotels D 1993 Pty Limited"
-          }
-        }
-      ]
+        "THE TRUST COMPANY (AUSTRALIA) LIMITED",
+        "PEARL HOTELS D 1993 PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-80015",
       "merger_name": "Star Hotels Group - Shafston Hotel, QLD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "SCHF PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 644 329 733",
-          "party_page": {
-            "id": "schf-pty-ltd",
-            "name": "Schf Pty Ltd"
-          }
-        },
-        {
-          "name": "MH SOUTH BRISBANE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "73 601 843 485",
-          "party_page": {
-            "id": "mh-south-brisbane-pty-ltd",
-            "name": "Mh South Brisbane Pty Ltd"
-          }
-        }
+        "SCHF PTY LTD",
+        "MH SOUTH BRISBANE PTY LTD"
       ],
       "targets": [
-        {
-          "name": "The Trustee for Fat Shaft Operating Unit Trust",
-          "identifier_type": "ABN",
-          "identifier": "22 173 424 812",
-          "party_page": {
-            "id": "the-trustee-for-fat-shaft-operating-unit-trust",
-            "name": "The Trustee for Fat Shaft Operating Unit Trust"
-          }
-        },
-        {
-          "name": "The Trustee for Fat Shaft Property Unit Trust",
-          "identifier_type": "ABN",
-          "identifier": "15 988 283 479",
-          "party_page": {
-            "id": "the-trustee-for-fat-shaft-property-unit-trust",
-            "name": "The Trustee for Fat Shaft Property Unit Trust"
-          }
-        }
-      ]
+        "The Trustee for Fat Shaft Operating Unit Trust",
+        "The Trustee for Fat Shaft Property Unit Trust"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-10006",
       "merger_name": "Australian Venue Co. \u2013 four licensed venues in metropolitan Sydney (Public House Petersham, The Erko, The Golden Sheaf and Barangaroo House)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AVC Operations Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "81 607 832 299",
-          "canonical": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          },
-          "party_page": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          }
-        }
+        "AVC Operations Pty Limited"
       ],
       "targets": [
-        {
-          "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
-          "identifier_type": "ABN",
-          "identifier": "70 075 074 930",
-          "party_page": {
-            "id": "sherilyn-pty-limited-as-trustee-for-solotrust-unit-trust",
-            "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust"
-          }
-        },
-        {
-          "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust",
-          "identifier_type": "ACN",
-          "identifier": "604 221 801",
-          "party_page": {
-            "id": "barangaroo-pty-limited-as-trustee-for-barangaroo-trust",
-            "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust"
-          }
-        }
-      ]
+        "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
+        "Barangaroo Pty Limited as trustee for Barangaroo Trust"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

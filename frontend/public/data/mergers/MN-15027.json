@@ -117,104 +117,37 @@
     {
       "merger_id": "WA-85022",
       "merger_name": "PH Medical Centres - Riverstone Family Medical Practice",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "PH MEDICAL CENTRES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "84 615 268 043",
-          "party_page": {
-            "id": "ph-medical-centres-pty-ltd",
-            "name": "Ph Medical Centres Pty Ltd"
-          }
-        }
+        "PH MEDICAL CENTRES PTY LTD"
       ],
       "targets": [
-        {
-          "name": "RIVERSTONE GP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "34 651 255 319",
-          "party_page": {
-            "id": "riverstone-gp-pty-ltd",
-            "name": "Riverstone Gp Pty Ltd"
-          }
-        }
-      ]
+        "RIVERSTONE GP PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-15012",
       "merger_name": "Ochre Health - Telegraph Road Clinic, Bracken Ridge QLD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OCHRE HEALTH PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "79 101 069 452",
-          "party_page": {
-            "id": "ochre-health-pty-limited",
-            "name": "Ochre Health Pty Limited"
-          }
-        }
+        "OCHRE HEALTH PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "TELEGRAPH ROAD MEDICAL SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "53 107 416 080",
-          "party_page": {
-            "id": "telegraph-road-medical-services-pty-ltd",
-            "name": "Telegraph Road Medical Services Pty Ltd"
-          }
-        },
-        {
-          "name": "The Trustee for TELEGRAPH ROAD MEDICAL SERVICES UNIT TRUST",
-          "identifier_type": "ABN",
-          "identifier": "94 428 158 606",
-          "party_page": {
-            "id": "the-trustee-for-telegraph-road-medical-services-unit-trust",
-            "name": "The Trustee for TELEGRAPH ROAD MEDICAL SERVICES UNIT TRUST"
-          }
-        }
-      ]
+        "TELEGRAPH ROAD MEDICAL SERVICES PTY LTD",
+        "The Trustee for TELEGRAPH ROAD MEDICAL SERVICES UNIT TRUST"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-01100",
       "merger_name": "Ochre Health - Airlie Women's Clinic, VIC",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Ochre Health Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "79 101 069 452",
-          "party_page": {
-            "id": "ochre-health-pty-limited",
-            "name": "Ochre Health Pty Limited"
-          }
-        },
-        {
-          "name": "Ochre Group Commercial Property Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "645 244 882",
-          "party_page": {
-            "id": "ochre-group-commercial-property-pty-ltd",
-            "name": "Ochre Group Commercial Property Pty Ltd"
-          }
-        }
+        "Ochre Health Pty Limited",
+        "Ochre Group Commercial Property Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Airlie Womens Clinic Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "55 603 753 395",
-          "party_page": {
-            "id": "airlie-womens-clinic-pty-ltd",
-            "name": "Airlie Womens Clinic Pty Ltd"
-          }
-        }
-      ]
+        "Airlie Womens Clinic Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

@@ -162,121 +162,38 @@
     {
       "merger_id": "WA-60008",
       "merger_name": "Warburg Pincus \u2013 Acclime",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Achronite Bidco Ltd",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "achronite-bidco-ltd",
-            "name": "Achronite Bidco Ltd"
-          }
-        }
+        "Achronite Bidco Ltd"
       ],
       "targets": [
-        {
-          "name": "Acclime Holdings HK Limited",
-          "identifier_type": null,
-          "identifier": "BRN  70084973",
-          "canonical": {
-            "id": "acclime-holdings-limited",
-            "name": "Acclime"
-          },
-          "party_page": {
-            "id": "acclime-holdings-limited",
-            "name": "Acclime"
-          }
-        },
-        {
-          "name": "Acclime Holdings Limited",
-          "identifier_type": null,
-          "identifier": "BRN  70084973",
-          "canonical": {
-            "id": "acclime-holdings-limited",
-            "name": "Acclime"
-          },
-          "party_page": {
-            "id": "acclime-holdings-limited",
-            "name": "Acclime"
-          }
-        }
-      ]
+        "Acclime Holdings HK Limited",
+        "Acclime Holdings Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-55005",
       "merger_name": "General Atlantic and CPP Investments led consortium - Boats Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "General Atlantic",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "general-atlantic",
-            "name": "General Atlantic"
-          }
-        },
-        {
-          "name": "Canada Pension Plan Investment Board",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "canada-pension-plan-investment-board",
-            "name": "Canada Pension Plan Investment Board"
-          }
-        }
+        "General Atlantic",
+        "Canada Pension Plan Investment Board"
       ],
       "targets": [
-        {
-          "name": "Boats Group Holdings, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "boats-group-holdings-inc",
-            "name": "Boats Group Holdings, Inc"
-          }
-        },
-        {
-          "name": "Bimini Holdings, LP",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "bimini-holdings-lp",
-            "name": "Bimini Holdings, LP"
-          }
-        }
-      ]
+        "Boats Group Holdings, Inc",
+        "Bimini Holdings, LP"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-75010",
       "merger_name": "Zendesk \u2013 Forethought",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Zendesk, Inc.",
-          "identifier_type": null,
-          "identifier": "EIN 264411091",
-          "party_page": {
-            "id": "zendesk-inc",
-            "name": "Zendesk, Inc."
-          }
-        }
+        "Zendesk, Inc."
       ],
       "targets": [
-        {
-          "name": "Forethought Technologies, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "forethought-technologies-inc",
-            "name": "Forethought Technologies, Inc."
-          }
-        }
-      ]
+        "Forethought Technologies, Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

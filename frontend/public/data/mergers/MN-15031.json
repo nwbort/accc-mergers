@@ -85,111 +85,36 @@
     {
       "merger_id": "MN-15011",
       "merger_name": "Danaher - Masimo",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Danaher Corporation",
-          "identifier_type": null,
-          "identifier": "213594",
-          "canonical": {
-            "id": "danaher-corporation",
-            "name": "Danaher Corporation"
-          },
-          "party_page": {
-            "id": "danaher-corporation",
-            "name": "Danaher Corporation"
-          }
-        }
+        "Danaher Corporation"
       ],
       "targets": [
-        {
-          "name": "Masimo Corporation",
-          "identifier_type": null,
-          "identifier": "2614702",
-          "party_page": {
-            "id": "masimo-corporation",
-            "name": "Masimo Corporation"
-          }
-        }
-      ]
+        "Masimo Corporation"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25033",
       "merger_name": "Bain Capital \u2013 FDH",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BCPE Lightning Buyer, Inc.",
-          "identifier_type": null,
-          "identifier": "US incorporation number  10644291",
-          "party_page": {
-            "id": "bcpe-lightning-buyer-inc",
-            "name": "BCPE Lightning Buyer, Inc."
-          }
-        }
+        "BCPE Lightning Buyer, Inc."
       ],
       "targets": [
-        {
-          "name": "FDH Group Intermediate Holdings, LP",
-          "identifier_type": null,
-          "identifier": "US incorporation number  6336375",
-          "canonical": {
-            "id": "fdh-group",
-            "name": "FDH Group"
-          },
-          "party_page": {
-            "id": "fdh-group",
-            "name": "FDH Group"
-          }
-        },
-        {
-          "name": "FDH Group Intermediate, Inc.",
-          "identifier_type": null,
-          "identifier": "US incorporation number  6310370",
-          "canonical": {
-            "id": "fdh-group",
-            "name": "FDH Group"
-          },
-          "party_page": {
-            "id": "fdh-group",
-            "name": "FDH Group"
-          }
-        }
-      ]
+        "FDH Group Intermediate Holdings, LP",
+        "FDH Group Intermediate, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-85025",
       "merger_name": "Francisco Partners - Blackline Safety",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Apollo Purchaser, Inc.",
-          "identifier_type": null,
-          "identifier": "Registration number 2027954573",
-          "party_page": {
-            "id": "apollo-purchaser-inc",
-            "name": "Apollo Purchaser, Inc."
-          }
-        }
+        "Apollo Purchaser, Inc."
       ],
       "targets": [
-        {
-          "name": "Blackline Safety Corp.",
-          "identifier_type": null,
-          "identifier": "Corporate access number 2016380855 and business number 860968577",
-          "canonical": {
-            "id": "blackline-safety-corp",
-            "name": "Blackline Safety Corp."
-          },
-          "party_page": {
-            "id": "blackline-safety-corp",
-            "name": "Blackline Safety Corp."
-          }
-        }
-      ]
+        "Blackline Safety Corp."
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

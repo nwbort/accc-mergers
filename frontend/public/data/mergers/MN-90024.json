@@ -130,104 +130,37 @@
     {
       "merger_id": "WA-05005",
       "merger_name": "Ironbark - Investment in Viola Private Wealth",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "IBWM PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 621 141 026",
-          "party_page": {
-            "id": "ibwm-pty-ltd",
-            "name": "Ibwm Pty Ltd"
-          }
-        }
+        "IBWM PTY LTD"
       ],
       "targets": [
-        {
-          "name": "VIOLA GROUP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "20 680 038 180",
-          "party_page": {
-            "id": "viola-group-holdings-pty-ltd",
-            "name": "Viola Group Holdings Pty Ltd"
-          }
-        }
-      ]
+        "VIOLA GROUP HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-70014",
       "merger_name": "Global Infrastructure Management \u2013 TCR",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "GIP V Snow Bidco Limited",
-          "identifier_type": null,
-          "identifier": "UK company number  17059583",
-          "party_page": {
-            "id": "gip-v-snow-bidco-limited",
-            "name": "GIP V Snow Bidco Limited"
-          }
-        }
+        "GIP V Snow Bidco Limited"
       ],
       "targets": [
-        {
-          "name": "Envol Holdings Limited",
-          "identifier_type": null,
-          "identifier": "Jersey registration number  121115",
-          "party_page": {
-            "id": "envol-holdings-limited",
-            "name": "Envol Holdings Limited"
-          }
-        }
-      ]
+        "Envol Holdings Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-85006",
       "merger_name": "Tega and Apollo Funds consortium - Molycop",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Tega MC SG Holdings Pte. Ltd.",
-          "identifier_type": null,
-          "identifier": "202551682E",
-          "party_page": {
-            "id": "tega-mc-sg-holdings-pte-ltd",
-            "name": "Tega MC SG Holdings Pte. Ltd."
-          }
-        },
-        {
-          "name": "Tega MC Australia Holdings Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "16 147 692 840",
-          "party_page": {
-            "id": "tega-mc-australia-holdings-pty-ltd",
-            "name": "Tega MC Australia Holdings Pty Ltd"
-          }
-        }
+        "Tega MC SG Holdings Pte. Ltd.",
+        "Tega MC Australia Holdings Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Orway IQ Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "52 631 359 370",
-          "party_page": {
-            "id": "orway-iq-pty-ltd",
-            "name": "Orway IQ Pty Ltd"
-          }
-        },
-        {
-          "name": "Molycop Technologies Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "85 154 346 004",
-          "party_page": {
-            "id": "molycop-technologies-pty-ltd",
-            "name": "Molycop Technologies Pty Ltd"
-          }
-        }
-      ]
+        "Orway IQ Pty Ltd",
+        "Molycop Technologies Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

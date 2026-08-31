@@ -127,116 +127,37 @@
     {
       "merger_id": "WA-40010",
       "merger_name": "Permira and Warburg Pincus - Clearwater Analytics",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "GT Silver BidCo, Inc.",
-          "identifier_type": null,
-          "identifier": "413417606",
-          "party_page": {
-            "id": "gt-silver-bidco-inc",
-            "name": "GT Silver BidCo, Inc."
-          }
-        }
+        "GT Silver BidCo, Inc."
       ],
       "targets": [
-        {
-          "name": "Clearwater Analytics Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "00140838",
-          "canonical": {
-            "id": "clearwater-analytics-llc",
-            "name": "Clearwater Analytics"
-          },
-          "party_page": {
-            "id": "clearwater-analytics-llc",
-            "name": "Clearwater Analytics"
-          }
-        }
-      ]
+        "Clearwater Analytics Holdings, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-60008",
       "merger_name": "Warburg Pincus \u2013 Acclime",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Achronite Bidco Ltd",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "achronite-bidco-ltd",
-            "name": "Achronite Bidco Ltd"
-          }
-        }
+        "Achronite Bidco Ltd"
       ],
       "targets": [
-        {
-          "name": "Acclime Holdings HK Limited",
-          "identifier_type": null,
-          "identifier": "BRN  70084973",
-          "canonical": {
-            "id": "acclime-holdings-limited",
-            "name": "Acclime"
-          },
-          "party_page": {
-            "id": "acclime-holdings-limited",
-            "name": "Acclime"
-          }
-        },
-        {
-          "name": "Acclime Holdings Limited",
-          "identifier_type": null,
-          "identifier": "BRN  70084973",
-          "canonical": {
-            "id": "acclime-holdings-limited",
-            "name": "Acclime"
-          },
-          "party_page": {
-            "id": "acclime-holdings-limited",
-            "name": "Acclime"
-          }
-        }
-      ]
+        "Acclime Holdings HK Limited",
+        "Acclime Holdings Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70010",
       "merger_name": "Waymark Hotels Group \u2013 Warrego Hotel Motel Cunnamulla, Queensland",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Waymark Hotels Properties No 42 Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "692 820 143",
-          "party_page": {
-            "id": "waymark-hotels-properties-no-42-pty-ltd",
-            "name": "Waymark Hotels Properties No 42 Pty Ltd"
-          }
-        },
-        {
-          "name": "WARREGO OP CO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "29 692 796 697",
-          "party_page": {
-            "id": "warrego-op-co-pty-ltd",
-            "name": "Warrego Op Co Pty Ltd"
-          }
-        }
+        "Waymark Hotels Properties No 42 Pty Ltd",
+        "WARREGO OP CO PTY LTD"
       ],
       "targets": [
-        {
-          "name": "G.A.A. Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "131 680 790",
-          "party_page": {
-            "id": "g-a-a-pty-ltd",
-            "name": "G.A.A. Pty Ltd"
-          }
-        }
-      ]
+        "G.A.A. Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

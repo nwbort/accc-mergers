@@ -138,116 +138,37 @@
     {
       "merger_id": "WA-35001",
       "merger_name": "WSP \u2013 TRC",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "WSP Global Inc.",
-          "identifier_type": null,
-          "identifier": "Corporation No.: 7748388",
-          "canonical": {
-            "id": "wsp-australia-pty-limited",
-            "name": "Wsp Australia Pty Limited"
-          },
-          "party_page": {
-            "id": "wsp-australia-pty-limited",
-            "name": "Wsp Australia Pty Limited"
-          }
-        }
+        "WSP Global Inc."
       ],
       "targets": [
-        {
-          "name": "TRC Companies, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "trc-companies-inc",
-            "name": "TRC Companies, Inc."
-          }
-        }
-      ]
+        "TRC Companies, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-35014",
       "merger_name": "News Corp \u2013 acquisition of 20% of National Distribution Services",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "NEWS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "47 007 871 178",
-          "party_page": {
-            "id": "news-pty-limited",
-            "name": "News Pty Limited"
-          }
-        }
+        "NEWS PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "NATIONAL DISTRIBUTION SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "66 633 619 333",
-          "party_page": {
-            "id": "national-distribution-services-pty-ltd",
-            "name": "National Distribution Services Pty Ltd"
-          }
-        }
-      ]
+        "NATIONAL DISTRIBUTION SERVICES PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-60015",
       "merger_name": "Stonepeak \u2013 Castrol",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CPP Investment Board Private Holdings (6) Inc",
-          "identifier_type": null,
-          "identifier": "CBN  764228300",
-          "canonical": {
-            "id": "stonepeak-motion-poolingco-limited",
-            "name": "Stonepeak Motion PoolingCo Limited"
-          },
-          "party_page": {
-            "id": "stonepeak-motion-poolingco-limited",
-            "name": "Stonepeak Motion PoolingCo Limited"
-          }
-        },
-        {
-          "name": "Motion JVCo Limited",
-          "identifier_type": null,
-          "identifier": "Company Identifier Number  163042",
-          "party_page": {
-            "id": "motion-jvco-limited",
-            "name": "Motion JVCo Limited"
-          }
-        }
+        "CPP Investment Board Private Holdings (6) Inc",
+        "Motion JVCo Limited"
       ],
       "targets": [
-        {
-          "name": "Stonepeak Motion PoolingCo Limited",
-          "identifier_type": null,
-          "identifier": "CBN  764228300",
-          "canonical": {
-            "id": "stonepeak-motion-poolingco-limited",
-            "name": "Stonepeak Motion PoolingCo Limited"
-          },
-          "party_page": {
-            "id": "stonepeak-motion-poolingco-limited",
-            "name": "Stonepeak Motion PoolingCo Limited"
-          }
-        },
-        {
-          "name": "Castrol Group Holdings Limited",
-          "identifier_type": null,
-          "identifier": "UKCRN  SC005098",
-          "party_page": {
-            "id": "castrol-group-holdings-limited",
-            "name": "Castrol Group Holdings Limited"
-          }
-        }
-      ]
+        "Stonepeak Motion PoolingCo Limited",
+        "Castrol Group Holdings Limited"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

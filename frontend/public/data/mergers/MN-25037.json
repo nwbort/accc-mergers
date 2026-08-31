@@ -148,116 +148,37 @@
     {
       "merger_id": "WA-25033",
       "merger_name": "Bain Capital \u2013 FDH",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BCPE Lightning Buyer, Inc.",
-          "identifier_type": null,
-          "identifier": "US incorporation number  10644291",
-          "party_page": {
-            "id": "bcpe-lightning-buyer-inc",
-            "name": "BCPE Lightning Buyer, Inc."
-          }
-        }
+        "BCPE Lightning Buyer, Inc."
       ],
       "targets": [
-        {
-          "name": "FDH Group Intermediate Holdings, LP",
-          "identifier_type": null,
-          "identifier": "US incorporation number  6336375",
-          "canonical": {
-            "id": "fdh-group",
-            "name": "FDH Group"
-          },
-          "party_page": {
-            "id": "fdh-group",
-            "name": "FDH Group"
-          }
-        },
-        {
-          "name": "FDH Group Intermediate, Inc.",
-          "identifier_type": null,
-          "identifier": "US incorporation number  6310370",
-          "canonical": {
-            "id": "fdh-group",
-            "name": "FDH Group"
-          },
-          "party_page": {
-            "id": "fdh-group",
-            "name": "FDH Group"
-          }
-        }
-      ]
+        "FDH Group Intermediate Holdings, LP",
+        "FDH Group Intermediate, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-80001",
       "merger_name": "Alpine Software Group (ASG) \u2013 PlayHQ",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Arena BidCo Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "693 657 484",
-          "party_page": {
-            "id": "arena-bidco-pty-ltd",
-            "name": "Arena BidCo Pty Ltd"
-          }
-        }
+        "Arena BidCo Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "RFGI GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "55 630 028 974",
-          "party_page": {
-            "id": "rfgi-group-pty-ltd",
-            "name": "Rfgi Group Pty Ltd"
-          }
-        },
-        {
-          "name": "GAMEON HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "47 629 422 206",
-          "party_page": {
-            "id": "gameon-holdings-pty-ltd",
-            "name": "Gameon Holdings Pty Ltd"
-          }
-        }
-      ]
+        "RFGI GROUP PTY LTD",
+        "GAMEON HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-05014",
       "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Smile Partners (NSW3) Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 902 955",
-          "party_page": {
-            "id": "smile-partners-nsw3-pty-ltd",
-            "name": "Smile Partners (NSW3) Pty Ltd"
-          }
-        }
+        "Smile Partners (NSW3) Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Shrika Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "108 757 357",
-          "canonical": {
-            "id": "shrika-pty-ltd",
-            "name": "Shrika Pty Ltd"
-          },
-          "party_page": {
-            "id": "shrika-pty-ltd",
-            "name": "Shrika Pty Ltd"
-          }
-        }
-      ]
+        "Shrika Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

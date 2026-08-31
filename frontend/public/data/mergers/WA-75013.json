@@ -114,126 +114,39 @@
     {
       "merger_id": "MN-85003",
       "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "NACG WA Acquisition Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "693 678 296",
-          "party_page": {
-            "id": "nacg-wa-acquisition-pty-ltd",
-            "name": "NACG WA Acquisition Pty Ltd"
-          }
-        }
+        "NACG WA Acquisition Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "DCL CORP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "60 633 008 992",
-          "party_page": {
-            "id": "dcl-corp-pty-ltd",
-            "name": "Dcl Corp Pty Ltd"
-          }
-        },
-        {
-          "name": "IRON HIRE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 641 807 589",
-          "party_page": {
-            "id": "iron-hire-pty-ltd",
-            "name": "Iron Hire Pty Ltd"
-          }
-        }
-      ]
+        "DCL CORP PTY LTD",
+        "IRON HIRE PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-55012",
       "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Argo Bowen 2 Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 023 619",
-          "canonical": {
-            "id": "argo-qld-pty-ltd",
-            "name": "Mercuria Argo"
-          },
-          "party_page": {
-            "id": "argo-qld-pty-ltd",
-            "name": "Mercuria Argo"
-          }
-        }
+        "Argo Bowen 2 Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "LENTON MANAGEMENT AND MARKETING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "48 149 524 809",
-          "party_page": {
-            "id": "lenton-management-and-marketing-pty-ltd",
-            "name": "Lenton Management And Marketing Pty Ltd"
-          }
-        },
-        {
-          "name": "COKING COAL ONE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "89 615 317 907",
-          "party_page": {
-            "id": "coking-coal-one-pty-ltd",
-            "name": "Coking Coal One Pty Ltd"
-          }
-        }
-      ]
+        "LENTON MANAGEMENT AND MARKETING PTY LTD",
+        "COKING COAL ONE PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-25002",
       "merger_name": "Symal Group - Timms Group and L&D Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "SYMAL MANAGEMENT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "85 602 084 471",
-          "party_page": {
-            "id": "symal-management-pty-ltd",
-            "name": "Symal Management Pty Ltd"
-          }
-        },
-        {
-          "name": "SYL TM CONTRACTING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "68 693 144 697",
-          "party_page": {
-            "id": "syl-tm-contracting-pty-ltd",
-            "name": "Syl Tm Contracting Pty Ltd"
-          }
-        }
+        "SYMAL MANAGEMENT PTY LTD",
+        "SYL TM CONTRACTING PTY LTD"
       ],
       "targets": [
-        {
-          "name": "TIMMS HIRE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "73 115 389 949",
-          "party_page": {
-            "id": "timms-hire-pty-ltd",
-            "name": "Timms Hire Pty Ltd"
-          }
-        },
-        {
-          "name": "TIMMS CONTRACTING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "30 070 456 567",
-          "party_page": {
-            "id": "timms-contracting-pty-ltd",
-            "name": "Timms Contracting Pty Ltd"
-          }
-        }
-      ]
+        "TIMMS HIRE PTY LTD",
+        "TIMMS CONTRACTING PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

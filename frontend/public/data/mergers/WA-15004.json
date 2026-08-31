@@ -150,112 +150,37 @@
     {
       "merger_id": "WA-45010",
       "merger_name": "Airtree and ors (additional minority co-investors) - Advanced Navigation",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "LGPE SEC S.C. Sp",
-          "identifier_type": null,
-          "identifier": "Luxembourg Company Registration Number: B281514",
-          "party_page": {
-            "id": "lgpe-sec-s-c-sp",
-            "name": "LGPE SEC S.C. Sp"
-          }
-        },
-        {
-          "name": "Crown Growth Opportunities IV SCSp-RAIF",
-          "identifier_type": null,
-          "identifier": "Luxembourg Company Registration Number: B254394",
-          "party_page": {
-            "id": "crown-growth-opportunities-iv-scsp-raif",
-            "name": "Crown Growth Opportunities IV SCSp-RAIF"
-          }
-        }
+        "LGPE SEC S.C. Sp",
+        "Crown Growth Opportunities IV SCSp-RAIF"
       ],
       "targets": [
-        {
-          "name": "ADVANCED NAVIGATION PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "49 156 101 549",
-          "party_page": {
-            "id": "advanced-navigation-pty-ltd",
-            "name": "Advanced Navigation Pty. Ltd."
-          }
-        }
-      ]
+        "ADVANCED NAVIGATION PTY. LTD."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-85018",
       "merger_name": "Discovery Holiday Parks \u2013 Habitat Noosa Everglades Eco Camp",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "DISCOVERY HOLIDAY PARKS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "50 111 782 846",
-          "canonical": {
-            "id": "discovery-holiday-parks",
-            "name": "Discovery Holiday Parks"
-          },
-          "party_page": {
-            "id": "discovery-holiday-parks",
-            "name": "Discovery Holiday Parks"
-          }
-        }
+        "DISCOVERY HOLIDAY PARKS PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "Eco Camp Pty Ltd as trustee for the MCB Trust",
-          "identifier_type": "ACN",
-          "identifier": "615 432 016",
-          "party_page": {
-            "id": "eco-camp-pty-ltd-as-trustee-for-the-mcb-trust",
-            "name": "Eco Camp Pty Ltd as trustee for the MCB Trust"
-          }
-        }
-      ]
+        "Eco Camp Pty Ltd as trustee for the MCB Trust"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-10013",
       "merger_name": "Accenture - Ziff Davis' connectivity business",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Accenture Inc.",
-          "identifier_type": null,
-          "identifier": "State File Number  3387477",
-          "canonical": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          },
-          "party_page": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          }
-        }
+        "Accenture Inc."
       ],
       "targets": [
-        {
-          "name": "Ookla, LLC",
-          "identifier_type": null,
-          "identifier": "Unified Business ID  602 422 103",
-          "party_page": {
-            "id": "ookla-llc",
-            "name": "Ookla, LLC"
-          }
-        },
-        {
-          "name": "Ekahau OY",
-          "identifier_type": null,
-          "identifier": "Business ID  16108964",
-          "party_page": {
-            "id": "ekahau-oy",
-            "name": "Ekahau OY"
-          }
-        }
-      ]
+        "Ookla, LLC",
+        "Ekahau OY"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

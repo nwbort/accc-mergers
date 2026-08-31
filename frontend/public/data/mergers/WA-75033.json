@@ -118,147 +118,40 @@
     {
       "merger_id": "MN-25002",
       "merger_name": "Symal Group - Timms Group and L&D Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "SYMAL MANAGEMENT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "85 602 084 471",
-          "party_page": {
-            "id": "symal-management-pty-ltd",
-            "name": "Symal Management Pty Ltd"
-          }
-        },
-        {
-          "name": "SYL TM CONTRACTING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "68 693 144 697",
-          "party_page": {
-            "id": "syl-tm-contracting-pty-ltd",
-            "name": "Syl Tm Contracting Pty Ltd"
-          }
-        }
+        "SYMAL MANAGEMENT PTY LTD",
+        "SYL TM CONTRACTING PTY LTD"
       ],
       "targets": [
-        {
-          "name": "TIMMS HIRE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "73 115 389 949",
-          "party_page": {
-            "id": "timms-hire-pty-ltd",
-            "name": "Timms Hire Pty Ltd"
-          }
-        },
-        {
-          "name": "TIMMS CONTRACTING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "30 070 456 567",
-          "party_page": {
-            "id": "timms-contracting-pty-ltd",
-            "name": "Timms Contracting Pty Ltd"
-          }
-        }
-      ]
+        "TIMMS HIRE PTY LTD",
+        "TIMMS CONTRACTING PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-50017",
       "merger_name": "Australian Venue Co \u2013 assets of Courthouse Hotel, Newtown NSW",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AVC OPERATIONS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "81 607 832 299",
-          "canonical": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          },
-          "party_page": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          }
-        }
+        "AVC OPERATIONS PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "FLOTTO HOLDINGS PTY. LTD. as trustee for Milton Trust",
-          "identifier_type": "ABN",
-          "identifier": "90 003 868 335",
-          "party_page": {
-            "id": "flotto-holdings-pty-ltd-as-trustee-for-milton-trust",
-            "name": "FLOTTO HOLDINGS PTY. LTD. as trustee for Milton Trust"
-          }
-        },
-        {
-          "name": "Austlen Pty Limited as trustee for The Courthouse Trust",
-          "identifier_type": "ACN",
-          "identifier": "120 109 962",
-          "party_page": {
-            "id": "austlen-pty-limited-as-trustee-for-the-courthouse-trust",
-            "name": "Austlen Pty Limited as trustee for The Courthouse Trust"
-          }
-        }
-      ]
+        "FLOTTO HOLDINGS PTY. LTD. as trustee for Milton Trust",
+        "Austlen Pty Limited as trustee for The Courthouse Trust"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25031",
       "merger_name": "Oscars Group \u2013 South Terrace Hotel in Bankstown, NSW",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OSCARS NSW OPS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "19 686 583 451",
-          "canonical": {
-            "id": "oscars-hotels",
-            "name": "Oscars Hotels"
-          },
-          "party_page": {
-            "id": "oscars-hotels",
-            "name": "Oscars Hotels"
-          }
-        },
-        {
-          "name": "The Trustee for THE BANKSTOWN CENTRAL PROPERTY UNIT TRUST",
-          "identifier_type": "ABN",
-          "identifier": "35 764 968 745",
-          "canonical": {
-            "id": "oscars-hotels",
-            "name": "Oscars Hotels"
-          },
-          "party_page": {
-            "id": "oscars-hotels",
-            "name": "Oscars Hotels"
-          }
-        }
+        "OSCARS NSW OPS PTY LTD",
+        "The Trustee for THE BANKSTOWN CENTRAL PROPERTY UNIT TRUST"
       ],
       "targets": [
-        {
-          "name": "The Trustee for Red Lantern Hotel Trust",
-          "identifier_type": "ABN",
-          "identifier": "45 384 307 643",
-          "party_page": {
-            "id": "the-trustee-for-red-lantern-hotel-trust",
-            "name": "The Trustee for Red Lantern Hotel Trust"
-          }
-        },
-        {
-          "name": "REDCAPE HOTEL GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 139 067 244",
-          "canonical": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          },
-          "party_page": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          }
-        }
-      ]
+        "The Trustee for Red Lantern Hotel Trust",
+        "REDCAPE HOTEL GROUP PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

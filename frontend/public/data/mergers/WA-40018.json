@@ -127,116 +127,37 @@
     {
       "merger_id": "WA-25005",
       "merger_name": "Australian Venue Co. \u2013 leasehold and certain other assets of Quay Restaurant, Sydney",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AVC OPERATIONS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "81 607 832 299",
-          "canonical": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          },
-          "party_page": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          }
-        },
-        {
-          "name": "Australian Venue Co. Holdings Limited",
-          "identifier_type": "ABN",
-          "identifier": "90 619 977 070",
-          "canonical": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          },
-          "party_page": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          }
-        }
+        "AVC OPERATIONS PTY LIMITED",
+        "Australian Venue Co. Holdings Limited"
       ],
       "targets": [
-        {
-          "name": "Q.R.A. PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "62 051 433 839",
-          "party_page": {
-            "id": "q-r-a-pty-limited",
-            "name": "Q.R.A. Pty Limited"
-          }
-        }
-      ]
+        "Q.R.A. PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-45010",
       "merger_name": "Airtree and ors (additional minority co-investors) - Advanced Navigation",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "LGPE SEC S.C. Sp",
-          "identifier_type": null,
-          "identifier": "Luxembourg Company Registration Number: B281514",
-          "party_page": {
-            "id": "lgpe-sec-s-c-sp",
-            "name": "LGPE SEC S.C. Sp"
-          }
-        },
-        {
-          "name": "Crown Growth Opportunities IV SCSp-RAIF",
-          "identifier_type": null,
-          "identifier": "Luxembourg Company Registration Number: B254394",
-          "party_page": {
-            "id": "crown-growth-opportunities-iv-scsp-raif",
-            "name": "Crown Growth Opportunities IV SCSp-RAIF"
-          }
-        }
+        "LGPE SEC S.C. Sp",
+        "Crown Growth Opportunities IV SCSp-RAIF"
       ],
       "targets": [
-        {
-          "name": "ADVANCED NAVIGATION PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "49 156 101 549",
-          "party_page": {
-            "id": "advanced-navigation-pty-ltd",
-            "name": "Advanced Navigation Pty. Ltd."
-          }
-        }
-      ]
+        "ADVANCED NAVIGATION PTY. LTD."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-20012",
       "merger_name": "Australian Meat Group - Killara Feedlot",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Australian Meat Group Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "75 168 396 316",
-          "canonical": {
-            "id": "australian-meat-group-inc",
-            "name": "Australian Meat Group Inc"
-          },
-          "party_page": {
-            "id": "australian-meat-group-inc",
-            "name": "Australian Meat Group Inc"
-          }
-        }
+        "Australian Meat Group Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Killara Feedlot Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "18 081 072 746",
-          "party_page": {
-            "id": "killara-feedlot-pty-ltd",
-            "name": "Killara Feedlot Pty Ltd"
-          }
-        }
-      ]
+        "Killara Feedlot Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

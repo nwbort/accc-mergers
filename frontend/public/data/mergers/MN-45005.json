@@ -193,116 +193,37 @@
     {
       "merger_id": "WA-60017",
       "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Entrance Social Club",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "REDCAPE HOTEL GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 139 067 244",
-          "canonical": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          },
-          "party_page": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          }
-        },
-        {
-          "name": "MAHF CUSTODIAN PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "96 619 512 060",
-          "canonical": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          },
-          "party_page": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          }
-        }
+        "REDCAPE HOTEL GROUP PTY LTD",
+        "MAHF CUSTODIAN PTY LTD"
       ],
       "targets": [
-        {
-          "name": "REDBRAN PTY. LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "34 003 920 232",
-          "party_page": {
-            "id": "redbran-pty-limited",
-            "name": "Redbran Pty. Limited"
-          }
-        }
-      ]
+        "REDBRAN PTY. LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-80006",
       "merger_name": "Russell Investment Group \u2013 Zurich Investment Management",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "RUSSELL INVESTMENT GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "92 003 066 859",
-          "party_page": {
-            "id": "russell-investment-group-pty-ltd",
-            "name": "Russell Investment Group Pty Ltd"
-          }
-        }
+        "RUSSELL INVESTMENT GROUP PTY LTD"
       ],
       "targets": [
-        {
-          "name": "ZURICH INVESTMENT MANAGEMENT LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "56 063 278 400",
-          "canonical": {
-            "id": "zurich-assure-australia-pty-ltd",
-            "name": "Zurich"
-          },
-          "party_page": {
-            "id": "zurich-assure-australia-pty-ltd",
-            "name": "Zurich"
-          }
-        }
-      ]
+        "ZURICH INVESTMENT MANAGEMENT LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-85004",
       "merger_name": "Treysta Wealth Management \u2013 Locumsgroup",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Treysta Wealth Management Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "87 151 156 222",
-          "party_page": {
-            "id": "treysta-wealth-management-pty-ltd",
-            "name": "Treysta Wealth Management Pty Ltd"
-          }
-        }
+        "Treysta Wealth Management Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Locumsgroup Private Accounting Services Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "66 116 993 670",
-          "party_page": {
-            "id": "locumsgroup-private-accounting-services-pty-limited",
-            "name": "Locumsgroup Private Accounting Services Pty Limited"
-          }
-        },
-        {
-          "name": "Locumsgroup Asset Management Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "71 113 009 626",
-          "party_page": {
-            "id": "locumsgroup-asset-management-pty-ltd",
-            "name": "Locumsgroup Asset Management Pty Ltd"
-          }
-        }
-      ]
+        "Locumsgroup Private Accounting Services Pty Limited",
+        "Locumsgroup Asset Management Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

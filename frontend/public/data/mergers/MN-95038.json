@@ -129,108 +129,37 @@
     {
       "merger_id": "WA-70016",
       "merger_name": "Oceania Capital Partners - Hudson Global Resources (Aust)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OCEANIA CAPITAL PARTNERS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "52 111 554 360",
-          "party_page": {
-            "id": "oceania-capital-partners-limited",
-            "name": "Oceania Capital Partners Limited"
-          }
-        },
-        {
-          "name": "K & K RYAN PTY LTD (ACN 623119960) AS TRUSTEE FOR THE K & K RYAN FAMILY TRUST",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "k-k-ryan-pty-ltd-acn-623119960-as-trustee-for-the-k-k-ryan-family-trust",
-            "name": "K & K Ryan Pty Ltd (Acn 623119960) As Trustee For The K & K Ryan Family Trust"
-          }
-        }
+        "OCEANIA CAPITAL PARTNERS LIMITED",
+        "K & K RYAN PTY LTD (ACN 623119960) AS TRUSTEE FOR THE K & K RYAN FAMILY TRUST"
       ],
       "targets": [
-        {
-          "name": "HUDSON HIGHLAND (APAC) PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "14 074 319 396",
-          "party_page": {
-            "id": "hudson-highland-apac-pty-limited",
-            "name": "Hudson Highland (Apac) Pty Limited"
-          }
-        }
-      ]
+        "HUDSON HIGHLAND (APAC) PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-95031",
       "merger_name": "IFM Fiduciary \u2013 PM Fresh",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "IFM FIDUCIARY PTY LTD as trustee for the SSCF SOA8 Holding Trust",
-          "identifier_type": "ABN",
-          "identifier": "52 135 450 618",
-          "party_page": {
-            "id": "ifm-fiduciary-pty-ltd-as-trustee-for-the-sscf-soa8-holding-trust",
-            "name": "IFM FIDUCIARY PTY LTD as trustee for the SSCF SOA8 Holding Trust"
-          }
-        }
+        "IFM FIDUCIARY PTY LTD as trustee for the SSCF SOA8 Holding Trust"
       ],
       "targets": [
-        {
-          "name": "TESSWATT INVESTMENTS PTY LTD as trustee for the Tesswatt Investment Trust",
-          "identifier_type": "ACN",
-          "identifier": "630 498 823",
-          "party_page": {
-            "id": "tesswatt-investments-pty-ltd-as-trustee-for-the-tesswatt-investment-trust",
-            "name": "TESSWATT INVESTMENTS PTY LTD as trustee for the Tesswatt Investment Trust"
-          }
-        },
-        {
-          "name": "SALADS OF AUSTRALIA PTY LIMITED (Receivers & Managers Appointed) (Administrators Appointed)",
-          "identifier_type": "ABN",
-          "identifier": "95 631 463 664",
-          "party_page": {
-            "id": "salads-of-australia-pty-limited-receivers-managers-appointed-administrators-appo",
-            "name": "SALADS OF AUSTRALIA PTY LIMITED (Receivers & Managers Appointed) (Administrators Appointed)"
-          }
-        }
-      ]
+        "TESSWATT INVESTMENTS PTY LTD as trustee for the Tesswatt Investment Trust",
+        "SALADS OF AUSTRALIA PTY LIMITED (Receivers & Managers Appointed) (Administrators Appointed)"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-05014",
       "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Smile Partners (NSW3) Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 902 955",
-          "party_page": {
-            "id": "smile-partners-nsw3-pty-ltd",
-            "name": "Smile Partners (NSW3) Pty Ltd"
-          }
-        }
+        "Smile Partners (NSW3) Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Shrika Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "108 757 357",
-          "canonical": {
-            "id": "shrika-pty-ltd",
-            "name": "Shrika Pty Ltd"
-          },
-          "party_page": {
-            "id": "shrika-pty-ltd",
-            "name": "Shrika Pty Ltd"
-          }
-        }
-      ]
+        "Shrika Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

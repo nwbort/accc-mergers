@@ -204,103 +204,36 @@
     {
       "merger_id": "WA-85008",
       "merger_name": "Sony \u2013 Peanuts Worldwide",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Sony Music Entertainment (Japan) Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "sony-music-entertainment-japan-inc",
-            "name": "Sony Music Entertainment (Japan) Inc."
-          }
-        },
-        {
-          "name": "Sony Pictures Entertainment, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "sony-pictures-entertainment-inc",
-            "name": "Sony Pictures Entertainment, Inc."
-          }
-        }
+        "Sony Music Entertainment (Japan) Inc.",
+        "Sony Pictures Entertainment, Inc."
       ],
       "targets": [
-        {
-          "name": "DHX Entertainment (USA) Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "dhx-entertainment-usa-inc",
-            "name": "DHX Entertainment (USA) Inc."
-          }
-        }
-      ]
+        "DHX Entertainment (USA) Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-95006",
       "merger_name": "Laundy Group \u2013 Nine Radio",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "SPIKE MEDIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 694 712 699",
-          "party_page": {
-            "id": "spike-media-pty-ltd",
-            "name": "Spike Media Pty Ltd"
-          }
-        }
+        "SPIKE MEDIA PTY LTD"
       ],
       "targets": [
-        {
-          "name": "NINE RADIO PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "32 063 906 927",
-          "canonical": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          },
-          "party_page": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          }
-        }
-      ]
+        "NINE RADIO PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-70005",
       "merger_name": "Freudenberg Home and Cleaning Solutions \u2013 Nilfisk",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Freudenberg Home and Cleaning Solutions GmbH",
-          "identifier_type": null,
-          "identifier": "HRB 431930",
-          "canonical": {
-            "id": "freudenberg-home-and-cleaning-solutions-gmbh",
-            "name": "Freudenberg Home and Cleaning Solutions"
-          },
-          "party_page": {
-            "id": "freudenberg-home-and-cleaning-solutions-gmbh",
-            "name": "Freudenberg Home and Cleaning Solutions"
-          }
-        }
+        "Freudenberg Home and Cleaning Solutions GmbH"
       ],
       "targets": [
-        {
-          "name": "Nilfisk Holding A/S",
-          "identifier_type": null,
-          "identifier": "CVR 38998870",
-          "party_page": {
-            "id": "nilfisk-holding-a-s",
-            "name": "Nilfisk Holding A/S"
-          }
-        }
-      ]
+        "Nilfisk Holding A/S"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

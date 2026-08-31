@@ -171,112 +171,37 @@
     {
       "merger_id": "WA-95009",
       "merger_name": "McDonald\u2019s Australia \u2013 McDonald\u2019s Restaurants in Bankstown and Yagoona, NSW",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "MCDONALD'S AUSTRALIA LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "43 008 496 928",
-          "party_page": {
-            "id": "mcdonald-s-australia-limited",
-            "name": "Mcdonald'S Australia Limited"
-          }
-        }
+        "MCDONALD'S AUSTRALIA LIMITED"
       ],
       "targets": [
-        {
-          "name": "LVANT MECCA PTY LIMITED as trustee for CARMICHAEL FAMILY TRUST",
-          "identifier_type": "ACN",
-          "identifier": "601 504 590",
-          "party_page": {
-            "id": "lvant-mecca-pty-limited-as-trustee-for-carmichael-family-trust",
-            "name": "LVANT MECCA PTY LIMITED as trustee for CARMICHAEL FAMILY TRUST"
-          }
-        }
-      ]
+        "LVANT MECCA PTY LIMITED as trustee for CARMICHAEL FAMILY TRUST"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-45002",
       "merger_name": "eBay - Depop",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "eBay Inc.",
-          "identifier_type": null,
-          "identifier": "I.R.S. Employer Identification No. \u2013 United States  770430924",
-          "canonical": {
-            "id": "ebay",
-            "name": "eBay"
-          },
-          "party_page": {
-            "id": "ebay",
-            "name": "eBay"
-          }
-        }
+        "eBay Inc."
       ],
       "targets": [
-        {
-          "name": "Etsy, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "etsy-inc",
-            "name": "Etsy, Inc."
-          }
-        },
-        {
-          "name": "Depop Limited",
-          "identifier_type": null,
-          "identifier": "UK Company Registration Number  08316342",
-          "party_page": {
-            "id": "depop-limited",
-            "name": "Depop Limited"
-          }
-        }
-      ]
+        "Etsy, Inc.",
+        "Depop Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-10013",
       "merger_name": "Accenture - Ziff Davis' connectivity business",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Accenture Inc.",
-          "identifier_type": null,
-          "identifier": "State File Number  3387477",
-          "canonical": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          },
-          "party_page": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          }
-        }
+        "Accenture Inc."
       ],
       "targets": [
-        {
-          "name": "Ookla, LLC",
-          "identifier_type": null,
-          "identifier": "Unified Business ID  602 422 103",
-          "party_page": {
-            "id": "ookla-llc",
-            "name": "Ookla, LLC"
-          }
-        },
-        {
-          "name": "Ekahau OY",
-          "identifier_type": null,
-          "identifier": "Business ID  16108964",
-          "party_page": {
-            "id": "ekahau-oy",
-            "name": "Ekahau OY"
-          }
-        }
-      ]
+        "Ookla, LLC",
+        "Ekahau OY"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

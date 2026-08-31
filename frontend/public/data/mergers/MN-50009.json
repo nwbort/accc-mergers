@@ -204,122 +204,39 @@
     {
       "merger_id": "MN-45005",
       "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "MA MARINA FUND HOLDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "96 667 241 385",
-          "party_page": {
-            "id": "ma-marina-fund-holdco-pty-ltd",
-            "name": "Ma Marina Fund Holdco Pty Ltd"
-          }
-        },
-        {
-          "name": "MA MARINA FUND TT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "65 666 902 245",
-          "party_page": {
-            "id": "ma-marina-fund-tt-pty-ltd",
-            "name": "Ma Marina Fund Tt Pty Ltd"
-          }
-        }
+        "MA MARINA FUND HOLDCO PTY LTD",
+        "MA MARINA FUND TT PTY LTD"
       ],
       "targets": [
-        {
-          "name": "GGC Marketing Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "32 105 294 228",
-          "party_page": {
-            "id": "ggc-marketing-pty-ltd",
-            "name": "GGC Marketing Pty Ltd"
-          }
-        },
-        {
-          "name": "QUEENSLAND & PACIFIC PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "72 081 370 685",
-          "party_page": {
-            "id": "queensland-pacific-pty-ltd",
-            "name": "Queensland & Pacific Pty. Ltd."
-          }
-        }
-      ]
+        "GGC Marketing Pty Ltd",
+        "QUEENSLAND & PACIFIC PTY. LTD."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-35004",
       "merger_name": "L Catterton Management \u2013 Ex Nihilo Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Saphir Holdings SAS",
-          "identifier_type": null,
-          "identifier": "Trade and Companies Registry Number 995 192 986",
-          "party_page": {
-            "id": "saphir-holdings-sas",
-            "name": "Saphir Holdings SAS"
-          }
-        }
+        "Saphir Holdings SAS"
       ],
       "targets": [
-        {
-          "name": "Ex Nihilo Group",
-          "identifier_type": null,
-          "identifier": "Trade and Companies Registry Number 981 087 646",
-          "party_page": {
-            "id": "ex-nihilo-group",
-            "name": "Ex Nihilo Group"
-          }
-        }
-      ]
+        "Ex Nihilo Group"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-45001",
       "merger_name": "Paragon Care \u2013 Presidental",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "PARAGON CARE LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "76 064 551 426",
-          "party_page": {
-            "id": "paragon-care-limited",
-            "name": "Paragon Care Limited"
-          }
-        },
-        {
-          "name": "CLIFFORD HALLAM HEALTHCARE PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "38 001 655 554",
-          "party_page": {
-            "id": "clifford-hallam-healthcare-pty-limited",
-            "name": "Clifford Hallam Healthcare Pty Limited"
-          }
-        }
+        "PARAGON CARE LIMITED",
+        "CLIFFORD HALLAM HEALTHCARE PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "ROCKPAC SOUTH PACIFIC PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "40 639 100 422",
-          "party_page": {
-            "id": "rockpac-south-pacific-pty-ltd",
-            "name": "Rockpac South Pacific Pty Ltd"
-          }
-        },
-        {
-          "name": "PRESIDENTAL PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "77 002 697 896",
-          "party_page": {
-            "id": "presidental-pty-limited",
-            "name": "Presidental Pty Limited"
-          }
-        }
-      ]
+        "ROCKPAC SOUTH PACIFIC PTY LTD",
+        "PRESIDENTAL PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

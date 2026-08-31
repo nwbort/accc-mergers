@@ -81,117 +81,38 @@
     {
       "merger_id": "MN-90024",
       "merger_name": "Petalite \u2013 Envu",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Petalite Investment Pte. Ltd",
-          "identifier_type": null,
-          "identifier": "Singapore Unique Identifier  202021849G",
-          "party_page": {
-            "id": "petalite-investment-pte-ltd",
-            "name": "Petalite Investment Pte. Ltd"
-          }
-        }
+        "Petalite Investment Pte. Ltd"
       ],
       "targets": [
-        {
-          "name": "Cinven Discovery Holdings Limited Partnership",
-          "identifier_type": null,
-          "identifier": "Guernsey registration number  LP4308",
-          "party_page": {
-            "id": "cinven-discovery-holdings-limited-partnership",
-            "name": "Cinven Discovery Holdings Limited Partnership"
-          }
-        }
-      ]
+        "Cinven Discovery Holdings Limited Partnership"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-10010",
       "merger_name": "Enverus \u2013 Spatial Business Systems",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Enverus, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "enverus-inc",
-            "name": "Enverus, Inc."
-          }
-        }
+        "Enverus, Inc."
       ],
       "targets": [
-        {
-          "name": "Spatial Business Systems Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "76 125 465 483",
-          "party_page": {
-            "id": "spatial-business-systems-pty-ltd",
-            "name": "Spatial Business Systems Pty Ltd"
-          }
-        },
-        {
-          "name": "SBS Optionco, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "sbs-optionco-llc",
-            "name": "SBS Optionco, LLC"
-          }
-        }
-      ]
+        "Spatial Business Systems Pty Ltd",
+        "SBS Optionco, LLC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-01103",
       "merger_name": "Discovery Holiday Parks \u2013 four Breeze Holiday Parks",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "DISCOVERY HOLIDAY PARKS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "50 111 782 846",
-          "canonical": {
-            "id": "discovery-holiday-parks",
-            "name": "Discovery Holiday Parks"
-          },
-          "party_page": {
-            "id": "discovery-holiday-parks",
-            "name": "Discovery Holiday Parks"
-          }
-        },
-        {
-          "name": "Beston Parks Land Co Pty Ltd atf Beston Accommodation Parks Trust",
-          "identifier_type": "ACN",
-          "identifier": "111 783 423",
-          "party_page": {
-            "id": "beston-parks-land-co-pty-ltd-atf-beston-accommodation-parks-trust",
-            "name": "Beston Parks Land Co Pty Ltd atf Beston Accommodation Parks Trust"
-          }
-        }
+        "DISCOVERY HOLIDAY PARKS PTY LIMITED",
+        "Beston Parks Land Co Pty Ltd atf Beston Accommodation Parks Trust"
       ],
       "targets": [
-        {
-          "name": "The Trustee for Katherine Park Trust",
-          "identifier_type": "ABN",
-          "identifier": "52 233 936 018",
-          "party_page": {
-            "id": "the-trustee-for-katherine-park-trust",
-            "name": "The Trustee for Katherine Park Trust"
-          }
-        },
-        {
-          "name": "The Trustee for THE F DAVIES FAMILY TRUST",
-          "identifier_type": "ABN",
-          "identifier": "53 298 082 380",
-          "party_page": {
-            "id": "the-trustee-for-the-f-davies-family-trust",
-            "name": "The Trustee for THE F DAVIES FAMILY TRUST"
-          }
-        }
-      ]
+        "The Trustee for Katherine Park Trust",
+        "The Trustee for THE F DAVIES FAMILY TRUST"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

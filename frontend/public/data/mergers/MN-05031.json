@@ -128,104 +128,37 @@
     {
       "merger_id": "WA-65004",
       "merger_name": "Kee Safety - RIS Safety",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Cielo TopCo Limited",
-          "identifier_type": null,
-          "identifier": "CRN  16320933",
-          "party_page": {
-            "id": "cielo-topco-limited",
-            "name": "Cielo TopCo Limited"
-          }
-        },
-        {
-          "name": "Kee Safety (Australia) Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "694 369 116",
-          "party_page": {
-            "id": "kee-safety-australia-pty-ltd",
-            "name": "Kee Safety (Australia) Pty Ltd"
-          }
-        }
+        "Cielo TopCo Limited",
+        "Kee Safety (Australia) Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "HALLWELD BENNETT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "15 161 086 595",
-          "party_page": {
-            "id": "hallweld-bennett-pty-ltd",
-            "name": "Hallweld Bennett Pty Ltd"
-          }
-        },
-        {
-          "name": "RIS SAFETY HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "19 668 836 351",
-          "party_page": {
-            "id": "ris-safety-holdings-pty-ltd",
-            "name": "Ris Safety Holdings Pty Ltd"
-          }
-        }
-      ]
+        "HALLWELD BENNETT PTY LTD",
+        "RIS SAFETY HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-01016",
       "merger_name": "Asahi \u2013 Warehouse site on Tilburn Rd, Deer Park (Vic)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ASAHI HOLDINGS (AUSTRALIA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "48 135 315 767",
-          "party_page": {
-            "id": "asahi-holdings-australia-pty-ltd",
-            "name": "Asahi Holdings (Australia) Pty Ltd"
-          }
-        }
+        "ASAHI HOLDINGS (AUSTRALIA) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "GPT PLATFORM PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "51 164 839 061",
-          "party_page": {
-            "id": "gpt-platform-pty-limited",
-            "name": "Gpt Platform Pty Limited"
-          }
-        }
-      ]
+        "GPT PLATFORM PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-01035",
       "merger_name": "Asahi \u2013 Warehouse site on Weedman and Montgomery Streets, Redbank (Qld)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ASAHI HOLDINGS (AUSTRALIA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "48 135 315 767",
-          "party_page": {
-            "id": "asahi-holdings-australia-pty-ltd",
-            "name": "Asahi Holdings (Australia) Pty Ltd"
-          }
-        }
+        "ASAHI HOLDINGS (AUSTRALIA) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "GTA INDUSTRIAL CUSTODIAN PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "45 081 823 743",
-          "party_page": {
-            "id": "gta-industrial-custodian-pty-limited",
-            "name": "Gta Industrial Custodian Pty Limited"
-          }
-        }
-      ]
+        "GTA INDUSTRIAL CUSTODIAN PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

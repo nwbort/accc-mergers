@@ -100,117 +100,38 @@
     {
       "merger_id": "MN-85003",
       "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "NACG WA Acquisition Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "693 678 296",
-          "party_page": {
-            "id": "nacg-wa-acquisition-pty-ltd",
-            "name": "NACG WA Acquisition Pty Ltd"
-          }
-        }
+        "NACG WA Acquisition Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "DCL CORP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "60 633 008 992",
-          "party_page": {
-            "id": "dcl-corp-pty-ltd",
-            "name": "Dcl Corp Pty Ltd"
-          }
-        },
-        {
-          "name": "IRON HIRE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 641 807 589",
-          "party_page": {
-            "id": "iron-hire-pty-ltd",
-            "name": "Iron Hire Pty Ltd"
-          }
-        }
-      ]
+        "DCL CORP PTY LTD",
+        "IRON HIRE PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-55015",
       "merger_name": "Allianz - Lease of commercial office space in North Sydney from Lendlease (Victoria Cross)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ALLIANZ AUSTRALIA SERVICES PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "66 002 947 257",
-          "party_page": {
-            "id": "allianz-australia-services-pty-limited",
-            "name": "Allianz Australia Services Pty Limited"
-          }
-        }
+        "ALLIANZ AUSTRALIA SERVICES PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "VICTORIA CROSS COMMERCIAL PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "56 630 332 222",
-          "party_page": {
-            "id": "victoria-cross-commercial-pty-limited",
-            "name": "Victoria Cross Commercial Pty Limited"
-          }
-        },
-        {
-          "name": "The Trustee for Lendlease Victoria Cross Trust",
-          "identifier_type": "ABN",
-          "identifier": "26 397 448 085",
-          "canonical": {
-            "id": "lendlease",
-            "name": "Lendlease"
-          },
-          "party_page": {
-            "id": "lendlease",
-            "name": "Lendlease"
-          }
-        }
-      ]
+        "VICTORIA CROSS COMMERCIAL PTY LIMITED",
+        "The Trustee for Lendlease Victoria Cross Trust"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-60010",
       "merger_name": "Michelin - Flexitallic",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Compagnie Financi\u00e8re Michelin SAS",
-          "identifier_type": null,
-          "identifier": "SIREN  898 849 153",
-          "party_page": {
-            "id": "compagnie-financi-re-michelin-sas",
-            "name": "Compagnie Financi\u00e8re Michelin SAS"
-          }
-        },
-        {
-          "name": "Fenner America, Inc.",
-          "identifier_type": null,
-          "identifier": "USDOT  3744583",
-          "party_page": {
-            "id": "fenner-america-inc",
-            "name": "Fenner America, Inc."
-          }
-        }
+        "Compagnie Financi\u00e8re Michelin SAS",
+        "Fenner America, Inc."
       ],
       "targets": [
-        {
-          "name": "Flexitallic Group SAS",
-          "identifier_type": null,
-          "identifier": "SIREN  532 742 699",
-          "party_page": {
-            "id": "flexitallic-group-sas",
-            "name": "Flexitallic Group SAS"
-          }
-        }
-      ]
+        "Flexitallic Group SAS"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

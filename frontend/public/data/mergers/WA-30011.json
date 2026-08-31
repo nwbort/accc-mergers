@@ -111,104 +111,37 @@
     {
       "merger_id": "WA-50014",
       "merger_name": "Searchlight Capital Partners - Additional interest in KORE Group Holdings Inc.",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Searchlight Capital IV LP",
-          "identifier_type": null,
-          "identifier": "US SEC  0001954453",
-          "party_page": {
-            "id": "searchlight-capital-iv-lp",
-            "name": "Searchlight Capital IV LP"
-          }
-        },
-        {
-          "name": "KONA Merger Sub Co.",
-          "identifier_type": null,
-          "identifier": "Delaware  10525073",
-          "party_page": {
-            "id": "kona-merger-sub-co",
-            "name": "KONA Merger Sub Co."
-          }
-        }
+        "Searchlight Capital IV LP",
+        "KONA Merger Sub Co."
       ],
       "targets": [
-        {
-          "name": "KORE Group Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware  5388903",
-          "party_page": {
-            "id": "kore-group-holdings-inc",
-            "name": "KORE Group Holdings, Inc."
-          }
-        }
-      ]
+        "KORE Group Holdings, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-90007",
       "merger_name": "Volt Managed Investment Trusts \u2013 HMC Energy Transition Platform",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Volt Managed Investment Trust 2",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "volt-managed-investment-trust-2",
-            "name": "Volt Managed Investment Trust 2"
-          }
-        },
-        {
-          "name": "Volt Managed Investment Trust 1",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "volt-managed-investment-trust-1",
-            "name": "Volt Managed Investment Trust 1"
-          }
-        }
+        "Volt Managed Investment Trust 2",
+        "Volt Managed Investment Trust 1"
       ],
       "targets": [
-        {
-          "name": "VOLT HOLDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "54 694 754 062",
-          "party_page": {
-            "id": "volt-holdco-pty-ltd",
-            "name": "Volt Holdco Pty Ltd"
-          }
-        }
-      ]
+        "VOLT HOLDCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-80002",
       "merger_name": "Bain Capital \u2013 MCJ",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BCPE Meta Cayman, L.P.",
-          "identifier_type": null,
-          "identifier": "MC135352",
-          "party_page": {
-            "id": "bcpe-meta-cayman-l-p",
-            "name": "BCPE Meta Cayman, L.P."
-          }
-        }
+        "BCPE Meta Cayman, L.P."
       ],
       "targets": [
-        {
-          "name": "MCJ Co., Ltd.",
-          "identifier_type": null,
-          "identifier": "9030001052005",
-          "party_page": {
-            "id": "mcj-co-ltd",
-            "name": "MCJ Co., Ltd."
-          }
-        }
-      ]
+        "MCJ Co., Ltd."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

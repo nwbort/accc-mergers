@@ -185,133 +185,38 @@
     {
       "merger_id": "MN-01037",
       "merger_name": "Anglo American - Teck Resources",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Anglo American plc",
-          "identifier_type": null,
-          "identifier": "03564138",
-          "canonical": {
-            "id": "anglo-american-plc",
-            "name": "Anglo American"
-          },
-          "party_page": {
-            "id": "anglo-american-plc",
-            "name": "Anglo American"
-          }
-        }
+        "Anglo American plc"
       ],
       "targets": [
-        {
-          "name": "Teck Resources Limited",
-          "identifier_type": null,
-          "identifier": "4460561",
-          "party_page": {
-            "id": "teck-resources-limited",
-            "name": "Teck Resources Limited"
-          }
-        }
-      ]
+        "Teck Resources Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-85035",
       "merger_name": "Dhilmar \u2013 Anglo American steelmaking coal business",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "DHILMAR QLD PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "80 697 675 988",
-          "party_page": {
-            "id": "dhilmar-qld-pty-ltd",
-            "name": "Dhilmar Qld Pty Ltd"
-          }
-        },
-        {
-          "name": "DHILMAR QLD ASSETS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "76 697 930 171",
-          "party_page": {
-            "id": "dhilmar-qld-assets-pty-ltd",
-            "name": "Dhilmar Qld Assets Pty Ltd"
-          }
-        }
+        "DHILMAR QLD PTY LTD",
+        "DHILMAR QLD ASSETS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "ANGLO AMERICAN STEELMAKING COAL HOLDINGS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "52 079 017 940",
-          "canonical": {
-            "id": "anglo-american-plc",
-            "name": "Anglo American"
-          },
-          "party_page": {
-            "id": "anglo-american-plc",
-            "name": "Anglo American"
-          }
-        },
-        {
-          "name": "ANGLO AMERICAN STEELMAKING COAL ASSETS EASTERN AUSTRALIA LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "81 009 727 851",
-          "canonical": {
-            "id": "anglo-american-plc",
-            "name": "Anglo American"
-          },
-          "party_page": {
-            "id": "anglo-american-plc",
-            "name": "Anglo American"
-          }
-        }
-      ]
+        "ANGLO AMERICAN STEELMAKING COAL HOLDINGS LIMITED",
+        "ANGLO AMERICAN STEELMAKING COAL ASSETS EASTERN AUSTRALIA LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-50008",
       "merger_name": "WIN Television Network - NBN Enterprises & Television Holdings Darwin",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "WIN TELEVISION NETWORK PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "90 008 589 026",
-          "party_page": {
-            "id": "win-television-network-pty-ltd",
-            "name": "Win Television Network Pty Ltd"
-          }
-        }
+        "WIN TELEVISION NETWORK PTY LTD"
       ],
       "targets": [
-        {
-          "name": "NINE NETWORK AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "88 008 685 407",
-          "canonical": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          },
-          "party_page": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          }
-        },
-        {
-          "name": "NINE NETWORK AUSTRALIA HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 124 816 093",
-          "canonical": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          },
-          "party_page": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          }
-        }
-      ]
+        "NINE NETWORK AUSTRALIA PTY LTD",
+        "NINE NETWORK AUSTRALIA HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

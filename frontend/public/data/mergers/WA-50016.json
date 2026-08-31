@@ -92,129 +92,38 @@
     {
       "merger_id": "MN-20012",
       "merger_name": "Australian Meat Group - Killara Feedlot",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Australian Meat Group Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "75 168 396 316",
-          "canonical": {
-            "id": "australian-meat-group-inc",
-            "name": "Australian Meat Group Inc"
-          },
-          "party_page": {
-            "id": "australian-meat-group-inc",
-            "name": "Australian Meat Group Inc"
-          }
-        }
+        "Australian Meat Group Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Killara Feedlot Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "18 081 072 746",
-          "party_page": {
-            "id": "killara-feedlot-pty-ltd",
-            "name": "Killara Feedlot Pty Ltd"
-          }
-        }
-      ]
+        "Killara Feedlot Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-25006",
       "merger_name": "KPS \u2013 Novacel",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Desmos US Bidco, Inc.",
-          "identifier_type": null,
-          "identifier": "[ID type unknown]  10469174",
-          "party_page": {
-            "id": "desmos-us-bidco-inc",
-            "name": "Desmos US Bidco, Inc."
-          }
-        },
-        {
-          "name": "Desmos Bidco SAS",
-          "identifier_type": null,
-          "identifier": "SIREN  100 230 754",
-          "party_page": {
-            "id": "desmos-bidco-sas",
-            "name": "Desmos Bidco SAS"
-          }
-        }
+        "Desmos US Bidco, Inc.",
+        "Desmos Bidco SAS"
       ],
       "targets": [
-        {
-          "name": "Novacel Performance Coatings, Inc.",
-          "identifier_type": null,
-          "identifier": "EIN  311708662",
-          "party_page": {
-            "id": "novacel-performance-coatings-inc",
-            "name": "Novacel Performance Coatings, Inc."
-          }
-        },
-        {
-          "name": "Novacel, Inc.",
-          "identifier_type": null,
-          "identifier": "EIN  043515032",
-          "party_page": {
-            "id": "novacel-inc",
-            "name": "Novacel, Inc."
-          }
-        }
-      ]
+        "Novacel Performance Coatings, Inc.",
+        "Novacel, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-80016",
       "merger_name": "Henkel \u2013 Olaplex",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Henkel US Operations Corporation",
-          "identifier_type": null,
-          "identifier": "Delaware registration number: 740913",
-          "canonical": {
-            "id": "henkel-ag-co-kgaa",
-            "name": "Henkel"
-          },
-          "party_page": {
-            "id": "henkel-ag-co-kgaa",
-            "name": "Henkel"
-          }
-        }
+        "Henkel US Operations Corporation"
       ],
       "targets": [
-        {
-          "name": "Olaplex, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware registration number: 7702123 (EIN: 843736163)",
-          "canonical": {
-            "id": "olaplex-inc",
-            "name": "Olaplex, Inc."
-          },
-          "party_page": {
-            "id": "olaplex-inc",
-            "name": "Olaplex, Inc."
-          }
-        },
-        {
-          "name": "Advent International, L.P.",
-          "identifier_type": null,
-          "identifier": "Delaware registration number: 204418",
-          "canonical": {
-            "id": "advent-international",
-            "name": "Advent International"
-          },
-          "party_page": {
-            "id": "advent-international",
-            "name": "Advent International"
-          }
-        }
-      ]
+        "Olaplex, Inc.",
+        "Advent International, L.P."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

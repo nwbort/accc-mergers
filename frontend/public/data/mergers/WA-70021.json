@@ -118,108 +118,37 @@
     {
       "merger_id": "WA-75020",
       "merger_name": "CleanPeak Energy Holdings - Sustainable Energy Infrastructure",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CLEANPEAK ENERGY HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "17 689 336 696",
-          "party_page": {
-            "id": "cleanpeak-energy-holdings-pty-ltd",
-            "name": "Cleanpeak Energy Holdings Pty Ltd"
-          }
-        },
-        {
-          "name": "CLEANPEAK IFM PROJECTS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "30 618 387 143",
-          "party_page": {
-            "id": "cleanpeak-ifm-projects-pty-ltd",
-            "name": "Cleanpeak Ifm Projects Pty Ltd"
-          }
-        }
+        "CLEANPEAK ENERGY HOLDINGS PTY LTD",
+        "CLEANPEAK IFM PROJECTS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "CARESUPER PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "14 008 650 628",
-          "party_page": {
-            "id": "caresuper-pty-ltd",
-            "name": "Caresuper Pty Ltd"
-          }
-        },
-        {
-          "name": "STATE STREET AUSTRALIA LTD",
-          "identifier_type": "ABN",
-          "identifier": "21 002 965 200",
-          "party_page": {
-            "id": "state-street-australia-ltd",
-            "name": "State Street Australia Ltd"
-          }
-        }
-      ]
+        "CARESUPER PTY LTD",
+        "STATE STREET AUSTRALIA LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-70012",
       "merger_name": "Quanta - PSD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Quanta Services Australia Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "11 164 311 997",
-          "party_page": {
-            "id": "quanta-services-australia-pty-ltd",
-            "name": "Quanta Services Australia Pty Ltd"
-          }
-        }
+        "Quanta Services Australia Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "PSD Global Holdings Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "634 380 813",
-          "party_page": {
-            "id": "psd-global-holdings-pty-ltd",
-            "name": "PSD Global Holdings Pty Ltd"
-          }
-        }
-      ]
+        "PSD Global Holdings Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-15025",
       "merger_name": "Gunvor Group \u2013 ZEN Energy Retail Holdings",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Gunvor Group Ltd",
-          "identifier_type": null,
-          "identifier": "Cyprus registration number  HE 279934",
-          "party_page": {
-            "id": "gunvor-group-ltd",
-            "name": "Gunvor Group Ltd"
-          }
-        }
+        "Gunvor Group Ltd"
       ],
       "targets": [
-        {
-          "name": "ZEN ENERGY RETAIL HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "76 697 773 916",
-          "canonical": {
-            "id": "zen-energy-retail-pty-ltd",
-            "name": "Zen Energy Retail Pty Ltd"
-          },
-          "party_page": {
-            "id": "zen-energy-retail-pty-ltd",
-            "name": "Zen Energy Retail Pty Ltd"
-          }
-        }
-      ]
+        "ZEN ENERGY RETAIL HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

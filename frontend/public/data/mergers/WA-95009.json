@@ -102,113 +102,38 @@
     {
       "merger_id": "WA-25001",
       "merger_name": "Regent Motors Group \u2013 Esperance Motor Group (Esperance Toyota & Ford)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ALBANY MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "95 676 040 341",
-          "party_page": {
-            "id": "albany-motors-pty-ltd",
-            "name": "Albany Motors Pty Ltd"
-          }
-        }
+        "ALBANY MOTORS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Esperance Motor Group Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "57 121 986 016",
-          "party_page": {
-            "id": "esperance-motor-group-pty-ltd",
-            "name": "Esperance Motor Group Pty Ltd"
-          }
-        },
-        {
-          "name": "BUVERIE PTY LTD as trustee for SCHWARZBACK FAMILY TRUST",
-          "identifier_type": "ABN",
-          "identifier": "80 701 405 315",
-          "party_page": {
-            "id": "buverie-pty-ltd-as-trustee-for-schwarzback-family-trust",
-            "name": "BUVERIE PTY LTD as trustee for SCHWARZBACK FAMILY TRUST"
-          }
-        }
-      ]
+        "Esperance Motor Group Pty Ltd",
+        "BUVERIE PTY LTD as trustee for SCHWARZBACK FAMILY TRUST"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-01092",
       "merger_name": "Winning Group Holdings \u2013 Winning Appliances",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Herman Corp Pty Ltd (as trustee for the Herman Holdings Family Trust)",
-          "identifier_type": "ABN",
-          "identifier": "21 151 833 555",
-          "party_page": {
-            "id": "herman-corp-pty-ltd-as-trustee-for-the-herman-holdings-family-trust",
-            "name": "Herman Corp Pty Ltd (as trustee for the Herman Holdings Family Trust)"
-          }
-        },
-        {
-          "name": "Yandoo Holdings Pty Ltd",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "yandoo-holdings-pty-ltd",
-            "name": "Yandoo Holdings Pty Ltd"
-          }
-        }
+        "Herman Corp Pty Ltd (as trustee for the Herman Holdings Family Trust)",
+        "Yandoo Holdings Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "WINNING APPLIANCES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "94 002 193 688",
-          "party_page": {
-            "id": "winning-appliances-pty-ltd",
-            "name": "Winning Appliances Pty Ltd"
-          }
-        }
-      ]
+        "WINNING APPLIANCES PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-55013",
       "merger_name": "Lawrence & Hanson - Gordon Macdonald",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "LAWRENCE & HANSON GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "69 080 350 812",
-          "party_page": {
-            "id": "lawrence-hanson-group-pty-ltd",
-            "name": "Lawrence & Hanson Group Pty Ltd"
-          }
-        }
+        "LAWRENCE & HANSON GROUP PTY LTD"
       ],
       "targets": [
-        {
-          "name": "ROBYN DAN",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "robyn-dan",
-            "name": "Robyn Dan"
-          }
-        },
-        {
-          "name": "LYNETTE ROBYN VAN ECK",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "lynette-robyn-van-eck",
-            "name": "Lynette Robyn Van Eck"
-          }
-        }
-      ]
+        "ROBYN DAN",
+        "LYNETTE ROBYN VAN ECK"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

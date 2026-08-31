@@ -137,120 +137,37 @@
     {
       "merger_id": "MN-35014",
       "merger_name": "News Corp \u2013 acquisition of 20% of National Distribution Services",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "NEWS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "47 007 871 178",
-          "party_page": {
-            "id": "news-pty-limited",
-            "name": "News Pty Limited"
-          }
-        }
+        "NEWS PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "NATIONAL DISTRIBUTION SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "66 633 619 333",
-          "party_page": {
-            "id": "national-distribution-services-pty-ltd",
-            "name": "National Distribution Services Pty Ltd"
-          }
-        }
-      ]
+        "NATIONAL DISTRIBUTION SERVICES PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-55019",
       "merger_name": "Allegro - Fantastic Furniture",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Fantastic Group BidCo Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "697 467 100",
-          "party_page": {
-            "id": "fantastic-group-bidco-pty-ltd",
-            "name": "Fantastic Group BidCo Pty Ltd"
-          }
-        }
+        "Fantastic Group BidCo Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Fantastic Furniture \u2013 The Package Deal Kings Limited",
-          "identifier_type": null,
-          "identifier": "NZCN  1015185",
-          "party_page": {
-            "id": "fantastic-furniture-the-package-deal-kings-limited",
-            "name": "Fantastic Furniture \u2013 The Package Deal Kings Limited"
-          }
-        },
-        {
-          "name": "FANTASTIC FURNITURE PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "66 003 688 855",
-          "canonical": {
-            "id": "fantastic-furniture-limited",
-            "name": "Fantastic Furniture"
-          },
-          "party_page": {
-            "id": "fantastic-furniture-limited",
-            "name": "Fantastic Furniture"
-          }
-        }
-      ]
+        "Fantastic Furniture \u2013 The Package Deal Kings Limited",
+        "FANTASTIC FURNITURE PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-80016",
       "merger_name": "Henkel \u2013 Olaplex",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Henkel US Operations Corporation",
-          "identifier_type": null,
-          "identifier": "Delaware registration number: 740913",
-          "canonical": {
-            "id": "henkel-ag-co-kgaa",
-            "name": "Henkel"
-          },
-          "party_page": {
-            "id": "henkel-ag-co-kgaa",
-            "name": "Henkel"
-          }
-        }
+        "Henkel US Operations Corporation"
       ],
       "targets": [
-        {
-          "name": "Olaplex, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware registration number: 7702123 (EIN: 843736163)",
-          "canonical": {
-            "id": "olaplex-inc",
-            "name": "Olaplex, Inc."
-          },
-          "party_page": {
-            "id": "olaplex-inc",
-            "name": "Olaplex, Inc."
-          }
-        },
-        {
-          "name": "Advent International, L.P.",
-          "identifier_type": null,
-          "identifier": "Delaware registration number: 204418",
-          "canonical": {
-            "id": "advent-international",
-            "name": "Advent International"
-          },
-          "party_page": {
-            "id": "advent-international",
-            "name": "Advent International"
-          }
-        }
-      ]
+        "Olaplex, Inc.",
+        "Advent International, L.P."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

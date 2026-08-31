@@ -185,112 +185,37 @@
     {
       "merger_id": "WA-90016",
       "merger_name": "Turkish Airlines - Air Europa",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "T\u00fcrk Hava Yollar\u0131 Anonim Ortakl\u0131\u011f\u0131",
-          "identifier_type": null,
-          "identifier": "Registration number  751840",
-          "party_page": {
-            "id": "t-rk-hava-yollar-anonim-ortakl",
-            "name": "T\u00fcrk Hava Yollar\u0131 Anonim Ortakl\u0131\u011f\u0131"
-          }
-        }
+        "T\u00fcrk Hava Yollar\u0131 Anonim Ortakl\u0131\u011f\u0131"
       ],
       "targets": [
-        {
-          "name": "Air Europa Holding, S.L.",
-          "identifier_type": null,
-          "identifier": "PM87946",
-          "party_page": {
-            "id": "air-europa-holding-s-l",
-            "name": "Air Europa Holding, S.L."
-          }
-        }
-      ]
+        "Air Europa Holding, S.L."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-85026",
       "merger_name": "Banijay Entertainment \u2013 All3Media",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Banijay Holding UK Limited",
-          "identifier_type": null,
-          "identifier": "UK Company number 17040112",
-          "canonical": {
-            "id": "banijay-entertainment",
-            "name": "Banijay Entertainment"
-          },
-          "party_page": {
-            "id": "banijay-entertainment",
-            "name": "Banijay Entertainment"
-          }
-        },
-        {
-          "name": "Gold Rush TopCo Limited",
-          "identifier_type": null,
-          "identifier": "RN 152697",
-          "party_page": {
-            "id": "gold-rush-topco-limited",
-            "name": "Gold Rush TopCo Limited"
-          }
-        }
+        "Banijay Holding UK Limited",
+        "Gold Rush TopCo Limited"
       ],
       "targets": [
-        {
-          "name": "Gold Rush HoldCo Limited",
-          "identifier_type": null,
-          "identifier": "RN 152698",
-          "party_page": {
-            "id": "gold-rush-holdco-limited",
-            "name": "Gold Rush HoldCo Limited"
-          }
-        },
-        {
-          "name": "Banijay Holding S.A.S.",
-          "identifier_type": null,
-          "identifier": "829 295 138 RCS PARIS",
-          "canonical": {
-            "id": "banijay-entertainment",
-            "name": "Banijay Entertainment"
-          },
-          "party_page": {
-            "id": "banijay-entertainment",
-            "name": "Banijay Entertainment"
-          }
-        }
-      ]
+        "Gold Rush HoldCo Limited",
+        "Banijay Holding S.A.S."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-65022",
       "merger_name": "Hapag-Lloyd - ZIM",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Hapag-Lloyd Aktiengesellschaft",
-          "identifier_type": null,
-          "identifier": "German company registration number  HRB97937",
-          "party_page": {
-            "id": "hapag-lloyd-aktiengesellschaft",
-            "name": "Hapag-Lloyd Aktiengesellschaft"
-          }
-        }
+        "Hapag-Lloyd Aktiengesellschaft"
       ],
       "targets": [
-        {
-          "name": "ZIM Integrated Shipping Services Ltd",
-          "identifier_type": null,
-          "identifier": "Israeli company registration number  520015041",
-          "party_page": {
-            "id": "zim-integrated-shipping-services-ltd",
-            "name": "ZIM Integrated Shipping Services Ltd"
-          }
-        }
-      ]
+        "ZIM Integrated Shipping Services Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

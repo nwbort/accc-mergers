@@ -120,95 +120,36 @@
     {
       "merger_id": "MN-95011",
       "merger_name": "Dubai Aerospace Enterprise - Macquarie AirFinance",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Dubai Aerospace Enterprise (DAE) Ltd",
-          "identifier_type": null,
-          "identifier": "DIFC  0170",
-          "party_page": {
-            "id": "dubai-aerospace-enterprise-dae-ltd",
-            "name": "Dubai Aerospace Enterprise (DAE) Ltd"
-          }
-        }
+        "Dubai Aerospace Enterprise (DAE) Ltd"
       ],
       "targets": [
-        {
-          "name": "Macquarie AirFinance Limited",
-          "identifier_type": null,
-          "identifier": "UK  11958743",
-          "party_page": {
-            "id": "macquarie-airfinance-limited",
-            "name": "Macquarie AirFinance Limited"
-          }
-        }
-      ]
+        "Macquarie AirFinance Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-50005",
       "merger_name": "Allied Beef - Lease of Yarranbrook Feedlot",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ALLIED BEEF GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "52 151 578 102",
-          "party_page": {
-            "id": "allied-beef-group-pty-ltd",
-            "name": "Allied Beef Group Pty Ltd"
-          }
-        }
+        "ALLIED BEEF GROUP PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Yarranbrook Feedlot land",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "yarranbrook-feedlot-land",
-            "name": "Yarranbrook Feedlot land"
-          }
-        }
-      ]
+        "Yarranbrook Feedlot land"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-75006",
       "merger_name": "Playlist \u2013 EGYM",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Saturn NewCo, Inc",
-          "identifier_type": null,
-          "identifier": "DE File number: 10449592",
-          "party_page": {
-            "id": "saturn-newco-inc",
-            "name": "Saturn NewCo, Inc"
-          }
-        },
-        {
-          "name": "ClassPass Aggregator, LLC",
-          "identifier_type": null,
-          "identifier": "DE File number: 6177870",
-          "party_page": {
-            "id": "classpass-aggregator-llc",
-            "name": "ClassPass Aggregator, LLC"
-          }
-        }
+        "Saturn NewCo, Inc",
+        "ClassPass Aggregator, LLC"
       ],
       "targets": [
-        {
-          "name": "EGYM SE",
-          "identifier_type": null,
-          "identifier": "HRB: 186394",
-          "party_page": {
-            "id": "egym-se",
-            "name": "Egym Se"
-          }
-        }
-      ]
+        "EGYM SE"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

@@ -130,111 +130,36 @@
     {
       "merger_id": "WA-70004",
       "merger_name": "Impression Dental Group - Happy Rock Dental Practice",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "GENERAL DENTAL HOLDINGS PTY LTD trading as Impression Dental Group",
-          "identifier_type": "ABN",
-          "identifier": "55 646 760 367",
-          "canonical": {
-            "id": "general-dental-holdings-pty-ltd",
-            "name": "General Dental Holdings"
-          },
-          "party_page": {
-            "id": "general-dental-holdings-pty-ltd",
-            "name": "General Dental Holdings"
-          }
-        }
+        "GENERAL DENTAL HOLDINGS PTY LTD trading as Impression Dental Group"
       ],
       "targets": [
-        {
-          "name": "Happy Rock Dental Practice",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "happy-rock-dental-practice",
-            "name": "Happy Rock Dental Practice"
-          }
-        },
-        {
-          "name": "WEI-JIE JIANG PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "57 116 562 693",
-          "canonical": {
-            "id": "wei-jie-jiang",
-            "name": "Wei-Jie Jiang"
-          },
-          "party_page": {
-            "id": "wei-jie-jiang",
-            "name": "Wei-Jie Jiang"
-          }
-        }
-      ]
+        "Happy Rock Dental Practice",
+        "WEI-JIE JIANG PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-50007",
       "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "NDC AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "49 162 955 866",
-          "canonical": {
-            "id": "national-dental-care",
-            "name": "National Dental Care"
-          },
-          "party_page": {
-            "id": "national-dental-care",
-            "name": "National Dental Care"
-          }
-        }
+        "NDC AUSTRALIA PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "The Trustee for the Comfy Dental Trust",
-          "identifier_type": "ABN",
-          "identifier": "59 865 563 072",
-          "party_page": {
-            "id": "the-trustee-for-the-comfy-dental-trust",
-            "name": "The Trustee for the Comfy Dental Trust"
-          }
-        }
-      ]
+        "The Trustee for the Comfy Dental Trust"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70017",
       "merger_name": "National Dental Care \u2013 business assets comprising the Cambridge Dental Centre clinic, Perth, WA",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "NDC AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "49 162 955 866",
-          "canonical": {
-            "id": "national-dental-care",
-            "name": "National Dental Care"
-          },
-          "party_page": {
-            "id": "national-dental-care",
-            "name": "National Dental Care"
-          }
-        }
+        "NDC AUSTRALIA PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "CAMDENT SERVICES UNIT TRUST",
-          "identifier_type": "ABN",
-          "identifier": "37 559 915 898",
-          "party_page": {
-            "id": "camdent-services-unit-trust",
-            "name": "Camdent Services Unit Trust"
-          }
-        }
-      ]
+        "CAMDENT SERVICES UNIT TRUST"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

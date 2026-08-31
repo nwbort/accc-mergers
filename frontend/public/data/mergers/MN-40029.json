@@ -154,75 +154,25 @@
     {
       "merger_id": "WA-45013",
       "merger_name": "Australian Venue Co \u2013 assets of White Cockatoo Hotel, Petersham",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AVC OPERATIONS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "81 607 832 299",
-          "canonical": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          },
-          "party_page": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          }
-        }
+        "AVC OPERATIONS PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "Petersham Pub Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "620 159 757",
-          "party_page": {
-            "id": "petersham-pub-pty-ltd",
-            "name": "Petersham Pub Pty Ltd"
-          }
-        }
-      ]
+        "Petersham Pub Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-75026",
       "merger_name": "Australian Venue Co - leasehold and assets of Brabham Tavern, WA",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AVC OPERATIONS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "81 607 832 299",
-          "canonical": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          },
-          "party_page": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          }
-        }
+        "AVC OPERATIONS PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "Koy Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "009 023 787",
-          "party_page": {
-            "id": "koy-pty-ltd",
-            "name": "Koy Pty Ltd"
-          }
-        },
-        {
-          "name": "Brabtav Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "661 314 772",
-          "party_page": {
-            "id": "brabtav-pty-ltd",
-            "name": "Brabtav Pty Ltd"
-          }
-        }
-      ]
+        "Koy Pty Ltd",
+        "Brabtav Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

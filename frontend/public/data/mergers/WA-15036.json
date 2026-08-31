@@ -92,116 +92,37 @@
     {
       "merger_id": "WA-75034",
       "merger_name": "Kanda Healthcare \u2013 Live Your Way, QLD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "KANDA HEALTHCARE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "77 151 293 515",
-          "party_page": {
-            "id": "kanda-healthcare-pty-ltd",
-            "name": "Kanda Healthcare Pty Ltd"
-          }
-        }
+        "KANDA HEALTHCARE PTY LTD"
       ],
       "targets": [
-        {
-          "name": "LIVE YOUR WAY AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "35 154 415 013",
-          "party_page": {
-            "id": "live-your-way-australia-pty-ltd",
-            "name": "Live Your Way Australia Pty Ltd"
-          }
-        }
-      ]
+        "LIVE YOUR WAY AUSTRALIA PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-90012",
       "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "PT Asian Bulk Logistics",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          },
-          "party_page": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          }
-        },
-        {
-          "name": "Global Engage Marine Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "693 762 122",
-          "canonical": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          },
-          "party_page": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          }
-        }
+        "PT Asian Bulk Logistics",
+        "Global Engage Marine Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "ENGAGE MARINE FINCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "25 675 999 283",
-          "party_page": {
-            "id": "engage-marine-finco-pty-ltd",
-            "name": "Engage Marine Finco Pty Ltd"
-          }
-        },
-        {
-          "name": "ENGAGE MARINE HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 626 774 678",
-          "party_page": {
-            "id": "engage-marine-holdings-pty-ltd",
-            "name": "Engage Marine Holdings Pty Ltd"
-          }
-        }
-      ]
+        "ENGAGE MARINE FINCO PTY LTD",
+        "ENGAGE MARINE HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-85038",
       "merger_name": "Hammondcare - Anglican Community Services' Support at Home business",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "HAMMONDCARE",
-          "identifier_type": "ABN",
-          "identifier": "48 000 026 219",
-          "canonical": {
-            "id": "hammondcare",
-            "name": "HammondCare"
-          },
-          "party_page": {
-            "id": "hammondcare",
-            "name": "HammondCare"
-          }
-        }
+        "HAMMONDCARE"
       ],
       "targets": [
-        {
-          "name": "ANGLICAN COMMUNITY SERVICES",
-          "identifier_type": "ABN",
-          "identifier": "39 922 848 563",
-          "party_page": {
-            "id": "anglican-community-services",
-            "name": "Anglican Community Services"
-          }
-        }
-      ]
+        "ANGLICAN COMMUNITY SERVICES"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

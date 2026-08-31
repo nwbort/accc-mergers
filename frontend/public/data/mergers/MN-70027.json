@@ -186,116 +186,37 @@
     {
       "merger_id": "WA-50014",
       "merger_name": "Searchlight Capital Partners - Additional interest in KORE Group Holdings Inc.",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Searchlight Capital IV LP",
-          "identifier_type": null,
-          "identifier": "US SEC  0001954453",
-          "party_page": {
-            "id": "searchlight-capital-iv-lp",
-            "name": "Searchlight Capital IV LP"
-          }
-        },
-        {
-          "name": "KONA Merger Sub Co.",
-          "identifier_type": null,
-          "identifier": "Delaware  10525073",
-          "party_page": {
-            "id": "kona-merger-sub-co",
-            "name": "KONA Merger Sub Co."
-          }
-        }
+        "Searchlight Capital IV LP",
+        "KONA Merger Sub Co."
       ],
       "targets": [
-        {
-          "name": "KORE Group Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware  5388903",
-          "party_page": {
-            "id": "kore-group-holdings-inc",
-            "name": "KORE Group Holdings, Inc."
-          }
-        }
-      ]
+        "KORE Group Holdings, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-15025",
       "merger_name": "Gunvor Group \u2013 ZEN Energy Retail Holdings",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Gunvor Group Ltd",
-          "identifier_type": null,
-          "identifier": "Cyprus registration number  HE 279934",
-          "party_page": {
-            "id": "gunvor-group-ltd",
-            "name": "Gunvor Group Ltd"
-          }
-        }
+        "Gunvor Group Ltd"
       ],
       "targets": [
-        {
-          "name": "ZEN ENERGY RETAIL HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "76 697 773 916",
-          "canonical": {
-            "id": "zen-energy-retail-pty-ltd",
-            "name": "Zen Energy Retail Pty Ltd"
-          },
-          "party_page": {
-            "id": "zen-energy-retail-pty-ltd",
-            "name": "Zen Energy Retail Pty Ltd"
-          }
-        }
-      ]
+        "ZEN ENERGY RETAIL HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-20026",
       "merger_name": "Oaktree \u2013 Vivax Metrotech",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Vector JV Bidco, Inc.",
-          "identifier_type": null,
-          "identifier": "10619273",
-          "party_page": {
-            "id": "vector-jv-bidco-inc",
-            "name": "Vector JV Bidco, Inc."
-          }
-        }
+        "Vector JV Bidco, Inc."
       ],
       "targets": [
-        {
-          "name": "Vivax Metrotech Sdn. Bhd.",
-          "identifier_type": null,
-          "identifier": "202401054941",
-          "canonical": {
-            "id": "vivax-metrotech",
-            "name": "Vivax Metrotech"
-          },
-          "party_page": {
-            "id": "vivax-metrotech",
-            "name": "Vivax Metrotech"
-          }
-        },
-        {
-          "name": "Vivax-Metrotech Ltd.",
-          "identifier_type": null,
-          "identifier": "08253003",
-          "canonical": {
-            "id": "vivax-metrotech",
-            "name": "Vivax Metrotech"
-          },
-          "party_page": {
-            "id": "vivax-metrotech",
-            "name": "Vivax Metrotech"
-          }
-        }
-      ]
+        "Vivax Metrotech Sdn. Bhd.",
+        "Vivax-Metrotech Ltd."
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

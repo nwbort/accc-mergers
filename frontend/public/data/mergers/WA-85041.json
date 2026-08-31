@@ -146,104 +146,37 @@
     {
       "merger_id": "WA-15010",
       "merger_name": "AZ Next Generation Advisory \u2013 Intend Financial",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AZ NEXT GENERATION ADVISORY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "57 167 960 018",
-          "party_page": {
-            "id": "az-next-generation-advisory-pty-ltd",
-            "name": "Az Next Generation Advisory Pty Ltd"
-          }
-        }
+        "AZ NEXT GENERATION ADVISORY PTY LTD"
       ],
       "targets": [
-        {
-          "name": "BMM PARTNERS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "82 649 113 959",
-          "party_page": {
-            "id": "bmm-partners-pty-ltd",
-            "name": "Bmm Partners Pty Ltd"
-          }
-        }
-      ]
+        "BMM PARTNERS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-85004",
       "merger_name": "Treysta Wealth Management \u2013 Locumsgroup",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Treysta Wealth Management Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "87 151 156 222",
-          "party_page": {
-            "id": "treysta-wealth-management-pty-ltd",
-            "name": "Treysta Wealth Management Pty Ltd"
-          }
-        }
+        "Treysta Wealth Management Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Locumsgroup Private Accounting Services Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "66 116 993 670",
-          "party_page": {
-            "id": "locumsgroup-private-accounting-services-pty-limited",
-            "name": "Locumsgroup Private Accounting Services Pty Limited"
-          }
-        },
-        {
-          "name": "Locumsgroup Asset Management Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "71 113 009 626",
-          "party_page": {
-            "id": "locumsgroup-asset-management-pty-ltd",
-            "name": "Locumsgroup Asset Management Pty Ltd"
-          }
-        }
-      ]
+        "Locumsgroup Private Accounting Services Pty Limited",
+        "Locumsgroup Asset Management Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-75039",
       "merger_name": "Ironbark - Paris Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "INVEST BLUE FINANCE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "35 661 784 541",
-          "party_page": {
-            "id": "invest-blue-finance-pty-ltd",
-            "name": "Invest Blue Finance Pty Ltd"
-          }
-        }
+        "INVEST BLUE FINANCE PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Paris Financial Services Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "24 143 510 301",
-          "party_page": {
-            "id": "paris-financial-services-pty-ltd",
-            "name": "Paris Financial Services Pty Ltd"
-          }
-        },
-        {
-          "name": "PARIS LENDING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "48 610 493 368",
-          "party_page": {
-            "id": "paris-lending-pty-ltd",
-            "name": "Paris Lending Pty Ltd"
-          }
-        }
-      ]
+        "Paris Financial Services Pty Ltd",
+        "PARIS LENDING PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

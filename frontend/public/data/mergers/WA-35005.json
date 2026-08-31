@@ -96,112 +96,37 @@
     {
       "merger_id": "WA-90011",
       "merger_name": "Salter Brothers - Buroserv",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BUROSERV TELCO HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "17 690 175 770",
-          "party_page": {
-            "id": "buroserv-telco-holdings-pty-ltd",
-            "name": "Buroserv Telco Holdings Pty Ltd"
-          }
-        }
+        "BUROSERV TELCO HOLDINGS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "LMGPS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "48 612 519 178",
-          "party_page": {
-            "id": "lmgps-pty-ltd",
-            "name": "Lmgps Pty Ltd"
-          }
-        }
-      ]
+        "LMGPS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-50008",
       "merger_name": "WIN Television Network - NBN Enterprises & Television Holdings Darwin",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "WIN TELEVISION NETWORK PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "90 008 589 026",
-          "party_page": {
-            "id": "win-television-network-pty-ltd",
-            "name": "Win Television Network Pty Ltd"
-          }
-        }
+        "WIN TELEVISION NETWORK PTY LTD"
       ],
       "targets": [
-        {
-          "name": "NINE NETWORK AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "88 008 685 407",
-          "canonical": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          },
-          "party_page": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          }
-        },
-        {
-          "name": "NINE NETWORK AUSTRALIA HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 124 816 093",
-          "canonical": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          },
-          "party_page": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          }
-        }
-      ]
+        "NINE NETWORK AUSTRALIA PTY LTD",
+        "NINE NETWORK AUSTRALIA HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-80004",
       "merger_name": "Audiotonix - Soundtech Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "A6 Audio Bidco Limited",
-          "identifier_type": null,
-          "identifier": "Company number (England and Wales)  10573578",
-          "party_page": {
-            "id": "a6-audio-bidco-limited",
-            "name": "A6 Audio Bidco Limited"
-          }
-        },
-        {
-          "name": "Sound Bidco (Denmark) ApS",
-          "identifier_type": null,
-          "identifier": "Company number (Denmark)  45697088",
-          "party_page": {
-            "id": "sound-bidco-denmark-aps",
-            "name": "Sound Bidco (Denmark) ApS"
-          }
-        }
+        "A6 Audio Bidco Limited",
+        "Sound Bidco (Denmark) ApS"
       ],
       "targets": [
-        {
-          "name": "Soundtech Group S.r.l.",
-          "identifier_type": null,
-          "identifier": "Registration number (Companies\u2019 Register of Vicenza, VAT and Tax Code )  04495290241",
-          "party_page": {
-            "id": "soundtech-group-s-r-l",
-            "name": "Soundtech Group S.r.l."
-          }
-        }
-      ]
+        "Soundtech Group S.r.l."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

@@ -92,86 +92,35 @@
     {
       "merger_id": "WA-25011",
       "merger_name": "BGIS - Ascot Air",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BGIS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "83 064 638 197",
-          "party_page": {
-            "id": "bgis-pty-ltd",
-            "name": "Bgis Pty Ltd"
-          }
-        }
+        "BGIS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "ASCOT AIR FACILITIES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "34 620 803 358",
-          "party_page": {
-            "id": "ascot-air-facilities-pty-ltd",
-            "name": "Ascot Air Facilities Pty Ltd"
-          }
-        }
-      ]
+        "ASCOT AIR FACILITIES PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-70012",
       "merger_name": "Quanta - PSD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Quanta Services Australia Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "11 164 311 997",
-          "party_page": {
-            "id": "quanta-services-australia-pty-ltd",
-            "name": "Quanta Services Australia Pty Ltd"
-          }
-        }
+        "Quanta Services Australia Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "PSD Global Holdings Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "634 380 813",
-          "party_page": {
-            "id": "psd-global-holdings-pty-ltd",
-            "name": "PSD Global Holdings Pty Ltd"
-          }
-        }
-      ]
+        "PSD Global Holdings Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-90002",
       "merger_name": "NEC Corporation \u2013 CSG Systems International",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "NEC Corporation",
-          "identifier_type": null,
-          "identifier": "Company number 7010401022916",
-          "party_page": {
-            "id": "nec-corporation",
-            "name": "NEC Corporation"
-          }
-        }
+        "NEC Corporation"
       ],
       "targets": [
-        {
-          "name": "CSG Systems International, Inc.",
-          "identifier_type": null,
-          "identifier": "Company number 2444546",
-          "party_page": {
-            "id": "csg-systems-international-inc",
-            "name": "CSG Systems International, Inc."
-          }
-        }
-      ]
+        "CSG Systems International, Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

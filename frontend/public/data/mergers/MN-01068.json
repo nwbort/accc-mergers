@@ -436,98 +436,35 @@
     {
       "merger_id": "MN-01090",
       "merger_name": "Coles \u2013 supermarket site in New Norfolk (TAS)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "45 004 189 708",
-          "canonical": {
-            "id": "coles",
-            "name": "Coles Group"
-          },
-          "party_page": {
-            "id": "coles",
-            "name": "Coles Group"
-          }
-        }
+        "COLES SUPERMARKETS AUSTRALIA PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Tipalea Private No.31 Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "686 197 115",
-          "party_page": {
-            "id": "tipalea-private-no-31-pty-ltd",
-            "name": "Tipalea Private No.31 Pty Ltd"
-          }
-        }
-      ]
+        "Tipalea Private No.31 Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-60012",
       "merger_name": "Coles \u2013 land around supermarket site in Balaclava, VIC",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "COLES GROUP PROPERTY DEVELOPMENTS LTD",
-          "identifier_type": "ABN",
-          "identifier": "72 004 428 326",
-          "canonical": {
-            "id": "coles",
-            "name": "Coles Group"
-          },
-          "party_page": {
-            "id": "coles",
-            "name": "Coles Group"
-          }
-        }
+        "COLES GROUP PROPERTY DEVELOPMENTS LTD"
       ],
       "targets": [
-        {
-          "name": "CITY OF PORT PHILLIP",
-          "identifier_type": "ABN",
-          "identifier": "21 762 977 945",
-          "party_page": {
-            "id": "city-of-port-phillip",
-            "name": "City Of Port Phillip"
-          }
-        }
-      ]
+        "CITY OF PORT PHILLIP"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-55017",
       "merger_name": "Coles - Leasehold interest in shopping centre on Capricorn Highway, Emerald, QLD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "coles",
-            "name": "Coles Group"
-          },
-          "party_page": {
-            "id": "coles",
-            "name": "Coles Group"
-          }
-        }
+        "COLES SUPERMARKETS AUSTRALIA PTY LTD"
       ],
       "targets": [
-        {
-          "name": "BOULDER CAPITAL INVESTMENTS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "48 632 507 996",
-          "party_page": {
-            "id": "boulder-capital-investments-pty-ltd",
-            "name": "Boulder Capital Investments Pty Ltd"
-          }
-        }
-      ]
+        "BOULDER CAPITAL INVESTMENTS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "under_appeal": true,

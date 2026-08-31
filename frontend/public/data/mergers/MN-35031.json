@@ -167,113 +167,38 @@
     {
       "merger_id": "MN-25002",
       "merger_name": "Symal Group - Timms Group and L&D Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "SYMAL MANAGEMENT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "85 602 084 471",
-          "party_page": {
-            "id": "symal-management-pty-ltd",
-            "name": "Symal Management Pty Ltd"
-          }
-        },
-        {
-          "name": "SYL TM CONTRACTING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "68 693 144 697",
-          "party_page": {
-            "id": "syl-tm-contracting-pty-ltd",
-            "name": "Syl Tm Contracting Pty Ltd"
-          }
-        }
+        "SYMAL MANAGEMENT PTY LTD",
+        "SYL TM CONTRACTING PTY LTD"
       ],
       "targets": [
-        {
-          "name": "TIMMS HIRE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "73 115 389 949",
-          "party_page": {
-            "id": "timms-hire-pty-ltd",
-            "name": "Timms Hire Pty Ltd"
-          }
-        },
-        {
-          "name": "TIMMS CONTRACTING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "30 070 456 567",
-          "party_page": {
-            "id": "timms-contracting-pty-ltd",
-            "name": "Timms Contracting Pty Ltd"
-          }
-        }
-      ]
+        "TIMMS HIRE PTY LTD",
+        "TIMMS CONTRACTING PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-85004",
       "merger_name": "Treysta Wealth Management \u2013 Locumsgroup",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Treysta Wealth Management Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "87 151 156 222",
-          "party_page": {
-            "id": "treysta-wealth-management-pty-ltd",
-            "name": "Treysta Wealth Management Pty Ltd"
-          }
-        }
+        "Treysta Wealth Management Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Locumsgroup Private Accounting Services Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "66 116 993 670",
-          "party_page": {
-            "id": "locumsgroup-private-accounting-services-pty-limited",
-            "name": "Locumsgroup Private Accounting Services Pty Limited"
-          }
-        },
-        {
-          "name": "Locumsgroup Asset Management Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "71 113 009 626",
-          "party_page": {
-            "id": "locumsgroup-asset-management-pty-ltd",
-            "name": "Locumsgroup Asset Management Pty Ltd"
-          }
-        }
-      ]
+        "Locumsgroup Private Accounting Services Pty Limited",
+        "Locumsgroup Asset Management Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-95019",
       "merger_name": "Capital Group - Big Post",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Mimeca Nominees Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "005 701 253",
-          "party_page": {
-            "id": "mimeca-nominees-pty-ltd",
-            "name": "Mimeca Nominees Pty Ltd"
-          }
-        }
+        "Mimeca Nominees Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Big Post Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "19 145 428 002",
-          "party_page": {
-            "id": "big-post-pty-ltd",
-            "name": "Big Post Pty Ltd"
-          }
-        }
-      ]
+        "Big Post Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

@@ -173,94 +173,35 @@
     {
       "merger_id": "WA-80028",
       "merger_name": "AngloGold Ashanti Australia \u2013 Matsa Lake Carey tenements",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ANGLOGOLD ASHANTI AUSTRALIA LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "42 008 737 424",
-          "canonical": {
-            "id": "anglogold-ashanti-plc",
-            "name": "AngloGold Ashanti"
-          },
-          "party_page": {
-            "id": "anglogold-ashanti-plc",
-            "name": "AngloGold Ashanti"
-          }
-        }
+        "ANGLOGOLD ASHANTI AUSTRALIA LIMITED"
       ],
       "targets": [
-        {
-          "name": "RED OCTOBER GOLD PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 621 765 633",
-          "party_page": {
-            "id": "red-october-gold-pty-ltd",
-            "name": "Red October Gold Pty Ltd"
-          }
-        }
-      ]
+        "RED OCTOBER GOLD PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-01037",
       "merger_name": "Anglo American - Teck Resources",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Anglo American plc",
-          "identifier_type": null,
-          "identifier": "03564138",
-          "canonical": {
-            "id": "anglo-american-plc",
-            "name": "Anglo American"
-          },
-          "party_page": {
-            "id": "anglo-american-plc",
-            "name": "Anglo American"
-          }
-        }
+        "Anglo American plc"
       ],
       "targets": [
-        {
-          "name": "Teck Resources Limited",
-          "identifier_type": null,
-          "identifier": "4460561",
-          "party_page": {
-            "id": "teck-resources-limited",
-            "name": "Teck Resources Limited"
-          }
-        }
-      ]
+        "Teck Resources Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-65020",
       "merger_name": "Regis Resources - Vault Minerals",
-      "status": "Assessment ceased",
-      "accc_determination": null,
       "acquirers": [
-        {
-          "name": "REGIS RESOURCES LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "28 009 174 761",
-          "party_page": {
-            "id": "regis-resources-limited",
-            "name": "Regis Resources Limited"
-          }
-        }
+        "REGIS RESOURCES LIMITED"
       ],
       "targets": [
-        {
-          "name": "VAULT MINERALS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "73 068 647 610",
-          "party_page": {
-            "id": "vault-minerals-limited",
-            "name": "Vault Minerals Limited"
-          }
-        }
-      ]
+        "VAULT MINERALS LIMITED"
+      ],
+      "status": "Assessment ceased"
     }
   ],
   "phase_1_estimate": {

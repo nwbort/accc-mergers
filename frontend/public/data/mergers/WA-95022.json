@@ -162,112 +162,37 @@
     {
       "merger_id": "WA-40021",
       "merger_name": "Ochre Health - New Lambton Family Practice, NSW",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OCHRE HEALTH PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "79 101 069 452",
-          "party_page": {
-            "id": "ochre-health-pty-limited",
-            "name": "Ochre Health Pty Limited"
-          }
-        }
+        "OCHRE HEALTH PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "NEW LAMBTON FAMILY PRACTICE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "50 151 311 581",
-          "party_page": {
-            "id": "new-lambton-family-practice-pty-ltd",
-            "name": "New Lambton Family Practice Pty Ltd"
-          }
-        },
-        {
-          "name": "Business and assets comprising New Lambton Family Practice",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "business-and-assets-comprising-new-lambton-family-practice",
-            "name": "Business and assets comprising New Lambton Family Practice"
-          }
-        }
-      ]
+        "NEW LAMBTON FAMILY PRACTICE PTY LTD",
+        "Business and assets comprising New Lambton Family Practice"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25008",
       "merger_name": "Five V Capital - FTP Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OVERWATCH BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 739 970",
-          "party_page": {
-            "id": "overwatch-bidco-pty-ltd",
-            "name": "Overwatch Bidco Pty Ltd"
-          }
-        }
+        "OVERWATCH BIDCO PTY LTD"
       ],
       "targets": [
-        {
-          "name": "FTP GROUP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "82 626 217 614",
-          "party_page": {
-            "id": "ftp-group-holdings-pty-ltd",
-            "name": "Ftp Group Holdings Pty Ltd"
-          }
-        },
-        {
-          "name": "FAARM BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 834 390",
-          "canonical": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          },
-          "party_page": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          }
-        }
-      ]
+        "FTP GROUP HOLDINGS PTY LTD",
+        "FAARM BIDCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-05014",
       "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Smile Partners (NSW3) Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 902 955",
-          "party_page": {
-            "id": "smile-partners-nsw3-pty-ltd",
-            "name": "Smile Partners (NSW3) Pty Ltd"
-          }
-        }
+        "Smile Partners (NSW3) Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Shrika Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "108 757 357",
-          "canonical": {
-            "id": "shrika-pty-ltd",
-            "name": "Shrika Pty Ltd"
-          },
-          "party_page": {
-            "id": "shrika-pty-ltd",
-            "name": "Shrika Pty Ltd"
-          }
-        }
-      ]
+        "Shrika Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

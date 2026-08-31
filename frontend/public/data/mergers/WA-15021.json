@@ -110,90 +110,35 @@
     {
       "merger_id": "WA-70007",
       "merger_name": "Platinum Equity Group \u2013 Burke",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Advance Holdings II, LLC",
-          "identifier_type": null,
-          "identifier": "Delaware ID  10496142",
-          "party_page": {
-            "id": "advance-holdings-ii-llc",
-            "name": "Advance Holdings II, LLC"
-          }
-        }
+        "Advance Holdings II, LLC"
       ],
       "targets": [
-        {
-          "name": "BCI Acquisitions, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware ID  6389940",
-          "party_page": {
-            "id": "bci-acquisitions-inc",
-            "name": "BCI Acquisitions, Inc."
-          }
-        }
-      ]
+        "BCI Acquisitions, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-95016",
       "merger_name": "Eli Lilly - Kelonia Therapeutics",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Eli Lilly and Company",
-          "identifier_type": null,
-          "identifier": "IRS Employer Identification Number  350470950",
-          "canonical": {
-            "id": "eli-lilly-and-company",
-            "name": "Eli Lilly"
-          },
-          "party_page": {
-            "id": "eli-lilly-and-company",
-            "name": "Eli Lilly"
-          }
-        }
+        "Eli Lilly and Company"
       ],
       "targets": [
-        {
-          "name": "Kelonia Therapeutics, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "kelonia-therapeutics-inc",
-            "name": "Kelonia Therapeutics, Inc."
-          }
-        }
-      ]
+        "Kelonia Therapeutics, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-40023",
       "merger_name": "AUB \u2013 further interest in KJ Risk",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AUSTBROKERS CORPORATE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "29 107 477 181",
-          "party_page": {
-            "id": "austbrokers-corporate-pty-ltd",
-            "name": "Austbrokers Corporate Pty Ltd"
-          }
-        }
+        "AUSTBROKERS CORPORATE PTY LTD"
       ],
       "targets": [
-        {
-          "name": "KJ RISK GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "15 143 512 387",
-          "party_page": {
-            "id": "kj-risk-group-pty-ltd",
-            "name": "Kj Risk Group Pty Ltd"
-          }
-        }
-      ]
+        "KJ RISK GROUP PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

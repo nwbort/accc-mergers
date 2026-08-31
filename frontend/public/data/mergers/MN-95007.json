@@ -111,99 +111,36 @@
     {
       "merger_id": "MN-65009",
       "merger_name": "CVC Capital Partners \u2013 Marathon Asset Management",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CVC Capital Partners plc",
-          "identifier_type": null,
-          "identifier": "140080",
-          "canonical": {
-            "id": "cvc-capital-partners",
-            "name": "CVC Capital Partners"
-          },
-          "party_page": {
-            "id": "cvc-capital-partners",
-            "name": "CVC Capital Partners"
-          }
-        }
+        "CVC Capital Partners plc"
       ],
       "targets": [
-        {
-          "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "marathon-asset-management-lp-marathon-gp-holdings-i-llc-and-marathon-gp-holdings",
-            "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC"
-          }
-        }
-      ]
+        "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25013",
       "merger_name": "Cinven \u2013 Regenity",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Rosewood AG, LP",
-          "identifier_type": null,
-          "identifier": "LP5500",
-          "party_page": {
-            "id": "rosewood-ag-lp",
-            "name": "Rosewood AG, LP"
-          }
-        }
+        "Rosewood AG, LP"
       ],
       "targets": [
-        {
-          "name": "Collagen Holdings, LLC",
-          "identifier_type": null,
-          "identifier": "DE File Number  7473707",
-          "party_page": {
-            "id": "collagen-holdings-llc",
-            "name": "Collagen Holdings, LLC"
-          }
-        }
-      ]
+        "Collagen Holdings, LLC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70016",
       "merger_name": "Oceania Capital Partners - Hudson Global Resources (Aust)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OCEANIA CAPITAL PARTNERS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "52 111 554 360",
-          "party_page": {
-            "id": "oceania-capital-partners-limited",
-            "name": "Oceania Capital Partners Limited"
-          }
-        },
-        {
-          "name": "K & K RYAN PTY LTD (ACN 623119960) AS TRUSTEE FOR THE K & K RYAN FAMILY TRUST",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "k-k-ryan-pty-ltd-acn-623119960-as-trustee-for-the-k-k-ryan-family-trust",
-            "name": "K & K Ryan Pty Ltd (Acn 623119960) As Trustee For The K & K Ryan Family Trust"
-          }
-        }
+        "OCEANIA CAPITAL PARTNERS LIMITED",
+        "K & K RYAN PTY LTD (ACN 623119960) AS TRUSTEE FOR THE K & K RYAN FAMILY TRUST"
       ],
       "targets": [
-        {
-          "name": "HUDSON HIGHLAND (APAC) PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "14 074 319 396",
-          "party_page": {
-            "id": "hudson-highland-apac-pty-limited",
-            "name": "Hudson Highland (Apac) Pty Limited"
-          }
-        }
-      ]
+        "HUDSON HIGHLAND (APAC) PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

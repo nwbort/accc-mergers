@@ -169,125 +169,38 @@
     {
       "merger_id": "WA-50003",
       "merger_name": "Francisco Partners - Sermo",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Sigrun Bidco Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "sigrun-bidco-limited",
-            "name": "Sigrun Bidco Limited"
-          }
-        }
+        "Sigrun Bidco Limited"
       ],
       "targets": [
-        {
-          "name": "Sermo Limited (together with its subsidiaries, \u201cSermo\u201d)",
-          "identifier_type": null,
-          "identifier": "CRN 11755038",
-          "party_page": {
-            "id": "sermo-limited-together-with-its-subsidiaries-sermo",
-            "name": "Sermo Limited (together with its subsidiaries, \u201cSermo\u201d)"
-          }
-        }
-      ]
+        "Sermo Limited (together with its subsidiaries, \u201cSermo\u201d)"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-75003",
       "merger_name": "Ramsay Health Care \u2013 National Capital Private Hospital",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "RAMSAY HEALTH CARE AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "36 003 184 889",
-          "party_page": {
-            "id": "ramsay-health-care-australia-pty-limited",
-            "name": "Ramsay Health Care Australia Pty Limited"
-          }
-        },
-        {
-          "name": "RAMSAY HEALTH CARE INVESTMENTS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "44 078 881 473",
-          "party_page": {
-            "id": "ramsay-health-care-investments-pty-limited",
-            "name": "Ramsay Health Care Investments Pty Limited"
-          }
-        }
+        "RAMSAY HEALTH CARE AUSTRALIA PTY LIMITED",
+        "RAMSAY HEALTH CARE INVESTMENTS PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "HEALTHSCOPE OPERATIONS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "85 006 405 152",
-          "canonical": {
-            "id": "healthscope",
-            "name": "Healthscope"
-          },
-          "party_page": {
-            "id": "healthscope",
-            "name": "Healthscope"
-          }
-        },
-        {
-          "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "80 146 342 814",
-          "canonical": {
-            "id": "healthscope",
-            "name": "Healthscope"
-          },
-          "party_page": {
-            "id": "healthscope",
-            "name": "Healthscope"
-          }
-        }
-      ]
+        "HEALTHSCOPE OPERATIONS PTY LTD",
+        "HEALTHSCOPE MANAGEMENT PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25008",
       "merger_name": "Five V Capital - FTP Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OVERWATCH BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 739 970",
-          "party_page": {
-            "id": "overwatch-bidco-pty-ltd",
-            "name": "Overwatch Bidco Pty Ltd"
-          }
-        }
+        "OVERWATCH BIDCO PTY LTD"
       ],
       "targets": [
-        {
-          "name": "FTP GROUP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "82 626 217 614",
-          "party_page": {
-            "id": "ftp-group-holdings-pty-ltd",
-            "name": "Ftp Group Holdings Pty Ltd"
-          }
-        },
-        {
-          "name": "FAARM BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 834 390",
-          "canonical": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          },
-          "party_page": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          }
-        }
-      ]
+        "FTP GROUP HOLDINGS PTY LTD",
+        "FAARM BIDCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

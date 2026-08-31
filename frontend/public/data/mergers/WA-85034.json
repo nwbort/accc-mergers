@@ -115,107 +115,36 @@
     {
       "merger_id": "WA-45009",
       "merger_name": "Idemitsu - MidOcean Energy",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "IDEMITSU EUROPE LTD.",
-          "identifier_type": null,
-          "identifier": "UK Company Number 17103829",
-          "party_page": {
-            "id": "idemitsu-europe-ltd",
-            "name": "Idemitsu Europe Ltd."
-          }
-        }
+        "IDEMITSU EUROPE LTD."
       ],
       "targets": [
-        {
-          "name": "MidOcean Holdings II L.P.",
-          "identifier_type": null,
-          "identifier": "SL036455",
-          "party_page": {
-            "id": "midocean-holdings-ii-l-p",
-            "name": "MidOcean Holdings II L.P."
-          }
-        }
-      ]
+        "MidOcean Holdings II L.P."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-40024",
       "merger_name": "Ampol \u2013 Freehold land acquisition in Chelsea Heights, Victoria",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AMPOL PETROLEUM PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "11 000 007 876",
-          "canonical": {
-            "id": "ampol-petroleum-pty-ltd",
-            "name": "Ampol"
-          },
-          "party_page": {
-            "id": "ampol-petroleum-pty-ltd",
-            "name": "Ampol"
-          }
-        }
+        "AMPOL PETROLEUM PTY LTD"
       ],
       "targets": [
-        {
-          "name": "The Charalambous Family",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "the-charalambous-family",
-            "name": "The Charalambous Family"
-          }
-        }
-      ]
+        "The Charalambous Family"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-60020",
       "merger_name": "Metro Petroleum \u2013 Retail sites part of divestiture remedy from Ampol-EG acquisition",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "DIB GROUP PTY. LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "87 002 889 474",
-          "party_page": {
-            "id": "dib-group-pty-limited",
-            "name": "Dib Group Pty. Limited"
-          }
-        }
+        "DIB GROUP PTY. LIMITED"
       ],
       "targets": [
-        {
-          "name": "AMPOL AUSTRALIA PETROLEUM PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "17 000 032 128",
-          "canonical": {
-            "id": "ampol-petroleum-pty-ltd",
-            "name": "Ampol"
-          },
-          "party_page": {
-            "id": "ampol-petroleum-pty-ltd",
-            "name": "Ampol"
-          }
-        },
-        {
-          "name": "AMPOL RETAIL HOLDING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "11 689 777 704",
-          "canonical": {
-            "id": "ampol-petroleum-pty-ltd",
-            "name": "Ampol"
-          },
-          "party_page": {
-            "id": "ampol-petroleum-pty-ltd",
-            "name": "Ampol"
-          }
-        }
-      ]
+        "AMPOL AUSTRALIA PETROLEUM PTY LTD",
+        "AMPOL RETAIL HOLDING PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

@@ -114,103 +114,36 @@
     {
       "merger_id": "WA-25013",
       "merger_name": "Cinven \u2013 Regenity",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Rosewood AG, LP",
-          "identifier_type": null,
-          "identifier": "LP5500",
-          "party_page": {
-            "id": "rosewood-ag-lp",
-            "name": "Rosewood AG, LP"
-          }
-        }
+        "Rosewood AG, LP"
       ],
       "targets": [
-        {
-          "name": "Collagen Holdings, LLC",
-          "identifier_type": null,
-          "identifier": "DE File Number  7473707",
-          "party_page": {
-            "id": "collagen-holdings-llc",
-            "name": "Collagen Holdings, LLC"
-          }
-        }
-      ]
+        "Collagen Holdings, LLC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-05040",
       "merger_name": "Vitamin Well - EMPWR Nutrition Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Vital Holdco AB",
-          "identifier_type": null,
-          "identifier": "5594910134",
-          "canonical": {
-            "id": "vitamin-well-group",
-            "name": "Vitamin Well Group"
-          },
-          "party_page": {
-            "id": "vitamin-well-group",
-            "name": "Vitamin Well Group"
-          }
-        },
-        {
-          "name": "Vital Bidco AB",
-          "identifier_type": null,
-          "identifier": "5594910159",
-          "canonical": {
-            "id": "vitamin-well-group",
-            "name": "Vitamin Well Group"
-          },
-          "party_page": {
-            "id": "vitamin-well-group",
-            "name": "Vitamin Well Group"
-          }
-        }
+        "Vital Holdco AB",
+        "Vital Bidco AB"
       ],
       "targets": [
-        {
-          "name": "EMPWR Nutrition Group NV",
-          "identifier_type": null,
-          "identifier": "BE 0637.861.112",
-          "party_page": {
-            "id": "empwr-nutrition-group-nv",
-            "name": "EMPWR Nutrition Group NV"
-          }
-        }
-      ]
+        "EMPWR Nutrition Group NV"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-05035",
       "merger_name": "Alter Domus - MSC Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Alter Domus Nederland B. V.",
-          "identifier_type": null,
-          "identifier": "KVK  34270994",
-          "party_page": {
-            "id": "alter-domus-nederland-b-v",
-            "name": "Alter Domus Nederland B. V."
-          }
-        }
+        "Alter Domus Nederland B. V."
       ],
       "targets": [
-        {
-          "name": "MSC GROUP CO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "82 640 870 962",
-          "party_page": {
-            "id": "msc-group-co-pty-ltd",
-            "name": "Msc Group Co Pty Ltd"
-          }
-        }
-      ]
+        "MSC GROUP CO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }
