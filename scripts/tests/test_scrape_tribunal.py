@@ -624,3 +624,115 @@ class TestScrapeMattersChallengeRecovery:
             'https://www.competitiontribunal.gov.au/x/Blocked.pdf',
             self.MATTER_URL,
         ]
+
+
+def _doc(date, description, url=None, **extra):
+    doc = {
+        'date': date,
+        'filed_by': 'Australian Competition and Consumer Commission',
+        'description': description,
+        'confidentiality': 'Non-confidential',
+        'url': url or f'https://www.competitiontribunal.gov.au/x/{description}.pdf',
+    }
+    doc.update(extra)
+    return doc
+
+
+class TestMergeDocuments:
+    """The tribunal prunes its own filings table; the record must not follow it."""
+
+    def test_scraped_documents_are_recorded_in_page_order(self):
+        scraped = [_doc('2026-08-20', 'B'), _doc('2026-08-13', 'A')]
+        merged = scrape_tribunal.merge_documents([], scraped)
+        assert [d['description'] for d in merged] == ['B', 'A']
+
+    def test_url_gh_is_carried_over(self):
+        existing = [_doc('2026-08-13', 'A', url_gh='/mergers/MN-1/A.pdf')]
+        merged = scrape_tribunal.merge_documents(existing, [_doc('2026-08-13', 'A')])
+        assert merged[0]['url_gh'] == '/mergers/MN-1/A.pdf'
+
+    def test_document_deleted_from_the_page_is_kept_in_place(self):
+        existing = [
+            _doc('2026-08-20', 'B'),
+            _doc('2026-08-14', 'Amended index'),
+            _doc('2026-08-13', 'A'),
+        ]
+        scraped = [_doc('2026-08-24', 'C'), _doc('2026-08-20', 'B'), _doc('2026-08-13', 'A')]
+        merged = scrape_tribunal.merge_documents(existing, scraped)
+        assert [d['description'] for d in merged] == ['C', 'B', 'Amended index', 'A']
+
+    def test_consecutive_deletions_keep_their_order(self):
+        existing = [
+            _doc('2026-08-20', 'B'),
+            _doc('2026-08-16', 'gone 1'),
+            _doc('2026-08-15', 'gone 2'),
+            _doc('2026-08-13', 'A'),
+        ]
+        merged = scrape_tribunal.merge_documents(
+            existing, [_doc('2026-08-20', 'B'), _doc('2026-08-13', 'A')]
+        )
+        assert [d['description'] for d in merged] == ['B', 'gone 1', 'gone 2', 'A']
+
+    def test_deletion_with_nothing_surviving_after_it_lands_at_the_end(self):
+        existing = [_doc('2026-08-20', 'B'), _doc('2026-07-28', 'oldest, gone')]
+        merged = scrape_tribunal.merge_documents(existing, [_doc('2026-08-20', 'B')])
+        assert [d['description'] for d in merged] == ['B', 'oldest, gone']
+
+    def test_deletion_with_nothing_surviving_before_it_stays_at_the_front(self):
+        existing = [_doc('2026-08-24', 'newest, gone'), _doc('2026-08-20', 'B')]
+        merged = scrape_tribunal.merge_documents(existing, [_doc('2026-08-20', 'B')])
+        assert [d['description'] for d in merged] == ['newest, gone', 'B']
+
+    def test_whole_page_emptied_of_known_documents_keeps_them_all(self):
+        existing = [_doc('2026-08-20', 'B'), _doc('2026-08-13', 'A')]
+        merged = scrape_tribunal.merge_documents(existing, [_doc('2026-08-24', 'C')])
+        assert [d['description'] for d in merged] == ['C', 'B', 'A']
+
+    def test_republished_document_is_matched_by_url_not_description(self):
+        existing = [_doc('2026-08-13', 'A', url_gh='/mergers/MN-1/A.pdf')]
+        rescraped = _doc('2026-08-13', 'A (public version)')
+        rescraped['url'] = existing[0]['url']
+        merged = scrape_tribunal.merge_documents(existing, [rescraped])
+        assert len(merged) == 1
+        assert merged[0]['description'] == 'A (public version)'
+        assert merged[0]['url_gh'] == '/mergers/MN-1/A.pdf'
+
+    def test_link_less_rows_are_matched_on_their_text(self):
+        row = {
+            'date': '2026-08-13',
+            'filed_by': 'Tribunal',
+            'description': 'Directions hearing',
+            'confidentiality': None,
+            'url': None,
+        }
+        merged = scrape_tribunal.merge_documents([dict(row)], [dict(row)])
+        assert len(merged) == 1
+
+    def test_blank_cell_does_not_wipe_a_recorded_value(self):
+        existing = [_doc('2026-08-13', 'A')]
+        thinner = _doc('2026-08-13', 'A')
+        thinner['filed_by'] = None
+        merged = scrape_tribunal.merge_documents(existing, [thinner])
+        assert merged[0]['filed_by'] == 'Australian Competition and Consumer Commission'
+
+    def test_section_follows_the_page(self):
+        existing = [_doc('2026-08-13', 'A', section='Submissions by interested party')]
+        merged = scrape_tribunal.merge_documents(existing, [_doc('2026-08-13', 'A')])
+        assert 'section' not in merged[0]
+
+    def test_unchanged_page_leaves_the_record_untouched(self):
+        existing = [_doc('2026-08-13', 'A', url_gh='/mergers/MN-1/A.pdf')]
+        merged = scrape_tribunal.merge_documents(existing, [_doc('2026-08-13', 'A')])
+        assert merged == existing
+
+
+class TestDroppedDocuments:
+    def test_lists_only_what_the_page_no_longer_carries(self):
+        existing = [_doc('2026-08-20', 'B'), _doc('2026-08-14', 'gone')]
+        dropped = scrape_tribunal.dropped_documents(existing, [_doc('2026-08-20', 'B')])
+        assert [d['description'] for d in dropped] == ['gone']
+
+    def test_empty_when_nothing_was_removed(self):
+        existing = [_doc('2026-08-20', 'B')]
+        assert scrape_tribunal.dropped_documents(existing, existing) == []
+        assert scrape_tribunal.dropped_documents(None, []) == []

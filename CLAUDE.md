@@ -209,6 +209,10 @@ data/
 │                         #   tribunal matter pages by scripts/scrape/scrape_tribunal.py (the daily
 │                         #   scrape-tribunal.yml workflow, which drives a real Chrome via
 │                         #   nodriver to clear Cloudflare); the other fields are hand-maintained.
+│                         #   That scrape is additive: the tribunal prunes its own filings table
+│                         #   (superseded documentary indexes, say), and a document it removes is
+│                         #   kept in documents[] — still mirrored, still a timeline event — and
+│                         #   reported on the run. Delete one by hand to drop it for good.
 │                         #   judicial_reviews.json is a hand-maintained overlay of Federal Court
 │                         #   judicial reviews, keyed by merger_id, merged in at
 │                         #   generate_static_data time (loaders.load_judicial_reviews +
