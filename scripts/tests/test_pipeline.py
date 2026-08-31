@@ -3425,3 +3425,127 @@ class TestMergeConsultationQuestionnaireEvents:
         del scraped[0]['is_questionnaire_event']
         merged = _merge_events(scraped, self._existing(), 'MN-05043', set())
         assert len(merged) == 2
+
+
+# ---------------------------------------------------------------------------
+# Attachment rows the ACCC leaves undated and untitled
+# ---------------------------------------------------------------------------
+
+BLANK_ROW_DOCUMENT_TABLE = '''
+<div class="table-responsive">
+  <table>
+    <tbody>
+      <tr>
+        <td class="acccgov-timeline__date"></td>
+        <td></td>
+        <td class="acccgov-timeline__file-link">
+          <a href="/system/files/public-merger-register/documents/AbbVie%20-%20Apogee%20-%20Questionnaire_0.docx">Attachment</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+'''
+
+
+class TestScrapeEventsBlankRow:
+    """MN-90027's questionnaire was re-uploaded into a row whose date and title
+    cells were both empty. A titleless event renders as a blank timeline row and
+    is invisible to every title-based check downstream, so the row is named
+    after the document it links to."""
+
+    def _scrape(self, html, monkeypatch):
+        monkeypatch.setattr(extract_mergers, 'download_attachment',
+                            lambda *a, **k: None)
+        return _scrape_events(_soup(html), 'MN-90027')
+
+    def test_a_blank_row_is_named_after_its_attachment(self, monkeypatch):
+        events = self._scrape(BLANK_ROW_DOCUMENT_TABLE, monkeypatch)
+        assert len(events) == 1
+        event = events[0]
+        # The extension and the CMS re-upload suffix are dropped, leaving the
+        # title the same document carried before it was re-uploaded.
+        assert event['title'] == 'AbbVie - Apogee - Questionnaire'
+        assert event['display_title'] == 'AbbVie - Apogee - Questionnaire'
+        assert event['date'] == ''
+        assert event['url'].endswith('AbbVie%20-%20Apogee%20-%20Questionnaire_0.docx')
+
+    def test_a_row_with_neither_title_nor_attachment_is_not_an_event(self, monkeypatch):
+        html = BLANK_ROW_DOCUMENT_TABLE.replace(
+            '<td class="acccgov-timeline__file-link">', '<td class="x">')
+        assert self._scrape(html, monkeypatch) == []
+
+    def test_a_titled_row_keeps_its_own_title(self, monkeypatch):
+        html = BLANK_ROW_DOCUMENT_TABLE.replace(
+            '<td></td>', '<td>AbbVie - Apogee - Phase 1 determination</td>')
+        events = self._scrape(html, monkeypatch)
+        assert events[0]['title'] == 'AbbVie - Apogee - Phase 1 determination'
+
+
+class TestMergeEventsUndatedReupload:
+    """MN-90027: the ACCC re-uploaded the questionnaire as "..._0.docx" in an
+    undated row, so the scraped event carried no title+date identity to match
+    on. Without a filename match the original event was flagged 'removed' and
+    the re-upload appended beside it as a duplicate."""
+
+    TITLE = 'AbbVie - Apogee - Questionnaire'
+    OLD_URL = ('https://www.accc.gov.au/system/files/public-merger-register/'
+               'documents/AbbVie%20-%20Apogee%20-%20Questionnaire.docx')
+    NEW_URL = ('https://www.accc.gov.au/system/files/public-merger-register/'
+               'documents/AbbVie%20-%20Apogee%20-%20Questionnaire_0.docx')
+
+    def _existing(self):
+        return {
+            'events': [{
+                'date': '2026-07-28T12:00:00Z',
+                'title': self.TITLE,
+                'display_title': self.TITLE,
+                'url': self.OLD_URL,
+                'url_gh': '/mergers/MN-90027/AbbVie - Apogee - Questionnaire.pdf',
+                'status': 'live',
+            }],
+        }
+
+    def _scraped(self, **extra):
+        event = {
+            'date': '',
+            'title': self.TITLE,
+            'display_title': self.TITLE,
+            'url': self.NEW_URL,
+            'url_gh': '/mergers/MN-90027/AbbVie - Apogee - Questionnaire_0.pdf',
+            'status': 'live',
+        }
+        event.update(extra)
+        return [event]
+
+    def test_rebinds_to_the_reuploaded_url(self):
+        merged = _merge_events(self._scraped(), self._existing(), 'MN-90027', set())
+        assert len(merged) == 1, 'no duplicate should be created'
+        assert merged[0]['url'] == self.NEW_URL
+        assert merged[0]['status'] == 'live'
+
+    def test_the_existing_date_and_display_title_survive(self):
+        # The re-upload is undated, so the date already recorded for the event
+        # is the only one there is; it must not be replaced with the blank.
+        merged = _merge_events(self._scraped(date='', title='', display_title=''),
+                               self._existing(), 'MN-90027', set())
+        assert len(merged) == 1
+        assert merged[0]['display_title'] == self.TITLE
+
+    def test_a_dated_row_keeps_the_stricter_title_and_date_rule(self):
+        # Only rows with no date of their own fall back to filename matching:
+        # a dated document on another date is a separate timeline entry.
+        merged = _merge_events(
+            self._scraped(date='2026-09-25T12:00:00Z', title='Some other document'),
+            self._existing(), 'MN-90027', set(),
+        )
+        assert len(merged) == 2
+
+    def test_a_different_undated_document_is_not_rebound(self):
+        merged = _merge_events(
+            self._scraped(url=('https://www.accc.gov.au/system/files/'
+                               'public-merger-register/documents/'
+                               'AbbVie%20-%20Apogee%20-%20Remedy.docx')),
+            self._existing(), 'MN-90027', set(),
+        )
+        assert len(merged) == 2

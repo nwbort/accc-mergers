@@ -700,16 +700,31 @@ def _scrape_events(soup, merger_id, existing_merger_data=None):
                 continue
 
             title = title_cell.get_text(strip=True)
+            link_tag = link_cell.find('a') if link_cell else None
+            url = (urljoin(BASE_URL, link_tag['href'])
+                   if link_tag and link_tag.has_attr('href') else None)
+
+            # The ACCC occasionally publishes an attachment in a row whose date
+            # and title cells are both blank (MN-90027's questionnaire was
+            # re-uploaded that way). An event with no title renders as an empty
+            # timeline row and is invisible to every title-based check
+            # downstream (questionnaire detection, the missing-date auto-fix),
+            # so name it after the document it links to.
+            if not title:
+                title = _title_from_attachment_url(url)
+            if not title:
+                # Nothing to show and nothing to download: not an event.
+                continue
+
             event = {
                 'date': date_cell.find('time')['datetime'] if date_cell.find('time') else date_cell.get_text(strip=True),
                 'title': title,
                 'display_title': title,
             }
 
-            link_tag = link_cell.find('a') if link_cell else None
-            if link_tag and link_tag.has_attr('href'):
+            if url:
                 _attach_document(
-                    event, merger_id, urljoin(BASE_URL, link_tag['href']),
+                    event, merger_id, url,
                     cached_determination_by_url, cached_phase2_notice_by_url,
                 )
 
@@ -1015,6 +1030,23 @@ def _normalize_attachment_name(url):
     return normalized or None
 
 
+def _title_from_attachment_url(url):
+    """Human-readable event title derived from an attachment's filename.
+
+    Used when the ACCC publishes a document in a row with an empty title cell.
+    The extension and the CMS re-upload suffix are dropped, so
+    ".../AbbVie%20-%20Apogee%20-%20Questionnaire_0.docx" becomes
+    "AbbVie - Apogee - Questionnaire" — the title the same document carried
+    before it was re-uploaded.
+    """
+    if not url:
+        return ''
+    name = unquote(os.path.basename(urlparse(url).path)).strip()
+    name = re.sub(r'\.[^.]+$', '', name)
+    name = re.sub(r'_\d+$', '', name)
+    return ' '.join(name.split())
+
+
 def _same_consultation_document(scraped_event, existing_event):
     """True when a consultation-section questionnaire event is the page's new
     home for an existing event's document.
@@ -1034,10 +1066,28 @@ def _same_consultation_document(scraped_event, existing_event):
     return name is not None and name == _normalize_attachment_name(existing_event.get('url'))
 
 
+def _same_undated_document(scraped_event, existing_event):
+    """True when an undated scraped row carries an existing event's document.
+
+    The ACCC sometimes re-uploads a document into a row it leaves undated (and,
+    before _scrape_events names such rows after their attachment, untitled) —
+    MN-90027's questionnaire came back as "... - Questionnaire_0.docx" that way.
+    A row with no date has no title+date identity to match on, so the
+    attachment's own name is the only thing tying it to the event it replaces;
+    without this the existing event is flagged 'removed' and the row appended as
+    a duplicate of it.
+    """
+    if scraped_event.get('date'):
+        return False
+    name = _normalize_attachment_name(scraped_event.get('url'))
+    return name is not None and name == _normalize_attachment_name(existing_event.get('url'))
+
+
 def _matches_existing_event(scraped_event, existing_event):
     """True when a scraped event is a re-publication of an existing event."""
     return (_same_event_identity(scraped_event, existing_event)
-            or _same_consultation_document(scraped_event, existing_event))
+            or _same_consultation_document(scraped_event, existing_event)
+            or _same_undated_document(scraped_event, existing_event))
 
 
 def _dates_within_one_day(date1, date2):
