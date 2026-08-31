@@ -1,0 +1,420 @@
+{
+  "shard": 90,
+  "shard_count": 256,
+  "parties": {
+    "bmm-partners-pty-ltd": {
+      "id": "bmm-partners-pty-ltd",
+      "canonical_name": "Bmm Partners Pty Ltd",
+      "members": [
+        {
+          "name": "BMM PARTNERS PTY LTD",
+          "identifier": "82 649 113 959",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-15010",
+            "merger_name": "AZ Next Generation Advisory \u2013 Intend Financial",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-06T12:00:00Z",
+            "determination_date": "2026-03-24T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "globalia-corporaci-n-empresarial-s-a": {
+      "id": "globalia-corporaci-n-empresarial-s-a",
+      "canonical_name": "Globalia Corporaci\u00f3n Empresarial, S.A.",
+      "members": [
+        {
+          "name": "Globalia Corporaci\u00f3n Empresarial, S.A.",
+          "identifier": "PM26677",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-90016",
+            "merger_name": "Turkish Airlines - Air Europa",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-08T12:00:00Z",
+            "determination_date": "2026-05-29T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "jason-ireland-as-joint-and-several-receivers": {
+      "id": "jason-ireland-as-joint-and-several-receivers",
+      "canonical_name": "Jason Ireland (as joint and several receivers)",
+      "members": [
+        {
+          "name": "Jason Ireland (as joint and several receivers)",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-40013",
+            "merger_name": "Calvary - Hobart Private Hospital",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-16T12:00:00Z",
+            "determination_date": "2026-08-27T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 72.0,
+        "median_days": 72,
+        "average_business_days": 52.0,
+        "median_business_days": 52,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "majestic-logistics-pty-limited": {
+      "id": "majestic-logistics-pty-limited",
+      "canonical_name": "Majestic Logistics Pty Limited",
+      "members": [
+        {
+          "name": "Majestic Logistics Pty Limited",
+          "identifier": "68 084 089 038",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-15035",
+            "merger_name": "Waymark Hotels Group \u2013 Howard Springs Tavern, Howard Springs, NT",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-27T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "michael-mooney": {
+      "id": "michael-mooney",
+      "canonical_name": "Michael Mooney",
+      "members": [
+        {
+          "name": "Michael Mooney",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-50035",
+            "merger_name": "Opal HealthCare - Canberra Nursing Home (Lidcombe, NSW)",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-12T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "peel-motor-group-pty-ltd": {
+      "id": "peel-motor-group-pty-ltd",
+      "canonical_name": "Peel Motor Group Pty Ltd",
+      "members": [
+        {
+          "name": "PEEL MOTOR GROUP PTY LTD",
+          "identifier": "693 645 742",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-85017",
+            "merger_name": "Regent Motors Group - Lane Group's Mandurah Dealerships",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-18T12:00:00Z",
+            "determination_date": "2026-04-09T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "salsa-bidco-inc": {
+      "id": "salsa-bidco-inc",
+      "canonical_name": "Salsa Bidco, Inc.",
+      "members": [
+        {
+          "name": "Salsa Bidco, Inc.",
+          "identifier": "EIN 423918063",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-15038",
+            "merger_name": "Cinven \u2013 Salsify",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-06T12:00:00Z",
+            "determination_date": "2026-08-21T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "smile-partners-wa3-pty-ltd": {
+      "id": "smile-partners-wa3-pty-ltd",
+      "canonical_name": "Smile Partners (Wa3) Pty Ltd",
+      "members": [
+        {
+          "name": "SMILE PARTNERS (WA3) PTY LTD",
+          "identifier": "49 675 791 572",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-05014",
+            "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "vitamin-well-group": {
+      "id": "vitamin-well-group",
+      "canonical_name": "Vitamin Well Group",
+      "members": [
+        {
+          "name": "Vital Bidco AB",
+          "identifier": "5594910159",
+          "identifier_type": null
+        },
+        {
+          "name": "Vital Holdco AB",
+          "identifier": "5594910134",
+          "identifier_type": null
+        },
+        {
+          "name": "Vitamin Well AB",
+          "identifier": "5567016505",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-05040",
+            "merger_name": "Vitamin Well - EMPWR Nutrition Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-19T12:00:00Z",
+            "determination_date": "2026-08-14T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
+    "west-feet-pty-ltd": {
+      "id": "west-feet-pty-ltd",
+      "canonical_name": "West Feet Pty Ltd",
+      "members": [
+        {
+          "name": "West Feet Pty Ltd",
+          "identifier": "21 129 844 944",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-01118",
+            "merger_name": "Accent Group \u2013 The Athlete\u2019s Foot in Karrinyup, WA",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-29T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    }
+  }
+}

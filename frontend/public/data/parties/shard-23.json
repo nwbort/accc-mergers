@@ -1,0 +1,437 @@
+{
+  "shard": 35,
+  "shard_count": 256,
+  "parties": {
+    "barwon-investment-partners-pty-ltd": {
+      "id": "barwon-investment-partners-pty-ltd",
+      "canonical_name": "Barwon Investment Partners Pty Ltd",
+      "members": [
+        {
+          "name": "BARWON INVESTMENT PARTNERS PTY LTD",
+          "identifier": "19 116 012 009",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-65015",
+            "merger_name": "Hillhouse - Barwon Investment Partners",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-21T12:00:00Z",
+            "determination_date": "2026-05-19T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "consolidated-power-projects-australia-pty-ltd": {
+      "id": "consolidated-power-projects-australia-pty-ltd",
+      "canonical_name": "Consolidated Power Projects Australia Pty Ltd",
+      "members": [
+        {
+          "name": "Consolidated Power Projects Australia Pty Ltd",
+          "identifier": "18 075 411 219",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-70012",
+            "merger_name": "Quanta - PSD",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-12T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "eurazeo-se": {
+      "id": "eurazeo-se",
+      "canonical_name": "Eurazeo SE",
+      "members": [
+        {
+          "name": "Eurazeo SE",
+          "identifier": "SIREN 692 030 992",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-05007",
+            "merger_name": "Eiffel and Eurazeo \u2013 Segula",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-24T12:00:00Z",
+            "determination_date": "2026-02-26T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 2.0,
+        "median_days": 2,
+        "average_business_days": 2.0,
+        "median_business_days": 2,
+        "completed_count": 1
+      }
+    },
+    "genea": {
+      "id": "genea",
+      "canonical_name": "Genea",
+      "members": [
+        {
+          "name": "GENEA PTY LTD",
+          "identifier": "82 002 844 448",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Genea Bidco SA Pty Ltd",
+          "identifier": "695 694 458",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "Genea HoldCo SA Pty Ltd",
+          "identifier": "695 660 701",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-01104",
+            "merger_name": "Genea - Care Fertility Greenslopes",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-19T12:00:00Z",
+            "determination_date": "2026-07-23T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-05009",
+            "merger_name": "Genea - Embrace Fertility",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-27T12:00:00Z",
+            "determination_date": "2026-05-18T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 2,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.5,
+        "median_days": 27.5,
+        "average_business_days": 19.5,
+        "median_business_days": 19.5,
+        "completed_count": 2
+      },
+      "waiver_duration": null
+    },
+    "gt-silver-merger-sub-inc": {
+      "id": "gt-silver-merger-sub-inc",
+      "canonical_name": "GT Silver Merger Sub, Inc.",
+      "members": [
+        {
+          "name": "GT Silver Merger Sub, Inc.",
+          "identifier": "10266820",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-40010",
+            "merger_name": "Permira and Warburg Pincus - Clearwater Analytics",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-11T12:00:00Z",
+            "determination_date": "2026-04-01T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "institutional-investor-llc": {
+      "id": "institutional-investor-llc",
+      "canonical_name": "Institutional Investor LLC",
+      "members": [
+        {
+          "name": "Institutional Investor LLC",
+          "identifier": "Delaware  803184",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-30027",
+            "merger_name": "Apax Funds \u2013 Techoraco Limited and Institutional Investor LLC",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-24T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "kelonia-therapeutics-inc": {
+      "id": "kelonia-therapeutics-inc",
+      "canonical_name": "Kelonia Therapeutics, Inc.",
+      "members": [
+        {
+          "name": "Kelonia Therapeutics, Inc.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-95016",
+            "merger_name": "Eli Lilly - Kelonia Therapeutics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-18T12:00:00Z",
+            "determination_date": "2026-06-10T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "sage-group-holdings-ltd": {
+      "id": "sage-group-holdings-ltd",
+      "canonical_name": "Sage Group Holdings Ltd",
+      "members": [
+        {
+          "name": "SAGE GROUP HOLDINGS LTD",
+          "identifier": "58 093 581 330",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-70008",
+            "merger_name": "Tetra Tech \u2013 Providence Consulting",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-27T12:00:00Z",
+            "determination_date": "2026-04-01T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 33.0,
+        "median_days": 33,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      }
+    },
+    "sandvik-rock-processing-australia-pty-limited": {
+      "id": "sandvik-rock-processing-australia-pty-limited",
+      "canonical_name": "Sandvik Rock Processing Australia Pty Limited",
+      "members": [
+        {
+          "name": "SANDVIK ROCK PROCESSING AUSTRALIA PTY LIMITED",
+          "identifier": "91 073 312 437",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-65025",
+            "merger_name": "Sandvik \u2013 Diemme Filtration S.r.l.",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-26T12:00:00Z",
+            "determination_date": "2026-07-17T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "schwarz-digits-kg": {
+      "id": "schwarz-digits-kg",
+      "canonical_name": "Schwarz Digits KG",
+      "members": [
+        {
+          "name": "Schwarz Digits KG",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-35036",
+            "merger_name": "CrowdStrike \u2013 intellectual property and associated technology assets of XM Cyber",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-24T12:00:00Z",
+            "determination_date": "2026-08-19T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    }
+  }
+}

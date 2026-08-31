@@ -1,0 +1,449 @@
+{
+  "shard": 60,
+  "shard_count": 256,
+  "parties": {
+    "adawin-pty-ltd": {
+      "id": "adawin-pty-ltd",
+      "canonical_name": "Adawin Pty Ltd",
+      "members": [
+        {
+          "name": "ADAWIN PTY LTD",
+          "identifier": "49 010 904 551",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-25002",
+            "merger_name": "Symal Group - Timms Group and L&D Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-01-23T12:00:00Z",
+            "determination_date": "2026-02-19T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "animal-nutrition-health-llc-us": {
+      "id": "animal-nutrition-health-llc-us",
+      "canonical_name": "Animal Nutrition & Health, LLC (US)",
+      "members": [
+        {
+          "name": "Animal Nutrition & Health, LLC (US)",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25014",
+            "merger_name": "CVC Capital Partners \u2013 The animal nutrition and health division of the DSM-Firmenich Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-21T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "armis-inc": {
+      "id": "armis-inc",
+      "canonical_name": "Armis, Inc.",
+      "members": [
+        {
+          "name": "Armis, Inc.",
+          "identifier": "6021196",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-25004",
+            "merger_name": "ServiceNow - Armis",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-13T12:00:00Z",
+            "determination_date": "2026-03-12T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "central-pre-mix-concrete-pty-ltd": {
+      "id": "central-pre-mix-concrete-pty-ltd",
+      "canonical_name": "Central Pre-Mix Concrete Pty. Ltd.",
+      "members": [
+        {
+          "name": "CENTRAL PRE-MIX CONCRETE PTY. LTD.",
+          "identifier": "62 008 070 862",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-50021",
+            "merger_name": "Adbri - Eureka Concrete",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-17T12:00:00Z",
+            "determination_date": "2026-07-09T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "danone": {
+      "id": "danone",
+      "canonical_name": "Danone",
+      "members": [
+        {
+          "name": "Compagnie Gervais Danone",
+          "identifier": "SIREN 552 067 092",
+          "identifier_type": null
+        },
+        {
+          "name": "DANONE SAPUTO DAIRY AUSTRALIA PTY LTD",
+          "identifier": "32 143 172 258",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Danone S.A.",
+          "identifier": "SIREN 552 032 534",
+          "identifier_type": null
+        },
+        {
+          "name": "Minogue BidCo",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Minogue HoldCo",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "NUTRICIA AUSTRALIA PTY LIMITED",
+          "identifier": "99 076 246 752",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Soci\u00e9t\u00e9 Anonyme des Eaux Min\u00e9rales d\u2019\u00c9vian S.A.",
+          "identifier": "SIREN 797 080 850",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-55031",
+            "merger_name": "Danone \u2013 MADE",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-05T12:00:00Z",
+            "determination_date": "2026-08-26T12:00:00Z"
+          }
+        ],
+        "target": [
+          {
+            "merger_id": "MN-01069",
+            "merger_name": "Danone \u2013 further 1% interest in Danone Saputo Dairy Australia",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2025-12-12T12:00:00Z",
+            "determination_date": "2026-01-28T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 2,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 34.0,
+        "median_days": 34.0,
+        "average_business_days": 16.5,
+        "median_business_days": 16.5,
+        "completed_count": 2
+      },
+      "waiver_duration": null
+    },
+    "innio": {
+      "id": "innio",
+      "canonical_name": "INNIO",
+      "members": [
+        {
+          "name": "INNIO Holding GmbH",
+          "identifier": "HRB 305810",
+          "identifier_type": null
+        },
+        {
+          "name": "INNIO Holding GmbH",
+          "identifier": "HRB305810",
+          "identifier_type": null
+        },
+        {
+          "name": "INNIO Jenbacher International B.V.",
+          "identifier": "KVK90210352",
+          "identifier_type": null
+        },
+        {
+          "name": "INNIO Jenbacher Netherlands B.V.",
+          "identifier": "KVK90209982",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-80021",
+            "merger_name": "INNIO Group \u2013 Enerflex",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-25T12:00:00Z",
+            "determination_date": "2026-07-27T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-25010",
+            "merger_name": "INNIO Group \u2013 Enerflex",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-13T12:00:00Z",
+            "determination_date": "2026-04-16T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 32.0,
+        "median_days": 32,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 34.0,
+        "median_days": 34,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      }
+    },
+    "pearl-hotels-d-1993-pty-limited": {
+      "id": "pearl-hotels-d-1993-pty-limited",
+      "canonical_name": "Pearl Hotels D 1993 Pty Limited",
+      "members": [
+        {
+          "name": "PEARL HOTELS D 1993 PTY LIMITED",
+          "identifier": "25 060 896 568",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-10011",
+            "merger_name": "Wentworth Capital \u2013 Novotel Darling Harbour and Ibis Darling Harbour",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-12T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "sinochem-holdings-corporation-ltd": {
+      "id": "sinochem-holdings-corporation-ltd",
+      "canonical_name": "Sinochem Holdings Corporation Ltd",
+      "members": [
+        {
+          "name": "Sinochem Holdings Corporation Ltd",
+          "identifier": "USCC  91133100MA0GBL5F38",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-01109",
+            "merger_name": "Syngenta Crop Protection and D\u00fcmmen Orange \u2013 Joint Venture Formation",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-17T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 34.0,
+        "median_days": 34,
+        "average_business_days": 24.0,
+        "median_business_days": 24,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "wayne-shipham-and-raylene-shipham-as-trustees-for-mcguire-family-trust": {
+      "id": "wayne-shipham-and-raylene-shipham-as-trustees-for-mcguire-family-trust",
+      "canonical_name": "Wayne Shipham and Raylene Shipham as trustees for McGuire Family Trust",
+      "members": [
+        {
+          "name": "Wayne Shipham and Raylene Shipham as trustees for McGuire Family Trust",
+          "identifier": "96 315 737 133",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-75017",
+            "merger_name": "Vets Central - Drovers Vet Hospital",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-31T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 7.0,
+        "median_days": 7,
+        "average_business_days": 3.0,
+        "median_business_days": 3,
+        "completed_count": 1
+      }
+    }
+  }
+}

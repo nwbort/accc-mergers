@@ -1,0 +1,287 @@
+{
+  "shard": 179,
+  "shard_count": 256,
+  "parties": {
+    "arcellx-inc": {
+      "id": "arcellx-inc",
+      "canonical_name": "Arcellx, Inc.",
+      "members": [
+        {
+          "name": "Arcellx, Inc.",
+          "identifier": "EIN 472855917",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-40009",
+            "merger_name": "Gilead - Arcellx",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-19T12:00:00Z",
+            "determination_date": "2026-04-13T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "aurizon-holdings-limited": {
+      "id": "aurizon-holdings-limited",
+      "canonical_name": "Aurizon Holdings Limited",
+      "members": [
+        {
+          "name": "AURIZON HOLDINGS LIMITED",
+          "identifier": "14 146 335 622",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-05034",
+            "merger_name": "Aurizon \u2013 transactions related to the relocation of a rail corridor at Moranbah North",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-28T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "colab-aus-pty-ltd": {
+      "id": "colab-aus-pty-ltd",
+      "canonical_name": "Colab (Aus) Pty Ltd",
+      "members": [
+        {
+          "name": "COLAB (AUS) PTY LTD",
+          "identifier": "34 664 345 751",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-10027",
+            "merger_name": "Endeavour Group \u2013 retail liquor site in Horsham, VIC",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-14T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "dsm-nutritional-products-vietnam-ltd-vietnam": {
+      "id": "dsm-nutritional-products-vietnam-ltd-vietnam",
+      "canonical_name": "DSM Nutritional Products Vietnam Ltd (Vietnam)",
+      "members": [
+        {
+          "name": "DSM Nutritional Products Vietnam Ltd (Vietnam)",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25014",
+            "merger_name": "CVC Capital Partners \u2013 The animal nutrition and health division of the DSM-Firmenich Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-21T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "evolution-business-systems-pty-ltd": {
+      "id": "evolution-business-systems-pty-ltd",
+      "canonical_name": "Evolution Business Systems Pty Ltd",
+      "members": [
+        {
+          "name": "EVOLUTION BUSINESS SYSTEMS PTY LTD",
+          "identifier": "44 097 484 743",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-45023",
+            "merger_name": "Pine Australia - Evolution Business Systems",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-31T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "live-your-way-australia-pty-ltd": {
+      "id": "live-your-way-australia-pty-ltd",
+      "canonical_name": "Live Your Way Australia Pty Ltd",
+      "members": [
+        {
+          "name": "LIVE YOUR WAY AUSTRALIA PTY LTD",
+          "identifier": "35 154 415 013",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-75034",
+            "merger_name": "Kanda Healthcare \u2013 Live Your Way, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-14T12:00:00Z",
+            "determination_date": "2026-08-04T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "varsity-brands-inc": {
+      "id": "varsity-brands-inc",
+      "canonical_name": "Varsity Brands, Inc.",
+      "members": [
+        {
+          "name": "Varsity Brands, Inc.",
+          "identifier": "Company No.: 2426622  Delaware",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-01088",
+            "merger_name": "BSN Sports \u2013 Sports Endeavors",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-25T12:00:00Z",
+            "determination_date": "2026-03-06T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 9.0,
+        "median_days": 9,
+        "average_business_days": 7.0,
+        "median_business_days": 7,
+        "completed_count": 1
+      }
+    }
+  }
+}

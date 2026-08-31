@@ -1,0 +1,390 @@
+{
+  "shard": 78,
+  "shard_count": 256,
+  "parties": {
+    "gundjeihmi-aboriginal-corporation-jabiru-town": {
+      "id": "gundjeihmi-aboriginal-corporation-jabiru-town",
+      "canonical_name": "Gundjeihmi Aboriginal Corporation Jabiru Town",
+      "members": [
+        {
+          "name": "Gundjeihmi Aboriginal Corporation Jabiru Town",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-15013",
+            "merger_name": "Journey Beyond \u2013 Kakadu Crocodile Hotel",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-07T12:00:00Z",
+            "determination_date": "2026-05-05T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "ihs-global-inc": {
+      "id": "ihs-global-inc",
+      "canonical_name": "IHS Global Inc.",
+      "members": [
+        {
+          "name": "IHS Global Inc.",
+          "identifier": "EIN  222721160",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-75027",
+            "merger_name": "SLB \u2013 S&P Global\u2019s Geoscience Software Portfolio",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-22T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "mermec": {
+      "id": "mermec",
+      "canonical_name": "MerMec",
+      "members": [
+        {
+          "name": "Angelo Holding S.r.l.",
+          "identifier": "LEI  815600BFD5004E85D746",
+          "identifier_type": null
+        },
+        {
+          "name": "MERMEC AUSTRALIA PTY LTD",
+          "identifier": "42 619 285 988",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Mer Mec S.p.A.",
+          "identifier": "LEI  81560011DF7243CFC226",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-01105",
+            "merger_name": "Siemens Mobility - MerMec",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-10T12:00:00Z",
+            "determination_date": "2026-08-12T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 33.0,
+        "median_days": 33,
+        "average_business_days": 23.0,
+        "median_business_days": 23,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "paris-financial-services-pty-ltd": {
+      "id": "paris-financial-services-pty-ltd",
+      "canonical_name": "Paris Financial Services Pty Ltd",
+      "members": [
+        {
+          "name": "Paris Financial Services Pty Ltd",
+          "identifier": "24 143 510 301",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-75039",
+            "merger_name": "Ironbark - Paris Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-31T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "qube-bulk-pty-ltd": {
+      "id": "qube-bulk-pty-ltd",
+      "canonical_name": "Qube Bulk Pty Ltd",
+      "members": [
+        {
+          "name": "QUBE BULK PTY LTD",
+          "identifier": "13 138 868 756",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-70028",
+            "merger_name": "Kalari \u2013 De Gunst\u2019s Gracemere Assets",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-08T12:00:00Z",
+            "determination_date": "2026-07-29T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "south-west-slopes-credit-union-ltd": {
+      "id": "south-west-slopes-credit-union-ltd",
+      "canonical_name": "South West Slopes Credit Union Ltd",
+      "members": [
+        {
+          "name": "SOUTH WEST SLOPES CREDIT UNION LTD",
+          "identifier": "80 087 650 673",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-30021",
+            "merger_name": "Regional Australia Bank \u2013 South West Slopes Credit Union",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-10T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "vault-minerals-limited": {
+      "id": "vault-minerals-limited",
+      "canonical_name": "Vault Minerals Limited",
+      "members": [
+        {
+          "name": "VAULT MINERALS LIMITED",
+          "identifier": "73 068 647 610",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-40036",
+            "merger_name": "Genesis Minerals \u2013 Vault Minerals",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-31T12:00:00Z",
+            "determination_date": "2026-08-27T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-65020",
+            "merger_name": "Regis Resources - Vault Minerals",
+            "is_waiver": false,
+            "status": "Assessment ceased",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-22T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "verlinvest-sa": {
+      "id": "verlinvest-sa",
+      "canonical_name": "Verlinvest SA",
+      "members": [
+        {
+          "name": "Verlinvest SA",
+          "identifier": "BE0455030364",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-60033",
+            "merger_name": "Verlinvest \u2013 up to 60% interest in HomeExchange",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-29T12:00:00Z",
+            "determination_date": "2026-08-28T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 30.0,
+        "median_days": 30,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      }
+    },
+    "woodside-energy-julimar-pty-ltd": {
+      "id": "woodside-energy-julimar-pty-ltd",
+      "canonical_name": "Woodside Energy Julimar Pty Ltd",
+      "members": [
+        {
+          "name": "WOODSIDE ENERGY JULIMAR PTY LTD",
+          "identifier": "56 130 391 365",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-20034",
+            "merger_name": "Chevron - Woodside asset swap",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-18T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    }
+  }
+}

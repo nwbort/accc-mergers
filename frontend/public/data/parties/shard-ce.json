@@ -1,0 +1,419 @@
+{
+  "shard": 206,
+  "shard_count": 256,
+  "parties": {
+    "5b-holdings-pty-ltd": {
+      "id": "5b-holdings-pty-ltd",
+      "canonical_name": "5B Holdings Pty. Ltd.",
+      "members": [
+        {
+          "name": "5B HOLDINGS PTY. LTD.",
+          "identifier": "97 606 402 699",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-70027",
+            "merger_name": "Global Infrastructure Management and EQT led consortium - AES Corporation",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-30T12:00:00Z",
+            "determination_date": "2026-08-26T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "actigraph-llc": {
+      "id": "actigraph-llc",
+      "canonical_name": "ActiGraph",
+      "members": [
+        {
+          "name": "ActiGraph Holdings, LLC",
+          "identifier": "Delaware File Number  7952013",
+          "identifier_type": null
+        },
+        {
+          "name": "ActiGraph, LLC",
+          "identifier": "EIN  562443729",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-45011",
+            "merger_name": "Signant - ActiGraph",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-10T12:00:00Z",
+            "determination_date": "2026-04-16T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 6.0,
+        "median_days": 6,
+        "average_business_days": 4.0,
+        "median_business_days": 4,
+        "completed_count": 1
+      }
+    },
+    "audax-management-company-llc": {
+      "id": "audax-management-company-llc",
+      "canonical_name": "Audax Management Company, LLC",
+      "members": [
+        {
+          "name": "Audax Management Company, LLC",
+          "identifier": "US incorporation number  3047055",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-25033",
+            "merger_name": "Bain Capital \u2013 FDH",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-17T12:00:00Z",
+            "determination_date": "2026-06-25T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 8.0,
+        "median_days": 8,
+        "average_business_days": 6.0,
+        "median_business_days": 6,
+        "completed_count": 1
+      }
+    },
+    "bupa-hi-pty-ltd": {
+      "id": "bupa-hi-pty-ltd",
+      "canonical_name": "Bupa Hi Pty Ltd",
+      "members": [
+        {
+          "name": "BUPA HI PTY LTD",
+          "identifier": "81 000 057 590",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-20025",
+            "merger_name": "Bupa \u2013 Barings Australian Private Credit Fund",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-05T12:00:00Z",
+            "determination_date": "2026-06-29T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "east-gate-games-investment-company": {
+      "id": "east-gate-games-investment-company",
+      "canonical_name": "East Gate Games Investment Company",
+      "members": [
+        {
+          "name": "East Gate Games Investment Company",
+          "identifier": "39 275 633 205",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-65012",
+            "merger_name": "Savvy Games Group \u2013 Moonton",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-08T12:00:00Z",
+            "determination_date": "2026-04-30T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "lion-series-2023-1-trust": {
+      "id": "lion-series-2023-1-trust",
+      "canonical_name": "Lion Series 2023-1 Trust",
+      "members": [
+        {
+          "name": "Lion Series 2023-1 Trust",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-85047",
+            "merger_name": "Blackstone funds and Perpetual Trustees \u2013 HSBC loan portfolio",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-27T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "ma-investment-management-pty-ltd": {
+      "id": "ma-investment-management-pty-ltd",
+      "canonical_name": "Ma Investment Management Pty Ltd",
+      "members": [
+        {
+          "name": "MA INVESTMENT MANAGEMENT PTY LTD",
+          "identifier": "85 621 552 896",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-45005",
+            "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-25T12:00:00Z",
+            "determination_date": "2026-04-17T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "paydock": {
+      "id": "paydock",
+      "canonical_name": "Paydock",
+      "members": [
+        {
+          "name": "Paydock AUNZ Pty Limited",
+          "identifier": "96 607 219 116",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Paydock Holdings Pty Limited",
+          "identifier": "31 607 215 163",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Paydock Ltd",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-65028",
+            "merger_name": "Coles - Paydock",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-09T12:00:00Z",
+            "determination_date": "2026-08-03T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "swiss-re-international-se": {
+      "id": "swiss-re-international-se",
+      "canonical_name": "Swiss Re International SE",
+      "members": [
+        {
+          "name": "Swiss Re International SE",
+          "identifier": "B134553",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-40015",
+            "merger_name": "Swiss Re - QBE Insurance's Trade Credit and Surety business",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-10T12:00:00Z",
+            "determination_date": "2026-05-06T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "woodside-energy-north-west-shelf-pty-ltd": {
+      "id": "woodside-energy-north-west-shelf-pty-ltd",
+      "canonical_name": "Woodside Energy (North West Shelf) Pty Ltd",
+      "members": [
+        {
+          "name": "WOODSIDE ENERGY (NORTH WEST SHELF) PTY LTD",
+          "identifier": "41 004 514 489",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-20034",
+            "merger_name": "Chevron - Woodside asset swap",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-18T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    }
+  }
+}

@@ -1,0 +1,544 @@
+{
+  "shard": 121,
+  "shard_count": 256,
+  "parties": {
+    "colas": {
+      "id": "colas",
+      "canonical_name": "Colas",
+      "members": [
+        {
+          "name": "COLAS AUSTRALIA GROUP PTY LTD",
+          "identifier": "11 000 388 161",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "COLAS CONTRACTING PTY LTD",
+          "identifier": "88 127 397 899",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "COLAS NEW SOUTH WALES PTY LTD",
+          "identifier": "16 064 662 148",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "COLAS QUEENSLAND PTY LTD",
+          "identifier": "91 169 872 208",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-50012",
+            "merger_name": "Maas \u2013 50% acquisition of COLAS\u2019 Caloundra asphalt plant and 100% of COLAS\u2019 Tomago asphalt plant",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-18T12:00:00Z",
+            "determination_date": "2026-04-13T12:00:00Z"
+          }
+        ],
+        "other": [
+          {
+            "merger_id": "MN-30022",
+            "merger_name": "VSA - SprayLine",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-06T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 2,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 35.5,
+        "median_days": 35.5,
+        "average_business_days": 24.5,
+        "median_business_days": 24.5,
+        "completed_count": 2
+      },
+      "waiver_duration": null
+    },
+    "donna-lea-buikstra-family-will-trust": {
+      "id": "donna-lea-buikstra-family-will-trust",
+      "canonical_name": "Donna Lea Buikstra Family Will Trust",
+      "members": [
+        {
+          "name": "Donna Lea Buikstra Family Will Trust",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-65026",
+            "merger_name": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-22T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-30010",
+            "merger_name": "MAG South Coast - Country Motor Company / Kinghorn Motors",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-20T12:00:00Z",
+            "determination_date": "2026-05-15T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "hapag-lloyd-aktiengesellschaft": {
+      "id": "hapag-lloyd-aktiengesellschaft",
+      "canonical_name": "Hapag-Lloyd Aktiengesellschaft",
+      "members": [
+        {
+          "name": "Hapag-Lloyd Aktiengesellschaft",
+          "identifier": "German company registration number  HRB97937",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-65022",
+            "merger_name": "Hapag-Lloyd - ZIM",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-29T12:00:00Z",
+            "determination_date": "2026-07-21T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "hillhouse-investment-management-ltd": {
+      "id": "hillhouse-investment-management-ltd",
+      "canonical_name": "Hillhouse Investment Management, Ltd.",
+      "members": [
+        {
+          "name": "Hillhouse Investment Management, Ltd",
+          "identifier": "CR No.  147297",
+          "identifier_type": null
+        },
+        {
+          "name": "Hillhouse Investment Management, Ltd",
+          "identifier": "CR number  147297",
+          "identifier_type": null
+        },
+        {
+          "name": "Hillhouse Investment Management, Ltd.",
+          "identifier": "CR No. 147297",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-01113",
+            "merger_name": "Hillhouse \u2013 LRQA Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-02T12:00:00Z",
+            "determination_date": "2026-07-20T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-50023",
+            "merger_name": "Hillhouse - MGI Dobbyn Carafa",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-28T12:00:00Z",
+            "determination_date": "2026-06-15T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-75021",
+            "merger_name": "Hillhouse - KMC Solutions",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-28T12:00:00Z",
+            "determination_date": "2026-05-25T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-65015",
+            "merger_name": "Hillhouse - Barwon Investment Partners",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-21T12:00:00Z",
+            "determination_date": "2026-05-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 4,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 4,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.75,
+        "median_days": 22.5,
+        "average_business_days": 15.0,
+        "median_business_days": 15.5,
+        "completed_count": 4
+      }
+    },
+    "in2swim-pty-limited": {
+      "id": "in2swim-pty-limited",
+      "canonical_name": "In2Swim Pty Limited",
+      "members": [
+        {
+          "name": "IN2SWIM PTY LIMITED",
+          "identifier": "41 169 778 045",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-01112",
+            "merger_name": "State Swim \u2013 In2Swim",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-02T12:00:00Z",
+            "determination_date": "2026-07-27T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "ingwe-consulting-pty-ltd": {
+      "id": "ingwe-consulting-pty-ltd",
+      "canonical_name": "Ingwe Consulting Pty Ltd",
+      "members": [
+        {
+          "name": "Ingwe Consulting Pty Ltd",
+          "identifier": "83 121 308 503",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-55026",
+            "merger_name": "Vets Central - Gold Coast Veterinary Surgery",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-23T12:00:00Z",
+            "determination_date": "2026-07-03T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 10.0,
+        "median_days": 10,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "kennards-hire-pty-limited": {
+      "id": "kennards-hire-pty-limited",
+      "canonical_name": "Kennards Hire Pty Limited",
+      "members": [
+        {
+          "name": "KENNARDS HIRE PTY LIMITED",
+          "identifier": "69 001 740 727",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-65027",
+            "merger_name": "Kennards Hire - Skylift Hire & Rentals",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-29T12:00:00Z",
+            "determination_date": "2026-07-16T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "motorone-autobody-pty-ltd": {
+      "id": "motorone-autobody-pty-ltd",
+      "canonical_name": "Motorone Autobody Pty Ltd",
+      "members": [
+        {
+          "name": "MOTORONE AUTOBODY PTY LTD",
+          "identifier": "98 077 935 614",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-90006",
+            "merger_name": "CARe \u2013 MotorOne Autobody",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-06T12:00:00Z",
+            "determination_date": "2026-03-30T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "state-swim-norwood-pty-ltd": {
+      "id": "state-swim-norwood-pty-ltd",
+      "canonical_name": "State Swim Norwood Pty Ltd",
+      "members": [
+        {
+          "name": "STATE SWIM NORWOOD PTY LTD",
+          "identifier": "89 698 337 281",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-95032",
+            "merger_name": "State Swim \u2013 Swim Plus",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-06T12:00:00Z",
+            "determination_date": "2026-07-27T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "watson-bidco-b-v": {
+      "id": "watson-bidco-b-v",
+      "canonical_name": "Watson BidCo B.V.",
+      "members": [
+        {
+          "name": "Watson BidCo B.V.",
+          "identifier": "KVK 64347605",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-01109",
+            "merger_name": "Syngenta Crop Protection and D\u00fcmmen Orange \u2013 Joint Venture Formation",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-17T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 34.0,
+        "median_days": 34,
+        "average_business_days": 24.0,
+        "median_business_days": 24,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "wentworth-capital-investment-management-pty-ltd": {
+      "id": "wentworth-capital-investment-management-pty-ltd",
+      "canonical_name": "Wentworth Capital Investment Management Pty Ltd",
+      "members": [
+        {
+          "name": "WENTWORTH CAPITAL INVESTMENT MANAGEMENT PTY LTD",
+          "identifier": "62 634 954 206",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-10011",
+            "merger_name": "Wentworth Capital \u2013 Novotel Darling Harbour and Ibis Darling Harbour",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-12T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    }
+  }
+}

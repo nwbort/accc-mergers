@@ -1,0 +1,322 @@
+{
+  "shard": 227,
+  "shard_count": 256,
+  "parties": {
+    "clendon-care-pty-ltd": {
+      "id": "clendon-care-pty-ltd",
+      "canonical_name": "Clendon Care Pty Ltd",
+      "members": [
+        {
+          "name": "CLENDON CARE PTY LTD",
+          "identifier": "65 001 584 827",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-50035",
+            "merger_name": "Opal HealthCare - Canberra Nursing Home (Lidcombe, NSW)",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-12T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "gn-hearing-a-s": {
+      "id": "gn-hearing-a-s",
+      "canonical_name": "GN Hearing A/S",
+      "members": [
+        {
+          "name": "GN Hearing A/S",
+          "identifier": "(CVR) no. 55 08 27 15",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-20017",
+            "merger_name": "Amplifon \u2013 GN Hearing",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-13T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "hupco-topco-pty-ltd": {
+      "id": "hupco-topco-pty-ltd",
+      "canonical_name": "Hupco Topco Pty Ltd",
+      "members": [
+        {
+          "name": "HUPCO TOPCO PTY LTD",
+          "identifier": "698 724 579",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-05029",
+            "merger_name": "HupCo \u2013 AMES Australasia",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-29T12:00:00Z",
+            "determination_date": "2026-07-17T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "restaurant-brands-new-zealand-limited": {
+      "id": "restaurant-brands-new-zealand-limited",
+      "canonical_name": "Restaurant Brands New Zealand Limited",
+      "members": [
+        {
+          "name": "Restaurant Brands New Zealand Limited",
+          "identifier": "NZBN  9429038138775",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-70018",
+            "merger_name": "Restaurant Brands and Yum! Brands \u2013 Taco Bell restaurants",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-18T12:00:00Z",
+            "determination_date": "2026-06-11T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "the-royal-automobile-club-of-queensland-limited": {
+      "id": "the-royal-automobile-club-of-queensland-limited",
+      "canonical_name": "The Royal Automobile Club Of Queensland Limited",
+      "members": [
+        {
+          "name": "THE ROYAL AUTOMOBILE CLUB OF QUEENSLAND LIMITED",
+          "identifier": "72 009 660 575",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-70015",
+            "merger_name": "Bendigo and Adelaide Bank \u2013 RACQ Bank",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-28T12:00:00Z",
+            "determination_date": "2026-04-28T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 31.0,
+        "median_days": 31,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "the-trustee-for-the-burke-family-trust": {
+      "id": "the-trustee-for-the-burke-family-trust",
+      "canonical_name": "The trustee for the Burke Family Trust",
+      "members": [
+        {
+          "name": "The trustee for the Burke Family Trust",
+          "identifier": "35 834 715 269",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-95008",
+            "merger_name": "Vets Central \u2013 West Toowoomba Veterinary Surgery in QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-04T12:00:00Z",
+            "determination_date": "2026-03-10T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 6.0,
+        "median_days": 6,
+        "average_business_days": 3.0,
+        "median_business_days": 3,
+        "completed_count": 1
+      }
+    },
+    "tibaldi-aust-pty-ltd": {
+      "id": "tibaldi-aust-pty-ltd",
+      "canonical_name": "Tibaldi (Aust) Pty Ltd",
+      "members": [
+        {
+          "name": "TIBALDI (AUST) PTY LTD",
+          "identifier": "18 664 117 248",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-25026",
+            "merger_name": "Tibaldi - South Food Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-22T12:00:00Z",
+            "determination_date": "2026-06-16T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "tipalea-private-no-31-pty-ltd": {
+      "id": "tipalea-private-no-31-pty-ltd",
+      "canonical_name": "Tipalea Private No.31 Pty Ltd",
+      "members": [
+        {
+          "name": "Tipalea Private No.31 Pty Ltd",
+          "identifier": "686 197 115",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-01090",
+            "merger_name": "Coles \u2013 supermarket site in New Norfolk (TAS)",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-12T12:00:00Z",
+            "determination_date": "2026-04-10T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "shard": 122,
+  "shard_count": 256,
+  "parties": {
+    "botanical-food-company-pty-ltd": {
+      "id": "botanical-food-company-pty-ltd",
+      "canonical_name": "Botanical Food Company Pty Ltd",
+      "members": [
+        {
+          "name": "BOTANICAL FOOD COMPANY PTY LTD",
+          "identifier": "47 085 074 282",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-75044",
+            "merger_name": "McCormick - Unilever Foods Business",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-20T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "jungheinrich-australia-holdings-pty-ltd": {
+      "id": "jungheinrich-australia-holdings-pty-ltd",
+      "canonical_name": "Jungheinrich Australia Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "JUNGHEINRICH AUSTRALIA HOLDINGS PTY LTD",
+          "identifier": "28 608 769 642",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-80033",
+            "merger_name": "Jungheinrich Australia - All Lift",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-24T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "kore-group-holdings-inc": {
+      "id": "kore-group-holdings-inc",
+      "canonical_name": "KORE Group Holdings, Inc.",
+      "members": [
+        {
+          "name": "KORE Group Holdings, Inc.",
+          "identifier": "Delaware  5388903",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-50014",
+            "merger_name": "Searchlight Capital Partners - Additional interest in KORE Group Holdings Inc.",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-01T12:00:00Z",
+            "determination_date": "2026-04-23T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "waymark-hotels-properties-no-43-pty-ltd-atf-howard-springs-property-trust": {
+      "id": "waymark-hotels-properties-no-43-pty-ltd-atf-howard-springs-property-trust",
+      "canonical_name": "Waymark Hotels Properties No 43 Pty Ltd (ATF Howard Springs Property Trust)",
+      "members": [
+        {
+          "name": "Waymark Hotels Properties No 43 Pty Ltd (ATF Howard Springs Property Trust)",
+          "identifier": "696 557 436",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-15035",
+            "merger_name": "Waymark Hotels Group \u2013 Howard Springs Tavern, Howard Springs, NT",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-27T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    }
+  }
+}

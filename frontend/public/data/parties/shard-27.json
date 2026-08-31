@@ -1,0 +1,246 @@
+{
+  "shard": 39,
+  "shard_count": 256,
+  "parties": {
+    "all-lift-equipment-sales-pty-limited": {
+      "id": "all-lift-equipment-sales-pty-limited",
+      "canonical_name": "All Lift Equipment Sales Pty Limited",
+      "members": [
+        {
+          "name": "ALL LIFT EQUIPMENT SALES PTY LIMITED",
+          "identifier": "31 632 720 006",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-80033",
+            "merger_name": "Jungheinrich Australia - All Lift",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-24T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "clifford-hallam-healthcare-pty-limited": {
+      "id": "clifford-hallam-healthcare-pty-limited",
+      "canonical_name": "Clifford Hallam Healthcare Pty Limited",
+      "members": [
+        {
+          "name": "CLIFFORD HALLAM HEALTHCARE PTY LIMITED",
+          "identifier": "38 001 655 554",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-45001",
+            "merger_name": "Paragon Care \u2013 Presidental",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-30T12:00:00Z",
+            "determination_date": "2026-02-16T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "m-resources-pty-ltd": {
+      "id": "m-resources-pty-ltd",
+      "canonical_name": "M Resources Pty Ltd",
+      "members": [
+        {
+          "name": "M Resources Pty Ltd",
+          "identifier": "67 151 351 790",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-10022",
+            "merger_name": "M Resources and Golden Energy and Resources \u2013 Tahmoor Coal Mine",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-30T12:00:00Z",
+            "determination_date": "2026-08-21T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "novozymes-australia-pty-ltd": {
+      "id": "novozymes-australia-pty-ltd",
+      "canonical_name": "Novozymes Australia Pty Ltd",
+      "members": [
+        {
+          "name": "NOVOZYMES AUSTRALIA PTY LTD",
+          "identifier": "48 001 420 677",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-10030",
+            "merger_name": "Novonesis \u2013 Microbiogen",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-21T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "the-trustee-for-latitude-landowning-trust": {
+      "id": "the-trustee-for-latitude-landowning-trust",
+      "canonical_name": "The Trustee for Latitude Landowning Trust",
+      "members": [
+        {
+          "name": "The Trustee for Latitude Landowning Trust",
+          "identifier": "20 844 678 909",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-50029",
+            "merger_name": "Centuria Property Funds No. 2 Limited as the responsible entity of Centuria Sydney CBD Prime Office Fund - 680 George St/50 Goulburn St",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-13T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "winning-group-holdings-pty-ltd": {
+      "id": "winning-group-holdings-pty-ltd",
+      "canonical_name": "Winning Group Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "Winning Group Holdings Pty Ltd",
+          "identifier": "695 253 779",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-01092",
+            "merger_name": "Winning Group Holdings \u2013 Winning Appliances",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-23T12:00:00Z",
+            "determination_date": "2026-04-23T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 31.0,
+        "median_days": 31,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    }
+  }
+}

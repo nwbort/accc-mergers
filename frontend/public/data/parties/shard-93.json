@@ -1,0 +1,415 @@
+{
+  "shard": 147,
+  "shard_count": 256,
+  "parties": {
+    "abry-partners-vii-lp": {
+      "id": "abry-partners-vii-lp",
+      "canonical_name": "Abry Partners VII, LP",
+      "members": [
+        {
+          "name": "Abry Partners VII, LP",
+          "identifier": "US SEC  0001510627",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-50014",
+            "merger_name": "Searchlight Capital Partners - Additional interest in KORE Group Holdings Inc.",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-01T12:00:00Z",
+            "determination_date": "2026-04-23T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "brunswick-hotel-opco-pty-ltd": {
+      "id": "brunswick-hotel-opco-pty-ltd",
+      "canonical_name": "Brunswick Hotel Opco Pty Ltd",
+      "members": [
+        {
+          "name": "BRUNSWICK HOTEL OPCO PTY LTD",
+          "identifier": "99 656 116 853",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-15009",
+            "merger_name": "MA Financial Group (Redcape Fund) - Hotel Brunswick",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-05T12:00:00Z",
+            "determination_date": "2026-03-20T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "c-m-build-group": {
+      "id": "c-m-build-group",
+      "canonical_name": "C&M Build Group",
+      "members": [
+        {
+          "name": "C&M Central Pty Ltd",
+          "identifier": "649 711 053",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "C&M Central Unit Trust",
+          "identifier": "47 351 736 164",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-75035",
+            "merger_name": "Johns Lyng Group \u2013 C&M Build Group",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-05T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "ebury-partners-limited": {
+      "id": "ebury-partners-limited",
+      "canonical_name": "Ebury Partners Limited",
+      "members": [
+        {
+          "name": "Ebury Partners Limited",
+          "identifier": "CRN 07086058",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-30024",
+            "merger_name": "Centerbridge Partners \u2013 Ebury Partners Limited",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-01T12:00:00Z",
+            "determination_date": "2026-07-21T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "endeavor-purchaser-v-inc": {
+      "id": "endeavor-purchaser-v-inc",
+      "canonical_name": "Endeavor Purchaser V, Inc.",
+      "members": [
+        {
+          "name": "Endeavor Purchaser V, Inc.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-30031",
+            "merger_name": "Blackstone \u2013 Dresser Utility Solutions",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-29T12:00:00Z",
+            "determination_date": "2026-08-25T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "kent-image-australia-pty-ltd": {
+      "id": "kent-image-australia-pty-ltd",
+      "canonical_name": "Kent Image Australia Pty Ltd",
+      "members": [
+        {
+          "name": "Kent Image Australia Pty Ltd",
+          "identifier": "698 274 396",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-90019",
+            "merger_name": "Jardines - I-MED",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-03T12:00:00Z",
+            "determination_date": "2026-06-18T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "oldcastle-infrastructure-inc": {
+      "id": "oldcastle-infrastructure-inc",
+      "canonical_name": "Oldcastle Infrastructure, Inc.",
+      "members": [
+        {
+          "name": "OLDCASTLE INFRASTRUCTURE, INC.",
+          "identifier": "Washington UBI  171 004 504",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-80011",
+            "merger_name": "CRH - Axius Water",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-24T12:00:00Z",
+            "determination_date": "2026-05-11T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "orna-therapeutics-holdings-llc-2": {
+      "id": "orna-therapeutics-holdings-llc-2",
+      "canonical_name": "Orna Therapeutics Holdings, LLC",
+      "members": [
+        {
+          "name": "Orna Therapeutics Holdings, LLC",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-20013",
+            "merger_name": "Eli Lilly - Orna Therapeutics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-08T12:00:00Z",
+            "determination_date": "2026-05-04T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "state-of-south-australia": {
+      "id": "state-of-south-australia",
+      "canonical_name": "State of South Australia",
+      "members": [
+        {
+          "name": "State of South Australia",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-65013",
+            "merger_name": "BHP \u2013 expansion of Special Mining Lease at Olympic Dam, SA",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-24T12:00:00Z",
+            "determination_date": "2026-05-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "turbo-fast-track-buyer-pty-ltd": {
+      "id": "turbo-fast-track-buyer-pty-ltd",
+      "canonical_name": "Turbo Fast Track Buyer Pty Ltd",
+      "members": [
+        {
+          "name": "Turbo Fast Track Buyer Pty Ltd",
+          "identifier": "696 951 541",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-95020",
+            "merger_name": "Grant Thornton Advisors - Grant Thornton Australia",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-21T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    }
+  }
+}

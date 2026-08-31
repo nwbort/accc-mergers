@@ -1,0 +1,416 @@
+{
+  "shard": 127,
+  "shard_count": 256,
+  "parties": {
+    "ags-financial-group-pty-limited": {
+      "id": "ags-financial-group-pty-limited",
+      "canonical_name": "Ags Financial Group Pty Limited",
+      "members": [
+        {
+          "name": "AGS FINANCIAL GROUP PTY LIMITED",
+          "identifier": "70 093 990 946",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-85041",
+            "merger_name": "AGS Financial Group - Hartley Financial Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-28T12:00:00Z",
+            "determination_date": "2026-08-26T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    },
+    "gta-industrial-custodian-pty-limited": {
+      "id": "gta-industrial-custodian-pty-limited",
+      "canonical_name": "Gta Industrial Custodian Pty Limited",
+      "members": [
+        {
+          "name": "GTA INDUSTRIAL CUSTODIAN PTY LIMITED",
+          "identifier": "45 081 823 743",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-01035",
+            "merger_name": "Asahi \u2013 Warehouse site on Weedman and Montgomery Streets, Redbank (Qld)",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2025-10-24T12:00:00Z",
+            "determination_date": "2025-11-18T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "mindbody-inc-us": {
+      "id": "mindbody-inc-us",
+      "canonical_name": "MindBody, Inc.(US)",
+      "members": [
+        {
+          "name": "MindBody, Inc.(US)",
+          "identifier": "CIN: 1458962",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-75006",
+            "merger_name": "Playlist \u2013 EGYM",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-05T12:00:00Z",
+            "determination_date": "2026-02-19T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "newtrend-i-t-specialists-pty-ltd": {
+      "id": "newtrend-i-t-specialists-pty-ltd",
+      "canonical_name": "Newtrend I.T. Specialists Pty Ltd",
+      "members": [
+        {
+          "name": "NEWTREND I.T. SPECIALISTS PTY LTD",
+          "identifier": "54 124 502 656",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-60024",
+            "merger_name": "Redwood Services Group \u2013 Newtrend I.T. Specialists",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-09T12:00:00Z",
+            "determination_date": "2026-06-25T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "signant-health-holding-corp": {
+      "id": "signant-health-holding-corp",
+      "canonical_name": "Signant Health Holding Corp.",
+      "members": [
+        {
+          "name": "Signant Health Holding Corp.",
+          "identifier": "Delaware File Number  5354678",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-45011",
+            "merger_name": "Signant - ActiGraph",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-10T12:00:00Z",
+            "determination_date": "2026-04-16T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 6.0,
+        "median_days": 6,
+        "average_business_days": 4.0,
+        "median_business_days": 4,
+        "completed_count": 1
+      }
+    },
+    "sw-soccer-corp-holdings-llc": {
+      "id": "sw-soccer-corp-holdings-llc",
+      "canonical_name": "SW Soccer Corp Holdings LLC",
+      "members": [
+        {
+          "name": "SW Soccer Corp Holdings LLC",
+          "identifier": "Company No.: 6920423  Delaware",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-01088",
+            "merger_name": "BSN Sports \u2013 Sports Endeavors",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-25T12:00:00Z",
+            "determination_date": "2026-03-06T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 9.0,
+        "median_days": 9,
+        "average_business_days": 7.0,
+        "median_business_days": 7,
+        "completed_count": 1
+      }
+    },
+    "the-trustee-for-future-focus-trust": {
+      "id": "the-trustee-for-future-focus-trust",
+      "canonical_name": "The Trustee for FUTURE FOCUS TRUST",
+      "members": [
+        {
+          "name": "The Trustee for FUTURE FOCUS TRUST",
+          "identifier": "22 698 604 264",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-40022",
+            "merger_name": "Integris & related entities - First Focus",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-19T12:00:00Z",
+            "determination_date": "2026-06-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "tml-cv-holdings-b-v": {
+      "id": "tml-cv-holdings-b-v",
+      "canonical_name": "TML CV Holdings B.V.",
+      "members": [
+        {
+          "name": "TML CV Holdings B.V.",
+          "identifier": "868490945",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-85037",
+            "merger_name": "Tata Motors - Iveco",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-03T12:00:00Z",
+            "determination_date": "2026-07-24T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "vepf-torreys-aggregator-llc": {
+      "id": "vepf-torreys-aggregator-llc",
+      "canonical_name": "VEPF Torreys Aggregator, LLC",
+      "members": [
+        {
+          "name": "VEPF Torreys Aggregator, LLC",
+          "identifier": "DE File number: 7267040",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-75006",
+            "merger_name": "Playlist \u2013 EGYM",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-05T12:00:00Z",
+            "determination_date": "2026-02-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "victoria-cross-commercial-pty-limited": {
+      "id": "victoria-cross-commercial-pty-limited",
+      "canonical_name": "Victoria Cross Commercial Pty Limited",
+      "members": [
+        {
+          "name": "VICTORIA CROSS COMMERCIAL PTY LIMITED",
+          "identifier": "56 630 332 222",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-55015",
+            "merger_name": "Allianz - Lease of commercial office space in North Sydney from Lendlease (Victoria Cross)",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-23T12:00:00Z",
+            "determination_date": "2026-04-29T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 6.0,
+        "median_days": 6,
+        "average_business_days": 3.0,
+        "median_business_days": 3,
+        "completed_count": 1
+      }
+    }
+  }
+}

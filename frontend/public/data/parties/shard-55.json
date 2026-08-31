@@ -1,0 +1,211 @@
+{
+  "shard": 85,
+  "shard_count": 256,
+  "parties": {
+    "fed-vaults-pty-ltd": {
+      "id": "fed-vaults-pty-ltd",
+      "canonical_name": "Fed Vaults Pty. Ltd.",
+      "members": [
+        {
+          "name": "FED VAULTS PTY. LTD.",
+          "identifier": "43 117 104 882",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-80037",
+            "merger_name": "Australian Venue Co \u2013 Assets of Riverland Bar, The Boatbuilders Yard and General Assembly",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-03T12:00:00Z",
+            "determination_date": "2026-08-27T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "ivanhoe-bus-company-proprietary-limited": {
+      "id": "ivanhoe-bus-company-proprietary-limited",
+      "canonical_name": "Ivanhoe Bus Company Proprietary Limited",
+      "members": [
+        {
+          "name": "IVANHOE BUS COMPANY PROPRIETARY LIMITED",
+          "identifier": "57 004 367 962",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-70013",
+            "merger_name": "Ventura Motors \u2013 Crown Coaches",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-15T12:00:00Z",
+            "determination_date": "2026-05-07T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "new-lambton-family-practice-pty-ltd": {
+      "id": "new-lambton-family-practice-pty-ltd",
+      "canonical_name": "New Lambton Family Practice Pty Ltd",
+      "members": [
+        {
+          "name": "NEW LAMBTON FAMILY PRACTICE PTY LTD",
+          "identifier": "50 151 311 581",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-40021",
+            "merger_name": "Ochre Health - New Lambton Family Practice, NSW",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-26T12:00:00Z",
+            "determination_date": "2026-05-12T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "ph-queensland-gas-pty-ltd": {
+      "id": "ph-queensland-gas-pty-ltd",
+      "canonical_name": "Ph Queensland Gas Pty Ltd",
+      "members": [
+        {
+          "name": "PH QUEENSLAND GAS PTY LTD",
+          "identifier": "12 626 604 000",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25017",
+            "merger_name": "Mayfair Corporation \u2013 Phosphate Hill",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-20T12:00:00Z",
+            "determination_date": "2026-05-06T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "the-scout-association-of-australia-south-australian-branch-incorporated": {
+      "id": "the-scout-association-of-australia-south-australian-branch-incorporated",
+      "canonical_name": "The Scout Association Of Australia, South Australian Branch Incorporated",
+      "members": [
+        {
+          "name": "THE SCOUT ASSOCIATION OF AUSTRALIA, SOUTH AUSTRALIAN BRANCH INCORPORATED",
+          "identifier": "35 621 021 366",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-60006",
+            "merger_name": "Re.Group \u2013 Scouts Queensland Recycling Centre Site",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-14T12:00:00Z",
+            "determination_date": "2026-01-29T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    }
+  }
+}

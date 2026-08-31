@@ -1,0 +1,351 @@
+{
+  "shard": 70,
+  "shard_count": 256,
+  "parties": {
+    "aware-super-pty-limited": {
+      "id": "aware-super-pty-limited",
+      "canonical_name": "Aware Super Pty Limited",
+      "members": [
+        {
+          "name": "AWARE SUPER PTY LIMITED",
+          "identifier": "11 118 202 672",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "The Trustee for AWARE SUPER",
+          "identifier": "53 226 460 365",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-70030",
+            "merger_name": "Aware Super \u2013 Increased interest in Keyton",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-10T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-10012",
+            "merger_name": "MassMutual, Rest, Aware Super and Goodman \u2013 Moorabbin Airport",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-21T12:00:00Z",
+            "determination_date": "2026-05-21T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 2,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": {
+        "average_days": 30.0,
+        "median_days": 30,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "axdi-spv-5-ltd": {
+      "id": "axdi-spv-5-ltd",
+      "canonical_name": "AXDI SPV 5 Ltd",
+      "members": [
+        {
+          "name": "AXDI SPV 5 Ltd",
+          "identifier": "ADGM  36279",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-30011",
+            "merger_name": "AXDI - minority interest in La Trobe Financial",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-24T12:00:00Z",
+            "determination_date": "2026-05-19T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "csr-building-products-limited": {
+      "id": "csr-building-products-limited",
+      "canonical_name": "Csr Building Products Limited",
+      "members": [
+        {
+          "name": "CSR BUILDING PRODUCTS LIMITED",
+          "identifier": "55 008 631 356",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-10018",
+            "merger_name": "CSR - Complete Plaster",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-15T12:00:00Z",
+            "determination_date": "2026-07-07T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "dp-world-logistics-oceania-holding-pty-ltd": {
+      "id": "dp-world-logistics-oceania-holding-pty-ltd",
+      "canonical_name": "Dp World Logistics Oceania (Holding) Pty Ltd",
+      "members": [
+        {
+          "name": "DP WORLD LOGISTICS OCEANIA (HOLDING) PTY LTD",
+          "identifier": "99 670 871 888",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-95015",
+            "merger_name": "DP World Global Forwarding \u2013 Pure Global Logistics",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-28T12:00:00Z",
+            "determination_date": "2026-05-11T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "elocga": {
+      "id": "elocga",
+      "canonical_name": "Elocga",
+      "members": [
+        {
+          "name": "ELOCGA",
+          "identifier": "Identifying number  B209477",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-35034",
+            "merger_name": "The Independents Group \u2013 acquisition of entities within the Smuggler Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-07T12:00:00Z",
+            "determination_date": "2026-08-28T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "micron-alarm-supplies-pty-ltd": {
+      "id": "micron-alarm-supplies-pty-ltd",
+      "canonical_name": "Micron Alarm Supplies Pty Ltd",
+      "members": [
+        {
+          "name": "MICRON ALARM SUPPLIES PTY LTD",
+          "identifier": "39 002 553 406",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-01115",
+            "merger_name": "MM Security \u2013 Micron Security Products",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-29T12:00:00Z",
+            "determination_date": "2026-08-24T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "turner-engineering-w-a-pty-ltd": {
+      "id": "turner-engineering-w-a-pty-ltd",
+      "canonical_name": "Turner Engineering W.A. Pty Ltd",
+      "members": [
+        {
+          "name": "TURNER ENGINEERING W.A. PTY LTD",
+          "identifier": "43 009 381 373",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-15018",
+            "merger_name": "Complete Air Supply - All Air",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-16T12:00:00Z",
+            "determination_date": "2026-07-09T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "yarn-mesh-holdco-pty-ltd": {
+      "id": "yarn-mesh-holdco-pty-ltd",
+      "canonical_name": "Yarn Mesh Holdco Pty Ltd",
+      "members": [
+        {
+          "name": "YARN MESH HOLDCO PTY LTD",
+          "identifier": "695 828 061",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25008",
+            "merger_name": "Five V Capital - FTP Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-04T12:00:00Z",
+            "determination_date": "2026-03-24T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,518 @@
+{
+  "shard": 1,
+  "shard_count": 256,
+  "parties": {
+    "centuria-investment-management-cspof-pty-ltd-as-trustee-of-the-cspof-mid-trust": {
+      "id": "centuria-investment-management-cspof-pty-ltd-as-trustee-of-the-cspof-mid-trust",
+      "canonical_name": "Centuria Investment Management (CSPOF) Pty Ltd as trustee of the CSPOF Mid Trust",
+      "members": [
+        {
+          "name": "Centuria Investment Management (CSPOF) Pty Ltd as trustee of the CSPOF Mid Trust",
+          "identifier": "35 369 738 841",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-50029",
+            "merger_name": "Centuria Property Funds No. 2 Limited as the responsible entity of Centuria Sydney CBD Prime Office Fund - 680 George St/50 Goulburn St",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-13T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "dr2-holdings-pty-ltd": {
+      "id": "dr2-holdings-pty-ltd",
+      "canonical_name": "Dr2 Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "DR2 HOLDINGS PTY LTD",
+          "identifier": "85 671 808 558",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-80025",
+            "merger_name": "Black Kite Partners led consortium - DR2",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-28T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
+    "fantastic-furniture-the-package-deal-kings-limited": {
+      "id": "fantastic-furniture-the-package-deal-kings-limited",
+      "canonical_name": "Fantastic Furniture \u2013 The Package Deal Kings Limited",
+      "members": [
+        {
+          "name": "Fantastic Furniture \u2013 The Package Deal Kings Limited",
+          "identifier": "NZCN  1015185",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-55019",
+            "merger_name": "Allegro - Fantastic Furniture",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-15T12:00:00Z",
+            "determination_date": "2026-05-26T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 11.0,
+        "median_days": 11,
+        "average_business_days": 7.0,
+        "median_business_days": 7,
+        "completed_count": 1
+      }
+    },
+    "herman-corp-pty-ltd-as-trustee-for-the-herman-holdings-family-trust": {
+      "id": "herman-corp-pty-ltd-as-trustee-for-the-herman-holdings-family-trust",
+      "canonical_name": "Herman Corp Pty Ltd (as trustee for the Herman Holdings Family Trust)",
+      "members": [
+        {
+          "name": "Herman Corp Pty Ltd (as trustee for the Herman Holdings Family Trust)",
+          "identifier": "21 151 833 555",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-01092",
+            "merger_name": "Winning Group Holdings \u2013 Winning Appliances",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-23T12:00:00Z",
+            "determination_date": "2026-04-23T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 31.0,
+        "median_days": 31,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    },
+    "joint-venture": {
+      "id": "joint-venture",
+      "canonical_name": "Joint Venture",
+      "members": [
+        {
+          "name": "Joint Venture",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-01109",
+            "merger_name": "Syngenta Crop Protection and D\u00fcmmen Orange \u2013 Joint Venture Formation",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-17T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 34.0,
+        "median_days": 34,
+        "average_business_days": 24.0,
+        "median_business_days": 24,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "m-holdings-4-pty-ltd": {
+      "id": "m-holdings-4-pty-ltd",
+      "canonical_name": "M Holdings 4 Pty Ltd",
+      "members": [
+        {
+          "name": "M Holdings 4 Pty Ltd",
+          "identifier": "652 075 799",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-01068",
+            "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Phase 2",
+            "notification_date": "2025-11-27T12:00:00Z",
+            "determination_date": "2026-07-01T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 1,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 63.0,
+        "median_days": 63,
+        "average_business_days": 30.0,
+        "median_business_days": 30,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "macmahon-holdings-limited": {
+      "id": "macmahon-holdings-limited",
+      "canonical_name": "Macmahon Holdings Limited",
+      "members": [
+        {
+          "name": "Macmahon Holdings Limited",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-60029",
+            "merger_name": "PT AP Investment \u2013 Vitrinite",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-10T12:00:00Z",
+            "determination_date": "2026-07-30T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "metcash-limited": {
+      "id": "metcash-limited",
+      "canonical_name": "Metcash Limited",
+      "members": [
+        {
+          "name": "METCASH LIMITED",
+          "identifier": "32 112 073 480",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-35023",
+            "merger_name": "Metcash - Foodland Flagstaff Hill, South Australia",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-22T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "seek-growth-nominees-pty-ltd": {
+      "id": "seek-growth-nominees-pty-ltd",
+      "canonical_name": "Seek Growth Nominees Pty Ltd",
+      "members": [
+        {
+          "name": "Seek Growth Nominees Pty Ltd",
+          "identifier": "651 929 725",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-15020",
+            "merger_name": "Online Education Services \u2013 South Australian Institute of Business and Technology",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-22T12:00:00Z",
+            "determination_date": "2026-06-18T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "st-john-of-god-health-care-inc": {
+      "id": "st-john-of-god-health-care-inc",
+      "canonical_name": "St John Of God Health Care Inc",
+      "members": [
+        {
+          "name": "ST JOHN OF GOD HEALTH CARE INC",
+          "identifier": "21 930 207 958",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-05037",
+            "merger_name": "The State of Western Australia \u2013 Mount Lawley Hospital",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-10T12:00:00Z",
+            "determination_date": "2026-08-05T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-90018",
+            "merger_name": "International Parking Group \u2013 car park at St John of God Murdoch Hospital",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24.0,
+        "average_business_days": 16.0,
+        "median_business_days": 16.0,
+        "completed_count": 2
+      }
+    },
+    "uber": {
+      "id": "uber",
+      "canonical_name": "Uber",
+      "members": [
+        {
+          "name": "UBER AUSTRALIA HOLDINGS PTY LTD",
+          "identifier": "54 622 364 318",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "UBER PACIFIC PTY LTD",
+          "identifier": "96 622 366 116",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Uber Technologies, Inc",
+          "identifier": "USID  4849283",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-20018",
+            "merger_name": "Uber - Blacklane",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-05T12:00:00Z",
+            "determination_date": "2026-07-15T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 40.0,
+        "median_days": 40,
+        "average_business_days": 27.0,
+        "median_business_days": 27,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "upm-kymmene-pty-ltd": {
+      "id": "upm-kymmene-pty-ltd",
+      "canonical_name": "Upm-Kymmene Pty Ltd",
+      "members": [
+        {
+          "name": "UPM-KYMMENE PTY LTD",
+          "identifier": "99 001 255 661",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "UPM-Kymmene Corporation",
+          "identifier": "Finnish Business ID  10410900",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-30023",
+            "merger_name": "UPM-Kymmene \u2013 Sappi joint venture",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-16T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    }
+  }
+}

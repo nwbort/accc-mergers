@@ -1,0 +1,460 @@
+{
+  "shard": 52,
+  "shard_count": 256,
+  "parties": {
+    "clearview-wealth-limited": {
+      "id": "clearview-wealth-limited",
+      "canonical_name": "Clearview Wealth Limited",
+      "members": [
+        {
+          "name": "CLEARVIEW WEALTH LIMITED",
+          "identifier": "83 106 248 248",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-55016",
+            "merger_name": "Zurich - ClearView",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-21T12:00:00Z",
+            "determination_date": "2026-05-14T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "corza-biosurgery": {
+      "id": "corza-biosurgery",
+      "canonical_name": "Corza Biosurgery",
+      "members": [
+        {
+          "name": "Corza Medical B.V.",
+          "identifier": "0759493073",
+          "identifier_type": null
+        },
+        {
+          "name": "Corza Medical GmbH (Germany)",
+          "identifier": "HRB 97422",
+          "identifier_type": null
+        },
+        {
+          "name": "Corza Medical GmbH (Switzerland)",
+          "identifier": "CHE466.030.519",
+          "identifier_type": null
+        },
+        {
+          "name": "Corza Medical S.A.S",
+          "identifier": "891 013 914",
+          "identifier_type": null
+        },
+        {
+          "name": "Corza Medical S.L.U.",
+          "identifier": "B42998195",
+          "identifier_type": null
+        },
+        {
+          "name": "Corza Medical S.r.l.",
+          "identifier": "2605047",
+          "identifier_type": null
+        },
+        {
+          "name": "Corza Medical sp z.o.o.",
+          "identifier": "0000856259",
+          "identifier_type": null
+        },
+        {
+          "name": "GTCR (Topaz) AcquisitionCo AS",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Seal US Holdco LLC",
+          "identifier": "10680341",
+          "identifier_type": null
+        },
+        {
+          "name": "Topaz Investment AS",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-70033",
+            "merger_name": "EQT Fund Management \u2013 Corza Biosurgery",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-31T12:00:00Z",
+            "determination_date": "2026-08-12T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 12.0,
+        "median_days": 12,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "intersurgical-aktiengesellschaft-ag": {
+      "id": "intersurgical-aktiengesellschaft-ag",
+      "canonical_name": "Intersurgical Aktiengesellschaft AG",
+      "members": [
+        {
+          "name": "Intersurgical Aktiengesellschaft AG",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-15033",
+            "merger_name": "Armira and TA Associates \u2013 Intersurgical Aktiengesellschaft AG",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-25T12:00:00Z",
+            "determination_date": "2026-08-19T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "patmore-feeds-pty-ltd": {
+      "id": "patmore-feeds-pty-ltd",
+      "canonical_name": "Patmore Feeds Pty Ltd",
+      "members": [
+        {
+          "name": "PATMORE FEEDS PTY LTD",
+          "identifier": "47 644 620 673",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-60007",
+            "merger_name": "Craig Mostyn \u2013 Patmore Feeds",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-20T12:00:00Z",
+            "determination_date": "2026-03-19T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "pm-fresh-pty-ltd": {
+      "id": "pm-fresh-pty-ltd",
+      "canonical_name": "Pm Fresh Pty Ltd",
+      "members": [
+        {
+          "name": "PM FRESH PTY LTD",
+          "identifier": "80 122 180 929",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-95031",
+            "merger_name": "IFM Fiduciary \u2013 PM Fresh",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-17T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "quadrum-investments-group-ltd-trading-as-epyx": {
+      "id": "quadrum-investments-group-ltd-trading-as-epyx",
+      "canonical_name": "Quadrum Investments Group Ltd (trading as \"Epyx\")",
+      "members": [
+        {
+          "name": "Quadrum Investments Group Ltd (trading as \"Epyx\")",
+          "identifier": "06861230",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-45024",
+            "merger_name": "OEConnection - Epyx",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-15T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "residentia-ip-pty-ltd": {
+      "id": "residentia-ip-pty-ltd",
+      "canonical_name": "Residentia Ip Pty Ltd",
+      "members": [
+        {
+          "name": "RESIDENTIA IP PTY LTD",
+          "identifier": "92 666 876 964",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-01106",
+            "merger_name": "Midea - Residentia Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-26T12:00:00Z",
+            "determination_date": "2026-07-24T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "rocket-software-inc": {
+      "id": "rocket-software-inc",
+      "canonical_name": "Rocket Software, Inc.",
+      "members": [
+        {
+          "name": "ROCKET SOFTWARE PTY LTD",
+          "identifier": "22 050 043 699",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Rocket Software, Inc.",
+          "identifier": "Companies\u2019 Register of Delaware  3506913",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-20009",
+            "merger_name": "Rocket Software \u2013 Vertica",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-11T12:00:00Z",
+            "determination_date": "2026-04-01T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "sigrun-bidco-limited": {
+      "id": "sigrun-bidco-limited",
+      "canonical_name": "Sigrun Bidco Limited",
+      "members": [
+        {
+          "name": "Sigrun Bidco Limited",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-50003",
+            "merger_name": "Francisco Partners - Sermo",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-20T12:00:00Z",
+            "determination_date": "2026-02-20T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 31.0,
+        "median_days": 31,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      }
+    },
+    "silk-contract-logistics-pty-ltd": {
+      "id": "silk-contract-logistics-pty-ltd",
+      "canonical_name": "Silk Contract Logistics Pty Ltd",
+      "members": [
+        {
+          "name": "SILK CONTRACT LOGISTICS PTY LTD",
+          "identifier": "56 006 444 355",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-01116",
+            "merger_name": "Silk Contract Logistics \u2013 Toll Transport bulk logistics (glass and plastic) assets",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-30T12:00:00Z",
+            "determination_date": "2026-08-25T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

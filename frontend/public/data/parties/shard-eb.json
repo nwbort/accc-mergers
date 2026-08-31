@@ -1,0 +1,432 @@
+{
+  "shard": 235,
+  "shard_count": 256,
+  "parties": {
+    "gg12-s-p-a": {
+      "id": "gg12-s-p-a",
+      "canonical_name": "GG12 S.p.A.",
+      "members": [
+        {
+          "name": "GG12 S.p.A.",
+          "identifier": "14436160965 (Italy)",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-05008",
+            "merger_name": "HongShan Capital Group and Temasek \u2013 Golden Goose Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-17T12:00:00Z",
+            "determination_date": "2026-03-06T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "ma-marina-fund-holdco-pty-ltd": {
+      "id": "ma-marina-fund-holdco-pty-ltd",
+      "canonical_name": "Ma Marina Fund Holdco Pty Ltd",
+      "members": [
+        {
+          "name": "MA MARINA FUND HOLDCO PTY LTD",
+          "identifier": "96 667 241 385",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-45005",
+            "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-25T12:00:00Z",
+            "determination_date": "2026-04-17T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "machinery-sales-pty-limited": {
+      "id": "machinery-sales-pty-limited",
+      "canonical_name": "Machinery Sales Pty Limited",
+      "members": [
+        {
+          "name": "MACHINERY SALES PTY LIMITED",
+          "identifier": "13 074 358 277",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-50009",
+            "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": true,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-28T12:00:00Z",
+            "determination_date": "2026-07-31T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 64.0,
+        "median_days": 64,
+        "average_business_days": 44.0,
+        "median_business_days": 44,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "motion-jvco-limited": {
+      "id": "motion-jvco-limited",
+      "canonical_name": "Motion JVCo Limited",
+      "members": [
+        {
+          "name": "Motion JVCo Limited",
+          "identifier": "Company Identifier Number  163042",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-60015",
+            "merger_name": "Stonepeak \u2013 Castrol",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-21T12:00:00Z",
+            "determination_date": "2026-06-18T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "north-queensland-iqf-pty-ltd": {
+      "id": "north-queensland-iqf-pty-ltd",
+      "canonical_name": "North Queensland Iqf Pty. Ltd.",
+      "members": [
+        {
+          "name": "NORTH QUEENSLAND IQF PTY. LTD.",
+          "identifier": "32 070 037 795",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-40020",
+            "merger_name": "Premier Fresh \u2013 Domenico Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-04T12:00:00Z",
+            "determination_date": "2026-07-01T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "northern-beaches-veterinary-hospital-pty-ltd": {
+      "id": "northern-beaches-veterinary-hospital-pty-ltd",
+      "canonical_name": "Northern Beaches Veterinary Hospital Pty Ltd",
+      "members": [
+        {
+          "name": "NORTHERN BEACHES VETERINARY HOSPITAL PTY LTD",
+          "identifier": "90 650 961 541",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-55023",
+            "merger_name": "Vets Central - Claremont Veterinary Surgery",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-22T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-85016",
+            "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-16T12:00:00Z",
+            "determination_date": "2026-04-14T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-75017",
+            "merger_name": "Vets Central - Drovers Vet Hospital",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-31T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 3,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 3,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.333333333333332,
+        "median_days": 13,
+        "average_business_days": 10.0,
+        "median_business_days": 8,
+        "completed_count": 3
+      }
+    },
+    "rocket-purchaser-l-l-c": {
+      "id": "rocket-purchaser-l-l-c",
+      "canonical_name": "Rocket Purchaser, L.L.C.",
+      "members": [
+        {
+          "name": "Rocket Purchaser, L.L.C.",
+          "identifier": "10521263",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-35010",
+            "merger_name": "Blackstone - Advanced Cooling Technologies",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-09T12:00:00Z",
+            "determination_date": "2026-03-24T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "salsify-inc": {
+      "id": "salsify-inc",
+      "canonical_name": "Salsify, Inc.",
+      "members": [
+        {
+          "name": "Salsify, Inc.",
+          "identifier": "Delaware Company Number: 5088655",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-15038",
+            "merger_name": "Cinven \u2013 Salsify",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-06T12:00:00Z",
+            "determination_date": "2026-08-21T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "supercell-oy": {
+      "id": "supercell-oy",
+      "canonical_name": "Supercell Oy",
+      "members": [
+        {
+          "name": "Supercell Oy",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-60030",
+            "merger_name": "Tencent \u2013 Happibits",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-20T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "the-trustee-for-banksy-trading-trust": {
+      "id": "the-trustee-for-banksy-trading-trust",
+      "canonical_name": "The Trustee for Banksy Trading Trust",
+      "members": [
+        {
+          "name": "The Trustee for Banksy Trading Trust",
+          "identifier": "44 343 260 791",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-80034",
+            "merger_name": "Australian Retirement Trust \u2013 Westfield Mt Gravatt",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-28T12:00:00Z",
+            "determination_date": "2026-08-25T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    }
+  }
+}

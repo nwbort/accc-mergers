@@ -1,0 +1,421 @@
+{
+  "shard": 73,
+  "shard_count": 256,
+  "parties": {
+    "admiral-au-bidco-pty-ltd": {
+      "id": "admiral-au-bidco-pty-ltd",
+      "canonical_name": "Admiral AU Bidco Pty Ltd",
+      "members": [
+        {
+          "name": "Admiral AU Bidco Pty Ltd",
+          "identifier": "695 801 195",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-80007",
+            "merger_name": "Arlington Capital Partners \u2013 Eptec Defence Solutions",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-18T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "ascot-air-facilities-pty-ltd": {
+      "id": "ascot-air-facilities-pty-ltd",
+      "canonical_name": "Ascot Air Facilities Pty Ltd",
+      "members": [
+        {
+          "name": "ASCOT AIR FACILITIES PTY LTD",
+          "identifier": "34 620 803 358",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25011",
+            "merger_name": "BGIS - Ascot Air",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-10T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "calatt-pty-ltd": {
+      "id": "calatt-pty-ltd",
+      "canonical_name": "Calatt Pty Ltd",
+      "members": [
+        {
+          "name": "CALATT PTY LTD",
+          "identifier": "28 682 145 026",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-15024",
+            "merger_name": "Redwood Services Group \u2013 All IT Australia",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-09T12:00:00Z",
+            "determination_date": "2026-06-25T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "cd-jb-investments-pty-ltd": {
+      "id": "cd-jb-investments-pty-ltd",
+      "canonical_name": "Cd & Jb Investments Pty Ltd",
+      "members": [
+        {
+          "name": "CD & JB INVESTMENTS PTY LTD",
+          "identifier": "630 465 815",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-45014",
+            "merger_name": "RDO Australia \u2013 freehold land and buildings of three commercial truck dealership sites in West Wodonga VIC",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-06T12:00:00Z",
+            "determination_date": "2026-06-08T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 33.0,
+        "median_days": 33,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    },
+    "estoril-coinvest-scsp": {
+      "id": "estoril-coinvest-scsp",
+      "canonical_name": "Estoril Coinvest SCSp",
+      "members": [
+        {
+          "name": "Estoril Coinvest SCSp",
+          "identifier": "B303369",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-85011",
+            "merger_name": "TDR and Estoril \u2013 Escode",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-19T12:00:00Z",
+            "determination_date": "2026-03-17T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "ftp-solutions-inc": {
+      "id": "ftp-solutions-inc",
+      "canonical_name": "FTP Solutions Inc",
+      "members": [
+        {
+          "name": "FTP SOLUTIONS PTY LTD",
+          "identifier": "91 156 293 346",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "FTP Solutions Inc",
+          "identifier": "BN  770283133",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25008",
+            "merger_name": "Five V Capital - FTP Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-04T12:00:00Z",
+            "determination_date": "2026-03-24T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "lenton-management-and-marketing-pty-ltd": {
+      "id": "lenton-management-and-marketing-pty-ltd",
+      "canonical_name": "Lenton Management And Marketing Pty Ltd",
+      "members": [
+        {
+          "name": "LENTON MANAGEMENT AND MARKETING PTY LTD",
+          "identifier": "48 149 524 809",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-55012",
+            "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-10T12:00:00Z",
+            "determination_date": "2026-04-01T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "lumime-pty-ltd": {
+      "id": "lumime-pty-ltd",
+      "canonical_name": "Lumime Pty Ltd",
+      "members": [
+        {
+          "name": "Lumime Pty Ltd",
+          "identifier": "001 931 228",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-80018",
+            "merger_name": "SOILCO - Go Grow",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-18T12:00:00Z",
+            "determination_date": "2026-06-02T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "pioneer-sail-holdings-pty-limited": {
+      "id": "pioneer-sail-holdings-pty-limited",
+      "canonical_name": "Pioneer Sail Holdings Pty Limited",
+      "members": [
+        {
+          "name": "Pioneer Sail Holdings Pty Limited",
+          "identifier": "45 617 844 569",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-95001",
+            "merger_name": "Sembcorp Industries Ltd - Alinta Energy",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-07T12:00:00Z",
+            "determination_date": "2026-05-06T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "queensland-cotton-corporation-pty-ltd": {
+      "id": "queensland-cotton-corporation-pty-ltd",
+      "canonical_name": "Queensland Cotton Corporation Pty Ltd",
+      "members": [
+        {
+          "name": "QUEENSLAND COTTON CORPORATION PTY LTD",
+          "identifier": "26 010 944 591",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-60013",
+            "merger_name": "Export Trading Group Australia \u2013 pulses and grains business and facility in Mount Tyson, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-31T12:00:00Z",
+            "determination_date": "2026-04-29T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,346 @@
+{
+  "shard": 134,
+  "shard_count": 256,
+  "parties": {
+    "chess-holdings-llc": {
+      "id": "chess-holdings-llc",
+      "canonical_name": "Chess Holdings, LLC",
+      "members": [
+        {
+          "name": "Chess Holdings, LLC",
+          "identifier": "6374364",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-05033",
+            "merger_name": "CVC Capital Partners \u2013 Chess.com",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-03T12:00:00Z",
+            "determination_date": "2026-07-27T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "cshc-buyerco-llc": {
+      "id": "cshc-buyerco-llc",
+      "canonical_name": "CSHC Buyerco, LLC",
+      "members": [
+        {
+          "name": "CSHC Buyerco, LLC",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-85020",
+            "merger_name": "Francisco Partners \u2013 Capsa Healthcare",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-30T12:00:00Z",
+            "determination_date": "2026-04-02T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 3.0,
+        "median_days": 3,
+        "average_business_days": 3.0,
+        "median_business_days": 3,
+        "completed_count": 1
+      }
+    },
+    "freudenberg-home-and-cleaning-solutions-gmbh": {
+      "id": "freudenberg-home-and-cleaning-solutions-gmbh",
+      "canonical_name": "Freudenberg Home and Cleaning Solutions",
+      "members": [
+        {
+          "name": "FREUDENBERG HOME AND CLEANING SOLUTIONS PTY LTD",
+          "identifier": "99 082 274 324",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Freudenberg Home and Cleaning Solutions GmbH",
+          "identifier": "HRB 431930",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-70005",
+            "merger_name": "Freudenberg Home and Cleaning Solutions \u2013 Nilfisk",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-09T12:00:00Z",
+            "determination_date": "2026-03-12T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 31.0,
+        "median_days": 31,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "k-k-ryan-pty-ltd-acn-623119960-as-trustee-for-the-k-k-ryan-family-trust": {
+      "id": "k-k-ryan-pty-ltd-acn-623119960-as-trustee-for-the-k-k-ryan-family-trust",
+      "canonical_name": "K & K Ryan Pty Ltd (Acn 623119960) As Trustee For The K & K Ryan Family Trust",
+      "members": [
+        {
+          "name": "K & K RYAN PTY LTD (ACN 623119960) AS TRUSTEE FOR THE K & K RYAN FAMILY TRUST",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-70016",
+            "merger_name": "Oceania Capital Partners - Hudson Global Resources (Aust)",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-22T12:00:00Z",
+            "determination_date": "2026-05-04T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 12.0,
+        "median_days": 12,
+        "average_business_days": 7.0,
+        "median_business_days": 7,
+        "completed_count": 1
+      }
+    },
+    "lendlease": {
+      "id": "lendlease",
+      "canonical_name": "Lendlease",
+      "members": [
+        {
+          "name": "LENDLEASE CAPITAL SERVICES PTY LTD",
+          "identifier": "67 000 001 114",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "LENDLEASE CAPITAL SERVICES RL LTD",
+          "identifier": "47 615 893 288",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "LENDLEASE CORPORATION LIMITED",
+          "identifier": "32 000 226 228",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "The Trustee for Lendlease Victoria Cross Trust",
+          "identifier": "26 397 448 085",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-70030",
+            "merger_name": "Aware Super \u2013 Increased interest in Keyton",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-10T12:00:00Z",
+            "determination_date": null
+          },
+          {
+            "merger_id": "WA-55015",
+            "merger_name": "Allianz - Lease of commercial office space in North Sydney from Lendlease (Victoria Cross)",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-23T12:00:00Z",
+            "determination_date": "2026-04-29T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 6.0,
+        "median_days": 6,
+        "average_business_days": 3.0,
+        "median_business_days": 3,
+        "completed_count": 1
+      }
+    },
+    "movac-limited": {
+      "id": "movac-limited",
+      "canonical_name": "Movac Limited",
+      "members": [
+        {
+          "name": "Movac Limited",
+          "identifier": "NZBN  9429035072287",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-70032",
+            "merger_name": "Movac \u2013 Advanced Navigation",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-28T12:00:00Z",
+            "determination_date": "2026-08-27T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 30.0,
+        "median_days": 30,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      }
+    },
+    "schf-pty-ltd": {
+      "id": "schf-pty-ltd",
+      "canonical_name": "Schf Pty Ltd",
+      "members": [
+        {
+          "name": "SCHF PTY LTD",
+          "identifier": "99 644 329 733",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-80015",
+            "merger_name": "Star Hotels Group - Shafston Hotel, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-14T12:00:00Z",
+            "determination_date": "2026-06-02T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-50013",
+            "merger_name": "Star Hotels - Fiveways Hotel Toowoomba",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-31T12:00:00Z",
+            "determination_date": "2026-04-23T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-40002",
+            "merger_name": "Star Hotels Group \u2013 Yandina Hotel, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-14T12:00:00Z",
+            "determination_date": "2026-02-02T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 3,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 3,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.333333333333332,
+        "median_days": 19,
+        "average_business_days": 13.0,
+        "median_business_days": 12,
+        "completed_count": 3
+      }
+    }
+  }
+}

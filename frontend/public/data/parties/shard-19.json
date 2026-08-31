@@ -1,0 +1,309 @@
+{
+  "shard": 25,
+  "shard_count": 256,
+  "parties": {
+    "bgis-pty-ltd": {
+      "id": "bgis-pty-ltd",
+      "canonical_name": "Bgis Pty Ltd",
+      "members": [
+        {
+          "name": "BGIS PTY LTD",
+          "identifier": "83 064 638 197",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-55020",
+            "merger_name": "BGIS - Safe Fire Electrical",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-19T12:00:00Z",
+            "determination_date": "2026-05-27T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-25011",
+            "merger_name": "BGIS - Ascot Air",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-10T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18.0,
+        "average_business_days": 12.0,
+        "median_business_days": 12.0,
+        "completed_count": 2
+      }
+    },
+    "dyno-nobel-limited": {
+      "id": "dyno-nobel-limited",
+      "canonical_name": "Dyno Nobel Limited",
+      "members": [
+        {
+          "name": "DYNO NOBEL LIMITED",
+          "identifier": "42 004 080 264",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25017",
+            "merger_name": "Mayfair Corporation \u2013 Phosphate Hill",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-20T12:00:00Z",
+            "determination_date": "2026-05-06T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "eldridge-ausenco-midco-3-llc": {
+      "id": "eldridge-ausenco-midco-3-llc",
+      "canonical_name": "Eldridge Ausenco MidCo 3, LLC",
+      "members": [
+        {
+          "name": "Eldridge Ausenco MidCo 3, LLC",
+          "identifier": "10692597",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-25043",
+            "merger_name": "Eldridge \u2013 Ausenco",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-13T12:00:00Z",
+            "determination_date": "2026-08-27T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "irca-group-luxembourg-midco-4-s-r-l": {
+      "id": "irca-group-luxembourg-midco-4-s-r-l",
+      "canonical_name": "IRCA Group Luxembourg Midco 4 S.\u00e0.r.l.",
+      "members": [
+        {
+          "name": "IRCA Group Luxembourg Midco 4 S.\u00e0.r.l.",
+          "identifier": "Grand Duchy of Luxembourg \u2013 registered number B266716",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-35037",
+            "merger_name": "CVC Capital Partners \u2013 IRCA Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-28T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "nojima": {
+      "id": "nojima",
+      "canonical_name": "Nojima",
+      "members": [
+        {
+          "name": "NJM4 Corporation",
+          "identifier": "Commercial Registration Number  010401197785",
+          "identifier_type": null
+        },
+        {
+          "name": "Nojima Corporation",
+          "identifier": "Commercial Registration Number  021001013588",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-20032",
+            "merger_name": "Nojima Corporation \u2013 Hitachi Global Life Solutions and Ar\u00e7elik Hitachi Home Appliances",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-27T12:00:00Z",
+            "determination_date": "2026-08-17T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "recordati-industria-chimica-e-farmaceutica-s-p-a-recordati-s-p-a": {
+      "id": "recordati-industria-chimica-e-farmaceutica-s-p-a-recordati-s-p-a",
+      "canonical_name": "Recordati Industria Chimica e Farmaceutica S.p.A. / Recordati S.p.A.",
+      "members": [
+        {
+          "name": "Recordati Industria Chimica e Farmaceutica S.p.A. / Recordati S.p.A.",
+          "identifier": "Company number (Italy)  00748210150",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-70024",
+            "merger_name": "CVC Capital Partners and Groupe Bruxelles Lambert \u2013 Recordati",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-04T12:00:00Z",
+            "determination_date": "2026-07-02T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "talisman-partners-pty-ltd": {
+      "id": "talisman-partners-pty-ltd",
+      "canonical_name": "Talisman Partners Pty Ltd",
+      "members": [
+        {
+          "name": "TALISMAN PARTNERS PTY LTD",
+          "identifier": "31 645 148 796",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-55012",
+            "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-10T12:00:00Z",
+            "determination_date": "2026-04-01T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

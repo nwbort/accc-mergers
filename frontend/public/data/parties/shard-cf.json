@@ -1,0 +1,302 @@
+{
+  "shard": 207,
+  "shard_count": 256,
+  "parties": {
+    "a-av-holdco-i-inc": {
+      "id": "a-av-holdco-i-inc",
+      "canonical_name": "A-AV Holdco I, Inc",
+      "members": [
+        {
+          "name": "A-AV Holdco I, Inc",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-85027",
+            "merger_name": "American Industrial Partners - Avanos Medical",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-12T12:00:00Z",
+            "determination_date": "2026-05-22T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 10.0,
+        "median_days": 10,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "a-c-n-065-919-495-pty-ltd": {
+      "id": "a-c-n-065-919-495-pty-ltd",
+      "canonical_name": "A.C.N. 065 919 495 Pty Ltd",
+      "members": [
+        {
+          "name": "A.C.N. 065 919 495 Pty Ltd",
+          "identifier": "065 919 495",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-75044",
+            "merger_name": "McCormick - Unilever Foods Business",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-20T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "barings-llc": {
+      "id": "barings-llc",
+      "canonical_name": "Barings LLC",
+      "members": [
+        {
+          "name": "Barings LLC",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-20025",
+            "merger_name": "Bupa \u2013 Barings Australian Private Credit Fund",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-05T12:00:00Z",
+            "determination_date": "2026-06-29T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "daniel-oscar-werner-heini": {
+      "id": "daniel-oscar-werner-heini",
+      "canonical_name": "Daniel Oscar Werner Heini",
+      "members": [
+        {
+          "name": "Daniel Oscar Werner Heini",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-40005",
+            "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-18T12:00:00Z",
+            "determination_date": "2026-03-12T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "shamrock-group": {
+      "id": "shamrock-group",
+      "canonical_name": "Shamrock Group",
+      "members": [
+        {
+          "name": "PHOENIX INVESTMENTS QUEENSLAND PTY LTD",
+          "identifier": "85 615 285 937",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "SHAMROCK BUILDING PTY LTD",
+          "identifier": "70 639 694 885",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "SHAMROCK CIVIL ENGINEERING PTY. LTD.",
+          "identifier": "68 066 655 856",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "SHAMROCK EQUIPMENT PTY LTD",
+          "identifier": "32 631 585 718",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-50030",
+            "merger_name": "Symal Group - Shamrock Engineering and Equipment",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-01T12:00:00Z",
+            "determination_date": "2026-07-22T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "taura-natural-ingredients-holdings-pty-ltd": {
+      "id": "taura-natural-ingredients-holdings-pty-ltd",
+      "canonical_name": "Taura Natural Ingredients Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "Taura Natural Ingredients Holdings Pty Ltd",
+          "identifier": "20 123 509 017",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-65030",
+            "merger_name": "CVC Capital Partners \u2013 IFF\u2019s Food Ingredients business",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-23T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "the-trustee-for-brunswick-hotel-sub-trust": {
+      "id": "the-trustee-for-brunswick-hotel-sub-trust",
+      "canonical_name": "The Trustee for Brunswick Hotel Sub-Trust",
+      "members": [
+        {
+          "name": "The Trustee for Brunswick Hotel Sub-Trust",
+          "identifier": "51 927 228 244",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-15009",
+            "merger_name": "MA Financial Group (Redcape Fund) - Hotel Brunswick",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-05T12:00:00Z",
+            "determination_date": "2026-03-20T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    }
+  }
+}

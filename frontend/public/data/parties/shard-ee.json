@@ -1,0 +1,549 @@
+{
+  "shard": 238,
+  "shard_count": 256,
+  "parties": {
+    "direct-couriers-aust-pty-limited": {
+      "id": "direct-couriers-aust-pty-limited",
+      "canonical_name": "Direct Couriers (Aust.) Pty. Limited",
+      "members": [
+        {
+          "name": "DIRECT COURIERS (AUST.) PTY. LIMITED",
+          "identifier": "87 063 478 295",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-80017",
+            "merger_name": "Direct Couriers \u2013 Phoenix Transport",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-18T12:00:00Z",
+            "determination_date": "2026-06-02T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "esperance-motor-group-pty-ltd": {
+      "id": "esperance-motor-group-pty-ltd",
+      "canonical_name": "Esperance Motor Group Pty Ltd",
+      "members": [
+        {
+          "name": "Esperance Motor Group Pty Ltd",
+          "identifier": "57 121 986 016",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25001",
+            "merger_name": "Regent Motors Group \u2013 Esperance Motor Group (Esperance Toyota & Ford)",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-09T12:00:00Z",
+            "determination_date": "2026-02-05T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "eureka-concrete-holdings-pty-ltd": {
+      "id": "eureka-concrete-holdings-pty-ltd",
+      "canonical_name": "Eureka Concrete (Holdings) Pty. Ltd.",
+      "members": [
+        {
+          "name": "Eureka Concrete (Holdings) Pty. Ltd.",
+          "identifier": "14 005 232 342",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-50021",
+            "merger_name": "Adbri - Eureka Concrete",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-17T12:00:00Z",
+            "determination_date": "2026-07-09T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "greenwich-place-pty-ltd": {
+      "id": "greenwich-place-pty-ltd",
+      "canonical_name": "Greenwich Place Pty Ltd",
+      "members": [
+        {
+          "name": "GREENWICH PLACE PTY LTD",
+          "identifier": "45 000 706 249",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-75012",
+            "merger_name": "Opal HealthCare \u2013 Greenwich Place residential aged care home",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-19T12:00:00Z",
+            "determination_date": "2026-04-13T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "r-d-briggs-pty-ltd": {
+      "id": "r-d-briggs-pty-ltd",
+      "canonical_name": "R & D Briggs Pty Ltd",
+      "members": [
+        {
+          "name": "R & D BRIGGS PTY LTD",
+          "identifier": "680 192 563",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-15024",
+            "merger_name": "Redwood Services Group \u2013 All IT Australia",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-09T12:00:00Z",
+            "determination_date": "2026-06-25T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "saturn-newco-inc": {
+      "id": "saturn-newco-inc",
+      "canonical_name": "Saturn NewCo, Inc",
+      "members": [
+        {
+          "name": "Saturn NewCo, Inc",
+          "identifier": "DE File number: 10449592",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-75006",
+            "merger_name": "Playlist \u2013 EGYM",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-05T12:00:00Z",
+            "determination_date": "2026-02-19T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "speedy-cocktails-pty-ltd": {
+      "id": "speedy-cocktails-pty-ltd",
+      "canonical_name": "Speedy Cocktails Pty Ltd",
+      "members": [
+        {
+          "name": "SPEEDY COCKTAILS PTY LTD",
+          "identifier": "99 619 330 255",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-90008",
+            "merger_name": "Black Rhino - Club Hotel Motel Roma",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": true,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-21T12:00:00Z",
+            "determination_date": "2026-08-11T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 82.0,
+        "median_days": 82,
+        "average_business_days": 56.0,
+        "median_business_days": 56,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "sst-villawood-pty-ltd": {
+      "id": "sst-villawood-pty-ltd",
+      "canonical_name": "Sst Villawood Pty Ltd",
+      "members": [
+        {
+          "name": "SST VILLAWOOD PTY LTD",
+          "identifier": "86 649 992 487",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-65004",
+            "merger_name": "Kee Safety - RIS Safety",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-02T12:00:00Z",
+            "determination_date": "2026-02-13T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 11.0,
+        "median_days": 11,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "tamarama-investment-management-pty-ltd": {
+      "id": "tamarama-investment-management-pty-ltd",
+      "canonical_name": "Tamarama Investment Management Pty Ltd",
+      "members": [
+        {
+          "name": "Tamarama Investment Management Pty Ltd",
+          "identifier": "25 696 539 625",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-45018",
+            "merger_name": "Count \u2013 Oracle Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-09T12:00:00Z",
+            "determination_date": "2026-07-01T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "tetra-tech-coffey-holding-pty-limited": {
+      "id": "tetra-tech-coffey-holding-pty-limited",
+      "canonical_name": "Tetra Tech Coffey Holding Pty Limited",
+      "members": [
+        {
+          "name": "TETRA TECH COFFEY HOLDING PTY LIMITED",
+          "identifier": "46 611 080 534",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-70008",
+            "merger_name": "Tetra Tech \u2013 Providence Consulting",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-27T12:00:00Z",
+            "determination_date": "2026-04-01T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 33.0,
+        "median_days": 33,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      }
+    },
+    "the-independents-group": {
+      "id": "the-independents-group",
+      "canonical_name": "The Independents Group",
+      "members": [
+        {
+          "name": "K10 Holding SA",
+          "identifier": "Identifying number  B214433",
+          "identifier_type": null
+        },
+        {
+          "name": "The Independents Creative Collective UK Ltd.",
+          "identifier": "Identifying number  04243407",
+          "identifier_type": null
+        },
+        {
+          "name": "The Independents Group Inc.",
+          "identifier": "Identifying number  3414791",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-35034",
+            "merger_name": "The Independents Group \u2013 acquisition of entities within the Smuggler Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-07T12:00:00Z",
+            "determination_date": "2026-08-28T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "western-australian-land-authority": {
+      "id": "western-australian-land-authority",
+      "canonical_name": "Western Australian Land Authority",
+      "members": [
+        {
+          "name": "WESTERN AUSTRALIAN LAND AUTHORITY",
+          "identifier": "34 868 192 835",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-40011",
+            "merger_name": "Element Zero's L701 \u2013 Option to lease DevelopmentWA industrial land at Boodarie Strategic Industrial Area",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-12T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "zen-energy-pty-ltd": {
+      "id": "zen-energy-pty-ltd",
+      "canonical_name": "Zen Energy Pty Ltd",
+      "members": [
+        {
+          "name": "ZEN ENERGY PTY LTD",
+          "identifier": "13 644 924 729",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-15025",
+            "merger_name": "Gunvor Group \u2013 ZEN Energy Retail Holdings",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-10T12:00:00Z",
+            "determination_date": "2026-06-24T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    }
+  }
+}

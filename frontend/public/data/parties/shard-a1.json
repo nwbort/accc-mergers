@@ -1,0 +1,564 @@
+{
+  "shard": 161,
+  "shard_count": 256,
+  "parties": {
+    "admiral-au-holdco-pty-ltd": {
+      "id": "admiral-au-holdco-pty-ltd",
+      "canonical_name": "Admiral AU Holdco Pty Ltd",
+      "members": [
+        {
+          "name": "Admiral AU Holdco Pty Ltd",
+          "identifier": "695 791 710",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-80007",
+            "merger_name": "Arlington Capital Partners \u2013 Eptec Defence Solutions",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-18T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "amg-headquarters-eighteen-pty-ltd": {
+      "id": "amg-headquarters-eighteen-pty-ltd",
+      "canonical_name": "Amg Headquarters Eighteen Pty Ltd",
+      "members": [
+        {
+          "name": "AMG HEADQUARTERS EIGHTEEN PTY LTD",
+          "identifier": "698 081 819",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-45022",
+            "merger_name": "Australian Motors Group \u2013 Mudgee Toyota",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-22T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    },
+    "apollo-intermediate-inc": {
+      "id": "apollo-intermediate-inc",
+      "canonical_name": "Apollo Intermediate, Inc.",
+      "members": [
+        {
+          "name": "Apollo Intermediate Holdings, Inc.",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Apollo Intermediate, Inc.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-85025",
+            "merger_name": "Francisco Partners - Blackline Safety",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-24T12:00:00Z",
+            "determination_date": "2026-05-06T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 12.0,
+        "median_days": 12,
+        "average_business_days": 7.0,
+        "median_business_days": 7,
+        "completed_count": 1
+      }
+    },
+    "argo-qld-pty-ltd": {
+      "id": "argo-qld-pty-ltd",
+      "canonical_name": "Mercuria Argo",
+      "members": [
+        {
+          "name": "Argo Bowen 2 Pty Ltd",
+          "identifier": "695 023 619",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "Argo Bowen Pty Ltd",
+          "identifier": "695 021 124",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "Argo Holdings QLD Pty Ltd",
+          "identifier": "690 887 597",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "Argo QLD Pty Ltd",
+          "identifier": "690 893 371",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "Mercuria Argo Investments Pty Ltd",
+          "identifier": "202505079",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-55012",
+            "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-10T12:00:00Z",
+            "determination_date": "2026-04-01T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "derbysoft-shanghai-co-limited": {
+      "id": "derbysoft-shanghai-co-limited",
+      "canonical_name": "DerbySoft (Shanghai) Co. Limited",
+      "members": [
+        {
+          "name": "DerbySoft (Shanghai) Co. Limited",
+          "identifier": "Chinese Unified Social Credit Code  913101157456256621",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-90014",
+            "merger_name": "Constellation Software - DerbySoft Holdings",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-29T12:00:00Z",
+            "determination_date": "2026-05-15T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "hexagon-ab": {
+      "id": "hexagon-ab",
+      "canonical_name": "Hexagon AB",
+      "members": [
+        {
+          "name": "Hexagon AB",
+          "identifier": "Swedish Company Registration Number 5561904771",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-35022",
+            "merger_name": "Hexagon - Waygate Technologies",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-22T12:00:00Z",
+            "determination_date": "2026-06-22T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 31.0,
+        "median_days": 31,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "insurance-building-australia-operations-pty-ltd": {
+      "id": "insurance-building-australia-operations-pty-ltd",
+      "canonical_name": "Insurance Building Australia Operations Pty Ltd",
+      "members": [
+        {
+          "name": "Insurance Building Australia Operations Pty Ltd",
+          "identifier": "80 661 826 026",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-10021",
+            "merger_name": "Ambrose Construct Group \u2013 Major Loss Builders",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-22T12:00:00Z",
+            "determination_date": "2026-08-12T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "regional-australia-bank-ltd": {
+      "id": "regional-australia-bank-ltd",
+      "canonical_name": "Regional Australia Bank Ltd",
+      "members": [
+        {
+          "name": "REGIONAL AUSTRALIA BANK LTD",
+          "identifier": "21 087 650 360",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-30021",
+            "merger_name": "Regional Australia Bank \u2013 South West Slopes Credit Union",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-10T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "shanghai-lu-zi-enterprise-management-consulting-center": {
+      "id": "shanghai-lu-zi-enterprise-management-consulting-center",
+      "canonical_name": "Shanghai Lu Zi Enterprise Management Consulting Center",
+      "members": [
+        {
+          "name": "Shanghai Lu Zi Enterprise Management Consulting Center",
+          "identifier": "USCC  91310115MA1K3D4T1W",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-05020",
+            "merger_name": "Midea Group \u2013 Esaote",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-07T12:00:00Z",
+            "determination_date": "2026-05-21T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "teachers-insurance-and-annuity-association-of-america-tiaa": {
+      "id": "teachers-insurance-and-annuity-association-of-america-tiaa",
+      "canonical_name": "Teachers Insurance and Annuity Association of America (TIAA)",
+      "members": [
+        {
+          "name": "Teachers Insurance and Annuity Association of America (TIAA)",
+          "identifier": "FEIN 131624203",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-25022",
+            "merger_name": "Nuveen \u2013 Schroders",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-30T12:00:00Z",
+            "determination_date": "2026-05-15T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "tug-and-barge-services-pty-ltd": {
+      "id": "tug-and-barge-services-pty-ltd",
+      "canonical_name": "Tug and Barge Services Pty Ltd",
+      "members": [
+        {
+          "name": "Tug and Barge Services Pty Ltd",
+          "identifier": "55 147 972 012",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-20010",
+            "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-06T12:00:00Z",
+            "determination_date": "2026-03-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "yandoo-holdings-pty-ltd": {
+      "id": "yandoo-holdings-pty-ltd",
+      "canonical_name": "Yandoo Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "Yandoo Holdings Pty Ltd",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-01092",
+            "merger_name": "Winning Group Holdings \u2013 Winning Appliances",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-23T12:00:00Z",
+            "determination_date": "2026-04-23T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 31.0,
+        "median_days": 31,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    },
+    "zumba-pty-ltd": {
+      "id": "zumba-pty-ltd",
+      "canonical_name": "Zumba Pty Ltd",
+      "members": [
+        {
+          "name": "Zumba Pty Ltd",
+          "identifier": "154 324 839",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-70013",
+            "merger_name": "Ventura Motors \u2013 Crown Coaches",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-15T12:00:00Z",
+            "determination_date": "2026-05-07T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

@@ -1,0 +1,287 @@
+{
+  "shard": 141,
+  "shard_count": 256,
+  "parties": {
+    "exterran-thailand-ltd": {
+      "id": "exterran-thailand-ltd",
+      "canonical_name": "Exterran (Thailand) Ltd",
+      "members": [
+        {
+          "name": "Exterran (Thailand) Ltd",
+          "identifier": "0105542031616",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25010",
+            "merger_name": "INNIO Group \u2013 Enerflex",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-13T12:00:00Z",
+            "determination_date": "2026-04-16T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 34.0,
+        "median_days": 34,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      }
+    },
+    "fintuition-institute-pty-limited": {
+      "id": "fintuition-institute-pty-limited",
+      "canonical_name": "Fintuition Institute Pty Limited",
+      "members": [
+        {
+          "name": "FINTUITION INSTITUTE PTY LIMITED",
+          "identifier": "89 139 869 426",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-80022",
+            "merger_name": "Bain Capital \u2013 Perpetual Wealth Management Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-03T12:00:00Z",
+            "determination_date": "2026-06-30T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "guidera-o-connor-pty-ltd": {
+      "id": "guidera-o-connor-pty-ltd",
+      "canonical_name": "Guidera O'Connor Pty Ltd",
+      "members": [
+        {
+          "name": "GUIDERA O'CONNOR PTY LTD",
+          "identifier": "71 099 012 870",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-35031",
+            "merger_name": "Osmoflo Water Management - Guidera O'Connor",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-06T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "k-parsons-investments-qld-pty-ltd-as-trustee-for-the-parsons-investment-trust": {
+      "id": "k-parsons-investments-qld-pty-ltd-as-trustee-for-the-parsons-investment-trust",
+      "canonical_name": "K Parsons Investments (Qld) Pty Ltd as trustee for the Parsons Investment Trust",
+      "members": [
+        {
+          "name": "K Parsons Investments (Qld) Pty Ltd as trustee for the Parsons Investment Trust",
+          "identifier": "143 731 524",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-25002",
+            "merger_name": "Symal Group - Timms Group and L&D Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-01-23T12:00:00Z",
+            "determination_date": "2026-02-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "majestic-ventures-pty-limited-atf-elsdon-family-trust": {
+      "id": "majestic-ventures-pty-limited-atf-elsdon-family-trust",
+      "canonical_name": "Majestic Ventures Pty Limited ATF Elsdon Family Trust",
+      "members": [
+        {
+          "name": "Majestic Ventures Pty Limited ATF Elsdon Family Trust",
+          "identifier": "38 132 336 915",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-15035",
+            "merger_name": "Waymark Hotels Group \u2013 Howard Springs Tavern, Howard Springs, NT",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-27T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "the-trustee-for-stockland-residential-rental-partnership-trust": {
+      "id": "the-trustee-for-stockland-residential-rental-partnership-trust",
+      "canonical_name": "The Trustee for Stockland Residential Rental Partnership Trust",
+      "members": [
+        {
+          "name": "The Trustee for Stockland Residential Rental Partnership Trust",
+          "identifier": "55 773 008 463",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-05026",
+            "merger_name": "Mercer Investments (Australia) Limited\u2013 Stockland Residential Rental Partnership",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-09T12:00:00Z",
+            "determination_date": "2026-06-23T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "transhipment-services-australia-pty-ltd": {
+      "id": "transhipment-services-australia-pty-ltd",
+      "canonical_name": "Transhipment Services Australia Pty Ltd",
+      "members": [
+        {
+          "name": "Transhipment Services Australia Pty Ltd",
+          "identifier": "99 148 199 937",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-20010",
+            "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-06T12:00:00Z",
+            "determination_date": "2026-03-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    }
+  }
+}

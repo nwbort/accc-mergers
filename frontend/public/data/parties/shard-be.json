@@ -1,0 +1,467 @@
+{
+  "shard": 190,
+  "shard_count": 256,
+  "parties": {
+    "albany-motors-pty-ltd": {
+      "id": "albany-motors-pty-ltd",
+      "canonical_name": "Albany Motors Pty Ltd",
+      "members": [
+        {
+          "name": "ALBANY MOTORS PTY LTD",
+          "identifier": "95 676 040 341",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-25001",
+            "merger_name": "Regent Motors Group \u2013 Esperance Motor Group (Esperance Toyota & Ford)",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-09T12:00:00Z",
+            "determination_date": "2026-02-05T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "apex-group-holdings-australia-pty-ltd": {
+      "id": "apex-group-holdings-australia-pty-ltd",
+      "canonical_name": "Apex Group Holdings (Australia) Pty Ltd",
+      "members": [
+        {
+          "name": "Apex Group Holdings (Australia) Pty Ltd",
+          "identifier": "48 112 252 114",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-10005",
+            "merger_name": "Apex - Mercer Administration Services and related assets",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-17T12:00:00Z",
+            "determination_date": "2026-03-12T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "asahi-holdings-australia-pty-ltd": {
+      "id": "asahi-holdings-australia-pty-ltd",
+      "canonical_name": "Asahi Holdings (Australia) Pty Ltd",
+      "members": [
+        {
+          "name": "ASAHI HOLDINGS (AUSTRALIA) PTY LTD",
+          "identifier": "48 135 315 767",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-01035",
+            "merger_name": "Asahi \u2013 Warehouse site on Weedman and Montgomery Streets, Redbank (Qld)",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2025-10-24T12:00:00Z",
+            "determination_date": "2025-11-18T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-01016",
+            "merger_name": "Asahi \u2013 Warehouse site on Tilburn Rd, Deer Park (Vic)",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2025-08-15T12:00:00Z",
+            "determination_date": "2025-09-05T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 2,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23.0,
+        "average_business_days": 16.0,
+        "median_business_days": 16.0,
+        "completed_count": 2
+      },
+      "waiver_duration": null
+    },
+    "baywa-r-e-solar-systems-pty-ltd": {
+      "id": "baywa-r-e-solar-systems-pty-ltd",
+      "canonical_name": "Baywa R.E. Solar Systems Pty Ltd",
+      "members": [
+        {
+          "name": "BAYWA R.E. SOLAR SYSTEMS PTY LTD",
+          "identifier": "93 614 035 620",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-65031",
+            "merger_name": "Metal Manufactures - BayWa Solar Systems",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-14T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "counting-crows-pty-ltd": {
+      "id": "counting-crows-pty-ltd",
+      "canonical_name": "Counting Crows Pty Ltd",
+      "members": [
+        {
+          "name": "COUNTING CROWS PTY LTD",
+          "identifier": "19 659 478 485",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-10014",
+            "merger_name": "Turner Family Entities - Pedal Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-08T12:00:00Z",
+            "determination_date": "2026-04-30T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "excellergy-inc": {
+      "id": "excellergy-inc",
+      "canonical_name": "Excellergy",
+      "members": [
+        {
+          "name": "EXCELLERGY AUSTRALIA PTY LTD",
+          "identifier": "50 690 676 941",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Excellergy Inc.",
+          "identifier": "EIN 854115816",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-40019",
+            "merger_name": "Novartis - Excellergy",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-12T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "icg-capital-management-pty-ltd": {
+      "id": "icg-capital-management-pty-ltd",
+      "canonical_name": "Icg Capital Management Pty Ltd",
+      "members": [
+        {
+          "name": "ICG CAPITAL MANAGEMENT PTY LTD",
+          "identifier": "77 679 496 201",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-05014",
+            "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "ifm-fiduciary-pty-ltd-as-trustee-for-the-sscf-soa8-holding-trust": {
+      "id": "ifm-fiduciary-pty-ltd-as-trustee-for-the-sscf-soa8-holding-trust",
+      "canonical_name": "IFM FIDUCIARY PTY LTD as trustee for the SSCF SOA8 Holding Trust",
+      "members": [
+        {
+          "name": "IFM FIDUCIARY PTY LTD as trustee for the SSCF SOA8 Holding Trust",
+          "identifier": "52 135 450 618",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-95031",
+            "merger_name": "IFM Fiduciary \u2013 PM Fresh",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-17T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "kestrel-coal-group-pty-ltd": {
+      "id": "kestrel-coal-group-pty-ltd",
+      "canonical_name": "Kestrel Coal Group Pty Ltd",
+      "members": [
+        {
+          "name": "KESTREL COAL GROUP PTY LTD",
+          "identifier": "70 624 655 518",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-85021",
+            "merger_name": "Yancoal - Kestrel Coal Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-02T12:00:00Z",
+            "determination_date": "2026-04-13T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 11.0,
+        "median_days": 11,
+        "average_business_days": 5.0,
+        "median_business_days": 5,
+        "completed_count": 1
+      }
+    },
+    "nsw-meat-properties-pty-ltd": {
+      "id": "nsw-meat-properties-pty-ltd",
+      "canonical_name": "NSW Meat Properties Pty Ltd",
+      "members": [
+        {
+          "name": "NSW Meat Properties Pty Ltd",
+          "identifier": "630 576 859",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-20012",
+            "merger_name": "Australian Meat Group - Killara Feedlot",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-24T12:00:00Z",
+            "determination_date": "2026-05-22T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "salter-brothers-funds-management-pty-ltd": {
+      "id": "salter-brothers-funds-management-pty-ltd",
+      "canonical_name": "Salter Brothers Funds Management Pty Ltd",
+      "members": [
+        {
+          "name": "Salter Brothers Funds Management Pty Ltd",
+          "identifier": "94 608 295 683",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-90011",
+            "merger_name": "Salter Brothers - Buroserv",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-10T12:00:00Z",
+            "determination_date": "2026-04-29T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 19.0,
+        "median_days": 19,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    }
+  }
+}

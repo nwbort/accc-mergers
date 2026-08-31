@@ -1,0 +1,293 @@
+{
+  "shard": 124,
+  "shard_count": 256,
+  "parties": {
+    "bsn-sports-llc": {
+      "id": "bsn-sports-llc",
+      "canonical_name": "BSN Sports, LLC",
+      "members": [
+        {
+          "name": "BSN Sports, LLC",
+          "identifier": "Company No.: 2980248  Delaware",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-01088",
+            "merger_name": "BSN Sports \u2013 Sports Endeavors",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-25T12:00:00Z",
+            "determination_date": "2026-03-06T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 9.0,
+        "median_days": 9,
+        "average_business_days": 7.0,
+        "median_business_days": 7,
+        "completed_count": 1
+      }
+    },
+    "hitech-group-australia-limited": {
+      "id": "hitech-group-australia-limited",
+      "canonical_name": "Hitech Group Australia Limited",
+      "members": [
+        {
+          "name": "HITECH GROUP AUSTRALIA LIMITED",
+          "identifier": "41 062 067 878",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-95038",
+            "merger_name": "HiTech Group Australia - Hudson Global Resources",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-04T12:00:00Z",
+            "determination_date": "2026-08-25T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "mercer-outsourcing-australia-pty-ltd": {
+      "id": "mercer-outsourcing-australia-pty-ltd",
+      "canonical_name": "Mercer Outsourcing (Australia) Pty Ltd",
+      "members": [
+        {
+          "name": "MERCER OUTSOURCING (AUSTRALIA) PTY LTD",
+          "identifier": "83 068 908 912",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-10005",
+            "merger_name": "Apex - Mercer Administration Services and related assets",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-17T12:00:00Z",
+            "determination_date": "2026-03-12T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "smile-partners-nsw1-pty-ltd": {
+      "id": "smile-partners-nsw1-pty-ltd",
+      "canonical_name": "Smile Partners (Nsw1) Pty Ltd",
+      "members": [
+        {
+          "name": "SMILE PARTNERS (NSW1) PTY LTD",
+          "identifier": "80 679 220 350",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-05014",
+            "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "the-trustee-for-green-squares-energy-trust": {
+      "id": "the-trustee-for-green-squares-energy-trust",
+      "canonical_name": "The Trustee for Green Squares Energy Trust",
+      "members": [
+        {
+          "name": "The Trustee for Green Squares Energy Trust",
+          "identifier": "84 706 057 848",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-95035",
+            "merger_name": "Igneo Infrastructure Partners \u2013 Green Squares Energy",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-23T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
+    "towerbrook-capital-partners-l-p": {
+      "id": "towerbrook-capital-partners-l-p",
+      "canonical_name": "TowerBrook Capital Partners L.P.",
+      "members": [
+        {
+          "name": "TowerBrook Capital Partners L.P.",
+          "identifier": "Identifying number  3922576",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-35034",
+            "merger_name": "The Independents Group \u2013 acquisition of entities within the Smuggler Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-07T12:00:00Z",
+            "determination_date": "2026-08-28T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "win-television-network-pty-ltd": {
+      "id": "win-television-network-pty-ltd",
+      "canonical_name": "Win Television Network Pty Ltd",
+      "members": [
+        {
+          "name": "WIN TELEVISION NETWORK PTY LTD",
+          "identifier": "90 008 589 026",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-50008",
+            "merger_name": "WIN Television Network - NBN Enterprises & Television Holdings Darwin",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-24T12:00:00Z",
+            "determination_date": "2026-05-18T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

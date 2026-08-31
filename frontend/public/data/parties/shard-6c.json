@@ -1,0 +1,479 @@
+{
+  "shard": 108,
+  "shard_count": 256,
+  "parties": {
+    "bmg-rights-management-us-llc": {
+      "id": "bmg-rights-management-us-llc",
+      "canonical_name": "BMG Rights Management (US), LLC",
+      "members": [
+        {
+          "name": "BMG Rights Management (US), LLC",
+          "identifier": "4645458",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-75023",
+            "merger_name": "Bertelsmann Music Group - Concord",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-18T12:00:00Z",
+            "determination_date": "2026-07-10T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "crown-coaches-pty-ltd": {
+      "id": "crown-coaches-pty-ltd",
+      "canonical_name": "Crown Coaches Pty Ltd",
+      "members": [
+        {
+          "name": "CROWN COACHES PTY LTD",
+          "identifier": "48 004 882 213",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-70013",
+            "merger_name": "Ventura Motors \u2013 Crown Coaches",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-15T12:00:00Z",
+            "determination_date": "2026-05-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "heidelberg-materials-australia-holdings-pty-ltd": {
+      "id": "heidelberg-materials-australia-holdings-pty-ltd",
+      "canonical_name": "Heidelberg Materials Australia Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "HEIDELBERG MATERIALS AUSTRALIA HOLDINGS PTY LTD",
+          "identifier": "98 611 565 649",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-50009",
+            "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": true,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-28T12:00:00Z",
+            "determination_date": "2026-07-31T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 64.0,
+        "median_days": 64,
+        "average_business_days": 44.0,
+        "median_business_days": 44,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "ma-redcape-hotel-fund-re-limited": {
+      "id": "ma-redcape-hotel-fund-re-limited",
+      "canonical_name": "Ma Redcape Hotel Fund Re Limited",
+      "members": [
+        {
+          "name": "MA REDCAPE HOTEL FUND RE LIMITED",
+          "identifier": "87 610 990 004",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-25027",
+            "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Arthouse Hotel",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-01T12:00:00Z",
+            "determination_date": "2026-06-22T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-60017",
+            "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Entrance Social Club",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-16T12:00:00Z",
+            "determination_date": "2026-04-30T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.5,
+        "median_days": 17.5,
+        "average_business_days": 11.5,
+        "median_business_days": 11.5,
+        "completed_count": 2
+      }
+    },
+    "magnetic-infrastructure-group-pty-ltd": {
+      "id": "magnetic-infrastructure-group-pty-ltd",
+      "canonical_name": "Magnetic Infrastructure Group Pty Ltd",
+      "members": [
+        {
+          "name": "MAGNETIC INFRASTRUCTURE GROUP PTY LTD",
+          "identifier": "81 663 518 563",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-90012",
+            "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-13T12:00:00Z",
+            "determination_date": "2026-06-24T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 42.0,
+        "median_days": 42,
+        "average_business_days": 28.0,
+        "median_business_days": 28,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "perpetual-pwm-services-pty-ltd": {
+      "id": "perpetual-pwm-services-pty-ltd",
+      "canonical_name": "Perpetual Pwm Services Pty Ltd",
+      "members": [
+        {
+          "name": "PERPETUAL PWM SERVICES PTY LTD",
+          "identifier": "90 678 546 113",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-80022",
+            "merger_name": "Bain Capital \u2013 Perpetual Wealth Management Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-03T12:00:00Z",
+            "determination_date": "2026-06-30T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "scentre-group-limited": {
+      "id": "scentre-group-limited",
+      "canonical_name": "Scentre Group Limited",
+      "members": [
+        {
+          "name": "SCENTRE GROUP LIMITED",
+          "identifier": "66 001 671 496",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-80034",
+            "merger_name": "Australian Retirement Trust \u2013 Westfield Mt Gravatt",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-28T12:00:00Z",
+            "determination_date": "2026-08-25T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-15004",
+            "merger_name": "Australian Retirement Trust \u2013 Interests in non-rental income (Westfield Sydney)",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-24T12:00:00Z",
+            "determination_date": "2026-02-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.5,
+        "median_days": 27.5,
+        "average_business_days": 19.5,
+        "median_business_days": 19.5,
+        "completed_count": 2
+      }
+    },
+    "sesac-holdings-inc": {
+      "id": "sesac-holdings-inc",
+      "canonical_name": "SESAC Holdings, Inc",
+      "members": [
+        {
+          "name": "SESAC Holdings, Inc",
+          "identifier": "NY DOS ID  1652738",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-20023",
+            "merger_name": "Sony Music - Recognition Music",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-02T12:00:00Z",
+            "determination_date": "2026-06-30T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "softbank-group-corp": {
+      "id": "softbank-group-corp",
+      "canonical_name": "SoftBank Group Corp",
+      "members": [
+        {
+          "name": "SoftBank Group Corp",
+          "identifier": "Japanese registration number  010401056795",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-10009",
+            "merger_name": "SoftBank \u2013 DigitalBridge",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-02T12:00:00Z",
+            "determination_date": "2026-03-24T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "tan-dental-pty-ltd": {
+      "id": "tan-dental-pty-ltd",
+      "canonical_name": "Tan Dental Pty Ltd",
+      "members": [
+        {
+          "name": "TAN DENTAL PTY LTD",
+          "identifier": "18 146 067 594",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-85013",
+            "merger_name": "National Dental Care \u2013 DDTA Dental clinic in Launceston, TAS",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-27T12:00:00Z",
+            "determination_date": "2026-03-10T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 11.0,
+        "median_days": 11,
+        "average_business_days": 6.0,
+        "median_business_days": 6,
+        "completed_count": 1
+      }
+    },
+    "warrego-op-co-pty-ltd": {
+      "id": "warrego-op-co-pty-ltd",
+      "canonical_name": "Warrego Op Co Pty Ltd",
+      "members": [
+        {
+          "name": "WARREGO OP CO PTY LTD",
+          "identifier": "29 692 796 697",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-70010",
+            "merger_name": "Waymark Hotels Group \u2013 Warrego Hotel Motel Cunnamulla, Queensland",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-06T12:00:00Z",
+            "determination_date": "2026-04-02T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    }
+  }
+}

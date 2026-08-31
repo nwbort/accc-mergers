@@ -1,0 +1,419 @@
+{
+  "shard": 109,
+  "shard_count": 256,
+  "parties": {
+    "amc-ausco-1-pty-ltd": {
+      "id": "amc-ausco-1-pty-ltd",
+      "canonical_name": "Amc Ausco 1 Pty Ltd",
+      "members": [
+        {
+          "name": "AMC AUSCO 1 PTY LTD",
+          "identifier": "49 658 085 771",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-30011",
+            "merger_name": "AXDI - minority interest in La Trobe Financial",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-24T12:00:00Z",
+            "determination_date": "2026-05-19T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "astreya-partners-inc": {
+      "id": "astreya-partners-inc",
+      "canonical_name": "Astreya Partners, Inc.",
+      "members": [
+        {
+          "name": "Astreya Partners, Inc.",
+          "identifier": "CIN 770570107",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-70019",
+            "merger_name": "Cognizant \u2013 Astreya",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-07T12:00:00Z",
+            "determination_date": "2026-05-21T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "built-group": {
+      "id": "built-group",
+      "canonical_name": "Built Group",
+      "members": [
+        {
+          "name": "Built Group Holdings Pty Limited",
+          "identifier": "88 163 462 637",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Built Living (Built Investor) Pty Limited",
+          "identifier": "71 698 095 831",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-65021",
+            "merger_name": "Wesfarmers and Built Group - Built Living Joint Venture",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-06T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "etg-queensland-processing-pty-ltd": {
+      "id": "etg-queensland-processing-pty-ltd",
+      "canonical_name": "Etg Queensland Processing Pty Ltd",
+      "members": [
+        {
+          "name": "ETG QUEENSLAND PROCESSING PTY LTD",
+          "identifier": "20 695 139 032",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-60013",
+            "merger_name": "Export Trading Group Australia \u2013 pulses and grains business and facility in Mount Tyson, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-31T12:00:00Z",
+            "determination_date": "2026-04-29T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "fhl-distribution-centre-pty-ltd": {
+      "id": "fhl-distribution-centre-pty-ltd",
+      "canonical_name": "Fhl Distribution Centre Pty Ltd",
+      "members": [
+        {
+          "name": "FHL DISTRIBUTION CENTRE PTY LTD",
+          "identifier": "96 114 853 315",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-55019",
+            "merger_name": "Allegro - Fantastic Furniture",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-15T12:00:00Z",
+            "determination_date": "2026-05-26T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 11.0,
+        "median_days": 11,
+        "average_business_days": 7.0,
+        "median_business_days": 7,
+        "completed_count": 1
+      }
+    },
+    "mackellar-mining-pty-ltd": {
+      "id": "mackellar-mining-pty-ltd",
+      "canonical_name": "MacKellar Mining Pty Ltd",
+      "members": [
+        {
+          "name": "MacKellar Mining Pty Ltd",
+          "identifier": "81 150 919 761",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-85003",
+            "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-25T12:00:00Z",
+            "determination_date": "2026-03-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "nbn-enterprises-pty-limited": {
+      "id": "nbn-enterprises-pty-limited",
+      "canonical_name": "Nbn Enterprises Pty Limited",
+      "members": [
+        {
+          "name": "NBN ENTERPRISES PTY LIMITED",
+          "identifier": "68 009 140 078",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-50008",
+            "merger_name": "WIN Television Network - NBN Enterprises & Television Holdings Darwin",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-24T12:00:00Z",
+            "determination_date": "2026-05-18T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "revima-holding-sas": {
+      "id": "revima-holding-sas",
+      "canonical_name": "Revima Holding SAS",
+      "members": [
+        {
+          "name": "Revima Holding SAS",
+          "identifier": "RCS Rouen  845 266 725",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-25037",
+            "merger_name": "Sanad Services and Tikehau Capital \u2013 Revima",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-21T12:00:00Z",
+            "determination_date": "2026-08-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "space-exploration-technologies-corp": {
+      "id": "space-exploration-technologies-corp",
+      "canonical_name": "Space Exploration Technologies Corp.",
+      "members": [
+        {
+          "name": "Space Exploration Technologies Corp.",
+          "identifier": "NASDAQ  SPCX",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-85036",
+            "merger_name": "SpaceX - Anysphere",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-27T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "wesfarmers-limited": {
+      "id": "wesfarmers-limited",
+      "canonical_name": "Wesfarmers Limited",
+      "members": [
+        {
+          "name": "Wesfarmers Built Pty Ltd",
+          "identifier": "698 309 509",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "Wesfarmers Holdings Pty Ltd",
+          "identifier": "23 094 800 665",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Wesfarmers Limited",
+          "identifier": "28 008 984 049",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-65021",
+            "merger_name": "Wesfarmers and Built Group - Built Living Joint Venture",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-06T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    }
+  }
+}

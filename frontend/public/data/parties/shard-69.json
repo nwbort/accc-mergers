@@ -1,0 +1,345 @@
+{
+  "shard": 105,
+  "shard_count": 256,
+  "parties": {
+    "ge-healthcare-technologies-inc": {
+      "id": "ge-healthcare-technologies-inc",
+      "canonical_name": "GE Healthcare Technologies Inc.",
+      "members": [
+        {
+          "name": "GE Healthcare Technologies Inc.",
+          "identifier": "6772877",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-01074",
+            "merger_name": "GE Healthcare \u2013 Intelerad",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-01-20T12:00:00Z",
+            "determination_date": "2026-02-26T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 37.0,
+        "median_days": 37,
+        "average_business_days": 26.0,
+        "median_business_days": 26,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "hewison-associates-pty-ltd": {
+      "id": "hewison-associates-pty-ltd",
+      "canonical_name": "Hewison & Associates Pty. Ltd.",
+      "members": [
+        {
+          "name": "Hewison & Associates Pty. Ltd.",
+          "identifier": "51 006 082 257",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-05041",
+            "merger_name": "Pemba - Hewison Private Wealth",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-21T12:00:00Z",
+            "determination_date": "2026-08-19T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    },
+    "infoblox-inc": {
+      "id": "infoblox-inc",
+      "canonical_name": "Infoblox Inc.",
+      "members": [
+        {
+          "name": "Infoblox Inc.",
+          "identifier": "3662067",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-10023",
+            "merger_name": "Infoblox \u2013 Kentik Technologies",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-06T12:00:00Z",
+            "determination_date": "2026-08-03T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
+    "kona-merger-sub-co": {
+      "id": "kona-merger-sub-co",
+      "canonical_name": "KONA Merger Sub Co.",
+      "members": [
+        {
+          "name": "KONA Merger Sub Co.",
+          "identifier": "Delaware  10525073",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-50014",
+            "merger_name": "Searchlight Capital Partners - Additional interest in KORE Group Holdings Inc.",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-01T12:00:00Z",
+            "determination_date": "2026-04-23T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "lvant-mecca-pty-limited-as-trustee-for-carmichael-family-trust": {
+      "id": "lvant-mecca-pty-limited-as-trustee-for-carmichael-family-trust",
+      "canonical_name": "LVANT MECCA PTY LIMITED as trustee for CARMICHAEL FAMILY TRUST",
+      "members": [
+        {
+          "name": "LVANT MECCA PTY LIMITED as trustee for CARMICHAEL FAMILY TRUST",
+          "identifier": "601 504 590",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-95009",
+            "merger_name": "McDonald\u2019s Australia \u2013 McDonald\u2019s Restaurants in Bankstown and Yagoona, NSW",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-09T12:00:00Z",
+            "determination_date": "2026-04-01T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "mcdonald-s-australia-limited": {
+      "id": "mcdonald-s-australia-limited",
+      "canonical_name": "Mcdonald'S Australia Limited",
+      "members": [
+        {
+          "name": "MCDONALD'S AUSTRALIA LIMITED",
+          "identifier": "43 008 496 928",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-45021",
+            "merger_name": "McDonald\u2019s Australia \u2013 McDonald\u2019s Restaurants in North West Sydney",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-03T12:00:00Z",
+            "determination_date": "2026-08-03T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-95009",
+            "merger_name": "McDonald\u2019s Australia \u2013 McDonald\u2019s Restaurants in Bankstown and Yagoona, NSW",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-09T12:00:00Z",
+            "determination_date": "2026-04-01T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27.0,
+        "average_business_days": 19.0,
+        "median_business_days": 19.0,
+        "completed_count": 2
+      }
+    },
+    "ta-investors-2024-l-p": {
+      "id": "ta-investors-2024-l-p",
+      "canonical_name": "TA Investors 2024, L.P",
+      "members": [
+        {
+          "name": "TA Investors 2024, L.P",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-15033",
+            "merger_name": "Armira and TA Associates \u2013 Intersurgical Aktiengesellschaft AG",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-25T12:00:00Z",
+            "determination_date": "2026-08-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "wisdom-mit": {
+      "id": "wisdom-mit",
+      "canonical_name": "Wisdom MIT",
+      "members": [
+        {
+          "name": "Wisdom MIT",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-50026",
+            "merger_name": "Stonepeak-led consortium - Estia Health",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-29T12:00:00Z",
+            "determination_date": "2026-07-22T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

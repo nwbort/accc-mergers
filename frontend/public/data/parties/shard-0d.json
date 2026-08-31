@@ -1,0 +1,406 @@
+{
+  "shard": 13,
+  "shard_count": 256,
+  "parties": {
+    "ap-jupiter-holdco-sg-p-ltd": {
+      "id": "ap-jupiter-holdco-sg-p-ltd",
+      "canonical_name": "AP Jupiter Holdco (SG) P. Ltd.",
+      "members": [
+        {
+          "name": "AP Jupiter Holdco (SG) P. Ltd.",
+          "identifier": "202551665M",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-85006",
+            "merger_name": "Tega and Apollo Funds consortium - Molycop",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-26T12:00:00Z",
+            "determination_date": "2026-04-28T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 33.0,
+        "median_days": 33,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "baker-hughes-digital-solutions-australia-pty-ltd": {
+      "id": "baker-hughes-digital-solutions-australia-pty-ltd",
+      "canonical_name": "Baker Hughes Digital Solutions Australia Pty Ltd",
+      "members": [
+        {
+          "name": "BAKER HUGHES DIGITAL SOLUTIONS AUSTRALIA PTY LTD",
+          "identifier": "97 082 286 913",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-35022",
+            "merger_name": "Hexagon - Waygate Technologies",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-22T12:00:00Z",
+            "determination_date": "2026-06-22T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 31.0,
+        "median_days": 31,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "fenner-international-limited": {
+      "id": "fenner-international-limited",
+      "canonical_name": "Fenner International",
+      "members": [
+        {
+          "name": "Fenner Group Holdings Limited",
+          "identifier": "CRN  00329377",
+          "identifier_type": null
+        },
+        {
+          "name": "Fenner International Limited",
+          "identifier": "CRN  00527338",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-60010",
+            "merger_name": "Michelin - Flexitallic",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-04T12:00:00Z",
+            "determination_date": "2026-03-27T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "gcp-australia-pty-ltd": {
+      "id": "gcp-australia-pty-ltd",
+      "canonical_name": "Gcp Australia Pty Ltd",
+      "members": [
+        {
+          "name": "GCP AUSTRALIA PTY LTD",
+          "identifier": "41 080 660 117",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-80035",
+            "merger_name": "Saint-Gobain - Xypex",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-17T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "gt-silver-bidco-inc": {
+      "id": "gt-silver-bidco-inc",
+      "canonical_name": "GT Silver BidCo, Inc.",
+      "members": [
+        {
+          "name": "GT Silver BidCo, Inc.",
+          "identifier": "413417606",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-40010",
+            "merger_name": "Permira and Warburg Pincus - Clearwater Analytics",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-11T12:00:00Z",
+            "determination_date": "2026-04-01T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "healthscope": {
+      "id": "healthscope",
+      "canonical_name": "Healthscope",
+      "members": [
+        {
+          "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
+          "identifier": "80 146 342 814",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "HEALTHSCOPE NEWCO PTY LTD",
+          "identifier": "80 092 450 274",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "HEALTHSCOPE OPERATIONS PTY LTD",
+          "identifier": "85 006 405 152",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-40013",
+            "merger_name": "Calvary - Hobart Private Hospital",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-16T12:00:00Z",
+            "determination_date": "2026-08-27T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-55010",
+            "merger_name": "Calvary - Holmesglen Private Hospital",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-27T12:00:00Z",
+            "determination_date": "2026-04-28T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-75003",
+            "merger_name": "Ramsay Health Care \u2013 National Capital Private Hospital",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-01-21T12:00:00Z",
+            "determination_date": "2026-02-12T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 3,
+      "phase_1_count": 3,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 42.0,
+        "median_days": 32,
+        "average_business_days": 28.666666666666668,
+        "median_business_days": 19,
+        "completed_count": 3
+      },
+      "waiver_duration": null
+    },
+    "jacaranda-financial-planning-pty-ltd": {
+      "id": "jacaranda-financial-planning-pty-ltd",
+      "canonical_name": "Jacaranda Financial Planning Pty Ltd",
+      "members": [
+        {
+          "name": "JACARANDA FINANCIAL PLANNING PTY LTD",
+          "identifier": "91 604 960 009",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-80022",
+            "merger_name": "Bain Capital \u2013 Perpetual Wealth Management Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-03T12:00:00Z",
+            "determination_date": "2026-06-30T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "life-without-barriers": {
+      "id": "life-without-barriers",
+      "canonical_name": "Life Without Barriers",
+      "members": [
+        {
+          "name": "Life Without Barriers",
+          "identifier": "15 101 252 171",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-95022",
+            "merger_name": "Life Without Barriers \u2013 Mallacoota District Health & Support Service",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-22T12:00:00Z",
+            "determination_date": "2026-06-17T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "ta-associates-xv-gp-l-p": {
+      "id": "ta-associates-xv-gp-l-p",
+      "canonical_name": "TA Associates XV GP, L.P",
+      "members": [
+        {
+          "name": "TA Associates XV GP, L.P",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-15033",
+            "merger_name": "Armira and TA Associates \u2013 Intersurgical Aktiengesellschaft AG",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-25T12:00:00Z",
+            "determination_date": "2026-08-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,211 @@
+{
+  "shard": 16,
+  "shard_count": 256,
+  "parties": {
+    "compagnie-g-n-rale-des-tablissements-michelin": {
+      "id": "compagnie-g-n-rale-des-tablissements-michelin",
+      "canonical_name": "Compagnie G\u00e9n\u00e9rale des \u00c9tablissements Michelin",
+      "members": [
+        {
+          "name": "Compagnie G\u00e9n\u00e9rale des \u00c9tablissements Michelin",
+          "identifier": "SIREN  855 200 887",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-60010",
+            "merger_name": "Michelin - Flexitallic",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-04T12:00:00Z",
+            "determination_date": "2026-03-27T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "gemcorp-holdings-pty-ltd": {
+      "id": "gemcorp-holdings-pty-ltd",
+      "canonical_name": "GEMCORP Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "GEMCORP Holdings Pty Ltd",
+          "identifier": "685 947 522",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-90004",
+            "merger_name": "Crossmuller \u2013 GEM",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-16T12:00:00Z",
+            "determination_date": "2026-03-05T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "paringa-pet-foods-pty-ltd": {
+      "id": "paringa-pet-foods-pty-ltd",
+      "canonical_name": "Paringa Pet Foods Pty Ltd",
+      "members": [
+        {
+          "name": "Paringa Pet Foods Pty Ltd",
+          "identifier": "20 142 418 915",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-30020",
+            "merger_name": "EBOS - Paringa Pet Foods",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-11T12:00:00Z",
+            "determination_date": "2026-07-02T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "qbf-no-2-pty-ltd": {
+      "id": "qbf-no-2-pty-ltd",
+      "canonical_name": "Qbf No. 2 Pty Ltd",
+      "members": [
+        {
+          "name": "QBF NO. 2 PTY LTD",
+          "identifier": "78 074 123 130",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-60019",
+            "merger_name": "QIC \u2013 CopperString Project assets from Powerlink Queensland",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-13T12:00:00Z",
+            "determination_date": "2026-06-10T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "taylex-group-holding-co-pty-ltd": {
+      "id": "taylex-group-holding-co-pty-ltd",
+      "canonical_name": "Taylex Group Holding Co Pty Ltd",
+      "members": [
+        {
+          "name": "TAYLEX GROUP HOLDING CO PTY LTD",
+          "identifier": "50 646 051 578",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-01083",
+            "merger_name": "Civilmart \u2013 Taylex",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-25T12:00:00Z",
+            "determination_date": "2026-04-02T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 36.0,
+        "median_days": 36,
+        "average_business_days": 25.0,
+        "median_business_days": 25,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

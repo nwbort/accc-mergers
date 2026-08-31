@@ -1,0 +1,401 @@
+{
+  "shard": 152,
+  "shard_count": 256,
+  "parties": {
+    "ames-hunter-holdings-corporation": {
+      "id": "ames-hunter-holdings-corporation",
+      "canonical_name": "Ames Hunter Holdings Corporation",
+      "members": [
+        {
+          "name": "Ames Hunter Holdings Corporation",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-05029",
+            "merger_name": "HupCo \u2013 AMES Australasia",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-29T12:00:00Z",
+            "determination_date": "2026-07-17T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "ayesa-engineering-holdco-australia-pty-ltd": {
+      "id": "ayesa-engineering-holdco-australia-pty-ltd",
+      "canonical_name": "Ayesa Engineering Holdco Australia Pty Ltd",
+      "members": [
+        {
+          "name": "AYESA ENGINEERING HOLDCO AUSTRALIA PTY LTD",
+          "identifier": "57 683 539 620",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-15008",
+            "merger_name": "Colliers International Group \u2013 Ayesa Engineering",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-13T12:00:00Z",
+            "determination_date": "2026-02-25T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 12.0,
+        "median_days": 12,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "blackstone-inc": {
+      "id": "blackstone-inc",
+      "canonical_name": "Blackstone Inc.",
+      "members": [
+        {
+          "name": "Blackstone Alternative Credit Advisors LP",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Blackstone Alternative Credit Advisors LP",
+          "identifier": "CRD  137519",
+          "identifier_type": null
+        },
+        {
+          "name": "Blackstone Inc",
+          "identifier": "DDC  4315990",
+          "identifier_type": null
+        },
+        {
+          "name": "Blackstone Inc.",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Blackstone Inc.",
+          "identifier": "Registered in Delaware, no. 0013355",
+          "identifier_type": null
+        },
+        {
+          "name": "Blackstone, Inc.",
+          "identifier": "CIK 0001393818",
+          "identifier_type": null
+        },
+        {
+          "name": "Dynamo Bidco, Inc.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-75040",
+            "merger_name": "Blackstone - DarkVision Technologies",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-05T12:00:00Z",
+            "determination_date": "2026-08-17T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-95029",
+            "merger_name": "Blackstone \u2013 Acacium Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-22T12:00:00Z",
+            "determination_date": "2026-07-08T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-65018",
+            "merger_name": "Blackstone - Medallia",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-15T12:00:00Z",
+            "determination_date": "2026-05-25T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-20023",
+            "merger_name": "Sony Music - Recognition Music",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-02T12:00:00Z",
+            "determination_date": "2026-06-30T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-25023",
+            "merger_name": "EPL - Indovida India",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-07T12:00:00Z",
+            "determination_date": "2026-05-18T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-10010",
+            "merger_name": "Enverus \u2013 Spatial Business Systems",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-10T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-15005",
+            "merger_name": "Cvent - ON24",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-23T12:00:00Z",
+            "determination_date": "2026-03-17T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 7,
+      "phase_1_count": 2,
+      "phase_2_count": 0,
+      "waiver_count": 5,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25.0,
+        "average_business_days": 17.0,
+        "median_business_days": 17.0,
+        "completed_count": 2
+      },
+      "waiver_duration": {
+        "average_days": 15.4,
+        "median_days": 12,
+        "average_business_days": 10.2,
+        "median_business_days": 8,
+        "completed_count": 5
+      }
+    },
+    "carrick-capital-ii-co-investment-fund-ii-l-p": {
+      "id": "carrick-capital-ii-co-investment-fund-ii-l-p",
+      "canonical_name": "Carrick Capital II Co-Investment Fund II, L.P.",
+      "members": [
+        {
+          "name": "Carrick Capital II Co-Investment Fund II, L.P.",
+          "identifier": "Company No.: 6150404  Delaware",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-05003",
+            "merger_name": "KKR led consortium \u2013 Saviynt",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-11T12:00:00Z",
+            "determination_date": "2026-01-27T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "crh": {
+      "id": "crh",
+      "canonical_name": "CRH",
+      "members": [
+        {
+          "name": "CRH Americas, Inc.",
+          "identifier": "3443923",
+          "identifier_type": null
+        },
+        {
+          "name": "Neon Merger Sub, Inc.",
+          "identifier": "10667310",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-55030",
+            "merger_name": "CRH - Arcosa",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-21T12:00:00Z",
+            "determination_date": "2026-08-04T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "psd-global-holdings-pty-ltd": {
+      "id": "psd-global-holdings-pty-ltd",
+      "canonical_name": "PSD Global Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "PSD Global Holdings Pty Ltd",
+          "identifier": "634 380 813",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-70012",
+            "merger_name": "Quanta - PSD",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-12T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "vsa-roads-pty-ltd": {
+      "id": "vsa-roads-pty-ltd",
+      "canonical_name": "Vsa Roads Pty Ltd",
+      "members": [
+        {
+          "name": "VSA ROADS PTY LTD",
+          "identifier": "18 136 665 935",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-30022",
+            "merger_name": "VSA - SprayLine",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-06T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 45.0,
+        "median_days": 45,
+        "average_business_days": 33.0,
+        "median_business_days": 33,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

@@ -1,0 +1,351 @@
+{
+  "shard": 77,
+  "shard_count": 256,
+  "parties": {
+    "enerflex-service-pty-limited": {
+      "id": "enerflex-service-pty-limited",
+      "canonical_name": "Enerflex Service Pty Limited",
+      "members": [
+        {
+          "name": "ENERFLEX SERVICE PTY LIMITED",
+          "identifier": "85 063 267 238",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-80021",
+            "merger_name": "INNIO Group \u2013 Enerflex",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-25T12:00:00Z",
+            "determination_date": "2026-07-27T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-25010",
+            "merger_name": "INNIO Group \u2013 Enerflex",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-13T12:00:00Z",
+            "determination_date": "2026-04-16T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 32.0,
+        "median_days": 32,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 34.0,
+        "median_days": 34,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      }
+    },
+    "export-trading-group-australia-pty-ltd": {
+      "id": "export-trading-group-australia-pty-ltd",
+      "canonical_name": "Export Trading Group Australia Pty Ltd",
+      "members": [
+        {
+          "name": "EXPORT TRADING GROUP AUSTRALIA PTY LTD",
+          "identifier": "92 168 116 041",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-60013",
+            "merger_name": "Export Trading Group Australia \u2013 pulses and grains business and facility in Mount Tyson, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-31T12:00:00Z",
+            "determination_date": "2026-04-29T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "mubadala-investment-company-pjsc": {
+      "id": "mubadala-investment-company-pjsc",
+      "canonical_name": "Mubadala Investment Company PJSC",
+      "members": [
+        {
+          "name": "Mubadala Investment Company PJSC",
+          "identifier": "CN\u20112302788",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-25037",
+            "merger_name": "Sanad Services and Tikehau Capital \u2013 Revima",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-21T12:00:00Z",
+            "determination_date": "2026-08-17T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "national-reconstruction-fund-corporation": {
+      "id": "national-reconstruction-fund-corporation",
+      "canonical_name": "National Reconstruction Fund Corporation",
+      "members": [
+        {
+          "name": "National Reconstruction Fund Corporation",
+          "identifier": "64 163 995 623",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-80023",
+            "merger_name": "National Reconstruction Fund Corporation / SOUTHERNLAUNCH.SPACE PTY LTD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-02T12:00:00Z",
+            "determination_date": "2026-07-16T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "paris-financial-east-melbourne-pty-ltd": {
+      "id": "paris-financial-east-melbourne-pty-ltd",
+      "canonical_name": "Paris Financial East Melbourne Pty Ltd",
+      "members": [
+        {
+          "name": "PARIS FINANCIAL EAST MELBOURNE PTY LTD",
+          "identifier": "45 659 012 307",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-75039",
+            "merger_name": "Ironbark - Paris Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-31T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "project-saint-merger-sub-inc": {
+      "id": "project-saint-merger-sub-inc",
+      "canonical_name": "Project Saint Merger Sub, Inc.",
+      "members": [
+        {
+          "name": "Project Saint Merger Sub, Inc.",
+          "identifier": "10489040",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-80010",
+            "merger_name": "Medtronic - Scientia",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-05T12:00:00Z",
+            "determination_date": "2026-05-28T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "the-aes-corporation": {
+      "id": "the-aes-corporation",
+      "canonical_name": "The AES Corporation",
+      "members": [
+        {
+          "name": "The AES Corporation",
+          "identifier": "541163725 (I.R.S. Employer Identification Number)",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-70027",
+            "merger_name": "Global Infrastructure Management and EQT led consortium - AES Corporation",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-30T12:00:00Z",
+            "determination_date": "2026-08-26T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "the-trustee-for-the-entrance-trust": {
+      "id": "the-trustee-for-the-entrance-trust",
+      "canonical_name": "The Trustee for The Entrance Trust",
+      "members": [
+        {
+          "name": "The Trustee for The Entrance Trust",
+          "identifier": "60 327 956 502",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-60017",
+            "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Entrance Social Club",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-16T12:00:00Z",
+            "determination_date": "2026-04-30T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    }
+  }
+}

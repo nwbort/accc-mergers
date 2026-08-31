@@ -1,0 +1,421 @@
+{
+  "shard": 12,
+  "shard_count": 256,
+  "parties": {
+    "adp-consulting-pty-ltd": {
+      "id": "adp-consulting-pty-ltd",
+      "canonical_name": "Adp Consulting Pty Ltd",
+      "members": [
+        {
+          "name": "ADP CONSULTING PTY LTD",
+          "identifier": "81 139 719 529",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-15008",
+            "merger_name": "Colliers International Group \u2013 Ayesa Engineering",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-13T12:00:00Z",
+            "determination_date": "2026-02-25T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 12.0,
+        "median_days": 12,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "australian-meat-group-inc": {
+      "id": "australian-meat-group-inc",
+      "canonical_name": "Australian Meat Group Inc",
+      "members": [
+        {
+          "name": "Australian Meat Group Inc",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Australian Meat Group Pty Ltd",
+          "identifier": "75 168 396 316",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-20012",
+            "merger_name": "Australian Meat Group - Killara Feedlot",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-24T12:00:00Z",
+            "determination_date": "2026-05-22T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "blackrock-inc": {
+      "id": "blackrock-inc",
+      "canonical_name": "BlackRock, Inc.",
+      "members": [
+        {
+          "name": "BlackRock, Inc.",
+          "identifier": "Delaware file number \u2013 2886049",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-70014",
+            "merger_name": "Global Infrastructure Management \u2013 TCR",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-16T12:00:00Z",
+            "determination_date": "2026-05-18T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 32.0,
+        "median_days": 32,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "builtcom-properties-11-pty-ltd": {
+      "id": "builtcom-properties-11-pty-ltd",
+      "canonical_name": "Builtcom Properties 11 Pty Ltd",
+      "members": [
+        {
+          "name": "BUILTCOM PROPERTIES 11 PTY LTD",
+          "identifier": "21 648 938 710",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-50019",
+            "merger_name": "Coles \u2013 supermarket site in Lidcombe (NSW)",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-04T12:00:00Z",
+            "determination_date": "2026-07-01T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "eticore-sd-pty-ltd-as-trustee-of-the-ifm-sumi-trust-anz-debt-fund": {
+      "id": "eticore-sd-pty-ltd-as-trustee-of-the-ifm-sumi-trust-anz-debt-fund",
+      "canonical_name": "ETICORE SD PTY LTD, as trustee of the IFM SuMi TRUST ANZ Debt Fund",
+      "members": [
+        {
+          "name": "ETICORE SD PTY LTD, as trustee of the IFM SuMi TRUST ANZ Debt Fund",
+          "identifier": "94 613 933 645",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-55027",
+            "merger_name": "Sumitomo Mitsui Trust Bank - SMTB ANZ Debt Fund",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-25T12:00:00Z",
+            "determination_date": "2026-07-16T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "flexitallic-group-sas": {
+      "id": "flexitallic-group-sas",
+      "canonical_name": "Flexitallic Group SAS",
+      "members": [
+        {
+          "name": "Flexitallic Group SAS",
+          "identifier": "SIREN  532 742 699",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-60010",
+            "merger_name": "Michelin - Flexitallic",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-04T12:00:00Z",
+            "determination_date": "2026-03-27T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "inpex-bcd-pty-ltd": {
+      "id": "inpex-bcd-pty-ltd",
+      "canonical_name": "Inpex Bcd Pty Ltd",
+      "members": [
+        {
+          "name": "INPEX BCD PTY LTD",
+          "identifier": "32 696 382 948",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-01101",
+            "merger_name": "INPEX \u2013 minority interests in Beetaloo development projects",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-15T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "moritz-f-rste": {
+      "id": "moritz-f-rste",
+      "canonical_name": "Moritz F\u00fcrste",
+      "members": [
+        {
+          "name": "Moritz F\u00fcrste",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-25036",
+            "merger_name": "L Catterton Europe \u2013 HYROX",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-08T12:00:00Z",
+            "determination_date": "2026-07-21T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "stichting-administratiekantoor-casper-holdco": {
+      "id": "stichting-administratiekantoor-casper-holdco",
+      "canonical_name": "Stichting Administratiekantoor Casper Holdco",
+      "members": [
+        {
+          "name": "Stichting Administratiekantoor Casper Holdco",
+          "identifier": "KVK  93565348",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-01109",
+            "merger_name": "Syngenta Crop Protection and D\u00fcmmen Orange \u2013 Joint Venture Formation",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-17T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 34.0,
+        "median_days": 34,
+        "average_business_days": 24.0,
+        "median_business_days": 24,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "wearable-technologies-limited": {
+      "id": "wearable-technologies-limited",
+      "canonical_name": "Wearable Technologies Limited",
+      "members": [
+        {
+          "name": "Wearable Technologies Limited",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-85025",
+            "merger_name": "Francisco Partners - Blackline Safety",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-24T12:00:00Z",
+            "determination_date": "2026-05-06T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 12.0,
+        "median_days": 12,
+        "average_business_days": 7.0,
+        "median_business_days": 7,
+        "completed_count": 1
+      }
+    }
+  }
+}

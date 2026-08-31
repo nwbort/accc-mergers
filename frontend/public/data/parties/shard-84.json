@@ -1,0 +1,298 @@
+{
+  "shard": 132,
+  "shard_count": 256,
+  "parties": {
+    "ellerslie-free-range-farms-pty-ltd": {
+      "id": "ellerslie-free-range-farms-pty-ltd",
+      "canonical_name": "Ellerslie Free Range Farms Pty Ltd",
+      "members": [
+        {
+          "name": "Ellerslie Free Range Farms Pty Ltd",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-20008",
+            "merger_name": "Hall & McLean \u2013 Freehold interest in commercial land in Wellcamp, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-02T12:00:00Z",
+            "determination_date": "2026-03-24T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "fpci-isai-expansion-ii-managed-by-isai-gestion-sas": {
+      "id": "fpci-isai-expansion-ii-managed-by-isai-gestion-sas",
+      "canonical_name": "FPCI ISAI Expansion II, managed by ISAI Gestion SAS",
+      "members": [
+        {
+          "name": "FPCI ISAI Expansion II, managed by ISAI Gestion SAS",
+          "identifier": "508 804 507 R.C.S. Paris",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-60033",
+            "merger_name": "Verlinvest \u2013 up to 60% interest in HomeExchange",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-29T12:00:00Z",
+            "determination_date": "2026-08-28T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 30.0,
+        "median_days": 30,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      }
+    },
+    "qatar-investment-authority": {
+      "id": "qatar-investment-authority",
+      "canonical_name": "Qatar Investment Authority",
+      "members": [
+        {
+          "name": "QIA Infrastructure Holding LLC",
+          "identifier": "Qatar Financial Centre no. 01821",
+          "identifier_type": null
+        },
+        {
+          "name": "Qatar Holding LLC",
+          "identifier": "CIK: 0001539025, Qatar Financial Centre no. 00004",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-70027",
+            "merger_name": "Global Infrastructure Management and EQT led consortium - AES Corporation",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-30T12:00:00Z",
+            "determination_date": "2026-08-26T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "tr-pty-ltd": {
+      "id": "tr-pty-ltd",
+      "canonical_name": "Tr Pty Ltd",
+      "members": [
+        {
+          "name": "TR PTY LTD",
+          "identifier": "99 005 499 721",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-90009",
+            "merger_name": "Trescal \u2013 TR Calibration",
+            "is_waiver": false,
+            "status": "Assessment ceased",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 2",
+            "notification_date": "2026-04-14T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 1,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 77.0,
+        "median_days": 77,
+        "average_business_days": 52.0,
+        "median_business_days": 52,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "trescal-holding-pty-ltd": {
+      "id": "trescal-holding-pty-ltd",
+      "canonical_name": "Trescal Holding Pty Ltd",
+      "members": [
+        {
+          "name": "TRESCAL HOLDING PTY LTD",
+          "identifier": "35 633 411 391",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-90009",
+            "merger_name": "Trescal \u2013 TR Calibration",
+            "is_waiver": false,
+            "status": "Assessment ceased",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 2",
+            "notification_date": "2026-04-14T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 1,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 77.0,
+        "median_days": 77,
+        "average_business_days": 52.0,
+        "median_business_days": 52,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "uic-parent-corporation": {
+      "id": "uic-parent-corporation",
+      "canonical_name": "UIC Parent Corporation",
+      "members": [
+        {
+          "name": "UIC Parent Corporation",
+          "identifier": "Registration No. 6432344",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-10020",
+            "merger_name": "Apollo Capital \u2013 Curia",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "westfield-gift-cards-pty-limited": {
+      "id": "westfield-gift-cards-pty-limited",
+      "canonical_name": "Westfield Gift Cards Pty Limited",
+      "members": [
+        {
+          "name": "WESTFIELD GIFT CARDS PTY LIMITED",
+          "identifier": "78 113 171 663",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-15004",
+            "merger_name": "Australian Retirement Trust \u2013 Interests in non-rental income (Westfield Sydney)",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-24T12:00:00Z",
+            "determination_date": "2026-02-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    }
+  }
+}

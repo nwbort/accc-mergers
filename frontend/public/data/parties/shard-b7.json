@@ -1,0 +1,603 @@
+{
+  "shard": 183,
+  "shard_count": 256,
+  "parties": {
+    "3m-company": {
+      "id": "3m-company",
+      "canonical_name": "3M Company",
+      "members": [
+        {
+          "name": "3M Company",
+          "identifier": "IRS EIN  41041777",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-15015",
+            "merger_name": "3M and funds managed and/or advised by Bain Capital - Madison Fire & Rescue",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-06T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "accenture-plc": {
+      "id": "accenture-plc",
+      "canonical_name": "Accenture",
+      "members": [
+        {
+          "name": "ACCENTURE AUSTRALIA HOLDINGS PTY LTD",
+          "identifier": "61 096 995 649",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "ACCENTURE AUSTRALIA PTY LIMITED",
+          "identifier": "49 096 776 895",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Accenture Australia Pty Limited",
+          "identifier": "49 096 776 895",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Accenture Inc.",
+          "identifier": "Delaware registered number  3387477",
+          "identifier_type": null
+        },
+        {
+          "name": "Accenture Inc.",
+          "identifier": "State File Number  3387477",
+          "identifier_type": null
+        },
+        {
+          "name": "Accenture International B.V.",
+          "identifier": "Business registration no: KVK70797285",
+          "identifier_type": null
+        },
+        {
+          "name": "Accenture Venture Holdings B.V.",
+          "identifier": "KVK  42007173",
+          "identifier_type": null
+        },
+        {
+          "name": "Accenture Venture Holdings, LLC",
+          "identifier": "Delaware file number  10429510",
+          "identifier_type": null
+        },
+        {
+          "name": "Accenture Venture Holdings, LLC",
+          "identifier": "Delaware registered number  10429510",
+          "identifier_type": null
+        },
+        {
+          "name": "Accenture plc",
+          "identifier": "CRN  471706",
+          "identifier_type": null
+        },
+        {
+          "name": "Accenture plc",
+          "identifier": "Ireland registered number  471706",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-50032",
+            "merger_name": "Accenture - Dragos",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-29T12:00:00Z",
+            "determination_date": "2026-08-27T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-60031",
+            "merger_name": "Accenture - runZero",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-29T12:00:00Z",
+            "determination_date": "2026-08-27T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-20028",
+            "merger_name": "Accenture \u2013 Whalar Agency",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-25T12:00:00Z",
+            "determination_date": "2026-07-13T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-10013",
+            "merger_name": "Accenture - Ziff Davis' connectivity business",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-17T12:00:00Z",
+            "determination_date": "2026-05-14T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-01081",
+            "merger_name": "Accenture \u2013 Faculty Science",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-08T12:00:00Z",
+            "determination_date": "2026-01-20T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 5,
+      "phase_1_count": 3,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.333333333333332,
+        "median_days": 29,
+        "average_business_days": 20.0,
+        "median_business_days": 21,
+        "completed_count": 3
+      },
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15.0,
+        "average_business_days": 9.5,
+        "median_business_days": 9.5,
+        "completed_count": 2
+      }
+    },
+    "activaterail-pty-ltd": {
+      "id": "activaterail-pty-ltd",
+      "canonical_name": "Activaterail Pty Ltd",
+      "members": [
+        {
+          "name": "ACTIVATERAIL PTY LTD",
+          "identifier": "46 617 749 809",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-05027",
+            "merger_name": "Protech - ActivateRail",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-28T12:00:00Z",
+            "determination_date": "2026-08-25T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "atlas-holdings": {
+      "id": "atlas-holdings",
+      "canonical_name": "Atlas Holdings",
+      "members": [
+        {
+          "name": "ACR III Edison Holdings LLC",
+          "identifier": "Identifying number  3247524",
+          "identifier_type": null
+        },
+        {
+          "name": "Atlas FRM LLC (trading as Atlas Holdings LLC)",
+          "identifier": "Registration number  2921947",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-60032",
+            "merger_name": "Atlas Holdings and KPS \u2013 shares in joint venture and interest in C&D Technologies",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-16T12:00:00Z",
+            "determination_date": "2026-08-17T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 32.0,
+        "median_days": 32,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      }
+    },
+    "blacklane-gmbh": {
+      "id": "blacklane-gmbh",
+      "canonical_name": "Blacklane GmbH",
+      "members": [
+        {
+          "name": "Blacklane GmbH",
+          "identifier": "HRB  136941B",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-20018",
+            "merger_name": "Uber - Blacklane",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-05T12:00:00Z",
+            "determination_date": "2026-07-15T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 40.0,
+        "median_days": 40,
+        "average_business_days": 27.0,
+        "median_business_days": 27,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "german-federal-ministry-of-economic-affairs-and-energy": {
+      "id": "german-federal-ministry-of-economic-affairs-and-energy",
+      "canonical_name": "German Federal Ministry of Economic Affairs and Energy",
+      "members": [
+        {
+          "name": "German Federal Ministry of Economic Affairs and Energy",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-75024",
+            "merger_name": "KfW \u2013 KNDS N.V.",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-22T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "hydrobiology-management-pty-ltd": {
+      "id": "hydrobiology-management-pty-ltd",
+      "canonical_name": "Hydrobiology Management Pty Ltd",
+      "members": [
+        {
+          "name": "Hydrobiology Management Pty Ltd",
+          "identifier": "60 146 920 265",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-35025",
+            "merger_name": "SLR Consulting Australia - Hydrobiology",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-05T12:00:00Z",
+            "determination_date": "2026-06-25T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "lynette-robyn-van-eck": {
+      "id": "lynette-robyn-van-eck",
+      "canonical_name": "Lynette Robyn Van Eck",
+      "members": [
+        {
+          "name": "LYNETTE ROBYN VAN ECK",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-55013",
+            "merger_name": "Lawrence & Hanson - Gordon Macdonald",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-13T12:00:00Z",
+            "determination_date": "2026-05-05T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "n-g-brown-associates-pty-ltd": {
+      "id": "n-g-brown-associates-pty-ltd",
+      "canonical_name": "N.G. Brown & Associates Pty. Ltd.",
+      "members": [
+        {
+          "name": "N.G. BROWN & ASSOCIATES PTY. LTD.",
+          "identifier": "97 004 819 738",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-90009",
+            "merger_name": "Trescal \u2013 TR Calibration",
+            "is_waiver": false,
+            "status": "Assessment ceased",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 2",
+            "notification_date": "2026-04-14T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 1,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 77.0,
+        "median_days": 77,
+        "average_business_days": 52.0,
+        "median_business_days": 52,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "smg-three-llc": {
+      "id": "smg-three-llc",
+      "canonical_name": "SMG-Three LLC",
+      "members": [
+        {
+          "name": "SMG-Three LLC",
+          "identifier": "DDC  10277876",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-20023",
+            "merger_name": "Sony Music - Recognition Music",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-02T12:00:00Z",
+            "determination_date": "2026-06-30T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "the-trustee-for-smart-b-trust": {
+      "id": "the-trustee-for-smart-b-trust",
+      "canonical_name": "The Trustee for SMART B Trust",
+      "members": [
+        {
+          "name": "The Trustee for SMART B Trust",
+          "identifier": "18 229 600 756",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-35015",
+            "merger_name": "Allied Retail Finance \u2013 automotive retail finance assets of Macquarie Leasing",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-24T12:00:00Z",
+            "determination_date": "2026-05-11T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "the-trustee-for-white-king-corporate-unit-trust": {
+      "id": "the-trustee-for-white-king-corporate-unit-trust",
+      "canonical_name": "The Trustee For White King Corporate Unit Trust",
+      "members": [
+        {
+          "name": "THE TRUSTEE FOR WHITE KING CORPORATE UNIT TRUST",
+          "identifier": "70 760 893 620",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-65011",
+            "merger_name": "Tony White Group - Sharton Motors Dealerships in Maitland and Port Stephens",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-16T12:00:00Z",
+            "determination_date": "2026-04-14T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,356 @@
+{
+  "shard": 48,
+  "shard_count": 256,
+  "parties": {
+    "biomin-phytogenics-gmbh-germany": {
+      "id": "biomin-phytogenics-gmbh-germany",
+      "canonical_name": "Biomin Phytogenics GmbH (Germany)",
+      "members": [
+        {
+          "name": "Biomin Phytogenics GmbH (Germany)",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25014",
+            "merger_name": "CVC Capital Partners \u2013 The animal nutrition and health division of the DSM-Firmenich Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-21T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "eagers-vic-pty-ltd": {
+      "id": "eagers-vic-pty-ltd",
+      "canonical_name": "Eagers Vic Pty Ltd",
+      "members": [
+        {
+          "name": "EAGERS VIC PTY LTD",
+          "identifier": "29 616 989 596",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-05012",
+            "merger_name": "Eagers - Audi Melbourne and Audi Richmond",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-31T12:00:00Z",
+            "determination_date": "2026-05-05T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 35.0,
+        "median_days": 35,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "modaxo-group-inc": {
+      "id": "modaxo-group-inc",
+      "canonical_name": "Modaxo Group, Inc",
+      "members": [
+        {
+          "name": "MODAXO GROUP AUSTRALIA PTY LTD",
+          "identifier": "44 166 272 724",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Modaxo France Holdings SAS",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Modaxo Group, Inc",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Modaxo USA Holdings, Inc",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "TRAPEZE GROUP ASIA PACIFIC PTY LTD",
+          "identifier": "16 010 832 318",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "TRAPEZE MANAGEMENT HOLDINGS PTY LTD",
+          "identifier": "97 120 264 913",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-25040",
+            "merger_name": "Modaxo - Conduent",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-05T12:00:00Z",
+            "determination_date": "2026-08-27T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "national-dental-care": {
+      "id": "national-dental-care",
+      "canonical_name": "National Dental Care",
+      "members": [
+        {
+          "name": "NATIONAL DENTAL CARE LIMITED",
+          "identifier": "89 160 442 071",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "NDC AUSTRALIA PTY LIMITED",
+          "identifier": "49 162 955 866",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "NDC Australia Pty Limited",
+          "identifier": "49 162 955 866",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "NDC FINCO PTY LTD",
+          "identifier": "14 654 149 818",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "NDC HOLDCO PTY LTD",
+          "identifier": "13 654 148 188",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "NDC HoldCo Pty Ltd",
+          "identifier": "13 654 148 188",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "NDC PROPERTY CO PTY LIMITED",
+          "identifier": "68 163 264 097",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "NDC SERVICE CO PTY LIMITED",
+          "identifier": "11 162 958 072",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "National Dental Care Limited",
+          "identifier": "89 160 442 071",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-15029",
+            "merger_name": "National Dental Care \u2013 business assets comprising the BDF Dental clinic, Beaudesert, Queensland",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-25T12:00:00Z",
+            "determination_date": "2026-07-17T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-70017",
+            "merger_name": "National Dental Care \u2013 business assets comprising the Cambridge Dental Centre clinic, Perth, WA",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-04T12:00:00Z",
+            "determination_date": "2026-05-19T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-50007",
+            "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-13T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-85013",
+            "merger_name": "National Dental Care \u2013 DDTA Dental clinic in Launceston, TAS",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-27T12:00:00Z",
+            "determination_date": "2026-03-10T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 4,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 3,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 15,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 3
+      }
+    },
+    "pine-australia-holdings-pty-ltd": {
+      "id": "pine-australia-holdings-pty-ltd",
+      "canonical_name": "Pine Australia Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "Pine Australia Holdings Pty Ltd",
+          "identifier": "697 228 309",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-45023",
+            "merger_name": "Pine Australia - Evolution Business Systems",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-31T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "q-r-a-pty-limited": {
+      "id": "q-r-a-pty-limited",
+      "canonical_name": "Q.R.A. Pty Limited",
+      "members": [
+        {
+          "name": "Q.R.A. PTY LIMITED",
+          "identifier": "62 051 433 839",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25005",
+            "merger_name": "Australian Venue Co. \u2013 leasehold and certain other assets of Quay Restaurant, Sydney",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-27T12:00:00Z",
+            "determination_date": "2026-02-09T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    }
+  }
+}

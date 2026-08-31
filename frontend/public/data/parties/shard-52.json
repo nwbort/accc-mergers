@@ -1,0 +1,657 @@
+{
+  "shard": 82,
+  "shard_count": 256,
+  "parties": {
+    "bock-capital-eu-luxembourg-will-s-r-l": {
+      "id": "bock-capital-eu-luxembourg-will-s-r-l",
+      "canonical_name": "Bock Capital EU Luxembourg Will S.\u00e0.r.l,",
+      "members": [
+        {
+          "name": "Bock Capital EU Luxembourg Will S.\u00e0.r.l,",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-15033",
+            "merger_name": "Armira and TA Associates \u2013 Intersurgical Aktiengesellschaft AG",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-25T12:00:00Z",
+            "determination_date": "2026-08-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "care-fertility-greenslopes-pty-ltd": {
+      "id": "care-fertility-greenslopes-pty-ltd",
+      "canonical_name": "Care Fertility Greenslopes Pty Ltd",
+      "members": [
+        {
+          "name": "CARE FERTILITY GREENSLOPES PTY LTD",
+          "identifier": "11 128 331 797",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-01104",
+            "merger_name": "Genea - Care Fertility Greenslopes",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-19T12:00:00Z",
+            "determination_date": "2026-07-23T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 34.0,
+        "median_days": 34,
+        "average_business_days": 24.0,
+        "median_business_days": 24,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "catalyst-blocker-merger-sub-ii-llc": {
+      "id": "catalyst-blocker-merger-sub-ii-llc",
+      "canonical_name": "Catalyst Blocker Merger Sub II, LLC",
+      "members": [
+        {
+          "name": "Catalyst Blocker Merger Sub II, LLC",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-85020",
+            "merger_name": "Francisco Partners \u2013 Capsa Healthcare",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-30T12:00:00Z",
+            "determination_date": "2026-04-02T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 3.0,
+        "median_days": 3,
+        "average_business_days": 3.0,
+        "median_business_days": 3,
+        "completed_count": 1
+      }
+    },
+    "contitech-universe-verwaltungs-gmbh": {
+      "id": "contitech-universe-verwaltungs-gmbh",
+      "canonical_name": "ContiTech-Universe Verwaltungs-GmbH",
+      "members": [
+        {
+          "name": "ContiTech-Universe Verwaltungs-GmbH",
+          "identifier": "HRB  60899",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-85043",
+            "merger_name": "Lone Star Funds - ContiTech",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-20T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "eli-lilly-and-company": {
+      "id": "eli-lilly-and-company",
+      "canonical_name": "Eli Lilly",
+      "members": [
+        {
+          "name": "Albali Acquisition Corporation",
+          "identifier": "10665981(Delaware File Number)",
+          "identifier_type": null
+        },
+        {
+          "name": "Eli Lilly and Company",
+          "identifier": "350470950 (IRS Employer Identification Number)",
+          "identifier_type": null
+        },
+        {
+          "name": "Eli Lilly and Company",
+          "identifier": "IRS Employer Identification Number  350470950",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-30030",
+            "merger_name": "Eli Lilly - AtaiBeckley Inc.",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-05T12:00:00Z",
+            "determination_date": "2026-08-27T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-95016",
+            "merger_name": "Eli Lilly - Kelonia Therapeutics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-18T12:00:00Z",
+            "determination_date": "2026-06-10T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-40012",
+            "merger_name": "Eli Lilly \u2013 acquisition of licence from CSL Behring",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-14T12:00:00Z",
+            "determination_date": "2026-05-06T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-20013",
+            "merger_name": "Eli Lilly - Orna Therapeutics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-08T12:00:00Z",
+            "determination_date": "2026-05-04T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-01087",
+            "merger_name": "Eli Lilly \u2013 Orna Therapeutics",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-24T12:00:00Z",
+            "determination_date": "2026-03-12T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 5,
+      "phase_1_count": 4,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.25,
+        "median_days": 22.5,
+        "average_business_days": 15.75,
+        "median_business_days": 15.5,
+        "completed_count": 4
+      },
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "emergency-services-super-board": {
+      "id": "emergency-services-super-board",
+      "canonical_name": "Emergency Services Super Board",
+      "members": [
+        {
+          "name": "EMERGENCY SERVICES SUPER BOARD",
+          "identifier": "28 161 296 741",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-35008",
+            "merger_name": "VFMC \u2013 CorVal Land and Operator Trusts",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-09T12:00:00Z",
+            "determination_date": "2026-03-26T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "ihs-markit-canada-ulc": {
+      "id": "ihs-markit-canada-ulc",
+      "canonical_name": "IHS Markit Canada ULC",
+      "members": [
+        {
+          "name": "IHS Markit Canada ULC",
+          "identifier": "2021460650",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-75027",
+            "merger_name": "SLB \u2013 S&P Global\u2019s Geoscience Software Portfolio",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-22T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "kobalt-music-group-topco-l-p": {
+      "id": "kobalt-music-group-topco-l-p",
+      "canonical_name": "Kobalt Music Group Topco L.P.",
+      "members": [
+        {
+          "name": "Kobalt Music Group Topco L.P.",
+          "identifier": "Registration number 393466",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-25018",
+            "merger_name": "Primary Wave - Kobalt",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-18T12:00:00Z",
+            "determination_date": "2026-06-11T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "members-banking-group-limited-trading-as-racq-bank": {
+      "id": "members-banking-group-limited-trading-as-racq-bank",
+      "canonical_name": "Members Banking Group Limited (Trading As Racq Bank)",
+      "members": [
+        {
+          "name": "MEMBERS BANKING GROUP LIMITED (TRADING AS RACQ BANK)",
+          "identifier": "83 087 651 054",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-70015",
+            "merger_name": "Bendigo and Adelaide Bank \u2013 RACQ Bank",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-28T12:00:00Z",
+            "determination_date": "2026-04-28T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 31.0,
+        "median_days": 31,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "moranbah-north-coal-pty-ltd": {
+      "id": "moranbah-north-coal-pty-ltd",
+      "canonical_name": "Moranbah North Coal Pty Ltd",
+      "members": [
+        {
+          "name": "MORANBAH NORTH COAL PTY LTD",
+          "identifier": "99 007 083 249",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-05034",
+            "merger_name": "Aurizon \u2013 transactions related to the relocation of a rail corridor at Moranbah North",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-28T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-85035",
+            "merger_name": "Dhilmar \u2013 Anglo American steelmaking coal business",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-05T12:00:00Z",
+            "determination_date": "2026-06-25T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.5,
+        "median_days": 21.5,
+        "average_business_days": 15.0,
+        "median_business_days": 15.0,
+        "completed_count": 2
+      }
+    },
+    "rosa-investments-pte-ltd": {
+      "id": "rosa-investments-pte-ltd",
+      "canonical_name": "Rosa Investments Pte. Ltd.",
+      "members": [
+        {
+          "name": "Rosa Investments Pte. Ltd.",
+          "identifier": "UEN 202340014H (Accounting and Corporate Regulatory Authority of Singapore)",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-05008",
+            "merger_name": "HongShan Capital Group and Temasek \u2013 Golden Goose Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-17T12:00:00Z",
+            "determination_date": "2026-03-06T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "ryowa-ii-gps-pty-limited": {
+      "id": "ryowa-ii-gps-pty-limited",
+      "canonical_name": "Ryowa Ii Gps Pty. Limited",
+      "members": [
+        {
+          "name": "RYOWA II GPS PTY. LIMITED",
+          "identifier": "16 063 780 058",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-25017",
+            "merger_name": "Mayfair Corporation \u2013 Phosphate Hill",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-20T12:00:00Z",
+            "determination_date": "2026-05-06T12:00:00Z"
+          }
+        ],
+        "target": [
+          {
+            "merger_id": "WA-35027",
+            "merger_name": "GPS Energy \u2013 Ryowa's interest in Gladstone Power Station Joint Venture",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-17T12:00:00Z",
+            "determination_date": "2026-06-30T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.5,
+        "median_days": 14.5,
+        "average_business_days": 10.0,
+        "median_business_days": 10.0,
+        "completed_count": 2
+      }
+    },
+    "totalcom-corp-pty-ltd": {
+      "id": "totalcom-corp-pty-ltd",
+      "canonical_name": "Totalcom Corp Pty Ltd",
+      "members": [
+        {
+          "name": "TOTALCOM CORP PTY LTD",
+          "identifier": "72 133 098 905",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-90011",
+            "merger_name": "Salter Brothers - Buroserv",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-10T12:00:00Z",
+            "determination_date": "2026-04-29T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 19.0,
+        "median_days": 19,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "wa-automotive-pty-ltd": {
+      "id": "wa-automotive-pty-ltd",
+      "canonical_name": "Wa Automotive Pty Ltd",
+      "members": [
+        {
+          "name": "WA AUTOMOTIVE PTY LTD",
+          "identifier": "20 158 702 740",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-85017",
+            "merger_name": "Regent Motors Group - Lane Group's Mandurah Dealerships",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-18T12:00:00Z",
+            "determination_date": "2026-04-09T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    }
+  }
+}

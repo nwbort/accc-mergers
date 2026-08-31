@@ -1,0 +1,344 @@
+{
+  "shard": 63,
+  "shard_count": 256,
+  "parties": {
+    "baseten-labs-inc": {
+      "id": "baseten-labs-inc",
+      "canonical_name": "Baseten Labs, Inc",
+      "members": [
+        {
+          "name": "Baseten Labs, Inc",
+          "identifier": "EIN 371950658",
+          "identifier_type": null
+        },
+        {
+          "name": "Baseten Labs, Inc.",
+          "identifier": "EIN 371950658",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-45019",
+            "merger_name": "Blackbird Ventures \u2013 Baseten Labs",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-19T12:00:00Z",
+            "determination_date": "2026-07-15T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-55004",
+            "merger_name": "Blackbird Ventures \u2013 Baseten Labs",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-29T12:00:00Z",
+            "determination_date": "2026-02-10T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 19.0,
+        "median_days": 19.0,
+        "average_business_days": 13.0,
+        "median_business_days": 13.0,
+        "completed_count": 2
+      }
+    },
+    "eg-asiapac-ltd": {
+      "id": "eg-asiapac-ltd",
+      "canonical_name": "EG AsiaPac Ltd",
+      "members": [
+        {
+          "name": "EG AsiaPac Ltd",
+          "identifier": "11658440",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-01019",
+            "merger_name": "Ampol \u2013 EG Australia",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": true,
+            "phase": "Phase 2",
+            "notification_date": "2025-10-10T12:00:00Z",
+            "determination_date": "2026-06-02T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 1,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 103.0,
+        "median_days": 103,
+        "average_business_days": 59.0,
+        "median_business_days": 59,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "mayfair-australia-corporation-pty-ltd": {
+      "id": "mayfair-australia-corporation-pty-ltd",
+      "canonical_name": "Mayfair Australia Corporation Pty Ltd",
+      "members": [
+        {
+          "name": "Mayfair Australia Corporation Pty Ltd",
+          "identifier": "683 119 128",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-25017",
+            "merger_name": "Mayfair Corporation \u2013 Phosphate Hill",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-20T12:00:00Z",
+            "determination_date": "2026-05-06T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "nippon-sheet-glass-company-limited": {
+      "id": "nippon-sheet-glass-company-limited",
+      "canonical_name": "Nippon Sheet Glass Company, Limited",
+      "members": [
+        {
+          "name": "Nippon Sheet Glass Company, Limited",
+          "identifier": "4010401054474",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-45012",
+            "merger_name": "Apollo Funds - Nippon Sheet Glass",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-22T12:00:00Z",
+            "determination_date": "2026-05-05T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "powercon-holding-aps": {
+      "id": "powercon-holding-aps",
+      "canonical_name": "PowerCon Holding ApS",
+      "members": [
+        {
+          "name": "PowerCon Holding ApS",
+          "identifier": "CVR  32269095",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-20024",
+            "merger_name": "KK Group Invest - PowerCon",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-19T12:00:00Z",
+            "determination_date": "2026-06-02T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "qic-investments-no-4-pty-ltd": {
+      "id": "qic-investments-no-4-pty-ltd",
+      "canonical_name": "Qic Investments No.4 Pty Ltd",
+      "members": [
+        {
+          "name": "QIC INVESTMENTS NO.4 PTY LTD",
+          "identifier": "84 682 889 818",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-15004",
+            "merger_name": "Australian Retirement Trust \u2013 Interests in non-rental income (Westfield Sydney)",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-24T12:00:00Z",
+            "determination_date": "2026-02-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "ricardo-australia-pty-ltd": {
+      "id": "ricardo-australia-pty-ltd",
+      "canonical_name": "Ricardo Australia Pty Ltd",
+      "members": [
+        {
+          "name": "RICARDO AUSTRALIA PTY LTD",
+          "identifier": "17 625 088 646",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-01107",
+            "merger_name": "WSP - Geotechnical Testing and Interpretation",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-26T12:00:00Z",
+            "determination_date": "2026-07-23T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "topaz-labs-inc": {
+      "id": "topaz-labs-inc",
+      "canonical_name": "Topaz Labs Inc.",
+      "members": [
+        {
+          "name": "Topaz Labs Inc.",
+          "identifier": "EIN 043849304",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-30028",
+            "merger_name": "Adobe - Topaz Labs",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-13T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    }
+  }
+}

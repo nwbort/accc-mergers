@@ -1,0 +1,680 @@
+{
+  "shard": 140,
+  "shard_count": 256,
+  "parties": {
+    "australia-and-new-zealand-banking-group-limited": {
+      "id": "australia-and-new-zealand-banking-group-limited",
+      "canonical_name": "Australia And New Zealand Banking Group Limited",
+      "members": [
+        {
+          "name": "AUSTRALIA AND NEW ZEALAND BANKING GROUP LIMITED",
+          "identifier": "11 005 357 522",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-20014",
+            "merger_name": "ANZ, CBA, NAB and Westpac \u2013 shares in joint venture and interests in Joint Cash Pool",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-03T12:00:00Z",
+            "determination_date": "2026-06-26T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-80014",
+            "merger_name": "ANZ Banking Group - Worldline Australia",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-03T12:00:00Z",
+            "determination_date": "2026-06-25T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 2,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.5,
+        "median_days": 22.5,
+        "average_business_days": 15.5,
+        "median_business_days": 15.5,
+        "completed_count": 2
+      },
+      "waiver_duration": null
+    },
+    "australian-venue-co": {
+      "id": "australian-venue-co",
+      "canonical_name": "Australian Venue Co",
+      "members": [
+        {
+          "name": "AUSTRALIAN VENUE CO LIMITED",
+          "identifier": "14 607 666 348",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "AVC OPERATIONS PTY LIMITED",
+          "identifier": "81 607 832 299",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "AVC Operations Pty Limited",
+          "identifier": "81 607 832 299",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Australian Venue Co. Holdings Limited",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Australian Venue Co. Holdings Limited",
+          "identifier": "90 619 977 070",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-15034",
+            "merger_name": "Australian Venue Co \u2013 assets of Black Nugget Hotel Motel, Bartletts Tavern and all associated detached bottle shops",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-06T12:00:00Z",
+            "determination_date": "2026-08-31T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-80037",
+            "merger_name": "Australian Venue Co \u2013 Assets of Riverland Bar, The Boatbuilders Yard and General Assembly",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-03T12:00:00Z",
+            "determination_date": "2026-08-27T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-80026",
+            "merger_name": "Australian Venue Co \u2013 assets of Chequers Hotel, Bullsbrook WA",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-03T12:00:00Z",
+            "determination_date": "2026-08-03T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-65024",
+            "merger_name": "Australian Venue Co \u2013 assets of Caf\u00e9 Kinetic, Flinders Lane Melbourne CBD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-19T12:00:00Z",
+            "determination_date": "2026-07-07T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-25028",
+            "merger_name": "Australian Venue Co \u2013 assets of Boatbuilders Yard and General Assembly, Melbourne",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-03T12:00:00Z",
+            "determination_date": "2026-06-30T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-75026",
+            "merger_name": "Australian Venue Co - leasehold and assets of Brabham Tavern, WA",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-03T12:00:00Z",
+            "determination_date": "2026-06-22T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-50017",
+            "merger_name": "Australian Venue Co \u2013 assets of Courthouse Hotel, Newtown NSW",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-07T12:00:00Z",
+            "determination_date": "2026-05-21T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-45013",
+            "merger_name": "Australian Venue Co \u2013 assets of White Cockatoo Hotel, Petersham",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-24T12:00:00Z",
+            "determination_date": "2026-05-11T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-65007",
+            "merger_name": "Australian Venue Co. \u2013 An Sibin Irish Pub",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-23T12:00:00Z",
+            "determination_date": "2026-03-17T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-10006",
+            "merger_name": "Australian Venue Co. \u2013 four licensed venues in metropolitan Sydney (Public House Petersham, The Erko, The Golden Sheaf and Barangaroo House)",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-06T12:00:00Z",
+            "determination_date": "2026-03-03T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-25005",
+            "merger_name": "Australian Venue Co. \u2013 leasehold and certain other assets of Quay Restaurant, Sydney",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-27T12:00:00Z",
+            "determination_date": "2026-02-09T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 11,
+      "phase_1_count": 3,
+      "phase_2_count": 0,
+      "waiver_count": 8,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.0,
+        "median_days": 25,
+        "average_business_days": 16.333333333333332,
+        "median_business_days": 17,
+        "completed_count": 3
+      },
+      "waiver_duration": {
+        "average_days": 20.375,
+        "median_days": 18.5,
+        "average_business_days": 13.75,
+        "median_business_days": 12.0,
+        "completed_count": 8
+      }
+    },
+    "cp-granite-holdings-l-p": {
+      "id": "cp-granite-holdings-l-p",
+      "canonical_name": "CP Granite Holdings, L.P.",
+      "members": [
+        {
+          "name": "CP Granite Holdings, L.P.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-55009",
+            "merger_name": "Resonetics \u2013 Resolution Medical",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-26T12:00:00Z",
+            "determination_date": "2026-03-11T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "frf-group-pty-ltd": {
+      "id": "frf-group-pty-ltd",
+      "canonical_name": "Frf Group Pty Ltd",
+      "members": [
+        {
+          "name": "FRF GROUP PTY LTD",
+          "identifier": "11 624 735 459",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-80017",
+            "merger_name": "Direct Couriers \u2013 Phoenix Transport",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-18T12:00:00Z",
+            "determination_date": "2026-06-02T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "h-e-parts-international-mining-solutions-pty-ltd": {
+      "id": "h-e-parts-international-mining-solutions-pty-ltd",
+      "canonical_name": "H-E Parts International Mining Solutions Pty Ltd",
+      "members": [
+        {
+          "name": "H-E PARTS INTERNATIONAL MINING SOLUTIONS PTY LTD",
+          "identifier": "58 007 761 499",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-20005",
+            "merger_name": "H-E Parts International Mining Solutions - Warehouse workshop site in Paget, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-30T12:00:00Z",
+            "determination_date": "2026-02-12T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "jungheinrich-fleet-services-pty-ltd": {
+      "id": "jungheinrich-fleet-services-pty-ltd",
+      "canonical_name": "Jungheinrich Fleet Services Pty Ltd",
+      "members": [
+        {
+          "name": "JUNGHEINRICH FLEET SERVICES PTY LTD",
+          "identifier": "90 066 707 784",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-80033",
+            "merger_name": "Jungheinrich Australia - All Lift",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-24T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "killara-feedlot-pty-ltd": {
+      "id": "killara-feedlot-pty-ltd",
+      "canonical_name": "Killara Feedlot Pty Ltd",
+      "members": [
+        {
+          "name": "Killara Feedlot Pty Ltd",
+          "identifier": "18 081 072 746",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-20012",
+            "merger_name": "Australian Meat Group - Killara Feedlot",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-24T12:00:00Z",
+            "determination_date": "2026-05-22T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "mindsprint-pte-limited": {
+      "id": "mindsprint-pte-limited",
+      "canonical_name": "Mindsprint Pte Limited",
+      "members": [
+        {
+          "name": "Mindsprint Pte Limited",
+          "identifier": "UEN  202118596N",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-15014",
+            "merger_name": "Wipro - Mindsprint",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-07T12:00:00Z",
+            "determination_date": "2026-04-24T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "proserpine-nursing-home-inc": {
+      "id": "proserpine-nursing-home-inc",
+      "canonical_name": "Proserpine Nursing Home Inc",
+      "members": [
+        {
+          "name": "PROSERPINE NURSING HOME INC",
+          "identifier": "26 150 144 841",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-50036",
+            "merger_name": "Respect Group \u2013 Proserpine Nursing Home",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-13T12:00:00Z",
+            "determination_date": "2026-08-28T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "pwmp-ventures-llc": {
+      "id": "pwmp-ventures-llc",
+      "canonical_name": "PWMP Ventures, LLC",
+      "members": [
+        {
+          "name": "PWMP Ventures, LLC",
+          "identifier": "Company number 5324467",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-25018",
+            "merger_name": "Primary Wave - Kobalt",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-18T12:00:00Z",
+            "determination_date": "2026-06-11T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "sail-parent-holdco-ltd": {
+      "id": "sail-parent-holdco-ltd",
+      "canonical_name": "Sail Parent Holdco Ltd",
+      "members": [
+        {
+          "name": "Sail Parent Holdco Ltd",
+          "identifier": "UK Company Registration Number 17112723",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-90014",
+            "merger_name": "Constellation Software - DerbySoft Holdings",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-29T12:00:00Z",
+            "determination_date": "2026-05-15T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "sapphire-cattle-company-pty-ltd": {
+      "id": "sapphire-cattle-company-pty-ltd",
+      "canonical_name": "Sapphire Cattle Company Pty Ltd",
+      "members": [
+        {
+          "name": "SAPPHIRE CATTLE COMPANY PTY LTD",
+          "identifier": "14 600 389 286",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-35018",
+            "merger_name": "Hewitt \u2013 Nolan Meats",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-01T12:00:00Z",
+            "determination_date": "2026-07-27T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "zelora-assetco-pty-ltd": {
+      "id": "zelora-assetco-pty-ltd",
+      "canonical_name": "Zelora AssetCo Pty Ltd",
+      "members": [
+        {
+          "name": "Zelora AssetCo Pty Ltd",
+          "identifier": "698 335 509",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-90029",
+            "merger_name": "Bunnings \u2013 Intellihub \u2013 Zelora Joint Venture",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-18T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    }
+  }
+}

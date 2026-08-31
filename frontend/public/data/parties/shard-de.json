@@ -1,0 +1,517 @@
+{
+  "shard": 222,
+  "shard_count": 256,
+  "parties": {
+    "ar-elik-a": {
+      "id": "ar-elik-a",
+      "canonical_name": "Ar\u00e7elik A.\u015e.",
+      "members": [
+        {
+          "name": "Ar\u00e7elik A.\u015e.",
+          "identifier": "MERSIS No  0073001800000022",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-20032",
+            "merger_name": "Nojima Corporation \u2013 Hitachi Global Life Solutions and Ar\u00e7elik Hitachi Home Appliances",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-27T12:00:00Z",
+            "determination_date": "2026-08-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "brunswick-hotel-tt-pty-ltd": {
+      "id": "brunswick-hotel-tt-pty-ltd",
+      "canonical_name": "Brunswick Hotel Tt Pty Ltd",
+      "members": [
+        {
+          "name": "BRUNSWICK HOTEL TT PTY LTD",
+          "identifier": "17 656 117 252",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-15009",
+            "merger_name": "MA Financial Group (Redcape Fund) - Hotel Brunswick",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-05T12:00:00Z",
+            "determination_date": "2026-03-20T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "creative-planning-holdco-llc": {
+      "id": "creative-planning-holdco-llc",
+      "canonical_name": "Creative Planning Holdco, LLC",
+      "members": [
+        {
+          "name": "Creative Planning Holdco, LLC",
+          "identifier": "SEC  801 7725610",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-40016",
+            "merger_name": "Creative Planning \u2013 MASECO",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-10T12:00:00Z",
+            "determination_date": "2026-04-23T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "danone-asia-pte-ltd": {
+      "id": "danone-asia-pte-ltd",
+      "canonical_name": "Danone Asia Pte Ltd",
+      "members": [
+        {
+          "name": "Danone Asia Pte Ltd",
+          "identifier": "UEN 198905732N",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-01069",
+            "merger_name": "Danone \u2013 further 1% interest in Danone Saputo Dairy Australia",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2025-12-12T12:00:00Z",
+            "determination_date": "2026-01-28T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 47.0,
+        "median_days": 47,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "farrm-solutions": {
+      "id": "farrm-solutions",
+      "canonical_name": "Farrm Solutions",
+      "members": [
+        {
+          "name": "FAARM BIDCO PTY LTD",
+          "identifier": "695 834 390",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "FAARM HOLDCO PTY LTD",
+          "identifier": "695 827 411",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "FAARM SOLUTIONS PTY LTD",
+          "identifier": "90 660 811 567",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Faarm Solutions NZ Limited",
+          "identifier": "CN 8033618",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25008",
+            "merger_name": "Five V Capital - FTP Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-04T12:00:00Z",
+            "determination_date": "2026-03-24T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "hcl-technologies-limited": {
+      "id": "hcl-technologies-limited",
+      "canonical_name": "HCL Technologies Limited",
+      "members": [
+        {
+          "name": "HCL Technologies Limited",
+          "identifier": "37 541 578 951",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-95005",
+            "merger_name": "HCLTech - Jaspersoft",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-05T12:00:00Z",
+            "determination_date": "2026-02-19T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "illyes-pty-limited": {
+      "id": "illyes-pty-limited",
+      "canonical_name": "Illyes Pty Limited",
+      "members": [
+        {
+          "name": "ILLYES PTY LIMITED",
+          "identifier": "55 650 781 132",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-50020",
+            "merger_name": "Envest Group \u2013 MA Insurance Brokers",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-21T12:00:00Z",
+            "determination_date": "2026-06-18T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "international-business-machines-corporation": {
+      "id": "international-business-machines-corporation",
+      "canonical_name": "International Business Machines Corporation",
+      "members": [
+        {
+          "name": "International Business Machines Corporation",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-10001",
+            "merger_name": "IBM - Confluent",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-04T12:00:00Z",
+            "determination_date": "2026-03-03T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "kanadevia-corporation": {
+      "id": "kanadevia-corporation",
+      "canonical_name": "Kanadevia Corporation",
+      "members": [
+        {
+          "name": "Kanadevia Corporation",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "OSMOFLO PTY LTD",
+          "identifier": "39 050 952 175",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "OSMOFLO WATER MANAGEMENT PTY LTD",
+          "identifier": "62 608 078 459",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-35031",
+            "merger_name": "Osmoflo Water Management - Guidera O'Connor",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-06T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "m-t-populin-pty-ltd": {
+      "id": "m-t-populin-pty-ltd",
+      "canonical_name": "M&T Populin Pty Ltd",
+      "members": [
+        {
+          "name": "M&T Populin Pty Ltd",
+          "identifier": "092 648 078",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-60011",
+            "merger_name": "Barro Group - BQC Quarries and Burdekin Concrete",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-28T12:00:00Z",
+            "determination_date": "2026-06-03T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 36.0,
+        "median_days": 36,
+        "average_business_days": 25.0,
+        "median_business_days": 25,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "ta-associates-management-l-p": {
+      "id": "ta-associates-management-l-p",
+      "canonical_name": "TA Associates Management, L.P.",
+      "members": [
+        {
+          "name": "TA Associates Management, L.P.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-15033",
+            "merger_name": "Armira and TA Associates \u2013 Intersurgical Aktiengesellschaft AG",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-25T12:00:00Z",
+            "determination_date": "2026-08-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "xylem-analytics-germany-gmbh": {
+      "id": "xylem-analytics-germany-gmbh",
+      "canonical_name": "Xylem Analytics Germany GmbH",
+      "members": [
+        {
+          "name": "Xylem Analytics Germany GmbH",
+          "identifier": "HRB 145685",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-05018",
+            "merger_name": "Xylem - TriOS",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-22T12:00:00Z",
+            "determination_date": "2026-06-18T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    }
+  }
+}

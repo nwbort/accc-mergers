@@ -1,0 +1,750 @@
+{
+  "shard": 243,
+  "shard_count": 256,
+  "parties": {
+    "allianz-australia-insurance-limited": {
+      "id": "allianz-australia-insurance-limited",
+      "canonical_name": "Allianz Australia Insurance Limited",
+      "members": [
+        {
+          "name": "ALLIANZ AUSTRALIA INSURANCE LIMITED",
+          "identifier": "15 000 122 850",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-55015",
+            "merger_name": "Allianz - Lease of commercial office space in North Sydney from Lendlease (Victoria Cross)",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-23T12:00:00Z",
+            "determination_date": "2026-04-29T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 6.0,
+        "median_days": 6,
+        "average_business_days": 3.0,
+        "median_business_days": 3,
+        "completed_count": 1
+      }
+    },
+    "arthur-laundy": {
+      "id": "arthur-laundy",
+      "canonical_name": "Arthur Laundy",
+      "members": [
+        {
+          "name": "Arthur Laundy",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-95006",
+            "merger_name": "Laundy Group \u2013 Nine Radio",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-11T12:00:00Z",
+            "determination_date": "2026-02-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 9.0,
+        "median_days": 9,
+        "average_business_days": 7.0,
+        "median_business_days": 7,
+        "completed_count": 1
+      }
+    },
+    "bma-ix-llc": {
+      "id": "bma-ix-llc",
+      "canonical_name": "Bma Ix Llc",
+      "members": [
+        {
+          "name": "BMA IX LLC",
+          "identifier": "File number  6549791",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-30018",
+            "merger_name": "Tinicum and Blackstone led consortium \u2013 Senior",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-18T12:00:00Z",
+            "determination_date": "2026-06-01T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "care-autobody-pty-ltd": {
+      "id": "care-autobody-pty-ltd",
+      "canonical_name": "Care Autobody Pty Ltd",
+      "members": [
+        {
+          "name": "CARE AUTOBODY PTY LTD",
+          "identifier": "99 692 619 962",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-90006",
+            "merger_name": "CARe \u2013 MotorOne Autobody",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-06T12:00:00Z",
+            "determination_date": "2026-03-30T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "expedia": {
+      "id": "expedia",
+      "canonical_name": "Expedia",
+      "members": [
+        {
+          "name": "Expedia Group International Holdings II, LLC",
+          "identifier": "Delaware Secretary of State7172515 I.R.S Employer Identification No.832737894",
+          "identifier_type": null
+        },
+        {
+          "name": "Expedia Group, Inc.",
+          "identifier": "I.R.S. Employer Identification No.202705720",
+          "identifier_type": null
+        },
+        {
+          "name": "Stayz Pty Limited",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "trivago NV",
+          "identifier": "67222927",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-90022",
+            "merger_name": "Expedia - CarTrawler",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-20T12:00:00Z",
+            "determination_date": "2026-08-13T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "green-squares-energy-pty-ltd": {
+      "id": "green-squares-energy-pty-ltd",
+      "canonical_name": "Green Squares Energy Pty Ltd",
+      "members": [
+        {
+          "name": "GREEN SQUARES ENERGY PTY LTD",
+          "identifier": "24 632 447 959",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-95035",
+            "merger_name": "Igneo Infrastructure Partners \u2013 Green Squares Energy",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-23T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
+    "hg-pooled-management-limited": {
+      "id": "hg-pooled-management-limited",
+      "canonical_name": "Hg Pooled Management Limited",
+      "members": [
+        {
+          "name": "Hg Pooled Management Limited",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-55006",
+            "merger_name": "Hg Capital - OneStream",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-19T12:00:00Z",
+            "determination_date": "2026-03-17T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "jb-kakadu-hotel-pty-ltd": {
+      "id": "jb-kakadu-hotel-pty-ltd",
+      "canonical_name": "Jb Kakadu Hotel Pty Ltd",
+      "members": [
+        {
+          "name": "JB KAKADU HOTEL PTY LTD",
+          "identifier": "86 692 273 591",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-15013",
+            "merger_name": "Journey Beyond \u2013 Kakadu Crocodile Hotel",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-07T12:00:00Z",
+            "determination_date": "2026-05-05T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "l-oreal": {
+      "id": "l-oreal",
+      "canonical_name": "L'Oreal",
+      "members": [
+        {
+          "name": "L'Oreal S.A.",
+          "identifier": "Paris Trade and Companies Register number 632 012 100",
+          "identifier_type": null
+        },
+        {
+          "name": "L'Or\u00e9al India Private Limited",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "L'Or\u00e9al S.A.",
+          "identifier": "632 012 100",
+          "identifier_type": null
+        },
+        {
+          "name": "L'Or\u00e9al S.A.",
+          "identifier": "SIREN  632 012 100",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-60035",
+            "merger_name": "L'Or\u00e9al \u2013 Gucci Beauty Licence",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-19T12:00:00Z",
+            "determination_date": null
+          },
+          {
+            "merger_id": "MN-35029",
+            "merger_name": "L'Or\u00e9al - Innovist",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-21T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-01080",
+            "merger_name": "L\u2019Or\u00e9al \u2013 Kering Beaut\u00e9",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-01-15T12:00:00Z",
+            "determination_date": "2026-02-11T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 3,
+      "phase_1_count": 3,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": {
+        "average_days": 27.5,
+        "median_days": 27.5,
+        "average_business_days": 19.0,
+        "median_business_days": 19.0,
+        "completed_count": 2
+      },
+      "waiver_duration": null
+    },
+    "n-m-burton-pty-ltd": {
+      "id": "n-m-burton-pty-ltd",
+      "canonical_name": "N&M Burton Pty Ltd",
+      "members": [
+        {
+          "name": "N&M BURTON PTY LTD",
+          "identifier": "125 935 944",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "N&M Burton Pty Ltd",
+          "identifier": "125 935 944",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-05017",
+            "merger_name": "Tony White Group - Sharton Motors dealerships in Maitland, Port Stephens and Cardiff",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-12T12:00:00Z",
+            "determination_date": "2026-06-09T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-65011",
+            "merger_name": "Tony White Group - Sharton Motors Dealerships in Maitland and Port Stephens",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-16T12:00:00Z",
+            "determination_date": "2026-04-14T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "nippon-sanso-corporation": {
+      "id": "nippon-sanso-corporation",
+      "canonical_name": "Nippon Sanso Corporation",
+      "members": [
+        {
+          "name": "Coregas Pty Ltd",
+          "identifier": "32 001 255 312",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "NSC (Australia) Pty Ltd",
+          "identifier": "71 607 111 268",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Nippon Sanso Holdings Corporation",
+          "identifier": "LEI  353800F1K6653B4VPY57",
+          "identifier_type": null
+        },
+        {
+          "name": "Supagas Pty Limited",
+          "identifier": "50 074 008 496",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-80027",
+            "merger_name": "Supagas \u2013 Heeson Medical",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-11T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "protego-holdco-b-v": {
+      "id": "protego-holdco-b-v",
+      "canonical_name": "Protego Holdco B.V.",
+      "members": [
+        {
+          "name": "Protego Holdco B.V.",
+          "identifier": "Dutch Commercial Register  80710417",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-20020",
+            "merger_name": "Triton - Integris",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-08T12:00:00Z",
+            "determination_date": "2026-05-25T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "tibaldi-australia-holdings-pty-ltd": {
+      "id": "tibaldi-australia-holdings-pty-ltd",
+      "canonical_name": "Tibaldi Australia Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "TIBALDI AUSTRALIA HOLDINGS PTY LTD",
+          "identifier": "20 664 117 257",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-25026",
+            "merger_name": "Tibaldi - South Food Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-22T12:00:00Z",
+            "determination_date": "2026-06-16T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "total-drain-group-pty-ltd": {
+      "id": "total-drain-group-pty-ltd",
+      "canonical_name": "Total Drain Group Pty Ltd",
+      "members": [
+        {
+          "name": "TOTAL DRAIN GROUP PTY LTD",
+          "identifier": "78 621 479 981",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-15028",
+            "merger_name": "Total Drain Group - Pipe Management Australia",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-15T12:00:00Z",
+            "determination_date": "2026-08-13T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "veza-technologies-inc": {
+      "id": "veza-technologies-inc",
+      "canonical_name": "Veza Technologies, Inc.",
+      "members": [
+        {
+          "name": "Veza Technologies, Inc.",
+          "identifier": "7791387",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-85002",
+            "merger_name": "ServiceNow - Veza",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2025-12-22T12:00:00Z",
+            "determination_date": "2026-02-10T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 50.0,
+        "median_days": 50,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "wei-jie-jiang": {
+      "id": "wei-jie-jiang",
+      "canonical_name": "Wei-Jie Jiang",
+      "members": [
+        {
+          "name": "WEI-JIE JIANG PTY LTD",
+          "identifier": "57 116 562 693",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Wei-Jie Jiang",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-70004",
+            "merger_name": "Impression Dental Group - Happy Rock Dental Practice",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-12T12:00:00Z",
+            "determination_date": "2026-02-26T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    }
+  }
+}

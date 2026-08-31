@@ -1,0 +1,517 @@
+{
+  "shard": 225,
+  "shard_count": 256,
+  "parties": {
+    "cinven-limited": {
+      "id": "cinven-limited",
+      "canonical_name": "Cinven Limited",
+      "members": [
+        {
+          "name": "Cinven Limited",
+          "identifier": "02192937",
+          "identifier_type": null
+        },
+        {
+          "name": "Cinven Limited",
+          "identifier": "Company Number: 02192937",
+          "identifier_type": null
+        },
+        {
+          "name": "Cinven Limited",
+          "identifier": "Company number  02192937",
+          "identifier_type": null
+        },
+        {
+          "name": "Cinven Limited",
+          "identifier": "UK Company Number  02192937",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-15038",
+            "merger_name": "Cinven \u2013 Salsify",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-06T12:00:00Z",
+            "determination_date": "2026-08-21T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-05040",
+            "merger_name": "Vitamin Well - EMPWR Nutrition Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-19T12:00:00Z",
+            "determination_date": "2026-08-14T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-05035",
+            "merger_name": "Alter Domus - MSC Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-07T12:00:00Z",
+            "determination_date": "2026-08-07T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-25013",
+            "merger_name": "Cinven \u2013 Regenity",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-17T12:00:00Z",
+            "determination_date": "2026-04-01T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 4,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 4,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.75,
+        "median_days": 20.5,
+        "average_business_days": 16.25,
+        "median_business_days": 15.5,
+        "completed_count": 4
+      }
+    },
+    "eni-plenitude-s-p-a-societ-benefit": {
+      "id": "eni-plenitude-s-p-a-societ-benefit",
+      "canonical_name": "Eni Plenitude S.p.A. Societ\u00e0 Benefit",
+      "members": [
+        {
+          "name": "Eni Plenitude S.p.A. Societ\u00e0 Benefit",
+          "identifier": "Lodi under no. 123 000 201 58",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-85032",
+            "merger_name": "Ares (Bolt S.p.A.) \u2013 Investment in Plenitude",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-04T12:00:00Z",
+            "determination_date": "2026-06-19T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "fulton-hogan": {
+      "id": "fulton-hogan",
+      "canonical_name": "Fulton Hogan",
+      "members": [
+        {
+          "name": "FULTON HOGAN AUSTRALIA (MANAGEMENT) PTY LTD",
+          "identifier": "66 637 368 088",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "FULTON HOGAN CONSTRUCTION PTY LTD",
+          "identifier": "46 010 240 758",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "FULTON HOGAN EGIS O&M PTY LTD",
+          "identifier": "37 609 764 730",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "FULTON HOGAN INDUSTRIES PTY LTD",
+          "identifier": "54 000 538 689",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "FULTON HOGAN QUARRIES PTY LTD",
+          "identifier": "16 004 475 076",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "FULTON HOGAN UTILITIES PTY LTD",
+          "identifier": "83 632 499 686",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Fulton Hogan Australia Pty Ltd",
+          "identifier": "42 135 849 115",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Fulton Hogan Ltd (NZ)",
+          "identifier": "New Zealand ID  144659",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-75016",
+            "merger_name": "Fulton Hogan \u2013 Avionics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-28T12:00:00Z",
+            "determination_date": "2026-06-16T12:00:00Z"
+          }
+        ],
+        "target": [
+          {
+            "merger_id": "WA-70011",
+            "merger_name": "Egis Projects Asia Pacific - Fulton Hogan Egis O&M",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-02T12:00:00Z",
+            "determination_date": "2026-04-22T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 49.0,
+        "median_days": 49,
+        "average_business_days": 33.0,
+        "median_business_days": 33,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "g-a-a-pty-ltd": {
+      "id": "g-a-a-pty-ltd",
+      "canonical_name": "G.A.A. Pty Ltd",
+      "members": [
+        {
+          "name": "G.A.A. Pty Ltd",
+          "identifier": "131 680 790",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-70010",
+            "merger_name": "Waymark Hotels Group \u2013 Warrego Hotel Motel Cunnamulla, Queensland",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-06T12:00:00Z",
+            "determination_date": "2026-04-02T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "gtcr-regatta-investors-lp": {
+      "id": "gtcr-regatta-investors-lp",
+      "canonical_name": "GTCR (Regatta Investors) LP",
+      "members": [
+        {
+          "name": "GTCR (Regatta Investors) LP",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-55009",
+            "merger_name": "Resonetics \u2013 Resolution Medical",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-26T12:00:00Z",
+            "determination_date": "2026-03-11T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "iron-mine-contracting-pty-ltd": {
+      "id": "iron-mine-contracting-pty-ltd",
+      "canonical_name": "Iron Mine Contracting Pty Ltd",
+      "members": [
+        {
+          "name": "IRON MINE CONTRACTING PTY LTD",
+          "identifier": "26 626 808 759",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-85003",
+            "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-25T12:00:00Z",
+            "determination_date": "2026-03-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "life-without-barriers-education-limited": {
+      "id": "life-without-barriers-education-limited",
+      "canonical_name": "Life Without Barriers Education Limited",
+      "members": [
+        {
+          "name": "LIFE WITHOUT BARRIERS EDUCATION LIMITED",
+          "identifier": "59 685 316 321",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-95022",
+            "merger_name": "Life Without Barriers \u2013 Mallacoota District Health & Support Service",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-22T12:00:00Z",
+            "determination_date": "2026-06-17T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "made-mjv-pte-ltd": {
+      "id": "made-mjv-pte-ltd",
+      "canonical_name": "Made (MJV) Pte Ltd",
+      "members": [
+        {
+          "name": "Made (MJV) Pte Ltd",
+          "identifier": "UEN 202321698C",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-55031",
+            "merger_name": "Danone \u2013 MADE",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-05T12:00:00Z",
+            "determination_date": "2026-08-26T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "maintainx-inc": {
+      "id": "maintainx-inc",
+      "canonical_name": "MaintainX, Inc.",
+      "members": [
+        {
+          "name": "MaintainX, Inc.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-60022",
+            "merger_name": "Autodesk - MaintainX",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-23T12:00:00Z",
+            "determination_date": "2026-07-15T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "ta-xv-a-l-p": {
+      "id": "ta-xv-a-l-p",
+      "canonical_name": "Ta Xv-A, L.P",
+      "members": [
+        {
+          "name": "TA XV-A, L.P",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-15033",
+            "merger_name": "Armira and TA Associates \u2013 Intersurgical Aktiengesellschaft AG",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-25T12:00:00Z",
+            "determination_date": "2026-08-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    }
+  }
+}

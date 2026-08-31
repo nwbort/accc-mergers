@@ -1,0 +1,345 @@
+{
+  "shard": 237,
+  "shard_count": 256,
+  "parties": {
+    "a-j-fair-t-g-gardner-d-p-kirk": {
+      "id": "a-j-fair-t-g-gardner-d-p-kirk",
+      "canonical_name": "A.J Fair & T.G Gardner & D.P Kirk",
+      "members": [
+        {
+          "name": "A.J FAIR & T.G GARDNER & D.P KIRK",
+          "identifier": "37 656 963 829",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-95012",
+            "merger_name": "Ochre Health - Newstead Medical and Kings Meadows Medical Centre, TAS",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-31T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 7.0,
+        "median_days": 7,
+        "average_business_days": 3.0,
+        "median_business_days": 3,
+        "completed_count": 1
+      }
+    },
+    "atmos-renewables-pty-ltd": {
+      "id": "atmos-renewables-pty-ltd",
+      "canonical_name": "Atmos Renewables Pty Ltd",
+      "members": [
+        {
+          "name": "ATMOS RENEWABLES PTY LTD",
+          "identifier": "55 645 165 466",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-95035",
+            "merger_name": "Igneo Infrastructure Partners \u2013 Green Squares Energy",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-23T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
+    "cja-lee-property-pty-ltd": {
+      "id": "cja-lee-property-pty-ltd",
+      "canonical_name": "CJA Lee Property Pty Ltd",
+      "members": [
+        {
+          "name": "CJA Lee Property Pty Ltd",
+          "identifier": "113 706 826",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-75036",
+            "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-25T12:00:00Z",
+            "determination_date": null
+          },
+          {
+            "merger_id": "WA-20015",
+            "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-13T12:00:00Z",
+            "determination_date": "2026-05-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "daikin-australia-pty-ltd": {
+      "id": "daikin-australia-pty-ltd",
+      "canonical_name": "Daikin Australia Pty Ltd",
+      "members": [
+        {
+          "name": "DAIKIN AUSTRALIA PTY LTD",
+          "identifier": "62 000 172 967",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-30009",
+            "merger_name": "Daikin - AAMS Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-16T12:00:00Z",
+            "determination_date": "2026-05-08T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "dawnaco-pty-limited": {
+      "id": "dawnaco-pty-limited",
+      "canonical_name": "Dawnaco Pty. Limited",
+      "members": [
+        {
+          "name": "DAWNACO PTY. LIMITED",
+          "identifier": "23 003 837 643",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-45022",
+            "merger_name": "Australian Motors Group \u2013 Mudgee Toyota",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-22T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    },
+    "richard-lee-simpson": {
+      "id": "richard-lee-simpson",
+      "canonical_name": "Richard Lee Simpson",
+      "members": [
+        {
+          "name": "Richard Lee Simpson",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-40005",
+            "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-18T12:00:00Z",
+            "determination_date": "2026-03-12T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "trescal-australia-pty-ltd": {
+      "id": "trescal-australia-pty-ltd",
+      "canonical_name": "Trescal (Australia) Pty Ltd",
+      "members": [
+        {
+          "name": "TRESCAL (AUSTRALIA) PTY LTD",
+          "identifier": "39 117 603 835",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-90009",
+            "merger_name": "Trescal \u2013 TR Calibration",
+            "is_waiver": false,
+            "status": "Assessment ceased",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 2",
+            "notification_date": "2026-04-14T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 1,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 77.0,
+        "median_days": 77,
+        "average_business_days": 52.0,
+        "median_business_days": 52,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "unite-merger-sub-inc": {
+      "id": "unite-merger-sub-inc",
+      "canonical_name": "Unite Merger Sub Inc.",
+      "members": [
+        {
+          "name": "Unite Merger Sub Inc.",
+          "identifier": "Delaware file number  10564247",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-65014",
+            "merger_name": "26North Funds - Intermedia Cloud Communications",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-20T12:00:00Z",
+            "determination_date": "2026-05-13T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    }
+  }
+}

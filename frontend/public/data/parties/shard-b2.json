@@ -1,0 +1,293 @@
+{
+  "shard": 178,
+  "shard_count": 256,
+  "parties": {
+    "atmos-topco-pty-ltd": {
+      "id": "atmos-topco-pty-ltd",
+      "canonical_name": "Atmos Topco Pty Ltd",
+      "members": [
+        {
+          "name": "ATMOS TOPCO PTY LTD",
+          "identifier": "51 645 165 448",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-20031",
+            "merger_name": "Atmos \u2013 specific BayWa r.e. renewable energy projects",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-27T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "chung-ho-nais-co-ltd": {
+      "id": "chung-ho-nais-co-ltd",
+      "canonical_name": "Chung Ho Nais Co., Ltd.",
+      "members": [
+        {
+          "name": "Chung Ho Nais Co., Ltd.",
+          "identifier": "SKID  1101111052482",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-95024",
+            "merger_name": "Carlyle \u2013 CHN Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-11T12:00:00Z",
+            "determination_date": "2026-06-23T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 12.0,
+        "median_days": 12,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "cognizant-technology-solutions": {
+      "id": "cognizant-technology-solutions",
+      "canonical_name": "Cognizant Technology Solutions",
+      "members": [
+        {
+          "name": "Cognizant Technology Solutions",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-70019",
+            "merger_name": "Cognizant \u2013 Astreya",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-07T12:00:00Z",
+            "determination_date": "2026-05-21T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "collins-foods-subsidiary-pty-ltd": {
+      "id": "collins-foods-subsidiary-pty-ltd",
+      "canonical_name": "Collins Foods Subsidiary Pty Ltd",
+      "members": [
+        {
+          "name": "Collins Foods Subsidiary Pty Ltd",
+          "identifier": "94 616 663 793",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-70018",
+            "merger_name": "Restaurant Brands and Yum! Brands \u2013 Taco Bell restaurants",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-18T12:00:00Z",
+            "determination_date": "2026-06-11T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "dysons-mzf-pty-ltd": {
+      "id": "dysons-mzf-pty-ltd",
+      "canonical_name": "Dysons Mzf Pty Ltd",
+      "members": [
+        {
+          "name": "DYSONS MZF PTY LTD",
+          "identifier": "16 680 323 282",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-35017",
+            "merger_name": "KINETIC - DYSONS BUS SERVICES",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-27T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "gawler-animal-hospital-pty-ltd": {
+      "id": "gawler-animal-hospital-pty-ltd",
+      "canonical_name": "Gawler Animal Hospital Pty Ltd",
+      "members": [
+        {
+          "name": "Gawler Animal Hospital Pty Ltd",
+          "identifier": "87 160 265 109",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-40004",
+            "merger_name": "Vets Central \u2013 Gawler Animal Hospital and Animalia Vet Clinic",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-29T12:00:00Z",
+            "determination_date": "2026-02-12T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "transocean-limited": {
+      "id": "transocean-limited",
+      "canonical_name": "Transocean Limited",
+      "members": [
+        {
+          "name": "Transocean Limited",
+          "identifier": "IRS Employer Identification Number  980599916",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-25019",
+            "merger_name": "Transocean - Valaris",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-16T12:00:00Z",
+            "determination_date": "2026-07-27T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 41.0,
+        "median_days": 41,
+        "average_business_days": 29.0,
+        "median_business_days": 29,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

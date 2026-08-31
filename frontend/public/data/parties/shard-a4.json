@@ -1,0 +1,449 @@
+{
+  "shard": 164,
+  "shard_count": 256,
+  "parties": {
+    "bayer": {
+      "id": "bayer",
+      "canonical_name": "Bayer",
+      "members": [
+        {
+          "name": "Bayer Aktiengesellschaft",
+          "identifier": "HRB  48248",
+          "identifier_type": null
+        },
+        {
+          "name": "Bayer Asset Management B.V.",
+          "identifier": "KVK  42012880",
+          "identifier_type": null
+        },
+        {
+          "name": "Bayer Global Investments B.V.",
+          "identifier": "KVK  51490986",
+          "identifier_type": null
+        },
+        {
+          "name": "Bayer Nordic SE",
+          "identifier": "Finnish Patent and Registration Office  24305802",
+          "identifier_type": null
+        },
+        {
+          "name": "Bayer Oy",
+          "identifier": "Finnish Patent and Registration Office  17037774",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-70029",
+            "merger_name": "Apollo - Bayer Asset Management",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-11T12:00:00Z",
+            "determination_date": "2026-08-10T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 30.0,
+        "median_days": 30,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    },
+    "carruthers-jonathan-julian": {
+      "id": "carruthers-jonathan-julian",
+      "canonical_name": "Carruthers, Jonathan Julian",
+      "members": [
+        {
+          "name": "CARRUTHERS, JONATHAN JULIAN",
+          "identifier": "22 148 400 175",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-85016",
+            "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-16T12:00:00Z",
+            "determination_date": "2026-04-14T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-40017",
+            "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
+            "is_waiver": false,
+            "status": "Assessment ceased",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 2",
+            "notification_date": "2026-07-01T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 1,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 48.0,
+        "median_days": 48,
+        "average_business_days": 34.0,
+        "median_business_days": 34,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "fenway-merger-sub-inc": {
+      "id": "fenway-merger-sub-inc",
+      "canonical_name": "Fenway Merger Sub, Inc.",
+      "members": [
+        {
+          "name": "Fenway Merger Sub, Inc.",
+          "identifier": "10389477",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-30005",
+            "merger_name": "Adobe - Semrush",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-16T12:00:00Z",
+            "determination_date": "2026-04-10T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "gozoboy-pty-ltd-as-trustee-for-gozoboy-trust": {
+      "id": "gozoboy-pty-ltd-as-trustee-for-gozoboy-trust",
+      "canonical_name": "GOZOBOY PTY LTD as trustee for GOZOBOY TRUST",
+      "members": [
+        {
+          "name": "GOZOBOY PTY LTD as trustee for GOZOBOY TRUST",
+          "identifier": "649 957 844",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-45021",
+            "merger_name": "McDonald\u2019s Australia \u2013 McDonald\u2019s Restaurants in North West Sydney",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-03T12:00:00Z",
+            "determination_date": "2026-08-03T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 31.0,
+        "median_days": 31,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    },
+    "platinum-equity-advisors-llc-2": {
+      "id": "platinum-equity-advisors-llc-2",
+      "canonical_name": "Platinum Equity Advisors, LLC",
+      "members": [
+        {
+          "name": "Platinum Equity Advisors, LLC",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-80020",
+            "merger_name": "Platinum Equity Group - LMPG",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-22T12:00:00Z",
+            "determination_date": "2026-06-10T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 19.0,
+        "median_days": 19,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "rocket-merger-sub-inc": {
+      "id": "rocket-merger-sub-inc",
+      "canonical_name": "Rocket Merger Sub, Inc.",
+      "members": [
+        {
+          "name": "Rocket Merger Sub, Inc.",
+          "identifier": "10499371",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-35010",
+            "merger_name": "Blackstone - Advanced Cooling Technologies",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-09T12:00:00Z",
+            "determination_date": "2026-03-24T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "zurich-assure-australia-pty-ltd": {
+      "id": "zurich-assure-australia-pty-ltd",
+      "canonical_name": "Zurich",
+      "members": [
+        {
+          "name": "ZURICH ASSURE AUSTRALIA PTY LIMITED",
+          "identifier": "58 657 804 736",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "ZURICH AUSTRALIA LIMITED",
+          "identifier": "92 000 010 195",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "ZURICH AUSTRALIAN INSURANCE LIMITED",
+          "identifier": "13 000 296 640",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "ZURICH AUSTRALIAN INSURANCE PROPERTIES PTY LTD",
+          "identifier": "79 002 463 292",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "ZURICH AUSTRALIAN PROPERTY HOLDINGS PTY LTD",
+          "identifier": "91 620 869 230",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "ZURICH FINANCE (AUSTRALIA) LIMITED",
+          "identifier": "48 618 177 423",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "ZURICH FINANCIAL SERVICES AUSTRALIA LIMITED",
+          "identifier": "11 008 423 372",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "ZURICH INVESTMENT MANAGEMENT LIMITED",
+          "identifier": "56 063 278 400",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "ZURICH SERVICES (AUSTRALIA) PTY LIMITED",
+          "identifier": "17 627 298 337",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Zurich Assure Australia Pty Ltd",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Zurich Australia Insurance Limited",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Zurich Australia Insurance Properties Pty Ltd",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Zurich Australia Limited",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Zurich Australian Property Holdings Pty Limited",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Zurich Finance (Australia) Limited",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Zurich Financial Services Australia Limited",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Zurich Insurance Company Ltd",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Zurich Insurance Group Ltd",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Zurich Services (Australia) Pty Ltd",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-30016",
+            "merger_name": "Zurich - Beazley",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-22T12:00:00Z",
+            "determination_date": "2026-06-17T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-55016",
+            "merger_name": "Zurich - ClearView",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-21T12:00:00Z",
+            "determination_date": "2026-05-14T12:00:00Z"
+          }
+        ],
+        "target": [
+          {
+            "merger_id": "WA-80006",
+            "merger_name": "Russell Investment Group \u2013 Zurich Investment Management",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-19T12:00:00Z",
+            "determination_date": "2026-03-12T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 3,
+      "phase_1_count": 2,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.5,
+        "median_days": 24.5,
+        "average_business_days": 16.0,
+        "median_business_days": 16.0,
+        "completed_count": 2
+      },
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    }
+  }
+}

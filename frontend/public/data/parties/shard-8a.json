@@ -1,0 +1,310 @@
+{
+  "shard": 138,
+  "shard_count": 256,
+  "parties": {
+    "amalgamated-hotels-pty-limited": {
+      "id": "amalgamated-hotels-pty-limited",
+      "canonical_name": "Amalgamated Hotels Pty Limited",
+      "members": [
+        {
+          "name": "AMALGAMATED HOTELS PTY LIMITED",
+          "identifier": "82 009 604 719",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-35033",
+            "merger_name": "Merivale \u2013 The Sackville Hotel",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-04T12:00:00Z",
+            "determination_date": "2026-08-26T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "handa-manufacturing-pty-ltd-as-trustee-for-the-handa-manufacturing-trust": {
+      "id": "handa-manufacturing-pty-ltd-as-trustee-for-the-handa-manufacturing-trust",
+      "canonical_name": "Handa Manufacturing Pty Ltd as trustee for the Handa Manufacturing Trust",
+      "members": [
+        {
+          "name": "Handa Manufacturing Pty Ltd as trustee for the Handa Manufacturing Trust",
+          "identifier": "668 207 725",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-40025",
+            "merger_name": "Shape Australia \u2013 Australian Professional Shopfitters",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-28T12:00:00Z",
+            "determination_date": "2026-06-22T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "intrepid-ip-holdings-pty-ltd": {
+      "id": "intrepid-ip-holdings-pty-ltd",
+      "canonical_name": "Intrepid Ip Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "INTREPID IP HOLDINGS PTY LTD",
+          "identifier": "54 006 831 974",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-40008",
+            "merger_name": "Intrepid Travel - Wild Bush Luxury",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-23T12:00:00Z",
+            "determination_date": "2026-04-16T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "kjo-property-pty-ltd": {
+      "id": "kjo-property-pty-ltd",
+      "canonical_name": "Kjo Property Pty Ltd",
+      "members": [
+        {
+          "name": "KJO PROPERTY PTY LTD",
+          "identifier": "33 169 760 178",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-65026",
+            "merger_name": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-22T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-30010",
+            "merger_name": "MAG South Coast - Country Motor Company / Kinghorn Motors",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-20T12:00:00Z",
+            "determination_date": "2026-05-15T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "lumina-japan-acquisition-co-ltd": {
+      "id": "lumina-japan-acquisition-co-ltd",
+      "canonical_name": "Lumina Japan Acquisition Co., Ltd",
+      "members": [
+        {
+          "name": "Lumina Japan Acquisition Co., Ltd",
+          "identifier": "010401197337",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-45012",
+            "merger_name": "Apollo Funds - Nippon Sheet Glass",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-22T12:00:00Z",
+            "determination_date": "2026-05-05T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "mist-agency-newco-limited": {
+      "id": "mist-agency-newco-limited",
+      "canonical_name": "Mist Agency NewCo Limited",
+      "members": [
+        {
+          "name": "Mist Agency NewCo Limited",
+          "identifier": "UK company number  17145938",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-20028",
+            "merger_name": "Accenture \u2013 Whalar Agency",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-25T12:00:00Z",
+            "determination_date": "2026-07-13T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "sermo-limited-together-with-its-subsidiaries-sermo": {
+      "id": "sermo-limited-together-with-its-subsidiaries-sermo",
+      "canonical_name": "Sermo Limited (together with its subsidiaries, \u201cSermo\u201d)",
+      "members": [
+        {
+          "name": "Sermo Limited (together with its subsidiaries, \u201cSermo\u201d)",
+          "identifier": "CRN 11755038",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-50003",
+            "merger_name": "Francisco Partners - Sermo",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-20T12:00:00Z",
+            "determination_date": "2026-02-20T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 31.0,
+        "median_days": 31,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      }
+    }
+  }
+}

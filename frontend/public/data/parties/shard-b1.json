@@ -1,0 +1,497 @@
+{
+  "shard": 177,
+  "shard_count": 256,
+  "parties": {
+    "advent-partners": {
+      "id": "advent-partners",
+      "canonical_name": "Advent Partners",
+      "members": [
+        {
+          "name": "Advent Partners",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-35028",
+            "merger_name": "efex - OnPlatinum",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-15T12:00:00Z",
+            "determination_date": "2026-08-17T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 33.0,
+        "median_days": 33,
+        "average_business_days": 23.0,
+        "median_business_days": 23,
+        "completed_count": 1
+      }
+    },
+    "ags-accounting-pty-limited": {
+      "id": "ags-accounting-pty-limited",
+      "canonical_name": "Ags Accounting Pty Limited",
+      "members": [
+        {
+          "name": "AGS ACCOUNTING PTY LIMITED",
+          "identifier": "12 166 728 696",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-85041",
+            "merger_name": "AGS Financial Group - Hartley Financial Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-28T12:00:00Z",
+            "determination_date": "2026-08-26T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    },
+    "fyi-holdings-lp": {
+      "id": "fyi-holdings-lp",
+      "canonical_name": "FYi Holdings LP",
+      "members": [
+        {
+          "name": "FYi Holdings LP",
+          "identifier": "Canada Business Number 745689273",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-01110",
+            "merger_name": "KKR - FYihealth group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-27T12:00:00Z",
+            "determination_date": "2026-07-22T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "international-flavors-fragrances-inc": {
+      "id": "international-flavors-fragrances-inc",
+      "canonical_name": "International Flavors & Fragrances Inc.",
+      "members": [
+        {
+          "name": "International Flavors & Fragrances Inc.",
+          "identifier": "DOS ID  29389",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-65030",
+            "merger_name": "CVC Capital Partners \u2013 IFF\u2019s Food Ingredients business",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-23T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "maxim-group-australia-pty-ltd": {
+      "id": "maxim-group-australia-pty-ltd",
+      "canonical_name": "Maxim Group Australia Pty Ltd",
+      "members": [
+        {
+          "name": "MAXIM GROUP AUSTRALIA PTY LTD",
+          "identifier": "83 652 585 192",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-85031",
+            "merger_name": "Tasmea - Maxim",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-03T12:00:00Z",
+            "determination_date": "2026-06-24T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "midocean-australia-holdings-2-pty-ltd": {
+      "id": "midocean-australia-holdings-2-pty-ltd",
+      "canonical_name": "MidOcean Australia Holdings 2 Pty Ltd",
+      "members": [
+        {
+          "name": "MidOcean Australia Holdings 2 Pty Ltd",
+          "identifier": "691 597 707",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-05004",
+            "merger_name": "MidOcean Energy \u2013 JERA Gorgon",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-14T12:00:00Z",
+            "determination_date": "2026-04-09T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "obayashi": {
+      "id": "obayashi",
+      "canonical_name": "Obayashi",
+      "members": [
+        {
+          "name": "Obayashi Corporation",
+          "identifier": "86 002 932 756",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Obayashi UK Holdings Limited",
+          "identifier": "UK Company No.17229281",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-05031",
+            "merger_name": "Obayashi Corporation \u2013 Multiplex",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-27T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "saipem-s-p-a": {
+      "id": "saipem-s-p-a",
+      "canonical_name": "Saipem S.p.A",
+      "members": [
+        {
+          "name": "Saipem S.p.A",
+          "identifier": "Register of Milan Monza Brianza Lodi under number 00825790157",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-01072",
+            "merger_name": "Saipem S.p.A - Subsea7 S.A.",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 2",
+            "notification_date": "2026-04-27T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 1,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": {
+        "average_days": 66.0,
+        "median_days": 66,
+        "average_business_days": 46.0,
+        "median_business_days": 46,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "stephen-michael-palyga": {
+      "id": "stephen-michael-palyga",
+      "canonical_name": "Stephen Michael Palyga",
+      "members": [
+        {
+          "name": "Stephen Michael Palyga",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-35031",
+            "merger_name": "Osmoflo Water Management - Guidera O'Connor",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-06T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "stockland-m-g-asia-partnership-2": {
+      "id": "stockland-m-g-asia-partnership-2",
+      "canonical_name": "Stockland M&G Asia Partnership 2",
+      "members": [
+        {
+          "name": "Stockland M&G Asia Partnership 2",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-75025",
+            "merger_name": "M&G Asia Property Fund \u2013 Stockland Coopers Paddock and Willawong Distribution Centre",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-25T12:00:00Z",
+            "determination_date": "2026-06-22T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "the-trustee-for-kingston-family-trust": {
+      "id": "the-trustee-for-kingston-family-trust",
+      "canonical_name": "The Trustee for Kingston Family Trust",
+      "members": [
+        {
+          "name": "The Trustee for Kingston Family Trust",
+          "identifier": "96 328 946 230",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-40002",
+            "merger_name": "Star Hotels Group \u2013 Yandina Hotel, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-14T12:00:00Z",
+            "determination_date": "2026-02-02T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 19.0,
+        "median_days": 19,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "volt-managed-investment-trust-1": {
+      "id": "volt-managed-investment-trust-1",
+      "canonical_name": "Volt Managed Investment Trust 1",
+      "members": [
+        {
+          "name": "Volt Managed Investment Trust 1",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-90007",
+            "merger_name": "Volt Managed Investment Trusts \u2013 HMC Energy Transition Platform",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-14T12:00:00Z",
+            "determination_date": "2026-06-05T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

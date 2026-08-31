@@ -1,0 +1,375 @@
+{
+  "shard": 91,
+  "shard_count": 256,
+  "parties": {
+    "austbrokers-corporate-pty-ltd": {
+      "id": "austbrokers-corporate-pty-ltd",
+      "canonical_name": "Austbrokers Corporate Pty Ltd",
+      "members": [
+        {
+          "name": "AUSTBROKERS CORPORATE PTY LTD",
+          "identifier": "29 107 477 181",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-40023",
+            "merger_name": "AUB \u2013 further interest in KJ Risk",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-14T12:00:00Z",
+            "determination_date": "2026-06-02T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 19.0,
+        "median_days": 19,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "autopact-property-no-3-pty-ltd": {
+      "id": "autopact-property-no-3-pty-ltd",
+      "canonical_name": "Autopact Property No. 3 Pty Ltd",
+      "members": [
+        {
+          "name": "AUTOPACT PROPERTY NO. 3 PTY LTD",
+          "identifier": "66 687 598 278",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-55021",
+            "merger_name": "Autopact - Freehold interest in commercial land in Dubbo, NSW",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-03T12:00:00Z",
+            "determination_date": "2026-06-18T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "dsm-nutritional-products-gmbh": {
+      "id": "dsm-nutritional-products-gmbh",
+      "canonical_name": "DSM Nutritional Products GmbH",
+      "members": [
+        {
+          "name": "DSM Nutritional Products GmbH",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25014",
+            "merger_name": "CVC Capital Partners \u2013 The animal nutrition and health division of the DSM-Firmenich Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-21T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "growthpoint-properties-australia-limited-as-trustee-for-the-wholesale-industrial": {
+      "id": "growthpoint-properties-australia-limited-as-trustee-for-the-wholesale-industrial",
+      "canonical_name": "Growthpoint Properties Australia Limited As Trustee For The Wholesale Industrial Property Fund",
+      "members": [
+        {
+          "name": "GROWTHPOINT PROPERTIES AUSTRALIA LIMITED AS TRUSTEE FOR THE WHOLESALE INDUSTRIAL PROPERTY FUND",
+          "identifier": "33 124 093 901",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25009",
+            "merger_name": "Brisbane Airport Corporation \u2013 Interest in land at Brisbane Airport",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-06T12:00:00Z",
+            "determination_date": "2026-04-08T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 33.0,
+        "median_days": 33,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
+    "hydrobiology-pty-ltd": {
+      "id": "hydrobiology-pty-ltd",
+      "canonical_name": "Hydrobiology Pty Ltd",
+      "members": [
+        {
+          "name": "Hydrobiology Pty Ltd",
+          "identifier": "60 129 983 688",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-35025",
+            "merger_name": "SLR Consulting Australia - Hydrobiology",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-05T12:00:00Z",
+            "determination_date": "2026-06-25T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "kathy-sozou-as-joint-and-several-receivers": {
+      "id": "kathy-sozou-as-joint-and-several-receivers",
+      "canonical_name": "Kathy Sozou (as joint and several receivers)",
+      "members": [
+        {
+          "name": "Kathy Sozou (as joint and several receivers)",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-40013",
+            "merger_name": "Calvary - Hobart Private Hospital",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-16T12:00:00Z",
+            "determination_date": "2026-08-27T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 72.0,
+        "median_days": 72,
+        "average_business_days": 52.0,
+        "median_business_days": 52,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "new-forests-pty-limited": {
+      "id": "new-forests-pty-limited",
+      "canonical_name": "New Forests Pty Limited",
+      "members": [
+        {
+          "name": "New Forests Pty Limited",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-50031",
+            "merger_name": "New Forests Australia New Zealand Landscapes and Forestry Fund \u2013 Benditi Pastoral",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-01T12:00:00Z",
+            "determination_date": "2026-07-21T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "starlink-internet-services-pte-ltd": {
+      "id": "starlink-internet-services-pte-ltd",
+      "canonical_name": "Starlink Internet Services Pte. Ltd.",
+      "members": [
+        {
+          "name": "STARLINK INTERNET SERVICES PTE. LTD.",
+          "identifier": "44 658 489 582",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-85036",
+            "merger_name": "SpaceX - Anysphere",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-27T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "teck-resources-limited": {
+      "id": "teck-resources-limited",
+      "canonical_name": "Teck Resources Limited",
+      "members": [
+        {
+          "name": "Teck Resources Limited",
+          "identifier": "4460561",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-01037",
+            "merger_name": "Anglo American - Teck Resources",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2025-10-24T12:00:00Z",
+            "determination_date": "2025-11-18T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

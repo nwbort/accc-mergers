@@ -1,0 +1,420 @@
+{
+  "shard": 150,
+  "shard_count": 256,
+  "parties": {
+    "b-corporation-s-a-m": {
+      "id": "b-corporation-s-a-m",
+      "canonical_name": "B Corporation S.A.M",
+      "members": [
+        {
+          "name": "B Corporation S.A.M",
+          "identifier": "23S09602",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-50015",
+            "merger_name": "Mastercard - BVNK",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-15T12:00:00Z",
+            "determination_date": "2026-06-10T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "benditi-holding-co-pty-ltd-atf-benditi-holding-co-trust": {
+      "id": "benditi-holding-co-pty-ltd-atf-benditi-holding-co-trust",
+      "canonical_name": "Benditi Holding Co Pty Ltd atf Benditi Holding Co Trust",
+      "members": [
+        {
+          "name": "Benditi Holding Co Pty Ltd atf Benditi Holding Co Trust",
+          "identifier": "689 836 977",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-50031",
+            "merger_name": "New Forests Australia New Zealand Landscapes and Forestry Fund \u2013 Benditi Pastoral",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-01T12:00:00Z",
+            "determination_date": "2026-07-21T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "jungheinrich-australia-pty-ltd-as-trustee-for-the-jungheinrich-australia-trust-a": {
+      "id": "jungheinrich-australia-pty-ltd-as-trustee-for-the-jungheinrich-australia-trust-a",
+      "canonical_name": "JUNGHEINRICH AUSTRALIA PTY LTD as trustee for The Jungheinrich Australia Trust (ABN 29 117 832 739)",
+      "members": [
+        {
+          "name": "JUNGHEINRICH AUSTRALIA PTY LTD as trustee for The Jungheinrich Australia Trust (ABN 29 117 832 739)",
+          "identifier": "22 008 024 011",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-80033",
+            "merger_name": "Jungheinrich Australia - All Lift",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-24T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "novo-holdings-a-s": {
+      "id": "novo-holdings-a-s",
+      "canonical_name": "Novo Holdings A/S",
+      "members": [
+        {
+          "name": "Novo Holdings A/S",
+          "identifier": "CVR  24257630",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-10030",
+            "merger_name": "Novonesis \u2013 Microbiogen",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-21T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "peloton-computer-enterprises-ltd": {
+      "id": "peloton-computer-enterprises-ltd",
+      "canonical_name": "Peloton Computer Enterprises Ltd.",
+      "members": [
+        {
+          "name": "Peloton Computer Enterprises Ltd.",
+          "identifier": "2023447374  Canada",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-20003",
+            "merger_name": "Carlyle \u2013 Peloton Computer Enterprises",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-12T12:00:00Z",
+            "determination_date": "2026-01-30T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "residentia-group-pty-ltd": {
+      "id": "residentia-group-pty-ltd",
+      "canonical_name": "Residentia Group Pty Ltd",
+      "members": [
+        {
+          "name": "RESIDENTIA GROUP PTY LTD",
+          "identifier": "70 600 546 656",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "RESIDENTIA HOLDINGS PTY LTD",
+          "identifier": "17 618 920 059",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-01106",
+            "merger_name": "Midea - Residentia Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-26T12:00:00Z",
+            "determination_date": "2026-07-24T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "saracen-property-holdings-no2-pty-ltd": {
+      "id": "saracen-property-holdings-no2-pty-ltd",
+      "canonical_name": "Saracen Property Holdings No2 Pty Ltd",
+      "members": [
+        {
+          "name": "Saracen Property Holdings No2 Pty Ltd",
+          "identifier": "628 737 646",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-80026",
+            "merger_name": "Australian Venue Co \u2013 assets of Chequers Hotel, Bullsbrook WA",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-03T12:00:00Z",
+            "determination_date": "2026-08-03T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 31.0,
+        "median_days": 31,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    },
+    "schroders-plc": {
+      "id": "schroders-plc",
+      "canonical_name": "Schroders plc",
+      "members": [
+        {
+          "name": "Schroders plc",
+          "identifier": "03909886",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25022",
+            "merger_name": "Nuveen \u2013 Schroders",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-30T12:00:00Z",
+            "determination_date": "2026-05-15T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "tamarama-advisory-pty-ltd": {
+      "id": "tamarama-advisory-pty-ltd",
+      "canonical_name": "Tamarama Advisory Pty Ltd",
+      "members": [
+        {
+          "name": "Tamarama Advisory Pty Ltd",
+          "identifier": "36 696 563 596",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-45018",
+            "merger_name": "Count \u2013 Oracle Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-09T12:00:00Z",
+            "determination_date": "2026-07-01T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "ziff-davis-llc": {
+      "id": "ziff-davis-llc",
+      "canonical_name": "Ziff Davis, LLC",
+      "members": [
+        {
+          "name": "Ziff Davis, Inc.",
+          "identifier": "State File Number  5542070",
+          "identifier_type": null
+        },
+        {
+          "name": "Ziff Davis, LLC",
+          "identifier": "State File Number  5455121",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-10013",
+            "merger_name": "Accenture - Ziff Davis' connectivity business",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-17T12:00:00Z",
+            "determination_date": "2026-05-14T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

@@ -1,0 +1,585 @@
+{
+  "shard": 168,
+  "shard_count": 256,
+  "parties": {
+    "akfix-kimya-lojistik-hizmetleri-limited-irketi": {
+      "id": "akfix-kimya-lojistik-hizmetleri-limited-irketi",
+      "canonical_name": "Akfix Kimya Lojistik Hizmetleri Limited \u015eirketi",
+      "members": [
+        {
+          "name": "Akfix Kimya Lojistik Hizmetleri Limited \u015eirketi",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-40027",
+            "merger_name": "Sika AG - Akkim",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-25T12:00:00Z",
+            "determination_date": "2026-07-16T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "ar-elik-hitachi-home-appliances-b-v": {
+      "id": "ar-elik-hitachi-home-appliances-b-v",
+      "canonical_name": "Ar\u00e7elik Hitachi Home Appliances B.V.",
+      "members": [
+        {
+          "name": "Ar\u00e7elik Hitachi Home Appliances B.V.",
+          "identifier": "CCI No  81724748",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-20032",
+            "merger_name": "Nojima Corporation \u2013 Hitachi Global Life Solutions and Ar\u00e7elik Hitachi Home Appliances",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-27T12:00:00Z",
+            "determination_date": "2026-08-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "australian-motor-group-pty-ltd": {
+      "id": "australian-motor-group-pty-ltd",
+      "canonical_name": "Australian Motor Group Pty Ltd",
+      "members": [
+        {
+          "name": "Australian Motor Group Pty Ltd",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-45022",
+            "merger_name": "Australian Motors Group \u2013 Mudgee Toyota",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-22T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    },
+    "b-m-d-constructions-pty-limited": {
+      "id": "b-m-d-constructions-pty-limited",
+      "canonical_name": "B.M.D. Constructions Pty. Limited",
+      "members": [
+        {
+          "name": "B.M.D. CONSTRUCTIONS PTY. LIMITED",
+          "identifier": "59 010 126 100",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-05024",
+            "merger_name": "B.M.D. Holdings \u2013 Bajara Plant Hire and Stirling Contracting",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-24T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "china-petrochemical-corporation": {
+      "id": "china-petrochemical-corporation",
+      "canonical_name": "China Petrochemical Corporation",
+      "members": [
+        {
+          "name": "China Petrochemical Corporation",
+          "identifier": "Unified social credit identifier 9111000010169286X1",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-01093",
+            "merger_name": "Sinopec - CNAF",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-26T12:00:00Z",
+            "determination_date": "2026-04-30T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 35.0,
+        "median_days": 35,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "cuh-pty-ltd": {
+      "id": "cuh-pty-ltd",
+      "canonical_name": "Cuh Pty Ltd",
+      "members": [
+        {
+          "name": "CUH PTY LTD",
+          "identifier": "122 207 925",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-01112",
+            "merger_name": "State Swim \u2013 In2Swim",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-02T12:00:00Z",
+            "determination_date": "2026-07-27T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "curia-global-inc": {
+      "id": "curia-global-inc",
+      "canonical_name": "Curia Global, Inc.",
+      "members": [
+        {
+          "name": "Curia Global, Inc.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-10020",
+            "merger_name": "Apollo Capital \u2013 Curia",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "guccio-gucci-s-p-a": {
+      "id": "guccio-gucci-s-p-a",
+      "canonical_name": "Guccio Gucci S.p.A",
+      "members": [
+        {
+          "name": "Guccio Gucci S.p.A",
+          "identifier": "03031300159",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-60035",
+            "merger_name": "L'Or\u00e9al \u2013 Gucci Beauty Licence",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-19T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "hsbc-bank-australia-limited": {
+      "id": "hsbc-bank-australia-limited",
+      "canonical_name": "Hsbc Bank Australia Limited",
+      "members": [
+        {
+          "name": "HSBC BANK AUSTRALIA LIMITED",
+          "identifier": "48 006 434 162",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-85047",
+            "merger_name": "Blackstone funds and Perpetual Trustees \u2013 HSBC loan portfolio",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-27T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "scentre-group-trust-3": {
+      "id": "scentre-group-trust-3",
+      "canonical_name": "Scentre Group Trust 3",
+      "members": [
+        {
+          "name": "SCENTRE GROUP TRUST 3",
+          "identifier": "11 517 229 138",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-15004",
+            "merger_name": "Australian Retirement Trust \u2013 Interests in non-rental income (Westfield Sydney)",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-24T12:00:00Z",
+            "determination_date": "2026-02-20T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "state-street-australia-ltd": {
+      "id": "state-street-australia-ltd",
+      "canonical_name": "State Street Australia Ltd",
+      "members": [
+        {
+          "name": "STATE STREET AUSTRALIA LTD",
+          "identifier": "21 002 965 200",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-75020",
+            "merger_name": "CleanPeak Energy Holdings - Sustainable Energy Infrastructure",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-28T12:00:00Z",
+            "determination_date": "2026-05-14T12:00:00Z"
+          }
+        ],
+        "other": [
+          {
+            "merger_id": "WA-35008",
+            "merger_name": "VFMC \u2013 CorVal Land and Operator Trusts",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-09T12:00:00Z",
+            "determination_date": "2026-03-26T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.5,
+        "median_days": 16.5,
+        "average_business_days": 12.5,
+        "median_business_days": 12.5,
+        "completed_count": 2
+      }
+    },
+    "the-trust-company-australia-limited-as-trustee-for-pearl-spring-zb-2016-trust": {
+      "id": "the-trust-company-australia-limited-as-trustee-for-pearl-spring-zb-2016-trust",
+      "canonical_name": "The Trust Company (Australia) Limited as trustee for Pearl Spring ZB 2016 Trust",
+      "members": [
+        {
+          "name": "The Trust Company (Australia) Limited as trustee for Pearl Spring ZB 2016 Trust",
+          "identifier": "77 247 165 207",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-90026",
+            "merger_name": "Abu Dhabi Investment Authority \u2013 Barings Darling Square Holding Trust",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-03T12:00:00Z",
+            "determination_date": "2026-07-29T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "wendel-s-e": {
+      "id": "wendel-s-e",
+      "canonical_name": "Wendel S.E.",
+      "members": [
+        {
+          "name": "Wendel S.E.",
+          "identifier": "French registration number (SIREN): 572174035",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-45007",
+            "merger_name": "Henkel \u2013 Stahl",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-18T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "zen-energy-retail-pty-ltd": {
+      "id": "zen-energy-retail-pty-ltd",
+      "canonical_name": "Zen Energy Retail Pty Ltd",
+      "members": [
+        {
+          "name": "ZEN ENERGY RETAIL HOLDINGS PTY LTD",
+          "identifier": "76 697 773 916",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "ZEN ENERGY RETAIL PTY LTD",
+          "identifier": "54 615 751 052",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-15025",
+            "merger_name": "Gunvor Group \u2013 ZEN Energy Retail Holdings",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-10T12:00:00Z",
+            "determination_date": "2026-06-24T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    }
+  }
+}

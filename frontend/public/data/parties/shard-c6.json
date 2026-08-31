@@ -1,0 +1,211 @@
+{
+  "shard": 198,
+  "shard_count": 256,
+  "parties": {
+    "australia-pacific-airports-corporation-limited": {
+      "id": "australia-pacific-airports-corporation-limited",
+      "canonical_name": "Australia Pacific Airports Corporation Limited",
+      "members": [
+        {
+          "name": "Australia Pacific Airports Corporation Limited",
+          "identifier": "89 069 775 266",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-90023",
+            "merger_name": "SAS Trustee Corporation \u2013 Australia Pacific Airport Corporation",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-16T12:00:00Z",
+            "determination_date": "2026-07-08T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "global-infrastructure-management-llc": {
+      "id": "global-infrastructure-management-llc",
+      "canonical_name": "Global Infrastructure Management, LLC",
+      "members": [
+        {
+          "name": "Global Infrastructure Management, LLC",
+          "identifier": "Delaware file number  4215071",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-70014",
+            "merger_name": "Global Infrastructure Management \u2013 TCR",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-16T12:00:00Z",
+            "determination_date": "2026-05-18T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 32.0,
+        "median_days": 32,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "made-brands-pte-ltd": {
+      "id": "made-brands-pte-ltd",
+      "canonical_name": "Made Brands Pte Ltd",
+      "members": [
+        {
+          "name": "Made Brands Pte Ltd",
+          "identifier": "UEN 202239762W",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-55031",
+            "merger_name": "Danone \u2013 MADE",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-05T12:00:00Z",
+            "determination_date": "2026-08-26T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "newman-vet-pty-ltd": {
+      "id": "newman-vet-pty-ltd",
+      "canonical_name": "Newman Vet Pty Ltd",
+      "members": [
+        {
+          "name": "NEWMAN VET PTY LTD",
+          "identifier": "70 633 313 149",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-70020",
+            "merger_name": "CVS Group \u2013 Paws at Prospect Vet and Eyes at Prospect Vet",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-02T12:00:00Z",
+            "determination_date": "2026-07-21T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 49.0,
+        "median_days": 49,
+        "average_business_days": 34.0,
+        "median_business_days": 34,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "the-trustee-for-it-is-what-it-is-granville-trust": {
+      "id": "the-trustee-for-it-is-what-it-is-granville-trust",
+      "canonical_name": "The Trustee for It Is What It Is (Granville) Trust",
+      "members": [
+        {
+          "name": "The Trustee for It Is What It Is (Granville) Trust",
+          "identifier": "82 294 935 476",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-65017",
+            "merger_name": "Black Rhino Group \u2013 Granville Tavern and Motel and Cambridge Street Bottle Shop & Cellars in Granville, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-12T12:00:00Z",
+            "determination_date": "2026-05-28T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    }
+  }
+}

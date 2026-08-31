@@ -16,8 +16,13 @@ link_related_parties` attaches ``canonical`` — but for every party, not just
 ones matched to a declared group.
 
 ``generate_index`` returns the ``parties.json`` payload.
-``generate_detail_files`` writes one file per party group into
-``<output_dir>/parties/{id}.json``.
+``generate_detail_files`` writes the party records into a fixed set of
+buckets, ``<output_dir>/parties/shard-{nn}.json``, keyed by party id.
+
+The buckets exist for one reason: Cloudflare Pages caps a deployment at
+20,000 files, and a file-per-party cost ~2,200 of that budget to hold ~2 MB
+of JSON — the limit counts files, not bytes. See ``scripts/shard.py`` for
+the bucketing rule and why it has to match the frontend exactly.
 """
 
 import json
@@ -26,6 +31,7 @@ from pathlib import Path
 
 from scripts.constants import merger_status
 from scripts.detect.party_matching import build_group_lookups, match_party, normalise_identifier, normalise_name
+from scripts.shard import SHARD_COUNT, party_shard, shard_name
 from scripts.slug import slugify
 
 from ..durations import collect_phase_1_durations, collect_waiver_durations, median_or_none
@@ -232,56 +238,85 @@ def _waiver_duration(unique_mergers: list) -> dict | None:
     }
 
 
-def _write_detail_file(parties_dir: Path, group_id: str, payload: dict) -> str:
-    """Write one party page; returns the file name written."""
-    safe_id = group_id.replace('/', '-').replace('\\', '-')
-    out_path = parties_dir / f"{safe_id}.json"
-    with open(out_path, 'w', encoding='utf-8') as f:
-        json.dump(payload, f, indent=2)
-    return out_path.name
+def _party_payload(g: dict) -> dict:
+    """The detail record for one party group — what a party page renders."""
+    merger_map: dict = {}
+    for role_mergers in g['mergers_by_role'].values():
+        merger_map.update(role_mergers)
+    all_mergers = list(merger_map.values())
+
+    phase_2 = sum(1 for m in all_mergers if classify_phase(m) == merger_status.PHASE_2)
+    waivers = sum(1 for m in all_mergers if classify_phase(m) == merger_status.WAIVER)
+    phase_1 = len(all_mergers) - phase_2 - waivers
+    active = sum(1 for m in all_mergers if is_active(m))
+
+    mergers_payload = {
+        role: [_merger_summary(m) for m in _sort_mergers(list(role_mergers.values()))]
+        for role, role_mergers in g['mergers_by_role'].items()
+    }
+
+    return {
+        'id': g['id'],
+        'canonical_name': g['canonical_name'],
+        'members': g['members'],
+        'mergers': mergers_payload,
+        'merger_count': len(merger_map),
+        'phase_1_count': phase_1,
+        'phase_2_count': phase_2,
+        'waiver_count': waivers,
+        'active_count': active,
+        'phase_duration': _phase_duration(all_mergers),
+        'waiver_duration': _waiver_duration(all_mergers),
+    }
+
+
+def build_shards(groups: list) -> dict[int, dict]:
+    """Group the party payloads into their buckets.
+
+    Returns ``{shard index: {party id: payload}}``, both levels sorted by key so
+    a run that changes one party rewrites that bucket byte-identically apart
+    from the party itself. Empty buckets are omitted — a bucket file only exists
+    once something hashes into it, and a request for a party in an empty bucket
+    404s, which is the right answer for a party that does not exist.
+    """
+    buckets: dict[int, dict] = {}
+    for g in groups:
+        buckets.setdefault(party_shard(g['id']), {})[g['id']] = _party_payload(g)
+    return {
+        index: {pid: buckets[index][pid] for pid in sorted(buckets[index])}
+        for index in sorted(buckets)
+    }
 
 
 def generate_detail_files(groups: list, output_dir: Path) -> int:
-    """Write one JSON file per party group. Returns the number of files written.
+    """Write the party detail buckets. Returns the number of parties written.
 
-    Party pages left over from a previous run are pruned — folding a party into
-    a canonical group in ``related_parties.json`` retires its standalone page.
+    Party records are packed into ``parties/shard-{nn}.json`` rather than one
+    file per party — see the module docstring. The bucket for a given id is
+    computed, not looked up, so the SPA reaches a party page in one request;
+    ``scripts/shard.py`` and ``frontend/src/utils/shard.js`` must agree on it.
+
+    Buckets left over from a previous run are pruned, which is also what clears
+    out the old per-party files on the first run after the switch. Folding a
+    party into a canonical group in ``related_parties.json`` no longer leaves a
+    stale file behind at all: the party simply stops being written into its
+    bucket.
     """
     parties_dir = Path(output_dir) / "parties"
     parties_dir.mkdir(parents=True, exist_ok=True)
 
     written: set[str] = set()
-    for g in groups:
-        merger_map: dict = {}
-        for role_mergers in g['mergers_by_role'].values():
-            merger_map.update(role_mergers)
-        all_mergers = list(merger_map.values())
-
-        phase_2 = sum(1 for m in all_mergers if classify_phase(m) == merger_status.PHASE_2)
-        waivers = sum(1 for m in all_mergers if classify_phase(m) == merger_status.WAIVER)
-        phase_1 = len(all_mergers) - phase_2 - waivers
-        active = sum(1 for m in all_mergers if is_active(m))
-
-        mergers_payload = {
-            role: [_merger_summary(m) for m in _sort_mergers(list(role_mergers.values()))]
-            for role, role_mergers in g['mergers_by_role'].items()
-        }
-
+    for index, bucket in build_shards(groups).items():
         payload = {
-            'id': g['id'],
-            'canonical_name': g['canonical_name'],
-            'members': g['members'],
-            'mergers': mergers_payload,
-            'merger_count': len(merger_map),
-            'phase_1_count': phase_1,
-            'phase_2_count': phase_2,
-            'waiver_count': waivers,
-            'active_count': active,
-            'phase_duration': _phase_duration(all_mergers),
-            'waiver_duration': _waiver_duration(all_mergers),
+            'shard': index,
+            'shard_count': SHARD_COUNT,
+            'parties': bucket,
         }
-        written.add(_write_detail_file(parties_dir, g['id'], payload))
+        name = shard_name(index)
+        with open(parties_dir / name, 'w', encoding='utf-8') as f:
+            json.dump(payload, f, indent=2)
+        written.add(name)
 
-    prune_stale_files(parties_dir, written)
+    prune_stale_files(parties_dir, written, label='parties')
 
     return len(groups)

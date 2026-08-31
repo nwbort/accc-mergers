@@ -7,9 +7,12 @@ on:
       - '.github/workflows/frontend-test.yml'
       # The slugify sync test (src/utils/__tests__/slug.test.js) also validates
       # the inline copy in functions/ against the shared golden fixture, so run
-      # it when either of those change too.
+      # it when either of those change too. shard-cases.json is the same deal
+      # for the party bucketing (src/utils/__tests__/shard.test.js): the fixture
+      # is what stops the JS copy drifting from scripts/shard.py, so a change to
+      # it has to re-run the JS side.
       - 'functions/**'
-      - 'fixtures/slug-cases.json'
+      - 'fixtures/*.json'
   workflow_dispatch:
 
 jobs:

@@ -1,0 +1,334 @@
+{
+  "shard": 98,
+  "shard_count": 256,
+  "parties": {
+    "msc-group-co-pty-ltd": {
+      "id": "msc-group-co-pty-ltd",
+      "canonical_name": "Msc Group Co Pty Ltd",
+      "members": [
+        {
+          "name": "MSC GROUP CO PTY LTD",
+          "identifier": "82 640 870 962",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-05035",
+            "merger_name": "Alter Domus - MSC Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-07T12:00:00Z",
+            "determination_date": "2026-08-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 31.0,
+        "median_days": 31,
+        "average_business_days": 23.0,
+        "median_business_days": 23,
+        "completed_count": 1
+      }
+    },
+    "northstar-mildura-pty-ltd": {
+      "id": "northstar-mildura-pty-ltd",
+      "canonical_name": "Northstar Mildura Pty Ltd",
+      "members": [
+        {
+          "name": "NORTHSTAR MILDURA PTY LTD",
+          "identifier": "94 674 572 260",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-45016",
+            "merger_name": "Northstar \u2013 business assets of Mildura Mazda",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-13T12:00:00Z",
+            "determination_date": "2026-06-18T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 36.0,
+        "median_days": 36,
+        "average_business_days": 24.0,
+        "median_business_days": 24,
+        "completed_count": 1
+      }
+    },
+    "quanta-services-australia-pty-ltd": {
+      "id": "quanta-services-australia-pty-ltd",
+      "canonical_name": "Quanta Services Australia Pty Ltd",
+      "members": [
+        {
+          "name": "Quanta Services Australia Pty Ltd",
+          "identifier": "11 164 311 997",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-70012",
+            "merger_name": "Quanta - PSD",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-12T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "saudi-electronic-gaming-holding-company-doing-business-as-savvy-games-group": {
+      "id": "saudi-electronic-gaming-holding-company-doing-business-as-savvy-games-group",
+      "canonical_name": "Saudi Electronic Gaming Holding Company (doing business as Savvy Games Group)",
+      "members": [
+        {
+          "name": "Saudi Electronic Gaming Holding Company (doing business as Savvy Games Group)",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-65012",
+            "merger_name": "Savvy Games Group \u2013 Moonton",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-08T12:00:00Z",
+            "determination_date": "2026-04-30T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "sound-bidco-s-r-l": {
+      "id": "sound-bidco-s-r-l",
+      "canonical_name": "Sound Bidco S.r.l.",
+      "members": [
+        {
+          "name": "Sound Bidco S.r.l.",
+          "identifier": "Registration number (Companies\u2019 Register of Milan, Monza, Brianza and Lodi)  14469610969",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-80004",
+            "merger_name": "Audiotonix - Soundtech Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-20T12:00:00Z",
+            "determination_date": "2026-03-17T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "state-swim-mount-barker-pty-ltd": {
+      "id": "state-swim-mount-barker-pty-ltd",
+      "canonical_name": "State Swim Mount Barker Pty Ltd",
+      "members": [
+        {
+          "name": "STATE SWIM MOUNT BARKER PTY LTD",
+          "identifier": "64 698 337 174",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-95032",
+            "merger_name": "State Swim \u2013 Swim Plus",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-06T12:00:00Z",
+            "determination_date": "2026-07-27T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "stockland-land-lease-management-pty-limited": {
+      "id": "stockland-land-lease-management-pty-limited",
+      "canonical_name": "Stockland Land Lease Management Pty Limited",
+      "members": [
+        {
+          "name": "STOCKLAND LAND LEASE MANAGEMENT PTY LIMITED",
+          "identifier": "31 639 714 453",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-10002",
+            "merger_name": "Stockland LLC \u2013 intragroup transfer of Halcyon Jardin and Evergreen projects",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-15T12:00:00Z",
+            "determination_date": "2026-02-13T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
+    "tega-mc-australia-holdings-pty-ltd": {
+      "id": "tega-mc-australia-holdings-pty-ltd",
+      "canonical_name": "Tega MC Australia Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "Tega MC Australia Holdings Pty Ltd",
+          "identifier": "16 147 692 840",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-85006",
+            "merger_name": "Tega and Apollo Funds consortium - Molycop",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-26T12:00:00Z",
+            "determination_date": "2026-04-28T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 33.0,
+        "median_days": 33,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

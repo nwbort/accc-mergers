@@ -1,0 +1,129 @@
+{
+  "shard": 54,
+  "shard_count": 256,
+  "parties": {
+    "jones-investments-qld-pty-ltd-as-trustee-for-the-jones-investments-trust": {
+      "id": "jones-investments-qld-pty-ltd-as-trustee-for-the-jones-investments-trust",
+      "canonical_name": "Jones Investments (Qld) Pty Ltd as trustee for the Jones Investments Trust",
+      "members": [
+        {
+          "name": "Jones Investments (Qld) Pty Ltd as trustee for the Jones Investments Trust",
+          "identifier": "143 730 705",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-25002",
+            "merger_name": "Symal Group - Timms Group and L&D Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-01-23T12:00:00Z",
+            "determination_date": "2026-02-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "pittwater-animal-hospital-pty-ltd": {
+      "id": "pittwater-animal-hospital-pty-ltd",
+      "canonical_name": "Pittwater Animal Hospital Pty Ltd",
+      "members": [
+        {
+          "name": "PITTWATER ANIMAL HOSPITAL PTY LTD",
+          "identifier": "25 001 336 723",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-95003",
+            "merger_name": "CVS Group - Pittwater Animal Hospital",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-13T12:00:00Z",
+            "determination_date": "2026-04-09T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 55.0,
+        "median_days": 55,
+        "average_business_days": 36.0,
+        "median_business_days": 36,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "voag-2-pty-ltd": {
+      "id": "voag-2-pty-ltd",
+      "canonical_name": "Voag 2 Pty Ltd",
+      "members": [
+        {
+          "name": "VOAG 2 PTY LTD",
+          "identifier": "33 606 445 747",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-35019",
+            "merger_name": "Precision Poultry - VOAG chicken farming operations",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-02T12:00:00Z",
+            "determination_date": "2026-06-24T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

@@ -1,0 +1,509 @@
+{
+  "shard": 230,
+  "shard_count": 256,
+  "parties": {
+    "aluminium-specialties-group-pty-ltd": {
+      "id": "aluminium-specialties-group-pty-ltd",
+      "canonical_name": "Aluminium Specialties Group Pty. Ltd.",
+      "members": [
+        {
+          "name": "ALUMINIUM SPECIALTIES GROUP PTY. LTD.",
+          "identifier": "63 001 252 259",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-45003",
+            "merger_name": "Aluminium Specialties Group \u2013 Manufacturing facility site in Orchard Hills, NSW",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-26T12:00:00Z",
+            "determination_date": "2026-03-11T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "australian-professional-shopfitters-pty-ltd": {
+      "id": "australian-professional-shopfitters-pty-ltd",
+      "canonical_name": "Australian Professional Shopfitters Pty. Ltd.",
+      "members": [
+        {
+          "name": "AUSTRALIAN PROFESSIONAL SHOPFITTERS PTY. LTD.",
+          "identifier": "93 082 820 237",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-40025",
+            "merger_name": "Shape Australia \u2013 Australian Professional Shopfitters",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-28T12:00:00Z",
+            "determination_date": "2026-06-22T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "engage-marine-finco-pty-ltd": {
+      "id": "engage-marine-finco-pty-ltd",
+      "canonical_name": "Engage Marine Finco Pty Ltd",
+      "members": [
+        {
+          "name": "ENGAGE MARINE FINCO PTY LTD",
+          "identifier": "25 675 999 283",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-90012",
+            "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-13T12:00:00Z",
+            "determination_date": "2026-06-24T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 42.0,
+        "median_days": 42,
+        "average_business_days": 28.0,
+        "median_business_days": 28,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "ernst-young": {
+      "id": "ernst-young",
+      "canonical_name": "Ernst & Young",
+      "members": [
+        {
+          "name": "ERNST & YOUNG",
+          "identifier": "75 288 172 749",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-90021",
+            "merger_name": "EY Australia - Australian EY Fusion business",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-09T12:00:00Z",
+            "determination_date": "2026-07-03T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "german-federal-ministry-of-defence": {
+      "id": "german-federal-ministry-of-defence",
+      "canonical_name": "German Federal Ministry of Defence",
+      "members": [
+        {
+          "name": "German Federal Ministry of Defence",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-75024",
+            "merger_name": "KfW \u2013 KNDS N.V.",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-22T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "global-garella-s-l": {
+      "id": "global-garella-s-l",
+      "canonical_name": "Global Garella, S.L.",
+      "members": [
+        {
+          "name": "Global Garella, S.L.",
+          "identifier": "Spanish Tax Identification Number  B24904989",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-15008",
+            "merger_name": "Colliers International Group \u2013 Ayesa Engineering",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-13T12:00:00Z",
+            "determination_date": "2026-02-25T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 12.0,
+        "median_days": 12,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "j-rg-christian-toetzke": {
+      "id": "j-rg-christian-toetzke",
+      "canonical_name": "J\u00f6rg Christian Toetzke",
+      "members": [
+        {
+          "name": "J\u00f6rg Christian Toetzke",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-25036",
+            "merger_name": "L Catterton Europe \u2013 HYROX",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-08T12:00:00Z",
+            "determination_date": "2026-07-21T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "kretchmer-holding-co-pty-ltd": {
+      "id": "kretchmer-holding-co-pty-ltd",
+      "canonical_name": "Kretchmer Holding Co Pty Ltd",
+      "members": [
+        {
+          "name": "KRETCHMER HOLDING CO PTY LTD",
+          "identifier": "37 634 564 926",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-80033",
+            "merger_name": "Jungheinrich Australia - All Lift",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-24T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "ryan-plaza-medical-services-pty-ltd": {
+      "id": "ryan-plaza-medical-services-pty-ltd",
+      "canonical_name": "Ryan Plaza Medical Services Pty Ltd",
+      "members": [
+        {
+          "name": "Ryan Plaza Medical Services Pty Ltd",
+          "identifier": "067 705 220",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-15027",
+            "merger_name": "Partnered Health - Ryan Plaza Medical Services",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-03T12:00:00Z",
+            "determination_date": "2026-08-08T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 36.0,
+        "median_days": 36,
+        "average_business_days": 25.0,
+        "median_business_days": 25,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "sbs-blocker-llc": {
+      "id": "sbs-blocker-llc",
+      "canonical_name": "SBS Blocker, LLC",
+      "members": [
+        {
+          "name": "SBS Blocker, LLC",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-10010",
+            "merger_name": "Enverus \u2013 Spatial Business Systems",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-10T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "shed-4-vic-pty-ltd": {
+      "id": "shed-4-vic-pty-ltd",
+      "canonical_name": "Shed 4 (Vic) Pty Ltd",
+      "members": [
+        {
+          "name": "SHED 4 (VIC) PTY LTD",
+          "identifier": "79 138 533 605",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-80037",
+            "merger_name": "Australian Venue Co \u2013 Assets of Riverland Bar, The Boatbuilders Yard and General Assembly",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-03T12:00:00Z",
+            "determination_date": "2026-08-27T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-25028",
+            "merger_name": "Australian Venue Co \u2013 assets of Boatbuilders Yard and General Assembly, Melbourne",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-03T12:00:00Z",
+            "determination_date": "2026-06-30T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.5,
+        "median_days": 25.5,
+        "average_business_days": 18.0,
+        "median_business_days": 18.0,
+        "completed_count": 2
+      }
+    },
+    "zijin-mining-group-co-ltd": {
+      "id": "zijin-mining-group-co-ltd",
+      "canonical_name": "Zijin Mining Group Co. Ltd",
+      "members": [
+        {
+          "name": "Zijin Mining Group Co. Ltd",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-25020",
+            "merger_name": "Zijin Mining - Chifeng",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-11T12:00:00Z",
+            "determination_date": "2026-05-25T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,445 @@
+{
+  "shard": 95,
+  "shard_count": 256,
+  "parties": {
+    "acacium-group-limited": {
+      "id": "acacium-group-limited",
+      "canonical_name": "Acacium Group Limited",
+      "members": [
+        {
+          "name": "Acacium Group Limited",
+          "identifier": "Registration number: 131725",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-95029",
+            "merger_name": "Blackstone \u2013 Acacium Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-22T12:00:00Z",
+            "determination_date": "2026-07-08T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "castrol-group-holdings-limited": {
+      "id": "castrol-group-holdings-limited",
+      "canonical_name": "Castrol Group Holdings Limited",
+      "members": [
+        {
+          "name": "Castrol Group Holdings Limited",
+          "identifier": "UKCRN  SC005098",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-60015",
+            "merger_name": "Stonepeak \u2013 Castrol",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-21T12:00:00Z",
+            "determination_date": "2026-06-18T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "col-johnson-co-pty-ltd": {
+      "id": "col-johnson-co-pty-ltd",
+      "canonical_name": "Col Johnson & Co. Pty Ltd",
+      "members": [
+        {
+          "name": "COL JOHNSON & CO. PTY LTD",
+          "identifier": "96 097 104 606",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-40020",
+            "merger_name": "Premier Fresh \u2013 Domenico Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-04T12:00:00Z",
+            "determination_date": "2026-07-01T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "crown-growth-opportunities-iv-scsp-raif": {
+      "id": "crown-growth-opportunities-iv-scsp-raif",
+      "canonical_name": "Crown Growth Opportunities IV SCSp-RAIF",
+      "members": [
+        {
+          "name": "Crown Growth Opportunities IV SCSp-RAIF",
+          "identifier": "Luxembourg Company Registration Number: B254394",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-45010",
+            "merger_name": "Airtree and ors (additional minority co-investors) - Advanced Navigation",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-02T12:00:00Z",
+            "determination_date": "2026-05-01T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "exolaunch-gmbh": {
+      "id": "exolaunch-gmbh",
+      "canonical_name": "Exolaunch GmbH",
+      "members": [
+        {
+          "name": "Exolaunch GmbH",
+          "identifier": "HRB 134539 B",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-01114",
+            "merger_name": "EQT Fund Management \u2013 Exolaunch",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-08T12:00:00Z",
+            "determination_date": "2026-08-03T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "experience-co-admin-pty-ltd": {
+      "id": "experience-co-admin-pty-ltd",
+      "canonical_name": "Experience Co Admin Pty Ltd",
+      "members": [
+        {
+          "name": "EXPERIENCE CO ADMIN PTY LTD",
+          "identifier": "30 636 083 639",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-40008",
+            "merger_name": "Intrepid Travel - Wild Bush Luxury",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-23T12:00:00Z",
+            "determination_date": "2026-04-16T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "glenn-ian-livingstone-in-his-capacity-as-administrator-of-hudson-global-resource": {
+      "id": "glenn-ian-livingstone-in-his-capacity-as-administrator-of-hudson-global-resource",
+      "canonical_name": "Glenn Ian Livingstone in his capacity as Administrator of Hudson Global Resources (Aust) Pty Limited",
+      "members": [
+        {
+          "name": "Glenn Ian Livingstone in his capacity as Administrator of Hudson Global Resources (Aust) Pty Limited",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-95038",
+            "merger_name": "HiTech Group Australia - Hudson Global Resources",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-04T12:00:00Z",
+            "determination_date": "2026-08-25T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "novonesis-a-s": {
+      "id": "novonesis-a-s",
+      "canonical_name": "Novonesis A/S",
+      "members": [
+        {
+          "name": "Novonesis A/S",
+          "identifier": "CVR   10007127",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-10030",
+            "merger_name": "Novonesis \u2013 Microbiogen",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-21T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "solae-australia-pty-ltd": {
+      "id": "solae-australia-pty-ltd",
+      "canonical_name": "Solae Australia Pty Ltd",
+      "members": [
+        {
+          "name": "SOLAE AUSTRALIA PTY LTD",
+          "identifier": "54 002 096 255",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-65030",
+            "merger_name": "CVC Capital Partners \u2013 IFF\u2019s Food Ingredients business",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-23T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "straight-talking-pty-ltd": {
+      "id": "straight-talking-pty-ltd",
+      "canonical_name": "Straight Talking Pty Ltd",
+      "members": [
+        {
+          "name": "Straight Talking Pty Ltd",
+          "identifier": "008 068 308",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-35031",
+            "merger_name": "Osmoflo Water Management - Guidera O'Connor",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-06T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "up-education-australia-pty-ltd": {
+      "id": "up-education-australia-pty-ltd",
+      "canonical_name": "Up Education Australia Pty Ltd",
+      "members": [
+        {
+          "name": "UP EDUCATION AUSTRALIA PTY LTD",
+          "identifier": "58 095 741 227",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-85030",
+            "merger_name": "UP Education \u2013 Australian Academy of Beauty Dermal & Laser",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-18T12:00:00Z",
+            "determination_date": "2026-06-01T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    }
+  }
+}

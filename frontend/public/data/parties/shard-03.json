@@ -1,0 +1,408 @@
+{
+  "shard": 3,
+  "shard_count": 256,
+  "parties": {
+    "bljx-acquisition-llc": {
+      "id": "bljx-acquisition-llc",
+      "canonical_name": "BLJX Acquisition, LLC",
+      "members": [
+        {
+          "name": "BLJX Acquisition, LLC",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-20013",
+            "merger_name": "Eli Lilly - Orna Therapeutics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-08T12:00:00Z",
+            "determination_date": "2026-05-04T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-01087",
+            "merger_name": "Eli Lilly \u2013 Orna Therapeutics",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-24T12:00:00Z",
+            "determination_date": "2026-03-12T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "dr-jan-m-ller": {
+      "id": "dr-jan-m-ller",
+      "canonical_name": "Dr Jan M\u00fcller",
+      "members": [
+        {
+          "name": "Dr Jan M\u00fcller",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-40005",
+            "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-18T12:00:00Z",
+            "determination_date": "2026-03-12T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "eqt-fund-management-s-r-l": {
+      "id": "eqt-fund-management-s-r-l",
+      "canonical_name": "EQT Fund Management",
+      "members": [
+        {
+          "name": "EQT Fund Management S.\u00e0 r.l.",
+          "identifier": "B167972",
+          "identifier_type": null
+        },
+        {
+          "name": "EQT Fund Management S.\u00e0 r.l.",
+          "identifier": "Luxembourg Company Registration Number  B167972",
+          "identifier_type": null
+        },
+        {
+          "name": "EQT Fund Management S.\u00e0 r.l.",
+          "identifier": "Registration number B167972",
+          "identifier_type": null
+        },
+        {
+          "name": "Ruby BidCo GmbH",
+          "identifier": "679581i",
+          "identifier_type": null
+        },
+        {
+          "name": "Seal US Holdings Inc.",
+          "identifier": "10678816",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-70033",
+            "merger_name": "EQT Fund Management \u2013 Corza Biosurgery",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-31T12:00:00Z",
+            "determination_date": "2026-08-12T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-01114",
+            "merger_name": "EQT Fund Management \u2013 Exolaunch",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-08T12:00:00Z",
+            "determination_date": "2026-08-03T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-60028",
+            "merger_name": "EQT Fund Management S.\u00e0 r.l. \u2013 Orikan Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-10T12:00:00Z",
+            "determination_date": "2026-07-30T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-45015",
+            "merger_name": "EQT Fund Management \u2013 Kakaku.com",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-12T12:00:00Z",
+            "determination_date": "2026-05-25T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-90009",
+            "merger_name": "Trescal \u2013 TR Calibration",
+            "is_waiver": false,
+            "status": "Assessment ceased",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 2",
+            "notification_date": "2026-04-14T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 5,
+      "phase_1_count": 0,
+      "phase_2_count": 1,
+      "waiver_count": 4,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 77.0,
+        "median_days": 77,
+        "average_business_days": 52.0,
+        "median_business_days": 52,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 17.75,
+        "median_days": 16.5,
+        "average_business_days": 12.25,
+        "median_business_days": 11.5,
+        "completed_count": 4
+      }
+    },
+    "etc-group": {
+      "id": "etc-group",
+      "canonical_name": "ETC Group",
+      "members": [
+        {
+          "name": "ETC Group",
+          "identifier": "C095264",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-60013",
+            "merger_name": "Export Trading Group Australia \u2013 pulses and grains business and facility in Mount Tyson, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-31T12:00:00Z",
+            "determination_date": "2026-04-29T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "imagine-education-investments": {
+      "id": "imagine-education-investments",
+      "canonical_name": "Imagine Education Investments",
+      "members": [
+        {
+          "name": "Imagine Education Investments Pty Ltd",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Imagine Education Investments Trust",
+          "identifier": "54 637 909 142",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "POLAR 993 PTY LTD",
+          "identifier": "77 642 129 226",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "POLAR 993 PTY LTD as trustee of Imagine Education Investments Trust",
+          "identifier": "77 642 129 226",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-80019",
+            "merger_name": "Imagine Education \u2013 childcare centres ownership restructure",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-22T12:00:00Z",
+            "determination_date": "2026-06-22T12:00:00Z"
+          }
+        ],
+        "target": [
+          {
+            "merger_id": "WA-45025",
+            "merger_name": "Acclime Corporate Services Australia \u2013 Polar 993 Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-07T12:00:00Z",
+            "determination_date": "2026-08-21T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.5,
+        "median_days": 22.5,
+        "average_business_days": 14.5,
+        "median_business_days": 14.5,
+        "completed_count": 2
+      }
+    },
+    "t-operations-pty-ltd": {
+      "id": "t-operations-pty-ltd",
+      "canonical_name": "T Operations Pty Ltd",
+      "members": [
+        {
+          "name": "T OPERATIONS PTY LTD",
+          "identifier": "57 691 920 242",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-25002",
+            "merger_name": "Symal Group - Timms Group and L&D Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-01-23T12:00:00Z",
+            "determination_date": "2026-02-19T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "the-trustee-for-the-garden-holdings-trust": {
+      "id": "the-trustee-for-the-garden-holdings-trust",
+      "canonical_name": "The Trustee for The Garden Holdings Trust",
+      "members": [
+        {
+          "name": "The Trustee for The Garden Holdings Trust",
+          "identifier": "45 745 542 544",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-75015",
+            "merger_name": "Star Hotels Group \u2013 Liquor Legends Berserker & Liquor Legends Highway A1, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-17T12:00:00Z",
+            "determination_date": "2026-04-02T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    }
+  }
+}

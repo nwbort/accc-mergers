@@ -1,0 +1,519 @@
+{
+  "shard": 97,
+  "shard_count": 256,
+  "parties": {
+    "experience-co-limited": {
+      "id": "experience-co-limited",
+      "canonical_name": "Experience Co",
+      "members": [
+        {
+          "name": "EXPERIENCE AUSTRALIA GROUP PTY LTD",
+          "identifier": "56 614 713 003",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "EXPERIENCE CO LIMITED",
+          "identifier": "56 167 320 470",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-85015",
+            "merger_name": "Journey Beyond - Kelsian Tourism Portfolio",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-01T12:00:00Z",
+            "determination_date": null
+          },
+          {
+            "merger_id": "MN-50011",
+            "merger_name": "Journey Beyond - SeaLink Rottnest",
+            "is_waiver": false,
+            "status": "Assessment ceased",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-01T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [
+          {
+            "merger_id": "MN-40008",
+            "merger_name": "Intrepid Travel - Wild Bush Luxury",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-23T12:00:00Z",
+            "determination_date": "2026-04-16T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-70003",
+            "merger_name": "Intrepid Travel \u2013 Wild Bush Luxury",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-20T12:00:00Z",
+            "determination_date": "2026-02-05T12:00:00Z"
+          }
+        ],
+        "other": [
+          {
+            "merger_id": "MN-15013",
+            "merger_name": "Journey Beyond \u2013 Kakadu Crocodile Hotel",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-07T12:00:00Z",
+            "determination_date": "2026-05-05T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 5,
+      "phase_1_count": 4,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 1,
+      "phase_duration": {
+        "average_days": 26.0,
+        "median_days": 26.0,
+        "average_business_days": 17.5,
+        "median_business_days": 17.5,
+        "completed_count": 2
+      },
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "grafton-motor-group-pty-ltd": {
+      "id": "grafton-motor-group-pty-ltd",
+      "canonical_name": "Grafton Motor Group Pty Ltd",
+      "members": [
+        {
+          "name": "GRAFTON MOTOR GROUP PTY LTD",
+          "identifier": "61 107 107 559",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-05045",
+            "merger_name": "Grafton Motor Group \u2013 Grafton Mazda",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-31T12:00:00Z",
+            "determination_date": "2026-08-27T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "jennmar-super-holdings-llc": {
+      "id": "jennmar-super-holdings-llc",
+      "canonical_name": "Jennmar Super Holdings, LLC",
+      "members": [
+        {
+          "name": "Jennmar Super Holdings, LLC",
+          "identifier": "412378602",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-55014",
+            "merger_name": "KPS Capital Partners - Jennmar",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-20T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "lgpe-sec-s-c-sp": {
+      "id": "lgpe-sec-s-c-sp",
+      "canonical_name": "LGPE SEC S.C. Sp",
+      "members": [
+        {
+          "name": "LGPE SEC S.C. Sp",
+          "identifier": "Luxembourg Company Registration Number: B281514",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-45010",
+            "merger_name": "Airtree and ors (additional minority co-investors) - Advanced Navigation",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-02T12:00:00Z",
+            "determination_date": "2026-05-01T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "ncc-group-plc": {
+      "id": "ncc-group-plc",
+      "canonical_name": "NCC Group plc",
+      "members": [
+        {
+          "name": "NCC Group plc",
+          "identifier": "UK Company number: 04627044",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-85011",
+            "merger_name": "TDR and Estoril \u2013 Escode",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-19T12:00:00Z",
+            "determination_date": "2026-03-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "niven-industries-pty-ltd": {
+      "id": "niven-industries-pty-ltd",
+      "canonical_name": "Niven Industries Pty Ltd",
+      "members": [
+        {
+          "name": "Niven Industries Pty Ltd",
+          "identifier": "146 449 265",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-40023",
+            "merger_name": "AUB \u2013 further interest in KJ Risk",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-14T12:00:00Z",
+            "determination_date": "2026-06-02T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 19.0,
+        "median_days": 19,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "oxygen-private-clients-pty-ltd": {
+      "id": "oxygen-private-clients-pty-ltd",
+      "canonical_name": "Oxygen Private Clients Pty Ltd",
+      "members": [
+        {
+          "name": "OXYGEN PRIVATE CLIENTS PTY LTD",
+          "identifier": "82 128 479 158",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-50023",
+            "merger_name": "Hillhouse - MGI Dobbyn Carafa",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-28T12:00:00Z",
+            "determination_date": "2026-06-15T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "paris-financial-pty-ltd": {
+      "id": "paris-financial-pty-ltd",
+      "canonical_name": "Paris Financial Pty Ltd",
+      "members": [
+        {
+          "name": "PARIS FINANCIAL HOLDINGS PTY LTD",
+          "identifier": "72 658 541 078",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "PARIS FINANCIAL PTY LTD",
+          "identifier": "96 120 807 614",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-75039",
+            "merger_name": "Ironbark - Paris Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-31T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "stockland-providence-retail-trust": {
+      "id": "stockland-providence-retail-trust",
+      "canonical_name": "Stockland Providence Retail Trust",
+      "members": [
+        {
+          "name": "Stockland Providence Retail Trust",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-20022",
+            "merger_name": "PRIME Asia \u2013 Stockland Sienna Wood and Providence",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-14T12:00:00Z",
+            "determination_date": "2026-06-02T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 19.0,
+        "median_days": 19,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "the-trustee-for-westart-trust": {
+      "id": "the-trustee-for-westart-trust",
+      "canonical_name": "The Trustee for WESTART TRUST",
+      "members": [
+        {
+          "name": "The Trustee for WESTART TRUST",
+          "identifier": "81 342 268 847",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-80034",
+            "merger_name": "Australian Retirement Trust \u2013 Westfield Mt Gravatt",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-28T12:00:00Z",
+            "determination_date": "2026-08-25T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
+    "timms-hire-pty-ltd": {
+      "id": "timms-hire-pty-ltd",
+      "canonical_name": "Timms Hire Pty Ltd",
+      "members": [
+        {
+          "name": "TIMMS HIRE PTY LTD",
+          "identifier": "73 115 389 949",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-25002",
+            "merger_name": "Symal Group - Timms Group and L&D Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-01-23T12:00:00Z",
+            "determination_date": "2026-02-19T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

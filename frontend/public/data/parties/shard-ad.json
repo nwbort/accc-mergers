@@ -1,0 +1,510 @@
+{
+  "shard": 173,
+  "shard_count": 256,
+  "parties": {
+    "acclime-holdings-limited": {
+      "id": "acclime-holdings-limited",
+      "canonical_name": "Acclime",
+      "members": [
+        {
+          "name": "Acclime Holdings HK Limited",
+          "identifier": "BRN  70084973",
+          "identifier_type": null
+        },
+        {
+          "name": "Acclime Holdings HK Limited",
+          "identifier": "BRN70084973",
+          "identifier_type": null
+        },
+        {
+          "name": "Acclime Holdings Limited",
+          "identifier": "BRN  70084973",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-60008",
+            "merger_name": "Warburg Pincus \u2013 Acclime",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-20T12:00:00Z",
+            "determination_date": "2026-01-30T12:00:00Z"
+          }
+        ],
+        "other": [
+          {
+            "merger_id": "WA-45025",
+            "merger_name": "Acclime Corporate Services Australia \u2013 Polar 993 Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-07T12:00:00Z",
+            "determination_date": "2026-08-21T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 12.0,
+        "median_days": 12.0,
+        "average_business_days": 8.5,
+        "median_business_days": 8.5,
+        "completed_count": 2
+      }
+    },
+    "australia-pacific-airports-melbourne-pty-limited": {
+      "id": "australia-pacific-airports-melbourne-pty-limited",
+      "canonical_name": "Australia Pacific Airports (Melbourne) Pty Limited",
+      "members": [
+        {
+          "name": "Australia Pacific Airports (Melbourne) Pty Limited",
+          "identifier": "62 076 999 114",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-90023",
+            "merger_name": "SAS Trustee Corporation \u2013 Australia Pacific Airport Corporation",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-16T12:00:00Z",
+            "determination_date": "2026-07-08T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "dhilmar-qld-pty-ltd": {
+      "id": "dhilmar-qld-pty-ltd",
+      "canonical_name": "Dhilmar Qld Pty Ltd",
+      "members": [
+        {
+          "name": "DHILMAR QLD PTY LTD",
+          "identifier": "80 697 675 988",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-85035",
+            "merger_name": "Dhilmar \u2013 Anglo American steelmaking coal business",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-05T12:00:00Z",
+            "determination_date": "2026-06-25T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "holding-tom": {
+      "id": "holding-tom",
+      "canonical_name": "Holding Tom\u00e9",
+      "members": [
+        {
+          "name": "Holding Tom\u00e9",
+          "identifier": "899 161 467 R.C.S. Paris",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-60033",
+            "merger_name": "Verlinvest \u2013 up to 60% interest in HomeExchange",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-29T12:00:00Z",
+            "determination_date": "2026-08-28T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 30.0,
+        "median_days": 30,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      }
+    },
+    "hydrobiology-qld-pty-ltd": {
+      "id": "hydrobiology-qld-pty-ltd",
+      "canonical_name": "Hydrobiology Qld Pty Ltd",
+      "members": [
+        {
+          "name": "HYDROBIOLOGY QLD PTY LTD",
+          "identifier": "26 096 574 659",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-35025",
+            "merger_name": "SLR Consulting Australia - Hydrobiology",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-05T12:00:00Z",
+            "determination_date": "2026-06-25T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "magellan-financial-group-ltd": {
+      "id": "magellan-financial-group-ltd",
+      "canonical_name": "Magellan Financial Group Ltd",
+      "members": [
+        {
+          "name": "Magellan Financial Group Ltd",
+          "identifier": "59 108 437 592",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-95007",
+            "merger_name": "Magellan Financial Group - Barrenjoey",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-19T12:00:00Z",
+            "determination_date": "2026-06-12T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "smiths-interconnect-group-limited": {
+      "id": "smiths-interconnect-group-limited",
+      "canonical_name": "Smiths Interconnect Group Limited",
+      "members": [
+        {
+          "name": "Smiths Interconnect Group Limited",
+          "identifier": "UK CRN  06641403",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-01061",
+            "merger_name": "Molex \u2013 Smiths Interconnect",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2025-11-13T12:00:00Z",
+            "determination_date": "2025-12-05T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "squares-blocker-inc": {
+      "id": "squares-blocker-inc",
+      "canonical_name": "Squares Blocker, inc.",
+      "members": [
+        {
+          "name": "Squares Blocker, inc.",
+          "identifier": "10665193",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-05033",
+            "merger_name": "CVC Capital Partners \u2013 Chess.com",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-03T12:00:00Z",
+            "determination_date": "2026-07-27T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "the-trustee-for-australian-retirement-trust": {
+      "id": "the-trustee-for-australian-retirement-trust",
+      "canonical_name": "The Trustee For Australian Retirement Trust",
+      "members": [
+        {
+          "name": "AUSTRALIAN RETIREMENT TRUST PTY LTD",
+          "identifier": "88 010 720 840",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Australian Retirement Trust Pty Ltd as trustee for Australian Retirement Trust",
+          "identifier": "60 905 115 063",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "THE TRUSTEE FOR AUSTRALIAN RETIREMENT TRUST",
+          "identifier": "60 905 115 063",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-75020",
+            "merger_name": "CleanPeak Energy Holdings - Sustainable Energy Infrastructure",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-28T12:00:00Z",
+            "determination_date": "2026-05-14T12:00:00Z"
+          }
+        ],
+        "other": [
+          {
+            "merger_id": "WA-80034",
+            "merger_name": "Australian Retirement Trust \u2013 Westfield Mt Gravatt",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-28T12:00:00Z",
+            "determination_date": "2026-08-25T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-01103",
+            "merger_name": "Discovery Holiday Parks \u2013 four Breeze Holiday Parks",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-18T12:00:00Z",
+            "determination_date": "2026-07-16T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-45010",
+            "merger_name": "Airtree and ors (additional minority co-investors) - Advanced Navigation",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-02T12:00:00Z",
+            "determination_date": "2026-05-01T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-85018",
+            "merger_name": "Discovery Holiday Parks \u2013 Habitat Noosa Everglades Eco Camp",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-20T12:00:00Z",
+            "determination_date": "2026-04-10T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-15004",
+            "merger_name": "Australian Retirement Trust \u2013 Interests in non-rental income (Westfield Sydney)",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-24T12:00:00Z",
+            "determination_date": "2026-02-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 6,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 5,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 24.2,
+        "median_days": 27,
+        "average_business_days": 16.4,
+        "median_business_days": 18,
+        "completed_count": 5
+      }
+    },
+    "triton-investments-advisers-llp": {
+      "id": "triton-investments-advisers-llp",
+      "canonical_name": "Triton Investments Advisers LLP",
+      "members": [
+        {
+          "name": "Triton Investments Advisers LLP",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-20020",
+            "merger_name": "Triton - Integris",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-08T12:00:00Z",
+            "determination_date": "2026-05-25T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    }
+  }
+}

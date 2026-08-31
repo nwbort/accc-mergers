@@ -1,0 +1,345 @@
+{
+  "shard": 201,
+  "shard_count": 256,
+  "parties": {
+    "bimini-holdings-lp": {
+      "id": "bimini-holdings-lp",
+      "canonical_name": "Bimini Holdings, LP",
+      "members": [
+        {
+          "name": "Bimini Holdings, LP",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-55005",
+            "merger_name": "General Atlantic and CPP Investments led consortium - Boats Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-29T12:00:00Z",
+            "determination_date": "2026-02-19T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "centuria-investment-management-cspof-pty-ltd": {
+      "id": "centuria-investment-management-cspof-pty-ltd",
+      "canonical_name": "Centuria Investment Management (Cspof) Pty Ltd",
+      "members": [
+        {
+          "name": "CENTURIA INVESTMENT MANAGEMENT (CSPOF) PTY LTD",
+          "identifier": "68 696 319 098",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-50029",
+            "merger_name": "Centuria Property Funds No. 2 Limited as the responsible entity of Centuria Sydney CBD Prime Office Fund - 680 George St/50 Goulburn St",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-13T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "image-holdco-pty-ltd": {
+      "id": "image-holdco-pty-ltd",
+      "canonical_name": "Image Holdco Pty Ltd",
+      "members": [
+        {
+          "name": "IMAGE HOLDCO PTY LTD",
+          "identifier": "18 623 028 740",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-90019",
+            "merger_name": "Jardines - I-MED",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-03T12:00:00Z",
+            "determination_date": "2026-06-18T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "kimberly-clark-corporation": {
+      "id": "kimberly-clark-corporation",
+      "canonical_name": "Kimberly-Clark Corporation",
+      "members": [
+        {
+          "name": "Kimberly-Clark Corporation",
+          "identifier": "Delaware Entity Registration Number  239026",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-80005",
+            "merger_name": "Kimberly-Clark Corporation - Kenvue Inc.",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-28T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "lmgps-pty-ltd": {
+      "id": "lmgps-pty-ltd",
+      "canonical_name": "Lmgps Pty Ltd",
+      "members": [
+        {
+          "name": "LMGPS PTY LTD",
+          "identifier": "48 612 519 178",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-90011",
+            "merger_name": "Salter Brothers - Buroserv",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-10T12:00:00Z",
+            "determination_date": "2026-04-29T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 19.0,
+        "median_days": 19,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "matsa-gold-pty-ltd": {
+      "id": "matsa-gold-pty-ltd",
+      "canonical_name": "Matsa Gold Pty Ltd",
+      "members": [
+        {
+          "name": "MATSA GOLD PTY LTD",
+          "identifier": "88 613 060 352",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-80028",
+            "merger_name": "AngloGold Ashanti Australia \u2013 Matsa Lake Carey tenements",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-08T12:00:00Z",
+            "determination_date": "2026-07-30T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "ph-medical-centres-pty-ltd": {
+      "id": "ph-medical-centres-pty-ltd",
+      "canonical_name": "Ph Medical Centres Pty Ltd",
+      "members": [
+        {
+          "name": "PH MEDICAL CENTRES PTY LTD",
+          "identifier": "84 615 268 043",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-15027",
+            "merger_name": "Partnered Health - Ryan Plaza Medical Services",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-03T12:00:00Z",
+            "determination_date": "2026-08-08T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-85022",
+            "merger_name": "PH Medical Centres - Riverstone Family Medical Practice",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-08T12:00:00Z",
+            "determination_date": "2026-04-16T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 36.0,
+        "median_days": 36,
+        "average_business_days": 25.0,
+        "median_business_days": 25,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 8.0,
+        "median_days": 8,
+        "average_business_days": 6.0,
+        "median_business_days": 6,
+        "completed_count": 1
+      }
+    },
+    "sanad-services-group-owned-by-one-hundred-and-seven-investment-rsc-ltd-sole-prop": {
+      "id": "sanad-services-group-owned-by-one-hundred-and-seven-investment-rsc-ltd-sole-prop",
+      "canonical_name": "Sanad Services Group owned by One Hundred and Seven Investment RSC LTD \u2013 Sole Proprietorship L.L.C.",
+      "members": [
+        {
+          "name": "Sanad Services Group owned by One Hundred and Seven Investment RSC LTD \u2013 Sole Proprietorship L.L.C.",
+          "identifier": "CN2969483",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-25037",
+            "merger_name": "Sanad Services and Tikehau Capital \u2013 Revima",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-21T12:00:00Z",
+            "determination_date": "2026-08-17T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

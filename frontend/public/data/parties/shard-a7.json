@@ -1,0 +1,501 @@
+{
+  "shard": 167,
+  "shard_count": 256,
+  "parties": {
+    "bond-lux-co-invest-s-r-l": {
+      "id": "bond-lux-co-invest-s-r-l",
+      "canonical_name": "Bond Lux Co-Invest S.\u00e0 r.l.",
+      "members": [
+        {
+          "name": "Bond Lux Co-Invest S.\u00e0 r.l.",
+          "identifier": "Luxembourg registered number  B268815",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-01108",
+            "merger_name": "Oakley Capital \u2013 XTEL",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-12T12:00:00Z",
+            "determination_date": "2026-06-30T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "collins-restaurants-management-pty-ltd": {
+      "id": "collins-restaurants-management-pty-ltd",
+      "canonical_name": "Collins Restaurants Management Pty Ltd",
+      "members": [
+        {
+          "name": "Collins Restaurants Management Pty Ltd",
+          "identifier": "24 093 912 979",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-70018",
+            "merger_name": "Restaurant Brands and Yum! Brands \u2013 Taco Bell restaurants",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-18T12:00:00Z",
+            "determination_date": "2026-06-11T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "crossmuller-pty-limited": {
+      "id": "crossmuller-pty-limited",
+      "canonical_name": "Crossmuller Pty. Limited",
+      "members": [
+        {
+          "name": "CROSSMULLER PTY. LIMITED",
+          "identifier": "98 088 327 093",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-90004",
+            "merger_name": "Crossmuller \u2013 GEM",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-16T12:00:00Z",
+            "determination_date": "2026-03-05T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "derbysoft-hong-kong-limited": {
+      "id": "derbysoft-hong-kong-limited",
+      "canonical_name": "DerbySoft (Hong Kong) Limited",
+      "members": [
+        {
+          "name": "DerbySoft (Hong Kong) Limited",
+          "identifier": "Hong Kong Business Registration Certificate Number: 6594292400004242",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-90014",
+            "merger_name": "Constellation Software - DerbySoft Holdings",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-29T12:00:00Z",
+            "determination_date": "2026-05-15T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "five-v-frontier-fund-ugp1-pty-ltd": {
+      "id": "five-v-frontier-fund-ugp1-pty-ltd",
+      "canonical_name": "Five V Frontier Fund UGP1 Pty Ltd",
+      "members": [
+        {
+          "name": "Five V Frontier Fund UGP1 Pty Ltd",
+          "identifier": "677 413 633",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-25008",
+            "merger_name": "Five V Capital - FTP Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-04T12:00:00Z",
+            "determination_date": "2026-03-24T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "kinghorn-motors-pty-ltd": {
+      "id": "kinghorn-motors-pty-ltd",
+      "canonical_name": "Kinghorn Motors Pty Ltd",
+      "members": [
+        {
+          "name": "KINGHORN MOTORS PTY LTD",
+          "identifier": "33 000 220 557",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-65026",
+            "merger_name": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-22T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-30010",
+            "merger_name": "MAG South Coast - Country Motor Company / Kinghorn Motors",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-20T12:00:00Z",
+            "determination_date": "2026-05-15T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "nolan-meats-pty-ltd": {
+      "id": "nolan-meats-pty-ltd",
+      "canonical_name": "Nolan Meats Pty. Ltd.",
+      "members": [
+        {
+          "name": "NOLAN MEATS PTY. LTD.",
+          "identifier": "81 096 869 304",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-35018",
+            "merger_name": "Hewitt \u2013 Nolan Meats",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-01T12:00:00Z",
+            "determination_date": "2026-07-27T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "norton-gold-fields-pty-ltd": {
+      "id": "norton-gold-fields-pty-ltd",
+      "canonical_name": "Norton Gold Fields Pty Ltd",
+      "members": [
+        {
+          "name": "Norton Gold Fields Pty Ltd",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-25020",
+            "merger_name": "Zijin Mining - Chifeng",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-11T12:00:00Z",
+            "determination_date": "2026-05-25T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "reinhard-mohn-nederland-b-v-formerly-row-holdco-b-v": {
+      "id": "reinhard-mohn-nederland-b-v-formerly-row-holdco-b-v",
+      "canonical_name": "Reinhard Mohn Nederland B.V. (formerly ROW HoldCo B.V.)",
+      "members": [
+        {
+          "name": "Reinhard Mohn Nederland B.V. (formerly ROW HoldCo B.V.)",
+          "identifier": "Company Number: 42027204",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-75023",
+            "merger_name": "Bertelsmann Music Group - Concord",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-18T12:00:00Z",
+            "determination_date": "2026-07-10T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "stamen-greenwich-property-pty-ltd": {
+      "id": "stamen-greenwich-property-pty-ltd",
+      "canonical_name": "Stamen Greenwich Property Pty Ltd",
+      "members": [
+        {
+          "name": "STAMEN GREENWICH PROPERTY PTY LTD",
+          "identifier": "82 613 786 182",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-75012",
+            "merger_name": "Opal HealthCare \u2013 Greenwich Place residential aged care home",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-19T12:00:00Z",
+            "determination_date": "2026-04-13T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "tpg-inc": {
+      "id": "tpg-inc",
+      "canonical_name": "TPG Inc.",
+      "members": [
+        {
+          "name": "TPG Inc.",
+          "identifier": "SEC  872063362",
+          "identifier_type": null
+        },
+        {
+          "name": "TPG, Inc",
+          "identifier": "US EIN  872063362",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-40016",
+            "merger_name": "Creative Planning \u2013 MASECO",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-10T12:00:00Z",
+            "determination_date": "2026-04-23T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-25003",
+            "merger_name": "Delinea (TPG) - StrongDM",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-20T12:00:00Z",
+            "determination_date": "2026-02-03T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-70002",
+            "merger_name": "Ethos (TPG) \u2013 EMIS and certain related assets",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-03T12:00:00Z",
+            "determination_date": "2026-01-13T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 3,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 3,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 12.333333333333334,
+        "median_days": 13,
+        "average_business_days": 6.666666666666667,
+        "median_business_days": 9,
+        "completed_count": 3
+      }
+    }
+  }
+}
