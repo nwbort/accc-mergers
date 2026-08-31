@@ -1030,6 +1030,17 @@ def _normalize_attachment_name(url):
     return normalized or None
 
 
+def _attachment_directory(url):
+    """The directory an attachment is served from, for spotting a relocation.
+
+    The Aug 2026 template change moves documents out of
+    /system/files/public-merger-register/documents/ and into
+    /system/files/moderated_files/; a plain re-upload leaves them where they
+    were and only changes the CMS suffix on the filename.
+    """
+    return unquote(urlparse(url or '').path).rsplit('/', 1)[0]
+
+
 def _title_from_attachment_url(url):
     """Human-readable event title derived from an attachment's filename.
 
@@ -1066,28 +1077,45 @@ def _same_consultation_document(scraped_event, existing_event):
     return name is not None and name == _normalize_attachment_name(existing_event.get('url'))
 
 
-def _same_undated_document(scraped_event, existing_event):
-    """True when an undated scraped row carries an existing event's document.
+def _same_relocated_document(scraped_event, existing_event):
+    """True when a scraped row carries an existing event's document under a
+    title that no longer matches.
 
-    The ACCC sometimes re-uploads a document into a row it leaves undated (and,
-    before _scrape_events names such rows after their attachment, untitled) —
+    The Aug 2026 template change re-uploads documents under
+    /system/files/moderated_files/ and sometimes re-titles them in the same
+    move: MN-90008's "Black Rhino - Club Hotel - Remedy Offer - 9 July 2026"
+    came back as "Black Rhino - Club Hotel Motel Roma - Remedy Offer". The ACCC
+    also re-uploads a document into a row it leaves undated (and, before
+    _scrape_events names such rows after their attachment, untitled) —
     MN-90027's questionnaire came back as "... - Questionnaire_0.docx" that way.
-    A row with no date has no title+date identity to match on, so the
-    attachment's own name is the only thing tying it to the event it replaces;
-    without this the existing event is flagged 'removed' and the row appended as
-    a duplicate of it.
+
+    Either way the title is gone as a way to recognise the event, so the
+    attachment's own name identifies it instead. Without this the existing
+    event is flagged 'removed' and the row appended as a duplicate of it.
+
+    The filename alone is too weak a signal to spend on every timeline
+    document — the CMS suffix means "X.pdf" and "X_5.pdf" normalise alike — so
+    it is only reached when the row has given up its own identity: an undated
+    row has none to begin with, and a dated one must have actually moved
+    directory, which is what the Aug 2026 relocation does and what an ordinary
+    re-upload within the same directory does not.
     """
-    if scraped_event.get('date'):
-        return False
     name = _normalize_attachment_name(scraped_event.get('url'))
-    return name is not None and name == _normalize_attachment_name(existing_event.get('url'))
+    if name is None or name != _normalize_attachment_name(existing_event.get('url')):
+        return False
+    if not scraped_event.get('date'):
+        return True
+    return (_attachment_directory(scraped_event.get('url'))
+            != _attachment_directory(existing_event.get('url'))
+            and _dates_within_one_day(scraped_event.get('date', ''),
+                                      existing_event.get('date', '')))
 
 
 def _matches_existing_event(scraped_event, existing_event):
     """True when a scraped event is a re-publication of an existing event."""
     return (_same_event_identity(scraped_event, existing_event)
             or _same_consultation_document(scraped_event, existing_event)
-            or _same_undated_document(scraped_event, existing_event))
+            or _same_relocated_document(scraped_event, existing_event))
 
 
 def _dates_within_one_day(date1, date2):

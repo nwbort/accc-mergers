@@ -3482,11 +3482,15 @@ class TestScrapeEventsBlankRow:
         assert events[0]['title'] == 'AbbVie - Apogee - Phase 1 determination'
 
 
-class TestMergeEventsUndatedReupload:
-    """MN-90027: the ACCC re-uploaded the questionnaire as "..._0.docx" in an
-    undated row, so the scraped event carried no title+date identity to match
-    on. Without a filename match the original event was flagged 'removed' and
-    the re-upload appended beside it as a duplicate."""
+class TestMergeEventsRelocatedDocument:
+    """A re-upload whose title no longer matches must re-bind to its event
+    rather than be appended beside it as a duplicate.
+
+    MN-90027: the questionnaire came back as "..._0.docx" in an undated row, so
+    the scraped event carried no title+date identity at all.
+    MN-90008: the remedy offer moved to /system/files/moderated_files/ and was
+    re-titled on the way ("Black Rhino - Club Hotel - Remedy Offer - 9 July
+    2026" -> "Black Rhino - Club Hotel Motel Roma - Remedy Offer")."""
 
     TITLE = 'AbbVie - Apogee - Questionnaire'
     OLD_URL = ('https://www.accc.gov.au/system/files/public-merger-register/'
@@ -3532,14 +3536,54 @@ class TestMergeEventsUndatedReupload:
         assert len(merged) == 1
         assert merged[0]['display_title'] == self.TITLE
 
-    def test_a_dated_row_keeps_the_stricter_title_and_date_rule(self):
-        # Only rows with no date of their own fall back to filename matching:
-        # a dated document on another date is a separate timeline entry.
+    # MN-90008's remedy offer: the same file, on the same date, re-titled and
+    # moved out of /documents/ into /moderated_files/.
+    RELOCATED_URL = ('https://www.accc.gov.au/system/files/moderated_files/'
+                     'AbbVie%20-%20Apogee%20-%20Questionnaire.docx')
+
+    def test_rebinds_a_retitled_document_that_moved_directory(self):
+        merged = _merge_events(
+            self._scraped(date='2026-07-28T12:00:00Z',
+                          title='AbbVie - Apogee - Phase 1 consultation',
+                          url=self.RELOCATED_URL),
+            self._existing(), 'MN-90027', set(),
+        )
+        assert len(merged) == 1
+        assert merged[0]['url'] == self.RELOCATED_URL
+
+    def test_a_retitled_reupload_that_stayed_put_is_a_separate_event(self):
+        # Within one directory the filename is too weak a signal to override
+        # the title: "X.pdf" and "X_5.pdf" normalise alike, so a re-upload
+        # there keeps the stricter title+date rule.
+        merged = _merge_events(
+            self._scraped(date='2026-07-28T12:00:00Z',
+                          title='Some other document'),
+            self._existing(), 'MN-90027', set(),
+        )
+        assert len(merged) == 2
+
+    def test_the_date_still_has_to_agree(self):
+        # The filename fallback is kept honest by the date: a same-named
+        # document on another date is a separate timeline entry.
         merged = _merge_events(
             self._scraped(date='2026-09-25T12:00:00Z', title='Some other document'),
             self._existing(), 'MN-90027', set(),
         )
         assert len(merged) == 2
+
+    def test_a_stale_removed_copy_is_dropped_once_the_live_one_exists(self):
+        # MN-90008's shape: data already carries both the 'removed' copy under
+        # the old URL and the re-titled 'live' copy under the relocated one.
+        relocated = self._scraped(date='2026-07-28T12:00:00Z',
+                                  title='AbbVie - Apogee - Phase 1 consultation',
+                                  url=self.RELOCATED_URL)
+        existing = self._existing()
+        existing['events'][0]['status'] = 'removed'
+        existing['events'].append(relocated[0])
+        merged = _merge_events(relocated, existing, 'MN-90027', set())
+        assert len(merged) == 1
+        assert merged[0]['url'] == self.RELOCATED_URL
+        assert merged[0]['status'] == 'live'
 
     def test_a_different_undated_document_is_not_rebound(self):
         merged = _merge_events(
