@@ -86,16 +86,37 @@ def clean_merger(merger: dict[str, Any]) -> dict[str, Any]:
     return merger
 
 
+def load_records(paths: list[str]) -> list[dict]:
+    """Load merger records from either source shape.
+
+    ``--mergers-json <path>`` reads the combined ``data/output/mergers.json``
+    (a ``{"mergers": [...]}`` object) and returns its records ordered by
+    merger_id. Otherwise every path is read as one merger file, in the order
+    given. The combined file is what ``generate-cli-data.sh`` uses: it holds
+    the full enriched records, so the deployed per-merger files stay free to
+    carry only what the site renders.
+    """
+    if paths[:1] == ["--mergers-json"]:
+        if len(paths) != 2:
+            raise SystemExit("--mergers-json takes exactly one path")
+        with open(paths[1]) as f:
+            data = json.load(f)
+        return sorted(data["mergers"], key=lambda m: m.get("merger_id") or "")
+    records = []
+    for path in paths:
+        with open(path) as f:
+            records.append(json.load(f))
+    return records
+
+
 def _main(paths: list[str]) -> None:
-    """Aggregate merger JSON files into a single cleaned array on stdout.
+    """Aggregate merger records into a single cleaned array on stdout.
 
     Used by ``generate-cli-data.sh`` as a drop-in replacement for
     ``jq -s '.' <files>``.
     """
     result = []
-    for path in paths:
-        with open(path) as f:
-            merger = json.load(f)
+    for merger in load_records(paths):
         clean_merger(merger)
         result.append(merger)
     json.dump(result, sys.stdout, separators=(",", ":"), ensure_ascii=False)

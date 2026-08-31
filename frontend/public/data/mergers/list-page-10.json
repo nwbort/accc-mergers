@@ -16,14 +16,7 @@
       "acquirers": [
         {
           "name": "AWP Australia Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "52 097 227 177",
           "canonical": {
-            "id": "awp-australia-pty-ltd",
-            "name": "AWP Australia"
-          },
-          "party_page": {
-            "id": "awp-australia-pty-ltd",
             "name": "AWP Australia"
           }
         }
@@ -31,14 +24,7 @@
       "targets": [
         {
           "name": "nib Travel Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "48 132 902 713",
           "canonical": {
-            "id": "nib",
-            "name": "nib"
-          },
-          "party_page": {
-            "id": "nib",
             "name": "nib"
           }
         }
@@ -46,92 +32,43 @@
       "other_parties": [
         {
           "name": "nib Travel Insurance Distribution Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "40 129 262 175",
           "canonical": {
-            "id": "nib",
-            "name": "nib"
-          },
-          "party_page": {
-            "id": "nib",
             "name": "nib"
           }
         },
         {
           "name": "AWP Australia Holdings Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "75 097 227 211",
           "canonical": {
-            "id": "awp-australia-pty-ltd",
-            "name": "AWP Australia"
-          },
-          "party_page": {
-            "id": "awp-australia-pty-ltd",
             "name": "AWP Australia"
           }
         },
         {
           "name": "Suresave Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "82 137 885 262",
           "canonical": {
-            "id": "nib",
-            "name": "nib"
-          },
-          "party_page": {
-            "id": "nib",
             "name": "nib"
           }
         },
         {
           "name": "nib Holdings Ltd",
-          "identifier_type": "ABN",
-          "identifier": "51 125 633 856",
           "canonical": {
-            "id": "nib",
-            "name": "nib"
-          },
-          "party_page": {
-            "id": "nib",
             "name": "nib"
           }
         },
         {
           "name": "nib Travel Services (Australia) Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "81 115 932 173",
           "canonical": {
-            "id": "nib",
-            "name": "nib"
-          },
-          "party_page": {
-            "id": "nib",
             "name": "nib"
           }
         },
         {
           "name": "Travel Insurance Direct Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "30 121 659 470",
           "canonical": {
-            "id": "nib",
-            "name": "nib"
-          },
-          "party_page": {
-            "id": "nib",
             "name": "nib"
           }
         },
         {
           "name": "nib International Assistance Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "72 164 763 884",
           "canonical": {
-            "id": "nib",
-            "name": "nib"
-          },
-          "party_page": {
-            "id": "nib",
             "name": "nib"
           }
         }
@@ -141,8 +78,7 @@
           "code": "6322",
           "name": "General Insurance"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/allianz-%E2%80%93-certain-assets-of-nib%E2%80%99s-australian-travel-insurance-business"
+      ]
     },
     {
       "merger_id": "WA-05033",
@@ -159,46 +95,21 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "Squares Blocker, inc.",
-          "identifier_type": null,
-          "identifier": "10665193",
-          "party_page": {
-            "id": "squares-blocker-inc",
-            "name": "Squares Blocker, inc."
-          }
+          "name": "Squares Blocker, inc."
         }
       ],
       "targets": [
         {
-          "name": "Chess Holdings, LLC",
-          "identifier_type": null,
-          "identifier": "6374364",
-          "party_page": {
-            "id": "chess-holdings-llc",
-            "name": "Chess Holdings, LLC"
-          }
+          "name": "Chess Holdings, LLC"
         }
       ],
       "other_parties": [
         {
-          "name": "General Atlantic, L.P.",
-          "identifier_type": null,
-          "identifier": "6377934",
-          "party_page": {
-            "id": "general-atlantic-l-p",
-            "name": "General Atlantic, L.P."
-          }
+          "name": "General Atlantic, L.P."
         },
         {
           "name": "CVC Capital Partners plc",
-          "identifier_type": null,
-          "identifier": "140080",
           "canonical": {
-            "id": "cvc-capital-partners",
-            "name": "CVC Capital Partners"
-          },
-          "party_page": {
-            "id": "cvc-capital-partners",
             "name": "CVC Capital Partners"
           }
         }
@@ -208,8 +119,7 @@
           "code": "5921",
           "name": "Data Processing and Web Hosting Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/cvc-capital-partners-%E2%80%93-chesscom"
+      ]
     },
     {
       "merger_id": "WA-25039",
@@ -226,44 +136,20 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "TASMEA LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "22 088 588 425",
-          "party_page": {
-            "id": "tasmea-limited",
-            "name": "Tasmea Limited"
-          }
+          "name": "TASMEA LIMITED"
         }
       ],
       "targets": [
         {
-          "name": "JPS HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "50 661 247 178",
-          "party_page": {
-            "id": "jps-holdings-pty-ltd",
-            "name": "Jps Holdings Pty Ltd"
-          }
+          "name": "JPS HOLDINGS PTY LTD"
         }
       ],
       "other_parties": [
         {
-          "name": "JPS Management & Execution Pty Ltd",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "jps-management-execution-pty-ltd",
-            "name": "JPS Management & Execution Pty Ltd"
-          }
+          "name": "JPS Management & Execution Pty Ltd"
         },
         {
-          "name": "Safe Isolation Australia Pty Ltd",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "safe-isolation-australia-pty-ltd",
-            "name": "Safe Isolation Australia Pty Ltd"
-          }
+          "name": "Safe Isolation Australia Pty Ltd"
         }
       ],
       "anzsic_codes": [
@@ -311,8 +197,7 @@
           "code": "7212",
           "name": "Labour Supply Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/tasmea-%E2%80%93-jps-holdings"
+      ]
     },
     {
       "merger_id": "WA-45021",
@@ -329,80 +214,32 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "MCDONALD'S AUSTRALIA LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "43 008 496 928",
-          "party_page": {
-            "id": "mcdonald-s-australia-limited",
-            "name": "Mcdonald'S Australia Limited"
-          }
+          "name": "MCDONALD'S AUSTRALIA LIMITED"
         }
       ],
       "targets": [
         {
-          "name": "FRYGIRL PTY LTD as trustee for FRYGIRL TRUST",
-          "identifier_type": "ACN",
-          "identifier": "168 841 423",
-          "party_page": {
-            "id": "frygirl-pty-ltd-as-trustee-for-frygirl-trust",
-            "name": "FRYGIRL PTY LTD as trustee for FRYGIRL TRUST"
-          }
+          "name": "FRYGIRL PTY LTD as trustee for FRYGIRL TRUST"
         },
         {
-          "name": "GOZOBOY PTY LTD as trustee for GOZOBOY TRUST",
-          "identifier_type": "ACN",
-          "identifier": "649 957 844",
-          "party_page": {
-            "id": "gozoboy-pty-ltd-as-trustee-for-gozoboy-trust",
-            "name": "GOZOBOY PTY LTD as trustee for GOZOBOY TRUST"
-          }
+          "name": "GOZOBOY PTY LTD as trustee for GOZOBOY TRUST"
         },
         {
-          "name": "SHERLEE PTY LIMITED as trustee for SHERLEE TRUST",
-          "identifier_type": "ABN",
-          "identifier": "69 126 563 817",
-          "party_page": {
-            "id": "sherlee-pty-limited-as-trustee-for-sherlee-trust",
-            "name": "SHERLEE PTY LIMITED as trustee for SHERLEE TRUST"
-          }
+          "name": "SHERLEE PTY LIMITED as trustee for SHERLEE TRUST"
         },
         {
-          "name": "JAYARK PTY LIMITED as trustee for JAYARK TRUST",
-          "identifier_type": "ABN",
-          "identifier": "77 126 563 853",
-          "party_page": {
-            "id": "jayark-pty-limited-as-trustee-for-jayark-trust",
-            "name": "JAYARK PTY LIMITED as trustee for JAYARK TRUST"
-          }
+          "name": "JAYARK PTY LIMITED as trustee for JAYARK TRUST"
         },
         {
-          "name": "KRAMFORD PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "164 960 534",
-          "party_page": {
-            "id": "kramford-pty-ltd",
-            "name": "Kramford Pty Ltd"
-          }
+          "name": "KRAMFORD PTY LTD"
         },
         {
-          "name": "PIPMAY PTY LIMITED as trustee for PIPMAY TRUST",
-          "identifier_type": "ABN",
-          "identifier": "97 126 676 597",
-          "party_page": {
-            "id": "pipmay-pty-limited-as-trustee-for-pipmay-trust",
-            "name": "PIPMAY PTY LIMITED as trustee for PIPMAY TRUST"
-          }
+          "name": "PIPMAY PTY LIMITED as trustee for PIPMAY TRUST"
         }
       ],
       "other_parties": [
         {
-          "name": "Mark Halford",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "mark-halford",
-            "name": "Mark Halford"
-          }
+          "name": "Mark Halford"
         }
       ],
       "anzsic_codes": [
@@ -410,8 +247,7 @@
           "code": "4512",
           "name": "Takeaway Food Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/mcdonald%E2%80%99s-australia-%E2%80%93-mcdonald%E2%80%99s-restaurants-in-north-west-sydney"
+      ]
     },
     {
       "merger_id": "WA-80026",
@@ -429,27 +265,14 @@
       "acquirers": [
         {
           "name": "AVC OPERATIONS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "81 607 832 299",
           "canonical": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          },
-          "party_page": {
-            "id": "australian-venue-co",
             "name": "Australian Venue Co"
           }
         }
       ],
       "targets": [
         {
-          "name": "Saracen Property Holdings No2 Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "628 737 646",
-          "party_page": {
-            "id": "saracen-property-holdings-no2-pty-ltd",
-            "name": "Saracen Property Holdings No2 Pty Ltd"
-          }
+          "name": "Saracen Property Holdings No2 Pty Ltd"
         }
       ],
       "other_parties": [],
@@ -458,8 +281,7 @@
           "code": "4520",
           "name": "Pubs, Taverns and Bars"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/australian-venue-co-%E2%80%93-assets-of-chequers-hotel-bullsbrook-wa"
+      ]
     },
     {
       "merger_id": "WA-85037",
@@ -476,33 +298,15 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "TML CV Holdings B.V.",
-          "identifier_type": null,
-          "identifier": "868490945",
-          "party_page": {
-            "id": "tml-cv-holdings-b-v",
-            "name": "TML CV Holdings B.V."
-          }
+          "name": "TML CV Holdings B.V."
         },
         {
-          "name": "Tata Motors Limited",
-          "identifier_type": null,
-          "identifier": "U29102MH2024PLC427506",
-          "party_page": {
-            "id": "tata-motors-limited",
-            "name": "Tata Motors Limited"
-          }
+          "name": "Tata Motors Limited"
         }
       ],
       "targets": [
         {
-          "name": "Iveco Group N.V.",
-          "identifier_type": null,
-          "identifier": "KVK 83102701",
-          "party_page": {
-            "id": "iveco-group-n-v",
-            "name": "Iveco Group N.V."
-          }
+          "name": "Iveco Group N.V."
         }
       ],
       "other_parties": [],
@@ -515,8 +319,7 @@
           "code": "3502",
           "name": "Commercial Vehicle Wholesaling"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/tata-motors-iveco"
+      ]
     },
     {
       "merger_id": "WA-90026",
@@ -533,35 +336,17 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "The Trust Company (Australia) Limited as trustee for Pearl Spring ZB 2016 Trust",
-          "identifier_type": "ABN",
-          "identifier": "77 247 165 207",
-          "party_page": {
-            "id": "the-trust-company-australia-limited-as-trustee-for-pearl-spring-zb-2016-trust",
-            "name": "The Trust Company (Australia) Limited as trustee for Pearl Spring ZB 2016 Trust"
-          }
+          "name": "The Trust Company (Australia) Limited as trustee for Pearl Spring ZB 2016 Trust"
         }
       ],
       "targets": [
         {
-          "name": "MM DS Investor LLC",
-          "identifier_type": null,
-          "identifier": "Company number 10401629",
-          "party_page": {
-            "id": "mm-ds-investor-llc",
-            "name": "MM DS Investor LLC"
-          }
+          "name": "MM DS Investor LLC"
         }
       ],
       "other_parties": [
         {
-          "name": "Abu Dhabi Investment Authority",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "abu-dhabi-investment-authority",
-            "name": "Abu Dhabi Investment Authority"
-          }
+          "name": "Abu Dhabi Investment Authority"
         }
       ],
       "anzsic_codes": [
@@ -573,8 +358,7 @@
           "code": "6712",
           "name": "Non-Residential Property Operators"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/abu-dhabi-investment-authority-%E2%80%93-barings-darling-square-holding-trust"
+      ]
     },
     {
       "merger_id": "MN-30022",
@@ -591,50 +375,24 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "VSA ROADS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "18 136 665 935",
-          "party_page": {
-            "id": "vsa-roads-pty-ltd",
-            "name": "Vsa Roads Pty Ltd"
-          }
+          "name": "VSA ROADS PTY LTD"
         }
       ],
       "targets": [
         {
-          "name": "Head, Transport for Victoria",
-          "identifier_type": "ABN",
-          "identifier": "97 481 088 949",
-          "party_page": {
-            "id": "head-transport-for-victoria",
-            "name": "Head, Transport for Victoria"
-          }
+          "name": "Head, Transport for Victoria"
         }
       ],
       "other_parties": [
         {
           "name": "COLAS AUSTRALIA GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "11 000 388 161",
           "canonical": {
-            "id": "colas",
-            "name": "Colas"
-          },
-          "party_page": {
-            "id": "colas",
             "name": "Colas"
           }
         },
         {
           "name": "COLAS CONTRACTING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "88 127 397 899",
           "canonical": {
-            "id": "colas",
-            "name": "Colas"
-          },
-          "party_page": {
-            "id": "colas",
             "name": "Colas"
           }
         }
@@ -644,8 +402,7 @@
           "code": "3101",
           "name": "Road and Bridge Construction"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/vsa-sprayline"
+      ]
     },
     {
       "merger_id": "WA-10023",
@@ -662,50 +419,24 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "Infoblox Inc.",
-          "identifier_type": null,
-          "identifier": "3662067",
-          "party_page": {
-            "id": "infoblox-inc",
-            "name": "Infoblox Inc."
-          }
+          "name": "Infoblox Inc."
         }
       ],
       "targets": [
         {
-          "name": "Kentik Technologies, Inc",
-          "identifier_type": null,
-          "identifier": "5468887",
-          "party_page": {
-            "id": "kentik-technologies-inc",
-            "name": "Kentik Technologies, Inc"
-          }
+          "name": "Kentik Technologies, Inc"
         }
       ],
       "other_parties": [
         {
           "name": "Warburg Pincus LLC",
-          "identifier_type": null,
-          "identifier": "2097098",
           "canonical": {
-            "id": "warburg-pincus-llc",
-            "name": "Warburg Pincus LLC"
-          },
-          "party_page": {
-            "id": "warburg-pincus-llc",
             "name": "Warburg Pincus LLC"
           }
         },
         {
           "name": "Vista Equity Partners Management, LLC",
-          "identifier_type": null,
-          "identifier": "4326765",
           "canonical": {
-            "id": "vista-equity-partners-management-llc",
-            "name": "Vista Equity Partners Management, LLC"
-          },
-          "party_page": {
-            "id": "vista-equity-partners-management-llc",
             "name": "Vista Equity Partners Management, LLC"
           }
         }
@@ -723,8 +454,7 @@
           "code": "7000",
           "name": "Computer System Design and Related Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/infoblox-%E2%80%93-kentik-technologies"
+      ]
     },
     {
       "merger_id": "WA-75033",
@@ -741,48 +471,22 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "Nelmeer Ashfield Pty Ltd as trustee of the Nelmeer Ashfield Trading Trust",
-          "identifier_type": "ABN",
-          "identifier": "24 087 218 896",
-          "party_page": {
-            "id": "nelmeer-ashfield-pty-ltd-as-trustee-of-the-nelmeer-ashfield-trading-trust",
-            "name": "Nelmeer Ashfield Pty Ltd as trustee of the Nelmeer Ashfield Trading Trust"
-          }
+          "name": "Nelmeer Ashfield Pty Ltd as trustee of the Nelmeer Ashfield Trading Trust"
         },
         {
-          "name": "Meerlen Pty Limited as trustee of Vic on the Park Trust",
-          "identifier_type": "ABN",
-          "identifier": "57 228 189 209",
-          "party_page": {
-            "id": "meerlen-pty-limited-as-trustee-of-vic-on-the-park-trust",
-            "name": "Meerlen Pty Limited as trustee of Vic on the Park Trust"
-          }
+          "name": "Meerlen Pty Limited as trustee of Vic on the Park Trust"
         }
       ],
       "targets": [
         {
           "name": "JDA Peakhurst Hotel Trading Pty Ltd as trustee for JDA Peakhurst Hotel Trading Unit Trust",
-          "identifier_type": "ABN",
-          "identifier": "30 258 368 694",
           "canonical": {
-            "id": "jda-peakhurst-hotel",
-            "name": "JDA Peakhurst Hotel"
-          },
-          "party_page": {
-            "id": "jda-peakhurst-hotel",
             "name": "JDA Peakhurst Hotel"
           }
         },
         {
           "name": "JDA Peakhurst Hotel Investments Pty Ltd as trustee for JDA Peakhurst Hotel Investments Unit Trust",
-          "identifier_type": "ABN",
-          "identifier": "97 966 437 953",
           "canonical": {
-            "id": "jda-peakhurst-hotel",
-            "name": "JDA Peakhurst Hotel"
-          },
-          "party_page": {
-            "id": "jda-peakhurst-hotel",
             "name": "JDA Peakhurst Hotel"
           }
         }
@@ -793,8 +497,7 @@
           "code": "4520",
           "name": "Pubs, Taverns and Bars"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/sonnel-hospitality-group-%E2%80%93-peakhurst-inn-hotel"
+      ]
     },
     {
       "merger_id": "WA-95032",
@@ -811,80 +514,32 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "STATE SWIM FINDON PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "73 698 337 209",
-          "party_page": {
-            "id": "state-swim-findon-pty-ltd",
-            "name": "State Swim Findon Pty Ltd"
-          }
+          "name": "STATE SWIM FINDON PTY LTD"
         },
         {
-          "name": "STATE SWIM MOUNT BARKER PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "64 698 337 174",
-          "party_page": {
-            "id": "state-swim-mount-barker-pty-ltd",
-            "name": "State Swim Mount Barker Pty Ltd"
-          }
+          "name": "STATE SWIM MOUNT BARKER PTY LTD"
         },
         {
-          "name": "STATE SWIM NORWOOD PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "89 698 337 281",
-          "party_page": {
-            "id": "state-swim-norwood-pty-ltd",
-            "name": "State Swim Norwood Pty Ltd"
-          }
+          "name": "STATE SWIM NORWOOD PTY LTD"
         }
       ],
       "targets": [
         {
-          "name": "Findon Swim School Pty Ltd as trustee for the Findon Swim School Trust",
-          "identifier_type": "ACN",
-          "identifier": "608 401 716",
-          "party_page": {
-            "id": "findon-swim-school-pty-ltd-as-trustee-for-the-findon-swim-school-trust",
-            "name": "Findon Swim School Pty Ltd as trustee for the Findon Swim School Trust"
-          }
+          "name": "Findon Swim School Pty Ltd as trustee for the Findon Swim School Trust"
         },
         {
-          "name": "SWIM PLUS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "26 073 687 224",
-          "party_page": {
-            "id": "swim-plus-pty-ltd",
-            "name": "Swim Plus Pty Ltd"
-          }
+          "name": "SWIM PLUS PTY LTD"
         },
         {
-          "name": "Mt Barker Swimming School Pty Ltd as trustee for the Mt Barker Swim School Trust",
-          "identifier_type": "ACN",
-          "identifier": "103 334 194",
-          "party_page": {
-            "id": "mt-barker-swimming-school-pty-ltd-as-trustee-for-the-mt-barker-swim-school-trust",
-            "name": "Mt Barker Swimming School Pty Ltd as trustee for the Mt Barker Swim School Trust"
-          }
+          "name": "Mt Barker Swimming School Pty Ltd as trustee for the Mt Barker Swim School Trust"
         },
         {
-          "name": "NORWOOD SWIM SCHOOL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "29 104 947 551",
-          "party_page": {
-            "id": "norwood-swim-school-pty-ltd",
-            "name": "Norwood Swim School Pty Ltd"
-          }
+          "name": "NORWOOD SWIM SCHOOL PTY LTD"
         }
       ],
       "other_parties": [
         {
-          "name": "Dolphin BidCo Pty Ltd",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "dolphin-bidco-pty-ltd-2",
-            "name": "Dolphin BidCo Pty Ltd"
-          }
+          "name": "Dolphin BidCo Pty Ltd"
         }
       ],
       "anzsic_codes": [
@@ -892,8 +547,7 @@
           "code": "8211",
           "name": "Sports and Physical Recreation Instruction"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/state-swim-%E2%80%93-swim-plus"
+      ]
     },
     {
       "merger_id": "WA-05035",
@@ -910,57 +564,26 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "Alter Domus Nederland B. V.",
-          "identifier_type": null,
-          "identifier": "KVK  34270994",
-          "party_page": {
-            "id": "alter-domus-nederland-b-v",
-            "name": "Alter Domus Nederland B. V."
-          }
+          "name": "Alter Domus Nederland B. V."
         }
       ],
       "targets": [
         {
-          "name": "MSC GROUP CO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "82 640 870 962",
-          "party_page": {
-            "id": "msc-group-co-pty-ltd",
-            "name": "Msc Group Co Pty Ltd"
-          }
+          "name": "MSC GROUP CO PTY LTD"
         }
       ],
       "other_parties": [
         {
           "name": "Cinven Limited",
-          "identifier_type": null,
-          "identifier": "UK Company Number  02192937",
           "canonical": {
-            "id": "cinven-limited",
-            "name": "Cinven Limited"
-          },
-          "party_page": {
-            "id": "cinven-limited",
             "name": "Cinven Limited"
           }
         },
         {
-          "name": "Alter Domus Singapore Pte Ltd",
-          "identifier_type": null,
-          "identifier": "UEN  201009728E",
-          "party_page": {
-            "id": "alter-domus-singapore-pte-ltd",
-            "name": "Alter Domus Singapore Pte Ltd"
-          }
+          "name": "Alter Domus Singapore Pte Ltd"
         },
         {
-          "name": "Alter Domus Global S.\u00e0 r.l.",
-          "identifier_type": null,
-          "identifier": "Luxembourg Trade and Companies Register  B210191",
-          "party_page": {
-            "id": "alter-domus-global-s-r-l",
-            "name": "Alter Domus Global S.\u00e0 r.l."
-          }
+          "name": "Alter Domus Global S.\u00e0 r.l."
         }
       ],
       "anzsic_codes": [
@@ -968,8 +591,7 @@
           "code": "6419",
           "name": "Other Auxiliary Finance and Investment Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/alter-domus-msc-group"
+      ]
     },
     {
       "merger_id": "MN-05032",
@@ -987,40 +609,20 @@
       "acquirers": [
         {
           "name": "Motorola Solutions Finance EMEA Limited",
-          "identifier_type": null,
-          "identifier": "05540794",
           "canonical": {
-            "id": "motorola-solutions",
-            "name": "Motorola Solutions"
-          },
-          "party_page": {
-            "id": "motorola-solutions",
             "name": "Motorola Solutions"
           }
         }
       ],
       "targets": [
         {
-          "name": "D-Fend Solutions AD Ltd.",
-          "identifier_type": null,
-          "identifier": "515600963",
-          "party_page": {
-            "id": "d-fend-solutions-ad-ltd",
-            "name": "D-Fend Solutions AD Ltd."
-          }
+          "name": "D-Fend Solutions AD Ltd."
         }
       ],
       "other_parties": [
         {
           "name": "Motorola Solutions, Inc.",
-          "identifier_type": null,
-          "identifier": "IRS Number  361115800",
           "canonical": {
-            "id": "motorola-solutions",
-            "name": "Motorola Solutions"
-          },
-          "party_page": {
-            "id": "motorola-solutions",
             "name": "Motorola Solutions"
           }
         }
@@ -1030,8 +632,7 @@
           "code": "2429",
           "name": "Other Electronic Equipment Manufacturing"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/motorola-solutions-d-fend-solutions"
+      ]
     },
     {
       "merger_id": "MN-75029",
@@ -1049,85 +650,35 @@
       "acquirers": [
         {
           "name": "Leidos, Inc.",
-          "identifier_type": null,
-          "identifier": "EFN  901386",
           "canonical": {
-            "id": "leidos-inc",
-            "name": "Leidos, Inc."
-          },
-          "party_page": {
-            "id": "leidos-inc",
             "name": "Leidos, Inc."
           }
         },
         {
-          "name": "Analogic Corporation",
-          "identifier_type": null,
-          "identifier": "EFN  5450449",
-          "party_page": {
-            "id": "analogic-corporation",
-            "name": "Analogic Corporation"
-          }
+          "name": "Analogic Corporation"
         },
         {
-          "name": "AHP-ANLG IV, LLC",
-          "identifier_type": null,
-          "identifier": "EFN  6840942",
-          "party_page": {
-            "id": "ahp-anlg-iv-llc",
-            "name": "Ahp-Anlg Iv, Llc"
-          }
+          "name": "AHP-ANLG IV, LLC"
         }
       ],
       "targets": [
         {
-          "name": "ANLG Holding Company, Inc.",
-          "identifier_type": null,
-          "identifier": "EFN  6831336",
-          "party_page": {
-            "id": "anlg-holding-company-inc",
-            "name": "ANLG Holding Company, Inc."
-          }
+          "name": "ANLG Holding Company, Inc."
         },
         {
-          "name": "LSD&A, Inc.",
-          "identifier_type": null,
-          "identifier": "Charter ID  2663695",
-          "party_page": {
-            "id": "lsd-a-inc",
-            "name": "LSD&A, Inc."
-          }
+          "name": "LSD&A, Inc."
         }
       ],
       "other_parties": [
         {
-          "name": "Altaris Partners, LLC",
-          "identifier_type": null,
-          "identifier": "EFN  4261614",
-          "party_page": {
-            "id": "altaris-partners-llc",
-            "name": "Altaris Partners, LLC"
-          }
+          "name": "Altaris Partners, LLC"
         },
         {
-          "name": "ANLG Intermediate Company, LLC",
-          "identifier_type": null,
-          "identifier": "EFN  6831160",
-          "party_page": {
-            "id": "anlg-intermediate-company-llc",
-            "name": "ANLG Intermediate Company, LLC"
-          }
+          "name": "ANLG Intermediate Company, LLC"
         },
         {
           "name": "Leidos Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "EFN  4014717",
           "canonical": {
-            "id": "leidos-inc",
-            "name": "Leidos, Inc."
-          },
-          "party_page": {
-            "id": "leidos-inc",
             "name": "Leidos, Inc."
           }
         }
@@ -1149,8 +700,7 @@
           "code": "9422",
           "name": "Electronic (except Domestic Appliance) and Precision Equipment Repair and Maintenance"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/analogic-leidos-ses-business"
+      ]
     },
     {
       "merger_id": "WA-01114",
@@ -1168,40 +718,20 @@
       "acquirers": [
         {
           "name": "Elevate BidCo GmbH",
-          "identifier_type": null,
-          "identifier": "HRB 141746",
           "canonical": {
-            "id": "elevate-bidco-gmbh",
-            "name": "Elevate BidCo GmbH"
-          },
-          "party_page": {
-            "id": "elevate-bidco-gmbh",
             "name": "Elevate BidCo GmbH"
           }
         }
       ],
       "targets": [
         {
-          "name": "Exolaunch GmbH",
-          "identifier_type": null,
-          "identifier": "HRB 134539 B",
-          "party_page": {
-            "id": "exolaunch-gmbh",
-            "name": "Exolaunch GmbH"
-          }
+          "name": "Exolaunch GmbH"
         }
       ],
       "other_parties": [
         {
           "name": "EQT Fund Management S.\u00e0 r.l.",
-          "identifier_type": null,
-          "identifier": "B167972",
           "canonical": {
-            "id": "eqt-fund-management-s-r-l",
-            "name": "EQT Fund Management"
-          },
-          "party_page": {
-            "id": "eqt-fund-management-s-r-l",
             "name": "EQT Fund Management"
           }
         }
@@ -1231,8 +761,7 @@
           "code": "6924",
           "name": "Other Specialised Design Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/eqt-fund-management-%E2%80%93-exolaunch"
+      ]
     },
     {
       "merger_id": "WA-25036",
@@ -1249,53 +778,23 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "GForce 137 GmbH",
-          "identifier_type": null,
-          "identifier": "HRB 143320",
-          "party_page": {
-            "id": "gforce-137-gmbh",
-            "name": "GForce 137 GmbH"
-          }
+          "name": "GForce 137 GmbH"
         }
       ],
       "targets": [
         {
-          "name": "HYROX World GmbH (HYROX)",
-          "identifier_type": null,
-          "identifier": "HRB 144750",
-          "party_page": {
-            "id": "hyrox-world-gmbh-hyrox",
-            "name": "HYROX World GmbH (HYROX)"
-          }
+          "name": "HYROX World GmbH (HYROX)"
         }
       ],
       "other_parties": [
         {
-          "name": "L Catterton Europe SAS (LCAT Europe), a French soci\u00e9t\u00e9 par actions simplifi\u00e9e",
-          "identifier_type": null,
-          "identifier": "Nombre unique d'identification (SIREN): 433 485 596",
-          "party_page": {
-            "id": "l-catterton-europe-sas-lcat-europe-a-french-soci-t-par-actions-simplifi-e",
-            "name": "L Catterton Europe SAS (LCAT Europe), a French soci\u00e9t\u00e9 par actions simplifi\u00e9e"
-          }
+          "name": "L Catterton Europe SAS (LCAT Europe), a French soci\u00e9t\u00e9 par actions simplifi\u00e9e"
         },
         {
-          "name": "Moritz F\u00fcrste",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "moritz-f-rste",
-            "name": "Moritz F\u00fcrste"
-          }
+          "name": "Moritz F\u00fcrste"
         },
         {
-          "name": "J\u00f6rg Christian Toetzke",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "j-rg-christian-toetzke",
-            "name": "J\u00f6rg Christian Toetzke"
-          }
+          "name": "J\u00f6rg Christian Toetzke"
         }
       ],
       "anzsic_codes": [
@@ -1303,8 +802,7 @@
           "code": "9112",
           "name": "Sports and Physical Recreation Clubs and Sports Professionals"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/l-catterton-europe-%E2%80%93-hyrox"
+      ]
     },
     {
       "merger_id": "WA-70028",
@@ -1321,35 +819,17 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "KALARI PROPRIETARY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "14 004 595 395",
-          "party_page": {
-            "id": "kalari-proprietary-limited",
-            "name": "Kalari Proprietary Limited"
-          }
+          "name": "KALARI PROPRIETARY LIMITED"
         }
       ],
       "targets": [
         {
-          "name": "DEGUNST TRANSPORT PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "12 089 249 329",
-          "party_page": {
-            "id": "degunst-transport-pty-ltd",
-            "name": "Degunst Transport Pty. Ltd."
-          }
+          "name": "DEGUNST TRANSPORT PTY. LTD."
         }
       ],
       "other_parties": [
         {
-          "name": "QUBE BULK PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "13 138 868 756",
-          "party_page": {
-            "id": "qube-bulk-pty-ltd",
-            "name": "Qube Bulk Pty Ltd"
-          }
+          "name": "QUBE BULK PTY LTD"
         }
       ],
       "anzsic_codes": [
@@ -1361,8 +841,7 @@
           "code": "4610",
           "name": "Road Freight Transport"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/kalari-%E2%80%93-de-gunst%E2%80%99s-gracemere-assets"
+      ]
     },
     {
       "merger_id": "WA-80028",
@@ -1380,60 +859,28 @@
       "acquirers": [
         {
           "name": "ANGLOGOLD ASHANTI AUSTRALIA LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "42 008 737 424",
           "canonical": {
-            "id": "anglogold-ashanti-plc",
-            "name": "AngloGold Ashanti"
-          },
-          "party_page": {
-            "id": "anglogold-ashanti-plc",
             "name": "AngloGold Ashanti"
           }
         }
       ],
       "targets": [
         {
-          "name": "RED OCTOBER GOLD PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 621 765 633",
-          "party_page": {
-            "id": "red-october-gold-pty-ltd",
-            "name": "Red October Gold Pty Ltd"
-          }
+          "name": "RED OCTOBER GOLD PTY LTD"
         }
       ],
       "other_parties": [
         {
           "name": "AngloGold Ashanti plc",
-          "identifier_type": null,
-          "identifier": "CRN  14654651",
           "canonical": {
-            "id": "anglogold-ashanti-plc",
-            "name": "AngloGold Ashanti"
-          },
-          "party_page": {
-            "id": "anglogold-ashanti-plc",
             "name": "AngloGold Ashanti"
           }
         },
         {
-          "name": "MATSA RESOURCES LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "48 106 732 487",
-          "party_page": {
-            "id": "matsa-resources-limited",
-            "name": "Matsa Resources Limited"
-          }
+          "name": "MATSA RESOURCES LIMITED"
         },
         {
-          "name": "MATSA GOLD PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "88 613 060 352",
-          "party_page": {
-            "id": "matsa-gold-pty-ltd",
-            "name": "Matsa Gold Pty Ltd"
-          }
+          "name": "MATSA GOLD PTY LTD"
         }
       ],
       "anzsic_codes": [
@@ -1441,8 +888,7 @@
           "code": "0804",
           "name": "Gold Ore Mining"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/anglogold-ashanti-australia-%E2%80%93-matsa-lake-carey-tenements"
+      ]
     },
     {
       "merger_id": "MN-65028",
@@ -1460,14 +906,7 @@
       "acquirers": [
         {
           "name": "Retail Payment Solutions Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "89 683 915 657",
           "canonical": {
-            "id": "coles",
-            "name": "Coles Group"
-          },
-          "party_page": {
-            "id": "coles",
             "name": "Coles Group"
           }
         }
@@ -1475,40 +914,19 @@
       "targets": [
         {
           "name": "Paydock Holdings Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "31 607 215 163",
           "canonical": {
-            "id": "paydock",
-            "name": "Paydock"
-          },
-          "party_page": {
-            "id": "paydock",
             "name": "Paydock"
           }
         },
         {
           "name": "Paydock AUNZ Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "96 607 219 116",
           "canonical": {
-            "id": "paydock",
-            "name": "Paydock"
-          },
-          "party_page": {
-            "id": "paydock",
             "name": "Paydock"
           }
         },
         {
           "name": "Paydock Ltd",
-          "identifier_type": null,
-          "identifier": "",
           "canonical": {
-            "id": "paydock",
-            "name": "Paydock"
-          },
-          "party_page": {
-            "id": "paydock",
             "name": "Paydock"
           }
         }
@@ -1516,14 +934,7 @@
       "other_parties": [
         {
           "name": "Coles Group Limited",
-          "identifier_type": "ABN",
-          "identifier": "11 004 089 936",
           "canonical": {
-            "id": "coles",
-            "name": "Coles Group"
-          },
-          "party_page": {
-            "id": "coles",
             "name": "Coles Group"
           }
         }
@@ -1541,8 +952,7 @@
           "code": "6419",
           "name": "Other Auxiliary Finance and Investment Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/coles-paydock"
+      ]
     },
     {
       "merger_id": "WA-10024",
@@ -1559,44 +969,20 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "Foxtrott BidCo GmbH",
-          "identifier_type": null,
-          "identifier": "HRB310768",
-          "party_page": {
-            "id": "foxtrott-bidco-gmbh",
-            "name": "Foxtrott BidCo GmbH"
-          }
+          "name": "Foxtrott BidCo GmbH"
         }
       ],
       "targets": [
         {
-          "name": "CEP V Investment 9 S.\u00e0 r.l",
-          "identifier_type": null,
-          "identifier": "B247740",
-          "party_page": {
-            "id": "cep-v-investment-9-s-r-l",
-            "name": "CEP V Investment 9 S.\u00e0 r.l"
-          }
+          "name": "CEP V Investment 9 S.\u00e0 r.l"
         },
         {
-          "name": "Flender Group GmbH",
-          "identifier_type": null,
-          "identifier": "HRB19565",
-          "party_page": {
-            "id": "flender-group-gmbh",
-            "name": "Flender Group GmbH"
-          }
+          "name": "Flender Group GmbH"
         }
       ],
       "other_parties": [
         {
-          "name": "Triton Fund 6 GP SARL",
-          "identifier_type": null,
-          "identifier": "B269053",
-          "party_page": {
-            "id": "triton-fund-6-gp-sarl",
-            "name": "Triton Fund 6 GP SARL"
-          }
+          "name": "Triton Fund 6 GP SARL"
         }
       ],
       "anzsic_codes": [
@@ -1604,8 +990,7 @@
           "code": "9429",
           "name": "Other Machinery and Equipment Repair and Maintenance"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/triton-%E2%80%93-flender"
+      ]
     },
     {
       "merger_id": "WA-35024",
@@ -1622,33 +1007,15 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "ELIMBAH LAND PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "24 694 564 899",
-          "party_page": {
-            "id": "elimbah-land-pty-ltd",
-            "name": "Elimbah Land Pty Ltd"
-          }
+          "name": "ELIMBAH LAND PTY LTD"
         },
         {
-          "name": "SATTERLEY ELIMBAH PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "45 693 905 136",
-          "party_page": {
-            "id": "satterley-elimbah-pty-ltd",
-            "name": "Satterley Elimbah Pty Ltd"
-          }
+          "name": "SATTERLEY ELIMBAH PTY LTD"
         }
       ],
       "targets": [
         {
-          "name": "Elimbah Land JV Pty Ltd",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "elimbah-land-jv-pty-ltd",
-            "name": "Elimbah Land JV Pty Ltd"
-          }
+          "name": "Elimbah Land JV Pty Ltd"
         }
       ],
       "other_parties": [],
@@ -1657,8 +1024,7 @@
           "code": "3211",
           "name": "Land Development and Subdivision"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/hb-land-and-satterley-%E2%80%93-elimbah-land-joint-venture"
+      ]
     },
     {
       "merger_id": "MN-01105",
@@ -1676,14 +1042,7 @@
       "acquirers": [
         {
           "name": "Siemens Mobility Holding B.V.",
-          "identifier_type": null,
-          "identifier": "LEI  529900JJ6XL7YX9GBM87",
           "canonical": {
-            "id": "siemens-mobility-gmbh",
-            "name": "Siemens Mobility GmbH"
-          },
-          "party_page": {
-            "id": "siemens-mobility-gmbh",
             "name": "Siemens Mobility GmbH"
           }
         }
@@ -1691,14 +1050,7 @@
       "targets": [
         {
           "name": "Mer Mec S.p.A.",
-          "identifier_type": null,
-          "identifier": "LEI  81560011DF7243CFC226",
           "canonical": {
-            "id": "mermec",
-            "name": "MerMec"
-          },
-          "party_page": {
-            "id": "mermec",
             "name": "MerMec"
           }
         }
@@ -1706,66 +1058,31 @@
       "other_parties": [
         {
           "name": "Siemens Aktiengesellschaft",
-          "identifier_type": null,
-          "identifier": "LEI  W38RGI023J3WT1HWRP32",
           "canonical": {
-            "id": "siemens-mobility-gmbh",
-            "name": "Siemens Mobility GmbH"
-          },
-          "party_page": {
-            "id": "siemens-mobility-gmbh",
             "name": "Siemens Mobility GmbH"
           }
         },
         {
           "name": "MERMEC AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "42 619 285 988",
           "canonical": {
-            "id": "mermec",
-            "name": "MerMec"
-          },
-          "party_page": {
-            "id": "mermec",
             "name": "MerMec"
           }
         },
         {
           "name": "SIEMENS MOBILITY PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "39 625 304 556",
           "canonical": {
-            "id": "siemens-mobility-gmbh",
-            "name": "Siemens Mobility GmbH"
-          },
-          "party_page": {
-            "id": "siemens-mobility-gmbh",
             "name": "Siemens Mobility GmbH"
           }
         },
         {
           "name": "Angelo Holding S.r.l.",
-          "identifier_type": null,
-          "identifier": "LEI  815600BFD5004E85D746",
           "canonical": {
-            "id": "mermec",
-            "name": "MerMec"
-          },
-          "party_page": {
-            "id": "mermec",
             "name": "MerMec"
           }
         },
         {
           "name": "Siemens Mobility GmbH",
-          "identifier_type": null,
-          "identifier": "LEI  529900LT6G2TUO3TZB94",
           "canonical": {
-            "id": "siemens-mobility-gmbh",
-            "name": "Siemens Mobility GmbH"
-          },
-          "party_page": {
-            "id": "siemens-mobility-gmbh",
             "name": "Siemens Mobility GmbH"
           }
         }
@@ -1779,8 +1096,7 @@
           "code": "3109",
           "name": "Other Heavy and Civil Engineering Construction"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/siemens-mobility-mermec"
+      ]
     },
     {
       "merger_id": "MN-65023",
@@ -1797,24 +1113,12 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "The Trustee for Energy Bay Kappa Fund",
-          "identifier_type": "ABN",
-          "identifier": "37 949 909 024",
-          "party_page": {
-            "id": "the-trustee-for-energy-bay-kappa-fund",
-            "name": "The Trustee for Energy Bay Kappa Fund"
-          }
+          "name": "The Trustee for Energy Bay Kappa Fund"
         }
       ],
       "targets": [
         {
-          "name": "CENTURIA FUNDS MANAGEMENT LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "11 607 153 588",
-          "party_page": {
-            "id": "centuria-funds-management-limited",
-            "name": "Centuria Funds Management Limited"
-          }
+          "name": "CENTURIA FUNDS MANAGEMENT LIMITED"
         }
       ],
       "other_parties": [],
@@ -1835,8 +1139,7 @@
           "code": "3232",
           "name": "Electrical Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/energy-bay-certain-assets-required-to-operate-embedded-networks-for-centuria-capital-group-members"
+      ]
     },
     {
       "merger_id": "MN-95030",
@@ -1854,27 +1157,13 @@
       "acquirers": [
         {
           "name": "ORIGIN ZERO INVESTMENTS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "52 079 089 231",
           "canonical": {
-            "id": "origin-energy-limited",
-            "name": "Origin Energy Limited"
-          },
-          "party_page": {
-            "id": "origin-energy-limited",
             "name": "Origin Energy Limited"
           }
         },
         {
           "name": "ORIGIN ENERGY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "30 000 051 696",
           "canonical": {
-            "id": "origin-energy-limited",
-            "name": "Origin Energy Limited"
-          },
-          "party_page": {
-            "id": "origin-energy-limited",
             "name": "Origin Energy Limited"
           }
         }
@@ -1882,27 +1171,13 @@
       "targets": [
         {
           "name": "CLIMATECH ZERO HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "35 623 827 930",
           "canonical": {
-            "id": "climatech-zero-pty-ltd",
-            "name": "Climatech Zero"
-          },
-          "party_page": {
-            "id": "climatech-zero-pty-ltd",
             "name": "Climatech Zero"
           }
         },
         {
           "name": "CLIMATECH ZERO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "70 623 828 508",
           "canonical": {
-            "id": "climatech-zero-pty-ltd",
-            "name": "Climatech Zero"
-          },
-          "party_page": {
-            "id": "climatech-zero-pty-ltd",
             "name": "Climatech Zero"
           }
         }
@@ -1913,8 +1188,7 @@
           "code": "6923",
           "name": "Engineering Design and Engineering Consulting Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/origin-%E2%80%93-climatech-zero"
+      ]
     },
     {
       "merger_id": "WA-05037",
@@ -1931,24 +1205,12 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "The State of Western Australia",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "the-state-of-western-australia",
-            "name": "The State of Western Australia"
-          }
+          "name": "The State of Western Australia"
         }
       ],
       "targets": [
         {
-          "name": "ST JOHN OF GOD HEALTH CARE INC",
-          "identifier_type": "ABN",
-          "identifier": "21 930 207 958",
-          "party_page": {
-            "id": "st-john-of-god-health-care-inc",
-            "name": "St John Of God Health Care Inc"
-          }
+          "name": "ST JOHN OF GOD HEALTH CARE INC"
         }
       ],
       "other_parties": [],
@@ -1957,8 +1219,7 @@
           "code": "8401",
           "name": "Hospitals (Except Psychiatric Hospitals)"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/the-state-of-western-australia-%E2%80%93-mount-lawley-hospital"
+      ]
     },
     {
       "merger_id": "WA-30026",
@@ -1975,24 +1236,12 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "Count Limited",
-          "identifier_type": "ABN",
-          "identifier": "11 126 990 832",
-          "party_page": {
-            "id": "count-limited",
-            "name": "Count Limited"
-          }
+          "name": "Count Limited"
         }
       ],
       "targets": [
         {
-          "name": "OBM Financial Services Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "629 954 981",
-          "party_page": {
-            "id": "obm-financial-services-pty-ltd",
-            "name": "OBM Financial Services Pty Ltd"
-          }
+          "name": "OBM Financial Services Pty Ltd"
         }
       ],
       "other_parties": [],
@@ -2005,8 +1254,7 @@
           "code": "6932",
           "name": "Accounting Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/count-%E2%80%93-o%E2%80%99brien-accountants-advisors"
+      ]
     },
     {
       "merger_id": "WA-35032",
@@ -2024,40 +1272,20 @@
       "acquirers": [
         {
           "name": "AIRTREE VENTURES OPPORTUNITY FUND 2021 TRUSCO PTY LTD atf the Airtree Ventures AS Co-invesment Oppor",
-          "identifier_type": "ABN",
-          "identifier": "90 652 901 043",
           "canonical": {
-            "id": "australiansuper-pty-ltd",
-            "name": "AustralianSuper"
-          },
-          "party_page": {
-            "id": "australiansuper-pty-ltd",
             "name": "AustralianSuper"
           }
         }
       ],
       "targets": [
         {
-          "name": "ADVANCED NAVIGATION PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "49 156 101 549",
-          "party_page": {
-            "id": "advanced-navigation-pty-ltd",
-            "name": "Advanced Navigation Pty. Ltd."
-          }
+          "name": "ADVANCED NAVIGATION PTY. LTD."
         }
       ],
       "other_parties": [
         {
           "name": "AUSTRALIANSUPER PTY LTD atf AustralianSuper",
-          "identifier_type": "ABN",
-          "identifier": "94 006 457 987",
           "canonical": {
-            "id": "australiansuper-pty-ltd",
-            "name": "AustralianSuper"
-          },
-          "party_page": {
-            "id": "australiansuper-pty-ltd",
             "name": "AustralianSuper"
           }
         }
@@ -2075,8 +1303,7 @@
           "code": "6330",
           "name": "Superannuation Funds"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/australiansuper-%E2%80%93-advanced-navigation"
+      ]
     },
     {
       "merger_id": "WA-60028",
@@ -2093,37 +1320,18 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "ULEXITE GROUP PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "55 684 998 070",
-          "party_page": {
-            "id": "ulexite-group-pty-limited",
-            "name": "Ulexite Group Pty Limited"
-          }
+          "name": "ULEXITE GROUP PTY LIMITED"
         }
       ],
       "targets": [
         {
-          "name": "IGNITION TOPCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "86 661 447 847",
-          "party_page": {
-            "id": "ignition-topco-pty-ltd",
-            "name": "Ignition Topco Pty Ltd"
-          }
+          "name": "IGNITION TOPCO PTY LTD"
         }
       ],
       "other_parties": [
         {
           "name": "EQT Fund Management S.\u00e0 r.l.",
-          "identifier_type": null,
-          "identifier": "Luxembourg Company Registration Number  B167972",
           "canonical": {
-            "id": "eqt-fund-management-s-r-l",
-            "name": "EQT Fund Management"
-          },
-          "party_page": {
-            "id": "eqt-fund-management-s-r-l",
             "name": "EQT Fund Management"
           }
         }
@@ -2137,8 +1345,7 @@
           "code": "7000",
           "name": "Computer System Design and Related Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/eqt-fund-management-s%C3%A0-rl-%E2%80%93-orikan-group"
+      ]
     },
     {
       "merger_id": "WA-60029",
@@ -2155,44 +1362,20 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "Crossfield Global Pte Ltd",
-          "identifier_type": null,
-          "identifier": "UEN  202629303K",
-          "party_page": {
-            "id": "crossfield-global-pte-ltd",
-            "name": "Crossfield Global Pte Ltd"
-          }
+          "name": "Crossfield Global Pte Ltd"
         },
         {
-          "name": "PT AP Investment",
-          "identifier_type": null,
-          "identifier": "NIB  0220201350357",
-          "party_page": {
-            "id": "pt-ap-investment",
-            "name": "PT AP Investment"
-          }
+          "name": "PT AP Investment"
         }
       ],
       "targets": [
         {
-          "name": "Vitrinite Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "46 167 744 578",
-          "party_page": {
-            "id": "vitrinite-pty-ltd",
-            "name": "Vitrinite Pty Ltd"
-          }
+          "name": "Vitrinite Pty Ltd"
         }
       ],
       "other_parties": [
         {
-          "name": "Macmahon Holdings Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "macmahon-holdings-limited",
-            "name": "Macmahon Holdings Limited"
-          }
+          "name": "Macmahon Holdings Limited"
         }
       ],
       "anzsic_codes": [
@@ -2208,8 +1391,7 @@
           "code": "1090",
           "name": "Other Mining Support Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/pt-ap-investment-%E2%80%93-vitrinite"
+      ]
     },
     {
       "merger_id": "WA-80029",
@@ -2226,71 +1408,29 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "NPM Investments 43 B.V.",
-          "identifier_type": null,
-          "identifier": "KVK  96665335",
-          "party_page": {
-            "id": "npm-investments-43-b-v",
-            "name": "NPM Investments 43 B.V."
-          }
+          "name": "NPM Investments 43 B.V."
         }
       ],
       "targets": [
         {
-          "name": "Helix Holdco B.V.",
-          "identifier_type": null,
-          "identifier": "KVK  97637785",
-          "party_page": {
-            "id": "helix-holdco-b-v",
-            "name": "Helix Holdco B.V."
-          }
+          "name": "Helix Holdco B.V."
         }
       ],
       "other_parties": [
         {
-          "name": "SHV Holdings N.V.",
-          "identifier_type": null,
-          "identifier": "KVK  30065974",
-          "party_page": {
-            "id": "shv-holdings-n-v",
-            "name": "SHV Holdings N.V."
-          }
+          "name": "SHV Holdings N.V."
         },
         {
-          "name": "NPM Capital N.V.",
-          "identifier_type": null,
-          "identifier": "KVK  33071274",
-          "party_page": {
-            "id": "npm-capital-n-v",
-            "name": "NPM Capital N.V."
-          }
+          "name": "NPM Capital N.V."
         },
         {
-          "name": "Helion C.V.",
-          "identifier_type": null,
-          "identifier": "KVK  99243342",
-          "party_page": {
-            "id": "helion-c-v",
-            "name": "Helion C.V."
-          }
+          "name": "Helion C.V."
         },
         {
-          "name": "Stichting Helion",
-          "identifier_type": null,
-          "identifier": "KVK  99111330",
-          "party_page": {
-            "id": "stichting-helion",
-            "name": "Stichting Helion"
-          }
+          "name": "Stichting Helion"
         },
         {
-          "name": "WPAI-I B.V.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "wpai-i-b-v",
-            "name": "Wpai-I B.V."
-          }
+          "name": "WPAI-I B.V."
         }
       ],
       "anzsic_codes": [
@@ -2302,8 +1442,7 @@
           "code": "6240",
           "name": "Financial Asset Investing"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/npm-capital-%E2%80%93-ambaflex-group"
+      ]
     },
     {
       "merger_id": "WA-70029",
@@ -2321,27 +1460,13 @@
       "acquirers": [
         {
           "name": "Apollo Capital Management, L.P.",
-          "identifier_type": null,
-          "identifier": "USDE  4293091",
           "canonical": {
-            "id": "apollo-capital-management-l-p",
-            "name": "Apollo Capital Management, L.P."
-          },
-          "party_page": {
-            "id": "apollo-capital-management-l-p",
             "name": "Apollo Capital Management, L.P."
           }
         },
         {
           "name": "AP Emerald (Luxembourg) S.\u00e0 r.l.",
-          "identifier_type": null,
-          "identifier": "RCS  B307795",
           "canonical": {
-            "id": "apollo-capital-management-l-p",
-            "name": "Apollo Capital Management, L.P."
-          },
-          "party_page": {
-            "id": "apollo-capital-management-l-p",
             "name": "Apollo Capital Management, L.P."
           }
         }
@@ -2349,27 +1474,13 @@
       "targets": [
         {
           "name": "Bayer Global Investments B.V.",
-          "identifier_type": null,
-          "identifier": "KVK  51490986",
           "canonical": {
-            "id": "bayer",
-            "name": "Bayer"
-          },
-          "party_page": {
-            "id": "bayer",
             "name": "Bayer"
           }
         },
         {
           "name": "Bayer Asset Management B.V.",
-          "identifier_type": null,
-          "identifier": "KVK  42012880",
           "canonical": {
-            "id": "bayer",
-            "name": "Bayer"
-          },
-          "party_page": {
-            "id": "bayer",
             "name": "Bayer"
           }
         }
@@ -2377,53 +1488,25 @@
       "other_parties": [
         {
           "name": "Bayer Nordic SE",
-          "identifier_type": null,
-          "identifier": "Finnish Patent and Registration Office  24305802",
           "canonical": {
-            "id": "bayer",
-            "name": "Bayer"
-          },
-          "party_page": {
-            "id": "bayer",
             "name": "Bayer"
           }
         },
         {
           "name": "Apollo Global Management, Inc.",
-          "identifier_type": null,
-          "identifier": "CIK 0001858681",
           "canonical": {
-            "id": "apollo-capital-management-l-p",
-            "name": "Apollo Capital Management, L.P."
-          },
-          "party_page": {
-            "id": "apollo-capital-management-l-p",
             "name": "Apollo Capital Management, L.P."
           }
         },
         {
           "name": "Bayer Oy",
-          "identifier_type": null,
-          "identifier": "Finnish Patent and Registration Office  17037774",
           "canonical": {
-            "id": "bayer",
-            "name": "Bayer"
-          },
-          "party_page": {
-            "id": "bayer",
             "name": "Bayer"
           }
         },
         {
           "name": "Bayer Aktiengesellschaft",
-          "identifier_type": null,
-          "identifier": "HRB  48248",
           "canonical": {
-            "id": "bayer",
-            "name": "Bayer"
-          },
-          "party_page": {
-            "id": "bayer",
             "name": "Bayer"
           }
         }
@@ -2453,8 +1536,7 @@
           "code": "6240",
           "name": "Financial Asset Investing"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/apollo-bayer-asset-management"
+      ]
     },
     {
       "merger_id": "MN-20017",
@@ -2471,24 +1553,12 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "Amplifon S.p.A.",
-          "identifier_type": null,
-          "identifier": "Company registration no. 04923960159",
-          "party_page": {
-            "id": "amplifon-s-p-a",
-            "name": "Amplifon S.p.A."
-          }
+          "name": "Amplifon S.p.A."
         }
       ],
       "targets": [
         {
-          "name": "GN Hearing A/S",
-          "identifier_type": null,
-          "identifier": "(CVR) no. 55 08 27 15",
-          "party_page": {
-            "id": "gn-hearing-a-s",
-            "name": "GN Hearing A/S"
-          }
+          "name": "GN Hearing A/S"
         }
       ],
       "other_parties": [],
@@ -2501,8 +1571,7 @@
           "code": "8539",
           "name": "Other Allied Health Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/amplifon-%E2%80%93-gn-hearing"
+      ]
     },
     {
       "merger_id": "MN-90028",
@@ -2519,104 +1588,49 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "PETER WARREN AUTOMOTIVE HOLDINGS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "57 615 674 185",
-          "party_page": {
-            "id": "peter-warren-automotive-holdings-limited",
-            "name": "Peter Warren Automotive Holdings Limited"
-          }
+          "name": "PETER WARREN AUTOMOTIVE HOLDINGS LIMITED"
         }
       ],
       "targets": [
         {
           "name": "Wakeling South Coast Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "636 298 970",
           "canonical": {
-            "id": "wakeling-motos",
-            "name": "Wakeling Motos"
-          },
-          "party_page": {
-            "id": "wakeling-motos",
             "name": "Wakeling Motos"
           }
         },
         {
           "name": "S A Wakeling Nominees Pty Ltd as trustee for S.A. Wakeling Trust",
-          "identifier_type": "ACN",
-          "identifier": "119 879 980",
           "canonical": {
-            "id": "wakeling-motos",
-            "name": "Wakeling Motos"
-          },
-          "party_page": {
-            "id": "wakeling-motos",
             "name": "Wakeling Motos"
           }
         },
         {
           "name": "HURRIKAYNE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "74 118 744 915",
           "canonical": {
-            "id": "wakeling-motos",
-            "name": "Wakeling Motos"
-          },
-          "party_page": {
-            "id": "wakeling-motos",
             "name": "Wakeling Motos"
           }
         },
         {
           "name": "Paul Wakeling Motor Group Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "47 119 908 780",
           "canonical": {
-            "id": "wakeling-motos",
-            "name": "Wakeling Motos"
-          },
-          "party_page": {
-            "id": "wakeling-motos",
             "name": "Wakeling Motos"
           }
         },
         {
           "name": "WAKELING HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "41 160 814 040",
           "canonical": {
-            "id": "wakeling-motos",
-            "name": "Wakeling Motos"
-          },
-          "party_page": {
-            "id": "wakeling-motos",
             "name": "Wakeling Motos"
           }
         },
         {
           "name": "WOLLONGONG CITY MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "22 002 019 598",
           "canonical": {
-            "id": "wakeling-motos",
-            "name": "Wakeling Motos"
-          },
-          "party_page": {
-            "id": "wakeling-motos",
             "name": "Wakeling Motos"
           }
         },
         {
           "name": "Paul Burgess Nominees Pty Ltd as trustee for Paul Burgess Trust",
-          "identifier_type": "ACN",
-          "identifier": "119 875 768",
           "canonical": {
-            "id": "wakeling-motos",
-            "name": "Wakeling Motos"
-          },
-          "party_page": {
-            "id": "wakeling-motos",
             "name": "Wakeling Motos"
           }
         }
@@ -2635,8 +1649,7 @@
           "code": "9419",
           "name": "Other Automotive Repair and Maintenance"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/peter-warren-wakeling-automotive-0"
+      ]
     },
     {
       "merger_id": "MN-95025",
@@ -2654,27 +1667,14 @@
       "acquirers": [
         {
           "name": "Salesforce, Inc.",
-          "identifier_type": null,
-          "identifier": "U.S. EIN: 943320693",
           "canonical": {
-            "id": "salesforce-inc",
-            "name": "Salesforce, Inc"
-          },
-          "party_page": {
-            "id": "salesforce-inc",
             "name": "Salesforce, Inc"
           }
         }
       ],
       "targets": [
         {
-          "name": "Contentful Global, Inc.",
-          "identifier_type": null,
-          "identifier": "U.S. EIN: 862273457",
-          "party_page": {
-            "id": "contentful-global-inc",
-            "name": "Contentful Global, Inc."
-          }
+          "name": "Contentful Global, Inc."
         }
       ],
       "other_parties": [],
@@ -2683,8 +1683,7 @@
           "code": "7000",
           "name": "Computer System Design and Related Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/salesforce-contentful"
+      ]
     },
     {
       "merger_id": "WA-20029",
@@ -2702,14 +1701,7 @@
       "acquirers": [
         {
           "name": "GENERAL DENTAL HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "55 646 760 367",
           "canonical": {
-            "id": "general-dental-holdings-pty-ltd",
-            "name": "General Dental Holdings"
-          },
-          "party_page": {
-            "id": "general-dental-holdings-pty-ltd",
             "name": "General Dental Holdings"
           }
         }
@@ -2717,40 +1709,20 @@
       "targets": [
         {
           "name": "KINGSTON BEACH DENTAL PROFESSIONALS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "62 688 443 825",
           "canonical": {
-            "id": "kingston-beach-dental",
-            "name": "Kingston Beach Dental"
-          },
-          "party_page": {
-            "id": "kingston-beach-dental",
             "name": "Kingston Beach Dental"
           }
         },
         {
           "name": "Kingston Beach Dental",
-          "identifier_type": "ABN",
-          "identifier": "48 655 424 512",
           "canonical": {
-            "id": "kingston-beach-dental",
-            "name": "Kingston Beach Dental"
-          },
-          "party_page": {
-            "id": "kingston-beach-dental",
             "name": "Kingston Beach Dental"
           }
         }
       ],
       "other_parties": [
         {
-          "name": "Genesis Capital",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "genesis-capital",
-            "name": "Genesis Capital"
-          }
+          "name": "Genesis Capital"
         }
       ],
       "anzsic_codes": [
@@ -2758,8 +1730,7 @@
           "code": "8531",
           "name": "Dental Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/impression-dental-group-%E2%80%93-kingston-beach-dental-tas"
+      ]
     },
     {
       "merger_id": "WA-75034",
@@ -2776,35 +1747,17 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "KANDA HEALTHCARE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "77 151 293 515",
-          "party_page": {
-            "id": "kanda-healthcare-pty-ltd",
-            "name": "Kanda Healthcare Pty Ltd"
-          }
+          "name": "KANDA HEALTHCARE PTY LTD"
         }
       ],
       "targets": [
         {
-          "name": "LIVE YOUR WAY AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "35 154 415 013",
-          "party_page": {
-            "id": "live-your-way-australia-pty-ltd",
-            "name": "Live Your Way Australia Pty Ltd"
-          }
+          "name": "LIVE YOUR WAY AUSTRALIA PTY LTD"
         }
       ],
       "other_parties": [
         {
-          "name": "Genesis Capital",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "genesis-capital",
-            "name": "Genesis Capital"
-          }
+          "name": "Genesis Capital"
         }
       ],
       "anzsic_codes": [
@@ -2812,8 +1765,7 @@
           "code": "8790",
           "name": "Other Social Assistance Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/kanda-healthcare-%E2%80%93-live-your-way-qld"
+      ]
     },
     {
       "merger_id": "WA-95034",
@@ -2830,24 +1782,12 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "Community Enterprise Queensland",
-          "identifier_type": "ABN",
-          "identifier": "42 060 262 890",
-          "party_page": {
-            "id": "community-enterprise-queensland",
-            "name": "Community Enterprise Queensland"
-          }
+          "name": "Community Enterprise Queensland"
         }
       ],
       "targets": [
         {
-          "name": "THE ARNHEM LAND PROGRESS ABORIGINAL CORPORATION",
-          "identifier_type": "ABN",
-          "identifier": "52 755 439 387",
-          "party_page": {
-            "id": "the-arnhem-land-progress-aboriginal-corporation",
-            "name": "The Arnhem Land Progress Aboriginal Corporation"
-          }
+          "name": "THE ARNHEM LAND PROGRESS ABORIGINAL CORPORATION"
         }
       ],
       "other_parties": [],
@@ -2856,8 +1796,7 @@
           "code": "4110",
           "name": "Supermarket and Grocery Stores"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/community-enterprise-queensland-island-cape-community-stores-aurukun-hope-vale-badu"
+      ]
     },
     {
       "merger_id": "MN-15028",
@@ -2874,52 +1813,26 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "TOTAL DRAIN GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "78 621 479 981",
-          "party_page": {
-            "id": "total-drain-group-pty-ltd",
-            "name": "Total Drain Group Pty Ltd"
-          }
+          "name": "TOTAL DRAIN GROUP PTY LTD"
         }
       ],
       "targets": [
         {
           "name": "HEADWORKS AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "39 637 942 646",
           "canonical": {
-            "id": "pipe-management-australia",
-            "name": "Pipe Management Australia"
-          },
-          "party_page": {
-            "id": "pipe-management-australia",
             "name": "Pipe Management Australia"
           }
         },
         {
           "name": "UTILITY MANAGEMENT GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "39 644 190 527",
           "canonical": {
-            "id": "pipe-management-australia",
-            "name": "Pipe Management Australia"
-          },
-          "party_page": {
-            "id": "pipe-management-australia",
             "name": "Pipe Management Australia"
           }
         }
       ],
       "other_parties": [
         {
-          "name": "QUADRANT PRIVATE EQUITY NO.6A PTY LIMITED",
-          "identifier_type": "ACN",
-          "identifier": "622 297 750",
-          "party_page": {
-            "id": "quadrant-private-equity-no-6a-pty-limited",
-            "name": "Quadrant Private Equity No.6A Pty Limited"
-          }
+          "name": "QUADRANT PRIVATE EQUITY NO.6A PTY LIMITED"
         }
       ],
       "anzsic_codes": [
@@ -2939,8 +1852,7 @@
           "code": "3109",
           "name": "Other Heavy and Civil Engineering Construction"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/total-drain-group-pipe-management-australia"
+      ]
     },
     {
       "merger_id": "MN-40029",
@@ -2958,27 +1870,13 @@
       "acquirers": [
         {
           "name": "LAUNDY WOY TRADING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "29 696 470 345",
           "canonical": {
-            "id": "laundy-woy",
-            "name": "Laundy Woy"
-          },
-          "party_page": {
-            "id": "laundy-woy",
             "name": "Laundy Woy"
           }
         },
         {
           "name": "LAUNDY WOY FREEHOLD PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "65 696 471 306",
           "canonical": {
-            "id": "laundy-woy",
-            "name": "Laundy Woy"
-          },
-          "party_page": {
-            "id": "laundy-woy",
             "name": "Laundy Woy"
           }
         }
@@ -2986,27 +1884,13 @@
       "targets": [
         {
           "name": "HARVEST PUB OPERATIONS 2 PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "51 652 748 242",
           "canonical": {
-            "id": "harvest-pub",
-            "name": "Harvest Pub"
-          },
-          "party_page": {
-            "id": "harvest-pub",
             "name": "Harvest Pub"
           }
         },
         {
           "name": "AMAL TRUSTEES PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "98 609 737 064",
           "canonical": {
-            "id": "harvest-pub",
-            "name": "Harvest Pub"
-          },
-          "party_page": {
-            "id": "harvest-pub",
             "name": "Harvest Pub"
           }
         }
@@ -3025,8 +1909,7 @@
           "code": "6712",
           "name": "Non-Residential Property Operators"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/laundy-%E2%80%93-woy-woy-hotel-0"
+      ]
     },
     {
       "merger_id": "MN-70026",
@@ -3044,27 +1927,14 @@
       "acquirers": [
         {
           "name": "Parker-Hannifin Corporation",
-          "identifier_type": null,
-          "identifier": "LEI  5493002CONDB4N2HKI23",
           "canonical": {
-            "id": "parker-hannifin-corporation",
-            "name": "Parker-Hannifin Corporation"
-          },
-          "party_page": {
-            "id": "parker-hannifin-corporation",
             "name": "Parker-Hannifin Corporation"
           }
         }
       ],
       "targets": [
         {
-          "name": "CIRCOR International, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "circor-international-inc",
-            "name": "CIRCOR International, Inc."
-          }
+          "name": "CIRCOR International, Inc."
         }
       ],
       "other_parties": [],
@@ -3081,8 +1951,7 @@
           "code": "2499",
           "name": "Other Machinery and Equipment Manufacturing n.e.c."
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/parker-hannifin-%E2%80%93-circor-ad"
+      ]
     },
     {
       "merger_id": "WA-05038",
@@ -3100,40 +1969,20 @@
       "acquirers": [
         {
           "name": "AUSTAGENCIES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "76 006 090 464",
           "canonical": {
-            "id": "aub-group",
-            "name": "AUB Group"
-          },
-          "party_page": {
-            "id": "aub-group",
             "name": "AUB Group"
           }
         }
       ],
       "targets": [
         {
-          "name": "SURA TECHNOLOGY RISKS (AUST) PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "84 664 644 482",
-          "party_page": {
-            "id": "sura-technology-risks-aust-pty-limited",
-            "name": "Sura Technology Risks (Aust) Pty Limited"
-          }
+          "name": "SURA TECHNOLOGY RISKS (AUST) PTY LIMITED"
         }
       ],
       "other_parties": [
         {
           "name": "AUB GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "60 000 000 715",
           "canonical": {
-            "id": "aub-group",
-            "name": "AUB Group"
-          },
-          "party_page": {
-            "id": "aub-group",
             "name": "AUB Group"
           }
         }
@@ -3143,8 +1992,7 @@
           "code": "6420",
           "name": "Auxiliary Insurance Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/aub-%E2%80%93-further-interest-in-sura-technology"
+      ]
     },
     {
       "merger_id": "WA-35028",
@@ -3161,52 +2009,26 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "THINKEX HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 625 658 568",
-          "party_page": {
-            "id": "thinkex-holdings-pty-ltd",
-            "name": "Thinkex Holdings Pty Ltd"
-          }
+          "name": "THINKEX HOLDINGS PTY LTD"
         }
       ],
       "targets": [
         {
           "name": "COMMS GROUP LTD",
-          "identifier_type": "ABN",
-          "identifier": "64 619 196 539",
           "canonical": {
-            "id": "comms-group",
-            "name": "Comms Group"
-          },
-          "party_page": {
-            "id": "comms-group",
             "name": "Comms Group"
           }
         },
         {
           "name": "ON GROUP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "68 622 185 808",
           "canonical": {
-            "id": "comms-group",
-            "name": "Comms Group"
-          },
-          "party_page": {
-            "id": "comms-group",
             "name": "Comms Group"
           }
         }
       ],
       "other_parties": [
         {
-          "name": "Advent Partners",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "advent-partners",
-            "name": "Advent Partners"
-          }
+          "name": "Advent Partners"
         }
       ],
       "anzsic_codes": [
@@ -3214,8 +2036,7 @@
           "code": "7000",
           "name": "Computer System Design and Related Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/efex-onplatinum"
+      ]
     },
     {
       "merger_id": "WA-40032",
@@ -3233,14 +2054,7 @@
       "acquirers": [
         {
           "name": "VC OPERATIONS (WA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 646 499 005",
           "canonical": {
-            "id": "vets-central-holdings-pty-ltd",
-            "name": "Vets Central Holdings Pty Ltd"
-          },
-          "party_page": {
-            "id": "vets-central-holdings-pty-ltd",
             "name": "Vets Central Holdings Pty Ltd"
           }
         }
@@ -3248,27 +2062,13 @@
       "targets": [
         {
           "name": "DOGGY KINDER PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "60 665 736 265",
           "canonical": {
-            "id": "lava-street-veterinary-clinic-and-doggy-kinder",
-            "name": "Lava Street Veterinary Clinic and Doggy Kinder"
-          },
-          "party_page": {
-            "id": "lava-street-veterinary-clinic-and-doggy-kinder",
             "name": "Lava Street Veterinary Clinic and Doggy Kinder"
           }
         },
         {
           "name": "The Trustee for Longyester Unit Trust",
-          "identifier_type": "ABN",
-          "identifier": "18 762 651 022",
           "canonical": {
-            "id": "lava-street-veterinary-clinic-and-doggy-kinder",
-            "name": "Lava Street Veterinary Clinic and Doggy Kinder"
-          },
-          "party_page": {
-            "id": "lava-street-veterinary-clinic-and-doggy-kinder",
             "name": "Lava Street Veterinary Clinic and Doggy Kinder"
           }
         }
@@ -3283,8 +2083,7 @@
           "code": "9539",
           "name": "Other Personal Services n.e.c."
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/vets-central-%E2%80%93-lava-street-veterinary-clinic-and-doggy-kinder"
+      ]
     },
     {
       "merger_id": "WA-80030",
@@ -3301,24 +2100,12 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "IKEA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "84 006 270 757",
-          "party_page": {
-            "id": "ikea-pty-limited",
-            "name": "Ikea Pty Limited"
-          }
+          "name": "IKEA PTY LIMITED"
         }
       ],
       "targets": [
         {
-          "name": "Inter IKEA Systems B.V.",
-          "identifier_type": null,
-          "identifier": "Company registration number  27232886",
-          "party_page": {
-            "id": "inter-ikea-systems-b-v",
-            "name": "Inter IKEA Systems B.V."
-          }
+          "name": "Inter IKEA Systems B.V."
         }
       ],
       "other_parties": [],
@@ -3331,8 +2118,7 @@
           "code": "6640",
           "name": "Non-Financial Intangible Assets (Except Copyrights) Leasing"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/ikea-australia-%E2%80%93-ip-rights-from-inter-ikea-under-new-franchise-agreement-package"
+      ]
     },
     {
       "merger_id": "MN-30023",
@@ -3350,75 +2136,35 @@
       "acquirers": [
         {
           "name": "UPM-Kymmene Corporation",
-          "identifier_type": null,
-          "identifier": "Finnish Business ID  10410900",
           "canonical": {
-            "id": "upm-kymmene-pty-ltd",
-            "name": "Upm-Kymmene Pty Ltd"
-          },
-          "party_page": {
-            "id": "upm-kymmene-pty-ltd",
             "name": "Upm-Kymmene Pty Ltd"
           }
         },
         {
           "name": "Sappi Limited",
-          "identifier_type": null,
-          "identifier": "Registration number  1936/008963/06",
           "canonical": {
-            "id": "sappi",
-            "name": "Sappi"
-          },
-          "party_page": {
-            "id": "sappi",
             "name": "Sappi"
           }
         }
       ],
       "targets": [
         {
-          "name": "UPM Communication Papers Holding Oy (TopCo)",
-          "identifier_type": null,
-          "identifier": "Finnish Business  ID 35916625",
-          "party_page": {
-            "id": "upm-communication-papers-holding-oy-topco",
-            "name": "UPM Communication Papers Holding Oy (TopCo)"
-          }
+          "name": "UPM Communication Papers Holding Oy (TopCo)"
         }
       ],
       "other_parties": [
         {
           "name": "UPM-KYMMENE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 001 255 661",
           "canonical": {
-            "id": "upm-kymmene-pty-ltd",
-            "name": "Upm-Kymmene Pty Ltd"
-          },
-          "party_page": {
-            "id": "upm-kymmene-pty-ltd",
             "name": "Upm-Kymmene Pty Ltd"
           }
         },
         {
-          "name": "UPM Communication Papers Oy",
-          "identifier_type": null,
-          "identifier": "27606416",
-          "party_page": {
-            "id": "upm-communication-papers-oy",
-            "name": "UPM Communication Papers Oy"
-          }
+          "name": "UPM Communication Papers Oy"
         },
         {
           "name": "SAPPI TRADING AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "17 086 317 071",
           "canonical": {
-            "id": "sappi",
-            "name": "Sappi"
-          },
-          "party_page": {
-            "id": "sappi",
             "name": "Sappi"
           }
         }
@@ -3428,8 +2174,7 @@
           "code": "1510",
           "name": "Pulp, Paper and Paperboard Manufacturing"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/upm-kymmene-%E2%80%93-sappi-joint-venture"
+      ]
     },
     {
       "merger_id": "MN-60025",
@@ -3446,26 +2191,13 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "ACROW LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "36 124 893 465",
-          "party_page": {
-            "id": "acrow-limited",
-            "name": "Acrow Limited"
-          }
+          "name": "ACROW LIMITED"
         }
       ],
       "targets": [
         {
           "name": "RADBYRN PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "50 632 483 268",
           "canonical": {
-            "id": "ausgroup",
-            "name": "Ausgroup"
-          },
-          "party_page": {
-            "id": "ausgroup",
             "name": "Ausgroup"
           }
         }
@@ -3473,14 +2205,7 @@
       "other_parties": [
         {
           "name": "AUSGROUP INDUSTRIAL SERVICES (QLD) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "80 144 047 263",
           "canonical": {
-            "id": "ausgroup",
-            "name": "Ausgroup"
-          },
-          "party_page": {
-            "id": "ausgroup",
             "name": "Ausgroup"
           }
         }
@@ -3494,8 +2219,7 @@
           "code": "6631",
           "name": "Heavy Machinery and Scaffolding Rental and Hiring"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/acrow-ausgroup-industrial-services"
+      ]
     },
     {
       "merger_id": "WA-60032",
@@ -3513,66 +2237,32 @@
       "acquirers": [
         {
           "name": "ACR III Edison Holdings LLC",
-          "identifier_type": null,
-          "identifier": "Identifying number  3247524",
           "canonical": {
-            "id": "atlas-holdings",
-            "name": "Atlas Holdings"
-          },
-          "party_page": {
-            "id": "atlas-holdings",
             "name": "Atlas Holdings"
           }
         },
         {
           "name": "Ampere Holdings I B.V.",
-          "identifier_type": null,
-          "identifier": "CCI number  69397775",
           "canonical": {
-            "id": "kps-capital-partners",
-            "name": "KPS Capital Partners"
-          },
-          "party_page": {
-            "id": "kps-capital-partners",
             "name": "KPS Capital Partners"
           }
         }
       ],
       "targets": [
         {
-          "name": "C&D Technologies Inc.",
-          "identifier_type": null,
-          "identifier": "Identifying number  2075987",
-          "party_page": {
-            "id": "c-d-technologies-inc",
-            "name": "C&D Technologies Inc."
-          }
+          "name": "C&D Technologies Inc."
         }
       ],
       "other_parties": [
         {
           "name": "Atlas FRM LLC (trading as Atlas Holdings LLC)",
-          "identifier_type": null,
-          "identifier": "Registration number  2921947",
           "canonical": {
-            "id": "atlas-holdings",
-            "name": "Atlas Holdings"
-          },
-          "party_page": {
-            "id": "atlas-holdings",
             "name": "Atlas Holdings"
           }
         },
         {
           "name": "KPS Capital Partners, LP",
-          "identifier_type": null,
-          "identifier": "CRD  157678 / SEC  80173907",
           "canonical": {
-            "id": "kps-capital-partners",
-            "name": "KPS Capital Partners"
-          },
-          "party_page": {
-            "id": "kps-capital-partners",
             "name": "KPS Capital Partners"
           }
         }
@@ -3586,8 +2276,7 @@
           "code": "6240",
           "name": "Financial Asset Investing"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/atlas-holdings-and-kps-%E2%80%93-shares-in-joint-venture-and-interest-in-cd-technologies"
+      ]
     },
     {
       "merger_id": "MN-01109",
@@ -3604,53 +2293,23 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "Syngenta Crop Protection AG",
-          "identifier_type": null,
-          "identifier": "CHE  108.526.832",
-          "party_page": {
-            "id": "syngenta-crop-protection-ag",
-            "name": "Syngenta Crop Protection AG"
-          }
+          "name": "Syngenta Crop Protection AG"
         },
         {
-          "name": "Watson BidCo B.V.",
-          "identifier_type": null,
-          "identifier": "KVK 64347605",
-          "party_page": {
-            "id": "watson-bidco-b-v",
-            "name": "Watson BidCo B.V."
-          }
+          "name": "Watson BidCo B.V."
         }
       ],
       "targets": [
         {
-          "name": "Joint Venture",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "joint-venture",
-            "name": "Joint Venture"
-          }
+          "name": "Joint Venture"
         }
       ],
       "other_parties": [
         {
-          "name": "Stichting Administratiekantoor Casper Holdco",
-          "identifier_type": null,
-          "identifier": "KVK  93565348",
-          "party_page": {
-            "id": "stichting-administratiekantoor-casper-holdco",
-            "name": "Stichting Administratiekantoor Casper Holdco"
-          }
+          "name": "Stichting Administratiekantoor Casper Holdco"
         },
         {
-          "name": "Sinochem Holdings Corporation Ltd",
-          "identifier_type": null,
-          "identifier": "USCC  91133100MA0GBL5F38",
-          "party_page": {
-            "id": "sinochem-holdings-corporation-ltd",
-            "name": "Sinochem Holdings Corporation Ltd"
-          }
+          "name": "Sinochem Holdings Corporation Ltd"
         }
       ],
       "anzsic_codes": [
@@ -3658,8 +2317,7 @@
           "code": "0111",
           "name": "Nursery Production (Under Cover)"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/syngenta-crop-protection-and-d%C3%BCmmen-orange-%E2%80%93-joint-venture-formation"
+      ]
     },
     {
       "merger_id": "WA-50033",
@@ -3677,40 +2335,20 @@
       "acquirers": [
         {
           "name": "Koch Equity Development LLC",
-          "identifier_type": null,
-          "identifier": "US Employer Identification Number: 371473024",
           "canonical": {
-            "id": "koch-inc",
-            "name": "Koch, Inc."
-          },
-          "party_page": {
-            "id": "koch-inc",
             "name": "Koch, Inc."
           }
         }
       ],
       "targets": [
         {
-          "name": "Victoria PLC",
-          "identifier_type": null,
-          "identifier": "England and Wales company number 00282204",
-          "party_page": {
-            "id": "victoria-plc",
-            "name": "Victoria PLC"
-          }
+          "name": "Victoria PLC"
         }
       ],
       "other_parties": [
         {
           "name": "Koch, Inc.",
-          "identifier_type": null,
-          "identifier": "US Employer Identification Number: 992449504",
           "canonical": {
-            "id": "koch-inc",
-            "name": "Koch, Inc."
-          },
-          "party_page": {
-            "id": "koch-inc",
             "name": "Koch, Inc."
           }
         }
@@ -3728,8 +2366,7 @@
           "code": "4212",
           "name": "Floor Coverings Retailing"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/koch-%E2%80%93-additional-interest-in-victoria-plc"
+      ]
     },
     {
       "merger_id": "WA-05040",
@@ -3747,66 +2384,32 @@
       "acquirers": [
         {
           "name": "Vital Holdco AB",
-          "identifier_type": null,
-          "identifier": "5594910134",
           "canonical": {
-            "id": "vitamin-well-group",
-            "name": "Vitamin Well Group"
-          },
-          "party_page": {
-            "id": "vitamin-well-group",
             "name": "Vitamin Well Group"
           }
         },
         {
           "name": "Vital Bidco AB",
-          "identifier_type": null,
-          "identifier": "5594910159",
           "canonical": {
-            "id": "vitamin-well-group",
-            "name": "Vitamin Well Group"
-          },
-          "party_page": {
-            "id": "vitamin-well-group",
             "name": "Vitamin Well Group"
           }
         }
       ],
       "targets": [
         {
-          "name": "EMPWR Nutrition Group NV",
-          "identifier_type": null,
-          "identifier": "BE 0637.861.112",
-          "party_page": {
-            "id": "empwr-nutrition-group-nv",
-            "name": "EMPWR Nutrition Group NV"
-          }
+          "name": "EMPWR Nutrition Group NV"
         }
       ],
       "other_parties": [
         {
           "name": "Vitamin Well AB",
-          "identifier_type": null,
-          "identifier": "5567016505",
           "canonical": {
-            "id": "vitamin-well-group",
-            "name": "Vitamin Well Group"
-          },
-          "party_page": {
-            "id": "vitamin-well-group",
             "name": "Vitamin Well Group"
           }
         },
         {
           "name": "Cinven Limited",
-          "identifier_type": null,
-          "identifier": "02192937",
           "canonical": {
-            "id": "cinven-limited",
-            "name": "Cinven Limited"
-          },
-          "party_page": {
-            "id": "cinven-limited",
             "name": "Cinven Limited"
           }
         }
@@ -3828,8 +2431,7 @@
           "code": "6240",
           "name": "Financial Asset Investing"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/vitamin-well-empwr-nutrition-group"
+      ]
     }
   ],
   "page": 10,

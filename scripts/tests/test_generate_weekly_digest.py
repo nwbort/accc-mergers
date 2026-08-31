@@ -484,7 +484,9 @@ class TestWeeklyDigestBuckets:
         merger = self._appealed_merger('MN-40004', '2025-04-16')
         digest = self._run([merger], monkeypatch)
         summary = digest['deals_appealed_to_tribunal'][0]
-        assert summary['under_appeal'] is True
+        # The bucket already says the matter is under appeal, so the summary
+        # carries the appeal record itself and not the under_appeal flag.
+        assert 'under_appeal' not in summary
         assert summary['appeal']['tribunal_number'] == 'ACT 1 of 2025'
         assert summary['appeal']['filed_date'] == '2025-04-16'
 
@@ -554,6 +556,74 @@ class TestWeeklyDigestBuckets:
         previous_digest = {'ongoing_tribunal_appeals': [{'merger_id': 'MN-40013'}]}
         digest = self._run([merger], monkeypatch, previous_digest=previous_digest)
         assert [m['merger_id'] for m in digest['ongoing_tribunal_appeals']] == ['MN-40013']
+
+
+class TestMergerSummary:
+    """The digest entry is the payload for the digest page and the weekly email.
+
+    Both are narrow readers: Digest.jsx uses the events only to find a
+    determination PDF link, and send_weekly_email.py never looks at them at
+    all. Carrying whole events dragged determination_table_content into
+    digest.json and into every weekly archive snapshot.
+    """
+
+    def _merger(self, **overrides):
+        merger = {
+            'merger_id': 'MN-0001',
+            'merger_name': 'MN-0001 deal',
+            'merger_description': 'A one-paragraph description of the deal.',
+            'url': 'https://www.accc.gov.au/some-matter',
+            'status': 'Assessment completed',
+            'under_appeal': False,
+            'acquirers': [{'name': 'Buyer One', 'identifier': '12 345 678 901'}],
+            'targets': [{'name': 'Target One', 'identifier': '98 765 432 109'}],
+            'accc_determination': 'Approved',
+            'events': [
+                {
+                    'title': 'Merger notified to ACCC',
+                    'display_title': 'Merger notified to ACCC',
+                    'date': '2026-01-05T00:00:00Z',
+                    'url_gh': None,
+                    'status': 'live',
+                },
+                {
+                    'title': 'Determination',
+                    'display_title': 'Phase 1 - initial assessment determination: Approved',
+                    'date': '2026-03-01T00:00:00Z',
+                    'url_gh': 'https://mergers.fyi/doc.pdf',
+                    'status': 'live',
+                    'determination_table_content': [
+                        {'item': 'Explanation for determination', 'details': 'Long text.'},
+                    ],
+                },
+            ],
+        }
+        merger.update(overrides)
+        return merger
+
+    def test_only_determination_events_with_a_document_are_carried(self):
+        events = gwd.create_merger_summary(self._merger())['events']
+
+        assert [e['display_title'] for e in events] == [
+            'Phase 1 - initial assessment determination: Approved'
+        ]
+        assert set(events[0]) == {'date', 'display_title', 'url_gh'}
+
+    def test_determination_event_without_a_document_is_dropped(self):
+        merger = self._merger()
+        merger['events'][1]['url_gh'] = None
+
+        assert gwd.create_merger_summary(merger)['events'] == []
+
+    def test_summary_carries_no_fields_neither_consumer_reads(self):
+        summary = gwd.create_merger_summary(self._merger())
+
+        for field in ('acquirers', 'targets', 'url', 'status', 'under_appeal'):
+            assert field not in summary
+        # ...while the fields the page and the email do read stay put.
+        assert summary['merger_id'] == 'MN-0001'
+        assert summary['accc_determination'] == 'Approved'
+        assert summary['merger_description'].startswith('A one-paragraph')
 
 
 class TestMainWritesArchive:

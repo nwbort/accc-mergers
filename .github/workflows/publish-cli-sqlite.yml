@@ -38,7 +38,8 @@ jobs:
           python-version: '3.11'
 
       # cli-bundle.json is gitignored, so a fresh checkout of main doesn't have
-      # one. Rebuild it from the committed frontend data. --rebuild fails if the
+      # one. Rebuild it from the committed data (data/output/mergers.json plus
+      # the frontend questionnaire/NOCC/stats files). --rebuild fails if the
       # result doesn't match the checksum in the tracked cli-manifest.json,
       # which keeps this republish pinned to the version already on main.
       - name: Rebuild CLI bundle

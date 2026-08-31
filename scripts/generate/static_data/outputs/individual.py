@@ -3,7 +3,7 @@
 import json
 from pathlib import Path
 
-from ..enrichment import strip_event_status
+from ..enrichment import slim_for_site, strip_event_status
 from ..prune import prune_stale_files
 
 # ``mergers/`` also holds the paginated list written by :mod:`.list`; those
@@ -13,6 +13,10 @@ LIST_FILES = ("list-page-*.json", "list-meta.json")
 
 def generate(mergers: list, output_dir: Path) -> int:
     """Write individual merger detail JSON files. Returns count written.
+
+    Each file is the merger detail page's payload, slimmed to what that page
+    renders (:func:`slim_for_site`) — the complete record lives on in
+    ``data/output/mergers.json``.
 
     Detail files for mergers that are no longer in the data set (deduped away,
     or dropped from the register) are pruned.
@@ -26,7 +30,7 @@ def generate(mergers: list, output_dir: Path) -> int:
         if merger_id:
             out_path = mergers_dir / f"{merger_id}.json"
             with open(out_path, 'w', encoding='utf-8') as f:
-                json.dump(strip_event_status(merger), f, indent=2)
+                json.dump(slim_for_site(strip_event_status(merger)), f, indent=2)
             written.add(out_path.name)
 
     prune_stale_files(mergers_dir, written, exclude=LIST_FILES, label="mergers")

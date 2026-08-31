@@ -57,9 +57,15 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 # repo root has to be importable no matter where this script is invoked from.
 export PYTHONPATH="${REPO_ROOT}${PYTHONPATH:+:$PYTHONPATH}"
 
-# Source: the already-generated per-merger frontend data files
+# Source: the generated data files.
+#
+# Mergers come from data/output/mergers.json rather than the deployed
+# frontend/public/data/mergers/*.json. Both are written by the same generator
+# run from the same enriched records, but the deployed files carry only what
+# the site renders — the CLI indexes the full record (see build_cli_sqlite.py's
+# all_determination_text column and raw_json), so it reads the complete copy.
 SRC_DIR="$REPO_ROOT/frontend/public/data"
-MERGERS_DIR="$SRC_DIR/mergers"
+MERGERS_JSON="$REPO_ROOT/data/output/mergers.json"
 QUESTIONNAIRES_DIR="$SRC_DIR/questionnaires"
 NOCCS_DIR="$SRC_DIR/noccs"
 STATS_FILE="$SRC_DIR/stats.json"
@@ -91,20 +97,12 @@ mkdir -p "$OUT_DIR"
 
 # ---------------------------------------------------------------------------
 # Collect source files
-#
-# The mergers/ directory also contains list.json and list-page-*.json (the
-# paginated lightweight lists used by the frontend). We only want the full
-# per-merger records, which follow the MN-*.json / WA-*.json naming.
 # ---------------------------------------------------------------------------
-[[ -d "$MERGERS_DIR" ]] || die "Mergers directory not found: $MERGERS_DIR"
+[[ -f "$MERGERS_JSON" ]] || die "Mergers file not found: $MERGERS_JSON"
 
-MERGER_FILES=()
-for f in "$MERGERS_DIR"/MN-*.json "$MERGERS_DIR"/WA-*.json; do
-    [[ -f "$f" ]] && MERGER_FILES+=("$f")
-done
-MERGER_COUNT=${#MERGER_FILES[@]}
-[[ $MERGER_COUNT -gt 0 ]] || die "No merger files found in $MERGERS_DIR"
-echo "Found $MERGER_COUNT merger files"
+MERGER_COUNT=$(jq '.mergers | length' "$MERGERS_JSON")
+[[ "$MERGER_COUNT" -gt 0 ]] || die "No mergers found in $MERGERS_JSON"
+echo "Found $MERGER_COUNT merger records"
 
 QUESTIONNAIRE_FILES=()
 if [[ -d "$QUESTIONNAIRES_DIR" ]]; then
@@ -139,12 +137,12 @@ trap 'rm -f "$BUNDLE_TMP" "$MERGERS_TMP" "$QUESTIONNAIRES_TMP" "$NOCCS_TMP" "$ST
 
 echo "Building bundle..."
 
-# Aggregate merger files while applying determination-text cleaning. The
-# raw per-merger JSON contains PDF layout newlines inside
-# determination_table_content (see determination_text.py); the frontend
-# strips those at render time, but the CLI has no rendering layer, so we
-# pre-clean here. Equivalent to `jq -s '.'` aside from the in-flight cleanup.
-python3 -m scripts.parse.determination_text "${MERGER_FILES[@]}" > "$MERGERS_TMP"
+# Aggregate merger records while applying determination-text cleaning. The
+# raw record contains PDF layout newlines inside determination_table_content
+# (see determination_text.py); the frontend strips those at render time, but
+# the CLI has no rendering layer, so we pre-clean here. Records come out
+# ordered by merger_id.
+python3 -m scripts.parse.determination_text --mergers-json "$MERGERS_JSON" > "$MERGERS_TMP"
 
 if [[ ${#QUESTIONNAIRE_FILES[@]} -gt 0 ]]; then
     python3 - "${QUESTIONNAIRE_FILES[@]}" > "$QUESTIONNAIRES_TMP" <<'PYEOF'
@@ -211,7 +209,7 @@ fi
 
 # --rebuild reconstructs the gitignored bundle to match the tracked manifest and
 # stops there: no version bump, no manifest rewrite. A checksum mismatch means
-# the frontend data in this checkout no longer matches what produced the
+# the generated data in this checkout no longer matches what produced the
 # recorded version, so the caller would be publishing something other than
 # v${PREV_VERSION} — fail rather than silently mislabel it.
 if [[ "$REBUILD" -eq 1 ]]; then
@@ -248,13 +246,19 @@ echo "Bundle updated: v${PREV_VERSION} -> v${NEW_VERSION}"
 # this one when it wants to do an incremental sync.
 # ---------------------------------------------------------------------------
 echo "Computing per-merger checksums..."
-python3 - "${MERGER_FILES[@]}" > "$MERGER_MANIFEST_PATH" <<'PYEOF'
-import hashlib, json, os, sys
-result = {}
-for path in sys.argv[1:]:
-    merger_id = os.path.splitext(os.path.basename(path))[0]
-    with open(path, 'rb') as f:
-        result[merger_id] = hashlib.sha256(f.read()).hexdigest()
+python3 - "$MERGERS_JSON" > "$MERGER_MANIFEST_PATH" <<'PYEOF'
+import hashlib, json, sys
+
+# Each record is hashed as it would be serialised on its own (indent=2, the
+# same form generate_static_data writes a merger file in), so a record's
+# checksum depends only on the record itself.
+with open(sys.argv[1]) as f:
+    mergers = json.load(f)["mergers"]
+result = {
+    m["merger_id"]: hashlib.sha256(json.dumps(m, indent=2).encode()).hexdigest()
+    for m in mergers
+    if m.get("merger_id")
+}
 print(json.dumps(result, indent=2, sort_keys=True))
 PYEOF
 
