@@ -1,6 +1,6 @@
 {
   "total_mergers": 239,
-  "total_waivers": 364,
+  "total_waivers": 365,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 198,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 348,
+    "Approved": 349,
     "Not approved": 16
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.59065934065934,
-    "median_days": 19.0,
-    "average_business_days": 13.280219780219781,
-    "median_business_days": 13.0
+    "average_days": 19.589041095890412,
+    "median_days": 19,
+    "average_business_days": 13.27945205479452,
+    "median_business_days": 13
   },
   "top_industries": [
     {
@@ -60,7 +60,7 @@
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 64
+      "count": 65
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-55034",
+      "merger_name": "SLR Consulting Australia - Spectrum Ecology & Spatial and Millcrest Environmental Technology",
+      "determination": "Approved",
+      "determination_date": "2026-08-31T12:00:00Z",
+      "page_modified_datetime": "2026-08-31T18:07:49+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-15034",
       "merger_name": "Australian Venue Co \u2013 assets of Black Nugget Hotel Motel, Bartletts Tavern and all associated detached bottle shops",
       "determination": "Approved",
@@ -333,17 +344,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-27T12:00:00Z",
       "page_modified_datetime": "2026-08-27T17:05:11+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-80036",
-      "merger_name": "RCT Solutions GmbH - W\u00e4rtsil\u00e4 Energy Storage Finland Oy",
-      "determination": "Approved",
-      "determination_date": "2026-08-27T12:00:00Z",
-      "page_modified_datetime": "2026-08-27T17:02:47+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

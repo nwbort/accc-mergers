@@ -49,7 +49,7 @@
       "code": "696",
       "name": "Management and Related Consulting Services",
       "level": "group",
-      "merger_count": 16
+      "merger_count": 17
     },
     {
       "code": "697",
@@ -130,6 +130,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-04-27T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-55034",
+      "merger_name": "SLR Consulting Australia - Spectrum Ecology & Spatial and Millcrest Environmental Technology",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-12T12:00:00Z",
+      "determination_date": "2026-08-31T12:00:00Z"
     },
     {
       "merger_id": "MN-35034",
@@ -1089,10 +1100,10 @@
       "determination_date": null
     }
   ],
-  "count": 93,
+  "count": 94,
   "phase_1_count": 36,
   "phase_2_count": 3,
-  "waiver_count": 54,
+  "waiver_count": 55,
   "active_count": 6,
   "phase_duration": {
     "average_days": 33.794117647058826,
@@ -1102,10 +1113,10 @@
     "completed_count": 34
   },
   "waiver_duration": {
-    "average_days": 19.25925925925926,
-    "median_days": 19.5,
-    "average_business_days": 12.944444444444445,
-    "median_business_days": 13.0,
-    "completed_count": 54
+    "average_days": 19.254545454545454,
+    "median_days": 19,
+    "average_business_days": 12.945454545454545,
+    "median_business_days": 13,
+    "completed_count": 55
   }
 }
