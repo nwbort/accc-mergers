@@ -31,17 +31,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-15034",
-      "merger_name": "Australian Venue Co \u2013 assets of Black Nugget Hotel Motel, Bartletts Tavern and all associated detached bottle shops",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-08-06T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-85015",
       "merger_name": "Journey Beyond - Kelsian Tourism Portfolio",
       "is_waiver": false,
@@ -51,6 +40,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-01T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-15034",
+      "merger_name": "Australian Venue Co \u2013 assets of Black Nugget Hotel Motel, Bartletts Tavern and all associated detached bottle shops",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-06T12:00:00Z",
+      "determination_date": "2026-08-31T12:00:00Z"
     },
     {
       "merger_id": "WA-80037",
@@ -530,13 +530,13 @@
   "phase_1_count": 13,
   "phase_2_count": 0,
   "waiver_count": 33,
-  "active_count": 3,
+  "active_count": 2,
   "phase_duration": {
-    "average_days": 30.8,
-    "median_days": 24.5,
-    "average_business_days": 21.4,
-    "median_business_days": 17.5,
-    "completed_count": 10
+    "average_days": 30.272727272727273,
+    "median_days": 25,
+    "average_business_days": 21.0,
+    "median_business_days": 17,
+    "completed_count": 11
   },
   "waiver_duration": {
     "average_days": 19.424242424242426,

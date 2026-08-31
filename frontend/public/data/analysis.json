@@ -287,6 +287,11 @@
         "in_progress": false
       },
       {
+        "business_days": 17,
+        "calendar_days": 25,
+        "in_progress": false
+      },
+      {
         "business_days": 15,
         "calendar_days": 21,
         "in_progress": false
@@ -1019,17 +1024,17 @@
     ],
     "stats": {
       "average": 20.0,
-      "median": 17,
+      "median": 17.0,
       "min": 15,
       "max": 59,
-      "count": 203
+      "count": 204
     },
     "calendar_stats": {
       "average": 29.7,
-      "median": 26,
+      "median": 26.0,
       "min": 21,
       "max": 103,
-      "count": 203
+      "count": 204
     }
   },
   "waiver_duration": {
@@ -2579,7 +2584,7 @@
       42,
       41,
       46,
-      37
+      36
     ],
     "as_at": "2026-08-31"
   },
@@ -2596,11 +2601,11 @@
     {
       "code": "G",
       "name": "Retail Trade",
-      "average_business_days": 23.9,
-      "median_business_days": 18.0,
-      "average_calendar_days": 37.1,
-      "median_calendar_days": 27.5,
-      "count": 22
+      "average_business_days": 23.6,
+      "median_business_days": 18,
+      "average_calendar_days": 36.6,
+      "median_calendar_days": 27,
+      "count": 23
     },
     {
       "code": "B",
@@ -2648,15 +2653,6 @@
       "count": 13
     },
     {
-      "code": "H",
-      "name": "Accommodation and Food Services",
-      "average_business_days": 21.4,
-      "median_business_days": 17.5,
-      "average_calendar_days": 30.8,
-      "median_calendar_days": 24.5,
-      "count": 10
-    },
-    {
       "code": "F",
       "name": "Wholesale Trade",
       "average_business_days": 21.2,
@@ -2673,6 +2669,15 @@
       "average_calendar_days": 31.7,
       "median_calendar_days": 27.0,
       "count": 50
+    },
+    {
+      "code": "H",
+      "name": "Accommodation and Food Services",
+      "average_business_days": 21.0,
+      "median_business_days": 17,
+      "average_calendar_days": 30.3,
+      "median_calendar_days": 25,
+      "count": 11
     },
     {
       "code": "O",
@@ -2750,11 +2755,11 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 437,
+      "count": 438,
       "outcome_mix": {
-        "Approved": 437
+        "Approved": 438
       },
-      "median_phase_1_business_days": 17
+      "median_phase_1_business_days": 17.0
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -2768,9 +2773,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 34,
+      "count": 33,
       "outcome_mix": {
-        "Unknown": 34
+        "Unknown": 33
       },
       "median_phase_1_business_days": null
     },
@@ -2805,7 +2810,7 @@
     "histogram": {
       "15": 44,
       "16": 37,
-      "17": 23,
+      "17": 24,
       "18": 21,
       "19": 17,
       "20": 9,
@@ -2827,9 +2832,9 @@
     },
     "stats": {
       "mean_used_bd": 18.1,
-      "median_used_bd": 17,
+      "median_used_bd": 17.0,
       "pct_decided_final_3_bd": 3.2,
-      "count": 187
+      "count": 188
     },
     "extended_count": 7
   },
@@ -2879,11 +2884,11 @@
     {
       "code": "G",
       "name": "Retail Trade",
-      "approved": 19,
+      "approved": 20,
       "not_approved": 0,
       "referred": 3,
-      "in_progress": 8,
-      "phase2_referral_rate": 0.136
+      "in_progress": 7,
+      "phase2_referral_rate": 0.13
     },
     {
       "code": "L",
@@ -2969,10 +2974,10 @@
     {
       "code": "H",
       "name": "Accommodation and Food Services",
-      "approved": 10,
+      "approved": 11,
       "not_approved": 0,
       "referred": 0,
-      "in_progress": 3,
+      "in_progress": 2,
       "phase2_referral_rate": 0.0
     },
     {
