@@ -12,6 +12,31 @@ from ..loaders import FORWARD_REFILE_RELATIONSHIPS
 from ..prune import prune_stale_files
 
 
+def _party_names(parties: list | None) -> list:
+    """Reduce parties to the names the list pages actually use.
+
+    The merger cards never render parties — the party lists exist only to feed
+    utils/searchIndex.js, which reads each party's ``name`` and its canonical
+    group ``name``. The identifier, identifier type and party_page link that
+    ride along on the full party dicts are pure weight here, and the list is
+    downloaded in full by both /mergers and the command palette.
+
+    A party given as a bare name string is carried through as one, so an odd
+    record can't take the whole list generator down.
+    """
+    entries = []
+    for party in parties or []:
+        if isinstance(party, str):
+            entries.append({"name": party})
+            continue
+        entry = {"name": party.get("name")}
+        canonical = party.get("canonical") or {}
+        if canonical.get("name"):
+            entry["canonical"] = {"name": canonical["name"]}
+        entries.append(entry)
+    return entries
+
+
 def _appeal_summary(m: dict) -> dict | None:
     """Slim appeal fields needed to render the status badge on a list card.
 
@@ -47,11 +72,10 @@ def _lightweight(m: dict) -> dict:
         "determination_publication_date": m.get('determination_publication_date'),
         "end_of_determination_period": m.get('end_of_determination_period'),
         "stage": m.get('stage'),
-        "acquirers": m.get('acquirers', []),
-        "targets": m.get('targets', []),
-        "other_parties": m.get('other_parties', []),
+        "acquirers": _party_names(m.get('acquirers')),
+        "targets": _party_names(m.get('targets')),
+        "other_parties": _party_names(m.get('other_parties')),
         "anzsic_codes": m.get('anzsic_codes') or [],
-        "url": m.get('url'),
     }
     appeal = _appeal_summary(m)
     if appeal:

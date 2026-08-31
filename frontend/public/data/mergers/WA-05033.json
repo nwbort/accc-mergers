@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-07-27T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-07-27T17:09:29+10:00",
   "acquirers": [
     {
       "name": "Squares Blocker, inc.",
@@ -69,24 +67,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/CVC%20Capital%20Partners%20-%20Chess.com%20%28WA-05033%29%20-%20Notification%20waiver%20determination%20-%2027%20July%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "Squares Blocker, Inc., a newly incorporated corporation indirectly\ncontrolled by funds or vehicles advised or managed by affiliates of\nCVC Capital Partners plc (CVC Capital Partners) applied for a\nnotification waiver in respect of its proposed acquisition of all issued\nand outstanding equity interests in, and sole control of, Chess\nHoldings, LLC (trading as Chess.com), as described in the\ntransaction documents provided as part of the application (the\nAcquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "27 July 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, Squares Blocker, Inc. is indirectly controlled by funds\nadvised or managed by affiliates of CVC Capital Partners, a public\nlimited company incorporated in Jersey and listed in Amsterdam.\nThe CVC Network is a global alternative investment manager\nfocused on private equity, credit, infrastructure, and secondaries.\nThe target, Chess.com, is headquartered in the United States and is a\nprovider of chess gaming and other chess-related services including\na forum and social network, a news feed, a chess academy, a\ncoaching platform, tactics and puzzles, live tournaments, a separate\nwebsite for kids (Chesskid.com), and ChessTV. As of February 2026,\nChess.com had over 248 million registered users, with a presence\nacross more than 200 countries."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. there is no horizontal overlap between CVC Capital Partners\nand Chess.com in the supply of online chess or chess-\nrelated services\nb. the parties\u2019 combined share in the supply of online video\ngames to customers in Australia is low\nc. the presence of alternative suppliers of online video games\nin Australia.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -109,114 +90,41 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "MN-65009",
       "merger_name": "CVC Capital Partners \u2013 Marathon Asset Management",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CVC Capital Partners plc",
-          "identifier_type": null,
-          "identifier": "140080",
-          "canonical": {
-            "id": "cvc-capital-partners",
-            "name": "CVC Capital Partners"
-          },
-          "party_page": {
-            "id": "cvc-capital-partners",
-            "name": "CVC Capital Partners"
-          }
-        }
+        "CVC Capital Partners plc"
       ],
       "targets": [
-        {
-          "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "marathon-asset-management-lp-marathon-gp-holdings-i-llc-and-marathon-gp-holdings",
-            "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC"
-          }
-        }
-      ]
+        "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25014",
       "merger_name": "CVC Capital Partners \u2013 The animal nutrition and health division of the DSM-Firmenich Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Essential Bidco B.V.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "essential-bidco-b-v",
-            "name": "Essential Bidco B.V."
-          }
-        },
-        {
-          "name": "Specialty (U.S.) Bidco, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "specialty-u-s-bidco-inc",
-            "name": "Specialty (U.S.) Bidco, Inc."
-          }
-        }
+        "Essential Bidco B.V.",
+        "Specialty (U.S.) Bidco, Inc."
       ],
       "targets": [
-        {
-          "name": "SpecialtyCo US LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "specialtyco-us-llc",
-            "name": "SpecialtyCo US LLC"
-          }
-        },
-        {
-          "name": "Biomin Phytogenics GmbH (Germany)",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "biomin-phytogenics-gmbh-germany",
-            "name": "Biomin Phytogenics GmbH (Germany)"
-          }
-        }
-      ]
+        "SpecialtyCo US LLC",
+        "Biomin Phytogenics GmbH (Germany)"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-30015",
       "merger_name": "URUS (CVC Capital Partners) \u2013 AgriWebb",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Alta Genetics Australia Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "54 140 644 784",
-          "party_page": {
-            "id": "alta-genetics-australia-pty-ltd",
-            "name": "Alta Genetics Australia Pty Ltd"
-          }
-        }
+        "Alta Genetics Australia Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "AGRIWEBB PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "56 163 515 900",
-          "party_page": {
-            "id": "agriwebb-pty-ltd",
-            "name": "Agriwebb Pty Ltd"
-          }
-        }
-      ]
+        "AGRIWEBB PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

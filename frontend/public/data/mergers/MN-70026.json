@@ -9,8 +9,6 @@
   "end_of_determination_period": "2026-08-26T12:00:00Z",
   "determination_publication_date": "2026-08-06T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-08-06T17:14:51+10:00",
   "consultation_response_due_date": "2026-07-23T12:00:00Z",
   "acquirers": [
     {
@@ -74,31 +72,10 @@
       "title": "Parker-Hannifin\u2013CIRCOR A&D - Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Parker-Hannifin%E2%80%93CIRCOR%20A%26D%20-%20Phase%201%20determination.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "Parker-Hannifin Corporation (Parker-Hannifin)\u2019s proposed\nacquisition of the Aerospace and Defense business of CIRCOR\nInternational, Inc. (CIRCOR A&D)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "The acquirer, Parker-Hannifin, is a global engineering company\nheadquartered in the United States. It designs, manufactures and\nsupplies motion and control technologies and systems, and provides\nengineered solutions for a variety of mobile, industrial and\naerospace applications.\nThe target, CIRCOR A&D, designs, manufactures and supports flight-\ncritical motion and flow control products for commercial aircraft and\ndefence applications with manufacturing and operational locations\nin the United States, France and Morocco. To a more limited extent,\nCIRCOR A&D also supplies products for industrial applications."
-        },
-        {
-          "item": "Overlap between the\nParties",
-          "details": "Globally, Parker-Hannifin and CIRCOR A&D (the Parties) are both\nactive in the supply of certain aerospace valves and switches.\nParker-Hannifin primarily supplies system-level packages of\nproducts that include component parts (including valves and\nswitches), while CIRCOR A&D supplies individual component parts.\nIn Australia, the Parties both supply fluid control valves for industrial\napplications. CIRCOR A&D does not supply aerospace products in\nAustralia."
-        },
         {
           "item": "Reasons for determination",
           "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and information from third parties.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 The market aggregation resulting from the Acquisition in the\nsupply of fluid control valves for industrial applications in\nAustralia is estimated to be low.\n\u2022 There is no horizontal overlap between the Parties in the supply\nof aerospace components in Australia.\n\u2022 The Parties would likely continue to be constrained by\nalternative global suppliers of aerospace valves and switches."
-        },
-        {
-          "item": "Applications for review",
-          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
         }
       ],
       "url_gh": "/mergers/MN-70026/Parker-Hannifin\u2013CIRCOR AandD - Phase 1 determination.pdf",
@@ -112,106 +89,41 @@
   "phase_1_determination_date": "2026-08-06T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-75004",
       "merger_name": "Parker-Hannifin \u2013 Filtration Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Parker-Hannifin Corporation",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "parker-hannifin-corporation",
-            "name": "Parker-Hannifin Corporation"
-          },
-          "party_page": {
-            "id": "parker-hannifin-corporation",
-            "name": "Parker-Hannifin Corporation"
-          }
-        }
+        "Parker-Hannifin Corporation"
       ],
       "targets": [
-        {
-          "name": "Filtration Group Corporation",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "filtration-group-corporation",
-            "name": "Filtration Group Corporation"
-          }
-        }
-      ]
+        "Filtration Group Corporation"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-60004",
       "merger_name": "IOR - Delta Specialised Energy assets",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "IOR PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "36 009 653 070",
-          "party_page": {
-            "id": "ior-pty-ltd",
-            "name": "Ior Pty Ltd"
-          }
-        }
+        "IOR PTY LTD"
       ],
       "targets": [
-        {
-          "name": "DELTA SPECIALISED ENERGY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "11 624 642 682",
-          "party_page": {
-            "id": "delta-specialised-energy-pty-ltd",
-            "name": "Delta Specialised Energy Pty Ltd"
-          }
-        }
-      ]
+        "DELTA SPECIALISED ENERGY PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-30018",
       "merger_name": "Tinicum and Blackstone led consortium \u2013 Senior",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Zeus UK Bidco Limited",
-          "identifier_type": null,
-          "identifier": "UK company number  17118800",
-          "party_page": {
-            "id": "zeus-uk-bidco-limited",
-            "name": "Zeus UK Bidco Limited"
-          }
-        },
-        {
-          "name": "Tinicum L.P.",
-          "identifier_type": null,
-          "identifier": "Incorporation number  5040692",
-          "party_page": {
-            "id": "tinicum-l-p",
-            "name": "Tinicum L.P."
-          }
-        }
+        "Zeus UK Bidco Limited",
+        "Tinicum L.P."
       ],
       "targets": [
-        {
-          "name": "Senior plc",
-          "identifier_type": null,
-          "identifier": "Company number  00282772",
-          "party_page": {
-            "id": "senior-plc",
-            "name": "Senior plc"
-          }
-        }
-      ]
+        "Senior plc"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

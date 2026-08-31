@@ -7,7 +7,6 @@
   "original_notification_datetime": "2026-08-20T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-10-01T12:00:00Z",
-  "page_modified_datetime": "2026-08-21T14:09:24+10:00",
   "consultation_response_due_date": "2026-08-28T12:00:00Z",
   "acquirers": [
     {
@@ -104,102 +103,41 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-70018",
       "merger_name": "Restaurant Brands and Yum! Brands \u2013 Taco Bell restaurants",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Taco Ventures Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "697 591 692",
-          "party_page": {
-            "id": "taco-ventures-pty-ltd",
-            "name": "Taco Ventures Pty Ltd"
-          }
-        }
+        "Taco Ventures Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Collins Foods Subsidiary Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "94 616 663 793",
-          "party_page": {
-            "id": "collins-foods-subsidiary-pty-ltd",
-            "name": "Collins Foods Subsidiary Pty Ltd"
-          }
-        }
-      ]
+        "Collins Foods Subsidiary Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-45017",
       "merger_name": "Apax Partners LLP \u2013 Sedex Information Exchange Limited",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Smith UK Bidco Limited",
-          "identifier_type": null,
-          "identifier": "UK registration number   17165099",
-          "party_page": {
-            "id": "smith-uk-bidco-limited",
-            "name": "Smith UK Bidco Limited"
-          }
-        }
+        "Smith UK Bidco Limited"
       ],
       "targets": [
-        {
-          "name": "Sedex Information Exchange Limited",
-          "identifier_type": null,
-          "identifier": "UK registration number  14708906",
-          "party_page": {
-            "id": "sedex-information-exchange-limited",
-            "name": "Sedex Information Exchange Limited"
-          }
-        }
-      ]
+        "Sedex Information Exchange Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-95031",
       "merger_name": "IFM Fiduciary \u2013 PM Fresh",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "IFM FIDUCIARY PTY LTD as trustee for the SSCF SOA8 Holding Trust",
-          "identifier_type": "ABN",
-          "identifier": "52 135 450 618",
-          "party_page": {
-            "id": "ifm-fiduciary-pty-ltd-as-trustee-for-the-sscf-soa8-holding-trust",
-            "name": "IFM FIDUCIARY PTY LTD as trustee for the SSCF SOA8 Holding Trust"
-          }
-        }
+        "IFM FIDUCIARY PTY LTD as trustee for the SSCF SOA8 Holding Trust"
       ],
       "targets": [
-        {
-          "name": "TESSWATT INVESTMENTS PTY LTD as trustee for the Tesswatt Investment Trust",
-          "identifier_type": "ACN",
-          "identifier": "630 498 823",
-          "party_page": {
-            "id": "tesswatt-investments-pty-ltd-as-trustee-for-the-tesswatt-investment-trust",
-            "name": "TESSWATT INVESTMENTS PTY LTD as trustee for the Tesswatt Investment Trust"
-          }
-        },
-        {
-          "name": "SALADS OF AUSTRALIA PTY LIMITED (Receivers & Managers Appointed) (Administrators Appointed)",
-          "identifier_type": "ABN",
-          "identifier": "95 631 463 664",
-          "party_page": {
-            "id": "salads-of-australia-pty-limited-receivers-managers-appointed-administrators-appo",
-            "name": "SALADS OF AUSTRALIA PTY LIMITED (Receivers & Managers Appointed) (Administrators Appointed)"
-          }
-        }
-      ]
+        "TESSWATT INVESTMENTS PTY LTD as trustee for the Tesswatt Investment Trust",
+        "SALADS OF AUSTRALIA PTY LIMITED (Receivers & Managers Appointed) (Administrators Appointed)"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

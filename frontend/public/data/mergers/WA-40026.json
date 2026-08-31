@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-06-26T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-06-26T17:27:44+10:00",
   "acquirers": [
     {
       "name": "BENGERANG PTY LTD",
@@ -58,24 +56,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Australian%20Food%20%26%20Fibre%20-%20Western%20Lands%20Lease%20Conversion%20%28WA-40026%29%20-%20Notification%20waiver%20determination%20-%2026%20June%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "Bengerang Pty Ltd (Bengerang) applied for a notification waiver in\nrespect of its proposed acquisition of freehold interests in\nagricultural land that it currently leases from the NSW Government\nunder the perpetual Western Lands Leases, as described in the\ntransaction documents provided as part of the application (the\nAcquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "26 June 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, Bengerang, is part of an incorporated joint venture and\noperates as part of the Australian Food & Fibre (AFF) business.\nAFF\u2019s principal activities include the growing, ginning, warehousing,\nclassing, and marketing of cotton, as well as growing and marketing\nother agricultural products.\nThe vendor of the target land is the NSW Government, which\ncurrently owns the freehold interests in the relevant land parcels. The\nland parcels are located in Bourke, New South Wales, and are\npresently leased to Bengerang under the Western Lands Leases.\nBengerang currently grows and supplies cotton and other\nagricultural products on the target land.\nThe Acquisition involves the conversion of Bengerang\u2019s existing\nleasehold interests into freehold ownership, in accordance with NSW\nlegislation permitting holders of the Western Lands Leases to\npurchase the freehold interest in the leased land."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application, and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. Bengerang currently operates an agricultural business\nfrom the target land and intends to continue operating\nthat business from the target land post-Acquisition\nb. the Acquisition does not change the number of\nBengerang-operated sites or competitor sites in the\nBourke area.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the monetary aspects of the\nnotification thresholds are likely to be met, given that material\ncompetition concerns are unlikely to arise, the ACCC has determined\nthat the Acquisition is not required to be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -98,139 +79,42 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "MN-01104",
       "merger_name": "Genea - Care Fertility Greenslopes",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "GENEA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "82 002 844 448",
-          "canonical": {
-            "id": "genea",
-            "name": "Genea"
-          },
-          "party_page": {
-            "id": "genea",
-            "name": "Genea"
-          }
-        }
+        "GENEA PTY LTD"
       ],
       "targets": [
-        {
-          "name": "CARE FERTILITY GREENSLOPES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "11 128 331 797",
-          "party_page": {
-            "id": "care-fertility-greenslopes-pty-ltd",
-            "name": "Care Fertility Greenslopes Pty Ltd"
-          }
-        }
-      ]
+        "CARE FERTILITY GREENSLOPES PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-90012",
       "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "PT Asian Bulk Logistics",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          },
-          "party_page": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          }
-        },
-        {
-          "name": "Global Engage Marine Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "693 762 122",
-          "canonical": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          },
-          "party_page": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          }
-        }
+        "PT Asian Bulk Logistics",
+        "Global Engage Marine Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "ENGAGE MARINE FINCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "25 675 999 283",
-          "party_page": {
-            "id": "engage-marine-finco-pty-ltd",
-            "name": "Engage Marine Finco Pty Ltd"
-          }
-        },
-        {
-          "name": "ENGAGE MARINE HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 626 774 678",
-          "party_page": {
-            "id": "engage-marine-holdings-pty-ltd",
-            "name": "Engage Marine Holdings Pty Ltd"
-          }
-        }
-      ]
+        "ENGAGE MARINE FINCO PTY LTD",
+        "ENGAGE MARINE HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-20010",
       "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "Global Engage Marine Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "693 762 122",
-          "canonical": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          },
-          "party_page": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          }
-        },
-        {
-          "name": "PT Asian Bulk Logistics",
-          "identifier_type": null,
-          "identifier": "NIB   8120012130871",
-          "canonical": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          },
-          "party_page": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          }
-        }
+        "Global Engage Marine Pty Ltd",
+        "PT Asian Bulk Logistics"
       ],
       "targets": [
-        {
-          "name": "ENGAGE MARINE TOPCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "46 675 998 562",
-          "party_page": {
-            "id": "engage-marine-topco-pty-ltd",
-            "name": "Engage Marine Topco Pty Ltd"
-          }
-        }
-      ]
+        "ENGAGE MARINE TOPCO PTY LTD"
+      ],
+      "accc_determination": "Not approved"
     }
   ]
 }

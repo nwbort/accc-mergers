@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-08-27T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-08-27T16:58:42+10:00",
   "acquirers": [
     {
       "name": "Eldridge Ausenco MidCo 3, LLC",
@@ -81,24 +79,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/moderated_files/Eldridge%20%E2%80%93%20Ausenco%20%28WA-25043%29%20-%20Notification%20waiver%20determination%20-%2027%20August%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "Eldridge Ausenco MidCo 3, LLC, a wholly owned subsidiary of\nEldridge Industries, LLC (Eldridge), applied for a notification waiver in\nrespect of its proposed acquisition of 100% of the share capital in\nAusenco Pty Ltd (Ausenco), as described in the transaction\ndocuments provided as part of the application (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "27 August 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, Eldridge, is an investment holding company with a\ndiversified portfolio, managing businesses and investing in various\nindustries such as asset management, insurance, technology, sports\nand gaming and real estate. Headquartered in New York, Eldridge\nIndustries has offices in Greenwich, London, and Beverly Hills with\nover 3,000 employees.\nThe target, Ausenco, is an engineering, construction, consulting, and\nproject delivery company, providing solutions for large-scale\nindustrial and urban infrastructure projects.\nHeadquartered in Brisbane, Australia, Ausenco has 21 offices in 9\ncountries, with projects taking place in over 100 locations worldwide.\nThe company serves customers globally through locations in\nCanada, the United States, Chile, Mexico, Australia, Brazil, and\nArgentina among others.\nAusenco\u2019s service offering includes consulting services, project\ndelivery, operations and maintenance, and sustainability solutions to\nbusinesses operating in three primary industry sectors: minerals and\nmetals; oil and gas; and industrial and infrastructure."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition given there is no horizontal overlap or\nvertical relationship between Eldridge (or its connected entities) and\nAusenco in the supply of engineering and consulting services in\nAustralia.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
@@ -121,114 +102,41 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "WA-05041",
       "merger_name": "Pemba - Hewison Private Wealth",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Elevate BidCo Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "699 129 523",
-          "canonical": {
-            "id": "elevate-bidco-gmbh",
-            "name": "Elevate BidCo GmbH"
-          },
-          "party_page": {
-            "id": "elevate-bidco-gmbh",
-            "name": "Elevate BidCo GmbH"
-          }
-        }
+        "Elevate BidCo Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Hewison & Associates Pty. Ltd.",
-          "identifier_type": "ABN",
-          "identifier": "51 006 082 257",
-          "party_page": {
-            "id": "hewison-associates-pty-ltd",
-            "name": "Hewison & Associates Pty. Ltd."
-          }
-        }
-      ]
+        "Hewison & Associates Pty. Ltd."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-80035",
       "merger_name": "Saint-Gobain - Xypex",
-      "status": "Under assessment",
-      "accc_determination": null,
       "acquirers": [
-        {
-          "name": "CertainTeed Canada, Inc. (Saint-Gobain)",
-          "identifier_type": null,
-          "identifier": "Canadian Business Number  808787147",
-          "party_page": {
-            "id": "certainteed-canada-inc-saint-gobain",
-            "name": "CertainTeed Canada, Inc. (Saint-Gobain)"
-          }
-        },
-        {
-          "name": "GCP AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "41 080 660 117",
-          "party_page": {
-            "id": "gcp-australia-pty-ltd",
-            "name": "Gcp Australia Pty Ltd"
-          }
-        }
+        "CertainTeed Canada, Inc. (Saint-Gobain)",
+        "GCP AUSTRALIA PTY LTD"
       ],
       "targets": [
-        {
-          "name": "TorQuest Capital Fund V,L.P.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "torquest-capital-fund-v-l-p",
-            "name": "TorQuest Capital Fund V,L.P."
-          }
-        },
-        {
-          "name": "TorQuest Partners Fund V, L.P.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "torquest-partners-fund-v-l-p",
-            "name": "TorQuest Partners Fund V, L.P."
-          }
-        }
-      ]
+        "TorQuest Capital Fund V,L.P.",
+        "TorQuest Partners Fund V, L.P."
+      ],
+      "status": "Under assessment"
     },
     {
       "merger_id": "WA-15021",
       "merger_name": "Bingo Industries - JLW Services",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BINGO ACQUISITIONS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "19 602 662 984",
-          "party_page": {
-            "id": "bingo-acquisitions-pty-ltd",
-            "name": "Bingo Acquisitions Pty Ltd"
-          }
-        }
+        "BINGO ACQUISITIONS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "JLW SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "83 168 536 098",
-          "party_page": {
-            "id": "jlw-services-pty-ltd",
-            "name": "Jlw Services Pty Ltd"
-          }
-        }
-      ]
+        "JLW SERVICES PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

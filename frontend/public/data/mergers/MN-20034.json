@@ -7,7 +7,6 @@
   "original_notification_datetime": "2026-08-18T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-09-29T12:00:00Z",
-  "page_modified_datetime": "2026-08-21T09:34:57+10:00",
   "consultation_response_due_date": "2026-08-26T12:00:00Z",
   "acquirers": [
     {
@@ -91,123 +90,42 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-05004",
       "merger_name": "MidOcean Energy \u2013 JERA Gorgon",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "MidOcean Australia Holdings 2 Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "691 597 707",
-          "party_page": {
-            "id": "midocean-australia-holdings-2-pty-ltd",
-            "name": "MidOcean Australia Holdings 2 Pty Ltd"
-          }
-        }
+        "MidOcean Australia Holdings 2 Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "JERA EXPLORATION ICHTHYS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "20 158 193 250",
-          "party_page": {
-            "id": "jera-exploration-ichthys-pty-ltd",
-            "name": "Jera Exploration Ichthys Pty Ltd"
-          }
-        },
-        {
-          "name": "JERA GORGON PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "94 140 107 464",
-          "party_page": {
-            "id": "jera-gorgon-pty-ltd",
-            "name": "Jera Gorgon Pty Ltd"
-          }
-        }
-      ]
+        "JERA EXPLORATION ICHTHYS PTY LTD",
+        "JERA GORGON PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-60023",
       "merger_name": "Siemens Energy \u2013 Camlin Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Siemens Energy Limited",
-          "identifier_type": null,
-          "identifier": "UK company number  00631825",
-          "party_page": {
-            "id": "siemens-energy-limited",
-            "name": "Siemens Energy Limited"
-          }
-        }
+        "Siemens Energy Limited"
       ],
       "targets": [
-        {
-          "name": "Camlin Limited",
-          "identifier_type": null,
-          "identifier": "UK company number  NI073204",
-          "canonical": {
-            "id": "camlin-limited",
-            "name": "Camlin Limited"
-          },
-          "party_page": {
-            "id": "camlin-limited",
-            "name": "Camlin Limited"
-          }
-        },
-        {
-          "name": "Camlin (Australia) Pty Ltd",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "camlin-limited",
-            "name": "Camlin Limited"
-          },
-          "party_page": {
-            "id": "camlin-limited",
-            "name": "Camlin Limited"
-          }
-        }
-      ]
+        "Camlin Limited",
+        "Camlin (Australia) Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-20011",
       "merger_name": "Origin \u2013 Equity stake in Kraken",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "53 143 484 208",
-          "canonical": {
-            "id": "origin-energy-limited",
-            "name": "Origin Energy Limited"
-          },
-          "party_page": {
-            "id": "origin-energy-limited",
-            "name": "Origin Energy Limited"
-          }
-        }
+        "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "CPP Investment Board Private Holdings (4) Inc.",
-          "identifier_type": null,
-          "identifier": "BN  11089340",
-          "party_page": {
-            "id": "cpp-investment-board-private-holdings-4-inc",
-            "name": "CPP Investment Board Private Holdings (4) Inc."
-          }
-        }
-      ]
+        "CPP Investment Board Private Holdings (4) Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-06-10T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-06-10T18:19:14+10:00",
   "acquirers": [
     {
       "name": "Flamingo UK LP",
@@ -78,24 +76,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/KKR%20-%20Fresha.com%20%28WA-30019%29%20-%20Notification%20waiver%20determination%20-%2010%20June%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "Flamingo UK LP, acting by its general partner Flamingo UK GP Ltd, a\nspecial purpose vehicle indirectly wholly owned by investment funds,\nvehicles, and/or accounts advised and managed by various\nsubsidiaries of KKR & Co. Inc. (together with its subsidiaries, KKR),\napplied for a notification waiver in respect of its proposed\nacquisition of issued preference shares in Fresha.com Holding Inc.\n(together with its subsidiaries, including the Australian wholly owned\nsubsidiary Fresha.com Pty Ltd, Fresha.com), as described in the\ntransaction documents provided as part of the application (the\nAcquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "10 June 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, KKR, is a global investment firm that offers alternative\nasset management as well as capital markets and insurance\nsolutions. KKR sponsors investment funds that invest in private\nequity, credit, and real assets, and has strategic partners that\nmanage hedge funds.\nThe target, Fresha.com, operates a global, cloud-based software\nplatform and online marketplace for the beauty, wellness, and self-\ncare industry."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application, and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. there is no horizontal overlap between any of KKR\u2019s\ncontrolled portfolio companies and Fresha.com in the supply\nof platform and software products for the beauty, wellness,\nand self-care industry\nb. while there may be a potential vertical relationship between\ncertain KKR-controlled portfolio companies and Fresha.com,\nmaterial vertical effects are considered unlikely due to the\nnature of KKR\u2019s interest in Fresha.com and the presence of\n\u2022 alternative suppliers of the types of software products\noffered by Fresha.com, both in Australia and globally.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -118,119 +99,42 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "WA-25014",
       "merger_name": "CVC Capital Partners \u2013 The animal nutrition and health division of the DSM-Firmenich Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Essential Bidco B.V.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "essential-bidco-b-v",
-            "name": "Essential Bidco B.V."
-          }
-        },
-        {
-          "name": "Specialty (U.S.) Bidco, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "specialty-u-s-bidco-inc",
-            "name": "Specialty (U.S.) Bidco, Inc."
-          }
-        }
+        "Essential Bidco B.V.",
+        "Specialty (U.S.) Bidco, Inc."
       ],
       "targets": [
-        {
-          "name": "SpecialtyCo US LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "specialtyco-us-llc",
-            "name": "SpecialtyCo US LLC"
-          }
-        },
-        {
-          "name": "Biomin Phytogenics GmbH (Germany)",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "biomin-phytogenics-gmbh-germany",
-            "name": "Biomin Phytogenics GmbH (Germany)"
-          }
-        }
-      ]
+        "SpecialtyCo US LLC",
+        "Biomin Phytogenics GmbH (Germany)"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-90009",
       "merger_name": "Trescal \u2013 TR Calibration",
-      "status": "Assessment ceased",
-      "accc_determination": null,
       "acquirers": [
-        {
-          "name": "TRESCAL (AUSTRALIA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "39 117 603 835",
-          "party_page": {
-            "id": "trescal-australia-pty-ltd",
-            "name": "Trescal (Australia) Pty Ltd"
-          }
-        }
+        "TRESCAL (AUSTRALIA) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "TR PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 005 499 721",
-          "party_page": {
-            "id": "tr-pty-ltd",
-            "name": "Tr Pty Ltd"
-          }
-        }
-      ]
+        "TR PTY LTD"
+      ],
+      "status": "Assessment ceased"
     },
     {
       "merger_id": "WA-50014",
       "merger_name": "Searchlight Capital Partners - Additional interest in KORE Group Holdings Inc.",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Searchlight Capital IV LP",
-          "identifier_type": null,
-          "identifier": "US SEC  0001954453",
-          "party_page": {
-            "id": "searchlight-capital-iv-lp",
-            "name": "Searchlight Capital IV LP"
-          }
-        },
-        {
-          "name": "KONA Merger Sub Co.",
-          "identifier_type": null,
-          "identifier": "Delaware  10525073",
-          "party_page": {
-            "id": "kona-merger-sub-co",
-            "name": "KONA Merger Sub Co."
-          }
-        }
+        "Searchlight Capital IV LP",
+        "KONA Merger Sub Co."
       ],
       "targets": [
-        {
-          "name": "KORE Group Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware  5388903",
-          "party_page": {
-            "id": "kore-group-holdings-inc",
-            "name": "KORE Group Holdings, Inc."
-          }
-        }
-      ]
+        "KORE Group Holdings, Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

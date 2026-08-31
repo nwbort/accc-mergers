@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-05-11T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-05-11T17:35:33+10:00",
   "acquirers": [
     {
       "name": "DP WORLD GLOBAL FORWARDING PTY LTD",
@@ -82,24 +80,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/DP%20World%20Global%20Freight%20Forwarding%20-%20Pure%20Global%20Logistics%20%28WA-95015%29%20-%20Notification%20waiver%20determination.pdf",
-      "determination_commission_division": "Determination made by Commissioner Philip Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "DPW Global Forwarding Pty Ltd (DP World Global Forwarding)\napplied for a notification waiver in respect of its proposed\nacquisition of 100% of the share capital in Pac Ware Pty Ltd (Pure\nGlobal Logistics), as described in the transaction documents\nprovided as part of the application (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "11 May 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, DP World Global Forwarding, provides contract\nlogistics and freight forwarding services in Australia, which includes\nwarehousing, fulfilment and e-commerce support.\nDPW Global Forwarding\u2019s services encompass freight forwarding by\nocean, air, road and rail transportation across Australia, including\nassociated warehousing and logistics support. DPW Global\nForwarding is a 100% owned subsidiary of DP World Logistics\nOceania (Holding) Pty Ltd, which is ultimately controlled by DP World\nLimited, a United Arab Emirates entity.\nDP World Australia Limited is a connected entity of DP World Global\nForwarding and operates container terminals and provides container\nstevedoring services at each of the Ports of Melbourne, Botany\n(Sydney), Brisbane and Fremantle.\nThe target, Pure Global Logistics, is an Australian freight forwarding\nbusiness specialising in air and sea transportation and customs\nclearance, primarily for fashion and discount retailers in Australia.\nDP World Global Forwarding and Pure Global Logistics are each\nactive in the supply of supply international freight forwarding\nservices to customers in Australia."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. there is a small combined share between DP World Global\nForwarding and Pure Global Logistics in the supply of freight\nforwarding services in Australia\nb. there are alternative suppliers of freight forwarding services\nto customers in Australia\nc. there is a low risk of foreclosure or other concerning vertical\nor conglomerate effects resulting from exclusionary\nconduct, bundling or tying of services in the logistics supply\nchain in Australia post-acquisition.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -122,137 +103,44 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "MN-65005",
       "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
-      "status": "Under assessment",
-      "accc_determination": null,
       "acquirers": [
-        {
-          "name": "INSURANCE AUSTRALIA GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "60 090 739 923",
-          "party_page": {
-            "id": "insurance-australia-group-limited",
-            "name": "Insurance Australia Group Limited"
-          }
-        }
+        "INSURANCE AUSTRALIA GROUP LIMITED"
       ],
       "targets": [
-        {
-          "name": "RAC INSURANCE PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "59 094 685 882",
-          "party_page": {
-            "id": "rac-insurance-pty-limited",
-            "name": "Rac Insurance Pty Limited"
-          }
-        },
-        {
-          "name": "RACI PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "40 008 671 805",
-          "party_page": {
-            "id": "raci-pty-limited",
-            "name": "Raci Pty Limited"
-          }
-        }
-      ]
+        "RAC INSURANCE PTY LIMITED",
+        "RACI PTY LIMITED"
+      ],
+      "status": "Under assessment"
     },
     {
       "merger_id": "WA-45001",
       "merger_name": "Paragon Care \u2013 Presidental",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "PARAGON CARE LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "76 064 551 426",
-          "party_page": {
-            "id": "paragon-care-limited",
-            "name": "Paragon Care Limited"
-          }
-        },
-        {
-          "name": "CLIFFORD HALLAM HEALTHCARE PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "38 001 655 554",
-          "party_page": {
-            "id": "clifford-hallam-healthcare-pty-limited",
-            "name": "Clifford Hallam Healthcare Pty Limited"
-          }
-        }
+        "PARAGON CARE LIMITED",
+        "CLIFFORD HALLAM HEALTHCARE PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "ROCKPAC SOUTH PACIFIC PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "40 639 100 422",
-          "party_page": {
-            "id": "rockpac-south-pacific-pty-ltd",
-            "name": "Rockpac South Pacific Pty Ltd"
-          }
-        },
-        {
-          "name": "PRESIDENTAL PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "77 002 697 896",
-          "party_page": {
-            "id": "presidental-pty-limited",
-            "name": "Presidental Pty Limited"
-          }
-        }
-      ]
+        "ROCKPAC SOUTH PACIFIC PTY LTD",
+        "PRESIDENTAL PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-80007",
       "merger_name": "Arlington Capital Partners \u2013 Eptec Defence Solutions",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Admiral AU Bidco Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 801 195",
-          "party_page": {
-            "id": "admiral-au-bidco-pty-ltd",
-            "name": "Admiral AU Bidco Pty Ltd"
-          }
-        },
-        {
-          "name": "Admiral AU Holdco Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 791 710",
-          "party_page": {
-            "id": "admiral-au-holdco-pty-ltd",
-            "name": "Admiral AU Holdco Pty Ltd"
-          }
-        }
+        "Admiral AU Bidco Pty Ltd",
+        "Admiral AU Holdco Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "EPTEC MARINE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "49 118 319 547",
-          "party_page": {
-            "id": "eptec-marine-pty-ltd",
-            "name": "Eptec Marine Pty Ltd"
-          }
-        },
-        {
-          "name": "EPTEC BIDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "12 638 785 378",
-          "party_page": {
-            "id": "eptec-bidco-pty-ltd",
-            "name": "Eptec Bidco Pty Ltd"
-          }
-        }
-      ]
+        "EPTEC MARINE PTY LTD",
+        "EPTEC BIDCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

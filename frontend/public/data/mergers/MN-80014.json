@@ -9,8 +9,6 @@
   "end_of_determination_period": "2026-07-16T12:00:00Z",
   "determination_publication_date": "2026-06-25T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-06-25T16:12:29+10:00",
   "consultation_response_due_date": "2026-06-11T12:00:00Z",
   "acquirers": [
     {
@@ -71,31 +69,10 @@
       "title": "ANZ Banking Group-Worldline Australia - Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/ANZ%20Banking%20Group%20-%20Worldline%20Australia%20-%20%20Phase%201%20Determination.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "Australia and New Zealand Banking Group Limited (ANZ) proposes\nto acquire Worldline SA (WL)\u2019s interest in Worldline Australia Pty Ltd,\ntrading as ANZ Worldline Payment Solutions (ANZWL), under a\nshare sale and purchase agreement (the Acquisition). Following the\nAcquisition, ANZ Group will wholly own ANZWL."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "The acquirer, ANZ, is an entity within a group of companies\nultimately held by ANZ Group Holdings Limited (ANZ Group). ANZ\nGroup is an ASX-listed financial services company. ANZ provides a\nrange of banking products and services to retail and business\ncustomers in Australia and New Zealand, and to institutional\ncustomers globally.\nThe target, ANZWL, provides merchant acquiring and related\npayment services to business customers in Australia. ANZWL is\ncurrently a joint venture between ANZ and WL, with ANZ Group\nholding 49% and WL holding 51% of the share capital of ANZWL.\nWL is a global merchant acquiring business headquartered in France\nand Europe\u2019s largest merchant acquiring services provider."
-        },
-        {
-          "item": "Overlap and relationship\nbetween the parties",
-          "details": "ANZ has an ongoing commercial relationship with ANZWL, including\nreferral arrangements for business customers requiring merchant\nacquiring services.\nSuncorp, part of the ANZ Group, separately offers merchant\nacquiring and related services to business customers in Australia.\nThe Parties overlap in the supply of business payment solutions,\nincluding merchant acquiring, payment acceptance and value-added\nservices, to business customers in Australia."
-        },
         {
           "item": "Reasons for determination",
           "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and publicly available information.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 The merged entity\u2019s market share is estimated to be low, and\nANZ would likely continue to be constrained by alternative\nsuppliers of business payment solutions in Australia."
-        },
-        {
-          "item": "Applications for review",
-          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
         }
       ],
       "url_gh": "/mergers/MN-80014/ANZ Banking Group - Worldline Australia - Phase 1 Determination.pdf",
@@ -109,115 +86,42 @@
   "phase_1_determination_date": "2026-06-25T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-45002",
       "merger_name": "eBay - Depop",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "eBay Inc.",
-          "identifier_type": null,
-          "identifier": "I.R.S. Employer Identification No. \u2013 United States  770430924",
-          "canonical": {
-            "id": "ebay",
-            "name": "eBay"
-          },
-          "party_page": {
-            "id": "ebay",
-            "name": "eBay"
-          }
-        }
+        "eBay Inc."
       ],
       "targets": [
-        {
-          "name": "Etsy, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "etsy-inc",
-            "name": "Etsy, Inc."
-          }
-        },
-        {
-          "name": "Depop Limited",
-          "identifier_type": null,
-          "identifier": "UK Company Registration Number  08316342",
-          "party_page": {
-            "id": "depop-limited",
-            "name": "Depop Limited"
-          }
-        }
-      ]
+        "Etsy, Inc.",
+        "Depop Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-15010",
       "merger_name": "AZ Next Generation Advisory \u2013 Intend Financial",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AZ NEXT GENERATION ADVISORY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "57 167 960 018",
-          "party_page": {
-            "id": "az-next-generation-advisory-pty-ltd",
-            "name": "Az Next Generation Advisory Pty Ltd"
-          }
-        }
+        "AZ NEXT GENERATION ADVISORY PTY LTD"
       ],
       "targets": [
-        {
-          "name": "BMM PARTNERS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "82 649 113 959",
-          "party_page": {
-            "id": "bmm-partners-pty-ltd",
-            "name": "Bmm Partners Pty Ltd"
-          }
-        }
-      ]
+        "BMM PARTNERS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-40016",
       "merger_name": "Creative Planning \u2013 MASECO",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CP Britannia Bidco Limited",
-          "identifier_type": null,
-          "identifier": "Jersey Financial Services Commission  163400",
-          "party_page": {
-            "id": "cp-britannia-bidco-limited",
-            "name": "CP Britannia Bidco Limited"
-          }
-        },
-        {
-          "name": "Creative Planning Holdco, LLC",
-          "identifier_type": null,
-          "identifier": "SEC  801 7725610",
-          "party_page": {
-            "id": "creative-planning-holdco-llc",
-            "name": "Creative Planning Holdco, LLC"
-          }
-        }
+        "CP Britannia Bidco Limited",
+        "Creative Planning Holdco, LLC"
       ],
       "targets": [
-        {
-          "name": "MASECO LLP",
-          "identifier_type": null,
-          "identifier": "United Kingdom  OC337650",
-          "party_page": {
-            "id": "maseco-llp",
-            "name": "Maseco Llp"
-          }
-        }
-      ]
+        "MASECO LLP"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

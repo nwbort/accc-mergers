@@ -7,7 +7,6 @@
   "original_notification_datetime": "2026-07-01T12:00:00Z",
   "stage": "Phase 2 - detailed assessment",
   "end_of_determination_period": "2027-01-12T12:00:00Z",
-  "page_modified_datetime": "2026-08-28T16:11:26+10:00",
   "consultation_response_due_date": "2026-07-09T12:00:00Z",
   "acquirers": [
     {
@@ -89,7 +88,6 @@
           ]
         }
       ],
-      "phase2_notice_commission_division": "Decision made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Competition and Consumer Act 2010 (Cth)",
       "url_gh": "/mergers/MN-40017/Vets Central - Hills Veterinary Centre - Phase 2 Notice.pdf",
       "phase": "Phase 2"
     },
@@ -108,8 +106,6 @@
   "phase_1_determination_date": "2026-08-18T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "ceased_date": "2026-08-28T12:00:00Z",
   "competition_concerns_notice_date": "2026-09-23T12:00:00Z",
   "has_questionnaire": true,
@@ -122,120 +118,37 @@
     {
       "merger_id": "WA-15022",
       "merger_name": "Vets Central - Morley Veterinary Hospital",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "VC OPERATIONS (WA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 646 499 005",
-          "canonical": {
-            "id": "vets-central-holdings-pty-ltd",
-            "name": "Vets Central Holdings Pty Ltd"
-          },
-          "party_page": {
-            "id": "vets-central-holdings-pty-ltd",
-            "name": "Vets Central Holdings Pty Ltd"
-          }
-        }
+        "VC OPERATIONS (WA) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "The Trustee for THE MVH UNIT TRUST",
-          "identifier_type": "ABN",
-          "identifier": "44 887 760 871",
-          "party_page": {
-            "id": "the-trustee-for-the-mvh-unit-trust",
-            "name": "The Trustee for THE MVH UNIT TRUST"
-          }
-        }
-      ]
+        "The Trustee for THE MVH UNIT TRUST"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-40004",
       "merger_name": "Vets Central \u2013 Gawler Animal Hospital and Animalia Vet Clinic",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "VC OPERATIONS (WA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 646 499 005",
-          "canonical": {
-            "id": "vets-central-holdings-pty-ltd",
-            "name": "Vets Central Holdings Pty Ltd"
-          },
-          "party_page": {
-            "id": "vets-central-holdings-pty-ltd",
-            "name": "Vets Central Holdings Pty Ltd"
-          }
-        },
-        {
-          "name": "VETS CENTRAL HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "60 652 812 256",
-          "canonical": {
-            "id": "vets-central-holdings-pty-ltd",
-            "name": "Vets Central Holdings Pty Ltd"
-          },
-          "party_page": {
-            "id": "vets-central-holdings-pty-ltd",
-            "name": "Vets Central Holdings Pty Ltd"
-          }
-        }
+        "VC OPERATIONS (WA) PTY LTD",
+        "VETS CENTRAL HOLDINGS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Gawler Animal Hospital Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "87 160 265 109",
-          "party_page": {
-            "id": "gawler-animal-hospital-pty-ltd",
-            "name": "Gawler Animal Hospital Pty Ltd"
-          }
-        },
-        {
-          "name": "GAH 2.0 PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "76 666 800 666",
-          "party_page": {
-            "id": "gah-2-0-pty-ltd",
-            "name": "Gah 2.0 Pty Ltd"
-          }
-        }
-      ]
+        "Gawler Animal Hospital Pty Ltd",
+        "GAH 2.0 PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-55023",
       "merger_name": "Vets Central - Claremont Veterinary Surgery",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "VC OPERATIONS (WA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 646 499 005",
-          "canonical": {
-            "id": "vets-central-holdings-pty-ltd",
-            "name": "Vets Central Holdings Pty Ltd"
-          },
-          "party_page": {
-            "id": "vets-central-holdings-pty-ltd",
-            "name": "Vets Central Holdings Pty Ltd"
-          }
-        }
+        "VC OPERATIONS (WA) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "D PETTET & E.E PETTET",
-          "identifier_type": "ABN",
-          "identifier": "30 143 398 487",
-          "party_page": {
-            "id": "d-pettet-e-e-pettet",
-            "name": "D Pettet & E.E Pettet"
-          }
-        }
-      ]
+        "D PETTET & E.E PETTET"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

@@ -8,8 +8,6 @@
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-09-15T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-08-26T09:52:06+10:00",
   "consultation_response_due_date": "2026-08-12T12:00:00Z",
   "acquirers": [
     {
@@ -92,31 +90,10 @@
       "title": "bp - bp Gateway - Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/moderated_files/bp%20-%20bp%20Gateway%20-%20Phase%201%20determination%20-%2025%20August%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "BP Australia Pty Ltd (bp) proposes to acquire the assets (equipment,\nstock and goodwill) comprising the business of a service station\nlocated at The Gateway Services Centre, Corner of Pacific Highway\nand Oxley Highway, Port Macquarie (bp Gateway) from M. & H.J.\nWebb Pty Ltd (Webbs Petroleum) (the Acquisition).\nThe Acquisition also involves the assignment of the lease of bp\nGateway from Webbs Petroleum, the current tenant, to bp. The land\non which bp Gateway operates is, and will continue to be, owned by\nThe Gateway (Port Macquarie) Pty Ltd."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "The acquirer, bp, is a global, vertically integrated fuel refiner and\nwholesaler. bp\u2019s downstream operations in Australia include\nownership of fuel terminals, retail sale of fuel and convenience\ngoods through bp-branded company owned and operated sites,\nretail sale of fuel through a limited number of bp-branded sites\noperated by third parties as commission agent sites, wholesale\nsupply of fuel to bp-branded dealer owned and operated sites,\nwholesale supply of fuel to independent distributors or resellers, and\ncommercial bulk fuel operations involving the direct supply of bulk\nfuel to commercial customers.\nbp Gateway is a service station in Port Macquarie which is active in\nthe supply of fuel and convenience items to retail customers. bp\nGateway is currently operated as a dealer owned and operated bp-\nbranded site. Following the Acquisition, bp Gateway is intended to be\noperated by bp as a company owned and operated site.\nWebbs Petroleum is a fuel distributor which operates four bp-\nbranded service stations across New South Wales, in Macksville,\nTamworth and Port Macquarie."
-        },
-        {
-          "item": "Overlap and relationship\nbetween the Parties",
-          "details": "Both bp and bp Gateway are engaged in the supply of fuel and\nconvenience items to retail customers in Australia.\nbp Gateway operates in Port Macquarie. In the Port Macquarie area,\nbp does not currently have any company owned and operated sites,\nnor does it have any other dealer owned and operated sites.\nbp supplies fuel on a wholesale basis to bp Gateway."
-        },
         {
           "item": "Reasons for determination",
           "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following finding.\n\u2022 There is no horizontal overlap between bp and bp Gateway in the\nretail supply of fuel in the Port Macquarie area."
-        },
-        {
-          "item": "Applications for review",
-          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
         }
       ],
       "url_gh": "/mergers/MN-95033/bp - bp Gateway - Phase 1 determination - 25 August 2026.pdf",
@@ -131,120 +108,43 @@
   "phase_1_determination_date": "2026-08-25T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-05017",
       "merger_name": "Tony White Group - Sharton Motors dealerships in Maitland, Port Stephens and Cardiff",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "TWG HUNTER DEALERSHIPS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "18 695 726 348",
-          "party_page": {
-            "id": "twg-hunter-dealerships-pty-ltd",
-            "name": "Twg Hunter Dealerships Pty Ltd"
-          }
-        }
+        "TWG HUNTER DEALERSHIPS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "SHARTON MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "55 001 345 384",
-          "party_page": {
-            "id": "sharton-motors-pty-ltd",
-            "name": "Sharton Motors Pty Ltd"
-          }
-        },
-        {
-          "name": "N&M Burton Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "125 935 944",
-          "party_page": {
-            "id": "n-m-burton-pty-ltd",
-            "name": "N&M Burton Pty Ltd"
-          }
-        }
-      ]
+        "SHARTON MOTORS PTY LTD",
+        "N&M Burton Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-45014",
       "merger_name": "RDO Australia \u2013 freehold land and buildings of three commercial truck dealership sites in West Wodonga VIC",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "RDO AUSTRALIA PROPERTY HOLDINGS NO 2 PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 633 633 753",
-          "party_page": {
-            "id": "rdo-australia-property-holdings-no-2-pty-ltd",
-            "name": "Rdo Australia Property Holdings No 2 Pty Ltd"
-          }
-        }
+        "RDO AUSTRALIA PROPERTY HOLDINGS NO 2 PTY LTD"
       ],
       "targets": [
-        {
-          "name": "CD & JB INVESTMENTS PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "630 465 815",
-          "party_page": {
-            "id": "cd-jb-investments-pty-ltd",
-            "name": "Cd & Jb Investments Pty Ltd"
-          }
-        }
-      ]
+        "CD & JB INVESTMENTS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-45005",
       "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "MA MARINA FUND HOLDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "96 667 241 385",
-          "party_page": {
-            "id": "ma-marina-fund-holdco-pty-ltd",
-            "name": "Ma Marina Fund Holdco Pty Ltd"
-          }
-        },
-        {
-          "name": "MA MARINA FUND TT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "65 666 902 245",
-          "party_page": {
-            "id": "ma-marina-fund-tt-pty-ltd",
-            "name": "Ma Marina Fund Tt Pty Ltd"
-          }
-        }
+        "MA MARINA FUND HOLDCO PTY LTD",
+        "MA MARINA FUND TT PTY LTD"
       ],
       "targets": [
-        {
-          "name": "GGC Marketing Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "32 105 294 228",
-          "party_page": {
-            "id": "ggc-marketing-pty-ltd",
-            "name": "GGC Marketing Pty Ltd"
-          }
-        },
-        {
-          "name": "QUEENSLAND & PACIFIC PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "72 081 370 685",
-          "party_page": {
-            "id": "queensland-pacific-pty-ltd",
-            "name": "Queensland & Pacific Pty. Ltd."
-          }
-        }
-      ]
+        "GGC Marketing Pty Ltd",
+        "QUEENSLAND & PACIFIC PTY. LTD."
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

@@ -9,8 +9,6 @@
   "end_of_determination_period": "2026-08-10T12:00:00Z",
   "determination_publication_date": "2026-07-21T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-07-21T13:35:41+10:00",
   "consultation_response_due_date": "2026-07-07T12:00:00Z",
   "acquirers": [
     {
@@ -71,31 +69,10 @@
       "title": "Amazon - Globalstar - Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Amazon%20-%20Globalstar%20Phase%201%20determination.pdf",
-      "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "Amazon.com, Inc. (Amazon), via its wholly-owned subsidiary,\nGrapefruit Acquisition Sub II, LLC, proposes to acquire Globalstar,\nInc (Globalstar), its subsidiaries, assets and facilities (the\nAcquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "The acquirer, Amazon, supplies retail services, media content,\nelectronic devices and on-demand technology services (including\ncloud computing). Amazon also operates Amazon Leo, which will\nsupply high-capacity broadband/fixed satellite service (FSS) to\ngovernment agencies, business and consumers using low Earth orbit\nsatellites. Amazon Leo plans to launch its commercial service in\nmid-2026. In Australia, Amazon Leo has an agreement with NBN Co\nto deliver fixed-satellite broadband services to customers in regional,\nremote and rural Australia.\nThe target, Globalstar, supplies global narrowband/mobile satellite\nservice (MSS) connectivity services for voice and data\ncommunications applications. Globalstar provides these services to\ngovernment agencies, businesses and consumers using allocated\nMSS spectrum, including in Australia.\nGlobalstar currently provides Apple, Inc. with direct-to-device (D2D)\nsatellite connectivity services on certain iPhone and Apple Watch\nmodels, allowing users to send and receive messages while outside\nof cellular and Wi-Fi coverage (e.g. Australian users can currently\nuse this capability for emergency messaging, to request roadside\nassistance, and to share their location). Amazon has signed an\nagreement to continue providing Apple, Inc. with D2D services post-\nacquisition."
-        },
-        {
-          "item": "Overlap between the\nparties",
-          "details": "Amazon and Globalstar (together, the Parties) both provide, or will\nsoon provide, satellite services. However, they hold spectrum\nauthorisations in different frequency bands and their offerings\nappear to serve different use cases. In particular, Amazon Leo's\nsystem will use FSS spectrum to provide high-capacity connectivity\nservices to specialised fixed terminals, while Globalstar uses MSS\nspectrum to deliver low-capacity connectivity services directly to\nindividual consumer mobile handsets or devices.\nThe ACCC has not identified any non-horizontal relationships\nbetween the Parties."
-        },
         {
           "item": "Reasons for determination",
           "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and information from third parties.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 The Parties do not compete closely in the supply of satellite\nservices in Australia, as they hold spectrum authorisations in\ndifferent frequency bands and their offerings serve different use\ncases.\n\u2022 Post-Acquisition, the merged entity would continue to face\ncompetition from several alternative suppliers of FSS and MSS\nservices, including other entities (such as SpaceX\u2019s Starlink)\nwhich supply both services."
-        },
-        {
-          "item": "Applications for review",
-          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
         }
       ],
       "url_gh": "/mergers/MN-50025/Amazon - Globalstar Phase 1 determination.pdf",
@@ -109,120 +86,43 @@
   "phase_1_determination_date": "2026-07-21T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "WA-55025",
       "merger_name": "Brookfield \u2013 World Freight Company",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Windrose Holdings III (DIFC) Limited",
-          "identifier_type": null,
-          "identifier": "Registered Number  12897",
-          "party_page": {
-            "id": "windrose-holdings-iii-difc-limited",
-            "name": "Windrose Holdings III (DIFC) Limited"
-          }
-        },
-        {
-          "name": "Windrose France Holdings SAS",
-          "identifier_type": null,
-          "identifier": "Registered Number  104439096",
-          "party_page": {
-            "id": "windrose-france-holdings-sas",
-            "name": "Windrose France Holdings SAS"
-          }
-        }
+        "Windrose Holdings III (DIFC) Limited",
+        "Windrose France Holdings SAS"
       ],
       "targets": [
-        {
-          "name": "Caeli Software Ltd",
-          "identifier_type": null,
-          "identifier": "Registered Number  12558916",
-          "party_page": {
-            "id": "caeli-software-ltd",
-            "name": "Caeli Software Ltd"
-          }
-        },
-        {
-          "name": "GB WFC France SAS (trading as \u201cWorld Freight Company\u201d or \u201cWFC\u201d)",
-          "identifier_type": null,
-          "identifier": "Registered Number  809546 971",
-          "party_page": {
-            "id": "gb-wfc-france-sas-trading-as-world-freight-company-or-wfc",
-            "name": "GB WFC France SAS (trading as \u201cWorld Freight Company\u201d or \u201cWFC\u201d)"
-          }
-        }
-      ]
+        "Caeli Software Ltd",
+        "GB WFC France SAS (trading as \u201cWorld Freight Company\u201d or \u201cWFC\u201d)"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-60010",
       "merger_name": "Michelin - Flexitallic",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Compagnie Financi\u00e8re Michelin SAS",
-          "identifier_type": null,
-          "identifier": "SIREN  898 849 153",
-          "party_page": {
-            "id": "compagnie-financi-re-michelin-sas",
-            "name": "Compagnie Financi\u00e8re Michelin SAS"
-          }
-        },
-        {
-          "name": "Fenner America, Inc.",
-          "identifier_type": null,
-          "identifier": "USDOT  3744583",
-          "party_page": {
-            "id": "fenner-america-inc",
-            "name": "Fenner America, Inc."
-          }
-        }
+        "Compagnie Financi\u00e8re Michelin SAS",
+        "Fenner America, Inc."
       ],
       "targets": [
-        {
-          "name": "Flexitallic Group SAS",
-          "identifier_type": null,
-          "identifier": "SIREN  532 742 699",
-          "party_page": {
-            "id": "flexitallic-group-sas",
-            "name": "Flexitallic Group SAS"
-          }
-        }
-      ]
+        "Flexitallic Group SAS"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-01058",
       "merger_name": "Caterpillar \u2013 RPMGlobal Holdings",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Caterpillar Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "caterpillar-inc",
-            "name": "Caterpillar Inc."
-          }
-        }
+        "Caterpillar Inc."
       ],
       "targets": [
-        {
-          "name": "RPMGLOBAL HOLDINGS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "17 010 672 321",
-          "party_page": {
-            "id": "rpmglobal-holdings-limited",
-            "name": "Rpmglobal Holdings Limited"
-          }
-        }
-      ]
+        "RPMGLOBAL HOLDINGS LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

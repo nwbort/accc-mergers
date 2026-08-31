@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-06-22T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-06-22T20:36:22+10:00",
   "acquirers": [
     {
       "name": "SHAPE AUSTRALIA CORPORATION LIMITED",
@@ -55,24 +53,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/SHAPE%20Australia%20-%20Australian%20Professional%20Shopfitters%20%28WA-40025%29%20-%20Notification%20waiver%20determination%20-%2022%20June%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "SHAPE Australia Corporation Limited (SHAPE) applied for a\nnotification waiver in respect of its proposed acquisition of 100% of\nthe issued share capital in Australian Professional Shopfitters Pty.\nLtd (APS), as described in the transaction documents provided as\npart of the application (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "22 June 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, SHAPE, is an Australian publicly listed company (ASX:\nSHA). SHAPE provides a diverse range of construction services and\nproducts, including facilities maintenance, fitouts, and new builds, to\ncustomers in the office, transport, hotel, health, education, retail\nincluding retail fuel, government, aged care, community, data\ncentres, defence, entertainment and recreation, industrial, and\ntransport sectors in Australia.\nThe target, APS, provides commercial fitout services and products,\nincluding shopfitting, manufacturing, project management and\ntransport services, to customers in the retail sector in Australia. APS\nalso has a warehouse in Melbourne supplying custom joinery for\nfitouts, almost all of which is supplied in-house for its own fitout\nprojects."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\ncertain publicly available information, and had regard to the factors\nin section 51ABV(2)(b) of the Competition and Consumer Act 2010\n(Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. there is a small horizontal overlap between SHAPE Australia\nand APS in the supply of commercial fitout services in the\nretail sector, and the increase in SHAPE\u2019s share of supply of\ncommercial fitout services to non-residential customers is\nestimated to be small\nb. there are alternative suppliers supplying commercial fitout\nservices and joinery to customers, including for the retail\nsector, at both national and local level\nc. there is a low risk of foreclosure or other concerning vertical\nor conglomerate effects resulting from exclusionary\nconduct, bundling or tying of services post-acquisition.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -95,131 +76,42 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "MN-10005",
       "merger_name": "Apex - Mercer Administration Services and related assets",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Apex Group Holdings (Australia) Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "48 112 252 114",
-          "party_page": {
-            "id": "apex-group-holdings-australia-pty-ltd",
-            "name": "Apex Group Holdings (Australia) Pty Ltd"
-          }
-        }
+        "Apex Group Holdings (Australia) Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "MERCER OUTSOURCING (AUSTRALIA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "83 068 908 912",
-          "party_page": {
-            "id": "mercer-outsourcing-australia-pty-ltd",
-            "name": "Mercer Outsourcing (Australia) Pty Ltd"
-          }
-        },
-        {
-          "name": "MERCER ADMINISTRATION SERVICES (AUSTRALIA) PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "48 616 275 980",
-          "party_page": {
-            "id": "mercer-administration-services-australia-pty-limited",
-            "name": "Mercer Administration Services (Australia) Pty Limited"
-          }
-        }
-      ]
+        "MERCER OUTSOURCING (AUSTRALIA) PTY LTD",
+        "MERCER ADMINISTRATION SERVICES (AUSTRALIA) PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70008",
       "merger_name": "Tetra Tech \u2013 Providence Consulting",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "TETRA TECH AUSTRALIA GROUP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "74 676 488 716",
-          "canonical": {
-            "id": "tetra-tech-inc",
-            "name": "Tetra Tech, Inc."
-          },
-          "party_page": {
-            "id": "tetra-tech-inc",
-            "name": "Tetra Tech, Inc."
-          }
-        }
+        "TETRA TECH AUSTRALIA GROUP HOLDINGS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Providence Consulting Group Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "49 117 321 552",
-          "party_page": {
-            "id": "providence-consulting-group-pty-ltd",
-            "name": "Providence Consulting Group Pty Ltd"
-          }
-        }
-      ]
+        "Providence Consulting Group Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-90012",
       "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "PT Asian Bulk Logistics",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          },
-          "party_page": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          }
-        },
-        {
-          "name": "Global Engage Marine Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "693 762 122",
-          "canonical": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          },
-          "party_page": {
-            "id": "pt-asian-bulk-logistics",
-            "name": "PT Asian Bulk Logistics"
-          }
-        }
+        "PT Asian Bulk Logistics",
+        "Global Engage Marine Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "ENGAGE MARINE FINCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "25 675 999 283",
-          "party_page": {
-            "id": "engage-marine-finco-pty-ltd",
-            "name": "Engage Marine Finco Pty Ltd"
-          }
-        },
-        {
-          "name": "ENGAGE MARINE HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 626 774 678",
-          "party_page": {
-            "id": "engage-marine-holdings-pty-ltd",
-            "name": "Engage Marine Holdings Pty Ltd"
-          }
-        }
-      ]
+        "ENGAGE MARINE FINCO PTY LTD",
+        "ENGAGE MARINE HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

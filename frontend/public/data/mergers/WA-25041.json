@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-08-19T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-08-19T17:47:36+10:00",
   "acquirers": [
     {
       "name": "Dream HoldCo LLC",
@@ -60,24 +58,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/CVC%20Capital%20Partners%20%E2%80%93%20DistroKid%20%28WA-25041%29%20-%20Notification%20waiver%20determination%20-%2019%20August%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "Dream HoldCo LLC, a newly incorporated company controlled by\nfunds or vehicles advised or managed by CVC Capital Partners plc\nand its subsidiaries (the CVC Funds), applied for a notification\nwaiver in respect of its proposed acquisition of 100% of the shares in\nDK Holdco, LLC (trading as DistroKid), as described in the\ntransaction documents provided as part of the application (the\nAcquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "19 August 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "CVC Capital Partners plc is a public limited company whose shares\nare listed on the Euronext Amsterdam Stock Exchange. The CVC\nNetwork is a global alternative investment manager focused on\nprivate equity, credit, infrastructure and secondaries, and includes\nCVC Capital Partners plc, each of its subsidiaries and the CVC\nFunds.\nThe target, DistroKid, is headquartered in the United States and is an\nindependent digital music distribution platform, enabling musicians\nand record labels to upload and distribute their music to digital\nstreaming platforms such as Spotify, Apple Music and YouTube.\nDistroKid also provides ancillary services including royalty collection\nand distribution and music promotion tools."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. there is no horizontal overlap or vertical relationship\nbetween the CVC Network (including its portfolio\ncompanies) and DistroKid in the wholesale digital\ndistribution of recorded music in Australia\nb. there are several alternative suppliers of digital music\ndistribution services in Australia.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
@@ -100,114 +81,41 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "WA-65030",
       "merger_name": "CVC Capital Partners \u2013 IFF\u2019s Food Ingredients business",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Foxtrot UK Bidco Limited",
-          "identifier_type": null,
-          "identifier": "CRN  17249252",
-          "party_page": {
-            "id": "foxtrot-uk-bidco-limited",
-            "name": "Foxtrot UK Bidco Limited"
-          }
-        },
-        {
-          "name": "Foxtrot Denmark Bidco ApS",
-          "identifier_type": null,
-          "identifier": "CVR  42580058",
-          "party_page": {
-            "id": "foxtrot-denmark-bidco-aps",
-            "name": "Foxtrot Denmark Bidco ApS"
-          }
-        }
+        "Foxtrot UK Bidco Limited",
+        "Foxtrot Denmark Bidco ApS"
       ],
       "targets": [
-        {
-          "name": "DANISCO AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "62 096 139 392",
-          "party_page": {
-            "id": "danisco-australia-pty-ltd",
-            "name": "Danisco Australia Pty Ltd"
-          }
-        },
-        {
-          "name": "Taura Natural Ingredients Holdings Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "20 123 509 017",
-          "party_page": {
-            "id": "taura-natural-ingredients-holdings-pty-ltd",
-            "name": "Taura Natural Ingredients Holdings Pty Ltd"
-          }
-        }
-      ]
+        "DANISCO AUSTRALIA PTY LTD",
+        "Taura Natural Ingredients Holdings Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-65009",
       "merger_name": "CVC Capital Partners \u2013 Marathon Asset Management",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CVC Capital Partners plc",
-          "identifier_type": null,
-          "identifier": "140080",
-          "canonical": {
-            "id": "cvc-capital-partners",
-            "name": "CVC Capital Partners"
-          },
-          "party_page": {
-            "id": "cvc-capital-partners",
-            "name": "CVC Capital Partners"
-          }
-        }
+        "CVC Capital Partners plc"
       ],
       "targets": [
-        {
-          "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "marathon-asset-management-lp-marathon-gp-holdings-i-llc-and-marathon-gp-holdings",
-            "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC"
-          }
-        }
-      ]
+        "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-05033",
       "merger_name": "CVC Capital Partners \u2013 Chess.com",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Squares Blocker, inc.",
-          "identifier_type": null,
-          "identifier": "10665193",
-          "party_page": {
-            "id": "squares-blocker-inc",
-            "name": "Squares Blocker, inc."
-          }
-        }
+        "Squares Blocker, inc."
       ],
       "targets": [
-        {
-          "name": "Chess Holdings, LLC",
-          "identifier_type": null,
-          "identifier": "6374364",
-          "party_page": {
-            "id": "chess-holdings-llc",
-            "name": "Chess Holdings, LLC"
-          }
-        }
-      ]
+        "Chess Holdings, LLC"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

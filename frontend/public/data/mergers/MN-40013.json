@@ -9,8 +9,6 @@
   "end_of_determination_period": "2026-09-08T12:00:00Z",
   "determination_publication_date": "2026-08-27T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-08-27T13:04:12+10:00",
   "consultation_response_due_date": "2026-06-24T12:00:00Z",
   "acquirers": [
     {
@@ -144,20 +142,7 @@
       "title": "Calvary - Hobart Private Hospital - Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/moderated_files/Calvary%20-%20Hobart%20Private%20Hospital%20-%20Phase%201%20determination%20-%2027%20August%202026.pdf",
-      "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "Little Company of Mary Health Care Ltd (Calvary) proposes to\nacquire the business and assets of Hobart Private Hospital (Hobart\nPrivate) from Healthscope pursuant to a business and asset sale\nagreement (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "The acquirer, Calvary, is a not-for-profit operator of public and private\nhospitals in Australia, present in New South Wales, South Australia,\nVictoria and the Australian Capital Territory. Calvary currently\noperates four private hospitals in Tasmania: St Vincent's Hospital\n(Launceston); St Luke's Hospital (Launceston); Lenah Valley\nHospital (Lenah Valley, Hobart); and St John's Hospital (South\nHobart).\nThe target, Hobart Private, is a private hospital co-located with and\nadjacent to Hobart's main public hospital, Royal Hobart Hospital.\nHobart Private is currently operated by Healthscope, a private\nhospital operator. In May 2025, Healthscope\u2019s parent entities went\ninto voluntary administration, and receivers and administrators were\nappointed by its lenders and the Healthscope Board, respectively, to\nconduct an orderly sale of the hospitals in its network."
-        },
         {
           "item": "Reasons for determination",
           "details": "The reasons for the ACCC\u2019s determination are set out in section 2."
@@ -303,141 +288,44 @@
   "phase_1_determination_date": "2026-08-27T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-55010",
       "merger_name": "Calvary - Holmesglen Private Hospital",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "LITTLE COMPANY OF MARY HEALTH CARE LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "11 079 815 697",
-          "party_page": {
-            "id": "little-company-of-mary-health-care-limited",
-            "name": "Little Company Of Mary Health Care Limited"
-          }
-        }
+        "LITTLE COMPANY OF MARY HEALTH CARE LIMITED"
       ],
       "targets": [
-        {
-          "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "80 146 342 814",
-          "canonical": {
-            "id": "healthscope",
-            "name": "Healthscope"
-          },
-          "party_page": {
-            "id": "healthscope",
-            "name": "Healthscope"
-          }
-        },
-        {
-          "name": "ANZ HOSPITALS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "14 631 014 938",
-          "party_page": {
-            "id": "anz-hospitals-pty-ltd",
-            "name": "Anz Hospitals Pty Ltd"
-          }
-        }
-      ]
+        "HEALTHSCOPE MANAGEMENT PTY LTD",
+        "ANZ HOSPITALS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-75003",
       "merger_name": "Ramsay Health Care \u2013 National Capital Private Hospital",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "RAMSAY HEALTH CARE AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "36 003 184 889",
-          "party_page": {
-            "id": "ramsay-health-care-australia-pty-limited",
-            "name": "Ramsay Health Care Australia Pty Limited"
-          }
-        },
-        {
-          "name": "RAMSAY HEALTH CARE INVESTMENTS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "44 078 881 473",
-          "party_page": {
-            "id": "ramsay-health-care-investments-pty-limited",
-            "name": "Ramsay Health Care Investments Pty Limited"
-          }
-        }
+        "RAMSAY HEALTH CARE AUSTRALIA PTY LIMITED",
+        "RAMSAY HEALTH CARE INVESTMENTS PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "HEALTHSCOPE OPERATIONS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "85 006 405 152",
-          "canonical": {
-            "id": "healthscope",
-            "name": "Healthscope"
-          },
-          "party_page": {
-            "id": "healthscope",
-            "name": "Healthscope"
-          }
-        },
-        {
-          "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "80 146 342 814",
-          "canonical": {
-            "id": "healthscope",
-            "name": "Healthscope"
-          },
-          "party_page": {
-            "id": "healthscope",
-            "name": "Healthscope"
-          }
-        }
-      ]
+        "HEALTHSCOPE OPERATIONS PTY LTD",
+        "HEALTHSCOPE MANAGEMENT PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-85020",
       "merger_name": "Francisco Partners \u2013 Capsa Healthcare",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Catalyst Blocker Merger Sub I, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "catalyst-blocker-merger-sub-i-llc",
-            "name": "Catalyst Blocker Merger Sub I, LLC"
-          }
-        },
-        {
-          "name": "Catalyst Blocker Merger Sub II, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "catalyst-blocker-merger-sub-ii-llc",
-            "name": "Catalyst Blocker Merger Sub II, LLC"
-          }
-        }
+        "Catalyst Blocker Merger Sub I, LLC",
+        "Catalyst Blocker Merger Sub II, LLC"
       ],
       "targets": [
-        {
-          "name": "CSHC Buyerco, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "cshc-buyerco-llc",
-            "name": "CSHC Buyerco, LLC"
-          }
-        }
-      ]
+        "CSHC Buyerco, LLC"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

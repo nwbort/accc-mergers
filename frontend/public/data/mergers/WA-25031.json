@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-07-08T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-07-08T17:00:59+10:00",
   "acquirers": [
     {
       "name": "OSCARS NSW OPS PTY LTD",
@@ -137,24 +135,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Oscars%20Group%20%E2%80%93%20South%20Terrace%20Hotel%20in%20Bankstown%2C%20NSW%20%28WA-25031%29%20-%20Notification%20waiver%20determination%20-%208%20July%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "Bankstown Central Property Pty Ltd as trustee for the Bankstown\nCentral Property Unit Trust and Oscars NSW Ops Pty Ltd (the\nAcquirers) applied for a notification waiver in respect of their\nproposed acquisition of the freehold land interest, buildings, licenses\nand business assets (both tangible and intangible) of the South\nTerrace Hotel in Bankstown, New South Wales (the South Terrace\nHotel), as described in the transaction documents provided as part\nof the application (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "8 July 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The Acquirers are part of the Oscars Group, which owns and\noperates community, food & beverage, entertainment and\naccommodation venues across New South Wales, South Australia,\nQueensland and Victoria.\nThe target, the South Terrace Hotel, is a community, food, beverage\nand entertainment venue located at 280 South Terrace, Bankstown\nNSW 2200.\nThe parties both supply retail hospitality services including dining,\nentertainment, gaming and on-premises liquor services in the City of\nCanterbury Bankstown local council area."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. the parties\u2019 combined share in the supply of dining,\nentertainment, gaming and on-premises liquor services at\npub-style venues in the local area surrounding the South\nTerrace Hotel is low to moderate\nb. there are alternative pub-style venues that supply dining,\nentertainment, gaming, and liquor for on-site consumption in\nthe local area surrounding the South Terrace Hotel and in the\nbroader City of Canterbury Bankstown area.\n\u2022 The ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -177,135 +158,42 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "WA-15009",
       "merger_name": "MA Financial Group (Redcape Fund) - Hotel Brunswick",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "REDCAPE HOTEL GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 139 067 244",
-          "canonical": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          },
-          "party_page": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          }
-        },
-        {
-          "name": "MAHPT TT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "31 619 297 657",
-          "party_page": {
-            "id": "mahpt-tt-pty-ltd",
-            "name": "Mahpt Tt Pty Ltd"
-          }
-        }
+        "REDCAPE HOTEL GROUP PTY LTD",
+        "MAHPT TT PTY LTD"
       ],
       "targets": [
-        {
-          "name": "BRUNSWICK HOTEL OPCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 656 116 853",
-          "party_page": {
-            "id": "brunswick-hotel-opco-pty-ltd",
-            "name": "Brunswick Hotel Opco Pty Ltd"
-          }
-        },
-        {
-          "name": "The Trustee for Brunswick Hotel Sub-Trust",
-          "identifier_type": "ABN",
-          "identifier": "51 927 228 244",
-          "party_page": {
-            "id": "the-trustee-for-brunswick-hotel-sub-trust",
-            "name": "The Trustee for Brunswick Hotel Sub-Trust"
-          }
-        }
-      ]
+        "BRUNSWICK HOTEL OPCO PTY LTD",
+        "The Trustee for Brunswick Hotel Sub-Trust"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25027",
       "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Arthouse Hotel",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "REDCAPE HOTEL GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 139 067 244",
-          "canonical": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          },
-          "party_page": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          }
-        }
+        "REDCAPE HOTEL GROUP PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Alsimas Pty Limited",
-          "identifier_type": "ACN",
-          "identifier": "650 101 778",
-          "party_page": {
-            "id": "alsimas-pty-limited",
-            "name": "Alsimas Pty Limited"
-          }
-        }
-      ]
+        "Alsimas Pty Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-60017",
       "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Entrance Social Club",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "REDCAPE HOTEL GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 139 067 244",
-          "canonical": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          },
-          "party_page": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          }
-        },
-        {
-          "name": "MAHF CUSTODIAN PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "96 619 512 060",
-          "canonical": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          },
-          "party_page": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          }
-        }
+        "REDCAPE HOTEL GROUP PTY LTD",
+        "MAHF CUSTODIAN PTY LTD"
       ],
       "targets": [
-        {
-          "name": "REDBRAN PTY. LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "34 003 920 232",
-          "party_page": {
-            "id": "redbran-pty-limited",
-            "name": "Redbran Pty. Limited"
-          }
-        }
-      ]
+        "REDBRAN PTY. LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

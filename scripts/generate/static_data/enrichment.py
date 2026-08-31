@@ -4,6 +4,7 @@
 All downstream generators consume the already-enriched objects.
 """
 
+import re
 from datetime import timedelta
 
 from scripts.constants import merger_status, tribunal
@@ -141,6 +142,73 @@ def strip_event_status(merger: dict) -> dict:
             for event in events
         ],
     }
+
+
+# Fields carried by an enriched merger that no page on the site reads. They
+# stay in data/output/mergers.json (the offline artifact, and the CLI bundle's
+# source) and are dropped from the deployed per-merger files by
+# :func:`slim_for_site`.
+SITE_UNUSED_MERGER_FIELDS = frozenset({
+    'accc_determination_raw',        # normalised into accc_determination
+    'page_modified_datetime',        # register bookkeeping
+    'public_benefits_determination',
+    'public_benefits_determination_date',
+})
+
+SITE_UNUSED_EVENT_FIELDS = frozenset({
+    'determination_commission_division',
+    'phase2_notice_commission_division',
+})
+
+# The only determination-table rows the site renders. MergerDetail shows the
+# ACCC's reasoning through DeterminationExplanationSection, which scans for a
+# row whose label starts with one of these and renders its ``details``; the
+# remaining rows (the parties, the acquisition, the determination itself) are
+# already on the page as structured fields. The label is whitespace-collapsed
+# before matching because it comes out of a PDF with layout newlines in it —
+# the same normalisation findExplanationDetails applies in the browser.
+RENDERED_DETERMINATION_ROWS = ('explanation for determination', 'reasons for determination')
+
+
+def _is_rendered_determination_row(row) -> bool:
+    if not isinstance(row, dict):
+        return False
+    item = row.get('item')
+    if not isinstance(item, str):
+        return False
+    return re.sub(r'\s+', ' ', item).strip().lower().startswith(RENDERED_DETERMINATION_ROWS)
+
+
+def slim_for_site(merger: dict) -> dict:
+    """Return a copy of ``merger`` carrying only what the site renders.
+
+    The deployed per-merger file is the merger detail page's payload and
+    nothing else — ``data/output/mergers.json`` keeps the complete record for
+    offline analysis and for the CLI bundle (generate-cli-data.sh), which
+    indexes every determination row into its full-text search. So the deployed
+    copy drops the fields no page reads and, from each event, the
+    determination-table rows the page never renders. The input merger is left
+    unmutated because the same object feeds other outputs.
+    """
+    slim = {k: v for k, v in merger.items() if k not in SITE_UNUSED_MERGER_FIELDS}
+
+    events = slim.get('events')
+    if not events:
+        return slim
+
+    slim_events = []
+    for event in events:
+        slim_event = {k: v for k, v in event.items() if k not in SITE_UNUSED_EVENT_FIELDS}
+        rows = slim_event.get('determination_table_content')
+        if isinstance(rows, list):
+            kept = [row for row in rows if _is_rendered_determination_row(row)]
+            if kept:
+                slim_event['determination_table_content'] = kept
+            else:
+                del slim_event['determination_table_content']
+        slim_events.append(slim_event)
+    slim['events'] = slim_events
+    return slim
 
 
 # Stage label applied when we infer Phase 2 from a notice event before the
@@ -322,21 +390,37 @@ def link_similar_mergers(enriched_mergers: list, similar_map: dict) -> int:
 
     similar_map: {merger_id: [similar_merger_id, ...]}
 
-    Each card contains the fields needed to render a summary tile without
-    requiring a separate fetch: merger_id, merger_name, status,
-    accc_determination, acquirers (first 2), targets (first 2).
+    Each card carries only what the tile renders (see the "You might be
+    interested in" block in MergerDetail.jsx): merger_id, merger_name, the
+    names of the first 2 acquirers and targets, and one outcome label —
+    accc_determination when the matter is decided, otherwise status. Party
+    entries are bare name strings, not the full party dicts: identifiers and
+    party_page links are never read here and each card would otherwise repeat
+    them for up to 4 parties. Empty fields are omitted entirely.
 
     Returns the number of mergers that had at least one similar merger linked.
     """
+    def _party_names(parties: list) -> list:
+        return [p.get('name') for p in parties[:2] if p.get('name')]
+
     def _make_card(m: dict) -> dict:
-        return {
+        card = {
             'merger_id': m.get('merger_id'),
             'merger_name': m.get('merger_name'),
-            'status': m.get('status'),
-            'accc_determination': m.get('accc_determination'),
-            'acquirers': m.get('acquirers', [])[:2],
-            'targets': m.get('targets', [])[:2],
         }
+        acquirers = _party_names(m.get('acquirers') or [])
+        if acquirers:
+            card['acquirers'] = acquirers
+        targets = _party_names(m.get('targets') or [])
+        if targets:
+            card['targets'] = targets
+        # The tile shows the determination when there is one and falls back to
+        # the status, so only ever one of the two is worth carrying.
+        if m.get('accc_determination'):
+            card['accc_determination'] = m['accc_determination']
+        elif m.get('status'):
+            card['status'] = m['status']
+        return card
 
     card_lookup = {m['merger_id']: _make_card(m) for m in enriched_mergers if m.get('merger_id')}
 

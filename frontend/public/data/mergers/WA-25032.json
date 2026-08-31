@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-06-22T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-06-22T20:41:38+10:00",
   "acquirers": [
     {
       "name": "RC BITE BID CO PTY LTD",
@@ -100,24 +98,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/River%20Capital%20%E2%80%93%20YOMG%20%28WA-25032%29%20-%20Notification%20waiver%20determination%20-%2022%20June%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "River Capital Pty Ltd (River Capital) applied for a notification waiver\nin respect of its proposed acquisition, through a special purpose\nvehicle (RC Bite Bid Co Pty Ltd), of 100% of the issued shares in\nYOMG OpCo (which will own the trading business operating under\nthe \u201cYOMG\u201d brand), the Leaseholder Companies (which hold the\nleases for each YOMG location), and YOMG IP Co (which holds the\nYOMG Group's intellectual property), as described in the transaction\ndocuments provided as part of the application (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "22 June 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, River Capital, is an Australian-incorporated private\ninvestment firm headquartered in Melbourne, Australia. River Capital\nmanages a number of funds with varying strategies and investments\nin various portfolio companies.\nThe Cheesecake Shop, a River Capital portfolio company, is a retailer\nof cakes and desserts. It sells whole cakes and slices baked fresh\non-site for take-home consumption, ordered in-store or online, as\nwell as \u201cdessert cups\u201d. The Cheesecake Shop has approximately 255\nstores across Australia and New Zealand.\nThe Yo My Company Pty Ltd and its associated entities operate food\nand beverage outlets in Australia under the \u201cYOMG\u201d brand. YOMG is\na quick-service restaurant business supplying burgers, fries, wings,\nfrozen yoghurt and related food and beverage products. YOMG\ncurrently operates 15 stores across Victoria and Queensland."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. the parties\u2019 combined share in the retail supply of dessert\nproducts in Victoria, Queensland and Australia is estimated\nto be low and the increase in share arising from the\nAcquisition would be small\nb. there are alternative retail suppliers of dessert products near\nYOMG stores in Victoria and Queensland.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -140,118 +121,41 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "WA-25008",
       "merger_name": "Five V Capital - FTP Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OVERWATCH BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 739 970",
-          "party_page": {
-            "id": "overwatch-bidco-pty-ltd",
-            "name": "Overwatch Bidco Pty Ltd"
-          }
-        }
+        "OVERWATCH BIDCO PTY LTD"
       ],
       "targets": [
-        {
-          "name": "FTP GROUP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "82 626 217 614",
-          "party_page": {
-            "id": "ftp-group-holdings-pty-ltd",
-            "name": "Ftp Group Holdings Pty Ltd"
-          }
-        },
-        {
-          "name": "FAARM BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 834 390",
-          "canonical": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          },
-          "party_page": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          }
-        }
-      ]
+        "FTP GROUP HOLDINGS PTY LTD",
+        "FAARM BIDCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-75009",
       "merger_name": "Charter Hall Holdings - JGS Private Capital",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CHARTER HALL HOLDINGS PTY. LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "15 051 363 547",
-          "canonical": {
-            "id": "charter-hall",
-            "name": "Charter Hall"
-          },
-          "party_page": {
-            "id": "charter-hall",
-            "name": "Charter Hall"
-          }
-        }
+        "CHARTER HALL HOLDINGS PTY. LIMITED"
       ],
       "targets": [
-        {
-          "name": "JGS PRIVATE CAPITAL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "20 602 602 595",
-          "party_page": {
-            "id": "jgs-private-capital-pty-ltd",
-            "name": "Jgs Private Capital Pty Ltd"
-          }
-        },
-        {
-          "name": "J.G. SERVICE PTY. LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "75 008 492 126",
-          "party_page": {
-            "id": "j-g-service-pty-limited",
-            "name": "J.G. Service Pty. Limited"
-          }
-        }
-      ]
+        "JGS PRIVATE CAPITAL PTY LTD",
+        "J.G. SERVICE PTY. LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-70018",
       "merger_name": "Restaurant Brands and Yum! Brands \u2013 Taco Bell restaurants",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Taco Ventures Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "697 591 692",
-          "party_page": {
-            "id": "taco-ventures-pty-ltd",
-            "name": "Taco Ventures Pty Ltd"
-          }
-        }
+        "Taco Ventures Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Collins Foods Subsidiary Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "94 616 663 793",
-          "party_page": {
-            "id": "collins-foods-subsidiary-pty-ltd",
-            "name": "Collins Foods Subsidiary Pty Ltd"
-          }
-        }
-      ]
+        "Collins Foods Subsidiary Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

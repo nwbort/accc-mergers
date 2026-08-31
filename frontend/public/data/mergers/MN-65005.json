@@ -7,7 +7,6 @@
   "original_notification_datetime": "2026-03-03T12:00:00Z",
   "stage": "Phase 2 - detailed assessment",
   "end_of_determination_period": "2026-09-23T12:00:00Z",
-  "page_modified_datetime": "2026-08-06T16:47:45+10:00",
   "consultation_response_due_date": "2026-07-28T12:00:00Z",
   "acquirers": [
     {
@@ -133,7 +132,6 @@
           ]
         }
       ],
-      "phase2_notice_commission_division": "Decision made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Competition and Consumer Act 2010 (Cth)",
       "url_gh": "/mergers/MN-65005/Decision to Proceed to a Phase 2 review_0.pdf",
       "phase": "Phase 2"
     },
@@ -183,98 +181,41 @@
   "phase_1_determination_date": "2026-04-16T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "has_nocc": true,
   "similar_mergers": [
     {
       "merger_id": "MN-40015",
       "merger_name": "Swiss Re - QBE Insurance's Trade Credit and Surety business",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Swiss Re International SE",
-          "identifier_type": null,
-          "identifier": "B134553",
-          "party_page": {
-            "id": "swiss-re-international-se",
-            "name": "Swiss Re International SE"
-          }
-        }
+        "Swiss Re International SE"
       ],
       "targets": [
-        {
-          "name": "QBE Insurance Holdings Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "69 146 960 438",
-          "party_page": {
-            "id": "qbe-insurance-holdings-pty-limited",
-            "name": "QBE Insurance Holdings Pty Limited"
-          }
-        }
-      ]
+        "QBE Insurance Holdings Pty Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70015",
       "merger_name": "Bendigo and Adelaide Bank \u2013 RACQ Bank",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BENDIGO AND ADELAIDE BANK LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "11 068 049 178",
-          "party_page": {
-            "id": "bendigo-and-adelaide-bank-limited",
-            "name": "Bendigo And Adelaide Bank Limited"
-          }
-        }
+        "BENDIGO AND ADELAIDE BANK LIMITED"
       ],
       "targets": [
-        {
-          "name": "MEMBERS BANKING GROUP LIMITED (TRADING AS RACQ BANK)",
-          "identifier_type": "ABN",
-          "identifier": "83 087 651 054",
-          "party_page": {
-            "id": "members-banking-group-limited-trading-as-racq-bank",
-            "name": "Members Banking Group Limited (Trading As Racq Bank)"
-          }
-        }
-      ]
+        "MEMBERS BANKING GROUP LIMITED (TRADING AS RACQ BANK)"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-80006",
       "merger_name": "Russell Investment Group \u2013 Zurich Investment Management",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "RUSSELL INVESTMENT GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "92 003 066 859",
-          "party_page": {
-            "id": "russell-investment-group-pty-ltd",
-            "name": "Russell Investment Group Pty Ltd"
-          }
-        }
+        "RUSSELL INVESTMENT GROUP PTY LTD"
       ],
       "targets": [
-        {
-          "name": "ZURICH INVESTMENT MANAGEMENT LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "56 063 278 400",
-          "canonical": {
-            "id": "zurich-assure-australia-pty-ltd",
-            "name": "Zurich"
-          },
-          "party_page": {
-            "id": "zurich-assure-australia-pty-ltd",
-            "name": "Zurich"
-          }
-        }
-      ]
+        "ZURICH INVESTMENT MANAGEMENT LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

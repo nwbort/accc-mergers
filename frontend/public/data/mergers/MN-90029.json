@@ -7,7 +7,6 @@
   "original_notification_datetime": "2026-08-18T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-09-29T12:00:00Z",
-  "page_modified_datetime": "2026-08-21T10:14:50+10:00",
   "consultation_response_due_date": "2026-08-26T12:00:00Z",
   "acquirers": [
     {
@@ -98,138 +97,45 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "WA-65004",
       "merger_name": "Kee Safety - RIS Safety",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Cielo TopCo Limited",
-          "identifier_type": null,
-          "identifier": "CRN  16320933",
-          "party_page": {
-            "id": "cielo-topco-limited",
-            "name": "Cielo TopCo Limited"
-          }
-        },
-        {
-          "name": "Kee Safety (Australia) Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "694 369 116",
-          "party_page": {
-            "id": "kee-safety-australia-pty-ltd",
-            "name": "Kee Safety (Australia) Pty Ltd"
-          }
-        }
+        "Cielo TopCo Limited",
+        "Kee Safety (Australia) Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "HALLWELD BENNETT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "15 161 086 595",
-          "party_page": {
-            "id": "hallweld-bennett-pty-ltd",
-            "name": "Hallweld Bennett Pty Ltd"
-          }
-        },
-        {
-          "name": "RIS SAFETY HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "19 668 836 351",
-          "party_page": {
-            "id": "ris-safety-holdings-pty-ltd",
-            "name": "Ris Safety Holdings Pty Ltd"
-          }
-        }
-      ]
+        "HALLWELD BENNETT PTY LTD",
+        "RIS SAFETY HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-01092",
       "merger_name": "Winning Group Holdings \u2013 Winning Appliances",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Herman Corp Pty Ltd (as trustee for the Herman Holdings Family Trust)",
-          "identifier_type": "ABN",
-          "identifier": "21 151 833 555",
-          "party_page": {
-            "id": "herman-corp-pty-ltd-as-trustee-for-the-herman-holdings-family-trust",
-            "name": "Herman Corp Pty Ltd (as trustee for the Herman Holdings Family Trust)"
-          }
-        },
-        {
-          "name": "Yandoo Holdings Pty Ltd",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "yandoo-holdings-pty-ltd",
-            "name": "Yandoo Holdings Pty Ltd"
-          }
-        }
+        "Herman Corp Pty Ltd (as trustee for the Herman Holdings Family Trust)",
+        "Yandoo Holdings Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "WINNING APPLIANCES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "94 002 193 688",
-          "party_page": {
-            "id": "winning-appliances-pty-ltd",
-            "name": "Winning Appliances Pty Ltd"
-          }
-        }
-      ]
+        "WINNING APPLIANCES PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-15003",
       "merger_name": "Coforge - Encora",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Coforge Limited",
-          "identifier_type": null,
-          "identifier": "L72100HR1992PLC128382",
-          "party_page": {
-            "id": "coforge-limited",
-            "name": "Coforge Limited"
-          }
-        },
-        {
-          "name": "Encora Holdco Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "encora-holdco-limited",
-            "name": "Encora Holdco Limited"
-          }
-        }
+        "Coforge Limited",
+        "Encora Holdco Limited"
       ],
       "targets": [
-        {
-          "name": "Encora US Holdco, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "encora-us-holdco-inc",
-            "name": "Encora US Holdco, Inc"
-          }
-        },
-        {
-          "name": "Encora Holdings Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "encora-holdings-limited",
-            "name": "Encora Holdings Limited"
-          }
-        }
-      ]
+        "Encora US Holdco, Inc",
+        "Encora Holdings Limited"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

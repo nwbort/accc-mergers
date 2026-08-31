@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-08-20T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-08-20T17:45:51+10:00",
   "acquirers": [
     {
       "name": "Vertis Bidco Pty Ltd",
@@ -101,24 +99,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/moderated_files/Igneo%20Infrastructure%20Partners%20%E2%80%93%20Green%20Squares%20Energy%20%28WA-95035%29%20-%20Notification%20waiver%20determination%20-%2020%20August%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "Vertis Bidco Pty Ltd and First Sentier Investors (Australia) Re Ltd\napplied for a notification waiver in respect of Vertis Bidco Pty Ltd\u2019s\nproposed acquisition of Green Squares Energy Pty Ltd and the Green\nSquares Energy Trust (together, Green Squares Energy), as\ndescribed in the transaction documents provided as part of the\napplication (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "20 August 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, Vertis Bidco Pty Ltd (Bidco), is an investment vehicle\nwhich will be 100% owned and operated by Vertis Energy, a company\n100% owned and operated by the Australia New Zealand Diversified\nInfrastructure Fund (Active) (ADIF). ADIF is a fund managed by Igneo\nInfrastructure Partners (Igneo) and is owned by its underlying\ninvestors, largely comprised of Australian superannuation funds and\ninstitutional investors.\nIgneo is a global infrastructure investment manager and the direct\ninfrastructure arm of the First Sentier Group, a global asset\nmanagement organisation headquartered in Sydney. It specialises in\nlong term investments in mature, mid-market infrastructure\nbusinesses across sectors such as renewables, digital infrastructure,\nwaste management, water utilities, transportation and logistics, with\nactivity spanning Australia, New Zealand, Europe, the UK and North\nAmerica.\nIgneo 100% owns and operates Atmos Renewables Pty Ltd (Atmos),\nan Australian renewable energy independent power producer\nfocused on owning, developing and operating large scale wind, solar\nand energy storage assets across Australia. Atmos holds a\nsubstantial portfolio of utility scale renewable generation projects\ndistributed across multiple states, supplying clean electricity to the\ngrid and large energy users.\nIgneo is also a majority investor in Clean Peak Energy Renewable\nInvestment Trust (CPERI), a joint venture with CleanPeak Energy,\nwhich develops, owns and operates distributed renewable energy\nand multi-utility infrastructure assets at residential, commercial and\nindustrial sites, including solar, battery storage and embedded\nnetwork solutions supplying on-site electricity and related energy\nservices to customers.\nThe target, Green Squares Energy, is an Australian energy business\nfocused on renewable energy and electricity contracting solutions. It\nis primarily involved in structuring and financing commercial behind\nthe meter renewable energy projects, including power purchase\nagreements, and supporting investment in solar and related clean\nenergy projects. It also owns 2 front of the meter renewable energy\nassets which are connected to the NEM."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition given:\na. the parties\u2019 combined share in wholesale electricity\ngeneration and supply in the National Electricity Market,\nincluding in renewable energy generation, is estimated to be\nlow and the increase in share of supply arising from the\nAcquisition is expected to be small\nb. the parties\u2019 combined share in the supply of behind the\nmeter solutions nationally is estimated to be low and the\nincrease in share of supply arising from the Acquisition is\nexpected to be small\nc. there are alternative suppliers of wholesale electricity\ngeneration to the National Electricity Market, including in\nrenewable energy generation, and of behind the meter\nsolutions nationally.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
@@ -141,144 +122,43 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "WA-70021",
       "merger_name": "Aula Energy \u2013 Additional interest in the Boulder Creek Wind Farm",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BCWF 2 Holdings Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "697 890 207",
-          "canonical": {
-            "id": "bcwf-2-pty-limited",
-            "name": "Bcwf 2 Pty Limited"
-          },
-          "party_page": {
-            "id": "bcwf-2-pty-limited",
-            "name": "Bcwf 2 Pty Limited"
-          }
-        },
-        {
-          "name": "AULA ENERGY HOLDINGS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "13 662 726 909",
-          "party_page": {
-            "id": "aula-energy-holdings-pty-limited",
-            "name": "Aula Energy Holdings Pty Limited"
-          }
-        }
+        "BCWF 2 Holdings Pty Ltd",
+        "AULA ENERGY HOLDINGS PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "C S ENERGY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "54 078 848 745",
-          "party_page": {
-            "id": "c-s-energy-limited",
-            "name": "C S Energy Limited"
-          }
-        },
-        {
-          "name": "BCWF 2 PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "77 670 206 256",
-          "canonical": {
-            "id": "bcwf-2-pty-limited",
-            "name": "Bcwf 2 Pty Limited"
-          },
-          "party_page": {
-            "id": "bcwf-2-pty-limited",
-            "name": "Bcwf 2 Pty Limited"
-          }
-        }
-      ]
+        "C S ENERGY LIMITED",
+        "BCWF 2 PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-60023",
       "merger_name": "Siemens Energy \u2013 Camlin Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Siemens Energy Limited",
-          "identifier_type": null,
-          "identifier": "UK company number  00631825",
-          "party_page": {
-            "id": "siemens-energy-limited",
-            "name": "Siemens Energy Limited"
-          }
-        }
+        "Siemens Energy Limited"
       ],
       "targets": [
-        {
-          "name": "Camlin Limited",
-          "identifier_type": null,
-          "identifier": "UK company number  NI073204",
-          "canonical": {
-            "id": "camlin-limited",
-            "name": "Camlin Limited"
-          },
-          "party_page": {
-            "id": "camlin-limited",
-            "name": "Camlin Limited"
-          }
-        },
-        {
-          "name": "Camlin (Australia) Pty Ltd",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "camlin-limited",
-            "name": "Camlin Limited"
-          },
-          "party_page": {
-            "id": "camlin-limited",
-            "name": "Camlin Limited"
-          }
-        }
-      ]
+        "Camlin Limited",
+        "Camlin (Australia) Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70002",
       "merger_name": "Ethos (TPG) \u2013 EMIS and certain related assets",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Ethos Bidco, Ltd",
-          "identifier_type": null,
-          "identifier": "UK Company Number: 16905190",
-          "party_page": {
-            "id": "ethos-bidco-ltd",
-            "name": "Ethos Bidco, Ltd"
-          }
-        }
+        "Ethos Bidco, Ltd"
       ],
       "targets": [
-        {
-          "name": "EMIS Group Limited",
-          "identifier_type": "ABN",
-          "identifier": "75 075 102 028",
-          "party_page": {
-            "id": "emis-group-limited",
-            "name": "EMIS Group Limited"
-          }
-        },
-        {
-          "name": "UnitedHealth Group Incorporated (UHG)",
-          "identifier_type": null,
-          "identifier": "US EIN  4113221939",
-          "party_page": {
-            "id": "unitedhealth-group-incorporated-uhg",
-            "name": "UnitedHealth Group Incorporated (UHG)"
-          }
-        }
-      ]
+        "EMIS Group Limited",
+        "UnitedHealth Group Incorporated (UHG)"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

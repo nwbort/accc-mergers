@@ -9,8 +9,6 @@
   "end_of_determination_period": "2026-09-14T12:00:00Z",
   "determination_publication_date": "2026-08-28T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-08-28T13:54:09+10:00",
   "consultation_response_due_date": "2026-08-11T12:00:00Z",
   "acquirers": [
     {
@@ -84,31 +82,10 @@
       "title": "HammondCare \u2013 Anglican Community Services' Support at Home business - Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/moderated_files/HammondCare%20-%20Anglican%20Community%20Services%27%20Support%20at%20Home%20business%20-%20Determination.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "HammondCare proposes to acquire Anglican Community Services\u2019\n(ACS) Support at Home (SAH) business (the Acquisition).\nAs part of the Acquisition, HammondCare would also acquire\ninterests held by ACS in two Care Finder Agreements, which form\npart of a broader Commonwealth-funded program to support people\nto navigate the aged care system. Post-Acquisition, HammondCare\nwould also deliver:\n\u25aa Commonwealth Home Support Program (CHSP) services to\nACS clients on behalf of ACS until the transition of the CHSP\nprogram to SAH pursuant to broader legislative reform in the\naged care sector; and\n\u25aa SAH services to ACS clients who reside in retirement\nvillages operated by ACS for 24 months from completion."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "The acquirer, HammondCare, is an Australian Charities and Not-for-\nprofits Commission (ACNC) registered Australian charity that\noperates across New South Wales, Victoria, Queensland, South\nAustralia, and the Australian Capital Territory. HammondCare and its\nconnected entity, HammondCare Health and Hospitals Ltd, supply\nservices relating to aged care, dementia care, palliative and\nsupportive care, respite, hospital care and allied health services,\ndelivered both in the home and in residential or hospital settings.\nHammondCare supplies both SAH and CHSP services.\nThe target is the SAH business of ACS (the Target). ACS is an ACNC\nregistered Australian charity that operates across New South Wales,\nVictoria, Queensland and South Australia. ACS supplies a range of\ncharitable and pastoral services, including SAH and CHSP services."
-        },
-        {
-          "item": "Overlap between the\nParties",
-          "details": "HammondCare and the Target (together, the Parties) overlap in\nthe supply of SAH and CHSP services in New South Wales."
-        },
         {
           "item": "Reasons for determination",
           "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, information from third parties and publicly\navailable information.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings:\n\u2022 post-Acquisition, HammondCare would face competition from\nseveral alternative suppliers of SAH and CHSP services in New\nSouth Wales;\n\u2022 the market share aggregation in the supply of SAH and CHSP\nservices in New South Wales resulting from the Acquisition is\nestimated to be low."
-        },
-        {
-          "item": "Applications for review",
-          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
         }
       ],
       "url_gh": "/mergers/MN-85038/HammondCare - Anglican Community Services' Support at Home business - Determination.pdf",
@@ -122,162 +99,45 @@
   "phase_1_determination_date": "2026-08-28T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-15019",
       "merger_name": "Opal HealthCare - Bethel Aged Care",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OHCA PROPERTY HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "70 675 807 477",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        },
-        {
-          "name": "DPG SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "38 090 007 999",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        }
+        "OHCA PROPERTY HOLDINGS PTY LTD",
+        "DPG SERVICES PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Bethel Amen Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "077 379 358",
-          "party_page": {
-            "id": "bethel-amen-pty-ltd",
-            "name": "Bethel Amen Pty Ltd"
-          }
-        },
-        {
-          "name": "Java Dale Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "077 379 367",
-          "party_page": {
-            "id": "java-dale-pty-ltd",
-            "name": "Java Dale Pty Ltd"
-          }
-        }
-      ]
+        "Bethel Amen Pty Ltd",
+        "Java Dale Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-75002",
       "merger_name": "Opal Healthcare \u2013 Sunnymeade Park Aged Care Community",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OHCA Property Holdings Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "70 675 807 477",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        },
-        {
-          "name": "DPG Services Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "38 090 007 999",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        }
+        "OHCA Property Holdings Pty Ltd",
+        "DPG Services Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "The assets and business comprising Sunnymeade Park Aged Care Community",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "the-assets-and-business-comprising-sunnymeade-park-aged-care-community",
-            "name": "The assets and business comprising Sunnymeade Park Aged Care Community"
-          }
-        }
-      ]
+        "The assets and business comprising Sunnymeade Park Aged Care Community"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-75012",
       "merger_name": "Opal HealthCare \u2013 Greenwich Place residential aged care home",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OHCA PROPERTY HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "70 675 807 477",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        },
-        {
-          "name": "DPG SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "38 090 007 999",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        }
+        "OHCA PROPERTY HOLDINGS PTY LTD",
+        "DPG SERVICES PTY LTD"
       ],
       "targets": [
-        {
-          "name": "GREENWICH PLACE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "45 000 706 249",
-          "party_page": {
-            "id": "greenwich-place-pty-ltd",
-            "name": "Greenwich Place Pty Ltd"
-          }
-        },
-        {
-          "name": "GREENWICH CARE PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "96 613 786 682",
-          "party_page": {
-            "id": "greenwich-care-pty-limited",
-            "name": "Greenwich Care Pty Limited"
-          }
-        }
-      ]
+        "GREENWICH PLACE PTY LTD",
+        "GREENWICH CARE PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

@@ -8,8 +8,6 @@
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-08-19T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-07-29T14:44:27+10:00",
   "consultation_response_due_date": "2026-07-16T12:00:00Z",
   "acquirers": [
     {
@@ -79,31 +77,10 @@
       "title": "Motorola Solutions - D-Fend Solutions - Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Motorola%20Solutions%20-%20D-Fend%20Solutions%20-%20Phase%201%20determination.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "Motorola Solutions, Inc. (MSI), through its subsidiary Motorola\nSolutions Finance EMEA Limited (MSF EMEA), proposes to acquire\nall of the issued and outstanding shares of D-Fend Solutions AD Ltd.\n(D-Fend Solutions) (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "The acquirer, MSF EMEA. is the holding entity for MSI's operating\nsubsidiaries in the UK, EU, Israel, and Norway.\nMSI is a US-domiciled company that supplies mission-critical\ncommunications, video security and access control, and command\ncentre software products and solutions for public safety,\ngovernment (including defence), and enterprise customers.\nThe target, D-Fend Solutions, is an Israel-based technology company\nspecialising in counter-unmanned aircraft system (C-UAS)\ntechnology. D-Fend Solutions supplies devices that detect, identify\nand mitigate unauthorised drones, including through radio\nfrequency, radar and optical detection technologies. Its products are\nsupplied primarily to public safety and critical infrastructure\ncustomers."
-        },
-        {
-          "item": "Overlap and relationship\nbetween the Parties",
-          "details": "There are no horizontal overlaps or vertical relationships between\nMSI (and its connected entities) and D-Fend Solutions in Australia."
-        },
         {
           "item": "Reasons for determination",
           "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and information from third parties.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 There are no horizontal overlaps or vertical relationships\nbetween MSI and D-Fend Solutions.\n\u2022 The merged entity would be unlikely to have the ability or\nincentive to engage in anti-competitive bundling or tying."
-        },
-        {
-          "item": "Applications for review",
-          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
         }
       ],
       "url_gh": "/mergers/MN-05032/Motorola Solutions - D-Fend Solutions - Phase 1 determination.pdf",
@@ -118,106 +95,41 @@
   "phase_1_determination_date": "2026-07-29T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "WA-25008",
       "merger_name": "Five V Capital - FTP Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OVERWATCH BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 739 970",
-          "party_page": {
-            "id": "overwatch-bidco-pty-ltd",
-            "name": "Overwatch Bidco Pty Ltd"
-          }
-        }
+        "OVERWATCH BIDCO PTY LTD"
       ],
       "targets": [
-        {
-          "name": "FTP GROUP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "82 626 217 614",
-          "party_page": {
-            "id": "ftp-group-holdings-pty-ltd",
-            "name": "Ftp Group Holdings Pty Ltd"
-          }
-        },
-        {
-          "name": "FAARM BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 834 390",
-          "canonical": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          },
-          "party_page": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          }
-        }
-      ]
+        "FTP GROUP HOLDINGS PTY LTD",
+        "FAARM BIDCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-01061",
       "merger_name": "Molex \u2013 Smiths Interconnect",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Molex Electronic Technologies Holdings, LLC",
-          "identifier_type": null,
-          "identifier": "Company number   464432478",
-          "party_page": {
-            "id": "molex-electronic-technologies-holdings-llc",
-            "name": "Molex Electronic Technologies Holdings, LLC"
-          }
-        }
+        "Molex Electronic Technologies Holdings, LLC"
       ],
       "targets": [
-        {
-          "name": "Smiths Interconnect Group Limited",
-          "identifier_type": null,
-          "identifier": "UK CRN  06641403",
-          "party_page": {
-            "id": "smiths-interconnect-group-limited",
-            "name": "Smiths Interconnect Group Limited"
-          }
-        }
-      ]
+        "Smiths Interconnect Group Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-90009",
       "merger_name": "Trescal \u2013 TR Calibration",
-      "status": "Assessment ceased",
-      "accc_determination": null,
       "acquirers": [
-        {
-          "name": "TRESCAL (AUSTRALIA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "39 117 603 835",
-          "party_page": {
-            "id": "trescal-australia-pty-ltd",
-            "name": "Trescal (Australia) Pty Ltd"
-          }
-        }
+        "TRESCAL (AUSTRALIA) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "TR PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 005 499 721",
-          "party_page": {
-            "id": "tr-pty-ltd",
-            "name": "Tr Pty Ltd"
-          }
-        }
-      ]
+        "TR PTY LTD"
+      ],
+      "status": "Assessment ceased"
     }
   ],
   "phase_1_estimate": {

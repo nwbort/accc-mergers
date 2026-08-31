@@ -757,9 +757,9 @@ function MergerDetail() {
                     </p>
                     <p className="text-xs text-gray-500 mt-0.5 truncate">
                       {[
-                        ...(similar.acquirers || []).map(a => a.name),
+                        ...(similar.acquirers || []),
                         '→',
-                        ...(similar.targets || []).map(t => t.name),
+                        ...(similar.targets || []),
                       ].join(' ')}
                     </p>
                   </div>

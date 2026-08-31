@@ -9,8 +9,6 @@
   "end_of_determination_period": "2026-06-17T12:00:00Z",
   "determination_publication_date": "2026-06-09T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-06-09T12:08:09+10:00",
   "consultation_response_due_date": "2026-05-11T12:00:00Z",
   "acquirers": [
     {
@@ -88,20 +86,7 @@
       "title": "News Corp-20% interest in National Distribution Services - Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/News%20Corp-NDS%20-%20Phase%201%20determination.pdf",
-      "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "News Corp Australia Pty Ltd (News Corp)\u2019s proposed acquisition\n(through its subsidiary, News Pty Ltd) of a 20% interest in National\nDistribution Services Pty Ltd (NDS) and a call option to acquire the\nremaining shares in NDS in limited circumstances (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "The acquirer, News Corp, is an Australian media company with\ninterests across digital media, magazines, newspapers, audio\nproduction, marketing and publishing. It is indirectly wholly owned by\nNews Corporation, which is headquartered in the United States and\nlisted on the Nasdaq and ASX.\nThrough its Australian subsidiaries, News Corp currently contracts\nwith a range of suppliers, including NDS, to distribute its print media\npublications across Australia to retailers and home delivery\nsubscribers. News Corp also arranges for its suppliers to distribute\ncertain third-party publishers\u2019 print media on a shared carriage\nbasis.\nThe target, NDS, is an Australian distribution and logistics company\nwhich supplies services to a range of publishers in Australia,\nincluding News Corp. NDS operates a distribution network covering\nVictoria, New South Wales, South Australia, Tasmania, Queensland\nand Darwin."
-        },
         {
           "item": "Reasons for determination",
           "details": "The reasons for the ACCC\u2019s determination are set out in section 2."
@@ -258,128 +243,43 @@
   "phase_1_determination_date": "2026-06-09T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-85003",
       "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "NACG WA Acquisition Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "693 678 296",
-          "party_page": {
-            "id": "nacg-wa-acquisition-pty-ltd",
-            "name": "NACG WA Acquisition Pty Ltd"
-          }
-        }
+        "NACG WA Acquisition Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "DCL CORP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "60 633 008 992",
-          "party_page": {
-            "id": "dcl-corp-pty-ltd",
-            "name": "Dcl Corp Pty Ltd"
-          }
-        },
-        {
-          "name": "IRON HIRE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 641 807 589",
-          "party_page": {
-            "id": "iron-hire-pty-ltd",
-            "name": "Iron Hire Pty Ltd"
-          }
-        }
-      ]
+        "DCL CORP PTY LTD",
+        "IRON HIRE PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-10005",
       "merger_name": "Apex - Mercer Administration Services and related assets",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Apex Group Holdings (Australia) Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "48 112 252 114",
-          "party_page": {
-            "id": "apex-group-holdings-australia-pty-ltd",
-            "name": "Apex Group Holdings (Australia) Pty Ltd"
-          }
-        }
+        "Apex Group Holdings (Australia) Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "MERCER OUTSOURCING (AUSTRALIA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "83 068 908 912",
-          "party_page": {
-            "id": "mercer-outsourcing-australia-pty-ltd",
-            "name": "Mercer Outsourcing (Australia) Pty Ltd"
-          }
-        },
-        {
-          "name": "MERCER ADMINISTRATION SERVICES (AUSTRALIA) PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "48 616 275 980",
-          "party_page": {
-            "id": "mercer-administration-services-australia-pty-limited",
-            "name": "Mercer Administration Services (Australia) Pty Limited"
-          }
-        }
-      ]
+        "MERCER OUTSOURCING (AUSTRALIA) PTY LTD",
+        "MERCER ADMINISTRATION SERVICES (AUSTRALIA) PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-50008",
       "merger_name": "WIN Television Network - NBN Enterprises & Television Holdings Darwin",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "WIN TELEVISION NETWORK PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "90 008 589 026",
-          "party_page": {
-            "id": "win-television-network-pty-ltd",
-            "name": "Win Television Network Pty Ltd"
-          }
-        }
+        "WIN TELEVISION NETWORK PTY LTD"
       ],
       "targets": [
-        {
-          "name": "NINE NETWORK AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "88 008 685 407",
-          "canonical": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          },
-          "party_page": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          }
-        },
-        {
-          "name": "NINE NETWORK AUSTRALIA HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 124 816 093",
-          "canonical": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          },
-          "party_page": {
-            "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network"
-          }
-        }
-      ]
+        "NINE NETWORK AUSTRALIA PTY LTD",
+        "NINE NETWORK AUSTRALIA HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

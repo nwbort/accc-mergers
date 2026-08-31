@@ -9,8 +9,6 @@
   "end_of_determination_period": "2026-04-29T12:00:00Z",
   "determination_publication_date": "2026-04-07T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-04-07T14:42:53+10:00",
   "consultation_response_due_date": "2026-03-23T12:00:00Z",
   "acquirers": [
     {
@@ -132,31 +130,10 @@
       "title": "National Dental Care - business assets comprising the Comfy Dental clinic, Mandurah, WA - Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Phase%201%20Determination%20-%20National%20Dental%20Care%20%E2%80%93%20business%20assets%20comprising%20the%20Comfy%20Dental%20clinic%2C%20Mandurah%2C%20WA.pdf",
-      "determination_commission_division": "Determination made by Commissioner Philip Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "NDC HoldCo Pty Ltd (together with its subsidiaries, NDC), through its\nwholly owned subsidiary, NDC Australia Pty Limited, proposes to\nacquire from the Comfy Dental Trust 100% of the business assets\ncomprising the Comfy Dental Clinic (Comfy Dental) (the\nAcquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "The acquirer, NDC, is a dental services organisation that operates a\nnetwork of dental clinics that provide a range of general dentistry\nservices. NDC has dental clinics in all Australian states and\nterritories except Tasmania. It has one existing dental clinic located\nin Mandurah, WA (DB Dental Mandurah). NDC is majority owned by\nfunds managed by Crescent Capital Partners.\nThe target, Comfy Dental is a dental clinic located in Mandurah, WA\nthat provides a range of general dentistry services."
-        },
-        {
-          "item": "Overlap between the\nparties",
-          "details": "The parties overlap in the supply of general dentistry services."
-        },
         {
           "item": "Reasons for determination",
           "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and publicly available information.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 The aggregation in the supply of general dentistry services in the\nlocal area arising from the Acquisition is not significant. This\nassessment is not impacted by consideration of previous\nacquisitions by NDC in the last three years.\n\u2022 NDC will continue to face competition from a number of\nalternative general dental clinics in the local area surrounding\nthe target."
-        },
-        {
-          "item": "Applications for review",
-          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
         }
       ],
       "url_gh": "/mergers/MN-50007/Phase 1 Determination - National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA.pdf",
@@ -170,140 +147,43 @@
   "phase_1_determination_date": "2026-04-07T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "WA-85013",
       "merger_name": "National Dental Care \u2013 DDTA Dental clinic in Launceston, TAS",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "NDC AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "49 162 955 866",
-          "canonical": {
-            "id": "national-dental-care",
-            "name": "National Dental Care"
-          },
-          "party_page": {
-            "id": "national-dental-care",
-            "name": "National Dental Care"
-          }
-        }
+        "NDC AUSTRALIA PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "TAN DENTAL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "18 146 067 594",
-          "party_page": {
-            "id": "tan-dental-pty-ltd",
-            "name": "Tan Dental Pty Ltd"
-          }
-        }
-      ]
+        "TAN DENTAL PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-75002",
       "merger_name": "Opal Healthcare \u2013 Sunnymeade Park Aged Care Community",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OHCA Property Holdings Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "70 675 807 477",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        },
-        {
-          "name": "DPG Services Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "38 090 007 999",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        }
+        "OHCA Property Holdings Pty Ltd",
+        "DPG Services Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "The assets and business comprising Sunnymeade Park Aged Care Community",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "the-assets-and-business-comprising-sunnymeade-park-aged-care-community",
-            "name": "The assets and business comprising Sunnymeade Park Aged Care Community"
-          }
-        }
-      ]
+        "The assets and business comprising Sunnymeade Park Aged Care Community"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-75012",
       "merger_name": "Opal HealthCare \u2013 Greenwich Place residential aged care home",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OHCA PROPERTY HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "70 675 807 477",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        },
-        {
-          "name": "DPG SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "38 090 007 999",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        }
+        "OHCA PROPERTY HOLDINGS PTY LTD",
+        "DPG SERVICES PTY LTD"
       ],
       "targets": [
-        {
-          "name": "GREENWICH PLACE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "45 000 706 249",
-          "party_page": {
-            "id": "greenwich-place-pty-ltd",
-            "name": "Greenwich Place Pty Ltd"
-          }
-        },
-        {
-          "name": "GREENWICH CARE PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "96 613 786 682",
-          "party_page": {
-            "id": "greenwich-care-pty-limited",
-            "name": "Greenwich Care Pty Limited"
-          }
-        }
-      ]
+        "GREENWICH PLACE PTY LTD",
+        "GREENWICH CARE PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

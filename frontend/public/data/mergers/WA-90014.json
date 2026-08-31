@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-05-15T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-05-15T17:49:17+10:00",
   "acquirers": [
     {
       "name": "Sail Parent Holdco Ltd",
@@ -121,24 +119,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Constellation%20Software%20-%20DerbySoft%20Holdings%20%28WA-90014%29%20-%20Notification%20waiver%20determination%20-%2015%20May%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Woodward pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "Sail Parent Holdco Ltd (Parent), an acquisition vehicle ultimately\nwholly owned by Constellation Software Inc. (CSI), applied for a\nnotification waiver in respect of its proposed acquisition of a\nmajority shareholding of around 90% of the issued equity interests in\nDerbySoft Holdings Limited (DerbySoft), as described in the\ntransaction documents provided as part of the application (the\nAcquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "15 May 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, Parent, is part of the Vela Operating Group, a group of\noperating companies owned by Vela Software International Inc.,\nwhich in turn is a wholly owned subsidiary of CSI. The CSI group of\ncompanies (CSI Group), including Vela Operating Group, acquire,\nmanage, and build industry-specific software businesses globally in\na variety of public and private sector industries.\nCSI Group includes two operating groups which, among other things,\nhave teams focused on providing software to the global travel and\nhospitality industries: the Juniper Group and the Jonas Group. The\nservices provided by these two groups include flight distribution\nservices, booking engine services, and digital marketing and\nhospitality technology services.\nThe target, DerbySoft, is a B2B commerce platform operating in the\nglobal travel industry. This industry involves platforms like DerbySoft\nproviding connectivity, digital marketing, and B2B marketplace\nservices to hotels, airlines, and other travel suppliers (e.g. tour\noperators), connecting them with distributors and other channels,\nsuch as online travel agencies, travel management companies,\nmetasearch platforms, and wholesalers across the globe.\nThe parties both supply digital software solutions and services for\nthe global travel and hospitality industries."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. there is no horizontal overlap or vertical relationship\nbetween any of the operations of CSI Group\u2019s portfolio\ncompanies and DerbySoft in Australia\nb. DerbySoft has a small Australian presence.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -161,122 +142,41 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "MN-75014",
       "merger_name": "Seismic \u2013 Highspot",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Seismic Software, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware File Number  4832793",
-          "canonical": {
-            "id": "seismic-software-inc",
-            "name": "Seismic Software, Inc."
-          },
-          "party_page": {
-            "id": "seismic-software-inc",
-            "name": "Seismic Software, Inc."
-          }
-        }
+        "Seismic Software, Inc."
       ],
       "targets": [
-        {
-          "name": "Highspot Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware File Number  5126410",
-          "canonical": {
-            "id": "highspot-inc",
-            "name": "Highspot Inc."
-          },
-          "party_page": {
-            "id": "highspot-inc",
-            "name": "Highspot Inc."
-          }
-        }
-      ]
+        "Highspot Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-20009",
       "merger_name": "Rocket Software \u2013 Vertica",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Rocket Software AMC UK Ltd",
-          "identifier_type": null,
-          "identifier": "UK Company number 01504593",
-          "party_page": {
-            "id": "rocket-software-amc-uk-ltd",
-            "name": "Rocket Software AMC UK Ltd"
-          }
-        },
-        {
-          "name": "Rocket Software, Inc.",
-          "identifier_type": null,
-          "identifier": "Companies\u2019 Register of Delaware  3506913",
-          "canonical": {
-            "id": "rocket-software-inc",
-            "name": "Rocket Software, Inc."
-          },
-          "party_page": {
-            "id": "rocket-software-inc",
-            "name": "Rocket Software, Inc."
-          }
-        }
+        "Rocket Software AMC UK Ltd",
+        "Rocket Software, Inc."
       ],
       "targets": [
-        {
-          "name": "Micro Focus IP Development Limited",
-          "identifier_type": null,
-          "identifier": "UK Company number 07233975",
-          "party_page": {
-            "id": "micro-focus-ip-development-limited",
-            "name": "Micro Focus IP Development Limited"
-          }
-        },
-        {
-          "name": "Open Text Corporation",
-          "identifier_type": null,
-          "identifier": "10836044",
-          "party_page": {
-            "id": "open-text-corporation",
-            "name": "Open Text Corporation"
-          }
-        }
-      ]
+        "Micro Focus IP Development Limited",
+        "Open Text Corporation"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-95005",
       "merger_name": "HCLTech - Jaspersoft",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "HCL Technologies Limited",
-          "identifier_type": "ABN",
-          "identifier": "37 541 578 951",
-          "party_page": {
-            "id": "hcl-technologies-limited",
-            "name": "HCL Technologies Limited"
-          }
-        }
+        "HCL Technologies Limited"
       ],
       "targets": [
-        {
-          "name": "CLOUD SOFTWARE GROUP AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "94 092 002 321",
-          "party_page": {
-            "id": "cloud-software-group-australia-pty-ltd",
-            "name": "Cloud Software Group Australia Pty Ltd"
-          }
-        }
-      ]
+        "CLOUD SOFTWARE GROUP AUSTRALIA PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

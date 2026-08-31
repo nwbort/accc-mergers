@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-05-27T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-05-27T17:06:43+10:00",
   "acquirers": [
     {
       "name": "Alta Genetics Australia Pty Ltd",
@@ -64,24 +62,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/URUS%20%28CVC%20Capital%20Partners%29%20-%20AgriWebb%20%28WA-30015%29%20-%20Notification%20waiver%20determination%20-%2027%20May%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "Alta Genetics Australia Pty Ltd (Alta Genetics), an Australian\nsubsidiary of the URUS Group which is indirectly controlled by funds\nadvised or managed by affiliates of CVC Capital Partners plc (CVC\nCapital Partners), applied for a notification waiver in respect of its\nproposed acquisition of 100% of the shares in AgriWebb Pty Ltd\n(AgriWebb), as described in the transaction documents provided as\npart of the application (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "27 May 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, Alta Genetics, is an Australian subsidiary of the URUS\nGroup. The URUS Group is a global company active in the agricultural\nsector, specifically providing products and services in bovine\ngenetics and reproductive technology. Another subsidiary of the\nURUS Group, Valley Agricultural Software, Inc. (VAS), supplies\nsoftware and information solutions targeted to dairy herd\nmanagement for intensive dairy operations.\nThe URUS Group, and by extension its subsidiaries, are indirectly\ncontrolled by funds advised or managed by affiliates of CVC Capital\nPartners (together, the CVC Funds), a public limited company\nincorporated in Jersey and listed in Amsterdam. The CVC Network is\na global alternative investment manager focused on private equity,\ncredit, infrastructure, and secondaries, and includes CVC Capital\nPartners, each of its subsidiaries, and the CVC Funds.\nThe target, AgriWebb, is an Australian provider of livestock and\nfarming management software. AgriWebb\u2019s software management\nsolutions are designed to assist farmers in managing their day-to-\nday operational business with farm record keeping, farm mapping,\nlivestock management, pasture and grazing management, task and\nworkflow management, and farm auditing and compliance.\nThe parties are both active in the supply of livestock management\nsoftware in Australia."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\ncertain publicly available information, and had regard to the factors\nin section 51ABV(2)(b) of the Competition and Consumer Act 2010\n(Cth) (the Act).\n\u2022 Based on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. there is limited overlap between the product offerings of the\nparties, as their respective offerings primarily serve different\nuse cases\nb. there are alternative providers of the types of livestock\nmanagement software offered by the parties, both globally\nand in Australia\nc. VAS has a small Australian presence, and any increment in\nshare of supply arising from the Acquisition is estimated to\nbe small.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -104,123 +85,42 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "MN-65009",
       "merger_name": "CVC Capital Partners \u2013 Marathon Asset Management",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CVC Capital Partners plc",
-          "identifier_type": null,
-          "identifier": "140080",
-          "canonical": {
-            "id": "cvc-capital-partners",
-            "name": "CVC Capital Partners"
-          },
-          "party_page": {
-            "id": "cvc-capital-partners",
-            "name": "CVC Capital Partners"
-          }
-        }
+        "CVC Capital Partners plc"
       ],
       "targets": [
-        {
-          "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "marathon-asset-management-lp-marathon-gp-holdings-i-llc-and-marathon-gp-holdings",
-            "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC"
-          }
-        }
-      ]
+        "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25014",
       "merger_name": "CVC Capital Partners \u2013 The animal nutrition and health division of the DSM-Firmenich Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Essential Bidco B.V.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "essential-bidco-b-v",
-            "name": "Essential Bidco B.V."
-          }
-        },
-        {
-          "name": "Specialty (U.S.) Bidco, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "specialty-u-s-bidco-inc",
-            "name": "Specialty (U.S.) Bidco, Inc."
-          }
-        }
+        "Essential Bidco B.V.",
+        "Specialty (U.S.) Bidco, Inc."
       ],
       "targets": [
-        {
-          "name": "SpecialtyCo US LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "specialtyco-us-llc",
-            "name": "SpecialtyCo US LLC"
-          }
-        },
-        {
-          "name": "Biomin Phytogenics GmbH (Germany)",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "biomin-phytogenics-gmbh-germany",
-            "name": "Biomin Phytogenics GmbH (Germany)"
-          }
-        }
-      ]
+        "SpecialtyCo US LLC",
+        "Biomin Phytogenics GmbH (Germany)"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-40003",
       "merger_name": "CVC Capital Partners \u2013 Smiths Detection Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Skyshield UK Bidco Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "skyshield-uk-bidco-limited",
-            "name": "Skyshield UK Bidco Limited"
-          }
-        },
-        {
-          "name": "Skyshield US Bidco Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "skyshield-us-bidco-limited",
-            "name": "Skyshield US Bidco Limited"
-          }
-        }
+        "Skyshield UK Bidco Limited",
+        "Skyshield US Bidco Limited"
       ],
       "targets": [
-        {
-          "name": "Smiths Detection Group Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "smiths-detection-group-limited",
-            "name": "Smiths Detection Group Limited"
-          }
-        }
-      ]
+        "Smiths Detection Group Limited"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

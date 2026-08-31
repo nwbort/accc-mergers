@@ -7,7 +7,6 @@
   "original_notification_datetime": "2026-08-13T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-09-24T12:00:00Z",
-  "page_modified_datetime": "2026-08-21T10:44:46+10:00",
   "consultation_response_due_date": "2026-08-22T12:00:00Z",
   "acquirers": [
     {
@@ -98,106 +97,41 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "WA-25008",
       "merger_name": "Five V Capital - FTP Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OVERWATCH BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 739 970",
-          "party_page": {
-            "id": "overwatch-bidco-pty-ltd",
-            "name": "Overwatch Bidco Pty Ltd"
-          }
-        }
+        "OVERWATCH BIDCO PTY LTD"
       ],
       "targets": [
-        {
-          "name": "FTP GROUP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "82 626 217 614",
-          "party_page": {
-            "id": "ftp-group-holdings-pty-ltd",
-            "name": "Ftp Group Holdings Pty Ltd"
-          }
-        },
-        {
-          "name": "FAARM BIDCO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "695 834 390",
-          "canonical": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          },
-          "party_page": {
-            "id": "farrm-solutions",
-            "name": "Farrm Solutions"
-          }
-        }
-      ]
+        "FTP GROUP HOLDINGS PTY LTD",
+        "FAARM BIDCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-10023",
       "merger_name": "Infoblox \u2013 Kentik Technologies",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Infoblox Inc.",
-          "identifier_type": null,
-          "identifier": "3662067",
-          "party_page": {
-            "id": "infoblox-inc",
-            "name": "Infoblox Inc."
-          }
-        }
+        "Infoblox Inc."
       ],
       "targets": [
-        {
-          "name": "Kentik Technologies, Inc",
-          "identifier_type": null,
-          "identifier": "5468887",
-          "party_page": {
-            "id": "kentik-technologies-inc",
-            "name": "Kentik Technologies, Inc"
-          }
-        }
-      ]
+        "Kentik Technologies, Inc"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-95005",
       "merger_name": "HCLTech - Jaspersoft",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "HCL Technologies Limited",
-          "identifier_type": "ABN",
-          "identifier": "37 541 578 951",
-          "party_page": {
-            "id": "hcl-technologies-limited",
-            "name": "HCL Technologies Limited"
-          }
-        }
+        "HCL Technologies Limited"
       ],
       "targets": [
-        {
-          "name": "CLOUD SOFTWARE GROUP AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "94 092 002 321",
-          "party_page": {
-            "id": "cloud-software-group-australia-pty-ltd",
-            "name": "Cloud Software Group Australia Pty Ltd"
-          }
-        }
-      ]
+        "CLOUD SOFTWARE GROUP AUSTRALIA PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-02-02T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-02-03T10:08:37+11:00",
   "acquirers": [
     {
       "name": "HOTEL MAROOCHYDORE PTY LTD",
@@ -68,24 +66,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Star%20Hotels%20Group%20-%20Yandina%20Hotel_%20QLD%20%28WA-40002%29%20-%20Notification%20waiver%20determination_0.pdf",
-      "determination_commission_division": "Determination made by Commissioner Philip Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "Hotel Maroochydore Pty Ltd and SCHF Pty Ltd, subsidiaries of Star\nConsolidated Holdings Ptd Ltd (Star Hotels) applied for a\nnotification waiver in respect of a proposed acquisition of the\nbusiness and assets of the Yandina Hotel in Yandina, Qld, as\ndescribed in the transaction documents provided as part of the\napplication (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "2 February 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, Star Hotels, is an independently owned and operated\npub and liquor retail group, primarily operating over 50 pubs along\nthe eastern seaboard of QLD and four in SA. It operates multiple\nlicensed venues, accommodation, liquor retail outfits under brands\nsuch as Star Liquor, Sense of Taste and Bob\u2019s Bulk Booze. It\ncurrently operates two pubs in the Sunshine Coast area.\nThe target, Yandina Hotel, is a hotel in Yandina, QLD that offers\ndining, accommodation, gaming and a bottle shop. It is currently\nowned and operated by the Trustee for Kingston Family Trust\n(trading as Yandina Hotel), a single-site operator.\nStar Hotels and the Yandina Hotel overlap in the supply of dining,\naccommodation, gaming and liquor in the Sunshine Coast area."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (ACCC) has considered the\ninformation provided by the applicant, including in the notification\nwaiver application, and had regard to the factors in section\n51ABV(2)(b) of the Competition and Consumer Act 2010 (Cth) (Act).\nBased on the information provided by the applicant, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. while there is horizontal overlap between Star Hotels and the\nYandina Hotel, concentration and the combined share of the\nparties in the supply of accommodation, dining, functions,\ngaming and liquor services in the broader Sunshine Coast\narea is low\nb. the presence of alternative suppliers of accommodation,\ndining, functions, gaming and liquor in the broader Sunshine\nCoast and Noosa area.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -108,123 +89,42 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "WA-50013",
       "merger_name": "Star Hotels - Fiveways Hotel Toowoomba",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "SGL HOTELS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "74 627 068 526",
-          "party_page": {
-            "id": "sgl-hotels-pty-ltd",
-            "name": "Sgl Hotels Pty Ltd"
-          }
-        },
-        {
-          "name": "SCHF PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 644 329 733",
-          "party_page": {
-            "id": "schf-pty-ltd",
-            "name": "Schf Pty Ltd"
-          }
-        }
+        "SGL HOTELS PTY LTD",
+        "SCHF PTY LTD"
       ],
       "targets": [
-        {
-          "name": "MPG FIVEWAYS PROP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "45 688 881 101",
-          "party_page": {
-            "id": "mpg-fiveways-prop-pty-ltd",
-            "name": "Mpg Fiveways Prop Pty Ltd"
-          }
-        },
-        {
-          "name": "MPG FIVEWAYS OP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "53 688 880 828",
-          "party_page": {
-            "id": "mpg-fiveways-op-pty-ltd",
-            "name": "Mpg Fiveways Op Pty Ltd"
-          }
-        }
-      ]
+        "MPG FIVEWAYS PROP PTY LTD",
+        "MPG FIVEWAYS OP PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-75015",
       "merger_name": "Star Hotels Group \u2013 Liquor Legends Berserker & Liquor Legends Highway A1, QLD",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "MIGALOO QLD PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "30 600 219 172",
-          "party_page": {
-            "id": "migaloo-qld-pty-ltd",
-            "name": "Migaloo Qld Pty Ltd"
-          }
-        }
+        "MIGALOO QLD PTY LTD"
       ],
       "targets": [
-        {
-          "name": "The Trustee for The Garden Holdings Trust",
-          "identifier_type": "ABN",
-          "identifier": "45 745 542 544",
-          "party_page": {
-            "id": "the-trustee-for-the-garden-holdings-trust",
-            "name": "The Trustee for The Garden Holdings Trust"
-          }
-        }
-      ]
+        "The Trustee for The Garden Holdings Trust"
+      ],
+      "accc_determination": "Not approved"
     },
     {
       "merger_id": "MN-10006",
       "merger_name": "Australian Venue Co. \u2013 four licensed venues in metropolitan Sydney (Public House Petersham, The Erko, The Golden Sheaf and Barangaroo House)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AVC Operations Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "81 607 832 299",
-          "canonical": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          },
-          "party_page": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          }
-        }
+        "AVC Operations Pty Limited"
       ],
       "targets": [
-        {
-          "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
-          "identifier_type": "ABN",
-          "identifier": "70 075 074 930",
-          "party_page": {
-            "id": "sherilyn-pty-limited-as-trustee-for-solotrust-unit-trust",
-            "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust"
-          }
-        },
-        {
-          "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust",
-          "identifier_type": "ACN",
-          "identifier": "604 221 801",
-          "party_page": {
-            "id": "barangaroo-pty-limited-as-trustee-for-barangaroo-trust",
-            "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust"
-          }
-        }
-      ]
+        "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
+        "Barangaroo Pty Limited as trustee for Barangaroo Trust"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

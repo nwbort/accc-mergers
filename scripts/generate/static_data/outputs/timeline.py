@@ -34,7 +34,9 @@ def generate(mergers: list, output_dir: Path, page_size: int = 100) -> int:
                 "date": event.get('date'),
                 "title": title,
                 "display_title": event.get('display_title'),
-                "url": event.get('url'),
+                # Only the mirrored copy is carried: Timeline.jsx links every
+                # document through url_gh, and never falls back to the ACCC's
+                # own url the way the merger detail page does for appeals.
                 "url_gh": event.get('url_gh'),
                 # event-level 'live'/'removed' status is backend-only (used for
                 # dedup in data/processed/mergers.json); the frontend never reads

@@ -7,7 +7,6 @@
   "original_notification_datetime": "2026-08-14T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-09-25T12:00:00Z",
-  "page_modified_datetime": "2026-08-25T14:32:02+10:00",
   "consultation_response_due_date": "2026-08-24T12:00:00Z",
   "acquirers": [
     {
@@ -79,102 +78,41 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-30012",
       "merger_name": "Endeavour Group \u2013 retail liquor store in Muswellbrook (NSW)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ENDEAVOUR GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "77 159 767 843",
-          "party_page": {
-            "id": "endeavour-group-limited",
-            "name": "Endeavour Group Limited"
-          }
-        }
+        "ENDEAVOUR GROUP LIMITED"
       ],
       "targets": [
-        {
-          "name": "UPPER HUNTER MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "53 001 740 218",
-          "party_page": {
-            "id": "upper-hunter-motors-pty-ltd",
-            "name": "Upper Hunter Motors Pty Ltd"
-          }
-        },
-        {
-          "name": "Bottlemart Muswellbrook",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "bottlemart-muswellbrook",
-            "name": "Bottlemart Muswellbrook"
-          }
-        }
-      ]
+        "UPPER HUNTER MOTORS PTY LTD",
+        "Bottlemart Muswellbrook"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-50027",
       "merger_name": "Endeavour Group - retail liquor site in Avalon, NSW",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ENDEAVOUR GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "77 159 767 843",
-          "party_page": {
-            "id": "endeavour-group-limited",
-            "name": "Endeavour Group Limited"
-          }
-        }
+        "ENDEAVOUR GROUP LIMITED"
       ],
       "targets": [
-        {
-          "name": "AVALON DM PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "61 691 733 150",
-          "party_page": {
-            "id": "avalon-dm-pty-ltd",
-            "name": "Avalon Dm Pty Ltd"
-          }
-        }
-      ]
+        "AVALON DM PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-30022",
       "merger_name": "VSA - SprayLine",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "VSA ROADS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "18 136 665 935",
-          "party_page": {
-            "id": "vsa-roads-pty-ltd",
-            "name": "Vsa Roads Pty Ltd"
-          }
-        }
+        "VSA ROADS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Head, Transport for Victoria",
-          "identifier_type": "ABN",
-          "identifier": "97 481 088 949",
-          "party_page": {
-            "id": "head-transport-for-victoria",
-            "name": "Head, Transport for Victoria"
-          }
-        }
-      ]
+        "Head, Transport for Victoria"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

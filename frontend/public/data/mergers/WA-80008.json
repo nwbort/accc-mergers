@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-04-21T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-04-21T18:09:55+10:00",
   "acquirers": [
     {
       "name": "Princeton Digital Group (Australia Alpha) Prop Pty Ltd",
@@ -46,24 +44,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Princeton%20Digital%20Group%20Australia%20-%20land%20located%20in%20Campbelltown%2C%20NSW%20-%20Notification%20Waiver%20Determination%20-%2021%20April%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "Princeton Digital Group (Australia Alpha) Prop Pty Ltd (Princeton\nDigital Group Australia) applied for a notification waiver in respect of\nits proposed acquisition of land located in Campbelltown, NSW from\nMH Property No. 1 Pty Ltd, as described in the transaction\ndocuments provided as part of the application (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "21 April 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, Princeton Digital Group Australia, is a subsidiary of\nPrinceton Digital Group. Prince Digital Group is headquartered in\nSingapore and operates a data centre business across more than 20\ncentres in seven countries. Princeton Digital Group does not own or\noperate any data centre assets in Australia.\nThe land located in Campbelltown, NSW is currently vacant and\ncontains no existing fixtures, structures or buildings. The land will be\nacquired by way of a land title transfer from MH Property No.1 Pty\nLtd, which is an Australian property developer.\nThe Acquisition is for the purpose of building, owning and operating\na data centre in Australia. Princeton Digital Group intends to supply\ndata centre facilities and associated infrastructure to tenants in\nAustralia."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABVIn (2)(b) of the\nCompetition and Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. Princeton Digital Group does not operate any data centre\nfacilities in Australia\nb. there are other suppliers of data centre facilities and\nassociated infrastructure in Australia.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -86,144 +67,43 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "MN-75002",
       "merger_name": "Opal Healthcare \u2013 Sunnymeade Park Aged Care Community",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OHCA Property Holdings Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "70 675 807 477",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        },
-        {
-          "name": "DPG Services Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "38 090 007 999",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        }
+        "OHCA Property Holdings Pty Ltd",
+        "DPG Services Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "The assets and business comprising Sunnymeade Park Aged Care Community",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "the-assets-and-business-comprising-sunnymeade-park-aged-care-community",
-            "name": "The assets and business comprising Sunnymeade Park Aged Care Community"
-          }
-        }
-      ]
+        "The assets and business comprising Sunnymeade Park Aged Care Community"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-75012",
       "merger_name": "Opal HealthCare \u2013 Greenwich Place residential aged care home",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OHCA PROPERTY HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "70 675 807 477",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        },
-        {
-          "name": "DPG SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "38 090 007 999",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        }
+        "OHCA PROPERTY HOLDINGS PTY LTD",
+        "DPG SERVICES PTY LTD"
       ],
       "targets": [
-        {
-          "name": "GREENWICH PLACE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "45 000 706 249",
-          "party_page": {
-            "id": "greenwich-place-pty-ltd",
-            "name": "Greenwich Place Pty Ltd"
-          }
-        },
-        {
-          "name": "GREENWICH CARE PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "96 613 786 682",
-          "party_page": {
-            "id": "greenwich-care-pty-limited",
-            "name": "Greenwich Care Pty Limited"
-          }
-        }
-      ]
+        "GREENWICH PLACE PTY LTD",
+        "GREENWICH CARE PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70010",
       "merger_name": "Waymark Hotels Group \u2013 Warrego Hotel Motel Cunnamulla, Queensland",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Waymark Hotels Properties No 42 Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "692 820 143",
-          "party_page": {
-            "id": "waymark-hotels-properties-no-42-pty-ltd",
-            "name": "Waymark Hotels Properties No 42 Pty Ltd"
-          }
-        },
-        {
-          "name": "WARREGO OP CO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "29 692 796 697",
-          "party_page": {
-            "id": "warrego-op-co-pty-ltd",
-            "name": "Warrego Op Co Pty Ltd"
-          }
-        }
+        "Waymark Hotels Properties No 42 Pty Ltd",
+        "WARREGO OP CO PTY LTD"
       ],
       "targets": [
-        {
-          "name": "G.A.A. Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "131 680 790",
-          "party_page": {
-            "id": "g-a-a-pty-ltd",
-            "name": "G.A.A. Pty Ltd"
-          }
-        }
-      ]
+        "G.A.A. Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

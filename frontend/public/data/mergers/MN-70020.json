@@ -9,8 +9,6 @@
   "end_of_determination_period": "2026-07-21T12:00:00Z",
   "determination_publication_date": "2026-07-21T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-07-21T12:17:29+10:00",
   "consultation_response_due_date": "2026-06-10T12:00:00Z",
   "acquirers": [
     {
@@ -86,31 +84,10 @@
       "title": "CVS Group - Paws at Prospect and Eyes at Prospect - Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/CVS%20Group%20-%20Paws%20at%20Prospect%20and%20Eyes%20at%20Prospect%20-%20Phase%201%20determination%20-%2021%20July%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "The proposed acquisition by CVS Vets (Australia) Proprietary\nLimited, which is part of CVS Group Plc (together, CVS Group) of\n60% of the shares in Newman Vet Pty Ltd, trading as Paws at\nProspect Vet and Eyes at Prospect Vet (Paws) (the Acquisition).\nThe existing owners of Paws will retain the remaining 40% of shares\nin Paws."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "The acquirer, CVS Group, is an integrated veterinary services\nprovider based in the United Kingdom and listed on the London\nStock Exchange. In Australia, CVS Group owns a number of small\nanimal veterinary practices in Queensland, New South Wales, the\nAustralian Capital Territory, Victoria, South Australia and Western\nAustralia. CVS Group currently owns three veterinary practices in\nAdelaide: Walkerville Vet, Pet Universe Manningham and Pet\nUniverse Northgate.\nThe target, Paws, is a small animal veterinary practice in Adelaide\nthat also supplies specialist ophthalmic veterinary services on\nreferral from \u2018first opinion\u2019 veterinary practices."
-        },
-        {
-          "item": "Overlap between the\nparties",
-          "details": "CVS Group and Paws (together, the Parties) overlap in the supply of\nsmall animal general practice veterinary services supplied in\nstandard hours (General Veterinary Services) in Adelaide. Small\nanimal veterinary practices attend to small animals (such as cats,\ndogs, guinea pigs, birds, rabbits and other pets), rather than larger\nanimals (such as cattle, sheep and horses), and offer services such\nas first opinion consultations, general and preventative health\ncare/advice, surgery, microchipping, dentistry, radiology, pathology,\npharmacy and related services such as puppy school.\nWhile Paws supplies specialist ophthalmic veterinary services, CVS\nGroup does not supply these services in Adelaide, and therefore\nthere is no overlap between the Parties in relation to these services."
-        },
         {
           "item": "Reasons for determination",
           "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, information from third parties, publicly available\ninformation and other materials available to the ACCC.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings:\n\u2022 the market share aggregation resulting from the Acquisition is\nestimated to be low;\n\u2022 the merged entity would continue to face competition from\nmultiple alternative General Veterinary Services practices in the\nlocal area surrounding Paws;\n\u2022 the merged entity would continue to face competition from other\nlarge suppliers of General Veterinary Services at the state and\nnational levels."
-        },
-        {
-          "item": "Applications for review",
-          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
         }
       ],
       "url_gh": "/mergers/MN-70020/CVS Group - Paws at Prospect and Eyes at Prospect - Phase 1 determination - 21 July 2026.pdf",
@@ -124,119 +101,42 @@
   "phase_1_determination_date": "2026-07-21T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-95003",
       "merger_name": "CVS Group - Pittwater Animal Hospital",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "35 667 654 686",
-          "canonical": {
-            "id": "cvs-vets",
-            "name": "CVS Group"
-          },
-          "party_page": {
-            "id": "cvs-vets",
-            "name": "CVS Group"
-          }
-        }
+        "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED"
       ],
       "targets": [
-        {
-          "name": "PITTWATER ANIMAL HOSPITAL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "25 001 336 723",
-          "party_page": {
-            "id": "pittwater-animal-hospital-pty-ltd",
-            "name": "Pittwater Animal Hospital Pty Ltd"
-          }
-        }
-      ]
+        "PITTWATER ANIMAL HOSPITAL PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-70013",
       "merger_name": "Ventura Motors \u2013 Crown Coaches",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "VENTURA NEWCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 694 822 047",
-          "party_page": {
-            "id": "ventura-newco-pty-ltd",
-            "name": "Ventura Newco Pty Ltd"
-          }
-        }
+        "VENTURA NEWCO PTY LTD"
       ],
       "targets": [
-        {
-          "name": "CROWN HYBRID PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "47 004 550 529",
-          "party_page": {
-            "id": "crown-hybrid-pty-ltd",
-            "name": "Crown Hybrid Pty Ltd"
-          }
-        },
-        {
-          "name": "CROWN COACHES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "48 004 882 213",
-          "party_page": {
-            "id": "crown-coaches-pty-ltd",
-            "name": "Crown Coaches Pty Ltd"
-          }
-        }
-      ]
+        "CROWN HYBRID PTY LTD",
+        "CROWN COACHES PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-75017",
       "merger_name": "Vets Central - Drovers Vet Hospital",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "VC OPERATIONS (WA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 646 499 005",
-          "canonical": {
-            "id": "vets-central-holdings-pty-ltd",
-            "name": "Vets Central Holdings Pty Ltd"
-          },
-          "party_page": {
-            "id": "vets-central-holdings-pty-ltd",
-            "name": "Vets Central Holdings Pty Ltd"
-          }
-        }
+        "VC OPERATIONS (WA) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Wayne Shipham and Raylene Shipham as trustees for McGuire Family Trust",
-          "identifier_type": "ABN",
-          "identifier": "96 315 737 133",
-          "party_page": {
-            "id": "wayne-shipham-and-raylene-shipham-as-trustees-for-mcguire-family-trust",
-            "name": "Wayne Shipham and Raylene Shipham as trustees for McGuire Family Trust"
-          }
-        },
-        {
-          "name": "DROVERS VET HOSPITAL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "67 159 300 768",
-          "party_page": {
-            "id": "drovers-vet-hospital-pty-ltd",
-            "name": "Drovers Vet Hospital Pty Ltd"
-          }
-        }
-      ]
+        "Wayne Shipham and Raylene Shipham as trustees for McGuire Family Trust",
+        "DROVERS VET HOSPITAL PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

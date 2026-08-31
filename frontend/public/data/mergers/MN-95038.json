@@ -9,8 +9,6 @@
   "end_of_determination_period": "2026-09-15T12:00:00Z",
   "determination_publication_date": "2026-08-25T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-08-25T16:37:28+10:00",
   "consultation_response_due_date": "2026-08-12T12:00:00Z",
   "acquirers": [
     {
@@ -84,31 +82,10 @@
       "title": "HiTech Group Australia - Hudson Global Resources Australia - Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/moderated_files/Hitech%20Group%20Australia%20-%20Hudson%20Global%20Resources%20-%20Phase%201%20determination%20-%2025%20August%202026_2.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "HiTech Group Australia Limited (HiTech) proposes to acquire certain\nAustralian assets of Hudson Global Resources (Aust) Pty Limited\n(Administrators Appointed) (Hudson) by way of an asset sale (the\nAcquisition)"
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "The acquirer, Hitech, is a listed Australian public company\nheadquartered in Sydney and is principally engaged in the supply of\ncontract and permanent recruitment services, predominantly to the\ninformation and communication technology (ICT) sector, to\ngovernment and corporate clients across Australia.\nThe target, Hudson, is a recruitment and talent management agency\nwith offices across major Australian states and territories. Hudson\nsupplies contract and permanent recruitment services and other\ntalent solutions to government and corporate clients across\nAustralia and New Zealand, in a range of areas including financial\nservices, resources, retail, insurance, technology and other\nprofessional services. Hudson entered voluntary administration in\nApril 2026, with Glenn Ian Livingstone appointed as joint and several\nadministrator."
-        },
-        {
-          "item": "Overlap and relationship\nbetween the parties",
-          "details": "The parties overlap in technology/ICT contract and permanent\nrecruitment for government and corporate clients."
-        },
         {
           "item": "Reasons for determination",
           "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, additional information provided by the parties, and\ninformation from third parties.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings:\n\u25aa The market share aggregation resulting from the Acquisition is\nestimated to be low.\n\u25aa The merged firm would continue to face competition from\nmultiple alternate suppliers of technology/ICT contract and\npermanent recruitment to government and corporate clients."
-        },
-        {
-          "item": "Applications for review",
-          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
         }
       ],
       "url_gh": "/mergers/MN-95038/Hitech Group Australia - Hudson Global Resources - Phase 1 determination - 25 August 2026_2.pdf",
@@ -122,115 +99,42 @@
   "phase_1_determination_date": "2026-08-25T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "WA-70016",
       "merger_name": "Oceania Capital Partners - Hudson Global Resources (Aust)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OCEANIA CAPITAL PARTNERS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "52 111 554 360",
-          "party_page": {
-            "id": "oceania-capital-partners-limited",
-            "name": "Oceania Capital Partners Limited"
-          }
-        },
-        {
-          "name": "K & K RYAN PTY LTD (ACN 623119960) AS TRUSTEE FOR THE K & K RYAN FAMILY TRUST",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "k-k-ryan-pty-ltd-acn-623119960-as-trustee-for-the-k-k-ryan-family-trust",
-            "name": "K & K Ryan Pty Ltd (Acn 623119960) As Trustee For The K & K Ryan Family Trust"
-          }
-        }
+        "OCEANIA CAPITAL PARTNERS LIMITED",
+        "K & K RYAN PTY LTD (ACN 623119960) AS TRUSTEE FOR THE K & K RYAN FAMILY TRUST"
       ],
       "targets": [
-        {
-          "name": "HUDSON HIGHLAND (APAC) PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "14 074 319 396",
-          "party_page": {
-            "id": "hudson-highland-apac-pty-limited",
-            "name": "Hudson Highland (Apac) Pty Limited"
-          }
-        }
-      ]
+        "HUDSON HIGHLAND (APAC) PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-95031",
       "merger_name": "IFM Fiduciary \u2013 PM Fresh",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "IFM FIDUCIARY PTY LTD as trustee for the SSCF SOA8 Holding Trust",
-          "identifier_type": "ABN",
-          "identifier": "52 135 450 618",
-          "party_page": {
-            "id": "ifm-fiduciary-pty-ltd-as-trustee-for-the-sscf-soa8-holding-trust",
-            "name": "IFM FIDUCIARY PTY LTD as trustee for the SSCF SOA8 Holding Trust"
-          }
-        }
+        "IFM FIDUCIARY PTY LTD as trustee for the SSCF SOA8 Holding Trust"
       ],
       "targets": [
-        {
-          "name": "TESSWATT INVESTMENTS PTY LTD as trustee for the Tesswatt Investment Trust",
-          "identifier_type": "ACN",
-          "identifier": "630 498 823",
-          "party_page": {
-            "id": "tesswatt-investments-pty-ltd-as-trustee-for-the-tesswatt-investment-trust",
-            "name": "TESSWATT INVESTMENTS PTY LTD as trustee for the Tesswatt Investment Trust"
-          }
-        },
-        {
-          "name": "SALADS OF AUSTRALIA PTY LIMITED (Receivers & Managers Appointed) (Administrators Appointed)",
-          "identifier_type": "ABN",
-          "identifier": "95 631 463 664",
-          "party_page": {
-            "id": "salads-of-australia-pty-limited-receivers-managers-appointed-administrators-appo",
-            "name": "SALADS OF AUSTRALIA PTY LIMITED (Receivers & Managers Appointed) (Administrators Appointed)"
-          }
-        }
-      ]
+        "TESSWATT INVESTMENTS PTY LTD as trustee for the Tesswatt Investment Trust",
+        "SALADS OF AUSTRALIA PTY LIMITED (Receivers & Managers Appointed) (Administrators Appointed)"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-05014",
       "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Smile Partners (NSW3) Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 902 955",
-          "party_page": {
-            "id": "smile-partners-nsw3-pty-ltd",
-            "name": "Smile Partners (NSW3) Pty Ltd"
-          }
-        }
+        "Smile Partners (NSW3) Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Shrika Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "108 757 357",
-          "canonical": {
-            "id": "shrika-pty-ltd",
-            "name": "Shrika Pty Ltd"
-          },
-          "party_page": {
-            "id": "shrika-pty-ltd",
-            "name": "Shrika Pty Ltd"
-          }
-        }
-      ]
+        "Shrika Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

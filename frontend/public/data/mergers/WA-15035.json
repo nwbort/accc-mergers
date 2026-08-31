@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-08-18T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-08-18T16:51:23+10:00",
   "acquirers": [
     {
       "name": "Howard Springs Op Co Pty Ltd",
@@ -86,24 +84,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Waymark%20Hotels%20Group%20%E2%80%93%20Howard%20Springs%20Tavern%20Howard%20Springs%20NT%20%28WA-15035%29%20-%20Notification%20waiver%20determination%20-%2018%20August%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "Howard Springs Op Co Pty Ltd and Waymark Hotels Properties No\n43 Pty Ltd (as trustee for the Howard Springs Property Trust) (the\nAcquirers) applied for a notification waiver in respect of their\nproposed acquisition of the land and business of the Howard\nSprings Tavern in Howard Springs, Northern Territory (the Howard\nSprings Tavern), as described in the transaction documents\nprovided as part of the application (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "18 August 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The Acquirers are part of the Waymark Hotels Group (Waymark),\nwhich owns and operates hotels (pubs) and takeaway liquor retailing\n(bottle shops) in regional Queensland and the Northern Territory. The\nWaymark Hotels Group is part of the Vinta Group, a private real\nestate group.\nThe target, Howard Springs Tavern, is a commercial hotel business\nin Howard Springs, Northern Territory (approximately 29km south-\neast of Darwin), which offers dining, gaming machines and liquor\nretailing, both in-store and via a drive-through bottle shop."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. there is no horizontal overlap between Waymark and Howard\nSprings Tavern in the supply of on-premises and takeaway\npackaged liquor, dining, gaming and accommodation\nservices in Howard Springs, Greater Darwin or the\nsurrounding local areas\nb. there are alternative suppliers of on-premises and takeaway\npackaged liquor, dining, gaming and accommodation\nservices in Howard Springs, Greater Darwin or the\nsurrounding local areas.\n\u2022 In these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
@@ -126,153 +107,44 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "WA-70010",
       "merger_name": "Waymark Hotels Group \u2013 Warrego Hotel Motel Cunnamulla, Queensland",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Waymark Hotels Properties No 42 Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "692 820 143",
-          "party_page": {
-            "id": "waymark-hotels-properties-no-42-pty-ltd",
-            "name": "Waymark Hotels Properties No 42 Pty Ltd"
-          }
-        },
-        {
-          "name": "WARREGO OP CO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "29 692 796 697",
-          "party_page": {
-            "id": "warrego-op-co-pty-ltd",
-            "name": "Warrego Op Co Pty Ltd"
-          }
-        }
+        "Waymark Hotels Properties No 42 Pty Ltd",
+        "WARREGO OP CO PTY LTD"
       ],
       "targets": [
-        {
-          "name": "G.A.A. Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "131 680 790",
-          "party_page": {
-            "id": "g-a-a-pty-ltd",
-            "name": "G.A.A. Pty Ltd"
-          }
-        }
-      ]
+        "G.A.A. Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25031",
       "merger_name": "Oscars Group \u2013 South Terrace Hotel in Bankstown, NSW",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OSCARS NSW OPS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "19 686 583 451",
-          "canonical": {
-            "id": "oscars-hotels",
-            "name": "Oscars Hotels"
-          },
-          "party_page": {
-            "id": "oscars-hotels",
-            "name": "Oscars Hotels"
-          }
-        },
-        {
-          "name": "The Trustee for THE BANKSTOWN CENTRAL PROPERTY UNIT TRUST",
-          "identifier_type": "ABN",
-          "identifier": "35 764 968 745",
-          "canonical": {
-            "id": "oscars-hotels",
-            "name": "Oscars Hotels"
-          },
-          "party_page": {
-            "id": "oscars-hotels",
-            "name": "Oscars Hotels"
-          }
-        }
+        "OSCARS NSW OPS PTY LTD",
+        "The Trustee for THE BANKSTOWN CENTRAL PROPERTY UNIT TRUST"
       ],
       "targets": [
-        {
-          "name": "The Trustee for Red Lantern Hotel Trust",
-          "identifier_type": "ABN",
-          "identifier": "45 384 307 643",
-          "party_page": {
-            "id": "the-trustee-for-red-lantern-hotel-trust",
-            "name": "The Trustee for Red Lantern Hotel Trust"
-          }
-        },
-        {
-          "name": "REDCAPE HOTEL GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 139 067 244",
-          "canonical": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          },
-          "party_page": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          }
-        }
-      ]
+        "The Trustee for Red Lantern Hotel Trust",
+        "REDCAPE HOTEL GROUP PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-90008",
       "merger_name": "Black Rhino - Club Hotel Motel Roma",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "The Trustee for Light Them Up (Roma) Trust",
-          "identifier_type": "ABN",
-          "identifier": "17 705 523 498",
-          "party_page": {
-            "id": "the-trustee-for-light-them-up-roma-trust",
-            "name": "The Trustee for Light Them Up (Roma) Trust"
-          }
-        },
-        {
-          "name": "BLACK RHINO (CLUB ROMA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "21 693 060 187",
-          "canonical": {
-            "id": "black-rhino-group",
-            "name": "Black Rhino Group"
-          },
-          "party_page": {
-            "id": "black-rhino-group",
-            "name": "Black Rhino Group"
-          }
-        }
+        "The Trustee for Light Them Up (Roma) Trust",
+        "BLACK RHINO (CLUB ROMA) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "SPEEDY COCKTAILS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 619 330 255",
-          "party_page": {
-            "id": "speedy-cocktails-pty-ltd",
-            "name": "Speedy Cocktails Pty Ltd"
-          }
-        },
-        {
-          "name": "The Trustee for THE BARRY WALDRON FAMILY TRUST",
-          "identifier_type": "ABN",
-          "identifier": "95 506 126 845",
-          "party_page": {
-            "id": "the-trustee-for-the-barry-waldron-family-trust",
-            "name": "The Trustee for THE BARRY WALDRON FAMILY TRUST"
-          }
-        }
-      ]
+        "SPEEDY COCKTAILS PTY LTD",
+        "The Trustee for THE BARRY WALDRON FAMILY TRUST"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

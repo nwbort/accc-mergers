@@ -7,7 +7,6 @@
   "original_notification_datetime": "2026-07-01T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-09-02T12:00:00Z",
-  "page_modified_datetime": "2026-08-17T16:33:52+10:00",
   "consultation_response_due_date": "2026-07-10T12:00:00Z",
   "acquirers": [
     {
@@ -88,119 +87,42 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-40008",
       "merger_name": "Intrepid Travel - Wild Bush Luxury",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "INTREPID TRAVEL PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "35 007 172 456",
-          "party_page": {
-            "id": "intrepid-travel-pty-ltd",
-            "name": "Intrepid Travel Pty Ltd"
-          }
-        }
+        "INTREPID TRAVEL PTY. LTD."
       ],
       "targets": [
-        {
-          "name": "WILD BUSH LUXURY EXPERIENCE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "47 648 431 734",
-          "party_page": {
-            "id": "wild-bush-luxury-experience-pty-ltd",
-            "name": "Wild Bush Luxury Experience Pty Ltd"
-          }
-        },
-        {
-          "name": "EXPERIENCE CO LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "56 167 320 470",
-          "canonical": {
-            "id": "experience-co-limited",
-            "name": "Experience Co"
-          },
-          "party_page": {
-            "id": "experience-co-limited",
-            "name": "Experience Co"
-          }
-        }
-      ]
+        "WILD BUSH LUXURY EXPERIENCE PTY LTD",
+        "EXPERIENCE CO LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70003",
       "merger_name": "Intrepid Travel \u2013 Wild Bush Luxury",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "INTREPID TRAVEL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "35 007 172 456",
-          "party_page": {
-            "id": "intrepid-travel-pty-ltd",
-            "name": "Intrepid Travel Pty Ltd"
-          }
-        }
+        "INTREPID TRAVEL PTY LTD"
       ],
       "targets": [
-        {
-          "name": "EXPERIENCE CO LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "56 167 320 470",
-          "canonical": {
-            "id": "experience-co-limited",
-            "name": "Experience Co"
-          },
-          "party_page": {
-            "id": "experience-co-limited",
-            "name": "Experience Co"
-          }
-        },
-        {
-          "name": "WILD BUSH LUXURY EXPERIENCE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "47 648 431 734",
-          "party_page": {
-            "id": "wild-bush-luxury-experience-pty-ltd",
-            "name": "Wild Bush Luxury Experience Pty Ltd"
-          }
-        }
-      ]
+        "EXPERIENCE CO LIMITED",
+        "WILD BUSH LUXURY EXPERIENCE PTY LTD"
+      ],
+      "accc_determination": "Not approved"
     },
     {
       "merger_id": "MN-15013",
       "merger_name": "Journey Beyond \u2013 Kakadu Crocodile Hotel",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "JB KAKADU HOTEL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "86 692 273 591",
-          "party_page": {
-            "id": "jb-kakadu-hotel-pty-ltd",
-            "name": "Jb Kakadu Hotel Pty Ltd"
-          }
-        }
+        "JB KAKADU HOTEL PTY LTD"
       ],
       "targets": [
-        {
-          "name": "KAKADU TOURISM (GCH) PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "50 087 366 612",
-          "party_page": {
-            "id": "kakadu-tourism-gch-pty-limited",
-            "name": "Kakadu Tourism (Gch) Pty Limited"
-          }
-        }
-      ]
+        "KAKADU TOURISM (GCH) PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

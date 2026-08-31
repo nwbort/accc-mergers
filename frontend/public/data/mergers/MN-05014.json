@@ -8,8 +8,6 @@
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-07-09T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-06-22T11:16:05+10:00",
   "consultation_response_due_date": "2026-06-04T12:00:00Z",
   "acquirers": [
     {
@@ -421,31 +419,10 @@
       "title": "Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Smile%20Partners%20Australia%20-%20Mehta%20Orthodontics%20-%20Phase%201%20determination.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "Smile Partners (NSW3) Pty Ltd, a wholly owned subsidiary of Smile\nPartners Australia Pty Ltd, (together, for convenience, SPA)\nproposes to acquire 100% of the assets of Shrika Pty Ltd as trustee\nfor Shrika (trading as Mehta Orthodontics) (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "The acquirer, SPA, owns a network of independently branded\northodontic practices located across Australia and New Zealand. Its\nshareholding is dispersed across a number of investors, the largest\nproportion of which is controlled by Armitage Australia Pty Ltd, a\nprivate equity firm.\nSPA currently:\n\u2022 owns 13 orthodontic practice brands with 20 clinic locations in\nAustralia, across Western Australia, New South Wales, Victoria\nand Queensland. This includes 2 orthodontic practices in the\nHills District of north-western Sydney (Bachmayer Orthodontic\nClinic and Brace5 Orthodontics).\n\u2022 provides management services pursuant to contractual\narrangements with additional orthodontic practices in Australia.\nOnly one of those practices owns practices located in NSW,\nwhich are outside of the Sydney metropolitan area.\nThe target, Mehta Orthodontics, is an independent orthodontic\npractice located in Bella Vista, a suburb in the Hills District of north-\nwestern Sydney."
-        },
-        {
-          "item": "Overlap and relationship\nbetween the parties",
-          "details": "SPA and Mehta Orthodontics (together the Parties) overlap in the\nsupply of orthodontic services in the Hills District of north-western\nSydney."
-        },
         {
           "item": "Reasons for determination",
           "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, publicly available information and market\nfeedback.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings:\n\u2022 Post-Acquisition, the merged firm would likely continue to face\ncompetition from multiple alternative suppliers of orthodontic\nservices in the Hills District of north-western Sydney.\n\u2022 The Parties\u2019 combined market share of orthodontic services in\nthe area is estimated to be low, and the increase in share arising\nfrom the Acquisition is estimated to be low."
-        },
-        {
-          "item": "Applications for review",
-          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
         }
       ],
       "url_gh": "/mergers/MN-05014/Smile Partners Australia - Mehta Orthodontics - Phase 1 determination.pdf",
@@ -460,118 +437,41 @@
   "phase_1_determination_date": "2026-06-20T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-50007",
       "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "NDC AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "49 162 955 866",
-          "canonical": {
-            "id": "national-dental-care",
-            "name": "National Dental Care"
-          },
-          "party_page": {
-            "id": "national-dental-care",
-            "name": "National Dental Care"
-          }
-        }
+        "NDC AUSTRALIA PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "The Trustee for the Comfy Dental Trust",
-          "identifier_type": "ABN",
-          "identifier": "59 865 563 072",
-          "party_page": {
-            "id": "the-trustee-for-the-comfy-dental-trust",
-            "name": "The Trustee for the Comfy Dental Trust"
-          }
-        }
-      ]
+        "The Trustee for the Comfy Dental Trust"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70004",
       "merger_name": "Impression Dental Group - Happy Rock Dental Practice",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "GENERAL DENTAL HOLDINGS PTY LTD trading as Impression Dental Group",
-          "identifier_type": "ABN",
-          "identifier": "55 646 760 367",
-          "canonical": {
-            "id": "general-dental-holdings-pty-ltd",
-            "name": "General Dental Holdings"
-          },
-          "party_page": {
-            "id": "general-dental-holdings-pty-ltd",
-            "name": "General Dental Holdings"
-          }
-        }
+        "GENERAL DENTAL HOLDINGS PTY LTD trading as Impression Dental Group"
       ],
       "targets": [
-        {
-          "name": "Happy Rock Dental Practice",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "happy-rock-dental-practice",
-            "name": "Happy Rock Dental Practice"
-          }
-        },
-        {
-          "name": "WEI-JIE JIANG PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "57 116 562 693",
-          "canonical": {
-            "id": "wei-jie-jiang",
-            "name": "Wei-Jie Jiang"
-          },
-          "party_page": {
-            "id": "wei-jie-jiang",
-            "name": "Wei-Jie Jiang"
-          }
-        }
-      ]
+        "Happy Rock Dental Practice",
+        "WEI-JIE JIANG PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70017",
       "merger_name": "National Dental Care \u2013 business assets comprising the Cambridge Dental Centre clinic, Perth, WA",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "NDC AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "49 162 955 866",
-          "canonical": {
-            "id": "national-dental-care",
-            "name": "National Dental Care"
-          },
-          "party_page": {
-            "id": "national-dental-care",
-            "name": "National Dental Care"
-          }
-        }
+        "NDC AUSTRALIA PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "CAMDENT SERVICES UNIT TRUST",
-          "identifier_type": "ABN",
-          "identifier": "37 559 915 898",
-          "party_page": {
-            "id": "camdent-services-unit-trust",
-            "name": "Camdent Services Unit Trust"
-          }
-        }
-      ]
+        "CAMDENT SERVICES UNIT TRUST"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

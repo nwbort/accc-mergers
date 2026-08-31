@@ -9,8 +9,6 @@
   "end_of_determination_period": "2026-07-31T12:00:00Z",
   "determination_publication_date": "2026-07-23T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-07-23T12:29:08+10:00",
   "consultation_response_due_date": "2026-06-29T12:00:00Z",
   "acquirers": [
     {
@@ -66,31 +64,10 @@
       "title": "Genea - Care Fertility Greenslopes - Phase 1 Determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Genea%20-%20Care%20Fertility%20Greenslopes%20-%20Phase%201%20determination%20-%2023%20July%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "Genea Pty Ltd\u2019s (Genea) proposed acquisition of a single\nindependent clinic, Care Fertility Greenslopes Pty Ltd (Care Fertility),\nalong with an associated trust (Care Fertility Greenslopes Unit Trust)\nand intellectual property (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "The acquirer, Genea, operates an IVF and fertility business with\nclinics in NSW, the ACT, Victoria, Queensland, Western Australia and\nSouth Australia. In Brisbane, Genea operates a clinic in Bowen Hills\nand an entity related to Genea (Adora Holdco Pty Ltd) operates a\nbulk-billed IVF clinic, Adora Fertility, in Taringa.\nThe target, Care Fertility, is an independent gynaecology, IVF and\nfertility clinic located in Greenslopes, Queensland that is ultimately\nowned and controlled by Dr Clare Boothroyd."
-        },
-        {
-          "item": "Overlap between the\nparties",
-          "details": "Genea and Care Fertility overlap in the supply of IVF and fertility\nservices in the greater Brisbane region."
-        },
         {
           "item": "Reasons for determination",
           "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, information from prior matters, and publicly\navailable information.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 While the supply of IVF and fertility services in greater Brisbane\nis concentrated, the market share aggregation from the\nAcquisition is low.\n\u2022 The merged entity would continue to face competition from\nalternative suppliers of IVF and fertility services in greater\nBrisbane."
-        },
-        {
-          "item": "Applications for review",
-          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
         }
       ],
       "url_gh": "/mergers/MN-01104/Genea - Care Fertility Greenslopes - Phase 1 determination - 23 July 2026.pdf",
@@ -104,115 +81,42 @@
   "phase_1_determination_date": "2026-07-23T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-05009",
       "merger_name": "Genea - Embrace Fertility",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Genea Bidco SA Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 694 458",
-          "canonical": {
-            "id": "genea",
-            "name": "Genea"
-          },
-          "party_page": {
-            "id": "genea",
-            "name": "Genea"
-          }
-        }
+        "Genea Bidco SA Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "EMBRACE FERTILITY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "84 135 918 580",
-          "party_page": {
-            "id": "embrace-fertility-pty-ltd",
-            "name": "Embrace Fertility Pty Ltd"
-          }
-        },
-        {
-          "name": "Histon Nelson Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "144 914 965",
-          "party_page": {
-            "id": "histon-nelson-pty-ltd",
-            "name": "Histon Nelson Pty Ltd"
-          }
-        }
-      ]
+        "EMBRACE FERTILITY PTY LTD",
+        "Histon Nelson Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25003",
       "merger_name": "Delinea (TPG) - StrongDM",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Delinea Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware corporation file number  3777797",
-          "party_page": {
-            "id": "delinea-inc",
-            "name": "Delinea Inc."
-          }
-        }
+        "Delinea Inc."
       ],
       "targets": [
-        {
-          "name": "StrongDM, Inc",
-          "identifier_type": null,
-          "identifier": "CIK  0001637806",
-          "party_page": {
-            "id": "strongdm-inc",
-            "name": "StrongDM, Inc"
-          }
-        }
-      ]
+        "StrongDM, Inc"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-35011",
       "merger_name": "Austral Resources Australia \u2013 Lady Loretta mine",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AUSTRAL RESOURCES AUSTRALIA LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "50 142 485 470",
-          "party_page": {
-            "id": "austral-resources-australia-limited",
-            "name": "Austral Resources Australia Limited"
-          }
-        }
+        "AUSTRAL RESOURCES AUSTRALIA LIMITED"
       ],
       "targets": [
-        {
-          "name": "NORANDA PACIFIC PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "65 006 864 802",
-          "party_page": {
-            "id": "noranda-pacific-pty-ltd",
-            "name": "Noranda Pacific Pty Ltd"
-          }
-        },
-        {
-          "name": "Noranda Pacific No. 2 Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "158 936 264",
-          "party_page": {
-            "id": "noranda-pacific-no-2-pty-ltd",
-            "name": "Noranda Pacific No. 2 Pty Ltd"
-          }
-        }
-      ]
+        "NORANDA PACIFIC PTY LTD",
+        "Noranda Pacific No. 2 Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

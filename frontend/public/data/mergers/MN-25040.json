@@ -9,8 +9,6 @@
   "end_of_determination_period": "2026-09-16T12:00:00Z",
   "determination_publication_date": "2026-08-27T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-08-27T13:57:33+10:00",
   "consultation_response_due_date": "2026-08-12T12:00:00Z",
   "acquirers": [
     {
@@ -205,31 +203,10 @@
       "title": "Modaxo - Conduent - Phase 1 Determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/moderated_files/Modaxo%20-%20Conduent%20%20-%20Phase%201%20Determination.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "Modaxo USA Holdings, Inc, Modaxo France Holdings SAS, and\nModaxo Group, Inc (collectively, Modaxo) propose to acquire\nConduent Transport Solutions Inc and various other entities\n(collectively, Conduent) from Conduent Business Services, LLC, a\nsubsidiary of Conduent Inc (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "The acquirer, Modaxo, provides software and technology solutions\nfor public transportation. Within Australia, Modaxo predominantly\nsupplies computer aided dispatch solutions to various State\ngovernment entities.\nThe target, Conduent, supplies various business services solutions,\nincluding public transport ticketing systems. Within Australia,\nConduent predominantly supplies services to the Victorian\nGovernment in relation to the existing 'Myki' ticketing system, as well\nas its successor ticketing system. Conduent also provides some\nticketing services to the South Australian Government."
-        },
-        {
-          "item": "Overlap between the\nParties",
-          "details": "The parties overlap in software and technology solutions for public\ntransportation."
-        },
         {
           "item": "Reasons for determination",
           "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, third parties and publicly available information.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nfinds that the Parties do not compete closely in the supply of\nsoftware and technology solutions for public transportation as they\nfocus on solutions that address different aspects of public\ntransportation systems, and would be likely to continue to do so\nabsent the Acquisition."
-        },
-        {
-          "item": "Applications for review",
-          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
         }
       ],
       "url_gh": "/mergers/MN-25040/Modaxo - Conduent - Phase 1 Determination.pdf",
@@ -243,115 +220,42 @@
   "phase_1_determination_date": "2026-08-27T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "WA-90014",
       "merger_name": "Constellation Software - DerbySoft Holdings",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Sail Parent Holdco Ltd",
-          "identifier_type": null,
-          "identifier": "UK Company Registration Number 17112723",
-          "party_page": {
-            "id": "sail-parent-holdco-ltd",
-            "name": "Sail Parent Holdco Ltd"
-          }
-        }
+        "Sail Parent Holdco Ltd"
       ],
       "targets": [
-        {
-          "name": "DerbySoft Holdings Limited",
-          "identifier_type": null,
-          "identifier": "Cayman Islands Company Registration Number CF172438",
-          "canonical": {
-            "id": "derbysoft-inc",
-            "name": "DerbySoft"
-          },
-          "party_page": {
-            "id": "derbysoft-inc",
-            "name": "DerbySoft"
-          }
-        }
-      ]
+        "DerbySoft Holdings Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-55006",
       "merger_name": "Hg Capital - OneStream",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Hg Pooled Management Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "hg-pooled-management-limited",
-            "name": "Hg Pooled Management Limited"
-          }
-        },
-        {
-          "name": "OnwardAcquireCo, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "onwardacquireco-inc",
-            "name": "OnwardAcquireCo, Inc"
-          }
-        }
+        "Hg Pooled Management Limited",
+        "OnwardAcquireCo, Inc"
       ],
       "targets": [
-        {
-          "name": "OneStream, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "onestream-inc",
-            "name": "OneStream, Inc."
-          }
-        }
-      ]
+        "OneStream, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-15026",
       "merger_name": "LTM \u2013 Randstad Digital entities including FinXL",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "LTM UK & Ireland Limited",
-          "identifier_type": null,
-          "identifier": "12817556 (UK company number)",
-          "party_page": {
-            "id": "ltm-uk-ireland-limited",
-            "name": "LTM UK & Ireland Limited"
-          }
-        }
+        "LTM UK & Ireland Limited"
       ],
       "targets": [
-        {
-          "name": "FinXL Professional Services Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "74 104 804 793",
-          "party_page": {
-            "id": "finxl-professional-services-pty-ltd",
-            "name": "FinXL Professional Services Pty Ltd"
-          }
-        },
-        {
-          "name": "Randstad Digital B.V.",
-          "identifier_type": null,
-          "identifier": "91235944",
-          "party_page": {
-            "id": "randstad-digital-b-v",
-            "name": "Randstad Digital B.V."
-          }
-        }
-      ]
+        "FinXL Professional Services Pty Ltd",
+        "Randstad Digital B.V."
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

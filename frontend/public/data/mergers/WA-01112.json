@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-07-27T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-07-27T17:06:21+10:00",
   "acquirers": [
     {
       "name": "DOLPHIN BIDCO PTY LTD",
@@ -83,24 +81,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/State%20Swim%20-%20In2Swim%20%28WA-01112%29%20-%20Notification%20waiver%20determination%20-%2027%20July%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "Dolphin BidCo Pty Ltd (Dolphin), operating as State Swim, applied for\na notification waiver in respect of its proposed acquisition of 100%\nof the share capital in In2Swim Pty Limited (In2Swim), as described\nin the transaction documents provided as part of the application (the\nAcquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "27 July 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "Dolphin (together with its connected entities) operates a number of\nschools in South Australia, Victoria, Western Australia, and\nSingapore under the 'State Swim' brand. State Swim does not\noperate any swim schools in New South Wales.\nThe target, In2Swim, operates one swimming school in Brookvale,\nNew South Wales.\nState Swim and In2Swim both primarily supply swimming lessons to\nchildren between the ages of 6 months to 10 years (learn-to-swim\nlessons)."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. there is no horizontal overlap between State Swim and\nIn2Swim in the supply of learn-to-swim lessons in New South\nWales; and\nb. there are alternative suppliers of learn-to-swim lessons in\nGreater Sydney and New South Wales.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -123,128 +104,43 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "WA-95032",
       "merger_name": "State Swim \u2013 Swim Plus",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "STATE SWIM FINDON PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "73 698 337 209",
-          "party_page": {
-            "id": "state-swim-findon-pty-ltd",
-            "name": "State Swim Findon Pty Ltd"
-          }
-        },
-        {
-          "name": "STATE SWIM MOUNT BARKER PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "64 698 337 174",
-          "party_page": {
-            "id": "state-swim-mount-barker-pty-ltd",
-            "name": "State Swim Mount Barker Pty Ltd"
-          }
-        }
+        "STATE SWIM FINDON PTY LTD",
+        "STATE SWIM MOUNT BARKER PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Findon Swim School Pty Ltd as trustee for the Findon Swim School Trust",
-          "identifier_type": "ACN",
-          "identifier": "608 401 716",
-          "party_page": {
-            "id": "findon-swim-school-pty-ltd-as-trustee-for-the-findon-swim-school-trust",
-            "name": "Findon Swim School Pty Ltd as trustee for the Findon Swim School Trust"
-          }
-        },
-        {
-          "name": "SWIM PLUS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "26 073 687 224",
-          "party_page": {
-            "id": "swim-plus-pty-ltd",
-            "name": "Swim Plus Pty Ltd"
-          }
-        }
-      ]
+        "Findon Swim School Pty Ltd as trustee for the Findon Swim School Trust",
+        "SWIM PLUS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-20023",
       "merger_name": "Sony Music - Recognition Music",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "SMG-Three LLC",
-          "identifier_type": null,
-          "identifier": "DDC  10277876",
-          "party_page": {
-            "id": "smg-three-llc",
-            "name": "SMG-Three LLC"
-          }
-        },
-        {
-          "name": "Sony Music Publishing (US) LLC",
-          "identifier_type": null,
-          "identifier": "DDC  2558200",
-          "party_page": {
-            "id": "sony-music-publishing-us-llc",
-            "name": "Sony Music Publishing (US) LLC"
-          }
-        }
+        "SMG-Three LLC",
+        "Sony Music Publishing (US) LLC"
       ],
       "targets": [
-        {
-          "name": "Recognition Music Group (Delaware) L.P.",
-          "identifier_type": null,
-          "identifier": "DDC  6193972",
-          "party_page": {
-            "id": "recognition-music-group-delaware-l-p",
-            "name": "Recognition Music Group (Delaware) L.P."
-          }
-        }
-      ]
+        "Recognition Music Group (Delaware) L.P."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-01092",
       "merger_name": "Winning Group Holdings \u2013 Winning Appliances",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Herman Corp Pty Ltd (as trustee for the Herman Holdings Family Trust)",
-          "identifier_type": "ABN",
-          "identifier": "21 151 833 555",
-          "party_page": {
-            "id": "herman-corp-pty-ltd-as-trustee-for-the-herman-holdings-family-trust",
-            "name": "Herman Corp Pty Ltd (as trustee for the Herman Holdings Family Trust)"
-          }
-        },
-        {
-          "name": "Yandoo Holdings Pty Ltd",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "yandoo-holdings-pty-ltd",
-            "name": "Yandoo Holdings Pty Ltd"
-          }
-        }
+        "Herman Corp Pty Ltd (as trustee for the Herman Holdings Family Trust)",
+        "Yandoo Holdings Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "WINNING APPLIANCES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "94 002 193 688",
-          "party_page": {
-            "id": "winning-appliances-pty-ltd",
-            "name": "Winning Appliances Pty Ltd"
-          }
-        }
-      ]
+        "WINNING APPLIANCES PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

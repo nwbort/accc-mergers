@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-04-20T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-04-20T18:01:43+10:00",
   "acquirers": [
     {
       "name": "Southern Way PS Pty Limited as trustee for PS Southern Way Unit Trust",
@@ -78,24 +76,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Prime%20Super%20-%20Additional%20interest%20in%20Peninsula%20Link%20Project%20%28WA-90010%29%20-%20Notification%20waiver%20determination%20-%2020%20April%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "Southern Way PS Pty Limited as trustee for PS Southern Way Unit\nTrust, which is a wholly owned entity of Prime Super Pty Ltd as\ntrustee for Prime Super (together, Prime Super), applied for a\nnotification waiver in respect of its proposed acquisition of an\nadditional 8.57% of stapled units and shares in Southern Way\nHoldings Pty Ltd and Southern Way Holdings Trust (together,\nSouthern Way Holdings), as described in the transaction documents\nprovided as part of the application (the Acquisition).\nAs a result of the Acquisition, Prime Super will hold a 27.36% interest\nin Southern Way Holdings."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "20 April 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, Prime Super, is a multi-industry fully independent profit-\nto-members superannuation fund with approximately $8.4 billion in\nfunds under management and 140,000 members. Prime Super\u2019s\ninvestment portfolio comprises a number of different assets\nincluding infrastructure investments which represent approximately\n16% of its total investment holdings. Those infrastructure\ninvestments include investments in international education\ninfrastructure funds, energy infrastructure projects, an Australian\nbased parking group, and an existing 18.79% interest in Southern\nWay Holdings. Prime Super does not hold interests in any\ninfrastructure assets or projects similar to Peninsula Link, nor does it\nhold investments in any other entities which provide large scale road\ninfrastructure services to an Australian state government.\nThe target, Southern Way Holdings, is a special purpose vehicle\nwhich is responsible for the Peninsula Link Project. The Peninsula\nLink Project is a Public Private Partnership to design, construct,\nmaintain and operate the 27km Peninsula Link Freeway between\nFrankston and Mount Martha in Victoria, Australia. The Peninsula\nLink Project has a 25-year operation period after which ownership of\nthe road will be handed back to the State of Victoria (expected in\n2038)."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\n\u2022 Based on the information currently before it, including publicly\navailable information regarding the Peninsula Link Project, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. there is no horizontal overlap or vertical relationship\nbetween Prime Super\u2019s other investment holdings and\nSouthern Way Holdings in the supply of large-scale road\ninfrastructure services\nb. the increment to Prime Super\u2019s existing interest in Southern\nWay Holdings is small\nc. Southern Way Holding\u2019s obligations with respect to the\nPeninsula Link Project are governed, and will continue to be\ngoverned post-acquisition, by long-term contracts with the\nVictorian state government.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -118,127 +99,42 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "MN-10012",
       "merger_name": "MassMutual, Rest, Aware Super and Goodman \u2013 Moorabbin Airport",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "MAC HoldCo Pty Ltd (an entity which has not been established yet)",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "mac-holdco-pty-ltd-an-entity-which-has-not-been-established-yet",
-            "name": "MAC HoldCo Pty Ltd (an entity which has not been established yet)"
-          }
-        }
+        "MAC HoldCo Pty Ltd (an entity which has not been established yet)"
       ],
       "targets": [
-        {
-          "name": "MOORABBIN AIRPORT CORPORATION PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "94 081 564 310",
-          "party_page": {
-            "id": "moorabbin-airport-corporation-pty-limited",
-            "name": "Moorabbin Airport Corporation Pty Limited"
-          }
-        },
-        {
-          "name": "TALLINA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "68 090 716 895",
-          "party_page": {
-            "id": "tallina-pty-ltd",
-            "name": "Tallina Pty Ltd"
-          }
-        }
-      ]
+        "MOORABBIN AIRPORT CORPORATION PTY LIMITED",
+        "TALLINA PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-75009",
       "merger_name": "Charter Hall Holdings - JGS Private Capital",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CHARTER HALL HOLDINGS PTY. LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "15 051 363 547",
-          "canonical": {
-            "id": "charter-hall",
-            "name": "Charter Hall"
-          },
-          "party_page": {
-            "id": "charter-hall",
-            "name": "Charter Hall"
-          }
-        }
+        "CHARTER HALL HOLDINGS PTY. LIMITED"
       ],
       "targets": [
-        {
-          "name": "JGS PRIVATE CAPITAL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "20 602 602 595",
-          "party_page": {
-            "id": "jgs-private-capital-pty-ltd",
-            "name": "Jgs Private Capital Pty Ltd"
-          }
-        },
-        {
-          "name": "J.G. SERVICE PTY. LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "75 008 492 126",
-          "party_page": {
-            "id": "j-g-service-pty-limited",
-            "name": "J.G. Service Pty. Limited"
-          }
-        }
-      ]
+        "JGS PRIVATE CAPITAL PTY LTD",
+        "J.G. SERVICE PTY. LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-10006",
       "merger_name": "Australian Venue Co. \u2013 four licensed venues in metropolitan Sydney (Public House Petersham, The Erko, The Golden Sheaf and Barangaroo House)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AVC Operations Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "81 607 832 299",
-          "canonical": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          },
-          "party_page": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          }
-        }
+        "AVC Operations Pty Limited"
       ],
       "targets": [
-        {
-          "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
-          "identifier_type": "ABN",
-          "identifier": "70 075 074 930",
-          "party_page": {
-            "id": "sherilyn-pty-limited-as-trustee-for-solotrust-unit-trust",
-            "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust"
-          }
-        },
-        {
-          "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust",
-          "identifier_type": "ACN",
-          "identifier": "604 221 801",
-          "party_page": {
-            "id": "barangaroo-pty-limited-as-trustee-for-barangaroo-trust",
-            "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust"
-          }
-        }
-      ]
+        "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
+        "Barangaroo Pty Limited as trustee for Barangaroo Trust"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

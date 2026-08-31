@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-07-28T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-07-28T17:28:35+10:00",
   "acquirers": [
     {
       "name": "Galileo BidCo Pty Ltd",
@@ -152,24 +150,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Black%20Kite%20Partners%20led%20consortium%20-%20DR2%20%28WA-80025%29%20-%20Notification%20waiver%20determination%20-%2028%20July%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "Black Kite Warehouse Pty Ltd, Black Kite Magellan Services Pty Ltd,\nMA Asset Management Ltd, HGPS-DPE Luxembourg Holdings SCSp,\nGalileo HoldCo Pty Ltd, Galileo BidCo Pty Ltd, and MAAM GP Pty Ltd\napplied for a notification waiver in respect of the proposed\nacquisition of 100% of the share capital in DR2 Holdings Pty Ltd\n(DR2) by a consortium including Black Kite Partners Pty Ltd (Black\nKite), HarbourVest Global Private Solution SICAV S.A. (HarbourVest)\nand MA Financial Group Limited (MA Financial), as described in the\ntransaction documents provided as part of the application (the\nAcquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "28 July 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirers, Black Kite, HarbourVest and MA Financial, are private\ncapital investors.\nThe target, DR2, is the holding company of businesses primarily\ninvolved in the supply of telehealth and face-to-face consultations.\nIts bulk-billed after-hours consultations are completed through\napproved medical deputising services, National Home Doctor\nService Pty Ltd (trading as 13Sick) and Doctorsquare Pty Ltd (trading\nas DoctorDoctor). Its in-hours (daytime) consultations are completed\nthrough 24-7Medcare and are either bulk-billed or privately paid. DR2\nalso conducts a surgical assistant placement service through\nAustralia Surgical Assisting.\nRelevantly, HarbourVest has a minority interest in HotDoc, a provider\nof healthcare booking management software and telehealth\nservices."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. there is a small horizontal overlap between parties in the\nsupply of telehealth services in Australia\nb. there are alternative suppliers of telehealth services in\nAustralia\nc. there is a low risk of foreclosure or other concerning vertical\nor conglomerate effects resulting from exclusionary\nconduct, bundling or tying of telehealth services in Australia\npost-acquisition.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -192,131 +173,42 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "MN-45005",
       "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "MA MARINA FUND HOLDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "96 667 241 385",
-          "party_page": {
-            "id": "ma-marina-fund-holdco-pty-ltd",
-            "name": "Ma Marina Fund Holdco Pty Ltd"
-          }
-        },
-        {
-          "name": "MA MARINA FUND TT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "65 666 902 245",
-          "party_page": {
-            "id": "ma-marina-fund-tt-pty-ltd",
-            "name": "Ma Marina Fund Tt Pty Ltd"
-          }
-        }
+        "MA MARINA FUND HOLDCO PTY LTD",
+        "MA MARINA FUND TT PTY LTD"
       ],
       "targets": [
-        {
-          "name": "GGC Marketing Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "32 105 294 228",
-          "party_page": {
-            "id": "ggc-marketing-pty-ltd",
-            "name": "GGC Marketing Pty Ltd"
-          }
-        },
-        {
-          "name": "QUEENSLAND & PACIFIC PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "72 081 370 685",
-          "party_page": {
-            "id": "queensland-pacific-pty-ltd",
-            "name": "Queensland & Pacific Pty. Ltd."
-          }
-        }
-      ]
+        "GGC Marketing Pty Ltd",
+        "QUEENSLAND & PACIFIC PTY. LTD."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25027",
       "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Arthouse Hotel",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "REDCAPE HOTEL GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 139 067 244",
-          "canonical": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          },
-          "party_page": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          }
-        }
+        "REDCAPE HOTEL GROUP PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Alsimas Pty Limited",
-          "identifier_type": "ACN",
-          "identifier": "650 101 778",
-          "party_page": {
-            "id": "alsimas-pty-limited",
-            "name": "Alsimas Pty Limited"
-          }
-        }
-      ]
+        "Alsimas Pty Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-60017",
       "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Entrance Social Club",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "REDCAPE HOTEL GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 139 067 244",
-          "canonical": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          },
-          "party_page": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          }
-        },
-        {
-          "name": "MAHF CUSTODIAN PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "96 619 512 060",
-          "canonical": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          },
-          "party_page": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          }
-        }
+        "REDCAPE HOTEL GROUP PTY LTD",
+        "MAHF CUSTODIAN PTY LTD"
       ],
       "targets": [
-        {
-          "name": "REDBRAN PTY. LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "34 003 920 232",
-          "party_page": {
-            "id": "redbran-pty-limited",
-            "name": "Redbran Pty. Limited"
-          }
-        }
-      ]
+        "REDBRAN PTY. LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

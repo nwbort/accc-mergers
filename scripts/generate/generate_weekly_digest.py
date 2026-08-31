@@ -209,8 +209,34 @@ def get_first_paragraph(description: str) -> str:
     return paragraphs[0] if paragraphs else ''
 
 
+def determination_pdf_events(merger: Dict[str, Any]) -> list:
+    """Return the trimmed determination events the digest needs.
+
+    The digest links each decided matter straight to its determination PDF.
+    Digest.jsx picks that link out by scanning for a determination event with
+    a ``url_gh``, newest first, so only those events are carried and only the
+    three fields that scan uses. The full event list would otherwise drag the
+    whole ``determination_table_content`` blob into the digest (and into every
+    weekly archive snapshot) for nothing.
+    """
+    return [
+        {
+            'date': event.get('date'),
+            'display_title': event.get('display_title'),
+            'url_gh': event.get('url_gh'),
+        }
+        for event in merger.get('events') or []
+        if event.get('url_gh') and 'determination' in (event.get('display_title') or '').lower()
+    ]
+
+
 def create_merger_summary(merger: Dict[str, Any]) -> Dict[str, Any]:
-    """Create a lightweight summary of a merger for the digest."""
+    """Create a lightweight summary of a merger for the digest.
+
+    Only the fields the two consumers read are carried: the digest page
+    (frontend/src/pages/Digest.jsx) and the weekly email
+    (scripts/send_weekly_email.py).
+    """
     # Truncate description to first paragraph to reduce payload size
     full_description = merger.get('merger_description', '')
     truncated_description = get_first_paragraph(full_description)
@@ -218,23 +244,18 @@ def create_merger_summary(merger: Dict[str, Any]) -> Dict[str, Any]:
     return {
         'merger_id': merger.get('merger_id'),
         'merger_name': merger.get('merger_name'),
-        'url': merger.get('url'),
-        'acquirers': merger.get('acquirers', []),
-        'targets': merger.get('targets', []),
         'effective_notification_datetime': merger.get('effective_notification_datetime'),
         'determination_publication_date': merger.get('determination_publication_date'),
         'end_of_determination_period': merger.get('end_of_determination_period'),
         'accc_determination': merger.get('accc_determination'),
         'stage': merger.get('stage'),
-        'status': merger.get('status'),
         'is_waiver': merger.get('is_waiver', False),
         'phase_1_determination': merger.get('phase_1_determination'),
         'phase_1_determination_date': merger.get('phase_1_determination_date'),
         'phase_2_determination': merger.get('phase_2_determination'),
         'ceased_date': merger.get('ceased_date'),
         'merger_description': truncated_description,
-        'events': merger.get('events', []),
-        'under_appeal': merger.get('under_appeal', False),
+        'events': determination_pdf_events(merger),
         'appeal': merger.get('appeal'),
     }
 

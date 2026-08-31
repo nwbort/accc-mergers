@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-06-09T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-06-09T17:03:54+10:00",
   "acquirers": [
     {
       "name": "GENUSPLUS GROUP LTD",
@@ -62,24 +60,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/GenusPlus%20Group%20%E2%80%93%20MPC%20Kinetic%20%28WA-55022%29%20-%20Notification%20waiver%20determination%20-%209%20June%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Woodward pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "GenusPlus Group Limited (Genus) applied for a notification waiver in\nrespect of its proposed acquisition of 100% of the issued share\ncapital in MPC Kinetic Holdings Pty Ltd (MPK) through a Share\nPurchase Agreement, as described in the transaction documents\nprovided as part of the application (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "9 June 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, Genus, is a supplier of power and communications\ninfrastructure services. Through its infrastructure division, Genus\ndesigns, builds and maintains high-voltage transmission and\ndistribution networks, substations, primary customer connections\nand rail systems. Through its energy and engineering division, it\noffers engineering design, and procurement and construction\nsolutions for electrical balance of plant (EBoP) services to\ncommunications and energy assets, with a focus on electrical\nsystems such as Battery Energy Storage Systems (BESS) and grid\nintegration. Finally, through its services division, it constructs and\nmaintains fixed and wireless communication networks (including\nnbn fibre and Telstra contracts), provides asset management and\nupgrade services for power utilities, delivers vegetation management\nfor powerline corridors, and operates digital workforce management\nplatforms.\nThe target, MPK, provides specialised infrastructure and\nmaintenance services to the energy and resources sectors in\nAustralia and New Zealand. It installs gas gathering systems,\nsupplies civil balance of plant (CBoP) construction for onshore wind\nfarms, civil construction for BESS and mining civils. It also supplies\ndown-well maintenance and production supporting service lines -\nworkover emissions reduction technology, integrity monitoring, well\nintervention services and well servicing."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\n\u2022 a. there is no horizontal overlap in the supply of CBoP services\nin Australia\nb. there is limited horizontal overlap in the supply of EBoP\nservices in Australia\nc. while there may be a non-horizontal relationship between the\nproducts and services supplied by Genus and MPK, there are\nalternative suppliers of these products and services in\nAustralia.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -102,119 +83,42 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "WA-25016",
       "merger_name": "Hostplus \u2013 CH Investment Holding Trust",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "HOST-PLUS PTY. LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "79 008 634 704",
-          "party_page": {
-            "id": "host-plus-pty-limited",
-            "name": "Host-Plus Pty. Limited"
-          }
-        }
+        "HOST-PLUS PTY. LIMITED"
       ],
       "targets": [
-        {
-          "name": "CH Investment Holding Trust",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "ch-investment-holding-trust",
-            "name": "CH Investment Holding Trust"
-          }
-        }
-      ]
+        "CH Investment Holding Trust"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-55009",
       "merger_name": "Resonetics \u2013 Resolution Medical",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Resonetics, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "resonetics-llc",
-            "name": "Resonetics, LLC"
-          }
-        }
+        "Resonetics, LLC"
       ],
       "targets": [
-        {
-          "name": "Resolution Medical MidCo, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "resolution-medical-midco-llc",
-            "name": "Resolution Medical MidCo, LLC"
-          }
-        },
-        {
-          "name": "Arcline Capital Partners II-A LP",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "arcline-capital-partners-ii-a-lp",
-            "name": "Arcline Capital Partners II-A LP"
-          }
-        }
-      ]
+        "Resolution Medical MidCo, LLC",
+        "Arcline Capital Partners II-A LP"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-80007",
       "merger_name": "Arlington Capital Partners \u2013 Eptec Defence Solutions",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Admiral AU Bidco Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 801 195",
-          "party_page": {
-            "id": "admiral-au-bidco-pty-ltd",
-            "name": "Admiral AU Bidco Pty Ltd"
-          }
-        },
-        {
-          "name": "Admiral AU Holdco Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 791 710",
-          "party_page": {
-            "id": "admiral-au-holdco-pty-ltd",
-            "name": "Admiral AU Holdco Pty Ltd"
-          }
-        }
+        "Admiral AU Bidco Pty Ltd",
+        "Admiral AU Holdco Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "EPTEC MARINE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "49 118 319 547",
-          "party_page": {
-            "id": "eptec-marine-pty-ltd",
-            "name": "Eptec Marine Pty Ltd"
-          }
-        },
-        {
-          "name": "EPTEC BIDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "12 638 785 378",
-          "party_page": {
-            "id": "eptec-bidco-pty-ltd",
-            "name": "Eptec Bidco Pty Ltd"
-          }
-        }
-      ]
+        "EPTEC MARINE PTY LTD",
+        "EPTEC BIDCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

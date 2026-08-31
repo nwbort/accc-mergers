@@ -9,8 +9,6 @@
   "end_of_determination_period": "2026-05-19T12:00:00Z",
   "determination_publication_date": "2026-05-12T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-05-26T12:04:01+10:00",
   "consultation_response_due_date": "2026-04-14T12:00:00Z",
   "acquirers": [
     {
@@ -119,20 +117,7 @@
       "title": "eBay - Depop - Phase 1 Determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/eBay-Depop%20-%20Phase%201%20determination%20without%20conditions%20-%20FINAL%20-%2012%20May%202026.pdf",
-      "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "eBay Inc. (eBay)\u2019s proposed acquisition of 100% of the share capital\nin Depop Limited (Depop) (together, the Parties) from Etsy, Inc.\n(Etsy) (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "The acquirer, eBay, is a multinational e\u2011commerce company\nheadquartered in San Jose, California. eBay operates a general\nonline retail marketplace, facilitating both business\u2011to\u2011consumer\n(B2C) and consumer\u2011to\u2011consumer (C2C) transactions across a wide\nrange of new and used product categories, including fashion,\nelectronics, automotive parts and collectibles.\nThe target, Depop, is a multinational e\u2011commerce company\nheadquartered in London and a wholly owned subsidiary of Etsy.\nDepop operates a mobile\u2011first online retail marketplace, focused on\npre\u2011owned fashion, with an emphasis on social discovery and\npeer\u2011to\u2011peer transactions. Depop is predominantly active in the\nUnited States, Australia and the United Kingdom."
-        },
         {
           "item": "Reasons for determination",
           "details": "The reasons for the ACCC\u2019s determination are set out in section 2."
@@ -278,128 +263,43 @@
   "phase_1_determination_date": "2026-05-12T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "WA-75017",
       "merger_name": "Vets Central - Drovers Vet Hospital",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "VC OPERATIONS (WA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 646 499 005",
-          "canonical": {
-            "id": "vets-central-holdings-pty-ltd",
-            "name": "Vets Central Holdings Pty Ltd"
-          },
-          "party_page": {
-            "id": "vets-central-holdings-pty-ltd",
-            "name": "Vets Central Holdings Pty Ltd"
-          }
-        }
+        "VC OPERATIONS (WA) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Wayne Shipham and Raylene Shipham as trustees for McGuire Family Trust",
-          "identifier_type": "ABN",
-          "identifier": "96 315 737 133",
-          "party_page": {
-            "id": "wayne-shipham-and-raylene-shipham-as-trustees-for-mcguire-family-trust",
-            "name": "Wayne Shipham and Raylene Shipham as trustees for McGuire Family Trust"
-          }
-        },
-        {
-          "name": "DROVERS VET HOSPITAL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "67 159 300 768",
-          "party_page": {
-            "id": "drovers-vet-hospital-pty-ltd",
-            "name": "Drovers Vet Hospital Pty Ltd"
-          }
-        }
-      ]
+        "Wayne Shipham and Raylene Shipham as trustees for McGuire Family Trust",
+        "DROVERS VET HOSPITAL PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-85016",
       "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "VC OPERATIONS (WA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 646 499 005",
-          "canonical": {
-            "id": "vets-central-holdings-pty-ltd",
-            "name": "Vets Central Holdings Pty Ltd"
-          },
-          "party_page": {
-            "id": "vets-central-holdings-pty-ltd",
-            "name": "Vets Central Holdings Pty Ltd"
-          }
-        }
+        "VC OPERATIONS (WA) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "CARRUTHERS, JONATHAN JULIAN",
-          "identifier_type": "ABN",
-          "identifier": "22 148 400 175",
-          "party_page": {
-            "id": "carruthers-jonathan-julian",
-            "name": "Carruthers, Jonathan Julian"
-          }
-        }
-      ]
+        "CARRUTHERS, JONATHAN JULIAN"
+      ],
+      "accc_determination": "Not approved"
     },
     {
       "merger_id": "WA-55005",
       "merger_name": "General Atlantic and CPP Investments led consortium - Boats Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "General Atlantic",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "general-atlantic",
-            "name": "General Atlantic"
-          }
-        },
-        {
-          "name": "Canada Pension Plan Investment Board",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "canada-pension-plan-investment-board",
-            "name": "Canada Pension Plan Investment Board"
-          }
-        }
+        "General Atlantic",
+        "Canada Pension Plan Investment Board"
       ],
       "targets": [
-        {
-          "name": "Boats Group Holdings, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "boats-group-holdings-inc",
-            "name": "Boats Group Holdings, Inc"
-          }
-        },
-        {
-          "name": "Bimini Holdings, LP",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "bimini-holdings-lp",
-            "name": "Bimini Holdings, LP"
-          }
-        }
-      ]
+        "Boats Group Holdings, Inc",
+        "Bimini Holdings, LP"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

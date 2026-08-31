@@ -7,7 +7,6 @@
   "original_notification_datetime": "2026-08-20T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-10-01T12:00:00Z",
-  "page_modified_datetime": "2026-08-21T12:17:01+10:00",
   "consultation_response_due_date": "2026-08-28T12:00:00Z",
   "acquirers": [
     {
@@ -104,111 +103,42 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "WA-15024",
       "merger_name": "Redwood Services Group \u2013 All IT Australia",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "REDWOOD SERVICES GROUP AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "15 675 368 162",
-          "party_page": {
-            "id": "redwood-services-group-australia-pty-ltd",
-            "name": "Redwood Services Group Australia Pty Ltd"
-          }
-        }
+        "REDWOOD SERVICES GROUP AUSTRALIA PTY LTD"
       ],
       "targets": [
-        {
-          "name": "ALL IT AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "90 146 108 321",
-          "party_page": {
-            "id": "all-it-australia-pty-ltd",
-            "name": "All It Australia Pty Ltd"
-          }
-        },
-        {
-          "name": "SPURBUCK INVESTMENTS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "16 602 869 910",
-          "party_page": {
-            "id": "spurbuck-investments-pty-ltd",
-            "name": "Spurbuck Investments Pty Ltd"
-          }
-        }
-      ]
+        "ALL IT AUSTRALIA PTY LTD",
+        "SPURBUCK INVESTMENTS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-05026",
       "merger_name": "Mercer Investments (Australia) Limited\u2013 Stockland Residential Rental Partnership",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "MERCER INVESTMENTS (AUSTRALIA) LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "66 008 612 397",
-          "party_page": {
-            "id": "mercer-investments-australia-limited",
-            "name": "Mercer Investments (Australia) Limited"
-          }
-        }
+        "MERCER INVESTMENTS (AUSTRALIA) LIMITED"
       ],
       "targets": [
-        {
-          "name": "One MEA Holdings Pte. Ltd",
-          "identifier_type": null,
-          "identifier": "201923882C",
-          "party_page": {
-            "id": "one-mea-holdings-pte-ltd",
-            "name": "One MEA Holdings Pte. Ltd"
-          }
-        },
-        {
-          "name": "The Trustee for Stockland Residential Rental Partnership Trust",
-          "identifier_type": "ABN",
-          "identifier": "55 773 008 463",
-          "party_page": {
-            "id": "the-trustee-for-stockland-residential-rental-partnership-trust",
-            "name": "The Trustee for Stockland Residential Rental Partnership Trust"
-          }
-        }
-      ]
+        "One MEA Holdings Pte. Ltd",
+        "The Trustee for Stockland Residential Rental Partnership Trust"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-05005",
       "merger_name": "Ironbark - Investment in Viola Private Wealth",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "IBWM PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 621 141 026",
-          "party_page": {
-            "id": "ibwm-pty-ltd",
-            "name": "Ibwm Pty Ltd"
-          }
-        }
+        "IBWM PTY LTD"
       ],
       "targets": [
-        {
-          "name": "VIOLA GROUP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "20 680 038 180",
-          "party_page": {
-            "id": "viola-group-holdings-pty-ltd",
-            "name": "Viola Group Holdings Pty Ltd"
-          }
-        }
-      ]
+        "VIOLA GROUP HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

@@ -7,7 +7,6 @@
   "original_notification_datetime": "2026-05-12T12:00:00Z",
   "stage": "Phase 2 - detailed assessment",
   "end_of_determination_period": "2026-11-27T12:00:00Z",
-  "page_modified_datetime": "2026-08-27T15:54:57+10:00",
   "consultation_response_due_date": "2026-05-20T12:00:00Z",
   "acquirers": [
     {
@@ -88,7 +87,6 @@
           ]
         }
       ],
-      "phase2_notice_commission_division": "Decision made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Competition and Consumer Act 2010 (Cth)",
       "url_gh": "/mergers/MN-05013/Zoetis-Neogen - Phase 2 decision - 17 July 2026_0.pdf",
       "phase": "Phase 2"
     },
@@ -108,134 +106,45 @@
   "phase_1_determination_date": "2026-07-17T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "has_nocc": true,
   "similar_mergers": [
     {
       "merger_id": "WA-55009",
       "merger_name": "Resonetics \u2013 Resolution Medical",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Resonetics, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "resonetics-llc",
-            "name": "Resonetics, LLC"
-          }
-        }
+        "Resonetics, LLC"
       ],
       "targets": [
-        {
-          "name": "Resolution Medical MidCo, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "resolution-medical-midco-llc",
-            "name": "Resolution Medical MidCo, LLC"
-          }
-        },
-        {
-          "name": "Arcline Capital Partners II-A LP",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "arcline-capital-partners-ii-a-lp",
-            "name": "Arcline Capital Partners II-A LP"
-          }
-        }
-      ]
+        "Resolution Medical MidCo, LLC",
+        "Arcline Capital Partners II-A LP"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-85006",
       "merger_name": "Tega and Apollo Funds consortium - Molycop",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Tega MC SG Holdings Pte. Ltd.",
-          "identifier_type": null,
-          "identifier": "202551682E",
-          "party_page": {
-            "id": "tega-mc-sg-holdings-pte-ltd",
-            "name": "Tega MC SG Holdings Pte. Ltd."
-          }
-        },
-        {
-          "name": "Tega MC Australia Holdings Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "16 147 692 840",
-          "party_page": {
-            "id": "tega-mc-australia-holdings-pty-ltd",
-            "name": "Tega MC Australia Holdings Pty Ltd"
-          }
-        }
+        "Tega MC SG Holdings Pte. Ltd.",
+        "Tega MC Australia Holdings Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Orway IQ Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "52 631 359 370",
-          "party_page": {
-            "id": "orway-iq-pty-ltd",
-            "name": "Orway IQ Pty Ltd"
-          }
-        },
-        {
-          "name": "Molycop Technologies Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "85 154 346 004",
-          "party_page": {
-            "id": "molycop-technologies-pty-ltd",
-            "name": "Molycop Technologies Pty Ltd"
-          }
-        }
-      ]
+        "Orway IQ Pty Ltd",
+        "Molycop Technologies Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-45002",
       "merger_name": "eBay - Depop",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "eBay Inc.",
-          "identifier_type": null,
-          "identifier": "I.R.S. Employer Identification No. \u2013 United States  770430924",
-          "canonical": {
-            "id": "ebay",
-            "name": "eBay"
-          },
-          "party_page": {
-            "id": "ebay",
-            "name": "eBay"
-          }
-        }
+        "eBay Inc."
       ],
       "targets": [
-        {
-          "name": "Etsy, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "etsy-inc",
-            "name": "Etsy, Inc."
-          }
-        },
-        {
-          "name": "Depop Limited",
-          "identifier_type": null,
-          "identifier": "UK Company Registration Number  08316342",
-          "party_page": {
-            "id": "depop-limited",
-            "name": "Depop Limited"
-          }
-        }
-      ]
+        "Etsy, Inc.",
+        "Depop Limited"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

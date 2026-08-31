@@ -7,7 +7,6 @@
   "original_notification_datetime": "2026-08-19T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-09-30T12:00:00Z",
-  "page_modified_datetime": "2026-08-21T11:50:05+10:00",
   "consultation_response_due_date": "2026-08-26T12:00:00Z",
   "acquirers": [
     {
@@ -95,105 +94,40 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-01068",
       "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "45 004 189 708",
-          "canonical": {
-            "id": "coles",
-            "name": "Coles Group"
-          },
-          "party_page": {
-            "id": "coles",
-            "name": "Coles Group"
-          }
-        }
+        "COLES SUPERMARKETS AUSTRALIA PTY LTD"
       ],
       "targets": [
-        {
-          "name": "M Holdings 4 Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "652 075 799",
-          "party_page": {
-            "id": "m-holdings-4-pty-ltd",
-            "name": "M Holdings 4 Pty Ltd"
-          }
-        }
-      ]
+        "M Holdings 4 Pty Ltd"
+      ],
+      "accc_determination": "Not approved"
     },
     {
       "merger_id": "MN-01090",
       "merger_name": "Coles \u2013 supermarket site in New Norfolk (TAS)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "45 004 189 708",
-          "canonical": {
-            "id": "coles",
-            "name": "Coles Group"
-          },
-          "party_page": {
-            "id": "coles",
-            "name": "Coles Group"
-          }
-        }
+        "COLES SUPERMARKETS AUSTRALIA PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Tipalea Private No.31 Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "686 197 115",
-          "party_page": {
-            "id": "tipalea-private-no-31-pty-ltd",
-            "name": "Tipalea Private No.31 Pty Ltd"
-          }
-        }
-      ]
+        "Tipalea Private No.31 Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-05030",
       "merger_name": "Coles \u2013 supermarket site in Upper Swan, WA",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "45 004 189 708",
-          "canonical": {
-            "id": "coles",
-            "name": "Coles Group"
-          },
-          "party_page": {
-            "id": "coles",
-            "name": "Coles Group"
-          }
-        }
+        "COLES SUPERMARKETS AUSTRALIA PTY LTD"
       ],
       "targets": [
-        {
-          "name": "The Trustee for Saracen Property Holdings Unit Trust",
-          "identifier_type": "ABN",
-          "identifier": "59 505 202 814",
-          "party_page": {
-            "id": "the-trustee-for-saracen-property-holdings-unit-trust",
-            "name": "The Trustee for Saracen Property Holdings Unit Trust"
-          }
-        }
-      ]
+        "The Trustee for Saracen Property Holdings Unit Trust"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

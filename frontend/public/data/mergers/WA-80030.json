@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-08-03T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-08-03T16:37:01+10:00",
   "acquirers": [
     {
       "name": "IKEA PTY LIMITED",
@@ -50,24 +48,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/IKEA%20Australia%20%E2%80%93%20IP%20rights%20from%20Inter%20IKEA%20under%20new%20franchise%20agreement%20package%20%28WA-80030%29%20-%20Notification%20waiver%20determination%20-%203%20August%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "Inter IKEA Systems B.V. (Inter IKEA) applied for a notification waiver\nin respect of IKEA Pty Limited (IKEA Australia) proposed acquisition\nof intellectual property rights under new franchise agreements\nbetween IKEA Australia and Inter IKEA, as described in the\ntransaction documents provided as part of the application (the\nAcquisition).\nHistorically, the IKEA franchise model has been sales channel-based:\nInter IKEA enters into a separate franchise agreement for each\nindividual IKEA sales channel (for example, one agreement per IKEA\nstore).\nInter IKEA has developed a new, standardised franchise framework\nthat, at its core, are two master agreements:\n1. the Franchise Development Agreement (FDA), governing the\ndevelopment rights and obligations across a jurisdiction; and\n2. the Franchise Operating Agreement (FOA), governing the\nrules for development and operation of an IKEA Retail\nBusiness in a jurisdiction.\nTogether, the FDA and FOA constitute the New Franchise Agreement\nPackage (NFAP) and cover the development and operation of an\nIKEA Retail Business in a given jurisdiction under a single, consistent\nset of terms. Inter IKEA proposes to terminate the existing\nagreements and replace them with the Australian NFAP with IKEA\nAustralia."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "3 August 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, IKEA Australia, is an Australian private company that\noperates the IKEA retail business in Australia. It forms part of Ingka\nGroup, which is the largest IKEA franchisee globally. The holding\ncompany of Ingka Group is Ingka Holding B.V.. As a member of\nIngka Group, IKEA Australia operates independently from Inter IKEA\nGroup and conducts its activities under franchise agreements with\nInter IKEA.\nThe target, Inter IKEA, is the worldwide IKEA franchisor and the\nowner of the intellectual property rights in the IKEA Concept. Inter\nIKEA is part of Inter IKEA Group. The holding company of Inter IKEA\nGroup is Inter IKEA Holding B.V.."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. the Acquisition involves a restructuring of an existing\nfranchise relationship between Inter IKEA and IKEA Australia,\nand does not change the substance of the existing franchise\nrelationship (including the rights to intellectual property)\nb. there is no horizontal consolidation or removal of a\ncompetitor as a result of the Acquisition.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -90,114 +71,41 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "MN-01106",
       "merger_name": "Midea - Residentia Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Midea Electric Trading (Singapore) Co. Pte. Ltd.",
-          "identifier_type": null,
-          "identifier": "Singapore identifying number (UEN): 200800970G",
-          "party_page": {
-            "id": "midea-electric-trading-singapore-co-pte-ltd",
-            "name": "Midea Electric Trading (Singapore) Co. Pte. Ltd."
-          }
-        }
+        "Midea Electric Trading (Singapore) Co. Pte. Ltd."
       ],
       "targets": [
-        {
-          "name": "RESIDENTIA IP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "92 666 876 964",
-          "party_page": {
-            "id": "residentia-ip-pty-ltd",
-            "name": "Residentia Ip Pty Ltd"
-          }
-        },
-        {
-          "name": "RESIDENTIA HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "17 618 920 059",
-          "canonical": {
-            "id": "residentia-group-pty-ltd",
-            "name": "Residentia Group Pty Ltd"
-          },
-          "party_page": {
-            "id": "residentia-group-pty-ltd",
-            "name": "Residentia Group Pty Ltd"
-          }
-        }
-      ]
+        "RESIDENTIA IP PTY LTD",
+        "RESIDENTIA HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-70012",
       "merger_name": "Quanta - PSD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Quanta Services Australia Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "11 164 311 997",
-          "party_page": {
-            "id": "quanta-services-australia-pty-ltd",
-            "name": "Quanta Services Australia Pty Ltd"
-          }
-        }
+        "Quanta Services Australia Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "PSD Global Holdings Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "634 380 813",
-          "party_page": {
-            "id": "psd-global-holdings-pty-ltd",
-            "name": "PSD Global Holdings Pty Ltd"
-          }
-        }
-      ]
+        "PSD Global Holdings Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-05020",
       "merger_name": "Midea Group \u2013 Esaote",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Midea Imaging Technology (Shanghai) Co., Ltd.",
-          "identifier_type": null,
-          "identifier": "USCC  91310118MAEN420F3W",
-          "party_page": {
-            "id": "midea-imaging-technology-shanghai-co-ltd",
-            "name": "Midea Imaging Technology (Shanghai) Co., Ltd."
-          }
-        }
+        "Midea Imaging Technology (Shanghai) Co., Ltd."
       ],
       "targets": [
-        {
-          "name": "Esaote S.p.A.",
-          "identifier_type": null,
-          "identifier": "Codice Fiscale/Partita IVA  05131180969",
-          "party_page": {
-            "id": "esaote-s-p-a",
-            "name": "Esaote S.p.A."
-          }
-        },
-        {
-          "name": "Shanghai Lu Zi Enterprise Management Consulting Center",
-          "identifier_type": null,
-          "identifier": "USCC  91310115MA1K3D4T1W",
-          "party_page": {
-            "id": "shanghai-lu-zi-enterprise-management-consulting-center",
-            "name": "Shanghai Lu Zi Enterprise Management Consulting Center"
-          }
-        }
-      ]
+        "Esaote S.p.A.",
+        "Shanghai Lu Zi Enterprise Management Consulting Center"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

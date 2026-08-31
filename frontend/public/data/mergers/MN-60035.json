@@ -7,7 +7,6 @@
   "original_notification_datetime": "2026-08-19T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-09-30T12:00:00Z",
-  "page_modified_datetime": "2026-08-21T11:36:17+10:00",
   "consultation_response_due_date": "2026-08-26T12:00:00Z",
   "acquirers": [
     {
@@ -85,105 +84,40 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-01080",
       "merger_name": "L\u2019Or\u00e9al \u2013 Kering Beaut\u00e9",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "L'Oreal S.A.",
-          "identifier_type": null,
-          "identifier": "Paris Trade and Companies Register number 632 012 100",
-          "canonical": {
-            "id": "l-oreal",
-            "name": "L'Oreal"
-          },
-          "party_page": {
-            "id": "l-oreal",
-            "name": "L'Oreal"
-          }
-        }
+        "L'Oreal S.A."
       ],
       "targets": [
-        {
-          "name": "Kering Beaut\u00e9 S.A.S.",
-          "identifier_type": null,
-          "identifier": "Netherlands Chamber of Commerce registration number 33223151",
-          "party_page": {
-            "id": "kering-beaut-s-a-s",
-            "name": "Kering Beaut\u00e9 S.A.S."
-          }
-        }
-      ]
+        "Kering Beaut\u00e9 S.A.S."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-35029",
       "merger_name": "L'Or\u00e9al - Innovist",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "L'Or\u00e9al India Private Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "l-oreal",
-            "name": "L'Oreal"
-          },
-          "party_page": {
-            "id": "l-oreal",
-            "name": "L'Oreal"
-          }
-        }
+        "L'Or\u00e9al India Private Limited"
       ],
       "targets": [
-        {
-          "name": "Onesto Labs Private Limited",
-          "identifier_type": null,
-          "identifier": "CIN  U74999DL2018PTC340749",
-          "party_page": {
-            "id": "onesto-labs-private-limited",
-            "name": "Onesto Labs Private Limited"
-          }
-        }
-      ]
+        "Onesto Labs Private Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-55030",
       "merger_name": "CRH - Arcosa",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Neon Merger Sub, Inc.",
-          "identifier_type": null,
-          "identifier": "10667310",
-          "canonical": {
-            "id": "crh",
-            "name": "CRH"
-          },
-          "party_page": {
-            "id": "crh",
-            "name": "CRH"
-          }
-        }
+        "Neon Merger Sub, Inc."
       ],
       "targets": [
-        {
-          "name": "Arcosa, Inc.",
-          "identifier_type": null,
-          "identifier": "6852687",
-          "party_page": {
-            "id": "arcosa-inc",
-            "name": "Arcosa, Inc."
-          }
-        }
-      ]
+        "Arcosa, Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

@@ -9,8 +9,6 @@
   "end_of_determination_period": "2026-06-12T12:00:00Z",
   "determination_publication_date": "2026-06-09T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-06-09T17:21:45+10:00",
   "consultation_response_due_date": "2026-05-07T12:00:00Z",
   "acquirers": [
     {
@@ -104,20 +102,7 @@
       "title": "Paramount Skydance-Warner Bros Discovery - Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Paramount%20Skydance-Warner%20Bros%20Discovery%20-%20Phase%201%20determination_1.pdf",
-      "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "Paramount Skydance Corporation (Paramount) and Warner Bros.\nDiscovery, Inc. (Warner Brothers) signed an agreement (the Merger\nAgreement). Under the terms of the Merger Agreement, Paramount\nwill pay USD $31.00 per share in cash for all outstanding shares of\nWarner Brothers (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "The acquirer, Paramount, is a global media, streaming and\nentertainment company that supplies content and experiences,\nincluding films, television series, and animated content.\nParamount\u2019s portfolio of brands and production assets includes\nParamount Pictures, Paramount Television, Paramount+, CBS, CBS\nNews, CBS Sports, Nickelodeon, MTV, BET, Comedy Central,\nShowtime, Pluto TV and Skydance Media LLC animation,\ninteractive/games and sports divisions.\nIn Australia, Paramount operates the free-to-air (FTA) television\nnetwork, Network 10. Network 10 is one of five Australian FTA TV\nnetworks, and operates four television channels (Channel 10, 10\nDrama, 10 Comedy and Nickelodeon) and a free online streaming\nservice (\u201810\u2019). Paramount also operates Paramount+, a paid digital\nsubscription video on-demand (SVOD) and live streaming service\navailable to Australian consumers.\nParamount also licenses audiovisual content to rival TV channels\nand digital services in Australia.\nParamount distributes films to cinemas in Australia through its local\ntheatrical distribution company.\nThe target, Warner Brothers, is a global media and entertainment\ncompany that creates and distributes a portfolio of content and\nproducts across television, film, streaming and interactive gaming.\nWarner Brothers\u2019 brands and production assets include Discovery\nChannel, CNN, DC Studios, New Line Cinema, TNT Sports, Eurosport,\nHBO Max, HBO, Warner Bros. Motion Picture Group, Warner Bros.\nTelevision Group, and Warner Bros. Games.\nWarner Brothers operates several pay TV services in Australia\n(Discovery, Investigation Discovery, Animal Planet, TLC, Discovery\nTurbo, Travel Channel and HGTV) and the SVOD service HBO Max.\nIn Australia, Warner Brothers distributes films to cinemas via a third\nparty, Universal Pictures, and has local subsidiaries active in film and\ntelevision production, including Big Pond Productions Pty Ltd and\nWarner Bros. International Television Production Australia."
-        },
         {
           "item": "Reasons for determination",
           "details": "The reasons for the ACCC\u2019s determination are set out in section 2."
@@ -386,124 +371,43 @@
   "phase_1_determination_date": "2026-06-09T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "WA-40010",
       "merger_name": "Permira and Warburg Pincus - Clearwater Analytics",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "GT Silver BidCo, Inc.",
-          "identifier_type": null,
-          "identifier": "413417606",
-          "party_page": {
-            "id": "gt-silver-bidco-inc",
-            "name": "GT Silver BidCo, Inc."
-          }
-        }
+        "GT Silver BidCo, Inc."
       ],
       "targets": [
-        {
-          "name": "Clearwater Analytics Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "00140838",
-          "canonical": {
-            "id": "clearwater-analytics-llc",
-            "name": "Clearwater Analytics"
-          },
-          "party_page": {
-            "id": "clearwater-analytics-llc",
-            "name": "Clearwater Analytics"
-          }
-        }
-      ]
+        "Clearwater Analytics Holdings, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-35011",
       "merger_name": "Austral Resources Australia \u2013 Lady Loretta mine",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AUSTRAL RESOURCES AUSTRALIA LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "50 142 485 470",
-          "party_page": {
-            "id": "austral-resources-australia-limited",
-            "name": "Austral Resources Australia Limited"
-          }
-        }
+        "AUSTRAL RESOURCES AUSTRALIA LIMITED"
       ],
       "targets": [
-        {
-          "name": "NORANDA PACIFIC PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "65 006 864 802",
-          "party_page": {
-            "id": "noranda-pacific-pty-ltd",
-            "name": "Noranda Pacific Pty Ltd"
-          }
-        },
-        {
-          "name": "Noranda Pacific No. 2 Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "158 936 264",
-          "party_page": {
-            "id": "noranda-pacific-no-2-pty-ltd",
-            "name": "Noranda Pacific No. 2 Pty Ltd"
-          }
-        }
-      ]
+        "NORANDA PACIFIC PTY LTD",
+        "Noranda Pacific No. 2 Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-45001",
       "merger_name": "Paragon Care \u2013 Presidental",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "PARAGON CARE LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "76 064 551 426",
-          "party_page": {
-            "id": "paragon-care-limited",
-            "name": "Paragon Care Limited"
-          }
-        },
-        {
-          "name": "CLIFFORD HALLAM HEALTHCARE PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "38 001 655 554",
-          "party_page": {
-            "id": "clifford-hallam-healthcare-pty-limited",
-            "name": "Clifford Hallam Healthcare Pty Limited"
-          }
-        }
+        "PARAGON CARE LIMITED",
+        "CLIFFORD HALLAM HEALTHCARE PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "ROCKPAC SOUTH PACIFIC PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "40 639 100 422",
-          "party_page": {
-            "id": "rockpac-south-pacific-pty-ltd",
-            "name": "Rockpac South Pacific Pty Ltd"
-          }
-        },
-        {
-          "name": "PRESIDENTAL PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "77 002 697 896",
-          "party_page": {
-            "id": "presidental-pty-limited",
-            "name": "Presidental Pty Limited"
-          }
-        }
-      ]
+        "ROCKPAC SOUTH PACIFIC PTY LTD",
+        "PRESIDENTAL PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {
