@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-08-19T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-08-19T17:50:24+10:00",
   "acquirers": [
     {
       "name": "TA Riverside Aggregator, L.P.",
@@ -195,24 +193,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Armira%20and%20TA%20Associates%20%E2%80%93%20Intersurgical%20Aktiengesellschaft%20AG%20%28WA-15033%29%20-%20Notification%20waiver%20determination%20-%2019%20August%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "Armira Opportunities III GmbH & Co. geschlossene Investment KG\n(Armira Opportunities III, and together with all affiliated companies\nand funds, Armira) and TA Riverside Aggregator LP (TA Riverside\nAggregator), a special purpose vehicle created by certain funds\ncontrolled by TA Associates Cayman, LLC (the TA Funds, and\ntogether with all affiliated companies and funds, including TA\nRiverside Aggregator, TA Associates), propose to indirectly acquire,\nvia Riverside Bidco Limited, share capital in and exercise joint control\nover Intersurgical Aktiengesellschaft AG (Intersurgical, and together\nwith its controlled entities, Intersurgical Group), as described in the\ntransaction documents provided as part of the application (the\nAcquisition).\nTA Riverside Aggregator and Armira Opportunities III applied for a\nnotification waiver in respect of the Acquisition."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "19 August 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, Riverside Bidco Limited, is currently an indirect wholly\nowned subsidiary of Armira Opportunities III.\nArmira is a Munich-based alternative investment fund manager,\nwhich specialises in providing capital for long-term partnerships and\nfocusing on family-owned businesses and technology companies,\nprimarily in Europe.\nTA Associates is a private equity firm headquartered in Boston,\nUnited States, that invests, through the TA Funds, in companies\nacross five target industries: technology, financial services,\nhealthcare, consumer, and business services.\nThe target, Intersurgical, is a holding company registered in\nLiechtenstein which, through its operating subsidiaries (including\nIntersurgical Limited) controls the business of the Intersurgical\nGroup.\nThe Intersurgical Group is a global designer, manufacturer and\nsupplier of medical devices for respiratory support, used in\nanaesthesia, intensive care, emergency care and oxygen therapy in\nhospitals and in the home. Its offering includes products for airway\nmanagement, anaesthesia, emergency and resuscitation care,\ncritical care, oxygen and aerosol therapy, nebuliser therapy, and\nrespiratory physiotherapy.\nIntersurgical Limited has entered into a separate equity purchase\nagreement with Teleflex Inc. to acquire the acute care and\ninterventional urology business of Teleflex Inc. (the Teleflex\nBusiness)."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. There is no horizontal overlap or vertical\nrelationship between Armira (or its connected entities) and\nIntersurgical (including the Teleflex Business), or between TA\nAssociates (or its connected entities) and Intersurgical (including the\nTeleflex Business), in the supply of medical devices for respiratory\nsupport in Australia.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
@@ -235,123 +216,42 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "MN-50015",
       "merger_name": "Mastercard - BVNK",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Mastercard Incorporated",
-          "identifier_type": null,
-          "identifier": "3390142",
-          "canonical": {
-            "id": "mastercard-incorporated",
-            "name": "MasterCard"
-          },
-          "party_page": {
-            "id": "mastercard-incorporated",
-            "name": "MasterCard"
-          }
-        },
-        {
-          "name": "Ares UK Holdco 2 Limited",
-          "identifier_type": null,
-          "identifier": "CRN 17107097",
-          "party_page": {
-            "id": "ares-uk-holdco-2-limited",
-            "name": "Ares UK Holdco 2 Limited"
-          }
-        }
+        "Mastercard Incorporated",
+        "Ares UK Holdco 2 Limited"
       ],
       "targets": [
-        {
-          "name": "B Corporation S.A.M",
-          "identifier_type": null,
-          "identifier": "23S09602",
-          "party_page": {
-            "id": "b-corporation-s-a-m",
-            "name": "B Corporation S.A.M"
-          }
-        },
-        {
-          "name": "BVNK Holdings Limited",
-          "identifier_type": null,
-          "identifier": "13922014",
-          "party_page": {
-            "id": "bvnk-holdings-limited",
-            "name": "BVNK Holdings Limited"
-          }
-        }
-      ]
+        "B Corporation S.A.M",
+        "BVNK Holdings Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-50003",
       "merger_name": "Francisco Partners - Sermo",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Sigrun Bidco Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "sigrun-bidco-limited",
-            "name": "Sigrun Bidco Limited"
-          }
-        }
+        "Sigrun Bidco Limited"
       ],
       "targets": [
-        {
-          "name": "Sermo Limited (together with its subsidiaries, \u201cSermo\u201d)",
-          "identifier_type": null,
-          "identifier": "CRN 11755038",
-          "party_page": {
-            "id": "sermo-limited-together-with-its-subsidiaries-sermo",
-            "name": "Sermo Limited (together with its subsidiaries, \u201cSermo\u201d)"
-          }
-        }
-      ]
+        "Sermo Limited (together with its subsidiaries, \u201cSermo\u201d)"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-80025",
       "merger_name": "Black Kite Partners led consortium - DR2",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Galileo BidCo Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "698 274 609",
-          "party_page": {
-            "id": "galileo-bidco-pty-ltd",
-            "name": "Galileo BidCo Pty Ltd"
-          }
-        },
-        {
-          "name": "HGPS-DPE Luxembourg Holdings SCSp",
-          "identifier_type": null,
-          "identifier": "B273812",
-          "party_page": {
-            "id": "hgps-dpe-luxembourg-holdings-scsp",
-            "name": "HGPS-DPE Luxembourg Holdings SCSp"
-          }
-        }
+        "Galileo BidCo Pty Ltd",
+        "HGPS-DPE Luxembourg Holdings SCSp"
       ],
       "targets": [
-        {
-          "name": "DR2 HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "85 671 808 558",
-          "party_page": {
-            "id": "dr2-holdings-pty-ltd",
-            "name": "Dr2 Holdings Pty Ltd"
-          }
-        }
-      ]
+        "DR2 HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-03-24T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-03-24T18:19:17+11:00",
   "acquirers": [
     {
       "name": "HALL & MCLEAN PTY. LTD.",
@@ -69,24 +67,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Hall%20%26%20McLean%20-%20Freehold%20interest%20in%20commercial%20land%20in%20Wellcamp%2C%20QLD%20%28WA-20008%29%20-%20Notification%20waiver%20determination%20-%2023%20March%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "Hall & McLean Pty Ltd (Hall & McLean) applied for a notification\nwaiver in respect of its proposed acquisition of a 100% freehold\ninterest in commercial land comprising Lot 8 on SP296133, known\nas 2 Foundation Street, Wellcamp QLD 4350 (the Property), from\nVision Street Property Pty Ltd (the Vendor), as described in the\ntransaction documents provided as part of the application (the\nAcquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "23 March 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, Hall & McLean, is a 50:50 joint venture between\nEllerslie Free Range Farms Pty Ltd (Ellerslie) and the McLean family\n(through Alpair Pty Ltd).\nAlpair Pty Ltd, is an egg producer based in the Darling Downs region\nin Queensland.\nEllerslie is an agribusiness entity operating principally in the chicken\negg production sector. Ellerslie layer farms produce caged, cage\nfree, free range, pasture raised and organic shell eggs.\nEllerslie is 60% owned by PSP Investments, with the remaining 40%\nheld by DHP Consolidated Pty Ltd on behalf of the Hall family.\nEllerslie and Alpair Pty Ltd each have a 50% interest in Sunny Queen,\nan egg distributor.\nEllerslie has been renting the Property from the Vendor under a 5-\nyear lease for the purposes of egg grading and cold storage for its\negg production business.\nThe Vendor does not operate any egg farming or production\nbusiness in Australia.\nThe Property would be an input into the operations of Ellerslie."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\ncertain publicly available information, and had regard to the factors\nin section 51ABV(2)(b) of the Competition and Consumer Act 2010\n(Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. the Acquisition is an acquisition of land by an egg producer\nfrom a party who is not an egg producer\nb. Ellerslie has been using the land as a lessee for 5 years and\nintends to continue using the land for the same purposes,\nbut as an owner\nc. there appear to be alternative sites available for Ellerslie\u2019s\nand the McLean family\u2019s competitors\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -109,126 +90,41 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "MN-75012",
       "merger_name": "Opal HealthCare \u2013 Greenwich Place residential aged care home",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OHCA PROPERTY HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "70 675 807 477",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        },
-        {
-          "name": "DPG SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "38 090 007 999",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        }
+        "OHCA PROPERTY HOLDINGS PTY LTD",
+        "DPG SERVICES PTY LTD"
       ],
       "targets": [
-        {
-          "name": "GREENWICH PLACE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "45 000 706 249",
-          "party_page": {
-            "id": "greenwich-place-pty-ltd",
-            "name": "Greenwich Place Pty Ltd"
-          }
-        },
-        {
-          "name": "GREENWICH CARE PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "96 613 786 682",
-          "party_page": {
-            "id": "greenwich-care-pty-limited",
-            "name": "Greenwich Care Pty Limited"
-          }
-        }
-      ]
+        "GREENWICH PLACE PTY LTD",
+        "GREENWICH CARE PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-95003",
       "merger_name": "CVS Group - Pittwater Animal Hospital",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "35 667 654 686",
-          "canonical": {
-            "id": "cvs-vets",
-            "name": "CVS Group"
-          },
-          "party_page": {
-            "id": "cvs-vets",
-            "name": "CVS Group"
-          }
-        }
+        "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED"
       ],
       "targets": [
-        {
-          "name": "PITTWATER ANIMAL HOSPITAL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "25 001 336 723",
-          "party_page": {
-            "id": "pittwater-animal-hospital-pty-ltd",
-            "name": "Pittwater Animal Hospital Pty Ltd"
-          }
-        }
-      ]
+        "PITTWATER ANIMAL HOSPITAL PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-50007",
       "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "NDC AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "49 162 955 866",
-          "canonical": {
-            "id": "national-dental-care",
-            "name": "National Dental Care"
-          },
-          "party_page": {
-            "id": "national-dental-care",
-            "name": "National Dental Care"
-          }
-        }
+        "NDC AUSTRALIA PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "The Trustee for the Comfy Dental Trust",
-          "identifier_type": "ABN",
-          "identifier": "59 865 563 072",
-          "party_page": {
-            "id": "the-trustee-for-the-comfy-dental-trust",
-            "name": "The Trustee for the Comfy Dental Trust"
-          }
-        }
-      ]
+        "The Trustee for the Comfy Dental Trust"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

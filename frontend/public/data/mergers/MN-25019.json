@@ -8,8 +8,6 @@
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-07-28T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-07-27T09:59:26+10:00",
   "consultation_response_due_date": "2026-06-23T12:00:00Z",
   "acquirers": [
     {
@@ -61,20 +59,7 @@
       "title": "Transocean - Valaris - Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Transocean%20-%20Valaris%20-%20Phase%201%20determination.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "Transocean Limited (Transocean) proposes to acquire Valaris\nLimited (Valaris) by way of merger (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "The acquirer, Transocean, is a global provider of offshore contract\ndrilling services. Transocean\u2019s fleet consists of 20 drillships (three of\nwhich are cold stacked1) and seven semisubmersibles. In Australia,\nTransocean currently has two semisubmersibles under contract and\na drillship due to commence operations in 2027.\nThe target, Valaris, is a global provider of offshore contract drilling\nservices. Valaris\u2019 fleet consists of 13 drillships (three of which are\ncurrently cold stacked), one semisubmersible (currently warm\nstacked2) and 31 jackups (seven of which are currently cold or warm\nstacked). In Australia, Valaris currently has one jackup under\ncontract."
-        },
         {
           "item": "Reasons for determination",
           "details": "The reasons for the ACCC\u2019s determination are set out in section 2."
@@ -235,110 +220,41 @@
   "phase_1_determination_date": "2026-07-27T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-25004",
       "merger_name": "ServiceNow - Armis",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ServiceNow, Inc.",
-          "identifier_type": null,
-          "identifier": "5111469",
-          "canonical": {
-            "id": "servicenow-inc",
-            "name": "ServiceNow, Inc."
-          },
-          "party_page": {
-            "id": "servicenow-inc",
-            "name": "ServiceNow, Inc."
-          }
-        }
+        "ServiceNow, Inc."
       ],
       "targets": [
-        {
-          "name": "Armis Security, Ltd.",
-          "identifier_type": null,
-          "identifier": "515335941",
-          "party_page": {
-            "id": "armis-security-ltd",
-            "name": "Armis Security, Ltd."
-          }
-        },
-        {
-          "name": "Armis, Inc.",
-          "identifier_type": null,
-          "identifier": "6021196",
-          "party_page": {
-            "id": "armis-inc",
-            "name": "Armis, Inc."
-          }
-        }
-      ]
+        "Armis Security, Ltd.",
+        "Armis, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-40019",
       "merger_name": "Novartis - Excellergy",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Elba Merger Sub, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware company number 10547479",
-          "party_page": {
-            "id": "elba-merger-sub-inc",
-            "name": "Elba Merger Sub, Inc."
-          }
-        }
+        "Elba Merger Sub, Inc."
       ],
       "targets": [
-        {
-          "name": "Excellergy Inc.",
-          "identifier_type": null,
-          "identifier": "EIN 854115816",
-          "canonical": {
-            "id": "excellergy-inc",
-            "name": "Excellergy"
-          },
-          "party_page": {
-            "id": "excellergy-inc",
-            "name": "Excellergy"
-          }
-        }
-      ]
+        "Excellergy Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-01075",
       "merger_name": "Thermo Fisher - Clario Holdings",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Thermo Fisher Scientific Inc.",
-          "identifier_type": null,
-          "identifier": "042209186",
-          "party_page": {
-            "id": "thermo-fisher-scientific-inc",
-            "name": "Thermo Fisher Scientific Inc."
-          }
-        }
+        "Thermo Fisher Scientific Inc."
       ],
       "targets": [
-        {
-          "name": "Clario Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "5977148",
-          "party_page": {
-            "id": "clario-holdings-inc",
-            "name": "Clario Holdings, Inc."
-          }
-        }
-      ]
+        "Clario Holdings, Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

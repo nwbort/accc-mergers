@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-08-03T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-08-03T16:41:28+10:00",
   "acquirers": [
     {
       "name": "NPM Investments 43 B.V.",
@@ -96,24 +94,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/NPM%20Capital%20%E2%80%93%20AmbaFlex%20Group%20%28WA-80029%29%20-%20Notification%20waiver%20determination%20-%203%20August%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "NPM Investments 43 B.V. (NPM), a subsidiary of NPM Capital N.V.\n(NPM Capital), applied for a notification waiver in respect of its\nproposed acquisition of 100% of the share capital of the AmbaFlex\ngroup (AmbaFlex) by acquiring its current holding entity, Helix\nHoldco B.V. (Helix), from Helion C.V. (Helion) and WPAI-I B.V., as\ndescribed in the transaction documents provided as part of the\napplication (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "3 August 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "NPM Capital is a financial investor with portfolio companies across a\nbroad range of industries and is based in the Netherlands. Its parent\ngroup, SHV Holdings N.V. (SHV), is a family-owned, decentralised\ncompany active in a broad range of industries through seven entities\n(including NPM Capital).\nThe target, AmbaFlex, is a manufacturer of specialty conveying and\naccumulation solutions for the intralogistics market and is based in\nthe Netherlands. Its product portfolio comprises of three main\nproduct lines: spiral conveyors for vertical product elevation;\nhorizontal and vertical accumulation solutions; and flexible\nhorizontal conveying solutions. AmbaFlex also provides spare parts,\nmaintenance and servicing."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\ncertain publicly available information, and had regard to the factors\nin section 51ABV(2)(b) of the Competition and Consumer Act 2010\n(Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. there is no horizontal overlap between NPM Capital or SHV\n(including their connected entities) and AmbaFlex in the\nsupply of intralogistics conveying equipment, spiral\nconveyors, accumulation solutions or similar products in\nAustralia\nb. there is a low risk of foreclosure or other concerning vertical\nor conglomerate effects resulting from exclusionary\nconduct, bundling or tying of products or services post-\nacquisition.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -136,119 +117,42 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "WA-20020",
       "merger_name": "Triton - Integris",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Ivera Bidco B.V.",
-          "identifier_type": null,
-          "identifier": "Dutch Commercial Register  42000883",
-          "party_page": {
-            "id": "ivera-bidco-b-v",
-            "name": "Ivera Bidco B.V."
-          }
-        }
+        "Ivera Bidco B.V."
       ],
       "targets": [
-        {
-          "name": "Protego Holdco B.V.",
-          "identifier_type": null,
-          "identifier": "Dutch Commercial Register  80710417",
-          "party_page": {
-            "id": "protego-holdco-b-v",
-            "name": "Protego Holdco B.V."
-          }
-        },
-        {
-          "name": "Agilitas Protego 2026 Subsidiary Fund LP",
-          "identifier_type": null,
-          "identifier": "Jersey Registry  5028",
-          "party_page": {
-            "id": "agilitas-protego-2026-subsidiary-fund-lp",
-            "name": "Agilitas Protego 2026 Subsidiary Fund LP"
-          }
-        }
-      ]
+        "Protego Holdco B.V.",
+        "Agilitas Protego 2026 Subsidiary Fund LP"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-90007",
       "merger_name": "Volt Managed Investment Trusts \u2013 HMC Energy Transition Platform",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Volt Managed Investment Trust 2",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "volt-managed-investment-trust-2",
-            "name": "Volt Managed Investment Trust 2"
-          }
-        },
-        {
-          "name": "Volt Managed Investment Trust 1",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "volt-managed-investment-trust-1",
-            "name": "Volt Managed Investment Trust 1"
-          }
-        }
+        "Volt Managed Investment Trust 2",
+        "Volt Managed Investment Trust 1"
       ],
       "targets": [
-        {
-          "name": "VOLT HOLDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "54 694 754 062",
-          "party_page": {
-            "id": "volt-holdco-pty-ltd",
-            "name": "Volt Holdco Pty Ltd"
-          }
-        }
-      ]
+        "VOLT HOLDCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-05026",
       "merger_name": "Mercer Investments (Australia) Limited\u2013 Stockland Residential Rental Partnership",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "MERCER INVESTMENTS (AUSTRALIA) LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "66 008 612 397",
-          "party_page": {
-            "id": "mercer-investments-australia-limited",
-            "name": "Mercer Investments (Australia) Limited"
-          }
-        }
+        "MERCER INVESTMENTS (AUSTRALIA) LIMITED"
       ],
       "targets": [
-        {
-          "name": "One MEA Holdings Pte. Ltd",
-          "identifier_type": null,
-          "identifier": "201923882C",
-          "party_page": {
-            "id": "one-mea-holdings-pte-ltd",
-            "name": "One MEA Holdings Pte. Ltd"
-          }
-        },
-        {
-          "name": "The Trustee for Stockland Residential Rental Partnership Trust",
-          "identifier_type": "ABN",
-          "identifier": "55 773 008 463",
-          "party_page": {
-            "id": "the-trustee-for-stockland-residential-rental-partnership-trust",
-            "name": "The Trustee for Stockland Residential Rental Partnership Trust"
-          }
-        }
-      ]
+        "One MEA Holdings Pte. Ltd",
+        "The Trustee for Stockland Residential Rental Partnership Trust"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

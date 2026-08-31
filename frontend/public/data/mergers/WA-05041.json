@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-08-19T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-08-19T16:30:55+10:00",
   "acquirers": [
     {
       "name": "Elevate BidCo Pty Ltd",
@@ -82,24 +80,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Pemba%20-%20Hewison%20Private%20Wealth%20%28WA-05041%29%20-%20Notification%20waiver%20determination%20-%2018%20August%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "Elevate BidCo Pty Ltd (BidCo), which is indirectly wholly owned by\nPemba Capital Fund III (Pemba Fund III), applied for a notification\nwaiver in respect of its proposed acquisition of 100% of the share\ncapital in Hewison & Associates Pty. Ltd. (Hewison), as described in\nthe transaction documents provided as part of the application (the\nAcquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "18 August 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, BidCo, is a special purpose vehicle which is an\nindirectly wholly owned subsidiary of Elevate HoldCo Pty Ltd\n(HoldCo). HoldCo is currently wholly owned by Pemba Fund III, a\nprivate equity fund managed by Pemba Capital Partners Pty Ltd\n(Pemba), based in Sydney.\nPemba is an investor in high-growth and entrepreneurial businesses\nacross various sectors, with over AUD 2 billion in assets under\nmanagement. One of Pemba's portfolio companies is\nSuperConcepts Pty Ltd (SuperConcepts), which provides self-\nmanaged super fund administration services and software to\nparticipants in the financial advice and accounting industries,\nincluding advisers, accountants and unadvised individuals.\nThe target, Hewison, is a Melbourne-based wealth management firm\nthat provides financial advisory, investment strategy and wealth\nmanagement services to private clients across Australia. Hewison\ncurrently provides self-managed super fund administration services\nto its clients in-house and uses a third-party software provider for\nthese accounts."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. the parties\u2019 combined share in the supply of self-managed\nsuper fund administration services in Australia is low and\nthe increase in share of supply arising from the Acquisition\nwould be small\nb. there are alternative suppliers of self-managed super fund\nadministration and software services, and financial advice\nand wealth management services in Australia\nc. there is a low risk of foreclosure or other concerning vertical\neffects resulting from exclusionary conduct post-acquisition.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
@@ -122,114 +103,41 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "WA-01114",
       "merger_name": "EQT Fund Management \u2013 Exolaunch",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Elevate BidCo GmbH",
-          "identifier_type": null,
-          "identifier": "HRB 141746",
-          "canonical": {
-            "id": "elevate-bidco-gmbh",
-            "name": "Elevate BidCo GmbH"
-          },
-          "party_page": {
-            "id": "elevate-bidco-gmbh",
-            "name": "Elevate BidCo GmbH"
-          }
-        }
+        "Elevate BidCo GmbH"
       ],
       "targets": [
-        {
-          "name": "Exolaunch GmbH",
-          "identifier_type": null,
-          "identifier": "HRB 134539 B",
-          "party_page": {
-            "id": "exolaunch-gmbh",
-            "name": "Exolaunch GmbH"
-          }
-        }
-      ]
+        "Exolaunch GmbH"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-90007",
       "merger_name": "Volt Managed Investment Trusts \u2013 HMC Energy Transition Platform",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Volt Managed Investment Trust 2",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "volt-managed-investment-trust-2",
-            "name": "Volt Managed Investment Trust 2"
-          }
-        },
-        {
-          "name": "Volt Managed Investment Trust 1",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "volt-managed-investment-trust-1",
-            "name": "Volt Managed Investment Trust 1"
-          }
-        }
+        "Volt Managed Investment Trust 2",
+        "Volt Managed Investment Trust 1"
       ],
       "targets": [
-        {
-          "name": "VOLT HOLDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "54 694 754 062",
-          "party_page": {
-            "id": "volt-holdco-pty-ltd",
-            "name": "Volt Holdco Pty Ltd"
-          }
-        }
-      ]
+        "VOLT HOLDCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-80022",
       "merger_name": "Bain Capital \u2013 Perpetual Wealth Management Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BCPE Barton BidCo Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "694 979 041",
-          "party_page": {
-            "id": "bcpe-barton-bidco-pty-ltd",
-            "name": "BCPE Barton BidCo Pty Ltd"
-          }
-        }
+        "BCPE Barton BidCo Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "PERPETUAL LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "86 000 431 827",
-          "party_page": {
-            "id": "perpetual-limited",
-            "name": "Perpetual Limited"
-          }
-        },
-        {
-          "name": "PERPETUAL PWM SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "90 678 546 113",
-          "party_page": {
-            "id": "perpetual-pwm-services-pty-ltd",
-            "name": "Perpetual Pwm Services Pty Ltd"
-          }
-        }
-      ]
+        "PERPETUAL LIMITED",
+        "PERPETUAL PWM SERVICES PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

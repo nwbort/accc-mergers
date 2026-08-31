@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-07-30T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-07-30T17:27:55+10:00",
   "acquirers": [
     {
       "name": "ULEXITE GROUP PTY LIMITED",
@@ -64,24 +62,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/EQT%20Fund%20Management%20S.%C3%A0%20r.l.%20%E2%80%93%20Orikan%20Group%20%28WA-60028%29%20-%20%20Notification%20waiver%20determination%20-%2030%20July%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "Ulexite Group Pty Limited (Ulexite) applied for a notification waiver in\nrespect of its proposed acquisition of 100% of the issued share\ncapital in Ignition TopCo Pty Ltd (together with its subsidiaries,\nOrikan Group), as described in the transaction documents provided\nas part of the application (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "30 July 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, Ulexite, is an indirectly wholly owned subsidiary of\nBPEA EQT Mid-Market Growth Fund (BPEA MMG). BPEA MMG is a\nprivate investment fund controlled by EQT Fund Management S.\u00e0 r.l.,\nan alternative investment fund manager. EQT Fund Management\nS.\u00e0 r.l. is wholly owned by EQT AB (publ) (Sweden).\nThe target, Orikan Group, is a provider of parking management,\ncompliance, and mobility technology solutions and associated\nservices. Its products support parking payments, digital permits,\nparking enforcement, infringement management, occupancy\nmonitoring, reporting, and customer service functions mainly for\nlocal governments, universities, hospitals, airports and transport\nauthorities. The Orikan Group also provides implementation, support,\nmaintenance, and outsourced operational services related to these\nsystems."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. There is no horizontal or vertical overlap in Australia\nbetween the acquirer (or its connected entities) and Orikan Group (or\nits connected entities), including in the supply of parking\nmanagement, compliance, and mobility technology solutions and\nassociated services.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -104,118 +85,41 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "WA-45015",
       "merger_name": "EQT Fund Management \u2013 Kakaku.com",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Kamgras 1 K.K.",
-          "identifier_type": null,
-          "identifier": "Japan corporate number  0104 01 197943",
-          "party_page": {
-            "id": "kamgras-1-k-k",
-            "name": "Kamgras 1 K.K."
-          }
-        }
+        "Kamgras 1 K.K."
       ],
       "targets": [
-        {
-          "name": "Kakaku.com, Inc.",
-          "identifier_type": null,
-          "identifier": "Japan corporate number  011001065997",
-          "canonical": {
-            "id": "time-design-international-pte-ltd",
-            "name": "Kakaku.com"
-          },
-          "party_page": {
-            "id": "time-design-international-pte-ltd",
-            "name": "Kakaku.com"
-          }
-        },
-        {
-          "name": "Time Design International Pte Ltd",
-          "identifier_type": null,
-          "identifier": "Singapore registration number  UEN 201736394D",
-          "canonical": {
-            "id": "time-design-international-pte-ltd",
-            "name": "Kakaku.com"
-          },
-          "party_page": {
-            "id": "time-design-international-pte-ltd",
-            "name": "Kakaku.com"
-          }
-        }
-      ]
+        "Kakaku.com, Inc.",
+        "Time Design International Pte Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-90009",
       "merger_name": "Trescal \u2013 TR Calibration",
-      "status": "Assessment ceased",
-      "accc_determination": null,
       "acquirers": [
-        {
-          "name": "TRESCAL (AUSTRALIA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "39 117 603 835",
-          "party_page": {
-            "id": "trescal-australia-pty-ltd",
-            "name": "Trescal (Australia) Pty Ltd"
-          }
-        }
+        "TRESCAL (AUSTRALIA) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "TR PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 005 499 721",
-          "party_page": {
-            "id": "tr-pty-ltd",
-            "name": "Tr Pty Ltd"
-          }
-        }
-      ]
+        "TR PTY LTD"
+      ],
+      "status": "Assessment ceased"
     },
     {
       "merger_id": "WA-01113",
       "merger_name": "Hillhouse \u2013 LRQA Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Atlas Investments Holdings Limited",
-          "identifier_type": null,
-          "identifier": "CR No. 434331",
-          "party_page": {
-            "id": "atlas-investments-holdings-limited",
-            "name": "Atlas Investments Holdings Limited"
-          }
-        }
+        "Atlas Investments Holdings Limited"
       ],
       "targets": [
-        {
-          "name": "Dione Topco Ltd.",
-          "identifier_type": null,
-          "identifier": "Registration number 137864 (Jersey)",
-          "party_page": {
-            "id": "dione-topco-ltd",
-            "name": "Dione Topco Ltd."
-          }
-        },
-        {
-          "name": "LRQA Group Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "lrqa-group-limited",
-            "name": "LRQA Group Limited"
-          }
-        }
-      ]
+        "Dione Topco Ltd.",
+        "LRQA Group Limited"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

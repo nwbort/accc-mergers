@@ -7,7 +7,6 @@
   "original_notification_datetime": "2026-08-21T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-10-02T12:00:00Z",
-  "page_modified_datetime": "2026-08-24T13:02:00+10:00",
   "consultation_response_due_date": "2026-08-31T12:00:00Z",
   "acquirers": [
     {
@@ -90,132 +89,43 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-40019",
       "merger_name": "Novartis - Excellergy",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Elba Merger Sub, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware company number 10547479",
-          "party_page": {
-            "id": "elba-merger-sub-inc",
-            "name": "Elba Merger Sub, Inc."
-          }
-        }
+        "Elba Merger Sub, Inc."
       ],
       "targets": [
-        {
-          "name": "Excellergy Inc.",
-          "identifier_type": null,
-          "identifier": "EIN 854115816",
-          "canonical": {
-            "id": "excellergy-inc",
-            "name": "Excellergy"
-          },
-          "party_page": {
-            "id": "excellergy-inc",
-            "name": "Excellergy"
-          }
-        }
-      ]
+        "Excellergy Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-85026",
       "merger_name": "Banijay Entertainment \u2013 All3Media",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Banijay Holding UK Limited",
-          "identifier_type": null,
-          "identifier": "UK Company number 17040112",
-          "canonical": {
-            "id": "banijay-entertainment",
-            "name": "Banijay Entertainment"
-          },
-          "party_page": {
-            "id": "banijay-entertainment",
-            "name": "Banijay Entertainment"
-          }
-        },
-        {
-          "name": "Gold Rush TopCo Limited",
-          "identifier_type": null,
-          "identifier": "RN 152697",
-          "party_page": {
-            "id": "gold-rush-topco-limited",
-            "name": "Gold Rush TopCo Limited"
-          }
-        }
+        "Banijay Holding UK Limited",
+        "Gold Rush TopCo Limited"
       ],
       "targets": [
-        {
-          "name": "Gold Rush HoldCo Limited",
-          "identifier_type": null,
-          "identifier": "RN 152698",
-          "party_page": {
-            "id": "gold-rush-holdco-limited",
-            "name": "Gold Rush HoldCo Limited"
-          }
-        },
-        {
-          "name": "Banijay Holding S.A.S.",
-          "identifier_type": null,
-          "identifier": "829 295 138 RCS PARIS",
-          "canonical": {
-            "id": "banijay-entertainment",
-            "name": "Banijay Entertainment"
-          },
-          "party_page": {
-            "id": "banijay-entertainment",
-            "name": "Banijay Entertainment"
-          }
-        }
-      ]
+        "Gold Rush HoldCo Limited",
+        "Banijay Holding S.A.S."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-95024",
       "merger_name": "Carlyle \u2013 CHN Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Crystal Holdings Korea Co., Ltd.",
-          "identifier_type": null,
-          "identifier": "SKID  1201110153602",
-          "party_page": {
-            "id": "crystal-holdings-korea-co-ltd",
-            "name": "Crystal Holdings Korea Co., Ltd."
-          }
-        }
+        "Crystal Holdings Korea Co., Ltd."
       ],
       "targets": [
-        {
-          "name": "Chung Ho Nais Co., Ltd.",
-          "identifier_type": null,
-          "identifier": "SKID  1101111052482",
-          "party_page": {
-            "id": "chung-ho-nais-co-ltd",
-            "name": "Chung Ho Nais Co., Ltd."
-          }
-        },
-        {
-          "name": "MCM Co., Ltd.",
-          "identifier_type": null,
-          "identifier": "SKID  1543110025062",
-          "party_page": {
-            "id": "mcm-co-ltd",
-            "name": "MCM Co., Ltd."
-          }
-        }
-      ]
+        "Chung Ho Nais Co., Ltd.",
+        "MCM Co., Ltd."
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

@@ -9,8 +9,6 @@
   "end_of_determination_period": "2026-08-04T12:00:00Z",
   "determination_publication_date": "2026-07-15T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-07-15T15:37:10+10:00",
   "consultation_response_due_date": "2026-06-26T12:00:00Z",
   "acquirers": [
     {
@@ -66,31 +64,10 @@
       "title": "Autodesk - MaintainX - Phase 1 Determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Autodesk%20-%20MaintainX%20-%20Determination.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "Autodesk, Inc. (Autodesk) proposes to acquire 100% of the share\ncapital in MaintainX, Inc. (MaintainX) (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "The acquirer, Autodesk, is a software company which supplies\nsoftware products in the architecture, engineering, construction,\nmanufacturing, media, and entertainment industries.\nAutodesk supplies over 100 software products including Tandem\nand Fusion Operations. Tandem is a digital twin platform, a virtual\nrepresentation of a physical asset, system, or process that mirrors\nits real-world counterpart and can reflect in real time, the current\nstate, condition, and performance of a physical asset. Fusion\nOperations is a manufacturing execution system which monitors\nand controls manufacturing operations on the production floor in\nreal time. It has limited maintenance management functionality.\nThe target, MaintainX, is a software company which supplies a\ncomputerised maintenance management system that assists\ncompanies to manage the day-to-day work of maintaining physical\nassets. MaintainX\u2019s platform includes enterprise asset management\nsoftware, which enables the management, tracking and organisation\nof assets across their entire lifecycle."
-        },
-        {
-          "item": "Overlap and relationship\nbetween the parties",
-          "details": "There is a limited horizontal overlap between Autodesk and\nMaintainX given differences in the software services and\nfunctionality provided.\nThere is a non-horizontal relationship between Autodesk and\nMaintainX due to the complementary nature of the software\nproducts supplied."
-        },
         {
           "item": "Reasons for determination",
           "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and by third parties, information from prior and\ncurrent other matters and publicly available information.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 There is limited overlap between the parties given\ndifferences in their product offerings. MaintainX is focused\non the provision of computerised maintenance management\nsystems and Autodesk\u2019s products have limited maintenance\nmanagement functionality.\n\u2022 The merged entity would continue to face competition in the\nsupply of digital twins, manufacturing execution systems\nand computerised maintenance management systems from\nalternative suppliers.\n\u2022 Autodesk would be unlikely to have the ability and incentive\nto foreclose rivals\u2019 access to, or interoperability with,\nMaintainX\u2019s platform. This is because there are alternative\ncomputerised maintenance management systems available\nin Australia to which customers could switch."
-        },
-        {
-          "item": "Applications for review",
-          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
         }
       ],
       "url_gh": "/mergers/MN-60022/Autodesk - MaintainX - Determination.pdf",
@@ -104,93 +81,40 @@
   "phase_1_determination_date": "2026-07-15T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "WA-75010",
       "merger_name": "Zendesk \u2013 Forethought",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Zendesk, Inc.",
-          "identifier_type": null,
-          "identifier": "EIN 264411091",
-          "party_page": {
-            "id": "zendesk-inc",
-            "name": "Zendesk, Inc."
-          }
-        }
+        "Zendesk, Inc."
       ],
       "targets": [
-        {
-          "name": "Forethought Technologies, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "forethought-technologies-inc",
-            "name": "Forethought Technologies, Inc."
-          }
-        }
-      ]
+        "Forethought Technologies, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25003",
       "merger_name": "Delinea (TPG) - StrongDM",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Delinea Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware corporation file number  3777797",
-          "party_page": {
-            "id": "delinea-inc",
-            "name": "Delinea Inc."
-          }
-        }
+        "Delinea Inc."
       ],
       "targets": [
-        {
-          "name": "StrongDM, Inc",
-          "identifier_type": null,
-          "identifier": "CIK  0001637806",
-          "party_page": {
-            "id": "strongdm-inc",
-            "name": "StrongDM, Inc"
-          }
-        }
-      ]
+        "StrongDM, Inc"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-01074",
       "merger_name": "GE Healthcare \u2013 Intelerad",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "GE Healthcare Technologies Inc.",
-          "identifier_type": null,
-          "identifier": "6772877",
-          "party_page": {
-            "id": "ge-healthcare-technologies-inc",
-            "name": "GE Healthcare Technologies Inc."
-          }
-        }
+        "GE Healthcare Technologies Inc."
       ],
       "targets": [
-        {
-          "name": "Intelerad Holdings ULC",
-          "identifier_type": null,
-          "identifier": "703693275",
-          "party_page": {
-            "id": "intelerad-holdings-ulc",
-            "name": "Intelerad Holdings ULC"
-          }
-        }
-      ]
+        "Intelerad Holdings ULC"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

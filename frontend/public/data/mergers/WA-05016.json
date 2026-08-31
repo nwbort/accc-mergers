@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-05-05T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-05-05T17:08:23+10:00",
   "acquirers": [
     {
       "name": "COLES GROUP PROPERTY DEVELOPMENTS LTD",
@@ -70,24 +68,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Coles%20-%20substation%20in%20Yarrawonga%20VIC%20%28WA-05016%29%20-%20Notification%20waiver%20determination%20-%205%20May%202026.pdf",
-      "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "Coles Group Property Developments Ltd (CGPD) applied for a\nnotification waiver in respect of its proposed acquisition of a parcel\nof land at (Res 2) Frank Drive, Yarrawonga VIC (target land) from\nPowercor Australia Ltd (Powercor), as described in the transaction\ndocuments provided as part of the application (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "5 May 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, CGPD, is a property development arm of Coles Group\nLimited (Coles). Coles is an Australian public company (ASX:COL)\nthat primarily operates supermarkets and liquor stores. CGPD buys\nland and constructs shopping centres, supermarkets and liquor\noutlets to then sell to third party buyers.\nThe vendor, Powercor, is the electricity distribution company\nresponsible for electricity distribution in the Yarrawonga area.\nThe target land is located in Yarrawonga, VIC and is currently used\nas an electricity substation. The target land is adjacent to a new\nColes supermarket and Liquorland store being opened at Kaiela\nBusiness Park, 14 Frank Drive, Yarrawonga VIC 3730 (Coles\nYarrawonga).\nThe target land would be used to provide Coles Yarrawonga with a\npermanent electricity supply."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. the target land is not currently used for grocery retailing and\nwill be used to supply permanent electricity to Coles\nYarrawonga\nb. Coles does not have an existing supermarket or liquor store\nin Yarrawonga\nc. there are alternative grocery retailers, including Woolworths,\nAldi and IGA, and retail suppliers of packaged liquor for\noffsite consumption in the local area.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds determined under section 51ABP(1) being met. The ACCC\ndoes however observe that the targeted notification requirements for\nsupermarkets determined under section 51ABQ(1) are likely to apply.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -110,122 +91,41 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "WA-60012",
       "merger_name": "Coles \u2013 land around supermarket site in Balaclava, VIC",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "COLES GROUP PROPERTY DEVELOPMENTS LTD",
-          "identifier_type": "ABN",
-          "identifier": "72 004 428 326",
-          "canonical": {
-            "id": "coles",
-            "name": "Coles Group"
-          },
-          "party_page": {
-            "id": "coles",
-            "name": "Coles Group"
-          }
-        }
+        "COLES GROUP PROPERTY DEVELOPMENTS LTD"
       ],
       "targets": [
-        {
-          "name": "CITY OF PORT PHILLIP",
-          "identifier_type": "ABN",
-          "identifier": "21 762 977 945",
-          "party_page": {
-            "id": "city-of-port-phillip",
-            "name": "City Of Port Phillip"
-          }
-        }
-      ]
+        "CITY OF PORT PHILLIP"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-55017",
       "merger_name": "Coles - Leasehold interest in shopping centre on Capricorn Highway, Emerald, QLD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "coles",
-            "name": "Coles Group"
-          },
-          "party_page": {
-            "id": "coles",
-            "name": "Coles Group"
-          }
-        }
+        "COLES SUPERMARKETS AUSTRALIA PTY LTD"
       ],
       "targets": [
-        {
-          "name": "BOULDER CAPITAL INVESTMENTS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "48 632 507 996",
-          "party_page": {
-            "id": "boulder-capital-investments-pty-ltd",
-            "name": "Boulder Capital Investments Pty Ltd"
-          }
-        }
-      ]
+        "BOULDER CAPITAL INVESTMENTS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-20009",
       "merger_name": "Rocket Software \u2013 Vertica",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Rocket Software AMC UK Ltd",
-          "identifier_type": null,
-          "identifier": "UK Company number 01504593",
-          "party_page": {
-            "id": "rocket-software-amc-uk-ltd",
-            "name": "Rocket Software AMC UK Ltd"
-          }
-        },
-        {
-          "name": "Rocket Software, Inc.",
-          "identifier_type": null,
-          "identifier": "Companies\u2019 Register of Delaware  3506913",
-          "canonical": {
-            "id": "rocket-software-inc",
-            "name": "Rocket Software, Inc."
-          },
-          "party_page": {
-            "id": "rocket-software-inc",
-            "name": "Rocket Software, Inc."
-          }
-        }
+        "Rocket Software AMC UK Ltd",
+        "Rocket Software, Inc."
       ],
       "targets": [
-        {
-          "name": "Micro Focus IP Development Limited",
-          "identifier_type": null,
-          "identifier": "UK Company number 07233975",
-          "party_page": {
-            "id": "micro-focus-ip-development-limited",
-            "name": "Micro Focus IP Development Limited"
-          }
-        },
-        {
-          "name": "Open Text Corporation",
-          "identifier_type": null,
-          "identifier": "10836044",
-          "party_page": {
-            "id": "open-text-corporation",
-            "name": "Open Text Corporation"
-          }
-        }
-      ]
+        "Micro Focus IP Development Limited",
+        "Open Text Corporation"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

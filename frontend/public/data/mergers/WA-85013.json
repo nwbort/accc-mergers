@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-03-10T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-03-10T19:25:43+11:00",
   "acquirers": [
     {
       "name": "NDC AUSTRALIA PTY LIMITED",
@@ -116,24 +114,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/National%20Dental%20Care%20-%20DDTA%20Dental%20%28WA-85013%29%20-%20Notification%20waiver%20determination%20-%2010%20March%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "NDC Australia Pty Limited, a wholly-owned subsidiary of NDC\nHoldCo Pty Ltd, applied for a notification waiver in respect of NDC\nAustralia Pty Limited\u2019s proposed acquisition of 100% of the business\nassets comprising the DDTA Dental clinic (DDTA Dental), as\ndescribed in the transaction documents provided as part of the\napplication (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "10 March 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "NDC HoldCo Pty Ltd (together with its subsidiaries, National Dental\nCare) is a dental services organisation that operates a network of\ndental clinics that provide a range of general dentistry services.\nNational Dental Care has dental clinics in all Australian states and\nterritories except Tasmania.\nDDTA Dental is a single dental clinic located in Launceston,\nTasmania, that provides a range of general dentistry services.\nNational Dental Care and DDTA Dental supply general dentistry\nservices."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. there is no horizontal overlap between National Dental Care\nand DDTA Dental in the supply of dental services in\nTasmania\nb. the presence of alternative suppliers of dental services in the\narea.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met based on the information in the application, given that\nmaterial competition concerns are unlikely to arise, the ACCC has\ndetermined that the Acquisition is not required to be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -156,139 +137,42 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "MN-50007",
       "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "NDC AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "49 162 955 866",
-          "canonical": {
-            "id": "national-dental-care",
-            "name": "National Dental Care"
-          },
-          "party_page": {
-            "id": "national-dental-care",
-            "name": "National Dental Care"
-          }
-        }
+        "NDC AUSTRALIA PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "The Trustee for the Comfy Dental Trust",
-          "identifier_type": "ABN",
-          "identifier": "59 865 563 072",
-          "party_page": {
-            "id": "the-trustee-for-the-comfy-dental-trust",
-            "name": "The Trustee for the Comfy Dental Trust"
-          }
-        }
-      ]
+        "The Trustee for the Comfy Dental Trust"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-75002",
       "merger_name": "Opal Healthcare \u2013 Sunnymeade Park Aged Care Community",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OHCA Property Holdings Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "70 675 807 477",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        },
-        {
-          "name": "DPG Services Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "38 090 007 999",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        }
+        "OHCA Property Holdings Pty Ltd",
+        "DPG Services Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "The assets and business comprising Sunnymeade Park Aged Care Community",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "the-assets-and-business-comprising-sunnymeade-park-aged-care-community",
-            "name": "The assets and business comprising Sunnymeade Park Aged Care Community"
-          }
-        }
-      ]
+        "The assets and business comprising Sunnymeade Park Aged Care Community"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-75012",
       "merger_name": "Opal HealthCare \u2013 Greenwich Place residential aged care home",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "OHCA PROPERTY HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "70 675 807 477",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        },
-        {
-          "name": "DPG SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "38 090 007 999",
-          "canonical": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          },
-          "party_page": {
-            "id": "opal-healthcare",
-            "name": "Opal HealthCare"
-          }
-        }
+        "OHCA PROPERTY HOLDINGS PTY LTD",
+        "DPG SERVICES PTY LTD"
       ],
       "targets": [
-        {
-          "name": "GREENWICH PLACE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "45 000 706 249",
-          "party_page": {
-            "id": "greenwich-place-pty-ltd",
-            "name": "Greenwich Place Pty Ltd"
-          }
-        },
-        {
-          "name": "GREENWICH CARE PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "96 613 786 682",
-          "party_page": {
-            "id": "greenwich-care-pty-limited",
-            "name": "Greenwich Care Pty Limited"
-          }
-        }
-      ]
+        "GREENWICH PLACE PTY LTD",
+        "GREENWICH CARE PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

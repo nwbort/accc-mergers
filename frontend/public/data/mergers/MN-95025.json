@@ -9,8 +9,6 @@
   "end_of_determination_period": "2026-08-24T12:00:00Z",
   "determination_publication_date": "2026-08-04T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-08-04T11:31:45+10:00",
   "consultation_response_due_date": "2026-07-20T12:00:00Z",
   "acquirers": [
     {
@@ -66,31 +64,10 @@
       "title": "Salesforce - Contentful - Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Salesforce%20-%20Contentful%20-%20Phase%201%20determination.pdf",
-      "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "Salesforce, Inc. (Salesforce)\u2019s proposed acquisition of 100% of the\nshares in Contentful Global, Inc. (Contentful) (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "The acquirer, Salesforce, is a global supplier of customer\nrelationship management (CRM) software and other software-as-a-\nservice solutions. Salesforce\u2019s modular CRM platform assists users\nwith sales, service, marketing and commerce functions.\nThe target, Contentful, is a global supplier of digital experience\nsoftware, specifically, a content management system. Contentful\u2019s\ncontent management system is used by businesses to create, edit,\norganise and publish a company's digital content across various\nchannels and platforms via Application Programming Interfaces\n(API). Contentful provides a 'headless' content management\nproduct, meaning it stores and manages an organisation's content\nseparately from the system that displays the content to the end\nuser."
-        },
-        {
-          "item": "Overlap and relationship\nbetween the Parties",
-          "details": "The Parties overlap in the supply of content management system\nsoftware. Salesforce also offers products that can interoperate with\nContentful\u2019s content management system."
-        },
         {
           "item": "Reasons for determination",
           "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and feedback from third parties.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 There is minimal horizontal overlap between Salesforce and\nContentful in the supply of content management systems.\nSalesforce\u2019s current content management software is not\noffered as a standalone product and is limited in its capabilities\ncompared to those of Contentful as well as other content\nmanagement systems and digital experience platforms.\n\u2022 Post-acquisition, the merged firm would continue to face\ncompetition from alternative suppliers of content management\nsystems, including Acquia, Adobe, Contently, Optimizely and\nSanity.\n\u2022 The merged firm would be unlikely to have the ability and\nincentive to foreclose rival providers of content management\nsystems via an anti-competitive bundling or tying strategy given\nthere are alternative suppliers of CRM services in Australia and\ninternationally. Market feedback also indicates that the merged\nfirm would continue to have the incentive to maintain\ninteroperability between its software and rivals\u2019 products."
-        },
-        {
-          "item": "Applications for review",
-          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
         }
       ],
       "url_gh": "/mergers/MN-95025/Salesforce - Contentful - Phase 1 determination.pdf",
@@ -104,101 +81,40 @@
   "phase_1_determination_date": "2026-08-04T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-85007",
       "merger_name": "Salesforce \u2013 Qualified",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Salesforce, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "salesforce-inc",
-            "name": "Salesforce, Inc"
-          },
-          "party_page": {
-            "id": "salesforce-inc",
-            "name": "Salesforce, Inc"
-          }
-        }
+        "Salesforce, Inc"
       ],
       "targets": [
-        {
-          "name": "Qualified.com, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "qualified-com-inc",
-            "name": "Qualified.com, Inc"
-          }
-        }
-      ]
+        "Qualified.com, Inc"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-35003",
       "merger_name": "Salesforce \u2013 Qualified",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "Salesforce, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "canonical": {
-            "id": "salesforce-inc",
-            "name": "Salesforce, Inc"
-          },
-          "party_page": {
-            "id": "salesforce-inc",
-            "name": "Salesforce, Inc"
-          }
-        }
+        "Salesforce, Inc"
       ],
       "targets": [
-        {
-          "name": "Qualified.com, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "qualified-com-inc",
-            "name": "Qualified.com, Inc"
-          }
-        }
-      ]
+        "Qualified.com, Inc"
+      ],
+      "accc_determination": "Not approved"
     },
     {
       "merger_id": "MN-85036",
       "merger_name": "SpaceX - Anysphere",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Space Exploration Technologies Corp.",
-          "identifier_type": null,
-          "identifier": "NASDAQ  SPCX",
-          "party_page": {
-            "id": "space-exploration-technologies-corp",
-            "name": "Space Exploration Technologies Corp."
-          }
-        }
+        "Space Exploration Technologies Corp."
       ],
       "targets": [
-        {
-          "name": "Anysphere, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware File Number  6524309",
-          "party_page": {
-            "id": "anysphere-inc",
-            "name": "Anysphere, Inc."
-          }
-        }
-      ]
+        "Anysphere, Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

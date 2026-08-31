@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-06-22T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-06-22T17:55:38+10:00",
   "acquirers": [
     {
       "name": "BINGO ACQUISITIONS PTY LTD",
@@ -64,24 +62,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Bingo%20Industries%20-%20JLW%20Services%20%28WA-15021%29%20-%20Notification%20waiver%20determination%20-%2020%20June%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "BINGO Acquisitions Pty Ltd, trading as BINGO Industries (Bingo\nIndustries), applied for a notification waiver in respect of its\nproposed acquisition of the assets of JLW Services Pty Ltd (JLW\nServices), as described in the transaction documents provided as\npart of the application (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "20 June 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, Bingo Industries is a recycling and waste management\ncompany with operations in New South Wales, Victoria and\nQueensland. Bingo Industries provides collection, processing,\nrecycling and disposal services for building and demolition waste as\nwell as for commercial and industrial waste.\nThe target, JLW Services, is based in Cootamundra, New South\nWales, and provides collection, processing and recycling services for\nend-of-life tyres and mattresses, as well as onsite shredding and\nmine site clean-up services, servicing mainly regional locations in\nNew South Wales, Queensland, Victoria and South Australia.\nBoth parties are active in the supply of collection, processing and\nrecycling services and alternative fuel sources in New South Wales,\nVictoria and Queensland."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. there is a small horizontal overlap between Bingo Industries\nand JLW Services in the supply of collection, processing and\nrecycling services in specialised waste streams, in particular\ntyres and mattresses in New South Wales, Victoria and\nQueensland\nb. there is a small horizontal overlap between Bingo Industries\nand JLW Services in the supply of alternative fuel sources to\ncustomers in New South Wales, Victoria and Queensland\nc. there are alternative suppliers of collection, processing and\nrecycling services in specialised waste streams, in particular\ntyres and mattresses in New South Wales, Victoria and\nQueensland\nd. there are alternative suppliers alternative fuel sources in\nNew South Wales, Victoria and Queensland.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -104,96 +85,39 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "WA-70007",
       "merger_name": "Platinum Equity Group \u2013 Burke",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Advance Holdings II, LLC",
-          "identifier_type": null,
-          "identifier": "Delaware ID  10496142",
-          "party_page": {
-            "id": "advance-holdings-ii-llc",
-            "name": "Advance Holdings II, LLC"
-          }
-        }
+        "Advance Holdings II, LLC"
       ],
       "targets": [
-        {
-          "name": "BCI Acquisitions, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware ID  6389940",
-          "party_page": {
-            "id": "bci-acquisitions-inc",
-            "name": "BCI Acquisitions, Inc."
-          }
-        }
-      ]
+        "BCI Acquisitions, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-95016",
       "merger_name": "Eli Lilly - Kelonia Therapeutics",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Eli Lilly and Company",
-          "identifier_type": null,
-          "identifier": "IRS Employer Identification Number  350470950",
-          "canonical": {
-            "id": "eli-lilly-and-company",
-            "name": "Eli Lilly"
-          },
-          "party_page": {
-            "id": "eli-lilly-and-company",
-            "name": "Eli Lilly"
-          }
-        }
+        "Eli Lilly and Company"
       ],
       "targets": [
-        {
-          "name": "Kelonia Therapeutics, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "kelonia-therapeutics-inc",
-            "name": "Kelonia Therapeutics, Inc."
-          }
-        }
-      ]
+        "Kelonia Therapeutics, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-40023",
       "merger_name": "AUB \u2013 further interest in KJ Risk",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AUSTBROKERS CORPORATE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "29 107 477 181",
-          "party_page": {
-            "id": "austbrokers-corporate-pty-ltd",
-            "name": "Austbrokers Corporate Pty Ltd"
-          }
-        }
+        "AUSTBROKERS CORPORATE PTY LTD"
       ],
       "targets": [
-        {
-          "name": "KJ RISK GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "15 143 512 387",
-          "party_page": {
-            "id": "kj-risk-group-pty-ltd",
-            "name": "Kj Risk Group Pty Ltd"
-          }
-        }
-      ]
+        "KJ RISK GROUP PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

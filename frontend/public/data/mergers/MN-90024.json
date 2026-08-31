@@ -8,8 +8,6 @@
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-09-04T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-08-27T10:46:46+10:00",
   "consultation_response_due_date": "2026-07-31T12:00:00Z",
   "acquirers": [
     {
@@ -84,31 +82,10 @@
       "title": "Petalite - Envu - Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/moderated_files/Petalite%20-%20Envu%20-%20Phase%201%20determination%20-%2026%20August%202026_0.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "Petalite Investment Pte. Ltd. (Petalite) proposes to acquire\napproximately 32% of the equity interests in Cinven Discovery\nHoldings Limited Partnership and its subsidiaries (CD Holdings) (the\nAcquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "The acquirer, Petalite, is an investment holding company and an\naffiliate of GIC Pte. Ltd. (GIC). GIC is a private limited company\nestablished in 1981 under the Singapore Companies Act to manage\nSingapore\u2019s foreign reserves.\nThe target, CD Holdings, is majority indirectly owned by CD\nAggregator Limited Partnership (CD Aggregator), which is ultimately\ncontrolled by Cinven Limited. CD Aggregator and Cinven Limited are\npart of Cinven, a private equity firm.\nCinven and management indirectly hold 100% of the Envu Group\n(Envu). In Australia, Envu is active in the development and supply of\nweed, disease and pest control products for non-agricultural\napplications, including turf and ornamentals, professional pest\nmanagement, industrial vegetation management, forestry, mosquito\nmanagement, and rangelands and pasture management."
-        },
-        {
-          "item": "Overlap and relationship\nbetween the Parties",
-          "details": "There is no horizontal overlap in Australia between Envu\u2019s activities\nand the activities of Petalite, GIC and their connected entities.\nIn Australia, there are several entities that GIC holds minority, non-\ncontrolling interests in with which Envu has or could have a\ncustomer or supplier relationship."
-        },
         {
           "item": "Reasons for determination",
           "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, information from third parties and publicly\navailable information.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 There is no horizontal competitive overlap between Petalite, GIC\n(and their connected entities) and Envu.\n\u2022 Petalite, GIC and their connected entities would not have the\nability to engage in any foreclosure strategies against rival\nfirms."
-        },
-        {
-          "item": "Applications for review",
-          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
         }
       ],
       "url_gh": "/mergers/MN-90024/Petalite - Envu - Phase 1 determination - 26 August 2026_0.pdf",
@@ -123,111 +100,42 @@
   "phase_1_determination_date": "2026-08-26T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "WA-05005",
       "merger_name": "Ironbark - Investment in Viola Private Wealth",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "IBWM PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 621 141 026",
-          "party_page": {
-            "id": "ibwm-pty-ltd",
-            "name": "Ibwm Pty Ltd"
-          }
-        }
+        "IBWM PTY LTD"
       ],
       "targets": [
-        {
-          "name": "VIOLA GROUP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "20 680 038 180",
-          "party_page": {
-            "id": "viola-group-holdings-pty-ltd",
-            "name": "Viola Group Holdings Pty Ltd"
-          }
-        }
-      ]
+        "VIOLA GROUP HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-70014",
       "merger_name": "Global Infrastructure Management \u2013 TCR",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "GIP V Snow Bidco Limited",
-          "identifier_type": null,
-          "identifier": "UK company number  17059583",
-          "party_page": {
-            "id": "gip-v-snow-bidco-limited",
-            "name": "GIP V Snow Bidco Limited"
-          }
-        }
+        "GIP V Snow Bidco Limited"
       ],
       "targets": [
-        {
-          "name": "Envol Holdings Limited",
-          "identifier_type": null,
-          "identifier": "Jersey registration number  121115",
-          "party_page": {
-            "id": "envol-holdings-limited",
-            "name": "Envol Holdings Limited"
-          }
-        }
-      ]
+        "Envol Holdings Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-85006",
       "merger_name": "Tega and Apollo Funds consortium - Molycop",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Tega MC SG Holdings Pte. Ltd.",
-          "identifier_type": null,
-          "identifier": "202551682E",
-          "party_page": {
-            "id": "tega-mc-sg-holdings-pte-ltd",
-            "name": "Tega MC SG Holdings Pte. Ltd."
-          }
-        },
-        {
-          "name": "Tega MC Australia Holdings Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "16 147 692 840",
-          "party_page": {
-            "id": "tega-mc-australia-holdings-pty-ltd",
-            "name": "Tega MC Australia Holdings Pty Ltd"
-          }
-        }
+        "Tega MC SG Holdings Pte. Ltd.",
+        "Tega MC Australia Holdings Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Orway IQ Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "52 631 359 370",
-          "party_page": {
-            "id": "orway-iq-pty-ltd",
-            "name": "Orway IQ Pty Ltd"
-          }
-        },
-        {
-          "name": "Molycop Technologies Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "85 154 346 004",
-          "party_page": {
-            "id": "molycop-technologies-pty-ltd",
-            "name": "Molycop Technologies Pty Ltd"
-          }
-        }
-      ]
+        "Orway IQ Pty Ltd",
+        "Molycop Technologies Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

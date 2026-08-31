@@ -8,8 +8,6 @@
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-09-08T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-08-25T16:57:43+10:00",
   "consultation_response_due_date": "2026-08-05T12:00:00Z",
   "acquirers": [
     {
@@ -71,31 +69,10 @@
       "title": "Protech - ActivateRail - Phase 1 Determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/moderated_files/Protech%20-%20ActivateRail%20-%20Phase%201%20Determination%20-%20%2025%20August%202026_0.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "Protech Group (Aust) Pty Ltd (Protech) proposed acquisition of\n100% of the shares of ActivateRail Pty Ltd (ActivateRail) (the\nAcquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "The acquirer, Protech, is an Australian based labour hire provider to\ntechnical industries including renewables, building and construction,\ncivil construction and infrastructure, industrial maintenance and\nengineering, mining and resources, traffic management, rail\noperations, asphalt and road surfacing, warehousing and\nmanufacturing and defence. Quantum Safety Pty Ltd (Quantum\nSafety), a wholly owned subsidiary of Protech, supplies rail safety\nand site management and supervision services in New South Wales\nand Queensland.\nThe target, ActivateRail, supplies rail safety and site management\nand supervision services to utilities, engineering and professional\nservice organisations, primarily in Victoria."
-        },
-        {
-          "item": "Overlap between the\nParties",
-          "details": "Protech, through Quantum Safety, and ActivateRail (the Parties)\noverlap in the supply of rail safety and site management and\nsupervision services in New South Wales and Queensland."
-        },
         {
           "item": "Reasons for determination",
           "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, publicly available information and information\nfrom third parties.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 Quantum Safety and ActivateRail do not appear to be close\ncompetitors.\n\u2022 The merged firm would likely continue to face competition from\nmultiple alternative suppliers of rail safety and site management\nand supervision services.\nThe ACCC also received concerns regarding Protech\u2019s ability to\nbundle the supply of rail safety and site management and\nsupervision services with labour hire services. The ACCC considers\nthat Protech is unlikely to have the ability to engage in anti-\ncompetitive bundling or tying due to the presence of from multiple\nalternative suppliers of rail safety and site management and\nsupervision services."
-        },
-        {
-          "item": "Applications for review",
-          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
         }
       ],
       "url_gh": "/mergers/MN-05027/Protech - ActivateRail - Phase 1 Determination - 25 August 2026_0.pdf",
@@ -110,97 +87,40 @@
   "phase_1_determination_date": "2026-08-25T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "WA-75021",
       "merger_name": "Hillhouse - KMC Solutions",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Hermes Bidco Limited",
-          "identifier_type": null,
-          "identifier": "CR number  429985",
-          "canonical": {
-            "id": "hermes-bidco-limited",
-            "name": "Hermes Bidco Limited"
-          },
-          "party_page": {
-            "id": "hermes-bidco-limited",
-            "name": "Hermes Bidco Limited"
-          }
-        }
+        "Hermes Bidco Limited"
       ],
       "targets": [
-        {
-          "name": "KMC Solutions Hong Kong Limited",
-          "identifier_type": null,
-          "identifier": "Hong Kong CR number  2202455",
-          "party_page": {
-            "id": "kmc-solutions-hong-kong-limited",
-            "name": "KMC Solutions Hong Kong Limited"
-          }
-        }
-      ]
+        "KMC Solutions Hong Kong Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-01058",
       "merger_name": "Caterpillar \u2013 RPMGlobal Holdings",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Caterpillar Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "caterpillar-inc",
-            "name": "Caterpillar Inc."
-          }
-        }
+        "Caterpillar Inc."
       ],
       "targets": [
-        {
-          "name": "RPMGLOBAL HOLDINGS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "17 010 672 321",
-          "party_page": {
-            "id": "rpmglobal-holdings-limited",
-            "name": "Rpmglobal Holdings Limited"
-          }
-        }
-      ]
+        "RPMGLOBAL HOLDINGS LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-01083",
       "merger_name": "Civilmart \u2013 Taylex",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CTC PRECAST PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "12 614 966 059",
-          "party_page": {
-            "id": "ctc-precast-pty-ltd",
-            "name": "Ctc Precast Pty Ltd"
-          }
-        }
+        "CTC PRECAST PTY LTD"
       ],
       "targets": [
-        {
-          "name": "TAYLEX GROUP HOLDING CO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "50 646 051 578",
-          "party_page": {
-            "id": "taylex-group-holding-co-pty-ltd",
-            "name": "Taylex Group Holding Co Pty Ltd"
-          }
-        }
-      ]
+        "TAYLEX GROUP HOLDING CO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

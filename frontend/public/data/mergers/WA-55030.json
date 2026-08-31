@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-08-04T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-08-04T17:30:40+10:00",
   "acquirers": [
     {
       "name": "Neon Merger Sub, Inc.",
@@ -68,24 +66,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/CRH%20-%20Arcosa%20%28WA-55030%29%20-%20Notification%20waiver%20determination%20-%203%20August%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "Neon Merger Sub, Inc. (Merger Sub), a wholly owned subsidiary of\nCRH Americas, Inc. (CRH Americas), applied for a notification waiver\nin respect of its proposed acquisition of 100% of the shares in\nArcosa, Inc. (Arcosa), as described in the transaction documents\nprovided as part of the application (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "3 August 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, Merger Sub, is a wholly owned subsidiary of CRH\nAmericas. CRH Americas primarily acts as a holding company that\ndoes not itself directly manufacture or supply any goods or services.\nCRH Americas is owned by CRH plc (CRH, together with its direct\nand indirect subsidiaries, CRH Group), a global supplier of building\nmaterials and infrastructure products headquartered in Ireland and\nlisted on the New York Stock Exchange (NYSE).\nCRH has various interests in Australia, including controlling interests\nin CTC Precast Pty Ltd (Civilmart), Infrastructure Products Australia\nPty Ltd (IPA) and Adbri Pty Ltd (Adbri). Each of Civilmart and IPA\nprimarily supply precast concrete products that are used in a range\nof industries including infrastructure, telecommunications, water\ndrainage, treatment and purification. Adbri is a national\nmanufacturer and supplier of cement, ready-mix concrete and\naggregate products.\nArcosa is headquartered in Dallas, Texas and is listed on the NYSE.\nArcosa is a provider of infrastructure-related materials, products and\nsolutions, predominantly in the United States, including:\n\u2022 construction products, such as aggregates, specialty materials\ne.g. gypsum, hot-mix asphalt and construction site support; and\n\u2022 engineered products, such as utility structures, poles, wind\ntowers, telecom structures, traffic and lighting structures.\nArcosa has no subsidiaries, offices or employees in Australia, and\nsupplies a very small volume of trenching and shoring products in\nAustralia from its business in the United States."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. there is no horizontal overlap or vertical relationship\nbetween CRH (including its connected entities) and Arcosa\u2019s\nactivities in the supply of trenching and shoring products in\nAustralia\nb. there are alternative suppliers of trenching and shoring\nproducts in Australia\nc. Arcosa has a small presence in Australia.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -108,105 +89,40 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "WA-50014",
       "merger_name": "Searchlight Capital Partners - Additional interest in KORE Group Holdings Inc.",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Searchlight Capital IV LP",
-          "identifier_type": null,
-          "identifier": "US SEC  0001954453",
-          "party_page": {
-            "id": "searchlight-capital-iv-lp",
-            "name": "Searchlight Capital IV LP"
-          }
-        },
-        {
-          "name": "KONA Merger Sub Co.",
-          "identifier_type": null,
-          "identifier": "Delaware  10525073",
-          "party_page": {
-            "id": "kona-merger-sub-co",
-            "name": "KONA Merger Sub Co."
-          }
-        }
+        "Searchlight Capital IV LP",
+        "KONA Merger Sub Co."
       ],
       "targets": [
-        {
-          "name": "KORE Group Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware  5388903",
-          "party_page": {
-            "id": "kore-group-holdings-inc",
-            "name": "KORE Group Holdings, Inc."
-          }
-        }
-      ]
+        "KORE Group Holdings, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-40019",
       "merger_name": "Novartis - Excellergy",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Elba Merger Sub, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware company number 10547479",
-          "party_page": {
-            "id": "elba-merger-sub-inc",
-            "name": "Elba Merger Sub, Inc."
-          }
-        }
+        "Elba Merger Sub, Inc."
       ],
       "targets": [
-        {
-          "name": "Excellergy Inc.",
-          "identifier_type": null,
-          "identifier": "EIN 854115816",
-          "canonical": {
-            "id": "excellergy-inc",
-            "name": "Excellergy"
-          },
-          "party_page": {
-            "id": "excellergy-inc",
-            "name": "Excellergy"
-          }
-        }
-      ]
+        "Excellergy Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-90025",
       "merger_name": "KKR - Crowe",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Forge Merger Sub LLC",
-          "identifier_type": null,
-          "identifier": "10628991  Delaware",
-          "party_page": {
-            "id": "forge-merger-sub-llc",
-            "name": "Forge Merger Sub LLC"
-          }
-        }
+        "Forge Merger Sub LLC"
       ],
       "targets": [
-        {
-          "name": "Crowe ParentCo LLC",
-          "identifier_type": null,
-          "identifier": "350921680  Delaware",
-          "party_page": {
-            "id": "crowe-parentco-llc",
-            "name": "Crowe ParentCo LLC"
-          }
-        }
-      ]
+        "Crowe ParentCo LLC"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-06-26T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-06-26T17:23:17+10:00",
   "acquirers": [
     {
       "name": "Smith UK Bidco Limited",
@@ -91,24 +89,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Apax%20Partners%20LLP%20%E2%80%93%20Sedex%20Information%20Exchange%20Limited%20%28WA-45017%29%20-%20Notification%20waiver%20determination%20-%2026%20June%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "Smith UK Bidco Limited, which is owned by investment funds which\nare advised by Apax Partners LLP (Apax) applied for a notification\nwaiver in respect of its proposed acquisition of 100% of the issued\nshare capital in Sedex Information Exchange Limited (Sedex), as\ndescribed in the transaction documents provided as part of the\napplication (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "26 June 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, Apax, is a UK limited liability partnership based in\nLondon, UK, and the parent company of a number of entities which\nprovide investment advisory services to private equity funds\ninvesting in a range of industry sectors (the Apax Funds).\nThe target, Sedex, is a technology company active in the supply\nchain management (SCM) software applications sector, specialising\nin data, insights and professional services to empower supply chain\nsustainability. Sedex uses a combination of assessment tools,\ntraining and auditing services to provide end-to-end supply chain\nsolutions that help businesses identify, manage and address social,\nethical, and environmental risks throughout their supply chains \u2013\nincluding through the use of the Sedex Members Ethical Trade Audit\n(SMETA), a standardised social audit methodology.\nSome Apax Funds\u2019 controlled portfolio companies provide adjacent\nservices in the broader SCM software applications sector in\nAustralia."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. there is a small horizontal overlap between Apax (including\nits connected entities and Apax Funds\u2019 controlled portfolio\ncompanies) and Sedex in the supply of SCM software\nservices, and no overlap in the supply of social audit\nservices, in Australia\nb. there are alternative suppliers of SCM software and social\naudit services in Australia\nc. there is a low risk of foreclosure or other concerning\nconglomerate effects resulting from exclusionary conduct,\nbundling or tying of services post-acquisition.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -131,114 +112,41 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "WA-90014",
       "merger_name": "Constellation Software - DerbySoft Holdings",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Sail Parent Holdco Ltd",
-          "identifier_type": null,
-          "identifier": "UK Company Registration Number 17112723",
-          "party_page": {
-            "id": "sail-parent-holdco-ltd",
-            "name": "Sail Parent Holdco Ltd"
-          }
-        }
+        "Sail Parent Holdco Ltd"
       ],
       "targets": [
-        {
-          "name": "DerbySoft Holdings Limited",
-          "identifier_type": null,
-          "identifier": "Cayman Islands Company Registration Number CF172438",
-          "canonical": {
-            "id": "derbysoft-inc",
-            "name": "DerbySoft"
-          },
-          "party_page": {
-            "id": "derbysoft-inc",
-            "name": "DerbySoft"
-          }
-        }
-      ]
+        "DerbySoft Holdings Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-90019",
       "merger_name": "Jardines - I-MED",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Kent Image Australia Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "698 274 396",
-          "party_page": {
-            "id": "kent-image-australia-pty-ltd",
-            "name": "Kent Image Australia Pty Ltd"
-          }
-        }
+        "Kent Image Australia Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "IMAGE HOLDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "18 623 028 740",
-          "party_page": {
-            "id": "image-holdco-pty-ltd",
-            "name": "Image Holdco Pty Ltd"
-          }
-        }
-      ]
+        "IMAGE HOLDCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-25006",
       "merger_name": "KPS \u2013 Novacel",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Desmos US Bidco, Inc.",
-          "identifier_type": null,
-          "identifier": "[ID type unknown]  10469174",
-          "party_page": {
-            "id": "desmos-us-bidco-inc",
-            "name": "Desmos US Bidco, Inc."
-          }
-        },
-        {
-          "name": "Desmos Bidco SAS",
-          "identifier_type": null,
-          "identifier": "SIREN  100 230 754",
-          "party_page": {
-            "id": "desmos-bidco-sas",
-            "name": "Desmos Bidco SAS"
-          }
-        }
+        "Desmos US Bidco, Inc.",
+        "Desmos Bidco SAS"
       ],
       "targets": [
-        {
-          "name": "Novacel Performance Coatings, Inc.",
-          "identifier_type": null,
-          "identifier": "EIN  311708662",
-          "party_page": {
-            "id": "novacel-performance-coatings-inc",
-            "name": "Novacel Performance Coatings, Inc."
-          }
-        },
-        {
-          "name": "Novacel, Inc.",
-          "identifier_type": null,
-          "identifier": "EIN  043515032",
-          "party_page": {
-            "id": "novacel-inc",
-            "name": "Novacel, Inc."
-          }
-        }
-      ]
+        "Novacel Performance Coatings, Inc.",
+        "Novacel, Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

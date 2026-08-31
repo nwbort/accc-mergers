@@ -9,8 +9,6 @@
   "end_of_determination_period": "2026-08-11T12:00:00Z",
   "determination_publication_date": "2026-07-27T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-07-27T16:14:02+10:00",
   "consultation_response_due_date": "2026-07-08T12:00:00Z",
   "acquirers": [
     {
@@ -117,31 +115,10 @@
       "title": "SpaceX-Anysphere - Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/SpaceX-Anysphere%20-%20Phase%201%20determination.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "Space Exploration Technologies Corp. (SpaceX)\u2019s proposed\nacquisition, via its subsidiary, of acquire 100% of the shares in\nAnysphere, Inc. (Anysphere) (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "The acquirer, SpaceX, is the ultimate parent company of the SpaceX\ngroup, which includes, among other businesses, X.AI Corp (xAI), an\nartificial intelligence (AI) company, and X Corp., which owns and\noperates the X social media platform (formerly Twitter). xAI\ndevelops the Grok family of large language models and offers Grok\nBuild, a terminal-native AI coding tool, to Grok and X subscribers.\nGrok Build currently runs on xAI\u2019s Grok model family.\nThe target, Anysphere, develops and operates Cursor, an AI coding\ntool used by software developers to write and review code with the\nassistance of AI models. Cursor users can select from a range of\nthird-party large language models (including Grok models) or\nAnysphere\u2019s proprietary Composer model to power Cursor\u2019s AI\nassistant features. Composer is purpose-built for Cursor and is not\noffered as a standalone model for other purposes."
-        },
-        {
-          "item": "Overlap between the\nParties",
-          "details": "SpaceX and Anysphere (together, the Parties) overlap in the supply\nof AI large language models, and in the supply of AI coding tools.\nCursor users can use SpaceX\u2019s Grok models to power Cursor\u2019s AI\nassistant features."
-        },
         {
           "item": "Reasons for determination",
           "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, information from third partes, market share data\nfrom prior matters and publicly available information.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 There is limited horizontal overlap between the AI large language\nmodel services offered by the Parties, given Anysphere\u2019s\nproprietary Composer model is only available for use with Cursor\nand is not offered as a standalone model for other purposes.\n\u2022 Post-Acquisition, the merged entity would continue to face\ncompetition from multiple alternative suppliers of AI coding\ntools.\n\u2022 Post-Acquisition, the merged entity would be unlikely to have the\nability and incentive to foreclose rival AI large language model\nsuppliers\u2019 access to the Cursor platform, given the multiple\nalternative suppliers of AI coding tools used by software\ndevelopers.\n\u2022 Post-Acquisition, the merged entity would be unlikely to have the\nability and incentive to foreclose rival AI coding tool suppliers\u2019\naccess to the merged entity\u2019s AI large language models, given\nthe availability of alternative suppliers of large language models\nsuch as Anthropic, Google and OpenAI."
-        },
-        {
-          "item": "Applications for review",
-          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
         }
       ],
       "url_gh": "/mergers/MN-85036/SpaceX-Anysphere - Phase 1 determination.pdf",
@@ -155,115 +132,42 @@
   "phase_1_determination_date": "2026-07-27T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-01071",
       "merger_name": "CSE Crosscom \u2013 Progility",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CSE CROSSCOM PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "25 606 614 500",
-          "party_page": {
-            "id": "cse-crosscom-pty-ltd",
-            "name": "Cse Crosscom Pty Ltd"
-          }
-        },
-        {
-          "name": "CSE-Global (Australia) Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "85 109 958 090",
-          "party_page": {
-            "id": "cse-global-australia-pty-ltd",
-            "name": "Cse-Global (Australia) Pty Ltd"
-          }
-        }
+        "CSE CROSSCOM PTY LTD",
+        "CSE-Global (Australia) Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "PROGILITY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "11 131 639 837",
-          "party_page": {
-            "id": "progility-pty-ltd",
-            "name": "Progility Pty Ltd"
-          }
-        }
-      ]
+        "PROGILITY PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-20011",
       "merger_name": "Origin \u2013 Equity stake in Kraken",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "53 143 484 208",
-          "canonical": {
-            "id": "origin-energy-limited",
-            "name": "Origin Energy Limited"
-          },
-          "party_page": {
-            "id": "origin-energy-limited",
-            "name": "Origin Energy Limited"
-          }
-        }
+        "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "CPP Investment Board Private Holdings (4) Inc.",
-          "identifier_type": null,
-          "identifier": "BN  11089340",
-          "party_page": {
-            "id": "cpp-investment-board-private-holdings-4-inc",
-            "name": "CPP Investment Board Private Holdings (4) Inc."
-          }
-        }
-      ]
+        "CPP Investment Board Private Holdings (4) Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-40014",
       "merger_name": "Infosys \u2013 Optimum Healthcare IT",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Infosys Nova Holdings LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "infosys-nova-holdings-llc",
-            "name": "Infosys Nova Holdings LLC"
-          }
-        }
+        "Infosys Nova Holdings LLC"
       ],
       "targets": [
-        {
-          "name": "Optimum Achieve Holdings, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "optimum-achieve-holdings-inc",
-            "name": "Optimum Achieve Holdings, Inc"
-          }
-        },
-        {
-          "name": "OPTIMUM HEALTHCARE IT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "53 689 795 702",
-          "party_page": {
-            "id": "optimum-healthcare-it-pty-ltd",
-            "name": "Optimum Healthcare It Pty Ltd"
-          }
-        }
-      ]
+        "Optimum Achieve Holdings, Inc",
+        "OPTIMUM HEALTHCARE IT PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

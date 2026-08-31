@@ -9,8 +9,6 @@
   "end_of_determination_period": "2026-05-04T12:00:00Z",
   "determination_publication_date": "2026-04-13T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-04-13T17:51:27+10:00",
   "consultation_response_due_date": "2026-03-26T12:00:00Z",
   "acquirers": [
     {
@@ -96,31 +94,10 @@
       "title": "Maas - 50% acquisition of COLAS\u2019 Caloundra asphalt plant and 100% of COLAS\u2019 Tomago asphalt plant - Phase 1 Determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Maas%20Group%20Holdings%20-%20Determination%20Document%2013%20April%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "Maas Group Holdings Limited (Maas) proposed acquisition, through\nsubsidiary Asphalt Operators Australia Pty Ltd (AOA), of 50% interest\nin Coltek Asphalt Pty Ltd (Coltek), which will own and operate the\nhot-mix asphalt business currently owned and operated by a\nsubsidiary of COLAS Australia Group Pty Ltd (COLAS) at Caloundra\non the Sunshine Coast, Queensland and, through its subsidiary\nAustek Roads NSW Pty Ltd (Austek Roads NSW), of 100% interest in\nCOLAS\u2019 hot-mix asphalt business at Tomago, NSW (Newcastle)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "The acquirer, Maas, is a diversified industrial group with operations\nin construction materials, civil construction and hire, manufacturing\nand equipment sales, and residential and commercial real estate.\nUnder the Austek brand the AOA business produces asphalt and\nsupplies roadlaying services (such as asphalt paving, asphalt repairs\nand spray seal services).\nThe targets are two hot-mix asphalt plants owned by COLAS, in\nCaloundra and Tomago. COLAS supplies asphalt, road maintenance\nand preservation services, quarrying and binder management\nservices, dust management and quality control services, and\nresearch and development services. COLAS is a subsidiary of\nFrance-based COLAS SA."
-        },
-        {
-          "item": "Overlap and relationship\nbetween the parties",
-          "details": "Maas and COLAS both supply hot-mix asphalt production and road\nlaying services, however the parties do not currently compete in the\nsame geographic markets."
-        },
         {
           "item": "Reasons for determination",
           "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and information from third partes.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 For the supply of hot-mix asphalt and roadlaying services,\nthere is no horizontal overlap between Maas and COLAS in\nin the Newcastle/Hunter region. In the Sunshine Coast\nregion there may be some minimal overlap.\n\u2022 The Parties would likely continue to be constrained in both\nregions by alternative suppliers of hot-mix asphalt and\nroadlaying services including Boral, Downer EDI and Fulton\nHogan.\n\u2022 The Parties are unlikely to have the ability and/or incentive\npost-acquisition to foreclose downstream rivals\u2019 access to\nhot-mix asphalt as there are alternative ex-bin hot-mix\nasphalt suppliers including Boral, Downer EDI and Fulton\nHogan."
-        },
-        {
-          "item": "Applications for review",
-          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
         }
       ],
       "url_gh": "/mergers/MN-50012/Maas Group Holdings - Determination Document 13 April 2026.pdf",
@@ -134,128 +111,43 @@
   "phase_1_determination_date": "2026-04-13T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "WA-60012",
       "merger_name": "Coles \u2013 land around supermarket site in Balaclava, VIC",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "COLES GROUP PROPERTY DEVELOPMENTS LTD",
-          "identifier_type": "ABN",
-          "identifier": "72 004 428 326",
-          "canonical": {
-            "id": "coles",
-            "name": "Coles Group"
-          },
-          "party_page": {
-            "id": "coles",
-            "name": "Coles Group"
-          }
-        }
+        "COLES GROUP PROPERTY DEVELOPMENTS LTD"
       ],
       "targets": [
-        {
-          "name": "CITY OF PORT PHILLIP",
-          "identifier_type": "ABN",
-          "identifier": "21 762 977 945",
-          "party_page": {
-            "id": "city-of-port-phillip",
-            "name": "City Of Port Phillip"
-          }
-        }
-      ]
+        "CITY OF PORT PHILLIP"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-25002",
       "merger_name": "Symal Group - Timms Group and L&D Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "SYMAL MANAGEMENT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "85 602 084 471",
-          "party_page": {
-            "id": "symal-management-pty-ltd",
-            "name": "Symal Management Pty Ltd"
-          }
-        },
-        {
-          "name": "SYL TM CONTRACTING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "68 693 144 697",
-          "party_page": {
-            "id": "syl-tm-contracting-pty-ltd",
-            "name": "Syl Tm Contracting Pty Ltd"
-          }
-        }
+        "SYMAL MANAGEMENT PTY LTD",
+        "SYL TM CONTRACTING PTY LTD"
       ],
       "targets": [
-        {
-          "name": "TIMMS HIRE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "73 115 389 949",
-          "party_page": {
-            "id": "timms-hire-pty-ltd",
-            "name": "Timms Hire Pty Ltd"
-          }
-        },
-        {
-          "name": "TIMMS CONTRACTING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "30 070 456 567",
-          "party_page": {
-            "id": "timms-contracting-pty-ltd",
-            "name": "Timms Contracting Pty Ltd"
-          }
-        }
-      ]
+        "TIMMS HIRE PTY LTD",
+        "TIMMS CONTRACTING PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-55010",
       "merger_name": "Calvary - Holmesglen Private Hospital",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "LITTLE COMPANY OF MARY HEALTH CARE LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "11 079 815 697",
-          "party_page": {
-            "id": "little-company-of-mary-health-care-limited",
-            "name": "Little Company Of Mary Health Care Limited"
-          }
-        }
+        "LITTLE COMPANY OF MARY HEALTH CARE LIMITED"
       ],
       "targets": [
-        {
-          "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "80 146 342 814",
-          "canonical": {
-            "id": "healthscope",
-            "name": "Healthscope"
-          },
-          "party_page": {
-            "id": "healthscope",
-            "name": "Healthscope"
-          }
-        },
-        {
-          "name": "ANZ HOSPITALS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "14 631 014 938",
-          "party_page": {
-            "id": "anz-hospitals-pty-ltd",
-            "name": "Anz Hospitals Pty Ltd"
-          }
-        }
-      ]
+        "HEALTHSCOPE MANAGEMENT PTY LTD",
+        "ANZ HOSPITALS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

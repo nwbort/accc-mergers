@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-04-09T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-04-09T18:24:25+10:00",
   "acquirers": [
     {
       "name": "IBWM PTY LTD",
@@ -60,24 +58,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Ironbark%20-%20Investment%20in%20Viola%20Private%20Wealth%20%28WA-05005%29%20-%20Notification%20waiver%20determination%20-%209%20April%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "IBWM Pty Ltd, a subsidiary of Ironbark Investment Partners Pty Ltd\n(Ironbark), applied for a notification waiver in respect of its proposed\nacquisition of 40% of the shares on issue in Viola Group Holdings Pty\nLtd (Viola Group), as described in the transaction documents\nprovided as part of the application (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "9 April 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, IBWM Pty Ltd, is a subsidiary of Ironbark. Ironbark has\na business division which provides financial advice to retail and\nwholesale clients.\nThe target, Viola Group, is the parent company of Viola Finance Pty\nLtd, Viola Private Holdings Pty Ltd, Viola Services Pty Ltd and Viola\nPrivate Wealth Pty Ltd (Viola). Viola Group focuses on private wealth\nand high net worth clients.\nBoth parties provide financial advice and wealth management\nservices in Sydney. The services provided by Ironbark and Viola\ninclude financial planning advice, superannuation advice, retirement\nplanning, cash flow planning, listed and unlisted securities advice,\ntransaction execution and management, tax advice and life\ninsurance advice."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\ncertain publicly available information, and had regard to the factors\nin section 51ABV(2)(b) of the Competition and Consumer Act 2010\n(Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. there is a small horizontal overlap between Ironbark and\nViola in the supply of financial advice and wealth\nmanagement services in Sydney and across Australia\nb. the parties\u2019 combined share in the supply of financial advice\nand wealth management services in Sydney and across\nAustralia is estimated to be low and the increase in share of\nsupply arising from the Acquisition would be small\nc. there are alternative suppliers of financial advice and wealth\nmanagement services in Sydney and across Australia.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -100,119 +81,42 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "WA-50014",
       "merger_name": "Searchlight Capital Partners - Additional interest in KORE Group Holdings Inc.",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Searchlight Capital IV LP",
-          "identifier_type": null,
-          "identifier": "US SEC  0001954453",
-          "party_page": {
-            "id": "searchlight-capital-iv-lp",
-            "name": "Searchlight Capital IV LP"
-          }
-        },
-        {
-          "name": "KONA Merger Sub Co.",
-          "identifier_type": null,
-          "identifier": "Delaware  10525073",
-          "party_page": {
-            "id": "kona-merger-sub-co",
-            "name": "KONA Merger Sub Co."
-          }
-        }
+        "Searchlight Capital IV LP",
+        "KONA Merger Sub Co."
       ],
       "targets": [
-        {
-          "name": "KORE Group Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware  5388903",
-          "party_page": {
-            "id": "kore-group-holdings-inc",
-            "name": "KORE Group Holdings, Inc."
-          }
-        }
-      ]
+        "KORE Group Holdings, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-05008",
       "merger_name": "HongShan Capital Group and Temasek \u2013 Golden Goose Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Rosa Investments Pte. Ltd.",
-          "identifier_type": null,
-          "identifier": "UEN 202340014H (Accounting and Corporate Regulatory Authority of Singapore)",
-          "party_page": {
-            "id": "rosa-investments-pte-ltd",
-            "name": "Rosa Investments Pte. Ltd."
-          }
-        },
-        {
-          "name": "GG12 S.p.A.",
-          "identifier_type": null,
-          "identifier": "14436160965 (Italy)",
-          "party_page": {
-            "id": "gg12-s-p-a",
-            "name": "GG12 S.p.A."
-          }
-        }
+        "Rosa Investments Pte. Ltd.",
+        "GG12 S.p.A."
       ],
       "targets": [
-        {
-          "name": "Permira VII Investment Platform Limited",
-          "identifier_type": null,
-          "identifier": "12263614 (UK Tax number)",
-          "party_page": {
-            "id": "permira-vii-investment-platform-limited",
-            "name": "Permira VII Investment Platform Limited"
-          }
-        },
-        {
-          "name": "Golden Goose Group S.p.A.",
-          "identifier_type": null,
-          "identifier": "11212510967 (Partita IVA \u2013 Italy)",
-          "party_page": {
-            "id": "golden-goose-group-s-p-a",
-            "name": "Golden Goose Group S.p.A."
-          }
-        }
-      ]
+        "Permira VII Investment Platform Limited",
+        "Golden Goose Group S.p.A."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-70014",
       "merger_name": "Global Infrastructure Management \u2013 TCR",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "GIP V Snow Bidco Limited",
-          "identifier_type": null,
-          "identifier": "UK company number  17059583",
-          "party_page": {
-            "id": "gip-v-snow-bidco-limited",
-            "name": "GIP V Snow Bidco Limited"
-          }
-        }
+        "GIP V Snow Bidco Limited"
       ],
       "targets": [
-        {
-          "name": "Envol Holdings Limited",
-          "identifier_type": null,
-          "identifier": "Jersey registration number  121115",
-          "party_page": {
-            "id": "envol-holdings-limited",
-            "name": "Envol Holdings Limited"
-          }
-        }
-      ]
+        "Envol Holdings Limited"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

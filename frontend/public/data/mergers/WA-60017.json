@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-04-30T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-04-30T17:28:03+10:00",
   "acquirers": [
     {
       "name": "REDCAPE HOTEL GROUP PTY LTD",
@@ -121,24 +119,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/MA%20Financial%20Group%20%28Redcape%20Fund%29%20%E2%80%93%20The%20Entrance%20Social%20Club%20%28WA-60017%29%20-%20Notification%20waiver%20determination%20-%2030%20April%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "MAHF Custodian Pty Ltd, as custodian for RGM TT Pty Ltd (as\ntrustee for The Entrance Hotel Sub Trust) and Redcape Hotel Group\nPty Ltd, proposes to acquire 100% of the freehold land interest,\nbuildings, licences and business assets of The Entrance Social Club\nlocated in The Entrance, NSW, as described in the transaction\ndocuments provided as part of the application (the Acquisition).\nMA Financial Group Limited (MA Financial) applied for a notification\nwaiver in respect of the Acquisition."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "30 April 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, MAHF Custodian Pty Ltd, is the custodian for RGM TT\nPty Ltd (as trustee for The Entrance Hotel Sub Trust) and Redcape\nHotel Goup Pty Ltd. The acquirers are part of MA Financial\u2019s\nRedcape Fund, which owns and operates community pubs and\nhotels. The Redcape Fund portfolio currently has 34 pubs and hotels\nin NSW, Queensland and Victoria.\nThe target, The Entrance Social Club, is a community pub and hotel\noffering food, beverage, accommodation, gambling and\nentertainment, which is located in The Entrance, NSW. It also\noperates a bottle shop, being \u2018Bottlemart\u2019.\nThe parties both supply on-premises and take-away packaged liquor,\ndining, gambling, and accommodation services."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. there is no local horizontal overlap between the Redcape\nFund and The Entrance Social Club in the supply of on-\npremises or takeaway packaged liquor, dining, gaming or\naccommodation services in The Entrance area or the\nsurrounding area\nb. there are alternative suppliers of on-premises and takeaway\npackaged liquor, dining, gaming and accommodation\nservices at the local and regional level.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -161,132 +142,43 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "MN-45005",
       "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "MA MARINA FUND HOLDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "96 667 241 385",
-          "party_page": {
-            "id": "ma-marina-fund-holdco-pty-ltd",
-            "name": "Ma Marina Fund Holdco Pty Ltd"
-          }
-        },
-        {
-          "name": "MA MARINA FUND TT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "65 666 902 245",
-          "party_page": {
-            "id": "ma-marina-fund-tt-pty-ltd",
-            "name": "Ma Marina Fund Tt Pty Ltd"
-          }
-        }
+        "MA MARINA FUND HOLDCO PTY LTD",
+        "MA MARINA FUND TT PTY LTD"
       ],
       "targets": [
-        {
-          "name": "GGC Marketing Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "32 105 294 228",
-          "party_page": {
-            "id": "ggc-marketing-pty-ltd",
-            "name": "GGC Marketing Pty Ltd"
-          }
-        },
-        {
-          "name": "QUEENSLAND & PACIFIC PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "72 081 370 685",
-          "party_page": {
-            "id": "queensland-pacific-pty-ltd",
-            "name": "Queensland & Pacific Pty. Ltd."
-          }
-        }
-      ]
+        "GGC Marketing Pty Ltd",
+        "QUEENSLAND & PACIFIC PTY. LTD."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-15009",
       "merger_name": "MA Financial Group (Redcape Fund) - Hotel Brunswick",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "REDCAPE HOTEL GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 139 067 244",
-          "canonical": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          },
-          "party_page": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          }
-        },
-        {
-          "name": "MAHPT TT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "31 619 297 657",
-          "party_page": {
-            "id": "mahpt-tt-pty-ltd",
-            "name": "Mahpt Tt Pty Ltd"
-          }
-        }
+        "REDCAPE HOTEL GROUP PTY LTD",
+        "MAHPT TT PTY LTD"
       ],
       "targets": [
-        {
-          "name": "BRUNSWICK HOTEL OPCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 656 116 853",
-          "party_page": {
-            "id": "brunswick-hotel-opco-pty-ltd",
-            "name": "Brunswick Hotel Opco Pty Ltd"
-          }
-        },
-        {
-          "name": "The Trustee for Brunswick Hotel Sub-Trust",
-          "identifier_type": "ABN",
-          "identifier": "51 927 228 244",
-          "party_page": {
-            "id": "the-trustee-for-brunswick-hotel-sub-trust",
-            "name": "The Trustee for Brunswick Hotel Sub-Trust"
-          }
-        }
-      ]
+        "BRUNSWICK HOTEL OPCO PTY LTD",
+        "The Trustee for Brunswick Hotel Sub-Trust"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-75015",
       "merger_name": "Star Hotels Group \u2013 Liquor Legends Berserker & Liquor Legends Highway A1, QLD",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "MIGALOO QLD PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "30 600 219 172",
-          "party_page": {
-            "id": "migaloo-qld-pty-ltd",
-            "name": "Migaloo Qld Pty Ltd"
-          }
-        }
+        "MIGALOO QLD PTY LTD"
       ],
       "targets": [
-        {
-          "name": "The Trustee for The Garden Holdings Trust",
-          "identifier_type": "ABN",
-          "identifier": "45 745 542 544",
-          "party_page": {
-            "id": "the-trustee-for-the-garden-holdings-trust",
-            "name": "The Trustee for The Garden Holdings Trust"
-          }
-        }
-      ]
+        "The Trustee for The Garden Holdings Trust"
+      ],
+      "accc_determination": "Not approved"
     }
   ]
 }

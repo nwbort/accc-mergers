@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-07-16T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-07-16T17:35:02+10:00",
   "acquirers": [
     {
       "name": "Sumitomo Mitsui Trust Bank, Limited",
@@ -73,24 +71,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Sumitomo%20Mitsui%20Trust%20Bank%20-%20SMTB%20ANZ%20Debt%20Fund%20%28WA-55027%29%20-%20Notification%20waiver%20determination%20-%2016%20July%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "Sumitomo Mitsui Trust Bank, Limited (SMTB) applied for a\nnotification waiver in respect of its proposed acquisition of 100% of\nthe units in the IFM SuMi TRUST ANZ Debt Fund (the Trust), as\ndescribed in the transaction documents provided as part of the\napplication (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "16 July 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, SMTB, is a Japanese-based provider of financial\nservices. In Australia, SMTB provides commercial lending services,\nincluding general corporate loans, fund financing, and property\nfinance. SMTB\u2019s commercial lending services are mainly conducted\nthrough offshore booking transactions by SMTB\u2019s Singapore Branch.\nSMTB also provides \u2018trust banking services\u2019 to Australia-based\ncustomers, which are a combination of traditional banking functions\nand fiduciary services, with a particular focus on fee-based business\nsuch as asset management and trust administration, often serving\nlong-term institutional clients.\nThe target, the Trust, is a \u2018fund-of-one\u2019 trust that has been\nestablished for the purpose of facilitating lending and credit\ninvestment by SMTB in Australia and New Zealand, with a focus on\nprivate debt, bank loans, and specialty finance opportunities. The\nTrust will not carry out any lending prior to completion of the\nAcquisition.\nThe trustee of the Trust is Eticore SD Pty Ltd, and the investment\nmanager is IFM Investors Pty Ltd. Both entities are domiciled in\nAustralia and are an independent corporate trustee and investment\nmanager, respectively.\nSMTB proposes to make a commitment into the Trust in exchange\nfor 100% of the units in the Trust. Post-acquisition, SMTB will be the\nonly unitholder in the Trust, and will use the Trust to provide loans\nand credit investment in Australia and New Zealand."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application, and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. the target has been established for the sole purpose of\nfacilitating lending and credit investment by SMTB in\nAustralia and New Zealand, and as such the Acquisition\ndoes not result in any horizontal consolidation or the\nremoval of a competitor\nb. there are alternative suppliers of commercial lending\nservices in Australia.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -113,118 +94,41 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "WA-40018",
       "merger_name": "AustralianSuper - IFM Global Infrastructure (Australia) Trust",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AUSTRALIANSUPER PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "94 006 457 987",
-          "canonical": {
-            "id": "australiansuper-pty-ltd",
-            "name": "AustralianSuper"
-          },
-          "party_page": {
-            "id": "australiansuper-pty-ltd",
-            "name": "AustralianSuper"
-          }
-        }
+        "AUSTRALIANSUPER PTY LTD"
       ],
       "targets": [
-        {
-          "name": "IFM INVESTORS (NOMINEES) LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "56 003 969 891",
-          "canonical": {
-            "id": "ifm-investors",
-            "name": "Ifm Investors"
-          },
-          "party_page": {
-            "id": "ifm-investors",
-            "name": "Ifm Investors"
-          }
-        }
-      ]
+        "IFM INVESTORS (NOMINEES) LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-80022",
       "merger_name": "Bain Capital \u2013 Perpetual Wealth Management Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BCPE Barton BidCo Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "694 979 041",
-          "party_page": {
-            "id": "bcpe-barton-bidco-pty-ltd",
-            "name": "BCPE Barton BidCo Pty Ltd"
-          }
-        }
+        "BCPE Barton BidCo Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "PERPETUAL LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "86 000 431 827",
-          "party_page": {
-            "id": "perpetual-limited",
-            "name": "Perpetual Limited"
-          }
-        },
-        {
-          "name": "PERPETUAL PWM SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "90 678 546 113",
-          "party_page": {
-            "id": "perpetual-pwm-services-pty-ltd",
-            "name": "Perpetual Pwm Services Pty Ltd"
-          }
-        }
-      ]
+        "PERPETUAL LIMITED",
+        "PERPETUAL PWM SERVICES PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-35015",
       "merger_name": "Allied Retail Finance \u2013 automotive retail finance assets of Macquarie Leasing",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ALLIED RETAIL FINANCE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "31 609 859 985",
-          "party_page": {
-            "id": "allied-retail-finance-pty-ltd",
-            "name": "Allied Retail Finance Pty Ltd"
-          }
-        }
+        "ALLIED RETAIL FINANCE PTY LTD"
       ],
       "targets": [
-        {
-          "name": "MACQUARIE LEASING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "38 002 674 982",
-          "party_page": {
-            "id": "macquarie-leasing-pty-ltd",
-            "name": "Macquarie Leasing Pty Ltd"
-          }
-        },
-        {
-          "name": "The Trustee for SMART B Trust",
-          "identifier_type": "ABN",
-          "identifier": "18 229 600 756",
-          "party_page": {
-            "id": "the-trustee-for-smart-b-trust",
-            "name": "The Trustee for SMART B Trust"
-          }
-        }
-      ]
+        "MACQUARIE LEASING PTY LTD",
+        "The Trustee for SMART B Trust"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

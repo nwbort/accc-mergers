@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-03-16T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-03-16T18:20:16+11:00",
   "acquirers": [
     {
       "name": "OEP IX Master Co\u00f6peratief U.A.",
@@ -50,24 +48,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/OEP%20IX%20-%20Leviat%20%28WA-55011%29%20-%20Notification%20waiver%20determination%20-%2016%20March%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "OEP IX Master Co\u00f6perafief U.A. (OEP IX), through its wholly owned\nsubsidiaries, proposes to acquire shares representing 100% of the\ntotal voting rights of the Leviat Group (Leviat) from certain wholly\nowned subsidiaries of CRH PLC, as described in the transaction\ndocuments provided as part of the application (the Acquisition). OEP\nIX applied for a notification in respect of the Acquisition."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "16 March 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, OEP IX, is a financial holding company forming part of\nOne Equity Partners Fund Complex IX that is managed and advised\nby OEP Group. The OEP Group focuses on investments in industrial,\nhealthcare and technology sector businesses across North America\nand Europe.\nThe target, Leviat, is a global design and manufacturing business\nspecialising in high\u2011performance, engineered construction\naccessories used to lift, connect, anchor, reinforce, and insulate\nbuilding and infrastructure projects. In Australia, the Leviat Group,\nthrough its Australian subsidiary supplies anchoring and connecting\nproducts, reinforcement and formwork products, masonry support\nproducts and lifting products. Leviat is ultimately owned and\ncurrently controlled by CRH PLC.\nThe application states that none of OEP\u2019s portfolio companies\nsupply products that are functional substitutes for, or complements\nto, or which are otherwise closely related to Leviat\u2019s construction\naccessories and engineered connection systems."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular, there is no competitive or\ncomplementary relationship between OEP IX and its portfolio\ncompanies and Leviat in the supply of engineered construction\naccessories in Australia.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -90,132 +71,43 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "WA-05005",
       "merger_name": "Ironbark - Investment in Viola Private Wealth",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "IBWM PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 621 141 026",
-          "party_page": {
-            "id": "ibwm-pty-ltd",
-            "name": "Ibwm Pty Ltd"
-          }
-        }
+        "IBWM PTY LTD"
       ],
       "targets": [
-        {
-          "name": "VIOLA GROUP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "20 680 038 180",
-          "party_page": {
-            "id": "viola-group-holdings-pty-ltd",
-            "name": "Viola Group Holdings Pty Ltd"
-          }
-        }
-      ]
+        "VIOLA GROUP HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-55014",
       "merger_name": "KPS Capital Partners - Jennmar",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "KPS Capital Partners, LP",
-          "identifier_type": null,
-          "identifier": "CRD 157678 / SEC: 80173907",
-          "canonical": {
-            "id": "kps-capital-partners",
-            "name": "KPS Capital Partners"
-          },
-          "party_page": {
-            "id": "kps-capital-partners",
-            "name": "KPS Capital Partners"
-          }
-        },
-        {
-          "name": "Three Rivers Purchaser, LLC",
-          "identifier_type": null,
-          "identifier": "10533455",
-          "party_page": {
-            "id": "three-rivers-purchaser-llc",
-            "name": "Three Rivers Purchaser, LLC"
-          }
-        }
+        "KPS Capital Partners, LP",
+        "Three Rivers Purchaser, LLC"
       ],
       "targets": [
-        {
-          "name": "Jennmar Intermediate Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "990520173",
-          "party_page": {
-            "id": "jennmar-intermediate-holdings-inc",
-            "name": "Jennmar Intermediate Holdings, Inc."
-          }
-        },
-        {
-          "name": "Jennmar Super Holdings, LLC",
-          "identifier_type": null,
-          "identifier": "412378602",
-          "party_page": {
-            "id": "jennmar-super-holdings-llc",
-            "name": "Jennmar Super Holdings, LLC"
-          }
-        }
-      ]
+        "Jennmar Intermediate Holdings, Inc.",
+        "Jennmar Super Holdings, LLC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-55005",
       "merger_name": "General Atlantic and CPP Investments led consortium - Boats Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "General Atlantic",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "general-atlantic",
-            "name": "General Atlantic"
-          }
-        },
-        {
-          "name": "Canada Pension Plan Investment Board",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "canada-pension-plan-investment-board",
-            "name": "Canada Pension Plan Investment Board"
-          }
-        }
+        "General Atlantic",
+        "Canada Pension Plan Investment Board"
       ],
       "targets": [
-        {
-          "name": "Boats Group Holdings, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "boats-group-holdings-inc",
-            "name": "Boats Group Holdings, Inc"
-          }
-        },
-        {
-          "name": "Bimini Holdings, LP",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "bimini-holdings-lp",
-            "name": "Bimini Holdings, LP"
-          }
-        }
-      ]
+        "Boats Group Holdings, Inc",
+        "Bimini Holdings, LP"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

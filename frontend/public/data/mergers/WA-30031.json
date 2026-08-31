@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-08-25T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-08-25T16:44:59+10:00",
   "acquirers": [
     {
       "name": "Endeavor Purchaser V, Inc.",
@@ -54,24 +52,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/moderated_files/Blackstone%20-%20Dresser%20Utility%20Solutions%20%28WA-30031%29%20-%20Notification%20waiver%20determination%20-%2025%20August%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "Endeavour Purchaser V, Inc, an affiliate of various funds advised\nand/or managed by affiliates of Blackstone Inc. (Blackstone) applied\nfor a notification waiver in respect of its proposed acquisition of\n100% of the equity interests in Dresser Utility Solutions, LLC\n(Dresser), as described in the transaction documents provided as\npart of the application (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "25 August 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, Blackstone, is a US-based corporation, incorporated\nunder the laws of Delaware, United States. Blackstone operates as\nan investment management firm, not as a conglomerate or holding\ncompany. Accordingly, each company in its investment portfolio is\nindependently managed and financed and each has different\ninvestors (although the investors in different investment funds may\noverlap). Each Blackstone portfolio company has its own board of\ndirectors, which generally also include Blackstone representatives.\nThe target, Dresser, is a US-based company that manufactures and\nsupplies equipment used globally to build, operate and repair gas\nand water utility networks.\nIn Australia, Dresser supplies gas meters, gas regulators and\ncouplings & clamp products, both directly and through third-party\ndistributors."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. There is no horizontal overlap or vertical\nrelationship between Blackstone or its controlled portfolio\ncompanies and Dresser in Australia.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
@@ -94,135 +75,42 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "WA-55014",
       "merger_name": "KPS Capital Partners - Jennmar",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "KPS Capital Partners, LP",
-          "identifier_type": null,
-          "identifier": "CRD 157678 / SEC: 80173907",
-          "canonical": {
-            "id": "kps-capital-partners",
-            "name": "KPS Capital Partners"
-          },
-          "party_page": {
-            "id": "kps-capital-partners",
-            "name": "KPS Capital Partners"
-          }
-        },
-        {
-          "name": "Three Rivers Purchaser, LLC",
-          "identifier_type": null,
-          "identifier": "10533455",
-          "party_page": {
-            "id": "three-rivers-purchaser-llc",
-            "name": "Three Rivers Purchaser, LLC"
-          }
-        }
+        "KPS Capital Partners, LP",
+        "Three Rivers Purchaser, LLC"
       ],
       "targets": [
-        {
-          "name": "Jennmar Intermediate Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "990520173",
-          "party_page": {
-            "id": "jennmar-intermediate-holdings-inc",
-            "name": "Jennmar Intermediate Holdings, Inc."
-          }
-        },
-        {
-          "name": "Jennmar Super Holdings, LLC",
-          "identifier_type": null,
-          "identifier": "412378602",
-          "party_page": {
-            "id": "jennmar-super-holdings-llc",
-            "name": "Jennmar Super Holdings, LLC"
-          }
-        }
-      ]
+        "Jennmar Intermediate Holdings, Inc.",
+        "Jennmar Super Holdings, LLC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-35010",
       "merger_name": "Blackstone - Advanced Cooling Technologies",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Rocket Purchaser, L.L.C.",
-          "identifier_type": null,
-          "identifier": "10521263",
-          "party_page": {
-            "id": "rocket-purchaser-l-l-c",
-            "name": "Rocket Purchaser, L.L.C."
-          }
-        }
+        "Rocket Purchaser, L.L.C."
       ],
       "targets": [
-        {
-          "name": "Advanced Cooling Technologies, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "advanced-cooling-technologies-inc",
-            "name": "Advanced Cooling Technologies, Inc."
-          }
-        }
-      ]
+        "Advanced Cooling Technologies, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-65028",
       "merger_name": "Coles - Paydock",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Retail Payment Solutions Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "89 683 915 657",
-          "canonical": {
-            "id": "coles",
-            "name": "Coles Group"
-          },
-          "party_page": {
-            "id": "coles",
-            "name": "Coles Group"
-          }
-        }
+        "Retail Payment Solutions Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Paydock Holdings Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "31 607 215 163",
-          "canonical": {
-            "id": "paydock",
-            "name": "Paydock"
-          },
-          "party_page": {
-            "id": "paydock",
-            "name": "Paydock"
-          }
-        },
-        {
-          "name": "Paydock AUNZ Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "96 607 219 116",
-          "canonical": {
-            "id": "paydock",
-            "name": "Paydock"
-          },
-          "party_page": {
-            "id": "paydock",
-            "name": "Paydock"
-          }
-        }
-      ]
+        "Paydock Holdings Pty Limited",
+        "Paydock AUNZ Pty Limited"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

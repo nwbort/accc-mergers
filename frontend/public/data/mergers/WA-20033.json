@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-08-28T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-08-28T17:12:24+10:00",
   "acquirers": [
     {
       "name": "REDIRECT HOLDINGS PTY LIMITED",
@@ -67,24 +65,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/moderated_files/ReDirect%20Holdings%20-%20Echo%20Solve%20%28WA-20033%29%20-%20Notification%20waiver%20determination%20-%2027%20August%202026_0.pdf",
-      "determination_commission_division": "Determination made by Commissioner Woodward pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "ReDirect Holdings Pty Limited (ReDirect) applied for a notification\nwaiver in respect of its proposed acquisition of 100% of the share\ncapital in Echo Solve Pty Limited (Echo Solve), including Echo\nSolve\u2019s contaminated waste treatment facility business, as\ndescribed in the transaction documents provided as part of the\napplication (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "27 August 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, ReDirect, is a resource recovery and recycling business\noperating principally in New South Wales. Its activities include\ncollecting, processing, and recycling waste materials (including\nwood, metal and drill mud) that would otherwise be landfill, and\nproducing recycled materials for re-use. As part of ReDirect\u2019s drill\nmud arm of the business, it owns and operates a drill mud facility\nlocated in Wetherill Park, New South Wales. ReDirect also has a\nsmall liquid waste recycling facility in Kelso, New South Wales.\nThe target, Echo Solve, is a contaminated waste treatment facility\nlocated and operating principally in Altona, Victoria. Echo Solve\nconducts contaminated soil treatment operations via thermal\ndesorption, drill mud disposal, hydro-excavation and soil washing.\nThe parties both supply contaminated waste treatment and\nremediation services from their respective facilities."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition given:\na. there is no horizontal overlap between the parties in the\nsupply of contaminated waste treatment and remediation\nservices in Victoria\nb. there are alternative suppliers of contaminated waste\ntreatment and remediation services in Victoria.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
@@ -107,114 +88,41 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "WA-30011",
       "merger_name": "AXDI - minority interest in La Trobe Financial",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AXDI SPV 5 Ltd",
-          "identifier_type": null,
-          "identifier": "ADGM  36279",
-          "party_page": {
-            "id": "axdi-spv-5-ltd",
-            "name": "AXDI SPV 5 Ltd"
-          }
-        }
+        "AXDI SPV 5 Ltd"
       ],
       "targets": [
-        {
-          "name": "AMC AUSCO 1 PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "49 658 085 771",
-          "party_page": {
-            "id": "amc-ausco-1-pty-ltd",
-            "name": "Amc Ausco 1 Pty Ltd"
-          }
-        }
-      ]
+        "AMC AUSCO 1 PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-50029",
       "merger_name": "Centuria Property Funds No. 2 Limited as the responsible entity of Centuria Sydney CBD Prime Office Fund - 680 George St/50 Goulburn St",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Centuria Investment Management (CSPOF) Pty Ltd as trustee of the CSPOF Mid Trust",
-          "identifier_type": "ABN",
-          "identifier": "35 369 738 841",
-          "party_page": {
-            "id": "centuria-investment-management-cspof-pty-ltd-as-trustee-of-the-cspof-mid-trust",
-            "name": "Centuria Investment Management (CSPOF) Pty Ltd as trustee of the CSPOF Mid Trust"
-          }
-        },
-        {
-          "name": "CENTURIA INVESTMENT MANAGEMENT (CSPOF) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "68 696 319 098",
-          "party_page": {
-            "id": "centuria-investment-management-cspof-pty-ltd",
-            "name": "Centuria Investment Management (Cspof) Pty Ltd"
-          }
-        }
+        "Centuria Investment Management (CSPOF) Pty Ltd as trustee of the CSPOF Mid Trust",
+        "CENTURIA INVESTMENT MANAGEMENT (CSPOF) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Latitude Landowner Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "106 533 715",
-          "party_page": {
-            "id": "latitude-landowner-pty-ltd",
-            "name": "Latitude Landowner Pty Ltd"
-          }
-        },
-        {
-          "name": "The Trustee for Latitude Landowning Trust",
-          "identifier_type": "ABN",
-          "identifier": "20 844 678 909",
-          "party_page": {
-            "id": "the-trustee-for-latitude-landowning-trust",
-            "name": "The Trustee for Latitude Landowning Trust"
-          }
-        }
-      ]
+        "Latitude Landowner Pty Ltd",
+        "The Trustee for Latitude Landowning Trust"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-05014",
       "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Smile Partners (NSW3) Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 902 955",
-          "party_page": {
-            "id": "smile-partners-nsw3-pty-ltd",
-            "name": "Smile Partners (NSW3) Pty Ltd"
-          }
-        }
+        "Smile Partners (NSW3) Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Shrika Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "108 757 357",
-          "canonical": {
-            "id": "shrika-pty-ltd",
-            "name": "Shrika Pty Ltd"
-          },
-          "party_page": {
-            "id": "shrika-pty-ltd",
-            "name": "Shrika Pty Ltd"
-          }
-        }
-      ]
+        "Shrika Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

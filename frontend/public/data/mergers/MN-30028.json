@@ -7,7 +7,6 @@
   "original_notification_datetime": "2026-08-13T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-09-24T12:00:00Z",
-  "page_modified_datetime": "2026-08-14T11:40:00+10:00",
   "consultation_response_due_date": "2026-08-21T12:00:00Z",
   "acquirers": [
     {
@@ -66,119 +65,42 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-60022",
       "merger_name": "Autodesk - MaintainX",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Autodesk, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "autodesk-inc",
-            "name": "Autodesk, Inc."
-          }
-        }
+        "Autodesk, Inc."
       ],
       "targets": [
-        {
-          "name": "MaintainX, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "maintainx-inc",
-            "name": "MaintainX, Inc."
-          }
-        }
-      ]
+        "MaintainX, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-30005",
       "merger_name": "Adobe - Semrush",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Adobe Inc. (NASDAQ: ADBE)",
-          "identifier_type": null,
-          "identifier": "2748129",
-          "party_page": {
-            "id": "adobe-inc-nasdaq-adbe",
-            "name": "Adobe Inc. (NASDAQ: ADBE)"
-          }
-        },
-        {
-          "name": "Fenway Merger Sub, Inc.",
-          "identifier_type": null,
-          "identifier": "10389477",
-          "party_page": {
-            "id": "fenway-merger-sub-inc",
-            "name": "Fenway Merger Sub, Inc."
-          }
-        }
+        "Adobe Inc. (NASDAQ: ADBE)",
+        "Fenway Merger Sub, Inc."
       ],
       "targets": [
-        {
-          "name": "Semrush Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "7690622",
-          "party_page": {
-            "id": "semrush-holdings-inc",
-            "name": "Semrush Holdings, Inc."
-          }
-        }
-      ]
+        "Semrush Holdings, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-45019",
       "merger_name": "Blackbird Ventures \u2013 Baseten Labs",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Blackbird HP Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "621 829 534",
-          "canonical": {
-            "id": "blackbird-ventures",
-            "name": "Blackbird Ventures"
-          },
-          "party_page": {
-            "id": "blackbird-ventures",
-            "name": "Blackbird Ventures"
-          }
-        },
-        {
-          "name": "Blackbird FSA Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "692 309 032",
-          "canonical": {
-            "id": "blackbird-ventures",
-            "name": "Blackbird Ventures"
-          },
-          "party_page": {
-            "id": "blackbird-ventures",
-            "name": "Blackbird Ventures"
-          }
-        }
+        "Blackbird HP Pty Ltd",
+        "Blackbird FSA Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Baseten Labs, Inc.",
-          "identifier_type": null,
-          "identifier": "EIN 371950658",
-          "party_page": {
-            "id": "baseten-labs-inc",
-            "name": "Baseten Labs, Inc"
-          }
-        }
-      ]
+        "Baseten Labs, Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

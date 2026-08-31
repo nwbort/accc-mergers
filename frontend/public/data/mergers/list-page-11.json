@@ -16,66 +16,32 @@
       "acquirers": [
         {
           "name": "Expedia Group International Holdings II, LLC",
-          "identifier_type": null,
-          "identifier": "Delaware Secretary of State7172515 I.R.S Employer Identification No.832737894",
           "canonical": {
-            "id": "expedia",
-            "name": "Expedia"
-          },
-          "party_page": {
-            "id": "expedia",
             "name": "Expedia"
           }
         },
         {
           "name": "Expedia Group, Inc.",
-          "identifier_type": null,
-          "identifier": "I.R.S. Employer Identification No.202705720",
           "canonical": {
-            "id": "expedia",
-            "name": "Expedia"
-          },
-          "party_page": {
-            "id": "expedia",
             "name": "Expedia"
           }
         }
       ],
       "targets": [
         {
-          "name": "Ballast Group Holdings Ltd",
-          "identifier_type": null,
-          "identifier": "018092V",
-          "party_page": {
-            "id": "ballast-group-holdings-ltd",
-            "name": "Ballast Group Holdings Ltd"
-          }
+          "name": "Ballast Group Holdings Ltd"
         }
       ],
       "other_parties": [
         {
           "name": "trivago NV",
-          "identifier_type": null,
-          "identifier": "67222927",
           "canonical": {
-            "id": "expedia",
-            "name": "Expedia"
-          },
-          "party_page": {
-            "id": "expedia",
             "name": "Expedia"
           }
         },
         {
           "name": "Stayz Pty Limited",
-          "identifier_type": null,
-          "identifier": "",
           "canonical": {
-            "id": "expedia",
-            "name": "Expedia"
-          },
-          "party_page": {
-            "id": "expedia",
             "name": "Expedia"
           }
         }
@@ -89,8 +55,7 @@
           "code": "7220",
           "name": "Travel Agency and Tour Arrangement Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/expedia-cartrawler"
+      ]
     },
     {
       "merger_id": "WA-40033",
@@ -108,27 +73,13 @@
       "acquirers": [
         {
           "name": "Bain Capital Investors, LLC",
-          "identifier_type": null,
-          "identifier": "Delaware File No.  3229725",
           "canonical": {
-            "id": "bain-capital-investors-llc",
-            "name": "Bain Capital Investors"
-          },
-          "party_page": {
-            "id": "bain-capital-investors-llc",
             "name": "Bain Capital Investors"
           }
         },
         {
           "name": "Nikolaus (BC) Bidco GmbH",
-          "identifier_type": null,
-          "identifier": "Handelsregister (HRB)  312146",
           "canonical": {
-            "id": "bain-capital-investors-llc",
-            "name": "Bain Capital Investors"
-          },
-          "party_page": {
-            "id": "bain-capital-investors-llc",
             "name": "Bain Capital Investors"
           }
         }
@@ -136,36 +87,16 @@
       "targets": [
         {
           "name": "Volkswagen Aktiengesellschaft",
-          "identifier_type": null,
-          "identifier": "Handelsregister (HRB)  100484",
           "canonical": {
-            "id": "volkswagen",
-            "name": "Volkswagen"
-          },
-          "party_page": {
-            "id": "volkswagen",
             "name": "Volkswagen"
           }
         },
         {
-          "name": "Everllence SE",
-          "identifier_type": null,
-          "identifier": "Handelsregister (HRB)  22056",
-          "party_page": {
-            "id": "everllence-se",
-            "name": "Everllence SE"
-          }
+          "name": "Everllence SE"
         },
         {
           "name": "Volkswagen Verm\u00f6gensverwaltungs GmbH",
-          "identifier_type": null,
-          "identifier": "Handelsregister (HRB)  200525",
           "canonical": {
-            "id": "volkswagen",
-            "name": "Volkswagen"
-          },
-          "party_page": {
-            "id": "volkswagen",
             "name": "Volkswagen"
           }
         }
@@ -196,8 +127,7 @@
           "code": "9429",
           "name": "Other Machinery and Equipment Repair and Maintenance"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/bain-capital-everllence"
+      ]
     },
     {
       "merger_id": "MN-05036",
@@ -215,40 +145,20 @@
       "acquirers": [
         {
           "name": "Vertex Pharmaceuticals Incorporated",
-          "identifier_type": null,
-          "identifier": "EIN  043039129",
           "canonical": {
-            "id": "vertex-pharmaceuticals",
-            "name": "Vertex Pharmaceuticals"
-          },
-          "party_page": {
-            "id": "vertex-pharmaceuticals",
             "name": "Vertex Pharmaceuticals"
           }
         }
       ],
       "targets": [
         {
-          "name": "Crinetics Pharmaceuticals Inc.",
-          "identifier_type": null,
-          "identifier": "EIN 263744114",
-          "party_page": {
-            "id": "crinetics-pharmaceuticals-inc",
-            "name": "Crinetics Pharmaceuticals Inc."
-          }
+          "name": "Crinetics Pharmaceuticals Inc."
         }
       ],
       "other_parties": [
         {
           "name": "Clark Merger Sub, Inc",
-          "identifier_type": null,
-          "identifier": "DE File Number: 10678660",
           "canonical": {
-            "id": "vertex-pharmaceuticals",
-            "name": "Vertex Pharmaceuticals"
-          },
-          "party_page": {
-            "id": "vertex-pharmaceuticals",
             "name": "Vertex Pharmaceuticals"
           }
         }
@@ -262,8 +172,7 @@
           "code": "6910",
           "name": "Scientific Research Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/vertex-%E2%80%93-crinetics"
+      ]
     },
     {
       "merger_id": "MN-25037",
@@ -280,62 +189,26 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "Dream BidCo",
-          "identifier_type": null,
-          "identifier": "RCS Paris  102 698 263",
-          "party_page": {
-            "id": "dream-bidco",
-            "name": "Dream BidCo"
-          }
+          "name": "Dream BidCo"
         }
       ],
       "targets": [
         {
-          "name": "Revima Holding SAS",
-          "identifier_type": null,
-          "identifier": "RCS Rouen  845 266 725",
-          "party_page": {
-            "id": "revima-holding-sas",
-            "name": "Revima Holding SAS"
-          }
+          "name": "Revima Holding SAS"
         }
       ],
       "other_parties": [
         {
-          "name": "Tikehau Capital SCA",
-          "identifier_type": null,
-          "identifier": "RCS Paris  477 599 104",
-          "party_page": {
-            "id": "tikehau-capital-sca",
-            "name": "Tikehau Capital SCA"
-          }
+          "name": "Tikehau Capital SCA"
         },
         {
-          "name": "Mubadala Investment Company PJSC",
-          "identifier_type": null,
-          "identifier": "CN\u20112302788",
-          "party_page": {
-            "id": "mubadala-investment-company-pjsc",
-            "name": "Mubadala Investment Company PJSC"
-          }
+          "name": "Mubadala Investment Company PJSC"
         },
         {
-          "name": "Ace A\u00e9ro Partenaires II S.L.P. represented by Tikehau Investment Management SAS",
-          "identifier_type": null,
-          "identifier": "RCS Paris  982 137 812",
-          "party_page": {
-            "id": "ace-a-ro-partenaires-ii-s-l-p-represented-by-tikehau-investment-management-sas",
-            "name": "Ace A\u00e9ro Partenaires II S.L.P. represented by Tikehau Investment Management SAS"
-          }
+          "name": "Ace A\u00e9ro Partenaires II S.L.P. represented by Tikehau Investment Management SAS"
         },
         {
-          "name": "Sanad Services Group owned by One Hundred and Seven Investment RSC LTD \u2013 Sole Proprietorship L.L.C.",
-          "identifier_type": null,
-          "identifier": "CN2969483",
-          "party_page": {
-            "id": "sanad-services-group-owned-by-one-hundred-and-seven-investment-rsc-ltd-sole-prop",
-            "name": "Sanad Services Group owned by One Hundred and Seven Investment RSC LTD \u2013 Sole Proprietorship L.L.C."
-          }
+          "name": "Sanad Services Group owned by One Hundred and Seven Investment RSC LTD \u2013 Sole Proprietorship L.L.C."
         }
       ],
       "anzsic_codes": [
@@ -347,8 +220,7 @@
           "code": "6240",
           "name": "Financial Asset Investing"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/sanad-services-and-tikehau-capital-%E2%80%93-revima"
+      ]
     },
     {
       "merger_id": "MN-35029",
@@ -366,40 +238,20 @@
       "acquirers": [
         {
           "name": "L'Or\u00e9al India Private Limited",
-          "identifier_type": null,
-          "identifier": "",
           "canonical": {
-            "id": "l-oreal",
-            "name": "L'Oreal"
-          },
-          "party_page": {
-            "id": "l-oreal",
             "name": "L'Oreal"
           }
         }
       ],
       "targets": [
         {
-          "name": "Onesto Labs Private Limited",
-          "identifier_type": null,
-          "identifier": "CIN  U74999DL2018PTC340749",
-          "party_page": {
-            "id": "onesto-labs-private-limited",
-            "name": "Onesto Labs Private Limited"
-          }
+          "name": "Onesto Labs Private Limited"
         }
       ],
       "other_parties": [
         {
           "name": "L'Or\u00e9al S.A.",
-          "identifier_type": null,
-          "identifier": "SIREN  632 012 100",
           "canonical": {
-            "id": "l-oreal",
-            "name": "L'Oreal"
-          },
-          "party_page": {
-            "id": "l-oreal",
             "name": "L'Oreal"
           }
         }
@@ -413,8 +265,7 @@
           "code": "4271",
           "name": "Pharmaceutical, Cosmetic and Toiletry Goods Retailing"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/lor%C3%A9al-innovist"
+      ]
     },
     {
       "merger_id": "WA-05041",
@@ -432,56 +283,25 @@
       "acquirers": [
         {
           "name": "Elevate BidCo Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "699 129 523",
           "canonical": {
-            "id": "elevate-bidco-gmbh",
-            "name": "Elevate BidCo GmbH"
-          },
-          "party_page": {
-            "id": "elevate-bidco-gmbh",
             "name": "Elevate BidCo GmbH"
           }
         }
       ],
       "targets": [
         {
-          "name": "Hewison & Associates Pty. Ltd.",
-          "identifier_type": "ABN",
-          "identifier": "51 006 082 257",
-          "party_page": {
-            "id": "hewison-associates-pty-ltd",
-            "name": "Hewison & Associates Pty. Ltd."
-          }
+          "name": "Hewison & Associates Pty. Ltd."
         }
       ],
       "other_parties": [
         {
-          "name": "Pemba Capital Fund III, L.P.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "pemba-capital-fund-iii-l-p",
-            "name": "Pemba Capital Fund III, L.P."
-          }
+          "name": "Pemba Capital Fund III, L.P."
         },
         {
-          "name": "SuperConcepts Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "21 166 393 700",
-          "party_page": {
-            "id": "superconcepts-pty-ltd",
-            "name": "SuperConcepts Pty Ltd"
-          }
+          "name": "SuperConcepts Pty Ltd"
         },
         {
-          "name": "Elevate HoldCo Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "699 127 832",
-          "party_page": {
-            "id": "elevate-holdco-pty-ltd",
-            "name": "Elevate HoldCo Pty Ltd"
-          }
+          "name": "Elevate HoldCo Pty Ltd"
         }
       ],
       "anzsic_codes": [
@@ -493,8 +313,7 @@
           "code": "6419",
           "name": "Other Auxiliary Finance and Investment Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/pemba-hewison-private-wealth"
+      ]
     },
     {
       "merger_id": "WA-20030",
@@ -511,24 +330,12 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "Baupost Group Securities, L.L.C.",
-          "identifier_type": null,
-          "identifier": "Legal Entity Identifier 549300B87FCL68LWRE04",
-          "party_page": {
-            "id": "baupost-group-securities-l-l-c",
-            "name": "Baupost Group Securities, L.L.C."
-          }
+          "name": "Baupost Group Securities, L.L.C."
         }
       ],
       "targets": [
         {
-          "name": "McDermott International, Ltd",
-          "identifier_type": null,
-          "identifier": "Bermuda company number  55624",
-          "party_page": {
-            "id": "mcdermott-international-ltd",
-            "name": "McDermott International, Ltd"
-          }
+          "name": "McDermott International, Ltd"
         }
       ],
       "other_parties": [],
@@ -545,8 +352,7 @@
           "code": "6923",
           "name": "Engineering Design and Engineering Consulting Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/baupost-%E2%80%93-mcdermott"
+      ]
     },
     {
       "merger_id": "WA-55030",
@@ -564,40 +370,20 @@
       "acquirers": [
         {
           "name": "Neon Merger Sub, Inc.",
-          "identifier_type": null,
-          "identifier": "10667310",
           "canonical": {
-            "id": "crh",
-            "name": "CRH"
-          },
-          "party_page": {
-            "id": "crh",
             "name": "CRH"
           }
         }
       ],
       "targets": [
         {
-          "name": "Arcosa, Inc.",
-          "identifier_type": null,
-          "identifier": "6852687",
-          "party_page": {
-            "id": "arcosa-inc",
-            "name": "Arcosa, Inc."
-          }
+          "name": "Arcosa, Inc."
         }
       ],
       "other_parties": [
         {
           "name": "CRH Americas, Inc.",
-          "identifier_type": null,
-          "identifier": "3443923",
           "canonical": {
-            "id": "crh",
-            "name": "CRH"
-          },
-          "party_page": {
-            "id": "crh",
             "name": "CRH"
           }
         }
@@ -611,8 +397,7 @@
           "code": "6240",
           "name": "Financial Asset Investing"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/crh-arcosa"
+      ]
     },
     {
       "merger_id": "WA-85039",
@@ -630,14 +415,7 @@
       "acquirers": [
         {
           "name": "IRIS CAPITAL HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "44 646 759 524",
           "canonical": {
-            "id": "iris-capital",
-            "name": "Iris Capital"
-          },
-          "party_page": {
-            "id": "iris-capital",
             "name": "Iris Capital"
           }
         }
@@ -645,27 +423,13 @@
       "targets": [
         {
           "name": "MAHF CUSTODIAN PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "96 619 512 060",
           "canonical": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          },
-          "party_page": {
-            "id": "redcape-fund",
             "name": "Redcape Fund"
           }
         },
         {
           "name": "REDCAPE HOTEL GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 139 067 244",
           "canonical": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          },
-          "party_page": {
-            "id": "redcape-fund",
             "name": "Redcape Fund"
           }
         }
@@ -688,8 +452,7 @@
           "code": "9201",
           "name": "Casino Operation"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/iris-capital-%E2%80%93-revesby-pacific-hotel-and-crown-hotel"
+      ]
     },
     {
       "merger_id": "MN-10021",
@@ -706,24 +469,12 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "Insurance Building Australia Operations Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "80 661 826 026",
-          "party_page": {
-            "id": "insurance-building-australia-operations-pty-ltd",
-            "name": "Insurance Building Australia Operations Pty Ltd"
-          }
+          "name": "Insurance Building Australia Operations Pty Ltd"
         }
       ],
       "targets": [
         {
-          "name": "Major LB Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "72 611 974 540",
-          "party_page": {
-            "id": "major-lb-pty-ltd",
-            "name": "Major LB Pty Ltd"
-          }
+          "name": "Major LB Pty Ltd"
         }
       ],
       "other_parties": [],
@@ -744,8 +495,7 @@
           "code": "7311",
           "name": "Building and Other Industrial Cleaning Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/ambrose-construct-group-%E2%80%93-major-loss-builders"
+      ]
     },
     {
       "merger_id": "MN-65026",
@@ -763,109 +513,46 @@
       "acquirers": [
         {
           "name": "MAG SOUTH COAST PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "70 683 627 590",
           "canonical": {
-            "id": "mccarroll-s-automotive-group",
-            "name": "McCarroll's Automotive Group"
-          },
-          "party_page": {
-            "id": "mccarroll-s-automotive-group",
             "name": "McCarroll's Automotive Group"
           }
         },
         {
           "name": "MCCARROLL PROPERTY HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "64 676 724 306",
           "canonical": {
-            "id": "mccarroll-s-automotive-group",
-            "name": "McCarroll's Automotive Group"
-          },
-          "party_page": {
-            "id": "mccarroll-s-automotive-group",
             "name": "McCarroll's Automotive Group"
           }
         }
       ],
       "targets": [
         {
-          "name": "Donna Lea Buikstra Family Will Trust",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "donna-lea-buikstra-family-will-trust",
-            "name": "Donna Lea Buikstra Family Will Trust"
-          }
+          "name": "Donna Lea Buikstra Family Will Trust"
         },
         {
-          "name": "KJO PROPERTY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "33 169 760 178",
-          "party_page": {
-            "id": "kjo-property-pty-ltd",
-            "name": "Kjo Property Pty Ltd"
-          }
+          "name": "KJO PROPERTY PTY LTD"
         },
         {
-          "name": "KINGHORN MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "33 000 220 557",
-          "party_page": {
-            "id": "kinghorn-motors-pty-ltd",
-            "name": "Kinghorn Motors Pty Ltd"
-          }
+          "name": "KINGHORN MOTORS PTY LTD"
         },
         {
-          "name": "COUNTRY MOTOR COMPANY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "11 002 189 228",
-          "party_page": {
-            "id": "country-motor-company-pty-ltd",
-            "name": "Country Motor Company Pty Ltd"
-          }
+          "name": "COUNTRY MOTOR COMPANY PTY LTD"
         },
         {
-          "name": "Glenn Ype Buikstra Family Will Trust",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "glenn-ype-buikstra-family-will-trust",
-            "name": "Glenn Ype Buikstra Family Will Trust"
-          }
+          "name": "Glenn Ype Buikstra Family Will Trust"
         }
       ],
       "other_parties": [
         {
-          "name": "MAG NORTHERN BEACHES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "21 659 209 051",
-          "party_page": {
-            "id": "mag-northern-beaches-pty-ltd",
-            "name": "Mag Northern Beaches Pty Ltd"
-          }
+          "name": "MAG NORTHERN BEACHES PTY LTD"
         },
         {
           "name": "MCCARROLL'S OF MOSS VALE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "60 003 411 210",
           "canonical": {
-            "id": "mccarroll-s-automotive-group",
-            "name": "McCarroll's Automotive Group"
-          },
-          "party_page": {
-            "id": "mccarroll-s-automotive-group",
             "name": "McCarroll's Automotive Group"
           }
         },
         {
-          "name": "MAG BODY CORP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "93 676 724 495",
-          "party_page": {
-            "id": "mag-body-corp-pty-ltd",
-            "name": "Mag Body Corp Pty Ltd"
-          }
+          "name": "MAG BODY CORP PTY LTD"
         }
       ],
       "anzsic_codes": [
@@ -889,8 +576,7 @@
           "code": "9419",
           "name": "Other Automotive Repair and Maintenance"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/mccarrolls-automotive-group-kinghorn-motor-group-country-motor-company"
+      ]
     },
     {
       "merger_id": "WA-45022",
@@ -907,35 +593,17 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "AMG HEADQUARTERS EIGHTEEN PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "698 081 819",
-          "party_page": {
-            "id": "amg-headquarters-eighteen-pty-ltd",
-            "name": "Amg Headquarters Eighteen Pty Ltd"
-          }
+          "name": "AMG HEADQUARTERS EIGHTEEN PTY LTD"
         }
       ],
       "targets": [
         {
-          "name": "DAWNACO PTY. LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "23 003 837 643",
-          "party_page": {
-            "id": "dawnaco-pty-limited",
-            "name": "Dawnaco Pty. Limited"
-          }
+          "name": "DAWNACO PTY. LIMITED"
         }
       ],
       "other_parties": [
         {
-          "name": "Australian Motor Group Pty Ltd",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "australian-motor-group-pty-ltd",
-            "name": "Australian Motor Group Pty Ltd"
-          }
+          "name": "Australian Motor Group Pty Ltd"
         }
       ],
       "anzsic_codes": [
@@ -955,8 +623,7 @@
           "code": "9419",
           "name": "Other Automotive Repair and Maintenance"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/australian-motors-group-%E2%80%93-mudgee-toyota"
+      ]
     },
     {
       "merger_id": "WA-65030",
@@ -973,93 +640,38 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "Foxtrot UK Bidco Limited",
-          "identifier_type": null,
-          "identifier": "CRN  17249252",
-          "party_page": {
-            "id": "foxtrot-uk-bidco-limited",
-            "name": "Foxtrot UK Bidco Limited"
-          }
+          "name": "Foxtrot UK Bidco Limited"
         },
         {
-          "name": "Foxtrot Denmark Bidco ApS",
-          "identifier_type": null,
-          "identifier": "CVR  42580058",
-          "party_page": {
-            "id": "foxtrot-denmark-bidco-aps",
-            "name": "Foxtrot Denmark Bidco ApS"
-          }
+          "name": "Foxtrot Denmark Bidco ApS"
         },
         {
-          "name": "Foxtrot US Bidco, Inc.",
-          "identifier_type": null,
-          "identifier": "State of Delaware \u2013 Division of Corporations 10628070",
-          "party_page": {
-            "id": "foxtrot-us-bidco-inc",
-            "name": "Foxtrot US Bidco, Inc."
-          }
+          "name": "Foxtrot US Bidco, Inc."
         }
       ],
       "targets": [
         {
-          "name": "DANISCO AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "62 096 139 392",
-          "party_page": {
-            "id": "danisco-australia-pty-ltd",
-            "name": "Danisco Australia Pty Ltd"
-          }
+          "name": "DANISCO AUSTRALIA PTY LTD"
         },
         {
-          "name": "Taura Natural Ingredients Holdings Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "20 123 509 017",
-          "party_page": {
-            "id": "taura-natural-ingredients-holdings-pty-ltd",
-            "name": "Taura Natural Ingredients Holdings Pty Ltd"
-          }
+          "name": "Taura Natural Ingredients Holdings Pty Ltd"
         },
         {
-          "name": "NUTRITION & BIOSCIENCES AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "59 000 716 469",
-          "party_page": {
-            "id": "nutrition-biosciences-australia-pty-ltd",
-            "name": "Nutrition & Biosciences Australia Pty Ltd"
-          }
+          "name": "NUTRITION & BIOSCIENCES AUSTRALIA PTY LTD"
         },
         {
-          "name": "SOLAE AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "54 002 096 255",
-          "party_page": {
-            "id": "solae-australia-pty-ltd",
-            "name": "Solae Australia Pty Ltd"
-          }
+          "name": "SOLAE AUSTRALIA PTY LTD"
         }
       ],
       "other_parties": [
         {
           "name": "CVC Capital Partners plc",
-          "identifier_type": null,
-          "identifier": "JFSC  140080",
           "canonical": {
-            "id": "cvc-capital-partners",
-            "name": "CVC Capital Partners"
-          },
-          "party_page": {
-            "id": "cvc-capital-partners",
             "name": "CVC Capital Partners"
           }
         },
         {
-          "name": "International Flavors & Fragrances Inc.",
-          "identifier_type": null,
-          "identifier": "DOS ID  29389",
-          "party_page": {
-            "id": "international-flavors-fragrances-inc",
-            "name": "International Flavors & Fragrances Inc."
-          }
+          "name": "International Flavors & Fragrances Inc."
         }
       ],
       "anzsic_codes": [
@@ -1071,8 +683,7 @@
           "code": "6240",
           "name": "Financial Asset Investing"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/cvc-capital-partners-%E2%80%93-iff%E2%80%99s-food-ingredients-business"
+      ]
     },
     {
       "merger_id": "WA-95035",
@@ -1089,80 +700,32 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "Vertis Bidco Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "699 084 467",
-          "party_page": {
-            "id": "vertis-bidco-pty-ltd",
-            "name": "Vertis Bidco Pty Ltd"
-          }
+          "name": "Vertis Bidco Pty Ltd"
         },
         {
-          "name": "FIRST SENTIER INVESTORS (AUSTRALIA) RE LTD",
-          "identifier_type": "ABN",
-          "identifier": "13 006 464 428",
-          "party_page": {
-            "id": "first-sentier-investors-australia-re-ltd",
-            "name": "First Sentier Investors (Australia) Re Ltd"
-          }
+          "name": "FIRST SENTIER INVESTORS (AUSTRALIA) RE LTD"
         }
       ],
       "targets": [
         {
-          "name": "The Trustee for Green Squares Energy Trust",
-          "identifier_type": "ABN",
-          "identifier": "84 706 057 848",
-          "party_page": {
-            "id": "the-trustee-for-green-squares-energy-trust",
-            "name": "The Trustee for Green Squares Energy Trust"
-          }
+          "name": "The Trustee for Green Squares Energy Trust"
         },
         {
-          "name": "GREEN SQUARES ENERGY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "24 632 447 959",
-          "party_page": {
-            "id": "green-squares-energy-pty-ltd",
-            "name": "Green Squares Energy Pty Ltd"
-          }
+          "name": "GREEN SQUARES ENERGY PTY LTD"
         }
       ],
       "other_parties": [
         {
-          "name": "Mitsubishi UFJ Financial Group Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "mitsubishi-ufj-financial-group-inc",
-            "name": "Mitsubishi UFJ Financial Group Inc"
-          }
+          "name": "Mitsubishi UFJ Financial Group Inc"
         },
         {
-          "name": "CPE Renewables Investment Unit Trust",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "cpe-renewables-investment-unit-trust",
-            "name": "CPE Renewables Investment Unit Trust"
-          }
+          "name": "CPE Renewables Investment Unit Trust"
         },
         {
-          "name": "ATMOS RENEWABLES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "55 645 165 466",
-          "party_page": {
-            "id": "atmos-renewables-pty-ltd",
-            "name": "Atmos Renewables Pty Ltd"
-          }
+          "name": "ATMOS RENEWABLES PTY LTD"
         },
         {
-          "name": "FIRST SENTIER GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "49 630 725 558",
-          "party_page": {
-            "id": "first-sentier-group-limited",
-            "name": "First Sentier Group Limited"
-          }
+          "name": "FIRST SENTIER GROUP LIMITED"
         }
       ],
       "anzsic_codes": [
@@ -1170,8 +733,7 @@
           "code": "2619",
           "name": "Other Electricity Generation"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/igneo-infrastructure-partners-%E2%80%93-green-squares-energy"
+      ]
     },
     {
       "merger_id": "MN-05030",
@@ -1189,27 +751,14 @@
       "acquirers": [
         {
           "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "45 004 189 708",
           "canonical": {
-            "id": "coles",
-            "name": "Coles Group"
-          },
-          "party_page": {
-            "id": "coles",
             "name": "Coles Group"
           }
         }
       ],
       "targets": [
         {
-          "name": "The Trustee for Saracen Property Holdings Unit Trust",
-          "identifier_type": "ABN",
-          "identifier": "59 505 202 814",
-          "party_page": {
-            "id": "the-trustee-for-saracen-property-holdings-unit-trust",
-            "name": "The Trustee for Saracen Property Holdings Unit Trust"
-          }
+          "name": "The Trustee for Saracen Property Holdings Unit Trust"
         }
       ],
       "other_parties": [],
@@ -1218,8 +767,7 @@
           "code": "4110",
           "name": "Supermarket and Grocery Stores"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/coles-%E2%80%93-supermarket-site-in-upper-swan-wa"
+      ]
     },
     {
       "merger_id": "MN-55029",
@@ -1237,40 +785,20 @@
       "acquirers": [
         {
           "name": "ESTIA INVESTMENTS PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "87 164 350 387",
           "canonical": {
-            "id": "estia-health-holdings-ltd",
-            "name": "Estia Health"
-          },
-          "party_page": {
-            "id": "estia-health-holdings-ltd",
             "name": "Estia Health"
           }
         }
       ],
       "targets": [
         {
-          "name": "ANGLICARE SA LTD.",
-          "identifier_type": "ABN",
-          "identifier": "69 187 578 153",
-          "party_page": {
-            "id": "anglicare-sa-ltd",
-            "name": "Anglicare Sa Ltd."
-          }
+          "name": "ANGLICARE SA LTD."
         }
       ],
       "other_parties": [
         {
           "name": "ESTIA HEALTH TOPCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "47 669 884 244",
           "canonical": {
-            "id": "estia-health-holdings-ltd",
-            "name": "Estia Health"
-          },
-          "party_page": {
-            "id": "estia-health-holdings-ltd",
             "name": "Estia Health"
           }
         }
@@ -1284,8 +812,7 @@
           "code": "8609",
           "name": "Other Residential Care Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/estia-health-%E2%80%93-anglicaresa-residential-aged-care-business"
+      ]
     },
     {
       "merger_id": "MN-90024",
@@ -1302,44 +829,20 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "Petalite Investment Pte. Ltd",
-          "identifier_type": null,
-          "identifier": "Singapore Unique Identifier  202021849G",
-          "party_page": {
-            "id": "petalite-investment-pte-ltd",
-            "name": "Petalite Investment Pte. Ltd"
-          }
+          "name": "Petalite Investment Pte. Ltd"
         }
       ],
       "targets": [
         {
-          "name": "Cinven Discovery Holdings Limited Partnership",
-          "identifier_type": null,
-          "identifier": "Guernsey registration number  LP4308",
-          "party_page": {
-            "id": "cinven-discovery-holdings-limited-partnership",
-            "name": "Cinven Discovery Holdings Limited Partnership"
-          }
+          "name": "Cinven Discovery Holdings Limited Partnership"
         }
       ],
       "other_parties": [
         {
-          "name": "GIC Pte. Ltd",
-          "identifier_type": null,
-          "identifier": "Singapore Unique Identifier  198102265N",
-          "party_page": {
-            "id": "gic-pte-ltd",
-            "name": "GIC Pte. Ltd"
-          }
+          "name": "GIC Pte. Ltd"
         },
         {
-          "name": "Envu Group",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "envu-group",
-            "name": "Envu Group"
-          }
+          "name": "Envu Group"
         }
       ],
       "anzsic_codes": [
@@ -1351,8 +854,7 @@
           "code": "6240",
           "name": "Financial Asset Investing"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/petalite-%E2%80%93-envu"
+      ]
     },
     {
       "merger_id": "WA-25041",
@@ -1369,37 +871,18 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "Dream HoldCo LLC",
-          "identifier_type": null,
-          "identifier": "10662853",
-          "party_page": {
-            "id": "dream-holdco-llc",
-            "name": "Dream HoldCo LLC"
-          }
+          "name": "Dream HoldCo LLC"
         }
       ],
       "targets": [
         {
-          "name": "DK Holdco, LLC",
-          "identifier_type": null,
-          "identifier": "6146948",
-          "party_page": {
-            "id": "dk-holdco-llc",
-            "name": "DK Holdco, LLC"
-          }
+          "name": "DK Holdco, LLC"
         }
       ],
       "other_parties": [
         {
           "name": "CVC Capital Partners plc",
-          "identifier_type": null,
-          "identifier": "JFSC  140080",
           "canonical": {
-            "id": "cvc-capital-partners",
-            "name": "CVC Capital Partners"
-          },
-          "party_page": {
-            "id": "cvc-capital-partners",
             "name": "CVC Capital Partners"
           }
         }
@@ -1409,8 +892,7 @@
           "code": "5522",
           "name": "Music and Other Sound Recording Activities"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/cvc-capital-partners-%E2%80%93-distrokid"
+      ]
     },
     {
       "merger_id": "WA-30027",
@@ -1427,42 +909,18 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "Assemble US Bidco Inc",
-          "identifier_type": null,
-          "identifier": "Delaware  10694188",
-          "party_page": {
-            "id": "assemble-us-bidco-inc",
-            "name": "Assemble US Bidco Inc"
-          }
+          "name": "Assemble US Bidco Inc"
         },
         {
-          "name": "Assemble UK Bidco Limited",
-          "identifier_type": null,
-          "identifier": "UK  17341322",
-          "party_page": {
-            "id": "assemble-uk-bidco-limited",
-            "name": "Assemble UK Bidco Limited"
-          }
+          "name": "Assemble UK Bidco Limited"
         }
       ],
       "targets": [
         {
-          "name": "Techoraco Limited",
-          "identifier_type": null,
-          "identifier": "UK  15236387",
-          "party_page": {
-            "id": "techoraco-limited",
-            "name": "Techoraco Limited"
-          }
+          "name": "Techoraco Limited"
         },
         {
-          "name": "Institutional Investor LLC",
-          "identifier_type": null,
-          "identifier": "Delaware  803184",
-          "party_page": {
-            "id": "institutional-investor-llc",
-            "name": "Institutional Investor LLC"
-          }
+          "name": "Institutional Investor LLC"
         }
       ],
       "other_parties": [],
@@ -1475,8 +933,7 @@
           "code": "7299",
           "name": "Other Administrative Services n.e.c."
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/apax-funds-%E2%80%93-techoraco-limited-and-institutional-investor-llc"
+      ]
     },
     {
       "merger_id": "WA-35036",
@@ -1493,44 +950,20 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "CrowdStrike, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "crowdstrike-inc",
-            "name": "CrowdStrike, Inc."
-          }
+          "name": "CrowdStrike, Inc."
         }
       ],
       "targets": [
         {
-          "name": "Schwarz Digits KG",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "schwarz-digits-kg",
-            "name": "Schwarz Digits KG"
-          }
+          "name": "Schwarz Digits KG"
         },
         {
-          "name": "XM Cyber Ltd.",
-          "identifier_type": null,
-          "identifier": "Company number 515436756",
-          "party_page": {
-            "id": "xm-cyber-ltd",
-            "name": "XM Cyber Ltd."
-          }
+          "name": "XM Cyber Ltd."
         }
       ],
       "other_parties": [
         {
-          "name": "CrowdStrike Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "crowdstrike-inc",
-            "name": "CrowdStrike, Inc."
-          }
+          "name": "CrowdStrike Holdings, Inc."
         }
       ],
       "anzsic_codes": [
@@ -1538,8 +971,7 @@
           "code": "7000",
           "name": "Computer System Design and Related Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/crowdstrike-%E2%80%93-intellectual-property-and-associated-technology-assets-of-xm-cyber"
+      ]
     },
     {
       "merger_id": "WA-80033",
@@ -1556,53 +988,23 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "JUNGHEINRICH AUSTRALIA HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 608 769 642",
-          "party_page": {
-            "id": "jungheinrich-australia-holdings-pty-ltd",
-            "name": "Jungheinrich Australia Holdings Pty Ltd"
-          }
+          "name": "JUNGHEINRICH AUSTRALIA HOLDINGS PTY LTD"
         }
       ],
       "targets": [
         {
-          "name": "KRETCHMER HOLDING CO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "37 634 564 926",
-          "party_page": {
-            "id": "kretchmer-holding-co-pty-ltd",
-            "name": "Kretchmer Holding Co Pty Ltd"
-          }
+          "name": "KRETCHMER HOLDING CO PTY LTD"
         },
         {
-          "name": "ALL LIFT EQUIPMENT SALES PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "31 632 720 006",
-          "party_page": {
-            "id": "all-lift-equipment-sales-pty-limited",
-            "name": "All Lift Equipment Sales Pty Limited"
-          }
+          "name": "ALL LIFT EQUIPMENT SALES PTY LIMITED"
         }
       ],
       "other_parties": [
         {
-          "name": "JUNGHEINRICH AUSTRALIA PTY LTD as trustee for The Jungheinrich Australia Trust (ABN 29 117 832 739)",
-          "identifier_type": "ABN",
-          "identifier": "22 008 024 011",
-          "party_page": {
-            "id": "jungheinrich-australia-pty-ltd-as-trustee-for-the-jungheinrich-australia-trust-a",
-            "name": "JUNGHEINRICH AUSTRALIA PTY LTD as trustee for The Jungheinrich Australia Trust (ABN 29 117 832 739)"
-          }
+          "name": "JUNGHEINRICH AUSTRALIA PTY LTD as trustee for The Jungheinrich Australia Trust (ABN 29 117 832 739)"
         },
         {
-          "name": "JUNGHEINRICH FLEET SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "90 066 707 784",
-          "party_page": {
-            "id": "jungheinrich-fleet-services-pty-ltd",
-            "name": "Jungheinrich Fleet Services Pty Ltd"
-          }
+          "name": "JUNGHEINRICH FLEET SERVICES PTY LTD"
         }
       ],
       "anzsic_codes": [
@@ -1614,8 +1016,7 @@
           "code": "3419",
           "name": "Other Specialised Industrial Machinery and Equipment Wholesaling"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/jungheinrich-australia-all-lift"
+      ]
     },
     {
       "merger_id": "WA-85040",
@@ -1633,27 +1034,13 @@
       "acquirers": [
         {
           "name": "REDCAPE HOTEL GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 139 067 244",
           "canonical": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          },
-          "party_page": {
-            "id": "redcape-fund",
             "name": "Redcape Fund"
           }
         },
         {
           "name": "MAHF CUSTODIAN PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "96 619 512 060",
           "canonical": {
-            "id": "redcape-fund",
-            "name": "Redcape Fund"
-          },
-          "party_page": {
-            "id": "redcape-fund",
             "name": "Redcape Fund"
           }
         }
@@ -1661,105 +1048,49 @@
       "targets": [
         {
           "name": "Gunyah Hotel Property Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "628 638 040",
           "canonical": {
-            "id": "iris-capital",
-            "name": "Iris Capital"
-          },
-          "party_page": {
-            "id": "iris-capital",
             "name": "Iris Capital"
           }
         },
         {
           "name": "Radayla Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "73 115 366 384",
           "canonical": {
-            "id": "iris-capital",
-            "name": "Iris Capital"
-          },
-          "party_page": {
-            "id": "iris-capital",
             "name": "Iris Capital"
           }
         },
         {
           "name": "Sydney Junction Hotel Property Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "628 636 671",
           "canonical": {
-            "id": "iris-capital",
-            "name": "Iris Capital"
-          },
-          "party_page": {
-            "id": "iris-capital",
             "name": "Iris Capital"
           }
         },
         {
           "name": "Argenton Hotel Property Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "628 638 755",
           "canonical": {
-            "id": "iris-capital",
-            "name": "Iris Capital"
-          },
-          "party_page": {
-            "id": "iris-capital",
             "name": "Iris Capital"
           }
         },
         {
           "name": "Peden Business Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "626 903 928",
           "canonical": {
-            "id": "iris-capital",
-            "name": "Iris Capital"
-          },
-          "party_page": {
-            "id": "iris-capital",
             "name": "Iris Capital"
           }
         },
         {
           "name": "Peden Freehold Pty Limited",
-          "identifier_type": "ACN",
-          "identifier": "626 902 645",
           "canonical": {
-            "id": "iris-capital",
-            "name": "Iris Capital"
-          },
-          "party_page": {
-            "id": "iris-capital",
             "name": "Iris Capital"
           }
         },
         {
           "name": "Gunyah Hotel Operations Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "628 638 031",
           "canonical": {
-            "id": "iris-capital",
-            "name": "Iris Capital"
-          },
-          "party_page": {
-            "id": "iris-capital",
             "name": "Iris Capital"
           }
         },
         {
           "name": "Argenton Hotel Operations Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "628 639 270",
           "canonical": {
-            "id": "iris-capital",
-            "name": "Iris Capital"
-          },
-          "party_page": {
-            "id": "iris-capital",
             "name": "Iris Capital"
           }
         }
@@ -1786,8 +1117,7 @@
           "code": "6711",
           "name": "Residential Property Operators"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/ma-financial-redcape-fund-%E2%80%93-seven-hospitality-venues-in-nsw"
+      ]
     },
     {
       "merger_id": "WA-15033",
@@ -1804,170 +1134,62 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "TA Riverside Aggregator, L.P.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "ta-riverside-aggregator-l-p",
-            "name": "TA Riverside Aggregator, L.P."
-          }
+          "name": "TA Riverside Aggregator, L.P."
         },
         {
-          "name": "Armira Opportunities III GmbH & Co. geschlossene Investment KG",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "armira-opportunities-iii-gmbh-co-geschlossene-investment-kg",
-            "name": "Armira Opportunities III GmbH & Co. geschlossene Investment KG"
-          }
+          "name": "Armira Opportunities III GmbH & Co. geschlossene Investment KG"
         }
       ],
       "targets": [
         {
-          "name": "Intersurgical Aktiengesellschaft AG",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "intersurgical-aktiengesellschaft-ag",
-            "name": "Intersurgical Aktiengesellschaft AG"
-          }
+          "name": "Intersurgical Aktiengesellschaft AG"
         }
       ],
       "other_parties": [
         {
-          "name": "TA Investors 2024, L.P",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "ta-investors-2024-l-p",
-            "name": "TA Investors 2024, L.P"
-          }
+          "name": "TA Investors 2024, L.P"
         },
         {
-          "name": "TA Associates XV GP, L.P",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "ta-associates-xv-gp-l-p",
-            "name": "TA Associates XV GP, L.P"
-          }
+          "name": "TA Associates XV GP, L.P"
         },
         {
-          "name": "TA XV-A, L.P",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "ta-xv-a-l-p",
-            "name": "Ta Xv-A, L.P"
-          }
+          "name": "TA XV-A, L.P"
         },
         {
-          "name": "TA Associates Management, L.P.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "ta-associates-management-l-p",
-            "name": "TA Associates Management, L.P."
-          }
+          "name": "TA Associates Management, L.P."
         },
         {
-          "name": "Armira GmbH & Co. KG",
-          "identifier_type": null,
-          "identifier": "HRA  92168",
-          "party_page": {
-            "id": "armira-gmbh-co-kg",
-            "name": "Armira GmbH & Co. KG"
-          }
+          "name": "Armira GmbH & Co. KG"
         },
         {
-          "name": "Riverside BidCo Limited",
-          "identifier_type": null,
-          "identifier": "England and Wales Company Registration Number  16880161",
-          "party_page": {
-            "id": "riverside-bidco-limited",
-            "name": "Riverside BidCo Limited"
-          }
+          "name": "Riverside BidCo Limited"
         },
         {
-          "name": "TA Associates XV EU GP, SARL",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "ta-associates-xv-eu-gp-sarl",
-            "name": "TA Associates XV EU GP, SARL"
-          }
+          "name": "TA Associates XV EU GP, SARL"
         },
         {
-          "name": "Riverside UK Holdco Limited",
-          "identifier_type": null,
-          "identifier": "England and Wales Company Registration Number  16986637",
-          "party_page": {
-            "id": "riverside-uk-holdco-limited",
-            "name": "Riverside UK Holdco Limited"
-          }
+          "name": "Riverside UK Holdco Limited"
         },
         {
-          "name": "Bock Capital EU Luxembourg Will S.\u00e0.r.l,",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "bock-capital-eu-luxembourg-will-s-r-l",
-            "name": "Bock Capital EU Luxembourg Will S.\u00e0.r.l,"
-          }
+          "name": "Bock Capital EU Luxembourg Will S.\u00e0.r.l,"
         },
         {
-          "name": "TA XV-B L.P",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "ta-xv-b-l-p",
-            "name": "Ta Xv-B L.P"
-          }
+          "name": "TA XV-B L.P"
         },
         {
-          "name": "Riverside TopCo Limited",
-          "identifier_type": null,
-          "identifier": "Jersey Company Registration Number  163852",
-          "party_page": {
-            "id": "riverside-topco-limited",
-            "name": "Riverside TopCo Limited"
-          }
+          "name": "Riverside TopCo Limited"
         },
         {
-          "name": "Riverside Midco Limited",
-          "identifier_type": null,
-          "identifier": "England and Wales Company Registration  16986520",
-          "party_page": {
-            "id": "riverside-midco-limited",
-            "name": "Riverside Midco Limited"
-          }
+          "name": "Riverside Midco Limited"
         },
         {
-          "name": "TA Associates Cayman, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "ta-associates-cayman-llc",
-            "name": "TA Associates Cayman, LLC"
-          }
+          "name": "TA Associates Cayman, LLC"
         },
         {
-          "name": "TA XV-C, SCSp",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "ta-xv-c-scsp",
-            "name": "TA XV-C, SCSp"
-          }
+          "name": "TA XV-C, SCSp"
         },
         {
-          "name": "\u00c9tablissement Cosmeplast",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "tablissement-cosmeplast",
-            "name": "\u00c9tablissement Cosmeplast"
-          }
+          "name": "\u00c9tablissement Cosmeplast"
         }
       ],
       "anzsic_codes": [
@@ -1979,8 +1201,7 @@
           "code": "6419",
           "name": "Other Auxiliary Finance and Investment Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/armira-and-ta-associates-%E2%80%93-intersurgical-aktiengesellschaft-ag"
+      ]
     },
     {
       "merger_id": "MN-05031",
@@ -1998,40 +1219,20 @@
       "acquirers": [
         {
           "name": "Obayashi UK Holdings Limited",
-          "identifier_type": null,
-          "identifier": "UK Company No.17229281",
           "canonical": {
-            "id": "obayashi",
-            "name": "Obayashi"
-          },
-          "party_page": {
-            "id": "obayashi",
             "name": "Obayashi"
           }
         },
         {
           "name": "Obayashi Corporation",
-          "identifier_type": "ABN",
-          "identifier": "86 002 932 756",
           "canonical": {
-            "id": "obayashi",
-            "name": "Obayashi"
-          },
-          "party_page": {
-            "id": "obayashi",
             "name": "Obayashi"
           }
         }
       ],
       "targets": [
         {
-          "name": "BCI UK Holdings Ltd",
-          "identifier_type": null,
-          "identifier": "UK Company No 9945869",
-          "party_page": {
-            "id": "bci-uk-holdings-ltd",
-            "name": "BCI UK Holdings Ltd"
-          }
+          "name": "BCI UK Holdings Ltd"
         }
       ],
       "other_parties": [],
@@ -2044,8 +1245,7 @@
           "code": "3020",
           "name": "Non-Residential Building Construction"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/obayashi-corporation-%E2%80%93-multiplex"
+      ]
     },
     {
       "merger_id": "MN-60026",
@@ -2063,53 +1263,26 @@
       "acquirers": [
         {
           "name": "MMS USA Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware ID 3497138",
           "canonical": {
-            "id": "publicis-groupe",
-            "name": "Publicis Groupe"
-          },
-          "party_page": {
-            "id": "publicis-groupe",
             "name": "Publicis Groupe"
           }
         }
       ],
       "targets": [
         {
-          "name": "LiveRamp Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware ID 00138669",
-          "party_page": {
-            "id": "liveramp-holdings-inc",
-            "name": "LiveRamp Holdings, Inc."
-          }
+          "name": "LiveRamp Holdings, Inc."
         }
       ],
       "other_parties": [
         {
           "name": "Publicis Groupe S.A.",
-          "identifier_type": null,
-          "identifier": "Paris Trade and Companies Registry no. 542 080 601",
           "canonical": {
-            "id": "publicis-groupe",
-            "name": "Publicis Groupe"
-          },
-          "party_page": {
-            "id": "publicis-groupe",
             "name": "Publicis Groupe"
           }
         },
         {
           "name": "Covey Merger Sub, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware ID 10622331",
           "canonical": {
-            "id": "publicis-groupe",
-            "name": "Publicis Groupe"
-          },
-          "party_page": {
-            "id": "publicis-groupe",
             "name": "Publicis Groupe"
           }
         }
@@ -2131,8 +1304,7 @@
           "code": "7000",
           "name": "Computer System Design and Related Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/publicis-groupe-liveramp"
+      ]
     },
     {
       "merger_id": "MN-90027",
@@ -2150,40 +1322,19 @@
       "acquirers": [
         {
           "name": "AbbVie Inc.",
-          "identifier_type": null,
-          "identifier": "DELAWARE FILE NO.  5126809",
           "canonical": {
-            "id": "abbvie",
-            "name": "AbbVie"
-          },
-          "party_page": {
-            "id": "abbvie",
             "name": "AbbVie"
           }
         },
         {
           "name": "Andor LLC",
-          "identifier_type": null,
-          "identifier": "DELAWARE FILE NO.  10659200",
           "canonical": {
-            "id": "abbvie",
-            "name": "AbbVie"
-          },
-          "party_page": {
-            "id": "abbvie",
             "name": "AbbVie"
           }
         },
         {
           "name": "Andor Merger Co.",
-          "identifier_type": null,
-          "identifier": "DELAWARE FILE NO.  10659205",
           "canonical": {
-            "id": "abbvie",
-            "name": "AbbVie"
-          },
-          "party_page": {
-            "id": "abbvie",
             "name": "AbbVie"
           }
         }
@@ -2191,27 +1342,13 @@
       "targets": [
         {
           "name": "Apogee Therapeutics, Inc.",
-          "identifier_type": null,
-          "identifier": "EIN  934958665",
           "canonical": {
-            "id": "apogee-therapeutics",
-            "name": "Apogee Therapeutics"
-          },
-          "party_page": {
-            "id": "apogee-therapeutics",
             "name": "Apogee Therapeutics"
           }
         },
         {
           "name": "Apogee Therapeutics Securities Corporation",
-          "identifier_type": null,
-          "identifier": "EIN  332083626",
           "canonical": {
-            "id": "apogee-therapeutics",
-            "name": "Apogee Therapeutics"
-          },
-          "party_page": {
-            "id": "apogee-therapeutics",
             "name": "Apogee Therapeutics"
           }
         }
@@ -2226,8 +1363,7 @@
           "code": "6910",
           "name": "Scientific Research Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/abbvie-apogee"
+      ]
     },
     {
       "merger_id": "WA-15035",
@@ -2244,53 +1380,23 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "Howard Springs Op Co Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "78 696 555 674",
-          "party_page": {
-            "id": "howard-springs-op-co-pty-ltd",
-            "name": "Howard Springs Op Co Pty Ltd"
-          }
+          "name": "Howard Springs Op Co Pty Ltd"
         },
         {
-          "name": "Waymark Hotels Properties No 43 Pty Ltd (ATF Howard Springs Property Trust)",
-          "identifier_type": "ACN",
-          "identifier": "696 557 436",
-          "party_page": {
-            "id": "waymark-hotels-properties-no-43-pty-ltd-atf-howard-springs-property-trust",
-            "name": "Waymark Hotels Properties No 43 Pty Ltd (ATF Howard Springs Property Trust)"
-          }
+          "name": "Waymark Hotels Properties No 43 Pty Ltd (ATF Howard Springs Property Trust)"
         }
       ],
       "targets": [
         {
-          "name": "Majestic Logistics Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "68 084 089 038",
-          "party_page": {
-            "id": "majestic-logistics-pty-limited",
-            "name": "Majestic Logistics Pty Limited"
-          }
+          "name": "Majestic Logistics Pty Limited"
         },
         {
-          "name": "Majestic Ventures Pty Limited ATF Elsdon Family Trust",
-          "identifier_type": "ABN",
-          "identifier": "38 132 336 915",
-          "party_page": {
-            "id": "majestic-ventures-pty-limited-atf-elsdon-family-trust",
-            "name": "Majestic Ventures Pty Limited ATF Elsdon Family Trust"
-          }
+          "name": "Majestic Ventures Pty Limited ATF Elsdon Family Trust"
         }
       ],
       "other_parties": [
         {
-          "name": "Waymark Hotel Group Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "92 621 426 999",
-          "party_page": {
-            "id": "waymark-hotel-group-pty-ltd",
-            "name": "Waymark Hotel Group Pty Ltd"
-          }
+          "name": "Waymark Hotel Group Pty Ltd"
         }
       ],
       "anzsic_codes": [
@@ -2310,8 +1416,7 @@
           "code": "6712",
           "name": "Non-Residential Property Operators"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/waymark-hotels-group-%E2%80%93-howard-springs-tavern-howard-springs-nt"
+      ]
     },
     {
       "merger_id": "WA-20031",
@@ -2328,71 +1433,29 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "ATMOS DEVELOPMENTS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "80 652 915 216",
-          "party_page": {
-            "id": "atmos-developments-pty-ltd",
-            "name": "Atmos Developments Pty Ltd"
-          }
+          "name": "ATMOS DEVELOPMENTS PTY LTD"
         },
         {
-          "name": "ATMOS QUEENSLAND SOLAR PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "23 654 882 925",
-          "party_page": {
-            "id": "atmos-queensland-solar-pty-ltd",
-            "name": "Atmos Queensland Solar Pty Ltd"
-          }
+          "name": "ATMOS QUEENSLAND SOLAR PTY LTD"
         }
       ],
       "targets": [
         {
-          "name": "HUGHENDEN SOLAR FARM HOLDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "78 617 749 569",
-          "party_page": {
-            "id": "hughenden-solar-farm-holdco-pty-ltd",
-            "name": "Hughenden Solar Farm Holdco Pty Ltd"
-          }
+          "name": "HUGHENDEN SOLAR FARM HOLDCO PTY LTD"
         },
         {
-          "name": "BAYWA R.E. PROJECTS AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "51 606 343 757",
-          "party_page": {
-            "id": "baywa-r-e-projects-australia-pty-ltd",
-            "name": "Baywa R.E. Projects Australia Pty Ltd"
-          }
+          "name": "BAYWA R.E. PROJECTS AUSTRALIA PTY LTD"
         },
         {
-          "name": "YATPOOL SOLAR FARM HOLDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "70 618 060 487",
-          "party_page": {
-            "id": "yatpool-solar-farm-holdco-pty-ltd",
-            "name": "Yatpool Solar Farm Holdco Pty Ltd"
-          }
+          "name": "YATPOOL SOLAR FARM HOLDCO PTY LTD"
         }
       ],
       "other_parties": [
         {
-          "name": "BAYWA R.E. AG",
-          "identifier_type": null,
-          "identifier": "HRB number: 264823",
-          "party_page": {
-            "id": "baywa-r-e-ag",
-            "name": "Baywa R.E. Ag"
-          }
+          "name": "BAYWA R.E. AG"
         },
         {
-          "name": "ATMOS TOPCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "51 645 165 448",
-          "party_page": {
-            "id": "atmos-topco-pty-ltd",
-            "name": "Atmos Topco Pty Ltd"
-          }
+          "name": "ATMOS TOPCO PTY LTD"
         }
       ],
       "anzsic_codes": [
@@ -2400,8 +1463,7 @@
           "code": "2619",
           "name": "Other Electricity Generation"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/atmos-%E2%80%93-specific-baywa-re-renewable-energy-projects"
+      ]
     },
     {
       "merger_id": "WA-20032",
@@ -2419,85 +1481,35 @@
       "acquirers": [
         {
           "name": "NJM4 Corporation",
-          "identifier_type": null,
-          "identifier": "Commercial Registration Number  010401197785",
           "canonical": {
-            "id": "nojima",
-            "name": "Nojima"
-          },
-          "party_page": {
-            "id": "nojima",
             "name": "Nojima"
           }
         },
         {
           "name": "Nojima Corporation",
-          "identifier_type": null,
-          "identifier": "Commercial Registration Number  021001013588",
           "canonical": {
-            "id": "nojima",
-            "name": "Nojima"
-          },
-          "party_page": {
-            "id": "nojima",
             "name": "Nojima"
           }
         },
         {
-          "name": "Hitachi Global Life Solutions, Inc.",
-          "identifier_type": null,
-          "identifier": "Commercial Registration Number  010401057011",
-          "party_page": {
-            "id": "hitachi-global-life-solutions-inc",
-            "name": "Hitachi Global Life Solutions, Inc."
-          }
+          "name": "Hitachi Global Life Solutions, Inc."
         }
       ],
       "targets": [
         {
-          "name": "GLS, Inc.",
-          "identifier_type": null,
-          "identifier": "Commercial Registration Number  010401200183",
-          "party_page": {
-            "id": "gls-inc",
-            "name": "GLS, Inc."
-          }
+          "name": "GLS, Inc."
         },
         {
-          "name": "Hitachi Appliances Techno Service, Ltd.",
-          "identifier_type": null,
-          "identifier": "Commercial Registration Number  050001\u2010023775",
-          "party_page": {
-            "id": "hitachi-appliances-techno-service-ltd",
-            "name": "Hitachi Appliances Techno Service, Ltd."
-          }
+          "name": "Hitachi Appliances Techno Service, Ltd."
         },
         {
-          "name": "Kantou Eco Recycle Co., Ltd.",
-          "identifier_type": null,
-          "identifier": "Commercial Registration Number  060001\u2010016749",
-          "party_page": {
-            "id": "kantou-eco-recycle-co-ltd",
-            "name": "Kantou Eco Recycle Co., Ltd."
-          }
+          "name": "Kantou Eco Recycle Co., Ltd."
         },
         {
-          "name": "Ar\u00e7elik A.\u015e.",
-          "identifier_type": null,
-          "identifier": "MERSIS No  0073001800000022",
-          "party_page": {
-            "id": "ar-elik-a",
-            "name": "Ar\u00e7elik A.\u015e."
-          }
+          "name": "Ar\u00e7elik A.\u015e."
         },
         {
-          "name": "Ar\u00e7elik Hitachi Home Appliances B.V.",
-          "identifier_type": null,
-          "identifier": "CCI No  81724748",
-          "party_page": {
-            "id": "ar-elik-hitachi-home-appliances-b-v",
-            "name": "Ar\u00e7elik Hitachi Home Appliances B.V."
-          }
+          "name": "Ar\u00e7elik Hitachi Home Appliances B.V."
         }
       ],
       "other_parties": [],
@@ -2530,8 +1542,7 @@
           "code": "9421",
           "name": "Domestic Appliance Repair and Maintenance"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/nojima-corporation-%E2%80%93-hitachi-global-life-solutions-and-ar%C3%A7elik-hitachi-home-appliances"
+      ]
     },
     {
       "merger_id": "MN-05027",
@@ -2548,35 +1559,17 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "PROTECH GROUP (AUST) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "38 163 904 694",
-          "party_page": {
-            "id": "protech-group-aust-pty-ltd",
-            "name": "Protech Group (Aust) Pty Ltd"
-          }
+          "name": "PROTECH GROUP (AUST) PTY LTD"
         }
       ],
       "targets": [
         {
-          "name": "ACTIVATERAIL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "46 617 749 809",
-          "party_page": {
-            "id": "activaterail-pty-ltd",
-            "name": "Activaterail Pty Ltd"
-          }
+          "name": "ACTIVATERAIL PTY LTD"
         }
       ],
       "other_parties": [
         {
-          "name": "RIPPERS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "90 600 268 031",
-          "party_page": {
-            "id": "rippers-pty-ltd",
-            "name": "Rippers Pty Ltd"
-          }
+          "name": "RIPPERS PTY LTD"
         }
       ],
       "anzsic_codes": [
@@ -2584,8 +1577,7 @@
           "code": "7212",
           "name": "Labour Supply Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/protech-activaterail"
+      ]
     },
     {
       "merger_id": "MN-40031",
@@ -2603,14 +1595,7 @@
       "acquirers": [
         {
           "name": "Ireland Acquisition Sub Inc.",
-          "identifier_type": null,
-          "identifier": "",
           "canonical": {
-            "id": "salesforce-inc",
-            "name": "Salesforce, Inc"
-          },
-          "party_page": {
-            "id": "salesforce-inc",
             "name": "Salesforce, Inc"
           }
         }
@@ -2618,14 +1603,7 @@
       "targets": [
         {
           "name": "Intercom, Inc.",
-          "identifier_type": null,
-          "identifier": "453543961",
           "canonical": {
-            "id": "intercom",
-            "name": "Intercom"
-          },
-          "party_page": {
-            "id": "intercom",
             "name": "Intercom"
           }
         }
@@ -2633,40 +1611,19 @@
       "other_parties": [
         {
           "name": "Intercom R&D Unlimited Company",
-          "identifier_type": null,
-          "identifier": "538158",
           "canonical": {
-            "id": "intercom",
-            "name": "Intercom"
-          },
-          "party_page": {
-            "id": "intercom",
             "name": "Intercom"
           }
         },
         {
           "name": "Salesforce Holdings LLC",
-          "identifier_type": null,
-          "identifier": "5673469",
           "canonical": {
-            "id": "salesforce-inc",
-            "name": "Salesforce, Inc"
-          },
-          "party_page": {
-            "id": "salesforce-inc",
             "name": "Salesforce, Inc"
           }
         },
         {
           "name": "Salesforce, Inc.",
-          "identifier_type": null,
-          "identifier": "0001108524",
           "canonical": {
-            "id": "salesforce-inc",
-            "name": "Salesforce, Inc"
-          },
-          "party_page": {
-            "id": "salesforce-inc",
             "name": "Salesforce, Inc"
           }
         }
@@ -2676,8 +1633,7 @@
           "code": "7000",
           "name": "Computer System Design and Related Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/salesforce-intercom"
+      ]
     },
     {
       "merger_id": "MN-80005",
@@ -2694,24 +1650,12 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "Kimberly-Clark Corporation",
-          "identifier_type": null,
-          "identifier": "Delaware Entity Registration Number  239026",
-          "party_page": {
-            "id": "kimberly-clark-corporation",
-            "name": "Kimberly-Clark Corporation"
-          }
+          "name": "Kimberly-Clark Corporation"
         }
       ],
       "targets": [
         {
-          "name": "Kenvue Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware entity registration number  6629984",
-          "party_page": {
-            "id": "kenvue-inc",
-            "name": "Kenvue Inc."
-          }
+          "name": "Kenvue Inc."
         }
       ],
       "other_parties": [],
@@ -2724,8 +1668,7 @@
           "code": "3720",
           "name": "Pharmaceutical and Toiletry Goods Wholesaling"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/kimberly-clark-corporation-kenvue-inc"
+      ]
     },
     {
       "merger_id": "WA-05034",
@@ -2742,110 +1685,47 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "AURIZON NETWORK PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "78 132 181 116",
-          "party_page": {
-            "id": "aurizon-network-pty-ltd",
-            "name": "Aurizon Network Pty Ltd"
-          }
+          "name": "AURIZON NETWORK PTY LTD"
         }
       ],
       "targets": [
         {
           "name": "Anglo American plc",
-          "identifier_type": null,
-          "identifier": "03564138",
           "canonical": {
-            "id": "anglo-american-plc",
-            "name": "Anglo American"
-          },
-          "party_page": {
-            "id": "anglo-american-plc",
             "name": "Anglo American"
           }
         },
         {
-          "name": "QUEENSLAND TREASURY HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "52 011 027 295",
-          "party_page": {
-            "id": "queensland-treasury-holdings-pty-ltd",
-            "name": "Queensland Treasury Holdings Pty Ltd"
-          }
+          "name": "QUEENSLAND TREASURY HOLDINGS PTY LTD"
         },
         {
           "name": "ANGLO AMERICAN STEELMAKING COAL HOLDINGS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "52 079 017 940",
           "canonical": {
-            "id": "anglo-american-plc",
-            "name": "Anglo American"
-          },
-          "party_page": {
-            "id": "anglo-american-plc",
             "name": "Anglo American"
           }
         },
         {
           "name": "ANGLO AMERICAN AUSTRALIA LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "47 004 892 371",
           "canonical": {
-            "id": "anglo-american-plc",
-            "name": "Anglo American"
-          },
-          "party_page": {
-            "id": "anglo-american-plc",
             "name": "Anglo American"
           }
         },
         {
-          "name": "The Minister for Transport and Main Roads of Queensland",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "the-minister-for-transport-and-main-roads-of-queensland",
-            "name": "The Minister for Transport and Main Roads of Queensland"
-          }
+          "name": "The Minister for Transport and Main Roads of Queensland"
         },
         {
-          "name": "Department of Transport and Main Roads of Queensland",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "department-of-transport-and-main-roads-of-queensland",
-            "name": "Department of Transport and Main Roads of Queensland"
-          }
+          "name": "Department of Transport and Main Roads of Queensland"
         },
         {
-          "name": "ANGLO COAL (MORANBAH NORTH MANAGEMENT) PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "14 069 603 587",
-          "party_page": {
-            "id": "anglo-coal-moranbah-north-management-pty-limited",
-            "name": "Anglo Coal (Moranbah North Management) Pty Limited"
-          }
+          "name": "ANGLO COAL (MORANBAH NORTH MANAGEMENT) PTY LIMITED"
         },
         {
-          "name": "MORANBAH NORTH COAL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 007 083 249",
-          "party_page": {
-            "id": "moranbah-north-coal-pty-ltd",
-            "name": "Moranbah North Coal Pty Ltd"
-          }
+          "name": "MORANBAH NORTH COAL PTY LTD"
         }
       ],
       "other_parties": [
         {
-          "name": "AURIZON HOLDINGS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "14 146 335 622",
-          "party_page": {
-            "id": "aurizon-holdings-limited",
-            "name": "Aurizon Holdings Limited"
-          }
+          "name": "AURIZON HOLDINGS LIMITED"
         }
       ],
       "anzsic_codes": [
@@ -2861,8 +1741,7 @@
           "code": "7520",
           "name": "State Government Administration"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/aurizon-%E2%80%93-transactions-related-to-the-relocation-of-a-rail-corridor-at-moranbah-north"
+      ]
     },
     {
       "merger_id": "WA-35037",
@@ -2879,59 +1758,27 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "Ibert Investments S.\u00e0.r.l.",
-          "identifier_type": null,
-          "identifier": "Grand Duchy of Luxembourg \u2013 Registered Number B308900",
-          "party_page": {
-            "id": "ibert-investments-s-r-l",
-            "name": "Ibert Investments S.\u00e0.r.l."
-          }
+          "name": "Ibert Investments S.\u00e0.r.l."
         }
       ],
       "targets": [
         {
-          "name": "IRCA Group Luxembourg Midco 3 S.\u00e0.r.l.",
-          "identifier_type": null,
-          "identifier": "Grand Duchy of Luxembourg \u2013 registered number B266618",
-          "party_page": {
-            "id": "irca-group-luxembourg-midco-3-s-r-l",
-            "name": "IRCA Group Luxembourg Midco 3 S.\u00e0.r.l."
-          }
+          "name": "IRCA Group Luxembourg Midco 3 S.\u00e0.r.l."
         },
         {
-          "name": "IRCA Group Luxembourg Midco 4 S.\u00e0.r.l.",
-          "identifier_type": null,
-          "identifier": "Grand Duchy of Luxembourg \u2013 registered number B266716",
-          "party_page": {
-            "id": "irca-group-luxembourg-midco-4-s-r-l",
-            "name": "IRCA Group Luxembourg Midco 4 S.\u00e0.r.l."
-          }
+          "name": "IRCA Group Luxembourg Midco 4 S.\u00e0.r.l."
         }
       ],
       "other_parties": [
         {
           "name": "CVC Capital Partners plc",
-          "identifier_type": null,
-          "identifier": "JFSC \u2013 140080",
           "canonical": {
-            "id": "cvc-capital-partners",
-            "name": "CVC Capital Partners"
-          },
-          "party_page": {
-            "id": "cvc-capital-partners",
             "name": "CVC Capital Partners"
           }
         },
         {
           "name": "Advent International, L.P.",
-          "identifier_type": null,
-          "identifier": "Delaware LP number 2044184",
           "canonical": {
-            "id": "advent-international",
-            "name": "Advent International"
-          },
-          "party_page": {
-            "id": "advent-international",
             "name": "Advent International"
           }
         }
@@ -2945,8 +1792,7 @@
           "code": "6240",
           "name": "Financial Asset Investing"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/cvc-capital-partners-%E2%80%93-irca-group"
+      ]
     },
     {
       "merger_id": "WA-70032",
@@ -2963,53 +1809,23 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "Movac Growth Fund 7 Custodial Limited as trustee for Movac Growth Fund 7 Limited Partnership",
-          "identifier_type": null,
-          "identifier": "NZBN  9429053479068",
-          "party_page": {
-            "id": "movac-growth-fund-7-custodial-limited-as-trustee-for-movac-growth-fund-7-limited",
-            "name": "Movac Growth Fund 7 Custodial Limited as trustee for Movac Growth Fund 7 Limited Partnership"
-          }
+          "name": "Movac Growth Fund 7 Custodial Limited as trustee for Movac Growth Fund 7 Limited Partnership"
         }
       ],
       "targets": [
         {
-          "name": "ADVANCED NAVIGATION PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "49 156 101 549",
-          "party_page": {
-            "id": "advanced-navigation-pty-ltd",
-            "name": "Advanced Navigation Pty. Ltd."
-          }
+          "name": "ADVANCED NAVIGATION PTY. LTD."
         }
       ],
       "other_parties": [
         {
-          "name": "Movac Growth Fund 7 Limited Partnership",
-          "identifier_type": null,
-          "identifier": "NZBN  9429053763471",
-          "party_page": {
-            "id": "movac-growth-fund-7-limited-partnership",
-            "name": "Movac Growth Fund 7 Limited Partnership"
-          }
+          "name": "Movac Growth Fund 7 Limited Partnership"
         },
         {
-          "name": "Movac Growth Limited",
-          "identifier_type": null,
-          "identifier": "NZBN  9429050910694",
-          "party_page": {
-            "id": "movac-growth-limited",
-            "name": "Movac Growth Limited"
-          }
+          "name": "Movac Growth Limited"
         },
         {
-          "name": "Movac Limited",
-          "identifier_type": null,
-          "identifier": "NZBN  9429035072287",
-          "party_page": {
-            "id": "movac-limited",
-            "name": "Movac Limited"
-          }
+          "name": "Movac Limited"
         }
       ],
       "anzsic_codes": [
@@ -3045,8 +1861,7 @@
           "code": "7000",
           "name": "Computer System Design and Related Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/movac-%E2%80%93-advanced-navigation"
+      ]
     },
     {
       "merger_id": "WA-80034",
@@ -3063,73 +1878,30 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "QIC Investments No.5 Pty Ltd as trustee for Mondrian Hold Trust",
-          "identifier_type": "ABN",
-          "identifier": "66 682 890 035",
-          "party_page": {
-            "id": "qic-investments-no-5-pty-ltd-as-trustee-for-mondrian-hold-trust",
-            "name": "QIC Investments No.5 Pty Ltd as trustee for Mondrian Hold Trust"
-          }
+          "name": "QIC Investments No.5 Pty Ltd as trustee for Mondrian Hold Trust"
         }
       ],
       "targets": [
         {
-          "name": "THE TRUSTEE FOR SCENTRE GIFT CARD TRUST",
-          "identifier_type": "ABN",
-          "identifier": "78 407 025 369",
-          "party_page": {
-            "id": "the-trustee-for-scentre-gift-card-trust",
-            "name": "The Trustee For Scentre Gift Card Trust"
-          }
+          "name": "THE TRUSTEE FOR SCENTRE GIFT CARD TRUST"
         },
         {
-          "name": "The Trustee for WESTART TRUST",
-          "identifier_type": "ABN",
-          "identifier": "81 342 268 847",
-          "party_page": {
-            "id": "the-trustee-for-westart-trust",
-            "name": "The Trustee for WESTART TRUST"
-          }
+          "name": "The Trustee for WESTART TRUST"
         },
         {
-          "name": "SCENTRE ALLIANCES PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "53 098 357 521",
-          "party_page": {
-            "id": "scentre-alliances-pty-limited",
-            "name": "Scentre Alliances Pty Limited"
-          }
+          "name": "SCENTRE ALLIANCES PTY LIMITED"
         }
       ],
       "other_parties": [
         {
-          "name": "SCENTRE GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "66 001 671 496",
-          "party_page": {
-            "id": "scentre-group-limited",
-            "name": "Scentre Group Limited"
-          }
+          "name": "SCENTRE GROUP LIMITED"
         },
         {
-          "name": "The Trustee for Banksy Trading Trust",
-          "identifier_type": "ABN",
-          "identifier": "44 343 260 791",
-          "party_page": {
-            "id": "the-trustee-for-banksy-trading-trust",
-            "name": "The Trustee for Banksy Trading Trust"
-          }
+          "name": "The Trustee for Banksy Trading Trust"
         },
         {
           "name": "THE TRUSTEE FOR AUSTRALIAN RETIREMENT TRUST",
-          "identifier_type": "ABN",
-          "identifier": "60 905 115 063",
           "canonical": {
-            "id": "the-trustee-for-australian-retirement-trust",
-            "name": "The Trustee For Australian Retirement Trust"
-          },
-          "party_page": {
-            "id": "the-trustee-for-australian-retirement-trust",
             "name": "The Trustee For Australian Retirement Trust"
           }
         }
@@ -3155,8 +1927,7 @@
           "code": "9533",
           "name": "Parking Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/australian-retirement-trust-%E2%80%93-westfield-mt-gravatt"
+      ]
     },
     {
       "merger_id": "WA-85041",
@@ -3173,71 +1944,29 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "AGS ACCOUNTING PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "12 166 728 696",
-          "party_page": {
-            "id": "ags-accounting-pty-limited",
-            "name": "Ags Accounting Pty Limited"
-          }
+          "name": "AGS ACCOUNTING PTY LIMITED"
         },
         {
-          "name": "AGS FINANCIAL GROUP PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "70 093 990 946",
-          "party_page": {
-            "id": "ags-financial-group-pty-limited",
-            "name": "Ags Financial Group Pty Limited"
-          }
+          "name": "AGS FINANCIAL GROUP PTY LIMITED"
         }
       ],
       "targets": [
         {
-          "name": "PLATINUM DIAMOND FINANCIAL SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "76 615 645 979",
-          "party_page": {
-            "id": "platinum-diamond-financial-services-pty-ltd",
-            "name": "Platinum Diamond Financial Services Pty Ltd"
-          }
+          "name": "PLATINUM DIAMOND FINANCIAL SERVICES PTY LTD"
         },
         {
-          "name": "TAX AND WEALTH PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "45 606 112 805",
-          "party_page": {
-            "id": "tax-and-wealth-pty-ltd",
-            "name": "Tax And Wealth Pty Ltd"
-          }
+          "name": "TAX AND WEALTH PTY LTD"
         },
         {
-          "name": "HARTLEY FINANCIAL PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "22 124 384 274",
-          "party_page": {
-            "id": "hartley-financial-pty-ltd",
-            "name": "Hartley Financial Pty. Ltd."
-          }
+          "name": "HARTLEY FINANCIAL PTY. LTD."
         }
       ],
       "other_parties": [
         {
-          "name": "AZ NEXT GENERATION ADVISORY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "57 167 960 018",
-          "party_page": {
-            "id": "az-next-generation-advisory-pty-ltd",
-            "name": "Az Next Generation Advisory Pty Ltd"
-          }
+          "name": "AZ NEXT GENERATION ADVISORY PTY LTD"
         },
         {
-          "name": "ASSOCIATED PLANNERS FINANCIAL SERVICES PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "38 097 451 495",
-          "party_page": {
-            "id": "associated-planners-financial-services-pty-limited",
-            "name": "Associated Planners Financial Services Pty Limited"
-          }
+          "name": "ASSOCIATED PLANNERS FINANCIAL SERVICES PTY LIMITED"
         }
       ],
       "anzsic_codes": [
@@ -3253,8 +1982,7 @@
           "code": "6932",
           "name": "Accounting Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/ags-financial-group-hartley-financial-group"
+      ]
     },
     {
       "merger_id": "MN-01115",
@@ -3272,40 +2000,20 @@
       "acquirers": [
         {
           "name": "MM SECURITY SUPPLIES PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "14 670 314 913",
           "canonical": {
-            "id": "metal-manufactures",
-            "name": "Metal Manufactures"
-          },
-          "party_page": {
-            "id": "metal-manufactures",
             "name": "Metal Manufactures"
           }
         }
       ],
       "targets": [
         {
-          "name": "MICRON ALARM SUPPLIES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "39 002 553 406",
-          "party_page": {
-            "id": "micron-alarm-supplies-pty-ltd",
-            "name": "Micron Alarm Supplies Pty Ltd"
-          }
+          "name": "MICRON ALARM SUPPLIES PTY LTD"
         }
       ],
       "other_parties": [
         {
           "name": "MML HOLDINGS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "55 084 402 380",
           "canonical": {
-            "id": "metal-manufactures",
-            "name": "Metal Manufactures"
-          },
-          "party_page": {
-            "id": "metal-manufactures",
             "name": "Metal Manufactures"
           }
         }
@@ -3315,8 +2023,7 @@
           "code": "3494",
           "name": "Other Electrical and Electronic Goods Wholesaling"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/mm-security-%E2%80%93-micron-security-products"
+      ]
     },
     {
       "merger_id": "MN-50032",
@@ -3334,14 +2041,7 @@
       "acquirers": [
         {
           "name": "Accenture Venture Holdings, LLC",
-          "identifier_type": null,
-          "identifier": "Delaware registered number  10429510",
           "canonical": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          },
-          "party_page": {
-            "id": "accenture-plc",
             "name": "Accenture"
           }
         }
@@ -3349,53 +2049,25 @@
       "targets": [
         {
           "name": "Dragos, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware file number  6028773",
           "canonical": {
-            "id": "dragos-inc",
-            "name": "Dragos"
-          },
-          "party_page": {
-            "id": "dragos-inc",
             "name": "Dragos"
           }
         },
         {
           "name": "Phosphorus Security LLC",
-          "identifier_type": null,
-          "identifier": "Delaware file number  10549306",
           "canonical": {
-            "id": "dragos-inc",
-            "name": "Dragos"
-          },
-          "party_page": {
-            "id": "dragos-inc",
             "name": "Dragos"
           }
         },
         {
           "name": "PHOSPHORUS (AUS) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "58 678 218 356",
           "canonical": {
-            "id": "dragos-inc",
-            "name": "Dragos"
-          },
-          "party_page": {
-            "id": "dragos-inc",
             "name": "Dragos"
           }
         },
         {
           "name": "DRAGOS AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "62 638 810 616",
           "canonical": {
-            "id": "dragos-inc",
-            "name": "Dragos"
-          },
-          "party_page": {
-            "id": "dragos-inc",
             "name": "Dragos"
           }
         }
@@ -3403,49 +2075,22 @@
       "other_parties": [
         {
           "name": "Accenture plc",
-          "identifier_type": null,
-          "identifier": "Ireland registered number  471706",
           "canonical": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          },
-          "party_page": {
-            "id": "accenture-plc",
             "name": "Accenture"
           }
         },
         {
-          "name": "CYBERCX PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "90 629 363 328",
-          "party_page": {
-            "id": "cybercx-pty-ltd",
-            "name": "Cybercx Pty Ltd"
-          }
+          "name": "CYBERCX PTY LTD"
         },
         {
           "name": "Accenture Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware registered number  3387477",
           "canonical": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          },
-          "party_page": {
-            "id": "accenture-plc",
             "name": "Accenture"
           }
         },
         {
           "name": "ACCENTURE AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "49 096 776 895",
           "canonical": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          },
-          "party_page": {
-            "id": "accenture-plc",
             "name": "Accenture"
           }
         }
@@ -3459,8 +2104,7 @@
           "code": "7000",
           "name": "Computer System Design and Related Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/accenture-dragos"
+      ]
     },
     {
       "merger_id": "MN-60031",
@@ -3478,75 +2122,35 @@
       "acquirers": [
         {
           "name": "Accenture Venture Holdings, LLC",
-          "identifier_type": null,
-          "identifier": "Delaware file number  10429510",
           "canonical": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          },
-          "party_page": {
-            "id": "accenture-plc",
             "name": "Accenture"
           }
         }
       ],
       "targets": [
         {
-          "name": "runZero, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware registered number  7045767",
-          "party_page": {
-            "id": "runzero-inc",
-            "name": "runZero, Inc."
-          }
+          "name": "runZero, Inc."
         }
       ],
       "other_parties": [
         {
           "name": "Accenture Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware registered number  3387477",
           "canonical": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          },
-          "party_page": {
-            "id": "accenture-plc",
             "name": "Accenture"
           }
         },
         {
           "name": "Accenture plc",
-          "identifier_type": null,
-          "identifier": "Ireland registered number  471706",
           "canonical": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          },
-          "party_page": {
-            "id": "accenture-plc",
             "name": "Accenture"
           }
         },
         {
-          "name": "CYBERCX PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "90 629 363 328",
-          "party_page": {
-            "id": "cybercx-pty-ltd",
-            "name": "Cybercx Pty Ltd"
-          }
+          "name": "CYBERCX PTY LTD"
         },
         {
           "name": "ACCENTURE AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "49 096 776 895",
           "canonical": {
-            "id": "accenture-plc",
-            "name": "Accenture"
-          },
-          "party_page": {
-            "id": "accenture-plc",
             "name": "Accenture"
           }
         }
@@ -3560,8 +2164,7 @@
           "code": "7000",
           "name": "Computer System Design and Related Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/accenture-runzero"
+      ]
     },
     {
       "merger_id": "WA-01118",
@@ -3578,33 +2181,15 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "The Athlete\u2019s Foot Australia Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "57 001 777 582",
-          "party_page": {
-            "id": "the-athlete-s-foot-australia-pty-ltd",
-            "name": "The Athlete\u2019s Foot Australia Pty Ltd"
-          }
+          "name": "The Athlete\u2019s Foot Australia Pty Ltd"
         },
         {
-          "name": "ACCENT GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "85 108 096 251",
-          "party_page": {
-            "id": "accent-group-limited",
-            "name": "Accent Group Limited"
-          }
+          "name": "ACCENT GROUP LIMITED"
         }
       ],
       "targets": [
         {
-          "name": "West Feet Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "21 129 844 944",
-          "party_page": {
-            "id": "west-feet-pty-ltd",
-            "name": "West Feet Pty Ltd"
-          }
+          "name": "West Feet Pty Ltd"
         }
       ],
       "other_parties": [],
@@ -3613,8 +2198,7 @@
           "code": "4252",
           "name": "Footwear Retailing"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/accent-group-%E2%80%93-the-athlete%E2%80%99s-foot-in-karrinyup-wa"
+      ]
     },
     {
       "merger_id": "WA-30031",
@@ -3631,24 +2215,12 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "Endeavor Purchaser V, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "endeavor-purchaser-v-inc",
-            "name": "Endeavor Purchaser V, Inc."
-          }
+          "name": "Endeavor Purchaser V, Inc."
         }
       ],
       "targets": [
         {
-          "name": "Dresser Utility Solutions, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "dresser-utility-solutions-llc",
-            "name": "Dresser Utility Solutions, LLC"
-          }
+          "name": "Dresser Utility Solutions, LLC"
         }
       ],
       "other_parties": [],
@@ -3665,8 +2237,7 @@
           "code": "6419",
           "name": "Other Auxiliary Finance and Investment Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/blackstone-%E2%80%93-dresser-utility-solutions"
+      ]
     },
     {
       "merger_id": "WA-60033",
@@ -3683,80 +2254,32 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "Newco (an entity to be established by Verlinvest SA)",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "newco-an-entity-to-be-established-by-verlinvest-sa",
-            "name": "Newco (an entity to be established by Verlinvest SA)"
-          }
+          "name": "Newco (an entity to be established by Verlinvest SA)"
         },
         {
-          "name": "Verlinvest SA",
-          "identifier_type": null,
-          "identifier": "BE0455030364",
-          "party_page": {
-            "id": "verlinvest-sa",
-            "name": "Verlinvest SA"
-          }
+          "name": "Verlinvest SA"
         }
       ],
       "targets": [
         {
-          "name": "Tukazza Invest ! SAS",
-          "identifier_type": null,
-          "identifier": "899 479 034 R.C.S. Paris",
-          "party_page": {
-            "id": "tukazza-invest-sas",
-            "name": "Tukazza Invest ! SAS"
-          }
+          "name": "Tukazza Invest ! SAS"
         },
         {
-          "name": "Tukazza ! SAS",
-          "identifier_type": null,
-          "identifier": "532 000 783 R.C.S. Paris",
-          "party_page": {
-            "id": "tukazza-sas",
-            "name": "Tukazza ! SAS"
-          }
+          "name": "Tukazza ! SAS"
         }
       ],
       "other_parties": [
         {
-          "name": "FPCI Collaborative, managed by Capital Croissance",
-          "identifier_type": null,
-          "identifier": "753 290 865 R.C.S. Paris",
-          "party_page": {
-            "id": "fpci-collaborative-managed-by-capital-croissance",
-            "name": "FPCI Collaborative, managed by Capital Croissance"
-          }
+          "name": "FPCI Collaborative, managed by Capital Croissance"
         },
         {
-          "name": "Pacifica Holding",
-          "identifier_type": null,
-          "identifier": "899 214 126 R.C.S. Paris",
-          "party_page": {
-            "id": "pacifica-holding",
-            "name": "Pacifica Holding"
-          }
+          "name": "Pacifica Holding"
         },
         {
-          "name": "Holding Tom\u00e9",
-          "identifier_type": null,
-          "identifier": "899 161 467 R.C.S. Paris",
-          "party_page": {
-            "id": "holding-tom",
-            "name": "Holding Tom\u00e9"
-          }
+          "name": "Holding Tom\u00e9"
         },
         {
-          "name": "FPCI ISAI Expansion II, managed by ISAI Gestion SAS",
-          "identifier_type": null,
-          "identifier": "508 804 507 R.C.S. Paris",
-          "party_page": {
-            "id": "fpci-isai-expansion-ii-managed-by-isai-gestion-sas",
-            "name": "FPCI ISAI Expansion II, managed by ISAI Gestion SAS"
-          }
+          "name": "FPCI ISAI Expansion II, managed by ISAI Gestion SAS"
         }
       ],
       "anzsic_codes": [
@@ -3772,8 +2295,7 @@
           "code": "7000",
           "name": "Computer System Design and Related Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/verlinvest-%E2%80%93-up-to-60-interest-in-homeexchange"
+      ]
     },
     {
       "merger_id": "MN-01116",
@@ -3790,24 +2312,12 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "SILK CONTRACT LOGISTICS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "56 006 444 355",
-          "party_page": {
-            "id": "silk-contract-logistics-pty-ltd",
-            "name": "Silk Contract Logistics Pty Ltd"
-          }
+          "name": "SILK CONTRACT LOGISTICS PTY LTD"
         }
       ],
       "targets": [
         {
-          "name": "TOLL TRANSPORT PTY. LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "31 006 604 191",
-          "party_page": {
-            "id": "toll-transport-pty-limited",
-            "name": "Toll Transport Pty. Limited"
-          }
+          "name": "TOLL TRANSPORT PTY. LIMITED"
         }
       ],
       "other_parties": [],
@@ -3824,8 +2334,7 @@
           "code": "5299",
           "name": "Other Transport Support Services n.e.c."
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/silk-contract-logistics-%E2%80%93-toll-transport-bulk-logistics-glass-and-plastic-assets"
+      ]
     },
     {
       "merger_id": "MN-10022",
@@ -3842,79 +2351,35 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "M Resources Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "67 151 351 790",
-          "party_page": {
-            "id": "m-resources-pty-ltd",
-            "name": "M Resources Pty Ltd"
-          }
+          "name": "M Resources Pty Ltd"
         },
         {
-          "name": "Golden M Tahmoor Coal Holdings Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "697 956 791",
-          "party_page": {
-            "id": "golden-m-tahmoor-coal-holdings-pty-ltd",
-            "name": "Golden M Tahmoor Coal Holdings Pty Ltd"
-          }
+          "name": "Golden M Tahmoor Coal Holdings Pty Ltd"
         },
         {
-          "name": "Golden Energy and Resources Pte Ltd",
-          "identifier_type": null,
-          "identifier": "UEN  199508589E",
-          "party_page": {
-            "id": "golden-energy-and-resources-pte-ltd",
-            "name": "Golden Energy and Resources Pte Ltd"
-          }
+          "name": "Golden Energy and Resources Pte Ltd"
         }
       ],
       "targets": [
         {
           "name": "Bargo Collieries Pty Ltd (In Liquidation)",
-          "identifier_type": "ABN",
-          "identifier": "34 000 970 276",
           "canonical": {
-            "id": "tahmoor-colliery",
-            "name": "Tahmoor Colliery"
-          },
-          "party_page": {
-            "id": "tahmoor-colliery",
             "name": "Tahmoor Colliery"
           }
         },
         {
           "name": "Tahmoor Coal Pty Ltd (In Liquidation)",
-          "identifier_type": "ABN",
-          "identifier": "97 076 663 968",
           "canonical": {
-            "id": "tahmoor-colliery",
-            "name": "Tahmoor Colliery"
-          },
-          "party_page": {
-            "id": "tahmoor-colliery",
             "name": "Tahmoor Colliery"
           }
         }
       ],
       "other_parties": [
         {
-          "name": "Jonathan Henry",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "jonathan-henry",
-            "name": "Jonathan Henry"
-          }
+          "name": "Jonathan Henry"
         },
         {
-          "name": "Shaun Fraser",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "shaun-fraser",
-            "name": "Shaun Fraser"
-          }
+          "name": "Shaun Fraser"
         }
       ],
       "anzsic_codes": [
@@ -3934,8 +2399,7 @@
           "code": "6932",
           "name": "Accounting Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/m-resources-and-golden-energy-and-resources-%E2%80%93-tahmoor-coal-mine"
+      ]
     },
     {
       "merger_id": "MN-70027",
@@ -3952,88 +2416,38 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "Horizon Parent, L.P.",
-          "identifier_type": null,
-          "identifier": "EIN 414485659",
-          "party_page": {
-            "id": "horizon-parent-l-p",
-            "name": "Horizon Parent, L.P."
-          }
+          "name": "Horizon Parent, L.P."
         },
         {
-          "name": "EQT Keystone TopCo, LP",
-          "identifier_type": null,
-          "identifier": "EIN 414395672",
-          "party_page": {
-            "id": "eqt-keystone-topco-lp",
-            "name": "EQT Keystone TopCo, LP"
-          }
+          "name": "EQT Keystone TopCo, LP"
         },
         {
           "name": "Qatar Holding LLC",
-          "identifier_type": null,
-          "identifier": "CIK: 0001539025, Qatar Financial Centre no. 00004",
           "canonical": {
-            "id": "qatar-investment-authority",
-            "name": "Qatar Investment Authority"
-          },
-          "party_page": {
-            "id": "qatar-investment-authority",
             "name": "Qatar Investment Authority"
           }
         },
         {
-          "name": "GIP Granite Co-Underwrite, L.P.",
-          "identifier_type": null,
-          "identifier": "10651649 (Corporation registration number)",
-          "party_page": {
-            "id": "gip-granite-co-underwrite-l-p",
-            "name": "GIP Granite Co-Underwrite, L.P."
-          }
+          "name": "GIP Granite Co-Underwrite, L.P."
         },
         {
           "name": "QIA Infrastructure Holding LLC",
-          "identifier_type": null,
-          "identifier": "Qatar Financial Centre no. 01821",
           "canonical": {
-            "id": "qatar-investment-authority",
-            "name": "Qatar Investment Authority"
-          },
-          "party_page": {
-            "id": "qatar-investment-authority",
             "name": "Qatar Investment Authority"
           }
         }
       ],
       "targets": [
         {
-          "name": "The AES Corporation",
-          "identifier_type": null,
-          "identifier": "541163725 (I.R.S. Employer Identification Number)",
-          "party_page": {
-            "id": "the-aes-corporation",
-            "name": "The AES Corporation"
-          }
+          "name": "The AES Corporation"
         }
       ],
       "other_parties": [
         {
-          "name": "5B HOLDINGS PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "97 606 402 699",
-          "party_page": {
-            "id": "5b-holdings-pty-ltd",
-            "name": "5B Holdings Pty. Ltd."
-          }
+          "name": "5B HOLDINGS PTY. LTD."
         },
         {
-          "name": "Fluence Energy Pty Ltd",
-          "identifier_type": null,
-          "identifier": "871304612 (I.R.S. Employer Identification No.)",
-          "party_page": {
-            "id": "fluence-energy-pty-ltd",
-            "name": "Fluence Energy Pty Ltd"
-          }
+          "name": "Fluence Energy Pty Ltd"
         }
       ],
       "anzsic_codes": [
@@ -4057,8 +2471,7 @@
           "code": "6240",
           "name": "Financial Asset Investing"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/global-infrastructure-management-and-eqt-led-consortium-aes-corporation"
+      ]
     },
     {
       "merger_id": "WA-40035",
@@ -4075,89 +2488,35 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "SCM FINANCIAL GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "95 659 181 012",
-          "party_page": {
-            "id": "scm-financial-group-pty-ltd",
-            "name": "Scm Financial Group Pty Ltd"
-          }
+          "name": "SCM FINANCIAL GROUP PTY LTD"
         }
       ],
       "targets": [
         {
-          "name": "STRATEGIC FINANCIAL PLANNERS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "15 065 497 270",
-          "party_page": {
-            "id": "strategic-financial-planners-pty-ltd",
-            "name": "Strategic Financial Planners Pty Ltd"
-          }
+          "name": "STRATEGIC FINANCIAL PLANNERS PTY LTD"
         },
         {
-          "name": "STRATEGIC SUPER SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "20 164 018 311",
-          "party_page": {
-            "id": "strategic-super-services-pty-ltd",
-            "name": "Strategic Super Services Pty Ltd"
-          }
+          "name": "STRATEGIC SUPER SERVICES PTY LTD"
         },
         {
-          "name": "The Trustee for S3 STRATEGIC SUPER SERVICES UNIT TRUST",
-          "identifier_type": "ABN",
-          "identifier": "25 442 350 701",
-          "party_page": {
-            "id": "the-trustee-for-s3-strategic-super-services-unit-trust",
-            "name": "The Trustee for S3 STRATEGIC SUPER SERVICES UNIT TRUST"
-          }
+          "name": "The Trustee for S3 STRATEGIC SUPER SERVICES UNIT TRUST"
         },
         {
-          "name": "STRATEGIC ACCOUNTANTS AND BUSINESS ADVISORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "18 164 018 302",
-          "party_page": {
-            "id": "strategic-accountants-and-business-advisors-pty-ltd",
-            "name": "Strategic Accountants And Business Advisors Pty Ltd"
-          }
+          "name": "STRATEGIC ACCOUNTANTS AND BUSINESS ADVISORS PTY LTD"
         },
         {
-          "name": "The Trustee for STRATEGIC ACCOUNTANTS AND BUSINESS ADVISORS UNIT TRUST",
-          "identifier_type": "ABN",
-          "identifier": "91 731 177 189",
-          "party_page": {
-            "id": "the-trustee-for-strategic-accountants-and-business-advisors-unit-trust",
-            "name": "The Trustee for STRATEGIC ACCOUNTANTS AND BUSINESS ADVISORS UNIT TRUST"
-          }
+          "name": "The Trustee for STRATEGIC ACCOUNTANTS AND BUSINESS ADVISORS UNIT TRUST"
         }
       ],
       "other_parties": [
         {
-          "name": "AZ NEXT GENERATION ADVISORY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "57 167 960 018",
-          "party_page": {
-            "id": "az-next-generation-advisory-pty-ltd",
-            "name": "Az Next Generation Advisory Pty Ltd"
-          }
+          "name": "AZ NEXT GENERATION ADVISORY PTY LTD"
         },
         {
-          "name": "AZ AUST HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "74 675 083 717",
-          "party_page": {
-            "id": "az-aust-holdings-pty-ltd",
-            "name": "Az Aust Holdings Pty Ltd"
-          }
+          "name": "AZ AUST HOLDINGS PTY LTD"
         },
         {
-          "name": "AZ NGA HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "12 675 083 833",
-          "party_page": {
-            "id": "az-nga-holdings-pty-ltd",
-            "name": "Az Nga Holdings Pty Ltd"
-          }
+          "name": "AZ NGA HOLDINGS PTY LTD"
         }
       ],
       "anzsic_codes": [
@@ -4169,8 +2528,7 @@
           "code": "6932",
           "name": "Accounting Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/scm-financial-group-strategic-wealth-services-group"
+      ]
     },
     {
       "merger_id": "WA-60034",
@@ -4188,14 +2546,7 @@
       "acquirers": [
         {
           "name": "BCPE Blitz Cayman, L.P.",
-          "identifier_type": null,
-          "identifier": "",
           "canonical": {
-            "id": "bain-capital-investors-llc",
-            "name": "Bain Capital Investors"
-          },
-          "party_page": {
-            "id": "bain-capital-investors-llc",
             "name": "Bain Capital Investors"
           }
         }
@@ -4203,14 +2554,7 @@
       "targets": [
         {
           "name": "Kakaku.com, Inc.",
-          "identifier_type": null,
-          "identifier": "Japan Corporate Number  011001065997",
           "canonical": {
-            "id": "time-design-international-pte-ltd",
-            "name": "Kakaku.com"
-          },
-          "party_page": {
-            "id": "time-design-international-pte-ltd",
             "name": "Kakaku.com"
           }
         }
@@ -4218,27 +2562,13 @@
       "other_parties": [
         {
           "name": "Bain Capital Investors, LLC.",
-          "identifier_type": null,
-          "identifier": "Delaware File Number  3229725",
           "canonical": {
-            "id": "bain-capital-investors-llc",
-            "name": "Bain Capital Investors"
-          },
-          "party_page": {
-            "id": "bain-capital-investors-llc",
             "name": "Bain Capital Investors"
           }
         },
         {
           "name": "Time Design International Pte Ltd",
-          "identifier_type": null,
-          "identifier": "UEN  201736394D",
           "canonical": {
-            "id": "time-design-international-pte-ltd",
-            "name": "Kakaku.com"
-          },
-          "party_page": {
-            "id": "time-design-international-pte-ltd",
             "name": "Kakaku.com"
           }
         }
@@ -4256,8 +2586,7 @@
           "code": "7220",
           "name": "Travel Agency and Tour Arrangement Services"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/bain-capital-%E2%80%93-kakakucom"
+      ]
     },
     {
       "merger_id": "WA-05045",
@@ -4274,44 +2603,20 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "GTOWN MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "49 696 167 996",
-          "party_page": {
-            "id": "gtown-motors-pty-ltd",
-            "name": "Gtown Motors Pty Ltd"
-          }
+          "name": "GTOWN MOTORS PTY LTD"
         }
       ],
       "targets": [
         {
-          "name": "KEN CASSON MOTORS PTY. LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "32 003 933 695",
-          "party_page": {
-            "id": "ken-casson-motors-pty-limited",
-            "name": "Ken Casson Motors Pty. Limited"
-          }
+          "name": "KEN CASSON MOTORS PTY. LIMITED"
         }
       ],
       "other_parties": [
         {
-          "name": "HOUMA HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "44 002 590 758",
-          "party_page": {
-            "id": "houma-holdings-pty-ltd",
-            "name": "Houma Holdings Pty Ltd"
-          }
+          "name": "HOUMA HOLDINGS PTY LTD"
         },
         {
-          "name": "GRAFTON MOTOR GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "61 107 107 559",
-          "party_page": {
-            "id": "grafton-motor-group-pty-ltd",
-            "name": "Grafton Motor Group Pty Ltd"
-          }
+          "name": "GRAFTON MOTOR GROUP PTY LTD"
         }
       ],
       "anzsic_codes": [
@@ -4319,8 +2624,7 @@
           "code": "3911",
           "name": "Car Retailing"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/grafton-motor-group-%E2%80%93-grafton-mazda"
+      ]
     },
     {
       "merger_id": "WA-20033",
@@ -4337,33 +2641,15 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "REDIRECT HOLDINGS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "13 640 468 908",
-          "party_page": {
-            "id": "redirect-holdings-pty-limited",
-            "name": "Redirect Holdings Pty Limited"
-          }
+          "name": "REDIRECT HOLDINGS PTY LIMITED"
         }
       ],
       "targets": [
         {
-          "name": "NEXT CAPITAL PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "75 111 963 583",
-          "party_page": {
-            "id": "next-capital-pty-limited",
-            "name": "Next Capital Pty Limited"
-          }
+          "name": "NEXT CAPITAL PTY LIMITED"
         },
         {
-          "name": "ECHO SOLVE PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "91 695 575 190",
-          "party_page": {
-            "id": "echo-solve-pty-limited",
-            "name": "Echo Solve Pty Limited"
-          }
+          "name": "ECHO SOLVE PTY LIMITED"
         }
       ],
       "other_parties": [],
@@ -4384,8 +2670,7 @@
           "code": "6240",
           "name": "Financial Asset Investing"
         }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/redirect-holdings-echo-solve"
+      ]
     }
   ],
   "page": 11,

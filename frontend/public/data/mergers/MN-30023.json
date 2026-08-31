@@ -7,7 +7,6 @@
   "original_notification_datetime": "2026-07-16T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-09-10T12:00:00Z",
-  "page_modified_datetime": "2026-08-10T13:12:13+10:00",
   "consultation_response_due_date": "2026-07-23T12:00:00Z",
   "acquirers": [
     {
@@ -121,111 +120,42 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "WA-90011",
       "merger_name": "Salter Brothers - Buroserv",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BUROSERV TELCO HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "17 690 175 770",
-          "party_page": {
-            "id": "buroserv-telco-holdings-pty-ltd",
-            "name": "Buroserv Telco Holdings Pty Ltd"
-          }
-        }
+        "BUROSERV TELCO HOLDINGS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "LMGPS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "48 612 519 178",
-          "party_page": {
-            "id": "lmgps-pty-ltd",
-            "name": "Lmgps Pty Ltd"
-          }
-        }
-      ]
+        "LMGPS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-60013",
       "merger_name": "Export Trading Group Australia \u2013 pulses and grains business and facility in Mount Tyson, QLD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ETG QUEENSLAND PROCESSING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "20 695 139 032",
-          "party_page": {
-            "id": "etg-queensland-processing-pty-ltd",
-            "name": "Etg Queensland Processing Pty Ltd"
-          }
-        }
+        "ETG QUEENSLAND PROCESSING PTY LTD"
       ],
       "targets": [
-        {
-          "name": "QUEENSLAND COTTON CORPORATION PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "26 010 944 591",
-          "party_page": {
-            "id": "queensland-cotton-corporation-pty-ltd",
-            "name": "Queensland Cotton Corporation Pty Ltd"
-          }
-        }
-      ]
+        "QUEENSLAND COTTON CORPORATION PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-65004",
       "merger_name": "Kee Safety - RIS Safety",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Cielo TopCo Limited",
-          "identifier_type": null,
-          "identifier": "CRN  16320933",
-          "party_page": {
-            "id": "cielo-topco-limited",
-            "name": "Cielo TopCo Limited"
-          }
-        },
-        {
-          "name": "Kee Safety (Australia) Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "694 369 116",
-          "party_page": {
-            "id": "kee-safety-australia-pty-ltd",
-            "name": "Kee Safety (Australia) Pty Ltd"
-          }
-        }
+        "Cielo TopCo Limited",
+        "Kee Safety (Australia) Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "HALLWELD BENNETT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "15 161 086 595",
-          "party_page": {
-            "id": "hallweld-bennett-pty-ltd",
-            "name": "Hallweld Bennett Pty Ltd"
-          }
-        },
-        {
-          "name": "RIS SAFETY HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "19 668 836 351",
-          "party_page": {
-            "id": "ris-safety-holdings-pty-ltd",
-            "name": "Ris Safety Holdings Pty Ltd"
-          }
-        }
-      ]
+        "HALLWELD BENNETT PTY LTD",
+        "RIS SAFETY HOLDINGS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

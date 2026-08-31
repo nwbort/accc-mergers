@@ -9,8 +9,6 @@
   "end_of_determination_period": "2026-04-28T12:00:00Z",
   "determination_publication_date": "2026-04-02T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-04-07T13:15:28+10:00",
   "consultation_response_due_date": "2026-03-20T12:00:00Z",
   "acquirers": [
     {
@@ -137,31 +135,10 @@
       "title": "KPS Capital - Novacel - Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/KPS%20Capital-Novacel%20-%20Phase%201%20determination.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "KPS Special Situations Mid-Cap Fund II\u2019s (KPS) proposes to acquire\n100% of the share capital in:\n\u2022 Chargeurs Films de Protection SAS,\n\u2022 Novacel, Inc.,\n\u2022 Walco, Inc., and\n\u2022 Novacel Performance Coatings, Inc.\n(collectively, Novacel),\nFollowing completion, the seller, Compagnie Chargeurs Invest SA\nwill roll-over an interest of approximately 25% in Novacel, with no\njoint control rights (together, the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "The acquirer, KPS and its associated entities, is a private investment\ncompany incorporated in the US. Through its funds, KPS makes\nequity investments in manufacturing and industrial companies\nacross a diverse array of industries, including basic materials,\nbranded consumer, healthcare and luxury products, automotive\nparts, capital equipment and general manufacturing.\nNovacel, is a global producer of specialty processing films used for\nprotecting surfaces during manufacturing, assembly, transport or\ninstallation, as well as specialty tapes and kraft papers used to\nprotect, hold, splice, wrap or strap industrial materials, and\nassociated specialty machines used in industrial material handling\nand processing. Novacel only supplies processing and protective\nfilms in Australia."
-        },
-        {
-          "item": "Overlap and relationship\nbetween the parties",
-          "details": "There is no horizontal overlap or vertical relationship between KPS\n(and its connected entities) and Novacel in Australia."
-        },
         {
           "item": "Reasons for determination",
           "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 There are no horizontal overlaps or vertical relationships\nbetween KPS (and its connected entities) and Novacel."
-        },
-        {
-          "item": "Applications for review",
-          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
         }
       ],
       "url_gh": "/mergers/MN-25006/KPS Capital-Novacel - Phase 1 determination.pdf",
@@ -175,142 +152,45 @@
   "phase_1_determination_date": "2026-04-02T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "WA-55014",
       "merger_name": "KPS Capital Partners - Jennmar",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "KPS Capital Partners, LP",
-          "identifier_type": null,
-          "identifier": "CRD 157678 / SEC: 80173907",
-          "canonical": {
-            "id": "kps-capital-partners",
-            "name": "KPS Capital Partners"
-          },
-          "party_page": {
-            "id": "kps-capital-partners",
-            "name": "KPS Capital Partners"
-          }
-        },
-        {
-          "name": "Three Rivers Purchaser, LLC",
-          "identifier_type": null,
-          "identifier": "10533455",
-          "party_page": {
-            "id": "three-rivers-purchaser-llc",
-            "name": "Three Rivers Purchaser, LLC"
-          }
-        }
+        "KPS Capital Partners, LP",
+        "Three Rivers Purchaser, LLC"
       ],
       "targets": [
-        {
-          "name": "Jennmar Intermediate Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "990520173",
-          "party_page": {
-            "id": "jennmar-intermediate-holdings-inc",
-            "name": "Jennmar Intermediate Holdings, Inc."
-          }
-        },
-        {
-          "name": "Jennmar Super Holdings, LLC",
-          "identifier_type": null,
-          "identifier": "412378602",
-          "party_page": {
-            "id": "jennmar-super-holdings-llc",
-            "name": "Jennmar Super Holdings, LLC"
-          }
-        }
-      ]
+        "Jennmar Intermediate Holdings, Inc.",
+        "Jennmar Super Holdings, LLC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-40003",
       "merger_name": "CVC Capital Partners \u2013 Smiths Detection Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Skyshield UK Bidco Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "skyshield-uk-bidco-limited",
-            "name": "Skyshield UK Bidco Limited"
-          }
-        },
-        {
-          "name": "Skyshield US Bidco Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "skyshield-us-bidco-limited",
-            "name": "Skyshield US Bidco Limited"
-          }
-        }
+        "Skyshield UK Bidco Limited",
+        "Skyshield US Bidco Limited"
       ],
       "targets": [
-        {
-          "name": "Smiths Detection Group Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "smiths-detection-group-limited",
-            "name": "Smiths Detection Group Limited"
-          }
-        }
-      ]
+        "Smiths Detection Group Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25014",
       "merger_name": "CVC Capital Partners \u2013 The animal nutrition and health division of the DSM-Firmenich Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Essential Bidco B.V.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "essential-bidco-b-v",
-            "name": "Essential Bidco B.V."
-          }
-        },
-        {
-          "name": "Specialty (U.S.) Bidco, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "specialty-u-s-bidco-inc",
-            "name": "Specialty (U.S.) Bidco, Inc."
-          }
-        }
+        "Essential Bidco B.V.",
+        "Specialty (U.S.) Bidco, Inc."
       ],
       "targets": [
-        {
-          "name": "SpecialtyCo US LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "specialtyco-us-llc",
-            "name": "SpecialtyCo US LLC"
-          }
-        },
-        {
-          "name": "Biomin Phytogenics GmbH (Germany)",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "biomin-phytogenics-gmbh-germany",
-            "name": "Biomin Phytogenics GmbH (Germany)"
-          }
-        }
-      ]
+        "SpecialtyCo US LLC",
+        "Biomin Phytogenics GmbH (Germany)"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

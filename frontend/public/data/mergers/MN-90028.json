@@ -7,7 +7,6 @@
   "original_notification_datetime": "2026-07-13T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-09-04T12:00:00Z",
-  "page_modified_datetime": "2026-08-19T17:17:46+10:00",
   "consultation_response_due_date": "2026-07-13T12:00:00Z",
   "acquirers": [
     {
@@ -166,8 +165,6 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "related_merger": {
     "merger_id": "MN-30002",
@@ -178,84 +175,26 @@
     {
       "merger_id": "WA-30010",
       "merger_name": "MAG South Coast - Country Motor Company / Kinghorn Motors",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
       "acquirers": [
-        {
-          "name": "MAG SOUTH COAST PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "70 683 627 590",
-          "canonical": {
-            "id": "mccarroll-s-automotive-group",
-            "name": "McCarroll's Automotive Group"
-          },
-          "party_page": {
-            "id": "mccarroll-s-automotive-group",
-            "name": "McCarroll's Automotive Group"
-          }
-        },
-        {
-          "name": "MCCARROLL PROPERTY HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "64 676 724 306",
-          "canonical": {
-            "id": "mccarroll-s-automotive-group",
-            "name": "McCarroll's Automotive Group"
-          },
-          "party_page": {
-            "id": "mccarroll-s-automotive-group",
-            "name": "McCarroll's Automotive Group"
-          }
-        }
+        "MAG SOUTH COAST PTY LTD",
+        "MCCARROLL PROPERTY HOLDINGS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Donna Lea Buikstra Family Will Trust",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "donna-lea-buikstra-family-will-trust",
-            "name": "Donna Lea Buikstra Family Will Trust"
-          }
-        },
-        {
-          "name": "Glenn Ype Buikstra Family Will Trust",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "glenn-ype-buikstra-family-will-trust",
-            "name": "Glenn Ype Buikstra Family Will Trust"
-          }
-        }
-      ]
+        "Donna Lea Buikstra Family Will Trust",
+        "Glenn Ype Buikstra Family Will Trust"
+      ],
+      "accc_determination": "Not approved"
     },
     {
       "merger_id": "MN-90006",
       "merger_name": "CARe \u2013 MotorOne Autobody",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CARE AUTOBODY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 692 619 962",
-          "party_page": {
-            "id": "care-autobody-pty-ltd",
-            "name": "Care Autobody Pty Ltd"
-          }
-        }
+        "CARE AUTOBODY PTY LTD"
       ],
       "targets": [
-        {
-          "name": "MOTORONE AUTOBODY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "98 077 935 614",
-          "party_page": {
-            "id": "motorone-autobody-pty-ltd",
-            "name": "Motorone Autobody Pty Ltd"
-          }
-        }
-      ]
+        "MOTORONE AUTOBODY PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

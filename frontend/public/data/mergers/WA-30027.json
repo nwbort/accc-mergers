@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-08-20T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-08-20T17:15:35+10:00",
   "acquirers": [
     {
       "name": "Assemble US Bidco Inc",
@@ -68,24 +66,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/moderated_files/Apax%20Funds%20%E2%80%93%20Techoraco%20Limited%20and%20Institutional%20Investor%20LLC%20%28WA-30027%29%20-%20Notification%20waiver%20determination%20-%2020%20August%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "Assemble UK Bidco Limited and Assemble US Bidco Inc (the\nAcquirers) applied for a notification waiver in respect of their\nproposed acquisition of 100% of the issued share capital of\nTechoraco Limited (Techoraco) and Institutional Investor LLC\n(Institutional Investor) (together, the Targets), as described in the\ntransaction documents provided as part of the application (the\nAcquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "20 August 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The Acquirers are special purpose vehicles which are wholly owned\nby Assemble Midco Limited, a UK holding company that is ultimately\nowned by investment funds advised by Apax Partners LLP (Apax).\nApax is a UK limited liability partnership based in London, and the\nparent company of a number of entities which provide investment\nadvisory services to private equity funds in a range of industry\nsectors (the AP Funds).\nTechoraco is a business-to-business (B2B) in-person events and\ninsights business focussed on the digital infrastructure sector,\nincluding data centres, fixed connectivity, wireless and satellite\nconnectivity, and related software and hardware infrastructure.\nInstitutional Investor is a B2B membership, in-person events and\nmarket intelligence business focussed on the institutional\ninvestment sector, including by connecting asset managers and\nallocators.\nThe Targets do not have a local presence, office, or employees in\nAustralia, and do not organise events in Australia. They have less\nthan 10 Australian corporate customers who subscribe to the\nTargets\u2019 services and/or attend the Targets\u2019 events which take place\noutside of Australia."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application, and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. The Targets have a small Australian presence and there\nis no horizontal overlap or vertical relationship between Apax\n(including its connected entities and the AP Funds\u2019 controlled\nportfolio companies) and the Targets in Australia.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition. There is no horizontal overlap or vertical relationship\nbetween the Targets and any of the AP Funds\u2019 controlled portfolio\ncompanies that are active in Australia.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
@@ -108,127 +89,42 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "WA-25014",
       "merger_name": "CVC Capital Partners \u2013 The animal nutrition and health division of the DSM-Firmenich Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Essential Bidco B.V.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "essential-bidco-b-v",
-            "name": "Essential Bidco B.V."
-          }
-        },
-        {
-          "name": "Specialty (U.S.) Bidco, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "specialty-u-s-bidco-inc",
-            "name": "Specialty (U.S.) Bidco, Inc."
-          }
-        }
+        "Essential Bidco B.V.",
+        "Specialty (U.S.) Bidco, Inc."
       ],
       "targets": [
-        {
-          "name": "SpecialtyCo US LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "specialtyco-us-llc",
-            "name": "SpecialtyCo US LLC"
-          }
-        },
-        {
-          "name": "Biomin Phytogenics GmbH (Germany)",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "biomin-phytogenics-gmbh-germany",
-            "name": "Biomin Phytogenics GmbH (Germany)"
-          }
-        }
-      ]
+        "SpecialtyCo US LLC",
+        "Biomin Phytogenics GmbH (Germany)"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-45017",
       "merger_name": "Apax Partners LLP \u2013 Sedex Information Exchange Limited",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Smith UK Bidco Limited",
-          "identifier_type": null,
-          "identifier": "UK registration number   17165099",
-          "party_page": {
-            "id": "smith-uk-bidco-limited",
-            "name": "Smith UK Bidco Limited"
-          }
-        }
+        "Smith UK Bidco Limited"
       ],
       "targets": [
-        {
-          "name": "Sedex Information Exchange Limited",
-          "identifier_type": null,
-          "identifier": "UK registration number  14708906",
-          "party_page": {
-            "id": "sedex-information-exchange-limited",
-            "name": "Sedex Information Exchange Limited"
-          }
-        }
-      ]
+        "Sedex Information Exchange Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25033",
       "merger_name": "Bain Capital \u2013 FDH",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BCPE Lightning Buyer, Inc.",
-          "identifier_type": null,
-          "identifier": "US incorporation number  10644291",
-          "party_page": {
-            "id": "bcpe-lightning-buyer-inc",
-            "name": "BCPE Lightning Buyer, Inc."
-          }
-        }
+        "BCPE Lightning Buyer, Inc."
       ],
       "targets": [
-        {
-          "name": "FDH Group Intermediate Holdings, LP",
-          "identifier_type": null,
-          "identifier": "US incorporation number  6336375",
-          "canonical": {
-            "id": "fdh-group",
-            "name": "FDH Group"
-          },
-          "party_page": {
-            "id": "fdh-group",
-            "name": "FDH Group"
-          }
-        },
-        {
-          "name": "FDH Group Intermediate, Inc.",
-          "identifier_type": null,
-          "identifier": "US incorporation number  6310370",
-          "canonical": {
-            "id": "fdh-group",
-            "name": "FDH Group"
-          },
-          "party_page": {
-            "id": "fdh-group",
-            "name": "FDH Group"
-          }
-        }
-      ]
+        "FDH Group Intermediate Holdings, LP",
+        "FDH Group Intermediate, Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

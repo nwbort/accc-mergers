@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-07-13T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-07-13T17:42:00+10:00",
   "acquirers": [
     {
       "name": "Majestic AcqCo, LLC",
@@ -121,24 +119,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/WHP%20Global%20and%20G-III%20-%20Marc%20Jacobs%20%28WA-95027%29%20%20-%20Notification%20waiver%20determination%20-%2013%20July%202026_0.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "MJ Topco, LLC, a joint venture owned by MJWHP, LLC (together with\nits connected entities, WHP Global) and a subsidiary of G-III Apparel\nGroup Ltd (together with its connected entities, G-III), through\nMajestic AcqCo, LLC, applied for a notification waiver in respect of\nits proposed acquisition of 100% of the share capital in Marc Jacobs\nHoldings, LLC (Marc Jacobs), as described in the transaction\ndocuments provided as part of the application (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "13 July 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "WHP Global is a US-headquartered brand management firm. It\nacquires manages and licences global consumer brands. It invests in\nhigh-growth distribution channels, including global expansion\npathways and digital commerce platforms. WHP Global owns the\nintellectual property rights to a number of leading retail brands, of\nwhich only the following are sold in Australia: Rag & Bone, Lotto, Tru,\nand G-STAR.\nWHP Global is indirectly controlled by Oaktree Capital Group, LLC\n(Oaktree), which together with its affiliated investment funds and\nother entities, comprises the \u2018Oaktree group\u2019. Oaktree is in turn jointly\ncontrolled by Brookfield Asset Management Inc. (Brookfield).\nOaktree and Brookfield are global investment firms.\nG-III provides brand licensing and management services, in addition\nto the design, sourcing, distribution, marketing and retail supply of\napparel, globally and in Australia. G-III currently owns and licenses a\ndiverse portfolio of over 30 globally recognised fashion brands\nincluding DKNY, Donna Karan and Karl Lagerfeld.\nMarc Jacobs is a luxury fashion label headquartered in New York,\nUSA. It offers high-fashion ready-to-wear apparel, handbags, shoes,\ncosmetics and fragrances. In Australia, its activities are limited to\nthe wholesale and online sales of its apparel, handbags, shoes,\ncosmetics and fragrances."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. there is a small horizontal overlap between the parties in\nthe supply of brand licensing and management services\nfor consumer products, and in the manufacture,\ndistribution, and retail supply of luxury goods including\nbags, small leather goods, apparel, footwear, cosmetics,\nand fragrances in Australia\nb. any increment in share of supply arising from the\nAcquisition is estimated to be small\nc. there are alternative providers of the relevant goods and\nservices, both in Australia and globally.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -161,114 +142,41 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "MN-90006",
       "merger_name": "CARe \u2013 MotorOne Autobody",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "CARE AUTOBODY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 692 619 962",
-          "party_page": {
-            "id": "care-autobody-pty-ltd",
-            "name": "Care Autobody Pty Ltd"
-          }
-        }
+        "CARE AUTOBODY PTY LTD"
       ],
       "targets": [
-        {
-          "name": "MOTORONE AUTOBODY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "98 077 935 614",
-          "party_page": {
-            "id": "motorone-autobody-pty-ltd",
-            "name": "Motorone Autobody Pty Ltd"
-          }
-        }
-      ]
+        "MOTORONE AUTOBODY PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-05014",
       "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Smile Partners (NSW3) Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 902 955",
-          "party_page": {
-            "id": "smile-partners-nsw3-pty-ltd",
-            "name": "Smile Partners (NSW3) Pty Ltd"
-          }
-        }
+        "Smile Partners (NSW3) Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Shrika Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "108 757 357",
-          "canonical": {
-            "id": "shrika-pty-ltd",
-            "name": "Shrika Pty Ltd"
-          },
-          "party_page": {
-            "id": "shrika-pty-ltd",
-            "name": "Shrika Pty Ltd"
-          }
-        }
-      ]
+        "Shrika Pty Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25032",
       "merger_name": "River Capital \u2013 YOMG",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "RC BITE BID CO PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "698 175 012",
-          "party_page": {
-            "id": "rc-bite-bid-co-pty-ltd",
-            "name": "Rc Bite Bid Co Pty Ltd"
-          }
-        },
-        {
-          "name": "RIVER CAPITAL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "64 073 531 469",
-          "party_page": {
-            "id": "river-capital-pty-ltd",
-            "name": "River Capital Pty Ltd"
-          }
-        }
+        "RC BITE BID CO PTY LTD",
+        "RIVER CAPITAL PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Yo My Goodness Pty Ltd as trustee for The Yo My Goodness IP Unit Trust",
-          "identifier_type": "ACN",
-          "identifier": "603 490 035",
-          "party_page": {
-            "id": "yo-my-goodness-pty-ltd-as-trustee-for-the-yo-my-goodness-ip-unit-trust",
-            "name": "Yo My Goodness Pty Ltd as trustee for The Yo My Goodness IP Unit Trust"
-          }
-        },
-        {
-          "name": "YOMG PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "93 603 489 943",
-          "party_page": {
-            "id": "yomg-pty-ltd",
-            "name": "Yomg Pty Ltd"
-          }
-        }
-      ]
+        "Yo My Goodness Pty Ltd as trustee for The Yo My Goodness IP Unit Trust",
+        "YOMG PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

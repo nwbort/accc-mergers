@@ -7,7 +7,6 @@
   "original_notification_datetime": "2026-08-27T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-10-09T12:00:00Z",
-  "page_modified_datetime": "2026-08-28T14:01:49+10:00",
   "consultation_response_due_date": "2026-09-04T12:00:00Z",
   "acquirers": [
     {
@@ -129,115 +128,41 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-50026",
       "merger_name": "Stonepeak-led consortium - Estia Health",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Wisdom BidCo Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "19 696 888 730",
-          "party_page": {
-            "id": "wisdom-bidco-pty-ltd",
-            "name": "Wisdom BidCo Pty Ltd"
-          }
-        }
+        "Wisdom BidCo Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "Estia Health Holdings Ltd",
-          "identifier_type": "ABN",
-          "identifier": "47 669 884 244",
-          "canonical": {
-            "id": "estia-health-holdings-ltd",
-            "name": "Estia Health"
-          },
-          "party_page": {
-            "id": "estia-health-holdings-ltd",
-            "name": "Estia Health"
-          }
-        }
-      ]
+        "Estia Health Holdings Ltd"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-80022",
       "merger_name": "Bain Capital \u2013 Perpetual Wealth Management Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BCPE Barton BidCo Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "694 979 041",
-          "party_page": {
-            "id": "bcpe-barton-bidco-pty-ltd",
-            "name": "BCPE Barton BidCo Pty Ltd"
-          }
-        }
+        "BCPE Barton BidCo Pty Ltd"
       ],
       "targets": [
-        {
-          "name": "PERPETUAL LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "86 000 431 827",
-          "party_page": {
-            "id": "perpetual-limited",
-            "name": "Perpetual Limited"
-          }
-        },
-        {
-          "name": "PERPETUAL PWM SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "90 678 546 113",
-          "party_page": {
-            "id": "perpetual-pwm-services-pty-ltd",
-            "name": "Perpetual Pwm Services Pty Ltd"
-          }
-        }
-      ]
+        "PERPETUAL LIMITED",
+        "PERPETUAL PWM SERVICES PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-65015",
       "merger_name": "Hillhouse - Barwon Investment Partners",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "BARWON BIDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "23 695 060 907",
-          "party_page": {
-            "id": "barwon-bidco-pty-ltd",
-            "name": "Barwon Bidco Pty Ltd"
-          }
-        }
+        "BARWON BIDCO PTY LTD"
       ],
       "targets": [
-        {
-          "name": "BARWON INVESTMENT PARTNERS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "19 116 012 009",
-          "party_page": {
-            "id": "barwon-investment-partners-pty-ltd",
-            "name": "Barwon Investment Partners Pty Ltd"
-          }
-        },
-        {
-          "name": "",
-          "identifier_type": "ACN",
-          "identifier": "620 598 745",
-          "party_page": {
-            "id": "620598745",
-            "name": "620598745"
-          }
-        }
-      ]
+        "BARWON INVESTMENT PARTNERS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

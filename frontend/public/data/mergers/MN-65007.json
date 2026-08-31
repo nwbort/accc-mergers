@@ -9,8 +9,6 @@
   "end_of_determination_period": "2026-04-09T12:00:00Z",
   "determination_publication_date": "2026-03-17T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-03-17T12:07:54+11:00",
   "consultation_response_due_date": "2026-03-03T12:00:00Z",
   "acquirers": [
     {
@@ -70,31 +68,10 @@
       "title": "Australian Venue Co - An Sibin Irish Pub - Phase 1 Determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Australian%20Venue%20Co.%20-%20An%20Sibin%20Irish%20Pub%20-%20Phase%201%20determination.pdf",
-      "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "AVC Operations Pty Limited (AVC) proposes to acquire 100% of the\nbusiness and assets of Ash Promotions Pty Ltd, trading as An Sibin\nIrish Pub (An Sibin) (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "The acquirer, AVC, is a subsidiary of Australian Venue Co. Holdings\nLimited, which operates 243 licensed venues in Australia and New\nZealand, including pubs, bars, clubs and licensed restaurants. AVC\u2019s\nvenues are individually branded and predominantly located in inner-\ncity and metropolitan areas, offering food, entertainment and\ngaming facilities.\nThe target venue, An Sibin, is an Irish pub located at 147 James\nStreet in Northbridge, close to Perth\u2019s CBD. An Sibin is a licensed\nvenue with no gaming facilities."
-        },
-        {
-          "item": "Overlap between the\nparties",
-          "details": "The parties overlap in the supply of retail hospitality services in\nmetropolitan Perth, Western Australia."
-        },
         {
           "item": "Reasons for determination",
           "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings:\n\u2022 The aggregation in retail hospitality venues arising from the\nAcquisition, including previous acquisitions within the same\nlocal area in the last three years, is not significant.\n\u2022 AVC will continue to face competition from a number of\nalternative retail hospitality venues in the local area surrounding\nthe target venue."
-        },
-        {
-          "item": "Applications for review",
-          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
         }
       ],
       "url_gh": "/mergers/MN-65007/Australian Venue Co. - An Sibin Irish Pub - Phase 1 determination.pdf",
@@ -108,136 +85,43 @@
   "phase_1_determination_date": "2026-03-17T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-10006",
       "merger_name": "Australian Venue Co. \u2013 four licensed venues in metropolitan Sydney (Public House Petersham, The Erko, The Golden Sheaf and Barangaroo House)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AVC Operations Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "81 607 832 299",
-          "canonical": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          },
-          "party_page": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          }
-        }
+        "AVC Operations Pty Limited"
       ],
       "targets": [
-        {
-          "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
-          "identifier_type": "ABN",
-          "identifier": "70 075 074 930",
-          "party_page": {
-            "id": "sherilyn-pty-limited-as-trustee-for-solotrust-unit-trust",
-            "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust"
-          }
-        },
-        {
-          "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust",
-          "identifier_type": "ACN",
-          "identifier": "604 221 801",
-          "party_page": {
-            "id": "barangaroo-pty-limited-as-trustee-for-barangaroo-trust",
-            "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust"
-          }
-        }
-      ]
+        "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
+        "Barangaroo Pty Limited as trustee for Barangaroo Trust"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-25005",
       "merger_name": "Australian Venue Co. \u2013 leasehold and certain other assets of Quay Restaurant, Sydney",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "AVC OPERATIONS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "81 607 832 299",
-          "canonical": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          },
-          "party_page": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          }
-        },
-        {
-          "name": "Australian Venue Co. Holdings Limited",
-          "identifier_type": "ABN",
-          "identifier": "90 619 977 070",
-          "canonical": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          },
-          "party_page": {
-            "id": "australian-venue-co",
-            "name": "Australian Venue Co"
-          }
-        }
+        "AVC OPERATIONS PTY LIMITED",
+        "Australian Venue Co. Holdings Limited"
       ],
       "targets": [
-        {
-          "name": "Q.R.A. PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "62 051 433 839",
-          "party_page": {
-            "id": "q-r-a-pty-limited",
-            "name": "Q.R.A. Pty Limited"
-          }
-        }
-      ]
+        "Q.R.A. PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-75017",
       "merger_name": "Vets Central - Drovers Vet Hospital",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "VC OPERATIONS (WA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 646 499 005",
-          "canonical": {
-            "id": "vets-central-holdings-pty-ltd",
-            "name": "Vets Central Holdings Pty Ltd"
-          },
-          "party_page": {
-            "id": "vets-central-holdings-pty-ltd",
-            "name": "Vets Central Holdings Pty Ltd"
-          }
-        }
+        "VC OPERATIONS (WA) PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Wayne Shipham and Raylene Shipham as trustees for McGuire Family Trust",
-          "identifier_type": "ABN",
-          "identifier": "96 315 737 133",
-          "party_page": {
-            "id": "wayne-shipham-and-raylene-shipham-as-trustees-for-mcguire-family-trust",
-            "name": "Wayne Shipham and Raylene Shipham as trustees for McGuire Family Trust"
-          }
-        },
-        {
-          "name": "DROVERS VET HOSPITAL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "67 159 300 768",
-          "party_page": {
-            "id": "drovers-vet-hospital-pty-ltd",
-            "name": "Drovers Vet Hospital Pty Ltd"
-          }
-        }
-      ]
+        "Wayne Shipham and Raylene Shipham as trustees for McGuire Family Trust",
+        "DROVERS VET HOSPITAL PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

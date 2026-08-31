@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-07-24T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-07-24T16:56:50+10:00",
   "acquirers": [
     {
       "name": "TML CV Holdings B.V.",
@@ -59,24 +57,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Tata%20Motors%20%E2%80%93%20Iveco%20%28WA-85037%29%20-%20Notification%20waiver%20determination%20-%2024%20July%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "TML CV Holdings B.V., a newly formed wholly owned subsidiary of\nTata Motors Limited (Tata Motors), proposes to acquire 100% of the\ncommon shares (including treasury shares) of Iveco Group N.V.\n(together with its subsidiaries, Iveco), excluding the defence\nbusiness unit that it operates under the IDV and Astra brands, as\ndescribed in the transaction documents provided as part of the\napplication (the Acquisition).\nTML CV Holdings B.V. and Tata Motors applied for a notification\nwaiver in respect of the Acquisition."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "24 July 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, Tata Motors, is an Indian company active globally in\nthe design, manufacture, and sale of commercial vehicles. Tata\nMotors is listed on both the Bombay Stock Exchange and the\nNational Stock Exchange of India.\nThe target, Iveco, is a publicly traded company incorporated in the\nNetherlands and trading on Euronext Milan. Iveco, through its\nsubsidiaries, designs, produces and sells trucks, other commercial\nvehicles, and buses as well as powertrain products, and financial\nproducts for Iveco's dealers and customers. Iveco does not have a\nmanufacturing facility in Australia and has not manufactured\ncommercial vehicles locally since 2022.\nTata Motors and Iveco are both active at the global level in the\ndesign, manufacture and distribution of commercial vehicles, in\nparticular, trucks and buses. Iveco also supplies powertrain products\nused in commercial vehicles at the global level.\nIn Australia, Iveco supplies commercial vehicles, spare parts, and\nmaintenance and repair services, while Tata Motors does not supply\ncommercial vehicles in Australia."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. there is no horizontal overlap or vertical relationship\nbetween Tata Motors and Iveco in the supply of commercial\nvehicles in Australia\nb. there are alternative suppliers of commercial vehicles in\nAustralia.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
@@ -99,119 +80,42 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "WA-25001",
       "merger_name": "Regent Motors Group \u2013 Esperance Motor Group (Esperance Toyota & Ford)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ALBANY MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "95 676 040 341",
-          "party_page": {
-            "id": "albany-motors-pty-ltd",
-            "name": "Albany Motors Pty Ltd"
-          }
-        }
+        "ALBANY MOTORS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "Esperance Motor Group Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "57 121 986 016",
-          "party_page": {
-            "id": "esperance-motor-group-pty-ltd",
-            "name": "Esperance Motor Group Pty Ltd"
-          }
-        },
-        {
-          "name": "BUVERIE PTY LTD as trustee for SCHWARZBACK FAMILY TRUST",
-          "identifier_type": "ABN",
-          "identifier": "80 701 405 315",
-          "party_page": {
-            "id": "buverie-pty-ltd-as-trustee-for-schwarzback-family-trust",
-            "name": "BUVERIE PTY LTD as trustee for SCHWARZBACK FAMILY TRUST"
-          }
-        }
-      ]
+        "Esperance Motor Group Pty Ltd",
+        "BUVERIE PTY LTD as trustee for SCHWARZBACK FAMILY TRUST"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-20020",
       "merger_name": "Triton - Integris",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Ivera Bidco B.V.",
-          "identifier_type": null,
-          "identifier": "Dutch Commercial Register  42000883",
-          "party_page": {
-            "id": "ivera-bidco-b-v",
-            "name": "Ivera Bidco B.V."
-          }
-        }
+        "Ivera Bidco B.V."
       ],
       "targets": [
-        {
-          "name": "Protego Holdco B.V.",
-          "identifier_type": null,
-          "identifier": "Dutch Commercial Register  80710417",
-          "party_page": {
-            "id": "protego-holdco-b-v",
-            "name": "Protego Holdco B.V."
-          }
-        },
-        {
-          "name": "Agilitas Protego 2026 Subsidiary Fund LP",
-          "identifier_type": null,
-          "identifier": "Jersey Registry  5028",
-          "party_page": {
-            "id": "agilitas-protego-2026-subsidiary-fund-lp",
-            "name": "Agilitas Protego 2026 Subsidiary Fund LP"
-          }
-        }
-      ]
+        "Protego Holdco B.V.",
+        "Agilitas Protego 2026 Subsidiary Fund LP"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-85017",
       "merger_name": "Regent Motors Group - Lane Group's Mandurah Dealerships",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "MANDURAH AUTO GROUP PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "693 645 699",
-          "party_page": {
-            "id": "mandurah-auto-group-pty-ltd",
-            "name": "Mandurah Auto Group Pty Ltd"
-          }
-        },
-        {
-          "name": "PEEL MOTOR GROUP PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "693 645 742",
-          "party_page": {
-            "id": "peel-motor-group-pty-ltd",
-            "name": "Peel Motor Group Pty Ltd"
-          }
-        }
+        "MANDURAH AUTO GROUP PTY LTD",
+        "PEEL MOTOR GROUP PTY LTD"
       ],
       "targets": [
-        {
-          "name": "WA AUTOMOTIVE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "20 158 702 740",
-          "party_page": {
-            "id": "wa-automotive-pty-ltd",
-            "name": "Wa Automotive Pty Ltd"
-          }
-        }
-      ]
+        "WA AUTOMOTIVE PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

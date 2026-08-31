@@ -8,8 +8,6 @@
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-07-06T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-06-18T15:47:24+10:00",
   "consultation_response_due_date": "2026-06-01T12:00:00Z",
   "acquirers": [
     {
@@ -123,31 +121,10 @@
       "title": "Stonepeak - Castrol - Phase 1 Determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Stonepeak%20-%20Castrol%20-%20Phase%201%20determination.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "The Acquisition comprises:\n\u2022 the acquisition of 100% of the shares in Castrol Group\nHoldings Limited (Castrol) by Stonepeak Partners LP\n(together with its affiliates, Stonepeak) from BP p.l.c. (BP),\nthrough Motion JVCo Limited (Motion JVCo), a special\npurpose vehicle wholly owned by a company which is\nindirectly owned by investment funds advised and/or\nmanaged by Stonepeak,\n\u2022 the reinvestment by BP, Castrol\u2019s current owner, in Castrol at\nclosing by acquiring 35% of the shares in Motion JVCo,\nthrough a wholly owned subsidiary. Stonepeak will hold the\nremaining 65% of Motion JVCo, and\n\u2022 the indirect investment by Canada Pension Plan Investment\nBoard (CPPIB) in Motion JVCo, through its wholly owned\nsubsidiary CPP Investment Board Private Holdings (6) Inc,\nwhich is expected to occur through an investment in another\nStonepeak entity."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "Castrol is BP\u2019s global lubricants business, headquartered in the\nUnited Kingdom. Castrol is active globally in the development,\nproduction and sale of lubricants and related fluids for various\nindustries including automotive, energy, industrial and marine.\nBP is a global integrated energy group with operations in Europe,\nNorth and South America, Australasia, Asia and Africa.\nStonepeak is a global investment firm specialising in infrastructure\nand real estate assets.\nCPPIB is a professional investment management organisation that\nmanages the Canada Pension Plan Fund (CPP Fund) in the best\ninterest of more than 22 million contributors and beneficiaries."
-        },
-        {
-          "item": "Overlap and relationship\nbetween the parties",
-          "details": "There is no horizontal overlap in Australia between Castrol\u2019s\nactivities and the activities of either Stonepeak and its connected\nentities, or CPPIB and its connected entities.\nNeither Stonepeak (or its connected entities) or CPPIB (or its\nconnected entities) are material suppliers to or customers of Castrol\nin Australia."
-        },
         {
           "item": "Reasons for determination",
           "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and publicly available information.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 There are no horizontal overlaps between Castrol and either of\nStonepeak or CPPIB (or their connected entities).\n\u2022 Based on the information before us, there do not appear to be\nmaterial customer or supplier relationships between Castrol and\neither of Stonepeak or CPPIB (or their connected entities), that\nare likely to give rise to vertical or conglomerate competition\nconcerns in Australia."
-        },
-        {
-          "item": "Applications for review",
-          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
         }
       ],
       "url_gh": "/mergers/MN-60015/Stonepeak - Castrol - Phase 1 determination.pdf",
@@ -162,124 +139,43 @@
   "phase_1_determination_date": "2026-06-18T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-20011",
       "merger_name": "Origin \u2013 Equity stake in Kraken",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "53 143 484 208",
-          "canonical": {
-            "id": "origin-energy-limited",
-            "name": "Origin Energy Limited"
-          },
-          "party_page": {
-            "id": "origin-energy-limited",
-            "name": "Origin Energy Limited"
-          }
-        }
+        "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "CPP Investment Board Private Holdings (4) Inc.",
-          "identifier_type": null,
-          "identifier": "BN  11089340",
-          "party_page": {
-            "id": "cpp-investment-board-private-holdings-4-inc",
-            "name": "CPP Investment Board Private Holdings (4) Inc."
-          }
-        }
-      ]
+        "CPP Investment Board Private Holdings (4) Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70019",
       "merger_name": "Cognizant \u2013 Astreya",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Cognizant Domestic Holdings Corporation",
-          "identifier_type": null,
-          "identifier": "Delaware file number 5221744",
-          "party_page": {
-            "id": "cognizant-domestic-holdings-corporation",
-            "name": "Cognizant Domestic Holdings Corporation"
-          }
-        },
-        {
-          "name": "Asteroid Merger Sub, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware file number 10587708",
-          "party_page": {
-            "id": "asteroid-merger-sub-inc",
-            "name": "Asteroid Merger Sub, Inc."
-          }
-        }
+        "Cognizant Domestic Holdings Corporation",
+        "Asteroid Merger Sub, Inc."
       ],
       "targets": [
-        {
-          "name": "Astreya Partners, Inc.",
-          "identifier_type": null,
-          "identifier": "CIN 770570107",
-          "party_page": {
-            "id": "astreya-partners-inc",
-            "name": "Astreya Partners, Inc."
-          }
-        }
-      ]
+        "Astreya Partners, Inc."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-25006",
       "merger_name": "KPS \u2013 Novacel",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Desmos US Bidco, Inc.",
-          "identifier_type": null,
-          "identifier": "[ID type unknown]  10469174",
-          "party_page": {
-            "id": "desmos-us-bidco-inc",
-            "name": "Desmos US Bidco, Inc."
-          }
-        },
-        {
-          "name": "Desmos Bidco SAS",
-          "identifier_type": null,
-          "identifier": "SIREN  100 230 754",
-          "party_page": {
-            "id": "desmos-bidco-sas",
-            "name": "Desmos Bidco SAS"
-          }
-        }
+        "Desmos US Bidco, Inc.",
+        "Desmos Bidco SAS"
       ],
       "targets": [
-        {
-          "name": "Novacel Performance Coatings, Inc.",
-          "identifier_type": null,
-          "identifier": "EIN  311708662",
-          "party_page": {
-            "id": "novacel-performance-coatings-inc",
-            "name": "Novacel Performance Coatings, Inc."
-          }
-        },
-        {
-          "name": "Novacel, Inc.",
-          "identifier_type": null,
-          "identifier": "EIN  043515032",
-          "party_page": {
-            "id": "novacel-inc",
-            "name": "Novacel, Inc."
-          }
-        }
-      ]
+        "Novacel Performance Coatings, Inc.",
+        "Novacel, Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

@@ -8,8 +8,6 @@
   "stage": "Waiver application",
   "determination_publication_date": "2026-08-11T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-08-11T18:18:10+10:00",
   "acquirers": [
     {
       "name": "Koch Equity Development LLC",
@@ -72,24 +70,7 @@
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Koch%20-%20additional%20interest%20in%20Victoria%20PLC%20%28WA-50033%29%20-%20Notification%20waiver%20determination%20-%2011%20August%202026.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Acquisition",
-          "details": "Koch Equity Development LLC (Koch) applied for a notification\nwaiver in respect of its proposed acquisition of an increased ordinary\nshareholding in Victoria PLC (Victoria), as described in the\ntransaction documents provided as part of the application (the\nAcquisition).\nThe Acquisition involves Koch increasing its ordinary shareholding in\nVictoria, together with board appointment and other governance and\noversight rights, as part of a wider restructuring of Victoria\u2019s debt\nand preference shares. Following the Acquisition, Koch is expected\nto hold approximately 24.9% of Victoria\u2019s enlarged fully diluted\nordinary share capital."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-        },
-        {
-          "item": "Date of determination",
-          "details": "11 August 2026"
-        },
-        {
-          "item": "Parties to the\nAcquisition",
-          "details": "The acquirer, Koch, is a wholly owned subsidiary and the principal\ninvestment and acquisition arm of Koch, Inc., a privately held\nbusiness in America. It is involved in a variety of industries,\nparticularly the manufacturing, refining, and distribution of\npetroleum, chemicals, energy, fibre, intermediates and polymers,\nminerals, fertiliser, raw materials trading, and investments.\nThe target, Victoria, is listed on the London Stock Exchange and\nheadquartered in Worcester, United Kingdom. Victoria designs,\nmanufactures, and distributes carpet, flooring underlay, ceramic tiles,\nartificial glass, and flooring accessories. In Australia, Victoria\nsupplies flooring products through its subsidiaries The Victoria\nCarpet Company Pty Limited, Quest Flooring Pty Ltd, and Primary\nFlooring Pty Limited (trading as Dunlop Flooring)."
-        },
         {
           "item": "Explanation for\ndetermination",
           "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application, and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition given:\na. there is no horizontal overlap between the operations of\nKoch, Victoria, or their connected entities in Australia\nb. there is low risk of foreclosure or other concerning\nvertical effects arising from the Acquisition.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers for acquisitions and merger assessment guidelines."
@@ -112,100 +93,39 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "similar_mergers": [
     {
       "merger_id": "MN-01061",
       "merger_name": "Molex \u2013 Smiths Interconnect",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Molex Electronic Technologies Holdings, LLC",
-          "identifier_type": null,
-          "identifier": "Company number   464432478",
-          "party_page": {
-            "id": "molex-electronic-technologies-holdings-llc",
-            "name": "Molex Electronic Technologies Holdings, LLC"
-          }
-        }
+        "Molex Electronic Technologies Holdings, LLC"
       ],
       "targets": [
-        {
-          "name": "Smiths Interconnect Group Limited",
-          "identifier_type": null,
-          "identifier": "UK CRN  06641403",
-          "party_page": {
-            "id": "smiths-interconnect-group-limited",
-            "name": "Smiths Interconnect Group Limited"
-          }
-        }
-      ]
+        "Smiths Interconnect Group Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-05016",
       "merger_name": "Coles - substation in Yarrawonga VIC",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "COLES GROUP PROPERTY DEVELOPMENTS LTD",
-          "identifier_type": "ABN",
-          "identifier": "72 004 428 326",
-          "canonical": {
-            "id": "coles",
-            "name": "Coles Group"
-          },
-          "party_page": {
-            "id": "coles",
-            "name": "Coles Group"
-          }
-        }
+        "COLES GROUP PROPERTY DEVELOPMENTS LTD"
       ],
       "targets": [
-        {
-          "name": "POWERCOR AUSTRALIA LTD",
-          "identifier_type": "ABN",
-          "identifier": "89 064 651 109",
-          "party_page": {
-            "id": "powercor-australia-ltd",
-            "name": "Powercor Australia Ltd"
-          }
-        }
-      ]
+        "POWERCOR AUSTRALIA LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-60012",
       "merger_name": "Coles \u2013 land around supermarket site in Balaclava, VIC",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "COLES GROUP PROPERTY DEVELOPMENTS LTD",
-          "identifier_type": "ABN",
-          "identifier": "72 004 428 326",
-          "canonical": {
-            "id": "coles",
-            "name": "Coles Group"
-          },
-          "party_page": {
-            "id": "coles",
-            "name": "Coles Group"
-          }
-        }
+        "COLES GROUP PROPERTY DEVELOPMENTS LTD"
       ],
       "targets": [
-        {
-          "name": "CITY OF PORT PHILLIP",
-          "identifier_type": "ABN",
-          "identifier": "21 762 977 945",
-          "party_page": {
-            "id": "city-of-port-phillip",
-            "name": "City Of Port Phillip"
-          }
-        }
-      ]
+        "CITY OF PORT PHILLIP"
+      ],
+      "accc_determination": "Approved"
     }
   ]
 }

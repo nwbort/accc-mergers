@@ -7,7 +7,6 @@
   "original_notification_datetime": "2026-08-14T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-09-25T12:00:00Z",
-  "page_modified_datetime": "2026-08-21T16:09:06+10:00",
   "consultation_response_due_date": "2026-08-24T12:00:00Z",
   "acquirers": [
     {
@@ -81,106 +80,41 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-01115",
       "merger_name": "MM Security \u2013 Micron Security Products",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "MM SECURITY SUPPLIES PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "14 670 314 913",
-          "canonical": {
-            "id": "metal-manufactures",
-            "name": "Metal Manufactures"
-          },
-          "party_page": {
-            "id": "metal-manufactures",
-            "name": "Metal Manufactures"
-          }
-        }
+        "MM SECURITY SUPPLIES PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "MICRON ALARM SUPPLIES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "39 002 553 406",
-          "party_page": {
-            "id": "micron-alarm-supplies-pty-ltd",
-            "name": "Micron Alarm Supplies Pty Ltd"
-          }
-        }
-      ]
+        "MICRON ALARM SUPPLIES PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-75013",
       "merger_name": "Aldus - Hilton Manufacturing",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ALDUS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "38 085 318 494",
-          "party_page": {
-            "id": "aldus-pty-ltd",
-            "name": "Aldus Pty Ltd"
-          }
-        }
+        "ALDUS PTY LTD"
       ],
       "targets": [
-        {
-          "name": "HILTON MANUFACTURING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "89 005 551 057",
-          "party_page": {
-            "id": "hilton-manufacturing-pty-ltd",
-            "name": "Hilton Manufacturing Pty Ltd"
-          }
-        }
-      ]
+        "HILTON MANUFACTURING PTY LTD"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-95024",
       "merger_name": "Carlyle \u2013 CHN Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Crystal Holdings Korea Co., Ltd.",
-          "identifier_type": null,
-          "identifier": "SKID  1201110153602",
-          "party_page": {
-            "id": "crystal-holdings-korea-co-ltd",
-            "name": "Crystal Holdings Korea Co., Ltd."
-          }
-        }
+        "Crystal Holdings Korea Co., Ltd."
       ],
       "targets": [
-        {
-          "name": "Chung Ho Nais Co., Ltd.",
-          "identifier_type": null,
-          "identifier": "SKID  1101111052482",
-          "party_page": {
-            "id": "chung-ho-nais-co-ltd",
-            "name": "Chung Ho Nais Co., Ltd."
-          }
-        },
-        {
-          "name": "MCM Co., Ltd.",
-          "identifier_type": null,
-          "identifier": "SKID  1543110025062",
-          "party_page": {
-            "id": "mcm-co-ltd",
-            "name": "MCM Co., Ltd."
-          }
-        }
-      ]
+        "Chung Ho Nais Co., Ltd.",
+        "MCM Co., Ltd."
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

@@ -9,8 +9,6 @@
   "end_of_determination_period": "2026-04-02T12:00:00Z",
   "determination_publication_date": "2026-03-12T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-03-12T12:24:22+11:00",
   "consultation_response_due_date": "2026-02-26T12:00:00Z",
   "acquirers": [
     {
@@ -254,31 +252,10 @@
       "title": "Henkel - ATP Adhesives Systems - Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Henkel%20-%20ATP%20Adhesives%20Systems%20-%20Phase%201%20determination_0.pdf",
-      "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "Henkel AG & Co. KGaA (Henkel) proposes to acquire all the shares in\nand sole control of ATP Adhesives Systems Group GmbH (together\nwith subsidiaries, ATP) from ATP Adhesives Holdings LP, which pre-\ntransaction is controlled by affiliates of Arsenal Capital Partners."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "Henkel is a German public company listed on the Frankfurt Stock\nExchange. Henkel\u2019s Adhesive Technologies business unit is a\nproducer of adhesives, sealants and functional coatings for\nindustrial customers, as well as for consumers and craftspeople. In\nAustralia, Henkel supplies tapes and labels (T&L) adhesives and\nnon-water-based pressure-sensitive adhesive (PSA) tapes. PSA\ntapes are tapes that form an adhesive bond upon the application of\npressure. Henkel\u2019s Adhesive Technologies brands available in\nAustralia include Loctite, Teroson, Bonderite, Clingtape, Technomelt,\nAquence and Pritt.\nATP is a private company headquartered in Wollerau, Switzerland.\nATP manufactures PSA tapes for various end uses. In Australia, ATP\nsupplies only water-based PSA tapes to industrial customers.\nBoth Henkel and ATP primarily supply specialty PSA tapes as\nopposed to more general-use PSA tapes such as masking tape or\npacking tape. Speciality PSA tapes generally have specific use-cases\nin certain industries such as automotive, medical, electronics and\nconstruction. An example of a use-case in the automotive industry is\nto attach interior components like carpet to a vehicle."
-        },
-        {
-          "item": "Overlap and relationship\nbetween the parties",
-          "details": "The parties overlap in the supply of PSA tapes globally, including in\nAustralia. T&L adhesives are a key input into PSA tapes.\nThere are narrower segments within the supply of PSA tapes,\nincluding non-water-based PSA tapes and water-based PSA tapes."
-        },
         {
           "item": "Reasons for determination",
           "details": "When making a determination in Phase 1, the ACCC undertakes a\ncompetition assessment and considers whether it is appropriate for\nan acquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, publicly available information, and feedback from\nmarket participants.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 The aggregation in the supply of PSA tapes resulting from the\nAcquisition appears low, and the merged entity would likely\ncontinue to be constrained by alternative suppliers of PSA tapes\nin Australia post-acquisition.\n\u2022 The merged entity would be unlikely to have the ability and\nincentive to foreclose rivals\u2019 access to inputs (in particular T&L\nadhesives) given there are strong alternative suppliers of T&L\nadhesives and PSA tapes in Australia."
-        },
-        {
-          "item": "Applications for review",
-          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
         }
       ],
       "url_gh": "/mergers/MN-40005/Henkel - ATP Adhesives Systems - Phase 1 determination_0.pdf",
@@ -292,8 +269,6 @@
   "phase_1_determination_date": "2026-03-12T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "related_merger": {
     "merger_id": "WA-65003",
@@ -304,112 +279,37 @@
     {
       "merger_id": "WA-45007",
       "merger_name": "Henkel \u2013 Stahl",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Henkel Global Supply Chain B.V.",
-          "identifier_type": null,
-          "identifier": "Netherlands registration number, 854017447, CCI 60683945",
-          "canonical": {
-            "id": "henkel-ag-co-kgaa",
-            "name": "Henkel"
-          },
-          "party_page": {
-            "id": "henkel-ag-co-kgaa",
-            "name": "Henkel"
-          }
-        }
+        "Henkel Global Supply Chain B.V."
       ],
       "targets": [
-        {
-          "name": "Stahl Holdings B.V.",
-          "identifier_type": null,
-          "identifier": "Netherlands registration number (KVK): 34249320",
-          "party_page": {
-            "id": "stahl-holdings-b-v",
-            "name": "Stahl Holdings B.V."
-          }
-        },
-        {
-          "name": "Stahl Asia Pacific Pte. Ltd.",
-          "identifier_type": null,
-          "identifier": "Singapore registration number: 200606884Z",
-          "party_page": {
-            "id": "stahl-asia-pacific-pte-ltd",
-            "name": "Stahl Asia Pacific Pte. Ltd."
-          }
-        }
-      ]
+        "Stahl Holdings B.V.",
+        "Stahl Asia Pacific Pte. Ltd."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-15007",
       "merger_name": "Apollo Funds led consortium \u2013 Lecta Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Reed BidCo Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "reed-bidco-limited",
-            "name": "Reed BidCo Limited"
-          }
-        }
+        "Reed BidCo Limited"
       ],
       "targets": [
-        {
-          "name": "Lecta Paper Industries Intermediate Financing S.\u00e0 r.l.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "lecta-paper-industries-intermediate-financing-s-r-l",
-            "name": "Lecta Paper Industries Intermediate Financing S.\u00e0 r.l."
-          }
-        }
-      ]
+        "Lecta Paper Industries Intermediate Financing S.\u00e0 r.l."
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-55010",
       "merger_name": "Calvary - Holmesglen Private Hospital",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "LITTLE COMPANY OF MARY HEALTH CARE LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "11 079 815 697",
-          "party_page": {
-            "id": "little-company-of-mary-health-care-limited",
-            "name": "Little Company Of Mary Health Care Limited"
-          }
-        }
+        "LITTLE COMPANY OF MARY HEALTH CARE LIMITED"
       ],
       "targets": [
-        {
-          "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "80 146 342 814",
-          "canonical": {
-            "id": "healthscope",
-            "name": "Healthscope"
-          },
-          "party_page": {
-            "id": "healthscope",
-            "name": "Healthscope"
-          }
-        },
-        {
-          "name": "ANZ HOSPITALS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "14 631 014 938",
-          "party_page": {
-            "id": "anz-hospitals-pty-ltd",
-            "name": "Anz Hospitals Pty Ltd"
-          }
-        }
-      ]
+        "HEALTHSCOPE MANAGEMENT PTY LTD",
+        "ANZ HOSPITALS PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

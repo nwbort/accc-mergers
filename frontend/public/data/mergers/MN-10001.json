@@ -9,8 +9,6 @@
   "end_of_determination_period": "2026-03-19T12:00:00Z",
   "determination_publication_date": "2026-03-03T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-03-03T14:40:04+11:00",
   "consultation_response_due_date": "2026-02-12T12:00:00Z",
   "acquirers": [
     {
@@ -66,20 +64,7 @@
       "title": "IBM - Confluent - Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/IBM-Confluent%20-%20Phase%201%20determination_1.pdf",
-      "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "International Business Machines Corporation (IBM)\u2019s proposed\nacquisition of 100% of the share capital in Confluent, Inc (Confluent)\n(IBM and Confluent together, the Parties) (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "The acquirer, IBM, is active worldwide in the development and\nmarketing of a wide variety of IT solutions, including cloud\ninfrastructure provided through IBM Cloud, multiple Event Stream\nProcessing Software (ESPS) offerings and an enterprise AI and data\nplatform, known as Watsonx.\nThe target, Confluent, also operates worldwide and provides a data-\nstreaming platform built on Apache Kafka, which is an open-source\ntechnology. Confluent provides both cloud-native and on-premises\nESPS offerings that enable organisations to publish, subscribe to,\nstore, and process real-time data streams at scale for use in building\napplications and event-driven architectures."
-        },
         {
           "item": "Reasons for determination",
           "details": "The reasons for the ACCC\u2019s determination are set out in section 2."
@@ -333,120 +318,43 @@
   "phase_1_determination_date": "2026-03-03T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "WA-75006",
       "merger_name": "Playlist \u2013 EGYM",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Saturn NewCo, Inc",
-          "identifier_type": null,
-          "identifier": "DE File number: 10449592",
-          "party_page": {
-            "id": "saturn-newco-inc",
-            "name": "Saturn NewCo, Inc"
-          }
-        },
-        {
-          "name": "ClassPass Aggregator, LLC",
-          "identifier_type": null,
-          "identifier": "DE File number: 6177870",
-          "party_page": {
-            "id": "classpass-aggregator-llc",
-            "name": "ClassPass Aggregator, LLC"
-          }
-        }
+        "Saturn NewCo, Inc",
+        "ClassPass Aggregator, LLC"
       ],
       "targets": [
-        {
-          "name": "EGYM SE",
-          "identifier_type": null,
-          "identifier": "HRB: 186394",
-          "party_page": {
-            "id": "egym-se",
-            "name": "Egym Se"
-          }
-        }
-      ]
+        "EGYM SE"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-10010",
       "merger_name": "Enverus \u2013 Spatial Business Systems",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Enverus, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "enverus-inc",
-            "name": "Enverus, Inc."
-          }
-        }
+        "Enverus, Inc."
       ],
       "targets": [
-        {
-          "name": "Spatial Business Systems Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "76 125 465 483",
-          "party_page": {
-            "id": "spatial-business-systems-pty-ltd",
-            "name": "Spatial Business Systems Pty Ltd"
-          }
-        },
-        {
-          "name": "SBS Optionco, LLC",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "sbs-optionco-llc",
-            "name": "SBS Optionco, LLC"
-          }
-        }
-      ]
+        "Spatial Business Systems Pty Ltd",
+        "SBS Optionco, LLC"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-55006",
       "merger_name": "Hg Capital - OneStream",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Hg Pooled Management Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "hg-pooled-management-limited",
-            "name": "Hg Pooled Management Limited"
-          }
-        },
-        {
-          "name": "OnwardAcquireCo, Inc",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "onwardacquireco-inc",
-            "name": "OnwardAcquireCo, Inc"
-          }
-        }
+        "Hg Pooled Management Limited",
+        "OnwardAcquireCo, Inc"
       ],
       "targets": [
-        {
-          "name": "OneStream, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "onestream-inc",
-            "name": "OneStream, Inc."
-          }
-        }
-      ]
+        "OneStream, Inc."
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

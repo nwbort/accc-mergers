@@ -9,8 +9,6 @@
   "end_of_determination_period": "2026-08-14T12:00:00Z",
   "determination_publication_date": "2026-07-24T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-07-24T17:07:29+10:00",
   "consultation_response_due_date": "2026-07-10T12:00:00Z",
   "acquirers": [
     {
@@ -162,31 +160,10 @@
       "title": "Allianz - certain assets of nib\u2019s Australian travel insurance business - Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Allianz%20-%20certain%20assets%20of%20nib%E2%80%99s%20Australian%20travel%20insurance%20business%20-%20Phase%201%20determination.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "AWP Australia Pty Ltd (AWP), trading as Allianz Global Assistance,\nproposes to acquire certain assets of the travel insurance\ndistribution portfolio of nib Travel Pty Limited (nib). The assets to be\nacquired are limited to specified intellectual property rights, the\nbenefit of a portion of nib\u2019s existing intermediary contracts, and a\nsmall number of nib travel insurance sales employees, excluding\nnib\u2019s World Nomads travel insurance business (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "The acquirer, AWP, is part of the Allianz Group (Allianz), a global\ninsurance provider whose holding company, Allianz SE, is based in\nGermany. AWP issues travel insurance products underwritten by\nAllianz Australia Insurance Limited.\nnib is part of the nib Group, a general insurance provider operating in\nAustralia and New Zealand. nib Group primarily supplies health\ninsurance. It also manages and distributes travel insurance policies\nin Australia under different brands, which are underwritten by Pacific\nInternational Insurance.\nAWP and a nib Group entity also propose to enter into a distribution\nagreement as part of the transaction. This agreement will enable nib\nGroup to continue distributing white-labelled Allianz travel insurance\nproducts to its health insurance customers as an authorised\nrepresentative of AWP."
-        },
-        {
-          "item": "Overlap and relationship\nbetween the parties",
-          "details": "AWP and nib overlap in the supply of travel insurance products."
-        },
         {
           "item": "Reasons for determination",
           "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and information from third partes.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 AWP and nib do not appear to compete particularly closely in the\nsupply of travel insurance in Australia.\n\u2022 The merged firm would continue to face competition from\nmultiple alternative suppliers of travel insurance in Australia."
-        },
-        {
-          "item": "Applications for review",
-          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
         }
       ],
       "url_gh": "/mergers/MN-80024/Allianz - certain assets of nib\u2019s Australian travel insurance business - Phase 1 determination.pdf",
@@ -200,111 +177,42 @@
   "phase_1_determination_date": "2026-07-24T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-65005",
       "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
-      "status": "Under assessment",
-      "accc_determination": null,
       "acquirers": [
-        {
-          "name": "INSURANCE AUSTRALIA GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "60 090 739 923",
-          "party_page": {
-            "id": "insurance-australia-group-limited",
-            "name": "Insurance Australia Group Limited"
-          }
-        }
+        "INSURANCE AUSTRALIA GROUP LIMITED"
       ],
       "targets": [
-        {
-          "name": "RAC INSURANCE PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "59 094 685 882",
-          "party_page": {
-            "id": "rac-insurance-pty-limited",
-            "name": "Rac Insurance Pty Limited"
-          }
-        },
-        {
-          "name": "RACI PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "40 008 671 805",
-          "party_page": {
-            "id": "raci-pty-limited",
-            "name": "Raci Pty Limited"
-          }
-        }
-      ]
+        "RAC INSURANCE PTY LIMITED",
+        "RACI PTY LIMITED"
+      ],
+      "status": "Under assessment"
     },
     {
       "merger_id": "MN-40015",
       "merger_name": "Swiss Re - QBE Insurance's Trade Credit and Surety business",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "Swiss Re International SE",
-          "identifier_type": null,
-          "identifier": "B134553",
-          "party_page": {
-            "id": "swiss-re-international-se",
-            "name": "Swiss Re International SE"
-          }
-        }
+        "Swiss Re International SE"
       ],
       "targets": [
-        {
-          "name": "QBE Insurance Holdings Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "69 146 960 438",
-          "party_page": {
-            "id": "qbe-insurance-holdings-pty-limited",
-            "name": "QBE Insurance Holdings Pty Limited"
-          }
-        }
-      ]
+        "QBE Insurance Holdings Pty Limited"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-95010",
       "merger_name": "Lighthouse - Precise Services Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "LIGHTHOUSE SERVICE PARTNERS BIDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "91 685 113 197",
-          "party_page": {
-            "id": "lighthouse-service-partners-bidco-pty-ltd",
-            "name": "Lighthouse Service Partners Bidco Pty Ltd"
-          }
-        }
+        "LIGHTHOUSE SERVICE PARTNERS BIDCO PTY LTD"
       ],
       "targets": [
-        {
-          "name": "PRECISE TRADE SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "48 167 424 562",
-          "party_page": {
-            "id": "precise-trade-services-pty-ltd",
-            "name": "Precise Trade Services Pty Ltd"
-          }
-        },
-        {
-          "name": "SA Pipe Relining Pty. Ltd.",
-          "identifier_type": "ABN",
-          "identifier": "89 125 590 276",
-          "party_page": {
-            "id": "sa-pipe-relining-pty-ltd",
-            "name": "SA Pipe Relining Pty. Ltd."
-          }
-        }
-      ]
+        "PRECISE TRADE SERVICES PTY LTD",
+        "SA Pipe Relining Pty. Ltd."
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

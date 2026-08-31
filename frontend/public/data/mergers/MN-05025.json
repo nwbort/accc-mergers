@@ -9,8 +9,6 @@
   "end_of_determination_period": "2026-07-21T12:00:00Z",
   "determination_publication_date": "2026-07-06T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-07-06T15:46:57+10:00",
   "consultation_response_due_date": "2026-06-17T12:00:00Z",
   "acquirers": [
     {
@@ -78,31 +76,10 @@
       "title": "Equans - CV Services Group",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Equans%20-%20CV%20Services%20-%20Phase%201%20determination.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "Equans SAS (Equans) proposed to acquire 80% of the share capital\nof CV Services Group Pty Ltd (CV Services Group) either directly or\nthrough a wholly-owned subsidiary (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "The acquirer, Equans, is a global energy and technical services\ncompany headquartered in France. In Australia, Equans operates\nthrough a local subsidiary, which supplies:\n\u2022 electrical and communications installation;\n\u2022 facility management services, including;\no installation and maintenance of heating, ventilation\nand air conditioning (HVAC); and\no fire protection products; and\n\u2022 audio-visual integration and digital signage.\nThe target, CV Services Group, is an Australian technical services\ncompany. It supplies:\n\u2022 infrastructure services;\n\u2022 electrical design, installation and construction;\n\u2022 facility management services; and\n\u2022 media and signage manufacturing and installation."
-        },
-        {
-          "item": "Overlap and relationship\nbetween the parties",
-          "details": "The parties overlap in the supply of:\n\u2022 electrical construction services;\n\u2022 facility management services; and\n\u2022 signage solutions.\nThe parties also have a limited vertical relationship in the supply of\nsignage solutions for electrical construction services."
-        },
         {
           "item": "Reasons for determination",
           "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, information from third parties, and publicly\navailable information.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 Equans and CV Services Group do not appear to compete closely\nin the supply of electrical construction services, facility\nmanagement services, or signage solutions in Australia.\n\u2022 Post-Acquisition, the merged entity will continue to face\ncompetition from multiple alternative suppliers."
-        },
-        {
-          "item": "Applications for review",
-          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
         }
       ],
       "url_gh": "/mergers/MN-05025/Equans - CV Services - Phase 1 determination.pdf",
@@ -116,105 +93,40 @@
   "phase_1_determination_date": "2026-07-06T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-50007",
       "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "NDC AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "49 162 955 866",
-          "canonical": {
-            "id": "national-dental-care",
-            "name": "National Dental Care"
-          },
-          "party_page": {
-            "id": "national-dental-care",
-            "name": "National Dental Care"
-          }
-        }
+        "NDC AUSTRALIA PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "The Trustee for the Comfy Dental Trust",
-          "identifier_type": "ABN",
-          "identifier": "59 865 563 072",
-          "party_page": {
-            "id": "the-trustee-for-the-comfy-dental-trust",
-            "name": "The Trustee for the Comfy Dental Trust"
-          }
-        }
-      ]
+        "The Trustee for the Comfy Dental Trust"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-70017",
       "merger_name": "National Dental Care \u2013 business assets comprising the Cambridge Dental Centre clinic, Perth, WA",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "NDC AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "49 162 955 866",
-          "canonical": {
-            "id": "national-dental-care",
-            "name": "National Dental Care"
-          },
-          "party_page": {
-            "id": "national-dental-care",
-            "name": "National Dental Care"
-          }
-        }
+        "NDC AUSTRALIA PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "CAMDENT SERVICES UNIT TRUST",
-          "identifier_type": "ABN",
-          "identifier": "37 559 915 898",
-          "party_page": {
-            "id": "camdent-services-unit-trust",
-            "name": "Camdent Services Unit Trust"
-          }
-        }
-      ]
+        "CAMDENT SERVICES UNIT TRUST"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-85013",
       "merger_name": "National Dental Care \u2013 DDTA Dental clinic in Launceston, TAS",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "NDC AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "49 162 955 866",
-          "canonical": {
-            "id": "national-dental-care",
-            "name": "National Dental Care"
-          },
-          "party_page": {
-            "id": "national-dental-care",
-            "name": "National Dental Care"
-          }
-        }
+        "NDC AUSTRALIA PTY LIMITED"
       ],
       "targets": [
-        {
-          "name": "TAN DENTAL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "18 146 067 594",
-          "party_page": {
-            "id": "tan-dental-pty-ltd",
-            "name": "Tan Dental Pty Ltd"
-          }
-        }
-      ]
+        "TAN DENTAL PTY LTD"
+      ],
+      "accc_determination": "Approved"
     }
   ],
   "phase_1_estimate": {

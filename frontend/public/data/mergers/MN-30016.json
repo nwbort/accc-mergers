@@ -9,8 +9,6 @@
   "end_of_determination_period": "2026-07-07T12:00:00Z",
   "determination_publication_date": "2026-06-17T12:00:00Z",
   "accc_determination": "Approved",
-  "accc_determination_raw": "ACCC determinationApproved",
-  "page_modified_datetime": "2026-06-17T11:16:39+10:00",
   "consultation_response_due_date": "2026-06-02T12:00:00Z",
   "acquirers": [
     {
@@ -206,31 +204,10 @@
       "title": "Zurich - Beazley - Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Zurich%20-%20Beazley%20-%20Phase%201%20determination_0.pdf",
-      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1)",
       "determination_table_content": [
-        {
-          "item": "Notified acquisition",
-          "details": "Zurich Insurance Group Ltd (Zurich) proposes to acquire all of the\nshares in Beazley plc (Beazley) (the Acquisition)."
-        },
-        {
-          "item": "Determination",
-          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
-        },
-        {
-          "item": "Parties to the Acquisition",
-          "details": "The acquirer, Zurich, is a global multi-line insurer headquartered in\nSwitzerland. In Australia, Zurich, through its wholly-owned\nsubsidiaries, supplies a range of life insurance products and general\ninsurance products, including specialty insurance products.\nThe target, Beazley, is a UK-based global specialty insurance\nbusiness. Globally, Beazley underwrites a range of specialty\ninsurance products, including professional indemnity, cyber liability,\nproperty, marine, reinsurance, accident and life sciences, financial\ninstitutions, directors and officers, and political risks and\ncontingency business. Beazley manages 7 Lloyd\u2019s syndicates that\nunderwrite insurance and reinsurance business through the Lloyd\u2019s\nglobal platform, and is active in Australia solely through these\nsyndicates."
-        },
-        {
-          "item": "Overlap and relationship\nbetween the parties",
-          "details": "The Acquisition gives rise to a competitive overlap in relation to the\nsupply of the following insurance products in Australia: Cyber,\nMarine, SME, Corporate Property, Personal Accident, Management\nLiability, Professional Liability, and Financial lines/institutions."
-        },
         {
           "item": "Reasons for determination",
           "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, information from third parties, and publicly\navailable information.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings:\n\u2022 the Parties\u2019 market shares in Australia of the insurance products\nin which they overlap are estimated to be low, and the increases\nin share resulting from the Acquisition are estimated to be low;\n\u2022 the Parties would likely continue to face competition by multiple\nalternative suppliers of specialty insurance products in Australia\nin all product segments in which they overlap;\n\u2022 the Parties are not close competitors, with different areas of\nrelative strength and focus."
-        },
-        {
-          "item": "Applications for review",
-          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
         }
       ],
       "url_gh": "/mergers/MN-30016/Zurich - Beazley - Phase 1 determination_0.pdf",
@@ -244,110 +221,41 @@
   "phase_1_determination_date": "2026-06-17T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-55016",
       "merger_name": "Zurich - ClearView",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "ZURICH FINANCIAL SERVICES AUSTRALIA LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "11 008 423 372",
-          "canonical": {
-            "id": "zurich-assure-australia-pty-ltd",
-            "name": "Zurich"
-          },
-          "party_page": {
-            "id": "zurich-assure-australia-pty-ltd",
-            "name": "Zurich"
-          }
-        }
+        "ZURICH FINANCIAL SERVICES AUSTRALIA LIMITED"
       ],
       "targets": [
-        {
-          "name": "CLEARVIEW WEALTH LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "83 106 248 248",
-          "party_page": {
-            "id": "clearview-wealth-limited",
-            "name": "Clearview Wealth Limited"
-          }
-        }
-      ]
+        "CLEARVIEW WEALTH LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "WA-80006",
       "merger_name": "Russell Investment Group \u2013 Zurich Investment Management",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "RUSSELL INVESTMENT GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "92 003 066 859",
-          "party_page": {
-            "id": "russell-investment-group-pty-ltd",
-            "name": "Russell Investment Group Pty Ltd"
-          }
-        }
+        "RUSSELL INVESTMENT GROUP PTY LTD"
       ],
       "targets": [
-        {
-          "name": "ZURICH INVESTMENT MANAGEMENT LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "56 063 278 400",
-          "canonical": {
-            "id": "zurich-assure-australia-pty-ltd",
-            "name": "Zurich"
-          },
-          "party_page": {
-            "id": "zurich-assure-australia-pty-ltd",
-            "name": "Zurich"
-          }
-        }
-      ]
+        "ZURICH INVESTMENT MANAGEMENT LIMITED"
+      ],
+      "accc_determination": "Approved"
     },
     {
       "merger_id": "MN-65005",
       "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
-      "status": "Under assessment",
-      "accc_determination": null,
       "acquirers": [
-        {
-          "name": "INSURANCE AUSTRALIA GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "60 090 739 923",
-          "party_page": {
-            "id": "insurance-australia-group-limited",
-            "name": "Insurance Australia Group Limited"
-          }
-        }
+        "INSURANCE AUSTRALIA GROUP LIMITED"
       ],
       "targets": [
-        {
-          "name": "RAC INSURANCE PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "59 094 685 882",
-          "party_page": {
-            "id": "rac-insurance-pty-limited",
-            "name": "Rac Insurance Pty Limited"
-          }
-        },
-        {
-          "name": "RACI PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "40 008 671 805",
-          "party_page": {
-            "id": "raci-pty-limited",
-            "name": "Raci Pty Limited"
-          }
-        }
-      ]
+        "RAC INSURANCE PTY LIMITED",
+        "RACI PTY LIMITED"
+      ],
+      "status": "Under assessment"
     }
   ],
   "phase_1_estimate": {
