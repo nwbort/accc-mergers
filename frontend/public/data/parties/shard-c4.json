@@ -1,0 +1,334 @@
+{
+  "shard": 196,
+  "shard_count": 256,
+  "parties": {
+    "autosports-group-limited": {
+      "id": "autosports-group-limited",
+      "canonical_name": "Autosports Group Limited",
+      "members": [
+        {
+          "name": "AUTOSPORTS GROUP LIMITED",
+          "identifier": "54 614 505 261",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-75011",
+            "merger_name": "Autosports Group - Solitaire Automotive Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-26T12:00:00Z",
+            "determination_date": "2026-03-11T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "ballast-group-holdings-ltd": {
+      "id": "ballast-group-holdings-ltd",
+      "canonical_name": "Ballast Group Holdings Ltd",
+      "members": [
+        {
+          "name": "Ballast Group Holdings Ltd",
+          "identifier": "018092V",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-90022",
+            "merger_name": "Expedia - CarTrawler",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-20T12:00:00Z",
+            "determination_date": "2026-08-13T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "crowe-llp": {
+      "id": "crowe-llp",
+      "canonical_name": "Crowe LLP",
+      "members": [
+        {
+          "name": "Crowe LLP",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-90025",
+            "merger_name": "KKR - Crowe",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-25T12:00:00Z",
+            "determination_date": "2026-07-15T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "delinea-buyer-inc": {
+      "id": "delinea-buyer-inc",
+      "canonical_name": "Delinea Buyer, Inc.",
+      "members": [
+        {
+          "name": "Delinea Buyer, Inc.",
+          "identifier": "Delaware corporation file number  4842270",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-25003",
+            "merger_name": "Delinea (TPG) - StrongDM",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-20T12:00:00Z",
+            "determination_date": "2026-02-03T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "riverside-midco-limited": {
+      "id": "riverside-midco-limited",
+      "canonical_name": "Riverside Midco Limited",
+      "members": [
+        {
+          "name": "Riverside Midco Limited",
+          "identifier": "England and Wales Company Registration  16986520",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-15033",
+            "merger_name": "Armira and TA Associates \u2013 Intersurgical Aktiengesellschaft AG",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-25T12:00:00Z",
+            "determination_date": "2026-08-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "the-trustee-for-the-comfy-dental-trust": {
+      "id": "the-trustee-for-the-comfy-dental-trust",
+      "canonical_name": "The Trustee for the Comfy Dental Trust",
+      "members": [
+        {
+          "name": "The Trustee for the Comfy Dental Trust",
+          "identifier": "59 865 563 072",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-50007",
+            "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-13T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "wisycom-s-r-l": {
+      "id": "wisycom-s-r-l",
+      "canonical_name": "Wisycom S.r.l.",
+      "members": [
+        {
+          "name": "Wisycom S.r.l.",
+          "identifier": "Registration number (Companies\u2019 Register of Padova, VAT and Tax Code)  02765640244",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-80004",
+            "merger_name": "Audiotonix - Soundtech Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-20T12:00:00Z",
+            "determination_date": "2026-03-17T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "wpf-duratec-pty-ltd": {
+      "id": "wpf-duratec-pty-ltd",
+      "canonical_name": "Wpf Duratec Pty Ltd",
+      "members": [
+        {
+          "name": "WPF DURATEC PTY LTD",
+          "identifier": "87 082 800 397",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-75018",
+            "merger_name": "WPF Duratec - Pacific Welding (Davhold Australia)",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-04T12:00:00Z",
+            "determination_date": "2026-06-09T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 36.0,
+        "median_days": 36,
+        "average_business_days": 24.0,
+        "median_business_days": 24,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

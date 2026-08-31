@@ -1,0 +1,298 @@
+{
+  "shard": 252,
+  "shard_count": 256,
+  "parties": {
+    "lake-beaut-s-a-s": {
+      "id": "lake-beaut-s-a-s",
+      "canonical_name": "Lake Beaut\u00e9 S.A.S.",
+      "members": [
+        {
+          "name": "Lake Beaut\u00e9 S.A.S.",
+          "identifier": "908 463 425",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-60035",
+            "merger_name": "L'Or\u00e9al \u2013 Gucci Beauty Licence",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-19T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "lighthouse-service-partners-holdco-pty-ltd": {
+      "id": "lighthouse-service-partners-holdco-pty-ltd",
+      "canonical_name": "Lighthouse Service Partners Holdco Pty Ltd",
+      "members": [
+        {
+          "name": "LIGHTHOUSE SERVICE PARTNERS HOLDCO PTY LTD",
+          "identifier": "66 685 112 216",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-95010",
+            "merger_name": "Lighthouse - Precise Services Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-23T12:00:00Z",
+            "determination_date": "2026-04-13T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "ma-marina-fund-tt-pty-ltd": {
+      "id": "ma-marina-fund-tt-pty-ltd",
+      "canonical_name": "Ma Marina Fund Tt Pty Ltd",
+      "members": [
+        {
+          "name": "MA MARINA FUND TT PTY LTD",
+          "identifier": "65 666 902 245",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-45005",
+            "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-25T12:00:00Z",
+            "determination_date": "2026-04-17T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "molycop-group-comprising-all-of-the-entities-owned-directly-or-indirectly-by-aip": {
+      "id": "molycop-group-comprising-all-of-the-entities-owned-directly-or-indirectly-by-aip",
+      "canonical_name": "Molycop Group, comprising all of the entities owned directly or indirectly by AIP MC Holdings LLC.",
+      "members": [
+        {
+          "name": "Molycop Group, comprising all of the entities owned directly or indirectly by AIP MC Holdings LLC.",
+          "identifier": "6208194",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-85006",
+            "merger_name": "Tega and Apollo Funds consortium - Molycop",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-26T12:00:00Z",
+            "determination_date": "2026-04-28T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 33.0,
+        "median_days": 33,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "nilfisk-pty-ltd": {
+      "id": "nilfisk-pty-ltd",
+      "canonical_name": "Nilfisk Pty Ltd",
+      "members": [
+        {
+          "name": "NILFISK PTY LTD",
+          "identifier": "98 003 762 623",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-70005",
+            "merger_name": "Freudenberg Home and Cleaning Solutions \u2013 Nilfisk",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-09T12:00:00Z",
+            "determination_date": "2026-03-12T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 31.0,
+        "median_days": 31,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "paramount-skydance-corporation": {
+      "id": "paramount-skydance-corporation",
+      "canonical_name": "Paramount Skydance Corporation",
+      "members": [
+        {
+          "name": "Paramount Skydance Corporation",
+          "identifier": "Commercial / Trade Register Number  10426606",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-45006",
+            "merger_name": "Paramount Skydance - Warner Bros. Discovery",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-29T12:00:00Z",
+            "determination_date": "2026-06-09T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 41.0,
+        "median_days": 41,
+        "average_business_days": 27.0,
+        "median_business_days": 27,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "symal-group-limited": {
+      "id": "symal-group-limited",
+      "canonical_name": "Symal Group Limited",
+      "members": [
+        {
+          "name": "SYMAL GROUP LIMITED",
+          "identifier": "72 615 255 466",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-50030",
+            "merger_name": "Symal Group - Shamrock Engineering and Equipment",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-01T12:00:00Z",
+            "determination_date": "2026-07-22T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-55003",
+            "merger_name": "Symal Group - 80% acquisition of Davison Earthmovers",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-03T12:00:00Z",
+            "determination_date": "2026-02-24T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 2,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21.0,
+        "average_business_days": 15.0,
+        "median_business_days": 15.0,
+        "completed_count": 2
+      },
+      "waiver_duration": null
+    }
+  }
+}

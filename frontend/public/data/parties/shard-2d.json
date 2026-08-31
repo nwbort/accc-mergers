@@ -1,0 +1,191 @@
+{
+  "shard": 45,
+  "shard_count": 256,
+  "parties": {
+    "atp-adhesive-systems-group-gmbh-2": {
+      "id": "atp-adhesive-systems-group-gmbh-2",
+      "canonical_name": "ATP adhesive systems Group GmbH",
+      "members": [
+        {
+          "name": "ATP adhesive systems Group GmbH",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-65003",
+            "merger_name": "Henkel \u2013 ATP adhesive systems group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-19T12:00:00Z",
+            "determination_date": "2026-02-05T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "corval-partners-limited": {
+      "id": "corval-partners-limited",
+      "canonical_name": "Corval Partners Limited",
+      "members": [
+        {
+          "name": "CORVAL PARTNERS LIMITED",
+          "identifier": "86 130 628 830",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-35008",
+            "merger_name": "VFMC \u2013 CorVal Land and Operator Trusts",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-09T12:00:00Z",
+            "determination_date": "2026-03-26T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "locumsgroup-private-accounting-services-pty-limited": {
+      "id": "locumsgroup-private-accounting-services-pty-limited",
+      "canonical_name": "Locumsgroup Private Accounting Services Pty Limited",
+      "members": [
+        {
+          "name": "Locumsgroup Private Accounting Services Pty Limited",
+          "identifier": "66 116 993 670",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-85004",
+            "merger_name": "Treysta Wealth Management \u2013 Locumsgroup",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-03T12:00:00Z",
+            "determination_date": "2026-01-27T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "metal-manufactures": {
+      "id": "metal-manufactures",
+      "canonical_name": "Metal Manufactures",
+      "members": [
+        {
+          "name": "METAL MANUFACTURES PTY LIMITED",
+          "identifier": "13 003 762 641",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "MM SECURITY SUPPLIES PTY LIMITED",
+          "identifier": "14 670 314 913",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "MML HOLDINGS LIMITED",
+          "identifier": "55 084 402 380",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-65031",
+            "merger_name": "Metal Manufactures - BayWa Solar Systems",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-14T12:00:00Z",
+            "determination_date": null
+          },
+          {
+            "merger_id": "MN-01115",
+            "merger_name": "MM Security \u2013 Micron Security Products",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-29T12:00:00Z",
+            "determination_date": "2026-08-24T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 2,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

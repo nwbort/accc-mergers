@@ -1,0 +1,262 @@
+{
+  "shard": 51,
+  "shard_count": 256,
+  "parties": {
+    "ash-promotions-pty-ltd": {
+      "id": "ash-promotions-pty-ltd",
+      "canonical_name": "Ash Promotions Pty Ltd",
+      "members": [
+        {
+          "name": "ASH PROMOTIONS PTY LTD",
+          "identifier": "41 601 281 510",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-65007",
+            "merger_name": "Australian Venue Co. \u2013 An Sibin Irish Pub",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-23T12:00:00Z",
+            "determination_date": "2026-03-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "jera-exploration-ichthys-pty-ltd": {
+      "id": "jera-exploration-ichthys-pty-ltd",
+      "canonical_name": "Jera Exploration Ichthys Pty Ltd",
+      "members": [
+        {
+          "name": "JERA EXPLORATION ICHTHYS PTY LTD",
+          "identifier": "20 158 193 250",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-05004",
+            "merger_name": "MidOcean Energy \u2013 JERA Gorgon",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-14T12:00:00Z",
+            "determination_date": "2026-04-09T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "smile-partners-instyle-pty-ltd": {
+      "id": "smile-partners-instyle-pty-ltd",
+      "canonical_name": "Smile Partners (Instyle) Pty Ltd",
+      "members": [
+        {
+          "name": "SMILE PARTNERS (INSTYLE) PTY LTD",
+          "identifier": "61 625 040 520",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-05014",
+            "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "tetra-tech-inc": {
+      "id": "tetra-tech-inc",
+      "canonical_name": "Tetra Tech, Inc.",
+      "members": [
+        {
+          "name": "TETRA TECH AUSTRALIA GROUP HOLDINGS PTY LTD",
+          "identifier": "74 676 488 716",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "TETRA TECH HOLDINGS PTY LTD",
+          "identifier": "98 623 346 225",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Tetra Tech, Inc.",
+          "identifier": "CIK 0000831641",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-70008",
+            "merger_name": "Tetra Tech \u2013 Providence Consulting",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-27T12:00:00Z",
+            "determination_date": "2026-04-01T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 33.0,
+        "median_days": 33,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      }
+    },
+    "thomas-wener-keller": {
+      "id": "thomas-wener-keller",
+      "canonical_name": "Thomas Wener Keller",
+      "members": [
+        {
+          "name": "Thomas Wener Keller",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-40005",
+            "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-18T12:00:00Z",
+            "determination_date": "2026-03-12T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "wartsila-energy-storage-australia-pty-ltd": {
+      "id": "wartsila-energy-storage-australia-pty-ltd",
+      "canonical_name": "Wartsila Energy Storage Australia Pty Ltd",
+      "members": [
+        {
+          "name": "WARTSILA ENERGY STORAGE AUSTRALIA PTY LTD",
+          "identifier": "94 673 275 002",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-80036",
+            "merger_name": "RCT Solutions GmbH - W\u00e4rtsil\u00e4 Energy Storage Finland Oy",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-03T12:00:00Z",
+            "determination_date": "2026-08-27T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    }
+  }
+}

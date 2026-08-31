@@ -1,0 +1,339 @@
+{
+  "shard": 187,
+  "shard_count": 256,
+  "parties": {
+    "buroserv-australia-pty-ltd": {
+      "id": "buroserv-australia-pty-ltd",
+      "canonical_name": "Buroserv Australia Pty Ltd",
+      "members": [
+        {
+          "name": "Buroserv Australia Pty Ltd",
+          "identifier": "45 135 379 387",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-90011",
+            "merger_name": "Salter Brothers - Buroserv",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-10T12:00:00Z",
+            "determination_date": "2026-04-29T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 19.0,
+        "median_days": 19,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "cvent-atlanta-llc": {
+      "id": "cvent-atlanta-llc",
+      "canonical_name": "Cvent Atlanta, LLC",
+      "members": [
+        {
+          "name": "Cvent Atlanta, LLC",
+          "identifier": "[Delaware corporate file number  5603939]",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-15005",
+            "merger_name": "Cvent - ON24",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-23T12:00:00Z",
+            "determination_date": "2026-03-17T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "dhx-entertainment-usa-inc": {
+      "id": "dhx-entertainment-usa-inc",
+      "canonical_name": "DHX Entertainment (USA) Inc.",
+      "members": [
+        {
+          "name": "DHX Entertainment (USA) Inc.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-85008",
+            "merger_name": "Sony \u2013 Peanuts Worldwide",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-02T12:00:00Z",
+            "determination_date": "2026-02-19T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "dp-world-limited": {
+      "id": "dp-world-limited",
+      "canonical_name": "DP World",
+      "members": [
+        {
+          "name": "DP World Australia Limited",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "DP World Limited",
+          "identifier": "549300M3U2DNF4QVSS04",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-95015",
+            "merger_name": "DP World Global Forwarding \u2013 Pure Global Logistics",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-28T12:00:00Z",
+            "determination_date": "2026-05-11T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "eptec-bidco-pty-ltd": {
+      "id": "eptec-bidco-pty-ltd",
+      "canonical_name": "Eptec Bidco Pty Ltd",
+      "members": [
+        {
+          "name": "EPTEC BIDCO PTY LTD",
+          "identifier": "12 638 785 378",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-80007",
+            "merger_name": "Arlington Capital Partners \u2013 Eptec Defence Solutions",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-18T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "eynesbury-township-pty-ltd": {
+      "id": "eynesbury-township-pty-ltd",
+      "canonical_name": "Eynesbury Township Pty Ltd",
+      "members": [
+        {
+          "name": "EYNESBURY TOWNSHIP PTY LTD",
+          "identifier": "40 635 948 873",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-35026",
+            "merger_name": "Mitsubishi Estate Asia \u2013 Eynesbury Properties",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-18T12:00:00Z",
+            "determination_date": "2026-07-06T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "moonton-holdings-limited": {
+      "id": "moonton-holdings-limited",
+      "canonical_name": "Moonton Holdings Limited",
+      "members": [
+        {
+          "name": "Moonton Holdings Limited",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-65012",
+            "merger_name": "Savvy Games Group \u2013 Moonton",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-08T12:00:00Z",
+            "determination_date": "2026-04-30T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "tax-and-wealth-pty-ltd": {
+      "id": "tax-and-wealth-pty-ltd",
+      "canonical_name": "Tax And Wealth Pty Ltd",
+      "members": [
+        {
+          "name": "TAX AND WEALTH PTY LTD",
+          "identifier": "45 606 112 805",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-85041",
+            "merger_name": "AGS Financial Group - Hartley Financial Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-28T12:00:00Z",
+            "determination_date": "2026-08-26T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,383 @@
+{
+  "shard": 69,
+  "shard_count": 256,
+  "parties": {
+    "airtree-ventures-fund-v-franklin-park-trusco-pty-ltd-atf-airtree-ventures-fund-v": {
+      "id": "airtree-ventures-fund-v-franklin-park-trusco-pty-ltd-atf-airtree-ventures-fund-v",
+      "canonical_name": "AIRTREE VENTURES FUND V FRANKLIN PARK TRUSCO PTY LTD atf Airtree Ventures Fund V Franklin Park Co-In",
+      "members": [
+        {
+          "name": "AIRTREE VENTURES FUND V FRANKLIN PARK TRUSCO PTY LTD atf Airtree Ventures Fund V Franklin Park Co-In",
+          "identifier": "93 693 484 141",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-45010",
+            "merger_name": "Airtree and ors (additional minority co-investors) - Advanced Navigation",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-02T12:00:00Z",
+            "determination_date": "2026-05-01T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "anz-hospitals-pty-ltd": {
+      "id": "anz-hospitals-pty-ltd",
+      "canonical_name": "Anz Hospitals Pty Ltd",
+      "members": [
+        {
+          "name": "ANZ HOSPITALS PTY LTD",
+          "identifier": "14 631 014 938",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-40013",
+            "merger_name": "Calvary - Hobart Private Hospital",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-16T12:00:00Z",
+            "determination_date": "2026-08-27T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-55010",
+            "merger_name": "Calvary - Holmesglen Private Hospital",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-27T12:00:00Z",
+            "determination_date": "2026-04-28T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-75003",
+            "merger_name": "Ramsay Health Care \u2013 National Capital Private Hospital",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-01-21T12:00:00Z",
+            "determination_date": "2026-02-12T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 3,
+      "phase_1_count": 3,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 42.0,
+        "median_days": 32,
+        "average_business_days": 28.666666666666668,
+        "median_business_days": 19,
+        "completed_count": 3
+      },
+      "waiver_duration": null
+    },
+    "bci-acquisitions-inc": {
+      "id": "bci-acquisitions-inc",
+      "canonical_name": "BCI Acquisitions, Inc.",
+      "members": [
+        {
+          "name": "BCI Acquisitions, Inc.",
+          "identifier": "Delaware ID  6389940",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-70007",
+            "merger_name": "Platinum Equity Group \u2013 Burke",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-23T12:00:00Z",
+            "determination_date": "2026-03-06T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 11.0,
+        "median_days": 11,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "histon-nelson-pty-ltd": {
+      "id": "histon-nelson-pty-ltd",
+      "canonical_name": "Histon Nelson Pty Ltd",
+      "members": [
+        {
+          "name": "Histon Nelson Pty Ltd",
+          "identifier": "144 914 965",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-05009",
+            "merger_name": "Genea - Embrace Fertility",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-27T12:00:00Z",
+            "determination_date": "2026-05-18T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "pt-asian-bulk-logistics": {
+      "id": "pt-asian-bulk-logistics",
+      "canonical_name": "PT Asian Bulk Logistics",
+      "members": [
+        {
+          "name": "Global Engage Marine Pty Ltd",
+          "identifier": "693 762 122",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "PT Asian Bulk Logistics",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "PT Asian Bulk Logistics",
+          "identifier": "NIB   8120012130871",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-90012",
+            "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-13T12:00:00Z",
+            "determination_date": "2026-06-24T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-20010",
+            "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-06T12:00:00Z",
+            "determination_date": "2026-03-19T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 42.0,
+        "median_days": 42,
+        "average_business_days": 28.0,
+        "median_business_days": 28,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "raci-pty-limited": {
+      "id": "raci-pty-limited",
+      "canonical_name": "Raci Pty Limited",
+      "members": [
+        {
+          "name": "RACI PTY LIMITED",
+          "identifier": "40 008 671 805",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-65005",
+            "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 2",
+            "notification_date": "2026-03-03T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 1,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": {
+        "average_days": 44.0,
+        "median_days": 44,
+        "average_business_days": 29.0,
+        "median_business_days": 29,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "rio-tinto-limited": {
+      "id": "rio-tinto-limited",
+      "canonical_name": "Rio Tinto Limited",
+      "members": [
+        {
+          "name": "RIO TINTO LIMITED",
+          "identifier": "96 004 458 404",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-35027",
+            "merger_name": "GPS Energy \u2013 Ryowa's interest in Gladstone Power Station Joint Venture",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-17T12:00:00Z",
+            "determination_date": "2026-06-30T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "the-trustee-for-scentre-gift-card-trust": {
+      "id": "the-trustee-for-scentre-gift-card-trust",
+      "canonical_name": "The Trustee For Scentre Gift Card Trust",
+      "members": [
+        {
+          "name": "THE TRUSTEE FOR SCENTRE GIFT CARD TRUST",
+          "identifier": "78 407 025 369",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-80034",
+            "merger_name": "Australian Retirement Trust \u2013 Westfield Mt Gravatt",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-28T12:00:00Z",
+            "determination_date": "2026-08-25T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    }
+  }
+}

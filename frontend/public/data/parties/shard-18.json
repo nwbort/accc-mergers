@@ -1,0 +1,438 @@
+{
+  "shard": 24,
+  "shard_count": 256,
+  "parties": {
+    "audiotonix-limited": {
+      "id": "audiotonix-limited",
+      "canonical_name": "Audiotonix Limited",
+      "members": [
+        {
+          "name": "Audiotonix Limited",
+          "identifier": "Company number (England and Wales)  15618986",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-80004",
+            "merger_name": "Audiotonix - Soundtech Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-20T12:00:00Z",
+            "determination_date": "2026-03-17T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "complete-plaster-reo-pty-ltd": {
+      "id": "complete-plaster-reo-pty-ltd",
+      "canonical_name": "Complete Plaster & Reo Pty Ltd",
+      "members": [
+        {
+          "name": "COMPLETE PLASTER & REO PTY LTD",
+          "identifier": "48 164 427 114",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-10018",
+            "merger_name": "CSR - Complete Plaster",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-15T12:00:00Z",
+            "determination_date": "2026-07-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "egis-projects-s-a-s": {
+      "id": "egis-projects-s-a-s",
+      "canonical_name": "Egis Projects S.A.S.",
+      "members": [
+        {
+          "name": "Egis Projects S.A.S.",
+          "identifier": "French Company ID  378 893 812",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-70011",
+            "merger_name": "Egis Projects Asia Pacific - Fulton Hogan Egis O&M",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-02T12:00:00Z",
+            "determination_date": "2026-04-22T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "intrepid-travel-pty-ltd": {
+      "id": "intrepid-travel-pty-ltd",
+      "canonical_name": "Intrepid Travel Pty Ltd",
+      "members": [
+        {
+          "name": "INTREPID TRAVEL PTY LTD",
+          "identifier": "35 007 172 456",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "INTREPID TRAVEL PTY. LTD.",
+          "identifier": "35 007 172 456",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-40008",
+            "merger_name": "Intrepid Travel - Wild Bush Luxury",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-23T12:00:00Z",
+            "determination_date": "2026-04-16T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-70003",
+            "merger_name": "Intrepid Travel \u2013 Wild Bush Luxury",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-20T12:00:00Z",
+            "determination_date": "2026-02-05T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "l-c-dyson-s-bus-services-proprietary-limited": {
+      "id": "l-c-dyson-s-bus-services-proprietary-limited",
+      "canonical_name": "L.C. Dyson'S Bus Services Proprietary Limited",
+      "members": [
+        {
+          "name": "L.C. DYSON'S BUS SERVICES PROPRIETARY LIMITED",
+          "identifier": "99 004 436 542",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-35017",
+            "merger_name": "KINETIC - DYSONS BUS SERVICES",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-27T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "morton-matthews-holdings-pty-ltd-as-trustee-for-the-matthews-family-trust": {
+      "id": "morton-matthews-holdings-pty-ltd-as-trustee-for-the-matthews-family-trust",
+      "canonical_name": "Morton Matthews Holdings Pty Ltd As Trustee For The Matthews Family Trust",
+      "members": [
+        {
+          "name": "MORTON MATTHEWS HOLDINGS PTY LTD AS TRUSTEE FOR THE MATTHEWS FAMILY TRUST",
+          "identifier": "103 429 652",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-01112",
+            "merger_name": "State Swim \u2013 In2Swim",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-02T12:00:00Z",
+            "determination_date": "2026-07-27T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "national-distribution-services-pty-ltd": {
+      "id": "national-distribution-services-pty-ltd",
+      "canonical_name": "National Distribution Services Pty Ltd",
+      "members": [
+        {
+          "name": "NATIONAL DISTRIBUTION SERVICES PTY LTD",
+          "identifier": "66 633 619 333",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-35014",
+            "merger_name": "News Corp \u2013 acquisition of 20% of National Distribution Services",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-04T12:00:00Z",
+            "determination_date": "2026-06-09T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 36.0,
+        "median_days": 36,
+        "average_business_days": 24.0,
+        "median_business_days": 24,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "russleigh-pty-ltd": {
+      "id": "russleigh-pty-ltd",
+      "canonical_name": "Russleigh Pty Ltd",
+      "members": [
+        {
+          "name": "Russleigh Pty Ltd",
+          "identifier": "052 977 198",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-75011",
+            "merger_name": "Autosports Group - Solitaire Automotive Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-26T12:00:00Z",
+            "determination_date": "2026-03-11T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "sony-pictures-entertainment-inc": {
+      "id": "sony-pictures-entertainment-inc",
+      "canonical_name": "Sony Pictures Entertainment, Inc.",
+      "members": [
+        {
+          "name": "Sony Pictures Entertainment, Inc.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-85008",
+            "merger_name": "Sony \u2013 Peanuts Worldwide",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-02T12:00:00Z",
+            "determination_date": "2026-02-19T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "zhijun-zuo": {
+      "id": "zhijun-zuo",
+      "canonical_name": "Zhijun Zuo",
+      "members": [
+        {
+          "name": "Zhijun Zuo",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-35010",
+            "merger_name": "Blackstone - Advanced Cooling Technologies",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-09T12:00:00Z",
+            "determination_date": "2026-03-24T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    }
+  }
+}

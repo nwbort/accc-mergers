@@ -1,0 +1,252 @@
+{
+  "shard": 30,
+  "shard_count": 256,
+  "parties": {
+    "carrick-capital-partners-ii-l-p": {
+      "id": "carrick-capital-partners-ii-l-p",
+      "canonical_name": "Carrick Capital Partners II, L.P.",
+      "members": [
+        {
+          "name": "Carrick Capital Partners II, L.P.",
+          "identifier": "Company No.: 5654420  Delaware",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-05003",
+            "merger_name": "KKR led consortium \u2013 Saviynt",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-11T12:00:00Z",
+            "determination_date": "2026-01-27T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "ipac-solutions-pty-ltd": {
+      "id": "ipac-solutions-pty-ltd",
+      "canonical_name": "Ipac Solutions Pty Ltd",
+      "members": [
+        {
+          "name": "IPAC SOLUTIONS PTY LTD",
+          "identifier": "30 108 845 718",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-90009",
+            "merger_name": "Trescal \u2013 TR Calibration",
+            "is_waiver": false,
+            "status": "Assessment ceased",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 2",
+            "notification_date": "2026-04-14T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 1,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 77.0,
+        "median_days": 77,
+        "average_business_days": 52.0,
+        "median_business_days": 52,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "olam-holdings-pte-limited": {
+      "id": "olam-holdings-pte-limited",
+      "canonical_name": "Olam Holdings Pte Limited",
+      "members": [
+        {
+          "name": "Olam Holdings Pte Limited",
+          "identifier": "UEN  202110101R",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-15014",
+            "merger_name": "Wipro - Mindsprint",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-07T12:00:00Z",
+            "determination_date": "2026-04-24T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "perpetual-corporate-trust-limited-as-trustee-for-volt-managed-investment-trust-1": {
+      "id": "perpetual-corporate-trust-limited-as-trustee-for-volt-managed-investment-trust-1",
+      "canonical_name": "Perpetual Corporate Trust Limited (as trustee for Volt Managed Investment Trust 1)",
+      "members": [
+        {
+          "name": "Perpetual Corporate Trust Limited (as trustee for Volt Managed Investment Trust 1)",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-90007",
+            "merger_name": "Volt Managed Investment Trusts \u2013 HMC Energy Transition Platform",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-14T12:00:00Z",
+            "determination_date": "2026-06-05T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "transport-accident-commission": {
+      "id": "transport-accident-commission",
+      "canonical_name": "Transport Accident Commission",
+      "members": [
+        {
+          "name": "TRANSPORT ACCIDENT COMMISSION",
+          "identifier": "22 033 947 623",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-35008",
+            "merger_name": "VFMC \u2013 CorVal Land and Operator Trusts",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-09T12:00:00Z",
+            "determination_date": "2026-03-26T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "yum-brands-inc": {
+      "id": "yum-brands-inc",
+      "canonical_name": "Yum! Brands, Inc.",
+      "members": [
+        {
+          "name": "Yum! Brands, Inc.",
+          "identifier": "USNC  0428278",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-70018",
+            "merger_name": "Restaurant Brands and Yum! Brands \u2013 Taco Bell restaurants",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-18T12:00:00Z",
+            "determination_date": "2026-06-11T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

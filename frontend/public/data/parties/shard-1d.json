@@ -1,0 +1,397 @@
+{
+  "shard": 29,
+  "shard_count": 256,
+  "parties": {
+    "alchemy-copyrights-llc": {
+      "id": "alchemy-copyrights-llc",
+      "canonical_name": "Alchemy Copyrights LLC",
+      "members": [
+        {
+          "name": "Alchemy Copyrights LLC",
+          "identifier": "Company Number: 5614268",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-75023",
+            "merger_name": "Bertelsmann Music Group - Concord",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-18T12:00:00Z",
+            "determination_date": "2026-07-10T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "allianz-australia-services-pty-limited": {
+      "id": "allianz-australia-services-pty-limited",
+      "canonical_name": "Allianz Australia Services Pty Limited",
+      "members": [
+        {
+          "name": "ALLIANZ AUSTRALIA SERVICES PTY LIMITED",
+          "identifier": "66 002 947 257",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-55015",
+            "merger_name": "Allianz - Lease of commercial office space in North Sydney from Lendlease (Victoria Cross)",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-23T12:00:00Z",
+            "determination_date": "2026-04-29T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 6.0,
+        "median_days": 6,
+        "average_business_days": 3.0,
+        "median_business_days": 3,
+        "completed_count": 1
+      }
+    },
+    "apollo-purchaser-inc": {
+      "id": "apollo-purchaser-inc",
+      "canonical_name": "Apollo Purchaser, Inc.",
+      "members": [
+        {
+          "name": "Apollo Purchaser, Inc.",
+          "identifier": "Registration number 2027954573",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-85025",
+            "merger_name": "Francisco Partners - Blackline Safety",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-24T12:00:00Z",
+            "determination_date": "2026-05-06T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 12.0,
+        "median_days": 12,
+        "average_business_days": 7.0,
+        "median_business_days": 7,
+        "completed_count": 1
+      }
+    },
+    "australian-global-marine-and-logistics-pty-ltd": {
+      "id": "australian-global-marine-and-logistics-pty-ltd",
+      "canonical_name": "Australian Global Marine And Logistics Pty Ltd",
+      "members": [
+        {
+          "name": "AUSTRALIAN GLOBAL MARINE AND LOGISTICS PTY LTD",
+          "identifier": "68 682 427 587",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-90012",
+            "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-13T12:00:00Z",
+            "determination_date": "2026-06-24T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-20010",
+            "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-06T12:00:00Z",
+            "determination_date": "2026-03-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 42.0,
+        "median_days": 42,
+        "average_business_days": 28.0,
+        "median_business_days": 28,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "caterpillar-inc": {
+      "id": "caterpillar-inc",
+      "canonical_name": "Caterpillar Inc.",
+      "members": [
+        {
+          "name": "Caterpillar Inc.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-01058",
+            "merger_name": "Caterpillar \u2013 RPMGlobal Holdings",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2025-11-10T12:00:00Z",
+            "determination_date": "2025-12-18T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 38.0,
+        "median_days": 38,
+        "average_business_days": 28.0,
+        "median_business_days": 28,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "kering-beaut-s-a-s": {
+      "id": "kering-beaut-s-a-s",
+      "canonical_name": "Kering Beaut\u00e9 S.A.S.",
+      "members": [
+        {
+          "name": "Kering Beaut\u00e9 S.A.S.",
+          "identifier": "Netherlands Chamber of Commerce registration number 33223151",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-01080",
+            "merger_name": "L\u2019Or\u00e9al \u2013 Kering Beaut\u00e9",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-01-15T12:00:00Z",
+            "determination_date": "2026-02-11T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "mercuria-energy-group-limited": {
+      "id": "mercuria-energy-group-limited",
+      "canonical_name": "Mercuria Energy Group Limited",
+      "members": [
+        {
+          "name": "Mercuria Energy Group Limited",
+          "identifier": "202404088",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-55012",
+            "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-10T12:00:00Z",
+            "determination_date": "2026-04-01T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "mitsui-and-co": {
+      "id": "mitsui-and-co",
+      "canonical_name": "Mitsui & Co",
+      "members": [
+        {
+          "name": "MITSUI & CO LTD",
+          "identifier": "88 001 855 465",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "SPC BLUE PTY. LTD.",
+          "identifier": "63 676 457 444",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-70025",
+            "merger_name": "Mitsui \u2013 Rhodes Ridge Joint Venture",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-12T12:00:00Z",
+            "determination_date": "2026-07-08T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "riverstone-gp-pty-ltd": {
+      "id": "riverstone-gp-pty-ltd",
+      "canonical_name": "Riverstone Gp Pty Ltd",
+      "members": [
+        {
+          "name": "RIVERSTONE GP PTY LTD",
+          "identifier": "34 651 255 319",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-85022",
+            "merger_name": "PH Medical Centres - Riverstone Family Medical Practice",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-08T12:00:00Z",
+            "determination_date": "2026-04-16T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 8.0,
+        "median_days": 8,
+        "average_business_days": 6.0,
+        "median_business_days": 6,
+        "completed_count": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,392 @@
+{
+  "shard": 192,
+  "shard_count": 256,
+  "parties": {
+    "baker-hughes-holdings-llc": {
+      "id": "baker-hughes-holdings-llc",
+      "canonical_name": "Baker Hughes Holdings LLC",
+      "members": [
+        {
+          "name": "Baker Hughes Holdings LLC",
+          "identifier": "EIN 760207995",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-35022",
+            "merger_name": "Hexagon - Waygate Technologies",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-22T12:00:00Z",
+            "determination_date": "2026-06-22T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 31.0,
+        "median_days": 31,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "elevate-holdco-pty-ltd": {
+      "id": "elevate-holdco-pty-ltd",
+      "canonical_name": "Elevate HoldCo Pty Ltd",
+      "members": [
+        {
+          "name": "Elevate HoldCo Pty Ltd",
+          "identifier": "699 127 832",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-05041",
+            "merger_name": "Pemba - Hewison Private Wealth",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-21T12:00:00Z",
+            "determination_date": "2026-08-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    },
+    "hupco-holdings-pty-ltd": {
+      "id": "hupco-holdings-pty-ltd",
+      "canonical_name": "Hupco Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "HUPCO HOLDINGS PTY LTD",
+          "identifier": "697 110 099",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-05029",
+            "merger_name": "HupCo \u2013 AMES Australasia",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-29T12:00:00Z",
+            "determination_date": "2026-07-17T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "mag-northern-beaches-pty-ltd": {
+      "id": "mag-northern-beaches-pty-ltd",
+      "canonical_name": "Mag Northern Beaches Pty Ltd",
+      "members": [
+        {
+          "name": "MAG NORTHERN BEACHES PTY LTD",
+          "identifier": "21 659 209 051",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-65026",
+            "merger_name": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-22T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-30010",
+            "merger_name": "MAG South Coast - Country Motor Company / Kinghorn Motors",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-20T12:00:00Z",
+            "determination_date": "2026-05-15T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "mercuria-dry-bulk-finance-limited": {
+      "id": "mercuria-dry-bulk-finance-limited",
+      "canonical_name": "Mercuria Dry Bulk Finance Limited",
+      "members": [
+        {
+          "name": "Mercuria Dry Bulk Finance Limited",
+          "identifier": "202505067",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-55012",
+            "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-10T12:00:00Z",
+            "determination_date": "2026-04-01T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "movac-growth-limited": {
+      "id": "movac-growth-limited",
+      "canonical_name": "Movac Growth Limited",
+      "members": [
+        {
+          "name": "Movac Growth Limited",
+          "identifier": "NZBN  9429050910694",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-70032",
+            "merger_name": "Movac \u2013 Advanced Navigation",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-28T12:00:00Z",
+            "determination_date": "2026-08-27T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 30.0,
+        "median_days": 30,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      }
+    },
+    "oblivious-pty-ltd": {
+      "id": "oblivious-pty-ltd",
+      "canonical_name": "Oblivious Pty Ltd",
+      "members": [
+        {
+          "name": "OBLIVIOUS PTY LTD",
+          "identifier": "23 676 977 754",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-15024",
+            "merger_name": "Redwood Services Group \u2013 All IT Australia",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-09T12:00:00Z",
+            "determination_date": "2026-06-25T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "prophix-software-inc": {
+      "id": "prophix-software-inc",
+      "canonical_name": "Prophix Software Inc",
+      "members": [
+        {
+          "name": "Prophix Software Inc",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-55006",
+            "merger_name": "Hg Capital - OneStream",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-19T12:00:00Z",
+            "determination_date": "2026-03-17T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "trustee-for-fair-family-trust-kirk-family-trust-gardner-family-trust": {
+      "id": "trustee-for-fair-family-trust-kirk-family-trust-gardner-family-trust",
+      "canonical_name": "TRUSTEE FOR FAIR FAMILY TRUST & Kirk Family Trust & Gardner Family Trust",
+      "members": [
+        {
+          "name": "TRUSTEE FOR FAIR FAMILY TRUST & Kirk Family Trust & Gardner Family Trust",
+          "identifier": "71 630 254 987",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-95012",
+            "merger_name": "Ochre Health - Newstead Medical and Kings Meadows Medical Centre, TAS",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-31T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 7.0,
+        "median_days": 7,
+        "average_business_days": 3.0,
+        "median_business_days": 3,
+        "completed_count": 1
+      }
+    }
+  }
+}

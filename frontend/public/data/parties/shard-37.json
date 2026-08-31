@@ -1,0 +1,436 @@
+{
+  "shard": 55,
+  "shard_count": 256,
+  "parties": {
+    "astreya-pty-ltd": {
+      "id": "astreya-pty-ltd",
+      "canonical_name": "Astreya Pty Ltd",
+      "members": [
+        {
+          "name": "Astreya Pty Ltd",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-70019",
+            "merger_name": "Cognizant \u2013 Astreya",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-07T12:00:00Z",
+            "determination_date": "2026-05-21T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "centuria-property-funds-no-2-limited-as-the-re-for-centuria-sydney-cbd-prime-off": {
+      "id": "centuria-property-funds-no-2-limited-as-the-re-for-centuria-sydney-cbd-prime-off",
+      "canonical_name": "Centuria Property Funds No. 2 Limited as the RE for Centuria Sydney CBD Prime Office Fund",
+      "members": [
+        {
+          "name": "Centuria Property Funds No. 2 Limited as the RE for Centuria Sydney CBD Prime Office Fund",
+          "identifier": "38 133 363 185",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-50029",
+            "merger_name": "Centuria Property Funds No. 2 Limited as the responsible entity of Centuria Sydney CBD Prime Office Fund - 680 George St/50 Goulburn St",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-13T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "hydro-international-limited": {
+      "id": "hydro-international-limited",
+      "canonical_name": "Hydro International Limited",
+      "members": [
+        {
+          "name": "Hydro International Limited",
+          "identifier": "Companies House number  01606391",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-80011",
+            "merger_name": "CRH - Axius Water",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-24T12:00:00Z",
+            "determination_date": "2026-05-11T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "ma-marina-fund-opco-no-1-pty-ltd": {
+      "id": "ma-marina-fund-opco-no-1-pty-ltd",
+      "canonical_name": "Ma Marina Fund Opco No. 1 Pty Ltd",
+      "members": [
+        {
+          "name": "MA MARINA FUND OPCO NO. 1 PTY LTD",
+          "identifier": "59 667 243 601",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-45005",
+            "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-25T12:00:00Z",
+            "determination_date": "2026-04-17T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "nexus-water-holdings-gp-llc": {
+      "id": "nexus-water-holdings-gp-llc",
+      "canonical_name": "Nexus Water Holdings Gp Llc",
+      "members": [
+        {
+          "name": "NEXUS WATER HOLDINGS GP LLC",
+          "identifier": "7688735",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-80011",
+            "merger_name": "CRH - Axius Water",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-24T12:00:00Z",
+            "determination_date": "2026-05-11T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "ookla-llc": {
+      "id": "ookla-llc",
+      "canonical_name": "Ookla, LLC",
+      "members": [
+        {
+          "name": "Ookla, LLC",
+          "identifier": "Unified Business ID  602 422 103",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-10013",
+            "merger_name": "Accenture - Ziff Davis' connectivity business",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-17T12:00:00Z",
+            "determination_date": "2026-05-14T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "smuggler-group": {
+      "id": "smuggler-group",
+      "canonical_name": "Smuggler Group",
+      "members": [
+        {
+          "name": "Division 7 LLC",
+          "identifier": "Identifying number  7088711",
+          "identifier_type": null
+        },
+        {
+          "name": "Sidepiece LLC",
+          "identifier": "Identifying number  5134914",
+          "identifier_type": null
+        },
+        {
+          "name": "Smuggler Experience LLC (including shell subsidiary Lux a Deo LLC)",
+          "identifier": "Identifying number  202462414150",
+          "identifier_type": null
+        },
+        {
+          "name": "Smuggler LLC",
+          "identifier": "Identifying number  6877804",
+          "identifier_type": null
+        },
+        {
+          "name": "Smuggler London Ltd",
+          "identifier": "Identifying number  06806477",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-35034",
+            "merger_name": "The Independents Group \u2013 acquisition of entities within the Smuggler Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-07T12:00:00Z",
+            "determination_date": "2026-08-28T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "the-treasurer-of-victoria-for-and-on-behalf-of-the-crown-in-the-right-of-the-sta": {
+      "id": "the-treasurer-of-victoria-for-and-on-behalf-of-the-crown-in-the-right-of-the-sta",
+      "canonical_name": "The Treasurer of Victoria for and on behalf of the Crown in the right of the State of Victoria",
+      "members": [
+        {
+          "name": "The Treasurer of Victoria for and on behalf of the Crown in the right of the State of Victoria",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-70023",
+            "merger_name": "MLPL HoldCo \u2013 shares in Marinus Link Pty Ltd",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-04T12:00:00Z",
+            "determination_date": "2026-06-29T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "triton-fund-6-gp-sarl": {
+      "id": "triton-fund-6-gp-sarl",
+      "canonical_name": "Triton Fund 6 GP SARL",
+      "members": [
+        {
+          "name": "Triton Fund 6 GP SARL",
+          "identifier": "B269053",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-10024",
+            "merger_name": "Triton \u2013 Flender",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-09T12:00:00Z",
+            "determination_date": "2026-08-11T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 33.0,
+        "median_days": 33,
+        "average_business_days": 23.0,
+        "median_business_days": 23,
+        "completed_count": 1
+      }
+    },
+    "vc-hamilton-wa-pty-ltd": {
+      "id": "vc-hamilton-wa-pty-ltd",
+      "canonical_name": "Vc Hamilton Wa Pty Ltd",
+      "members": [
+        {
+          "name": "VC HAMILTON WA PTY LTD",
+          "identifier": "695 874 929",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-45020",
+            "merger_name": "Vets Central \u2013 Willunga & Aldinga Veterinary Services",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-23T12:00:00Z",
+            "determination_date": "2026-07-17T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    }
+  }
+}

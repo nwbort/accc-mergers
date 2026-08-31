@@ -1,0 +1,592 @@
+{
+  "shard": 143,
+  "shard_count": 256,
+  "parties": {
+    "china-national-aviation-fuel-group-limited": {
+      "id": "china-national-aviation-fuel-group-limited",
+      "canonical_name": "China National Aviation Fuel Group Limited",
+      "members": [
+        {
+          "name": "China National Aviation Fuel Group Limited",
+          "identifier": "Unified social credit identifier 911100007109303176",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-01093",
+            "merger_name": "Sinopec - CNAF",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-26T12:00:00Z",
+            "determination_date": "2026-04-30T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 35.0,
+        "median_days": 35,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "chintalia-pty-ltd": {
+      "id": "chintalia-pty-ltd",
+      "canonical_name": "Chintalia Pty Ltd",
+      "members": [
+        {
+          "name": "Chintalia Pty Ltd",
+          "identifier": "94 147 049 698",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-01097",
+            "merger_name": "Quadrant Private Equity - Stanley International College",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-30T12:00:00Z",
+            "determination_date": "2026-05-18T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "exact-sciences-corporation": {
+      "id": "exact-sciences-corporation",
+      "canonical_name": "Exact Sciences Corporation",
+      "members": [
+        {
+          "name": "Exact Sciences Corporation",
+          "identifier": "020478229",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-95002",
+            "merger_name": "Abbott Laboratories - Exact Sciences",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-02T12:00:00Z",
+            "determination_date": "2026-02-24T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "jabetin-pty-ltd": {
+      "id": "jabetin-pty-ltd",
+      "canonical_name": "Jabetin Pty Ltd",
+      "members": [
+        {
+          "name": "JABETIN PTY LTD",
+          "identifier": "62 001 588 496",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-30012",
+            "merger_name": "Endeavour Group \u2013 retail liquor store in Muswellbrook (NSW)",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-22T12:00:00Z",
+            "determination_date": "2026-06-16T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "keith-crawford": {
+      "id": "keith-crawford",
+      "canonical_name": "Keith Crawford",
+      "members": [
+        {
+          "name": "Keith Crawford",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-75003",
+            "merger_name": "Ramsay Health Care \u2013 National Capital Private Hospital",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-01-21T12:00:00Z",
+            "determination_date": "2026-02-12T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "matthew-caddy": {
+      "id": "matthew-caddy",
+      "canonical_name": "Matthew Caddy",
+      "members": [
+        {
+          "name": "Matthew Caddy",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-75003",
+            "merger_name": "Ramsay Health Care \u2013 National Capital Private Hospital",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-01-21T12:00:00Z",
+            "determination_date": "2026-02-12T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "oak-tree-holdings-pty-ltd": {
+      "id": "oak-tree-holdings-pty-ltd",
+      "canonical_name": "Oak Tree Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "OAK TREE HOLDINGS PTY LTD",
+          "identifier": "59 161 180 230",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-70030",
+            "merger_name": "Aware Super \u2013 Increased interest in Keyton",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-10T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "p-a-equipment-pty-ltd": {
+      "id": "p-a-equipment-pty-ltd",
+      "canonical_name": "P&A Equipment Pty Ltd",
+      "members": [
+        {
+          "name": "P&A EQUIPMENT PTY LTD",
+          "identifier": "59 650 590 864",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-55003",
+            "merger_name": "Symal Group - 80% acquisition of Davison Earthmovers",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-03T12:00:00Z",
+            "determination_date": "2026-02-24T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "pennaero": {
+      "id": "pennaero",
+      "canonical_name": "PennAero",
+      "members": [
+        {
+          "name": "PennAero",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-30018",
+            "merger_name": "Tinicum and Blackstone led consortium \u2013 Senior",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-18T12:00:00Z",
+            "determination_date": "2026-06-01T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "salesforce-inc": {
+      "id": "salesforce-inc",
+      "canonical_name": "Salesforce, Inc",
+      "members": [
+        {
+          "name": "Ireland Acquisition Sub Inc.",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Salesforce Holdings LLC",
+          "identifier": "5673469",
+          "identifier_type": null
+        },
+        {
+          "name": "Salesforce, Inc",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Salesforce, Inc.",
+          "identifier": "0001108524",
+          "identifier_type": null
+        },
+        {
+          "name": "Salesforce, Inc.",
+          "identifier": "U.S. EIN: 943320693",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-40031",
+            "merger_name": "Salesforce - Intercom",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-28T12:00:00Z",
+            "determination_date": "2026-08-21T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-95025",
+            "merger_name": "Salesforce - Contentful",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-13T12:00:00Z",
+            "determination_date": "2026-08-04T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-85007",
+            "merger_name": "Salesforce \u2013 Qualified",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-19T12:00:00Z",
+            "determination_date": "2026-03-17T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-35003",
+            "merger_name": "Salesforce \u2013 Qualified",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-08T12:00:00Z",
+            "determination_date": "2026-01-21T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 4,
+      "phase_1_count": 3,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 3
+      },
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "stockland-trust-arsn-092-897-348": {
+      "id": "stockland-trust-arsn-092-897-348",
+      "canonical_name": "Stockland Trust (ARSN 092 897 348)",
+      "members": [
+        {
+          "name": "Stockland Trust (ARSN 092 897 348)",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-10002",
+            "merger_name": "Stockland LLC \u2013 intragroup transfer of Halcyon Jardin and Evergreen projects",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-15T12:00:00Z",
+            "determination_date": "2026-02-13T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
+    "trios-mess-und-datentechnik-gmbh": {
+      "id": "trios-mess-und-datentechnik-gmbh",
+      "canonical_name": "TriOS Mess- und Datentechnik GmbH",
+      "members": [
+        {
+          "name": "TriOS Mess- und Datentechnik GmbH",
+          "identifier": "HRB 3992",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-05018",
+            "merger_name": "Xylem - TriOS",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-22T12:00:00Z",
+            "determination_date": "2026-06-18T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "victorian-workcover-authority": {
+      "id": "victorian-workcover-authority",
+      "canonical_name": "Victorian Workcover Authority",
+      "members": [
+        {
+          "name": "VICTORIAN WORKCOVER AUTHORITY",
+          "identifier": "90 296 467 627",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-35008",
+            "merger_name": "VFMC \u2013 CorVal Land and Operator Trusts",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-09T12:00:00Z",
+            "determination_date": "2026-03-26T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    }
+  }
+}

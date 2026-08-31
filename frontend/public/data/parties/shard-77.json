@@ -1,0 +1,704 @@
+{
+  "shard": 119,
+  "shard_count": 256,
+  "parties": {
+    "beazley-plc": {
+      "id": "beazley-plc",
+      "canonical_name": "Beazley plc",
+      "members": [
+        {
+          "name": "Beazley plc",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-30016",
+            "merger_name": "Zurich - Beazley",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-22T12:00:00Z",
+            "determination_date": "2026-06-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "business-and-assets-comprising-newstead-medical-and-kings-meadows-medical-centre": {
+      "id": "business-and-assets-comprising-newstead-medical-and-kings-meadows-medical-centre",
+      "canonical_name": "Business and assets comprising Newstead Medical and Kings Meadows Medical Centre",
+      "members": [
+        {
+          "name": "Business and assets comprising Newstead Medical and Kings Meadows Medical Centre",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-95012",
+            "merger_name": "Ochre Health - Newstead Medical and Kings Meadows Medical Centre, TAS",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-31T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 7.0,
+        "median_days": 7,
+        "average_business_days": 3.0,
+        "median_business_days": 3,
+        "completed_count": 1
+      }
+    },
+    "colevale-estates-pty-ltd-m-t-populin-pty-ltd-twin-rock-pty-ltd": {
+      "id": "colevale-estates-pty-ltd-m-t-populin-pty-ltd-twin-rock-pty-ltd",
+      "canonical_name": "Colevale Estates Pty Ltd & M & T Populin Pty Ltd & Twin Rock Pty Ltd",
+      "members": [
+        {
+          "name": "COLEVALE ESTATES PTY LTD & M & T POPULIN PTY LTD & TWIN ROCK PTY LTD",
+          "identifier": "14 440 726 153",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-60011",
+            "merger_name": "Barro Group - BQC Quarries and Burdekin Concrete",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-28T12:00:00Z",
+            "determination_date": "2026-06-03T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 36.0,
+        "median_days": 36,
+        "average_business_days": 25.0,
+        "median_business_days": 25,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "dp-world-global-forwarding-pty-ltd": {
+      "id": "dp-world-global-forwarding-pty-ltd",
+      "canonical_name": "Dp World Global Forwarding Pty Ltd",
+      "members": [
+        {
+          "name": "DP WORLD GLOBAL FORWARDING PTY LTD",
+          "identifier": "92 656 783 916",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-95015",
+            "merger_name": "DP World Global Forwarding \u2013 Pure Global Logistics",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-28T12:00:00Z",
+            "determination_date": "2026-05-11T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "dsm-nutritional-products-holding-ag-switzerland": {
+      "id": "dsm-nutritional-products-holding-ag-switzerland",
+      "canonical_name": "DSM Nutritional Products Holding AG (Switzerland)",
+      "members": [
+        {
+          "name": "DSM Nutritional Products Holding AG (Switzerland)",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25014",
+            "merger_name": "CVC Capital Partners \u2013 The animal nutrition and health division of the DSM-Firmenich Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-21T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "hotel-maroochydore-pty-ltd": {
+      "id": "hotel-maroochydore-pty-ltd",
+      "canonical_name": "Hotel Maroochydore Pty Ltd",
+      "members": [
+        {
+          "name": "HOTEL MAROOCHYDORE PTY LTD",
+          "identifier": "99 140 651 887",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-40002",
+            "merger_name": "Star Hotels Group \u2013 Yandina Hotel, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-14T12:00:00Z",
+            "determination_date": "2026-02-02T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 19.0,
+        "median_days": 19,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "intellihub-australia-pty-ltd": {
+      "id": "intellihub-australia-pty-ltd",
+      "canonical_name": "Intellihub Australia Pty Ltd",
+      "members": [
+        {
+          "name": "INTELLIHUB AUSTRALIA PTY LTD",
+          "identifier": "97 626 079 614",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-90029",
+            "merger_name": "Bunnings \u2013 Intellihub \u2013 Zelora Joint Venture",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-18T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "j-s-b-co": {
+      "id": "j-s-b-co",
+      "canonical_name": "J.S.B. Co",
+      "members": [
+        {
+          "name": "J.S.B. AUS PTY LTD",
+          "identifier": "698 489 566",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "J.S.B. Co., Ltd.",
+          "identifier": "130001017499",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-10019",
+            "merger_name": "Warburg Pincus \u2013 JSB",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-17T12:00:00Z",
+            "determination_date": "2026-06-25T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 8.0,
+        "median_days": 8,
+        "average_business_days": 6.0,
+        "median_business_days": 6,
+        "completed_count": 1
+      }
+    },
+    "joey-holdco-pty-ltd": {
+      "id": "joey-holdco-pty-ltd",
+      "canonical_name": "Joey Holdco Pty Ltd",
+      "members": [
+        {
+          "name": "JOEY HOLDCO PTY LTD",
+          "identifier": "37 658 985 276",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-05009",
+            "merger_name": "Genea - Embrace Fertility",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-27T12:00:00Z",
+            "determination_date": "2026-05-18T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "minto-marketplace-pty-ltd": {
+      "id": "minto-marketplace-pty-ltd",
+      "canonical_name": "Minto Marketplace Pty Ltd",
+      "members": [
+        {
+          "name": "MINTO MARKETPLACE PTY LTD",
+          "identifier": "45 157 762 000",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-25029",
+            "merger_name": "Coles \u2013 supermarket site in Minto, NSW",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-09T12:00:00Z",
+            "determination_date": "2026-07-01T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "nacap-pty-ltd": {
+      "id": "nacap-pty-ltd",
+      "canonical_name": "Nacap Pty Ltd",
+      "members": [
+        {
+          "name": "Nacap Pty Ltd",
+          "identifier": "33 006 306 994",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-70012",
+            "merger_name": "Quanta - PSD",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-12T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "qic-limited": {
+      "id": "qic-limited",
+      "canonical_name": "Qic Limited",
+      "members": [
+        {
+          "name": "QIC LIMITED",
+          "identifier": "95 942 373 762",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-60019",
+            "merger_name": "QIC \u2013 CopperString Project assets from Powerlink Queensland",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-13T12:00:00Z",
+            "determination_date": "2026-06-10T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "smile-partners-midco-pty-ltd": {
+      "id": "smile-partners-midco-pty-ltd",
+      "canonical_name": "Smile Partners Midco Pty Ltd",
+      "members": [
+        {
+          "name": "SMILE PARTNERS MIDCO PTY LTD",
+          "identifier": "54 693 759 894",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-05014",
+            "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "telstra-limited": {
+      "id": "telstra-limited",
+      "canonical_name": "Telstra",
+      "members": [
+        {
+          "name": "TELSTRA AUSTRALIA NETWORKS PTY LIMITED",
+          "identifier": "58 100 816 206",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "TELSTRA CORPORATION LIMITED",
+          "identifier": "33 051 775 556",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "TELSTRA INTERNATIONAL NETWORKS PTY LIMITED",
+          "identifier": "56 142 220 157",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "TELSTRA LIMITED",
+          "identifier": "64 086 174 781",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Telstra Singapore Pte. Ltd.",
+          "identifier": "Singapore registration No. 200209830G",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-40030",
+            "merger_name": "Telstra \u2013 indefeasible rights over dark fibre on Tabua, Proa and Bulikula subsea cables",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-12T12:00:00Z",
+            "determination_date": "2026-07-13T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-20007",
+            "merger_name": "Telstra \u2013 Infosys Technologies",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-17T12:00:00Z",
+            "determination_date": "2026-03-19T12:00:00Z"
+          }
+        ],
+        "target": [
+          {
+            "merger_id": "WA-95026",
+            "merger_name": "Google Australia \u2013 indefeasible rights to use terrestrial dark fibre from Telstra",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-12T12:00:00Z",
+            "determination_date": "2026-07-13T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 3,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 3,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 30.666666666666668,
+        "median_days": 31,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 3
+      }
+    },
+    "the-trust-company-limited-atf-anzlaff-sub-2": {
+      "id": "the-trust-company-limited-atf-anzlaff-sub-2",
+      "canonical_name": "The Trust Company Limited atf ANZLAFF Sub 2",
+      "members": [
+        {
+          "name": "The Trust Company Limited atf ANZLAFF Sub 2",
+          "identifier": "59 004 027 749",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-50031",
+            "merger_name": "New Forests Australia New Zealand Landscapes and Forestry Fund \u2013 Benditi Pastoral",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-01T12:00:00Z",
+            "determination_date": "2026-07-21T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "tolobex-pty-ltd-as-trustee-for-tolobex-unit-trust": {
+      "id": "tolobex-pty-ltd-as-trustee-for-tolobex-unit-trust",
+      "canonical_name": "Tolobex Pty Ltd as trustee for Tolobex Unit Trust",
+      "members": [
+        {
+          "name": "Tolobex Pty Ltd as trustee for Tolobex Unit Trust",
+          "identifier": "081 765 228",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-35018",
+            "merger_name": "Hewitt \u2013 Nolan Meats",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-01T12:00:00Z",
+            "determination_date": "2026-07-27T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

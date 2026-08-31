@@ -1,0 +1,530 @@
+{
+  "shard": 217,
+  "shard_count": 256,
+  "parties": {
+    "annapurna-pictures-llc": {
+      "id": "annapurna-pictures-llc",
+      "canonical_name": "Annapurna Pictures, LLC",
+      "members": [
+        {
+          "name": "Annapurna Pictures, LLC",
+          "identifier": "Delaware Division of Corporations File Number  6312854",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-45006",
+            "merger_name": "Paramount Skydance - Warner Bros. Discovery",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-29T12:00:00Z",
+            "determination_date": "2026-06-09T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 41.0,
+        "median_days": 41,
+        "average_business_days": 27.0,
+        "median_business_days": 27,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "cshc-fund-blocker-llc": {
+      "id": "cshc-fund-blocker-llc",
+      "canonical_name": "CSHC Fund Blocker, LLC",
+      "members": [
+        {
+          "name": "CSHC Fund Blocker, LLC",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-85020",
+            "merger_name": "Francisco Partners \u2013 Capsa Healthcare",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-30T12:00:00Z",
+            "determination_date": "2026-04-02T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 3.0,
+        "median_days": 3,
+        "average_business_days": 3.0,
+        "median_business_days": 3,
+        "completed_count": 1
+      }
+    },
+    "de-domenico-carmelo": {
+      "id": "de-domenico-carmelo",
+      "canonical_name": "De Domenico Carmelo",
+      "members": [
+        {
+          "name": "De Domenico Carmelo",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-40020",
+            "merger_name": "Premier Fresh \u2013 Domenico Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-04T12:00:00Z",
+            "determination_date": "2026-07-01T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "hotdoc-online-pty-ltd": {
+      "id": "hotdoc-online-pty-ltd",
+      "canonical_name": "Hotdoc Online Pty Ltd",
+      "members": [
+        {
+          "name": "HOTDOC ONLINE PTY LTD",
+          "identifier": "84 159 662 558",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-40028",
+            "merger_name": "Airtree \u2013 HotDoc",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-11T12:00:00Z",
+            "determination_date": "2026-06-30T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-50006",
+            "merger_name": "Airtree \u2013 HotDoc",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-23T12:00:00Z",
+            "determination_date": "2026-03-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.5,
+        "median_days": 21.5,
+        "average_business_days": 15.0,
+        "median_business_days": 15.0,
+        "completed_count": 2
+      }
+    },
+    "lwb-disability-services-central-limited": {
+      "id": "lwb-disability-services-central-limited",
+      "canonical_name": "Lwb Disability Services Central Limited",
+      "members": [
+        {
+          "name": "LWB DISABILITY SERVICES CENTRAL LIMITED",
+          "identifier": "74 623 564 018",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-95022",
+            "merger_name": "Life Without Barriers \u2013 Mallacoota District Health & Support Service",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-22T12:00:00Z",
+            "determination_date": "2026-06-17T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "mark-halford": {
+      "id": "mark-halford",
+      "canonical_name": "Mark Halford",
+      "members": [
+        {
+          "name": "Mark Halford",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-45021",
+            "merger_name": "McDonald\u2019s Australia \u2013 McDonald\u2019s Restaurants in North West Sydney",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-03T12:00:00Z",
+            "determination_date": "2026-08-03T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 31.0,
+        "median_days": 31,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    },
+    "one-mea-holdings-pte-ltd": {
+      "id": "one-mea-holdings-pte-ltd",
+      "canonical_name": "One MEA Holdings Pte. Ltd",
+      "members": [
+        {
+          "name": "One MEA Holdings Pte. Ltd",
+          "identifier": "201923882C",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-05026",
+            "merger_name": "Mercer Investments (Australia) Limited\u2013 Stockland Residential Rental Partnership",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-09T12:00:00Z",
+            "determination_date": "2026-06-23T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "origin-energy-limited": {
+      "id": "origin-energy-limited",
+      "canonical_name": "Origin Energy Limited",
+      "members": [
+        {
+          "name": "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED",
+          "identifier": "53 143 484 208",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "ORIGIN ENERGY LIMITED",
+          "identifier": "30 000 051 696",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "ORIGIN ZERO INVESTMENTS PTY LTD",
+          "identifier": "52 079 089 231",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-95030",
+            "merger_name": "Origin \u2013 Climatech Zero",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-10T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-20011",
+            "merger_name": "Origin \u2013 Equity stake in Kraken",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-24T12:00:00Z",
+            "determination_date": "2026-04-20T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 2,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 33.0,
+        "median_days": 33.0,
+        "average_business_days": 22.0,
+        "median_business_days": 22.0,
+        "completed_count": 2
+      },
+      "waiver_duration": null
+    },
+    "state-swim-findon-pty-ltd": {
+      "id": "state-swim-findon-pty-ltd",
+      "canonical_name": "State Swim Findon Pty Ltd",
+      "members": [
+        {
+          "name": "STATE SWIM FINDON PTY LTD",
+          "identifier": "73 698 337 209",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-95032",
+            "merger_name": "State Swim \u2013 Swim Plus",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-06T12:00:00Z",
+            "determination_date": "2026-07-27T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "the-minister-for-transport-and-main-roads-of-queensland": {
+      "id": "the-minister-for-transport-and-main-roads-of-queensland",
+      "canonical_name": "The Minister for Transport and Main Roads of Queensland",
+      "members": [
+        {
+          "name": "The Minister for Transport and Main Roads of Queensland",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-05034",
+            "merger_name": "Aurizon \u2013 transactions related to the relocation of a rail corridor at Moranbah North",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-28T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "volt-holdco-pty-ltd": {
+      "id": "volt-holdco-pty-ltd",
+      "canonical_name": "Volt Holdco Pty Ltd",
+      "members": [
+        {
+          "name": "VOLT HOLDCO PTY LTD",
+          "identifier": "54 694 754 062",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-90007",
+            "merger_name": "Volt Managed Investment Trusts \u2013 HMC Energy Transition Platform",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-14T12:00:00Z",
+            "determination_date": "2026-06-05T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "zhejiang-hanfeng-venture-capital-partnership-limited-partnership": {
+      "id": "zhejiang-hanfeng-venture-capital-partnership-limited-partnership",
+      "canonical_name": "Zhejiang Hanfeng Venture Capital Partnership (Limited Partnership)",
+      "members": [
+        {
+          "name": "Zhejiang Hanfeng Venture Capital Partnership (Limited Partnership)",
+          "identifier": "USCC 91110108MA01H51G1X",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25020",
+            "merger_name": "Zijin Mining - Chifeng",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-11T12:00:00Z",
+            "determination_date": "2026-05-25T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    }
+  }
+}

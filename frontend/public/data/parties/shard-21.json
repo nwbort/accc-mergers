@@ -1,0 +1,414 @@
+{
+  "shard": 33,
+  "shard_count": 256,
+  "parties": {
+    "chargeurs-usa-holdings-inc": {
+      "id": "chargeurs-usa-holdings-inc",
+      "canonical_name": "Chargeurs USA Holdings Inc.",
+      "members": [
+        {
+          "name": "Chargeurs USA Holdings Inc.",
+          "identifier": "EIN / TIN  043515028",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-25006",
+            "merger_name": "KPS \u2013 Novacel",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-12T12:00:00Z",
+            "determination_date": "2026-04-02T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "endeavour-group-limited": {
+      "id": "endeavour-group-limited",
+      "canonical_name": "Endeavour Group Limited",
+      "members": [
+        {
+          "name": "ENDEAVOUR GROUP LIMITED",
+          "identifier": "77 159 767 843",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-10027",
+            "merger_name": "Endeavour Group \u2013 retail liquor site in Horsham, VIC",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-14T12:00:00Z",
+            "determination_date": null
+          },
+          {
+            "merger_id": "MN-50027",
+            "merger_name": "Endeavour Group - retail liquor site in Avalon, NSW",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-22T12:00:00Z",
+            "determination_date": "2026-07-13T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-30012",
+            "merger_name": "Endeavour Group \u2013 retail liquor store in Muswellbrook (NSW)",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-22T12:00:00Z",
+            "determination_date": "2026-06-16T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 3,
+      "phase_1_count": 3,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23.0,
+        "average_business_days": 15.0,
+        "median_business_days": 15.0,
+        "completed_count": 2
+      },
+      "waiver_duration": null
+    },
+    "foxtrot-uk-bidco-limited": {
+      "id": "foxtrot-uk-bidco-limited",
+      "canonical_name": "Foxtrot UK Bidco Limited",
+      "members": [
+        {
+          "name": "Foxtrot UK Bidco Limited",
+          "identifier": "CRN  17249252",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-65030",
+            "merger_name": "CVC Capital Partners \u2013 IFF\u2019s Food Ingredients business",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-23T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "ifm-investors": {
+      "id": "ifm-investors",
+      "canonical_name": "Ifm Investors",
+      "members": [
+        {
+          "name": "IFM INVESTORS (NOMINEES) LIMITED",
+          "identifier": "56 003 969 891",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "IFM INVESTORS PTY LTD",
+          "identifier": "67 107 247 727",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-40018",
+            "merger_name": "AustralianSuper - IFM Global Infrastructure (Australia) Trust",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-21T12:00:00Z",
+            "determination_date": "2026-05-12T12:00:00Z"
+          }
+        ],
+        "other": [
+          {
+            "merger_id": "WA-55027",
+            "merger_name": "Sumitomo Mitsui Trust Bank - SMTB ANZ Debt Fund",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-25T12:00:00Z",
+            "determination_date": "2026-07-16T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21.0,
+        "average_business_days": 14.5,
+        "median_business_days": 14.5,
+        "completed_count": 2
+      }
+    },
+    "insurance-australia-group-limited": {
+      "id": "insurance-australia-group-limited",
+      "canonical_name": "Insurance Australia Group Limited",
+      "members": [
+        {
+          "name": "INSURANCE AUSTRALIA GROUP LIMITED",
+          "identifier": "60 090 739 923",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-65005",
+            "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 2",
+            "notification_date": "2026-03-03T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 1,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": {
+        "average_days": 44.0,
+        "median_days": 44,
+        "average_business_days": 29.0,
+        "median_business_days": 29,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "losugen-pty-ltd": {
+      "id": "losugen-pty-ltd",
+      "canonical_name": "Losugen Pty Ltd",
+      "members": [
+        {
+          "name": "Losugen Pty Ltd",
+          "identifier": "26 097 626 849",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-85006",
+            "merger_name": "Tega and Apollo Funds consortium - Molycop",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-26T12:00:00Z",
+            "determination_date": "2026-04-28T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 33.0,
+        "median_days": 33,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "saphir-holdings-sas": {
+      "id": "saphir-holdings-sas",
+      "canonical_name": "Saphir Holdings SAS",
+      "members": [
+        {
+          "name": "Saphir Holdings SAS",
+          "identifier": "Trade and Companies Registry Number 995 192 986",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-35004",
+            "merger_name": "L Catterton Management \u2013 Ex Nihilo Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-22T12:00:00Z",
+            "determination_date": "2026-02-04T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "smllp-asset-pty-ltd-as-trustee-for-the-smllp-evergreen-trust": {
+      "id": "smllp-asset-pty-ltd-as-trustee-for-the-smllp-evergreen-trust",
+      "canonical_name": "SMLLP ASSET PTY LTD (as trustee for the SMLLP Evergreen Trust)",
+      "members": [
+        {
+          "name": "SMLLP ASSET PTY LTD (as trustee for the SMLLP Evergreen Trust)",
+          "identifier": "84 693 264 649",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-10002",
+            "merger_name": "Stockland LLC \u2013 intragroup transfer of Halcyon Jardin and Evergreen projects",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-15T12:00:00Z",
+            "determination_date": "2026-02-13T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
+    "stirling-contracting-pty-ltd": {
+      "id": "stirling-contracting-pty-ltd",
+      "canonical_name": "Stirling Contracting Pty Ltd",
+      "members": [
+        {
+          "name": "STIRLING CONTRACTING PTY LTD",
+          "identifier": "73 697 852 403",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-05024",
+            "merger_name": "B.M.D. Holdings \u2013 Bajara Plant Hire and Stirling Contracting",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-24T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    }
+  }
+}

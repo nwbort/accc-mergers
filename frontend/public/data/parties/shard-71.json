@@ -1,0 +1,372 @@
+{
+  "shard": 113,
+  "shard_count": 256,
+  "parties": {
+    "danaher-corporation": {
+      "id": "danaher-corporation",
+      "canonical_name": "Danaher Corporation",
+      "members": [
+        {
+          "name": "Danaher Corporation",
+          "identifier": "213594",
+          "identifier_type": null
+        },
+        {
+          "name": "Danaher Corporation",
+          "identifier": "EIN591995548",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-15031",
+            "merger_name": "Danaher (Leica Biosystems) - StatLab",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-05T12:00:00Z",
+            "determination_date": null
+          },
+          {
+            "merger_id": "MN-15011",
+            "merger_name": "Danaher - Masimo",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-02T12:00:00Z",
+            "determination_date": "2026-05-05T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 2,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": {
+        "average_days": 33.0,
+        "median_days": 33,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "galileo-bidco-pty-ltd": {
+      "id": "galileo-bidco-pty-ltd",
+      "canonical_name": "Galileo BidCo Pty Ltd",
+      "members": [
+        {
+          "name": "Galileo BidCo Pty Ltd",
+          "identifier": "698 274 609",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-80025",
+            "merger_name": "Black Kite Partners led consortium - DR2",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-28T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
+    "kkr-spire-aggregator-l-p": {
+      "id": "kkr-spire-aggregator-l-p",
+      "canonical_name": "KKR Spire Aggregator L.P.",
+      "members": [
+        {
+          "name": "KKR Spire Aggregator L.P.",
+          "identifier": "Company No.: 1001421059  Ontario",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-05003",
+            "merger_name": "KKR led consortium \u2013 Saviynt",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-11T12:00:00Z",
+            "determination_date": "2026-01-27T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "lwb-disability-services-south-limited": {
+      "id": "lwb-disability-services-south-limited",
+      "canonical_name": "Lwb Disability Services South Limited",
+      "members": [
+        {
+          "name": "LWB DISABILITY SERVICES SOUTH LIMITED",
+          "identifier": "82 623 564 054",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-95022",
+            "merger_name": "Life Without Barriers \u2013 Mallacoota District Health & Support Service",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-22T12:00:00Z",
+            "determination_date": "2026-06-17T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "olaplex-inc": {
+      "id": "olaplex-inc",
+      "canonical_name": "Olaplex, Inc.",
+      "members": [
+        {
+          "name": "Olaplex Holdings, Inc.",
+          "identifier": "Delaware registration number: 5923882 (EIN: 871242679)",
+          "identifier_type": null
+        },
+        {
+          "name": "Olaplex, Inc.",
+          "identifier": "Delaware registration number: 7702123 (EIN: 843736163)",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-80016",
+            "merger_name": "Henkel \u2013 Olaplex",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-22T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "quality-air-equipment-pty-ltd": {
+      "id": "quality-air-equipment-pty-ltd",
+      "canonical_name": "Quality Air Equipment Pty Ltd",
+      "members": [
+        {
+          "name": "QUALITY AIR EQUIPMENT PTY LTD",
+          "identifier": "42 095 082 689",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-15018",
+            "merger_name": "Complete Air Supply - All Air",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-16T12:00:00Z",
+            "determination_date": "2026-07-09T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "saputo-dairy-australia-pty-ltd": {
+      "id": "saputo-dairy-australia-pty-ltd",
+      "canonical_name": "Saputo Dairy Australia Pty Ltd",
+      "members": [
+        {
+          "name": "SAPUTO DAIRY AUSTRALIA PTY LTD",
+          "identifier": "52 166 135 486",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-01069",
+            "merger_name": "Danone \u2013 further 1% interest in Danone Saputo Dairy Australia",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2025-12-12T12:00:00Z",
+            "determination_date": "2026-01-28T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 47.0,
+        "median_days": 47,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "wipro-ltd": {
+      "id": "wipro-ltd",
+      "canonical_name": "Wipro Ltd",
+      "members": [
+        {
+          "name": "WIPRO LTD",
+          "identifier": "18 093 961 936",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Wipro Limited",
+          "identifier": "CIN L32102KA1945PLC020800",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-15014",
+            "merger_name": "Wipro - Mindsprint",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-07T12:00:00Z",
+            "determination_date": "2026-04-24T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-35016",
+            "merger_name": "Wipro - Indeco",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-01T12:00:00Z",
+            "determination_date": "2026-05-26T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21.0,
+        "average_business_days": 15.0,
+        "median_business_days": 15.0,
+        "completed_count": 2
+      }
+    }
+  }
+}

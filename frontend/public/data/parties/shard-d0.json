@@ -1,0 +1,408 @@
+{
+  "shard": 208,
+  "shard_count": 256,
+  "parties": {
+    "asphalt-operators-australia-pty-ltd": {
+      "id": "asphalt-operators-australia-pty-ltd",
+      "canonical_name": "Asphalt Operators Australia Pty Ltd",
+      "members": [
+        {
+          "name": "ASPHALT OPERATORS AUSTRALIA PTY LTD",
+          "identifier": "11 682 698 282",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-50012",
+            "merger_name": "Maas \u2013 50% acquisition of COLAS\u2019 Caloundra asphalt plant and 100% of COLAS\u2019 Tomago asphalt plant",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-18T12:00:00Z",
+            "determination_date": "2026-04-13T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "bnp-paribas-s-a": {
+      "id": "bnp-paribas-s-a",
+      "canonical_name": "BNP Paribas S.A",
+      "members": [
+        {
+          "name": "BNP Paribas S.A",
+          "identifier": "ARBN  000 000 117",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-35021",
+            "merger_name": "BUSS Queensland \u2013 Additional interest in Duxton Vineyards",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-21T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "comms-group": {
+      "id": "comms-group",
+      "canonical_name": "Comms Group",
+      "members": [
+        {
+          "name": "COMMS GROUP LTD",
+          "identifier": "64 619 196 539",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "ON GROUP HOLDINGS PTY LTD",
+          "identifier": "68 622 185 808",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-35028",
+            "merger_name": "efex - OnPlatinum",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-15T12:00:00Z",
+            "determination_date": "2026-08-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 33.0,
+        "median_days": 33,
+        "average_business_days": 23.0,
+        "median_business_days": 23,
+        "completed_count": 1
+      }
+    },
+    "engage-marine-topco-pty-ltd": {
+      "id": "engage-marine-topco-pty-ltd",
+      "canonical_name": "Engage Marine Topco Pty Ltd",
+      "members": [
+        {
+          "name": "ENGAGE MARINE TOPCO PTY LTD",
+          "identifier": "46 675 998 562",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-90012",
+            "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-13T12:00:00Z",
+            "determination_date": "2026-06-24T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-20010",
+            "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-06T12:00:00Z",
+            "determination_date": "2026-03-19T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 42.0,
+        "median_days": 42,
+        "average_business_days": 28.0,
+        "median_business_days": 28,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "molycop-singapore-trading-pte-ltd": {
+      "id": "molycop-singapore-trading-pte-ltd",
+      "canonical_name": "Molycop Singapore Trading Pte. Ltd",
+      "members": [
+        {
+          "name": "Molycop Singapore Trading Pte. Ltd",
+          "identifier": "201943325C",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-85006",
+            "merger_name": "Tega and Apollo Funds consortium - Molycop",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-26T12:00:00Z",
+            "determination_date": "2026-04-28T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 33.0,
+        "median_days": 33,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "rea-financial-services-holding-co-pty-ltd": {
+      "id": "rea-financial-services-holding-co-pty-ltd",
+      "canonical_name": "Rea Financial Services Holding Co. Pty Ltd",
+      "members": [
+        {
+          "name": "REA FINANCIAL SERVICES HOLDING CO. PTY LTD",
+          "identifier": "38 649 505 386",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-65008",
+            "merger_name": "REA Group - Simplicity Loans & Advisory",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-07T12:00:00Z",
+            "determination_date": "2026-05-05T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "softeon-inc": {
+      "id": "softeon-inc",
+      "canonical_name": "Softeon Inc.",
+      "members": [
+        {
+          "name": "Softeon Inc.",
+          "identifier": "EIN 541960847",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-35002",
+            "merger_name": "IFS \u2013 Softeon",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-06T12:00:00Z",
+            "determination_date": "2026-01-27T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "the-assets-and-business-comprising-sunnymeade-park-aged-care-community": {
+      "id": "the-assets-and-business-comprising-sunnymeade-park-aged-care-community",
+      "canonical_name": "The assets and business comprising Sunnymeade Park Aged Care Community",
+      "members": [
+        {
+          "name": "The assets and business comprising Sunnymeade Park Aged Care Community",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-75002",
+            "merger_name": "Opal Healthcare \u2013 Sunnymeade Park Aged Care Community",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-01-19T12:00:00Z",
+            "determination_date": "2026-02-10T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "the-carlyle-group-inc": {
+      "id": "the-carlyle-group-inc",
+      "canonical_name": "The Carlyle Group Inc.",
+      "members": [
+        {
+          "name": "The Carlyle Group Inc.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-95024",
+            "merger_name": "Carlyle \u2013 CHN Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-11T12:00:00Z",
+            "determination_date": "2026-06-23T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-20003",
+            "merger_name": "Carlyle \u2013 Peloton Computer Enterprises",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-12T12:00:00Z",
+            "determination_date": "2026-01-30T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15.0,
+        "average_business_days": 10.5,
+        "median_business_days": 10.5,
+        "completed_count": 2
+      }
+    }
+  }
+}

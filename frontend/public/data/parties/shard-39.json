@@ -1,0 +1,293 @@
+{
+  "shard": 57,
+  "shard_count": 256,
+  "parties": {
+    "altaris-partners-llc": {
+      "id": "altaris-partners-llc",
+      "canonical_name": "Altaris Partners, LLC",
+      "members": [
+        {
+          "name": "Altaris Partners, LLC",
+          "identifier": "EFN  4261614",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-75029",
+            "merger_name": "Analogic - Leidos SES business",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-08T12:00:00Z",
+            "determination_date": "2026-08-11T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 34.0,
+        "median_days": 34,
+        "average_business_days": 24.0,
+        "median_business_days": 24,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "hgps-dpe-luxembourg-holdings-scsp": {
+      "id": "hgps-dpe-luxembourg-holdings-scsp",
+      "canonical_name": "HGPS-DPE Luxembourg Holdings SCSp",
+      "members": [
+        {
+          "name": "HGPS-DPE Luxembourg Holdings SCSp",
+          "identifier": "B273812",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-80025",
+            "merger_name": "Black Kite Partners led consortium - DR2",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-28T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
+    "onesto-labs-private-limited": {
+      "id": "onesto-labs-private-limited",
+      "canonical_name": "Onesto Labs Private Limited",
+      "members": [
+        {
+          "name": "Onesto Labs Private Limited",
+          "identifier": "CIN  U74999DL2018PTC340749",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-35029",
+            "merger_name": "L'Or\u00e9al - Innovist",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-21T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "sustainable-energy-infrastructure-holdings-pty-ltd": {
+      "id": "sustainable-energy-infrastructure-holdings-pty-ltd",
+      "canonical_name": "Sustainable Energy Infrastructure Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "SUSTAINABLE ENERGY INFRASTRUCTURE HOLDINGS PTY LTD",
+          "identifier": "625 685 734",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-75020",
+            "merger_name": "CleanPeak Energy Holdings - Sustainable Energy Infrastructure",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-28T12:00:00Z",
+            "determination_date": "2026-05-14T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "true-light-investments-p-pte-ltd": {
+      "id": "true-light-investments-p-pte-ltd",
+      "canonical_name": "True Light Investments P Pte. Ltd.",
+      "members": [
+        {
+          "name": "True Light Investments P Pte. Ltd.",
+          "identifier": "UEN 202105088D (Accounting and Corporate Regulatory Authority of Singapore)",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-05008",
+            "merger_name": "HongShan Capital Group and Temasek \u2013 Golden Goose Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-17T12:00:00Z",
+            "determination_date": "2026-03-06T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "w-rtsil-energy-storage-inc": {
+      "id": "w-rtsil-energy-storage-inc",
+      "canonical_name": "W\u00e4rtsil\u00e4 Energy Storage Inc",
+      "members": [
+        {
+          "name": "W\u00e4rtsil\u00e4 Energy Storage Inc",
+          "identifier": "7179583",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-80036",
+            "merger_name": "RCT Solutions GmbH - W\u00e4rtsil\u00e4 Energy Storage Finland Oy",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-03T12:00:00Z",
+            "determination_date": "2026-08-27T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "yatpool-solar-farm-holdco-pty-ltd": {
+      "id": "yatpool-solar-farm-holdco-pty-ltd",
+      "canonical_name": "Yatpool Solar Farm Holdco Pty Ltd",
+      "members": [
+        {
+          "name": "YATPOOL SOLAR FARM HOLDCO PTY LTD",
+          "identifier": "70 618 060 487",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-20031",
+            "merger_name": "Atmos \u2013 specific BayWa r.e. renewable energy projects",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-27T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,338 @@
+{
+  "shard": 88,
+  "shard_count": 256,
+  "parties": {
+    "az-aust-holdings-pty-ltd": {
+      "id": "az-aust-holdings-pty-ltd",
+      "canonical_name": "Az Aust Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "AZ AUST HOLDINGS PTY LTD",
+          "identifier": "74 675 083 717",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-40035",
+            "merger_name": "SCM Financial Group - Strategic Wealth Services Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-30T12:00:00Z",
+            "determination_date": "2026-08-28T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-15010",
+            "merger_name": "AZ Next Generation Advisory \u2013 Intend Financial",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-06T12:00:00Z",
+            "determination_date": "2026-03-24T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 23.5,
+        "median_days": 23.5,
+        "average_business_days": 16.0,
+        "median_business_days": 16.0,
+        "completed_count": 2
+      }
+    },
+    "barangaroo-pty-limited-as-trustee-for-barangaroo-trust": {
+      "id": "barangaroo-pty-limited-as-trustee-for-barangaroo-trust",
+      "canonical_name": "Barangaroo Pty Limited as trustee for Barangaroo Trust",
+      "members": [
+        {
+          "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust",
+          "identifier": "604 221 801",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-10006",
+            "merger_name": "Australian Venue Co. \u2013 four licensed venues in metropolitan Sydney (Public House Petersham, The Erko, The Golden Sheaf and Barangaroo House)",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-06T12:00:00Z",
+            "determination_date": "2026-03-03T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "buverie-pty-ltd-as-trustee-for-schwarzback-family-trust": {
+      "id": "buverie-pty-ltd-as-trustee-for-schwarzback-family-trust",
+      "canonical_name": "BUVERIE PTY LTD as trustee for SCHWARZBACK FAMILY TRUST",
+      "members": [
+        {
+          "name": "BUVERIE PTY LTD as trustee for SCHWARZBACK FAMILY TRUST",
+          "identifier": "80 701 405 315",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25001",
+            "merger_name": "Regent Motors Group \u2013 Esperance Motor Group (Esperance Toyota & Ford)",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-09T12:00:00Z",
+            "determination_date": "2026-02-05T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "hydrobiology-wa-pty-ltd": {
+      "id": "hydrobiology-wa-pty-ltd",
+      "canonical_name": "Hydrobiology Wa Pty Ltd",
+      "members": [
+        {
+          "name": "HYDROBIOLOGY WA PTY LTD",
+          "identifier": "68 120 964 650",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-35025",
+            "merger_name": "SLR Consulting Australia - Hydrobiology",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-05T12:00:00Z",
+            "determination_date": "2026-06-25T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "mccormick-pty-ltd": {
+      "id": "mccormick-pty-ltd",
+      "canonical_name": "McCormick Pty Ltd",
+      "members": [
+        {
+          "name": "McCormick Pty Ltd",
+          "identifier": "088 077 016",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-75044",
+            "merger_name": "McCormick - Unilever Foods Business",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-20T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "sappi": {
+      "id": "sappi",
+      "canonical_name": "Sappi",
+      "members": [
+        {
+          "name": "SAPPI TRADING AUSTRALIA PTY LIMITED",
+          "identifier": "17 086 317 071",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Sappi Limited",
+          "identifier": "Registration number  1936/008963/06",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-30023",
+            "merger_name": "UPM-Kymmene \u2013 Sappi joint venture",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-16T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "sydney-water-corporation": {
+      "id": "sydney-water-corporation",
+      "canonical_name": "Sydney Water Corporation",
+      "members": [
+        {
+          "name": "SYDNEY WATER CORPORATION",
+          "identifier": "49 776 225 038",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-80013",
+            "merger_name": "Sydney Water - Windsor Sewerage Scheme Assets",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-08T12:00:00Z",
+            "determination_date": "2026-05-29T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "the-trustee-for-light-them-up-roma-trust": {
+      "id": "the-trustee-for-light-them-up-roma-trust",
+      "canonical_name": "The Trustee for Light Them Up (Roma) Trust",
+      "members": [
+        {
+          "name": "The Trustee for Light Them Up (Roma) Trust",
+          "identifier": "17 705 523 498",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-90008",
+            "merger_name": "Black Rhino - Club Hotel Motel Roma",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": true,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-21T12:00:00Z",
+            "determination_date": "2026-08-11T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 82.0,
+        "median_days": 82,
+        "average_business_days": 56.0,
+        "median_business_days": 56,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

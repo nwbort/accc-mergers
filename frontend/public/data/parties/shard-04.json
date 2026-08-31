@@ -1,0 +1,335 @@
+{
+  "shard": 4,
+  "shard_count": 256,
+  "parties": {
+    "genesis-capital": {
+      "id": "genesis-capital",
+      "canonical_name": "Genesis Capital",
+      "members": [
+        {
+          "name": "Genesis Capital",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-75034",
+            "merger_name": "Kanda Healthcare \u2013 Live Your Way, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-14T12:00:00Z",
+            "determination_date": "2026-08-04T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-20029",
+            "merger_name": "Impression Dental Group \u2013 Kingston Beach Dental, TAS",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-13T12:00:00Z",
+            "determination_date": "2026-08-03T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-90015",
+            "merger_name": "Impression Dental Group - Coastal Dental Care",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-28T12:00:00Z",
+            "determination_date": "2026-06-25T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-01100",
+            "merger_name": "Ochre Health - Airlie Women's Clinic, VIC",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-12T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-40021",
+            "merger_name": "Ochre Health - New Lambton Family Practice, NSW",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-26T12:00:00Z",
+            "determination_date": "2026-05-12T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-15012",
+            "merger_name": "Ochre Health - Telegraph Road Clinic, Bracken Ridge QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-26T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-95012",
+            "merger_name": "Ochre Health - Newstead Medical and Kings Meadows Medical Centre, TAS",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-31T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-70004",
+            "merger_name": "Impression Dental Group - Happy Rock Dental Practice",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-12T12:00:00Z",
+            "determination_date": "2026-02-26T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 8,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 7,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 16.285714285714285,
+        "median_days": 16,
+        "average_business_days": 10.857142857142858,
+        "median_business_days": 11,
+        "completed_count": 7
+      }
+    },
+    "infotrust-ltd": {
+      "id": "infotrust-ltd",
+      "canonical_name": "Infotrust Ltd",
+      "members": [
+        {
+          "name": "INFOTRUST LTD",
+          "identifier": "73 089 224 402",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-70009",
+            "merger_name": "Infotrust \u2013 Catalyst Cyber",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-06T12:00:00Z",
+            "determination_date": "2026-03-26T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "primary-wave-music-ip-fund-4-gp-llc": {
+      "id": "primary-wave-music-ip-fund-4-gp-llc",
+      "canonical_name": "Primary Wave Music IP Fund 4 GP, LLC",
+      "members": [
+        {
+          "name": "Primary Wave Music IP Fund 4 GP, LLC",
+          "identifier": "Company number 7667915",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-25018",
+            "merger_name": "Primary Wave - Kobalt",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-18T12:00:00Z",
+            "determination_date": "2026-06-11T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "savvy-games-group": {
+      "id": "savvy-games-group",
+      "canonical_name": "Savvy Games Group",
+      "members": [
+        {
+          "name": "Savvy Games Group",
+          "identifier": "KSA National Number  7026599618; Commercial Register Number  1010758131",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-70006",
+            "merger_name": "Scopely \u2013 Loom Games",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-18T12:00:00Z",
+            "determination_date": "2026-03-06T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "tamboran-resources-corporation": {
+      "id": "tamboran-resources-corporation",
+      "canonical_name": "Tamboran Resources Corporation",
+      "members": [
+        {
+          "name": "Tamboran Resources Corporation",
+          "identifier": "20 961 904 383",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-01101",
+            "merger_name": "INPEX \u2013 minority interests in Beetaloo development projects",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-15T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "wentworth-inn-prop-tc-pty-ltd": {
+      "id": "wentworth-inn-prop-tc-pty-ltd",
+      "canonical_name": "Wentworth Inn Prop TC Pty Ltd",
+      "members": [
+        {
+          "name": "Wentworth Inn Prop TC Pty Ltd",
+          "identifier": "695 488 263",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-10011",
+            "merger_name": "Wentworth Capital \u2013 Novotel Darling Harbour and Ibis Darling Harbour",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-12T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    }
+  }
+}

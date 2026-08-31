@@ -15,6 +15,9 @@ considers current — no second copy of the naming rules to drift out of sync.
 
 from pathlib import Path
 
+# How many file names a prune reports before summarising the rest.
+_MAX_NAMES_LOGGED = 20
+
 
 def prune_stale_files(
     directory: Path,
@@ -51,6 +54,13 @@ def prune_stale_files(
 
     if removed:
         where = label or directory.name
-        print(f"  ✓ Pruned {len(removed)} stale file(s) from {where}/: {', '.join(removed)}")
+        # A routine prune drops a handful of files and naming them is useful.
+        # A structural change drops thousands at once (repacking parties/ into
+        # shard buckets retired ~2,200 in a single run), and an unbounded list
+        # buries the rest of the run's output in the Actions log.
+        shown = ", ".join(removed[:_MAX_NAMES_LOGGED])
+        if len(removed) > _MAX_NAMES_LOGGED:
+            shown += f", … and {len(removed) - _MAX_NAMES_LOGGED} more"
+        print(f"  ✓ Pruned {len(removed)} stale file(s) from {where}/: {shown}")
 
     return removed

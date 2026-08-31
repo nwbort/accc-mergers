@@ -1,0 +1,591 @@
+{
+  "shard": 106,
+  "shard_count": 256,
+  "parties": {
+    "a6-audio-bidco-limited": {
+      "id": "a6-audio-bidco-limited",
+      "canonical_name": "A6 Audio Bidco Limited",
+      "members": [
+        {
+          "name": "A6 Audio Bidco Limited",
+          "identifier": "Company number (England and Wales)  10573578",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-80004",
+            "merger_name": "Audiotonix - Soundtech Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-20T12:00:00Z",
+            "determination_date": "2026-03-17T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "apollo-australia-bidco-pty-ltd": {
+      "id": "apollo-australia-bidco-pty-ltd",
+      "canonical_name": "Apollo Australia Bidco Pty Ltd",
+      "members": [
+        {
+          "name": "Apollo Australia Bidco Pty Ltd",
+          "identifier": "697 230 096",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-40022",
+            "merger_name": "Integris & related entities - First Focus",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-19T12:00:00Z",
+            "determination_date": "2026-06-17T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "black-tree-group-pty-ltd-as-trustee-for-the-black-tree-trust": {
+      "id": "black-tree-group-pty-ltd-as-trustee-for-the-black-tree-trust",
+      "canonical_name": "BLACK TREE GROUP PTY LTD as trustee for the BLACK TREE TRUST",
+      "members": [
+        {
+          "name": "BLACK TREE GROUP PTY LTD as trustee for the BLACK TREE TRUST",
+          "identifier": "122 060 093",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-65024",
+            "merger_name": "Australian Venue Co \u2013 assets of Caf\u00e9 Kinetic, Flinders Lane Melbourne CBD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-19T12:00:00Z",
+            "determination_date": "2026-07-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "collins-foods-limited": {
+      "id": "collins-foods-limited",
+      "canonical_name": "Collins Foods Limited",
+      "members": [
+        {
+          "name": "Collins Foods Limited",
+          "identifier": "13 151 420 781",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-70018",
+            "merger_name": "Restaurant Brands and Yum! Brands \u2013 Taco Bell restaurants",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-18T12:00:00Z",
+            "determination_date": "2026-06-11T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "direct-couriers-group-pty-ltd": {
+      "id": "direct-couriers-group-pty-ltd",
+      "canonical_name": "Direct Couriers Group Pty Ltd",
+      "members": [
+        {
+          "name": "DIRECT COURIERS GROUP PTY LTD",
+          "identifier": "70 637 899 051",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-80017",
+            "merger_name": "Direct Couriers \u2013 Phoenix Transport",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-18T12:00:00Z",
+            "determination_date": "2026-06-02T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "flender-group-gmbh": {
+      "id": "flender-group-gmbh",
+      "canonical_name": "Flender Group GmbH",
+      "members": [
+        {
+          "name": "Flender Group GmbH",
+          "identifier": "HRB19565",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-10024",
+            "merger_name": "Triton \u2013 Flender",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-09T12:00:00Z",
+            "determination_date": "2026-08-11T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 33.0,
+        "median_days": 33,
+        "average_business_days": 23.0,
+        "median_business_days": 23,
+        "completed_count": 1
+      }
+    },
+    "mj-topco-llc": {
+      "id": "mj-topco-llc",
+      "canonical_name": "MJ TopCo, LLC",
+      "members": [
+        {
+          "name": "MJ TopCo, LLC",
+          "identifier": "10605232",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-95027",
+            "merger_name": "WHP Global and G-III - Marc Jacobs",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-12T12:00:00Z",
+            "determination_date": "2026-07-13T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 31.0,
+        "median_days": 31,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    },
+    "qic-tt-company-pty-ltd": {
+      "id": "qic-tt-company-pty-ltd",
+      "canonical_name": "Qic Tt Company Pty Ltd",
+      "members": [
+        {
+          "name": "QIC TT COMPANY PTY LTD",
+          "identifier": "27 694 380 973",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-15004",
+            "merger_name": "Australian Retirement Trust \u2013 Interests in non-rental income (Westfield Sydney)",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-24T12:00:00Z",
+            "determination_date": "2026-02-20T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "redwood-services-group-australia-pty-ltd": {
+      "id": "redwood-services-group-australia-pty-ltd",
+      "canonical_name": "Redwood Services Group Australia Pty Ltd",
+      "members": [
+        {
+          "name": "REDWOOD SERVICES GROUP AUSTRALIA PTY LTD",
+          "identifier": "15 675 368 162",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-15024",
+            "merger_name": "Redwood Services Group \u2013 All IT Australia",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-09T12:00:00Z",
+            "determination_date": "2026-06-25T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-60024",
+            "merger_name": "Redwood Services Group \u2013 Newtrend I.T. Specialists",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-09T12:00:00Z",
+            "determination_date": "2026-06-25T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16.0,
+        "average_business_days": 12.0,
+        "median_business_days": 12.0,
+        "completed_count": 2
+      }
+    },
+    "searock-property-pty-ltd": {
+      "id": "searock-property-pty-ltd",
+      "canonical_name": "Searock Property Pty Ltd",
+      "members": [
+        {
+          "name": "SEAROCK PROPERTY PTY LTD",
+          "identifier": "623 130 852",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-60021",
+            "merger_name": "Oscars Group \u2013 Hotel Diplomat in Potts Point, NSW",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-04T12:00:00Z",
+            "determination_date": "2026-06-19T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "shane-webb-nominees-pty-ltd-in-its-capacity-at-the-trustee-for-the-s-r-webb-fami": {
+      "id": "shane-webb-nominees-pty-ltd-in-its-capacity-at-the-trustee-for-the-s-r-webb-fami",
+      "canonical_name": "Shane Webb Nominees Pty Ltd in its capacity at the trustee for The S & R Webb Family Trust",
+      "members": [
+        {
+          "name": "Shane Webb Nominees Pty Ltd in its capacity at the trustee for The S & R Webb Family Trust",
+          "identifier": "619 189 883",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-75016",
+            "merger_name": "Fulton Hogan \u2013 Avionics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-28T12:00:00Z",
+            "determination_date": "2026-06-16T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 49.0,
+        "median_days": 49,
+        "average_business_days": 33.0,
+        "median_business_days": 33,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "summit-partners-l-p": {
+      "id": "summit-partners-l-p",
+      "canonical_name": "Summit Partners, L.P.",
+      "members": [
+        {
+          "name": "Summit Partners, L.P.",
+          "identifier": "3077577",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-75032",
+            "merger_name": "Summit Partners \u2013 Keyfactor",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-29T12:00:00Z",
+            "determination_date": "2026-07-16T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "tega-mc-sg-holdings-pte-ltd": {
+      "id": "tega-mc-sg-holdings-pte-ltd",
+      "canonical_name": "Tega MC SG Holdings Pte. Ltd.",
+      "members": [
+        {
+          "name": "Tega MC SG Holdings Pte. Ltd.",
+          "identifier": "202551682E",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-85006",
+            "merger_name": "Tega and Apollo Funds consortium - Molycop",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-26T12:00:00Z",
+            "determination_date": "2026-04-28T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 33.0,
+        "median_days": 33,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "tucker-holdco-pty-ltd": {
+      "id": "tucker-holdco-pty-ltd",
+      "canonical_name": "Tucker Holdco Pty Ltd",
+      "members": [
+        {
+          "name": "TUCKER HOLDCO PTY LTD",
+          "identifier": "85 644 211 772",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-55031",
+            "merger_name": "Danone \u2013 MADE",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-05T12:00:00Z",
+            "determination_date": "2026-08-26T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

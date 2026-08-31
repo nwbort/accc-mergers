@@ -1,0 +1,404 @@
+{
+  "shard": 128,
+  "shard_count": 256,
+  "parties": {
+    "anacacia-capital-pty-limited": {
+      "id": "anacacia-capital-pty-limited",
+      "canonical_name": "Anacacia Capital Pty Limited",
+      "members": [
+        {
+          "name": "ANACACIA CAPITAL PTY LIMITED",
+          "identifier": "82 123 237 114",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-80017",
+            "merger_name": "Direct Couriers \u2013 Phoenix Transport",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-18T12:00:00Z",
+            "determination_date": "2026-06-02T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "australian-meat-properties-pty-ltd": {
+      "id": "australian-meat-properties-pty-ltd",
+      "canonical_name": "Australian Meat Properties Pty Ltd",
+      "members": [
+        {
+          "name": "Australian Meat Properties Pty Ltd",
+          "identifier": "165 852 282",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-20012",
+            "merger_name": "Australian Meat Group - Killara Feedlot",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-24T12:00:00Z",
+            "determination_date": "2026-05-22T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "bunnings-group-limited": {
+      "id": "bunnings-group-limited",
+      "canonical_name": "Bunnings Group Limited",
+      "members": [
+        {
+          "name": "BUNNINGS GROUP LIMITED",
+          "identifier": "26 008 672 179",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-90029",
+            "merger_name": "Bunnings \u2013 Intellihub \u2013 Zelora Joint Venture",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-18T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "chevron-australia-new-energies-g-10-ap-pty-ltd": {
+      "id": "chevron-australia-new-energies-g-10-ap-pty-ltd",
+      "canonical_name": "Chevron Australia New Energies (G-10-Ap) Pty Ltd",
+      "members": [
+        {
+          "name": "CHEVRON AUSTRALIA NEW ENERGIES (G-10-AP) PTY LTD",
+          "identifier": "98 662 728 010",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-20034",
+            "merger_name": "Chevron - Woodside asset swap",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-18T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "harbourvest-global-private-solutions-sicav-s-a": {
+      "id": "harbourvest-global-private-solutions-sicav-s-a",
+      "canonical_name": "HarbourVest Global Private Solutions SICAV S.A",
+      "members": [
+        {
+          "name": "HarbourVest Global Private Solutions SICAV S.A",
+          "identifier": "B272336",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-80025",
+            "merger_name": "Black Kite Partners led consortium - DR2",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-28T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
+    "mercer-investments-australia-limited": {
+      "id": "mercer-investments-australia-limited",
+      "canonical_name": "Mercer Investments (Australia) Limited",
+      "members": [
+        {
+          "name": "MERCER INVESTMENTS (AUSTRALIA) LIMITED",
+          "identifier": "66 008 612 397",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-05026",
+            "merger_name": "Mercer Investments (Australia) Limited\u2013 Stockland Residential Rental Partnership",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-09T12:00:00Z",
+            "determination_date": "2026-06-23T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "salads-of-australia-pty-limited-receivers-managers-appointed-administrators-appo": {
+      "id": "salads-of-australia-pty-limited-receivers-managers-appointed-administrators-appo",
+      "canonical_name": "SALADS OF AUSTRALIA PTY LIMITED (Receivers & Managers Appointed) (Administrators Appointed)",
+      "members": [
+        {
+          "name": "SALADS OF AUSTRALIA PTY LIMITED (Receivers & Managers Appointed) (Administrators Appointed)",
+          "identifier": "95 631 463 664",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-95031",
+            "merger_name": "IFM Fiduciary \u2013 PM Fresh",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "sound-network-aps": {
+      "id": "sound-network-aps",
+      "canonical_name": "Sound Network ApS",
+      "members": [
+        {
+          "name": "Sound Network ApS",
+          "identifier": "Company number (Denmark)  43989472",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-80004",
+            "merger_name": "Audiotonix - Soundtech Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-20T12:00:00Z",
+            "determination_date": "2026-03-17T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "stahl-holdings-b-v": {
+      "id": "stahl-holdings-b-v",
+      "canonical_name": "Stahl Holdings B.V.",
+      "members": [
+        {
+          "name": "Stahl Holdings B.V.",
+          "identifier": "Netherlands registration number (KVK): 34249320",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-45007",
+            "merger_name": "Henkel \u2013 Stahl",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-18T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "taco-ventures-pty-ltd": {
+      "id": "taco-ventures-pty-ltd",
+      "canonical_name": "Taco Ventures Pty Ltd",
+      "members": [
+        {
+          "name": "Taco Ventures Pty Ltd",
+          "identifier": "697 591 692",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-70018",
+            "merger_name": "Restaurant Brands and Yum! Brands \u2013 Taco Bell restaurants",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-18T12:00:00Z",
+            "determination_date": "2026-06-11T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

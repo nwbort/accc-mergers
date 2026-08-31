@@ -1,0 +1,328 @@
+{
+  "shard": 162,
+  "shard_count": 256,
+  "parties": {
+    "apollo-callco-inc": {
+      "id": "apollo-callco-inc",
+      "canonical_name": "Apollo CallCo, Inc.",
+      "members": [
+        {
+          "name": "Apollo CallCo, Inc.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-85025",
+            "merger_name": "Francisco Partners - Blackline Safety",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-24T12:00:00Z",
+            "determination_date": "2026-05-06T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 12.0,
+        "median_days": 12,
+        "average_business_days": 7.0,
+        "median_business_days": 7,
+        "completed_count": 1
+      }
+    },
+    "empwr-nutrition-group-nv": {
+      "id": "empwr-nutrition-group-nv",
+      "canonical_name": "EMPWR Nutrition Group NV",
+      "members": [
+        {
+          "name": "EMPWR Nutrition Group NV",
+          "identifier": "BE 0637.861.112",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-05040",
+            "merger_name": "Vitamin Well - EMPWR Nutrition Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-19T12:00:00Z",
+            "determination_date": "2026-08-14T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
+    "google-singapore-pte-ltd": {
+      "id": "google-singapore-pte-ltd",
+      "canonical_name": "Google Singapore Pte. Ltd.",
+      "members": [
+        {
+          "name": "Google Singapore Pte. Ltd.",
+          "identifier": "Singapore registration No. 200605367W",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-95026",
+            "merger_name": "Google Australia \u2013 indefeasible rights to use terrestrial dark fibre from Telstra",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-12T12:00:00Z",
+            "determination_date": "2026-07-13T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 31.0,
+        "median_days": 31,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    },
+    "jallarah-homes-inc": {
+      "id": "jallarah-homes-inc",
+      "canonical_name": "Jallarah Homes Inc",
+      "members": [
+        {
+          "name": "JALLARAH HOMES INC",
+          "identifier": "13 238 944 953",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-35020",
+            "merger_name": "Respect Group - Jallarah Homes",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-21T12:00:00Z",
+            "determination_date": "2026-06-01T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 11.0,
+        "median_days": 11,
+        "average_business_days": 6.0,
+        "median_business_days": 6,
+        "completed_count": 1
+      }
+    },
+    "miniclip-s-a": {
+      "id": "miniclip-s-a",
+      "canonical_name": "Miniclip S.A.",
+      "members": [
+        {
+          "name": "Miniclip S.A.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-60030",
+            "merger_name": "Tencent \u2013 Happibits",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-20T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "nacg-mm-acquisition-pty-ltd": {
+      "id": "nacg-mm-acquisition-pty-ltd",
+      "canonical_name": "Nacg Mm Acquisition Pty Ltd",
+      "members": [
+        {
+          "name": "NACG MM ACQUISITION PTY LTD",
+          "identifier": "89 669 859 376",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-85003",
+            "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-25T12:00:00Z",
+            "determination_date": "2026-03-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "pantheon-llc": {
+      "id": "pantheon-llc",
+      "canonical_name": "Pantheon LLC",
+      "members": [
+        {
+          "name": "Pantheon LLC",
+          "identifier": "10488789",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-25022",
+            "merger_name": "Nuveen \u2013 Schroders",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-30T12:00:00Z",
+            "determination_date": "2026-05-15T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "platinum-diamond-financial-services-pty-ltd": {
+      "id": "platinum-diamond-financial-services-pty-ltd",
+      "canonical_name": "Platinum Diamond Financial Services Pty Ltd",
+      "members": [
+        {
+          "name": "PLATINUM DIAMOND FINANCIAL SERVICES PTY LTD",
+          "identifier": "76 615 645 979",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-85041",
+            "merger_name": "AGS Financial Group - Hartley Financial Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-28T12:00:00Z",
+            "determination_date": "2026-08-26T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    }
+  }
+}

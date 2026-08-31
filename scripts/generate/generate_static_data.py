@@ -24,7 +24,8 @@ Output files:
   - industries.json             - ANZSIC codes with merger counts
   - industries/{code}.json      - Mergers per industry code
   - parties.json                - Every party (canonical group or single) with merger counts
-  - parties/{id}.json           - Mergers per party, grouped by role
+  - parties/shard-{nn}.json     - Mergers per party, grouped by role, packed
+                                  into fixed buckets (see scripts/shard.py)
   - upcoming-events.json        - Future consultation/determination dates
   - commentary.json             - Mergers with user commentary
   - analysis.json               - Pre-computed analysis data
@@ -90,6 +91,7 @@ from scripts.generate.static_data.outputs import (
     upcoming_events,
 )
 from scripts.paths import REPO_ROOT
+from scripts.shard import SHARD_COUNT
 
 OUTPUT_DIR = REPO_ROOT / "frontend" / "public" / "data"
 DATA_OUTPUT_DIR = REPO_ROOT / "data" / "output"
@@ -233,9 +235,10 @@ def main():
     n = industries.generate_detail_files(enriched, OUTPUT_DIR)
     print(f"✓ Generated {n} individual industry files in {OUTPUT_DIR / 'industries'}")
 
-    print("\nGenerating individual party files...")
+    print("\nGenerating party detail files...")
     n = parties.generate_detail_files(party_groups, OUTPUT_DIR)
-    print(f"✓ Generated {n} individual party files in {OUTPUT_DIR / 'parties'}")
+    print(f"✓ Generated {n} party records in {OUTPUT_DIR / 'parties'} "
+          f"({SHARD_COUNT} shard buckets)")
 
     if questionnaire_data:
         print("\nGenerating questionnaire files...")

@@ -1,0 +1,128 @@
+{
+  "shard": 9,
+  "shard_count": 256,
+  "parties": {
+    "australia-food-newco": {
+      "id": "australia-food-newco",
+      "canonical_name": "Australia Food NewCo",
+      "members": [
+        {
+          "name": "Australia Food NewCo",
+          "identifier": "700 391 555",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-75044",
+            "merger_name": "McCormick - Unilever Foods Business",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-20T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "motorola-solutions": {
+      "id": "motorola-solutions",
+      "canonical_name": "Motorola Solutions",
+      "members": [
+        {
+          "name": "Motorola Solutions Finance EMEA Limited",
+          "identifier": "05540794",
+          "identifier_type": null
+        },
+        {
+          "name": "Motorola Solutions, Inc.",
+          "identifier": "IRS Number  361115800",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-05032",
+            "merger_name": "Motorola Solutions - D-Fend Solutions",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-08T12:00:00Z",
+            "determination_date": "2026-07-29T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "t-rk-hava-yollar-anonim-ortakl": {
+      "id": "t-rk-hava-yollar-anonim-ortakl",
+      "canonical_name": "T\u00fcrk Hava Yollar\u0131 Anonim Ortakl\u0131\u011f\u0131",
+      "members": [
+        {
+          "name": "T\u00fcrk Hava Yollar\u0131 Anonim Ortakl\u0131\u011f\u0131",
+          "identifier": "Registration number  751840",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-90016",
+            "merger_name": "Turkish Airlines - Air Europa",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-08T12:00:00Z",
+            "determination_date": "2026-05-29T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    }
+  }
+}

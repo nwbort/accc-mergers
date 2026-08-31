@@ -1,0 +1,303 @@
+{
+  "shard": 49,
+  "shard_count": 256,
+  "parties": {
+    "eagers-automotive-limited": {
+      "id": "eagers-automotive-limited",
+      "canonical_name": "Eagers Automotive Limited",
+      "members": [
+        {
+          "name": "EAGERS AUTOMOTIVE LIMITED",
+          "identifier": "87 009 680 013",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-15030",
+            "merger_name": "KARMO/SIMPLR",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-03T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "fluent-commerce-midco-inc": {
+      "id": "fluent-commerce-midco-inc",
+      "canonical_name": "Fluent Commerce MidCo Inc.",
+      "members": [
+        {
+          "name": "Fluent Commerce MidCo Inc.",
+          "identifier": "EIN 415132220",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-80012",
+            "merger_name": "FC Group Holdings Corporation & ors - Fluent Retail",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-28T12:00:00Z",
+            "determination_date": "2026-05-15T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "inter-ikea-systems-b-v": {
+      "id": "inter-ikea-systems-b-v",
+      "canonical_name": "Inter IKEA Systems B.V.",
+      "members": [
+        {
+          "name": "Inter IKEA Systems B.V.",
+          "identifier": "Company registration number  27232886",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-80030",
+            "merger_name": "IKEA Australia \u2013 IP rights from Inter IKEA under new franchise agreement package",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-15T12:00:00Z",
+            "determination_date": "2026-08-03T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 19.0,
+        "median_days": 19,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "l-catterton-management-limited": {
+      "id": "l-catterton-management-limited",
+      "canonical_name": "L Catterton Management Limited",
+      "members": [
+        {
+          "name": "L Catterton Management Limited",
+          "identifier": "N/A",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-35004",
+            "merger_name": "L Catterton Management \u2013 Ex Nihilo Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-22T12:00:00Z",
+            "determination_date": "2026-02-04T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "parker-hannifin-corporation": {
+      "id": "parker-hannifin-corporation",
+      "canonical_name": "Parker-Hannifin Corporation",
+      "members": [
+        {
+          "name": "Parker-Hannifin Corporation",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Parker-Hannifin Corporation",
+          "identifier": "LEI  5493002CONDB4N2HKI23",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-70026",
+            "merger_name": "Parker-Hannifin \u2013 CIRCOR A&D",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-15T12:00:00Z",
+            "determination_date": "2026-08-06T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-75004",
+            "merger_name": "Parker-Hannifin \u2013 Filtration Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-05T12:00:00Z",
+            "determination_date": "2026-03-10T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 2,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.5,
+        "median_days": 27.5,
+        "average_business_days": 19.0,
+        "median_business_days": 19.0,
+        "completed_count": 2
+      },
+      "waiver_duration": null
+    },
+    "salter-brothers-private-equity-pty-limited": {
+      "id": "salter-brothers-private-equity-pty-limited",
+      "canonical_name": "Salter Brothers Private Equity Pty Limited",
+      "members": [
+        {
+          "name": "SALTER BROTHERS PRIVATE EQUITY PTY LIMITED",
+          "identifier": "49 619 543 967",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-90011",
+            "merger_name": "Salter Brothers - Buroserv",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-10T12:00:00Z",
+            "determination_date": "2026-04-29T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 19.0,
+        "median_days": 19,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "sash-holdco-pty-ltd": {
+      "id": "sash-holdco-pty-ltd",
+      "canonical_name": "Sash Holdco Pty Ltd",
+      "members": [
+        {
+          "name": "SASH HOLDCO PTY LTD",
+          "identifier": "91 616 570 560",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-05014",
+            "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

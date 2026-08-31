@@ -1,0 +1,724 @@
+{
+  "shard": 131,
+  "shard_count": 256,
+  "parties": {
+    "alpair-pty-ltd": {
+      "id": "alpair-pty-ltd",
+      "canonical_name": "Alpair Pty Ltd",
+      "members": [
+        {
+          "name": "Alpair Pty Ltd",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-20008",
+            "merger_name": "Hall & McLean \u2013 Freehold interest in commercial land in Wellcamp, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-02T12:00:00Z",
+            "determination_date": "2026-03-24T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "aqua-adhesives-i-gmbh": {
+      "id": "aqua-adhesives-i-gmbh",
+      "canonical_name": "Aqua Adhesives I GmbH",
+      "members": [
+        {
+          "name": "Aqua Adhesives I GmbH",
+          "identifier": "Swiss registration number  CH170.4.019.1870",
+          "identifier_type": null
+        },
+        {
+          "name": "Aqua Adhesives I GmbH",
+          "identifier": "Swiss registration number: CH170.4.019.1870",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-40005",
+            "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-18T12:00:00Z",
+            "determination_date": "2026-03-12T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-65003",
+            "merger_name": "Henkel \u2013 ATP adhesive systems group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-19T12:00:00Z",
+            "determination_date": "2026-02-05T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "canada-pension-plan-investment-board": {
+      "id": "canada-pension-plan-investment-board",
+      "canonical_name": "Canada Pension Plan Investment Board",
+      "members": [
+        {
+          "name": "Canada Pension Plan Investment Board",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-55005",
+            "merger_name": "General Atlantic and CPP Investments led consortium - Boats Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-29T12:00:00Z",
+            "determination_date": "2026-02-19T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "fertility-sa-pty-ltd": {
+      "id": "fertility-sa-pty-ltd",
+      "canonical_name": "Fertility SA Pty Ltd",
+      "members": [
+        {
+          "name": "Fertility SA Pty Ltd",
+          "identifier": "147 408 857",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-05009",
+            "merger_name": "Genea - Embrace Fertility",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-27T12:00:00Z",
+            "determination_date": "2026-05-18T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "fluence-energy-pty-ltd": {
+      "id": "fluence-energy-pty-ltd",
+      "canonical_name": "Fluence Energy Pty Ltd",
+      "members": [
+        {
+          "name": "Fluence Energy Pty Ltd",
+          "identifier": "871304612 (I.R.S. Employer Identification No.)",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-70027",
+            "merger_name": "Global Infrastructure Management and EQT led consortium - AES Corporation",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-30T12:00:00Z",
+            "determination_date": "2026-08-26T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "golden-m-tahmoor-coal-holdings-pty-ltd": {
+      "id": "golden-m-tahmoor-coal-holdings-pty-ltd",
+      "canonical_name": "Golden M Tahmoor Coal Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "Golden M Tahmoor Coal Holdings Pty Ltd",
+          "identifier": "697 956 791",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-10022",
+            "merger_name": "M Resources and Golden Energy and Resources \u2013 Tahmoor Coal Mine",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-30T12:00:00Z",
+            "determination_date": "2026-08-21T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "henkel-ag-co-kgaa": {
+      "id": "henkel-ag-co-kgaa",
+      "canonical_name": "Henkel",
+      "members": [
+        {
+          "name": "Henkel AG & Co. KGaA",
+          "identifier": "Germany registration number (HRB): 4724",
+          "identifier_type": null
+        },
+        {
+          "name": "Henkel AG & Co. KGaA",
+          "identifier": "HRB  4724",
+          "identifier_type": null
+        },
+        {
+          "name": "Henkel Australia Pty Ltd",
+          "identifier": "82 001 302 996",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Henkel Finance Australia L.P.",
+          "identifier": "15 740 196 765",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Henkel Global Supply Chain B.V.",
+          "identifier": "Netherlands registration number (KVK): 854017447; CCI 60683945",
+          "identifier_type": null
+        },
+        {
+          "name": "Henkel Global Supply Chain B.V.",
+          "identifier": "Netherlands registration number, 854017447, CCI 60683945",
+          "identifier_type": null
+        },
+        {
+          "name": "Henkel Global Supply Chain B.V.",
+          "identifier": "Netherlands registration number: 854017447, CCI 60683945",
+          "identifier_type": null
+        },
+        {
+          "name": "Henkel Ireland Distribution Limited",
+          "identifier": "Ireland registration number: 430837",
+          "identifier_type": null
+        },
+        {
+          "name": "Henkel Singapore Pte Ltd",
+          "identifier": "Singapore registration number (UEN): 198304615H",
+          "identifier_type": null
+        },
+        {
+          "name": "Henkel US Operations Corporation",
+          "identifier": "Delaware registration number: 740913",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-80016",
+            "merger_name": "Henkel \u2013 Olaplex",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-22T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-45007",
+            "merger_name": "Henkel \u2013 Stahl",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-18T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-40005",
+            "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-18T12:00:00Z",
+            "determination_date": "2026-03-12T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-65003",
+            "merger_name": "Henkel \u2013 ATP adhesive systems group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-19T12:00:00Z",
+            "determination_date": "2026-02-05T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 4,
+      "phase_1_count": 2,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.5,
+        "median_days": 24.5,
+        "average_business_days": 16.0,
+        "median_business_days": 16.0,
+        "completed_count": 2
+      },
+      "waiver_duration": {
+        "average_days": 18.5,
+        "median_days": 18.5,
+        "average_business_days": 12.0,
+        "median_business_days": 12.0,
+        "completed_count": 2
+      }
+    },
+    "holcim-australia-pty-ltd": {
+      "id": "holcim-australia-pty-ltd",
+      "canonical_name": "Holcim (Australia) Pty Ltd",
+      "members": [
+        {
+          "name": "HOLCIM (AUSTRALIA) PTY LTD",
+          "identifier": "87 099 732 297",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-05044",
+            "merger_name": "Holcim Australia \u2013 Burdetts Group",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-10T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "honda-motor-co-ltd": {
+      "id": "honda-motor-co-ltd",
+      "canonical_name": "Honda Motor Co., Ltd",
+      "members": [
+        {
+          "name": "Honda Motor Co., Ltd",
+          "identifier": "6010401027577",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-65010",
+            "merger_name": "Honda \u2013 additional shareholding in Astemo",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-10T12:00:00Z",
+            "determination_date": "2026-04-01T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "jera-ichthys-pty-ltd": {
+      "id": "jera-ichthys-pty-ltd",
+      "canonical_name": "JERA Ichthys Pty Ltd",
+      "members": [
+        {
+          "name": "JERA Ichthys Pty Ltd",
+          "identifier": "158 193 241",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-05004",
+            "merger_name": "MidOcean Energy \u2013 JERA Gorgon",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-14T12:00:00Z",
+            "determination_date": "2026-04-09T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "ma-asset-management-ltd": {
+      "id": "ma-asset-management-ltd",
+      "canonical_name": "Ma Asset Management Ltd",
+      "members": [
+        {
+          "name": "MA ASSET MANAGEMENT LTD",
+          "identifier": "93 142 008 535",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-80025",
+            "merger_name": "Black Kite Partners led consortium - DR2",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-28T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-45005",
+            "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-25T12:00:00Z",
+            "determination_date": "2026-04-17T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
+    "randstad-digital-france-sas": {
+      "id": "randstad-digital-france-sas",
+      "canonical_name": "Randstad Digital France SAS",
+      "members": [
+        {
+          "name": "Randstad Digital France SAS",
+          "identifier": "RC.S. Nanterre 352 905 707",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-15026",
+            "merger_name": "LTM \u2013 Randstad Digital entities including FinXL",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-12T12:00:00Z",
+            "determination_date": "2026-07-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "rennic-pty-ltd": {
+      "id": "rennic-pty-ltd",
+      "canonical_name": "Rennic Pty Ltd",
+      "members": [
+        {
+          "name": "Rennic Pty Ltd",
+          "identifier": "28 124 280 173",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-85034",
+            "merger_name": "Freedom Fuels \u2013 Rennic",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-08T12:00:00Z",
+            "determination_date": "2026-07-03T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "time-design-international-pte-ltd": {
+      "id": "time-design-international-pte-ltd",
+      "canonical_name": "Kakaku.com",
+      "members": [
+        {
+          "name": "Kakaku.com, Inc.",
+          "identifier": "Japan Corporate Number  011001065997",
+          "identifier_type": null
+        },
+        {
+          "name": "Kakaku.com, Inc.",
+          "identifier": "Japan corporate number  011001065997",
+          "identifier_type": null
+        },
+        {
+          "name": "Time Design International Pte Ltd",
+          "identifier": "Singapore registration number  UEN 201736394D",
+          "identifier_type": null
+        },
+        {
+          "name": "Time Design International Pte Ltd",
+          "identifier": "UEN  201736394D",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-60034",
+            "merger_name": "Bain Capital \u2013 Kakaku.com",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-30T12:00:00Z",
+            "determination_date": "2026-08-14T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-45015",
+            "merger_name": "EQT Fund Management \u2013 Kakaku.com",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-12T12:00:00Z",
+            "determination_date": "2026-05-25T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14.0,
+        "average_business_days": 10.0,
+        "median_business_days": 10.0,
+        "completed_count": 2
+      }
+    }
+  }
+}

@@ -1,0 +1,293 @@
+{
+  "shard": 185,
+  "shard_count": 256,
+  "parties": {
+    "anlg-intermediate-company-llc": {
+      "id": "anlg-intermediate-company-llc",
+      "canonical_name": "ANLG Intermediate Company, LLC",
+      "members": [
+        {
+          "name": "ANLG Intermediate Company, LLC",
+          "identifier": "EFN  6831160",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-75029",
+            "merger_name": "Analogic - Leidos SES business",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-08T12:00:00Z",
+            "determination_date": "2026-08-11T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 34.0,
+        "median_days": 34,
+        "average_business_days": 24.0,
+        "median_business_days": 24,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "bertelsmann-se-co-kgaa": {
+      "id": "bertelsmann-se-co-kgaa",
+      "canonical_name": "Bertelsmann SE & Co. KGaA",
+      "members": [
+        {
+          "name": "Bertelsmann SE & Co. KGaA",
+          "identifier": "HRB 9194",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-75023",
+            "merger_name": "Bertelsmann Music Group - Concord",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-18T12:00:00Z",
+            "determination_date": "2026-07-10T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "etsy-inc": {
+      "id": "etsy-inc",
+      "canonical_name": "Etsy, Inc.",
+      "members": [
+        {
+          "name": "Etsy, Inc.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-45002",
+            "merger_name": "eBay - Depop",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-03T12:00:00Z",
+            "determination_date": "2026-05-12T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 39.0,
+        "median_days": 39,
+        "average_business_days": 25.0,
+        "median_business_days": 25,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "ftp-group-holdings-pty-ltd": {
+      "id": "ftp-group-holdings-pty-ltd",
+      "canonical_name": "Ftp Group Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "FTP GROUP HOLDINGS PTY LTD",
+          "identifier": "82 626 217 614",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25008",
+            "merger_name": "Five V Capital - FTP Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-04T12:00:00Z",
+            "determination_date": "2026-03-24T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "mitsubishi-ufj-financial-group-inc": {
+      "id": "mitsubishi-ufj-financial-group-inc",
+      "canonical_name": "Mitsubishi UFJ Financial Group Inc",
+      "members": [
+        {
+          "name": "Mitsubishi UFJ Financial Group Inc",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-95035",
+            "merger_name": "Igneo Infrastructure Partners \u2013 Green Squares Energy",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-23T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
+    "prime-super-pty-ltd": {
+      "id": "prime-super-pty-ltd",
+      "canonical_name": "Prime Super Pty Ltd",
+      "members": [
+        {
+          "name": "PRIME SUPER PTY LTD",
+          "identifier": "81 067 241 016",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-90010",
+            "merger_name": "Prime Super - Additional interest in Peninsula Link Project",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-02T12:00:00Z",
+            "determination_date": "2026-04-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "ventura-property-management-pty-ltd": {
+      "id": "ventura-property-management-pty-ltd",
+      "canonical_name": "Ventura Property Management Pty Ltd",
+      "members": [
+        {
+          "name": "Ventura Property Management Pty Ltd",
+          "identifier": "28 100 908 049",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-70013",
+            "merger_name": "Ventura Motors \u2013 Crown Coaches",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-15T12:00:00Z",
+            "determination_date": "2026-05-07T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

@@ -1,0 +1,345 @@
+{
+  "shard": 223,
+  "shard_count": 256,
+  "parties": {
+    "badger-merger-sub-i-inc": {
+      "id": "badger-merger-sub-i-inc",
+      "canonical_name": "Badger Merger Sub I, Inc",
+      "members": [
+        {
+          "name": "Badger Merger Sub I, Inc",
+          "identifier": "10389384",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-95002",
+            "merger_name": "Abbott Laboratories - Exact Sciences",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-02T12:00:00Z",
+            "determination_date": "2026-02-24T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "houma-holdings-pty-ltd": {
+      "id": "houma-holdings-pty-ltd",
+      "canonical_name": "Houma Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "HOUMA HOLDINGS PTY LTD",
+          "identifier": "44 002 590 758",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-05045",
+            "merger_name": "Grafton Motor Group \u2013 Grafton Mazda",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-31T12:00:00Z",
+            "determination_date": "2026-08-27T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "howard-springs-op-co-pty-ltd": {
+      "id": "howard-springs-op-co-pty-ltd",
+      "canonical_name": "Howard Springs Op Co Pty Ltd",
+      "members": [
+        {
+          "name": "Howard Springs Op Co Pty Ltd",
+          "identifier": "78 696 555 674",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-15035",
+            "merger_name": "Waymark Hotels Group \u2013 Howard Springs Tavern, Howard Springs, NT",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-27T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "mgi-dobbyn-carafa-pty-ltd": {
+      "id": "mgi-dobbyn-carafa-pty-ltd",
+      "canonical_name": "Mgi Dobbyn Carafa Pty Ltd",
+      "members": [
+        {
+          "name": "MGI DOBBYN CARAFA PTY LTD",
+          "identifier": "53 121 160 138",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-50023",
+            "merger_name": "Hillhouse - MGI Dobbyn Carafa",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-28T12:00:00Z",
+            "determination_date": "2026-06-15T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "perpetual-corporate-trust-limited": {
+      "id": "perpetual-corporate-trust-limited",
+      "canonical_name": "Perpetual Corporate Trust Limited",
+      "members": [
+        {
+          "name": "PERPETUAL CORPORATE TRUST LIMITED",
+          "identifier": "99 000 341 533",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Perpetual Corporate Trust Limited as trustee for SP-Plus (Australia) Holdings 2 Trust",
+          "identifier": "99 000 341 533",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-85047",
+            "merger_name": "Blackstone funds and Perpetual Trustees \u2013 HSBC loan portfolio",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-27T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-50026",
+            "merger_name": "Stonepeak-led consortium - Estia Health",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-29T12:00:00Z",
+            "determination_date": "2026-07-22T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 2,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "smile-partners-vic2-pty-ltd": {
+      "id": "smile-partners-vic2-pty-ltd",
+      "canonical_name": "Smile Partners (Vic2) Pty Ltd",
+      "members": [
+        {
+          "name": "SMILE PARTNERS (VIC2) PTY LTD",
+          "identifier": "95 683 484 764",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-05014",
+            "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "thermo-fisher-scientific-inc": {
+      "id": "thermo-fisher-scientific-inc",
+      "canonical_name": "Thermo Fisher Scientific Inc.",
+      "members": [
+        {
+          "name": "Thermo Fisher Scientific Inc.",
+          "identifier": "042209186",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-01075",
+            "merger_name": "Thermo Fisher - Clario Holdings",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-01-16T12:00:00Z",
+            "determination_date": "2026-02-10T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "zelora-topco-pty-ltd": {
+      "id": "zelora-topco-pty-ltd",
+      "canonical_name": "Zelora TopCo Pty Ltd",
+      "members": [
+        {
+          "name": "Zelora TopCo Pty Ltd",
+          "identifier": "698 332 240",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-90029",
+            "merger_name": "Bunnings \u2013 Intellihub \u2013 Zelora Joint Venture",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-18T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    }
+  }
+}

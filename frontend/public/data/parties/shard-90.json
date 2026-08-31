@@ -1,0 +1,410 @@
+{
+  "shard": 144,
+  "shard_count": 256,
+  "parties": {
+    "abf-whole-loan-pty-ltd": {
+      "id": "abf-whole-loan-pty-ltd",
+      "canonical_name": "ABF Whole Loan Pty Ltd",
+      "members": [
+        {
+          "name": "ABF Whole Loan Pty Ltd",
+          "identifier": "699 486 167",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-85047",
+            "merger_name": "Blackstone funds and Perpetual Trustees \u2013 HSBC loan portfolio",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-27T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "arcline-resolution-blocker-inc": {
+      "id": "arcline-resolution-blocker-inc",
+      "canonical_name": "Arcline Resolution Blocker, Inc",
+      "members": [
+        {
+          "name": "Arcline Resolution Blocker, Inc",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-55009",
+            "merger_name": "Resonetics \u2013 Resolution Medical",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-26T12:00:00Z",
+            "determination_date": "2026-03-11T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "centuria-capital-limited": {
+      "id": "centuria-capital-limited",
+      "canonical_name": "Centuria Capital Limited",
+      "members": [
+        {
+          "name": "CENTURIA CAPITAL LIMITED",
+          "identifier": "22 095 454 336",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-50029",
+            "merger_name": "Centuria Property Funds No. 2 Limited as the responsible entity of Centuria Sydney CBD Prime Office Fund - 680 George St/50 Goulburn St",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-13T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "craig-mostyn-holdings-pty-limited": {
+      "id": "craig-mostyn-holdings-pty-limited",
+      "canonical_name": "Craig Mostyn Holdings Pty Limited",
+      "members": [
+        {
+          "name": "CRAIG MOSTYN HOLDINGS PTY LIMITED",
+          "identifier": "14 008 398 356",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-60007",
+            "merger_name": "Craig Mostyn \u2013 Patmore Feeds",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-20T12:00:00Z",
+            "determination_date": "2026-03-19T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "h-e-parts-international-mining-solutions-cooling-division-pty-ltd": {
+      "id": "h-e-parts-international-mining-solutions-cooling-division-pty-ltd",
+      "canonical_name": "H-E Parts International Mining Solutions Cooling Division Pty Ltd",
+      "members": [
+        {
+          "name": "H-E PARTS INTERNATIONAL MINING SOLUTIONS COOLING DIVISION PTY LTD",
+          "identifier": "68 129 884 019",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-20005",
+            "merger_name": "H-E Parts International Mining Solutions - Warehouse workshop site in Paget, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-30T12:00:00Z",
+            "determination_date": "2026-02-12T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "hexagon-manufacturing-intelligence-llc": {
+      "id": "hexagon-manufacturing-intelligence-llc",
+      "canonical_name": "Hexagon Manufacturing Intelligence LLC",
+      "members": [
+        {
+          "name": "Hexagon Manufacturing Intelligence LLC",
+          "identifier": "3377346",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-35022",
+            "merger_name": "Hexagon - Waygate Technologies",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-22T12:00:00Z",
+            "determination_date": "2026-06-22T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 31.0,
+        "median_days": 31,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "jayark-pty-limited-as-trustee-for-jayark-trust": {
+      "id": "jayark-pty-limited-as-trustee-for-jayark-trust",
+      "canonical_name": "JAYARK PTY LIMITED as trustee for JAYARK TRUST",
+      "members": [
+        {
+          "name": "JAYARK PTY LIMITED as trustee for JAYARK TRUST",
+          "identifier": "77 126 563 853",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-45021",
+            "merger_name": "McDonald\u2019s Australia \u2013 McDonald\u2019s Restaurants in North West Sydney",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-03T12:00:00Z",
+            "determination_date": "2026-08-03T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 31.0,
+        "median_days": 31,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    },
+    "omers-apollo-investment-holdings-llc": {
+      "id": "omers-apollo-investment-holdings-llc",
+      "canonical_name": "OMERS Apollo Investment Holdings LLC",
+      "members": [
+        {
+          "name": "OMERS Apollo Investment Holdings LLC",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-40022",
+            "merger_name": "Integris & related entities - First Focus",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-19T12:00:00Z",
+            "determination_date": "2026-06-17T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "powercon-a-s": {
+      "id": "powercon-a-s",
+      "canonical_name": "PowerCon A/S",
+      "members": [
+        {
+          "name": "PowerCon A/S",
+          "identifier": "CVR  32270433",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-20024",
+            "merger_name": "KK Group Invest - PowerCon",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-19T12:00:00Z",
+            "determination_date": "2026-06-02T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "sherlee-pty-limited-as-trustee-for-sherlee-trust": {
+      "id": "sherlee-pty-limited-as-trustee-for-sherlee-trust",
+      "canonical_name": "SHERLEE PTY LIMITED as trustee for SHERLEE TRUST",
+      "members": [
+        {
+          "name": "SHERLEE PTY LIMITED as trustee for SHERLEE TRUST",
+          "identifier": "69 126 563 817",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-45021",
+            "merger_name": "McDonald\u2019s Australia \u2013 McDonald\u2019s Restaurants in North West Sydney",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-03T12:00:00Z",
+            "determination_date": "2026-08-03T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 31.0,
+        "median_days": 31,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    }
+  }
+}

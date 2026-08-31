@@ -1,0 +1,553 @@
+{
+  "shard": 103,
+  "shard_count": 256,
+  "parties": {
+    "anzlaff-sub-2": {
+      "id": "anzlaff-sub-2",
+      "canonical_name": "ANZLAFF Sub 2",
+      "members": [
+        {
+          "name": "ANZLAFF Sub 2",
+          "identifier": "25 191 128 617",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-50031",
+            "merger_name": "New Forests Australia New Zealand Landscapes and Forestry Fund \u2013 Benditi Pastoral",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-01T12:00:00Z",
+            "determination_date": "2026-07-21T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "brookfield-corporation": {
+      "id": "brookfield-corporation",
+      "canonical_name": "Brookfield Corporation",
+      "members": [
+        {
+          "name": "BROOKFIELD CAPITAL MANAGEMENT LIMITED",
+          "identifier": "32 094 936 866",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Brookfield Corporation",
+          "identifier": "890126527",
+          "identifier_type": null
+        },
+        {
+          "name": "Brookfield Corporation",
+          "identifier": "Company number 1644037",
+          "identifier_type": null
+        },
+        {
+          "name": "Brookfield Corporation",
+          "identifier": "Registered Number  1646037",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-50029",
+            "merger_name": "Centuria Property Funds No. 2 Limited as the responsible entity of Centuria Sydney CBD Prime Office Fund - 680 George St/50 Goulburn St",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-13T12:00:00Z"
+          }
+        ],
+        "other": [
+          {
+            "merger_id": "WA-20026",
+            "merger_name": "Oaktree \u2013 Vivax Metrotech",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-18T12:00:00Z",
+            "determination_date": "2026-07-06T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-55025",
+            "merger_name": "Brookfield \u2013 World Freight Company",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-09T12:00:00Z",
+            "determination_date": "2026-06-26T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-25018",
+            "merger_name": "Primary Wave - Kobalt",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-18T12:00:00Z",
+            "determination_date": "2026-06-11T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 4,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 3,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 17,
+        "average_business_days": 11.333333333333334,
+        "median_business_days": 12,
+        "completed_count": 3
+      }
+    },
+    "buroserv-telco-holdings-pty-ltd": {
+      "id": "buroserv-telco-holdings-pty-ltd",
+      "canonical_name": "Buroserv Telco Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "BUROSERV TELCO HOLDINGS PTY LTD",
+          "identifier": "17 690 175 770",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-90011",
+            "merger_name": "Salter Brothers - Buroserv",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-10T12:00:00Z",
+            "determination_date": "2026-04-29T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 19.0,
+        "median_days": 19,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "churinga-investments-pty-ltd-as-trustee-for-the-churinga-trust": {
+      "id": "churinga-investments-pty-ltd-as-trustee-for-the-churinga-trust",
+      "canonical_name": "Churinga (Investments) Pty Ltd as trustee for THE CHURINGA Trust",
+      "members": [
+        {
+          "name": "Churinga (Investments) Pty Ltd as trustee for THE CHURINGA Trust",
+          "identifier": "45 218 813 341",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-25002",
+            "merger_name": "Symal Group - Timms Group and L&D Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-01-23T12:00:00Z",
+            "determination_date": "2026-02-19T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "count-limited": {
+      "id": "count-limited",
+      "canonical_name": "Count Limited",
+      "members": [
+        {
+          "name": "Count Limited",
+          "identifier": "11 126 990 832",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-30026",
+            "merger_name": "Count \u2013 O\u2019Brien Accountants & Advisors",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-10T12:00:00Z",
+            "determination_date": "2026-08-04T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "examworks-group-inc": {
+      "id": "examworks-group-inc",
+      "canonical_name": "ExamWorks Group Inc",
+      "members": [
+        {
+          "name": "ExamWorks Group Inc",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-30014",
+            "merger_name": "MedHealth \u2013 Connect Allied Health",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-06T12:00:00Z",
+            "determination_date": "2026-05-21T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "foods-connected-limited": {
+      "id": "foods-connected-limited",
+      "canonical_name": "Foods Connected Limited",
+      "members": [
+        {
+          "name": "Foods Connected Limited",
+          "identifier": "UK registration number  NI614697",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-45017",
+            "merger_name": "Apax Partners LLP \u2013 Sedex Information Exchange Limited",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-28T12:00:00Z",
+            "determination_date": "2026-06-26T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "keppel-infrastructure-fund-management-pte-ltd": {
+      "id": "keppel-infrastructure-fund-management-pte-ltd",
+      "canonical_name": "Keppel Infrastructure Fund Management Pte. Ltd.",
+      "members": [
+        {
+          "name": "Keppel Infrastructure Fund Management Pte. Ltd.",
+          "identifier": "UEN  200803959H",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-70013",
+            "merger_name": "Ventura Motors \u2013 Crown Coaches",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-15T12:00:00Z",
+            "determination_date": "2026-05-07T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "orway-iq-pty-ltd": {
+      "id": "orway-iq-pty-ltd",
+      "canonical_name": "Orway IQ Pty Ltd",
+      "members": [
+        {
+          "name": "Orway IQ Pty Ltd",
+          "identifier": "52 631 359 370",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-85006",
+            "merger_name": "Tega and Apollo Funds consortium - Molycop",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-26T12:00:00Z",
+            "determination_date": "2026-04-28T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 33.0,
+        "median_days": 33,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "platinum-equity-advisors-llc": {
+      "id": "platinum-equity-advisors-llc",
+      "canonical_name": "Platinum Equity Advisors, LLC",
+      "members": [
+        {
+          "name": "Platinum Equity Advisors, LLC",
+          "identifier": "Delaware ID  3623250",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-70007",
+            "merger_name": "Platinum Equity Group \u2013 Burke",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-23T12:00:00Z",
+            "determination_date": "2026-03-06T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 11.0,
+        "median_days": 11,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "royal-freemasons-ltd": {
+      "id": "royal-freemasons-ltd",
+      "canonical_name": "Royal Freemasons Ltd",
+      "members": [
+        {
+          "name": "ROYAL FREEMASONS LTD",
+          "identifier": "52 082 106 821",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-15036",
+            "merger_name": "Regis \u2013 Home Care Business of Royal Freemasons",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-04T12:00:00Z",
+            "determination_date": "2026-08-27T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "victorian-managed-insurance-authority": {
+      "id": "victorian-managed-insurance-authority",
+      "canonical_name": "Victorian Managed Insurance Authority",
+      "members": [
+        {
+          "name": "VICTORIAN MANAGED INSURANCE AUTHORITY",
+          "identifier": "39 682 497 841",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-35008",
+            "merger_name": "VFMC \u2013 CorVal Land and Operator Trusts",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-09T12:00:00Z",
+            "determination_date": "2026-03-26T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    }
+  }
+}

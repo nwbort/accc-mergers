@@ -1,0 +1,496 @@
+{
+  "shard": 32,
+  "shard_count": 256,
+  "parties": {
+    "beijer-ref-australia-pty-ltd": {
+      "id": "beijer-ref-australia-pty-ltd",
+      "canonical_name": "Beijer Ref Australia Pty Ltd",
+      "members": [
+        {
+          "name": "BEIJER REF AUSTRALIA PTY LTD",
+          "identifier": "62 133 913 283",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-15018",
+            "merger_name": "Complete Air Supply - All Air",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-16T12:00:00Z",
+            "determination_date": "2026-07-09T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "country-motor-company-pty-ltd": {
+      "id": "country-motor-company-pty-ltd",
+      "canonical_name": "Country Motor Company Pty Ltd",
+      "members": [
+        {
+          "name": "COUNTRY MOTOR COMPANY PTY LTD",
+          "identifier": "11 002 189 228",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-65026",
+            "merger_name": "McCarroll's Automotive Group - Kinghorn Motor Group & Country Motor Company",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-22T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-30010",
+            "merger_name": "MAG South Coast - Country Motor Company / Kinghorn Motors",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-20T12:00:00Z",
+            "determination_date": "2026-05-15T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "egis-projects-asia-pacific-pty-limited": {
+      "id": "egis-projects-asia-pacific-pty-limited",
+      "canonical_name": "Egis Projects Asia Pacific Pty Limited",
+      "members": [
+        {
+          "name": "EGIS PROJECTS ASIA PACIFIC PTY LIMITED",
+          "identifier": "82 071 536 957",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-70011",
+            "merger_name": "Egis Projects Asia Pacific - Fulton Hogan Egis O&M",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-02T12:00:00Z",
+            "determination_date": "2026-04-22T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "hallweld-bennett-pty-ltd": {
+      "id": "hallweld-bennett-pty-ltd",
+      "canonical_name": "Hallweld Bennett Pty Ltd",
+      "members": [
+        {
+          "name": "HALLWELD BENNETT PTY LTD",
+          "identifier": "15 161 086 595",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-65004",
+            "merger_name": "Kee Safety - RIS Safety",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-02T12:00:00Z",
+            "determination_date": "2026-02-13T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 11.0,
+        "median_days": 11,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "mcdermott-international-ltd": {
+      "id": "mcdermott-international-ltd",
+      "canonical_name": "McDermott International, Ltd",
+      "members": [
+        {
+          "name": "McDermott International, Ltd",
+          "identifier": "Bermuda company number  55624",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-20030",
+            "merger_name": "Baupost \u2013 McDermott",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-21T12:00:00Z",
+            "determination_date": "2026-08-04T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "neubau-holdings-no-22-pty-ltd": {
+      "id": "neubau-holdings-no-22-pty-ltd",
+      "canonical_name": "Neubau Holdings No 22 Pty Ltd",
+      "members": [
+        {
+          "name": "Neubau Holdings No 22 Pty Ltd",
+          "identifier": "20 122 754 496",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-75030",
+            "merger_name": "Coles - supermarket site in Palmwoods, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-24T12:00:00Z",
+            "determination_date": "2026-07-22T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
+    "rfgi-group-pty-ltd": {
+      "id": "rfgi-group-pty-ltd",
+      "canonical_name": "Rfgi Group Pty Ltd",
+      "members": [
+        {
+          "name": "RFGI GROUP PTY LTD",
+          "identifier": "55 630 028 974",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-80001",
+            "merger_name": "Alpine Software Group (ASG) \u2013 PlayHQ",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-19T12:00:00Z",
+            "determination_date": "2026-01-29T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 10.0,
+        "median_days": 10,
+        "average_business_days": 7.0,
+        "median_business_days": 7,
+        "completed_count": 1
+      }
+    },
+    "sharton-motors-pty-ltd": {
+      "id": "sharton-motors-pty-ltd",
+      "canonical_name": "Sharton Motors Pty Ltd",
+      "members": [
+        {
+          "name": "SHARTON MOTORS PTY LTD",
+          "identifier": "55 001 345 384",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-05017",
+            "merger_name": "Tony White Group - Sharton Motors dealerships in Maitland, Port Stephens and Cardiff",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-12T12:00:00Z",
+            "determination_date": "2026-06-09T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-65011",
+            "merger_name": "Tony White Group - Sharton Motors Dealerships in Maitland and Port Stephens",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-16T12:00:00Z",
+            "determination_date": "2026-04-14T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "shrika-pty-ltd": {
+      "id": "shrika-pty-ltd",
+      "canonical_name": "Shrika Pty Ltd",
+      "members": [
+        {
+          "name": "Shrika Pty Ltd",
+          "identifier": "108 757 357",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "The Trustee for SHRIKA",
+          "identifier": "83 315 233 206",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-05014",
+            "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-20T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "the-trustee-for-lual-services-trust": {
+      "id": "the-trustee-for-lual-services-trust",
+      "canonical_name": "The trustee for Lual Services Trust",
+      "members": [
+        {
+          "name": "The trustee for Lual Services Trust",
+          "identifier": "66 004 797 146",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-40021",
+            "merger_name": "Ochre Health - New Lambton Family Practice, NSW",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-26T12:00:00Z",
+            "determination_date": "2026-05-12T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "unitedhealth-group-incorporated-uhg": {
+      "id": "unitedhealth-group-incorporated-uhg",
+      "canonical_name": "UnitedHealth Group Incorporated (UHG)",
+      "members": [
+        {
+          "name": "UnitedHealth Group Incorporated (UHG)",
+          "identifier": "US EIN  4113221939",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-70002",
+            "merger_name": "Ethos (TPG) \u2013 EMIS and certain related assets",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-03T12:00:00Z",
+            "determination_date": "2026-01-13T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 10.0,
+        "median_days": 10,
+        "average_business_days": 2.0,
+        "median_business_days": 2,
+        "completed_count": 1
+      }
+    }
+  }
+}

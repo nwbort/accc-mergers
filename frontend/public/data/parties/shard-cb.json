@@ -1,0 +1,293 @@
+{
+  "shard": 203,
+  "shard_count": 256,
+  "parties": {
+    "crowe-holdco-llc": {
+      "id": "crowe-holdco-llc",
+      "canonical_name": "Crowe HoldCo LLC",
+      "members": [
+        {
+          "name": "Crowe HoldCo LLC",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-90025",
+            "merger_name": "KKR - Crowe",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-25T12:00:00Z",
+            "determination_date": "2026-07-15T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "d-fend-solutions-ad-ltd": {
+      "id": "d-fend-solutions-ad-ltd",
+      "canonical_name": "D-Fend Solutions AD Ltd.",
+      "members": [
+        {
+          "name": "D-Fend Solutions AD Ltd.",
+          "identifier": "515600963",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-05032",
+            "merger_name": "Motorola Solutions - D-Fend Solutions",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-08T12:00:00Z",
+            "determination_date": "2026-07-29T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "indeco-australia-pty-ltd": {
+      "id": "indeco-australia-pty-ltd",
+      "canonical_name": "Indeco Australia Pty Ltd",
+      "members": [
+        {
+          "name": "Indeco Australia Pty Ltd",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-35016",
+            "merger_name": "Wipro - Indeco",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-01T12:00:00Z",
+            "determination_date": "2026-05-26T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "lawrence-hanson-group-pty-ltd": {
+      "id": "lawrence-hanson-group-pty-ltd",
+      "canonical_name": "Lawrence & Hanson Group Pty Ltd",
+      "members": [
+        {
+          "name": "LAWRENCE & HANSON GROUP PTY LTD",
+          "identifier": "69 080 350 812",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-55013",
+            "merger_name": "Lawrence & Hanson - Gordon Macdonald",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-13T12:00:00Z",
+            "determination_date": "2026-05-05T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "liveramp-holdings-inc": {
+      "id": "liveramp-holdings-inc",
+      "canonical_name": "LiveRamp Holdings, Inc.",
+      "members": [
+        {
+          "name": "LiveRamp Holdings, Inc.",
+          "identifier": "Delaware ID 00138669",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-60026",
+            "merger_name": "Publicis Groupe - LiveRamp",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-27T12:00:00Z",
+            "determination_date": "2026-08-27T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 31.0,
+        "median_days": 31,
+        "average_business_days": 23.0,
+        "median_business_days": 23,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "novartis-australia-pty-limited": {
+      "id": "novartis-australia-pty-limited",
+      "canonical_name": "Novartis Australia Pty Limited",
+      "members": [
+        {
+          "name": "NOVARTIS AUSTRALIA PTY LIMITED",
+          "identifier": "81 004 371 224",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-40019",
+            "merger_name": "Novartis - Excellergy",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-12T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "permira-vii-investment-platform-limited": {
+      "id": "permira-vii-investment-platform-limited",
+      "canonical_name": "Permira VII Investment Platform Limited",
+      "members": [
+        {
+          "name": "Permira VII Investment Platform Limited",
+          "identifier": "12263614 (UK Tax number)",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-05008",
+            "merger_name": "HongShan Capital Group and Temasek \u2013 Golden Goose Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-17T12:00:00Z",
+            "determination_date": "2026-03-06T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    }
+  }
+}

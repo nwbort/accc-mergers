@@ -1,0 +1,478 @@
+{
+  "shard": 96,
+  "shard_count": 256,
+  "parties": {
+    "ami-paris-sas": {
+      "id": "ami-paris-sas",
+      "canonical_name": "Ami Paris SAS",
+      "members": [
+        {
+          "name": "Ami Paris SAS",
+          "identifier": "527636609 (France)",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-05008",
+            "merger_name": "HongShan Capital Group and Temasek \u2013 Golden Goose Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-17T12:00:00Z",
+            "determination_date": "2026-03-06T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "axalta-coating-systems-ltd": {
+      "id": "axalta-coating-systems-ltd",
+      "canonical_name": "Axalta Coating Systems",
+      "members": [
+        {
+          "name": "AXALTA COATING SYSTEMS AUSTRALIA PTY LTD",
+          "identifier": "53 158 497 655",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Axalta Coating Systems Ltd.",
+          "identifier": "Commercial registration # 46832",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-50024",
+            "merger_name": "AkzoNobel - Axalta",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-24T12:00:00Z",
+            "determination_date": "2026-07-21T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "bayswater-opco-pty-ltd": {
+      "id": "bayswater-opco-pty-ltd",
+      "canonical_name": "Bayswater Opco Pty Ltd",
+      "members": [
+        {
+          "name": "BAYSWATER OPCO PTY LTD",
+          "identifier": "40 673 620 203",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-60021",
+            "merger_name": "Oscars Group \u2013 Hotel Diplomat in Potts Point, NSW",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-04T12:00:00Z",
+            "determination_date": "2026-06-19T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "encora-holdco-limited": {
+      "id": "encora-holdco-limited",
+      "canonical_name": "Encora Holdco Limited",
+      "members": [
+        {
+          "name": "Encora Holdco Limited",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-15003",
+            "merger_name": "Coforge - Encora",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-21T12:00:00Z",
+            "determination_date": "2026-02-13T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "flotto-holdings-pty-ltd-as-trustee-for-milton-trust": {
+      "id": "flotto-holdings-pty-ltd-as-trustee-for-milton-trust",
+      "canonical_name": "FLOTTO HOLDINGS PTY. LTD. as trustee for Milton Trust",
+      "members": [
+        {
+          "name": "FLOTTO HOLDINGS PTY. LTD. as trustee for Milton Trust",
+          "identifier": "90 003 868 335",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-50017",
+            "merger_name": "Australian Venue Co \u2013 assets of Courthouse Hotel, Newtown NSW",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-07T12:00:00Z",
+            "determination_date": "2026-05-21T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "jlw-services-pty-ltd": {
+      "id": "jlw-services-pty-ltd",
+      "canonical_name": "Jlw Services Pty Ltd",
+      "members": [
+        {
+          "name": "JLW SERVICES PTY LTD",
+          "identifier": "83 168 536 098",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-15021",
+            "merger_name": "Bingo Industries - JLW Services",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-22T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "lockheed-martin": {
+      "id": "lockheed-martin",
+      "canonical_name": "Lockheed Martin",
+      "members": [
+        {
+          "name": "Lockheed Martin Corporation",
+          "identifier": "US Department ID  D03964756",
+          "identifier_type": null
+        },
+        {
+          "name": "RLM SYSTEMS PTY LIMITED",
+          "identifier": "67 050 753 403",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-75041",
+            "merger_name": "Lockheed Martin Corporation \u2013 Ultra Maritime",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-14T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "nws-topco-pty-ltd": {
+      "id": "nws-topco-pty-ltd",
+      "canonical_name": "NWS Topco Pty Ltd",
+      "members": [
+        {
+          "name": "NWS Topco Pty Ltd",
+          "identifier": "688 200 795",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-05014",
+            "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "precision-poultry-pty-ltd": {
+      "id": "precision-poultry-pty-ltd",
+      "canonical_name": "Precision Poultry Pty Ltd",
+      "members": [
+        {
+          "name": "PRECISION POULTRY PTY LTD",
+          "identifier": "63 695 837 579",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-35019",
+            "merger_name": "Precision Poultry - VOAG chicken farming operations",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-02T12:00:00Z",
+            "determination_date": "2026-06-24T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "twg-hunter-dealerships-pty-ltd": {
+      "id": "twg-hunter-dealerships-pty-ltd",
+      "canonical_name": "Twg Hunter Dealerships Pty Ltd",
+      "members": [
+        {
+          "name": "TWG HUNTER DEALERSHIPS PTY LTD",
+          "identifier": "18 695 726 348",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-05017",
+            "merger_name": "Tony White Group - Sharton Motors dealerships in Maitland, Port Stephens and Cardiff",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-12T12:00:00Z",
+            "determination_date": "2026-06-09T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-65011",
+            "merger_name": "Tony White Group - Sharton Motors Dealerships in Maitland and Port Stephens",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-16T12:00:00Z",
+            "determination_date": "2026-04-14T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "vector-jv-bidco-inc": {
+      "id": "vector-jv-bidco-inc",
+      "canonical_name": "Vector JV Bidco, Inc.",
+      "members": [
+        {
+          "name": "Vector JV Bidco, Inc.",
+          "identifier": "10619273",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-20026",
+            "merger_name": "Oaktree \u2013 Vivax Metrotech",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-18T12:00:00Z",
+            "determination_date": "2026-07-06T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    }
+  }
+}

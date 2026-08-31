@@ -1,0 +1,413 @@
+{
+  "shard": 115,
+  "shard_count": 256,
+  "parties": {
+    "airlie-womens-clinic-pty-ltd": {
+      "id": "airlie-womens-clinic-pty-ltd",
+      "canonical_name": "Airlie Womens Clinic Pty Ltd",
+      "members": [
+        {
+          "name": "Airlie Womens Clinic Pty Ltd",
+          "identifier": "55 603 753 395",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-01100",
+            "merger_name": "Ochre Health - Airlie Women's Clinic, VIC",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-12T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "circor-international-inc": {
+      "id": "circor-international-inc",
+      "canonical_name": "CIRCOR International, Inc.",
+      "members": [
+        {
+          "name": "CIRCOR International, Inc.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-70026",
+            "merger_name": "Parker-Hannifin \u2013 CIRCOR A&D",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-15T12:00:00Z",
+            "determination_date": "2026-08-06T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "commonwealth-bank-of-australia": {
+      "id": "commonwealth-bank-of-australia",
+      "canonical_name": "Commonwealth Bank Of Australia",
+      "members": [
+        {
+          "name": "COMMONWEALTH BANK OF AUSTRALIA",
+          "identifier": "48 123 123 124",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-20014",
+            "merger_name": "ANZ, CBA, NAB and Westpac \u2013 shares in joint venture and interests in Joint Cash Pool",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-03T12:00:00Z",
+            "determination_date": "2026-06-26T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "gitpod-gmbh": {
+      "id": "gitpod-gmbh",
+      "canonical_name": "Gitpod GmbH",
+      "members": [
+        {
+          "name": "Gitpod GmbH",
+          "identifier": "HRB  22228",
+          "identifier_type": null
+        },
+        {
+          "name": "Gitpod, Inc.",
+          "identifier": "Delaware File Number  3353320",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-90020",
+            "merger_name": "OpenAI - Ona",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-26T12:00:00Z",
+            "determination_date": "2026-07-21T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "hellman-friedman-llc": {
+      "id": "hellman-friedman-llc",
+      "canonical_name": "Hellman & Friedman LLC",
+      "members": [
+        {
+          "name": "Hellman & Friedman LLC",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-75010",
+            "merger_name": "Zendesk \u2013 Forethought",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-23T12:00:00Z",
+            "determination_date": "2026-03-06T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 11.0,
+        "median_days": 11,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "l-n-c-dba-parfums-de-marly-now-known-as-artessence": {
+      "id": "l-n-c-dba-parfums-de-marly-now-known-as-artessence",
+      "canonical_name": "L.N.C. (dba Parfums de Marly, now known as Artessence)",
+      "members": [
+        {
+          "name": "L.N.C. (dba Parfums de Marly, now known as Artessence)",
+          "identifier": "France registration number (SIREN): 511 248 981",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-80016",
+            "merger_name": "Henkel \u2013 Olaplex",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-22T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "shareholder-representative-services-llc": {
+      "id": "shareholder-representative-services-llc",
+      "canonical_name": "Shareholder Representative Services, LLC",
+      "members": [
+        {
+          "name": "Shareholder Representative Services LLC",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Shareholder Representative Services, LLC",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-95016",
+            "merger_name": "Eli Lilly - Kelonia Therapeutics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-18T12:00:00Z",
+            "determination_date": "2026-06-10T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-20013",
+            "merger_name": "Eli Lilly - Orna Therapeutics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-08T12:00:00Z",
+            "determination_date": "2026-05-04T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-01087",
+            "merger_name": "Eli Lilly \u2013 Orna Therapeutics",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-24T12:00:00Z",
+            "determination_date": "2026-03-12T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 3,
+      "phase_1_count": 2,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.5,
+        "median_days": 24.5,
+        "average_business_days": 16.0,
+        "median_business_days": 16.0,
+        "completed_count": 2
+      },
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "sw-soccer-holdco-llc": {
+      "id": "sw-soccer-holdco-llc",
+      "canonical_name": "SW Soccer HoldCo LLC",
+      "members": [
+        {
+          "name": "SW Soccer HoldCo LLC",
+          "identifier": "Company No.: 6906027  Delaware",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-01088",
+            "merger_name": "BSN Sports \u2013 Sports Endeavors",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-25T12:00:00Z",
+            "determination_date": "2026-03-06T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 9.0,
+        "median_days": 9,
+        "average_business_days": 7.0,
+        "median_business_days": 7,
+        "completed_count": 1
+      }
+    },
+    "the-john-laing-group-limited": {
+      "id": "the-john-laing-group-limited",
+      "canonical_name": "The John Laing Group Limited",
+      "members": [
+        {
+          "name": "The John Laing Group Limited",
+          "identifier": "UK Company No: 05975300",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-90007",
+            "merger_name": "Volt Managed Investment Trusts \u2013 HMC Energy Transition Platform",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-14T12:00:00Z",
+            "determination_date": "2026-06-05T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

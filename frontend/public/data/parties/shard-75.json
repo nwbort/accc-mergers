@@ -1,0 +1,328 @@
+{
+  "shard": 117,
+  "shard_count": 256,
+  "parties": {
+    "carmelo-de-domenico": {
+      "id": "carmelo-de-domenico",
+      "canonical_name": "Carmelo De Domenico",
+      "members": [
+        {
+          "name": "Carmelo De Domenico",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-10008",
+            "merger_name": "Premier Fresh \u2013 Charles Domenico Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-20T12:00:00Z",
+            "determination_date": "2026-03-13T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "logic-technologies-pty-ltd": {
+      "id": "logic-technologies-pty-ltd",
+      "canonical_name": "Logic Technologies Pty Ltd",
+      "members": [
+        {
+          "name": "LOGIC TECHNOLOGIES PTY LTD",
+          "identifier": "25 071 025 084",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-95021",
+            "merger_name": "Logic Technologies - Ace Communication Distributors",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-21T12:00:00Z",
+            "determination_date": "2026-07-02T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 42.0,
+        "median_days": 42,
+        "average_business_days": 28.0,
+        "median_business_days": 28,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "maverick-data-group-pty-ltd": {
+      "id": "maverick-data-group-pty-ltd",
+      "canonical_name": "Maverick Data Group Pty Ltd",
+      "members": [
+        {
+          "name": "MAVERICK DATA GROUP PTY LTD",
+          "identifier": "16 141 779 893",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-05043",
+            "merger_name": "Incubeta - Datisan",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-13T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "prime-property-fund-asia-limited-partnership": {
+      "id": "prime-property-fund-asia-limited-partnership",
+      "canonical_name": "Prime Property Fund Asia Limited Partnership",
+      "members": [
+        {
+          "name": "Prime Property Fund Asia Limited Partnership",
+          "identifier": "LEI code 549300BDKD6CMDEVJ029",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-20022",
+            "merger_name": "PRIME Asia \u2013 Stockland Sienna Wood and Providence",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-14T12:00:00Z",
+            "determination_date": "2026-06-02T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 19.0,
+        "median_days": 19,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "queensland-treasury-holdings-pty-ltd": {
+      "id": "queensland-treasury-holdings-pty-ltd",
+      "canonical_name": "Queensland Treasury Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "QUEENSLAND TREASURY HOLDINGS PTY LTD",
+          "identifier": "52 011 027 295",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-05034",
+            "merger_name": "Aurizon \u2013 transactions related to the relocation of a rail corridor at Moranbah North",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-28T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "rockpac-south-pacific-pty-ltd": {
+      "id": "rockpac-south-pacific-pty-ltd",
+      "canonical_name": "Rockpac South Pacific Pty Ltd",
+      "members": [
+        {
+          "name": "ROCKPAC SOUTH PACIFIC PTY LTD",
+          "identifier": "40 639 100 422",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-45001",
+            "merger_name": "Paragon Care \u2013 Presidental",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-30T12:00:00Z",
+            "determination_date": "2026-02-16T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "safe-isolation-australia-pty-ltd": {
+      "id": "safe-isolation-australia-pty-ltd",
+      "canonical_name": "Safe Isolation Australia Pty Ltd",
+      "members": [
+        {
+          "name": "Safe Isolation Australia Pty Ltd",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-25039",
+            "merger_name": "Tasmea \u2013 JPS Holdings",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-03T12:00:00Z",
+            "determination_date": "2026-07-24T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "ta-associates-xv-eu-gp-sarl": {
+      "id": "ta-associates-xv-eu-gp-sarl",
+      "canonical_name": "TA Associates XV EU GP, SARL",
+      "members": [
+        {
+          "name": "TA Associates XV EU GP, SARL",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-15033",
+            "merger_name": "Armira and TA Associates \u2013 Intersurgical Aktiengesellschaft AG",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-25T12:00:00Z",
+            "determination_date": "2026-08-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    }
+  }
+}

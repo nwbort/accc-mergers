@@ -1,0 +1,61 @@
+{
+  "_comment": "Golden fixture pinning the party shard algorithm across both hand-synced implementations: scripts/shard.py (writes the buckets) and frontend/src/utils/shard.js (SPA fetch + prerender walk). Exercised by scripts/tests/test_shard.py and frontend/src/utils/__tests__/shard.test.js. Every {id -> shard, file} triple must hold in both; if you change the algorithm or SHARD_COUNT, update both and regenerate this file. Note that changing it rehomes every party and invalidates every cached bucket.",
+  "shard_count": 256,
+  "cases": [
+    {
+      "id": "",
+      "shard": 197,
+      "file": "shard-c5.json"
+    },
+    {
+      "id": "a",
+      "shard": 44,
+      "file": "shard-2c.json"
+    },
+    {
+      "id": "coles",
+      "shard": 157,
+      "file": "shard-9d.json"
+    },
+    {
+      "id": "café-holdings",
+      "shard": 180,
+      "file": "shard-b4.json"
+    },
+    {
+      "id": "日本たばこ産業",
+      "shard": 127,
+      "file": "shard-7f.json"
+    },
+    {
+      "id": "abn-12-345-678-901",
+      "shard": 198,
+      "file": "shard-c6.json"
+    },
+    {
+      "id": "a/b",
+      "shard": 193,
+      "file": "shard-c1.json"
+    },
+    {
+      "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "shard": 229,
+      "file": "shard-e5.json"
+    },
+    {
+      "id": "australian-venue-co",
+      "shard": 140,
+      "file": "shard-8c.json"
+    },
+    {
+      "id": "jason-ireland-as-joint-and-several-receivers",
+      "shard": 90,
+      "file": "shard-5a.json"
+    },
+    {
+      "id": "zumba-pty-ltd",
+      "shard": 161,
+      "file": "shard-a1.json"
+    }
+  ]
+}

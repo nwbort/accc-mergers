@@ -1,0 +1,643 @@
+{
+  "shard": 193,
+  "shard_count": 256,
+  "parties": {
+    "assemble-us-bidco-inc": {
+      "id": "assemble-us-bidco-inc",
+      "canonical_name": "Assemble US Bidco Inc",
+      "members": [
+        {
+          "name": "Assemble US Bidco Inc",
+          "identifier": "Delaware  10694188",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-30027",
+            "merger_name": "Apax Funds \u2013 Techoraco Limited and Institutional Investor LLC",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-24T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "austlen-pty-limited-as-trustee-for-the-courthouse-trust": {
+      "id": "austlen-pty-limited-as-trustee-for-the-courthouse-trust",
+      "canonical_name": "Austlen Pty Limited as trustee for The Courthouse Trust",
+      "members": [
+        {
+          "name": "Austlen Pty Limited as trustee for The Courthouse Trust",
+          "identifier": "120 109 962",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-50017",
+            "merger_name": "Australian Venue Co \u2013 assets of Courthouse Hotel, Newtown NSW",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-07T12:00:00Z",
+            "determination_date": "2026-05-21T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "crowdstrike-inc": {
+      "id": "crowdstrike-inc",
+      "canonical_name": "CrowdStrike, Inc.",
+      "members": [
+        {
+          "name": "CrowdStrike Holdings, Inc.",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "CrowdStrike, Inc.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-35036",
+            "merger_name": "CrowdStrike \u2013 intellectual property and associated technology assets of XM Cyber",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-24T12:00:00Z",
+            "determination_date": "2026-08-19T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "greater-newcastle-aerotropolis-pty-ltd": {
+      "id": "greater-newcastle-aerotropolis-pty-ltd",
+      "canonical_name": "Greater Newcastle Aerotropolis Pty Ltd",
+      "members": [
+        {
+          "name": "GREATER NEWCASTLE AEROTROPOLIS PTY LTD",
+          "identifier": "90 629 359 726",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-01017",
+            "merger_name": "Kongsberg Defence \u2013 site within Newcastle Airport precinct",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2025-08-08T12:00:00Z",
+            "determination_date": "2025-08-29T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "kobalt-music-services-australia-pty-limited": {
+      "id": "kobalt-music-services-australia-pty-limited",
+      "canonical_name": "Kobalt Music Services Australia Pty Limited",
+      "members": [
+        {
+          "name": "KOBALT MUSIC SERVICES AUSTRALIA PTY LIMITED",
+          "identifier": "12 144 997 142",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-25018",
+            "merger_name": "Primary Wave - Kobalt",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-18T12:00:00Z",
+            "determination_date": "2026-06-11T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "koy-pty-ltd": {
+      "id": "koy-pty-ltd",
+      "canonical_name": "Koy Pty Ltd",
+      "members": [
+        {
+          "name": "Koy Pty Ltd",
+          "identifier": "009 023 787",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-75026",
+            "merger_name": "Australian Venue Co - leasehold and assets of Brabham Tavern, WA",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-03T12:00:00Z",
+            "determination_date": "2026-06-22T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 19.0,
+        "median_days": 19,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "riverside-topco-limited": {
+      "id": "riverside-topco-limited",
+      "canonical_name": "Riverside TopCo Limited",
+      "members": [
+        {
+          "name": "Riverside TopCo Limited",
+          "identifier": "Jersey Company Registration Number  163852",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-15033",
+            "merger_name": "Armira and TA Associates \u2013 Intersurgical Aktiengesellschaft AG",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-25T12:00:00Z",
+            "determination_date": "2026-08-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "safety-training-group-pty-ltd": {
+      "id": "safety-training-group-pty-ltd",
+      "canonical_name": "Safety Training Group Pty Ltd",
+      "members": [
+        {
+          "name": "SAFETY TRAINING GROUP PTY LTD",
+          "identifier": "85 158 347 490",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-65004",
+            "merger_name": "Kee Safety - RIS Safety",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-02T12:00:00Z",
+            "determination_date": "2026-02-13T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 11.0,
+        "median_days": 11,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "star-consolidated-holdings-pty-ltd": {
+      "id": "star-consolidated-holdings-pty-ltd",
+      "canonical_name": "Star Consolidated Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "STAR CONSOLIDATED HOLDINGS PTY LTD",
+          "identifier": "12 615 803 588",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Star Consolidated Holdings Pty Ltd",
+          "identifier": "12 615 803 588",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-40002",
+            "merger_name": "Star Hotels Group \u2013 Yandina Hotel, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-14T12:00:00Z",
+            "determination_date": "2026-02-02T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-75015",
+            "merger_name": "Star Hotels Group \u2013 Liquor Legends Berserker & Liquor Legends Highway A1, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-17T12:00:00Z",
+            "determination_date": "2026-04-02T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.5,
+        "median_days": 17.5,
+        "average_business_days": 12.0,
+        "median_business_days": 12.0,
+        "completed_count": 2
+      }
+    },
+    "stirling-earthworks-pty-ltd": {
+      "id": "stirling-earthworks-pty-ltd",
+      "canonical_name": "Stirling Earthworks Pty Ltd",
+      "members": [
+        {
+          "name": "Stirling Earthworks Pty Ltd",
+          "identifier": "28 150 410 389",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-05024",
+            "merger_name": "B.M.D. Holdings \u2013 Bajara Plant Hire and Stirling Contracting",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-24T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "stockland-sienna-wood-retail-no-2-trust": {
+      "id": "stockland-sienna-wood-retail-no-2-trust",
+      "canonical_name": "Stockland Sienna Wood Retail No. 2 Trust",
+      "members": [
+        {
+          "name": "Stockland Sienna Wood Retail No. 2 Trust",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-20022",
+            "merger_name": "PRIME Asia \u2013 Stockland Sienna Wood and Providence",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-14T12:00:00Z",
+            "determination_date": "2026-06-02T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 19.0,
+        "median_days": 19,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "the-yo-my-company-pty-ltd": {
+      "id": "the-yo-my-company-pty-ltd",
+      "canonical_name": "The Yo My Company Pty Ltd",
+      "members": [
+        {
+          "name": "THE YO MY COMPANY PTY LTD",
+          "identifier": "55 603 052 286",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-25032",
+            "merger_name": "River Capital \u2013 YOMG",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-15T12:00:00Z",
+            "determination_date": "2026-06-22T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 7.0,
+        "median_days": 7,
+        "average_business_days": 5.0,
+        "median_business_days": 5,
+        "completed_count": 1
+      }
+    },
+    "tikehau-capital-sca": {
+      "id": "tikehau-capital-sca",
+      "canonical_name": "Tikehau Capital SCA",
+      "members": [
+        {
+          "name": "Tikehau Capital SCA",
+          "identifier": "RCS Paris  477 599 104",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-25037",
+            "merger_name": "Sanad Services and Tikehau Capital \u2013 Revima",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-21T12:00:00Z",
+            "determination_date": "2026-08-17T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "wansheng-medical-investments-hong-kong-limited": {
+      "id": "wansheng-medical-investments-hong-kong-limited",
+      "canonical_name": "Wansheng Medical Investments (Hong Kong) Limited",
+      "members": [
+        {
+          "name": "Wansheng Medical Investments (Hong Kong) Limited",
+          "identifier": "Company Registry Identification Number  2591584",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-05020",
+            "merger_name": "Midea Group \u2013 Esaote",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-07T12:00:00Z",
+            "determination_date": "2026-05-21T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "windrose-holdings-iii-difc-limited": {
+      "id": "windrose-holdings-iii-difc-limited",
+      "canonical_name": "Windrose Holdings III (DIFC) Limited",
+      "members": [
+        {
+          "name": "Windrose Holdings III (DIFC) Limited",
+          "identifier": "Registered Number  12897",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-55025",
+            "merger_name": "Brookfield \u2013 World Freight Company",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-09T12:00:00Z",
+            "determination_date": "2026-06-26T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    }
+  }
+}

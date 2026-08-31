@@ -1,0 +1,672 @@
+{
+  "shard": 27,
+  "shard_count": 256,
+  "parties": {
+    "aqseptence-group-gmbh": {
+      "id": "aqseptence-group-gmbh",
+      "canonical_name": "Aqseptence Group GmbH",
+      "members": [
+        {
+          "name": "Aqseptence Group GmbH",
+          "identifier": "EUID  DEM1906.HRB16669",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-65025",
+            "merger_name": "Sandvik \u2013 Diemme Filtration S.r.l.",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-26T12:00:00Z",
+            "determination_date": "2026-07-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "ausgroup": {
+      "id": "ausgroup",
+      "canonical_name": "Ausgroup",
+      "members": [
+        {
+          "name": "AUSGROUP INDUSTRIAL SERVICES (QLD) PTY LTD",
+          "identifier": "80 144 047 263",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "RADBYRN PTY LTD",
+          "identifier": "50 632 483 268",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-60025",
+            "merger_name": "Acrow - Ausgroup Industrial Services",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-16T12:00:00Z",
+            "determination_date": "2026-08-10T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "australian-airconditioning-distributors-pty-ltd": {
+      "id": "australian-airconditioning-distributors-pty-ltd",
+      "canonical_name": "Australian Airconditioning Distributors Pty Ltd",
+      "members": [
+        {
+          "name": "Australian Airconditioning Distributors Pty Ltd",
+          "identifier": "43 139 947 363",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-15018",
+            "merger_name": "Complete Air Supply - All Air",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-16T12:00:00Z",
+            "determination_date": "2026-07-09T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "avionics-holdings-pty-ltd": {
+      "id": "avionics-holdings-pty-ltd",
+      "canonical_name": "Avionics Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "AVIONICS HOLDINGS PTY LTD",
+          "identifier": "92 166 405 321",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-75016",
+            "merger_name": "Fulton Hogan \u2013 Avionics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-28T12:00:00Z",
+            "determination_date": "2026-06-16T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 49.0,
+        "median_days": 49,
+        "average_business_days": 33.0,
+        "median_business_days": 33,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "built-living-holdings-pty-limited": {
+      "id": "built-living-holdings-pty-limited",
+      "canonical_name": "Built Living Holdings Pty Limited",
+      "members": [
+        {
+          "name": "Built Living Holdings Pty Limited",
+          "identifier": "39 698 096 945",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-65021",
+            "merger_name": "Wesfarmers and Built Group - Built Living Joint Venture",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-06T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "fire-safety-platform-holding-lp": {
+      "id": "fire-safety-platform-holding-lp",
+      "canonical_name": "Fire Safety Platform Holding, LP",
+      "members": [
+        {
+          "name": "Fire Safety Platform Holding, LP",
+          "identifier": "State of Delaware, Division of Corporations  10541621",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-15015",
+            "merger_name": "3M and funds managed and/or advised by Bain Capital - Madison Fire & Rescue",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-06T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "griffon-australia-holdings-pty-ltd": {
+      "id": "griffon-australia-holdings-pty-ltd",
+      "canonical_name": "Griffon Australia Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "GRIFFON AUSTRALIA HOLDINGS PTY LTD",
+          "identifier": "35 156 377 356",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-05029",
+            "merger_name": "HupCo \u2013 AMES Australasia",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-29T12:00:00Z",
+            "determination_date": "2026-07-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "kacm-3a-pty-ltd": {
+      "id": "kacm-3a-pty-ltd",
+      "canonical_name": "Kacm 3A Pty Ltd",
+      "members": [
+        {
+          "name": "KACM 3A PTY LTD",
+          "identifier": "24 674 151 118",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-35017",
+            "merger_name": "KINETIC - DYSONS BUS SERVICES",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-27T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "konvoy-holdings-pty-limited": {
+      "id": "konvoy-holdings-pty-limited",
+      "canonical_name": "Konvoy Holdings Pty Limited",
+      "members": [
+        {
+          "name": "KONVOY HOLDINGS PTY LIMITED",
+          "identifier": "66 634 234 549",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-30003",
+            "merger_name": "MicroStar Logistics - Konvoy",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Phase 2",
+            "notification_date": "2026-02-20T12:00:00Z",
+            "determination_date": "2026-08-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 1,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 40.0,
+        "median_days": 40,
+        "average_business_days": 27.0,
+        "median_business_days": 27,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "lumiere-private-advisory-pty-ltd": {
+      "id": "lumiere-private-advisory-pty-ltd",
+      "canonical_name": "Lumiere Private Advisory Pty Ltd",
+      "members": [
+        {
+          "name": "LUMIERE PRIVATE ADVISORY PTY LTD",
+          "identifier": "37 626 673 032",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-50023",
+            "merger_name": "Hillhouse - MGI Dobbyn Carafa",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-28T12:00:00Z",
+            "determination_date": "2026-06-15T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "mitsubishi-estate-co-ltd": {
+      "id": "mitsubishi-estate-co-ltd",
+      "canonical_name": "Mitsubishi Estate Co., Ltd",
+      "members": [
+        {
+          "name": "Mitsubishi Estate Co., Ltd",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-35026",
+            "merger_name": "Mitsubishi Estate Asia \u2013 Eynesbury Properties",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-18T12:00:00Z",
+            "determination_date": "2026-07-06T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "rocket-software-amc-uk-ltd": {
+      "id": "rocket-software-amc-uk-ltd",
+      "canonical_name": "Rocket Software AMC UK Ltd",
+      "members": [
+        {
+          "name": "Rocket Software AMC UK Ltd",
+          "identifier": "UK Company number 01504593",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-20009",
+            "merger_name": "Rocket Software \u2013 Vertica",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-11T12:00:00Z",
+            "determination_date": "2026-04-01T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "smile-partners-norwest-pty-ltd": {
+      "id": "smile-partners-norwest-pty-ltd",
+      "canonical_name": "Smile Partners (Norwest) Pty Ltd",
+      "members": [
+        {
+          "name": "SMILE PARTNERS (NORWEST) PTY LTD",
+          "identifier": "89 653 164 795",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-05014",
+            "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "spike-media-pty-ltd": {
+      "id": "spike-media-pty-ltd",
+      "canonical_name": "Spike Media Pty Ltd",
+      "members": [
+        {
+          "name": "SPIKE MEDIA PTY LTD",
+          "identifier": "28 694 712 699",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-95006",
+            "merger_name": "Laundy Group \u2013 Nine Radio",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-11T12:00:00Z",
+            "determination_date": "2026-02-20T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 9.0,
+        "median_days": 9,
+        "average_business_days": 7.0,
+        "median_business_days": 7,
+        "completed_count": 1
+      }
+    },
+    "tasmea-limited": {
+      "id": "tasmea-limited",
+      "canonical_name": "Tasmea Limited",
+      "members": [
+        {
+          "name": "TASMEA LIMITED",
+          "identifier": "22 088 588 425",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-25039",
+            "merger_name": "Tasmea \u2013 JPS Holdings",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-03T12:00:00Z",
+            "determination_date": "2026-07-24T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-85031",
+            "merger_name": "Tasmea - Maxim",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-03T12:00:00Z",
+            "determination_date": "2026-06-24T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21.0,
+        "average_business_days": 14.5,
+        "median_business_days": 14.5,
+        "completed_count": 2
+      }
+    },
+    "voag-1-pty-ltd": {
+      "id": "voag-1-pty-ltd",
+      "canonical_name": "Voag 1 Pty Ltd",
+      "members": [
+        {
+          "name": "VOAG 1 PTY LTD",
+          "identifier": "12 606 445 658",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-35019",
+            "merger_name": "Precision Poultry - VOAG chicken farming operations",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-02T12:00:00Z",
+            "determination_date": "2026-06-24T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

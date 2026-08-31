@@ -1,0 +1,564 @@
+{
+  "shard": 120,
+  "shard_count": 256,
+  "parties": {
+    "atkinsrealis-australia-holdings-pty-ltd": {
+      "id": "atkinsrealis-australia-holdings-pty-ltd",
+      "canonical_name": "Atkinsrealis Australia Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "ATKINSREALIS AUSTRALIA HOLDINGS PTY LTD",
+          "identifier": "697 935 685",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-65016",
+            "merger_name": "AtkinsR\u00e9alis - WGA",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-12T12:00:00Z",
+            "determination_date": "2026-06-09T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "bettergrow-holdings-pty-ltd": {
+      "id": "bettergrow-holdings-pty-ltd",
+      "canonical_name": "Bettergrow Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "BETTERGROW HOLDINGS PTY LTD",
+          "identifier": "99 649 891 663",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-75008",
+            "merger_name": "Bettergrow - HYG",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-12T12:00:00Z",
+            "determination_date": "2026-02-27T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "bhp-group-limited": {
+      "id": "bhp-group-limited",
+      "canonical_name": "Bhp Group Limited",
+      "members": [
+        {
+          "name": "BHP GROUP LIMITED",
+          "identifier": "49 004 028 077",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-65013",
+            "merger_name": "BHP \u2013 expansion of Special Mining Lease at Olympic Dam, SA",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-24T12:00:00Z",
+            "determination_date": "2026-05-07T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "carestream-healthcare-international-company-limited": {
+      "id": "carestream-healthcare-international-company-limited",
+      "canonical_name": "Carestream Healthcare International Company Limited",
+      "members": [
+        {
+          "name": "Carestream Healthcare International Company Limited",
+          "identifier": "USCC  913100007956050379",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-05020",
+            "merger_name": "Midea Group \u2013 Esaote",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-07T12:00:00Z",
+            "determination_date": "2026-05-21T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "certainteed-canada-inc-saint-gobain": {
+      "id": "certainteed-canada-inc-saint-gobain",
+      "canonical_name": "CertainTeed Canada, Inc. (Saint-Gobain)",
+      "members": [
+        {
+          "name": "CertainTeed Canada, Inc. (Saint-Gobain)",
+          "identifier": "Canadian Business Number  808787147",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-80035",
+            "merger_name": "Saint-Gobain - Xypex",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-17T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "colterlec-holdings-pty-ltd": {
+      "id": "colterlec-holdings-pty-ltd",
+      "canonical_name": "Colterlec Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "COLTERLEC HOLDINGS PTY LTD",
+          "identifier": "51 614 738 608",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-05014",
+            "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "dream-holdco-llc": {
+      "id": "dream-holdco-llc",
+      "canonical_name": "Dream HoldCo LLC",
+      "members": [
+        {
+          "name": "Dream HoldCo LLC",
+          "identifier": "10662853",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-25041",
+            "merger_name": "CVC Capital Partners \u2013 DistroKid",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-24T12:00:00Z",
+            "determination_date": "2026-08-19T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "oscars-hotels": {
+      "id": "oscars-hotels",
+      "canonical_name": "Oscars Hotels",
+      "members": [
+        {
+          "name": "BANKSTOWN CENTRAL PROPERTY PTY LTD",
+          "identifier": "620 947 300",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "OSCARS HOTELS PTY LTD",
+          "identifier": "13 100 497 765",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "OSCARS NSW OPS PTY LTD",
+          "identifier": "19 686 583 451",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "The Trustee for THE BANKSTOWN CENTRAL PROPERTY UNIT TRUST",
+          "identifier": "35 764 968 745",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-25031",
+            "merger_name": "Oscars Group \u2013 South Terrace Hotel in Bankstown, NSW",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-12T12:00:00Z",
+            "determination_date": "2026-07-08T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-60021",
+            "merger_name": "Oscars Group \u2013 Hotel Diplomat in Potts Point, NSW",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-04T12:00:00Z",
+            "determination_date": "2026-06-19T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.5,
+        "median_days": 20.5,
+        "average_business_days": 14.0,
+        "median_business_days": 14.0,
+        "completed_count": 2
+      }
+    },
+    "pipe-management-australia": {
+      "id": "pipe-management-australia",
+      "canonical_name": "Pipe Management Australia",
+      "members": [
+        {
+          "name": "HEADWORKS AUSTRALIA PTY LTD",
+          "identifier": "39 637 942 646",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "UTILITY MANAGEMENT GROUP PTY LTD",
+          "identifier": "39 644 190 527",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-15028",
+            "merger_name": "Total Drain Group - Pipe Management Australia",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-15T12:00:00Z",
+            "determination_date": "2026-08-13T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "psc-transport-insurance-brokers-pty-ltd": {
+      "id": "psc-transport-insurance-brokers-pty-ltd",
+      "canonical_name": "Psc Transport Insurance Brokers Pty Ltd",
+      "members": [
+        {
+          "name": "PSC TRANSPORT INSURANCE BROKERS PTY LTD",
+          "identifier": "47 001 768 190",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-50020",
+            "merger_name": "Envest Group \u2013 MA Insurance Brokers",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-21T12:00:00Z",
+            "determination_date": "2026-06-18T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "sgl-hotels-pty-ltd": {
+      "id": "sgl-hotels-pty-ltd",
+      "canonical_name": "Sgl Hotels Pty Ltd",
+      "members": [
+        {
+          "name": "SGL HOTELS PTY LTD",
+          "identifier": "74 627 068 526",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-50013",
+            "merger_name": "Star Hotels - Fiveways Hotel Toowoomba",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-31T12:00:00Z",
+            "determination_date": "2026-04-23T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "vision-street-property-pty-ltd": {
+      "id": "vision-street-property-pty-ltd",
+      "canonical_name": "Vision Street Property Pty Ltd",
+      "members": [
+        {
+          "name": "VISION STREET PROPERTY PTY LTD",
+          "identifier": "92 621 004 466",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-20008",
+            "merger_name": "Hall & McLean \u2013 Freehold interest in commercial land in Wellcamp, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-02T12:00:00Z",
+            "determination_date": "2026-03-24T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "w-rtsil-energy-storage-finland-oy": {
+      "id": "w-rtsil-energy-storage-finland-oy",
+      "canonical_name": "W\u00e4rtsil\u00e4 Energy Storage Finland Oy",
+      "members": [
+        {
+          "name": "W\u00e4rtsil\u00e4 Energy Storage Finland Oy",
+          "identifier": "33438236",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-80036",
+            "merger_name": "RCT Solutions GmbH - W\u00e4rtsil\u00e4 Energy Storage Finland Oy",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-03T12:00:00Z",
+            "determination_date": "2026-08-27T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    }
+  }
+}

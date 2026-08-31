@@ -1,0 +1,252 @@
+{
+  "shard": 239,
+  "shard_count": 256,
+  "parties": {
+    "gunvor-group-ltd": {
+      "id": "gunvor-group-ltd",
+      "canonical_name": "Gunvor Group Ltd",
+      "members": [
+        {
+          "name": "Gunvor Group Ltd",
+          "identifier": "Cyprus registration number  HE 279934",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-15025",
+            "merger_name": "Gunvor Group \u2013 ZEN Energy Retail Holdings",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-10T12:00:00Z",
+            "determination_date": "2026-06-24T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "independent-cement-and-lime-pty-limited": {
+      "id": "independent-cement-and-lime-pty-limited",
+      "canonical_name": "Independent Cement And Lime Pty. Limited",
+      "members": [
+        {
+          "name": "INDEPENDENT CEMENT AND LIME PTY. LIMITED",
+          "identifier": "49 005 829 550",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-50021",
+            "merger_name": "Adbri - Eureka Concrete",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-17T12:00:00Z",
+            "determination_date": "2026-07-09T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "play-holdings-inc": {
+      "id": "play-holdings-inc",
+      "canonical_name": "Play Holdings Inc",
+      "members": [
+        {
+          "name": "Play Holdings Inc",
+          "identifier": "Delaware ID  5740345",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-70007",
+            "merger_name": "Platinum Equity Group \u2013 Burke",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-23T12:00:00Z",
+            "determination_date": "2026-03-06T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 11.0,
+        "median_days": 11,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "rippers-pty-ltd": {
+      "id": "rippers-pty-ltd",
+      "canonical_name": "Rippers Pty Ltd",
+      "members": [
+        {
+          "name": "RIPPERS PTY LTD",
+          "identifier": "90 600 268 031",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-05027",
+            "merger_name": "Protech - ActivateRail",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-28T12:00:00Z",
+            "determination_date": "2026-08-25T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "rto-safety-training-pty-limited": {
+      "id": "rto-safety-training-pty-limited",
+      "canonical_name": "Rto Safety Training Pty Limited",
+      "members": [
+        {
+          "name": "RTO SAFETY TRAINING PTY LIMITED",
+          "identifier": "89 164 524 994",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-65004",
+            "merger_name": "Kee Safety - RIS Safety",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-02T12:00:00Z",
+            "determination_date": "2026-02-13T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 11.0,
+        "median_days": 11,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "the-trustee-for-katherine-park-trust": {
+      "id": "the-trustee-for-katherine-park-trust",
+      "canonical_name": "The Trustee for Katherine Park Trust",
+      "members": [
+        {
+          "name": "The Trustee for Katherine Park Trust",
+          "identifier": "52 233 936 018",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-01103",
+            "merger_name": "Discovery Holiday Parks \u2013 four Breeze Holiday Parks",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-18T12:00:00Z",
+            "determination_date": "2026-07-16T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

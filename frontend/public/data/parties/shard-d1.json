@@ -1,0 +1,525 @@
+{
+  "shard": 209,
+  "shard_count": 256,
+  "parties": {
+    "arcosa-inc": {
+      "id": "arcosa-inc",
+      "canonical_name": "Arcosa, Inc.",
+      "members": [
+        {
+          "name": "Arcosa, Inc.",
+          "identifier": "6852687",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-55030",
+            "merger_name": "CRH - Arcosa",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-21T12:00:00Z",
+            "determination_date": "2026-08-04T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "cshc-holdings-llc": {
+      "id": "cshc-holdings-llc",
+      "canonical_name": "CSHC Holdings, LLC",
+      "members": [
+        {
+          "name": "CSHC Holdings, LLC",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-85020",
+            "merger_name": "Francisco Partners \u2013 Capsa Healthcare",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-30T12:00:00Z",
+            "determination_date": "2026-04-02T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 3.0,
+        "median_days": 3,
+        "average_business_days": 3.0,
+        "median_business_days": 3,
+        "completed_count": 1
+      }
+    },
+    "engage-marine-holdings-pty-ltd": {
+      "id": "engage-marine-holdings-pty-ltd",
+      "canonical_name": "Engage Marine Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "ENGAGE MARINE HOLDINGS PTY LTD",
+          "identifier": "99 626 774 678",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-90012",
+            "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-13T12:00:00Z",
+            "determination_date": "2026-06-24T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 42.0,
+        "median_days": 42,
+        "average_business_days": 28.0,
+        "median_business_days": 28,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "keyton": {
+      "id": "keyton",
+      "canonical_name": "Keyton",
+      "members": [
+        {
+          "name": "KEYTON HOLDING PTY LIMITED",
+          "identifier": "72 613 131 187",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Keyton Trust",
+          "identifier": "44 349 706 307",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-70030",
+            "merger_name": "Aware Super \u2013 Increased interest in Keyton",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-10T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "oceania-capital-partners-limited": {
+      "id": "oceania-capital-partners-limited",
+      "canonical_name": "Oceania Capital Partners Limited",
+      "members": [
+        {
+          "name": "OCEANIA CAPITAL PARTNERS LIMITED",
+          "identifier": "52 111 554 360",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-70016",
+            "merger_name": "Oceania Capital Partners - Hudson Global Resources (Aust)",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-22T12:00:00Z",
+            "determination_date": "2026-05-04T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 12.0,
+        "median_days": 12,
+        "average_business_days": 7.0,
+        "median_business_days": 7,
+        "completed_count": 1
+      }
+    },
+    "refinish-imports-pty-limited": {
+      "id": "refinish-imports-pty-limited",
+      "canonical_name": "Refinish Imports Pty Limited",
+      "members": [
+        {
+          "name": "REFINISH IMPORTS PTY LIMITED",
+          "identifier": "15 626 896 142",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-50024",
+            "merger_name": "AkzoNobel - Axalta",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-24T12:00:00Z",
+            "determination_date": "2026-07-21T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "rio-tinto-aluminium-limited": {
+      "id": "rio-tinto-aluminium-limited",
+      "canonical_name": "Rio Tinto Aluminium Limited",
+      "members": [
+        {
+          "name": "RIO TINTO ALUMINIUM (HOLDINGS) LIMITED",
+          "identifier": "37 004 502 694",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "RIO TINTO ALUMINIUM LIMITED",
+          "identifier": "51 009 679 127",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-35027",
+            "merger_name": "GPS Energy \u2013 Ryowa's interest in Gladstone Power Station Joint Venture",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-17T12:00:00Z",
+            "determination_date": "2026-06-30T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "the-ardonagh-group": {
+      "id": "the-ardonagh-group",
+      "canonical_name": "The Ardonagh Group",
+      "members": [
+        {
+          "name": "The Ardonagh Group",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-50020",
+            "merger_name": "Envest Group \u2013 MA Insurance Brokers",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-21T12:00:00Z",
+            "determination_date": "2026-06-18T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "the-trust-company-australia-limited": {
+      "id": "the-trust-company-australia-limited",
+      "canonical_name": "The Trust Company (Australia) Limited",
+      "members": [
+        {
+          "name": "THE TRUST COMPANY (AUSTRALIA) LIMITED",
+          "identifier": "21 000 000 993",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "The Trust Company (Australia) Limited (as trustee for Volt Managed Investment Trust 2)",
+          "identifier": "21 000 000 993",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-10011",
+            "merger_name": "Wentworth Capital \u2013 Novotel Darling Harbour and Ibis Darling Harbour",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-12T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "other": [
+          {
+            "merger_id": "MN-90007",
+            "merger_name": "Volt Managed Investment Trusts \u2013 HMC Energy Transition Platform",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-14T12:00:00Z",
+            "determination_date": "2026-06-05T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "the-trustee-for-strategic-accountants-and-business-advisors-unit-trust": {
+      "id": "the-trustee-for-strategic-accountants-and-business-advisors-unit-trust",
+      "canonical_name": "The Trustee for STRATEGIC ACCOUNTANTS AND BUSINESS ADVISORS UNIT TRUST",
+      "members": [
+        {
+          "name": "The Trustee for STRATEGIC ACCOUNTANTS AND BUSINESS ADVISORS UNIT TRUST",
+          "identifier": "91 731 177 189",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-40035",
+            "merger_name": "SCM Financial Group - Strategic Wealth Services Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-30T12:00:00Z",
+            "determination_date": "2026-08-28T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    },
+    "tsa-nominees-pty-ltd": {
+      "id": "tsa-nominees-pty-ltd",
+      "canonical_name": "Tsa Nominees Pty Ltd",
+      "members": [
+        {
+          "name": "TSA NOMINEES PTY LTD",
+          "identifier": "12 607 883 803",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-20010",
+            "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-06T12:00:00Z",
+            "determination_date": "2026-03-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "waymark-hotels-properties-no-42-pty-ltd": {
+      "id": "waymark-hotels-properties-no-42-pty-ltd",
+      "canonical_name": "Waymark Hotels Properties No 42 Pty Ltd",
+      "members": [
+        {
+          "name": "Waymark Hotels Properties No 42 Pty Ltd",
+          "identifier": "692 820 143",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-70010",
+            "merger_name": "Waymark Hotels Group \u2013 Warrego Hotel Motel Cunnamulla, Queensland",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-06T12:00:00Z",
+            "determination_date": "2026-04-02T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    }
+  }
+}

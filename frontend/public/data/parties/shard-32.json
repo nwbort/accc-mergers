@@ -1,0 +1,477 @@
+{
+  "shard": 50,
+  "shard_count": 256,
+  "parties": {
+    "compagnie-chargeurs-invest-sa": {
+      "id": "compagnie-chargeurs-invest-sa",
+      "canonical_name": "Compagnie Chargeurs Invest SA",
+      "members": [
+        {
+          "name": "Compagnie Chargeurs Invest SA",
+          "identifier": "SIREN  390 474 898",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-25006",
+            "merger_name": "KPS \u2013 Novacel",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-12T12:00:00Z",
+            "determination_date": "2026-04-02T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "e2m-pty-ltd": {
+      "id": "e2m-pty-ltd",
+      "canonical_name": "E2M Pty Ltd",
+      "members": [
+        {
+          "name": "E2M PTY LTD",
+          "identifier": "88 162 154 412",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-35038",
+            "merger_name": "WSP - e2m",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-26T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "general-dental-holdings-pty-ltd": {
+      "id": "general-dental-holdings-pty-ltd",
+      "canonical_name": "General Dental Holdings",
+      "members": [
+        {
+          "name": "GENERAL DENTAL HOLDINGS PTY LTD",
+          "identifier": "55 646 760 367",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "GENERAL DENTAL HOLDINGS PTY LTD trading as Impression Dental Group",
+          "identifier": "55 646 760 367",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-20029",
+            "merger_name": "Impression Dental Group \u2013 Kingston Beach Dental, TAS",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-13T12:00:00Z",
+            "determination_date": "2026-08-03T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-90015",
+            "merger_name": "Impression Dental Group - Coastal Dental Care",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-28T12:00:00Z",
+            "determination_date": "2026-06-25T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-70004",
+            "merger_name": "Impression Dental Group - Happy Rock Dental Practice",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-12T12:00:00Z",
+            "determination_date": "2026-02-26T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 3,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 17.5,
+        "median_days": 17.5,
+        "average_business_days": 12.5,
+        "median_business_days": 12.5,
+        "completed_count": 2
+      }
+    },
+    "hvac-consolidated-pty-ltd": {
+      "id": "hvac-consolidated-pty-ltd",
+      "canonical_name": "Hvac Consolidated Pty Ltd",
+      "members": [
+        {
+          "name": "HVAC CONSOLIDATED PTY LTD",
+          "identifier": "26 162 828 971",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-15018",
+            "merger_name": "Complete Air Supply - All Air",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-16T12:00:00Z",
+            "determination_date": "2026-07-09T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "incubeta-australia-pty-limited": {
+      "id": "incubeta-australia-pty-limited",
+      "canonical_name": "Incubeta Australia Pty Limited",
+      "members": [
+        {
+          "name": "INCUBETA AUSTRALIA PTY LIMITED",
+          "identifier": "54 138 482 916",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-05043",
+            "merger_name": "Incubeta - Datisan",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-13T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "johns-lyng-group": {
+      "id": "johns-lyng-group",
+      "canonical_name": "Johns Lyng Group",
+      "members": [
+        {
+          "name": "JOHNS LYNG GROUP LIMITED",
+          "identifier": "86 620 466 248",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Johns Lyng Group (Nominee) Pty Ltd as trustee for the Johns Lyng Unit Trust",
+          "identifier": "57 246 253 025",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-75035",
+            "merger_name": "Johns Lyng Group \u2013 C&M Build Group",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-05T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "locums-nominees-pty-limited": {
+      "id": "locums-nominees-pty-limited",
+      "canonical_name": "Locums Nominees Pty Limited",
+      "members": [
+        {
+          "name": "Locums Nominees Pty Limited",
+          "identifier": "084 426 415",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-85004",
+            "merger_name": "Treysta Wealth Management \u2013 Locumsgroup",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-03T12:00:00Z",
+            "determination_date": "2026-01-27T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "national-exhibition-centre-limited": {
+      "id": "national-exhibition-centre-limited",
+      "canonical_name": "National Exhibition Centre Limited",
+      "members": [
+        {
+          "name": "National Exhibition Centre Limited",
+          "identifier": "CRN  00979395",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-20023",
+            "merger_name": "Sony Music - Recognition Music",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-02T12:00:00Z",
+            "determination_date": "2026-06-30T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "neogen-corporation": {
+      "id": "neogen-corporation",
+      "canonical_name": "Neogen Corporation",
+      "members": [
+        {
+          "name": "Neogen Corporation",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-05013",
+            "merger_name": "Zoetis \u2013 Neogen Genomics Business",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 2",
+            "notification_date": "2026-05-12T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 1,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": {
+        "average_days": 66.0,
+        "median_days": 66,
+        "average_business_days": 46.0,
+        "median_business_days": 46,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "novacel-performance-coatings-inc": {
+      "id": "novacel-performance-coatings-inc",
+      "canonical_name": "Novacel Performance Coatings, Inc.",
+      "members": [
+        {
+          "name": "Novacel Performance Coatings, Inc.",
+          "identifier": "EIN  311708662",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-25006",
+            "merger_name": "KPS \u2013 Novacel",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-12T12:00:00Z",
+            "determination_date": "2026-04-02T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "tinicum-l-p": {
+      "id": "tinicum-l-p",
+      "canonical_name": "Tinicum L.P.",
+      "members": [
+        {
+          "name": "Tinicum L.P.",
+          "identifier": "Incorporation number  5040692",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-30018",
+            "merger_name": "Tinicum and Blackstone led consortium \u2013 Senior",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-18T12:00:00Z",
+            "determination_date": "2026-06-01T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    }
+  }
+}

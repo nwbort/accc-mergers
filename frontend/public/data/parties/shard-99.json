@@ -1,0 +1,375 @@
+{
+  "shard": 153,
+  "shard_count": 256,
+  "parties": {
+    "commercial-credit-holdings-limited": {
+      "id": "commercial-credit-holdings-limited",
+      "canonical_name": "Commercial Credit Holdings Limited",
+      "members": [
+        {
+          "name": "COMMERCIAL CREDIT HOLDINGS LIMITED",
+          "identifier": "81 654 459 971",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25030",
+            "merger_name": "Warburg Pincus \u2013 Commercial Credit Holdings Limited",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-05T12:00:00Z",
+            "determination_date": "2026-07-01T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "csl-behring-llc": {
+      "id": "csl-behring-llc",
+      "canonical_name": "CSL Behring LLC",
+      "members": [
+        {
+          "name": "CSL Behring LLC",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-40012",
+            "merger_name": "Eli Lilly \u2013 acquisition of licence from CSL Behring",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-14T12:00:00Z",
+            "determination_date": "2026-05-06T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "kanda-healthcare-pty-ltd": {
+      "id": "kanda-healthcare-pty-ltd",
+      "canonical_name": "Kanda Healthcare Pty Ltd",
+      "members": [
+        {
+          "name": "KANDA HEALTHCARE PTY LTD",
+          "identifier": "77 151 293 515",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-75034",
+            "merger_name": "Kanda Healthcare \u2013 Live Your Way, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-14T12:00:00Z",
+            "determination_date": "2026-08-04T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "novartis-finance-corporation": {
+      "id": "novartis-finance-corporation",
+      "canonical_name": "Novartis Finance Corporation",
+      "members": [
+        {
+          "name": "Novartis Finance Corporation",
+          "identifier": "US EIN 133922240",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-40019",
+            "merger_name": "Novartis - Excellergy",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-12T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "permira-holdings-limited": {
+      "id": "permira-holdings-limited",
+      "canonical_name": "Permira Holdings Limited",
+      "members": [
+        {
+          "name": "Permira Holdings Limited",
+          "identifier": "40432",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-40010",
+            "merger_name": "Permira and Warburg Pincus - Clearwater Analytics",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-11T12:00:00Z",
+            "determination_date": "2026-04-01T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "the-athlete-s-foot-australia-pty-ltd": {
+      "id": "the-athlete-s-foot-australia-pty-ltd",
+      "canonical_name": "The Athlete\u2019s Foot Australia Pty Ltd",
+      "members": [
+        {
+          "name": "The Athlete\u2019s Foot Australia Pty Ltd",
+          "identifier": "57 001 777 582",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-01118",
+            "merger_name": "Accent Group \u2013 The Athlete\u2019s Foot in Karrinyup, WA",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-29T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "voag-pty-ltd": {
+      "id": "voag-pty-ltd",
+      "canonical_name": "Voag Pty Ltd",
+      "members": [
+        {
+          "name": "VOAG PTY LTD",
+          "identifier": "84 606 381 597",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-35019",
+            "merger_name": "Precision Poultry - VOAG chicken farming operations",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-02T12:00:00Z",
+            "determination_date": "2026-06-24T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "winning-appliances-pty-ltd": {
+      "id": "winning-appliances-pty-ltd",
+      "canonical_name": "Winning Appliances Pty Ltd",
+      "members": [
+        {
+          "name": "WINNING APPLIANCES PTY LTD",
+          "identifier": "94 002 193 688",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-01092",
+            "merger_name": "Winning Group Holdings \u2013 Winning Appliances",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-23T12:00:00Z",
+            "determination_date": "2026-04-23T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 31.0,
+        "median_days": 31,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    },
+    "zagame-automotive-group-pty-ltd": {
+      "id": "zagame-automotive-group-pty-ltd",
+      "canonical_name": "Zagame Automotive Group Pty Ltd",
+      "members": [
+        {
+          "name": "Zagame Automotive Group Pty Ltd",
+          "identifier": "85 085 950 063",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-05012",
+            "merger_name": "Eagers - Audi Melbourne and Audi Richmond",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-31T12:00:00Z",
+            "determination_date": "2026-05-05T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 35.0,
+        "median_days": 35,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

@@ -1,0 +1,287 @@
+{
+  "shard": 72,
+  "shard_count": 256,
+  "parties": {
+    "escode-australia-pty-ltd": {
+      "id": "escode-australia-pty-ltd",
+      "canonical_name": "Escode Australia Pty Ltd",
+      "members": [
+        {
+          "name": "ESCODE AUSTRALIA PTY LTD",
+          "identifier": "96 675 307 301",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-85011",
+            "merger_name": "TDR and Estoril \u2013 Escode",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-19T12:00:00Z",
+            "determination_date": "2026-03-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "jps-management-execution-pty-ltd": {
+      "id": "jps-management-execution-pty-ltd",
+      "canonical_name": "JPS Management & Execution Pty Ltd",
+      "members": [
+        {
+          "name": "JPS Management & Execution Pty Ltd",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-25039",
+            "merger_name": "Tasmea \u2013 JPS Holdings",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-03T12:00:00Z",
+            "determination_date": "2026-07-24T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "midea-electric-trading-singapore-co-pte-ltd": {
+      "id": "midea-electric-trading-singapore-co-pte-ltd",
+      "canonical_name": "Midea Electric Trading (Singapore) Co. Pte. Ltd.",
+      "members": [
+        {
+          "name": "Midea Electric Trading (Singapore) Co. Pte. Ltd.",
+          "identifier": "Singapore identifying number (UEN): 200800970G",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-01106",
+            "merger_name": "Midea - Residentia Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-26T12:00:00Z",
+            "determination_date": "2026-07-24T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "sa-pipe-relining-pty-ltd": {
+      "id": "sa-pipe-relining-pty-ltd",
+      "canonical_name": "SA Pipe Relining Pty. Ltd.",
+      "members": [
+        {
+          "name": "SA Pipe Relining Pty. Ltd.",
+          "identifier": "89 125 590 276",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-95010",
+            "merger_name": "Lighthouse - Precise Services Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-23T12:00:00Z",
+            "determination_date": "2026-04-13T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "sas-trustee-corporation": {
+      "id": "sas-trustee-corporation",
+      "canonical_name": "SAS Trustee Corporation",
+      "members": [
+        {
+          "name": "SAS Trustee Corporation",
+          "identifier": "29 239 066 746",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-90023",
+            "merger_name": "SAS Trustee Corporation \u2013 Australia Pacific Airport Corporation",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-16T12:00:00Z",
+            "determination_date": "2026-07-08T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "scott-van-eck": {
+      "id": "scott-van-eck",
+      "canonical_name": "Scott Van Eck",
+      "members": [
+        {
+          "name": "SCOTT VAN ECK",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-55013",
+            "merger_name": "Lawrence & Hanson - Gordon Macdonald",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-13T12:00:00Z",
+            "determination_date": "2026-05-05T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "torquest-capital-fund-v-l-p": {
+      "id": "torquest-capital-fund-v-l-p",
+      "canonical_name": "TorQuest Capital Fund V,L.P.",
+      "members": [
+        {
+          "name": "TorQuest Capital Fund V,L.P.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-80035",
+            "merger_name": "Saint-Gobain - Xypex",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-17T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    }
+  }
+}

@@ -1,0 +1,293 @@
+{
+  "shard": 62,
+  "shard_count": 256,
+  "parties": {
+    "duncan-holdco-iii-llc": {
+      "id": "duncan-holdco-iii-llc",
+      "canonical_name": "Duncan Holdco III LLC",
+      "members": [
+        {
+          "name": "Duncan Holdco III LLC",
+          "identifier": "State of Delaware Company File Number  10510961",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-10009",
+            "merger_name": "SoftBank \u2013 DigitalBridge",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-02T12:00:00Z",
+            "determination_date": "2026-03-24T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "fantastic-manufacturing-pty-ltd": {
+      "id": "fantastic-manufacturing-pty-ltd",
+      "canonical_name": "Fantastic Manufacturing Pty Ltd",
+      "members": [
+        {
+          "name": "FANTASTIC MANUFACTURING PTY LTD",
+          "identifier": "20 158 159 230",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-55019",
+            "merger_name": "Allegro - Fantastic Furniture",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-15T12:00:00Z",
+            "determination_date": "2026-05-26T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 11.0,
+        "median_days": 11,
+        "average_business_days": 7.0,
+        "median_business_days": 7,
+        "completed_count": 1
+      }
+    },
+    "inpex-fsda-n-s-pty-ltd": {
+      "id": "inpex-fsda-n-s-pty-ltd",
+      "canonical_name": "Inpex Fsda N&S Pty Ltd",
+      "members": [
+        {
+          "name": "INPEX FSDA N&S PTY LTD",
+          "identifier": "22 693 697 764",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-01101",
+            "merger_name": "INPEX \u2013 minority interests in Beetaloo development projects",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-15T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "onestream-inc": {
+      "id": "onestream-inc",
+      "canonical_name": "OneStream, Inc.",
+      "members": [
+        {
+          "name": "OneStream, Inc.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-55006",
+            "merger_name": "Hg Capital - OneStream",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-19T12:00:00Z",
+            "determination_date": "2026-03-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "qube-holdings-limited": {
+      "id": "qube-holdings-limited",
+      "canonical_name": "Qube Holdings Limited",
+      "members": [
+        {
+          "name": "QUBE HOLDINGS LIMITED",
+          "identifier": "14 149 723 053",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-10007",
+            "merger_name": "Macquarie Asset Management led consortium \u2013 Qube",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-06T12:00:00Z",
+            "determination_date": "2026-06-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 42.0,
+        "median_days": 42,
+        "average_business_days": 28.0,
+        "median_business_days": 28,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "weilburger-graphics-gmbh": {
+      "id": "weilburger-graphics-gmbh",
+      "canonical_name": "Weilburger Graphics GmbH",
+      "members": [
+        {
+          "name": "Weilburger Graphics GmbH",
+          "identifier": "Germany registration number (HRB): 8017",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-45007",
+            "merger_name": "Henkel \u2013 Stahl",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-18T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "yancoal-australia-ltd": {
+      "id": "yancoal-australia-ltd",
+      "canonical_name": "Yancoal Australia Ltd",
+      "members": [
+        {
+          "name": "YANCOAL AUSTRALIA LTD",
+          "identifier": "82 111 859 119",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-85021",
+            "merger_name": "Yancoal - Kestrel Coal Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-02T12:00:00Z",
+            "determination_date": "2026-04-13T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 11.0,
+        "median_days": 11,
+        "average_business_days": 5.0,
+        "median_business_days": 5,
+        "completed_count": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,532 @@
+{
+  "shard": 181,
+  "shard_count": 256,
+  "parties": {
+    "a-p-m-ller-holding-a-s": {
+      "id": "a-p-m-ller-holding-a-s",
+      "canonical_name": "A.P. M\u00f8ller Holding A/S",
+      "members": [
+        {
+          "name": "A.P. M\u00f8ller Holding A/S",
+          "identifier": "CVR  25679288",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-20024",
+            "merger_name": "KK Group Invest - PowerCon",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-19T12:00:00Z",
+            "determination_date": "2026-06-02T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "airmaster-corporation-pty-ltd": {
+      "id": "airmaster-corporation-pty-ltd",
+      "canonical_name": "Airmaster Corporation Pty Ltd",
+      "members": [
+        {
+          "name": "AIRMASTER CORPORATION PTY LTD",
+          "identifier": "26 133 652 749",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-30009",
+            "merger_name": "Daikin - AAMS Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-16T12:00:00Z",
+            "determination_date": "2026-05-08T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "carrick-capital-partners-iii-co-investment-fund-ii-l-p": {
+      "id": "carrick-capital-partners-iii-co-investment-fund-ii-l-p",
+      "canonical_name": "Carrick Capital Partners III Co-Investment Fund II, L.P.",
+      "members": [
+        {
+          "name": "Carrick Capital Partners III Co-Investment Fund II, L.P.",
+          "identifier": "Company No.: 7023487  Delaware",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-05003",
+            "merger_name": "KKR led consortium \u2013 Saviynt",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-11T12:00:00Z",
+            "determination_date": "2026-01-27T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "dirk-helmut-stadler": {
+      "id": "dirk-helmut-stadler",
+      "canonical_name": "Dirk Helmut Stadler",
+      "members": [
+        {
+          "name": "Dirk Helmut Stadler",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-40005",
+            "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-18T12:00:00Z",
+            "determination_date": "2026-03-12T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "heeson-medical": {
+      "id": "heeson-medical",
+      "canonical_name": "Heeson Medical",
+      "members": [
+        {
+          "name": "Heeson Medical Pty Ltd",
+          "identifier": "14 088 038 313",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Jacobba Pty Ltd",
+          "identifier": "20 088 038 340",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-80027",
+            "merger_name": "Supagas \u2013 Heeson Medical",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-11T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "international-management-group-of-america-pty-ltd": {
+      "id": "international-management-group-of-america-pty-ltd",
+      "canonical_name": "International Management Group Of America Pty Ltd",
+      "members": [
+        {
+          "name": "INTERNATIONAL MANAGEMENT GROUP OF AMERICA PTY LTD",
+          "identifier": "23 001 788 343",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-95014",
+            "merger_name": "Publicis \u2013 160over90",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-20T12:00:00Z",
+            "determination_date": "2026-04-29T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 9.0,
+        "median_days": 9,
+        "average_business_days": 6.0,
+        "median_business_days": 6,
+        "completed_count": 1
+      }
+    },
+    "kkr-forge-aggregator-l-p": {
+      "id": "kkr-forge-aggregator-l-p",
+      "canonical_name": "KKR Forge Aggregator L.P.",
+      "members": [
+        {
+          "name": "KKR Forge Aggregator L.P.",
+          "identifier": "10628476  Delaware",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-90025",
+            "merger_name": "KKR - Crowe",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-25T12:00:00Z",
+            "determination_date": "2026-07-15T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "powercon-usa-inc": {
+      "id": "powercon-usa-inc",
+      "canonical_name": "PowerCon USA Inc.",
+      "members": [
+        {
+          "name": "PowerCon USA Inc.",
+          "identifier": "Delaware File Number  6469852",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-20024",
+            "merger_name": "KK Group Invest - PowerCon",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-19T12:00:00Z",
+            "determination_date": "2026-06-02T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "pt-ap-investment": {
+      "id": "pt-ap-investment",
+      "canonical_name": "PT AP Investment",
+      "members": [
+        {
+          "name": "PT AP Investment",
+          "identifier": "NIB  0220201350357",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-60029",
+            "merger_name": "PT AP Investment \u2013 Vitrinite",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-10T12:00:00Z",
+            "determination_date": "2026-07-30T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "ramsay-health-care-australia-pty-limited": {
+      "id": "ramsay-health-care-australia-pty-limited",
+      "canonical_name": "Ramsay Health Care Australia Pty Limited",
+      "members": [
+        {
+          "name": "RAMSAY HEALTH CARE AUSTRALIA PTY LIMITED",
+          "identifier": "36 003 184 889",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-75003",
+            "merger_name": "Ramsay Health Care \u2013 National Capital Private Hospital",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-01-21T12:00:00Z",
+            "determination_date": "2026-02-12T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "searchlight-capital-iv-lp": {
+      "id": "searchlight-capital-iv-lp",
+      "canonical_name": "Searchlight Capital IV LP",
+      "members": [
+        {
+          "name": "Searchlight Capital IV LP",
+          "identifier": "US SEC  0001954453",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-50014",
+            "merger_name": "Searchlight Capital Partners - Additional interest in KORE Group Holdings Inc.",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-01T12:00:00Z",
+            "determination_date": "2026-04-23T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "torquest-partners-fund-u-s-v-l-p": {
+      "id": "torquest-partners-fund-u-s-v-l-p",
+      "canonical_name": "TorQuest Partners Fund (U.S.) V, L.P.",
+      "members": [
+        {
+          "name": "TorQuest Partners Fund (U.S.) V, L.P.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-80035",
+            "merger_name": "Saint-Gobain - Xypex",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-17T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "tukazza-invest-sas": {
+      "id": "tukazza-invest-sas",
+      "canonical_name": "Tukazza Invest ! SAS",
+      "members": [
+        {
+          "name": "Tukazza Invest ! SAS",
+          "identifier": "899 479 034 R.C.S. Paris",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-60033",
+            "merger_name": "Verlinvest \u2013 up to 60% interest in HomeExchange",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-29T12:00:00Z",
+            "determination_date": "2026-08-28T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 30.0,
+        "median_days": 30,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      }
+    }
+  }
+}

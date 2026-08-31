@@ -1,0 +1,393 @@
+{
+  "shard": 171,
+  "shard_count": 256,
+  "parties": {
+    "ampol-petroleum-pty-ltd": {
+      "id": "ampol-petroleum-pty-ltd",
+      "canonical_name": "Ampol",
+      "members": [
+        {
+          "name": "AMPOL AUSTRALIA PETROLEUM PTY LTD",
+          "identifier": "17 000 032 128",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "AMPOL PETROLEUM PTY LTD",
+          "identifier": "11 000 007 876",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "AMPOL RETAIL HOLDING PTY LTD",
+          "identifier": "11 689 777 704",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "AMPOL RETAIL HOLDING PTY LTD",
+          "identifier": "689 777 704",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-40024",
+            "merger_name": "Ampol \u2013 Freehold land acquisition in Chelsea Heights, Victoria",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-20T12:00:00Z",
+            "determination_date": "2026-06-05T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-01019",
+            "merger_name": "Ampol \u2013 EG Australia",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": true,
+            "phase": "Phase 2",
+            "notification_date": "2025-10-10T12:00:00Z",
+            "determination_date": "2026-06-02T12:00:00Z"
+          }
+        ],
+        "target": [
+          {
+            "merger_id": "WA-60020",
+            "merger_name": "Metro Petroleum \u2013 Retail sites part of divestiture remedy from Ampol-EG acquisition",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-03T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 3,
+      "phase_1_count": 0,
+      "phase_2_count": 1,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 103.0,
+        "median_days": 103,
+        "average_business_days": 59.0,
+        "median_business_days": 59,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 12.0,
+        "median_days": 12.0,
+        "average_business_days": 8.0,
+        "median_business_days": 8.0,
+        "completed_count": 2
+      }
+    },
+    "bp-plc": {
+      "id": "bp-plc",
+      "canonical_name": "BP plc",
+      "members": [
+        {
+          "name": "BP AUSTRALIA PTY LTD",
+          "identifier": "53 004 085 616",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "BP Australia Investments Pty Ltd",
+          "identifier": "66 102 991 551",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "BP p.l.c",
+          "identifier": "UKCRN  00102498",
+          "identifier_type": null
+        },
+        {
+          "name": "BP plc",
+          "identifier": "UK company number: 00102498",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-95033",
+            "merger_name": "bp - bp Gateway",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-04T12:00:00Z",
+            "determination_date": "2026-08-25T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-60015",
+            "merger_name": "Stonepeak \u2013 Castrol",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-21T12:00:00Z",
+            "determination_date": "2026-06-18T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 2,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.5,
+        "median_days": 24.5,
+        "average_business_days": 16.5,
+        "median_business_days": 16.5,
+        "completed_count": 2
+      },
+      "waiver_duration": null
+    },
+    "fjord-merger-sub-inc": {
+      "id": "fjord-merger-sub-inc",
+      "canonical_name": "Fjord Merger Sub, Inc.",
+      "members": [
+        {
+          "name": "Fjord Merger Sub, Inc.",
+          "identifier": "TIN/EIN  921660460",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-35002",
+            "merger_name": "IFS \u2013 Softeon",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-06T12:00:00Z",
+            "determination_date": "2026-01-27T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "gpt-platform-pty-limited": {
+      "id": "gpt-platform-pty-limited",
+      "canonical_name": "Gpt Platform Pty Limited",
+      "members": [
+        {
+          "name": "GPT PLATFORM PTY LIMITED",
+          "identifier": "51 164 839 061",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-01016",
+            "merger_name": "Asahi \u2013 Warehouse site on Tilburn Rd, Deer Park (Vic)",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2025-08-15T12:00:00Z",
+            "determination_date": "2025-09-05T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "lion-series-2020-1-trust": {
+      "id": "lion-series-2020-1-trust",
+      "canonical_name": "Lion Series 2020-1 Trust",
+      "members": [
+        {
+          "name": "Lion Series 2020-1 Trust",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-85047",
+            "merger_name": "Blackstone funds and Perpetual Trustees \u2013 HSBC loan portfolio",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-27T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "mount-baker-investment-limited": {
+      "id": "mount-baker-investment-limited",
+      "canonical_name": "Mount Baker Investment Limited",
+      "members": [
+        {
+          "name": "Mount Baker Investment Limited",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-60030",
+            "merger_name": "Tencent \u2013 Happibits",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-20T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "river-capital-pty-ltd": {
+      "id": "river-capital-pty-ltd",
+      "canonical_name": "River Capital Pty Ltd",
+      "members": [
+        {
+          "name": "RIVER CAPITAL PTY LTD",
+          "identifier": "64 073 531 469",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-25032",
+            "merger_name": "River Capital \u2013 YOMG",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-15T12:00:00Z",
+            "determination_date": "2026-06-22T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 7.0,
+        "median_days": 7,
+        "average_business_days": 5.0,
+        "median_business_days": 5,
+        "completed_count": 1
+      }
+    },
+    "swan-topco-pty-ltd": {
+      "id": "swan-topco-pty-ltd",
+      "canonical_name": "Swan Topco Pty Ltd",
+      "members": [
+        {
+          "name": "Swan Topco Pty Ltd",
+          "identifier": "682 241 612",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-01097",
+            "merger_name": "Quadrant Private Equity - Stanley International College",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-30T12:00:00Z",
+            "determination_date": "2026-05-18T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    }
+  }
+}

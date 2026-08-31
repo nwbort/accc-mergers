@@ -1,0 +1,123 @@
+{
+  "shard": 218,
+  "shard_count": 256,
+  "parties": {
+    "cielo-topco-limited": {
+      "id": "cielo-topco-limited",
+      "canonical_name": "Cielo TopCo Limited",
+      "members": [
+        {
+          "name": "Cielo TopCo Limited",
+          "identifier": "CRN  16320933",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-65004",
+            "merger_name": "Kee Safety - RIS Safety",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-02T12:00:00Z",
+            "determination_date": "2026-02-13T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 11.0,
+        "median_days": 11,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "gucci-america-inc": {
+      "id": "gucci-america-inc",
+      "canonical_name": "Gucci America Inc.",
+      "members": [
+        {
+          "name": "Gucci America Inc.",
+          "identifier": "131692020",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-60035",
+            "merger_name": "L'Or\u00e9al \u2013 Gucci Beauty Licence",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-19T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "loaded-net-australia-pty-ltd": {
+      "id": "loaded-net-australia-pty-ltd",
+      "canonical_name": "Loaded Net Australia Pty Ltd",
+      "members": [
+        {
+          "name": "LOADED NET AUSTRALIA PTY LTD",
+          "identifier": "70 632 923 561",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-90011",
+            "merger_name": "Salter Brothers - Buroserv",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-10T12:00:00Z",
+            "determination_date": "2026-04-29T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 19.0,
+        "median_days": 19,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    }
+  }
+}

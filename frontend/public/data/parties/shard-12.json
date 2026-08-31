@@ -1,0 +1,367 @@
+{
+  "shard": 18,
+  "shard_count": 256,
+  "parties": {
+    "advent-international": {
+      "id": "advent-international",
+      "canonical_name": "Advent International",
+      "members": [
+        {
+          "name": "Advent International, L.P.",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Advent International, L.P.",
+          "identifier": "Delaware LP number 2044184",
+          "identifier_type": null
+        },
+        {
+          "name": "Advent International, L.P.",
+          "identifier": "Delaware registration number: 204418",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-80016",
+            "merger_name": "Henkel \u2013 Olaplex",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-22T12:00:00Z"
+          }
+        ],
+        "other": [
+          {
+            "merger_id": "WA-35037",
+            "merger_name": "CVC Capital Partners \u2013 IRCA Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-28T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-15003",
+            "merger_name": "Coforge - Encora",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-21T12:00:00Z",
+            "determination_date": "2026-02-13T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 3,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22.0,
+        "average_business_days": 15.5,
+        "median_business_days": 15.5,
+        "completed_count": 2
+      }
+    },
+    "bajara-plant-hire-pty-ltd": {
+      "id": "bajara-plant-hire-pty-ltd",
+      "canonical_name": "Bajara Plant Hire Pty Ltd",
+      "members": [
+        {
+          "name": "BAJARA PLANT HIRE PTY LTD",
+          "identifier": "90 654 044 390",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-05024",
+            "merger_name": "B.M.D. Holdings \u2013 Bajara Plant Hire and Stirling Contracting",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-24T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "embrace-fertility-pty-ltd": {
+      "id": "embrace-fertility-pty-ltd",
+      "canonical_name": "Embrace Fertility Pty Ltd",
+      "members": [
+        {
+          "name": "EMBRACE FERTILITY PTY LTD",
+          "identifier": "84 135 918 580",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-05009",
+            "merger_name": "Genea - Embrace Fertility",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-27T12:00:00Z",
+            "determination_date": "2026-05-18T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "redpoint-investments-pte-ltd": {
+      "id": "redpoint-investments-pte-ltd",
+      "canonical_name": "Redpoint Investments Pte Ltd",
+      "members": [
+        {
+          "name": "Redpoint Investments Pte Ltd",
+          "identifier": "201536795E",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-80009",
+            "merger_name": "Mizuho \u2013 Avendus",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-07T12:00:00Z",
+            "determination_date": "2026-04-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 10.0,
+        "median_days": 10,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "regis-resources-limited": {
+      "id": "regis-resources-limited",
+      "canonical_name": "Regis Resources Limited",
+      "members": [
+        {
+          "name": "REGIS RESOURCES LIMITED",
+          "identifier": "28 009 174 761",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-65020",
+            "merger_name": "Regis Resources - Vault Minerals",
+            "is_waiver": false,
+            "status": "Assessment ceased",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-22T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "stahl-europe-b-v": {
+      "id": "stahl-europe-b-v",
+      "canonical_name": "Stahl Europe B.V.",
+      "members": [
+        {
+          "name": "Stahl Europe B.V.",
+          "identifier": "Netherlands registration number (KVK): 18107581",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-45007",
+            "merger_name": "Henkel \u2013 Stahl",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-18T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "the-trustee-for-the-barry-waldron-family-trust": {
+      "id": "the-trustee-for-the-barry-waldron-family-trust",
+      "canonical_name": "The Trustee for THE BARRY WALDRON FAMILY TRUST",
+      "members": [
+        {
+          "name": "The Trustee for THE BARRY WALDRON FAMILY TRUST",
+          "identifier": "95 506 126 845",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-90008",
+            "merger_name": "Black Rhino - Club Hotel Motel Roma",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": true,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-21T12:00:00Z",
+            "determination_date": "2026-08-11T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 82.0,
+        "median_days": 82,
+        "average_business_days": 56.0,
+        "median_business_days": 56,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "tmx-markets-australia-pty-ltd": {
+      "id": "tmx-markets-australia-pty-ltd",
+      "canonical_name": "TMX Markets Australia Pty Ltd",
+      "members": [
+        {
+          "name": "TMX Markets Australia Pty Ltd",
+          "identifier": "696 940 637",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-05019",
+            "merger_name": "TMX - Cboe Australia",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-29T12:00:00Z",
+            "determination_date": "2026-05-15T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    }
+  }
+}

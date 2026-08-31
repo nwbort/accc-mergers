@@ -1,0 +1,334 @@
+{
+  "shard": 118,
+  "shard_count": 256,
+  "parties": {
+    "anlg-holding-company-inc": {
+      "id": "anlg-holding-company-inc",
+      "canonical_name": "ANLG Holding Company, Inc.",
+      "members": [
+        {
+          "name": "ANLG Holding Company, Inc.",
+          "identifier": "EFN  6831336",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-75029",
+            "merger_name": "Analogic - Leidos SES business",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-08T12:00:00Z",
+            "determination_date": "2026-08-11T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 34.0,
+        "median_days": 34,
+        "average_business_days": 24.0,
+        "median_business_days": 24,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "ares-management-llc": {
+      "id": "ares-management-llc",
+      "canonical_name": "Ares Management LLC",
+      "members": [
+        {
+          "name": "Ares Management LLC",
+          "identifier": "LEI  3M096E5S0PEUTB0I8L53",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-85032",
+            "merger_name": "Ares (Bolt S.p.A.) \u2013 Investment in Plenitude",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-04T12:00:00Z",
+            "determination_date": "2026-06-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "ausenco-pty-ltd": {
+      "id": "ausenco-pty-ltd",
+      "canonical_name": "Ausenco Pty Ltd",
+      "members": [
+        {
+          "name": "AUSENCO PTY LTD",
+          "identifier": "31 114 541 114",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25043",
+            "merger_name": "Eldridge \u2013 Ausenco",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-13T12:00:00Z",
+            "determination_date": "2026-08-27T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "coking-coal-one-pty-ltd": {
+      "id": "coking-coal-one-pty-ltd",
+      "canonical_name": "Coking Coal One Pty Ltd",
+      "members": [
+        {
+          "name": "COKING COAL ONE PTY LTD",
+          "identifier": "89 615 317 907",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-55012",
+            "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-10T12:00:00Z",
+            "determination_date": "2026-04-01T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "dgh-design-and-fabrication-services-pty-ltd": {
+      "id": "dgh-design-and-fabrication-services-pty-ltd",
+      "canonical_name": "Dgh Design And Fabrication Services Pty Ltd",
+      "members": [
+        {
+          "name": "DGH DESIGN AND FABRICATION SERVICES PTY LTD",
+          "identifier": "44 684 719 300",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-90013",
+            "merger_name": "Cement Australia \u2013 Global Manufacturing Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-24T12:00:00Z",
+            "determination_date": "2026-05-11T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "gls-inc": {
+      "id": "gls-inc",
+      "canonical_name": "GLS, Inc.",
+      "members": [
+        {
+          "name": "GLS, Inc.",
+          "identifier": "Commercial Registration Number  010401200183",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-20032",
+            "merger_name": "Nojima Corporation \u2013 Hitachi Global Life Solutions and Ar\u00e7elik Hitachi Home Appliances",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-27T12:00:00Z",
+            "determination_date": "2026-08-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "mm-ds-investor-llc": {
+      "id": "mm-ds-investor-llc",
+      "canonical_name": "MM DS Investor LLC",
+      "members": [
+        {
+          "name": "MM DS Investor LLC",
+          "identifier": "Company number 10401629",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-90026",
+            "merger_name": "Abu Dhabi Investment Authority \u2013 Barings Darling Square Holding Trust",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-03T12:00:00Z",
+            "determination_date": "2026-07-29T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "viper-holdco-limited": {
+      "id": "viper-holdco-limited",
+      "canonical_name": "Viper HoldCo Limited",
+      "members": [
+        {
+          "name": "Viper HoldCo Limited",
+          "identifier": "Guernsey registration number  CMP74411",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-45017",
+            "merger_name": "Apax Partners LLP \u2013 Sedex Information Exchange Limited",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-28T12:00:00Z",
+            "determination_date": "2026-06-26T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,590 @@
+{
+  "shard": 163,
+  "shard_count": 256,
+  "parties": {
+    "airtree-ventures-opportunity-fund-v-partnership-lp": {
+      "id": "airtree-ventures-opportunity-fund-v-partnership-lp",
+      "canonical_name": "Airtree Ventures Opportunity Fund V Partnership, LP",
+      "members": [
+        {
+          "name": "Airtree Ventures Opportunity Fund V Partnership, LP",
+          "identifier": "16 395 824 589",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-40028",
+            "merger_name": "Airtree \u2013 HotDoc",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-11T12:00:00Z",
+            "determination_date": "2026-06-30T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 19.0,
+        "median_days": 19,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "akkim-yapi-kimyasallari-sanayi-ve-ticaret-anonim-irketi": {
+      "id": "akkim-yapi-kimyasallari-sanayi-ve-ticaret-anonim-irketi",
+      "canonical_name": "Akkim Yapi Kimyasallari Sanayi ve Ticaret Anonim \u015eirketi",
+      "members": [
+        {
+          "name": "Akkim Yapi Kimyasallari Sanayi ve Ticaret Anonim \u015eirketi",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-40027",
+            "merger_name": "Sika AG - Akkim",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-25T12:00:00Z",
+            "determination_date": "2026-07-16T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "awp-australia-pty-ltd": {
+      "id": "awp-australia-pty-ltd",
+      "canonical_name": "AWP Australia",
+      "members": [
+        {
+          "name": "AWP Australia Holdings Pty Ltd",
+          "identifier": "75 097 227 211",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "AWP Australia Pty Ltd",
+          "identifier": "52 097 227 177",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-80024",
+            "merger_name": "Allianz \u2013 certain assets of nib\u2019s Australian travel insurance business",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-03T12:00:00Z",
+            "determination_date": "2026-07-24T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "bmm-partners-services-pty-ltd": {
+      "id": "bmm-partners-services-pty-ltd",
+      "canonical_name": "Bmm Partners Services Pty Ltd",
+      "members": [
+        {
+          "name": "BMM PARTNERS SERVICES PTY LTD",
+          "identifier": "84 649 113 968",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-15010",
+            "merger_name": "AZ Next Generation Advisory \u2013 Intend Financial",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-06T12:00:00Z",
+            "determination_date": "2026-03-24T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "dib-group-pty-limited": {
+      "id": "dib-group-pty-limited",
+      "canonical_name": "Dib Group Pty. Limited",
+      "members": [
+        {
+          "name": "DIB GROUP PTY. LIMITED",
+          "identifier": "87 002 889 474",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-60020",
+            "merger_name": "Metro Petroleum \u2013 Retail sites part of divestiture remedy from Ampol-EG acquisition",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-03T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 8.0,
+        "median_days": 8,
+        "average_business_days": 5.0,
+        "median_business_days": 5,
+        "completed_count": 1
+      }
+    },
+    "intelerad-holdings-ulc": {
+      "id": "intelerad-holdings-ulc",
+      "canonical_name": "Intelerad Holdings ULC",
+      "members": [
+        {
+          "name": "Intelerad Holdings ULC",
+          "identifier": "703693275",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-01074",
+            "merger_name": "GE Healthcare \u2013 Intelerad",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-01-20T12:00:00Z",
+            "determination_date": "2026-02-26T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 37.0,
+        "median_days": 37,
+        "average_business_days": 26.0,
+        "median_business_days": 26,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "iron-mine-services-pty-ltd": {
+      "id": "iron-mine-services-pty-ltd",
+      "canonical_name": "Iron Mine Services Pty Ltd",
+      "members": [
+        {
+          "name": "IRON MINE SERVICES PTY LTD",
+          "identifier": "77 608 402 446",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-85003",
+            "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-25T12:00:00Z",
+            "determination_date": "2026-03-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "marathon-asset-management-lp-marathon-gp-holdings-i-llc-and-marathon-gp-holdings": {
+      "id": "marathon-asset-management-lp-marathon-gp-holdings-i-llc-and-marathon-gp-holdings",
+      "canonical_name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC",
+      "members": [
+        {
+          "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-65009",
+            "merger_name": "CVC Capital Partners \u2013 Marathon Asset Management",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-18T12:00:00Z",
+            "determination_date": "2026-04-16T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "mpg-fiveways-op-pty-ltd": {
+      "id": "mpg-fiveways-op-pty-ltd",
+      "canonical_name": "Mpg Fiveways Op Pty Ltd",
+      "members": [
+        {
+          "name": "MPG FIVEWAYS OP PTY LTD",
+          "identifier": "53 688 880 828",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-50013",
+            "merger_name": "Star Hotels - Fiveways Hotel Toowoomba",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-31T12:00:00Z",
+            "determination_date": "2026-04-23T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "phoenix-distribution-nsw-pty-ltd": {
+      "id": "phoenix-distribution-nsw-pty-ltd",
+      "canonical_name": "Phoenix Distribution (Nsw) Pty Ltd",
+      "members": [
+        {
+          "name": "PHOENIX DISTRIBUTION (NSW) PTY LTD",
+          "identifier": "24 073 843 982",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-80017",
+            "merger_name": "Direct Couriers \u2013 Phoenix Transport",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-18T12:00:00Z",
+            "determination_date": "2026-06-02T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "ppt-investments-pty-ltd": {
+      "id": "ppt-investments-pty-ltd",
+      "canonical_name": "Ppt Investments Pty Ltd",
+      "members": [
+        {
+          "name": "PPT INVESTMENTS PTY LTD",
+          "identifier": "80 000 868 860",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-05017",
+            "merger_name": "Tony White Group - Sharton Motors dealerships in Maitland, Port Stephens and Cardiff",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-12T12:00:00Z",
+            "determination_date": "2026-06-09T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "presidental-pty-limited": {
+      "id": "presidental-pty-limited",
+      "canonical_name": "Presidental Pty Limited",
+      "members": [
+        {
+          "name": "PRESIDENTAL PTY LIMITED",
+          "identifier": "77 002 697 896",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-45001",
+            "merger_name": "Paragon Care \u2013 Presidental",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-30T12:00:00Z",
+            "determination_date": "2026-02-16T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "seismic-software-inc": {
+      "id": "seismic-software-inc",
+      "canonical_name": "Seismic Software, Inc.",
+      "members": [
+        {
+          "name": "SEISMIC SOFTWARE PTY. LTD.",
+          "identifier": "87 611 843 808",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Seismic Software, Inc.",
+          "identifier": "Delaware File Number  4832793",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-75014",
+            "merger_name": "Seismic \u2013 Highspot",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-12T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "trc-companies-inc": {
+      "id": "trc-companies-inc",
+      "canonical_name": "TRC Companies, Inc.",
+      "members": [
+        {
+          "name": "TRC Companies, Inc.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-35001",
+            "merger_name": "WSP \u2013 TRC",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-06T12:00:00Z",
+            "determination_date": "2026-01-13T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 7.0,
+        "median_days": 7,
+        "average_business_days": 2.0,
+        "median_business_days": 2,
+        "completed_count": 1
+      }
+    }
+  }
+}

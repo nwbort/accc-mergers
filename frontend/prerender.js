@@ -37,10 +37,13 @@ import {
   serialiseJsonLd,
 } from './src/utils/pageMeta.js';
 import { industryPath, mergerPath } from './src/utils/slug.js';
+import { partyShardName } from './src/utils/shard.js';
 
 // Per-merger data files are named by matter id, e.g. MN-01016.json / WA-70017.json.
 const MATTER_FILE_RE = /^(MN|WA)-\d+\.json$/i;
 const JSON_FILE_RE = /\.json$/i;
+// Party records are packed into shard buckets, not one file per party.
+const SHARD_FILE_RE = /^shard-[0-9a-f]{2}\.json$/i;
 
 // Cap on how many merger links a party/industry body lists. The busiest
 // industry node carries ~66 mergers, so this only bites on pathological cases;
@@ -456,12 +459,59 @@ export default function prerenderMergers() {
         this.warn('prerender: parties.json unreadable, prerendering every party file');
       }
 
-      renderDir(join(dataDir, 'parties'), 'parties', (party, id) => {
-        const partyId = party.id || id;
-        if (livePartyIds && !livePartyIds.has(partyId)) return null;
-        const meta = partyMeta(party, partyId);
-        return { meta, body: partyBody(party, meta) };
-      });
+      // Unlike mergers and industries, parties are packed many-to-a-file into
+      // shard buckets (see src/utils/shard.js), so this walks buckets rather
+      // than using renderDir's one-file-one-page mapping.
+      //
+      // It also re-derives each party's bucket with the JS shard function and
+      // checks it against the file Python actually wrote it into. That makes
+      // the build a cross-language check on the whole real dataset, not just
+      // the golden fixture: if the two implementations ever diverge, the SPA
+      // would ask for the wrong bucket and every party page would 404 on a
+      // site that otherwise built and deployed perfectly happily. Better to
+      // fail the build.
+      const partiesDir = join(dataDir, 'parties');
+      const misfiled = [];
+      let partyFiles;
+      try {
+        partyFiles = readdirSync(partiesDir).filter((f) => SHARD_FILE_RE.test(f));
+      } catch {
+        partyFiles = [];
+        this.warn(`prerender: no party data at ${partiesDir}, skipping`);
+      }
+      if (partyFiles && !partyFiles.length) {
+        this.warn(`prerender: no shard buckets in ${partiesDir}, skipping parties`);
+      }
+      for (const file of partyFiles || []) {
+        let bucket;
+        try {
+          bucket = readJson(join(partiesDir, file)).parties || {};
+        } catch (err) {
+          this.warn(`prerender: skipping parties/${file}: ${err.message}`);
+          continue;
+        }
+        for (const [partyId, party] of Object.entries(bucket)) {
+          if (partyShardName(partyId) !== file) {
+            misfiled.push(`${partyId} is in ${file}, expected ${partyShardName(partyId)}`);
+            continue;
+          }
+          if (livePartyIds && !livePartyIds.has(partyId)) continue;
+          try {
+            const meta = partyMeta(party, partyId);
+            writePage(outDir, meta.path, renderPage(template, meta, partyBody(party, meta)));
+            counts.parties++;
+          } catch (err) {
+            this.warn(`prerender: skipping party ${partyId}: ${err.message}`);
+          }
+        }
+      }
+      if (misfiled.length) {
+        this.error(
+          `prerender: ${misfiled.length} party record(s) are in the wrong shard bucket — ` +
+            `scripts/shard.py and src/utils/shard.js disagree. ` +
+            `First few: ${misfiled.slice(0, 5).join('; ')}`,
+        );
+      }
 
       // industries.json supplies the display name for nodes whose detail file
       // carries none, mirroring IndustryDetail.jsx's fallback chain.

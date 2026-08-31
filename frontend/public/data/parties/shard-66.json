@@ -1,0 +1,334 @@
+{
+  "shard": 102,
+  "shard_count": 256,
+  "parties": {
+    "abry-partners-vii-co-investment-fund-lp": {
+      "id": "abry-partners-vii-co-investment-fund-lp",
+      "canonical_name": "ABRY Partners VII Co-Investment Fund, LP",
+      "members": [
+        {
+          "name": "ABRY Partners VII Co-Investment Fund, LP",
+          "identifier": "US SEC  0001681304",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-50014",
+            "merger_name": "Searchlight Capital Partners - Additional interest in KORE Group Holdings Inc.",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-01T12:00:00Z",
+            "determination_date": "2026-04-23T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "fluent-retail-pty-ltd": {
+      "id": "fluent-retail-pty-ltd",
+      "canonical_name": "Fluent Retail Pty Ltd",
+      "members": [
+        {
+          "name": "FLUENT RETAIL PTY LTD",
+          "identifier": "75 132 599 154",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-80012",
+            "merger_name": "FC Group Holdings Corporation & ors - Fluent Retail",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-28T12:00:00Z",
+            "determination_date": "2026-05-15T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "grant-davies": {
+      "id": "grant-davies",
+      "canonical_name": "Grant Davies",
+      "members": [
+        {
+          "name": "Grant Davies",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-75018",
+            "merger_name": "WPF Duratec - Pacific Welding (Davhold Australia)",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-04T12:00:00Z",
+            "determination_date": "2026-06-09T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 36.0,
+        "median_days": 36,
+        "average_business_days": 24.0,
+        "median_business_days": 24,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "map-logistics-holding-trust": {
+      "id": "map-logistics-holding-trust",
+      "canonical_name": "MAP Logistics Holding Trust",
+      "members": [
+        {
+          "name": "MAP Logistics Holding Trust",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-75025",
+            "merger_name": "M&G Asia Property Fund \u2013 Stockland Coopers Paddock and Willawong Distribution Centre",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-25T12:00:00Z",
+            "determination_date": "2026-06-22T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "newco-an-entity-to-be-established-by-verlinvest-sa": {
+      "id": "newco-an-entity-to-be-established-by-verlinvest-sa",
+      "canonical_name": "Newco (an entity to be established by Verlinvest SA)",
+      "members": [
+        {
+          "name": "Newco (an entity to be established by Verlinvest SA)",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-60033",
+            "merger_name": "Verlinvest \u2013 up to 60% interest in HomeExchange",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-29T12:00:00Z",
+            "determination_date": "2026-08-28T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 30.0,
+        "median_days": 30,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      }
+    },
+    "perpetual-corporate-trust-limited-as-trustee-for-volarae-living-australia-holdin": {
+      "id": "perpetual-corporate-trust-limited-as-trustee-for-volarae-living-australia-holdin",
+      "canonical_name": "Perpetual Corporate Trust Limited as trustee for Volarae Living (Australia) Holdings 2 Trust",
+      "members": [
+        {
+          "name": "Perpetual Corporate Trust Limited as trustee for Volarae Living (Australia) Holdings 2 Trust",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-50026",
+            "merger_name": "Stonepeak-led consortium - Estia Health",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-29T12:00:00Z",
+            "determination_date": "2026-07-22T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "rasier-pacific-pty-ltd": {
+      "id": "rasier-pacific-pty-ltd",
+      "canonical_name": "Rasier Pacific Pty Ltd",
+      "members": [
+        {
+          "name": "RASIER PACIFIC PTY LTD",
+          "identifier": "27 622 365 833",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-20018",
+            "merger_name": "Uber - Blacklane",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-05T12:00:00Z",
+            "determination_date": "2026-07-15T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 40.0,
+        "median_days": 40,
+        "average_business_days": 27.0,
+        "median_business_days": 27,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "westpac-banking-corporation": {
+      "id": "westpac-banking-corporation",
+      "canonical_name": "Westpac Banking Corporation",
+      "members": [
+        {
+          "name": "WESTPAC BANKING CORPORATION",
+          "identifier": "33 007 457 141",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-20014",
+            "merger_name": "ANZ, CBA, NAB and Westpac \u2013 shares in joint venture and interests in Joint Cash Pool",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-03T12:00:00Z",
+            "determination_date": "2026-06-26T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

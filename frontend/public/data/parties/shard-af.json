@@ -1,0 +1,483 @@
+{
+  "shard": 175,
+  "shard_count": 256,
+  "parties": {
+    "faculty-science-limited": {
+      "id": "faculty-science-limited",
+      "canonical_name": "Faculty Science Limited",
+      "members": [
+        {
+          "name": "Faculty Science Limited",
+          "identifier": "Company registration no: CRN08873131",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-01081",
+            "merger_name": "Accenture \u2013 Faculty Science",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-08T12:00:00Z",
+            "determination_date": "2026-01-20T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 12.0,
+        "median_days": 12,
+        "average_business_days": 7.0,
+        "median_business_days": 7,
+        "completed_count": 1
+      }
+    },
+    "gold-rush-topco-limited": {
+      "id": "gold-rush-topco-limited",
+      "canonical_name": "Gold Rush TopCo Limited",
+      "members": [
+        {
+          "name": "Gold Rush TopCo Limited",
+          "identifier": "RN 152697",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-85026",
+            "merger_name": "Banijay Entertainment \u2013 All3Media",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-20T12:00:00Z",
+            "determination_date": "2026-06-17T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "hughenden-solar-farm-holdco-pty-ltd": {
+      "id": "hughenden-solar-farm-holdco-pty-ltd",
+      "canonical_name": "Hughenden Solar Farm Holdco Pty Ltd",
+      "members": [
+        {
+          "name": "HUGHENDEN SOLAR FARM HOLDCO PTY LTD",
+          "identifier": "78 617 749 569",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-20031",
+            "merger_name": "Atmos \u2013 specific BayWa r.e. renewable energy projects",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-27T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "insite-holdings-pty-ltd": {
+      "id": "insite-holdings-pty-ltd",
+      "canonical_name": "Insite Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "INSITE HOLDINGS PTY LTD",
+          "identifier": "97 082 656 273",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Insite Holdings Pty Limited",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-30016",
+            "merger_name": "Zurich - Beazley",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-22T12:00:00Z",
+            "determination_date": "2026-06-17T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-55016",
+            "merger_name": "Zurich - ClearView",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-21T12:00:00Z",
+            "determination_date": "2026-05-14T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 2,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.5,
+        "median_days": 24.5,
+        "average_business_days": 16.0,
+        "median_business_days": 16.0,
+        "completed_count": 2
+      },
+      "waiver_duration": null
+    },
+    "iris-capital": {
+      "id": "iris-capital",
+      "canonical_name": "Iris Capital",
+      "members": [
+        {
+          "name": "Argenton Hotel Operations Pty Ltd",
+          "identifier": "628 639 270",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "Argenton Hotel Property Pty Ltd",
+          "identifier": "628 638 755",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "Gunyah Hotel Operations Pty Ltd",
+          "identifier": "628 638 031",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "Gunyah Hotel Property Pty Ltd",
+          "identifier": "628 638 040",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "IRIS CAPITAL HOLDINGS PTY LTD",
+          "identifier": "44 646 759 524",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Peden Business Pty Ltd",
+          "identifier": "626 903 928",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "Peden Freehold Pty Limited",
+          "identifier": "626 902 645",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "Radayla Pty Ltd",
+          "identifier": "73 115 366 384",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Sydney Junction Hotel Property Pty Ltd",
+          "identifier": "628 636 671",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-85039",
+            "merger_name": "Iris Capital \u2013 Revesby Pacific Hotel and Crown Hotel",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-21T12:00:00Z",
+            "determination_date": "2026-08-12T12:00:00Z"
+          }
+        ],
+        "target": [
+          {
+            "merger_id": "WA-85040",
+            "merger_name": "MA Financial (Redcape Fund) \u2013 Seven hospitality venues in NSW",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-24T12:00:00Z",
+            "determination_date": "2026-08-12T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.5,
+        "median_days": 20.5,
+        "average_business_days": 14.5,
+        "median_business_days": 14.5,
+        "completed_count": 2
+      }
+    },
+    "lion-series-2024-1-trust": {
+      "id": "lion-series-2024-1-trust",
+      "canonical_name": "Lion Series 2024-1 Trust",
+      "members": [
+        {
+          "name": "Lion Series 2024-1 Trust",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-85047",
+            "merger_name": "Blackstone funds and Perpetual Trustees \u2013 HSBC loan portfolio",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-27T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "protech-group-aust-pty-ltd": {
+      "id": "protech-group-aust-pty-ltd",
+      "canonical_name": "Protech Group (Aust) Pty Ltd",
+      "members": [
+        {
+          "name": "PROTECH GROUP (AUST) PTY LTD",
+          "identifier": "38 163 904 694",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-05027",
+            "merger_name": "Protech - ActivateRail",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-28T12:00:00Z",
+            "determination_date": "2026-08-25T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "redcat-pty-ltd": {
+      "id": "redcat-pty-ltd",
+      "canonical_name": "Redcat Pty Ltd",
+      "members": [
+        {
+          "name": "REDCAT PTY LTD",
+          "identifier": "88 090 409 920",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-05014",
+            "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "siemens-energy-limited": {
+      "id": "siemens-energy-limited",
+      "canonical_name": "Siemens Energy Limited",
+      "members": [
+        {
+          "name": "Siemens Energy Limited",
+          "identifier": "UK company number  00631825",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-60023",
+            "merger_name": "Siemens Energy \u2013 Camlin Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-18T12:00:00Z",
+            "determination_date": "2026-07-06T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "tahmoor-colliery": {
+      "id": "tahmoor-colliery",
+      "canonical_name": "Tahmoor Colliery",
+      "members": [
+        {
+          "name": "Bargo Collieries Pty Ltd (In Liquidation)",
+          "identifier": "34 000 970 276",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Tahmoor Coal Pty Ltd (In Liquidation)",
+          "identifier": "97 076 663 968",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-10022",
+            "merger_name": "M Resources and Golden Energy and Resources \u2013 Tahmoor Coal Mine",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-30T12:00:00Z",
+            "determination_date": "2026-08-21T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

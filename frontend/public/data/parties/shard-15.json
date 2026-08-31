@@ -1,0 +1,211 @@
+{
+  "shard": 21,
+  "shard_count": 256,
+  "parties": {
+    "anglican-community-services": {
+      "id": "anglican-community-services",
+      "canonical_name": "Anglican Community Services",
+      "members": [
+        {
+          "name": "ANGLICAN COMMUNITY SERVICES",
+          "identifier": "39 922 848 563",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-85038",
+            "merger_name": "Hammondcare - Anglican Community Services' Support at Home business",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-03T12:00:00Z",
+            "determination_date": "2026-08-28T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "atmos-queensland-solar-pty-ltd": {
+      "id": "atmos-queensland-solar-pty-ltd",
+      "canonical_name": "Atmos Queensland Solar Pty Ltd",
+      "members": [
+        {
+          "name": "ATMOS QUEENSLAND SOLAR PTY LTD",
+          "identifier": "23 654 882 925",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-20031",
+            "merger_name": "Atmos \u2013 specific BayWa r.e. renewable energy projects",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-27T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "bqc-registrations-pty-ltd": {
+      "id": "bqc-registrations-pty-ltd",
+      "canonical_name": "BQC Registrations Pty Ltd",
+      "members": [
+        {
+          "name": "BQC Registrations Pty Ltd",
+          "identifier": "613 361 041",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-60011",
+            "merger_name": "Barro Group - BQC Quarries and Burdekin Concrete",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-28T12:00:00Z",
+            "determination_date": "2026-06-03T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 36.0,
+        "median_days": 36,
+        "average_business_days": 25.0,
+        "median_business_days": 25,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "crown-asia-pacific-private-equity-v-master-scsp": {
+      "id": "crown-asia-pacific-private-equity-v-master-scsp",
+      "canonical_name": "Crown Asia-Pacific Private Equity V Master SCSp",
+      "members": [
+        {
+          "name": "Crown Asia-Pacific Private Equity V Master SCSp",
+          "identifier": "Luxembourg Company Registration Number: B246151",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-45010",
+            "merger_name": "Airtree and ors (additional minority co-investors) - Advanced Navigation",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-02T12:00:00Z",
+            "determination_date": "2026-05-01T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "locumsgroup-asset-management-pty-ltd": {
+      "id": "locumsgroup-asset-management-pty-ltd",
+      "canonical_name": "Locumsgroup Asset Management Pty Ltd",
+      "members": [
+        {
+          "name": "Locumsgroup Asset Management Pty Ltd",
+          "identifier": "71 113 009 626",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-85004",
+            "merger_name": "Treysta Wealth Management \u2013 Locumsgroup",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-03T12:00:00Z",
+            "determination_date": "2026-01-27T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    }
+  }
+}

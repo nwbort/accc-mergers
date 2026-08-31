@@ -1,0 +1,655 @@
+{
+  "shard": 129,
+  "shard_count": 256,
+  "parties": {
+    "bluefit-group-pty-ltd": {
+      "id": "bluefit-group-pty-ltd",
+      "canonical_name": "Bluefit Group Pty Ltd",
+      "members": [
+        {
+          "name": "BLUEFIT GROUP PTY LTD",
+          "identifier": "15 623 370 552",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-05014",
+            "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "bolt-s-p-a": {
+      "id": "bolt-s-p-a",
+      "canonical_name": "Bolt S.p.A",
+      "members": [
+        {
+          "name": "Bolt S.p.A",
+          "identifier": "Lodi under no. 14245060968",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-85032",
+            "merger_name": "Ares (Bolt S.p.A.) \u2013 Investment in Plenitude",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-04T12:00:00Z",
+            "determination_date": "2026-06-19T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "brisbane-airport-corporation-pty-limited": {
+      "id": "brisbane-airport-corporation-pty-limited",
+      "canonical_name": "Brisbane Airport Corporation Pty Limited",
+      "members": [
+        {
+          "name": "BRISBANE AIRPORT CORPORATION PTY LIMITED",
+          "identifier": "54 076 870 650",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-25009",
+            "merger_name": "Brisbane Airport Corporation \u2013 Interest in land at Brisbane Airport",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-06T12:00:00Z",
+            "determination_date": "2026-04-08T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 33.0,
+        "median_days": 33,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
+    "c-d-technologies-inc": {
+      "id": "c-d-technologies-inc",
+      "canonical_name": "C&D Technologies Inc.",
+      "members": [
+        {
+          "name": "C&D Technologies Inc.",
+          "identifier": "Identifying number  2075987",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-60032",
+            "merger_name": "Atlas Holdings and KPS \u2013 shares in joint venture and interest in C&D Technologies",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-16T12:00:00Z",
+            "determination_date": "2026-08-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 32.0,
+        "median_days": 32,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      }
+    },
+    "digitalbridge-group-inc": {
+      "id": "digitalbridge-group-inc",
+      "canonical_name": "DigitalBridge Group, Inc.",
+      "members": [
+        {
+          "name": "DigitalBridge Group, Inc.",
+          "identifier": "IRS  464591526",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-10009",
+            "merger_name": "SoftBank \u2013 DigitalBridge",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-02T12:00:00Z",
+            "determination_date": "2026-03-24T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "freedom-fuels-australia-pty-ltd": {
+      "id": "freedom-fuels-australia-pty-ltd",
+      "canonical_name": "Freedom Fuels Australia Pty Ltd",
+      "members": [
+        {
+          "name": "FREEDOM FUELS AUSTRALIA PTY LTD",
+          "identifier": "49 093 244 761",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-85034",
+            "merger_name": "Freedom Fuels \u2013 Rennic",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-08T12:00:00Z",
+            "determination_date": "2026-07-03T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "helix-holdco-b-v": {
+      "id": "helix-holdco-b-v",
+      "canonical_name": "Helix Holdco B.V.",
+      "members": [
+        {
+          "name": "Helix Holdco B.V.",
+          "identifier": "KVK  97637785",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-80029",
+            "merger_name": "NPM Capital \u2013 AmbaFlex Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-10T12:00:00Z",
+            "determination_date": "2026-08-03T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "laszlo-richard-bachmayer": {
+      "id": "laszlo-richard-bachmayer",
+      "canonical_name": "Laszlo Richard Bachmayer",
+      "members": [
+        {
+          "name": "Laszlo Richard Bachmayer",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-35031",
+            "merger_name": "Osmoflo Water Management - Guidera O'Connor",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-06T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "lava-street-veterinary-clinic-and-doggy-kinder": {
+      "id": "lava-street-veterinary-clinic-and-doggy-kinder",
+      "canonical_name": "Lava Street Veterinary Clinic and Doggy Kinder",
+      "members": [
+        {
+          "name": "DOGGY KINDER PTY LTD",
+          "identifier": "60 665 736 265",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "The Trustee for Longyester Unit Trust",
+          "identifier": "18 762 651 022",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-40032",
+            "merger_name": "Vets Central \u2013 Lava Street Veterinary Clinic and Doggy Kinder",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-15T12:00:00Z",
+            "determination_date": "2026-08-03T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 19.0,
+        "median_days": 19,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "leviat-pty-ltd": {
+      "id": "leviat-pty-ltd",
+      "canonical_name": "Leviat Pty Ltd",
+      "members": [
+        {
+          "name": "LEVIAT PTY LTD",
+          "identifier": "41 000 496 079",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-55011",
+            "merger_name": "OEP IX \u2013 Leviat",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-26T12:00:00Z",
+            "determination_date": "2026-03-16T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "lynham-networks-pty-ltd": {
+      "id": "lynham-networks-pty-ltd",
+      "canonical_name": "Lynham Networks Pty. Ltd.",
+      "members": [
+        {
+          "name": "LYNHAM NETWORKS PTY. LTD.",
+          "identifier": "17 602 258 337",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-35005",
+            "merger_name": "Superloop \u2013 Lynham Networks",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-18T12:00:00Z",
+            "determination_date": "2026-02-24T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 6.0,
+        "median_days": 6,
+        "average_business_days": 4.0,
+        "median_business_days": 4,
+        "completed_count": 1
+      }
+    },
+    "petersham-pub-pty-ltd": {
+      "id": "petersham-pub-pty-ltd",
+      "canonical_name": "Petersham Pub Pty Ltd",
+      "members": [
+        {
+          "name": "Petersham Pub Pty Ltd",
+          "identifier": "620 159 757",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-45013",
+            "merger_name": "Australian Venue Co \u2013 assets of White Cockatoo Hotel, Petersham",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-24T12:00:00Z",
+            "determination_date": "2026-05-11T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "randstad-digital-b-v": {
+      "id": "randstad-digital-b-v",
+      "canonical_name": "Randstad Digital B.V.",
+      "members": [
+        {
+          "name": "Randstad Digital B.V.",
+          "identifier": "91235944",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-15026",
+            "merger_name": "LTM \u2013 Randstad Digital entities including FinXL",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-12T12:00:00Z",
+            "determination_date": "2026-07-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "shareholder-representative-services-llc-as-the-stockholder-representative": {
+      "id": "shareholder-representative-services-llc-as-the-stockholder-representative",
+      "canonical_name": "Shareholder Representative Services LLC (as the stockholder representative)",
+      "members": [
+        {
+          "name": "Shareholder Representative Services LLC (as the stockholder representative)",
+          "identifier": "20071132387",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-70019",
+            "merger_name": "Cognizant \u2013 Astreya",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-07T12:00:00Z",
+            "determination_date": "2026-05-21T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "southern-way-osf-pty-limited-as-trustee-for-osf-southern-way-unit-trust": {
+      "id": "southern-way-osf-pty-limited-as-trustee-for-osf-southern-way-unit-trust",
+      "canonical_name": "Southern Way OSF Pty Limited as trustee for OSF Southern Way Unit Trust",
+      "members": [
+        {
+          "name": "Southern Way OSF Pty Limited as trustee for OSF Southern Way Unit Trust",
+          "identifier": "140 806 926",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-90010",
+            "merger_name": "Prime Super - Additional interest in Peninsula Link Project",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-02T12:00:00Z",
+            "determination_date": "2026-04-20T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "xsys-germany-gmbh": {
+      "id": "xsys-germany-gmbh",
+      "canonical_name": "XSYS Germany GmbH",
+      "members": [
+        {
+          "name": "XSYS Germany GmbH",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-85043",
+            "merger_name": "Lone Star Funds - ContiTech",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-20T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    }
+  }
+}

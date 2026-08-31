@@ -1,0 +1,305 @@
+{
+  "shard": 107,
+  "shard_count": 256,
+  "parties": {
+    "agriwebb-pty-ltd": {
+      "id": "agriwebb-pty-ltd",
+      "canonical_name": "Agriwebb Pty Ltd",
+      "members": [
+        {
+          "name": "AGRIWEBB PTY LTD",
+          "identifier": "56 163 515 900",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-30015",
+            "merger_name": "URUS (CVC Capital Partners) \u2013 AgriWebb",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-11T12:00:00Z",
+            "determination_date": "2026-05-27T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "darkvision-technologies-inc": {
+      "id": "darkvision-technologies-inc",
+      "canonical_name": "DarkVision Technologies Inc.",
+      "members": [
+        {
+          "name": "DarkVision Technologies Inc.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-75040",
+            "merger_name": "Blackstone - DarkVision Technologies",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-05T12:00:00Z",
+            "determination_date": "2026-08-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 12.0,
+        "median_days": 12,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "host-plus-pty-limited": {
+      "id": "host-plus-pty-limited",
+      "canonical_name": "Host-Plus Pty. Limited",
+      "members": [
+        {
+          "name": "HOST-PLUS PTY. LIMITED",
+          "identifier": "79 008 634 704",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-25016",
+            "merger_name": "Hostplus \u2013 CH Investment Holding Trust",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-16T12:00:00Z",
+            "determination_date": "2026-05-04T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "invest-blue-finance-pty-ltd": {
+      "id": "invest-blue-finance-pty-ltd",
+      "canonical_name": "Invest Blue Finance Pty Ltd",
+      "members": [
+        {
+          "name": "INVEST BLUE FINANCE PTY LTD",
+          "identifier": "35 661 784 541",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-75039",
+            "merger_name": "Ironbark - Paris Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-31T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "kraken-technologies-global-limited": {
+      "id": "kraken-technologies-global-limited",
+      "canonical_name": "Kraken Technologies Global Limited",
+      "members": [
+        {
+          "name": "Kraken Technologies Global Limited",
+          "identifier": "RN  164051",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-20011",
+            "merger_name": "Origin \u2013 Equity stake in Kraken",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-24T12:00:00Z",
+            "determination_date": "2026-04-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "lsd-a-inc": {
+      "id": "lsd-a-inc",
+      "canonical_name": "LSD&A, Inc.",
+      "members": [
+        {
+          "name": "LSD&A, Inc.",
+          "identifier": "Charter ID  2663695",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-75029",
+            "merger_name": "Analogic - Leidos SES business",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-08T12:00:00Z",
+            "determination_date": "2026-08-11T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 34.0,
+        "median_days": 34,
+        "average_business_days": 24.0,
+        "median_business_days": 24,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "rgm-tt-pty-ltd": {
+      "id": "rgm-tt-pty-ltd",
+      "canonical_name": "Rgm Tt Pty Ltd",
+      "members": [
+        {
+          "name": "RGM TT PTY LTD",
+          "identifier": "99 619 024 949",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25031",
+            "merger_name": "Oscars Group \u2013 South Terrace Hotel in Bankstown, NSW",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-12T12:00:00Z",
+            "determination_date": "2026-07-08T12:00:00Z"
+          }
+        ],
+        "other": [
+          {
+            "merger_id": "WA-60017",
+            "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Entrance Social Club",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-16T12:00:00Z",
+            "determination_date": "2026-04-30T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20.0,
+        "average_business_days": 13.5,
+        "median_business_days": 13.5,
+        "completed_count": 2
+      }
+    }
+  }
+}

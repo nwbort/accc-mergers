@@ -1,0 +1,129 @@
+{
+  "shard": 5,
+  "shard_count": 256,
+  "parties": {
+    "kantou-eco-recycle-co-ltd": {
+      "id": "kantou-eco-recycle-co-ltd",
+      "canonical_name": "Kantou Eco Recycle Co., Ltd.",
+      "members": [
+        {
+          "name": "Kantou Eco Recycle Co., Ltd.",
+          "identifier": "Commercial Registration Number  060001\u2010016749",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-20032",
+            "merger_name": "Nojima Corporation \u2013 Hitachi Global Life Solutions and Ar\u00e7elik Hitachi Home Appliances",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-27T12:00:00Z",
+            "determination_date": "2026-08-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "maxlife-care-corp-pty-ltd": {
+      "id": "maxlife-care-corp-pty-ltd",
+      "canonical_name": "Maxlife Care Corp Pty Ltd",
+      "members": [
+        {
+          "name": "MAXLIFE CARE CORP PTY LTD",
+          "identifier": "22 644 546 494",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-05014",
+            "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "rac-insurance-pty-limited": {
+      "id": "rac-insurance-pty-limited",
+      "canonical_name": "Rac Insurance Pty Limited",
+      "members": [
+        {
+          "name": "RAC INSURANCE PTY LIMITED",
+          "identifier": "59 094 685 882",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-65005",
+            "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 2",
+            "notification_date": "2026-03-03T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 1,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": {
+        "average_days": 44.0,
+        "median_days": 44,
+        "average_business_days": 29.0,
+        "median_business_days": 29,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

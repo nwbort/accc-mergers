@@ -1,0 +1,388 @@
+{
+  "shard": 195,
+  "shard_count": 256,
+  "parties": {
+    "26north-partners-lp": {
+      "id": "26north-partners-lp",
+      "canonical_name": "26North Partners LP",
+      "members": [
+        {
+          "name": "26North Partners LP",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-65014",
+            "merger_name": "26North Funds - Intermedia Cloud Communications",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-20T12:00:00Z",
+            "determination_date": "2026-05-13T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "dione-topco-ltd": {
+      "id": "dione-topco-ltd",
+      "canonical_name": "Dione Topco Ltd.",
+      "members": [
+        {
+          "name": "Dione Topco Ltd.",
+          "identifier": "Registration number 137864 (Jersey)",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-01113",
+            "merger_name": "Hillhouse \u2013 LRQA Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-02T12:00:00Z",
+            "determination_date": "2026-07-20T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "hartley-financial-pty-ltd": {
+      "id": "hartley-financial-pty-ltd",
+      "canonical_name": "Hartley Financial Pty. Ltd.",
+      "members": [
+        {
+          "name": "HARTLEY FINANCIAL PTY. LTD.",
+          "identifier": "22 124 384 274",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-85041",
+            "merger_name": "AGS Financial Group - Hartley Financial Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-28T12:00:00Z",
+            "determination_date": "2026-08-26T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    },
+    "openai": {
+      "id": "openai",
+      "canonical_name": "OpenAI",
+      "members": [
+        {
+          "name": "OpenAI Foundation",
+          "identifier": "Delaware File Number  5902936",
+          "identifier_type": null
+        },
+        {
+          "name": "OpenAI Foundation",
+          "identifier": "Delaware file number  5902936",
+          "identifier_type": null
+        },
+        {
+          "name": "OpenAI Group PBC",
+          "identifier": "Delaware File Number  10381551",
+          "identifier_type": null
+        },
+        {
+          "name": "OpenAI Group PBC",
+          "identifier": "Delaware file number  10381551",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-90020",
+            "merger_name": "OpenAI - Ona",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-26T12:00:00Z",
+            "determination_date": "2026-07-21T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-25021",
+            "merger_name": "OpenAI - Tomoro",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-12T12:00:00Z",
+            "determination_date": "2026-06-09T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 2,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 26.5,
+        "median_days": 26.5,
+        "average_business_days": 17.5,
+        "median_business_days": 17.5,
+        "completed_count": 2
+      },
+      "waiver_duration": null
+    },
+    "peter-mallouk": {
+      "id": "peter-mallouk",
+      "canonical_name": "Peter Mallouk",
+      "members": [
+        {
+          "name": "Peter Mallouk",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-40016",
+            "merger_name": "Creative Planning \u2013 MASECO",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-10T12:00:00Z",
+            "determination_date": "2026-04-23T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "redcape-hospitality-pty-ltd": {
+      "id": "redcape-hospitality-pty-ltd",
+      "canonical_name": "Redcape Hospitality Pty Ltd",
+      "members": [
+        {
+          "name": "REDCAPE HOSPITALITY PTY LTD",
+          "identifier": "34 619 297 228",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-25027",
+            "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Arthouse Hotel",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-01T12:00:00Z",
+            "determination_date": "2026-06-22T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-60017",
+            "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Entrance Social Club",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-16T12:00:00Z",
+            "determination_date": "2026-04-30T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.5,
+        "median_days": 17.5,
+        "average_business_days": 11.5,
+        "median_business_days": 11.5,
+        "completed_count": 2
+      }
+    },
+    "redcat-bidco-pty-ltd": {
+      "id": "redcat-bidco-pty-ltd",
+      "canonical_name": "Redcat Bidco Pty Ltd",
+      "members": [
+        {
+          "name": "Redcat Bidco Pty Ltd",
+          "identifier": "683 178 921",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-05014",
+            "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "the-trustee-for-energy-bay-kappa-fund": {
+      "id": "the-trustee-for-energy-bay-kappa-fund",
+      "canonical_name": "The Trustee for Energy Bay Kappa Fund",
+      "members": [
+        {
+          "name": "The Trustee for Energy Bay Kappa Fund",
+          "identifier": "37 949 909 024",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-65023",
+            "merger_name": "Energy Bay - certain assets required to operate embedded networks for Centuria Capital Group members",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-10T12:00:00Z",
+            "determination_date": "2026-08-05T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-01094",
+            "merger_name": "Energy Bay - Rights to install/operate embedded networks and other assets from Centuria Capital Group members",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-02T12:00:00Z",
+            "determination_date": "2026-05-11T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 39.0,
+        "median_days": 39,
+        "average_business_days": 24.0,
+        "median_business_days": 24,
+        "completed_count": 1
+      }
+    }
+  }
+}

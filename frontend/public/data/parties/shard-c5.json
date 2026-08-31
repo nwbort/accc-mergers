@@ -1,0 +1,397 @@
+{
+  "shard": 197,
+  "shard_count": 256,
+  "parties": {
+    "aeronova-s-l-u": {
+      "id": "aeronova-s-l-u",
+      "canonical_name": "Aeronova, S.L.U.",
+      "members": [
+        {
+          "name": "Aeronova, S.L.U.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-90016",
+            "merger_name": "Turkish Airlines - Air Europa",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-08T12:00:00Z",
+            "determination_date": "2026-05-29T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "air-europa-suma-miles-s-l-u": {
+      "id": "air-europa-suma-miles-s-l-u",
+      "canonical_name": "Air Europa Suma Miles, S.L.U.",
+      "members": [
+        {
+          "name": "Air Europa Suma Miles, S.L.U.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-90016",
+            "merger_name": "Turkish Airlines - Air Europa",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-08T12:00:00Z",
+            "determination_date": "2026-05-29T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "australian-global-onshore-logistics-pty-ltd": {
+      "id": "australian-global-onshore-logistics-pty-ltd",
+      "canonical_name": "Australian Global Onshore Logistics Pty Ltd",
+      "members": [
+        {
+          "name": "Australian Global Onshore Logistics Pty Ltd",
+          "identifier": "691 961 136",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-90012",
+            "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-13T12:00:00Z",
+            "determination_date": "2026-06-24T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 42.0,
+        "median_days": 42,
+        "average_business_days": 28.0,
+        "median_business_days": 28,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "dysons-mzf-assetco-pty-ltd": {
+      "id": "dysons-mzf-assetco-pty-ltd",
+      "canonical_name": "Dysons Mzf (Assetco) Pty Ltd",
+      "members": [
+        {
+          "name": "DYSONS MZF (ASSETCO) PTY LTD",
+          "identifier": "18 680 323 291",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-35017",
+            "merger_name": "KINETIC - DYSONS BUS SERVICES",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-27T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "esaote-s-p-a": {
+      "id": "esaote-s-p-a",
+      "canonical_name": "Esaote S.p.A.",
+      "members": [
+        {
+          "name": "Esaote S.p.A.",
+          "identifier": "Codice Fiscale/Partita IVA  05131180969",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-05020",
+            "merger_name": "Midea Group \u2013 Esaote",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-07T12:00:00Z",
+            "determination_date": "2026-05-21T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "kings-road-veterinary-surgery-pty-ltd": {
+      "id": "kings-road-veterinary-surgery-pty-ltd",
+      "canonical_name": "Kings Road Veterinary Surgery Pty Ltd",
+      "members": [
+        {
+          "name": "KINGS ROAD VETERINARY SURGERY PTY LTD",
+          "identifier": "89 609 596 910",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-55023",
+            "merger_name": "Vets Central - Claremont Veterinary Surgery",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-22T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-85016",
+            "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-16T12:00:00Z",
+            "determination_date": "2026-04-14T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-75017",
+            "merger_name": "Vets Central - Drovers Vet Hospital",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-31T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 3,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 3,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.333333333333332,
+        "median_days": 13,
+        "average_business_days": 10.0,
+        "median_business_days": 8,
+        "completed_count": 3
+      }
+    },
+    "kj-risk-group-pty-ltd": {
+      "id": "kj-risk-group-pty-ltd",
+      "canonical_name": "Kj Risk Group Pty Ltd",
+      "members": [
+        {
+          "name": "KJ RISK GROUP PTY LTD",
+          "identifier": "15 143 512 387",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-40023",
+            "merger_name": "AUB \u2013 further interest in KJ Risk",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-14T12:00:00Z",
+            "determination_date": "2026-06-02T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 19.0,
+        "median_days": 19,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "rc-bite-bid-co-pty-ltd": {
+      "id": "rc-bite-bid-co-pty-ltd",
+      "canonical_name": "Rc Bite Bid Co Pty Ltd",
+      "members": [
+        {
+          "name": "RC BITE BID CO PTY LTD",
+          "identifier": "698 175 012",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-25032",
+            "merger_name": "River Capital \u2013 YOMG",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-15T12:00:00Z",
+            "determination_date": "2026-06-22T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 7.0,
+        "median_days": 7,
+        "average_business_days": 5.0,
+        "median_business_days": 5,
+        "completed_count": 1
+      }
+    },
+    "spark-institutional-equities-private-limited": {
+      "id": "spark-institutional-equities-private-limited",
+      "canonical_name": "Spark Institutional Equities Private Limited",
+      "members": [
+        {
+          "name": "Spark Institutional Equities Private Limited",
+          "identifier": "CIN U65999TN2022PTC149473",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-80009",
+            "merger_name": "Mizuho \u2013 Avendus",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-07T12:00:00Z",
+            "determination_date": "2026-04-17T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 10.0,
+        "median_days": 10,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    }
+  }
+}

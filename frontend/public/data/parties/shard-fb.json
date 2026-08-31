@@ -1,0 +1,270 @@
+{
+  "shard": 251,
+  "shard_count": 256,
+  "parties": {
+    "armitage-associates-services-pty-ltd": {
+      "id": "armitage-associates-services-pty-ltd",
+      "canonical_name": "Armitage Associates Services Pty Ltd",
+      "members": [
+        {
+          "name": "Armitage Associates Services Pty Ltd",
+          "identifier": "614 677 708",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-05014",
+            "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "ctc-precast-pty-ltd": {
+      "id": "ctc-precast-pty-ltd",
+      "canonical_name": "Ctc Precast Pty Ltd",
+      "members": [
+        {
+          "name": "CTC PRECAST PTY LTD",
+          "identifier": "12 614 966 059",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-01083",
+            "merger_name": "Civilmart \u2013 Taylex",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-25T12:00:00Z",
+            "determination_date": "2026-04-02T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-80011",
+            "merger_name": "CRH - Axius Water",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-24T12:00:00Z",
+            "determination_date": "2026-05-11T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 36.0,
+        "median_days": 36,
+        "average_business_days": 25.0,
+        "median_business_days": 25,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "foxtrot-denmark-bidco-aps": {
+      "id": "foxtrot-denmark-bidco-aps",
+      "canonical_name": "Foxtrot Denmark Bidco ApS",
+      "members": [
+        {
+          "name": "Foxtrot Denmark Bidco ApS",
+          "identifier": "CVR  42580058",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-65030",
+            "merger_name": "CVC Capital Partners \u2013 IFF\u2019s Food Ingredients business",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-23T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "granville-hotel-qld-pty-ltd": {
+      "id": "granville-hotel-qld-pty-ltd",
+      "canonical_name": "Granville Hotel Qld Pty Ltd",
+      "members": [
+        {
+          "name": "GRANVILLE HOTEL QLD PTY LTD",
+          "identifier": "89 649 928 441",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-65017",
+            "merger_name": "Black Rhino Group \u2013 Granville Tavern and Motel and Cambridge Street Bottle Shop & Cellars in Granville, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-12T12:00:00Z",
+            "determination_date": "2026-05-28T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "hep-australia-holdings-pty-ltd": {
+      "id": "hep-australia-holdings-pty-ltd",
+      "canonical_name": "HEP Australia Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "HEP Australia Holdings Pty Ltd",
+          "identifier": "22 129 428 155",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-20005",
+            "merger_name": "H-E Parts International Mining Solutions - Warehouse workshop site in Paget, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-30T12:00:00Z",
+            "determination_date": "2026-02-12T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "three-rivers-purchaser-llc": {
+      "id": "three-rivers-purchaser-llc",
+      "canonical_name": "Three Rivers Purchaser, LLC",
+      "members": [
+        {
+          "name": "Three Rivers Purchaser, LLC",
+          "identifier": "10533455",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-55014",
+            "merger_name": "KPS Capital Partners - Jennmar",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-20T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,211 @@
+{
+  "shard": 47,
+  "shard_count": 256,
+  "parties": {
+    "arena-holdco-pty-ltd": {
+      "id": "arena-holdco-pty-ltd",
+      "canonical_name": "Arena HoldCo Pty Ltd",
+      "members": [
+        {
+          "name": "Arena HoldCo Pty Ltd",
+          "identifier": "693 657 162",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-80001",
+            "merger_name": "Alpine Software Group (ASG) \u2013 PlayHQ",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-19T12:00:00Z",
+            "determination_date": "2026-01-29T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 10.0,
+        "median_days": 10,
+        "average_business_days": 7.0,
+        "median_business_days": 7,
+        "completed_count": 1
+      }
+    },
+    "axius-water-parent-lp": {
+      "id": "axius-water-parent-lp",
+      "canonical_name": "Axius Water Parent Lp",
+      "members": [
+        {
+          "name": "AXIUS WATER PARENT LP",
+          "identifier": "7694921",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-80011",
+            "merger_name": "CRH - Axius Water",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-24T12:00:00Z",
+            "determination_date": "2026-05-11T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "goodman-limited": {
+      "id": "goodman-limited",
+      "canonical_name": "Goodman Limited",
+      "members": [
+        {
+          "name": "GOODMAN LIMITED",
+          "identifier": "69 000 123 071",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-10012",
+            "merger_name": "MassMutual, Rest, Aware Super and Goodman \u2013 Moorabbin Airport",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-21T12:00:00Z",
+            "determination_date": "2026-05-21T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 30.0,
+        "median_days": 30,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "hitachi-appliances-techno-service-ltd": {
+      "id": "hitachi-appliances-techno-service-ltd",
+      "canonical_name": "Hitachi Appliances Techno Service, Ltd.",
+      "members": [
+        {
+          "name": "Hitachi Appliances Techno Service, Ltd.",
+          "identifier": "Commercial Registration Number  050001\u2010023775",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-20032",
+            "merger_name": "Nojima Corporation \u2013 Hitachi Global Life Solutions and Ar\u00e7elik Hitachi Home Appliances",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-27T12:00:00Z",
+            "determination_date": "2026-08-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "racwa-holdings-pty-ltd": {
+      "id": "racwa-holdings-pty-ltd",
+      "canonical_name": "Racwa Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "RACWA HOLDINGS PTY LTD",
+          "identifier": "60 008 985 877",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-65005",
+            "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 2",
+            "notification_date": "2026-03-03T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 1,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": {
+        "average_days": 44.0,
+        "median_days": 44,
+        "average_business_days": 29.0,
+        "median_business_days": 29,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

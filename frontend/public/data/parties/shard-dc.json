@@ -1,0 +1,438 @@
+{
+  "shard": 220,
+  "shard_count": 256,
+  "parties": {
+    "armira-gmbh-co-kg": {
+      "id": "armira-gmbh-co-kg",
+      "canonical_name": "Armira GmbH & Co. KG",
+      "members": [
+        {
+          "name": "Armira GmbH & Co. KG",
+          "identifier": "HRA  92168",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-15033",
+            "merger_name": "Armira and TA Associates \u2013 Intersurgical Aktiengesellschaft AG",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-25T12:00:00Z",
+            "determination_date": "2026-08-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "count-holdings-no-1-pty-ltd": {
+      "id": "count-holdings-no-1-pty-ltd",
+      "canonical_name": "Count Holdings No. 1 Pty Ltd",
+      "members": [
+        {
+          "name": "Count Holdings No. 1 Pty Ltd",
+          "identifier": "70 696 338 995",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-45018",
+            "merger_name": "Count \u2013 Oracle Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-09T12:00:00Z",
+            "determination_date": "2026-07-01T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "findon-swim-school-pty-ltd-as-trustee-for-the-findon-swim-school-trust": {
+      "id": "findon-swim-school-pty-ltd-as-trustee-for-the-findon-swim-school-trust",
+      "canonical_name": "Findon Swim School Pty Ltd as trustee for the Findon Swim School Trust",
+      "members": [
+        {
+          "name": "Findon Swim School Pty Ltd as trustee for the Findon Swim School Trust",
+          "identifier": "608 401 716",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-95032",
+            "merger_name": "State Swim \u2013 Swim Plus",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-06T12:00:00Z",
+            "determination_date": "2026-07-27T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "first-sentier-investors-australia-re-ltd": {
+      "id": "first-sentier-investors-australia-re-ltd",
+      "canonical_name": "First Sentier Investors (Australia) Re Ltd",
+      "members": [
+        {
+          "name": "FIRST SENTIER INVESTORS (AUSTRALIA) RE LTD",
+          "identifier": "13 006 464 428",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-95035",
+            "merger_name": "Igneo Infrastructure Partners \u2013 Green Squares Energy",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-23T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
+    "harvest-pub": {
+      "id": "harvest-pub",
+      "canonical_name": "Harvest Pub",
+      "members": [
+        {
+          "name": "AMAL TRUSTEES PTY LIMITED",
+          "identifier": "98 609 737 064",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "HARVEST PUB OPERATIONS 2 PTY LTD",
+          "identifier": "51 652 748 242",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-40029",
+            "merger_name": "Laundy \u2013 Woy Woy Hotel",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-15T12:00:00Z",
+            "determination_date": "2026-08-13T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-25025",
+            "merger_name": "Laundy \u2013 Woy Woy Hotel",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-19T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "ivera-bidco-b-v": {
+      "id": "ivera-bidco-b-v",
+      "canonical_name": "Ivera Bidco B.V.",
+      "members": [
+        {
+          "name": "Ivera Bidco B.V.",
+          "identifier": "Dutch Commercial Register  42000883",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-20020",
+            "merger_name": "Triton - Integris",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-08T12:00:00Z",
+            "determination_date": "2026-05-25T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "mclean-care-ltd": {
+      "id": "mclean-care-ltd",
+      "canonical_name": "Mclean Care Ltd",
+      "members": [
+        {
+          "name": "MCLEAN CARE LTD",
+          "identifier": "88 124 860 019",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-75047",
+            "merger_name": "Respect Group \u2013 McLean Care residential aged care homes and independent living units",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-14T12:00:00Z",
+            "determination_date": "2026-08-27T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "north-american-construction-group-limited": {
+      "id": "north-american-construction-group-limited",
+      "canonical_name": "North American Construction Group Limited",
+      "members": [
+        {
+          "name": "North American Construction Group Limited",
+          "identifier": "BN 889309654",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-85003",
+            "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-25T12:00:00Z",
+            "determination_date": "2026-03-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "ochre-group-commercial-property-pty-ltd": {
+      "id": "ochre-group-commercial-property-pty-ltd",
+      "canonical_name": "Ochre Group Commercial Property Pty Ltd",
+      "members": [
+        {
+          "name": "Ochre Group Commercial Property Pty Ltd",
+          "identifier": "645 244 882",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-01100",
+            "merger_name": "Ochre Health - Airlie Women's Clinic, VIC",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-12T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "ta-associates-cayman-llc": {
+      "id": "ta-associates-cayman-llc",
+      "canonical_name": "TA Associates Cayman, LLC",
+      "members": [
+        {
+          "name": "TA Associates Cayman, LLC",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-15033",
+            "merger_name": "Armira and TA Associates \u2013 Intersurgical Aktiengesellschaft AG",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-25T12:00:00Z",
+            "determination_date": "2026-08-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    }
+  }
+}

@@ -21,10 +21,18 @@ const ROLE_LABELS = {
 function PartyDetail() {
   const decodedId = useDecodedParam('id');
 
-  const { data, loading, error } = useFetchData(
-    API_ENDPOINTS.partyDetail(decodedId),
-    { cacheKey: `party-${decodedId}` }
+  // Party records are packed into fixed shard buckets, so this fetches the
+  // bucket the id hashes into and picks the record out of it. The bucket is
+  // computed from the id alone (no index lookup), so a party page is still one
+  // request. Caching on the bucket rather than the party is a small bonus:
+  // browsing several parties often reuses an already-fetched bucket.
+  const shardUrl = decodedId ? API_ENDPOINTS.partyShard(decodedId) : null;
+  const { data: shard, loading, error } = useFetchData(
+    shardUrl,
+    { cacheKey: `party-shard-${shardUrl}` }
   );
+
+  const data = shard?.parties?.[decodedId] ?? null;
 
   // Overall all-mergers figures, for comparing this party's Phase 1 duration
   // against the market as a whole. Non-fatal if it fails to load.
@@ -33,11 +41,14 @@ function PartyDetail() {
     data ? { cacheKey: 'dashboard-stats' } : {}
   );
 
-  const isNotFound = error === 'HTTP 404';
+  // Two ways a party can be missing now: its bucket doesn't exist (nothing has
+  // ever hashed there), or the bucket loaded fine but holds no such id. Both
+  // mean the same thing to the reader, so they get the same card.
+  const isNotFound = error === 'HTTP 404' || (!loading && !error && !!shard && !data);
 
   if (loading) return <LoadingSpinner />;
 
-  if (error) {
+  if (error || isNotFound) {
     return (
       <ErrorCard
         title={isNotFound ? 'Party not found' : 'Error loading party'}

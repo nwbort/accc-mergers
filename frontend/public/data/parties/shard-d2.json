@@ -1,0 +1,334 @@
+{
+  "shard": 210,
+  "shard_count": 256,
+  "parties": {
+    "beacon-topco-pty-ltd": {
+      "id": "beacon-topco-pty-ltd",
+      "canonical_name": "Beacon Topco Pty Ltd",
+      "members": [
+        {
+          "name": "BEACON TOPCO PTY LTD",
+          "identifier": "70 682 992 561",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-25008",
+            "merger_name": "Five V Capital - FTP Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-04T12:00:00Z",
+            "determination_date": "2026-03-24T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "cpe-renewables-investment-unit-trust": {
+      "id": "cpe-renewables-investment-unit-trust",
+      "canonical_name": "CPE Renewables Investment Unit Trust",
+      "members": [
+        {
+          "name": "CPE Renewables Investment Unit Trust",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-95035",
+            "merger_name": "Igneo Infrastructure Partners \u2013 Green Squares Energy",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-23T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
+    "five-v-horizons-pty-ltd": {
+      "id": "five-v-horizons-pty-ltd",
+      "canonical_name": "Five V Horizons Pty Ltd",
+      "members": [
+        {
+          "name": "Five V Horizons Pty Ltd",
+          "identifier": "665 223 192",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-25008",
+            "merger_name": "Five V Capital - FTP Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-04T12:00:00Z",
+            "determination_date": "2026-03-24T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "gameon-holdings-pty-ltd": {
+      "id": "gameon-holdings-pty-ltd",
+      "canonical_name": "Gameon Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "GAMEON HOLDINGS PTY LTD",
+          "identifier": "47 629 422 206",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-80001",
+            "merger_name": "Alpine Software Group (ASG) \u2013 PlayHQ",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-19T12:00:00Z",
+            "determination_date": "2026-01-29T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 10.0,
+        "median_days": 10,
+        "average_business_days": 7.0,
+        "median_business_days": 7,
+        "completed_count": 1
+      }
+    },
+    "geoquest-systems-bv": {
+      "id": "geoquest-systems-bv",
+      "canonical_name": "Geoquest Systems BV",
+      "members": [
+        {
+          "name": "Geoquest Systems BV",
+          "identifier": "KVK  27176644",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-75027",
+            "merger_name": "SLB \u2013 S&P Global\u2019s Geoscience Software Portfolio",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-22T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "ikea-pty-limited": {
+      "id": "ikea-pty-limited",
+      "canonical_name": "Ikea Pty Limited",
+      "members": [
+        {
+          "name": "IKEA PTY LIMITED",
+          "identifier": "84 006 270 757",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-80030",
+            "merger_name": "IKEA Australia \u2013 IP rights from Inter IKEA under new franchise agreement package",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-15T12:00:00Z",
+            "determination_date": "2026-08-03T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 19.0,
+        "median_days": 19,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "mulpha-international-bhd": {
+      "id": "mulpha-international-bhd",
+      "canonical_name": "Mulpha International Bhd",
+      "members": [
+        {
+          "name": "Mulpha International Bhd",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-10011",
+            "merger_name": "Wentworth Capital \u2013 Novotel Darling Harbour and Ibis Darling Harbour",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-12T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "oakley-eloa-luxco-s-r-l": {
+      "id": "oakley-eloa-luxco-s-r-l",
+      "canonical_name": "Oakley Eloa Luxco S.\u00e0 r.l.",
+      "members": [
+        {
+          "name": "Oakley Eloa Luxco S.\u00e0 r.l.",
+          "identifier": "Luxembourg registered number  B304186",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-01108",
+            "merger_name": "Oakley Capital \u2013 XTEL",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-12T12:00:00Z",
+            "determination_date": "2026-06-30T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    }
+  }
+}

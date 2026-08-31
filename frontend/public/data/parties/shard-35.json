@@ -1,0 +1,427 @@
+{
+  "shard": 53,
+  "shard_count": 256,
+  "parties": {
+    "aub-group": {
+      "id": "aub-group",
+      "canonical_name": "AUB Group",
+      "members": [
+        {
+          "name": "AUB GROUP LIMITED",
+          "identifier": "60 000 000 715",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "AUSTAGENCIES PTY LTD",
+          "identifier": "76 006 090 464",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-05038",
+            "merger_name": "AUB \u2013 further interest in Sura Technology",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-15T12:00:00Z",
+            "determination_date": "2026-08-04T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-40023",
+            "merger_name": "AUB \u2013 further interest in KJ Risk",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-14T12:00:00Z",
+            "determination_date": "2026-06-02T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 19.5,
+        "median_days": 19.5,
+        "average_business_days": 13.0,
+        "median_business_days": 13.0,
+        "completed_count": 2
+      }
+    },
+    "craig-mostyn-farms-pty-ltd": {
+      "id": "craig-mostyn-farms-pty-ltd",
+      "canonical_name": "Craig Mostyn Farms Pty Ltd",
+      "members": [
+        {
+          "name": "CRAIG MOSTYN FARMS PTY LTD",
+          "identifier": "96 127 068 115",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-60007",
+            "merger_name": "Craig Mostyn \u2013 Patmore Feeds",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-20T12:00:00Z",
+            "determination_date": "2026-03-19T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "ekahau-oy": {
+      "id": "ekahau-oy",
+      "canonical_name": "Ekahau OY",
+      "members": [
+        {
+          "name": "Ekahau OY",
+          "identifier": "Business ID  16108964",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-10013",
+            "merger_name": "Accenture - Ziff Davis' connectivity business",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-17T12:00:00Z",
+            "determination_date": "2026-05-14T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "frasers-group-plc": {
+      "id": "frasers-group-plc",
+      "canonical_name": "Frasers Group plc",
+      "members": [
+        {
+          "name": "Frasers Group plc",
+          "identifier": "Company number  06035106",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-30008",
+            "merger_name": "Frasers Group \u2013 Accent Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-19T12:00:00Z",
+            "determination_date": "2026-06-15T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "ryan-jones": {
+      "id": "ryan-jones",
+      "canonical_name": "Ryan Jones",
+      "members": [
+        {
+          "name": "Ryan Jones",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-75018",
+            "merger_name": "WPF Duratec - Pacific Welding (Davhold Australia)",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-04T12:00:00Z",
+            "determination_date": "2026-06-09T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 36.0,
+        "median_days": 36,
+        "average_business_days": 24.0,
+        "median_business_days": 24,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "scur-alpha-2068-gmbh": {
+      "id": "scur-alpha-2068-gmbh",
+      "canonical_name": "SCUR-Alpha 2068 GmbH",
+      "members": [
+        {
+          "name": "SCUR-Alpha 2068 GmbH",
+          "identifier": "HRB  313295",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-85043",
+            "merger_name": "Lone Star Funds - ContiTech",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-20T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "skyshield-us-bidco-limited": {
+      "id": "skyshield-us-bidco-limited",
+      "canonical_name": "Skyshield US Bidco Limited",
+      "members": [
+        {
+          "name": "Skyshield US Bidco Limited",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-40003",
+            "merger_name": "CVC Capital Partners \u2013 Smiths Detection Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-16T12:00:00Z",
+            "determination_date": "2026-01-30T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "smile-partners-knox-city-pty-ltd": {
+      "id": "smile-partners-knox-city-pty-ltd",
+      "canonical_name": "Smile Partners (Knox City) Pty Ltd",
+      "members": [
+        {
+          "name": "SMILE PARTNERS (KNOX CITY) PTY LTD",
+          "identifier": "36 616 447 646",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-05014",
+            "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "yarn-mesh-nz-limited": {
+      "id": "yarn-mesh-nz-limited",
+      "canonical_name": "Yarn Mesh NZ Limited",
+      "members": [
+        {
+          "name": "Yarn Mesh NZ Limited",
+          "identifier": "CN  8033621",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25008",
+            "merger_name": "Five V Capital - FTP Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-04T12:00:00Z",
+            "determination_date": "2026-03-24T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "yarranbrook-feedlot-land": {
+      "id": "yarranbrook-feedlot-land",
+      "canonical_name": "Yarranbrook Feedlot land",
+      "members": [
+        {
+          "name": "Yarranbrook Feedlot land",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-50005",
+            "merger_name": "Allied Beef - Lease of Yarranbrook Feedlot",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-13T12:00:00Z",
+            "determination_date": "2026-03-06T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    }
+  }
+}

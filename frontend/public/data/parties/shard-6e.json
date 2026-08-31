@@ -1,0 +1,293 @@
+{
+  "shard": 110,
+  "shard_count": 256,
+  "parties": {
+    "993-nominees-no-18-pty-ltd": {
+      "id": "993-nominees-no-18-pty-ltd",
+      "canonical_name": "993 Nominees No. 18 Pty Ltd",
+      "members": [
+        {
+          "name": "993 NOMINEES NO. 18 PTY LTD",
+          "identifier": "53 698 344 857",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-45025",
+            "merger_name": "Acclime Corporate Services Australia \u2013 Polar 993 Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-07T12:00:00Z",
+            "determination_date": "2026-08-21T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "arcline-capital-partners-ii-a-lp": {
+      "id": "arcline-capital-partners-ii-a-lp",
+      "canonical_name": "Arcline Capital Partners II-A LP",
+      "members": [
+        {
+          "name": "Arcline Capital Partners II-A LP",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-55009",
+            "merger_name": "Resonetics \u2013 Resolution Medical",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-26T12:00:00Z",
+            "determination_date": "2026-03-11T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "elimbah-land-pty-ltd": {
+      "id": "elimbah-land-pty-ltd",
+      "canonical_name": "Elimbah Land Pty Ltd",
+      "members": [
+        {
+          "name": "ELIMBAH LAND PTY LTD",
+          "identifier": "24 694 564 899",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-35024",
+            "merger_name": "HB Land and Satterley \u2013 Elimbah Land Joint Venture",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-09T12:00:00Z",
+            "determination_date": "2026-07-30T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "hupco-parentco-pty-ltd": {
+      "id": "hupco-parentco-pty-ltd",
+      "canonical_name": "Hupco Parentco Pty Ltd",
+      "members": [
+        {
+          "name": "HUPCO PARENTCO PTY LTD",
+          "identifier": "698 725 816",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-05029",
+            "merger_name": "HupCo \u2013 AMES Australasia",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-29T12:00:00Z",
+            "determination_date": "2026-07-17T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "service-stream-maintenance-pty-ltd": {
+      "id": "service-stream-maintenance-pty-ltd",
+      "canonical_name": "Service Stream Maintenance Pty Ltd",
+      "members": [
+        {
+          "name": "SERVICE STREAM MAINTENANCE PTY LTD",
+          "identifier": "87 081 540 847",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-50022",
+            "merger_name": "Service Stream \u2013 RiE",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-11T12:00:00Z",
+            "determination_date": "2026-07-03T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "smile-partners-gold-coast-pty-ltd": {
+      "id": "smile-partners-gold-coast-pty-ltd",
+      "canonical_name": "Smile Partners (Gold Coast) Pty Ltd",
+      "members": [
+        {
+          "name": "SMILE PARTNERS (GOLD COAST) PTY LTD",
+          "identifier": "73 669 437 656",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-05014",
+            "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "western-plant-hire-wa-pty-ltd": {
+      "id": "western-plant-hire-wa-pty-ltd",
+      "canonical_name": "Western Plant Hire (Wa) Pty Ltd",
+      "members": [
+        {
+          "name": "WESTERN PLANT HIRE (WA) PTY LTD",
+          "identifier": "74 643 771 920",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-85003",
+            "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-25T12:00:00Z",
+            "determination_date": "2026-03-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

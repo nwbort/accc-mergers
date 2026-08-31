@@ -1,0 +1,386 @@
+{
+  "shard": 182,
+  "shard_count": 256,
+  "parties": {
+    "c-mcmahon-enterprises-pty-ltd": {
+      "id": "c-mcmahon-enterprises-pty-ltd",
+      "canonical_name": "C McMahon Enterprises Pty Ltd",
+      "members": [
+        {
+          "name": "C McMahon Enterprises Pty Ltd",
+          "identifier": "115 024 854",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "C. McMahon Enterprises Pty Ltd",
+          "identifier": "115 024 854",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-75036",
+            "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-25T12:00:00Z",
+            "determination_date": null
+          },
+          {
+            "merger_id": "WA-20015",
+            "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-13T12:00:00Z",
+            "determination_date": "2026-05-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "delta-specialised-energy-pty-ltd": {
+      "id": "delta-specialised-energy-pty-ltd",
+      "canonical_name": "Delta Specialised Energy Pty Ltd",
+      "members": [
+        {
+          "name": "DELTA SPECIALISED ENERGY PTY LTD",
+          "identifier": "11 624 642 682",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-60004",
+            "merger_name": "IOR - Delta Specialised Energy assets",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-26T12:00:00Z",
+            "determination_date": "2026-03-25T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "google-llc": {
+      "id": "google-llc",
+      "canonical_name": "Google",
+      "members": [
+        {
+          "name": "GOOGLE AUSTRALIA PTY LTD",
+          "identifier": "33 102 417 032",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Google LLC",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Google LLC",
+          "identifier": "FEIN 770493581",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-95026",
+            "merger_name": "Google Australia \u2013 indefeasible rights to use terrestrial dark fibre from Telstra",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-12T12:00:00Z",
+            "determination_date": "2026-07-13T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-15002",
+            "merger_name": "Google - Wiz",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-01-09T12:00:00Z",
+            "determination_date": "2026-02-19T12:00:00Z"
+          }
+        ],
+        "target": [
+          {
+            "merger_id": "WA-40030",
+            "merger_name": "Telstra \u2013 indefeasible rights over dark fibre on Tabua, Proa and Bulikula subsea cables",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-12T12:00:00Z",
+            "determination_date": "2026-07-13T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 3,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 41.0,
+        "median_days": 41,
+        "average_business_days": 28.0,
+        "median_business_days": 28,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 31.0,
+        "median_days": 31.0,
+        "average_business_days": 21.0,
+        "median_business_days": 21.0,
+        "completed_count": 2
+      }
+    },
+    "inter-beteiligungsverwaltungs-gesellschaft-mbh": {
+      "id": "inter-beteiligungsverwaltungs-gesellschaft-mbh",
+      "canonical_name": "Inter Beteiligungsverwaltungs-Gesellschaft mbH",
+      "members": [
+        {
+          "name": "Inter Beteiligungsverwaltungs -Gesellschaft mbH",
+          "identifier": "Germany registration number (HRB): 35906",
+          "identifier_type": null
+        },
+        {
+          "name": "Inter Beteiligungsverwaltungs-Gesellschaft mbH",
+          "identifier": "Germany registration number (HRB): 35906",
+          "identifier_type": null
+        },
+        {
+          "name": "Inter Beteiligungsverwaltungs-Gesellschaft mbH",
+          "identifier": "HRB  35906",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-80016",
+            "merger_name": "Henkel \u2013 Olaplex",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-22T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-45007",
+            "merger_name": "Henkel \u2013 Stahl",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-18T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-40005",
+            "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-18T12:00:00Z",
+            "determination_date": "2026-03-12T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 3,
+      "phase_1_count": 2,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.5,
+        "median_days": 24.5,
+        "average_business_days": 16.0,
+        "median_business_days": 16.0,
+        "completed_count": 2
+      },
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "precise-plumbing-pty-ltd": {
+      "id": "precise-plumbing-pty-ltd",
+      "canonical_name": "Precise Plumbing Pty Ltd",
+      "members": [
+        {
+          "name": "PRECISE PLUMBING PTY LTD",
+          "identifier": "22 096 631 202",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-95010",
+            "merger_name": "Lighthouse - Precise Services Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-23T12:00:00Z",
+            "determination_date": "2026-04-13T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "redbran-pty-limited": {
+      "id": "redbran-pty-limited",
+      "canonical_name": "Redbran Pty. Limited",
+      "members": [
+        {
+          "name": "REDBRAN PTY. LIMITED",
+          "identifier": "34 003 920 232",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-60017",
+            "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Entrance Social Club",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-16T12:00:00Z",
+            "determination_date": "2026-04-30T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "wentworth-inn-opco-i-pty-ltd": {
+      "id": "wentworth-inn-opco-i-pty-ltd",
+      "canonical_name": "Wentworth Inn OpCo I Pty Ltd",
+      "members": [
+        {
+          "name": "Wentworth Inn OpCo I Pty Ltd",
+          "identifier": "695 554 253",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-10011",
+            "merger_name": "Wentworth Capital \u2013 Novotel Darling Harbour and Ibis Darling Harbour",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-12T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    }
+  }
+}

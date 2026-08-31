@@ -1,0 +1,328 @@
+{
+  "shard": 40,
+  "shard_count": 256,
+  "parties": {
+    "chevron-australia-pty-ltd": {
+      "id": "chevron-australia-pty-ltd",
+      "canonical_name": "Chevron Australia Pty Ltd",
+      "members": [
+        {
+          "name": "CHEVRON AUSTRALIA PTY LTD",
+          "identifier": "29 086 197 757",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-20034",
+            "merger_name": "Chevron - Woodside asset swap",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-18T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "classpass-aggregator-llc": {
+      "id": "classpass-aggregator-llc",
+      "canonical_name": "ClassPass Aggregator, LLC",
+      "members": [
+        {
+          "name": "ClassPass Aggregator, LLC",
+          "identifier": "DE File number: 6177870",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-75006",
+            "merger_name": "Playlist \u2013 EGYM",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-05T12:00:00Z",
+            "determination_date": "2026-02-19T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "export-finance-and-insurance-corp": {
+      "id": "export-finance-and-insurance-corp",
+      "canonical_name": "Export Finance And Insurance Corp",
+      "members": [
+        {
+          "name": "EXPORT FINANCE AND INSURANCE CORP",
+          "identifier": "96 874 024 697",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-75022",
+            "merger_name": "United States\u2013Australia Gallium",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-14T12:00:00Z",
+            "determination_date": "2026-05-21T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 7.0,
+        "median_days": 7,
+        "average_business_days": 5.0,
+        "median_business_days": 5,
+        "completed_count": 1
+      }
+    },
+    "findex-aust-pty-ltd": {
+      "id": "findex-aust-pty-ltd",
+      "canonical_name": "Findex (Aust) Pty Ltd",
+      "members": [
+        {
+          "name": "Findex (Aust) Pty Ltd",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-90025",
+            "merger_name": "KKR - Crowe",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-25T12:00:00Z",
+            "determination_date": "2026-07-15T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "jennmar-intermediate-holdings-inc": {
+      "id": "jennmar-intermediate-holdings-inc",
+      "canonical_name": "Jennmar Intermediate Holdings, Inc.",
+      "members": [
+        {
+          "name": "Jennmar Intermediate Holdings, Inc.",
+          "identifier": "990520173",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-55014",
+            "merger_name": "KPS Capital Partners - Jennmar",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-20T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "m1-topco-pty-ltd": {
+      "id": "m1-topco-pty-ltd",
+      "canonical_name": "M1 Topco Pty Ltd",
+      "members": [
+        {
+          "name": "M1 TOPCO PTY LTD",
+          "identifier": "99 663 463 116",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-90006",
+            "merger_name": "CARe \u2013 MotorOne Autobody",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-06T12:00:00Z",
+            "determination_date": "2026-03-30T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "macquarie-leasing-pty-ltd": {
+      "id": "macquarie-leasing-pty-ltd",
+      "canonical_name": "Macquarie Leasing Pty Ltd",
+      "members": [
+        {
+          "name": "MACQUARIE LEASING PTY LTD",
+          "identifier": "38 002 674 982",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-35015",
+            "merger_name": "Allied Retail Finance \u2013 automotive retail finance assets of Macquarie Leasing",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-24T12:00:00Z",
+            "determination_date": "2026-05-11T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "playhq-sports-uk-limited": {
+      "id": "playhq-sports-uk-limited",
+      "canonical_name": "PlayHQ Sports UK Limited",
+      "members": [
+        {
+          "name": "PlayHQ Sports UK Limited",
+          "identifier": "UK registered company  16260012",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-80001",
+            "merger_name": "Alpine Software Group (ASG) \u2013 PlayHQ",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-19T12:00:00Z",
+            "determination_date": "2026-01-29T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 10.0,
+        "median_days": 10,
+        "average_business_days": 7.0,
+        "median_business_days": 7,
+        "completed_count": 1
+      }
+    }
+  }
+}

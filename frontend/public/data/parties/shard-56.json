@@ -1,0 +1,282 @@
+{
+  "shard": 86,
+  "shard_count": 256,
+  "parties": {
+    "blackline-safety-corp": {
+      "id": "blackline-safety-corp",
+      "canonical_name": "Blackline Safety Corp.",
+      "members": [
+        {
+          "name": "BLACKLINE SAFETY AUSTRALIA PTY LTD",
+          "identifier": "29 623 874 073",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Blackline Safety Corp.",
+          "identifier": "Corporate access number 2016380855 and business number 860968577",
+          "identifier_type": null
+        },
+        {
+          "name": "Blackline Safety Europe GmbH",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Blackline Safety Europe Ltd",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Blackline Safety Europe SAS",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Blackline Safety Middle East Wireless  Equipment Trading \u2013 L.L.C. \u2013 S.P.C.",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Blackline Safety USA Corp.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-85025",
+            "merger_name": "Francisco Partners - Blackline Safety",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-24T12:00:00Z",
+            "determination_date": "2026-05-06T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 12.0,
+        "median_days": 12,
+        "average_business_days": 7.0,
+        "median_business_days": 7,
+        "completed_count": 1
+      }
+    },
+    "enfusion-australia-pty-ltd": {
+      "id": "enfusion-australia-pty-ltd",
+      "canonical_name": "Enfusion (Australia) Pty. Ltd.",
+      "members": [
+        {
+          "name": "ENFUSION (AUSTRALIA) PTY. LTD.",
+          "identifier": "87 652 322 748",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-40010",
+            "merger_name": "Permira and Warburg Pincus - Clearwater Analytics",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-11T12:00:00Z",
+            "determination_date": "2026-04-01T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "fos-acquisition-corporation": {
+      "id": "fos-acquisition-corporation",
+      "canonical_name": "Fos Acquisition Corporation",
+      "members": [
+        {
+          "name": "Fos Acquisition Corporation",
+          "identifier": "Corporation No  1001607698",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-80020",
+            "merger_name": "Platinum Equity Group - LMPG",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-22T12:00:00Z",
+            "determination_date": "2026-06-10T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 19.0,
+        "median_days": 19,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "gb-wfc-france-sas-trading-as-world-freight-company-or-wfc": {
+      "id": "gb-wfc-france-sas-trading-as-world-freight-company-or-wfc",
+      "canonical_name": "GB WFC France SAS (trading as \u201cWorld Freight Company\u201d or \u201cWFC\u201d)",
+      "members": [
+        {
+          "name": "GB WFC France SAS (trading as \u201cWorld Freight Company\u201d or \u201cWFC\u201d)",
+          "identifier": "Registered Number  809546 971",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-55025",
+            "merger_name": "Brookfield \u2013 World Freight Company",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-09T12:00:00Z",
+            "determination_date": "2026-06-26T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "ris-safety-holdings-pty-ltd": {
+      "id": "ris-safety-holdings-pty-ltd",
+      "canonical_name": "Ris Safety Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "RIS SAFETY HOLDINGS PTY LTD",
+          "identifier": "19 668 836 351",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-65004",
+            "merger_name": "Kee Safety - RIS Safety",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-02T12:00:00Z",
+            "determination_date": "2026-02-13T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 11.0,
+        "median_days": 11,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "unite-holdco-llc": {
+      "id": "unite-holdco-llc",
+      "canonical_name": "Unite Holdco LLC",
+      "members": [
+        {
+          "name": "Unite Holdco LLC",
+          "identifier": "Delaware file number  10564239",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-65014",
+            "merger_name": "26North Funds - Intermedia Cloud Communications",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-20T12:00:00Z",
+            "determination_date": "2026-05-13T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    }
+  }
+}

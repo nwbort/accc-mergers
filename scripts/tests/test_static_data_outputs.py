@@ -5,6 +5,7 @@ valid, schema-correct JSON.
 """
 
 import json
+import re
 import sys
 import unittest.mock
 from datetime import date
@@ -15,6 +16,7 @@ sys.modules.setdefault('markdownify', unittest.mock.MagicMock())
 sys.modules.setdefault('requests', unittest.mock.MagicMock())
 
 from scripts.constants import merger_status
+from scripts.shard import SHARD_COUNT, party_shard, party_shard_name
 from scripts.generate.static_data import anzsic, durations
 from scripts.generate.static_data.enrichment import enrich_merger
 from scripts.generate.static_data.outputs import (
@@ -2662,35 +2664,119 @@ class TestPartiesGenerateIndex:
 
 
 class TestPartiesDetailFiles:
-    def test_writes_one_file_per_group(self, tmp_path):
+    """generate_detail_files — party records packed into shard buckets.
+
+    The bucketing itself is pinned by scripts/tests/test_shard.py against the
+    fixture shared with the frontend; these cover the packing, the payloads and
+    the pruning.
+    """
+
+    @staticmethod
+    def _find_party(tmp_path, party_id):
+        """The party's record, or None if it isn't published.
+
+        Two ways it can be absent: the bucket holds other parties but not this
+        one, or the bucket is gone entirely because this was the last party in
+        it (empty buckets aren't written, and prune removes the stale file).
+        """
+        path = tmp_path / 'parties' / party_shard_name(party_id)
+        if not path.exists():
+            return None
+        with open(path) as f:
+            return json.load(f)['parties'].get(party_id)
+
+    @classmethod
+    def _load_party(cls, tmp_path, party_id):
+        """Like :meth:`_find_party` but asserts the party is there."""
+        record = cls._find_party(tmp_path, party_id)
+        assert record is not None, f"{party_id} not published"
+        return record
+
+    def test_writes_every_group_into_its_bucket(self, tmp_path):
         groups = parties.build_party_pages(_party_mergers_fixture(), [_COLES_GROUP])
         n = parties.generate_detail_files(groups, tmp_path)
         assert n == len(groups)
-        written = {p.stem for p in (tmp_path / 'parties').glob('*.json')}
-        assert written == {g['id'] for g in groups}
 
-    def test_prunes_page_of_a_party_folded_into_a_group(self, tmp_path):
-        # Before: COLES SUPERMARKETS is ungrouped and has its own page.
+        found = {}
+        for path in (tmp_path / 'parties').glob('shard-*.json'):
+            with open(path) as f:
+                payload = json.load(f)
+            # Every record must sit in the bucket its own id hashes to, or the
+            # frontend — which computes the bucket rather than looking it up —
+            # will ask for the wrong file.
+            for party_id in payload['parties']:
+                assert party_shard_name(party_id) == path.name
+            found.update(payload['parties'])
+
+        assert set(found) == {g['id'] for g in groups}
+
+    def test_writes_only_shard_files(self, tmp_path):
+        groups = parties.build_party_pages(_party_mergers_fixture(), [_COLES_GROUP])
+        parties.generate_detail_files(groups, tmp_path)
+        names = {p.name for p in (tmp_path / 'parties').glob('*.json')}
+        assert names, "no party files written"
+        assert all(re.fullmatch(r'shard-[0-9a-f]{2}\.json', n) for n in names)
+        # Far fewer files than parties — the whole point of the exercise.
+        assert len(names) <= len(groups)
+
+    def test_bucket_payload_shape(self, tmp_path):
+        groups = parties.build_party_pages(_party_mergers_fixture(), [_COLES_GROUP])
+        parties.generate_detail_files(groups, tmp_path)
+        with open(tmp_path / 'parties' / party_shard_name('coles')) as f:
+            payload = json.load(f)
+        assert payload['shard'] == party_shard('coles')
+        assert payload['shard_count'] == SHARD_COUNT
+        assert 'coles' in payload['parties']
+
+    def test_output_is_deterministic(self, tmp_path):
+        """Buckets are rewritten wholesale every run, so unstable ordering would
+        churn the whole directory in git on every pipeline run."""
+        groups = parties.build_party_pages(_party_mergers_fixture(), [_COLES_GROUP])
+        parties.generate_detail_files(groups, tmp_path)
+        first = {p.name: p.read_text() for p in (tmp_path / 'parties').glob('*.json')}
+        parties.generate_detail_files(groups, tmp_path)
+        second = {p.name: p.read_text() for p in (tmp_path / 'parties').glob('*.json')}
+        assert first == second
+
+    def test_prunes_party_folded_into_a_group(self, tmp_path):
+        # Before: COLES SUPERMARKETS is ungrouped and has its own record.
         no_group = parties.build_party_pages(_party_mergers_fixture(), [])
         parties.generate_detail_files(no_group, tmp_path)
         supermarkets_id = next(
             g['id'] for g in no_group
             if 'COLES SUPERMARKETS AUSTRALIA PTY LTD' in [m['name'] for m in g['members']]
         )
-        assert (tmp_path / 'parties' / f'{supermarkets_id}.json').exists()
+        assert self._load_party(tmp_path, supermarkets_id)['id'] == supermarkets_id
 
-        # After: it's declared a member of the Coles group, so its standalone
-        # page is retired in favour of coles.json.
+        # After: it's declared a member of the Coles group, so it stops being
+        # written and only coles remains. Under the old layout this needed an
+        # explicit prune of its standalone file; now it just isn't packed into
+        # a bucket, and the bucket itself is pruned if that emptied it.
         grouped = parties.build_party_pages(_party_mergers_fixture(), [_COLES_GROUP])
         parties.generate_detail_files(grouped, tmp_path)
-        assert not (tmp_path / 'parties' / f'{supermarkets_id}.json').exists()
-        assert (tmp_path / 'parties' / 'coles.json').exists()
+        assert self._find_party(tmp_path, supermarkets_id) is None
+        assert self._load_party(tmp_path, 'coles')['canonical_name'] == 'Coles Group'
 
-    def test_coles_file_contents(self, tmp_path):
+    def test_prunes_legacy_per_party_files(self, tmp_path):
+        """The first sharded run has to clear out the one-file-per-party layout
+        it replaces, or the old files keep being served and keep costing us the
+        deployment budget this change exists to reclaim."""
+        parties_dir = tmp_path / 'parties'
+        parties_dir.mkdir()
+        (parties_dir / 'coles.json').write_text('{"id": "coles"}')
+        (parties_dir / 'some-old-party.json').write_text('{"id": "some-old-party"}')
+
         groups = parties.build_party_pages(_party_mergers_fixture(), [_COLES_GROUP])
         parties.generate_detail_files(groups, tmp_path)
-        with open(tmp_path / 'parties' / 'coles.json') as f:
-            data = json.load(f)
+
+        assert not (parties_dir / 'coles.json').exists()
+        assert not (parties_dir / 'some-old-party.json').exists()
+        assert list(parties_dir.glob('shard-*.json'))
+
+    def test_coles_record_contents(self, tmp_path):
+        groups = parties.build_party_pages(_party_mergers_fixture(), [_COLES_GROUP])
+        parties.generate_detail_files(groups, tmp_path)
+        data = self._load_party(tmp_path, 'coles')
         assert data['canonical_name'] == 'Coles Group'
         assert data['merger_count'] == 2
         assert data['phase_1_count'] == 1
@@ -2698,12 +2784,11 @@ class TestPartiesDetailFiles:
         assert {m['merger_id'] for m in data['mergers']['acquirer']} == {'MN-1001', 'MN-1002'}
         assert data['mergers']['target'] == []
 
-    def test_single_party_file_contents(self, tmp_path):
+    def test_single_party_record_contents(self, tmp_path):
         groups = parties.build_party_pages(_party_mergers_fixture(), [_COLES_GROUP])
         parties.generate_detail_files(groups, tmp_path)
         warehouse_id = next(g['id'] for g in groups if 'WAREHOUSE CO' in [m['name'] for m in g['members']])
-        with open(tmp_path / 'parties' / f'{warehouse_id}.json') as f:
-            data = json.load(f)
+        data = self._load_party(tmp_path, warehouse_id)
         assert data['merger_count'] == 1
         assert [m['merger_id'] for m in data['mergers']['target']] == ['MN-1003']
 
@@ -2727,8 +2812,7 @@ class TestPartiesDetailFiles:
         groups = parties.build_party_pages([waiver], [])
         parties.generate_detail_files(groups, tmp_path)
         acme_id = next(g['id'] for g in groups if 'ACME PTY LTD' in [m['name'] for m in g['members']])
-        with open(tmp_path / 'parties' / f'{acme_id}.json') as f:
-            data = json.load(f)
+        data = self._load_party(tmp_path, acme_id)
         assert data['phase_duration'] is None
         assert data['waiver_duration'] is not None
         assert data['waiver_duration']['average_days'] == 9

@@ -1,0 +1,426 @@
+{
+  "shard": 242,
+  "shard_count": 256,
+  "parties": {
+    "apogee-therapeutics": {
+      "id": "apogee-therapeutics",
+      "canonical_name": "Apogee Therapeutics",
+      "members": [
+        {
+          "name": "Apogee Therapeutics Securities Corporation",
+          "identifier": "EIN  332083626",
+          "identifier_type": null
+        },
+        {
+          "name": "Apogee Therapeutics, Inc.",
+          "identifier": "EIN  934958665",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-90027",
+            "merger_name": "AbbVie - Apogee",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-27T12:00:00Z",
+            "determination_date": "2026-08-19T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "atp-adhesive-systems-group-gmbh": {
+      "id": "atp-adhesive-systems-group-gmbh",
+      "canonical_name": "ATP Adhesive Systems Group GmbH",
+      "members": [
+        {
+          "name": "ATP Adhesive Systems Group GmbH",
+          "identifier": "Swiss registration number: CHE219.637.488",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-40005",
+            "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-18T12:00:00Z",
+            "determination_date": "2026-03-12T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "bethel-amen-pty-ltd": {
+      "id": "bethel-amen-pty-ltd",
+      "canonical_name": "Bethel Amen Pty Ltd",
+      "members": [
+        {
+          "name": "Bethel Amen Pty Ltd",
+          "identifier": "077 379 358",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-15019",
+            "merger_name": "Opal HealthCare - Bethel Aged Care",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-20T12:00:00Z",
+            "determination_date": "2026-06-12T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "cinven-discovery-holdings-limited-partnership": {
+      "id": "cinven-discovery-holdings-limited-partnership",
+      "canonical_name": "Cinven Discovery Holdings Limited Partnership",
+      "members": [
+        {
+          "name": "Cinven Discovery Holdings Limited Partnership",
+          "identifier": "Guernsey registration number  LP4308",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-90024",
+            "merger_name": "Petalite \u2013 Envu",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-24T12:00:00Z",
+            "determination_date": "2026-08-26T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 33.0,
+        "median_days": 33,
+        "average_business_days": 23.0,
+        "median_business_days": 23,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "count-holdings-no-3-pty-ltd": {
+      "id": "count-holdings-no-3-pty-ltd",
+      "canonical_name": "Count Holdings No. 3 Pty Ltd",
+      "members": [
+        {
+          "name": "Count Holdings No. 3 Pty Ltd",
+          "identifier": "37 696 339 161",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-45018",
+            "merger_name": "Count \u2013 Oracle Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-09T12:00:00Z",
+            "determination_date": "2026-07-01T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "fantastic-furniture-limited": {
+      "id": "fantastic-furniture-limited",
+      "canonical_name": "Fantastic Furniture",
+      "members": [
+        {
+          "name": "FANTASTIC FURNITURE PTY LIMITED",
+          "identifier": "66 003 688 855",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Fantastic Furniture Limited",
+          "identifier": "NZCN  1015180",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-55019",
+            "merger_name": "Allegro - Fantastic Furniture",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-15T12:00:00Z",
+            "determination_date": "2026-05-26T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 11.0,
+        "median_days": 11,
+        "average_business_days": 7.0,
+        "median_business_days": 7,
+        "completed_count": 1
+      }
+    },
+    "providence-consulting-group-pty-ltd": {
+      "id": "providence-consulting-group-pty-ltd",
+      "canonical_name": "Providence Consulting Group Pty Ltd",
+      "members": [
+        {
+          "name": "Providence Consulting Group Pty Ltd",
+          "identifier": "49 117 321 552",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-70008",
+            "merger_name": "Tetra Tech \u2013 Providence Consulting",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-27T12:00:00Z",
+            "determination_date": "2026-04-01T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 33.0,
+        "median_days": 33,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      }
+    },
+    "quadrant-private-equity-no-6a-pty-limited": {
+      "id": "quadrant-private-equity-no-6a-pty-limited",
+      "canonical_name": "Quadrant Private Equity No.6A Pty Limited",
+      "members": [
+        {
+          "name": "QUADRANT PRIVATE EQUITY NO.6A PTY LIMITED",
+          "identifier": "622 297 750",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-15028",
+            "merger_name": "Total Drain Group - Pipe Management Australia",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-15T12:00:00Z",
+            "determination_date": "2026-08-13T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "southern-cross-operations-pty-ltd": {
+      "id": "southern-cross-operations-pty-ltd",
+      "canonical_name": "Southern Cross Operations Pty Ltd",
+      "members": [
+        {
+          "name": "SOUTHERN CROSS OPERATIONS PTY LTD",
+          "identifier": "30 004 936 850",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25017",
+            "merger_name": "Mayfair Corporation \u2013 Phosphate Hill",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-20T12:00:00Z",
+            "determination_date": "2026-05-06T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "ventura-newco-pty-ltd": {
+      "id": "ventura-newco-pty-ltd",
+      "canonical_name": "Ventura Newco Pty Ltd",
+      "members": [
+        {
+          "name": "VENTURA NEWCO PTY LTD",
+          "identifier": "43 694 822 047",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-70013",
+            "merger_name": "Ventura Motors \u2013 Crown Coaches",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-15T12:00:00Z",
+            "determination_date": "2026-05-07T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

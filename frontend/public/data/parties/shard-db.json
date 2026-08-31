@@ -1,0 +1,298 @@
+{
+  "shard": 219,
+  "shard_count": 256,
+  "parties": {
+    "austral-resources-australia-limited": {
+      "id": "austral-resources-australia-limited",
+      "canonical_name": "Austral Resources Australia Limited",
+      "members": [
+        {
+          "name": "AUSTRAL RESOURCES AUSTRALIA LIMITED",
+          "identifier": "50 142 485 470",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-35011",
+            "merger_name": "Austral Resources Australia \u2013 Lady Loretta mine",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-12T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "climatech-zero-pty-ltd": {
+      "id": "climatech-zero-pty-ltd",
+      "canonical_name": "Climatech Zero",
+      "members": [
+        {
+          "name": "CLIMATECH ZERO HOLDINGS PTY LTD",
+          "identifier": "35 623 827 930",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "CLIMATECH ZERO PTY LTD",
+          "identifier": "70 623 828 508",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-95030",
+            "merger_name": "Origin \u2013 Climatech Zero",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-10T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 39.0,
+        "median_days": 39,
+        "average_business_days": 27.0,
+        "median_business_days": 27,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "ik-partners": {
+      "id": "ik-partners",
+      "canonical_name": "IK Partners",
+      "members": [
+        {
+          "name": "IK Partners",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-20019",
+            "merger_name": "IK Partners - Selatek",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-07T12:00:00Z",
+            "determination_date": "2026-05-27T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "indigo-finance-pty-ltd": {
+      "id": "indigo-finance-pty-ltd",
+      "canonical_name": "Indigo Finance Pty Ltd",
+      "members": [
+        {
+          "name": "INDIGO FINANCE PTY LTD",
+          "identifier": "16 158 644 850",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-75006",
+            "merger_name": "Playlist \u2013 EGYM",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-05T12:00:00Z",
+            "determination_date": "2026-02-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "latitude-landowner-pty-ltd": {
+      "id": "latitude-landowner-pty-ltd",
+      "canonical_name": "Latitude Landowner Pty Ltd",
+      "members": [
+        {
+          "name": "Latitude Landowner Pty Ltd",
+          "identifier": "106 533 715",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-50029",
+            "merger_name": "Centuria Property Funds No. 2 Limited as the responsible entity of Centuria Sydney CBD Prime Office Fund - 680 George St/50 Goulburn St",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-13T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "optimum-healthcare-it-pty-ltd": {
+      "id": "optimum-healthcare-it-pty-ltd",
+      "canonical_name": "Optimum Healthcare It Pty Ltd",
+      "members": [
+        {
+          "name": "OPTIMUM HEALTHCARE IT PTY LTD",
+          "identifier": "53 689 795 702",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-40014",
+            "merger_name": "Infosys \u2013 Optimum Healthcare IT",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-07T12:00:00Z",
+            "determination_date": "2026-04-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 10.0,
+        "median_days": 10,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "progility-pty-ltd": {
+      "id": "progility-pty-ltd",
+      "canonical_name": "Progility Pty Ltd",
+      "members": [
+        {
+          "name": "PROGILITY PTY LTD",
+          "identifier": "11 131 639 837",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-01071",
+            "merger_name": "CSE Crosscom \u2013 Progility",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2025-12-22T12:00:00Z",
+            "determination_date": "2026-02-03T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 43.0,
+        "median_days": 43,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

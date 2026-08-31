@@ -1,0 +1,483 @@
+{
+  "shard": 224,
+  "shard_count": 256,
+  "parties": {
+    "17-bw-road-holdings-pty-ltd": {
+      "id": "17-bw-road-holdings-pty-ltd",
+      "canonical_name": "17 Bw Road Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "17 BW ROAD HOLDINGS PTY LTD",
+          "identifier": "664 303 977",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-60021",
+            "merger_name": "Oscars Group \u2013 Hotel Diplomat in Potts Point, NSW",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-04T12:00:00Z",
+            "determination_date": "2026-06-19T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "anthony-mark-guidera": {
+      "id": "anthony-mark-guidera",
+      "canonical_name": "Anthony Mark Guidera",
+      "members": [
+        {
+          "name": "Anthony Mark Guidera",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-35031",
+            "merger_name": "Osmoflo Water Management - Guidera O'Connor",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-06T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "avanos-medical-inc": {
+      "id": "avanos-medical-inc",
+      "canonical_name": "Avanos Medical, Inc.",
+      "members": [
+        {
+          "name": "AVANOS MEDICAL AUSTRALIA PTY LTD",
+          "identifier": "25 100 844 488",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Avanos Medical, Inc.",
+          "identifier": "Delaware Company Number: 5482684",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-85027",
+            "merger_name": "American Industrial Partners - Avanos Medical",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-12T12:00:00Z",
+            "determination_date": "2026-05-22T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 10.0,
+        "median_days": 10,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "burdett-group-pty-ltd": {
+      "id": "burdett-group-pty-ltd",
+      "canonical_name": "Burdett Group Pty Ltd",
+      "members": [
+        {
+          "name": "Burdett Group Pty Ltd",
+          "identifier": "158 557 718",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-05044",
+            "merger_name": "Holcim Australia \u2013 Burdetts Group",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-10T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "carrick-capital-associates-fund-ii-l-p": {
+      "id": "carrick-capital-associates-fund-ii-l-p",
+      "canonical_name": "Carrick Capital Associates Fund II, L.P.",
+      "members": [
+        {
+          "name": "Carrick Capital Associates Fund II, L.P.",
+          "identifier": "Company No.: 5654423  Delaware",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-05003",
+            "merger_name": "KKR led consortium \u2013 Saviynt",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-11T12:00:00Z",
+            "determination_date": "2026-01-27T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "estia-health-holdings-ltd": {
+      "id": "estia-health-holdings-ltd",
+      "canonical_name": "Estia Health",
+      "members": [
+        {
+          "name": "ESTIA HEALTH TOPCO PTY LTD",
+          "identifier": "47 669 884 244",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "ESTIA INVESTMENTS PTY. LTD.",
+          "identifier": "87 164 350 387",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Estia Health Holdings Ltd",
+          "identifier": "47 669 884 244",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-55029",
+            "merger_name": "Estia Health \u2013 AnglicareSA residential aged care business",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-24T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-35013",
+            "merger_name": "Estia Health \u2013 Norsan residential aged care business",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-10T12:00:00Z",
+            "determination_date": "2026-05-04T12:00:00Z"
+          }
+        ],
+        "target": [
+          {
+            "merger_id": "MN-50026",
+            "merger_name": "Stonepeak-led consortium - Estia Health",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-29T12:00:00Z",
+            "determination_date": "2026-07-22T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 3,
+      "phase_1_count": 3,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 16.333333333333332,
+        "median_business_days": 17,
+        "completed_count": 3
+      },
+      "waiver_duration": null
+    },
+    "forethought-technologies-inc": {
+      "id": "forethought-technologies-inc",
+      "canonical_name": "Forethought Technologies, Inc.",
+      "members": [
+        {
+          "name": "Forethought Technologies, Inc.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-75010",
+            "merger_name": "Zendesk \u2013 Forethought",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-23T12:00:00Z",
+            "determination_date": "2026-03-06T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 11.0,
+        "median_days": 11,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "lecta-paper-industries-intermediate-financing-s-r-l": {
+      "id": "lecta-paper-industries-intermediate-financing-s-r-l",
+      "canonical_name": "Lecta Paper Industries Intermediate Financing S.\u00e0 r.l.",
+      "members": [
+        {
+          "name": "Lecta Paper Industries Intermediate Financing S.\u00e0 r.l.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-15007",
+            "merger_name": "Apollo Funds led consortium \u2013 Lecta Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-10T12:00:00Z",
+            "determination_date": "2026-02-19T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 9.0,
+        "median_days": 9,
+        "average_business_days": 7.0,
+        "median_business_days": 7,
+        "completed_count": 1
+      }
+    },
+    "open-text-corporation": {
+      "id": "open-text-corporation",
+      "canonical_name": "Open Text Corporation",
+      "members": [
+        {
+          "name": "Open Text Corporation",
+          "identifier": "10836044",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-20009",
+            "merger_name": "Rocket Software \u2013 Vertica",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-11T12:00:00Z",
+            "determination_date": "2026-04-01T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "symal-ng-property-pty-ltd": {
+      "id": "symal-ng-property-pty-ltd",
+      "canonical_name": "Symal Ng Property Pty Ltd",
+      "members": [
+        {
+          "name": "SYMAL NG PROPERTY PTY LTD",
+          "identifier": "693 144 722",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-25002",
+            "merger_name": "Symal Group - Timms Group and L&D Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-01-23T12:00:00Z",
+            "determination_date": "2026-02-19T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "treysta-wealth-management-pty-ltd": {
+      "id": "treysta-wealth-management-pty-ltd",
+      "canonical_name": "Treysta Wealth Management Pty Ltd",
+      "members": [
+        {
+          "name": "Treysta Wealth Management Pty Ltd",
+          "identifier": "87 151 156 222",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-85004",
+            "merger_name": "Treysta Wealth Management \u2013 Locumsgroup",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-03T12:00:00Z",
+            "determination_date": "2026-01-27T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    }
+  }
+}

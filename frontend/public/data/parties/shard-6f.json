@@ -1,0 +1,466 @@
+{
+  "shard": 111,
+  "shard_count": 256,
+  "parties": {
+    "barrenjoey-capital-partners-group-holdings-pty-limited": {
+      "id": "barrenjoey-capital-partners-group-holdings-pty-limited",
+      "canonical_name": "Barrenjoey Capital Partners Group Holdings Pty Limited",
+      "members": [
+        {
+          "name": "Barrenjoey Capital Partners Group Holdings Pty Limited",
+          "identifier": "44 644 241 510",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-95007",
+            "merger_name": "Magellan Financial Group - Barrenjoey",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-19T12:00:00Z",
+            "determination_date": "2026-06-12T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "hilton-manufacturing-pty-ltd": {
+      "id": "hilton-manufacturing-pty-ltd",
+      "canonical_name": "Hilton Manufacturing Pty Ltd",
+      "members": [
+        {
+          "name": "HILTON MANUFACTURING PTY LTD",
+          "identifier": "89 005 551 057",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-75013",
+            "merger_name": "Aldus - Hilton Manufacturing",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-13T12:00:00Z",
+            "determination_date": "2026-04-01T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 19.0,
+        "median_days": 19,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "oyama-direct-pty-ltd": {
+      "id": "oyama-direct-pty-ltd",
+      "canonical_name": "Oyama Direct Pty Ltd",
+      "members": [
+        {
+          "name": "Oyama Direct Pty Ltd",
+          "identifier": "600 807 654",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-50020",
+            "merger_name": "Envest Group \u2013 MA Insurance Brokers",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-21T12:00:00Z",
+            "determination_date": "2026-06-18T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "sandvik-srp-ab": {
+      "id": "sandvik-srp-ab",
+      "canonical_name": "Sandvik SRP AB",
+      "members": [
+        {
+          "name": "Sandvik SRP AB",
+          "identifier": "EUID  SEBOLREG.5560130535",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-65025",
+            "merger_name": "Sandvik \u2013 Diemme Filtration S.r.l.",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-26T12:00:00Z",
+            "determination_date": "2026-07-17T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "vets-central-holdings-pty-ltd": {
+      "id": "vets-central-holdings-pty-ltd",
+      "canonical_name": "Vets Central Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "FACEBARK PTY LTD",
+          "identifier": "71 154 736 884",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "VC OPERATIONS (NSW) PTY LTD",
+          "identifier": "86 646 515 433",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "VC OPERATIONS (WA) PTY LTD",
+          "identifier": "28 646 499 005",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "VC OPERATIONS PTY LTD",
+          "identifier": "86 641 403 938",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "VETS CENTRAL HOLDINGS PTY LTD",
+          "identifier": "60 652 812 256",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "VETS CENTRAL PTY LTD",
+          "identifier": "25 646 462 973",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Vets Central (New Zealand) Limited",
+          "identifier": "NZBN  9429051820992",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-40032",
+            "merger_name": "Vets Central \u2013 Lava Street Veterinary Clinic and Doggy Kinder",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-15T12:00:00Z",
+            "determination_date": "2026-08-03T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-45020",
+            "merger_name": "Vets Central \u2013 Willunga & Aldinga Veterinary Services",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-23T12:00:00Z",
+            "determination_date": "2026-07-17T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-55026",
+            "merger_name": "Vets Central - Gold Coast Veterinary Surgery",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-23T12:00:00Z",
+            "determination_date": "2026-07-03T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-15022",
+            "merger_name": "Vets Central - Morley Veterinary Hospital",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-27T12:00:00Z",
+            "determination_date": "2026-06-18T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-55023",
+            "merger_name": "Vets Central - Claremont Veterinary Surgery",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-22T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-85016",
+            "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-16T12:00:00Z",
+            "determination_date": "2026-04-14T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-75017",
+            "merger_name": "Vets Central - Drovers Vet Hospital",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-31T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-95008",
+            "merger_name": "Vets Central \u2013 West Toowoomba Veterinary Surgery in QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-04T12:00:00Z",
+            "determination_date": "2026-03-10T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-40004",
+            "merger_name": "Vets Central \u2013 Gawler Animal Hospital and Animalia Vet Clinic",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-29T12:00:00Z",
+            "determination_date": "2026-02-12T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-40017",
+            "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
+            "is_waiver": false,
+            "status": "Assessment ceased",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 2",
+            "notification_date": "2026-07-01T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 10,
+      "phase_1_count": 0,
+      "phase_2_count": 1,
+      "waiver_count": 9,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 48.0,
+        "median_days": 48,
+        "average_business_days": 34.0,
+        "median_business_days": 34,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 14,
+        "average_business_days": 10.666666666666666,
+        "median_business_days": 10,
+        "completed_count": 9
+      }
+    },
+    "wsp-australia-pty-limited": {
+      "id": "wsp-australia-pty-limited",
+      "canonical_name": "Wsp Australia Pty Limited",
+      "members": [
+        {
+          "name": "WSP AUSTRALIA HOLDINGS PTY LTD",
+          "identifier": "90 169 545 395",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "WSP AUSTRALIA PTY LIMITED",
+          "identifier": "80 078 004 798",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "WSP Global Inc.",
+          "identifier": "Corporation No.: 7748388",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-35038",
+            "merger_name": "WSP - e2m",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-26T12:00:00Z",
+            "determination_date": null
+          },
+          {
+            "merger_id": "MN-01107",
+            "merger_name": "WSP - Geotechnical Testing and Interpretation",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-26T12:00:00Z",
+            "determination_date": "2026-07-23T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-35001",
+            "merger_name": "WSP \u2013 TRC",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-06T12:00:00Z",
+            "determination_date": "2026-01-13T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 3,
+      "phase_1_count": 2,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 1,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 7.0,
+        "median_days": 7,
+        "average_business_days": 2.0,
+        "median_business_days": 2,
+        "completed_count": 1
+      }
+    },
+    "yo-my-goodness-pty-ltd-as-trustee-for-the-yo-my-goodness-ip-unit-trust": {
+      "id": "yo-my-goodness-pty-ltd-as-trustee-for-the-yo-my-goodness-ip-unit-trust",
+      "canonical_name": "Yo My Goodness Pty Ltd as trustee for The Yo My Goodness IP Unit Trust",
+      "members": [
+        {
+          "name": "Yo My Goodness Pty Ltd as trustee for The Yo My Goodness IP Unit Trust",
+          "identifier": "603 490 035",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25032",
+            "merger_name": "River Capital \u2013 YOMG",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-15T12:00:00Z",
+            "determination_date": "2026-06-22T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 7.0,
+        "median_days": 7,
+        "average_business_days": 5.0,
+        "median_business_days": 5,
+        "completed_count": 1
+      }
+    }
+  }
+}

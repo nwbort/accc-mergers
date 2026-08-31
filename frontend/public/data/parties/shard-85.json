@@ -1,0 +1,449 @@
+{
+  "shard": 133,
+  "shard_count": 256,
+  "parties": {
+    "actigraph-india-private-limited": {
+      "id": "actigraph-india-private-limited",
+      "canonical_name": "ActiGraph India Private Limited",
+      "members": [
+        {
+          "name": "ActiGraph India Private Limited",
+          "identifier": "India CIN  U72900KA2023FTC169807",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-45011",
+            "merger_name": "Signant - ActiGraph",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-10T12:00:00Z",
+            "determination_date": "2026-04-16T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 6.0,
+        "median_days": 6,
+        "average_business_days": 4.0,
+        "median_business_days": 4,
+        "completed_count": 1
+      }
+    },
+    "apollo-capital-management-l-p": {
+      "id": "apollo-capital-management-l-p",
+      "canonical_name": "Apollo Capital Management, L.P.",
+      "members": [
+        {
+          "name": "AP Emerald (Luxembourg) S.\u00e0 r.l.",
+          "identifier": "RCS  B307795",
+          "identifier_type": null
+        },
+        {
+          "name": "Apollo Capital Management, L.P.",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Apollo Capital Management, L.P.",
+          "identifier": "4293091",
+          "identifier_type": null
+        },
+        {
+          "name": "Apollo Capital Management, L.P.",
+          "identifier": "Registration No. 4293091",
+          "identifier_type": null
+        },
+        {
+          "name": "Apollo Capital Management, L.P.",
+          "identifier": "USDE  4293091",
+          "identifier_type": null
+        },
+        {
+          "name": "Apollo Global Management",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Apollo Global Management, Inc.",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Apollo Global Management, Inc.",
+          "identifier": "CIK 0001858681",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-70029",
+            "merger_name": "Apollo - Bayer Asset Management",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-11T12:00:00Z",
+            "determination_date": "2026-08-10T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-10020",
+            "merger_name": "Apollo Capital \u2013 Curia",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-17T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-05023",
+            "merger_name": "Apollo Capital Management \u2013 Questex Holdings Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-20T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-45012",
+            "merger_name": "Apollo Funds - Nippon Sheet Glass",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-22T12:00:00Z",
+            "determination_date": "2026-05-05T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-15007",
+            "merger_name": "Apollo Funds led consortium \u2013 Lecta Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-10T12:00:00Z",
+            "determination_date": "2026-02-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 5,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 5,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.8,
+        "median_days": 15,
+        "average_business_days": 11.8,
+        "median_business_days": 10,
+        "completed_count": 5
+      }
+    },
+    "aurizon-network-pty-ltd": {
+      "id": "aurizon-network-pty-ltd",
+      "canonical_name": "Aurizon Network Pty Ltd",
+      "members": [
+        {
+          "name": "AURIZON NETWORK PTY LTD",
+          "identifier": "78 132 181 116",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-05034",
+            "merger_name": "Aurizon \u2013 transactions related to the relocation of a rail corridor at Moranbah North",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-28T12:00:00Z",
+            "determination_date": "2026-08-20T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "big-post-pty-ltd": {
+      "id": "big-post-pty-ltd",
+      "canonical_name": "Big Post Pty Ltd",
+      "members": [
+        {
+          "name": "Big Post Pty Ltd",
+          "identifier": "19 145 428 002",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-95019",
+            "merger_name": "Capital Group - Big Post",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-20T12:00:00Z",
+            "determination_date": "2026-06-09T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "fluent-commerce-holdings-inc": {
+      "id": "fluent-commerce-holdings-inc",
+      "canonical_name": "Fluent Commerce Holdings Inc.",
+      "members": [
+        {
+          "name": "Fluent Commerce Holdings Inc.",
+          "identifier": "EIN 415103184",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-80012",
+            "merger_name": "FC Group Holdings Corporation & ors - Fluent Retail",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-28T12:00:00Z",
+            "determination_date": "2026-05-15T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "npm-investments-43-b-v": {
+      "id": "npm-investments-43-b-v",
+      "canonical_name": "NPM Investments 43 B.V.",
+      "members": [
+        {
+          "name": "NPM Investments 43 B.V.",
+          "identifier": "KVK  96665335",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-80029",
+            "merger_name": "NPM Capital \u2013 AmbaFlex Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-10T12:00:00Z",
+            "determination_date": "2026-08-03T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "ren-sven-hoffmann": {
+      "id": "ren-sven-hoffmann",
+      "canonical_name": "Ren\u00e9 Sven Hoffmann",
+      "members": [
+        {
+          "name": "Ren\u00e9 Sven Hoffmann",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-40005",
+            "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-18T12:00:00Z",
+            "determination_date": "2026-03-12T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "television-holdings-darwin-pty-limited": {
+      "id": "television-holdings-darwin-pty-limited",
+      "canonical_name": "Television Holdings Darwin Pty. Limited",
+      "members": [
+        {
+          "name": "TELEVISION HOLDINGS DARWIN PTY. LIMITED",
+          "identifier": "33 009 634 048",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-50008",
+            "merger_name": "WIN Television Network - NBN Enterprises & Television Holdings Darwin",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-24T12:00:00Z",
+            "determination_date": "2026-05-18T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "torquest-partners-management-inc": {
+      "id": "torquest-partners-management-inc",
+      "canonical_name": "TorQuest Partners Management Inc.",
+      "members": [
+        {
+          "name": "TorQuest Partners Management Inc.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-80035",
+            "merger_name": "Saint-Gobain - Xypex",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-17T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    }
+  }
+}

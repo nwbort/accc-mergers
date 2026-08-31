@@ -1,0 +1,328 @@
+{
+  "shard": 93,
+  "shard_count": 256,
+  "parties": {
+    "anysphere-inc": {
+      "id": "anysphere-inc",
+      "canonical_name": "Anysphere, Inc.",
+      "members": [
+        {
+          "name": "Anysphere, Inc.",
+          "identifier": "Delaware File Number  6524309",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-85036",
+            "merger_name": "SpaceX - Anysphere",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-27T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "auto-europe-group": {
+      "id": "auto-europe-group",
+      "canonical_name": "Auto Europe Group",
+      "members": [
+        {
+          "name": "Auto Europe Group",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-65009",
+            "merger_name": "CVC Capital Partners \u2013 Marathon Asset Management",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-18T12:00:00Z",
+            "determination_date": "2026-04-16T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "benditi-pastoral-co-pty-ltd": {
+      "id": "benditi-pastoral-co-pty-ltd",
+      "canonical_name": "Benditi Pastoral Co Pty Ltd",
+      "members": [
+        {
+          "name": "BENDITI PASTORAL CO PTY LTD",
+          "identifier": "39 689 382 965",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-50031",
+            "merger_name": "New Forests Australia New Zealand Landscapes and Forestry Fund \u2013 Benditi Pastoral",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-01T12:00:00Z",
+            "determination_date": "2026-07-21T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "hy-tec-industries-victoria-pty-ltd": {
+      "id": "hy-tec-industries-victoria-pty-ltd",
+      "canonical_name": "Hy-Tec Industries (Victoria) Pty Ltd",
+      "members": [
+        {
+          "name": "HY-TEC INDUSTRIES (VICTORIA) PTY LTD",
+          "identifier": "43 096 310 520",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-50021",
+            "merger_name": "Adbri - Eureka Concrete",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-17T12:00:00Z",
+            "determination_date": "2026-07-09T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "knds-n-v": {
+      "id": "knds-n-v",
+      "canonical_name": "Knds N.V.",
+      "members": [
+        {
+          "name": "KNDS N.V.",
+          "identifier": "64277925",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-75024",
+            "merger_name": "KfW \u2013 KNDS N.V.",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-22T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "lion-series-2022-1-trust": {
+      "id": "lion-series-2022-1-trust",
+      "canonical_name": "Lion Series 2022-1 Trust",
+      "members": [
+        {
+          "name": "Lion Series 2022-1 Trust",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-85047",
+            "merger_name": "Blackstone funds and Perpetual Trustees \u2013 HSBC loan portfolio",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-27T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "red-october-gold-pty-ltd": {
+      "id": "red-october-gold-pty-ltd",
+      "canonical_name": "Red October Gold Pty Ltd",
+      "members": [
+        {
+          "name": "RED OCTOBER GOLD PTY LTD",
+          "identifier": "28 621 765 633",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-80028",
+            "merger_name": "AngloGold Ashanti Australia \u2013 Matsa Lake Carey tenements",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-08T12:00:00Z",
+            "determination_date": "2026-07-30T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "therapynow-pty-ltd": {
+      "id": "therapynow-pty-ltd",
+      "canonical_name": "Therapynow Pty Ltd",
+      "members": [
+        {
+          "name": "THERAPYNOW PTY LTD",
+          "identifier": "17 662 216 104",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-05014",
+            "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

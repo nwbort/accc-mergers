@@ -1,0 +1,490 @@
+{
+  "shard": 194,
+  "shard_count": 256,
+  "parties": {
+    "armitage-associates-pty-ltd": {
+      "id": "armitage-associates-pty-ltd",
+      "canonical_name": "Armitage Associates Pty Ltd",
+      "members": [
+        {
+          "name": "ARMITAGE ASSOCIATES PTY LTD",
+          "identifier": "87 611 079 157",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-05014",
+            "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "australia-pacific-airports-launceston-pty-limited": {
+      "id": "australia-pacific-airports-launceston-pty-limited",
+      "canonical_name": "Australia Pacific Airports (Launceston) Pty Limited",
+      "members": [
+        {
+          "name": "Australia Pacific Airports (Launceston) Pty Limited",
+          "identifier": "79 081 578 903",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-90023",
+            "merger_name": "SAS Trustee Corporation \u2013 Australia Pacific Airport Corporation",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-16T12:00:00Z",
+            "determination_date": "2026-07-08T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
+    "camdent-services-unit-trust": {
+      "id": "camdent-services-unit-trust",
+      "canonical_name": "Camdent Services Unit Trust",
+      "members": [
+        {
+          "name": "CAMDENT SERVICES UNIT TRUST",
+          "identifier": "37 559 915 898",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-70017",
+            "merger_name": "National Dental Care \u2013 business assets comprising the Cambridge Dental Centre clinic, Perth, WA",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-04T12:00:00Z",
+            "determination_date": "2026-05-19T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "currawong-bidco-pty-ltd": {
+      "id": "currawong-bidco-pty-ltd",
+      "canonical_name": "Currawong BidCo Pty Ltd",
+      "members": [
+        {
+          "name": "Currawong BidCo Pty Ltd",
+          "identifier": "697 523 578",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-25030",
+            "merger_name": "Warburg Pincus \u2013 Commercial Credit Holdings Limited",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-05T12:00:00Z",
+            "determination_date": "2026-07-01T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "eni-s-p-a": {
+      "id": "eni-s-p-a",
+      "canonical_name": "Eni S.p.A.",
+      "members": [
+        {
+          "name": "Eni S.p.A.",
+          "identifier": "Registration Authority ID  00484960588",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-85032",
+            "merger_name": "Ares (Bolt S.p.A.) \u2013 Investment in Plenitude",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-04T12:00:00Z",
+            "determination_date": "2026-06-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "escode-jersey-holdco-limited": {
+      "id": "escode-jersey-holdco-limited",
+      "canonical_name": "Escode Jersey Holdco Limited",
+      "members": [
+        {
+          "name": "Escode Jersey Holdco Limited",
+          "identifier": "Jersey Registration Number 162830",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-85011",
+            "merger_name": "TDR and Estoril \u2013 Escode",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-19T12:00:00Z",
+            "determination_date": "2026-03-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "glacis-acquisition-s-r-l": {
+      "id": "glacis-acquisition-s-r-l",
+      "canonical_name": "Glacis Acquisition S.\u00e0 r.l.",
+      "members": [
+        {
+          "name": "Glacis Acquisition S.\u00e0 r.l.",
+          "identifier": "B224034",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-55025",
+            "merger_name": "Brookfield \u2013 World Freight Company",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-09T12:00:00Z",
+            "determination_date": "2026-06-26T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "links-recruitment-limited": {
+      "id": "links-recruitment-limited",
+      "canonical_name": "Links Recruitment Limited",
+      "members": [
+        {
+          "name": "Links Recruitment Limited",
+          "identifier": "Hong Kong CR number  30311643",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-75021",
+            "merger_name": "Hillhouse - KMC Solutions",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-28T12:00:00Z",
+            "determination_date": "2026-05-25T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "partnered-health-pty-ltd": {
+      "id": "partnered-health-pty-ltd",
+      "canonical_name": "Partnered Health Pty Ltd",
+      "members": [
+        {
+          "name": "PARTNERED HEALTH PTY LTD",
+          "identifier": "41 164 892 924",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-15027",
+            "merger_name": "Partnered Health - Ryan Plaza Medical Services",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-03T12:00:00Z",
+            "determination_date": "2026-08-08T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-85022",
+            "merger_name": "PH Medical Centres - Riverstone Family Medical Practice",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-08T12:00:00Z",
+            "determination_date": "2026-04-16T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 36.0,
+        "median_days": 36,
+        "average_business_days": 25.0,
+        "median_business_days": 25,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 8.0,
+        "median_days": 8,
+        "average_business_days": 6.0,
+        "median_business_days": 6,
+        "completed_count": 1
+      }
+    },
+    "stonepeak-partners-lp": {
+      "id": "stonepeak-partners-lp",
+      "canonical_name": "Stonepeak Partners LP",
+      "members": [
+        {
+          "name": "Stonepeak Partners LP",
+          "identifier": "4958360",
+          "identifier_type": null
+        },
+        {
+          "name": "Stonepeak Partners LP",
+          "identifier": "Company Identifier Number: 4958360  Delaware",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-50026",
+            "merger_name": "Stonepeak-led consortium - Estia Health",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-29T12:00:00Z",
+            "determination_date": "2026-07-22T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-60015",
+            "merger_name": "Stonepeak \u2013 Castrol",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-21T12:00:00Z",
+            "determination_date": "2026-06-18T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 2,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.5,
+        "median_days": 25.5,
+        "average_business_days": 17.5,
+        "median_business_days": 17.5,
+        "completed_count": 2
+      },
+      "waiver_duration": null
+    },
+    "zim-integrated-shipping-services-ltd": {
+      "id": "zim-integrated-shipping-services-ltd",
+      "canonical_name": "ZIM Integrated Shipping Services Ltd",
+      "members": [
+        {
+          "name": "ZIM Integrated Shipping Services Ltd",
+          "identifier": "Israeli company registration number  520015041",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-65022",
+            "merger_name": "Hapag-Lloyd - ZIM",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-29T12:00:00Z",
+            "determination_date": "2026-07-21T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

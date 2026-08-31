@@ -1,0 +1,334 @@
+{
+  "shard": 66,
+  "shard_count": 256,
+  "parties": {
+    "buccaneer-holdco-limited": {
+      "id": "buccaneer-holdco-limited",
+      "canonical_name": "Buccaneer Holdco Limited",
+      "members": [
+        {
+          "name": "Buccaneer Holdco Limited",
+          "identifier": "UK Company Number  11463144",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-45011",
+            "merger_name": "Signant - ActiGraph",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-10T12:00:00Z",
+            "determination_date": "2026-04-16T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 6.0,
+        "median_days": 6,
+        "average_business_days": 4.0,
+        "median_business_days": 4,
+        "completed_count": 1
+      }
+    },
+    "ey-business-solutions-pty-ltd": {
+      "id": "ey-business-solutions-pty-ltd",
+      "canonical_name": "Ey Business Solutions Pty Ltd",
+      "members": [
+        {
+          "name": "EY BUSINESS SOLUTIONS PTY LTD",
+          "identifier": "35 122 885 465",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-90021",
+            "merger_name": "EY Australia - Australian EY Fusion business",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-09T12:00:00Z",
+            "determination_date": "2026-07-03T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "gps-power-pty-limited": {
+      "id": "gps-power-pty-limited",
+      "canonical_name": "Gps Power Pty. Limited",
+      "members": [
+        {
+          "name": "GPS POWER PTY. LIMITED",
+          "identifier": "34 009 103 422",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-35027",
+            "merger_name": "GPS Energy \u2013 Ryowa's interest in Gladstone Power Station Joint Venture",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-17T12:00:00Z",
+            "determination_date": "2026-06-30T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "hyrox-world-gmbh-hyrox": {
+      "id": "hyrox-world-gmbh-hyrox",
+      "canonical_name": "HYROX World GmbH (HYROX)",
+      "members": [
+        {
+          "name": "HYROX World GmbH (HYROX)",
+          "identifier": "HRB 144750",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25036",
+            "merger_name": "L Catterton Europe \u2013 HYROX",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-08T12:00:00Z",
+            "determination_date": "2026-07-21T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "indorama-ventures-public-company-limited": {
+      "id": "indorama-ventures-public-company-limited",
+      "canonical_name": "Indorama Ventures Public Company Limited",
+      "members": [
+        {
+          "name": "Indorama Ventures Public Company Limited",
+          "identifier": "Registered in Thailand, no. 0107552000201",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-25023",
+            "merger_name": "EPL - Indovida India",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-07T12:00:00Z",
+            "determination_date": "2026-05-18T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 11.0,
+        "median_days": 11,
+        "average_business_days": 7.0,
+        "median_business_days": 7,
+        "completed_count": 1
+      }
+    },
+    "linden-capital-partners": {
+      "id": "linden-capital-partners",
+      "canonical_name": "Linden Capital Partners",
+      "members": [
+        {
+          "name": "Linden Capital Partners",
+          "identifier": "Company number  5075067",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-25013",
+            "merger_name": "Cinven \u2013 Regenity",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-17T12:00:00Z",
+            "determination_date": "2026-04-01T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "the-trustee-for-apache-unit-trust": {
+      "id": "the-trustee-for-apache-unit-trust",
+      "canonical_name": "The Trustee for Apache Unit Trust",
+      "members": [
+        {
+          "name": "The Trustee for Apache Unit Trust",
+          "identifier": "91 171 649 407",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-70016",
+            "merger_name": "Oceania Capital Partners - Hudson Global Resources (Aust)",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-22T12:00:00Z",
+            "determination_date": "2026-05-04T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 12.0,
+        "median_days": 12,
+        "average_business_days": 7.0,
+        "median_business_days": 7,
+        "completed_count": 1
+      }
+    },
+    "wansheng-medical-investments-italy-s-p-a": {
+      "id": "wansheng-medical-investments-italy-s-p-a",
+      "canonical_name": "Wansheng Medical Investments (Italy) S.p.A.",
+      "members": [
+        {
+          "name": "Wansheng Medical Investments (Italy) S.p.A.",
+          "identifier": "Codice Fiscale  10087620968",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-05020",
+            "merger_name": "Midea Group \u2013 Esaote",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-07T12:00:00Z",
+            "determination_date": "2026-05-21T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    }
+  }
+}

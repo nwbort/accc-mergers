@@ -1,0 +1,375 @@
+{
+  "shard": 43,
+  "shard_count": 256,
+  "parties": {
+    "arena-bidco-pty-ltd": {
+      "id": "arena-bidco-pty-ltd",
+      "canonical_name": "Arena BidCo Pty Ltd",
+      "members": [
+        {
+          "name": "Arena BidCo Pty Ltd",
+          "identifier": "693 657 484",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-80001",
+            "merger_name": "Alpine Software Group (ASG) \u2013 PlayHQ",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-19T12:00:00Z",
+            "determination_date": "2026-01-29T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 10.0,
+        "median_days": 10,
+        "average_business_days": 7.0,
+        "median_business_days": 7,
+        "completed_count": 1
+      }
+    },
+    "collagen-holdings-llc": {
+      "id": "collagen-holdings-llc",
+      "canonical_name": "Collagen Holdings, LLC",
+      "members": [
+        {
+          "name": "Collagen Holdings, LLC",
+          "identifier": "DE File Number  7473707",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25013",
+            "merger_name": "Cinven \u2013 Regenity",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-17T12:00:00Z",
+            "determination_date": "2026-04-01T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "dawson-land-investments-company-pty-ltd-as-trustee-for-the-dawson-land-trust": {
+      "id": "dawson-land-investments-company-pty-ltd-as-trustee-for-the-dawson-land-trust",
+      "canonical_name": "Dawson Land Investments Company Pty Ltd as trustee for the Dawson Land Trust",
+      "members": [
+        {
+          "name": "Dawson Land Investments Company Pty Ltd as trustee for the Dawson Land Trust",
+          "identifier": "600 506 778",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-35018",
+            "merger_name": "Hewitt \u2013 Nolan Meats",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-01T12:00:00Z",
+            "determination_date": "2026-07-27T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "dhilmar-qld-assets-pty-ltd": {
+      "id": "dhilmar-qld-assets-pty-ltd",
+      "canonical_name": "Dhilmar Qld Assets Pty Ltd",
+      "members": [
+        {
+          "name": "DHILMAR QLD ASSETS PTY LTD",
+          "identifier": "76 697 930 171",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-85035",
+            "merger_name": "Dhilmar \u2013 Anglo American steelmaking coal business",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-05T12:00:00Z",
+            "determination_date": "2026-06-25T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "enerflex-ltd": {
+      "id": "enerflex-ltd",
+      "canonical_name": "Enerflex Ltd",
+      "members": [
+        {
+          "name": "Enerflex Ltd",
+          "identifier": "7748116",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-80021",
+            "merger_name": "INNIO Group \u2013 Enerflex",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-25T12:00:00Z",
+            "determination_date": "2026-07-27T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 32.0,
+        "median_days": 32,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "pemba-capital-fund-iii-l-p": {
+      "id": "pemba-capital-fund-iii-l-p",
+      "canonical_name": "Pemba Capital Fund III, L.P.",
+      "members": [
+        {
+          "name": "Pemba Capital Fund III, L.P.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-05041",
+            "merger_name": "Pemba - Hewison Private Wealth",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-21T12:00:00Z",
+            "determination_date": "2026-08-19T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    },
+    "respighi-bidco-s-p-a": {
+      "id": "respighi-bidco-s-p-a",
+      "canonical_name": "Respighi Bidco S.p.A",
+      "members": [
+        {
+          "name": "Respighi Bidco S.p.A",
+          "identifier": "Company number (Italy)  14717940960",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-70024",
+            "merger_name": "CVC Capital Partners and Groupe Bruxelles Lambert \u2013 Recordati",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-04T12:00:00Z",
+            "determination_date": "2026-07-02T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "sumitomo-mitsui-trust-bank-limited": {
+      "id": "sumitomo-mitsui-trust-bank-limited",
+      "canonical_name": "Sumitomo Mitsui Trust Bank, Limited",
+      "members": [
+        {
+          "name": "Sumitomo Mitsui Trust Bank, Limited",
+          "identifier": "Financial Institution Registration Number: No.649 Kanto Finance Bureau of the Ministry of Finance",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-55027",
+            "merger_name": "Sumitomo Mitsui Trust Bank - SMTB ANZ Debt Fund",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-25T12:00:00Z",
+            "determination_date": "2026-07-16T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "wave-merger-sub-ii-llc": {
+      "id": "wave-merger-sub-ii-llc",
+      "canonical_name": "Wave Merger Sub II, LLC",
+      "members": [
+        {
+          "name": "Wave Merger Sub II, LLC",
+          "identifier": "Delaware File Number  7007085",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-90020",
+            "merger_name": "OpenAI - Ona",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-26T12:00:00Z",
+            "determination_date": "2026-07-21T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

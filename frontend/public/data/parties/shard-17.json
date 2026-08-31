@@ -1,0 +1,340 @@
+{
+  "shard": 23,
+  "shard_count": 256,
+  "parties": {
+    "air-europa-holding-s-l": {
+      "id": "air-europa-holding-s-l",
+      "canonical_name": "Air Europa Holding, S.L.",
+      "members": [
+        {
+          "name": "Air Europa Holding, S.L.",
+          "identifier": "PM87946",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-90016",
+            "merger_name": "Turkish Airlines - Air Europa",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-08T12:00:00Z",
+            "determination_date": "2026-05-29T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "aula-energy-holdings-pty-limited": {
+      "id": "aula-energy-holdings-pty-limited",
+      "canonical_name": "Aula Energy Holdings Pty Limited",
+      "members": [
+        {
+          "name": "AULA ENERGY HOLDINGS PTY LIMITED",
+          "identifier": "13 662 726 909",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-70021",
+            "merger_name": "Aula Energy \u2013 Additional interest in the Boulder Creek Wind Farm",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-24T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "cja-lee-property-partnership": {
+      "id": "cja-lee-property-partnership",
+      "canonical_name": "Cja Lee Property Partnership",
+      "members": [
+        {
+          "name": "CJA LEE PROPERTY PARTNERSHIP",
+          "identifier": "53 968 532 362",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-75036",
+            "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-25T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": [
+          {
+            "merger_id": "WA-20015",
+            "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-13T12:00:00Z",
+            "determination_date": "2026-05-07T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "intellect-systems-pty-ltd": {
+      "id": "intellect-systems-pty-ltd",
+      "canonical_name": "Intellect Systems Pty Ltd",
+      "members": [
+        {
+          "name": "Intellect Systems Pty Ltd",
+          "identifier": "11 115 885 348",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-70012",
+            "merger_name": "Quanta - PSD",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-12T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "obm-financial-services-pty-ltd": {
+      "id": "obm-financial-services-pty-ltd",
+      "canonical_name": "OBM Financial Services Pty Ltd",
+      "members": [
+        {
+          "name": "OBM Financial Services Pty Ltd",
+          "identifier": "629 954 981",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-30026",
+            "merger_name": "Count \u2013 O\u2019Brien Accountants & Advisors",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-10T12:00:00Z",
+            "determination_date": "2026-08-04T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "slmp-intermediate-holdings-inc": {
+      "id": "slmp-intermediate-holdings-inc",
+      "canonical_name": "SLMP Intermediate Holdings Inc",
+      "members": [
+        {
+          "name": "SLMP Intermediate Holdings Inc",
+          "identifier": "EIN861436842",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-15031",
+            "merger_name": "Danaher (Leica Biosystems) - StatLab",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-05T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "spartan-merger-sub-inc": {
+      "id": "spartan-merger-sub-inc",
+      "canonical_name": "Spartan Merger Sub, Inc.",
+      "members": [
+        {
+          "name": "Spartan Merger Sub, Inc.",
+          "identifier": "Delaware corporation file number  10430493",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-25003",
+            "merger_name": "Delinea (TPG) - StrongDM",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-20T12:00:00Z",
+            "determination_date": "2026-02-03T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "wentworth-capital-topco-pty-ltd": {
+      "id": "wentworth-capital-topco-pty-ltd",
+      "canonical_name": "Wentworth Capital Topco Pty Ltd",
+      "members": [
+        {
+          "name": "WENTWORTH CAPITAL TOPCO PTY LTD",
+          "identifier": "51 663 503 848",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-10011",
+            "merger_name": "Wentworth Capital \u2013 Novotel Darling Harbour and Ibis Darling Harbour",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-12T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    }
+  }
+}

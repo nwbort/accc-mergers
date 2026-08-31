@@ -1,0 +1,402 @@
+{
+  "shard": 253,
+  "shard_count": 256,
+  "parties": {
+    "atlas-investments-holdings-limited": {
+      "id": "atlas-investments-holdings-limited",
+      "canonical_name": "Atlas Investments Holdings Limited",
+      "members": [
+        {
+          "name": "Atlas Investments Holdings Limited",
+          "identifier": "CR No. 434331",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-01113",
+            "merger_name": "Hillhouse \u2013 LRQA Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-02T12:00:00Z",
+            "determination_date": "2026-07-20T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "avalon-dm-pty-ltd": {
+      "id": "avalon-dm-pty-ltd",
+      "canonical_name": "Avalon Dm Pty Ltd",
+      "members": [
+        {
+          "name": "AVALON DM PTY LTD",
+          "identifier": "61 691 733 150",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-50027",
+            "merger_name": "Endeavour Group - retail liquor site in Avalon, NSW",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-22T12:00:00Z",
+            "determination_date": "2026-07-13T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "dhilmar-ltd": {
+      "id": "dhilmar-ltd",
+      "canonical_name": "Dhilmar Ltd",
+      "members": [
+        {
+          "name": "DHILMAR AUSTRALIA PTY LTD",
+          "identifier": "49 697 035 868",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "DHILMAR LTD",
+          "identifier": "UK CRN  16077471",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-85035",
+            "merger_name": "Dhilmar \u2013 Anglo American steelmaking coal business",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-05T12:00:00Z",
+            "determination_date": "2026-06-25T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "evergreen-services-group-topco-llc": {
+      "id": "evergreen-services-group-topco-llc",
+      "canonical_name": "Evergreen Services Group Topco, LLC",
+      "members": [
+        {
+          "name": "Evergreen Services Group Topco, LLC",
+          "identifier": "EIN  202252119595",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-15024",
+            "merger_name": "Redwood Services Group \u2013 All IT Australia",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-09T12:00:00Z",
+            "determination_date": "2026-06-25T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-60024",
+            "merger_name": "Redwood Services Group \u2013 Newtrend I.T. Specialists",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-09T12:00:00Z",
+            "determination_date": "2026-06-25T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 2,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 2,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16.0,
+        "average_business_days": 12.0,
+        "median_business_days": 12.0,
+        "completed_count": 2
+      }
+    },
+    "eynesbury-greenhill-pty-ltd": {
+      "id": "eynesbury-greenhill-pty-ltd",
+      "canonical_name": "Eynesbury Greenhill Pty Ltd",
+      "members": [
+        {
+          "name": "EYNESBURY GREENHILL PTY LTD",
+          "identifier": "36 635 953 203",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-35026",
+            "merger_name": "Mitsubishi Estate Asia \u2013 Eynesbury Properties",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-18T12:00:00Z",
+            "determination_date": "2026-07-06T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "ifs-north-america-inc": {
+      "id": "ifs-north-america-inc",
+      "canonical_name": "IFS North America, Inc.",
+      "members": [
+        {
+          "name": "IFS North America, Inc.",
+          "identifier": "TIN/EIN  391292200",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-35002",
+            "merger_name": "IFS \u2013 Softeon",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-06T12:00:00Z",
+            "determination_date": "2026-01-27T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
+    "pacifica-holding": {
+      "id": "pacifica-holding",
+      "canonical_name": "Pacifica Holding",
+      "members": [
+        {
+          "name": "Pacifica Holding",
+          "identifier": "899 214 126 R.C.S. Paris",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-60033",
+            "merger_name": "Verlinvest \u2013 up to 60% interest in HomeExchange",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-29T12:00:00Z",
+            "determination_date": "2026-08-28T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 30.0,
+        "median_days": 30,
+        "average_business_days": 22.0,
+        "median_business_days": 22,
+        "completed_count": 1
+      }
+    },
+    "peter-warren-automotive-holdings-limited": {
+      "id": "peter-warren-automotive-holdings-limited",
+      "canonical_name": "Peter Warren Automotive Holdings Limited",
+      "members": [
+        {
+          "name": "PETER WARREN AUTOMOTIVE HOLDINGS LIMITED",
+          "identifier": "57 615 674 185",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-90028",
+            "merger_name": "Peter Warren - Wakeling Automotive",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-13T12:00:00Z",
+            "determination_date": null
+          },
+          {
+            "merger_id": "MN-30002",
+            "merger_name": "Peter Warren - Wakeling Automotive",
+            "is_waiver": false,
+            "status": "Assessment ceased",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 2",
+            "notification_date": "2026-03-05T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 1,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": {
+        "average_days": 89.0,
+        "median_days": 89,
+        "average_business_days": 58.0,
+        "median_business_days": 58,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "ramsay-health-care-investments-pty-limited": {
+      "id": "ramsay-health-care-investments-pty-limited",
+      "canonical_name": "Ramsay Health Care Investments Pty Limited",
+      "members": [
+        {
+          "name": "RAMSAY HEALTH CARE INVESTMENTS PTY LIMITED",
+          "identifier": "44 078 881 473",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-75003",
+            "merger_name": "Ramsay Health Care \u2013 National Capital Private Hospital",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-01-21T12:00:00Z",
+            "determination_date": "2026-02-12T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

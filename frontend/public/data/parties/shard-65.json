@@ -1,0 +1,461 @@
+{
+  "shard": 101,
+  "shard_count": 256,
+  "parties": {
+    "d-pettet-e-e-pettet": {
+      "id": "d-pettet-e-e-pettet",
+      "canonical_name": "D Pettet & E.E Pettet",
+      "members": [
+        {
+          "name": "D PETTET & E.E PETTET",
+          "identifier": "30 143 398 487",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-55023",
+            "merger_name": "Vets Central - Claremont Veterinary Surgery",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-22T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "diemme-filtration-s-r-l": {
+      "id": "diemme-filtration-s-r-l",
+      "canonical_name": "Diemme Filtration S.r.l.",
+      "members": [
+        {
+          "name": "Diemme Filtration S.r.l.",
+          "identifier": "EUID  ITRI.02416280390",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-65025",
+            "merger_name": "Sandvik \u2013 Diemme Filtration S.r.l.",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-26T12:00:00Z",
+            "determination_date": "2026-07-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "jda-peakhurst-hotel": {
+      "id": "jda-peakhurst-hotel",
+      "canonical_name": "JDA Peakhurst Hotel",
+      "members": [
+        {
+          "name": "JDA Peakhurst Hotel Investments Pty Ltd as trustee for JDA Peakhurst Hotel Investments Unit Trust",
+          "identifier": "97 966 437 953",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "JDA Peakhurst Hotel Trading Pty Ltd as trustee for JDA Peakhurst Hotel Trading Unit Trust",
+          "identifier": "30 258 368 694",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-75033",
+            "merger_name": "Sonnel Hospitality Group \u2013 Peakhurst Inn Hotel",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-06T12:00:00Z",
+            "determination_date": "2026-07-24T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "meco-eynesbury-pty-limited": {
+      "id": "meco-eynesbury-pty-limited",
+      "canonical_name": "MECO Eynesbury Pty Limited",
+      "members": [
+        {
+          "name": "MECO Eynesbury Pty Limited",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-35026",
+            "merger_name": "Mitsubishi Estate Asia \u2013 Eynesbury Properties",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-18T12:00:00Z",
+            "determination_date": "2026-07-06T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "sah-northern-beaches-pty-ltd": {
+      "id": "sah-northern-beaches-pty-ltd",
+      "canonical_name": "Sah Northern Beaches Pty Ltd",
+      "members": [
+        {
+          "name": "SAH NORTHERN BEACHES PTY LTD",
+          "identifier": "57 689 321 837",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-95003",
+            "merger_name": "CVS Group - Pittwater Animal Hospital",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-13T12:00:00Z",
+            "determination_date": "2026-04-09T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 55.0,
+        "median_days": 55,
+        "average_business_days": 36.0,
+        "median_business_days": 36,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "slb-n-v-slb-limited": {
+      "id": "slb-n-v-slb-limited",
+      "canonical_name": "SLB N.V. (SLB Limited)",
+      "members": [
+        {
+          "name": "SLB N.V. (SLB Limited)",
+          "identifier": "EIN  520684746",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-75027",
+            "merger_name": "SLB \u2013 S&P Global\u2019s Geoscience Software Portfolio",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-22T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "strategic-super-services-pty-ltd": {
+      "id": "strategic-super-services-pty-ltd",
+      "canonical_name": "Strategic Super Services Pty Ltd",
+      "members": [
+        {
+          "name": "STRATEGIC SUPER SERVICES PTY LTD",
+          "identifier": "20 164 018 311",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-40035",
+            "merger_name": "SCM Financial Group - Strategic Wealth Services Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-30T12:00:00Z",
+            "determination_date": "2026-08-28T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    },
+    "tomoro-ai-ltd": {
+      "id": "tomoro-ai-ltd",
+      "canonical_name": "Tomoro AI Ltd",
+      "members": [
+        {
+          "name": "Tomoro AI Ltd",
+          "identifier": "UK Companies House registration number  15208678",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-25021",
+            "merger_name": "OpenAI - Tomoro",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-12T12:00:00Z",
+            "determination_date": "2026-06-09T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "ultra-electronics-holdings-limited": {
+      "id": "ultra-electronics-holdings-limited",
+      "canonical_name": "Ultra Electronics Holdings Limited",
+      "members": [
+        {
+          "name": "Ultra Electronics Australia Pty Ltd",
+          "identifier": "48 127 336 841",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Ultra Electronics Holdings Limited",
+          "identifier": "registered number 02830397",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-75041",
+            "merger_name": "Lockheed Martin Corporation \u2013 Ultra Maritime",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-14T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
+    "wipro-pari-italy-s-r-l": {
+      "id": "wipro-pari-italy-s-r-l",
+      "canonical_name": "Wipro Pari Italy S.r.l.",
+      "members": [
+        {
+          "name": "Wipro Pari Italy S.r.l.",
+          "identifier": "Companies Register of Emilia no. 05595980284",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-35016",
+            "merger_name": "Wipro - Indeco",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-01T12:00:00Z",
+            "determination_date": "2026-05-26T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "x-global-llc": {
+      "id": "x-global-llc",
+      "canonical_name": "X Global LLC",
+      "members": [
+        {
+          "name": "X Global LLC",
+          "identifier": "Delaware File Number  6028653",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-85036",
+            "merger_name": "SpaceX - Anysphere",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-27T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

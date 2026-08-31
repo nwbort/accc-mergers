@@ -1,0 +1,573 @@
+{
+  "shard": 214,
+  "shard_count": 256,
+  "parties": {
+    "accent-group-limited": {
+      "id": "accent-group-limited",
+      "canonical_name": "Accent Group Limited",
+      "members": [
+        {
+          "name": "ACCENT GROUP LIMITED",
+          "identifier": "85 108 096 251",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-01118",
+            "merger_name": "Accent Group \u2013 The Athlete\u2019s Foot in Karrinyup, WA",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-29T12:00:00Z",
+            "determination_date": "2026-08-18T12:00:00Z"
+          }
+        ],
+        "target": [
+          {
+            "merger_id": "MN-30008",
+            "merger_name": "Frasers Group \u2013 Accent Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-19T12:00:00Z",
+            "determination_date": "2026-06-15T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 14.0,
+        "median_business_days": 14,
+        "completed_count": 1
+      }
+    },
+    "all-it-australia-pty-ltd": {
+      "id": "all-it-australia-pty-ltd",
+      "canonical_name": "All It Australia Pty Ltd",
+      "members": [
+        {
+          "name": "ALL IT AUSTRALIA PTY LTD",
+          "identifier": "90 146 108 321",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-15024",
+            "merger_name": "Redwood Services Group \u2013 All IT Australia",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-09T12:00:00Z",
+            "determination_date": "2026-06-25T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "blackbird-ventures": {
+      "id": "blackbird-ventures",
+      "canonical_name": "Blackbird Ventures",
+      "members": [
+        {
+          "name": "BLACKBIRD VENTURES PTY LTD",
+          "identifier": "93 159 044 989",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Blackbird Aware Pty Limited",
+          "identifier": "623 194 383",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "Blackbird CB Pty Limited",
+          "identifier": "697 959 701",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "Blackbird FOF25 Pty Ltd as trustee for Blackbird Ventures 2025 Follow-On Fund Trust",
+          "identifier": "49 711 375 395",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Blackbird FSA Pty Ltd",
+          "identifier": "692 309 032",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "Blackbird FSA Pty Ltd as trustee for Blackbird FSA Co-investment Trust",
+          "identifier": "99 526 258 209",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Blackbird Guardians Coinvestment Pty Ltd",
+          "identifier": "662 556 005",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "Blackbird HP Pty Ltd",
+          "identifier": "621 829 534",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "Blackbird Hotham Pty Ltd",
+          "identifier": "663 838 864",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "Blackbird Purple Pty Ltd",
+          "identifier": "44 637 190 599",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Blackbird Southern Land Pty Ltd",
+          "identifier": "640 535 208",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "Blackbird Ventures Pty Ltd",
+          "identifier": "93 159 044 989",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-45019",
+            "merger_name": "Blackbird Ventures \u2013 Baseten Labs",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-19T12:00:00Z",
+            "determination_date": "2026-07-15T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-50010",
+            "merger_name": "Blackbird Ventures \u2013 Halter",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-13T12:00:00Z",
+            "determination_date": "2026-04-01T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-55004",
+            "merger_name": "Blackbird Ventures \u2013 Baseten Labs",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-29T12:00:00Z",
+            "determination_date": "2026-02-10T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 3,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 3,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 19.0,
+        "median_days": 19,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 3
+      }
+    },
+    "crown-hybrid-pty-ltd": {
+      "id": "crown-hybrid-pty-ltd",
+      "canonical_name": "Crown Hybrid Pty Ltd",
+      "members": [
+        {
+          "name": "CROWN HYBRID PTY LTD",
+          "identifier": "47 004 550 529",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-70013",
+            "merger_name": "Ventura Motors \u2013 Crown Coaches",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-15T12:00:00Z",
+            "determination_date": "2026-05-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "cse-global-australia-pty-ltd": {
+      "id": "cse-global-australia-pty-ltd",
+      "canonical_name": "Cse-Global (Australia) Pty Ltd",
+      "members": [
+        {
+          "name": "CSE-GLOBAL (AUSTRALIA) PTY LTD",
+          "identifier": "85 109 958 090",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "CSE-Global (Australia) Pty Ltd",
+          "identifier": "85 109 958 090",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-95021",
+            "merger_name": "Logic Technologies - Ace Communication Distributors",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-21T12:00:00Z",
+            "determination_date": "2026-07-02T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-01071",
+            "merger_name": "CSE Crosscom \u2013 Progility",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2025-12-22T12:00:00Z",
+            "determination_date": "2026-02-03T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 2,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 42.5,
+        "median_days": 42.5,
+        "average_business_days": 22.0,
+        "median_business_days": 22.0,
+        "completed_count": 2
+      },
+      "waiver_duration": null
+    },
+    "ex-nihilo-group": {
+      "id": "ex-nihilo-group",
+      "canonical_name": "Ex Nihilo Group",
+      "members": [
+        {
+          "name": "Ex Nihilo Group",
+          "identifier": "Trade and Companies Registry Number 981 087 646",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-35004",
+            "merger_name": "L Catterton Management \u2013 Ex Nihilo Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-22T12:00:00Z",
+            "determination_date": "2026-02-04T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 13.0,
+        "median_days": 13,
+        "average_business_days": 8.0,
+        "median_business_days": 8,
+        "completed_count": 1
+      }
+    },
+    "hongshan-capital-advisors-hong-kong-limited": {
+      "id": "hongshan-capital-advisors-hong-kong-limited",
+      "canonical_name": "HongShan Capital Advisors (Hong Kong) Limited",
+      "members": [
+        {
+          "name": "HongShan Capital Advisors (Hong Kong) Limited",
+          "identifier": "35968906 (Hong Kong)",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-05008",
+            "merger_name": "HongShan Capital Group and Temasek \u2013 Golden Goose Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-17T12:00:00Z",
+            "determination_date": "2026-03-06T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "mastercard-incorporated": {
+      "id": "mastercard-incorporated",
+      "canonical_name": "MasterCard",
+      "members": [
+        {
+          "name": "Mastercard Incorporated",
+          "identifier": "3390142",
+          "identifier_type": null
+        },
+        {
+          "name": "Mastercard International Incorporated",
+          "identifier": "648928",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-50015",
+            "merger_name": "Mastercard - BVNK",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-15T12:00:00Z",
+            "determination_date": "2026-06-10T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "oakley-capital-limited": {
+      "id": "oakley-capital-limited",
+      "canonical_name": "Oakley Capital Limited",
+      "members": [
+        {
+          "name": "Oakley Capital Limited",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-01108",
+            "merger_name": "Oakley Capital \u2013 XTEL",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-12T12:00:00Z",
+            "determination_date": "2026-06-30T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "schlumberger-canada-limited": {
+      "id": "schlumberger-canada-limited",
+      "canonical_name": "Schlumberger Canada Limited",
+      "members": [
+        {
+          "name": "Schlumberger Canada Limited",
+          "identifier": "2025732419",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-75027",
+            "merger_name": "SLB \u2013 S&P Global\u2019s Geoscience Software Portfolio",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-06-30T12:00:00Z",
+            "determination_date": "2026-07-22T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "sound-devices-llc": {
+      "id": "sound-devices-llc",
+      "canonical_name": "Sound Devices LLC",
+      "members": [
+        {
+          "name": "Sound Devices LLC",
+          "identifier": "Company number (State of Wisconsin)  S053063",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-80004",
+            "merger_name": "Audiotonix - Soundtech Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-20T12:00:00Z",
+            "determination_date": "2026-03-17T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    }
+  }
+}

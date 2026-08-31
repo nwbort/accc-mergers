@@ -1,0 +1,529 @@
+{
+  "shard": 188,
+  "shard_count": 256,
+  "parties": {
+    "camlin-limited": {
+      "id": "camlin-limited",
+      "canonical_name": "Camlin Limited",
+      "members": [
+        {
+          "name": "Camlin (Australia) Pty Ltd",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Camlin Limited",
+          "identifier": "UK company number  NI073204",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-60023",
+            "merger_name": "Siemens Energy \u2013 Camlin Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-18T12:00:00Z",
+            "determination_date": "2026-07-06T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 18.0,
+        "median_days": 18,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "commonwealth-steel-company-pty-limited": {
+      "id": "commonwealth-steel-company-pty-limited",
+      "canonical_name": "Commonwealth Steel Company Pty Limited",
+      "members": [
+        {
+          "name": "Commonwealth Steel Company Pty Limited",
+          "identifier": "58 000 007 698",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-85006",
+            "merger_name": "Tega and Apollo Funds consortium - Molycop",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-26T12:00:00Z",
+            "determination_date": "2026-04-28T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 33.0,
+        "median_days": 33,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "daly-waters": {
+      "id": "daly-waters",
+      "canonical_name": "Daly Waters",
+      "members": [
+        {
+          "name": "Daly Waters BCD Pty Ltd",
+          "identifier": "696 136 277",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "Daly Waters Energy, LP",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Daly Waters FSDA North Pty Ltd",
+          "identifier": "696 136 295",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "Daly Waters FSDA South Pty Ltd",
+          "identifier": "696 136 302",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-01101",
+            "merger_name": "INPEX \u2013 minority interests in Beetaloo development projects",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-15T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "desmos-bidco-sas": {
+      "id": "desmos-bidco-sas",
+      "canonical_name": "Desmos Bidco SAS",
+      "members": [
+        {
+          "name": "Desmos Bidco SAS",
+          "identifier": "SIREN  100 230 754",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-25006",
+            "merger_name": "KPS \u2013 Novacel",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-12T12:00:00Z",
+            "determination_date": "2026-04-02T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "gilead-sciences-inc": {
+      "id": "gilead-sciences-inc",
+      "canonical_name": "Gilead Sciences, Inc.",
+      "members": [
+        {
+          "name": "Gilead Sciences, Inc.",
+          "identifier": "EIN 943047598",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-60014",
+            "merger_name": "Gilead - Ouro",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-22T12:00:00Z",
+            "determination_date": "2026-05-18T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-40009",
+            "merger_name": "Gilead - Arcellx",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-19T12:00:00Z",
+            "determination_date": "2026-04-13T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 2,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.5,
+        "median_days": 25.5,
+        "average_business_days": 16.0,
+        "median_business_days": 16.0,
+        "completed_count": 2
+      },
+      "waiver_duration": null
+    },
+    "peter-terry-nominees-pty-limited": {
+      "id": "peter-terry-nominees-pty-limited",
+      "canonical_name": "Peter Terry Nominees Pty Limited",
+      "members": [
+        {
+          "name": "PETER TERRY NOMINEES PTY LIMITED",
+          "identifier": "60 081 646 479",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-55021",
+            "merger_name": "Autopact - Freehold interest in commercial land in Dubbo, NSW",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-03T12:00:00Z",
+            "determination_date": "2026-06-18T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "qic-investments-no-5-pty-ltd-as-trustee-for-mondrian-hold-trust": {
+      "id": "qic-investments-no-5-pty-ltd-as-trustee-for-mondrian-hold-trust",
+      "canonical_name": "QIC Investments No.5 Pty Ltd as trustee for Mondrian Hold Trust",
+      "members": [
+        {
+          "name": "QIC Investments No.5 Pty Ltd as trustee for Mondrian Hold Trust",
+          "identifier": "66 682 890 035",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-80034",
+            "merger_name": "Australian Retirement Trust \u2013 Westfield Mt Gravatt",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-28T12:00:00Z",
+            "determination_date": "2026-08-25T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
+    "return-it-pty-ltd": {
+      "id": "return-it-pty-ltd",
+      "canonical_name": "Return It Pty Ltd",
+      "members": [
+        {
+          "name": "RETURN IT PTY LTD",
+          "identifier": "61 615 434 869",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-60006",
+            "merger_name": "Re.Group \u2013 Scouts Queensland Recycling Centre Site",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-14T12:00:00Z",
+            "determination_date": "2026-01-29T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "w-c-sales-pty-ltd": {
+      "id": "w-c-sales-pty-ltd",
+      "canonical_name": "W.C. Sales Pty. Ltd.",
+      "members": [
+        {
+          "name": "W.C. SALES PTY. LTD.",
+          "identifier": "13 067 394 281",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-65004",
+            "merger_name": "Kee Safety - RIS Safety",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-02T12:00:00Z",
+            "determination_date": "2026-02-13T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 11.0,
+        "median_days": 11,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
+    "wga-group-holdings-pty-ltd": {
+      "id": "wga-group-holdings-pty-ltd",
+      "canonical_name": "Wga Group Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "WGA GROUP HOLDINGS PTY LTD",
+          "identifier": "86 649 953 980",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-65016",
+            "merger_name": "AtkinsR\u00e9alis - WGA",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-12T12:00:00Z",
+            "determination_date": "2026-06-09T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "willunga-veterinary-hospital-pty-ltd": {
+      "id": "willunga-veterinary-hospital-pty-ltd",
+      "canonical_name": "Willunga Veterinary Hospital Pty Ltd",
+      "members": [
+        {
+          "name": "Willunga Veterinary Hospital Pty Ltd",
+          "identifier": "17 123 795 899",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-45020",
+            "merger_name": "Vets Central \u2013 Willunga & Aldinga Veterinary Services",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-23T12:00:00Z",
+            "determination_date": "2026-07-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "yarn-mesh-pty-ltd": {
+      "id": "yarn-mesh-pty-ltd",
+      "canonical_name": "Yarn Mesh Pty Ltd",
+      "members": [
+        {
+          "name": "YARN MESH PTY LTD",
+          "identifier": "83 660 812 788",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25008",
+            "merger_name": "Five V Capital - FTP Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-04T12:00:00Z",
+            "determination_date": "2026-03-24T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    }
+  }
+}

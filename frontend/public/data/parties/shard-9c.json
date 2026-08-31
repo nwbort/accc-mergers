@@ -1,0 +1,777 @@
+{
+  "shard": 156,
+  "shard_count": 256,
+  "parties": {
+    "az-next-generation-advisory-pty-ltd": {
+      "id": "az-next-generation-advisory-pty-ltd",
+      "canonical_name": "Az Next Generation Advisory Pty Ltd",
+      "members": [
+        {
+          "name": "AZ NEXT GENERATION ADVISORY PTY LTD",
+          "identifier": "57 167 960 018",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-15010",
+            "merger_name": "AZ Next Generation Advisory \u2013 Intend Financial",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-06T12:00:00Z",
+            "determination_date": "2026-03-24T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-40035",
+            "merger_name": "SCM Financial Group - Strategic Wealth Services Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-30T12:00:00Z",
+            "determination_date": "2026-08-28T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-85041",
+            "merger_name": "AGS Financial Group - Hartley Financial Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-28T12:00:00Z",
+            "determination_date": "2026-08-26T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-85004",
+            "merger_name": "Treysta Wealth Management \u2013 Locumsgroup",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-03T12:00:00Z",
+            "determination_date": "2026-01-27T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 4,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 4,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 26.5,
+        "average_business_days": 16.0,
+        "median_business_days": 16.0,
+        "completed_count": 4
+      }
+    },
+    "b-m-d-holdings-pty-limited": {
+      "id": "b-m-d-holdings-pty-limited",
+      "canonical_name": "B.M.D. Holdings Pty. Limited",
+      "members": [
+        {
+          "name": "B.M.D. HOLDINGS PTY. LIMITED",
+          "identifier": "47 010 093 348",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-05024",
+            "merger_name": "B.M.D. Holdings \u2013 Bajara Plant Hire and Stirling Contracting",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-24T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
+    "bp-motion-holdings-limited": {
+      "id": "bp-motion-holdings-limited",
+      "canonical_name": "BP Motion Holdings Limited",
+      "members": [
+        {
+          "name": "BP Motion Holdings Limited",
+          "identifier": "UKCRN  16910312",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-60015",
+            "merger_name": "Stonepeak \u2013 Castrol",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-21T12:00:00Z",
+            "determination_date": "2026-06-18T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "business-and-assets-comprising-holdsworth-house-medical-group-college-street-spe": {
+      "id": "business-and-assets-comprising-holdsworth-house-medical-group-college-street-spe",
+      "canonical_name": "Business and assets comprising Holdsworth House Medical Group & College Street Specialists",
+      "members": [
+        {
+          "name": "Business and assets comprising Holdsworth House Medical Group & College Street Specialists",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25045",
+            "merger_name": "Ochre Health - Holdsworth House Medical Group & College Street Specialists, NSW",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-14T12:00:00Z",
+            "determination_date": "2026-08-28T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "dolphin-bidco-pty-ltd": {
+      "id": "dolphin-bidco-pty-ltd",
+      "canonical_name": "Dolphin Bidco Pty Ltd",
+      "members": [
+        {
+          "name": "DOLPHIN BIDCO PTY LTD",
+          "identifier": "67 691 954 382",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-01112",
+            "merger_name": "State Swim \u2013 In2Swim",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-02T12:00:00Z",
+            "determination_date": "2026-07-27T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
+    },
+    "five-v-capital-pty-ltd": {
+      "id": "five-v-capital-pty-ltd",
+      "canonical_name": "Five V Capital Pty Ltd",
+      "members": [
+        {
+          "name": "FIVE V CAPITAL PTY LTD",
+          "identifier": "29 162 193 928",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-25008",
+            "merger_name": "Five V Capital - FTP Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-04T12:00:00Z",
+            "determination_date": "2026-03-24T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "flamingo-uk-gp-ltd": {
+      "id": "flamingo-uk-gp-ltd",
+      "canonical_name": "Flamingo UK GP Ltd",
+      "members": [
+        {
+          "name": "Flamingo UK GP Ltd",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-30019",
+            "merger_name": "KKR \u2013 Fresha.com",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-21T12:00:00Z",
+            "determination_date": "2026-06-10T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "gainsdale-pty-ltd": {
+      "id": "gainsdale-pty-ltd",
+      "canonical_name": "Gainsdale Pty Ltd",
+      "members": [
+        {
+          "name": "Gainsdale Pty Ltd",
+          "identifier": "008 971 499",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-10014",
+            "merger_name": "Turner Family Entities - Pedal Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-08T12:00:00Z",
+            "determination_date": "2026-04-30T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "highspot-inc": {
+      "id": "highspot-inc",
+      "canonical_name": "Highspot Inc.",
+      "members": [
+        {
+          "name": "HIGHSPOT AUSTRALIA PTY LTD",
+          "identifier": "11 653 327 649",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Highspot Inc.",
+          "identifier": "Delaware File Number  5126410",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-75014",
+            "merger_name": "Seismic \u2013 Highspot",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-12T12:00:00Z",
+            "determination_date": "2026-06-04T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 23.0,
+        "median_days": 23,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "hydrobiology-singapore-pte-ltd": {
+      "id": "hydrobiology-singapore-pte-ltd",
+      "canonical_name": "Hydrobiology Singapore Pte Ltd",
+      "members": [
+        {
+          "name": "Hydrobiology Singapore Pte Ltd",
+          "identifier": "UEN 201801873G",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-35025",
+            "merger_name": "SLR Consulting Australia - Hydrobiology",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-06-05T12:00:00Z",
+            "determination_date": "2026-06-25T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 20.0,
+        "median_days": 20,
+        "average_business_days": 13.0,
+        "median_business_days": 13,
+        "completed_count": 1
+      }
+    },
+    "laguna-bay-agricultural-fund-1": {
+      "id": "laguna-bay-agricultural-fund-1",
+      "canonical_name": "Laguna Bay Agricultural Fund 1",
+      "members": [
+        {
+          "name": "Laguna Bay Agricultural Fund 1",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-50005",
+            "merger_name": "Allied Beef - Lease of Yarranbrook Feedlot",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-13T12:00:00Z",
+            "determination_date": "2026-03-06T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "loom-games-oyun-yaz-l-m-ve-pazarlama-anonim-irketi": {
+      "id": "loom-games-oyun-yaz-l-m-ve-pazarlama-anonim-irketi",
+      "canonical_name": "Loom Games Oyun Yaz\u0131l\u0131m ve Pazarlama Anonim \u015eirketi",
+      "members": [
+        {
+          "name": "Loom Games Oyun Yaz\u0131l\u0131m ve Pazarlama Anonim \u015eirketi",
+          "identifier": "Istanbul Trade Registry  2483665",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-70006",
+            "merger_name": "Scopely \u2013 Loom Games",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-02-18T12:00:00Z",
+            "determination_date": "2026-03-06T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
+    "satterley-elimbah-pty-ltd": {
+      "id": "satterley-elimbah-pty-ltd",
+      "canonical_name": "Satterley Elimbah Pty Ltd",
+      "members": [
+        {
+          "name": "SATTERLEY ELIMBAH PTY LTD",
+          "identifier": "45 693 905 136",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-35024",
+            "merger_name": "HB Land and Satterley \u2013 Elimbah Land Joint Venture",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-09T12:00:00Z",
+            "determination_date": "2026-07-30T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
+    "soundtech-group-s-r-l": {
+      "id": "soundtech-group-s-r-l",
+      "canonical_name": "Soundtech Group S.r.l.",
+      "members": [
+        {
+          "name": "Soundtech Group S.r.l.",
+          "identifier": "Registration number (Companies\u2019 Register of Vicenza, VAT and Tax Code )  04495290241",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-80004",
+            "merger_name": "Audiotonix - Soundtech Group",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-02-20T12:00:00Z",
+            "determination_date": "2026-03-17T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "specialty-u-s-bidco-inc": {
+      "id": "specialty-u-s-bidco-inc",
+      "canonical_name": "Specialty (U.S.) Bidco, Inc.",
+      "members": [
+        {
+          "name": "Specialty (U.S.) Bidco, Inc.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-25014",
+            "merger_name": "CVC Capital Partners \u2013 The animal nutrition and health division of the DSM-Firmenich Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-21T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "specialtyco-us-llc": {
+      "id": "specialtyco-us-llc",
+      "canonical_name": "SpecialtyCo US LLC",
+      "members": [
+        {
+          "name": "SpecialtyCo US LLC",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25014",
+            "merger_name": "CVC Capital Partners \u2013 The animal nutrition and health division of the DSM-Firmenich Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-03-21T12:00:00Z",
+            "determination_date": "2026-04-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 10.0,
+        "median_business_days": 10,
+        "completed_count": 1
+      }
+    },
+    "ta-riverside-aggregator-l-p": {
+      "id": "ta-riverside-aggregator-l-p",
+      "canonical_name": "TA Riverside Aggregator, L.P.",
+      "members": [
+        {
+          "name": "TA Riverside Aggregator, L.P.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-15033",
+            "merger_name": "Armira and TA Associates \u2013 Intersurgical Aktiengesellschaft AG",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-25T12:00:00Z",
+            "determination_date": "2026-08-19T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
+    "xpon-technologies-group-limited": {
+      "id": "xpon-technologies-group-limited",
+      "canonical_name": "Xpon Technologies Group Limited",
+      "members": [
+        {
+          "name": "XPON TECHNOLOGIES GROUP LIMITED",
+          "identifier": "37 635 810 258",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-05043",
+            "merger_name": "Incubeta - Datisan",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-13T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    }
+  }
+}

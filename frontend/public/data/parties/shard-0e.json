@@ -1,0 +1,421 @@
+{
+  "shard": 14,
+  "shard_count": 256,
+  "parties": {
+    "cpp-investment-board-private-holdings-4-inc": {
+      "id": "cpp-investment-board-private-holdings-4-inc",
+      "canonical_name": "CPP Investment Board Private Holdings (4) Inc.",
+      "members": [
+        {
+          "name": "CPP Investment Board Private Holdings (4) Inc.",
+          "identifier": "BN  11089340",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-20011",
+            "merger_name": "Origin \u2013 Equity stake in Kraken",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-24T12:00:00Z",
+            "determination_date": "2026-04-20T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "demi-education-group-pty-ltd": {
+      "id": "demi-education-group-pty-ltd",
+      "canonical_name": "Demi Education Group Pty Ltd",
+      "members": [
+        {
+          "name": "DEMI EDUCATION GROUP PTY LTD",
+          "identifier": "58 652 798 126",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-05014",
+            "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-05-26T12:00:00Z",
+            "determination_date": "2026-06-20T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "desmos-us-bidco-inc": {
+      "id": "desmos-us-bidco-inc",
+      "canonical_name": "Desmos US Bidco, Inc.",
+      "members": [
+        {
+          "name": "Desmos US Bidco, Inc.",
+          "identifier": "[ID type unknown]  10469174",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-25006",
+            "merger_name": "KPS \u2013 Novacel",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-12T12:00:00Z",
+            "determination_date": "2026-04-02T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "hammondcare": {
+      "id": "hammondcare",
+      "canonical_name": "HammondCare",
+      "members": [
+        {
+          "name": "HAMMONDCARE",
+          "identifier": "48 000 026 219",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "HAMMONDCARE HEALTH AND HOSPITALS LIMITED",
+          "identifier": "72 074 354 028",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-85038",
+            "merger_name": "Hammondcare - Anglican Community Services' Support at Home business",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-03T12:00:00Z",
+            "determination_date": "2026-08-28T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "qbe-insurance-holdings-pty-limited": {
+      "id": "qbe-insurance-holdings-pty-limited",
+      "canonical_name": "QBE Insurance Holdings Pty Limited",
+      "members": [
+        {
+          "name": "QBE Insurance Holdings Pty Limited",
+          "identifier": "69 146 960 438",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-40015",
+            "merger_name": "Swiss Re - QBE Insurance's Trade Credit and Surety business",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-04-10T12:00:00Z",
+            "determination_date": "2026-05-06T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "stockland-corporation-ltd": {
+      "id": "stockland-corporation-ltd",
+      "canonical_name": "Stockland Corporation Ltd",
+      "members": [
+        {
+          "name": "STOCKLAND CORPORATION LTD",
+          "identifier": "43 000 181 733",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-10002",
+            "merger_name": "Stockland LLC \u2013 intragroup transfer of Halcyon Jardin and Evergreen projects",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-01-15T12:00:00Z",
+            "determination_date": "2026-02-13T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
+    "the-trustee-for-s3-strategic-super-services-unit-trust": {
+      "id": "the-trustee-for-s3-strategic-super-services-unit-trust",
+      "canonical_name": "The Trustee for S3 STRATEGIC SUPER SERVICES UNIT TRUST",
+      "members": [
+        {
+          "name": "The Trustee for S3 STRATEGIC SUPER SERVICES UNIT TRUST",
+          "identifier": "25 442 350 701",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-40035",
+            "merger_name": "SCM Financial Group - Strategic Wealth Services Group",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-07-30T12:00:00Z",
+            "determination_date": "2026-08-28T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    },
+    "wakeling-motos": {
+      "id": "wakeling-motos",
+      "canonical_name": "Wakeling Motos",
+      "members": [
+        {
+          "name": "HURRIKAYNE PTY LTD",
+          "identifier": "74 118 744 915",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Paul Burgess Nominees Pty Ltd as trustee for Paul Burgess Trust",
+          "identifier": "119 875 768",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "Paul Wakeling Motor Group Pty Ltd",
+          "identifier": "47 119 908 780",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "S A Wakeling Nominees Pty Ltd as trustee for S.A. Wakeling Trust",
+          "identifier": "119 879 980",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "WAKELING HOLDINGS PTY LTD",
+          "identifier": "41 160 814 040",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "WOLLONGONG CITY MOTORS PTY LTD",
+          "identifier": "22 002 019 598",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Wakeling South Coast Pty Ltd",
+          "identifier": "636 298 970",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-90028",
+            "merger_name": "Peter Warren - Wakeling Automotive",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-13T12:00:00Z",
+            "determination_date": null
+          },
+          {
+            "merger_id": "MN-30002",
+            "merger_name": "Peter Warren - Wakeling Automotive",
+            "is_waiver": false,
+            "status": "Assessment ceased",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 2",
+            "notification_date": "2026-03-05T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 1,
+      "phase_2_count": 1,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": {
+        "average_days": 89.0,
+        "median_days": 89,
+        "average_business_days": 58.0,
+        "median_business_days": 58,
+        "completed_count": 1
+      },
+      "waiver_duration": null
+    },
+    "waterfront-networks-pty-ltd": {
+      "id": "waterfront-networks-pty-ltd",
+      "canonical_name": "Waterfront Networks Pty Ltd",
+      "members": [
+        {
+          "name": "WATERFRONT NETWORKS PTY LTD",
+          "identifier": "36 611 517 090",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-90011",
+            "merger_name": "Salter Brothers - Buroserv",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-04-10T12:00:00Z",
+            "determination_date": "2026-04-29T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 19.0,
+        "median_days": 19,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    }
+  }
+}
