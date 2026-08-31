@@ -125,6 +125,47 @@
       },
       "waiver_duration": null
     },
+    "forward-i-s-r-l": {
+      "id": "forward-i-s-r-l",
+      "canonical_name": "Forward I S.\u00e0 r.l.",
+      "members": [
+        {
+          "name": "Forward I S.\u00e0 r.l.",
+          "identifier": "RCS Luxembourg  B308548",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-75048",
+            "merger_name": "Platinum Equity Group \u2013 Nestl\u00e9 Waters",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-14T12:00:00Z",
+            "determination_date": "2026-08-31T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 17.0,
+        "median_days": 17,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
+    },
     "foxtrott-bidco-gmbh": {
       "id": "foxtrott-bidco-gmbh",
       "canonical_name": "Foxtrott BidCo GmbH",

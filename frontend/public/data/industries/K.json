@@ -9,7 +9,7 @@
       "code": "62",
       "name": "Finance",
       "level": "subdivision",
-      "merger_count": 112
+      "merger_count": 113
     },
     {
       "code": "63",
@@ -199,6 +199,17 @@
       "has_conditions": false,
       "phase": "Waiver",
       "notification_date": "2026-08-06T12:00:00Z",
+      "determination_date": "2026-08-31T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-75048",
+      "merger_name": "Platinum Equity Group \u2013 Nestl\u00e9 Waters",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-14T12:00:00Z",
       "determination_date": "2026-08-31T12:00:00Z"
     },
     {
@@ -1819,10 +1830,10 @@
       "determination_date": null
     }
   ],
-  "count": 163,
+  "count": 164,
   "phase_1_count": 40,
   "phase_2_count": 2,
-  "waiver_count": 121,
+  "waiver_count": 122,
   "active_count": 14,
   "phase_duration": {
     "average_days": 28.0,
@@ -1832,10 +1843,10 @@
     "completed_count": 29
   },
   "waiver_duration": {
-    "average_days": 19.99173553719008,
-    "median_days": 19,
-    "average_business_days": 13.553719008264462,
-    "median_business_days": 13,
-    "completed_count": 121
+    "average_days": 19.9672131147541,
+    "median_days": 19.0,
+    "average_business_days": 13.532786885245901,
+    "median_business_days": 12.5,
+    "completed_count": 122
   }
 }

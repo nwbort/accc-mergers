@@ -27,7 +27,7 @@
       "code": "36",
       "name": "Grocery, Liquor and Tobacco Product Wholesaling",
       "level": "subdivision",
-      "merger_count": 6
+      "merger_count": 7
     },
     {
       "code": "37",
@@ -140,6 +140,17 @@
       "has_conditions": false,
       "phase": "Waiver",
       "notification_date": "2026-08-06T12:00:00Z",
+      "determination_date": "2026-08-31T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-75048",
+      "merger_name": "Platinum Equity Group \u2013 Nestl\u00e9 Waters",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-14T12:00:00Z",
       "determination_date": "2026-08-31T12:00:00Z"
     },
     {
@@ -704,10 +715,10 @@
       "determination_date": null
     }
   ],
-  "count": 60,
+  "count": 61,
   "phase_1_count": 33,
   "phase_2_count": 2,
-  "waiver_count": 25,
+  "waiver_count": 26,
   "active_count": 8,
   "phase_duration": {
     "average_days": 33.44444444444444,
@@ -717,10 +728,10 @@
     "completed_count": 27
   },
   "waiver_duration": {
-    "average_days": 20.44,
-    "median_days": 21,
-    "average_business_days": 14.16,
-    "median_business_days": 15,
-    "completed_count": 25
+    "average_days": 20.307692307692307,
+    "median_days": 21.0,
+    "average_business_days": 14.038461538461538,
+    "median_business_days": 15.0,
+    "completed_count": 26
   }
 }

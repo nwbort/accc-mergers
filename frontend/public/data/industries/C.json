@@ -9,13 +9,13 @@
       "code": "11",
       "name": "Food Product Manufacturing",
       "level": "subdivision",
-      "merger_count": 17
+      "merger_count": 18
     },
     {
       "code": "12",
       "name": "Beverage and Tobacco Product Manufacturing",
       "level": "subdivision",
-      "merger_count": 4
+      "merger_count": 5
     },
     {
       "code": "13",
@@ -260,6 +260,17 @@
       "has_conditions": false,
       "phase": "Waiver",
       "notification_date": "2026-08-06T12:00:00Z",
+      "determination_date": "2026-08-31T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-75048",
+      "merger_name": "Platinum Equity Group \u2013 Nestl\u00e9 Waters",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-14T12:00:00Z",
       "determination_date": "2026-08-31T12:00:00Z"
     },
     {
@@ -1770,10 +1781,10 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 152,
+  "count": 153,
   "phase_1_count": 69,
   "phase_2_count": 2,
-  "waiver_count": 81,
+  "waiver_count": 82,
   "active_count": 14,
   "phase_duration": {
     "average_days": 29.224137931034484,
@@ -1783,10 +1794,10 @@
     "completed_count": 58
   },
   "waiver_duration": {
-    "average_days": 18.864197530864196,
-    "median_days": 18,
-    "average_business_days": 12.703703703703704,
-    "median_business_days": 12,
-    "completed_count": 81
+    "average_days": 18.841463414634145,
+    "median_days": 17.5,
+    "average_business_days": 12.682926829268293,
+    "median_business_days": 12.0,
+    "completed_count": 82
   }
 }
