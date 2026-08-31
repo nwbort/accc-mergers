@@ -651,146 +651,46 @@ jobs:
 
       # -- Duplicate events → fix/duplicate-events --
 
-      # The detector's own stdout is the step summary, so it runs once and is
-      # tee'd rather than re-run by a separate summary step. pipefail keeps the
-      # `if` reading the detector's exit code (duplicates found) and not tee's.
-      - name: Detect duplicate events
-        id: dup_detect
-        run: |
-          set -o pipefail
-          git switch -C fix/duplicate-events ${{ steps.detect_base.outputs.sha }}
-          {
-            echo "### Duplicate events detection"
-            echo ""
-          } >> "$GITHUB_STEP_SUMMARY"
-          if python -m scripts.detect.detect_duplicates \
-              | tee -a "$GITHUB_STEP_SUMMARY"; then
-            echo "found=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "found=true" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Apply duplicate fixes
-        if: steps.dup_detect.outputs.found == 'true'
-        run: |
-          python -m scripts.detect.detect_duplicates \
-            --apply-fixes \
-            --pr-markdown pr_body.md || true
-
-      - name: Commit and push duplicate fix branch
-        id: dup_commit
-        if: steps.dup_detect.outputs.found == 'true'
-        run: |
-          if git diff --quiet data/processed/mergers.json; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            git add data/processed/mergers.json
-            git commit -m "fix: remove duplicate events detected on $(date -u +%Y-%m-%d)"
-            git push origin fix/duplicate-events --force
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Create or update duplicate PR
-        if: steps.dup_detect.outputs.found == 'true' && steps.dup_commit.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          TITLE="fix: remove duplicate events ($(date -u +%Y-%m-%d))"
-          EXISTING=$(gh pr list \
-            --head fix/duplicate-events \
-            --state open \
-            --json number \
-            --jq '.[0].number' 2>/dev/null || echo "")
-          if [ -n "$EXISTING" ]; then
-            gh pr edit "$EXISTING" --title "$TITLE" --body-file pr_body.md
-            echo "Updated PR #$EXISTING"
-          else
-            gh pr create \
-              --head fix/duplicate-events \
-              --title "$TITLE" \
-              --body-file pr_body.md
-          fi
-
-      - name: Close duplicate PR when none remain
-        if: steps.dup_detect.outputs.found == 'false'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh pr list \
-            --head fix/duplicate-events \
-            --state open \
-            --json number \
-            --jq '.[].number' | \
-          while read -r num; do
-            gh pr close "$num" \
-              --comment "All duplicate events resolved as of $(date -u +%Y-%m-%d). Closing automatically." \
-              || true
-          done
+      - name: Duplicate events review PR
+        uses: ./.github/actions/detection-pr
+        with:
+          base-sha: ${{ steps.detect_base.outputs.sha }}
+          branch: fix/duplicate-events
+          heading: Duplicate events detection
+          command: >-
+            python -m scripts.detect.detect_duplicates
+            --apply-fixes
+            --pr-markdown pr_body.md
+          data-file: data/processed/mergers.json
+          commit-message: "fix: remove duplicate events detected on {date}"
+          pr-title: "fix: remove duplicate events ({date})"
+          close-comment: >-
+            All duplicate events resolved as of {date}. Closing automatically.
+          github-token: ${{ github.token }}
 
       # -- Related mergers → fix/related-mergers --
 
-      - name: Detect related mergers
-        id: relm_detect
-        run: |
-          set -o pipefail
-          git switch -C fix/related-mergers ${{ steps.detect_base.outputs.sha }}
-          {
-            echo "### Related mergers detection"
-            echo ""
-          } >> "$GITHUB_STEP_SUMMARY"
-          if python -m scripts.detect.detect_related_mergers --summary \
-              | tee -a "$GITHUB_STEP_SUMMARY"; then
-            echo "found=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "found=true" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Apply suggested related-merger pairs
-        if: steps.relm_detect.outputs.found == 'true'
-        run: |
-          python -m scripts.detect.detect_related_mergers \
-            --apply-suggestions \
-            --pr-markdown pr_body.md \
-            --issue-markdown pr_issue_body.md \
-            --meta-json pr_meta.json || true
-
-      - name: Commit and push related-mergers branch
-        id: relm_commit
-        if: steps.relm_detect.outputs.found == 'true'
-        run: |
-          if git diff --quiet data/processed/related_mergers.json; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            git add data/processed/related_mergers.json
-            git commit -m "suggest: candidate related mergers detected on $(date -u +%Y-%m-%d)"
-            git push origin fix/related-mergers --force
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Create or update related-mergers PR
-        id: relm_pr
-        if: steps.relm_detect.outputs.found == 'true' && steps.relm_commit.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          TITLE="suggest: link related mergers ($(date -u +%Y-%m-%d))"
-          EXISTING=$(gh pr list \
-            --head fix/related-mergers \
-            --state open \
-            --json number \
-            --jq '.[0].number' 2>/dev/null || echo "")
-          if [ -n "$EXISTING" ]; then
-            gh pr edit "$EXISTING" --title "$TITLE" --body-file pr_body.md
-            echo "Updated PR #$EXISTING"
-            echo "number=$EXISTING" >> "$GITHUB_OUTPUT"
-          else
-            NUMBER=$(gh pr create \
-              --head fix/related-mergers \
-              --title "$TITLE" \
-              --body-file pr_body.md \
-              | grep -oE '[0-9]+$')
-            echo "number=$NUMBER" >> "$GITHUB_OUTPUT"
-          fi
+      - name: Related mergers review PR
+        id: relm
+        uses: ./.github/actions/detection-pr
+        with:
+          base-sha: ${{ steps.detect_base.outputs.sha }}
+          branch: fix/related-mergers
+          heading: Related mergers detection
+          command: >-
+            python -m scripts.detect.detect_related_mergers
+            --summary
+            --apply-suggestions
+            --pr-markdown pr_body.md
+            --issue-markdown pr_issue_body.md
+            --meta-json pr_meta.json
+          data-file: data/processed/related_mergers.json
+          commit-message: "suggest: candidate related mergers detected on {date}"
+          pr-title: "suggest: link related mergers ({date})"
+          close-comment: >-
+            All detected related-merger pairs have been recorded as of {date}.
+            Closing automatically.
+          github-token: ${{ github.token }}
 
       # An exact (100%) name match on acquirer, target, and merger name for a
       # refiled waiver leaves essentially no room for a false positive (see
@@ -800,11 +700,11 @@ jobs:
       # are conservatively left for manual review in their entirety, since a
       # PR merge can't be split pair-by-pair.
       - name: Auto-merge exact-match waiver-refile PR
-        if: steps.relm_detect.outputs.found == 'true' && steps.relm_commit.outputs.changed == 'true'
+        if: steps.relm.outputs.found == 'true' && steps.relm.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ steps.relm.outputs.pr-number }}
         run: |
-          PR_NUMBER="${{ steps.relm_pr.outputs.number }}"
           if [ -z "$PR_NUMBER" ] || [ "$(jq -r '.all_certain' pr_meta.json)" != "true" ]; then
             echo "Not an all-exact-match batch (or PR number missing) — leaving PR #$PR_NUMBER for manual review."
             exit 0
@@ -825,93 +725,23 @@ jobs:
           gh api "repos/$GITHUB_REPOSITORY/issues" --method POST --input -
           echo "Merged PR #$PR_NUMBER automatically and opened a verification issue"
 
-      - name: Close related-mergers PR when nothing left to recommend
-        if: steps.relm_detect.outputs.found == 'false'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh pr list \
-            --head fix/related-mergers \
-            --state open \
-            --json number \
-            --jq '.[].number' | \
-          while read -r num; do
-            gh pr close "$num" \
-              --comment "All detected related-merger pairs have been recorded as of $(date -u +%Y-%m-%d). Closing automatically." \
-              || true
-          done
-
       # -- Related parties → fix/related-parties --
 
-      - name: Detect related parties
-        id: relp_detect
-        run: |
-          set -o pipefail
-          git switch -C fix/related-parties ${{ steps.detect_base.outputs.sha }}
-          {
-            echo "### Related parties detection"
-            echo ""
-          } >> "$GITHUB_STEP_SUMMARY"
-          if python -m scripts.detect.detect_related_parties --summary \
-              | tee -a "$GITHUB_STEP_SUMMARY"; then
-            echo "found=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "found=true" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Apply suggested related-party groups
-        if: steps.relp_detect.outputs.found == 'true'
-        run: |
-          python -m scripts.detect.detect_related_parties \
-            --apply-suggestions \
-            --pr-markdown pr_body.md || true
-
-      - name: Commit and push related-parties branch
-        id: relp_commit
-        if: steps.relp_detect.outputs.found == 'true'
-        run: |
-          if git diff --quiet data/processed/related_parties.json; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            git add data/processed/related_parties.json
-            git commit -m "suggest: candidate related parties detected on $(date -u +%Y-%m-%d)"
-            git push origin fix/related-parties --force
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Create or update related-parties PR
-        if: steps.relp_detect.outputs.found == 'true' && steps.relp_commit.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          TITLE="suggest: link related parties ($(date -u +%Y-%m-%d))"
-          EXISTING=$(gh pr list \
-            --head fix/related-parties \
-            --state open \
-            --json number \
-            --jq '.[0].number' 2>/dev/null || echo "")
-          if [ -n "$EXISTING" ]; then
-            gh pr edit "$EXISTING" --title "$TITLE" --body-file pr_body.md
-            echo "Updated PR #$EXISTING"
-          else
-            gh pr create \
-              --head fix/related-parties \
-              --title "$TITLE" \
-              --body-file pr_body.md
-          fi
-
-      - name: Close related-parties PR when nothing left to recommend
-        if: steps.relp_detect.outputs.found == 'false'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh pr list \
-            --head fix/related-parties \
-            --state open \
-            --json number \
-            --jq '.[].number' | \
-          while read -r num; do
-            gh pr close "$num" \
-              --comment "All detected related-party groups have been recorded as of $(date -u +%Y-%m-%d). Closing automatically." \
-              || true
-          done
+      - name: Related parties review PR
+        uses: ./.github/actions/detection-pr
+        with:
+          base-sha: ${{ steps.detect_base.outputs.sha }}
+          branch: fix/related-parties
+          heading: Related parties detection
+          command: >-
+            python -m scripts.detect.detect_related_parties
+            --summary
+            --apply-suggestions
+            --pr-markdown pr_body.md
+          data-file: data/processed/related_parties.json
+          commit-message: "suggest: candidate related parties detected on {date}"
+          pr-title: "suggest: link related parties ({date})"
+          close-comment: >-
+            All detected related-party groups have been recorded as of {date}.
+            Closing automatically.
+          github-token: ${{ github.token }}
