@@ -17,7 +17,8 @@ Fully static — no backend server. Cloudflare Pages serves the React SPA plus g
 ### Data Pipeline (`scripts/`)
 
 - **Python 3.11/3.12** scripts for scraping, extracting, and generating data
-  (`test.yml` pins 3.11, the pipeline workflows 3.12)
+  (most workflows, `pipeline.yml` and `test.yml` among them, pin 3.11;
+  `check-deploy-assets.yml` and `scrape-tribunal.yml` pin 3.12)
 - `scrape/scrape.sh` → `extract_mergers.py` → `generate/generate_static_data.py`
 - `scripts/` is a package: entry points run as `python -m scripts.…` from the
   repo root, never by file path (the modules import each other absolutely)
