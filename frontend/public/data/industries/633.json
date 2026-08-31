@@ -24,7 +24,7 @@
       "code": "6330",
       "name": "Superannuation Funds",
       "level": "class",
-      "merger_count": 9
+      "merger_count": 10
     }
   ],
   "mergers": [
@@ -38,6 +38,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-08-10T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-60037",
+      "merger_name": "Aware Real Estate \u2013 100 Market Street",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-04T12:00:00Z",
+      "determination_date": "2026-08-31T12:00:00Z"
     },
     {
       "merger_id": "WA-80034",
@@ -128,17 +139,17 @@
       "determination_date": "2026-04-20T12:00:00Z"
     }
   ],
-  "count": 9,
+  "count": 10,
   "phase_1_count": 1,
   "phase_2_count": 0,
-  "waiver_count": 8,
+  "waiver_count": 9,
   "active_count": 1,
   "phase_duration": null,
   "waiver_duration": {
-    "average_days": 21.25,
-    "median_days": 20.5,
-    "average_business_days": 14.0,
-    "median_business_days": 14.0,
-    "completed_count": 8
+    "average_days": 21.88888888888889,
+    "median_days": 21,
+    "average_business_days": 14.555555555555555,
+    "median_business_days": 14,
+    "completed_count": 9
   }
 }

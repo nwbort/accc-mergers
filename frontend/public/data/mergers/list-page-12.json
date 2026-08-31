@@ -710,6 +710,77 @@
       ]
     },
     {
+      "merger_id": "WA-60037",
+      "merger_name": "Aware Real Estate \u2013 100 Market Street",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-04T12:00:00Z",
+      "determination_publication_date": "2026-08-31T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "The Trustee for ALTIS ARET SUB TRUST 34"
+        }
+      ],
+      "targets": [
+        {
+          "name": "The Trustee for Market Mid Trust"
+        },
+        {
+          "name": "The Trustee for Market Sub Trust"
+        },
+        {
+          "name": "MARKET SUB TC PTY LTD"
+        },
+        {
+          "name": "The Trustee for Link Australia Holdings Trust"
+        },
+        {
+          "name": "MARKET MID PTY LTD"
+        },
+        {
+          "name": "Joy Success Developments Limited"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "AWARE SUPER PTY LTD",
+          "canonical": {
+            "name": "Aware Super Pty Limited"
+          }
+        },
+        {
+          "name": "AWARE REAL ESTATE MANAGEMENT PTY LTD"
+        },
+        {
+          "name": "Link Real Estate Investment Trust"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6330",
+          "name": "Superannuation Funds"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        },
+        {
+          "code": "6720",
+          "name": "Real Estate Services"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-15031",
       "merger_name": "Danaher (Leica Biosystems) - StatLab",
       "status": "Under assessment",
@@ -1110,6 +1181,51 @@
         {
           "code": "6419",
           "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-90033",
+      "merger_name": "Francisco Partners \u2013 Majority interest in Command Alkon",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-05T12:00:00Z",
+      "determination_publication_date": "2026-08-31T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Colossus Buyer L.P."
+        }
+      ],
+      "targets": [
+        {
+          "name": "Project Potter Holdings, LLC"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "COMMAND ALKON AUSTRALIA PTY. LTD."
+        },
+        {
+          "name": "Francisco Partners Management, L.P.",
+          "canonical": {
+            "name": "Francisco Partners Management"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
         }
       ]
     },
@@ -2062,6 +2178,52 @@
       ]
     },
     {
+      "merger_id": "WA-95039",
+      "merger_name": "Blackstone - Technology Service Corporation",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-13T12:00:00Z",
+      "determination_publication_date": "2026-08-31T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Pozar Buyer LLC"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Technology Service Corporation"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Blackstone Inc.",
+          "canonical": {
+            "name": "Blackstone Inc."
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "6923",
+          "name": "Engineering Design and Engineering Consulting Services"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-10027",
       "merger_name": "Endeavour Group \u2013 retail liquor site in Horsham, VIC",
       "status": "Under assessment",
@@ -2581,145 +2743,6 @@
         {
           "code": "3720",
           "name": "Pharmaceutical and Toiletry Goods Wholesaling"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-40039",
-      "merger_name": "Bloomberg - Canoe Intelligence",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-20T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-10-01T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Bloomberg Inc."
-        }
-      ],
-      "targets": [
-        {
-          "name": "Canoe Software Inc."
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "Clipper Acquisition Inc."
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "5420",
-          "name": "Software Publishing"
-        },
-        {
-          "code": "6020",
-          "name": "Other Information Services"
-        },
-        {
-          "code": "6419",
-          "name": "Other Auxiliary Finance and Investment Services"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-60030",
-      "merger_name": "Tencent \u2013 Happibits",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-20T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-10-01T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Mount Baker Investment Limited"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Happibits Inc."
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "Miniclip S.A."
-        },
-        {
-          "name": "Supercell Oy"
-        },
-        {
-          "name": "Riot Games, Inc."
-        },
-        {
-          "name": "Tencent Holdings Limited"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "6240",
-          "name": "Financial Asset Investing"
-        },
-        {
-          "code": "7000",
-          "name": "Computer System Design and Related Services"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-75044",
-      "merger_name": "McCormick - Unilever Foods Business",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-20T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-10-01T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "McCormick & Company, Incorporated"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Australia Food NewCo"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "MCCORMICK FOODS AUSTRALIA PTY. LTD."
-        },
-        {
-          "name": "BOTANICAL FOOD COMPANY PTY LTD"
-        },
-        {
-          "name": "McCormick Pty Ltd"
-        },
-        {
-          "name": "A.C.N. 065 919 495 Pty Ltd"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "1140",
-          "name": "Fruit and Vegetable Processing"
-        },
-        {
-          "code": "1199",
-          "name": "Other Food Product Manufacturing n.e.c."
         }
       ]
     }

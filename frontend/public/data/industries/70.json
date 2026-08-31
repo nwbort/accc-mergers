@@ -19,7 +19,7 @@
       "code": "700",
       "name": "Computer System Design and Related Services",
       "level": "group",
-      "merger_count": 65
+      "merger_count": 66
     }
   ],
   "mergers": [
@@ -76,6 +76,17 @@
       "has_conditions": false,
       "phase": "Waiver",
       "notification_date": "2026-08-12T12:00:00Z",
+      "determination_date": "2026-08-31T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-90033",
+      "merger_name": "Francisco Partners \u2013 Majority interest in Command Alkon",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-05T12:00:00Z",
       "determination_date": "2026-08-31T12:00:00Z"
     },
     {
@@ -739,10 +750,10 @@
       "determination_date": "2026-01-20T12:00:00Z"
     }
   ],
-  "count": 65,
+  "count": 66,
   "phase_1_count": 27,
   "phase_2_count": 0,
-  "waiver_count": 38,
+  "waiver_count": 39,
   "active_count": 4,
   "phase_duration": {
     "average_days": 28.956521739130434,
@@ -752,10 +763,10 @@
     "completed_count": 23
   },
   "waiver_duration": {
-    "average_days": 20.07894736842105,
-    "median_days": 19.5,
-    "average_business_days": 14.078947368421053,
-    "median_business_days": 13.0,
-    "completed_count": 38
+    "average_days": 20.23076923076923,
+    "median_days": 20,
+    "average_business_days": 14.179487179487179,
+    "median_business_days": 13,
+    "completed_count": 39
   }
 }

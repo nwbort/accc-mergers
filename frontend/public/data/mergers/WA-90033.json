@@ -1,0 +1,132 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/francisco-partners-%E2%80%93-majority-interest-in-command-alkon",
+  "merger_name": "Francisco Partners \u2013 Majority interest in Command Alkon",
+  "status": "Assessment completed",
+  "merger_id": "WA-90033",
+  "effective_notification_datetime": "2026-08-05T12:00:00Z",
+  "original_notification_datetime": "2026-08-05T12:00:00Z",
+  "stage": "Waiver application",
+  "determination_publication_date": "2026-08-31T12:00:00Z",
+  "accc_determination": "Approved",
+  "acquirers": [
+    {
+      "name": "Colossus Buyer L.P.",
+      "identifier_type": null,
+      "identifier": "Cayman Islands Exempted Limited Partnership  137942",
+      "party_page": {
+        "id": "colossus-buyer-l-p",
+        "name": "Colossus Buyer L.P."
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "Project Potter Holdings, LLC",
+      "identifier_type": null,
+      "identifier": "",
+      "party_page": {
+        "id": "project-potter-holdings-llc",
+        "name": "Project Potter Holdings, LLC"
+      }
+    }
+  ],
+  "other_parties": [
+    {
+      "name": "COMMAND ALKON AUSTRALIA PTY. LTD.",
+      "identifier_type": "ABN",
+      "identifier": "14 103 246 019",
+      "party_page": {
+        "id": "command-alkon-australia-pty-ltd",
+        "name": "Command Alkon Australia Pty. Ltd."
+      }
+    },
+    {
+      "name": "Francisco Partners Management, L.P.",
+      "identifier_type": null,
+      "identifier": "USA Tax ID Number  943339666",
+      "canonical": {
+        "id": "francisco-partners-management-l-p",
+        "name": "Francisco Partners Management"
+      },
+      "party_page": {
+        "id": "francisco-partners-management-l-p",
+        "name": "Francisco Partners Management"
+      }
+    }
+  ],
+  "anzsic_codes": [
+    {
+      "code": "6419",
+      "name": "Other Auxiliary Finance and Investment Services"
+    },
+    {
+      "code": "7000",
+      "name": "Computer System Design and Related Services"
+    }
+  ],
+  "merger_description": "Pursuant to a unit purchase agreement, funds advised by Francisco Partners Management, L.P. (together with its affiliated funds, **Francisco Partners**) will indirectly acquire all the equity interests in Project Potter Holdings, LLC, together with its subsidiaries, including Command Alkon Australia Pty Ltd (**Command Alkon**), that are currently held by funds managed by Thoma Bravo LP (**Thoma Bravo**) and certain other equity holders (the **Acquisition**).\n\nCommand Alkon is currently jointly controlled by Thoma Bravo and Heidelberg Materials AG (**Heidelberg Materials**).\n\nFollowing completion of the Acquisition, Francisco Partners and Heidelberg Materials will jointly control Command Alkon.\n\nFrancisco Partners is a global investment firm headquartered in San Francisco. It is a technology-focused investment firm with significant experience investing in and supporting technology companies.\n\nCommand Alkon is headquartered in Ohio and consists of several software companies that deliver automation software solutions. These solutions are used in the heavy building materials industry for purposes including pricing and quoting, order taking, scheduling and delivery, dispatching, batching, ticketing, truck tracking and management, and quality control, in connection with the production of materials such as ready-mixed or pre-cast concrete, cement, aggregates and asphalt.",
+  "events": [
+    {
+      "date": "2026-08-31T12:00:00Z",
+      "title": "Notification waiver determination published",
+      "display_title": "Waiver application determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Francisco%20Partners%20%E2%80%93%20Majority%20interest%20in%20Command%20Alkon%20%28WA-90033%29%20-%20Notification%20waiver%20determination%20-%2031%20August%202026.pdf",
+      "determination_table_content": [
+        {
+          "item": "Explanation for\ndetermination",
+          "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition given there is no horizontal or vertical\noverlap between Francisco Partners (or its connected entities) and\nCommand Alkon in Australia.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+        }
+      ],
+      "url_gh": "/mergers/WA-90033/Francisco Partners \u2013 Majority interest in Command Alkon (WA-90033) - Notification waiver determination - 31 August 2026.pdf",
+      "is_determination_event": true,
+      "phase": "Waiver"
+    },
+    {
+      "date": "2026-08-05T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": true,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-50003",
+      "merger_name": "Francisco Partners - Sermo",
+      "acquirers": [
+        "Sigrun Bidco Limited"
+      ],
+      "targets": [
+        "Sermo Limited (together with its subsidiaries, \u201cSermo\u201d)"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "MN-45024",
+      "merger_name": "OEConnection - Epyx",
+      "acquirers": [
+        "OEC Bidco Limited"
+      ],
+      "targets": [
+        "Quadrum Investments Group Ltd (trading as \"Epyx\")"
+      ],
+      "status": "Under assessment"
+    },
+    {
+      "merger_id": "WA-85025",
+      "merger_name": "Francisco Partners - Blackline Safety",
+      "acquirers": [
+        "Apollo Purchaser, Inc."
+      ],
+      "targets": [
+        "Blackline Safety Corp."
+      ],
+      "accc_determination": "Approved"
+    }
+  ]
+}

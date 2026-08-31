@@ -60,6 +60,17 @@
       "determination_date": null
     },
     {
+      "merger_id": "WA-60037",
+      "merger_name": "Aware Real Estate \u2013 100 Market Street",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-04T12:00:00Z",
+      "determination_date": "2026-08-31T12:00:00Z"
+    },
+    {
       "merger_id": "WA-60038",
       "merger_name": "Volvo Group Australia \u2013 Assets comprising Volvo dealership stock and assignable sales contracts of Southside Truck Centre",
       "is_waiver": true,
@@ -68,6 +79,28 @@
       "has_conditions": false,
       "phase": "Waiver",
       "notification_date": "2026-08-06T12:00:00Z",
+      "determination_date": "2026-08-31T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-90033",
+      "merger_name": "Francisco Partners \u2013 Majority interest in Command Alkon",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-05T12:00:00Z",
+      "determination_date": "2026-08-31T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-95039",
+      "merger_name": "Blackstone - Technology Service Corporation",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-13T12:00:00Z",
       "determination_date": "2026-08-31T12:00:00Z"
     },
     {
@@ -665,10 +698,10 @@
       "determination_date": "2025-12-18T12:00:00Z"
     }
   ],
-  "count": 58,
+  "count": 61,
   "phase_1_count": 14,
   "phase_2_count": 0,
-  "waiver_count": 44,
+  "waiver_count": 47,
   "active_count": 3,
   "phase_duration": {
     "average_days": 25.90909090909091,
@@ -678,10 +711,10 @@
     "completed_count": 11
   },
   "waiver_duration": {
-    "average_days": 20.59090909090909,
-    "median_days": 20.5,
-    "average_business_days": 14.25,
-    "median_business_days": 13.5,
-    "completed_count": 44
+    "average_days": 20.78723404255319,
+    "median_days": 21,
+    "average_business_days": 14.382978723404255,
+    "median_business_days": 14,
+    "completed_count": 47
   }
 }

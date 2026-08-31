@@ -1,6 +1,6 @@
 {
   "total_mergers": 239,
-  "total_waivers": 366,
+  "total_waivers": 369,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 198,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 350,
+    "Approved": 353,
     "Not approved": 16
   },
   "clearance_rate": {
@@ -48,23 +48,23 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.603825136612024,
-    "median_days": 19.0,
-    "average_business_days": 13.289617486338798,
-    "median_business_days": 13.0
+    "average_days": 19.636856368563684,
+    "median_days": 19,
+    "average_business_days": 13.314363143631436,
+    "median_business_days": 13
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 103
+      "count": 104
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 65
+      "count": 66
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 58
+      "count": 61
     },
     {
       "name": "Software Publishing",
@@ -72,19 +72,19 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 31
+      "count": 32
     },
     {
       "name": "Pubs, Taverns and Bars",
       "count": 30
     },
     {
-      "name": "Accommodation",
+      "name": "Engineering Design and Engineering Consulting Services",
       "count": 21
     },
     {
-      "name": "Engineering Design and Engineering Consulting Services",
-      "count": 20
+      "name": "Accommodation",
+      "count": 21
     },
     {
       "name": "Liquor Retailing",
@@ -219,6 +219,39 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-60037",
+      "merger_name": "Aware Real Estate \u2013 100 Market Street",
+      "determination": "Approved",
+      "determination_date": "2026-08-31T12:00:00Z",
+      "page_modified_datetime": "2026-08-31T18:12:43+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-95039",
+      "merger_name": "Blackstone - Technology Service Corporation",
+      "determination": "Approved",
+      "determination_date": "2026-08-31T12:00:00Z",
+      "page_modified_datetime": "2026-08-31T18:11:53+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-90033",
+      "merger_name": "Francisco Partners \u2013 Majority interest in Command Alkon",
+      "determination": "Approved",
+      "determination_date": "2026-08-31T12:00:00Z",
+      "page_modified_datetime": "2026-08-31T18:10:30+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-60038",
       "merger_name": "Volvo Group Australia \u2013 Assets comprising Volvo dealership stock and assignable sales contracts of Southside Truck Centre",
       "determination": "Approved",
@@ -315,39 +348,6 @@
       "determination_type": "ceased",
       "is_waiver": false,
       "stage": "Phase 2 - detailed assessment"
-    },
-    {
-      "merger_id": "MN-35034",
-      "merger_name": "The Independents Group \u2013 acquisition of entities within the Smuggler Group",
-      "determination": "Approved",
-      "determination_date": "2026-08-28T12:00:00Z",
-      "page_modified_datetime": "2026-08-28T15:39:25+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-85038",
-      "merger_name": "Hammondcare - Anglican Community Services' Support at Home business",
-      "determination": "Approved",
-      "determination_date": "2026-08-28T12:00:00Z",
-      "page_modified_datetime": "2026-08-28T13:54:09+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-15037",
-      "merger_name": "Monadelphous - Tyden Power",
-      "determination": "Not approved",
-      "determination_date": "2026-08-27T12:00:00Z",
-      "page_modified_datetime": "2026-08-27T20:56:30+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
     }
   ]
 }

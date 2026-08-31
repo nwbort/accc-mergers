@@ -43,6 +43,47 @@
         "completed_count": 1
       }
     },
+    "colossus-buyer-l-p": {
+      "id": "colossus-buyer-l-p",
+      "canonical_name": "Colossus Buyer L.P.",
+      "members": [
+        {
+          "name": "Colossus Buyer L.P.",
+          "identifier": "Cayman Islands Exempted Limited Partnership  137942",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-90033",
+            "merger_name": "Francisco Partners \u2013 Majority interest in Command Alkon",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-05T12:00:00Z",
+            "determination_date": "2026-08-31T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
     "fluent-retail-pty-ltd": {
       "id": "fluent-retail-pty-ltd",
       "canonical_name": "Fluent Retail Pty Ltd",

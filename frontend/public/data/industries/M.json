@@ -9,13 +9,13 @@
       "code": "69",
       "name": "Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",
       "level": "subdivision",
-      "merger_count": 94
+      "merger_count": 95
     },
     {
       "code": "70",
       "name": "Computer System Design and Related Services",
       "level": "subdivision",
-      "merger_count": 65
+      "merger_count": 66
     }
   ],
   "mergers": [
@@ -127,6 +127,28 @@
       "has_conditions": false,
       "phase": "Waiver",
       "notification_date": "2026-08-12T12:00:00Z",
+      "determination_date": "2026-08-31T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-90033",
+      "merger_name": "Francisco Partners \u2013 Majority interest in Command Alkon",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-05T12:00:00Z",
+      "determination_date": "2026-08-31T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-95039",
+      "merger_name": "Blackstone - Technology Service Corporation",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-13T12:00:00Z",
       "determination_date": "2026-08-31T12:00:00Z"
     },
     {
@@ -1593,10 +1615,10 @@
       "determination_date": null
     }
   ],
-  "count": 143,
+  "count": 145,
   "phase_1_count": 55,
   "phase_2_count": 3,
-  "waiver_count": 85,
+  "waiver_count": 87,
   "active_count": 9,
   "phase_duration": {
     "average_days": 31.72,
@@ -1606,10 +1628,10 @@
     "completed_count": 50
   },
   "waiver_duration": {
-    "average_days": 19.48235294117647,
+    "average_days": 19.54022988505747,
     "median_days": 19,
-    "average_business_days": 13.294117647058824,
+    "average_business_days": 13.333333333333334,
     "median_business_days": 13,
-    "completed_count": 85
+    "completed_count": 87
   }
 }

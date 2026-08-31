@@ -125,6 +125,47 @@
         "completed_count": 1
       }
     },
+    "command-alkon-australia-pty-ltd": {
+      "id": "command-alkon-australia-pty-ltd",
+      "canonical_name": "Command Alkon Australia Pty. Ltd.",
+      "members": [
+        {
+          "name": "COMMAND ALKON AUSTRALIA PTY. LTD.",
+          "identifier": "14 103 246 019",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-90033",
+            "merger_name": "Francisco Partners \u2013 Majority interest in Command Alkon",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-05T12:00:00Z",
+            "determination_date": "2026-08-31T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
     "fordham-business-advisors-pty-ltd": {
       "id": "fordham-business-advisors-pty-ltd",
       "canonical_name": "Fordham Business Advisors Pty Ltd",

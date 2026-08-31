@@ -43,6 +43,47 @@
         "completed_count": 1
       }
     },
+    "joy-success-developments-limited": {
+      "id": "joy-success-developments-limited",
+      "canonical_name": "Joy Success Developments Limited",
+      "members": [
+        {
+          "name": "Joy Success Developments Limited",
+          "identifier": "British Virgin Islands Entity Number  2018891",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-60037",
+            "merger_name": "Aware Real Estate \u2013 100 Market Street",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-04T12:00:00Z",
+            "determination_date": "2026-08-31T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
     "ma-marina-fund-holdco-pty-ltd": {
       "id": "ma-marina-fund-holdco-pty-ltd",
       "canonical_name": "Ma Marina Fund Holdco Pty Ltd",

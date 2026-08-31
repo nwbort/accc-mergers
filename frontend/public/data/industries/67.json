@@ -19,13 +19,13 @@
       "code": "671",
       "name": "Property Operators",
       "level": "group",
-      "merger_count": 35
+      "merger_count": 36
     },
     {
       "code": "672",
       "name": "Real Estate Services",
       "level": "group",
-      "merger_count": 5
+      "merger_count": 6
     }
   ],
   "mergers": [
@@ -72,6 +72,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-08-10T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-60037",
+      "merger_name": "Aware Real Estate \u2013 100 Market Street",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-04T12:00:00Z",
+      "determination_date": "2026-08-31T12:00:00Z"
     },
     {
       "merger_id": "MN-35033",
@@ -459,10 +470,10 @@
       "determination_date": "2025-09-05T12:00:00Z"
     }
   ],
-  "count": 39,
+  "count": 40,
   "phase_1_count": 14,
   "phase_2_count": 1,
-  "waiver_count": 24,
+  "waiver_count": 25,
   "active_count": 4,
   "phase_duration": {
     "average_days": 35.27272727272727,
@@ -472,10 +483,10 @@
     "completed_count": 11
   },
   "waiver_duration": {
-    "average_days": 20.458333333333332,
-    "median_days": 19.5,
-    "average_business_days": 13.875,
-    "median_business_days": 13.5,
-    "completed_count": 24
+    "average_days": 20.72,
+    "median_days": 20,
+    "average_business_days": 14.08,
+    "median_business_days": 14,
+    "completed_count": 25
   }
 }
