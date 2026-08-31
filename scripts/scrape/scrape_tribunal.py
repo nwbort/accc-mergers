@@ -89,10 +89,18 @@ headful, which is far less likely to be flagged than headless::
 
   xvfb-run -a python -m scripts.scrape.scrape_tribunal
 
-Existing ``url_gh`` local-mirror paths are preserved across a re-scrape (matched
-by document URL). If a page yields no rows (e.g. the layout changed) or its
-Cloudflare challenge never clears, that entry is left untouched rather than
-wiped.
+The merge is additive. Existing ``url_gh`` local-mirror paths are preserved
+across a re-scrape (matched by document URL), and so is any document the
+tribunal has since removed from its table — it keeps its place in the list
+relative to the filings around it. The tribunal does prune its own tables (a
+superseded documentary index, say), but those filings remain part of the
+matter's history, are still mirrored under ``data/raw/matters/`` and are still
+rendered as merger timeline events, so dropping them would silently erase
+events from the site. Removals are reported on each run; to drop a document for
+good, delete it from ``tribunal_appeals.json`` by hand.
+
+If a page yields no rows (e.g. the layout changed) or its Cloudflare challenge
+never clears, that entry is left untouched rather than wiped.
 
 A document whose file can't be downloaded is still recorded (with its tribunal
 ``url``, just no ``url_gh``) and raises a ``::warning::`` annotation, so it is
@@ -953,23 +961,98 @@ async def browser_session_headers(browser, tab) -> dict:
     return headers
 
 
-def merge_documents(existing: list[dict], scraped: list[dict]) -> list[dict]:
-    """Return the scraped documents, carrying over url_gh from existing docs.
+def document_key(doc: dict) -> tuple:
+    """Identity of a tribunal document, for matching across runs.
 
-    Existing documents are matched to scraped ones by URL so hand-added local
-    mirror paths (``url_gh``) survive a re-scrape. The scraped list is otherwise
-    authoritative for the page's contents and ordering.
+    The document URL is the identity where there is one — the tribunal's
+    ``/__data/assets/pdf_file/0008/...`` paths are stable once published. A row
+    without a link (rare, but the tables do carry the occasional link-less
+    entry) falls back to the text fields that describe it.
     """
-    gh_by_url = {
-        doc.get("url"): doc.get("url_gh")
-        for doc in (existing or [])
-        if doc.get("url") and doc.get("url_gh")
-    }
-    for doc in scraped:
-        url_gh = gh_by_url.get(doc.get("url"))
-        if url_gh:
-            doc["url_gh"] = url_gh
-    return scraped
+    url = doc.get("url")
+    if url:
+        return ("url", url)
+    return (
+        "text",
+        doc.get("date"),
+        doc.get("filed_by"),
+        doc.get("description"),
+    )
+
+
+def _apply_scraped(existing: dict, scraped: dict) -> dict:
+    """Fold a freshly scraped row onto the document already on file.
+
+    The page is authoritative for the fields it publishes, but a blank cell
+    never wipes a value we already hold, and keys the parser does not produce
+    (``url_gh``, anything hand-added) are carried through. ``section`` is the
+    exception: the parser only sets it for documents under a later table, so
+    its absence is meaningful and it is dropped when the page no longer files
+    the document under a heading.
+    """
+    merged = dict(existing)
+    for key, value in scraped.items():
+        if value is not None and value != "":
+            merged[key] = value
+    if "section" not in scraped:
+        merged.pop("section", None)
+    return merged
+
+
+def merge_documents(existing: list[dict], scraped: list[dict]) -> list[dict]:
+    """Merge a freshly scraped document list onto the one already on file.
+
+    The scraped list drives the contents and ordering, but the merge is
+    **additive**: a document that has dropped off the tribunal's table is kept,
+    re-inserted where it used to sit relative to the documents that remain.
+    The tribunal routinely prunes its filings table — superseded indexes, say —
+    and those filings are still part of the matter's history, still mirrored
+    under ``data/raw/matters/`` and still linked from the merger timeline, so
+    losing them from the record would silently erase timeline events.
+
+    Documents that survive on the page are refreshed from the scrape (see
+    :func:`_apply_scraped`), which is what carries hand-added local mirror
+    paths (``url_gh``) over a re-scrape.
+
+    To drop a document for good, delete it from ``tribunal_appeals.json`` by
+    hand — it will not come back unless the tribunal republishes it.
+    """
+    existing = list(existing or [])
+    scraped_by_key = {document_key(doc): doc for doc in scraped}
+
+    # Start from the scraped list, refreshed with anything we already held.
+    existing_by_key = {document_key(doc): doc for doc in existing}
+    merged = [
+        _apply_scraped(existing_by_key[document_key(doc)], doc)
+        if document_key(doc) in existing_by_key
+        else doc
+        for doc in scraped
+    ]
+    merged_index = {document_key(doc): i for i, doc in enumerate(merged)}
+
+    # Walk the old list backwards re-inserting whatever the page dropped, each
+    # one immediately before the nearest document that followed it and is still
+    # listed (or at the end, when nothing after it survived). Going backwards
+    # keeps runs of consecutive dropped documents in their original order,
+    # since each insert lands at the same index as the one before it.
+    anchor = len(merged)
+    for doc in reversed(existing):
+        key = document_key(doc)
+        if key in scraped_by_key:
+            anchor = merged_index[key]
+            continue
+        merged.insert(anchor, doc)
+        merged_index = {document_key(d): i for i, d in enumerate(merged)}
+
+    return merged
+
+
+def dropped_documents(existing: list[dict], scraped: list[dict]) -> list[dict]:
+    """Return the documents on file that the scraped page no longer lists."""
+    scraped_keys = {document_key(doc) for doc in scraped}
+    return [
+        doc for doc in (existing or []) if document_key(doc) not in scraped_keys
+    ]
 
 
 async def scrape_matters(
@@ -1148,8 +1231,17 @@ def scrape(
     )
 
     changed = 0
+    delisted: list[tuple[str, dict]] = []
     for mid, scraped in scraped_by_id.items():
         record = records[mid]
+        dropped = dropped_documents(record.get("documents"), scraped)
+        delisted.extend((mid, doc) for doc in dropped)
+        if dropped:
+            gha_warning(
+                f"scrape_tribunal: {len(dropped)} document(s) for {mid} are no "
+                f"longer listed on the tribunal page and have been kept: "
+                f"{summarise_urls([d['url'] for d in dropped if d.get('url')])}"
+            )
         merged = merge_documents(record.get("documents"), scraped)
         if merged != record.get("documents"):
             record["documents"] = merged
@@ -1164,6 +1256,20 @@ def scrape(
         print(f"\nUpdated {changed} entr(y/ies) in {TRIBUNAL_APPEALS_JSON}")
     else:
         print("\nNo changes.")
+
+    if delisted:
+        # Kept, not dropped — see merge_documents. Reported so a document
+        # disappearing from the tribunal's table is a visible event rather than
+        # something only a diff of the raw JSON would reveal (there won't be
+        # one: the record is unchanged).
+        print(
+            f"\n{len(delisted)} document(s) are no longer listed on the "
+            f"tribunal page and were kept on file:",
+            file=sys.stderr,
+        )
+        for mid, doc in delisted:
+            label = doc.get("description") or doc.get("url") or "(untitled)"
+            print(f"  {mid}: {doc.get('date') or '?'} — {label}", file=sys.stderr)
 
     if unmirrored:
         # Not fatal: the document is still recorded with its tribunal ``url``,
