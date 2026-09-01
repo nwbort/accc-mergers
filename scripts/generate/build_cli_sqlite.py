@@ -28,7 +28,7 @@ from pathlib import Path
 from typing import Any
 
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 
 
 SCHEMA = """
@@ -48,6 +48,9 @@ CREATE TABLE mergers (
     related_merger_id TEXT,
     related_relationship TEXT,
     related_merger_name TEXT,
+    under_appeal INTEGER,
+    has_judicial_review INTEGER,
+    phase_1_estimate_days INTEGER,
     raw_json TEXT
 );
 
@@ -195,6 +198,7 @@ def _insert_merger(conn: sqlite3.Connection, m: dict[str, Any]) -> None:
     targets_text = _join_names(m.get("targets"))
     industries_text = _join_names(m.get("anzsic_codes"))
     related = m.get("related_merger") or {}
+    phase_1_estimate = m.get("phase_1_estimate") or {}
 
     conn.execute(
         """
@@ -203,8 +207,9 @@ def _insert_merger(conn: sqlite3.Connection, m: dict[str, Any]) -> None:
             acquirers_text, targets_text, industries_text,
             determination, phase, notification_date, determination_date,
             related_merger_id, related_relationship, related_merger_name,
+            under_appeal, has_judicial_review, phase_1_estimate_days,
             raw_json
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """,
         (
             m["merger_id"],
@@ -222,6 +227,9 @@ def _insert_merger(conn: sqlite3.Connection, m: dict[str, Any]) -> None:
             related.get("merger_id") if related else None,
             related.get("relationship") if related else None,
             related.get("merger_name") if related else None,
+            1 if m.get("under_appeal") else 0,
+            1 if m.get("judicial_review") else 0,
+            phase_1_estimate.get("expected_business_days"),
             json.dumps(m),
         ),
     )
