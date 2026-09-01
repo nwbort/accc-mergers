@@ -1,10 +1,10 @@
 {
-  "total_mergers": 239,
+  "total_mergers": 240,
   "total_waivers": 370,
   "total_conditional_approvals": 3,
   "by_status": {
     "Assessment completed": 198,
-    "Under assessment": 36,
+    "Under assessment": 37,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -64,7 +64,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 61
+      "count": 62
     },
     {
       "name": "Software Publishing",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-35030",
+      "merger_name": "MUFG Pension & Market Services - Grow Technology Services",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-08-31T12:00:00Z",
+      "page_modified_datetime": "2026-09-01T15:12:37+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-85047",
       "merger_name": "Blackstone funds and Perpetual Trustees \u2013 HSBC loan portfolio",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-18T12:00:00Z",
       "page_modified_datetime": "2026-08-21T10:14:50+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-20034",
-      "merger_name": "Chevron - Woodside asset swap",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-18T12:00:00Z",
-      "page_modified_datetime": "2026-08-21T09:34:57+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

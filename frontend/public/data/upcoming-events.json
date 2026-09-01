@@ -51,6 +51,16 @@
       "effective_notification_datetime": "2026-07-13T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-09-08T12:00:00Z",
+      "merger_id": "MN-35030",
+      "merger_name": "MUFG Pension & Market Services - Grow Technology Services",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-08-31T12:00:00Z"
+    },
+    {
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-09-08T12:00:00Z",
@@ -371,6 +381,16 @@
       "effective_notification_datetime": "2026-08-27T12:00:00Z"
     },
     {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-10-13T12:00:00Z",
+      "merger_id": "MN-35030",
+      "merger_name": "MUFG Pension & Market Services - Grow Technology Services",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-08-31T12:00:00Z"
+    },
+    {
       "type": "tribunal_hearing",
       "event_type_display": "Tribunal hearing",
       "date": "2026-11-09T12:00:00Z",
@@ -382,6 +402,6 @@
       "tribunal_number": "ACT 1 of 2026"
     }
   ],
-  "count": 38,
+  "count": 40,
   "days_ahead": 60
 }

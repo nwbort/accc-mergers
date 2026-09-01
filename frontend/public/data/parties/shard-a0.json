@@ -84,6 +84,41 @@
       },
       "waiver_duration": null
     },
+    "australian-administration-services-pty-limited": {
+      "id": "australian-administration-services-pty-limited",
+      "canonical_name": "Australian Administration Services Pty. Limited",
+      "members": [
+        {
+          "name": "AUSTRALIAN ADMINISTRATION SERVICES PTY. LIMITED",
+          "identifier": "62 003 429 114",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-35030",
+            "merger_name": "MUFG Pension & Market Services - Grow Technology Services",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-31T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "basf-se": {
       "id": "basf-se",
       "canonical_name": "Basf Se",

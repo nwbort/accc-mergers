@@ -30,10 +30,21 @@
       "code": "6419",
       "name": "Other Auxiliary Finance and Investment Services",
       "level": "class",
-      "merger_count": 61
+      "merger_count": 62
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-35030",
+      "merger_name": "MUFG Pension & Market Services - Grow Technology Services",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-31T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-85047",
       "merger_name": "Blackstone funds and Perpetual Trustees \u2013 HSBC loan portfolio",
@@ -706,11 +717,11 @@
       "determination_date": "2025-12-18T12:00:00Z"
     }
   ],
-  "count": 61,
-  "phase_1_count": 14,
+  "count": 62,
+  "phase_1_count": 15,
   "phase_2_count": 0,
   "waiver_count": 47,
-  "active_count": 3,
+  "active_count": 4,
   "phase_duration": {
     "average_days": 25.90909090909091,
     "median_days": 25,

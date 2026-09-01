@@ -1,0 +1,139 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/mufg-pension-market-services-grow-technology-services",
+  "merger_name": "MUFG Pension & Market Services - Grow Technology Services",
+  "status": "Under assessment",
+  "merger_id": "MN-35030",
+  "effective_notification_datetime": "2026-08-31T12:00:00Z",
+  "original_notification_datetime": "2026-08-31T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-10-13T12:00:00Z",
+  "consultation_response_due_date": "2026-09-08T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "AUSTRALIAN ADMINISTRATION SERVICES PTY. LIMITED",
+      "identifier_type": "ABN",
+      "identifier": "62 003 429 114",
+      "party_page": {
+        "id": "australian-administration-services-pty-limited",
+        "name": "Australian Administration Services Pty. Limited"
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "GROW TECHNOLOGY SERVICES LTD",
+      "identifier_type": "ABN",
+      "identifier": "63 615 049 691",
+      "party_page": {
+        "id": "grow-technology-services-ltd",
+        "name": "Grow Technology Services Ltd"
+      }
+    }
+  ],
+  "other_parties": [
+    {
+      "name": "MUFG PENSION & MARKET SERVICES HOLDINGS PTY LIMITED",
+      "identifier_type": "ABN",
+      "identifier": "27 120 964 098",
+      "party_page": {
+        "id": "mufg-pension-market-services-holdings-pty-limited",
+        "name": "Mufg Pension & Market Services Holdings Pty Limited"
+      }
+    }
+  ],
+  "anzsic_codes": [
+    {
+      "code": "6419",
+      "name": "Other Auxiliary Finance and Investment Services"
+    }
+  ],
+  "merger_description": "MUFG Pension & Market Services Holdings Pty Limited (**MPMS**), through its wholly owned subsidiary Australian Administration Services Pty Limited, proposes to acquire 100% of the shares in Grow Technology Services Ltd (**Grow**), pursuant to a scheme of arrangement (the **Acquisition**).\n\nMPMS is a global provider of data and technology-enabled services, delivering business-to-business (**B2B**) solutions across financial services and capital markets. Through its MUFG Retirement Solutions business, MPMS delivers administration services to superannuation funds, operating across Australia, Hong Kong, New Zealand and the United Kingdom. MPMS supplies superannuation administration services using its technology platform (aaspire) which is non-cloud native.\n\nGrow provides superannuation administration services to superannuation funds in Australia. Grow\u2019s core offering is a distributed ledger technology platform built on the Corda Enterprise blockchain (DLTA) that provides modular, cloud-based technology.\n\nMPMS and Grow overlap in the supply of administration services to superannuation funds in Australia.",
+  "events": [
+    {
+      "date": "2026-09-01T12:00:00Z",
+      "title": "MPMS-Grow - Questionnaire",
+      "display_title": "MPMS-Grow - Questionnaire",
+      "is_questionnaire_event": true,
+      "url": "https://www.accc.gov.au/system/files/moderated_files/MPMS-Grow%20-%20Questionnaire_0.docx",
+      "url_gh": "/mergers/MN-35030/MPMS-Grow - Questionnaire_0.pdf",
+      "phase": null
+    },
+    {
+      "date": "2026-08-31T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-95039",
+      "merger_name": "Blackstone - Technology Service Corporation",
+      "acquirers": [
+        "Pozar Buyer LLC"
+      ],
+      "targets": [
+        "Technology Service Corporation"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "MN-10005",
+      "merger_name": "Apex - Mercer Administration Services and related assets",
+      "acquirers": [
+        "Apex Group Holdings (Australia) Pty Ltd"
+      ],
+      "targets": [
+        "MERCER OUTSOURCING (AUSTRALIA) PTY LTD",
+        "MERCER ADMINISTRATION SERVICES (AUSTRALIA) PTY LIMITED"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "WA-15010",
+      "merger_name": "AZ Next Generation Advisory \u2013 Intend Financial",
+      "acquirers": [
+        "AZ NEXT GENERATION ADVISORY PTY LTD"
+      ],
+      "targets": [
+        "BMM PARTNERS PTY LTD"
+      ],
+      "accc_determination": "Approved"
+    }
+  ],
+  "phase_1_estimate": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "industry",
+    "anzsic_level": "class",
+    "anzsic_codes": [
+      "6419"
+    ],
+    "sample_size": 11,
+    "estimated_at": "2026-09-01",
+    "method_version": 1
+  },
+  "pre_notification": {
+    "estimated_days": 52,
+    "min_days": 52,
+    "max_days": 54,
+    "id_issued_estimated": "2026-07-10",
+    "id_issued_before": "2026-07-10",
+    "id_issued_after": "2026-07-08",
+    "min_days_witness": "WA-35032",
+    "max_days_witness": "WA-35028",
+    "basis": "bracketed",
+    "method_version": 1
+  }
+}
