@@ -3,8 +3,8 @@
     "notifications_total": 240,
     "matters_extended": 20,
     "share_extended_pct": 8.3,
-    "extension_events_total": 26,
-    "total_extension_bd": 289,
+    "extension_events_total": 27,
+    "total_extension_bd": 294,
     "median_matter_extension_bd": 15,
     "longest_single_bd": 30,
     "phase_2_total": 9,
@@ -17,8 +17,8 @@
   "reasons": [
     {
       "category": "Requested by the merger parties",
-      "events": 17,
-      "business_days": 196
+      "events": 18,
+      "business_days": 201
     },
     {
       "category": "ACCC information request",
@@ -58,7 +58,7 @@
     },
     {
       "month": "2026-08",
-      "count": 5
+      "count": 6
     }
   ],
   "matters": [
@@ -175,6 +175,34 @@
       ]
     },
     {
+      "merger_id": "MN-85015",
+      "merger_name": "Journey Beyond - Kelsian Tourism Portfolio",
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "notification_date": "2026-07-01T12:00:00Z",
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "escalated_to_phase_2": false,
+      "total_extension_bd": 20,
+      "extension_count": 2,
+      "extensions": [
+        {
+          "date": "2026-08-11T12:00:00Z",
+          "business_days": 15,
+          "reason_category": "Requested by the merger parties",
+          "reason_detail": "request by parties",
+          "title": "Timeline extended by 15 business days - following request by parties"
+        },
+        {
+          "date": "2026-08-28T12:00:00Z",
+          "business_days": 5,
+          "reason_category": "Requested by the merger parties",
+          "reason_detail": "request by parties",
+          "title": "Timeline extended by 5 business days - following request by parties"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-05013",
       "merger_name": "Zoetis \u2013 Neogen Genomics Business",
       "stage": "Phase 2 - detailed assessment",
@@ -255,27 +283,6 @@
           "reason_category": "Remedy under consideration",
           "reason_detail": "remedy offered by parties",
           "title": "Timeline extended by 15 business days \u2013 following remedy offered by parties"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-85015",
-      "merger_name": "Journey Beyond - Kelsian Tourism Portfolio",
-      "stage": "Phase 1 - initial assessment",
-      "status": "Under assessment",
-      "notification_date": "2026-07-01T12:00:00Z",
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
-      "escalated_to_phase_2": false,
-      "total_extension_bd": 15,
-      "extension_count": 1,
-      "extensions": [
-        {
-          "date": "2026-08-11T12:00:00Z",
-          "business_days": 15,
-          "reason_category": "Requested by the merger parties",
-          "reason_detail": "request by parties",
-          "title": "Timeline extended by 15 business days - following request by parties"
         }
       ]
     },
