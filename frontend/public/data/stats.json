@@ -3,12 +3,12 @@
   "total_waivers": 372,
   "total_conditional_approvals": 4,
   "by_status": {
-    "Assessment completed": 200,
-    "Under assessment": 35,
+    "Assessment completed": 201,
+    "Under assessment": 34,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 194,
+    "Approved": 195,
     "Referred to phase 2": 9,
     "Approved with conditions": 3
   },
@@ -22,27 +22,27 @@
     "Not approved": 16
   },
   "clearance_rate": {
-    "cleared": 198,
+    "cleared": 199,
     "not_cleared": 2,
-    "total": 200,
+    "total": 201,
     "rate": 0.99
   },
   "phase_duration": {
-    "average_days": 29.694174757281555,
-    "median_days": 26.0,
-    "average_business_days": 19.99514563106796,
-    "median_business_days": 17.0,
+    "average_days": 29.681159420289855,
+    "median_days": 26,
+    "average_business_days": 19.99033816425121,
+    "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 44,
-        "percentage": 21.4
+        "percentage": 21.3
       },
       "day20": {
-        "count": 153,
-        "percentage": 74.3
+        "count": 154,
+        "percentage": 74.4
       },
       "day30": {
-        "count": 193,
+        "count": 194,
         "percentage": 93.7
       }
     }
@@ -252,6 +252,17 @@
       "has_conditions": false
     },
     {
+      "merger_id": "MN-65021",
+      "merger_name": "Wesfarmers and Built Group - Built Living Joint Venture",
+      "determination": "Approved",
+      "determination_date": "2026-09-02T12:00:00Z",
+      "page_modified_datetime": "2026-09-02T11:48:48+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-80005",
       "merger_name": "Kimberly-Clark Corporation - Kenvue Inc.",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-60033",
-      "merger_name": "Verlinvest \u2013 up to 60% interest in HomeExchange",
-      "determination": "Approved",
-      "determination_date": "2026-08-28T12:00:00Z",
-      "page_modified_datetime": "2026-08-28T17:15:10+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]

@@ -48,17 +48,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-65021",
-      "merger_name": "Wesfarmers and Built Group - Built Living Joint Venture",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-08-06T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-75035",
       "merger_name": "Johns Lyng Group \u2013 C&M Build Group",
       "is_waiver": false,
@@ -83,6 +72,17 @@
     {
       "merger_id": "MN-35031",
       "merger_name": "Osmoflo Water Management - Guidera O'Connor",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-06T12:00:00Z",
+      "determination_date": "2026-09-02T12:00:00Z"
+    },
+    {
+      "merger_id": "MN-65021",
+      "merger_name": "Wesfarmers and Built Group - Built Living Joint Venture",
       "is_waiver": false,
       "status": "Assessment completed",
       "determination": "Approved",
@@ -580,13 +580,13 @@
   "phase_1_count": 23,
   "phase_2_count": 1,
   "waiver_count": 26,
-  "active_count": 5,
+  "active_count": 4,
   "phase_duration": {
-    "average_days": 28.15,
-    "median_days": 26.0,
-    "average_business_days": 19.65,
-    "median_business_days": 17.5,
-    "completed_count": 20
+    "average_days": 28.095238095238095,
+    "median_days": 26,
+    "average_business_days": 19.61904761904762,
+    "median_business_days": 18,
+    "completed_count": 21
   },
   "waiver_duration": {
     "average_days": 20.23076923076923,
