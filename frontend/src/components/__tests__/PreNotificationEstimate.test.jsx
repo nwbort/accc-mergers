@@ -156,13 +156,14 @@ describe('PreNotificationEstimate', () => {
 
   it('rates a bracketed estimate by how tightly its bounds close in', () => {
     // 12 to 34 days is a 22-day window — wider than a fortnight, narrower than
-    // six weeks.
+    // six weeks. The width itself stays off the page; only the rating shows.
     renderCallout(merger());
 
     expect(screen.getByText('Medium confidence')).toBeInTheDocument();
-    expect(
-      screen.getByText(/Dated case numbers either side sit 22 days apart, so the start date is approximate/)
-    ).toBeInTheDocument();
+    // The rating is the whole of it — the bounds it was read off never reach
+    // the page, in the chip's tooltip or anywhere else.
+    expect(screen.queryByText(/days apart|case number|bound/i)).not.toBeInTheDocument();
+    expect(screen.getByText('Medium confidence')).not.toHaveAttribute('title');
   });
 
   it('rates a tightly bracketed estimate high', () => {
@@ -177,9 +178,6 @@ describe('PreNotificationEstimate', () => {
     }));
 
     expect(screen.getByText('High confidence')).toBeInTheDocument();
-    expect(
-      screen.getByText(/sit 8 days apart, pinning the start date closely/)
-    ).toBeInTheDocument();
   });
 
   it('rates a loosely bracketed estimate low', () => {
@@ -194,9 +192,6 @@ describe('PreNotificationEstimate', () => {
     }));
 
     expect(screen.getByText('Low confidence')).toBeInTheDocument();
-    expect(
-      screen.getByText(/sit 55 days apart, so the start date is only loosely placed/)
-    ).toBeInTheDocument();
   });
 
   it('rates a single-bound estimate low whatever the date it gives', () => {
@@ -211,9 +206,6 @@ describe('PreNotificationEstimate', () => {
     }));
 
     expect(screen.getByText('Low confidence')).toBeInTheDocument();
-    expect(
-      screen.getByText(/Only one side of this matter’s case number is dated/)
-    ).toBeInTheDocument();
   });
 
   it('renders nothing when the merger has no estimate', () => {

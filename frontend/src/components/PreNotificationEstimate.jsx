@@ -31,45 +31,21 @@ const CONFIDENCE_LABELS = {
   [PRE_NOTIFICATION_CONFIDENCE.LOW]: 'Low confidence',
 };
 
-const days = (count) => `${count} day${count === 1 ? '' : 's'}`;
-
 /**
- * Why the estimate earned its rating, in one sentence — the width of the
- * window it was read out of, or the fact that only one side of the case number
- * is dated at all.
+ * The rating itself, and only the rating: the words carry the meaning and the
+ * colour only reinforces them, so the chip still reads on a monochrome or
+ * high-contrast display. What earned it that rating is deliberately left
+ * unsaid — the estimate is a claim about a matter, not a lecture on how it was
+ * arrived at, and the question mark beside it is there for anyone who thinks
+ * it's wrong.
  */
-const explainConfidence = ({ confidence, windowDays }) => {
-  if (windowDays === null) {
-    return 'Only one side of this matter’s case number is dated, so this is a bound rather than a measurement.';
-  }
-  if (confidence === PRE_NOTIFICATION_CONFIDENCE.HIGH) {
-    return `Dated case numbers either side sit ${days(windowDays)} apart, pinning the start date closely.`;
-  }
-  if (confidence === PRE_NOTIFICATION_CONFIDENCE.MEDIUM) {
-    return `Dated case numbers either side sit ${days(windowDays)} apart, so the start date is approximate.`;
-  }
-  return `Dated case numbers either side sit ${days(windowDays)} apart, so the start date is only loosely placed.`;
-};
-
-/**
- * The rating itself. The words carry the meaning and the colour only
- * reinforces them, so the chip still reads on a monochrome or high-contrast
- * display. The reasoning behind the rating sits in the tooltip for a pointer
- * and, since a tooltip is not reachable any other way, alongside it for
- * everyone else.
- */
-function ConfidenceChip({ estimate }) {
-  const explanation = explainConfidence(estimate);
+function ConfidenceChip({ confidence }) {
   return (
-    <>
-      <span
-        title={explanation}
-        className={`inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-medium ${CONFIDENCE_STYLES[estimate.confidence]}`}
-      >
-        {CONFIDENCE_LABELS[estimate.confidence]}
-      </span>
-      <span className="sr-only"> {explanation}</span>
-    </>
+    <span
+      className={`inline-flex items-center align-middle ml-1.5 rounded-full border px-2 py-0.5 text-xs font-medium ${CONFIDENCE_STYLES[confidence]}`}
+    >
+      {CONFIDENCE_LABELS[confidence]}
+    </span>
   );
 }
 
@@ -146,6 +122,13 @@ function PreNotificationEstimate({ merger }) {
       <div className="flex-1 min-w-0">
         <p className="text-sm font-medium text-gray-900">
           Our market intelligence suggests that {describe(estimate)}
+          {/* Inline at the end of the claim it qualifies, rather than on a line
+              of its own: on a wide screen the callout stays one line deep, and
+              on a narrow one the chip wraps with the sentence instead of always
+              adding a row beneath it. The space is a real one, so the chip
+              doesn't run into the date when the sentence is read aloud. */}
+          {' '}
+          <ConfidenceChip confidence={estimate.confidence} />
           {/* On a narrow screen the sentence already fills the width, so the
               question mark trails the last word rather than stealing a column
               from the wrapping text. */}
@@ -155,9 +138,6 @@ function PreNotificationEstimate({ merger }) {
             className="sm:hidden inline-flex align-baseline ml-1.5"
           />
         </p>
-        <div className="mt-1.5">
-          <ConfidenceChip estimate={estimate} />
-        </div>
         {promptShown && (
           <Link
             to={correctionLink(merger.merger_id)}
