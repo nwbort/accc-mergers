@@ -1,6 +1,6 @@
 {
   "total_mergers": 240,
-  "total_waivers": 370,
+  "total_waivers": 372,
   "total_conditional_approvals": 4,
   "by_status": {
     "Assessment completed": 200,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 354,
+    "Approved": 356,
     "Not approved": 16
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.62972972972973,
+    "average_days": 19.663978494623656,
     "median_days": 19.0,
-    "average_business_days": 13.308108108108108,
+    "average_business_days": 13.338709677419354,
     "median_business_days": 13.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 105
+      "count": 106
     },
     {
       "name": "Computer System Design and Related Services",
@@ -68,11 +68,11 @@
     },
     {
       "name": "Software Publishing",
-      "count": 38
+      "count": 39
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 32
+      "count": 33
     },
     {
       "name": "Pubs, Taverns and Bars",
@@ -87,11 +87,11 @@
       "count": 21
     },
     {
-      "name": "Liquor Retailing",
+      "name": "Supermarket and Grocery Stores",
       "count": 18
     },
     {
-      "name": "Scientific Research Services",
+      "name": "Liquor Retailing",
       "count": 18
     }
   ],
@@ -219,6 +219,28 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-30035",
+      "merger_name": "Coles \u2013 supermarket site in Byron Bay, NSW",
+      "determination": "Approved",
+      "determination_date": "2026-09-02T12:00:00Z",
+      "page_modified_datetime": "2026-09-02T16:54:16+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-30034",
+      "merger_name": "KKR \u2013 global print business of Thomson Reuters Corporation",
+      "determination": "Approved",
+      "determination_date": "2026-09-02T12:00:00Z",
+      "page_modified_datetime": "2026-09-02T16:40:23+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-35031",
       "merger_name": "Osmoflo Water Management - Guidera O'Connor",
       "determination": "Approved",
@@ -323,28 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-28T12:00:00Z",
       "page_modified_datetime": "2026-08-28T17:15:10+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-25045",
-      "merger_name": "Ochre Health - Holdsworth House Medical Group & College Street Specialists, NSW",
-      "determination": "Approved",
-      "determination_date": "2026-08-28T12:00:00Z",
-      "page_modified_datetime": "2026-08-28T17:13:52+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-20033",
-      "merger_name": "ReDirect Holdings - Echo Solve",
-      "determination": "Approved",
-      "determination_date": "2026-08-28T12:00:00Z",
-      "page_modified_datetime": "2026-08-28T17:12:24+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

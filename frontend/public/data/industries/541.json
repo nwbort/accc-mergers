@@ -36,7 +36,7 @@
       "code": "5413",
       "name": "Book Publishing",
       "level": "class",
-      "merger_count": 0
+      "merger_count": 1
     },
     {
       "code": "5414",
@@ -53,6 +53,17 @@
   ],
   "mergers": [
     {
+      "merger_id": "WA-30034",
+      "merger_name": "KKR \u2013 global print business of Thomson Reuters Corporation",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-04T12:00:00Z",
+      "determination_date": "2026-09-02T12:00:00Z"
+    },
+    {
       "merger_id": "MN-35014",
       "merger_name": "News Corp \u2013 acquisition of 20% of National Distribution Services",
       "is_waiver": false,
@@ -64,10 +75,10 @@
       "determination_date": "2026-06-09T12:00:00Z"
     }
   ],
-  "count": 1,
+  "count": 2,
   "phase_1_count": 1,
   "phase_2_count": 0,
-  "waiver_count": 0,
+  "waiver_count": 1,
   "active_count": 0,
   "phase_duration": {
     "average_days": 36.0,
@@ -76,5 +87,11 @@
     "median_business_days": 24,
     "completed_count": 1
   },
-  "waiver_duration": null
+  "waiver_duration": {
+    "average_days": 29.0,
+    "median_days": 29,
+    "average_business_days": 21.0,
+    "median_business_days": 21,
+    "completed_count": 1
+  }
 }

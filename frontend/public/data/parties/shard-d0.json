@@ -188,6 +188,47 @@
         "completed_count": 1
       }
     },
+    "mcnlst-llc": {
+      "id": "mcnlst-llc",
+      "canonical_name": "Mcnlst Llc",
+      "members": [
+        {
+          "name": "MCNLST LLC",
+          "identifier": "10678185  Delaware",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-30034",
+            "merger_name": "KKR \u2013 global print business of Thomson Reuters Corporation",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-04T12:00:00Z",
+            "determination_date": "2026-09-02T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 29.0,
+        "median_days": 29,
+        "average_business_days": 21.0,
+        "median_business_days": 21,
+        "completed_count": 1
+      }
+    },
     "molycop-singapore-trading-pte-ltd": {
       "id": "molycop-singapore-trading-pte-ltd",
       "canonical_name": "Molycop Singapore Trading Pte. Ltd",

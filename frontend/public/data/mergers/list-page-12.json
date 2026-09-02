@@ -710,6 +710,63 @@
       ]
     },
     {
+      "merger_id": "WA-30034",
+      "merger_name": "KKR \u2013 global print business of Thomson Reuters Corporation",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-04T12:00:00Z",
+      "determination_publication_date": "2026-09-02T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "MCNLST LLC"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Omni JV LLC"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Thomson Reuters Corporation"
+        },
+        {
+          "name": "Thomson Reuters Holdco LLC"
+        },
+        {
+          "name": "West Publishing Corporation"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1611",
+          "name": "Printing"
+        },
+        {
+          "code": "5413",
+          "name": "Book Publishing"
+        },
+        {
+          "code": "5420",
+          "name": "Software Publishing"
+        },
+        {
+          "code": "6020",
+          "name": "Other Information Services"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ]
+    },
+    {
       "merger_id": "WA-60037",
       "merger_name": "Aware Real Estate \u2013 100 Market Street",
       "status": "Assessment completed",
@@ -1842,6 +1899,81 @@
       ]
     },
     {
+      "merger_id": "WA-30035",
+      "merger_name": "Coles \u2013 supermarket site in Byron Bay, NSW",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-10T12:00:00Z",
+      "determination_publication_date": "2026-09-02T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
+          "canonical": {
+            "name": "Coles Group"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "JD 156 JONSON STREET PTY LTD"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "COLES GROUP LIMITED",
+          "canonical": {
+            "name": "Coles Group"
+          }
+        },
+        {
+          "name": "COLES GROUP PROPERTY DEVELOPMENTS LTD",
+          "canonical": {
+            "name": "Coles Group"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3019",
+          "name": "Other Residential Building Construction"
+        },
+        {
+          "code": "3020",
+          "name": "Non-Residential Building Construction"
+        },
+        {
+          "code": "3211",
+          "name": "Land Development and Subdivision"
+        },
+        {
+          "code": "4110",
+          "name": "Supermarket and Grocery Stores"
+        },
+        {
+          "code": "4122",
+          "name": "Fruit and Vegetable Retailing"
+        },
+        {
+          "code": "4279",
+          "name": "Other Store-Based Retailing n.e.c."
+        },
+        {
+          "code": "6711",
+          "name": "Residential Property Operators"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-80027",
       "merger_name": "Supagas \u2013 Heeson Medical",
       "status": "Under assessment",
@@ -2646,116 +2778,6 @@
         {
           "code": "0700",
           "name": "Oil and Gas Extraction"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-90029",
-      "merger_name": "Bunnings \u2013 Intellihub \u2013 Zelora Joint Venture",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-18T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-09-29T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Zelora AssetCo Pty Ltd"
-        },
-        {
-          "name": "Zelora OpCo Pty Ltd"
-        },
-        {
-          "name": "Zelora TopCo Pty Ltd"
-        }
-      ],
-      "targets": [
-        {
-          "name": "INTELLIHUB AUSTRALIA PTY LTD"
-        },
-        {
-          "name": "BUNNINGS GROUP LIMITED"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "3232",
-          "name": "Electrical Services"
-        },
-        {
-          "code": "4231",
-          "name": "Hardware and Building Supplies Retailing"
-        },
-        {
-          "code": "4232",
-          "name": "Garden Supplies Retailing"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-05046",
-      "merger_name": "Coles - supermarket site in Kirkwood (QLD)",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-19T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-09-30T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
-          "canonical": {
-            "name": "Coles Group"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "Kirkwood LFR Development Pty Ltd as trustee of the Kirkwood LFR Development Trust (or related entity"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "3019",
-          "name": "Other Residential Building Construction"
-        },
-        {
-          "code": "3020",
-          "name": "Non-Residential Building Construction"
-        },
-        {
-          "code": "3211",
-          "name": "Land Development and Subdivision"
-        },
-        {
-          "code": "4110",
-          "name": "Supermarket and Grocery Stores"
-        },
-        {
-          "code": "4122",
-          "name": "Fruit and Vegetable Retailing"
-        },
-        {
-          "code": "4279",
-          "name": "Other Store-Based Retailing n.e.c."
-        },
-        {
-          "code": "6711",
-          "name": "Residential Property Operators"
-        },
-        {
-          "code": "6712",
-          "name": "Non-Residential Property Operators"
         }
       ]
     }

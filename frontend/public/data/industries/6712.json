@@ -49,6 +49,17 @@
       "determination_date": null
     },
     {
+      "merger_id": "WA-30035",
+      "merger_name": "Coles \u2013 supermarket site in Byron Bay, NSW",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-10T12:00:00Z",
+      "determination_date": "2026-09-02T12:00:00Z"
+    },
+    {
       "merger_id": "WA-60037",
       "merger_name": "Aware Real Estate \u2013 100 Market Street",
       "is_waiver": true,
@@ -379,10 +390,10 @@
       "determination_date": "2025-11-18T12:00:00Z"
     }
   ],
-  "count": 32,
+  "count": 33,
   "phase_1_count": 11,
   "phase_2_count": 1,
-  "waiver_count": 20,
+  "waiver_count": 21,
   "active_count": 2,
   "phase_duration": {
     "average_days": 36.7,
@@ -392,10 +403,10 @@
     "completed_count": 10
   },
   "waiver_duration": {
-    "average_days": 21.8,
-    "median_days": 22.0,
-    "average_business_days": 14.65,
-    "median_business_days": 15.0,
-    "completed_count": 20
+    "average_days": 21.857142857142858,
+    "median_days": 22,
+    "average_business_days": 14.761904761904763,
+    "median_business_days": 16,
+    "completed_count": 21
   }
 }

@@ -9,7 +9,7 @@
       "code": "30",
       "name": "Building Construction",
       "level": "subdivision",
-      "merger_count": 10
+      "merger_count": 11
     },
     {
       "code": "31",
@@ -21,7 +21,7 @@
       "code": "32",
       "name": "Construction Services",
       "level": "subdivision",
-      "merger_count": 27
+      "merger_count": 28
     }
   ],
   "mergers": [
@@ -89,6 +89,17 @@
       "has_conditions": false,
       "phase": "Phase 1",
       "notification_date": "2026-08-06T12:00:00Z",
+      "determination_date": "2026-09-02T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-30035",
+      "merger_name": "Coles \u2013 supermarket site in Byron Bay, NSW",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-10T12:00:00Z",
       "determination_date": "2026-09-02T12:00:00Z"
     },
     {
@@ -565,10 +576,10 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 49,
+  "count": 50,
   "phase_1_count": 23,
   "phase_2_count": 1,
-  "waiver_count": 25,
+  "waiver_count": 26,
   "active_count": 5,
   "phase_duration": {
     "average_days": 28.15,
@@ -578,10 +589,10 @@
     "completed_count": 20
   },
   "waiver_duration": {
-    "average_days": 20.12,
-    "median_days": 21,
-    "average_business_days": 13.4,
-    "median_business_days": 13,
-    "completed_count": 25
+    "average_days": 20.23076923076923,
+    "median_days": 21.0,
+    "average_business_days": 13.538461538461538,
+    "median_business_days": 13.0,
+    "completed_count": 26
   }
 }
