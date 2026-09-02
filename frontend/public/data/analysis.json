@@ -2632,11 +2632,12 @@
     ],
     "as_at": "2026-09-02"
   },
-  "current_turnaround": {
+  "state_of_play": {
     "as_at": "2026-09-02",
     "windows": [
       {
         "days": 30,
+        "notifications_filed": 36,
         "notifications": {
           "median": 18.5,
           "average": 21.0,
@@ -2658,6 +2659,7 @@
       },
       {
         "days": 90,
+        "notifications_filed": 111,
         "notifications": {
           "median": 18.0,
           "average": 20.6,

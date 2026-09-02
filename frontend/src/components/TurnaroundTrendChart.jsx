@@ -1,8 +1,26 @@
 import { memo } from 'react';
 import { Line } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Filler,
+  Tooltip,
+  Legend,
+} from 'chart.js';
 import { CHART_PALETTE as COLORS } from '../constants/chartColors';
 import { formatMonthLabel } from '../utils/dates';
 import { formatMedian } from '../utils/formatMedian';
+
+// Registered here rather than by the host page (the convention the Analysis
+// and Dashboard pages follow) so the component carries its own Chart.js
+// dependencies. A chart that registers nothing renders only on a page that
+// happens to have registered the right scales for it, and throws '"category"
+// is not a registered scale' on any other. Registration is idempotent, so a
+// page that also registers these is no conflict.
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
 
 /**
  * Median time to decide, by decision month, against the open notification caseload.

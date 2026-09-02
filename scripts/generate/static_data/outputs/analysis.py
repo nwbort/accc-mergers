@@ -486,7 +486,7 @@ def open_caseload(mergers: list, as_at: date | None = None) -> dict:
 
 
 # Rolling windows (in calendar days back from the as-at date) used by
-# current_turnaround. 30 days answers the "how is the ACCC tracking right now"
+# state_of_play. 30 days answers the "how is the ACCC tracking right now"
 # question directly; 90 smooths out a quiet fortnight without reaching so far
 # back that it re-describes the all-time figure. Both are comfortably powered
 # at current volumes (~45 phase 1 determinations and ~70 waivers a month).
@@ -566,22 +566,33 @@ def _decided_durations(mergers: list) -> list[tuple[str, int]]:
     return durations
 
 
-def current_turnaround(mergers: list, as_at: date | None = None) -> dict:
-    """How long the ACCC is *currently* taking to decide, vs its all-time record.
+def state_of_play(mergers: list, as_at: date | None = None) -> dict:
+    """How the ACCC's review is running *now*, against its all-time baseline.
 
-    The duration figures elsewhere on this page pool every matter ever decided.
-    That is the right baseline, but it is not the number to quote a client at
-    filing time: the register opened in 2026 and the ACCC's throughput has
-    moved as the regime bedded in, so the all-time median lags what a matter
-    filed today should actually expect. This block re-cuts the same durations
-    two ways to close that gap:
+    Powers the /state-of-play page. The duration figures on the analysis page
+    pool every matter ever decided. That is the right baseline, but it is not
+    the number to quote a client at filing time: the register opened in 2026
+    and the ACCC's throughput has moved as the regime bedded in, so the
+    all-time median lags what a matter filed today should actually expect.
+    This block re-cuts the same durations against that baseline:
 
     - ``windows`` — median/average/p90 over matters *decided* in the last 30
       and 90 days, each paired with the all-time figure and the delta between
-      them, for notifications and waivers separately.
+      them, for notifications and waivers separately. Each window also carries
+      ``notifications_filed``, the inflow over the same period, so the page can
+      show what is arriving beside what is being cleared.
+    - ``all_time`` — the same statistics over every decided matter, the
+      baseline every window is compared against.
     - ``monthly`` — the same medians per decision-month, aligned index-for-index
       with the open notification caseload at each of those month ends, so the
       turnaround line can be read directly against the queue it came out of.
+
+    Only notification inflow is published. Waiver applications reach the
+    register only once they have been decided, so a "waivers filed in the last
+    30 days" count would be missing every application still in front of the
+    ACCC — understated by roughly the length of a waiver review, and worst at
+    exactly the recent edge the page is about. (This is the same publication
+    artefact that keeps waivers out of :func:`open_caseload`.)
 
     ``as_at`` defaults to today in Sydney (the ACCC's own timezone) rather than
     the build server's UTC date, for the same reason :func:`open_caseload`
@@ -593,11 +604,25 @@ def current_turnaround(mergers: list, as_at: date | None = None) -> dict:
     measuring that shared trend rather than a caseload effect on turnaround.
     The paired axes let a reader judge it without a number that would carry
     more authority than ~a dozen monthly points can support.
+
+    Nor is a baseline published for the inflow figure, though one is for
+    turnaround. Notification volume stepped up when the regime became
+    mandatory on 1 January 2026 rather than drifting, so an all-time average
+    would mostly measure the pre-mandatory ramp-up and read as a throughput
+    surge that is really a change in what has to be filed. Turnaround has no
+    equivalent step, which is why the median there is a fair comparator.
     """
     as_at = as_at or datetime.now(_SYDNEY_TZ).date()
 
-    notification_durations = _decided_durations(filter_notifications(mergers))
+    notifications = filter_notifications(mergers)
+    notification_durations = _decided_durations(notifications)
     waiver_durations = _decided_durations(filter_waivers(mergers))
+
+    filing_dates = [
+        m['effective_notification_datetime'][:10]
+        for m in notifications
+        if m.get('effective_notification_datetime')
+    ]
 
     def _window(durations: list[tuple[str, int]], days: int) -> dict:
         cutoff = (as_at - timedelta(days=days)).isoformat()
@@ -613,7 +638,13 @@ def current_turnaround(mergers: list, as_at: date | None = None) -> dict:
 
     windows = []
     for days in TURNAROUND_WINDOWS:
-        entry = {"days": days}
+        cutoff = (as_at - timedelta(days=days)).isoformat()
+        entry = {
+            "days": days,
+            "notifications_filed": sum(
+                1 for filed in filing_dates if cutoff < filed <= as_at.isoformat()
+            ),
+        }
         for key, durations in (("notifications", notification_durations), ("waivers", waiver_durations)):
             stats = _window(durations, days)
             baseline = all_time[key]["median"]
@@ -839,7 +870,7 @@ def generate(mergers: list) -> dict:
         },
         "monthly_volume": monthly_volume,
         "open_caseload": open_caseload(mergers),
-        "current_turnaround": current_turnaround(mergers),
+        "state_of_play": state_of_play(mergers),
         "industry_phase1_duration": industry_phase1_duration(mergers),
         "by_commission_division": by_commission_division(mergers),
         "deadline_utilisation": deadline_utilisation(mergers),

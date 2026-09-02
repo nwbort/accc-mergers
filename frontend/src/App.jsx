@@ -30,6 +30,7 @@ const Analysis = lazy(() => import('./pages/Analysis'));
 const Phase2 = lazy(() => import('./pages/Phase2'));
 const RefiledNotifications = lazy(() => import('./pages/RefiledNotifications'));
 const Extensions = lazy(() => import('./pages/Extensions'));
+const StateOfPlay = lazy(() => import('./pages/StateOfPlay'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const Feedback = lazy(() => import('./pages/Feedback'));
 const NotFound = lazy(() => import('./pages/NotFound'));
@@ -68,6 +69,7 @@ function AppContent() {
             <Route path="/phase-2" element={<Phase2 />} />
             <Route path="/refiled-notifications" element={<RefiledNotifications />} />
             <Route path="/extensions" element={<Extensions />} />
+            <Route path="/state-of-play" element={<StateOfPlay />} />
             <Route path="/nick-twort" element={<NickTwort />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/feedback" element={<Feedback />} />

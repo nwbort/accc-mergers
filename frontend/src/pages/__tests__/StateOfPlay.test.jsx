@@ -3,15 +3,15 @@ import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { MemoryRouter } from 'react-router';
 import { HelmetProvider } from 'react-helmet-async';
-import Analysis from '../Analysis';
+import StateOfPlay from '../StateOfPlay';
 import { dataCache } from '../../utils/dataCache';
 
-// The turnaround assertions are all about the rendered figures and the chart's
-// sr-only data table, never the canvas — so the chart components are stubbed
-// out. That keeps the window-selector test honest: re-rendering the page with
-// live Chart.js instances trips a jsdom-only crash in Chart.js's resize path
-// (getComputedStyle on a detached canvas's null parent), which has nothing to
-// do with the behaviour under test.
+// The assertions here are all about rendered figures and the chart's sr-only
+// data table, never the canvas — so the chart component is stubbed out. That
+// keeps the window-selector test honest: re-rendering with a live Chart.js
+// instance trips a jsdom-only crash in its resize path (getComputedStyle on a
+// detached canvas's null parent), which has nothing to do with the behaviour
+// under test.
 vi.mock('react-chartjs-2', () => ({
   Line: () => null,
   Bar: () => null,
@@ -22,43 +22,34 @@ function ok(json) {
   return { ok: true, status: 200, json: () => Promise.resolve(json) };
 }
 
-// Only the fields the turnaround section and its siblings read; the page's
-// other charts are stubbed, so their payloads just need to be well-formed.
-const analysisFixture = {
-  phase1_duration: {
-    durations: [{ business_days: 10, calendar_days: 15, in_progress: false }],
-    stats: { average: 22, median: 20, min: 10, max: 40, count: 5 },
-    calendar_stats: { average: 30, median: 28, min: 15, max: 56, count: 5 },
-  },
-  waiver_duration: {
-    durations: [],
-    stats: { average: null, median: null, min: null, max: null, count: 0 },
-    calendar_stats: { average: null, median: null, min: null, max: null, count: 0 },
-  },
-  monthly_volume: { labels: ['2025-01'], notifications: [1], waivers: [0] },
-  industry_phase1_duration: [],
+// The page fetches analysis.json but reads only these two blocks from it.
+const caseloadFixture = {
+  labels: ['2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09'],
+  notifications: [22, 25, 32, 42, 41, 46, 37, 35],
+  as_at: '2026-09-02',
 };
 
-function renderAnalysis() {
+function renderStateOfPlay() {
   return render(
     <HelmetProvider>
       <MemoryRouter>
-        <Analysis />
+        <StateOfPlay />
       </MemoryRouter>
     </HelmetProvider>
   );
 }
 
-describe('Analysis current turnaround', () => {
+describe('State of play', () => {
   // Waivers running slower than their all-time median, notifications faster:
   // the two directions the delta sentence has to phrase differently.
   const turnaroundFixture = {
-    ...analysisFixture,
-    current_turnaround: {
+    open_caseload: caseloadFixture,
+    state_of_play: {
       as_at: '2026-09-02',
       windows: [
         {
           days: 30,
+          notifications_filed: 36,
           notifications: {
             median: 18.5, average: 21, p90: 27, min: 15, max: 56,
             count: 46, median_delta: -1.5,
@@ -70,6 +61,7 @@ describe('Analysis current turnaround', () => {
         },
         {
           days: 90,
+          notifications_filed: 111,
           notifications: {
             median: 18, average: 20.6, p90: 28, min: 15, max: 56,
             count: 116, median_delta: 0,
@@ -120,17 +112,19 @@ describe('Analysis current turnaround', () => {
 
   async function renderTurnaround(payload = turnaroundFixture) {
     mockAnalysis(payload);
-    const view = renderAnalysis();
+    const view = renderStateOfPlay();
     await waitFor(() => {
-      expect(screen.getByText('Current turnaround')).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: 'Time to decide' })).toBeInTheDocument();
     });
     return view;
   }
 
-  // "Waivers" also labels one of the all-time summary cards at the top of the
-  // page, so every panel assertion scopes to the turnaround section first.
+  // "Waivers" also appears in the stat-card row and the chart legend, so every
+  // panel assertion scopes to the "Time to decide" section first.
   function panel(name) {
-    const section = screen.getByText('Current turnaround').closest('section');
+    const section = screen
+      .getByRole('heading', { name: 'Time to decide' })
+      .closest('section');
     return within(section).getByText(name, { selector: 'p' }).parentElement;
   }
 
@@ -178,11 +172,12 @@ describe('Analysis current turnaround', () => {
   it('says so plainly when a window has no decisions rather than showing a blank stat', async () => {
     await renderTurnaround({
       ...turnaroundFixture,
-      current_turnaround: {
-        ...turnaroundFixture.current_turnaround,
+      state_of_play: {
+        ...turnaroundFixture.state_of_play,
         windows: [{
           days: 30,
-          notifications: turnaroundFixture.current_turnaround.windows[0].notifications,
+          notifications_filed: 36,
+          notifications: turnaroundFixture.state_of_play.windows[0].notifications,
           waivers: {
             median: null, average: null, p90: null, min: null, max: null,
             count: 0, median_delta: null,
@@ -219,15 +214,52 @@ describe('Analysis current turnaround', () => {
     expect(within(september).getAllByText('2')).toHaveLength(2);
   });
 
-  it('renders the rest of the page when the payload predates the turnaround series', async () => {
-    // A deployed analysis.json generated before current_turnaround existed.
-    mockAnalysis(analysisFixture);
-    renderAnalysis();
+  it('summarises what is arriving, queued and clearing', async () => {
+    await renderTurnaround();
+
+    // Scoped to the stat card's own <dt>: "Open caseload" below is also a
+    // column header in the trend chart's sr-only data table.
+    const filed = screen.getByText('Notifications filed (last 30 days)', { selector: 'dt' }).closest('dl');
+    expect(within(filed).getByText('36')).toBeInTheDocument();
+
+    // Decisions published is both types together, broken out in the subtitle.
+    const published = screen.getByText('Decisions published (last 30 days)', { selector: 'dt' }).closest('dl');
+    expect(within(published).getByText('110')).toBeInTheDocument();
+    expect(within(published).getByText('46 notifications, 64 waivers')).toBeInTheDocument();
+  });
+
+  it('reads the open caseload and its six-month movement off the caseload series', async () => {
+    await renderTurnaround();
+
+    // Six points back from the last (35) is Mar 2026 at 25.
+    const queue = screen.getByText('Open caseload', { selector: 'dt' }).closest('dl');
+    expect(within(queue).getByText('35')).toBeInTheDocument();
+    expect(within(queue).getByText('+10 over ~6 months')).toBeInTheDocument();
+  });
+
+  it('follows the selected window in the arriving and clearing counts too', async () => {
+    const user = userEvent.setup();
+    await renderTurnaround();
+
+    await user.click(screen.getByRole('button', { name: 'Last 90 days' }));
+
+    const filed = screen.getByText('Notifications filed (last 90 days)', { selector: 'dt' }).closest('dl');
+    expect(within(filed).getByText('111')).toBeInTheDocument();
+    const published = screen.getByText('Decisions published (last 90 days)', { selector: 'dt' }).closest('dl');
+    expect(within(published).getByText('295')).toBeInTheDocument();
+  });
+
+  it('says the page is still generating when the payload predates the series', async () => {
+    // A deployed analysis.json generated before state_of_play existed. The
+    // whole page is this block, so there is nothing else to fall back to.
+    mockAnalysis({ open_caseload: caseloadFixture });
+    renderStateOfPlay();
 
     await waitFor(() => {
-      expect(screen.getByText('Monthly notification volume')).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: 'State of play' })).toBeInTheDocument();
     });
 
-    expect(screen.queryByText('Current turnaround')).not.toBeInTheDocument();
+    expect(screen.getByText(/still being generated/)).toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: 'Time to decide' })).not.toBeInTheDocument();
   });
 });

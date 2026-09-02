@@ -74,6 +74,8 @@ frontend/src/
 │   ├── Commentary.jsx    # /commentary
 │   ├── Digest.jsx        # /digest
 │   ├── Analysis.jsx      # /analysis
+│   ├── StateOfPlay.jsx   # /state-of-play (current turnaround vs the all-time
+│                         #   baseline; not in the navbar, reachable from the command palette)
 │   ├── Phase2.jsx        # /phase-2
 │   ├── RefiledNotifications.jsx # /refiled-notifications
 │   ├── Extensions.jsx    # /extensions (Phase 1 timeline extensions; not linked from the navbar)
@@ -124,9 +126,12 @@ frontend/src/
 │                         #   PhaseDurationComparison.jsx and
 │                         #   TurnaroundTrendChart.jsx; all follow the
 │                         #   canvas + sr-only data table pattern in docs/accessibility.md.
-│                         #   TurnaroundTrendChart is memo()'d: the Analysis page
-│                         #   re-renders on toggles it doesn't depend on, and its
-│                         #   only prop is the generated monthly block.
+│                         #   TurnaroundTrendChart is memo()'d: StateOfPlay
+│                         #   re-renders on the window toggle it doesn't depend
+│                         #   on, and its only prop is the generated monthly
+│                         #   block. It registers its own Chart.js scales rather
+│                         #   than relying on the host page (as Analysis and
+│                         #   Dashboard do for theirs), so it renders on any page.
 │                         #   __tests__/ holds the vitest suites, incl. accessibility.test.jsx.
 ├── constants/            # Shared literal tables: navPages.js (single source of truth for
 │                         #   the navbar, command palette and keyboard shortcuts),
@@ -390,7 +395,7 @@ prunes the old names), but make it a deliberate choice.
 | `upcoming-events.json` | Future consultation/determination dates |
 | `commentary.json` | Mergers with user commentary |
 | `digest.json` | Weekly digest of merger activity (from `generate_weekly_digest.py`) |
-| `analysis.json` | Pre-computed analysis data. `current_turnaround` re-cuts the same durations over rolling windows of recently *decided* matters (30/90 days) plus a per-decision-month series aligned index-for-index with `open_caseload`, so the filing-time question ("what is the ACCC turning around *now*") doesn't have to be answered from the all-time median |
+| `analysis.json` | Pre-computed analysis data. `state_of_play` (powering `/state-of-play`) re-cuts the same durations over rolling windows of recently *decided* matters (30/90 days), plus a per-decision-month series aligned index-for-index with `open_caseload`, so the filing-time question ("what is the ACCC turning around *now*") doesn't have to be answered from the all-time median. Each window also carries `notifications_filed`; no waiver inflow is published, since a waiver only reaches the register once decided |
 | `timeline.json` | Unpaginated timeline (alongside the paginated `timeline/` directory) |
 | `referral-probability-by-day.json` | Modelled probability of a Phase 2 referral by elapsed business day |
 | `serial-acquirers.json` | Serial-acquirer ("creeping acquisitions") detection |
