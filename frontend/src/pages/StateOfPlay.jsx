@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
-import { FaFileImport, FaLayerGroup, FaGavel } from 'react-icons/fa6';
+import { FaCircleInfo } from 'react-icons/fa6';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
-import StatCard from '../components/StatCard';
+import CollapsibleCard from '../components/CollapsibleCard';
 import SEO from '../components/SEO';
 import TurnaroundTrendChart from '../components/TurnaroundTrendChart';
 import { API_ENDPOINTS } from '../config';
@@ -17,72 +17,42 @@ import { STATIC_PAGE_META } from '../utils/pageMeta';
 // build-time prerenderer emit the same <head>.
 const PAGE_META = STATIC_PAGE_META['/state-of-play'];
 
-const PANELS = [
-  {
-    key: 'notifications',
-    label: 'Notifications – phase 1',
-    measured: 'Measured from notification to the end of phase 1 — the referral date for a matter sent to phase 2, so the phase 2 clock never inflates the figure.',
-  },
-  {
-    key: 'waivers',
-    label: 'Waivers',
-    measured: 'Measured from application to determination. Waivers have no statutory clock.',
-  },
-];
+/** "+4 BD slower" / "−1 day faster" / "about the same", in plain words. */
+function deltaSentence(delta, baseline, unit) {
+  if (delta === null || delta === undefined || baseline === null) return null;
+  const noun = unit === 'BD' ? 'BD' : Math.abs(delta) === 1 ? 'day' : 'days';
+  if (delta === 0) return `Same as the all-time ${formatMedian(baseline)}`;
+  return `${delta > 0 ? '+' : '−'}${formatMedian(Math.abs(delta))} ${noun} vs all-time ${formatMedian(baseline)}`;
+}
 
-/** One review type's recent turnaround, against its all-time median. */
-function TurnaroundPanel({ label, measured, recent, baseline, days }) {
-  if (recent.median === null) {
-    return (
-      <div className="p-6">
-        <p className={SECTION_HEADING}>{label}</p>
-        <p className="text-sm text-gray-500 mt-3">
-          No matters decided in the last {days} days.
-        </p>
-      </div>
-    );
-  }
-
-  const slower = recent.median_delta > 0;
+/** One headline duration: the number, its unit, and how it sits against baseline. */
+function Headline({ label, value, unit, delta, baseline, footnote }) {
+  const sentence = deltaSentence(delta, baseline, unit);
+  const slower = delta > 0;
   return (
     <div className="p-6">
       <p className={SECTION_HEADING}>{label}</p>
-      <div className="flex items-baseline gap-2 mt-1.5 flex-wrap">
-        <p className="text-4xl font-bold text-gray-900 tracking-tight">
-          {formatMedian(recent.median)}
-        </p>
-        <p className="text-sm text-gray-500">median business days</p>
-      </div>
-      <p className="text-sm text-gray-600 mt-2">
-        {recent.median_delta === null || recent.median_delta === 0 ? (
-          <>In line with the all-time median of {formatMedian(baseline.median)} BD</>
-        ) : (
-          <>
-            {/* Deltas render in plain dark text rather than red/green: a
-                duration moving is not an approved/declined outcome, and
-                borrowing that palette would imply a verdict. The words
-                carry the direction. */}
-            <span className="font-semibold text-gray-900">
-              {slower ? '+' : '−'}{formatMedian(Math.abs(recent.median_delta))} BD
-            </span>{' '}
-            {slower ? 'slower' : 'faster'} than the all-time median of{' '}
-            {formatMedian(baseline.median)} BD
-          </>
-        )}
-      </p>
-      <dl className="mt-4 pt-4 border-t border-gray-100 grid grid-cols-2 gap-y-2 text-sm">
-        <dt className="text-gray-500">9 in 10 within</dt>
-        <dd className="text-gray-900 font-medium text-right">{recent.p90} BD</dd>
-        <dt className="text-gray-500">Range</dt>
-        <dd className="text-gray-900 font-medium text-right">{recent.min}–{recent.max} BD</dd>
-        <dt className="text-gray-500">Decided in window</dt>
-        <dd className="text-gray-900 font-medium text-right">{recent.count}</dd>
-        <dt className="text-gray-500">All-time median</dt>
-        <dd className="text-gray-900 font-medium text-right">
-          {formatMedian(baseline.median)} BD <span className="text-gray-500 font-normal">({baseline.count})</span>
-        </dd>
-      </dl>
-      <p className="text-xs text-gray-500 mt-4">{measured}</p>
+      {value === null ? (
+        <p className="text-sm text-gray-500 mt-3">Nothing decided in this window.</p>
+      ) : (
+        <>
+          <div className="flex items-baseline gap-2 mt-2 flex-wrap">
+            <p className="text-5xl font-bold text-gray-900 tracking-tight leading-none">
+              {formatMedian(value)}
+            </p>
+            <p className="text-sm text-gray-500">
+              {unit === 'BD' ? 'business days' : 'calendar days'}
+            </p>
+          </div>
+          {sentence && (
+            <p className="mt-3 text-sm text-gray-600">
+              <span className="font-semibold text-gray-900">{sentence}</span>
+              {delta !== 0 && <span className="text-gray-500"> ({slower ? 'slower' : 'faster'})</span>}
+            </p>
+          )}
+          {footnote && <p className="mt-2 text-sm text-gray-500">{footnote}</p>}
+        </>
+      )}
     </div>
   );
 }
@@ -120,165 +90,176 @@ function StateOfPlay() {
 
   const entry = play.windows.find(w => w.days === windowDays) || play.windows[0];
   const asAtLabel = play.as_at ? formatDateMedium(play.as_at) : null;
-  const decided = entry.notifications.count + entry.waivers.count;
-
-  // Movement in the queue over roughly six months, matching the framing the
-  // analysis page's caseload chart uses. Falls back to the start of the series
-  // while less than six months of it exists.
-  let caseloadNow = null;
-  let caseloadDelta = null;
-  if (caseload?.notifications?.length) {
-    const last = caseload.notifications.length - 1;
-    caseloadNow = caseload.notifications[last];
-    const compare = Math.max(0, last - 6);
-    if (compare !== last) caseloadDelta = caseloadNow - caseload.notifications[compare];
-  }
+  const pre = play.pre_notification?.windows?.find(w => w.days === entry.days) ?? null;
+  const preBaseline = play.pre_notification?.all_time ?? null;
+  const caseloadNow = caseload?.notifications?.length
+    ? caseload.notifications[caseload.notifications.length - 1]
+    : null;
 
   return (
     <>
       <SEO title={PAGE_META.title} description={PAGE_META.description} url="/state-of-play" />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
-        <header className="mb-6">
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
-            State of play
-          </h1>
-          <p className="mt-3 max-w-3xl text-sm text-gray-600 leading-relaxed">
-            How the ACCC&rsquo;s merger review is running <strong>right now</strong>, and how that
-            compares to its all-time baseline. The medians published elsewhere on this site pool
-            every matter ever decided — the right baseline, but not the number to quote at filing
-            time, because the register only opened in 2026 and throughput has moved as the regime
-            bedded in. Everything below is cut from matters <strong>decided</strong> in the last
-            30 or 90 days.
-            {asAtLabel && <> As at <strong>{asAtLabel}</strong>.</>}
-          </p>
+        <header className="mb-5 sm:flex sm:items-end sm:justify-between sm:gap-4">
+          <div>
+            <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
+              State of play
+            </h1>
+            <p className="mt-2 text-sm text-gray-600">
+              How long the ACCC is taking right now, against its all-time median.
+              {asAtLabel && <> As at {asAtLabel}.</>}
+            </p>
+          </div>
+          <div
+            className="mt-4 sm:mt-0 inline-flex items-center bg-gray-100 rounded-full p-0.5 text-sm flex-shrink-0"
+            role="group"
+            aria-label="Window"
+          >
+            {play.windows.map(w => (
+              <button
+                key={w.days}
+                onClick={() => setWindowDays(w.days)}
+                aria-pressed={entry.days === w.days}
+                className={`px-3.5 py-1.5 rounded-full font-medium transition-all duration-150 ${entry.days === w.days ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-600 hover:text-gray-900'}`}
+              >
+                Last {w.days} days
+              </button>
+            ))}
+          </div>
         </header>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-          <StatCard
-            title={`Notifications filed (last ${entry.days} days)`}
-            value={entry.notifications_filed}
-            subtitle="New matters arriving"
-            icon={<FaFileImport />}
-          />
-          <StatCard
-            title="Open caseload"
-            value={caseloadNow ?? '—'}
-            subtitle={
-              caseloadDelta === null
-                ? 'Notifications still before the ACCC'
-                : `${caseloadDelta > 0 ? '+' : ''}${caseloadDelta} over ~6 months`
-            }
-            icon={<FaLayerGroup />}
-            href="/analysis"
-          />
-          <StatCard
-            title={`Decisions published (last ${entry.days} days)`}
-            value={decided}
-            subtitle={`${entry.notifications.count} notifications, ${entry.waivers.count} waivers`}
-            icon={<FaGavel />}
-          />
+        {/* The headlines. Everything a reader came for is above the fold; the
+            method that produces them is in "More information" at the bottom. */}
+        <div className={`${CARD} overflow-hidden mb-4`}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-gray-100">
+            <Headline
+              label="Waiver"
+              value={entry.waivers.median}
+              unit="BD"
+              delta={entry.waivers.median_delta}
+              baseline={play.all_time.waivers.median}
+              footnote={entry.waivers.p90 != null
+                ? `9 in 10 within ${entry.waivers.p90} BD · ${entry.waivers.count} decided`
+                : null}
+            />
+            <Headline
+              label="Notification – phase 1"
+              value={entry.notifications.median}
+              unit="BD"
+              delta={entry.notifications.median_delta}
+              baseline={play.all_time.notifications.median}
+              footnote={entry.notifications.p90 != null
+                ? `9 in 10 within ${entry.notifications.p90} BD · ${entry.notifications.count} decided`
+                : null}
+            />
+          </div>
+          {pre && pre.median !== null && (
+            <div className="border-t border-gray-100 bg-gray-50/60 px-6 py-4 sm:flex sm:items-baseline sm:gap-3">
+              <p className="text-sm text-gray-600">
+                <span className="font-semibold text-gray-900">
+                  Before filing: about {formatMedian(pre.median)} calendar days
+                </span>{' '}
+                in pre-notification
+                {preBaseline?.median != null && <> (all-time {formatMedian(preBaseline.median)})</>}
+                .
+              </p>
+              <p className="text-sm text-gray-500 mt-1 sm:mt-0">
+                Estimated — the ACCC doesn&rsquo;t publish it.
+              </p>
+            </div>
+          )}
         </div>
 
-        <section className="mb-8">
-          <div className={`${CARD} overflow-hidden`}>
-            <div className="px-6 py-5 border-b border-gray-100 flex flex-wrap items-start justify-between gap-3">
-              <div>
-                <h2 className="text-base font-semibold text-gray-900">Time to decide</h2>
-                <p className="text-sm text-gray-500 mt-0.5">
-                  What matters decided recently actually took, against the all-time median
-                </p>
-              </div>
-              <div
-                className="inline-flex items-center bg-gray-100 rounded-full p-0.5 text-sm"
-                role="group"
-                aria-label="Turnaround window"
-              >
-                {play.windows.map(w => (
-                  <button
-                    key={w.days}
-                    onClick={() => setWindowDays(w.days)}
-                    aria-pressed={entry.days === w.days}
-                    className={`px-3.5 py-1.5 rounded-full font-medium transition-all duration-150 ${entry.days === w.days ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-600 hover:text-gray-900'}`}
-                  >
-                    Last {w.days} days
-                  </button>
-                ))}
-              </div>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-gray-100">
-              {PANELS.map(({ key, label, measured }) => (
-                <TurnaroundPanel
-                  key={key}
-                  label={label}
-                  measured={measured}
-                  recent={entry[key]}
-                  baseline={play.all_time[key]}
-                  days={entry.days}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
+        <p className="text-sm text-gray-600 mb-8">
+          In the last {entry.days} days: <strong>{entry.notifications_filed}</strong> notifications
+          filed, <strong>{entry.notifications.count + entry.waivers.count}</strong> decisions
+          published
+          {caseloadNow !== null && <>, <strong>{caseloadNow}</strong> notifications still open</>}
+          .
+        </p>
 
-        <section className="mb-8">
+        <section className="mb-6">
           <div className={`${CARD} overflow-hidden`}>
             <div className="px-6 py-5 border-b border-gray-100">
               <h2 id="chart-turnaround-trend-title" className="text-base font-semibold text-gray-900">
-                Turnaround against open caseload
+                Is it getting slower?
               </h2>
               <p className="text-sm text-gray-500 mt-0.5">
-                Median time to decide, by the month the decision landed, plotted against the
-                notifications still on the ACCC&rsquo;s books at each month end
+                Median time to decide each month, against the ACCC&rsquo;s open caseload
               </p>
             </div>
             <div className="p-6">
               <TurnaroundTrendChart monthly={play.monthly} />
-              <p className="text-xs text-gray-500 mt-3">
-                Matters are counted in the month they were <em>decided</em>, not the month they
-                were filed, so each point reflects what the ACCC was turning around at the time. A
-                month with fewer than five decisions is left unplotted rather than charted off one
-                or two matters.
-              </p>
             </div>
           </div>
         </section>
 
-        <div className={`${CARD} p-5 sm:p-6`}>
-          <h2 className="text-base font-semibold text-gray-900">Reading these numbers</h2>
-          <ul className="mt-3 space-y-2.5 text-sm text-gray-600 leading-relaxed list-disc pl-5">
-            <li>
-              <strong>The window is by decision date, not filing date.</strong> A matter counts
-              towards the period it was decided in. Bucketing by filing date would leave recent
-              months structurally incomplete, since matters filed in them that are still open have
-              no duration yet — understating turnaround exactly where it matters most.
-            </li>
-            <li>
-              <strong>The median is not the promise.</strong> Half of matters take longer. The
-              &ldquo;9 in 10 within&rdquo; figure is the one to quote when a client needs a date
-              they can rely on.
-            </li>
-            <li>
-              <strong>Only notification inflow is shown.</strong> Waiver applications reach the
-              register only once they have been decided, so a count of waivers
-              <em> filed</em> recently would be missing every application still in front of the
-              ACCC. For the same reason the caseload line covers notifications only.
-            </li>
-            <li>
-              <strong>No correlation figure is published</strong> for turnaround against caseload.
-              Both series trend over the register&rsquo;s short life, so any coefficient would
-              largely be measuring that shared trend rather than a caseload effect — more
-              authority than a dozen monthly points can carry. The paired axes let you judge it
-              yourself.
-            </li>
-          </ul>
-          <p className="mt-4 text-sm text-gray-600">
-            For the all-time distributions, industry comparisons and referral rates, see the{' '}
-            <Link to="/analysis" className="text-primary font-medium hover:underline">
-              analysis page
-            </Link>
-            .
-          </p>
-        </div>
+        <CollapsibleCard
+          icon={<FaCircleInfo className="text-gray-500" aria-hidden="true" />}
+          title="More information"
+          subtitle="How these numbers are measured, and what they can and can't tell you"
+        >
+          <div className="pt-5 space-y-4 text-sm text-gray-600 leading-relaxed">
+            <div>
+              <h3 className="font-semibold text-gray-900">What&rsquo;s counted</h3>
+              <p className="mt-1">
+                A matter counts towards the window it was <em>decided</em> in, not the one it was
+                filed in — so these figures track what the ACCC is actually clearing now.
+                Notifications are measured from filing to the end of phase 1 (for a matter sent to
+                phase 2, that&rsquo;s the referral date, so the phase 2 clock never inflates the
+                figure). Waivers run from application to determination; they have no statutory
+                clock. Pre-notification is the exception and is counted by filing month, since
+                that&rsquo;s the event that ends it.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">The median isn&rsquo;t the promise</h3>
+              <p className="mt-1">
+                Half of all matters take longer than the median. The &ldquo;9 in 10 within&rdquo;
+                figure is the one to quote when a client needs a date they can rely on.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">Pre-notification is an estimate</h3>
+              <p className="mt-1">
+                The stage before filing never appears on the register. It&rsquo;s inferred from the
+                order ACCC case numbers were issued in — a waiver application is lodged the day its
+                case is opened, so waivers date the counter that notifications are measured
+                against. Treat movement in the figure as sound and the absolute level as carrying a
+                common offset: every matter is measured from the same unobservable zero, so a small
+                error there shifts them all together rather than adding noise. Matters filed before
+                the regime became mandatory are excluded. It&rsquo;s in calendar days, not business
+                days — it isn&rsquo;t a statutory clock.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">Waivers and the caseload line</h3>
+              <p className="mt-1">
+                A waiver application only reaches the register once it has been decided, so the
+                ACCC&rsquo;s pending waivers are invisible to us. That&rsquo;s why the filing count
+                and the caseload line cover notifications only — a waiver figure there would be
+                missing every application still in front of the ACCC.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">Reading the chart</h3>
+              <p className="mt-1">
+                A month with fewer than five decisions is left unplotted rather than charted off
+                one or two matters. No correlation figure is published against the caseload: both
+                lines trend over the register&rsquo;s short life, so any coefficient would largely
+                be measuring that shared trend rather than a caseload effect. The paired axes let
+                you judge it yourself.
+              </p>
+            </div>
+            <p className="pt-1">
+              For all-time distributions, industry comparisons and referral rates, see the{' '}
+              <Link to="/analysis" className="text-primary font-medium hover:underline">
+                analysis page
+              </Link>
+              .
+            </p>
+          </div>
+        </CollapsibleCard>
       </div>
     </>
   );

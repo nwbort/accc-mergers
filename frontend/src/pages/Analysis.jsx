@@ -1,18 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { Scatter, Bar, Line } from 'react-chartjs-2';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  BarElement,
-  Filler,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
+import '../utils/chartSetup';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
 import SEO from '../components/SEO';
@@ -28,17 +17,6 @@ import { STATIC_PAGE_META } from '../utils/pageMeta';
 // build-time prerenderer emit the same <head>.
 const PAGE_META = STATIC_PAGE_META['/analysis'];
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  BarElement,
-  Filler,
-  Title,
-  Tooltip,
-  Legend
-);
 
 // ECDF of completed-matter durations: "X% of reviews conclude by day N".
 // Right-continuous — the cumulative percentage jumps at each distinct

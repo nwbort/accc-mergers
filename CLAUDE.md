@@ -75,7 +75,10 @@ frontend/src/
 │   ├── Digest.jsx        # /digest
 │   ├── Analysis.jsx      # /analysis
 │   ├── StateOfPlay.jsx   # /state-of-play (current turnaround vs the all-time
-│                         #   baseline; not in the navbar, reachable from the command palette)
+│                         #   baseline; not in the navbar, reachable from the command
+│                         #   palette). Headlines first: the medians and their deltas
+│                         #   sit above the fold and every methodology note lives in a
+│                         #   collapsed "More information" card at the foot of the page
 │   ├── Phase2.jsx        # /phase-2
 │   ├── RefiledNotifications.jsx # /refiled-notifications
 │   ├── Extensions.jsx    # /extensions (Phase 1 timeline extensions; not linked from the navbar)
@@ -142,7 +145,12 @@ frontend/src/
 │                         #   (industry follows flag only new filings/determinations)
 ├── hooks/                # useDebounce.js, useFetchData.js, useKeyboardShortcuts.js,
 │                         #   useDecodedParam.js
-├── utils/                # dates.js, dataCache.js, lastVisit.js, classNames.js, searchIndex.js,
+├── utils/                # chartSetup.js (the single Chart.js registration point — import it
+│                         #   from any module that draws a chart; registering per page instead
+│                         #   silently breaks a chart reused on a page that registered less,
+│                         #   and jsdom cannot catch it, so utils/__tests__/chartSetup.test.js
+│                         #   guards both halves), dates.js, dataCache.js, lastVisit.js,
+│                         #   classNames.js, searchIndex.js,
 │                         #   businessDayProgress.js, fetchAllMergers.js, formatMedian.js,
 │                         #   industryGroups.js, slug.js, shard.js, preNotification.js, pageMeta.js,
 │                         #   treemapTail.js, mergerOutcome.js, partyMembers.js
@@ -201,7 +209,8 @@ scripts/                  # A Python package — entry points run as `python -m 
 │   ├── generate-cli-data.sh  # Build/version-bump the accc-mergers-cli bundle (gitignored) + tracked manifest
 │   ├── build_cli_sqlite.py   # Build cli.sqlite from the CLI bundle
 │   └── static_data/      # Generator package used by generate_static_data.py (outputs/, loaders, enrichment)
-├── constants/            # Shared Python literals (merger_status.py, site.py, tribunal.py)
+├── constants/            # Shared Python literals (merger_status.py, site.py, tribunal.py,
+│                         #   regime.py — mirrors frontend/src/constants/regime.js; keep in step)
 ├── tools/                # Interactive admin web UIs (resolver, commentary, advisors, related_parties)
 └── tests/                # Pytest suite covering the pipeline, generators, and CI checks
 
@@ -395,7 +404,7 @@ prunes the old names), but make it a deliberate choice.
 | `upcoming-events.json` | Future consultation/determination dates |
 | `commentary.json` | Mergers with user commentary |
 | `digest.json` | Weekly digest of merger activity (from `generate_weekly_digest.py`) |
-| `analysis.json` | Pre-computed analysis data. `state_of_play` (powering `/state-of-play`) re-cuts the same durations over rolling windows of recently *decided* matters (30/90 days), plus a per-decision-month series aligned index-for-index with `open_caseload`, so the filing-time question ("what is the ACCC turning around *now*") doesn't have to be answered from the all-time median. Each window also carries `notifications_filed`; no waiver inflow is published, since a waiver only reaches the register once decided |
+| `analysis.json` | Pre-computed analysis data. `state_of_play` (powering `/state-of-play`) re-cuts the same durations over rolling windows of recently *decided* matters (30/90 days), plus a per-decision-month series aligned index-for-index with `open_caseload`, so the filing-time question ("what is the ACCC turning around *now*") doesn't have to be answered from the all-time median. Each window also carries `notifications_filed` and a `pre_notification` block (keyed by *filing* date, in calendar days, since that stage ends at filing rather than at a decision). No waiver inflow is published, since a waiver only reaches the register once decided |
 | `timeline.json` | Unpaginated timeline (alongside the paginated `timeline/` directory) |
 | `referral-probability-by-day.json` | Modelled probability of a Phase 2 referral by elapsed business day |
 | `serial-acquirers.json` | Serial-acquirer ("creeping acquisitions") detection |

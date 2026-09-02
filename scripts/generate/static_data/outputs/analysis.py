@@ -46,6 +46,7 @@ from statistics import median as stat_median
 from zoneinfo import ZoneInfo
 
 from scripts.constants import merger_status
+from scripts.constants.regime import is_voluntary_period_notification
 
 from .. import anzsic
 from ..business_days import calculate_business_days, calculate_calendar_days
@@ -566,6 +567,45 @@ def _decided_durations(mergers: list) -> list[tuple[str, int]]:
     return durations
 
 
+def _pre_notification_durations(notification_mergers: list) -> list[tuple[str, int]]:
+    """``(filed_date, estimated_days)`` for notifications with a usable estimate.
+
+    Pre-notification — the stretch of ACCC engagement before a notification is
+    formally filed — never appears on the register; the pipeline infers it from
+    the order case numbers were issued in (see
+    :mod:`static_data.prenotification`). The population mirrors the frontend's
+    ``getPreNotificationEstimate``, so the aggregate here and the per-merger
+    figure on a detail page are drawn from the same records: notifications
+    only (a waiver has no drafting stage — the case is opened by lodging it),
+    excluding voluntary-period matters, which predate the waiver applications
+    that date the counter.
+
+    A zero-day estimate is kept rather than dropped: it dates the case number
+    to the filing day itself, which is a matter that really had no
+    pre-notification stage, not a missing measurement.
+
+    Durations are **calendar** days, unlike everything else on this page —
+    pre-notification is not a statutory clock, so there is no business-day
+    count to give.
+
+    Matters are keyed by their filing date, the event that ends this stage,
+    for the same reason :func:`_decided_durations` keys by decision date: it is
+    the completion event, and the only matters we can measure are those that
+    reached it. Ones still in pre-notification today have not been filed, so
+    they are not on the register at all — the figure describes what completed,
+    and cannot see a period still running.
+    """
+    durations = []
+    for m in notification_mergers:
+        estimate = m.get('pre_notification') or {}
+        days = estimate.get('estimated_days')
+        filed = m.get('original_notification_datetime') or m.get('effective_notification_datetime')
+        if days is None or not filed or is_voluntary_period_notification(m):
+            continue
+        durations.append((filed[:10], days))
+    return durations
+
+
 def state_of_play(mergers: list, as_at: date | None = None) -> dict:
     """How the ACCC's review is running *now*, against its all-time baseline.
 
@@ -659,6 +699,24 @@ def state_of_play(mergers: list, as_at: date | None = None) -> dict:
             entry[key] = stats
         windows.append(entry)
 
+    # Pre-notification is keyed by filing date, so it needs its own window cut
+    # rather than riding on the decision-date windows above.
+    pre_durations = _pre_notification_durations(notifications)
+    pre_all_time = _turnaround_stats([days for _, days in pre_durations])
+    pre_windows = []
+    for days in TURNAROUND_WINDOWS:
+        cutoff = (as_at - timedelta(days=days)).isoformat()
+        stats = _turnaround_stats(
+            [d for filed, d in pre_durations if cutoff < filed <= as_at.isoformat()]
+        )
+        stats["days"] = days
+        stats["median_delta"] = (
+            stats["median"] - pre_all_time["median"]
+            if stats["median"] is not None and pre_all_time["median"] is not None
+            else None
+        )
+        pre_windows.append(stats)
+
     caseload = open_caseload(mergers, as_at=as_at)
 
     def _monthly(durations: list[tuple[str, int]]) -> list[dict]:
@@ -682,6 +740,10 @@ def state_of_play(mergers: list, as_at: date | None = None) -> dict:
         "as_at": as_at.isoformat(),
         "windows": windows,
         "all_time": all_time,
+        "pre_notification": {
+            "windows": pre_windows,
+            "all_time": pre_all_time,
+        },
         "monthly": {
             "labels": caseload["labels"],
             "notifications": _monthly(notification_durations),

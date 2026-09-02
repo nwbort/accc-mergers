@@ -2698,6 +2698,38 @@
         "count": 372
       }
     },
+    "pre_notification": {
+      "windows": [
+        {
+          "median": 19.0,
+          "average": 21.7,
+          "p90": 37,
+          "min": 0,
+          "max": 66,
+          "count": 36,
+          "days": 30,
+          "median_delta": -1.0
+        },
+        {
+          "median": 21,
+          "average": 26.5,
+          "p90": 43,
+          "min": 0,
+          "max": 166,
+          "count": 111,
+          "days": 90,
+          "median_delta": 1
+        }
+      ],
+      "all_time": {
+        "median": 20,
+        "average": 24.6,
+        "p90": 51,
+        "min": 0,
+        "max": 166,
+        "count": 227
+      }
+    },
     "monthly": {
       "labels": [
         "2025-08",

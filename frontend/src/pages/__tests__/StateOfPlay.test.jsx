@@ -40,8 +40,6 @@ function renderStateOfPlay() {
 }
 
 describe('State of play', () => {
-  // Waivers running slower than their all-time median, notifications faster:
-  // the two directions the delta sentence has to phrase differently.
   const turnaroundFixture = {
     open_caseload: caseloadFixture,
     state_of_play: {
@@ -75,6 +73,15 @@ describe('State of play', () => {
       all_time: {
         notifications: { median: 20, average: 20, p90: 28, min: 8, max: 56, count: 206 },
         waivers: { median: 13, average: 13.3, p90: 19, min: 3, max: 24, count: 372 },
+      },
+      // Keyed by filing date, so its own window list — and running slightly
+      // shorter than baseline while the review clock runs longer.
+      pre_notification: {
+        windows: [
+          { days: 30, median: 19, average: 21.7, p90: 37, min: 0, max: 88, count: 36, median_delta: -1 },
+          { days: 90, median: 21, average: 26.5, p90: 43, min: 0, max: 120, count: 111, median_delta: 1 },
+        ],
+        all_time: { median: 20, average: 24.6, p90: 51, min: 0, max: 166, count: 227 },
       },
       monthly: {
         labels: ['2026-07', '2026-08', '2026-09'],
@@ -110,67 +117,82 @@ describe('State of play', () => {
     });
   }
 
-  async function renderTurnaround(payload = turnaroundFixture) {
+  async function renderPage(payload = turnaroundFixture) {
     mockAnalysis(payload);
     const view = renderStateOfPlay();
     await waitFor(() => {
-      expect(screen.getByRole('heading', { name: 'Time to decide' })).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: 'State of play' })).toBeInTheDocument();
     });
     return view;
   }
 
-  // "Waivers" also appears in the stat-card row and the chart legend, so every
-  // panel assertion scopes to the "Time to decide" section first.
-  function panel(name) {
-    const section = screen
-      .getByRole('heading', { name: 'Time to decide' })
-      .closest('section');
-    return within(section).getByText(name, { selector: 'p' }).parentElement;
+  // "Waivers" also labels a chart legend entry and a column in the trend
+  // chart's sr-only table, so headline assertions scope to their own panel.
+  function headline(label) {
+    return screen.getByText(label, { selector: 'p' }).parentElement;
   }
 
-  it('leads with the recent median and how it compares to the all-time one', async () => {
-    await renderTurnaround();
+  it('leads with the recent median and how it sits against the baseline', async () => {
+    await renderPage();
 
-    const waivers = panel('Waivers');
-    expect(within(waivers).getByText('17')).toBeInTheDocument();
-    expect(within(waivers).getByText('+4 BD')).toBeInTheDocument();
-    expect(within(waivers).getByText(/slower than the all-time median of 13 BD/)).toBeInTheDocument();
+    const waiver = headline('Waiver');
+    expect(within(waiver).getByText('17')).toBeInTheDocument();
+    expect(within(waiver).getByText('+4 BD vs all-time 13')).toBeInTheDocument();
+    expect(within(waiver).getByText('(slower)')).toBeInTheDocument();
   });
 
-  it('phrases a faster-than-baseline window as faster, without a plus sign', async () => {
-    await renderTurnaround();
+  it('phrases a faster-than-baseline window as faster, with a minus sign', async () => {
+    await renderPage();
 
-    const notifications = panel('Notifications – phase 1');
+    const notifications = headline('Notification – phase 1');
     expect(within(notifications).getByText('18.5')).toBeInTheDocument();
-    expect(within(notifications).getByText('−1.5 BD')).toBeInTheDocument();
-    expect(within(notifications).getByText(/faster than the all-time median of 20 BD/)).toBeInTheDocument();
+    expect(within(notifications).getByText('−1.5 BD vs all-time 20')).toBeInTheDocument();
+    expect(within(notifications).getByText('(faster)')).toBeInTheDocument();
   });
 
-  it('reports the tail and sample size an adviser needs to quote a range', async () => {
-    await renderTurnaround();
+  it('gives the tail and sample size under each headline', async () => {
+    await renderPage();
 
-    const waivers = panel('Waivers');
-    expect(within(waivers).getByText('21 BD')).toBeInTheDocument();   // 9 in 10 within
-    expect(within(waivers).getByText('8–23 BD')).toBeInTheDocument(); // range
-    expect(within(waivers).getByText('64')).toBeInTheDocument();      // decided in window
+    expect(within(headline('Waiver')).getByText('9 in 10 within 21 BD · 64 decided')).toBeInTheDocument();
+    expect(
+      within(headline('Notification – phase 1')).getByText('9 in 10 within 27 BD · 46 decided')
+    ).toBeInTheDocument();
   });
 
-  it('switches the whole panel when another window is selected', async () => {
+  it('shows pre-notification as the stage before filing, in calendar days', async () => {
+    await renderPage();
+
+    // Scoped to the strip: "all-time 20" also appears in the notification
+    // headline's delta sentence.
+    const strip = screen.getByText(/Before filing: about 19 calendar days/).closest('p');
+    expect(strip).toHaveTextContent('in pre-notification');
+    expect(strip).toHaveTextContent('all-time 20');
+  });
+
+  it('summarises what arrived, cleared and is still open', async () => {
+    await renderPage();
+
+    const context = screen.getByText(/In the last 30 days:/);
+    expect(context).toHaveTextContent('36 notifications filed');
+    expect(context).toHaveTextContent('110 decisions published');
+    expect(context).toHaveTextContent('35 notifications still open');
+  });
+
+  it('switches every figure when another window is selected', async () => {
     const user = userEvent.setup();
-    await renderTurnaround();
+    await renderPage();
 
     await user.click(screen.getByRole('button', { name: 'Last 90 days' }));
 
-    const waivers = panel('Waivers');
-    expect(within(waivers).getByText('15')).toBeInTheDocument();
-    expect(within(waivers).getByText('+2 BD')).toBeInTheDocument();
-    expect(within(waivers).getByText('179')).toBeInTheDocument();
+    expect(within(headline('Waiver')).getByText('15')).toBeInTheDocument();
+    expect(within(headline('Waiver')).getByText('+2 BD vs all-time 13')).toBeInTheDocument();
+    expect(screen.getByText(/Before filing: about 21 calendar days/)).toBeInTheDocument();
+    expect(screen.getByText(/In the last 90 days:/)).toHaveTextContent('111 notifications filed');
     expect(screen.getByRole('button', { name: 'Last 90 days' })).toHaveAttribute('aria-pressed', 'true');
-    expect(screen.getByRole('button', { name: 'Last 30 days' })).toHaveAttribute('aria-pressed', 'false');
   });
 
   it('says so plainly when a window has no decisions rather than showing a blank stat', async () => {
-    await renderTurnaround({
+    await renderPage({
       ...turnaroundFixture,
       state_of_play: {
         ...turnaroundFixture.state_of_play,
@@ -186,11 +208,26 @@ describe('State of play', () => {
       },
     });
 
-    expect(screen.getByText('No matters decided in the last 30 days.')).toBeInTheDocument();
+    expect(screen.getByText('Nothing decided in this window.')).toBeInTheDocument();
+  });
+
+  it('keeps the method out of the way until asked for', async () => {
+    const user = userEvent.setup();
+    await renderPage();
+
+    const toggle = screen.getByRole('button', { name: /More information/i });
+    expect(toggle).toHaveAttribute('aria-expanded', 'false');
+    expect(screen.queryByText(/The median isn/)).not.toBeInTheDocument();
+
+    await user.click(toggle);
+
+    expect(toggle).toHaveAttribute('aria-expanded', 'true');
+    expect(screen.getByRole('heading', { name: /The median isn/ })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Pre-notification is an estimate/ })).toBeInTheDocument();
   });
 
   it('pairs each decision month with the caseload it came out of in the data table', async () => {
-    await renderTurnaround();
+    await renderPage();
 
     const table = screen.getByRole('table', {
       name: /Median business days to decide by decision month/,
@@ -204,7 +241,7 @@ describe('State of play', () => {
   });
 
   it('marks a month held back for a thin sample as not reported, keeping its count', async () => {
-    await renderTurnaround();
+    await renderPage();
 
     const table = screen.getByRole('table', {
       name: /Median business days to decide by decision month/,
@@ -214,39 +251,12 @@ describe('State of play', () => {
     expect(within(september).getAllByText('2')).toHaveLength(2);
   });
 
-  it('summarises what is arriving, queued and clearing', async () => {
-    await renderTurnaround();
+  it('hides pre-notification when the payload predates it, keeping the headlines', async () => {
+    const { pre_notification: _dropped, ...withoutPre } = turnaroundFixture.state_of_play;
+    await renderPage({ ...turnaroundFixture, state_of_play: withoutPre });
 
-    // Scoped to the stat card's own <dt>: "Open caseload" below is also a
-    // column header in the trend chart's sr-only data table.
-    const filed = screen.getByText('Notifications filed (last 30 days)', { selector: 'dt' }).closest('dl');
-    expect(within(filed).getByText('36')).toBeInTheDocument();
-
-    // Decisions published is both types together, broken out in the subtitle.
-    const published = screen.getByText('Decisions published (last 30 days)', { selector: 'dt' }).closest('dl');
-    expect(within(published).getByText('110')).toBeInTheDocument();
-    expect(within(published).getByText('46 notifications, 64 waivers')).toBeInTheDocument();
-  });
-
-  it('reads the open caseload and its six-month movement off the caseload series', async () => {
-    await renderTurnaround();
-
-    // Six points back from the last (35) is Mar 2026 at 25.
-    const queue = screen.getByText('Open caseload', { selector: 'dt' }).closest('dl');
-    expect(within(queue).getByText('35')).toBeInTheDocument();
-    expect(within(queue).getByText('+10 over ~6 months')).toBeInTheDocument();
-  });
-
-  it('follows the selected window in the arriving and clearing counts too', async () => {
-    const user = userEvent.setup();
-    await renderTurnaround();
-
-    await user.click(screen.getByRole('button', { name: 'Last 90 days' }));
-
-    const filed = screen.getByText('Notifications filed (last 90 days)', { selector: 'dt' }).closest('dl');
-    expect(within(filed).getByText('111')).toBeInTheDocument();
-    const published = screen.getByText('Decisions published (last 90 days)', { selector: 'dt' }).closest('dl');
-    expect(within(published).getByText('295')).toBeInTheDocument();
+    expect(screen.queryByText(/Before filing:/)).not.toBeInTheDocument();
+    expect(within(headline('Waiver')).getByText('17')).toBeInTheDocument();
   });
 
   it('says the page is still generating when the payload predates the series', async () => {
@@ -260,6 +270,6 @@ describe('State of play', () => {
     });
 
     expect(screen.getByText(/still being generated/)).toBeInTheDocument();
-    expect(screen.queryByRole('heading', { name: 'Time to decide' })).not.toBeInTheDocument();
+    expect(screen.queryByText(/business days/)).not.toBeInTheDocument();
   });
 });

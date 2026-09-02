@@ -1109,6 +1109,74 @@ class TestStateOfPlay:
         assert all(w['notifications_filed'] == 0 for w in payload['windows'])
         assert all('waivers_filed' not in w for w in payload['windows'])
 
+    def _with_pre_notification(self, merger_id, filed, decided, days):
+        merger = self._decided(merger_id, filed, decided)
+        merger['pre_notification'] = {'estimated_days': days, 'basis': 'bracketed'}
+        return merger
+
+    def test_pre_notification_is_keyed_by_filing_date(self):
+        mergers = [
+            # Filed inside the 30-day window ending 15 Mar.
+            self._with_pre_notification('MN-1', '2026-03-02T00:00:00Z', '2026-03-12T00:00:00Z', 10),
+            # Filed in January: inside 90 days, outside 30.
+            self._with_pre_notification('MN-2', '2026-01-05T00:00:00Z', '2026-01-20T00:00:00Z', 40),
+        ]
+        payload = analysis.state_of_play(mergers, as_at=date(2026, 3, 15))
+        by_days = {w['days']: w for w in payload['pre_notification']['windows']}
+
+        assert by_days[30]['count'] == 1
+        assert by_days[30]['median'] == 10
+        assert by_days[90]['count'] == 2
+        assert payload['pre_notification']['all_time']['count'] == 2
+
+    def test_pre_notification_delta_is_against_the_all_time_median(self):
+        mergers = [
+            self._with_pre_notification('MN-1', '2026-01-05T00:00:00Z', '2026-01-20T00:00:00Z', 10),
+            self._with_pre_notification('MN-2', '2026-01-06T00:00:00Z', '2026-01-21T00:00:00Z', 10),
+            self._with_pre_notification('MN-3', '2026-01-07T00:00:00Z', '2026-01-22T00:00:00Z', 10),
+            self._with_pre_notification('MN-4', '2026-03-02T00:00:00Z', '2026-03-12T00:00:00Z', 30),
+        ]
+        payload = analysis.state_of_play(mergers, as_at=date(2026, 3, 15))
+        recent = {w['days']: w for w in payload['pre_notification']['windows']}[30]
+
+        assert recent['median_delta'] == recent['median'] - payload['pre_notification']['all_time']['median']
+        assert recent['median_delta'] > 0
+
+    def test_pre_notification_excludes_voluntary_period_matters(self):
+        # Filed before the regime became mandatory: the counter had no waiver
+        # applications to date it against, so the estimate does not carry over.
+        mergers = [
+            self._with_pre_notification('MN-1', '2025-09-01T00:00:00Z', '2025-10-01T00:00:00Z', 50),
+            self._with_pre_notification('MN-2', '2026-03-02T00:00:00Z', '2026-03-12T00:00:00Z', 10),
+        ]
+        payload = analysis.state_of_play(mergers, as_at=date(2026, 3, 15))
+
+        assert payload['pre_notification']['all_time']['count'] == 1
+        assert payload['pre_notification']['all_time']['median'] == 10
+
+    def test_pre_notification_keeps_a_zero_day_estimate(self):
+        # Zero dates the case number to the filing day itself — a matter with no
+        # pre-notification stage, not a missing measurement.
+        mergers = [
+            self._with_pre_notification('MN-1', '2026-03-02T00:00:00Z', '2026-03-12T00:00:00Z', 0),
+            self._with_pre_notification('MN-2', '2026-03-03T00:00:00Z', '2026-03-13T00:00:00Z', 10),
+        ]
+        payload = analysis.state_of_play(mergers, as_at=date(2026, 3, 15))
+
+        assert payload['pre_notification']['all_time']['count'] == 2
+        assert payload['pre_notification']['all_time']['min'] == 0
+
+    def test_pre_notification_skips_waivers_and_matters_without_an_estimate(self):
+        mergers = [
+            # A waiver is lodged the day its case opens: no pre-notification stage.
+            self._decided('WA-1', '2026-03-02T00:00:00Z', '2026-03-12T00:00:00Z', waiver=True),
+            # A notification the counter could not bound.
+            self._decided('MN-1', '2026-03-02T00:00:00Z', '2026-03-12T00:00:00Z'),
+        ]
+        payload = analysis.state_of_play(mergers, as_at=date(2026, 3, 15))
+
+        assert payload['pre_notification']['all_time']['count'] == 0
+
     def test_empty_input(self):
         payload = analysis.state_of_play([], as_at=date(2026, 3, 15))
 
@@ -1117,6 +1185,7 @@ class TestStateOfPlay:
         assert all(w[k]['median_delta'] is None
                    for w in payload['windows'] for k in ('notifications', 'waivers'))
         assert payload['monthly']['labels'] == []
+        assert payload['pre_notification']['all_time']['count'] == 0
 
 
 class TestNotificationRestarts:
