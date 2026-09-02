@@ -154,6 +154,68 @@ describe('PreNotificationEstimate', () => {
     expect(screen.getByText('feedback page')).toBeInTheDocument();
   });
 
+  it('rates a bracketed estimate by how tightly its bounds close in', () => {
+    // 12 to 34 days is a 22-day window — wider than a fortnight, narrower than
+    // six weeks.
+    renderCallout(merger());
+
+    expect(screen.getByText('Medium confidence')).toBeInTheDocument();
+    expect(
+      screen.getByText(/Dated case numbers either side sit 22 days apart, so the start date is approximate/)
+    ).toBeInTheDocument();
+  });
+
+  it('rates a tightly bracketed estimate high', () => {
+    renderCallout(merger({
+      pre_notification: {
+        estimated_days: 16,
+        min_days: 12,
+        max_days: 20,
+        id_issued_estimated: '2026-05-11',
+        basis: 'bracketed',
+      },
+    }));
+
+    expect(screen.getByText('High confidence')).toBeInTheDocument();
+    expect(
+      screen.getByText(/sit 8 days apart, pinning the start date closely/)
+    ).toBeInTheDocument();
+  });
+
+  it('rates a loosely bracketed estimate low', () => {
+    renderCallout(merger({
+      pre_notification: {
+        estimated_days: 30,
+        min_days: 5,
+        max_days: 60,
+        id_issued_estimated: '2026-04-27',
+        basis: 'bracketed',
+      },
+    }));
+
+    expect(screen.getByText('Low confidence')).toBeInTheDocument();
+    expect(
+      screen.getByText(/sit 55 days apart, so the start date is only loosely placed/)
+    ).toBeInTheDocument();
+  });
+
+  it('rates a single-bound estimate low whatever the date it gives', () => {
+    renderCallout(merger({
+      pre_notification: {
+        estimated_days: 7,
+        min_days: 7,
+        max_days: null,
+        id_issued_estimated: '2026-05-20',
+        basis: 'lower-bound-only',
+      },
+    }));
+
+    expect(screen.getByText('Low confidence')).toBeInTheDocument();
+    expect(
+      screen.getByText(/Only one side of this matter’s case number is dated/)
+    ).toBeInTheDocument();
+  });
+
   it('renders nothing when the merger has no estimate', () => {
     const { container } = renderCallout(merger({ pre_notification: undefined }));
 

@@ -6,11 +6,72 @@ import {
   getPreNotificationEstimate,
   PRE_NOTIFICATION_AFTER,
   PRE_NOTIFICATION_BEFORE,
+  PRE_NOTIFICATION_CONFIDENCE,
   PRE_NOTIFICATION_NONE,
 } from '../utils/preNotification';
 
 /** What the question mark means, said in full wherever there's room to say it. */
 const CORRECTION_PROMPT = 'Not quite right? Let us know what it should be';
+
+/**
+ * How much weight to put on the estimate, as a chip. The scale is the width of
+ * the window the estimate was read out of, so the colours run from the settled
+ * green through the phase-1 amber to a neutral grey — deliberately not red,
+ * which on this callout belongs to the "tell us it's wrong" link.
+ */
+const CONFIDENCE_STYLES = {
+  [PRE_NOTIFICATION_CONFIDENCE.HIGH]: 'bg-cleared-pale text-cleared-dark border-cleared-dark/20',
+  [PRE_NOTIFICATION_CONFIDENCE.MEDIUM]: 'bg-phase-1-pale text-phase-1-dark border-phase-1-dark/20',
+  [PRE_NOTIFICATION_CONFIDENCE.LOW]: 'bg-gray-100 text-gray-600 border-gray-300',
+};
+
+const CONFIDENCE_LABELS = {
+  [PRE_NOTIFICATION_CONFIDENCE.HIGH]: 'High confidence',
+  [PRE_NOTIFICATION_CONFIDENCE.MEDIUM]: 'Medium confidence',
+  [PRE_NOTIFICATION_CONFIDENCE.LOW]: 'Low confidence',
+};
+
+const days = (count) => `${count} day${count === 1 ? '' : 's'}`;
+
+/**
+ * Why the estimate earned its rating, in one sentence — the width of the
+ * window it was read out of, or the fact that only one side of the case number
+ * is dated at all.
+ */
+const explainConfidence = ({ confidence, windowDays }) => {
+  if (windowDays === null) {
+    return 'Only one side of this matter’s case number is dated, so this is a bound rather than a measurement.';
+  }
+  if (confidence === PRE_NOTIFICATION_CONFIDENCE.HIGH) {
+    return `Dated case numbers either side sit ${days(windowDays)} apart, pinning the start date closely.`;
+  }
+  if (confidence === PRE_NOTIFICATION_CONFIDENCE.MEDIUM) {
+    return `Dated case numbers either side sit ${days(windowDays)} apart, so the start date is approximate.`;
+  }
+  return `Dated case numbers either side sit ${days(windowDays)} apart, so the start date is only loosely placed.`;
+};
+
+/**
+ * The rating itself. The words carry the meaning and the colour only
+ * reinforces them, so the chip still reads on a monochrome or high-contrast
+ * display. The reasoning behind the rating sits in the tooltip for a pointer
+ * and, since a tooltip is not reachable any other way, alongside it for
+ * everyone else.
+ */
+function ConfidenceChip({ estimate }) {
+  const explanation = explainConfidence(estimate);
+  return (
+    <>
+      <span
+        title={explanation}
+        className={`inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-medium ${CONFIDENCE_STYLES[estimate.confidence]}`}
+      >
+        {CONFIDENCE_LABELS[estimate.confidence]}
+      </span>
+      <span className="sr-only"> {explanation}</span>
+    </>
+  );
+}
 
 const describe = ({ kind, startDate }) => {
   if (kind === PRE_NOTIFICATION_NONE) {
@@ -94,6 +155,9 @@ function PreNotificationEstimate({ merger }) {
             className="sm:hidden inline-flex align-baseline ml-1.5"
           />
         </p>
+        <div className="mt-1.5">
+          <ConfidenceChip estimate={estimate} />
+        </div>
         {promptShown && (
           <Link
             to={correctionLink(merger.merger_id)}
