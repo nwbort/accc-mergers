@@ -1,10 +1,10 @@
 {
-  "total_mergers": 240,
+  "total_mergers": 241,
   "total_waivers": 372,
   "total_conditional_approvals": 4,
   "by_status": {
     "Assessment completed": 201,
-    "Under assessment": 34,
+    "Under assessment": 35,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -56,7 +56,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 106
+      "count": 107
     },
     {
       "name": "Computer System Design and Related Services",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-75054",
+      "merger_name": "I Squared Capital \u2013 oOh!media",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-09-02T12:00:00Z",
+      "page_modified_datetime": "2026-09-03T09:46:54+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-35030",
       "merger_name": "MUFG Pension & Market Services - Grow Technology Services",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-19T12:00:00Z",
       "page_modified_datetime": "2026-08-21T11:36:17+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-90029",
-      "merger_name": "Bunnings \u2013 Intellihub \u2013 Zelora Joint Venture",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-18T12:00:00Z",
-      "page_modified_datetime": "2026-08-21T10:14:50+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

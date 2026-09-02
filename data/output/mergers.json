@@ -44856,6 +44856,152 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/i-squared-capital-%E2%80%93-oohmedia",
+      "merger_name": "I Squared Capital \u2013 oOh!media",
+      "status": "Under assessment",
+      "merger_id": "MN-75054",
+      "effective_notification_datetime": "2026-09-02T12:00:00Z",
+      "original_notification_datetime": "2026-09-02T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-10-15T12:00:00Z",
+      "page_modified_datetime": "2026-09-03T09:46:54+10:00",
+      "consultation_response_due_date": "2026-09-10T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "OOH BidCo Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "700 817 312",
+          "party_page": {
+            "id": "ooh-bidco-pty-ltd",
+            "name": "OOH BidCo Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "oOh!media Limited",
+          "identifier_type": "ABN",
+          "identifier": "69 602 195 380",
+          "party_page": {
+            "id": "ooh-media-limited",
+            "name": "oOh!media Limited"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "I Squared Capital, LLC",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "i-squared-capital-llc",
+            "name": "I Squared Capital, LLC"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6940",
+          "name": "Advertising Services"
+        }
+      ],
+      "merger_description": "The I\u00a0Squared Capital group (**I\u00a0Squared Capital**), through its wholly owned special purpose vehicle,\u00a0proposes to acquire 100% of the fully paid ordinary shares in the capital of oOh!media Limited (**oOh!media**) by means of a scheme of arrangement (the **Acquisition**).\n\nI\u00a0Squared Capital is a private equity investment firm headquartered in the United States. It is focused primarily on infrastructure investment.\n\noOh!media is listed on the Australian Securities Exchange. oOh!media provides out-of-home advertising services. It supplies advertising space across billboards, airports, retail precincts, rail networks, offices, educational settings and other streetside environments. oOh!media also supplies creative, printing and data analytics services.",
+      "events": [
+        {
+          "date": "2026-09-03T12:00:00Z",
+          "title": "Phase 1 consultation",
+          "display_title": "Phase 1 consultation",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/I%20Squared%20Capital%20-%20oOh%21media%20-%20third-party%20questionnaire.pdf",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-09-02T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-80018",
+          "merger_name": "SOILCO - Go Grow",
+          "acquirers": [
+            "SOILCO PTY LIMITED"
+          ],
+          "targets": [
+            "GARDEN MEDIUMS PTY LIMITED",
+            "Lumime Pty Ltd"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-45024",
+          "merger_name": "OEConnection - Epyx",
+          "acquirers": [
+            "OEC Bidco Limited"
+          ],
+          "targets": [
+            "Quadrum Investments Group Ltd (trading as \"Epyx\")"
+          ],
+          "status": "Under assessment"
+        },
+        {
+          "merger_id": "MN-20023",
+          "merger_name": "Sony Music - Recognition Music",
+          "acquirers": [
+            "SMG-Three LLC",
+            "Sony Music Publishing (US) LLC"
+          ],
+          "targets": [
+            "Recognition Music Group (Delaware) L.P."
+          ],
+          "accc_determination": "Approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 19,
+        "range_business_days": [
+          16,
+          23
+        ],
+        "basis": "industry",
+        "anzsic_level": "class",
+        "anzsic_codes": [
+          "6240",
+          "6940"
+        ],
+        "sample_size": 20,
+        "estimated_at": "2026-09-02",
+        "method_version": 1
+      },
+      "pre_notification": {
+        "estimated_days": 19,
+        "min_days": null,
+        "max_days": 26,
+        "id_issued_estimated": "2026-08-14",
+        "id_issued_before": null,
+        "id_issued_after": "2026-08-07",
+        "min_days_witness": null,
+        "max_days_witness": "WA-75048",
+        "basis": "upper-bound-only",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/bain-capital-%E2%80%93-mcj",
       "merger_name": "Bain Capital \u2013 MCJ",
       "status": "Assessment completed",
