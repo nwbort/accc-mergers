@@ -18,7 +18,9 @@ import ErrorMessage from '../components/ErrorMessage';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
-import { formatDateMedium } from '../utils/dates';
+import { formatDateMedium, formatMonthLabel } from '../utils/dates';
+import { formatMedian } from '../utils/formatMedian';
+import TurnaroundTrendChart from '../components/TurnaroundTrendChart';
 import { industryPath } from '../utils/slug';
 import { CHART_PALETTE as COLORS } from '../constants/chartColors';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
@@ -39,12 +41,6 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-
-function formatMonthLabel(yyyymm) {
-  const [year, month] = yyyymm.split('-');
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  return `${months[parseInt(month, 10) - 1]} ${year}`;
-}
 
 // ECDF of completed-matter durations: "X% of reviews conclude by day N".
 // Right-continuous — the cumulative percentage jumps at each distinct
@@ -80,6 +76,7 @@ function Analysis() {
   });
   const navigate = useNavigate();
   const [calendarDays, setCalendarDays] = useState(false);
+  const [turnaroundWindow, setTurnaroundWindow] = useState(30);
 
   if (loading) return <LoadingSpinner />;
   if (error) return <ErrorMessage error={error} />;
@@ -334,6 +331,22 @@ function Analysis() {
       },
     },
   };
+
+  // --- Current turnaround (recent decisions vs the all-time baseline) ---
+  // The stat cards above pool every matter ever decided. That baseline lags
+  // what a matter filed today should expect, so this re-cuts the same
+  // durations over a rolling window of recently *decided* matters — the
+  // figure an adviser actually needs at filing time. The monthly trend that
+  // accompanies it lives in TurnaroundTrendChart.
+  //
+  // Guarded on presence for the same reason the caseload block is: the
+  // deployed analysis.json may predate this series.
+  const turnaround = data.current_turnaround;
+  const hasTurnaround = Boolean(turnaround?.windows?.length);
+  const turnaroundEntry = hasTurnaround
+    ? (turnaround.windows.find(w => w.days === turnaroundWindow) || turnaround.windows[0])
+    : null;
+  const turnaroundAsAtLabel = turnaround?.as_at ? formatDateMedium(turnaround.as_at) : null;
 
   // --- Open caseload (stock, not flow) ---
   // Guarded on presence: analysis.json is fetched from the deployed site, so a
@@ -607,6 +620,115 @@ function Analysis() {
             </div>
           </div>
         </div>
+
+        {/* Current turnaround — what the ACCC is deciding in *now* */}
+        {hasTurnaround && (
+          <section className="mb-8">
+            <div className={`${CARD} overflow-hidden`}>
+              <div className="px-6 py-5 border-b border-gray-100 flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <h2 className="text-base font-semibold text-gray-900">
+                    Current turnaround
+                  </h2>
+                  <p className="text-sm text-gray-500 mt-0.5">
+                    How long matters decided recently actually took, against the all-time median
+                    {turnaroundAsAtLabel ? ` — as at ${turnaroundAsAtLabel}` : ''}
+                  </p>
+                </div>
+                <div
+                  className="inline-flex items-center bg-gray-100 rounded-full p-0.5 text-sm"
+                  role="group"
+                  aria-label="Turnaround window"
+                >
+                  {turnaround.windows.map(w => (
+                    <button
+                      key={w.days}
+                      onClick={() => setTurnaroundWindow(w.days)}
+                      aria-pressed={turnaroundEntry.days === w.days}
+                      className={`px-3.5 py-1.5 rounded-full font-medium transition-all duration-150 ${turnaroundEntry.days === w.days ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-600 hover:text-gray-900'}`}
+                    >
+                      Last {w.days} days
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-gray-100">
+                {[
+                  { key: 'notifications', label: 'Notifications – phase 1' },
+                  { key: 'waivers', label: 'Waivers' },
+                ].map(({ key, label }) => {
+                  const recent = turnaroundEntry[key];
+                  const baseline = turnaround.all_time[key];
+                  return (
+                    <div key={key} className="p-6">
+                      <p className={SECTION_HEADING}>{label}</p>
+                      {recent.median === null ? (
+                        <p className="text-sm text-gray-500 mt-3">
+                          No matters decided in the last {turnaroundEntry.days} days.
+                        </p>
+                      ) : (
+                        <>
+                          <div className="flex items-baseline gap-2 mt-1.5 flex-wrap">
+                            <p className="text-3xl font-bold text-gray-900 tracking-tight">
+                              {formatMedian(recent.median)}
+                            </p>
+                            <p className="text-sm text-gray-500">median business days</p>
+                          </div>
+                          <p className="text-sm text-gray-600 mt-2">
+                            {recent.median_delta === null || recent.median_delta === 0 ? (
+                              <>In line with the all-time median of {formatMedian(baseline.median)} BD</>
+                            ) : (
+                              <>
+                                {/* Deltas render in plain dark text, matching the
+                                    open-caseload "Change" stat below: a red/green
+                                    cue here would borrow the outcome palette's
+                                    approved/declined semantics for something that
+                                    is just a duration. The words carry the sense. */}
+                                <span className="font-semibold text-gray-900">
+                                  {recent.median_delta > 0 ? '+' : '−'}
+                                  {formatMedian(Math.abs(recent.median_delta))} BD
+                                </span>{' '}
+                                {recent.median_delta > 0 ? 'slower' : 'faster'} than the all-time
+                                median of {formatMedian(baseline.median)} BD
+                              </>
+                            )}
+                          </p>
+                          <dl className="mt-4 pt-4 border-t border-gray-100 grid grid-cols-2 gap-y-2 text-sm">
+                            <dt className="text-gray-500">9 in 10 within</dt>
+                            <dd className="text-gray-900 font-medium text-right">{recent.p90} BD</dd>
+                            <dt className="text-gray-500">Range</dt>
+                            <dd className="text-gray-900 font-medium text-right">{recent.min}–{recent.max} BD</dd>
+                            <dt className="text-gray-500">Decided in window</dt>
+                            <dd className="text-gray-900 font-medium text-right">{recent.count}</dd>
+                          </dl>
+                        </>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="px-6 pb-6 pt-2 border-t border-gray-100">
+                <h3 id="chart-turnaround-trend-title" className="text-sm font-semibold text-gray-900 mt-4 mb-0.5">
+                  Turnaround against open caseload
+                </h3>
+                <p className="text-sm text-gray-500 mb-4">
+                  Median time to decide, by the month the decision landed, plotted against the
+                  notifications still on the ACCC&rsquo;s books at each month end
+                </p>
+                <TurnaroundTrendChart monthly={turnaround.monthly} />
+                <p className="text-xs text-gray-500 mt-3">
+                  Matters are counted in the month they were <em>decided</em>, not the month they
+                  were filed, so each point reflects what the ACCC was turning around at the time.
+                  Notifications are measured to the end of phase 1 (the referral date for a matter
+                  sent to phase 2); waivers to their determination. A month with fewer than five
+                  decisions is left unplotted rather than charted off one or two matters.
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Monthly Volume */}
         <div className="grid grid-cols-1 gap-6 mb-8">

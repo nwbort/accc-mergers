@@ -38,9 +38,10 @@ Label normalisation for ``by_commission_division`` (see that function):
 """
 
 import calendar
+import math
 import re
 from collections import defaultdict
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from statistics import median as stat_median
 from zoneinfo import ZoneInfo
 
@@ -49,7 +50,7 @@ from scripts.constants import merger_status
 from .. import anzsic
 from ..business_days import calculate_business_days, calculate_calendar_days
 from ..durations import collect_phase_1_durations, phase_1_end_date
-from ..filters import filter_notifications, filter_waivers
+from ..filters import filter_notifications, filter_waivers, is_waiver
 
 _MAX_DIVISION_LABEL_LENGTH = 200
 
@@ -484,6 +485,184 @@ def open_caseload(mergers: list, as_at: date | None = None) -> dict:
     }
 
 
+# Rolling windows (in calendar days back from the as-at date) used by
+# current_turnaround. 30 days answers the "how is the ACCC tracking right now"
+# question directly; 90 smooths out a quiet fortnight without reaching so far
+# back that it re-describes the all-time figure. Both are comfortably powered
+# at current volumes (~45 phase 1 determinations and ~70 waivers a month).
+TURNAROUND_WINDOWS = (30, 90)
+
+# A month with fewer than this many decisions gets a null median in the monthly
+# trend: with a handful of matters the "median" is one or two deals' durations,
+# and plotting it invites reading a swing that isn't there. Five is set from the
+# register's own opening months, where three-decision months produced a 30 BD
+# spike off a single slow matter — a point an adviser could easily have quoted
+# as a trend. The count is still published, so a consumer can show the gap
+# honestly rather than silently dropping the month.
+MIN_MONTHLY_TURNAROUND_SAMPLE = 5
+
+
+def _percentile(sorted_values: list[int], fraction: float) -> int | None:
+    """Nearest-rank percentile of an already-sorted, non-empty list.
+
+    Nearest-rank (rather than an interpolating definition) is used so the
+    result is always an observed duration: "9 in 10 matters were decided
+    within N business days" has to name a real N to be quotable in advice.
+    """
+    if not sorted_values:
+        return None
+    rank = max(1, math.ceil(fraction * len(sorted_values)))
+    return sorted_values[min(rank, len(sorted_values)) - 1]
+
+
+def _turnaround_stats(business_days: list[int]) -> dict:
+    """Median/average/spread of a set of decided-matter durations.
+
+    ``p90`` is carried alongside the median because the median alone
+    understates what an adviser has to promise a client: the tail is what
+    turns a 13-day expectation into a 17-day one.
+    """
+    if not business_days:
+        return {"median": None, "average": None, "p90": None, "min": None, "max": None, "count": 0}
+    ordered = sorted(business_days)
+    return {
+        "median": stat_median(ordered),
+        "average": round(sum(ordered) / len(ordered), 1),
+        "p90": _percentile(ordered, 0.9),
+        "min": ordered[0],
+        "max": ordered[-1],
+        "count": len(ordered),
+    }
+
+
+def _decided_durations(mergers: list) -> list[tuple[str, int]]:
+    """``(decision_date, business_days)`` for every matter that has been decided.
+
+    The decision date is what a matter is bucketed by here — not its filing
+    date. That is the whole point of this series: to answer "what is the ACCC
+    turning around *now*", a matter has to count towards the period it was
+    decided in, not the period it was filed in. Bucketing by filing date would
+    also make the recent months structurally incomplete, since the matters
+    filed in them that are still open have no duration yet.
+
+    Notifications are measured to the end of phase 1 (:func:`phase_1_end_date`
+    — the referral date for a matter sent to phase 2, so the phase 2 clock
+    never inflates the figure), waivers end-to-end to their determination,
+    matching every other duration figure on the site.
+    """
+    durations = []
+    for m in mergers:
+        if is_waiver(m):
+            end = m.get('determination_publication_date')
+        else:
+            end = phase_1_end_date(m)
+        start = m.get('effective_notification_datetime')
+        if not (start and end):
+            continue
+        bus_days = calculate_business_days(start, end)
+        if bus_days is None:
+            continue
+        durations.append((end[:10], bus_days))
+    return durations
+
+
+def current_turnaround(mergers: list, as_at: date | None = None) -> dict:
+    """How long the ACCC is *currently* taking to decide, vs its all-time record.
+
+    The duration figures elsewhere on this page pool every matter ever decided.
+    That is the right baseline, but it is not the number to quote a client at
+    filing time: the register opened in 2026 and the ACCC's throughput has
+    moved as the regime bedded in, so the all-time median lags what a matter
+    filed today should actually expect. This block re-cuts the same durations
+    two ways to close that gap:
+
+    - ``windows`` — median/average/p90 over matters *decided* in the last 30
+      and 90 days, each paired with the all-time figure and the delta between
+      them, for notifications and waivers separately.
+    - ``monthly`` — the same medians per decision-month, aligned index-for-index
+      with the open notification caseload at each of those month ends, so the
+      turnaround line can be read directly against the queue it came out of.
+
+    ``as_at`` defaults to today in Sydney (the ACCC's own timezone) rather than
+    the build server's UTC date, for the same reason :func:`open_caseload`
+    does. The final monthly point is a part-month reading, exactly as the
+    caseload series' is.
+
+    No correlation coefficient is published against the caseload deliberately:
+    both series trend over the register's short life, so any r would mostly be
+    measuring that shared trend rather than a caseload effect on turnaround.
+    The paired axes let a reader judge it without a number that would carry
+    more authority than ~a dozen monthly points can support.
+    """
+    as_at = as_at or datetime.now(_SYDNEY_TZ).date()
+
+    notification_durations = _decided_durations(filter_notifications(mergers))
+    waiver_durations = _decided_durations(filter_waivers(mergers))
+
+    def _window(durations: list[tuple[str, int]], days: int) -> dict:
+        cutoff = (as_at - timedelta(days=days)).isoformat()
+        as_at_iso = as_at.isoformat()
+        return _turnaround_stats(
+            [bd for decided, bd in durations if cutoff < decided <= as_at_iso]
+        )
+
+    all_time = {
+        "notifications": _turnaround_stats([bd for _, bd in notification_durations]),
+        "waivers": _turnaround_stats([bd for _, bd in waiver_durations]),
+    }
+
+    windows = []
+    for days in TURNAROUND_WINDOWS:
+        entry = {"days": days}
+        for key, durations in (("notifications", notification_durations), ("waivers", waiver_durations)):
+            stats = _window(durations, days)
+            baseline = all_time[key]["median"]
+            # The delta is the headline: "waivers are running 4 business days
+            # longer than the all-time median" is the sentence this whole block
+            # exists to support.
+            stats["median_delta"] = (
+                stats["median"] - baseline
+                if stats["median"] is not None and baseline is not None
+                else None
+            )
+            entry[key] = stats
+        windows.append(entry)
+
+    caseload = open_caseload(mergers, as_at=as_at)
+
+    def _monthly(durations: list[tuple[str, int]]) -> list[dict]:
+        by_month = defaultdict(list)
+        for decided, bus_days in durations:
+            by_month[decided[:7]].append(bus_days)
+        series = []
+        for label in caseload["labels"]:
+            values = by_month.get(label, [])
+            if len(values) < MIN_MONTHLY_TURNAROUND_SAMPLE:
+                series.append({"median": None, "average": None, "count": len(values)})
+                continue
+            series.append({
+                "median": stat_median(values),
+                "average": round(sum(values) / len(values), 1),
+                "count": len(values),
+            })
+        return series
+
+    return {
+        "as_at": as_at.isoformat(),
+        "windows": windows,
+        "all_time": all_time,
+        "monthly": {
+            "labels": caseload["labels"],
+            "notifications": _monthly(notification_durations),
+            "waivers": _monthly(waiver_durations),
+            # Carried alongside rather than left to the caller to re-join:
+            # the alignment is the point of the series, and open_caseload's
+            # labels are what both are indexed by.
+            "open_caseload": caseload["notifications"],
+        },
+    }
+
+
 def referrals_by_quarter(notification_mergers: list) -> list[dict]:
     """Notification volume and subsequent Phase 2 referrals, per calendar quarter.
 
@@ -660,6 +839,7 @@ def generate(mergers: list) -> dict:
         },
         "monthly_volume": monthly_volume,
         "open_caseload": open_caseload(mergers),
+        "current_turnaround": current_turnaround(mergers),
         "industry_phase1_duration": industry_phase1_duration(mergers),
         "by_commission_division": by_commission_division(mergers),
         "deadline_utilisation": deadline_utilisation(mergers),

@@ -120,9 +120,13 @@ frontend/src/
 │                         #     BellIcon
 │                         #   - Global UI: CommandPalette, KeyboardShortcutsHelp,
 │                         #     SearchInput, FeedbackPopup
-│                         #   Charts live in Treemap.jsx and
-│                         #   PhaseDurationComparison.jsx; both follow the
+│                         #   Charts live in Treemap.jsx,
+│                         #   PhaseDurationComparison.jsx and
+│                         #   TurnaroundTrendChart.jsx; all follow the
 │                         #   canvas + sr-only data table pattern in docs/accessibility.md.
+│                         #   TurnaroundTrendChart is memo()'d: the Analysis page
+│                         #   re-renders on toggles it doesn't depend on, and its
+│                         #   only prop is the generated monthly block.
 │                         #   __tests__/ holds the vitest suites, incl. accessibility.test.jsx.
 ├── constants/            # Shared literal tables: navPages.js (single source of truth for
 │                         #   the navbar, command palette and keyboard shortcuts),
@@ -386,7 +390,7 @@ prunes the old names), but make it a deliberate choice.
 | `upcoming-events.json` | Future consultation/determination dates |
 | `commentary.json` | Mergers with user commentary |
 | `digest.json` | Weekly digest of merger activity (from `generate_weekly_digest.py`) |
-| `analysis.json` | Pre-computed analysis data |
+| `analysis.json` | Pre-computed analysis data. `current_turnaround` re-cuts the same durations over rolling windows of recently *decided* matters (30/90 days) plus a per-decision-month series aligned index-for-index with `open_caseload`, so the filing-time question ("what is the ACCC turning around *now*") doesn't have to be answered from the all-time median |
 | `timeline.json` | Unpaginated timeline (alongside the paginated `timeline/` directory) |
 | `referral-probability-by-day.json` | Modelled probability of a Phase 2 referral by elapsed business day |
 | `serial-acquirers.json` | Serial-acquirer ("creeping acquisitions") detection |

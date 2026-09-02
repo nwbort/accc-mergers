@@ -2632,6 +2632,249 @@
     ],
     "as_at": "2026-09-02"
   },
+  "current_turnaround": {
+    "as_at": "2026-09-02",
+    "windows": [
+      {
+        "days": 30,
+        "notifications": {
+          "median": 18.5,
+          "average": 21.0,
+          "p90": 27,
+          "min": 15,
+          "max": 56,
+          "count": 46,
+          "median_delta": 1.5
+        },
+        "waivers": {
+          "median": 17.0,
+          "average": 16.4,
+          "p90": 21,
+          "min": 8,
+          "max": 23,
+          "count": 64,
+          "median_delta": 4.0
+        }
+      },
+      {
+        "days": 90,
+        "notifications": {
+          "median": 18.0,
+          "average": 20.6,
+          "p90": 28,
+          "min": 15,
+          "max": 56,
+          "count": 116,
+          "median_delta": 1.0
+        },
+        "waivers": {
+          "median": 15,
+          "average": 15.2,
+          "p90": 21,
+          "min": 5,
+          "max": 24,
+          "count": 179,
+          "median_delta": 2.0
+        }
+      }
+    ],
+    "all_time": {
+      "notifications": {
+        "median": 17.0,
+        "average": 20.0,
+        "p90": 28,
+        "min": 15,
+        "max": 59,
+        "count": 206
+      },
+      "waivers": {
+        "median": 13.0,
+        "average": 13.3,
+        "p90": 19,
+        "min": 2,
+        "max": 24,
+        "count": 372
+      }
+    },
+    "monthly": {
+      "labels": [
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12",
+        "2026-01",
+        "2026-02",
+        "2026-03",
+        "2026-04",
+        "2026-05",
+        "2026-06",
+        "2026-07",
+        "2026-08",
+        "2026-09"
+      ],
+      "notifications": [
+        {
+          "median": null,
+          "average": null,
+          "count": 1
+        },
+        {
+          "median": null,
+          "average": null,
+          "count": 1
+        },
+        {
+          "median": null,
+          "average": null,
+          "count": 0
+        },
+        {
+          "median": null,
+          "average": null,
+          "count": 3
+        },
+        {
+          "median": null,
+          "average": null,
+          "count": 3
+        },
+        {
+          "median": null,
+          "average": null,
+          "count": 3
+        },
+        {
+          "median": 16,
+          "average": 18.5,
+          "count": 11
+        },
+        {
+          "median": 17.0,
+          "average": 17.4,
+          "count": 18
+        },
+        {
+          "median": 17,
+          "average": 19.3,
+          "count": 21
+        },
+        {
+          "median": 17,
+          "average": 17.7,
+          "count": 23
+        },
+        {
+          "median": 17,
+          "average": 20.6,
+          "count": 37
+        },
+        {
+          "median": 17.5,
+          "average": 20.8,
+          "count": 38
+        },
+        {
+          "median": 18,
+          "average": 20.9,
+          "count": 45
+        },
+        {
+          "median": null,
+          "average": null,
+          "count": 2
+        }
+      ],
+      "waivers": [
+        {
+          "median": null,
+          "average": null,
+          "count": 0
+        },
+        {
+          "median": null,
+          "average": null,
+          "count": 0
+        },
+        {
+          "median": null,
+          "average": null,
+          "count": 0
+        },
+        {
+          "median": null,
+          "average": null,
+          "count": 0
+        },
+        {
+          "median": null,
+          "average": null,
+          "count": 0
+        },
+        {
+          "median": 9,
+          "average": 8.5,
+          "count": 13
+        },
+        {
+          "median": 10.0,
+          "average": 11.4,
+          "count": 28
+        },
+        {
+          "median": 11.5,
+          "average": 11.7,
+          "count": 30
+        },
+        {
+          "median": 13,
+          "average": 12.9,
+          "count": 53
+        },
+        {
+          "median": 11.0,
+          "average": 11.6,
+          "count": 50
+        },
+        {
+          "median": 12,
+          "average": 12.8,
+          "count": 73
+        },
+        {
+          "median": 15.0,
+          "average": 15.1,
+          "count": 52
+        },
+        {
+          "median": 17,
+          "average": 16.3,
+          "count": 71
+        },
+        {
+          "median": null,
+          "average": null,
+          "count": 2
+        }
+      ],
+      "open_caseload": [
+        1,
+        0,
+        4,
+        5,
+        5,
+        11,
+        22,
+        25,
+        32,
+        42,
+        41,
+        46,
+        37,
+        35
+      ]
+    }
+  },
   "industry_phase1_duration": [
     {
       "code": "S",

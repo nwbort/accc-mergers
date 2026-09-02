@@ -833,6 +833,7 @@ class TestAnalysisGenerate:
             'by_commission_division',
             'deadline_utilisation', 'notification_restarts', 'restart_rate',
             'outcomes_by_division', 'referrals_by_quarter', 'open_caseload',
+            'current_turnaround',
         }
         assert 'durations' in payload['phase1_duration']
         assert 'durations' in payload['waiver_duration']
@@ -959,6 +960,142 @@ class TestOpenCaseload:
     def test_empty_input(self):
         payload = analysis.open_caseload([], as_at=date(2026, 2, 28))
         assert payload == {'labels': [], 'notifications': [], 'as_at': '2026-02-28'}
+
+
+class TestCurrentTurnaround:
+    """Recent decision times vs the all-time baseline, and against caseload."""
+
+    def _decided(self, merger_id, opened, decided, waiver=False):
+        return enrich_merger({
+            'merger_id': merger_id,
+            'merger_name': merger_id,
+            'status': 'Assessment completed',
+            'accc_determination': 'Approved',
+            'stage': 'Phase 1 - preliminary assessment',
+            'is_waiver': waiver,
+            'original_notification_datetime': opened,
+            'effective_notification_datetime': opened,
+            'determination_publication_date': decided,
+            'page_modified_datetime': decided,
+            'anzsic_codes': [],
+            'acquirers': ['A'],
+            'targets': ['B'],
+            'other_parties': [],
+            'url': f'https://example.com/{merger_id}',
+            'events': [],
+        })
+
+    def test_windows_cover_only_matters_decided_inside_them(self):
+        mergers = [
+            # Decided 1 Mar — inside the 30-day window ending 15 Mar.
+            self._decided('MN-1', '2026-02-02T00:00:00Z', '2026-03-01T00:00:00Z'),
+            # Decided 5 Jan — outside 30 days, inside 90.
+            self._decided('MN-2', '2026-01-02T00:00:00Z', '2026-01-05T00:00:00Z'),
+        ]
+        payload = analysis.current_turnaround(mergers, as_at=date(2026, 3, 15))
+
+        by_days = {w['days']: w for w in payload['windows']}
+        assert by_days[30]['notifications']['count'] == 1
+        assert by_days[90]['notifications']['count'] == 2
+        assert payload['as_at'] == '2026-03-15'
+
+    def test_buckets_by_decision_date_not_filing_date(self):
+        # Filed well outside the window, decided inside it: the matter counts,
+        # because the window measures what the ACCC is turning around now.
+        mergers = [self._decided('MN-1', '2025-06-02T00:00:00Z', '2026-03-10T00:00:00Z')]
+        payload = analysis.current_turnaround(mergers, as_at=date(2026, 3, 15))
+
+        assert {w['days']: w['notifications']['count'] for w in payload['windows']} == {30: 1, 90: 1}
+
+    def test_median_delta_is_measured_against_the_all_time_median(self):
+        # Three quick waivers long ago, one slow one recently: the all-time
+        # median sits at the quick end, so the recent window reads as slower.
+        mergers = [
+            self._decided('WA-1', '2026-01-02T00:00:00Z', '2026-01-05T00:00:00Z', waiver=True),
+            self._decided('WA-2', '2026-01-02T00:00:00Z', '2026-01-05T00:00:00Z', waiver=True),
+            self._decided('WA-3', '2026-01-02T00:00:00Z', '2026-01-05T00:00:00Z', waiver=True),
+            self._decided('WA-4', '2026-03-02T00:00:00Z', '2026-03-10T00:00:00Z', waiver=True),
+        ]
+        payload = analysis.current_turnaround(mergers, as_at=date(2026, 3, 15))
+
+        all_time_median = payload['all_time']['waivers']['median']
+        recent = {w['days']: w['waivers'] for w in payload['windows']}[30]
+        assert recent['count'] == 1
+        assert recent['median_delta'] == recent['median'] - all_time_median
+        assert recent['median_delta'] > 0
+
+    def test_waivers_and_notifications_are_reported_separately(self):
+        mergers = [
+            self._decided('MN-1', '2026-03-02T00:00:00Z', '2026-03-10T00:00:00Z'),
+            self._decided('WA-1', '2026-03-02T00:00:00Z', '2026-03-10T00:00:00Z', waiver=True),
+        ]
+        payload = analysis.current_turnaround(mergers, as_at=date(2026, 3, 15))
+
+        window = {w['days']: w for w in payload['windows']}[30]
+        assert window['notifications']['count'] == 1
+        assert window['waivers']['count'] == 1
+
+    def test_monthly_series_aligns_with_the_open_caseload_labels(self):
+        mergers = [self._decided(f'MN-{i}', '2026-01-02T00:00:00Z', '2026-02-10T00:00:00Z')
+                   for i in range(4)]
+        payload = analysis.current_turnaround(mergers, as_at=date(2026, 3, 15))
+        monthly = payload['monthly']
+        caseload = analysis.open_caseload(mergers, as_at=date(2026, 3, 15))
+
+        assert monthly['labels'] == caseload['labels']
+        assert monthly['open_caseload'] == caseload['notifications']
+        assert len(monthly['notifications']) == len(monthly['labels'])
+        assert len(monthly['waivers']) == len(monthly['labels'])
+
+    def test_thin_month_reports_its_count_but_no_median(self):
+        # Two decisions in a month is below MIN_MONTHLY_TURNAROUND_SAMPLE, so
+        # the median is withheld rather than plotted off a single matter.
+        mergers = [
+            self._decided('MN-1', '2026-01-02T00:00:00Z', '2026-02-10T00:00:00Z'),
+            self._decided('MN-2', '2026-01-02T00:00:00Z', '2026-02-11T00:00:00Z'),
+        ]
+        payload = analysis.current_turnaround(mergers, as_at=date(2026, 2, 28))
+        february = dict(zip(payload['monthly']['labels'], payload['monthly']['notifications']))['2026-02']
+
+        assert february['count'] == 2
+        assert february['median'] is None
+        assert february['average'] is None
+
+    def test_p90_is_an_observed_duration_and_ignores_a_lone_outlier(self):
+        # Nine matters decided quickly and one slow one: the p90 lands on the
+        # ninth-fastest (a real, quotable duration) rather than being dragged
+        # up to the outlier, which is what separates it from the max.
+        mergers = [self._decided(f'MN-{i}', '2026-03-02T00:00:00Z', '2026-03-10T00:00:00Z')
+                   for i in range(9)]
+        mergers.append(self._decided('MN-slow', '2026-03-02T00:00:00Z', '2026-03-13T00:00:00Z'))
+        payload = analysis.current_turnaround(mergers, as_at=date(2026, 3, 15))
+        stats = {w['days']: w['notifications'] for w in payload['windows']}[30]
+
+        assert stats['count'] == 10
+        assert stats['p90'] == stats['median']  # the fast group spans both
+        assert stats['p90'] < stats['max']
+
+    def test_p90_rises_once_the_slow_tail_is_more_than_a_tenth(self):
+        # Two slow matters in ten is over the 90th percentile, so p90 now has
+        # to report the slower duration rather than the fast group's.
+        mergers = [self._decided(f'MN-{i}', '2026-03-02T00:00:00Z', '2026-03-10T00:00:00Z')
+                   for i in range(8)]
+        mergers += [self._decided(f'MN-slow-{i}', '2026-03-02T00:00:00Z', '2026-03-13T00:00:00Z')
+                    for i in range(2)]
+        payload = analysis.current_turnaround(mergers, as_at=date(2026, 3, 15))
+        stats = {w['days']: w['notifications'] for w in payload['windows']}[30]
+
+        assert stats['p90'] == stats['max']
+        assert stats['median'] < stats['p90']
+
+    def test_empty_input(self):
+        payload = analysis.current_turnaround([], as_at=date(2026, 3, 15))
+
+        assert payload['all_time']['notifications']['count'] == 0
+        assert payload['all_time']['notifications']['median'] is None
+        assert all(w[k]['median_delta'] is None
+                   for w in payload['windows'] for k in ('notifications', 'waivers'))
+        assert payload['monthly']['labels'] == []
 
 
 class TestNotificationRestarts:
