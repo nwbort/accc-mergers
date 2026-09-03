@@ -221,6 +221,42 @@ class TestSanitizeFilename:
     def test_path_traversal_rejected(self):
         assert sanitize_filename("../etc/passwd") is None
 
+    def test_dots_before_the_extension_collapsed(self):
+        """MN-30030's questionnaire was skipped entirely over one full stop.
+
+        The ACCC named it after the target, "AtaiBeckley Inc.", so the
+        abbreviation's full stop landed directly against the extension's dot.
+        The ".." path-traversal guard read that as an attack and refused the
+        name, so download_attachment() bailed and the consultation event was
+        published with no PDF behind it.
+        """
+        result = sanitize_filename(
+            "Questionnaire - Eli Lilly and Company - AtaiBeckley Inc..docx"
+        )
+        assert result == (
+            "Questionnaire - Eli Lilly and Company - AtaiBeckley Inc.docx"
+        )
+        assert is_safe_filename(result)
+
+    def test_dots_pushed_together_by_a_dropped_character_collapsed(self):
+        # The disallowed-character strip runs first and can create the "..".
+        result = sanitize_filename("AtaiBeckley Inc.!.docx")
+        assert result == "AtaiBeckley Inc.docx"
+        assert is_safe_filename(result)
+
+    @pytest.mark.parametrize(
+        "name",
+        ["..", "...pdf", "../etc/passwd", "..\\windows\\system32", "a/../b.pdf"],
+    )
+    def test_traversal_still_rejected(self, name):
+        """Collapsing dots must not open a path-traversal hole."""
+        assert sanitize_filename(name) is None
+
+    def test_leading_dots_trimmed(self):
+        result = sanitize_filename("..hidden.pdf")
+        assert result == "hidden.pdf"
+        assert is_safe_filename(result)
+
     def test_double_spaces_cleaned(self):
         result = sanitize_filename("Company:  Document.pdf")
         assert result is not None
