@@ -96,8 +96,12 @@ def sanitize_filename(filename):
     if not filename.strip():
         return None
 
-    # Reject path traversal sequences - these can't be sanitized safely
-    if '..' in filename or '/' in filename or '\\' in filename:
+    # Reject path separators - a name carrying one can't be sanitised safely.
+    # Runs of dots are collapsed further down instead of rejected: without a
+    # separator they cannot traverse anywhere, and the ACCC ships names that
+    # end an abbreviation right before the extension (MN-30030's "... -
+    # AtaiBeckley Inc..docx"), which is a full stop, not an attack.
+    if '/' in filename or '\\' in filename:
         return None
 
     # Replace colons with hyphens (common in document titles like "Company: Document")
@@ -136,6 +140,13 @@ def sanitize_filename(filename):
         name, ext = os.path.splitext(sanitized)
         max_name_len = 255 - len(ext)
         sanitized = name[:max_name_len] + ext
+
+    # Collapse runs of dots to one, last of all: this is what keeps
+    # is_safe_filename()'s ".." rejection from throwing away a legitimate name
+    # ("Inc..docx" becomes "Inc.docx"), and every step above can push two dots
+    # together — dropping a disallowed character ("Inc.!.docx"), or truncating
+    # a long name back to a trailing dot before the extension is re-appended.
+    sanitized = re.sub(r'\.{2,}', '.', sanitized)
 
     # Verify the sanitized filename is safe
     if not is_safe_filename(sanitized):
