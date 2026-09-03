@@ -266,6 +266,11 @@ CHROME_ARGS = [
 # rather than imported to keep this script's dependencies to requests + bs4.
 
 
+# Mirrors extract_mergers._ALLOWED_FILENAME_CHARS.
+_ALLOWED_FILENAME_CHARS = r"\wÀ-ÿ-–—'’. (),"
+_DISALLOWED_FILENAME_CHARS = f"[^{_ALLOWED_FILENAME_CHARS}]"
+
+
 def is_safe_filename(filename: str) -> bool:
     """Validate a filename to prevent path traversal (see extract_mergers)."""
     if not filename or not isinstance(filename, str) or not filename.strip():
@@ -275,7 +280,7 @@ def is_safe_filename(filename: str) -> bool:
     if "  " in filename:
         return False
     if not re.match(
-        r"^[a-zA-Z0-9À-ÿ][\wÀ-ÿ-–—'’. (),]*\.[a-zA-Z0-9]+$",
+        r"^[a-zA-Z0-9À-ÿ][" + _ALLOWED_FILENAME_CHARS + r"]*\.[a-zA-Z0-9]+$",
         filename,
     ):
         return False
@@ -292,6 +297,10 @@ def sanitize_filename(filename: str) -> str | None:
     if ".." in filename or "/" in filename or "\\" in filename:
         return None
     sanitized = filename.replace(":", " -").replace("&", "and").replace("%", "pct")
+    # Drop anything else the allow-list won't take (e.g. "!"), rather than
+    # failing the whole filename and skipping the download.
+    sanitized = re.sub(_DISALLOWED_FILENAME_CHARS, "", sanitized)
+    sanitized = re.sub(r"^[^a-zA-Z0-9À-ÿ]+", "", sanitized)
     while "  " in sanitized:
         sanitized = sanitized.replace("  ", " ")
     sanitized = sanitized.strip()
