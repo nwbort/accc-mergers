@@ -1,16 +1,16 @@
 {
   "total_mergers": 243,
   "total_waivers": 378,
-  "total_conditional_approvals": 4,
+  "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 202,
-    "Under assessment": 36,
+    "Assessment completed": 203,
+    "Under assessment": 35,
     "Assessment ceased": 5
   },
   "by_determination": {
     "Approved": 196,
     "Referred to phase 2": 9,
-    "Approved with conditions": 3
+    "Approved with conditions": 4
   },
   "by_phase_2_determination": {
     "Approved with conditions": 1,
@@ -22,28 +22,28 @@
     "Not approved": 16
   },
   "clearance_rate": {
-    "cleared": 200,
+    "cleared": 201,
     "not_cleared": 2,
-    "total": 202,
+    "total": 203,
     "rate": 0.99
   },
   "phase_duration": {
-    "average_days": 29.677884615384617,
-    "median_days": 26.0,
-    "average_business_days": 19.995192307692307,
-    "median_business_days": 17.0,
+    "average_days": 29.789473684210527,
+    "median_days": 26,
+    "average_business_days": 20.086124401913874,
+    "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 44,
-        "percentage": 21.2
+        "percentage": 21.1
       },
       "day20": {
         "count": 154,
-        "percentage": 74.0
+        "percentage": 73.7
       },
       "day30": {
         "count": 195,
-        "percentage": 93.8
+        "percentage": 93.3
       }
     }
   },
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-90028",
+      "merger_name": "Peter Warren - Wakeling Automotive",
+      "determination": "Approved",
+      "determination_date": "2026-09-04T12:00:00Z",
+      "page_modified_datetime": "2026-09-04T09:15:56+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": true
+    },
+    {
       "merger_id": "WA-05047",
       "merger_name": "Redwood Services Group \u2013 Concept Data and Voice Select",
       "determination": "Approved",
@@ -338,17 +349,6 @@
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
       "has_conditions": false
-    },
-    {
-      "merger_id": "MN-80005",
-      "merger_name": "Kimberly-Clark Corporation - Kenvue Inc.",
-      "determination": "Approved",
-      "determination_date": "2026-09-01T12:00:00Z",
-      "page_modified_datetime": "2026-09-02T09:52:28+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": true
     }
   ]
 }

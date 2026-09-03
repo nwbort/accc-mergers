@@ -987,6 +987,11 @@
         "in_progress": false
       },
       {
+        "business_days": 39,
+        "calendar_days": 53,
+        "in_progress": false
+      },
+      {
         "business_days": 20,
         "calendar_days": 29,
         "in_progress": false
@@ -1043,18 +1048,18 @@
       }
     ],
     "stats": {
-      "average": 20.0,
-      "median": 17.0,
+      "average": 20.1,
+      "median": 17,
       "min": 15,
       "max": 59,
-      "count": 208
+      "count": 209
     },
     "calendar_stats": {
-      "average": 29.7,
-      "median": 26.0,
+      "average": 29.8,
+      "median": 26,
       "min": 21,
       "max": 103,
-      "count": 208
+      "count": 209
     }
   },
   "waiver_duration": {
@@ -2665,7 +2670,7 @@
       41,
       46,
       37,
-      36
+      35
     ],
     "as_at": "2026-09-04"
   },
@@ -2673,20 +2678,20 @@
     {
       "code": "S",
       "name": "Other Services",
-      "average_business_days": 28.4,
-      "median_business_days": 21,
-      "average_calendar_days": 41.9,
-      "median_calendar_days": 32,
-      "count": 9
+      "average_business_days": 29.5,
+      "median_business_days": 22.5,
+      "average_calendar_days": 43.0,
+      "median_calendar_days": 33.0,
+      "count": 10
     },
     {
       "code": "G",
       "name": "Retail Trade",
-      "average_business_days": 23.4,
-      "median_business_days": 18.0,
-      "average_calendar_days": 36.2,
-      "median_calendar_days": 27.0,
-      "count": 24
+      "average_business_days": 24.0,
+      "median_business_days": 18,
+      "average_calendar_days": 36.8,
+      "median_calendar_days": 27,
+      "count": 25
     },
     {
       "code": "B",
@@ -2844,19 +2849,19 @@
     },
     {
       "division": "A division of the Commission (s19 direction)",
-      "count": 100,
+      "count": 101,
       "outcome_mix": {
-        "Approved": 77,
+        "Approved": 78,
         "Not approved": 17,
         "Unknown": 6
       },
-      "median_phase_1_business_days": 19.5
+      "median_phase_1_business_days": 20
     },
     {
       "division": "Not yet determined",
-      "count": 33,
+      "count": 32,
       "outcome_mix": {
-        "Unknown": 33
+        "Unknown": 32
       },
       "median_phase_1_business_days": null
     },
@@ -2917,7 +2922,7 @@
       "pct_decided_final_3_bd": 3.1,
       "count": 192
     },
-    "extended_count": 7
+    "extended_count": 8
   },
   "notification_restarts": [
     {
@@ -2947,11 +2952,11 @@
     {
       "code": "S",
       "name": "Other Services",
-      "approved": 6,
+      "approved": 7,
       "not_approved": 0,
       "referred": 3,
-      "in_progress": 3,
-      "phase2_referral_rate": 0.333
+      "in_progress": 2,
+      "phase2_referral_rate": 0.3
     },
     {
       "code": "A",
@@ -2974,11 +2979,11 @@
     {
       "code": "G",
       "name": "Retail Trade",
-      "approved": 21,
+      "approved": 22,
       "not_approved": 0,
       "referred": 3,
-      "in_progress": 8,
-      "phase2_referral_rate": 0.125
+      "in_progress": 7,
+      "phase2_referral_rate": 0.12
     },
     {
       "code": "F",
