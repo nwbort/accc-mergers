@@ -9,7 +9,7 @@
       "code": "54",
       "name": "Publishing (except Internet and Music Publishing)",
       "level": "subdivision",
-      "merger_count": 40
+      "merger_count": 41
     },
     {
       "code": "55",
@@ -91,6 +91,17 @@
       "has_conditions": false,
       "phase": "Waiver",
       "notification_date": "2026-08-14T12:00:00Z",
+      "determination_date": "2026-09-03T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-85046",
+      "merger_name": "Morgan Stanley \u2013 Amber",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-18T12:00:00Z",
       "determination_date": "2026-09-03T12:00:00Z"
     },
     {
@@ -820,10 +831,10 @@
       "determination_date": "2025-12-18T12:00:00Z"
     }
   ],
-  "count": 70,
+  "count": 71,
   "phase_1_count": 29,
   "phase_2_count": 0,
-  "waiver_count": 41,
+  "waiver_count": 42,
   "active_count": 3,
   "phase_duration": {
     "average_days": 28.96153846153846,
@@ -833,10 +844,10 @@
     "completed_count": 26
   },
   "waiver_duration": {
-    "average_days": 20.024390243902438,
-    "median_days": 19,
-    "average_business_days": 13.707317073170731,
-    "median_business_days": 13,
-    "completed_count": 41
+    "average_days": 19.928571428571427,
+    "median_days": 19.0,
+    "average_business_days": 13.666666666666666,
+    "median_business_days": 13.0,
+    "completed_count": 42
   }
 }

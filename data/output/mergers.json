@@ -49764,13 +49764,13 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 12,
-        "min_days": 0,
+        "estimated_days": 15,
+        "min_days": 2,
         "max_days": 30,
-        "id_issued_estimated": "2026-08-08",
-        "id_issued_before": "2026-08-20",
+        "id_issued_estimated": "2026-08-05",
+        "id_issued_before": "2026-08-18",
         "id_issued_after": "2026-07-21",
-        "min_days_witness": "MN-85047",
+        "min_days_witness": "WA-85046",
         "max_days_witness": "WA-85041",
         "basis": "bracketed",
         "method_version": 1
@@ -49964,14 +49964,14 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 19,
+        "estimated_days": 9,
         "min_days": null,
-        "max_days": 37,
-        "id_issued_estimated": "2026-08-08",
+        "max_days": 16,
+        "id_issued_estimated": "2026-08-18",
         "id_issued_before": null,
-        "id_issued_after": "2026-07-21",
+        "id_issued_after": "2026-08-11",
         "min_days_witness": null,
-        "max_days_witness": "WA-85041",
+        "max_days_witness": "WA-85046",
         "basis": "upper-bound-only",
         "method_version": 1
       }
@@ -112067,6 +112067,160 @@
           "targets": [
             "Paris Financial Services Pty Ltd",
             "PARIS LENDING PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/morgan-stanley-%E2%80%93-amber",
+      "merger_name": "Morgan Stanley \u2013 Amber",
+      "status": "Assessment completed",
+      "merger_id": "WA-85046",
+      "effective_notification_datetime": "2026-08-18T12:00:00Z",
+      "original_notification_datetime": "2026-08-18T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-09-03T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-09-03T16:42:08+10:00",
+      "acquirers": [
+        {
+          "name": "1GT Europe (Lux) S.\u00e0 r.l.",
+          "identifier_type": null,
+          "identifier": "EUID  LURCSL.B275069",
+          "party_page": {
+            "id": "1gt-europe-lux-s-r-l",
+            "name": "1GT Europe (Lux) S.\u00e0 r.l."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Amber Energy Holdings Limited",
+          "identifier_type": null,
+          "identifier": "UK Company Number  17348426",
+          "party_page": {
+            "id": "amber-energy-holdings-limited",
+            "name": "Amber Energy Holdings Limited"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Amber Holding Corporation Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "71 673 818 052",
+          "party_page": {
+            "id": "amber-holding-corporation-pty-ltd",
+            "name": "Amber Holding Corporation Pty Ltd"
+          }
+        },
+        {
+          "name": "Morgan Stanley Investment Management Inc.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "morgan-stanley-investment-management-inc",
+            "name": "Morgan Stanley Investment Management Inc."
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2640",
+          "name": "On Selling Electricity and Electricity Market Operation"
+        },
+        {
+          "code": "5420",
+          "name": "Software Publishing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "merger_description": "1GT Europe (Lux) S.\u00e0 r.l. (**1GT**) proposes to (i) subscribe for newly authorised and issued shares in Amber Energy Holdings Limited (a newly established UK company) (**Amber UK**), and (ii) purchase existing shares from certain current shareholders in Amber Holding Corporation Pty Ltd (**Amber Australia**) (the **Acquisition**). Once established, Amber UK will hold the entire issued share capital of Amber Australia (together with its subsidiaries, **Amber**) and 1GT will hold a minority interest in Amber UK.  \n\n1GT is a global climate-focused private equity growth fund managed by Morgan Stanley Investment Management. Its core mission is to invest in private companies in North America and Europe that collectively aim to avoid or remove one gigaton of carbon dioxide-equivalent emissions by 2050. 1GT acts through its general partner, Morgan Stanley AIP GP LP, which acts by its general partner Morgan Stanley Alternative Investments LLC. Morgan Stanley Alternative Investments LLC is a subsidiary under Morgan Stanley Investment Management Inc, which sits within Morgan Stanley, a global financial services firm providing investment banking, securities, wealth management and investment management services that is listed on the New York Stock Exchange.  \n\nAmber Australia, via its subsidiaries, operates a cloud-based demand-flexibility software platform and is a licensed electricity retailer in Australia. Amber Australia and its subsidiaries supply subscription-based energy retail services, automated battery and electric vehicle charging optimisation technology, and related devices to Australian households under the 'Amber' brand. It has around 92,000 customers in Australia. Its core product combines dynamic, wholesale-linked electricity price passthrough with software that provides real-time price information and can automatically charge and discharge a customer's home battery, solar system or electric vehicle in response to real-time price signals. Amber licenses its technology to utility partners internationally.",
+      "events": [
+        {
+          "date": "2026-09-03T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Morgan%20Stanley%20%E2%80%93%20Amber%20%28WA-85046%29%20-%20Notification%20waiver%20determination%20-%202%20September%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "1GT Europe (Lux) S.\u00e0 r.l. (1GT) applied for a notification waiver in\nrespect of its proposed subscription for newly authorised and issued\nshares in Amber Energy Holdings Limited (Amber UK) and purchase\nof existing shares from certain current shareholders in Amber\nHolding Corporation Pty Ltd (Amber Australia), as described in the\ndocuments provided as part of the application (the Acquisition).\nOnce established, Amber UK will hold the entire issued share capital\nof Amber Australia and 1GT will hold a minority interest in Amber UK."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "2 September 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, 1GT, is a global climate-focused private equity growth\nfund managed by Morgan Stanley Investment Management. Its core\nmission is to invest in private companies in North America and\nEurope that collectively aim to avoid or remove one gigaton of\ncarbon dioxide-equivalent emissions by 2050.\nAmber Australia, via its subsidiaries, operates a cloud-based\ndemand-flexibility software platform and is a licensed electricity\nretailer in Australia. Amber Australia and its subsidiaries supply\nsubscription-based energy retail services, automated battery and\nelectric vehicle charging optimisation technology, and related\ndevices to Australian households under the 'Amber' brand. Its core\nproduct combines dynamic, wholesale-linked electricity price\npassthrough with software that provides real-time price information\nand can automatically charge and discharge a customer's home\nbattery, solar system or electric vehicle in response to real-time price\nsignals. Amber Australia and its subsidiaries license its technology\nto utility partners internationally."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition given:\na. there is no horizontal overlap between 1GT (and its\nconnected entities) and Amber Australia in the retail supply\nof electricity, as well as demand-flexibility software or\nrelated goods and services in Australia\nb. there is a low risk of foreclosure or other concerning vertical\neffects resulting from exclusionary conduct post-acquisition.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-85046/Morgan Stanley \u2013 Amber (WA-85046) - Notification waiver determination - 2 September 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-08-18T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-30032",
+          "merger_name": "Morgan Stanley \u2013 Epic Energy",
+          "acquirers": [
+            "MCLEOD BIDCO PTY LTD"
+          ],
+          "targets": [
+            "ART Investment Holdings Pty Limited"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-15025",
+          "merger_name": "Gunvor Group \u2013 ZEN Energy Retail Holdings",
+          "acquirers": [
+            "Gunvor Group Ltd"
+          ],
+          "targets": [
+            "ZEN ENERGY RETAIL HOLDINGS PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-20026",
+          "merger_name": "Oaktree \u2013 Vivax Metrotech",
+          "acquirers": [
+            "Vector JV Bidco, Inc."
+          ],
+          "targets": [
+            "Vivax Metrotech Sdn. Bhd.",
+            "Vivax-Metrotech Ltd."
           ],
           "accc_determination": "Approved"
         }
