@@ -37,10 +37,21 @@
       "code": "624",
       "name": "Financial Asset Investing",
       "level": "group",
-      "merger_count": 107
+      "merger_count": 108
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-10028",
+      "merger_name": "BBFIT - Hanes Australasia",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-02T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-75054",
       "merger_name": "I Squared Capital \u2013 oOh!media",
@@ -1307,11 +1318,11 @@
       "determination_date": null
     }
   ],
-  "count": 115,
-  "phase_1_count": 27,
+  "count": 116,
+  "phase_1_count": 28,
   "phase_2_count": 1,
   "waiver_count": 87,
-  "active_count": 10,
+  "active_count": 11,
   "phase_duration": {
     "average_days": 28.77777777777778,
     "median_days": 24.5,

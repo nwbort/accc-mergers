@@ -9,7 +9,7 @@
       "code": "62",
       "name": "Finance",
       "level": "subdivision",
-      "merger_count": 115
+      "merger_count": 116
     },
     {
       "code": "63",
@@ -25,6 +25,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-10028",
+      "merger_name": "BBFIT - Hanes Australasia",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-02T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-75054",
       "merger_name": "I Squared Capital \u2013 oOh!media",
@@ -1863,11 +1874,11 @@
       "determination_date": null
     }
   ],
-  "count": 167,
-  "phase_1_count": 42,
+  "count": 168,
+  "phase_1_count": 43,
   "phase_2_count": 2,
   "waiver_count": 123,
-  "active_count": 14,
+  "active_count": 15,
   "phase_duration": {
     "average_days": 28.0,
     "median_days": 25,

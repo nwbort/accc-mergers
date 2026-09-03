@@ -19,7 +19,7 @@
       "code": "371",
       "name": "Textile, Clothing and Footwear Wholesaling",
       "level": "group",
-      "merger_count": 1
+      "merger_count": 2
     },
     {
       "code": "372",
@@ -35,6 +35,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-10028",
+      "merger_name": "BBFIT - Hanes Australasia",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-02T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-60035",
       "merger_name": "L'Or\u00e9al \u2013 Gucci Beauty Licence",
@@ -245,11 +256,11 @@
       "determination_date": "2026-02-04T12:00:00Z"
     }
   ],
-  "count": 19,
-  "phase_1_count": 12,
+  "count": 20,
+  "phase_1_count": 13,
   "phase_2_count": 0,
   "waiver_count": 7,
-  "active_count": 2,
+  "active_count": 3,
   "phase_duration": {
     "average_days": 26.6,
     "median_days": 27.0,
