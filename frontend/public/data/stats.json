@@ -3,12 +3,12 @@
   "total_waivers": 372,
   "total_conditional_approvals": 4,
   "by_status": {
-    "Assessment completed": 201,
-    "Under assessment": 35,
+    "Assessment completed": 202,
+    "Under assessment": 34,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 195,
+    "Approved": 196,
     "Referred to phase 2": 9,
     "Approved with conditions": 3
   },
@@ -22,28 +22,28 @@
     "Not approved": 16
   },
   "clearance_rate": {
-    "cleared": 199,
+    "cleared": 200,
     "not_cleared": 2,
-    "total": 201,
+    "total": 202,
     "rate": 0.99
   },
   "phase_duration": {
-    "average_days": 29.681159420289855,
-    "median_days": 26,
-    "average_business_days": 19.99033816425121,
-    "median_business_days": 17,
+    "average_days": 29.677884615384617,
+    "median_days": 26.0,
+    "average_business_days": 19.995192307692307,
+    "median_business_days": 17.0,
     "percentiles": {
       "day15": {
         "count": 44,
-        "percentage": 21.3
+        "percentage": 21.2
       },
       "day20": {
         "count": 154,
-        "percentage": 74.4
+        "percentage": 74.0
       },
       "day30": {
-        "count": 194,
-        "percentage": 93.7
+        "count": 195,
+        "percentage": 93.8
       }
     }
   },
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-75035",
+      "merger_name": "Johns Lyng Group \u2013 C&M Build Group",
+      "determination": "Approved",
+      "determination_date": "2026-09-03T12:00:00Z",
+      "page_modified_datetime": "2026-09-03T15:22:12+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-30035",
       "merger_name": "Coles \u2013 supermarket site in Byron Bay, NSW",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-15034",
-      "merger_name": "Australian Venue Co \u2013 assets of Black Nugget Hotel Motel, Bartletts Tavern and all associated detached bottle shops",
-      "determination": "Approved",
-      "determination_date": "2026-08-31T12:00:00Z",
-      "page_modified_datetime": "2026-08-31T11:50:32+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]

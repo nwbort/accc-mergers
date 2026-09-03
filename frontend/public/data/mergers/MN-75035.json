@@ -1,12 +1,14 @@
 {
   "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/johns-lyng-group-%E2%80%93-cm-build-group",
   "merger_name": "Johns Lyng Group \u2013 C&M Build Group",
-  "status": "Under assessment",
+  "status": "Assessment completed",
   "merger_id": "MN-75035",
   "effective_notification_datetime": "2026-08-05T12:00:00Z",
   "original_notification_datetime": "2026-08-05T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-09-16T12:00:00Z",
+  "determination_publication_date": "2026-09-03T12:00:00Z",
+  "accc_determination": "Approved",
   "consultation_response_due_date": "2026-08-12T12:00:00Z",
   "acquirers": [
     {
@@ -53,15 +55,6 @@
   ],
   "other_parties": [
     {
-      "name": "SHERWOOD TOPCO LTD",
-      "identifier_type": "ABN",
-      "identifier": "54 688 487 103",
-      "party_page": {
-        "id": "sherwood-topco-ltd",
-        "name": "Sherwood Topco Ltd"
-      }
-    },
-    {
       "name": "JOHNS LYNG GROUP LIMITED",
       "identifier_type": "ABN",
       "identifier": "86 620 466 248",
@@ -72,6 +65,15 @@
       "party_page": {
         "id": "johns-lyng-group",
         "name": "Johns Lyng Group"
+      }
+    },
+    {
+      "name": "SHERWOOD TOPCO LTD",
+      "identifier_type": "ABN",
+      "identifier": "54 688 487 103",
+      "party_page": {
+        "id": "sherwood-topco-ltd",
+        "name": "Sherwood Topco Ltd"
       }
     }
   ],
@@ -104,13 +106,27 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-09-03T12:00:00Z",
+      "title": "Johns Lyng Group - C&M Build Group - Phase 1 Determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Johns%20Lyng%20Group%20-%20C%26M%20Build%20Group%20-%20Phase%201%20Determination.pdf",
+      "determination_table_content": [
+        {
+          "item": "Reasons for determination",
+          "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, information from third parties and other\ninformation available to it.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 The merged firm would continue to face competition from\nmultiple providers of insurance building and restoration\nservices."
+        }
+      ],
+      "url_gh": "/mergers/MN-75035/Johns Lyng Group - CandM Build Group - Phase 1 Determination.pdf",
+      "is_determination_event": true,
+      "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
-  "accc_determination": null,
   "has_conditions": false,
-  "phase_1_determination": null,
-  "phase_1_determination_date": null,
+  "phase_1_determination": "Approved",
+  "phase_1_determination_date": "2026-09-03T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "has_questionnaire": true,
