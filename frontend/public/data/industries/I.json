@@ -9,13 +9,13 @@
       "code": "46",
       "name": "Road Transport",
       "level": "subdivision",
-      "merger_count": 10
+      "merger_count": 11
     },
     {
       "code": "47",
       "name": "Rail Transport",
       "level": "subdivision",
-      "merger_count": 2
+      "merger_count": 3
     },
     {
       "code": "48",
@@ -33,7 +33,7 @@
       "code": "50",
       "name": "Other Transport",
       "level": "subdivision",
-      "merger_count": 5
+      "merger_count": 6
     },
     {
       "code": "51",
@@ -65,6 +65,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-01T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-30032",
+      "merger_name": "Morgan Stanley \u2013 Epic Energy",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-07T12:00:00Z",
+      "determination_date": "2026-09-03T12:00:00Z"
     },
     {
       "merger_id": "MN-01116",
@@ -430,10 +441,10 @@
       "determination_date": null
     }
   ],
-  "count": 34,
+  "count": 35,
   "phase_1_count": 15,
   "phase_2_count": 0,
-  "waiver_count": 19,
+  "waiver_count": 20,
   "active_count": 1,
   "phase_duration": {
     "average_days": 31.615384615384617,
@@ -443,10 +454,10 @@
     "completed_count": 13
   },
   "waiver_duration": {
-    "average_days": 17.42105263157895,
-    "median_days": 17,
-    "average_business_days": 11.736842105263158,
-    "median_business_days": 11,
-    "completed_count": 19
+    "average_days": 17.9,
+    "median_days": 17.5,
+    "average_business_days": 12.1,
+    "median_business_days": 11.5,
+    "completed_count": 20
   }
 }

@@ -19,7 +19,7 @@
       "code": "261",
       "name": "Electricity Generation",
       "level": "group",
-      "merger_count": 17
+      "merger_count": 18
     },
     {
       "code": "262",
@@ -41,6 +41,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-30032",
+      "merger_name": "Morgan Stanley \u2013 Epic Energy",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-07T12:00:00Z",
+      "determination_date": "2026-09-03T12:00:00Z"
+    },
     {
       "merger_id": "MN-70027",
       "merger_name": "Global Infrastructure Management and EQT led consortium - AES Corporation",
@@ -273,10 +284,10 @@
       "determination_date": "2025-11-26T12:00:00Z"
     }
   ],
-  "count": 21,
+  "count": 22,
   "phase_1_count": 6,
   "phase_2_count": 0,
-  "waiver_count": 15,
+  "waiver_count": 16,
   "active_count": 0,
   "phase_duration": {
     "average_days": 25.666666666666668,
@@ -286,10 +297,10 @@
     "completed_count": 6
   },
   "waiver_duration": {
-    "average_days": 20.6,
-    "median_days": 18,
-    "average_business_days": 13.8,
-    "median_business_days": 12,
-    "completed_count": 15
+    "average_days": 21.0,
+    "median_days": 19.5,
+    "average_business_days": 14.125,
+    "median_business_days": 13.5,
+    "completed_count": 16
   }
 }

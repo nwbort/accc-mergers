@@ -1726,6 +1726,68 @@
       ]
     },
     {
+      "merger_id": "WA-30032",
+      "merger_name": "Morgan Stanley \u2013 Epic Energy",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-07T12:00:00Z",
+      "determination_publication_date": "2026-09-03T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "MCLEOD BIDCO PTY LTD"
+        }
+      ],
+      "targets": [
+        {
+          "name": "ART Investment Holdings Pty Limited"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "North Haven Infrastructure Partners IV Fund"
+        },
+        {
+          "name": "Morgan Stanley Investment Management Inc."
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2393",
+          "name": "Railway Rolling Stock Manufacturing and Repair Services"
+        },
+        {
+          "code": "2619",
+          "name": "Other Electricity Generation"
+        },
+        {
+          "code": "2921",
+          "name": "Waste Treatment and Disposal Services"
+        },
+        {
+          "code": "2922",
+          "name": "Waste Remediation and Materials Recovery Services"
+        },
+        {
+          "code": "4610",
+          "name": "Road Freight Transport"
+        },
+        {
+          "code": "4710",
+          "name": "Rail Freight Transport"
+        },
+        {
+          "code": "5021",
+          "name": "Pipeline Transport"
+        }
+      ]
+    },
+    {
       "merger_id": "WA-45025",
       "merger_name": "Acclime Corporate Services Australia \u2013 Polar 993 Group",
       "status": "Assessment completed",
@@ -2726,57 +2788,6 @@
         {
           "code": "6240",
           "name": "Financial Asset Investing"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-45024",
-      "merger_name": "OEConnection - Epyx",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-15T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-09-25T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "OEC Bidco Limited",
-          "canonical": {
-            "name": "OEConnection"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "Quadrum Investments Group Ltd (trading as \"Epyx\")"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "OEConnection, LLC",
-          "canonical": {
-            "name": "OEConnection"
-          }
-        },
-        {
-          "name": "Francisco Partners Management, LP.",
-          "canonical": {
-            "name": "Francisco Partners Management"
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "6240",
-          "name": "Financial Asset Investing"
-        },
-        {
-          "code": "7000",
-          "name": "Computer System Design and Related Services"
         }
       ]
     }
