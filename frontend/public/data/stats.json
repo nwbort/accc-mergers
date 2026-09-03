@@ -1,6 +1,6 @@
 {
   "total_mergers": 242,
-  "total_waivers": 372,
+  "total_waivers": 373,
   "total_conditional_approvals": 4,
   "by_status": {
     "Assessment completed": 202,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 356,
+    "Approved": 357,
     "Not approved": 16
   },
   "clearance_rate": {
@@ -48,19 +48,19 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.663978494623656,
-    "median_days": 19.0,
-    "average_business_days": 13.338709677419354,
-    "median_business_days": 13.0
+    "average_days": 19.67024128686327,
+    "median_days": 19,
+    "average_business_days": 13.345844504021448,
+    "median_business_days": 13
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 108
+      "count": 109
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 66
+      "count": 67
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-70034",
+      "merger_name": "Vista \u2013 Quantios",
+      "determination": "Approved",
+      "determination_date": "2026-09-03T12:00:00Z",
+      "page_modified_datetime": "2026-09-03T16:34:51+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-75035",
       "merger_name": "Johns Lyng Group \u2013 C&M Build Group",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-31T12:00:00Z",
       "page_modified_datetime": "2026-08-31T18:09:12+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-55034",
-      "merger_name": "SLR Consulting Australia - Spectrum Ecology & Spatial and Millcrest Environmental Technology",
-      "determination": "Approved",
-      "determination_date": "2026-08-31T12:00:00Z",
-      "page_modified_datetime": "2026-08-31T18:07:49+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

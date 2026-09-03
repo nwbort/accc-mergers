@@ -2136,6 +2136,51 @@
       ]
     },
     {
+      "merger_id": "WA-70034",
+      "merger_name": "Vista \u2013 Quantios",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-12T12:00:00Z",
+      "determination_publication_date": "2026-09-03T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Queso Bidco Limited"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Tanqueray Topco Limited"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Vista Equity Partners Management, LLC",
+          "canonical": {
+            "name": "Vista Equity Partners Management, LLC"
+          }
+        },
+        {
+          "name": "Quantios Limited"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-05043",
       "merger_name": "Incubeta - Datisan",
       "status": "Under assessment",
@@ -2737,47 +2782,6 @@
         {
           "code": "6240",
           "name": "Financial Asset Investing"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-20034",
-      "merger_name": "Chevron - Woodside asset swap",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-18T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-09-29T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "WOODSIDE ENERGY (NORTH WEST SHELF) PTY LTD"
-        },
-        {
-          "name": "CHEVRON AUSTRALIA PTY LTD"
-        }
-      ],
-      "targets": [
-        {
-          "name": "CHEVRON AUSTRALIA NEW ENERGIES (G-10-AP) PTY LTD"
-        },
-        {
-          "name": "WOODSIDE ENERGY JULIMAR PTY LTD"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "WOODSIDE ENERGY LTD."
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "0700",
-          "name": "Oil and Gas Extraction"
         }
       ]
     }
