@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import MergerTimeline from '../MergerTimeline';
 
@@ -439,6 +439,101 @@ describe('MergerTimeline', () => {
 
       expect(screen.getByText('Expected determination')).toBeInTheDocument();
       expect(screen.getByText('Today')).toBeInTheDocument();
+    });
+
+    // Touch devices never show a title tooltip, so every marker that carries
+    // one is also a button that opens the same detail — spelled out — in a
+    // panel under the timeline.
+    describe('tap-to-open explanation', () => {
+      const withEstimate = {
+        ...running,
+        phase_1_estimate: {
+          expected_business_days: 15,
+          range_business_days: [15, 17],
+          basis: 'industry',
+          anzsic_level: 'division',
+          sample_size: 53,
+        },
+      };
+
+      it('opens the explanation when the band is tapped', () => {
+        render(<MergerTimeline merger={withEstimate} />);
+
+        const band = screen.getByLabelText(/Expected determination/);
+        expect(band).toHaveAttribute('aria-expanded', 'false');
+        expect(screen.queryByText(/Around 10 Jun 2026,/)).not.toBeInTheDocument();
+
+        fireEvent.click(band);
+
+        expect(band).toHaveAttribute('aria-expanded', 'true');
+        expect(
+          screen.getByText('Around 10 Jun 2026, 15-17 business days after notification.')
+        ).toBeInTheDocument();
+      });
+
+      it('explains the "soon" pip, including that its window has passed', () => {
+        render(
+          <MergerTimeline
+            merger={{
+              ...running,
+              phase_1_estimate: {
+                expected_business_days: 5,
+                range_business_days: [4, 5],
+                basis: 'global',
+                sample_size: 178,
+              },
+            }}
+          />
+        );
+
+        fireEvent.click(screen.getByLabelText('Determination expected soon'));
+
+        expect(screen.getByText(/Was expected around 25 May 2026/)).toBeInTheDocument();
+      });
+
+      it('closes on a second tap, on Escape, and on a tap outside', () => {
+        render(<MergerTimeline merger={withEstimate} />);
+        const band = screen.getByLabelText(/Expected determination/);
+
+        fireEvent.click(band);
+        fireEvent.click(band);
+        expect(screen.queryByText(/Around 10 Jun 2026,/)).not.toBeInTheDocument();
+
+        fireEvent.click(band);
+        fireEvent.keyDown(document, { key: 'Escape' });
+        expect(screen.queryByText(/Around 10 Jun 2026,/)).not.toBeInTheDocument();
+
+        fireEvent.click(band);
+        fireEvent.pointerDown(document.body);
+        expect(screen.queryByText(/Around 10 Jun 2026,/)).not.toBeInTheDocument();
+      });
+
+      it('closes with the dedicated close button', () => {
+        render(<MergerTimeline merger={withEstimate} />);
+
+        fireEvent.click(screen.getByLabelText(/Expected determination/));
+        fireEvent.click(screen.getByLabelText('Close explanation'));
+
+        expect(screen.queryByText(/Around 10 Jun 2026,/)).not.toBeInTheDocument();
+      });
+
+      it('opens the Phase 2 referral date from its dot', () => {
+        render(
+          <MergerTimeline
+            merger={{
+              effective_notification_datetime: '2025-10-10T12:00:00Z',
+              end_of_determination_period: '2026-06-05T12:00:00Z',
+              phase_1_determination: 'Referred to phase 2',
+              phase_1_determination_date: '2026-01-20T12:00:00Z',
+              status: 'Under assessment',
+            }}
+          />
+        );
+
+        fireEvent.click(screen.getByLabelText('Referred to Phase 2 on 20 Jan 2026'));
+
+        expect(screen.getByText('Phase 1 ended on 20 Jan 2026.')).toBeInTheDocument();
+      });
     });
   });
 });
