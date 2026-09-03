@@ -14,15 +14,23 @@ import {
 const CORRECTION_PROMPT = 'Not quite right? Let us know what it should be';
 
 /**
- * How much weight to put on the estimate, as a chip. The scale is the width of
- * the window the estimate was read out of, so the colours run from the settled
- * green through the phase-1 amber to a neutral grey — deliberately not red,
- * which on this callout belongs to the "tell us it's wrong" link.
+ * How much weight to put on the estimate, worn as the colour of the dotted rule
+ * under the date it qualifies: the settled green, the phase-1 amber, then grey
+ * where the date is barely pinned down at all. Deliberately not red — on this
+ * callout red belongs to the "tell us it's wrong" link, and a shaky estimate
+ * isn't an error.
+ *
+ * The rule is dotted rather than solid so it reads as a hedge on the date
+ * rather than as a link, and the text above it keeps its own colour: the
+ * sentence says the same thing however well evidenced it is.
  */
-const CONFIDENCE_STYLES = {
-  [PRE_NOTIFICATION_CONFIDENCE.HIGH]: 'bg-cleared-pale text-cleared-dark border-cleared-dark/20',
-  [PRE_NOTIFICATION_CONFIDENCE.MEDIUM]: 'bg-phase-1-pale text-phase-1-dark border-phase-1-dark/20',
-  [PRE_NOTIFICATION_CONFIDENCE.LOW]: 'bg-gray-100 text-gray-600 border-gray-300',
+const CONFIDENCE_UNDERLINES = {
+  // Deep shades, not the 500s: the rule is the only thing carrying the rating
+  // on screen, so it has to clear 3:1 against the card the way any meaningful
+  // non-text mark does (WCAG 1.4.11).
+  [PRE_NOTIFICATION_CONFIDENCE.HIGH]: 'decoration-emerald-700',
+  [PRE_NOTIFICATION_CONFIDENCE.MEDIUM]: 'decoration-amber-700',
+  [PRE_NOTIFICATION_CONFIDENCE.LOW]: 'decoration-gray-500',
 };
 
 const CONFIDENCE_LABELS = {
@@ -32,34 +40,77 @@ const CONFIDENCE_LABELS = {
 };
 
 /**
- * The rating itself, and only the rating: the words carry the meaning and the
- * colour only reinforces them, so the chip still reads on a monochrome or
- * high-contrast display. What earned it that rating is deliberately left
- * unsaid — the estimate is a claim about a matter, not a lecture on how it was
- * arrived at, and the question mark beside it is there for anyone who thinks
- * it's wrong.
+ * The part of the claim the confidence is about — the date, or the whole thing
+ * where there is no date — underlined in the colour of its rating, and naming
+ * that rating when asked: on hover or keyboard focus with a pointer, on a tap
+ * with a finger.
+ *
+ * A native `title` would strand the wording on touch, where there is no hover,
+ * so the label is a real element toggled by the handlers a tap fires. The
+ * rating rides in the accessible name too, since neither hovering nor reading a
+ * colour is available to everyone.
  */
-function ConfidenceChip({ confidence }) {
+function ConfidenceMark({ confidence, children }) {
+  const [shown, setShown] = useState(false);
+  const label = CONFIDENCE_LABELS[confidence];
+
   return (
-    <span
-      className={`inline-flex items-center align-middle ml-1.5 rounded-full border px-2 py-0.5 text-xs font-medium ${CONFIDENCE_STYLES[confidence]}`}
-    >
-      {CONFIDENCE_LABELS[confidence]}
+    <span className="relative inline-block">
+      <button
+        type="button"
+        aria-label={`${children}, ${label.toLowerCase()}`}
+        onMouseEnter={() => setShown(true)}
+        onMouseLeave={() => setShown(false)}
+        onFocus={() => setShown(true)}
+        onBlur={() => setShown(false)}
+        // Reveal rather than toggle: a tap on a touch device fires a synthetic
+        // mouseenter first, and toggling would close what that just opened.
+        // Moving the pointer away, or tapping elsewhere, dismisses it.
+        onClick={() => setShown(true)}
+        className={`underline decoration-dotted decoration-2 underline-offset-4 rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${CONFIDENCE_UNDERLINES[confidence]}`}
+      >
+        {children}
+      </button>
+      {shown && (
+        // Hidden from assistive tech: it repeats the button's own name, which
+        // has already been announced.
+        // Below the mark, not above: the sentence wraps on a narrow screen, and
+        // above would put the label over the words it is annotating.
+        <span
+          aria-hidden="true"
+          className="absolute top-full left-1/2 z-10 mt-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-gray-900 px-2 py-1 text-xs font-medium text-white shadow-lg"
+        >
+          {label}
+        </span>
+      )}
     </span>
   );
 }
 
+/**
+ * The claim, split at the part the confidence rating is about: everything up to
+ * it, then the span the dotted rule goes under.
+ */
 const describe = ({ kind, startDate }) => {
   if (kind === PRE_NOTIFICATION_NONE) {
-    return 'this merger had little or no pre-notification period';
+    return { lead: 'this merger had ', marked: 'little or no pre-notification period' };
   }
   if (kind === PRE_NOTIFICATION_AFTER) {
-    return `this merger entered pre-notification sometime after ${formatDateLong(startDate)}`;
+    return {
+      lead: 'this merger entered pre-notification sometime after ',
+      marked: formatDateLong(startDate),
+    };
   }
   if (kind === PRE_NOTIFICATION_BEFORE) {
-    return `this merger entered pre-notification sometime before ${formatDateLong(startDate)}`;
+    return {
+      lead: 'this merger entered pre-notification sometime before ',
+      marked: formatDateLong(startDate),
+    };
   }
-  return `this merger entered pre-notification around ${formatDateLong(startDate)}`;
+  return {
+    lead: 'this merger entered pre-notification around ',
+    marked: formatDateLong(startDate),
+  };
 };
 
 /**
@@ -105,6 +156,7 @@ function PreNotificationEstimate({ merger }) {
   const [promptShown, setPromptShown] = useState(false);
   const estimate = getPreNotificationEstimate(merger);
   if (!estimate) return null;
+  const claim = describe(estimate);
 
   const revealPrompt = (event) => {
     // Keyboard activation reports no click detail, and already had the wording
@@ -121,14 +173,8 @@ function PreNotificationEstimate({ merger }) {
       </div>
       <div className="flex-1 min-w-0">
         <p className="text-sm font-medium text-gray-900">
-          Our market intelligence suggests that {describe(estimate)}
-          {/* Inline at the end of the claim it qualifies, rather than on a line
-              of its own: on a wide screen the callout stays one line deep, and
-              on a narrow one the chip wraps with the sentence instead of always
-              adding a row beneath it. The space is a real one, so the chip
-              doesn't run into the date when the sentence is read aloud. */}
-          {' '}
-          <ConfidenceChip confidence={estimate.confidence} />
+          Our market intelligence suggests that {claim.lead}
+          <ConfidenceMark confidence={estimate.confidence}>{claim.marked}</ConfidenceMark>
           {/* On a narrow screen the sentence already fills the width, so the
               question mark trails the last word rather than stealing a column
               from the wrapping text. */}
