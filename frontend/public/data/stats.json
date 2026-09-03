@@ -1,6 +1,6 @@
 {
   "total_mergers": 242,
-  "total_waivers": 377,
+  "total_waivers": 378,
   "total_conditional_approvals": 4,
   "by_status": {
     "Assessment completed": 202,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 361,
+    "Approved": 362,
     "Not approved": 16
   },
   "clearance_rate": {
@@ -48,19 +48,19 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.6684350132626,
-    "median_days": 19,
-    "average_business_days": 13.352785145888594,
-    "median_business_days": 13
+    "average_days": 19.687830687830687,
+    "median_days": 19.5,
+    "average_business_days": 13.367724867724867,
+    "median_business_days": 13.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 111
+      "count": 112
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 67
+      "count": 68
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-05047",
+      "merger_name": "Redwood Services Group \u2013 Concept Data and Voice Select",
+      "determination": "Approved",
+      "determination_date": "2026-09-03T12:00:00Z",
+      "page_modified_datetime": "2026-09-03T16:46:11+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-40040",
       "merger_name": "Waymark Hotels Group \u2013 Criterion Hotel Motel, Rockhampton, QLD",
       "determination": "Approved",
@@ -338,17 +349,6 @@
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
       "has_conditions": true
-    },
-    {
-      "merger_id": "WA-75048",
-      "merger_name": "Platinum Equity Group \u2013 Nestl\u00e9 Waters",
-      "determination": "Approved",
-      "determination_date": "2026-08-31T12:00:00Z",
-      "page_modified_datetime": "2026-08-31T18:14:01+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
     }
   ]
 }

@@ -24,7 +24,7 @@
       "code": "6240",
       "name": "Financial Asset Investing",
       "level": "class",
-      "merger_count": 111
+      "merger_count": 112
     }
   ],
   "mergers": [
@@ -158,6 +158,17 @@
       "has_conditions": false,
       "phase": "Phase 1",
       "notification_date": "2026-08-05T12:00:00Z",
+      "determination_date": "2026-09-03T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-05047",
+      "merger_name": "Redwood Services Group \u2013 Concept Data and Voice Select",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-07T12:00:00Z",
       "determination_date": "2026-09-03T12:00:00Z"
     },
     {
@@ -1250,10 +1261,10 @@
       "determination_date": "2026-01-30T12:00:00Z"
     }
   ],
-  "count": 111,
+  "count": 112,
   "phase_1_count": 27,
   "phase_2_count": 0,
-  "waiver_count": 84,
+  "waiver_count": 85,
   "active_count": 11,
   "phase_duration": {
     "average_days": 25.375,
@@ -1263,10 +1274,10 @@
     "completed_count": 16
   },
   "waiver_duration": {
-    "average_days": 19.845238095238095,
-    "median_days": 19.0,
-    "average_business_days": 13.523809523809524,
-    "median_business_days": 12.0,
-    "completed_count": 84
+    "average_days": 19.929411764705883,
+    "median_days": 19,
+    "average_business_days": 13.588235294117647,
+    "median_business_days": 12,
+    "completed_count": 85
   }
 }

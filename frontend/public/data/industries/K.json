@@ -9,7 +9,7 @@
       "code": "62",
       "name": "Finance",
       "level": "subdivision",
-      "merger_count": 119
+      "merger_count": 120
     },
     {
       "code": "63",
@@ -199,6 +199,17 @@
       "has_conditions": false,
       "phase": "Phase 1",
       "notification_date": "2026-08-05T12:00:00Z",
+      "determination_date": "2026-09-03T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-05047",
+      "merger_name": "Redwood Services Group \u2013 Concept Data and Voice Select",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-07T12:00:00Z",
       "determination_date": "2026-09-03T12:00:00Z"
     },
     {
@@ -1907,10 +1918,10 @@
       "determination_date": null
     }
   ],
-  "count": 171,
+  "count": 172,
   "phase_1_count": 43,
   "phase_2_count": 2,
-  "waiver_count": 126,
+  "waiver_count": 127,
   "active_count": 15,
   "phase_duration": {
     "average_days": 28.0,
@@ -1920,10 +1931,10 @@
     "completed_count": 31
   },
   "waiver_duration": {
-    "average_days": 20.023809523809526,
-    "median_days": 19.5,
-    "average_business_days": 13.603174603174603,
-    "median_business_days": 13.0,
-    "completed_count": 126
+    "average_days": 20.078740157480315,
+    "median_days": 20,
+    "average_business_days": 13.645669291338583,
+    "median_business_days": 13,
+    "completed_count": 127
   }
 }

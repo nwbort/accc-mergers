@@ -155,6 +155,47 @@
         "completed_count": 1
       }
     },
+    "gary-paradise": {
+      "id": "gary-paradise",
+      "canonical_name": "Gary Paradise",
+      "members": [
+        {
+          "name": "Gary Paradise",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-05047",
+            "merger_name": "Redwood Services Group \u2013 Concept Data and Voice Select",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-07T12:00:00Z",
+            "determination_date": "2026-09-03T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 27.0,
+        "median_days": 27,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
     "gb-wfc-france-sas-trading-as-world-freight-company-or-wfc": {
       "id": "gb-wfc-france-sas-trading-as-world-freight-company-or-wfc",
       "canonical_name": "GB WFC France SAS (trading as \u201cWorld Freight Company\u201d or \u201cWFC\u201d)",
