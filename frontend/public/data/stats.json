@@ -1,10 +1,10 @@
 {
-  "total_mergers": 242,
+  "total_mergers": 243,
   "total_waivers": 378,
   "total_conditional_approvals": 4,
   "by_status": {
     "Assessment completed": 202,
-    "Under assessment": 35,
+    "Under assessment": 36,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-25035",
+      "merger_name": "Velocity Vehicle Group \u2013 Fuso assets of Daimler Truck Australia Pacific",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-09-03T12:00:00Z",
+      "page_modified_datetime": "2026-09-03T17:28:24+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-10028",
       "merger_name": "BBFIT - Hanes Australasia",
@@ -204,16 +214,6 @@
       "effective_notification_datetime": "2026-08-20T12:00:00Z",
       "page_modified_datetime": "2026-08-21T12:17:01+10:00",
       "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "WA-40040",
-      "merger_name": "Waymark Hotels Group \u2013 Criterion Hotel Motel, Rockhampton, QLD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "effective_notification_datetime": "2026-08-19T12:00:00Z",
-      "page_modified_datetime": "2026-09-03T16:44:36+10:00",
-      "is_waiver": true,
       "is_refiled": false
     }
   ],

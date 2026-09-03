@@ -36,10 +36,21 @@
       "code": "3913",
       "name": "Trailer and Other Motor Vehicle Retailing",
       "level": "class",
-      "merger_count": 2
+      "merger_count": 3
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-25035",
+      "merger_name": "Velocity Vehicle Group \u2013 Fuso assets of Daimler Truck Australia Pacific",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-03T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-15030",
       "merger_name": "KARMO/SIMPLR",
@@ -228,11 +239,11 @@
       "determination_date": null
     }
   ],
-  "count": 17,
-  "phase_1_count": 5,
+  "count": 18,
+  "phase_1_count": 6,
   "phase_2_count": 1,
   "waiver_count": 11,
-  "active_count": 2,
+  "active_count": 3,
   "phase_duration": {
     "average_days": 45.25,
     "median_days": 32.0,

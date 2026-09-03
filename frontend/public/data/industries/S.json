@@ -9,7 +9,7 @@
       "code": "94",
       "name": "Repair and Maintenance",
       "level": "subdivision",
-      "merger_count": 21
+      "merger_count": 22
     },
     {
       "code": "95",
@@ -25,6 +25,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-25035",
+      "merger_name": "Velocity Vehicle Group \u2013 Fuso assets of Daimler Truck Australia Pacific",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-03T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-15030",
       "merger_name": "KARMO/SIMPLR",
@@ -400,11 +411,11 @@
       "determination_date": null
     }
   ],
-  "count": 34,
-  "phase_1_count": 8,
+  "count": 35,
+  "phase_1_count": 9,
   "phase_2_count": 3,
   "waiver_count": 23,
-  "active_count": 2,
+  "active_count": 3,
   "phase_duration": {
     "average_days": 41.888888888888886,
     "median_days": 32,

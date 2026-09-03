@@ -19280,6 +19280,156 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/velocity-vehicle-group-%E2%80%93-fuso-assets-of-daimler-truck-australia-pacific",
+      "merger_name": "Velocity Vehicle Group \u2013 Fuso assets of Daimler Truck Australia Pacific",
+      "status": "Under assessment",
+      "merger_id": "MN-25035",
+      "effective_notification_datetime": "2026-09-03T12:00:00Z",
+      "original_notification_datetime": "2026-09-03T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-10-16T12:00:00Z",
+      "page_modified_datetime": "2026-09-03T17:28:24+10:00",
+      "consultation_response_due_date": "2026-09-10T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Fuso Australia Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "16 697 595 841",
+          "party_page": {
+            "id": "fuso-australia-pty-ltd",
+            "name": "Fuso Australia Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Daimler Truck Australia Pacific Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "86 618 413 282",
+          "party_page": {
+            "id": "daimler-truck-australia-pacific-pty-ltd",
+            "name": "Daimler Truck Australia Pacific Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3502",
+          "name": "Commercial Vehicle Wholesaling"
+        },
+        {
+          "code": "3504",
+          "name": "Motor Vehicle New Parts Wholesaling"
+        },
+        {
+          "code": "3913",
+          "name": "Trailer and Other Motor Vehicle Retailing"
+        },
+        {
+          "code": "3921",
+          "name": "Motor Vehicle Parts Retailing"
+        },
+        {
+          "code": "9419",
+          "name": "Other Automotive Repair and Maintenance"
+        }
+      ],
+      "merger_description": "Velocity Vehicle Group LLC (**VVG**), through its subsidiary Fuso Australia Pty Ltd, proposes to acquire certain business assets related to the importation and wholesale distribution of \u2018Fuso\u2019 branded trucks, buses and parts currently owned by Daimler Truck Australia Pacific Pty Ltd (**Daiml****er**) including material contracts, vehicles, parts, and servicing rights (the **Acquisition**).\n\nVVG is a supplier of commercial vehicles and parts to end customers and provides related services, including vehicle servicing and finance options. Through its Australian subsidiaries, VVG operates 19 dealerships across metropolitan and regional Australia for the Daimler brands, Mercedes-Benz and Freightliner, as well as Fuso.\n\nDaimler is part of the worldwide Daimler Truck Group, with its ultimate parent company, Daimler Truck Holding AG, based in Germany. Daimler is the importer and wholesale distributor of Mercedes-Benz, Freightliner and Fuso branded commercial vehicles and parts in Australia, which are retailed through its authorised dealers in Australia.\n\nThe Acquisition relates only to the Fuso brand.",
+      "events": [
+        {
+          "date": "2026-09-03T12:00:00Z",
+          "title": "Questionnaire - Velocity Vehicle Group \u2013 Fuso assets of Daimler Truck Australia Pacific",
+          "display_title": "Questionnaire - Velocity Vehicle Group \u2013 Fuso assets of Daimler Truck Australia Pacific",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Questionnaire%20-%20Velocity%20Vehicle%20Group%20%E2%80%93%20Fuso%20assets%20of%20Daimler%20Truck%20Australia%20Pacific.docx",
+          "url_gh": "/mergers/MN-25035/Questionnaire - Velocity Vehicle Group \u2013 Fuso assets of Daimler Truck Australia Pacific.pdf",
+          "phase": null
+        },
+        {
+          "date": "2026-09-03T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-20018",
+          "merger_name": "Uber - Blacklane",
+          "acquirers": [
+            "Uber Technologies, Inc"
+          ],
+          "targets": [
+            "Blacklane GmbH"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-40010",
+          "merger_name": "Permira and Warburg Pincus - Clearwater Analytics",
+          "acquirers": [
+            "GT Silver BidCo, Inc."
+          ],
+          "targets": [
+            "Clearwater Analytics Holdings, Inc."
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-35011",
+          "merger_name": "Austral Resources Australia \u2013 Lady Loretta mine",
+          "acquirers": [
+            "AUSTRAL RESOURCES AUSTRALIA LIMITED"
+          ],
+          "targets": [
+            "NORANDA PACIFIC PTY LTD",
+            "Noranda Pacific No. 2 Pty Ltd"
+          ],
+          "accc_determination": "Approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 21,
+        "range_business_days": [
+          16,
+          31
+        ],
+        "basis": "industry",
+        "anzsic_level": "subdivision",
+        "anzsic_codes": [
+          "35",
+          "39",
+          "94"
+        ],
+        "sample_size": 10,
+        "estimated_at": "2026-09-03",
+        "method_version": 1
+      },
+      "pre_notification": {
+        "estimated_days": 64,
+        "min_days": 62,
+        "max_days": 85,
+        "id_issued_estimated": "2026-07-01",
+        "id_issued_before": "2026-07-03",
+        "id_issued_after": "2026-06-10",
+        "min_days_witness": "WA-25039",
+        "max_days_witness": "WA-25033",
+        "basis": "bracketed",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/sanad-services-and-tikehau-capital-%E2%80%93-revima",
       "merger_name": "Sanad Services and Tikehau Capital \u2013 Revima",
       "status": "Assessment completed",

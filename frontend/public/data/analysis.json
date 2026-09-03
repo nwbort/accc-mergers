@@ -2616,7 +2616,7 @@
       36,
       44,
       38,
-      2
+      3
     ],
     "waivers": [
       0,
@@ -2665,7 +2665,7 @@
       41,
       46,
       37,
-      35
+      36
     ],
     "as_at": "2026-09-03"
   },
@@ -2854,9 +2854,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 32,
+      "count": 33,
       "outcome_mix": {
-        "Unknown": 32
+        "Unknown": 33
       },
       "median_phase_1_business_days": null
     },
@@ -2942,7 +2942,7 @@
       "delta_calendar_days": 4
     }
   ],
-  "restart_rate": 0.0124,
+  "restart_rate": 0.0123,
   "outcomes_by_division": [
     {
       "code": "S",
@@ -2950,7 +2950,7 @@
       "approved": 6,
       "not_approved": 0,
       "referred": 3,
-      "in_progress": 2,
+      "in_progress": 3,
       "phase2_referral_rate": 0.333
     },
     {
@@ -2977,7 +2977,7 @@
       "approved": 21,
       "not_approved": 0,
       "referred": 3,
-      "in_progress": 7,
+      "in_progress": 8,
       "phase2_referral_rate": 0.125
     },
     {
@@ -2986,7 +2986,7 @@
       "approved": 26,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 8,
+      "in_progress": 9,
       "phase2_referral_rate": 0.071
     },
     {
@@ -3130,7 +3130,7 @@
     },
     {
       "quarter": "2026-Q3",
-      "notifications": 84,
+      "notifications": 85,
       "referred": 1
     }
   ]
