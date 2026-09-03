@@ -514,6 +514,47 @@
         "completed_count": 1
       },
       "waiver_duration": null
+    },
+    "turnbull-hotels-enterprises-pty-ltd-as-trustee-for-turnbull-hotels-investment-tr": {
+      "id": "turnbull-hotels-enterprises-pty-ltd-as-trustee-for-turnbull-hotels-investment-tr",
+      "canonical_name": "Turnbull Hotels Enterprises Pty Ltd as trustee for Turnbull Hotels Investment Trust",
+      "members": [
+        {
+          "name": "Turnbull Hotels Enterprises Pty Ltd as trustee for Turnbull Hotels Investment Trust",
+          "identifier": "079 801 264",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-40040",
+            "merger_name": "Waymark Hotels Group \u2013 Criterion Hotel Motel, Rockhampton, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-19T12:00:00Z",
+            "determination_date": "2026-09-03T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 15.0,
+        "median_days": 15,
+        "average_business_days": 11.0,
+        "median_business_days": 11,
+        "completed_count": 1
+      }
     }
   }
 }

@@ -30,7 +30,7 @@
       "code": "6712",
       "name": "Non-Residential Property Operators",
       "level": "class",
-      "merger_count": 33
+      "merger_count": 34
     }
   ],
   "mergers": [
@@ -66,6 +66,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-08-10T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-40040",
+      "merger_name": "Waymark Hotels Group \u2013 Criterion Hotel Motel, Rockhampton, QLD",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-19T12:00:00Z",
+      "determination_date": "2026-09-03T12:00:00Z"
     },
     {
       "merger_id": "WA-30035",
@@ -442,10 +453,10 @@
       "determination_date": "2025-11-18T12:00:00Z"
     }
   ],
-  "count": 37,
+  "count": 38,
   "phase_1_count": 12,
   "phase_2_count": 1,
-  "waiver_count": 24,
+  "waiver_count": 25,
   "active_count": 3,
   "phase_duration": {
     "average_days": 36.7,
@@ -455,10 +466,10 @@
     "completed_count": 10
   },
   "waiver_duration": {
-    "average_days": 20.958333333333332,
-    "median_days": 21.0,
-    "average_business_days": 14.25,
-    "median_business_days": 14.0,
-    "completed_count": 24
+    "average_days": 20.72,
+    "median_days": 20,
+    "average_business_days": 14.12,
+    "median_business_days": 14,
+    "completed_count": 25
   }
 }
