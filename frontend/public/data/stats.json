@@ -1,6 +1,6 @@
 {
   "total_mergers": 242,
-  "total_waivers": 373,
+  "total_waivers": 374,
   "total_conditional_approvals": 4,
   "by_status": {
     "Assessment completed": 202,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 357,
+    "Approved": 358,
     "Not approved": 16
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.67024128686327,
-    "median_days": 19,
-    "average_business_days": 13.345844504021448,
-    "median_business_days": 13
+    "average_days": 19.671122994652407,
+    "median_days": 19.5,
+    "average_business_days": 13.3475935828877,
+    "median_business_days": 13.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 109
+      "count": 110
     },
     {
       "name": "Computer System Design and Related Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-35043",
+      "merger_name": "Influence Media Partners \u2013 assets from Anthem Entertainment",
+      "determination": "Approved",
+      "determination_date": "2026-09-03T12:00:00Z",
+      "page_modified_datetime": "2026-09-03T16:36:28+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-70034",
       "merger_name": "Vista \u2013 Quantios",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-08-31T12:00:00Z",
       "page_modified_datetime": "2026-08-31T18:10:30+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-60038",
-      "merger_name": "Volvo Group Australia \u2013 Assets comprising Volvo dealership stock and assignable sales contracts of Southside Truck Centre",
-      "determination": "Approved",
-      "determination_date": "2026-08-31T12:00:00Z",
-      "page_modified_datetime": "2026-08-31T18:09:12+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
