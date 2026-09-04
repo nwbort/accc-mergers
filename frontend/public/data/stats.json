@@ -1,10 +1,10 @@
 {
-  "total_mergers": 244,
+  "total_mergers": 245,
   "total_waivers": 378,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 203,
-    "Under assessment": 36,
+    "Under assessment": 37,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -72,7 +72,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 34
+      "count": 35
     },
     {
       "name": "Pubs, Taverns and Bars",
@@ -87,15 +87,25 @@
       "count": 21
     },
     {
-      "name": "Liquor Retailing",
+      "name": "Supermarket and Grocery Stores",
       "count": 19
     },
     {
-      "name": "Supermarket and Grocery Stores",
-      "count": 18
+      "name": "Liquor Retailing",
+      "count": 19
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-40034",
+      "merger_name": "Woolworths - supermarket site in Homestead Rd, Orchard Hills, NSW",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-09-03T12:00:00Z",
+      "page_modified_datetime": "2026-09-04T12:52:49+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-95040",
       "merger_name": "Apiam \u2013 Seymour Equine Clinic",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-20T12:00:00Z",
       "page_modified_datetime": "2026-08-21T16:24:49+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-75044",
-      "merger_name": "McCormick - Unilever Foods Business",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-20T12:00:00Z",
-      "page_modified_datetime": "2026-08-21T14:09:24+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

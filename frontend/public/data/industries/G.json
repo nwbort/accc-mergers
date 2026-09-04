@@ -21,7 +21,7 @@
       "code": "41",
       "name": "Food Retailing",
       "level": "subdivision",
-      "merger_count": 34
+      "merger_count": 35
     },
     {
       "code": "42",
@@ -40,6 +40,17 @@
     {
       "merger_id": "MN-25035",
       "merger_name": "Velocity Vehicle Group \u2013 Fuso assets of Daimler Truck Australia Pacific",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-03T12:00:00Z",
+      "determination_date": null
+    },
+    {
+      "merger_id": "MN-40034",
+      "merger_name": "Woolworths - supermarket site in Homestead Rd, Orchard Hills, NSW",
       "is_waiver": false,
       "status": "Under assessment",
       "determination": null,
@@ -907,11 +918,11 @@
       "determination_date": null
     }
   ],
-  "count": 79,
-  "phase_1_count": 29,
+  "count": 80,
+  "phase_1_count": 30,
   "phase_2_count": 3,
   "waiver_count": 47,
-  "active_count": 7,
+  "active_count": 8,
   "phase_duration": {
     "average_days": 36.84,
     "median_days": 27,

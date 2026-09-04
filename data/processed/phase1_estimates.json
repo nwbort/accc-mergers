@@ -1946,6 +1946,23 @@
     "estimated_at": "2026-07-29",
     "method_version": 1
   },
+  "MN-40034": {
+    "expected_business_days": 19,
+    "range_business_days": [
+      16,
+      22
+    ],
+    "basis": "industry",
+    "anzsic_level": "class",
+    "anzsic_codes": [
+      "4110",
+      "6711",
+      "6712"
+    ],
+    "sample_size": 15,
+    "estimated_at": "2026-09-04",
+    "method_version": 1
+  },
   "MN-40039": {
     "expected_business_days": 17,
     "range_business_days": [
