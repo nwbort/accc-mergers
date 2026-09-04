@@ -38,6 +38,17 @@
       "determination_date": null
     },
     {
+      "merger_id": "WA-40040",
+      "merger_name": "Waymark Hotels Group \u2013 Criterion Hotel Motel, Rockhampton, QLD",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-19T12:00:00Z",
+      "determination_date": "2026-09-03T12:00:00Z"
+    },
+    {
       "merger_id": "MN-15034",
       "merger_name": "Australian Venue Co \u2013 assets of Black Nugget Hotel Motel, Bartletts Tavern and all associated detached bottle shops",
       "is_waiver": false,
@@ -357,10 +368,10 @@
       "determination_date": "2026-02-02T12:00:00Z"
     }
   ],
-  "count": 30,
+  "count": 31,
   "phase_1_count": 7,
   "phase_2_count": 0,
-  "waiver_count": 23,
+  "waiver_count": 24,
   "active_count": 1,
   "phase_duration": {
     "average_days": 34.166666666666664,
@@ -370,10 +381,10 @@
     "completed_count": 6
   },
   "waiver_duration": {
-    "average_days": 19.82608695652174,
-    "median_days": 19,
-    "average_business_days": 13.565217391304348,
-    "median_business_days": 12,
-    "completed_count": 23
+    "average_days": 19.625,
+    "median_days": 19.0,
+    "average_business_days": 13.458333333333334,
+    "median_business_days": 12.0,
+    "completed_count": 24
   }
 }

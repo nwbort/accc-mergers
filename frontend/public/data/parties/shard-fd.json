@@ -321,12 +321,12 @@
             "merger_id": "MN-90028",
             "merger_name": "Peter Warren - Wakeling Automotive",
             "is_waiver": false,
-            "status": "Under assessment",
-            "determination": null,
-            "has_conditions": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": true,
             "phase": "Phase 1",
             "notification_date": "2026-07-13T12:00:00Z",
-            "determination_date": null
+            "determination_date": "2026-09-04T12:00:00Z"
           },
           {
             "merger_id": "MN-30002",
@@ -347,13 +347,13 @@
       "phase_1_count": 1,
       "phase_2_count": 1,
       "waiver_count": 0,
-      "active_count": 1,
+      "active_count": 0,
       "phase_duration": {
-        "average_days": 89.0,
-        "median_days": 89,
-        "average_business_days": 58.0,
-        "median_business_days": 58,
-        "completed_count": 1
+        "average_days": 71.0,
+        "median_days": 71.0,
+        "average_business_days": 48.5,
+        "median_business_days": 48.5,
+        "completed_count": 2
       },
       "waiver_duration": null
     },

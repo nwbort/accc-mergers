@@ -2,6 +2,47 @@
   "shard": 14,
   "shard_count": 256,
   "parties": {
+    "1gt-europe-lux-s-r-l": {
+      "id": "1gt-europe-lux-s-r-l",
+      "canonical_name": "1GT Europe (Lux) S.\u00e0 r.l.",
+      "members": [
+        {
+          "name": "1GT Europe (Lux) S.\u00e0 r.l.",
+          "identifier": "EUID  LURCSL.B275069",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-85046",
+            "merger_name": "Morgan Stanley \u2013 Amber",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-18T12:00:00Z",
+            "determination_date": "2026-09-03T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
     "cpp-investment-board-private-holdings-4-inc": {
       "id": "cpp-investment-board-private-holdings-4-inc",
       "canonical_name": "CPP Investment Board Private Holdings (4) Inc.",
@@ -341,12 +382,12 @@
             "merger_id": "MN-90028",
             "merger_name": "Peter Warren - Wakeling Automotive",
             "is_waiver": false,
-            "status": "Under assessment",
-            "determination": null,
-            "has_conditions": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": true,
             "phase": "Phase 1",
             "notification_date": "2026-07-13T12:00:00Z",
-            "determination_date": null
+            "determination_date": "2026-09-04T12:00:00Z"
           },
           {
             "merger_id": "MN-30002",
@@ -366,13 +407,13 @@
       "phase_1_count": 1,
       "phase_2_count": 1,
       "waiver_count": 0,
-      "active_count": 1,
+      "active_count": 0,
       "phase_duration": {
-        "average_days": 89.0,
-        "median_days": 89,
-        "average_business_days": 58.0,
-        "median_business_days": 58,
-        "completed_count": 1
+        "average_days": 71.0,
+        "median_days": 71.0,
+        "average_business_days": 48.5,
+        "median_business_days": 48.5,
+        "completed_count": 2
       },
       "waiver_duration": null
     },

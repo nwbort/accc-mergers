@@ -34,6 +34,13 @@ BASE_URL = "https://www.accc.gov.au"
 MATTERS_DIR = "./data/raw/matters"
 
 
+# Every character is_safe_filename() accepts after the first: word characters,
+# accented Latin, the three dash forms, both apostrophes, and ". (),". Kept
+# beside that regex so the validator and the sanitiser can never drift apart.
+_ALLOWED_FILENAME_CHARS = r"\w\u00C0-\u00FF\u002D\u2013\u2014\u0027\u2019. (),"
+_DISALLOWED_FILENAME_CHARS = f"[^{_ALLOWED_FILENAME_CHARS}]"
+
+
 def is_safe_filename(filename):
     """
     Validate filename to prevent path traversal attacks.
@@ -56,7 +63,7 @@ def is_safe_filename(filename):
         return False
 
     # Allow hyphens, en-dashes, em-dashes, apostrophes, and accented Latin chars
-    if not re.match(r'^[a-zA-Z0-9\u00C0-\u00FF][\w\u00C0-\u00FF\u002D\u2013\u2014\u0027\u2019. (),]*\.[a-zA-Z0-9]+$', filename):
+    if not re.match(r'^[a-zA-Z0-9\u00C0-\u00FF][' + _ALLOWED_FILENAME_CHARS + r']*\.[a-zA-Z0-9]+$', filename):
         return False
 
     # Filename should not exceed reasonable length
@@ -74,6 +81,8 @@ def sanitize_filename(filename):
     Characters replaced:
     - Colons (:) -> hyphen (-) - problematic on Windows
     - Ampersands (&) -> 'and' - not allowed in safe filename regex
+    - Percent signs (%) -> 'pct' - not allowed in safe filename regex
+    - Anything else is_safe_filename() rejects -> dropped
 
     Returns None if the filename cannot be sanitized (e.g., path traversal attempts).
     """
@@ -87,8 +96,12 @@ def sanitize_filename(filename):
     if not filename.strip():
         return None
 
-    # Reject path traversal sequences - these can't be sanitized safely
-    if '..' in filename or '/' in filename or '\\' in filename:
+    # Reject path separators - a name carrying one can't be sanitised safely.
+    # Runs of dots are collapsed further down instead of rejected: without a
+    # separator they cannot traverse anywhere, and the ACCC ships names that
+    # end an abbreviation right before the extension (MN-30030's "... -
+    # AtaiBeckley Inc..docx"), which is a full stop, not an attack.
+    if '/' in filename or '\\' in filename:
         return None
 
     # Replace colons with hyphens (common in document titles like "Company: Document")
@@ -99,6 +112,21 @@ def sanitize_filename(filename):
 
     # Replace percent signs with 'pct' (common in titles like "50% acquisition")
     sanitized = sanitized.replace('%', 'pct')
+
+    # Drop anything else is_safe_filename() won't accept, rather than giving up
+    # on the whole filename. The ACCC names attachments after the parties, so a
+    # company name carrying punctuation the allow-list doesn't cover reaches
+    # here: MN-75054's "I Squared Capital - oOh!media - third-party
+    # questionnaire.pdf" failed to sanitise over the "!" alone, which silently
+    # skipped the download and left the consultation event with no PDF behind
+    # it. There is no sensible word to substitute for a stray "!" or "?" the way
+    # there is for "&", so drop it and keep the rest of the name.
+    sanitized = re.sub(_DISALLOWED_FILENAME_CHARS, '', sanitized)
+
+    # The first character has its own, narrower allow-list, so a name left
+    # starting with "-" or "_" (or with a space, after the removals above) is
+    # still not safe; trim until it is.
+    sanitized = re.sub(r'^[^a-zA-Z0-9\u00C0-\u00FF]+', '', sanitized)
 
     # Clean up any double spaces that might result
     while '  ' in sanitized:
@@ -112,6 +140,13 @@ def sanitize_filename(filename):
         name, ext = os.path.splitext(sanitized)
         max_name_len = 255 - len(ext)
         sanitized = name[:max_name_len] + ext
+
+    # Collapse runs of dots to one, last of all: this is what keeps
+    # is_safe_filename()'s ".." rejection from throwing away a legitimate name
+    # ("Inc..docx" becomes "Inc.docx"), and every step above can push two dots
+    # together — dropping a disallowed character ("Inc.!.docx"), or truncating
+    # a long name back to a trailing dot before the extension is re-appended.
+    sanitized = re.sub(r'\.{2,}', '.', sanitized)
 
     # Verify the sanitized filename is safe
     if not is_safe_filename(sanitized):

@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { isValid } from 'date-fns';
 import {
   formatDateMedium,
@@ -67,6 +67,68 @@ const clampedLabelCentre = (pct, boxPx, trackPx) => {
   return Math.min(Math.max((pct / 100) * trackPx, half), trackPx - half);
 };
 
+// The one panel a marker's explanation opens into, referenced by whichever
+// marker is currently open.
+const HINT_PANEL_ID = 'merger-timeline-hint';
+
+/**
+ * A marker on the track whose detail is otherwise only reachable on hover.
+ * Touch has no hover, so every marker carrying a title tooltip is also a button
+ * that toggles the same detail — said in full — into a panel under the
+ * timeline. A mouse keeps the tooltip and can click for the longer version.
+ */
+function HintMarker({ hintId, openHintId, onToggle, label, title, className, style }) {
+  const open = openHintId === hintId;
+  return (
+    <button
+      type="button"
+      // The forecast band can be a few pixels wide and the dots are ~10px, so a
+      // pseudo-element pads every marker out to a finger-sized tap target
+      // without changing what's drawn.
+      className={`${className} before:absolute before:content-[''] before:-inset-y-4 before:-inset-x-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1`}
+      style={style}
+      title={title}
+      aria-label={label}
+      aria-expanded={open}
+      aria-controls={open ? HINT_PANEL_ID : undefined}
+      onClick={() => onToggle(hintId)}
+    />
+  );
+}
+
+/**
+ * The opened explanation. Sits under the whole timeline rather than floating
+ * over its marker: the track is only ~240px wide on a phone, so a popover
+ * anchored to a marker would either clip or need measuring, and the marker it
+ * belongs to is named in the panel's own heading. In flow rather than
+ * absolutely positioned, because the detail page's header card is
+ * `overflow: hidden` (it clips its own top accent rule) and would cut an
+ * overlay off at its bottom edge.
+ */
+function HintPanel({ hint, onClose }) {
+  return (
+    <div
+      id={HINT_PANEL_ID}
+      className="mt-3 w-full sm:max-w-sm rounded-xl border border-gray-200 bg-gray-50/80 p-3"
+    >
+      <div className="flex items-start gap-2">
+        <p className="flex-1 text-xs font-semibold uppercase tracking-wider text-phase-1-dark">
+          {hint.title}
+        </p>
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Close explanation"
+          className="-m-1 shrink-0 p-1 text-sm leading-none text-gray-400 hover:text-gray-600"
+        >
+          &times;
+        </button>
+      </div>
+      <p className="mt-1.5 text-xs leading-relaxed text-gray-600">{hint.body}</p>
+    </div>
+  );
+}
+
 // Shown when we can't draw a proportional axis: a suspended assessment with no
 // effective notification, or a pending waiver/notification with no end date yet.
 function MergerTimelineFallback({ merger, startStr }) {
@@ -119,6 +181,35 @@ function MergerTimeline({ merger }) {
   // layout are unavailable, which reads as "can't tell" and shows the label.
   const trackRef = useRef(null);
   const [trackWidth, setTrackWidth] = useState(0);
+
+  // Which marker's explanation is open, if any. The markers spell their detail
+  // out in a title tooltip, which a touch device never shows, so tapping one
+  // opens the same detail — plus how the forecast was arrived at — in a panel
+  // under the timeline. Declared with the other hooks, above the fallback
+  // return, so the hook order holds either way.
+  const [openHintId, setOpenHintId] = useState(null);
+  const rootRef = useRef(null);
+
+  useEffect(() => {
+    if (!openHintId) return undefined;
+
+    // A pointerdown anywhere outside the timeline closes it; one on a marker
+    // lands inside, leaving that marker's own click to do the toggling.
+    const onPointerDown = (event) => {
+      if (!rootRef.current?.contains(event.target)) setOpenHintId(null);
+    };
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') setOpenHintId(null);
+    };
+    document.addEventListener('pointerdown', onPointerDown);
+    document.addEventListener('keydown', onKeyDown);
+    return () => {
+      document.removeEventListener('pointerdown', onPointerDown);
+      document.removeEventListener('keydown', onKeyDown);
+    };
+  }, [openHintId]);
+
+  const toggleHint = (id) => setOpenHintId((current) => (current === id ? null : id));
 
   useLayoutEffect(() => {
     const el = trackRef.current;
@@ -241,6 +332,7 @@ function MergerTimeline({ merger }) {
   let expectedWidthPct = null;
   let expectedCentrePct = null;
   let expectedTitle = null;
+  let expectedHint = null;
   let expectedSoon = false;
   if (
     estimate?.expected_business_days != null
@@ -280,8 +372,23 @@ function MergerTimeline({ merger }) {
         ? `${low}-${high} business days`
         : `${estimate.expected_business_days} business days`;
       expectedTitle = `Expected determination \u00b7 ${formatDateMedium(toDateString(expected))} \u00b7 ${band}`;
+
+      const expectedDate = formatDateMedium(toDateString(expected));
+      expectedHint = {
+        title: expectedSoon ? 'Expected determination soon' : 'Expected determination',
+        body: expectedSoon
+          ? `Was expected around ${expectedDate}; still inside the deadline.`
+          : `Around ${expectedDate}, ${band} after notification.`,
+      };
     }
   }
+
+  // Same treatment for the Phase 2 referral dot: unlabelled on the track, with
+  // its date only in a tooltip a phone can't show.
+  const phase1Hint = phase1Pct === null ? null : {
+    title: 'Referred to Phase 2',
+    body: `Phase 1 ended on ${formatDateMedium(merger.phase_1_determination_date)}.`,
+  };
 
   let fillPct;
   if (decisionPct !== null) fillPct = decisionPct;
@@ -378,164 +485,181 @@ function MergerTimeline({ merger }) {
   const aboveLine = 'absolute bottom-1/2 mb-3';
   const belowLine = 'absolute top-1/2 mt-3';
 
+  const openHint = openHintId === 'expected' ? expectedHint
+    : openHintId === 'phase-1' ? phase1Hint
+      : null;
+
   return (
-    <div role="group" aria-label="Merger assessment timeline" className="flex items-stretch gap-2 sm:gap-4">
-      {/* Start endpoint — outside the track, hugging it from the left */}
-      <div className="relative w-20 sm:w-24 shrink-0 h-24">
-        <span className={`${aboveLine} inset-x-0 text-right ${labelClass}`}>{startLabel}</span>
-        <span className={`${belowLine} inset-x-0 text-right ${dateClass}`}>{formatDateMedium(startStr)}</span>
-      </div>
+    // Wraps the row so an opened explanation can use the full width rather than
+    // being boxed into the narrow track, and so a pointerdown can be told
+    // apart from one outside the timeline.
+    <div ref={rootRef}>
+      <div role="group" aria-label="Merger assessment timeline" className="flex items-stretch gap-2 sm:gap-4">
+        {/* Start endpoint — outside the track, hugging it from the left */}
+        <div className="relative w-20 sm:w-24 shrink-0 h-24">
+          <span className={`${aboveLine} inset-x-0 text-right ${labelClass}`}>{startLabel}</span>
+          <span className={`${belowLine} inset-x-0 text-right ${dateClass}`}>{formatDateMedium(startStr)}</span>
+        </div>
 
-      {/* Track region — the mid marker's label and value live inside it */}
-      <div ref={trackRef} className="relative flex-1 min-w-0 h-24">
-        {/* Mid marker label, above the line */}
-        {midPct !== null && (
-          <span
-            className={`${aboveLine} ${
-              midIsDetermination ? labelClass : 'text-xs font-semibold text-primary uppercase tracking-wider'
-            }`}
-            style={midStyle}
-          >
-            {midLabel}
-          </span>
-        )}
-
-        {/* Expected-determination label. Suppressed when it would collide with
-            the "Today" label above. */}
-        {showExpectedLabel && (
-          <span
-            className={`${aboveLine} text-[10px] font-semibold text-phase-1-dark uppercase tracking-wider leading-tight`}
-            style={expectedStyle}
-          >
-            Expected determination
-          </span>
-        )}
-
-        {/* Same label once the forecast window has closed, tucked in beside the
-            "Today" label. */}
-        {showSoonLabel && (
-          <span
-            className={`${aboveLine} text-[10px] font-semibold text-phase-1-dark uppercase tracking-wider leading-tight`}
-            style={soonLabelStyle}
-          >
-            Expected determination soon
-          </span>
-        )}
-
-        {/* The line */}
-        <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-3.5">
-          <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-1.5 rounded-full bg-gray-100" />
-          <div
-            className="absolute left-0 top-1/2 -translate-y-1/2 h-1.5 rounded-full bg-primary transition-[width] duration-500"
-            style={{ width: `${fillPct}%` }}
-          />
-          {/* Phase 1 determination marker (referred to Phase 2). Smaller and
-              unlabelled — details shown on hover via the title tooltip. */}
-          {phase1Pct !== null && (
+        {/* Track region — the mid marker's label and value live inside it */}
+        <div ref={trackRef} className="relative flex-1 min-w-0 h-24">
+          {/* Mid marker label, above the line */}
+          {midPct !== null && (
             <span
-              className="absolute top-1/2 h-2.5 w-2.5 rounded-full bg-amber-500 ring-2 ring-white cursor-help"
-              style={{ left: `${phase1Pct}%`, transform: 'translate(-50%, -50%)' }}
-              title={`Referred to Phase 2 · ${formatDateMedium(merger.phase_1_determination_date)}`}
-              role="img"
-              aria-label={`Referred to Phase 2 on ${formatDateMedium(merger.phase_1_determination_date)}`}
-            />
+              className={`${aboveLine} ${
+                midIsDetermination ? labelClass : 'text-xs font-semibold text-primary uppercase tracking-wider'
+              }`}
+              style={midStyle}
+            >
+              {midLabel}
+            </span>
           )}
 
-          {/* Expected-determination band — a forecast, so it's shaded rather
-              than marked with a dot, keeping actual events (which are dots)
-              visually distinct from a prediction. Carries the phase 1 colour
-              the rest of the site uses for that stage. */}
-          {expectedLeftPct !== null && (
+          {/* Expected-determination label. Suppressed when it would collide with
+              the "Today" label above. */}
+          {showExpectedLabel && (
             <span
-              className="absolute top-1/2 -translate-y-1/2 h-3 rounded-full bg-phase-1/50 cursor-help"
-              style={{
-                left: `${expectedLeftPct}%`,
-                width: `${expectedWidthPct}%`,
-                minWidth: `${MIN_BAND_PX}px`,
-              }}
-              title={expectedTitle}
-              role="img"
-              aria-label={expectedTitle}
-            />
+              className={`${aboveLine} text-[10px] font-semibold text-phase-1-dark uppercase tracking-wider leading-tight`}
+              style={expectedStyle}
+            >
+              Expected determination
+            </span>
           )}
 
-          {/* The same forecast once its window has closed: a pip just clear of
-              the today marker, held inside the track's right edge. The forecast
-              window is in the past at this point, so the date/band detail in
-              expectedTitle would be describing a window we're already past —
-              the hover just confirms the "soon" label instead. */}
-          {expectedSoon && (
+          {/* Same label once the forecast window has closed, tucked in beside the
+              "Today" label. */}
+          {showSoonLabel && (
             <span
-              className="absolute top-1/2 -translate-y-1/2 h-3 rounded-full bg-phase-1/50 cursor-help"
-              style={{
-                left: `min(calc(${midPct}% + ${SOON_PIP_GAP_PX}px), calc(100% - ${SOON_PIP_PX}px))`,
-                width: `${SOON_PIP_PX}px`,
-              }}
-              title="Determination expected soon"
-              role="img"
-              aria-label="Determination expected soon"
-            />
+              className={`${aboveLine} text-[10px] font-semibold text-phase-1-dark uppercase tracking-wider leading-tight`}
+              style={soonLabelStyle}
+            >
+              Expected determination soon
+            </span>
           )}
 
-          {/* Start node */}
-          <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 h-3.5 w-3.5 rounded-full bg-primary ring-2 ring-white" />
-          {/* End node */}
-          <span
-            className={`absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 h-3.5 w-3.5 rounded-full ring-2 ring-white ${
-              endIsOutcome ? outcomeDot : 'bg-white border-2 border-gray-300'
-            }`}
-          />
-          {/* Determination marker — rendered after the end node so it stays
-              visible if the determination landed on or past the deadline */}
-          {decisionPct !== null && (
-            <span
-              className={`absolute top-1/2 h-3.5 w-3.5 rounded-full ring-2 ring-white shadow-sm ${outcomeDot}`}
-              style={{ left: `${decisionPct}%`, transform: 'translate(-50%, -50%)' }}
-              role="img"
-              aria-label="Determination"
+          {/* The line */}
+          <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-3.5">
+            <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-1.5 rounded-full bg-gray-100" />
+            <div
+              className="absolute left-0 top-1/2 -translate-y-1/2 h-1.5 rounded-full bg-primary transition-[width] duration-500"
+              style={{ width: `${fillPct}%` }}
             />
-          )}
-          {/* Today marker */}
-          {todayPct !== null && (
+            {/* Phase 1 determination marker (referred to Phase 2). Smaller and
+                unlabelled — details shown on hover via the title tooltip. */}
+            {phase1Pct !== null && (
+              <HintMarker
+                hintId="phase-1"
+                openHintId={openHintId}
+                onToggle={toggleHint}
+                className="absolute top-1/2 h-2.5 w-2.5 rounded-full bg-amber-500 ring-2 ring-white cursor-help"
+                style={{ left: `${phase1Pct}%`, transform: 'translate(-50%, -50%)' }}
+                title={`Referred to Phase 2 · ${formatDateMedium(merger.phase_1_determination_date)}`}
+                label={`Referred to Phase 2 on ${formatDateMedium(merger.phase_1_determination_date)}`}
+              />
+            )}
+
+            {/* Expected-determination band — a forecast, so it's shaded rather
+                than marked with a dot, keeping actual events (which are dots)
+                visually distinct from a prediction. Carries the phase 1 colour
+                the rest of the site uses for that stage. */}
+            {expectedLeftPct !== null && (
+              <HintMarker
+                hintId="expected"
+                openHintId={openHintId}
+                onToggle={toggleHint}
+                className="absolute top-1/2 -translate-y-1/2 h-3 rounded-full bg-phase-1/50 cursor-help"
+                style={{
+                  left: `${expectedLeftPct}%`,
+                  width: `${expectedWidthPct}%`,
+                  minWidth: `${MIN_BAND_PX}px`,
+                }}
+                title={expectedTitle}
+                label={expectedTitle}
+              />
+            )}
+
+            {/* The same forecast once its window has closed: a pip just clear of
+                the today marker, held inside the track's right edge. The forecast
+                window is in the past at this point, so the date/band detail in
+                expectedTitle would be describing a window we're already past —
+                the hover just confirms the "soon" label instead. */}
+            {expectedSoon && (
+              <HintMarker
+                hintId="expected"
+                openHintId={openHintId}
+                onToggle={toggleHint}
+                className="absolute top-1/2 -translate-y-1/2 h-3 rounded-full bg-phase-1/50 cursor-help"
+                style={{
+                  left: `min(calc(${midPct}% + ${SOON_PIP_GAP_PX}px), calc(100% - ${SOON_PIP_PX}px))`,
+                  width: `${SOON_PIP_PX}px`,
+                }}
+                title="Determination expected soon"
+                label="Determination expected soon"
+              />
+            )}
+
+            {/* Start node */}
+            <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 h-3.5 w-3.5 rounded-full bg-primary ring-2 ring-white" />
+            {/* End node */}
             <span
-              className="absolute top-1/2 h-3.5 w-3.5 rounded-full bg-white ring-2 ring-primary shadow-sm"
-              style={{ left: `${todayPct}%`, transform: 'translate(-50%, -50%)' }}
-              role="img"
-              aria-label="Today"
+              className={`absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 h-3.5 w-3.5 rounded-full ring-2 ring-white ${
+                endIsOutcome ? outcomeDot : 'bg-white border-2 border-gray-300'
+              }`}
             />
+            {/* Determination marker — rendered after the end node so it stays
+                visible if the determination landed on or past the deadline */}
+            {decisionPct !== null && (
+              <span
+                className={`absolute top-1/2 h-3.5 w-3.5 rounded-full ring-2 ring-white shadow-sm ${outcomeDot}`}
+                style={{ left: `${decisionPct}%`, transform: 'translate(-50%, -50%)' }}
+                role="img"
+                aria-label="Determination"
+              />
+            )}
+            {/* Today marker */}
+            {todayPct !== null && (
+              <span
+                className="absolute top-1/2 h-3.5 w-3.5 rounded-full bg-white ring-2 ring-primary shadow-sm"
+                style={{ left: `${todayPct}%`, transform: 'translate(-50%, -50%)' }}
+                role="img"
+                aria-label="Today"
+              />
+            )}
+          </div>
+
+          {/* Mid marker value, below the line */}
+          {midPct !== null && (
+            <span
+              className={`${belowLine} leading-tight`}
+              style={midStyle}
+            >
+              {midIsDetermination ? (
+                <>
+                  <span className={`block ${dateClass}`}>{formatDateMedium(effectiveDeterminationDate)}</span>
+                  {durationStr && (
+                    <span className="block text-[11px] font-normal text-gray-500">{durationStr}</span>
+                  )}
+                </>
+              ) : (
+                remainingStr && (
+                  <span className="block text-[11px] font-normal text-gray-500">{remainingStr}</span>
+                )
+              )}
+            </span>
           )}
         </div>
 
-        {/* Mid marker value, below the line */}
-        {midPct !== null && (
-          <span
-            className={`${belowLine} leading-tight`}
-            style={midStyle}
-          >
-            {midIsDetermination ? (
-              <>
-                <span className={`block ${dateClass}`}>{formatDateMedium(effectiveDeterminationDate)}</span>
-                {durationStr && (
-                  <span className="block text-[11px] font-normal text-gray-500">{durationStr}</span>
-                )}
-              </>
-            ) : (
-              remainingStr && (
-                <span className="block text-[11px] font-normal text-gray-500">{remainingStr}</span>
-              )
-            )}
+        {/* End endpoint — outside the track, hugging it from the right */}
+        <div className="relative w-20 sm:w-24 shrink-0 h-24">
+          <span className={`${aboveLine} inset-x-0 text-left ${labelClass}`}>{endLabel}</span>
+          <span className={`${belowLine} inset-x-0 text-left`}>
+            <span className={`block ${dateClass}`}>{formatDateMedium(endStr)}</span>
+            {endNote && <span className={`block text-[11px] ${endNoteClass}`}>{endNote}</span>}
           </span>
-        )}
+        </div>
       </div>
 
-      {/* End endpoint — outside the track, hugging it from the right */}
-      <div className="relative w-20 sm:w-24 shrink-0 h-24">
-        <span className={`${aboveLine} inset-x-0 text-left ${labelClass}`}>{endLabel}</span>
-        <span className={`${belowLine} inset-x-0 text-left`}>
-          <span className={`block ${dateClass}`}>{formatDateMedium(endStr)}</span>
-          {endNote && <span className={`block text-[11px] ${endNoteClass}`}>{endNote}</span>}
-        </span>
-      </div>
+      {openHint && <HintPanel hint={openHint} onClose={() => setOpenHintId(null)} />}
     </div>
   );
 }

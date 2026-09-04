@@ -1,0 +1,170 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/bbfit-hanes-australasia",
+  "merger_name": "BBFIT - Hanes Australasia",
+  "status": "Under assessment",
+  "merger_id": "MN-10028",
+  "effective_notification_datetime": "2026-09-02T12:00:00Z",
+  "original_notification_datetime": "2026-09-02T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-10-15T12:00:00Z",
+  "consultation_response_due_date": "2026-09-10T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "BBFIT Investments Pte Ltd",
+      "identifier_type": null,
+      "identifier": "048693",
+      "party_page": {
+        "id": "bbfit-investments-pte-ltd",
+        "name": "BBFIT Investments Pte Ltd"
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "HBI HOLDINGS AUSTRALASIA PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "52 612 185 476",
+      "party_page": {
+        "id": "hbi-holdings-australasia-pty-ltd",
+        "name": "Hbi Holdings Australasia Pty Ltd"
+      }
+    },
+    {
+      "name": "HBI Holdings Switzerland GmbH",
+      "identifier_type": null,
+      "identifier": "CHE351.152.805",
+      "party_page": {
+        "id": "hbi-holdings-switzerland-gmbh",
+        "name": "HBI Holdings Switzerland GmbH"
+      }
+    }
+  ],
+  "other_parties": [
+    {
+      "name": "RRI Family Pty Ltd",
+      "identifier_type": "ACN",
+      "identifier": "665 458 668",
+      "party_page": {
+        "id": "rri-family-pty-ltd",
+        "name": "RRI Family Pty Ltd"
+      }
+    }
+  ],
+  "anzsic_codes": [
+    {
+      "code": "3711",
+      "name": "Textile Product Wholesaling"
+    },
+    {
+      "code": "3712",
+      "name": "Clothing and Footwear Wholesaling"
+    },
+    {
+      "code": "4214",
+      "name": "Manchester and Other Textile Goods Retailing"
+    },
+    {
+      "code": "4251",
+      "name": "Clothing Retailing"
+    },
+    {
+      "code": "6240",
+      "name": "Financial Asset Investing"
+    }
+  ],
+  "merger_description": "BBFIT Investments Pte Ltd (**BBFIT**) proposes to acquire the entire issued share capital of HBI Holdings Australasia Pty Ltd (**Hanes Australasia**) (the **Acquisition**).\n\nBBFIT is a private limited company incorporated in Singapore. The company's principal activities include investing and fund management, and its investment portfolio spans the consumer retail, property and technology sectors. BBFIT's controlled portfolio companies include Best & Less and L\u00e9ays.\n\n* Best & Less is a value apparel retailer which supplies clothing for men, women and children, baby clothing, sleepwear, underwear, hosiery, fashion accessories, and lifestyle products.\n* L\u00e9ays supplies lingerie, bras, underwear, shapewear and sleepwear.\n\nHanes Australasia is the Australian parent entity of the Hanes Australasia group companies, the principal activity of which is the manufacturing, wholesaling, and retailing of consumer products in apparel and homeware markets. Hanes Australasia's brands include Bonds, Bras N Things and Berlei.\n\n* Bonds supplies men's, women's, and children's clothing, underwear, bras, socks, hosiery, babywear and outerwear.\n* Bras N Things supplies bras, underwear/lingerie, sleepwear, shapewear and swimwear.\n* Berlei supplies bras, hosiery, underwear, shapewear, camisoles and singlets.",
+  "events": [
+    {
+      "date": "2026-09-03T12:00:00Z",
+      "title": "Phase 1 consultation",
+      "display_title": "Phase 1 consultation",
+      "is_questionnaire_event": true,
+      "url": "https://www.accc.gov.au/system/files/moderated_files/BBFIT%20-%20Hanes%20Australasia%20-%20Third%20Party%20Questionnaire.docx",
+      "url_gh": "/mergers/MN-10028/BBFIT - Hanes Australasia - Third Party Questionnaire.pdf",
+      "phase": "Phase 1"
+    },
+    {
+      "date": "2026-09-02T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-05008",
+      "merger_name": "HongShan Capital Group and Temasek \u2013 Golden Goose Group",
+      "acquirers": [
+        "Rosa Investments Pte. Ltd.",
+        "GG12 S.p.A."
+      ],
+      "targets": [
+        "Permira VII Investment Platform Limited",
+        "Golden Goose Group S.p.A."
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "MN-90024",
+      "merger_name": "Petalite \u2013 Envu",
+      "acquirers": [
+        "Petalite Investment Pte. Ltd"
+      ],
+      "targets": [
+        "Cinven Discovery Holdings Limited Partnership"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "WA-80009",
+      "merger_name": "Mizuho \u2013 Avendus",
+      "acquirers": [
+        "Mizuho Securities Co., Ltd."
+      ],
+      "targets": [
+        "Redpoint Investments Pte Ltd",
+        "Avendus Capital Private Limited"
+      ],
+      "accc_determination": "Approved"
+    }
+  ],
+  "phase_1_estimate": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      16,
+      19
+    ],
+    "basis": "industry",
+    "anzsic_level": "class",
+    "anzsic_codes": [
+      "3711",
+      "3712",
+      "4214",
+      "4251",
+      "6240"
+    ],
+    "sample_size": 17,
+    "estimated_at": "2026-09-03",
+    "method_version": 1
+  },
+  "pre_notification": {
+    "estimated_days": 34,
+    "min_days": 12,
+    "max_days": 62,
+    "id_issued_estimated": "2026-07-30",
+    "id_issued_before": "2026-08-21",
+    "id_issued_after": "2026-07-02",
+    "min_days_witness": "MN-10030",
+    "max_days_witness": "WA-10024",
+    "basis": "bracketed",
+    "method_version": 1
+  }
+}

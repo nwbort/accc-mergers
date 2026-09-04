@@ -1,0 +1,149 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/apiam-%E2%80%93-seymour-equine-clinic",
+  "merger_name": "Apiam \u2013 Seymour Equine Clinic",
+  "status": "Under assessment",
+  "merger_id": "MN-95040",
+  "effective_notification_datetime": "2026-09-03T12:00:00Z",
+  "original_notification_datetime": "2026-09-03T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-10-16T12:00:00Z",
+  "consultation_response_due_date": "2026-09-11T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "AAH VETERINARY SERVICES PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "31 607 993 233",
+      "party_page": {
+        "id": "aah-veterinary-services-pty-ltd",
+        "name": "Aah Veterinary Services Pty Ltd"
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "HORSE AROUND PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "31 612 607 333",
+      "party_page": {
+        "id": "horse-around-pty-ltd",
+        "name": "Horse Around Pty Ltd"
+      }
+    }
+  ],
+  "other_parties": [
+    {
+      "name": "APIAM ANIMAL HEALTH LIMITED",
+      "identifier_type": "ABN",
+      "identifier": "50 604 961 024",
+      "party_page": {
+        "id": "apiam-animal-health-limited",
+        "name": "Apiam Animal Health Limited"
+      }
+    }
+  ],
+  "anzsic_codes": [
+    {
+      "code": "0191",
+      "name": "Horse Farming"
+    },
+    {
+      "code": "0529",
+      "name": "Other Agriculture and Fishing Support Services"
+    },
+    {
+      "code": "6970",
+      "name": "Veterinary Services"
+    }
+  ],
+  "merger_description": "AAH Veterinary Services Pty Ltd, a wholly owned subsidiary of Apiam Animal Health Limited (**Apiam**), proposes to acquire 100% of the business and business assets of Seymour Equine Clinic (**Seymour Equine Clinic**) (the **Acquisition**).\n\nApiam is a rural veterinary business, comprising more than 80 veterinary clinics and ancillary business sites across Australia. Apiam supplies a range of veterinary services, including companion animal, equine, dairy, beef cattle, sheep and goat, pig, poultry and mixed animal veterinary services, together with veterinary diagnostics, emergency and after-hours services, reproductive and herd health services. Apiam also supplies pathology, laboratory and advisory services. Apiam is ultimately owned and controlled by funds managed and advised by Adamantem Capital Management.\n\nSeymour Equine Clinic is located in Seymour, approximately 100km north of Melbourne, Victoria. It is an equine veterinary clinic and hospital which primarily supplies equine veterinary services, including ambulatory and hospital-based clinical care, 24-hour emergency and critical care, reproductive medicine and breeding management, and related ancillary services. These include in-house pathology, export examinations and health certifications, and behavioural and welfare assessments.",
+  "events": [
+    {
+      "date": "2026-09-04T12:00:00Z",
+      "title": "Phase 1 consultation",
+      "display_title": "Phase 1 consultation",
+      "is_questionnaire_event": true,
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Apiam%20-%20Seymour%20Equine%20Clinic%20-%20Questionnaire.docx",
+      "url_gh": "/mergers/MN-95040/Apiam - Seymour Equine Clinic - Questionnaire.pdf",
+      "phase": "Phase 1"
+    },
+    {
+      "date": "2026-09-03T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-95003",
+      "merger_name": "CVS Group - Pittwater Animal Hospital",
+      "acquirers": [
+        "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED"
+      ],
+      "targets": [
+        "PITTWATER ANIMAL HOSPITAL PTY LTD"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "WA-55023",
+      "merger_name": "Vets Central - Claremont Veterinary Surgery",
+      "acquirers": [
+        "VC OPERATIONS (WA) PTY LTD"
+      ],
+      "targets": [
+        "D PETTET & E.E PETTET"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "WA-75017",
+      "merger_name": "Vets Central - Drovers Vet Hospital",
+      "acquirers": [
+        "VC OPERATIONS (WA) PTY LTD"
+      ],
+      "targets": [
+        "Wayne Shipham and Raylene Shipham as trustees for McGuire Family Trust",
+        "DROVERS VET HOSPITAL PTY LTD"
+      ],
+      "accc_determination": "Approved"
+    }
+  ],
+  "phase_1_estimate": {
+    "expected_business_days": 18,
+    "range_business_days": [
+      16,
+      26
+    ],
+    "basis": "industry",
+    "anzsic_level": "subdivision",
+    "anzsic_codes": [
+      "01",
+      "05",
+      "69"
+    ],
+    "sample_size": 41,
+    "estimated_at": "2026-09-04",
+    "method_version": 1
+  },
+  "pre_notification": {
+    "estimated_days": 21,
+    "min_days": null,
+    "max_days": 28,
+    "id_issued_estimated": "2026-08-13",
+    "id_issued_before": null,
+    "id_issued_after": "2026-08-06",
+    "min_days_witness": null,
+    "max_days_witness": "WA-95039",
+    "basis": "upper-bound-only",
+    "method_version": 1
+  }
+}

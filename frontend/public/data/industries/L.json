@@ -15,10 +15,21 @@
       "code": "67",
       "name": "Property Operators and Real Estate Services",
       "level": "subdivision",
-      "merger_count": 41
+      "merger_count": 43
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-40034",
+      "merger_name": "Woolworths - supermarket site in Homestead Rd, Orchard Hills, NSW",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-03T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-75036",
       "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
@@ -73,6 +84,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-08-03T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-40040",
+      "merger_name": "Waymark Hotels Group \u2013 Criterion Hotel Motel, Rockhampton, QLD",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-19T12:00:00Z",
+      "determination_date": "2026-09-03T12:00:00Z"
     },
     {
       "merger_id": "WA-30035",
@@ -592,11 +614,11 @@
       "determination_date": "2025-09-05T12:00:00Z"
     }
   ],
-  "count": 52,
-  "phase_1_count": 19,
+  "count": 54,
+  "phase_1_count": 20,
   "phase_2_count": 2,
-  "waiver_count": 31,
-  "active_count": 5,
+  "waiver_count": 32,
+  "active_count": 6,
   "phase_duration": {
     "average_days": 33.75,
     "median_days": 29.0,
@@ -605,10 +627,10 @@
     "completed_count": 16
   },
   "waiver_duration": {
-    "average_days": 21.258064516129032,
-    "median_days": 22,
-    "average_business_days": 14.516129032258064,
-    "median_business_days": 14,
-    "completed_count": 31
+    "average_days": 21.0625,
+    "median_days": 21.0,
+    "average_business_days": 14.40625,
+    "median_business_days": 14.0,
+    "completed_count": 32
   }
 }

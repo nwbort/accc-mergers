@@ -19,7 +19,7 @@
       "code": "421",
       "name": "Furniture, Floor Coverings, Houseware and Textile Goods Retailing",
       "level": "group",
-      "merger_count": 5
+      "merger_count": 6
     },
     {
       "code": "422",
@@ -43,7 +43,7 @@
       "code": "425",
       "name": "Clothing, Footwear and Personal Accessory Retailing",
       "level": "group",
-      "merger_count": 6
+      "merger_count": 7
     },
     {
       "code": "426",
@@ -59,6 +59,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-10028",
+      "merger_name": "BBFIT - Hanes Australasia",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-02T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-05046",
       "merger_name": "Coles - supermarket site in Kirkwood (QLD)",
@@ -96,12 +107,12 @@
       "merger_id": "MN-65021",
       "merger_name": "Wesfarmers and Built Group - Built Living Joint Venture",
       "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
+      "status": "Assessment completed",
+      "determination": "Approved",
       "has_conditions": false,
       "phase": "Phase 1",
       "notification_date": "2026-08-06T12:00:00Z",
-      "determination_date": null
+      "determination_date": "2026-09-02T12:00:00Z"
     },
     {
       "merger_id": "WA-30035",
@@ -357,17 +368,17 @@
       "determination_date": "2026-02-04T12:00:00Z"
     }
   ],
-  "count": 27,
-  "phase_1_count": 9,
+  "count": 28,
+  "phase_1_count": 10,
   "phase_2_count": 0,
   "waiver_count": 18,
   "active_count": 4,
   "phase_duration": {
-    "average_days": 25.8,
-    "median_days": 27,
-    "average_business_days": 17.4,
-    "median_business_days": 17,
-    "completed_count": 5
+    "average_days": 26.0,
+    "median_days": 27.0,
+    "average_business_days": 17.666666666666668,
+    "median_business_days": 17.0,
+    "completed_count": 6
   },
   "waiver_duration": {
     "average_days": 19.61111111111111,

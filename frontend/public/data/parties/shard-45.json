@@ -2,6 +2,41 @@
   "shard": 69,
   "shard_count": 256,
   "parties": {
+    "aah-veterinary-services-pty-ltd": {
+      "id": "aah-veterinary-services-pty-ltd",
+      "canonical_name": "Aah Veterinary Services Pty Ltd",
+      "members": [
+        {
+          "name": "AAH VETERINARY SERVICES PTY LTD",
+          "identifier": "31 607 993 233",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-95040",
+            "merger_name": "Apiam \u2013 Seymour Equine Clinic",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-03T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "airtree-ventures-fund-v-franklin-park-trusco-pty-ltd-atf-airtree-ventures-fund-v": {
       "id": "airtree-ventures-fund-v-franklin-park-trusco-pty-ltd-atf-airtree-ventures-fund-v",
       "canonical_name": "AIRTREE VENTURES FUND V FRANKLIN PARK TRUSCO PTY LTD atf Airtree Ventures Fund V Franklin Park Co-In",

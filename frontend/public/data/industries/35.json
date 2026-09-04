@@ -19,10 +19,21 @@
       "code": "350",
       "name": "Motor Vehicle and Motor Vehicle Parts Wholesaling",
       "level": "group",
-      "merger_count": 3
+      "merger_count": 4
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-25035",
+      "merger_name": "Velocity Vehicle Group \u2013 Fuso assets of Daimler Truck Australia Pacific",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-03T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "WA-60038",
       "merger_name": "Volvo Group Australia \u2013 Assets comprising Volvo dealership stock and assignable sales contracts of Southside Truck Centre",
@@ -57,11 +68,11 @@
       "determination_date": "2026-04-01T12:00:00Z"
     }
   ],
-  "count": 3,
-  "phase_1_count": 0,
+  "count": 4,
+  "phase_1_count": 1,
   "phase_2_count": 0,
   "waiver_count": 3,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": null,
   "waiver_duration": {
     "average_days": 22.666666666666668,

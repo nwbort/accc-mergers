@@ -1,8 +1,8 @@
 {
   "summary": {
-    "notifications_total": 240,
+    "notifications_total": 245,
     "matters_extended": 20,
-    "share_extended_pct": 8.3,
+    "share_extended_pct": 8.2,
     "extension_events_total": 27,
     "total_extension_bd": 294,
     "median_matter_extension_bd": 15,
@@ -11,7 +11,7 @@
     "extended_escalated_to_phase_2": 8,
     "escalation_rate_given_extension_pct": 40.0,
     "phase_2_preceded_by_extension_pct": 88.9,
-    "base_phase_2_rate_pct": 3.8,
+    "base_phase_2_rate_pct": 3.7,
     "statutory_phase_1_bd": 30
   },
   "reasons": [
@@ -409,10 +409,10 @@
       "merger_id": "MN-90028",
       "merger_name": "Peter Warren - Wakeling Automotive",
       "stage": "Phase 1 - initial assessment",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "notification_date": "2026-07-13T12:00:00Z",
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-09-04T12:00:00Z",
       "escalated_to_phase_2": false,
       "total_extension_bd": 9,
       "extension_count": 1,

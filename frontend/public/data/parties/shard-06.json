@@ -125,6 +125,41 @@
         "completed_count": 1
       }
     },
+    "name-of-landholders-withheld-under-section-5-3-of-the-competition-and-consumer-n": {
+      "id": "name-of-landholders-withheld-under-section-5-3-of-the-competition-and-consumer-n",
+      "canonical_name": "Name of landholders withheld under section 5-3 of the Competition and Consumer (Notification of Acquisitions) Determination 2025 (Cth).",
+      "members": [
+        {
+          "name": "Name of landholders withheld under section 5-3 of the Competition and Consumer (Notification of Acquisitions) Determination 2025 (Cth).",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-40034",
+            "merger_name": "Woolworths - supermarket site in Homestead Rd, Orchard Hills, NSW",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-03T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "nuveen-llc": {
       "id": "nuveen-llc",
       "canonical_name": "Nuveen, LLC",

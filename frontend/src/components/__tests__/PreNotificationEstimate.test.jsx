@@ -21,6 +21,9 @@ const merger = (overrides = {}) => ({
   ...overrides,
 });
 
+/** The whole claim, reassembled from the paragraph the mark is embedded in. */
+const claim = () => screen.getByText(/Our market intelligence/).textContent;
+
 const renderCallout = (merger) => render(
   <MemoryRouter>
     <PreNotificationEstimate merger={merger} />
@@ -31,9 +34,9 @@ describe('PreNotificationEstimate', () => {
   it('dates the start of pre-notification for a bracketed estimate', () => {
     renderCallout(merger());
 
-    expect(
-      screen.getByText(/Our market intelligence suggests that this merger entered pre-notification around 7 May 2026/)
-    ).toBeInTheDocument();
+    expect(claim()).toMatch(
+      /Our market intelligence suggests that this merger entered pre-notification around 7 May 2026/
+    );
   });
 
   it('gives the date as a ceiling when only a lower bound is proven', () => {
@@ -47,10 +50,8 @@ describe('PreNotificationEstimate', () => {
       },
     }));
 
-    expect(
-      screen.getByText(/entered pre-notification sometime before 20 May 2026/)
-    ).toBeInTheDocument();
-    expect(screen.queryByText(/around/)).not.toBeInTheDocument();
+    expect(claim()).toMatch(/entered pre-notification sometime before 20 May 2026/);
+    expect(claim()).not.toMatch(/around/);
   });
 
   it('gives the date as a floor when only an upper bound is known', () => {
@@ -64,10 +65,8 @@ describe('PreNotificationEstimate', () => {
       },
     }));
 
-    expect(
-      screen.getByText(/entered pre-notification sometime after 17 April 2026/)
-    ).toBeInTheDocument();
-    expect(screen.queryByText(/around/)).not.toBeInTheDocument();
+    expect(claim()).toMatch(/entered pre-notification sometime after 17 April 2026/);
+    expect(claim()).not.toMatch(/around/);
   });
 
   it('reports little or no pre-notification for a nought-day estimate', () => {
@@ -81,9 +80,7 @@ describe('PreNotificationEstimate', () => {
       },
     }));
 
-    expect(
-      screen.getByText(/this merger had little or no pre-notification period/)
-    ).toBeInTheDocument();
+    expect(claim()).toMatch(/this merger had little or no pre-notification period/);
   });
 
   it('renders nothing for a merger notified in the voluntary period', () => {
@@ -146,12 +143,98 @@ describe('PreNotificationEstimate', () => {
       </MemoryRouter>
     );
 
+    // Past the confidence dot, which takes the first tab stop, to the link.
+    await user.tab();
+    await user.tab();
     // The link's own label already carries the wording, so there's nothing to
     // reveal first.
-    await user.tab();
     await user.keyboard('{Enter}');
 
     expect(screen.getByText('feedback page')).toBeInTheDocument();
+  });
+
+  it('rates a bracketed estimate by how tightly its bounds close in', () => {
+    // 12 to 34 days is a 22-day window — wider than a fortnight, narrower than
+    // six weeks. The width itself stays off the page; only the rating shows.
+    renderCallout(merger());
+
+    expect(screen.getByRole('button', { name: '7 May 2026, medium confidence' })).toBeInTheDocument();
+    // The rating is the whole of it — the bounds it was read off never reach
+    // the page, in the mark's label or anywhere else.
+    expect(screen.queryByText(/days apart|case number|bound/i)).not.toBeInTheDocument();
+  });
+
+  it('names the rating only when the marked date is asked, on hover or on tap', async () => {
+    const user = userEvent.setup();
+    renderCallout(merger());
+    const mark = screen.getByRole('button', { name: /7 May 2026/ });
+
+    // Nothing on screen to begin with — the rating is in the colour of the rule
+    // under the date, and in the accessible name.
+    expect(screen.queryByText('Medium confidence')).not.toBeInTheDocument();
+
+    await user.hover(mark);
+    expect(screen.getByText('Medium confidence')).toBeInTheDocument();
+
+    await user.unhover(mark);
+    expect(screen.queryByText('Medium confidence')).not.toBeInTheDocument();
+
+    // Touch has no hover to fall back on, so the tap itself has to reveal it —
+    // including the synthetic mouseenter a tap fires on the way through.
+    await user.pointer({ target: mark, keys: '[TouchA]' });
+    expect(screen.getByText('Medium confidence')).toBeInTheDocument();
+  });
+
+  it('colours the rule under the date by the rating, and nothing else', () => {
+    renderCallout(merger());
+    const mark = screen.getByRole('button', { name: /7 May 2026/ });
+
+    expect(mark).toHaveClass('decoration-amber-700', 'decoration-dotted');
+    // The wording and the colour of the text itself stay put whatever the
+    // rating is — only the rule under it moves.
+    expect(mark.className).not.toMatch(/text-/);
+  });
+
+  it('rates a tightly bracketed estimate high', () => {
+    renderCallout(merger({
+      pre_notification: {
+        estimated_days: 16,
+        min_days: 12,
+        max_days: 20,
+        id_issued_estimated: '2026-05-11',
+        basis: 'bracketed',
+      },
+    }));
+
+    expect(screen.getByRole('button', { name: '11 May 2026, high confidence' })).toBeInTheDocument();
+  });
+
+  it('rates a loosely bracketed estimate low', () => {
+    renderCallout(merger({
+      pre_notification: {
+        estimated_days: 30,
+        min_days: 5,
+        max_days: 60,
+        id_issued_estimated: '2026-04-27',
+        basis: 'bracketed',
+      },
+    }));
+
+    expect(screen.getByRole('button', { name: '27 April 2026, low confidence' })).toBeInTheDocument();
+  });
+
+  it('rates a single-bound estimate low whatever the date it gives', () => {
+    renderCallout(merger({
+      pre_notification: {
+        estimated_days: 7,
+        min_days: 7,
+        max_days: null,
+        id_issued_estimated: '2026-05-20',
+        basis: 'lower-bound-only',
+      },
+    }));
+
+    expect(screen.getByRole('button', { name: '20 May 2026, low confidence' })).toBeInTheDocument();
   });
 
   it('renders nothing when the merger has no estimate', () => {

@@ -21,7 +21,7 @@
       "code": "35",
       "name": "Motor Vehicle and Motor Vehicle Parts Wholesaling",
       "level": "subdivision",
-      "merger_count": 3
+      "merger_count": 4
     },
     {
       "code": "36",
@@ -33,7 +33,7 @@
       "code": "37",
       "name": "Other Goods Wholesaling",
       "level": "subdivision",
-      "merger_count": 19
+      "merger_count": 20
     },
     {
       "code": "38",
@@ -43,6 +43,28 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-25035",
+      "merger_name": "Velocity Vehicle Group \u2013 Fuso assets of Daimler Truck Australia Pacific",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-03T12:00:00Z",
+      "determination_date": null
+    },
+    {
+      "merger_id": "MN-10028",
+      "merger_name": "BBFIT - Hanes Australasia",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-02T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-60035",
       "merger_name": "L'Or\u00e9al \u2013 Gucci Beauty Licence",
@@ -715,11 +737,11 @@
       "determination_date": null
     }
   ],
-  "count": 61,
-  "phase_1_count": 33,
+  "count": 63,
+  "phase_1_count": 35,
   "phase_2_count": 2,
   "waiver_count": 26,
-  "active_count": 7,
+  "active_count": 9,
   "phase_duration": {
     "average_days": 33.5,
     "median_days": 27.5,

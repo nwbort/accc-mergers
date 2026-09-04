@@ -1,16 +1,16 @@
 {
-  "total_mergers": 240,
-  "total_waivers": 372,
-  "total_conditional_approvals": 4,
+  "total_mergers": 245,
+  "total_waivers": 378,
+  "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 200,
-    "Under assessment": 35,
+    "Assessment completed": 203,
+    "Under assessment": 37,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 194,
+    "Approved": 196,
     "Referred to phase 2": 9,
-    "Approved with conditions": 3
+    "Approved with conditions": 4
   },
   "by_phase_2_determination": {
     "Approved with conditions": 1,
@@ -18,49 +18,49 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 356,
+    "Approved": 362,
     "Not approved": 16
   },
   "clearance_rate": {
-    "cleared": 198,
+    "cleared": 201,
     "not_cleared": 2,
-    "total": 200,
+    "total": 203,
     "rate": 0.99
   },
   "phase_duration": {
-    "average_days": 29.694174757281555,
-    "median_days": 26.0,
-    "average_business_days": 19.99514563106796,
-    "median_business_days": 17.0,
+    "average_days": 29.789473684210527,
+    "median_days": 26,
+    "average_business_days": 20.086124401913874,
+    "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 44,
-        "percentage": 21.4
+        "percentage": 21.1
       },
       "day20": {
-        "count": 153,
-        "percentage": 74.3
+        "count": 154,
+        "percentage": 73.7
       },
       "day30": {
-        "count": 193,
-        "percentage": 93.7
+        "count": 195,
+        "percentage": 93.3
       }
     }
   },
   "waiver_duration": {
-    "average_days": 19.663978494623656,
-    "median_days": 19.0,
-    "average_business_days": 13.338709677419354,
+    "average_days": 19.687830687830687,
+    "median_days": 19.5,
+    "average_business_days": 13.367724867724867,
     "median_business_days": 13.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 106
+      "count": 112
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 66
+      "count": 68
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -68,34 +68,84 @@
     },
     {
       "name": "Software Publishing",
-      "count": 39
+      "count": 40
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 33
+      "count": 35
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 30
+      "count": 31
+    },
+    {
+      "name": "Accommodation",
+      "count": 22
     },
     {
       "name": "Engineering Design and Engineering Consulting Services",
       "count": 21
     },
     {
-      "name": "Accommodation",
-      "count": 21
-    },
-    {
       "name": "Supermarket and Grocery Stores",
-      "count": 18
+      "count": 19
     },
     {
       "name": "Liquor Retailing",
-      "count": 18
+      "count": 19
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-40034",
+      "merger_name": "Woolworths - supermarket site in Homestead Rd, Orchard Hills, NSW",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-09-03T12:00:00Z",
+      "page_modified_datetime": "2026-09-04T12:52:49+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
+    {
+      "merger_id": "MN-95040",
+      "merger_name": "Apiam \u2013 Seymour Equine Clinic",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-09-03T12:00:00Z",
+      "page_modified_datetime": "2026-09-04T11:32:29+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
+    {
+      "merger_id": "MN-25035",
+      "merger_name": "Velocity Vehicle Group \u2013 Fuso assets of Daimler Truck Australia Pacific",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-09-03T12:00:00Z",
+      "page_modified_datetime": "2026-09-03T17:28:24+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
+    {
+      "merger_id": "MN-10028",
+      "merger_name": "BBFIT - Hanes Australasia",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-09-02T12:00:00Z",
+      "page_modified_datetime": "2026-09-03T15:52:03+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
+    {
+      "merger_id": "MN-75054",
+      "merger_name": "I Squared Capital \u2013 oOh!media",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-09-02T12:00:00Z",
+      "page_modified_datetime": "2026-09-03T09:46:54+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-35030",
       "merger_name": "MUFG Pension & Market Services - Grow Technology Services",
@@ -165,59 +215,97 @@
       "page_modified_datetime": "2026-08-21T16:24:49+10:00",
       "is_waiver": false,
       "is_refiled": false
-    },
-    {
-      "merger_id": "MN-75044",
-      "merger_name": "McCormick - Unilever Foods Business",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-20T12:00:00Z",
-      "page_modified_datetime": "2026-08-21T14:09:24+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-60030",
-      "merger_name": "Tencent \u2013 Happibits",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-20T12:00:00Z",
-      "page_modified_datetime": "2026-08-21T12:17:01+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-05046",
-      "merger_name": "Coles - supermarket site in Kirkwood (QLD)",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-19T12:00:00Z",
-      "page_modified_datetime": "2026-08-21T11:50:05+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-60035",
-      "merger_name": "L'Or\u00e9al \u2013 Gucci Beauty Licence",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-19T12:00:00Z",
-      "page_modified_datetime": "2026-08-21T11:36:17+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-90029",
-      "merger_name": "Bunnings \u2013 Intellihub \u2013 Zelora Joint Venture",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-18T12:00:00Z",
-      "page_modified_datetime": "2026-08-21T10:14:50+10:00",
-      "is_waiver": false,
-      "is_refiled": false
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "MN-90028",
+      "merger_name": "Peter Warren - Wakeling Automotive",
+      "determination": "Approved",
+      "determination_date": "2026-09-04T12:00:00Z",
+      "page_modified_datetime": "2026-09-04T09:15:56+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": true
+    },
+    {
+      "merger_id": "WA-05047",
+      "merger_name": "Redwood Services Group \u2013 Concept Data and Voice Select",
+      "determination": "Approved",
+      "determination_date": "2026-09-03T12:00:00Z",
+      "page_modified_datetime": "2026-09-03T16:46:11+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-40040",
+      "merger_name": "Waymark Hotels Group \u2013 Criterion Hotel Motel, Rockhampton, QLD",
+      "determination": "Approved",
+      "determination_date": "2026-09-03T12:00:00Z",
+      "page_modified_datetime": "2026-09-03T16:44:36+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-85046",
+      "merger_name": "Morgan Stanley \u2013 Amber",
+      "determination": "Approved",
+      "determination_date": "2026-09-03T12:00:00Z",
+      "page_modified_datetime": "2026-09-03T16:42:08+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-30032",
+      "merger_name": "Morgan Stanley \u2013 Epic Energy",
+      "determination": "Approved",
+      "determination_date": "2026-09-03T12:00:00Z",
+      "page_modified_datetime": "2026-09-03T16:37:40+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-35043",
+      "merger_name": "Influence Media Partners \u2013 assets from Anthem Entertainment",
+      "determination": "Approved",
+      "determination_date": "2026-09-03T12:00:00Z",
+      "page_modified_datetime": "2026-09-03T16:36:28+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-70034",
+      "merger_name": "Vista \u2013 Quantios",
+      "determination": "Approved",
+      "determination_date": "2026-09-03T12:00:00Z",
+      "page_modified_datetime": "2026-09-03T16:34:51+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "MN-75035",
+      "merger_name": "Johns Lyng Group \u2013 C&M Build Group",
+      "determination": "Approved",
+      "determination_date": "2026-09-03T12:00:00Z",
+      "page_modified_datetime": "2026-09-03T15:22:12+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
     {
       "merger_id": "WA-30035",
       "merger_name": "Coles \u2013 supermarket site in Byron Bay, NSW",
@@ -252,102 +340,14 @@
       "has_conditions": false
     },
     {
-      "merger_id": "MN-80005",
-      "merger_name": "Kimberly-Clark Corporation - Kenvue Inc.",
+      "merger_id": "MN-65021",
+      "merger_name": "Wesfarmers and Built Group - Built Living Joint Venture",
       "determination": "Approved",
-      "determination_date": "2026-09-01T12:00:00Z",
-      "page_modified_datetime": "2026-09-02T09:52:28+10:00",
+      "determination_date": "2026-09-02T12:00:00Z",
+      "page_modified_datetime": "2026-09-02T11:48:48+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": true
-    },
-    {
-      "merger_id": "WA-75048",
-      "merger_name": "Platinum Equity Group \u2013 Nestl\u00e9 Waters",
-      "determination": "Approved",
-      "determination_date": "2026-08-31T12:00:00Z",
-      "page_modified_datetime": "2026-08-31T18:14:01+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-60037",
-      "merger_name": "Aware Real Estate \u2013 100 Market Street",
-      "determination": "Approved",
-      "determination_date": "2026-08-31T12:00:00Z",
-      "page_modified_datetime": "2026-08-31T18:12:43+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-95039",
-      "merger_name": "Blackstone - Technology Service Corporation",
-      "determination": "Approved",
-      "determination_date": "2026-08-31T12:00:00Z",
-      "page_modified_datetime": "2026-08-31T18:11:53+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-90033",
-      "merger_name": "Francisco Partners \u2013 Majority interest in Command Alkon",
-      "determination": "Approved",
-      "determination_date": "2026-08-31T12:00:00Z",
-      "page_modified_datetime": "2026-08-31T18:10:30+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-60038",
-      "merger_name": "Volvo Group Australia \u2013 Assets comprising Volvo dealership stock and assignable sales contracts of Southside Truck Centre",
-      "determination": "Approved",
-      "determination_date": "2026-08-31T12:00:00Z",
-      "page_modified_datetime": "2026-08-31T18:09:12+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-55034",
-      "merger_name": "SLR Consulting Australia - Spectrum Ecology & Spatial and Millcrest Environmental Technology",
-      "determination": "Approved",
-      "determination_date": "2026-08-31T12:00:00Z",
-      "page_modified_datetime": "2026-08-31T18:07:49+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-15034",
-      "merger_name": "Australian Venue Co \u2013 assets of Black Nugget Hotel Motel, Bartletts Tavern and all associated detached bottle shops",
-      "determination": "Approved",
-      "determination_date": "2026-08-31T12:00:00Z",
-      "page_modified_datetime": "2026-08-31T11:50:32+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-60033",
-      "merger_name": "Verlinvest \u2013 up to 60% interest in HomeExchange",
-      "determination": "Approved",
-      "determination_date": "2026-08-28T12:00:00Z",
-      "page_modified_datetime": "2026-08-28T17:15:10+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]

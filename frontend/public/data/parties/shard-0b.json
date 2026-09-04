@@ -125,6 +125,47 @@
       },
       "waiver_duration": null
     },
+    "queso-bidco-limited": {
+      "id": "queso-bidco-limited",
+      "canonical_name": "Queso Bidco Limited",
+      "members": [
+        {
+          "name": "Queso Bidco Limited",
+          "identifier": "Companies House (UK)  17360801",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-70034",
+            "merger_name": "Vista \u2013 Quantios",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-12T12:00:00Z",
+            "determination_date": "2026-09-03T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
     "southern-way-holdings-pty-limited": {
       "id": "southern-way-holdings-pty-limited",
       "canonical_name": "Southern Way Holdings Pty Limited",

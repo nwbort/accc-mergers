@@ -27,6 +27,17 @@
   "children": [],
   "mergers": [
     {
+      "merger_id": "MN-95040",
+      "merger_name": "Apiam \u2013 Seymour Equine Clinic",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-03T12:00:00Z",
+      "determination_date": null
+    },
+    {
       "merger_id": "MN-05013",
       "merger_name": "Zoetis \u2013 Neogen Genomics Business",
       "is_waiver": false,
@@ -82,11 +93,11 @@
       "determination_date": "2026-03-24T12:00:00Z"
     }
   ],
-  "count": 5,
-  "phase_1_count": 0,
+  "count": 6,
+  "phase_1_count": 1,
   "phase_2_count": 1,
   "waiver_count": 4,
-  "active_count": 1,
+  "active_count": 2,
   "phase_duration": {
     "average_days": 66.0,
     "median_days": 66,

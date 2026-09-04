@@ -3,6 +3,8 @@
 import sys
 import unittest.mock
 
+import pytest
+
 from scripts.date_utils import parse_iso_datetime, parse_text_to_iso
 from scripts.normalization import normalize_determination
 
@@ -219,6 +221,42 @@ class TestSanitizeFilename:
     def test_path_traversal_rejected(self):
         assert sanitize_filename("../etc/passwd") is None
 
+    def test_dots_before_the_extension_collapsed(self):
+        """MN-30030's questionnaire was skipped entirely over one full stop.
+
+        The ACCC named it after the target, "AtaiBeckley Inc.", so the
+        abbreviation's full stop landed directly against the extension's dot.
+        The ".." path-traversal guard read that as an attack and refused the
+        name, so download_attachment() bailed and the consultation event was
+        published with no PDF behind it.
+        """
+        result = sanitize_filename(
+            "Questionnaire - Eli Lilly and Company - AtaiBeckley Inc..docx"
+        )
+        assert result == (
+            "Questionnaire - Eli Lilly and Company - AtaiBeckley Inc.docx"
+        )
+        assert is_safe_filename(result)
+
+    def test_dots_pushed_together_by_a_dropped_character_collapsed(self):
+        # The disallowed-character strip runs first and can create the "..".
+        result = sanitize_filename("AtaiBeckley Inc.!.docx")
+        assert result == "AtaiBeckley Inc.docx"
+        assert is_safe_filename(result)
+
+    @pytest.mark.parametrize(
+        "name",
+        ["..", "...pdf", "../etc/passwd", "..\\windows\\system32", "a/../b.pdf"],
+    )
+    def test_traversal_still_rejected(self, name):
+        """Collapsing dots must not open a path-traversal hole."""
+        assert sanitize_filename(name) is None
+
+    def test_leading_dots_trimmed(self):
+        result = sanitize_filename("..hidden.pdf")
+        assert result == "hidden.pdf"
+        assert is_safe_filename(result)
+
     def test_double_spaces_cleaned(self):
         result = sanitize_filename("Company:  Document.pdf")
         assert result is not None
@@ -229,6 +267,38 @@ class TestSanitizeFilename:
         result = sanitize_filename(long_name)
         if result:
             assert len(result) <= 255
+
+    def test_exclamation_mark_dropped(self):
+        """MN-75054's questionnaire was skipped entirely over one "!".
+
+        The ACCC names attachments after the parties, and "oOh!media" carries a
+        character the allow-list doesn't cover. Sanitising used to fail on it,
+        so download_attachment() bailed and the consultation event was published
+        with no PDF behind it.
+        """
+        result = sanitize_filename(
+            "I Squared Capital - oOh!media - third-party questionnaire.pdf"
+        )
+        assert result == (
+            "I Squared Capital - oOhmedia - third-party questionnaire.pdf"
+        )
+        assert is_safe_filename(result)
+
+    @pytest.mark.parametrize("char", ["!", "?", "#", "@", "*", "+", "=", ";", "~"])
+    def test_other_disallowed_characters_dropped(self, char):
+        result = sanitize_filename(f"Acme{char}Corp - Questionnaire.pdf")
+        assert result == "AcmeCorp - Questionnaire.pdf"
+        assert is_safe_filename(result)
+
+    def test_leading_disallowed_characters_trimmed(self):
+        """The first character has its own, narrower allow-list."""
+        result = sanitize_filename("!- Questionnaire.pdf")
+        assert result == "Questionnaire.pdf"
+        assert is_safe_filename(result)
+
+    def test_unsanitizable_still_returns_none(self):
+        # Nothing left but the extension: no name to serve it under.
+        assert sanitize_filename("!!!.pdf") is None
 
 
 # ---------------------------------------------------------------------------

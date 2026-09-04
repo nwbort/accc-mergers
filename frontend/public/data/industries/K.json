@@ -9,13 +9,13 @@
       "code": "62",
       "name": "Finance",
       "level": "subdivision",
-      "merger_count": 114
+      "merger_count": 120
     },
     {
       "code": "63",
       "name": "Insurance and Superannuation Funds",
       "level": "subdivision",
-      "merger_count": 18
+      "merger_count": 19
     },
     {
       "code": "64",
@@ -25,6 +25,28 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-10028",
+      "merger_name": "BBFIT - Hanes Australasia",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-02T12:00:00Z",
+      "determination_date": null
+    },
+    {
+      "merger_id": "MN-75054",
+      "merger_name": "I Squared Capital \u2013 oOh!media",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-02T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-35030",
       "merger_name": "MUFG Pension & Market Services - Grow Technology Services",
@@ -147,28 +169,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-65021",
-      "merger_name": "Wesfarmers and Built Group - Built Living Joint Venture",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-08-06T12:00:00Z",
-      "determination_date": null
-    },
-    {
-      "merger_id": "MN-75035",
-      "merger_name": "Johns Lyng Group \u2013 C&M Build Group",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-08-05T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-15030",
       "merger_name": "KARMO/SIMPLR",
       "is_waiver": false,
@@ -189,6 +189,72 @@
       "phase": "Phase 2",
       "notification_date": "2026-03-03T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-75035",
+      "merger_name": "Johns Lyng Group \u2013 C&M Build Group",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-05T12:00:00Z",
+      "determination_date": "2026-09-03T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-05047",
+      "merger_name": "Redwood Services Group \u2013 Concept Data and Voice Select",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-07T12:00:00Z",
+      "determination_date": "2026-09-03T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-35043",
+      "merger_name": "Influence Media Partners \u2013 assets from Anthem Entertainment",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-14T12:00:00Z",
+      "determination_date": "2026-09-03T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-70034",
+      "merger_name": "Vista \u2013 Quantios",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-12T12:00:00Z",
+      "determination_date": "2026-09-03T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-85046",
+      "merger_name": "Morgan Stanley \u2013 Amber",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-18T12:00:00Z",
+      "determination_date": "2026-09-03T12:00:00Z"
+    },
+    {
+      "merger_id": "MN-65021",
+      "merger_name": "Wesfarmers and Built Group - Built Living Joint Venture",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-06T12:00:00Z",
+      "determination_date": "2026-09-02T12:00:00Z"
     },
     {
       "merger_id": "WA-30034",
@@ -1852,23 +1918,23 @@
       "determination_date": null
     }
   ],
-  "count": 166,
-  "phase_1_count": 41,
+  "count": 172,
+  "phase_1_count": 43,
   "phase_2_count": 2,
-  "waiver_count": 123,
+  "waiver_count": 127,
   "active_count": 15,
   "phase_duration": {
     "average_days": 28.0,
     "median_days": 25,
-    "average_business_days": 19.06896551724138,
+    "average_business_days": 19.129032258064516,
     "median_business_days": 16,
-    "completed_count": 29
+    "completed_count": 31
   },
   "waiver_duration": {
-    "average_days": 20.040650406504064,
-    "median_days": 19,
-    "average_business_days": 13.59349593495935,
+    "average_days": 20.078740157480315,
+    "median_days": 20,
+    "average_business_days": 13.645669291338583,
     "median_business_days": 13,
-    "completed_count": 123
+    "completed_count": 127
   }
 }

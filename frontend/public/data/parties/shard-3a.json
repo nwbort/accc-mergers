@@ -130,6 +130,41 @@
         "completed_count": 1
       }
     },
+    "freehold-interest-in-158-162-homestead-road-orchard-hills-nsw": {
+      "id": "freehold-interest-in-158-162-homestead-road-orchard-hills-nsw",
+      "canonical_name": "Freehold interest in 158-162 Homestead Road, Orchard Hills, NSW.",
+      "members": [
+        {
+          "name": "Freehold interest in 158-162 Homestead Road, Orchard Hills, NSW.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-40034",
+            "merger_name": "Woolworths - supermarket site in Homestead Rd, Orchard Hills, NSW",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-03T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "hawkesbury-city-council": {
       "id": "hawkesbury-city-council",
       "canonical_name": "Hawkesbury City Council",

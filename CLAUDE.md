@@ -428,7 +428,7 @@ prunes the old names), but make it a deliberate choice.
 | `detect-duplicates.yml` | Manual | Detect duplicate merger entries, open a fix PR. **No longer scheduled** — this now runs inside `pipeline.yml` on every run; the standalone workflow is kept for manual re-runs |
 | `detect-related-mergers.yml` | Manual | Suggest waiver↔notification merger links, open a PR. **No longer scheduled** — runs inside `pipeline.yml`; kept for manual re-runs |
 | `detect-related-parties.yml` | Manual | Suggest same-entity party groupings, open a PR. **No longer scheduled** — runs inside `pipeline.yml`; kept for manual re-runs |
-| `fix-missing-notification-dates.yml` | Daily (3:00 AM UTC), manual | Auto-fix missing notification dates, open a PR |
+| `fix-missing-notification-dates.yml` | Daily (3:00 AM UTC), manual | Auto-fix missing notification dates, open a PR (via the shared `detection-pr` action) |
 | `update-sitemap.yml` | Daily (8 AM Sydney time), manual | Regenerate `sitemap.xml` |
 | `weekly-digest.yml` | Weekly (Sunday, Sydney time), manual | Generate `digest.json` |
 | `send-weekly-email.yml` | Manual (schedule currently disabled) | Send the weekly digest email via the Cloudflare Worker |
@@ -436,3 +436,21 @@ prunes the old names), but make it a deliberate choice.
 | `frontend-test.yml` | Pull requests touching `frontend/**`, `functions/**` or `fixtures/*.json`, manual | Run the frontend test suite |
 | `check-deploy-assets.yml` | Push touching `data/raw/matters/**`, `frontend/public/**` or the check itself, manual | Guards both Cloudflare Pages limits that fail silently: opens a tracking issue for any asset over the 25 MiB per-file limit, and for the deployment approaching the 20,000-**file** cap (reports at 80%, fails the run once over). See `scripts/check_deploy_assets.py` |
 | `workers-test.yml` | Manual | For each directory under `workers/`: `npm ci`, `npm test --if-present`, then `npm run deploy:dry` to bundle the Worker and validate its `wrangler.toml`. Discovers Workers by glob, so a new one is covered automatically |
+
+### Composite actions (`.github/actions/`)
+
+- `detection-pr/` — one detector's whole lifecycle: branch off the base sha,
+  run it, force-push its well-known fix branch and open/refresh/auto-close the
+  review PR. Used by the three detectors inside `pipeline.yml` and by
+  `fix-missing-notification-dates.yml`.
+- `ntfy/` — publish a push notification to an [ntfy](https://ntfy.sh) topic.
+
+### Push notifications
+
+The workflows that open something for review push an ntfy notification to a
+phone, so a candidate related-merger or related-party PR isn't lost in the
+GitHub email stream. Configured entirely by a `NTFY_TOPIC` repo secret; without
+it every notification is skipped and nothing else changes. `detection-pr`
+fingerprints the suggested lines and stores the hash in the PR body so a
+re-detection of the same unmerged candidates doesn't re-notify on every
+pipeline run. See [`docs/notifications.md`](docs/notifications.md).

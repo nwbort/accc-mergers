@@ -667,6 +667,9 @@ jobs:
           close-comment: >-
             All duplicate events resolved as of {date}. Closing automatically.
           github-token: ${{ github.token }}
+          ntfy-topic: ${{ secrets.NTFY_TOPIC }}
+          ntfy-token: ${{ secrets.NTFY_TOKEN }}
+          ntfy-server: ${{ vars.NTFY_SERVER || 'https://ntfy.sh' }}
 
       # -- Related mergers → fix/related-mergers --
 
@@ -691,6 +694,9 @@ jobs:
             All detected related-merger pairs have been recorded as of {date}.
             Closing automatically.
           github-token: ${{ github.token }}
+          ntfy-topic: ${{ secrets.NTFY_TOPIC }}
+          ntfy-token: ${{ secrets.NTFY_TOKEN }}
+          ntfy-server: ${{ vars.NTFY_SERVER || 'https://ntfy.sh' }}
 
       # An exact (100%) name match on acquirer, target, and merger name for a
       # refiled waiver leaves essentially no room for a false positive (see
@@ -700,6 +706,7 @@ jobs:
       # are conservatively left for manual review in their entirety, since a
       # PR merge can't be split pair-by-pair.
       - name: Auto-merge exact-match waiver-refile PR
+        id: automerge
         if: steps.relm.outputs.found == 'true' && steps.relm.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
@@ -724,6 +731,26 @@ jobs:
             '{"title": $title, "body": $body, "labels": ["needs-verification"]}' | \
           gh api "repos/$GITHUB_REPOSITORY/issues" --method POST --input -
           echo "Merged PR #$PR_NUMBER automatically and opened a verification issue"
+          echo "merged=true" >> "$GITHUB_OUTPUT"
+
+      # This one merged itself into main without review, so it is the detection
+      # outcome most worth interrupting for — hence priority 4 rather than the
+      # default the review PRs get.
+      - name: Notify about the auto-merged waiver refile
+        if: steps.automerge.outputs.merged == 'true'
+        uses: ./.github/actions/ntfy
+        with:
+          topic: ${{ secrets.NTFY_TOPIC }}
+          token: ${{ secrets.NTFY_TOKEN }}
+          server: ${{ vars.NTFY_SERVER || 'https://ntfy.sh' }}
+          title: Waiver refile auto-merged
+          message: >-
+            PR #${{ steps.relm.outputs.pr-number }} was an exact name match and
+            has been merged into main. A verification issue is open for a
+            sanity check.
+          tags: robot,white_check_mark
+          priority: '4'
+          click: ${{ github.server_url }}/${{ github.repository }}/issues?q=is%3Aopen+label%3Aneeds-verification
 
       # -- Related parties → fix/related-parties --
 
@@ -745,3 +772,6 @@ jobs:
             All detected related-party groups have been recorded as of {date}.
             Closing automatically.
           github-token: ${{ github.token }}
+          ntfy-topic: ${{ secrets.NTFY_TOPIC }}
+          ntfy-token: ${{ secrets.NTFY_TOKEN }}
+          ntfy-server: ${{ vars.NTFY_SERVER || 'https://ntfy.sh' }}

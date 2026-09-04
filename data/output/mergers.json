@@ -2818,7 +2818,7 @@
       "determination_publication_date": "2026-07-01T12:00:00Z",
       "accc_determination": "Not approved",
       "accc_determination_raw": "ACCC determinationNot approved",
-      "page_modified_datetime": "2026-07-01T18:32:20+10:00",
+      "page_modified_datetime": "2026-09-03T16:56:44+10:00",
       "consultation_response_due_date": "2026-02-13T12:00:00Z",
       "acquirers": [
         {
@@ -2861,7 +2861,7 @@
           "name": "Non-Residential Property Operators"
         }
       ],
-      "merger_description": "Coles Group Limited (Coles), via its subsidiary Coles Supermarkets Australia Pty Ltd, has signed a Letter of Offer to facilitate Coles acquiring a leasehold interest in a new neighbourhood centre at Lots 95-106 Great Western Highway, Somerville, Kalgoorlie (the **Property**).\n\nColes will operate a large format supermarket on the Property, with a saleable floor area of approximately 2,800 square metres, and a Liquorland store. The Property is currently vacant.\n\nThe lessor, M Holdings 4 Pty Ltd, is an Australia private company specialising in residential and commercial property sales, management and development in Western Australia.\n\nColes is an Australian public company (ASX:COL) that primarily operates:\n\n* supermarkets nationwide through its subsidiary, Coles Supermarkets Australia Pty Ltd; and\n* retail liquor stores nationwide, trading under the Liquorland, First Choice Liquor Market (soon to be re-branded as Liquorland Warehouse) and Vintage Cellars (soon to be rebranded Liquorland Cellars) brands.\n\nColes also has a property development arm, Coles Group Property Developments Ltd, that buys land and construct shopping centres, standalone supermarkets and / or liquor outlets and then sells these completed sites to third party buyers.",
+      "merger_description": "Coles Group Limited (Coles), via its subsidiary Coles Supermarkets Australia Pty Ltd, has signed a Letter of Offer to facilitate Coles acquiring a leasehold interest in a new neighbourhood centre at Lots 95-106 Great Western Highway, Somerville, Kalgoorlie (the **Property**).\n\nColes will operate a large format supermarket on the Property, with a saleable floor area of approximately 2,800 square metres, and a Liquorland store. The Property is currently vacant.\n\nThe lessor, M Holdings 4 Pty Ltd, is an Australia private company specialising in residential and commercial property sales, management and development in Western Australia.\n\nColes is an Australian public company (ASX:COL) that primarily operates:\n\n* supermarkets nationwide through its subsidiary, Coles Supermarkets Australia Pty Ltd; and\n* retail liquor stores nationwide, trading under the Liquorland, First Choice Liquor Market (soon to be re-branded as Liquorland Warehouse) and Vintage Cellars (soon to be rebranded Liquorland Cellars) brands.\n\nColes also has a property development arm, Coles Group Property Developments Ltd, that buys land and construct shopping centres, standalone supermarkets and / or liquor outlets and then sells these completed sites to third party buyers.\n\n*The Statement of Reasons was updated on 3 September**2026 to correct a formatting error that arose in creating a public version of the Statement of Reasons, in which confidential information was redacted.*",
       "events": [
         {
           "date": "2025-11-28T12:00:00Z",
@@ -2897,9 +2897,9 @@
         },
         {
           "date": "2026-06-30T12:00:00Z",
-          "title": "Phase 2 determination - Statement of reasons",
+          "title": "Phase 2 Determination - Statement of Reasons",
           "display_title": "Phase 2 determination - Statement of reasons",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Coles%20Kalgoorlie%20-%20PUBLIC%20VERSION%20-%20FINAL%20-%20Phase%202%20-%20Statement%20of%20Reasons%20-%2030%20June%202026.pdf",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Coles%20Kalgoorlie%20-%20PUBLIC%20VERSION%20%20-%20Statement%20of%20Reasons%20-%2030%20June%202026%20-%20corrected%20AR%20Version%20-%203%20September%202026.pdf",
           "determination_commission_division": null,
           "determination_table_content": [
             {
@@ -2907,12 +2907,12 @@
               "details": "Combined Coles\nCombined Coles"
             }
           ],
-          "url_gh": "/mergers/MN-01068/Coles Kalgoorlie - PUBLIC VERSION - FINAL - Phase 2 - Statement of Reasons - 30 June 2026.pdf",
+          "url_gh": "/mergers/MN-01068/Coles Kalgoorlie - PUBLIC VERSION - Statement of Reasons - 30 June 2026 - corrected AR Version - 3 September 2026.pdf",
           "phase": "Phase 2"
         },
         {
           "date": "2026-06-30T12:00:00Z",
-          "title": "Phase 2 determination - Summary of reasons",
+          "title": "Phase 2 Determination - Summary of Reasons",
           "display_title": "Phase 2 determination - Summary of reasons",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Coles%20Kalgoorlie%20-%20FINAL%20-%20Phase%202%20-%20Determination%20-%20Summary%20of%20Reasons%20-%20AR%20version%20-%2030%20June%202026_1.pdf",
           "determination_commission_division": null,
@@ -2922,7 +2922,7 @@
         },
         {
           "date": "2026-06-30T12:00:00Z",
-          "title": "Phase 2 determination",
+          "title": "Phase 2 Determination",
           "display_title": "Phase 2 - detailed assessment determination: Not approved",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Coles%20Kalgoorlie%20-%20FINAL%20-%20Phase%202%20-%20Determination%20-%20AR%20version%20-%2030%20June%202026_0.pdf",
           "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
@@ -9956,15 +9956,15 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 19,
-        "min_days": null,
+        "estimated_days": 16,
+        "min_days": 12,
         "max_days": 26,
-        "id_issued_estimated": "2026-07-31",
-        "id_issued_before": null,
+        "id_issued_estimated": "2026-08-03",
+        "id_issued_before": "2026-08-07",
         "id_issued_after": "2026-07-24",
-        "min_days_witness": null,
+        "min_days_witness": "WA-05047",
         "max_days_witness": "WA-05045",
-        "basis": "upper-bound-only",
+        "basis": "bracketed",
         "method_version": 1
       }
     },
@@ -12710,6 +12710,179 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/bbfit-hanes-australasia",
+      "merger_name": "BBFIT - Hanes Australasia",
+      "status": "Under assessment",
+      "merger_id": "MN-10028",
+      "effective_notification_datetime": "2026-09-02T12:00:00Z",
+      "original_notification_datetime": "2026-09-02T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-10-15T12:00:00Z",
+      "page_modified_datetime": "2026-09-03T15:52:03+10:00",
+      "consultation_response_due_date": "2026-09-10T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "BBFIT Investments Pte Ltd",
+          "identifier_type": null,
+          "identifier": "048693",
+          "party_page": {
+            "id": "bbfit-investments-pte-ltd",
+            "name": "BBFIT Investments Pte Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "HBI HOLDINGS AUSTRALASIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "52 612 185 476",
+          "party_page": {
+            "id": "hbi-holdings-australasia-pty-ltd",
+            "name": "Hbi Holdings Australasia Pty Ltd"
+          }
+        },
+        {
+          "name": "HBI Holdings Switzerland GmbH",
+          "identifier_type": null,
+          "identifier": "CHE351.152.805",
+          "party_page": {
+            "id": "hbi-holdings-switzerland-gmbh",
+            "name": "HBI Holdings Switzerland GmbH"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "RRI Family Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "665 458 668",
+          "party_page": {
+            "id": "rri-family-pty-ltd",
+            "name": "RRI Family Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3711",
+          "name": "Textile Product Wholesaling"
+        },
+        {
+          "code": "3712",
+          "name": "Clothing and Footwear Wholesaling"
+        },
+        {
+          "code": "4214",
+          "name": "Manchester and Other Textile Goods Retailing"
+        },
+        {
+          "code": "4251",
+          "name": "Clothing Retailing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "merger_description": "BBFIT Investments Pte Ltd (**BBFIT**) proposes to acquire the entire issued share capital of HBI Holdings Australasia Pty Ltd (**Hanes Australasia**) (the **Acquisition**).\n\nBBFIT is a private limited company incorporated in Singapore. The company's principal activities include investing and fund management, and its investment portfolio spans the consumer retail, property and technology sectors. BBFIT's controlled portfolio companies include Best & Less and L\u00e9ays.\n\n* Best & Less is a value apparel retailer which supplies clothing for men, women and children, baby clothing, sleepwear, underwear, hosiery, fashion accessories, and lifestyle products.\n* L\u00e9ays supplies lingerie, bras, underwear, shapewear and sleepwear.\n\nHanes Australasia is the Australian parent entity of the Hanes Australasia group companies, the principal activity of which is the manufacturing, wholesaling, and retailing of consumer products in apparel and homeware markets. Hanes Australasia's brands include Bonds, Bras N Things and Berlei.\n\n* Bonds supplies men's, women's, and children's clothing, underwear, bras, socks, hosiery, babywear and outerwear.\n* Bras N Things supplies bras, underwear/lingerie, sleepwear, shapewear and swimwear.\n* Berlei supplies bras, hosiery, underwear, shapewear, camisoles and singlets.",
+      "events": [
+        {
+          "date": "2026-09-03T12:00:00Z",
+          "title": "Phase 1 consultation",
+          "display_title": "Phase 1 consultation",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/BBFIT%20-%20Hanes%20Australasia%20-%20Third%20Party%20Questionnaire.docx",
+          "url_gh": "/mergers/MN-10028/BBFIT - Hanes Australasia - Third Party Questionnaire.pdf",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-09-02T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-05008",
+          "merger_name": "HongShan Capital Group and Temasek \u2013 Golden Goose Group",
+          "acquirers": [
+            "Rosa Investments Pte. Ltd.",
+            "GG12 S.p.A."
+          ],
+          "targets": [
+            "Permira VII Investment Platform Limited",
+            "Golden Goose Group S.p.A."
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-90024",
+          "merger_name": "Petalite \u2013 Envu",
+          "acquirers": [
+            "Petalite Investment Pte. Ltd"
+          ],
+          "targets": [
+            "Cinven Discovery Holdings Limited Partnership"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-80009",
+          "merger_name": "Mizuho \u2013 Avendus",
+          "acquirers": [
+            "Mizuho Securities Co., Ltd."
+          ],
+          "targets": [
+            "Redpoint Investments Pte Ltd",
+            "Avendus Capital Private Limited"
+          ],
+          "accc_determination": "Approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 17,
+        "range_business_days": [
+          16,
+          19
+        ],
+        "basis": "industry",
+        "anzsic_level": "class",
+        "anzsic_codes": [
+          "3711",
+          "3712",
+          "4214",
+          "4251",
+          "6240"
+        ],
+        "sample_size": 17,
+        "estimated_at": "2026-09-03",
+        "method_version": 1
+      },
+      "pre_notification": {
+        "estimated_days": 34,
+        "min_days": 12,
+        "max_days": 62,
+        "id_issued_estimated": "2026-07-30",
+        "id_issued_before": "2026-08-21",
+        "id_issued_after": "2026-07-02",
+        "min_days_witness": "MN-10030",
+        "max_days_witness": "WA-10024",
+        "basis": "bracketed",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/novonesis-%E2%80%93-microbiogen",
       "merger_name": "Novonesis \u2013 Microbiogen",
       "status": "Under assessment",
@@ -12860,10 +13033,10 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 25,
+        "estimated_days": 22,
         "min_days": null,
         "max_days": 50,
-        "id_issued_estimated": "2026-07-27",
+        "id_issued_estimated": "2026-07-30",
         "id_issued_before": null,
         "id_issued_after": "2026-07-02",
         "min_days_witness": null,
@@ -19107,6 +19280,156 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/velocity-vehicle-group-%E2%80%93-fuso-assets-of-daimler-truck-australia-pacific",
+      "merger_name": "Velocity Vehicle Group \u2013 Fuso assets of Daimler Truck Australia Pacific",
+      "status": "Under assessment",
+      "merger_id": "MN-25035",
+      "effective_notification_datetime": "2026-09-03T12:00:00Z",
+      "original_notification_datetime": "2026-09-03T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-10-16T12:00:00Z",
+      "page_modified_datetime": "2026-09-03T17:28:24+10:00",
+      "consultation_response_due_date": "2026-09-10T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Fuso Australia Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "16 697 595 841",
+          "party_page": {
+            "id": "fuso-australia-pty-ltd",
+            "name": "Fuso Australia Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Daimler Truck Australia Pacific Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "86 618 413 282",
+          "party_page": {
+            "id": "daimler-truck-australia-pacific-pty-ltd",
+            "name": "Daimler Truck Australia Pacific Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3502",
+          "name": "Commercial Vehicle Wholesaling"
+        },
+        {
+          "code": "3504",
+          "name": "Motor Vehicle New Parts Wholesaling"
+        },
+        {
+          "code": "3913",
+          "name": "Trailer and Other Motor Vehicle Retailing"
+        },
+        {
+          "code": "3921",
+          "name": "Motor Vehicle Parts Retailing"
+        },
+        {
+          "code": "9419",
+          "name": "Other Automotive Repair and Maintenance"
+        }
+      ],
+      "merger_description": "Velocity Vehicle Group LLC (**VVG**), through its subsidiary Fuso Australia Pty Ltd, proposes to acquire certain business assets related to the importation and wholesale distribution of \u2018Fuso\u2019 branded trucks, buses and parts currently owned by Daimler Truck Australia Pacific Pty Ltd (**Daiml****er**) including material contracts, vehicles, parts, and servicing rights (the **Acquisition**).\n\nVVG is a supplier of commercial vehicles and parts to end customers and provides related services, including vehicle servicing and finance options. Through its Australian subsidiaries, VVG operates 19 dealerships across metropolitan and regional Australia for the Daimler brands, Mercedes-Benz and Freightliner, as well as Fuso.\n\nDaimler is part of the worldwide Daimler Truck Group, with its ultimate parent company, Daimler Truck Holding AG, based in Germany. Daimler is the importer and wholesale distributor of Mercedes-Benz, Freightliner and Fuso branded commercial vehicles and parts in Australia, which are retailed through its authorised dealers in Australia.\n\nThe Acquisition relates only to the Fuso brand.",
+      "events": [
+        {
+          "date": "2026-09-03T12:00:00Z",
+          "title": "Questionnaire - Velocity Vehicle Group \u2013 Fuso assets of Daimler Truck Australia Pacific",
+          "display_title": "Questionnaire - Velocity Vehicle Group \u2013 Fuso assets of Daimler Truck Australia Pacific",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Questionnaire%20-%20Velocity%20Vehicle%20Group%20%E2%80%93%20Fuso%20assets%20of%20Daimler%20Truck%20Australia%20Pacific.docx",
+          "url_gh": "/mergers/MN-25035/Questionnaire - Velocity Vehicle Group \u2013 Fuso assets of Daimler Truck Australia Pacific.pdf",
+          "phase": null
+        },
+        {
+          "date": "2026-09-03T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-20018",
+          "merger_name": "Uber - Blacklane",
+          "acquirers": [
+            "Uber Technologies, Inc"
+          ],
+          "targets": [
+            "Blacklane GmbH"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-40010",
+          "merger_name": "Permira and Warburg Pincus - Clearwater Analytics",
+          "acquirers": [
+            "GT Silver BidCo, Inc."
+          ],
+          "targets": [
+            "Clearwater Analytics Holdings, Inc."
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-35011",
+          "merger_name": "Austral Resources Australia \u2013 Lady Loretta mine",
+          "acquirers": [
+            "AUSTRAL RESOURCES AUSTRALIA LIMITED"
+          ],
+          "targets": [
+            "NORANDA PACIFIC PTY LTD",
+            "Noranda Pacific No. 2 Pty Ltd"
+          ],
+          "accc_determination": "Approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 21,
+        "range_business_days": [
+          16,
+          31
+        ],
+        "basis": "industry",
+        "anzsic_level": "subdivision",
+        "anzsic_codes": [
+          "35",
+          "39",
+          "94"
+        ],
+        "sample_size": 10,
+        "estimated_at": "2026-09-03",
+        "method_version": 1
+      },
+      "pre_notification": {
+        "estimated_days": 64,
+        "min_days": 62,
+        "max_days": 85,
+        "id_issued_estimated": "2026-07-01",
+        "id_issued_before": "2026-07-03",
+        "id_issued_after": "2026-06-10",
+        "min_days_witness": "WA-25039",
+        "max_days_witness": "WA-25033",
+        "basis": "bracketed",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/sanad-services-and-tikehau-capital-%E2%80%93-revima",
       "merger_name": "Sanad Services and Tikehau Capital \u2013 Revima",
       "status": "Assessment completed",
@@ -22401,6 +22724,7 @@
           "title": "Questionnaire - Eli Lilly - AtaiBeckley",
           "display_title": "Questionnaire - Eli Lilly - AtaiBeckley",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Eli%20Lilly%20and%20Company%20-%20AtaiBeckley%20Inc..docx",
+          "url_gh": "/mergers/MN-30030/Questionnaire - Eli Lilly and Company - AtaiBeckley Inc.pdf",
           "phase": null
         },
         {
@@ -22454,6 +22778,7 @@
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
+      "has_questionnaire": true,
       "similar_mergers": [
         {
           "merger_id": "MN-20013",
@@ -25019,15 +25344,15 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 29,
-        "min_days": null,
+        "estimated_days": 27,
+        "min_days": 12,
         "max_days": 36,
-        "id_issued_estimated": "2026-07-28",
-        "id_issued_before": null,
+        "id_issued_estimated": "2026-07-30",
+        "id_issued_before": "2026-08-14",
         "id_issued_after": "2026-07-21",
-        "min_days_witness": null,
+        "min_days_witness": "WA-35043",
         "max_days_witness": "WA-35037",
-        "basis": "upper-bound-only",
+        "basis": "bracketed",
         "method_version": 1
       }
     },
@@ -27984,6 +28309,157 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/woolworths-supermarket-site-in-homestead-rd-orchard-hills-nsw",
+      "merger_name": "Woolworths - supermarket site in Homestead Rd, Orchard Hills, NSW",
+      "status": "Under assessment",
+      "merger_id": "MN-40034",
+      "effective_notification_datetime": "2026-09-03T12:00:00Z",
+      "original_notification_datetime": "2026-09-03T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-10-16T12:00:00Z",
+      "page_modified_datetime": "2026-09-04T12:52:49+10:00",
+      "consultation_response_due_date": "2026-09-11T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "WOOLWORTHS GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "88 000 014 675",
+          "party_page": {
+            "id": "woolworths-group-limited",
+            "name": "Woolworths Group Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Name of landholders withheld under section 5-3 of the Competition and Consumer (Notification of Acquisitions) Determination 2025 (Cth).",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "name-of-landholders-withheld-under-section-5-3-of-the-competition-and-consumer-n",
+            "name": "Name of landholders withheld under section 5-3 of the Competition and Consumer (Notification of Acquisitions) Determination 2025 (Cth)."
+          }
+        },
+        {
+          "name": "Freehold interest in 158-162 Homestead Road, Orchard Hills, NSW.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "freehold-interest-in-158-162-homestead-road-orchard-hills-nsw",
+            "name": "Freehold interest in 158-162 Homestead Road, Orchard Hills, NSW."
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "4110",
+          "name": "Supermarket and Grocery Stores"
+        },
+        {
+          "code": "6711",
+          "name": "Residential Property Operators"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        }
+      ],
+      "merger_description": "Woolworths Group Limited (**Woolworths**) is an Australian public company (**ASX: WOW**) that primarily:\n\n* operates supermarkets nationwide as Woolworths or Woolworths Metro, and\n* purchases or leases of land through its wholly owned subsidiary, Fabcot Pty Ltd (**Fabcot**).\n\nThe vendors of the site are private individuals. [Names of the landholders are withheld under section 5-3 of the *Competition and Consumer (Notification of Acquisitions) Determination 2025 (Cth)*].\n\nWoolworths, via its subsidiary, Fabcot, proposes to acquire a freehold interest in 158-162 Homestead Road, Orchard Hills, NSW (the\u00a0**Acquisition**). The target site is located in a residential area.\n\nWoolworths proposes to construct a new neighbourhood centre which would include a Woolworths supermarket which is anticipated to open in July 2033.",
+      "events": [
+        {
+          "date": "2026-09-04T12:00:00Z",
+          "title": "Questionnaire",
+          "display_title": "Questionnaire",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Woolworths%20%E2%80%93%20freehold%20interest%20in%20Homestead%20Rd%2C%20Orchard%20Hills%2C%20NSW%20%E2%80%93%20Questionnaire_0.pdf",
+          "url_gh": "/mergers/MN-40034/Woolworths \u2013 freehold interest in Homestead Rd, Orchard Hills, NSW \u2013 Questionnaire_0.pdf",
+          "phase": null
+        },
+        {
+          "date": "2026-09-03T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-40020",
+          "merger_name": "Premier Fresh \u2013 Domenico Group",
+          "acquirers": [
+            "PREMIER FRESH AUSTRALIA PTY LTD"
+          ],
+          "targets": [
+            "DOUBLE D PRODUCE PTY LTD",
+            "De Domenico Carmelo"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-30035",
+          "merger_name": "Coles \u2013 supermarket site in Byron Bay, NSW",
+          "acquirers": [
+            "COLES SUPERMARKETS AUSTRALIA PTY LTD"
+          ],
+          "targets": [
+            "JD 156 JONSON STREET PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-75011",
+          "merger_name": "Autosports Group - Solitaire Automotive Group",
+          "acquirers": [
+            "AUTOSPORTS GROUP LIMITED"
+          ],
+          "targets": [
+            "David Smoker",
+            "Russleigh Pty Ltd"
+          ],
+          "accc_determination": "Approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 19,
+        "range_business_days": [
+          16,
+          22
+        ],
+        "basis": "industry",
+        "anzsic_level": "class",
+        "anzsic_codes": [
+          "4110",
+          "6711",
+          "6712"
+        ],
+        "sample_size": 15,
+        "estimated_at": "2026-09-04",
+        "method_version": 1
+      },
+      "pre_notification": {
+        "estimated_days": 40,
+        "min_days": 35,
+        "max_days": 52,
+        "id_issued_estimated": "2026-07-25",
+        "id_issued_before": "2026-07-30",
+        "id_issued_after": "2026-07-13",
+        "min_days_witness": "WA-40035",
+        "max_days_witness": "WA-40033",
+        "basis": "bracketed",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/bloomberg-canoe-intelligence",
       "merger_name": "Bloomberg - Canoe Intelligence",
       "status": "Under assessment",
@@ -28126,15 +28602,15 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 20,
-        "min_days": null,
+        "estimated_days": 6,
+        "min_days": 1,
         "max_days": 27,
-        "id_issued_estimated": "2026-07-31",
-        "id_issued_before": null,
+        "id_issued_estimated": "2026-08-14",
+        "id_issued_before": "2026-08-19",
         "id_issued_after": "2026-07-24",
-        "min_days_witness": null,
+        "min_days_witness": "WA-40040",
         "max_days_witness": "WA-40036",
-        "basis": "upper-bound-only",
+        "basis": "bracketed",
         "method_version": 1
       }
     },
@@ -38264,13 +38740,16 @@
     {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/wesfarmers-and-built-group-built-living-joint-venture",
       "merger_name": "Wesfarmers and Built Group - Built Living Joint Venture",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-65021",
       "effective_notification_datetime": "2026-08-06T12:00:00Z",
       "original_notification_datetime": "2026-08-06T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-09-17T12:00:00Z",
-      "page_modified_datetime": "2026-08-14T09:00:10+10:00",
+      "determination_publication_date": "2026-09-02T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-09-02T11:48:48+10:00",
       "consultation_response_due_date": "2026-08-14T12:00:00Z",
       "acquirers": [
         {
@@ -38405,13 +38884,48 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-09-02T12:00:00Z",
+          "title": "Wesfarmers and Built Group - Built Living Joint Venture - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Wesfarmers%20and%20Built%20Group%20-%20Built%20Living%20Joint%20Venture%20-%20Phase%201%20determination.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Wesfarmers Limited (Wesfarmers) and Built Group Holdings Limited\n(Built Group) propose to establish an incorporated joint venture\ncalled Built Living Holdings Pty Limited (Built Living) (the\nAcquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "Built Living will establish advanced manufacturing facilities for the\ndevelopment of prefabricated residential apartment buildings on a\nnational basis.\nWesfarmers is an ASX-listed diversified company with a broad\nportfolio spanning retail (including home improvement, general\nmerchandise, office supplies and health), industrials and chemicals,\nresources, and data\u2011enabled businesses. Wesfarmers\u2019 key brands\ninclude Kmart, Target, Officeworks, Wesfarmers Health (which\noperates the Priceline brand), and Bunnings Warehouse.\nBuilt Group is a privately held Australian construction and\ndevelopment group headquartered in Sydney, operating primarily in\nthe commercial and industrial building construction sector. It\nprovides end\u2011to\u2011end contracting services including construction,\npartnering with public and private clients to deliver large\u2011scale\nbuilding and infrastructure projects across sectors such as\ncommercial, residential, health, education and government."
+            },
+            {
+              "item": "Overlap and relationship\nbetween the parties",
+              "details": "There are no material horizontal overlaps between Wesfarmers and\nBuilt Group.\nFollowing the Acquisition, Wesfarmers and Built Group anticipate\nentering into the following vertical relationships with Built Living:\n\u2022 Bunnings Warehouse will be the exclusive supplier of joinery, fit-\nout and landscaping inputs to Built Living, including bathroom,\nkitchen, laundry and bedroom products, flooring, smart home\nproducts, lighting and plants.\n\u2022 Built Living will supply surplus prefabricated residential building\nproducts to Built Group for use in its building projects."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and information from third partes.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 There are no material horizontal overlaps between Wesfarmers\nand Built Group.\n\u2022 Bunnings Warehouse would be unlikely to have the ability to\nforeclose rival suppliers of residential construction inputs by\nfully or partly restricting their supply of competing inputs to Built\nLiving, given that there are multiple alternative acquirers of those\ninputs.\n\u2022 Built Group would be unlikely to have the ability to foreclose rival\nsuppliers of residential construction services by fully or partly\nrestricting their access to prefabricated residential construction\nproducts from Built Living, given that rivals would be able to\ncontinue competing effectively using on-site construction\nmethods and existing residential construction inputs."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-65021/Wesfarmers and Built Group - Built Living Joint Venture - Phase 1 determination.pdf",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
       "has_conditions": false,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-09-02T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -39058,7 +39572,7 @@
             "Wakeling South Coast Pty Ltd",
             "S A Wakeling Nominees Pty Ltd as trustee for S.A. Wakeling Trust"
           ],
-          "status": "Under assessment"
+          "accc_determination": "Approved"
         },
         {
           "merger_id": "MN-30002",
@@ -44109,13 +44623,16 @@
     {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/johns-lyng-group-%E2%80%93-cm-build-group",
       "merger_name": "Johns Lyng Group \u2013 C&M Build Group",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-75035",
       "effective_notification_datetime": "2026-08-05T12:00:00Z",
       "original_notification_datetime": "2026-08-05T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-09-16T12:00:00Z",
-      "page_modified_datetime": "2026-08-12T17:06:34+10:00",
+      "determination_publication_date": "2026-09-03T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-09-03T15:22:12+10:00",
       "consultation_response_due_date": "2026-08-12T12:00:00Z",
       "acquirers": [
         {
@@ -44162,15 +44679,6 @@
       ],
       "other_parties": [
         {
-          "name": "SHERWOOD TOPCO LTD",
-          "identifier_type": "ABN",
-          "identifier": "54 688 487 103",
-          "party_page": {
-            "id": "sherwood-topco-ltd",
-            "name": "Sherwood Topco Ltd"
-          }
-        },
-        {
           "name": "JOHNS LYNG GROUP LIMITED",
           "identifier_type": "ABN",
           "identifier": "86 620 466 248",
@@ -44181,6 +44689,15 @@
           "party_page": {
             "id": "johns-lyng-group",
             "name": "Johns Lyng Group"
+          }
+        },
+        {
+          "name": "SHERWOOD TOPCO LTD",
+          "identifier_type": "ABN",
+          "identifier": "54 688 487 103",
+          "party_page": {
+            "id": "sherwood-topco-ltd",
+            "name": "Sherwood Topco Ltd"
           }
         }
       ],
@@ -44213,13 +44730,48 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-09-03T12:00:00Z",
+          "title": "Johns Lyng Group - C&M Build Group - Phase 1 Determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Johns%20Lyng%20Group%20-%20C%26M%20Build%20Group%20-%20Phase%201%20Determination.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Johns Lyng Group (Nominee) Pty Ltd as trustee for the Johns Lyng\nUnit Trust, a subsidiary of Johns Lyng Group Limited (Johns Lyng\nGroup), proposes to acquire 60% of the total issued shares in C&M\nCentral Pty Ltd and 60% of the total issued unit capital of C&M\nCentral Unit Trust (collectively, C&M Build Group) (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, Johns Lyng Group, is ultimately majority-owned and\ncontrolled by the private equity firm Pacific Equity Partners (PEP).\nPEP is an Australian-based private markets fund manager\nspecialising in private equity investments across Australia and New\nZealand.\nJohns Lyng Group\u2019s operations in Australia comprise its core\nbusiness of insurance building & restoration services, in addition to\ncommercial building services (such as heating, ventilation and air-\nconditioning, floorcovering, home staging and shopfitting), strata &\nbuilding management services, disaster recovery & management\nservices and home & compliance services.\nThe target, C&M Build Group, is a design, engineering and\nconstruction services provider, operating across Eastern Australia.\nC&M Build Group specialises in the provision of end-to-end\nconstruction services for the insurance, residential and commercial\nsectors, including restoration, construction, disaster management\nand related services."
+            },
+            {
+              "item": "Overlap between the\nParties",
+              "details": "Johns Lyng Group and C&M Build Group overlap in the supply of\ninsurance building and restoration services."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, information from third parties and other\ninformation available to it.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 The merged firm would continue to face competition from\nmultiple providers of insurance building and restoration\nservices."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-75035/Johns Lyng Group - CandM Build Group - Phase 1 Determination.pdf",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
       "has_conditions": false,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-09-03T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -44814,6 +45366,154 @@
         "min_days_witness": "WA-75047",
         "max_days_witness": "WA-75040",
         "basis": "bracketed",
+        "method_version": 1
+      }
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/i-squared-capital-%E2%80%93-oohmedia",
+      "merger_name": "I Squared Capital \u2013 oOh!media",
+      "status": "Under assessment",
+      "merger_id": "MN-75054",
+      "effective_notification_datetime": "2026-09-02T12:00:00Z",
+      "original_notification_datetime": "2026-09-02T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-10-15T12:00:00Z",
+      "page_modified_datetime": "2026-09-03T09:46:54+10:00",
+      "consultation_response_due_date": "2026-09-10T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "OOH BidCo Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "700 817 312",
+          "party_page": {
+            "id": "ooh-bidco-pty-ltd",
+            "name": "OOH BidCo Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "oOh!media Limited",
+          "identifier_type": "ABN",
+          "identifier": "69 602 195 380",
+          "party_page": {
+            "id": "ooh-media-limited",
+            "name": "oOh!media Limited"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "I Squared Capital, LLC",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "i-squared-capital-llc",
+            "name": "I Squared Capital, LLC"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6940",
+          "name": "Advertising Services"
+        }
+      ],
+      "merger_description": "The I\u00a0Squared Capital group (**I\u00a0Squared Capital**), through its wholly owned special purpose vehicle,\u00a0proposes to acquire 100% of the fully paid ordinary shares in the capital of oOh!media Limited (**oOh!media**) by means of a scheme of arrangement (the **Acquisition**).\n\nI\u00a0Squared Capital is a private equity investment firm headquartered in the United States. It is focused primarily on infrastructure investment.\n\noOh!media is listed on the Australian Securities Exchange. oOh!media provides out-of-home advertising services. It supplies advertising space across billboards, airports, retail precincts, rail networks, offices, educational settings and other streetside environments. oOh!media also supplies creative, printing and data analytics services.",
+      "events": [
+        {
+          "date": "2026-09-03T12:00:00Z",
+          "title": "Phase 1 consultation",
+          "display_title": "Phase 1 consultation",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/I%20Squared%20Capital%20-%20oOh%21media%20-%20third-party%20questionnaire.pdf",
+          "url_gh": "/mergers/MN-75054/I Squared Capital - oOhmedia - third-party questionnaire.pdf",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-09-02T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-80018",
+          "merger_name": "SOILCO - Go Grow",
+          "acquirers": [
+            "SOILCO PTY LIMITED"
+          ],
+          "targets": [
+            "GARDEN MEDIUMS PTY LIMITED",
+            "Lumime Pty Ltd"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-45024",
+          "merger_name": "OEConnection - Epyx",
+          "acquirers": [
+            "OEC Bidco Limited"
+          ],
+          "targets": [
+            "Quadrum Investments Group Ltd (trading as \"Epyx\")"
+          ],
+          "status": "Under assessment"
+        },
+        {
+          "merger_id": "MN-20023",
+          "merger_name": "Sony Music - Recognition Music",
+          "acquirers": [
+            "SMG-Three LLC",
+            "Sony Music Publishing (US) LLC"
+          ],
+          "targets": [
+            "Recognition Music Group (Delaware) L.P."
+          ],
+          "accc_determination": "Approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 19,
+        "range_business_days": [
+          16,
+          23
+        ],
+        "basis": "industry",
+        "anzsic_level": "class",
+        "anzsic_codes": [
+          "6240",
+          "6940"
+        ],
+        "sample_size": 20,
+        "estimated_at": "2026-09-02",
+        "method_version": 1
+      },
+      "pre_notification": {
+        "estimated_days": 19,
+        "min_days": null,
+        "max_days": 26,
+        "id_issued_estimated": "2026-08-14",
+        "id_issued_before": null,
+        "id_issued_after": "2026-08-07",
+        "min_days_witness": null,
+        "max_days_witness": "WA-75048",
+        "basis": "upper-bound-only",
         "method_version": 1
       }
     },
@@ -49367,13 +50067,13 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 12,
-        "min_days": 0,
+        "estimated_days": 15,
+        "min_days": 2,
         "max_days": 30,
-        "id_issued_estimated": "2026-08-08",
-        "id_issued_before": "2026-08-20",
+        "id_issued_estimated": "2026-08-05",
+        "id_issued_before": "2026-08-18",
         "id_issued_after": "2026-07-21",
-        "min_days_witness": "MN-85047",
+        "min_days_witness": "WA-85046",
         "max_days_witness": "WA-85041",
         "basis": "bracketed",
         "method_version": 1
@@ -49567,14 +50267,14 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 19,
+        "estimated_days": 9,
         "min_days": null,
-        "max_days": 37,
-        "id_issued_estimated": "2026-08-08",
+        "max_days": 16,
+        "id_issued_estimated": "2026-08-18",
         "id_issued_before": null,
-        "id_issued_after": "2026-07-21",
+        "id_issued_after": "2026-08-11",
         "min_days_witness": null,
-        "max_days_witness": "WA-85041",
+        "max_days_witness": "WA-85046",
         "basis": "upper-bound-only",
         "method_version": 1
       }
@@ -52272,13 +52972,16 @@
     {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/peter-warren-wakeling-automotive-0",
       "merger_name": "Peter Warren - Wakeling Automotive",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-90028",
       "effective_notification_datetime": "2026-07-13T12:00:00Z",
       "original_notification_datetime": "2026-07-13T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-09-04T12:00:00Z",
-      "page_modified_datetime": "2026-08-19T17:17:46+10:00",
+      "determination_publication_date": "2026-09-04T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved with conditions",
+      "page_modified_datetime": "2026-09-04T09:15:56+10:00",
       "consultation_response_due_date": "2026-07-13T12:00:00Z",
       "acquirers": [
         {
@@ -52332,9 +53035,9 @@
           }
         },
         {
-          "name": "Paul Wakeling Motor Group Pty Ltd",
+          "name": "WOLLONGONG CITY MOTORS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "47 119 908 780",
+          "identifier": "22 002 019 598",
           "canonical": {
             "id": "wakeling-motos",
             "name": "Wakeling Motos"
@@ -52358,9 +53061,9 @@
           }
         },
         {
-          "name": "WOLLONGONG CITY MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "22 002 019 598",
+          "name": "Paul Burgess Nominees Pty Ltd as trustee for Paul Burgess Trust",
+          "identifier_type": "ACN",
+          "identifier": "119 875 768",
           "canonical": {
             "id": "wakeling-motos",
             "name": "Wakeling Motos"
@@ -52371,9 +53074,9 @@
           }
         },
         {
-          "name": "Paul Burgess Nominees Pty Ltd as trustee for Paul Burgess Trust",
-          "identifier_type": "ACN",
-          "identifier": "119 875 768",
+          "name": "Paul Wakeling Motor Group Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "47 119 908 780",
           "canonical": {
             "id": "wakeling-motos",
             "name": "Wakeling Motos"
@@ -52428,13 +53131,473 @@
           "title": "Timeline extended by 9 business days \u2013 following remedy offered by parties",
           "display_title": "Timeline extended by 9 business days \u2013 following remedy offered by parties",
           "phase": null
+        },
+        {
+          "date": "2026-09-04T12:00:00Z",
+          "title": "Peter Warren - Wakeling Automotive - Phase 1 determination with conditions",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Peter%20Warren%20-%20Wakeling%20Automotive%20-%20Phase%201%20Determination%20with%20conditions.pdf",
+          "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Peter Warren Automotive Holdings Limited (Peter Warren) proposes\nto acquire:\n\u2022 100% of the shares of Paul Wakeling Motor Group Pty Ltd;\n\u2022 100% of the shares of Wollongong City Motors Pty Ltd; and\n\u2022 the business and trading net assets of Hurrikayne Pty Ltd, relating\nto the Moss Vale Motor Group,\nfrom Wakeling Automotive Group (Wakeling Automotive) (the\nAcquisition), as part of which Peter Warren would acquire 30 new\nand used car dealership sites in New South Wales (NSW)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under sections 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect,\nsubject to conditions.\nThe conditions are:\n1. Peter Warren must divest, or cause the divestiture of, the\nDivestiture Business to a purchaser approved in writing by the\nACCC in accordance with a section 87B undertaking accepted by\nthe ACCC.\n2. Peter Warren must provide the ACCC with an executed\nundertaking under section 87B of the Act in respect of the\ndivestiture of the Divestiture Business, in the form at Attachment\nA of this determination, within five business days of the date of\nthis determination and comply with that undertaking.\n(together, the Conditions).\nThe term Divestiture Business is defined in the section 87B\nundertaking that Peter Warren must give and comply with pursuant\nto the Conditions."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "Peter Warren is an ASX-listed (ASX: PWR) new and used car retailing\nbusiness that owns and operates over 80 automotive dealership\nsites at 25 locations across the east coast of Australia and\nrepresents over 30 original equipment manufacturer (OEM) vehicle\nbrands.1 Peter Warren also supplies OEM spare parts and provides\naftermarket vehicle servicing and collision repair services.\nIn Greater Sydney, Peter Warren\u2019s car dealership banners include\nPeter Warren Automotive, Macarthur Automotive, Sydney South\nAutomotive, Mercedes-Benz North Shore, and Sydney North Shore\nAutomotive. Peter Warren also operates dealership sites in regional\nNSW, Queensland and Victoria.\nWakeling Automotive is a new and used car retailing business that\noperates 30 automotive dealership sites at 8 locations across\ngreater Sydney, Wollongong and the Southern Highlands and\nrepresents 16 OEM vehicle brands. Wakeling Automotive also\nsupplies OEM spare parts and provides aftermarket vehicle\nservicing.\nWakeling Automotive\u2019s car dealership banners are Paul Wakeling\nAutomotive Group, Camden Valley Motors, Shellharbour City Motors,\nWollongong City Motors, Moss Vale Motor Group, and Allan Mackay\nAutos."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "The reasons for the ACCC\u2019s determination are set out in sections 2\nand 3.\nonly include relevant Undertaking Appointment i.e.\nCamden Valley Motors Dealerships\n10 Mill Road and 12-14 Mill Road Dealerships"
+            }
+          ],
+          "determination_statement_of_reasons": [
+            {
+              "type": "paragraph",
+              "number": "2.1",
+              "text": "When making a determination in Phase 1, the Australian Competition and Consumer Commission (ACCC) undertakes a competition assessment and considers whether it is appropriate for an acquisition to be approved or subject to further assessment in Phase 2 in accordance with section 51ABZJ of the Competition and Consumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have regard to the object of the Act and all relevant matters, including the interests of consumers."
+            },
+            {
+              "type": "paragraph",
+              "number": "2.2",
+              "text": "Where the ACCC is satisfied that the acquisition, if put into effect, could, in all the circumstances, have the effect of substantially lessening competition in a market, the ACCC may also consider whether any competition issues can be addressed by one or more conditions."
+            },
+            {
+              "type": "paragraph",
+              "number": "2.3",
+              "text": "For more information about the ACCC\u2019s approach to considering notified acquisitions, see the ACCC\u2019s merger assessment guidelines and interim merger process guidelines."
+            },
+            {
+              "type": "paragraph",
+              "number": "2.4",
+              "text": "In conducting its competition assessment, the ACCC has considered the information and documents that were submitted with the notification form, additional information provided by the parties to the Acquisition, market feedback and publicly available information."
+            },
+            {
+              "type": "paragraph",
+              "number": "2.5",
+              "text": "For the reasons given below, the ACCC has determined that the Acquisition may be put into effect with conditions."
+            },
+            {
+              "type": "heading",
+              "text": "Overlap between the Parties"
+            },
+            {
+              "type": "paragraph",
+              "number": "2.6",
+              "text": "Peter Warren and Wakeling Automotive (the Parties) overlap in the retail supply of:"
+            },
+            {
+              "type": "bullet_list",
+              "items": [
+                "new and used cars",
+                "OEM spare parts, and car servicing and repairs",
+                "vehicle insurance and finance products."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "number": "2.7",
+              "text": "The Parties\u2019 dealership sites overlap on a local basis in the Campbelltown, Narellan, and Smeaton Grange suburbs located in the Macarthur region,2 south-west of Sydney. 2 The Macarthur region includes Campbelltown, Smeaton Grange and Narellan and the immediate surrounding suburbs. Determination | Peter Warren \u2013 Wakeling Automotive (MN - 90028)"
+            },
+            {
+              "type": "paragraph",
+              "number": "2.8",
+              "text": "Within this region, Peter Warren operates 13 dealership sites across 2 locations:"
+            },
+            {
+              "type": "bullet_list",
+              "items": [
+                "7 dealership sites in Campbelltown: Nissan, LDV, MG, Mazda, Ford, Jaguar & Land Rover and Mercedes Benz.",
+                "6 dealership sites in Narellan: Ford, Honda, Omoda Jaecoo, Geely, Kia and Suzuki."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "number": "2.9",
+              "text": "Within this region, Wakeling Automotive operates 12 dealership sites across 3 locations:"
+            },
+            {
+              "type": "bullet_list",
+              "items": [
+                "7 dealership sites in Campbelltown: Hyundai, RAM, Kia, GMSV, Mitsubishi, Isuzu UTE and Volkswagen.",
+                "4 dealership sites in Smeaton Grange: GWM/Haval, Mitsubishi, Hyundai and Isuzu UTE.",
+                "1 dealership site in Narellan: Chery."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "number": "2.10",
+              "text": "In these locations, the Parties overlap in the supply of the Kia brand. Peter Warren also owns a Kia dealership site in Warwick Farm in southern Sydney."
+            },
+            {
+              "type": "paragraph",
+              "number": "2.11",
+              "text": "The Parties provide OEM spare sparts and car servicing and repairs for all of these car dealership sites."
+            },
+            {
+              "type": "heading",
+              "text": "Industry background"
+            },
+            {
+              "type": "paragraph",
+              "number": "2.12",
+              "text": "There are over 3,000 car dealership sites in Australia, comprising large and small dealership chains as well as independent dealerships."
+            },
+            {
+              "type": "paragraph",
+              "number": "2.13",
+              "text": "The new car retailing supply chain generally includes:"
+            },
+            {
+              "type": "bullet_list",
+              "items": [
+                "Upstream car manufacturers, which manufacture vehicles and OEM spare parts overseas.",
+                "Australian-based OEM distributors, which are subsidiaries of car manufacturers, and act as links between the car manufacturer and the Australian authorised dealer network.",
+                "New car authorised dealers, which enter into agreements with OEMs to sell new cars and provide servicing and repairs.",
+                "Independent mechanics or repairers, which repair or service cars."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "number": "2.14",
+              "text": "Although OEMs typically set recommended retail prices (RRPs) for new cars, discounting off the RRP is prevalent in the automotive industry. Dealerships also compete on non-price factors to attract customers, such as customer service, location, stock availability, delivery times, and extras."
+            },
+            {
+              "type": "paragraph",
+              "number": "2.15",
+              "text": "New car dealership sites also typically supply OEM spare parts, servicing and repairs. New cars generally have a warranty period of around 5 years, although this can vary, Determination | Peter Warren \u2013 Wakeling Automotive (MN - 90028) and OEMs often offer free or capped price servicing for a period. Authorised dealership sites carry out servicing and repairs on behalf of OEMs."
+            },
+            {
+              "type": "paragraph",
+              "number": "2.16",
+              "text": "The ACCC\u2019s view is that most new car buyers service their car at an authorised dealership service centre during the warranty period and any free or capped price servicing period. The use of independent repairers for repairs and servicing increases significantly as these periods near expiry. 3. Competition assessment"
+            },
+            {
+              "type": "paragraph",
+              "number": "3.1",
+              "text": "The ACCC has considered the effects of the Acquisition by comparing the likely future state of competition if the Acquisition proceeds against the continuation of the current state of competition (being the likely future state of competition if the Acquisition does not proceed)."
+            },
+            {
+              "type": "heading",
+              "text": "Relevant areas of competition"
+            },
+            {
+              "type": "paragraph",
+              "number": "3.2",
+              "text": "The ACCC considers the relevant areas of competitive overlap for the purposes of its assessment are the supply of:"
+            },
+            {
+              "type": "bullet_list",
+              "items": [
+                "new cars to retail customers in the Macarthur region and surrounding areas",
+                "servicing and repairs of Kia cars in the Macarthur region and surrounding areas."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "number": "3.3",
+              "text": "While the Parties also overlap in the retail supply of OEM spare parts, used cars and vehicle insurance and finance products, the ACCC does not consider the Acquisition is likely to have the effect of substantially lessening competition in these markets. This is because Peter Warren is likely to continue to face competition from alternative suppliers of these products and services."
+            },
+            {
+              "type": "paragraph",
+              "number": "3.4",
+              "text": "This determination does not consider these overlaps further. Supply of new cars to retail customers in the Macarthur region and surrounding areas"
+            },
+            {
+              "type": "paragraph",
+              "number": "3.5",
+              "text": "The ACCC considers that the supply of new and used cars occurs in separate markets. Most used car dealerships that exclusively sell used cars are not authorised by OEMs to sell new cars. While there may be some substitutability between very low- mileage used cars and new cars, the ACCC considers new and used cars are generally not close substitutes, and competitive dynamics between the supply of new and used cars differ, given that for used cars there is competition from used car dealerships and online sales.3"
+            },
+            {
+              "type": "paragraph",
+              "number": "3.6",
+              "text": "For the supply of new cars, the ACCC considers that there is both inter- and intra- brand competition between dealership sites. Inter-brand competition is competition between sellers of different OEM brands, while intra-brand competition is competition between different sellers of the same OEM brand."
+            },
+            {
+              "type": "paragraph",
+              "number": "3.7",
+              "text": "Market feedback and industry reports indicate that many buyers typically decide on an OEM brand and model before visiting a dealership. The ACCC therefore considers that intra-band competition between car dealership sites of the same OEM brand is 3 The ACCC considered these issues in the AP Eagers Limited / Automotive Holdings Group Limited Determination. Determination | Peter Warren \u2013 Wakeling Automotive (MN - 90028) likely to exert the strongest competitive constraint at a retail level. However, for some customers, inter-brand competition is also relevant, particularly between OEM brands offering similar categories of vehicles, with similar prices and key features."
+            },
+            {
+              "type": "paragraph",
+              "number": "3.8",
+              "text": "In assessing the Acquisition, the ACCC has considered the effects on intra-brand competition, noting the Parties overlap in relation to the supply of new Kia cars, as well as inter-brand competition, given the range of OEM brands offered by the Parties."
+            },
+            {
+              "type": "paragraph",
+              "number": "3.9",
+              "text": "Based on information before it, the ACCC also considers that the supply of new cars to retail customers (individual consumers) and the supply of new cars to commercial customers (fleet customers) occur in separate product markets, given fleet customers tend to be able to source cars from a wider geographic area than retail customers. Therefore, in assessing the Acquisition, the ACCC has focused on the supply of new cars to retail customers."
+            },
+            {
+              "type": "paragraph",
+              "number": "3.10",
+              "text": "The Parties made submissions defining the geographic market for the supply of new cars as an area extending at least 40km (straight line) from the Parties\u2019 dealerships in the Macarthur region. Market feedback indicated that some customers may be prepared to travel greater distances to purchase a new car, although some may prefer to buy locally having regard to servicing considerations."
+            },
+            {
+              "type": "paragraph",
+              "number": "3.11",
+              "text": "The ACCC considers that information before it indicates that most customers prefer to purchase a new car from a dealer in their local region close to where they live."
+            },
+            {
+              "type": "paragraph",
+              "number": "3.12",
+              "text": "The ACCC has also considered the constraint posed by dealership sites in southern Sydney and Wollongong in the competitive assessment below. Based on the materials before it, the ACCC considers that the constraint one dealership site poses on another dealership site weakens the further away they are located from each other."
+            },
+            {
+              "type": "paragraph",
+              "number": "3.13",
+              "text": "The ACCC therefore considers that the relevant geographic market for the supply of new cars to retail customers is the Macarthur region and surrounding areas. Supply of servicing and repairs of Kia cars in the Macarthur region and surrounding areas"
+            },
+            {
+              "type": "paragraph",
+              "number": "3.14",
+              "text": "Third party feedback indicates that during any capped price servicing and warranty periods, the supply of servicing and repairs is segmented by OEM brand. This is because warranty and capped price servicing is generally only available at dealership sites authorised to service the relevant OEM brand. The ACCC considers that independent repairers are likely to become more of a competitive constraint as these periods near expiry."
+            },
+            {
+              "type": "paragraph",
+              "number": "3.15",
+              "text": "In assessing the Acquisition, the ACCC has focused on the Parties\u2019 overlapping OEM brand, Kia. In this respect, the ACCC\u2019s primary focus has been on Wakeling Automotive\u2019s Kia dealership service centre in Campbelltown and Peter Warren\u2019s Kia dealership service centres in Narellan and Warwick Farm."
+            },
+            {
+              "type": "paragraph",
+              "number": "3.16",
+              "text": "The Parties provided submissions that for most dealerships in the Macarthur region, during the initial few years from purchase, customers return to have their car serviced at the service centre where they purchased the car, however this changes over time."
+            },
+            {
+              "type": "paragraph",
+              "number": "3.17",
+              "text": "Based on the information before it, including third party feedback, the ACCC considers that consumers prefer to service their car at service centres located close Determination | Peter Warren \u2013 Wakeling Automotive (MN - 90028) to where they live or work. Given the frequency of servicing and repairs, consumers are typically less willing to travel than they are when purchasing a new car."
+            },
+            {
+              "type": "paragraph",
+              "number": "3.18",
+              "text": "The ACCC therefore considers that the relevant geographic area for the supply of servicing and repairs of Kia cars is the Macarthur region and surrounding areas."
+            },
+            {
+              "type": "heading",
+              "text": "Competition effects in the supply of new cars to retail customers in the Macarthur region and surrounding areas"
+            },
+            {
+              "type": "paragraph",
+              "number": "3.19",
+              "text": "The ACCC is satisfied that, disregarding any conditions the ACCC could include, the Acquisition could, in all the circumstances, have the effect, or likely effect, of substantially lessening competition in the supply of new cars to retail customers in the Macarthur region and surrounding areas."
+            },
+            {
+              "type": "paragraph",
+              "number": "3.20",
+              "text": "If put into effect, the Acquisition would combine the 2 largest suppliers of new cars to retail customers in the Macarthur region, and Peter Warren would operate 25 out of 34 dealership sites.4 The Acquisition would therefore materially increase concentration in the Macarthur region and surrounding areas. In addition, the Acquisition could significantly reduce the competitive constraint on Peter Warren by removing competition between Peter Warren and Wakeling Automotive."
+            },
+            {
+              "type": "paragraph",
+              "number": "3.21",
+              "text": "The ACCC considers that the Parties are close competitors in relation to the supply of new cars in the Macarthur region and surrounding areas and they compete closely on both price and non-price factors for customers. Information before the ACCC indicates that the customer catchment areas of the Parties\u2019 dealership sites overlap."
+            },
+            {
+              "type": "paragraph",
+              "number": "3.22",
+              "text": "On an intra-brand basis, the Parties operate the only Kia dealership sites in the Macarthur region and surrounding areas. The Parties\u2019 sites are in close proximity, with Peter Warren\u2019s Kia site in Narellan and Wakeling Automotive\u2019s Kia site in Campbelltown being within 15 minutes\u2019 driving distance."
+            },
+            {
+              "type": "paragraph",
+              "number": "3.23",
+              "text": "On an inter-brand basis, the ACCC considers that the Parties are close competitors in the Macarthur region and surrounding areas, supplying similar categories of OEM brands. For example, the Parties have dealership sites in close proximity which supply high-volume OEM brands with similar model types and price points, such as Ford, GWM, Mazda, Hyundai, Kia, MG and Chery."
+            },
+            {
+              "type": "paragraph",
+              "number": "3.24",
+              "text": "The ACCC considers that if the Acquisition were put into effect, Peter Warren would likely continue to face some competitive constraint from other dealership sites in the Macarthur region. However, there would only be 9 remaining competing dealership sites owned by 5 different operators post-Acquisition, and these sites would not provide any intra-brand constraint, given they do not supply any of the same OEM brands as the Parties."
+            },
+            {
+              "type": "paragraph",
+              "number": "3.25",
+              "text": "As outlined above, the ACCC considers that competing dealership sites located in southern Sydney and Wollongong would likely provide a weak constraint, due to consumers typically purchasing new cars close to where they live. However, for the reasons expressed above and based on materials before it, the ACCC considers that 4 The ACCC understands that since the Phase 2 Notice for Peter Warren / Wakeling Automotive (MN-30002) was published on 2 June 2026, a new entrant has established a dealership site in the Macarthur region and surrounding areas, increasing the total number of dealership sites from 33 to 34. Determination | Peter Warren \u2013 Wakeling Automotive (MN - 90028) dealerships in those areas may provide a more meaningful constraint for the Parties\u2019 customers who live closer to these dealerships."
+            },
+            {
+              "type": "paragraph",
+              "number": "3.26",
+              "text": "Based on its experience in previous matters5 and third-party feedback obtained in relation to this matter, the ACCC considers that dealership sites located outside the Macarthur region and surrounding areas are unlikely to provide a sufficient constraint through online, email, and telephone inquiries. This is because there is limited price transparency during these inquiries and dealership sites tend to provide their best discounts only in person."
+            },
+            {
+              "type": "paragraph",
+              "number": "3.27",
+              "text": "The ACCC also considered whether OEM volume incentives and other remuneration incentives for individual dealership sites would be likely to constrain Peter Warren post-Acquisition. While these incentives may encourage dealership sites to achieve sales targets and compete for new car sales, the ACCC considers that they may be unlikely to prevent Peter Warren from raising prices across its Macarthur dealership sites. As Peter Warren would own the majority of the new car dealerships in the region (including the only 2 Kia dealership sites and a strong representation of high- volume brands), the Acquisition could give it the ability and incentive to raise prices across its dealerships without substantially reducing its volumes. Further, since the ACCC considers that there is limited price transparency in relation to new car sales, customers may be unlikely to detect a price rise across Peter Warren\u2019s dealerships. The ACCC considers that due to the difficulties in determining the best available price for a particular car, a price increase may be likely to have limited impact on demand and total volumes."
+            },
+            {
+              "type": "paragraph",
+              "number": "3.28",
+              "text": "The ACCC was advised that a new Macarthur Mahindra dealership site opened in 2026 in the Macarthur region. However, the ACCC considers that the new Mahindra dealership site is likely to provide a limited constraint on the Parties post-acquisition based on it only being one new site. The ACCC also considers there is a low likelihood of additional timely new entry or expansion at sufficient scale to replace the reduction in competition likely to result from the Acquisition. Market feedback indicates that barriers to entry and expansion are likely to be high, given limited access to quality sites in locations where most OEM brands are already present. While the ACCC considers small-scale entry may occur, this would be unlikely to replace the loss of competition caused by the Acquisition."
+            },
+            {
+              "type": "paragraph",
+              "number": "3.29",
+              "text": "Having regard to the combination of factors identified above, the ACCC considers, absent any condition the ACCC could include, the Acquisition could have the effect of substantially lessening competition in the supply of new cars to retail customers in the Macarthur region and surrounding areas."
+            },
+            {
+              "type": "heading",
+              "text": "Competition effects in the supply of servicing and repairs of Kia cars in the Macarthur region and surrounding areas"
+            },
+            {
+              "type": "paragraph",
+              "number": "3.30",
+              "text": "The ACCC is satisfied that, disregarding any conditions the ACCC could include, the Acquisition could, in all the circumstances, have the effect, or likely effect, of substantially lessening competition in the supply of servicing and repairs of Kia cars in the Macarthur region and surrounding areas."
+            },
+            {
+              "type": "paragraph",
+              "number": "3.31",
+              "text": "Given the geographic proximity between the Parties\u2019 Kia dealership service centres, the ACCC considers that the Parties are likely each other\u2019s closest competitors in the 5 For example, AP Eagers Limited / Automotive Holdings Group Limited Determination, paragraph 6.27. Determination | Peter Warren \u2013 Wakeling Automotive (MN - 90028) supply of Kia servicing and repairs. The Acquisition, if put into effect, would remove this competition. Peter Warren would operate the only Kia dealership service centres in the Macarthur region and surrounding areas, as well as the Kia dealership service centre in Warwick Farm."
+            },
+            {
+              "type": "paragraph",
+              "number": "3.32",
+              "text": "The ACCC considers that post-Acquisition, Peter Warren would be unlikely to face sufficient constraint from competing Kia dealership sites during any capped price servicing or warranty periods. This is because the next closest Kia dealership service centres are located in southern Sydney. During these periods, the ACCC considers independent repairers in the Macarthur region are unlikely to provide a sufficient constraint, although they are likely to become a stronger constraint outside the capped price servicing period or towards the end of the warranty period."
+            },
+            {
+              "type": "paragraph",
+              "number": "3.33",
+              "text": "Having regard to the combination of factors identified above, the ACCC considers, absent any condition, the Acquisition could have the effect of substantially lessening competition in the market for the supply of servicing and repairs of Kia cars in the Macarthur region and surrounding areas. 4. Conditions"
+            },
+            {
+              "type": "paragraph",
+              "number": "4.1",
+              "text": "The ACCC has determined under section 51ABZE(1) of the Act that the Acquisition may be put into effect, subject to conditions."
+            },
+            {
+              "type": "paragraph",
+              "number": "4.2",
+              "text": "The conditions are: 1. Peter Warren must divest, or cause the divestiture of, the Divestiture Business to a purchaser approved in writing by the ACCC in accordance with a section 87B undertaking accepted by the ACCC. 2. Peter Warren must provide the ACCC with an executed undertaking under section 87B of the Act in respect of the divestiture of the Divestiture Business, in the form at Attachment A of this determination, within five business days of the date of this determination and comply with that undertaking. (together, the Conditions)."
+            },
+            {
+              "type": "paragraph",
+              "number": "4.3",
+              "text": "The term Divestiture Business is defined in the section 87B undertaking that Peter Warren must give and comply with pursuant to the Conditions."
+            },
+            {
+              "type": "paragraph",
+              "number": "4.4",
+              "text": "In summary, the Divestiture Business comprises all the assets and operations of 8 dealerships at specified sites and associated service centres (including a Kia dealership site and service centre) at two locations in the Macarthur region at Smeaton Grange and Campbelltown in NSW."
+            },
+            {
+              "type": "paragraph",
+              "number": "4.5",
+              "text": "The ACCC must not include conditions unless it is satisfied that, disregarding any conditions the ACCC could include, the Acquisition, if put into effect, could, in all the circumstances, have the effect of substantially lessening competition in any market."
+            },
+            {
+              "type": "paragraph",
+              "number": "4.6",
+              "text": "The ACCC must have regard to all relevant matters, and may have regard to the effect on the interests of consumers that compliance with the conditions would have, or be likely to have, or any consumer benefits that would result, or be likely to result from compliance with the conditions. Determination | Peter Warren \u2013 Wakeling Automotive (MN - 90028)"
+            },
+            {
+              "type": "paragraph",
+              "number": "4.7",
+              "text": "It is a contravention of section 45AZ of the Act for a person to put the Acquisition into effect and to not comply with any conditions. Where a person does not comply with conditions, the Federal Court may make orders including, in some circumstances, divestiture or a declaration that the Acquisition is void."
+            },
+            {
+              "type": "heading",
+              "text": "Assessment with the Conditions"
+            },
+            {
+              "type": "paragraph",
+              "number": "4.8",
+              "text": "As set out above, the ACCC is satisfied that, disregarding any conditions the ACCC could include, the Acquisition could, in all the circumstances, have the effect of substantially lessening competition in the supply of new cars to retail customers and the supply of servicing and repairs of Kia cars in the Macarthur region and surrounding areas. To address this, the ACCC has decided to include the Conditions in its determination."
+            },
+            {
+              "type": "paragraph",
+              "number": "4.9",
+              "text": "The objective of the Conditions is to address the competition issues identified in respect of the Acquisition, as set out in this determination and statement of reasons."
+            },
+            {
+              "type": "paragraph",
+              "number": "4.10",
+              "text": "The conditions incorporate a remedy offer Peter Warren proposed to the ACCC on 13 July 2026, with revisions."
+            },
+            {
+              "type": "heading",
+              "text": "The Conditions address the competition issues"
+            },
+            {
+              "type": "paragraph",
+              "number": "4.11",
+              "text": "The Conditions address the competition issues set out above by preserving the presence in the relevant markets of an independent supplier and a sufficient level of competitive constraint that would otherwise be lost as a result of the Acquisition by facilitating the entry or expansion of a competitor through divestiture to a purchaser approved by the ACCC."
+            },
+            {
+              "type": "heading",
+              "text": "The Conditions can be effectively implemented"
+            },
+            {
+              "type": "paragraph",
+              "number": "4.12",
+              "text": "The ACCC has also had regard to whether there are risks associated with implementation that would limit the effectiveness of the Conditions in addressing the competition issues. The ACCC considers that the Conditions can be effectively implemented. Composition of the Divestiture Business"
+            },
+            {
+              "type": "paragraph",
+              "number": "4.13",
+              "text": "The ACCC considers that the Divestiture Business will be appropriately configured by the end of the Initial Sales Period and that a suitable purchaser may operate it effectively. The ACCC has had regard to third party feedback in reaching this view, as well as the nature and terms of the Conditions and the undertaking. Emergence of an appropriate purchaser"
+            },
+            {
+              "type": "paragraph",
+              "number": "4.14",
+              "text": "Based on submissions provided by Peter Warren and third-party feedback, the ACCC considers there are suitable purchasers available to support a timely and effective divestiture to an ACCC-approved purchaser. Determination | Peter Warren \u2013 Wakeling Automotive (MN - 90028) Integrity of the Divestiture Business and other considerations"
+            },
+            {
+              "type": "paragraph",
+              "number": "4.15",
+              "text": "The ACCC considers that the integrity of the Divestiture Business will be protected prior to divestiture, and took account of other considerations related to the effective implementation of the Conditions."
+            },
+            {
+              "type": "paragraph",
+              "number": "4.16",
+              "text": "The ACCC considers that the integrity of the Divestiture Business is appropriately managed, including because the undertaking provides for:"
+            },
+            {
+              "type": "bullet_list",
+              "items": [
+                "obligations on Peter Warren to protect the Divestiture Business prior to divestiture,",
+                "the appointment of an ACCC-approved independent manager to manage the Divestiture Business prior to divestiture, and",
+                "the appointment of an ACCC-approved independent auditor to monitor and report on compliance with the undertaking."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "number": "4.17",
+              "text": "The ACCC also considers that any risk that divestiture will be frustrated, for example, due to third-party consents and renewals, is appropriately managed by the undertaking. 5. Applications for review and public benefit"
+            },
+            {
+              "type": "heading",
+              "text": "applications"
+            },
+            {
+              "type": "heading",
+              "text": "Applications for review"
+            },
+            {
+              "type": "paragraph",
+              "number": "5.1",
+              "text": "A notifying party, or other person who has been allowed to do so by the Australian Competition Tribunal, may apply for review if they are dissatisfied with the determination. Pursuant to section 100C of the Act, applications for review of the determination are to be made to the Australian Competition Tribunal before the end of 14 calendar days after this statement of reasons was included on the ACCC\u2019s acquisitions register. To confirm whether there has been any application for review, please contact the Australian Competition Tribunal."
+            },
+            {
+              "type": "heading",
+              "text": "Public benefit application"
+            },
+            {
+              "type": "paragraph",
+              "number": "5.2",
+              "text": "The notifying party may also apply to the ACCC for a determination that the acquisition would be of public benefit. Pursuant to section 51ABZP(2) of the Act, this application must be made no later than 21 calendar days after the ACCC made this determination."
+            }
+          ],
+          "url_gh": "/mergers/MN-90028/Peter Warren - Wakeling Automotive - Phase 1 Determination with conditions.pdf",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
-      "has_conditions": false,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "has_conditions": true,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-09-04T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -55380,6 +56543,158 @@
         "min_days_witness": "WA-95039",
         "max_days_witness": "WA-95035",
         "basis": "bracketed",
+        "method_version": 1
+      }
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/apiam-%E2%80%93-seymour-equine-clinic",
+      "merger_name": "Apiam \u2013 Seymour Equine Clinic",
+      "status": "Under assessment",
+      "merger_id": "MN-95040",
+      "effective_notification_datetime": "2026-09-03T12:00:00Z",
+      "original_notification_datetime": "2026-09-03T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-10-16T12:00:00Z",
+      "page_modified_datetime": "2026-09-04T11:32:29+10:00",
+      "consultation_response_due_date": "2026-09-11T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "AAH VETERINARY SERVICES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "31 607 993 233",
+          "party_page": {
+            "id": "aah-veterinary-services-pty-ltd",
+            "name": "Aah Veterinary Services Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "HORSE AROUND PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "31 612 607 333",
+          "party_page": {
+            "id": "horse-around-pty-ltd",
+            "name": "Horse Around Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "APIAM ANIMAL HEALTH LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "50 604 961 024",
+          "party_page": {
+            "id": "apiam-animal-health-limited",
+            "name": "Apiam Animal Health Limited"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0191",
+          "name": "Horse Farming"
+        },
+        {
+          "code": "0529",
+          "name": "Other Agriculture and Fishing Support Services"
+        },
+        {
+          "code": "6970",
+          "name": "Veterinary Services"
+        }
+      ],
+      "merger_description": "AAH Veterinary Services Pty Ltd, a wholly owned subsidiary of Apiam Animal Health Limited (**Apiam**), proposes to acquire 100% of the business and business assets of Seymour Equine Clinic (**Seymour Equine Clinic**) (the **Acquisition**).\n\nApiam is a rural veterinary business, comprising more than 80 veterinary clinics and ancillary business sites across Australia. Apiam supplies a range of veterinary services, including companion animal, equine, dairy, beef cattle, sheep and goat, pig, poultry and mixed animal veterinary services, together with veterinary diagnostics, emergency and after-hours services, reproductive and herd health services. Apiam also supplies pathology, laboratory and advisory services. Apiam is ultimately owned and controlled by funds managed and advised by Adamantem Capital Management.\n\nSeymour Equine Clinic is located in Seymour, approximately 100km north of Melbourne, Victoria. It is an equine veterinary clinic and hospital which primarily supplies equine veterinary services, including ambulatory and hospital-based clinical care, 24-hour emergency and critical care, reproductive medicine and breeding management, and related ancillary services. These include in-house pathology, export examinations and health certifications, and behavioural and welfare assessments.",
+      "events": [
+        {
+          "date": "2026-09-04T12:00:00Z",
+          "title": "Phase 1 consultation",
+          "display_title": "Phase 1 consultation",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Apiam%20-%20Seymour%20Equine%20Clinic%20-%20Questionnaire.docx",
+          "url_gh": "/mergers/MN-95040/Apiam - Seymour Equine Clinic - Questionnaire.pdf",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-09-03T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-95003",
+          "merger_name": "CVS Group - Pittwater Animal Hospital",
+          "acquirers": [
+            "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED"
+          ],
+          "targets": [
+            "PITTWATER ANIMAL HOSPITAL PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-55023",
+          "merger_name": "Vets Central - Claremont Veterinary Surgery",
+          "acquirers": [
+            "VC OPERATIONS (WA) PTY LTD"
+          ],
+          "targets": [
+            "D PETTET & E.E PETTET"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-75017",
+          "merger_name": "Vets Central - Drovers Vet Hospital",
+          "acquirers": [
+            "VC OPERATIONS (WA) PTY LTD"
+          ],
+          "targets": [
+            "Wayne Shipham and Raylene Shipham as trustees for McGuire Family Trust",
+            "DROVERS VET HOSPITAL PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 18,
+        "range_business_days": [
+          16,
+          26
+        ],
+        "basis": "industry",
+        "anzsic_level": "subdivision",
+        "anzsic_codes": [
+          "01",
+          "05",
+          "69"
+        ],
+        "sample_size": 41,
+        "estimated_at": "2026-09-04",
+        "method_version": 1
+      },
+      "pre_notification": {
+        "estimated_days": 21,
+        "min_days": null,
+        "max_days": 28,
+        "id_issued_estimated": "2026-08-13",
+        "id_issued_before": null,
+        "id_issued_after": "2026-08-06",
+        "min_days_witness": null,
+        "max_days_witness": "WA-95039",
+        "basis": "upper-bound-only",
         "method_version": 1
       }
     },
@@ -61113,6 +62428,161 @@
           ],
           "targets": [
             "WA AUTOMOTIVE PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/redwood-services-group-%E2%80%93-concept-data-and-voice-select",
+      "merger_name": "Redwood Services Group \u2013 Concept Data and Voice Select",
+      "status": "Assessment completed",
+      "merger_id": "WA-05047",
+      "effective_notification_datetime": "2026-08-07T12:00:00Z",
+      "original_notification_datetime": "2026-08-07T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-09-03T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-09-03T16:46:11+10:00",
+      "acquirers": [
+        {
+          "name": "Redwood Services Group Australia Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "15 675 368 162",
+          "party_page": {
+            "id": "redwood-services-group-australia-pty-ltd",
+            "name": "Redwood Services Group Australia Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Concept Data Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "51 602 501 404",
+          "party_page": {
+            "id": "concept-data-pty-ltd",
+            "name": "Concept Data Pty Ltd"
+          }
+        },
+        {
+          "name": "Voice Select Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "81 626 240 220",
+          "party_page": {
+            "id": "voice-select-pty-ltd",
+            "name": "Voice Select Pty Ltd"
+          }
+        },
+        {
+          "name": "Gary Paradise",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "gary-paradise",
+            "name": "Gary Paradise"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "5801",
+          "name": "Wired Telecommunications Network Operation"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "merger_description": "Redwood Services Group Australia Pty Ltd (**Redwood**) proposes to acquire 100% of the shares in each of Concept Data Pty Ltd (**Concept Data**) and Voice Select Pty Ltd (**Voice Select**) from Gary Carl Paradise (the **Acquisition**).\n\nRedwood\u2019s subsidiaries supply managed IT services, including the provision of software and hardware, to small-to-medium businesses and other enterprise customers across Australia. Redwood is part of Evergreen Services Group (**Evergreen**), which acquires managed IT service providers and other technology services companies globally. Evergreen is a portfolio company of Alpine Investors, a private equity firm headquartered in San Francisco, California.\n\nConcept Data supplies managed IT services to small-to-medium businesses. Voice Select specialises in VoIP (Voice over Internet Protocol) phone systems and support.",
+      "events": [
+        {
+          "date": "2026-09-03T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Redwood%20Services%20Group%20-%20Concept%20Data%20%28WA-05047%29%20-%20Notification%20waiver%20determination%20-%203%20September%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Redwood Services Group Australia Pty Ltd (Redwood) applied for a\nnotification waiver in respect of its proposed acquisition of 100% of\nthe share capital in each of Concept Data Pty Ltd (Concept Data) and\nVoice Select Pty Ltd (Voice Select) from Gary Carl Paradise, as\ndescribed in the transaction documents provided as part of the\napplication (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "3 September 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, Redwood, through its subsidiaries, supplies managed\nIT services nationally to a range of industries, including professional\nservices, healthcare and allied health, construction and trade\nservices, retail, education, government and not-for-profit\norganisations.\nThe target entities, Concept Data and Voice Select, are currently\nheadquartered in Adelaide. Concept Data supplies managed IT\nservices to small-to-medium businesses. Voice Select specialises in\nVoice over Internet Protocol phone systems and support."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition given:\na. the parties\u2019 combined share in the supply of managed IT\nservices to customers in Australia is estimated to be low\nand the increase in share of supply arising from the\nAcquisition would be small\nb. there are numerous alternative suppliers of managed IT\nservices to customers in Australia.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-05047/Redwood Services Group - Concept Data (WA-05047) - Notification waiver determination - 3 September 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-08-07T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-15024",
+          "merger_name": "Redwood Services Group \u2013 All IT Australia",
+          "acquirers": [
+            "REDWOOD SERVICES GROUP AUSTRALIA PTY LTD"
+          ],
+          "targets": [
+            "ALL IT AUSTRALIA PTY LTD",
+            "SPURBUCK INVESTMENTS PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-60024",
+          "merger_name": "Redwood Services Group \u2013 Newtrend I.T. Specialists",
+          "acquirers": [
+            "REDWOOD SERVICES GROUP AUSTRALIA PTY LTD"
+          ],
+          "targets": [
+            "NEWTREND I.T. SPECIALISTS PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-15019",
+          "merger_name": "Opal HealthCare - Bethel Aged Care",
+          "acquirers": [
+            "OHCA PROPERTY HOLDINGS PTY LTD",
+            "DPG SERVICES PTY LTD"
+          ],
+          "targets": [
+            "Bethel Amen Pty Ltd",
+            "Java Dale Pty Ltd"
           ],
           "accc_determination": "Approved"
         }
@@ -75428,6 +76898,179 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/morgan-stanley-%E2%80%93-epic-energy",
+      "merger_name": "Morgan Stanley \u2013 Epic Energy",
+      "status": "Assessment completed",
+      "merger_id": "WA-30032",
+      "effective_notification_datetime": "2026-08-07T12:00:00Z",
+      "original_notification_datetime": "2026-08-07T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-09-03T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-09-03T16:37:40+10:00",
+      "acquirers": [
+        {
+          "name": "MCLEOD BIDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "21 700 222 920",
+          "party_page": {
+            "id": "mcleod-bidco-pty-ltd",
+            "name": "Mcleod Bidco Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "ART Investment Holdings Pty Limited",
+          "identifier_type": "ACN",
+          "identifier": "153 817 120",
+          "party_page": {
+            "id": "art-investment-holdings-pty-limited",
+            "name": "ART Investment Holdings Pty Limited"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "North Haven Infrastructure Partners IV Fund",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "north-haven-infrastructure-partners-iv-fund",
+            "name": "North Haven Infrastructure Partners IV Fund"
+          }
+        },
+        {
+          "name": "Morgan Stanley Investment Management Inc.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "morgan-stanley-investment-management-inc",
+            "name": "Morgan Stanley Investment Management Inc."
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2393",
+          "name": "Railway Rolling Stock Manufacturing and Repair Services"
+        },
+        {
+          "code": "2619",
+          "name": "Other Electricity Generation"
+        },
+        {
+          "code": "2921",
+          "name": "Waste Treatment and Disposal Services"
+        },
+        {
+          "code": "2922",
+          "name": "Waste Remediation and Materials Recovery Services"
+        },
+        {
+          "code": "4610",
+          "name": "Road Freight Transport"
+        },
+        {
+          "code": "4710",
+          "name": "Rail Freight Transport"
+        },
+        {
+          "code": "5021",
+          "name": "Pipeline Transport"
+        }
+      ],
+      "merger_description": "North Haven Infrastructure Partners IV Fund (**North Haven**) is a global investment fund which consists of several limited partnerships and feeder funds, acting through wholly owned subsidiaries. North Haven includes some of the world\u2019s largest institutional infrastructure investors, including public and private pension funds, sovereign wealth funds and insurance companies. North Haven\u2019s General Partners are Morgan Stanley Infrastructure IV GP L.P. and Morgan Stanley Infrastructure IV Investors GP S.a.r.l (the **GPs**).\n\nMorgan Stanley Infrastructure Inc. (**MSI**), a global private infrastructure investment platform, acts as the manager of North Haven, overseeing its operations on behalf of the GPs. MSI\u2019s Australian portfolio comprises interests in a private haulage road in Western Australia, a rail maintenance business in Western Australia and a waste facility in Victoria.\n\nBoth the GPs and MSI are ultimately wholly-owned by Morgan Stanley, a global financial services firm providing investment banking, securities, wealth management and investment management services that is listed on the New York Stock Exchange.\n\nART Investment Holdings Pty Limited acts as a trustee for ART Investments Trust (**ART**), a subsidiary operating under Australian Retirement Trust, one of Australia\u2019s largest superannuation funds.\n\nQS MAPS Holdings No.1 Pty Ltd (**QS MAPS No. 1**) and QS MAPS Holdings No.2 Pty Ltd (**QS MAPS No. 2**) are the holding companies for Epic Energy, a major energy infrastructure provider (**Epic Energy**). Epic Energy owns and operates two major gas transmission pipelines in South Australia, the Moomba to Adelaide Pipeline System (with a connection to the Port Pirie Lateral Pipeline) and the South-East Pipeline System. Epic Energy also operates a renewable electricity generation and storage business with wind and solar assets across South Australia and Victoria, as well as battery projects.\n\nNorth Haven, via McLeod Bidco Pty Ltd, proposes to acquire from ART 100% of the shares it owns in each of QS MAPS No. 1 and QS MAPS No. 2 pursuant to a share purchase agreement.",
+      "events": [
+        {
+          "date": "2026-09-03T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Morgan%20Stanley%20%E2%80%93%20Epic%20Energy%20%28WA-30032%29%20-%20Notification%20waiver%20determination%20-%202%20September%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "North Haven Infrastructure Partners IV Fund (North Haven), via\nMcLeod Bidco Pty Ltd (McLeod Bidco), proposes to acquire from\nART Investment Holdings Pty Limited as trustee for ART Investments\nTrust (ART) 100% of the share capital in each of QS MAPS Holdings\nNo.1 Pty Ltd and QS MAPS Holdings No.2 Pty Ltd, as described in\nthe transaction documents provided as part of the application (the\nAcquisition).\nMcLeod Bidco applied for a notification waiver in respect of the\nAcquisition."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "2 September 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "North Haven is a global investment fund that consists of several\nlimited partnerships and feeder funds, acting through wholly owned\nsubsidiaries. North Haven\u2019s General Partners are Morgan Stanley\nInfrastructure IV GP L.P. and Morgan Stanley Infrastructure IV\nInvestors GP S.a.r.l.\nMorgan Stanley Infrastructure Inc. (MSI) is a global private\ninfrastructure investment platform, acting as the manager of North\nHaven, overseeing its operations of behalf of North Haven\u2019s General\nPartners.\nART is a subsidiary operating under Australian Retirement Trust, one\nof Australia\u2019s largest superannuation funds.\nThe target entities, QS MAPS Holdings No.1 Pty Ltd and QS MAPS\nHoldings No.2 Pty Ltd, are holding companies for Epic Energy, a\nmajor energy infrastructure provider. Epic Energy owns and operates\ntwo major gas transmission pipelines in South Australia: the\nMoomba to Adelaide Pipeline System (with a connection to the Port\nPirie Lateral Pipeline) and the South-East Pipeline System. Epic\nEnergy also operates a renewable electricity generation and storage\nbusiness with wind and solar assets across South Australia and\nVictoria, as well as battery projects."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition given:\na. there is no horizontal overlap between North Haven (or its\nconnected entities) and Epic Energy or between MSI (or its\nconnected entities) and Epic Energy in Australia\nb. there is a low risk of foreclosure or other concerning vertical\neffects resulting from exclusionary conduct post-acquisition.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-30032/Morgan Stanley \u2013 Epic Energy (WA-30032) - Notification waiver determination - 2 September 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-08-07T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-01113",
+          "merger_name": "Hillhouse \u2013 LRQA Group",
+          "acquirers": [
+            "Atlas Investments Holdings Limited"
+          ],
+          "targets": [
+            "Dione Topco Ltd.",
+            "LRQA Group Limited"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-05017",
+          "merger_name": "Tony White Group - Sharton Motors dealerships in Maitland, Port Stephens and Cardiff",
+          "acquirers": [
+            "TWG HUNTER DEALERSHIPS PTY LTD"
+          ],
+          "targets": [
+            "SHARTON MOTORS PTY LTD",
+            "N&M Burton Pty Ltd"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-45005",
+          "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
+          "acquirers": [
+            "MA MARINA FUND HOLDCO PTY LTD",
+            "MA MARINA FUND TT PTY LTD"
+          ],
+          "targets": [
+            "GGC Marketing Pty Ltd",
+            "QUEENSLAND & PACIFIC PTY. LTD."
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/kkr-%E2%80%93-global-print-business-of-thomson-reuters-corporation",
       "merger_name": "KKR \u2013 global print business of Thomson Reuters Corporation",
       "status": "Assessment completed",
@@ -79195,6 +80838,210 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/influence-media-partners-%E2%80%93-assets-from-anthem-entertainment",
+      "merger_name": "Influence Media Partners \u2013 assets from Anthem Entertainment",
+      "status": "Assessment completed",
+      "merger_id": "WA-35043",
+      "effective_notification_datetime": "2026-08-14T12:00:00Z",
+      "original_notification_datetime": "2026-08-14T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-09-03T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-09-03T16:36:28+10:00",
+      "acquirers": [
+        {
+          "name": "Influence X Music III, L.P.",
+          "identifier_type": null,
+          "identifier": "Delaware State file number  10678702",
+          "party_page": {
+            "id": "influence-x-music-iii-l-p",
+            "name": "Influence X Music III, L.P."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Anthem Entertainment (GP) Inc.",
+          "identifier_type": null,
+          "identifier": "Ontario Corporation Number  2054537",
+          "party_page": {
+            "id": "anthem-entertainment-gp-inc",
+            "name": "Anthem Entertainment (GP) Inc."
+          }
+        },
+        {
+          "name": "Anthem Entertainment L.P.",
+          "identifier_type": null,
+          "identifier": "Business Identification Number  141101998",
+          "party_page": {
+            "id": "anthem-entertainment-l-p",
+            "name": "Anthem Entertainment L.P."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Ontario Teachers' Pension Plan Board",
+          "identifier_type": null,
+          "identifier": "Commercial Registration Number  950645",
+          "party_page": {
+            "id": "ontario-teachers-pension-plan-board",
+            "name": "Ontario Teachers' Pension Plan Board"
+          }
+        },
+        {
+          "name": "Influence x Music Fund III, L.P.",
+          "identifier_type": null,
+          "identifier": "Cayman Islands  137792",
+          "party_page": {
+            "id": "influence-x-music-fund-iii-l-p",
+            "name": "Influence x Music Fund III, L.P."
+          }
+        },
+        {
+          "name": "BlackRock Financial Management, Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware State file number  2446204",
+          "party_page": {
+            "id": "blackrock-financial-management-inc",
+            "name": "BlackRock Financial Management, Inc."
+          }
+        },
+        {
+          "name": "IMP IM, LP",
+          "identifier_type": null,
+          "identifier": "Delaware State file number  4429233",
+          "party_page": {
+            "id": "imp-im-lp",
+            "name": "Imp Im, Lp"
+          }
+        },
+        {
+          "name": "IMP GP, LLC",
+          "identifier_type": null,
+          "identifier": "Delaware State file number  4429192",
+          "party_page": {
+            "id": "imp-gp-llc",
+            "name": "Imp Gp, Llc"
+          }
+        },
+        {
+          "name": "IMP x Music Fund III GP, LLC",
+          "identifier_type": null,
+          "identifier": "Cayman Islands  9050",
+          "party_page": {
+            "id": "imp-x-music-fund-iii-gp-llc",
+            "name": "IMP x Music Fund III GP, LLC"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5521",
+          "name": "Music Publishing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6330",
+          "name": "Superannuation Funds"
+        },
+        {
+          "code": "7291",
+          "name": "Office Administrative Services"
+        }
+      ],
+      "merger_description": "Influence Media Partners, a music entertainment platform based in New York, in collaboration with funds and accounts managed by BlackRock Financial Management, Inc. (**BlackRock**), proposes to acquire a catalogue of music publishing rights, including music embedded in movies / TV shows, and recorded music rights, together with assigned contracts, accounts receivables, pre-paid royalties, and other rights typically associated with copyright interests (the **Target Assets**) from Anthem Entertainment L.P. and Anthem Entertainment (GP) Inc. (together, **Anthem**), a global music rights management and publishing company. Anthem is ultimately owned by Ontario Teacher\u2019s Pension Plan Board.\n\nInfluence Media Partners and Anthem are both active in the music publishing industry globally, including in Australia. Anthem operates as a music publisher, which primarily involves owning and acquiring rights in musical compositions, the marketing and exploitation of those rights and generating revenue (including the receipt of royalties or fees) from uses of the musical composition itself. The Influence Media Partners group operates as an asset manager in music, investing in and managing music rights and related assets.",
+      "events": [
+        {
+          "date": "2026-09-03T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Influence%20Media%20Partners%20-%20assets%20of%20Anthem%20Entertainment%20%28WA-35043%29%20-%20Notification%20waiver%20determination%20-%202%20September%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Influence X Music III, L.P., an investment vehicle of Influence Media\nPartners, applied for a notification waiver in respect of its proposed\nacquisition of a catalogue of music publishing rights and recorded\nmusic rights, together with assigned contracts, accounts\nreceivables, pre-paid royalties, and other rights typically associated\nwith owning similar copyright interests (Target Assets) of Anthem\nEntertainment L.P. and Anthem Entertainment (GP) Inc. (together,\nAnthem), as described in the transaction documents provided as\npart of the application (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "2 September 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, Influence Media Partners, is based in New York, and\noperates as an asset manager in music, investing in and managing\nmusic rights and related assets. The Acquisition of the Target\nAssets by Influence Media Partners is in collaboration with funds\nand accounts managed by BlackRock Financial Management, Inc.\n(BlackRock).\nThe vendor, Anthem, is based in Toronto, and operates as a music\npublisher, which primarily involves owning and acquiring rights in\nmusical compositions, the marketing and exploitation of those rights\nand generating revenue (including the receipt of royalties or fees)\nfrom uses of the musical composition itself.\nInfluence Media Partners and Anthem are both active in the music\npublishing industry globally, including in Australia, and overlap in the\nsupply of music recording services and music publishing services."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition given:\na. the parties\u2019 combined share in the supply of music recording\nand music publishing services in Australia is low and the\nincrease in shares of supply arising from the Acquisition\nwould be small\nb. there are alternative suppliers of music recording and music\npublishing services in Australia and globally.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-35043/Influence Media Partners - assets of Anthem Entertainment (WA-35043) - Notification waiver determination - 2 September 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-08-14T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-95006",
+          "merger_name": "Laundy Group \u2013 Nine Radio",
+          "acquirers": [
+            "SPIKE MEDIA PTY LTD"
+          ],
+          "targets": [
+            "NINE RADIO PTY LIMITED"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-50029",
+          "merger_name": "Centuria Property Funds No. 2 Limited as the responsible entity of Centuria Sydney CBD Prime Office Fund - 680 George St/50 Goulburn St",
+          "acquirers": [
+            "Centuria Investment Management (CSPOF) Pty Ltd as trustee of the CSPOF Mid Trust",
+            "CENTURIA INVESTMENT MANAGEMENT (CSPOF) PTY LTD"
+          ],
+          "targets": [
+            "Latitude Landowner Pty Ltd",
+            "The Trustee for Latitude Landowning Trust"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-25018",
+          "merger_name": "Primary Wave - Kobalt",
+          "acquirers": [
+            "Primary Wave KB Holdings, LP"
+          ],
+          "targets": [
+            "Kobalt Music Group Topco L.P."
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/star-hotels-group-%E2%80%93-yandina-hotel-qld",
       "merger_name": "Star Hotels Group \u2013 Yandina Hotel, QLD",
       "status": "Assessment completed",
@@ -82238,6 +84085,177 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/waymark-hotels-group-%E2%80%93-criterion-hotel-motel-rockhampton-qld",
+      "merger_name": "Waymark Hotels Group \u2013 Criterion Hotel Motel, Rockhampton, QLD",
+      "status": "Assessment completed",
+      "merger_id": "WA-40040",
+      "effective_notification_datetime": "2026-08-19T12:00:00Z",
+      "original_notification_datetime": "2026-08-19T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-09-03T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-09-03T16:44:36+10:00",
+      "acquirers": [
+        {
+          "name": "Criterion Rocky Op Co Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "83 699 822 805",
+          "party_page": {
+            "id": "criterion-rocky-op-co-pty-ltd",
+            "name": "Criterion Rocky Op Co Pty Ltd"
+          }
+        },
+        {
+          "name": "Waymark Hotels Properties No 46 Pty Ltd as trustee for Criterion Rockhampton Property Trust",
+          "identifier_type": "ACN",
+          "identifier": "699 827 426",
+          "party_page": {
+            "id": "waymark-hotels-properties-no-46-pty-ltd-as-trustee-for-criterion-rockhampton-pro",
+            "name": "Waymark Hotels Properties No 46 Pty Ltd as trustee for Criterion Rockhampton Property Trust"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Turnbull Hotels (Qld) Pty Ltd as trustee for Turnbull Family Trust",
+          "identifier_type": "ACN",
+          "identifier": "138 527 367",
+          "party_page": {
+            "id": "turnbull-hotels-qld-pty-ltd-as-trustee-for-turnbull-family-trust",
+            "name": "Turnbull Hotels (Qld) Pty Ltd as trustee for Turnbull Family Trust"
+          }
+        },
+        {
+          "name": "Turnbull Hotels Enterprises Pty Ltd as trustee for Turnbull Hotels Investment Trust",
+          "identifier_type": "ACN",
+          "identifier": "079 801 264",
+          "party_page": {
+            "id": "turnbull-hotels-enterprises-pty-ltd-as-trustee-for-turnbull-hotels-investment-tr",
+            "name": "Turnbull Hotels Enterprises Pty Ltd as trustee for Turnbull Hotels Investment Trust"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Waymark Hotel Group Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "92 621 426 999",
+          "party_page": {
+            "id": "waymark-hotel-group-pty-ltd",
+            "name": "Waymark Hotel Group Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4123",
+          "name": "Liquor Retailing"
+        },
+        {
+          "code": "4400",
+          "name": "Accommodation"
+        },
+        {
+          "code": "4520",
+          "name": "Pubs, Taverns and Bars"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        }
+      ],
+      "merger_description": "Criterion Rocky Op Co Pty Ltd and Waymark Hotels Properties No 46 Pty Ltd, which are part of the Waymark Hotels Group, propose to acquire the land and business of the Criterion Hotel Motel in Rockhampton, Queensland (the **Acquisition**).\n\nThe Waymark Hotels Group owns and operates hotels (pubs) that provide food, drink (including alcohol), gaming machines, accommodation services, and takeaway liquor retailing (bottle shops). It currently operates pubs and bottle shops in regional Queensland and the Northern Territory.\n\nThe Criterion Hotel Motel is a commercial hotel business located at 150 Quay Street, Rockhampton, Queensland, which offers hospitality services and accommodation. The Criterion Hotel Motel does not operate a bottle shop.",
+      "events": [
+        {
+          "date": "2026-09-03T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Waymark%20Hotels%20Group%20%E2%80%93%20Criterion%20Hotel%20Motel%2C%20Rockhampton%2C%20QLD%20%28WA-40040%29%20-%20Notification%20waiver%20determination%20-%202%20September%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Criterion Rocky Op Co Pty Ltd and Waymark Hotels Properties No 46\nPty Ltd (as trustee for Criterion Rockhampton Property Trust), which\nare part of the Waymark Hotels Group, applied for a notification\nwaiver in respect of their proposed acquisition of the land and\nbusiness of the Criterion Hotel Motel in Rockhampton, Queensland\n(the Criterion Hotel Motel), as described in the transaction\ndocuments provided as part of the application (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "2 September 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The Waymark Hotels Group owns and operates hotels (pubs) that\nprovide food, drink (including alcohol), gaming machines,\naccommodation services, and takeaway liquor retailing (bottle\nshops). It currently operates pubs and bottle shops in regional\nQueensland and the Northern Territory. The Waymark Hotels Group\nis part of the Vinta Group, a private real estate group.\nThe target, the Criterion Hotel Motel, is a commercial hotel business\nlocated at 150 Quay Street, Rockhampton, Queensland, which offers\nhospitality services and accommodation. The Criterion Hotel Motel\ndoes not operate a bottle shop."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition given:\na. there is no horizontal overlap between the Waymark Hotels\nGroup and the Criterion Hotel Motel in the supply of on-\npremises and takeaway packaged liquor, dining, gaming and\naccommodation services in Rockhampton or the\nsurrounding local areas\nb. there are alternative suppliers of on-premises and takeaway\npackaged liquor, dining, gaming and accommodation\nservices in Rockhampton or the surrounding local areas.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-40040/Waymark Hotels Group \u2013 Criterion Hotel Motel, Rockhampton, QLD (WA-40040) - Notification waiver determination - 2 September 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-08-19T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-15035",
+          "merger_name": "Waymark Hotels Group \u2013 Howard Springs Tavern, Howard Springs, NT",
+          "acquirers": [
+            "Howard Springs Op Co Pty Ltd",
+            "Waymark Hotels Properties No 43 Pty Ltd (ATF Howard Springs Property Trust)"
+          ],
+          "targets": [
+            "Majestic Logistics Pty Limited",
+            "Majestic Ventures Pty Limited ATF Elsdon Family Trust"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-70010",
+          "merger_name": "Waymark Hotels Group \u2013 Warrego Hotel Motel Cunnamulla, Queensland",
+          "acquirers": [
+            "Waymark Hotels Properties No 42 Pty Ltd",
+            "WARREGO OP CO PTY LTD"
+          ],
+          "targets": [
+            "G.A.A. Pty Ltd"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-25031",
+          "merger_name": "Oscars Group \u2013 South Terrace Hotel in Bankstown, NSW",
+          "acquirers": [
+            "OSCARS NSW OPS PTY LTD",
+            "The Trustee for THE BANKSTOWN CENTRAL PROPERTY UNIT TRUST"
+          ],
+          "targets": [
+            "The Trustee for Red Lantern Hotel Trust",
+            "REDCAPE HOTEL GROUP PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/paragon-care-%E2%80%93-presidental",
       "merger_name": "Paragon Care \u2013 Presidental",
       "status": "Assessment completed",
@@ -85089,7 +87107,7 @@
             "Wakeling South Coast Pty Ltd",
             "S A Wakeling Nominees Pty Ltd as trustee for S.A. Wakeling Trust"
           ],
-          "status": "Under assessment"
+          "accc_determination": "Approved"
         },
         {
           "merger_id": "MN-20012",
@@ -99798,6 +101816,160 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/vista-%E2%80%93-quantios",
+      "merger_name": "Vista \u2013 Quantios",
+      "status": "Assessment completed",
+      "merger_id": "WA-70034",
+      "effective_notification_datetime": "2026-08-12T12:00:00Z",
+      "original_notification_datetime": "2026-08-12T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-09-03T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-09-03T16:34:51+10:00",
+      "acquirers": [
+        {
+          "name": "Queso Bidco Limited",
+          "identifier_type": null,
+          "identifier": "Companies House (UK)  17360801",
+          "party_page": {
+            "id": "queso-bidco-limited",
+            "name": "Queso Bidco Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Tanqueray Topco Limited",
+          "identifier_type": null,
+          "identifier": "Jersey Registration Number  145671",
+          "party_page": {
+            "id": "tanqueray-topco-limited",
+            "name": "Tanqueray Topco Limited"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Vista Equity Partners Management, LLC",
+          "identifier_type": null,
+          "identifier": "USA  23915553",
+          "canonical": {
+            "id": "vista-equity-partners-management-llc",
+            "name": "Vista Equity Partners Management, LLC"
+          },
+          "party_page": {
+            "id": "vista-equity-partners-management-llc",
+            "name": "Vista Equity Partners Management, LLC"
+          }
+        },
+        {
+          "name": "Quantios Limited",
+          "identifier_type": null,
+          "identifier": "Companies House (England & Wales)  12003494",
+          "party_page": {
+            "id": "quantios-limited",
+            "name": "Quantios Limited"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "merger_description": "Vista Equity Partners Management, LLC (**Vista**) is a US-based investment firm specialising in investments in enterprise software, data and technology-enabled businesses, investing through private equity, permanent capital, credit and public equity investment strategies through its fund vehicles.\n\nQuantios Limited (**Quantios**) is a subsidiary of Tanqueray Topco Limited. Quantios is headquartered in the United Kingdom and is a global provider of Software as a Service (**SaaS**) and digital solutions for the corporate trust and fund services industry. Its products facilitate operating activities across entity management, document management, regulatory filings & anti-money laundering, client accounting, and practice management.\n\nVista, via its subsidiary Queso Bidco Limited, proposes to acquire 100% of the issued share capital of Tanqueray Topco Limited.",
+      "events": [
+        {
+          "date": "2026-09-03T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Vista%20%E2%80%93%20Quantios%20%28WA-70034%29%20-%20Notification%20waiver%20determination%20-%202%20September%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Queso Bidco Limited applied for a notification waiver in respect of\nthe proposed acquisition by funds managed and/or advised by Vista\nEquity Partners Management, LLC (Vista), via Vista\u2019s subsidiary\nQueso Bidco Limited, of 100% of the issued share capital in\nTanqueray Topco Limited, as described in the transaction\ndocuments provided as part of the application (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "2 September 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "Vista is a US-based investment firm specialising in investments in\nenterprise software, data and technology-enabled businesses,\ninvesting through private equity, permanent capital, credit and public\nequity investment strategies through its fund vehicles.\nQuantios Limited (Quantios) is a subsidiary of the target, Tanqueray\nTopco Limited. Quantios is headquartered in the United Kingdom\nand is a global provider of Software as a Service (SaaS) and digital\nsolutions for the corporate trust and fund services industry. Its\nproducts include Quantios Core, eFileConnect and Klea. Its products\nfacilitate entity management, document management, regulatory\nfilings and anti-money laundering, client accounting, and practice\nmanagement.\nVista\u2019s portfolio companies and Quantios are both active in the\nsupply of software products or services."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\ncertain publicly available information, and had regard to the factors\nin section 51ABV(2)(b) of the Competition and Consumer Act 2010\n(Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition given:\na. there is limited horizontal overlap between Vista (including\nits portfolio companies) and Quantios in the supply of the\ntypes of software solutions offered by Quantios in Australia\nb. there is a low risk of foreclosure or other concerning vertical\nor conglomerate effects resulting from exclusionary\nconduct, bundling or tying of products or services post-\nacquisition.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-70034/Vista \u2013 Quantios (WA-70034) - Notification waiver determination - 2 September 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-08-12T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-10023",
+          "merger_name": "Infoblox \u2013 Kentik Technologies",
+          "acquirers": [
+            "Infoblox Inc."
+          ],
+          "targets": [
+            "Kentik Technologies, Inc"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-75006",
+          "merger_name": "Playlist \u2013 EGYM",
+          "acquirers": [
+            "Saturn NewCo, Inc",
+            "ClassPass Aggregator, LLC"
+          ],
+          "targets": [
+            "EGYM SE"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-45024",
+          "merger_name": "OEConnection - Epyx",
+          "acquirers": [
+            "OEC Bidco Limited"
+          ],
+          "targets": [
+            "Quadrum Investments Group Ltd (trading as \"Epyx\")"
+          ],
+          "status": "Under assessment"
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/playlist-%E2%80%93-egym",
       "merger_name": "Playlist \u2013 EGYM",
       "status": "Assessment completed",
@@ -111139,6 +113311,160 @@
           "targets": [
             "Paris Financial Services Pty Ltd",
             "PARIS LENDING PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/morgan-stanley-%E2%80%93-amber",
+      "merger_name": "Morgan Stanley \u2013 Amber",
+      "status": "Assessment completed",
+      "merger_id": "WA-85046",
+      "effective_notification_datetime": "2026-08-18T12:00:00Z",
+      "original_notification_datetime": "2026-08-18T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-09-03T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-09-03T16:42:08+10:00",
+      "acquirers": [
+        {
+          "name": "1GT Europe (Lux) S.\u00e0 r.l.",
+          "identifier_type": null,
+          "identifier": "EUID  LURCSL.B275069",
+          "party_page": {
+            "id": "1gt-europe-lux-s-r-l",
+            "name": "1GT Europe (Lux) S.\u00e0 r.l."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Amber Energy Holdings Limited",
+          "identifier_type": null,
+          "identifier": "UK Company Number  17348426",
+          "party_page": {
+            "id": "amber-energy-holdings-limited",
+            "name": "Amber Energy Holdings Limited"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Amber Holding Corporation Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "71 673 818 052",
+          "party_page": {
+            "id": "amber-holding-corporation-pty-ltd",
+            "name": "Amber Holding Corporation Pty Ltd"
+          }
+        },
+        {
+          "name": "Morgan Stanley Investment Management Inc.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "morgan-stanley-investment-management-inc",
+            "name": "Morgan Stanley Investment Management Inc."
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2640",
+          "name": "On Selling Electricity and Electricity Market Operation"
+        },
+        {
+          "code": "5420",
+          "name": "Software Publishing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "merger_description": "1GT Europe (Lux) S.\u00e0 r.l. (**1GT**) proposes to (i) subscribe for newly authorised and issued shares in Amber Energy Holdings Limited (a newly established UK company) (**Amber UK**), and (ii) purchase existing shares from certain current shareholders in Amber Holding Corporation Pty Ltd (**Amber Australia**) (the **Acquisition**). Once established, Amber UK will hold the entire issued share capital of Amber Australia (together with its subsidiaries, **Amber**) and 1GT will hold a minority interest in Amber UK.  \n\n1GT is a global climate-focused private equity growth fund managed by Morgan Stanley Investment Management. Its core mission is to invest in private companies in North America and Europe that collectively aim to avoid or remove one gigaton of carbon dioxide-equivalent emissions by 2050. 1GT acts through its general partner, Morgan Stanley AIP GP LP, which acts by its general partner Morgan Stanley Alternative Investments LLC. Morgan Stanley Alternative Investments LLC is a subsidiary under Morgan Stanley Investment Management Inc, which sits within Morgan Stanley, a global financial services firm providing investment banking, securities, wealth management and investment management services that is listed on the New York Stock Exchange.  \n\nAmber Australia, via its subsidiaries, operates a cloud-based demand-flexibility software platform and is a licensed electricity retailer in Australia. Amber Australia and its subsidiaries supply subscription-based energy retail services, automated battery and electric vehicle charging optimisation technology, and related devices to Australian households under the 'Amber' brand. It has around 92,000 customers in Australia. Its core product combines dynamic, wholesale-linked electricity price passthrough with software that provides real-time price information and can automatically charge and discharge a customer's home battery, solar system or electric vehicle in response to real-time price signals. Amber licenses its technology to utility partners internationally.",
+      "events": [
+        {
+          "date": "2026-09-03T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Morgan%20Stanley%20%E2%80%93%20Amber%20%28WA-85046%29%20-%20Notification%20waiver%20determination%20-%202%20September%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "1GT Europe (Lux) S.\u00e0 r.l. (1GT) applied for a notification waiver in\nrespect of its proposed subscription for newly authorised and issued\nshares in Amber Energy Holdings Limited (Amber UK) and purchase\nof existing shares from certain current shareholders in Amber\nHolding Corporation Pty Ltd (Amber Australia), as described in the\ndocuments provided as part of the application (the Acquisition).\nOnce established, Amber UK will hold the entire issued share capital\nof Amber Australia and 1GT will hold a minority interest in Amber UK."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "2 September 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, 1GT, is a global climate-focused private equity growth\nfund managed by Morgan Stanley Investment Management. Its core\nmission is to invest in private companies in North America and\nEurope that collectively aim to avoid or remove one gigaton of\ncarbon dioxide-equivalent emissions by 2050.\nAmber Australia, via its subsidiaries, operates a cloud-based\ndemand-flexibility software platform and is a licensed electricity\nretailer in Australia. Amber Australia and its subsidiaries supply\nsubscription-based energy retail services, automated battery and\nelectric vehicle charging optimisation technology, and related\ndevices to Australian households under the 'Amber' brand. Its core\nproduct combines dynamic, wholesale-linked electricity price\npassthrough with software that provides real-time price information\nand can automatically charge and discharge a customer's home\nbattery, solar system or electric vehicle in response to real-time price\nsignals. Amber Australia and its subsidiaries license its technology\nto utility partners internationally."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition given:\na. there is no horizontal overlap between 1GT (and its\nconnected entities) and Amber Australia in the retail supply\nof electricity, as well as demand-flexibility software or\nrelated goods and services in Australia\nb. there is a low risk of foreclosure or other concerning vertical\neffects resulting from exclusionary conduct post-acquisition.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-85046/Morgan Stanley \u2013 Amber (WA-85046) - Notification waiver determination - 2 September 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-08-18T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-30032",
+          "merger_name": "Morgan Stanley \u2013 Epic Energy",
+          "acquirers": [
+            "MCLEOD BIDCO PTY LTD"
+          ],
+          "targets": [
+            "ART Investment Holdings Pty Limited"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-15025",
+          "merger_name": "Gunvor Group \u2013 ZEN Energy Retail Holdings",
+          "acquirers": [
+            "Gunvor Group Ltd"
+          ],
+          "targets": [
+            "ZEN ENERGY RETAIL HOLDINGS PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-20026",
+          "merger_name": "Oaktree \u2013 Vivax Metrotech",
+          "acquirers": [
+            "Vector JV Bidco, Inc."
+          ],
+          "targets": [
+            "Vivax Metrotech Sdn. Bhd.",
+            "Vivax-Metrotech Ltd."
           ],
           "accc_determination": "Approved"
         }

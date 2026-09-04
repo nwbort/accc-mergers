@@ -1134,14 +1134,14 @@
     {
       "merger_id": "MN-75035",
       "merger_name": "Johns Lyng Group \u2013 C&M Build Group",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "has_conditions": false,
       "is_waiver": false,
       "under_appeal": false,
       "is_refiled": false,
       "effective_notification_datetime": "2026-08-05T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-09-03T12:00:00Z",
       "end_of_determination_period": "2026-09-16T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -1168,13 +1168,13 @@
       ],
       "other_parties": [
         {
-          "name": "SHERWOOD TOPCO LTD"
-        },
-        {
           "name": "JOHNS LYNG GROUP LIMITED",
           "canonical": {
             "name": "Johns Lyng Group"
           }
+        },
+        {
+          "name": "SHERWOOD TOPCO LTD"
         }
       ],
       "anzsic_codes": [
@@ -1417,14 +1417,14 @@
     {
       "merger_id": "MN-65021",
       "merger_name": "Wesfarmers and Built Group - Built Living Joint Venture",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "has_conditions": false,
       "is_waiver": false,
       "under_appeal": false,
       "is_refiled": false,
       "effective_notification_datetime": "2026-08-06T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-09-02T12:00:00Z",
       "end_of_determination_period": "2026-09-17T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -1722,6 +1722,113 @@
         {
           "code": "9139",
           "name": "Amusement and Other Recreational Activities n.e.c."
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-05047",
+      "merger_name": "Redwood Services Group \u2013 Concept Data and Voice Select",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-07T12:00:00Z",
+      "determination_publication_date": "2026-09-03T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Redwood Services Group Australia Pty Ltd"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Concept Data Pty Ltd"
+        },
+        {
+          "name": "Voice Select Pty Ltd"
+        },
+        {
+          "name": "Gary Paradise"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "5801",
+          "name": "Wired Telecommunications Network Operation"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-30032",
+      "merger_name": "Morgan Stanley \u2013 Epic Energy",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-07T12:00:00Z",
+      "determination_publication_date": "2026-09-03T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "MCLEOD BIDCO PTY LTD"
+        }
+      ],
+      "targets": [
+        {
+          "name": "ART Investment Holdings Pty Limited"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "North Haven Infrastructure Partners IV Fund"
+        },
+        {
+          "name": "Morgan Stanley Investment Management Inc."
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2393",
+          "name": "Railway Rolling Stock Manufacturing and Repair Services"
+        },
+        {
+          "code": "2619",
+          "name": "Other Electricity Generation"
+        },
+        {
+          "code": "2921",
+          "name": "Waste Treatment and Disposal Services"
+        },
+        {
+          "code": "2922",
+          "name": "Waste Remediation and Materials Recovery Services"
+        },
+        {
+          "code": "4610",
+          "name": "Road Freight Transport"
+        },
+        {
+          "code": "4710",
+          "name": "Rail Freight Transport"
+        },
+        {
+          "code": "5021",
+          "name": "Pipeline Transport"
         }
       ]
     },
@@ -2136,6 +2243,51 @@
       ]
     },
     {
+      "merger_id": "WA-70034",
+      "merger_name": "Vista \u2013 Quantios",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-12T12:00:00Z",
+      "determination_publication_date": "2026-09-03T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Queso Bidco Limited"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Tanqueray Topco Limited"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Vista Equity Partners Management, LLC",
+          "canonical": {
+            "name": "Vista Equity Partners Management, LLC"
+          }
+        },
+        {
+          "name": "Quantios Limited"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-05043",
       "merger_name": "Incubeta - Datisan",
       "status": "Under assessment",
@@ -2536,6 +2688,71 @@
       ]
     },
     {
+      "merger_id": "WA-35043",
+      "merger_name": "Influence Media Partners \u2013 assets from Anthem Entertainment",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-14T12:00:00Z",
+      "determination_publication_date": "2026-09-03T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Influence X Music III, L.P."
+        }
+      ],
+      "targets": [
+        {
+          "name": "Anthem Entertainment (GP) Inc."
+        },
+        {
+          "name": "Anthem Entertainment L.P."
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Ontario Teachers' Pension Plan Board"
+        },
+        {
+          "name": "Influence x Music Fund III, L.P."
+        },
+        {
+          "name": "BlackRock Financial Management, Inc."
+        },
+        {
+          "name": "IMP IM, LP"
+        },
+        {
+          "name": "IMP GP, LLC"
+        },
+        {
+          "name": "IMP x Music Fund III GP, LLC"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5521",
+          "name": "Music Publishing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6330",
+          "name": "Superannuation Funds"
+        },
+        {
+          "code": "7291",
+          "name": "Office Administrative Services"
+        }
+      ]
+    },
+    {
       "merger_id": "WA-75047",
       "merger_name": "Respect Group \u2013 McLean Care residential aged care homes and independent living units",
       "status": "Assessment completed",
@@ -2563,221 +2780,6 @@
         {
           "code": "8601",
           "name": "Aged Care Residential Services"
-        }
-      ]
-    },
-    {
-      "merger_id": "WA-75048",
-      "merger_name": "Platinum Equity Group \u2013 Nestl\u00e9 Waters",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "has_conditions": false,
-      "is_waiver": true,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-14T12:00:00Z",
-      "determination_publication_date": "2026-08-31T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "Platinum Equity, LLC"
-        },
-        {
-          "name": "Forward I S.\u00e0 r.l."
-        }
-      ],
-      "targets": [
-        {
-          "name": "Nestl\u00e9 S.A."
-        },
-        {
-          "name": "WPB JVCo S.\u00e0.r.l"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "Platinum Equity Advisors, LLC"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "1199",
-          "name": "Other Food Product Manufacturing n.e.c."
-        },
-        {
-          "code": "1211",
-          "name": "Soft Drink, Cordial and Syrup Manufacturing"
-        },
-        {
-          "code": "3609",
-          "name": "Other Grocery Wholesaling"
-        },
-        {
-          "code": "6240",
-          "name": "Financial Asset Investing"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-45024",
-      "merger_name": "OEConnection - Epyx",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-15T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-09-25T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "OEC Bidco Limited",
-          "canonical": {
-            "name": "OEConnection"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "Quadrum Investments Group Ltd (trading as \"Epyx\")"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "OEConnection, LLC",
-          "canonical": {
-            "name": "OEConnection"
-          }
-        },
-        {
-          "name": "Francisco Partners Management, LP.",
-          "canonical": {
-            "name": "Francisco Partners Management"
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "6240",
-          "name": "Financial Asset Investing"
-        },
-        {
-          "code": "7000",
-          "name": "Computer System Design and Related Services"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-80035",
-      "merger_name": "Saint-Gobain - Xypex",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-17T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-09-28T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "CertainTeed Canada, Inc. (Saint-Gobain)"
-        },
-        {
-          "name": "GCP AUSTRALIA PTY LTD"
-        }
-      ],
-      "targets": [
-        {
-          "name": "TorQuest Capital Fund V,L.P."
-        },
-        {
-          "name": "TorQuest Partners Fund V, L.P."
-        },
-        {
-          "name": "TorQuest Partners Management Inc."
-        },
-        {
-          "name": "TorQuest Partners Fund (U.S.) V, L.P."
-        },
-        {
-          "name": "Xypex Investment Holdings Inc. / Xypex Chemical Corporation"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "1709",
-          "name": "Other Petroleum and Coal Product Manufacturing"
-        },
-        {
-          "code": "1899",
-          "name": "Other Basic Chemical Product Manufacturing n.e.c."
-        },
-        {
-          "code": "2032",
-          "name": "Plaster Product Manufacturing"
-        },
-        {
-          "code": "2090",
-          "name": "Other Non-Metallic Mineral Product Manufacturing"
-        },
-        {
-          "code": "3339",
-          "name": "Other Hardware Goods Wholesaling"
-        },
-        {
-          "code": "4231",
-          "name": "Hardware and Building Supplies Retailing"
-        },
-        {
-          "code": "6240",
-          "name": "Financial Asset Investing"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-20034",
-      "merger_name": "Chevron - Woodside asset swap",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-18T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-09-29T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "WOODSIDE ENERGY (NORTH WEST SHELF) PTY LTD"
-        },
-        {
-          "name": "CHEVRON AUSTRALIA PTY LTD"
-        }
-      ],
-      "targets": [
-        {
-          "name": "CHEVRON AUSTRALIA NEW ENERGIES (G-10-AP) PTY LTD"
-        },
-        {
-          "name": "WOODSIDE ENERGY JULIMAR PTY LTD"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "WOODSIDE ENERGY LTD."
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "0700",
-          "name": "Oil and Gas Extraction"
         }
       ]
     }
