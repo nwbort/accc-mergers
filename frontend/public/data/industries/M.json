@@ -9,7 +9,7 @@
       "code": "69",
       "name": "Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",
       "level": "subdivision",
-      "merger_count": 96
+      "merger_count": 97
     },
     {
       "code": "70",
@@ -19,6 +19,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-95040",
+      "merger_name": "Apiam \u2013 Seymour Equine Clinic",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-03T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-75054",
       "merger_name": "I Squared Capital \u2013 oOh!media",
@@ -1648,11 +1659,11 @@
       "determination_date": null
     }
   ],
-  "count": 148,
-  "phase_1_count": 56,
+  "count": 149,
+  "phase_1_count": 57,
   "phase_2_count": 3,
   "waiver_count": 89,
-  "active_count": 10,
+  "active_count": 11,
   "phase_duration": {
     "average_days": 31.72,
     "median_days": 27.0,

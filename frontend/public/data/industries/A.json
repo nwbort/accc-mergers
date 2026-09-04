@@ -9,7 +9,7 @@
       "code": "01",
       "name": "Agriculture",
       "level": "subdivision",
-      "merger_count": 13
+      "merger_count": 14
     },
     {
       "code": "02",
@@ -33,10 +33,21 @@
       "code": "05",
       "name": "Agriculture, Forestry and Fishing Support Services",
       "level": "subdivision",
-      "merger_count": 5
+      "merger_count": 6
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-95040",
+      "merger_name": "Apiam \u2013 Seymour Equine Clinic",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-03T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-05013",
       "merger_name": "Zoetis \u2013 Neogen Genomics Business",
@@ -214,11 +225,11 @@
       "determination_date": "2026-03-06T12:00:00Z"
     }
   ],
-  "count": 16,
-  "phase_1_count": 6,
+  "count": 17,
+  "phase_1_count": 7,
   "phase_2_count": 1,
   "waiver_count": 9,
-  "active_count": 1,
+  "active_count": 2,
   "phase_duration": {
     "average_days": 32.857142857142854,
     "median_days": 27,

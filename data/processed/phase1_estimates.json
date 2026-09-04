@@ -3870,5 +3870,22 @@
     "sample_size": 25,
     "estimated_at": "2026-08-05",
     "method_version": 1
+  },
+  "MN-95040": {
+    "expected_business_days": 18,
+    "range_business_days": [
+      16,
+      26
+    ],
+    "basis": "industry",
+    "anzsic_level": "subdivision",
+    "anzsic_codes": [
+      "01",
+      "05",
+      "69"
+    ],
+    "sample_size": 41,
+    "estimated_at": "2026-09-04",
+    "method_version": 1
   }
 }

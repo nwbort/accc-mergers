@@ -1,10 +1,10 @@
 {
-  "total_mergers": 243,
+  "total_mergers": 244,
   "total_waivers": 378,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 203,
-    "Under assessment": 35,
+    "Under assessment": 36,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-95040",
+      "merger_name": "Apiam \u2013 Seymour Equine Clinic",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-09-03T12:00:00Z",
+      "page_modified_datetime": "2026-09-04T11:32:29+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-25035",
       "merger_name": "Velocity Vehicle Group \u2013 Fuso assets of Daimler Truck Australia Pacific",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-20T12:00:00Z",
       "page_modified_datetime": "2026-08-21T14:09:24+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-60030",
-      "merger_name": "Tencent \u2013 Happibits",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-20T12:00:00Z",
-      "page_modified_datetime": "2026-08-21T12:17:01+10:00",
       "is_waiver": false,
       "is_refiled": false
     }
