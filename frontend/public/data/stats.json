@@ -1,6 +1,6 @@
 {
   "total_mergers": 245,
-  "total_waivers": 378,
+  "total_waivers": 379,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 203,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 362,
+    "Approved": 363,
     "Not approved": 16
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.687830687830687,
-    "median_days": 19.5,
-    "average_business_days": 13.367724867724867,
-    "median_business_days": 13.0
+    "average_days": 19.71240105540897,
+    "median_days": 20,
+    "average_business_days": 13.387862796833772,
+    "median_business_days": 13
   },
   "top_industries": [
     {
@@ -72,7 +72,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 35
+      "count": 36
     },
     {
       "name": "Pubs, Taverns and Bars",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-80038",
+      "merger_name": "Imagine Education \u2013 Bumper Bears Early Learning Centre in Kippa-Ring, QLD",
+      "determination": "Approved",
+      "determination_date": "2026-09-04T12:00:00Z",
+      "page_modified_datetime": "2026-09-04T17:22:54+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-90028",
       "merger_name": "Peter Warren - Wakeling Automotive",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-02T12:00:00Z",
       "page_modified_datetime": "2026-09-02T16:26:11+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-65021",
-      "merger_name": "Wesfarmers and Built Group - Built Living Joint Venture",
-      "determination": "Approved",
-      "determination_date": "2026-09-02T12:00:00Z",
-      "page_modified_datetime": "2026-09-02T11:48:48+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
