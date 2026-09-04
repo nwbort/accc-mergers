@@ -229,7 +229,9 @@ function StateOfPlay() {
                 common offset: every matter is measured from the same unobservable zero, so a small
                 error there shifts them all together rather than adding noise. Matters filed before
                 the regime became mandatory are excluded. It&rsquo;s in calendar days, not business
-                days — it isn&rsquo;t a statutory clock.
+                days — it isn&rsquo;t a statutory clock. A single matter&rsquo;s estimate carries a
+                confidence rating on its own page; the figure here pools all of them, because
+                narrowing it to the better-evidenced ones moves the median by less than a day.
               </p>
             </div>
             <div>
