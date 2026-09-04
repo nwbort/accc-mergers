@@ -23,92 +23,39 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run missing-notification-date detection
-        id: detect
+      - name: Configure git identity
         run: |
-          if python3 -m scripts.fix_missing_notification_dates --summary; then
-            echo "found=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "found=true" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Write job summary
-        run: |
-          {
-            echo "### Missing notification dates"
-            echo ""
-            python3 -m scripts.fix_missing_notification_dates --summary || true
-          } >> "$GITHUB_STEP_SUMMARY"
-
-      # Switch to (or create/reset) the well-known suggestion branch so the
-      # commit lands on top of the current default-branch HEAD.
-      - name: Create or reset suggestion branch
-        id: branch
-        if: steps.detect.outputs.found == 'true'
-        run: |
-          BRANCH="fix/missing-notification-dates"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
-          git switch -C "$BRANCH"
-          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
 
-      - name: Apply default notification dates
-        if: steps.detect.outputs.found == 'true'
-        run: |
-          python3 -m scripts.fix_missing_notification_dates \
-            --apply-suggestions \
-            --pr-markdown pr_body.md || true
+      - name: Record base for detection
+        id: base
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
-      - name: Commit and push suggestion branch
-        id: commit
-        if: steps.detect.outputs.found == 'true'
-        run: |
-          BRANCH="${{ steps.branch.outputs.branch }}"
-          if git diff --quiet data/known_notification_dates.json; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            git add data/known_notification_dates.json
-            git commit -m "fix: default missing notification date(s) to $(date -u +%Y-%m-%d)"
-            git push origin "$BRANCH" --force
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Create or update pull request
-        if: steps.detect.outputs.found == 'true' && steps.commit.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          BRANCH="${{ steps.branch.outputs.branch }}"
-          TITLE="fix: default missing notification date(s) ($(date -u +%Y-%m-%d))"
-
-          EXISTING=$(gh pr list \
-            --head "$BRANCH" \
-            --state open \
-            --json number \
-            --jq '.[0].number' 2>/dev/null || echo "")
-
-          if [ -n "$EXISTING" ]; then
-            gh pr edit "$EXISTING" --title "$TITLE" --body-file pr_body.md
-            echo "Updated PR #$EXISTING"
-          else
-            gh pr create \
-              --head "$BRANCH" \
-              --title "$TITLE" \
-              --body-file pr_body.md
-          fi
-
-      - name: Close suggestion PR when nothing left to fix
-        if: steps.detect.outputs.found == 'false'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh pr list \
-            --head "fix/missing-notification-dates" \
-            --state open \
-            --json number \
-            --jq '.[].number' | \
-          while read -r num; do
-            gh pr close "$num" \
-              --comment "All flagged mergers now have a notification date as of $(date -u +%Y-%m-%d). Closing automatically." \
-              || true
-          done
+      # Same shape as the three detectors in pipeline.yml — branch off the
+      # checked-out main, apply the suggestions, open or refresh the review PR,
+      # close it when there is nothing left to suggest — so it uses the same
+      # composite action rather than its own copy of the plumbing. That is also
+      # what gives it the ntfy push, and the fingerprint check that keeps a
+      # daily re-detection of the same unmerged candidates from sending one.
+      - name: Missing notification dates review PR
+        uses: ./.github/actions/detection-pr
+        with:
+          base-sha: ${{ steps.base.outputs.sha }}
+          branch: fix/missing-notification-dates
+          heading: Missing notification dates
+          command: >-
+            python3 -m scripts.fix_missing_notification_dates
+            --summary
+            --apply-suggestions
+            --pr-markdown pr_body.md
+          data-file: data/known_notification_dates.json
+          commit-message: "fix: default missing notification date(s) to {date}"
+          pr-title: "fix: default missing notification date(s) ({date})"
+          close-comment: >-
+            All flagged mergers now have a notification date as of {date}.
+            Closing automatically.
+          github-token: ${{ github.token }}
+          ntfy-topic: ${{ secrets.NTFY_TOPIC }}
+          ntfy-token: ${{ secrets.NTFY_TOKEN }}
+          ntfy-server: ${{ vars.NTFY_SERVER || 'https://ntfy.sh' }}

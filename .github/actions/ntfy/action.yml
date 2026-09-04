@@ -1,0 +1,180 @@
+name: ntfy notification
+description: >-
+  Push a notification to an ntfy topic (https://ntfy.sh), so automation that
+  opens something for a human to look at can reach a phone.
+
+# Why this exists
+# ---------------
+# Several workflows open a PR or a tracking issue and then rely on the owner
+# noticing it. GitHub's own email/web notifications get lost among the bot
+# traffic this repo generates, so the ones that actually need attention are
+# pushed to a phone through ntfy instead.
+#
+# Publishing uses ntfy's JSON endpoint (POST to the server root with the whole
+# message as a JSON body) rather than the header-based API. The header API
+# would need every title, tag and click URL squeezed into an HTTP header,
+# where a newline or a non-ASCII character in a PR title is a malformed
+# request; jq builds the JSON body and escapes all of that for free.
+#
+# The topic is treated as a secret. On the public ntfy.sh server anyone who
+# knows the topic name can read *and* publish to it, so it is the only thing
+# standing between this repo's automation and a stranger's phone.
+#
+# A missing topic is a skip, not a failure: forks and PR-triggered runs have
+# no secrets, and a data pipeline should not go red because a notification
+# could not be delivered. A delivery that is attempted and fails is a warning
+# for the same reason.
+
+inputs:
+  topic:
+    description: >-
+      ntfy topic to publish to. Empty (the usual case in a fork, where the
+      secret is not available) skips the notification entirely.
+    required: false
+    default: ''
+  message:
+    description: Notification body. Truncated to ntfy's 4096-byte limit.
+    required: true
+  title:
+    description: Notification title. Optional; ntfy falls back to the topic.
+    required: false
+    default: ''
+  tags:
+    description: >-
+      Comma-separated ntfy tags. Ones that match an emoji shortcode
+      (e.g. "robot", "mag", "warning") render as the notification's emoji;
+      the rest show as plain labels.
+    required: false
+    default: ''
+  priority:
+    description: >-
+      ntfy priority, 1 (min) to 5 (max). Empty uses the server default (3).
+      4 and 5 bypass Android's notification batching, so keep them for things
+      genuinely worth interrupting for.
+    required: false
+    default: ''
+  click:
+    description: URL opened when the notification is tapped.
+    required: false
+    default: ''
+  actions:
+    description: >-
+      Raw JSON array of ntfy action buttons, e.g.
+      '[{"action":"view","label":"Open PR","url":"https://..."}]'.
+      Empty for none.
+    required: false
+    default: ''
+  server:
+    description: ntfy server base URL. Override for a self-hosted instance.
+    required: false
+    default: 'https://ntfy.sh'
+  token:
+    description: >-
+      Access token for a reserved or protected topic (sent as a bearer
+      token). Not needed for an ordinary public ntfy.sh topic.
+    required: false
+    default: ''
+
+outputs:
+  sent:
+    description: "true if the server accepted the notification."
+    value: ${{ steps.publish.outputs.sent }}
+
+runs:
+  using: composite
+  steps:
+    - name: Publish to ntfy
+      id: publish
+      shell: bash
+      env:
+        NTFY_TOPIC: ${{ inputs.topic }}
+        NTFY_MESSAGE: ${{ inputs.message }}
+        NTFY_TITLE: ${{ inputs.title }}
+        NTFY_TAGS: ${{ inputs.tags }}
+        NTFY_PRIORITY: ${{ inputs.priority }}
+        NTFY_CLICK: ${{ inputs.click }}
+        NTFY_ACTIONS: ${{ inputs.actions }}
+        NTFY_SERVER: ${{ inputs.server }}
+        NTFY_TOKEN: ${{ inputs.token }}
+      run: |
+        set -uo pipefail
+
+        # Every early return below reports "not sent" through this one write,
+        # so nothing depends on GITHUB_OUTPUT's last-key-wins behaviour.
+        not_sent() {
+          echo "sent=false" >> "$GITHUB_OUTPUT"
+          exit 0
+        }
+
+        if [ -z "${NTFY_TOPIC}" ]; then
+          echo "::notice::No ntfy topic configured — skipping notification."
+          not_sent
+        fi
+
+        # ntfy caps a message at 4096 bytes and rejects anything longer, so a
+        # long body is trimmed rather than silently dropped on the floor.
+        MESSAGE=$(printf '%s' "${NTFY_MESSAGE}" | head -c 4000)
+
+        # --argjson refuses an empty string, so absent actions become a literal
+        # null that the filter below drops.
+        ACTIONS_JSON="${NTFY_ACTIONS}"
+        if [ -z "${ACTIONS_JSON}" ]; then
+          ACTIONS_JSON=null
+        fi
+
+        if ! PAYLOAD=$(jq -n \
+          --arg topic "${NTFY_TOPIC}" \
+          --arg message "${MESSAGE}" \
+          --arg title "${NTFY_TITLE}" \
+          --arg tags "${NTFY_TAGS}" \
+          --arg priority "${NTFY_PRIORITY}" \
+          --arg click "${NTFY_CLICK}" \
+          --argjson actions "${ACTIONS_JSON}" \
+          '{topic: $topic, message: $message}
+           + (if $title    == ""   then {} else {title: $title} end)
+           + (if $click    == ""   then {} else {click: $click} end)
+           + (if $priority == ""   then {} else {priority: ($priority | tonumber)} end)
+           + (if $actions  == null then {} else {actions: $actions} end)
+           + (if $tags     == ""   then {} else
+               {tags: ($tags | split(",")
+                             | map(sub("^\\s+";"") | sub("\\s+$";""))
+                             | map(select(length > 0)))}
+             end)'); then
+          echo "::warning::Could not build the ntfy payload (bad priority or actions JSON?) — notification not sent."
+          not_sent
+        fi
+
+        # Trailing slashes would make the JSON publish URL a topic path.
+        SERVER="${NTFY_SERVER%/}"
+
+        AUTH=()
+        if [ -n "${NTFY_TOKEN}" ]; then
+          AUTH=(-H "Authorization: Bearer ${NTFY_TOKEN}")
+        fi
+
+        BODY="${RUNNER_TEMP}/ntfy-response.txt"
+        # -w writes a status even when curl itself fails, so the two are kept
+        # apart: a transport failure reports 000 rather than concatenating.
+        if ! STATUS=$(curl -sS \
+          --max-time 20 \
+          --retry 3 \
+          --retry-delay 2 \
+          --retry-connrefused \
+          -X POST \
+          -H 'Content-Type: application/json' \
+          "${AUTH[@]}" \
+          -d "${PAYLOAD}" \
+          -o "${BODY}" \
+          -w '%{http_code}' \
+          "${SERVER}"); then
+          STATUS=000
+        fi
+
+        if [ "${STATUS}" -ge 200 ] 2>/dev/null && [ "${STATUS}" -lt 300 ]; then
+          echo "Notification sent (HTTP ${STATUS})."
+          echo "sent=true" >> "$GITHUB_OUTPUT"
+        else
+          # The response body can echo the topic back, so it is not logged.
+          echo "::warning::ntfy rejected the notification (HTTP ${STATUS}). Continuing."
+          not_sent
+        fi

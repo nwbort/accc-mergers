@@ -4,16 +4,23 @@ description: >-
   open, refresh or auto-close the review PR carrying its suggestions.
 
 # The three detectors folded into pipeline.yml (duplicate events, related
-# mergers, related parties) all follow the same shape: branch off the base
-# sha, run the detector, and — if it found anything that actually changed its
-# own data file — force-push the branch and open or update a review PR;
-# otherwise close any PR left over from a previous run. Only the branch,
-# command, data file and wording differ, so they share this action rather
-# than three near-identical copies of the plumbing.
+# mergers, related parties) and the daily missing-notification-date fixer all
+# follow the same shape: branch off the base sha, run the detector, and — if
+# it found anything that actually changed its own data file — force-push the
+# branch and open or update a review PR; otherwise close any PR left over from
+# a previous run. Only the branch, command, data file and wording differ, so
+# they share this action rather than four near-identical copies of the
+# plumbing.
+#
+# It also pushes an ntfy notification when a PR carries something new (see
+# docs/notifications.md), which is the other reason to keep this shape in one
+# place: the "is this actually new?" test is subtle enough that a copy per
+# detector would drift.
 #
 # Each detector writes only its own file (mergers.json / related_mergers.json
-# / related_parties.json) and commits only that file, so the three never
-# collide with each other or with the pipeline's own commit to main.
+# / related_parties.json) and commits only that file, so the ones sharing a
+# pipeline run never collide with each other or with the pipeline's own commit
+# to main.
 
 inputs:
   base-sha:
@@ -54,6 +61,20 @@ inputs:
   github-token:
     description: Token for the gh calls.
     required: true
+  ntfy-topic:
+    description: >-
+      ntfy topic to push a notification to when this detector opens a PR, or
+      adds new suggestions to the one already open. Empty disables the push.
+    required: false
+    default: ''
+  ntfy-token:
+    description: Access token for a protected ntfy topic. Usually empty.
+    required: false
+    default: ''
+  ntfy-server:
+    description: ntfy server base URL.
+    required: false
+    default: 'https://ntfy.sh'
 
 outputs:
   found:
@@ -65,6 +86,17 @@ outputs:
   pr-number:
     description: Number of the PR opened or updated, empty if none.
     value: ${{ steps.pr.outputs.number }}
+  pr-url:
+    description: URL of the PR opened or updated, empty if none.
+    value: ${{ steps.pr.outputs.url }}
+  pr-created:
+    description: "true if the PR was opened by this run rather than refreshed."
+    value: ${{ steps.pr.outputs.created }}
+  new-suggestions:
+    description: >-
+      "true if this run found something the open PR was not already
+      carrying". False on a re-detection of the same unmerged suggestions.
+    value: ${{ steps.pr.outputs.new-suggestions }}
 
 runs:
   using: composite
@@ -99,12 +131,29 @@ runs:
       shell: bash
       env:
         BRANCH: ${{ inputs.branch }}
+        BASE_SHA: ${{ inputs.base-sha }}
         DATA_FILE: ${{ inputs.data-file }}
         COMMIT_MESSAGE: ${{ inputs.commit-message }}
       run: |
         if git diff --quiet "$DATA_FILE"; then
           echo "changed=false" >> "$GITHUB_OUTPUT"
         else
+          # Fingerprint of what this run is actually suggesting: the content
+          # lines the branch adds to or removes from the base, with hunk
+          # headers and the file header dropped. That is deliberately narrower
+          # than "the branch changed" — the branch is rebuilt from the latest
+          # main every run, so its blob moves whenever main's copy of the data
+          # file moves, which for mergers.json is every pipeline run. Hashing
+          # only the suggested lines keeps the fingerprint stable until a new
+          # candidate genuinely turns up, and that is what the PR step compares
+          # to decide whether the notification is worth sending.
+          FINGERPRINT=$(git diff "$BASE_SHA" -- "$DATA_FILE" \
+            | grep -E '^[+-]' \
+            | grep -vE '^(\+\+\+|---)' \
+            | sha256sum \
+            | cut -d' ' -f1)
+          echo "fingerprint=$FINGERPRINT" >> "$GITHUB_OUTPUT"
+
           git add "$DATA_FILE"
           git commit -m "${COMMIT_MESSAGE//\{date\}/$(date -u +%Y-%m-%d)}"
           git push origin "$BRANCH" --force
@@ -120,6 +169,7 @@ runs:
         BRANCH: ${{ inputs.branch }}
         PR_TITLE: ${{ inputs.pr-title }}
         PR_BODY_FILE: ${{ inputs.pr-body-file }}
+        FINGERPRINT: ${{ steps.commit.outputs.fingerprint }}
       run: |
         TITLE="${PR_TITLE//\{date\}/$(date -u +%Y-%m-%d)}"
         EXISTING=$(gh pr list \
@@ -127,19 +177,71 @@ runs:
           --state open \
           --json number \
           --jq '.[0].number' 2>/dev/null || echo "")
+
+        # The fingerprint of the suggestions the open PR is already carrying,
+        # parked in an HTML comment in its body — invisible when rendered, and
+        # the only place to keep it that survives the branch being force-pushed
+        # from scratch on the next run.
+        PREV_FINGERPRINT=""
+        if [ -n "$EXISTING" ]; then
+          PREV_FINGERPRINT=$(gh pr view "$EXISTING" --json body --jq '.body' \
+            | sed -n 's/.*detection-fingerprint: \([0-9a-f]\{64\}\).*/\1/p' \
+            | head -n 1)
+        fi
+        printf '\n<!-- detection-fingerprint: %s -->\n' "$FINGERPRINT" >> "$PR_BODY_FILE"
+
         if [ -n "$EXISTING" ]; then
           gh pr edit "$EXISTING" --title "$TITLE" --body-file "$PR_BODY_FILE"
-          echo "Updated PR #$EXISTING"
-          echo "number=$EXISTING" >> "$GITHUB_OUTPUT"
+          NUMBER="$EXISTING"
+          CREATED=false
+          echo "Updated PR #$NUMBER"
         else
           NUMBER=$(gh pr create \
             --head "$BRANCH" \
             --title "$TITLE" \
             --body-file "$PR_BODY_FILE" \
             | grep -oE '[0-9]+$')
+          CREATED=true
           echo "Created PR #$NUMBER"
-          echo "number=$NUMBER" >> "$GITHUB_OUTPUT"
         fi
+
+        if [ "$CREATED" = "true" ] || [ "$PREV_FINGERPRINT" != "$FINGERPRINT" ]; then
+          NEW_SUGGESTIONS=true
+        else
+          NEW_SUGGESTIONS=false
+          echo "Same suggestions as the open PR already carries — nothing new to announce."
+        fi
+
+        echo "number=$NUMBER" >> "$GITHUB_OUTPUT"
+        echo "created=$CREATED" >> "$GITHUB_OUTPUT"
+        echo "new-suggestions=$NEW_SUGGESTIONS" >> "$GITHUB_OUTPUT"
+        echo "title=$TITLE" >> "$GITHUB_OUTPUT"
+        # Built rather than read back: gh's output format is not part of its
+        # contract, and this URL is the one thing a phone notification has to
+        # get right.
+        echo "url=${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/pull/${NUMBER}" >> "$GITHUB_OUTPUT"
+
+    # Only when there is something the open PR did not already say. Left
+    # unconditional this would fire on every pipeline run — four or five times
+    # a weekday — for suggestions already sitting in the inbox.
+    - name: Notify (ntfy)
+      if: >-
+        steps.pr.outputs.number != '' &&
+        steps.pr.outputs.new-suggestions == 'true'
+      uses: ./.github/actions/ntfy
+      with:
+        topic: ${{ inputs.ntfy-topic }}
+        token: ${{ inputs.ntfy-token }}
+        server: ${{ inputs.ntfy-server }}
+        title: ${{ inputs.heading }}
+        message: >-
+          PR #${{ steps.pr.outputs.number }}
+          ${{ steps.pr.outputs.created == 'true' && 'opened' || 'updated with new candidates' }}:
+          ${{ steps.pr.outputs.title }}
+        tags: robot,mag
+        click: ${{ steps.pr.outputs.url }}
+        actions: >-
+          [{"action":"view","label":"Review PR","url":"${{ steps.pr.outputs.url }}","clear":true}]
 
     - name: Close PR when nothing left to recommend
       if: steps.detect.outputs.found == 'false'
