@@ -1,13 +1,7 @@
 import { useEffect } from 'react';
 import { FaMagnifyingGlass, FaStopwatch, FaChartLine } from 'react-icons/fa6';
 import { Doughnut } from 'react-chartjs-2';
-import {
-  Chart as ChartJS,
-  Title,
-  Tooltip,
-  Legend,
-  ArcElement,
-} from 'chart.js';
+import '../utils/chartSetup';
 import StatCard from '../components/StatCard';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
@@ -29,12 +23,6 @@ import { STATIC_PAGE_META } from '../utils/pageMeta';
 // build-time prerenderer emit the same <head>.
 const PAGE_META = STATIC_PAGE_META['/'];
 
-ChartJS.register(
-  Title,
-  Tooltip,
-  Legend,
-  ArcElement
-);
 
 // Fixed segment order for the Phase 2 doughnut, running cleared → blocked, so
 // the chart doesn't reshuffle as determinations land. "Assessment ceased" sits

@@ -321,3 +321,16 @@ export const isDatePast = (dateString) => {
     return false;
   }
 };
+
+/**
+ * Format a "YYYY-MM" month key as a short label, e.g. "2026-08" -> "Aug 2026".
+ *
+ * Month keys are plain strings from the generated JSON, not dates, so they are
+ * split rather than parsed: `new Date('2026-08')` is parsed as UTC midnight and
+ * renders as the previous month everywhere behind UTC.
+ */
+export const formatMonthLabel = (yyyymm) => {
+  const [year, month] = yyyymm.split('-');
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  return `${months[parseInt(month, 10) - 1]} ${year}`;
+};

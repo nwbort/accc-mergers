@@ -1,24 +1,13 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { Scatter, Bar, Line } from 'react-chartjs-2';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  BarElement,
-  Filler,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
+import '../utils/chartSetup';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
-import { formatDateMedium } from '../utils/dates';
+import { formatDateMedium, formatMonthLabel } from '../utils/dates';
 import { industryPath } from '../utils/slug';
 import { CHART_PALETTE as COLORS } from '../constants/chartColors';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
@@ -28,23 +17,6 @@ import { STATIC_PAGE_META } from '../utils/pageMeta';
 // build-time prerenderer emit the same <head>.
 const PAGE_META = STATIC_PAGE_META['/analysis'];
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  BarElement,
-  Filler,
-  Title,
-  Tooltip,
-  Legend
-);
-
-function formatMonthLabel(yyyymm) {
-  const [year, month] = yyyymm.split('-');
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  return `${months[parseInt(month, 10) - 1]} ${year}`;
-}
 
 // ECDF of completed-matter durations: "X% of reviews conclude by day N".
 // Right-continuous — the cumulative percentage jumps at each distinct
