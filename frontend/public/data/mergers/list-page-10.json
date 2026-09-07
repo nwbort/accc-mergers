@@ -969,7 +969,10 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "Foxtrott BidCo GmbH"
+          "name": "Foxtrott BidCo GmbH",
+          "canonical": {
+            "name": "Triton"
+          }
         }
       ],
       "targets": [
@@ -984,7 +987,7 @@
         {
           "name": "Triton Fund 6 GP SARL",
           "canonical": {
-            "name": "Triton Fund 6 GP SARL"
+            "name": "Triton"
           }
         }
       ],

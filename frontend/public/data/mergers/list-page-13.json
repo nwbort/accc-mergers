@@ -80,7 +80,10 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "Unna BidCo GmbH"
+          "name": "Unna BidCo GmbH",
+          "canonical": {
+            "name": "Triton"
+          }
         }
       ],
       "targets": [
@@ -101,7 +104,7 @@
         {
           "name": "Triton Fund 6 GP SARL",
           "canonical": {
-            "name": "Triton Fund 6 GP SARL"
+            "name": "Triton"
           }
         },
         {
