@@ -137,7 +137,10 @@ describe('Current status', () => {
 
     const waiver = headline('Waiver');
     expect(within(waiver).getByText('17')).toBeInTheDocument();
-    expect(within(waiver).getByText('4 business days slower than usual')).toBeInTheDocument();
+    // The sentence is split so only the direction is coloured, so match on
+    // the paragraph's whole text rather than a single node.
+    expect(within(waiver).getByText('4 business days slower').closest('p'))
+      .toHaveTextContent('4 business days slower than usual');
   });
 
   it('phrases a faster-than-baseline window as faster, without a sign', async () => {
@@ -145,7 +148,8 @@ describe('Current status', () => {
 
     const notifications = headline('Notification – phase 1');
     expect(within(notifications).getByText('18.5')).toBeInTheDocument();
-    expect(within(notifications).getByText('1.5 business days faster than usual')).toBeInTheDocument();
+    expect(within(notifications).getByText('1.5 business days faster').closest('p'))
+      .toHaveTextContent('1.5 business days faster than usual');
   });
 
   it('colours a slower headline adverse and a faster one favourable', async () => {
@@ -157,6 +161,11 @@ describe('Current status', () => {
     expect(
       within(headline('Notification – phase 1')).getByText('18.5')
     ).toHaveClass('text-cleared-dark');
+
+    // Only the direction is tinted — "than usual" is grammar, not a finding.
+    const waiver = headline('Waiver');
+    expect(within(waiver).getByText('4 business days slower')).toHaveClass('text-declined-dark');
+    expect(within(waiver).getByText('than usual')).toHaveClass('text-gray-500');
   });
 
   it('gives the 90th percentile under each headline', async () => {
@@ -183,7 +192,8 @@ describe('Current status', () => {
     await user.click(screen.getByRole('button', { name: 'Last 90 days' }));
 
     expect(within(headline('Waiver')).getByText('15')).toBeInTheDocument();
-    expect(within(headline('Waiver')).getByText('2 business days slower than usual')).toBeInTheDocument();
+    expect(within(headline('Waiver')).getByText('2 business days slower').closest('p'))
+      .toHaveTextContent('2 business days slower than usual');
     expect(screen.getByText(/in pre-notification/)).toHaveTextContent(
       'Average 21 calendar days in pre-notification'
     );

@@ -13,13 +13,22 @@ import { STATIC_PAGE_META } from '../utils/pageMeta';
 // build-time prerenderer emit the same <head>.
 const PAGE_META = STATIC_PAGE_META['/current-status'];
 
-/** "5 business days slower than usual", or null when there's no baseline. */
+/**
+ * The comparison against the all-time median, split so only the part that
+ * carries the direction takes the colour: "5 business days slower" is the
+ * finding, "than usual" is just grammar and reads better left neutral.
+ *
+ * Returns null when there's no baseline to compare against.
+ */
 function deltaSentence(delta) {
   if (delta === null || delta === undefined) return null;
-  if (delta === 0) return 'About the same as usual';
+  if (delta === 0) return { lead: 'About the same as usual', tail: null };
   const magnitude = Math.abs(delta);
   const unit = magnitude === 1 ? 'business day' : 'business days';
-  return `${formatMedian(magnitude)} ${unit} ${delta > 0 ? 'slower' : 'faster'} than usual`;
+  return {
+    lead: `${formatMedian(magnitude)} ${unit} ${delta > 0 ? 'slower' : 'faster'}`,
+    tail: 'than usual',
+  };
 }
 
 /**
@@ -46,7 +55,12 @@ function Headline({ label, value, delta, footnote }) {
             </p>
             <p className="text-sm text-gray-500">business days</p>
           </div>
-          {sentence && <p className={`mt-3 text-sm font-medium ${tone}`}>{sentence}</p>}
+          {sentence && (
+            <p className="mt-3 text-sm">
+              <span className={`font-medium ${tone}`}>{sentence.lead}</span>
+              {sentence.tail && <span className="text-gray-500"> {sentence.tail}</span>}
+            </p>
+          )}
           {footnote && <p className="mt-2 text-sm text-gray-500">{footnote}</p>}
         </>
       )}
