@@ -144,7 +144,7 @@ function CurrentStatus() {
           </div>
           {pre && pre.median !== null && (
             <p className="border-t border-gray-100 bg-gray-50/60 px-6 py-4 text-sm text-gray-700">
-              Average <strong>{formatMedian(pre.median)} calendar days</strong> in pre-notification
+              Average <strong>{formatMedian(pre.median)} business days</strong> in pre-notification
             </p>
           )}
         </div>

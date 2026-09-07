@@ -2764,32 +2764,32 @@
     "pre_notification": {
       "windows": [
         {
-          "median": 18.5,
-          "average": 23.3,
-          "p90": 39,
-          "min": 6,
-          "max": 64,
+          "median": 14.0,
+          "average": 16.8,
+          "p90": 29,
+          "min": 4,
+          "max": 46,
           "count": 30,
           "days": 30,
-          "median_delta": -1.5
+          "median_delta": 0.0
         },
         {
-          "median": 22.0,
-          "average": 27.0,
-          "p90": 47,
+          "median": 15.0,
+          "average": 18.9,
+          "p90": 31,
           "min": 0,
-          "max": 166,
+          "max": 112,
           "count": 114,
           "days": 90,
-          "median_delta": 2.0
+          "median_delta": 1.0
         }
       ],
       "all_time": {
-        "median": 20,
-        "average": 24.7,
-        "p90": 51,
+        "median": 14,
+        "average": 16.9,
+        "p90": 34,
         "min": 0,
-        "max": 166,
+        "max": 112,
         "count": 233
       }
     },

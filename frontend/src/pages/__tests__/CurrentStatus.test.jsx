@@ -177,11 +177,11 @@ describe('Current status', () => {
     ).toBeInTheDocument();
   });
 
-  it('states pre-notification in calendar days', async () => {
+  it('states pre-notification in business days', async () => {
     await renderPage();
 
     expect(screen.getByText(/in pre-notification/)).toHaveTextContent(
-      'Average 19 calendar days in pre-notification'
+      'Average 19 business days in pre-notification'
     );
   });
 
@@ -195,7 +195,7 @@ describe('Current status', () => {
     expect(within(headline('Waiver')).getByText('2 business days slower').closest('p'))
       .toHaveTextContent('2 business days slower than usual');
     expect(screen.getByText(/in pre-notification/)).toHaveTextContent(
-      'Average 21 calendar days in pre-notification'
+      'Average 21 business days in pre-notification'
     );
     expect(screen.getByRole('button', { name: 'Last 90 days' })).toHaveAttribute('aria-pressed', 'true');
   });
