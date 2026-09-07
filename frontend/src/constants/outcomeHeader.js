@@ -81,64 +81,61 @@ export function getOutcomeHeaderStyle(outcome) {
 }
 
 /**
- * The overlay that marks a header block as contested — a matter whose ACCC
+ * The treatment that marks a header block as contested — a matter whose ACCC
  * decision is currently under review at the Australian Competition Tribunal.
  *
  * Deliberately keyed off the appeal rather than the outcome. A refusal taken
  * to the Tribunal by the parties is the common case, but a third party can
  * just as well appeal a clearance, and both are the same fact about the
  * matter: the result on the banner is not settled. So the outcome keeps the
- * field — red stays red, emerald stays emerald — and the appeal is a stripe
- * laid over it, in the indigo AppealBadge already wears.
+ * block — red stays red, emerald stays emerald — and the appeal washes in from
+ * the right, in the indigo AppealBadge already wears.
  *
- * Contrast is checked on the blend, not assumed. The stripe is indigo-700 at
- * partial alpha composited over the fill, which for every outcome colour lands
- * darker than the fill it covers — emerald 5.5:1 -> 7.3:1, red 6.5:1 -> 8.5:1,
- * purple 7.0:1 -> 7.6:1 against white — so white text on those blocks only
- * ever gains contrast. The gray fallback is the one that goes the other way
- * (10.3:1 -> 9.4:1) and still clears 4.5:1 with room to spare, which is what
- * the test in __tests__/outcomeHeader.test.js pins: every band of every fill
- * over 4.5:1 (WCAG 1.4.3), not that the stripe is always the darker of the two.
+ * A left-to-right fade rather than a pattern laid over the fill. The outcome
+ * holds the left edge, where the result line and the title start, and the
+ * indigo arrives at the right edge under the "Under appeal" badge — so the
+ * gradient runs from what the ACCC decided towards who is now contesting it,
+ * and the badge reads as the end of the fade rather than a sticker on it.
+ * APPEAL_FADE_START keeps the first third flat so the outcome colour still
+ * reads as itself before the wash begins.
  *
- * The stripe is never the only signal that a matter is under appeal: the
+ * Contrast is checked across the whole ramp, not just its ends. Both endpoints
+ * clear 4.5:1 against white on their own, but a gradient's midpoints are not
+ * guaranteed to — interpolating between two dark colours can pass through a
+ * lighter one — so the test in __tests__/outcomeHeader.test.js samples every
+ * step of every outcome's ramp and pins the minimum over 4.5:1 (WCAG 1.4.3).
+ * That is also why the gradient is left in sRGB rather than switched to
+ * `in oklab`: the test's own interpolation matches what the browser paints,
+ * so the number it checks is the number on screen.
+ *
+ * The fade is never the only signal that a matter is under appeal: the
  * AppealBadge sits in the same block and says it in words (WCAG 1.4.1).
  */
-const APPEAL_STRIPE_COLOR = 'rgba(67, 56, 202, 0.5)'; // indigo-700
-const APPEAL_STRIPE_ANGLE = '135deg';
-// A pinstripe, not hazard tape: a narrow band on a wide gap keeps the outcome
-// colour the field and the appeal a mark laid over it. Equal bands read as a
-// second background competing with the h1 sitting on them.
-const APPEAL_STRIPE_BAND = 5; // px of stripe
-const APPEAL_STRIPE_GAP = 16; // px of untouched fill between bands
+export const APPEAL_FADE_COLOR = '#4338ca'; // indigo-700
+const APPEAL_FADE_START = 35; // % of the width the outcome colour holds flat
 
-const appealStripeImage = (scale = 1) => {
-  const gap = APPEAL_STRIPE_GAP * scale;
-  const end = gap + APPEAL_STRIPE_BAND * scale;
-  return (
-    `repeating-linear-gradient(${APPEAL_STRIPE_ANGLE}, transparent 0 ${gap}px, ` +
-    `${APPEAL_STRIPE_COLOR} ${gap}px ${end}px)`
-  );
-};
+const appealFadeImage = (style) =>
+  `linear-gradient(90deg, ${style.accent} 0%, ${style.accent} ${APPEAL_FADE_START}%, ` +
+  `${APPEAL_FADE_COLOR} 100%)`;
 
 /**
  * Inline background for the header's title block when a matter is under
  * appeal, replacing the flat `style.bg` class. Returns null when it isn't, so
  * the caller keeps the Tailwind class and no inline style is emitted.
  */
-export function getAppealStripeStyle(style) {
+export function getAppealFadeStyle(style) {
   if (!style) return null;
   return {
     backgroundColor: style.accent,
-    backgroundImage: appealStripeImage(),
+    backgroundImage: appealFadeImage(style),
   };
 }
 
 /**
- * The matching value for `--card-accent`, so the card's 3px top rule carries
- * the same stripe rather than sitting as a solid bar above a striped block.
- * The pattern is halved: at 3px tall the full-size stripe reads as a smear.
+ * The matching value for `--card-accent`, so the card's 3px top rule runs the
+ * same fade instead of sitting as a solid bar above a graded block.
  */
-export function getAppealStripeAccent(style) {
+export function getAppealFadeAccent(style) {
   if (!style) return null;
-  return `${appealStripeImage(0.5)}, ${style.accent}`;
+  return appealFadeImage(style);
 }

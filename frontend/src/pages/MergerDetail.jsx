@@ -31,8 +31,8 @@ import { MERGER_STATUS } from '../constants/mergerStatus';
 import { APPEAL_TYPE_LABELS, DEFAULT_APPEAL_LABEL, APPEAL_STATUS, APPEAL_OUTCOME_LABELS } from '../constants/appeal';
 import { OUTCOME_DOT_COLORS, DEFAULT_OUTCOME_DOT, APPEAL_DOT, getOutcomeDot } from '../constants/outcomeDotColors';
 import {
-  getAppealStripeAccent,
-  getAppealStripeStyle,
+  getAppealFadeAccent,
+  getAppealFadeStyle,
   getOutcomeHeaderStyle,
 } from '../constants/outcomeHeader';
 
@@ -245,13 +245,13 @@ function MergerDetail() {
   // timeline drops the divider it would otherwise draw under the fill.
   const decidedOutcome = getDecidedOutcome(merger);
   const outcomeStyle = decidedOutcome ? getOutcomeHeaderStyle(decidedOutcome.outcome) : null;
-  // A matter whose decision is currently before the Competition Tribunal gets
-  // that fill striped with the appeal indigo, so the banner says the result is
-  // contested rather than settled. Keyed off the appeal, not the outcome: a
-  // third party appealing a clearance is as unsettled as a party appealing a
-  // refusal, and gets the same treatment over its own colour.
-  const appealStripe = outcomeStyle && merger.under_appeal ? outcomeStyle : null;
-  const headerBlockStyle = getAppealStripeStyle(appealStripe);
+  // A matter whose decision is currently before the Competition Tribunal has
+  // that fill wash out to the appeal indigo across the block, so the banner
+  // says the result is contested rather than settled. Keyed off the appeal,
+  // not the outcome: a third party appealing a clearance is as unsettled as a
+  // party appealing a refusal, and gets the same fade from its own colour.
+  const appealFade = outcomeStyle && merger.under_appeal ? outcomeStyle : null;
+  const headerBlockStyle = getAppealFadeStyle(appealFade);
   // Kept for the rare matter carrying a determination that getDecidedOutcome
   // doesn't recognise as an ending; otherwise the header block is the only
   // place the outcome appears.
@@ -303,7 +303,7 @@ function MergerDetail() {
         <div
           className={`${CARD} p-6 mb-6 card-accent`}
           style={outcomeStyle
-            ? { '--card-accent': getAppealStripeAccent(appealStripe) ?? outcomeStyle.accent }
+            ? { '--card-accent': getAppealFadeAccent(appealFade) ?? outcomeStyle.accent }
             : undefined}
         >
           {/* Title block. For a decided matter it is pulled out to the card's
