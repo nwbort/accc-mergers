@@ -9,7 +9,7 @@
       "code": "62",
       "name": "Finance",
       "level": "subdivision",
-      "merger_count": 121
+      "merger_count": 122
     },
     {
       "code": "63",
@@ -200,6 +200,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-03-03T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-60039",
+      "merger_name": "NetSPI - Synack",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-11T12:00:00Z",
+      "determination_date": "2026-09-07T12:00:00Z"
     },
     {
       "merger_id": "MN-75035",
@@ -1929,10 +1940,10 @@
       "determination_date": null
     }
   ],
-  "count": 173,
+  "count": 174,
   "phase_1_count": 44,
   "phase_2_count": 2,
-  "waiver_count": 127,
+  "waiver_count": 128,
   "active_count": 16,
   "phase_duration": {
     "average_days": 28.0,
@@ -1942,10 +1953,10 @@
     "completed_count": 31
   },
   "waiver_duration": {
-    "average_days": 20.078740157480315,
-    "median_days": 20,
-    "average_business_days": 13.645669291338583,
-    "median_business_days": 13,
-    "completed_count": 127
+    "average_days": 20.1328125,
+    "median_days": 20.0,
+    "average_business_days": 13.6875,
+    "median_business_days": 13.0,
+    "completed_count": 128
   }
 }

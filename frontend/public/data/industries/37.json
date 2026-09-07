@@ -25,7 +25,7 @@
       "code": "372",
       "name": "Pharmaceutical and Toiletry Goods Wholesaling",
       "level": "group",
-      "merger_count": 11
+      "merger_count": 12
     },
     {
       "code": "373",
@@ -67,6 +67,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-08-11T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-75055",
+      "merger_name": "The Procter & Gamble Company - Thorne",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-27T12:00:00Z",
+      "determination_date": "2026-09-07T12:00:00Z"
     },
     {
       "merger_id": "MN-80005",
@@ -256,10 +267,10 @@
       "determination_date": "2026-02-04T12:00:00Z"
     }
   ],
-  "count": 20,
+  "count": 21,
   "phase_1_count": 13,
   "phase_2_count": 0,
-  "waiver_count": 7,
+  "waiver_count": 8,
   "active_count": 3,
   "phase_duration": {
     "average_days": 26.6,
@@ -269,10 +280,10 @@
     "completed_count": 10
   },
   "waiver_duration": {
-    "average_days": 17.857142857142858,
-    "median_days": 14,
-    "average_business_days": 12.285714285714286,
-    "median_business_days": 10,
-    "completed_count": 7
+    "average_days": 17.0,
+    "median_days": 13.5,
+    "average_business_days": 11.625,
+    "median_business_days": 9.0,
+    "completed_count": 8
   }
 }

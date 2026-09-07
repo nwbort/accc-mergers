@@ -1,0 +1,121 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/netspi-synack",
+  "merger_name": "NetSPI - Synack",
+  "status": "Assessment completed",
+  "merger_id": "WA-60039",
+  "effective_notification_datetime": "2026-08-11T12:00:00Z",
+  "original_notification_datetime": "2026-08-11T12:00:00Z",
+  "stage": "Waiver application",
+  "determination_publication_date": "2026-09-07T12:00:00Z",
+  "accc_determination": "Approved",
+  "acquirers": [
+    {
+      "name": "NetSPI Parent Holdings, LP",
+      "identifier_type": null,
+      "identifier": "7016672  Delaware",
+      "party_page": {
+        "id": "netspi-parent-holdings-lp",
+        "name": "NetSPI Parent Holdings, LP"
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "Synack, Inc.",
+      "identifier_type": null,
+      "identifier": "5279952  Delaware",
+      "party_page": {
+        "id": "synack-inc",
+        "name": "Synack, Inc."
+      }
+    }
+  ],
+  "other_parties": [
+    {
+      "name": "NetSPI, LLC",
+      "identifier_type": null,
+      "identifier": "6358225  Delaware",
+      "party_page": {
+        "id": "netspi-llc",
+        "name": "NetSPI, LLC"
+      }
+    }
+  ],
+  "anzsic_codes": [
+    {
+      "code": "6240",
+      "name": "Financial Asset Investing"
+    },
+    {
+      "code": "7000",
+      "name": "Computer System Design and Related Services"
+    }
+  ],
+  "merger_description": "NetSPI Parent Holdings, LP (**NetSPI PH**), a Delaware limited partnership, together with its affiliates, proposes to acquire 100% of the issued and outstanding shares of Synack, Inc. (**Synack**) pursuant to an all-stock merger (the **Acquisition**).\n\nNetSPI PH is a special purpose vehicle indirectly majority owned by investment funds, vehicles and/or accounts advised and managed by various subsidiaries of KKR. Existing Synack shareholders will receive equity interests in NetSPI PH in exchange for their shares in Synack, representing a 100% rollover of their existing investment. The former Synack shareholders are expected to hold approximately 33% of the outstanding equity interests of NetSPI PH immediately following completion.\n\nNetSPI LLC (**NetSPI**), headquartered in Minneapolis, United States, is the operating entity of NetSPI PH. NetSPI provides cyber security services, such as enterprise penetration testing and attack surface management. NetSPI also performs deep dive manual penetration testing of application, network, and cloud attack surfaces to find unique vulnerabilities. Investment funds, vehicles and/or accounts advised and managed by KKR hold a majority interest in NetSPI, and KKR has indirect control over NetSPI.\n\nKKR is a global investment firm that offers alternative asset management as well as capital markets and insurance solutions. KKR sponsors investment funds that invest in private equity, credit, and real assets and has strategic partners that manage hedge funds.\n\nOptiv is a cyber security solutions provider which is indirectly solely controlled by KKR. Optiv offers services and solutions that enable businesses, governments and educational institutions to define their security strategies, identify and remediate threats and risks, select and deploy the right technology, and achieve operational readiness to protect their organisations from malicious attacks.\n\nSynack supplies cybersecurity solutions, specifically, human-led and AI-powered Penetration Testing as a Service (**PTaaS**). Penetration testing is a simulated, authorised cyberattack on systems, networks, or applications to identify exploitable vulnerabilities. It is conducted by ethical hackers to assess the effectiveness of security controls within a given organisation.",
+  "events": [
+    {
+      "date": "2026-09-07T12:00:00Z",
+      "title": "Notification waiver determination published",
+      "display_title": "Waiver application determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/moderated_files/NetSPI%20-%20Synack%20%28WA-60039%29%20-%20Notification%20waiver%20determination%20-%205%20September%202026_0.pdf",
+      "determination_table_content": [
+        {
+          "item": "Explanation for\ndetermination",
+          "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition given:\na. the parties\u2019 combined share in the supply of penetration\ntesting products in Australia is low and the increase in share\nof supply arising from the Acquisition would be small\nb. there are alternative suppliers of penetration testing\nproducts in Australia and globally\nc. there is low risk of foreclosure or other concerning vertical\neffects resulting from exclusionary conduct in Australia\npost-acquisition\nd. the target has a small presence in Australia.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+        }
+      ],
+      "url_gh": "/mergers/WA-60039/NetSPI - Synack (WA-60039) - Notification waiver determination - 5 September 2026_0.pdf",
+      "is_determination_event": true,
+      "phase": "Waiver"
+    },
+    {
+      "date": "2026-08-11T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": true,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-50014",
+      "merger_name": "Searchlight Capital Partners - Additional interest in KORE Group Holdings Inc.",
+      "acquirers": [
+        "Searchlight Capital IV LP",
+        "KONA Merger Sub Co."
+      ],
+      "targets": [
+        "KORE Group Holdings, Inc."
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "WA-75032",
+      "merger_name": "Summit Partners \u2013 Keyfactor",
+      "acquirers": [
+        "Kite Parent Holdings, LP"
+      ],
+      "targets": [
+        "KF Parent, Inc.",
+        "Insight Venture Partners, LLC"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "MN-45024",
+      "merger_name": "OEConnection - Epyx",
+      "acquirers": [
+        "OEC Bidco Limited"
+      ],
+      "targets": [
+        "Quadrum Investments Group Ltd (trading as \"Epyx\")"
+      ],
+      "status": "Under assessment"
+    }
+  ]
+}

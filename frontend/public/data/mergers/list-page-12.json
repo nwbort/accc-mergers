@@ -2189,6 +2189,45 @@
       ]
     },
     {
+      "merger_id": "WA-60039",
+      "merger_name": "NetSPI - Synack",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-11T12:00:00Z",
+      "determination_publication_date": "2026-09-07T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "NetSPI Parent Holdings, LP"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Synack, Inc."
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "NetSPI, LLC"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-50035",
       "merger_name": "Opal HealthCare - Canberra Nursing Home (Lidcombe, NSW)",
       "status": "Under assessment",
@@ -2726,71 +2765,6 @@
         {
           "code": "8511",
           "name": "General Practice Medical Services"
-        }
-      ]
-    },
-    {
-      "merger_id": "WA-35043",
-      "merger_name": "Influence Media Partners \u2013 assets from Anthem Entertainment",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "has_conditions": false,
-      "is_waiver": true,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-14T12:00:00Z",
-      "determination_publication_date": "2026-09-03T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "Influence X Music III, L.P."
-        }
-      ],
-      "targets": [
-        {
-          "name": "Anthem Entertainment (GP) Inc."
-        },
-        {
-          "name": "Anthem Entertainment L.P."
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "Ontario Teachers' Pension Plan Board"
-        },
-        {
-          "name": "Influence x Music Fund III, L.P."
-        },
-        {
-          "name": "BlackRock Financial Management, Inc."
-        },
-        {
-          "name": "IMP IM, LP"
-        },
-        {
-          "name": "IMP GP, LLC"
-        },
-        {
-          "name": "IMP x Music Fund III GP, LLC"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "5521",
-          "name": "Music Publishing"
-        },
-        {
-          "code": "6240",
-          "name": "Financial Asset Investing"
-        },
-        {
-          "code": "6330",
-          "name": "Superannuation Funds"
-        },
-        {
-          "code": "7291",
-          "name": "Office Administrative Services"
         }
       ]
     }

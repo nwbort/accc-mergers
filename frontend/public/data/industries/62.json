@@ -37,7 +37,7 @@
       "code": "624",
       "name": "Financial Asset Investing",
       "level": "group",
-      "merger_count": 113
+      "merger_count": 114
     }
   ],
   "mergers": [
@@ -172,6 +172,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-08-10T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-60039",
+      "merger_name": "NetSPI - Synack",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-11T12:00:00Z",
+      "determination_date": "2026-09-07T12:00:00Z"
     },
     {
       "merger_id": "MN-75035",
@@ -1373,10 +1384,10 @@
       "determination_date": null
     }
   ],
-  "count": 121,
+  "count": 122,
   "phase_1_count": 29,
   "phase_2_count": 1,
-  "waiver_count": 91,
+  "waiver_count": 92,
   "active_count": 12,
   "phase_duration": {
     "average_days": 28.77777777777778,
@@ -1386,10 +1397,10 @@
     "completed_count": 18
   },
   "waiver_duration": {
-    "average_days": 19.835164835164836,
-    "median_days": 19,
-    "average_business_days": 13.483516483516484,
-    "median_business_days": 12,
-    "completed_count": 91
+    "average_days": 19.91304347826087,
+    "median_days": 19.5,
+    "average_business_days": 13.543478260869565,
+    "median_business_days": 12.5,
+    "completed_count": 92
   }
 }

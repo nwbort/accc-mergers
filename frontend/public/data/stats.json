@@ -1,6 +1,6 @@
 {
   "total_mergers": 246,
-  "total_waivers": 379,
+  "total_waivers": 381,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 203,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 363,
+    "Approved": 365,
     "Not approved": 16
   },
   "clearance_rate": {
@@ -48,19 +48,19 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.71240105540897,
+    "average_days": 19.708661417322833,
     "median_days": 20,
-    "average_business_days": 13.387862796833772,
+    "average_business_days": 13.385826771653543,
     "median_business_days": 13
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 113
+      "count": 114
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 68
+      "count": 69
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -167,6 +167,16 @@
       "is_refiled": false
     },
     {
+      "merger_id": "WA-75055",
+      "merger_name": "The Procter & Gamble Company - Thorne",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "effective_notification_datetime": "2026-08-27T12:00:00Z",
+      "page_modified_datetime": "2026-09-07T16:45:32+10:00",
+      "is_waiver": true,
+      "is_refiled": false
+    },
+    {
       "merger_id": "MN-85047",
       "merger_name": "Blackstone funds and Perpetual Trustees \u2013 HSBC loan portfolio",
       "status": "Under assessment",
@@ -205,19 +215,31 @@
       "page_modified_datetime": "2026-08-24T13:02:00+10:00",
       "is_waiver": false,
       "is_refiled": false
-    },
-    {
-      "merger_id": "MN-40039",
-      "merger_name": "Bloomberg - Canoe Intelligence",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-20T12:00:00Z",
-      "page_modified_datetime": "2026-08-31T12:22:26+10:00",
-      "is_waiver": false,
-      "is_refiled": false
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "WA-75055",
+      "merger_name": "The Procter & Gamble Company - Thorne",
+      "determination": "Approved",
+      "determination_date": "2026-09-07T12:00:00Z",
+      "page_modified_datetime": "2026-09-07T16:45:32+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-60039",
+      "merger_name": "NetSPI - Synack",
+      "determination": "Approved",
+      "determination_date": "2026-09-07T12:00:00Z",
+      "page_modified_datetime": "2026-09-07T16:44:36+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
     {
       "merger_id": "WA-80038",
       "merger_name": "Imagine Education \u2013 Bumper Bears Early Learning Centre in Kippa-Ring, QLD",
@@ -326,28 +348,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-30034",
-      "merger_name": "KKR \u2013 global print business of Thomson Reuters Corporation",
-      "determination": "Approved",
-      "determination_date": "2026-09-02T12:00:00Z",
-      "page_modified_datetime": "2026-09-02T16:40:23+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-35031",
-      "merger_name": "Osmoflo Water Management - Guidera O'Connor",
-      "determination": "Approved",
-      "determination_date": "2026-09-02T12:00:00Z",
-      "page_modified_datetime": "2026-09-02T16:26:11+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]
