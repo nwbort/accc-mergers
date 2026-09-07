@@ -352,8 +352,18 @@
     },
     "triton-fund-6-gp-sarl": {
       "id": "triton-fund-6-gp-sarl",
-      "canonical_name": "Triton Fund 6 GP SARL",
+      "canonical_name": "Triton",
       "members": [
+        {
+          "name": "Foxtrott BidCo GmbH",
+          "identifier": "HRB310768",
+          "identifier_type": null
+        },
+        {
+          "name": "Ivera Bidco B.V.",
+          "identifier": "Dutch Commercial Register  42000883",
+          "identifier_type": null
+        },
         {
           "name": "Triton Fund 6 GP SARL",
           "identifier": "B269053",
@@ -363,12 +373,20 @@
           "name": "Triton Fund 6 GP SARL",
           "identifier": "Luxembourg Registre de Commerce et des Soci\u00e9t\u00e9s  B269053",
           "identifier_type": null
+        },
+        {
+          "name": "Triton Investments Advisers LLP",
+          "identifier": null,
+          "identifier_type": null
+        },
+        {
+          "name": "Unna BidCo GmbH",
+          "identifier": "HRB  143514",
+          "identifier_type": null
         }
       ],
       "mergers": {
-        "acquirer": [],
-        "target": [],
-        "other": [
+        "acquirer": [
           {
             "merger_id": "WA-70035",
             "merger_name": "Triton \u2013 United Initiators",
@@ -390,21 +408,34 @@
             "phase": "Waiver",
             "notification_date": "2026-07-09T12:00:00Z",
             "determination_date": "2026-08-11T12:00:00Z"
+          },
+          {
+            "merger_id": "WA-20020",
+            "merger_name": "Triton - Integris",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-05-08T12:00:00Z",
+            "determination_date": "2026-05-25T12:00:00Z"
           }
-        ]
+        ],
+        "target": [],
+        "other": []
       },
-      "merger_count": 2,
+      "merger_count": 3,
       "phase_1_count": 0,
       "phase_2_count": 0,
-      "waiver_count": 2,
+      "waiver_count": 3,
       "active_count": 0,
       "phase_duration": null,
       "waiver_duration": {
-        "average_days": 28.5,
-        "median_days": 28.5,
-        "average_business_days": 19.5,
-        "median_business_days": 19.5,
-        "completed_count": 2
+        "average_days": 24.666666666666668,
+        "median_days": 24,
+        "average_business_days": 16.666666666666668,
+        "median_business_days": 16,
+        "completed_count": 3
       }
     },
     "vc-hamilton-wa-pty-ltd": {

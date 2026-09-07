@@ -366,7 +366,10 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "Ivera Bidco B.V."
+          "name": "Ivera Bidco B.V.",
+          "canonical": {
+            "name": "Triton"
+          }
         }
       ],
       "targets": [
@@ -379,7 +382,10 @@
       ],
       "other_parties": [
         {
-          "name": "Triton Investments Advisers LLP"
+          "name": "Triton Investments Advisers LLP",
+          "canonical": {
+            "name": "Triton"
+          }
         }
       ],
       "anzsic_codes": [
