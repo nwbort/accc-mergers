@@ -5,7 +5,6 @@ import SEO from '../components/SEO';
 import TurnaroundTrendChart from '../components/TurnaroundTrendChart';
 import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
-import { formatDateMedium } from '../utils/dates';
 import { formatMedian } from '../utils/formatMedian';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
@@ -86,7 +85,6 @@ function CurrentStatus() {
   }
 
   const entry = play.windows.find(w => w.days === windowDays) || play.windows[0];
-  const asAtLabel = play.as_at ? formatDateMedium(play.as_at) : null;
   const pre = play.pre_notification?.windows?.find(w => w.days === entry.days) ?? null;
 
   return (
@@ -149,10 +147,6 @@ function CurrentStatus() {
             </div>
           </div>
         </section>
-
-        {asAtLabel && (
-          <p className="mt-4 text-xs text-gray-500">Data as at {asAtLabel}.</p>
-        )}
       </div>
     </>
   );
