@@ -79,3 +79,63 @@ export const DEFAULT_OUTCOME_HEADER_STYLE = {
 export function getOutcomeHeaderStyle(outcome) {
   return OUTCOME_HEADER_STYLES[outcome] || DEFAULT_OUTCOME_HEADER_STYLE;
 }
+
+/**
+ * The treatment that marks a header block as contested — a matter whose ACCC
+ * decision is currently under review at the Australian Competition Tribunal.
+ *
+ * Deliberately keyed off the appeal rather than the outcome. A refusal taken
+ * to the Tribunal by the parties is the common case, but a third party can
+ * just as well appeal a clearance, and both are the same fact about the
+ * matter: the result on the banner is not settled. So the outcome keeps the
+ * block — red stays red, emerald stays emerald — and the appeal washes in from
+ * the right, in the indigo AppealBadge already wears.
+ *
+ * A left-to-right fade rather than a pattern laid over the fill. The outcome
+ * holds the left edge, where the result line and the title start, and the
+ * indigo arrives at the right edge under the "Under appeal" badge — so the
+ * gradient runs from what the ACCC decided towards who is now contesting it,
+ * and the badge reads as the end of the fade rather than a sticker on it.
+ * APPEAL_FADE_START keeps the first third flat so the outcome colour still
+ * reads as itself before the wash begins.
+ *
+ * Contrast is checked across the whole ramp, not just its ends. Both endpoints
+ * clear 4.5:1 against white on their own, but a gradient's midpoints are not
+ * guaranteed to — interpolating between two dark colours can pass through a
+ * lighter one — so the test in __tests__/outcomeHeader.test.js samples every
+ * step of every outcome's ramp and pins the minimum over 4.5:1 (WCAG 1.4.3).
+ * That is also why the gradient is left in sRGB rather than switched to
+ * `in oklab`: the test's own interpolation matches what the browser paints,
+ * so the number it checks is the number on screen.
+ *
+ * The fade is never the only signal that a matter is under appeal: the
+ * AppealBadge sits in the same block and says it in words (WCAG 1.4.1).
+ */
+export const APPEAL_FADE_COLOR = '#4338ca'; // indigo-700
+const APPEAL_FADE_START = 35; // % of the width the outcome colour holds flat
+
+const appealFadeImage = (style) =>
+  `linear-gradient(90deg, ${style.accent} 0%, ${style.accent} ${APPEAL_FADE_START}%, ` +
+  `${APPEAL_FADE_COLOR} 100%)`;
+
+/**
+ * Inline background for the header's title block when a matter is under
+ * appeal, replacing the flat `style.bg` class. Returns null when it isn't, so
+ * the caller keeps the Tailwind class and no inline style is emitted.
+ */
+export function getAppealFadeStyle(style) {
+  if (!style) return null;
+  return {
+    backgroundColor: style.accent,
+    backgroundImage: appealFadeImage(style),
+  };
+}
+
+/**
+ * The matching value for `--card-accent`, so the card's 3px top rule runs the
+ * same fade instead of sitting as a solid bar above a graded block.
+ */
+export function getAppealFadeAccent(style) {
+  if (!style) return null;
+  return appealFadeImage(style);
+}
