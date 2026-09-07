@@ -1,17 +1,19 @@
 import { useEffect, useRef } from 'react';
 import { FaTimes } from 'react-icons/fa';
+import { SHORTCUT_PAGES } from '../constants/navPages';
 
+// The `g` chords are read from the same table useKeyboardShortcuts handles them
+// from, so this overlay documents what the app actually does rather than a copy
+// someone has to remember to update. The rest have no such table to read — each
+// is a one-off handled where it applies (⌘K and `/` in the hook, j/k/Enter in
+// the mergers list) — so they stay written out here.
 const shortcuts = [
   { keys: ['⌘K'], description: 'Open command palette' },
   { keys: ['/'], description: 'Focus search' },
-  { keys: ['g', 'd'], description: 'Go to Dashboard' },
-  { keys: ['g', 'm'], description: 'Go to Mergers' },
-  { keys: ['g', 's'], description: 'Go to Current status' },
-  { keys: ['g', 't'], description: 'Go to Timeline' },
-  { keys: ['g', 'i'], description: 'Go to Industries' },
-  { keys: ['g', 'p'], description: 'Go to Parties' },
-  { keys: ['g', 'c'], description: 'Go to Commentary' },
-  { keys: ['g', 'a'], description: 'Go to Analysis' },
+  ...SHORTCUT_PAGES.map(({ shortcut, label }) => ({
+    keys: ['g', shortcut],
+    description: `Go to ${label}`,
+  })),
   { keys: ['j'], description: 'Next item (mergers list)' },
   { keys: ['k'], description: 'Previous item (mergers list)' },
   { keys: ['Enter'], description: 'Open selected item' },

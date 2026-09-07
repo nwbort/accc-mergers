@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router';
+import { SHORTCUT_ROUTES } from '../constants/navPages';
 
 /**
  * Keyboard shortcuts for power users.
@@ -8,14 +9,9 @@ import { useNavigate, useLocation } from 'react-router';
  *   ⌘K/Ctrl-K Open the command palette (works even while typing in an input)
  *   /        Focus the search input on the current page if one exists,
  *            otherwise open the command palette
- *   g then d Go to Dashboard
- *   g then m Go to Mergers
- *   g then s Go to Current status
- *   g then t Go to Timeline
- *   g then i Go to Industries
- *   g then p Go to Parties
- *   g then c Go to Commentary
- *   g then a Go to Analysis
+ *   g then ‹key› Go to a page — the chords are declared in
+ *            constants/navPages.js, not here, so this hook and the help
+ *            overlay cannot drift apart
  *   ?        Show/hide keyboard shortcut help overlay
  *
  * List shortcuts (Mergers list):
@@ -59,18 +55,7 @@ export function useKeyboardShortcuts({ onToggleHelp, onTogglePalette } = {}) {
         pendingG = false;
         clearTimeout(gTimer);
 
-        const routes = {
-          d: '/',
-          m: '/mergers',
-          s: '/current-status',
-          t: '/timeline',
-          i: '/industries',
-          p: '/parties',
-          c: '/commentary',
-          a: '/analysis',
-        };
-
-        const route = routes[e.key];
+        const route = SHORTCUT_ROUTES[e.key];
         if (route && location.pathname !== route) {
           e.preventDefault();
           navigate(route);

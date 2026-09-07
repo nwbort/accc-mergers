@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { MemoryRouter, Route, Routes, useLocation } from 'react-router';
 import { useKeyboardShortcuts } from '../useKeyboardShortcuts';
 import KeyboardShortcutsHelp from '../../components/KeyboardShortcutsHelp';
+import { SHORTCUT_PAGES } from '../../constants/navPages';
 
 // The hook navigates, so it needs a router around it. This harness renders the
 // current path so a test can assert where a chord landed.
@@ -30,16 +31,23 @@ function press(key) {
 }
 
 describe('useKeyboardShortcuts', () => {
-  it('sends "g" then "s" to the current status page', () => {
-    renderAt('/');
+  // Driven from the shared table rather than a list repeated here: a chord
+  // added to navPages.js is covered the moment it is declared.
+  it.each(SHORTCUT_PAGES.map(({ label, shortcut, path }) => [label, shortcut, path]))(
+    'sends "g" then "%s" (%s) to %s',
+    (_label, shortcut, path) => {
+      // Start somewhere that is not the destination, so a passing assertion
+      // means the chord navigated rather than that we never left.
+      renderAt('/nick-twort');
 
-    press('g');
-    press('s');
+      press('g');
+      press(shortcut);
 
-    expect(screen.getByText('path: /current-status')).toBeInTheDocument();
-  });
+      expect(screen.getByText(`path: ${path}`)).toBeInTheDocument();
+    }
+  );
 
-  it('ignores "s" on its own, so typing outside an input cannot navigate', () => {
+  it('ignores a chord key on its own, so typing outside an input cannot navigate', () => {
     renderAt('/');
 
     press('s');
@@ -47,12 +55,36 @@ describe('useKeyboardShortcuts', () => {
     expect(screen.getByText('path: /')).toBeInTheDocument();
   });
 
-  it('lists the chord in the help overlay, so it is discoverable', () => {
+  it('forgets the "g" prefix after an unbound second key', () => {
+    renderAt('/');
+
+    press('g');
+    press('z');
+    press('s');
+
+    expect(screen.getByText('path: /')).toBeInTheDocument();
+  });
+});
+
+describe('KeyboardShortcutsHelp', () => {
+  // The overlay and the hook read the same table, so this pins that they stay
+  // in step: every working chord is documented, and nothing is documented that
+  // does not work.
+  it('documents every chord the hook handles, and only those', () => {
     render(<KeyboardShortcutsHelp isOpen onClose={() => {}} />);
 
-    const row = screen.getByText('Go to Current status').closest('li');
-    expect(row).toHaveTextContent('g');
-    expect(row).toHaveTextContent('then');
-    expect(row).toHaveTextContent('s');
+    const goRows = screen
+      .getAllByRole('listitem')
+      .filter((row) => row.textContent.startsWith('Go to '));
+
+    expect(goRows).toHaveLength(SHORTCUT_PAGES.length);
+
+    for (const { label, shortcut } of SHORTCUT_PAGES) {
+      const row = screen.getByText(`Go to ${label}`).closest('li');
+      // The <kbd> elements are the keys themselves; the "then" between them is
+      // a separator, not a key.
+      const keys = [...row.querySelectorAll('kbd')].map((el) => el.textContent);
+      expect(keys).toEqual(['g', shortcut]);
+    }
   });
 });
