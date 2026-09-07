@@ -622,6 +622,11 @@
         "in_progress": false
       },
       {
+        "business_days": 18,
+        "calendar_days": 26,
+        "in_progress": false
+      },
+      {
         "business_days": 15,
         "calendar_days": 21,
         "in_progress": false
@@ -1049,17 +1054,17 @@
     ],
     "stats": {
       "average": 20.1,
-      "median": 17,
+      "median": 17.5,
       "min": 15,
       "max": 59,
-      "count": 209
+      "count": 210
     },
     "calendar_stats": {
       "average": 29.8,
-      "median": 26,
+      "median": 26.0,
       "min": 21,
       "max": 103,
-      "count": 209
+      "count": 210
     }
   },
   "waiver_duration": {
@@ -2686,7 +2691,7 @@
       41,
       46,
       37,
-      38
+      37
     ],
     "as_at": "2026-09-07"
   },
@@ -2697,13 +2702,13 @@
         "days": 30,
         "notifications_filed": 30,
         "notifications": {
-          "median": 19,
-          "average": 21.6,
+          "median": 19.0,
+          "average": 21.5,
           "p90": 33,
           "min": 15,
           "max": 56,
-          "count": 45,
-          "median_delta": 2
+          "count": 46,
+          "median_delta": 1.5
         },
         "waivers": {
           "median": 17.5,
@@ -2719,13 +2724,13 @@
         "days": 90,
         "notifications_filed": 114,
         "notifications": {
-          "median": 18.0,
+          "median": 18,
           "average": 20.7,
           "p90": 29,
           "min": 15,
           "max": 56,
-          "count": 112,
-          "median_delta": 1.0
+          "count": 113,
+          "median_delta": 0.5
         },
         "waivers": {
           "median": 15,
@@ -2740,12 +2745,12 @@
     ],
     "all_time": {
       "notifications": {
-        "median": 17,
+        "median": 17.5,
         "average": 20.1,
         "p90": 28,
         "min": 15,
         "max": 59,
-        "count": 209
+        "count": 210
       },
       "waivers": {
         "median": 13.0,
@@ -2872,9 +2877,9 @@
           "count": 45
         },
         {
-          "median": 21,
-          "average": 24.6,
-          "count": 5
+          "median": 20.0,
+          "average": 23.5,
+          "count": 6
         }
       ],
       "waivers": [
@@ -2963,7 +2968,7 @@
         41,
         46,
         37,
-        38
+        37
       ]
     }
   },
@@ -3088,11 +3093,11 @@
     {
       "code": "Q",
       "name": "Health Care and Social Assistance",
-      "average_business_days": 19.5,
-      "median_business_days": 16.5,
-      "average_calendar_days": 28.9,
-      "median_calendar_days": 25.0,
-      "count": 16
+      "average_business_days": 19.4,
+      "median_business_days": 17,
+      "average_calendar_days": 28.7,
+      "median_calendar_days": 25,
+      "count": 17
     },
     {
       "code": "K",
@@ -3134,11 +3139,11 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 459,
+      "count": 460,
       "outcome_mix": {
-        "Approved": 459
+        "Approved": 460
       },
-      "median_phase_1_business_days": 17
+      "median_phase_1_business_days": 17.0
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -3152,9 +3157,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 35,
+      "count": 34,
       "outcome_mix": {
-        "Unknown": 35
+        "Unknown": 34
       },
       "median_phase_1_business_days": null
     },
@@ -3190,7 +3195,7 @@
       "15": 44,
       "16": 37,
       "17": 24,
-      "18": 21,
+      "18": 22,
       "19": 19,
       "20": 9,
       "21": 9,
@@ -3211,9 +3216,9 @@
     },
     "stats": {
       "mean_used_bd": 18.2,
-      "median_used_bd": 17.0,
+      "median_used_bd": 17,
       "pct_decided_final_3_bd": 3.1,
-      "count": 192
+      "count": 193
     },
     "extended_count": 8
   },
@@ -3362,10 +3367,10 @@
     {
       "code": "Q",
       "name": "Health Care and Social Assistance",
-      "approved": 16,
+      "approved": 17,
       "not_approved": 0,
       "referred": 0,
-      "in_progress": 3,
+      "in_progress": 2,
       "phase2_referral_rate": 0.0
     },
     {

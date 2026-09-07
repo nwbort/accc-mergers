@@ -38,12 +38,12 @@
       "merger_id": "MN-50035",
       "merger_name": "Opal HealthCare - Canberra Nursing Home (Lidcombe, NSW)",
       "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
+      "status": "Assessment completed",
+      "determination": "Approved",
       "has_conditions": false,
       "phase": "Phase 1",
       "notification_date": "2026-08-12T12:00:00Z",
-      "determination_date": null
+      "determination_date": "2026-09-07T12:00:00Z"
     },
     {
       "merger_id": "MN-85038",
@@ -182,13 +182,13 @@
   "phase_1_count": 9,
   "phase_2_count": 0,
   "waiver_count": 4,
-  "active_count": 1,
+  "active_count": 0,
   "phase_duration": {
-    "average_days": 24.875,
-    "median_days": 24.5,
-    "average_business_days": 16.5,
-    "median_business_days": 16.0,
-    "completed_count": 8
+    "average_days": 25.0,
+    "median_days": 25,
+    "average_business_days": 16.666666666666668,
+    "median_business_days": 17,
+    "completed_count": 9
   },
   "waiver_duration": {
     "average_days": 16.25,
