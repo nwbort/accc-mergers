@@ -43,6 +43,47 @@
         "completed_count": 1
       }
     },
+    "inos-15-045-ug-haftungsbeschr-nkt": {
+      "id": "inos-15-045-ug-haftungsbeschr-nkt",
+      "canonical_name": "INOS 15-045 UG (haftungsbeschr\u00e4nkt)",
+      "members": [
+        {
+          "name": "INOS 15-045 UG (haftungsbeschr\u00e4nkt)",
+          "identifier": "HRB  223767",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-70035",
+            "merger_name": "Triton \u2013 United Initiators",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-14T12:00:00Z",
+            "determination_date": "2026-09-07T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
     "jps-management-execution-pty-ltd": {
       "id": "jps-management-execution-pty-ltd",
       "canonical_name": "JPS Management & Execution Pty Ltd",

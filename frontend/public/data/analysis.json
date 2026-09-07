@@ -2169,6 +2169,10 @@
         "calendar_days": 22
       },
       {
+        "business_days": 16,
+        "calendar_days": 24
+      },
+      {
         "business_days": 10,
         "calendar_days": 14
       },
@@ -2591,17 +2595,17 @@
     ],
     "stats": {
       "average": 13.4,
-      "median": 13,
+      "median": 13.0,
       "min": 2,
       "max": 24,
-      "count": 381
+      "count": 382
     },
     "calendar_stats": {
       "average": 19.7,
-      "median": 20,
+      "median": 20.0,
       "min": 2,
       "max": 39,
-      "count": 381
+      "count": 382
     }
   },
   "monthly_volume": {
@@ -2647,7 +2651,7 @@
       67,
       61,
       72,
-      28,
+      29,
       0
     ]
   },
@@ -2702,13 +2706,13 @@
           "median_delta": 2
         },
         "waivers": {
-          "median": 18,
+          "median": 17.5,
           "average": 16.4,
           "p90": 21,
           "min": 7,
           "max": 23,
-          "count": 65,
-          "median_delta": 5
+          "count": 66,
+          "median_delta": 4.5
         }
       },
       {
@@ -2724,12 +2728,12 @@
           "median_delta": 1.0
         },
         "waivers": {
-          "median": 15.0,
+          "median": 15,
           "average": 15.2,
           "p90": 21,
           "min": 5,
           "max": 24,
-          "count": 184,
+          "count": 185,
           "median_delta": 2.0
         }
       }
@@ -2744,12 +2748,12 @@
         "count": 209
       },
       "waivers": {
-        "median": 13,
+        "median": 13.0,
         "average": 13.4,
         "p90": 19,
         "min": 2,
         "max": 24,
-        "count": 381
+        "count": 382
       }
     },
     "pre_notification": {
@@ -2940,9 +2944,9 @@
           "count": 71
         },
         {
-          "median": 17,
+          "median": 16.5,
           "average": 16.0,
-          "count": 11
+          "count": 12
         }
       ],
       "open_caseload": [
@@ -3130,9 +3134,9 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 458,
+      "count": 459,
       "outcome_mix": {
-        "Approved": 458
+        "Approved": 459
       },
       "median_phase_1_business_days": 17
     },

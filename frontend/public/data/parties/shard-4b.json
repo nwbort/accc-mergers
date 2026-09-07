@@ -277,6 +277,47 @@
       "phase_duration": null,
       "waiver_duration": null
     },
+    "united-initiators-opco-llc": {
+      "id": "united-initiators-opco-llc",
+      "canonical_name": "United Initiators OpCo LLC",
+      "members": [
+        {
+          "name": "United Initiators OpCo LLC",
+          "identifier": "Delaware  4542578",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-70035",
+            "merger_name": "Triton \u2013 United Initiators",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-14T12:00:00Z",
+            "determination_date": "2026-09-07T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 24.0,
+        "median_days": 24,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
     "united-states-surgical-corporation": {
       "id": "united-states-surgical-corporation",
       "canonical_name": "United States Surgical Corporation",
