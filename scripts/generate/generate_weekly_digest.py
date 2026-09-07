@@ -248,6 +248,10 @@ def create_merger_summary(merger: Dict[str, Any]) -> Dict[str, Any]:
         'determination_publication_date': merger.get('determination_publication_date'),
         'end_of_determination_period': merger.get('end_of_determination_period'),
         'accc_determination': merger.get('accc_determination'),
+        # Set by enrichment.detect_has_conditions: the register publishes a
+        # conditional clearance as a plain "Approved", so the flag is the only
+        # thing that tells the weekly email a clearance came with conditions.
+        'has_conditions': merger.get('has_conditions', False),
         'stage': merger.get('stage'),
         'is_waiver': merger.get('is_waiver', False),
         'phase_1_determination': merger.get('phase_1_determination'),

@@ -160,6 +160,24 @@ def pluralise(n: int, singular: str, plural: str | None = None) -> str:
     return singular if n == 1 else (plural or singular + "s")
 
 
+def with_conditions(merger: dict) -> bool:
+    """True when a cleared deal was cleared subject to conditions.
+
+    The register publishes a conditional clearance as a plain "Approved" and
+    carries the conditions separately in ``has_conditions`` (set by
+    enrichment.detect_has_conditions and passed through the digest summary),
+    so the flag is the only signal here. Mirrors the frontend's
+    isConditionalApproval(). Older digest snapshots predate the field, in
+    which case nothing is marked.
+    """
+    return bool(merger.get("has_conditions"))
+
+
+def conditions_note(n: int) -> str:
+    """The bracketed rider on a clearance count, e.g. ' (2 with conditions)'."""
+    return f" ({n} with conditions)" if n else ""
+
+
 def join_and(parts: list[str]) -> str:
     if len(parts) <= 1:
         return "".join(parts)
@@ -192,6 +210,9 @@ def build_text_email(digest: dict) -> str:
     """Build a plain-text version of the weekly digest email."""
     date_range = format_date_range(digest["period_start"], digest["period_end"])
 
+    cleared_conditions = conditions_note(
+        sum(1 for m in digest["deals_cleared"] if with_conditions(m))
+    )
     referred = digest.get("deals_referred_to_phase_2") or []
     ceased = digest.get("deals_assessment_ceased") or []
     appealed = digest.get("deals_appealed_to_tribunal") or []
@@ -205,7 +226,7 @@ def build_text_email(digest: dict) -> str:
         "SUMMARY",
         "-------",
         f"New deals notified   : {len(digest['new_deals_notified'])}",
-        f"Cleared              : {len(digest['deals_cleared'])}",
+        f"Cleared              : {len(digest['deals_cleared'])}{cleared_conditions}",
     ]
     if ceased:
         lines.append(f"Assessment ceased    : {len(ceased)}")
@@ -241,7 +262,11 @@ def build_text_email(digest: dict) -> str:
         for label, group_mergers in cleared_groups:
             cleared_lines.append(f"\n{label}")
             group_rows = [
-                [m.get("merger_name", m["merger_id"]), format_date(m.get("determination_publication_date"))]
+                [
+                    m.get("merger_name", m["merger_id"])
+                    + (" (with conditions)" if with_conditions(m) else ""),
+                    format_date(m.get("determination_publication_date")),
+                ]
                 for m in group_mergers
             ]
             cleared_lines.append(_text_table(["Merger", "Date"], group_rows))
@@ -366,6 +391,9 @@ def _counts(digest: dict) -> dict:
     return {
         "new": len(digest["new_deals_notified"]),
         "cleared": len(digest["deals_cleared"]),
+        "cleared_with_conditions": sum(
+            1 for m in digest["deals_cleared"] if with_conditions(m)
+        ),
         "referred": len(digest.get("deals_referred_to_phase_2") or []),
         "declined": len(digest["deals_declined"]),
         "ceased": len(digest.get("deals_assessment_ceased") or []),
@@ -391,11 +419,15 @@ def build_lede(c: dict) -> str:
         # Spelled-out small numbers read better mid-sentence
         return f'<strong style="color:{INK};">{_NUMBER_WORDS.get(n, n)}</strong>'
 
+    # A conditional clearance is published as a plain "Approved", so the lede
+    # spells the split out rather than letting it read as a clean sweep.
+    conditions = conditions_note(c.get("cleared_with_conditions", 0))
+
     sentences = []
     if c["new"] and c["cleared"]:
         sentences.append(
             f"The ACCC was notified of {b(c['new'])} new {pluralise(c['new'], 'deal')} "
-            f"this week and cleared {b(c['cleared'])}."
+            f"this week and cleared {b(c['cleared'])}{conditions}."
         )
     elif c["new"]:
         sentences.append(
@@ -404,8 +436,8 @@ def build_lede(c: dict) -> str:
         )
     elif c["cleared"]:
         sentences.append(
-            f"The ACCC cleared {b(c['cleared'])} {pluralise(c['cleared'], 'deal')} this week, "
-            "with no new deals notified."
+            f"The ACCC cleared {b(c['cleared'])} {pluralise(c['cleared'], 'deal')}{conditions} "
+            "this week, with no new deals notified."
         )
     else:
         sentences.append(
@@ -602,6 +634,7 @@ def _decision_entries(digest: dict) -> list[dict]:
                 "date": m.get("determination_publication_date"),
                 "detail": det if det.lower() not in _GENERIC_DETERMINATIONS else "",
                 "is_phase2": label == "Phase 2 – detailed assessment",
+                "with_conditions": with_conditions(m),
             })
     for m in digest.get("deals_referred_to_phase_2") or []:
         det = m.get("accc_determination") or m.get("phase_1_determination") or ""
@@ -661,6 +694,12 @@ def build_decisions(digest: dict) -> str:
                 esc(m.get("merger_id", "")),
             ) if x]
             waiver = waiver_chip() if m.get("is_waiver") and e["chip_label"] != "CLEARED" else ""
+            # The register records a conditional clearance as a plain
+            # "Approved", so the row says so rather than letting it read as an
+            # unconditional clearance.
+            chips = chip(e["chip_label"], e["color"]["pale"], e["color"]["dark"])
+            if e.get("with_conditions"):
+                chips += " " + chip("WITH CONDITIONS", e["color"]["pale"], e["color"]["dark"])
             detail_html = (
                 f'<div style="font-size:12px;color:{BODY_TEXT};line-height:18px;'
                 f'margin-top:4px;">{esc(e["detail"])}</div>'
@@ -670,7 +709,7 @@ def build_decisions(digest: dict) -> str:
                 f'<tr><td colspan="2" style="padding:13px 0 12px;{divider}">'
                 f'<a href="{merger_url(m)}" style="color:{e["color"]["dark"]};font-size:14px;'
                 f'font-weight:700;text-decoration:none;line-height:1.4;">{merger_name(m)}</a>{waiver}'
-                f'<div style="margin-top:4px;">{chip(e["chip_label"], e["color"]["pale"], e["color"]["dark"])}'
+                f'<div style="margin-top:4px;">{chips}'
                 f' <span style="font-size:11px;color:{FAINT};">{" &middot; ".join(meta_bits)}</span></div>'
                 f"{detail_html}</td></tr>"
             )
