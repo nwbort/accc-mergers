@@ -260,21 +260,77 @@ jobs:
       # install take 10+ minutes on its own (run #1690: 96.7 MB at 160 kB/s;
       # run #1693 stalled on it entirely and hit the 6-hour job timeout).
       # libreoffice-writer's package set rarely changes, so caching the
-      # downloaded .debs sidesteps the mirror on a cache hit. Keyed on
-      # run_id so it always saves a fresh snapshot; restore-keys falls back
-      # to the most recent one, so it still picks up upstream version bumps.
+      # downloaded .debs sidesteps the mirror on a cache hit.
+      #
+      # The cache is keyed on the candidate version apt would install, so it
+      # is an exact hit on an unchanged package set (actions/cache skips the
+      # save on an exact hit) and misses cleanly on an upstream version bump.
+      # Resolving that needs the package lists, so the `apt-get update` the
+      # install used to do lives here instead of being run twice.
+      - name: Resolve LibreOffice package version
+        id: libreoffice-version
+        if: steps.find-docx.outputs.has_unconverted == 'true'
+        run: |
+          sudo apt-get update
+          version=$(apt-cache policy libreoffice-writer | awk '/Candidate:/ {print $2}')
+          # A missing candidate would silently key every run the same; fail
+          # loudly instead so a broken mirror doesn't poison the cache.
+          if [ -z "$version" ] || [ "$version" = "(none)" ]; then
+            echo "Could not resolve a libreoffice-writer candidate version" >&2
+            exit 1
+          fi
+          echo "Candidate libreoffice-writer version: ${version}"
+          echo "version=${version}" >> "$GITHUB_OUTPUT"
+
+      # Cached into a runner-owned directory, NOT /var/cache/apt/archives:
+      # actions/cache runs unprivileged, so untarring straight into that
+      # root-owned directory failed with "Cannot open: Permission denied" on
+      # every .deb and the restore was abandoned ("Failed to restore ... exit
+      # code 2"). The install then re-downloaded the whole ~96 MB set on every
+      # run while the post-job step happily re-saved it, so the cache had been
+      # costing a 96 MB upload per run and never once serving one.
       - name: Cache LibreOffice apt packages
         if: steps.find-docx.outputs.has_unconverted == 'true'
         uses: actions/cache@v6
         with:
-          path: /var/cache/apt/archives/*.deb
-          key: ${{ runner.os }}-apt-libreoffice-writer-${{ github.run_id }}
+          path: ${{ runner.temp }}/apt-libreoffice
+          key: ${{ runner.os }}-apt-libreoffice-writer-${{ steps.libreoffice-version.outputs.version }}
           restore-keys: |
             ${{ runner.os }}-apt-libreoffice-writer-
 
       - name: Install LibreOffice
         if: steps.find-docx.outputs.has_unconverted == 'true'
-        run: sudo apt-get update && sudo apt-get install -y libreoffice-writer --no-install-recommends
+        env:
+          APT_CACHE_DIR: ${{ runner.temp }}/apt-libreoffice
+        run: |
+          set -euo pipefail
+          mkdir -p "$APT_CACHE_DIR"
+
+          # Seed apt's own archive directory from the cache. apt serves any
+          # .deb already sitting there and downloads only what is missing or
+          # superseded, so a partial (restore-keys) hit still helps.
+          shopt -s nullglob
+          cached=("$APT_CACHE_DIR"/*.deb)
+          shopt -u nullglob
+          if [ ${#cached[@]} -gt 0 ]; then
+            echo "Seeding apt archives with ${#cached[@]} cached .deb(s)"
+            sudo cp -f "${cached[@]}" /var/cache/apt/archives/
+          else
+            echo "No cached .deb files — installing from the mirror"
+          fi
+
+          sudo apt-get install -y libreoffice-writer --no-install-recommends
+
+          # Hand the .debs back to the runner-owned directory so the post-job
+          # save can read them without sudo.
+          shopt -s nullglob
+          fetched=(/var/cache/apt/archives/*.deb)
+          shopt -u nullglob
+          if [ ${#fetched[@]} -gt 0 ]; then
+            sudo cp -f "${fetched[@]}" "$APT_CACHE_DIR"/
+          fi
+          sudo chown -R "$(id -u):$(id -g)" "$APT_CACHE_DIR"
+          echo "Cache directory now holds $(ls -1 "$APT_CACHE_DIR"/*.deb 2>/dev/null | wc -l) .deb file(s)"
 
       - name: Convert DOCX to PDF
         if: steps.find-docx.outputs.has_unconverted == 'true'
