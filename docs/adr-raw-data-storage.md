@@ -103,7 +103,7 @@ unaffected by any option here.)
 | `scripts/scrape/scrape.sh` | writes/re-cleans matter HTML |
 | `scripts/extract_mergers.py` | reads **all** matter HTML each run; downloads attachments |
 | `scripts/parse/parse_questionnaire.py`, `scripts/parse/parse_nocc.py` | read PDFs during extraction |
-| `pipeline.yml`, `extract.yml`, `convert.yml`, `scrape.yml` | shallow-checkout the repo, read/write/commit `data/raw/matters/` |
+| `pipeline.yml` | shallow-checkouts the repo, reads/writes/commits `data/raw/matters/` |
 | `scripts/build.sh` (Cloudflare Pages) | copies PDFs into build output |
 
 Note the extraction step re-parses *all* matter HTML on every run, so the raw
@@ -124,7 +124,7 @@ repo already proves this pattern with the `cli-dist` orphan branch that
 
 **Workflow changes**
 
-- `pipeline.yml` / `extract.yml` / `convert.yml` / `scrape.yml`: add a second
+- `pipeline.yml`: add a second
   checkout (`ref: raw-data`, `path: data/raw`, depth 1); commit and push raw
   changes to `raw-data` *before* pushing processed changes to `main` (so a
   deploy never references a PDF that isn't on `raw-data` yet). The existing
@@ -259,9 +259,8 @@ no harder (the sync source just changes from a branch to a checkout).
 2. Update `build.sh` to depth-1-clone `raw-data` into place before the PDF
    copy; verify a Pages preview deploy serves an existing PDF at
    `/mergers/{id}/{file}.pdf` both raw (`?raw=1`) and via the viewer.
-3. Update `pipeline.yml`, `extract.yml`, `convert.yml`, `scrape.yml` to
-   checkout `raw-data` at `data/raw` and push raw changes there **before**
-   the `main` push.
+3. Update `pipeline.yml` to checkout `raw-data` at `data/raw` and push raw
+   changes there **before** the `main` push.
 4. Remove `data/raw` from `main` (`git rm -r --cached`, `.gitignore` entry) —
    only after 2–3 are verified.
 5. Update docs (`CLAUDE.md`, `docs/deployment.md`, `data/README.md`,

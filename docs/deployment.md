@@ -128,18 +128,6 @@ The primary automated workflow. Runs end-to-end on a schedule and on every push 
 
 Also accepts a `workflow_dispatch` with an `all_mergers` boolean input to force full re-extraction, and a `repository_dispatch` event (`new_merger_detected`) fired by the `accc-register-watcher` Cloudflare Email Worker when the ACCC's register update mailing list sends an email.
 
-### `extract.yml` — Manual extraction
-
-Manual-only (`workflow_dispatch`). Runs extraction and static data generation without scraping. Useful for regenerating data files without triggering a full scrape.
-
-### `scrape.yml` — Manual scrape
-
-Manual-only (`workflow_dispatch`). Runs only the scrape step.
-
-### `convert.yml` — Manual DOCX conversion
-
-Manual-only (`workflow_dispatch`). Converts any unconverted DOCX attachments to PDF.
-
 ### `detect-duplicates.yml` — Daily duplicate check (02:00 UTC)
 
 Runs `detect_duplicates.py` to identify duplicate merger entries and reports any found.
