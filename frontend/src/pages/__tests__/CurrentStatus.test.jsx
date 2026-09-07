@@ -234,6 +234,42 @@ describe('Current status', () => {
     expect(within(august).getByText('37')).toBeInTheDocument();  // open caseload
   });
 
+  it('starts the chart at the mandatory regime, dropping the voluntary months', async () => {
+    // Notifying was optional until 1 Jan 2026, so the months before it hold a
+    // few self-selected matters and no waivers — a flat empty run that would
+    // squeeze the part worth reading.
+    await renderPage({
+      ...turnaroundFixture,
+      current_status: {
+        ...turnaroundFixture.current_status,
+        monthly: {
+          labels: ['2025-11', '2025-12', '2026-07', '2026-08'],
+          notifications: [
+            { median: 17, average: 17, count: 3 },
+            { median: 16, average: 16, count: 3 },
+            { median: 17.5, average: 20.1, count: 38 },
+            { median: 18, average: 21.3, count: 45 },
+          ],
+          waivers: [
+            { median: null, average: null, count: 0 },
+            { median: null, average: null, count: 0 },
+            { median: 15, average: 15.4, count: 52 },
+            { median: 17, average: 16.9, count: 71 },
+          ],
+          open_caseload: [5, 5, 46, 37],
+        },
+      },
+    });
+
+    const table = screen.getByRole('table', {
+      name: /Median business days to decide by decision month/,
+    });
+    expect(within(table).queryByRole('row', { name: /Nov 2025/ })).not.toBeInTheDocument();
+    expect(within(table).queryByRole('row', { name: /Dec 2025/ })).not.toBeInTheDocument();
+    expect(within(table).getByRole('row', { name: /Jul 2026/ })).toBeInTheDocument();
+    expect(within(table).getByRole('row', { name: /Aug 2026/ })).toBeInTheDocument();
+  });
+
   it('marks a month held back for a thin sample as not reported, keeping its count', async () => {
     await renderPage();
 

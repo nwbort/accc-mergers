@@ -2,6 +2,7 @@ import { memo } from 'react';
 import { Line } from 'react-chartjs-2';
 import '../utils/chartSetup';
 import { CHART_PALETTE as COLORS } from '../constants/chartColors';
+import { MANDATORY_REGIME_START } from '../constants/regime';
 import { formatMonthLabel } from '../utils/dates';
 import { formatMedian } from '../utils/formatMedian';
 
@@ -19,19 +20,28 @@ import { formatMedian } from '../utils/formatMedian';
  * datasets and force Chart.js through a full update for nothing.
  */
 function TurnaroundTrendChart({ monthly }) {
-  const rows = monthly.labels.map((label, i) => ({
-    label,
-    notifications: monthly.notifications[i],
-    waivers: monthly.waivers[i],
-    caseload: monthly.open_caseload[i],
-  }));
+  // The series runs from the first notification ever filed, but notifying was
+  // optional until 1 January 2026 — the months before it carry a handful of
+  // self-selected matters and no waivers at all, so they render as a flat
+  // empty run that squeezes the part anyone is reading. Start at the mandatory
+  // regime instead. Every series below is derived from these rows, so the
+  // chart and its sr-only table stay in step.
+  const firstMonth = MANDATORY_REGIME_START.slice(0, 7);
+  const rows = monthly.labels
+    .map((label, i) => ({
+      label,
+      notifications: monthly.notifications[i],
+      waivers: monthly.waivers[i],
+      caseload: monthly.open_caseload[i],
+    }))
+    .filter(row => row.label >= firstMonth);
 
   const data = {
-    labels: monthly.labels.map(formatMonthLabel),
+    labels: rows.map(row => formatMonthLabel(row.label)),
     datasets: [
       {
         label: 'Open caseload',
-        data: monthly.open_caseload,
+        data: rows.map(row => row.caseload),
         yAxisID: 'yCaseload',
         borderColor: 'rgba(107, 143, 127, 0.55)',
         backgroundColor: COLORS.tealLight,
@@ -47,7 +57,7 @@ function TurnaroundTrendChart({ monthly }) {
         label: 'Notifications (phase 1)',
         // Months held back for a thin sample carry a null median; `spanGaps`
         // bridges them so the line stays readable instead of fragmenting.
-        data: monthly.notifications.map(m => m.median),
+        data: rows.map(row => row.notifications.median),
         yAxisID: 'yDays',
         borderColor: COLORS.primary,
         backgroundColor: COLORS.primary,
@@ -60,7 +70,7 @@ function TurnaroundTrendChart({ monthly }) {
       },
       {
         label: 'Waivers',
-        data: monthly.waivers.map(m => m.median),
+        data: rows.map(row => row.waivers.median),
         yAxisID: 'yDays',
         borderColor: COLORS.accent,
         backgroundColor: COLORS.accent,
