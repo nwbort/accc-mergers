@@ -2678,6 +2678,283 @@
     ],
     "as_at": "2026-09-07"
   },
+  "current_status": {
+    "as_at": "2026-09-07",
+    "windows": [
+      {
+        "days": 30,
+        "notifications_filed": 30,
+        "notifications": {
+          "median": 19,
+          "average": 21.6,
+          "p90": 33,
+          "min": 15,
+          "max": 56,
+          "count": 45,
+          "median_delta": 2
+        },
+        "waivers": {
+          "median": 18,
+          "average": 16.5,
+          "p90": 21,
+          "min": 8,
+          "max": 23,
+          "count": 63,
+          "median_delta": 5
+        }
+      },
+      {
+        "days": 90,
+        "notifications_filed": 114,
+        "notifications": {
+          "median": 18.0,
+          "average": 20.7,
+          "p90": 29,
+          "min": 15,
+          "max": 56,
+          "count": 112,
+          "median_delta": 1.0
+        },
+        "waivers": {
+          "median": 15.0,
+          "average": 15.3,
+          "p90": 21,
+          "min": 5,
+          "max": 24,
+          "count": 182,
+          "median_delta": 2.0
+        }
+      }
+    ],
+    "all_time": {
+      "notifications": {
+        "median": 17,
+        "average": 20.1,
+        "p90": 28,
+        "min": 15,
+        "max": 59,
+        "count": 209
+      },
+      "waivers": {
+        "median": 13,
+        "average": 13.4,
+        "p90": 19,
+        "min": 2,
+        "max": 24,
+        "count": 379
+      }
+    },
+    "pre_notification": {
+      "windows": [
+        {
+          "median": 19.0,
+          "average": 23.6,
+          "p90": 39,
+          "min": 6,
+          "max": 64,
+          "count": 30,
+          "days": 30,
+          "median_delta": -1.0
+        },
+        {
+          "median": 22.0,
+          "average": 27.1,
+          "p90": 47,
+          "min": 0,
+          "max": 166,
+          "count": 114,
+          "days": 90,
+          "median_delta": 2.0
+        }
+      ],
+      "all_time": {
+        "median": 20,
+        "average": 24.8,
+        "p90": 51,
+        "min": 0,
+        "max": 166,
+        "count": 233
+      }
+    },
+    "monthly": {
+      "labels": [
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12",
+        "2026-01",
+        "2026-02",
+        "2026-03",
+        "2026-04",
+        "2026-05",
+        "2026-06",
+        "2026-07",
+        "2026-08",
+        "2026-09"
+      ],
+      "notifications": [
+        {
+          "median": null,
+          "average": null,
+          "count": 1
+        },
+        {
+          "median": null,
+          "average": null,
+          "count": 1
+        },
+        {
+          "median": null,
+          "average": null,
+          "count": 0
+        },
+        {
+          "median": null,
+          "average": null,
+          "count": 3
+        },
+        {
+          "median": null,
+          "average": null,
+          "count": 3
+        },
+        {
+          "median": null,
+          "average": null,
+          "count": 3
+        },
+        {
+          "median": 16,
+          "average": 18.5,
+          "count": 11
+        },
+        {
+          "median": 17.0,
+          "average": 17.4,
+          "count": 18
+        },
+        {
+          "median": 17,
+          "average": 19.3,
+          "count": 21
+        },
+        {
+          "median": 17,
+          "average": 17.7,
+          "count": 23
+        },
+        {
+          "median": 17,
+          "average": 20.6,
+          "count": 37
+        },
+        {
+          "median": 17.5,
+          "average": 20.8,
+          "count": 38
+        },
+        {
+          "median": 18,
+          "average": 20.9,
+          "count": 45
+        },
+        {
+          "median": 21,
+          "average": 24.6,
+          "count": 5
+        }
+      ],
+      "waivers": [
+        {
+          "median": null,
+          "average": null,
+          "count": 0
+        },
+        {
+          "median": null,
+          "average": null,
+          "count": 0
+        },
+        {
+          "median": null,
+          "average": null,
+          "count": 0
+        },
+        {
+          "median": null,
+          "average": null,
+          "count": 0
+        },
+        {
+          "median": null,
+          "average": null,
+          "count": 0
+        },
+        {
+          "median": 9,
+          "average": 8.5,
+          "count": 13
+        },
+        {
+          "median": 10.0,
+          "average": 11.4,
+          "count": 28
+        },
+        {
+          "median": 11.5,
+          "average": 11.7,
+          "count": 30
+        },
+        {
+          "median": 13,
+          "average": 12.9,
+          "count": 53
+        },
+        {
+          "median": 11.0,
+          "average": 11.6,
+          "count": 50
+        },
+        {
+          "median": 12,
+          "average": 12.8,
+          "count": 73
+        },
+        {
+          "median": 15.0,
+          "average": 15.1,
+          "count": 52
+        },
+        {
+          "median": 17,
+          "average": 16.3,
+          "count": 71
+        },
+        {
+          "median": 17,
+          "average": 16.7,
+          "count": 9
+        }
+      ],
+      "open_caseload": [
+        1,
+        0,
+        4,
+        5,
+        5,
+        11,
+        22,
+        25,
+        32,
+        42,
+        41,
+        46,
+        37,
+        38
+      ]
+    }
+  },
   "industry_phase1_duration": [
     {
       "code": "S",

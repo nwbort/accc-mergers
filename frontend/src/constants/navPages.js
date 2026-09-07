@@ -19,5 +19,6 @@ export const NAV_PAGES = [
     inPalette: true,
     paletteOrder: 8,
   },
-  { label: 'Refiled waivers', path: '/refiled-notifications', inNavbar: false, inPalette: true, paletteOrder: 9 },
+  { label: 'Current status', path: '/current-status', inNavbar: false, inPalette: true, paletteOrder: 9 },
+  { label: 'Refiled waivers', path: '/refiled-notifications', inNavbar: false, inPalette: true, paletteOrder: 10 },
 ];

@@ -833,6 +833,7 @@ class TestAnalysisGenerate:
             'by_commission_division',
             'deadline_utilisation', 'notification_restarts', 'restart_rate',
             'outcomes_by_division', 'referrals_by_quarter', 'open_caseload',
+            'current_status',
         }
         assert 'durations' in payload['phase1_duration']
         assert 'durations' in payload['waiver_duration']
@@ -959,6 +960,232 @@ class TestOpenCaseload:
     def test_empty_input(self):
         payload = analysis.open_caseload([], as_at=date(2026, 2, 28))
         assert payload == {'labels': [], 'notifications': [], 'as_at': '2026-02-28'}
+
+
+class TestCurrentStatus:
+    """Recent decision times vs the all-time baseline, and against caseload."""
+
+    def _decided(self, merger_id, opened, decided, waiver=False):
+        return enrich_merger({
+            'merger_id': merger_id,
+            'merger_name': merger_id,
+            'status': 'Assessment completed',
+            'accc_determination': 'Approved',
+            'stage': 'Phase 1 - preliminary assessment',
+            'is_waiver': waiver,
+            'original_notification_datetime': opened,
+            'effective_notification_datetime': opened,
+            'determination_publication_date': decided,
+            'page_modified_datetime': decided,
+            'anzsic_codes': [],
+            'acquirers': ['A'],
+            'targets': ['B'],
+            'other_parties': [],
+            'url': f'https://example.com/{merger_id}',
+            'events': [],
+        })
+
+    def test_windows_cover_only_matters_decided_inside_them(self):
+        mergers = [
+            # Decided 1 Mar — inside the 30-day window ending 15 Mar.
+            self._decided('MN-1', '2026-02-02T00:00:00Z', '2026-03-01T00:00:00Z'),
+            # Decided 5 Jan — outside 30 days, inside 90.
+            self._decided('MN-2', '2026-01-02T00:00:00Z', '2026-01-05T00:00:00Z'),
+        ]
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
+
+        by_days = {w['days']: w for w in payload['windows']}
+        assert by_days[30]['notifications']['count'] == 1
+        assert by_days[90]['notifications']['count'] == 2
+        assert payload['as_at'] == '2026-03-15'
+
+    def test_buckets_by_decision_date_not_filing_date(self):
+        # Filed well outside the window, decided inside it: the matter counts,
+        # because the window measures what the ACCC is turning around now.
+        mergers = [self._decided('MN-1', '2025-06-02T00:00:00Z', '2026-03-10T00:00:00Z')]
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
+
+        assert {w['days']: w['notifications']['count'] for w in payload['windows']} == {30: 1, 90: 1}
+
+    def test_median_delta_is_measured_against_the_all_time_median(self):
+        # Three quick waivers long ago, one slow one recently: the all-time
+        # median sits at the quick end, so the recent window reads as slower.
+        mergers = [
+            self._decided('WA-1', '2026-01-02T00:00:00Z', '2026-01-05T00:00:00Z', waiver=True),
+            self._decided('WA-2', '2026-01-02T00:00:00Z', '2026-01-05T00:00:00Z', waiver=True),
+            self._decided('WA-3', '2026-01-02T00:00:00Z', '2026-01-05T00:00:00Z', waiver=True),
+            self._decided('WA-4', '2026-03-02T00:00:00Z', '2026-03-10T00:00:00Z', waiver=True),
+        ]
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
+
+        all_time_median = payload['all_time']['waivers']['median']
+        recent = {w['days']: w['waivers'] for w in payload['windows']}[30]
+        assert recent['count'] == 1
+        assert recent['median_delta'] == recent['median'] - all_time_median
+        assert recent['median_delta'] > 0
+
+    def test_waivers_and_notifications_are_reported_separately(self):
+        mergers = [
+            self._decided('MN-1', '2026-03-02T00:00:00Z', '2026-03-10T00:00:00Z'),
+            self._decided('WA-1', '2026-03-02T00:00:00Z', '2026-03-10T00:00:00Z', waiver=True),
+        ]
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
+
+        window = {w['days']: w for w in payload['windows']}[30]
+        assert window['notifications']['count'] == 1
+        assert window['waivers']['count'] == 1
+
+    def test_monthly_series_aligns_with_the_open_caseload_labels(self):
+        mergers = [self._decided(f'MN-{i}', '2026-01-02T00:00:00Z', '2026-02-10T00:00:00Z')
+                   for i in range(4)]
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
+        monthly = payload['monthly']
+        caseload = analysis.open_caseload(mergers, as_at=date(2026, 3, 15))
+
+        assert monthly['labels'] == caseload['labels']
+        assert monthly['open_caseload'] == caseload['notifications']
+        assert len(monthly['notifications']) == len(monthly['labels'])
+        assert len(monthly['waivers']) == len(monthly['labels'])
+
+    def test_thin_month_reports_its_count_but_no_median(self):
+        # Two decisions in a month is below MIN_MONTHLY_TURNAROUND_SAMPLE, so
+        # the median is withheld rather than plotted off a single matter.
+        mergers = [
+            self._decided('MN-1', '2026-01-02T00:00:00Z', '2026-02-10T00:00:00Z'),
+            self._decided('MN-2', '2026-01-02T00:00:00Z', '2026-02-11T00:00:00Z'),
+        ]
+        payload = analysis.current_status(mergers, as_at=date(2026, 2, 28))
+        february = dict(zip(payload['monthly']['labels'], payload['monthly']['notifications']))['2026-02']
+
+        assert february['count'] == 2
+        assert february['median'] is None
+        assert february['average'] is None
+
+    def test_p90_is_an_observed_duration_and_ignores_a_lone_outlier(self):
+        # Nine matters decided quickly and one slow one: the p90 lands on the
+        # ninth-fastest (a real, quotable duration) rather than being dragged
+        # up to the outlier, which is what separates it from the max.
+        mergers = [self._decided(f'MN-{i}', '2026-03-02T00:00:00Z', '2026-03-10T00:00:00Z')
+                   for i in range(9)]
+        mergers.append(self._decided('MN-slow', '2026-03-02T00:00:00Z', '2026-03-13T00:00:00Z'))
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
+        stats = {w['days']: w['notifications'] for w in payload['windows']}[30]
+
+        assert stats['count'] == 10
+        assert stats['p90'] == stats['median']  # the fast group spans both
+        assert stats['p90'] < stats['max']
+
+    def test_p90_rises_once_the_slow_tail_is_more_than_a_tenth(self):
+        # Two slow matters in ten is over the 90th percentile, so p90 now has
+        # to report the slower duration rather than the fast group's.
+        mergers = [self._decided(f'MN-{i}', '2026-03-02T00:00:00Z', '2026-03-10T00:00:00Z')
+                   for i in range(8)]
+        mergers += [self._decided(f'MN-slow-{i}', '2026-03-02T00:00:00Z', '2026-03-13T00:00:00Z')
+                    for i in range(2)]
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
+        stats = {w['days']: w['notifications'] for w in payload['windows']}[30]
+
+        assert stats['p90'] == stats['max']
+        assert stats['median'] < stats['p90']
+
+    def test_counts_notifications_filed_in_each_window(self):
+        mergers = [
+            # Filed inside the 30-day window ending 15 Mar.
+            self._decided('MN-1', '2026-03-01T00:00:00Z', '2026-03-12T00:00:00Z'),
+            # Filed in January: inside 90 days, outside 30.
+            self._decided('MN-2', '2026-01-05T00:00:00Z', '2026-01-20T00:00:00Z'),
+        ]
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
+
+        assert {w['days']: w['notifications_filed'] for w in payload['windows']} == {30: 1, 90: 2}
+
+    def test_inflow_ignores_waivers_entirely(self):
+        # A waiver only reaches the register once decided, so counting waiver
+        # "filings" in a recent window would miss every one still in front of
+        # the ACCC. No waiver inflow is published at all.
+        mergers = [self._decided('WA-1', '2026-03-01T00:00:00Z', '2026-03-12T00:00:00Z', waiver=True)]
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
+
+        assert all(w['notifications_filed'] == 0 for w in payload['windows'])
+        assert all('waivers_filed' not in w for w in payload['windows'])
+
+    def _with_pre_notification(self, merger_id, filed, decided, days):
+        merger = self._decided(merger_id, filed, decided)
+        merger['pre_notification'] = {'estimated_days': days, 'basis': 'bracketed'}
+        return merger
+
+    def test_pre_notification_is_keyed_by_filing_date(self):
+        mergers = [
+            # Filed inside the 30-day window ending 15 Mar.
+            self._with_pre_notification('MN-1', '2026-03-02T00:00:00Z', '2026-03-12T00:00:00Z', 10),
+            # Filed in January: inside 90 days, outside 30.
+            self._with_pre_notification('MN-2', '2026-01-05T00:00:00Z', '2026-01-20T00:00:00Z', 40),
+        ]
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
+        by_days = {w['days']: w for w in payload['pre_notification']['windows']}
+
+        assert by_days[30]['count'] == 1
+        assert by_days[30]['median'] == 10
+        assert by_days[90]['count'] == 2
+        assert payload['pre_notification']['all_time']['count'] == 2
+
+    def test_pre_notification_delta_is_against_the_all_time_median(self):
+        mergers = [
+            self._with_pre_notification('MN-1', '2026-01-05T00:00:00Z', '2026-01-20T00:00:00Z', 10),
+            self._with_pre_notification('MN-2', '2026-01-06T00:00:00Z', '2026-01-21T00:00:00Z', 10),
+            self._with_pre_notification('MN-3', '2026-01-07T00:00:00Z', '2026-01-22T00:00:00Z', 10),
+            self._with_pre_notification('MN-4', '2026-03-02T00:00:00Z', '2026-03-12T00:00:00Z', 30),
+        ]
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
+        recent = {w['days']: w for w in payload['pre_notification']['windows']}[30]
+
+        assert recent['median_delta'] == recent['median'] - payload['pre_notification']['all_time']['median']
+        assert recent['median_delta'] > 0
+
+    def test_pre_notification_excludes_voluntary_period_matters(self):
+        # Filed before the regime became mandatory: the counter had no waiver
+        # applications to date it against, so the estimate does not carry over.
+        mergers = [
+            self._with_pre_notification('MN-1', '2025-09-01T00:00:00Z', '2025-10-01T00:00:00Z', 50),
+            self._with_pre_notification('MN-2', '2026-03-02T00:00:00Z', '2026-03-12T00:00:00Z', 10),
+        ]
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
+
+        assert payload['pre_notification']['all_time']['count'] == 1
+        assert payload['pre_notification']['all_time']['median'] == 10
+
+    def test_pre_notification_keeps_a_zero_day_estimate(self):
+        # Zero dates the case number to the filing day itself — a matter with no
+        # pre-notification stage, not a missing measurement.
+        mergers = [
+            self._with_pre_notification('MN-1', '2026-03-02T00:00:00Z', '2026-03-12T00:00:00Z', 0),
+            self._with_pre_notification('MN-2', '2026-03-03T00:00:00Z', '2026-03-13T00:00:00Z', 10),
+        ]
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
+
+        assert payload['pre_notification']['all_time']['count'] == 2
+        assert payload['pre_notification']['all_time']['min'] == 0
+
+    def test_pre_notification_skips_waivers_and_matters_without_an_estimate(self):
+        mergers = [
+            # A waiver is lodged the day its case opens: no pre-notification stage.
+            self._decided('WA-1', '2026-03-02T00:00:00Z', '2026-03-12T00:00:00Z', waiver=True),
+            # A notification the counter could not bound.
+            self._decided('MN-1', '2026-03-02T00:00:00Z', '2026-03-12T00:00:00Z'),
+        ]
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
+
+        assert payload['pre_notification']['all_time']['count'] == 0
+
+    def test_empty_input(self):
+        payload = analysis.current_status([], as_at=date(2026, 3, 15))
+
+        assert payload['all_time']['notifications']['count'] == 0
+        assert payload['all_time']['notifications']['median'] is None
+        assert all(w[k]['median_delta'] is None
+                   for w in payload['windows'] for k in ('notifications', 'waivers'))
+        assert payload['monthly']['labels'] == []
+        assert payload['pre_notification']['all_time']['count'] == 0
 
 
 class TestNotificationRestarts:
