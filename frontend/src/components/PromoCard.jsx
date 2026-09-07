@@ -1,18 +1,28 @@
 import { useState, useCallback } from 'react';
 import { Link } from 'react-router';
-import { FaGaugeHigh, FaXmark } from 'react-icons/fa6';
+import { FaXmark } from 'react-icons/fa6';
 
-// Set to false to hide the card entirely (e.g. once a campaign has run its course).
-const ENABLED = true;
+/**
+ * A dismissible banner promoting one page of the site.
+ *
+ * Nothing about a particular campaign lives here - the pitch, its target and
+ * its icon are all passed in (see constants/promo.js for the one the dashboard
+ * currently runs), so pointing the card at something else is a config change
+ * rather than an edit to this file.
+ *
+ * `campaign` is the dismissal identity: it keys the localStorage flag, so
+ * giving a new campaign a new id resurfaces the card for everyone who
+ * dismissed the previous one.
+ *
+ * `icon` is a component type (e.g. `FaGaugeHigh`), not an element, matching how
+ * constants/outcomeIcons.js carries icons.
+ */
+function PromoCard({ campaign, to, icon: Icon, title, description }) {
+  const storageKey = `promo_dismissed_${campaign}`;
 
-// Bump this string to resurface the card for everyone who dismissed a previous campaign.
-const CAMPAIGN = 'current-status-v1';
-const STORAGE_KEY = `promo_dismissed_${CAMPAIGN}`;
-
-function PromoCard() {
   const [isDismissed, setIsDismissed] = useState(() => {
     try {
-      return !!localStorage.getItem(STORAGE_KEY);
+      return !!localStorage.getItem(storageKey);
     } catch {
       return false;
     }
@@ -20,29 +30,27 @@ function PromoCard() {
 
   const dismiss = useCallback(() => {
     try {
-      localStorage.setItem(STORAGE_KEY, '1');
+      localStorage.setItem(storageKey, '1');
     } catch {
       // Ignore storage failures (private browsing, quota) - the card just
       // reappears next visit.
     }
     setIsDismissed(true);
-  }, []);
+  }, [storageKey]);
 
-  if (!ENABLED || isDismissed) return null;
+  if (isDismissed) return null;
 
   return (
     <div className="relative mb-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-200 group bg-primary hover:bg-primary-dark">
-      <Link to="/current-status" className="flex items-center gap-4 p-6 pr-12 rounded-2xl">
-        <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-white/15 flex items-center justify-center text-xl text-white group-hover:scale-105 transition-transform duration-200">
-          <FaGaugeHigh />
-        </div>
+      <Link to={to} className="flex items-center gap-4 p-6 pr-12 rounded-2xl">
+        {Icon && (
+          <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-white/15 flex items-center justify-center text-xl text-white group-hover:scale-105 transition-transform duration-200">
+            <Icon />
+          </div>
+        )}
         <div className="flex-1 min-w-0">
-          <h2 className="text-base font-semibold text-white">
-            How fast is the ACCC deciding mergers right now?
-          </h2>
-          <p className="text-sm text-white/80 mt-0.5">
-            See recent waiver and phase 1 decision times against the all-time baseline.
-          </p>
+          <h2 className="text-base font-semibold text-white">{title}</h2>
+          {description && <p className="text-sm text-white/80 mt-0.5">{description}</p>}
         </div>
       </Link>
       <button
