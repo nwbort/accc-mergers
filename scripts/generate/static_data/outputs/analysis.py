@@ -487,7 +487,7 @@ def open_caseload(mergers: list, as_at: date | None = None) -> dict:
 
 
 # Rolling windows (in calendar days back from the as-at date) used by
-# state_of_play. 30 days answers the "how is the ACCC tracking right now"
+# current_status. 30 days answers the "how is the ACCC tracking right now"
 # question directly; 90 smooths out a quiet fortnight without reaching so far
 # back that it re-describes the all-time figure. Both are comfortably powered
 # at current volumes (~45 phase 1 determinations and ~70 waivers a month).
@@ -606,10 +606,10 @@ def _pre_notification_durations(notification_mergers: list) -> list[tuple[str, i
     return durations
 
 
-def state_of_play(mergers: list, as_at: date | None = None) -> dict:
+def current_status(mergers: list, as_at: date | None = None) -> dict:
     """How the ACCC's review is running *now*, against its all-time baseline.
 
-    Powers the /state-of-play page. The duration figures on the analysis page
+    Powers the /current-status page. The duration figures on the analysis page
     pool every matter ever decided. That is the right baseline, but it is not
     the number to quote a client at filing time: the register opened in 2026
     and the ACCC's throughput has moved as the regime bedded in, so the
@@ -932,7 +932,7 @@ def generate(mergers: list) -> dict:
         },
         "monthly_volume": monthly_volume,
         "open_caseload": open_caseload(mergers),
-        "state_of_play": state_of_play(mergers),
+        "current_status": current_status(mergers),
         "industry_phase1_duration": industry_phase1_duration(mergers),
         "by_commission_division": by_commission_division(mergers),
         "deadline_utilisation": deadline_utilisation(mergers),

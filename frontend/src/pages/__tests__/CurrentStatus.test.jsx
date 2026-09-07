@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { MemoryRouter } from 'react-router';
 import { HelmetProvider } from 'react-helmet-async';
-import StateOfPlay from '../StateOfPlay';
+import CurrentStatus from '../CurrentStatus';
 import { dataCache } from '../../utils/dataCache';
 
 // The assertions here are all about rendered figures and the chart's sr-only
@@ -29,20 +29,20 @@ const caseloadFixture = {
   as_at: '2026-09-02',
 };
 
-function renderStateOfPlay() {
+function renderCurrentStatus() {
   return render(
     <HelmetProvider>
       <MemoryRouter>
-        <StateOfPlay />
+        <CurrentStatus />
       </MemoryRouter>
     </HelmetProvider>
   );
 }
 
-describe('State of play', () => {
+describe('Current status', () => {
   const turnaroundFixture = {
     open_caseload: caseloadFixture,
-    state_of_play: {
+    current_status: {
       as_at: '2026-09-02',
       windows: [
         {
@@ -119,9 +119,9 @@ describe('State of play', () => {
 
   async function renderPage(payload = turnaroundFixture) {
     mockAnalysis(payload);
-    const view = renderStateOfPlay();
+    const view = renderCurrentStatus();
     await waitFor(() => {
-      expect(screen.getByRole('heading', { name: 'State of play' })).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: 'Current status' })).toBeInTheDocument();
     });
     return view;
   }
@@ -137,45 +137,43 @@ describe('State of play', () => {
 
     const waiver = headline('Waiver');
     expect(within(waiver).getByText('17')).toBeInTheDocument();
-    expect(within(waiver).getByText('+4 BD vs all-time 13')).toBeInTheDocument();
-    expect(within(waiver).getByText('(slower)')).toBeInTheDocument();
+    expect(within(waiver).getByText('4 business days slower than usual')).toBeInTheDocument();
   });
 
-  it('phrases a faster-than-baseline window as faster, with a minus sign', async () => {
+  it('phrases a faster-than-baseline window as faster, without a sign', async () => {
     await renderPage();
 
     const notifications = headline('Notification – phase 1');
     expect(within(notifications).getByText('18.5')).toBeInTheDocument();
-    expect(within(notifications).getByText('−1.5 BD vs all-time 20')).toBeInTheDocument();
-    expect(within(notifications).getByText('(faster)')).toBeInTheDocument();
+    expect(within(notifications).getByText('1.5 business days faster than usual')).toBeInTheDocument();
   });
 
-  it('gives the tail and sample size under each headline', async () => {
+  it('colours a slower headline adverse and a faster one favourable', async () => {
     await renderPage();
 
-    expect(within(headline('Waiver')).getByText('9 in 10 within 21 BD · 64 decided')).toBeInTheDocument();
+    // Waivers are running slower than usual, notifications faster — the two
+    // directions have to reach for different ends of the outcome palette.
+    expect(within(headline('Waiver')).getByText('17')).toHaveClass('text-declined-dark');
     expect(
-      within(headline('Notification – phase 1')).getByText('9 in 10 within 27 BD · 46 decided')
+      within(headline('Notification – phase 1')).getByText('18.5')
+    ).toHaveClass('text-cleared-dark');
+  });
+
+  it('gives the 90th percentile under each headline', async () => {
+    await renderPage();
+
+    expect(within(headline('Waiver')).getByText('90% within 21 BD')).toBeInTheDocument();
+    expect(
+      within(headline('Notification – phase 1')).getByText('90% within 27 BD')
     ).toBeInTheDocument();
   });
 
-  it('shows pre-notification as the stage before filing, in calendar days', async () => {
+  it('states pre-notification in calendar days', async () => {
     await renderPage();
 
-    // Scoped to the strip: "all-time 20" also appears in the notification
-    // headline's delta sentence.
-    const strip = screen.getByText(/Before filing: about 19 calendar days/).closest('p');
-    expect(strip).toHaveTextContent('in pre-notification');
-    expect(strip).toHaveTextContent('all-time 20');
-  });
-
-  it('summarises what arrived, cleared and is still open', async () => {
-    await renderPage();
-
-    const context = screen.getByText(/In the last 30 days:/);
-    expect(context).toHaveTextContent('36 notifications filed');
-    expect(context).toHaveTextContent('110 decisions published');
-    expect(context).toHaveTextContent('35 notifications still open');
+    expect(screen.getByText(/in pre-notification/)).toHaveTextContent(
+      'Average 19 calendar days in pre-notification'
+    );
   });
 
   it('switches every figure when another window is selected', async () => {
@@ -185,21 +183,22 @@ describe('State of play', () => {
     await user.click(screen.getByRole('button', { name: 'Last 90 days' }));
 
     expect(within(headline('Waiver')).getByText('15')).toBeInTheDocument();
-    expect(within(headline('Waiver')).getByText('+2 BD vs all-time 13')).toBeInTheDocument();
-    expect(screen.getByText(/Before filing: about 21 calendar days/)).toBeInTheDocument();
-    expect(screen.getByText(/In the last 90 days:/)).toHaveTextContent('111 notifications filed');
+    expect(within(headline('Waiver')).getByText('2 business days slower than usual')).toBeInTheDocument();
+    expect(screen.getByText(/in pre-notification/)).toHaveTextContent(
+      'Average 21 calendar days in pre-notification'
+    );
     expect(screen.getByRole('button', { name: 'Last 90 days' })).toHaveAttribute('aria-pressed', 'true');
   });
 
   it('says so plainly when a window has no decisions rather than showing a blank stat', async () => {
     await renderPage({
       ...turnaroundFixture,
-      state_of_play: {
-        ...turnaroundFixture.state_of_play,
+      current_status: {
+        ...turnaroundFixture.current_status,
         windows: [{
           days: 30,
           notifications_filed: 36,
-          notifications: turnaroundFixture.state_of_play.windows[0].notifications,
+          notifications: turnaroundFixture.current_status.windows[0].notifications,
           waivers: {
             median: null, average: null, p90: null, min: null, max: null,
             count: 0, median_delta: null,
@@ -209,21 +208,6 @@ describe('State of play', () => {
     });
 
     expect(screen.getByText('Nothing decided in this window.')).toBeInTheDocument();
-  });
-
-  it('keeps the method out of the way until asked for', async () => {
-    const user = userEvent.setup();
-    await renderPage();
-
-    const toggle = screen.getByRole('button', { name: /More information/i });
-    expect(toggle).toHaveAttribute('aria-expanded', 'false');
-    expect(screen.queryByText(/The median isn/)).not.toBeInTheDocument();
-
-    await user.click(toggle);
-
-    expect(toggle).toHaveAttribute('aria-expanded', 'true');
-    expect(screen.getByRole('heading', { name: /The median isn/ })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: /Pre-notification is an estimate/ })).toBeInTheDocument();
   });
 
   it('pairs each decision month with the caseload it came out of in the data table', async () => {
@@ -252,21 +236,21 @@ describe('State of play', () => {
   });
 
   it('hides pre-notification when the payload predates it, keeping the headlines', async () => {
-    const { pre_notification: _dropped, ...withoutPre } = turnaroundFixture.state_of_play;
-    await renderPage({ ...turnaroundFixture, state_of_play: withoutPre });
+    const { pre_notification: _dropped, ...withoutPre } = turnaroundFixture.current_status;
+    await renderPage({ ...turnaroundFixture, current_status: withoutPre });
 
-    expect(screen.queryByText(/Before filing:/)).not.toBeInTheDocument();
+    expect(screen.queryByText(/in pre-notification/)).not.toBeInTheDocument();
     expect(within(headline('Waiver')).getByText('17')).toBeInTheDocument();
   });
 
   it('says the page is still generating when the payload predates the series', async () => {
-    // A deployed analysis.json generated before state_of_play existed. The
+    // A deployed analysis.json generated before current_status existed. The
     // whole page is this block, so there is nothing else to fall back to.
     mockAnalysis({ open_caseload: caseloadFixture });
-    renderStateOfPlay();
+    renderCurrentStatus();
 
     await waitFor(() => {
-      expect(screen.getByRole('heading', { name: 'State of play' })).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: 'Current status' })).toBeInTheDocument();
     });
 
     expect(screen.getByText(/still being generated/)).toBeInTheDocument();

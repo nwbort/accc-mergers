@@ -13,7 +13,7 @@
  * 1. A shared chart component rendered on a page that never registered its
  *    pieces throws (`"category" is not a registered scale`) and takes the whole
  *    route down through the error boundary. This is what happened when
- *    TurnaroundTrendChart moved to /state-of-play.
+ *    TurnaroundTrendChart moved to /current-status.
  * 2. Worse, it can appear to work. Because registration is global and routes
  *    are lazy-loaded, a page with an incomplete set still renders if the user
  *    happened to visit a page that registered the missing piece first — so the

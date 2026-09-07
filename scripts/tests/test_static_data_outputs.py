@@ -833,7 +833,7 @@ class TestAnalysisGenerate:
             'by_commission_division',
             'deadline_utilisation', 'notification_restarts', 'restart_rate',
             'outcomes_by_division', 'referrals_by_quarter', 'open_caseload',
-            'state_of_play',
+            'current_status',
         }
         assert 'durations' in payload['phase1_duration']
         assert 'durations' in payload['waiver_duration']
@@ -962,7 +962,7 @@ class TestOpenCaseload:
         assert payload == {'labels': [], 'notifications': [], 'as_at': '2026-02-28'}
 
 
-class TestStateOfPlay:
+class TestCurrentStatus:
     """Recent decision times vs the all-time baseline, and against caseload."""
 
     def _decided(self, merger_id, opened, decided, waiver=False):
@@ -992,7 +992,7 @@ class TestStateOfPlay:
             # Decided 5 Jan — outside 30 days, inside 90.
             self._decided('MN-2', '2026-01-02T00:00:00Z', '2026-01-05T00:00:00Z'),
         ]
-        payload = analysis.state_of_play(mergers, as_at=date(2026, 3, 15))
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
 
         by_days = {w['days']: w for w in payload['windows']}
         assert by_days[30]['notifications']['count'] == 1
@@ -1003,7 +1003,7 @@ class TestStateOfPlay:
         # Filed well outside the window, decided inside it: the matter counts,
         # because the window measures what the ACCC is turning around now.
         mergers = [self._decided('MN-1', '2025-06-02T00:00:00Z', '2026-03-10T00:00:00Z')]
-        payload = analysis.state_of_play(mergers, as_at=date(2026, 3, 15))
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
 
         assert {w['days']: w['notifications']['count'] for w in payload['windows']} == {30: 1, 90: 1}
 
@@ -1016,7 +1016,7 @@ class TestStateOfPlay:
             self._decided('WA-3', '2026-01-02T00:00:00Z', '2026-01-05T00:00:00Z', waiver=True),
             self._decided('WA-4', '2026-03-02T00:00:00Z', '2026-03-10T00:00:00Z', waiver=True),
         ]
-        payload = analysis.state_of_play(mergers, as_at=date(2026, 3, 15))
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
 
         all_time_median = payload['all_time']['waivers']['median']
         recent = {w['days']: w['waivers'] for w in payload['windows']}[30]
@@ -1029,7 +1029,7 @@ class TestStateOfPlay:
             self._decided('MN-1', '2026-03-02T00:00:00Z', '2026-03-10T00:00:00Z'),
             self._decided('WA-1', '2026-03-02T00:00:00Z', '2026-03-10T00:00:00Z', waiver=True),
         ]
-        payload = analysis.state_of_play(mergers, as_at=date(2026, 3, 15))
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
 
         window = {w['days']: w for w in payload['windows']}[30]
         assert window['notifications']['count'] == 1
@@ -1038,7 +1038,7 @@ class TestStateOfPlay:
     def test_monthly_series_aligns_with_the_open_caseload_labels(self):
         mergers = [self._decided(f'MN-{i}', '2026-01-02T00:00:00Z', '2026-02-10T00:00:00Z')
                    for i in range(4)]
-        payload = analysis.state_of_play(mergers, as_at=date(2026, 3, 15))
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
         monthly = payload['monthly']
         caseload = analysis.open_caseload(mergers, as_at=date(2026, 3, 15))
 
@@ -1054,7 +1054,7 @@ class TestStateOfPlay:
             self._decided('MN-1', '2026-01-02T00:00:00Z', '2026-02-10T00:00:00Z'),
             self._decided('MN-2', '2026-01-02T00:00:00Z', '2026-02-11T00:00:00Z'),
         ]
-        payload = analysis.state_of_play(mergers, as_at=date(2026, 2, 28))
+        payload = analysis.current_status(mergers, as_at=date(2026, 2, 28))
         february = dict(zip(payload['monthly']['labels'], payload['monthly']['notifications']))['2026-02']
 
         assert february['count'] == 2
@@ -1068,7 +1068,7 @@ class TestStateOfPlay:
         mergers = [self._decided(f'MN-{i}', '2026-03-02T00:00:00Z', '2026-03-10T00:00:00Z')
                    for i in range(9)]
         mergers.append(self._decided('MN-slow', '2026-03-02T00:00:00Z', '2026-03-13T00:00:00Z'))
-        payload = analysis.state_of_play(mergers, as_at=date(2026, 3, 15))
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
         stats = {w['days']: w['notifications'] for w in payload['windows']}[30]
 
         assert stats['count'] == 10
@@ -1082,7 +1082,7 @@ class TestStateOfPlay:
                    for i in range(8)]
         mergers += [self._decided(f'MN-slow-{i}', '2026-03-02T00:00:00Z', '2026-03-13T00:00:00Z')
                     for i in range(2)]
-        payload = analysis.state_of_play(mergers, as_at=date(2026, 3, 15))
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
         stats = {w['days']: w['notifications'] for w in payload['windows']}[30]
 
         assert stats['p90'] == stats['max']
@@ -1095,7 +1095,7 @@ class TestStateOfPlay:
             # Filed in January: inside 90 days, outside 30.
             self._decided('MN-2', '2026-01-05T00:00:00Z', '2026-01-20T00:00:00Z'),
         ]
-        payload = analysis.state_of_play(mergers, as_at=date(2026, 3, 15))
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
 
         assert {w['days']: w['notifications_filed'] for w in payload['windows']} == {30: 1, 90: 2}
 
@@ -1104,7 +1104,7 @@ class TestStateOfPlay:
         # "filings" in a recent window would miss every one still in front of
         # the ACCC. No waiver inflow is published at all.
         mergers = [self._decided('WA-1', '2026-03-01T00:00:00Z', '2026-03-12T00:00:00Z', waiver=True)]
-        payload = analysis.state_of_play(mergers, as_at=date(2026, 3, 15))
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
 
         assert all(w['notifications_filed'] == 0 for w in payload['windows'])
         assert all('waivers_filed' not in w for w in payload['windows'])
@@ -1121,7 +1121,7 @@ class TestStateOfPlay:
             # Filed in January: inside 90 days, outside 30.
             self._with_pre_notification('MN-2', '2026-01-05T00:00:00Z', '2026-01-20T00:00:00Z', 40),
         ]
-        payload = analysis.state_of_play(mergers, as_at=date(2026, 3, 15))
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
         by_days = {w['days']: w for w in payload['pre_notification']['windows']}
 
         assert by_days[30]['count'] == 1
@@ -1136,7 +1136,7 @@ class TestStateOfPlay:
             self._with_pre_notification('MN-3', '2026-01-07T00:00:00Z', '2026-01-22T00:00:00Z', 10),
             self._with_pre_notification('MN-4', '2026-03-02T00:00:00Z', '2026-03-12T00:00:00Z', 30),
         ]
-        payload = analysis.state_of_play(mergers, as_at=date(2026, 3, 15))
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
         recent = {w['days']: w for w in payload['pre_notification']['windows']}[30]
 
         assert recent['median_delta'] == recent['median'] - payload['pre_notification']['all_time']['median']
@@ -1149,7 +1149,7 @@ class TestStateOfPlay:
             self._with_pre_notification('MN-1', '2025-09-01T00:00:00Z', '2025-10-01T00:00:00Z', 50),
             self._with_pre_notification('MN-2', '2026-03-02T00:00:00Z', '2026-03-12T00:00:00Z', 10),
         ]
-        payload = analysis.state_of_play(mergers, as_at=date(2026, 3, 15))
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
 
         assert payload['pre_notification']['all_time']['count'] == 1
         assert payload['pre_notification']['all_time']['median'] == 10
@@ -1161,7 +1161,7 @@ class TestStateOfPlay:
             self._with_pre_notification('MN-1', '2026-03-02T00:00:00Z', '2026-03-12T00:00:00Z', 0),
             self._with_pre_notification('MN-2', '2026-03-03T00:00:00Z', '2026-03-13T00:00:00Z', 10),
         ]
-        payload = analysis.state_of_play(mergers, as_at=date(2026, 3, 15))
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
 
         assert payload['pre_notification']['all_time']['count'] == 2
         assert payload['pre_notification']['all_time']['min'] == 0
@@ -1173,12 +1173,12 @@ class TestStateOfPlay:
             # A notification the counter could not bound.
             self._decided('MN-1', '2026-03-02T00:00:00Z', '2026-03-12T00:00:00Z'),
         ]
-        payload = analysis.state_of_play(mergers, as_at=date(2026, 3, 15))
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
 
         assert payload['pre_notification']['all_time']['count'] == 0
 
     def test_empty_input(self):
-        payload = analysis.state_of_play([], as_at=date(2026, 3, 15))
+        payload = analysis.current_status([], as_at=date(2026, 3, 15))
 
         assert payload['all_time']['notifications']['count'] == 0
         assert payload['all_time']['notifications']['median'] is None

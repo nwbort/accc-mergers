@@ -2672,52 +2672,52 @@
       37,
       37
     ],
-    "as_at": "2026-09-04"
+    "as_at": "2026-09-07"
   },
-  "state_of_play": {
-    "as_at": "2026-09-04",
+  "current_status": {
+    "as_at": "2026-09-07",
     "windows": [
       {
         "days": 30,
-        "notifications_filed": 33,
+        "notifications_filed": 29,
         "notifications": {
           "median": 19,
           "average": 21.6,
           "p90": 33,
           "min": 15,
           "max": 56,
-          "count": 47,
+          "count": 45,
           "median_delta": 2
         },
         "waivers": {
-          "median": 18,
-          "average": 16.5,
+          "median": 17.5,
+          "average": 16.4,
           "p90": 21,
           "min": 8,
           "max": 23,
-          "count": 63,
-          "median_delta": 5.0
+          "count": 62,
+          "median_delta": 4.5
         }
       },
       {
         "days": 90,
-        "notifications_filed": 115,
+        "notifications_filed": 113,
         "notifications": {
           "median": 18.0,
-          "average": 20.8,
+          "average": 20.7,
           "p90": 29,
           "min": 15,
           "max": 56,
-          "count": 118,
+          "count": 112,
           "median_delta": 1.0
         },
         "waivers": {
-          "median": 15.0,
+          "median": 15,
           "average": 15.2,
-          "p90": 21,
+          "p90": 20,
           "min": 5,
           "max": 24,
-          "count": 184,
+          "count": 181,
           "median_delta": 2.0
         }
       }
@@ -2744,23 +2744,23 @@
       "windows": [
         {
           "median": 19,
-          "average": 24.2,
+          "average": 23.2,
           "p90": 40,
           "min": 6,
-          "max": 66,
-          "count": 33,
+          "max": 64,
+          "count": 29,
           "days": 30,
           "median_delta": -1.0
         },
         {
-          "median": 21,
-          "average": 26.6,
+          "median": 22,
+          "average": 27.0,
           "p90": 47,
           "min": 0,
           "max": 166,
-          "count": 115,
+          "count": 113,
           "days": 90,
-          "median_delta": 1.0
+          "median_delta": 2.0
         }
       ],
       "all_time": {

@@ -163,7 +163,7 @@ describe('STATIC_PAGE_META', () => {
       '/phase-2': 'Phase2.jsx',
       '/refiled-notifications': 'RefiledNotifications.jsx',
       '/extensions': 'Extensions.jsx',
-      '/state-of-play': 'StateOfPlay.jsx',
+      '/current-status': 'CurrentStatus.jsx',
       '/commentary': 'Commentary.jsx',
       '/digest': 'Digest.jsx',
       '/nick-twort': 'NickTwort.jsx',

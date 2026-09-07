@@ -260,10 +260,10 @@ export const STATIC_PAGE_META = {
     description:
       'How often, how long and why the ACCC extends its 30-business-day Phase 1 merger clock — and how strongly an extension foreshadows a Phase 2 escalation.',
   },
-  '/state-of-play': {
-    title: 'State of play',
+  '/current-status': {
+    title: 'Current status',
     description:
-      'How fast the ACCC is deciding Australian merger notifications and waivers right now — recent median turnaround against the all-time baseline, and how it tracks the open caseload.',
+      'How fast the ACCC is deciding Australian merger notifications and waivers right now — recent decision times against the all-time baseline, and how they track the open caseload.',
   },
   '/commentary': {
     title: 'Commentary',
