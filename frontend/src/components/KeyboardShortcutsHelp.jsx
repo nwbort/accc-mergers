@@ -6,6 +6,7 @@ const shortcuts = [
   { keys: ['/'], description: 'Focus search' },
   { keys: ['g', 'd'], description: 'Go to Dashboard' },
   { keys: ['g', 'm'], description: 'Go to Mergers' },
+  { keys: ['g', 's'], description: 'Go to Current status' },
   { keys: ['g', 't'], description: 'Go to Timeline' },
   { keys: ['g', 'i'], description: 'Go to Industries' },
   { keys: ['g', 'p'], description: 'Go to Parties' },

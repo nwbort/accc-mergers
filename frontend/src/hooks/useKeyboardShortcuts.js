@@ -10,6 +10,7 @@ import { useNavigate, useLocation } from 'react-router';
  *            otherwise open the command palette
  *   g then d Go to Dashboard
  *   g then m Go to Mergers
+ *   g then s Go to Current status
  *   g then t Go to Timeline
  *   g then i Go to Industries
  *   g then p Go to Parties
@@ -61,6 +62,7 @@ export function useKeyboardShortcuts({ onToggleHelp, onTogglePalette } = {}) {
         const routes = {
           d: '/',
           m: '/mergers',
+          s: '/current-status',
           t: '/timeline',
           i: '/industries',
           p: '/parties',
