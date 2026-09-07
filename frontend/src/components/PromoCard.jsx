@@ -1,15 +1,15 @@
 import { useState, useCallback } from 'react';
 import { Link } from 'react-router';
-import { FaEnvelope, FaXmark } from 'react-icons/fa6';
+import { FaGaugeHigh, FaXmark } from 'react-icons/fa6';
 
-// Set to false to hide the card entirely (e.g. once digest signups plateau).
+// Set to false to hide the card entirely (e.g. once a campaign has run its course).
 const ENABLED = true;
 
 // Bump this string to resurface the card for everyone who dismissed a previous campaign.
-const CAMPAIGN = 'v1';
-const STORAGE_KEY = `digest_promo_dismissed_${CAMPAIGN}`;
+const CAMPAIGN = 'current-status-v1';
+const STORAGE_KEY = `promo_dismissed_${CAMPAIGN}`;
 
-function DigestPromoCard() {
+function PromoCard() {
   const [isDismissed, setIsDismissed] = useState(() => {
     try {
       return !!localStorage.getItem(STORAGE_KEY);
@@ -32,16 +32,16 @@ function DigestPromoCard() {
 
   return (
     <div className="relative mb-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-200 group bg-primary hover:bg-primary-dark">
-      <Link to="/digest" className="flex items-center gap-4 p-6 pr-12 rounded-2xl">
+      <Link to="/current-status" className="flex items-center gap-4 p-6 pr-12 rounded-2xl">
         <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-white/15 flex items-center justify-center text-xl text-white group-hover:scale-105 transition-transform duration-200">
-          <FaEnvelope />
+          <FaGaugeHigh />
         </div>
         <div className="flex-1 min-w-0">
           <h2 className="text-base font-semibold text-white">
-            Want a weekly round-up of ACCC merger activity?
+            How fast is the ACCC deciding mergers right now?
           </h2>
           <p className="text-sm text-white/80 mt-0.5">
-            Get the week's notifications, determinations and upcoming deadlines in one email.
+            See recent waiver and phase 1 decision times against the all-time baseline.
           </p>
         </div>
       </Link>
@@ -56,4 +56,4 @@ function DigestPromoCard() {
   );
 }
 
-export default DigestPromoCard;
+export default PromoCard;

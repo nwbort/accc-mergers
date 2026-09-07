@@ -8,7 +8,7 @@ import ErrorMessage from '../components/ErrorMessage';
 import UpcomingEventsTimeline from '../components/UpcomingEventsTimeline';
 import RecentDeterminationsCards from '../components/RecentDeterminationsCards';
 import RecentMergersCards from '../components/RecentMergersCards';
-import DigestPromoCard from '../components/DigestPromoCard';
+import PromoCard from '../components/PromoCard';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { getCalendarDaysUntil, isDatePast } from '../utils/dates';
@@ -205,7 +205,7 @@ function Dashboard() {
         />
       </div>
 
-      <DigestPromoCard />
+      <PromoCard />
 
       {/* Recent Determinations */}
       {stats.recent_determinations && (
