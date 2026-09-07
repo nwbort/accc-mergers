@@ -9,7 +9,7 @@ const ENABLED = true;
 const SHOW_ON_MOBILE = false;
 
 // Bump this string to resurface the popup for everyone who dismissed a previous campaign.
-const CAMPAIGN = 'v3';
+const CAMPAIGN = 'v4';
 const STORAGE_KEY = `feedback_dismissed_${CAMPAIGN}`;
 const SHOW_DELAY_MS = 10_000;
 
