@@ -421,9 +421,6 @@ prunes the old names), but make it a deliberate choice.
 | Workflow | Trigger | Purpose |
 |----------|---------|---------|
 | `pipeline.yml` | Push to `main`, weekdays 4×/day + Sunday once (Sydney time), `repository_dispatch` (email-triggered), manual | End-to-end scrape → extract → convert DOCX → enrich → generate static files → commit; publishes `cli.sqlite` and opens tracking issues when needed |
-| `scrape.yml` | Manual | Standalone scrape of the ACCC register (outside the pipeline) |
-| `extract.yml` | Manual | Standalone extraction of merger data from raw HTML and commit |
-| `convert.yml` | Manual | Convert any unconverted DOCX attachments to PDF and commit |
 | `publish-cli-sqlite.yml` | Manual | Republish `cli.sqlite` + manifest to the orphan `cli-dist` branch |
 | `scrape-tribunal.yml` | Hourly at :23 from 8am-7pm Sydney time, weekdays only (`23 8-19 * * 1-5` with `timezone: Australia/Sydney`), manual | Scrape Australian Competition Tribunal matter pages into `tribunal_appeals.json` and commit. Drives a real Chrome via nodriver (headful under Xvfb) to get past the tribunal site's Cloudflare challenge, so it runs in CI. Deps: `scripts/requirements-tribunal.txt` |
 | `detect-duplicates.yml` | Manual | Detect duplicate merger entries, open a fix PR. **No longer scheduled** — this now runs inside `pipeline.yml` on every run; the standalone workflow is kept for manual re-runs |
