@@ -615,6 +615,15 @@ class TestMergerSummary:
 
         assert gwd.create_merger_summary(merger)['events'] == []
 
+    def test_summary_carries_the_conditions_flag(self):
+        # A conditional clearance is published as a plain "Approved", so the
+        # weekly email can only mark one if the flag rides along.
+        summary = gwd.create_merger_summary(self._merger(has_conditions=True))
+        assert summary['has_conditions'] is True
+
+    def test_summary_conditions_flag_defaults_to_false(self):
+        assert gwd.create_merger_summary(self._merger())['has_conditions'] is False
+
     def test_summary_carries_no_fields_neither_consumer_reads(self):
         summary = gwd.create_merger_summary(self._merger())
 
