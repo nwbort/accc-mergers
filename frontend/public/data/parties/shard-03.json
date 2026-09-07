@@ -106,6 +106,11 @@
       "canonical_name": "EQT Fund Management",
       "members": [
         {
+          "name": "EQT Fund Management S.\u00e0 r.l",
+          "identifier": "B167972",
+          "identifier_type": null
+        },
+        {
           "name": "EQT Fund Management S.\u00e0 r.l.",
           "identifier": "B167972",
           "identifier_type": null
@@ -147,6 +152,17 @@
         ],
         "target": [],
         "other": [
+          {
+            "merger_id": "MN-01122",
+            "merger_name": "Flick \u2013 GC Pest Control",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-04T12:00:00Z",
+            "determination_date": null
+          },
           {
             "merger_id": "WA-01114",
             "merger_name": "EQT Fund Management \u2013 Exolaunch",
@@ -193,11 +209,11 @@
           }
         ]
       },
-      "merger_count": 5,
-      "phase_1_count": 0,
+      "merger_count": 6,
+      "phase_1_count": 1,
       "phase_2_count": 1,
       "waiver_count": 4,
-      "active_count": 0,
+      "active_count": 1,
       "phase_duration": {
         "average_days": 77.0,
         "median_days": 77,

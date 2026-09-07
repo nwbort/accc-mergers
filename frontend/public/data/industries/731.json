@@ -30,7 +30,7 @@
       "code": "7312",
       "name": "Building Pest Control Services",
       "level": "class",
-      "merger_count": 0
+      "merger_count": 1
     },
     {
       "code": "7313",
@@ -40,6 +40,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-01122",
+      "merger_name": "Flick \u2013 GC Pest Control",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-04T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-10021",
       "merger_name": "Ambrose Construct Group \u2013 Major Loss Builders",
@@ -52,11 +63,11 @@
       "determination_date": "2026-08-12T12:00:00Z"
     }
   ],
-  "count": 1,
-  "phase_1_count": 1,
+  "count": 2,
+  "phase_1_count": 2,
   "phase_2_count": 0,
   "waiver_count": 0,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": {
     "average_days": 21.0,
     "median_days": 21,

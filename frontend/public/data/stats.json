@@ -1,10 +1,10 @@
 {
-  "total_mergers": 245,
+  "total_mergers": 246,
   "total_waivers": 379,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 203,
-    "Under assessment": 37,
+    "Under assessment": 38,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -56,7 +56,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 112
+      "count": 113
     },
     {
       "name": "Computer System Design and Related Services",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-01122",
+      "merger_name": "Flick \u2013 GC Pest Control",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-09-04T12:00:00Z",
+      "page_modified_datetime": "2026-09-07T13:47:14+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-40034",
       "merger_name": "Woolworths - supermarket site in Homestead Rd, Orchard Hills, NSW",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-20T12:00:00Z",
       "page_modified_datetime": "2026-08-31T12:22:26+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-85043",
-      "merger_name": "Lone Star Funds - ContiTech",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-20T12:00:00Z",
-      "page_modified_datetime": "2026-08-21T16:24:49+10:00",
       "is_waiver": false,
       "is_refiled": false
     }
