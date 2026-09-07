@@ -584,9 +584,15 @@ def _pre_notification_durations(notification_mergers: list) -> list[tuple[str, i
     to the filing day itself, which is a matter that really had no
     pre-notification stage, not a missing measurement.
 
-    Durations are **calendar** days, unlike everything else on this page —
-    pre-notification is not a statutory clock, so there is no business-day
-    count to give.
+    Durations are **business** days, like every other duration on this page.
+    Pre-notification is not a statutory clock, so there is no legislated
+    business-day count to reproduce — but the stage is spent working with the
+    ACCC, so a reader comparing it against the phase 1 figure beside it is
+    comparing working time either way. The start is the day the case number is
+    reckoned to have been issued (``filed - estimated_days``, which is exactly
+    how :mod:`static_data.prenotification` derives ``id_issued_estimated``),
+    counted to the filing date on the site's usual convention: the start day
+    itself is day 0.
 
     Matters are keyed by their filing date, the event that ends this stage,
     for the same reason :func:`_decided_durations` keys by decision date: it is
@@ -602,7 +608,15 @@ def _pre_notification_durations(notification_mergers: list) -> list[tuple[str, i
         filed = m.get('original_notification_datetime') or m.get('effective_notification_datetime')
         if days is None or not filed or is_voluntary_period_notification(m):
             continue
-        durations.append((filed[:10], days))
+        try:
+            filed_date = date.fromisoformat(filed[:10])
+        except ValueError:
+            continue
+        started = (filed_date - timedelta(days=days)).isoformat()
+        bus_days = calculate_business_days(started, filed_date.isoformat())
+        if bus_days is None:
+            continue
+        durations.append((filed[:10], bus_days))
     return durations
 
 

@@ -1125,9 +1125,22 @@ class TestCurrentStatus:
         by_days = {w['days']: w for w in payload['pre_notification']['windows']}
 
         assert by_days[30]['count'] == 1
-        assert by_days[30]['median'] == 10
+        # 10 calendar days back from Mon 2 Mar is Fri 20 Feb; 6 business days.
+        assert by_days[30]['median'] == 6
         assert by_days[90]['count'] == 2
         assert payload['pre_notification']['all_time']['count'] == 2
+
+    def test_pre_notification_is_reported_in_business_days(self):
+        # The estimate itself is a calendar-day figure, but this page reports
+        # every duration in business days, so it is converted rather than
+        # published raw: 14 calendar days back from Mon 27 Jul is Mon 13 Jul,
+        # and the holiday-free fortnight between them is 10 business days.
+        mergers = [
+            self._with_pre_notification('MN-1', '2026-07-27T00:00:00Z', '2026-08-06T00:00:00Z', 14),
+        ]
+        payload = analysis.current_status(mergers, as_at=date(2026, 7, 31))
+
+        assert payload['pre_notification']['all_time']['median'] == 10
 
     def test_pre_notification_delta_is_against_the_all_time_median(self):
         mergers = [
@@ -1152,7 +1165,7 @@ class TestCurrentStatus:
         payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
 
         assert payload['pre_notification']['all_time']['count'] == 1
-        assert payload['pre_notification']['all_time']['median'] == 10
+        assert payload['pre_notification']['all_time']['median'] == 6
 
     def test_pre_notification_keeps_a_zero_day_estimate(self):
         # Zero dates the case number to the filing day itself — a matter with no

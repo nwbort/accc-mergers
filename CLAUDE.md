@@ -67,7 +67,8 @@ frontend/src/
 │   ├── Mergers.jsx       # /mergers
 │   ├── MergerDetail.jsx  # /mergers/:id and /mergers/:id/:slug
 │   ├── Timeline.jsx      # /timeline
-│   ├── Industries.jsx    # /industries
+│   ├── Industries.jsx    # /industries (not in the navbar; reachable from the command
+│                         #   palette and the `g i` shortcut)
 │   ├── IndustryDetail.jsx # /industries/:code and /industries/:code/:slug
 │   ├── Parties.jsx       # /parties (not in the navbar; reachable from the command palette)
 │   ├── PartyDetail.jsx   # /parties/:id and /parties/:id/:slug
@@ -75,8 +76,7 @@ frontend/src/
 │   ├── Digest.jsx        # /digest
 │   ├── Analysis.jsx      # /analysis
 │   ├── CurrentStatus.jsx # /current-status (recent decision times vs the all-time
-│                         #   baseline; not in the navbar, reachable from the command
-│                         #   palette). Deliberately bare: the two medians, each
+│                         #   baseline). Deliberately bare: the two medians, each
 │                         #   coloured by whether it is running slower or faster than
 │                         #   usual, the pre-notification average and the trend chart.
 │                         #   No methodology copy — see the generator docstrings
@@ -405,7 +405,7 @@ prunes the old names), but make it a deliberate choice.
 | `upcoming-events.json` | Future consultation/determination dates |
 | `commentary.json` | Mergers with user commentary |
 | `digest.json` | Weekly digest of merger activity (from `generate_weekly_digest.py`) |
-| `analysis.json` | Pre-computed analysis data. `current_status` (powering `/current-status`) re-cuts the same durations over rolling windows of recently *decided* matters (30/90 days), plus a per-decision-month series aligned index-for-index with `open_caseload`, so the filing-time question ("what is the ACCC turning around *now*") doesn't have to be answered from the all-time median. Each window also carries `notifications_filed` and a `pre_notification` block (keyed by *filing* date, in calendar days, since that stage ends at filing rather than at a decision). No waiver inflow is published, since a waiver only reaches the register once decided |
+| `analysis.json` | Pre-computed analysis data. `current_status` (powering `/current-status`) re-cuts the same durations over rolling windows of recently *decided* matters (30/90 days), plus a per-decision-month series aligned index-for-index with `open_caseload`, so the filing-time question ("what is the ACCC turning around *now*") doesn't have to be answered from the all-time median. Each window also carries `notifications_filed` and a `pre_notification` block (keyed by *filing* date, since that stage ends at filing rather than at a decision; the estimate is a calendar-day figure but is published here in business days, like every other duration on the page). No waiver inflow is published, since a waiver only reaches the register once decided |
 | `timeline.json` | Unpaginated timeline (alongside the paginated `timeline/` directory) |
 | `referral-probability-by-day.json` | Modelled probability of a Phase 2 referral by elapsed business day |
 | `serial-acquirers.json` | Serial-acquirer ("creeping acquisitions") detection |

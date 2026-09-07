@@ -5,20 +5,22 @@
 export const NAV_PAGES = [
   { label: 'Dashboard', path: '/', shortcut: 'd', inNavbar: true, navOrder: 1, inPalette: true, paletteOrder: 1 },
   { label: 'Mergers', path: '/mergers', shortcut: 'm', inNavbar: true, navOrder: 2, inPalette: true, paletteOrder: 2 },
-  { label: 'Phase 2', path: '/phase-2', inNavbar: true, navOrder: 3, inPalette: true, paletteOrder: 3 },
-  { label: 'Industries', path: '/industries', shortcut: 'i', inNavbar: true, navOrder: 4, inPalette: true, paletteOrder: 4 },
+  { label: 'Current status', path: '/current-status', inNavbar: true, navOrder: 3, inPalette: true, paletteOrder: 9 },
+  { label: 'Phase 2', path: '/phase-2', inNavbar: true, navOrder: 4, inPalette: true, paletteOrder: 3 },
+  // Industries keeps its `g i` shortcut and its palette entry; it is off the
+  // navbar to make room for Current status without a seventh link.
+  { label: 'Industries', path: '/industries', shortcut: 'i', inNavbar: false, inPalette: true, paletteOrder: 4 },
   { label: 'Parties', path: '/parties', inNavbar: false, inPalette: true, paletteOrder: 5 },
-  { label: 'Analysis', path: '/analysis', shortcut: 'a', inNavbar: true, navOrder: 6, inPalette: true, paletteOrder: 6 },
+  { label: 'Analysis', path: '/analysis', shortcut: 'a', inNavbar: true, navOrder: 5, inPalette: true, paletteOrder: 6 },
   { label: 'Commentary', path: '/commentary', shortcut: 'c', inNavbar: false, inPalette: true, paletteOrder: 7 },
   {
     label: 'Digest',
     navbarLabel: 'Catch me up',
     path: '/digest',
     inNavbar: true,
-    navOrder: 7,
+    navOrder: 6,
     inPalette: true,
     paletteOrder: 8,
   },
-  { label: 'Current status', path: '/current-status', inNavbar: false, inPalette: true, paletteOrder: 9 },
   { label: 'Refiled waivers', path: '/refiled-notifications', inNavbar: false, inPalette: true, paletteOrder: 10 },
 ];
