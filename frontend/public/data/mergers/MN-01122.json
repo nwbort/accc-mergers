@@ -1,0 +1,163 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/flick-%E2%80%93-gc-pest-control",
+  "merger_name": "Flick \u2013 GC Pest Control",
+  "status": "Under assessment",
+  "merger_id": "MN-01122",
+  "effective_notification_datetime": "2026-09-04T12:00:00Z",
+  "original_notification_datetime": "2026-09-04T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-10-19T12:00:00Z",
+  "consultation_response_due_date": "2026-09-14T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "FLICK ANTICIMEX PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "85 000 059 665",
+      "party_page": {
+        "id": "flick-anticimex-pty-ltd",
+        "name": "Flick Anticimex Pty Ltd"
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "Swift Property Services Pty Ltd",
+      "identifier_type": "ABN",
+      "identifier": "98 147 977 124",
+      "party_page": {
+        "id": "swift-property-services-pty-ltd",
+        "name": "Swift Property Services Pty Ltd"
+      }
+    }
+  ],
+  "other_parties": [
+    {
+      "name": "Anticimex Group AB",
+      "identifier_type": null,
+      "identifier": "5593169039",
+      "party_page": {
+        "id": "anticimex-group-ab",
+        "name": "Anticimex Group AB"
+      }
+    },
+    {
+      "name": "EQT Fund Management S.\u00e0 r.l",
+      "identifier_type": null,
+      "identifier": "B167972",
+      "canonical": {
+        "id": "eqt-fund-management-s-r-l",
+        "name": "EQT Fund Management"
+      },
+      "party_page": {
+        "id": "eqt-fund-management-s-r-l",
+        "name": "EQT Fund Management"
+      }
+    }
+  ],
+  "anzsic_codes": [
+    {
+      "code": "2921",
+      "name": "Waste Treatment and Disposal Services"
+    },
+    {
+      "code": "6240",
+      "name": "Financial Asset Investing"
+    },
+    {
+      "code": "7312",
+      "name": "Building Pest Control Services"
+    }
+  ],
+  "merger_description": "Flick Anticimex Pty Ltd (**Flick**) intends to acquire all the assets of the pest control business operated by Swift Property Services Pty Ltd trading as GC Pest Control and Big Blue Frog Pest Control (**GC Pest Control**) (the **Acquisition**).\n\nFlick is ultimately controlled by Anticimex Group AB (**Anticimex**), a global pest control company headquartered in Sweden. EQT Future, an investment fund operated by EQT Group, holds a controlling interest in Anticimex.\n\nFlick offers a suite of pest control services, including general pest treatment, termite management, preconstruction and insect control. Flick provides pest control services on a national basis to both residential and commercial customers. Flick also operates a separate hygiene business unrelated to pest control.\n\nGC Pest Control supplies pest control and preconstruction services, including general pest treatment, termite management, and insect control to both residential and commercial customers predominantly within the Gold Coast region, extending to the southern fringes of Brisbane. GC Pest Control does not provide hygiene services.",
+  "events": [
+    {
+      "date": "2026-09-07T12:00:00Z",
+      "title": "Phase 1 consultation",
+      "display_title": "Phase 1 consultation",
+      "is_questionnaire_event": true,
+      "url": "https://www.accc.gov.au/system/files/moderated_files/MN-01122%20-%20Flick-GC%20Pest%20Control%20-%20Questionnaire.docx",
+      "url_gh": "/mergers/MN-01122/MN-01122 - Flick-GC Pest Control - Questionnaire.pdf",
+      "phase": "Phase 1"
+    },
+    {
+      "date": "2026-09-04T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-01114",
+      "merger_name": "EQT Fund Management \u2013 Exolaunch",
+      "acquirers": [
+        "Elevate BidCo GmbH"
+      ],
+      "targets": [
+        "Exolaunch GmbH"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "WA-60028",
+      "merger_name": "EQT Fund Management S.\u00e0 r.l. \u2013 Orikan Group",
+      "acquirers": [
+        "ULEXITE GROUP PTY LIMITED"
+      ],
+      "targets": [
+        "IGNITION TOPCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "WA-70033",
+      "merger_name": "EQT Fund Management \u2013 Corza Biosurgery",
+      "acquirers": [
+        "Ruby BidCo GmbH",
+        "Seal US Holdings Inc."
+      ],
+      "targets": [
+        "Corza Medical sp z.o.o.",
+        "Corza Medical S.A.S"
+      ],
+      "accc_determination": "Approved"
+    }
+  ],
+  "phase_1_estimate": {
+    "expected_business_days": 18,
+    "range_business_days": [
+      16,
+      21
+    ],
+    "basis": "industry",
+    "anzsic_level": "class",
+    "anzsic_codes": [
+      "2921",
+      "6240",
+      "7312"
+    ],
+    "sample_size": 18,
+    "estimated_at": "2026-09-07",
+    "method_version": 1
+  },
+  "pre_notification": {
+    "estimated_days": 37,
+    "min_days": null,
+    "max_days": 44,
+    "id_issued_estimated": "2026-07-29",
+    "id_issued_before": null,
+    "id_issued_after": "2026-07-22",
+    "min_days_witness": null,
+    "max_days_witness": "WA-01118",
+    "basis": "upper-bound-only",
+    "method_version": 1
+  }
+}

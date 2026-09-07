@@ -420,6 +420,23 @@
     "estimated_at": "2026-07-31",
     "method_version": 1
   },
+  "MN-01122": {
+    "expected_business_days": 18,
+    "range_business_days": [
+      16,
+      21
+    ],
+    "basis": "industry",
+    "anzsic_level": "class",
+    "anzsic_codes": [
+      "2921",
+      "6240",
+      "7312"
+    ],
+    "sample_size": 18,
+    "estimated_at": "2026-09-07",
+    "method_version": 1
+  },
   "MN-05004": {
     "expected_business_days": 17,
     "range_business_days": [

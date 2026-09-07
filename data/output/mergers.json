@@ -6893,6 +6893,172 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/flick-%E2%80%93-gc-pest-control",
+      "merger_name": "Flick \u2013 GC Pest Control",
+      "status": "Under assessment",
+      "merger_id": "MN-01122",
+      "effective_notification_datetime": "2026-09-04T12:00:00Z",
+      "original_notification_datetime": "2026-09-04T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-10-19T12:00:00Z",
+      "page_modified_datetime": "2026-09-07T13:47:14+10:00",
+      "consultation_response_due_date": "2026-09-14T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "FLICK ANTICIMEX PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "85 000 059 665",
+          "party_page": {
+            "id": "flick-anticimex-pty-ltd",
+            "name": "Flick Anticimex Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Swift Property Services Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "98 147 977 124",
+          "party_page": {
+            "id": "swift-property-services-pty-ltd",
+            "name": "Swift Property Services Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Anticimex Group AB",
+          "identifier_type": null,
+          "identifier": "5593169039",
+          "party_page": {
+            "id": "anticimex-group-ab",
+            "name": "Anticimex Group AB"
+          }
+        },
+        {
+          "name": "EQT Fund Management S.\u00e0 r.l",
+          "identifier_type": null,
+          "identifier": "B167972",
+          "canonical": {
+            "id": "eqt-fund-management-s-r-l",
+            "name": "EQT Fund Management"
+          },
+          "party_page": {
+            "id": "eqt-fund-management-s-r-l",
+            "name": "EQT Fund Management"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2921",
+          "name": "Waste Treatment and Disposal Services"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "7312",
+          "name": "Building Pest Control Services"
+        }
+      ],
+      "merger_description": "Flick Anticimex Pty Ltd (**Flick**) intends to acquire all the assets of the pest control business operated by Swift Property Services Pty Ltd trading as GC Pest Control and Big Blue Frog Pest Control (**GC Pest Control**) (the **Acquisition**).\n\nFlick is ultimately controlled by Anticimex Group AB (**Anticimex**), a global pest control company headquartered in Sweden. EQT Future, an investment fund operated by EQT Group, holds a controlling interest in Anticimex.\n\nFlick offers a suite of pest control services, including general pest treatment, termite management, preconstruction and insect control. Flick provides pest control services on a national basis to both residential and commercial customers. Flick also operates a separate hygiene business unrelated to pest control.\n\nGC Pest Control supplies pest control and preconstruction services, including general pest treatment, termite management, and insect control to both residential and commercial customers predominantly within the Gold Coast region, extending to the southern fringes of Brisbane. GC Pest Control does not provide hygiene services.",
+      "events": [
+        {
+          "date": "2026-09-07T12:00:00Z",
+          "title": "Phase 1 consultation",
+          "display_title": "Phase 1 consultation",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/MN-01122%20-%20Flick-GC%20Pest%20Control%20-%20Questionnaire.docx",
+          "url_gh": "/mergers/MN-01122/MN-01122 - Flick-GC Pest Control - Questionnaire.pdf",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-09-04T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-01114",
+          "merger_name": "EQT Fund Management \u2013 Exolaunch",
+          "acquirers": [
+            "Elevate BidCo GmbH"
+          ],
+          "targets": [
+            "Exolaunch GmbH"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-60028",
+          "merger_name": "EQT Fund Management S.\u00e0 r.l. \u2013 Orikan Group",
+          "acquirers": [
+            "ULEXITE GROUP PTY LIMITED"
+          ],
+          "targets": [
+            "IGNITION TOPCO PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-70033",
+          "merger_name": "EQT Fund Management \u2013 Corza Biosurgery",
+          "acquirers": [
+            "Ruby BidCo GmbH",
+            "Seal US Holdings Inc."
+          ],
+          "targets": [
+            "Corza Medical sp z.o.o.",
+            "Corza Medical S.A.S"
+          ],
+          "accc_determination": "Approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 18,
+        "range_business_days": [
+          16,
+          21
+        ],
+        "basis": "industry",
+        "anzsic_level": "class",
+        "anzsic_codes": [
+          "2921",
+          "6240",
+          "7312"
+        ],
+        "sample_size": 18,
+        "estimated_at": "2026-09-07",
+        "method_version": 1
+      },
+      "pre_notification": {
+        "estimated_days": 37,
+        "min_days": null,
+        "max_days": 44,
+        "id_issued_estimated": "2026-07-29",
+        "id_issued_before": null,
+        "id_issued_after": "2026-07-22",
+        "min_days_witness": null,
+        "max_days_witness": "WA-01118",
+        "basis": "upper-bound-only",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/midocean-energy-%E2%80%93-jera-gorgon",
       "merger_name": "MidOcean Energy \u2013 JERA Gorgon",
       "status": "Assessment completed",
@@ -45965,7 +46131,7 @@
       "determination_publication_date": "2026-09-01T12:00:00Z",
       "accc_determination": "Approved",
       "accc_determination_raw": "ACCC determinationApproved with conditions",
-      "page_modified_datetime": "2026-09-02T09:52:28+10:00",
+      "page_modified_datetime": "2026-09-07T12:03:37+10:00",
       "consultation_response_due_date": "2026-08-05T12:00:00Z",
       "acquirers": [
         {
@@ -46028,7 +46194,7 @@
           "date": "2026-09-01T12:00:00Z",
           "title": "Kimberly-Clark - Kenvue - Phase 1 determination",
           "display_title": "Phase 1 - initial assessment determination: Approved",
-          "url": "https://www.accc.gov.au/system/files/moderated_files/Kimberly-Clark%20-%20Kenvue%20-%20Phase%201%20determination%20-%201%20September%202026.pdf",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Kimberly-Clark%20-%20Kenvue%20-%20Phase%201%20determination%20-%201%20September%202026_0.pdf",
           "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
           "determination_table_content": [
             {
@@ -46045,230 +46211,14 @@
             },
             {
               "item": "Reasons for determination",
-              "details": "The reasons for the Australian Competition and Consumer\nCommission (ACCC)\u2019s determination are set out in section 2."
-            },
-            {
-              "item": "Divestiture Business",
-              "details": "The Divestiture Business comprises Kenvue Inc.'s feminine\nhygiene business in Australia and New Zealand, including all\naccompanying assets, licences, agreements and other tangible\nand intangible property listed in this Schedule 4, to the extent\nrequired to facilitate the operation of the Divestiture Business in\nAustralia and New Zealand."
-            },
-            {
-              "item": "Intellectual Property",
-              "details": "All intellectual property required to facilitate the operation of the\nDivestiture Business in Australia and New Zealand will be\ntransferred to the Approved Purchaser, including as identified\nbelow.\nTrade marks\nTrade mark Trade mark\nnumber\nALOESILK 1086009\nBARELY THERE 932796\nBODYFLEX 1173424\nCAREFREE 183733\nCAREFREE 351885\nCAREFREE & PETAL DESIGN 287150\nCAREFREE ACTI-FRESH 1238544\nCAREFREE ALOE LOGO 1171088\nCAREFREE AND FLOWER DESIGN 879824\nCAREFREE BREATHABLE 836046\nCAREFREE COMFORT 773418\nCAREFREE FLOWER DESIGN 871388\nCAREFREE PETALS DESIGN 733884\nCAREFREE PROCOMFORT 1374972\nDRY-MAX 1087148\nDRYFLEX 1278194\nDYNAMIC FIT 1758139\nFEELS LIKE A LINER, PROTECTS LIKE A PAD 1279814\nFLEXIA 1131750\nFLEXIFORM 909924"
-            },
-            {
-              "item": "ALOESILK",
-              "details": "1086009"
-            },
-            {
-              "item": "BARELY THERE",
-              "details": "932796"
-            },
-            {
-              "item": "BODYFLEX",
-              "details": "1173424"
-            },
-            {
-              "item": "CAREFREE",
-              "details": "183733"
-            },
-            {
-              "item": "CAREFREE",
-              "details": "351885"
-            },
-            {
-              "item": "CAREFREE & PETAL DESIGN",
-              "details": "287150"
-            },
-            {
-              "item": "CAREFREE ACTI-FRESH",
-              "details": "1238544"
-            },
-            {
-              "item": "CAREFREE ALOE LOGO",
-              "details": "1171088"
-            },
-            {
-              "item": "CAREFREE AND FLOWER DESIGN",
-              "details": "879824"
-            },
-            {
-              "item": "CAREFREE BREATHABLE",
-              "details": "836046"
-            },
-            {
-              "item": "CAREFREE COMFORT",
-              "details": "773418"
-            },
-            {
-              "item": "CAREFREE FLOWER DESIGN",
-              "details": "871388"
-            },
-            {
-              "item": "CAREFREE PETALS DESIGN",
-              "details": "733884"
-            },
-            {
-              "item": "CAREFREE PROCOMFORT",
-              "details": "1374972"
-            },
-            {
-              "item": "DRY-MAX",
-              "details": "1087148"
-            },
-            {
-              "item": "DRYFLEX",
-              "details": "1278194"
-            },
-            {
-              "item": "DYNAMIC FIT",
-              "details": "1758139"
-            },
-            {
-              "item": "FEELS LIKE A LINER, PROTECTS LIKE A PAD",
-              "details": "1279814"
-            },
-            {
-              "item": "FLEXIA",
-              "details": "1131750"
-            },
-            {
-              "item": "FLEXIFORM",
-              "details": "909924\nOUR MOVE TO PROGRESS 1115838\nOXYGEN FRESH 781951\nPAD PROTECTION, LINER COMFORT 799971\nSILK EASE 711119\nSOFTFOLDS 757470\nSTAYFREE 103596\nSTAYFREE BUTTERFLY LOGO 742270\nSTAYFREE DAISY & BAND DSN. 167166\nSTAYFREE PERFECT FIT 840568\nSTAYFREE PERFECT FIT AND DESIGN 840569\nSTAYFREE QWIK-DRY 749459\nSTAYFREE STAYFRESH 730938\nSUREFIT 264462\nSWEET DREAMS 829047\nTHERMO CONTROL & DESIGN (SERIES OF 2) 809165\nTHERMOCONTROL 805369\nTOTAL CARE SYSTEM 818580\nTRIPLEFRESH 710095\nUNDIEFEEL 832797\nPatents\nPatent name Patent number\nPrinted design for release paper for a 201615456\nsanitary absorbent article\nPrinted design for release paper for a 201617375\nsanitary absorbent article\nPrinted pattern for sanitary product 201714676\nSanitary product 201716511\nSanitary product 201716512\nSanitary product 201716513\nFeminine absorbent articles with 2018244460\nbonded side flaps and an apparatus for\nproducing the same"
-            },
-            {
-              "item": "OUR MOVE TO PROGRESS",
-              "details": "1115838"
-            },
-            {
-              "item": "OXYGEN FRESH",
-              "details": "781951"
-            },
-            {
-              "item": "PAD PROTECTION, LINER COMFORT",
-              "details": "799971"
-            },
-            {
-              "item": "SILK EASE",
-              "details": "711119"
-            },
-            {
-              "item": "SOFTFOLDS",
-              "details": "757470"
-            },
-            {
-              "item": "STAYFREE",
-              "details": "103596"
-            },
-            {
-              "item": "STAYFREE BUTTERFLY LOGO",
-              "details": "742270"
-            },
-            {
-              "item": "STAYFREE DAISY & BAND DSN.",
-              "details": "167166"
-            },
-            {
-              "item": "STAYFREE PERFECT FIT",
-              "details": "840568"
-            },
-            {
-              "item": "STAYFREE PERFECT FIT AND DESIGN",
-              "details": "840569"
-            },
-            {
-              "item": "STAYFREE QWIK-DRY",
-              "details": "749459"
-            },
-            {
-              "item": "STAYFREE STAYFRESH",
-              "details": "730938"
-            },
-            {
-              "item": "SUREFIT",
-              "details": "264462"
-            },
-            {
-              "item": "SWEET DREAMS",
-              "details": "829047"
-            },
-            {
-              "item": "THERMO CONTROL & DESIGN (SERIES OF 2)",
-              "details": "809165"
-            },
-            {
-              "item": "THERMOCONTROL",
-              "details": "805369"
-            },
-            {
-              "item": "TOTAL CARE SYSTEM",
-              "details": "818580"
-            },
-            {
-              "item": "TRIPLEFRESH",
-              "details": "710095"
-            },
-            {
-              "item": "UNDIEFEEL",
-              "details": "832797\nPatent name\nSealing pattern for tampon overwrap 2014203444\nSealing pattern for tampon overwrap 2009319873\nTampon formed from a selectively 2010224393\nneedled nonwoven fabric web\nPersonal hygiene product with a digital 2016201054\nelement\nPersonal hygiene device for detecting a 2019323802\nfluid\nConnectors and encasement for 2018236754\npersonal hygiene product with a digital\nelement\nPre-filled applicator device 2015252139\nPre-Filled Applicator Device 2009217412\nPre-Filled Applicator Device 579803\nDomain names\nDomain names\nbecarefree.au\nbecarefree.com.au\ncarefree.au\ncarefree.net.au\ncarefreeliners.au\ncarefreeliners.com.au\ncarefreeonamission.com.au\ncarefreetampons.au\ncarefreetampons.com.au\nmycarefree.au\nmycarefree.com.au\nstayfree.au\nstayfree.com.au\nbecarefree.co.nz\nbecarefree.nz\ncarefreeliners.co.nz\ncarefreeonamission.co.nz"
-            },
-            {
-              "item": "Sealing pattern for tampon overwrap",
-              "details": "2014203444"
-            },
-            {
-              "item": "Sealing pattern for tampon overwrap",
-              "details": "2009319873"
-            },
-            {
-              "item": "Tampon formed from a selectively\nneedled nonwoven fabric web",
-              "details": "2010224393"
-            },
-            {
-              "item": "Personal hygiene product with a digital\nelement",
-              "details": "2016201054"
-            },
-            {
-              "item": "Personal hygiene device for detecting a\nfluid",
-              "details": "2019323802"
-            },
-            {
-              "item": "Connectors and encasement for\npersonal hygiene product with a digital\nelement",
-              "details": "2018236754"
-            },
-            {
-              "item": "Pre-filled applicator device",
-              "details": "2015252139"
-            },
-            {
-              "item": "Pre-Filled Applicator Device",
-              "details": "2009217412"
-            },
-            {
-              "item": "Pre-Filled Applicator Device",
-              "details": "579803\nDomain names\nbecarefree.au \nbecarefree.com.au \ncarefree.au \ncarefree.net.au \ncarefreeliners.au \ncarefreeliners.com.au \ncarefreeonamission.com.au \ncarefreetampons.au \ncarefreetampons.com.au \nmycarefree.au \nmycarefree.com.au \nstayfree.au \nstayfree.com.au \nbecarefree.co.nz \nbecarefree.nz \ncarefreeliners.co.nz \ncarefreeonamission.co.nz \ncarefreetampons.co.nz\nmycarefree.co.nz\nmystayfree.co.nz\nstayfree.co.nz\nstayfree.nz\nGlobal trademarks\nThe Approved Purchaser will be bound by, whether by becoming\na party to, or otherwise agreeing in writing to be bound by and\ncomply with the terms of, the following world-wide trademark\nagreements for Kenvue's Stayfree and Carefree brands for use in\nAustralia and New Zealand:\nTrademark Agreement Name Case Reference\nSTAYFREE AND CONSTAMAG2748\nBUTTERFLY LOGO\nCAREFREE CONS131600OOO001\nAll books, records and files relating to the prosecution and\nmaintenance of the trademarks, patents and domain names\nreferred to above."
-            },
-            {
-              "item": "Manufacturing\nTechnology and\nMarketing Materials",
-              "details": "Kimberly-Clark will license to the Approved Purchaser all know-\nhow relating to the manufacture, marketing and sale of the\nproducts in Australia and New Zealand. This includes product\nspecifications, manufacturing processes, marketing materials,\npackaging and labelling designs, clinical studies, scientific data,\nproduct testing reports, claims support, quality information and\nother materials necessary to operate the Divestiture Business.\nThis licence will be granted to the Approved Purchaser by\nKimberly-Clark on a perpetual, irrevocable, fully paid-up, royalty-\nfree, and exclusive basis within Australia and New Zealand."
-            },
-            {
-              "item": "Business Records",
-              "details": "Kimberly-Clark will transfer all books and records (including all\ndistributors\u2019 and suppliers\u2019 lists, distribution lists, sales and\npromotional literature and other sales-related materials) that are\nreasonably separable and are primarily related to, or required for\nthe ownership of, the Divestiture Business."
-            },
-            {
-              "item": "Inventory",
-              "details": "Inventory of the Divestiture Business in Australia that exists as at\nthe date of completion of the divestiture and not already sold to a\nthird party will be transferred to the Approved Purchaser."
-            },
-            {
-              "item": "Personnel",
-              "details": "Kimberly-Clark will transfer all employees who are, in the view of\nthe Approved Purchaser, required for the Approved Purchaser to\nmaintain, operate or conduct effectively the Divestiture Business\n(subject to clauses 5.7 and 5.8).\nTrademark Agreement Name"
+              "details": "The reasons for the Australian Competition and Consumer\nCommission (ACCC)\u2019s determination are set out in section 2.\nPatent name\nDomain names\nTrademark Agreement\nName"
             }
           ],
           "determination_statement_of_reasons": [
             {
               "type": "paragraph",
               "number": "2.1",
-              "text": "When making a determination in Phase 1, the ACCC undertakes a competition assessment and considers whether it is appropriate for an acquisition to be approved or subject to further assessment in Phase 2 in accordance with section 51ABZJ of the Act. In doing so, the ACCC must have regard to the object of the Act and all relevant matters, including the interests of consumers."
+              "text": "When making a determination in Phase 1, the ACCC undertakes a competition assessment and considers whether it is appropriate for an acquisition to be approved or subject to further assessment in Phase 2 in accordance with section 51ABZJ of the Act. In doing so, the ACCC must have regard to the object of the Act and all relevant matters, including the interests of consumers. OFFICIAL SENSITIVE"
             },
             {
               "type": "paragraph",
@@ -46326,7 +46276,7 @@
             {
               "type": "paragraph",
               "number": "2.11",
-              "text": "The Parties are both large global suppliers of feminine hygiene products. In Australia, their main customers are supermarkets and pharmacy wholesalers."
+              "text": "The Parties are both large global suppliers of feminine hygiene products. In Australia, their main customers are supermarkets and pharmacy wholesalers. OFFICIAL SENSITIVE"
             },
             {
               "type": "paragraph",
@@ -46374,7 +46324,7 @@
             {
               "type": "paragraph",
               "number": "3.7",
-              "text": "The ACCC also considers that alternative smaller suppliers would be unlikely to constrain Kimberly-Clark post-Acquisition as they have relatively low market shares, and meaningful new entry, at a scale and in a timeframe sufficient to constrain the merged entity, would be unlikely due to the importance of brand trust and familiarity to consumers in this market, as discussed at section 2.12 above."
+              "text": "The ACCC also considers that alternative smaller suppliers would be unlikely to constrain Kimberly-Clark post-Acquisition as they have relatively low market shares, and meaningful new entry, at a scale and in a timeframe sufficient to constrain the OFFICIAL SENSITIVE merged entity, would be unlikely due to the importance of brand trust and familiarity to consumers in this market, as discussed at section 2.12 above."
             },
             {
               "type": "paragraph",
@@ -46422,7 +46372,7 @@
             {
               "type": "paragraph",
               "number": "3.15",
-              "text": "As set out above, the ACCC is satisfied that, disregarding any conditions, the Acquisition could, in all the circumstances, have the effect of substantially lessening competition in the supply of feminine hygiene products in Australia. To address this, the ACCC has decided to include the Conditions in its determination."
+              "text": "As set out above, the ACCC is satisfied that, disregarding any conditions, the Acquisition could, in all the circumstances, have the effect of substantially lessening competition in the supply of feminine hygiene products in Australia. To address this, the ACCC has decided to include the Conditions in its determination. OFFICIAL SENSITIVE"
             },
             {
               "type": "paragraph",
@@ -46477,7 +46427,7 @@
               "items": [
                 "the protection of the Divestiture Business by Kimberly-Clark prior to divestiture,",
                 "the appointment of an ACCC-approved independent manager to manage the Divestiture Business prior to divestiture, and",
-                "the appointment of an ACCC-approved independent auditor to monitor and report on compliance with the undertaking. 4. Applications for review and public benefit"
+                "the appointment of an ACCC-approved independent auditor to monitor and report on compliance with the undertaking. OFFICIAL SENSITIVE 4. Applications for review and public benefit"
               ]
             },
             {
@@ -46503,9 +46453,17 @@
               "text": "The notifying party may also apply to the ACCC for a determination that the acquisition would be of public benefit. Pursuant to section 51ABZP(2) of the Act, this application must be made no later than 21 calendar days after the ACCC made this determination."
             }
           ],
-          "url_gh": "/mergers/MN-80005/Kimberly-Clark - Kenvue - Phase 1 determination - 1 September 2026.pdf",
+          "url_gh": "/mergers/MN-80005/Kimberly-Clark - Kenvue - Phase 1 determination - 1 September 2026_0.pdf",
           "is_determination_event": true,
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-09-03T12:00:00Z",
+          "title": "ACCC accepted s87B undertaking",
+          "display_title": "ACCC accepted s87B undertaking",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Kimberly-Clark%20Corporation%20and%20Kenvue%20Inc.%20-%20s87B%20Undertaking%20-%20Public%20Version.pdf",
+          "url_gh": "/mergers/MN-80005/Kimberly-Clark Corporation and Kenvue Inc. - s87B Undertaking - Public Version.pdf",
+          "phase": null
         }
       ],
       "is_waiver": false,
@@ -109289,6 +109247,152 @@
           ],
           "targets": [
             "ASH PROMOTIONS PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/imagine-education-%E2%80%93-bumper-bears-early-learning-centre-in-kippa-ring-qld",
+      "merger_name": "Imagine Education \u2013 Bumper Bears Early Learning Centre in Kippa-Ring, QLD",
+      "status": "Assessment completed",
+      "merger_id": "WA-80038",
+      "effective_notification_datetime": "2026-08-06T12:00:00Z",
+      "original_notification_datetime": "2026-08-06T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-09-04T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-09-04T17:22:54+10:00",
+      "acquirers": [
+        {
+          "name": "Children First Property Pty Ltd as trustee for the Children First Property Trust",
+          "identifier_type": "ABN",
+          "identifier": "94 548 413 037",
+          "party_page": {
+            "id": "children-first-property-pty-ltd-as-trustee-for-the-children-first-property-trust",
+            "name": "Children First Property Pty Ltd as trustee for the Children First Property Trust"
+          }
+        },
+        {
+          "name": "IMAGINE EDUCATION EARLY LEARNING CENTRES NO. 40 PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "50 690 670 823",
+          "party_page": {
+            "id": "imagine-education-early-learning-centres-no-40-pty-ltd",
+            "name": "Imagine Education Early Learning Centres No. 40 Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Stephen James Sourris, James Peter Sourris, Christopher Peter Sourris, Marie-Christine Sourris, Peter Christopher Sourris and Peter James Sourris trading as \u2018Bumper Bears Early Learning Centres\u2019",
+          "identifier_type": null,
+          "identifier": "Queensland Registered Business Number BN19668478",
+          "party_page": {
+            "id": "stephen-james-sourris-james-peter-sourris-christopher-peter-sourris-marie-christ",
+            "name": "Stephen James Sourris, James Peter Sourris, Christopher Peter Sourris, Marie-Christine Sourris, Peter Christopher Sourris and Peter James Sourris trading as \u2018Bumper Bears Early Learning Centres\u2019"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        },
+        {
+          "code": "8010",
+          "name": "Preschool Education"
+        },
+        {
+          "code": "8710",
+          "name": "Child Care Services"
+        }
+      ],
+      "merger_description": "Imagine Education Early Learning Centres No. 40 Pty Ltd (**Imagine Education**) proposes to acquire the childcare centre business known as Bumper Bears Early Learning Centre (**Bumper Bears**) and a lease of the childcare centre from which the business operates from the existing owners. Children First Property Pty Ltd as trustee for the Children First Property Trust (**Children First**) proposes to acquire the land on which Bumper Bears operates.\n\nImagine Education and Children First are both part of the Imagine Education Group. The Imagine Education Group currently operates 63 childcare centres in Queensland, New South Wales, Victoria, South Australia and Tasmania under the Imagine Childcare, Children First, Grow Early Education and Learning Ladder brands. Children First currently owns the land on which 6 Imagine Education Group centres operate.\n\nBumper Bears is run by a partnership between six members of the Sourris family. It operates a single childcare centre, Bumper Bears, which is located at 401 Elizabeth Avenue, Kippa-Ring QLD 4021.\n\nThe Imagine Education Group and Bumper Bears both provide centre-based childcare and early childhood education services (including long day care) for children up to 6 years of age.",
+      "events": [
+        {
+          "date": "2026-09-04T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Imagine%20Education%20%E2%80%93%20Bumper%20Bears%20Early%20Learning%20Centre%20in%20Kippa-Ring%2C%20QLD%20%28WA-80038%29%20-%20Notification%20waiver%20determination%20-%204%20September%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Imagine Education Early Learning Centres No. 40 Pty Ltd (Imagine\nEducation) and Children First Property Pty Ltd as trustee for the\nChildren First Property Trust (Children First), both of which are part\nof the Imagine Education Group, applied for a notification waiver in\nrespect of:\n\u2022 Imagine Education\u2019s proposed acquisition of the childcare\ncentre business known as Bumper Bears Early Learning\nCentre located in Kippa-Ring, Queensland (Bumper Bears)\nand a lease of the land on which Bumper Bears operates\n\u2022 Children First\u2019s proposed acquisition of the land on which\nBumper Bears operates\nas described in the transaction documents provided as part of the\napplication (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "4 September 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The Imagine Education Group currently operates 63 childcare\ncentres in Queensland, New South Wales, Victoria, South Australia\nand Tasmania under the Imagine Childcare, Children First, Grow Early\nEducation and Learning Ladder brands. Children First currently owns\nthe land on which 6 Imagine Education Group centres operate.\nThe target, Bumper Bears, operates a single childcare centre (the\ncentre proposed to be acquired), which is located at 401 Elizabeth\nAvenue, Kippa-Ring, Queensland 4021.\nThe Imagine Education Group and Bumper Bears both provide\ncentre-based childcare and early childhood education services\n(including long day care) for children aged up to 6 years of age in\nQueensland."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition given:\na. there is limited geographic overlap between Imagine\nEducation and Bumper Bears in the supply of centre-based\nchildcare and early childhood education services in Kippa-\nRing and the surrounding areas\nb. there are alternative suppliers of centre-based childcare and\nearly childhood education services in Kippa-Ring and the\nsurrounding areas.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-80038/Imagine Education \u2013 Bumper Bears Early Learning Centre in Kippa-Ring, QLD (WA-80038) - Notification waiver determination - 4 September 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-08-06T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-80019",
+          "merger_name": "Imagine Education \u2013 childcare centres ownership restructure",
+          "acquirers": [
+            "Waterworks Education Group Pty Ltd",
+            "Imagine Education Investments Trust"
+          ],
+          "targets": [
+            "Waterworks Childcare Investments Pty Ltd"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-25016",
+          "merger_name": "Hostplus \u2013 CH Investment Holding Trust",
+          "acquirers": [
+            "HOST-PLUS PTY. LIMITED"
+          ],
+          "targets": [
+            "CH Investment Holding Trust"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-40040",
+          "merger_name": "Waymark Hotels Group \u2013 Criterion Hotel Motel, Rockhampton, QLD",
+          "acquirers": [
+            "Criterion Rocky Op Co Pty Ltd",
+            "Waymark Hotels Properties No 46 Pty Ltd as trustee for Criterion Rockhampton Property Trust"
+          ],
+          "targets": [
+            "Turnbull Hotels (Qld) Pty Ltd as trustee for Turnbull Family Trust",
+            "Turnbull Hotels Enterprises Pty Ltd as trustee for Turnbull Hotels Investment Trust"
           ],
           "accc_determination": "Approved"
         }
