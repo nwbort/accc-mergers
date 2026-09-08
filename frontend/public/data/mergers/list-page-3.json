@@ -1901,10 +1901,16 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "Adobe Inc. (NASDAQ: ADBE)"
+          "name": "Adobe Inc. (NASDAQ: ADBE)",
+          "canonical": {
+            "name": "Adobe"
+          }
         },
         {
-          "name": "Fenway Merger Sub, Inc."
+          "name": "Fenway Merger Sub, Inc.",
+          "canonical": {
+            "name": "Adobe"
+          }
         }
       ],
       "targets": [

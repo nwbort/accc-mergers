@@ -2,6 +2,68 @@
   "shard": 16,
   "shard_count": 256,
   "parties": {
+    "adobe": {
+      "id": "adobe",
+      "canonical_name": "Adobe",
+      "members": [
+        {
+          "name": "Adobe Inc.",
+          "identifier": "NASDAQ: ADBE (2748129)",
+          "identifier_type": null
+        },
+        {
+          "name": "Adobe Inc. (NASDAQ: ADBE)",
+          "identifier": "2748129",
+          "identifier_type": null
+        },
+        {
+          "name": "Fenway Merger Sub, Inc.",
+          "identifier": "10389477",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-30028",
+            "merger_name": "Adobe - Topaz Labs",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-08-13T12:00:00Z",
+            "determination_date": "2026-09-08T12:00:00Z"
+          },
+          {
+            "merger_id": "MN-30005",
+            "merger_name": "Adobe - Semrush",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-03-16T12:00:00Z",
+            "determination_date": "2026-04-10T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 2,
+      "phase_1_count": 2,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 0,
+      "phase_duration": {
+        "average_days": 25.5,
+        "median_days": 25.5,
+        "average_business_days": 17.5,
+        "median_business_days": 17.5,
+        "completed_count": 2
+      },
+      "waiver_duration": null
+    },
     "compagnie-g-n-rale-des-tablissements-michelin": {
       "id": "compagnie-g-n-rale-des-tablissements-michelin",
       "canonical_name": "Compagnie G\u00e9n\u00e9rale des \u00c9tablissements Michelin",

@@ -262,6 +262,36 @@
       "count": 2
     },
     {
+      "acquirer_name": "Adobe",
+      "canonical_id": "adobe",
+      "anzsic_code": "542",
+      "anzsic_name": "Software Publishing",
+      "merger_ids": [
+        "MN-30005",
+        "MN-30028"
+      ],
+      "dates": [
+        "2026-03-16T12:00:00Z",
+        "2026-08-13T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "Adobe",
+      "canonical_id": "adobe",
+      "anzsic_code": "700",
+      "anzsic_name": "Computer System Design and Related Services",
+      "merger_ids": [
+        "MN-30005",
+        "MN-30028"
+      ],
+      "dates": [
+        "2026-03-16T12:00:00Z",
+        "2026-08-13T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
       "acquirer_name": "Australian Venue Co",
       "canonical_id": "australian-venue-co",
       "anzsic_code": "440",
@@ -622,5 +652,5 @@
       "count": 2
     }
   ],
-  "count": 39
+  "count": 41
 }

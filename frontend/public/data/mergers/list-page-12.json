@@ -2437,7 +2437,10 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "Adobe Inc."
+          "name": "Adobe Inc.",
+          "canonical": {
+            "name": "Adobe"
+          }
         }
       ],
       "targets": [
