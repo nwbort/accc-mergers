@@ -64,17 +64,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-70030",
-      "merger_name": "Aware Super \u2013 Increased interest in Keyton",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-08-10T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-15030",
       "merger_name": "KARMO/SIMPLR",
       "is_waiver": false,
@@ -84,6 +73,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-08-03T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-70030",
+      "merger_name": "Aware Super \u2013 Increased interest in Keyton",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-10T12:00:00Z",
+      "determination_date": "2026-09-08T12:00:00Z"
     },
     {
       "merger_id": "WA-80038",
@@ -629,13 +629,13 @@
   "phase_1_count": 20,
   "phase_2_count": 2,
   "waiver_count": 33,
-  "active_count": 6,
+  "active_count": 5,
   "phase_duration": {
-    "average_days": 33.75,
-    "median_days": 29.0,
-    "average_business_days": 22.3125,
-    "median_business_days": 20.0,
-    "completed_count": 16
+    "average_days": 33.470588235294116,
+    "median_days": 29,
+    "average_business_days": 22.235294117647058,
+    "median_business_days": 21,
+    "completed_count": 17
   },
   "waiver_duration": {
     "average_days": 21.303030303030305,

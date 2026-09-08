@@ -137,17 +137,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-70030",
-      "merger_name": "Aware Super \u2013 Increased interest in Keyton",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-08-10T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-45024",
       "merger_name": "OEConnection - Epyx",
       "is_waiver": false,
@@ -156,6 +145,17 @@
       "has_conditions": false,
       "phase": "Phase 1",
       "notification_date": "2026-08-15T12:00:00Z",
+      "determination_date": "2026-09-08T12:00:00Z"
+    },
+    {
+      "merger_id": "MN-70030",
+      "merger_name": "Aware Super \u2013 Increased interest in Keyton",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-10T12:00:00Z",
       "determination_date": "2026-09-08T12:00:00Z"
     },
     {
@@ -1318,13 +1318,13 @@
   "phase_1_count": 28,
   "phase_2_count": 0,
   "waiver_count": 89,
-  "active_count": 11,
+  "active_count": 10,
   "phase_duration": {
-    "average_days": 25.294117647058822,
-    "median_days": 24,
-    "average_business_days": 17.58823529411765,
-    "median_business_days": 17,
-    "completed_count": 17
+    "average_days": 25.5,
+    "median_days": 24.5,
+    "average_business_days": 17.77777777777778,
+    "median_business_days": 17.0,
+    "completed_count": 18
   },
   "waiver_duration": {
     "average_days": 20.03370786516854,

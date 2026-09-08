@@ -3,12 +3,12 @@
   "total_waivers": 387,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 209,
-    "Under assessment": 33,
+    "Assessment completed": 210,
+    "Under assessment": 32,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 202,
+    "Approved": 203,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,28 +22,28 @@
     "Not approved": 17
   },
   "clearance_rate": {
-    "cleared": 207,
+    "cleared": 208,
     "not_cleared": 2,
-    "total": 209,
+    "total": 210,
     "rate": 0.99
   },
   "phase_duration": {
-    "average_days": 29.790697674418606,
-    "median_days": 26,
-    "average_business_days": 20.111627906976743,
-    "median_business_days": 18,
+    "average_days": 29.787037037037038,
+    "median_days": 26.0,
+    "average_business_days": 20.11574074074074,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
         "count": 45,
-        "percentage": 20.9
+        "percentage": 20.8
       },
       "day20": {
         "count": 159,
-        "percentage": 74.0
+        "percentage": 73.6
       },
       "day30": {
-        "count": 200,
-        "percentage": 93.0
+        "count": 201,
+        "percentage": 93.1
       }
     }
   },
@@ -285,6 +285,17 @@
       "has_conditions": false
     },
     {
+      "merger_id": "MN-70030",
+      "merger_name": "Aware Super \u2013 Increased interest in Keyton",
+      "determination": "Approved",
+      "determination_date": "2026-09-08T12:00:00Z",
+      "page_modified_datetime": "2026-09-08T15:25:44+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-45024",
       "merger_name": "OEConnection - Epyx",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-70035",
-      "merger_name": "Triton \u2013 United Initiators",
-      "determination": "Approved",
-      "determination_date": "2026-09-07T12:00:00Z",
-      "page_modified_datetime": "2026-09-07T16:49:04+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]
