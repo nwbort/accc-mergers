@@ -131,12 +131,12 @@
       "merger_id": "MN-05043",
       "merger_name": "Incubeta - Datisan",
       "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
+      "status": "Assessment completed",
+      "determination": "Approved",
       "has_conditions": false,
       "phase": "Phase 1",
       "notification_date": "2026-08-13T12:00:00Z",
-      "determination_date": null
+      "determination_date": "2026-09-08T12:00:00Z"
     },
     {
       "merger_id": "MN-45024",
@@ -1320,13 +1320,13 @@
   "phase_1_count": 28,
   "phase_2_count": 0,
   "waiver_count": 89,
-  "active_count": 10,
+  "active_count": 9,
   "phase_duration": {
-    "average_days": 25.5,
-    "median_days": 24.5,
-    "average_business_days": 17.77777777777778,
-    "median_business_days": 17.0,
-    "completed_count": 18
+    "average_days": 25.526315789473685,
+    "median_days": 25,
+    "average_business_days": 17.789473684210527,
+    "median_business_days": 17,
+    "completed_count": 19
   },
   "waiver_duration": {
     "average_days": 20.03370786516854,

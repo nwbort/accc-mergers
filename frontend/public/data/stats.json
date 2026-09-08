@@ -3,12 +3,12 @@
   "total_waivers": 387,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 210,
-    "Under assessment": 32,
+    "Assessment completed": 212,
+    "Under assessment": 30,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 203,
+    "Approved": 205,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,28 +22,28 @@
     "Not approved": 17
   },
   "clearance_rate": {
-    "cleared": 208,
+    "cleared": 210,
     "not_cleared": 2,
-    "total": 210,
-    "rate": 0.99
+    "total": 212,
+    "rate": 0.991
   },
   "phase_duration": {
-    "average_days": 29.787037037037038,
+    "average_days": 29.94954128440367,
     "median_days": 26.0,
-    "average_business_days": 20.11574074074074,
+    "average_business_days": 20.238532110091743,
     "median_business_days": 18.0,
     "percentiles": {
       "day15": {
         "count": 45,
-        "percentage": 20.8
+        "percentage": 20.6
       },
       "day20": {
-        "count": 159,
-        "percentage": 73.6
+        "count": 160,
+        "percentage": 73.4
       },
       "day30": {
-        "count": 201,
-        "percentage": 93.1
+        "count": 202,
+        "percentage": 92.7
       }
     }
   },
@@ -219,6 +219,28 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-05043",
+      "merger_name": "Incubeta - Datisan",
+      "determination": "Approved",
+      "determination_date": "2026-09-08T12:00:00Z",
+      "page_modified_datetime": "2026-09-08T16:52:51+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "MN-85015",
+      "merger_name": "Journey Beyond - Kelsian Tourism Portfolio",
+      "determination": "Approved",
+      "determination_date": "2026-09-08T12:00:00Z",
+      "page_modified_datetime": "2026-09-08T16:47:55+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-15040",
       "merger_name": "Shepparton Automotive Group - Darryl Twitt Motors dealerships in Shepparton East, Victoria",
       "determination": "Not approved",
@@ -323,28 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-08T12:00:00Z",
       "page_modified_datetime": "2026-09-08T11:25:13+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-30023",
-      "merger_name": "UPM-Kymmene \u2013 Sappi joint venture",
-      "determination": "Approved",
-      "determination_date": "2026-09-08T12:00:00Z",
-      "page_modified_datetime": "2026-09-08T10:44:14+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-50035",
-      "merger_name": "Opal HealthCare - Canberra Nursing Home (Lidcombe, NSW)",
-      "determination": "Approved",
-      "determination_date": "2026-09-07T12:00:00Z",
-      "page_modified_datetime": "2026-09-07T17:27:26+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",

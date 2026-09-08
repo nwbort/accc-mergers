@@ -5467,13 +5467,16 @@
   {
     "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/incubeta-datisan",
     "merger_name": "Incubeta - Datisan",
-    "status": "Under assessment",
+    "status": "Assessment completed",
     "merger_id": "MN-05043",
     "effective_notification_datetime": "2026-08-13T12:00:00Z",
     "original_notification_datetime": "2026-08-13T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-09-24T12:00:00Z",
-    "page_modified_datetime": "2026-08-21T10:44:46+10:00",
+    "determination_publication_date": "2026-09-08T12:00:00Z",
+    "accc_determination": "Approved",
+    "accc_determination_raw": "ACCC determinationApproved",
+    "page_modified_datetime": "2026-09-08T16:52:51+10:00",
     "consultation_response_due_date": "2026-08-22T12:00:00Z",
     "acquirers": [
       {
@@ -5523,7 +5526,7 @@
         "name": "Computer System Design and Related Services"
       }
     ],
-    "merger_description": "Incubeta Australia Pty Limited (**Incubeta**) proposes to acquire the entire issued share capital of Datisan Pty Ltd (**Datisan**).\n\nIncubeta is part of the Incubeta Group, an international digital marketing group. In Australia, Incubeta supplies Google Marketing Platform and Google Analytics licence resale. Incubeta also supplies professional consulting services related to implementing and operating advertising and marketing platforms. Incubator is a subsidiary of entities controlled by Carlyle Group Inc., a global alternative asset manager.\n\nDatisan is a Brisbane-based authorised reseller of Google Marketing Platform and Google Cloud Platform products and a provider of related professional marketing technology services. Datisan\u2019s services include Google Analytics services. Datisan is part of XPON Technologies Group Limited, an Australian marketing technology group.",
+    "merger_description": "Incubeta Australia Pty Limited (**Incubeta**) proposes to acquire the entire issued share capital of Datisan Pty Ltd (**Datisan**).\n\nIncubeta is part of the Incubeta Group, an international digital marketing group. In Australia, Incubeta supplies Google Marketing Platform and Google Analytics licence resale. Incubeta also supplies professional consulting services related to implementing and operating advertising and marketing platforms. Incubeta is a subsidiary of entities controlled by Carlyle Group Inc., a global alternative asset manager.\n\nDatisan is a Brisbane-based authorised reseller of Google Marketing Platform and Google Cloud Platform products and a provider of related professional marketing technology services. Datisan\u2019s services include Google Analytics services. Datisan is part of XPON Technologies Group Limited, an Australian marketing technology group.",
     "events": [
       {
         "date": "2026-08-14T12:00:00Z",
@@ -5538,6 +5541,43 @@
         "date": "2026-08-13T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
+      },
+      {
+        "date": "2026-09-08T12:00:00Z",
+        "title": "Incubeta-Datisan - Phase 1 determination",
+        "display_title": "Phase 1 - initial assessment determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/moderated_files/Incubeta-Datisan%20-%20Phase%201%20determination.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Notified acquisition",
+            "details": "Incubeta Australia Pty Limited (Incubeta) proposes to acquire the\nentire issued share capital of Datisan Pty Ltd (Datisan) (the\nAcquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+          },
+          {
+            "item": "Parties to the Acquisition",
+            "details": "Incubeta is part of the Incubeta Group, an international digital\nmarketing group. In Australia, Incubeta supplies Google Marketing\nPlatform and Google Analytics licence resale. Incubeta also supplies\nprofessional consulting services related to implementing and\noperating advertising and marketing platforms. Incubeta is a\nsubsidiary of entities controlled by Carlyle Group Inc., a global\nalternative asset manager.\nDatisan is a Brisbane-based authorised reseller of Google Marketing\nPlatform and Google Cloud Platform products and a provider of\nrelated professional marketing technology services. Datisan is part\nof XPON Technologies Group Limited, an Australian marketing\ntechnology group."
+          },
+          {
+            "item": "Overlap and relationship\nbetween the Parties",
+            "details": "Incubeta and Datisan both resell and provide programmatic media-\nbuying platforms within the Google Marketing Platform suite\ntogether with associated ad-operations support. Both parties also\nsupply Google Analytics services."
+          },
+          {
+            "item": "Reasons for determination",
+            "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and information from third parties.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market.\nIn reaching its decision, and based on the material before it, the\nACCC finds that post-Acquisition, the merged firm would continue to\nface competition from other resellers of Google Platform products\nand related services."
+          },
+          {
+            "item": "Applications for review",
+            "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+          }
+        ],
+        "url_gh": "/mergers/MN-05043/Incubeta-Datisan - Phase 1 determination.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Phase 1"
       }
     ],
     "is_waiver": false
@@ -27321,13 +27361,16 @@
   {
     "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/journey-beyond-kelsian-tourism-portfolio",
     "merger_name": "Journey Beyond - Kelsian Tourism Portfolio",
-    "status": "Under assessment",
+    "status": "Assessment completed",
     "merger_id": "MN-85015",
     "effective_notification_datetime": "2026-07-01T12:00:00Z",
     "original_notification_datetime": "2026-07-01T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-09-09T12:00:00Z",
-    "page_modified_datetime": "2026-09-02T16:24:26+10:00",
+    "determination_publication_date": "2026-09-08T12:00:00Z",
+    "accc_determination": "Approved",
+    "accc_determination_raw": "ACCC determinationApproved",
+    "page_modified_datetime": "2026-09-08T16:47:55+10:00",
     "consultation_response_due_date": "2026-07-10T12:00:00Z",
     "acquirers": [
       {
@@ -27390,6 +27433,43 @@
         "date": "2026-08-28T12:00:00Z",
         "title": "Timeline extended by 5 business days - following request by parties",
         "display_title": "Timeline extended by 5 business days - following request by parties"
+      },
+      {
+        "date": "2026-09-08T12:00:00Z",
+        "title": "Journey Beyond - Kelsian Tourism Portfolio - Phase 1 determination",
+        "display_title": "Phase 1 - initial assessment determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/moderated_files/EAG%20-%20Kelsian%20-%20Phase%201%20Determination%20-%208%20Sept%202026.pdf",
+        "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
+        "determination_table_content": [
+          {
+            "item": "Notified acquisition",
+            "details": "Experience Australia Group Pty Ltd (EAG) proposes to acquire\ndirectly or indirectly a portfolio of tourism assets from Kelsian Group\nLimited or its subsidiaries or controlled entities (Kelsian) (the\nParties) comprising:\n\u2022 all of the share capital in each of SeaLink Fraser Island Pty\nLtd, Captain Cook Cruises Pty Ltd, SeaLink Marina Pty Ltd,\nSeaLink Tasmania Pty Ltd, and Avonward Pty Ltd from\nKelsian\n\u2022 all of the share capital in SeaLink Northern Territory Pty Ltd\nfrom Kelsian\u2019s wholly-owned subsidiary, SeaLink\nQueensland Pty Ltd\n\u2022 the business and substantially all of the assets of the\n\u2018Whitsundays Cruises and Ferries\u2019 business from Curtis\nIsland Assets Pty Ltd and Curtis Island Services Pty Ltd, via\nEAG\u2019s wholly-owned subsidiary JB Whitsundays Operations\nPty Ltd\n\u2022 the business and substantially all the assets of the \u2018Adelaide\nSightseeing\u2019 business from Kangaroo Island SeaLink Pty Ltd\nvia EAG\u2019s wholly owned subsidiary JB Sightseeing Pty Ltd\n\u2022 Swan River Cruises, Swan Valley Tours, Bells Functions,\nwhich will be transferred from Vyscot Pty Ltd to Avonward\nPty Ltd before completion\n(the Acquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+          },
+          {
+            "item": "Parties to the Acquisition",
+            "details": "The acquirer, EAG, operates a range of experiential tourism\nbusinesses across Australia including under the brand name\n\u201cJourney Beyond\u201d. EAG\u2019s experiences include tours,\naccommodation, rail journeys, scenic flights, and marine\nsightseeing.\nThe vendor, Kelsian, is an ASX-listed company whose core business\nis bus, coach and marine transport operations for primarily\ngovernment clients.\nEAG proposes to acquire from Kelsian a portfolio of tourism\nbusinesses, which includes the brands Captain Cook Cruises,\nAdelaide Sightseeing and K\u2019gari Resorts and tourism ferry\nbusinesses in Queensland, Tasmania and the Northern Territory."
+          },
+          {
+            "item": "Overlap and relationship\nbetween the Parties",
+            "details": "The Parties overlap in the supply of tourism experiences (including\nbut not limited to sightseeing tours, cruises, and \u2018fast boat\u2019 tours) in\nSydney, the Whitsundays, K\u2019gari (Fraser Island), and South Australia.\nThere is a vertical relationship between the parties as EAG\u2019s\nsubsidiary, Outback Spirit Tours, currently purchases\naccommodation, tour services and ferry services from Kelsian in\nK\u2019gari and Tasmania. Kelsian also supplies services that are used by\nOutback Spirit Tours as part of its tour packages.\nThe Parties also both supply ferry services from the mainland to\nRottnest Island in Western Australia. Kelsian supplies these services\nthrough its business SeaLink Rottnest. However, EAG is not\nproposing to acquire SeaLink Rottnest as part of this Acquisition."
+          },
+          {
+            "item": "Reasons for determination",
+            "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents provided by the parties, market\nfeedback and publicly available information.\nThe ACCC notes that EAG initially proposed to acquire SeaLink\nRottnest and separately notified that acquisition to the ACCC. On 26\nAugust 2026, Kelsian publicly announced that it had agreed with\nEAG not to proceed with the SeaLink Rottnest acquisition and that it\nintended to continue operating the business. The ACCC\u2019s\nassessment of that acquisition ceased on 26 August 2026.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings:\n\u2022 There is limited overlap between the tourism experiences the\nParties offer or the Parties\u2019 tourism experiences are\nsubstantially differentiated and do not appear to compete\nparticularly closely.\n\u2022 The merged firm would likely continue to face competition from\nalternative suppliers of tourism experiences in the areas of\noverlap.\n\u2022 The merged firm would be unlikely to have an ability and\nincentive to foreclose rivals\u2019 access to accommodation, tour or\nferry services given there are alternative suppliers.\nWith respect to the supply of ferry services to Rottnest Island, the\nACCC considered whether the separation of Kelsian\u2019s SeaLink\nRottnest from the tourism businesses and assets the subject of the\nAcquisition could weaken its competitive position and/or increase\nthe likelihood of its exit. This could occur due to the loss of\nsynergies between SeaLink Rottnest and the other businesses\nincluded in the tourism portfolio being sold to EAG as part of the\nAcquisition.\nThe ACCC noted the information provided by Kelsian that SeaLink\nRottnest is operationally independent from the tourism portfolio,\ncomplementary to Kelsian\u2019s retained SeaLink operations and\nprofitable. The ACCC also noted representations made by Kelsian\nGroup CEO, both publicly and separately to the ACCC, that Kelsian\nintends to continue operating SeaLink Rottnest. On this basis, the\nACCC concluded that the Acquisition is unlikely to have the effect of\nsubstantially lessening competition in the supply of ferry services to\nRottnest Island."
+          },
+          {
+            "item": "Applications for review",
+            "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+          }
+        ],
+        "url_gh": "/mergers/MN-85015/EAG - Kelsian - Phase 1 Determination - 8 Sept 2026.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Phase 1"
       }
     ],
     "is_waiver": false

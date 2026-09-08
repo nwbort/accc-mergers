@@ -1,12 +1,14 @@
 {
   "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/incubeta-datisan",
   "merger_name": "Incubeta - Datisan",
-  "status": "Under assessment",
+  "status": "Assessment completed",
   "merger_id": "MN-05043",
   "effective_notification_datetime": "2026-08-13T12:00:00Z",
   "original_notification_datetime": "2026-08-13T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-09-24T12:00:00Z",
+  "determination_publication_date": "2026-09-08T12:00:00Z",
+  "accc_determination": "Approved",
   "consultation_response_due_date": "2026-08-22T12:00:00Z",
   "acquirers": [
     {
@@ -72,7 +74,7 @@
       "name": "Computer System Design and Related Services"
     }
   ],
-  "merger_description": "Incubeta Australia Pty Limited (**Incubeta**) proposes to acquire the entire issued share capital of Datisan Pty Ltd (**Datisan**).\n\nIncubeta is part of the Incubeta Group, an international digital marketing group. In Australia, Incubeta supplies Google Marketing Platform and Google Analytics licence resale. Incubeta also supplies professional consulting services related to implementing and operating advertising and marketing platforms. Incubator is a subsidiary of entities controlled by Carlyle Group Inc., a global alternative asset manager.\n\nDatisan is a Brisbane-based authorised reseller of Google Marketing Platform and Google Cloud Platform products and a provider of related professional marketing technology services. Datisan\u2019s services include Google Analytics services. Datisan is part of XPON Technologies Group Limited, an Australian marketing technology group.",
+  "merger_description": "Incubeta Australia Pty Limited (**Incubeta**) proposes to acquire the entire issued share capital of Datisan Pty Ltd (**Datisan**).\n\nIncubeta is part of the Incubeta Group, an international digital marketing group. In Australia, Incubeta supplies Google Marketing Platform and Google Analytics licence resale. Incubeta also supplies professional consulting services related to implementing and operating advertising and marketing platforms. Incubeta is a subsidiary of entities controlled by Carlyle Group Inc., a global alternative asset manager.\n\nDatisan is a Brisbane-based authorised reseller of Google Marketing Platform and Google Cloud Platform products and a provider of related professional marketing technology services. Datisan\u2019s services include Google Analytics services. Datisan is part of XPON Technologies Group Limited, an Australian marketing technology group.",
   "events": [
     {
       "date": "2026-08-14T12:00:00Z",
@@ -88,13 +90,27 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-09-08T12:00:00Z",
+      "title": "Incubeta-Datisan - Phase 1 determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Incubeta-Datisan%20-%20Phase%201%20determination.pdf",
+      "determination_table_content": [
+        {
+          "item": "Reasons for determination",
+          "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and information from third parties.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market.\nIn reaching its decision, and based on the material before it, the\nACCC finds that post-Acquisition, the merged firm would continue to\nface competition from other resellers of Google Platform products\nand related services."
+        }
+      ],
+      "url_gh": "/mergers/MN-05043/Incubeta-Datisan - Phase 1 determination.pdf",
+      "is_determination_event": true,
+      "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
-  "accc_determination": null,
   "has_conditions": false,
-  "phase_1_determination": null,
-  "phase_1_determination_date": null,
+  "phase_1_determination": "Approved",
+  "phase_1_determination_date": "2026-09-08T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "has_questionnaire": true,
