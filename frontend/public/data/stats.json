@@ -3,12 +3,12 @@
   "total_waivers": 387,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 212,
-    "Under assessment": 30,
+    "Assessment completed": 213,
+    "Under assessment": 29,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 205,
+    "Approved": 206,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 17
   },
   "clearance_rate": {
-    "cleared": 210,
+    "cleared": 211,
     "not_cleared": 2,
-    "total": 212,
+    "total": 213,
     "rate": 0.991
   },
   "phase_duration": {
-    "average_days": 29.94954128440367,
-    "median_days": 26.0,
-    "average_business_days": 20.238532110091743,
-    "median_business_days": 18.0,
+    "average_days": 29.908675799086758,
+    "median_days": 26,
+    "average_business_days": 20.21461187214612,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
-        "count": 45,
-        "percentage": 20.6
+        "count": 46,
+        "percentage": 21.0
       },
       "day20": {
-        "count": 160,
-        "percentage": 73.4
+        "count": 161,
+        "percentage": 73.5
       },
       "day30": {
-        "count": 202,
+        "count": 203,
         "percentage": 92.7
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-20034",
+      "merger_name": "Chevron - Woodside asset swap",
+      "determination": "Approved",
+      "determination_date": "2026-09-08T12:00:00Z",
+      "page_modified_datetime": "2026-09-08T17:32:38+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-05043",
       "merger_name": "Incubeta - Datisan",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-08T12:00:00Z",
       "page_modified_datetime": "2026-09-08T12:59:14+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-30028",
-      "merger_name": "Adobe - Topaz Labs",
-      "determination": "Approved",
-      "determination_date": "2026-09-08T12:00:00Z",
-      "page_modified_datetime": "2026-09-08T11:25:13+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
