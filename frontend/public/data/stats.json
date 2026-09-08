@@ -1,10 +1,10 @@
 {
-  "total_mergers": 246,
+  "total_mergers": 247,
   "total_waivers": 382,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 208,
-    "Under assessment": 33,
+    "Under assessment": 34,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-75043",
+      "merger_name": "Hyne Pallets - Advance Pallets",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-09-07T12:00:00Z",
+      "page_modified_datetime": "2026-09-08T16:05:25+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-01122",
       "merger_name": "Flick \u2013 GC Pest Control",
@@ -205,16 +215,6 @@
       "page_modified_datetime": "2026-08-26T11:46:39+10:00",
       "is_waiver": false,
       "is_refiled": true
-    },
-    {
-      "merger_id": "MN-10030",
-      "merger_name": "Novonesis \u2013 Microbiogen",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-21T12:00:00Z",
-      "page_modified_datetime": "2026-08-24T13:02:00+10:00",
-      "is_waiver": false,
-      "is_refiled": false
     }
   ],
   "recent_determinations": [

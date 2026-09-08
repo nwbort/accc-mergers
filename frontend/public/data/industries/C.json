@@ -27,7 +27,7 @@
       "code": "14",
       "name": "Wood Product Manufacturing",
       "level": "subdivision",
-      "merger_count": 0
+      "merger_count": 1
     },
     {
       "code": "15",
@@ -97,6 +97,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-75043",
+      "merger_name": "Hyne Pallets - Advance Pallets",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-07T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-10030",
       "merger_name": "Novonesis \u2013 Microbiogen",
@@ -1814,11 +1825,11 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 156,
-  "phase_1_count": 69,
+  "count": 157,
+  "phase_1_count": 70,
   "phase_2_count": 2,
   "waiver_count": 85,
-  "active_count": 9,
+  "active_count": 10,
   "phase_duration": {
     "average_days": 29.61904761904762,
     "median_days": 27,

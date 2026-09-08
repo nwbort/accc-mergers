@@ -2662,7 +2662,7 @@
       36,
       44,
       38,
-      6
+      7
     ],
     "waivers": [
       0,
@@ -2711,7 +2711,7 @@
       41,
       46,
       37,
-      33
+      34
     ],
     "as_at": "2026-09-08"
   },
@@ -2720,7 +2720,7 @@
     "windows": [
       {
         "days": 30,
-        "notifications_filed": 30,
+        "notifications_filed": 31,
         "notifications": {
           "median": 19.0,
           "average": 21.7,
@@ -2742,7 +2742,7 @@
       },
       {
         "days": 90,
-        "notifications_filed": 114,
+        "notifications_filed": 115,
         "notifications": {
           "median": 18,
           "average": 20.9,
@@ -2784,33 +2784,33 @@
     "pre_notification": {
       "windows": [
         {
-          "median": 14.0,
-          "average": 16.8,
+          "median": 14,
+          "average": 16.9,
           "p90": 29,
           "min": 4,
           "max": 46,
-          "count": 30,
+          "count": 31,
           "days": 30,
           "median_delta": 0.0
         },
         {
-          "median": 15.0,
+          "median": 15,
           "average": 18.9,
           "p90": 31,
           "min": 0,
           "max": 112,
-          "count": 114,
+          "count": 115,
           "days": 90,
           "median_delta": 1.0
         }
       ],
       "all_time": {
-        "median": 14,
+        "median": 14.0,
         "average": 16.9,
         "p90": 34,
         "min": 0,
         "max": 112,
-        "count": 233
+        "count": 234
       }
     },
     "monthly": {
@@ -2988,7 +2988,7 @@
         41,
         46,
         37,
-        33
+        34
       ]
     }
   },
@@ -3177,9 +3177,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 30,
+      "count": 31,
       "outcome_mix": {
-        "Unknown": 30
+        "Unknown": 31
       },
       "median_phase_1_business_days": null
     },
@@ -3273,7 +3273,7 @@
       "delta_calendar_days": 4
     }
   ],
-  "restart_rate": 0.0122,
+  "restart_rate": 0.0121,
   "outcomes_by_division": [
     {
       "code": "S",
@@ -3353,7 +3353,7 @@
       "approved": 61,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 8,
+      "in_progress": 9,
       "phase2_referral_rate": 0.032
     },
     {
@@ -3461,7 +3461,7 @@
     },
     {
       "quarter": "2026-Q3",
-      "notifications": 88,
+      "notifications": 89,
       "referred": 1
     }
   ]

@@ -45527,6 +45527,138 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/hyne-pallets-advance-pallets",
+      "merger_name": "Hyne Pallets - Advance Pallets",
+      "status": "Under assessment",
+      "merger_id": "MN-75043",
+      "effective_notification_datetime": "2026-09-07T12:00:00Z",
+      "original_notification_datetime": "2026-09-07T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-10-20T12:00:00Z",
+      "page_modified_datetime": "2026-09-08T16:05:25+10:00",
+      "consultation_response_due_date": "2026-09-15T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "HYNE PALLETS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "26 159 554 962",
+          "party_page": {
+            "id": "hyne-pallets-pty-ltd",
+            "name": "Hyne Pallets Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "ADVANCE PALLETS PTY. LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "23 068 998 649",
+          "party_page": {
+            "id": "advance-pallets-pty-limited",
+            "name": "Advance Pallets Pty. Limited"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "1499",
+          "name": "Other Wood Product Manufacturing n.e.c."
+        }
+      ],
+      "merger_description": "Hyne Pallets Pty Ltd (Hyne Pallets) proposes to acquire the wooden pallet manufacturing business of Advance Pallets Pty Ltd (Advance Pallets) (the Acquisition).\n\nHyne Pallets\u2019 ultimate holding company is James Jones & Sons Ltd, a privately owned timber processing company headquartered in the United Kingdom.\u00a0 Hyne Pallets and its related entities operate an integrated timber processing business across Australia.\u00a0 It supplies a range of timber-related products, including timber framing, landscape, engineered wood products and wooden pallets. Hyne Pallets operates a wooden pallet manufacturing facility located in Tomago, New South Wales.\n\nAdvance Pallets is a wooden pallet manufacturer located in Smeaton Grange, in New South Wales.\u00a0Advance Pallets acquires the majority of the timber used to manufacture its wooden pallets from Hyne Group.",
+      "events": [
+        {
+          "date": "2026-09-08T12:00:00Z",
+          "title": "Phase 1 consultation",
+          "display_title": "Phase 1 consultation",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Hyne%20Pallets%20-%20Advance%20Pallets%20-%20Questionnaire_2.docx",
+          "url_gh": "/mergers/MN-75043/Hyne Pallets - Advance Pallets - Questionnaire_2.pdf",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-09-07T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-70007",
+          "merger_name": "Platinum Equity Group \u2013 Burke",
+          "acquirers": [
+            "Advance Holdings II, LLC"
+          ],
+          "targets": [
+            "BCI Acquisitions, Inc."
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-70027",
+          "merger_name": "Global Infrastructure Management and EQT led consortium - AES Corporation",
+          "acquirers": [
+            "Horizon Parent, L.P.",
+            "EQT Keystone TopCo, LP"
+          ],
+          "targets": [
+            "The AES Corporation"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-20003",
+          "merger_name": "Carlyle \u2013 Peloton Computer Enterprises",
+          "acquirers": [
+            "CG Panther Parentco, L.P."
+          ],
+          "targets": [
+            "Peloton Computer Enterprises Ltd."
+          ],
+          "accc_determination": "Approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 18,
+        "range_business_days": [
+          16,
+          20
+        ],
+        "basis": "industry",
+        "anzsic_level": "division",
+        "anzsic_codes": [
+          "C"
+        ],
+        "sample_size": 63,
+        "estimated_at": "2026-09-08",
+        "method_version": 1
+      },
+      "pre_notification": {
+        "estimated_days": 30,
+        "min_days": 24,
+        "max_days": 40,
+        "id_issued_estimated": "2026-08-08",
+        "id_issued_before": "2026-08-14",
+        "id_issued_after": "2026-07-29",
+        "min_days_witness": "WA-75047",
+        "max_days_witness": "WA-75040",
+        "basis": "bracketed",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/mccormick-unilever-foods-business",
       "merger_name": "McCormick - Unilever Foods Business",
       "status": "Under assessment",
