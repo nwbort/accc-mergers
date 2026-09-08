@@ -57,6 +57,19 @@ describe('Phase2SummaryCards', () => {
     expect(screen.getByText('10 days')).toBeInTheDocument();
   });
 
+  it('draws an outright clearance and a conditional one in distinct colours', () => {
+    // No Phase 2 review has been cleared outright yet, so nothing on the live
+    // page would show the two greens side by side and catch them collapsing
+    // into each other.
+    const { container } = renderCards([], [
+      completedMatter({ merger_id: 'MN-1' }),
+      completedMatter({ merger_id: 'MN-2', has_conditions: true }),
+    ]);
+    const swatches = [...container.querySelectorAll('[style*="background-color"]')]
+      .map((el) => el.style.backgroundColor);
+    expect(new Set(swatches).size).toBe(2);
+  });
+
   it('says so when no review has concluded', () => {
     renderCards([{ merger_id: 'MN-1' }], []);
     expect(screen.getByText('N/A')).toBeInTheDocument();
