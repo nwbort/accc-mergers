@@ -9,7 +9,7 @@
       "code": "94",
       "name": "Repair and Maintenance",
       "level": "subdivision",
-      "merger_count": 22
+      "merger_count": 23
     },
     {
       "code": "95",
@@ -46,6 +46,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-08-03T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-15040",
+      "merger_name": "Shepparton Automotive Group - Darryl Twitt Motors dealerships in Shepparton East, Victoria",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Not approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-18T12:00:00Z",
+      "determination_date": "2026-09-08T12:00:00Z"
     },
     {
       "merger_id": "MN-90028",
@@ -411,10 +422,10 @@
       "determination_date": null
     }
   ],
-  "count": 35,
+  "count": 36,
   "phase_1_count": 9,
   "phase_2_count": 3,
-  "waiver_count": 23,
+  "waiver_count": 24,
   "active_count": 2,
   "phase_duration": {
     "average_days": 43.0,
@@ -424,10 +435,10 @@
     "completed_count": 10
   },
   "waiver_duration": {
-    "average_days": 19.565217391304348,
-    "median_days": 21,
-    "average_business_days": 13.347826086956522,
-    "median_business_days": 14,
-    "completed_count": 23
+    "average_days": 19.625,
+    "median_days": 21.0,
+    "average_business_days": 13.416666666666666,
+    "median_business_days": 14.0,
+    "completed_count": 24
   }
 }

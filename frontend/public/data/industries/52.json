@@ -19,7 +19,7 @@
       "code": "521",
       "name": "Water Transport Support Services",
       "level": "group",
-      "merger_count": 5
+      "merger_count": 6
     },
     {
       "code": "522",
@@ -35,6 +35,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-90034",
+      "merger_name": "Vopak Terminals Sydney \u2013 Leasehold interest in land at Port Botany, NSW",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-12T12:00:00Z",
+      "determination_date": "2026-09-08T12:00:00Z"
+    },
     {
       "merger_id": "MN-01116",
       "merger_name": "Silk Contract Logistics \u2013 Toll Transport bulk logistics (glass and plastic) assets",
@@ -179,10 +190,10 @@
       "determination_date": "2026-03-19T12:00:00Z"
     }
   ],
-  "count": 13,
+  "count": 14,
   "phase_1_count": 6,
   "phase_2_count": 0,
-  "waiver_count": 7,
+  "waiver_count": 8,
   "active_count": 0,
   "phase_duration": {
     "average_days": 35.333333333333336,
@@ -192,10 +203,10 @@
     "completed_count": 6
   },
   "waiver_duration": {
-    "average_days": 16.285714285714285,
-    "median_days": 17,
-    "average_business_days": 10.714285714285714,
-    "median_business_days": 10,
-    "completed_count": 7
+    "average_days": 17.625,
+    "median_days": 17.5,
+    "average_business_days": 11.75,
+    "median_business_days": 11.0,
+    "completed_count": 8
   }
 }

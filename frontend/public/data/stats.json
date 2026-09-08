@@ -1,6 +1,6 @@
 {
   "total_mergers": 247,
-  "total_waivers": 382,
+  "total_waivers": 387,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 209,
@@ -18,8 +18,8 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 366,
-    "Not approved": 16
+    "Approved": 370,
+    "Not approved": 17
   },
   "clearance_rate": {
     "cleared": 207,
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.719895287958114,
-    "median_days": 20.0,
-    "average_business_days": 13.392670157068062,
-    "median_business_days": 13.0
+    "average_days": 19.762273901808786,
+    "median_days": 20,
+    "average_business_days": 13.431524547803617,
+    "median_business_days": 13
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 115
+      "count": 117
     },
     {
       "name": "Computer System Design and Related Services",
@@ -64,7 +64,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 62
+      "count": 63
     },
     {
       "name": "Software Publishing",
@@ -177,6 +177,16 @@
       "is_refiled": false
     },
     {
+      "merger_id": "WA-20037",
+      "merger_name": "Investissement Qu\u00e9bec, Fonds de solidarit\u00e9 des travailleurs et des travailleuses du Qu\u00e9bec and Placement Louis Bibeau Inc. \u2013 Australian Defence Apparel",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "effective_notification_datetime": "2026-08-29T12:00:00Z",
+      "page_modified_datetime": "2026-09-08T16:32:17+10:00",
+      "is_waiver": true,
+      "is_refiled": false
+    },
+    {
       "merger_id": "WA-75055",
       "merger_name": "The Procter & Gamble Company - Thorne",
       "status": "Assessment completed",
@@ -205,19 +215,64 @@
       "page_modified_datetime": "2026-08-27T11:58:43+10:00",
       "is_waiver": false,
       "is_refiled": false
-    },
-    {
-      "merger_id": "MN-75036",
-      "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-25T12:00:00Z",
-      "page_modified_datetime": "2026-08-26T11:46:39+10:00",
-      "is_waiver": false,
-      "is_refiled": true
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "WA-15040",
+      "merger_name": "Shepparton Automotive Group - Darryl Twitt Motors dealerships in Shepparton East, Victoria",
+      "determination": "Not approved",
+      "determination_date": "2026-09-08T12:00:00Z",
+      "page_modified_datetime": "2026-09-08T16:32:53+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-10029",
+      "merger_name": "Wollemi Nominees 2 Pty Ltd & Ors \u2013 Establishment of WEG Australian Investment Trust and related acquisitions",
+      "determination": "Approved",
+      "determination_date": "2026-09-08T12:00:00Z",
+      "page_modified_datetime": "2026-09-08T16:32:39+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-55033",
+      "merger_name": "Jellinbah Group - Further interest in Lake Vermont JV",
+      "determination": "Approved",
+      "determination_date": "2026-09-08T12:00:00Z",
+      "page_modified_datetime": "2026-09-08T16:32:32+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-90034",
+      "merger_name": "Vopak Terminals Sydney \u2013 Leasehold interest in land at Port Botany, NSW",
+      "determination": "Approved",
+      "determination_date": "2026-09-08T12:00:00Z",
+      "page_modified_datetime": "2026-09-08T16:32:24+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-20037",
+      "merger_name": "Investissement Qu\u00e9bec, Fonds de solidarit\u00e9 des travailleurs et des travailleuses du Qu\u00e9bec and Placement Louis Bibeau Inc. \u2013 Australian Defence Apparel",
+      "determination": "Approved",
+      "determination_date": "2026-09-08T12:00:00Z",
+      "page_modified_datetime": "2026-09-08T16:32:17+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
     {
       "merger_id": "MN-90029",
       "merger_name": "Bunnings \u2013 Intellihub \u2013 Zelora Joint Venture",
@@ -290,61 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-07T12:00:00Z",
       "page_modified_datetime": "2026-09-07T16:49:04+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-75055",
-      "merger_name": "The Procter & Gamble Company - Thorne",
-      "determination": "Approved",
-      "determination_date": "2026-09-07T12:00:00Z",
-      "page_modified_datetime": "2026-09-07T16:45:32+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-60039",
-      "merger_name": "NetSPI - Synack",
-      "determination": "Approved",
-      "determination_date": "2026-09-07T12:00:00Z",
-      "page_modified_datetime": "2026-09-07T16:44:36+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-80038",
-      "merger_name": "Imagine Education \u2013 Bumper Bears Early Learning Centre in Kippa-Ring, QLD",
-      "determination": "Approved",
-      "determination_date": "2026-09-04T12:00:00Z",
-      "page_modified_datetime": "2026-09-04T17:22:54+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-90028",
-      "merger_name": "Peter Warren - Wakeling Automotive",
-      "determination": "Approved",
-      "determination_date": "2026-09-04T12:00:00Z",
-      "page_modified_datetime": "2026-09-04T09:15:56+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": true
-    },
-    {
-      "merger_id": "WA-05047",
-      "merger_name": "Redwood Services Group \u2013 Concept Data and Voice Select",
-      "determination": "Approved",
-      "determination_date": "2026-09-03T12:00:00Z",
-      "page_modified_datetime": "2026-09-03T16:46:11+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

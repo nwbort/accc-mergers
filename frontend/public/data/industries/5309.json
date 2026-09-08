@@ -27,6 +27,17 @@
   "children": [],
   "mergers": [
     {
+      "merger_id": "WA-90034",
+      "merger_name": "Vopak Terminals Sydney \u2013 Leasehold interest in land at Port Botany, NSW",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-12T12:00:00Z",
+      "determination_date": "2026-09-08T12:00:00Z"
+    },
+    {
       "merger_id": "MN-10007",
       "merger_name": "Macquarie Asset Management led consortium \u2013 Qube",
       "is_waiver": false,
@@ -49,10 +60,10 @@
       "determination_date": "2026-06-02T12:00:00Z"
     }
   ],
-  "count": 2,
+  "count": 3,
   "phase_1_count": 1,
   "phase_2_count": 0,
-  "waiver_count": 1,
+  "waiver_count": 2,
   "active_count": 0,
   "phase_duration": {
     "average_days": 42.0,
@@ -62,10 +73,10 @@
     "completed_count": 1
   },
   "waiver_duration": {
-    "average_days": 15.0,
-    "median_days": 15,
-    "average_business_days": 10.0,
-    "median_business_days": 10,
-    "completed_count": 1
+    "average_days": 21.0,
+    "median_days": 21.0,
+    "average_business_days": 14.5,
+    "median_business_days": 14.5,
+    "completed_count": 2
   }
 }

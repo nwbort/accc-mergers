@@ -30,7 +30,7 @@
       "code": "5212",
       "name": "Port and Water Transport Terminal Operations",
       "level": "class",
-      "merger_count": 2
+      "merger_count": 3
     },
     {
       "code": "5219",
@@ -40,6 +40,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-90034",
+      "merger_name": "Vopak Terminals Sydney \u2013 Leasehold interest in land at Port Botany, NSW",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-12T12:00:00Z",
+      "determination_date": "2026-09-08T12:00:00Z"
+    },
     {
       "merger_id": "MN-90012",
       "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
@@ -96,10 +107,10 @@
       "determination_date": "2026-03-19T12:00:00Z"
     }
   ],
-  "count": 5,
+  "count": 6,
   "phase_1_count": 3,
   "phase_2_count": 0,
-  "waiver_count": 2,
+  "waiver_count": 3,
   "active_count": 0,
   "phase_duration": {
     "average_days": 35.666666666666664,
@@ -109,10 +120,10 @@
     "completed_count": 3
   },
   "waiver_duration": {
-    "average_days": 10.0,
-    "median_days": 10.0,
-    "average_business_days": 6.5,
-    "median_business_days": 6.5,
-    "completed_count": 2
+    "average_days": 15.666666666666666,
+    "median_days": 13,
+    "average_business_days": 10.666666666666666,
+    "median_business_days": 8,
+    "completed_count": 3
   }
 }

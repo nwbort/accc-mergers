@@ -33,7 +33,7 @@
       "code": "50",
       "name": "Other Transport",
       "level": "subdivision",
-      "merger_count": 6
+      "merger_count": 7
     },
     {
       "code": "51",
@@ -45,13 +45,13 @@
       "code": "52",
       "name": "Transport Support Services",
       "level": "subdivision",
-      "merger_count": 13
+      "merger_count": 14
     },
     {
       "code": "53",
       "name": "Warehousing and Storage Services",
       "level": "subdivision",
-      "merger_count": 2
+      "merger_count": 3
     }
   ],
   "mergers": [
@@ -65,6 +65,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-01T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-90034",
+      "merger_name": "Vopak Terminals Sydney \u2013 Leasehold interest in land at Port Botany, NSW",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-12T12:00:00Z",
+      "determination_date": "2026-09-08T12:00:00Z"
     },
     {
       "merger_id": "WA-30032",
@@ -441,10 +452,10 @@
       "determination_date": null
     }
   ],
-  "count": 35,
+  "count": 36,
   "phase_1_count": 15,
   "phase_2_count": 0,
-  "waiver_count": 20,
+  "waiver_count": 21,
   "active_count": 1,
   "phase_duration": {
     "average_days": 31.615384615384617,
@@ -454,10 +465,10 @@
     "completed_count": 13
   },
   "waiver_duration": {
-    "average_days": 17.9,
-    "median_days": 17.5,
-    "average_business_days": 12.1,
-    "median_business_days": 11.5,
-    "completed_count": 20
+    "average_days": 18.333333333333332,
+    "median_days": 18,
+    "average_business_days": 12.428571428571429,
+    "median_business_days": 12,
+    "completed_count": 21
   }
 }

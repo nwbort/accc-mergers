@@ -12863,13 +12863,13 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 18,
-        "min_days": 0,
+        "estimated_days": 17,
+        "min_days": 3,
         "max_days": 43,
-        "id_issued_estimated": "2026-07-27",
-        "id_issued_before": "2026-08-14",
+        "id_issued_estimated": "2026-07-28",
+        "id_issued_before": "2026-08-11",
         "id_issued_after": "2026-07-02",
-        "min_days_witness": "MN-10030",
+        "min_days_witness": "WA-10029",
         "max_days_witness": "WA-10024",
         "basis": "bracketed",
         "method_version": 1
@@ -13036,13 +13036,13 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 34,
-        "min_days": 12,
+        "estimated_days": 29,
+        "min_days": 22,
         "max_days": 62,
-        "id_issued_estimated": "2026-07-30",
-        "id_issued_before": "2026-08-21",
+        "id_issued_estimated": "2026-08-04",
+        "id_issued_before": "2026-08-11",
         "id_issued_after": "2026-07-02",
-        "min_days_witness": "MN-10030",
+        "min_days_witness": "WA-10029",
         "max_days_witness": "WA-10024",
         "basis": "bracketed",
         "method_version": 1
@@ -13199,14 +13199,14 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 22,
+        "estimated_days": 10,
         "min_days": null,
-        "max_days": 50,
-        "id_issued_estimated": "2026-07-30",
+        "max_days": 17,
+        "id_issued_estimated": "2026-08-11",
         "id_issued_before": null,
-        "id_issued_after": "2026-07-02",
+        "id_issued_after": "2026-08-04",
         "min_days_witness": null,
-        "max_days_witness": "WA-10024",
+        "max_days_witness": "WA-10029",
         "basis": "upper-bound-only",
         "method_version": 1
       }
@@ -17593,15 +17593,15 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 18,
-        "min_days": null,
+        "estimated_days": 11,
+        "min_days": 0,
         "max_days": 25,
-        "id_issued_estimated": "2026-07-31",
-        "id_issued_before": null,
+        "id_issued_estimated": "2026-08-07",
+        "id_issued_before": "2026-08-18",
         "id_issued_after": "2026-07-24",
-        "min_days_witness": null,
+        "min_days_witness": "WA-20037",
         "max_days_witness": "WA-20033",
-        "basis": "upper-bound-only",
+        "basis": "bracketed",
         "method_version": 1
       }
     },
@@ -35417,13 +35417,13 @@
         "method_version": 1
       },
       "pre_notification": {
-        "estimated_days": 10,
+        "estimated_days": 9,
         "min_days": 0,
         "max_days": 22,
-        "id_issued_estimated": "2026-07-26",
+        "id_issued_estimated": "2026-07-27",
         "id_issued_before": "2026-08-05",
         "id_issued_after": "2026-07-14",
-        "min_days_witness": "WA-55034",
+        "min_days_witness": "WA-55033",
         "max_days_witness": "WA-55030",
         "basis": "bracketed",
         "method_version": 1
@@ -64561,6 +64561,184 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/wollemi-nominees-2-pty-ltd-ors-%E2%80%93-establishment-of-weg-australian-investment-trust-and-related-acquisitions",
+      "merger_name": "Wollemi Nominees 2 Pty Ltd & Ors \u2013 Establishment of WEG Australian Investment Trust and related acquisitions",
+      "status": "Assessment completed",
+      "merger_id": "WA-10029",
+      "effective_notification_datetime": "2026-08-11T12:00:00Z",
+      "original_notification_datetime": "2026-08-11T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-09-08T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-09-08T16:32:39+10:00",
+      "acquirers": [
+        {
+          "name": "Wollemi Nominees 2 Pty Ltd atf WEG Australian Investment Trust",
+          "identifier_type": "ACN",
+          "identifier": "698 066 009",
+          "party_page": {
+            "id": "wollemi-nominees-2-pty-ltd-atf-weg-australian-investment-trust",
+            "name": "Wollemi Nominees 2 Pty Ltd atf WEG Australian Investment Trust"
+          }
+        },
+        {
+          "name": "REST NOMINEES NO.1 PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "43 101 519 288",
+          "party_page": {
+            "id": "rest-nominees-no-1-pty-limited",
+            "name": "Rest Nominees No.1 Pty Limited"
+          }
+        },
+        {
+          "name": "WOLLEMI CLIMATE INVESTMENTS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "97 664 463 969",
+          "party_page": {
+            "id": "wollemi-climate-investments-pty-ltd",
+            "name": "Wollemi Climate Investments Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "WOLLEMI ENERGY GROUP HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "17 687 250 871",
+          "party_page": {
+            "id": "wollemi-energy-group-holdings-pty-ltd",
+            "name": "Wollemi Energy Group Holdings Pty Ltd"
+          }
+        },
+        {
+          "name": "Wollemi Nominees Pty Ltd atf Wollemi Investment Trust No 1",
+          "identifier_type": "ACN",
+          "identifier": "683 291 689",
+          "party_page": {
+            "id": "wollemi-nominees-pty-ltd-atf-wollemi-investment-trust-no-1",
+            "name": "Wollemi Nominees Pty Ltd atf Wollemi Investment Trust No 1"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "WOLLEMI CAPITAL PTY LTD",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "wollemi-capital-pty-ltd",
+            "name": "Wollemi Capital Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2619",
+          "name": "Other Electricity Generation"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "6420",
+          "name": "Auxiliary Insurance Services"
+        }
+      ],
+      "merger_description": "Wollemi Capital Pty Ltd (**Wollemi Capital**) is a specialist climate investment firm that is proposing to establish a new investment trust (the WEG Australian Investment Trust) to facilitate further private capital investment in its renewables portfolio investment company, Wollemi Energy Group Holdings Pty Ltd.\n\nWollemi Energy Group Holdings Pty Ltd is the ultimate holding company for Wollemi Energy Group Pty Ltd.\n\nWollemi Energy Group Pty Ltd owns and operates MPower, a renewable energy generation and battery energy storage business.\n\nAs part of the establishment of the WEG Australian Investment Trust, it is proposed that:\n\n* A new trustee entity, Wollemi Nominees 2 Pty Ltd, incorporated by Wollemi Capital, will be appointed as trustee of the WEG Australian Investment Trust.\n* The WEG Australian Investment Trust will be managed by Wollemi Asset Management Pty Ltd, an entity established and managed by Wollemi Capital.\n* The WEG Australian Investment Trust will receive capital investment from the Retail Employees Superannuation Trust (**REST**), for future investment in renewables and battery energy storage projects by Wollemi Energy Group Holdings Pty Ltd.\n\nREST is an existing indirect investor in Wollemi Energy Group Holdings Pty Ltd via an existing investment trust established and managed by Wollemi Capital.\n\nWollemi Climate Investments Pty Ltd, an existing holder of issued voting shares in the capital of Wollemi Energy Group Holdings Pty Ltd, will also subscribe for new ordinary shares in Wollemi Energy Group Holdings Pty Ltd.\n\nBefore and after the proposed transaction, the relevant interests in Wollemi Energy Group Holdings Pty Ltd will be legally owned and managed by entities that are wholly-owned and controlled by Wollemi Capital.",
+      "events": [
+        {
+          "date": "2026-09-08T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Wollemi%20Nominees%202%20Pty%20Ltd%20%26%20Ors%20%E2%80%93%20Establishment%20of%20WEG%20Australian%20Investment%20Trust%20and%20related%20acquisitions%20%28WA-10029%29%20-%20Notification%20waiver%20determination%20-%208%20September%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Wollemi Nominees 2 Pty Ltd (Wollemi Nominees 2) as trustee for\nWEG Australian Investment Trust applied for a notification waiver in\nrespect of the proposed establishment of the WEG Australian\nInvestment Trust to facilitate investment into Wollemi Energy Group\nHoldings Pty Ltd (WEG Holdings).\nThe Acquisition involves the following transactions:\n\u2022 Wollemi Nominees 2\u2019s, as trustee for WEG Australian\nInvestment Trust, proposed acquisition of ~71.5% of the\nissued voting shares in Wollemi Energy Group Holdings Pty\nLtd (WEG Holdings) by way of a subscription for new\nordinary shares, and the transfer of existing ordinary shares\nheld by Wollemi Nominees Pty Ltd as trustee for Wollemi\nInvestment Trust No 1\n\u2022 Wollemi Climate Investments Pty Ltd (Wollemi Climate)\u2019s\nproposed acquisition of shares in WEG Holdings, by way of a\nsubscription for new ordinary shares\n\u2022 REST Nominees No.1 Pty Ltd (REST Nominees)\u2019s proposed\nacquisition of an interest in the WEG Australian Investment\nTrust\nas described in the transaction documents provided as part of the\napplication (the Acquisition).\nThe Acquisition relates to the establishment of the WEG Australian\nInvestment Trust to facilitate investment into WEG Holdings."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "8 September 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "Wollemi Capital Pty Ltd (Wollemi Capital) is a specialist climate\ninvestment firm. It facilitates private capital investment in, and owns\nand manages, a portfolio of climate-focused investments across\nrenewables generation and battery energy storage, agribusiness,\nenergy decarbonisation, plastics recycling and other climate-focused\ntechnology firms. Wollemi Capital is proposing to establish a new\ninvestment trust (the WEG Australian Investment Trust) to facilitate\nfurther private capital investment in its renewables portfolio\ninvestment company, WEG Holdings.\nWEG Holdings is the ultimate holding company for Wollemi Energy\nGroup Pty Ltd, which owns and operates MPower, a renewable\nenergy generation and battery energy storage business.\nAs part of the establishment of the WEG Australian Investment Trust,\nit is proposed that:\n\u2022 Wollemi Nominees 2, incorporated by Wollemi Capital, will\nbe appointed as trustee of the WEG Australian Investment\nTrust.\n\u2022 The WEG Australian Investment Trust will be managed by\nWollemi Asset Management Pty Ltd, an entity established\nand managed by Wollemi Capital.\n\u2022 The WEG Australian Investment Trust will receive capital\ninvestment from REST Nominees, for future investment in\nrenewables and battery energy storage projects by WEG\nHoldings.\nREST Nominees is wholly owned by Retail Employees\nSuperannuation Pty Limited as trustee of the Retail Employees\nSuperannuation Trust (REST). REST is an industry \u2018profit-for-member\u2019\nsuperannuation fund that provides superannuation and financial\nservices. REST is an existing indirect investor in WEG Holdings via an\nexisting investment trust established and managed by Wollemi\nCapital.\nWollemi Climate is an existing holder of issued voting shares in the\ncapital of WEG Holdings, and will also subscribe for new ordinary\nshares in WEG Holdings.\nBefore and after the Acquisition, the relevant interests in WEG\nHoldings will be legally owned and managed by entities that are\nwholly-owned and controlled by Wollemi Capital."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition given:\na. there is no horizontal consolidation or removal of a\ncompetitor as a result of the Acquisition\nb. REST is already an existing indirect investor in WEG\nHoldings, and the Acquisition does not create any new\noverlap in the supply of renewable energy generation and\nbattery storage assets\nc. there does not appear to be any substantive change in the\ncontrol of WEG Holdings.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-10029/Wollemi Nominees 2 Pty Ltd and Ors \u2013 Establishment of WEG Australian Investment Trust and related acquisitions (WA-10029) - Notification waiver determination - 8 September 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-08-11T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-90007",
+          "merger_name": "Volt Managed Investment Trusts \u2013 HMC Energy Transition Platform",
+          "acquirers": [
+            "Volt Managed Investment Trust 2",
+            "Volt Managed Investment Trust 1"
+          ],
+          "targets": [
+            "VOLT HOLDCO PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-45025",
+          "merger_name": "Acclime Corporate Services Australia \u2013 Polar 993 Group",
+          "acquirers": [
+            "ACCLIME CORPORATE SERVICES AUSTRALIA PTY LTD",
+            "Achronite Bidco Ltd"
+          ],
+          "targets": [
+            "993 FUND SERVICES PTY LTD",
+            "POLAR 993 PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-01108",
+          "merger_name": "Oakley Capital \u2013 XTEL",
+          "acquirers": [
+            "Oakley Eloa Luxco S.\u00e0 r.l."
+          ],
+          "targets": [
+            "Bond Lux Co-Invest S.\u00e0 r.l."
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/coforge-encora",
       "merger_name": "Coforge - Encora",
       "status": "Assessment completed",
@@ -68074,6 +68252,152 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/shepparton-automotive-group-darryl-twitt-motors-dealerships-in-shepparton-east-victoria",
+      "merger_name": "Shepparton Automotive Group - Darryl Twitt Motors dealerships in Shepparton East, Victoria",
+      "status": "Assessment completed",
+      "merger_id": "WA-15040",
+      "effective_notification_datetime": "2026-08-18T12:00:00Z",
+      "original_notification_datetime": "2026-08-18T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-09-08T12:00:00Z",
+      "accc_determination": "Not approved",
+      "accc_determination_raw": "ACCC determinationNot approved",
+      "page_modified_datetime": "2026-09-08T16:32:53+10:00",
+      "acquirers": [
+        {
+          "name": "JASNIC AUTOMOTIVE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "11 677 246 534",
+          "party_page": {
+            "id": "jasnic-automotive-pty-ltd",
+            "name": "Jasnic Automotive Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Goulburn Motor Group (Vic) Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "21 100 318 705",
+          "party_page": {
+            "id": "goulburn-motor-group-vic-pty-ltd",
+            "name": "Goulburn Motor Group (Vic) Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "HARRISON MOTORING GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "62 005 752 269",
+          "party_page": {
+            "id": "harrison-motoring-group-pty-ltd",
+            "name": "Harrison Motoring Group Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3911",
+          "name": "Car Retailing"
+        },
+        {
+          "code": "3921",
+          "name": "Motor Vehicle Parts Retailing"
+        },
+        {
+          "code": "9419",
+          "name": "Other Automotive Repair and Maintenance"
+        }
+      ],
+      "merger_description": "Jasnic Automotive Pty Ltd trading as Shepparton Automotive Group proposes to acquire the business assets of Goulburn Motor Group (Vic) Pty Ltd trading as Darryl Twitt Motors, by way of a business sale agreement (the **Acquisition**).\n\nShepparton Automotive Group operates a single automotive dealership located at 80 Benalla Rd, Shepparton. It supplies new vehicles as the authorised representative for Hyundai, Mitsubishi, and Suzuki, and associated vehicle servicing. Shepparton Automotive Group also supplies used vehicles and vehicle financing. Shepparton Automotive Group supplies genuine parts to consumers as part of any scheduled services performed by the dealership.\n\nDarryl Twitt Motors operates two dealerships located at 325-329 Midland Highway, Shepparton East and 2-8 Carroll Road, Shepparton East. It supplies new vehicles as the authorised representative for Ford, Volkswagen, Audi, BYD, Geely, Land Rover, and LDV, and associated vehicle servicing. Darryl Twitt Motors also supplies used vehicles, spare parts, and vehicle financing, as well as servicing for Skoda vehicles.\n\nDarryl Twitt Motors' Land Rover and LDV sales, service, and parts businesses are not included in the Acquisition.",
+      "events": [
+        {
+          "date": "2026-09-08T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Not approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Shepparton%20Automotive%20Group%20-%20Darryl%20Twitt%20Motors%20dealerships%20in%20Shepparton%20East%2C%20Victoria%20%28WA-15040%29%20-%20Notification%20waiver%20determination%20-%208%20September%202026.pdf",
+          "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Jasnic Automotive Pty Ltd, trading as Shepparton Automotive Group,\napplied for a notification waiver in respect of its proposed\nacquisition of the business assets of Goulburn Motor Group (Vic) Pty\nLtd, trading as Darryl Twitt Motors, as described in the transaction\ndocuments provided as part of the application (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(b) of the Competition and\nConsumer Act 2010 (Cth) not to make the notification waiver\ndetermination applied for."
+            },
+            {
+              "item": "Date of determination",
+              "details": "8 September 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, Shepparton Automotive Group, operates a single\nautomotive dealership located at 80 Benalla Road, Shepparton (VIC).\nIt supplies new vehicles as the authorised representative for\nHyundai, Mitsubishi, and Suzuki, and associated vehicle servicing.\nShepparton Automotive Group also supplies used vehicles and\nvehicle financing, as well as genuine parts to consumers as part of\nany scheduled services performed by the dealership.\nThe target, Darryl Twitt Motors, operates two dealerships located at\n325-329 Midland Highway, Shepparton East (VIC) and 2-8 Carroll\nRoad, Shepparton East (VIC). It supplies new vehicles as the\nauthorised representative for Ford, Volkswagen, Audi, BYD, Geely,\nLand Rover, and LDV, and associated vehicle servicing. Darryl Twitt\nMotors also supplies used vehicles, spare parts, and vehicle\nfinancing, as well as servicing for Skoda vehicles. Darryl Twitt\nMotors\u2019 Land Rover and LDV sales, service, and parts businesses are\nnot included in the Acquisition."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (ACCC) has considered the\ninformation provided with the notification waiver application, and\nhad regard to the factors in section 51ABV(2)(b) of the Act.\nBased on the information provided in the application, including the\nparties\u2019 (including their connected entities) revenues in Australia, the\nACCC considers it is likely that, if the Acquisition were put into effect,\nthe notification thresholds would be met.\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition may raise competition issues given:\na. there is horizontal overlap between Shepparton Automotive\nGroup and Darryl Twitt Motors in the supply of new and\nused cars in the Shepparton region of VIC, and the extent of\ninter-brand competition between the parties is unclear\nb. the parties\u2019 combined share of supply of new cars in the\nShepparton region may be significant\nc. the extent to which the merged entity would be likely to face\nintra- and inter-brand competition from alternative\ndealerships in the Shepparton region and the surrounding\nareas is uncertain.\nThe ACCC considers that the Acquisition warrants consideration\nthrough the notification process, including via consultation with third\nparties.\nGiven the above, the ACCC has determined not to make the\nnotification waiver determination applied for.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-15040/Shepparton Automotive Group - Darryl Twitt Motors dealerships in Shepparton East, Victoria (WA-15040) - Notification waiver determination - 8 September 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-08-18T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-90028",
+          "merger_name": "Peter Warren - Wakeling Automotive",
+          "acquirers": [
+            "PETER WARREN AUTOMOTIVE HOLDINGS LIMITED"
+          ],
+          "targets": [
+            "Wakeling South Coast Pty Ltd",
+            "S A Wakeling Nominees Pty Ltd as trustee for S.A. Wakeling Trust"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-85017",
+          "merger_name": "Regent Motors Group - Lane Group's Mandurah Dealerships",
+          "acquirers": [
+            "MANDURAH AUTO GROUP PTY LTD",
+            "PEEL MOTOR GROUP PTY LTD"
+          ],
+          "targets": [
+            "WA AUTOMOTIVE PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-05012",
+          "merger_name": "Eagers - Audi Melbourne and Audi Richmond",
+          "acquirers": [
+            "EAGERS VIC PTY LTD"
+          ],
+          "targets": [
+            "Zagame Automotive Group Pty Ltd"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/carlyle-%E2%80%93-peloton-computer-enterprises",
       "merger_name": "Carlyle \u2013 Peloton Computer Enterprises",
       "status": "Assessment completed",
@@ -71088,6 +71412,171 @@
           ],
           "targets": [
             "Shrika Pty Ltd"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/investissement-qu%C3%A9bec-fonds-de-solidarit%C3%A9-des-travailleurs-et-des-travailleuses-du-qu%C3%A9bec-and-placement-louis-bibeau-inc-%E2%80%93-australian-defence-apparel",
+      "merger_name": "Investissement Qu\u00e9bec, Fonds de solidarit\u00e9 des travailleurs et des travailleuses du Qu\u00e9bec and Placement Louis Bibeau Inc. \u2013 Australian Defence Apparel",
+      "status": "Assessment completed",
+      "merger_id": "WA-20037",
+      "effective_notification_datetime": "2026-08-29T12:00:00Z",
+      "original_notification_datetime": "2026-08-29T12:00:00Z",
+      "stage": "Waiver application",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-09-08T16:32:17+10:00",
+      "acquirers": [
+        {
+          "name": "9571-9241 Qu\u00e9bec Inc.",
+          "identifier_type": null,
+          "identifier": "Qu\u00e9bec registration number: 1182359480",
+          "party_page": {
+            "id": "9571-9241-qu-bec-inc",
+            "name": "9571-9241 Qu\u00e9bec Inc."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Logistik Unicorp Holdings Inc.",
+          "identifier_type": null,
+          "identifier": "Qu\u00e9bec registration number: 1173823171",
+          "party_page": {
+            "id": "logistik-unicorp-holdings-inc",
+            "name": "Logistik Unicorp Holdings Inc."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Fonds de solidarit\u00e9 des travailleurs et des travailleuses du Qu\u00e9bec (FTQ)",
+          "identifier_type": null,
+          "identifier": "Qu\u00e9bec registration number: 1140429409",
+          "party_page": {
+            "id": "fonds-de-solidarit-des-travailleurs-et-des-travailleuses-du-qu-bec-ftq",
+            "name": "Fonds de solidarit\u00e9 des travailleurs et des travailleuses du Qu\u00e9bec (FTQ)"
+          }
+        },
+        {
+          "name": "Placement Louis Bibeau Inc",
+          "identifier_type": null,
+          "identifier": "Company number: 18120552",
+          "party_page": {
+            "id": "placement-louis-bibeau-inc",
+            "name": "Placement Louis Bibeau Inc"
+          }
+        },
+        {
+          "name": "Investissement Qu\u00e9bec",
+          "identifier_type": null,
+          "identifier": "Qu\u00e9bec registration number: 8831859242",
+          "party_page": {
+            "id": "investissement-qu-bec",
+            "name": "Investissement Qu\u00e9bec"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1351",
+          "name": "Clothing Manufacturing"
+        },
+        {
+          "code": "4251",
+          "name": "Clothing Retailing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "merger_description": "9571-9241 Qu\u00e9bec Inc., a Canadian holding company based in Qu\u00e9bec, proposes to acquire 100% of the shares in Logistik Unicorp Holdings Inc. (**Logistik**), a Canadian company based in Quebec, and, indirectly, of all of the issued and outstanding shares of the share capital of its Australian subsidiary, Australian Defence Apparel Pty Ltd (**Australian Defence Apparel**) (the **Acquisition**).\n\nThe Acquisition involves WC Capital Holdings LP and Placement Louis Bibeau Inc. (**Placement LB**) selling their interests in Logistik to the 9571-9241 Qu\u00e9bec Inc., with Placement LB acquiring an interest in the 9571-9241 Qu\u00e9bec Inc.as part of the Acquisition.\n\nFollowing completion, Investissement Qu\u00e9bec (**IQ**), Fonds de solidarit\u00e9 des travailleurs et des travailleuses du Qu\u00e9bec (**FTQ**) and Placement LB will hold 30%, 35% and 35%, respectively, of the issued and outstanding shares of the share capital in 9571-9241 Qu\u00e9bec Inc.and, indirectly, in Logistik and in turn Australian Defence Apparel.\n\nLogistik is a special purpose holding vehicle for the Logistik business, a specialised clothing business based in Quebec, with operations in, among other places, Canada, Australia and New Zealand.\n\nAustralian Defence Apparel is the operating company in Australia of the Logistik business. Australian Defence Apparel is involved in the design,\u00a0manufacture and distribution of specialised clothing, ballistic vests and load carriage equipment to military, law enforcement and first responders.\n\nIQ is a Qu\u00e9bec government owned corporation formed under the laws of Qu\u00e9bec, established for the purposes of supporting the province's economic development.\n\nFTQ is a public labour sponsored fund formed under Qu\u00e9bec laws, established for the purposes of developing a capital investment network in Qu\u00e9bec, Canada.\n\nBoth IQ and FTQ are Qu\u00e9bec-based financial sponsors which seek to invest in, and support the growth of, Qu\u00e9bec companies.\n\nPlacement LB is principally a holding company formed under the laws of Canada, currently controlled by the founder of the Logistik business, Louis Bibeau.",
+      "events": [
+        {
+          "date": "2026-09-08T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/IQ%20FTQ%20and%20Placement%20Louis%20Bibeau%20%E2%80%93%20Australian%20Defence%20Apparel%20-%20Notification%20waiver%20determination%20-%208%20September%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "9571-9241 Qu\u00e9bec Inc. applied for a notification waiver in respect of\nits proposed acquisition of 100% of the shares in Logistik Unicorp\nHoldings Inc. (Logistik), a Canadian company based in Quebec, and,\nindirectly, of all of the issued and outstanding shares of the share\ncapital of its Australian subsidiary, Australian Defence Apparel Pty\nLtd (Australian Defence Apparel), as described in the transaction\ndocuments provided as part of the application (the Acquisition).\nThe Acquisition involves WC Capital Holdings LP (WC Capital) and\nPlacement Louis Bibeau Inc. (Placement LB) selling their interests in\nLogistik to 9571-9241 Qu\u00e9bec Inc., with Placement LB acquiring an\ninterest in 9571-9241 Qu\u00e9bec Inc. as part of the Acquisition.\nFollowing completion, Investissement Qu\u00e9bec (IQ), Fonds de\nsolidarit\u00e9 des travailleurs et des travailleuses du Qu\u00e9bec (FTQ) and\nPlacement LB will hold 30%, 35% and 35%, respectively, of the issued\nand outstanding shares of the share capital in 9571-9241 Qu\u00e9bec\nInc. and, indirectly, in Logistik and consequently, Australian Defence\nApparel."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "8 September 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, 9571-9241 Qu\u00e9bec Inc., is a Canadian holding company\nbased in Qu\u00e9bec.\nIQ is a Qu\u00e9bec government-owned corporation formed under the\nlaws of Qu\u00e9bec, established for the purposes of supporting the\nprovince's economic development.\nFTQ is a public labour sponsored fund formed under Qu\u00e9bec laws,\nestablished for the purposes of developing a capital investment\nnetwork in Qu\u00e9bec, Canada.\nBoth IQ and FTQ are Qu\u00e9bec-based financial sponsors which seek to\ninvest in, and support the growth of, Qu\u00e9bec companies.\nPlacement LB is principally a holding company formed under the\nlaws of Canada, currently controlled by the founder of the Logistik\nbusiness, Louis Bibeau.\nLogistik is a special purpose holding vehicle for the Logistik\nbusiness, a specialised clothing business based in Quebec, with\noperations in, among other places, Canada, Australia and New\nZealand. Australian Defence Apparel is the operating company in\nAustralia of the Logistik business. Australian Defence Apparel is\ninvolved in the design, manufacture and distribution of specialised\nclothing, ballistic vests and load carriage equipment to military, law\nenforcement and first responders.\nExcept for Placement LB\u2019s existing interest in Logistik (and therefore\nAustralian Defence Apparel), 9571-9241 Qu\u00e9bec Inc., IQ, FTQ and\nPlacement LB are not active in the supply of specialised clothing,\nballistic vests and load carriage equipment to military, law\nenforcement and first responders in Australia."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition, given there is no horizontal overlap or\nvertical relationship between IQ, FTQ or Placement LB (or their\ncontrolled entities) and Australian Defence Apparel in Australia.\nIn these circumstances, the ACCC considers it is not necessary to\nreach a concluded view on whether the notification thresholds are\nlikely to have been met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-20037/IQ FTQ and Placement Louis Bibeau \u2013 Australian Defence Apparel - Notification waiver determination - 8 September 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-08-29T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "determination_publication_date": "2026-09-08T12:00:00Z",
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-10028",
+          "merger_name": "BBFIT - Hanes Australasia",
+          "acquirers": [
+            "BBFIT Investments Pte Ltd"
+          ],
+          "targets": [
+            "HBI HOLDINGS AUSTRALASIA PTY LTD",
+            "HBI Holdings Switzerland GmbH"
+          ],
+          "status": "Under assessment"
+        },
+        {
+          "merger_id": "WA-05008",
+          "merger_name": "HongShan Capital Group and Temasek \u2013 Golden Goose Group",
+          "acquirers": [
+            "Rosa Investments Pte. Ltd.",
+            "GG12 S.p.A."
+          ],
+          "targets": [
+            "Permira VII Investment Platform Limited",
+            "Golden Goose Group S.p.A."
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-80029",
+          "merger_name": "NPM Capital \u2013 AmbaFlex Group",
+          "acquirers": [
+            "NPM Investments 43 B.V."
+          ],
+          "targets": [
+            "Helix Holdco B.V."
           ],
           "accc_determination": "Approved"
         }
@@ -92827,6 +93316,212 @@
           ],
           "targets": [
             "Crowe ParentCo LLC"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/jellinbah-group-further-interest-in-lake-vermont-jv",
+      "merger_name": "Jellinbah Group - Further interest in Lake Vermont JV",
+      "status": "Assessment completed",
+      "merger_id": "WA-55033",
+      "effective_notification_datetime": "2026-08-10T12:00:00Z",
+      "original_notification_datetime": "2026-08-10T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-09-08T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-09-08T16:32:32+10:00",
+      "acquirers": [
+        {
+          "name": "QCMM (LAKE VERMONT HOLDINGS) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "22 114 286 878",
+          "party_page": {
+            "id": "qcmm-lake-vermont-holdings-pty-ltd",
+            "name": "Qcmm (Lake Vermont Holdings) Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "CHR VERMONT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "75 127 903 520",
+          "party_page": {
+            "id": "chr-vermont-pty-ltd",
+            "name": "Chr Vermont Pty Ltd"
+          }
+        },
+        {
+          "name": "BOWEN BASIN COAL PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "22 065 321 440",
+          "party_page": {
+            "id": "bowen-basin-coal-pty-ltd",
+            "name": "Bowen Basin Coal Pty. Ltd."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Lake Vermont Resources Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "28 114 286 841",
+          "party_page": {
+            "id": "lake-vermont-resources-pty-ltd",
+            "name": "Lake Vermont Resources Pty Ltd"
+          }
+        },
+        {
+          "name": "LAKE VERMONT MARKETING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "30 114 286 850",
+          "party_page": {
+            "id": "lake-vermont-marketing-pty-ltd",
+            "name": "Lake Vermont Marketing Pty Ltd"
+          }
+        },
+        {
+          "name": "JELLINBAH RESOURCES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "60 010 825 215",
+          "party_page": {
+            "id": "jellinbah-resources-pty-ltd",
+            "name": "Jellinbah Resources Pty Ltd"
+          }
+        },
+        {
+          "name": "JELLINBAH GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "54 010 754 793",
+          "party_page": {
+            "id": "jellinbah-group-pty-ltd",
+            "name": "Jellinbah Group Pty Ltd"
+          }
+        },
+        {
+          "name": "Magnetic South Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "95 122 465 749",
+          "party_page": {
+            "id": "magnetic-south-pty-ltd",
+            "name": "Magnetic South Pty Ltd"
+          }
+        },
+        {
+          "name": "ZASHVIN PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "80 010 980 015",
+          "party_page": {
+            "id": "zashvin-pty-ltd",
+            "name": "Zashvin Pty. Ltd."
+          }
+        },
+        {
+          "name": "SOJITZ DEVELOPMENT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "34 063 050 680",
+          "party_page": {
+            "id": "sojitz-development-pty-ltd",
+            "name": "Sojitz Development Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0600",
+          "name": "Coal Mining"
+        },
+        {
+          "code": "1090",
+          "name": "Other Mining Support Services"
+        }
+      ],
+      "merger_description": "Jellinbah Group, through a wholly-owned subsidiary QCMM (Lake Vermont Holdings) Pty Ltd, is proposing to acquire an additional 10% interest in the unincorporated joint venture that owns and operates the Lake Vermont coal mine in Queensland\u2019s Bowen Basin (**Lake Vermont JV**) from a subsidiary of Sojitz Corporation (**Sojitz**) (the **Acquisition**). As part of the Acquisition, Jellinbah Group will also acquire an additional 10% of the shares in Bowen Basin Coal Pty Ltd, an entity that holds the Lake Vermont JV\u2019s mining tenements.\n\nThe Lake Vermont JV primarily produces metallurgical coal, as well as small volumes of thermal coal, most of which it exports to customers overseas.\n\nIn addition to its existing 70% interest in the Lake Vermont JV, Jellinbah Group holds a 70% interest in the joint venture that owns and operates the Jellinbah coal mine in Queensland\u2019s Bowen Basin. Jellinbah Group is controlled by Zashvin Pty Ltd, a private investment company.\n\nSojitz is a multinational general trading company incorporated in Japan. In Australia, Sojitz holds interests in several mining projects (including coal projects), as well investments in the renewable energy, infrastructure and transport sectors. Sojitz is divesting its full interest in the Lake Vermont JV.",
+      "events": [
+        {
+          "date": "2026-09-08T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Jellinbah%20Group%20-%20Further%20interest%20in%20Lake%20Vermont%20JV%20%28WA-55033%29%20-%20Notification%20waiver%20determination%20-%208%20September%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Jellinbah Group Pty Ltd (Jellinbah Group) applied for a notification\nwaiver in respect of its proposed acquisition, through a wholly-\nowned subsidiary QCMM (Lake Vermont Holdings) Pty Ltd, of an\nadditional 10% interest in the unincorporated joint venture that owns\nand operates the Lake Vermont coal mine in Queensland\u2019s Bowen\nBasin (Lake Vermont JV) from a subsidiary of Sojitz Corporation\n(Sojitz), as described in the transaction documents provided as part\nof the application (the Acquisition).\nAs part of the Acquisition, Jellinbah Group will also acquire an\nadditional 10% of the shares in Bowen Basin Coal Pty Ltd, an entity\nthat holds the Lake Vermont JV\u2019s mining tenements. As a result of\nthe Acquisition, Jellinbah Group\u2019s interest in the Lake Vermont JV\n(and in Bowen Basin Coal Pty Ltd) will increase from 70% to 80%."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "8 September 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "Jellinbah Group is an Australian business that holds interests in two\nunincorporated joint ventures, the Jellinbah East JV and the Lake\nVermont JV, which own and operate metallurgical coal mines (the\nJellinbah and Lake Vermont mines, respectively) in Queensland\u2019s\nBowen Basin. Jellinbah Group holds, through wholly-owned\nsubsidiaries, a 70% interest in both the Lake Vermont JV and the\nJellinbah East JV.\nThe vendor, Sojitz, is a multinational general trading company\nincorporated in Japan. In Australia, Sojitz holds interests in several\nmining projects (including coal projects), as well as investments in\nthe renewable energy, infrastructure and transport sectors. Sojitz is\ndivesting its full interest in the Lake Vermont JV.\nThe Lake Vermont JV produces metallurgical coal and small\nvolumes of thermal coal, which it supplies globally. The participants\nin the Lake Vermont JV between them hold 100% of the shares in\nBowen Basin Coal Pty Ltd (in proportion to their interests in the Lake\nVermont JV), which holds the property and tenures associated with\nthe Lake Vermont mine."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided by the applicant, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition given:\na. Jellinbah Group is already a majority interest holder in the\nLake Vermont JV, and the Acquisition would increase\nJellinbah Group\u2019s existing majority interest holding\nb. the Acquisition is expected to have limited impact on\ndomestic sales of coal in Australia\nc. there are alternative suppliers of both metallurgical and\nthermal coal in Australia and globally.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-55033/Jellinbah Group - Further interest in Lake Vermont JV (WA-55033) - Notification waiver determination - 8 September 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-08-10T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-55012",
+          "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
+          "acquirers": [
+            "Argo Bowen 2 Pty Ltd"
+          ],
+          "targets": [
+            "LENTON MANAGEMENT AND MARKETING PTY LTD",
+            "COKING COAL ONE PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-90012",
+          "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
+          "acquirers": [
+            "PT Asian Bulk Logistics",
+            "Global Engage Marine Pty Ltd"
+          ],
+          "targets": [
+            "ENGAGE MARINE FINCO PTY LTD",
+            "ENGAGE MARINE HOLDINGS PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-50033",
+          "merger_name": "Koch \u2013 additional interest in Victoria PLC",
+          "acquirers": [
+            "Koch Equity Development LLC"
+          ],
+          "targets": [
+            "Victoria PLC"
           ],
           "accc_determination": "Approved"
         }
@@ -116708,6 +117403,144 @@
           ],
           "targets": [
             "Blackline Safety Corp."
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/vopak-terminals-sydney-%E2%80%93-leasehold-interest-in-land-at-port-botany-nsw",
+      "merger_name": "Vopak Terminals Sydney \u2013 Leasehold interest in land at Port Botany, NSW",
+      "status": "Assessment completed",
+      "merger_id": "WA-90034",
+      "effective_notification_datetime": "2026-08-12T12:00:00Z",
+      "original_notification_datetime": "2026-08-12T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-09-08T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-09-08T16:32:24+10:00",
+      "acquirers": [
+        {
+          "name": "VOPAK TERMINALS SYDNEY PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "67 004 754 750",
+          "party_page": {
+            "id": "vopak-terminals-sydney-pty-limited",
+            "name": "Vopak Terminals Sydney Pty Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "PORT BOTANY OPERATIONS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "16 161 204 342",
+          "party_page": {
+            "id": "port-botany-operations-pty-limited",
+            "name": "Port Botany Operations Pty Limited"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "5021",
+          "name": "Pipeline Transport"
+        },
+        {
+          "code": "5212",
+          "name": "Port and Water Transport Terminal Operations"
+        },
+        {
+          "code": "5309",
+          "name": "Other Warehousing and Storage Services"
+        }
+      ],
+      "merger_description": "Vopak Terminals Sydney Pty Limited (**Vopak**) is a subsidiary of Dutch-based and listed Koninklijke Vopak N.V., a global infrastructure and logistics provider for storing and handling bulk liquids and gases. The main shareholder of the Vopak group is HAL Holding N.V., an international investment company listed on the Amsterdam Stock Exchange via HAL Trust.\n\nPort Botany is a container port and common user bulk liquids facility in Sydney.\n\nPort Botany Operations Pty Ltd, as trustee of the Port Botany Unit Trust (**PBOL**), is a member of the NSW Ports group (**NSW Ports**). NSW Ports owns and operates Port Botany and Port Kembla under long-term leases granted by the NSW Government. Through PBOL, NSW Ports provides port infrastructure and land management services and grants leases and subleases to port users.\n\nVopak operates a liquid fuel storage terminal at Port Botany, supplying liquid fuel storage and handling services to third parties. Vopak does not import and distribute fuel itself but supplies port-side infrastructure for third parties to import, store and distribute their fuel products.\n\nVopak proposes to build a new liquid fuel storage terminal at Port Botany and connect it with its existing terminal. The new terminal is intended for the storage and handling of jet fuel. However, it may alternatively be used for the storage and handling of diesel fuel, depending on future market demand and operational requirements.\n\nAccordingly, Vopak has entered into an Agreement for Lease and Lease (involving a sublease) of certain land at 39 Friendship Road, Port Botany, NSW with PBOL, for the purposes of developing the new liquid fuel storage\u00a0terminal. The land which is the subject of the proposed lease is currently unused.",
+      "events": [
+        {
+          "date": "2026-09-08T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Vopak%20Terminals%20Sydney%20%E2%80%93%20Leasehold%20interest%20in%20land%20at%20Port%20Botany%2C%20NSW%20%28WA-90034%29%20-%20Notification%20waiver%20determination%20-%208%20September%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Vopak Terminals Sydney Pty Limited (Vopak) applied for a\nnotification waiver in respect of its proposal to enter into an\nagreement for lease and lease (involving a sublease) of certain land\nat 39 Friendship Road, Port Botany, NSW (the Property) with Port\nBotany Operations Pty Ltd in its capacity as trustee of the Port\nBotany Unit Trust (PBOL), as described in the transaction documents\nprovided as part of the application (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "8 September 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, Vopak, is a subsidiary of Dutch-based and listed\nKoninklijke Vopak N.V., a global infrastructure and logistics provider\nfor storing and handling bulk liquids and gases. The main\nshareholder of the Vopak group is HAL Holding N.V., an international\ninvestment company listed on the Amsterdam Stock Exchange via\nHAL Trust.\nPort Botany is a container port and common user bulk liquids facility\nin Sydney, NSW.\nVopak operates a liquid fuel storage terminal at Port Botany,\nsupplying liquid fuel storage and handling services to third parties.\nVopak does not import and distribute fuel itself but supplies port-\nside infrastructure for third parties to import, store and distribute\ntheir fuel products.\nPBOL is a member of the NSW Ports group (NSW Ports). NSW Ports\nowns and operates Port Botany and Port Kembla under long-term\nleases granted by the NSW Government. Through PBOL, NSW Ports\nprovides port infrastructure and land management services and\ngrants leases and subleases to port users.\nThe Property is currently unused land at Port Botany. Vopak\nproposes to lease the Property from PBOL for the purposes of\ndeveloping a new liquid fuel storage terminal, to be connected with\nits existing terminal. The new terminal is intended for the storage\nand handling of jet fuel. However, it may be used for the storage and\nhandling of other liquid fuel types in the future."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition given:\na. there is no horizontal consolidation or removal of a\ncompetitor as a result of the Acquisition\nb. the presence of alternative suppliers of liquid fuel storage\nand handling services in New South Wales.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-90034/Vopak Terminals Sydney \u2013 Leasehold interest in land at Port Botany, NSW (WA-90034) - Notification waiver determination - 8 September 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-08-12T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-25002",
+          "merger_name": "Symal Group - Timms Group and L&D Group",
+          "acquirers": [
+            "SYMAL MANAGEMENT PTY LTD",
+            "SYL TM CONTRACTING PTY LTD"
+          ],
+          "targets": [
+            "TIMMS HIRE PTY LTD",
+            "TIMMS CONTRACTING PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-10006",
+          "merger_name": "Australian Venue Co. \u2013 four licensed venues in metropolitan Sydney (Public House Petersham, The Erko, The Golden Sheaf and Barangaroo House)",
+          "acquirers": [
+            "AVC Operations Pty Limited"
+          ],
+          "targets": [
+            "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
+            "Barangaroo Pty Limited as trustee for Barangaroo Trust"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-15034",
+          "merger_name": "Australian Venue Co \u2013 assets of Black Nugget Hotel Motel, Bartletts Tavern and all associated detached bottle shops",
+          "acquirers": [
+            "AVC OPERATIONS PTY LIMITED"
+          ],
+          "targets": [
+            "Central Hospitality Services Pty Ltd",
+            "ATHENA HOSPITALITY GROUP PTY LTD"
           ],
           "accc_determination": "Approved"
         }

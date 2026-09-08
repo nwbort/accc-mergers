@@ -1,6 +1,139 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-65031",
+      "merger_name": "Metal Manufactures - BayWa Solar Systems",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-14T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-25T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "METAL MANUFACTURES PTY LIMITED",
+          "canonical": {
+            "name": "Metal Manufactures"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "BAYWA R.E. SOLAR SYSTEMS PTY LTD"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "MML HOLDINGS LIMITED",
+          "canonical": {
+            "name": "Metal Manufactures"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3494",
+          "name": "Other Electrical and Electronic Goods Wholesaling"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-75041",
+      "merger_name": "Lockheed Martin Corporation \u2013 Ultra Maritime",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-14T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-09-25T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "RLM SYSTEMS PTY LIMITED",
+          "canonical": {
+            "name": "Lockheed Martin"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Ultra Electronics Australia Pty Ltd",
+          "canonical": {
+            "name": "Ultra Electronics Holdings Limited"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Lockheed Martin Corporation",
+          "canonical": {
+            "name": "Lockheed Martin"
+          }
+        },
+        {
+          "name": "Ultra Electronics Holdings Limited",
+          "canonical": {
+            "name": "Ultra Electronics Holdings Limited"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2419",
+          "name": "Other Professional and Scientific Equipment Manufacturing"
+        },
+        {
+          "code": "6923",
+          "name": "Engineering Design and Engineering Consulting Services"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-25045",
+      "merger_name": "Ochre Health - Holdsworth House Medical Group & College Street Specialists, NSW",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-14T12:00:00Z",
+      "determination_publication_date": "2026-08-28T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "OCHRE HEALTH PTY LIMITED"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Business and assets comprising Holdsworth House Medical Group & College Street Specialists"
+        },
+        {
+          "name": "RAINLEIGH PTY LIMITED"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "7291",
+          "name": "Office Administrative Services"
+        },
+        {
+          "code": "8511",
+          "name": "General Practice Medical Services"
+        }
+      ]
+    },
+    {
       "merger_id": "WA-35043",
       "merger_name": "Influence Media Partners \u2013 assets from Anthem Entertainment",
       "status": "Assessment completed",
@@ -423,6 +556,49 @@
         {
           "code": "4232",
           "name": "Garden Supplies Retailing"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-15040",
+      "merger_name": "Shepparton Automotive Group - Darryl Twitt Motors dealerships in Shepparton East, Victoria",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-18T12:00:00Z",
+      "determination_publication_date": "2026-09-08T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "JASNIC AUTOMOTIVE PTY LTD"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Goulburn Motor Group (Vic) Pty Ltd"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "HARRISON MOTORING GROUP PTY LTD"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3911",
+          "name": "Car Retailing"
+        },
+        {
+          "code": "3921",
+          "name": "Motor Vehicle Parts Retailing"
+        },
+        {
+          "code": "9419",
+          "name": "Other Automotive Repair and Maintenance"
         }
       ]
     },
@@ -1065,6 +1241,55 @@
         {
           "code": "3720",
           "name": "Pharmaceutical and Toiletry Goods Wholesaling"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-20037",
+      "merger_name": "Investissement Qu\u00e9bec, Fonds de solidarit\u00e9 des travailleurs et des travailleuses du Qu\u00e9bec and Placement Louis Bibeau Inc. \u2013 Australian Defence Apparel",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-29T12:00:00Z",
+      "determination_publication_date": "2026-09-08T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "9571-9241 Qu\u00e9bec Inc."
+        }
+      ],
+      "targets": [
+        {
+          "name": "Logistik Unicorp Holdings Inc."
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Fonds de solidarit\u00e9 des travailleurs et des travailleuses du Qu\u00e9bec (FTQ)"
+        },
+        {
+          "name": "Placement Louis Bibeau Inc"
+        },
+        {
+          "name": "Investissement Qu\u00e9bec"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1351",
+          "name": "Clothing Manufacturing"
+        },
+        {
+          "code": "4251",
+          "name": "Clothing Retailing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
         }
       ]
     },

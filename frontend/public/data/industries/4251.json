@@ -38,6 +38,17 @@
       "determination_date": null
     },
     {
+      "merger_id": "WA-20037",
+      "merger_name": "Investissement Qu\u00e9bec, Fonds de solidarit\u00e9 des travailleurs et des travailleuses du Qu\u00e9bec and Placement Louis Bibeau Inc. \u2013 Australian Defence Apparel",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-29T12:00:00Z",
+      "determination_date": "2026-09-08T12:00:00Z"
+    },
+    {
       "merger_id": "WA-95027",
       "merger_name": "WHP Global and G-III - Marc Jacobs",
       "is_waiver": true,
@@ -93,10 +104,10 @@
       "determination_date": "2026-03-06T12:00:00Z"
     }
   ],
-  "count": 6,
+  "count": 7,
   "phase_1_count": 2,
   "phase_2_count": 0,
-  "waiver_count": 4,
+  "waiver_count": 5,
   "active_count": 1,
   "phase_duration": {
     "average_days": 27.0,
@@ -106,10 +117,10 @@
     "completed_count": 1
   },
   "waiver_duration": {
-    "average_days": 18.5,
-    "median_days": 17.0,
-    "average_business_days": 13.5,
-    "median_business_days": 13.0,
-    "completed_count": 4
+    "average_days": 16.8,
+    "median_days": 17,
+    "average_business_days": 12.2,
+    "median_business_days": 13,
+    "completed_count": 5
   }
 }

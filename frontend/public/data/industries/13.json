@@ -43,10 +43,21 @@
       "code": "135",
       "name": "Clothing and Footwear Manufacturing",
       "level": "group",
-      "merger_count": 0
+      "merger_count": 1
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-20037",
+      "merger_name": "Investissement Qu\u00e9bec, Fonds de solidarit\u00e9 des travailleurs et des travailleuses du Qu\u00e9bec and Placement Louis Bibeau Inc. \u2013 Australian Defence Apparel",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-29T12:00:00Z",
+      "determination_date": "2026-09-08T12:00:00Z"
+    },
     {
       "merger_id": "WA-50033",
       "merger_name": "Koch \u2013 additional interest in Victoria PLC",
@@ -59,17 +70,17 @@
       "determination_date": "2026-08-11T12:00:00Z"
     }
   ],
-  "count": 1,
+  "count": 2,
   "phase_1_count": 0,
   "phase_2_count": 0,
-  "waiver_count": 1,
+  "waiver_count": 2,
   "active_count": 0,
   "phase_duration": null,
   "waiver_duration": {
-    "average_days": 25.0,
-    "median_days": 25,
-    "average_business_days": 17.0,
-    "median_business_days": 17,
-    "completed_count": 1
+    "average_days": 17.5,
+    "median_days": 17.5,
+    "average_business_days": 12.0,
+    "median_business_days": 12.0,
+    "completed_count": 2
   }
 }

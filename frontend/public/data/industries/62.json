@@ -37,7 +37,7 @@
       "code": "624",
       "name": "Financial Asset Investing",
       "level": "group",
-      "merger_count": 115
+      "merger_count": 117
     }
   ],
   "mergers": [
@@ -171,6 +171,28 @@
       "has_conditions": false,
       "phase": "Phase 1",
       "notification_date": "2026-08-15T12:00:00Z",
+      "determination_date": "2026-09-08T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-10029",
+      "merger_name": "Wollemi Nominees 2 Pty Ltd & Ors \u2013 Establishment of WEG Australian Investment Trust and related acquisitions",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-11T12:00:00Z",
+      "determination_date": "2026-09-08T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-20037",
+      "merger_name": "Investissement Qu\u00e9bec, Fonds de solidarit\u00e9 des travailleurs et des travailleuses du Qu\u00e9bec and Placement Louis Bibeau Inc. \u2013 Australian Defence Apparel",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-29T12:00:00Z",
       "determination_date": "2026-09-08T12:00:00Z"
     },
     {
@@ -1395,10 +1417,10 @@
       "determination_date": null
     }
   ],
-  "count": 123,
+  "count": 125,
   "phase_1_count": 29,
   "phase_2_count": 1,
-  "waiver_count": 93,
+  "waiver_count": 95,
   "active_count": 11,
   "phase_duration": {
     "average_days": 28.526315789473685,
@@ -1408,10 +1430,10 @@
     "completed_count": 19
   },
   "waiver_duration": {
-    "average_days": 19.956989247311828,
+    "average_days": 19.936842105263157,
     "median_days": 20,
-    "average_business_days": 13.56989247311828,
+    "average_business_days": 13.56842105263158,
     "median_business_days": 13,
-    "completed_count": 93
+    "completed_count": 95
   }
 }

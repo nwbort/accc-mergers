@@ -71,6 +71,17 @@
       "determination_date": null
     },
     {
+      "merger_id": "WA-10029",
+      "merger_name": "Wollemi Nominees 2 Pty Ltd & Ors \u2013 Establishment of WEG Australian Investment Trust and related acquisitions",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-11T12:00:00Z",
+      "determination_date": "2026-09-08T12:00:00Z"
+    },
+    {
       "merger_id": "WA-60037",
       "merger_name": "Aware Real Estate \u2013 100 Market Street",
       "is_waiver": true,
@@ -709,10 +720,10 @@
       "determination_date": "2025-12-18T12:00:00Z"
     }
   ],
-  "count": 62,
+  "count": 63,
   "phase_1_count": 15,
   "phase_2_count": 0,
-  "waiver_count": 47,
+  "waiver_count": 48,
   "active_count": 4,
   "phase_duration": {
     "average_days": 25.90909090909091,
@@ -722,10 +733,10 @@
     "completed_count": 11
   },
   "waiver_duration": {
-    "average_days": 20.78723404255319,
-    "median_days": 21,
-    "average_business_days": 14.382978723404255,
-    "median_business_days": 14,
-    "completed_count": 47
+    "average_days": 20.9375,
+    "median_days": 21.0,
+    "average_business_days": 14.5,
+    "median_business_days": 14.0,
+    "completed_count": 48
   }
 }

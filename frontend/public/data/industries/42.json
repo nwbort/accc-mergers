@@ -43,7 +43,7 @@
       "code": "425",
       "name": "Clothing, Footwear and Personal Accessory Retailing",
       "level": "group",
-      "merger_count": 7
+      "merger_count": 8
     },
     {
       "code": "426",
@@ -101,6 +101,17 @@
       "has_conditions": false,
       "phase": "Phase 1",
       "notification_date": "2026-08-18T12:00:00Z",
+      "determination_date": "2026-09-08T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-20037",
+      "merger_name": "Investissement Qu\u00e9bec, Fonds de solidarit\u00e9 des travailleurs et des travailleuses du Qu\u00e9bec and Placement Louis Bibeau Inc. \u2013 Australian Defence Apparel",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-29T12:00:00Z",
       "determination_date": "2026-09-08T12:00:00Z"
     },
     {
@@ -368,10 +379,10 @@
       "determination_date": "2026-02-04T12:00:00Z"
     }
   ],
-  "count": 28,
+  "count": 29,
   "phase_1_count": 10,
   "phase_2_count": 0,
-  "waiver_count": 18,
+  "waiver_count": 19,
   "active_count": 3,
   "phase_duration": {
     "average_days": 25.285714285714285,
@@ -381,10 +392,10 @@
     "completed_count": 7
   },
   "waiver_duration": {
-    "average_days": 19.61111111111111,
-    "median_days": 19.5,
-    "average_business_days": 13.61111111111111,
-    "median_business_days": 13.5,
-    "completed_count": 18
+    "average_days": 19.105263157894736,
+    "median_days": 19,
+    "average_business_days": 13.263157894736842,
+    "median_business_days": 13,
+    "completed_count": 19
   }
 }

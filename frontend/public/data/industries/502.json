@@ -24,7 +24,7 @@
       "code": "5021",
       "name": "Pipeline Transport",
       "level": "class",
-      "merger_count": 1
+      "merger_count": 2
     },
     {
       "code": "5029",
@@ -34,6 +34,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-90034",
+      "merger_name": "Vopak Terminals Sydney \u2013 Leasehold interest in land at Port Botany, NSW",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-12T12:00:00Z",
+      "determination_date": "2026-09-08T12:00:00Z"
+    },
     {
       "merger_id": "WA-30032",
       "merger_name": "Morgan Stanley \u2013 Epic Energy",
@@ -46,17 +57,17 @@
       "determination_date": "2026-09-03T12:00:00Z"
     }
   ],
-  "count": 1,
+  "count": 2,
   "phase_1_count": 0,
   "phase_2_count": 0,
-  "waiver_count": 1,
+  "waiver_count": 2,
   "active_count": 0,
   "phase_duration": null,
   "waiver_duration": {
     "average_days": 27.0,
-    "median_days": 27,
+    "median_days": 27.0,
     "average_business_days": 19.0,
-    "median_business_days": 19,
-    "completed_count": 1
+    "median_business_days": 19.0,
+    "completed_count": 2
   }
 }
