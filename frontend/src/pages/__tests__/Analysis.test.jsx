@@ -10,23 +10,22 @@ function ok(json) {
 }
 
 // Business-day durations chosen so the ECDF has clean, distinct jump points:
-// 10, 10, 20, 30, 40 (completed) plus one in-progress matter that must be
-// excluded from the curve entirely.
+// 10, 10, 20, 30, 40. The histogram is analysis.json's nested count map,
+// business days -> calendar days -> number of reviews with that exact pair,
+// so the repeated 10 is a count of 2 rather than two entries.
 const analysisFixture = {
   phase1_duration: {
-    durations: [
-      { business_days: 10, calendar_days: 15, in_progress: false },
-      { business_days: 10, calendar_days: 15, in_progress: false },
-      { business_days: 20, calendar_days: 28, in_progress: false },
-      { business_days: 30, calendar_days: 42, in_progress: false },
-      { business_days: 40, calendar_days: 56, in_progress: false },
-      { business_days: 5, calendar_days: 7, in_progress: true },
-    ],
+    duration_histogram: {
+      10: { 15: 2 },
+      20: { 28: 1 },
+      30: { 42: 1 },
+      40: { 56: 1 },
+    },
     stats: { average: 22, median: 20, min: 10, max: 40, count: 5 },
     calendar_stats: { average: 30, median: 28, min: 15, max: 56, count: 5 },
   },
   waiver_duration: {
-    durations: [],
+    duration_histogram: {},
     stats: { average: null, median: null, min: null, max: null, count: 0 },
     calendar_stats: { average: null, median: null, min: null, max: null, count: 0 },
   },
@@ -55,7 +54,7 @@ describe('Analysis phase 1 duration ECDF', () => {
     dataCache.clear();
   });
 
-  it('computes cumulative percentages from completed matters only, excluding in-progress ones', async () => {
+  it('computes cumulative percentages by expanding the duration histogram', async () => {
     vi.spyOn(globalThis, 'fetch').mockImplementation((url) => {
       if (url.includes('analysis.json')) return Promise.resolve(ok(analysisFixture));
       return Promise.reject(new Error(`Unexpected fetch: ${url}`));
@@ -71,8 +70,8 @@ describe('Analysis phase 1 duration ECDF', () => {
     expect(table).toBeInTheDocument();
 
     // 5 completed matters, durations 10,10,20,30,40 -> jumps at 10 (2/5=40%),
-    // 20 (3/5=60%), 30 (4/5=80%), 40 (5/5=100%). The in-progress matter at 5
-    // business days must not appear as its own row or shift the totals.
+    // 20 (3/5=60%), 30 (4/5=80%), 40 (5/5=100%). The repeated 10 arrives as a
+    // count of 2, so it must move the curve twice while getting one row.
     const rows = within(table).getAllByRole('row').slice(1); // drop header row
     const cellsFor = (row) => within(row).getAllByRole('cell').map((c) => c.textContent);
 
@@ -81,8 +80,6 @@ describe('Analysis phase 1 duration ECDF', () => {
     expect(cellsFor(rows[2])).toEqual(['30', '80%', '4 of 5']);
     expect(cellsFor(rows[3])).toEqual(['40', '100%', '5 of 5']);
     expect(rows).toHaveLength(4);
-
-    expect(within(table).queryByText('5')).not.toBeInTheDocument();
   });
 
   it('omits the ECDF section when there are no completed matters', async () => {
@@ -90,7 +87,7 @@ describe('Analysis phase 1 duration ECDF', () => {
       ...analysisFixture,
       phase1_duration: {
         ...analysisFixture.phase1_duration,
-        durations: analysisFixture.phase1_duration.durations.filter((d) => d.in_progress),
+        duration_histogram: {},
       },
     };
 
@@ -124,10 +121,7 @@ describe('Analysis waiver duration ECDF', () => {
     const fixture = {
       ...analysisFixture,
       waiver_duration: {
-        durations: [
-          { business_days: 10, calendar_days: 15 },
-          { business_days: 20, calendar_days: 28 },
-        ],
+        duration_histogram: { 10: { 15: 1 }, 20: { 28: 1 } },
         stats: { average: 15, median: 15, min: 10, max: 20, count: 2 },
         calendar_stats: { average: 21.5, median: 21.5, min: 15, max: 28, count: 2 },
       },

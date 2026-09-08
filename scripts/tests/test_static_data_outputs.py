@@ -824,6 +824,11 @@ class TestCommentaryGenerate:
 # analysis
 # ---------------------------------------------------------------------------
 
+def _histogram_total(histogram: dict) -> int:
+    """Number of reviews counted in a nested duration histogram."""
+    return sum(count for by_calendar in histogram.values() for count in by_calendar.values())
+
+
 class TestAnalysisGenerate:
     def test_returns_valid_shape(self):
         payload = analysis.generate(_enriched_fixture())
@@ -835,23 +840,42 @@ class TestAnalysisGenerate:
             'outcomes_by_division', 'referrals_by_quarter', 'open_caseload',
             'current_status',
         }
-        assert 'durations' in payload['phase1_duration']
-        assert 'durations' in payload['waiver_duration']
+        assert 'duration_histogram' in payload['phase1_duration']
+        assert 'duration_histogram' in payload['waiver_duration']
         assert 'labels' in payload['monthly_volume']
 
     def test_phase1_durations_only_notifications_with_an_end_date(self):
         payload = analysis.generate(_enriched_fixture())
-        durations = payload['phase1_duration']['durations']
+        histogram = payload['phase1_duration']['duration_histogram']
         # Only MN-0001 has notification + determination (MN-0002 has no determination,
         # MN-0004 is suspended with no determination either), so it's the only one
         # with a Phase 1 end date to measure to.
-        assert len(durations) == 1
-        assert durations[0]['in_progress'] is False
+        assert _histogram_total(histogram) == 1
 
     def test_waiver_durations_only_waivers(self):
         payload = analysis.generate(_enriched_fixture())
-        durations = payload['waiver_duration']['durations']
-        assert len(durations) == 1
+        assert _histogram_total(payload['waiver_duration']['duration_histogram']) == 1
+
+    def test_duration_histogram_totals_match_the_published_stats(self):
+        # The histogram is the same population the stats block summarises, just
+        # counted rather than listed, so the two must never drift apart.
+        payload = analysis.generate(_enriched_fixture())
+        for block in ('phase1_duration', 'waiver_duration'):
+            histogram = payload[block]['duration_histogram']
+            assert _histogram_total(histogram) == payload[block]['stats']['count']
+            assert _histogram_total(histogram) == payload[block]['calendar_stats']['count']
+
+    def test_duration_histogram_pairs_business_and_calendar_days(self):
+        # Each count sits at the (business days, calendar days) pair it was
+        # measured at, so the joint distribution survives the collapse — not
+        # just the two marginals.
+        payload = analysis.generate(_enriched_fixture())
+        histogram = payload['phase1_duration']['duration_histogram']
+        assert histogram == {
+            payload['phase1_duration']['stats']['min']: {
+                payload['phase1_duration']['calendar_stats']['min']: 1,
+            },
+        }
 
     def test_industry_phase1_duration_rolls_up_to_division(self):
         payload = analysis.generate(_enriched_fixture())

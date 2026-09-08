@@ -165,7 +165,7 @@ frontend/src/
 │                         #   classNames.js, searchIndex.js,
 │                         #   businessDayProgress.js, fetchAllMergers.js, formatMedian.js, phase2Summary.js,
 │                         #   industryGroups.js, slug.js, shard.js, preNotification.js, pageMeta.js,
-│                         #   treemapTail.js, mergerOutcome.js, partyMembers.js
+│                         #   treemapTail.js, mergerOutcome.js, partyMembers.js, durationEcdf.js
 └── data/                 # ACT public holidays JSON
                           #   (act-public-holidays.json — source of truth for both the Python
                           #   pipeline and the frontend; authoritative list published at
@@ -426,7 +426,7 @@ prunes the old names), but make it a deliberate choice.
 | `upcoming-events.json` | Future consultation/determination dates |
 | `commentary.json` | Mergers with user commentary |
 | `digest.json` | Weekly digest of merger activity (from `generate_weekly_digest.py`) |
-| `analysis.json` | Pre-computed analysis data. `current_status` (powering `/current-status`) re-cuts the same durations over rolling windows of recently *decided* matters (30/90 days), plus a per-decision-month series aligned index-for-index with `open_caseload`, so the filing-time question ("what is the ACCC turning around *now*") doesn't have to be answered from the all-time median. Each window also carries `notifications_filed` and a `pre_notification` block (keyed by *filing* date, since that stage ends at filing rather than at a decision; the estimate is a calendar-day figure but is published here in business days, like every other duration on the page). No waiver inflow is published, since a waiver only reaches the register once decided |
+| `analysis.json` | Pre-computed analysis data. `current_status` (powering `/current-status`) re-cuts the same durations over rolling windows of recently *decided* matters (30/90 days), plus a per-decision-month series aligned index-for-index with `open_caseload`, so the filing-time question ("what is the ACCC turning around *now*") doesn't have to be answered from the all-time median. Each window also carries `notifications_filed` and a `pre_notification` block (keyed by *filing* date, since that stage ends at filing rather than at a decision; the estimate is a calendar-day figure but is published here in business days, like every other duration on the page). No waiver inflow is published, since a waiver only reaches the register once decided. `phase1_duration`/`waiver_duration` each carry a `duration_histogram`: a nested count map, business days → calendar days → number of completed reviews with that exact pair. It replaced a flat list holding one object per review — same distribution (the records are anonymous, so a multiset of pairs is exactly the list), a third of the file. Read business days by summing each inner map; read calendar days by folding the inner keys together (`frontend/src/utils/durationEcdf.js`) |
 | `timeline.json` | Unpaginated timeline (alongside the paginated `timeline/` directory) |
 | `referral-probability-by-day.json` | Modelled probability of a Phase 2 referral by elapsed business day |
 | `serial-acquirers.json` | Serial-acquirer ("creeping acquisitions") detection |

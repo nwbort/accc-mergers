@@ -12,39 +12,12 @@ import { industryPath } from '../utils/slug';
 import { CHART_PALETTE as COLORS } from '../constants/chartColors';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
+import { computeEcdf } from '../utils/durationEcdf';
 
 // Title and description live in the shared table so this page and the
 // build-time prerenderer emit the same <head>.
 const PAGE_META = STATIC_PAGE_META['/analysis'];
 
-
-// ECDF of completed-matter durations: "X% of reviews conclude by day N".
-// Right-continuous — the cumulative percentage jumps at each distinct
-// duration and holds flat until the next one (Chart.js stepped: 'after').
-function computeEcdf(scatterData, dayField) {
-  const durations = scatterData
-    .filter(d => d.in_progress !== true)
-    .map(d => d[dayField])
-    .sort((a, b) => a - b);
-
-  const total = durations.length;
-  if (total === 0) return [];
-
-  const points = [{ x: 0, y: 0, n: 0, total }];
-  let cumulative = 0;
-  let i = 0;
-  while (i < durations.length) {
-    const value = durations[i];
-    let count = 0;
-    while (i < durations.length && durations[i] === value) {
-      count += 1;
-      i += 1;
-    }
-    cumulative += count;
-    points.push({ x: value, y: Math.round((cumulative / total) * 1000) / 10, n: cumulative, total });
-  }
-  return points;
-}
 
 function Analysis() {
   const { data, loading, error } = useFetchData(API_ENDPOINTS.analysis, {
@@ -61,11 +34,10 @@ function Analysis() {
   const phase1Stats = calendarDays ? phase1_duration.calendar_stats : phase1_duration.stats;
   const waiverStats = calendarDays ? waiver_duration.calendar_stats : waiver_duration.stats;
 
-  const dayField = calendarDays ? 'calendar_days' : 'business_days';
   const dayLabel = calendarDays ? 'calendar days' : 'business days';
 
   // --- Phase 1 Duration ECDF ---
-  const ecdfPoints = computeEcdf(phase1_duration.durations, dayField);
+  const ecdfPoints = computeEcdf(phase1_duration.duration_histogram, calendarDays);
   const ecdfMedian = phase1Stats.median;
   const ecdfMaxX = ecdfPoints.length > 0
     ? Math.max(ecdfPoints[ecdfPoints.length - 1].x, 30) + 2
@@ -158,7 +130,7 @@ function Analysis() {
   };
 
   // --- Waiver Duration ECDF ---
-  const waiverEcdfPoints = computeEcdf(waiver_duration.durations, dayField);
+  const waiverEcdfPoints = computeEcdf(waiver_duration.duration_histogram, calendarDays);
   const waiverEcdfMedian = waiverStats.median;
   const waiverEcdfMaxX = waiverEcdfPoints.length > 0
     ? Math.max(waiverEcdfPoints[waiverEcdfPoints.length - 1].x, 25) + 2
