@@ -1017,6 +1017,11 @@
         "in_progress": false
       },
       {
+        "business_days": 15,
+        "calendar_days": 21,
+        "in_progress": false
+      },
+      {
         "business_days": 20,
         "calendar_days": 29,
         "in_progress": false
@@ -1074,17 +1079,17 @@
     ],
     "stats": {
       "average": 20.1,
-      "median": 18.0,
+      "median": 18,
       "min": 15,
       "max": 59,
-      "count": 214
+      "count": 215
     },
     "calendar_stats": {
       "average": 29.8,
-      "median": 26.0,
+      "median": 26,
       "min": 21,
       "max": 103,
-      "count": 214
+      "count": 215
     }
   },
   "waiver_duration": {
@@ -2711,7 +2716,7 @@
       41,
       46,
       37,
-      34
+      33
     ],
     "as_at": "2026-09-08"
   },
@@ -2722,13 +2727,13 @@
         "days": 30,
         "notifications_filed": 31,
         "notifications": {
-          "median": 19.0,
-          "average": 21.7,
+          "median": 19,
+          "average": 21.5,
           "p90": 33,
           "min": 15,
           "max": 56,
-          "count": 50,
-          "median_delta": 1.0
+          "count": 51,
+          "median_delta": 1
         },
         "waivers": {
           "median": 17.5,
@@ -2744,12 +2749,12 @@
         "days": 90,
         "notifications_filed": 115,
         "notifications": {
-          "median": 18,
-          "average": 20.9,
+          "median": 18.0,
+          "average": 20.8,
           "p90": 33,
           "min": 15,
           "max": 56,
-          "count": 115,
+          "count": 116,
           "median_delta": 0.0
         },
         "waivers": {
@@ -2765,12 +2770,12 @@
     ],
     "all_time": {
       "notifications": {
-        "median": 18.0,
+        "median": 18,
         "average": 20.1,
         "p90": 28,
         "min": 15,
         "max": 59,
-        "count": 214
+        "count": 215
       },
       "waivers": {
         "median": 13.0,
@@ -2897,9 +2902,9 @@
           "count": 45
         },
         {
-          "median": 19.5,
-          "average": 23.4,
-          "count": 10
+          "median": 19,
+          "average": 22.6,
+          "count": 11
         }
       ],
       "waivers": [
@@ -2988,7 +2993,7 @@
         41,
         46,
         37,
-        34
+        33
       ]
     }
   },
@@ -3005,11 +3010,11 @@
     {
       "code": "G",
       "name": "Retail Trade",
-      "average_business_days": 24.0,
-      "median_business_days": 18,
-      "average_calendar_days": 36.8,
-      "median_calendar_days": 27,
-      "count": 25
+      "average_business_days": 23.7,
+      "median_business_days": 18.0,
+      "average_calendar_days": 36.2,
+      "median_calendar_days": 27.0,
+      "count": 26
     },
     {
       "code": "B",
@@ -3104,11 +3109,11 @@
     {
       "code": "E",
       "name": "Construction",
-      "average_business_days": 19.7,
-      "median_business_days": 18.0,
-      "average_calendar_days": 28.1,
-      "median_calendar_days": 26.5,
-      "count": 22
+      "average_business_days": 19.5,
+      "median_business_days": 18,
+      "average_calendar_days": 27.8,
+      "median_calendar_days": 26,
+      "count": 23
     },
     {
       "code": "Q",
@@ -3177,9 +3182,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 31,
+      "count": 30,
       "outcome_mix": {
-        "Unknown": 31
+        "Unknown": 30
       },
       "median_phase_1_business_days": null
     },
@@ -3216,11 +3221,19 @@
         "Approved": 1
       },
       "median_phase_1_business_days": 38
+    },
+    {
+      "division": "Commissioner Wiliams",
+      "count": 1,
+      "outcome_mix": {
+        "Approved": 1
+      },
+      "median_phase_1_business_days": 15
     }
   ],
   "deadline_utilisation": {
     "histogram": {
-      "15": 44,
+      "15": 45,
       "16": 37,
       "17": 25,
       "18": 23,
@@ -3244,9 +3257,9 @@
     },
     "stats": {
       "mean_used_bd": 18.2,
-      "median_used_bd": 17.0,
-      "pct_decided_final_3_bd": 3.1,
-      "count": 196
+      "median_used_bd": 17,
+      "pct_decided_final_3_bd": 3.0,
+      "count": 197
     },
     "extended_count": 9
   },
@@ -3305,11 +3318,11 @@
     {
       "code": "G",
       "name": "Retail Trade",
-      "approved": 22,
+      "approved": 23,
       "not_approved": 0,
       "referred": 3,
-      "in_progress": 8,
-      "phase2_referral_rate": 0.12
+      "in_progress": 7,
+      "phase2_referral_rate": 0.115
     },
     {
       "code": "F",
@@ -3341,11 +3354,11 @@
     {
       "code": "E",
       "name": "Construction",
-      "approved": 21,
+      "approved": 22,
       "not_approved": 0,
       "referred": 1,
-      "in_progress": 2,
-      "phase2_referral_rate": 0.045
+      "in_progress": 1,
+      "phase2_referral_rate": 0.043
     },
     {
       "code": "C",

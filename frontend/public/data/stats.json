@@ -3,12 +3,12 @@
   "total_waivers": 382,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 208,
-    "Under assessment": 34,
+    "Assessment completed": 209,
+    "Under assessment": 33,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 201,
+    "Approved": 202,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 16
   },
   "clearance_rate": {
-    "cleared": 206,
+    "cleared": 207,
     "not_cleared": 2,
-    "total": 208,
+    "total": 209,
     "rate": 0.99
   },
   "phase_duration": {
-    "average_days": 29.83177570093458,
-    "median_days": 26.0,
-    "average_business_days": 20.135514018691588,
-    "median_business_days": 18.0,
+    "average_days": 29.790697674418606,
+    "median_days": 26,
+    "average_business_days": 20.111627906976743,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
-        "count": 44,
-        "percentage": 20.6
+        "count": 45,
+        "percentage": 20.9
       },
       "day20": {
-        "count": 158,
-        "percentage": 73.8
+        "count": 159,
+        "percentage": 74.0
       },
       "day30": {
-        "count": 199,
+        "count": 200,
         "percentage": 93.0
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-90029",
+      "merger_name": "Bunnings \u2013 Intellihub \u2013 Zelora Joint Venture",
+      "determination": "Approved",
+      "determination_date": "2026-09-08T12:00:00Z",
+      "page_modified_datetime": "2026-09-08T16:11:55+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-45024",
       "merger_name": "OEConnection - Epyx",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-03T12:00:00Z",
       "page_modified_datetime": "2026-09-03T16:46:11+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-40040",
-      "merger_name": "Waymark Hotels Group \u2013 Criterion Hotel Motel, Rockhampton, QLD",
-      "determination": "Approved",
-      "determination_date": "2026-09-03T12:00:00Z",
-      "page_modified_datetime": "2026-09-03T16:44:36+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

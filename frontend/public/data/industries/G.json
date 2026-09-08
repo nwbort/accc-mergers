@@ -82,17 +82,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-90029",
-      "merger_name": "Bunnings \u2013 Intellihub \u2013 Zelora Joint Venture",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-08-18T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-80035",
       "merger_name": "Saint-Gobain - Xypex",
       "is_waiver": false,
@@ -124,6 +113,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-08-03T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-90029",
+      "merger_name": "Bunnings \u2013 Intellihub \u2013 Zelora Joint Venture",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-18T12:00:00Z",
+      "determination_date": "2026-09-08T12:00:00Z"
     },
     {
       "merger_id": "MN-90028",
@@ -922,13 +922,13 @@
   "phase_1_count": 30,
   "phase_2_count": 3,
   "waiver_count": 47,
-  "active_count": 8,
+  "active_count": 7,
   "phase_duration": {
-    "average_days": 36.84,
-    "median_days": 27,
-    "average_business_days": 24.04,
-    "median_business_days": 18,
-    "completed_count": 25
+    "average_days": 36.23076923076923,
+    "median_days": 27.0,
+    "average_business_days": 23.692307692307693,
+    "median_business_days": 18.0,
+    "completed_count": 26
   },
   "waiver_duration": {
     "average_days": 20.382978723404257,
