@@ -158,19 +158,15 @@
     "expected_business_days": 16,
     "range_business_days": [
       15,
-      20
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "4123",
-      "4400",
-      "4511",
-      "4520"
-    ],
-    "sample_size": 8,
-    "estimated_at": "2026-08-07",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 118,
+    "as_of": "2026-08-06",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "pre_notification": {
     "estimated_days": 11,
