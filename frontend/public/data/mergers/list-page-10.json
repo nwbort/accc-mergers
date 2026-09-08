@@ -2129,27 +2129,27 @@
     {
       "merger_id": "MN-30023",
       "merger_name": "UPM-Kymmene \u2013 Sappi joint venture",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "has_conditions": false,
       "is_waiver": false,
       "under_appeal": false,
       "is_refiled": false,
       "effective_notification_datetime": "2026-07-16T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-09-08T12:00:00Z",
       "end_of_determination_period": "2026-09-10T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "UPM-Kymmene Corporation",
-          "canonical": {
-            "name": "Upm-Kymmene Pty Ltd"
-          }
-        },
-        {
           "name": "Sappi Limited",
           "canonical": {
             "name": "Sappi"
+          }
+        },
+        {
+          "name": "UPM-Kymmene Corporation",
+          "canonical": {
+            "name": "Upm-Kymmene Pty Ltd"
           }
         }
       ],
@@ -2160,18 +2160,18 @@
       ],
       "other_parties": [
         {
-          "name": "UPM-KYMMENE PTY LTD",
+          "name": "SAPPI TRADING AUSTRALIA PTY LIMITED",
           "canonical": {
-            "name": "Upm-Kymmene Pty Ltd"
+            "name": "Sappi"
           }
         },
         {
           "name": "UPM Communication Papers Oy"
         },
         {
-          "name": "SAPPI TRADING AUSTRALIA PTY LIMITED",
+          "name": "UPM-KYMMENE PTY LTD",
           "canonical": {
-            "name": "Sappi"
+            "name": "Upm-Kymmene Pty Ltd"
           }
         }
       ],

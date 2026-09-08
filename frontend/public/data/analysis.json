@@ -422,6 +422,11 @@
         "in_progress": false
       },
       {
+        "business_days": 38,
+        "calendar_days": 54,
+        "in_progress": false
+      },
+      {
         "business_days": 18,
         "calendar_days": 26,
         "in_progress": false
@@ -1058,18 +1063,18 @@
       }
     ],
     "stats": {
-      "average": 20.1,
-      "median": 18,
+      "average": 20.2,
+      "median": 18.0,
       "min": 15,
       "max": 59,
-      "count": 211
+      "count": 212
     },
     "calendar_stats": {
-      "average": 29.8,
-      "median": 26,
+      "average": 29.9,
+      "median": 26.0,
       "min": 21,
       "max": 103,
-      "count": 211
+      "count": 212
     }
   },
   "waiver_duration": {
@@ -2696,7 +2701,7 @@
       41,
       46,
       37,
-      36
+      35
     ],
     "as_at": "2026-09-08"
   },
@@ -2707,13 +2712,13 @@
         "days": 30,
         "notifications_filed": 30,
         "notifications": {
-          "median": 19,
-          "average": 21.4,
-          "p90": 33,
+          "median": 19.0,
+          "average": 21.8,
+          "p90": 34,
           "min": 15,
           "max": 56,
-          "count": 47,
-          "median_delta": 1
+          "count": 48,
+          "median_delta": 1.0
         },
         "waivers": {
           "median": 17.5,
@@ -2729,12 +2734,12 @@
         "days": 90,
         "notifications_filed": 114,
         "notifications": {
-          "median": 18.0,
-          "average": 20.8,
-          "p90": 29,
+          "median": 18,
+          "average": 20.9,
+          "p90": 33,
           "min": 15,
           "max": 56,
-          "count": 112,
+          "count": 113,
           "median_delta": 0.0
         },
         "waivers": {
@@ -2750,12 +2755,12 @@
     ],
     "all_time": {
       "notifications": {
-        "median": 18,
-        "average": 20.1,
+        "median": 18.0,
+        "average": 20.2,
         "p90": 28,
         "min": 15,
         "max": 59,
-        "count": 211
+        "count": 212
       },
       "waivers": {
         "median": 13.0,
@@ -2882,9 +2887,9 @@
           "count": 45
         },
         {
-          "median": 19,
-          "average": 22.7,
-          "count": 7
+          "median": 20.0,
+          "average": 24.6,
+          "count": 8
         }
       ],
       "waivers": [
@@ -2973,7 +2978,7 @@
         41,
         46,
         37,
-        36
+        35
       ]
     }
   },
@@ -3069,6 +3074,15 @@
       "count": 11
     },
     {
+      "code": "C",
+      "name": "Manufacturing",
+      "average_business_days": 20.0,
+      "median_business_days": 17.5,
+      "average_calendar_days": 29.6,
+      "median_calendar_days": 26.5,
+      "count": 62
+    },
+    {
       "code": "O",
       "name": "Public Administration and Safety",
       "average_business_days": 20.0,
@@ -3076,15 +3090,6 @@
       "average_calendar_days": 29.0,
       "median_calendar_days": 29,
       "count": 1
-    },
-    {
-      "code": "C",
-      "name": "Manufacturing",
-      "average_business_days": 19.7,
-      "median_business_days": 17,
-      "average_calendar_days": 29.2,
-      "median_calendar_days": 26,
-      "count": 61
     },
     {
       "code": "E",
@@ -3162,9 +3167,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 33,
+      "count": 32,
       "outcome_mix": {
-        "Unknown": 33
+        "Unknown": 32
       },
       "median_phase_1_business_days": null
     },
@@ -3193,6 +3198,14 @@
         "Approved": 2
       },
       "median_phase_1_business_days": null
+    },
+    {
+      "division": "Determination made by a division of the Commission constituted by a direction issued pursuant to a section 19 of the Act",
+      "count": 1,
+      "outcome_mix": {
+        "Approved": 1
+      },
+      "median_phase_1_business_days": 38
     }
   ],
   "deadline_utilisation": {
@@ -3225,7 +3238,7 @@
       "pct_decided_final_3_bd": 3.1,
       "count": 194
     },
-    "extended_count": 8
+    "extended_count": 9
   },
   "notification_restarts": [
     {
@@ -3327,11 +3340,11 @@
     {
       "code": "C",
       "name": "Manufacturing",
-      "approved": 59,
+      "approved": 60,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 10,
-      "phase2_referral_rate": 0.033
+      "in_progress": 9,
+      "phase2_referral_rate": 0.032
     },
     {
       "code": "D",

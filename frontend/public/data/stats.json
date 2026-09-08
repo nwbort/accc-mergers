@@ -3,12 +3,12 @@
   "total_waivers": 382,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 205,
-    "Under assessment": 36,
+    "Assessment completed": 206,
+    "Under assessment": 35,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 198,
+    "Approved": 199,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,28 +22,28 @@
     "Not approved": 16
   },
   "clearance_rate": {
-    "cleared": 203,
+    "cleared": 204,
     "not_cleared": 2,
-    "total": 205,
+    "total": 206,
     "rate": 0.99
   },
   "phase_duration": {
-    "average_days": 29.753554502369667,
-    "median_days": 26,
-    "average_business_days": 20.066350710900473,
-    "median_business_days": 18,
+    "average_days": 29.867924528301888,
+    "median_days": 26.0,
+    "average_business_days": 20.150943396226417,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
         "count": 44,
-        "percentage": 20.9
+        "percentage": 20.8
       },
       "day20": {
         "count": 156,
-        "percentage": 73.9
+        "percentage": 73.6
       },
       "day30": {
         "count": 197,
-        "percentage": 93.4
+        "percentage": 92.9
       }
     }
   },
@@ -230,6 +230,17 @@
       "has_conditions": false
     },
     {
+      "merger_id": "MN-30023",
+      "merger_name": "UPM-Kymmene \u2013 Sappi joint venture",
+      "determination": "Approved",
+      "determination_date": "2026-09-08T12:00:00Z",
+      "page_modified_datetime": "2026-09-08T10:44:14+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-50035",
       "merger_name": "Opal HealthCare - Canberra Nursing Home (Lidcombe, NSW)",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-03T12:00:00Z",
       "page_modified_datetime": "2026-09-03T16:37:40+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-35043",
-      "merger_name": "Influence Media Partners \u2013 assets from Anthem Entertainment",
-      "determination": "Approved",
-      "determination_date": "2026-09-03T12:00:00Z",
-      "page_modified_datetime": "2026-09-03T16:36:28+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
