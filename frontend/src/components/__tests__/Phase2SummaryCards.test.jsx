@@ -65,9 +65,11 @@ describe('Phase2SummaryCards', () => {
       completedMatter({ merger_id: 'MN-1' }),
       completedMatter({ merger_id: 'MN-2', has_conditions: true }),
     ]);
-    const swatches = [...container.querySelectorAll('[style*="background-color"]')]
-      .map((el) => el.style.backgroundColor);
-    expect(new Set(swatches).size).toBe(2);
+    const greens = [...container.querySelectorAll('[class*="bg-emerald-"]')]
+      .map((el) => el.className.match(/bg-emerald-\d+/)[0]);
+    // A segment and a legend dot each, for both clearances.
+    expect(greens).toHaveLength(4);
+    expect(new Set(greens).size).toBe(2);
   });
 
   it('says so when no review has concluded', () => {

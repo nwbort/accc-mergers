@@ -1,6 +1,6 @@
 import { FaLayerGroup, FaHourglassHalf } from 'react-icons/fa6';
 import StatCard from './StatCard';
-import { CHART_PALETTE_ORDER, DETERMINATION_COLORS } from '../constants/chartColors';
+import { getOutcomeFill } from '../constants/cardStyles';
 import { summarisePhase2 } from '../utils/phase2Summary';
 import { CARD } from '../utils/classNames';
 
@@ -13,20 +13,15 @@ import { CARD } from '../utils/classNames';
 // where a reader goes for the detail — so they drop StatCard's two-line label
 // reserve, which would otherwise leave a gap under a one-line title.
 //
-// The split's segments and legend dots take the determination colours the
-// dashboard's Phase 2 doughnut is drawn with — the same breakdown of the same
-// matters, so the two should agree — rather than the fills of the cards
-// further down this page. That table is the one with a colour for a clearance
-// granted subject to conditions: a muted green a clear step off the outright
-// approval green, so the two clearances read as distinct without reading as
-// unrelated outcomes.
+// The split's segments and legend dots are filled from the same table as the
+// determination-coloured cards further down the page, so an outcome is the
+// same colour in both places. The dashboard's Phase 2 doughnut plots this same
+// breakdown in the chart palette instead; the cards a reader is looking at
+// while they read this bar win.
 function Phase2SummaryCards({ current = [], completed = [] }) {
   const { total, completedCount, outcomes, averageDays } = summarisePhase2(current, completed);
 
   if (total === 0) return null;
-
-  const colourFor = (label, i) =>
-    DETERMINATION_COLORS[label] || CHART_PALETTE_ORDER[i % CHART_PALETTE_ORDER.length];
 
   return (
     <section aria-labelledby="phase2-summary-heading" className="mb-8">
@@ -63,24 +58,22 @@ function Phase2SummaryCards({ current = [], completed = [] }) {
               className="mt-3 flex h-2.5 w-full overflow-hidden rounded-full bg-gray-100"
               aria-hidden="true"
             >
-              {outcomes.map((outcome, i) => (
+              {outcomes.map((outcome) => (
                 <div
                   key={outcome.label}
-                  className="h-full"
-                  style={{
-                    width: `${(outcome.count / completedCount) * 100}%`,
-                    backgroundColor: colourFor(outcome.label, i),
-                  }}
+                  className={`h-full ${getOutcomeFill(outcome.label)}`}
+                  style={{ width: `${(outcome.count / completedCount) * 100}%` }}
                 />
               ))}
             </div>
             <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
-              {outcomes.map((outcome, i) => (
+              {outcomes.map((outcome) => (
                 <li key={outcome.label} className="flex items-baseline gap-2 text-sm">
                   <span className="flex min-w-0 items-baseline gap-2 text-gray-700">
                     <span
-                      className="h-2.5 w-2.5 flex-shrink-0 translate-y-px rounded-full"
-                      style={{ backgroundColor: colourFor(outcome.label, i) }}
+                      className={`h-2.5 w-2.5 flex-shrink-0 translate-y-px rounded-full ${getOutcomeFill(
+                        outcome.label
+                      )}`}
                     />
                     <span className="truncate">{outcome.label}</span>
                   </span>
