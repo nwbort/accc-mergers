@@ -3,12 +3,12 @@
   "total_waivers": 382,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 207,
-    "Under assessment": 34,
+    "Assessment completed": 208,
+    "Under assessment": 33,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 200,
+    "Approved": 201,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 16
   },
   "clearance_rate": {
-    "cleared": 205,
+    "cleared": 206,
     "not_cleared": 2,
-    "total": 207,
+    "total": 208,
     "rate": 0.99
   },
   "phase_duration": {
-    "average_days": 29.84037558685446,
-    "median_days": 26,
-    "average_business_days": 20.136150234741784,
-    "median_business_days": 18,
+    "average_days": 29.83177570093458,
+    "median_days": 26.0,
+    "average_business_days": 20.135514018691588,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
         "count": 44,
-        "percentage": 20.7
+        "percentage": 20.6
       },
       "day20": {
-        "count": 157,
-        "percentage": 73.7
+        "count": 158,
+        "percentage": 73.8
       },
       "day30": {
-        "count": 198,
+        "count": 199,
         "percentage": 93.0
       }
     }
@@ -230,6 +230,17 @@
       "has_conditions": false
     },
     {
+      "merger_id": "MN-80027",
+      "merger_name": "Supagas \u2013 Heeson Medical",
+      "determination": "Approved",
+      "determination_date": "2026-09-08T12:00:00Z",
+      "page_modified_datetime": "2026-09-08T12:59:14+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-30028",
       "merger_name": "Adobe - Topaz Labs",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-03T12:00:00Z",
       "page_modified_datetime": "2026-09-03T16:44:36+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-85046",
-      "merger_name": "Morgan Stanley \u2013 Amber",
-      "determination": "Approved",
-      "determination_date": "2026-09-03T12:00:00Z",
-      "page_modified_datetime": "2026-09-03T16:42:08+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
