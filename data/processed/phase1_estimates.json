@@ -1,226 +1,46 @@
 {
   "_comment": "Filing-time phase-1 duration estimates, frozen per merger_id when the merger is first seen with a notification date. Maintained by static_data.phase1_estimate via generate_static_data.py; do not hand-edit. Clear an entry (or the whole file) to force recomputation.",
-  "MN-01016": {
-    "expected_business_days": 17,
-    "range_business_days": [
-      15,
-      21
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "C",
-      "L"
-    ],
-    "sample_size": 48,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-01017": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      16,
-      20
-    ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "24",
-      "32"
-    ],
-    "sample_size": 15,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-01019": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      16,
-      22
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "1701",
-      "3321",
-      "4000",
-      "4110"
-    ],
-    "sample_size": 8,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-01031": {
-    "expected_business_days": 17,
-    "range_business_days": [
-      15,
-      20
-    ],
-    "basis": "global",
-    "anzsic_level": null,
-    "anzsic_codes": [],
-    "sample_size": 138,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-01035": {
-    "expected_business_days": 17,
-    "range_business_days": [
-      15,
-      21
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "C",
-      "L"
-    ],
-    "sample_size": 48,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-01037": {
-    "expected_business_days": 17,
-    "range_business_days": [
-      15,
-      20
-    ],
-    "basis": "global",
-    "anzsic_level": null,
-    "anzsic_codes": [],
-    "sample_size": 138,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-01058": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      16,
-      24
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "2462",
-      "5420"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-01061": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      16,
-      22
-    ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "24"
-    ],
-    "sample_size": 12,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-01064": {
+  "MN-01071": {
     "expected_business_days": 16,
     "range_business_days": [
       15,
       19
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "1916",
-      "6419"
-    ],
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 3,
     "sample_size": 8,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-01068": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      15,
-      21
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "4110",
-      "4123",
-      "6712"
-    ],
-    "sample_size": 11,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-01069": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      16,
-      25
-    ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "11",
-      "36",
-      "69"
-    ],
-    "sample_size": 23,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-01071": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      17,
-      26
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "3493",
-      "5809",
-      "7000"
-    ],
-    "sample_size": 15,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "as_of": "2025-12-22",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-01072": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 12,
+    "sample_size": 58,
+    "as_of": "2026-04-27",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-01074": {
     "expected_business_days": 16,
     "range_business_days": [
       15,
-      18
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "group",
-    "anzsic_codes": [
-      "310",
-      "692"
-    ],
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 6,
     "sample_size": 8,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-01074": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      17,
-      21
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "5420",
-      "7000"
-    ],
-    "sample_size": 19,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "as_of": "2026-01-20",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-01075": {
     "expected_business_days": 16,
@@ -228,227 +48,209 @@
       15,
       19
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "6910",
-      "6925"
-    ],
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 3,
     "sample_size": 8,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "as_of": "2026-01-16",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-01080": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      16,
-      21
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "F"
-    ],
-    "sample_size": 21,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-01083": {
     "expected_business_days": 16,
     "range_business_days": [
       15,
       19
     ],
-    "basis": "industry",
-    "anzsic_level": "group",
-    "anzsic_codes": [
-      "191",
-      "203"
-    ],
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 3,
     "sample_size": 8,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "as_of": "2026-01-15",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
-  "MN-01090": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      16,
-      26
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "4110",
-      "6712",
-      "6720"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-01093": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      16,
-      20
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "F"
-    ],
-    "sample_size": 21,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-01103": {
+  "MN-01083": {
     "expected_business_days": 17,
     "range_business_days": [
       15,
       20
     ],
     "basis": "global",
-    "anzsic_level": null,
-    "anzsic_codes": [],
-    "sample_size": 138,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "question_bucket": null,
+    "question_count": 6,
+    "sample_size": 21,
+    "as_of": "2026-02-25",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
-  "MN-01104": {
-    "expected_business_days": 15,
+  "MN-01090": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      16,
+      18
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 18,
+    "as_of": "2026-03-12",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-01093": {
+    "expected_business_days": 17,
     "range_business_days": [
       15,
-      16
+      18
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "Q"
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 27,
+    "as_of": "2026-03-26",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-01103": {
+    "expected_business_days": 19,
+    "range_business_days": [
+      16,
+      26
     ],
-    "sample_size": 10,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "6-9",
+    "question_count": 8,
+    "sample_size": 8,
+    "as_of": "2026-06-18",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-01104": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 80,
+    "as_of": "2026-06-19",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-01105": {
+    "expected_business_days": 26,
+    "range_business_days": [
+      19,
+      29
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "10 or more",
+    "question_count": 10,
+    "sample_size": 14,
+    "as_of": "2026-07-10",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-01106": {
+    "expected_business_days": 18,
+    "range_business_days": [
+      15,
+      22
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 4,
+    "sample_size": 10,
+    "as_of": "2026-06-26",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-01107": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      18
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 86,
+    "as_of": "2026-06-26",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-01109": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      18
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 103,
+    "as_of": "2026-07-17",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-01115": {
+    "expected_business_days": 18,
+    "range_business_days": [
+      16,
+      24
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 4,
+    "sample_size": 14,
+    "as_of": "2026-07-29",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-01116": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 116,
+    "as_of": "2026-07-30",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-01122": {
     "expected_business_days": 17,
     "range_business_days": [
       15,
       19
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "C",
-      "E"
-    ],
-    "sample_size": 46,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-01106": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      16,
-      26
-    ],
-    "basis": "industry",
-    "anzsic_level": "group",
-    "anzsic_codes": [
-      "244",
-      "349"
-    ],
-    "sample_size": 8,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-01107": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      16,
-      27
-    ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "69"
-    ],
-    "sample_size": 19,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-01109": {
-    "expected_business_days": 17,
-    "range_business_days": [
-      15,
-      20
-    ],
-    "basis": "global",
-    "anzsic_level": null,
-    "anzsic_codes": [],
-    "sample_size": 140,
-    "estimated_at": "2026-07-20",
-    "method_version": 1
-  },
-  "MN-01115": {
-    "expected_business_days": 20,
-    "range_business_days": [
-      16,
-      24
-    ],
-    "basis": "industry",
-    "anzsic_level": "group",
-    "anzsic_codes": [
-      "349"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-30",
-    "method_version": 1
-  },
-  "MN-01116": {
-    "expected_business_days": 24,
-    "range_business_days": [
-      17,
-      28
-    ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "46",
-      "52"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-31",
-    "method_version": 1
-  },
-  "MN-01122": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      16,
-      21
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "2921",
-      "6240",
-      "7312"
-    ],
-    "sample_size": 18,
-    "estimated_at": "2026-09-07",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 143,
+    "as_of": "2026-09-04",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-05004": {
     "expected_business_days": 17,
     "range_business_days": [
-      15,
+      16,
       20
     ],
-    "basis": "global",
-    "anzsic_level": null,
-    "anzsic_codes": [],
-    "sample_size": 138,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 20,
+    "as_of": "2026-03-14",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-05009": {
     "expected_business_days": 16,
@@ -456,120 +258,111 @@
       15,
       18
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "6240",
-      "8512"
-    ],
-    "sample_size": 8,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 43,
+    "as_of": "2026-04-27",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-05012": {
-    "expected_business_days": 18,
+    "expected_business_days": 16,
     "range_business_days": [
-      16,
-      26
+      15,
+      18
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "G"
-    ],
-    "sample_size": 14,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 28,
+    "as_of": "2026-03-31",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-05013": {
     "expected_business_days": 17,
     "range_business_days": [
       15,
-      18
-    ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "05",
-      "18"
-    ],
-    "sample_size": 8,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-05014": {
-    "expected_business_days": 15,
-    "range_business_days": [
-      15,
-      16
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "Q"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-05017": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      16,
-      26
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "G"
-    ],
-    "sample_size": 14,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-05025": {
-    "expected_business_days": 17,
-    "range_business_days": [
-      15,
-      20
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "C",
-      "E"
-    ],
-    "sample_size": 45,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-05027": {
-    "expected_business_days": 17,
-    "range_business_days": [
-      16,
       20
     ],
     "basis": "global",
-    "anzsic_level": null,
-    "anzsic_codes": [],
-    "sample_size": 157,
-    "estimated_at": "2026-07-28",
-    "method_version": 1
+    "question_bucket": null,
+    "question_count": 7,
+    "sample_size": 74,
+    "as_of": "2026-05-12",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
-  "MN-05030": {
+  "MN-05014": {
     "expected_business_days": 17,
     "range_business_days": [
       15,
-      27
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "41"
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 63,
+    "as_of": "2026-05-26",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-05017": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      20
     ],
-    "sample_size": 8,
-    "estimated_at": "2026-07-24",
-    "method_version": 1
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 8,
+    "sample_size": 74,
+    "as_of": "2026-05-12",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-05025": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 66,
+    "as_of": "2026-06-09",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-05027": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 115,
+    "as_of": "2026-07-28",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-05030": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 112,
+    "as_of": "2026-07-24",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-05031": {
     "expected_business_days": 16,
@@ -577,29 +370,27 @@
       15,
       18
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "E"
-    ],
-    "sample_size": 10,
-    "estimated_at": "2026-07-27",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 113,
+    "as_of": "2026-07-27",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-05032": {
-    "expected_business_days": 17,
+    "expected_business_days": 16,
     "range_business_days": [
-      16,
-      21
+      15,
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "24"
-    ],
-    "sample_size": 13,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 96,
+    "as_of": "2026-07-08",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-05036": {
     "expected_business_days": 16,
@@ -607,521 +398,433 @@
       15,
       18
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "1841",
-      "6910"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-22",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 103,
+    "as_of": "2026-07-21",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-05043": {
     "expected_business_days": 17,
     "range_business_days": [
-      16,
+      15,
       19
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "5921",
-      "6240",
-      "6940",
-      "6950",
-      "7000"
-    ],
-    "sample_size": 29,
-    "estimated_at": "2026-08-14",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 121,
+    "as_of": "2026-08-13",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-05044": {
-    "expected_business_days": 17,
-    "range_business_days": [
-      15,
-      20
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "B",
-      "C"
-    ],
-    "sample_size": 54,
-    "estimated_at": "2026-08-10",
-    "method_version": 1
-  },
-  "MN-05046": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      16,
-      22
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "3019",
-      "3020",
-      "3211",
-      "4110",
-      "4122",
-      "4279",
-      "6711",
-      "6712"
-    ],
-    "sample_size": 17,
-    "estimated_at": "2026-08-19",
-    "method_version": 1
-  },
-  "MN-10001": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      17,
-      24
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "5420",
-      "7000"
-    ],
-    "sample_size": 19,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-10005": {
     "expected_business_days": 16,
     "range_business_days": [
       15,
       19
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "6419",
-      "6420"
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 119,
+    "as_of": "2026-08-10",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-05046": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
     ],
-    "sample_size": 8,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 127,
+    "as_of": "2026-08-19",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-10001": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      26
+    ],
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 14,
+    "sample_size": 12,
+    "as_of": "2026-02-04",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-10005": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      18
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 14,
+    "as_of": "2026-02-17",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-10006": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      18
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 10,
+    "as_of": "2026-02-06",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-10007": {
     "expected_business_days": 17,
     "range_business_days": [
       15,
       20
     ],
     "basis": "global",
-    "anzsic_level": null,
-    "anzsic_codes": [],
-    "sample_size": 138,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-10007": {
-    "expected_business_days": 21,
-    "range_business_days": [
-      16,
-      28
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "I"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "question_bucket": null,
+    "question_count": 7,
+    "sample_size": 69,
+    "as_of": "2026-05-06",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-10012": {
-    "expected_business_days": 20,
+    "expected_business_days": 16,
     "range_business_days": [
-      16,
-      28
+      15,
+      18
     ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "52",
-      "67"
-    ],
-    "sample_size": 10,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 43,
+    "as_of": "2026-04-21",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-10013": {
-    "expected_business_days": 18,
+    "expected_business_days": 16,
     "range_business_days": [
-      17,
-      24
+      15,
+      18
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "7000"
-    ],
-    "sample_size": 14,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 41,
+    "as_of": "2026-04-17",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-10018": {
-    "expected_business_days": 20,
-    "range_business_days": [
-      17,
-      25
-    ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "20",
-      "33",
-      "42"
-    ],
-    "sample_size": 8,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-10021": {
     "expected_business_days": 16,
     "range_business_days": [
       15,
       19
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "E",
-      "N"
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 74,
+    "as_of": "2026-06-15",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-10021": {
+    "expected_business_days": 18,
+    "range_business_days": [
+      15,
+      29
     ],
-    "sample_size": 12,
-    "estimated_at": "2026-07-23",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 4,
+    "sample_size": 11,
+    "as_of": "2026-07-22",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-10022": {
-    "expected_business_days": 18,
+    "expected_business_days": 20,
     "range_business_days": [
       16,
-      26
+      27
     ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "06",
-      "21",
-      "26",
-      "69"
-    ],
-    "sample_size": 28,
-    "estimated_at": "2026-07-31",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "6-9",
+    "question_count": 6,
+    "sample_size": 11,
+    "as_of": "2026-07-30",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-10027": {
-    "expected_business_days": 18,
+    "expected_business_days": 17,
     "range_business_days": [
-      16,
-      22
+      15,
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "1214",
-      "3606",
-      "4123",
-      "4520",
-      "6712"
-    ],
-    "sample_size": 12,
-    "estimated_at": "2026-08-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 122,
+    "as_of": "2026-08-14",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-10028": {
     "expected_business_days": 17,
     "range_business_days": [
-      16,
+      15,
       19
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "3711",
-      "3712",
-      "4214",
-      "4251",
-      "6240"
-    ],
-    "sample_size": 17,
-    "estimated_at": "2026-09-03",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 143,
+    "as_of": "2026-09-02",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-10030": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 129,
+    "as_of": "2026-08-21",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-15002": {
     "expected_business_days": 16,
     "range_business_days": [
       15,
-      17
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "1899",
-      "6240",
-      "6910"
-    ],
-    "sample_size": 19,
-    "estimated_at": "2026-08-24",
-    "method_version": 1
-  },
-  "MN-15002": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      16,
-      22
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "5420",
-      "5700",
-      "5910",
-      "5921",
-      "5922",
-      "6940",
-      "7000"
-    ],
-    "sample_size": 21,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 11,
+    "sample_size": 8,
+    "as_of": "2026-01-09",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-15005": {
-    "expected_business_days": 18,
+    "expected_business_days": 16,
     "range_business_days": [
-      16,
-      24
+      15,
+      18
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "J"
-    ],
-    "sample_size": 19,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 14,
+    "as_of": "2026-02-23",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-15011": {
     "expected_business_days": 16,
     "range_business_days": [
       15,
-      17
+      18
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "2412",
-      "2419",
-      "3491",
-      "6910"
-    ],
-    "sample_size": 10,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 30,
+    "as_of": "2026-04-02",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-15013": {
-    "expected_business_days": 20,
+    "expected_business_days": 16,
     "range_business_days": [
-      16,
-      28
+      15,
+      18
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "H",
-      "I",
-      "R"
-    ],
-    "sample_size": 13,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 31,
+    "as_of": "2026-04-07",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-15015": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 51,
+    "as_of": "2026-05-06",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-15018": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 74,
+    "as_of": "2026-06-16",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-15019": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      18
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 61,
+    "as_of": "2026-05-20",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-15027": {
     "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 93,
+    "as_of": "2026-07-03",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-15028": {
+    "expected_business_days": 19,
     "range_business_days": [
       16,
       26
     ],
-    "basis": "industry",
-    "anzsic_level": "group",
-    "anzsic_codes": [
-      "241",
-      "349",
-      "771"
-    ],
+    "basis": "questionnaire",
+    "question_bucket": "6-9",
+    "question_count": 7,
     "sample_size": 8,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "as_of": "2026-07-15",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
-  "MN-15018": {
-    "expected_business_days": 20,
-    "range_business_days": [
-      16,
-      25
-    ],
-    "basis": "industry",
-    "anzsic_level": "group",
-    "anzsic_codes": [
-      "245",
-      "349"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-15019": {
-    "expected_business_days": 15,
-    "range_business_days": [
-      15,
-      17
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "Q"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-15027": {
-    "expected_business_days": 15,
-    "range_business_days": [
-      15,
-      16
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "Q"
-    ],
-    "sample_size": 10,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-15028": {
+  "MN-15030": {
     "expected_business_days": 16,
     "range_business_days": [
       15,
-      20
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "D",
-      "E"
-    ],
-    "sample_size": 12,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-15030": {
-    "expected_business_days": 17,
-    "range_business_days": [
-      15,
-      21
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "3911",
-      "3912",
-      "3913",
-      "6419",
-      "6611",
-      "9412",
-      "9419"
-    ],
-    "sample_size": 15,
-    "estimated_at": "2026-08-04",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 116,
+    "as_of": "2026-08-03",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-15031": {
-    "expected_business_days": 18,
+    "expected_business_days": 16,
     "range_business_days": [
-      16,
-      22
+      15,
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "group",
-    "anzsic_codes": [
-      "241",
-      "349",
-      "852"
-    ],
-    "sample_size": 10,
-    "estimated_at": "2026-08-06",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 117,
+    "as_of": "2026-08-05",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-15034": {
     "expected_business_days": 16,
     "range_business_days": [
       15,
-      20
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "4123",
-      "4400",
-      "4511",
-      "4520"
-    ],
-    "sample_size": 8,
-    "estimated_at": "2026-08-07",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 118,
+    "as_of": "2026-08-06",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-20009": {
-    "expected_business_days": 19,
-    "range_business_days": [
-      16,
-      27
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "5420"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-20011": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      17,
-      24
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "7000"
-    ],
-    "sample_size": 14,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-20012": {
     "expected_business_days": 17,
     "range_business_days": [
+      16,
+      18
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 18,
+    "as_of": "2026-03-11",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-20011": {
+    "expected_business_days": 16,
+    "range_business_days": [
       15,
-      20
+      18
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "A",
-      "C"
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 26,
+    "as_of": "2026-03-24",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-20012": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      18
     ],
-    "sample_size": 41,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 43,
+    "as_of": "2026-04-24",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-20013": {
     "expected_business_days": 16,
@@ -1129,230 +832,209 @@
       15,
       18
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "1841",
-      "6910"
-    ],
-    "sample_size": 8,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 32,
+    "as_of": "2026-04-08",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-20014": {
-    "expected_business_days": 16,
-    "range_business_days": [
-      15,
-      20
-    ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "62"
-    ],
-    "sample_size": 10,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-20017": {
-    "expected_business_days": 17,
-    "range_business_days": [
-      16,
-      20
-    ],
-    "basis": "industry",
-    "anzsic_level": "group",
-    "anzsic_codes": [
-      "349",
-      "853"
-    ],
-    "sample_size": 11,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-20018": {
-    "expected_business_days": 21,
-    "range_business_days": [
-      16,
-      28
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "I"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-20023": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      16,
-      24
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "J"
-    ],
-    "sample_size": 19,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-20034": {
-    "expected_business_days": 21,
-    "range_business_days": [
-      16,
-      29
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "B"
-    ],
-    "sample_size": 8,
-    "estimated_at": "2026-08-19",
-    "method_version": 1
-  },
-  "MN-25002": {
-    "expected_business_days": 16,
-    "range_business_days": [
-      15,
-      18
-    ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "31",
-      "32"
-    ],
-    "sample_size": 8,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-25004": {
-    "expected_business_days": 19,
-    "range_business_days": [
-      16,
-      27
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "5420"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-25006": {
-    "expected_business_days": 16,
-    "range_business_days": [
-      16,
-      20
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "1911",
-      "2469",
-      "6240"
-    ],
-    "sample_size": 10,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-25018": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      16,
-      24
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "J"
-    ],
-    "sample_size": 19,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-25019": {
     "expected_business_days": 17,
     "range_business_days": [
       15,
       20
     ],
     "basis": "global",
-    "anzsic_level": null,
-    "anzsic_codes": [],
-    "sample_size": 139,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "question_bucket": null,
+    "question_count": null,
+    "sample_size": 85,
+    "as_of": "2026-06-03",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
-  "MN-25021": {
-    "expected_business_days": 17,
+  "MN-20017": {
+    "expected_business_days": 16,
     "range_business_days": [
-      17,
-      24
+      15,
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "5921",
-      "7000"
-    ],
-    "sample_size": 15,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 99,
+    "as_of": "2026-07-13",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
-  "MN-25026": {
+  "MN-20018": {
     "expected_business_days": 17,
     "range_business_days": [
       15,
       20
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "C"
-    ],
-    "sample_size": 40,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 6,
+    "sample_size": 90,
+    "as_of": "2026-06-05",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
-  "MN-25029": {
+  "MN-20023": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 63,
+    "as_of": "2026-06-02",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-20034": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 124,
+    "as_of": "2026-08-18",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-25002": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      24
+    ],
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 4,
+    "sample_size": 9,
+    "as_of": "2026-01-23",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-25004": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      20
+    ],
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 13,
+    "sample_size": 17,
+    "as_of": "2026-02-13",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-25006": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      16,
+      18
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 18,
+    "as_of": "2026-03-12",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-25018": {
     "expected_business_days": 18,
     "range_business_days": [
       16,
       26
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "G"
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 4,
+    "sample_size": 8,
+    "as_of": "2026-05-18",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-25019": {
+    "expected_business_days": 25,
+    "range_business_days": [
+      18,
+      28
     ],
-    "sample_size": 14,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "10 or more",
+    "question_count": 11,
+    "sample_size": 12,
+    "as_of": "2026-06-16",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-25021": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 56,
+    "as_of": "2026-05-12",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-25026": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 62,
+    "as_of": "2026-05-22",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-25029": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 66,
+    "as_of": "2026-06-09",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-25035": {
-    "expected_business_days": 21,
+    "expected_business_days": 20,
     "range_business_days": [
       16,
-      31
+      26
     ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "35",
-      "39",
-      "94"
-    ],
-    "sample_size": 10,
-    "estimated_at": "2026-09-03",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "6-9",
+    "question_count": 8,
+    "sample_size": 20,
+    "as_of": "2026-09-03",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-25037": {
     "expected_business_days": 16,
@@ -1360,128 +1042,111 @@
       15,
       18
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "2394",
-      "6240"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-22",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 103,
+    "as_of": "2026-07-21",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-25040": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      17,
-      20
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "7000",
-      "7299"
-    ],
-    "sample_size": 18,
-    "estimated_at": "2026-08-06",
-    "method_version": 1
-  },
-  "MN-30002": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      16,
-      22
-    ],
-    "basis": "industry",
-    "anzsic_level": "group",
-    "anzsic_codes": [
-      "391",
-      "392",
-      "623",
-      "632",
-      "941"
-    ],
-    "sample_size": 8,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-30003": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      15,
-      23
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "L"
-    ],
-    "sample_size": 10,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-30005": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      17,
-      24
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "5420",
-      "7000"
-    ],
-    "sample_size": 19,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-30008": {
     "expected_business_days": 16,
     "range_business_days": [
-      16,
-      18
+      15,
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "37",
-      "42"
-    ],
-    "sample_size": 8,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 117,
+    "as_of": "2026-08-05",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
-  "MN-30009": {
-    "expected_business_days": 18,
+  "MN-30002": {
+    "expected_business_days": 17,
     "range_business_days": [
       16,
       20
     ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "24",
-      "32"
-    ],
-    "sample_size": 15,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 16,
+    "sample_size": 25,
+    "as_of": "2026-03-05",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
-  "MN-30012": {
-    "expected_business_days": 18,
+  "MN-30003": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      21
+    ],
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 10,
+    "sample_size": 19,
+    "as_of": "2026-02-20",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-30005": {
+    "expected_business_days": 17,
     "range_business_days": [
       16,
-      26
+      20
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "G"
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 20,
+    "as_of": "2026-03-16",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-30008": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      20
     ],
-    "sample_size": 14,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": null,
+    "sample_size": 81,
+    "as_of": "2026-05-19",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-30009": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      18
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 39,
+    "as_of": "2026-04-16",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-30012": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 62,
+    "as_of": "2026-05-22",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-30016": {
     "expected_business_days": 16,
@@ -1489,271 +1154,237 @@
       15,
       19
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "K"
-    ],
-    "sample_size": 20,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 62,
+    "as_of": "2026-05-22",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-30020": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      16,
-      18
-    ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "11",
-      "37"
-    ],
-    "sample_size": 12,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-30022": {
-    "expected_business_days": 16,
-    "range_business_days": [
-      15,
-      18
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "E"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-30023": {
-    "expected_business_days": 17,
-    "range_business_days": [
-      15,
-      20
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "C"
-    ],
-    "sample_size": 41,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-30028": {
-    "expected_business_days": 17,
-    "range_business_days": [
-      16,
-      20
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "5420",
-      "7000"
-    ],
-    "sample_size": 25,
-    "estimated_at": "2026-08-14",
-    "method_version": 1
-  },
-  "MN-30030": {
-    "expected_business_days": 16,
-    "range_business_days": [
-      15,
-      17
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "1841",
-      "6240",
-      "6910"
-    ],
-    "sample_size": 16,
-    "estimated_at": "2026-08-06",
-    "method_version": 1
-  },
-  "MN-35013": {
-    "expected_business_days": 15,
-    "range_business_days": [
-      15,
-      17
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "Q"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-35014": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      17,
-      26
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "4610",
-      "5102",
-      "5412",
-      "6940",
-      "7000"
-    ],
-    "sample_size": 16,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-35017": {
-    "expected_business_days": 22,
-    "range_business_days": [
-      16,
-      28
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "I"
-    ],
-    "sample_size": 10,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-35018": {
     "expected_business_days": 17,
     "range_business_days": [
       15,
       19
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "A",
-      "C"
-    ],
-    "sample_size": 42,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 71,
+    "as_of": "2026-06-11",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
-  "MN-35019": {
+  "MN-30022": {
+    "expected_business_days": 19,
+    "range_business_days": [
+      16,
+      26
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "6-9",
+    "question_count": 6,
+    "sample_size": 8,
+    "as_of": "2026-07-06",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-30023": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      18
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 102,
+    "as_of": "2026-07-16",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-30028": {
+    "expected_business_days": 18,
+    "range_business_days": [
+      16,
+      30
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 4,
+    "sample_size": 18,
+    "as_of": "2026-08-13",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-30030": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 117,
+    "as_of": "2026-08-05",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-35013": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      18
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 34,
+    "as_of": "2026-04-10",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-35014": {
     "expected_business_days": 17,
     "range_business_days": [
       15,
       20
     ],
     "basis": "global",
-    "anzsic_level": null,
-    "anzsic_codes": [],
-    "sample_size": 138,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "question_bucket": null,
+    "question_count": 11,
+    "sample_size": 61,
+    "as_of": "2026-05-04",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-35017": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      18
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 86,
+    "as_of": "2026-06-30",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-35018": {
+    "expected_business_days": 18,
+    "range_business_days": [
+      15,
+      22
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 4,
+    "sample_size": 10,
+    "as_of": "2026-07-01",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-35019": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 63,
+    "as_of": "2026-06-02",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-35029": {
     "expected_business_days": 16,
     "range_business_days": [
-      16,
+      15,
       18
     ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "37",
-      "42"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-22",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 103,
+    "as_of": "2026-07-21",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-35030": {
+    "expected_business_days": 19,
+    "range_business_days": [
+      16,
+      34
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 4,
+    "sample_size": 23,
+    "as_of": "2026-08-31",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-35031": {
+    "expected_business_days": 20,
+    "range_business_days": [
+      16,
+      27
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "6-9",
+    "question_count": 7,
+    "sample_size": 11,
+    "as_of": "2026-08-06",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-35033": {
     "expected_business_days": 16,
     "range_business_days": [
       15,
       19
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "6419"
-    ],
-    "sample_size": 11,
-    "estimated_at": "2026-09-01",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 117,
+    "as_of": "2026-08-04",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
-  "MN-35031": {
+  "MN-35034": {
     "expected_business_days": 16,
     "range_business_days": [
       15,
-      20
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "2499",
-      "3109"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-08-10",
-    "method_version": 1
-  },
-  "MN-35033": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      17,
-      22
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "4511",
-      "4520",
-      "6711",
-      "6712"
-    ],
-    "sample_size": 8,
-    "estimated_at": "2026-08-05",
-    "method_version": 1
-  },
-  "MN-35034": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      16,
-      24
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "5511",
-      "5514",
-      "6240",
-      "6940",
-      "6962",
-      "9139"
-    ],
-    "sample_size": 15,
-    "estimated_at": "2026-08-10",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 118,
+    "as_of": "2026-08-07",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-35038": {
-    "expected_business_days": 19,
+    "expected_business_days": 17,
     "range_business_days": [
-      16,
-      45
+      15,
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "group",
-    "anzsic_codes": [
-      "692"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-08-27",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 134,
+    "as_of": "2026-08-26",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-40005": {
     "expected_business_days": 17,
@@ -1761,32 +1392,27 @@
       15,
       20
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "C"
-    ],
-    "sample_size": 40,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 5,
+    "sample_size": 17,
+    "as_of": "2026-02-18",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-40008": {
-    "expected_business_days": 20,
+    "expected_business_days": 16,
     "range_business_days": [
-      16,
-      27
+      15,
+      18
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "H",
-      "I",
-      "N",
-      "R"
-    ],
-    "sample_size": 14,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 26,
+    "as_of": "2026-03-23",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-40009": {
     "expected_business_days": 16,
@@ -1794,15 +1420,13 @@
       15,
       18
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "1841",
-      "6910"
-    ],
-    "sample_size": 8,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 2,
+    "sample_size": 24,
+    "as_of": "2026-03-19",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-40012": {
     "expected_business_days": 16,
@@ -1810,658 +1434,587 @@
       15,
       18
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "1841",
-      "6910"
-    ],
-    "sample_size": 8,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 39,
+    "as_of": "2026-04-14",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-40013": {
-    "expected_business_days": 15,
+    "expected_business_days": 18,
     "range_business_days": [
       15,
-      16
+      22
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "Q"
-    ],
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 5,
     "sample_size": 10,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "as_of": "2026-06-16",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-40015": {
     "expected_business_days": 16,
     "range_business_days": [
       15,
-      19
+      18
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "K"
-    ],
-    "sample_size": 20,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 34,
+    "as_of": "2026-04-10",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-40017": {
     "expected_business_days": 18,
     "range_business_days": [
-      16,
-      27
+      15,
+      22
     ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "69",
-      "95"
-    ],
-    "sample_size": 19,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 4,
+    "sample_size": 10,
+    "as_of": "2026-07-01",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-40019": {
     "expected_business_days": 16,
     "range_business_days": [
       15,
-      18
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "3720",
-      "6240",
-      "6910"
-    ],
-    "sample_size": 19,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 56,
+    "as_of": "2026-05-12",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-40020": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      15,
-      20
-    ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "01",
-      "11",
-      "36",
-      "67"
-    ],
-    "sample_size": 12,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-40022": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      17,
-      24
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "7000"
-    ],
-    "sample_size": 14,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-40027": {
     "expected_business_days": 17,
     "range_business_days": [
       15,
-      20
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "C"
-    ],
-    "sample_size": 40,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 63,
+    "as_of": "2026-06-04",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
-  "MN-40029": {
-    "expected_business_days": 18,
+  "MN-40022": {
+    "expected_business_days": 16,
     "range_business_days": [
       15,
-      21
+      18
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "4123",
-      "4520",
-      "6712"
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 61,
+    "as_of": "2026-05-19",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-40027": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      19
     ],
-    "sample_size": 10,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 84,
+    "as_of": "2026-06-25",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-40029": {
+    "expected_business_days": 26,
+    "range_business_days": [
+      19,
+      29
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "10 or more",
+    "question_count": 10,
+    "sample_size": 14,
+    "as_of": "2026-07-15",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-40031": {
-    "expected_business_days": 18,
+    "expected_business_days": 16,
     "range_business_days": [
-      17,
-      22
+      15,
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "7000"
-    ],
-    "sample_size": 17,
-    "estimated_at": "2026-07-29",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 115,
+    "as_of": "2026-07-28",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-40034": {
-    "expected_business_days": 19,
+    "expected_business_days": 17,
     "range_business_days": [
-      16,
-      22
+      15,
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "4110",
-      "6711",
-      "6712"
-    ],
-    "sample_size": 15,
-    "estimated_at": "2026-09-04",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 143,
+    "as_of": "2026-09-03",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-40039": {
     "expected_business_days": 17,
     "range_business_days": [
-      16,
-      21
+      15,
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "5420",
-      "6020",
-      "6419"
-    ],
-    "sample_size": 22,
-    "estimated_at": "2026-08-21",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 128,
+    "as_of": "2026-08-20",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-45002": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      16,
-      27
-    ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "43",
-      "69"
-    ],
-    "sample_size": 18,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-45005": {
     "expected_business_days": 17,
     "range_business_days": [
       15,
-      22
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "C",
-      "I"
-    ],
-    "sample_size": 49,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-45006": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      17,
       20
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "5511",
-      "5512",
-      "5514",
-      "5621",
-      "5622",
-      "5921",
-      "6640",
-      "6940",
-      "7000"
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 12,
+    "sample_size": 45,
+    "as_of": "2026-04-03",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-45005": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      18
     ],
-    "sample_size": 18,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 26,
+    "as_of": "2026-03-25",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-45006": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      20
+    ],
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 12,
+    "sample_size": 60,
+    "as_of": "2026-04-29",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-45024": {
     "expected_business_days": 17,
     "range_business_days": [
-      16,
+      15,
       19
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "6240",
-      "7000"
-    ],
-    "sample_size": 26,
-    "estimated_at": "2026-08-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 122,
+    "as_of": "2026-08-15",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-50007": {
-    "expected_business_days": 15,
-    "range_business_days": [
-      15,
-      17
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "Q"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-50008": {
-    "expected_business_days": 18,
+    "expected_business_days": 17,
     "range_business_days": [
       16,
-      24
+      20
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "J"
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 20,
+    "as_of": "2026-03-13",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-50008": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
     ],
-    "sample_size": 19,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 5,
+    "sample_size": 58,
+    "as_of": "2026-04-24",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-50009": {
     "expected_business_days": 18,
     "range_business_days": [
-      16,
-      36
+      15,
+      24
     ],
-    "basis": "industry",
-    "anzsic_level": "group",
-    "anzsic_codes": [
-      "091",
-      "170",
-      "203",
-      "292",
-      "692"
-    ],
-    "sample_size": 13,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 5,
+    "sample_size": 9,
+    "as_of": "2026-05-28",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-50011": {
-    "expected_business_days": 22,
-    "range_business_days": [
-      16,
-      28
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "I"
-    ],
-    "sample_size": 10,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-50012": {
     "expected_business_days": 18,
     "range_business_days": [
       15,
-      40
+      22
     ],
-    "basis": "industry",
-    "anzsic_level": "group",
-    "anzsic_codes": [
-      "170",
-      "310"
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 5,
+    "sample_size": 10,
+    "as_of": "2026-07-01",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-50012": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      18
     ],
-    "sample_size": 8,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 24,
+    "as_of": "2026-03-18",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-50015": {
     "expected_business_days": 16,
     "range_business_days": [
       15,
-      19
+      18
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "6419"
-    ],
-    "sample_size": 8,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 58,
+    "as_of": "2026-05-15",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-50019": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      16,
-      26
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "G"
-    ],
-    "sample_size": 14,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-50021": {
     "expected_business_days": 17,
     "range_business_days": [
       15,
-      20
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "C"
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 63,
+    "as_of": "2026-06-04",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-50021": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      19
     ],
-    "sample_size": 40,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 76,
+    "as_of": "2026-06-17",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-50022": {
     "expected_business_days": 17,
     "range_business_days": [
       15,
-      20
+      19
     ],
-    "basis": "global",
-    "anzsic_level": null,
-    "anzsic_codes": [],
-    "sample_size": 138,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 71,
+    "as_of": "2026-06-11",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-50024": {
-    "expected_business_days": 17,
+    "expected_business_days": 16,
     "range_business_days": [
       15,
-      20
+      18
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "C"
-    ],
-    "sample_size": 41,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 82,
+    "as_of": "2026-06-24",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-50025": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      16,
-      23
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "J"
-    ],
-    "sample_size": 20,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-50026": {
-    "expected_business_days": 15,
+    "expected_business_days": 16,
     "range_business_days": [
       15,
-      16
+      18
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "Q"
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 86,
+    "as_of": "2026-06-29",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-50026": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      18
     ],
-    "sample_size": 10,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 86,
+    "as_of": "2026-06-29",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-50027": {
-    "expected_business_days": 18,
+    "expected_business_days": 16,
     "range_business_days": [
-      16,
-      26
+      15,
+      18
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "G"
-    ],
-    "sample_size": 14,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 81,
+    "as_of": "2026-06-22",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-50030": {
     "expected_business_days": 16,
     "range_business_days": [
       15,
-      18
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "E"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 88,
+    "as_of": "2026-07-01",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-50032": {
     "expected_business_days": 18,
     "range_business_days": [
-      17,
-      20
+      16,
+      24
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "6962",
-      "7000"
-    ],
-    "sample_size": 18,
-    "estimated_at": "2026-07-30",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 4,
+    "sample_size": 14,
+    "as_of": "2026-07-29",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-50035": {
-    "expected_business_days": 15,
-    "range_business_days": [
-      15,
-      18
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "Q"
-    ],
-    "sample_size": 13,
-    "estimated_at": "2026-08-13",
-    "method_version": 1
-  },
-  "MN-55003": {
-    "expected_business_days": 16,
+    "expected_business_days": 17,
     "range_business_days": [
       15,
       19
     ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "31",
-      "32"
-    ],
-    "sample_size": 8,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 121,
+    "as_of": "2026-08-12",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
-  "MN-55006": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      17,
-      24
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "7000"
-    ],
-    "sample_size": 14,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-55010": {
-    "expected_business_days": 15,
+  "MN-55003": {
+    "expected_business_days": 17,
     "range_business_days": [
       15,
-      16
+      28
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "Q"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 4,
+    "sample_size": 11,
+    "as_of": "2026-02-03",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
-  "MN-55012": {
+  "MN-55006": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      18
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 14,
+    "as_of": "2026-02-19",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-55010": {
     "expected_business_days": 17,
     "range_business_days": [
       15,
       20
     ],
     "basis": "global",
-    "anzsic_level": null,
-    "anzsic_codes": [],
-    "sample_size": 138,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "question_bucket": null,
+    "question_count": 4,
+    "sample_size": 39,
+    "as_of": "2026-03-27",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
-  "MN-55013": {
-    "expected_business_days": 20,
+  "MN-55012": {
+    "expected_business_days": 17,
     "range_business_days": [
       16,
-      26
+      18
     ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "34"
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 17,
+    "as_of": "2026-03-10",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-55013": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      18
     ],
-    "sample_size": 8,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 36,
+    "as_of": "2026-04-13",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-55016": {
     "expected_business_days": 16,
     "range_business_days": [
       15,
-      19
+      18
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "K"
-    ],
-    "sample_size": 20,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 43,
+    "as_of": "2026-04-21",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-55029": {
-    "expected_business_days": 15,
+    "expected_business_days": 20,
+    "range_business_days": [
+      16,
+      27
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "6-9",
+    "question_count": 7,
+    "sample_size": 11,
+    "as_of": "2026-07-24",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-55031": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 117,
+    "as_of": "2026-08-05",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-60004": {
+    "expected_business_days": 16,
     "range_business_days": [
       15,
       18
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "Q"
-    ],
-    "sample_size": 12,
-    "estimated_at": "2026-07-27",
-    "method_version": 1
-  },
-  "MN-55031": {
-    "expected_business_days": 17,
-    "range_business_days": [
-      15,
-      20
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "C",
-      "F"
-    ],
-    "sample_size": 58,
-    "estimated_at": "2026-08-06",
-    "method_version": 1
-  },
-  "MN-60004": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      16,
-      21
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "F"
-    ],
-    "sample_size": 21,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 15,
+    "as_of": "2026-02-26",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-60007": {
     "expected_business_days": 17,
     "range_business_days": [
       15,
-      20
+      21
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "A",
-      "C"
-    ],
-    "sample_size": 41,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 10,
+    "sample_size": 19,
+    "as_of": "2026-02-20",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-60011": {
     "expected_business_days": 17,
@@ -2469,15 +2022,13 @@
       15,
       19
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "B",
-      "C"
-    ],
-    "sample_size": 44,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 15,
+    "sample_size": 58,
+    "as_of": "2026-04-28",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-60014": {
     "expected_business_days": 16,
@@ -2485,1210 +2036,1049 @@
       15,
       18
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "1841",
-      "6910"
-    ],
-    "sample_size": 8,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 43,
+    "as_of": "2026-04-22",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-60015": {
-    "expected_business_days": 17,
-    "range_business_days": [
-      15,
-      20
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "C"
-    ],
-    "sample_size": 40,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-60022": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      17,
-      24
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "5420",
-      "7000"
-    ],
-    "sample_size": 19,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-60025": {
-    "expected_business_days": 15,
-    "range_business_days": [
-      15,
-      23
-    ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "32",
-      "66"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-60026": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      17,
-      23
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "5921",
-      "6940",
-      "6950",
-      "7000"
-    ],
-    "sample_size": 20,
-    "estimated_at": "2026-07-28",
-    "method_version": 1
-  },
-  "MN-60030": {
-    "expected_business_days": 17,
-    "range_business_days": [
-      16,
-      19
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "6240",
-      "7000"
-    ],
-    "sample_size": 27,
-    "estimated_at": "2026-08-21",
-    "method_version": 1
-  },
-  "MN-60031": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      17,
-      20
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "6962",
-      "7000"
-    ],
-    "sample_size": 18,
-    "estimated_at": "2026-07-30",
-    "method_version": 1
-  },
-  "MN-60035": {
-    "expected_business_days": 17,
-    "range_business_days": [
-      16,
-      19
-    ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "37"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-08-19",
-    "method_version": 1
-  },
-  "MN-65005": {
     "expected_business_days": 16,
     "range_business_days": [
       15,
       18
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "K"
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 61,
+    "as_of": "2026-05-21",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-60022": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      18
     ],
-    "sample_size": 20,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 82,
+    "as_of": "2026-06-23",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-60025": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      18
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 102,
+    "as_of": "2026-07-16",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-60026": {
+    "expected_business_days": 20,
+    "range_business_days": [
+      16,
+      27
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "6-9",
+    "question_count": 8,
+    "sample_size": 11,
+    "as_of": "2026-07-27",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-60030": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 128,
+    "as_of": "2026-08-20",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-60031": {
+    "expected_business_days": 18,
+    "range_business_days": [
+      16,
+      24
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 4,
+    "sample_size": 14,
+    "as_of": "2026-07-29",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-60035": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 127,
+    "as_of": "2026-08-19",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-65005": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      22
+    ],
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 5,
+    "sample_size": 22,
+    "as_of": "2026-03-03",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-65007": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      18
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 14,
+    "as_of": "2026-02-23",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-65008": {
     "expected_business_days": 17,
     "range_business_days": [
       15,
       20
     ],
     "basis": "global",
-    "anzsic_level": null,
-    "anzsic_codes": [],
-    "sample_size": 138,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-65008": {
-    "expected_business_days": 16,
-    "range_business_days": [
-      15,
-      18
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "6411",
-      "6419"
-    ],
-    "sample_size": 8,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "question_bucket": null,
+    "question_count": 5,
+    "sample_size": 45,
+    "as_of": "2026-04-07",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-65009": {
     "expected_business_days": 16,
     "range_business_days": [
       15,
-      17
+      18
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "1841",
-      "6240",
-      "6419",
-      "7220"
-    ],
-    "sample_size": 20,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 24,
+    "as_of": "2026-03-18",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-65016": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 56,
+    "as_of": "2026-05-12",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-65020": {
+    "expected_business_days": 18,
+    "range_business_days": [
+      15,
+      22
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 4,
+    "sample_size": 10,
+    "as_of": "2026-06-22",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-65021": {
     "expected_business_days": 18,
     "range_business_days": [
       16,
       27
     ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "69"
-    ],
-    "sample_size": 18,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 4,
+    "sample_size": 16,
+    "as_of": "2026-08-06",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
-  "MN-65020": {
-    "expected_business_days": 17,
-    "range_business_days": [
-      15,
-      20
-    ],
-    "basis": "global",
-    "anzsic_level": null,
-    "anzsic_codes": [],
-    "sample_size": 139,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-65021": {
+  "MN-65022": {
     "expected_business_days": 16,
     "range_business_days": [
       15,
-      17
+      18
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "1831",
-      "3019",
-      "3020",
-      "4222",
-      "4231",
-      "4260",
-      "4271",
-      "4272",
-      "6240"
-    ],
-    "sample_size": 11,
-    "estimated_at": "2026-08-07",
-    "method_version": 1
-  },
-  "MN-65022": {
-    "expected_business_days": 22,
-    "range_business_days": [
-      16,
-      28
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "I"
-    ],
-    "sample_size": 10,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 86,
+    "as_of": "2026-06-29",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-65023": {
     "expected_business_days": 16,
     "range_business_days": [
       15,
-      20
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "26",
-      "32"
-    ],
-    "sample_size": 8,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 98,
+    "as_of": "2026-07-10",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-65026": {
-    "expected_business_days": 21,
-    "range_business_days": [
-      18,
-      22
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "3911",
-      "3921",
-      "6712",
-      "9412",
-      "9419"
-    ],
-    "sample_size": 11,
-    "estimated_at": "2026-07-22",
-    "method_version": 1
-  },
-  "MN-65028": {
-    "expected_business_days": 17,
-    "range_business_days": [
-      16,
-      21
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "4279",
-      "5420",
-      "6419"
-    ],
-    "sample_size": 19,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-65031": {
     "expected_business_days": 20,
     "range_business_days": [
       16,
-      25
+      27
     ],
-    "basis": "industry",
-    "anzsic_level": "group",
-    "anzsic_codes": [
-      "349"
-    ],
-    "sample_size": 10,
-    "estimated_at": "2026-08-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "6-9",
+    "question_count": 8,
+    "sample_size": 11,
+    "as_of": "2026-07-22",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
-  "MN-70005": {
+  "MN-65028": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 96,
+    "as_of": "2026-07-09",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-65031": {
     "expected_business_days": 17,
     "range_business_days": [
-      16,
-      20
+      15,
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "24",
-      "37"
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 122,
+    "as_of": "2026-08-14",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-70005": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      18
     ],
-    "sample_size": 19,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 10,
+    "as_of": "2026-02-09",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-70012": {
     "expected_business_days": 17,
     "range_business_days": [
-      16,
-      25
+      15,
+      20
     ],
-    "basis": "industry",
-    "anzsic_level": "group",
-    "anzsic_codes": [
-      "310",
-      "692",
-      "696"
-    ],
-    "sample_size": 10,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 8,
+    "sample_size": 74,
+    "as_of": "2026-05-12",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-70013": {
-    "expected_business_days": 24,
+    "expected_business_days": 16,
     "range_business_days": [
-      18,
-      28
+      15,
+      18
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "I"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 39,
+    "as_of": "2026-04-15",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-70014": {
     "expected_business_days": 16,
     "range_business_days": [
       15,
-      16
+      18
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "6240",
-      "9412"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 39,
+    "as_of": "2026-04-16",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-70018": {
-    "expected_business_days": 17,
+    "expected_business_days": 16,
     "range_business_days": [
       15,
-      20
+      18
     ],
-    "basis": "global",
-    "anzsic_level": null,
-    "anzsic_codes": [],
-    "sample_size": 138,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 58,
+    "as_of": "2026-05-18",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-70020": {
     "expected_business_days": 18,
     "range_business_days": [
-      16,
-      27
+      15,
+      24
     ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "69"
-    ],
-    "sample_size": 19,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 4,
+    "sample_size": 9,
+    "as_of": "2026-06-02",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-70022": {
-    "expected_business_days": 18,
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      18
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 82,
+    "as_of": "2026-06-23",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-70026": {
+    "expected_business_days": 19,
     "range_business_days": [
       16,
       26
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "G"
-    ],
-    "sample_size": 14,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-70026": {
-    "expected_business_days": 17,
-    "range_business_days": [
-      15,
-      20
-    ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "18",
-      "23",
-      "24"
-    ],
-    "sample_size": 21,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "6-9",
+    "question_count": 6,
+    "sample_size": 8,
+    "as_of": "2026-07-15",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-70027": {
     "expected_business_days": 16,
     "range_business_days": [
       15,
-      20
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "2439",
-      "2619",
-      "2630",
-      "3109",
-      "6240"
-    ],
-    "sample_size": 17,
-    "estimated_at": "2026-07-31",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 116,
+    "as_of": "2026-07-30",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-70030": {
+    "expected_business_days": 18,
+    "range_business_days": [
+      16,
+      27
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 4,
+    "sample_size": 16,
+    "as_of": "2026-08-10",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-75002": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 3,
+    "sample_size": 8,
+    "as_of": "2026-01-19",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-75003": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 6,
+    "sample_size": 8,
+    "as_of": "2026-01-21",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-75004": {
     "expected_business_days": 16,
     "range_business_days": [
       15,
       18
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "6240",
-      "6330",
-      "6711"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-08-11",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 10,
+    "as_of": "2026-02-05",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
-  "MN-75002": {
-    "expected_business_days": 15,
+  "MN-75009": {
+    "expected_business_days": 16,
     "range_business_days": [
       15,
-      17
+      18
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "Q"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 14,
+    "as_of": "2026-02-17",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
-  "MN-75003": {
-    "expected_business_days": 15,
+  "MN-75012": {
+    "expected_business_days": 16,
     "range_business_days": [
       15,
-      17
+      18
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "Q"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 24,
+    "as_of": "2026-03-19",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
-  "MN-75004": {
+  "MN-75014": {
     "expected_business_days": 17,
     "range_business_days": [
       15,
       20
     ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "17",
-      "18",
-      "24"
-    ],
-    "sample_size": 22,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-75009": {
-    "expected_business_days": 17,
-    "range_business_days": [
-      16,
-      19
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "6419",
-      "6712",
-      "6720"
-    ],
-    "sample_size": 13,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-75012": {
-    "expected_business_days": 15,
-    "range_business_days": [
-      15,
-      17
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "Q"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-75014": {
-    "expected_business_days": 17,
-    "range_business_days": [
-      16,
-      21
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "5420",
-      "6240",
-      "6962"
-    ],
-    "sample_size": 17,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 8,
+    "sample_size": 74,
+    "as_of": "2026-05-12",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-75016": {
-    "expected_business_days": 21,
-    "range_business_days": [
-      16,
-      28
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "I"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-75018": {
     "expected_business_days": 17,
     "range_business_days": [
       15,
       19
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "C"
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 11,
+    "sample_size": 58,
+    "as_of": "2026-04-28",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-75018": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      18
     ],
-    "sample_size": 40,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 44,
+    "as_of": "2026-05-04",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-75023": {
-    "expected_business_days": 18,
+    "expected_business_days": 16,
     "range_business_days": [
-      16,
-      24
+      15,
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "J"
-    ],
-    "sample_size": 19,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 79,
+    "as_of": "2026-06-18",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-75027": {
-    "expected_business_days": 18,
+    "expected_business_days": 16,
     "range_business_days": [
-      17,
-      26
+      15,
+      18
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "1090",
-      "5921",
-      "6923",
-      "6925",
-      "7000"
-    ],
-    "sample_size": 22,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 86,
+    "as_of": "2026-06-30",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-75029": {
     "expected_business_days": 16,
     "range_business_days": [
       15,
-      20
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "2469",
-      "3499",
-      "6419",
-      "9422"
-    ],
-    "sample_size": 16,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 96,
+    "as_of": "2026-07-08",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-75035": {
-    "expected_business_days": 16,
+    "expected_business_days": 18,
     "range_business_days": [
-      15,
-      18
+      16,
+      27
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "3019",
-      "3020",
-      "6240"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-08-05",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 4,
+    "sample_size": 16,
+    "as_of": "2026-08-05",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-75036": {
-    "expected_business_days": 16,
+    "expected_business_days": 18,
+    "range_business_days": [
+      16,
+      33
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 4,
+    "sample_size": 20,
+    "as_of": "2026-08-25",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-75041": {
+    "expected_business_days": 17,
     "range_business_days": [
       15,
       19
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "6240",
-      "6720"
-    ],
-    "sample_size": 12,
-    "estimated_at": "2026-08-26",
-    "method_version": 1
-  },
-  "MN-75041": {
-    "expected_business_days": 19,
-    "range_business_days": [
-      16,
-      44
-    ],
-    "basis": "industry",
-    "anzsic_level": "group",
-    "anzsic_codes": [
-      "241",
-      "692"
-    ],
-    "sample_size": 11,
-    "estimated_at": "2026-08-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 122,
+    "as_of": "2026-08-14",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-75044": {
     "expected_business_days": 17,
     "range_business_days": [
       15,
-      20
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "C"
-    ],
-    "sample_size": 53,
-    "estimated_at": "2026-08-21",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 128,
+    "as_of": "2026-08-20",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-75054": {
-    "expected_business_days": 19,
-    "range_business_days": [
-      16,
-      23
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "6240",
-      "6940"
-    ],
-    "sample_size": 20,
-    "estimated_at": "2026-09-02",
-    "method_version": 1
-  },
-  "MN-80002": {
     "expected_business_days": 17,
     "range_business_days": [
-      16,
-      20
+      15,
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "2421",
-      "6240",
-      "7000"
-    ],
-    "sample_size": 22,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 143,
+    "as_of": "2026-09-02",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
-  "MN-80004": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      16,
-      21
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "F"
-    ],
-    "sample_size": 21,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-80005": {
+  "MN-80002": {
     "expected_business_days": 16,
     "range_business_days": [
-      16,
+      15,
       18
     ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "15",
-      "37"
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 10,
+    "as_of": "2026-02-06",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-80004": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      18
     ],
-    "sample_size": 8,
-    "estimated_at": "2026-07-29",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 14,
+    "as_of": "2026-02-20",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-80005": {
+    "expected_business_days": 27,
+    "range_business_days": [
+      19,
+      29
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "10 or more",
+    "question_count": 13,
+    "sample_size": 15,
+    "as_of": "2026-07-28",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-80010": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      20
+    ],
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 11,
+    "sample_size": 64,
+    "as_of": "2026-05-05",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-80014": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 63,
+    "as_of": "2026-06-03",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-80016": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 63,
+    "as_of": "2026-05-26",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-80021": {
     "expected_business_days": 18,
     "range_business_days": [
       15,
       22
     ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "24"
-    ],
-    "sample_size": 12,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-80014": {
-    "expected_business_days": 16,
-    "range_business_days": [
-      15,
-      19
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "6419"
-    ],
-    "sample_size": 8,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-80016": {
-    "expected_business_days": 16,
-    "range_business_days": [
-      15,
-      18
-    ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "18",
-      "37",
-      "42"
-    ],
-    "sample_size": 15,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-80021": {
-    "expected_business_days": 16,
-    "range_business_days": [
-      15,
-      18
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "E"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 4,
+    "sample_size": 10,
+    "as_of": "2026-06-25",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-80024": {
-    "expected_business_days": 16,
+    "expected_business_days": 17,
     "range_business_days": [
-      16,
+      15,
       19
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "K"
-    ],
-    "sample_size": 21,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 93,
+    "as_of": "2026-07-03",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-80027": {
-    "expected_business_days": 17,
-    "range_business_days": [
-      16,
-      18
-    ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "18",
-      "37"
-    ],
-    "sample_size": 17,
-    "estimated_at": "2026-08-11",
-    "method_version": 1
-  },
-  "MN-80035": {
     "expected_business_days": 16,
     "range_business_days": [
-      16,
+      15,
       19
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "1709",
-      "1899",
-      "2032",
-      "2090",
-      "3339",
-      "4231",
-      "6240"
-    ],
-    "sample_size": 14,
-    "estimated_at": "2026-08-18",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 120,
+    "as_of": "2026-08-11",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
-  "MN-85002": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      16,
-      27
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "5420"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-85003": {
+  "MN-80035": {
     "expected_business_days": 17,
     "range_business_days": [
-      16,
-      41
+      15,
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "group",
-    "anzsic_codes": [
-      "310",
-      "663",
-      "942"
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 122,
+    "as_of": "2026-08-17",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-85002": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      19
     ],
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 3,
     "sample_size": 8,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "as_of": "2025-12-22",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-85003": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      18
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 15,
+    "as_of": "2026-02-25",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-85006": {
     "expected_business_days": 17,
     "range_business_days": [
       15,
-      22
+      20
     ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "19",
-      "24",
-      "34"
-    ],
-    "sample_size": 21,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 8,
+    "sample_size": 39,
+    "as_of": "2026-03-26",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-85007": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      17,
-      24
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "7000"
-    ],
-    "sample_size": 14,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-85015": {
-    "expected_business_days": 19,
-    "range_business_days": [
-      16,
-      27
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "H",
-      "I",
-      "N",
-      "R"
-    ],
-    "sample_size": 15,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-85026": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      16,
-      24
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "J"
-    ],
-    "sample_size": 19,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-85036": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      17,
-      24
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "7000"
-    ],
-    "sample_size": 15,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-85038": {
-    "expected_business_days": 15,
-    "range_business_days": [
-      15,
-      18
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "Q"
-    ],
-    "sample_size": 12,
-    "estimated_at": "2026-08-04",
-    "method_version": 1
-  },
-  "MN-85043": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      16,
-      21
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "1899",
-      "1911",
-      "1912",
-      "1913",
-      "1919",
-      "1920",
-      "2469",
-      "6240",
-      "6961"
-    ],
-    "sample_size": 16,
-    "estimated_at": "2026-08-21",
-    "method_version": 1
-  },
-  "MN-85047": {
-    "expected_business_days": 16,
-    "range_business_days": [
-      16,
-      19
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "6221",
-      "6240",
-      "6419"
-    ],
-    "sample_size": 22,
-    "estimated_at": "2026-08-28",
-    "method_version": 1
-  },
-  "MN-90006": {
     "expected_business_days": 17,
     "range_business_days": [
       15,
       20
     ],
     "basis": "global",
-    "anzsic_level": null,
-    "anzsic_codes": [],
+    "question_bucket": null,
+    "question_count": 4,
+    "sample_size": 17,
+    "as_of": "2026-02-19",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-85015": {
+    "expected_business_days": 25,
+    "range_business_days": [
+      18,
+      28
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "10 or more",
+    "question_count": 12,
+    "sample_size": 13,
+    "as_of": "2026-07-01",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-85026": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      18
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 61,
+    "as_of": "2026-05-20",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-85036": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      18
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 86,
+    "as_of": "2026-06-30",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-85038": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 116,
+    "as_of": "2026-08-03",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-85043": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 128,
+    "as_of": "2026-08-20",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-85047": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
     "sample_size": 138,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "as_of": "2026-08-27",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-90006": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      16,
+      18
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 17,
+    "as_of": "2026-03-06",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-90007": {
     "expected_business_days": 16,
     "range_business_days": [
       15,
-      20
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "2619",
-      "6240",
-      "6419"
-    ],
-    "sample_size": 16,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 56,
+    "as_of": "2026-05-14",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-90008": {
     "expected_business_days": 18,
     "range_business_days": [
-      16,
-      20
+      15,
+      24
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "4123",
-      "4400",
-      "4520",
-      "6712"
-    ],
-    "sample_size": 13,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 4,
+    "sample_size": 9,
+    "as_of": "2026-05-21",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-90009": {
-    "expected_business_days": 16,
-    "range_business_days": [
-      16,
-      20
-    ],
-    "basis": "industry",
-    "anzsic_level": "group",
-    "anzsic_codes": [
-      "349",
-      "692",
-      "942"
-    ],
-    "sample_size": 13,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-90012": {
-    "expected_business_days": 19,
-    "range_business_days": [
-      16,
-      26
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "B",
-      "I"
-    ],
-    "sample_size": 13,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-90015": {
-    "expected_business_days": 15,
-    "range_business_days": [
-      15,
-      16
-    ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "Q"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-90020": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      16,
-      26
-    ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "5420",
-      "5921"
-    ],
-    "sample_size": 13,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-90022": {
-    "expected_business_days": 17,
-    "range_business_days": [
-      15,
-      20
-    ],
-    "basis": "global",
-    "anzsic_level": null,
-    "anzsic_codes": [],
-    "sample_size": 140,
-    "estimated_at": "2026-07-21",
-    "method_version": 1
-  },
-  "MN-90024": {
     "expected_business_days": 16,
     "range_business_days": [
       15,
       18
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "1832",
-      "6240"
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 39,
+    "as_of": "2026-04-14",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-90012": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      19
     ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-24",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 56,
+    "as_of": "2026-05-13",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-90015": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 63,
+    "as_of": "2026-05-28",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-90020": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      18
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 86,
+    "as_of": "2026-06-26",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-90022": {
+    "expected_business_days": 20,
+    "range_business_days": [
+      16,
+      27
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "6-9",
+    "question_count": 9,
+    "sample_size": 11,
+    "as_of": "2026-07-20",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-90024": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 112,
+    "as_of": "2026-07-24",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-90027": {
     "expected_business_days": 16,
@@ -3696,122 +3086,111 @@
       15,
       18
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "1841",
-      "6910"
-    ],
-    "sample_size": 9,
-    "estimated_at": "2026-07-28",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 113,
+    "as_of": "2026-07-27",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-90028": {
-    "expected_business_days": 20,
+    "expected_business_days": 26,
     "range_business_days": [
-      15,
-      44
+      19,
+      29
     ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "39",
-      "94"
-    ],
-    "sample_size": 8,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "10 or more",
+    "question_count": 13,
+    "sample_size": 14,
+    "as_of": "2026-07-13",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-90029": {
     "expected_business_days": 17,
     "range_business_days": [
-      16,
-      18
+      15,
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "32",
-      "42"
-    ],
-    "sample_size": 13,
-    "estimated_at": "2026-08-19",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 124,
+    "as_of": "2026-08-18",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-95001": {
+    "expected_business_days": 16,
+    "range_business_days": [
+      15,
+      18
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 31,
+    "as_of": "2026-04-07",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
+  },
+  "MN-95002": {
     "expected_business_days": 17,
     "range_business_days": [
       15,
-      20
+      19
     ],
-    "basis": "global",
-    "anzsic_level": null,
-    "anzsic_codes": [],
-    "sample_size": 138,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
-  },
-  "MN-95002": {
-    "expected_business_days": 18,
-    "range_business_days": [
-      16,
-      22
-    ],
-    "basis": "industry",
-    "anzsic_level": "group",
-    "anzsic_codes": [
-      "349",
-      "372"
-    ],
-    "sample_size": 11,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 9,
+    "as_of": "2026-02-02",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-95003": {
-    "expected_business_days": 18,
+    "expected_business_days": 16,
     "range_business_days": [
-      16,
-      26
+      15,
+      18
     ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "69"
-    ],
-    "sample_size": 18,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 14,
+    "as_of": "2026-02-13",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-95007": {
     "expected_business_days": 16,
     "range_business_days": [
       15,
-      19
+      18
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "6240",
-      "6419"
-    ],
-    "sample_size": 14,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 61,
+    "as_of": "2026-05-19",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-95011": {
-    "expected_business_days": 20,
+    "expected_business_days": 16,
     "range_business_days": [
-      16,
-      27
+      15,
+      18
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "L"
-    ],
-    "sample_size": 10,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 34,
+    "as_of": "2026-04-10",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-95016": {
     "expected_business_days": 16,
@@ -3819,107 +3198,96 @@
       15,
       18
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "1841",
-      "6910"
-    ],
-    "sample_size": 8,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 58,
+    "as_of": "2026-05-18",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-95021": {
-    "expected_business_days": 18,
+    "expected_business_days": 16,
     "range_business_days": [
-      16,
-      20
+      15,
+      18
     ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "34"
-    ],
-    "sample_size": 8,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 61,
+    "as_of": "2026-05-21",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-95025": {
     "expected_business_days": 18,
     "range_business_days": [
-      17,
-      24
+      15,
+      22
     ],
-    "basis": "industry",
-    "anzsic_level": "class",
-    "anzsic_codes": [
-      "7000"
-    ],
-    "sample_size": 15,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 5,
+    "sample_size": 10,
+    "as_of": "2026-07-13",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-95030": {
-    "expected_business_days": 18,
+    "expected_business_days": 16,
     "range_business_days": [
-      16,
-      27
+      15,
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "69"
-    ],
-    "sample_size": 19,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 98,
+    "as_of": "2026-07-10",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-95033": {
-    "expected_business_days": 18,
+    "expected_business_days": 16,
     "range_business_days": [
-      16,
-      24
+      15,
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "G"
-    ],
-    "sample_size": 16,
-    "estimated_at": "2026-08-05",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 117,
+    "as_of": "2026-08-04",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-95038": {
-    "expected_business_days": 18,
+    "expected_business_days": 16,
     "range_business_days": [
-      16,
-      28
+      15,
+      19
     ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "69",
-      "72"
-    ],
-    "sample_size": 25,
-    "estimated_at": "2026-08-05",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 117,
+    "as_of": "2026-08-04",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "MN-95040": {
-    "expected_business_days": 18,
+    "expected_business_days": 19,
     "range_business_days": [
       16,
-      26
+      33
     ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "01",
-      "05",
-      "69"
-    ],
-    "sample_size": 41,
-    "estimated_at": "2026-09-04",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 4,
+    "sample_size": 24,
+    "as_of": "2026-09-03",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   }
 }

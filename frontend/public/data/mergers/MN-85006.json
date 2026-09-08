@@ -214,18 +214,15 @@
     "expected_business_days": 17,
     "range_business_days": [
       15,
-      22
+      20
     ],
-    "basis": "industry",
-    "anzsic_level": "subdivision",
-    "anzsic_codes": [
-      "19",
-      "24",
-      "34"
-    ],
-    "sample_size": 21,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 8,
+    "sample_size": 39,
+    "as_of": "2026-03-26",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "pre_notification": {
     "estimated_days": 66,

@@ -260,12 +260,22 @@ data/
 │   processed/phase1_estimates.json # Frozen filing-time phase-1 duration estimates,
 │                         #   keyed by merger_id. Written by generate_static_data.py
 │                         #   (static_data/phase1_estimate.py) and committed by the
-│                         #   pipeline. Each merger's estimate is computed once, from the
-│                         #   history of completed phase-1 reviews in its ANZSIC
-│                         #   industries (pooled-median with hierarchical backoff:
-│                         #   class→group→subdivision→division, ≥8 completed peers, else
-│                         #   the global median), then frozen so it stays an at-filing
-│                         #   snapshot. Attached to each notification merger as
+│                         #   pipeline. Each merger's estimate is computed once and
+│                         #   frozen, so it stays an at-filing snapshot. The pool is the
+│                         #   completed phase-1 reviews whose questionnaire asked a
+│                         #   similar number of questions (buckets ≤3 / 4-5 / 6-9 / 10+,
+│                         #   ≥8 peers, else the whole-of-market median); question count
+│                         #   is the strongest filing-time signal available, since the
+│                         #   ACCC publishes the questionnaire a median of 1 business day
+│                         #   after notification. Pooling on ANZSIC industry (method
+│                         #   version 1) scored worse than a plain global median and was
+│                         #   dropped — see the module docstring for the backtest.
+│                         #   Forward-chained: a merger's pool holds only reviews that had
+│                         #   already concluded when it was filed (recorded as as_of), so
+│                         #   a method migration recomputes history without hindsight. The
+│                         #   earliest matters have too little history and get no estimate
+│                         #   (invisible on the site — the forecast renders only while a
+│                         #   matter is open). Attached to each notification merger as
 │                         #   phase_1_estimate (see mergers/{id}.json). Backend-only.
 ├── digest-archive/       # Past weekly digest.json snapshots
 └── output/               # Not deployed. Full enriched mergers.json (offline analysis)

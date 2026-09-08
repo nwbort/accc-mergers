@@ -118,19 +118,18 @@
     }
   ],
   "phase_1_estimate": {
-    "expected_business_days": 18,
+    "expected_business_days": 16,
     "range_business_days": [
-      16,
-      26
+      15,
+      18
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "G"
-    ],
-    "sample_size": 14,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 82,
+    "as_of": "2026-06-23",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "pre_notification": {
     "estimated_days": 24,

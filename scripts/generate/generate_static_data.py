@@ -167,10 +167,13 @@ def main():
     if judicial_review_linked:
         print(f"  Linked {judicial_review_linked} judicial review(s)")
     # Freeze + attach filing-time phase-1 duration estimates. New notification
-    # mergers get an estimate computed from completed-review history and frozen
-    # into data/processed/phase1_estimates.json; existing entries are reused so
-    # each estimate stays a filing-time snapshot rather than drifting.
-    new_estimates, attached_estimates = attach_phase_1_estimates(enriched)
+    # mergers get an estimate computed from the review history that had already
+    # concluded by their filing date, frozen into
+    # data/processed/phase1_estimates.json; existing entries are reused so each
+    # estimate stays a filing-time snapshot rather than drifting.
+    new_estimates, attached_estimates = attach_phase_1_estimates(
+        enriched, questionnaire_data
+    )
     print(
         f"  Phase-1 estimates: {attached_estimates} attached "
         f"({new_estimates} newly frozen)"

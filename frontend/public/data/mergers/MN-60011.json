@@ -312,15 +312,13 @@
       15,
       19
     ],
-    "basis": "industry",
-    "anzsic_level": "division",
-    "anzsic_codes": [
-      "B",
-      "C"
-    ],
-    "sample_size": 44,
-    "estimated_at": "2026-07-17",
-    "method_version": 1
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": 15,
+    "sample_size": 58,
+    "as_of": "2026-04-28",
+    "estimated_at": "2026-09-08",
+    "method_version": 2
   },
   "pre_notification": {
     "estimated_days": 45,
