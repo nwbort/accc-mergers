@@ -1,14 +1,14 @@
 {
   "total_mergers": 247,
-  "total_waivers": 387,
+  "total_waivers": 388,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 213,
-    "Under assessment": 29,
+    "Assessment completed": 214,
+    "Under assessment": 28,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 206,
+    "Approved": 207,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -18,45 +18,45 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 370,
+    "Approved": 371,
     "Not approved": 17
   },
   "clearance_rate": {
-    "cleared": 211,
+    "cleared": 212,
     "not_cleared": 2,
-    "total": 213,
+    "total": 214,
     "rate": 0.991
   },
   "phase_duration": {
-    "average_days": 29.908675799086758,
-    "median_days": 26,
-    "average_business_days": 20.21461187214612,
-    "median_business_days": 18,
+    "average_days": 30.03181818181818,
+    "median_days": 26.0,
+    "average_business_days": 20.30909090909091,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
         "count": 46,
-        "percentage": 21.0
+        "percentage": 20.9
       },
       "day20": {
         "count": 161,
-        "percentage": 73.5
+        "percentage": 73.2
       },
       "day30": {
         "count": 203,
-        "percentage": 92.7
+        "percentage": 92.3
       }
     }
   },
   "waiver_duration": {
-    "average_days": 19.762273901808786,
-    "median_days": 20,
-    "average_business_days": 13.431524547803617,
-    "median_business_days": 13
+    "average_days": 19.765463917525775,
+    "median_days": 20.0,
+    "average_business_days": 13.435567010309278,
+    "median_business_days": 13.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 117
+      "count": 118
     },
     {
       "name": "Computer System Design and Related Services",
@@ -219,11 +219,33 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-75051",
+      "merger_name": "Bain Capital - Gong cha",
+      "determination": "Approved",
+      "determination_date": "2026-09-08T12:00:00Z",
+      "page_modified_datetime": "2026-09-08T17:38:06+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-20034",
       "merger_name": "Chevron - Woodside asset swap",
       "determination": "Approved",
       "determination_date": "2026-09-08T12:00:00Z",
       "page_modified_datetime": "2026-09-08T17:32:38+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "MN-20017",
+      "merger_name": "Amplifon \u2013 GN Hearing",
+      "determination": "Approved",
+      "determination_date": "2026-09-08T12:00:00Z",
+      "page_modified_datetime": "2026-09-08T17:09:37+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
@@ -323,28 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-08T12:00:00Z",
       "page_modified_datetime": "2026-09-08T15:25:44+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-45024",
-      "merger_name": "OEConnection - Epyx",
-      "determination": "Approved",
-      "determination_date": "2026-09-08T12:00:00Z",
-      "page_modified_datetime": "2026-09-08T14:58:06+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-80027",
-      "merger_name": "Supagas \u2013 Heeson Medical",
-      "determination": "Approved",
-      "determination_date": "2026-09-08T12:00:00Z",
-      "page_modified_datetime": "2026-09-08T12:59:14+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",

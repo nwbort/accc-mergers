@@ -43,6 +43,47 @@
         "completed_count": 1
       }
     },
+    "bcpe-genuine-holdco-ltd": {
+      "id": "bcpe-genuine-holdco-ltd",
+      "canonical_name": "BCPE Genuine Holdco Ltd.",
+      "members": [
+        {
+          "name": "BCPE Genuine Holdco Ltd.",
+          "identifier": "Jersey Financial Services Commission registration number  166615",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-75051",
+            "merger_name": "Bain Capital - Gong cha",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-18T12:00:00Z",
+            "determination_date": "2026-09-08T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
     "cpp-investment-board-private-holdings-4-inc": {
       "id": "cpp-investment-board-private-holdings-4-inc",
       "canonical_name": "CPP Investment Board Private Holdings (4) Inc.",

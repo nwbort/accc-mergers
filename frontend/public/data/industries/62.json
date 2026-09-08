@@ -37,7 +37,7 @@
       "code": "624",
       "name": "Financial Asset Investing",
       "level": "group",
-      "merger_count": 117
+      "merger_count": 118
     }
   ],
   "mergers": [
@@ -193,6 +193,17 @@
       "has_conditions": false,
       "phase": "Waiver",
       "notification_date": "2026-08-29T12:00:00Z",
+      "determination_date": "2026-09-08T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-75051",
+      "merger_name": "Bain Capital - Gong cha",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-18T12:00:00Z",
       "determination_date": "2026-09-08T12:00:00Z"
     },
     {
@@ -1417,10 +1428,10 @@
       "determination_date": null
     }
   ],
-  "count": 125,
+  "count": 126,
   "phase_1_count": 29,
   "phase_2_count": 1,
-  "waiver_count": 95,
+  "waiver_count": 96,
   "active_count": 9,
   "phase_duration": {
     "average_days": 28.428571428571427,
@@ -1430,10 +1441,10 @@
     "completed_count": 21
   },
   "waiver_duration": {
-    "average_days": 19.936842105263157,
-    "median_days": 20,
-    "average_business_days": 13.56842105263158,
-    "median_business_days": 13,
-    "completed_count": 95
+    "average_days": 19.947916666666668,
+    "median_days": 20.0,
+    "average_business_days": 13.583333333333334,
+    "median_business_days": 13.5,
+    "completed_count": 96
   }
 }
