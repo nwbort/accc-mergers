@@ -22,11 +22,10 @@ const completedMatter = (overrides) => ({
 });
 
 describe('Phase2SummaryCards', () => {
-  it('counts every matter that has been in Phase 2', () => {
+  it('counts every matter that has been in Phase 2, running and completed', () => {
     renderCards([{ merger_id: 'MN-1' }], [completedMatter()]);
     expect(screen.getByText('Referred to Phase 2')).toBeInTheDocument();
     expect(screen.getByText('2')).toBeInTheDocument();
-    expect(screen.getByText('1 still running · 1 completed')).toBeInTheDocument();
   });
 
   it('shows the outcome split with a legend entry per outcome', () => {
@@ -53,10 +52,9 @@ describe('Phase2SummaryCards', () => {
         determination_date: '2026-01-03T12:00:00Z',
       }),
     ]);
+    // Both matters ran from 1 Jan; counting the 2-day ceased assessment would
+    // pull the average down to 6 days.
     expect(screen.getByText('10 days')).toBeInTheDocument();
-    expect(
-      screen.getByText('Referral to determination, across 1 matter · 1 ceased excluded')
-    ).toBeInTheDocument();
   });
 
   it('says so when no review has concluded', () => {

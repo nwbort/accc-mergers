@@ -47,6 +47,33 @@ export const DEFAULT_CARD_STYLE = { bg: 'bg-gray-600 hover:bg-gray-700', sub: 't
 // required so Tailwind's scanner keeps it at build time.
 export const NEW_ITEM_BORDER = 'ring-2 ring-blue-500';
 
+// The same fills, without the hover step, for surfaces that colour something
+// smaller than a card by outcome: the Phase 2 tracker's outcome split bar and
+// its legend dots. They sit on the same page as the cards above, so a result
+// has to read as the same green or purple in both.
+//
+// "Approved with conditions" is a display-only label — the register publishes
+// a conditional clearance as a plain "Approved", so the cards never see it and
+// spell the difference out with a chip instead. The split shows it as its own
+// segment (at Phase 2 that distinction is the point) and gives it the next
+// step up the same green, close enough to read as a clearance rather than as
+// a colour of its own.
+export const OUTCOME_FILLS = {
+  [MERGER_STATUS.APPROVED]: 'bg-emerald-700',
+  [MERGER_STATUS.APPROVED_WITH_CONDITIONS]: 'bg-emerald-600',
+  [MERGER_STATUS.NOT_OPPOSED]: 'bg-emerald-700',
+  [MERGER_STATUS.NOT_APPROVED]: 'bg-red-700',
+  [MERGER_STATUS.DECLINED]: 'bg-red-700',
+  [MERGER_STATUS.REFERRED_TO_PHASE_2]: 'bg-amber-400',
+  [MERGER_STATUS.ASSESSMENT_CEASED]: 'bg-purple-700',
+};
+
+export const DEFAULT_OUTCOME_FILL = 'bg-gray-600';
+
+export function getOutcomeFill(determination) {
+  return OUTCOME_FILLS[determination] || DEFAULT_OUTCOME_FILL;
+}
+
 // Determination takes precedence over status, mirroring StatusBadge.
 export function getCardStyle({ determination, status } = {}) {
   return CARD_STYLES[determination] || CARD_STYLES[status] || DEFAULT_CARD_STYLE;
