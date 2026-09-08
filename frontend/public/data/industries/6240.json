@@ -126,17 +126,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-45024",
-      "merger_name": "OEConnection - Epyx",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-08-15T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-05043",
       "merger_name": "Incubeta - Datisan",
       "is_waiver": false,
@@ -157,6 +146,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-08-10T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-45024",
+      "merger_name": "OEConnection - Epyx",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-15T12:00:00Z",
+      "determination_date": "2026-09-08T12:00:00Z"
     },
     {
       "merger_id": "WA-60039",
@@ -1296,13 +1296,13 @@
   "phase_1_count": 28,
   "phase_2_count": 0,
   "waiver_count": 87,
-  "active_count": 12,
+  "active_count": 11,
   "phase_duration": {
-    "average_days": 25.375,
-    "median_days": 24.5,
-    "average_business_days": 17.625,
-    "median_business_days": 16.5,
-    "completed_count": 16
+    "average_days": 25.294117647058822,
+    "median_days": 24,
+    "average_business_days": 17.58823529411765,
+    "median_business_days": 17,
+    "completed_count": 17
   },
   "waiver_duration": {
     "average_days": 20.057471264367816,

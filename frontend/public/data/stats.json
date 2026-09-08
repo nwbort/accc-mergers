@@ -3,12 +3,12 @@
   "total_waivers": 382,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 206,
-    "Under assessment": 35,
+    "Assessment completed": 207,
+    "Under assessment": 34,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 199,
+    "Approved": 200,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,28 +22,28 @@
     "Not approved": 16
   },
   "clearance_rate": {
-    "cleared": 204,
+    "cleared": 205,
     "not_cleared": 2,
-    "total": 206,
+    "total": 207,
     "rate": 0.99
   },
   "phase_duration": {
-    "average_days": 29.867924528301888,
-    "median_days": 26.0,
-    "average_business_days": 20.150943396226417,
-    "median_business_days": 18.0,
+    "average_days": 29.84037558685446,
+    "median_days": 26,
+    "average_business_days": 20.136150234741784,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
         "count": 44,
-        "percentage": 20.8
+        "percentage": 20.7
       },
       "day20": {
-        "count": 156,
-        "percentage": 73.6
+        "count": 157,
+        "percentage": 73.7
       },
       "day30": {
-        "count": 197,
-        "percentage": 92.9
+        "count": 198,
+        "percentage": 93.0
       }
     }
   },
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-45024",
+      "merger_name": "OEConnection - Epyx",
+      "determination": "Approved",
+      "determination_date": "2026-09-08T12:00:00Z",
+      "page_modified_datetime": "2026-09-08T14:58:06+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-30028",
       "merger_name": "Adobe - Topaz Labs",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-03T12:00:00Z",
       "page_modified_datetime": "2026-09-03T16:42:08+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-30032",
-      "merger_name": "Morgan Stanley \u2013 Epic Energy",
-      "determination": "Approved",
-      "determination_date": "2026-09-03T12:00:00Z",
-      "page_modified_datetime": "2026-09-03T16:37:40+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

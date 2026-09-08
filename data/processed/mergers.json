@@ -16931,13 +16931,15 @@
   {
     "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/oeconnection-epyx",
     "merger_name": "OEConnection - Epyx",
-    "status": "Under assessment",
+    "status": "Assessment completed",
     "merger_id": "MN-45024",
     "effective_notification_datetime": "2026-08-15T12:00:00Z",
     "original_notification_datetime": "2026-08-15T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-09-25T12:00:00Z",
-    "page_modified_datetime": "2026-08-21T10:51:28+10:00",
+    "accc_determination": "Approved",
+    "accc_determination_raw": "ACCC determinationApproved",
+    "page_modified_datetime": "2026-09-08T14:58:06+10:00",
     "consultation_response_due_date": "2026-08-24T12:00:00Z",
     "acquirers": [
       {
@@ -16990,8 +16992,46 @@
         "date": "2026-08-15T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
+      },
+      {
+        "date": "2026-09-08T12:00:00Z",
+        "title": "OEConnection - Epyx - Phase 1 determination",
+        "display_title": "Phase 1 - initial assessment determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/moderated_files/OEConnection%20-%20Epyx%20-%20Phase%201%20determination.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Notified acquisition",
+            "details": "OEConnection, LLC (OEConnection)\u2019s, through its wholly owned\nsubsidiary, proposed acquisition of 100% of the share capital in\nQuadrum Investments Group Ltd and its controlled subsidiaries\n(trading as Epyx) (the Acquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+          },
+          {
+            "item": "Parties to the Acquisition",
+            "details": "The acquirer, OEConnection, is a United States-based software\ncompany that supplies software solutions for the automotive\naftersales ecosystem, connecting suppliers, repairers,\nmanufacturers, insurers and fleets. Its core activity is the supply of\nsoftware and data solutions that facilitate the sale, sourcing and\nsupply of automotive parts for vehicle repairs. OEConnection\u2019s\nprimary products \u2013 including CollisionLink, RepairLink, and PartsTech\n\u2013 facilitate buying and selling of automotive parts and provide repair\nplanning tools and insurance solutions.\nOEConnection is a portfolio company of funds managed and/or\nadvised by an affiliate of Francisco Partners Management, L.P.\n(Francisco Partners), a global private equity investment firm\nheadquartered in the United States that primarily invests in\ntechnology and technology-enabled service businesses.\nThe target, Epyx, is a fleet technology solutions company\nheadquartered in the United Kingdom that supplies fleet\nmanagement software under its 1link and r2c brands. Epyx\u2019s primary\noffering is a fleet service, maintenance and repair authorisation\nplatform (1link Service Network) that connects vehicle fleet\noperators (such as leasing and rental companies) with automotive\nservice providers (repair shops and garages)."
+          },
+          {
+            "item": "Overlap between the\nParties",
+            "details": "OEConnection and Epyx (together, the Parties) both supply software\nsolutions for the automotive sector.\nThere is no material overlap between the activities of Epyx in\nAustralia and the activities of any of Francisco Partners\u2019 connected\nentities."
+          },
+          {
+            "item": "Reasons for determination",
+            "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and publicly available information.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 There is no material overlap between the services supplied by\nOEConnection (or any connected entity of OEConnection) and\nEpyx in Australia, given their different use cases and customer\nbases. In particular, OEConnection\u2019s services are primarily\nsupplied to original equipment manufacturers, whereas Epyx\u2019s\nservice, maintenance and repair authorisation platform is\nprimarily supplied to fleet companies.\n\u2022 OEConnection and Epyx each have a limited presence in\nAustralia."
+          },
+          {
+            "item": "Applications for review",
+            "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+          }
+        ],
+        "url_gh": "/mergers/MN-45024/OEConnection - Epyx - Phase 1 determination.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Phase 1"
       }
     ],
+    "determination_publication_date": "2026-09-08T12:00:00Z",
     "is_waiver": false
   },
   {
