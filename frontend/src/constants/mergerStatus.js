@@ -55,6 +55,21 @@ export function isConditionalApproval(item) {
   return Boolean(item?.has_conditions) && item?.determination === MERGER_STATUS.APPROVED;
 }
 
+// Fixed order for the Phase 2 outcome breakdowns, running cleared -> blocked,
+// so a chart or bar doesn't reshuffle as determinations land. "Assessment
+// ceased" sits last because it isn't a determination at all - it's a Phase 2
+// review the parties withdrew from. Shared by the dashboard doughnut and the
+// Phase 2 tracker's summary cards; both append any outcome not listed here
+// rather than dropping it.
+export const PHASE_2_OUTCOME_ORDER = [
+  MERGER_STATUS.APPROVED,
+  MERGER_STATUS.APPROVED_WITH_CONDITIONS,
+  MERGER_STATUS.NOT_OPPOSED,
+  MERGER_STATUS.NOT_APPROVED,
+  MERGER_STATUS.DECLINED,
+  MERGER_STATUS.ASSESSMENT_CEASED,
+];
+
 // Fallback Tailwind classes for StatusBadge when no specific status matches.
 export const DEFAULT_STATUS_STYLE = 'bg-gray-50 text-gray-600 border-gray-200/60';
 

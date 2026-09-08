@@ -1,0 +1,72 @@
+import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router';
+import { describe, expect, it } from 'vitest';
+import Phase2SummaryCards from '../Phase2SummaryCards';
+
+function renderCards(current, completed) {
+  return render(
+    <MemoryRouter>
+      <Phase2SummaryCards current={current} completed={completed} />
+    </MemoryRouter>
+  );
+}
+
+const completedMatter = (overrides) => ({
+  merger_id: 'MN-0001',
+  merger_name: 'Alpha acquires Beta',
+  determination: 'Approved',
+  referral_date: '2026-01-01T12:00:00Z',
+  determination_date: '2026-01-11T12:00:00Z',
+  has_conditions: false,
+  ...overrides,
+});
+
+describe('Phase2SummaryCards', () => {
+  it('counts every matter that has been in Phase 2', () => {
+    renderCards([{ merger_id: 'MN-1' }], [completedMatter()]);
+    expect(screen.getByText('Referred to Phase 2')).toBeInTheDocument();
+    expect(screen.getByText('2')).toBeInTheDocument();
+    expect(screen.getByText('1 still running · 1 completed')).toBeInTheDocument();
+  });
+
+  it('shows the outcome split with a legend entry per outcome', () => {
+    renderCards([], [
+      completedMatter({ merger_id: 'MN-1' }),
+      completedMatter({ merger_id: 'MN-2', determination: 'Not approved' }),
+      completedMatter({ merger_id: 'MN-3', determination: 'Assessment ceased' }),
+      completedMatter({ merger_id: 'MN-4', determination: 'Assessment ceased' }),
+    ]);
+    const legend = screen.getAllByRole('listitem').map((li) => li.textContent);
+    expect(legend).toEqual([
+      'Approved1 · 25%',
+      'Not approved1 · 25%',
+      'Assessment ceased2 · 50%',
+    ]);
+  });
+
+  it('averages Phase 2 duration without the ceased assessments', () => {
+    renderCards([], [
+      completedMatter({ merger_id: 'MN-1', determination_date: '2026-01-11T12:00:00Z' }),
+      completedMatter({
+        merger_id: 'MN-2',
+        determination: 'Assessment ceased',
+        determination_date: '2026-01-03T12:00:00Z',
+      }),
+    ]);
+    expect(screen.getByText('10 days')).toBeInTheDocument();
+    expect(
+      screen.getByText('Referral to determination, across 1 matter · 1 ceased excluded')
+    ).toBeInTheDocument();
+  });
+
+  it('says so when no review has concluded', () => {
+    renderCards([{ merger_id: 'MN-1' }], []);
+    expect(screen.getByText('N/A')).toBeInTheDocument();
+    expect(screen.getByText('No Phase 2 review has concluded yet.')).toBeInTheDocument();
+  });
+
+  it('renders nothing before any matter has been referred', () => {
+    const { container } = renderCards([], []);
+    expect(container).toBeEmptyDOMElement();
+  });
+});

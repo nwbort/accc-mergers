@@ -2,6 +2,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
 import Phase2Timeline from '../components/Phase2Timeline';
 import Phase2CompletedCards from '../components/Phase2CompletedCards';
+import Phase2SummaryCards from '../components/Phase2SummaryCards';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
@@ -59,6 +60,8 @@ function Phase2() {
             </span>
           </button>
         </header>
+
+        <Phase2SummaryCards current={current} completed={completed} />
 
         <section aria-labelledby="phase2-current-heading" className="mb-8">
           <h2 id="phase2-current-heading" className="text-lg font-semibold text-gray-900 mb-4">
