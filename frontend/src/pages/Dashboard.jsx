@@ -17,26 +17,12 @@ import { useFetchData } from '../hooks/useFetchData';
 import { markItemsAsSeen } from '../utils/lastVisit';
 import { formatMedian } from '../utils/formatMedian';
 import { CHART_PALETTE, CHART_PALETTE_ORDER, DETERMINATION_COLORS } from '../constants/chartColors';
-import { MERGER_STATUS } from '../constants/mergerStatus';
+import { MERGER_STATUS, PHASE_2_OUTCOME_ORDER } from '../constants/mergerStatus';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
 
 // Title and description live in the shared table so this page and the
 // build-time prerenderer emit the same <head>.
 const PAGE_META = STATIC_PAGE_META['/'];
-
-
-// Fixed segment order for the Phase 2 doughnut, running cleared → blocked, so
-// the chart doesn't reshuffle as determinations land. "Assessment ceased" sits
-// last because it isn't a determination at all — it's a Phase 2 review the
-// parties withdrew from.
-const PHASE_2_OUTCOME_ORDER = [
-  MERGER_STATUS.APPROVED,
-  MERGER_STATUS.APPROVED_WITH_CONDITIONS,
-  MERGER_STATUS.NOT_OPPOSED,
-  MERGER_STATUS.NOT_APPROVED,
-  MERGER_STATUS.DECLINED,
-  MERGER_STATUS.ASSESSMENT_CEASED,
-];
 
 function Dashboard() {
   const { data: stats, loading, error } = useFetchData(API_ENDPOINTS.stats, {

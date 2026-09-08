@@ -163,7 +163,7 @@ frontend/src/
 │                         #   and jsdom cannot catch it, so utils/__tests__/chartSetup.test.js
 │                         #   guards both halves), dates.js, dataCache.js, lastVisit.js,
 │                         #   classNames.js, searchIndex.js,
-│                         #   businessDayProgress.js, fetchAllMergers.js, formatMedian.js,
+│                         #   businessDayProgress.js, fetchAllMergers.js, formatMedian.js, phase2Summary.js,
 │                         #   industryGroups.js, slug.js, shard.js, preNotification.js, pageMeta.js,
 │                         #   treemapTail.js, mergerOutcome.js, partyMembers.js
 └── data/                 # ACT public holidays JSON
