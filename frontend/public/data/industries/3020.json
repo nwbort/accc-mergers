@@ -30,12 +30,23 @@
       "merger_id": "MN-05046",
       "merger_name": "Coles - supermarket site in Kirkwood (QLD)",
       "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
+      "status": "Assessment completed",
+      "determination": "Approved",
       "has_conditions": false,
       "phase": "Phase 1",
       "notification_date": "2026-08-19T12:00:00Z",
-      "determination_date": null
+      "determination_date": "2026-09-09T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-30036",
+      "merger_name": "Veritas Capital Fund Management \u2013 BGIS Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-14T12:00:00Z",
+      "determination_date": "2026-09-09T12:00:00Z"
     },
     {
       "merger_id": "MN-75035",
@@ -148,23 +159,23 @@
       "determination_date": "2026-02-12T12:00:00Z"
     }
   ],
-  "count": 11,
+  "count": 12,
   "phase_1_count": 5,
   "phase_2_count": 0,
-  "waiver_count": 6,
-  "active_count": 1,
+  "waiver_count": 7,
+  "active_count": 0,
   "phase_duration": {
-    "average_days": 24.75,
-    "median_days": 24.5,
-    "average_business_days": 17.75,
-    "median_business_days": 17.5,
-    "completed_count": 4
+    "average_days": 24.0,
+    "median_days": 22,
+    "average_business_days": 17.2,
+    "median_business_days": 16,
+    "completed_count": 5
   },
   "waiver_duration": {
-    "average_days": 15.833333333333334,
-    "median_days": 15.0,
-    "average_business_days": 11.0,
-    "median_business_days": 11.0,
-    "completed_count": 6
+    "average_days": 17.285714285714285,
+    "median_days": 17,
+    "average_business_days": 12.0,
+    "median_business_days": 13,
+    "completed_count": 7
   }
 }

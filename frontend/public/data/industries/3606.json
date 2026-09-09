@@ -36,13 +36,30 @@
       "phase": "Phase 1",
       "notification_date": "2026-08-14T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-75049",
+      "merger_name": "Sazerac \u2013 Au Vodka",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-17T12:00:00Z",
+      "determination_date": "2026-09-09T12:00:00Z"
     }
   ],
-  "count": 1,
+  "count": 2,
   "phase_1_count": 1,
   "phase_2_count": 0,
-  "waiver_count": 0,
+  "waiver_count": 1,
   "active_count": 1,
   "phase_duration": null,
-  "waiver_duration": null
+  "waiver_duration": {
+    "average_days": 23.0,
+    "median_days": 23,
+    "average_business_days": 17.0,
+    "median_business_days": 17,
+    "completed_count": 1
+  }
 }

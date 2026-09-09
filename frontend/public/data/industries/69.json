@@ -25,7 +25,7 @@
       "code": "692",
       "name": "Architectural, Engineering and Technical Services",
       "level": "group",
-      "merger_count": 30
+      "merger_count": 31
     },
     {
       "code": "693",
@@ -156,6 +156,17 @@
     {
       "merger_id": "WA-25044",
       "merger_name": "Veritas Capital Fund Management \u2013 Trinity Consultants",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-14T12:00:00Z",
+      "determination_date": "2026-09-09T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-30036",
+      "merger_name": "Veritas Capital Fund Management \u2013 BGIS Group",
       "is_waiver": true,
       "status": "Assessment completed",
       "determination": "Approved",
@@ -1155,10 +1166,10 @@
       "determination_date": null
     }
   ],
-  "count": 99,
+  "count": 100,
   "phase_1_count": 38,
   "phase_2_count": 3,
-  "waiver_count": 58,
+  "waiver_count": 59,
   "active_count": 7,
   "phase_duration": {
     "average_days": 33.57142857142857,
@@ -1168,10 +1179,10 @@
     "completed_count": 35
   },
   "waiver_duration": {
-    "average_days": 19.5,
-    "median_days": 19.5,
-    "average_business_days": 13.137931034482758,
-    "median_business_days": 13.0,
-    "completed_count": 58
+    "average_days": 19.610169491525422,
+    "median_days": 20,
+    "average_business_days": 13.220338983050848,
+    "median_business_days": 13,
+    "completed_count": 59
   }
 }

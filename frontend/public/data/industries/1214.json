@@ -38,6 +38,17 @@
       "determination_date": null
     },
     {
+      "merger_id": "WA-75049",
+      "merger_name": "Sazerac \u2013 Au Vodka",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-17T12:00:00Z",
+      "determination_date": "2026-09-09T12:00:00Z"
+    },
+    {
       "merger_id": "WA-35021",
       "merger_name": "BUSS Queensland \u2013 Additional interest in Duxton Vineyards",
       "is_waiver": true,
@@ -49,17 +60,17 @@
       "determination_date": "2026-06-04T12:00:00Z"
     }
   ],
-  "count": 2,
+  "count": 3,
   "phase_1_count": 1,
   "phase_2_count": 0,
-  "waiver_count": 1,
+  "waiver_count": 2,
   "active_count": 1,
   "phase_duration": null,
   "waiver_duration": {
-    "average_days": 14.0,
-    "median_days": 14,
-    "average_business_days": 9.0,
-    "median_business_days": 9,
-    "completed_count": 1
+    "average_days": 18.5,
+    "median_days": 18.5,
+    "average_business_days": 13.0,
+    "median_business_days": 13.0,
+    "completed_count": 2
   }
 }

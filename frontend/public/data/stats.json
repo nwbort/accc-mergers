@@ -1,14 +1,14 @@
 {
   "total_mergers": 249,
-  "total_waivers": 392,
+  "total_waivers": 394,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 214,
-    "Under assessment": 30,
+    "Assessment completed": 215,
+    "Under assessment": 29,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 207,
+    "Approved": 208,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -18,45 +18,45 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 375,
+    "Approved": 377,
     "Not approved": 17
   },
   "clearance_rate": {
-    "cleared": 212,
+    "cleared": 213,
     "not_cleared": 2,
-    "total": 214,
+    "total": 215,
     "rate": 0.991
   },
   "phase_duration": {
-    "average_days": 30.03181818181818,
-    "median_days": 26.0,
-    "average_business_days": 20.30909090909091,
-    "median_business_days": 18.0,
+    "average_days": 29.990950226244344,
+    "median_days": 26,
+    "average_business_days": 20.285067873303166,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
-        "count": 46,
-        "percentage": 20.9
+        "count": 47,
+        "percentage": 21.3
       },
       "day20": {
-        "count": 161,
-        "percentage": 73.2
+        "count": 162,
+        "percentage": 73.3
       },
       "day30": {
-        "count": 203,
+        "count": 204,
         "percentage": 92.3
       }
     }
   },
   "waiver_duration": {
-    "average_days": 19.803571428571427,
+    "average_days": 19.82741116751269,
     "median_days": 20.0,
-    "average_business_days": 13.466836734693878,
+    "average_business_days": 13.48730964467005,
     "median_business_days": 13.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 123
+      "count": 125
     },
     {
       "name": "Computer System Design and Related Services",
@@ -79,19 +79,19 @@
       "count": 31
     },
     {
+      "name": "Engineering Design and Engineering Consulting Services",
+      "count": 22
+    },
+    {
       "name": "Accommodation",
       "count": 22
     },
     {
-      "name": "Engineering Design and Engineering Consulting Services",
-      "count": 21
+      "name": "Liquor Retailing",
+      "count": 20
     },
     {
       "name": "Supermarket and Grocery Stores",
-      "count": 19
-    },
-    {
-      "name": "Liquor Retailing",
       "count": 19
     }
   ],
@@ -219,6 +219,28 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-30036",
+      "merger_name": "Veritas Capital Fund Management \u2013 BGIS Group",
+      "determination": "Approved",
+      "determination_date": "2026-09-09T12:00:00Z",
+      "page_modified_datetime": "2026-09-09T16:54:10+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-75049",
+      "merger_name": "Sazerac \u2013 Au Vodka",
+      "determination": "Approved",
+      "determination_date": "2026-09-09T12:00:00Z",
+      "page_modified_datetime": "2026-09-09T16:52:59+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-25044",
       "merger_name": "Veritas Capital Fund Management \u2013 Trinity Consultants",
       "determination": "Approved",
@@ -260,6 +282,17 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "MN-05046",
+      "merger_name": "Coles - supermarket site in Kirkwood (QLD)",
+      "determination": "Approved",
+      "determination_date": "2026-09-09T12:00:00Z",
+      "page_modified_datetime": "2026-09-09T16:40:44+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     },
     {
@@ -315,39 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-15040",
-      "merger_name": "Shepparton Automotive Group - Darryl Twitt Motors dealerships in Shepparton East, Victoria",
-      "determination": "Not approved",
-      "determination_date": "2026-09-08T12:00:00Z",
-      "page_modified_datetime": "2026-09-08T16:32:53+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-10029",
-      "merger_name": "Wollemi Nominees 2 Pty Ltd & Ors \u2013 Establishment of WEG Australian Investment Trust and related acquisitions",
-      "determination": "Approved",
-      "determination_date": "2026-09-08T12:00:00Z",
-      "page_modified_datetime": "2026-09-08T16:32:39+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-55033",
-      "merger_name": "Jellinbah Group - Further interest in Lake Vermont JV",
-      "determination": "Approved",
-      "determination_date": "2026-09-08T12:00:00Z",
-      "page_modified_datetime": "2026-09-08T16:32:32+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]

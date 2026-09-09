@@ -1,0 +1,125 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/veritas-capital-fund-management-%E2%80%93-bgis-group",
+  "merger_name": "Veritas Capital Fund Management \u2013 BGIS Group",
+  "status": "Assessment completed",
+  "merger_id": "WA-30036",
+  "effective_notification_datetime": "2026-08-14T12:00:00Z",
+  "original_notification_datetime": "2026-08-14T12:00:00Z",
+  "stage": "Waiver application",
+  "determination_publication_date": "2026-09-09T12:00:00Z",
+  "accc_determination": "Approved",
+  "acquirers": [
+    {
+      "name": "Naples Bidco Limited",
+      "identifier_type": null,
+      "identifier": "Jersey Registration Number 166347",
+      "party_page": {
+        "id": "naples-bidco-limited",
+        "name": "Naples Bidco Limited"
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "BIFM Jersey Topco Limited",
+      "identifier_type": null,
+      "identifier": "Jersey Registration Number 128789",
+      "party_page": {
+        "id": "bifm-jersey-topco-limited",
+        "name": "BIFM Jersey Topco Limited"
+      }
+    }
+  ],
+  "other_parties": [
+    {
+      "name": "Veritas Capital Fund Management, L.L.C.",
+      "identifier_type": null,
+      "identifier": "Delaware Registration Number 3985365",
+      "party_page": {
+        "id": "veritas-capital-fund-management-l-l-c-2",
+        "name": "Veritas Capital Fund Management, L.L.C."
+      }
+    }
+  ],
+  "anzsic_codes": [
+    {
+      "code": "3020",
+      "name": "Non-Residential Building Construction"
+    },
+    {
+      "code": "6240",
+      "name": "Financial Asset Investing"
+    },
+    {
+      "code": "6923",
+      "name": "Engineering Design and Engineering Consulting Services"
+    }
+  ],
+  "merger_description": "Funds managed (directly or indirectly) by Veritas Capital Fund Management, L.L.C. (**Veritas**), through Naples Bidco Limited, propose to indirectly acquire control of BIFM Jersey Topco Limited and its subsidiaries (the **BGIS Group**) (the **Acquisition**).\n\nVeritas is a private equity fund adviser incorporated and based in the United States. It invests in companies that provide products, software, and services, primarily technology and technology-enabled solutions, to government and commercial customers worldwide.\n\nThe BGIS Group is headquartered in Ontario, Canada, and is a global provider of integrated facilities management services, offering end-to-end outsourced facility management, engineering, and advisory services to commercial and government customers. This involves managing the day-to-day operations, maintenance, and sustainability of large-scale built environments, including complex infrastructure, such as data centres, hospitals and high-security government facilities.",
+  "events": [
+    {
+      "date": "2026-09-09T12:00:00Z",
+      "title": "Notification waiver determination published",
+      "display_title": "Waiver application determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Veritas%20Capital%20Fund%20Management%20%E2%80%93%20BGIS%20Group%20%28WA-30036%29%20-%20Notification%20waiver%20determination%20-%209%20September%202026.pdf",
+      "determination_table_content": [
+        {
+          "item": "Explanation for\ndetermination",
+          "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided by the applicant, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition given:\na. there is limited horizontal overlap between Veritas (and its\nportfolio companies, as well as Trinity Consultants) and the\nBGIS Group in the supply of facility management,\nengineering and advisory services in Australia\nb. there are alternative suppliers of facility management,\nengineering and advisory services in Australia.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+        }
+      ],
+      "url_gh": "/mergers/WA-30036/Veritas Capital Fund Management \u2013 BGIS Group (WA-30036) - Notification waiver determination - 9 September 2026.pdf",
+      "is_determination_event": true,
+      "phase": "Waiver"
+    },
+    {
+      "date": "2026-08-14T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": true,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-25044",
+      "merger_name": "Veritas Capital Fund Management \u2013 Trinity Consultants",
+      "acquirers": [
+        "Project Evergreen Buyer, Inc."
+      ],
+      "targets": [
+        "Trinity Consultants Australia Pty Ltd",
+        "Lone Star Holdco, Inc."
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "WA-15038",
+      "merger_name": "Cinven \u2013 Salsify",
+      "acquirers": [
+        "Salsa Bidco, Inc."
+      ],
+      "targets": [
+        "Salsify, Inc."
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "WA-70035",
+      "merger_name": "Triton \u2013 United Initiators",
+      "acquirers": [
+        "Unna BidCo GmbH"
+      ],
+      "targets": [
+        "United Initiators GmbH",
+        "Bayern Acquisition LLC"
+      ],
+      "accc_determination": "Approved"
+    }
+  ]
+}
