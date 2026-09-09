@@ -24,7 +24,7 @@
       "code": "6240",
       "name": "Financial Asset Investing",
       "level": "class",
-      "merger_count": 121
+      "merger_count": 123
     }
   ],
   "mergers": [
@@ -150,6 +150,17 @@
       "determination_date": "2026-09-09T12:00:00Z"
     },
     {
+      "merger_id": "WA-25044",
+      "merger_name": "Veritas Capital Fund Management \u2013 Trinity Consultants",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-14T12:00:00Z",
+      "determination_date": "2026-09-09T12:00:00Z"
+    },
+    {
       "merger_id": "WA-50039",
       "merger_name": "Brookfield Corporation Ltd \u2013 Brookfield Corporation and Brookfield Wealth Solutions Ltd",
       "is_waiver": true,
@@ -158,6 +169,17 @@
       "has_conditions": false,
       "phase": "Waiver",
       "notification_date": "2026-08-26T12:00:00Z",
+      "determination_date": "2026-09-09T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-60040",
+      "merger_name": "Goldman Sachs - Numantec",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-14T12:00:00Z",
       "determination_date": "2026-09-09T12:00:00Z"
     },
     {
@@ -1360,10 +1382,10 @@
       "determination_date": "2026-01-30T12:00:00Z"
     }
   ],
-  "count": 121,
+  "count": 123,
   "phase_1_count": 29,
   "phase_2_count": 0,
-  "waiver_count": 92,
+  "waiver_count": 94,
   "active_count": 10,
   "phase_duration": {
     "average_days": 25.526315789473685,
@@ -1373,10 +1395,10 @@
     "completed_count": 19
   },
   "waiver_duration": {
-    "average_days": 20.065217391304348,
+    "average_days": 20.19148936170213,
     "median_days": 20.0,
-    "average_business_days": 13.717391304347826,
-    "median_business_days": 13.5,
-    "completed_count": 92
+    "average_business_days": 13.808510638297872,
+    "median_business_days": 14.0,
+    "completed_count": 94
   }
 }

@@ -250,7 +250,7 @@
       "18": {
         "24": 6,
         "25": 3,
-        "26": 10,
+        "26": 12,
         "27": 4,
         "28": 5,
         "29": 2
@@ -292,18 +292,18 @@
       }
     },
     "stats": {
-      "average": 13.4,
+      "average": 13.5,
       "median": 13.0,
       "min": 2,
       "max": 24,
-      "count": 390
+      "count": 392
     },
     "calendar_stats": {
       "average": 19.8,
       "median": 20.0,
       "min": 2,
       "max": 39,
-      "count": 390
+      "count": 392
     }
   },
   "monthly_volume": {
@@ -349,7 +349,7 @@
       67,
       61,
       72,
-      37,
+      39,
       0
     ]
   },
@@ -404,13 +404,13 @@
           "median_delta": 1.0
         },
         "waivers": {
-          "median": 17,
+          "median": 18,
           "average": 16.3,
           "p90": 21,
           "min": 7,
           "max": 23,
-          "count": 73,
-          "median_delta": 4.0
+          "count": 75,
+          "median_delta": 5.0
         }
       },
       {
@@ -426,13 +426,13 @@
           "median_delta": 0.0
         },
         "waivers": {
-          "median": 15.5,
+          "median": 16.0,
           "average": 15.4,
           "p90": 21,
           "min": 5,
           "max": 24,
-          "count": 188,
-          "median_delta": 2.5
+          "count": 190,
+          "median_delta": 3.0
         }
       }
     ],
@@ -447,11 +447,11 @@
       },
       "waivers": {
         "median": 13.0,
-        "average": 13.4,
+        "average": 13.5,
         "p90": 19,
         "min": 2,
         "max": 24,
-        "count": 390
+        "count": 392
       }
     },
     "pre_notification": {
@@ -642,9 +642,9 @@
           "count": 71
         },
         {
-          "median": 16.5,
-          "average": 15.9,
-          "count": 20
+          "median": 17.5,
+          "average": 16.1,
+          "count": 22
         }
       ],
       "open_caseload": [
@@ -832,9 +832,9 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 471,
+      "count": 473,
       "outcome_mix": {
-        "Approved": 471
+        "Approved": 473
       },
       "median_phase_1_business_days": 17.0
     },

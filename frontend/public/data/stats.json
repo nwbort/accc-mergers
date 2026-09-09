@@ -1,6 +1,6 @@
 {
   "total_mergers": 249,
-  "total_waivers": 390,
+  "total_waivers": 392,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 214,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 373,
+    "Approved": 375,
     "Not approved": 17
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.77179487179487,
+    "average_days": 19.803571428571427,
     "median_days": 20.0,
-    "average_business_days": 13.443589743589744,
+    "average_business_days": 13.466836734693878,
     "median_business_days": 13.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 121
+      "count": 123
     },
     {
       "name": "Computer System Design and Related Services",
@@ -219,6 +219,28 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-25044",
+      "merger_name": "Veritas Capital Fund Management \u2013 Trinity Consultants",
+      "determination": "Approved",
+      "determination_date": "2026-09-09T12:00:00Z",
+      "page_modified_datetime": "2026-09-09T16:51:41+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-60040",
+      "merger_name": "Goldman Sachs - Numantec",
+      "determination": "Approved",
+      "determination_date": "2026-09-09T12:00:00Z",
+      "page_modified_datetime": "2026-09-09T16:50:11+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-50039",
       "merger_name": "Brookfield Corporation Ltd \u2013 Brookfield Corporation and Brookfield Wealth Solutions Ltd",
       "determination": "Approved",
@@ -323,28 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-08T12:00:00Z",
       "page_modified_datetime": "2026-09-08T16:32:32+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-90034",
-      "merger_name": "Vopak Terminals Sydney \u2013 Leasehold interest in land at Port Botany, NSW",
-      "determination": "Approved",
-      "determination_date": "2026-09-08T12:00:00Z",
-      "page_modified_datetime": "2026-09-08T16:32:24+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-20037",
-      "merger_name": "Investissement Qu\u00e9bec, Fonds de solidarit\u00e9 des travailleurs et des travailleuses du Qu\u00e9bec and Placement Louis Bibeau Inc. \u2013 Australian Defence Apparel",
-      "determination": "Approved",
-      "determination_date": "2026-09-08T12:00:00Z",
-      "page_modified_datetime": "2026-09-08T16:32:17+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
