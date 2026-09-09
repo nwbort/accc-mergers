@@ -15,7 +15,7 @@
       "code": "67",
       "name": "Property Operators and Real Estate Services",
       "level": "subdivision",
-      "merger_count": 44
+      "merger_count": 45
     }
   ],
   "mergers": [
@@ -73,6 +73,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-08-03T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-50039",
+      "merger_name": "Brookfield Corporation Ltd \u2013 Brookfield Corporation and Brookfield Wealth Solutions Ltd",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-26T12:00:00Z",
+      "determination_date": "2026-09-09T12:00:00Z"
     },
     {
       "merger_id": "MN-70030",
@@ -625,10 +636,10 @@
       "determination_date": "2025-09-05T12:00:00Z"
     }
   ],
-  "count": 55,
+  "count": 56,
   "phase_1_count": 20,
   "phase_2_count": 2,
-  "waiver_count": 33,
+  "waiver_count": 34,
   "active_count": 5,
   "phase_duration": {
     "average_days": 33.470588235294116,
@@ -638,10 +649,10 @@
     "completed_count": 17
   },
   "waiver_duration": {
-    "average_days": 21.303030303030305,
-    "median_days": 22,
-    "average_business_days": 14.606060606060606,
-    "median_business_days": 14,
-    "completed_count": 33
+    "average_days": 21.08823529411765,
+    "median_days": 21.0,
+    "average_business_days": 14.470588235294118,
+    "median_business_days": 14.0,
+    "completed_count": 34
   }
 }

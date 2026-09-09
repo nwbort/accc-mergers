@@ -59,6 +59,11 @@
         },
         {
           "name": "Brookfield Corporation",
+          "identifier": "Canadian company no.  1646037",
+          "identifier_type": null
+        },
+        {
+          "name": "Brookfield Corporation",
           "identifier": "Company number 1644037",
           "identifier_type": null
         },
@@ -66,10 +71,27 @@
           "name": "Brookfield Corporation",
           "identifier": "Registered Number  1646037",
           "identifier_type": null
+        },
+        {
+          "name": "Brookfield Corporation Ltd",
+          "identifier": "Bermuda Registration No.  56130",
+          "identifier_type": null
         }
       ],
       "mergers": {
-        "acquirer": [],
+        "acquirer": [
+          {
+            "merger_id": "WA-50039",
+            "merger_name": "Brookfield Corporation Ltd \u2013 Brookfield Corporation and Brookfield Wealth Solutions Ltd",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-26T12:00:00Z",
+            "determination_date": "2026-09-09T12:00:00Z"
+          }
+        ],
         "target": [
           {
             "merger_id": "WA-50029",
@@ -119,10 +141,10 @@
           }
         ]
       },
-      "merger_count": 4,
+      "merger_count": 5,
       "phase_1_count": 1,
       "phase_2_count": 0,
-      "waiver_count": 3,
+      "waiver_count": 4,
       "active_count": 0,
       "phase_duration": {
         "average_days": 24.0,
@@ -132,11 +154,11 @@
         "completed_count": 1
       },
       "waiver_duration": {
-        "average_days": 16.0,
-        "median_days": 17,
-        "average_business_days": 11.333333333333334,
-        "median_business_days": 12,
-        "completed_count": 3
+        "average_days": 15.5,
+        "median_days": 15.5,
+        "average_business_days": 11.0,
+        "median_business_days": 11.0,
+        "completed_count": 4
       }
     },
     "buroserv-telco-holdings-pty-ltd": {

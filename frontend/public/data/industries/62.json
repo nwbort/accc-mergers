@@ -37,7 +37,7 @@
       "code": "624",
       "name": "Financial Asset Investing",
       "level": "group",
-      "merger_count": 120
+      "merger_count": 121
     }
   ],
   "mergers": [
@@ -160,6 +160,17 @@
       "has_conditions": false,
       "phase": "Waiver",
       "notification_date": "2026-08-12T12:00:00Z",
+      "determination_date": "2026-09-09T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-50039",
+      "merger_name": "Brookfield Corporation Ltd \u2013 Brookfield Corporation and Brookfield Wealth Solutions Ltd",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-26T12:00:00Z",
       "determination_date": "2026-09-09T12:00:00Z"
     },
     {
@@ -1450,10 +1461,10 @@
       "determination_date": null
     }
   ],
-  "count": 128,
+  "count": 129,
   "phase_1_count": 30,
   "phase_2_count": 1,
-  "waiver_count": 97,
+  "waiver_count": 98,
   "active_count": 10,
   "phase_duration": {
     "average_days": 28.428571428571427,
@@ -1463,10 +1474,10 @@
     "completed_count": 21
   },
   "waiver_duration": {
-    "average_days": 20.030927835051546,
-    "median_days": 20,
-    "average_business_days": 13.649484536082474,
-    "median_business_days": 14,
-    "completed_count": 97
+    "average_days": 19.96938775510204,
+    "median_days": 20.0,
+    "average_business_days": 13.612244897959183,
+    "median_business_days": 13.5,
+    "completed_count": 98
   }
 }
