@@ -242,6 +242,47 @@
         "completed_count": 1
       }
     },
+    "power-bidco-uk-limited": {
+      "id": "power-bidco-uk-limited",
+      "canonical_name": "Power BidCo UK Limited",
+      "members": [
+        {
+          "name": "Power BidCo UK Limited",
+          "identifier": "CRN  17052383",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-01119",
+            "merger_name": "Triton - Bureau Veritas Fuel & Coal Testing, Inspection and Certification Division",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-12T12:00:00Z",
+            "determination_date": "2026-09-09T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
     "regis-aged-care-pty-ltd": {
       "id": "regis-aged-care-pty-ltd",
       "canonical_name": "Regis Aged Care Pty Ltd",
