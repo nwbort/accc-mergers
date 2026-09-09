@@ -31,10 +31,21 @@
       "code": "333",
       "name": "Timber and Hardware Goods Wholesaling",
       "level": "group",
-      "merger_count": 7
+      "merger_count": 8
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-75052",
+      "merger_name": "Danfoss - Alfagomma",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-09T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-80035",
       "merger_name": "Saint-Gobain - Xypex",
@@ -168,11 +179,11 @@
       "determination_date": "2026-03-25T12:00:00Z"
     }
   ],
-  "count": 12,
-  "phase_1_count": 4,
+  "count": 13,
+  "phase_1_count": 5,
   "phase_2_count": 1,
   "waiver_count": 7,
-  "active_count": 1,
+  "active_count": 2,
   "phase_duration": {
     "average_days": 46.75,
     "median_days": 31.0,

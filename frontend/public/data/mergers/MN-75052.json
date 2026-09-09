@@ -1,0 +1,136 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/danfoss-alfagomma",
+  "merger_name": "Danfoss - Alfagomma",
+  "status": "Under assessment",
+  "merger_id": "MN-75052",
+  "effective_notification_datetime": "2026-09-09T12:00:00Z",
+  "original_notification_datetime": "2026-09-09T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-10-22T12:00:00Z",
+  "consultation_response_due_date": "2026-09-17T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "Danfoss A/S",
+      "identifier_type": null,
+      "identifier": "Reg. 20165715",
+      "party_page": {
+        "id": "danfoss-a-s",
+        "name": "Danfoss A/S"
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "Alfa Gomma S.p.A, in liquidazione",
+      "identifier_type": null,
+      "identifier": "LEI 815600BDA888FB8F2698",
+      "party_page": {
+        "id": "alfa-gomma-s-p-a-in-liquidazione",
+        "name": "Alfa Gomma S.p.A, in liquidazione"
+      }
+    }
+  ],
+  "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "2499",
+      "name": "Other Machinery and Equipment Manufacturing n.e.c."
+    },
+    {
+      "code": "3339",
+      "name": "Other Hardware Goods Wholesaling"
+    },
+    {
+      "code": "3494",
+      "name": "Other Electrical and Electronic Goods Wholesaling"
+    }
+  ],
+  "merger_description": "Danfoss A/S (**Danfoss**) proposes to acquire sole control of Alfa Gomma S.p.A. in liquidazione (**Alfagomma**) (with the exception of certain assets) by way of a share purchase agreement (the **Acquisition**).\n\nDanfoss is a family and foundation owned limited liability company established in Denmark, controlled by the Bitten & Mads Clausen\u2019s Foundation. Danfoss operates globally, with sales in more than 100 countries. Danfoss is active in the development, manufacturing and distribution of components and engineering technologies for refrigeration, heating, air conditioning, industrial automation, hydraulics, high-pressure systems and frequency converters. Danfoss also provides solutions for renewable energy and district energy infrastructure. Relevant to the Acquisition, Danfoss offers fluid conveyance products including hydraulic hoses, industrial hoses, fittings, adapters and assemblies.\n\nAlfagomma is established in Italy and is a global manufacturer and distributor of fluid handling systems for hydraulic and industrial applications. Alfagomma operates across two main business areas: high-pressure hoses, hydraulic hoses, manipulated tubes, fittings and adapters and rubber industrial hoses, PVC industrial pipes and industrial tubes made of thermoplastic rubber. Alfagomma is currently undergoing voluntary liquidation. A board of receivers was appointed by the Court of Milan on 27 May 2025 with authority to identify and pursue strategic alternatives and operational measures deemed appropriate to ensure stable ongoing operations and to protect the value of Alfagomma\u2019s business.\n\nDanfoss and Alfagomma overlap in the supply of hydraulic hoses and fittings and industrial hoses and fittings.",
+  "events": [
+    {
+      "date": "2026-09-09T12:00:00Z",
+      "title": "Phase 1 consultation",
+      "display_title": "Phase 1 consultation",
+      "is_questionnaire_event": true,
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Danfoss-Alfagomma%20-%20Third%20party%20questionnaire.docx",
+      "url_gh": "/mergers/MN-75052/Danfoss-Alfagomma - Third party questionnaire.pdf",
+      "phase": "Phase 1"
+    },
+    {
+      "date": "2026-09-09T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-10030",
+      "merger_name": "Novonesis \u2013 Microbiogen",
+      "acquirers": [
+        "NOVOZYMES AUSTRALIA PTY LTD"
+      ],
+      "targets": [
+        "MICROBIOGEN PTY LTD"
+      ],
+      "status": "Under assessment"
+    },
+    {
+      "merger_id": "MN-55031",
+      "merger_name": "Danone \u2013 MADE",
+      "acquirers": [
+        "Minogue BidCo"
+      ],
+      "targets": [
+        "Made (MJV) Pte Ltd",
+        "TUCKER HOLDCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "MN-70005",
+      "merger_name": "Freudenberg Home and Cleaning Solutions \u2013 Nilfisk",
+      "acquirers": [
+        "Freudenberg Home and Cleaning Solutions GmbH"
+      ],
+      "targets": [
+        "Nilfisk Holding A/S"
+      ],
+      "accc_determination": "Approved"
+    }
+  ],
+  "phase_1_estimate": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 151,
+    "as_of": "2026-09-09",
+    "estimated_at": "2026-09-09",
+    "method_version": 2
+  },
+  "pre_notification": {
+    "estimated_days": 20,
+    "min_days": 13,
+    "max_days": 29,
+    "id_issued_estimated": "2026-08-20",
+    "id_issued_before": "2026-08-27",
+    "id_issued_after": "2026-08-11",
+    "min_days_witness": "WA-75055",
+    "max_days_witness": "WA-75051",
+    "basis": "bracketed",
+    "method_version": 1
+  }
+}

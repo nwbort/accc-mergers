@@ -1,10 +1,10 @@
 {
-  "total_mergers": 248,
+  "total_mergers": 249,
   "total_waivers": 388,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 214,
-    "Under assessment": 29,
+    "Under assessment": 30,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-75052",
+      "merger_name": "Danfoss - Alfagomma",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-09-09T12:00:00Z",
+      "page_modified_datetime": "2026-09-09T16:34:56+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-01124",
       "merger_name": "Prysmian - Atkore",
@@ -204,16 +214,6 @@
       "effective_notification_datetime": "2026-08-27T12:00:00Z",
       "page_modified_datetime": "2026-09-07T16:45:32+10:00",
       "is_waiver": true,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-85047",
-      "merger_name": "Blackstone funds and Perpetual Trustees \u2013 HSBC loan portfolio",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-27T12:00:00Z",
-      "page_modified_datetime": "2026-08-28T14:01:49+10:00",
-      "is_waiver": false,
       "is_refiled": false
     }
   ],
