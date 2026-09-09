@@ -6847,10 +6847,168 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 37,
-        "min_days": null,
+        "estimated_days": 19,
+        "min_days": 0,
         "max_days": 44,
-        "id_issued_estimated": "2026-07-29",
+        "id_issued_estimated": "2026-08-16",
+        "id_issued_before": "2026-09-04",
+        "id_issued_after": "2026-07-22",
+        "min_days_witness": "MN-01124",
+        "max_days_witness": "WA-01118",
+        "basis": "bracketed",
+        "method_version": 1
+      }
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/prysmian-atkore",
+      "merger_name": "Prysmian - Atkore",
+      "status": "Under assessment",
+      "merger_id": "MN-01124",
+      "effective_notification_datetime": "2026-09-08T12:00:00Z",
+      "original_notification_datetime": "2026-09-08T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-10-21T12:00:00Z",
+      "page_modified_datetime": "2026-09-09T14:24:25+10:00",
+      "consultation_response_due_date": "2026-09-16T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Prysmian S.p.A.",
+          "identifier_type": null,
+          "identifier": "Italian company registration number  04866320965",
+          "party_page": {
+            "id": "prysmian-s-p-a",
+            "name": "Prysmian S.p.A."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Atkore Inc.",
+          "identifier_type": null,
+          "identifier": "New York State ID  4669575",
+          "party_page": {
+            "id": "atkore-inc",
+            "name": "Atkore Inc."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Trinity Merger Sub, Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware registration number  10718674",
+          "party_page": {
+            "id": "trinity-merger-sub-inc",
+            "name": "Trinity Merger Sub, Inc."
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1912",
+          "name": "Rigid and Semi-Rigid Polymer Product Manufacturing"
+        },
+        {
+          "code": "2122",
+          "name": "Steel Pipe and Tube Manufacturing"
+        },
+        {
+          "code": "2221",
+          "name": "Structural Steel Fabricating"
+        },
+        {
+          "code": "2431",
+          "name": "Electric Cable and Wire Manufacturing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "merger_description": "Prysmian S.p.A. (**Prysmian**), via a wholly owned special purpose vehicle,\u00a0proposes to acquire 100% of the share capital in Atkore Inc. (**Atkore**) (the **Acquisition**).\n\nPrysmian is listed on the Italian Stock Exchange listed and headquartered in Milan. In Australia, Prysmian has two local manufacturing facilities in Dee Why and Liverpool, New South Wales that produce fibre optic cables and energy cables, respectively. Prysmian supplies cables and wires to telecommunications companies, power utilities, electrical wholesalers and contractors, original equipment manufacturers, and mining facilities throughout Australia.\n\nAtkore is a Delaware corporation listed on the New York Stock Exchange and headquartered in Illinois. Atkore manufactures and supplies electrical and safety infrastructure solutions for construction and infrastructure projects, including conduits, cable management systems (trays, ladders and baskets) and safety infrastructure products (barbed tape, mechanical tubing, metal pipe supports and bollards). Atkore's products are sold to end-consumers in Australia by a range of electrical and industrial distributors.",
+      "events": [
+        {
+          "date": "2026-09-09T12:00:00Z",
+          "title": "Phase 1 consultation",
+          "display_title": "Phase 1 consultation",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Prysmian%20-%20Atkore%20-%20third-party%20questionnaire.docx",
+          "url_gh": "/mergers/MN-01124/Prysmian - Atkore - third-party questionnaire.pdf",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-09-08T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-50014",
+          "merger_name": "Searchlight Capital Partners - Additional interest in KORE Group Holdings Inc.",
+          "acquirers": [
+            "Searchlight Capital IV LP",
+            "KONA Merger Sub Co."
+          ],
+          "targets": [
+            "KORE Group Holdings, Inc."
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-55030",
+          "merger_name": "CRH - Arcosa",
+          "acquirers": [
+            "Neon Merger Sub, Inc."
+          ],
+          "targets": [
+            "Arcosa, Inc."
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-65014",
+          "merger_name": "26North Funds - Intermedia Cloud Communications",
+          "acquirers": [
+            "Unite Holdco LLC",
+            "26North Partners LP"
+          ],
+          "targets": [
+            "Intermedia Cloud Communications, Inc."
+          ],
+          "accc_determination": "Approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 17,
+        "range_business_days": [
+          15,
+          19
+        ],
+        "basis": "questionnaire",
+        "question_bucket": "3 or fewer",
+        "question_count": 3,
+        "sample_size": 144,
+        "as_of": "2026-09-08",
+        "estimated_at": "2026-09-09",
+        "method_version": 2
+      },
+      "pre_notification": {
+        "estimated_days": 23,
+        "min_days": null,
+        "max_days": 48,
+        "id_issued_estimated": "2026-08-16",
         "id_issued_before": null,
         "id_issued_after": "2026-07-22",
         "min_days_witness": null,

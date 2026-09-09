@@ -24,7 +24,7 @@
       "code": "2431",
       "name": "Electric Cable and Wire Manufacturing",
       "level": "class",
-      "merger_count": 0
+      "merger_count": 1
     },
     {
       "code": "2432",
@@ -40,6 +40,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-01124",
+      "merger_name": "Prysmian - Atkore",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-08T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "WA-80036",
       "merger_name": "RCT Solutions GmbH - W\u00e4rtsil\u00e4 Energy Storage Finland Oy",
@@ -107,11 +118,11 @@
       "determination_date": "2026-03-05T12:00:00Z"
     }
   ],
-  "count": 6,
-  "phase_1_count": 1,
+  "count": 7,
+  "phase_1_count": 2,
   "phase_2_count": 0,
   "waiver_count": 5,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": {
     "average_days": 27.0,
     "median_days": 27,

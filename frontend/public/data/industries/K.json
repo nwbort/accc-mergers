@@ -9,7 +9,7 @@
       "code": "62",
       "name": "Finance",
       "level": "subdivision",
-      "merger_count": 126
+      "merger_count": 127
     },
     {
       "code": "63",
@@ -25,6 +25,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-01124",
+      "merger_name": "Prysmian - Atkore",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-08T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-01122",
       "merger_name": "Flick \u2013 GC Pest Control",
@@ -1984,11 +1995,11 @@
       "determination_date": null
     }
   ],
-  "count": 178,
-  "phase_1_count": 44,
+  "count": 179,
+  "phase_1_count": 45,
   "phase_2_count": 2,
   "waiver_count": 132,
-  "active_count": 13,
+  "active_count": 14,
   "phase_duration": {
     "average_days": 27.852941176470587,
     "median_days": 25.5,

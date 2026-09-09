@@ -242,6 +242,41 @@
       "phase_duration": null,
       "waiver_duration": null
     },
+    "trinity-merger-sub-inc": {
+      "id": "trinity-merger-sub-inc",
+      "canonical_name": "Trinity Merger Sub, Inc.",
+      "members": [
+        {
+          "name": "Trinity Merger Sub, Inc.",
+          "identifier": "Delaware registration number  10718674",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-01124",
+            "merger_name": "Prysmian - Atkore",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-08T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "wollemi-energy-group-holdings-pty-ltd": {
       "id": "wollemi-energy-group-holdings-pty-ltd",
       "canonical_name": "Wollemi Energy Group Holdings Pty Ltd",

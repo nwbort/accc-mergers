@@ -1,10 +1,10 @@
 {
-  "total_mergers": 247,
+  "total_mergers": 248,
   "total_waivers": 388,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 214,
-    "Under assessment": 28,
+    "Under assessment": 29,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -56,7 +56,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 118
+      "count": 119
     },
     {
       "name": "Computer System Design and Related Services",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-01124",
+      "merger_name": "Prysmian - Atkore",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-09-08T12:00:00Z",
+      "page_modified_datetime": "2026-09-09T14:24:25+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-75043",
       "merger_name": "Hyne Pallets - Advance Pallets",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-08-27T12:00:00Z",
       "page_modified_datetime": "2026-08-28T14:01:49+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-35038",
-      "merger_name": "WSP - e2m",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-08-26T12:00:00Z",
-      "page_modified_datetime": "2026-08-27T11:58:43+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

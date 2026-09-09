@@ -57,7 +57,7 @@
       "code": "19",
       "name": "Polymer Product and Rubber Product Manufacturing",
       "level": "subdivision",
-      "merger_count": 13
+      "merger_count": 14
     },
     {
       "code": "20",
@@ -69,13 +69,13 @@
       "code": "21",
       "name": "Primary Metal and Metal Product Manufacturing",
       "level": "subdivision",
-      "merger_count": 9
+      "merger_count": 10
     },
     {
       "code": "22",
       "name": "Fabricated Metal Product Manufacturing",
       "level": "subdivision",
-      "merger_count": 7
+      "merger_count": 8
     },
     {
       "code": "23",
@@ -87,7 +87,7 @@
       "code": "24",
       "name": "Machinery and Equipment Manufacturing",
       "level": "subdivision",
-      "merger_count": 59
+      "merger_count": 60
     },
     {
       "code": "25",
@@ -97,6 +97,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-01124",
+      "merger_name": "Prysmian - Atkore",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-08T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-75043",
       "merger_name": "Hyne Pallets - Advance Pallets",
@@ -1836,11 +1847,11 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 158,
-  "phase_1_count": 70,
+  "count": 159,
+  "phase_1_count": 71,
   "phase_2_count": 2,
   "waiver_count": 86,
-  "active_count": 10,
+  "active_count": 11,
   "phase_duration": {
     "average_days": 29.61904761904762,
     "median_days": 27,
