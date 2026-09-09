@@ -110,26 +110,26 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-65031",
-      "merger_name": "Metal Manufactures - BayWa Solar Systems",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-08-14T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-15031",
       "merger_name": "Danaher (Leica Biosystems) - StatLab",
       "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
+      "status": "Assessment completed",
+      "determination": "Approved",
       "has_conditions": false,
       "phase": "Phase 1",
       "notification_date": "2026-08-05T12:00:00Z",
-      "determination_date": null
+      "determination_date": "2026-09-09T12:00:00Z"
+    },
+    {
+      "merger_id": "MN-65031",
+      "merger_name": "Metal Manufactures - BayWa Solar Systems",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-14T12:00:00Z",
+      "determination_date": "2026-09-09T12:00:00Z"
     },
     {
       "merger_id": "WA-60040",
@@ -785,13 +785,13 @@
   "phase_1_count": 36,
   "phase_2_count": 2,
   "waiver_count": 29,
-  "active_count": 8,
+  "active_count": 6,
   "phase_duration": {
-    "average_days": 34.1,
+    "average_days": 33.875,
     "median_days": 28.0,
-    "average_business_days": 21.966666666666665,
+    "average_business_days": 21.9375,
     "median_business_days": 18.0,
-    "completed_count": 30
+    "completed_count": 32
   },
   "waiver_duration": {
     "average_days": 20.275862068965516,
