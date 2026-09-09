@@ -800,6 +800,72 @@ def referrals_by_quarter(notification_mergers: list) -> list[dict]:
     ]
 
 
+class _DurationHistogram:
+    """Counts of completed reviews by (business days, calendar days) pair.
+
+    The page these feed (the two ECDF curves on /analysis) only ever asks "how
+    many reviews took exactly N days", never which matter took them — the
+    records carry no id and are read as an unordered bag. So publishing one
+    JSON object per review was pure repetition: ~600 of them, two thirds of
+    analysis.json, to express a couple of hundred distinct pairs.
+
+    Counting the pairs instead is lossless rather than merely smaller. A
+    multiset of anonymous pairs *is* the list that was published before, so
+    every marginal the old list could produce — either ECDF, a median, a
+    percentile, and the joint distribution of the two day counts — still comes
+    out of this. What goes away is only the repetition.
+
+    Serialised as a nested map, business days → calendar days → count, so a
+    consumer reading business days alone (the common case) can sum each inner
+    map without looking at its keys.
+    """
+
+    def __init__(self):
+        self._counts: dict[int, dict[int, int]] = {}
+
+    def add(self, business_days: int | None, calendar_days: int | None) -> None:
+        """Count one review, ignoring it if either duration is unmeasurable.
+
+        Both day counts come from parsing the same two dates, so in practice
+        they are either both present or both None.
+        """
+        if business_days is None or calendar_days is None:
+            return
+        self._counts.setdefault(business_days, {})
+        by_calendar = self._counts[business_days]
+        by_calendar[calendar_days] = by_calendar.get(calendar_days, 0) + 1
+
+    def business_days(self) -> list[int]:
+        """One entry per counted review, for the stats that summarise them.
+
+        Grouped by duration rather than in the order the reviews were counted,
+        which the order-independent figures published here (min, max, mean,
+        median) don't care about.
+        """
+        return [
+            bus
+            for bus, by_calendar in self._counts.items()
+            for count in by_calendar.values()
+            for _ in range(count)
+        ]
+
+    def calendar_days(self) -> list[int]:
+        """One entry per counted review, for the stats that summarise them."""
+        return [
+            cal
+            for by_calendar in self._counts.values()
+            for cal, count in by_calendar.items()
+            for _ in range(count)
+        ]
+
+    def as_json(self) -> dict:
+        """Sorted nested counts, ready to serialise (JSON keys become strings)."""
+        return {
+            bus: dict(sorted(self._counts[bus].items()))
+            for bus in sorted(self._counts)
+        }
+
+
 def generate(mergers: list) -> dict:
     """Return the analysis.json payload for pre-enriched mergers."""
     notification_mergers = filter_notifications(mergers)
@@ -820,7 +886,7 @@ def generate(mergers: list) -> dict:
     # duration figure on the site.
     phase1_calendar_days, phase1_business_days = collect_phase_1_durations(notification_mergers)
 
-    phase1_durations = []
+    phase1_histogram = _DurationHistogram()
     for m in notification_mergers:
         start = m.get('effective_notification_datetime')
         # Measure to the Phase 1 end. For matters referred to Phase 2 this is the
@@ -832,19 +898,12 @@ def generate(mergers: list) -> dict:
         if not start or not end:
             continue
 
-        bus_days = calculate_business_days(start, end)
-        cal_days = calculate_calendar_days(start, end)
-        if bus_days is None:
-            continue
-
-        phase1_durations.append({
-            "business_days": bus_days,
-            "calendar_days": cal_days,
-            # Every retained entry is a completed Phase 1 review — matters still
-            # in Phase 1 have no phase_1_end_date and are skipped above — so none
-            # are in progress. Kept for the ECDF's expected schema.
-            "in_progress": False,
-        })
+        # Every entry counted here is a completed Phase 1 review — matters still
+        # in Phase 1 have no phase_1_end_date and are skipped above.
+        phase1_histogram.add(
+            calculate_business_days(start, end),
+            calculate_calendar_days(start, end),
+        )
 
     phase1_stats = {}
     if phase1_business_days:
@@ -867,9 +926,7 @@ def generate(mergers: list) -> dict:
         }
 
     # --- Waiver duration analysis ---
-    waiver_durations = []
-    waiver_business_days = []
-    waiver_calendar_days = []
+    waiver_histogram = _DurationHistogram()
 
     for m in waiver_mergers:
         start = m.get('effective_notification_datetime')
@@ -877,18 +934,13 @@ def generate(mergers: list) -> dict:
         if not start or not end:
             continue
 
-        bus_days = calculate_business_days(start, end)
-        cal_days = calculate_calendar_days(start, end)
-        if bus_days is None:
-            continue
+        waiver_histogram.add(
+            calculate_business_days(start, end),
+            calculate_calendar_days(start, end),
+        )
 
-        waiver_business_days.append(bus_days)
-        if cal_days is not None:
-            waiver_calendar_days.append(cal_days)
-        waiver_durations.append({
-            "business_days": bus_days,
-            "calendar_days": cal_days,
-        })
+    waiver_business_days = waiver_histogram.business_days()
+    waiver_calendar_days = waiver_histogram.calendar_days()
 
     waiver_stats = {}
     if waiver_business_days:
@@ -935,12 +987,12 @@ def generate(mergers: list) -> dict:
 
     return {
         "phase1_duration": {
-            "durations": phase1_durations,
+            "duration_histogram": phase1_histogram.as_json(),
             "stats": phase1_stats,
             "calendar_stats": phase1_calendar_stats,
         },
         "waiver_duration": {
-            "durations": waiver_durations,
+            "duration_histogram": waiver_histogram.as_json(),
             "stats": waiver_stats,
             "calendar_stats": waiver_calendar_stats,
         },
