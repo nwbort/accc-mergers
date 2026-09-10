@@ -170,6 +170,64 @@ def referral_probability_by_day(mergers: list) -> dict:
     Measured over completed reviews only, since a still-open matter has no known
     outcome yet. Accepts the full merger list (waivers and in-progress matters
     are filtered out) or an already-filtered notification list.
+
+    Why elapsed day is the only predictor
+    -------------------------------------
+    The curve is deliberately univariate. Two filing-time covariates were tested
+    as additions and neither earned a place, though for opposite reasons.
+
+    **Questionnaire size is a real signal, but the clock already carries it.**
+    Split at the ACCC's boilerplate three questions, matters whose questionnaire
+    asks more are referred 10.4% of the time (7 of 67) against 1.3% (2 of 155)
+    below it — an 8x relative risk, Fisher two-sided p = 0.004, AUC 0.764
+    (permutation p = 0.0009), and not the artefact of any one matter: refitting
+    with each of the nine referrals dropped in turn leaves p at 0.0098 or
+    better. The cut at 3 is also the best available — >4 scores the same and
+    every coarser cut is weaker — and it is the same boundary
+    :mod:`static_data.phase1_estimate` pools on, from the same cause: the
+    questionnaire reveals the ACCC's opening read on complexity.
+
+    That signal is almost entirely *front-loaded*, because question count
+    correlates with phase-1 duration (Spearman rho = +0.44) and this curve
+    conditions on duration already. Among matters still undecided at business
+    day 20 the questionnaire AUC has fallen to 0.626 (p = 0.21), and by day 25
+    the stratified curves have converged on the pooled one (0.20 and 0.27
+    against 0.25, identical from day 30). All of its unique information sits in
+    the window where this curve is flat: through day 15 the pooled curve reads
+    0.04 for every matter, where stratifying reads 0.01 below the cut and 0.10
+    above.
+
+    Whether that is worth publishing is a genuinely close call, and it was
+    resolved against changing the curve. Leave-one-merger-out CV over the
+    risk-set expansion (each merger contributing one row per business day it ran
+    undecided) puts the pooled curve at log loss 0.2454 / Brier 0.0670 and a
+    curve stratified on the same cut at 0.2430 / 0.0695 — better on one metric,
+    worse on the other, with the log-loss gain at +0.0024 (95% CI [-0.032,
+    +0.033], bootstrap clustered by merger). Restricting to days 0-19, where 86%
+    of the risk-set rows sit, the gain grows to +0.0132 but the interval still
+    spans zero ([-0.015, +0.040]); a hybrid that stratifies below day 15 and
+    pools after scores 0.2434 / 0.0676, likewise inside the noise. On nine
+    referrals none of this separates from chance, so the extra parameter is not
+    yet paid for.
+
+    **Pre-notification duration predicts nothing.** The
+    :mod:`static_data.prenotification` estimate scores AUC 0.548 (p = 0.63)
+    against referral, its proven floor ``min_days`` 0.542 (p = 0.67), and it
+    stays flat inside both questionnaire strata (0.363 and 0.513). Added to any
+    model above, it made held-out loss worse. Its ceiling ``max_days`` does test
+    significant (AUC 0.819, p = 0.024) — but only over the 191 matters that have
+    one, and the 33 without include five of the nine referrals, so that slice is
+    selected by where a matter sits on its ID counter rather than by anything
+    about the matter. Treat it as an artefact, not a finding.
+
+    **What would change the answer.** Power, not method: 9 referrals in 224
+    completed reviews. Recent cohorts also read artificially clean, because
+    referrals take much longer to surface than clearances (median 46 business
+    days against 17), so a cohort's referrals are the last of it to complete —
+    the two longest-running matters open today, at 58 and 51 business days, both
+    sit above the questionnaire cut. Re-run this comparison once the register
+    carries roughly twice the referrals and the early-window stratification may
+    well clear the bar.
     """
     referred_days, cleared_days = _completed_phase1_outcomes(mergers)
     all_days = referred_days + cleared_days
