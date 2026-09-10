@@ -32,7 +32,7 @@
       },
       "19": {
         "25": 1,
-        "27": 10,
+        "27": 11,
         "28": 4,
         "29": 3,
         "32": 1
@@ -132,17 +132,17 @@
     },
     "stats": {
       "average": 20.3,
-      "median": 18.0,
+      "median": 18,
       "min": 15,
       "max": 59,
-      "count": 224
+      "count": 225
     },
     "calendar_stats": {
       "average": 30.0,
-      "median": 26.0,
+      "median": 26,
       "min": 21,
       "max": 103,
-      "count": 224
+      "count": 225
     }
   },
   "waiver_duration": {
@@ -384,7 +384,7 @@
       41,
       46,
       37,
-      28
+      27
     ],
     "as_at": "2026-09-10"
   },
@@ -395,12 +395,12 @@
         "days": 30,
         "notifications_filed": 32,
         "notifications": {
-          "median": 19,
+          "median": 19.0,
           "average": 21.5,
           "p90": 34,
           "min": 15,
           "max": 52,
-          "count": 57,
+          "count": 58,
           "median_delta": 1.0
         },
         "waivers": {
@@ -417,12 +417,12 @@
         "days": 90,
         "notifications_filed": 117,
         "notifications": {
-          "median": 18,
+          "median": 18.0,
           "average": 21.3,
           "p90": 33,
           "min": 15,
           "max": 56,
-          "count": 121,
+          "count": 122,
           "median_delta": 0.0
         },
         "waivers": {
@@ -438,12 +438,12 @@
     ],
     "all_time": {
       "notifications": {
-        "median": 18.0,
+        "median": 18,
         "average": 20.3,
         "p90": 28,
         "min": 15,
         "max": 59,
-        "count": 224
+        "count": 225
       },
       "waivers": {
         "median": 13.0,
@@ -570,9 +570,9 @@
           "count": 45
         },
         {
-          "median": 19.5,
-          "average": 23.7,
-          "count": 20
+          "median": 19,
+          "average": 23.5,
+          "count": 21
         }
       ],
       "waivers": [
@@ -661,7 +661,7 @@
         41,
         46,
         37,
-        28
+        27
       ]
     }
   },
@@ -685,15 +685,6 @@
       "count": 4
     },
     {
-      "code": "G",
-      "name": "Retail Trade",
-      "average_business_days": 23.4,
-      "median_business_days": 18,
-      "average_calendar_days": 35.7,
-      "median_calendar_days": 27,
-      "count": 27
-    },
-    {
       "code": "I",
       "name": "Transport, Postal and Warehousing",
       "average_business_days": 23.4,
@@ -703,13 +694,22 @@
       "count": 14
     },
     {
+      "code": "G",
+      "name": "Retail Trade",
+      "average_business_days": 23.2,
+      "median_business_days": 18.0,
+      "average_calendar_days": 35.4,
+      "median_calendar_days": 27.0,
+      "count": 28
+    },
+    {
       "code": "H",
       "name": "Accommodation and Food Services",
-      "average_business_days": 23.3,
-      "median_business_days": 17.5,
-      "average_calendar_days": 33.5,
-      "median_calendar_days": 25.0,
-      "count": 12
+      "average_business_days": 23.0,
+      "median_business_days": 18,
+      "average_calendar_days": 33.0,
+      "median_calendar_days": 25,
+      "count": 13
     },
     {
       "code": "A",
@@ -732,20 +732,20 @@
     {
       "code": "F",
       "name": "Wholesale Trade",
-      "average_business_days": 21.9,
-      "median_business_days": 18.0,
-      "average_calendar_days": 33.9,
-      "median_calendar_days": 28.0,
-      "count": 32
+      "average_business_days": 21.8,
+      "median_business_days": 18,
+      "average_calendar_days": 33.7,
+      "median_calendar_days": 28,
+      "count": 33
     },
     {
       "code": "L",
       "name": "Rental, Hiring and Real Estate Services",
-      "average_business_days": 21.8,
-      "median_business_days": 20.0,
-      "average_calendar_days": 32.8,
-      "median_calendar_days": 29.0,
-      "count": 18
+      "average_business_days": 21.7,
+      "median_business_days": 19,
+      "average_calendar_days": 32.5,
+      "median_calendar_days": 29,
+      "count": 19
     },
     {
       "code": "D",
@@ -787,10 +787,10 @@
       "code": "C",
       "name": "Manufacturing",
       "average_business_days": 20.1,
-      "median_business_days": 18,
+      "median_business_days": 18.0,
       "average_calendar_days": 29.7,
-      "median_calendar_days": 27,
-      "count": 65
+      "median_calendar_days": 27.0,
+      "count": 66
     },
     {
       "code": "O",
@@ -832,11 +832,11 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 479,
+      "count": 480,
       "outcome_mix": {
-        "Approved": 479
+        "Approved": 480
       },
-      "median_phase_1_business_days": 17.0
+      "median_phase_1_business_days": 17
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -859,9 +859,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 25,
+      "count": 24,
       "outcome_mix": {
-        "Unknown": 25
+        "Unknown": 24
       },
       "median_phase_1_business_days": null
     },
@@ -905,7 +905,7 @@
       "16": 37,
       "17": 25,
       "18": 25,
-      "19": 19,
+      "19": 20,
       "20": 10,
       "21": 10,
       "22": 6,
@@ -925,9 +925,9 @@
     },
     "stats": {
       "mean_used_bd": 18.2,
-      "median_used_bd": 17.0,
+      "median_used_bd": 17,
       "pct_decided_final_3_bd": 2.9,
-      "count": 204
+      "count": 205
     },
     "extended_count": 11
   },
@@ -975,31 +975,31 @@
       "phase2_referral_rate": 0.143
     },
     {
-      "code": "L",
-      "name": "Rental, Hiring and Real Estate Services",
-      "approved": 16,
-      "not_approved": 0,
-      "referred": 2,
-      "in_progress": 4,
-      "phase2_referral_rate": 0.111
-    },
-    {
       "code": "G",
       "name": "Retail Trade",
-      "approved": 24,
+      "approved": 25,
       "not_approved": 0,
       "referred": 3,
-      "in_progress": 6,
-      "phase2_referral_rate": 0.111
+      "in_progress": 5,
+      "phase2_referral_rate": 0.107
+    },
+    {
+      "code": "L",
+      "name": "Rental, Hiring and Real Estate Services",
+      "approved": 17,
+      "not_approved": 0,
+      "referred": 2,
+      "in_progress": 3,
+      "phase2_referral_rate": 0.105
     },
     {
       "code": "F",
       "name": "Wholesale Trade",
-      "approved": 30,
+      "approved": 31,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 8,
-      "phase2_referral_rate": 0.062
+      "in_progress": 7,
+      "phase2_referral_rate": 0.061
     },
     {
       "code": "K",
@@ -1031,11 +1031,11 @@
     {
       "code": "C",
       "name": "Manufacturing",
-      "approved": 63,
+      "approved": 64,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 11,
-      "phase2_referral_rate": 0.031
+      "in_progress": 10,
+      "phase2_referral_rate": 0.03
     },
     {
       "code": "D",
@@ -1067,10 +1067,10 @@
     {
       "code": "H",
       "name": "Accommodation and Food Services",
-      "approved": 12,
+      "approved": 13,
       "not_approved": 0,
       "referred": 0,
-      "in_progress": 1,
+      "in_progress": 0,
       "phase2_referral_rate": 0.0
     },
     {

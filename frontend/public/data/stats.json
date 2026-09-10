@@ -3,12 +3,12 @@
   "total_waivers": 394,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 218,
-    "Under assessment": 28,
+    "Assessment completed": 219,
+    "Under assessment": 27,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 211,
+    "Approved": 212,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 17
   },
   "clearance_rate": {
-    "cleared": 216,
+    "cleared": 217,
     "not_cleared": 2,
-    "total": 218,
+    "total": 219,
     "rate": 0.991
   },
   "phase_duration": {
-    "average_days": 30.0,
-    "median_days": 26.0,
-    "average_business_days": 20.308035714285715,
-    "median_business_days": 18.0,
+    "average_days": 29.986666666666668,
+    "median_days": 26,
+    "average_business_days": 20.302222222222223,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
         "count": 47,
-        "percentage": 21.0
+        "percentage": 20.9
       },
       "day20": {
-        "count": 163,
-        "percentage": 72.8
+        "count": 164,
+        "percentage": 72.9
       },
       "day30": {
-        "count": 207,
+        "count": 208,
         "percentage": 92.4
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-10027",
+      "merger_name": "Endeavour Group \u2013 retail liquor site in Horsham, VIC",
+      "determination": "Approved",
+      "determination_date": "2026-09-10T12:00:00Z",
+      "page_modified_datetime": "2026-09-10T13:28:37+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-05044",
       "merger_name": "Holcim Australia \u2013 Burdetts Group",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-20034",
-      "merger_name": "Chevron - Woodside asset swap",
-      "determination": "Approved",
-      "determination_date": "2026-09-08T12:00:00Z",
-      "page_modified_datetime": "2026-09-08T17:32:38+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]
