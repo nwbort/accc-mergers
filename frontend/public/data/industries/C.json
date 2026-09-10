@@ -197,17 +197,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-05044",
-      "merger_name": "Holcim Australia \u2013 Burdetts Group",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-08-10T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-05013",
       "merger_name": "Zoetis \u2013 Neogen Genomics Business",
       "is_waiver": false,
@@ -217,6 +206,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-05-12T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-05044",
+      "merger_name": "Holcim Australia \u2013 Burdetts Group",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-10T12:00:00Z",
+      "determination_date": "2026-09-10T12:00:00Z"
     },
     {
       "merger_id": "MN-15031",
@@ -1884,13 +1884,13 @@
   "phase_1_count": 72,
   "phase_2_count": 2,
   "waiver_count": 88,
-  "active_count": 11,
+  "active_count": 10,
   "phase_duration": {
-    "average_days": 29.703125,
-    "median_days": 27.0,
-    "average_business_days": 20.078125,
-    "median_business_days": 18.0,
-    "completed_count": 64
+    "average_days": 29.723076923076924,
+    "median_days": 27,
+    "average_business_days": 20.123076923076923,
+    "median_business_days": 18,
+    "completed_count": 65
   },
   "waiver_duration": {
     "average_days": 19.136363636363637,

@@ -55,7 +55,7 @@
         "35": 2
       },
       "23": {
-        "31": 1,
+        "31": 2,
         "33": 2
       },
       "24": {
@@ -132,17 +132,17 @@
     },
     "stats": {
       "average": 20.3,
-      "median": 18,
+      "median": 18.0,
       "min": 15,
       "max": 59,
-      "count": 223
+      "count": 224
     },
     "calendar_stats": {
       "average": 30.0,
-      "median": 26,
+      "median": 26.0,
       "min": 21,
       "max": 103,
-      "count": 223
+      "count": 224
     }
   },
   "waiver_duration": {
@@ -384,32 +384,32 @@
       41,
       46,
       37,
-      27
+      26
     ],
-    "as_at": "2026-09-09"
+    "as_at": "2026-09-10"
   },
   "current_status": {
-    "as_at": "2026-09-09",
+    "as_at": "2026-09-10",
     "windows": [
       {
         "days": 30,
-        "notifications_filed": 31,
+        "notifications_filed": 30,
         "notifications": {
-          "median": 19.0,
-          "average": 22.1,
-          "p90": 38,
+          "median": 19,
+          "average": 21.5,
+          "p90": 34,
           "min": 15,
-          "max": 56,
-          "count": 58,
+          "max": 52,
+          "count": 57,
           "median_delta": 1.0
         },
         "waivers": {
           "median": 18,
-          "average": 16.4,
+          "average": 16.3,
           "p90": 21,
           "min": 7,
           "max": 23,
-          "count": 77,
+          "count": 75,
           "median_delta": 5.0
         }
       },
@@ -417,12 +417,12 @@
         "days": 90,
         "notifications_filed": 115,
         "notifications": {
-          "median": 18.0,
-          "average": 21.2,
+          "median": 18,
+          "average": 21.3,
           "p90": 33,
           "min": 15,
           "max": 56,
-          "count": 122,
+          "count": 121,
           "median_delta": 0.0
         },
         "waivers": {
@@ -438,12 +438,12 @@
     ],
     "all_time": {
       "notifications": {
-        "median": 18,
+        "median": 18.0,
         "average": 20.3,
         "p90": 28,
         "min": 15,
         "max": 59,
-        "count": 223
+        "count": 224
       },
       "waivers": {
         "median": 13.0,
@@ -457,12 +457,12 @@
     "pre_notification": {
       "windows": [
         {
-          "median": 13,
-          "average": 15.8,
+          "median": 13.0,
+          "average": 15.5,
           "p90": 29,
           "min": 4,
           "max": 46,
-          "count": 31,
+          "count": 30,
           "days": 30,
           "median_delta": -1.0
         },
@@ -570,9 +570,9 @@
           "count": 45
         },
         {
-          "median": 19,
+          "median": 19.5,
           "average": 23.7,
-          "count": 19
+          "count": 20
         }
       ],
       "waivers": [
@@ -661,7 +661,7 @@
         41,
         46,
         37,
-        27
+        26
       ]
     }
   },
@@ -723,11 +723,11 @@
     {
       "code": "B",
       "name": "Mining",
-      "average_business_days": 22.3,
-      "median_business_days": 17.0,
-      "average_calendar_days": 32.1,
-      "median_calendar_days": 25.5,
-      "count": 10
+      "average_business_days": 22.4,
+      "median_business_days": 17,
+      "average_calendar_days": 32.0,
+      "median_calendar_days": 26,
+      "count": 11
     },
     {
       "code": "F",
@@ -787,10 +787,10 @@
       "code": "C",
       "name": "Manufacturing",
       "average_business_days": 20.1,
-      "median_business_days": 18.0,
+      "median_business_days": 18,
       "average_calendar_days": 29.7,
-      "median_calendar_days": 27.0,
-      "count": 64
+      "median_calendar_days": 27,
+      "count": 65
     },
     {
       "code": "O",
@@ -832,11 +832,11 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 478,
+      "count": 479,
       "outcome_mix": {
-        "Approved": 478
+        "Approved": 479
       },
-      "median_phase_1_business_days": 17
+      "median_phase_1_business_days": 17.0
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -859,9 +859,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 24,
+      "count": 23,
       "outcome_mix": {
-        "Unknown": 24
+        "Unknown": 23
       },
       "median_phase_1_business_days": null
     },
@@ -909,7 +909,7 @@
       "20": 10,
       "21": 10,
       "22": 6,
-      "23": 3,
+      "23": 4,
       "24": 5,
       "25": 6,
       "26": 1,
@@ -925,9 +925,9 @@
     },
     "stats": {
       "mean_used_bd": 18.2,
-      "median_used_bd": 17,
-      "pct_decided_final_3_bd": 3.0,
-      "count": 203
+      "median_used_bd": 17.0,
+      "pct_decided_final_3_bd": 2.9,
+      "count": 204
     },
     "extended_count": 11
   },
@@ -1031,10 +1031,10 @@
     {
       "code": "C",
       "name": "Manufacturing",
-      "approved": 62,
+      "approved": 63,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 10,
+      "in_progress": 9,
       "phase2_referral_rate": 0.031
     },
     {
@@ -1049,10 +1049,10 @@
     {
       "code": "B",
       "name": "Mining",
-      "approved": 10,
+      "approved": 11,
       "not_approved": 0,
       "referred": 0,
-      "in_progress": 2,
+      "in_progress": 1,
       "phase2_referral_rate": 0.0
     },
     {
