@@ -359,6 +359,41 @@
       "phase_duration": null,
       "waiver_duration": null
     },
+    "merck-healthcare-pty-ltd": {
+      "id": "merck-healthcare-pty-ltd",
+      "canonical_name": "Merck Healthcare Pty Ltd",
+      "members": [
+        {
+          "name": "MERCK HEALTHCARE PTY LTD",
+          "identifier": "72 006 900 830",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-25049",
+            "merger_name": "Merck KGaA / Bio-Techne",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-09T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "scentre-group-trust-3": {
       "id": "scentre-group-trust-3",
       "canonical_name": "Scentre Group Trust 3",

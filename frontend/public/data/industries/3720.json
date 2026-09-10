@@ -27,6 +27,17 @@
   "children": [],
   "mergers": [
     {
+      "merger_id": "MN-25049",
+      "merger_name": "Merck KGaA / Bio-Techne",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-09T12:00:00Z",
+      "determination_date": null
+    },
+    {
       "merger_id": "MN-60035",
       "merger_name": "L'Or\u00e9al \u2013 Gucci Beauty Licence",
       "is_waiver": false,
@@ -159,11 +170,11 @@
       "determination_date": "2026-02-04T12:00:00Z"
     }
   ],
-  "count": 12,
-  "phase_1_count": 9,
+  "count": 13,
+  "phase_1_count": 10,
   "phase_2_count": 0,
   "waiver_count": 3,
-  "active_count": 1,
+  "active_count": 2,
   "phase_duration": {
     "average_days": 27.625,
     "median_days": 27.5,

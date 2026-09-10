@@ -51,7 +51,7 @@
       "code": "18",
       "name": "Basic Chemical and Chemical Product Manufacturing",
       "level": "subdivision",
-      "merger_count": 29
+      "merger_count": 30
     },
     {
       "code": "19",
@@ -87,7 +87,7 @@
       "code": "24",
       "name": "Machinery and Equipment Manufacturing",
       "level": "subdivision",
-      "merger_count": 62
+      "merger_count": 63
     },
     {
       "code": "25",
@@ -97,6 +97,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-25049",
+      "merger_name": "Merck KGaA / Bio-Techne",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-09T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-75052",
       "merger_name": "Danfoss - Alfagomma",
@@ -1880,11 +1891,11 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 162,
-  "phase_1_count": 72,
+  "count": 163,
+  "phase_1_count": 73,
   "phase_2_count": 2,
   "waiver_count": 88,
-  "active_count": 10,
+  "active_count": 11,
   "phase_duration": {
     "average_days": 29.723076923076924,
     "median_days": 27,

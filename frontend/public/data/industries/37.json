@@ -25,7 +25,7 @@
       "code": "372",
       "name": "Pharmaceutical and Toiletry Goods Wholesaling",
       "level": "group",
-      "merger_count": 12
+      "merger_count": 13
     },
     {
       "code": "373",
@@ -35,6 +35,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-25049",
+      "merger_name": "Merck KGaA / Bio-Techne",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-09T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-10028",
       "merger_name": "BBFIT - Hanes Australasia",
@@ -267,11 +278,11 @@
       "determination_date": "2026-02-04T12:00:00Z"
     }
   ],
-  "count": 21,
-  "phase_1_count": 13,
+  "count": 22,
+  "phase_1_count": 14,
   "phase_2_count": 0,
   "waiver_count": 8,
-  "active_count": 2,
+  "active_count": 3,
   "phase_duration": {
     "average_days": 26.727272727272727,
     "median_days": 27,

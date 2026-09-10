@@ -293,6 +293,41 @@
         "completed_count": 1
       }
     },
+    "e-merck-kg": {
+      "id": "e-merck-kg",
+      "canonical_name": "E. Merck KG",
+      "members": [
+        {
+          "name": "E. Merck KG",
+          "identifier": "HRA 3614",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-25049",
+            "merger_name": "Merck KGaA / Bio-Techne",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-09T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "kreditanstalt-f-r-wiederaufbau": {
       "id": "kreditanstalt-f-r-wiederaufbau",
       "canonical_name": "Kreditanstalt f\u00fcr Wiederaufbau",

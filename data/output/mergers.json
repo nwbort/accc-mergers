@@ -20452,6 +20452,203 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/merck-kgaa-bio-techne",
+      "merger_name": "Merck KGaA / Bio-Techne",
+      "status": "Under assessment",
+      "merger_id": "MN-25049",
+      "effective_notification_datetime": "2026-09-09T12:00:00Z",
+      "original_notification_datetime": "2026-09-09T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-10-22T12:00:00Z",
+      "page_modified_datetime": "2026-09-10T11:28:32+10:00",
+      "consultation_response_due_date": "2026-09-17T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "EMD Holdings NewCo Inc.",
+          "identifier_type": null,
+          "identifier": "1653931500038",
+          "party_page": {
+            "id": "emd-holdings-newco-inc",
+            "name": "EMD Holdings NewCo Inc."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Bio-Techne Corporation",
+          "identifier_type": null,
+          "identifier": "NASDAQ: TECH",
+          "party_page": {
+            "id": "bio-techne-corporation",
+            "name": "Bio-Techne Corporation"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "SIGMA-ALDRICH OCEANIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "29 112 895 708",
+          "party_page": {
+            "id": "sigma-aldrich-oceania-pty-ltd",
+            "name": "Sigma-Aldrich Oceania Pty Ltd"
+          }
+        },
+        {
+          "name": "MERCK HEALTHCARE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "72 006 900 830",
+          "party_page": {
+            "id": "merck-healthcare-pty-ltd",
+            "name": "Merck Healthcare Pty Ltd"
+          }
+        },
+        {
+          "name": "Merck KGaA",
+          "identifier_type": null,
+          "identifier": "HRB 6164",
+          "party_page": {
+            "id": "merck-kgaa",
+            "name": "Merck KGaA"
+          }
+        },
+        {
+          "name": "E. Merck KG",
+          "identifier_type": null,
+          "identifier": "HRA 3614",
+          "party_page": {
+            "id": "e-merck-kg",
+            "name": "E. Merck KG"
+          }
+        },
+        {
+          "name": "MERCK LIFE SCIENCE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "66 051 627 831",
+          "party_page": {
+            "id": "merck-life-science-pty-ltd",
+            "name": "Merck Life Science Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1841",
+          "name": "Human Pharmaceutical and Medicinal Product Manufacturing"
+        },
+        {
+          "code": "2419",
+          "name": "Other Professional and Scientific Equipment Manufacturing"
+        },
+        {
+          "code": "3323",
+          "name": "Industrial and Agricultural Chemical Product Wholesaling"
+        },
+        {
+          "code": "3491",
+          "name": "Professional and Scientific Goods Wholesaling"
+        },
+        {
+          "code": "3720",
+          "name": "Pharmaceutical and Toiletry Goods Wholesaling"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "merger_description": "Merck KGaA (**Merck**) proposes to acquire 100% of Bio-Techne Corporation (**Bio-Techne**)\u2019s issued share capital through its wholly-owned subsidiary, EMD Holdings NewCo, Inc. (**Merger Sub**). Merck will acquire 100% of the outstanding common stock of Bio-Techne via a merger of Merger Sub with and into Bio-Techne with Bio-Techne surviving as a wholly-owned subsidiary of Merck.\n\nMerck is a global science and technology company (listed on the Frankfurt Stock Exchange: MRK) headquartered in Germany. Merck operates through three business sectors: its larger Life Science and Healthcare segments, as well as its smaller Electronics segment. Merck\u2019s Life Science portfolio is primarily focused on products and technologies supporting biopharmaceutical manufacturing, while also offering a broad catalogue of biology and chemistry products, including reagents, solvents, filters and everyday lab essentials as well as specialised products and services such as contract testing services, biomonitoring and diagnostic and regulated materials.\n\nBio-Techne is a publicly traded life sciences company (NASDAQ: TECH) headquartered in the United States, which specialises in reagents, analytical instruments, and precision diagnostics, supplying to academic researchers, biopharmaceutical companies, and clinical labs, among others.\n\nBoth parties supply life science analytical instruments, protein analysis techniques, bioactive small molecules, antibodies, cell culture products and other consumables.",
+      "events": [
+        {
+          "date": "2026-09-10T12:00:00Z",
+          "title": "Phase 1 consultation",
+          "display_title": "Phase 1 consultation",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Merck%20-%20Bio-Techne%20-%20Third%20party%20questionnaire.docx",
+          "url_gh": "/mergers/MN-25049/Merck - Bio-Techne - Third party questionnaire.pdf",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-09-09T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-75034",
+          "merger_name": "Kanda Healthcare \u2013 Live Your Way, QLD",
+          "acquirers": [
+            "KANDA HEALTHCARE PTY LTD"
+          ],
+          "targets": [
+            "LIVE YOUR WAY AUSTRALIA PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-75044",
+          "merger_name": "McCormick - Unilever Foods Business",
+          "acquirers": [
+            "McCormick & Company, Incorporated"
+          ],
+          "targets": [
+            "Australia Food NewCo"
+          ],
+          "status": "Under assessment"
+        },
+        {
+          "merger_id": "MN-05043",
+          "merger_name": "Incubeta - Datisan",
+          "acquirers": [
+            "INCUBETA AUSTRALIA PTY LIMITED"
+          ],
+          "targets": [
+            "MAVERICK DATA GROUP PTY LTD",
+            "DATISAN PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 17,
+        "range_business_days": [
+          15,
+          19
+        ],
+        "basis": "questionnaire",
+        "question_bucket": "3 or fewer",
+        "question_count": 3,
+        "sample_size": 151,
+        "as_of": "2026-09-09",
+        "estimated_at": "2026-09-10",
+        "method_version": 2
+      },
+      "pre_notification": {
+        "estimated_days": 26,
+        "min_days": null,
+        "max_days": 33,
+        "id_issued_estimated": "2026-08-14",
+        "id_issued_before": null,
+        "id_issued_after": "2026-08-07",
+        "min_days_witness": null,
+        "max_days_witness": "WA-25045",
+        "basis": "upper-bound-only",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/peter-warren-wakeling-automotive",
       "merger_name": "Peter Warren - Wakeling Automotive",
       "status": "Assessment ceased",

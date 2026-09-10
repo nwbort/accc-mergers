@@ -527,6 +527,41 @@
         "completed_count": 1
       }
     },
+    "sigma-aldrich-oceania-pty-ltd": {
+      "id": "sigma-aldrich-oceania-pty-ltd",
+      "canonical_name": "Sigma-Aldrich Oceania Pty Ltd",
+      "members": [
+        {
+          "name": "SIGMA-ALDRICH OCEANIA PTY LTD",
+          "identifier": "29 112 895 708",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-25049",
+            "merger_name": "Merck KGaA / Bio-Techne",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-09T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "the-crown-in-the-right-of-the-state-of-tasmania": {
       "id": "the-crown-in-the-right-of-the-state-of-tasmania",
       "canonical_name": "The Crown in the right of the State of Tasmania",

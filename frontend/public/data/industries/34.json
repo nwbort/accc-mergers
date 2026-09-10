@@ -25,10 +25,21 @@
       "code": "349",
       "name": "Other Machinery and Equipment Wholesaling",
       "level": "group",
-      "merger_count": 24
+      "merger_count": 25
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-25049",
+      "merger_name": "Merck KGaA / Bio-Techne",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-09T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-75052",
       "merger_name": "Danfoss - Alfagomma",
@@ -316,11 +327,11 @@
       "determination_date": null
     }
   ],
-  "count": 26,
-  "phase_1_count": 15,
+  "count": 27,
+  "phase_1_count": 16,
   "phase_2_count": 1,
   "waiver_count": 10,
-  "active_count": 1,
+  "active_count": 2,
   "phase_duration": {
     "average_days": 35.333333333333336,
     "median_days": 33,

@@ -37,7 +37,7 @@
       "code": "184",
       "name": "Pharmaceutical and Medicinal Product Manufacturing",
       "level": "group",
-      "merger_count": 16
+      "merger_count": 17
     },
     {
       "code": "185",
@@ -53,6 +53,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-25049",
+      "merger_name": "Merck KGaA / Bio-Techne",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-09T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-10030",
       "merger_name": "Novonesis \u2013 Microbiogen",
@@ -373,11 +384,11 @@
       "determination_date": "2026-02-05T12:00:00Z"
     }
   ],
-  "count": 29,
-  "phase_1_count": 18,
+  "count": 30,
+  "phase_1_count": 19,
   "phase_2_count": 1,
   "waiver_count": 10,
-  "active_count": 4,
+  "active_count": 5,
   "phase_duration": {
     "average_days": 28.4375,
     "median_days": 26.0,
