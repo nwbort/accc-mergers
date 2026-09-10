@@ -554,6 +554,41 @@
         "completed_count": 1
       },
       "waiver_duration": null
+    },
+    "south32-aluminium-holdings-pty-ltd": {
+      "id": "south32-aluminium-holdings-pty-ltd",
+      "canonical_name": "South32 Aluminium (Holdings) Pty Ltd",
+      "members": [
+        {
+          "name": "SOUTH32 ALUMINIUM (HOLDINGS) PTY LTD",
+          "identifier": "58 169 411 974",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-25047",
+            "merger_name": "Alcoa \u2013 South32 aluminium assets",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-10T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
     }
   }
 }

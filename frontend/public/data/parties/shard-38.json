@@ -2,6 +2,41 @@
   "shard": 56,
   "shard_count": 256,
   "parties": {
+    "apl-investments-pty-ltd": {
+      "id": "apl-investments-pty-ltd",
+      "canonical_name": "APL Investments (Pty) Ltd",
+      "members": [
+        {
+          "name": "APL Investments (Pty) Ltd",
+          "identifier": "Registration Number 2026/541825/07",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-25047",
+            "merger_name": "Alcoa \u2013 South32 aluminium assets",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-10T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "beston-parks-land-co-pty-ltd-atf-beston-accommodation-parks-trust": {
       "id": "beston-parks-land-co-pty-ltd-atf-beston-accommodation-parks-trust",
       "canonical_name": "Beston Parks Land Co Pty Ltd atf Beston Accommodation Parks Trust",

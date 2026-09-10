@@ -7782,7 +7782,7 @@
         "is_questionnaire_event": true,
         "url": "https://www.accc.gov.au/system/files/moderated_files/BBFIT%20-%20Hanes%20Australasia%20-%20Third%20Party%20Questionnaire.docx",
         "url_gh": "/mergers/MN-10028/BBFIT - Hanes Australasia - Third Party Questionnaire.pdf",
-        "status": "live"
+        "status": "removed"
       },
       {
         "date": "2026-09-02T12:00:00Z",
@@ -11767,7 +11767,7 @@
         "is_questionnaire_event": true,
         "url": "https://www.accc.gov.au/system/files/moderated_files/Questionnaire%20-%20Velocity%20Vehicle%20Group%20%E2%80%93%20Fuso%20assets%20of%20Daimler%20Truck%20Australia%20Pacific.docx",
         "url_gh": "/mergers/MN-25035/Questionnaire - Velocity Vehicle Group \u2013 Fuso assets of Daimler Truck Australia Pacific.pdf",
-        "status": "live"
+        "status": "removed"
       },
       {
         "date": "2026-09-03T12:00:00Z",
@@ -12033,6 +12033,104 @@
         "status": "live",
         "is_determination_event": true,
         "phase": "Phase 1"
+      }
+    ],
+    "is_waiver": false
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/alcoa-%E2%80%93-south32-aluminium-assets",
+    "merger_name": "Alcoa \u2013 South32 aluminium assets",
+    "status": "Under assessment",
+    "merger_id": "MN-25047",
+    "effective_notification_datetime": "2026-09-10T12:00:00Z",
+    "original_notification_datetime": "2026-09-10T12:00:00Z",
+    "stage": "Phase 1 - initial assessment",
+    "end_of_determination_period": "2026-10-23T12:00:00Z",
+    "page_modified_datetime": "2026-09-11T08:41:31+10:00",
+    "consultation_response_due_date": "2026-09-18T12:00:00Z",
+    "acquirers": [
+      {
+        "name": "APL Investments (Pty) Ltd",
+        "identifier_type": null,
+        "identifier": "Registration Number 2026/541825/07"
+      },
+      {
+        "name": "Alcoa do Brasil Ind\u00fastria e Com\u00e9rcio Ltda.",
+        "identifier_type": null,
+        "identifier": "CNPJ 48879175/000147"
+      },
+      {
+        "name": "KZN Investments Australia Pty Ltd",
+        "identifier_type": "ACN",
+        "identifier": "699 387 703"
+      },
+      {
+        "name": "Alcoa Corporation",
+        "identifier_type": null,
+        "identifier": "ARBN 677586935"
+      }
+    ],
+    "targets": [
+      {
+        "name": "SOUTH32 (BMSA) PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "44 125 530 949"
+      },
+      {
+        "name": "South32 SA Holdings (Pty) Ltd",
+        "identifier_type": null,
+        "identifier": "Registration number 1896/001358/07"
+      },
+      {
+        "name": "SOUTH32 AUSTRALIA INVESTMENT 3 PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "31 088 336 976"
+      },
+      {
+        "name": "SOUTH32 LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "84 093 732 597"
+      },
+      {
+        "name": "SOUTH32 ALUMINIUM (HOLDINGS) PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "58 169 411 974"
+      }
+    ],
+    "other_parties": [],
+    "anzsic_codes": [
+      {
+        "code": "0802",
+        "name": "Bauxite Mining"
+      },
+      {
+        "code": "0809",
+        "name": "Other Metal Ore Mining"
+      },
+      {
+        "code": "2131",
+        "name": "Alumina Production"
+      },
+      {
+        "code": "2132",
+        "name": "Aluminium Smelting"
+      }
+    ],
+    "merger_description": "Alcoa Corporation (**Alcoa**) proposes to acquire shares in five legal entities within the South32 Group (**South32**) that hold interests in bauxite, alumina and aluminium assets in Australia, South Africa and Brazil (the **Acquisition**). The assets held by these South32 entities comprise:\n\n* 86% ownership in the integrated bauxite mining and alumina refining operations in Western Australia (Boddington/Worsley)\n* 33% interest in the Trombetas bauxite mine in Brazil (subject to exercise of pre-emptive rights held by the other parties)\n* 36% interest in the Alumar alumina refinery at S\u00e3o Lu\u00eds in Brazil\n* 40% interest in the Alumar aluminium smelter at S\u00e3o Lu\u00eds in Brazil\n* 100% interest in the Hillside aluminium smelter in South Africa, and\n* 100% interest in the idled Bayside aluminium smelter in South Africa.\n\nAlcoa, a Delaware corporation headquartered in Pittsburgh, Pennsylvania, is a globally integrated aluminium producer, with assets and operations active in each step of the aluminium production chain. Alcoa has key assets in Australia, Brazil, North America, Africa and Europe. In Australia, Alcoa has the following operating assets:\n\n* Two bauxite mines in Western Australia (Huntly and Willowdale)\n* Two alumina refineries in Western Australia (Pinjarra and Wagerup), and\n* One aluminium smelter in Victoria (Portland).\n\nSouth32, headquartered in Perth, Western Australia, is a diversified natural resources company with operations in the aluminium production chain. South32 also has operations in copper and zinc as well as other mining assets, which are not part of the Acquisition. In Australia, South32 has an integrated operation in Western Australia where it mines bauxite (Boddington) and transfers that bauxite to an alumina refinery in Worsley. South32 also has a 63.7% ownership stake in the Mozal aluminium smelter in Mozambique, which is not part of the Acquisition.",
+    "events": [
+      {
+        "date": "2026-09-10T12:00:00Z",
+        "title": "Questionnaire - Alcoa - South32's aluminium assets",
+        "display_title": "Questionnaire - Alcoa - South32's aluminium assets",
+        "is_questionnaire_event": true,
+        "url": "https://www.accc.gov.au/system/files/moderated_files/Alcoa%20-%20South32%20aluminium%20assets%20-%20third-party%20questionnaire%20-%2010%20September%202026_0.docx",
+        "url_gh": "/mergers/MN-25047/Alcoa - South32 aluminium assets - third-party questionnaire - 10 September 2026_0.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2026-09-10T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
       }
     ],
     "is_waiver": false
@@ -26398,7 +26496,7 @@
         "is_questionnaire_event": true,
         "url": "https://www.accc.gov.au/system/files/moderated_files/I%20Squared%20Capital%20-%20oOh%21media%20-%20third-party%20questionnaire.pdf",
         "url_gh": "/mergers/MN-75054/I Squared Capital - oOhmedia - third-party questionnaire.pdf",
-        "status": "live"
+        "status": "removed"
       },
       {
         "date": "2026-09-02T12:00:00Z",

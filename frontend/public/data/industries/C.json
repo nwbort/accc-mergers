@@ -69,7 +69,7 @@
       "code": "21",
       "name": "Primary Metal and Metal Product Manufacturing",
       "level": "subdivision",
-      "merger_count": 10
+      "merger_count": 11
     },
     {
       "code": "22",
@@ -97,6 +97,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-25047",
+      "merger_name": "Alcoa \u2013 South32 aluminium assets",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-10T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-55024",
       "merger_name": "PSP Investments - AAA Egg Company",
@@ -1902,11 +1913,11 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 164,
-  "phase_1_count": 74,
+  "count": 165,
+  "phase_1_count": 75,
   "phase_2_count": 2,
   "waiver_count": 88,
-  "active_count": 11,
+  "active_count": 12,
   "phase_duration": {
     "average_days": 29.681818181818183,
     "median_days": 27.0,

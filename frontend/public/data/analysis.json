@@ -333,7 +333,7 @@
       36,
       44,
       38,
-      11
+      12
     ],
     "waivers": [
       0,
@@ -382,12 +382,12 @@
       41,
       46,
       37,
-      26
+      27
     ],
-    "as_at": "2026-09-10"
+    "as_at": "2026-09-11"
   },
   "current_status": {
-    "as_at": "2026-09-10",
+    "as_at": "2026-09-11",
     "windows": [
       {
         "days": 30,
@@ -398,22 +398,22 @@
           "p90": 34,
           "min": 15,
           "max": 52,
-          "count": 59,
+          "count": 57,
           "median_delta": 1.0
         },
         "waivers": {
-          "median": 17.5,
-          "average": 16.2,
+          "median": 18,
+          "average": 16.4,
           "p90": 21,
           "min": 7,
           "max": 23,
-          "count": 76,
-          "median_delta": 4.5
+          "count": 73,
+          "median_delta": 5
         }
       },
       {
         "days": 90,
-        "notifications_filed": 117,
+        "notifications_filed": 118,
         "notifications": {
           "median": 18,
           "average": 21.3,
@@ -455,33 +455,33 @@
     "pre_notification": {
       "windows": [
         {
-          "median": 13.5,
-          "average": 17.3,
+          "median": 13.0,
+          "average": 17.2,
           "p90": 29,
           "min": 4,
           "max": 72,
           "count": 32,
           "days": 30,
-          "median_delta": -0.5
+          "median_delta": -1.0
         },
         {
-          "median": 15,
-          "average": 19.1,
+          "median": 15.0,
+          "average": 18.9,
           "p90": 35,
           "min": 0,
           "max": 112,
-          "count": 117,
+          "count": 118,
           "days": 90,
           "median_delta": 1.0
         }
       ],
       "all_time": {
-        "median": 14.0,
-        "average": 17.0,
+        "median": 14,
+        "average": 16.9,
         "p90": 34,
         "min": 0,
         "max": 112,
-        "count": 238
+        "count": 239
       }
     },
     "monthly": {
@@ -659,7 +659,7 @@
         41,
         46,
         37,
-        26
+        27
       ]
     }
   },
@@ -857,9 +857,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 23,
+      "count": 24,
       "outcome_mix": {
-        "Unknown": 23
+        "Unknown": 24
       },
       "median_phase_1_business_days": null
     },
@@ -952,7 +952,7 @@
       "delta_calendar_days": 4
     }
   ],
-  "restart_rate": 0.012,
+  "restart_rate": 0.0119,
   "outcomes_by_division": [
     {
       "code": "S",
@@ -1032,7 +1032,7 @@
       "approved": 64,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 10,
+      "in_progress": 11,
       "phase2_referral_rate": 0.03
     },
     {
@@ -1050,7 +1050,7 @@
       "approved": 11,
       "not_approved": 0,
       "referred": 0,
-      "in_progress": 1,
+      "in_progress": 2,
       "phase2_referral_rate": 0.0
     },
     {
@@ -1140,7 +1140,7 @@
     },
     {
       "quarter": "2026-Q3",
-      "notifications": 93,
+      "notifications": 94,
       "referred": 1
     }
   ]

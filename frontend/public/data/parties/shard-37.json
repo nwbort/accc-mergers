@@ -2,6 +2,41 @@
   "shard": 55,
   "shard_count": 256,
   "parties": {
+    "alcoa-do-brasil-ind-stria-e-com-rcio-ltda": {
+      "id": "alcoa-do-brasil-ind-stria-e-com-rcio-ltda",
+      "canonical_name": "Alcoa do Brasil Ind\u00fastria e Com\u00e9rcio Ltda.",
+      "members": [
+        {
+          "name": "Alcoa do Brasil Ind\u00fastria e Com\u00e9rcio Ltda.",
+          "identifier": "CNPJ 48879175/000147",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-25047",
+            "merger_name": "Alcoa \u2013 South32 aluminium assets",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-10T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "astreya-pty-ltd": {
       "id": "astreya-pty-ltd",
       "canonical_name": "Astreya Pty Ltd",
