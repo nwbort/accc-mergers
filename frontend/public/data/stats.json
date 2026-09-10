@@ -1,6 +1,6 @@
 {
   "total_mergers": 251,
-  "total_waivers": 394,
+  "total_waivers": 395,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 220,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 377,
+    "Approved": 378,
     "Not approved": 17
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.82741116751269,
-    "median_days": 20.0,
-    "average_business_days": 13.48730964467005,
-    "median_business_days": 13.0
+    "average_days": 19.827848101265822,
+    "median_days": 20,
+    "average_business_days": 13.48860759493671,
+    "median_business_days": 13
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 126
+      "count": 127
     },
     {
       "name": "Computer System Design and Related Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-70037",
+      "merger_name": "EQT Fund Management \u2013 Melbourne Storm",
+      "determination": "Approved",
+      "determination_date": "2026-09-10T12:00:00Z",
+      "page_modified_datetime": "2026-09-10T17:10:30+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-15030",
       "merger_name": "Karmo - Simplr",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-09T12:00:00Z",
       "page_modified_datetime": "2026-09-09T16:40:44+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-15031",
-      "merger_name": "Danaher (Leica Biosystems) - StatLab",
-      "determination": "Approved",
-      "determination_date": "2026-09-09T12:00:00Z",
-      "page_modified_datetime": "2026-09-09T15:49:32+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",

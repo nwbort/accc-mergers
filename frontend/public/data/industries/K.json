@@ -9,7 +9,7 @@
       "code": "62",
       "name": "Finance",
       "level": "subdivision",
-      "merger_count": 134
+      "merger_count": 135
     },
     {
       "code": "63",
@@ -199,6 +199,17 @@
       "has_conditions": false,
       "phase": "Phase 1",
       "notification_date": "2026-08-03T12:00:00Z",
+      "determination_date": "2026-09-10T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-70037",
+      "merger_name": "EQT Fund Management \u2013 Melbourne Storm",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-21T12:00:00Z",
       "determination_date": "2026-09-10T12:00:00Z"
     },
     {
@@ -2083,10 +2094,10 @@
       "determination_date": null
     }
   ],
-  "count": 187,
+  "count": 188,
   "phase_1_count": 47,
   "phase_2_count": 2,
-  "waiver_count": 138,
+  "waiver_count": 139,
   "active_count": 15,
   "phase_duration": {
     "average_days": 28.142857142857142,
@@ -2096,10 +2107,10 @@
     "completed_count": 35
   },
   "waiver_duration": {
-    "average_days": 20.31159420289855,
-    "median_days": 20.0,
-    "average_business_days": 13.847826086956522,
-    "median_business_days": 14.0,
-    "completed_count": 138
+    "average_days": 20.309352517985612,
+    "median_days": 20,
+    "average_business_days": 13.848920863309353,
+    "median_business_days": 14,
+    "completed_count": 139
   }
 }
