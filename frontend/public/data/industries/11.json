@@ -67,10 +67,21 @@
       "code": "119",
       "name": "Other Food Product Manufacturing",
       "level": "group",
-      "merger_count": 11
+      "merger_count": 12
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-55024",
+      "merger_name": "PSP Investments - AAA Egg Company",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-10T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-75044",
       "merger_name": "McCormick - Unilever Foods Business",
@@ -270,11 +281,11 @@
       "determination_date": "2026-01-28T12:00:00Z"
     }
   ],
-  "count": 18,
-  "phase_1_count": 9,
+  "count": 19,
+  "phase_1_count": 10,
   "phase_2_count": 0,
   "waiver_count": 9,
-  "active_count": 1,
+  "active_count": 2,
   "phase_duration": {
     "average_days": 27.75,
     "median_days": 26.5,

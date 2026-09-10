@@ -19,10 +19,21 @@
       "code": "360",
       "name": "Grocery, Liquor and Tobacco Product Wholesaling",
       "level": "group",
-      "merger_count": 8
+      "merger_count": 9
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-55024",
+      "merger_name": "PSP Investments - AAA Egg Company",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-10T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-10027",
       "merger_name": "Endeavour Group \u2013 retail liquor site in Horsham, VIC",
@@ -112,11 +123,11 @@
       "determination_date": "2026-01-28T12:00:00Z"
     }
   ],
-  "count": 8,
-  "phase_1_count": 4,
+  "count": 9,
+  "phase_1_count": 5,
   "phase_2_count": 0,
   "waiver_count": 4,
-  "active_count": 1,
+  "active_count": 2,
   "phase_duration": {
     "average_days": 31.666666666666668,
     "median_days": 27,

@@ -495,6 +495,17 @@
         "target": [],
         "other": [
           {
+            "merger_id": "MN-55024",
+            "merger_name": "PSP Investments - AAA Egg Company",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-10T12:00:00Z",
+            "determination_date": null
+          },
+          {
             "merger_id": "MN-35018",
             "merger_name": "Hewitt \u2013 Nolan Meats",
             "is_waiver": false,
@@ -507,11 +518,11 @@
           }
         ]
       },
-      "merger_count": 1,
-      "phase_1_count": 1,
+      "merger_count": 2,
+      "phase_1_count": 2,
       "phase_2_count": 0,
       "waiver_count": 0,
-      "active_count": 0,
+      "active_count": 1,
       "phase_duration": {
         "average_days": 26.0,
         "median_days": 26,

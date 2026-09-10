@@ -1,10 +1,10 @@
 {
-  "total_mergers": 250,
+  "total_mergers": 251,
   "total_waivers": 394,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 218,
-    "Under assessment": 27,
+    "Under assessment": 28,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -64,7 +64,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 65
+      "count": 66
     },
     {
       "name": "Software Publishing",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-55024",
+      "merger_name": "PSP Investments - AAA Egg Company",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-09-10T12:00:00Z",
+      "page_modified_datetime": "2026-09-10T13:46:46+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-25049",
       "merger_name": "Merck KGaA / Bio-Techne",
@@ -204,16 +214,6 @@
       "effective_notification_datetime": "2026-08-31T12:00:00Z",
       "page_modified_datetime": "2026-09-01T15:12:37+10:00",
       "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "WA-20037",
-      "merger_name": "Investissement Qu\u00e9bec, Fonds de solidarit\u00e9 des travailleurs et des travailleuses du Qu\u00e9bec and Placement Louis Bibeau Inc. \u2013 Australian Defence Apparel",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "effective_notification_datetime": "2026-08-29T12:00:00Z",
-      "page_modified_datetime": "2026-09-08T16:32:17+10:00",
-      "is_waiver": true,
       "is_refiled": false
     }
   ],

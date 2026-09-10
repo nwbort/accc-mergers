@@ -27,6 +27,17 @@
   "children": [],
   "mergers": [
     {
+      "merger_id": "MN-55024",
+      "merger_name": "PSP Investments - AAA Egg Company",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-10T12:00:00Z",
+      "determination_date": null
+    },
+    {
       "merger_id": "WA-75048",
       "merger_name": "Platinum Equity Group \u2013 Nestl\u00e9 Waters",
       "is_waiver": true,
@@ -71,11 +82,11 @@
       "determination_date": "2026-01-28T12:00:00Z"
     }
   ],
-  "count": 4,
-  "phase_1_count": 2,
+  "count": 5,
+  "phase_1_count": 3,
   "phase_2_count": 0,
   "waiver_count": 2,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": {
     "average_days": 34.0,
     "median_days": 34.0,
