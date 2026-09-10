@@ -76,7 +76,7 @@
         "41": 1
       },
       "28": {
-        "38": 1,
+        "38": 2,
         "41": 1,
         "42": 3
       },
@@ -130,17 +130,17 @@
     },
     "stats": {
       "average": 20.3,
-      "median": 18,
+      "median": 18.0,
       "min": 15,
       "max": 59,
-      "count": 225
+      "count": 226
     },
     "calendar_stats": {
       "average": 30.0,
-      "median": 26,
+      "median": 26.0,
       "min": 21,
       "max": 103,
-      "count": 225
+      "count": 226
     }
   },
   "waiver_duration": {
@@ -382,7 +382,7 @@
       41,
       46,
       37,
-      27
+      26
     ],
     "as_at": "2026-09-10"
   },
@@ -393,12 +393,12 @@
         "days": 30,
         "notifications_filed": 32,
         "notifications": {
-          "median": 19.0,
-          "average": 21.4,
+          "median": 19,
+          "average": 21.6,
           "p90": 34,
           "min": 15,
           "max": 52,
-          "count": 58,
+          "count": 59,
           "median_delta": 1.0
         },
         "waivers": {
@@ -415,12 +415,12 @@
         "days": 90,
         "notifications_filed": 117,
         "notifications": {
-          "median": 18.0,
+          "median": 18,
           "average": 21.3,
           "p90": 33,
           "min": 15,
           "max": 56,
-          "count": 122,
+          "count": 123,
           "median_delta": 0.0
         },
         "waivers": {
@@ -436,12 +436,12 @@
     ],
     "all_time": {
       "notifications": {
-        "median": 18,
+        "median": 18.0,
         "average": 20.3,
         "p90": 28,
         "min": 15,
         "max": 59,
-        "count": 225
+        "count": 226
       },
       "waivers": {
         "median": 13.0,
@@ -568,9 +568,9 @@
           "count": 45
         },
         {
-          "median": 19,
-          "average": 23.4,
-          "count": 21
+          "median": 19.5,
+          "average": 23.6,
+          "count": 22
         }
       ],
       "waivers": [
@@ -659,7 +659,7 @@
         41,
         46,
         37,
-        27
+        26
       ]
     }
   },
@@ -667,11 +667,11 @@
     {
       "code": "S",
       "name": "Other Services",
-      "average_business_days": 29.4,
-      "median_business_days": 22.5,
-      "average_calendar_days": 42.9,
-      "median_calendar_days": 33.0,
-      "count": 10
+      "average_business_days": 29.3,
+      "median_business_days": 24,
+      "average_calendar_days": 42.5,
+      "median_calendar_days": 34,
+      "count": 11
     },
     {
       "code": "R",
@@ -694,11 +694,11 @@
     {
       "code": "G",
       "name": "Retail Trade",
-      "average_business_days": 23.2,
-      "median_business_days": 18.0,
-      "average_calendar_days": 35.3,
-      "median_calendar_days": 27.0,
-      "count": 28
+      "average_business_days": 23.3,
+      "median_business_days": 18,
+      "average_calendar_days": 35.4,
+      "median_calendar_days": 27,
+      "count": 29
     },
     {
       "code": "H",
@@ -728,6 +728,15 @@
       "count": 11
     },
     {
+      "code": "L",
+      "name": "Rental, Hiring and Real Estate Services",
+      "average_business_days": 22.0,
+      "median_business_days": 20.0,
+      "average_calendar_days": 32.8,
+      "median_calendar_days": 29.0,
+      "count": 20
+    },
+    {
       "code": "F",
       "name": "Wholesale Trade",
       "average_business_days": 21.8,
@@ -735,15 +744,6 @@
       "average_calendar_days": 33.7,
       "median_calendar_days": 28,
       "count": 33
-    },
-    {
-      "code": "L",
-      "name": "Rental, Hiring and Real Estate Services",
-      "average_business_days": 21.7,
-      "median_business_days": 19,
-      "average_calendar_days": 32.5,
-      "median_calendar_days": 29,
-      "count": 19
     },
     {
       "code": "D",
@@ -811,11 +811,11 @@
     {
       "code": "K",
       "name": "Financial and Insurance Services",
-      "average_business_days": 19.1,
-      "median_business_days": 17.0,
-      "average_calendar_days": 27.9,
-      "median_calendar_days": 25.5,
-      "count": 34
+      "average_business_days": 19.3,
+      "median_business_days": 17,
+      "average_calendar_days": 28.1,
+      "median_calendar_days": 26,
+      "count": 35
     },
     {
       "code": "J",
@@ -830,11 +830,11 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 480,
+      "count": 481,
       "outcome_mix": {
-        "Approved": 480
+        "Approved": 481
       },
-      "median_phase_1_business_days": 17
+      "median_phase_1_business_days": 17.0
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -857,9 +857,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 24,
+      "count": 23,
       "outcome_mix": {
-        "Unknown": 24
+        "Unknown": 23
       },
       "median_phase_1_business_days": null
     },
@@ -912,20 +912,20 @@
       "25": 6,
       "26": 1,
       "27": 3,
-      "28": 5,
+      "28": 6,
       "29": 1
     },
     "last_5_bd_counts": {
       "1": 1,
-      "2": 5,
+      "2": 6,
       "3": 3,
       "4": 1
     },
     "stats": {
-      "mean_used_bd": 18.2,
-      "median_used_bd": 17,
-      "pct_decided_final_3_bd": 2.9,
-      "count": 205
+      "mean_used_bd": 18.3,
+      "median_used_bd": 17.0,
+      "pct_decided_final_3_bd": 3.4,
+      "count": 206
     },
     "extended_count": 11
   },
@@ -957,11 +957,11 @@
     {
       "code": "S",
       "name": "Other Services",
-      "approved": 7,
+      "approved": 8,
       "not_approved": 0,
       "referred": 3,
-      "in_progress": 2,
-      "phase2_referral_rate": 0.3
+      "in_progress": 1,
+      "phase2_referral_rate": 0.273
     },
     {
       "code": "A",
@@ -975,20 +975,20 @@
     {
       "code": "G",
       "name": "Retail Trade",
-      "approved": 25,
+      "approved": 26,
       "not_approved": 0,
       "referred": 3,
-      "in_progress": 5,
-      "phase2_referral_rate": 0.107
+      "in_progress": 4,
+      "phase2_referral_rate": 0.103
     },
     {
       "code": "L",
       "name": "Rental, Hiring and Real Estate Services",
-      "approved": 17,
+      "approved": 18,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 3,
-      "phase2_referral_rate": 0.105
+      "in_progress": 2,
+      "phase2_referral_rate": 0.1
     },
     {
       "code": "F",
@@ -1002,11 +1002,11 @@
     {
       "code": "K",
       "name": "Financial and Insurance Services",
-      "approved": 32,
+      "approved": 33,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 15,
-      "phase2_referral_rate": 0.059
+      "in_progress": 14,
+      "phase2_referral_rate": 0.057
     },
     {
       "code": "M",

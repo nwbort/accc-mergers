@@ -48,14 +48,14 @@
     },
     {
       "merger_id": "MN-15030",
-      "merger_name": "KARMO/SIMPLR",
+      "merger_name": "Karmo - Simplr",
       "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
+      "status": "Assessment completed",
+      "determination": "Approved",
       "has_conditions": false,
       "phase": "Phase 1",
       "notification_date": "2026-08-03T12:00:00Z",
-      "determination_date": null
+      "determination_date": "2026-09-10T12:00:00Z"
     },
     {
       "merger_id": "WA-15040",
@@ -293,13 +293,13 @@
   "phase_1_count": 9,
   "phase_2_count": 2,
   "waiver_count": 12,
-  "active_count": 2,
+  "active_count": 1,
   "phase_duration": {
-    "average_days": 42.333333333333336,
-    "median_days": 32,
-    "average_business_days": 28.88888888888889,
-    "median_business_days": 21,
-    "completed_count": 9
+    "average_days": 41.9,
+    "median_days": 33.0,
+    "average_business_days": 28.8,
+    "median_business_days": 22.5,
+    "completed_count": 10
   },
   "waiver_duration": {
     "average_days": 20.833333333333332,
