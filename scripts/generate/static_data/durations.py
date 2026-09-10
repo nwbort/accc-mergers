@@ -198,17 +198,27 @@ def referral_probability_by_day(mergers: list) -> dict:
     above.
 
     Whether that is worth publishing is a genuinely close call, and it was
-    resolved against changing the curve. Leave-one-merger-out CV over the
-    risk-set expansion (each merger contributing one row per business day it ran
-    undecided) puts the pooled curve at log loss 0.2454 / Brier 0.0670 and a
-    curve stratified on the same cut at 0.2430 / 0.0695 — better on one metric,
-    worse on the other, with the log-loss gain at +0.0024 (95% CI [-0.032,
-    +0.033], bootstrap clustered by merger). Restricting to days 0-19, where 86%
-    of the risk-set rows sit, the gain grows to +0.0132 but the interval still
-    spans zero ([-0.015, +0.040]); a hybrid that stratifies below day 15 and
-    pools after scores 0.2434 / 0.0676, likewise inside the noise. On nine
-    referrals none of this separates from chance, so the extra parameter is not
-    yet paid for.
+    resolved — for now — against changing the curve. Leave-one-merger-out CV
+    over the risk-set expansion (each merger contributing one row per business
+    day it ran undecided, which is the estimand this curve publishes) scores the
+    pooled curve at log loss 0.2454 / Brier 0.0670. Stratifying it on the same
+    cut for the whole of its length lowers log loss to 0.2430 but raises Brier
+    to 0.0695 — the late-day strata, built on a handful of matters each, are
+    what cost it. Confining the stratification to the early window fixes that:
+    stratify below a cut-off day and pool at and after it, and both metrics
+    improve at every cut-off from day 10 to day 30, best around day 20 at
+    0.2340 / 0.0663.
+
+    That is a consistent 4.6% relative improvement in log loss, in the right
+    direction on every variant tested — and still not significant. Bootstrapped
+    over mergers, the day-20 gain is +0.0114 log loss (95% CI [-0.014, +0.035])
+    and +0.00063 Brier (95% CI [-0.0015, +0.0031]); both intervals comfortably
+    contain zero, as does every other cut-off's. On nine referrals the
+    stratification cannot be shown to beat the pooled curve, so the extra
+    parameter is not yet paid for — but unlike ANZSIC in
+    :mod:`static_data.phase1_estimate`, this is a promising result short of
+    proof rather than a rejected one, and it should be retested as referrals
+    accumulate.
 
     **Pre-notification duration predicts nothing.** The
     :mod:`static_data.prenotification` estimate scores AUC 0.548 (p = 0.63)
