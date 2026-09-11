@@ -49507,6 +49507,157 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/eli-lilly-%E2%80%93-merida-biosciences",
+      "merger_name": "Eli Lilly \u2013 Merida Biosciences",
+      "status": "Under assessment",
+      "merger_id": "MN-80042",
+      "effective_notification_datetime": "2026-09-10T12:00:00Z",
+      "original_notification_datetime": "2026-09-10T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-10-23T12:00:00Z",
+      "page_modified_datetime": "2026-09-11T11:25:28+10:00",
+      "consultation_response_due_date": "2026-09-18T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Eli Lilly and Company",
+          "identifier_type": null,
+          "identifier": "IRS Employer Identification Number  350470950",
+          "canonical": {
+            "id": "eli-lilly-and-company",
+            "name": "Eli Lilly"
+          },
+          "party_page": {
+            "id": "eli-lilly-and-company",
+            "name": "Eli Lilly"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Merida Biosciences, Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware File Number  6932321",
+          "party_page": {
+            "id": "merida-biosciences-inc",
+            "name": "Merida Biosciences, Inc."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Merak Acquisition Corporation",
+          "identifier_type": null,
+          "identifier": "Delaware File Number  10744191",
+          "party_page": {
+            "id": "merak-acquisition-corporation",
+            "name": "Merak Acquisition Corporation"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1841",
+          "name": "Human Pharmaceutical and Medicinal Product Manufacturing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6910",
+          "name": "Scientific Research Services"
+        }
+      ],
+      "merger_description": "Eli Lilly and Company (Eli Lilly) proposes to acquire 100% of the issued shares in Merida Biosciences, Inc. (Merida Biosciences) (the Acquisition).\n\nEli Lilly is a US-based pharmaceutical company which discovers, develops, manufactures and markets human pharmaceutical products for various therapeutic areas, including diabetes, oncology, immunology and neuroscience. Eli Lilly is headquartered in Indianapolis, the US and is publicly listed on the New York Stock Exchange.\n\nMerida Biosciences is a clinical-stage biotechnology company focused on developing treatments for certain autoimmune and allergic conditions. It was founded in 2022 and is headquartered in Massachusetts, the US. Merida Biosciences' is developing the following treatments:\n\n* MER511, a clinical-stage (Phase 1) thyroid-stimulating hormone receptor autoantibody degrader for the treatment of Graves' disease and thyroid eye disease.\n* MER769, a therapeutic antibody designed to neutralise and eliminate immunoglobin E (IgE) antibodies for the treatment of IgE-mediated allergic diseases.\n* MER683, which degrades autoantibodies for the treatment of primary membranous nephropathy, a chronic inflammatory kidney disease.",
+      "events": [
+        {
+          "date": "2026-09-11T12:00:00Z",
+          "title": "Questionnaire - Eli Lilly - Merida Biosciences",
+          "display_title": "Questionnaire - Eli Lilly - Merida Biosciences",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Questionnaire%20-%20Eli%20Lilly%20-%20Merida.docx",
+          "url_gh": "/mergers/MN-80042/Questionnaire - Eli Lilly - Merida.pdf",
+          "phase": null
+        },
+        {
+          "date": "2026-09-10T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-30030",
+          "merger_name": "Eli Lilly - AtaiBeckley Inc.",
+          "acquirers": [
+            "Eli Lilly and Company"
+          ],
+          "targets": [
+            "AtaiBeckley Inc."
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-40012",
+          "merger_name": "Eli Lilly \u2013 acquisition of licence from CSL Behring",
+          "acquirers": [
+            "Eli Lilly and Company"
+          ],
+          "targets": [
+            "CSL Behring LLC"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-20013",
+          "merger_name": "Eli Lilly - Orna Therapeutics",
+          "acquirers": [
+            "Eli Lilly and Company"
+          ],
+          "targets": [
+            "Orna Therapeutics Holdings, LLC"
+          ],
+          "accc_determination": "Approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 17,
+        "range_business_days": [
+          15,
+          19
+        ],
+        "basis": "questionnaire",
+        "question_bucket": "3 or fewer",
+        "question_count": 3,
+        "sample_size": 154,
+        "as_of": "2026-09-10",
+        "estimated_at": "2026-09-11",
+        "method_version": 2
+      },
+      "pre_notification": {
+        "estimated_days": 35,
+        "min_days": null,
+        "max_days": 42,
+        "id_issued_estimated": "2026-08-06",
+        "id_issued_before": null,
+        "id_issued_after": "2026-07-30",
+        "min_days_witness": null,
+        "max_days_witness": "WA-80038",
+        "basis": "upper-bound-only",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/servicenow-veza",
       "merger_name": "ServiceNow - Veza",
       "status": "Assessment completed",

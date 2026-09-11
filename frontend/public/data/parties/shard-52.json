@@ -265,6 +265,17 @@
       "mergers": {
         "acquirer": [
           {
+            "merger_id": "MN-80042",
+            "merger_name": "Eli Lilly \u2013 Merida Biosciences",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-10T12:00:00Z",
+            "determination_date": null
+          },
+          {
             "merger_id": "MN-30030",
             "merger_name": "Eli Lilly - AtaiBeckley Inc.",
             "is_waiver": false,
@@ -323,11 +334,11 @@
         "target": [],
         "other": []
       },
-      "merger_count": 5,
-      "phase_1_count": 4,
+      "merger_count": 6,
+      "phase_1_count": 5,
       "phase_2_count": 0,
       "waiver_count": 1,
-      "active_count": 0,
+      "active_count": 1,
       "phase_duration": {
         "average_days": 23.25,
         "median_days": 22.5,

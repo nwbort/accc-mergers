@@ -38,6 +38,17 @@
       "determination_date": null
     },
     {
+      "merger_id": "MN-80042",
+      "merger_name": "Eli Lilly \u2013 Merida Biosciences",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-10T12:00:00Z",
+      "determination_date": null
+    },
+    {
       "merger_id": "MN-25049",
       "merger_name": "Merck KGaA / Bio-Techne",
       "is_waiver": false,
@@ -1435,11 +1446,11 @@
       "determination_date": "2026-01-30T12:00:00Z"
     }
   ],
-  "count": 128,
-  "phase_1_count": 31,
+  "count": 129,
+  "phase_1_count": 32,
   "phase_2_count": 0,
   "waiver_count": 97,
-  "active_count": 12,
+  "active_count": 13,
   "phase_duration": {
     "average_days": 25.526315789473685,
     "median_days": 25,

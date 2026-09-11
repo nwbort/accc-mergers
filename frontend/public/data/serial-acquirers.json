@@ -26,6 +26,48 @@
       "count": 7
     },
     {
+      "acquirer_name": "Eli Lilly",
+      "canonical_id": "eli-lilly-and-company",
+      "anzsic_code": "184",
+      "anzsic_name": "Pharmaceutical and Medicinal Product Manufacturing",
+      "merger_ids": [
+        "MN-20013",
+        "MN-40012",
+        "MN-95016",
+        "MN-30030",
+        "MN-80042"
+      ],
+      "dates": [
+        "2026-04-08T12:00:00Z",
+        "2026-04-14T12:00:00Z",
+        "2026-05-18T12:00:00Z",
+        "2026-08-05T12:00:00Z",
+        "2026-09-10T12:00:00Z"
+      ],
+      "count": 5
+    },
+    {
+      "acquirer_name": "Eli Lilly",
+      "canonical_id": "eli-lilly-and-company",
+      "anzsic_code": "691",
+      "anzsic_name": "Scientific Research Services",
+      "merger_ids": [
+        "MN-20013",
+        "MN-40012",
+        "MN-95016",
+        "MN-30030",
+        "MN-80042"
+      ],
+      "dates": [
+        "2026-04-08T12:00:00Z",
+        "2026-04-14T12:00:00Z",
+        "2026-05-18T12:00:00Z",
+        "2026-08-05T12:00:00Z",
+        "2026-09-10T12:00:00Z"
+      ],
+      "count": 5
+    },
+    {
       "acquirer_name": "Opal HealthCare",
       "canonical_id": "opal-healthcare",
       "anzsic_code": "860",
@@ -41,44 +83,6 @@
         "2026-03-19T12:00:00Z",
         "2026-05-20T12:00:00Z",
         "2026-08-12T12:00:00Z"
-      ],
-      "count": 4
-    },
-    {
-      "acquirer_name": "Eli Lilly",
-      "canonical_id": "eli-lilly-and-company",
-      "anzsic_code": "184",
-      "anzsic_name": "Pharmaceutical and Medicinal Product Manufacturing",
-      "merger_ids": [
-        "MN-20013",
-        "MN-40012",
-        "MN-95016",
-        "MN-30030"
-      ],
-      "dates": [
-        "2026-04-08T12:00:00Z",
-        "2026-04-14T12:00:00Z",
-        "2026-05-18T12:00:00Z",
-        "2026-08-05T12:00:00Z"
-      ],
-      "count": 4
-    },
-    {
-      "acquirer_name": "Eli Lilly",
-      "canonical_id": "eli-lilly-and-company",
-      "anzsic_code": "691",
-      "anzsic_name": "Scientific Research Services",
-      "merger_ids": [
-        "MN-20013",
-        "MN-40012",
-        "MN-95016",
-        "MN-30030"
-      ],
-      "dates": [
-        "2026-04-08T12:00:00Z",
-        "2026-04-14T12:00:00Z",
-        "2026-05-18T12:00:00Z",
-        "2026-08-05T12:00:00Z"
       ],
       "count": 4
     },
@@ -200,6 +204,21 @@
         "2026-07-28T12:00:00Z"
       ],
       "count": 3
+    },
+    {
+      "acquirer_name": "Eli Lilly",
+      "canonical_id": "eli-lilly-and-company",
+      "anzsic_code": "624",
+      "anzsic_name": "Financial Asset Investing",
+      "merger_ids": [
+        "MN-30030",
+        "MN-80042"
+      ],
+      "dates": [
+        "2026-08-05T12:00:00Z",
+        "2026-09-10T12:00:00Z"
+      ],
+      "count": 2
     },
     {
       "acquirer_name": "Wsp Australia Pty Limited",
@@ -652,5 +671,5 @@
       "count": 2
     }
   ],
-  "count": 41
+  "count": 42
 }

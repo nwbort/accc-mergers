@@ -19,7 +19,7 @@
       "code": "691",
       "name": "Scientific Research Services",
       "level": "group",
-      "merger_count": 18
+      "merger_count": 19
     },
     {
       "code": "692",
@@ -68,6 +68,17 @@
     {
       "merger_id": "MN-55024",
       "merger_name": "PSP Investments - AAA Egg Company",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-10T12:00:00Z",
+      "determination_date": null
+    },
+    {
+      "merger_id": "MN-80042",
+      "merger_name": "Eli Lilly \u2013 Merida Biosciences",
       "is_waiver": false,
       "status": "Under assessment",
       "determination": null,
@@ -1177,11 +1188,11 @@
       "determination_date": null
     }
   ],
-  "count": 101,
-  "phase_1_count": 39,
+  "count": 102,
+  "phase_1_count": 40,
   "phase_2_count": 3,
   "waiver_count": 59,
-  "active_count": 8,
+  "active_count": 9,
   "phase_duration": {
     "average_days": 33.57142857142857,
     "median_days": 27,

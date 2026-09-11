@@ -37,13 +37,24 @@
       "code": "624",
       "name": "Financial Asset Investing",
       "level": "group",
-      "merger_count": 128
+      "merger_count": 129
     }
   ],
   "mergers": [
     {
       "merger_id": "MN-65036",
       "merger_name": "ENEOS \u2013 Chevron Australia Downstream",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-10T12:00:00Z",
+      "determination_date": null
+    },
+    {
+      "merger_id": "MN-80042",
+      "merger_name": "Eli Lilly \u2013 Merida Biosciences",
       "is_waiver": false,
       "status": "Under assessment",
       "determination": null,
@@ -1538,11 +1549,11 @@
       "determination_date": null
     }
   ],
-  "count": 136,
-  "phase_1_count": 32,
+  "count": 137,
+  "phase_1_count": 33,
   "phase_2_count": 1,
   "waiver_count": 103,
-  "active_count": 12,
+  "active_count": 13,
   "phase_duration": {
     "average_days": 28.428571428571427,
     "median_days": 25,

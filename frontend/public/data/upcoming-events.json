@@ -101,6 +101,16 @@
       "effective_notification_datetime": "2026-09-10T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-09-18T12:00:00Z",
+      "merger_id": "MN-80042",
+      "merger_name": "Eli Lilly \u2013 Merida Biosciences",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-09-10T12:00:00Z"
+    },
+    {
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-09-23T12:00:00Z",
@@ -361,6 +371,16 @@
       "effective_notification_datetime": "2026-09-10T12:00:00Z"
     },
     {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-10-23T12:00:00Z",
+      "merger_id": "MN-80042",
+      "merger_name": "Eli Lilly \u2013 Merida Biosciences",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-09-10T12:00:00Z"
+    },
+    {
       "type": "tribunal_hearing",
       "event_type_display": "Tribunal hearing",
       "date": "2026-11-09T12:00:00Z",
@@ -372,6 +392,6 @@
       "tribunal_number": "ACT 1 of 2026"
     }
   ],
-  "count": 37,
+  "count": 39,
   "days_ahead": 60
 }

@@ -51,7 +51,7 @@
       "code": "18",
       "name": "Basic Chemical and Chemical Product Manufacturing",
       "level": "subdivision",
-      "merger_count": 30
+      "merger_count": 31
     },
     {
       "code": "19",
@@ -111,6 +111,17 @@
     {
       "merger_id": "MN-55024",
       "merger_name": "PSP Investments - AAA Egg Company",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-10T12:00:00Z",
+      "determination_date": null
+    },
+    {
+      "merger_id": "MN-80042",
+      "merger_name": "Eli Lilly \u2013 Merida Biosciences",
       "is_waiver": false,
       "status": "Under assessment",
       "determination": null,
@@ -1913,11 +1924,11 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 165,
-  "phase_1_count": 75,
+  "count": 166,
+  "phase_1_count": 76,
   "phase_2_count": 2,
   "waiver_count": 88,
-  "active_count": 12,
+  "active_count": 13,
   "phase_duration": {
     "average_days": 29.681818181818183,
     "median_days": 27.0,
