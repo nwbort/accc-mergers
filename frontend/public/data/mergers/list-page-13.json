@@ -735,7 +735,10 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "WOODSIDE ENERGY (NORTH WEST SHELF) PTY LTD"
+          "name": "WOODSIDE ENERGY (NORTH WEST SHELF) PTY LTD",
+          "canonical": {
+            "name": "Woodside Energy"
+          }
         },
         {
           "name": "CHEVRON AUSTRALIA PTY LTD",
@@ -752,12 +755,18 @@
           }
         },
         {
-          "name": "WOODSIDE ENERGY JULIMAR PTY LTD"
+          "name": "WOODSIDE ENERGY JULIMAR PTY LTD",
+          "canonical": {
+            "name": "Woodside Energy"
+          }
         }
       ],
       "other_parties": [
         {
-          "name": "WOODSIDE ENERGY LTD."
+          "name": "WOODSIDE ENERGY LTD.",
+          "canonical": {
+            "name": "Woodside Energy"
+          }
         }
       ],
       "anzsic_codes": [
