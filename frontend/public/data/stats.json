@@ -3,12 +3,12 @@
   "total_waivers": 395,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 220,
-    "Under assessment": 29,
+    "Assessment completed": 221,
+    "Under assessment": 28,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 213,
+    "Approved": 214,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 17
   },
   "clearance_rate": {
-    "cleared": 218,
+    "cleared": 219,
     "not_cleared": 2,
-    "total": 220,
+    "total": 221,
     "rate": 0.991
   },
   "phase_duration": {
-    "average_days": 30.01769911504425,
-    "median_days": 26.0,
-    "average_business_days": 20.331858407079647,
-    "median_business_days": 18.0,
+    "average_days": 29.995594713656388,
+    "median_days": 26,
+    "average_business_days": 20.325991189427313,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
         "count": 47,
-        "percentage": 20.8
+        "percentage": 20.7
       },
       "day20": {
-        "count": 164,
-        "percentage": 72.6
+        "count": 165,
+        "percentage": 72.7
       },
       "day30": {
-        "count": 209,
+        "count": 210,
         "percentage": 92.5
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-80035",
+      "merger_name": "Saint-Gobain - Xypex",
+      "determination": "Approved",
+      "determination_date": "2026-09-11T12:00:00Z",
+      "page_modified_datetime": "2026-09-11T11:53:38+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-70037",
       "merger_name": "EQT Fund Management \u2013 Melbourne Storm",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-05046",
-      "merger_name": "Coles - supermarket site in Kirkwood (QLD)",
-      "determination": "Approved",
-      "determination_date": "2026-09-09T12:00:00Z",
-      "page_modified_datetime": "2026-09-09T16:40:44+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]

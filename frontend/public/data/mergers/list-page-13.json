@@ -602,14 +602,14 @@
     {
       "merger_id": "MN-80035",
       "merger_name": "Saint-Gobain - Xypex",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "has_conditions": false,
       "is_waiver": false,
       "under_appeal": false,
       "is_refiled": false,
       "effective_notification_datetime": "2026-08-17T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-09-11T12:00:00Z",
       "end_of_determination_period": "2026-09-28T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -735,23 +735,38 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "WOODSIDE ENERGY (NORTH WEST SHELF) PTY LTD"
+          "name": "WOODSIDE ENERGY (NORTH WEST SHELF) PTY LTD",
+          "canonical": {
+            "name": "Woodside Energy"
+          }
         },
         {
-          "name": "CHEVRON AUSTRALIA PTY LTD"
+          "name": "CHEVRON AUSTRALIA PTY LTD",
+          "canonical": {
+            "name": "Chevron"
+          }
         }
       ],
       "targets": [
         {
-          "name": "CHEVRON AUSTRALIA NEW ENERGIES (G-10-AP) PTY LTD"
+          "name": "CHEVRON AUSTRALIA NEW ENERGIES (G-10-AP) PTY LTD",
+          "canonical": {
+            "name": "Chevron"
+          }
         },
         {
-          "name": "WOODSIDE ENERGY JULIMAR PTY LTD"
+          "name": "WOODSIDE ENERGY JULIMAR PTY LTD",
+          "canonical": {
+            "name": "Woodside Energy"
+          }
         }
       ],
       "other_parties": [
         {
-          "name": "WOODSIDE ENERGY LTD."
+          "name": "WOODSIDE ENERGY LTD.",
+          "canonical": {
+            "name": "Woodside Energy"
+          }
         }
       ],
       "anzsic_codes": [
@@ -2320,10 +2335,16 @@
       ],
       "targets": [
         {
-          "name": "CHEVRON AUSTRALIA DOWNSTREAM HOLDINGS PTY LTD"
+          "name": "CHEVRON AUSTRALIA DOWNSTREAM HOLDINGS PTY LTD",
+          "canonical": {
+            "name": "Chevron"
+          }
         },
         {
-          "name": "Chevron Global Energy Inc."
+          "name": "Chevron Global Energy Inc.",
+          "canonical": {
+            "name": "Chevron"
+          }
         }
       ],
       "other_parties": [],

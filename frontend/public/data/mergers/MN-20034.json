@@ -15,18 +15,26 @@
       "name": "WOODSIDE ENERGY (NORTH WEST SHELF) PTY LTD",
       "identifier_type": "ABN",
       "identifier": "41 004 514 489",
+      "canonical": {
+        "id": "woodside-energy",
+        "name": "Woodside Energy"
+      },
       "party_page": {
-        "id": "woodside-energy-north-west-shelf-pty-ltd",
-        "name": "Woodside Energy (North West Shelf) Pty Ltd"
+        "id": "woodside-energy",
+        "name": "Woodside Energy"
       }
     },
     {
       "name": "CHEVRON AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
       "identifier": "29 086 197 757",
+      "canonical": {
+        "id": "chevron",
+        "name": "Chevron"
+      },
       "party_page": {
-        "id": "chevron-australia-pty-ltd",
-        "name": "Chevron Australia Pty Ltd"
+        "id": "chevron",
+        "name": "Chevron"
       }
     }
   ],
@@ -35,18 +43,26 @@
       "name": "CHEVRON AUSTRALIA NEW ENERGIES (G-10-AP) PTY LTD",
       "identifier_type": "ABN",
       "identifier": "98 662 728 010",
+      "canonical": {
+        "id": "chevron",
+        "name": "Chevron"
+      },
       "party_page": {
-        "id": "chevron-australia-new-energies-g-10-ap-pty-ltd",
-        "name": "Chevron Australia New Energies (G-10-Ap) Pty Ltd"
+        "id": "chevron",
+        "name": "Chevron"
       }
     },
     {
       "name": "WOODSIDE ENERGY JULIMAR PTY LTD",
       "identifier_type": "ABN",
       "identifier": "56 130 391 365",
+      "canonical": {
+        "id": "woodside-energy",
+        "name": "Woodside Energy"
+      },
       "party_page": {
-        "id": "woodside-energy-julimar-pty-ltd",
-        "name": "Woodside Energy Julimar Pty Ltd"
+        "id": "woodside-energy",
+        "name": "Woodside Energy"
       }
     }
   ],
@@ -55,9 +71,13 @@
       "name": "WOODSIDE ENERGY LTD.",
       "identifier_type": "ABN",
       "identifier": "63 005 482 986",
+      "canonical": {
+        "id": "woodside-energy",
+        "name": "Woodside Energy"
+      },
       "party_page": {
-        "id": "woodside-energy-ltd",
-        "name": "Woodside Energy Ltd."
+        "id": "woodside-energy",
+        "name": "Woodside Energy"
       }
     }
   ],
