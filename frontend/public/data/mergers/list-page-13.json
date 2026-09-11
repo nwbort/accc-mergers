@@ -356,7 +356,10 @@
       ],
       "targets": [
         {
-          "name": "ENGAGE SQUARED PTY LTD"
+          "name": "ENGAGE SQUARED PTY LTD",
+          "canonical": {
+            "name": "Engage Squared Pty Ltd"
+          }
         }
       ],
       "other_parties": [
@@ -370,7 +373,10 @@
           "name": "ALCEON PRIVATE EQUITY PTY LTD"
         },
         {
-          "name": "Engage Squared Limited"
+          "name": "Engage Squared Limited",
+          "canonical": {
+            "name": "Engage Squared Pty Ltd"
+          }
         },
         {
           "name": "Engage Squared Kabushiki Kaisha"
@@ -379,13 +385,19 @@
           "name": "Alceon GP Pty Ltd acting as general partner for AAF1 Management, LP acting as general partner of the Alceon Private Equity Access Fund 1, LP"
         },
         {
-          "name": "Alceon Group No.3 Pty Ltd ATF E2 Investor Trust"
+          "name": "Alceon Group No.3 Pty Ltd ATF E2 Investor Trust",
+          "canonical": {
+            "name": "Alceon Group No.3 Pty Ltd ATF E2 Investor Trust"
+          }
         },
         {
           "name": "Alceon Group No.93 Pty Ltd as trustee for Alceon Private Equity Access Trust IA"
         },
         {
-          "name": "Alceon Group No.3 Pty Ltd ATF Alceon Private Equity Group Trust"
+          "name": "Alceon Group No.3 Pty Ltd ATF Alceon Private Equity Group Trust",
+          "canonical": {
+            "name": "Alceon Group No.3 Pty Ltd ATF E2 Investor Trust"
+          }
         }
       ],
       "anzsic_codes": [
