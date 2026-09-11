@@ -87,7 +87,7 @@
       "code": "24",
       "name": "Machinery and Equipment Manufacturing",
       "level": "subdivision",
-      "merger_count": 63
+      "merger_count": 64
     },
     {
       "code": "25",
@@ -237,6 +237,17 @@
       "determination": "Approved",
       "has_conditions": false,
       "phase": "Phase 1",
+      "notification_date": "2026-08-17T12:00:00Z",
+      "determination_date": "2026-09-11T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-85045",
+      "merger_name": "Pacific Investment Management Company \u2013 Ingenico",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
       "notification_date": "2026-08-17T12:00:00Z",
       "determination_date": "2026-09-11T12:00:00Z"
     },
@@ -1924,10 +1935,10 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 166,
+  "count": 167,
   "phase_1_count": 76,
   "phase_2_count": 2,
-  "waiver_count": 88,
+  "waiver_count": 89,
   "active_count": 11,
   "phase_duration": {
     "average_days": 29.58823529411765,
@@ -1937,10 +1948,10 @@
     "completed_count": 68
   },
   "waiver_duration": {
-    "average_days": 19.136363636363637,
-    "median_days": 18.0,
-    "average_business_days": 12.931818181818182,
-    "median_business_days": 12.0,
-    "completed_count": 88
+    "average_days": 19.202247191011235,
+    "median_days": 18,
+    "average_business_days": 13.0,
+    "median_business_days": 12,
+    "completed_count": 89
   }
 }

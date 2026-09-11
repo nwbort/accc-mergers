@@ -177,6 +177,47 @@
         "completed_count": 2
       }
     },
+    "ingenico-international-pacific-pty-ltd": {
+      "id": "ingenico-international-pacific-pty-ltd",
+      "canonical_name": "Ingenico International (Pacific) Pty Ltd",
+      "members": [
+        {
+          "name": "INGENICO INTERNATIONAL (PACIFIC) PTY LTD",
+          "identifier": "46 003 211 514",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-85045",
+            "merger_name": "Pacific Investment Management Company \u2013 Ingenico",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-17T12:00:00Z",
+            "determination_date": "2026-09-11T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
     "lwb-disability-services-central-limited": {
       "id": "lwb-disability-services-central-limited",
       "canonical_name": "Lwb Disability Services Central Limited",

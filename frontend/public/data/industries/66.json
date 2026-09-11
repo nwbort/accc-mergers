@@ -31,7 +31,7 @@
       "code": "663",
       "name": "Other Goods and Equipment Rental and Hiring",
       "level": "group",
-      "merger_count": 6
+      "merger_count": 7
     },
     {
       "code": "664",
@@ -41,6 +41,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-85045",
+      "merger_name": "Pacific Investment Management Company \u2013 Ingenico",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-17T12:00:00Z",
+      "determination_date": "2026-09-11T12:00:00Z"
+    },
     {
       "merger_id": "MN-15030",
       "merger_name": "Karmo - Simplr",
@@ -163,10 +174,10 @@
       "determination_date": "2026-03-19T12:00:00Z"
     }
   ],
-  "count": 11,
+  "count": 12,
   "phase_1_count": 5,
   "phase_2_count": 1,
-  "waiver_count": 5,
+  "waiver_count": 6,
   "active_count": 0,
   "phase_duration": {
     "average_days": 31.666666666666668,
@@ -176,10 +187,10 @@
     "completed_count": 6
   },
   "waiver_duration": {
-    "average_days": 23.6,
-    "median_days": 22,
-    "average_business_days": 16.2,
-    "median_business_days": 15,
-    "completed_count": 5
+    "average_days": 23.833333333333332,
+    "median_days": 23.5,
+    "average_business_days": 16.666666666666668,
+    "median_business_days": 17.0,
+    "completed_count": 6
   }
 }

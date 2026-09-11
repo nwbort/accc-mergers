@@ -30,7 +30,7 @@
       "code": "6322",
       "name": "General Insurance",
       "level": "class",
-      "merger_count": 7
+      "merger_count": 8
     }
   ],
   "mergers": [
@@ -44,6 +44,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-03-03T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-85045",
+      "merger_name": "Pacific Investment Management Company \u2013 Ingenico",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-17T12:00:00Z",
+      "determination_date": "2026-09-11T12:00:00Z"
     },
     {
       "merger_id": "MN-80024",
@@ -123,10 +134,10 @@
       "determination_date": null
     }
   ],
-  "count": 8,
+  "count": 9,
   "phase_1_count": 4,
   "phase_2_count": 2,
-  "waiver_count": 2,
+  "waiver_count": 3,
   "active_count": 1,
   "phase_duration": {
     "average_days": 38.166666666666664,
@@ -136,10 +147,10 @@
     "completed_count": 6
   },
   "waiver_duration": {
-    "average_days": 15.0,
-    "median_days": 15.0,
-    "average_business_days": 9.0,
-    "median_business_days": 9.0,
-    "completed_count": 2
+    "average_days": 18.333333333333332,
+    "median_days": 24,
+    "average_business_days": 12.333333333333334,
+    "median_business_days": 15,
+    "completed_count": 3
   }
 }

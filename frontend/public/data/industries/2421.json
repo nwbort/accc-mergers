@@ -27,6 +27,17 @@
   "children": [],
   "mergers": [
     {
+      "merger_id": "WA-85045",
+      "merger_name": "Pacific Investment Management Company \u2013 Ingenico",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-17T12:00:00Z",
+      "determination_date": "2026-09-11T12:00:00Z"
+    },
+    {
       "merger_id": "MN-80002",
       "merger_name": "Bain Capital \u2013 MCJ",
       "is_waiver": false,
@@ -38,10 +49,10 @@
       "determination_date": "2026-03-03T12:00:00Z"
     }
   ],
-  "count": 1,
+  "count": 2,
   "phase_1_count": 1,
   "phase_2_count": 0,
-  "waiver_count": 0,
+  "waiver_count": 1,
   "active_count": 0,
   "phase_duration": {
     "average_days": 25.0,
@@ -50,5 +61,11 @@
     "median_business_days": 17,
     "completed_count": 1
   },
-  "waiver_duration": null
+  "waiver_duration": {
+    "average_days": 25.0,
+    "median_days": 25,
+    "average_business_days": 19.0,
+    "median_business_days": 19,
+    "completed_count": 1
+  }
 }
