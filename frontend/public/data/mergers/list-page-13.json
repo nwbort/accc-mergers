@@ -738,12 +738,18 @@
           "name": "WOODSIDE ENERGY (NORTH WEST SHELF) PTY LTD"
         },
         {
-          "name": "CHEVRON AUSTRALIA PTY LTD"
+          "name": "CHEVRON AUSTRALIA PTY LTD",
+          "canonical": {
+            "name": "Chevron"
+          }
         }
       ],
       "targets": [
         {
-          "name": "CHEVRON AUSTRALIA NEW ENERGIES (G-10-AP) PTY LTD"
+          "name": "CHEVRON AUSTRALIA NEW ENERGIES (G-10-AP) PTY LTD",
+          "canonical": {
+            "name": "Chevron"
+          }
         },
         {
           "name": "WOODSIDE ENERGY JULIMAR PTY LTD"
@@ -2320,10 +2326,16 @@
       ],
       "targets": [
         {
-          "name": "CHEVRON AUSTRALIA DOWNSTREAM HOLDINGS PTY LTD"
+          "name": "CHEVRON AUSTRALIA DOWNSTREAM HOLDINGS PTY LTD",
+          "canonical": {
+            "name": "Chevron"
+          }
         },
         {
-          "name": "Chevron Global Energy Inc."
+          "name": "Chevron Global Energy Inc.",
+          "canonical": {
+            "name": "Chevron"
+          }
         }
       ],
       "other_parties": [],
