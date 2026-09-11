@@ -3,12 +3,12 @@
   "total_waivers": 395,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 221,
-    "Under assessment": 28,
+    "Assessment completed": 222,
+    "Under assessment": 27,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 214,
+    "Approved": 215,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 17
   },
   "clearance_rate": {
-    "cleared": 219,
+    "cleared": 220,
     "not_cleared": 2,
-    "total": 221,
+    "total": 222,
     "rate": 0.991
   },
   "phase_duration": {
-    "average_days": 29.995594713656388,
-    "median_days": 26,
-    "average_business_days": 20.325991189427313,
-    "median_business_days": 18,
+    "average_days": 29.986842105263158,
+    "median_days": 26.0,
+    "average_business_days": 20.32456140350877,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
         "count": 47,
-        "percentage": 20.7
+        "percentage": 20.6
       },
       "day20": {
-        "count": 165,
-        "percentage": 72.7
+        "count": 166,
+        "percentage": 72.8
       },
       "day30": {
-        "count": 210,
+        "count": 211,
         "percentage": 92.5
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-75041",
+      "merger_name": "Lockheed Martin Corporation \u2013 Ultra Maritime",
+      "determination": "Approved",
+      "determination_date": "2026-09-11T12:00:00Z",
+      "page_modified_datetime": "2026-09-11T14:57:51+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-80035",
       "merger_name": "Saint-Gobain - Xypex",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-09T12:00:00Z",
       "page_modified_datetime": "2026-09-09T16:48:11+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-01119",
-      "merger_name": "Triton - Bureau Veritas Fuel & Coal Testing, Inspection and Certification Division",
-      "determination": "Approved",
-      "determination_date": "2026-09-09T12:00:00Z",
-      "page_modified_datetime": "2026-09-09T16:45:30+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
