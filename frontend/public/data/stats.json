@@ -3,12 +3,12 @@
   "total_waivers": 395,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 222,
-    "Under assessment": 27,
+    "Assessment completed": 223,
+    "Under assessment": 26,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 215,
+    "Approved": 216,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,28 +22,28 @@
     "Not approved": 17
   },
   "clearance_rate": {
-    "cleared": 220,
+    "cleared": 221,
     "not_cleared": 2,
-    "total": 222,
+    "total": 223,
     "rate": 0.991
   },
   "phase_duration": {
-    "average_days": 29.986842105263158,
-    "median_days": 26.0,
-    "average_business_days": 20.32456140350877,
-    "median_business_days": 18.0,
+    "average_days": 29.951965065502183,
+    "median_days": 26,
+    "average_business_days": 20.305676855895197,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
         "count": 47,
-        "percentage": 20.6
+        "percentage": 20.5
       },
       "day20": {
-        "count": 166,
-        "percentage": 72.8
+        "count": 167,
+        "percentage": 72.9
       },
       "day30": {
-        "count": 211,
-        "percentage": 92.5
+        "count": 212,
+        "percentage": 92.6
       }
     }
   },
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-40039",
+      "merger_name": "Bloomberg - Canoe Intelligence",
+      "determination": "Approved",
+      "determination_date": "2026-09-11T12:00:00Z",
+      "page_modified_datetime": "2026-09-11T16:01:54+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-75041",
       "merger_name": "Lockheed Martin Corporation \u2013 Ultra Maritime",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-09T12:00:00Z",
       "page_modified_datetime": "2026-09-09T16:50:11+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-50039",
-      "merger_name": "Brookfield Corporation Ltd \u2013 Brookfield Corporation and Brookfield Wealth Solutions Ltd",
-      "determination": "Approved",
-      "determination_date": "2026-09-09T12:00:00Z",
-      "page_modified_datetime": "2026-09-09T16:48:11+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
