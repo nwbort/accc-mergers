@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import LoadingSpinner from '../components/LoadingSpinner';
+import SegmentedToggle from '../components/SegmentedToggle';
 import ErrorMessage from '../components/ErrorMessage';
 import SEO from '../components/SEO';
 import TurnaroundTrendChart from '../components/TurnaroundTrendChart';
@@ -109,22 +110,12 @@ function CurrentStatus() {
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
             Current status
           </h1>
-          <div
-            className="inline-flex items-center bg-gray-100 rounded-full p-0.5 text-sm"
-            role="group"
-            aria-label="Window"
-          >
-            {play.windows.map(w => (
-              <button
-                key={w.days}
-                onClick={() => setWindowDays(w.days)}
-                aria-pressed={entry.days === w.days}
-                className={`px-3.5 py-1.5 rounded-full font-medium transition-all duration-150 ${entry.days === w.days ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-600 hover:text-gray-900'}`}
-              >
-                Last {w.days} days
-              </button>
-            ))}
-          </div>
+          <SegmentedToggle
+            ariaLabel="Window"
+            options={play.windows.map(w => ({ value: w.days, label: `Last ${w.days} days` }))}
+            value={entry.days}
+            onChange={setWindowDays}
+          />
         </header>
 
         <div className={`${CARD} overflow-hidden mb-6`}>

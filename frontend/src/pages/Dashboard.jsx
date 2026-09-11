@@ -3,6 +3,7 @@ import { FaMagnifyingGlass, FaStopwatch, FaChartLine } from 'react-icons/fa6';
 import { Doughnut } from 'react-chartjs-2';
 import '../utils/chartSetup';
 import StatCard from '../components/StatCard';
+import { CARD } from '../utils/classNames';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
 import UpcomingEventsTimeline from '../components/UpcomingEventsTimeline';
@@ -232,7 +233,7 @@ function Dashboard() {
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-6">
         {/* Phase 1 Duration Table */}
         {stats.phase_duration.percentiles && (
-          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-card flex flex-col">
+          <div className={`${CARD} p-6 flex flex-col`}>
             <h2 className="text-base font-semibold text-gray-900 mb-5">
               Phase 1 speed
             </h2>
@@ -260,7 +261,7 @@ function Dashboard() {
 
         {/* Phase 1 Determination Distribution */}
         {Object.keys(stats.by_determination).length > 0 && (
-          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-card">
+          <div className={`${CARD} p-6`}>
             <h2 id="chart-phase1-title" className="text-base font-semibold text-gray-900 mb-5">
               Phase 1 determinations
             </h2>
@@ -288,7 +289,7 @@ function Dashboard() {
 
         {/* Phase 2 Determination Distribution */}
         {phase2Labels.length > 0 && (
-          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-card">
+          <div className={`${CARD} p-6`}>
             <h2 id="chart-phase2-title" className="text-base font-semibold text-gray-900 mb-5">
               Phase 2 determinations
             </h2>
@@ -311,7 +312,7 @@ function Dashboard() {
 
         {/* Waiver Determination Distribution */}
         {stats.by_waiver_determination && Object.keys(stats.by_waiver_determination).length > 0 && (
-          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-card">
+          <div className={`${CARD} p-6`}>
             <h2 id="chart-waiver-title" className="text-base font-semibold text-gray-900 mb-5">
               Waiver determinations
             </h2>

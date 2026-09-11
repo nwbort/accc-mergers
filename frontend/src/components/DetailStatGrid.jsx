@@ -1,4 +1,4 @@
-import { SECTION_HEADING } from '../utils/classNames';
+import { CARD, SECTION_HEADING } from '../utils/classNames';
 
 /**
  * 2x4 stat-card grid used on industry/party detail pages. Distinct from
@@ -9,7 +9,7 @@ function DetailStatGrid({ statCards }) {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
       {statCards.map(({ label, value, subtitle }) => (
-        <div key={label} className="bg-white p-5 rounded-2xl border border-gray-100 shadow-card">
+        <div key={label} className={`${CARD} p-5`}>
           <p className={SECTION_HEADING}>{label}</p>
           <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight tabular-nums">
             {value}

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router';
 import { Scatter, Bar, Line } from 'react-chartjs-2';
 import '../utils/chartSetup';
 import LoadingSpinner from '../components/LoadingSpinner';
+import SegmentedToggle from '../components/SegmentedToggle';
 import ErrorMessage from '../components/ErrorMessage';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
@@ -478,22 +479,15 @@ function Analysis() {
         {/* Summary Stat Cards */}
         <div className="mb-8">
           <div className="flex justify-end mb-3">
-            <div className="inline-flex items-center bg-gray-100 rounded-full p-0.5 text-sm">
-              <button
-                onClick={() => setCalendarDays(false)}
-                aria-pressed={!calendarDays}
-                className={`px-3.5 py-1.5 rounded-full font-medium transition-all duration-150 ${!calendarDays ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-600 hover:text-gray-900'}`}
-              >
-                Business days
-              </button>
-              <button
-                onClick={() => setCalendarDays(true)}
-                aria-pressed={calendarDays}
-                className={`px-3.5 py-1.5 rounded-full font-medium transition-all duration-150 ${calendarDays ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-600 hover:text-gray-900'}`}
-              >
-                Calendar days
-              </button>
-            </div>
+            <SegmentedToggle
+              ariaLabel="Day count"
+              options={[
+                { value: false, label: 'Business days' },
+                { value: true, label: 'Calendar days' },
+              ]}
+              value={calendarDays}
+              onChange={setCalendarDays}
+            />
           </div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {/* Notifications phase 1 */}
@@ -657,7 +651,7 @@ function Analysis() {
           <section className="mb-8">
             <div className={`${CARD} overflow-hidden`}>
               <div className="px-6 py-5 border-b border-gray-100">
-                <h2 id="chart-industry-duration-title" className="text-lg font-semibold text-gray-900">Phase 1 duration by industry</h2>
+                <h2 id="chart-industry-duration-title" className="text-base font-semibold text-gray-900">Phase 1 duration by industry</h2>
                 <p className="text-sm text-gray-500 mt-0.5">
                   Average phase 1 duration for completed reviews, by top-level industry. Click a bar to view that industry.
                 </p>
@@ -696,7 +690,7 @@ function Analysis() {
           <section className="mb-8">
             <div className={`${CARD} overflow-hidden`}>
               <div className="px-6 py-5 border-b border-gray-100">
-                <h2 id="chart-phase1-ecdf-title" className="text-lg font-semibold text-gray-900">
+                <h2 id="chart-phase1-ecdf-title" className="text-base font-semibold text-gray-900">
                   Phase 1 duration: share of reviews concluded
                 </h2>
                 <p className="text-sm text-gray-500 mt-0.5">
@@ -737,7 +731,7 @@ function Analysis() {
           <section className="mb-8">
             <div className={`${CARD} overflow-hidden`}>
               <div className="px-6 py-5 border-b border-gray-100">
-                <h2 id="chart-waiver-ecdf-title" className="text-lg font-semibold text-gray-900">
+                <h2 id="chart-waiver-ecdf-title" className="text-base font-semibold text-gray-900">
                   Waiver duration: share of applications concluded
                 </h2>
                 <p className="text-sm text-gray-500 mt-0.5">
