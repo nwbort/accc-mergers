@@ -412,7 +412,7 @@ function Timeline() {
 
         {!loading && filteredDisplayedEvents.length === 0 && !hasMore && (
           <div className="text-center py-16">
-            <p className="text-gray-500">
+            <p className="text-gray-500 font-medium">
               {filtersActive
                 ? 'No events match the selected filters'
                 : 'No timeline data available'}

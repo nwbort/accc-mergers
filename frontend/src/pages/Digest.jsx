@@ -15,7 +15,7 @@ import {
   DIGEST_COLOR_CLASSES as COLOR_CLASSES,
   MERGER_STATUS,
 } from '../constants/mergerStatus';
-import { SECTION_HEADING } from '../utils/classNames';
+import { CARD, SECTION_HEADING } from '../utils/classNames';
 import { APPEAL_TYPE_LABELS, DEFAULT_APPEAL_LABEL } from '../constants/appeal';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
 
@@ -318,7 +318,7 @@ function DigestSignup() {
 
   if (status === 'success') {
     return (
-      <div className="mb-6 flex items-center gap-3 rounded-xl border border-primary/20 bg-primary/5 px-5 py-4" role="status">
+      <div className="mb-6 flex items-center gap-3 rounded-2xl border border-primary/20 bg-primary/5 px-5 py-4" role="status">
         <svg className="h-5 w-5 shrink-0 text-primary" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
         </svg>
@@ -330,7 +330,7 @@ function DigestSignup() {
   }
 
   return (
-    <div className="mb-6 rounded-xl border border-gray-200 bg-white px-5 py-4 shadow-card">
+    <div className={`mb-6 ${CARD} px-5 py-4`}>
       <form onSubmit={handleSubmit} className="flex flex-col gap-3">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:gap-4">
           <div className="flex-1">
@@ -473,21 +473,22 @@ function Digest() {
   ].filter(({ count }) => count > 0);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
       <SEO
         title={PAGE_META.title}
         description={PAGE_META.description}
         url="/digest"
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Header */}
-        <div className="mb-6">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Catch me up</h1>
-          <p className="text-gray-600">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
+        <header className="mb-6">
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
+            Catch me up
+          </h1>
+          <p className="mt-1 text-sm text-gray-500 max-w-xl">
             Weekly digest of merger activity from {dateRange}
           </p>
-        </div>
+        </header>
 
         {/* Email signup */}
         <DigestSignup />
@@ -501,7 +502,7 @@ function Digest() {
                 <button
                   key={id}
                   onClick={() => scrollToSection(id)}
-                  className={`bg-gradient-to-br ${c.cardFrom} ${c.cardTo} rounded-lg shadow-card border ${c.cardBorder} p-4 hover:shadow-card-hover hover:scale-105 transition-all cursor-pointer text-left group`}
+                  className={`bg-gradient-to-br ${c.cardFrom} ${c.cardTo} rounded-2xl shadow-card border ${c.cardBorder} p-4 hover:shadow-card-hover transition-all duration-200 cursor-pointer text-left group`}
                 >
                   <div className={`text-2xl font-bold ${c.text} ${c.groupHoverText} transition-colors`}>
                     {count}
@@ -515,7 +516,7 @@ function Digest() {
 
         {/* Tables */}
         {summaryCards.length === 0 && (
-          <div className="rounded-2xl border border-gray-100 bg-white px-5 sm:px-6 py-8 text-center shadow-card">
+          <div className={`${CARD} px-5 sm:px-6 py-8 text-center`}>
             <p className="text-sm text-gray-500">
               No merger activity to report for this period.
             </p>
@@ -809,7 +810,7 @@ function Digest() {
           )}
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
