@@ -3,8 +3,8 @@
     "notifications_total": 254,
     "matters_extended": 20,
     "share_extended_pct": 7.9,
-    "extension_events_total": 27,
-    "total_extension_bd": 294,
+    "extension_events_total": 28,
+    "total_extension_bd": 309,
     "median_matter_extension_bd": 15,
     "longest_single_bd": 30,
     "phase_2_total": 9,
@@ -17,8 +17,8 @@
   "reasons": [
     {
       "category": "Requested by the merger parties",
-      "events": 18,
-      "business_days": 201
+      "events": 19,
+      "business_days": 216
     },
     {
       "category": "ACCC information request",
@@ -59,9 +59,41 @@
     {
       "month": "2026-08",
       "count": 6
+    },
+    {
+      "month": "2026-09",
+      "count": 1
     }
   ],
   "matters": [
+    {
+      "merger_id": "MN-01072",
+      "merger_name": "Saipem S.p.A - Subsea7 S.A.",
+      "stage": "Phase 2 - detailed assessment",
+      "status": "Under assessment",
+      "notification_date": "2026-04-27T12:00:00Z",
+      "phase_1_determination": "Referred to phase 2",
+      "phase_1_determination_date": "2026-07-02T12:00:00Z",
+      "escalated_to_phase_2": true,
+      "total_extension_bd": 33,
+      "extension_count": 2,
+      "extensions": [
+        {
+          "date": "2026-05-27T12:00:00Z",
+          "business_days": 18,
+          "reason_category": "Requested by the merger parties",
+          "reason_detail": "request by parties",
+          "title": "Timeline extended by 18 business days \u2013 following request by parties"
+        },
+        {
+          "date": "2026-09-11T12:00:00Z",
+          "business_days": 15,
+          "reason_category": "Requested by the merger parties",
+          "reason_detail": "request by Notifying Party to extend the period to respond to the ACCC's Notice of Competition Concerns",
+          "title": "Timeline extended by 15 business days \u2013 following request by Notifying Party to extend the period to respond to the ACCC's Notice of Competition Concerns"
+        }
+      ]
+    },
     {
       "merger_id": "MN-40013",
       "merger_name": "Calvary - Hobart Private Hospital",
@@ -241,27 +273,6 @@
           "reason_category": "ACCC information request",
           "reason_detail": "request for further information",
           "title": "Timeline extended by 20 business days - following request for further information"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-01072",
-      "merger_name": "Saipem S.p.A - Subsea7 S.A.",
-      "stage": "Phase 2 - detailed assessment",
-      "status": "Under assessment",
-      "notification_date": "2026-04-27T12:00:00Z",
-      "phase_1_determination": "Referred to phase 2",
-      "phase_1_determination_date": "2026-07-02T12:00:00Z",
-      "escalated_to_phase_2": true,
-      "total_extension_bd": 18,
-      "extension_count": 1,
-      "extensions": [
-        {
-          "date": "2026-05-27T12:00:00Z",
-          "business_days": 18,
-          "reason_category": "Requested by the merger parties",
-          "reason_detail": "request by parties",
-          "title": "Timeline extended by 18 business days \u2013 following request by parties"
         }
       ]
     },
