@@ -3,11 +3,15 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
 import SEO from '../components/SEO';
 import TurnaroundTrendChart from '../components/TurnaroundTrendChart';
+import DurationEcdfChart from '../components/DurationEcdfChart';
 import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
 import { formatMedian } from '../utils/formatMedian';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
+import { computeEcdfFromCounts } from '../utils/durationEcdf';
+import { CHART_PALETTE as COLORS } from '../constants/chartColors';
+import { PHASE_1_DEADLINE_BD, WAIVER_DEADLINE_BD } from '../constants/statutoryDeadlines';
 
 // Title and description live in the shared table so this page and the
 // build-time prerenderer emit the same <head>.
@@ -65,6 +69,51 @@ function Headline({ label, value, delta, footnote }) {
         </>
       )}
     </div>
+  );
+}
+
+/**
+ * One window's duration curve, in the same card frame as the trend chart.
+ *
+ * The /analysis page draws this curve over every matter ever decided; here it
+ * is cut to the matters decided in the selected window, which is what makes it
+ * worth showing twice. The median headline above says where the middle of that
+ * window landed; this says how the rest of it was spread — whether the tail
+ * ran past the statutory clock, and by how much.
+ *
+ * Renders nothing when the window holds no decisions, or when the payload
+ * predates the per-window histogram.
+ */
+function EcdfCard({ title, description, stats, deadline, color, seriesLabel, caption, countHeading, id }) {
+  const points = computeEcdfFromCounts(stats?.duration_histogram);
+  if (points.length === 0) return null;
+
+  return (
+    <section className="mb-6">
+      <div className={`${CARD} overflow-hidden`}>
+        <div className="px-6 py-5 border-b border-gray-100">
+          <h2 id={`${id}-title`} className="text-base font-semibold text-gray-900">
+            {title}
+          </h2>
+          <p className="text-sm text-gray-500 mt-0.5">{description}</p>
+        </div>
+        <div className="p-6">
+          <DurationEcdfChart
+            points={points}
+            median={stats.median}
+            deadline={deadline}
+            dayLabel="business days"
+            seriesLabel={seriesLabel}
+            color={color}
+            titleId={`${id}-title`}
+            summaryId={`${id}-summary`}
+            caption={caption}
+            countHeading={countHeading}
+            minAxisMax={deadline}
+          />
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -148,6 +197,30 @@ function CurrentStatus() {
             </p>
           )}
         </div>
+
+        <EcdfCard
+          id="chart-window-waiver-ecdf"
+          title="Waiver duration &ndash; share of applications concluded"
+          description={`The ${entry.waivers.count} waiver applications decided in the last ${entry.days} days, by how long each one took.`}
+          stats={entry.waivers}
+          deadline={WAIVER_DEADLINE_BD}
+          color={COLORS.teal}
+          seriesLabel="% of waivers concluded"
+          caption={`Cumulative share of the waiver applications decided in the last ${entry.days} days, by business day`}
+          countHeading="Waivers decided"
+        />
+
+        <EcdfCard
+          id="chart-window-phase1-ecdf"
+          title="Phase 1 duration &ndash; share of reviews concluded"
+          description={`The ${entry.notifications.count} phase 1 reviews completed in the last ${entry.days} days, by how long each one took.`}
+          stats={entry.notifications}
+          deadline={PHASE_1_DEADLINE_BD}
+          color={COLORS.primary}
+          seriesLabel="% of reviews concluded"
+          caption={`Cumulative share of the phase 1 reviews completed in the last ${entry.days} days, by business day`}
+          countHeading="Reviews concluded"
+        />
 
         <section>
           <div className={`${CARD} overflow-hidden`}>
