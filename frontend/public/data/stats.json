@@ -1,10 +1,10 @@
 {
-  "total_mergers": 252,
+  "total_mergers": 253,
   "total_waivers": 395,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 220,
-    "Under assessment": 27,
+    "Under assessment": 28,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -56,7 +56,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 127
+      "count": 128
     },
     {
       "name": "Computer System Design and Related Services",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-65036",
+      "merger_name": "ENEOS \u2013 Chevron Australia Downstream",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-09-10T12:00:00Z",
+      "page_modified_datetime": "2026-09-11T10:55:39+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-25047",
       "merger_name": "Alcoa \u2013 South32 aluminium assets",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-09-02T12:00:00Z",
       "page_modified_datetime": "2026-09-03T15:52:03+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-75054",
-      "merger_name": "I Squared Capital \u2013 oOh!media",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-09-02T12:00:00Z",
-      "page_modified_datetime": "2026-09-03T09:46:54+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

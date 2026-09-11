@@ -27,6 +27,17 @@
   "children": [],
   "mergers": [
     {
+      "merger_id": "MN-65036",
+      "merger_name": "ENEOS \u2013 Chevron Australia Downstream",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-10T12:00:00Z",
+      "determination_date": null
+    },
+    {
       "merger_id": "MN-25049",
       "merger_name": "Merck KGaA / Bio-Techne",
       "is_waiver": false,
@@ -1424,11 +1435,11 @@
       "determination_date": "2026-01-30T12:00:00Z"
     }
   ],
-  "count": 127,
-  "phase_1_count": 30,
+  "count": 128,
+  "phase_1_count": 31,
   "phase_2_count": 0,
   "waiver_count": 97,
-  "active_count": 11,
+  "active_count": 12,
   "phase_duration": {
     "average_days": 25.526315789473685,
     "median_days": 25,

@@ -24,7 +24,7 @@
       "code": "3321",
       "name": "Petroleum Product Wholesaling",
       "level": "class",
-      "merger_count": 3
+      "merger_count": 4
     },
     {
       "code": "3322",
@@ -40,6 +40,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-65036",
+      "merger_name": "ENEOS \u2013 Chevron Australia Downstream",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-10T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-25049",
       "merger_name": "Merck KGaA / Bio-Techne",
@@ -96,11 +107,11 @@
       "determination_date": "2026-03-25T12:00:00Z"
     }
   ],
-  "count": 5,
-  "phase_1_count": 3,
+  "count": 6,
+  "phase_1_count": 4,
   "phase_2_count": 1,
   "waiver_count": 1,
-  "active_count": 1,
+  "active_count": 2,
   "phase_duration": {
     "average_days": 55.0,
     "median_days": 35,
