@@ -59,9 +59,11 @@ from scripts.constants.site import REPO as _REPO, mergers_fyi_url
 from scripts.merger_filters import load_mergers
 from scripts.detect.party_matching import (
     build_group_lookups,
+    load_parties_doc,
     match_party,
     normalise_identifier,
     normalise_name,
+    save_parties_doc,
 )
 from scripts.slug import slugify
 from scripts.paths import REPO_ROOT
@@ -493,18 +495,15 @@ def _group_from_candidate(candidate: dict) -> dict:
 
 
 def apply_suggestions(parties_path: Path, candidates: list[dict]) -> int:
-    """Append candidate groups to related_parties.json in-place. Returns count added."""
-    if parties_path.exists():
-        with parties_path.open() as fh:
-            data = json.load(fh)
-    else:
-        data = {"groups": []}
-    data.setdefault("groups", [])
-    data["groups"].extend(_group_from_candidate(c) for c in candidates)
-    parties_path.parent.mkdir(parents=True, exist_ok=True)
-    with parties_path.open("w") as fh:
-        json.dump(data, fh, indent=2)
-        fh.write("\n")
+    """Append candidate groups to related_parties.json in-place. Returns count added.
+
+    Writes through ``save_parties_doc`` so accented/non-Latin characters already
+    in the file round-trip as literal UTF-8; dumping the document here with the
+    default ``ensure_ascii=True`` re-escaped every one of them on each run.
+    """
+    doc = load_parties_doc(parties_path)
+    doc["groups"].extend(_group_from_candidate(c) for c in candidates)
+    save_parties_doc(doc, parties_path)
     return len(candidates)
 
 

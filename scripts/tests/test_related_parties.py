@@ -493,6 +493,27 @@ def test_apply_suggestions_appends_groups(tmp_path):
     assert data["groups"][0]["members"][0] == {"name": "Old Name Pty Ltd", "identifier": "12 345 678 901"}
 
 
+def test_apply_suggestions_keeps_non_ascii_literal(tmp_path):
+    """The file is stored as literal UTF-8 — a run must not re-escape it."""
+    parties = tmp_path / "related_parties.json"
+    parties.write_text(
+        json.dumps({"groups": [{"id": "eqt", "canonical_name": "EQT Fund Management",
+                                "members": [{"name": "EQT Fund Management S.\u00e0 r.l.", "identifier": "B167972"}]}]},
+                   ensure_ascii=False),
+        encoding="utf-8",
+    )
+    candidates = [{
+        "id": "loreal",
+        "canonical_name": "L'Or\u00e9al",
+        "members": [{"name": "L'Or\u00e9al S.A.", "identifier": "632 012 100", "merger_count": 1, "merger_ids": ["MN-1"]}],
+    }]
+    drp.apply_suggestions(parties, candidates)
+    text = parties.read_text(encoding="utf-8")
+    assert "S.\u00e0 r.l." in text        # the untouched existing group
+    assert "L'Or\u00e9al" in text         # the appended one
+    assert "\\u00e0" not in text and "\\u00e9" not in text
+
+
 def test_find_group_merge_candidates_flags_groups_sharing_an_identifier():
     groups = [
         {
