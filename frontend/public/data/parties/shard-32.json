@@ -78,6 +78,47 @@
       "phase_duration": null,
       "waiver_duration": null
     },
+    "engage-squared-kabushiki-kaisha": {
+      "id": "engage-squared-kabushiki-kaisha",
+      "canonical_name": "Engage Squared Kabushiki Kaisha",
+      "members": [
+        {
+          "name": "Engage Squared Kabushiki Kaisha",
+          "identifier": "Japan Corporate Number  9011001146434",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-50037",
+            "merger_name": "Alceon \u2013 Engage Squared",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-14T12:00:00Z",
+            "determination_date": "2026-09-11T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
     "general-dental-holdings-pty-ltd": {
       "id": "general-dental-holdings-pty-ltd",
       "canonical_name": "General Dental Holdings",

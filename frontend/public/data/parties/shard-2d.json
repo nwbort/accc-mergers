@@ -2,6 +2,47 @@
   "shard": 45,
   "shard_count": 256,
   "parties": {
+    "alceon-group-no-93-pty-ltd-as-trustee-for-alceon-private-equity-access-trust-ia": {
+      "id": "alceon-group-no-93-pty-ltd-as-trustee-for-alceon-private-equity-access-trust-ia",
+      "canonical_name": "Alceon Group No.93 Pty Ltd as trustee for Alceon Private Equity Access Trust IA",
+      "members": [
+        {
+          "name": "Alceon Group No.93 Pty Ltd as trustee for Alceon Private Equity Access Trust IA",
+          "identifier": "691 545 061",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-50037",
+            "merger_name": "Alceon \u2013 Engage Squared",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-14T12:00:00Z",
+            "determination_date": "2026-09-11T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
     "atp-adhesive-systems-group-gmbh-2": {
       "id": "atp-adhesive-systems-group-gmbh-2",
       "canonical_name": "ATP adhesive systems Group GmbH",

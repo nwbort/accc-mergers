@@ -182,6 +182,47 @@
         "completed_count": 1
       }
     },
+    "engage-squared-limited": {
+      "id": "engage-squared-limited",
+      "canonical_name": "Engage Squared Limited",
+      "members": [
+        {
+          "name": "Engage Squared Limited",
+          "identifier": "Company Number 4845160",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-50037",
+            "merger_name": "Alceon \u2013 Engage Squared",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-14T12:00:00Z",
+            "determination_date": "2026-09-11T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
     "histon-nelson-pty-ltd": {
       "id": "histon-nelson-pty-ltd",
       "canonical_name": "Histon Nelson Pty Ltd",

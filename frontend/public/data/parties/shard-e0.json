@@ -43,6 +43,47 @@
         "completed_count": 1
       }
     },
+    "alceon-gp-pty-ltd-acting-as-general-partner-for-aaf1-management-lp-acting-as-gen": {
+      "id": "alceon-gp-pty-ltd-acting-as-general-partner-for-aaf1-management-lp-acting-as-gen",
+      "canonical_name": "Alceon GP Pty Ltd acting as general partner for AAF1 Management, LP acting as general partner of the Alceon Private Equity Access Fund 1, LP",
+      "members": [
+        {
+          "name": "Alceon GP Pty Ltd acting as general partner for AAF1 Management, LP acting as general partner of the Alceon Private Equity Access Fund 1, LP",
+          "identifier": "684 807 047",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-50037",
+            "merger_name": "Alceon \u2013 Engage Squared",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-14T12:00:00Z",
+            "determination_date": "2026-09-11T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
     "anthony-mark-guidera": {
       "id": "anthony-mark-guidera",
       "canonical_name": "Anthony Mark Guidera",

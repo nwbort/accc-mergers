@@ -38,6 +38,17 @@
       "determination_date": null
     },
     {
+      "merger_id": "WA-50037",
+      "merger_name": "Alceon \u2013 Engage Squared",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-14T12:00:00Z",
+      "determination_date": "2026-09-11T12:00:00Z"
+    },
+    {
       "merger_id": "MN-05043",
       "merger_name": "Incubeta - Datisan",
       "is_waiver": false,
@@ -786,10 +797,10 @@
       "determination_date": "2026-01-20T12:00:00Z"
     }
   ],
-  "count": 69,
+  "count": 70,
   "phase_1_count": 27,
   "phase_2_count": 0,
-  "waiver_count": 42,
+  "waiver_count": 43,
   "active_count": 1,
   "phase_duration": {
     "average_days": 28.53846153846154,
@@ -799,10 +810,10 @@
     "completed_count": 26
   },
   "waiver_duration": {
-    "average_days": 20.595238095238095,
-    "median_days": 20.0,
-    "average_business_days": 14.452380952380953,
-    "median_business_days": 13.5,
-    "completed_count": 42
+    "average_days": 20.767441860465116,
+    "median_days": 20,
+    "average_business_days": 14.581395348837209,
+    "median_business_days": 14,
+    "completed_count": 43
   }
 }

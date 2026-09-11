@@ -9,7 +9,7 @@
       "code": "62",
       "name": "Finance",
       "level": "subdivision",
-      "merger_count": 138
+      "merger_count": 139
     },
     {
       "code": "63",
@@ -21,7 +21,7 @@
       "code": "64",
       "name": "Auxiliary Finance and Insurance Services",
       "level": "subdivision",
-      "merger_count": 68
+      "merger_count": 69
     }
   ],
   "mergers": [
@@ -210,6 +210,17 @@
       "has_conditions": false,
       "phase": "Phase 1",
       "notification_date": "2026-08-17T12:00:00Z",
+      "determination_date": "2026-09-11T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-50037",
+      "merger_name": "Alceon \u2013 Engage Squared",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-14T12:00:00Z",
       "determination_date": "2026-09-11T12:00:00Z"
     },
     {
@@ -2127,10 +2138,10 @@
       "determination_date": null
     }
   ],
-  "count": 191,
+  "count": 192,
   "phase_1_count": 49,
   "phase_2_count": 2,
-  "waiver_count": 140,
+  "waiver_count": 141,
   "active_count": 15,
   "phase_duration": {
     "average_days": 27.89189189189189,
@@ -2140,10 +2151,10 @@
     "completed_count": 37
   },
   "waiver_duration": {
-    "average_days": 20.34285714285714,
-    "median_days": 20.0,
-    "average_business_days": 13.885714285714286,
-    "median_business_days": 14.0,
-    "completed_count": 140
+    "average_days": 20.397163120567377,
+    "median_days": 20,
+    "average_business_days": 13.929078014184396,
+    "median_business_days": 14,
+    "completed_count": 141
   }
 }
