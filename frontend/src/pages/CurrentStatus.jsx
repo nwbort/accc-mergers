@@ -84,7 +84,7 @@ function Headline({ label, value, delta, footnote }) {
  * Renders nothing when the window holds no decisions, or when the payload
  * predates the per-window histogram.
  */
-function EcdfCard({ title, description, stats, deadline, color, seriesLabel, caption, countHeading, id }) {
+function EcdfCard({ title, stats, deadline, color, seriesLabel, caption, countHeading, id }) {
   const points = computeEcdfFromCounts(stats?.duration_histogram);
   if (points.length === 0) return null;
 
@@ -95,7 +95,6 @@ function EcdfCard({ title, description, stats, deadline, color, seriesLabel, cap
           <h2 id={`${id}-title`} className="text-base font-semibold text-gray-900">
             {title}
           </h2>
-          <p className="text-sm text-gray-500 mt-0.5">{description}</p>
         </div>
         <div className="p-6">
           <DurationEcdfChart
@@ -200,8 +199,7 @@ function CurrentStatus() {
 
         <EcdfCard
           id="chart-window-waiver-ecdf"
-          title="Waiver duration &ndash; share of applications concluded"
-          description={`The ${entry.waivers.count} waiver applications decided in the last ${entry.days} days, by how long each one took.`}
+          title={`Waiver duration \u2013 share of applications concluded \u2013 last ${entry.days} days \u2013 ${entry.waivers.count} applications`}
           stats={entry.waivers}
           deadline={WAIVER_DEADLINE_BD}
           color={COLORS.teal}
@@ -212,8 +210,7 @@ function CurrentStatus() {
 
         <EcdfCard
           id="chart-window-phase1-ecdf"
-          title="Phase 1 duration &ndash; share of reviews concluded"
-          description={`The ${entry.notifications.count} phase 1 reviews completed in the last ${entry.days} days, by how long each one took.`}
+          title={`Phase 1 duration \u2013 share of reviews concluded \u2013 last ${entry.days} days \u2013 ${entry.notifications.count} reviews`}
           stats={entry.notifications}
           deadline={PHASE_1_DEADLINE_BD}
           color={COLORS.primary}

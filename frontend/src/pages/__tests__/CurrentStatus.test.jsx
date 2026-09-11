@@ -322,8 +322,11 @@ describe('Current status', () => {
 
     expect(within(rows[0]).getAllByRole('cell').map(cell => cell.textContent))
       .toEqual(['15', '50%', '23 of 46']);
-    expect(screen.getByText(/46 phase 1 reviews completed in the last 30 days/))
-      .toBeInTheDocument();
+    // The heading carries the window and the sample size, so the card needs no
+    // subheading under it.
+    expect(screen.getByRole('heading', {
+      name: 'Phase 1 duration \u2013 share of reviews concluded \u2013 last 30 days \u2013 46 reviews',
+    })).toBeInTheDocument();
   });
 
   it('re-cuts the curves when another window is selected', async () => {
@@ -331,6 +334,11 @@ describe('Current status', () => {
     await renderPage();
 
     await user.click(screen.getByRole('button', { name: 'Last 90 days' }));
+
+    // The heading names the window it was cut to, and the count it holds.
+    expect(screen.getByRole('heading', {
+      name: 'Waiver duration \u2013 share of applications concluded \u2013 last 90 days \u2013 179 applications',
+    })).toBeInTheDocument();
 
     expect(screen.queryByRole('table', {
       name: /waiver applications decided in the last 30 days/,
