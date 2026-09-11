@@ -1214,9 +1214,43 @@ class TestCurrentStatus:
 
         assert payload['pre_notification']['all_time']['count'] == 0
 
+    def test_each_window_carries_the_distribution_behind_its_median(self):
+        # Three notifications decided inside the 30-day window, two of them in
+        # the same number of business days, plus one older matter that belongs
+        # to the 90-day window only.
+        mergers = [
+            self._decided('MN-1', '2026-03-02T00:00:00Z', '2026-03-09T00:00:00Z'),
+            self._decided('MN-2', '2026-03-02T00:00:00Z', '2026-03-09T00:00:00Z'),
+            self._decided('MN-3', '2026-03-02T00:00:00Z', '2026-03-11T00:00:00Z'),
+            self._decided('MN-4', '2026-01-02T00:00:00Z', '2026-01-09T00:00:00Z'),
+        ]
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
+        by_days = {w['days']: w['notifications'] for w in payload['windows']}
+
+        histogram = by_days[30]['duration_histogram']
+        # Keys are business-day counts as strings, values how many matters took
+        # exactly that long — the repeated duration arrives as a count of 2.
+        # (Canberra Day falls on 9 March 2026, so the spans are a day shorter
+        # than the weekdays they cover.)
+        assert sum(histogram.values()) == by_days[30]['count'] == 3
+        assert histogram == {'4': 2, '6': 1}
+        # The 90-day window sees the older matter too, so it is the wider one.
+        assert sum(by_days[90]['duration_histogram'].values()) == 4
+
+    def test_histogram_is_cut_to_the_window_like_every_other_figure(self):
+        # Decided outside even the 90-day window: it sets the all-time
+        # baseline, but must not appear in either window's distribution.
+        mergers = [self._decided('WA-1', '2025-09-01T00:00:00Z', '2025-09-10T00:00:00Z', waiver=True)]
+        payload = analysis.current_status(mergers, as_at=date(2026, 3, 15))
+
+        assert payload['all_time']['waivers']['count'] == 1
+        assert all(w['waivers']['duration_histogram'] == {} for w in payload['windows'])
+
     def test_empty_input(self):
         payload = analysis.current_status([], as_at=date(2026, 3, 15))
 
+        assert all(w[k]['duration_histogram'] == {}
+                   for w in payload['windows'] for k in ('notifications', 'waivers'))
         assert payload['all_time']['notifications']['count'] == 0
         assert payload['all_time']['notifications']['median'] is None
         assert all(w[k]['median_delta'] is None

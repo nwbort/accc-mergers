@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { Scatter, Bar, Line } from 'react-chartjs-2';
+import { Bar, Line } from 'react-chartjs-2';
 import '../utils/chartSetup';
 import LoadingSpinner from '../components/LoadingSpinner';
 import SegmentedToggle from '../components/SegmentedToggle';
@@ -14,6 +14,8 @@ import { CHART_PALETTE as COLORS } from '../constants/chartColors';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
 import { computeEcdf } from '../utils/durationEcdf';
+import DurationEcdfChart from '../components/DurationEcdfChart';
+import { PHASE_1_DEADLINE_BD, WAIVER_DEADLINE_BD } from '../constants/statutoryDeadlines';
 
 // Title and description live in the shared table so this page and the
 // build-time prerenderer emit the same <head>.
@@ -37,191 +39,15 @@ function Analysis() {
 
   const dayLabel = calendarDays ? 'calendar days' : 'business days';
 
-  // --- Phase 1 Duration ECDF ---
+  // --- Duration ECDFs ---
+  // Both curves are drawn by the shared DurationEcdfChart, which /current-status
+  // reuses over its rolling windows — the two pages have to stay comparable.
   const ecdfPoints = computeEcdf(phase1_duration.duration_histogram, calendarDays);
-  const ecdfMedian = phase1Stats.median;
-  const ecdfMaxX = ecdfPoints.length > 0
-    ? Math.max(ecdfPoints[ecdfPoints.length - 1].x, 30) + 2
-    : 30;
-
-  const phase1EcdfData = {
-    datasets: [
-      ...(!calendarDays ? [{
-        label: 'BD 30 deadline',
-        data: [{ x: 30, y: 0 }, { x: 30, y: 100 }],
-        borderColor: COLORS.accent,
-        borderDash: [6, 4],
-        borderWidth: 1.5,
-        pointRadius: 0,
-        showLine: true,
-      }] : []),
-      ...(ecdfMedian != null ? [{
-        label: `Median (${ecdfMedian} ${dayLabel})`,
-        data: [{ x: ecdfMedian, y: 0 }, { x: ecdfMedian, y: 100 }],
-        borderColor: '#9ca3af',
-        borderDash: [4, 4],
-        borderWidth: 1.5,
-        pointRadius: 0,
-        showLine: true,
-      }] : []),
-      {
-        label: '% of reviews concluded',
-        data: ecdfPoints,
-        borderColor: COLORS.primary,
-        backgroundColor: COLORS.primary,
-        stepped: 'before',
-        borderWidth: 2,
-        pointRadius: 0,
-        pointHoverRadius: 5,
-        showLine: true,
-      },
-    ],
-  };
-
-  const phase1EcdfOptions = {
-    responsive: true,
-    maintainAspectRatio: false,
-    animation: false,
-    plugins: {
-      legend: {
-        position: 'bottom',
-        labels: {
-          usePointStyle: true,
-          padding: 16,
-          font: { size: 12, family: 'Inter, sans-serif' },
-        },
-      },
-      tooltip: {
-        callbacks: {
-          label: (item) => {
-            if (item.dataset.label !== '% of reviews concluded') return item.dataset.label;
-            const { x, y, n, total } = item.raw;
-            return `by BD ${x}: ${y}% (${n} of ${total})`;
-          },
-        },
-      },
-    },
-    scales: {
-      x: {
-        type: 'linear',
-        min: 0,
-        max: ecdfMaxX,
-        title: {
-          display: true,
-          text: calendarDays ? 'Calendar days' : 'Business days',
-          font: { size: 12, family: 'Inter, sans-serif' },
-          color: '#6b7280',
-        },
-        grid: { color: 'rgba(0,0,0,0.04)' },
-        ticks: { font: { size: 11 } },
-      },
-      y: {
-        min: 0,
-        max: 100,
-        title: {
-          display: true,
-          text: '% of reviews concluded',
-          font: { size: 12, family: 'Inter, sans-serif' },
-          color: '#6b7280',
-        },
-        grid: { color: 'rgba(0,0,0,0.04)' },
-        ticks: { font: { size: 11 }, callback: (value) => `${value}%` },
-      },
-    },
-  };
-
-  // --- Waiver Duration ECDF ---
   const waiverEcdfPoints = computeEcdf(waiver_duration.duration_histogram, calendarDays);
-  const waiverEcdfMedian = waiverStats.median;
-  const waiverEcdfMaxX = waiverEcdfPoints.length > 0
-    ? Math.max(waiverEcdfPoints[waiverEcdfPoints.length - 1].x, 25) + 2
-    : 25;
-
-  const waiverEcdfData = {
-    datasets: [
-      ...(!calendarDays ? [{
-        label: 'BD 25 deadline',
-        data: [{ x: 25, y: 0 }, { x: 25, y: 100 }],
-        borderColor: COLORS.accent,
-        borderDash: [6, 4],
-        borderWidth: 1.5,
-        pointRadius: 0,
-        showLine: true,
-      }] : []),
-      ...(waiverEcdfMedian != null ? [{
-        label: `Median (${waiverEcdfMedian} ${dayLabel})`,
-        data: [{ x: waiverEcdfMedian, y: 0 }, { x: waiverEcdfMedian, y: 100 }],
-        borderColor: '#9ca3af',
-        borderDash: [4, 4],
-        borderWidth: 1.5,
-        pointRadius: 0,
-        showLine: true,
-      }] : []),
-      {
-        label: '% of waivers concluded',
-        data: waiverEcdfPoints,
-        borderColor: COLORS.teal,
-        backgroundColor: COLORS.teal,
-        stepped: 'before',
-        borderWidth: 2,
-        pointRadius: 0,
-        pointHoverRadius: 5,
-        showLine: true,
-      },
-    ],
-  };
-
-  const waiverEcdfOptions = {
-    responsive: true,
-    maintainAspectRatio: false,
-    animation: false,
-    plugins: {
-      legend: {
-        position: 'bottom',
-        labels: {
-          usePointStyle: true,
-          padding: 16,
-          font: { size: 12, family: 'Inter, sans-serif' },
-        },
-      },
-      tooltip: {
-        callbacks: {
-          label: (item) => {
-            if (item.dataset.label !== '% of waivers concluded') return item.dataset.label;
-            const { x, y, n, total } = item.raw;
-            return `by day ${x}: ${y}% (${n} of ${total})`;
-          },
-        },
-      },
-    },
-    scales: {
-      x: {
-        type: 'linear',
-        min: 0,
-        max: waiverEcdfMaxX,
-        title: {
-          display: true,
-          text: calendarDays ? 'Calendar days' : 'Business days',
-          font: { size: 12, family: 'Inter, sans-serif' },
-          color: '#6b7280',
-        },
-        grid: { color: 'rgba(0,0,0,0.04)' },
-        ticks: { font: { size: 11 } },
-      },
-      y: {
-        min: 0,
-        max: 100,
-        title: {
-          display: true,
-          text: '% of waivers concluded',
-          font: { size: 12, family: 'Inter, sans-serif' },
-          color: '#6b7280',
-        },
-        grid: { color: 'rgba(0,0,0,0.04)' },
-        ticks: { font: { size: 11 }, callback: (value) => `${value}%` },
-      },
-    },
-  };
+  // The statutory clocks are counted in business days, so the reference line is
+  // dropped rather than misplaced when the axis switches to calendar days.
+  const phase1Deadline = calendarDays ? null : PHASE_1_DEADLINE_BD;
+  const waiverDeadline = calendarDays ? null : WAIVER_DEADLINE_BD;
 
   // --- Monthly Volume ---
   const monthlyVolumeData = {
@@ -698,29 +524,19 @@ function Analysis() {
                 </p>
               </div>
               <div className="p-6">
-                <div
-                  className="h-80"
-                  role="img"
-                  aria-labelledby="chart-phase1-ecdf-title"
-                  aria-describedby="chart-phase1-ecdf-summary"
-                >
-                  <Scatter data={phase1EcdfData} options={phase1EcdfOptions} role="presentation" />
-                </div>
-                <div className="sr-only">
-                  <table id="chart-phase1-ecdf-summary">
-                    <caption>Cumulative share of completed phase 1 reviews concluded by {dayLabel}</caption>
-                    <thead><tr><th>By {dayLabel === 'calendar days' ? 'calendar day' : 'business day'}</th><th>% concluded</th><th>Reviews concluded</th></tr></thead>
-                    <tbody>
-                      {ecdfPoints.filter(p => p.x > 0).map(p => (
-                        <tr key={p.x}>
-                          <td>{p.x}</td>
-                          <td>{p.y}%</td>
-                          <td>{p.n} of {p.total}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
+                <DurationEcdfChart
+                  points={ecdfPoints}
+                  median={phase1Stats.median}
+                  deadline={phase1Deadline}
+                  dayLabel={dayLabel}
+                  seriesLabel="% of reviews concluded"
+                  color={COLORS.primary}
+                  titleId="chart-phase1-ecdf-title"
+                  summaryId="chart-phase1-ecdf-summary"
+                  caption={`Cumulative share of completed phase 1 reviews concluded by ${dayLabel}`}
+                  countHeading="Reviews concluded"
+                  minAxisMax={PHASE_1_DEADLINE_BD}
+                />
               </div>
             </div>
           </section>
@@ -739,29 +555,19 @@ function Analysis() {
                 </p>
               </div>
               <div className="p-6">
-                <div
-                  className="h-80"
-                  role="img"
-                  aria-labelledby="chart-waiver-ecdf-title"
-                  aria-describedby="chart-waiver-ecdf-summary"
-                >
-                  <Scatter data={waiverEcdfData} options={waiverEcdfOptions} role="presentation" />
-                </div>
-                <div className="sr-only">
-                  <table id="chart-waiver-ecdf-summary">
-                    <caption>Cumulative share of waiver applications decided by {dayLabel}</caption>
-                    <thead><tr><th>By {dayLabel === 'calendar days' ? 'calendar day' : 'business day'}</th><th>% concluded</th><th>Waivers decided</th></tr></thead>
-                    <tbody>
-                      {waiverEcdfPoints.filter(p => p.x > 0).map(p => (
-                        <tr key={p.x}>
-                          <td>{p.x}</td>
-                          <td>{p.y}%</td>
-                          <td>{p.n} of {p.total}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
+                <DurationEcdfChart
+                  points={waiverEcdfPoints}
+                  median={waiverStats.median}
+                  deadline={waiverDeadline}
+                  dayLabel={dayLabel}
+                  seriesLabel="% of waivers concluded"
+                  color={COLORS.teal}
+                  titleId="chart-waiver-ecdf-title"
+                  summaryId="chart-waiver-ecdf-summary"
+                  caption={`Cumulative share of waiver applications decided by ${dayLabel}`}
+                  countHeading="Waivers decided"
+                  minAxisMax={WAIVER_DEADLINE_BD}
+                />
               </div>
             </div>
           </section>

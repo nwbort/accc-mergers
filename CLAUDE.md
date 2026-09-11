@@ -79,8 +79,10 @@ frontend/src/
 │   ├── CurrentStatus.jsx # /current-status (recent decision times vs the all-time
 │                         #   baseline). Deliberately bare: the two medians, each
 │                         #   coloured by whether it is running slower or faster than
-│                         #   usual, the pre-notification average and the trend chart.
-│                         #   No methodology copy — see the generator docstrings
+│                         #   usual, the pre-notification average, a share-concluded
+│                         #   curve per matter type over the selected window, and the
+│                         #   trend chart. No methodology copy — see the generator
+│                         #   docstrings
 │   ├── Phase2.jsx        # /phase-2
 │   ├── RefiledNotifications.jsx # /refiled-notifications
 │   ├── Extensions.jsx    # /extensions (Phase 1 timeline extensions; not linked from the navbar)
@@ -128,9 +130,17 @@ frontend/src/
 │                         #   - Global UI: CommandPalette, KeyboardShortcutsHelp,
 │                         #     SearchInput, FeedbackPopup
 │                         #   Charts live in Treemap.jsx,
-│                         #   PhaseDurationComparison.jsx and
-│                         #   TurnaroundTrendChart.jsx; all follow the
+│                         #   PhaseDurationComparison.jsx,
+│                         #   TurnaroundTrendChart.jsx and
+│                         #   DurationEcdfChart.jsx; all follow the
 │                         #   canvas + sr-only data table pattern in docs/accessibility.md.
+│                         #   DurationEcdfChart draws one "share concluded by
+│                         #   day N" curve and is shared by Analysis (all-time,
+│                         #   with its business/calendar-day toggle) and
+│                         #   CurrentStatus (the selected 30/90-day window) —
+│                         #   one component is what keeps the two readings
+│                         #   comparable. The card, its <h2> and the statutory
+│                         #   deadline to mark belong to the caller.
 │                         #   TurnaroundTrendChart is memo()'d: CurrentStatus
 │                         #   re-renders on the window toggle it doesn't depend
 │                         #   on, and its only prop is the generated monthly
@@ -152,7 +162,7 @@ frontend/src/
 │                         #   in App.jsx),
 │                         #   mergerStatus.js, appeal.js, regime.js, cardStyles.js,
 │                         #   chartColors.js, outcomeDotColors.js, outcomeHeader.js,
-│                         #   outcomeIcons.js, outcomeRail.js
+│                         #   outcomeIcons.js, outcomeRail.js, statutoryDeadlines.js
 ├── context/              # TrackingContext.jsx — global merger + industry follow state via localStorage
 │                         #   (industry follows flag only new filings/determinations)
 ├── hooks/                # useDebounce.js, useFetchData.js, useKeyboardShortcuts.js,
@@ -426,7 +436,7 @@ prunes the old names), but make it a deliberate choice.
 | `upcoming-events.json` | Future consultation/determination dates |
 | `commentary.json` | Mergers with user commentary |
 | `digest.json` | Weekly digest of merger activity (from `generate_weekly_digest.py`) |
-| `analysis.json` | Pre-computed analysis data. `current_status` (powering `/current-status`) re-cuts the same durations over rolling windows of recently *decided* matters (30/90 days), plus a per-decision-month series aligned index-for-index with `open_caseload`, so the filing-time question ("what is the ACCC turning around *now*") doesn't have to be answered from the all-time median. Each window also carries `notifications_filed` and a `pre_notification` block (keyed by *filing* date, since that stage ends at filing rather than at a decision; the estimate is a calendar-day figure but is published here in business days, like every other duration on the page). No waiver inflow is published, since a waiver only reaches the register once decided. `phase1_duration`/`waiver_duration` each carry a `duration_histogram`: a nested count map, business days → calendar days → number of completed reviews with that exact pair. It replaced a flat list holding one object per review — same distribution (the records are anonymous, so a multiset of pairs is exactly the list), a third of the file. Read business days by summing each inner map; read calendar days by folding the inner keys together (`frontend/src/utils/durationEcdf.js`) |
+| `analysis.json` | Pre-computed analysis data. `current_status` (powering `/current-status`) re-cuts the same durations over rolling windows of recently *decided* matters (30/90 days), plus a per-decision-month series aligned index-for-index with `open_caseload`, so the filing-time question ("what is the ACCC turning around *now*") doesn't have to be answered from the all-time median. Each window's `notifications`/`waivers` block carries its own flat `duration_histogram` (business days → matters decided in exactly that many), the recent-window twin of the all-time histograms below, so the same ECDF can be drawn over just what was decided lately. Each window also carries `notifications_filed` and a `pre_notification` block (keyed by *filing* date, since that stage ends at filing rather than at a decision; the estimate is a calendar-day figure but is published here in business days, like every other duration on the page). No waiver inflow is published, since a waiver only reaches the register once decided. `phase1_duration`/`waiver_duration` each carry a `duration_histogram`: a nested count map, business days → calendar days → number of completed reviews with that exact pair. It replaced a flat list holding one object per review — same distribution (the records are anonymous, so a multiset of pairs is exactly the list), a third of the file. Read business days by summing each inner map; read calendar days by folding the inner keys together (`frontend/src/utils/durationEcdf.js`) |
 | `timeline.json` | Unpaginated timeline (alongside the paginated `timeline/` directory) |
 | `referral-probability-by-day.json` | Modelled probability of a Phase 2 referral by elapsed business day |
 | `serial-acquirers.json` | Serial-acquirer ("creeping acquisitions") detection |

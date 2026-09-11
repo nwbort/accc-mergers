@@ -22,7 +22,10 @@ function ok(json) {
   return { ok: true, status: 200, json: () => Promise.resolve(json) };
 }
 
-// The page fetches analysis.json but reads only these two blocks from it.
+// The page fetches analysis.json but reads only these two blocks from it. Each
+// window's `duration_histogram` (business days -> matters decided in exactly
+// that many) is counted out to sum to that window's own `count`, so the curve
+// and the headline beside it describe the same set of decisions.
 const caseloadFixture = {
   labels: ['2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09'],
   notifications: [22, 25, 32, 42, 41, 46, 37, 35],
@@ -51,10 +54,12 @@ describe('Current status', () => {
           notifications: {
             median: 18.5, average: 21, p90: 27, min: 15, max: 56,
             count: 46, median_delta: -1.5,
+            duration_histogram: { 15: 23, 22: 13, 27: 8, 56: 2 },
           },
           waivers: {
             median: 17, average: 16.4, p90: 21, min: 8, max: 23,
             count: 64, median_delta: 4,
+            duration_histogram: { 8: 10, 17: 24, 21: 24, 23: 6 },
           },
         },
         {
@@ -63,10 +68,12 @@ describe('Current status', () => {
           notifications: {
             median: 18, average: 20.6, p90: 28, min: 15, max: 56,
             count: 116, median_delta: 0,
+            duration_histogram: { 15: 40, 18: 30, 25: 34, 28: 8, 56: 4 },
           },
           waivers: {
             median: 15, average: 15.2, p90: 21, min: 5, max: 24,
             count: 179, median_delta: 2,
+            duration_histogram: { 5: 40, 15: 50, 18: 71, 21: 10, 24: 8 },
           },
         },
       ],
@@ -286,6 +293,78 @@ describe('Current status', () => {
     await renderPage({ ...turnaroundFixture, current_status: withoutPre });
 
     expect(screen.queryByText(/in pre-notification/)).not.toBeInTheDocument();
+    expect(within(headline('Waiver')).getByText('17')).toBeInTheDocument();
+  });
+
+  it('curves the window\'s own decisions, mirroring the all-time chart on /analysis', async () => {
+    await renderPage();
+
+    const table = screen.getByRole('table', {
+      name: /waiver applications decided in the last 30 days/,
+    });
+    const rows = within(table).getAllByRole('row').slice(1); // drop the header
+    const cellsFor = (row) => within(row).getAllByRole('cell').map(cell => cell.textContent);
+
+    // 64 waivers at 8, 17, 21 and 23 business days: the curve steps once per
+    // distinct duration, cumulatively, and the totals are the window's own.
+    expect(cellsFor(rows[0])).toEqual(['8', '15.6%', '10 of 64']);
+    expect(cellsFor(rows[1])).toEqual(['17', '53.1%', '34 of 64']);
+    expect(cellsFor(rows[3])).toEqual(['23', '100%', '64 of 64']);
+  });
+
+  it('draws phase 1 and waivers as separate curves', async () => {
+    await renderPage();
+
+    const table = screen.getByRole('table', {
+      name: /phase 1 reviews completed in the last 30 days/,
+    });
+    const rows = within(table).getAllByRole('row').slice(1);
+
+    expect(within(rows[0]).getAllByRole('cell').map(cell => cell.textContent))
+      .toEqual(['15', '50%', '23 of 46']);
+    // The heading carries the window and the sample size, so the card needs no
+    // subheading under it.
+    expect(screen.getByRole('heading', {
+      name: 'Phase 1 duration \u2013 share of reviews concluded \u2013 last 30 days \u2013 46 reviews',
+    })).toBeInTheDocument();
+  });
+
+  it('re-cuts the curves when another window is selected', async () => {
+    const user = userEvent.setup();
+    await renderPage();
+
+    await user.click(screen.getByRole('button', { name: 'Last 90 days' }));
+
+    // The heading names the window it was cut to, and the count it holds.
+    expect(screen.getByRole('heading', {
+      name: 'Waiver duration \u2013 share of applications concluded \u2013 last 90 days \u2013 179 applications',
+    })).toBeInTheDocument();
+
+    expect(screen.queryByRole('table', {
+      name: /waiver applications decided in the last 30 days/,
+    })).not.toBeInTheDocument();
+    const table = screen.getByRole('table', {
+      name: /waiver applications decided in the last 90 days/,
+    });
+    const first = within(table).getAllByRole('row')[1];
+    expect(within(first).getAllByRole('cell').map(cell => cell.textContent))
+      .toEqual(['5', '22.3%', '40 of 179']);
+  });
+
+  it('omits a curve the payload has no distribution for, keeping the rest of the page', async () => {
+    // An analysis.json generated before the per-window histograms existed.
+    const [first, ...rest] = turnaroundFixture.current_status.windows;
+    const { duration_histogram: _dropped, ...waivers } = first.waivers;
+    await renderPage({
+      ...turnaroundFixture,
+      current_status: {
+        ...turnaroundFixture.current_status,
+        windows: [{ ...first, waivers }, ...rest],
+      },
+    });
+
+    expect(screen.queryByRole('table', { name: /waiver applications decided/ })).not.toBeInTheDocument();
+    expect(screen.getByRole('table', { name: /phase 1 reviews completed/ })).toBeInTheDocument();
     expect(within(headline('Waiver')).getByText('17')).toBeInTheDocument();
   });
 

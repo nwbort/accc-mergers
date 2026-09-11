@@ -40,7 +40,7 @@ Label normalisation for ``by_commission_division`` (see that function):
 import calendar
 import math
 import re
-from collections import defaultdict
+from collections import Counter, defaultdict
 from datetime import date, datetime, timedelta
 from statistics import median as stat_median
 from zoneinfo import ZoneInfo
@@ -536,6 +536,23 @@ def _turnaround_stats(business_days: list[int]) -> dict:
     }
 
 
+def _business_day_histogram(business_days: list[int]) -> dict[str, int]:
+    """``{business days: number of matters decided in exactly that many}``.
+
+    The window equivalent of the all-time ``duration_histogram`` that
+    ``phase1_duration``/``waiver_duration`` publish, and read by the same
+    frontend ECDF ("what share of matters were decided by day N"). Flat rather
+    than nested by calendar days, because a window holds only a month or a
+    quarter of decisions and /current-status quotes business days throughout —
+    there is no calendar-day toggle here to feed.
+
+    Keys are strings so the map survives a JSON round trip unchanged; sorted
+    numerically so the serialised file reads in duration order.
+    """
+    counts = Counter(business_days)
+    return {str(bus): counts[bus] for bus in sorted(counts)}
+
+
 def _decided_durations(mergers: list) -> list[tuple[str, int]]:
     """``(decision_date, business_days)`` for every matter that has been decided.
 
@@ -632,9 +649,14 @@ def current_status(mergers: list, as_at: date | None = None) -> dict:
 
     - ``windows`` — median/average/p90 over matters *decided* in the last 30
       and 90 days, each paired with the all-time figure and the delta between
-      them, for notifications and waivers separately. Each window also carries
-      ``notifications_filed``, the inflow over the same period, so the page can
-      show what is arriving beside what is being cleared.
+      them, for notifications and waivers separately, each over a
+      ``duration_histogram`` of the window's own decisions (business days →
+      count) — the recent-window twin of the all-time histograms under
+      ``phase1_duration``/``waiver_duration``, so the same "share concluded by
+      day N" curve can be drawn for what the ACCC has just decided. Each
+      window also carries ``notifications_filed``, the inflow over the same
+      period, so the page can show what is arriving beside what is being
+      cleared.
     - ``all_time`` — the same statistics over every decided matter, the
       baseline every window is compared against.
     - ``monthly`` — the same medians per decision-month, aligned index-for-index
@@ -678,12 +700,10 @@ def current_status(mergers: list, as_at: date | None = None) -> dict:
         if m.get('effective_notification_datetime')
     ]
 
-    def _window(durations: list[tuple[str, int]], days: int) -> dict:
+    def _window_durations(durations: list[tuple[str, int]], days: int) -> list[int]:
         cutoff = (as_at - timedelta(days=days)).isoformat()
         as_at_iso = as_at.isoformat()
-        return _turnaround_stats(
-            [bd for decided, bd in durations if cutoff < decided <= as_at_iso]
-        )
+        return [bd for decided, bd in durations if cutoff < decided <= as_at_iso]
 
     all_time = {
         "notifications": _turnaround_stats([bd for _, bd in notification_durations]),
@@ -700,7 +720,13 @@ def current_status(mergers: list, as_at: date | None = None) -> dict:
             ),
         }
         for key, durations in (("notifications", notification_durations), ("waivers", waiver_durations)):
-            stats = _window(durations, days)
+            window_days = _window_durations(durations, days)
+            stats = _turnaround_stats(window_days)
+            # The distribution behind the median, so the page can show how the
+            # window's decisions were spread rather than only where their
+            # middle landed: two windows with the same median read very
+            # differently if one has a long tail past the statutory clock.
+            stats["duration_histogram"] = _business_day_histogram(window_days)
             baseline = all_time[key]["median"]
             # The delta is the headline: "waivers are running 4 business days
             # longer than the all-time median" is the sentence this whole block

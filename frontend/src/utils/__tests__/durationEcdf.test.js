@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { computeEcdf } from '../durationEcdf';
+import { computeEcdf, computeEcdfFromCounts } from '../durationEcdf';
 
 // business days -> calendar days -> count. Five completed reviews at 10, 10,
 // 20, 30 and 40 business days; the repeated 10 arrives as a count of 2 rather
@@ -58,5 +58,34 @@ describe('computeEcdf', () => {
     // An analysis.json generated before these histograms existed; the page
     // reads this as "omit the chart" rather than throwing.
     expect(computeEcdf(undefined, false)).toEqual([]);
+  });
+});
+
+describe('computeEcdfFromCounts', () => {
+  // The flat shape current_status publishes per window: business days -> how
+  // many matters were decided in exactly that many.
+  const COUNTS = { 5: 2, 9: 1, 12: 1 };
+
+  it('anchors the curve at the origin', () => {
+    expect(computeEcdfFromCounts(COUNTS)[0]).toEqual({ x: 0, y: 0, n: 0, total: 4 });
+  });
+
+  it('steps the curve once per distinct duration, by its count', () => {
+    expect(computeEcdfFromCounts(COUNTS).slice(1)).toEqual([
+      { x: 5, y: 50, n: 2, total: 4 },
+      { x: 9, y: 75, n: 3, total: 4 },
+      { x: 12, y: 100, n: 4, total: 4 },
+    ]);
+  });
+
+  it('orders points numerically, not by the string form of the JSON keys', () => {
+    expect(computeEcdfFromCounts({ 9: 1, 100: 1 }).map(p => p.x)).toEqual([0, 9, 100]);
+  });
+
+  it('returns no points for an empty or absent map', () => {
+    // A window with nothing decided in it, and a payload generated before the
+    // per-window histograms existed. Both read as "omit the chart".
+    expect(computeEcdfFromCounts({})).toEqual([]);
+    expect(computeEcdfFromCounts(undefined)).toEqual([]);
   });
 });
