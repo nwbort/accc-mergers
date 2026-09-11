@@ -223,7 +223,7 @@ function CurrentStatus() {
           <div className={`${CARD} overflow-hidden`}>
             <div className="px-6 py-5 border-b border-gray-100">
               <h2 id="chart-turnaround-trend-title" className="text-base font-semibold text-gray-900">
-                ACCC decision times &ndash; phase 1 and waivers
+                ACCC decision times &ndash; phase 1 and waivers &ndash; all time
               </h2>
             </div>
             <div className="p-6">
