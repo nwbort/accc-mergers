@@ -24,7 +24,7 @@
       "code": "8531",
       "name": "Dental Services",
       "level": "class",
-      "merger_count": 11
+      "merger_count": 12
     },
     {
       "code": "8532",
@@ -52,6 +52,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-01120",
+      "merger_name": "Impression Dental Group - Blackburn Dental Centre, VIC",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-14T12:00:00Z",
+      "determination_date": "2026-09-11T12:00:00Z"
+    },
     {
       "merger_id": "MN-20017",
       "merger_name": "Amplifon \u2013 GN Hearing",
@@ -218,10 +229,10 @@
       "determination_date": "2026-02-26T12:00:00Z"
     }
   ],
-  "count": 15,
+  "count": 16,
   "phase_1_count": 4,
   "phase_2_count": 0,
-  "waiver_count": 11,
+  "waiver_count": 12,
   "active_count": 0,
   "phase_duration": {
     "average_days": 33.75,
@@ -231,10 +242,10 @@
     "completed_count": 4
   },
   "waiver_duration": {
-    "average_days": 18.181818181818183,
-    "median_days": 19,
-    "average_business_days": 12.636363636363637,
-    "median_business_days": 13,
-    "completed_count": 11
+    "average_days": 19.0,
+    "median_days": 20.0,
+    "average_business_days": 13.25,
+    "median_business_days": 14.0,
+    "completed_count": 12
   }
 }

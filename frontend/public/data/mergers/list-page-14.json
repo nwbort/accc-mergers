@@ -1,6 +1,54 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-65036",
+      "merger_name": "ENEOS \u2013 Chevron Australia Downstream",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-09-10T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-10-23T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "ENEOS APAC Pte. Ltd."
+        }
+      ],
+      "targets": [
+        {
+          "name": "CHEVRON AUSTRALIA DOWNSTREAM HOLDINGS PTY LTD",
+          "canonical": {
+            "name": "Chevron"
+          }
+        },
+        {
+          "name": "Chevron Global Energy Inc.",
+          "canonical": {
+            "name": "Chevron"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3321",
+          "name": "Petroleum Product Wholesaling"
+        },
+        {
+          "code": "4000",
+          "name": "Fuel Retailing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-80042",
       "merger_name": "Eli Lilly \u2013 Merida Biosciences",
       "status": "Under assessment",

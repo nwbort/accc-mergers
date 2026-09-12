@@ -452,6 +452,47 @@
       },
       "waiver_duration": null
     },
+    "konstantina-liosis": {
+      "id": "konstantina-liosis",
+      "canonical_name": "Konstantina Liosis",
+      "members": [
+        {
+          "name": "Konstantina Liosis",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-01120",
+            "merger_name": "Impression Dental Group - Blackburn Dental Centre, VIC",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-14T12:00:00Z",
+            "determination_date": "2026-09-11T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 28.0,
+        "median_days": 28,
+        "average_business_days": 20.0,
+        "median_business_days": 20,
+        "completed_count": 1
+      }
+    },
     "new-south-wales-treasury-corporation": {
       "id": "new-south-wales-treasury-corporation",
       "canonical_name": "New South Wales Treasury Corporation",

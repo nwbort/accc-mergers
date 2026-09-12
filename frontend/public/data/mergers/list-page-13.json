@@ -143,6 +143,62 @@
       ]
     },
     {
+      "merger_id": "WA-01120",
+      "merger_name": "Impression Dental Group - Blackburn Dental Centre, VIC",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-14T12:00:00Z",
+      "determination_publication_date": "2026-09-11T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "GENERAL DENTAL HOLDINGS PTY LTD",
+          "canonical": {
+            "name": "General Dental Holdings"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Business and assets of Blackburn Clinic Dental Centre"
+        },
+        {
+          "name": "BLACKBURN CLINIC DENTAL CENTRE PTY LTD"
+        },
+        {
+          "name": "THE TRUSTEE FOR CAREY FAMILY TRUST"
+        },
+        {
+          "name": "THE TRUSTEE FOR THE LIOSIS-BELEGRIS TRUST"
+        },
+        {
+          "name": "The Trustee for BCDC Unit Trust"
+        },
+        {
+          "name": "Andrea Manley"
+        },
+        {
+          "name": "Konstantina Liosis"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Genesis Capital"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "8531",
+          "name": "Dental Services"
+        }
+      ]
+    },
+    {
       "merger_id": "WA-25044",
       "merger_name": "Veritas Capital Fund Management \u2013 Trinity Consultants",
       "status": "Assessment completed",
@@ -2441,54 +2497,6 @@
         {
           "code": "6961",
           "name": "Corporate Head Office Management Services"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-65036",
-      "merger_name": "ENEOS \u2013 Chevron Australia Downstream",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-09-10T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-10-23T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "ENEOS APAC Pte. Ltd."
-        }
-      ],
-      "targets": [
-        {
-          "name": "CHEVRON AUSTRALIA DOWNSTREAM HOLDINGS PTY LTD",
-          "canonical": {
-            "name": "Chevron"
-          }
-        },
-        {
-          "name": "Chevron Global Energy Inc.",
-          "canonical": {
-            "name": "Chevron"
-          }
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "3321",
-          "name": "Petroleum Product Wholesaling"
-        },
-        {
-          "code": "4000",
-          "name": "Fuel Retailing"
-        },
-        {
-          "code": "6240",
-          "name": "Financial Asset Investing"
         }
       ]
     }

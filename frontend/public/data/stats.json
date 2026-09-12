@@ -1,6 +1,6 @@
 {
   "total_mergers": 254,
-  "total_waivers": 397,
+  "total_waivers": 398,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 223,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 380,
+    "Approved": 381,
     "Not approved": 17
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.861460957178842,
-    "median_days": 20,
-    "average_business_days": 13.518891687657431,
-    "median_business_days": 13
+    "average_days": 19.881909547738694,
+    "median_days": 20.0,
+    "average_business_days": 13.535175879396984,
+    "median_business_days": 13.0
   },
   "top_industries": [
     {
@@ -230,6 +230,17 @@
       "has_conditions": false
     },
     {
+      "merger_id": "WA-01120",
+      "merger_name": "Impression Dental Group - Blackburn Dental Centre, VIC",
+      "determination": "Approved",
+      "determination_date": "2026-09-11T12:00:00Z",
+      "page_modified_datetime": "2026-09-11T16:47:58+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-85045",
       "merger_name": "Pacific Investment Management Company \u2013 Ingenico",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-09T12:00:00Z",
       "page_modified_datetime": "2026-09-09T16:54:10+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-75049",
-      "merger_name": "Sazerac \u2013 Au Vodka",
-      "determination": "Approved",
-      "determination_date": "2026-09-09T12:00:00Z",
-      "page_modified_datetime": "2026-09-09T16:52:59+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

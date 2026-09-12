@@ -31,7 +31,7 @@
       "code": "853",
       "name": "Allied Health Services",
       "level": "group",
-      "merger_count": 15
+      "merger_count": 16
     },
     {
       "code": "859",
@@ -41,6 +41,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-01120",
+      "merger_name": "Impression Dental Group - Blackburn Dental Centre, VIC",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-14T12:00:00Z",
+      "determination_date": "2026-09-11T12:00:00Z"
+    },
     {
       "merger_id": "MN-15031",
       "merger_name": "Danaher (Leica Biosystems) - StatLab",
@@ -328,10 +339,10 @@
       "determination_date": "2026-02-26T12:00:00Z"
     }
   ],
-  "count": 26,
+  "count": 27,
   "phase_1_count": 8,
   "phase_2_count": 0,
-  "waiver_count": 18,
+  "waiver_count": 19,
   "active_count": 0,
   "phase_duration": {
     "average_days": 32.625,
@@ -341,10 +352,10 @@
     "completed_count": 8
   },
   "waiver_duration": {
-    "average_days": 17.5,
-    "median_days": 15.5,
-    "average_business_days": 11.944444444444445,
-    "median_business_days": 11.0,
-    "completed_count": 18
+    "average_days": 18.05263157894737,
+    "median_days": 16,
+    "average_business_days": 12.368421052631579,
+    "median_business_days": 11,
+    "completed_count": 19
   }
 }
