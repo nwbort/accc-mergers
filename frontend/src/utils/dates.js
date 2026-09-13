@@ -247,7 +247,8 @@ export const formatWeekday = (dateString) => {
 
 /**
  * Format a date range as day + month for each end (e.g. "2 Sep – 7 Sep"),
- * for agenda views that bundle several days under one heading.
+ * for agenda views that bundle several days under one heading. Collapses to
+ * a single formatted date when the range starts and ends on the same day.
  * @param {string} startDate - Start date in ISO format
  * @param {string} endDate - End date in ISO format
  * @returns {string} The formatted range
@@ -258,6 +259,9 @@ export const formatDateRange = (startDate, endDate) => {
     const start = parseDateOnly(startDate);
     const end = parseDateOnly(endDate);
     if (!isValid(start) || !isValid(end)) return 'Invalid date';
+    if (startDate.slice(0, 10) === endDate.slice(0, 10)) {
+      return format(start, 'd MMM');
+    }
     return `${format(start, 'd MMM')} – ${format(end, 'd MMM')}`;
   } catch {
     return 'Invalid date';
