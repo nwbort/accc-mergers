@@ -21,54 +21,16 @@ import { PHASES } from '../constants/mergerStatus';
 import { getOutcomeRail } from '../constants/outcomeRail';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
+import { DEFAULT_SORT, SORT_FIELDS, SORT_FIELDS_BY_VALUE, normaliseSort, splitSort, sortMergers } from '../utils/mergerSort';
 
 // Title and description live in the shared table so this page and the
 // build-time prerenderer emit the same <head>.
 const PAGE_META = STATIC_PAGE_META['/mergers'];
 
-const SORT_FIELDS = [
-  { value: 'notification', label: 'Notification date' },
-  { value: 'determination', label: 'Determination date' },
-];
-
 const SEARCH_DEBOUNCE_MS = 300;
 const PAGE_SIZE = 50;
 // Max concurrent page fetches to avoid saturating the connection pool
 const FETCH_BATCH_SIZE = 4;
-
-const sortMergers = (list, sortBy = 'notification-desc') => {
-  return [...list].sort((a, b) => {
-    switch (sortBy) {
-      case 'notification-asc': {
-        const dateA = a.effective_notification_datetime || '';
-        const dateB = b.effective_notification_datetime || '';
-        return dateA.localeCompare(dateB);
-      }
-      case 'determination-desc': {
-        const dateA = a.determination_publication_date;
-        const dateB = b.determination_publication_date;
-        if (!dateA && !dateB) return 0;
-        if (!dateA) return 1;
-        if (!dateB) return -1;
-        return dateB.localeCompare(dateA);
-      }
-      case 'determination-asc': {
-        const dateA = a.determination_publication_date;
-        const dateB = b.determination_publication_date;
-        if (!dateA && !dateB) return 0;
-        if (!dateA) return 1;
-        if (!dateB) return -1;
-        return dateA.localeCompare(dateB);
-      }
-      case 'notification-desc':
-      default: {
-        const dateA = a.effective_notification_datetime || '';
-        const dateB = b.effective_notification_datetime || '';
-        return dateB.localeCompare(dateA);
-      }
-    }
-  });
-};
 
 function Mergers() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -93,7 +55,11 @@ function Mergers() {
   // Derive filter state from URL params — no local state duplication needed
   const statusFilter = searchParams.get('status') || 'all';
   const phaseFilter = searchParams.get('phase') || 'all';
-  const sortBy = searchParams.get('sort') || 'notification-desc';
+  // An unrecognised ?sort= folds back to the default, so the select and the
+  // direction labels always describe the order actually applied.
+  const sortBy = normaliseSort(searchParams.get('sort') || DEFAULT_SORT);
+  const { field: sortField, dir: sortDir } = splitSort(sortBy);
+  const directionLabels = SORT_FIELDS_BY_VALUE[sortField];
   const trackedOnly = searchParams.get('tracked') === 'true';
 
   // Initialize search index from session cache if merger data is already cached
@@ -153,9 +119,9 @@ function Mergers() {
       // *last* page first in that case — otherwise the first screen would
       // flash the oldest mergers before the background fetch replaces them
       // with the newest ones. For notification-asc, page 1 is already the
-      // right first screen; the determination sorts have no page/sort
+      // right first screen; the determination and name sorts have no page/sort
       // correlation, so page 1 is just a reasonable default there too.
-      const initialPage = sortBy === 'notification-desc' ? totalPages : 1;
+      const initialPage = sortBy === DEFAULT_SORT ? totalPages : 1;
 
       const initialResponse = await fetch(API_ENDPOINTS.mergersListPage(initialPage));
       if (!initialResponse.ok) throw new Error('Failed to fetch merger page');
@@ -544,10 +510,13 @@ function Mergers() {
             <select
               id="sort"
               className="px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-600 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer"
-              value={sortBy.replace(/-(?:asc|desc)$/, '')}
+              value={sortField}
               onChange={(e) => {
-                const dir = sortBy.endsWith('-asc') ? 'asc' : 'desc';
-                updateParam('sort', `${e.target.value}-${dir}`, 'notification-desc');
+                const field = e.target.value;
+                // Keep the direction when only re-sorting the same field;
+                // switching fields starts from that field's natural direction.
+                const dir = field === sortField ? sortDir : SORT_FIELDS_BY_VALUE[field].defaultDir;
+                updateParam('sort', `${field}-${dir}`, DEFAULT_SORT);
               }}
               aria-label="Sort field"
             >
@@ -557,15 +526,13 @@ function Mergers() {
             </select>
             <button
               onClick={() => {
-                const field = sortBy.replace(/-(?:asc|desc)$/, '');
-                const newDir = sortBy.endsWith('-asc') ? 'desc' : 'asc';
-                updateParam('sort', `${field}-${newDir}`, 'notification-desc');
+                updateParam('sort', `${sortField}-${sortDir === 'asc' ? 'desc' : 'asc'}`, DEFAULT_SORT);
               }}
               className="p-1 text-gray-500 hover:text-gray-700 transition-all"
-              aria-label={sortBy.endsWith('-asc') ? 'Sort descending' : 'Sort ascending'}
-              title={sortBy.endsWith('-asc') ? 'Ascending (click for descending)' : 'Descending (click for ascending)'}
+              aria-label={`Change sort order to ${sortDir === 'asc' ? directionLabels.desc : directionLabels.asc}`}
+              title={`${sortDir === 'asc' ? directionLabels.asc : directionLabels.desc} — click for ${sortDir === 'asc' ? directionLabels.desc : directionLabels.asc}`}
             >
-              <FaArrowDown className={`h-4 w-4 transition-transform ${sortBy.endsWith('-asc') ? 'rotate-180' : ''}`} aria-hidden="true" />
+              <FaArrowDown className={`h-4 w-4 transition-transform ${sortDir === 'asc' ? 'rotate-180' : ''}`} aria-hidden="true" />
             </button>
           </div>
         </div>

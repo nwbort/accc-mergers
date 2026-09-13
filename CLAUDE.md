@@ -175,7 +175,9 @@ frontend/src/
 │                         #   classNames.js, searchIndex.js,
 │                         #   businessDayProgress.js, fetchAllMergers.js, formatMedian.js, phase2Summary.js,
 │                         #   industryGroups.js, slug.js, shard.js, preNotification.js, pageMeta.js,
-│                         #   treemapTail.js, mergerOutcome.js, partyMembers.js, durationEcdf.js
+│                         #   treemapTail.js, mergerOutcome.js, partyMembers.js, durationEcdf.js,
+│                         #   mergerSort.js (the merger list's ?sort= vocabulary: the field table
+│                         #   the select is built from and the comparator it drives)
 └── data/                 # ACT public holidays JSON
                           #   (act-public-holidays.json — source of truth for both the Python
                           #   pipeline and the frontend; authoritative list published at
