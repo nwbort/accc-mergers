@@ -46,6 +46,7 @@ be reached.
 | Related parties review PR opened, or updated with new candidates | default (3) | `pipeline.yml` |
 | Exact-match waiver refile auto-merged into `main` | 4 (bypasses batching) | `pipeline.yml` — this one merged itself without review |
 | Missing notification dates PR opened, or updated with new candidates | default (3) | `fix-missing-notification-dates.yml` |
+| A watchlisted merger changed | default (3) | `pipeline.yml` — see [Watchlist](#watchlist) below |
 
 Tapping a notification opens the PR (or, for the auto-merge, the
 `needs-verification` issue list).
@@ -68,6 +69,19 @@ The fingerprint deliberately covers only the suggested *lines*, not the branch
 tip. The fix branches are rebuilt from the latest `main` on every run, so their
 tree moves whenever `main`'s copy of the data file moves — which for
 `mergers.json` is every pipeline run, and would make every run look "new".
+
+## Watchlist
+
+Track specific matters and get a push when one changes at all. Add a repo
+secret `WATCHLIST_MATTER_IDS` — comma-separated matter IDs, e.g.
+`MN-40039, MN-45024`. Nothing else to do; `pipeline.yml` picks it up on the
+next run.
+
+| Name | Kind | Purpose |
+|------|------|---------|
+| `WATCHLIST_MATTER_IDS` | secret | Matter IDs to watch. Missing or empty disables the feature. |
+| `WATCHLIST_NTFY_TOPIC` | secret | Optional separate ntfy topic. Falls back to `NTFY_TOPIC`. |
+| `WATCHLIST_NTFY_TOKEN` | secret | Optional token to go with `WATCHLIST_NTFY_TOPIC`. Falls back to `NTFY_TOKEN`. |
 
 ## Adding a notification somewhere else
 

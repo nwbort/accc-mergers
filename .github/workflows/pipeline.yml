@@ -57,6 +57,13 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v7
 
+      # Before/after snapshot for the watchlist check below.
+      - name: Snapshot merger data for watchlist diff
+        run: |
+          git show HEAD:data/processed/mergers.json \
+            > "${RUNNER_TEMP}/mergers-before.json" 2>/dev/null \
+            || echo '[]' > "${RUNNER_TEMP}/mergers-before.json"
+
       # Go is only ever used to build pup, so the cache is checked first and
       # the toolchain is installed only when the binary has to be rebuilt.
       - name: Cache pup binary
@@ -376,6 +383,39 @@ jobs:
           python -m scripts.generate.generate_static_data
           ./scripts/generate/generate-cli-data.sh
           python -m scripts.generate.generate_rss_feed
+
+      # --- Watchlist --- (see docs/notifications.md)
+      # Never echo "$message" here — it must only reach GITHUB_OUTPUT.
+      - name: Check watchlist
+        id: watchlist
+        if: steps.enrich-gate.outputs.run == 'true'
+        env:
+          WATCHLIST_MATTER_IDS: ${{ secrets.WATCHLIST_MATTER_IDS }}
+        run: |
+          message=$(python -m scripts.check_watchlist --before "${RUNNER_TEMP}/mergers-before.json")
+          if [ -n "$message" ]; then
+            echo "matched=true" >> "$GITHUB_OUTPUT"
+            {
+              echo "message<<WATCHLIST_EOF"
+              echo "$message"
+              echo "WATCHLIST_EOF"
+            } >> "$GITHUB_OUTPUT"
+          else
+            echo "matched=false" >> "$GITHUB_OUTPUT"
+          fi
+          echo "Watchlist check complete."
+
+      # Unconditional so a skipped step can't itself signal a match.
+      - name: Notify watchlist
+        if: steps.enrich-gate.outputs.run == 'true'
+        uses: ./.github/actions/ntfy
+        with:
+          topic: ${{ steps.watchlist.outputs.matched == 'true' && (secrets.WATCHLIST_NTFY_TOPIC || secrets.NTFY_TOPIC) || '' }}
+          token: ${{ secrets.WATCHLIST_NTFY_TOKEN || secrets.NTFY_TOKEN }}
+          server: ${{ vars.NTFY_SERVER || 'https://ntfy.sh' }}
+          title: 'Watched merger updated'
+          message: ${{ steps.watchlist.outputs.message }}
+          tags: 'bell'
 
       # Cloudflare Pages rejects an entire deployment if any single asset is
       # over 25 MiB, so a scanned exhibit that lands over it takes the site
