@@ -72,28 +72,16 @@ tree moves whenever `main`'s copy of the data file moves — which for
 
 ## Watchlist
 
-The repo owner can track a handful of specific matters they want to keep an
-eye on, and get a push the moment one of them changes at all (new event,
-status flip, a date moving), without that list of matter IDs ever being
-visible anywhere in this **public** repo.
-
-### Setup
-
-1. Add a repo secret named `WATCHLIST_MATTER_IDS`: a comma or whitespace
-   separated list of matter IDs, e.g. `MN-40039, MN-45024`.
-2. That's it — `pipeline.yml` picks it up on the next run. By default the
-   notification goes to the same `NTFY_TOPIC`/`NTFY_TOKEN` as everything
-   else above. To keep it on an entirely separate, more private channel
-   instead (recommended if `NTFY_TOPIC` is ever shared with anyone else),
-   set `WATCHLIST_NTFY_TOPIC` (and optionally `WATCHLIST_NTFY_TOKEN`) —
-   when set, these take priority over the shared ones for this notification
-   only.
+Track specific matters and get a push when one changes at all. Add a repo
+secret `WATCHLIST_MATTER_IDS` — comma-separated matter IDs, e.g.
+`MN-40039, MN-45024`. Nothing else to do; `pipeline.yml` picks it up on the
+next run.
 
 | Name | Kind | Purpose |
 |------|------|---------|
-| `WATCHLIST_MATTER_IDS` | secret | Matter IDs to watch. **This is the private list — never commit it to a file.** Missing or empty disables the feature entirely. |
-| `WATCHLIST_NTFY_TOPIC` | secret | Optional dedicated ntfy topic for watchlist pushes. Falls back to `NTFY_TOPIC`. |
-| `WATCHLIST_NTFY_TOKEN` | secret | Optional bearer token to go with `WATCHLIST_NTFY_TOPIC`. Falls back to `NTFY_TOKEN`. |
+| `WATCHLIST_MATTER_IDS` | secret | Matter IDs to watch. Missing or empty disables the feature. |
+| `WATCHLIST_NTFY_TOPIC` | secret | Optional separate ntfy topic. Falls back to `NTFY_TOPIC`. |
+| `WATCHLIST_NTFY_TOKEN` | secret | Optional token to go with `WATCHLIST_NTFY_TOPIC`. Falls back to `NTFY_TOKEN`. |
 
 ## Adding a notification somewhere else
 

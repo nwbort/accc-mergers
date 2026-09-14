@@ -194,10 +194,7 @@ scripts/                  # A Python package — entry points run as `python -m 
 ├── fix_missing_notification_dates.py # Suggest freezing missing notification dates (daily PR)
 ├── compress_pdfs.py      # Shrink oversized PDFs so Pages will serve them
 ├── check_deploy_assets.py # CI check: no deploy asset exceeds Cloudflare Pages' 25 MiB limit
-├── check_watchlist.py    # CI check: has a watchlisted merger (WATCHLIST_MATTER_IDS
-                          #   secret, never a tracked file) changed this run? Prints one line
-                          #   per changed match for the pipeline to push via ntfy; see
-                          #   docs/notifications.md for why it never logs which IDs matched
+├── check_watchlist.py    # CI check: has a watchlisted merger changed this run? (see docs/notifications.md)
 ├── unfreeze_mergers.py   # Release frozen notification dates / phase-1 estimates
 ├── normalization.py      # Data cleaning utilities
 ├── date_utils.py         # Date parsing helpers
