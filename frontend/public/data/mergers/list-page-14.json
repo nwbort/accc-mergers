@@ -259,7 +259,10 @@
       ],
       "targets": [
         {
-          "name": "Intertek Group plc"
+          "name": "Intertek Group plc",
+          "canonical": {
+            "name": "Intertek Group plc"
+          }
         }
       ],
       "other_parties": [
@@ -270,7 +273,10 @@
           }
         },
         {
-          "name": "Intertek Australia Holdings Pty Ltd"
+          "name": "Intertek Australia Holdings Pty Ltd",
+          "canonical": {
+            "name": "Intertek Group plc"
+          }
         },
         {
           "name": "TRESCAL (AUSTRALIA) PTY LTD"
