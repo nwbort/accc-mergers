@@ -590,8 +590,11 @@ function Mergers() {
                       {/* The outcome leads the card, above the name, the way it
                           leads the detail page. In the top-right corner it sat
                           the width of the card away from the matter it belongs
-                          to and read as chrome next to the Track button. */}
-                      <div className="mb-2">
+                          to and read as chrome next to the Track button. An
+                          appeal rides alongside it in the same solid style —
+                          "NOT APPROVED · UNDER APPEAL" — rather than as a
+                          separately-styled badge elsewhere on the card. */}
+                      <div className="flex flex-wrap items-center gap-1.5 mb-2">
                         <StatusBadge
                           status={merger.status}
                           determination={merger.accc_determination}
@@ -599,6 +602,7 @@ function Mergers() {
                           appeal={merger.appeal}
                           solid
                         />
+                        {merger.under_appeal && <AppealBadge solid />}
                       </div>
                       <div className="flex items-center gap-2">
                         {tracked && (
@@ -613,15 +617,12 @@ function Mergers() {
                           {merger.merger_name}
                         </h2>
                       </div>
-                      {/* One badge rail for every "type" flag, wrapping as
-                          needed — under_appeal used to sit alone in the
-                          top-right corner, a card-width away from the name
-                          it describes, while waiver/refiled sat here. */}
-                      {(merger.is_waiver || merger.is_refiled || merger.under_appeal) && (
+                      {/* One badge rail for the remaining "type" flags — under_appeal
+                          moved up to sit beside the outcome badge above. */}
+                      {(merger.is_waiver || merger.is_refiled) && (
                         <div className="flex flex-wrap items-center gap-1.5 mt-1.5">
                           {merger.is_waiver && <WaiverBadge />}
                           {merger.is_refiled && <RefiledBadge />}
-                          {merger.under_appeal && <AppealBadge />}
                         </div>
                       )}
                       <p className="text-xs text-gray-500 mt-1">
