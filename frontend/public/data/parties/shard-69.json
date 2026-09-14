@@ -259,6 +259,41 @@
         "completed_count": 2
       }
     },
+    "o-g-oil-gas-oceania-pte-ltd": {
+      "id": "o-g-oil-gas-oceania-pte-ltd",
+      "canonical_name": "O.G. Oil & Gas (Oceania) Pte Ltd",
+      "members": [
+        {
+          "name": "O.G. Oil & Gas (Oceania) Pte Ltd",
+          "identifier": "UEN: 201920452R",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-01121",
+            "merger_name": "Amplitude / OG Energy - Artisan Gas Field",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-11T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "ta-investors-2024-l-p": {
       "id": "ta-investors-2024-l-p",
       "canonical_name": "TA Investors 2024, L.P",

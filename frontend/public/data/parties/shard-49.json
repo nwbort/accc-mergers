@@ -376,6 +376,41 @@
         "completed_count": 1
       }
     },
+    "o-g-energy-holdings-ltd": {
+      "id": "o-g-energy-holdings-ltd",
+      "canonical_name": "O.G. Energy Holdings Ltd",
+      "members": [
+        {
+          "name": "O.G. Energy Holdings Ltd",
+          "identifier": "Monaco Company Number 96933",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-01121",
+            "merger_name": "Amplitude / OG Energy - Artisan Gas Field",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-11T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "pioneer-sail-holdings-pty-limited": {
       "id": "pioneer-sail-holdings-pty-limited",
       "canonical_name": "Pioneer Sail Holdings Pty Limited",

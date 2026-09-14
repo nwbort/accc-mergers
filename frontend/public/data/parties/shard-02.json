@@ -2,6 +2,41 @@
   "shard": 2,
   "shard_count": 256,
   "parties": {
+    "amplitude-energy-limited": {
+      "id": "amplitude-energy-limited",
+      "canonical_name": "Amplitude Energy Limited",
+      "members": [
+        {
+          "name": "AMPLITUDE ENERGY LIMITED",
+          "identifier": "93 096 170 295",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-01121",
+            "merger_name": "Amplitude / OG Energy - Artisan Gas Field",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-11T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "caeli-software-ltd": {
       "id": "caeli-software-ltd",
       "canonical_name": "Caeli Software Ltd",
