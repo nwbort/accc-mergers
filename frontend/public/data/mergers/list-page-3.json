@@ -229,18 +229,30 @@
       ],
       "targets": [
         {
-          "name": "RAC INSURANCE PTY LIMITED"
+          "name": "RAC INSURANCE PTY LIMITED",
+          "canonical": {
+            "name": "RAC"
+          }
         },
         {
-          "name": "RACI PTY LIMITED"
+          "name": "RACI PTY LIMITED",
+          "canonical": {
+            "name": "RAC"
+          }
         }
       ],
       "other_parties": [
         {
-          "name": "RACWA HOLDINGS PTY LTD"
+          "name": "RACWA HOLDINGS PTY LTD",
+          "canonical": {
+            "name": "RAC"
+          }
         },
         {
-          "name": "THE ROYAL AUTOMOBILE CLUB OF WA INC"
+          "name": "THE ROYAL AUTOMOBILE CLUB OF WA INC",
+          "canonical": {
+            "name": "RAC"
+          }
         }
       ],
       "anzsic_codes": [
