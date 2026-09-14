@@ -1,10 +1,10 @@
 {
-  "total_mergers": 256,
+  "total_mergers": 257,
   "total_waivers": 398,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 224,
-    "Under assessment": 27,
+    "Under assessment": 28,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -56,7 +56,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 131
+      "count": 132
     },
     {
       "name": "Computer System Design and Related Services",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-75045",
+      "merger_name": "EQT Fund Management - Intertek",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-09-14T12:00:00Z",
+      "page_modified_datetime": "2026-09-14T16:27:22+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-01121",
       "merger_name": "Amplitude / OG Energy - Artisan Gas Field",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-09-04T12:00:00Z",
       "page_modified_datetime": "2026-09-07T13:47:14+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-40034",
-      "merger_name": "Woolworths - supermarket site in Homestead Rd, Orchard Hills, NSW",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-09-03T12:00:00Z",
-      "page_modified_datetime": "2026-09-04T12:52:49+10:00",
       "is_waiver": false,
       "is_refiled": false
     }
