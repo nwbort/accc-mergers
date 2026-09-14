@@ -1,24 +1,9 @@
-"""CI check: has a personally-watched merger changed this pipeline run?
+"""CI check: has a watchlisted merger changed this pipeline run?
 
-Lets the repo owner track a handful of matters they want to keep an eye on
-(without that list ever being visible in the public repo or its public
-Actions logs) and get a push notification via ntfy the moment one of them
-changes.
-
-The watched merger IDs come from the ``WATCHLIST_MATTER_IDS`` environment
-variable — a GitHub Actions secret in CI, comma/whitespace separated (e.g.
-``MN-40039, MN-45024``) — never a tracked file. A record counts as changed if
-its dict in ``mergers.json`` differs at all from the same matter's dict
-before this run (new event, status flip, date change, anything).
-
-This module is deliberately quiet: it never prints which IDs are configured
-or which ones matched, on stdout or otherwise, because the only consumer of
-that information should be the pipeline step's GITHUB_OUTPUT capture (never
-the visible log or step summary — both public). The single content-bearing
-line it *does* print, one per changed matter, is meant to be captured
-straight into a shell variable by ``$(...)`` and forwarded to a private ntfy
-topic; it must never be echoed back into the workflow log. See
-docs/notifications.md for the full design rationale.
+Compares each merger ID listed in the WATCHLIST_MATTER_IDS environment
+variable against its record before and after this run, and prints one line
+per matter that changed at all. The pipeline step forwards that output to a
+private ntfy notification.
 
 Usage:
     python -m scripts.check_watchlist --before /path/to/mergers-before.json \
