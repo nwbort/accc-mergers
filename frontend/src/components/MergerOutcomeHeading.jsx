@@ -67,18 +67,16 @@ function MergerOutcomeHeading({ merger }) {
           into a chip. */}
       {merger.under_appeal && (
         <span className="inline-flex items-center gap-2">
-          {/* The gavel stands where the outcome's glyph does, so the two read as
-              a matched pair. A live status has no glyph to match, so there is
-              nothing to balance and a dot does the separating instead — without
-              it two same-styled phrases run together. */}
-          {Icon ? (
-            // A shade larger than the outcome glyph beside it: the gavel sits
-            // on the diagonal with white space in its box, so at a matching
-            // w-3.5 it reads lighter than the tick or cross it is paired with.
-            <FaGavel className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
-          ) : (
-            <span aria-hidden="true">·</span>
-          )}
+          {/* The gavel is the appeal's own glyph, worn wherever it appears —
+              here and on the list card's badge — the way a tick belongs to an
+              approval. It also does the separating a status set in the same
+              type as the one beside it would otherwise need, including where
+              that one is a live status carrying no glyph of its own.
+
+              A shade larger than the outcome glyph beside it: the gavel sits on
+              the diagonal with white space in its box, so at a matching w-3.5 it
+              reads lighter than the tick or cross it is paired with. */}
+          <FaGavel className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
           <span>Under appeal</span>
         </span>
       )}

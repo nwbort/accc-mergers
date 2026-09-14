@@ -112,10 +112,7 @@ describe('MergerOutcomeHeading', () => {
     expect(screen.queryByText('Under appeal')).not.toBeInTheDocument();
   });
 
-  it('marks a live appeal with a glyph of its own wherever the outcome has one', () => {
-    // A decided outcome carries a glyph, so the appeal standing beside it gets
-    // the gavel and the two read as a matched pair rather than one marked
-    // status and one bare phrase.
+  it('gives a live appeal its gavel beside a decided outcome, which has a glyph too', () => {
     const { container } = render(
       <MergerOutcomeHeading
         merger={{
@@ -129,7 +126,9 @@ describe('MergerOutcomeHeading', () => {
     expect(container.querySelectorAll('svg')).toHaveLength(2);
   });
 
-  it('separates a live status from its appeal with a dot, having no glyphs to pair', () => {
+  it('gives a live appeal its gavel beside a live status, which has none', () => {
+    // The gavel belongs to the appeal rather than to the pairing, so it does
+    // not come and go with whatever the status beside it happens to carry.
     const { container } = render(
       <MergerOutcomeHeading
         merger={{
@@ -140,8 +139,8 @@ describe('MergerOutcomeHeading', () => {
         }}
       />
     );
-    expect(container.querySelectorAll('svg')).toHaveLength(0);
-    expect(screen.getByText('·')).toBeInTheDocument();
+    expect(container.querySelectorAll('svg')).toHaveLength(1);
+    expect(screen.queryByText('·')).not.toBeInTheDocument();
   });
 
   it('shows the outcome the tribunal left standing, and why it changed', () => {
