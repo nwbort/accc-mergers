@@ -1,7 +1,7 @@
 """Delete generated JSON files that a generator no longer produces.
 
 Every per-item output directory (``mergers/``, ``parties/``, ``industries/``,
-``timeline/``, ``questionnaires/``, ``noccs/``) is written file-by-file, so a
+``questionnaires/``, ``noccs/``) is written file-by-file, so a
 file that stops being generated is simply left behind and keeps being served.
 That happens whenever the underlying set of ids shrinks — most often when a
 party is folded into a canonical group in ``related_parties.json`` (the old

@@ -19,9 +19,6 @@
 export const NAV_PAGES = [
   { label: 'Dashboard', path: '/', shortcut: 'd', inNavbar: true, navOrder: 1, inPalette: true, paletteOrder: 1 },
   { label: 'Mergers', path: '/mergers', shortcut: 'm', inNavbar: true, navOrder: 2, inPalette: true, paletteOrder: 2 },
-  // Reachable by its chord and by links from merger pages; deliberately on
-  // neither the navbar nor the palette.
-  { label: 'Timeline', path: '/timeline', shortcut: 't', inNavbar: false, inPalette: false },
   { label: 'Current status', path: '/current-status', shortcut: 's', inNavbar: true, navOrder: 3, inPalette: true, paletteOrder: 9 },
   { label: 'Phase 2', path: '/phase-2', inNavbar: true, navOrder: 4, inPalette: true, paletteOrder: 3 },
   // Industries keeps its `g i` shortcut and its palette entry; it is off the
