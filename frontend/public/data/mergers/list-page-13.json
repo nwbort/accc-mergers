@@ -1296,6 +1296,52 @@
       ]
     },
     {
+      "merger_id": "WA-60041",
+      "merger_name": "Blackstone - MRC Dickson Holdings",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-19T12:00:00Z",
+      "determination_publication_date": "2026-09-14T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Copeland IP Corporation"
+        }
+      ],
+      "targets": [
+        {
+          "name": "MRC Dickson Holdings LLC"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Blackstone Inc.",
+          "canonical": {
+            "name": "Blackstone Inc."
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2419",
+          "name": "Other Professional and Scientific Equipment Manufacturing"
+        },
+        {
+          "code": "2451",
+          "name": "Pump and Compressor Manufacturing"
+        },
+        {
+          "code": "2452",
+          "name": "Fixed Space Heating, Cooling and Ventilation Equipment Manufacturing"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-40039",
       "merger_name": "Bloomberg - Canoe Intelligence",
       "status": "Assessment completed",
@@ -1550,6 +1596,55 @@
         {
           "code": "6910",
           "name": "Scientific Research Services"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-15041",
+      "merger_name": "Star Hotels Group - Ocean International Hotel, Mackay QLD",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-21T12:00:00Z",
+      "determination_publication_date": "2026-09-14T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "MIGALOO QLD PTY LTD"
+        },
+        {
+          "name": "NORTH QUEENSLAND HOTEL INVESTMENTS PTY LTD"
+        }
+      ],
+      "targets": [
+        {
+          "name": "SEAGUE PTY LTD"
+        },
+        {
+          "name": "OIH Mackay Pty Ltd"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "4400",
+          "name": "Accommodation"
+        },
+        {
+          "code": "4511",
+          "name": "Cafes and Restaurants"
+        },
+        {
+          "code": "4520",
+          "name": "Pubs, Taverns and Bars"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
         }
       ]
     },
@@ -2378,125 +2473,6 @@
         {
           "code": "3494",
           "name": "Other Electrical and Electronic Goods Wholesaling"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-25047",
-      "merger_name": "Alcoa \u2013 South32 aluminium assets",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-09-10T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-10-23T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "APL Investments (Pty) Ltd"
-        },
-        {
-          "name": "Alcoa do Brasil Ind\u00fastria e Com\u00e9rcio Ltda."
-        },
-        {
-          "name": "KZN Investments Australia Pty Ltd"
-        },
-        {
-          "name": "Alcoa Corporation"
-        }
-      ],
-      "targets": [
-        {
-          "name": "SOUTH32 (BMSA) PTY LTD"
-        },
-        {
-          "name": "South32 SA Holdings (Pty) Ltd"
-        },
-        {
-          "name": "SOUTH32 AUSTRALIA INVESTMENT 3 PTY LTD"
-        },
-        {
-          "name": "SOUTH32 LIMITED"
-        },
-        {
-          "name": "SOUTH32 ALUMINIUM (HOLDINGS) PTY LTD"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "0802",
-          "name": "Bauxite Mining"
-        },
-        {
-          "code": "0809",
-          "name": "Other Metal Ore Mining"
-        },
-        {
-          "code": "2131",
-          "name": "Alumina Production"
-        },
-        {
-          "code": "2132",
-          "name": "Aluminium Smelting"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-55024",
-      "merger_name": "PSP Investments - AAA Egg Company",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-09-10T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-10-23T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Perlaide Eggs 2 Pty Limited"
-        }
-      ],
-      "targets": [
-        {
-          "name": "AAA Egg Company Pty Ltd"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "Public Sector Pension Investment Board"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "0172",
-          "name": "Poultry Farming (Eggs)"
-        },
-        {
-          "code": "0529",
-          "name": "Other Agriculture and Fishing Support Services"
-        },
-        {
-          "code": "1199",
-          "name": "Other Food Product Manufacturing n.e.c."
-        },
-        {
-          "code": "3609",
-          "name": "Other Grocery Wholesaling"
-        },
-        {
-          "code": "6419",
-          "name": "Other Auxiliary Finance and Investment Services"
-        },
-        {
-          "code": "6961",
-          "name": "Corporate Head Office Management Services"
         }
       ]
     }

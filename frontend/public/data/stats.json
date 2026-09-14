@@ -1,6 +1,6 @@
 {
   "total_mergers": 258,
-  "total_waivers": 398,
+  "total_waivers": 400,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 224,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 381,
+    "Approved": 383,
     "Not approved": 17
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.881909547738694,
+    "average_days": 19.9075,
     "median_days": 20.0,
-    "average_business_days": 13.535175879396984,
+    "average_business_days": 13.5525,
     "median_business_days": 13.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 132
+      "count": 133
     },
     {
       "name": "Computer System Design and Related Services",
@@ -76,14 +76,14 @@
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 31
-    },
-    {
-      "name": "Engineering Design and Engineering Consulting Services",
-      "count": 22
+      "count": 32
     },
     {
       "name": "Accommodation",
+      "count": 23
+    },
+    {
+      "name": "Engineering Design and Engineering Consulting Services",
       "count": 22
     },
     {
@@ -219,6 +219,28 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-60041",
+      "merger_name": "Blackstone - MRC Dickson Holdings",
+      "determination": "Approved",
+      "determination_date": "2026-09-14T12:00:00Z",
+      "page_modified_datetime": "2026-09-14T16:36:06+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-15041",
+      "merger_name": "Star Hotels Group - Ocean International Hotel, Mackay QLD",
+      "determination": "Approved",
+      "determination_date": "2026-09-14T12:00:00Z",
+      "page_modified_datetime": "2026-09-14T16:36:02+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-10030",
       "merger_name": "Novonesis \u2013 Microbiogen",
       "determination": "Approved",
@@ -323,28 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-10T12:00:00Z",
       "page_modified_datetime": "2026-09-10T13:28:37+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-05044",
-      "merger_name": "Holcim Australia \u2013 Burdetts Group",
-      "determination": "Approved",
-      "determination_date": "2026-09-10T12:00:00Z",
-      "page_modified_datetime": "2026-09-10T10:28:31+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-65031",
-      "merger_name": "Metal Manufactures - BayWa Solar Systems",
-      "determination": "Approved",
-      "determination_date": "2026-09-09T12:00:00Z",
-      "page_modified_datetime": "2026-09-09T19:34:28+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
