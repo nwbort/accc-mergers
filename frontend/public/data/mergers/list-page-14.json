@@ -109,7 +109,10 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "OGOG (OTWAY) PTY LTD"
+          "name": "OGOG (OTWAY) PTY LTD",
+          "canonical": {
+            "name": "Ogog (Otway) Pty Ltd"
+          }
         },
         {
           "name": "COOPER ENERGY (CH) PTY. LTD."
@@ -128,7 +131,10 @@
           "name": "O.G. Oil & Gas (Oceania) Pte Ltd"
         },
         {
-          "name": "OGOG (OTWAY) HOLDINGS PTY LTD"
+          "name": "OGOG (OTWAY) HOLDINGS PTY LTD",
+          "canonical": {
+            "name": "Ogog (Otway) Pty Ltd"
+          }
         },
         {
           "name": "AMPLITUDE ENERGY LIMITED"

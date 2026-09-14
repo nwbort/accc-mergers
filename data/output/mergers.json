@@ -6725,6 +6725,10 @@
           "name": "OGOG (OTWAY) PTY LTD",
           "identifier_type": "ABN",
           "identifier": "29 628 946 752",
+          "canonical": {
+            "id": "ogog-otway-pty-ltd",
+            "name": "Ogog (Otway) Pty Ltd"
+          },
           "party_page": {
             "id": "ogog-otway-pty-ltd",
             "name": "Ogog (Otway) Pty Ltd"
@@ -6774,9 +6778,13 @@
           "name": "OGOG (OTWAY) HOLDINGS PTY LTD",
           "identifier_type": "ABN",
           "identifier": "51 628 945 657",
+          "canonical": {
+            "id": "ogog-otway-pty-ltd",
+            "name": "Ogog (Otway) Pty Ltd"
+          },
           "party_page": {
-            "id": "ogog-otway-holdings-pty-ltd",
-            "name": "Ogog (Otway) Holdings Pty Ltd"
+            "id": "ogog-otway-pty-ltd",
+            "name": "Ogog (Otway) Pty Ltd"
           }
         },
         {
