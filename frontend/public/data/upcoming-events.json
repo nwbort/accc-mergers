@@ -114,6 +114,16 @@
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
       "date": "2026-09-21T12:00:00Z",
+      "merger_id": "MN-65033",
+      "merger_name": "Challenger - Channel Capital and Fidante",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-09-11T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-09-21T12:00:00Z",
       "merger_id": "MN-75045",
       "merger_name": "EQT Fund Management - Intertek",
       "status": "Under assessment",
@@ -373,6 +383,16 @@
     {
       "type": "determination_due",
       "event_type_display": "Determination due",
+      "date": "2026-10-26T12:00:00Z",
+      "merger_id": "MN-65033",
+      "merger_name": "Challenger - Channel Capital and Fidante",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-09-11T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
       "date": "2026-10-27T12:00:00Z",
       "merger_id": "MN-75045",
       "merger_name": "EQT Fund Management - Intertek",
@@ -392,6 +412,6 @@
       "tribunal_number": "ACT 1 of 2026"
     }
   ],
-  "count": 39,
+  "count": 41,
   "days_ahead": 60
 }

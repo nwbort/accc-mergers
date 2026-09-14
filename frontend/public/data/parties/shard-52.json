@@ -207,6 +207,41 @@
         "completed_count": 1
       }
     },
+    "channel-group-holdings-pty-ltd": {
+      "id": "channel-group-holdings-pty-ltd",
+      "canonical_name": "Channel Group Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "CHANNEL GROUP HOLDINGS PTY LTD",
+          "identifier": "699 691 622",
+          "identifier_type": "ACN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-65033",
+            "merger_name": "Challenger - Channel Capital and Fidante",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-11T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "contitech-universe-verwaltungs-gmbh": {
       "id": "contitech-universe-verwaltungs-gmbh",
       "canonical_name": "ContiTech-Universe Verwaltungs-GmbH",

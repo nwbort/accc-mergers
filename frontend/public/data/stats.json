@@ -1,10 +1,10 @@
 {
-  "total_mergers": 257,
+  "total_mergers": 258,
   "total_waivers": 398,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 224,
-    "Under assessment": 28,
+    "Under assessment": 29,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -64,7 +64,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 67
+      "count": 68
     },
     {
       "name": "Software Publishing",
@@ -103,6 +103,16 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-09-14T12:00:00Z",
       "page_modified_datetime": "2026-09-14T16:27:22+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
+    {
+      "merger_id": "MN-65033",
+      "merger_name": "Challenger - Channel Capital and Fidante",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-09-11T12:00:00Z",
+      "page_modified_datetime": "2026-09-14T16:32:24+10:00",
       "is_waiver": false,
       "is_refiled": false
     },
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-09-07T12:00:00Z",
       "page_modified_datetime": "2026-09-08T16:05:25+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-01122",
-      "merger_name": "Flick \u2013 GC Pest Control",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-09-04T12:00:00Z",
-      "page_modified_datetime": "2026-09-07T13:47:14+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

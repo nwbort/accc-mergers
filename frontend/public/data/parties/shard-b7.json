@@ -312,6 +312,41 @@
       },
       "waiver_duration": null
     },
+    "challenger-limited": {
+      "id": "challenger-limited",
+      "canonical_name": "Challenger Limited",
+      "members": [
+        {
+          "name": "CHALLENGER LIMITED",
+          "identifier": "85 106 842 371",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-65033",
+            "merger_name": "Challenger - Channel Capital and Fidante",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-11T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "german-federal-ministry-of-economic-affairs-and-energy": {
       "id": "german-federal-ministry-of-economic-affairs-and-energy",
       "canonical_name": "German Federal Ministry of Economic Affairs and Energy",

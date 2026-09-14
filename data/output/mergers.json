@@ -41629,6 +41629,169 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/challenger-channel-capital-and-fidante",
+      "merger_name": "Challenger - Channel Capital and Fidante",
+      "status": "Under assessment",
+      "merger_id": "MN-65033",
+      "effective_notification_datetime": "2026-09-11T12:00:00Z",
+      "original_notification_datetime": "2026-09-11T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-10-26T12:00:00Z",
+      "page_modified_datetime": "2026-09-14T16:32:24+10:00",
+      "consultation_response_due_date": "2026-09-21T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "CHALLENGER FUNDS MANAGEMENT HOLDINGS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "74 107 728 030",
+          "party_page": {
+            "id": "challenger-funds-management-holdings-pty-limited",
+            "name": "Challenger Funds Management Holdings Pty Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "CHANNEL GROUP HOLDINGS PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "699 691 622",
+          "party_page": {
+            "id": "channel-group-holdings-pty-ltd",
+            "name": "Channel Group Holdings Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "CHANNEL CAPITAL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "11 162 591 568",
+          "party_page": {
+            "id": "channel-capital-pty-ltd",
+            "name": "Channel Capital Pty Ltd"
+          }
+        },
+        {
+          "name": "CHALLENGER LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "85 106 842 371",
+          "party_page": {
+            "id": "challenger-limited",
+            "name": "Challenger Limited"
+          }
+        },
+        {
+          "name": "FIDANTE PARTNERS HOLDINGS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "15 123 318 650",
+          "party_page": {
+            "id": "fidante-partners-holdings-pty-limited",
+            "name": "Fidante Partners Holdings Pty Limited"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "6420",
+          "name": "Auxiliary Insurance Services"
+        }
+      ],
+      "merger_description": "Challenger Limited (**Challenger**) proposes to merge its Fidante business with Channel Capital Pty Ltd (**Channel Capital**) (the **Acquisition**).\n\nChallenger is a publicly listed investment management company (ASX:GCF). It operates a retirement income division and a funds management division, which includes Fidante. Challenger\u2019s wholly owned subsidiary Challenger Funds Management Holdings Pty Limited (**CFMH**) holds 100% of the share capital in the companies which together comprise the Fidante business.\n\nFidante is Challenger\u2019s multi-affiliate funds management business. It invests in long-term partnerships with multiple active fund managers.\n\nChannel Capital is a fund management services business, which provides operational, infrastructure, distribution and governance solutions to fund manager clients.\n\nUnder the Acquisition, a newly established entity,\u00a0Channel Group Holdings Pty Ltd (**Channel Group**), would indirectly acquire Channel Capital and Fidante, and\u00a0CFMH would acquire a 45% interest in Channel Group.",
+      "events": [
+        {
+          "date": "2026-09-14T12:00:00Z",
+          "title": "Challenger - Channel Capital and Fidante - Third-party questionnaire - Phase 1 consultation - 14 September 2026",
+          "display_title": "Challenger - Channel Capital and Fidante - Third-party questionnaire - Phase 1 consultation - 14 September 2026",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Challenger%20-%20Channel%20Capital%20and%20Fidante%20-%20Third-party%20questionnaire%20-%20Phase%201%20consultation%20-%2014%20September%202026.docx",
+          "url_gh": "/mergers/MN-65033/Challenger - Channel Capital and Fidante - Third-party questionnaire - Phase 1 consultation - 14 September 2026.pdf",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-09-11T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-35008",
+          "merger_name": "VFMC \u2013 CorVal Land and Operator Trusts",
+          "acquirers": [
+            "TRANSPORT ACCIDENT COMMISSION",
+            "VICTORIAN MANAGED INSURANCE AUTHORITY"
+          ],
+          "targets": [
+            "CORVAL PARTNERS LIMITED"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-65023",
+          "merger_name": "Energy Bay - certain assets required to operate embedded networks for Centuria Capital Group members",
+          "acquirers": [
+            "The Trustee for Energy Bay Kappa Fund"
+          ],
+          "targets": [
+            "CENTURIA FUNDS MANAGEMENT LIMITED"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-01094",
+          "merger_name": "Energy Bay - Rights to install/operate embedded networks and other assets from Centuria Capital Group members",
+          "acquirers": [
+            "The Trustee for Energy Bay Kappa Fund"
+          ],
+          "targets": [
+            "CENTURIA FUNDS MANAGEMENT LIMITED"
+          ],
+          "accc_determination": "Not approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 17,
+        "range_business_days": [
+          15,
+          19
+        ],
+        "basis": "questionnaire",
+        "question_bucket": "3 or fewer",
+        "question_count": 3,
+        "sample_size": 157,
+        "as_of": "2026-09-11",
+        "estimated_at": "2026-09-14",
+        "method_version": 2
+      },
+      "pre_notification": {
+        "estimated_days": 22,
+        "min_days": 1,
+        "max_days": 49,
+        "id_issued_estimated": "2026-08-20",
+        "id_issued_before": "2026-09-10",
+        "id_issued_after": "2026-07-24",
+        "min_days_witness": "MN-65036",
+        "max_days_witness": "WA-65032",
+        "basis": "bracketed",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/eneos-%E2%80%93-chevron-australia-downstream",
       "merger_name": "ENEOS \u2013 Chevron Australia Downstream",
       "status": "Under assessment",
@@ -41774,10 +41937,10 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 41,
+        "estimated_days": 21,
         "min_days": null,
         "max_days": 48,
-        "id_issued_estimated": "2026-07-31",
+        "id_issued_estimated": "2026-08-20",
         "id_issued_before": null,
         "id_issued_after": "2026-07-24",
         "min_days_witness": null,
