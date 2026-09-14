@@ -3,12 +3,12 @@
   "total_waivers": 398,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 223,
-    "Under assessment": 26,
+    "Assessment completed": 224,
+    "Under assessment": 25,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 216,
+    "Approved": 217,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 17
   },
   "clearance_rate": {
-    "cleared": 221,
+    "cleared": 222,
     "not_cleared": 2,
-    "total": 223,
+    "total": 224,
     "rate": 0.991
   },
   "phase_duration": {
-    "average_days": 29.951965065502183,
-    "median_days": 26,
-    "average_business_days": 20.305676855895197,
-    "median_business_days": 18,
+    "average_days": 29.92608695652174,
+    "median_days": 26.0,
+    "average_business_days": 20.286956521739132,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
         "count": 47,
-        "percentage": 20.5
+        "percentage": 20.4
       },
       "day20": {
-        "count": 167,
-        "percentage": 72.9
+        "count": 168,
+        "percentage": 73.0
       },
       "day30": {
-        "count": 212,
+        "count": 213,
         "percentage": 92.6
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-10030",
+      "merger_name": "Novonesis \u2013 Microbiogen",
+      "determination": "Approved",
+      "determination_date": "2026-09-14T12:00:00Z",
+      "page_modified_datetime": "2026-09-14T12:24:29+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-50037",
       "merger_name": "Alceon \u2013 Engage Squared",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-30036",
-      "merger_name": "Veritas Capital Fund Management \u2013 BGIS Group",
-      "determination": "Approved",
-      "determination_date": "2026-09-09T12:00:00Z",
-      "page_modified_datetime": "2026-09-09T16:54:10+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]
