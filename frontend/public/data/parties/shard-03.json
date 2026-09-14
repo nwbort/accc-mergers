@@ -126,6 +126,11 @@
           "identifier_type": null
         },
         {
+          "name": "EQT Keystone TopCo, LP",
+          "identifier": "EIN 414395672",
+          "identifier_type": null
+        },
+        {
           "name": "Ruby BidCo GmbH",
           "identifier": "679581i",
           "identifier_type": null
@@ -138,6 +143,17 @@
       ],
       "mergers": {
         "acquirer": [
+          {
+            "merger_id": "MN-70027",
+            "merger_name": "Global Infrastructure Management and EQT led consortium - AES Corporation",
+            "is_waiver": false,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-07-30T12:00:00Z",
+            "determination_date": "2026-08-26T12:00:00Z"
+          },
           {
             "merger_id": "WA-70033",
             "merger_name": "EQT Fund Management \u2013 Corza Biosurgery",
@@ -220,17 +236,17 @@
           }
         ]
       },
-      "merger_count": 7,
-      "phase_1_count": 1,
+      "merger_count": 8,
+      "phase_1_count": 2,
       "phase_2_count": 1,
       "waiver_count": 5,
       "active_count": 1,
       "phase_duration": {
-        "average_days": 77.0,
-        "median_days": 77,
-        "average_business_days": 52.0,
-        "median_business_days": 52,
-        "completed_count": 1
+        "average_days": 52.0,
+        "median_days": 52.0,
+        "average_business_days": 35.5,
+        "median_business_days": 35.5,
+        "completed_count": 2
       },
       "waiver_duration": {
         "average_days": 18.2,
