@@ -46,7 +46,7 @@ be reached.
 | Related parties review PR opened, or updated with new candidates | default (3) | `pipeline.yml` |
 | Exact-match waiver refile auto-merged into `main` | 4 (bypasses batching) | `pipeline.yml` — this one merged itself without review |
 | Missing notification dates PR opened, or updated with new candidates | default (3) | `fix-missing-notification-dates.yml` |
-| A personally-watched merger changed | default (3) | `pipeline.yml` — see [Personal merger watchlist](#personal-merger-watchlist) below |
+| A watchlisted merger changed | default (3) | `pipeline.yml` — see [Watchlist](#watchlist) below |
 
 Tapping a notification opens the PR (or, for the auto-merge, the
 `needs-verification` issue list).
@@ -70,7 +70,7 @@ tip. The fix branches are rebuilt from the latest `main` on every run, so their
 tree moves whenever `main`'s copy of the data file moves — which for
 `mergers.json` is every pipeline run, and would make every run look "new".
 
-## Personal merger watchlist
+## Watchlist
 
 The repo owner can track a handful of specific matters they want to keep an
 eye on, and get a push the moment one of them changes at all (new event,

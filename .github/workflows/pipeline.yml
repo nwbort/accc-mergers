@@ -58,10 +58,9 @@ jobs:
         uses: actions/checkout@v7
 
       # Snapshot mergers.json as it stood at checkout, before scrape/extract
-      # touch it, so the personal-watchlist check below (see "Check personal
-      # merger watchlist") has a genuine before/after to diff. Cheap enough to
-      # take unconditionally rather than gating it on whether a watchlist is
-      # even configured.
+      # touch it, so the watchlist check below (see "Check watchlist") has a
+      # genuine before/after to diff. Cheap enough to take unconditionally
+      # rather than gating it on whether a watchlist is even configured.
       - name: Snapshot merger data for watchlist diff
         run: |
           git show HEAD:data/processed/mergers.json \
@@ -388,7 +387,7 @@ jobs:
           ./scripts/generate/generate-cli-data.sh
           python -m scripts.generate.generate_rss_feed
 
-      # --- Personal merger watchlist ---
+      # --- Watchlist ---
       # Lets the repo owner privately track a handful of matters they want to
       # keep an eye on and get a push notification the moment one of them
       # changes, without that list ever appearing in the (public) repo or its
@@ -400,7 +399,7 @@ jobs:
       # that varies by outcome (a skipped step, a printed count, an echoed
       # matter ID) would let a reader of the public Actions log infer which
       # matters are privately watched. Never add an echo of "$message" here.
-      - name: Check personal merger watchlist
+      - name: Check watchlist
         id: watchlist
         if: steps.enrich-gate.outputs.run == 'true'
         env:
@@ -424,7 +423,7 @@ jobs:
       # the private watchlist. When nothing matched, topic resolves to an
       # empty string and the ntfy action takes its normal no-secret skip
       # path — identical log output to "no watchlist configured at all".
-      - name: Notify personal merger watchlist
+      - name: Notify watchlist
         if: steps.enrich-gate.outputs.run == 'true'
         uses: ./.github/actions/ntfy
         with:

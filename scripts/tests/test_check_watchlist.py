@@ -1,4 +1,4 @@
-"""Tests for the personal watchlist diff (``check_watchlist``)."""
+"""Tests for the watchlist diff (``check_watchlist``)."""
 
 import json
 
