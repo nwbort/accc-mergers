@@ -29,6 +29,10 @@ const PAGE_META = STATIC_PAGE_META['/mergers'];
 
 const SEARCH_DEBOUNCE_MS = 300;
 const PAGE_SIZE = 50;
+// Caps how many ANZSIC chips a card shows before folding the rest into a
+// "+N more" chip, so a multi-industry deal doesn't grow noticeably taller
+// than its neighbours in the list.
+const MAX_VISIBLE_INDUSTRY_CHIPS = 3;
 // Max concurrent page fetches to avoid saturating the connection pool
 const FETCH_BATCH_SIZE = 4;
 
@@ -115,13 +119,15 @@ function Mergers() {
       // list-page-N.json files are sorted ascending by notification date
       // (oldest first — new mergers only ever append to the last page, so
       // regenerating the pipeline only touches that one file). The default
-      // frontend sort is notification-desc (newest first), so fetch the
-      // *last* page first in that case — otherwise the first screen would
-      // flash the oldest mergers before the background fetch replaces them
-      // with the newest ones. For notification-asc, page 1 is already the
-      // right first screen; the determination and name sorts have no page/sort
-      // correlation, so page 1 is just a reasonable default there too.
-      const initialPage = sortBy === DEFAULT_SORT ? totalPages : 1;
+      // frontend sort is modified-desc (most recently updated first), which
+      // has no page it lines up with exactly, but recently-updated matters
+      // skew heavily toward recently-notified ones (most activity happens
+      // while a matter is still open), so the last page — the same one
+      // notification-desc wants — is still the best available first screen.
+      // For notification-asc, page 1 is already the right first screen; the
+      // determination and name sorts have no page/sort correlation, so page
+      // 1 is just a reasonable default there too.
+      const initialPage = (sortBy === DEFAULT_SORT || sortBy === 'notification-desc') ? totalPages : 1;
 
       const initialResponse = await fetch(API_ENDPOINTS.mergersListPage(initialPage));
       if (!initialResponse.ok) throw new Error('Failed to fetch merger page');
@@ -599,19 +605,30 @@ function Mergers() {
                           <FaStar className="h-4 w-4 flex-shrink-0 text-primary" aria-hidden="true" />
                         )}
                         {/* h2, not h3: the results list sits directly under
-                            the page h1, so an h3 would skip a level. */}
-                        <h2 className="text-base font-semibold text-gray-900 truncate hover:text-primary transition-colors">
+                            the page h1, so an h3 would skip a level. min-w-0
+                            keeps truncate working now that this row is just
+                            the star + name — the other badges got their own
+                            row below so they can't eat into its width. */}
+                        <h2 className="min-w-0 flex-1 text-base font-semibold text-gray-900 truncate hover:text-primary transition-colors">
                           {merger.merger_name}
                         </h2>
-                        {merger.is_waiver && <WaiverBadge className="flex-shrink-0" />}
-                        {merger.is_refiled && <RefiledBadge className="flex-shrink-0" />}
                       </div>
+                      {/* One badge rail for every "type" flag, wrapping as
+                          needed — under_appeal used to sit alone in the
+                          top-right corner, a card-width away from the name
+                          it describes, while waiver/refiled sat here. */}
+                      {(merger.is_waiver || merger.is_refiled || merger.under_appeal) && (
+                        <div className="flex flex-wrap items-center gap-1.5 mt-1.5">
+                          {merger.is_waiver && <WaiverBadge />}
+                          {merger.is_refiled && <RefiledBadge />}
+                          {merger.under_appeal && <AppealBadge />}
+                        </div>
+                      )}
                       <p className="text-xs text-gray-500 mt-1">
                         {merger.merger_id} · {merger.stage || 'N/A'}
                       </p>
                     </div>
                     <div className="flex items-center gap-2 flex-shrink-0">
-                      {merger.under_appeal && <AppealBadge />}
                       <button
                         onClick={(e) => {
                           e.preventDefault();
@@ -673,7 +690,7 @@ function Mergers() {
 
                   {merger.anzsic_codes && merger.anzsic_codes.length > 0 && (
                     <div className="mt-3 flex flex-wrap gap-1.5">
-                      {merger.anzsic_codes.map((code) => (
+                      {merger.anzsic_codes.slice(0, MAX_VISIBLE_INDUSTRY_CHIPS).map((code) => (
                         <span
                           key={`${merger.merger_id}-anzsic-${code.code || code.name}`}
                           className="inline-flex items-center px-2 py-1 rounded-md text-xs leading-none bg-gray-50 text-gray-500 border border-gray-100"
@@ -681,6 +698,17 @@ function Mergers() {
                           {code.name}
                         </span>
                       ))}
+                      {/* Capped rather than left to wrap freely — a multi-industry
+                          deal could otherwise grow a card several lines taller
+                          than its neighbours in the list. */}
+                      {merger.anzsic_codes.length > MAX_VISIBLE_INDUSTRY_CHIPS && (
+                        <span
+                          className="inline-flex items-center px-2 py-1 rounded-md text-xs leading-none bg-gray-50 text-gray-400 border border-gray-100"
+                          title={merger.anzsic_codes.slice(MAX_VISIBLE_INDUSTRY_CHIPS).map((code) => code.name).join(', ')}
+                        >
+                          +{merger.anzsic_codes.length - MAX_VISIBLE_INDUSTRY_CHIPS} more
+                        </span>
+                      )}
                     </div>
                   )}
                 </div>
