@@ -389,8 +389,8 @@ jobs:
           python -m scripts.generate.generate_rss_feed
 
       # --- Personal merger watchlist ---
-      # Lets the repo owner privately track a handful of matters they have a
-      # personal stake in and get a push notification the moment one of them
+      # Lets the repo owner privately track a handful of matters they want to
+      # keep an eye on and get a push notification the moment one of them
       # changes, without that list ever appearing in the (public) repo or its
       # (public) Actions logs. See docs/notifications.md.
       #

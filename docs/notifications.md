@@ -72,10 +72,10 @@ tree moves whenever `main`'s copy of the data file moves — which for
 
 ## Personal merger watchlist
 
-The repo owner can track a handful of specific matters — deals they have a
-personal stake in — and get a push the moment one of them changes at all
-(new event, status flip, a date moving), without that list of matter IDs
-ever being visible anywhere in this **public** repo.
+The repo owner can track a handful of specific matters they want to keep an
+eye on, and get a push the moment one of them changes at all (new event,
+status flip, a date moving), without that list of matter IDs ever being
+visible anywhere in this **public** repo.
 
 ### Setup
 

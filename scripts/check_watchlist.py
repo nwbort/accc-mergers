@@ -1,6 +1,6 @@
 """CI check: has a personally-watched merger changed this pipeline run?
 
-Lets the repo owner track a handful of matters they have a personal stake in
+Lets the repo owner track a handful of matters they want to keep an eye on
 (without that list ever being visible in the public repo or its public
 Actions logs) and get a push notification via ntfy the moment one of them
 changes.
