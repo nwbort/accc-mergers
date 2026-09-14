@@ -3,7 +3,7 @@
 Covers loading tribunal_appeals.json, linking appeals onto enriched mergers
 (the ``under_appeal`` flag, the ``appeal`` record and the appeal documents
 folded into the event timeline), and propagation of ``under_appeal`` to the
-lightweight list, Phase 2 and timeline outputs.
+lightweight list and Phase 2 outputs.
 """
 
 import json
@@ -19,7 +19,7 @@ sys.modules.setdefault('requests', unittest.mock.MagicMock())
 from scripts.constants import tribunal
 from scripts.generate.static_data import loaders
 from scripts.generate.static_data.enrichment import enrich_merger, link_tribunal_appeals
-from scripts.generate.static_data.outputs import list as list_out, phase2, stats, timeline
+from scripts.generate.static_data.outputs import list as list_out, phase2, stats
 
 
 def _phase2_not_approved(merger_id='MN-0001'):
@@ -232,14 +232,6 @@ class TestUnderAppealPropagation:
         payload = phase2.generate(mergers)
         completed = payload['completed'][0]
         assert completed['under_appeal'] is True
-
-    def test_timeline_events_carry_flag(self, tmp_path):
-        mergers = [enrich_merger(_phase2_not_approved())]
-        link_tribunal_appeals(mergers, _appeal())
-        timeline.generate(mergers, tmp_path, page_size=100)
-        events = json.loads((tmp_path / 'timeline' / 'timeline-page-1.json').read_text())['events']
-        assert all(e['under_appeal'] for e in events)
-        assert any(e['is_appeal'] for e in events)
 
 
 class TestDashboardRecentActivity:

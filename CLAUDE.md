@@ -66,8 +66,6 @@ frontend/src/
 │   ├── Dashboard.jsx     # /
 │   ├── Mergers.jsx       # /mergers
 │   ├── MergerDetail.jsx  # /mergers/:id and /mergers/:id/:slug
-│   ├── Timeline.jsx      # /timeline (on neither the navbar nor the command palette;
-│                         #   reachable from merger pages and the `g t` shortcut)
 │   ├── Industries.jsx    # /industries (not in the navbar; reachable from the command
 │                         #   palette and the `g i` shortcut)
 │   ├── IndustryDetail.jsx # /industries/:code and /industries/:code/:slug
@@ -154,7 +152,7 @@ frontend/src/
 │                         #   Navbar, CommandPalette, useKeyboardShortcuts and
 │                         #   KeyboardShortcutsHelp all derive their lists from it rather
 │                         #   than keeping copies. A shortcut-only page, on neither the
-│                         #   navbar nor the palette, is fine — Timeline is one. Array
+│                         #   navbar nor the palette, is fine. Array
 │                         #   order is the shortcut help overlay's reading order; the
 │                         #   other two surfaces sort by navOrder/paletteOrder.
 │                         #   constants/__tests__/navPages.test.js pins the invariants:
@@ -429,8 +427,6 @@ prunes the old names), but make it a deliberate choice.
 | `mergers/list-page-{N}.json` | Paginated lightweight merger lists (50/page) |
 | `mergers/list-meta.json` | Pagination metadata for merger list |
 | `stats.json` | Aggregated statistics (counts, averages, medians) |
-| `timeline/timeline-page-{N}.json` | Paginated timeline events (100/page) |
-| `timeline/timeline-meta.json` | Pagination metadata for timeline |
 | `industries.json` | ANZSIC codes (as tagged on mergers) with merger counts |
 | `industries/{code}.json` | One file per ANZSIC node (division/subdivision/group/class), with hierarchy metadata (name, level, breadcrumb ancestors, parent, children) and mergers rolled up from the node's subtree (each merger summary carries `notification_date`/`determination_date` to drive industry-follow notifications). Generated for the full ANZSIC tree from `scripts/generate/static_data/anzsic_codes.json` |
 | `parties.json` | Every party (canonical group or single entity) with merger counts |

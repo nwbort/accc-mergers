@@ -31,7 +31,6 @@ from scripts.generate.static_data.outputs import (
     questionnaires,
     stats,
     theories_of_harm,
-    timeline,
     upcoming_events,
 )
 
@@ -2165,38 +2164,6 @@ class TestListGenerate:
         individual.generate(_enriched_fixture(), tmp_path)
         list_out.generate(_enriched_fixture(), tmp_path, page_size=50)
         assert (tmp_path / 'mergers' / 'MN-0001.json').exists()
-
-
-# ---------------------------------------------------------------------------
-# timeline (paginated)
-# ---------------------------------------------------------------------------
-
-class TestTimelineGenerate:
-    def test_writes_pages_and_meta(self, tmp_path):
-        pages = timeline.generate(_enriched_fixture(), tmp_path, page_size=100)
-        assert pages >= 1
-        assert (tmp_path / 'timeline' / 'timeline-meta.json').exists()
-
-    def test_meta_content(self, tmp_path):
-        timeline.generate(_enriched_fixture(), tmp_path, page_size=100)
-        with open(tmp_path / 'timeline' / 'timeline-meta.json') as f:
-            meta = json.load(f)
-        # Total events across the fixture: 2 + 1 + 1 + 1 = 5
-        assert meta['total'] == 5
-
-    def test_events_sorted_ascending(self, tmp_path):
-        timeline.generate(_enriched_fixture(), tmp_path, page_size=100)
-        with open(tmp_path / 'timeline' / 'timeline-page-1.json') as f:
-            page = json.load(f)
-        dates = [e['date'] for e in page['events']]
-        assert dates == sorted(dates)
-
-    def test_prunes_pages_beyond_the_last(self, tmp_path):
-        timeline.generate(_enriched_fixture(), tmp_path, page_size=2)
-        assert (tmp_path / 'timeline' / 'timeline-page-2.json').exists()
-        timeline.generate(_enriched_fixture(), tmp_path, page_size=100)
-        assert not (tmp_path / 'timeline' / 'timeline-page-2.json').exists()
-        assert (tmp_path / 'timeline' / 'timeline-meta.json').exists()
 
 
 # ---------------------------------------------------------------------------

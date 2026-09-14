@@ -156,7 +156,6 @@ describe('STATIC_PAGE_META', () => {
     const routeToFile = {
       '/': 'Dashboard.jsx',
       '/mergers': 'Mergers.jsx',
-      '/timeline': 'Timeline.jsx',
       '/industries': 'Industries.jsx',
       '/parties': 'Parties.jsx',
       '/analysis': 'Analysis.jsx',
@@ -189,23 +188,23 @@ describe('STATIC_PAGE_META', () => {
 // the prerenderer exists to prevent, and it fails open, so it needs a test.
 describe('renderPage stamping against the real index.html', () => {
   const template = readFixture('index.html');
-  const meta = { ...STATIC_PAGE_META['/timeline'], path: '/timeline' };
+  const meta = { ...STATIC_PAGE_META['/industries'], path: '/industries' };
   const html = renderPage(template, meta, staticBody(meta));
 
   it('replaces the title, description and canonical', () => {
-    expect(html).toContain('<title>Timeline | Australian Merger Tracker</title>');
+    expect(html).toContain('<title>Industries | Australian Merger Tracker</title>');
     expect(html).toContain(`<meta name="description" content="${meta.description}" />`);
-    expect(html).toContain(`<link rel="canonical" href="${SITE_URL}/timeline" />`);
+    expect(html).toContain(`<link rel="canonical" href="${SITE_URL}/industries" />`);
   });
 
   it('replaces every Open Graph and Twitter tag', () => {
     expect(html).toContain('<meta property="og:type" content="website" />');
     expect(html).toContain(
-      '<meta property="og:title" content="Timeline | Australian Merger Tracker" />',
+      '<meta property="og:title" content="Industries | Australian Merger Tracker" />',
     );
-    expect(html).toContain(`<meta property="og:url" content="${SITE_URL}/timeline" />`);
+    expect(html).toContain(`<meta property="og:url" content="${SITE_URL}/industries" />`);
     expect(html).toContain(
-      '<meta name="twitter:title" content="Timeline | Australian Merger Tracker" />',
+      '<meta name="twitter:title" content="Industries | Australian Merger Tracker" />',
     );
     // No generic copy left behind for a crawler to read instead.
     expect(html).not.toContain('<meta property="og:url" content="https://mergers.fyi" />');
@@ -214,7 +213,7 @@ describe('renderPage stamping against the real index.html', () => {
   it('keeps the SPA bootable and fills #root with real content', () => {
     expect(html).toContain('src="/src/main.jsx"');
     expect(html).not.toContain('<div id="root"></div>');
-    expect(html).toContain('>Timeline</h1>');
+    expect(html).toContain('>Industries</h1>');
   });
 
   it('only emits article tags for article pages', () => {
@@ -298,7 +297,7 @@ describe('prerendered bodies are styled', () => {
     merger: mergerBody(MERGER, mergerMeta(MERGER)),
     party: partyBody(PARTY, partyMeta(PARTY, 'coles')),
     industry: industryBody(INDUSTRY, '6240', industryMeta(INDUSTRY, '6240')),
-    static: staticBody({ ...STATIC_PAGE_META['/timeline'], path: '/timeline' }),
+    static: staticBody({ ...STATIC_PAGE_META['/industries'], path: '/industries' }),
   };
 
   it.each(Object.entries(bodies))('%s body wraps content in the app shell', (_name, body) => {

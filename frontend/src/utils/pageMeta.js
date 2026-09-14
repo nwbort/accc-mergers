@@ -225,11 +225,6 @@ export const STATIC_PAGE_META = {
     description:
       'Search every Australian merger notified to the ACCC. Filter by status, industry, acquirer, or outcome — cleared, declined, Phase 2, or under review.',
   },
-  '/timeline': {
-    title: 'Timeline',
-    description:
-      'Chronological feed of every ACCC merger event — notifications, Phase 2 launches, public consultation windows, and final determinations in date order.',
-  },
   '/industries': {
     title: 'Industries',
     description:
