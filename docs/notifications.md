@@ -95,30 +95,6 @@ visible anywhere in this **public** repo.
 | `WATCHLIST_NTFY_TOPIC` | secret | Optional dedicated ntfy topic for watchlist pushes. Falls back to `NTFY_TOPIC`. |
 | `WATCHLIST_NTFY_TOKEN` | secret | Optional bearer token to go with `WATCHLIST_NTFY_TOPIC`. Falls back to `NTFY_TOKEN`. |
 
-### Why this is safe to run in a public repo
-
-GitHub Actions logs for a public repository are themselves public, and
-secret-masking only catches the *exact* secret string reappearing in a log —
-not a single matter ID that happens to be a substring of it. So
-`scripts/check_watchlist.py` and the two `pipeline.yml` steps that call it
-(`Check personal merger watchlist`, `Notify personal merger watchlist`) are
-built around one rule: **nothing observable about a run may depend on
-whether the watchlist matched.** Concretely:
-
-- The check step never prints which IDs are configured or which ones
-  matched — its only content-bearing output goes into a `GITHUB_OUTPUT`
-  variable (not the log), and it always ends with the same generic
-  "Watchlist check complete." line.
-- The notify step always runs (never gated on whether anything matched), and
-  reuses `.github/actions/ntfy`'s existing no-secret skip path (passing an
-  empty `topic` when nothing matched) — so "nothing matched", "matched but
-  the whole feature isn't configured", and "actually sent" all look
-  identical in the log apart from the one line `ntfy`'s own action already
-  prints on a real send (`Notification sent (HTTP 200).`, with no content).
-
-A skipped step vs. a run step is itself visible in the Actions UI, which is
-why the notify step is unconditional rather than `if:`-gated on a match.
-
 ## Adding a notification somewhere else
 
 `.github/actions/ntfy` is a plain composite action; wire it into any workflow:
