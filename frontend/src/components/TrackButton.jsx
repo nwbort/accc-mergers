@@ -1,8 +1,8 @@
 import BellIcon from './BellIcon';
 
 // Variants for the two surfaces this button sits on. `onDark` is used by the
-// merger detail header once a matter is decided and the card's title block is
-// filled with the outcome's colour: the resting state darkens that fill rather
+// merger detail header, whose title block is filled with the colour of
+// whatever the matter is carrying: the resting state darkens that fill rather
 // than washing it with white (a white/15 wash only reaches ~4.1:1 for the
 // label), and the focus ring goes white, since the site-wide primary green
 // would fall under the 3:1 a focus indicator needs there (WCAG 1.4.11).

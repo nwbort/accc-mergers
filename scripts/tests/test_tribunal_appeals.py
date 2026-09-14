@@ -226,6 +226,20 @@ class TestUnderAppealPropagation:
             'effective_determination': 'Approved',
         }
 
+    def test_lightweight_carries_latest_event_date(self):
+        merger = enrich_merger(_phase2_not_approved())
+        # Scramble event order to pin that this is a max over dates, not
+        # whichever event happens to come last in the list.
+        merger['events'] = list(reversed(merger['events']))
+        entry = list_out._lightweight(merger)
+        assert entry['latest_event_date'] == '2026-01-29T12:00:00Z'
+
+    def test_lightweight_latest_event_date_none_without_events(self):
+        merger = enrich_merger(_phase2_not_approved())
+        merger['events'] = []
+        entry = list_out._lightweight(merger)
+        assert entry['latest_event_date'] is None
+
     def test_phase2_entry_carries_flag(self):
         mergers = [enrich_merger(_phase2_not_approved())]
         link_tribunal_appeals(mergers, _appeal())

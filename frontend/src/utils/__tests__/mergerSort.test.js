@@ -12,6 +12,7 @@ const merger = (merger_name, overrides = {}) => ({
   merger_name,
   effective_notification_datetime: '2025-01-01T12:00:00Z',
   determination_publication_date: '2025-02-01T12:00:00Z',
+  latest_event_date: '2025-01-01T12:00:00Z',
   ...overrides,
 });
 
@@ -58,12 +59,20 @@ describe('sortMergers by name', () => {
 });
 
 describe('sortMergers by date', () => {
-  it('still defaults to newest notification first', () => {
+  it('still defaults to most recently updated first', () => {
+    const list = [
+      merger('Older', { latest_event_date: '2024-03-01T12:00:00Z' }),
+      merger('Newer', { latest_event_date: '2025-06-01T12:00:00Z' }),
+    ];
+    expect(names(sortMergers(list))).toEqual(['Newer', 'Older']);
+  });
+
+  it('sorts explicitly by notification date, independent of the default', () => {
     const list = [
       merger('Older', { effective_notification_datetime: '2024-03-01T12:00:00Z' }),
       merger('Newer', { effective_notification_datetime: '2025-06-01T12:00:00Z' }),
     ];
-    expect(names(sortMergers(list))).toEqual(['Newer', 'Older']);
+    expect(names(sortMergers(list, 'notification-desc'))).toEqual(['Newer', 'Older']);
   });
 
   it('keeps undetermined mergers last whichever way determination sorts', () => {
@@ -73,6 +82,15 @@ describe('sortMergers by date', () => {
     ];
     expect(names(sortMergers(list, 'determination-asc'))).toEqual(['Decided', 'Undecided']);
     expect(names(sortMergers(list, 'determination-desc'))).toEqual(['Decided', 'Undecided']);
+  });
+
+  it('keeps mergers with no event history last whichever way "modified" sorts', () => {
+    const list = [
+      merger('NoHistory', { latest_event_date: null }),
+      merger('HasHistory', { latest_event_date: '2025-02-01T12:00:00Z' }),
+    ];
+    expect(names(sortMergers(list, 'modified-asc'))).toEqual(['HasHistory', 'NoHistory']);
+    expect(names(sortMergers(list, 'modified-desc'))).toEqual(['HasHistory', 'NoHistory']);
   });
 });
 
@@ -95,7 +113,7 @@ describe('normaliseSort', () => {
 describe('splitSort', () => {
   it('splits a sort value into field and direction', () => {
     expect(splitSort('name-asc')).toEqual({ field: 'name', dir: 'asc' });
-    expect(splitSort(DEFAULT_SORT)).toEqual({ field: 'notification', dir: 'desc' });
+    expect(splitSort(DEFAULT_SORT)).toEqual({ field: 'modified', dir: 'desc' });
   });
 });
 
@@ -117,10 +135,12 @@ describe('SORT_FIELDS', () => {
       merger('Bravo', {
         effective_notification_datetime: '2024-01-01T12:00:00Z',
         determination_publication_date: '2024-02-01T12:00:00Z',
+        latest_event_date: '2024-03-01T12:00:00Z',
       }),
       merger('Alpha', {
         effective_notification_datetime: '2025-01-01T12:00:00Z',
         determination_publication_date: '2025-02-01T12:00:00Z',
+        latest_event_date: '2025-03-01T12:00:00Z',
       }),
     ];
     SORT_FIELDS.forEach(({ value, defaultDir }) => {

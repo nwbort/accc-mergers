@@ -7,12 +7,13 @@
  * controls describing an order that isn't applied.
  */
 
-export const DEFAULT_SORT = 'notification-desc';
+export const DEFAULT_SORT = 'modified-desc';
 
 // Each field carries the direction it should start in when selected — a date
 // reads newest-first, a name reads A to Z — plus the wording for each
 // direction, since "ascending" means something different to dates and names.
 export const SORT_FIELDS = [
+  { value: 'modified', label: 'Last updated', defaultDir: 'desc', asc: 'Oldest first', desc: 'Most recent first' },
   { value: 'notification', label: 'Notification date', defaultDir: 'desc', asc: 'Oldest first', desc: 'Newest first' },
   { value: 'determination', label: 'Determination date', defaultDir: 'desc', asc: 'Oldest first', desc: 'Newest first' },
   { value: 'name', label: 'Merger name', defaultDir: 'asc', asc: 'A to Z', desc: 'Z to A' },
@@ -66,9 +67,22 @@ export const sortMergers = (list, sortBy = DEFAULT_SORT) => {
         return dateA.localeCompare(dateB);
       }
       case 'notification-desc':
+        return (b.effective_notification_datetime || '').localeCompare(a.effective_notification_datetime || '');
+      case 'modified-asc': {
+        const dateA = a.latest_event_date;
+        const dateB = b.latest_event_date;
+        if (!dateA && !dateB) return 0;
+        if (!dateA) return 1;
+        if (!dateB) return -1;
+        return dateA.localeCompare(dateB);
+      }
+      case 'modified-desc':
       default: {
-        const dateA = a.effective_notification_datetime || '';
-        const dateB = b.effective_notification_datetime || '';
+        const dateA = a.latest_event_date;
+        const dateB = b.latest_event_date;
+        if (!dateA && !dateB) return 0;
+        if (!dateA) return 1;
+        if (!dateB) return -1;
         return dateB.localeCompare(dateA);
       }
     }

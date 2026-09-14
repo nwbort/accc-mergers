@@ -115,6 +115,13 @@ export const SOLID_STATUS_COLORS = {
 
 export const DEFAULT_SOLID_STATUS_STYLE = 'bg-gray-600 text-white border-gray-600';
 
+// Shape/typography shared by every badge's solid form — StatusBadge and
+// AppealBadge both use it (AppealBadge sits directly beside StatusBadge on
+// the merger list, e.g. "NOT APPROVED · UNDER APPEAL") so a solid badge
+// can't drift into a different size or weight in just one of them. Colour is
+// each badge's own concern and stays out of this constant.
+export const SOLID_BADGE_SHAPE_CLASSES = 'px-2 py-1 rounded-md text-[11px] font-bold uppercase tracking-widest';
+
 // The outcomes that take the solid treatment even on the tinted badge. A
 // refused or ceased matter is the one a reader is scanning a mixed list for,
 // so it gets the contrast; the clearances that make up nine in ten matters on

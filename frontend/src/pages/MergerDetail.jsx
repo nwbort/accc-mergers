@@ -4,12 +4,9 @@ import { FaChevronLeft, FaLink, FaComment, FaGavel, FaBalanceScale } from 'react
 import ReactMarkdown from 'react-markdown';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorCard from '../components/ErrorCard';
-import StatusBadge from '../components/StatusBadge';
 import TrackButton from '../components/TrackButton';
 import WaiverBadge from '../components/WaiverBadge';
-import AppealBadge from '../components/AppealBadge';
 import BusinessDayProgress from '../components/BusinessDayProgress';
-import Phase2OddsReveal from '../components/Phase2OddsReveal';
 import PreNotificationEstimate from '../components/PreNotificationEstimate';
 import { getBusinessDayProgress } from '../utils/businessDayProgress';
 import SEO from '../components/SEO';
@@ -26,7 +23,7 @@ import { API_ENDPOINTS } from '../config';
 import { PROSE_MARKDOWN, CARD, SECTION_HEADING } from '../utils/classNames';
 import { slugify, mergerPath, industryPath, partyPath } from '../utils/slug';
 import { mergerMeta } from '../utils/pageMeta';
-import { getDecidedOutcome, getDeterminationDocUrl } from '../utils/mergerOutcome';
+import { getDecidedOutcome, getHeaderStatus, getDeterminationDocUrl } from '../utils/mergerOutcome';
 import { MERGER_STATUS } from '../constants/mergerStatus';
 import { APPEAL_TYPE_LABELS, DEFAULT_APPEAL_LABEL, APPEAL_STATUS, APPEAL_OUTCOME_LABELS } from '../constants/appeal';
 import { OUTCOME_DOT_COLORS, DEFAULT_OUTCOME_DOT, APPEAL_DOT, getOutcomeDot } from '../constants/outcomeDotColors';
@@ -237,29 +234,32 @@ function MergerDetail() {
     return DEFAULT_OUTCOME_DOT;
   };
 
-  // Once a matter is decided the header card's title block is filled with the
-  // outcome's colour and MergerOutcomeHeading states the result above the
-  // title. Everything in that block flips to its on-dark treatment, the card's
-  // top rule takes the same colour, the status badge and "Determination" field
-  // stand down rather than repeat what the block already says, and the
-  // timeline drops the divider it would otherwise draw under the fill.
+  // The header card's title block is filled with the colour of whatever the
+  // matter is carrying — its outcome once decided, the status it is sitting at
+  // until then — and MergerOutcomeHeading states that above the title. A
+  // decided matter gets the deep fill and everything in the block flips to its
+  // on-dark treatment; a live one gets a pale tint and keeps the light one.
+  // Either way the card's top rule takes the status colour, and the status
+  // badge and "Determination" field stand down rather than repeat what the
+  // block already says.
+  const headerStatus = getHeaderStatus(merger);
+  const headerStyle = getOutcomeHeaderStyle(headerStatus?.label);
   const decidedOutcome = getDecidedOutcome(merger);
-  const outcomeStyle = decidedOutcome ? getOutcomeHeaderStyle(decidedOutcome.outcome) : null;
-  // A matter whose decision is currently before the Competition Tribunal has
-  // that fill wash out to the appeal indigo across the block, so the banner
-  // says the result is contested rather than settled. Keyed off the appeal,
-  // not the outcome: a third party appealing a clearance is as unsettled as a
-  // party appealing a refusal, and gets the same fade from its own colour.
-  const appealFade = outcomeStyle && merger.under_appeal ? outcomeStyle : null;
+  // A matter currently before the Competition Tribunal has that fill wash out
+  // to the appeal indigo across the block, so the banner says where it stands
+  // is contested rather than settled. Keyed off the appeal, not the outcome: a
+  // third party appealing a clearance is as unsettled as a party appealing a
+  // refusal, and a live matter with something short of a final determination
+  // under appeal gets the same fade from its own colour.
+  const appealFade = merger.under_appeal ? headerStyle : null;
   const headerBlockStyle = getAppealFadeStyle(appealFade);
   // Kept for the rare matter carrying a determination that getDecidedOutcome
   // doesn't recognise as an ending; otherwise the header block is the only
   // place the outcome appears.
   const showDeterminationField = Boolean(merger.accc_determination) && !decidedOutcome;
   const determinationDocUrl = getDeterminationDocUrl(merger);
-  const headerLinkClass = outcomeStyle
-    ? `inline-flex items-center gap-1 text-sm transition-colors ${outcomeStyle.link} ${outcomeStyle.focus}`
-    : 'inline-flex items-center gap-1 text-sm text-primary hover:text-primary-dark transition-colors';
+  const headerLinkClass =
+    `inline-flex items-center gap-1 text-sm transition-colors ${headerStyle.link} ${headerStyle.focus}`;
 
   // The appeal card links to the Application for Review — the document that
   // initiated the appeal — rather than the tribunal matter page itself.
@@ -302,18 +302,13 @@ function MergerDetail() {
         {/* Header */}
         <div
           className={`${CARD} p-6 mb-6 card-accent`}
-          style={outcomeStyle
-            ? { '--card-accent': getAppealFadeAccent(appealFade) ?? outcomeStyle.accent }
-            : undefined}
+          style={{ '--card-accent': getAppealFadeAccent(appealFade) ?? headerStyle.accent }}
         >
-          {/* Title block. For a decided matter it is pulled out to the card's
-              edges and filled with the outcome's colour, so the result is the
-              first thing the page says; the card's own p-6 keeps the padding
-              identical either way. */}
+          {/* Title block: pulled out to the card's edges and filled with the
+              matter's colour, so where it stands is the first thing the page
+              says; the card's own p-6 keeps the padding identical. */}
           <div
-            className={outcomeStyle
-              ? `-mt-6 -mx-6 px-6 pt-6 pb-6 ${headerBlockStyle ? '' : outcomeStyle.bg} ${outcomeStyle.text}`
-              : undefined}
+            className={`-mt-6 -mx-6 px-6 pt-6 pb-6 ${headerBlockStyle ? '' : headerStyle.bg} ${headerStyle.text}`}
             style={headerBlockStyle ?? undefined}
           >
             <div className="flex items-start justify-between gap-4 pt-1">
@@ -325,7 +320,7 @@ function MergerDetail() {
                     loose gap above the ID row. Inline siblings inside a block,
                     so the h1's accessible name stays the merger name alone. */}
                 <div className="mb-2">
-                  <h1 className={`inline text-2xl font-bold tracking-tight ${outcomeStyle ? '' : 'text-gray-900'}`}>
+                  <h1 className="inline text-2xl font-bold tracking-tight">
                     {merger.merger_name}
                   </h1>
                   {merger.is_waiver && (
@@ -333,7 +328,7 @@ function MergerDetail() {
                   )}
                 </div>
                 <div className="flex items-center gap-4 flex-wrap">
-                  <p className={`text-sm ${outcomeStyle ? outcomeStyle.sub : 'text-gray-500'}`}>
+                  <p className={`text-sm ${headerStyle.sub}`}>
                     {merger.merger_id}
                   </p>
                   {merger.url && (
@@ -365,30 +360,19 @@ function MergerDetail() {
                   )}
                 </div>
               </div>
-              <div className="flex flex-col items-end gap-2 flex-shrink-0">
-                <div className="flex items-center gap-2 flex-wrap justify-end">
-                  {merger.under_appeal && <AppealBadge />}
-                  {!decidedOutcome && (
-                    <Phase2OddsReveal merger={merger}>
-                      <StatusBadge
-                        status={merger.status}
-                        determination={merger.accc_determination}
-                        hasConditions={merger.has_conditions}
-                        appeal={merger.appeal}
-                      />
-                    </Phase2OddsReveal>
-                  )}
-                </div>
-                <TrackButton
-                  active={tracked}
-                  onClick={() => toggleTracking(normalizedId)}
-                  activeLabel="Tracking"
-                  inactiveLabel="Track"
-                  activeAriaLabel="Stop tracking this merger"
-                  inactiveAriaLabel="Track this merger for updates"
-                  onDark={Boolean(outcomeStyle)}
-                />
-              </div>
+              {/* The status badge that used to sit here, and the appeal badge
+                  beside it, both stand down: the heading above states the
+                  status and carries the appeal as a chip, so the corner is the
+                  Track button alone. */}
+              <TrackButton
+                active={tracked}
+                onClick={() => toggleTracking(normalizedId)}
+                activeLabel="Tracking"
+                inactiveLabel="Track"
+                activeAriaLabel="Stop tracking this merger"
+                inactiveAriaLabel="Track this merger for updates"
+                onDark={headerStyle.onDark}
+              />
             </div>
           </div>
 
@@ -400,7 +384,9 @@ function MergerDetail() {
           )}
 
           {/* Assessment timeline */}
-          <div className={decidedOutcome ? 'mt-6' : 'mt-6 pt-6 border-t border-gray-100'}>
+          {/* A deep fill's bottom edge is its own separator; a pale one is too
+              close to the card to divide anything, so it keeps the rule. */}
+          <div className={headerStyle.onDark ? 'mt-6' : 'mt-6 pt-6 border-t border-gray-100'}>
             <MergerTimeline merger={merger} />
           </div>
 

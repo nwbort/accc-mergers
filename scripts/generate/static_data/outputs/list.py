@@ -37,6 +37,19 @@ def _party_names(parties: list | None) -> list:
     return entries
 
 
+def _latest_event_date(m: dict) -> str | None:
+    """Most recent event date, driving the list's "Last updated" sort.
+
+    Reuses the events already scraped for the timeline rather than tracking a
+    separate modification timestamp: any change to a matter's ACCC register
+    page (a new document, an extension, a determination) adds or updates an
+    event, so this is a genuine "when did this matter last change" signal at
+    zero extra scraping cost.
+    """
+    dates = [e.get('date') for e in (m.get('events') or []) if e.get('date')]
+    return max(dates) if dates else None
+
+
 def _appeal_summary(m: dict) -> dict | None:
     """Slim appeal fields needed to render the status badge on a list card.
 
@@ -71,6 +84,7 @@ def _lightweight(m: dict) -> dict:
         "effective_notification_datetime": m.get('effective_notification_datetime'),
         "determination_publication_date": m.get('determination_publication_date'),
         "end_of_determination_period": m.get('end_of_determination_period'),
+        "latest_event_date": _latest_event_date(m),
         "stage": m.get('stage'),
         "acquirers": _party_names(m.get('acquirers')),
         "targets": _party_names(m.get('targets')),

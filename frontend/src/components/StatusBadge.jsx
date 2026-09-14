@@ -5,6 +5,7 @@ import {
   EMPHATIC_OUTCOMES,
   DEFAULT_STATUS_STYLE,
   DEFAULT_SOLID_STATUS_STYLE,
+  SOLID_BADGE_SHAPE_CLASSES,
 } from '../constants/mergerStatus';
 import { OUTCOME_ICONS } from '../constants/outcomeIcons';
 import { resolveEffectiveDetermination } from '../constants/appeal';
@@ -78,9 +79,7 @@ function StatusBadge({ status, determination, label, hasConditions, appeal, soli
     // into its own live region — see WaiverBadge).
     <span
       className={`inline-flex items-center border ${
-        solid
-          ? 'px-2 py-1 rounded-md text-[11px] font-bold uppercase tracking-widest'
-          : 'px-2.5 py-1 rounded-lg text-xs font-semibold'
+        solid ? SOLID_BADGE_SHAPE_CLASSES : 'px-2.5 py-1 rounded-lg text-xs font-semibold'
       } ${statusStyle}`}
       role="img"
       aria-label={ariaLabel}
