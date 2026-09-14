@@ -58,8 +58,9 @@ describe('MergerOutcomeHeading', () => {
   });
 
   it('flags a conditional clearance, which the register records as a plain approval', () => {
+    // Part of the outcome's own name, not an annotation beside it.
     render(<MergerOutcomeHeading merger={{ ...completed, has_conditions: true }} />);
-    expect(screen.getByText('with conditions')).toBeInTheDocument();
+    expect(screen.getByText('Approved with conditions')).toBeInTheDocument();
   });
 
   it('ignores a conditions flag left on any other outcome', () => {
@@ -68,7 +69,8 @@ describe('MergerOutcomeHeading', () => {
         merger={{ ...completed, accc_determination: 'Not approved', has_conditions: true }}
       />
     );
-    expect(screen.queryByText('with conditions')).not.toBeInTheDocument();
+    expect(screen.getByText('Not approved')).toBeInTheDocument();
+    expect(screen.queryByText(/with conditions/)).not.toBeInTheDocument();
   });
 
   it('leaves the ACCC outcome standing while an appeal is still current, and says so', () => {
@@ -157,7 +159,8 @@ describe('MergerOutcomeHeading', () => {
         }}
       />
     );
-    expect(screen.getByText('Approved')).toBeInTheDocument();
-    expect(screen.getByText('on appeal')).toBeInTheDocument();
+    // The suffix rides in the outcome's own run of text, dotted off so it does
+    // not read as one phrase with it.
+    expect(screen.getByText('Approved · on appeal')).toBeInTheDocument();
   });
 });

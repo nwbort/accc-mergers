@@ -34,13 +34,12 @@
  * The contrast rules from cardStyles carry over — every layer has to clear
  * 4.5:1 against the block it sits on (WCAG 1.4.3). On the deep fills that means
  * the fill is dark enough for white text, `sub` is a full-opacity tint rather
- * than a faded one, `chip` darkens the fill instead of lightening it (a
- * white/15 wash lands around 4.1:1 and fails), links are underlined rather than
- * tinted so they aren't distinguished by colour alone (WCAG 1.4.1), and the
- * focus ring is white rather than the site-wide primary green, which would sit
- * under the 3:1 a focus indicator needs (WCAG 1.4.11). On the pale fills the
- * binding constraint is the other way up: `sub` is gray-600, not the gray-500
- * it would be on white, which lands at 4.47:1 on the under-assessment tint.
+ * than a faded one, links are underlined rather than tinted so they aren't
+ * distinguished by colour alone (WCAG 1.4.1), and the focus ring is white
+ * rather than the site-wide primary green, which would sit under the 3:1 a
+ * focus indicator needs (WCAG 1.4.11). On the pale fills the binding constraint
+ * is the other way up: `sub` is gray-600, not the gray-500 it would be on
+ * white, which lands at 4.47:1 on the under-assessment tint.
  *
  * `accent` is a plain hex because it is fed to the `--card-accent` custom
  * property that repaints `.card-accent`'s top rule (see index.css); the values
@@ -59,8 +58,6 @@ import { MERGER_STATUS } from './mergerStatus';
 const ON_DARK = {
   text: 'text-white',
   heading: '',
-  chip: 'bg-black/20 text-white',
-  chipHover: 'hover:bg-black/30',
   link: 'text-white underline decoration-white/60 underline-offset-2 hover:decoration-white',
   focus: 'focus-visible:ring-white focus-visible:ring-offset-0',
   onDark: true,
@@ -69,8 +66,6 @@ const ON_DARK = {
 const ON_LIGHT = {
   text: 'text-gray-900',
   sub: 'text-gray-600',
-  chip: 'bg-black/10 text-gray-900',
-  chipHover: 'hover:bg-black/20',
   link: 'text-primary hover:text-primary-dark',
   // The site-wide focus ring is already right on a pale fill.
   focus: '',

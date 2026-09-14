@@ -14,13 +14,14 @@ import Phase2OddsReveal from './Phase2OddsReveal';
  * tint and the line carries the status colour itself. Either way it stays a
  * small eyebrow rather than competing with the h1.
  *
- * The line carries two kinds of thing. What merely qualifies the standing — a
- * conditional clearance, the result of a concluded appeal — rides on it as a
- * chip. A live appeal does not: the ACCC's position still stands while the
- * Tribunal looks at it, so the matter is carrying two statuses at once, and the
- * second is set exactly like the first (gavel included) rather than shrunk into
- * a chip beside it. That holds whether the matter underneath is decided or
- * still running.
+ * The line carries two kinds of thing, and nothing on it is shrunk. What merely
+ * qualifies the standing — a conditional clearance, the result of a concluded
+ * appeal — is folded into its run of text, because those are part of what the
+ * outcome is rather than notes about it. A live appeal is not a qualifier at
+ * all: the ACCC's position still stands while the Tribunal looks at it, so the
+ * matter is carrying two statuses at once, and the second is set exactly like
+ * the first, gavel included. That holds whether the matter underneath is
+ * decided or still running.
  */
 function MergerOutcomeHeading({ merger }) {
   const headerStatus = getHeaderStatus(merger);
@@ -38,7 +39,13 @@ function MergerOutcomeHeading({ merger }) {
   const showConditions =
     Boolean(merger.has_conditions) && merger.accc_determination === MERGER_STATUS.APPROVED;
 
-  const chip = `inline-flex items-center px-1.5 py-0.5 rounded normal-case tracking-normal text-[11px] font-medium ${style.chip}`;
+  // Qualifiers are part of what the outcome *is*, so they are set in its type
+  // and sit in its own run of text rather than being boxed off beside it.
+  // "Approved with conditions" is the outcome's own name (see
+  // MERGER_STATUS.APPROVED_WITH_CONDITIONS); a concluded appeal's result takes
+  // a dot, since "Not approved confirmed on appeal" would read as one phrase.
+  const outcome =
+    `${label}${showConditions ? ' with conditions' : ''}${appealSuffix ? ` · ${appealSuffix}` : ''}`;
 
   return (
     <p className={`flex items-center gap-x-4 gap-y-2 flex-wrap mb-2 text-sm font-bold uppercase tracking-widest ${style.heading}`}>
@@ -51,12 +58,8 @@ function MergerOutcomeHeading({ merger }) {
         {/* The press-and-hold phase 2 odds sit on the live status, which is what
             this line now carries; the wrapper is inert for every other matter. */}
         <Phase2OddsReveal merger={merger}>
-          <span>{label}</span>
+          <span>{outcome}</span>
         </Phase2OddsReveal>
-        {/* These two qualify the outcome rather than standing beside it —
-            "approved, but with conditions" — so they stay chips hanging off it. */}
-        {showConditions && <span className={chip}>with conditions</span>}
-        {appealSuffix && <span className={chip}>{appealSuffix}</span>}
       </span>
       {/* A live appeal is a status in its own right, not a qualifier: the ACCC's
           position stands, and the Tribunal's is a second thing the matter is

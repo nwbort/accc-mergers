@@ -87,7 +87,7 @@ describe('the two registers', () => {
 
   it('gives every style the full set of treatments, so the header reads the same either way', () => {
     for (const style of allStyles) {
-      for (const key of ['bg', 'text', 'sub', 'chip', 'link', 'accent']) {
+      for (const key of ['bg', 'text', 'sub', 'link', 'accent']) {
         expect(style[key], `${style.bg} is missing ${key}`).toBeDefined();
       }
       expect(style.focus).toBeDefined();
