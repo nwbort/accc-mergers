@@ -109,13 +109,26 @@ frontend/src/
 │                         #     StatCard, DetailStatGrid, MergerCardBody
 │                         #   - Timelines: MergerTimeline, Phase2Timeline,
 │                         #     UpcomingEventsTimeline, BusinessDayProgress
-│                         #   - Outcome: MergerOutcomeHeading — the result line
-│                         #     above a decided merger's title. MergerDetail
-│                         #     fills that whole title block with the outcome's
-│                         #     colour (constants/outcomeHeader.js) and flips
-│                         #     the links and TrackButton inside it to their
-│                         #     on-dark treatment; both read the verdict from
-│                         #     utils/mergerOutcome.js. The merger list cannot
+│                         #   - Outcome: MergerOutcomeHeading — the status line
+│                         #     above every merger's title, stating the outcome
+│                         #     once decided and the live status until then
+│                         #     (utils/mergerOutcome.js getHeaderStatus, whose
+│                         #     determination-over-status precedence mirrors
+│                         #     StatusBadge). Anything qualifying that — "with
+│                         #     conditions", a concluded appeal's result, and a
+│                         #     live "under appeal" — hangs off it as a chip, so
+│                         #     an appeal reads the same whether or not the
+│                         #     matter under it has finished; the detail page
+│                         #     therefore shows no separate status or appeal
+│                         #     badge. MergerDetail fills the whole title block
+│                         #     from constants/outcomeHeader.js, which has two
+│                         #     registers: a decided matter takes a deep fill
+│                         #     with white text and flips the links and
+│                         #     TrackButton inside it to their on-dark treatment
+│                         #     (`onDark: true`), a live one takes a pale tint of
+│                         #     its status colour and keeps the light treatment.
+│                         #     Only the deep fills wash out to indigo when a
+│                         #     matter is under appeal. The merger list cannot
 │                         #     borrow that fill — nine in ten matters are
 │                         #     "Approved", so it would colour the whole page.
 │                         #     It leads each card with a solid StatusBadge

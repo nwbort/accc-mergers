@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { getDecidedOutcome, getDeterminationDocUrl } from '../mergerOutcome';
+import { getDecidedOutcome, getHeaderStatus, getDeterminationDocUrl } from '../mergerOutcome';
 
 const approved = {
   status: 'Assessment completed',
@@ -68,6 +68,46 @@ describe('getDecidedOutcome', () => {
 
   it('handles a missing merger', () => {
     expect(getDecidedOutcome(null)).toBeNull();
+  });
+});
+
+describe('getHeaderStatus', () => {
+  it('reports the outcome of a decided matter, and that it is decided', () => {
+    expect(getHeaderStatus(approved)).toEqual({
+      label: 'Approved',
+      appealSuffix: null,
+      decided: true,
+    });
+  });
+
+  it('reports the live status of a matter that has not finished', () => {
+    expect(
+      getHeaderStatus({ status: 'Under assessment', accc_determination: null })
+    ).toEqual({ label: 'Under assessment', appealSuffix: null, decided: false });
+  });
+
+  it('prefers a determination that has not ended the matter over its status', () => {
+    // Mirrors StatusBadge, which the header took over from: a phase 2 referral
+    // on a running matter is what the corner badge used to show, so the header
+    // has to show it too rather than falling back to "Under assessment".
+    expect(
+      getHeaderStatus({ status: 'Under assessment', accc_determination: 'Referred to phase 2' })
+    ).toEqual({ label: 'Referred to phase 2', appealSuffix: null, decided: false });
+  });
+
+  it('carries the concluded-appeal suffix through for a decided matter', () => {
+    expect(
+      getHeaderStatus({
+        ...approved,
+        accc_determination: 'Not approved',
+        appeal: { status: 'concluded', outcome: 'set_aside', effective_determination: 'Approved' },
+      })
+    ).toEqual({ label: 'Approved', appealSuffix: 'on appeal', decided: true });
+  });
+
+  it('reports nothing for a record carrying neither a status nor a determination', () => {
+    expect(getHeaderStatus({})).toBeNull();
+    expect(getHeaderStatus(null)).toBeNull();
   });
 });
 

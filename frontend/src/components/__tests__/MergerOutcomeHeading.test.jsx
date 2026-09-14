@@ -21,17 +21,30 @@ describe('MergerOutcomeHeading', () => {
     expect(screen.getByText('Outcome:')).toBeInTheDocument();
   });
 
-  it('renders nothing while the matter is still under assessment', () => {
-    const { container } = render(
+  it('states the live status while the matter is still under assessment', () => {
+    render(
       <MergerOutcomeHeading merger={{ status: 'Under assessment', accc_determination: null }} />
     );
-    expect(container).toBeEmptyDOMElement();
+    expect(screen.getByText('Under assessment')).toBeInTheDocument();
   });
 
-  it('renders nothing for a suspended assessment', () => {
-    const { container } = render(
+  it('introduces a live status as a status, not as an outcome', () => {
+    render(
+      <MergerOutcomeHeading merger={{ status: 'Under assessment', accc_determination: null }} />
+    );
+    expect(screen.getByText('Status:')).toBeInTheDocument();
+    expect(screen.queryByText('Outcome:')).not.toBeInTheDocument();
+  });
+
+  it('states a suspended assessment', () => {
+    render(
       <MergerOutcomeHeading merger={{ status: 'Assessment suspended', accc_determination: null }} />
     );
+    expect(screen.getByText('Assessment suspended')).toBeInTheDocument();
+  });
+
+  it('renders nothing for a record carrying neither a status nor a determination', () => {
+    const { container } = render(<MergerOutcomeHeading merger={{}} />);
     expect(container).toBeEmptyDOMElement();
   });
 
@@ -58,7 +71,7 @@ describe('MergerOutcomeHeading', () => {
     expect(screen.queryByText('with conditions')).not.toBeInTheDocument();
   });
 
-  it('leaves the ACCC outcome standing while an appeal is still current', () => {
+  it('leaves the ACCC outcome standing while an appeal is still current, and says so', () => {
     render(
       <MergerOutcomeHeading
         merger={{
@@ -70,7 +83,31 @@ describe('MergerOutcomeHeading', () => {
       />
     );
     expect(screen.getByText('Not approved')).toBeInTheDocument();
-    expect(screen.queryByText(/on appeal/)).not.toBeInTheDocument();
+    expect(screen.getByText('under appeal')).toBeInTheDocument();
+    // No concluded-appeal suffix: the Tribunal hasn't changed anything yet.
+    expect(screen.queryByText('confirmed on appeal')).not.toBeInTheDocument();
+  });
+
+  it('flags a live matter under appeal the same way as a decided one', () => {
+    // An appeal is an additional status, not a different one, so it reads
+    // identically whether or not the matter underneath has finished.
+    render(
+      <MergerOutcomeHeading
+        merger={{
+          status: 'Under assessment',
+          accc_determination: null,
+          under_appeal: true,
+          appeal: { status: 'current', outcome: null, effective_determination: null },
+        }}
+      />
+    );
+    expect(screen.getByText('Under assessment')).toBeInTheDocument();
+    expect(screen.getByText('under appeal')).toBeInTheDocument();
+  });
+
+  it('says nothing about an appeal that has finished and left no mark', () => {
+    render(<MergerOutcomeHeading merger={completed} />);
+    expect(screen.queryByText('under appeal')).not.toBeInTheDocument();
   });
 
   it('shows the outcome the tribunal left standing, and why it changed', () => {

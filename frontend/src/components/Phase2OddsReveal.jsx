@@ -88,7 +88,11 @@ function Phase2OddsReveal({ merger, children }) {
       {revealed && !error && (
         <span
           role="status"
-          className="absolute right-0 top-full mt-2 z-30 w-48 rounded-xl border border-amber-200/70 bg-white px-3 py-2.5 text-left shadow-lg animate-fade-in"
+          // normal-case/tracking-normal/font-normal: the badge this hangs off
+          // is the detail page's heading line, which is uppercase, wide-tracked
+          // and bold — inherited, that stretches the label and shouts the
+          // figures. Each line below sets the weight and case it wants.
+          className="absolute right-0 top-full mt-2 z-30 w-48 rounded-xl border border-amber-200/70 bg-white px-3 py-2.5 text-left normal-case tracking-normal font-normal shadow-lg animate-fade-in"
         >
           <span className="block text-[10px] font-semibold uppercase tracking-wider text-amber-700">
             Est. probability of Phase 2 referral
