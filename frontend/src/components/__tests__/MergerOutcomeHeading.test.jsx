@@ -83,7 +83,7 @@ describe('MergerOutcomeHeading', () => {
       />
     );
     expect(screen.getByText('Not approved')).toBeInTheDocument();
-    expect(screen.getByText('under appeal')).toBeInTheDocument();
+    expect(screen.getByText('Under appeal')).toBeInTheDocument();
     // No concluded-appeal suffix: the Tribunal hasn't changed anything yet.
     expect(screen.queryByText('confirmed on appeal')).not.toBeInTheDocument();
   });
@@ -102,12 +102,44 @@ describe('MergerOutcomeHeading', () => {
       />
     );
     expect(screen.getByText('Under assessment')).toBeInTheDocument();
-    expect(screen.getByText('under appeal')).toBeInTheDocument();
+    expect(screen.getByText('Under appeal')).toBeInTheDocument();
   });
 
   it('says nothing about an appeal that has finished and left no mark', () => {
     render(<MergerOutcomeHeading merger={completed} />);
-    expect(screen.queryByText('under appeal')).not.toBeInTheDocument();
+    expect(screen.queryByText('Under appeal')).not.toBeInTheDocument();
+  });
+
+  it('marks a live appeal with a glyph of its own wherever the outcome has one', () => {
+    // A decided outcome carries a glyph, so the appeal standing beside it gets
+    // the gavel and the two read as a matched pair rather than one marked
+    // status and one bare phrase.
+    const { container } = render(
+      <MergerOutcomeHeading
+        merger={{
+          ...completed,
+          accc_determination: 'Not approved',
+          under_appeal: true,
+          appeal: { status: 'current', outcome: null, effective_determination: null },
+        }}
+      />
+    );
+    expect(container.querySelectorAll('svg')).toHaveLength(2);
+  });
+
+  it('separates a live status from its appeal with a dot, having no glyphs to pair', () => {
+    const { container } = render(
+      <MergerOutcomeHeading
+        merger={{
+          status: 'Under assessment',
+          accc_determination: null,
+          under_appeal: true,
+          appeal: { status: 'current', outcome: null, effective_determination: null },
+        }}
+      />
+    );
+    expect(container.querySelectorAll('svg')).toHaveLength(0);
+    expect(screen.getByText('·')).toBeInTheDocument();
   });
 
   it('shows the outcome the tribunal left standing, and why it changed', () => {
