@@ -19,7 +19,7 @@
       "code": "851",
       "name": "Medical Services",
       "level": "group",
-      "merger_count": 12
+      "merger_count": 13
     },
     {
       "code": "852",
@@ -31,16 +31,27 @@
       "code": "853",
       "name": "Allied Health Services",
       "level": "group",
-      "merger_count": 16
+      "merger_count": 17
     },
     {
       "code": "859",
       "name": "Other Health Care Services",
       "level": "group",
-      "merger_count": 0
+      "merger_count": 1
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-50028",
+      "merger_name": "Bupa Health Services - Partnered Health",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-11T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "WA-01120",
       "merger_name": "Impression Dental Group - Blackburn Dental Centre, VIC",
@@ -339,11 +350,11 @@
       "determination_date": "2026-02-26T12:00:00Z"
     }
   ],
-  "count": 27,
-  "phase_1_count": 8,
+  "count": 28,
+  "phase_1_count": 9,
   "phase_2_count": 0,
   "waiver_count": 19,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": {
     "average_days": 32.625,
     "median_days": 31.0,

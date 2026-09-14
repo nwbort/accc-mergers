@@ -24,16 +24,27 @@
       "code": "8511",
       "name": "General Practice Medical Services",
       "level": "class",
-      "merger_count": 10
+      "merger_count": 11
     },
     {
       "code": "8512",
       "name": "Specialist Medical Services",
       "level": "class",
-      "merger_count": 5
+      "merger_count": 6
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-50028",
+      "merger_name": "Bupa Health Services - Partnered Health",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-11T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "WA-25045",
       "merger_name": "Ochre Health - Holdsworth House Medical Group & College Street Specialists, NSW",
@@ -167,11 +178,11 @@
       "determination_date": "2026-03-19T12:00:00Z"
     }
   ],
-  "count": 12,
-  "phase_1_count": 3,
+  "count": 13,
+  "phase_1_count": 4,
   "phase_2_count": 0,
   "waiver_count": 9,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": {
     "average_days": 30.333333333333332,
     "median_days": 34,
