@@ -114,13 +114,17 @@ frontend/src/
 │                         #     once decided and the live status until then
 │                         #     (utils/mergerOutcome.js getHeaderStatus, whose
 │                         #     determination-over-status precedence mirrors
-│                         #     StatusBadge). Anything qualifying that — "with
-│                         #     conditions", a concluded appeal's result, and a
-│                         #     live "under appeal" — hangs off it as a chip, so
-│                         #     an appeal reads the same whether or not the
-│                         #     matter under it has finished; the detail page
-│                         #     therefore shows no separate status or appeal
-│                         #     badge. MergerDetail fills the whole title block
+│                         #     StatusBadge). What merely qualifies that — "with
+│                         #     conditions", a concluded appeal's result — hangs
+│                         #     off it as a chip. A live "under appeal" does
+│                         #     not: it is a second status the matter carries,
+│                         #     so it is set in the same type as the first and
+│                         #     marked with a gavel wherever the outcome has a
+│                         #     glyph of its own (a live status has none, so a
+│                         #     dot separates the two instead). Either way it
+│                         #     reads the same whether or not the matter under
+│                         #     it has finished, and the detail page therefore
+│                         #     shows no separate status or appeal badge. MergerDetail fills the whole title block
 │                         #     from constants/outcomeHeader.js, which has two
 │                         #     registers: a decided matter takes a deep fill
 │                         #     with white text and flips the links and
