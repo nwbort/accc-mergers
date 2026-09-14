@@ -33626,6 +33626,153 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/bupa-health-services-partnered-health",
+      "merger_name": "Bupa Health Services - Partnered Health",
+      "status": "Under assessment",
+      "merger_id": "MN-50028",
+      "effective_notification_datetime": "2026-09-11T12:00:00Z",
+      "original_notification_datetime": "2026-09-11T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-10-26T12:00:00Z",
+      "page_modified_datetime": "2026-09-14T13:56:29+10:00",
+      "consultation_response_due_date": "2026-09-21T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "BUPA HEALTH SERVICES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "50 003 098 655",
+          "party_page": {
+            "id": "bupa-health-services-pty-ltd",
+            "name": "Bupa Health Services Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "FIGTREE HEAD TOPCO II PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "12 651 158 404",
+          "party_page": {
+            "id": "figtree-head-topco-ii-pty-ltd",
+            "name": "Figtree Head Topco Ii Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "8511",
+          "name": "General Practice Medical Services"
+        },
+        {
+          "code": "8512",
+          "name": "Specialist Medical Services"
+        },
+        {
+          "code": "8533",
+          "name": "Physiotherapy Services"
+        },
+        {
+          "code": "8539",
+          "name": "Other Allied Health Services"
+        },
+        {
+          "code": "8599",
+          "name": "Other Health Care Services n.e.c."
+        }
+      ],
+      "merger_description": "Bupa Health Services Pty Ltd (**Bupa**) proposes to acquire 100% of the shares in Partnered Health Pty Ltd (**Partnered Health**) (the **Acquisition**). Bupa is an Australian subsidiary of the British United Provident Association, an international healthcare company with Australian operations in health insurance, primary care, aged care homes and retirement villages.\n\nBupa provides a range of services in Australia, including:\n\n* facilities and services to independent general practitioners to enable them to run their general practices,\n* facilities and services to independent dentists to enable them to run their dental practices,\n* psychology and mental health services under the \u2018Mindplace\u2019 brand,\n* specific services to the Commonwealth Government in relation to visa medical checks and the health needs of the Australian Defence Force and veterans, and\n* optical and hearing services under the \u2018Bupa Optical\u2019 brand.\n\nPartnered Health is a national provider of primary care services to individuals, and corporate health and wellbeing services to businesses. In primary care, Partnered Health operates medical centres offering general practice and allied health services. Partnered Health also offers skin checks under the \u2018Molescan\u2019 brand, dietetics under the \u2018Fuel Your Life\u2019 brand, physiotherapy under the \u2018Northcare Physio\u2019 brand and psychology under the \u2018New View Psychology\u2019 and \u2018NewPsych Psychologists\u2019 brands. In corporate health and wellbeing, Partnered Health offers corporate health services under the \u2018JobFit\u2019, \u2018Baseline Onsite\u2019 and \u2018Australian EAP\u2019 brands.",
+      "events": [
+        {
+          "date": "2026-09-14T12:00:00Z",
+          "title": "Phase 1 consultation",
+          "display_title": "Phase 1 consultation",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Questionnaire%20-%20Bupa%20Health%20Services%20-%20Partnered%20Health.docx",
+          "url_gh": "/mergers/MN-50028/Questionnaire - Bupa Health Services - Partnered Health.pdf",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-09-11T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-80025",
+          "merger_name": "Black Kite Partners led consortium - DR2",
+          "acquirers": [
+            "Galileo BidCo Pty Ltd",
+            "HGPS-DPE Luxembourg Holdings SCSp"
+          ],
+          "targets": [
+            "DR2 HOLDINGS PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-15027",
+          "merger_name": "Partnered Health - Ryan Plaza Medical Services",
+          "acquirers": [
+            "PH MEDICAL CENTRES PTY LTD"
+          ],
+          "targets": [
+            "Ryan Plaza Medical Services Pty Ltd"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-70012",
+          "merger_name": "Quanta - PSD",
+          "acquirers": [
+            "Quanta Services Australia Pty Ltd"
+          ],
+          "targets": [
+            "PSD Global Holdings Pty Ltd"
+          ],
+          "accc_determination": "Approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 17,
+        "range_business_days": [
+          15,
+          19
+        ],
+        "basis": "questionnaire",
+        "question_bucket": "3 or fewer",
+        "question_count": 3,
+        "sample_size": 157,
+        "as_of": "2026-09-11",
+        "estimated_at": "2026-09-14",
+        "method_version": 2
+      },
+      "pre_notification": {
+        "estimated_days": 79,
+        "min_days": 73,
+        "max_days": 113,
+        "id_issued_estimated": "2026-06-24",
+        "id_issued_before": "2026-06-30",
+        "id_issued_after": "2026-05-21",
+        "min_days_witness": "WA-50029",
+        "max_days_witness": "WA-50023",
+        "basis": "bracketed",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/symal-group-shamrock-engineering-and-equipment",
       "merger_name": "Symal Group - Shamrock Engineering and Equipment",
       "status": "Assessment completed",

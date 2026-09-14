@@ -1,10 +1,10 @@
 {
-  "total_mergers": 254,
+  "total_mergers": 255,
   "total_waivers": 398,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 224,
-    "Under assessment": 25,
+    "Under assessment": 26,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-50028",
+      "merger_name": "Bupa Health Services - Partnered Health",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-09-11T12:00:00Z",
+      "page_modified_datetime": "2026-09-14T13:56:29+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-80042",
       "merger_name": "Eli Lilly \u2013 Merida Biosciences",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-09-03T12:00:00Z",
       "page_modified_datetime": "2026-09-04T11:32:29+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-25035",
-      "merger_name": "Velocity Vehicle Group \u2013 Fuso assets of Daimler Truck Australia Pacific",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-09-03T12:00:00Z",
-      "page_modified_datetime": "2026-09-03T17:28:24+10:00",
       "is_waiver": false,
       "is_refiled": false
     }
