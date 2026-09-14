@@ -1,0 +1,177 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/eqt-fund-management-intertek",
+  "merger_name": "EQT Fund Management - Intertek",
+  "status": "Under assessment",
+  "merger_id": "MN-75045",
+  "effective_notification_datetime": "2026-09-14T12:00:00Z",
+  "original_notification_datetime": "2026-09-14T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-10-27T12:00:00Z",
+  "consultation_response_due_date": "2026-09-21T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "Isotope Bidco Limited",
+      "identifier_type": null,
+      "identifier": "17264475",
+      "party_page": {
+        "id": "isotope-bidco-limited",
+        "name": "Isotope Bidco Limited"
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "Intertek Group plc",
+      "identifier_type": null,
+      "identifier": "04267576",
+      "party_page": {
+        "id": "intertek-group-plc",
+        "name": "Intertek Group plc"
+      }
+    }
+  ],
+  "other_parties": [
+    {
+      "name": "EQT Fund Management S.\u00e0 r.l.",
+      "identifier_type": null,
+      "identifier": "167.972",
+      "canonical": {
+        "id": "eqt-fund-management-s-r-l",
+        "name": "EQT Fund Management"
+      },
+      "party_page": {
+        "id": "eqt-fund-management-s-r-l",
+        "name": "EQT Fund Management"
+      }
+    },
+    {
+      "name": "Intertek Australia Holdings Pty Ltd",
+      "identifier_type": "ABN",
+      "identifier": "74 124 892 879",
+      "party_page": {
+        "id": "intertek-australia-holdings-pty-ltd",
+        "name": "Intertek Australia Holdings Pty Ltd"
+      }
+    },
+    {
+      "name": "TRESCAL (AUSTRALIA) PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "39 117 603 835",
+      "party_page": {
+        "id": "trescal-australia-pty-ltd",
+        "name": "Trescal (Australia) Pty Ltd"
+      }
+    }
+  ],
+  "anzsic_codes": [
+    {
+      "code": "3494",
+      "name": "Other Electrical and Electronic Goods Wholesaling"
+    },
+    {
+      "code": "6240",
+      "name": "Financial Asset Investing"
+    },
+    {
+      "code": "6925",
+      "name": "Scientific Testing and Analysis Services"
+    },
+    {
+      "code": "6962",
+      "name": "Management Advice and Related Consulting Services"
+    },
+    {
+      "code": "9422",
+      "name": "Electronic (except Domestic Appliance) and Precision Equipment Repair and Maintenance"
+    }
+  ],
+  "merger_description": "EQT Fund Management S.\u00e0 r.l. (**EQT Fund Management**), acting as fund manager for\u00a0and on behalf of the entities forming the investment fund EQT X, and its affiliates propose to indirectly acquire sole control of Intertek Group Plc\u00a0(together with its subsidiaries, **Intertek**) by way of a scheme of arrangement (the **Acquisition**).\n\nEQT Fund Management\u00a0is the alternative investment fund manager of EQT X, an investment fund forming part of the EQT group of investment funds (**EQT Funds**). EQT Funds\u2019 portfolio companies are active in a variety of industries and regions.\n\nOne of EQT Funds\u2019 controlled portfolio companies, Trescal International SAS (together with its subsidiaries, **Trescal**), is a global provider of calibration services to customers across various industries, including in Australia. Calibration services involve comparing the performance of testing and measurement equipment against a measurement standard to ensure accurate performance and compliance with relevant standards, and related equipment repairs (for example, if equipment fails a calibration test).\n\nIntertek is a global provider of assurance, testing, inspection and certification services to customers across various industries, including in Australia. As part of its broader service offering, Intertek provides calibration services primarily to customers in the oil and gas sector. Intertek is currently listed on the London Stock Exchange.",
+  "events": [
+    {
+      "date": "2026-09-14T12:00:00Z",
+      "title": "EQT Fund Management - Intertek: Phase 1 consultation",
+      "display_title": "EQT Fund Management - Intertek: Phase 1 consultation",
+      "is_questionnaire_event": true,
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Notification%20Phase%201%20Questionnaire.docx",
+      "url_gh": "/mergers/MN-75045/Notification Phase 1 Questionnaire.pdf",
+      "phase": "Phase 1"
+    },
+    {
+      "date": "2026-09-14T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-90009",
+      "merger_name": "Trescal \u2013 TR Calibration",
+      "acquirers": [
+        "TRESCAL (AUSTRALIA) PTY LTD"
+      ],
+      "targets": [
+        "TR PTY LTD"
+      ],
+      "status": "Assessment ceased"
+    },
+    {
+      "merger_id": "WA-60028",
+      "merger_name": "EQT Fund Management S.\u00e0 r.l. \u2013 Orikan Group",
+      "acquirers": [
+        "ULEXITE GROUP PTY LIMITED"
+      ],
+      "targets": [
+        "IGNITION TOPCO PTY LTD"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "WA-70033",
+      "merger_name": "EQT Fund Management \u2013 Corza Biosurgery",
+      "acquirers": [
+        "Ruby BidCo GmbH",
+        "Seal US Holdings Inc."
+      ],
+      "targets": [
+        "Corza Medical sp z.o.o.",
+        "Corza Medical S.A.S"
+      ],
+      "accc_determination": "Approved"
+    }
+  ],
+  "phase_1_estimate": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 160,
+    "as_of": "2026-09-14",
+    "estimated_at": "2026-09-14",
+    "method_version": 2
+  },
+  "pre_notification": {
+    "estimated_days": 34,
+    "min_days": 31,
+    "max_days": 47,
+    "id_issued_estimated": "2026-08-11",
+    "id_issued_before": "2026-08-14",
+    "id_issued_after": "2026-07-29",
+    "min_days_witness": "WA-75047",
+    "max_days_witness": "WA-75040",
+    "basis": "bracketed",
+    "method_version": 1
+  }
+}
