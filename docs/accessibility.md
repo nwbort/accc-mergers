@@ -61,7 +61,7 @@ role="img">` that points at the section heading (`aria-labelledby`) and an
 alternative — a chart's meaning is its numbers.
 
 **Headings.** Every route needs an `h1`. Pages that lead straight into content
-(`/mergers`, `/timeline`, `/commentary`, `/analysis`) carry an `sr-only` one.
+(`/mergers`, `/commentary`, `/analysis`) carry an `sr-only` one.
 Levels increase by one at a time — cards in a top-level list are `h2`, not
 `h3`.
 

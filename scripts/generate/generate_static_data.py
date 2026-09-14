@@ -19,8 +19,6 @@ Output files:
   - mergers/list-page-{N}.json  - Paginated lightweight merger lists (50/page)
   - mergers/list-meta.json      - Pagination metadata for merger list
   - stats.json                  - Aggregated statistics
-  - timeline/timeline-page-{N}.json  - Paginated timeline events (100/page)
-  - timeline/timeline-meta.json      - Pagination metadata for timeline
   - industries.json             - ANZSIC codes with merger counts
   - industries/{code}.json      - Mergers per industry code
   - parties.json                - Every party (canonical group or single) with merger counts
@@ -87,7 +85,6 @@ from scripts.generate.static_data.outputs import (
     serial_acquirers,
     stats,
     theories_of_harm,
-    timeline,
     upcoming_events,
 )
 from scripts.paths import REPO_ROOT
@@ -229,10 +226,6 @@ def main():
     print("\nGenerating paginated list files...")
     pages = list_out.generate(enriched, OUTPUT_DIR, page_size=50)
     print(f"✓ Generated {pages} paginated list files (50 mergers/page)")
-
-    print("\nGenerating paginated timeline files...")
-    pages = timeline.generate(enriched, OUTPUT_DIR, page_size=100)
-    print(f"✓ Generated {pages} paginated timeline files (100 events/page)")
 
     print("\nGenerating individual industry files...")
     n = industries.generate_detail_files(enriched, OUTPUT_DIR)

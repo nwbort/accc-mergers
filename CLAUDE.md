@@ -66,8 +66,6 @@ frontend/src/
 │   ├── Dashboard.jsx     # /
 │   ├── Mergers.jsx       # /mergers
 │   ├── MergerDetail.jsx  # /mergers/:id and /mergers/:id/:slug
-│   ├── Timeline.jsx      # /timeline (on neither the navbar nor the command palette;
-│                         #   reachable from merger pages and the `g t` shortcut)
 │   ├── Industries.jsx    # /industries (not in the navbar; reachable from the command
 │                         #   palette and the `g i` shortcut)
 │   ├── IndustryDetail.jsx # /industries/:code and /industries/:code/:slug
@@ -154,7 +152,7 @@ frontend/src/
 │                         #   Navbar, CommandPalette, useKeyboardShortcuts and
 │                         #   KeyboardShortcutsHelp all derive their lists from it rather
 │                         #   than keeping copies. A shortcut-only page, on neither the
-│                         #   navbar nor the palette, is fine — Timeline is one. Array
+│                         #   navbar nor the palette, is fine. Array
 │                         #   order is the shortcut help overlay's reading order; the
 │                         #   other two surfaces sort by navOrder/paletteOrder.
 │                         #   constants/__tests__/navPages.test.js pins the invariants:
@@ -429,8 +427,6 @@ prunes the old names), but make it a deliberate choice.
 | `mergers/list-page-{N}.json` | Paginated lightweight merger lists (50/page) |
 | `mergers/list-meta.json` | Pagination metadata for merger list |
 | `stats.json` | Aggregated statistics (counts, averages, medians) |
-| `timeline/timeline-page-{N}.json` | Paginated timeline events (100/page) |
-| `timeline/timeline-meta.json` | Pagination metadata for timeline |
 | `industries.json` | ANZSIC codes (as tagged on mergers) with merger counts |
 | `industries/{code}.json` | One file per ANZSIC node (division/subdivision/group/class), with hierarchy metadata (name, level, breadcrumb ancestors, parent, children) and mergers rolled up from the node's subtree (each merger summary carries `notification_date`/`determination_date` to drive industry-follow notifications). Generated for the full ANZSIC tree from `scripts/generate/static_data/anzsic_codes.json` |
 | `parties.json` | Every party (canonical group or single entity) with merger counts |
@@ -439,7 +435,6 @@ prunes the old names), but make it a deliberate choice.
 | `commentary.json` | Mergers with user commentary |
 | `digest.json` | Weekly digest of merger activity (from `generate_weekly_digest.py`) |
 | `analysis.json` | Pre-computed analysis data. `current_status` (powering `/current-status`) re-cuts the same durations over rolling windows of recently *decided* matters (30/90 days), plus a per-decision-month series aligned index-for-index with `open_caseload`, so the filing-time question ("what is the ACCC turning around *now*") doesn't have to be answered from the all-time median. Each window's `notifications`/`waivers` block carries its own flat `duration_histogram` (business days → matters decided in exactly that many), the recent-window twin of the all-time histograms below, so the same ECDF can be drawn over just what was decided lately. Each window also carries `notifications_filed` and a `pre_notification` block (keyed by *filing* date, since that stage ends at filing rather than at a decision; the estimate is a calendar-day figure but is published here in business days, like every other duration on the page). No waiver inflow is published, since a waiver only reaches the register once decided. `phase1_duration`/`waiver_duration` each carry a `duration_histogram`: a nested count map, business days → calendar days → number of completed reviews with that exact pair. It replaced a flat list holding one object per review — same distribution (the records are anonymous, so a multiset of pairs is exactly the list), a third of the file. Read business days by summing each inner map; read calendar days by folding the inner keys together (`frontend/src/utils/durationEcdf.js`) |
-| `timeline.json` | Unpaginated timeline (alongside the paginated `timeline/` directory) |
 | `referral-probability-by-day.json` | Modelled probability of a Phase 2 referral by elapsed business day |
 | `serial-acquirers.json` | Serial-acquirer ("creeping acquisitions") detection |
 | `theories_of_harm.json` | Keyword-classified theory-of-harm taxonomy |

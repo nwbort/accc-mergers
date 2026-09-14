@@ -18,7 +18,6 @@ import ScrollToTop from './components/ScrollToTop';
 const Dashboard = lazy(() => import('./pages/Dashboard'));
 const Mergers = lazy(() => import('./pages/Mergers'));
 const MergerDetail = lazy(() => import('./pages/MergerDetail'));
-const Timeline = lazy(() => import('./pages/Timeline'));
 const Industries = lazy(() => import('./pages/Industries'));
 const IndustryDetail = lazy(() => import('./pages/IndustryDetail'));
 const Parties = lazy(() => import('./pages/Parties'));
@@ -56,7 +55,6 @@ function AppContent() {
             <Route path="/mergers" element={<Mergers />} />
             <Route path="/mergers/:id" element={<MergerDetail />} />
             <Route path="/mergers/:id/:slug" element={<MergerDetail />} />
-            <Route path="/timeline" element={<Timeline />} />
             <Route path="/industries" element={<Industries />} />
             <Route path="/industries/:code" element={<IndustryDetail />} />
             <Route path="/industries/:code/:slug" element={<IndustryDetail />} />

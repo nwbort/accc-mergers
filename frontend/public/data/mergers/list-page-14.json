@@ -1,6 +1,125 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-25047",
+      "merger_name": "Alcoa \u2013 South32 aluminium assets",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-09-10T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-10-23T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "APL Investments (Pty) Ltd"
+        },
+        {
+          "name": "Alcoa do Brasil Ind\u00fastria e Com\u00e9rcio Ltda."
+        },
+        {
+          "name": "KZN Investments Australia Pty Ltd"
+        },
+        {
+          "name": "Alcoa Corporation"
+        }
+      ],
+      "targets": [
+        {
+          "name": "SOUTH32 (BMSA) PTY LTD"
+        },
+        {
+          "name": "South32 SA Holdings (Pty) Ltd"
+        },
+        {
+          "name": "SOUTH32 AUSTRALIA INVESTMENT 3 PTY LTD"
+        },
+        {
+          "name": "SOUTH32 LIMITED"
+        },
+        {
+          "name": "SOUTH32 ALUMINIUM (HOLDINGS) PTY LTD"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "0802",
+          "name": "Bauxite Mining"
+        },
+        {
+          "code": "0809",
+          "name": "Other Metal Ore Mining"
+        },
+        {
+          "code": "2131",
+          "name": "Alumina Production"
+        },
+        {
+          "code": "2132",
+          "name": "Aluminium Smelting"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-55024",
+      "merger_name": "PSP Investments - AAA Egg Company",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-09-10T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-10-23T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Perlaide Eggs 2 Pty Limited"
+        }
+      ],
+      "targets": [
+        {
+          "name": "AAA Egg Company Pty Ltd"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Public Sector Pension Investment Board"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0172",
+          "name": "Poultry Farming (Eggs)"
+        },
+        {
+          "code": "0529",
+          "name": "Other Agriculture and Fishing Support Services"
+        },
+        {
+          "code": "1199",
+          "name": "Other Food Product Manufacturing n.e.c."
+        },
+        {
+          "code": "3609",
+          "name": "Other Grocery Wholesaling"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "6961",
+          "name": "Corporate Head Office Management Services"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-65036",
       "merger_name": "ENEOS \u2013 Chevron Australia Downstream",
       "status": "Under assessment",
@@ -195,6 +314,117 @@
         {
           "code": "8599",
           "name": "Other Health Care Services n.e.c."
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-65033",
+      "merger_name": "Challenger - Channel Capital and Fidante",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-09-11T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-10-26T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "CHALLENGER FUNDS MANAGEMENT HOLDINGS PTY LIMITED"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CHANNEL GROUP HOLDINGS PTY LTD"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "CHANNEL CAPITAL PTY LTD"
+        },
+        {
+          "name": "CHALLENGER LIMITED"
+        },
+        {
+          "name": "FIDANTE PARTNERS HOLDINGS PTY LIMITED"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "6420",
+          "name": "Auxiliary Insurance Services"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-75045",
+      "merger_name": "EQT Fund Management - Intertek",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-09-14T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-10-27T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Isotope Bidco Limited"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Intertek Group plc",
+          "canonical": {
+            "name": "Intertek Group plc"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "EQT Fund Management S.\u00e0 r.l.",
+          "canonical": {
+            "name": "EQT Fund Management"
+          }
+        },
+        {
+          "name": "Intertek Australia Holdings Pty Ltd",
+          "canonical": {
+            "name": "Intertek Group plc"
+          }
+        },
+        {
+          "name": "TRESCAL (AUSTRALIA) PTY LTD"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3494",
+          "name": "Other Electrical and Electronic Goods Wholesaling"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6925",
+          "name": "Scientific Testing and Analysis Services"
+        },
+        {
+          "code": "6962",
+          "name": "Management Advice and Related Consulting Services"
+        },
+        {
+          "code": "9422",
+          "name": "Electronic (except Domestic Appliance) and Precision Equipment Repair and Maintenance"
         }
       ]
     }

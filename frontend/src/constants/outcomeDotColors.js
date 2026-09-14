@@ -2,8 +2,8 @@
  * Determination outcome -> dot colour, shared by every view that marks an
  * event, endpoint or segment by outcome: the header timeline bar
  * (components/MergerTimeline.jsx), the Timeline & Events list
- * (pages/MergerDetail.jsx), the site-wide Timeline feed (pages/Timeline.jsx),
- * and the Phase 2 tracker's outcome split (components/Phase2SummaryCards.jsx).
+ * (pages/MergerDetail.jsx), and the Phase 2 tracker's outcome split
+ * (components/Phase2SummaryCards.jsx).
  *
  * `dot` is the plain marker fill; `ring` is the tinted halo used behind dots
  * in the Timeline & Events list. Full class strings are required so

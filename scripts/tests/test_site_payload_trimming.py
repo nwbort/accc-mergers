@@ -16,7 +16,7 @@ sys.modules.setdefault('markdownify', unittest.mock.MagicMock())
 sys.modules.setdefault('requests', unittest.mock.MagicMock())
 
 from scripts.generate.static_data.enrichment import slim_for_site
-from scripts.generate.static_data.outputs import individual, list as list_output, timeline
+from scripts.generate.static_data.outputs import individual, list as list_output
 from scripts.parse.determination_text import load_records
 
 
@@ -142,16 +142,6 @@ def test_list_page_parties_are_names_and_canonical_names(tmp_path):
     assert 'url' not in entry
     # ...but the industry chips and the search index still need these.
     assert entry['anzsic_codes'] == [{'code': '1234', 'name': 'Something'}]
-
-
-# --- paginated timeline pages -----------------------------------------------
-
-def test_timeline_events_carry_only_the_mirrored_document_url(tmp_path):
-    timeline.generate([_merger()], tmp_path)
-
-    event = json.loads((tmp_path / 'timeline' / 'timeline-page-1.json').read_text())['events'][0]
-    assert event['url_gh'] == 'https://mergers.fyi/doc.pdf'
-    assert 'url' not in event
 
 
 # --- CLI bundle source ------------------------------------------------------

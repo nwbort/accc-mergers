@@ -53,7 +53,6 @@ TODAY = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 STATIC_PAGES = [
     {"path": "/",            "changefreq": "daily",   "priority": "1.0"},
     {"path": "/mergers",     "changefreq": "daily",   "priority": "0.9"},
-    {"path": "/timeline",    "changefreq": "daily",   "priority": "0.8"},
     {"path": "/industries",  "changefreq": "weekly",  "priority": "0.8"},
     {"path": "/parties",     "changefreq": "weekly",  "priority": "0.8"},
     {"path": "/analysis",    "changefreq": "weekly",  "priority": "0.7"},
@@ -70,7 +69,6 @@ STATIC_PAGES = [
 STATIC_COMMENTS = {
     "/":            "Homepage / Dashboard",
     "/mergers":     "All Mergers Page",
-    "/timeline":    "Timeline Page",
     "/industries":  "Industries Page",
     "/parties":     "Parties Page",
     "/analysis":    "Analysis Page",
