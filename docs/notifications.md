@@ -46,6 +46,7 @@ be reached.
 | Related parties review PR opened, or updated with new candidates | default (3) | `pipeline.yml` |
 | Exact-match waiver refile auto-merged into `main` | 4 (bypasses batching) | `pipeline.yml` — this one merged itself without review |
 | Missing notification dates PR opened, or updated with new candidates | default (3) | `fix-missing-notification-dates.yml` |
+| A personally-watched merger changed | default (3) | `pipeline.yml` — see [Personal merger watchlist](#personal-merger-watchlist) below |
 
 Tapping a notification opens the PR (or, for the auto-merge, the
 `needs-verification` issue list).
@@ -68,6 +69,55 @@ The fingerprint deliberately covers only the suggested *lines*, not the branch
 tip. The fix branches are rebuilt from the latest `main` on every run, so their
 tree moves whenever `main`'s copy of the data file moves — which for
 `mergers.json` is every pipeline run, and would make every run look "new".
+
+## Personal merger watchlist
+
+The repo owner can track a handful of specific matters — deals they have a
+personal stake in — and get a push the moment one of them changes at all
+(new event, status flip, a date moving), without that list of matter IDs
+ever being visible anywhere in this **public** repo.
+
+### Setup
+
+1. Add a repo secret named `WATCHLIST_MATTER_IDS`: a comma or whitespace
+   separated list of matter IDs, e.g. `MN-40039, MN-45024`.
+2. That's it — `pipeline.yml` picks it up on the next run. By default the
+   notification goes to the same `NTFY_TOPIC`/`NTFY_TOKEN` as everything
+   else above. To keep it on an entirely separate, more private channel
+   instead (recommended if `NTFY_TOPIC` is ever shared with anyone else),
+   set `WATCHLIST_NTFY_TOPIC` (and optionally `WATCHLIST_NTFY_TOKEN`) —
+   when set, these take priority over the shared ones for this notification
+   only.
+
+| Name | Kind | Purpose |
+|------|------|---------|
+| `WATCHLIST_MATTER_IDS` | secret | Matter IDs to watch. **This is the private list — never commit it to a file.** Missing or empty disables the feature entirely. |
+| `WATCHLIST_NTFY_TOPIC` | secret | Optional dedicated ntfy topic for watchlist pushes. Falls back to `NTFY_TOPIC`. |
+| `WATCHLIST_NTFY_TOKEN` | secret | Optional bearer token to go with `WATCHLIST_NTFY_TOPIC`. Falls back to `NTFY_TOKEN`. |
+
+### Why this is safe to run in a public repo
+
+GitHub Actions logs for a public repository are themselves public, and
+secret-masking only catches the *exact* secret string reappearing in a log —
+not a single matter ID that happens to be a substring of it. So
+`scripts/check_watchlist.py` and the two `pipeline.yml` steps that call it
+(`Check personal merger watchlist`, `Notify personal merger watchlist`) are
+built around one rule: **nothing observable about a run may depend on
+whether the watchlist matched.** Concretely:
+
+- The check step never prints which IDs are configured or which ones
+  matched — its only content-bearing output goes into a `GITHUB_OUTPUT`
+  variable (not the log), and it always ends with the same generic
+  "Watchlist check complete." line.
+- The notify step always runs (never gated on whether anything matched), and
+  reuses `.github/actions/ntfy`'s existing no-secret skip path (passing an
+  empty `topic` when nothing matched) — so "nothing matched", "matched but
+  the whole feature isn't configured", and "actually sent" all look
+  identical in the log apart from the one line `ntfy`'s own action already
+  prints on a real send (`Notification sent (HTTP 200).`, with no content).
+
+A skipped step vs. a run step is itself visible in the Actions UI, which is
+why the notify step is unconditional rather than `if:`-gated on a match.
 
 ## Adding a notification somewhere else
 
