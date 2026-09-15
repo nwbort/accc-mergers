@@ -38761,13 +38761,16 @@
     {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/tencent-%E2%80%93-happibits",
       "merger_name": "Tencent \u2013 Happibits",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-60030",
       "effective_notification_datetime": "2026-08-20T12:00:00Z",
       "original_notification_datetime": "2026-08-20T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-10-01T12:00:00Z",
-      "page_modified_datetime": "2026-08-21T12:17:01+10:00",
+      "determination_publication_date": "2026-09-15T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-09-15T15:03:57+10:00",
       "consultation_response_due_date": "2026-08-28T12:00:00Z",
       "acquirers": [
         {
@@ -38855,13 +38858,48 @@
           "url": "https://www.accc.gov.au/system/files/moderated_files/Questionnaire%20-%20Tencent%20-%20Happibits.docx",
           "url_gh": "/mergers/MN-60030/Questionnaire - Tencent - Happibits.pdf",
           "phase": null
+        },
+        {
+          "date": "2026-09-15T12:00:00Z",
+          "title": "Tencent - Happibits - Phase 1 Determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Tencent%20-%20Happibits%20-%20Phase%201%20determination.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Mount Baker Investment Limited (Mount Baker), a special purpose\nvehicle wholly owned by Tencent Holdings Limited (Tencent)\nproposes to acquire a portion of the share capital, on a fully diluted\nbasis, from Happibits Inc. (Happibits) (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, Tencent, is a multinational technology and\nentertainment company.\nTencent is also active in the video game industry, including the\ndevelopment and publishing of games for various platforms, such as\nmobile devices, computers and consoles. Tencent's portfolio covers\nall major genres of games, and publishes games developed both in-\nhouse and by third-party developers.\nThree of Tencent's investee studios that are relevant to the\nAcquisition (and accordingly are connected entities to Mount Baker)\nare Riot Games, Inc (Riot Games) Supercell OY (Supercell) and\nMiniclip S.A. (Miniclip) (together, relevant entities). The relevant\nentities develop and publish video games for mobile devices in\nAustralia.\nThe target, Happibits, through its subsidiaries, is engaged in the\ndevelopment, publication and operation of casual video games for\nmobile devices globally."
+            },
+            {
+              "item": "Overlap between the\nParties",
+              "details": "Tencent and Happibits overlap in the development, publication and\noperation of video games for mobile devices."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and other information available to it.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition would be unlikely to have\nthe effect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 The Parties do not appear to be close competitors.\n\u2022 The Parties would likely continue to face competition from\nseveral alternative suppliers of video games for mobile devices\nin Australia."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-60030/Tencent - Happibits - Phase 1 determination.pdf",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
       "has_conditions": false,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-09-15T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,

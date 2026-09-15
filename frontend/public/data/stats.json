@@ -3,12 +3,12 @@
   "total_waivers": 400,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 225,
-    "Under assessment": 29,
+    "Assessment completed": 226,
+    "Under assessment": 28,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 218,
+    "Approved": 219,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,28 +22,28 @@
     "Not approved": 17
   },
   "clearance_rate": {
-    "cleared": 223,
+    "cleared": 224,
     "not_cleared": 2,
-    "total": 225,
+    "total": 226,
     "rate": 0.991
   },
   "phase_duration": {
-    "average_days": 29.88744588744589,
-    "median_days": 26,
-    "average_business_days": 20.264069264069263,
-    "median_business_days": 18,
+    "average_days": 29.870689655172413,
+    "median_days": 26.0,
+    "average_business_days": 20.254310344827587,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
         "count": 48,
-        "percentage": 20.8
+        "percentage": 20.7
       },
       "day20": {
-        "count": 169,
-        "percentage": 73.2
+        "count": 170,
+        "percentage": 73.3
       },
       "day30": {
-        "count": 214,
-        "percentage": 92.6
+        "count": 215,
+        "percentage": 92.7
       }
     }
   },
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-60030",
+      "merger_name": "Tencent \u2013 Happibits",
+      "determination": "Approved",
+      "determination_date": "2026-09-15T12:00:00Z",
+      "page_modified_datetime": "2026-09-15T15:03:57+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-75036",
       "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-15030",
-      "merger_name": "Karmo - Simplr",
-      "determination": "Approved",
-      "determination_date": "2026-09-10T12:00:00Z",
-      "page_modified_datetime": "2026-09-10T16:56:32+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]

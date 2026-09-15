@@ -169,17 +169,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-60030",
-      "merger_name": "Tencent \u2013 Happibits",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-08-20T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-85043",
       "merger_name": "Lone Star Funds - ContiTech",
       "is_waiver": false,
@@ -200,6 +189,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-03-03T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-60030",
+      "merger_name": "Tencent \u2013 Happibits",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-20T12:00:00Z",
+      "determination_date": "2026-09-15T12:00:00Z"
     },
     {
       "merger_id": "MN-75036",
@@ -2186,13 +2186,13 @@
   "phase_1_count": 52,
   "phase_2_count": 2,
   "waiver_count": 142,
-  "active_count": 16,
+  "active_count": 15,
   "phase_duration": {
-    "average_days": 27.615384615384617,
-    "median_days": 25,
-    "average_business_days": 19.05128205128205,
-    "median_business_days": 17,
-    "completed_count": 39
+    "average_days": 27.575,
+    "median_days": 25.0,
+    "average_business_days": 19.025,
+    "median_business_days": 17.0,
+    "completed_count": 40
   },
   "waiver_duration": {
     "average_days": 20.422535211267604,
