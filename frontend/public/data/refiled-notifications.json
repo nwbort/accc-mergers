@@ -14,7 +14,9 @@
       "notification_phase_1_determination": null,
       "notification_phase_1_end_date": null,
       "notification_end_of_determination_period": "2026-10-07T12:00:00Z"
-    },
+    }
+  ],
+  "completed": [
     {
       "waiver_id": "WA-85016",
       "waiver_name": "Vets Central \u2013 Hills Veterinary Centre",
@@ -24,14 +26,12 @@
       "notification_name": "Vets Central \u2013 Hills Veterinary Centre",
       "notification_filed_date": "2026-07-01T12:00:00Z",
       "notification_status": "Assessment ceased",
-      "notification_determination": null,
-      "notification_determination_date": null,
+      "notification_determination": "Assessment ceased",
+      "notification_determination_date": "2026-08-28T12:00:00Z",
       "notification_phase_1_determination": "Referred to phase 2",
       "notification_phase_1_end_date": "2026-08-18T12:00:00Z",
       "notification_end_of_determination_period": "2027-01-12T12:00:00Z"
-    }
-  ],
-  "completed": [
+    },
     {
       "waiver_id": "WA-30010",
       "waiver_name": "MAG South Coast - Country Motor Company / Kinghorn Motors",
@@ -199,8 +199,8 @@
     }
   ],
   "count": {
-    "current": 2,
-    "completed": 11
+    "current": 1,
+    "completed": 12
   },
   "phase_1_clearance_rate": {
     "cleared": 11,

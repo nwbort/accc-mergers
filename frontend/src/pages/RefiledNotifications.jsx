@@ -133,8 +133,11 @@ function RefiledCard({ pair, showOutcome }) {
         </div>
         {(showOutcome || referred) && (
           <div className="flex-shrink-0">
+            {/* Solid form, matching the merger list's outcome badge
+                (Mergers.jsx) rather than the older tinted chip. */}
             <StatusBadge
               determination={showOutcome ? pair.notification_determination : MERGER_STATUS.REFERRED_TO_PHASE_2}
+              solid
             />
           </div>
         )}

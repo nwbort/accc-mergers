@@ -119,6 +119,23 @@ class TestCurrentVsCompleted:
         payload = refiled.generate(mergers)
         assert payload['count'] == {'current': 0, 'completed': 0}
 
+    def test_referred_notification_later_ceased_is_completed_as_ceased(self):
+        # A matter referred to Phase 2 and then abandoned ends as a ceased
+        # assessment, never a formal determination — it must not be stuck in
+        # `current` forever showing a stale "Referred to phase 2" badge.
+        ceased = _current_notification(merger_id='MN-0005', waiver_id='WA-0005')
+        ceased['status'] = 'Assessment ceased'
+        ceased['ceased_date'] = '2025-06-01T09:00:00Z'
+        ceased['phase_1_determination'] = 'Referred to phase 2'
+        ceased['phase_1_determination_date'] = '2025-03-01T09:00:00Z'
+        mergers = [_waiver(merger_id='WA-0005', notification_id='MN-0005'), ceased]
+        payload = refiled.generate(mergers)
+        assert payload['count'] == {'current': 0, 'completed': 1}
+        entry = payload['completed'][0]
+        assert entry['notification_determination'] == 'Assessment ceased'
+        assert entry['notification_determination_date'] == '2025-06-01T09:00:00Z'
+        assert entry['notification_phase_1_determination'] == 'Referred to phase 2'
+
 
 class TestPhase1ClearanceRate:
     def test_no_concluded_phase_1_reviews(self):
