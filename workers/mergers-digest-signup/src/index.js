@@ -4,6 +4,7 @@
  * Routes:
  *   POST /          — digest email signup (adds contact to Resend audience)
  *   POST /feedback  — stores feedback in Cloudflare D1
+ *   POST /event     — increments an aggregate, privacy-preserving feature-usage counter
  *
  * Required Worker secrets (set via `wrangler secret put`):
  *   RESEND_API_KEY        — Resend API key
@@ -26,6 +27,15 @@ const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/sit
 const ALLOWED_ORIGIN = "https://mergers.fyi";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// Feature-usage events the frontend is allowed to ping. Each entry is an
+// aggregate daily counter only — no identifiers of any kind are ever
+// attached. To start tracking a new feature, add its event name here and
+// have the frontend call pingFeatureEvent() (frontend/src/utils/trackEvent.js)
+// at the point of use; no schema change or new endpoint is needed.
+const ALLOWED_EVENT_TYPES = new Set([
+  "track_merger", // a merger was added to the user's tracked list
+]);
 
 // ---------------------------------------------------------------------------
 // CORS helpers
@@ -276,6 +286,50 @@ async function handleFeedback(request, env, origin) {
 }
 
 // ---------------------------------------------------------------------------
+// Handler: POST /event — bump an aggregate feature-usage counter in D1
+//
+// No Turnstile here (unlike signup/feedback): there is no user content to
+// protect against spam, just a counter, so IP rate limiting alone is enough
+// to bound abuse. Nothing identifying is ever read from the request or
+// stored — not even the IP is written to D1, it only keys the in-memory-ish
+// KV rate limit window.
+// ---------------------------------------------------------------------------
+
+async function handleEvent(request, env, origin) {
+  const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+  const withinLimit = await checkRateLimit(env, `event:${ip}`, 60, 600);
+  if (!withinLimit) {
+    return jsonResponse({ error: "Too many requests" }, 429, origin, env);
+  }
+
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return jsonResponse({ error: "Invalid request body" }, 400, origin, env);
+  }
+
+  const type = (body.type || "").trim();
+  if (!ALLOWED_EVENT_TYPES.has(type)) {
+    return jsonResponse({ error: "Unknown event type" }, 400, origin, env);
+  }
+
+  const day = new Date().toISOString().slice(0, 10);
+
+  try {
+    await env.DB.prepare(
+      `INSERT INTO feature_events (event_type, day, count) VALUES (?, ?, 1)
+       ON CONFLICT (event_type, day) DO UPDATE SET count = count + 1`
+    ).bind(type, day).run();
+  } catch (err) {
+    console.error("D1 event upsert error:", err);
+    return jsonResponse({ error: "Failed to record event" }, 500, origin, env);
+  }
+
+  return jsonResponse({ success: true }, 200, origin, env);
+}
+
+// ---------------------------------------------------------------------------
 // Main handler
 // ---------------------------------------------------------------------------
 
@@ -298,6 +352,10 @@ export default {
 
     if (path === "/feedback") {
       return handleFeedback(request, env, origin);
+    }
+
+    if (path === "/event") {
+      return handleEvent(request, env, origin);
     }
 
     return handleSubscribe(request, env, origin);

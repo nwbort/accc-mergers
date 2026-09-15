@@ -32,6 +32,13 @@ export default {
       return Response.json(results, { headers: CORS });
     }
 
+    if (url.pathname === "/events" && request.method === "GET") {
+      const { results } = await env.DB.prepare(
+        "SELECT event_type, day, count FROM feature_events ORDER BY day DESC, event_type ASC"
+      ).all();
+      return Response.json(results, { headers: CORS });
+    }
+
     return new Response("Not found", { status: 404, headers: CORS });
   },
 };

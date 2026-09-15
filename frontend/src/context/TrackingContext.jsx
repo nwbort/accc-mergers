@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { API_ENDPOINTS } from '../config';
 import { MERGER_STATUS } from '../constants/mergerStatus';
+import { FEATURE_EVENTS, pingFeatureEvent } from '../utils/trackEvent';
 
 const TrackingContext = createContext(null);
 
@@ -630,6 +631,7 @@ export function TrackingProvider({ children }) {
       if (prevSet.has(mergerId)) return prev;
       // Mark this as a newly tracked merger so we can auto-mark its events as seen
       setNewlyTrackedIds((ids) => [...ids, mergerId]);
+      pingFeatureEvent(FEATURE_EVENTS.TRACK_MERGER);
       return [...prev, mergerId];
     });
   }, []);
@@ -650,6 +652,7 @@ export function TrackingProvider({ children }) {
       }
       // Mark this as a newly tracked merger so we can auto-mark its events as seen
       setNewlyTrackedIds((ids) => [...ids, mergerId]);
+      pingFeatureEvent(FEATURE_EVENTS.TRACK_MERGER);
       return [...prev, mergerId];
     });
   }, []);

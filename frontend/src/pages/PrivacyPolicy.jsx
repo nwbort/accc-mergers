@@ -20,7 +20,7 @@ export default function PrivacyPolicy() {
         {/* Header */}
         <div className="mb-10">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Privacy Policy</h1>
-          <p className="text-sm text-gray-500">Last updated: 18 May 2026</p>
+          <p className="text-sm text-gray-500">Last updated: 15 September 2026</p>
         </div>
 
         {/* 1. Introduction */}
@@ -113,7 +113,12 @@ export default function PrivacyPolicy() {
             <li>whether you have dismissed feedback popups, so we can stop bothering you.</li>
           </ul>
           <p className="text-gray-700 leading-relaxed">
-            We do not otherwise collect or transmit your individual information.
+            We do not otherwise collect or transmit your individual information. We monitor how often certain
+            features of our website are used so we can understand where to focus our development efforts. This
+            information is collected and stored in an aggregated manner that does not allow for any
+            identification of individual users. For example, we do not collect any cookies, device IDs, IP
+            addresses, or any other identifiers. We do not use any third-party analytics or traffic tracking
+            scripts (e.g. Google Analytics).
           </p>
 
         </section>
