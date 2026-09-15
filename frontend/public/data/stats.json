@@ -3,12 +3,12 @@
   "total_waivers": 403,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 226,
-    "Under assessment": 28,
+    "Assessment completed": 227,
+    "Under assessment": 27,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 219,
+    "Approved": 220,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 17
   },
   "clearance_rate": {
-    "cleared": 224,
+    "cleared": 225,
     "not_cleared": 2,
-    "total": 226,
+    "total": 227,
     "rate": 0.991
   },
   "phase_duration": {
-    "average_days": 29.870689655172413,
-    "median_days": 26.0,
-    "average_business_days": 20.254310344827587,
-    "median_business_days": 18.0,
+    "average_days": 29.854077253218883,
+    "median_days": 26,
+    "average_business_days": 20.244635193133046,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
         "count": 48,
-        "percentage": 20.7
+        "percentage": 20.6
       },
       "day20": {
-        "count": 170,
-        "percentage": 73.3
+        "count": 171,
+        "percentage": 73.4
       },
       "day30": {
-        "count": 215,
+        "count": 216,
         "percentage": 92.7
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-75044",
+      "merger_name": "McCormick / Unilever Foods Business",
+      "determination": "Approved",
+      "determination_date": "2026-09-15T12:00:00Z",
+      "page_modified_datetime": "2026-09-15T16:46:39+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-10036",
       "merger_name": "National Dental Care \u2013 business assets comprising the Steve King Dental Group, QLD",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-40039",
-      "merger_name": "Bloomberg - Canoe Intelligence",
-      "determination": "Approved",
-      "determination_date": "2026-09-11T12:00:00Z",
-      "page_modified_datetime": "2026-09-11T16:01:54+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]
