@@ -203,6 +203,17 @@
       "mergers": {
         "acquirer": [
           {
+            "merger_id": "WA-10036",
+            "merger_name": "National Dental Care \u2013 business assets comprising the Steve King Dental Group, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-07T12:00:00Z",
+            "determination_date": "2026-09-15T12:00:00Z"
+          },
+          {
             "merger_id": "WA-40042",
             "merger_name": "National Dental Care - Grove Village Dental Centre, South Australia",
             "is_waiver": true,
@@ -261,10 +272,10 @@
         "target": [],
         "other": []
       },
-      "merger_count": 5,
+      "merger_count": 6,
       "phase_1_count": 1,
       "phase_2_count": 0,
-      "waiver_count": 4,
+      "waiver_count": 5,
       "active_count": 0,
       "phase_duration": {
         "average_days": 25.0,
@@ -274,11 +285,11 @@
         "completed_count": 1
       },
       "waiver_duration": {
-        "average_days": 17.25,
-        "median_days": 18.0,
-        "average_business_days": 12.0,
-        "median_business_days": 13.0,
-        "completed_count": 4
+        "average_days": 15.4,
+        "median_days": 15,
+        "average_business_days": 10.8,
+        "median_business_days": 11,
+        "completed_count": 5
       }
     },
     "pine-australia-holdings-pty-ltd": {

@@ -1,6 +1,6 @@
 {
   "total_mergers": 259,
-  "total_waivers": 402,
+  "total_waivers": 403,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 226,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 385,
+    "Approved": 386,
     "Not approved": 17
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.922885572139304,
-    "median_days": 20.0,
-    "average_business_days": 13.564676616915422,
-    "median_business_days": 13.0
+    "average_days": 19.893300248138956,
+    "median_days": 20,
+    "average_business_days": 13.54590570719603,
+    "median_business_days": 13
   },
   "top_industries": [
     {
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-10036",
+      "merger_name": "National Dental Care \u2013 business assets comprising the Steve King Dental Group, QLD",
+      "determination": "Approved",
+      "determination_date": "2026-09-15T12:00:00Z",
+      "page_modified_datetime": "2026-09-15T16:46:09+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-40042",
       "merger_name": "National Dental Care - Grove Village Dental Centre, South Australia",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-11T12:00:00Z",
       "page_modified_datetime": "2026-09-11T16:01:54+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-75041",
-      "merger_name": "Lockheed Martin Corporation \u2013 Ultra Maritime",
-      "determination": "Approved",
-      "determination_date": "2026-09-11T12:00:00Z",
-      "page_modified_datetime": "2026-09-11T14:57:51+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
