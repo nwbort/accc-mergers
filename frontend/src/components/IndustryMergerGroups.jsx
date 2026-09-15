@@ -1,7 +1,10 @@
 import { Link } from 'react-router';
 import StatusBadge from './StatusBadge';
+import WaiverBadge from './WaiverBadge';
 import { mergerPath } from '../utils/slug';
 import { groupMergersByPhase } from '../utils/industryGroups';
+import { getOutcomeRail } from '../constants/outcomeRail';
+import { formatDate } from '../utils/dates';
 import { CARD } from '../utils/classNames';
 
 // Per-phase accent styling. Literal class strings so Tailwind picks them up.
@@ -38,37 +41,85 @@ function IndustryMergerGroups({ mergers, variant = 'full' }) {
               </span>
             </div>
             <div className={compact ? `space-y-2 pl-3 border-l-2 ${style.line}` : 'space-y-3'}>
-              {group.mergers.map((merger) => (
-                <Link
-                  key={merger.merger_id}
-                  to={mergerPath(merger.merger_id, merger.merger_name)}
-                  className={
-                    compact
-                      ? 'block p-3 bg-white rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-sm transition-all'
-                      : `block ${CARD} hover:shadow-card-hover hover:border-gray-200 transition-all duration-200 p-5`
-                  }
-                  aria-label={`View merger details for ${merger.merger_name}`}
-                >
-                  <div className="flex items-center gap-2 min-w-0">
-                    {compact ? (
-                      <span className="text-sm font-medium text-gray-900 truncate">
-                        {merger.merger_name}
-                      </span>
-                    ) : (
-                      <h4 className="text-base font-semibold text-gray-900 truncate hover:text-primary transition-colors">
-                        {merger.merger_name}
-                      </h4>
-                    )}
-                  </div>
-                  <div className="mt-1.5">
-                    <StatusBadge
-                      status={merger.status}
-                      determination={merger.determination}
-                      hasConditions={merger.has_conditions}
+              {group.mergers.map((merger) => {
+                if (compact) {
+                  return (
+                    <Link
+                      key={merger.merger_id}
+                      to={mergerPath(merger.merger_id, merger.merger_name)}
+                      className="block p-3 bg-white rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-sm transition-all"
+                      aria-label={`View merger details for ${merger.merger_name}`}
+                    >
+                      <div className="flex items-center gap-2 min-w-0">
+                        <span className="text-sm font-medium text-gray-900 truncate">
+                          {merger.merger_name}
+                        </span>
+                      </div>
+                      <div className="mt-1.5">
+                        <StatusBadge
+                          status={merger.status}
+                          determination={merger.determination}
+                          hasConditions={merger.has_conditions}
+                        />
+                      </div>
+                    </Link>
+                  );
+                }
+
+                // Mirrors the merger list card (Mergers.jsx): a solid outcome
+                // badge leading the title, with a colour-matched rail down the
+                // left edge, rather than the tinted chip this page used to show.
+                const railColor = getOutcomeRail({
+                  status: merger.status,
+                  determination: merger.determination,
+                });
+                return (
+                  <Link
+                    key={merger.merger_id}
+                    to={mergerPath(merger.merger_id, merger.merger_name)}
+                    className={`relative overflow-hidden block ${CARD} hover:shadow-card-hover hover:border-gray-200 transition-all duration-200 p-5 pl-6`}
+                    aria-label={`View merger details for ${merger.merger_name}`}
+                  >
+                    <span
+                      className={`absolute inset-y-0 left-0 w-1.5 ${railColor}`}
+                      aria-hidden="true"
                     />
-                  </div>
-                </Link>
-              ))}
+                    <div className="flex flex-wrap items-center gap-1.5 mb-2">
+                      <StatusBadge
+                        status={merger.status}
+                        determination={merger.determination}
+                        hasConditions={merger.has_conditions}
+                        solid
+                      />
+                      {merger.is_waiver && <WaiverBadge />}
+                    </div>
+                    <h4 className="text-base font-semibold text-gray-900 truncate hover:text-primary transition-colors">
+                      {merger.merger_name}
+                    </h4>
+                    <p className="text-xs text-gray-500 mt-1">{merger.merger_id}</p>
+                    {(merger.notification_date || merger.determination_date) && (
+                      <div className="mt-3 grid grid-cols-2 gap-4">
+                        <div>
+                          <p className="text-xs text-gray-500 mb-0.5">
+                            {merger.is_waiver ? 'Application date' : 'Notification date'}
+                          </p>
+                          <p className="text-sm font-medium text-gray-700">
+                            {formatDate(merger.notification_date)}
+                          </p>
+                        </div>
+                        {merger.determination_date && (
+                          <div>
+                            <p className="text-xs text-gray-500 mb-0.5">Determination date</p>
+                            <p className="text-sm font-medium text-gray-700">
+                              {formatDate(merger.determination_date)}
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </Link>
+                );
+              })}
             </div>
           </section>
         );

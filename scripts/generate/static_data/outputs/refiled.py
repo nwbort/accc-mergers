@@ -18,7 +18,26 @@ from ..filters import filter_notifications
 CLEARED_DETERMINATIONS = merger_status.CLEARED_DETERMINATIONS
 
 
+def _notification_outcome(notification: dict) -> tuple:
+    """Return ``(determination, date)`` for the re-filed notification itself.
+
+    A ceased assessment ends the review without a formal determination —
+    ``accc_determination`` stays empty, same as ``enrichment.phase_2_outcome``
+    and stats.py's ceased-assessment handling — so a matter referred to Phase 2
+    and later ceased would otherwise sit in ``current`` forever, its badge
+    permanently showing the stale "Referred to phase 2" leg instead of the
+    cessation that actually ended it.
+    """
+    determination = notification.get('accc_determination')
+    determination_date = notification.get('determination_publication_date')
+    if not determination and notification.get('status') == merger_status.ASSESSMENT_CEASED:
+        determination = merger_status.ASSESSMENT_CEASED
+        determination_date = notification.get('ceased_date')
+    return determination, determination_date
+
+
 def _entry(waiver: dict, notification: dict) -> dict:
+    determination, determination_date = _notification_outcome(notification)
     return {
         'waiver_id': waiver.get('merger_id'),
         'waiver_name': waiver.get('merger_name'),
@@ -28,8 +47,8 @@ def _entry(waiver: dict, notification: dict) -> dict:
         'notification_name': notification.get('merger_name'),
         'notification_filed_date': notification.get('effective_notification_datetime'),
         'notification_status': notification.get('status'),
-        'notification_determination': notification.get('accc_determination'),
-        'notification_determination_date': notification.get('determination_publication_date'),
+        'notification_determination': determination,
+        'notification_determination_date': determination_date,
         # How Phase 1 ended and when: 'Referred to phase 2' plus the referral
         # date for a matter sent to Phase 2, the Phase 1 determination
         # otherwise, both None while Phase 1 is still running. The timeline
