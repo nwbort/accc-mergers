@@ -1,6 +1,6 @@
 {
   "total_mergers": 259,
-  "total_waivers": 401,
+  "total_waivers": 402,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 226,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 384,
+    "Approved": 385,
     "Not approved": 17
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.920199501246884,
-    "median_days": 20,
-    "average_business_days": 13.561097256857856,
-    "median_business_days": 13
+    "average_days": 19.922885572139304,
+    "median_days": 20.0,
+    "average_business_days": 13.564676616915422,
+    "median_business_days": 13.0
   },
   "top_industries": [
     {
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-40042",
+      "merger_name": "National Dental Care - Grove Village Dental Centre, South Australia",
+      "determination": "Approved",
+      "determination_date": "2026-09-15T12:00:00Z",
+      "page_modified_datetime": "2026-09-15T16:45:13+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-55035",
       "merger_name": "Itochu Corporation \u2013 TC Skyward Aviation (Aviation Capital Group)",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-11T12:00:00Z",
       "page_modified_datetime": "2026-09-11T14:57:51+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-80035",
-      "merger_name": "Saint-Gobain - Xypex",
-      "determination": "Approved",
-      "determination_date": "2026-09-11T12:00:00Z",
-      "page_modified_datetime": "2026-09-11T11:53:38+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",

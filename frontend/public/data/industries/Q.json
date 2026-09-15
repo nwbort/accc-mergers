@@ -15,7 +15,7 @@
       "code": "85",
       "name": "Medical and Other Health Care Services",
       "level": "subdivision",
-      "merger_count": 28
+      "merger_count": 29
     },
     {
       "code": "86",
@@ -41,6 +41,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-09-11T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-40042",
+      "merger_name": "National Dental Care - Grove Village Dental Centre, South Australia",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-25T12:00:00Z",
+      "determination_date": "2026-09-15T12:00:00Z"
     },
     {
       "merger_id": "WA-01120",
@@ -582,10 +593,10 @@
       "determination_date": "2026-02-10T12:00:00Z"
     }
   ],
-  "count": 50,
+  "count": 51,
   "phase_1_count": 20,
   "phase_2_count": 0,
-  "waiver_count": 30,
+  "waiver_count": 31,
   "active_count": 1,
   "phase_duration": {
     "average_days": 30.526315789473685,
@@ -595,10 +606,10 @@
     "completed_count": 19
   },
   "waiver_duration": {
-    "average_days": 18.433333333333334,
-    "median_days": 17.5,
-    "average_business_days": 12.6,
-    "median_business_days": 12.0,
-    "completed_count": 30
+    "average_days": 18.516129032258064,
+    "median_days": 19,
+    "average_business_days": 12.67741935483871,
+    "median_business_days": 13,
+    "completed_count": 31
   }
 }
