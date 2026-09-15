@@ -42,30 +42,6 @@ function IndustryMergerGroups({ mergers, variant = 'full' }) {
             </div>
             <div className={compact ? `space-y-2 pl-3 border-l-2 ${style.line}` : 'space-y-3'}>
               {group.mergers.map((merger) => {
-                if (compact) {
-                  return (
-                    <Link
-                      key={merger.merger_id}
-                      to={mergerPath(merger.merger_id, merger.merger_name)}
-                      className="block p-3 bg-white rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-sm transition-all"
-                      aria-label={`View merger details for ${merger.merger_name}`}
-                    >
-                      <div className="flex items-center gap-2 min-w-0">
-                        <span className="text-sm font-medium text-gray-900 truncate">
-                          {merger.merger_name}
-                        </span>
-                      </div>
-                      <div className="mt-1.5">
-                        <StatusBadge
-                          status={merger.status}
-                          determination={merger.determination}
-                          hasConditions={merger.has_conditions}
-                        />
-                      </div>
-                    </Link>
-                  );
-                }
-
                 // Mirrors the merger list card (Mergers.jsx): a solid outcome
                 // badge leading the title, with a colour-matched rail down the
                 // left edge, rather than the tinted chip this page used to show.
@@ -73,6 +49,37 @@ function IndustryMergerGroups({ mergers, variant = 'full' }) {
                   status: merger.status,
                   determination: merger.determination,
                 });
+
+                if (compact) {
+                  return (
+                    <Link
+                      key={merger.merger_id}
+                      to={mergerPath(merger.merger_id, merger.merger_name)}
+                      className="relative overflow-hidden block p-3 pl-4 bg-white rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-sm transition-all"
+                      aria-label={`View merger details for ${merger.merger_name}`}
+                    >
+                      <span
+                        className={`absolute inset-y-0 left-0 w-1 ${railColor}`}
+                        aria-hidden="true"
+                      />
+                      <div className="flex items-center gap-2 min-w-0">
+                        <span className="text-sm font-medium text-gray-900 truncate">
+                          {merger.merger_name}
+                        </span>
+                      </div>
+                      <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
+                        <StatusBadge
+                          status={merger.status}
+                          determination={merger.determination}
+                          hasConditions={merger.has_conditions}
+                          solid
+                        />
+                        {merger.is_waiver && <WaiverBadge />}
+                      </div>
+                    </Link>
+                  );
+                }
+
                 return (
                   <Link
                     key={merger.merger_id}
