@@ -19,7 +19,7 @@
       "code": "371",
       "name": "Textile, Clothing and Footwear Wholesaling",
       "level": "group",
-      "merger_count": 2
+      "merger_count": 3
     },
     {
       "code": "372",
@@ -78,6 +78,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-08-19T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-55035",
+      "merger_name": "Itochu Corporation \u2013 TC Skyward Aviation (Aviation Capital Group)",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-21T12:00:00Z",
+      "determination_date": "2026-09-15T12:00:00Z"
     },
     {
       "merger_id": "MN-80027",
@@ -289,10 +300,10 @@
       "determination_date": "2026-02-04T12:00:00Z"
     }
   ],
-  "count": 23,
+  "count": 24,
   "phase_1_count": 15,
   "phase_2_count": 0,
-  "waiver_count": 8,
+  "waiver_count": 9,
   "active_count": 4,
   "phase_duration": {
     "average_days": 26.727272727272727,
@@ -302,10 +313,10 @@
     "completed_count": 11
   },
   "waiver_duration": {
-    "average_days": 17.0,
-    "median_days": 13.5,
-    "average_business_days": 11.625,
-    "median_business_days": 9.0,
-    "completed_count": 8
+    "average_days": 17.88888888888889,
+    "median_days": 14,
+    "average_business_days": 12.222222222222221,
+    "median_business_days": 10,
+    "completed_count": 9
   }
 }

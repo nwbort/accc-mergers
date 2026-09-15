@@ -38,6 +38,17 @@
       "determination_date": null
     },
     {
+      "merger_id": "WA-55035",
+      "merger_name": "Itochu Corporation \u2013 TC Skyward Aviation (Aviation Capital Group)",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-21T12:00:00Z",
+      "determination_date": "2026-09-15T12:00:00Z"
+    },
+    {
       "merger_id": "WA-45007",
       "merger_name": "Henkel \u2013 Stahl",
       "is_waiver": true,
@@ -49,17 +60,17 @@
       "determination_date": "2026-04-07T12:00:00Z"
     }
   ],
-  "count": 2,
+  "count": 3,
   "phase_1_count": 1,
   "phase_2_count": 0,
-  "waiver_count": 1,
+  "waiver_count": 2,
   "active_count": 1,
   "phase_duration": null,
   "waiver_duration": {
-    "average_days": 20.0,
-    "median_days": 20,
-    "average_business_days": 12.0,
-    "median_business_days": 12,
-    "completed_count": 1
+    "average_days": 22.5,
+    "median_days": 22.5,
+    "average_business_days": 14.5,
+    "median_business_days": 14.5,
+    "completed_count": 2
   }
 }

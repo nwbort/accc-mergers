@@ -1,6 +1,6 @@
 {
   "total_mergers": 259,
-  "total_waivers": 400,
+  "total_waivers": 401,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 226,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 383,
+    "Approved": 384,
     "Not approved": 17
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.9075,
-    "median_days": 20.0,
-    "average_business_days": 13.5525,
-    "median_business_days": 13.0
+    "average_days": 19.920199501246884,
+    "median_days": 20,
+    "average_business_days": 13.561097256857856,
+    "median_business_days": 13
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 134
+      "count": 135
     },
     {
       "name": "Computer System Design and Related Services",
@@ -64,7 +64,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 68
+      "count": 69
     },
     {
       "name": "Software Publishing",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-55035",
+      "merger_name": "Itochu Corporation \u2013 TC Skyward Aviation (Aviation Capital Group)",
+      "determination": "Approved",
+      "determination_date": "2026-09-15T12:00:00Z",
+      "page_modified_datetime": "2026-09-15T16:44:00+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-60030",
       "merger_name": "Tencent \u2013 Happibits",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-70037",
-      "merger_name": "EQT Fund Management \u2013 Melbourne Storm",
-      "determination": "Approved",
-      "determination_date": "2026-09-10T12:00:00Z",
-      "page_modified_datetime": "2026-09-10T17:10:30+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]

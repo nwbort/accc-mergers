@@ -304,6 +304,47 @@
         "completed_count": 1
       },
       "waiver_duration": null
+    },
+    "tc-skyward-aviation-u-s-inc": {
+      "id": "tc-skyward-aviation-u-s-inc",
+      "canonical_name": "TC Skyward Aviation U.S., Inc.",
+      "members": [
+        {
+          "name": "TC Skyward Aviation U.S., Inc.",
+          "identifier": "Delaware file number 5603301 / EIN 472068464",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-55035",
+            "merger_name": "Itochu Corporation \u2013 TC Skyward Aviation (Aviation Capital Group)",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-21T12:00:00Z",
+            "determination_date": "2026-09-15T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 17.0,
+        "median_business_days": 17,
+        "completed_count": 1
+      }
     }
   }
 }

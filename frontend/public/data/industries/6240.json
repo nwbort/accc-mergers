@@ -170,6 +170,17 @@
       "determination_date": "2026-09-15T12:00:00Z"
     },
     {
+      "merger_id": "WA-55035",
+      "merger_name": "Itochu Corporation \u2013 TC Skyward Aviation (Aviation Capital Group)",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-21T12:00:00Z",
+      "determination_date": "2026-09-15T12:00:00Z"
+    },
+    {
       "merger_id": "MN-10030",
       "merger_name": "Novonesis \u2013 Microbiogen",
       "is_waiver": false,
@@ -1501,10 +1512,10 @@
       "determination_date": "2026-01-30T12:00:00Z"
     }
   ],
-  "count": 134,
+  "count": 135,
   "phase_1_count": 34,
   "phase_2_count": 0,
-  "waiver_count": 100,
+  "waiver_count": 101,
   "active_count": 11,
   "phase_duration": {
     "average_days": 25.26086956521739,
@@ -1514,10 +1525,10 @@
     "completed_count": 23
   },
   "waiver_duration": {
-    "average_days": 20.44,
-    "median_days": 20.0,
-    "average_business_days": 14.02,
-    "median_business_days": 14.0,
-    "completed_count": 100
+    "average_days": 20.485148514851485,
+    "median_days": 20,
+    "average_business_days": 14.049504950495049,
+    "median_business_days": 14,
+    "completed_count": 101
   }
 }
