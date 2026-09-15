@@ -112,16 +112,13 @@ export default function PrivacyPolicy() {
             <li>the list of mergers on the homepage that you have seen, so we can attach &lsquo;new&rsquo; tags; and</li>
             <li>whether you have dismissed feedback popups, so we can stop bothering you.</li>
           </ul>
-          <p className="text-gray-700 leading-relaxed mb-3">
-            We do not otherwise collect or transmit your individual information. We do keep track of how often
-            certain features are used &ndash; for example, how many times per day people track a merger &ndash;
-            so we know which parts of the site are worth improving. This is done by sending a bare event name
-            (nothing else) to our server, which only ever increments a daily total for that event. No cookie,
-            device ID, IP address or any other identifier is stored alongside it, so this data can never be
-            traced back to you or linked to your other activity on the site.
-          </p>
           <p className="text-gray-700 leading-relaxed">
-            We do not use any third-party analytics or tracking scripts (e.g. Google Analytics).
+            We do not otherwise collect or transmit your individual information. We monitor how often certain
+            features of our website are used so we can understand where to focus our development efforts. This
+            information is collected and stored in an aggregated manner that does not allow for any
+            identification of individual users. For example, we do not collect any cookies, device IDs, IP
+            addresses, or any other identifiers. We do not use any third-party analytics or traffic tracking
+            scripts (e.g. Google Analytics).
           </p>
 
         </section>
