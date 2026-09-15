@@ -27,6 +27,17 @@
   "children": [],
   "mergers": [
     {
+      "merger_id": "MN-55037",
+      "merger_name": "Covetrus \u2014 MWI",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-14T12:00:00Z",
+      "determination_date": null
+    },
+    {
       "merger_id": "MN-60030",
       "merger_name": "Tencent \u2013 Happibits",
       "is_waiver": false,
@@ -797,11 +808,11 @@
       "determination_date": "2026-01-20T12:00:00Z"
     }
   ],
-  "count": 70,
-  "phase_1_count": 27,
+  "count": 71,
+  "phase_1_count": 28,
   "phase_2_count": 0,
   "waiver_count": 43,
-  "active_count": 1,
+  "active_count": 2,
   "phase_duration": {
     "average_days": 28.53846153846154,
     "median_days": 27.0,

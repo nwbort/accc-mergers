@@ -1,10 +1,10 @@
 {
-  "total_mergers": 258,
+  "total_mergers": 259,
   "total_waivers": 400,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 224,
-    "Under assessment": 29,
+    "Under assessment": 30,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -56,11 +56,11 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 133
+      "count": 134
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 70
+      "count": 71
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-55037",
+      "merger_name": "Covetrus \u2014 MWI",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-09-14T12:00:00Z",
+      "page_modified_datetime": "2026-09-15T12:11:03+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-75045",
       "merger_name": "EQT Fund Management - Intertek",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-09-08T12:00:00Z",
       "page_modified_datetime": "2026-09-09T14:24:25+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-75043",
-      "merger_name": "Hyne Pallets - Advance Pallets",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-09-07T12:00:00Z",
-      "page_modified_datetime": "2026-09-08T16:05:25+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

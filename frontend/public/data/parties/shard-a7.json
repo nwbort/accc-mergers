@@ -517,6 +517,11 @@
       "members": [
         {
           "name": "TPG Inc.",
+          "identifier": "EIN \u2013 872063362",
+          "identifier_type": null
+        },
+        {
+          "name": "TPG Inc.",
           "identifier": "SEC  872063362",
           "identifier_type": null
         },
@@ -530,6 +535,17 @@
         "acquirer": [],
         "target": [],
         "other": [
+          {
+            "merger_id": "MN-55037",
+            "merger_name": "Covetrus \u2014 MWI",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-14T12:00:00Z",
+            "determination_date": null
+          },
           {
             "merger_id": "WA-40016",
             "merger_name": "Creative Planning \u2013 MASECO",
@@ -565,11 +581,11 @@
           }
         ]
       },
-      "merger_count": 3,
-      "phase_1_count": 0,
+      "merger_count": 4,
+      "phase_1_count": 1,
       "phase_2_count": 0,
       "waiver_count": 3,
-      "active_count": 0,
+      "active_count": 1,
       "phase_duration": null,
       "waiver_duration": {
         "average_days": 12.333333333333334,

@@ -43,6 +43,41 @@
         "completed_count": 1
       }
     },
+    "cvet-topco-l-p": {
+      "id": "cvet-topco-l-p",
+      "canonical_name": "CVET Topco, L.P.",
+      "members": [
+        {
+          "name": "CVET Topco, L.P.",
+          "identifier": null,
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-55037",
+            "merger_name": "Covetrus \u2014 MWI",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-14T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "idemitsu-europe-ltd": {
       "id": "idemitsu-europe-ltd",
       "canonical_name": "Idemitsu Europe Ltd.",

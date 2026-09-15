@@ -25,10 +25,21 @@
       "code": "349",
       "name": "Other Machinery and Equipment Wholesaling",
       "level": "group",
-      "merger_count": 26
+      "merger_count": 27
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-55037",
+      "merger_name": "Covetrus \u2014 MWI",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-14T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-75045",
       "merger_name": "EQT Fund Management - Intertek",
@@ -338,11 +349,11 @@
       "determination_date": null
     }
   ],
-  "count": 28,
-  "phase_1_count": 17,
+  "count": 29,
+  "phase_1_count": 18,
   "phase_2_count": 1,
   "waiver_count": 10,
-  "active_count": 3,
+  "active_count": 4,
   "phase_duration": {
     "average_days": 35.333333333333336,
     "median_days": 33,

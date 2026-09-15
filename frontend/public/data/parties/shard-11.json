@@ -166,6 +166,41 @@
         "completed_count": 1
       }
     },
+    "covetrus-inc": {
+      "id": "covetrus-inc",
+      "canonical_name": "Covetrus, Inc.",
+      "members": [
+        {
+          "name": "Covetrus, Inc.",
+          "identifier": "EIN  831448706",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-55037",
+            "merger_name": "Covetrus \u2014 MWI",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-14T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "ebos-group-limited": {
       "id": "ebos-group-limited",
       "canonical_name": "EBOS Group Limited",

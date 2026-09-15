@@ -37,10 +37,21 @@
       "code": "624",
       "name": "Financial Asset Investing",
       "level": "group",
-      "merger_count": 133
+      "merger_count": 134
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-55037",
+      "merger_name": "Covetrus \u2014 MWI",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-14T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-75045",
       "merger_name": "EQT Fund Management - Intertek",
@@ -1593,11 +1604,11 @@
       "determination_date": null
     }
   ],
-  "count": 141,
-  "phase_1_count": 34,
+  "count": 142,
+  "phase_1_count": 35,
   "phase_2_count": 1,
   "waiver_count": 106,
-  "active_count": 12,
+  "active_count": 13,
   "phase_duration": {
     "average_days": 28.08695652173913,
     "median_days": 25,
