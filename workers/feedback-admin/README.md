@@ -1,17 +1,19 @@
 # `feedback-admin`
 
-Tiny private admin viewer for feedback submissions captured by the public
-[`mergers-digest-signup`](../mergers-digest-signup/) Worker (`POST /feedback`).
+Tiny private admin viewer for feedback submissions and feature-usage
+counters captured by the public
+[`mergers-digest-signup`](../mergers-digest-signup/) Worker (`POST /feedback`,
+`POST /event`).
 
 Two pieces:
 
-- `src/index.js` — Cloudflare Worker that exposes `GET /feedback`, gated
-  behind an `x-secret` header, returning rows from the shared
-  `mergers-feedback` D1 database.
+- `src/index.js` — Cloudflare Worker that exposes `GET /feedback` and
+  `GET /events`, both gated behind an `x-secret` header, returning rows
+  from the shared `mergers-feedback` D1 database.
 - `ui/index.html` + `ui/app.js` — standalone single-page UI that prompts
-  for the worker URL and the secret, then renders submissions in a table.
-  It is *not* served by the Worker; open it locally or host it anywhere
-  static.
+  for the worker URL and the secret, then renders feedback submissions and
+  aggregate feature-usage counts in two tables. It is *not* served by the
+  Worker; open it locally or host it anywhere static.
 
 ## Deploy
 

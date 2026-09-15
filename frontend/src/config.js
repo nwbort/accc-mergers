@@ -6,9 +6,11 @@
 // the Python generator have to agree on the bucketing rule exactly.
 import { partyShardName } from './utils/shard';
 
-// Cloudflare Worker endpoints — both served from signup.mergers.fyi
+// Cloudflare Worker endpoints — all served from signup.mergers.fyi
 export const SUBSCRIBE_ENDPOINT = "https://signup.mergers.fyi";
 export const FEEDBACK_ENDPOINT = "https://signup.mergers.fyi/feedback";
+// Privacy-preserving feature-usage ping — see frontend/src/utils/trackEvent.js
+export const EVENT_ENDPOINT = "https://signup.mergers.fyi/event";
 
 // Cloudflare Turnstile site key (public — safe to commit).
 // 1. Go to Cloudflare Dashboard > Turnstile > Add site

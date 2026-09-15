@@ -81,6 +81,54 @@ async function load() {
   }
 }
 
-$('btn-load').addEventListener('click', load);
+async function loadEvents() {
+  const base = $('url').value.trim().replace(/\/$/, '');
+  const secret = $('secret').value.trim();
+  if (!base || !secret) return;
 
-if (savedUrl && savedSecret) load();
+  $('events-err').style.display = 'none';
+  $('events-content').innerHTML = '';
+
+  try {
+    const res = await fetch(base + '/events', {
+      headers: { 'x-secret': secret }
+    });
+    if (res.status === 403) throw new Error('Forbidden — check your secret');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const rows = await res.json();
+
+    if (!rows.length) {
+      $('events-content').innerHTML = '<p class="msg">No feature-usage events recorded yet.</p>';
+      return;
+    }
+
+    $('events-content').innerHTML = `
+      <table>
+        <thead><tr>
+          <th>Event</th>
+          <th style="width:120px">Day</th>
+          <th style="width:90px;text-align:right">Count</th>
+        </tr></thead>
+        <tbody>${rows.map(r => `
+          <tr>
+            <td>${escapeHtml(r.event_type)}</td>
+            <td class="muted mono">${escapeHtml(r.day)}</td>
+            <td class="mono" style="text-align:right">${escapeHtml(r.count)}</td>
+          </tr>`).join('')}
+        </tbody>
+      </table>`;
+  } catch (e) {
+    $('events-err').textContent = 'Error: ' + e.message;
+    $('events-err').style.display = '';
+  }
+}
+
+$('btn-load').addEventListener('click', () => {
+  load();
+  loadEvents();
+});
+
+if (savedUrl && savedSecret) {
+  load();
+  loadEvents();
+}
