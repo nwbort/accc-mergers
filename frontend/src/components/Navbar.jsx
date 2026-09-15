@@ -207,7 +207,7 @@ function Navbar({ onOpenSearch }) {
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-2.5 group">
               <span className="text-lg font-bold text-primary tracking-tight">
-                {navMode === 'tiny' ? 'amt' : 'australian merger tracker'}
+                australian merger tracker
               </span>
             </Link>
 
