@@ -46991,13 +46991,15 @@
     {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/herron-todd-white-%E2%80%93-cja-lee-property-valuers-0",
       "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-75036",
       "effective_notification_datetime": "2026-08-25T12:00:00Z",
       "original_notification_datetime": "2026-08-25T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-10-07T12:00:00Z",
-      "page_modified_datetime": "2026-08-26T11:46:39+10:00",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-09-15T11:25:45+10:00",
       "consultation_response_due_date": "2026-09-02T12:00:00Z",
       "acquirers": [
         {
@@ -47021,6 +47023,15 @@
           }
         },
         {
+          "name": "T.J. Shaw Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "115 022 930",
+          "party_page": {
+            "id": "t-j-shaw-pty-ltd",
+            "name": "T.J. Shaw Pty Ltd"
+          }
+        },
+        {
           "name": "CJA LEE PROPERTY PARTNERSHIP",
           "identifier_type": "ABN",
           "identifier": "53 968 532 362",
@@ -47037,15 +47048,6 @@
             "id": "cja-lee-property-pty-ltd",
             "name": "CJA Lee Property Pty Ltd"
           }
-        },
-        {
-          "name": "T.J. Shaw Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "115 022 930",
-          "party_page": {
-            "id": "t-j-shaw-pty-ltd",
-            "name": "T.J. Shaw Pty Ltd"
-          }
         }
       ],
       "other_parties": [
@@ -47056,15 +47058,6 @@
           "party_page": {
             "id": "herron-todd-white-holdings-pty-ltd",
             "name": "Herron Todd White (Holdings) Pty Ltd"
-          }
-        },
-        {
-          "name": "HERRON TODD WHITE (FINCO) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "98 665 809 325",
-          "party_page": {
-            "id": "herron-todd-white-finco-pty-ltd",
-            "name": "Herron Todd White (Finco) Pty Ltd"
           }
         }
       ],
@@ -47078,7 +47071,7 @@
           "name": "Real Estate Services"
         }
       ],
-      "merger_description": "Herron Todd White (Bidco) Pty Ltd (**HTW Bidco**) proposes to acquire 100% of the shares in CJA Lee Property Pty Ltd (**CJA Lee Property**) from C McMahon Enterprises Pty Ltd as trustee for the C&N McMahon Family Trust (**C McMahon Enterprises**) (50%) and T.J. Shaw Pty Ltd as trustee for the T.J. Shaw Family Trust (**T.J. Shaw**) (50%) (the **Acquisition**).\n\n  \n\nHerron Todd White (Holdings) Pty Ltd (**HTW Holdings**) is the ultimate parent company of HTW Bidco. HTW Holdings and its fully owned subsidiaries (**HTW Group**) provide property valuation and property advisory services in Australia. HTW Group primarily provides residential, commercial and agribusiness property valuation services to Australian authorised deposit-taking institutions. Relevant to the Acquisition, HTW Group provides these services in Victoria, including in south-east Victoria.\u00a0  \n\nHTW Group is majority-owned by funds managed by QPE No. 7 Management Pty Ltd, an entity within the Quadrant Private Equity group (**QPE**). Apart from HTW Group, QPE is not involved in the supply of property valuation and property advisory services in Australia.\n\n  \n\nCJA Lee Property is an independent advisory firm that provides property valuations, property advisory, and energy advisory services in the south-east Victoria area. C McMahon Enterprises and T.J. Shaw are holding companies of CJA Lee Property and, apart from CJA Lee Property, do not operate any other businesses.",
+      "merger_description": "Herron Todd White (Bidco) Pty Ltd (**HTW Bidco**) proposes to acquire 100% of the shares in CJA Lee Property Pty Ltd (**CJA Lee Property**) from C McMahon Enterprises Pty Ltd as trustee for the C&N McMahon Family Trust (**C McMahon Enterprises**) (50%) and T.J. Shaw Pty Ltd as trustee for the T.J. Shaw Family Trust (**T.J. Shaw**) (50%) (the **Acquisition**).\n\nHerron Todd White (Holdings) Pty Ltd (**HTW Holdings**) is the ultimate parent company of HTW Bidco. HTW Holdings and its fully owned subsidiaries (**HTW Group**) provide property valuation and property advisory services in Australia. HTW Group primarily provides residential, commercial and agribusiness property valuation services to Australian authorised deposit-taking institutions. Relevant to the Acquisition, HTW Group provides these services in Victoria, including in south-east Victoria.\n\nHTW Group is majority-owned by funds managed by QPE No. 7 Management Pty Ltd, an entity within the Quadrant Private Equity group (**QPE**). Apart from HTW Group, QPE is not involved in the supply of property valuation and property advisory services in Australia.\n\nCJA Lee Property is an independent advisory firm that provides property valuations, property advisory, and energy advisory services in the south-east Victoria area. C McMahon Enterprises and T.J. Shaw are holding companies of CJA Lee Property and, apart from CJA Lee Property, do not operate any other businesses.",
       "events": [
         {
           "date": "2026-08-26T12:00:00Z",
@@ -47094,13 +47087,49 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-09-15T12:00:00Z",
+          "title": "Herron Todd White \u2013 CJA Lee Property Valuers - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Herron%20Todd%20White%20%E2%80%93%20CJA%20Lee%20Property%20Valuers%20-%20Determination%20-%20September%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Herron Todd White (Bidco) Pty Ltd (HTW Bidco) proposes to acquire\n100% of the shares in CJA Lee Property Pty Ltd (CJA Lee Property)\nfrom C McMahon Enterprises Pty Ltd as trustee for the C&N\nMcMahon Family Trust (C McMahon Enterprises) (50%) and T.J.\nShaw Pty Ltd as trustee for the T.J. Shaw Family Trust (T.J. Shaw)\n(50%) (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, HTW Bidco, is owned by Herron Todd White (Holdings)\nPty Ltd (HTW Holdings). HTW Holdings and its fully owned\nsubsidiaries (HTW Group) supply property valuation and property\nadvisory services in Australia. HTW Group primarily supplies\nresidential, commercial and agribusiness property valuation services\nto Australian authorised deposit-taking institutions. Relevant to the\nAcquisition, HTW Group supplies these services in Victoria, including\nin south-east Victoria.\nHTW Group is majority-owned by funds managed by QPE No. 7\nManagement Pty Ltd, an entity within the Quadrant Private Equity\ngroup (QPE). Apart from HTW Group, QPE is not involved in the\nsupply of property valuation and property advisory services in\nAustralia.\nThe target, CJA Lee Property, is an independent advisory firm that\nsupplies property valuations, property advisory, and energy advisory\nservices in the south-east Victoria area. C McMahon Enterprises and\nT.J. Shaw are holding companies of CJA Lee Property and, apart\nfrom CJA Lee Property, do not operate any other businesses."
+            },
+            {
+              "item": "Overlap between the\nParties",
+              "details": "HTW Group and CJA Lee Property (together, the Parties) overlap in\nthe supply of physical property valuation and advisory services in\nsouth-east Victoria."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, information from third parties, and publicly\navailable information.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition would be unlikely to have\nthe effect of substantially lessening competition in any market.\nIn reaching its decision, and based on the material before it, the\nACCC finds that post-Acquisition, the merged firm would be\nconstrained by many alternative suppliers of physical property\nvaluation services in south-east Victoria."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-75036/Herron Todd White \u2013 CJA Lee Property Valuers - Determination - September 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
+      "determination_publication_date": "2026-09-15T12:00:00Z",
       "is_waiver": false,
-      "accc_determination": null,
       "has_conditions": false,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-09-15T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,

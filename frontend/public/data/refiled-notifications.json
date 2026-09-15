@@ -1,5 +1,6 @@
 {
-  "current": [
+  "current": [],
+  "completed": [
     {
       "waiver_id": "WA-20015",
       "waiver_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
@@ -8,15 +9,13 @@
       "notification_id": "MN-75036",
       "notification_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
       "notification_filed_date": "2026-08-25T12:00:00Z",
-      "notification_status": "Under assessment",
-      "notification_determination": null,
-      "notification_determination_date": null,
-      "notification_phase_1_determination": null,
-      "notification_phase_1_end_date": null,
+      "notification_status": "Assessment completed",
+      "notification_determination": "Approved",
+      "notification_determination_date": "2026-09-15T12:00:00Z",
+      "notification_phase_1_determination": "Approved",
+      "notification_phase_1_end_date": "2026-09-15T12:00:00Z",
       "notification_end_of_determination_period": "2026-10-07T12:00:00Z"
-    }
-  ],
-  "completed": [
+    },
     {
       "waiver_id": "WA-85016",
       "waiver_name": "Vets Central \u2013 Hills Veterinary Centre",
@@ -199,14 +198,14 @@
     }
   ],
   "count": {
-    "current": 1,
-    "completed": 12
+    "current": 0,
+    "completed": 13
   },
   "phase_1_clearance_rate": {
-    "cleared": 11,
+    "cleared": 12,
     "referred": 1,
-    "total": 12,
-    "rate": 0.917
+    "total": 13,
+    "rate": 0.923
   },
   "straight_phase_1_clearance_rate": {
     "cleared": 210,
@@ -215,11 +214,11 @@
     "rate": 0.963
   },
   "phase_duration": {
-    "average_days": 29.916666666666668,
-    "median_days": 27.5,
-    "average_business_days": 20.416666666666668,
-    "median_business_days": 18.0,
-    "completed_count": 12
+    "average_days": 29.23076923076923,
+    "median_days": 27,
+    "average_business_days": 20.0,
+    "median_business_days": 18,
+    "completed_count": 13
   },
   "straight_phase_duration": {
     "average_days": 29.926605504587155,
