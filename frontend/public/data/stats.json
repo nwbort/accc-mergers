@@ -1,6 +1,6 @@
 {
   "total_mergers": 259,
-  "total_waivers": 403,
+  "total_waivers": 404,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 227,
@@ -19,7 +19,7 @@
   },
   "by_waiver_determination": {
     "Approved": 386,
-    "Not approved": 17
+    "Not approved": 18
   },
   "clearance_rate": {
     "cleared": 225,
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.893300248138956,
-    "median_days": 20,
-    "average_business_days": 13.54590570719603,
-    "median_business_days": 13
+    "average_days": 19.90841584158416,
+    "median_days": 20.0,
+    "average_business_days": 13.556930693069306,
+    "median_business_days": 13.0
   },
   "top_industries": [
     {
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-60042",
+      "merger_name": "Kirin \u2013 Jamieson Wellness",
+      "determination": "Not approved",
+      "determination_date": "2026-09-15T12:00:00Z",
+      "page_modified_datetime": "2026-09-15T17:16:01+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-75044",
       "merger_name": "McCormick / Unilever Foods Business",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-11T12:00:00Z",
       "page_modified_datetime": "2026-09-11T16:47:58+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-85045",
-      "merger_name": "Pacific Investment Management Company \u2013 Ingenico",
-      "determination": "Approved",
-      "determination_date": "2026-09-11T12:00:00Z",
-      "page_modified_datetime": "2026-09-11T16:45:12+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

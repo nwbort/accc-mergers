@@ -43,6 +43,47 @@
         "completed_count": 1
       }
     },
+    "jamieson-health-products-australia-pty-ltd": {
+      "id": "jamieson-health-products-australia-pty-ltd",
+      "canonical_name": "Jamieson Health Products Australia Pty Ltd",
+      "members": [
+        {
+          "name": "Jamieson Health Products Australia Pty Ltd",
+          "identifier": "58 627 415 070",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-60042",
+            "merger_name": "Kirin \u2013 Jamieson Wellness",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Not approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-20T12:00:00Z",
+            "determination_date": "2026-09-15T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 18.0,
+        "median_business_days": 18,
+        "completed_count": 1
+      }
+    },
     "kk-group-invest-a-s": {
       "id": "kk-group-invest-a-s",
       "canonical_name": "KK Group Invest A/S",
