@@ -384,27 +384,27 @@
       37,
       27
     ],
-    "as_at": "2026-09-15"
+    "as_at": "2026-09-16"
   },
   "current_status": {
-    "as_at": "2026-09-15",
+    "as_at": "2026-09-16",
     "windows": [
       {
         "days": 30,
-        "notifications_filed": 33,
+        "notifications_filed": 32,
         "notifications": {
           "median": 19.0,
-          "average": 21.3,
-          "p90": 33,
+          "average": 21.4,
+          "p90": 34,
           "min": 15,
           "max": 52,
-          "count": 60,
+          "count": 58,
           "duration_histogram": {
             "15": 8,
-            "16": 8,
+            "16": 7,
             "17": 4,
             "18": 9,
-            "19": 7,
+            "19": 6,
             "20": 4,
             "21": 5,
             "23": 3,
@@ -426,46 +426,44 @@
           "average": 16.4,
           "p90": 21,
           "min": 6,
-          "max": 23,
-          "count": 80,
+          "max": 22,
+          "count": 76,
           "duration_histogram": {
             "6": 1,
             "7": 2,
-            "8": 1,
             "9": 1,
             "10": 4,
             "11": 4,
             "12": 4,
             "13": 1,
             "14": 4,
-            "15": 5,
+            "15": 4,
             "16": 4,
             "17": 7,
             "18": 14,
             "19": 10,
             "20": 7,
             "21": 7,
-            "22": 3,
-            "23": 1
+            "22": 2
           },
           "median_delta": 5.0
         }
       },
       {
         "days": 90,
-        "notifications_filed": 120,
+        "notifications_filed": 118,
         "notifications": {
-          "median": 18.0,
+          "median": 18,
           "average": 21.2,
           "p90": 33,
           "min": 15,
           "max": 56,
-          "count": 122,
+          "count": 121,
           "duration_histogram": {
             "15": 18,
             "16": 21,
             "17": 11,
-            "18": 16,
+            "18": 15,
             "19": 13,
             "20": 6,
             "21": 7,
@@ -486,36 +484,35 @@
             "52": 2,
             "56": 1
           },
-          "median_delta": 0.0
+          "median_delta": 0
         },
         "waivers": {
           "median": 16,
           "average": 15.5,
-          "p90": 21,
+          "p90": 20,
           "min": 5,
-          "max": 24,
-          "count": 199,
+          "max": 23,
+          "count": 191,
           "duration_histogram": {
             "5": 1,
             "6": 3,
             "7": 2,
             "8": 4,
             "9": 4,
-            "10": 15,
+            "10": 12,
             "11": 5,
             "12": 15,
             "13": 12,
-            "14": 17,
+            "14": 16,
             "15": 17,
             "16": 13,
-            "17": 16,
-            "18": 27,
+            "17": 14,
+            "18": 26,
             "19": 17,
             "20": 11,
             "21": 13,
             "22": 3,
-            "23": 3,
-            "24": 1
+            "23": 3
           },
           "median_delta": 3.0
         }
@@ -542,22 +539,22 @@
     "pre_notification": {
       "windows": [
         {
-          "median": 15,
-          "average": 19.4,
+          "median": 15.0,
+          "average": 19.6,
           "p90": 36,
           "min": 4,
           "max": 72,
-          "count": 33,
+          "count": 32,
           "days": 30,
           "median_delta": 1.0
         },
         {
           "median": 15.0,
           "average": 18.8,
-          "p90": 31,
+          "p90": 35,
           "min": 0,
           "max": 112,
-          "count": 120,
+          "count": 118,
           "days": 90,
           "median_delta": 1.0
         }
