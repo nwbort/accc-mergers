@@ -1,6 +1,6 @@
 {
   "total_mergers": 259,
-  "total_waivers": 404,
+  "total_waivers": 405,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 228,
@@ -19,7 +19,7 @@
   },
   "by_waiver_determination": {
     "Approved": 386,
-    "Not approved": 18
+    "Not approved": 19
   },
   "clearance_rate": {
     "cleared": 226,
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.90841584158416,
-    "median_days": 20.0,
-    "average_business_days": 13.556930693069306,
-    "median_business_days": 13.0
+    "average_days": 19.925925925925927,
+    "median_days": 20,
+    "average_business_days": 13.57037037037037,
+    "median_business_days": 13
   },
   "top_industries": [
     {
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-80040",
+      "merger_name": "Sims \u2013 business assets of OneStop Metal Recycling in TAS",
+      "determination": "Not approved",
+      "determination_date": "2026-09-16T12:00:00Z",
+      "page_modified_datetime": "2026-09-16T17:35:31+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-35038",
       "merger_name": "WSP - e2m",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-50037",
-      "merger_name": "Alceon \u2013 Engage Squared",
-      "determination": "Approved",
-      "determination_date": "2026-09-11T12:00:00Z",
-      "page_modified_datetime": "2026-09-11T17:49:04+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]

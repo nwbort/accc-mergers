@@ -255,7 +255,7 @@
       },
       "19": {
         "25": 2,
-        "27": 12,
+        "27": 13,
         "28": 2,
         "29": 6,
         "31": 3
@@ -291,17 +291,17 @@
     },
     "stats": {
       "average": 13.6,
-      "median": 13.0,
+      "median": 13,
       "min": 2,
       "max": 24,
-      "count": 404
+      "count": 405
     },
     "calendar_stats": {
       "average": 19.9,
-      "median": 20.0,
+      "median": 20,
       "min": 2,
       "max": 39,
-      "count": 404
+      "count": 405
     }
   },
   "monthly_volume": {
@@ -347,7 +347,7 @@
       67,
       61,
       72,
-      50,
+      51,
       1
     ]
   },
@@ -422,12 +422,12 @@
           "median_delta": 1.0
         },
         "waivers": {
-          "median": 18.0,
+          "median": 18,
           "average": 16.4,
           "p90": 21,
           "min": 6,
           "max": 22,
-          "count": 76,
+          "count": 77,
           "duration_histogram": {
             "6": 1,
             "7": 2,
@@ -441,12 +441,12 @@
             "16": 4,
             "17": 7,
             "18": 14,
-            "19": 10,
+            "19": 11,
             "20": 7,
             "21": 7,
             "22": 2
           },
-          "median_delta": 5.0
+          "median_delta": 5
         }
       },
       {
@@ -487,12 +487,12 @@
           "median_delta": 0.0
         },
         "waivers": {
-          "median": 16,
+          "median": 16.0,
           "average": 15.5,
           "p90": 20,
           "min": 5,
           "max": 23,
-          "count": 191,
+          "count": 192,
           "duration_histogram": {
             "5": 1,
             "6": 3,
@@ -508,7 +508,7 @@
             "16": 13,
             "17": 14,
             "18": 26,
-            "19": 17,
+            "19": 18,
             "20": 11,
             "21": 13,
             "22": 3,
@@ -528,19 +528,19 @@
         "count": 234
       },
       "waivers": {
-        "median": 13.0,
+        "median": 13,
         "average": 13.6,
         "p90": 20,
         "min": 2,
         "max": 24,
-        "count": 404
+        "count": 405
       }
     },
     "pre_notification": {
       "windows": [
         {
           "median": 15.0,
-          "average": 19.6,
+          "average": 19.3,
           "p90": 36,
           "min": 4,
           "max": 72,
@@ -724,9 +724,9 @@
           "count": 71
         },
         {
-          "median": 17.5,
+          "median": 18,
           "average": 16.3,
-          "count": 34
+          "count": 35
         }
       ],
       "open_caseload": [
@@ -922,10 +922,10 @@
     },
     {
       "division": "A division of the Commission (s19 direction)",
-      "count": 107,
+      "count": 108,
       "outcome_mix": {
         "Approved": 82,
-        "Not approved": 19,
+        "Not approved": 20,
         "Unknown": 6
       },
       "median_phase_1_business_days": 20
