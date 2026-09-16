@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
 import { Link } from 'react-router';
 import { FaXmark } from 'react-icons/fa6';
+import { FEATURE_EVENTS, pingFeatureEvent } from '../utils/trackEvent';
 
 /**
  * A dismissible banner promoting one page of the site.
@@ -29,6 +30,7 @@ function PromoCard({ campaign, to, icon: Icon, title, description }) {
   });
 
   const dismiss = useCallback(() => {
+    pingFeatureEvent(FEATURE_EVENTS.PROMO_CARD_DISMISSED);
     try {
       localStorage.setItem(storageKey, '1');
     } catch {
@@ -38,11 +40,15 @@ function PromoCard({ campaign, to, icon: Icon, title, description }) {
     setIsDismissed(true);
   }, [storageKey]);
 
+  const clickThrough = useCallback(() => {
+    pingFeatureEvent(FEATURE_EVENTS.PROMO_CARD_CLICKED);
+  }, []);
+
   if (isDismissed) return null;
 
   return (
     <div className="relative mb-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-200 group bg-primary hover:bg-primary-dark">
-      <Link to={to} className="flex items-center gap-4 p-6 pr-12 rounded-2xl">
+      <Link to={to} onClick={clickThrough} className="flex items-center gap-4 p-6 pr-12 rounded-2xl">
         {Icon && (
           <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-white/15 flex items-center justify-center text-xl text-white group-hover:scale-105 transition-transform duration-200">
             <Icon />

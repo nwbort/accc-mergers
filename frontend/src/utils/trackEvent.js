@@ -11,6 +11,10 @@ import { EVENT_ENDPOINT } from '../config';
 // workers/mergers-digest-signup/src/index.js, or the Worker rejects it.
 export const FEATURE_EVENTS = {
   TRACK_MERGER: 'track_merger',
+  FEEDBACK_POPUP_DISMISSED: 'feedback_popup_dismissed',
+  FEEDBACK_POPUP_CLICKED: 'feedback_popup_clicked',
+  PROMO_CARD_DISMISSED: 'promo_card_dismissed',
+  PROMO_CARD_CLICKED: 'promo_card_clicked',
 };
 
 // Fire-and-forget: must never throw or block the caller, since this is
