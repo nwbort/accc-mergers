@@ -3,12 +3,12 @@
   "total_waivers": 404,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 227,
-    "Under assessment": 27,
+    "Assessment completed": 228,
+    "Under assessment": 26,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 220,
+    "Approved": 221,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 18
   },
   "clearance_rate": {
-    "cleared": 225,
+    "cleared": 226,
     "not_cleared": 2,
-    "total": 227,
+    "total": 228,
     "rate": 0.991
   },
   "phase_duration": {
-    "average_days": 29.854077253218883,
-    "median_days": 26,
-    "average_business_days": 20.244635193133046,
-    "median_business_days": 18,
+    "average_days": 29.816239316239315,
+    "median_days": 26.0,
+    "average_business_days": 20.22222222222222,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
-        "count": 48,
-        "percentage": 20.6
+        "count": 49,
+        "percentage": 20.9
       },
       "day20": {
-        "count": 171,
-        "percentage": 73.4
+        "count": 172,
+        "percentage": 73.5
       },
       "day30": {
-        "count": 216,
+        "count": 217,
         "percentage": 92.7
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-35038",
+      "merger_name": "WSP - e2m",
+      "determination": "Approved",
+      "determination_date": "2026-09-16T12:00:00Z",
+      "page_modified_datetime": "2026-09-16T11:01:40+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-60042",
       "merger_name": "Kirin \u2013 Jamieson Wellness",
       "determination": "Not approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-11T12:00:00Z",
       "page_modified_datetime": "2026-09-11T17:49:04+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-01120",
-      "merger_name": "Impression Dental Group - Blackburn Dental Centre, VIC",
-      "determination": "Approved",
-      "determination_date": "2026-09-11T12:00:00Z",
-      "page_modified_datetime": "2026-09-11T16:47:58+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
