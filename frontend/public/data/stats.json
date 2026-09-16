@@ -1,6 +1,6 @@
 {
   "total_mergers": 259,
-  "total_waivers": 405,
+  "total_waivers": 406,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 228,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 386,
+    "Approved": 387,
     "Not approved": 19
   },
   "clearance_rate": {
@@ -48,19 +48,19 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.925925925925927,
-    "median_days": 20,
-    "average_business_days": 13.57037037037037,
-    "median_business_days": 13
+    "average_days": 19.940886699507388,
+    "median_days": 20.0,
+    "average_business_days": 13.58128078817734,
+    "median_business_days": 13.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 135
+      "count": 136
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 71
+      "count": 72
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -68,7 +68,7 @@
     },
     {
       "name": "Software Publishing",
-      "count": 40
+      "count": 41
     },
     {
       "name": "Non-Residential Property Operators",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-75053",
+      "merger_name": "Oakley Capital \u2013 Graphwise",
+      "determination": "Approved",
+      "determination_date": "2026-09-16T12:00:00Z",
+      "page_modified_datetime": "2026-09-16T19:07:48+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-80040",
       "merger_name": "Sims \u2013 business assets of OneStop Metal Recycling in TAS",
       "determination": "Not approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-10030",
-      "merger_name": "Novonesis \u2013 Microbiogen",
-      "determination": "Approved",
-      "determination_date": "2026-09-14T12:00:00Z",
-      "page_modified_datetime": "2026-09-14T12:24:29+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]

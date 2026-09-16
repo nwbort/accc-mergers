@@ -15,7 +15,7 @@
       "code": "70",
       "name": "Computer System Design and Related Services",
       "level": "subdivision",
-      "merger_count": 71
+      "merger_count": 72
     }
   ],
   "mergers": [
@@ -116,6 +116,17 @@
       "has_conditions": false,
       "phase": "Phase 1",
       "notification_date": "2026-08-26T12:00:00Z",
+      "determination_date": "2026-09-16T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-75053",
+      "merger_name": "Oakley Capital \u2013 Graphwise",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-21T12:00:00Z",
       "determination_date": "2026-09-16T12:00:00Z"
     },
     {
@@ -1758,10 +1769,10 @@
       "determination_date": null
     }
   ],
-  "count": 158,
+  "count": 159,
   "phase_1_count": 61,
   "phase_2_count": 3,
-  "waiver_count": 94,
+  "waiver_count": 95,
   "active_count": 8,
   "phase_duration": {
     "average_days": 30.894736842105264,
@@ -1771,10 +1782,10 @@
     "completed_count": 57
   },
   "waiver_duration": {
-    "average_days": 20.04255319148936,
-    "median_days": 20.0,
-    "average_business_days": 13.72340425531915,
-    "median_business_days": 13.0,
-    "completed_count": 94
+    "average_days": 20.105263157894736,
+    "median_days": 20,
+    "average_business_days": 13.76842105263158,
+    "median_business_days": 13,
+    "completed_count": 95
   }
 }

@@ -24,7 +24,7 @@
       "code": "6240",
       "name": "Financial Asset Investing",
       "level": "class",
-      "merger_count": 135
+      "merger_count": 136
     }
   ],
   "mergers": [
@@ -148,6 +148,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-08-20T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-75053",
+      "merger_name": "Oakley Capital \u2013 Graphwise",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-21T12:00:00Z",
+      "determination_date": "2026-09-16T12:00:00Z"
     },
     {
       "merger_id": "MN-60030",
@@ -1514,10 +1525,10 @@
       "determination_date": "2026-01-30T12:00:00Z"
     }
   ],
-  "count": 135,
+  "count": 136,
   "phase_1_count": 34,
   "phase_2_count": 0,
-  "waiver_count": 101,
+  "waiver_count": 102,
   "active_count": 11,
   "phase_duration": {
     "average_days": 25.26086956521739,
@@ -1527,10 +1538,10 @@
     "completed_count": 23
   },
   "waiver_duration": {
-    "average_days": 20.485148514851485,
-    "median_days": 20,
-    "average_business_days": 14.049504950495049,
-    "median_business_days": 14,
-    "completed_count": 101
+    "average_days": 20.53921568627451,
+    "median_days": 20.5,
+    "average_business_days": 14.088235294117647,
+    "median_business_days": 14.0,
+    "completed_count": 102
   }
 }
