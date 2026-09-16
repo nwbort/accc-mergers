@@ -355,8 +355,14 @@ def generate_weekly_digest(
             merger_id not in already_referred):
             digest['deals_referred_to_phase_2'].append(create_merger_summary(merger))
 
+        # A waiver application is granted or refused; there is no ACCC
+        # process for "ceasing" one the way a notification review can be
+        # abandoned before determination. This never fires against real
+        # register data (a waiver's status never reaches Assessment ceased),
+        # but the check documents that invariant rather than relying on it.
         ceased_date = merger.get('ceased_date')
         if (status == merger_status.ASSESSMENT_CEASED and
+            not merger.get('is_waiver') and
             is_in_week_range(ceased_date, lookback_start, period_end) and
             merger_id not in already_ceased):
             digest['deals_assessment_ceased'].append(create_merger_summary(merger))
