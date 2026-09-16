@@ -299,6 +299,13 @@ async function handleFeedback(request, env, origin) {
 // KV rate limit window.
 // ---------------------------------------------------------------------------
 
+// en-CA formats as YYYY-MM-DD, so this needs no further reassembly; the
+// timeZone conversion (not just a fixed UTC+10/+11 offset) keeps the daily
+// bucket aligned with Sydney's wall-clock date across the DST transition.
+function sydneyDay(date = new Date()) {
+  return new Intl.DateTimeFormat("en-CA", { timeZone: "Australia/Sydney" }).format(date);
+}
+
 async function handleEvent(request, env, origin) {
   const ip = request.headers.get("CF-Connecting-IP") || "unknown";
   const withinLimit = await checkRateLimit(env, `event:${ip}`, 60, 600);
@@ -318,7 +325,7 @@ async function handleEvent(request, env, origin) {
     return jsonResponse({ error: "Unknown event type" }, 400, origin, env);
   }
 
-  const day = new Date().toISOString().slice(0, 10);
+  const day = sydneyDay();
 
   try {
     await env.DB.prepare(
