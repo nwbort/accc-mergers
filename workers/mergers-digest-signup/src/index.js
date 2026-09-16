@@ -35,6 +35,10 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 // at the point of use; no schema change or new endpoint is needed.
 const ALLOWED_EVENT_TYPES = new Set([
   "track_merger", // a merger was added to the user's tracked list
+  "feedback_popup_dismissed", // the feedback popup's close button was clicked
+  "feedback_popup_clicked", // the feedback popup's "Share feedback" link was clicked
+  "promo_card_dismissed", // the dashboard promo card's close button was clicked
+  "promo_card_clicked", // the dashboard promo card was clicked through
 ]);
 
 // ---------------------------------------------------------------------------

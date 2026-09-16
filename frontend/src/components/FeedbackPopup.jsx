@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router';
+import { FEATURE_EVENTS, pingFeatureEvent } from '../utils/trackEvent';
 
 // Set to false to hide the popup entirely (e.g. between feedback campaigns).
 const ENABLED = true;
@@ -23,10 +24,20 @@ function FeedbackPopup() {
     return () => clearTimeout(timer);
   }, []);
 
-  const dismiss = useCallback(() => {
+  const hide = useCallback(() => {
     localStorage.setItem(STORAGE_KEY, '1');
     setIsVisible(false);
   }, []);
+
+  const dismiss = useCallback(() => {
+    pingFeatureEvent(FEATURE_EVENTS.FEEDBACK_POPUP_DISMISSED);
+    hide();
+  }, [hide]);
+
+  const clickThrough = useCallback(() => {
+    pingFeatureEvent(FEATURE_EVENTS.FEEDBACK_POPUP_CLICKED);
+    hide();
+  }, [hide]);
 
   if (!isVisible) return null;
 
@@ -53,7 +64,7 @@ function FeedbackPopup() {
         </p>
         <Link
           to="/feedback"
-          onClick={dismiss}
+          onClick={clickThrough}
           className="inline-block w-full text-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary-dark"
         >
           Share feedback
