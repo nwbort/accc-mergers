@@ -423,6 +423,22 @@ class TestWeeklyDigestBuckets:
         digest = self._run([merger], monkeypatch, previous_digest=previous_digest)
         assert digest['deals_assessment_ceased'] == []
 
+    def test_ceased_excludes_waiver_applications(self, monkeypatch):
+        # Waivers are granted or refused, never ceased — this should not be
+        # reachable against real data, but the generator guards it anyway.
+        merger = {
+            'merger_id': 'WA-30002',
+            'merger_name': 'Waiver marked ceased',
+            'status': merger_status.ASSESSMENT_CEASED,
+            'stage': 'Waiver',
+            'is_waiver': True,
+            'effective_notification_datetime': '2025-03-20T00:00:00Z',
+            'ceased_date': '2025-04-16',  # within period
+            'events': [],
+        }
+        digest = self._run([merger], monkeypatch)
+        assert digest['deals_assessment_ceased'] == []
+
     def test_ceased_summary_included_in_merger_summary(self, monkeypatch):
         merger = {
             'merger_id': 'MN-30005',

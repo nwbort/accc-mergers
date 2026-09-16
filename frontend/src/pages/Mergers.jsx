@@ -591,9 +591,10 @@ function Mergers() {
                           leads the detail page. In the top-right corner it sat
                           the width of the card away from the matter it belongs
                           to and read as chrome next to the Track button. An
-                          appeal rides alongside it in the same solid style —
-                          "NOT APPROVED · UNDER APPEAL" — rather than as a
-                          separately-styled badge elsewhere on the card. */}
+                          appeal and the waiver flag both ride alongside it in
+                          the same solid style — "NOT APPROVED · UNDER APPEAL"
+                          or "APPROVED · WAIVER" — rather than as
+                          separately-styled badges elsewhere on the card. */}
                       <div className="flex flex-wrap items-center gap-1.5 mb-2">
                         <StatusBadge
                           status={merger.status}
@@ -603,6 +604,7 @@ function Mergers() {
                           solid
                         />
                         {merger.under_appeal && <AppealBadge solid />}
+                        {merger.is_waiver && <WaiverBadge solid />}
                       </div>
                       <div className="flex items-center gap-2">
                         {tracked && (
@@ -618,11 +620,10 @@ function Mergers() {
                         </h2>
                       </div>
                       {/* One badge rail for the remaining "type" flags — under_appeal
-                          moved up to sit beside the outcome badge above. */}
-                      {(merger.is_waiver || merger.is_refiled) && (
+                          and is_waiver moved up to sit beside the outcome badge above. */}
+                      {merger.is_refiled && (
                         <div className="flex flex-wrap items-center gap-1.5 mt-1.5">
-                          {merger.is_waiver && <WaiverBadge />}
-                          {merger.is_refiled && <RefiledBadge />}
+                          <RefiledBadge />
                         </div>
                       )}
                       <p className="text-xs text-gray-500 mt-1">

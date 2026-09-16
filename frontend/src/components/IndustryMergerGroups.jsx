@@ -74,7 +74,7 @@ function IndustryMergerGroups({ mergers, variant = 'full' }) {
                           hasConditions={merger.has_conditions}
                           solid
                         />
-                        {merger.is_waiver && <WaiverBadge />}
+                        {merger.is_waiver && <WaiverBadge solid />}
                       </div>
                     </Link>
                   );
@@ -98,7 +98,7 @@ function IndustryMergerGroups({ mergers, variant = 'full' }) {
                         hasConditions={merger.has_conditions}
                         solid
                       />
-                      {merger.is_waiver && <WaiverBadge />}
+                      {merger.is_waiver && <WaiverBadge solid />}
                     </div>
                     <h4 className="text-base font-semibold text-gray-900 truncate hover:text-primary transition-colors">
                       {merger.merger_name}

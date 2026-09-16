@@ -80,16 +80,14 @@ function Commentary() {
                       solid
                     />
                     {item.under_appeal && <AppealBadge solid />}
+                    {item.is_waiver && <WaiverBadge solid />}
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Link
-                      to={mergerPath(item.merger_id, item.merger_name)}
-                      className="text-base font-semibold text-gray-900 hover:text-primary transition-colors truncate"
-                    >
-                      {item.merger_name}
-                    </Link>
-                    {item.is_waiver && <WaiverBadge className="flex-shrink-0" />}
-                  </div>
+                  <Link
+                    to={mergerPath(item.merger_id, item.merger_name)}
+                    className="block text-base font-semibold text-gray-900 hover:text-primary transition-colors truncate"
+                  >
+                    {item.merger_name}
+                  </Link>
                   <p className="text-xs text-gray-500 mt-1">
                     {item.merger_id} · {item.stage || 'N/A'} · {item.is_waiver ? 'Applied' : 'Notified'}: {formatDate(item.effective_notification_datetime)}
                     {item.determination_publication_date && (

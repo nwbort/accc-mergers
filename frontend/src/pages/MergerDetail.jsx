@@ -5,7 +5,6 @@ import ReactMarkdown from 'react-markdown';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorCard from '../components/ErrorCard';
 import TrackButton from '../components/TrackButton';
-import WaiverBadge from '../components/WaiverBadge';
 import BusinessDayProgress from '../components/BusinessDayProgress';
 import PreNotificationEstimate from '../components/PreNotificationEstimate';
 import { getBusinessDayProgress } from '../utils/businessDayProgress';
@@ -314,19 +313,9 @@ function MergerDetail() {
             <div className="flex items-start justify-between gap-4 pt-1">
               <div className="min-w-0">
                 <MergerOutcomeHeading merger={merger} />
-                {/* The badge trails the title's last word rather than sitting
-                    in a flex row beside it: a title long enough to wrap would
-                    otherwise push the badge onto a line of its own, leaving a
-                    loose gap above the ID row. Inline siblings inside a block,
-                    so the h1's accessible name stays the merger name alone. */}
-                <div className="mb-2">
-                  <h1 className="inline text-2xl font-bold tracking-tight">
-                    {merger.merger_name}
-                  </h1>
-                  {merger.is_waiver && (
-                    <WaiverBadge className="ml-3 align-middle px-2.5 py-1 rounded-lg text-sm" />
-                  )}
-                </div>
+                <h1 className="mb-2 text-2xl font-bold tracking-tight">
+                  {merger.merger_name}
+                </h1>
                 <div className="flex items-center gap-4 flex-wrap">
                   <p className={`text-sm ${headerStyle.sub}`}>
                     {merger.merger_id}
