@@ -5,7 +5,6 @@ import ReactMarkdown from 'react-markdown';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
 import ExternalLinkIcon from '../components/ExternalLinkIcon';
-import WaiverBadge from '../components/WaiverBadge';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS, SUBSCRIBE_ENDPOINT, TURNSTILE_SITE_KEY } from '../config';
 import { formatDate } from '../utils/dates';
@@ -96,7 +95,7 @@ function DigestSection({ id, title, colorKey, mergers, columns, renderRow }) {
   );
 }
 
-function MergerNameCell({ merger, colorKey, mobileMeta, hideWaiverBadge }) {
+function MergerNameCell({ merger, colorKey, mobileMeta }) {
   const c = COLOR_CLASSES[colorKey];
   return (
     <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
@@ -108,7 +107,6 @@ function MergerNameCell({ merger, colorKey, mobileMeta, hideWaiverBadge }) {
         >
           {merger.merger_name}
         </Link>
-        {merger.is_waiver && !hideWaiverBadge && <WaiverBadge className="relative z-10" />}
       </div>
       <div className="text-xs text-gray-500 mt-0.5">
         <span>{merger.merger_id}</span>
@@ -174,7 +172,6 @@ function GroupedDeterminationSection({
       <MergerNameCell
         merger={merger}
         colorKey={colorKey}
-        hideWaiverBadge
         mobileMeta={
           <span>
             Determined {merger.determination_publication_date
