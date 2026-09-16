@@ -4,6 +4,7 @@ import { getOutcomeHeaderStyle } from '../constants/outcomeHeader';
 import { OUTCOME_ICONS } from '../constants/outcomeIcons';
 import { getHeaderStatus } from '../utils/mergerOutcome';
 import Phase2OddsReveal from './Phase2OddsReveal';
+import WaiverBadge from './WaiverBadge';
 
 /**
  * The line above a merger's title, sitting on the colour-filled header block
@@ -80,6 +81,12 @@ function MergerOutcomeHeading({ merger }) {
           <span>Under appeal</span>
         </span>
       )}
+      {/* A type flag rather than a status, so — unlike the outcome and the
+          appeal above — it wears a chip rather than being set in the line's
+          own type. Solid so it reads the same badge as everywhere else on the
+          site (merger list, Commentary, industry cards), and because that
+          form fills its own box rather than relying on the fill it sits on. */}
+      {merger.is_waiver && <WaiverBadge solid />}
     </p>
   );
 }

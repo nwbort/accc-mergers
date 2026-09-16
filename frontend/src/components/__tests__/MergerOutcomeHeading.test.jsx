@@ -162,4 +162,14 @@ describe('MergerOutcomeHeading', () => {
     // not read as one phrase with it.
     expect(screen.getByText('Approved · on appeal')).toBeInTheDocument();
   });
+
+  it('flags a waiver application as a chip beside the status', () => {
+    render(<MergerOutcomeHeading merger={{ ...completed, is_waiver: true }} />);
+    expect(screen.getByText('Waiver')).toBeInTheDocument();
+  });
+
+  it('says nothing about the waiver flag for an ordinary notification', () => {
+    render(<MergerOutcomeHeading merger={completed} />);
+    expect(screen.queryByText('Waiver')).not.toBeInTheDocument();
+  });
 });
