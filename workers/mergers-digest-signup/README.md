@@ -16,11 +16,14 @@ which reads from the same `mergers-feedback` D1 database.
 ## Feature-usage events
 
 `POST /event` with `{ "type": "..." }` increments a per-day counter in the
-`feature_events` D1 table, keyed on `(event_type, day)`. No IP, cookie, or
-other identifier is ever written to that table — only a running count of how
-many times an event fired that day — so the data can never be tied back to
-an individual visitor. Turnstile isn't used here (there's no user content to
-protect), just the same per-IP KV rate limit as the other routes.
+`feature_events` D1 table, keyed on `(event_type, day)`. `day` is the
+request's date in `Australia/Sydney` local time (not UTC), so it lines up
+with the site's Sydney-time audience and stays correct across the DST
+transition. No IP, cookie, or other identifier is ever written to that
+table — only a running count of how many times an event fired that day — so
+the data can never be tied back to an individual visitor. Turnstile isn't
+used here (there's no user content to protect), just the same per-IP KV
+rate limit as the other routes.
 
 Only event names listed in `ALLOWED_EVENT_TYPES` (`src/index.js`) are
 accepted. To start tracking a new feature's usage:
