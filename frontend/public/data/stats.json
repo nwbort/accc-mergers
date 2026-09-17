@@ -1,6 +1,6 @@
 {
   "total_mergers": 259,
-  "total_waivers": 406,
+  "total_waivers": 407,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 228,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 387,
+    "Approved": 388,
     "Not approved": 19
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.940886699507388,
-    "median_days": 20.0,
-    "average_business_days": 13.58128078817734,
-    "median_business_days": 13.0
+    "average_days": 19.95085995085995,
+    "median_days": 20,
+    "average_business_days": 13.592137592137592,
+    "median_business_days": 13
   },
   "top_industries": [
     {
@@ -76,7 +76,7 @@
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 32
+      "count": 33
     },
     {
       "name": "Accommodation",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-10033",
+      "merger_name": "Australian Venue Co \u2013 assets of The Clock Hotel, Surry Hills and The Bank Hotel, Newtown, NSW",
+      "determination": "Approved",
+      "determination_date": "2026-09-17T12:00:00Z",
+      "page_modified_datetime": "2026-09-17T17:15:15+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-75053",
       "merger_name": "Oakley Capital \u2013 Graphwise",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-14T12:00:00Z",
       "page_modified_datetime": "2026-09-14T16:36:06+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-15041",
-      "merger_name": "Star Hotels Group - Ocean International Hotel, Mackay QLD",
-      "determination": "Approved",
-      "determination_date": "2026-09-14T12:00:00Z",
-      "page_modified_datetime": "2026-09-14T16:36:02+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
