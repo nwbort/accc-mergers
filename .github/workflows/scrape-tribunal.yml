@@ -58,12 +58,24 @@ jobs:
         pip install -r scripts/requirements-tribunal.txt
 
     - name: Install Chrome and Xvfb
+      # Both xvfb and google-chrome-stable ship in the ubuntu-latest runner
+      # image, so the usual run installs nothing — `apt-get update` alone spent
+      # ~6s fetching 12 MB of package lists to conclude "xvfb is already the
+      # newest version". Only reach for apt when something is genuinely absent
+      # (a future runner image dropping either), and update the lists only in
+      # that case, since installing without updating first is what leaves you
+      # fetching a stale package version.
       run: |
-        sudo apt-get update
-        sudo apt-get install -y xvfb
-        # google-chrome-stable is normally pre-installed on ubuntu-latest; make
-        # sure it (or chromium) is present for nodriver to drive.
+        apt_updated=false
+        apt_update_once() {
+          $apt_updated || { sudo apt-get update; apt_updated=true; }
+        }
+        if ! command -v xvfb-run >/dev/null 2>&1; then
+          apt_update_once
+          sudo apt-get install -y xvfb
+        fi
         if ! command -v google-chrome >/dev/null 2>&1; then
+          apt_update_once
           sudo apt-get install -y chromium-browser || sudo apt-get install -y chromium
         fi
         CHROME_PATH=$(command -v google-chrome || command -v google-chrome-stable || command -v chromium-browser || command -v chromium || true)
