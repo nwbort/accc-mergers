@@ -212,6 +212,17 @@ MAX_WAIT_SECONDS = 90
 # raises instead of hanging forever.
 CDP_CALL_TIMEOUT_SECONDS = 30
 
+# Ceiling on a single tab.find() looking for the Turnstile checkbox, which
+# needs to be far tighter than CDP_CALL_TIMEOUT_SECONDS. nodriver's own
+# ``timeout=`` argument does not bound the call: find() only checks the
+# deadline *after* a full get_frames() + per-frame search + second
+# document-wide pass, and on a challenge page carrying a cross-origin
+# Turnstile iframe one such iteration runs well past any small timeout. So a
+# find() that matches nothing runs until the outer ceiling here, not until
+# nodriver's. The search below is best-effort (the challenge usually clears on
+# its own, with no checkbox to click at all), so a miss must be cheap.
+TURNSTILE_FIND_TIMEOUT_SECONDS = 5
+
 
 async def _with_timeout(coro, what: str, seconds: float = CDP_CALL_TIMEOUT_SECONDS):
     """Await ``coro``, converting a hang into a TimeoutError after ``seconds``."""
@@ -829,22 +840,33 @@ def wait_for_devtools(port: int, timeout: float = 30.0) -> bool:
 async def try_click_turnstile(tab) -> bool:
     """Best-effort click of the Cloudflare Turnstile / 'Verify you are human'
     checkbox. Managed challenges often auto-clear, but some render a checkbox
-    that must be clicked."""
-    for text in ("Verify you are human", "Verify you are a human", "human"):
-        try:
-            el = await _with_timeout(
-                tab.find(text, best_match=True, timeout=3), "tab.find"
-            )
-            if el:
-                await _with_timeout(el.mouse_click(), "mouse_click")
-                print(f"    clicked element matching '{text}'", flush=True)
-                return True
-        except Exception:
-            pass
+    that must be clicked.
+
+    Only "human" is searched for. nodriver matches text with
+    ``DOM.performSearch``, which is substring-based, so "human" matches every
+    element the longer phrasings ("Verify you are human", "Verify you are a
+    human") would — searching for those as well could only ever repeat a search
+    that had already missed, at the cost of a full timeout each. That is not
+    hypothetical: run 35188870193 spent 60 of its 77 scraper seconds on two
+    such searches before the third, for "human", matched instantly.
+    """
+    try:
+        el = await _with_timeout(
+            tab.find("human", best_match=True, timeout=3),
+            "tab.find",
+            seconds=TURNSTILE_FIND_TIMEOUT_SECONDS,
+        )
+        if el:
+            await _with_timeout(el.mouse_click(), "mouse_click")
+            print("    clicked element matching 'human'", flush=True)
+            return True
+    except Exception:
+        pass
     try:
         iframe = await _with_timeout(
             tab.find("challenges.cloudflare.com", best_match=True, timeout=3),
             "tab.find",
+            seconds=TURNSTILE_FIND_TIMEOUT_SECONDS,
         )
         if iframe:
             await _with_timeout(iframe.mouse_click(), "mouse_click")
