@@ -35,6 +35,24 @@ APPEAL_TYPE_LABELS = {
     THIRD_PARTY_CLEARANCE: 'Third party appeal against clearance',
 }
 
+# Shown when an appeal record carries no ``appeal_type``, or one this code
+# doesn't know. Hand-maintained records can arrive with the field missing, so
+# every reader needs the same fallback rather than its own literal.
+DEFAULT_APPEAL_TYPE_LABEL = 'Tribunal appeal'
+
+
+def appeal_type_label(appeal: dict) -> str:
+    """Human label for an appeal record's ``appeal_type``.
+
+    Falls back to :data:`DEFAULT_APPEAL_TYPE_LABEL` for a missing or
+    unrecognised type. Accepts a missing/empty record so callers can pass
+    ``merger.get('appeal')`` straight in.
+    """
+    return APPEAL_TYPE_LABELS.get(
+        (appeal or {}).get('appeal_type'), DEFAULT_APPEAL_TYPE_LABEL
+    )
+
+
 # Appeal lifecycle status. A matter is "current" while it is live before the
 # tribunal and "concluded" once the tribunal has decided it, or it has been
 # withdrawn/dismissed. Only a *current* appeal makes a merger "under appeal":

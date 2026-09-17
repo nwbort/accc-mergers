@@ -19,7 +19,6 @@ full extract twice.
 """
 
 import argparse
-import json
 import os
 import sys
 
@@ -27,14 +26,9 @@ from scripts.cutoff import is_waiver_merger
 from scripts.extract_mergers import (
     MATTERS_DIR,
     _load_frozen_events_mergers,
-    auto_fix_missing_event_dates,
-    detect_inferred_phase_2,
-    enrich_with_questionnaire_data,
-    extract_nocc_data,
-    extract_phase2_notice_data,
+    run_pdf_enrichment,
 )
-
-MERGERS_JSON = 'data/processed/mergers.json'
+from scripts.merger_filters import DEFAULT_MERGERS_JSON as MERGERS_JSON, load_mergers, save_mergers
 
 
 def main():
@@ -52,8 +46,7 @@ def main():
         )
         sys.exit(1)
 
-    with open(MERGERS_JSON, 'r', encoding='utf-8') as f:
-        all_mergers_data = json.load(f)
+    all_mergers_data = load_mergers(MERGERS_JSON)
 
     if not all_mergers_data:
         print(f"Warning: {MERGERS_JSON} is empty; nothing to enrich.", file=sys.stderr)
@@ -61,22 +54,9 @@ def main():
 
     frozen_events_mergers, _ = _load_frozen_events_mergers()
 
-    # 1. Questionnaire enrichment (consultation deadlines).
-    all_mergers_data = enrich_with_questionnaire_data(all_mergers_data)
-
-    # 2. NOCC manifest.
-    extract_nocc_data()
-
-    # 2b. Parse pending Phase 2 Notice PDFs into their events.
-    extract_phase2_notice_data(all_mergers_data)
-
-    # 3. Auto-fix catchable events (questionnaire, remedy offer) whose date is missing.
-    auto_fix_missing_event_dates(all_mergers_data, frozen_events_mergers)
-
-    # 4. Detect mergers carrying a Phase 2 notice whose ACCC stage still shows
-    #    Phase 1 (the site treats these as Phase 2; the pipeline opens/closes a
-    #    tracking issue accordingly). Reads the genuine stage from mergers.json.
-    detect_inferred_phase_2(all_mergers_data)
+    # The enrichment sequence itself lives in extract_mergers.py, which runs the
+    # identical pass when it is not handing the job over to this script.
+    all_mergers_data = run_pdf_enrichment(all_mergers_data, frozen_events_mergers)
 
     # is_waiver may shift if enrichment changed a date that affects classification.
     for merger in all_mergers_data:
@@ -84,11 +64,7 @@ def main():
 
     all_mergers_data.sort(key=lambda x: x.get('merger_id', ''))
 
-    # Trailing newline to match extract_mergers.py and detect_duplicates.py,
-    # the other two writers of this file.
-    with open(MERGERS_JSON, 'w', encoding='utf-8') as f:
-        json.dump(all_mergers_data, f, indent=2)
-        f.write('\n')
+    save_mergers(all_mergers_data, MERGERS_JSON)
 
 
 if __name__ == "__main__":

@@ -26,6 +26,7 @@ from scripts.parse.parse_questionnaire import (
 from scripts.normalization import normalize_determination, normalize_dashes
 from scripts.constants.site import REPO, mergers_fyi_url
 from scripts.cutoff import get_skipped_merger_ids, is_waiver_merger
+from scripts.merger_filters import save_mergers
 from scripts.date_utils import parse_text_to_iso, parse_iso_datetime
 from scripts.generate.static_data.enrichment import is_phase_2_referral_event
 from scripts.constants import merger_status
@@ -1831,6 +1832,42 @@ def run_parse_merger_file(task):
     """Helper function to unpack arguments for parse_merger_file."""
     return parse_merger_file(*task)
 
+
+def run_pdf_enrichment(all_mergers_data, frozen_events_mergers):
+    """Run the PDF-parsing enrichment pass over ``all_mergers_data`` in place.
+
+    The expensive HTML parse / attachment download phase and this cheap
+    PDF-parse phase are separable, so the pipeline runs
+    ``extract_mergers.py --skip-pdf-enrich``, converts any new DOCX files to
+    PDF in between, then runs ``enrich_pdfs.py`` — which calls straight into
+    here. Both entry points therefore need the identical sequence, and it is
+    defined once so the standalone pass can never fall out of step with the
+    in-process one.
+
+    The steps, in order:
+
+    1. Questionnaire PDFs → consultation deadlines.
+    2. NOCC summary PDFs → the standalone manifest. NOCCs do not feed back into
+       per-merger fields (their date is already on the event), but downstream
+       pipelines load the manifest separately.
+    3. Pending Phase 2 Notice PDFs → their events.
+    4. Auto-fix catchable events (questionnaire, remedy offer) whose date is
+       missing on the ACCC page: tries the event title, falls back to today,
+       freezes the merger and writes issue content for GitHub issue creation.
+    5. Detect mergers carrying a Phase 2 notice whose ACCC stage still shows
+       Phase 1 (the site treats these as Phase 2), writing tracking-issue
+       content for the pipeline.
+
+    Returns the merger list. Step 1 may return a new list, so callers must use
+    the return value rather than relying on in-place mutation alone.
+    """
+    all_mergers_data = enrich_with_questionnaire_data(all_mergers_data)
+    extract_nocc_data()
+    extract_phase2_notice_data(all_mergers_data)
+    auto_fix_missing_event_dates(all_mergers_data, frozen_events_mergers)
+    detect_inferred_phase_2(all_mergers_data)
+    return all_mergers_data
+
 def main():
     """
     Main function to find all merger HTML files, parse them in parallel,
@@ -1949,26 +1986,10 @@ def main():
         if merger_id in existing_mergers:
             all_mergers_data.append(existing_mergers[merger_id])
 
+    # 8. PDF-parsing enrichment. Skipped when the pipeline is going to run it
+    #    separately via enrich_pdfs.py (after its DOCX→PDF conversion step).
     if not args.skip_pdf_enrich:
-        # 8. Enrich with questionnaire data (consultation deadlines)
-        all_mergers_data = enrich_with_questionnaire_data(all_mergers_data)
-
-        # 8b. Parse NOCC summary PDFs to a standalone manifest. NOCCs do not feed
-        # back into per-merger fields (their date is already on the event), but
-        # downstream pipelines load the manifest separately.
-        extract_nocc_data()
-
-        # 8b2. Parse pending Phase 2 Notice PDFs into their events.
-        extract_phase2_notice_data(all_mergers_data)
-
-        # 8c. Auto-fix catchable events whose date is missing on the ACCC page.
-        #     Tries to extract the date from the event title; falls back to today.
-        #     Freezes the merger and writes issue content for GitHub issue creation.
-        auto_fix_missing_event_dates(all_mergers_data, frozen_events_mergers)
-
-        # 8d. Detect mergers carrying a Phase 2 notice whose ACCC stage still
-        #     shows Phase 1, and write tracking-issue content for the pipeline.
-        detect_inferred_phase_2(all_mergers_data)
+        all_mergers_data = run_pdf_enrichment(all_mergers_data, frozen_events_mergers)
 
     # 9. Add is_waiver field to each merger
     for merger in all_mergers_data:
@@ -1977,13 +1998,9 @@ def main():
     # 10. Sort the data by merger_id to ensure a consistent output
     all_mergers_data.sort(key=lambda x: x.get('merger_id', ''))
 
-    # 11. Write the final JSON output to mergers.json
-    # Trailing newline so this agrees byte-for-byte with the other writer of
-    # this file, detect_duplicates.py --apply-fixes. Without it the two flip
-    # the last byte back and forth and each churns a line in the other's diff.
-    with open('data/processed/mergers.json', 'w', encoding='utf-8') as f:
-        json.dump(all_mergers_data, f, indent=2)
-        f.write('\n')
+    # 11. Write the final JSON output to mergers.json, through the canonical
+    #     writer every tool that touches this file shares.
+    save_mergers(all_mergers_data)
 
 if __name__ == "__main__":
     main()

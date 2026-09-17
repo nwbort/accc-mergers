@@ -471,8 +471,9 @@ class TestStatsMedianMatchesAnalysis:
 
 
 class TestSubjectMediansUseTrueMedian:
-    """industries.py / parties.py subject medians must use the same true-median
-    convention as the stats.json baselines they are charted directly against
+    """Per-subject medians (industry / party / refiled, all of which come from
+    durations.duration_stats) must use the same true-median convention as the
+    stats.json baselines they are charted directly against
     (PhaseDurationComparison), not the upper-middle element.
     """
 
@@ -493,8 +494,11 @@ class TestSubjectMediansUseTrueMedian:
                 ('2025-06-02', '2025-06-12'),
             ])
         ]
-        for payload in (industries._phase_duration(mergers), parties._phase_duration(mergers)):
-            assert payload['median_days'] == 7
+        assert durations.phase_1_duration_stats(mergers)['median_days'] == 7
+
+    def test_duration_stats_returns_none_without_completed_reviews(self):
+        # Every subject omits the block rather than publishing empty stats.
+        assert durations.duration_stats([], []) is None
 
 
 # ---------------------------------------------------------------------------

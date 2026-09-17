@@ -6,9 +6,10 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
 import ExternalLinkIcon from '../components/ExternalLinkIcon';
 import SEO from '../components/SEO';
-import { API_ENDPOINTS, SUBSCRIBE_ENDPOINT, TURNSTILE_SITE_KEY } from '../config';
+import { API_ENDPOINTS, SUBSCRIBE_ENDPOINT } from '../config';
 import { formatDate } from '../utils/dates';
 import { useFetchData } from '../hooks/useFetchData';
+import { useTurnstile } from '../hooks/useTurnstile';
 import {
   DIGEST_COLOR_KEYS,
   DIGEST_COLOR_CLASSES as COLOR_CLASSES,
@@ -59,9 +60,13 @@ function ScrollToTopButton() {
   );
 }
 
+// The card shell every digest section wears: coloured left rail, header with
+// the back-to-top control, and the table head. Only the tbody differs between
+// the flat and grouped sections, so it comes in as children.
+//
 // Sections are only rendered when they have rows (see the `sections` list in
 // Digest), so there is no empty state to handle here.
-function DigestSection({ id, title, colorKey, mergers, columns, renderRow }) {
+function DigestSectionCard({ id, title, colorKey, columns, children }) {
   const c = COLOR_CLASSES[colorKey];
   return (
     <div id={id} className={`bg-white rounded-2xl border-l-4 ${c.borderLeft} border-t border-r border-b border-gray-100 shadow-card overflow-hidden`}>
@@ -86,12 +91,18 @@ function DigestSection({ id, title, colorKey, mergers, columns, renderRow }) {
               })}
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-50">
-            {mergers.map((merger) => renderRow(merger))}
-          </tbody>
+          <tbody className="divide-y divide-gray-50">{children}</tbody>
         </table>
       </div>
     </div>
+  );
+}
+
+function DigestSection({ id, title, colorKey, mergers, columns, renderRow }) {
+  return (
+    <DigestSectionCard id={id} title={title} colorKey={colorKey} columns={columns}>
+      {mergers.map((merger) => renderRow(merger))}
+    </DigestSectionCard>
   );
 }
 
@@ -153,7 +164,6 @@ function GroupedDeterminationSection({
   rowHoverClass,
   groupHeaderBgClass,
 }) {
-  const c = COLOR_CLASSES[colorKey];
   const columns = ['Merger', { label: 'Determination date', thClassName: 'hidden sm:table-cell' }, 'Determination'];
 
   const isMatch = (value) => matchValues.includes(value);
@@ -195,43 +205,18 @@ function GroupedDeterminationSection({
   );
 
   return (
-    <div id={id} className={`bg-white rounded-2xl border-l-4 ${c.borderLeft} border-t border-r border-b border-gray-100 shadow-card overflow-hidden`}>
-      <div className={`px-5 sm:px-6 py-4 border-b ${c.borderLight} bg-gradient-to-r ${c.headerBg} to-transparent`}>
-        <div className="flex items-center justify-between">
-          <h2 className="text-lg font-semibold text-gray-900">{title}</h2>
-          <ScrollToTopButton />
-        </div>
-      </div>
-      <div className="overflow-x-auto">
-        <table className="min-w-full divide-y divide-gray-100">
-          <thead>
-            <tr className="bg-gray-50/80">
-              {columns.map((col) => {
-                const label = typeof col === 'string' ? col : col.label;
-                const thClassName = typeof col === 'string' ? '' : (col.thClassName || '');
-                return (
-                  <th key={label} scope="col" className={`px-5 sm:px-6 py-3.5 text-left ${SECTION_HEADING} ${thClassName}`}>
-                    {label}
-                  </th>
-                );
-              })}
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-gray-50">
-            {groups.map((group) => (
-              <Fragment key={group.label}>
-                <tr>
-                  <td colSpan={3} className={`px-5 sm:px-6 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider ${groupHeaderBgClass} border-t border-gray-100`}>
-                    {group.label}
-                  </td>
-                </tr>
-                {group.items.map(renderRow)}
-              </Fragment>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <DigestSectionCard id={id} title={title} colorKey={colorKey} columns={columns}>
+      {groups.map((group) => (
+        <Fragment key={group.label}>
+          <tr>
+            <td colSpan={3} className={`px-5 sm:px-6 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider ${groupHeaderBgClass} border-t border-gray-100`}>
+              {group.label}
+            </td>
+          </tr>
+          {group.items.map(renderRow)}
+        </Fragment>
+      ))}
+    </DigestSectionCard>
   );
 }
 
@@ -239,52 +224,8 @@ function DigestSignup() {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState('idle'); // idle | loading | success | error
   const [errorMsg, setErrorMsg] = useState('');
-  const [turnstileToken, setTurnstileToken] = useState('');
+  const { ref: turnstileRef, token: turnstileToken, reset: resetTurnstile } = useTurnstile();
   const inputRef = useRef(null);
-  const turnstileRef = useRef(null);
-  const widgetIdRef = useRef(null);
-
-  useEffect(() => {
-    let scriptEl = null;
-
-    const renderWidget = () => {
-      if (turnstileRef.current && widgetIdRef.current === null) {
-        widgetIdRef.current = window.turnstile.render(turnstileRef.current, {
-          sitekey: TURNSTILE_SITE_KEY,
-          callback: (token) => setTurnstileToken(token),
-          'expired-callback': () => setTurnstileToken(''),
-          'error-callback': () => setTurnstileToken(''),
-        });
-      }
-    };
-
-    if (window.turnstile) {
-      renderWidget();
-    } else {
-      scriptEl = document.createElement('script');
-      scriptEl.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
-      scriptEl.async = true;
-      scriptEl.onload = renderWidget;
-      document.head.appendChild(scriptEl);
-    }
-
-    return () => {
-      if (widgetIdRef.current !== null && window.turnstile) {
-        window.turnstile.remove(widgetIdRef.current);
-        widgetIdRef.current = null;
-      }
-      if (scriptEl && document.head.contains(scriptEl)) {
-        document.head.removeChild(scriptEl);
-      }
-    };
-  }, []);
-
-  const resetTurnstile = () => {
-    setTurnstileToken('');
-    if (widgetIdRef.current !== null && window.turnstile) {
-      window.turnstile.reset(widgetIdRef.current);
-    }
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();

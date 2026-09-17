@@ -29,7 +29,7 @@ from zoneinfo import ZoneInfo
 
 import requests
 
-from scripts.constants.tribunal import APPEAL_TYPE_LABELS
+from scripts.constants.tribunal import appeal_type_label
 from scripts.date_utils import parse_iso_datetime
 
 # ---------------------------------------------------------------------------
@@ -304,7 +304,7 @@ def build_text_email(digest: dict) -> str:
             [
                 m.get("merger_name", m["merger_id"]),
                 format_date((m.get("appeal") or {}).get("filed_date")),
-                APPEAL_TYPE_LABELS.get((m.get("appeal") or {}).get("appeal_type"), "Tribunal appeal"),
+                appeal_type_label(m.get("appeal")),
             ]
             for m in appealed
         ]
@@ -333,7 +333,7 @@ def build_text_email(digest: dict) -> str:
                 m.get("merger_name", m["merger_id"]),
                 format_date((m.get("appeal") or {}).get("filed_date")),
                 format_date(hearing) if (hearing := (m.get("appeal") or {}).get("hearing_date")) else "TBC",
-                APPEAL_TYPE_LABELS.get((m.get("appeal") or {}).get("appeal_type"), "Tribunal appeal"),
+                appeal_type_label(m.get("appeal")),
             ]
             for m in ongoing_appeals
         ]
@@ -716,6 +716,51 @@ def build_decisions(digest: dict) -> str:
     return section_table(rows)
 
 
+def _appeal_rows(mergers: list, chip_label: str, show_hearing: bool) -> str:
+    """Render the shared appeal row body for the two tribunal sections.
+
+    "Appealed to tribunal" (this week's filings) and "Ongoing ACT appeals" (the
+    live snapshot) draw an identical row — merger link, chip, meta line,
+    appellant/tribunal-number detail — and differ only in the chip's wording and
+    in whether the hearing date appears in the meta line. Kept as one renderer
+    so the two can't drift apart.
+    """
+    rows = ""
+    for i, m in enumerate(mergers):
+        divider = "" if i == len(mergers) - 1 else f"border-bottom:1px solid {ROW_LINE};"
+        c = COLORS["tribunal_appeal"]
+        appeal = m.get("appeal") or {}
+        hearing = (
+            f"Hearing {esc(format_date(appeal['hearing_date']))}"
+            if show_hearing and appeal.get("hearing_date") else ""
+        )
+        meta_bits = [x for x in (
+            appeal_type_label(appeal),
+            f"Filed {esc(format_date(appeal.get('filed_date')))}",
+            hearing,
+            esc(m.get("merger_id", "")),
+        ) if x]
+        detail_bits = []
+        if appeal.get("appellant"):
+            detail_bits.append(f"Lodged by {esc(appeal['appellant'])}")
+        if appeal.get("tribunal_number"):
+            detail_bits.append(esc(appeal["tribunal_number"]))
+        detail_html = (
+            f'<div style="font-size:12px;color:{BODY_TEXT};line-height:18px;'
+            f'margin-top:4px;">{" &middot; ".join(detail_bits)}</div>'
+            if detail_bits else ""
+        )
+        rows += (
+            f'<tr><td colspan="2" style="padding:13px 0 12px;{divider}">'
+            f'<a href="{merger_url(m)}" style="color:{c["dark"]};font-size:14px;'
+            f'font-weight:700;text-decoration:none;line-height:1.4;">{merger_name(m)}</a>'
+            f'<div style="margin-top:4px;">{chip(chip_label, c["pale"], c["dark"])}'
+            f' <span style="font-size:11px;color:{FAINT};">{" &middot; ".join(meta_bits)}</span></div>'
+            f"{detail_html}</td></tr>"
+        )
+    return rows
+
+
 def build_tribunal_appeals(mergers: list) -> str:
     """Deals taken to the Australian Competition Tribunal for review this week."""
     c = COLORS["tribunal_appeal"]
@@ -724,33 +769,9 @@ def build_tribunal_appeals(mergers: list) -> str:
     if not mergers:
         rows += empty_section_row("No deals were appealed to the tribunal this week.")
     else:
-        for i, m in enumerate(mergers):
-            divider = "" if i == len(mergers) - 1 else f"border-bottom:1px solid {ROW_LINE};"
-            appeal = m.get("appeal") or {}
-            type_label = APPEAL_TYPE_LABELS.get(appeal.get("appeal_type"), "Tribunal appeal")
-            meta_bits = [x for x in (
-                type_label,
-                f"Filed {esc(format_date(appeal.get('filed_date')))}",
-                esc(m.get("merger_id", "")),
-            ) if x]
-            detail_bits = []
-            if appeal.get("appellant"):
-                detail_bits.append(f"Lodged by {esc(appeal['appellant'])}")
-            if appeal.get("tribunal_number"):
-                detail_bits.append(esc(appeal["tribunal_number"]))
-            detail_html = (
-                f'<div style="font-size:12px;color:{BODY_TEXT};line-height:18px;'
-                f'margin-top:4px;">{" &middot; ".join(detail_bits)}</div>'
-                if detail_bits else ""
-            )
-            rows += (
-                f'<tr><td colspan="2" style="padding:13px 0 12px;{divider}">'
-                f'<a href="{merger_url(m)}" style="color:{c["dark"]};font-size:14px;'
-                f'font-weight:700;text-decoration:none;line-height:1.4;">{merger_name(m)}</a>'
-                f'<div style="margin-top:4px;">{chip("APPEALED", c["pale"], c["dark"])}'
-                f' <span style="font-size:11px;color:{FAINT};">{" &middot; ".join(meta_bits)}</span></div>'
-                f"{detail_html}</td></tr>"
-            )
+        # This week's filings have no hearing listed yet often enough that the
+        # date would read as noise; the ongoing section carries it instead.
+        rows += _appeal_rows(mergers, "APPEALED", show_hearing=False)
     return section_table(rows)
 
 
@@ -824,38 +845,7 @@ def build_ongoing_appeals(mergers: list) -> str:
     if not mergers:
         rows += empty_section_row("No matters are currently under appeal.")
     else:
-        for i, m in enumerate(mergers):
-            divider = "" if i == len(mergers) - 1 else f"border-bottom:1px solid {ROW_LINE};"
-            appeal = m.get("appeal") or {}
-            type_label = APPEAL_TYPE_LABELS.get(appeal.get("appeal_type"), "Tribunal appeal")
-            hearing = (
-                f"Hearing {esc(format_date(appeal['hearing_date']))}"
-                if appeal.get("hearing_date") else ""
-            )
-            meta_bits = [x for x in (
-                type_label,
-                f"Filed {esc(format_date(appeal.get('filed_date')))}",
-                hearing,
-                esc(m.get("merger_id", "")),
-            ) if x]
-            detail_bits = []
-            if appeal.get("appellant"):
-                detail_bits.append(f"Lodged by {esc(appeal['appellant'])}")
-            if appeal.get("tribunal_number"):
-                detail_bits.append(esc(appeal["tribunal_number"]))
-            detail_html = (
-                f'<div style="font-size:12px;color:{BODY_TEXT};line-height:18px;'
-                f'margin-top:4px;">{" &middot; ".join(detail_bits)}</div>'
-                if detail_bits else ""
-            )
-            rows += (
-                f'<tr><td colspan="2" style="padding:13px 0 12px;{divider}">'
-                f'<a href="{merger_url(m)}" style="color:{c["dark"]};font-size:14px;'
-                f'font-weight:700;text-decoration:none;line-height:1.4;">{merger_name(m)}</a>'
-                f'<div style="margin-top:4px;">{chip("ON APPEAL", c["pale"], c["dark"])}'
-                f' <span style="font-size:11px;color:{FAINT};">{" &middot; ".join(meta_bits)}</span></div>'
-                f"{detail_html}</td></tr>"
-            )
+        rows += _appeal_rows(mergers, "ON APPEAL", show_hearing=True)
     return section_table(rows)
 
 # ---------------------------------------------------------------------------

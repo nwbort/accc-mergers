@@ -1,5 +1,4 @@
 import { Link } from 'react-router';
-import { differenceInCalendarDays, parseISO, isValid } from 'date-fns';
 import { FaArrowRightArrowLeft, FaHourglassHalf, FaCalendarDays, FaCircleCheck } from 'react-icons/fa6';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
@@ -14,25 +13,11 @@ import { formatDateMedium, calculateDuration } from '../utils/dates';
 import { MERGER_STATUS } from '../constants/mergerStatus';
 import { CARD } from '../utils/classNames';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
+import { ABOVE_LINE, BELOW_LINE, clampedLabelStyle, percentAlong } from '../utils/timelineAxis';
 
 // Title and description live in the shared table so this page and the
 // build-time prerenderer emit the same <head>.
 const PAGE_META = STATIC_PAGE_META['/refiled-notifications'];
-
-// Position of `date` along the waiver-filed -> track-end axis, clamped to
-// [0, 100] so a milestone landing outside the span (bad data) still renders
-// inside the bar rather than breaking layout. Mirrors Phase2Timeline.
-function percentAlong(dateStr, startStr, endStr) {
-  if (!dateStr || !startStr || !endStr) return null;
-  const date = parseISO(dateStr);
-  const start = parseISO(startStr);
-  const end = parseISO(endStr);
-  if (!isValid(date) || !isValid(start) || !isValid(end)) return null;
-  const total = differenceInCalendarDays(end, start);
-  if (total <= 0) return null;
-  const elapsed = differenceInCalendarDays(date, start);
-  return Math.min(100, Math.max(0, (elapsed / total) * 100));
-}
 
 function median(values) {
   if (values.length === 0) return null;
@@ -41,24 +26,12 @@ function median(values) {
   return sorted.length % 2 !== 0 ? sorted[mid] : Math.round((sorted[mid - 1] + sorted[mid]) / 2);
 }
 
-const ABOVE_LINE = 'absolute bottom-1/2 mb-2';
-const BELOW_LINE = 'absolute top-1/2 mt-2';
-
 // The "days to re-file" pill sits centred between the declined and re-filed
 // dots, clamped to stay inside the track on narrow screens — the same
 // technique Phase2Timeline uses for its NOCC label. The "Phase 2" label above
 // the track is centred on its own leg the same way.
 const GAP_HALF = '1.75rem';
 const PHASE_2_HALF = '1.5rem';
-
-// Centre `percent` along the track, clamped so a label sitting near either end
-// stops at the edge instead of hanging off it.
-function clampedLabelStyle(percent, half, translate) {
-  return {
-    left: `clamp(${half}, ${percent}%, calc(100% - ${half}))`,
-    transform: translate,
-  };
-}
 
 function RefiledCard({ pair, showOutcome }) {
   // A re-filed notification can itself be referred to Phase 2 (MN-40017 was),

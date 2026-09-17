@@ -12,7 +12,7 @@ from pathlib import Path
 from scripts.constants import merger_status
 
 from .. import anzsic
-from ..durations import collect_phase_1_durations, collect_waiver_durations, median_or_none
+from ..durations import phase_1_duration_stats, waiver_duration_stats
 from ..prune import prune_stale_files
 
 
@@ -37,52 +37,6 @@ def is_active(m: dict) -> bool:
         merger_status.UNDER_ASSESSMENT,
         merger_status.ASSESSMENT_SUSPENDED,
     )
-
-
-def _avg(values: list):
-    return sum(values) / len(values) if values else None
-
-
-def _phase_duration(unique_mergers: list) -> dict | None:
-    """Phase 1 duration stats for an industry, mirroring the dashboard stats.
-
-    Measures notification → Phase 1 end for completed notification (non-waiver)
-    mergers, with matters referred to Phase 2 measured to the referral date so
-    the Phase 2 clock never inflates the figures. Returns ``None`` when the
-    industry has no completed Phase 1 reviews.
-    """
-    durations, business_durations = collect_phase_1_durations(unique_mergers)
-
-    if not durations and not business_durations:
-        return None
-
-    return {
-        "average_days": _avg(durations),
-        "median_days": median_or_none(durations),
-        "average_business_days": _avg(business_durations),
-        "median_business_days": median_or_none(business_durations),
-        "completed_count": len(business_durations),
-    }
-
-
-def _waiver_duration(unique_mergers: list) -> dict | None:
-    """Waiver duration stats for an industry, mirroring :func:`_phase_duration`.
-
-    Measures notification → determination publication for completed waiver
-    mergers. Returns ``None`` when the industry has no completed waivers.
-    """
-    durations, business_durations = collect_waiver_durations(unique_mergers)
-
-    if not durations and not business_durations:
-        return None
-
-    return {
-        "average_days": _avg(durations),
-        "median_days": median_or_none(durations),
-        "average_business_days": _avg(business_durations),
-        "median_business_days": median_or_none(business_durations),
-        "completed_count": len(business_durations),
-    }
 
 
 def _industry_stats(unique_mergers: list) -> dict:
@@ -252,8 +206,8 @@ def generate_detail_files(mergers: list, output_dir: Path) -> int:
             "mergers": _sort_mergers(record_list),
             "count": len(record_list),
             **_industry_stats(full_mergers),
-            "phase_duration": _phase_duration(full_mergers),
-            "waiver_duration": _waiver_duration(full_mergers),
+            "phase_duration": phase_1_duration_stats(full_mergers),
+            "waiver_duration": waiver_duration_stats(full_mergers),
         }
         written.add(_write_detail_file(industries_dir, code, payload))
 
@@ -271,8 +225,8 @@ def generate_detail_files(mergers: list, output_dir: Path) -> int:
             "mergers": _sort_mergers(record_list),
             "count": len(record_list),
             **_industry_stats(full_mergers),
-            "phase_duration": _phase_duration(full_mergers),
-            "waiver_duration": _waiver_duration(full_mergers),
+            "phase_duration": phase_1_duration_stats(full_mergers),
+            "waiver_duration": waiver_duration_stats(full_mergers),
         }
         written.add(_write_detail_file(industries_dir, code, payload))
 

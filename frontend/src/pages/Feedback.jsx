@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'react-router';
 import { FaCheckCircle } from 'react-icons/fa';
-import { FEEDBACK_ENDPOINT, TURNSTILE_SITE_KEY } from '../config';
+import { FEEDBACK_ENDPOINT } from '../config';
 import SEO from '../components/SEO';
+import { useTurnstile } from '../hooks/useTurnstile';
 import { CARD } from '../utils/classNames';
 
 // Matches the textarea's maxLength — a ?message= link can seed the box, but
@@ -19,9 +20,7 @@ export default function Feedback() {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState('idle'); // idle | loading | success | error
   const [errorMsg, setErrorMsg] = useState('');
-  const [turnstileToken, setTurnstileToken] = useState('');
-  const turnstileRef = useRef(null);
-  const widgetIdRef = useRef(null);
+  const { ref: turnstileRef, token: turnstileToken, reset: resetTurnstile } = useTurnstile();
   const messageRef = useRef(null);
 
   // Land in the message box with the caret after the part already written, so
@@ -33,45 +32,6 @@ export default function Feedback() {
     // Seeded once on arrival; retyping the URL is what changes it after that.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect(() => {
-    let scriptEl = null;
-
-    const renderWidget = () => {
-      if (turnstileRef.current && widgetIdRef.current === null) {
-        widgetIdRef.current = window.turnstile.render(turnstileRef.current, {
-          sitekey: TURNSTILE_SITE_KEY,
-          callback: (token) => setTurnstileToken(token),
-          'expired-callback': () => setTurnstileToken(''),
-          'error-callback': () => setTurnstileToken(''),
-        });
-      }
-    };
-
-    if (window.turnstile) {
-      renderWidget();
-    } else {
-      scriptEl = document.createElement('script');
-      scriptEl.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
-      scriptEl.async = true;
-      scriptEl.onload = renderWidget;
-      document.head.appendChild(scriptEl);
-    }
-
-    return () => {
-      if (widgetIdRef.current !== null && window.turnstile) {
-        window.turnstile.remove(widgetIdRef.current);
-        widgetIdRef.current = null;
-      }
-    };
-  }, []);
-
-  const resetTurnstile = () => {
-    setTurnstileToken('');
-    if (widgetIdRef.current !== null && window.turnstile) {
-      window.turnstile.reset(widgetIdRef.current);
-    }
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();

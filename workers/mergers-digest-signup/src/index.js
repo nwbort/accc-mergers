@@ -112,6 +112,39 @@ async function verifyTurnstile(token, remoteIp, env) {
   return { ok: !!data.success, status: resp.status, errorCodes: data["error-codes"] };
 }
 
+/**
+ * Run the Turnstile check for a handler, returning an error Response to send
+ * back, or null when the token is good and the handler should carry on.
+ *
+ * Both protected endpoints (signup and feedback) need the identical
+ * missing-token / network-error / rejected-token treatment, down to the status
+ * codes and the message the browser shows, so it is written once here. The
+ * caller does its own cheap validation first — there is no point burning a
+ * Turnstile round trip on a request that is already malformed.
+ */
+async function turnstileGate(token, request, env, origin) {
+  if (!token) {
+    return jsonResponse({ error: "CAPTCHA verification required" }, 400, origin, env);
+  }
+
+  let result;
+  try {
+    result = await verifyTurnstile(token, request.headers.get("CF-Connecting-IP"), env);
+  } catch (err) {
+    // Cloudflare unreachable — a 503 says "retry", not "you failed".
+    console.error("Network error verifying Turnstile token:", err);
+    return jsonResponse({ error: "CAPTCHA verification failed. Please try again." }, 503, origin, env);
+  }
+
+  if (!result.ok) {
+    const codes = Array.isArray(result.errorCodes) ? result.errorCodes.join(",") : "unknown";
+    console.error("Turnstile verification failed:", result.status, codes);
+    return jsonResponse({ error: "CAPTCHA verification failed. Please try again." }, 400, origin, env);
+  }
+
+  return null;
+}
+
 // ---------------------------------------------------------------------------
 // Handler: POST / — digest email signup
 // ---------------------------------------------------------------------------
@@ -146,29 +179,8 @@ async function handleSubscribe(request, env, origin) {
     return jsonResponse({ error: "Please enter a valid email address" }, 400, origin, env);
   }
 
-  if (!turnstileToken) {
-    return jsonResponse({ error: "CAPTCHA verification required" }, 400, origin, env);
-  }
-
-  let turnstileResult;
-  try {
-    turnstileResult = await verifyTurnstile(
-      turnstileToken,
-      request.headers.get("CF-Connecting-IP"),
-      env
-    );
-  } catch (err) {
-    console.error("Network error verifying Turnstile token:", err);
-    return jsonResponse({ error: "CAPTCHA verification failed. Please try again." }, 503, origin, env);
-  }
-
-  if (!turnstileResult.ok) {
-    const codes = Array.isArray(turnstileResult.errorCodes)
-      ? turnstileResult.errorCodes.join(",")
-      : "unknown";
-    console.error("Turnstile verification failed:", turnstileResult.status, codes);
-    return jsonResponse({ error: "CAPTCHA verification failed. Please try again." }, 400, origin, env);
-  }
+  const turnstileError = await turnstileGate(turnstileToken, request, env, origin);
+  if (turnstileError) return turnstileError;
 
   let resendResp;
   try {
@@ -253,29 +265,8 @@ async function handleFeedback(request, env, origin) {
     return jsonResponse({ error: "Please enter a valid email address" }, 400, origin, env);
   }
 
-  if (!turnstileToken) {
-    return jsonResponse({ error: "CAPTCHA verification required" }, 400, origin, env);
-  }
-
-  let turnstileResult;
-  try {
-    turnstileResult = await verifyTurnstile(
-      turnstileToken,
-      request.headers.get("CF-Connecting-IP"),
-      env
-    );
-  } catch (err) {
-    console.error("Network error verifying Turnstile token:", err);
-    return jsonResponse({ error: "CAPTCHA verification failed. Please try again." }, 503, origin, env);
-  }
-
-  if (!turnstileResult.ok) {
-    const codes = Array.isArray(turnstileResult.errorCodes)
-      ? turnstileResult.errorCodes.join(",")
-      : "unknown";
-    console.error("Turnstile verification failed:", turnstileResult.status, codes);
-    return jsonResponse({ error: "CAPTCHA verification failed. Please try again." }, 400, origin, env);
-  }
+  const turnstileError = await turnstileGate(turnstileToken, request, env, origin);
+  if (turnstileError) return turnstileError;
 
   try {
     await env.DB.prepare(

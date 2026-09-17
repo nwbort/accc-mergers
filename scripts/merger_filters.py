@@ -12,8 +12,9 @@ duplicate them here; always compare against the named constants.
 
 Public API
 ----------
-Loaders:
+Loaders / writers:
     :func:`load_mergers`
+    :func:`save_mergers`
 
 Predicates (single-merger):
     :func:`is_waiver`
@@ -85,6 +86,30 @@ def load_mergers(path: Optional[Union[str, Path]] = None) -> List[dict]:
         f"Unexpected mergers.json format at {target!s}: "
         "expected a list or a dict with a 'mergers' key"
     )
+
+
+def save_mergers(document, path: Optional[Union[str, Path]] = None) -> None:
+    """Write ``document`` back to the processed mergers JSON file.
+
+    The canonical *writer*, counterpart to :func:`load_mergers`. Several tools
+    write this file — ``extract_mergers.py``, ``enrich_pdfs.py``,
+    ``detect_duplicates.py --apply-fixes`` and the ``resolver`` admin UI — and
+    they must agree byte-for-byte on the serialisation, or each one flips the
+    formatting back and churns a line in the next one's diff. That is why the
+    trailing newline is not optional and why it lives here rather than being
+    re-typed at each call site.
+
+    Args:
+        document: The value to serialise. Pass the raw on-disk document when
+            round-tripping a file that may use the ``{"mergers": [...]}``
+            wrapper, so the shape is preserved; a plain list is equally fine.
+        path: Optional destination. Defaults to
+            ``data/processed/mergers.json`` at the repo root.
+    """
+    target = Path(path) if path is not None else DEFAULT_MERGERS_JSON
+    with open(target, "w", encoding="utf-8") as f:
+        json.dump(document, f, indent=2)
+        f.write("\n")
 
 
 # ---------------------------------------------------------------------------

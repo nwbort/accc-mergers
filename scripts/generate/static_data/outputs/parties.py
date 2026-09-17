@@ -34,7 +34,7 @@ from scripts.detect.party_matching import build_group_lookups, match_party, norm
 from scripts.shard import SHARD_COUNT, party_shard, shard_name
 from scripts.slug import slugify
 
-from ..durations import collect_phase_1_durations, collect_waiver_durations, median_or_none
+from ..durations import phase_1_duration_stats, waiver_duration_stats
 from ..prune import prune_stale_files
 from .industries import classify_phase, is_active
 
@@ -199,45 +199,6 @@ def _merger_summary(m: dict) -> dict:
     }
 
 
-def _phase_duration(unique_mergers: list) -> dict | None:
-    """Phase 1 duration stats for a party, mirroring the industry stats."""
-    durations, business_durations = collect_phase_1_durations(unique_mergers)
-
-    if not durations and not business_durations:
-        return None
-
-    return {
-        'average_days': sum(durations) / len(durations) if durations else None,
-        'median_days': median_or_none(durations),
-        'average_business_days': (
-            sum(business_durations) / len(business_durations) if business_durations else None
-        ),
-        'median_business_days': median_or_none(business_durations),
-        'completed_count': len(business_durations),
-    }
-
-
-def _waiver_duration(unique_mergers: list) -> dict | None:
-    """Waiver duration stats for a party, mirroring :func:`_phase_duration`.
-
-    Measures notification → determination publication for completed waivers.
-    """
-    durations, business_durations = collect_waiver_durations(unique_mergers)
-
-    if not durations and not business_durations:
-        return None
-
-    return {
-        'average_days': sum(durations) / len(durations) if durations else None,
-        'median_days': median_or_none(durations),
-        'average_business_days': (
-            sum(business_durations) / len(business_durations) if business_durations else None
-        ),
-        'median_business_days': median_or_none(business_durations),
-        'completed_count': len(business_durations),
-    }
-
-
 def _party_payload(g: dict) -> dict:
     """The detail record for one party group — what a party page renders."""
     merger_map: dict = {}
@@ -265,8 +226,8 @@ def _party_payload(g: dict) -> dict:
         'phase_2_count': phase_2,
         'waiver_count': waivers,
         'active_count': active,
-        'phase_duration': _phase_duration(all_mergers),
-        'waiver_duration': _waiver_duration(all_mergers),
+        'phase_duration': phase_1_duration_stats(all_mergers),
+        'waiver_duration': waiver_duration_stats(all_mergers),
     }
 
 
