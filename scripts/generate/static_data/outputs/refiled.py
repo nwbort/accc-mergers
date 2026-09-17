@@ -9,7 +9,7 @@ recorded in ``related_mergers.json``. Companion view to the Phase 2 tracker
 
 from scripts.constants import merger_status
 
-from ..durations import collect_phase_1_durations, median_or_none
+from ..durations import phase_1_duration_stats
 from ..filters import filter_notifications
 
 #: Determinations that count as the merger being allowed to proceed, mirroring
@@ -70,9 +70,9 @@ def _phase_1_clearance_rate(notifications: list) -> dict:
     outcome (rather than the final determination) means a referral counts
     against the rate as soon as it happens instead of waiting months for the
     Phase 2 result, and puts the rate on the same denominator as
-    :func:`_phase_duration`. Outcomes that are neither a clearance nor a
-    referral are skipped: Phase 1 does not block a merger, so a stray value
-    can't silently distort the rate.
+    :func:`static_data.durations.phase_1_duration_stats`. Outcomes that are
+    neither a clearance nor a referral are skipped: Phase 1 does not block a
+    merger, so a stray value can't silently distort the rate.
     """
     cleared = sum(
         1 for m in notifications
@@ -88,31 +88,6 @@ def _phase_1_clearance_rate(notifications: list) -> dict:
         'referred': referred,
         'total': total,
         'rate': round(cleared / total, 3) if total else None,
-    }
-
-
-def _phase_duration(unique_mergers: list) -> dict | None:
-    """Phase 1 duration stats for a set of notification mergers.
-
-    Mirrors :func:`static_data.outputs.industries._phase_duration`. Measures
-    notification → Phase 1 end (referral date for matters sent to Phase 2, so
-    the Phase 2 clock never inflates the figures). Returns ``None`` when
-    there are no completed Phase 1 reviews in the set.
-    """
-    durations, business_durations = collect_phase_1_durations(unique_mergers)
-
-    if not durations and not business_durations:
-        return None
-
-    def _avg(values):
-        return sum(values) / len(values) if values else None
-
-    return {
-        "average_days": _avg(durations),
-        "median_days": median_or_none(durations),
-        "average_business_days": _avg(business_durations),
-        "median_business_days": median_or_none(business_durations),
-        "completed_count": len(business_durations),
     }
 
 
@@ -169,6 +144,6 @@ def generate(mergers: list) -> dict:
         'count': {'current': len(current), 'completed': len(completed)},
         'phase_1_clearance_rate': _phase_1_clearance_rate(refiled_notifications),
         'straight_phase_1_clearance_rate': _phase_1_clearance_rate(straight_notifications),
-        'phase_duration': _phase_duration(refiled_notifications),
-        'straight_phase_duration': _phase_duration(straight_notifications),
+        'phase_duration': phase_1_duration_stats(refiled_notifications),
+        'straight_phase_duration': phase_1_duration_stats(straight_notifications),
     }

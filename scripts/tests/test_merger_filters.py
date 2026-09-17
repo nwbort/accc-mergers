@@ -32,6 +32,7 @@ from scripts.merger_filters import (
     is_waiver,
     load_mergers,
     notification_sort_key,
+    save_mergers,
     sort_by_notification_date,
 )
 
@@ -361,6 +362,40 @@ class TestLoadMergers:
         assert DEFAULT_MERGERS_JSON.name == "mergers.json"
         assert DEFAULT_MERGERS_JSON.parent.name == "processed"
         assert DEFAULT_MERGERS_JSON.parent.parent.name == "data"
+
+
+class TestSaveMergers:
+    """save_mergers is the one writer every tool that touches mergers.json
+    shares, so its serialisation must not drift: extract_mergers.py,
+    enrich_pdfs.py, detect_duplicates.py --apply-fixes and the resolver admin
+    UI all round-trip the same file.
+    """
+
+    def test_round_trips_through_load_mergers(self, tmp_path: Path):
+        path = tmp_path / "mergers.json"
+        save_mergers(_fixture(), path)
+        assert load_mergers(path) == _fixture()
+
+    def test_writes_indent_2_and_a_trailing_newline(self, tmp_path: Path):
+        # Without the trailing newline two writers flip the last byte back and
+        # forth and each churns a line in the other's diff.
+        path = tmp_path / "mergers.json"
+        save_mergers(_fixture(), path)
+        text = path.read_text(encoding="utf-8")
+        assert text.endswith("]\n")
+        assert text == json.dumps(_fixture(), indent=2) + "\n"
+
+    def test_preserves_the_wrapped_document_shape(self, tmp_path: Path):
+        # detect_duplicates / resolver hand back the raw document so a file
+        # using the {"mergers": [...]} wrapper keeps it.
+        path = tmp_path / "mergers.json"
+        save_mergers({'mergers': _fixture()}, path)
+        assert json.loads(path.read_text(encoding="utf-8")) == {'mergers': _fixture()}
+
+    def test_accepts_string_path(self, tmp_path: Path):
+        path = tmp_path / "mergers.json"
+        save_mergers(_fixture(), str(path))
+        assert len(load_mergers(path)) == 5
 
 
 # ---------------------------------------------------------------------------

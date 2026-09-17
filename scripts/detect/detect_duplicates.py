@@ -36,6 +36,7 @@ from pathlib import Path
 from scripts.constants.site import REPO as _REPO, mergers_fyi_url
 from scripts.date_utils import parse_iso_datetime
 from scripts.normalization import normalize_dashes
+from scripts.merger_filters import save_mergers
 from scripts.paths import REPO_ROOT
 
 DEFAULT_INPUT = REPO_ROOT / "data" / "processed" / "mergers.json"
@@ -662,9 +663,7 @@ def main() -> None:
     if args.apply_fixes or args.pr_markdown:
         changes = apply_fixes(mergers, report)
         if args.apply_fixes:
-            with args.input.open("w") as fh:
-                json.dump(raw, fh, indent=2)
-                fh.write("\n")
+            save_mergers(raw, args.input)
             print(f"Applied {len(changes)} deletion(s) to {args.input}", file=sys.stderr)
         if args.pr_markdown:
             today = datetime.now(timezone.utc).strftime("%Y-%m-%d")

@@ -12,7 +12,7 @@ from pydantic import BaseModel
 import uvicorn
 
 from scripts.detect.detect_duplicates import build_report, DEFAULT_INPUT
-from scripts.merger_filters import load_mergers
+from scripts.merger_filters import load_mergers, save_mergers
 
 app = FastAPI()
 
@@ -49,10 +49,10 @@ def remove_event(req: RemoveRequest):
     # Delete the event
     del events[req.index]
     
-    # Save directly back to mergers.json
-    with DEFAULT_INPUT.open("w") as fh:
-        json.dump(raw, fh, indent=2)
-        
+    # Save directly back to mergers.json, through the shared writer so this
+    # UI's output matches the pipeline's byte-for-byte.
+    save_mergers(raw, DEFAULT_INPUT)
+
     return {"status": "success"}
 
 # --- Minimal Frontend ---

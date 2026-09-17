@@ -38,6 +38,58 @@ def median_or_none(values: list):
     return median(values) if values else None
 
 
+def _average_or_none(values: list):
+    """Arithmetic mean of ``values``, or ``None`` if empty."""
+    return sum(values) / len(values) if values else None
+
+
+def duration_stats(calendar_days: list, business_days: list) -> dict | None:
+    """The average/median duration block published for a subject, or ``None``.
+
+    Every per-subject duration payload — industry, party, refiled-notification
+    set — is this same five-key shape, and the frontend charts them directly
+    against each other and against the stats.json baselines
+    (``PhaseDurationComparison``), so the keys and the averaging convention
+    must not diverge between callers. This is that single definition; the
+    callers differ only in which durations they collect.
+
+    ``completed_count`` counts the *business*-day sample, which is the figure
+    the comparison chart reads.
+
+    Returns ``None`` when the subject has no completed reviews at all, so a
+    caller can omit the block entirely rather than publish empty stats.
+    """
+    if not calendar_days and not business_days:
+        return None
+
+    return {
+        'average_days': _average_or_none(calendar_days),
+        'median_days': median_or_none(calendar_days),
+        'average_business_days': _average_or_none(business_days),
+        'median_business_days': median_or_none(business_days),
+        'completed_count': len(business_days),
+    }
+
+
+def phase_1_duration_stats(mergers: list) -> dict | None:
+    """Phase 1 :func:`duration_stats` for ``mergers``, or ``None`` if none completed.
+
+    Measures notification → Phase 1 end for completed notification (non-waiver)
+    mergers, with matters referred to Phase 2 measured to the referral date so
+    the Phase 2 clock never inflates the figures (see :func:`phase_1_end_date`).
+    """
+    return duration_stats(*collect_phase_1_durations(mergers))
+
+
+def waiver_duration_stats(mergers: list) -> dict | None:
+    """Waiver :func:`duration_stats` for ``mergers``, or ``None`` if none completed.
+
+    Measures notification → determination publication for completed waivers,
+    which have no Phase 1 clock of their own.
+    """
+    return duration_stats(*collect_waiver_durations(mergers))
+
+
 def phase_1_end_date(m: dict) -> str | None:
     """ISO date Phase 1 concluded for ``m``, or ``None`` if it hasn't.
 
