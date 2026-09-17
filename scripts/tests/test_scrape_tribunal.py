@@ -736,3 +736,80 @@ class TestDroppedDocuments:
         existing = [_doc('2026-08-20', 'B')]
         assert scrape_tribunal.dropped_documents(existing, existing) == []
         assert scrape_tribunal.dropped_documents(None, []) == []
+
+
+class FakeChallengeTab:
+    """Stands in for a nodriver Tab on a Cloudflare challenge page.
+
+    ``find`` records every text it was searched for. It answers with a
+    clickable element only for the texts in ``matches``; anything else *hangs*,
+    the way a real find() does on a challenge page carrying a cross-origin
+    Turnstile iframe (its own ``timeout=`` is only consulted between whole
+    search iterations, so it does not bound the call).
+    """
+
+    class _Element:
+        def __init__(self):
+            self.clicked = False
+
+        async def mouse_click(self):
+            self.clicked = True
+
+    def __init__(self, matches=()):
+        self.matches = set(matches)
+        self.searched_for = []
+        self.element = self._Element()
+
+    async def find(self, text, best_match=True, timeout=10):
+        self.searched_for.append(text)
+        if text in self.matches:
+            return self.element
+        await asyncio.sleep(3600)   # never returns on its own
+
+
+class TestTryClickTurnstile:
+    """The checkbox search is best-effort and runs inside fetch_page's wait
+    loop, so a miss has to be cheap. Run 35188870193 spent 60 of its 77 scraper
+    seconds here, searching three phrasings of the same substring."""
+
+    @pytest.fixture(autouse=True)
+    def _fast_timeout(self, monkeypatch):
+        """Keep the ceiling this class is about out of the suite's runtime: a
+        deliberate miss below would otherwise wait the real 5s."""
+        monkeypatch.setattr(
+            scrape_tribunal, 'TURNSTILE_FIND_TIMEOUT_SECONDS', 0.05
+        )
+
+    def test_clicks_the_checkbox_and_searches_once(self):
+        tab = FakeChallengeTab(matches={'human'})
+
+        assert asyncio.run(scrape_tribunal.try_click_turnstile(tab)) is True
+        assert tab.element.clicked
+        assert tab.searched_for == ['human']
+
+    def test_longer_phrasings_are_not_searched_for(self):
+        """DOM.performSearch matches substrings, so 'human' already covers
+        'Verify you are human' — searching those too could only repeat a search
+        that had just missed, at the cost of a full timeout each."""
+        tab = FakeChallengeTab(matches={'challenges.cloudflare.com'})
+
+        assert asyncio.run(scrape_tribunal.try_click_turnstile(tab)) is True
+        assert 'Verify you are human' not in tab.searched_for
+        assert 'Verify you are a human' not in tab.searched_for
+
+    def test_a_miss_is_bounded_by_the_turnstile_timeout(self, monkeypatch):
+        """A find() that matches nothing must be cut off by the tight
+        Turnstile ceiling, not left to run to CDP_CALL_TIMEOUT_SECONDS."""
+        monkeypatch.setattr(scrape_tribunal, 'CDP_CALL_TIMEOUT_SECONDS', 3600)
+        tab = FakeChallengeTab()   # nothing matches; every find hangs
+
+        async def run():
+            started = asyncio.get_running_loop().time()
+            clicked = await scrape_tribunal.try_click_turnstile(tab)
+            return clicked, asyncio.get_running_loop().time() - started
+
+        clicked, elapsed = asyncio.run(run())
+
+        assert clicked is False
+        # Two searches (the text, then the iframe), each capped.
+        assert elapsed < 1
