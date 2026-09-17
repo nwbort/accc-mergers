@@ -1,6 +1,6 @@
 {
   "total_mergers": 259,
-  "total_waivers": 407,
+  "total_waivers": 408,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 228,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 388,
+    "Approved": 389,
     "Not approved": 19
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.95085995085995,
-    "median_days": 20,
-    "average_business_days": 13.592137592137592,
-    "median_business_days": 13
+    "average_days": 19.955882352941178,
+    "median_days": 20.0,
+    "average_business_days": 13.598039215686274,
+    "median_business_days": 13.0
   },
   "top_industries": [
     {
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-95041",
+      "merger_name": "OceanaGold - Ausgold",
+      "determination": "Approved",
+      "determination_date": "2026-09-17T12:00:00Z",
+      "page_modified_datetime": "2026-09-17T17:16:34+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-10033",
       "merger_name": "Australian Venue Co \u2013 assets of The Clock Hotel, Surry Hills and The Bank Hotel, Newtown, NSW",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-60041",
-      "merger_name": "Blackstone - MRC Dickson Holdings",
-      "determination": "Approved",
-      "determination_date": "2026-09-14T12:00:00Z",
-      "page_modified_datetime": "2026-09-14T16:36:06+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]

@@ -2203,6 +2203,46 @@
       ]
     },
     {
+      "merger_id": "WA-95041",
+      "merger_name": "OceanaGold - Ausgold",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-26T12:00:00Z",
+      "determination_publication_date": "2026-09-17T12:00:00Z",
+      "end_of_determination_period": null,
+      "latest_event_date": "2026-09-17T12:00:00Z",
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "OceanaGold (Australia) Pty Ltd"
+        }
+      ],
+      "targets": [
+        {
+          "name": "AUSGOLD LIMITED"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "OceanaGold Corporation"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0803",
+          "name": "Copper Ore Mining"
+        },
+        {
+          "code": "0804",
+          "name": "Gold Ore Mining"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-85047",
       "merger_name": "Blackstone funds and Perpetual Trustees \u2013 HSBC loan portfolio",
       "status": "Under assessment",
@@ -2524,49 +2564,6 @@
         {
           "code": "9419",
           "name": "Other Automotive Repair and Maintenance"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-40034",
-      "merger_name": "Woolworths - supermarket site in Homestead Rd, Orchard Hills, NSW",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-09-03T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-10-16T12:00:00Z",
-      "latest_event_date": "2026-09-04T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "WOOLWORTHS GROUP LIMITED"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Name of landholders withheld under section 5-3 of the Competition and Consumer (Notification of Acquisitions) Determination 2025 (Cth)."
-        },
-        {
-          "name": "Freehold interest in 158-162 Homestead Road, Orchard Hills, NSW."
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "4110",
-          "name": "Supermarket and Grocery Stores"
-        },
-        {
-          "code": "6711",
-          "name": "Residential Property Operators"
-        },
-        {
-          "code": "6712",
-          "name": "Non-Residential Property Operators"
         }
       ]
     }

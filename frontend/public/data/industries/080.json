@@ -36,13 +36,13 @@
       "code": "0803",
       "name": "Copper Ore Mining",
       "level": "class",
-      "merger_count": 4
+      "merger_count": 5
     },
     {
       "code": "0804",
       "name": "Gold Ore Mining",
       "level": "class",
-      "merger_count": 7
+      "merger_count": 8
     },
     {
       "code": "0805",
@@ -80,6 +80,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-09-10T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-95041",
+      "merger_name": "OceanaGold - Ausgold",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-26T12:00:00Z",
+      "determination_date": "2026-09-17T12:00:00Z"
     },
     {
       "merger_id": "WA-40036",
@@ -203,10 +214,10 @@
       "determination_date": null
     }
   ],
-  "count": 12,
+  "count": 13,
   "phase_1_count": 3,
   "phase_2_count": 0,
-  "waiver_count": 9,
+  "waiver_count": 10,
   "active_count": 1,
   "phase_duration": {
     "average_days": 25.0,
@@ -216,10 +227,10 @@
     "completed_count": 1
   },
   "waiver_duration": {
-    "average_days": 19.0,
-    "median_days": 20,
-    "average_business_days": 12.88888888888889,
-    "median_business_days": 13,
-    "completed_count": 9
+    "average_days": 19.3,
+    "median_days": 21.0,
+    "average_business_days": 13.2,
+    "median_business_days": 14.5,
+    "completed_count": 10
   }
 }
