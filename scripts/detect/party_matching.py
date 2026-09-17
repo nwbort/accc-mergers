@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import json
 import re
+import unicodedata
 from pathlib import Path
 
 from scripts.slug import slugify
@@ -37,15 +38,46 @@ _COMPANY_SUFFIXES = re.compile(
     re.IGNORECASE,
 )
 
+# Latin letters with no canonical decomposition, which NFKD therefore cannot
+# fold to ASCII on its own — without this map they would be *dropped* rather
+# than folded ("Møller" -> "mller"), so an accented and an unaccented spelling
+# of the same name would still fail to match.
+_NON_DECOMPOSING = str.maketrans({
+    "ø": "o", "æ": "ae", "œ": "oe", "ß": "ss",
+    "đ": "d", "ð": "d", "ł": "l", "þ": "th", "ı": "i",
+})
+
+
+def fold_accents(text: str) -> str:
+    """Strip diacritics from ``text``, mapping each letter to its ASCII base.
+
+    The ACCC register records the same entity with and without its accents
+    ("CAISSE DE DEPOT ET PLACEMENT DU QUEBEC" on one matter, "Caisse de dépôt
+    et placement du Québec" on another; likewise the Luxembourg "S.à r.l" /
+    "S.a r.l" suffix), so matching has to treat the two spellings as one name.
+    Expects lower-cased input — the translation table only covers lower-case
+    forms, which is all :func:`normalise_name` needs.
+    """
+    if not text:
+        return ""
+    text = text.translate(_NON_DECOMPOSING)
+    return unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode("ascii")
+
 
 def normalise_name(name: str) -> str:
-    """Lower-case a party name and strip company suffixes/punctuation for matching.
+    """Lower-case a party name, fold accents and strip company
+    suffixes/punctuation for matching.
 
     Returns an empty string when no usable characters remain.
     """
     if not name:
         return ""
-    out = name.lower()
+    lowered = name.lower()
+    folded = fold_accents(lowered)
+    # A name in a non-Latin script (CJK, Cyrillic, ...) folds away to nothing.
+    # Fall back to the unfolded form so such a name still matches itself rather
+    # than normalising to "" and silently matching nothing.
+    out = folded if folded.strip() else lowered
     out = _COMPANY_SUFFIXES.sub(" ", out)
     out = re.sub(r"[^\w\s]", " ", out)
     out = re.sub(r"\s+", " ", out).strip()

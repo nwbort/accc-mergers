@@ -33,6 +33,46 @@ def test_normalise_name_strips_company_suffixes():
     assert pm.normalise_name("Coles Supermarkets Australia Pty Ltd") == "coles supermarkets"
 
 
+def test_normalise_name_folds_accents():
+    # The register records the same entity both with and without its accents,
+    # so the two spellings have to normalise to one key.
+    assert (
+        pm.normalise_name("Caisse de dépôt et placement du Québec")
+        == pm.normalise_name("CAISSE DE DEPOT ET PLACEMENT DU QUEBEC")
+    )
+    assert pm.normalise_name("Nestlé S.A.") == "nestle s a"
+    assert pm.normalise_name("Wärtsilä Finland Oy") == "wartsila finland oy"
+    # The Luxembourg "S.à r.l" suffix, typed inconsistently across matters.
+    assert (
+        pm.normalise_name("Oakley Capital Manager S.à r.l")
+        == pm.normalise_name("Oakley Capital Manager S.a r.l")
+    )
+
+
+def test_normalise_name_folds_letters_nfkd_cannot_decompose():
+    # These have no canonical decomposition, so a plain NFKD pass would drop
+    # them entirely ("Møller" -> "mller") instead of folding them.
+    assert pm.normalise_name("A.P. Møller") == pm.normalise_name("A.P. Moller")
+    assert pm.normalise_name("Loom Games Oyun Yazılım") == "loom games oyun yazilim"
+
+
+def test_normalise_name_keeps_non_latin_script_names():
+    # A name that folds away to nothing must fall back to its unfolded form,
+    # so it still matches itself rather than normalising to "".
+    assert pm.normalise_name("株式会社サンプル") == "株式会社サンプル"
+
+
+def test_accented_and_unaccented_party_names_match_one_group():
+    groups = [{
+        "id": "caisse-de-depot-et-placement-du-quebec",
+        "canonical_name": "Caisse de dépôt et placement du Québec",
+        "members": [{"name": "Caisse de dépôt et placement du Québec", "identifier": "8812257473"}],
+    }]
+    by_identifier, by_name = pm.build_group_lookups(groups)
+    party = {"name": "CAISSE DE DEPOT ET PLACEMENT DU QUEBEC", "identifier": "154 317 209"}
+    assert pm.match_party(party, by_identifier, by_name) is groups[0]
+
+
 def test_normalise_identifier_strips_spaces_and_punctuation():
     assert pm.normalise_identifier("45 004 189 708") == "45004189708"
     assert pm.normalise_identifier("CBN  764228300") == "CBN764228300"
