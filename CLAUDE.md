@@ -181,7 +181,10 @@ frontend/src/
 ├── context/              # TrackingContext.jsx — global merger + industry follow state via localStorage
 │                         #   (industry follows flag only new filings/determinations)
 ├── hooks/                # useDebounce.js, useFetchData.js, useKeyboardShortcuts.js,
-│                         #   useDecodedParam.js
+│                         #   useDecodedParam.js, useTurnstile.js (the Cloudflare
+│                         #   Turnstile widget lifecycle — script injection, explicit
+│                         #   render, token, reset, teardown — shared by the digest
+│                         #   signup and the feedback form)
 ├── utils/                # chartSetup.js (the single Chart.js registration point — import it
 │                         #   from any module that draws a chart; registering per page instead
 │                         #   silently breaks a chart reused on a page that registered less,
@@ -192,7 +195,12 @@ frontend/src/
 │                         #   industryGroups.js, slug.js, shard.js, preNotification.js, pageMeta.js,
 │                         #   treemapTail.js, mergerOutcome.js, partyMembers.js, durationEcdf.js,
 │                         #   mergerSort.js (the merger list's ?sort= vocabulary: the field table
-│                         #   the select is built from and the comparator it drives)
+│                         #   the select is built from and the comparator it drives),
+│                         #   timelineAxis.js (the horizontal milestone track's geometry —
+│                         #   percentAlong, clampedLabelStyle and the above/below-line
+│                         #   offsets — shared by Phase2Timeline and the refiled cards;
+│                         #   MergerTimeline keeps its own positioning code but the same
+│                         #   conventions)
 └── data/                 # ACT public holidays JSON
                           #   (act-public-holidays.json — source of truth for both the Python
                           #   pipeline and the frontend; authoritative list published at
