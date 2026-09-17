@@ -6,6 +6,7 @@
   "effective_notification_datetime": "2026-08-29T12:00:00Z",
   "original_notification_datetime": "2026-08-29T12:00:00Z",
   "stage": "Waiver application",
+  "determination_publication_date": "2026-09-08T12:00:00Z",
   "accc_determination": "Approved",
   "acquirers": [
     {
@@ -26,6 +27,15 @@
       "party_page": {
         "id": "logistik-unicorp-holdings-inc",
         "name": "Logistik Unicorp Holdings Inc."
+      }
+    },
+    {
+      "name": "AUSTRALIAN DEFENCE APPAREL PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "67 006 898 906",
+      "party_page": {
+        "id": "australian-defence-apparel-pty-ltd",
+        "name": "Australian Defence Apparel Pty Ltd"
       }
     }
   ],
@@ -96,7 +106,6 @@
       "phase": "Phase 1"
     }
   ],
-  "determination_publication_date": "2026-09-08T12:00:00Z",
   "is_waiver": true,
   "has_conditions": false,
   "phase_1_determination": null,
