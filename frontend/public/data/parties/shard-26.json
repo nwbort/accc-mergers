@@ -300,47 +300,6 @@
       },
       "waiver_duration": null
     },
-    "oceanagold-australia-pty-ltd": {
-      "id": "oceanagold-australia-pty-ltd",
-      "canonical_name": "OceanaGold (Australia) Pty Ltd",
-      "members": [
-        {
-          "name": "OceanaGold (Australia) Pty Ltd",
-          "identifier": "701 358 143",
-          "identifier_type": "ACN"
-        }
-      ],
-      "mergers": {
-        "acquirer": [
-          {
-            "merger_id": "WA-95041",
-            "merger_name": "OceanaGold - Ausgold",
-            "is_waiver": true,
-            "status": "Assessment completed",
-            "determination": "Approved",
-            "has_conditions": false,
-            "phase": "Waiver",
-            "notification_date": "2026-08-26T12:00:00Z",
-            "determination_date": "2026-09-17T12:00:00Z"
-          }
-        ],
-        "target": [],
-        "other": []
-      },
-      "merger_count": 1,
-      "phase_1_count": 0,
-      "phase_2_count": 0,
-      "waiver_count": 1,
-      "active_count": 0,
-      "phase_duration": null,
-      "waiver_duration": {
-        "average_days": 22.0,
-        "median_days": 22,
-        "average_business_days": 16.0,
-        "median_business_days": 16,
-        "completed_count": 1
-      }
-    },
     "sembcorp-industries-ltd": {
       "id": "sembcorp-industries-ltd",
       "canonical_name": "Sembcorp Industries Ltd",

@@ -127105,9 +127105,13 @@
           "name": "OceanaGold (Australia) Pty Ltd",
           "identifier_type": "ACN",
           "identifier": "701 358 143",
+          "canonical": {
+            "id": "oceanagold-corporation",
+            "name": "OceanaGold Corporation"
+          },
           "party_page": {
-            "id": "oceanagold-australia-pty-ltd",
-            "name": "OceanaGold (Australia) Pty Ltd"
+            "id": "oceanagold-corporation",
+            "name": "OceanaGold Corporation"
           }
         }
       ],
@@ -127127,6 +127131,10 @@
           "name": "OceanaGold Corporation",
           "identifier_type": null,
           "identifier": "British Columbia Incorporation Number   BC0786321",
+          "canonical": {
+            "id": "oceanagold-corporation",
+            "name": "OceanaGold Corporation"
+          },
           "party_page": {
             "id": "oceanagold-corporation",
             "name": "OceanaGold Corporation"

@@ -2267,7 +2267,10 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "OceanaGold (Australia) Pty Ltd"
+          "name": "OceanaGold (Australia) Pty Ltd",
+          "canonical": {
+            "name": "OceanaGold Corporation"
+          }
         }
       ],
       "targets": [
@@ -2277,7 +2280,10 @@
       ],
       "other_parties": [
         {
-          "name": "OceanaGold Corporation"
+          "name": "OceanaGold Corporation",
+          "canonical": {
+            "name": "OceanaGold Corporation"
+          }
         }
       ],
       "anzsic_codes": [

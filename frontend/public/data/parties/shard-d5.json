@@ -171,15 +171,18 @@
       "canonical_name": "OceanaGold Corporation",
       "members": [
         {
+          "name": "OceanaGold (Australia) Pty Ltd",
+          "identifier": "701 358 143",
+          "identifier_type": "ACN"
+        },
+        {
           "name": "OceanaGold Corporation",
           "identifier": "British Columbia Incorporation Number   BC0786321",
           "identifier_type": null
         }
       ],
       "mergers": {
-        "acquirer": [],
-        "target": [],
-        "other": [
+        "acquirer": [
           {
             "merger_id": "WA-95041",
             "merger_name": "OceanaGold - Ausgold",
@@ -191,7 +194,9 @@
             "notification_date": "2026-08-26T12:00:00Z",
             "determination_date": "2026-09-17T12:00:00Z"
           }
-        ]
+        ],
+        "target": [],
+        "other": []
       },
       "merger_count": 1,
       "phase_1_count": 0,
