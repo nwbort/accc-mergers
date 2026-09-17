@@ -470,10 +470,16 @@
       ],
       "other_parties": [
         {
-          "name": "WARTSILA ENERGY STORAGE AUSTRALIA PTY LTD"
+          "name": "WARTSILA ENERGY STORAGE AUSTRALIA PTY LTD",
+          "canonical": {
+            "name": "W\u00e4rtsil\u00e4 Energy Storage Inc"
+          }
         },
         {
-          "name": "W\u00e4rtsil\u00e4 Energy Storage Inc"
+          "name": "W\u00e4rtsil\u00e4 Energy Storage Inc",
+          "canonical": {
+            "name": "W\u00e4rtsil\u00e4 Energy Storage Inc"
+          }
         }
       ],
       "anzsic_codes": [

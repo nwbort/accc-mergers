@@ -61315,6 +61315,10 @@
           "name": "Oakley Capital Manager S.a r.l",
           "identifier_type": null,
           "identifier": "",
+          "canonical": {
+            "id": "oakley-capital-manager-s-a-r-l",
+            "name": "Oakley Capital Manager S.a r.l"
+          },
           "party_page": {
             "id": "oakley-capital-manager-s-a-r-l",
             "name": "Oakley Capital Manager S.a r.l"
@@ -112731,9 +112735,13 @@
           "name": "Oakley Capital Manager S.\u00e0 r.l",
           "identifier_type": null,
           "identifier": "Luxembourg company number: B277388",
+          "canonical": {
+            "id": "oakley-capital-manager-s-a-r-l",
+            "name": "Oakley Capital Manager S.a r.l"
+          },
           "party_page": {
-            "id": "oakley-capital-manager-s-r-l",
-            "name": "Oakley Capital Manager S.\u00e0 r.l"
+            "id": "oakley-capital-manager-s-a-r-l",
+            "name": "Oakley Capital Manager S.a r.l"
           }
         },
         {
@@ -116596,15 +116604,23 @@
           "name": "WARTSILA ENERGY STORAGE AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
           "identifier": "94 673 275 002",
+          "canonical": {
+            "id": "w-rtsil-energy-storage-inc",
+            "name": "W\u00e4rtsil\u00e4 Energy Storage Inc"
+          },
           "party_page": {
-            "id": "wartsila-energy-storage-australia-pty-ltd",
-            "name": "Wartsila Energy Storage Australia Pty Ltd"
+            "id": "w-rtsil-energy-storage-inc",
+            "name": "W\u00e4rtsil\u00e4 Energy Storage Inc"
           }
         },
         {
           "name": "W\u00e4rtsil\u00e4 Energy Storage Inc",
           "identifier_type": null,
           "identifier": "7179583",
+          "canonical": {
+            "id": "w-rtsil-energy-storage-inc",
+            "name": "W\u00e4rtsil\u00e4 Energy Storage Inc"
+          },
           "party_page": {
             "id": "w-rtsil-energy-storage-inc",
             "name": "W\u00e4rtsil\u00e4 Energy Storage Inc"

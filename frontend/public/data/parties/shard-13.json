@@ -307,12 +307,28 @@
           "name": "Oakley Capital Manager S.a r.l",
           "identifier": null,
           "identifier_type": null
+        },
+        {
+          "name": "Oakley Capital Manager S.\u00e0 r.l",
+          "identifier": "Luxembourg company number: B277388",
+          "identifier_type": null
         }
       ],
       "mergers": {
         "acquirer": [],
         "target": [],
         "other": [
+          {
+            "merger_id": "WA-75053",
+            "merger_name": "Oakley Capital \u2013 Graphwise",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-21T12:00:00Z",
+            "determination_date": "2026-09-16T12:00:00Z"
+          },
           {
             "merger_id": "WA-01108",
             "merger_name": "Oakley Capital \u2013 XTEL",
@@ -326,18 +342,18 @@
           }
         ]
       },
-      "merger_count": 1,
+      "merger_count": 2,
       "phase_1_count": 0,
       "phase_2_count": 0,
-      "waiver_count": 1,
+      "waiver_count": 2,
       "active_count": 0,
       "phase_duration": null,
       "waiver_duration": {
-        "average_days": 18.0,
-        "median_days": 18,
-        "average_business_days": 12.0,
-        "median_business_days": 12,
-        "completed_count": 1
+        "average_days": 22.0,
+        "median_days": 22.0,
+        "average_business_days": 15.0,
+        "median_business_days": 15.0,
+        "completed_count": 2
       }
     }
   }
