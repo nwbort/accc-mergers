@@ -1,23 +1,8 @@
 import { Link } from 'react-router';
-import { differenceInCalendarDays, parseISO, isValid } from 'date-fns';
 import { mergerPath } from '../utils/slug';
 import { formatDateMedium } from '../utils/dates';
 import { CARD } from '../utils/classNames';
-
-// Position of `date` along the referral -> deadline axis, clamped to [0, 100]
-// so a milestone that lands before/after the span (bad data, clock restarts)
-// still renders inside the bar rather than breaking layout.
-function percentAlong(dateStr, startStr, endStr) {
-  if (!dateStr || !startStr || !endStr) return null;
-  const date = parseISO(dateStr);
-  const start = parseISO(startStr);
-  const end = parseISO(endStr);
-  if (!isValid(date) || !isValid(start) || !isValid(end)) return null;
-  const total = differenceInCalendarDays(end, start);
-  if (total <= 0) return null;
-  const elapsed = differenceInCalendarDays(date, start);
-  return Math.min(100, Math.max(0, (elapsed / total) * 100));
-}
+import { ABOVE_LINE, BELOW_LINE, clampedLabelStyle, percentAlong } from '../utils/timelineAxis';
 
 // The NOCC label sits in a fixed-width box centred on its dot — the same
 // technique MergerTimeline uses for its mid-axis label: the box's centre is
@@ -30,12 +15,6 @@ const NOCC_BOX = '9.5rem';
 const NOCC_HALF = '4.75rem';
 const NOCC_EDGE_ALIGN = 10; // within this % of an end, align text to that end
 
-// Every label sits its bottom this far above the line; every date sits its
-// top this far below it, shared across the start/track/end columns so they
-// line up (mirrors MergerTimeline's aboveLine/belowLine).
-const ABOVE_LINE = 'absolute bottom-1/2 mb-2';
-const BELOW_LINE = 'absolute top-1/2 mt-2';
-
 function MatterBar({ matter }) {
   const { merger_id, merger_name, referral_date, nocc_date, nocc_issued, end_of_determination_period } = matter;
 
@@ -45,8 +24,7 @@ function MatterBar({ matter }) {
   const noccLabelStyle = noccPercent === null ? null : {
     width: NOCC_BOX,
     maxWidth: '100%',
-    left: `clamp(${NOCC_HALF}, ${noccPercent}%, calc(100% - ${NOCC_HALF}))`,
-    transform: 'translateX(-50%)',
+    ...clampedLabelStyle(noccPercent, NOCC_HALF, 'translateX(-50%)'),
     textAlign: noccPercent < NOCC_EDGE_ALIGN ? 'left' : noccPercent > 100 - NOCC_EDGE_ALIGN ? 'right' : 'center',
   };
 

@@ -15,6 +15,30 @@ const navLinks = NAV_PAGES.filter((p) => p.inNavbar)
 const mainNavLinks = navLinks.slice(0, 2);
 const moreNavLinks = navLinks.slice(2);
 
+// One desktop nav link. Full mode renders the whole of navLinks with it and
+// condensed mode the first two, which is why it is a component rather than
+// the same markup typed out under each branch.
+function DesktopNavLink({ path, label, shortcut, active, showShortcutHint }) {
+  return (
+    <Link
+      to={path}
+      aria-current={active ? 'page' : undefined}
+      className={`relative inline-flex items-center px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${
+        active
+          ? 'bg-primary/10 text-primary'
+          : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/80'
+      }`}
+    >
+      {label}
+      {shortcut && showShortcutHint && (
+        <span className="absolute -top-1 -right-1 flex items-center justify-center w-4 h-4 rounded bg-primary text-[10px] font-bold text-white shadow-sm animate-fade-in">
+          {shortcut}
+        </span>
+      )}
+    </Link>
+  );
+}
+
 function Navbar({ onOpenSearch }) {
   const location = useLocation();
   const [isVisible, setIsVisible] = useState(true);
@@ -215,23 +239,14 @@ function Navbar({ onOpenSearch }) {
             {navMode === 'full' && (
               <div className="ml-10 flex space-x-1">
                 {navLinks.map(({ path, label, shortcut }) => (
-                  <Link
+                  <DesktopNavLink
                     key={path}
-                    to={path}
-                    aria-current={isActive(path) ? 'page' : undefined}
-                    className={`relative inline-flex items-center px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${
-                      isActive(path)
-                        ? 'bg-primary/10 text-primary'
-                        : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/80'
-                    }`}
-                  >
-                    {label}
-                    {shortcut && showShortcutHints && (
-                      <span className="absolute -top-1 -right-1 flex items-center justify-center w-4 h-4 rounded bg-primary text-[10px] font-bold text-white shadow-sm animate-fade-in">
-                        {shortcut}
-                      </span>
-                    )}
-                  </Link>
+                    path={path}
+                    label={label}
+                    shortcut={shortcut}
+                    active={isActive(path)}
+                    showShortcutHint={showShortcutHints}
+                  />
                 ))}
               </div>
             )}
@@ -240,23 +255,14 @@ function Navbar({ onOpenSearch }) {
             {navMode === 'condensed' && (
               <div className="ml-10 flex items-center space-x-1">
                 {mainNavLinks.map(({ path, label, shortcut }) => (
-                  <Link
+                  <DesktopNavLink
                     key={path}
-                    to={path}
-                    aria-current={isActive(path) ? 'page' : undefined}
-                    className={`relative inline-flex items-center px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${
-                      isActive(path)
-                        ? 'bg-primary/10 text-primary'
-                        : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/80'
-                    }`}
-                  >
-                    {label}
-                    {shortcut && showShortcutHints && (
-                      <span className="absolute -top-1 -right-1 flex items-center justify-center w-4 h-4 rounded bg-primary text-[10px] font-bold text-white shadow-sm animate-fade-in">
-                        {shortcut}
-                      </span>
-                    )}
-                  </Link>
+                    path={path}
+                    label={label}
+                    shortcut={shortcut}
+                    active={isActive(path)}
+                    showShortcutHint={showShortcutHints}
+                  />
                 ))}
                 <div ref={moreMenuRef} className="relative">
                   <button
