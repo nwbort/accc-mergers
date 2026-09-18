@@ -2167,6 +2167,62 @@
       ]
     },
     {
+      "merger_id": "WA-75050",
+      "merger_name": "Perun (TPG) - Zembl",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-25T12:00:00Z",
+      "determination_publication_date": "2026-09-18T12:00:00Z",
+      "end_of_determination_period": null,
+      "latest_event_date": "2026-09-18T12:00:00Z",
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Perun BidCo Pty Ltd"
+        },
+        {
+          "name": "Perun TopCo Pty Ltd"
+        }
+      ],
+      "targets": [
+        {
+          "name": "ZEMBL PTY LTD"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "TPG Inc.",
+          "canonical": {
+            "name": "TPG Inc."
+          }
+        },
+        {
+          "name": "Strata Energy Services Pty Ltd"
+        },
+        {
+          "name": "Strata Services Corporation Pty Ltd"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2640",
+          "name": "On Selling Electricity and Electricity Market Operation"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-35038",
       "merger_name": "WSP - e2m",
       "status": "Assessment completed",
@@ -2537,46 +2593,6 @@
         {
           "code": "6240",
           "name": "Financial Asset Investing"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-75054",
-      "merger_name": "I Squared Capital \u2013 oOh!media",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-09-02T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-10-15T12:00:00Z",
-      "latest_event_date": "2026-09-03T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "OOH BidCo Pty Ltd"
-        }
-      ],
-      "targets": [
-        {
-          "name": "oOh!media Limited"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "I Squared Capital, LLC"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "6240",
-          "name": "Financial Asset Investing"
-        },
-        {
-          "code": "6940",
-          "name": "Advertising Services"
         }
       ]
     }

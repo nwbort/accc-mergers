@@ -1,6 +1,6 @@
 {
   "total_mergers": 259,
-  "total_waivers": 409,
+  "total_waivers": 410,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 230,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 390,
+    "Approved": 391,
     "Not approved": 19
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 19.973105134474327,
-    "median_days": 20,
-    "average_business_days": 13.61124694376528,
-    "median_business_days": 13
+    "average_days": 19.982926829268294,
+    "median_days": 20.0,
+    "average_business_days": 13.621951219512194,
+    "median_business_days": 13.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 137
+      "count": 138
     },
     {
       "name": "Computer System Design and Related Services",
@@ -64,7 +64,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 69
+      "count": 70
     },
     {
       "name": "Software Publishing",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-75050",
+      "merger_name": "Perun (TPG) - Zembl",
+      "determination": "Approved",
+      "determination_date": "2026-09-18T12:00:00Z",
+      "page_modified_datetime": "2026-09-18T18:00:54+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-85047",
       "merger_name": "Blackstone funds and Perpetual Trustees \u2013 HSBC loan portfolio",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-15T12:00:00Z",
       "page_modified_datetime": "2026-09-15T16:46:09+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-40042",
-      "merger_name": "National Dental Care - Grove Village Dental Centre, South Australia",
-      "determination": "Approved",
-      "determination_date": "2026-09-15T12:00:00Z",
-      "page_modified_datetime": "2026-09-15T16:45:13+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
