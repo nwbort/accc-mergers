@@ -3,12 +3,12 @@
   "total_waivers": 409,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 229,
-    "Under assessment": 25,
+    "Assessment completed": 230,
+    "Under assessment": 24,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 222,
+    "Approved": 223,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 19
   },
   "clearance_rate": {
-    "cleared": 227,
+    "cleared": 228,
     "not_cleared": 2,
-    "total": 229,
+    "total": 230,
     "rate": 0.991
   },
   "phase_duration": {
-    "average_days": 29.812765957446807,
-    "median_days": 26,
-    "average_business_days": 20.22553191489362,
-    "median_business_days": 18,
+    "average_days": 29.779661016949152,
+    "median_days": 26.0,
+    "average_business_days": 20.20762711864407,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
         "count": 49,
-        "percentage": 20.9
+        "percentage": 20.8
       },
       "day20": {
-        "count": 172,
-        "percentage": 73.2
+        "count": 173,
+        "percentage": 73.3
       },
       "day30": {
-        "count": 218,
+        "count": 219,
         "percentage": 92.8
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-85047",
+      "merger_name": "Blackstone funds and Perpetual Trustees \u2013 HSBC loan portfolio",
+      "determination": "Approved",
+      "determination_date": "2026-09-18T12:00:00Z",
+      "page_modified_datetime": "2026-09-18T16:39:49+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-85043",
       "merger_name": "Lone Star Funds - ContiTech",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-15T12:00:00Z",
       "page_modified_datetime": "2026-09-15T16:45:13+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-55035",
-      "merger_name": "Itochu Corporation \u2013 TC Skyward Aviation (Aviation Capital Group)",
-      "determination": "Approved",
-      "determination_date": "2026-09-15T12:00:00Z",
-      "page_modified_datetime": "2026-09-15T16:44:00+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

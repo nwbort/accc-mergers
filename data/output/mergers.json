@@ -53129,15 +53129,27 @@
     {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/blackstone-funds-and-perpetual-trustees-%E2%80%93-hsbc-loan-portfolio",
       "merger_name": "Blackstone funds and Perpetual Trustees \u2013 HSBC loan portfolio",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-85047",
       "effective_notification_datetime": "2026-08-27T12:00:00Z",
       "original_notification_datetime": "2026-08-27T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-10-09T12:00:00Z",
-      "page_modified_datetime": "2026-08-28T14:01:49+10:00",
+      "determination_publication_date": "2026-09-18T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-09-18T16:39:49+10:00",
       "consultation_response_due_date": "2026-09-04T12:00:00Z",
       "acquirers": [
+        {
+          "name": "VIRGO BIDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "89 699 487 119",
+          "party_page": {
+            "id": "virgo-bidco-pty-ltd",
+            "name": "Virgo Bidco Pty Ltd"
+          }
+        },
         {
           "name": "ABF Whole Loan Pty Ltd",
           "identifier_type": "ACN",
@@ -53159,15 +53171,6 @@
             "id": "perpetual-corporate-trust-limited",
             "name": "Perpetual Corporate Trust Limited"
           }
-        },
-        {
-          "name": "VIRGO BIDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "89 699 487 119",
-          "party_page": {
-            "id": "virgo-bidco-pty-ltd",
-            "name": "Virgo Bidco Pty Ltd"
-          }
         }
       ],
       "targets": [
@@ -53178,6 +53181,24 @@
           "party_page": {
             "id": "hsbc-bank-australia-limited",
             "name": "Hsbc Bank Australia Limited"
+          }
+        },
+        {
+          "name": "Lion Series 2023-1 Trust",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "lion-series-2023-1-trust",
+            "name": "Lion Series 2023-1 Trust"
+          }
+        },
+        {
+          "name": "Lion Series 2020-1 Trust",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "lion-series-2020-1-trust",
+            "name": "Lion Series 2020-1 Trust"
           }
         },
         {
@@ -53196,24 +53217,6 @@
           "party_page": {
             "id": "lion-series-2022-1-trust",
             "name": "Lion Series 2022-1 Trust"
-          }
-        },
-        {
-          "name": "Lion Series 2020-1 Trust",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "lion-series-2020-1-trust",
-            "name": "Lion Series 2020-1 Trust"
-          }
-        },
-        {
-          "name": "Lion Series 2023-1 Trust",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "lion-series-2023-1-trust",
-            "name": "Lion Series 2023-1 Trust"
           }
         }
       ],
@@ -53248,13 +53251,48 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-09-18T12:00:00Z",
+          "title": "Blackstone funds and Perpetual Trustees \u2013 HSBC loan portfolio - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Blackstone%20funds%20and%20Perpetual%20Trustees%20%E2%80%93%20HSBC%20loan%20portfolio%20-%20Phase%201%20determination_0.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Virgo BidCo Pty Ltd (BidCo), an affiliate of certain funds advised\nand/or managed by affiliates of Blackstone Inc. (Blackstone),\nproposes to acquire HSBC Bank Australia Limited\u2019s (HBAU) portfolio\nof Australian home and personal loans under an asset sale and\npurchase agreement.\nUnder the asset sale and purchase agreement, BidCo would have the\nright to direct that title in these loans be transferred to a third-party\nnominee. BidCo intends to direct that title in these loans be\ntransferred at completion to Perpetual Corporate Trust Limited\n(Perpetual) in its capacity as trustee of three securitisation trusts.\nCertain home loans originated by HBAU are held within four existing\nsecuritisation trusts \u2013 the Lion Series 2020-1 Trust, Lion Series 2022\n1 Trust, Lion Series 2023-1 Trust and Lion Series 2024-1 Trust\n(together, the Lion Trusts). Under the asset sale and purchase\nagreement, BidCo (or one or more nominees of BidCo) would\nacquire the units held by HBAU in the Lion Trusts. BidCo will\nnominate ABF Whole Loan Pty Ltd (an affiliate of certain funds\nadvised and/or managed by affiliates of Blackstone, and BidCo\u2019s\nparent) to acquire the sole participation unit and 9 of the 10 residual\nunits in each of the Lion Trusts. Perpetual CT Capital Pty Ltd (a\nPerpetual Group entity) will acquire 1 of the 10 residual units in each\nof these trusts.\n(Together, the Acquisition.)"
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "Blackstone is a US-based investment management firm.\nPerpetual is a Sydney-based trust company and a wholly-owned\nsubsidiary within the Perpetual group of companies (Perpetual\nGroup), of which Perpetual Limited is the ultimate parent company.\nHBAU is the Australian-owned subsidiary of HSBC Holdings plc\n(including its affiliates, HSBC). HBAU currently offers a range of\nfinancial services in Australia, including retail banking, private\nbanking, asset management and corporate and institutional banking.\nHSBC has announced it intends to exit its retail banking operations\nin Australia."
+            },
+            {
+              "item": "Overlap and relationship\nbetween the Parties",
+              "details": "There is no material overlap or relationship between HBAU\u2019s supply\nof home and personal loans and the activities of each of Blackstone\n(including its affiliates) and Perpetual in Australia."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, information from third parties and publicly\navailable information.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition would be unlikely to have\nthe effect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nfinds that the Acquisition would have a limited effect on competition\nin the supply home and personal loans in Australia, given:\n\u2022 HSBC\u2019s intention to exit its retail banking operations in\nAustralia\n\u2022 the Acquisition is limited to the sale of a \u2018back book\u2019 of\nloans to parties that are not active in the supply of home\nand personal loans in Australia."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-85047/Blackstone funds and Perpetual Trustees \u2013 HSBC loan portfolio - Phase 1 determination_0.pdf",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
       "has_conditions": false,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-09-18T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
