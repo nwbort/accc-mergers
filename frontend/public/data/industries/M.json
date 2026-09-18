@@ -86,17 +86,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-85043",
-      "merger_name": "Lone Star Funds - ContiTech",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-08-20T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-01072",
       "merger_name": "Saipem S.p.A - Subsea7 S.A.",
       "is_waiver": false,
@@ -106,6 +95,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-04-27T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-85043",
+      "merger_name": "Lone Star Funds - ContiTech",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-08-20T12:00:00Z",
+      "determination_date": "2026-09-18T12:00:00Z"
     },
     {
       "merger_id": "MN-35038",
@@ -1773,13 +1773,13 @@
   "phase_1_count": 61,
   "phase_2_count": 3,
   "waiver_count": 95,
-  "active_count": 8,
+  "active_count": 7,
   "phase_duration": {
-    "average_days": 30.894736842105264,
-    "median_days": 26,
-    "average_business_days": 20.70175438596491,
-    "median_business_days": 18,
-    "completed_count": 57
+    "average_days": 30.862068965517242,
+    "median_days": 26.0,
+    "average_business_days": 20.70689655172414,
+    "median_business_days": 18.0,
+    "completed_count": 58
   },
   "waiver_duration": {
     "average_days": 20.105263157894736,

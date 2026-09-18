@@ -3,12 +3,12 @@
   "total_waivers": 409,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 228,
-    "Under assessment": 26,
+    "Assessment completed": 229,
+    "Under assessment": 25,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 221,
+    "Approved": 222,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,16 +22,16 @@
     "Not approved": 19
   },
   "clearance_rate": {
-    "cleared": 226,
+    "cleared": 227,
     "not_cleared": 2,
-    "total": 228,
+    "total": 229,
     "rate": 0.991
   },
   "phase_duration": {
-    "average_days": 29.816239316239315,
-    "median_days": 26.0,
-    "average_business_days": 20.22222222222222,
-    "median_business_days": 18.0,
+    "average_days": 29.812765957446807,
+    "median_days": 26,
+    "average_business_days": 20.22553191489362,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
         "count": 49,
@@ -39,11 +39,11 @@
       },
       "day20": {
         "count": 172,
-        "percentage": 73.5
+        "percentage": 73.2
       },
       "day30": {
-        "count": 217,
-        "percentage": 92.7
+        "count": 218,
+        "percentage": 92.8
       }
     }
   },
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-85043",
+      "merger_name": "Lone Star Funds - ContiTech",
+      "determination": "Approved",
+      "determination_date": "2026-09-18T12:00:00Z",
+      "page_modified_datetime": "2026-09-18T11:40:26+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-65034",
       "merger_name": "Cinven and La Caisse \u2013 Optio Group",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-60030",
-      "merger_name": "Tencent \u2013 Happibits",
-      "determination": "Approved",
-      "determination_date": "2026-09-15T12:00:00Z",
-      "page_modified_datetime": "2026-09-15T15:03:57+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]
