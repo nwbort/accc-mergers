@@ -113,6 +113,18 @@
   },
   "similar_mergers": [
     {
+      "merger_id": "MN-80016",
+      "merger_name": "Henkel \u2013 Olaplex",
+      "acquirers": [
+        "Henkel US Operations Corporation"
+      ],
+      "targets": [
+        "Olaplex, Inc.",
+        "Advent International, L.P."
+      ],
+      "accc_determination": "Approved"
+    },
+    {
       "merger_id": "WA-45007",
       "merger_name": "Henkel \u2013 Stahl",
       "acquirers": [
@@ -125,27 +137,15 @@
       "accc_determination": "Approved"
     },
     {
-      "merger_id": "WA-10010",
-      "merger_name": "Enverus \u2013 Spatial Business Systems",
+      "merger_id": "MN-25049",
+      "merger_name": "Merck KGaA / Bio-Techne",
       "acquirers": [
-        "Enverus, Inc."
+        "EMD Holdings NewCo Inc."
       ],
       "targets": [
-        "Spatial Business Systems Pty Ltd",
-        "SBS Optionco, LLC"
+        "Bio-Techne Corporation"
       ],
-      "accc_determination": "Approved"
-    },
-    {
-      "merger_id": "WA-90002",
-      "merger_name": "NEC Corporation \u2013 CSG Systems International",
-      "acquirers": [
-        "NEC Corporation"
-      ],
-      "targets": [
-        "CSG Systems International, Inc."
-      ],
-      "accc_determination": "Approved"
+      "status": "Under assessment"
     }
   ]
 }

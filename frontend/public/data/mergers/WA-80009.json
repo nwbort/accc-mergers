@@ -88,6 +88,17 @@
   "phase_2_determination_date": null,
   "similar_mergers": [
     {
+      "merger_id": "WA-65015",
+      "merger_name": "Hillhouse - Barwon Investment Partners",
+      "acquirers": [
+        "BARWON BIDCO PTY LTD"
+      ],
+      "targets": [
+        "BARWON INVESTMENT PARTNERS PTY LTD"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
       "merger_id": "WA-05008",
       "merger_name": "HongShan Capital Group and Temasek \u2013 Golden Goose Group",
       "acquirers": [
@@ -101,26 +112,16 @@
       "accc_determination": "Approved"
     },
     {
-      "merger_id": "MN-65009",
-      "merger_name": "CVC Capital Partners \u2013 Marathon Asset Management",
+      "merger_id": "MN-10028",
+      "merger_name": "BBFIT - Hanes Australasia",
       "acquirers": [
-        "CVC Capital Partners plc"
+        "BBFIT Investments Pte Ltd"
       ],
       "targets": [
-        "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC"
+        "HBI HOLDINGS AUSTRALASIA PTY LTD",
+        "HBI Holdings Switzerland GmbH"
       ],
-      "accc_determination": "Approved"
-    },
-    {
-      "merger_id": "MN-65008",
-      "merger_name": "REA Group - Simplicity Loans & Advisory",
-      "acquirers": [
-        "REA FINANCIAL SERVICES HOLDING CO. PTY LTD"
-      ],
-      "targets": [
-        "SIMPLICITY LOANS & ADVISORY PTY LTD"
-      ],
-      "accc_determination": "Approved"
+      "status": "Under assessment"
     }
   ]
 }
