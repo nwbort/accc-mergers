@@ -103,6 +103,18 @@
   "phase_2_determination_date": null,
   "similar_mergers": [
     {
+      "merger_id": "MN-90022",
+      "merger_name": "Expedia - CarTrawler",
+      "acquirers": [
+        "Expedia Group International Holdings II, LLC",
+        "Expedia Group, Inc."
+      ],
+      "targets": [
+        "Ballast Group Holdings Ltd"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
       "merger_id": "MN-20012",
       "merger_name": "Australian Meat Group - Killara Feedlot",
       "acquirers": [
@@ -125,18 +137,6 @@
         "PRESIDENTAL PTY LIMITED"
       ],
       "accc_determination": "Approved"
-    },
-    {
-      "merger_id": "MN-65005",
-      "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
-      "acquirers": [
-        "INSURANCE AUSTRALIA GROUP LIMITED"
-      ],
-      "targets": [
-        "RAC INSURANCE PTY LIMITED",
-        "RACI PTY LIMITED"
-      ],
-      "status": "Under assessment"
     }
   ]
 }
