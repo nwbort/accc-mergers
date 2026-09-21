@@ -494,8 +494,8 @@ def build_pr_body(candidates: list[dict], date: str, auto_merge: bool = False) -
     lines.extend([
         "---",
         "",
-        f"*Generated automatically by the [Detect Related Mergers]"
-        f"(https://github.com/{_REPO}/actions/workflows/detect-related-mergers.yml) workflow.*",
+        f"*Generated automatically by the related-mergers step of the "
+        f"[merger pipeline](https://github.com/{_REPO}/actions/workflows/pipeline.yml).*",
     ])
     return "\n".join(lines)
 
@@ -534,8 +534,8 @@ def build_issue_body(candidates: list[dict], date: str) -> str:
     lines.extend([
         "---",
         "",
-        f"*Generated automatically by the [Detect Related Mergers]"
-        f"(https://github.com/{_REPO}/actions/workflows/detect-related-mergers.yml) workflow.*",
+        f"*Generated automatically by the related-mergers step of the "
+        f"[merger pipeline](https://github.com/{_REPO}/actions/workflows/pipeline.yml).*",
     ])
     return "\n".join(lines)
 

@@ -3,14 +3,13 @@ description: >-
   Run one detector on its own well-known fix branch off the latest main, then
   open, refresh or auto-close the review PR carrying its suggestions.
 
-# The three detectors folded into pipeline.yml (duplicate events, related
-# mergers, related parties) and the daily missing-notification-date fixer all
-# follow the same shape: branch off the base sha, run the detector, and — if
-# it found anything that actually changed its own data file — force-push the
-# branch and open or update a review PR; otherwise close any PR left over from
-# a previous run. Only the branch, command, data file and wording differ, so
-# they share this action rather than four near-identical copies of the
-# plumbing.
+# The four detectors in pipeline.yml (duplicate events, related mergers,
+# related parties, missing notification dates) all follow the same shape:
+# branch off the base sha, run the detector, and — if it found anything that
+# actually changed its own data file — force-push the branch and open or
+# update a review PR; otherwise close any PR left over from a previous run.
+# Only the branch, command, data file and wording differ, so they share this
+# action rather than four near-identical copies of the plumbing.
 #
 # It also pushes an ntfy notification when a PR carries something new (see
 # docs/notifications.md), which is the other reason to keep this shape in one
@@ -18,9 +17,9 @@ description: >-
 # detector would drift.
 #
 # Each detector writes only its own file (mergers.json / related_mergers.json
-# / related_parties.json) and commits only that file, so the ones sharing a
-# pipeline run never collide with each other or with the pipeline's own commit
-# to main.
+# / related_parties.json / known_notification_dates.json) and commits only
+# that file, so the four sharing a pipeline run never collide with each other
+# or with the pipeline's own commit to main.
 
 inputs:
   base-sha:
@@ -39,6 +38,11 @@ inputs:
       stdout, writes the PR body, applies its suggestions, and exits non-zero
       if it found anything — all in a single pass. Applying is a no-op when
       there is nothing to apply, so this is safe to run unconditionally.
+
+      $PREVIOUS_DATA_FILE is in scope: this detector's own data file as of its
+      last run, recovered from the fix branch (see the step below). The path
+      may not exist. Only a detector whose suggestion cannot be re-derived
+      from the data alone needs it.
     required: true
   data-file:
     description: The one file this detector may change, and all that is committed.
@@ -101,6 +105,37 @@ outputs:
 runs:
   using: composite
   steps:
+    # The fix branch is rebuilt from the latest main every run, so whatever a
+    # detector wrote last run is gone by the time it runs again. For most of
+    # them that is the point — the suggestion is re-derived from the data and
+    # nothing is lost. For one whose suggestion is time-sensitive (the missing
+    # notification date defaults to *today*, so re-deriving it re-dates every
+    # unreviewed candidate, and drops a correction made on the branch), the
+    # previous answer is state worth keeping.
+    #
+    # So recover it here, from the branch itself: the last run's copy of this
+    # detector's data file is exposed as $PREVIOUS_DATA_FILE, and a detector
+    # that wants it reads it via its own flag. Detectors that re-derive cleanly
+    # just ignore the variable. Absent on the first run and after the branch is
+    # merged or deleted, which is why the path may simply not exist.
+    - name: Recover the previous run's suggestions
+      shell: bash
+      env:
+        BRANCH: ${{ inputs.branch }}
+        DATA_FILE: ${{ inputs.data-file }}
+      run: |
+        PREV_PATH="${RUNNER_TEMP}/previous-$(basename "$DATA_FILE")"
+        if git fetch --depth=1 origin "$BRANCH" 2>/dev/null \
+           && git show "FETCH_HEAD:${DATA_FILE}" > "$PREV_PATH" 2>/dev/null; then
+          echo "Recovered the previous run's ${DATA_FILE} from origin/${BRANCH}."
+        else
+          # Also clears a half-written file if the redirection ran before
+          # git show failed, so the detector sees "no previous run" cleanly.
+          rm -f "$PREV_PATH"
+          echo "No previous ${DATA_FILE} to recover (first run, or the branch is gone)."
+        fi
+        echo "PREVIOUS_DATA_FILE=${PREV_PATH}" >> "$GITHUB_ENV"
+
     # The detector's own stdout is the step summary, so it is tee'd rather
     # than re-run by a separate summary step. pipefail keeps the `if` reading
     # the detector's exit code (something found) and not tee's.

@@ -55,7 +55,7 @@ scrape/scrape.sh ──► extract_mergers.py ──► generate/generate_static
 
 | File | Purpose |
 | --- | --- |
-| `detect/detect_duplicates.py` | Reports duplicate event entries within a merger record. Run by the `detect-duplicates.yml` workflow and imported by the resolver tool. |
+| `detect/detect_duplicates.py` | Reports duplicate event entries within a merger record. Run as a detection step of `pipeline.yml` and imported by the resolver tool. |
 | `detect/detect_related_mergers.py` | Suggests new `WA-*` → `MN-*` pairs that aren't yet in `related_mergers.json`. |
 | `detect/detect_related_parties.py` | Suggests party groupings for `related_parties.json`. |
 | `detect/related_parties_batch.py` | Batch-review CLI over those suggestions. |

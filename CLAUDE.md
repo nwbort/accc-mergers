@@ -216,7 +216,8 @@ scripts/                  # A Python package — entry points run as `python -m 
 ├── enrich_pdfs.py        # Run questionnaire/NOCC/Phase 2 Notice PDF parsing, auto-fix missing dates
 ├── check_phase2_notice_ocr_needed.py # CI helper: does a pending Phase 2 Notice need OCR?
 ├── send_weekly_email.py  # Send weekly digest email via Cloudflare Worker
-├── fix_missing_notification_dates.py # Suggest freezing missing notification dates (daily PR)
+├── fix_missing_notification_dates.py # Suggest freezing missing notification dates (review PR
+│                         #   from pipeline.yml; carries its earlier guess forward, see its docstring)
 ├── compress_pdfs.py      # Shrink oversized PDFs so Pages will serve them
 ├── check_deploy_assets.py # CI check: no deploy asset exceeds Cloudflare Pages' 25 MiB limit
 ├── check_watchlist.py    # CI check: has a watchlisted merger changed this run? (see docs/notifications.md)
@@ -243,16 +244,16 @@ scripts/                  # A Python package — entry points run as `python -m 
 │   ├── parse_phase2_notice.py # Parse "decision to proceed to Phase 2" notice PDFs
 │   └── determination_text.py # Clean PDF-extracted determination text for the CLI bundle
 ├── detect/
-│   ├── detect_duplicates.py  # Identify duplicate merger entries (daily PR)
-│   ├── detect_related_mergers.py # Suggest waiver→notification pairs (daily PR)
-│   ├── detect_related_parties.py # Suggest same-entity party groups (daily PR)
+│   ├── detect_duplicates.py  # Identify duplicate merger entries (review PR from pipeline.yml)
+│   ├── detect_related_mergers.py # Suggest waiver→notification pairs (review PR from pipeline.yml)
+│   ├── detect_related_parties.py # Suggest same-entity party groups (review PR from pipeline.yml)
 │   ├── related_parties_batch.py # Batch LLM-assisted related-party suggestions
 │   └── party_matching.py # Shared party normalisation + group matching
 ├── generate/
 │   ├── generate_static_data.py  # Generate all frontend JSON files
 │   ├── generate_similar_mergers.py # Suggest similar mergers by industry/party overlap
 │   ├── generate_weekly_digest.py  # Generate digest.json for weekly summary
-│   ├── generate_sitemap.py   # Generate sitemap.xml
+│   ├── generate_sitemap.py   # Generate sitemap.xml (runs in pipeline.yml beside the RSS feed)
 │   ├── generate_rss_feed.py  # Generate RSS feed
 │   ├── generate-cli-data.sh  # Build/version-bump the accc-mergers-cli bundle (gitignored) + tracked manifest
 │   ├── build_cli_sqlite.py   # Build cli.sqlite from the CLI bundle
@@ -474,27 +475,36 @@ prunes the old names), but make it a deliberate choice.
 
 | Workflow | Trigger | Purpose |
 |----------|---------|---------|
-| `pipeline.yml` | Push to `main`, weekdays 4×/day + Sunday once (Sydney time), `repository_dispatch` (email-triggered), manual | End-to-end scrape → extract → convert DOCX → enrich → generate static files → commit; publishes `cli.sqlite` and opens tracking issues when needed |
+| `pipeline.yml` | Push to `main`, weekdays 4×/day + Sunday once (Sydney time), `repository_dispatch` (email-triggered), manual | End-to-end scrape → extract → convert DOCX → enrich → generate static files (incl. `feed.xml` and `sitemap.xml`) → commit; publishes `cli.sqlite`, opens tracking issues when needed, then runs all four detectors |
 | `publish-cli-sqlite.yml` | Manual | Republish `cli.sqlite` + manifest to the orphan `cli-dist` branch |
 | `scrape-tribunal.yml` | Hourly at :23 from 8am-7pm Sydney time, weekdays only (`23 8-19 * * 1-5` with `timezone: Australia/Sydney`), manual | Scrape Australian Competition Tribunal matter pages into `tribunal_appeals.json` and commit. Drives a real Chrome via nodriver (headful under Xvfb) to get past the tribunal site's Cloudflare challenge, so it runs in CI. Deps: `scripts/requirements-tribunal.txt` |
-| `detect-duplicates.yml` | Manual | Detect duplicate merger entries, open a fix PR. **No longer scheduled** — this now runs inside `pipeline.yml` on every run; the standalone workflow is kept for manual re-runs |
-| `detect-related-mergers.yml` | Manual | Suggest waiver↔notification merger links, open a PR. **No longer scheduled** — runs inside `pipeline.yml`; kept for manual re-runs |
-| `detect-related-parties.yml` | Manual | Suggest same-entity party groupings, open a PR. **No longer scheduled** — runs inside `pipeline.yml`; kept for manual re-runs |
-| `fix-missing-notification-dates.yml` | Daily (3:00 AM UTC), manual | Auto-fix missing notification dates, open a PR (via the shared `detection-pr` action) |
-| `update-sitemap.yml` | Daily (8 AM Sydney time), manual | Regenerate `sitemap.xml` |
 | `weekly-digest.yml` | Weekly (Sunday, Sydney time), manual | Generate `digest.json` |
 | `send-weekly-email.yml` | Manual (schedule currently disabled) | Send the weekly digest email via the Cloudflare Worker |
-| `test.yml` | Manual | Run the Python test suite |
+| `test.yml` | Pull requests touching `scripts/**` or `fixtures/*.json`, manual | Run the Python test suite |
 | `frontend-test.yml` | Pull requests touching `frontend/**`, `functions/**` or `fixtures/*.json`, manual | Run the frontend test suite |
 | `check-deploy-assets.yml` | Push touching `data/raw/matters/**`, `frontend/public/**` or the check itself, manual | Guards both Cloudflare Pages limits that fail silently: opens a tracking issue for any asset over the 25 MiB per-file limit, and for the deployment approaching the 20,000-**file** cap (reports at 80%, fails the run once over). See `scripts/check_deploy_assets.py` |
-| `workers-test.yml` | Manual | For each directory under `workers/`: `npm ci`, `npm test --if-present`, then `npm run deploy:dry` to bundle the Worker and validate its `wrangler.toml`. Discovers Workers by glob, so a new one is covered automatically |
+| `workers-test.yml` | Pull requests touching `workers/**`, manual | For each directory under `workers/`: `npm ci`, `npm test --if-present`, then `npm run deploy:dry` to bundle the Worker and validate its `wrangler.toml`. Discovers Workers by glob, so a new one is covered automatically |
+
+There is no standalone workflow for any detector, or for the sitemap. All four
+detectors and `generate_sitemap.py` run inside `pipeline.yml`; the
+`detect-duplicates.yml`, `detect-related-mergers.yml`,
+`detect-related-parties.yml`, `fix-missing-notification-dates.yml` and
+`update-sitemap.yml` workflows that used to duplicate them have been deleted.
+A detector's inputs only ever change when the pipeline changes them, so a cron
+on a fresh checkout was guessing when that happened — and a separate sitemap
+commit to `main` re-triggered the whole pipeline for no new data. Re-run any of
+it by dispatching `pipeline.yml`.
 
 ### Composite actions (`.github/actions/`)
 
 - `detection-pr/` — one detector's whole lifecycle: branch off the base sha,
   run it, force-push its well-known fix branch and open/refresh/auto-close the
-  review PR. Used by the three detectors inside `pipeline.yml` and by
-  `fix-missing-notification-dates.yml`.
+  review PR. Used by all four detectors in `pipeline.yml`. It also recovers the
+  previous run's copy of the detector's data file from the fix branch and
+  exposes it as `$PREVIOUS_DATA_FILE`, because the branch is rebuilt from
+  `main` every run: `fix_missing_notification_dates.py` needs it (its default
+  is *today*, so re-deriving would re-date every unreviewed candidate and
+  discard corrections made on the branch), the other three ignore it.
 - `ntfy/` — publish a push notification to an [ntfy](https://ntfy.sh) topic.
 
 ### Push notifications

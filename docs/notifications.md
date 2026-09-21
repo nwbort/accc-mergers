@@ -45,7 +45,7 @@ be reached.
 | Related mergers review PR opened, or updated with new candidates | default (3) | `pipeline.yml` |
 | Related parties review PR opened, or updated with new candidates | default (3) | `pipeline.yml` |
 | Exact-match waiver refile auto-merged into `main` | 4 (bypasses batching) | `pipeline.yml` — this one merged itself without review |
-| Missing notification dates PR opened, or updated with new candidates | default (3) | `fix-missing-notification-dates.yml` |
+| Missing notification dates PR opened, or updated with new candidates | default (3) | `pipeline.yml` |
 | A watchlisted merger changed | default (3) | `pipeline.yml` — see [Watchlist](#watchlist) below |
 
 Tapping a notification opens the PR (or, for the auto-merge, the
@@ -53,10 +53,17 @@ Tapping a notification opens the PR (or, for the auto-merge, the
 
 ### Why "or updated with new candidates" and not "or updated"
 
-`pipeline.yml` runs four or five times a weekday, and each run re-detects
-everything the open review PRs are already carrying — an unmerged suggestion
-is, by definition, still a valid suggestion. Notifying on every refresh would
-mean five identical pushes a day for one finding.
+`pipeline.yml` runs four or five times a weekday (plus once per push to
+`main`), and each run re-detects everything the open review PRs are already
+carrying — an unmerged suggestion is, by definition, still a valid suggestion.
+Notifying on every refresh would mean five identical pushes a day for one
+finding.
+
+This is also why the missing-notification-date detector carries its previous
+suggestion forward (see [deployment.md](deployment.md#the-four-detectors)):
+its default is *today*, so re-deriving it would change the suggested date at
+every UTC midnight, moving the fingerprint and re-notifying daily for a
+candidate nobody had acted on.
 
 So `.github/actions/detection-pr` fingerprints the suggestions themselves: the
 content lines the fix branch adds to or removes from its base, hashed. It parks

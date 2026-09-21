@@ -383,6 +383,12 @@ jobs:
           python -m scripts.generate.generate_static_data
           ./scripts/generate/generate-cli-data.sh
           python -m scripts.generate.generate_rss_feed
+          # Both feed.xml and sitemap.xml are derived from the data files
+          # generate_static_data just wrote, so they belong on this run rather
+          # than in a separate daily job: a standalone sitemap workflow both
+          # lags the data and commits to main, which re-triggers this pipeline
+          # for no new data.
+          python -m scripts.generate.generate_sitemap
 
       # --- Watchlist --- (see docs/notifications.md)
       # Never echo "$message" here — it must only reach GITHUB_OUTPUT.
@@ -440,7 +446,7 @@ jobs:
             data/processed/nocc_data.json data/processed/similar_mergers.json \
             data/processed/phase1_estimates.json \
             data/raw/matters/ frontend/public/data/ \
-            frontend/public/feed.xml data/output/ \
+            frontend/public/feed.xml frontend/public/sitemap.xml data/output/ \
             data/frozen_events_mergers.json
 
       # --- Single commit ---
@@ -724,17 +730,19 @@ jobs:
           done
           echo "Confirmed Phase 2 mergers: ${CLOSE_COUNT}; tracking issues closed: ${CLOSED}"
 
-      # --- Duplicate & related detection (create/refresh review PRs) ---
-      # These blocks mirror the former standalone detect-duplicates.yml,
-      # detect-related-mergers.yml and detect-related-parties.yml workflows,
-      # which now only run on manual dispatch. Each one branches off the
-      # latest main (origin/main, i.e. this run's push), applies its own
-      # suggestions to its own processed-data file, force-pushes a well-known
-      # fix branch and opens/updates — or auto-closes — a review PR. They edit
-      # different files (mergers.json / related_mergers.json /
-      # related_parties.json) and each commits only its own file, so they never
-      # collide with each other or with the pipeline's own commit to main above.
-      # Running last keeps main's working tree intact for every step before this.
+      # --- Detection (create/refresh review PRs) ---
+      # Every detector lives here now; the standalone detect-duplicates.yml,
+      # detect-related-mergers.yml, detect-related-parties.yml and
+      # fix-missing-notification-dates.yml workflows they replaced have been
+      # deleted (a manual re-run is `workflow_dispatch` on this pipeline).
+      # Each one branches off the latest main (origin/main, i.e. this run's
+      # push), applies its own suggestions to its own data file, force-pushes a
+      # well-known fix branch and opens/updates — or auto-closes — a review PR.
+      # They edit different files (mergers.json / related_mergers.json /
+      # related_parties.json / known_notification_dates.json) and each commits
+      # only its own file, so they never collide with each other or with the
+      # pipeline's own commit to main above. Running last keeps main's working
+      # tree intact for every step before this.
 
       - name: Record base for detection
         id: detect_base
@@ -866,6 +874,41 @@ jobs:
           pr-title: "suggest: link related parties ({date})"
           close-comment: >-
             All detected related-party groups have been recorded as of {date}.
+            Closing automatically.
+          github-token: ${{ github.token }}
+          ntfy-topic: ${{ secrets.NTFY_TOPIC }}
+          ntfy-token: ${{ secrets.NTFY_TOKEN }}
+          ntfy-server: ${{ vars.NTFY_SERVER || 'https://ntfy.sh' }}
+
+      # -- Missing notification dates → fix/missing-notification-dates --
+      #
+      # Was a standalone daily workflow. Its only input is mergers.json, which
+      # only this pipeline writes, so a cron on a fresh checkout was guessing
+      # when that file last moved — and GitHub's scheduler ran the 03:00 UTC
+      # cron up to five hours late, when it ran it at all.
+      #
+      # $PREVIOUS_DATA_FILE is what keeps the guessed date honest: this
+      # detector defaults a missing date to *today*, and the branch is rebuilt
+      # from main every run, so without it every unreviewed candidate would be
+      # re-dated on each of this pipeline's runs. See the action and the
+      # script's module docstring.
+      - name: Missing notification dates review PR
+        uses: ./.github/actions/detection-pr
+        with:
+          base-sha: ${{ steps.detect_base.outputs.sha }}
+          branch: fix/missing-notification-dates
+          heading: Missing notification dates
+          command: >-
+            python -m scripts.fix_missing_notification_dates
+            --summary
+            --apply-suggestions
+            --previous-known-dates "$PREVIOUS_DATA_FILE"
+            --pr-markdown pr_body.md
+          data-file: data/known_notification_dates.json
+          commit-message: "fix: default missing notification date(s) to {date}"
+          pr-title: "fix: default missing notification date(s) ({date})"
+          close-comment: >-
+            All flagged mergers now have a notification date as of {date}.
             Closing automatically.
           github-token: ${{ github.token }}
           ntfy-topic: ${{ secrets.NTFY_TOPIC }}

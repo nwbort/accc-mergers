@@ -542,8 +542,8 @@ def build_pr_body(changes: list[dict], report: dict, date: str) -> str:
     lines.extend([
         "---",
         "",
-        f"*Generated automatically by the [Detect Duplicate Events]"
-        f"(https://github.com/{_REPO}/actions/workflows/detect-duplicates.yml) workflow.*",
+        f"*Generated automatically by the duplicate-events step of the "
+        f"[merger pipeline](https://github.com/{_REPO}/actions/workflows/pipeline.yml).*",
     ])
 
     return "\n".join(lines)

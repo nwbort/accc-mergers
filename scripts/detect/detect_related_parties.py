@@ -584,8 +584,8 @@ def build_pr_body(candidates: list[dict], date: str) -> str:
     lines.extend([
         "---",
         "",
-        f"*Generated automatically by the [Detect Related Parties]"
-        f"(https://github.com/{_REPO}/actions/workflows/detect-related-parties.yml) workflow.*",
+        f"*Generated automatically by the related-parties step of the "
+        f"[merger pipeline](https://github.com/{_REPO}/actions/workflows/pipeline.yml).*",
     ])
     return "\n".join(lines)
 

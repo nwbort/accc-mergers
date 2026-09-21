@@ -117,36 +117,53 @@ secret).
 
 ## GitHub workflows
 
-### `pipeline.yml` — Main pipeline (hourly + on push to main)
+### `pipeline.yml` — Main pipeline (scheduled + on push to main)
 
 The primary automated workflow. Runs end-to-end on a schedule and on every push to `main`:
 
 1. **Scrape** — runs `scripts/scrape/scrape.sh` to fetch new/updated ACCC merger pages into `data/raw/matters/`
-2. **Extract** — runs `extract_mergers.py`, `generate_similar_mergers.py`, `generate_static_data.py`, `generate-cli-data.sh`, `generate_rss_feed.py`
+2. **Extract** — runs `extract_mergers.py`, `generate_similar_mergers.py`, `generate_static_data.py`, `generate-cli-data.sh`, `generate_rss_feed.py`, `generate_sitemap.py`
 3. **Convert** — detects unconverted DOCX attachments, installs LibreOffice, converts to PDF; re-runs extraction if any were converted
 4. **Commit** — commits all staged changes in a single commit, rebases, and pushes
+5. **Detect** — runs all four detectors, each opening, refreshing or auto-closing its own review PR (see below)
 
 Also accepts a `workflow_dispatch` with an `all_mergers` boolean input to force full re-extraction, and a `repository_dispatch` event (`new_merger_detected`) fired by the `accc-register-watcher` Cloudflare Email Worker when the ACCC's register update mailing list sends an email.
 
-### `detect-duplicates.yml` — Daily duplicate check (02:00 UTC)
+#### The four detectors
 
-Runs `detect_duplicates.py` to identify duplicate merger entries and reports any found.
+All four run as the last steps of every pipeline run, via the shared
+[`detection-pr`](../.github/actions/detection-pr/action.yml) composite action.
+Each branches off the latest `main`, applies its own suggestions to its own
+data file, force-pushes a well-known fix branch, and opens/refreshes — or
+auto-closes — a review PR. Each writes and commits only its own file, so they
+never collide with each other or with the pipeline's own commit.
 
-### `detect-related-mergers.yml` — Daily related-merger check (02:30 UTC)
+| Detector | Fix branch | Data file |
+|---|---|---|
+| `detect_duplicates.py` — duplicate event entries within a merger record | `fix/duplicate-events` | `data/processed/mergers.json` |
+| `detect_related_mergers.py` — re-filed merger pairs (declined waiver→notification, or suspended→re-filed) | `fix/related-mergers` | `data/processed/related_mergers.json` |
+| `detect_related_parties.py` — parties that are the same real-world entity under different names/ABNs | `fix/related-parties` | `data/processed/related_parties.json` |
+| `fix_missing_notification_dates.py` — mergers whose ACCC page never published a notification date | `fix/missing-notification-dates` | `data/known_notification_dates.json` |
 
-Runs `detect_related_mergers.py` to suggest re-filed merger pairs (declined
-waiver→notification, or suspended→re-filed), and opens (or updates) a pull
-request recommending additions to `data/processed/related_mergers.json`.
+An exact-match waiver refile from `detect_related_mergers.py` is auto-merged
+rather than left for review, and opens a `needs-verification` issue instead.
 
-### `detect-related-parties.yml` — Daily related-party check (02:45 UTC)
+These four previously had standalone workflows of their own
+(`detect-duplicates.yml`, `detect-related-mergers.yml`,
+`detect-related-parties.yml`, `fix-missing-notification-dates.yml`), which have
+been deleted — they were exact duplicates of these steps, and a cron on a fresh
+checkout only ever guessed when `mergers.json` last moved. To re-run a detector
+by hand, `workflow_dispatch` the pipeline.
 
-Runs `detect_related_parties.py` to find parties that are the same real-world
-entity recorded under different names/ABNs, and opens (or updates) a pull request
-recommending additions to `data/processed/related_parties.json`.
-
-### `update-sitemap.yml` — Daily sitemap update (22:00 UTC)
-
-Runs `generate_sitemap.py` to regenerate `sitemap.xml`.
+Because the fix branch is rebuilt from `main` on every run, nothing a detector
+wrote last run survives into the next one. Three of them re-derive their
+suggestions from the data and lose nothing. The fourth can't: a missing
+notification date defaults to *today*, so re-deriving it would re-date every
+unreviewed candidate on every run and discard any correction made on the
+branch. The action therefore recovers the previous run's copy of the data file
+from the fix branch and hands it to the detector as `$PREVIOUS_DATA_FILE`;
+`fix_missing_notification_dates.py` reads it via `--previous-known-dates` and
+carries each existing entry forward verbatim.
 
 ### `weekly-digest.yml` — Weekly digest generation (Sat 22:00 UTC)
 
@@ -158,7 +175,8 @@ Sends the weekly digest email via the Cloudflare Worker using `send_weekly_email
 
 ### `test.yml` — Python test suite
 
-Manual-only (`workflow_dispatch`). Runs `pytest scripts/tests/`.
+Runs `pytest scripts/tests/` on pull requests touching `scripts/**` or
+`fixtures/*.json`, and on demand (`workflow_dispatch`).
 
 ### `frontend-test.yml` — Frontend tests
 
@@ -168,7 +186,8 @@ demand (`workflow_dispatch`).
 
 ### `workers-test.yml` — Cloudflare Worker tests
 
-Manual-only (`workflow_dispatch`). For every directory under `workers/`, runs
+Runs on pull requests touching `workers/**`, and on demand
+(`workflow_dispatch`). For every directory under `workers/`, runs
 `npm ci`, then `npm test --if-present` (only `accc-register-watcher` has a
 test suite today), then `npm run deploy:dry` to bundle the Worker and
 validate its `wrangler.toml` without deploying. Discovers Workers by
