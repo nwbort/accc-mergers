@@ -21,7 +21,7 @@
       "code": "08",
       "name": "Metal Ore Mining",
       "level": "subdivision",
-      "merger_count": 13
+      "merger_count": 14
     },
     {
       "code": "09",
@@ -33,7 +33,7 @@
       "code": "10",
       "name": "Exploration and Other Mining Support Services",
       "level": "subdivision",
-      "merger_count": 11
+      "merger_count": 12
     }
   ],
   "mergers": [
@@ -58,6 +58,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-09-10T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-60043",
+      "merger_name": "Global Lithium Resources \u2013 IGO Nova Operation",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-25T12:00:00Z",
+      "determination_date": "2026-09-21T12:00:00Z"
     },
     {
       "merger_id": "WA-95041",
@@ -401,10 +412,10 @@
       "determination_date": null
     }
   ],
-  "count": 33,
+  "count": 34,
   "phase_1_count": 14,
   "phase_2_count": 0,
-  "waiver_count": 19,
+  "waiver_count": 20,
   "active_count": 2,
   "phase_duration": {
     "average_days": 32.0,
@@ -414,10 +425,10 @@
     "completed_count": 11
   },
   "waiver_duration": {
-    "average_days": 19.736842105263158,
-    "median_days": 20,
-    "average_business_days": 13.473684210526315,
-    "median_business_days": 14,
-    "completed_count": 19
+    "average_days": 20.1,
+    "median_days": 20.5,
+    "average_business_days": 13.75,
+    "median_business_days": 14.5,
+    "completed_count": 20
   }
 }

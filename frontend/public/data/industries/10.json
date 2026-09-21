@@ -19,7 +19,7 @@
       "code": "101",
       "name": "Exploration",
       "level": "group",
-      "merger_count": 4
+      "merger_count": 5
     },
     {
       "code": "109",
@@ -29,6 +29,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-60043",
+      "merger_name": "Global Lithium Resources \u2013 IGO Nova Operation",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-25T12:00:00Z",
+      "determination_date": "2026-09-21T12:00:00Z"
+    },
     {
       "merger_id": "WA-55033",
       "merger_name": "Jellinbah Group - Further interest in Lake Vermont JV",
@@ -151,10 +162,10 @@
       "determination_date": "2026-03-19T12:00:00Z"
     }
   ],
-  "count": 11,
+  "count": 12,
   "phase_1_count": 3,
   "phase_2_count": 0,
-  "waiver_count": 8,
+  "waiver_count": 9,
   "active_count": 0,
   "phase_duration": {
     "average_days": 35.0,
@@ -164,10 +175,10 @@
     "completed_count": 3
   },
   "waiver_duration": {
-    "average_days": 21.5,
-    "median_days": 20.5,
-    "average_business_days": 14.75,
-    "median_business_days": 14.5,
-    "completed_count": 8
+    "average_days": 22.11111111111111,
+    "median_days": 21,
+    "average_business_days": 15.222222222222221,
+    "median_business_days": 15,
+    "completed_count": 9
   }
 }

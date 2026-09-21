@@ -38,6 +38,17 @@
       "determination_date": null
     },
     {
+      "merger_id": "WA-60043",
+      "merger_name": "Global Lithium Resources \u2013 IGO Nova Operation",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-25T12:00:00Z",
+      "determination_date": "2026-09-21T12:00:00Z"
+    },
+    {
       "merger_id": "WA-65013",
       "merger_name": "BHP \u2013 expansion of Special Mining Lease at Olympic Dam, SA",
       "is_waiver": true,
@@ -60,10 +71,10 @@
       "determination_date": "2025-11-18T12:00:00Z"
     }
   ],
-  "count": 3,
+  "count": 4,
   "phase_1_count": 2,
   "phase_2_count": 0,
-  "waiver_count": 1,
+  "waiver_count": 2,
   "active_count": 1,
   "phase_duration": {
     "average_days": 25.0,
@@ -73,10 +84,10 @@
     "completed_count": 1
   },
   "waiver_duration": {
-    "average_days": 13.0,
-    "median_days": 13,
-    "average_business_days": 8.0,
-    "median_business_days": 8,
-    "completed_count": 1
+    "average_days": 20.0,
+    "median_days": 20.0,
+    "average_business_days": 13.5,
+    "median_business_days": 13.5,
+    "completed_count": 2
   }
 }
