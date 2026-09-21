@@ -71,7 +71,7 @@ jobs:
         uses: actions/cache@v6
         with:
           path: ~/go/bin/pup
-          key: ${{ runner.os }}-pup-v0.4.0
+          key: ${{ runner.os }}-pup-v0.4.0-u2604-coldtest   # TEMP(ubuntu-26.04 test): forces a cold `go install` — revert before merging
 
       # The floor is set by pup's dependencies, not by pup: it ships no go.mod,
       # so `go install` resolves golang.org/x/net, fatih/color et al at their
@@ -218,6 +218,21 @@ jobs:
 
       # --- Convert DOCX to PDF ---
       # Runs whenever there are unconverted files, catching both new downloads and stragglers.
+
+      # TEMP(ubuntu-26.04 test): remove one already-converted PDF from the
+      # runner's checkout (not from the repo) so the real find-docx step below
+      # genuinely reports an unconverted DOCX, which in turn makes the real
+      # LibreOffice install + convert steps run. REVERT BEFORE MERGE.
+      - name: TEMP Force an unconverted DOCX
+        run: |
+          set -euo pipefail
+          victim="data/raw/matters/MN-15005/Cvent - ON24 - Questionnaire - 23 February 2026.pdf"
+          if [ ! -f "$victim" ]; then
+            echo "Expected converted PDF is missing: $victim" >&2
+            exit 1
+          fi
+          rm -f "$victim"
+          echo "Removed $victim from the runner checkout to force a DOCX conversion."
 
       - name: Find unconverted DOCX files
         id: find-docx
@@ -438,6 +453,58 @@ jobs:
           else
             echo "No PDFs over the 25 MiB Pages asset limit"
           fi
+
+      # ----------------------------------------------------------------
+      # TEMP(ubuntu-26.04 test): forces the two apt paths that the real steps
+      # above skip on a normal run, so the 26.04 image is actually exercised.
+      # Both replicate the real install commands verbatim. REVERT BEFORE MERGE.
+      # ----------------------------------------------------------------
+      - name: TEMP Verify Tesseract installs and runs on this image
+        run: |
+          set -euo pipefail
+          sudo apt-get update && sudo apt-get install -y tesseract-ocr --no-install-recommends
+          tesseract --version
+          python - <<'PY'
+          from PIL import Image, ImageDraw, ImageFont
+          import pytesseract
+
+          # The default PIL bitmap font is ~11px, which tesseract reads
+          # unreliably; use a real TTF and fall back to upscaling if absent.
+          try:
+              font = ImageFont.truetype(
+                  "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 64)
+              img = Image.new("RGB", (900, 160), "white")
+              ImageDraw.Draw(img).text((20, 40), "PHASE 2 NOTICE", font=font, fill="black")
+          except OSError:
+              small = Image.new("RGB", (200, 40), "white")
+              ImageDraw.Draw(small).text((10, 12), "PHASE 2 NOTICE", fill="black")
+              img = small.resize((1000, 200), Image.LANCZOS)
+
+          text = pytesseract.image_to_string(img)
+          print(f"OCR round-trip result: {text.strip()!r}")
+          assert "PHASE" in text.upper(), "tesseract returned no usable text"
+          print("Tesseract OCR round-trip OK")
+          PY
+
+      - name: TEMP Verify Ghostscript installs and compresses on this image
+        run: |
+          set -euo pipefail
+          sudo apt-get update && sudo apt-get install -y ghostscript --no-install-recommends
+          gs --version
+          # Work on a copy so no tracked PDF is rewritten by this test.
+          work="${RUNNER_TEMP}/gs-test"
+          mkdir -p "$work"
+          cp "data/raw/matters/MN-01068/Affidavit-of-Radu-Popescu.pdf" "$work/sample.pdf"
+          before=$(stat -c%s "$work/sample.pdf")
+          echo "Before: ${before} bytes"
+          # An explicit path bypasses the oversized filter, so the sample is
+          # processed whatever its size. --limit stays at the real 25 MiB: it is
+          # the "failed" threshold, and lowering it would report failure merely
+          # because gs could not reach it. The low --target just guarantees every
+          # preset actually runs, incl. the pdfplumber validation.
+          python -m scripts.compress_pdfs --target 838860 "$work/sample.pdf"
+          after=$(stat -c%s "$work/sample.pdf")
+          echo "After:  ${after} bytes (exit code above is the real pass/fail)"
 
       - name: Stage extracted data
         if: steps.enrich-gate.outputs.run == 'true'
