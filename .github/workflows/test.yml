@@ -33,41 +33,56 @@ jobs:
           pip install -r scripts/requirements.txt
           pip install pytest
 
-      # TEMP(ubuntu-26.04 test): plain gs works on 26.04 (location/SAFER ruled
-      # out), so reproduce compress_pdfs' exact invocation to find what differs.
+      # TEMP(ubuntu-26.04 test): gs 10.06 cannot open compress_pdfs' output
+      # file. Grid the variables one at a time to find which one it rejects.
       # REVERT BEFORE MERGE.
-      - name: TEMP Ghostscript compress_pdfs reproduction
+      - name: TEMP Ghostscript output-filename grid
         run: |
           set -uo pipefail
           sudo apt-get update
           sudo apt-get install -y ghostscript --no-install-recommends
-          gs --version; echo "CWD=$(pwd)"
+          gs --version
           src="data/raw/matters/MN-01068/Affidavit-of-Radu-Popescu.pdf"
+          cp "$src" ./in.pdf
 
-          # 1. compress_pdfs on a copy INSIDE the repo tree (the real code path)
-          echo "::group::1. compress_pdfs in-tree"
-          cp "$src" ./gs-intree.pdf
-          python -m scripts.compress_pdfs --target 838860 ./gs-intree.pdf
-          echo "--> exit=$?  size=$(stat -c%s ./gs-intree.pdf)"
-          echo "::endgroup::"
+          try () {
+            label="$1"; out="$2"; shift 2
+            set +e
+            err=$(gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.7 \
+                     -dPDFSETTINGS=/prepress -dNOPAUSE -dBATCH -dSAFER \
+                     "$@" -sOutputFile="$out" ./in.pdf 2>&1 >/dev/null)
+            code=$?
+            set -e
+            if [ $code -eq 0 ]; then
+              echo "PASS  ${label}  [${out}]"
+            else
+              echo "FAIL  ${label}  [${out}]  :: $(echo "$err" | grep -m1 'Could not open' || echo "$err" | head -1)"
+            fi
+            rm -f "$out"
+          }
 
-          # 2. compress_pdfs on a copy in RUNNER_TEMP (what failed earlier)
-          echo "::group::2. compress_pdfs runner-temp"
-          mkdir -p "${RUNNER_TEMP}/gs2"; cp "$src" "${RUNNER_TEMP}/gs2/s.pdf"
-          python -m scripts.compress_pdfs --target 838860 "${RUNNER_TEMP}/gs2/s.pdf"
-          echo "--> exit=$?  size=$(stat -c%s "${RUNNER_TEMP}/gs2/s.pdf")"
-          echo "::endgroup::"
+          echo "--- vary the FILENAME (compress_pdfs' extra flags held constant) ---"
+          F="-dDetectDuplicateImages=true -dCompressFonts=true -dQUIET"
+          try "plain .pdf"            "./out.pdf"                  $F
+          try "leading dot, .pdf"     "./.out.pdf"                 $F
+          try "plain .tmp"            "./out.tmp"                  $F
+          try "leading dot, .tmp"     "./.out.tmp"                 $F
+          try "compress_pdfs' exact"  "./.in.pdf.prepress.tmp"     $F
 
-          # 3. compress_pdfs' exact gs argv, run by hand with stderr shown
-          echo "::group::3. exact argv, stderr visible"
+          echo "--- vary the FLAGS (filename held at compress_pdfs' exact form) ---"
+          N="./.in.pdf.prepress.tmp"
+          try "no extra flags"        "$N"
+          try "+DetectDuplicateImages" "$N" -dDetectDuplicateImages=true
+          try "+CompressFonts"        "$N" -dCompressFonts=true
+          try "+QUIET"                "$N" -dQUIET
+
+          echo "--- SAFER off, compress_pdfs' exact filename + flags ---"
           set +e
           gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.7 -dPDFSETTINGS=/prepress \
-             -dDetectDuplicateImages=true -dCompressFonts=true \
-             -dNOPAUSE -dBATCH -dQUIET -dSAFER \
-             -sOutputFile="./.gs-intree.pdf.prepress.tmp" "./gs-intree.pdf"
-          echo "--> exact argv in-tree: exit=$?"
+             -dDetectDuplicateImages=true -dCompressFonts=true -dNOPAUSE -dBATCH \
+             -dQUIET -dNOSAFER -sOutputFile="$N" ./in.pdf
+          echo "--> NOSAFER exit=$?"
           set -e
-          echo "::endgroup::"
 
       - name: Run tests
         run: python -m pytest scripts/tests/ -v
