@@ -57,7 +57,7 @@
       "code": "19",
       "name": "Polymer Product and Rubber Product Manufacturing",
       "level": "subdivision",
-      "merger_count": 14
+      "merger_count": 15
     },
     {
       "code": "20",
@@ -184,6 +184,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-05-12T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-05051",
+      "merger_name": "Apax Funds \u2013 Remy & Geiser GmbH and Gerresheimer Primary Packaging Plastics GmbH",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-24T12:00:00Z",
+      "determination_date": "2026-09-21T12:00:00Z"
     },
     {
       "merger_id": "MN-85043",
@@ -1957,10 +1968,10 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 169,
+  "count": 170,
   "phase_1_count": 76,
   "phase_2_count": 2,
-  "waiver_count": 91,
+  "waiver_count": 92,
   "active_count": 8,
   "phase_duration": {
     "average_days": 29.450704225352112,
@@ -1970,10 +1981,10 @@
     "completed_count": 71
   },
   "waiver_duration": {
-    "average_days": 19.35164835164835,
-    "median_days": 19,
-    "average_business_days": 13.10989010989011,
-    "median_business_days": 13,
-    "completed_count": 91
+    "average_days": 19.445652173913043,
+    "median_days": 19.0,
+    "average_business_days": 13.184782608695652,
+    "median_business_days": 13.0,
+    "completed_count": 92
   }
 }

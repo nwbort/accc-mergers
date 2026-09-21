@@ -9,7 +9,7 @@
       "code": "62",
       "name": "Finance",
       "level": "subdivision",
-      "merger_count": 146
+      "merger_count": 147
     },
     {
       "code": "63",
@@ -167,6 +167,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-03-03T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-05051",
+      "merger_name": "Apax Funds \u2013 Remy & Geiser GmbH and Gerresheimer Primary Packaging Plastics GmbH",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-08-24T12:00:00Z",
+      "determination_date": "2026-09-21T12:00:00Z"
     },
     {
       "merger_id": "MN-85043",
@@ -2226,10 +2237,10 @@
       "determination_date": null
     }
   ],
-  "count": 200,
+  "count": 201,
   "phase_1_count": 52,
   "phase_2_count": 2,
-  "waiver_count": 146,
+  "waiver_count": 147,
   "active_count": 13,
   "phase_duration": {
     "average_days": 27.476190476190474,
@@ -2239,10 +2250,10 @@
     "completed_count": 42
   },
   "waiver_duration": {
-    "average_days": 20.561643835616437,
-    "median_days": 20.0,
-    "average_business_days": 14.054794520547945,
-    "median_business_days": 14.0,
-    "completed_count": 146
+    "average_days": 20.612244897959183,
+    "median_days": 20,
+    "average_business_days": 14.095238095238095,
+    "median_business_days": 14,
+    "completed_count": 147
   }
 }

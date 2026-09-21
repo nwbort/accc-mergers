@@ -1,6 +1,6 @@
 {
   "total_mergers": 259,
-  "total_waivers": 411,
+  "total_waivers": 412,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 230,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 392,
+    "Approved": 393,
     "Not approved": 19
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.0,
-    "median_days": 20,
-    "average_business_days": 13.635036496350365,
-    "median_business_days": 13
+    "average_days": 20.019417475728154,
+    "median_days": 20.0,
+    "average_business_days": 13.650485436893204,
+    "median_business_days": 13.5
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 138
+      "count": 139
     },
     {
       "name": "Computer System Design and Related Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-05051",
+      "merger_name": "Apax Funds \u2013 Remy & Geiser GmbH and Gerresheimer Primary Packaging Plastics GmbH",
+      "determination": "Approved",
+      "determination_date": "2026-09-21T12:00:00Z",
+      "page_modified_datetime": "2026-09-21T16:47:52+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-60043",
       "merger_name": "Global Lithium Resources \u2013 IGO Nova Operation",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-75044",
-      "merger_name": "McCormick / Unilever Foods Business",
-      "determination": "Approved",
-      "determination_date": "2026-09-15T12:00:00Z",
-      "page_modified_datetime": "2026-09-15T16:46:39+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]
