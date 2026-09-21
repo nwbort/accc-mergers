@@ -288,7 +288,8 @@ KNOWN_DETERMINATION_DATES = {
 
 # Known notification dates for mergers whose ACCC page never publishes one.
 # Loaded from data/known_notification_dates.json, which fix_missing_notification_dates.py
-# keeps up to date via an automated PR (see .github/workflows/fix-missing-notification-dates.yml).
+# keeps up to date via an automated PR (the missing-notification-dates detection
+# step at the end of .github/workflows/pipeline.yml).
 KNOWN_NOTIFICATION_DATES_PATH = 'data/known_notification_dates.json'
 
 

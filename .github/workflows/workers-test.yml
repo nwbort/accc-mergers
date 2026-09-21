@@ -1,11 +1,17 @@
 name: Worker Tests
 
-# Manual-only (`workflow_dispatch`), matching test.yml.
+# Runs on any PR touching workers/, and on manual dispatch.
 #
 # Discovers every Worker under workers/ rather than hard-coding a list, so a
 # new Worker directory is covered the moment it lands — and a Worker that
-# grows a `test` script starts running it without touching this file.
+# grows a `test` script starts running it without touching this file. That
+# discovery is also why the path filter is the whole directory: a new Worker
+# is picked up by the glob without anyone remembering to widen this list.
 on:
+  pull_request:
+    paths:
+      - 'workers/**'
+      - '.github/workflows/workers-test.yml'
   workflow_dispatch:
 
 jobs:
