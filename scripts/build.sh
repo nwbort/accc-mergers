@@ -40,6 +40,14 @@ npm run build
 # is exactly the limit Pages enforces.
 MAX_ASSET_SIZE="25M"
 
+# compress_pdfs.py writes its in-progress ghostscript output as
+# .<name>.<preset>.part.pdf beside the original (it has to end in .pdf —
+# ghostscript 10.06 rejects a .tmp output filename). Those are always cleaned
+# up, but a killed process could leave one behind, and `find -name "*.pdf"`
+# matches dotfiles, so it would otherwise be deployed as if it were a real
+# document. Keep in step with TEMP_SUFFIX in scripts/compress_pdfs.py.
+TEMP_PDF_GLOB=".*.part.pdf"
+
 data_root="$(cd "../$DATA_DIR" 2>/dev/null && pwd -P)" || data_root=""
 if [ -n "$data_root" ]; then
   dest="$PWD/dist/mergers"
@@ -56,11 +64,13 @@ if [ -n "$data_root" ]; then
 
   # `cp --parents` recreates each file's path relative to the current
   # directory, so run it from the data dir to get <matter-path>/<file>.pdf.
-  (cd "$data_root" && find . -type f -name "*.pdf" ! -size "+$MAX_ASSET_SIZE" \
+  (cd "$data_root" && find . -type f -name "*.pdf" ! -name "$TEMP_PDF_GLOB" \
+    ! -size "+$MAX_ASSET_SIZE" \
     -exec cp "${cp_opts[@]}" -t "$dest" {} +)
   echo "Copied PDFs from $DATA_DIR into dist/mergers/"
 
-  oversized="$(cd "$data_root" && find . -type f -name "*.pdf" -size "+$MAX_ASSET_SIZE" \
+  oversized="$(cd "$data_root" && find . -type f -name "*.pdf" ! -name "$TEMP_PDF_GLOB" \
+    -size "+$MAX_ASSET_SIZE" \
     -printf '  %P (%s bytes)\n' | sort)"
   if [ -n "$oversized" ]; then
     echo "Skipped $(printf '%s\n' "$oversized" | wc -l) PDF(s) over the ${MAX_ASSET_SIZE}iB Pages asset limit:"

@@ -5,6 +5,15 @@ run-name: >-
     github.event_name == 'repository_dispatch' && github.event.client_payload.custom_title || 'Merger pipeline'
   }}
 
+# Dispatching this workflow against a branch does not test it. checkout@v7
+# clones at depth 1, so the branch shares no history with the origin/main this
+# job later fetches, and `git pull --rebase origin main` in the commit step
+# reports add/add conflicts on every file that differs. The run therefore always
+# ends in the rebase-conflict handler, having exercised none of the commit path
+# (the handler refuses to retrigger from a non-main ref, so at least it no
+# longer starts a real run on main). Test changes to the pipeline's *steps* by
+# dispatching test.yml / frontend-test.yml / workers-test.yml, which do no git
+# writes, and land pipeline changes on main to see the whole thing run.
 on:
   repository_dispatch:
     types: [new_merger_detected]
@@ -64,6 +73,18 @@ jobs:
             > "${RUNNER_TEMP}/mergers-before.json" 2>/dev/null \
             || echo '[]' > "${RUNNER_TEMP}/mergers-before.json"
 
+      # runner.os is "Linux" on every Ubuntu image, so a pup built on 24.04 is
+      # restored unchanged on 26.04. Harmless for pup itself — a static Go
+      # binary with nothing dynamically linked — but it means the cold
+      # `go install` path is never re-exercised after an image bump, which is
+      # the run most likely to break. ImageOS ("ubuntu24"/"ubuntu26") is set by
+      # the runner and names the release; ImageVersion is deliberately not used,
+      # since it changes with every fortnightly image patch and would rebuild
+      # pup for no reason.
+      - name: Identify runner image
+        id: runner-image
+        run: echo "os=${ImageOS:-unknown}" >> "$GITHUB_OUTPUT"
+
       # Go is only ever used to build pup, so the cache is checked first and
       # the toolchain is installed only when the binary has to be rebuilt.
       - name: Cache pup binary
@@ -71,7 +92,7 @@ jobs:
         uses: actions/cache@v6
         with:
           path: ~/go/bin/pup
-          key: ${{ runner.os }}-pup-v0.4.0
+          key: ${{ runner.os }}-${{ steps.runner-image.outputs.os }}-pup-v0.4.0
 
       # The floor is set by pup's dependencies, not by pup: it ships no go.mod,
       # so `go install` resolves golang.org/x/net, fatih/color et al at their
@@ -328,8 +349,23 @@ jobs:
 
           sudo apt-get install -y libreoffice-writer --no-install-recommends
 
+          # Drop any .deb the archive holds that can no longer be downloaded —
+          # i.e. a version the mirror has moved past. This is what keeps the
+          # cache from doubling on every runner image bump: the restore-keys
+          # prefix is deliberately release-agnostic, so a 26.04 run restores
+          # (and seeds apt with) the 24.04 .debs, apt correctly ignores them and
+          # fetches the 26.04 ones, and without this both sets would be saved
+          # back under the new key. Clearing $APT_CACHE_DIR alone would not do
+          # it — the stale .debs are sitting in /var/cache/apt/archives by then,
+          # because this step put them there. autoclean prunes superseded
+          # versions within a release too, while leaving the current ones, so
+          # the partial-hit benefit survives.
+          sudo apt-get autoclean -y
+
           # Hand the .debs back to the runner-owned directory so the post-job
-          # save can read them without sudo.
+          # save can read them without sudo. Cleared first so a .deb autoclean
+          # just removed can't survive in the cache from the previous run.
+          rm -f "$APT_CACHE_DIR"/*.deb
           shopt -s nullglob
           fetched=(/var/cache/apt/archives/*.deb)
           shopt -u nullglob
@@ -429,12 +465,23 @@ jobs:
       # Ghostscript is only installed when there's something to compress, which
       # is rare — the same pattern as the Tesseract step above.
       - name: Compress oversized PDFs
+        id: compress
         if: steps.enrich-gate.outputs.run == 'true'
         run: |
           if find data/raw/matters -type f -name '*.pdf' -size +25M | grep -q .; then
             sudo apt-get update
             sudo apt-get install -y ghostscript --no-install-recommends
-            python -m scripts.compress_pdfs
+            # compress_pdfs exits non-zero only when ghostscript could not run
+            # at all (a file it merely couldn't shrink far enough stays a
+            # warning). That has to turn the run red — it means every oversized
+            # PDF is about to drop out of the deployment silently — but not
+            # here, or this run's scrape would go uncommitted over a problem
+            # that has nothing to do with the data. Record it and re-raise at
+            # the end of the job, after the commit.
+            if ! python -m scripts.compress_pdfs; then
+              echo "failed=true" >> "$GITHUB_OUTPUT"
+              echo "::error::Ghostscript could not process one or more oversized PDFs. They will be left out of the deployment and redirected to their source URL."
+            fi
           else
             echo "No PDFs over the 25 MiB Pages asset limit"
           fi
@@ -472,6 +519,15 @@ jobs:
             # this step does not read, only to report main hadn't moved.
             if ! git pull --rebase --autostash origin main; then
               git rebase --abort
+
+              # Only main retriggers itself. A branch run reaches this handler
+              # on every single dispatch (see the note above `on:`), and firing
+              # a real pipeline run on main is a surprising thing for a test
+              # dispatch of a branch to do.
+              if [ "$GITHUB_REF" != "refs/heads/main" ]; then
+                echo "Rebase conflict on ${GITHUB_REF} - not main, so not triggering a run on main."
+                exit 1
+              fi
 
               # A real conflict here means something else pushed to main while
               # this run was scraping/extracting - hand-merging the JSON isn't
@@ -914,3 +970,13 @@ jobs:
           ntfy-topic: ${{ secrets.NTFY_TOPIC }}
           ntfy-token: ${{ secrets.NTFY_TOKEN }}
           ntfy-server: ${{ vars.NTFY_SERVER || 'https://ntfy.sh' }}
+
+      # --- Deferred failures ---
+      # Re-raised here so they turn the run red without having stopped the
+      # commit above. See the Compress oversized PDFs step.
+      - name: Fail if PDF compression could not run
+        if: always() && steps.compress.outputs.failed == 'true'
+        run: |
+          echo "Ghostscript produced no output for at least one oversized PDF." >&2
+          echo "The data was still committed; see the Compress oversized PDFs step for the ghostscript error." >&2
+          exit 1
