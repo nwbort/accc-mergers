@@ -17,7 +17,7 @@ on:
 jobs:
   test:
     name: workers/
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     env:
       # Wrangler phones home about usage by default; nothing to gain in CI.
       WRANGLER_SEND_METRICS: 'false'

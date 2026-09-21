@@ -45,7 +45,7 @@ concurrency:
 
 jobs:
   pipeline:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     # Without this, a hung step (e.g. an apt-get fetch that stalls) runs to
     # GitHub's default 6-hour job timeout before failing. Because runs are
     # serialised via the concurrency group above, that also blocks every
