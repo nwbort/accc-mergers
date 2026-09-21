@@ -58,7 +58,7 @@ import re
 import sys
 from pathlib import Path
 
-from scripts.compress_pdfs import PAGES_ASSET_LIMIT, format_size
+from scripts.compress_pdfs import PAGES_ASSET_LIMIT, TEMP_SUFFIX, format_size
 
 # (directory, glob) pairs that feed the deployment. See the module docstring.
 DEPLOY_SOURCES = (
@@ -98,6 +98,16 @@ PRERENDERED_STATIC_PAGES = 13
 _MATTER_FILE_RE = re.compile(r"^(MN|WA)-\d+\.json$", re.IGNORECASE)
 
 
+def _is_compression_temp(path):
+    """A half-written ghostscript candidate from compress_pdfs.py.
+
+    Those end in .pdf (ghostscript 10.06 rejects a .tmp output filename), so
+    they look like deployable documents to a *.pdf glob. scripts/build.sh skips
+    them, so the counts here have to as well.
+    """
+    return path.name.endswith(TEMP_SUFFIX)
+
+
 def find_oversized(root=Path("."), limit=PAGES_ASSET_LIMIT, sources=DEPLOY_SOURCES):
     """Deployable files over ``limit``, as ``(relative_path, size)``, largest first."""
     root = Path(root)
@@ -107,7 +117,7 @@ def find_oversized(root=Path("."), limit=PAGES_ASSET_LIMIT, sources=DEPLOY_SOURC
         if not base.exists():
             continue
         for path in base.rglob(pattern):
-            if not path.is_file():
+            if not path.is_file() or _is_compression_temp(path):
                 continue
             size = path.stat().st_size
             if size > limit:
@@ -146,7 +156,8 @@ def count_deploy_files(root=Path("."), asset_limit=PAGES_ASSET_LIMIT):
     pdfs = sum(
         1
         for path in (root / "data" / "raw" / "matters").rglob("*.pdf")
-        if path.is_file() and path.stat().st_size <= asset_limit
+        if path.is_file() and not _is_compression_temp(path)
+        and path.stat().st_size <= asset_limit
     ) if (root / "data" / "raw" / "matters").exists() else 0
 
     mergers = sum(

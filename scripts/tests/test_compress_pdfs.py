@@ -6,8 +6,10 @@ parameter, so these tests substitute a fake that writes a file of whatever size
 the scenario needs.
 """
 
+import shutil
 import sys
 import unittest.mock
+from pathlib import Path
 
 import pytest
 
@@ -16,8 +18,11 @@ sys.modules.setdefault('pdfplumber', unittest.mock.MagicMock())
 from scripts.compress_pdfs import (  # noqa: E402
     PAGES_ASSET_LIMIT,
     QUALITY_PRESETS,
+    TEMP_SUFFIX,
     compress_file,
+    ghostscript_compress,
     iter_oversized,
+    main,
     rejection_reason,
 )
 
@@ -252,3 +257,176 @@ class TestFindingOversizedFiles:
 
     def test_missing_directory_is_not_an_error(self, tmp_path):
         assert iter_oversized(tmp_path / "nope", PAGES_ASSET_LIMIT) == []
+
+
+class TestGhostscriptFailureIsNotSilent:
+    """A ghostscript that never runs must not be reported as a tidy warning.
+
+    This is the shape of the Ubuntu 26.04 breakage: ghostscript 10.06 refused
+    every -sOutputFile ending in .tmp, so compress_file() rejected all four
+    presets, main() exited 0 anyway, and the pipeline step went green having
+    compressed nothing — while build.sh then dropped the still-oversized files
+    out of the deployment.
+    """
+
+    def test_compress_file_reports_an_error_when_no_preset_produced_output(
+        self, tmp_path, stats
+    ):
+        src = write_pdf(tmp_path / "big.pdf", 30 * MIB)
+
+        result = compress_file(
+            src, target=20 * MIB,
+            runner=fake_compressor({}),  # every preset fails outright
+        )
+
+        assert result.status == "error"
+        assert "ghostscript" in result.detail
+
+    def test_a_document_that_merely_stayed_too_big_is_still_a_warning(
+        self, tmp_path, stats
+    ):
+        # Ghostscript ran fine; the document just wouldn't shrink past the hard
+        # limit. That degrades gracefully and must not fail the pipeline.
+        src = write_pdf(tmp_path / "big.pdf", 30 * MIB)
+
+        result = compress_file(
+            src, target=20 * MIB, limit=25 * MIB,
+            runner=fake_compressor({p: 28 * MIB for p in QUALITY_PRESETS}),
+        )
+
+        assert result.status == "failed"
+
+    def test_main_exits_non_zero_when_ghostscript_never_runs(
+        self, tmp_path, stats, monkeypatch
+    ):
+        write_pdf(tmp_path / "big.pdf", 30 * MIB)
+        monkeypatch.setattr('scripts.compress_pdfs.shutil.which', lambda name: '/usr/bin/gs')
+        monkeypatch.setattr(
+            'scripts.compress_pdfs.ghostscript_compress',
+            lambda src, dst, preset: False,
+        )
+
+        assert main(["--root", str(tmp_path)]) == 1
+
+    def test_main_exits_zero_when_a_document_just_would_not_shrink(
+        self, tmp_path, stats, monkeypatch
+    ):
+        write_pdf(tmp_path / "big.pdf", 30 * MIB)
+        monkeypatch.setattr('scripts.compress_pdfs.shutil.which', lambda name: '/usr/bin/gs')
+        monkeypatch.setattr(
+            'scripts.compress_pdfs.ghostscript_compress',
+            fake_compressor({p: 28 * MIB for p in QUALITY_PRESETS}),
+        )
+
+        assert main(["--root", str(tmp_path)]) == 0
+
+
+class TestTempFileNaming:
+    """The candidate ghostscript writes has to be named something ghostscript
+    will open, and something nothing else mistakes for a deployable document."""
+
+    def test_temp_suffix_is_a_pdf_extension(self):
+        # ghostscript 10.06 (Ubuntu 26.04) fails with "Unable to open the
+        # initial device" on any -sOutputFile ending in .tmp. The extension is
+        # the only thing that matters — not the leading dot, not -dSAFER.
+        assert TEMP_SUFFIX.endswith(".pdf")
+
+    def test_candidates_are_written_next_to_the_original_with_that_suffix(
+        self, tmp_path, stats
+    ):
+        src = write_pdf(tmp_path / "big.pdf", 30 * MIB)
+        seen = []
+
+        def spy(source, dst, preset):
+            seen.append(Path(dst))
+            write_pdf(dst, 14 * MIB)
+            return True
+
+        compress_file(src, target=20 * MIB, runner=spy)
+
+        assert seen, "the runner was never called"
+        for dst in seen:
+            assert dst.name.endswith(TEMP_SUFFIX), dst.name
+            assert dst.parent == src.parent
+
+    def test_a_leftover_candidate_is_not_treated_as_a_deployable_pdf(self, tmp_path):
+        # Every path in compress_file unlinks its candidate in a finally, so one
+        # only survives an outright kill — but *.pdf globs match dotfiles, so
+        # iter_oversized would otherwise try to compress the debris.
+        write_pdf(tmp_path / f".big.pdf.prepress{TEMP_SUFFIX}", 30 * MIB)
+        write_pdf(tmp_path / f".big.pdf.best{TEMP_SUFFIX}", 30 * MIB)
+        write_pdf(tmp_path / "big.pdf", 30 * MIB)
+
+        assert [p.name for p in iter_oversized(tmp_path, PAGES_ASSET_LIMIT)] == ["big.pdf"]
+
+
+def minimal_pdf_bytes():
+    """A valid one-page PDF, built with real xref offsets so gs won't complain."""
+    objects = [
+        b"<< /Type /Catalog /Pages 2 0 R >>",
+        b"<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
+        b"<< /Type /Page /Parent 2 0 R /MediaBox [0 0 200 200] "
+        b"/Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>",
+        b"<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>",
+        b"<< /Length 44 >>\nstream\nBT /F1 12 Tf 20 100 Td (compressible) Tj ET\nendstream",
+    ]
+
+    out = bytearray(b"%PDF-1.7\n")
+    offsets = []
+    for i, body in enumerate(objects, start=1):
+        offsets.append(len(out))
+        out += b"%d 0 obj\n" % i + body + b"\nendobj\n"
+
+    xref_at = len(out)
+    out += b"xref\n0 %d\n" % (len(objects) + 1)
+    out += b"0000000000 65535 f \n"
+    for off in offsets:
+        out += b"%010d 00000 n \n" % off
+    out += b"trailer\n<< /Size %d /Root 1 0 R >>\nstartxref\n%d\n%%%%EOF\n" % (
+        len(objects) + 1, xref_at,
+    )
+    return bytes(out)
+
+
+@pytest.mark.skipif(shutil.which("gs") is None, reason="ghostscript not installed")
+class TestAgainstRealGhostscript:
+    """The one check the fakes above cannot make: that the filename we hand
+    ghostscript is one it will actually open.
+
+    Ghostscript 10.06 rejects an -sOutputFile ending in .tmp outright, which is
+    invisible to a dependency-injected runner and was invisible in CI too — the
+    run went green having compressed nothing. This drives the real binary on
+    whatever image the suite happens to run on, so a future version rejecting
+    the naming scheme fails here instead of silently in the pipeline.
+    """
+
+    def test_ghostscript_accepts_the_temp_filename_compress_file_uses(self, tmp_path):
+        src = tmp_path / "doc.pdf"
+        src.write_bytes(minimal_pdf_bytes())
+        dst = tmp_path / f".{src.name}.prepress{TEMP_SUFFIX}"
+
+        assert ghostscript_compress(src, dst, "prepress") is True
+        assert dst.exists() and dst.stat().st_size > 0
+        assert dst.read_bytes().startswith(b"%PDF")
+
+    def test_every_name_compress_file_generates_is_one_ghostscript_opens(
+        self, tmp_path, stats
+    ):
+        # The test above pins one hand-written name; this one lets compress_file
+        # choose the names itself and then hands each to the real binary, so the
+        # two halves can't drift apart. The injected runners used everywhere else
+        # accept any name at all — which is precisely why .tmp survived in here.
+        src = tmp_path / "doc.pdf"
+        src.write_bytes(minimal_pdf_bytes())
+
+        names = []
+
+        def capture(source, dst, preset):
+            names.append(Path(dst))
+            return False  # fail every preset; we only want the filenames
+
+        compress_file(src, target=20 * MIB, runner=capture)
+
+        assert len(names) == len(QUALITY_PRESETS)
+        for dst in names:
+            assert ghostscript_compress(src, dst, "prepress") is True, dst.name

@@ -55,12 +55,35 @@ DEFAULT_TARGET_SIZE = 20 * 1024 * 1024
 # threshold, which covers every scan we've seen (144 ppi).
 QUALITY_PRESETS = ("prepress", "printer", "ebook", "screen")
 
+# Suffix for the in-progress candidates ghostscript writes beside the original.
+# It has to end in .pdf: ghostscript 10.06 (Ubuntu 26.04) refuses to open an
+# -sOutputFile whose extension is .tmp, failing every preset with "Could not
+# open the file ... Unable to open the initial device, quitting." The extension
+# is the only thing that matters — a leading dot is fine, and the flags, the
+# directory and -dSAFER are all irrelevant.
+#
+# The cost of living in the .pdf namespace is that a leftover candidate (only
+# possible if the process is killed outright, since every path here unlinks in
+# a finally) would look like a real document to anything globbing for *.pdf.
+# iter_oversized() below, the copy in scripts/build.sh and the deploy counts in
+# scripts/check_deploy_assets.py all skip this suffix for that reason; keep the
+# four in step.
+TEMP_SUFFIX = ".part.pdf"
+
 # A compressed file has to keep every page and effectively all of its text layer
 # — Ghostscript preserves both, so a shortfall means the rewrite went wrong and
 # the original should be kept.
 MIN_TEXT_RATIO = 0.95
 TEXT_CHECK_THRESHOLD = 200  # chars; below this the text layer is too small to judge
 
+# status is one of:
+#   "compressed"     - the file was rewritten
+#   "would-compress" - --dry-run; it would have been rewritten
+#   "failed"         - ghostscript ran, but nothing it produced was small
+#                      enough (or passed validation). A document problem.
+#   "error"          - ghostscript produced no output for any preset at all.
+#                      A tooling problem, and the one status that makes the run
+#                      exit non-zero (see main()).
 Result = namedtuple("Result", "path original_size new_size preset status detail")
 
 
@@ -71,7 +94,8 @@ def iter_oversized(root, limit=PAGES_ASSET_LIMIT):
         return []
     oversized = [
         p for p in root.rglob("*.pdf")
-        if p.is_file() and p.stat().st_size > limit
+        if p.is_file() and not p.name.endswith(TEMP_SUFFIX)
+        and p.stat().st_size > limit
     ]
     return sorted(oversized)
 
@@ -174,6 +198,11 @@ def compress_file(
     Falls back to accepting anything under the hard ``limit`` if no preset
     reaches the target — deploying a barely-small-enough file still beats not
     deploying it at all.
+
+    Returns a Result whose ``status`` separates "ghostscript ran and none of its
+    output was good enough" ("failed") from "ghostscript never produced output
+    at all" ("error"). The first is a fact about the document; the second means
+    the tool is broken, and only the caller can tell them apart from the outside.
     """
     path = Path(path)
     original_size = path.stat().st_size
@@ -186,13 +215,17 @@ def compress_file(
     held = None
     held_size = None
     held_preset = None
+    # Whether ghostscript produced output for *any* preset. False at the end
+    # means it never ran successfully, not that the document was stubborn.
+    ran = False
 
     try:
         for preset in presets:
-            tmp = tmp_dir / f".{path.name}.{preset}.tmp"
+            tmp = tmp_dir / f".{path.name}.{preset}{TEMP_SUFFIX}"
             try:
                 if not runner(path, tmp, preset):
                     continue
+                ran = True
 
                 reason = rejection_reason(original_stats, tmp, original_size)
                 if reason is not None:
@@ -208,7 +241,7 @@ def compress_file(
                     return Result(path, original_size, size, preset, "compressed", None)
 
                 if size <= limit and held is None:
-                    held = tmp_dir / f".{path.name}.best.tmp"
+                    held = tmp_dir / f".{path.name}.best{TEMP_SUFFIX}"
                     os.replace(tmp, held)
                     tmp = None
                     held_size, held_preset = size, preset
@@ -225,6 +258,12 @@ def compress_file(
             held = None  # consumed by the replace
             return Result(
                 path, original_size, held_size, held_preset, "compressed", None
+            )
+
+        if not ran:
+            return Result(
+                path, original_size, original_size, None, "error",
+                "ghostscript produced no output at any preset",
             )
 
         return Result(
@@ -275,11 +314,20 @@ def main(argv=None):
         return 1
 
     failures = 0
+    errors = 0
     for path in targets:
         print(f"{path} ({format_size(path.stat().st_size)})")
+        # Passed explicitly rather than left to compress_file's default: the
+        # default binds at import, so naming it here is what lets a test drive
+        # main() with a stand-in compressor.
         result = compress_file(
             path, target=args.target, limit=args.limit, dry_run=args.dry_run,
+            runner=ghostscript_compress,
         )
+        if result.status == "error":
+            print(f"  ghostscript failure: {result.detail}", file=sys.stderr)
+            errors += 1
+            continue
         if result.status == "failed":
             print(f"  could not compress: {result.detail}", file=sys.stderr)
             failures += 1
@@ -291,14 +339,29 @@ def main(argv=None):
             f"(-{saved:.0f}%, /{result.preset})"
         )
 
-    # Anything still oversized is left for build.sh to skip and the Pages
-    # Function to redirect, so this stays a warning rather than a hard failure.
+    # A document we couldn't shrink far enough is left for build.sh to skip and
+    # the Pages Function to redirect, so that stays a warning rather than a hard
+    # failure.
     if failures:
         print(
             f"{failures} file(s) still over the limit — the deployment will skip "
             "them and redirect to the source URL",
             file=sys.stderr,
         )
+
+    # Ghostscript not producing output at all is a different thing, and it has
+    # to be loud. It means the tool is broken (a 10.06 output-filename rejection
+    # is how this was found), and every oversized file silently drops out of the
+    # deployment while the pipeline step stays green.
+    if errors:
+        print(
+            f"{errors} file(s) could not be processed at all — ghostscript "
+            "produced no output. This is a ghostscript failure, not a document "
+            "that resisted compression.",
+            file=sys.stderr,
+        )
+        return 1
+
     return 0
 
 
