@@ -33,40 +33,41 @@ jobs:
           pip install -r scripts/requirements.txt
           pip install pytest
 
-      # TEMP(ubuntu-26.04 test): isolate the Ghostscript "Unable to open the
-      # initial device" failure seen on 26.04. Is it the 26.04 image, or an
-      # artefact of writing outside the repo checkout? REVERT BEFORE MERGE.
-      - name: TEMP Ghostscript location/SAFER probe
+      # TEMP(ubuntu-26.04 test): plain gs works on 26.04 (location/SAFER ruled
+      # out), so reproduce compress_pdfs' exact invocation to find what differs.
+      # REVERT BEFORE MERGE.
+      - name: TEMP Ghostscript compress_pdfs reproduction
         run: |
           set -uo pipefail
           sudo apt-get update
           sudo apt-get install -y ghostscript --no-install-recommends
-          gs --version
-          echo "CWD=$(pwd)"
-
+          gs --version; echo "CWD=$(pwd)"
           src="data/raw/matters/MN-01068/Affidavit-of-Radu-Popescu.pdf"
 
-          probe () {
-            label="$1"; out="$2"; shift 2
-            echo "::group::${label}"
-            set +e
-            gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.7 -dPDFSETTINGS=/ebook \
-               -dNOPAUSE -dBATCH "$@" -sOutputFile="$out" "$src"
-            echo "--> ${label}: exit=$?"
-            set -e
-            ls -la "$out" 2>/dev/null || echo "    (no output file)"
-            echo "::endgroup::"
-          }
+          # 1. compress_pdfs on a copy INSIDE the repo tree (the real code path)
+          echo "::group::1. compress_pdfs in-tree"
+          cp "$src" ./gs-intree.pdf
+          python -m scripts.compress_pdfs --target 838860 ./gs-intree.pdf
+          echo "--> exit=$?  size=$(stat -c%s ./gs-intree.pdf)"
+          echo "::endgroup::"
 
-          # A: inside the repo checkout (what compress_pdfs actually does), SAFER
-          probe "A in-tree +SAFER"     "./.probe-a.pdf"              -dSAFER
-          # B: RUNNER_TEMP (what my earlier test did), SAFER
-          mkdir -p "${RUNNER_TEMP}/gs"
-          probe "B runner-temp +SAFER" "${RUNNER_TEMP}/gs/b.pdf"     -dSAFER
-          # C: RUNNER_TEMP without SAFER, to test whether SAFER is the cause
-          probe "C runner-temp -SAFER" "${RUNNER_TEMP}/gs/c.pdf"     -dNOSAFER
-          # D: in-tree, SAFER, with -dQUIET exactly as compress_pdfs runs it
-          probe "D in-tree +SAFER -dQUIET" "./.probe-d.pdf"          -dSAFER -dQUIET
+          # 2. compress_pdfs on a copy in RUNNER_TEMP (what failed earlier)
+          echo "::group::2. compress_pdfs runner-temp"
+          mkdir -p "${RUNNER_TEMP}/gs2"; cp "$src" "${RUNNER_TEMP}/gs2/s.pdf"
+          python -m scripts.compress_pdfs --target 838860 "${RUNNER_TEMP}/gs2/s.pdf"
+          echo "--> exit=$?  size=$(stat -c%s "${RUNNER_TEMP}/gs2/s.pdf")"
+          echo "::endgroup::"
+
+          # 3. compress_pdfs' exact gs argv, run by hand with stderr shown
+          echo "::group::3. exact argv, stderr visible"
+          set +e
+          gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.7 -dPDFSETTINGS=/prepress \
+             -dDetectDuplicateImages=true -dCompressFonts=true \
+             -dNOPAUSE -dBATCH -dQUIET -dSAFER \
+             -sOutputFile="./.gs-intree.pdf.prepress.tmp" "./gs-intree.pdf"
+          echo "--> exact argv in-tree: exit=$?"
+          set -e
+          echo "::endgroup::"
 
       - name: Run tests
         run: python -m pytest scripts/tests/ -v
