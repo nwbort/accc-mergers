@@ -2,6 +2,7 @@ import { createContext, useContext, useState, useEffect, useRef, useCallback, us
 import { API_ENDPOINTS } from '../config';
 import { MERGER_STATUS } from '../constants/mergerStatus';
 import { FEATURE_EVENTS, pingFeatureEvent } from '../utils/trackEvent';
+import { fetchIndustryNode } from '../utils/industryNode';
 
 const TrackingContext = createContext(null);
 
@@ -418,8 +419,9 @@ export function TrackingProvider({ children }) {
   // Unlike merger tracking (which surfaces every timeline event), following an
   // industry only flags two things: a new merger filed in it, and a new
   // determination published for one of its mergers. These are derived from the
-  // lightweight per-industry detail files (notification_date / determination_date
-  // on each merger summary), so no per-merger fetch is needed.
+  // lightweight merger summaries in the industry division files
+  // (notification_date / determination_date on each), so no per-merger fetch
+  // is needed.
   useEffect(() => {
     const fetchIndustryEvents = async () => {
       if (trackedIndustryCodes.length === 0) {
@@ -428,9 +430,11 @@ export function TrackingProvider({ children }) {
       }
 
       try {
+        // fetchIndustryNode reads through dataCache, so several followed
+        // industries under the same ANZSIC division cost one request between
+        // them rather than one each.
         const industryPromises = trackedIndustryCodes.map((code) =>
-          fetch(API_ENDPOINTS.industryDetail(code))
-            .then((res) => (res.ok ? res.json() : null))
+          fetchIndustryNode(code)
             .then((data) => ({ code, data }))
             .catch(() => ({ code, data: null }))
         );

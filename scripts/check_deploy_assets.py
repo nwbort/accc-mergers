@@ -132,6 +132,25 @@ def _count_files(base, pattern="*"):
     return sum(1 for path in base.rglob(pattern) if path.is_file())
 
 
+def _count_industry_nodes(industries_dir):
+    """ANZSIC nodes across the division files — one prerendered page apiece.
+
+    Unreadable or malformed files contribute nothing rather than failing the
+    check: this runs on every push to report a *file count*, and a parse error
+    is the pipeline's problem to surface, not a reason to block the report.
+    """
+    total = 0
+    if not industries_dir.exists():
+        return 0
+    for path in sorted(industries_dir.glob("*.json")):
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            total += len(payload["nodes"])
+        except (OSError, ValueError, KeyError, TypeError):
+            continue
+    return total
+
+
 def count_deploy_files(root=Path("."), asset_limit=PAGES_ASSET_LIMIT):
     """Files the next deployment will contain, broken down by where they come from.
 
@@ -143,8 +162,9 @@ def count_deploy_files(root=Path("."), asset_limit=PAGES_ASSET_LIMIT):
     * ``public`` — frontend/public, which Vite copies verbatim as publicDir.
     * ``prerendered`` — one HTML file per merger, party and industry, written by
       frontend/prerender.js. Derived from the same data the prerenderer reads
-      (per-merger and per-industry files, and the parties.json index, which is
-      the list it filters party pages against) so this works without a build.
+      (the per-merger files, the nodes inside each industry division file, and
+      the parties.json index, which is the list it filters party pages against)
+      so this works without a build.
     * ``build`` — Vite's own hashed chunks, an allowance rather than a count.
 
     Returns a dict with the breakdown, the ``total``, the ``limit`` and the
@@ -165,7 +185,10 @@ def count_deploy_files(root=Path("."), asset_limit=PAGES_ASSET_LIMIT):
         if _MATTER_FILE_RE.match(path.name)
     ) if (data_dir / "mergers").exists() else 0
 
-    industries = _count_files(data_dir / "industries", "*.json")
+    # prerender.js writes a page per ANZSIC *node*, but the nodes are packed a
+    # division to a file (see scripts/industry_division.py), so counting files
+    # here would under-report the deployment by ~800 pages. Count the nodes.
+    industries = _count_industry_nodes(data_dir / "industries")
 
     # prerender.js renders the parties listed in parties.json, not every record
     # in the shard buckets — ids folded into a canonical group are skipped.

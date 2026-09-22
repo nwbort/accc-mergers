@@ -185,11 +185,18 @@ class TestMain:
         assert payload["body"] == ""
 
 
-def make_deployment(root, *, mergers=0, parties=0, industries=0, pdfs=0, public_extra=0):
+def make_deployment(
+    root, *, mergers=0, parties=0, industries=0, industry_files=1, pdfs=0, public_extra=0
+):
     """A repo-shaped tree that the file counter can measure.
 
-    Mirrors what the pipeline actually writes: per-merger and per-industry data
-    files, a parties.json index, and matter PDFs.
+    Mirrors what the pipeline actually writes: per-merger data files, industry
+    nodes packed a division to a file, a parties.json index, and matter PDFs.
+
+    ``industries`` is a count of ANZSIC *nodes* (one prerendered page apiece)
+    and ``industry_files`` is how many division files they are packed into. The
+    two are deliberately different: that gap is exactly what the counter has to
+    get right, since it reports files but prerendering is per node.
     """
     data = root / "frontend/public/data"
     (data / "mergers").mkdir(parents=True, exist_ok=True)
@@ -198,8 +205,11 @@ def make_deployment(root, *, mergers=0, parties=0, industries=0, pdfs=0, public_
 
     for i in range(mergers):
         (data / "mergers" / f"MN-{i:05d}.json").write_text("{}")
-    for i in range(industries):
-        (data / "industries" / f"{i:04d}.json").write_text("{}")
+    for f in range(industry_files):
+        nodes = {f"{i:04d}": {} for i in range(industries) if i % industry_files == f}
+        (data / "industries" / f"{chr(ord('A') + f)}.json").write_text(
+            json.dumps({"nodes": nodes, "mergers": {}})
+        )
     (data / "parties.json").write_text(
         json.dumps({"parties": [{"id": f"p-{i}"} for i in range(parties)]})
     )
@@ -212,16 +222,20 @@ def make_deployment(root, *, mergers=0, parties=0, industries=0, pdfs=0, public_
 
 class TestCountDeployFiles:
     def test_counts_each_source_the_way_the_build_produces_it(self, tmp_path):
-        make_deployment(tmp_path, mergers=3, parties=5, industries=2, pdfs=4, public_extra=6)
+        make_deployment(
+            tmp_path, mergers=3, parties=5, industries=6, industry_files=2,
+            pdfs=4, public_extra=6,
+        )
         counts = count_deploy_files(tmp_path)
 
         # public/ holds the 6 extra files plus parties.json, 3 merger files and
-        # 2 industry files — Vite copies the whole tree verbatim.
+        # 2 industry division files — Vite copies the whole tree verbatim. Note
+        # the 6 industry *nodes* below cost only those 2 files here.
         assert counts["breakdown"]["public"] == 6 + 1 + 3 + 2
         assert counts["breakdown"]["pdfs"] == 4
         assert counts["breakdown"]["build"] == VITE_BUILD_FILES
         assert counts["prerendered_detail"] == {
-            "mergers": 3, "parties": 5, "industries": 2,
+            "mergers": 3, "parties": 5, "industries": 6,
             "static": PRERENDERED_STATIC_PAGES,
         }
         assert counts["total"] == sum(counts["breakdown"].values())
@@ -234,6 +248,24 @@ class TestCountDeployFiles:
         counts = count_deploy_files(tmp_path)
 
         assert counts["breakdown"]["prerendered"] == 10 + 20 + 5 + PRERENDERED_STATIC_PAGES
+
+    def test_industry_pages_are_counted_per_node_not_per_file(self, tmp_path):
+        """Industry nodes are packed a division to a file, so counting files
+        would under-report the deployment by roughly 800 pages — silently, and
+        against a cap whose only symptom is the site quietly not updating."""
+        make_deployment(tmp_path, industries=40, industry_files=3)
+        counts = count_deploy_files(tmp_path)
+
+        assert counts["prerendered_detail"]["industries"] == 40
+
+    def test_unreadable_industry_file_does_not_break_the_count(self, tmp_path):
+        """This runs on every push to report a file count; a parse error is the
+        pipeline's problem to surface, not a reason to block the report."""
+        make_deployment(tmp_path, industries=4, industry_files=2)
+        (tmp_path / "frontend/public/data/industries/B.json").write_text("not json")
+        counts = count_deploy_files(tmp_path)
+
+        assert counts["prerendered_detail"]["industries"] == 2
 
     def test_party_pages_come_from_the_index_not_the_shard_buckets(self, tmp_path):
         """prerender.js renders the parties listed in parties.json; ids folded

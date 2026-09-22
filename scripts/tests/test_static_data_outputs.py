@@ -16,6 +16,7 @@ sys.modules.setdefault('markdownify', unittest.mock.MagicMock())
 sys.modules.setdefault('requests', unittest.mock.MagicMock())
 
 from scripts.constants import merger_status
+from scripts import industry_division
 from scripts.shard import SHARD_COUNT, party_shard, party_shard_name
 from scripts.generate.static_data import anzsic, durations
 from scripts.generate.static_data.enrichment import enrich_merger
@@ -525,31 +526,61 @@ class TestIndustriesGenerateIndex:
         assert payload['total_industries'] == 2
 
 
+def _division_file(tmp_path, stem):
+    with open(tmp_path / 'industries' / f'{stem}.json') as f:
+        return json.load(f)
+
+
+def _node(tmp_path, stem, code):
+    """One node out of its division file, with merger ids re-expanded.
+
+    The Python side never needs to rehydrate a node in anger — the frontend does
+    that in ``frontend/src/utils/industryNode.js`` — so this is deliberately a
+    thin local helper rather than a second implementation to keep in step.
+    """
+    payload = _division_file(tmp_path, stem)
+    node = dict(payload['nodes'][code])
+    node['mergers'] = [payload['mergers'][i] for i in node['mergers']]
+    return node
+
+
 class TestIndustriesDetailFiles:
     # The fixture tags MN-0001/MN-0002 to ANZSIC class 0600 (Coal Mining, a real
-    # node) and WA-0003 to 5400 (not a real ANZSIC code — an "orphan").
+    # node under division B) and WA-0003 to 5400 — an "orphan": not a real
+    # ANZSIC node, but a code whose division is still derivable (subdivision 54
+    # is under J), so that is where it has to be filed.
 
-    def test_writes_a_file_for_every_node_plus_orphans(self, tmp_path):
+    def test_writes_one_file_per_division_plus_orphans(self, tmp_path):
         n = industries.generate_detail_files(_enriched_fixture(), tmp_path)
-        # One file per ANZSIC node, plus a standalone file for the orphan code.
-        assert n == len(anzsic.hierarchy()) + 1
-        written = {p.stem for p in (tmp_path / 'industries').glob('*.json')}
-        assert len(written) == n
-        # Tagged class, its ancestors, an untouched node, and the orphan all exist.
-        for code in ('0600', '060', '06', 'B', '0801', '5400'):
-            assert (tmp_path / 'industries' / f'{code}.json').exists()
+        assert n == len(industry_division.all_file_names())
+        written = {p.name for p in (tmp_path / 'industries').glob('*.json')}
+        assert written == set(industry_division.all_file_names())
 
-    def test_class_file_contents(self, tmp_path):
+    def test_every_anzsic_node_has_an_entry(self, tmp_path):
+        """Packing the files changed the layout, not the coverage: every node in
+        the tree is still an addressable page."""
         industries.generate_detail_files(_enriched_fixture(), tmp_path)
-        with open(tmp_path / 'industries' / '0600.json') as f:
-            data = json.load(f)
-        assert data['code'] == '0600'
+        seen = set()
+        for name in industry_division.all_file_names():
+            seen |= set(_division_file(tmp_path, name[:-len('.json')])['nodes'])
+        assert seen == set(anzsic.hierarchy()) | {'5400'}
+
+    def test_nodes_are_filed_under_their_own_division(self, tmp_path):
+        industries.generate_detail_files(_enriched_fixture(), tmp_path)
+        for name in industry_division.all_file_names():
+            payload = _division_file(tmp_path, name[:-len('.json')])
+            for code in payload['nodes']:
+                assert industry_division.division_file_name(code) == name
+
+    def test_class_node_contents(self, tmp_path):
+        industries.generate_detail_files(_enriched_fixture(), tmp_path)
+        data = _node(tmp_path, 'B', '0600')
         # Name and level come from the official ANZSIC tree, not the merger tag.
         assert data['name'] == 'Coal Mining'
         assert data['level'] == 'class'
-        assert data['parent'] == {'code': '060', 'name': 'Coal Mining', 'level': 'group'}
-        # Breadcrumb runs division → subdivision → group.
-        assert [a['code'] for a in data['ancestors']] == ['B', '06', '060']
+        # Parent and children are bare codes — the reader looks the rest up in
+        # the same file rather than the generator repeating every name.
+        assert data['parent'] == '060'
         assert data['children'] == []  # classes are leaves
         assert data['count'] == 2
         # _latest_date should have been stripped
@@ -561,13 +592,34 @@ class TestIndustriesDetailFiles:
         assert data['waiver_count'] == 0
         assert data['active_count'] == 1
 
+    def test_no_ancestors_stored_on_the_node(self, tmp_path):
+        """The breadcrumb is walked from the parent chain by the reader. Storing
+        it would repeat the same division name on every node in the file."""
+        industries.generate_detail_files(_enriched_fixture(), tmp_path)
+        payload = _division_file(tmp_path, 'B')
+        assert 'ancestors' not in payload['nodes']['0600']
+        # …but the chain it's walked from is intact.
+        assert payload['nodes']['060']['parent'] == '06'
+        assert payload['nodes']['06']['parent'] == 'B'
+        assert payload['nodes']['B']['parent'] is None
+
+    def test_merger_summaries_are_stored_once_per_file(self, tmp_path):
+        """The whole point of the layout: a merger tagged at a class rolls up
+        onto its group, subdivision and division, and used to have its summary
+        written out four times over."""
+        industries.generate_detail_files(_enriched_fixture(), tmp_path)
+        payload = _division_file(tmp_path, 'B')
+        assert sorted(payload['mergers']) == ['MN-0001', 'MN-0002']
+        for code in ('0600', '060', '06', 'B'):
+            assert payload['nodes'][code]['mergers'] == ['MN-0001', 'MN-0002'] or set(
+                payload['nodes'][code]['mergers']
+            ) == {'MN-0001', 'MN-0002'}
+
     def test_summary_carries_follow_notification_dates(self, tmp_path):
         # The per-merger summary exposes the filing + determination dates that
         # drive industry-follow notifications on the frontend.
         industries.generate_detail_files(_enriched_fixture(), tmp_path)
-        with open(tmp_path / 'industries' / '0600.json') as f:
-            data = json.load(f)
-        by_id = {m['merger_id']: m for m in data['mergers']}
+        by_id = _division_file(tmp_path, 'B')['mergers']
         # Determined notification: both dates present.
         assert by_id['MN-0001']['notification_date'] == '2025-01-06T09:00:00Z'
         assert by_id['MN-0001']['determination_date'] == '2025-02-05T12:00:00Z'
@@ -578,49 +630,87 @@ class TestIndustriesDetailFiles:
     def test_mergers_roll_up_to_ancestors(self, tmp_path):
         industries.generate_detail_files(_enriched_fixture(), tmp_path)
         # The group/subdivision/division above 0600 aggregate its mergers,
-        # deduped by merger_id, and expose 0600 as a child with its count.
+        # deduped by merger_id.
         for code in ('060', '06', 'B'):
-            with open(tmp_path / 'industries' / f'{code}.json') as f:
-                node = json.load(f)
+            node = _node(tmp_path, 'B', code)
             ids = {m['merger_id'] for m in node['mergers']}
             assert ids == {'MN-0001', 'MN-0002'}
             assert node['count'] == 2
-        with open(tmp_path / 'industries' / '060.json') as f:
-            group = json.load(f)
-        child = next(c for c in group['children'] if c['code'] == '0600')
-        assert child['merger_count'] == 2
-        assert group['level'] == 'group'
+        # A child's merger count isn't stored — the reader takes it off the
+        # child's own entry in the same file.
+        payload = _division_file(tmp_path, 'B')
+        assert payload['nodes']['060']['children'] == ['0600']
+        assert payload['nodes']['0600']['count'] == 2
+        assert payload['nodes']['060']['level'] == 'group'
 
-    def test_orphan_code_file(self, tmp_path):
+    def test_empty_divisions_still_get_a_file(self, tmp_path):
+        """Every node in the tree is a real page; an empty one says so rather
+        than 404ing."""
         industries.generate_detail_files(_enriched_fixture(), tmp_path)
-        with open(tmp_path / 'industries' / '5400.json') as f:
-            data = json.load(f)
-        assert data['code'] == '5400'
+        payload = _division_file(tmp_path, 'P')  # Education and Training
+        assert payload['division'] == 'P'
+        assert payload['mergers'] == {}
+        assert payload['nodes']['P']['count'] == 0
+        assert payload['nodes']['P']['mergers'] == []
+
+    def test_orphan_code_is_filed_where_the_frontend_will_look(self, tmp_path):
+        """An orphan is placed by the same rule as a real node, because that
+        rule is all the frontend has to go on. 5400 isn't an ANZSIC node, but
+        its division is derivable — parking it in _orphans.json would put it
+        somewhere the SPA would never ask for."""
+        industries.generate_detail_files(_enriched_fixture(), tmp_path)
+        assert industry_division.division_file_name('5400') == 'J.json'
+        assert '5400' not in _division_file(
+            tmp_path, industry_division.ORPHAN_FILE_STEM
+        )['nodes']
+        data = _node(tmp_path, 'J', '5400')
         assert data['name'] is None
         assert data['level'] is None
         assert data['parent'] is None
-        assert data['ancestors'] == []
+        assert data['children'] == []
         assert data['count'] == 1
+
+    def test_orphan_with_no_derivable_division_falls_to_the_orphan_file(self, tmp_path):
+        mergers = _enriched_fixture()
+        mergers[-1]['anzsic_codes'] = [{'code': '06/10', 'name': 'Mistyped tag'}]
+        industries.generate_detail_files(mergers, tmp_path)
+        payload = _division_file(tmp_path, industry_division.ORPHAN_FILE_STEM)
+        assert payload['division'] is None
+        assert payload['nodes']['06/10']['count'] == 1
+
+    def test_orphan_file_is_written_even_when_empty(self, tmp_path):
+        """The frontend falls back to this file for any code it can't place, so
+        it has to exist rather than 404 into the SPA's index.html. Nothing in
+        the fixture lands there."""
+        industries.generate_detail_files(_enriched_fixture(), tmp_path)
+        payload = _division_file(tmp_path, industry_division.ORPHAN_FILE_STEM)
+        assert payload['nodes'] == {}
+        assert payload['mergers'] == {}
 
     def test_includes_phase_duration(self, tmp_path):
         industries.generate_detail_files(_enriched_fixture(), tmp_path)
-        with open(tmp_path / 'industries' / '0600.json') as f:
-            mining = json.load(f)
+        mining = _node(tmp_path, 'B', '0600')
         # MN-0001 completed (notified 2025-01-06 → determined 2025-02-05).
-        assert mining['phase_duration'] is not None
         assert mining['phase_duration']['average_days'] == 30
         assert mining['phase_duration']['completed_count'] == 1
-        # Mining is notifications only — no waiver duration.
-        assert mining['waiver_duration'] is None
+        # Mining is notifications only — no waiver duration. An absent duration
+        # is omitted rather than written as null on all 825 nodes.
+        assert 'waiver_duration' not in mining
         # The orphan code is a single waiver — no Phase 1 duration, but it does
         # have a waiver duration (notified 2025-02-01 → determined 2025-02-10).
-        with open(tmp_path / 'industries' / '5400.json') as f:
-            transport = json.load(f)
-        assert transport['phase_duration'] is None
-        assert transport['waiver_duration'] is not None
+        transport = _node(tmp_path, 'J', '5400')
+        assert 'phase_duration' not in transport
         assert transport['waiver_duration']['average_days'] == 9
         assert transport['waiver_duration']['average_business_days'] == 6
         assert transport['waiver_duration']['completed_count'] == 1
+
+    def test_prunes_the_per_node_files_it_replaced(self, tmp_path):
+        """The 825 one-file-per-node payloads this layout retired have to go, or
+        Pages keeps serving them against the 20,000-file cap."""
+        (tmp_path / 'industries').mkdir(parents=True)
+        (tmp_path / 'industries' / '0600.json').write_text('{"stale": true}')
+        industries.generate_detail_files(_enriched_fixture(), tmp_path)
+        assert not (tmp_path / 'industries' / '0600.json').exists()
 
 
 # ---------------------------------------------------------------------------
@@ -782,8 +872,7 @@ class TestPhase1DurationExcludesPhase2Clock:
 
     def test_industries_phase_duration_counts_referred_matter(self, tmp_path):
         industries.generate_detail_files([enrich_merger(_referred_then_completed_phase_2_raw())], tmp_path)
-        with open(tmp_path / 'industries' / '0600.json') as f:
-            mining = json.load(f)
+        mining = _node(tmp_path, 'B', '0600')
         # The referred matter has a concluded Phase 1, so it is counted...
         assert mining['phase_duration']['completed_count'] == 1
         # ...but at its Phase 1 length, not the Phase 2 span.
@@ -792,16 +881,14 @@ class TestPhase1DurationExcludesPhase2Clock:
     def test_untouched_node_has_empty_payload(self, tmp_path):
         industries.generate_detail_files(_enriched_fixture(), tmp_path)
         # 0801 (Iron Ore Mining) has no mergers but still gets a browsable page.
-        with open(tmp_path / 'industries' / '0801.json') as f:
-            data = json.load(f)
+        data = _node(tmp_path, 'B', '0801')
         assert data['count'] == 0
         assert data['mergers'] == []
         assert data['name'] == 'Iron Ore Mining'
 
     def test_active_mergers_sort_first(self, tmp_path):
         industries.generate_detail_files(_enriched_fixture(), tmp_path)
-        with open(tmp_path / 'industries' / '0600.json') as f:
-            data = json.load(f)
+        data = _node(tmp_path, 'B', '0600')
         # MN-0002 is under assessment, so it leads MN-0001 (completed).
         assert [m['merger_id'] for m in data['mergers']] == ['MN-0002', 'MN-0001']
 
