@@ -13,8 +13,8 @@ turn a useful account into a firehose. A waiver application's arrival is not
 posted either: the ACCC only publishes a waiver once it has been determined,
 so the notification date arrives already spent.
 
-Every post ends with ``#accc``, carried as a ``#tag`` facet rather than bare
-text so Bluesky's tag search and the feeds built on it can see it.
+Every post ends with ``POST_HASHTAGS``, faceted so Bluesky's tag search can
+see them - it indexes tags from the facet, not from the ``#``.
 
 Two safeguards, because this is the only part of the pipeline that speaks to
 people rather than to files:
@@ -52,10 +52,9 @@ MAX_POST_CHARS = 300
 #: so a re-scrape that rediscovers a batch of matters cannot flood a feed.
 DEFAULT_MAX_POSTS = 10
 
-#: Hashtag every post carries, so the account is findable from Bluesky's tag
-#: search and from feeds built on it. One tag, not a shower of them: every post
-#: here is about the same regulator, so anything more would be decoration.
-POST_HASHTAG = "accc"
+#: Hashtags every post carries, in order. They cost characters the title
+#: would otherwise have, so keep the list short.
+POST_HASHTAGS = ("accc",)
 
 #: Cleared-vs-blocked wording, keyed by the register's own determination value
 #: and whether the matter is a waiver application.
@@ -179,7 +178,8 @@ def post_text(milestone: Milestone) -> str:
     any work - and so does the matter id, so the title is the one thing that
     gives if the 300-character budget is tight.
     """
-    tail = f"\n\n{milestone.detail}\n{milestone.url}\n\n#{POST_HASHTAG}"
+    tags = hashtag_line()
+    tail = f"\n\n{milestone.detail}\n{milestone.url}" + (f"\n\n{tags}" if tags else "")
     budget = MAX_POST_CHARS - len(tail) - len(milestone.headline) - len(": ")
     title = milestone.title
     if budget < 1:
@@ -190,31 +190,45 @@ def post_text(milestone: Milestone) -> str:
     return f"{milestone.headline}: {title}{tail}"
 
 
+def hashtag_line(tags: tuple[str, ...] | None = None) -> str:
+    """The trailing hashtag line, e.g. ``#accc #mergers``."""
+    tags = POST_HASHTAGS if tags is None else tags
+    return " ".join(f"#{tag}" for tag in tags)
+
+
 def link_facets(text: str, url: str) -> list[dict]:
     """A single link facet over ``url``, in UTF-8 byte offsets as the spec wants."""
-    return _facet(text, url, {"$type": "app.bsky.richtext.facet#link", "uri": url})
+    encoded = text.encode("utf-8")
+    start = encoded.find(url.encode("utf-8"))
+    if start < 0:
+        return []
+    feature = {"$type": "app.bsky.richtext.facet#link", "uri": url}
+    return [_facet(start, url, feature)]
 
 
-def tag_facets(text: str, tag: str) -> list[dict]:
-    """A facet over the trailing ``#tag``.
-
-    Without this the hashtag is just eight characters of text: Bluesky indexes
-    tags from the facet, not from the ``#``, so an unfaceted hashtag is
-    invisible to exactly the search it was added for. The range covers the
-    ``#`` as well, which is what the clients do; the feature carries the tag
-    without it.
+def tag_facets(text: str, tags: tuple[str, ...] | None = None) -> list[dict]:
+    """One facet per hashtag, located as a line so a ``#`` in the title cannot
+    be mistaken for one. The byte range covers the ``#``; the feature does not.
     """
-    return _facet(
-        text,
-        f"#{tag}",
-        {"$type": "app.bsky.richtext.facet#tag", "tag": tag},
-        last=True,
-    )
+    tags = POST_HASHTAGS if tags is None else tags
+    line = hashtag_line(tags)
+    encoded = text.encode("utf-8")
+    start = encoded.rfind(line.encode("utf-8")) if line else -1
+    if start < 0:
+        return []
+
+    found = []
+    for tag in tags:
+        hashtag = f"#{tag}"
+        feature = {"$type": "app.bsky.richtext.facet#tag", "tag": tag}
+        found.append(_facet(start, hashtag, feature))
+        start += len(hashtag.encode("utf-8")) + 1
+    return found
 
 
 def facets(text: str, url: str) -> list[dict]:
     """Every facet a post carries, in byte order as the spec wants."""
-    return link_facets(text, url) + tag_facets(text, POST_HASHTAG)
+    return link_facets(text, url) + tag_facets(text)
 
 
 def post_record(milestone: Milestone, *, created_at: str) -> dict:
@@ -351,19 +365,12 @@ def main(argv: list[str] | None = None) -> int:
     return 0
 
 
-def _facet(text: str, needle: str, feature: dict, *, last: bool = False) -> list[dict]:
-    """One facet over ``needle``, measured in UTF-8 bytes rather than characters."""
-    encoded = text.encode("utf-8")
-    target = needle.encode("utf-8")
-    start = encoded.rfind(target) if last else encoded.find(target)
-    if start < 0:
-        return []
-    return [
-        {
-            "index": {"byteStart": start, "byteEnd": start + len(target)},
-            "features": [feature],
-        }
-    ]
+def _facet(start: int, span: str, feature: dict) -> dict:
+    """One facet over ``span``, measured in UTF-8 bytes rather than characters."""
+    return {
+        "index": {"byteStart": start, "byteEnd": start + len(span.encode("utf-8"))},
+        "features": [feature],
+    }
 
 
 def _detail(merger_id: str, phase, date: str | None) -> str:

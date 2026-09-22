@@ -242,10 +242,12 @@ https://mergers.fyi/mergers/WA-95041
 #accc
 ```
 
-The hashtag is published as a `app.bsky.richtext.facet#tag` facet alongside the
-link facet, not just as text — Bluesky indexes tags from the facet, so an
-unfaceted `#accc` would be invisible to the search it was added for. One tag is
-deliberate: every post here is about the same regulator.
+The tags come from `POST_HASHTAGS` and are published as
+`app.bsky.richtext.facet#tag` facets alongside the link facet, not just as
+text — Bluesky indexes tags from the facet, so an unfaceted `#accc` would be
+invisible to the search it was added for. Adding a tag to that tuple is all
+there is to it, but each one costs characters the matter name would otherwise
+have.
 
 ```bash
 python -m scripts.atproto.post_bluesky --dry-run       # see what is due
