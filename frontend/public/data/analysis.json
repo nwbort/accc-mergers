@@ -384,26 +384,26 @@
       37,
       25
     ],
-    "as_at": "2026-09-22"
+    "as_at": "2026-09-23"
   },
   "current_status": {
-    "as_at": "2026-09-22",
+    "as_at": "2026-09-23",
     "windows": [
       {
         "days": 30,
         "notifications_filed": 25,
         "notifications": {
-          "median": 19,
-          "average": 21.1,
+          "median": 19.0,
+          "average": 21.2,
           "p90": 28,
           "min": 15,
           "max": 52,
-          "count": 51,
+          "count": 50,
           "duration_histogram": {
             "15": 9,
             "16": 6,
             "17": 2,
-            "18": 8,
+            "18": 7,
             "19": 6,
             "20": 3,
             "21": 5,
@@ -416,7 +416,7 @@
             "49": 1,
             "52": 1
           },
-          "median_delta": 1
+          "median_delta": 1.0
         },
         "waivers": {
           "median": 18,
@@ -449,19 +449,19 @@
       },
       {
         "days": 90,
-        "notifications_filed": 114,
+        "notifications_filed": 112,
         "notifications": {
           "median": 18,
-          "average": 21.2,
-          "p90": 33,
+          "average": 21.3,
+          "p90": 34,
           "min": 15,
           "max": 56,
-          "count": 121,
+          "count": 119,
           "duration_histogram": {
-            "15": 18,
+            "15": 17,
             "16": 21,
             "17": 10,
-            "18": 15,
+            "18": 14,
             "19": 13,
             "20": 6,
             "21": 8,
@@ -485,21 +485,21 @@
           "median_delta": 0
         },
         "waivers": {
-          "median": 16,
-          "average": 15.9,
+          "median": 17,
+          "average": 16.1,
           "p90": 21,
           "min": 6,
           "max": 23,
-          "count": 185,
+          "count": 179,
           "duration_histogram": {
-            "6": 3,
+            "6": 1,
             "7": 2,
             "8": 3,
             "9": 4,
             "10": 8,
             "11": 5,
-            "12": 14,
-            "13": 12,
+            "12": 12,
+            "13": 10,
             "14": 13,
             "15": 16,
             "16": 15,
@@ -511,7 +511,7 @@
             "22": 4,
             "23": 4
           },
-          "median_delta": 2.0
+          "median_delta": 3.0
         }
       }
     ],
@@ -547,11 +547,11 @@
         },
         {
           "median": 15.0,
-          "average": 19.1,
+          "average": 19.2,
           "p90": 35,
           "min": 0,
           "max": 112,
-          "count": 114,
+          "count": 112,
           "days": 90,
           "median_delta": 1.0
         }
