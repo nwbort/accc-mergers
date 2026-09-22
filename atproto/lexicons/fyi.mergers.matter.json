@@ -1,0 +1,163 @@
+{
+  "lexicon": 1,
+  "id": "fyi.mergers.matter",
+  "defs": {
+    "main": {
+      "type": "record",
+      "key": "any",
+      "description": "One merger matter on the ACCC's public acquisitions register: an acquisition notified under Australia's mandatory merger regime, or an application for a notification waiver. The record key is the ACCC's own matter identifier (e.g. MN-01016), so a matter is addressable at at://<did>/fyi.mergers.matter/MN-01016 without a lookup. Published by mergers.fyi, which mirrors the register; the ACCC is the source and does not itself publish to the ATmosphere.",
+      "record": {
+        "type": "object",
+        "required": [
+          "matterId",
+          "title",
+          "matterType",
+          "status",
+          "url",
+          "indexedAt"
+        ],
+        "properties": {
+          "matterId": {
+            "type": "string",
+            "maxLength": 64,
+            "description": "ACCC public register matter identifier, e.g. \"MN-01016\". Always equal to this record's key."
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 5000,
+            "maxGraphemes": 500,
+            "description": "Matter name as the register gives it, usually \"Acquirer - Target\"."
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 60000,
+            "maxGraphemes": 6000,
+            "description": "The ACCC's description of the proposed acquisition, as published. The cap is well clear of the longest on the register; anything past it is truncated rather than dropped."
+          },
+          "matterType": {
+            "type": "string",
+            "maxLength": 32,
+            "knownValues": [
+              "notification",
+              "waiver"
+            ],
+            "description": "Whether the matter is a notified acquisition or an application for a notification waiver."
+          },
+          "status": {
+            "type": "string",
+            "maxLength": 64,
+            "knownValues": [
+              "Under assessment",
+              "Assessment suspended",
+              "Assessment completed",
+              "Assessment ceased"
+            ]
+          },
+          "phase": {
+            "type": "string",
+            "maxLength": 64,
+            "knownValues": [
+              "Waiver application",
+              "Phase 1 - initial assessment",
+              "Phase 2 - detailed assessment"
+            ],
+            "description": "Stage the matter has reached. A matter referred to phase 2 keeps its phase 1 determination in determinations."
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Canonical page for the matter on mergers.fyi."
+          },
+          "registerUrl": {
+            "type": "string",
+            "format": "uri",
+            "description": "The matter's own page on the ACCC public register - the source of everything in this record."
+          },
+          "notifiedOn": {
+            "type": "string",
+            "maxLength": 10,
+            "description": "Effective notification date as YYYY-MM-DD: the date the statutory clock runs from, which is not the original notification date where a matter was refiled or the clock was reset."
+          },
+          "originallyNotifiedOn": {
+            "type": "string",
+            "maxLength": 10,
+            "description": "Date the matter was first notified, as YYYY-MM-DD. Differs from notifiedOn only where the clock was reset."
+          },
+          "determinationDueBy": {
+            "type": "string",
+            "maxLength": 10,
+            "description": "End of the statutory determination period as YYYY-MM-DD, while one is running."
+          },
+          "consultationClosesOn": {
+            "type": "string",
+            "maxLength": 10,
+            "description": "Closing date for submissions to the ACCC's consultation, as YYYY-MM-DD."
+          },
+          "acquirers": {
+            "type": "array",
+            "maxLength": 100,
+            "items": {
+              "type": "ref",
+              "ref": "fyi.mergers.defs#party"
+            }
+          },
+          "targets": {
+            "type": "array",
+            "maxLength": 100,
+            "items": {
+              "type": "ref",
+              "ref": "fyi.mergers.defs#party"
+            }
+          },
+          "otherParties": {
+            "type": "array",
+            "maxLength": 100,
+            "items": {
+              "type": "ref",
+              "ref": "fyi.mergers.defs#party"
+            }
+          },
+          "industries": {
+            "type": "array",
+            "maxLength": 50,
+            "items": {
+              "type": "ref",
+              "ref": "fyi.mergers.defs#industry"
+            }
+          },
+          "determinations": {
+            "type": "array",
+            "maxLength": 8,
+            "items": {
+              "type": "ref",
+              "ref": "fyi.mergers.defs#determination"
+            },
+            "description": "Determinations made on the matter, oldest first. Empty while the matter is open."
+          },
+          "appeals": {
+            "type": "array",
+            "maxLength": 16,
+            "items": {
+              "type": "ref",
+              "ref": "fyi.mergers.defs#appeal"
+            }
+          },
+          "events": {
+            "type": "array",
+            "maxLength": 200,
+            "items": {
+              "type": "ref",
+              "ref": "fyi.mergers.defs#event"
+            },
+            "description": "The matter's timeline, oldest first."
+          },
+          "indexedAt": {
+            "type": "string",
+            "format": "datetime",
+            "description": "When mergers.fyi last wrote this record. Only moves when something in the matter changed, so it is a real last-changed signal rather than a publishing heartbeat."
+          }
+        }
+      }
+    }
+  }
+}

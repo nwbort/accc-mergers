@@ -33,6 +33,32 @@ One directory per Worker, each named after the Worker it deploys (the directory 
 - `workers/accc-register-watcher/` — Email Worker bound to a mailbox subscribed to the ACCC's register update mailing list; fires a `repository_dispatch` (`new_merger_detected`) to trigger `pipeline.yml` immediately on each email. See its README for the Cloudflare Email Routing setup
 - `workers/feedback-admin/` — private read-only viewer over the same feedback D1 database, gated behind an `x-secret` header
 
+### ATmosphere publishing (`atproto/`, `scripts/atproto/`)
+
+The register is republished into the AT Protocol network — the same network
+Bluesky runs on — as typed records anything else can read without scraping.
+Three independent pieces, all inert until configured, on the ntfy principle (no
+secret means skip, not fail). See [`docs/atproto.md`](docs/atproto.md).
+
+- **The handle.** `scripts/build.sh` writes `dist/.well-known/atproto-did` from
+  the DID in `atproto/identity.json`, making `mergers.fyi` usable as an ATProto
+  handle. Generated rather than committed, and only when a DID is set: a 200
+  carrying a DID that resolves to nothing is worse than a 404. `atproto/identity.json`
+  therefore reaches the deployment, so it is in the Pages **build watch paths** —
+  see [`docs/deployment.md`](docs/deployment.md#dashboard-settings).
+- **Lexicons and records.** `fyi.mergers` is `mergers.fyi` reversed, so
+  `fyi.mergers.matter` is a name only this site can answer for. One record per
+  matter, keyed by the ACCC's own identifier, so a matter is addressable as
+  `at://{did}/fyi.mergers.matter/MN-01016` without a lookup. Built from the
+  generated detail files the site itself serves, so the two can't drift.
+  Date-shaped fields are published as `YYYY-MM-DD`, never as the pipeline's
+  midday-UTC storage form; `indexedAt` is the only datetime and only moves when
+  the matter does, which is what makes the incremental publish possible.
+- **Bluesky posts.** Deliberately narrow (arrival, phase 2 referral,
+  determination, cessation, Tribunal/Federal Court review). Needs
+  `ATPROTO_POST_ENABLED` on top of the credentials, and the first *enabled* run
+  seeds rather than posts, so switching it on can't replay the back catalogue.
+
 ### Cloudflare Pages Functions (`functions/`)
 
 Run on the Pages project alongside the SPA, not as standalone Workers. Pages requires this directory at the build root, so it stays out of `workers/`. Currently just the PDF viewer wrapper for `/mergers/{matter}/*.pdf`.
@@ -48,8 +74,9 @@ Top level:
 ├── data/                     # Scraped/processed data (the "database")
 ├── workers/                  # Standalone Cloudflare Workers, one dir per Worker
 ├── functions/                # Cloudflare Pages Functions (must stay at root)
+├── atproto/                  # ATProto identity + the fyi.mergers.* lexicons
 ├── wrangler.toml             # Cloudflare *Pages* project config (must stay at root)
-├── docs/                     # Deployment, walkthrough, ADRs, accessibility
+├── docs/                     # Deployment, walkthrough, ADRs, accessibility, atproto
 └── fixtures/                 # Cross-language test fixtures
     ├── slug-cases.json       # Golden fixture pinning slugify() across all 3 impls
     ├── shard-cases.json      # Golden fixture pinning the party shard hash across both impls
@@ -270,6 +297,12 @@ scripts/                  # A Python package — entry points run as `python -m 
 │   ├── generate-cli-data.sh  # Build/version-bump the accc-mergers-cli bundle (gitignored) + tracked manifest
 │   ├── build_cli_sqlite.py   # Build cli.sqlite from the CLI bundle
 │   └── static_data/      # Generator package used by generate_static_data.py (outputs/, loaders, enrichment)
+├── atproto/              # ATmosphere publishing (see docs/atproto.md). client.py is a
+│                         #   hand-rolled XRPC client over requests; records.py maps a
+│                         #   generated merger detail file to a fyi.mergers.matter record;
+│                         #   publish_lexicons.py / publish_matters.py / post_bluesky.py are
+│                         #   the entry points, each a no-op without ATPROTO_APP_PASSWORD.
+│                         #   State lives in data/processed/atproto_{records,posts}.json
 ├── constants/            # Shared Python literals (merger_status.py, site.py, tribunal.py,
 │                         #   regime.py — mirrors frontend/src/constants/regime.js; keep in step)
 ├── tools/                # Interactive admin web UIs (resolver, commentary, advisors, related_parties)
@@ -326,6 +359,12 @@ data/
 │                         #   (invisible on the site — the forecast renders only while a
 │                         #   matter is open). Attached to each notification merger as
 │                         #   phase_1_estimate (see mergers/{id}.json). Backend-only.
+│   processed/atproto_records.json # Digest of each fyi.mergers.matter record as last
+│                         #   published, so a run rewrites only what moved. Written by
+│                         #   scripts/atproto/publish_matters.py; an optimisation, not a
+│                         #   source of truth (the publish is an upsert). Its sibling
+│                         #   atproto_posts.json is the set of milestones already posted
+│                         #   to Bluesky. Both only exist once publishing is configured
 ├── digest-archive/       # Past weekly digest.json snapshots
 └── output/               # Not deployed. Full enriched mergers.json (offline analysis)
     └── cli/              # Bundled data files for accc-mergers-cli (manifest + bundle)
@@ -348,6 +387,12 @@ pip install -r scripts/requirements.txt
 ./scripts/scrape/scrape.sh
 python -m scripts.extract_mergers
 python -m scripts.generate.generate_static_data
+
+# ATmosphere publishing (from repo root; every entry point has --dry-run,
+# which needs no credentials)
+python -m scripts.atproto.publish_lexicons --dry-run
+python -m scripts.atproto.publish_matters --dry-run
+python -m scripts.atproto.post_bluesky --dry-run
 
 # Tests
 python -m pytest scripts/tests/
@@ -539,12 +584,12 @@ exists rather than 404ing into the SPA's `index.html`.
 
 | Workflow | Trigger | Purpose |
 |----------|---------|---------|
-| `pipeline.yml` | Push to `main`, weekdays 4×/day + Sunday once (Sydney time), `repository_dispatch` (email-triggered), manual | End-to-end scrape → extract → convert DOCX → enrich → generate static files (incl. `feed.xml` and `sitemap.xml`) → commit; publishes `cli.sqlite`, opens tracking issues when needed, then runs all four detectors |
+| `pipeline.yml` | Push to `main`, weekdays 4×/day + Sunday once (Sydney time), `repository_dispatch` (email-triggered), manual | End-to-end scrape → extract → convert DOCX → enrich → generate static files (incl. `feed.xml` and `sitemap.xml`) → publish to the ATmosphere → commit; publishes `cli.sqlite`, opens tracking issues when needed, then runs all four detectors. The two ATmosphere steps are `continue-on-error` and skip without `ATPROTO_APP_PASSWORD` — an unreachable PDS must not cost the run its scrape |
 | `publish-cli-sqlite.yml` | Manual | Republish `cli.sqlite` + manifest to the orphan `cli-dist` branch |
 | `scrape-tribunal.yml` | Hourly at :23 from 8am-7pm Sydney time, weekdays only (`23 8-19 * * 1-5` with `timezone: Australia/Sydney`), manual | Scrape Australian Competition Tribunal matter pages into `tribunal_appeals.json` and commit. Drives a real Chrome via nodriver (headful under Xvfb) to get past the tribunal site's Cloudflare challenge, so it runs in CI. Deps: `scripts/requirements-tribunal.txt` |
 | `weekly-digest.yml` | Weekly (Sunday, Sydney time), manual | Generate `digest.json` |
 | `send-weekly-email.yml` | Manual (schedule currently disabled) | Send the weekly digest email via the Cloudflare Worker |
-| `test.yml` | Pull requests touching `scripts/**` or `fixtures/*.json`, manual | Run the Python test suite |
+| `test.yml` | Pull requests touching `scripts/**`, `atproto/**` or `fixtures/*.json`, manual | Run the Python test suite |
 | `frontend-test.yml` | Pull requests touching `frontend/**`, `functions/**` or `fixtures/*.json`, manual | Run the frontend test suite |
 | `check-deploy-assets.yml` | Push touching `data/raw/matters/**`, `frontend/public/**` or the check itself, manual | Guards both Cloudflare Pages limits that fail silently: opens a tracking issue for any asset over the 25 MiB per-file limit, and for the deployment approaching the 20,000-**file** cap (reports at 80%, fails the run once over). See `scripts/check_deploy_assets.py` |
 | `workers-test.yml` | Pull requests touching `workers/**`, manual | For each directory under `workers/`: `npm ci`, `npm test --if-present`, then `npm run deploy:dry` to bundle the Worker and validate its `wrangler.toml`. Discovers Workers by glob, so a new one is covered automatically |

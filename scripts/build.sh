@@ -18,7 +18,35 @@ cd "$FRONTEND_DIR"
 npm ci --no-audit --no-fund
 npm run build
 
-# 2. Copy PDF files from data/raw/matters into the build output
+# 2. Publish the site's AT Protocol DID, so `mergers.fyi` can be used as an
+# ATProto handle (see docs/atproto.md). A handle resolves by fetching
+# /.well-known/atproto-did and reading the DID out of the body, so this one
+# file is the whole of the HTTP half of the identity.
+#
+# Generated rather than committed, and only when a DID is actually configured:
+# an empty or placeholder file would be a 200 response carrying a DID that
+# resolves to nothing, which is worse for a resolver than a 404. Until
+# atproto/identity.json names a DID, the path simply isn't there.
+#
+# The value comes from $ATPROTO_DID if the Pages project sets one, otherwise
+# from the tracked identity file — one source of truth shared with the Python
+# publishers in scripts/atproto/.
+IDENTITY_FILE="../atproto/identity.json"
+did="${ATPROTO_DID:-}"
+if [ -z "$did" ] && [ -f "$IDENTITY_FILE" ]; then
+  did=$(sed -n 's/.*"did"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p' "$IDENTITY_FILE" | head -1)
+fi
+if [ -n "$did" ]; then
+  mkdir -p dist/.well-known
+  # No trailing newline: the spec wants the DID as the body "with no prefix or
+  # wrapper formatting", and lenient resolvers are not something to rely on.
+  printf '%s' "$did" > dist/.well-known/atproto-did
+  echo "Wrote dist/.well-known/atproto-did ($did)"
+else
+  echo "No ATProto DID configured, skipping /.well-known/atproto-did"
+fi
+
+# 3. Copy PDF files from data/raw/matters into the build output
 # so they're served at /mergers/<matter-path>/<file>.pdf
 #
 # The PDFs are ~140 MB across ~790 files, so this is done as one batched

@@ -32,6 +32,16 @@ Intermediate JSON written by the extraction pipeline (mainly
   were re-filed as formal notifications
 - `similar_mergers.json` — generated suggestions of related mergers per
   merger (from `generate_similar_mergers.py`)
+- `atproto_records.json` — content digest of each `fyi.mergers.matter` record
+  as last published to the ATmosphere, so a pipeline run rewrites only the
+  matters that moved (see [`docs/atproto.md`](../docs/atproto.md)). An
+  optimisation, not a source of truth: the publish is an upsert, so losing
+  this file costs one full republish and no correctness. Only exists once
+  ATmosphere publishing is configured.
+- `atproto_posts.json` — merger milestones already posted to Bluesky, keyed
+  `{merger_id}:{kind}:{date}`, so a re-run cannot repost them. The first
+  enabled run writes every existing milestone here without posting, which is
+  what stops switching posting on from replaying the whole register.
 
 ### `output/`
 

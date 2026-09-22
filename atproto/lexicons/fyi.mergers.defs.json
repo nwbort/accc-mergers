@@ -1,0 +1,199 @@
+{
+  "lexicon": 1,
+  "id": "fyi.mergers.defs",
+  "defs": {
+    "party": {
+      "type": "object",
+      "description": "A business named on a merger matter. Reproduced as the ACCC public register spells it, including its capitalisation.",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "maxLength": 3000,
+          "maxGraphemes": 300
+        },
+        "identifierType": {
+          "type": "string",
+          "maxLength": 32,
+          "knownValues": [
+            "ABN",
+            "ACN",
+            "ARBN"
+          ],
+          "description": "Kind of company identifier carried in identifier. An open set: the register occasionally publishes others."
+        },
+        "identifier": {
+          "type": "string",
+          "maxLength": 64,
+          "description": "Company identifier exactly as published, spacing included (e.g. \"48 135 315 767\")."
+        }
+      }
+    },
+    "industry": {
+      "type": "object",
+      "description": "An ANZSIC 2006 code the ACCC tagged on the matter. Tagged at whatever level the ACCC chose - a division letter, or a 1-4 digit number - and occasionally mistyped on the register. Reproduced as published rather than corrected.",
+      "required": [
+        "code"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "maxLength": 16
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 1000,
+          "maxGraphemes": 100
+        }
+      }
+    },
+    "determination": {
+      "type": "object",
+      "description": "A determination the ACCC made on a matter. A matter can carry more than one: a phase 1 referral to phase 2 is itself a determination, and is followed by a phase 2 determination.",
+      "required": [
+        "outcome"
+      ],
+      "properties": {
+        "outcome": {
+          "type": "string",
+          "maxLength": 64,
+          "knownValues": [
+            "Approved",
+            "Not approved",
+            "Declined",
+            "Not opposed",
+            "Referred to phase 2"
+          ],
+          "description": "Outcome as the register labels it. The register records a conditional clearance as a plain \"Approved\" and carries the conditions separately - see withConditions."
+        },
+        "phase": {
+          "type": "string",
+          "maxLength": 64,
+          "knownValues": [
+            "Waiver application",
+            "Phase 1 - initial assessment",
+            "Phase 2 - detailed assessment"
+          ]
+        },
+        "decidedOn": {
+          "type": "string",
+          "maxLength": 10,
+          "description": "Date of the determination as YYYY-MM-DD. A date rather than a timestamp because that is all the register publishes."
+        },
+        "withConditions": {
+          "type": "boolean",
+          "description": "Whether the clearance carries conditions. Derived from the determination document, not a field the ACCC publishes."
+        },
+        "documentUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "The determination document on the ACCC register."
+        }
+      }
+    },
+    "event": {
+      "type": "object",
+      "description": "One dated entry from the matter's \"Decisions and key events\" timeline.",
+      "required": [
+        "date",
+        "title"
+      ],
+      "properties": {
+        "date": {
+          "type": "string",
+          "maxLength": 10,
+          "description": "Date of the event as YYYY-MM-DD."
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 5000,
+          "maxGraphemes": 500
+        },
+        "phase": {
+          "type": "string",
+          "maxLength": 64,
+          "knownValues": [
+            "Waiver",
+            "Phase 1",
+            "Phase 2"
+          ],
+          "description": "Phase the event falls in. A shorter vocabulary than a matter's phase, because it is the label the register puts on the timeline entry itself."
+        },
+        "kind": {
+          "type": "string",
+          "maxLength": 64,
+          "knownValues": [
+            "notification",
+            "questionnaire",
+            "competition-concerns-notice",
+            "phase-2-referral",
+            "timeline-extension",
+            "remedy-offer",
+            "undertaking",
+            "determination",
+            "appeal",
+            "other"
+          ],
+          "description": "Classification applied by mergers.fyi, not by the ACCC."
+        },
+        "documentUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "Document published with the event, on the ACCC register or the Australian Competition Tribunal's site."
+        }
+      }
+    },
+    "appeal": {
+      "type": "object",
+      "description": "A review of an ACCC determination outside the ACCC - a merits review in the Australian Competition Tribunal, or a judicial review in the Federal Court.",
+      "required": [
+        "forum"
+      ],
+      "properties": {
+        "forum": {
+          "type": "string",
+          "maxLength": 64,
+          "knownValues": [
+            "australian-competition-tribunal",
+            "federal-court-of-australia"
+          ]
+        },
+        "caseNumber": {
+          "type": "string",
+          "maxLength": 64,
+          "description": "The forum's own matter number (e.g. \"ACT 1 of 2026\", \"NSD1310/2026\")."
+        },
+        "caseUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "applicant": {
+          "type": "string",
+          "maxLength": 1000,
+          "maxGraphemes": 100
+        },
+        "filedOn": {
+          "type": "string",
+          "maxLength": 10,
+          "description": "Date the application was filed, as YYYY-MM-DD."
+        },
+        "status": {
+          "type": "string",
+          "maxLength": 32,
+          "knownValues": [
+            "current",
+            "concluded"
+          ]
+        },
+        "outcome": {
+          "type": "string",
+          "maxLength": 1000,
+          "maxGraphemes": 100,
+          "description": "Result once the review has concluded. Absent while it is on foot."
+        }
+      }
+    }
+  }
+}

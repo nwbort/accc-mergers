@@ -22,6 +22,13 @@
 #   injected automatically by Cloudflare onto pages served from this zone.
 # - img-src includes data: for inlined SVG icons.
 
+# - /.well-known/atproto-did is the ATProto handle-verification endpoint. It
+#   has no file extension, so Pages would otherwise guess its type; the handle
+#   spec requires text/plain. The file itself is written into the deployment
+#   by scripts/build.sh, and only when a DID is configured. If a resolver ever
+#   reports the wrong content type here, the DNS TXT method at
+#   _atproto.mergers.fyi is the documented alternative — see docs/atproto.md.
+
 /*
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
@@ -29,3 +36,8 @@
   Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), microphone=(), payment=(), usb=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://signup.mergers.fyi https://challenges.cloudflare.com https://cloudflareinsights.com; frame-src https://challenges.cloudflare.com; frame-ancestors 'self'; object-src 'self'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests
+
+/.well-known/atproto-did
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
+  Access-Control-Allow-Origin: *
