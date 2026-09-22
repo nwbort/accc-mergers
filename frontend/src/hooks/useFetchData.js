@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useReducer } from 'react';
 import { dataCache } from '../utils/dataCache';
 
 /**
@@ -14,6 +14,10 @@ import { dataCache } from '../utils/dataCache';
  * - The in-flight request is aborted on unmount (and on URL change) via
  *   AbortController, so stale responses never touch state after unmount.
  * - Re-runs when `url` changes.
+ * - While mounted with a `cacheKey`, registers `url` as "on screen" with
+ *   dataCache and subscribes to it, so useBackgroundRefresh's periodic
+ *   revalidation can re-fetch it and this hook re-renders with the fresh
+ *   data — see dataCache.revalidate.
  *
  * Passing a falsy `url` (null/undefined/'') pauses the hook — useful when a
  * URL depends on the result of a previous fetch.
@@ -32,6 +36,12 @@ export function useFetchData(url, { cacheKey } = {}) {
     }
     return { data: null, error: null, url: null };
   });
+
+  // Bumped when a background revalidation replaces this key's cached data,
+  // so the derived read below (which always pulls straight from the cache)
+  // is reflected in a re-render even though this hook's own state didn't
+  // change the trigger for it.
+  const [, forceRerender] = useReducer((n) => n + 1, 0);
 
   useEffect(() => {
     if (!url) return undefined;
@@ -74,6 +84,16 @@ export function useFetchData(url, { cacheKey } = {}) {
 
     return () => {
       controller.abort();
+    };
+  }, [url, cacheKey]);
+
+  useEffect(() => {
+    if (!url || !cacheKey) return undefined;
+    const unregister = dataCache.registerActive(cacheKey, url);
+    const unsubscribe = dataCache.subscribe(cacheKey, forceRerender);
+    return () => {
+      unregister();
+      unsubscribe();
     };
   }, [url, cacheKey]);
 
