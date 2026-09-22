@@ -1,8 +1,10 @@
-"""Industries index + per-industry merger files.
+"""Industries index + per-division node files.
 
 ``generate_index`` returns the ``industries.json`` payload.
-``generate_detail_files`` writes one file per industry code into
-``<output_dir>/industries/{code}.json``.
+``generate_detail_files`` writes one file per ANZSIC *division* into
+``<output_dir>/industries/{division}.json``, each holding every node in that
+division's subtree — see :mod:`scripts.industry_division` for why the division
+is the seam and how the frontend picks the file to fetch.
 """
 
 import json
@@ -10,6 +12,10 @@ from collections import defaultdict
 from pathlib import Path
 
 from scripts.constants import merger_status
+from scripts.industry_division import (
+    ORPHAN_FILE_STEM,
+    division_file_stem,
+)
 
 from .. import anzsic
 from ..durations import phase_1_duration_stats, waiver_duration_stats
@@ -104,46 +110,87 @@ def _sort_mergers(records: list) -> list:
     return [summary for summary, _ in active + decided]
 
 
-def _node_ref(node: anzsic.Node, merger_count: int | None = None) -> dict:
-    """A compact reference to a hierarchy node (for parent/child/breadcrumb links)."""
-    ref = {"code": node.code, "name": node.name, "level": node.level}
-    if merger_count is not None:
-        ref["merger_count"] = merger_count
-    return ref
+def _node_payload(
+    name: str | None,
+    level: str | None,
+    parent_code: str | None,
+    child_codes: list[str],
+    records: list,
+) -> dict:
+    """One node's entry in its division file.
+
+    ``records`` is the list of ``(summary, full_merger)`` tuples rolled up onto
+    this node. Only the merger *ids* are stored here, in display order — the
+    summaries themselves live once in the division's ``mergers`` map, because a
+    merger tagged at a class rolls up onto its group, subdivision and division
+    too and would otherwise be written out four times.
+
+    Ancestors and each child's merger count are deliberately absent: both are
+    derivable from ``parent``/``children`` and the other nodes in the same file,
+    and the reader (``frontend/src/utils/industryNode.js``) rebuilds them.
+    """
+    full_mergers = [full for _, full in records]
+    payload = {
+        "name": name,
+        "level": level,
+        "parent": parent_code,
+        "children": list(child_codes),
+        "mergers": [summary["merger_id"] for summary in _sort_mergers(records)],
+        "count": len(records),
+        **_industry_stats(full_mergers),
+    }
+    # Durations are absent for most nodes (no completed reviews of that kind),
+    # and an explicit null per node across 825 nodes is pure noise.
+    phase_duration = phase_1_duration_stats(full_mergers)
+    if phase_duration is not None:
+        payload["phase_duration"] = phase_duration
+    waiver_duration = waiver_duration_stats(full_mergers)
+    if waiver_duration is not None:
+        payload["waiver_duration"] = waiver_duration
+    return payload
 
 
-def _write_detail_file(industries_dir: Path, code: str, payload: dict) -> str:
-    """Write one industry page; returns the file name written."""
-    safe_code = code.replace('/', '-').replace('\\', '-')
-    out_path = industries_dir / f"{safe_code}.json"
+def _write_division_file(industries_dir: Path, stem: str, payload: dict) -> str:
+    """Write one division file; returns the file name written."""
+    out_path = industries_dir / f"{stem}.json"
     with open(out_path, 'w', encoding='utf-8') as f:
-        json.dump(payload, f, indent=2)
+        # Compact: these are machine-read payloads and the largest division
+        # (Manufacturing, 214 nodes) is about half the size without the indent.
+        json.dump(payload, f, separators=(',', ':'))
     return out_path.name
 
 
 def generate_detail_files(mergers: list, output_dir: Path) -> int:
-    """Write one JSON file per ANZSIC node. Returns the number of files written.
+    """Write one JSON file per ANZSIC division. Returns the files written.
 
-    A file is generated for every node in the ANZSIC tree — divisions,
-    subdivisions, groups and classes — so each level is independently
-    addressable at ``/industries/{code}``. Each file carries the hierarchy
-    metadata (name, level, breadcrumb ancestors, parent, children) needed to
-    render the page and navigate up/down the tree.
+    Every node in the ANZSIC tree — divisions, subdivisions, groups and classes
+    — gets an entry, so each level stays independently addressable at
+    ``/industries/{code}``; they are simply packed one file per division rather
+    than one file per node. See :mod:`scripts.industry_division` for why.
+
+    Each file is ``{"division", "nodes", "mergers"}``: ``nodes`` maps a code to
+    its hierarchy metadata, stat counts, durations and an ordered list of merger
+    *ids*, and ``mergers`` maps each of those ids to its summary exactly once.
 
     Mergers aggregate up the tree: a parent node lists every merger tagged to
     any node in its subtree (plus any tagged directly to the parent code),
     deduped by merger_id. The ACCC occasionally tags a merger at several levels
     at once, so deduping keeps it appearing once per page.
+
+    Tagged codes outside the ANZSIC tree get an entry too, filed by the same
+    rule as real nodes so the frontend finds them where it looks: under their
+    derivable division if they have one, otherwise in ``_orphans.json``. That
+    file is written even when empty, so the fallback the frontend reaches for
+    always exists rather than 404ing into the SPA's index.html.
     """
     industries_dir = Path(output_dir) / "industries"
     industries_dir.mkdir(parents=True, exist_ok=True)
-    written: set[str] = set()
 
     # Records aggregated onto each hierarchy node. A merger tagged at a class
     # rolls up to its group/subdivision/division too. code -> {merger_id: (summary, full)}
     node_records: dict[str, dict] = defaultdict(dict)
-    # Tagged codes that aren't part of the ANZSIC tree get a standalone flat
-    # file so existing links never 404 (none at time of writing, but defensive).
+    # Tagged codes that aren't part of the ANZSIC tree (none at time of writing,
+    # but the ACCC has mistyped one before and the page must not 404).
     orphan_records: dict[str, dict] = defaultdict(dict)
 
     for m in mergers:
@@ -182,56 +229,49 @@ def generate_detail_files(mergers: list, output_dir: Path) -> int:
             for ancestor in anzsic.ancestors(code):
                 node_records[ancestor.code][merger_id] = (summary, m)
 
-    def merger_count(code: str) -> int:
-        return len(node_records.get(code, {}))
+    # One bucket per division file, plus the orphan bucket. Divisions with no
+    # activity anywhere in their subtree still get a file: every node in the
+    # tree is a real page, and an empty one says so rather than 404ing.
+    buckets: dict[str, dict[str, dict]] = defaultdict(dict)
 
     hierarchy = anzsic.hierarchy()
     for code, node in hierarchy.items():
-        record_list = list(node_records.get(code, {}).values())
-        full_mergers = [full for _, full in record_list]
+        records = list(node_records.get(code, {}).values())
+        buckets[division_file_stem(code)][code] = _node_payload(
+            node.name, node.level, node.parent_code, node.child_codes, records
+        )
 
-        children = [
-            _node_ref(hierarchy[child_code], merger_count(child_code))
-            for child_code in node.child_codes
-        ]
-        parent = anzsic.get(node.parent_code) if node.parent_code else None
-
-        payload = {
-            "code": code,
-            "name": node.name,
-            "level": node.level,
-            "ancestors": [_node_ref(a) for a in anzsic.ancestors(code)],
-            "parent": _node_ref(parent) if parent else None,
-            "children": children,
-            "mergers": _sort_mergers(record_list),
-            "count": len(record_list),
-            **_industry_stats(full_mergers),
-            "phase_duration": phase_1_duration_stats(full_mergers),
-            "waiver_duration": waiver_duration_stats(full_mergers),
-        }
-        written.add(_write_detail_file(industries_dir, code, payload))
-
-    # Standalone files for any tagged codes outside the ANZSIC tree.
+    # Orphans are placed by the same rule as everything else, because the
+    # frontend has only that rule to go on. A code like "5400" looks like a
+    # class and has a derivable division (J) without being a real ANZSIC node,
+    # so it belongs in J.json — parking it in the orphan file would put it
+    # somewhere the SPA would never look. Only a code with no derivable
+    # division at all falls through to _orphans.json.
     for code, records in orphan_records.items():
-        record_list = list(records.values())
-        full_mergers = [full for _, full in record_list]
-        payload = {
-            "code": code,
-            "name": None,
-            "level": None,
-            "ancestors": [],
-            "parent": None,
-            "children": [],
-            "mergers": _sort_mergers(record_list),
-            "count": len(record_list),
-            **_industry_stats(full_mergers),
-            "phase_duration": phase_1_duration_stats(full_mergers),
-            "waiver_duration": waiver_duration_stats(full_mergers),
-        }
-        written.add(_write_detail_file(industries_dir, code, payload))
+        buckets[division_file_stem(code)][code] = _node_payload(
+            None, None, None, [], list(records.values())
+        )
 
-    # An orphan code that stops being tagged (usually an ACCC typo, later
-    # corrected) leaves a file behind that nothing links to any more.
+    written: set[str] = set()
+    for stem in sorted(set(buckets) | {ORPHAN_FILE_STEM}):
+        nodes = buckets.get(stem, {})
+        # Each summary once per file, keyed by id. A merger tagged in two
+        # divisions is in both files; that is 19 copies at worst, against the
+        # four per division a node-per-file layout paid.
+        summaries: dict[str, dict] = {}
+        for code in nodes:
+            source = orphan_records.get(code) or node_records.get(code, {})
+            for summary, _ in source.values():
+                summaries.setdefault(summary["merger_id"], summary)
+        payload = {
+            "division": None if stem == ORPHAN_FILE_STEM else stem,
+            "nodes": nodes,
+            "mergers": summaries,
+        }
+        written.add(_write_division_file(industries_dir, stem, payload))
+
+    # Retires the ~825 per-node files this layout replaced, and any division
+    # file for a letter the ANZSIC tree stops using.
     prune_stale_files(industries_dir, written)
 
-    return len(hierarchy) + len(orphan_records)
+    return len(written)

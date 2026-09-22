@@ -5,6 +5,9 @@
 // party — see frontend/src/utils/shard.js for why, and note that the SPA and
 // the Python generator have to agree on the bucketing rule exactly.
 import { partyShardName } from './utils/shard';
+// Industry nodes are likewise packed one file per ANZSIC division rather than
+// one per node — see frontend/src/utils/industryDivision.js.
+import { industryDivisionUrl } from './utils/industryDivision';
 
 // Cloudflare Worker endpoints — all served from signup.mergers.fyi
 export const SUBSCRIBE_ENDPOINT = "https://signup.mergers.fyi";
@@ -24,7 +27,7 @@ export const API_ENDPOINTS = {
   mergerDetail: (id) => `/data/mergers/${id}.json`,  // Individual merger file
   stats: '/data/stats.json',
   industries: '/data/industries.json',
-  industryDetail: (code) => `/data/industries/${code}.json`,  // Individual industry file with mergers
+  industryDivision: industryDivisionUrl,  // Division file holding this node (and every other node under the same division)
   parties: '/data/parties.json',
   partyShard: (id) => `/data/parties/${partyShardName(id)}`,  // Bucket holding this party's record
   upcomingEvents: '/data/upcoming-events.json',

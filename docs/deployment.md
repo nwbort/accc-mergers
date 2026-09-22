@@ -210,7 +210,7 @@ All data files are pre-generated into `frontend/public/data/`:
 | `mergers/list-meta.json` | Pagination metadata for merger list |
 | `stats.json` | Aggregated statistics (counts, averages, medians) |
 | `industries.json` | ANZSIC codes with merger counts |
-| `industries/{code}.json` | Mergers per industry code |
+| `industries/{division}.json` | Every ANZSIC node under that division, with its mergers |
 | `upcoming-events.json` | Future consultation/determination dates |
 | `commentary.json` | Mergers with user commentary |
 | `digest.json` | Weekly digest of merger activity |

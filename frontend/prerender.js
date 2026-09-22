@@ -38,6 +38,8 @@ import {
 } from './src/utils/pageMeta.js';
 import { industryPath, mergerPath } from './src/utils/slug.js';
 import { partyShardName } from './src/utils/shard.js';
+import { divisionFileName } from './src/utils/industryDivision.js';
+import { readIndustryNode } from './src/utils/industryNode.js';
 
 // Per-merger data files are named by matter id, e.g. MN-01016.json / WA-70017.json.
 const MATTER_FILE_RE = /^(MN|WA)-\d+\.json$/i;
@@ -517,7 +519,7 @@ export default function prerenderMergers() {
         );
       }
 
-      // industries.json supplies the display name for nodes whose detail file
+      // industries.json supplies the display name for nodes whose node record
       // carries none, mirroring IndustryDetail.jsx's fallback chain.
       let industryNames = {};
       try {
@@ -528,10 +530,59 @@ export default function prerenderMergers() {
         this.warn('prerender: industries.json unreadable, falling back to detail-file names');
       }
 
-      renderDir(join(dataDir, 'industries'), 'industries', (industry, code) => {
-        const meta = industryMeta(industry, industry.code || code, industryNames[code]);
-        return { meta, body: industryBody(industry, industry.code || code, meta) };
-      });
+      // Industry nodes are packed one file per ANZSIC division (see
+      // src/utils/industryDivision.js), so this walks files-of-nodes rather
+      // than using renderDir's one-file-one-page mapping — the same shape as
+      // the party shard walk above.
+      //
+      // It also re-derives each node's division file with the JS lookup and
+      // checks it against the file Python actually wrote it into, making the
+      // build a cross-language check over the whole real tree rather than just
+      // the golden fixture. If the two tables diverge the SPA asks for the
+      // wrong division file and every industry page 404s on a site that
+      // otherwise built perfectly happily. Better to fail the build.
+      const industriesDir = join(dataDir, 'industries');
+      const misplaced = [];
+      let divisionFiles;
+      try {
+        divisionFiles = readdirSync(industriesDir).filter((f) => JSON_FILE_RE.test(f));
+      } catch {
+        divisionFiles = [];
+        this.warn(`prerender: no industry data at ${industriesDir}, skipping`);
+      }
+      for (const file of divisionFiles) {
+        let payload;
+        try {
+          payload = readJson(join(industriesDir, file));
+        } catch (err) {
+          this.warn(`prerender: skipping industries/${file}: ${err.message}`);
+          continue;
+        }
+        for (const code of Object.keys(payload.nodes || {})) {
+          // Codes outside the ANZSIC tree are placed by the same rule, so
+          // they check the same way — divisionFileName is the whole placement
+          // contract, orphan fallback included.
+          if (divisionFileName(code) !== file) {
+            misplaced.push(`${code} is in ${file}, expected ${divisionFileName(code)}`);
+            continue;
+          }
+          try {
+            const industry = readIndustryNode(payload, code);
+            const meta = industryMeta(industry, code, industryNames[code]);
+            writePage(outDir, meta.path, renderPage(template, meta, industryBody(industry, code, meta)));
+            counts.industries++;
+          } catch (err) {
+            this.warn(`prerender: skipping industry ${code}: ${err.message}`);
+          }
+        }
+      }
+      if (misplaced.length) {
+        this.error(
+          `prerender: ${misplaced.length} industry node(s) are in the wrong division file — ` +
+            `scripts/industry_division.py and src/utils/industryDivision.js disagree. ` +
+            `First few: ${misplaced.slice(0, 5).join('; ')}`,
+        );
+      }
 
       for (const [path, base] of Object.entries(STATIC_PAGE_META)) {
         // The homepage is dist/index.html — the very template being stamped.

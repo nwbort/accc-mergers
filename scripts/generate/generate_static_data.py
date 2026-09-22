@@ -20,7 +20,8 @@ Output files:
   - mergers/list-meta.json      - Pagination metadata for merger list
   - stats.json                  - Aggregated statistics
   - industries.json             - ANZSIC codes with merger counts
-  - industries/{code}.json      - Mergers per industry code
+  - industries/{division}.json  - Every ANZSIC node in that division, with
+                                  its mergers (see scripts/industry_division.py)
   - parties.json                - Every party (canonical group or single) with merger counts
   - parties/shard-{nn}.json     - Mergers per party, grouped by role, packed
                                   into fixed buckets (see scripts/shard.py)
@@ -227,9 +228,9 @@ def main():
     pages = list_out.generate(enriched, OUTPUT_DIR, page_size=50)
     print(f"✓ Generated {pages} paginated list files (50 mergers/page)")
 
-    print("\nGenerating individual industry files...")
+    print("\nGenerating industry division files...")
     n = industries.generate_detail_files(enriched, OUTPUT_DIR)
-    print(f"✓ Generated {n} individual industry files in {OUTPUT_DIR / 'industries'}")
+    print(f"✓ Generated {n} industry division files in {OUTPUT_DIR / 'industries'}")
 
     print("\nGenerating party detail files...")
     n = parties.generate_detail_files(party_groups, OUTPUT_DIR)

@@ -15,6 +15,7 @@ import { useFetchData } from '../hooks/useFetchData';
 import { useDecodedParam } from '../hooks/useDecodedParam';
 import { useTracking } from '../context/TrackingContext';
 import { industryPath } from '../utils/slug';
+import { readIndustryNode, industryDivisionCacheKey } from '../utils/industryNode';
 import { industryMeta } from '../utils/pageMeta';
 import { MERGER_STATUS, PHASES } from '../constants/mergerStatus';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
@@ -22,10 +23,19 @@ import { CARD, SECTION_HEADING } from '../utils/classNames';
 function IndustryDetail() {
   const decodedCode = useDecodedParam('code');
 
-  const { data, loading, error } = useFetchData(
-    API_ENDPOINTS.industryDetail(decodedCode),
-    { cacheKey: `industry-${decodedCode}` }
+  // One fetch for the whole ANZSIC division this node sits in — it carries
+  // every node under that division, so the parent comparison below costs no
+  // second request. See utils/industryDivision.js for why the files are cut
+  // that way, and utils/industryNode.js for the unpacking.
+  const { data: division, loading, error } = useFetchData(
+    API_ENDPOINTS.industryDivision(decodedCode),
+    { cacheKey: industryDivisionCacheKey(decodedCode) }
   );
+  const data = useMemo(
+    () => readIndustryNode(division, decodedCode),
+    [division, decodedCode]
+  );
+
   // The industries list is only a fallback for the display name on older
   // payloads — the detail file now carries its own name. A failure here
   // shouldn't block the page.
@@ -34,14 +44,13 @@ function IndustryDetail() {
   });
   const industries = industriesData?.industries || null;
 
-  // Parent industry detail — fetched once the main payload reveals the parent
-  // code, so we can compare Phase 1 durations against the next level up. The
-  // hook pauses while the URL is falsy (no parent / not yet loaded). A failure
-  // here is non-fatal: the comparison simply falls back to this industry alone.
+  // Parent industry, for comparing Phase 1 durations against the next level
+  // up. A node's parent is always in the same division file, so this is a read
+  // rather than a fetch.
   const parentCode = data?.parent?.code;
-  const { data: parentData } = useFetchData(
-    parentCode ? API_ENDPOINTS.industryDetail(parentCode) : null,
-    parentCode ? { cacheKey: `industry-${parentCode}` } : {}
+  const parentData = useMemo(
+    () => (parentCode ? readIndustryNode(division, parentCode) : null),
+    [division, parentCode]
   );
 
   // Overall all-industries figures (shared cache with the dashboard). Fetched
@@ -68,11 +77,14 @@ function IndustryDetail() {
     );
   }, [data?.mergers, trimmedSearch]);
 
-  const isNotFound = error === 'HTTP 404';
+  // A code that isn't an industry can fail either way: its division file may
+  // not exist at all (junk code → the orphan file, which is empty), or the file
+  // loads and simply has no such node. Both are "not found" to the reader.
+  const isNotFound = error === 'HTTP 404' || (!error && !loading && !data);
 
   if (loading) return <LoadingSpinner />;
 
-  if (error) {
+  if (error || isNotFound) {
     return (
       <ErrorCard
         title={isNotFound ? 'Industry not found' : 'Error loading industry'}
@@ -85,8 +97,6 @@ function IndustryDetail() {
       />
     );
   }
-
-  if (!data) return null;
 
   // Built by the same helper the build-time prerenderer uses, so the raw HTML
   // crawlers read and the head React renders here cannot drift apart. The name

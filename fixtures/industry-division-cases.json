@@ -1,0 +1,361 @@
+{
+  "_comment": "Golden fixture pinning which industries/ file an ANZSIC code is packed into, across both hand-synced implementations: scripts/industry_division.py (writes the files) and frontend/src/utils/industryDivision.js (SPA fetch + prerender walk). Exercised by scripts/tests/test_industry_division.py and frontend/src/utils/__tests__/industryDivision.test.js. Every {code -> file} pair must hold in both; if you change the range table, update both implementations and regenerate these cases. Covers one real node per division per ANZSIC level, plus codes outside the tree (unused subdivision numbers, a slashed tag, junk) which all fall to the orphan file.",
+  "cases": [
+    {
+      "code": "01",
+      "file": "A.json"
+    },
+    {
+      "code": "011",
+      "file": "A.json"
+    },
+    {
+      "code": "0111",
+      "file": "A.json"
+    },
+    {
+      "code": "06",
+      "file": "B.json"
+    },
+    {
+      "code": "060",
+      "file": "B.json"
+    },
+    {
+      "code": "0600",
+      "file": "B.json"
+    },
+    {
+      "code": "11",
+      "file": "C.json"
+    },
+    {
+      "code": "111",
+      "file": "C.json"
+    },
+    {
+      "code": "1111",
+      "file": "C.json"
+    },
+    {
+      "code": "26",
+      "file": "D.json"
+    },
+    {
+      "code": "261",
+      "file": "D.json"
+    },
+    {
+      "code": "2611",
+      "file": "D.json"
+    },
+    {
+      "code": "30",
+      "file": "E.json"
+    },
+    {
+      "code": "301",
+      "file": "E.json"
+    },
+    {
+      "code": "3011",
+      "file": "E.json"
+    },
+    {
+      "code": "33",
+      "file": "F.json"
+    },
+    {
+      "code": "331",
+      "file": "F.json"
+    },
+    {
+      "code": "3311",
+      "file": "F.json"
+    },
+    {
+      "code": "39",
+      "file": "G.json"
+    },
+    {
+      "code": "391",
+      "file": "G.json"
+    },
+    {
+      "code": "3911",
+      "file": "G.json"
+    },
+    {
+      "code": "44",
+      "file": "H.json"
+    },
+    {
+      "code": "440",
+      "file": "H.json"
+    },
+    {
+      "code": "4400",
+      "file": "H.json"
+    },
+    {
+      "code": "46",
+      "file": "I.json"
+    },
+    {
+      "code": "461",
+      "file": "I.json"
+    },
+    {
+      "code": "4610",
+      "file": "I.json"
+    },
+    {
+      "code": "54",
+      "file": "J.json"
+    },
+    {
+      "code": "541",
+      "file": "J.json"
+    },
+    {
+      "code": "5411",
+      "file": "J.json"
+    },
+    {
+      "code": "62",
+      "file": "K.json"
+    },
+    {
+      "code": "621",
+      "file": "K.json"
+    },
+    {
+      "code": "6210",
+      "file": "K.json"
+    },
+    {
+      "code": "66",
+      "file": "L.json"
+    },
+    {
+      "code": "661",
+      "file": "L.json"
+    },
+    {
+      "code": "6611",
+      "file": "L.json"
+    },
+    {
+      "code": "69",
+      "file": "M.json"
+    },
+    {
+      "code": "691",
+      "file": "M.json"
+    },
+    {
+      "code": "6910",
+      "file": "M.json"
+    },
+    {
+      "code": "72",
+      "file": "N.json"
+    },
+    {
+      "code": "721",
+      "file": "N.json"
+    },
+    {
+      "code": "7211",
+      "file": "N.json"
+    },
+    {
+      "code": "75",
+      "file": "O.json"
+    },
+    {
+      "code": "751",
+      "file": "O.json"
+    },
+    {
+      "code": "7510",
+      "file": "O.json"
+    },
+    {
+      "code": "80",
+      "file": "P.json"
+    },
+    {
+      "code": "801",
+      "file": "P.json"
+    },
+    {
+      "code": "8010",
+      "file": "P.json"
+    },
+    {
+      "code": "84",
+      "file": "Q.json"
+    },
+    {
+      "code": "840",
+      "file": "Q.json"
+    },
+    {
+      "code": "8401",
+      "file": "Q.json"
+    },
+    {
+      "code": "89",
+      "file": "R.json"
+    },
+    {
+      "code": "891",
+      "file": "R.json"
+    },
+    {
+      "code": "8910",
+      "file": "R.json"
+    },
+    {
+      "code": "94",
+      "file": "S.json"
+    },
+    {
+      "code": "941",
+      "file": "S.json"
+    },
+    {
+      "code": "9411",
+      "file": "S.json"
+    },
+    {
+      "code": "A",
+      "file": "A.json"
+    },
+    {
+      "code": "B",
+      "file": "B.json"
+    },
+    {
+      "code": "C",
+      "file": "C.json"
+    },
+    {
+      "code": "D",
+      "file": "D.json"
+    },
+    {
+      "code": "E",
+      "file": "E.json"
+    },
+    {
+      "code": "F",
+      "file": "F.json"
+    },
+    {
+      "code": "G",
+      "file": "G.json"
+    },
+    {
+      "code": "H",
+      "file": "H.json"
+    },
+    {
+      "code": "I",
+      "file": "I.json"
+    },
+    {
+      "code": "J",
+      "file": "J.json"
+    },
+    {
+      "code": "K",
+      "file": "K.json"
+    },
+    {
+      "code": "L",
+      "file": "L.json"
+    },
+    {
+      "code": "M",
+      "file": "M.json"
+    },
+    {
+      "code": "N",
+      "file": "N.json"
+    },
+    {
+      "code": "O",
+      "file": "O.json"
+    },
+    {
+      "code": "P",
+      "file": "P.json"
+    },
+    {
+      "code": "Q",
+      "file": "Q.json"
+    },
+    {
+      "code": "R",
+      "file": "R.json"
+    },
+    {
+      "code": "S",
+      "file": "S.json"
+    },
+    {
+      "code": "06/10",
+      "file": "_orphans.json"
+    },
+    {
+      "code": "9999",
+      "file": "_orphans.json"
+    },
+    {
+      "code": "61",
+      "file": "_orphans.json"
+    },
+    {
+      "code": "6100",
+      "file": "_orphans.json"
+    },
+    {
+      "code": "99",
+      "file": "_orphans.json"
+    },
+    {
+      "code": "T",
+      "file": "_orphans.json"
+    },
+    {
+      "code": "Z",
+      "file": "_orphans.json"
+    },
+    {
+      "code": "",
+      "file": "_orphans.json"
+    },
+    {
+      "code": "abcd",
+      "file": "_orphans.json"
+    },
+    {
+      "code": "0",
+      "file": "_orphans.json"
+    },
+    {
+      "code": "12345",
+      "file": "_orphans.json"
+    },
+    {
+      "code": " 4520 ",
+      "file": "H.json"
+    },
+    {
+      "code": "4520",
+      "file": "H.json"
+    }
+  ]
+}

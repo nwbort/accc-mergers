@@ -7,6 +7,7 @@ import SearchInput from '../components/SearchInput';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { dataCache } from '../utils/dataCache';
+import { fetchIndustryNode } from '../utils/industryNode';
 import { useFetchData } from '../hooks/useFetchData';
 import { industryPath } from '../utils/slug';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
@@ -52,12 +53,11 @@ function Industries() {
     setLoadingIndustries(prev => ({ ...prev, [code]: true }));
 
     try {
-      const response = await fetch(API_ENDPOINTS.industryDetail(code));
+      const node = await fetchIndustryNode(code);
 
-      if (!response.ok) throw new Error(`Failed to fetch industry ${code}`);
+      if (!node) throw new Error(`Failed to fetch industry ${code}`);
 
-      const data = await response.json();
-      const mergers = data.mergers || [];
+      const mergers = node.mergers || [];
 
       setIndustryMergersMap(prev => {
         const updated = { ...prev, [code]: mergers };
