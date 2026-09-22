@@ -225,6 +225,11 @@ or going to the **Tribunal** or the **Federal Court**. Questionnaires, timeline
 extensions and remedy offers are all on the site and in the records; posting
 them would turn a useful account into a firehose.
 
+A **waiver** application is the exception to "arriving": the ACCC only
+publishes a waiver once it has been determined, so its notification date is
+never news — it would land seconds before the determination post, announcing
+something already over. Waivers are posted on their determination only.
+
 ```bash
 python -m scripts.atproto.post_bluesky --dry-run       # see what is due
 python -m scripts.atproto.post_bluesky [--max-posts N]

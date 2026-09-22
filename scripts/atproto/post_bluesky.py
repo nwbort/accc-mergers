@@ -9,7 +9,9 @@ What counts as worth posting is deliberately narrow: a matter arriving, being
 referred to phase 2, being decided, having its assessment ceased, or going to
 the Tribunal or the Federal Court. Questionnaires, timeline extensions and
 remedy offers are all on the site and in the records, and posting them would
-turn a useful account into a firehose.
+turn a useful account into a firehose. A waiver application's arrival is not
+posted either: the ACCC only publishes a waiver once it has been determined,
+so the notification date arrives already spent.
 
 Two safeguards, because this is the only part of the pipeline that speaks to
 people rather than to files:
@@ -99,12 +101,17 @@ def milestones(matter: dict) -> list[Milestone]:
         )
 
     notified = _date(matter.get("effective_notification_datetime"))
-    add(
-        "notified",
-        notified,
-        "Notification waiver sought" if is_waiver else "Notified to the ACCC",
-        _detail(merger_id, matter.get("stage"), notified),
-    )
+    # A waiver application is not on the register until it has been decided,
+    # so its notification date is only ever learned retrospectively - posting
+    # it would announce as news something that was already over when it
+    # became visible, seconds before the determination post says so.
+    if not is_waiver:
+        add(
+            "notified",
+            notified,
+            "Notified to the ACCC",
+            _detail(merger_id, matter.get("stage"), notified),
+        )
 
     if matter.get("phase_1_determination") == "Referred to phase 2":
         referred = _date(matter.get("phase_1_determination_date"))
