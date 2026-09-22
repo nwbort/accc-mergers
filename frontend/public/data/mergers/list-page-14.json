@@ -1096,10 +1096,16 @@
       ],
       "targets": [
         {
-          "name": "DoubleVerify Pty Ltd"
+          "name": "DoubleVerify Pty Ltd",
+          "canonical": {
+            "name": "DoubleVerify Pty Ltd"
+          }
         },
         {
-          "name": "DoubleVerify Holdings, Inc."
+          "name": "DoubleVerify Holdings, Inc.",
+          "canonical": {
+            "name": "DoubleVerify Pty Ltd"
+          }
         }
       ],
       "other_parties": [
