@@ -10,6 +10,7 @@ import FeedbackPopup from './components/FeedbackPopup';
 import LoadingSpinner from './components/LoadingSpinner';
 import { TrackingProvider } from './context/TrackingContext';
 import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts';
+import { useBackgroundRefresh } from './hooks/useBackgroundRefresh';
 import ScrollToTop from './components/ScrollToTop';
 
 // Route components are code-split so the initial bundle only carries the app
@@ -42,6 +43,7 @@ function AppContent() {
   const openPalette = useCallback(() => setShowCommandPalette(true), []);
 
   useKeyboardShortcuts({ onToggleHelp: toggleShortcuts, onTogglePalette: togglePalette });
+  useBackgroundRefresh();
 
   return (
     <>

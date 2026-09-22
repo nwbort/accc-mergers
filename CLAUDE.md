@@ -184,7 +184,12 @@ frontend/src/
 │                         #   useDecodedParam.js, useTurnstile.js (the Cloudflare
 │                         #   Turnstile widget lifecycle — script injection, explicit
 │                         #   render, token, reset, teardown — shared by the digest
-│                         #   signup and the feedback form)
+│                         #   signup and the feedback form), useBackgroundRefresh.js
+│                         #   (mounted once from App.jsx; periodically re-fetches
+│                         #   whatever data is currently on screen — on regaining tab
+│                         #   visibility, plus a long fallback interval — via
+│                         #   dataCache.revalidate, so an open tab picks up freshly
+│                         #   published data without a full reload)
 ├── utils/                # chartSetup.js (the single Chart.js registration point — import it
 │                         #   from any module that draws a chart; registering per page instead
 │                         #   silently breaks a chart reused on a page that registered less,

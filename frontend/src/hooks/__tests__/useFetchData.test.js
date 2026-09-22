@@ -231,6 +231,50 @@ describe('useFetchData', () => {
     // No key means nothing written to the shared cache.
     expect([...dataCacheKeys()]).toHaveLength(0);
   });
+
+  describe('background revalidation', () => {
+    it('registers the url as active while mounted, with a cacheKey', async () => {
+      vi.spyOn(globalThis, 'fetch').mockResolvedValue(okResponse({ x: 1 }));
+
+      const { unmount } = renderHook(() =>
+        useFetchData('/data/active.json', { cacheKey: 'active-key' })
+      );
+
+      await waitFor(() =>
+        expect(dataCache.activeEntries()).toContainEqual(['active-key', '/data/active.json'])
+      );
+
+      unmount();
+      expect(dataCache.activeEntries()).not.toContainEqual([
+        'active-key',
+        '/data/active.json',
+      ]);
+    });
+
+    it('does not register as active without a cacheKey', () => {
+      vi.spyOn(globalThis, 'fetch').mockResolvedValue(okResponse({ x: 1 }));
+
+      renderHook(() => useFetchData('/data/no-key.json'));
+
+      expect(dataCache.activeEntries()).toEqual([]);
+    });
+
+    it('re-renders with the fresh data once a background revalidation changes it', async () => {
+      dataCache.set('revalidate-key', { count: 1 });
+      const { result } = renderHook(() =>
+        useFetchData('/data/revalidate.json', { cacheKey: 'revalidate-key' })
+      );
+
+      expect(result.current.data).toEqual({ count: 1 });
+
+      vi.spyOn(globalThis, 'fetch').mockResolvedValue(okResponse({ count: 2 }));
+      await act(async () => {
+        await dataCache.revalidate('revalidate-key', '/data/revalidate.json');
+      });
+
+      expect(result.current.data).toEqual({ count: 2 });
+    });
+  });
 });
 
 // Helper to inspect cache keys — the cache module doesn't expose the underlying

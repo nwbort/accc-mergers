@@ -1,11 +1,16 @@
-import { afterEach, describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { dataCache } from '../dataCache';
 
 // The cache is module-level, so each test must clean up after itself to
 // avoid leaking state into the next test.
 afterEach(() => {
   dataCache.clear();
+  vi.restoreAllMocks();
 });
+
+function okResponse(json) {
+  return { ok: true, status: 200, json: () => Promise.resolve(json) };
+}
 
 describe('dataCache', () => {
   describe('set + get', () => {
@@ -76,6 +81,114 @@ describe('dataCache', () => {
       dataCache.set('a', 1);
       expect(() => dataCache.clear('nonexistent')).not.toThrow();
       expect(dataCache.get('a')).toBe(1);
+    });
+  });
+
+  describe('fetchedAt', () => {
+    it('is null before a key is ever set', () => {
+      expect(dataCache.fetchedAt('never')).toBeNull();
+    });
+
+    it('reflects the time of the most recent set', () => {
+      const before = Date.now();
+      dataCache.set('k', 1);
+      const after = Date.now();
+      const fetchedAt = dataCache.fetchedAt('k');
+      expect(fetchedAt).toBeGreaterThanOrEqual(before);
+      expect(fetchedAt).toBeLessThanOrEqual(after);
+    });
+  });
+
+  describe('registerActive / activeEntries', () => {
+    it('tracks a registered key/url pair', () => {
+      const unregister = dataCache.registerActive('k', '/data/k.json');
+      expect(dataCache.activeEntries()).toEqual([['k', '/data/k.json']]);
+      unregister();
+    });
+
+    it('drops the entry once the last consumer unregisters', () => {
+      const unregisterA = dataCache.registerActive('k', '/data/k.json');
+      const unregisterB = dataCache.registerActive('k', '/data/k.json');
+      unregisterA();
+      expect(dataCache.activeEntries()).toEqual([['k', '/data/k.json']]);
+      unregisterB();
+      expect(dataCache.activeEntries()).toEqual([]);
+    });
+  });
+
+  describe('subscribe', () => {
+    it('is not called by a plain set()', () => {
+      const cb = vi.fn();
+      dataCache.subscribe('k', cb);
+      dataCache.set('k', { a: 1 });
+      expect(cb).not.toHaveBeenCalled();
+    });
+
+    it('stops receiving updates after unsubscribing', async () => {
+      const cb = vi.fn();
+      const unsubscribe = dataCache.subscribe('k', cb);
+      unsubscribe();
+      vi.spyOn(globalThis, 'fetch').mockResolvedValue(okResponse({ a: 2 }));
+      await dataCache.revalidate('k', '/data/k.json');
+      expect(cb).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('revalidate', () => {
+    it('stores the response and notifies subscribers when the data changed', async () => {
+      dataCache.set('k', { a: 1 });
+      const cb = vi.fn();
+      dataCache.subscribe('k', cb);
+      vi.spyOn(globalThis, 'fetch').mockResolvedValue(okResponse({ a: 2 }));
+
+      await dataCache.revalidate('k', '/data/k.json');
+
+      expect(dataCache.get('k')).toEqual({ a: 2 });
+      expect(cb).toHaveBeenCalledWith({ a: 2 });
+      expect(globalThis.fetch).toHaveBeenCalledWith('/data/k.json', { cache: 'no-store' });
+    });
+
+    it('does not notify subscribers when the data is unchanged', async () => {
+      dataCache.set('k', { a: 1 });
+      const cb = vi.fn();
+      dataCache.subscribe('k', cb);
+      vi.spyOn(globalThis, 'fetch').mockResolvedValue(okResponse({ a: 1 }));
+
+      await dataCache.revalidate('k', '/data/k.json');
+
+      expect(cb).not.toHaveBeenCalled();
+    });
+
+    it('still updates fetchedAt when the data is unchanged', async () => {
+      dataCache.set('k', { a: 1 });
+      const firstFetchedAt = dataCache.fetchedAt('k');
+      vi.spyOn(globalThis, 'fetch').mockResolvedValue(okResponse({ a: 1 }));
+
+      await new Promise((r) => setTimeout(r, 5));
+      await dataCache.revalidate('k', '/data/k.json');
+
+      expect(dataCache.fetchedAt('k')).toBeGreaterThan(firstFetchedAt);
+    });
+
+    it('leaves the cache untouched on a network error', async () => {
+      dataCache.set('k', { a: 1 });
+      const cb = vi.fn();
+      dataCache.subscribe('k', cb);
+      vi.spyOn(globalThis, 'fetch').mockRejectedValue(new TypeError('Failed to fetch'));
+
+      await expect(dataCache.revalidate('k', '/data/k.json')).resolves.toBeUndefined();
+
+      expect(dataCache.get('k')).toEqual({ a: 1 });
+      expect(cb).not.toHaveBeenCalled();
+    });
+
+    it('leaves the cache untouched on a non-ok response', async () => {
+      dataCache.set('k', { a: 1 });
+      vi.spyOn(globalThis, 'fetch').mockResolvedValue({ ok: false, status: 500 });
+
+      await dataCache.revalidate('k', '/data/k.json');
+
+      expect(dataCache.get('k')).toEqual({ a: 1 });
     });
   });
 });
