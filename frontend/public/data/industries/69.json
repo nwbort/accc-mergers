@@ -37,13 +37,13 @@
       "code": "694",
       "name": "Advertising Services",
       "level": "group",
-      "merger_count": 13
+      "merger_count": 14
     },
     {
       "code": "695",
       "name": "Market Research and Statistical Services",
       "level": "group",
-      "merger_count": 3
+      "merger_count": 4
     },
     {
       "code": "696",
@@ -65,6 +65,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-55036",
+      "merger_name": "Nielsen - DoubleVerify",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-21T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-75045",
       "merger_name": "EQT Fund Management - Intertek",
@@ -1199,11 +1210,11 @@
       "determination_date": null
     }
   ],
-  "count": 103,
-  "phase_1_count": 41,
+  "count": 104,
+  "phase_1_count": 42,
   "phase_2_count": 3,
   "waiver_count": 59,
-  "active_count": 6,
+  "active_count": 7,
   "phase_duration": {
     "average_days": 32.743589743589745,
     "median_days": 27,
