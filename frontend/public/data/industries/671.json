@@ -24,7 +24,7 @@
       "code": "6711",
       "name": "Residential Property Operators",
       "level": "class",
-      "merger_count": 9
+      "merger_count": 10
     },
     {
       "code": "6712",
@@ -34,6 +34,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-20039",
+      "merger_name": "Calvary \u2013 Southern Cross Care (Tasmania)",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-09-22T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-40034",
       "merger_name": "Woolworths - supermarket site in Homestead Rd, Orchard Hills, NSW",
@@ -486,11 +497,11 @@
       "determination_date": "2025-11-18T12:00:00Z"
     }
   ],
-  "count": 41,
-  "phase_1_count": 13,
+  "count": 42,
+  "phase_1_count": 14,
   "phase_2_count": 1,
   "waiver_count": 27,
-  "active_count": 1,
+  "active_count": 2,
   "phase_duration": {
     "average_days": 34.15384615384615,
     "median_days": 29,

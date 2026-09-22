@@ -2,6 +2,41 @@
   "shard": 132,
   "shard_count": 256,
   "parties": {
+    "calvary-aged-care-limited": {
+      "id": "calvary-aged-care-limited",
+      "canonical_name": "Calvary Aged Care Limited",
+      "members": [
+        {
+          "name": "CALVARY AGED CARE LIMITED",
+          "identifier": "54 168 631 052",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-20039",
+            "merger_name": "Calvary \u2013 Southern Cross Care (Tasmania)",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-22T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "ellerslie-free-range-farms-pty-ltd": {
       "id": "ellerslie-free-range-farms-pty-ltd",
       "canonical_name": "Ellerslie Free Range Farms Pty Ltd",

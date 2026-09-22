@@ -274,6 +274,41 @@
       },
       "waiver_duration": null
     },
+    "southern-cross-care-tasmania-inc": {
+      "id": "southern-cross-care-tasmania-inc",
+      "canonical_name": "Southern Cross Care (Tasmania) Inc",
+      "members": [
+        {
+          "name": "SOUTHERN CROSS CARE (TASMANIA) INC",
+          "identifier": "18 773 507 851",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-20039",
+            "merger_name": "Calvary \u2013 Southern Cross Care (Tasmania)",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-22T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "the-trustee-for-srrp-development-trust": {
       "id": "the-trustee-for-srrp-development-trust",
       "canonical_name": "The Trustee for SRRP Development Trust",

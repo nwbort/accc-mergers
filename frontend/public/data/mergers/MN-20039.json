@@ -1,0 +1,160 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/calvary-%E2%80%93-southern-cross-care-tasmania",
+  "merger_name": "Calvary \u2013 Southern Cross Care (Tasmania)",
+  "status": "Under assessment",
+  "merger_id": "MN-20039",
+  "effective_notification_datetime": "2026-09-22T12:00:00Z",
+  "original_notification_datetime": "2026-09-22T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-11-04T12:00:00Z",
+  "consultation_response_due_date": "2026-09-29T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "CALVARY AGED CARE LIMITED",
+      "identifier_type": "ABN",
+      "identifier": "54 168 631 052",
+      "party_page": {
+        "id": "calvary-aged-care-limited",
+        "name": "Calvary Aged Care Limited"
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "SOUTHERN CROSS CARE (TASMANIA) INC",
+      "identifier_type": "ABN",
+      "identifier": "18 773 507 851",
+      "party_page": {
+        "id": "southern-cross-care-tasmania-inc",
+        "name": "Southern Cross Care (Tasmania) Inc"
+      }
+    }
+  ],
+  "other_parties": [
+    {
+      "name": "CALVARY HOME CARE SERVICES LIMITED",
+      "identifier_type": "ABN",
+      "identifier": "44 118 225 559",
+      "party_page": {
+        "id": "calvary-home-care-services-limited",
+        "name": "Calvary Home Care Services Limited"
+      }
+    },
+    {
+      "name": "LITTLE COMPANY OF MARY HEALTH CARE LIMITED",
+      "identifier_type": "ABN",
+      "identifier": "11 079 815 697",
+      "party_page": {
+        "id": "little-company-of-mary-health-care-limited",
+        "name": "Little Company Of Mary Health Care Limited"
+      }
+    }
+  ],
+  "anzsic_codes": [
+    {
+      "code": "6711",
+      "name": "Residential Property Operators"
+    },
+    {
+      "code": "8401",
+      "name": "Hospitals (Except Psychiatric Hospitals)"
+    },
+    {
+      "code": "8601",
+      "name": "Aged Care Residential Services"
+    },
+    {
+      "code": "8790",
+      "name": "Other Social Assistance Services"
+    }
+  ],
+  "merger_description": "Little Company of Mary Health Care Limited, through its subsidiary, Calvary Aged Care Limited (**Calvary**), proposes to assume stewardship of Southern Cross Care (Tasmania) Inc. (**Southern Cross Care**) by becoming the sole member (the **Acquisition**).\n\nCalvary is a not-for-profit provider of home care, retirement living and residential aged care homes across Australia, operating 57 residential aged care facilities and 17 retirement living communities. In Tasmania, Calvary operates two residential aged care facilities (Calvary Riverside Views and Calvary Sandhill) and one retirement living facility (Calvary Cosgrove Cottages), all in the Launceston area. Calvary also manages home care service delivery from a service centre in Launceston.\n\nSouthern Cross Care is a not-for-profit provider of residential aged care in Tasmania. In Tasmania, Southern Cross Care operates eight residential aged care facilities, including two in the Launceston area (Glenara Lakes and Mount Esk) and 13 retirement living facilities, including three in or proximate to the Launceston area (Ainslie Village Launceston, Ainslie Lifestyle Village Westbury and Glenara Lakes Village). It manages home care service delivery in the region from a service centre in Youngtown, Tasmania.",
+  "events": [
+    {
+      "date": "2026-09-22T12:00:00Z",
+      "title": "Phase 1 consultation",
+      "display_title": "Phase 1 consultation",
+      "is_questionnaire_event": true,
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Calvary%20-%20Southern%20Cross%20Care%20-%20Questionnaire.docx",
+      "url_gh": "/mergers/MN-20039/Calvary - Southern Cross Care - Questionnaire.pdf",
+      "phase": "Phase 1"
+    },
+    {
+      "date": "2026-09-22T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-40013",
+      "merger_name": "Calvary - Hobart Private Hospital",
+      "acquirers": [
+        "LITTLE COMPANY OF MARY HEALTH CARE LIMITED"
+      ],
+      "targets": [
+        "HEALTHSCOPE OPERATIONS PTY LTD",
+        "ANZ HOSPITALS PTY LTD"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "MN-55010",
+      "merger_name": "Calvary - Holmesglen Private Hospital",
+      "acquirers": [
+        "LITTLE COMPANY OF MARY HEALTH CARE LIMITED"
+      ],
+      "targets": [
+        "HEALTHSCOPE MANAGEMENT PTY LTD",
+        "ANZ HOSPITALS PTY LTD"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "WA-15036",
+      "merger_name": "Regis \u2013 Home Care Business of Royal Freemasons",
+      "acquirers": [
+        "REGIS AGED CARE PTY LTD"
+      ],
+      "targets": [
+        "ROYAL FREEMASONS LTD"
+      ],
+      "accc_determination": "Approved"
+    }
+  ],
+  "phase_1_estimate": {
+    "expected_business_days": 20,
+    "range_business_days": [
+      16,
+      26
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "6-9",
+    "question_count": 6,
+    "sample_size": 20,
+    "as_of": "2026-09-22",
+    "estimated_at": "2026-09-22",
+    "method_version": 2
+  },
+  "pre_notification": {
+    "estimated_days": 24,
+    "min_days": null,
+    "max_days": 31,
+    "id_issued_estimated": "2026-08-29",
+    "id_issued_before": null,
+    "id_issued_after": "2026-08-22",
+    "min_days_witness": null,
+    "max_days_witness": "WA-20037",
+    "basis": "upper-bound-only",
+    "method_version": 1
+  }
+}
