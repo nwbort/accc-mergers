@@ -203,6 +203,17 @@
       "mergers": {
         "acquirer": [
           {
+            "merger_id": "WA-25050",
+            "merger_name": "National Dental Care \u2013 business assets comprising the Integrated Dental Health clinic, Katoomba, NSW",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-31T12:00:00Z",
+            "determination_date": "2026-09-22T12:00:00Z"
+          },
+          {
             "merger_id": "WA-10036",
             "merger_name": "National Dental Care \u2013 business assets comprising the Steve King Dental Group, QLD",
             "is_waiver": true,
@@ -272,10 +283,10 @@
         "target": [],
         "other": []
       },
-      "merger_count": 6,
+      "merger_count": 7,
       "phase_1_count": 1,
       "phase_2_count": 0,
-      "waiver_count": 5,
+      "waiver_count": 6,
       "active_count": 0,
       "phase_duration": {
         "average_days": 25.0,
@@ -285,11 +296,11 @@
         "completed_count": 1
       },
       "waiver_duration": {
-        "average_days": 15.4,
-        "median_days": 15,
-        "average_business_days": 10.8,
-        "median_business_days": 11,
-        "completed_count": 5
+        "average_days": 16.5,
+        "median_days": 18.0,
+        "average_business_days": 11.666666666666666,
+        "median_business_days": 13.0,
+        "completed_count": 6
       }
     },
     "pine-australia-holdings-pty-ltd": {
