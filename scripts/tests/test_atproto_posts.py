@@ -74,9 +74,25 @@ def test_a_new_notification_is_one_milestone():
     assert found[0].headline == "Notified to the ACCC"
 
 
-def test_a_waiver_application_reads_as_a_waiver():
+def test_a_waiver_application_is_not_posted_on_arrival():
+    """The register only publishes a waiver once it is decided."""
     found = milestones(matter(is_waiver=True, stage="Waiver application"))
-    assert found[0].headline == "Notification waiver sought"
+    assert found == []
+
+
+def test_a_decided_waiver_is_posted_as_a_waiver():
+    found = milestones(
+        matter(
+            is_waiver=True,
+            stage="Waiver application",
+            status="Assessment completed",
+            accc_determination="Approved",
+            phase_1_determination="Approved",
+            phase_1_determination_date="2026-09-05T12:00:00Z",
+        )
+    )
+    assert [m.key for m in found] == ["MN-01016:determined:2026-09-05"]
+    assert found[0].headline == "Notification waiver granted"
 
 
 def test_a_cleared_matter_carries_both_its_arrival_and_its_clearance():
