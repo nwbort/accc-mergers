@@ -13,6 +13,9 @@ turn a useful account into a firehose. A waiver application's arrival is not
 posted either: the ACCC only publishes a waiver once it has been determined,
 so the notification date arrives already spent.
 
+Every post ends with ``POST_HASHTAGS``, faceted so Bluesky's tag search can
+see them - it indexes tags from the facet, not from the ``#``.
+
 Two safeguards, because this is the only part of the pipeline that speaks to
 people rather than to files:
 
@@ -48,6 +51,10 @@ MAX_POST_CHARS = 300
 #: Posts per run. A day on the register rarely carries more; the cap is there
 #: so a re-scrape that rediscovers a batch of matters cannot flood a feed.
 DEFAULT_MAX_POSTS = 10
+
+#: Hashtags every post carries, in order. They cost characters the title
+#: would otherwise have, so keep the list short.
+POST_HASHTAGS = ("accc",)
 
 #: Cleared-vs-blocked wording, keyed by the register's own determination value
 #: and whether the matter is a waiver application.
@@ -171,7 +178,8 @@ def post_text(milestone: Milestone) -> str:
     any work - and so does the matter id, so the title is the one thing that
     gives if the 300-character budget is tight.
     """
-    tail = f"\n\n{milestone.detail}\n{milestone.url}"
+    tags = hashtag_line()
+    tail = f"\n\n{milestone.detail}\n{milestone.url}" + (f"\n\n{tags}" if tags else "")
     budget = MAX_POST_CHARS - len(tail) - len(milestone.headline) - len(": ")
     title = milestone.title
     if budget < 1:
@@ -182,19 +190,45 @@ def post_text(milestone: Milestone) -> str:
     return f"{milestone.headline}: {title}{tail}"
 
 
+def hashtag_line(tags: tuple[str, ...] | None = None) -> str:
+    """The trailing hashtag line, e.g. ``#accc #mergers``."""
+    tags = POST_HASHTAGS if tags is None else tags
+    return " ".join(f"#{tag}" for tag in tags)
+
+
 def link_facets(text: str, url: str) -> list[dict]:
     """A single link facet over ``url``, in UTF-8 byte offsets as the spec wants."""
     encoded = text.encode("utf-8")
-    needle = url.encode("utf-8")
-    start = encoded.find(needle)
+    start = encoded.find(url.encode("utf-8"))
     if start < 0:
         return []
-    return [
-        {
-            "index": {"byteStart": start, "byteEnd": start + len(needle)},
-            "features": [{"$type": "app.bsky.richtext.facet#link", "uri": url}],
-        }
-    ]
+    feature = {"$type": "app.bsky.richtext.facet#link", "uri": url}
+    return [_facet(start, url, feature)]
+
+
+def tag_facets(text: str, tags: tuple[str, ...] | None = None) -> list[dict]:
+    """One facet per hashtag, located as a line so a ``#`` in the title cannot
+    be mistaken for one. The byte range covers the ``#``; the feature does not.
+    """
+    tags = POST_HASHTAGS if tags is None else tags
+    line = hashtag_line(tags)
+    encoded = text.encode("utf-8")
+    start = encoded.rfind(line.encode("utf-8")) if line else -1
+    if start < 0:
+        return []
+
+    found = []
+    for tag in tags:
+        hashtag = f"#{tag}"
+        feature = {"$type": "app.bsky.richtext.facet#tag", "tag": tag}
+        found.append(_facet(start, hashtag, feature))
+        start += len(hashtag.encode("utf-8")) + 1
+    return found
+
+
+def facets(text: str, url: str) -> list[dict]:
+    """Every facet a post carries, in byte order as the spec wants."""
+    return link_facets(text, url) + tag_facets(text)
 
 
 def post_record(milestone: Milestone, *, created_at: str) -> dict:
@@ -206,9 +240,9 @@ def post_record(milestone: Milestone, *, created_at: str) -> dict:
         "createdAt": created_at,
         "langs": ["en-AU"],
     }
-    facets = link_facets(text, milestone.url)
-    if facets:
-        record["facets"] = facets
+    found = facets(text, milestone.url)
+    if found:
+        record["facets"] = found
 
     # An external embed gives the post a card without needing a blob upload,
     # which would mean fetching and re-encoding an image on every post.
@@ -329,6 +363,14 @@ def main(argv: list[str] | None = None) -> int:
     if failures:
         return 1
     return 0
+
+
+def _facet(start: int, span: str, feature: dict) -> dict:
+    """One facet over ``span``, measured in UTF-8 bytes rather than characters."""
+    return {
+        "index": {"byteStart": start, "byteEnd": start + len(span.encode("utf-8"))},
+        "features": [feature],
+    }
 
 
 def _detail(merger_id: str, phase, date: str | None) -> str:

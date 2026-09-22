@@ -230,6 +230,25 @@ publishes a waiver once it has been determined, so its notification date is
 never news — it would land seconds before the determination post, announcing
 something already over. Waivers are posted on their determination only.
 
+Each post is a headline, the matter name, then the matter id, its stage and the
+date, the link, and `#accc`:
+
+```
+Notification waiver granted: OceanaGold - Ausgold
+
+WA-95041 · Waiver application · 17 Sep 2026
+https://mergers.fyi/mergers/WA-95041
+
+#accc
+```
+
+The tags come from `POST_HASHTAGS` and are published as
+`app.bsky.richtext.facet#tag` facets alongside the link facet, not just as
+text — Bluesky indexes tags from the facet, so an unfaceted `#accc` would be
+invisible to the search it was added for. Adding a tag to that tuple is all
+there is to it, but each one costs characters the matter name would otherwise
+have.
+
 ```bash
 python -m scripts.atproto.post_bluesky --dry-run       # see what is due
 python -m scripts.atproto.post_bluesky [--max-posts N]

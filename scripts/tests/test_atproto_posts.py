@@ -10,6 +10,8 @@ import pytest
 from scripts.atproto import config, post_bluesky
 from scripts.atproto.post_bluesky import (
     MAX_POST_CHARS,
+    POST_HASHTAGS,
+    hashtag_line,
     link_facets,
     load_state,
     main,
@@ -18,6 +20,7 @@ from scripts.atproto.post_bluesky import (
     post_record,
     post_text,
     save_state,
+    tag_facets,
 )
 
 
@@ -168,7 +171,8 @@ def test_a_post_fits_the_limit_and_keeps_the_link_and_the_matter_id():
     text = post_text(milestone)
 
     assert len(text) <= MAX_POST_CHARS
-    assert text.endswith("https://mergers.fyi/mergers/MN-01016")
+    assert "https://mergers.fyi/mergers/MN-01016" in text
+    assert text.endswith(hashtag_line())
     assert "MN-01016 ·" in text
     assert "…" in text, "the title is what gives, and it should say so"
 
@@ -183,6 +187,62 @@ def test_the_link_facet_is_measured_in_utf8_bytes():
     start, end = facet["index"]["byteStart"], facet["index"]["byteEnd"]
     assert encoded[start:end].decode("utf-8") == milestone.url
     assert start != text.find(milestone.url), "byte and character offsets differ here"
+
+
+def test_every_post_carries_the_accc_hashtag():
+    assert "accc" in POST_HASHTAGS
+    assert post_text(milestones(matter())[0]).endswith(hashtag_line())
+
+
+def test_the_hashtags_are_faceted_so_bluesky_indexes_them_as_tags():
+    """An unfaceted hashtag is a run of characters and nothing else."""
+    milestone = milestones(matter(merger_name="Asahi – Warehouse"))[0]
+    text = post_text(milestone)
+    tags = ("accc", "auslaw")
+
+    spans = []
+    for tag, facet in zip(tags, tag_facets(text + f" #{tags[1]}", tags)):
+        start, end = facet["index"]["byteStart"], facet["index"]["byteEnd"]
+        spans.append((text + f" #{tags[1]}").encode("utf-8")[start:end].decode("utf-8"))
+        assert facet["features"][0] == {
+            "$type": "app.bsky.richtext.facet#tag",
+            "tag": tag,
+        }
+    assert spans == ["#accc", "#auslaw"]
+
+
+def test_a_hash_in_the_title_is_not_mistaken_for_the_hashtag():
+    """The tags are found as a line, so stray text cannot steal their offsets."""
+    text = post_text(milestones(matter(merger_name="#accc Holdings - Acme"))[0])
+    facet = tag_facets(text)[0]
+
+    assert facet["index"]["byteStart"] == text.encode("utf-8").rfind(b"#accc")
+
+
+def test_a_post_record_carries_the_link_and_the_tags_in_byte_order():
+    record = post_record(milestones(matter())[0], created_at="2026-09-22T00:00:00Z")
+    kinds = [facet["features"][0]["$type"] for facet in record["facets"]]
+
+    assert kinds == ["app.bsky.richtext.facet#link"] + [
+        "app.bsky.richtext.facet#tag"
+    ] * len(POST_HASHTAGS)
+    starts = [facet["index"]["byteStart"] for facet in record["facets"]]
+    assert starts == sorted(starts)
+
+
+def test_more_hashtags_leave_less_room_for_the_title(monkeypatch):
+    """Whatever the tag list, the post fits and the title is what gives."""
+    monkeypatch.setattr(post_bluesky, "POST_HASHTAGS", ("accc", "auslaw", "mergers"))
+    milestone = milestones(matter(merger_name="A " * 400))[0]
+    text = post_text(milestone)
+
+    assert len(text) <= MAX_POST_CHARS
+    assert text.endswith("#accc #auslaw #mergers")
+    assert [f["features"][0]["tag"] for f in tag_facets(text, post_bluesky.POST_HASHTAGS)] == [
+        "accc",
+        "auslaw",
+        "mergers",
+    ]
 
 
 def test_the_post_record_is_a_bluesky_post_with_a_link_card():
