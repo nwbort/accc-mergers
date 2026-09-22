@@ -3,12 +3,12 @@
   "total_waivers": 412,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 230,
-    "Under assessment": 26,
+    "Assessment completed": 231,
+    "Under assessment": 25,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 223,
+    "Approved": 224,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 19
   },
   "clearance_rate": {
-    "cleared": 228,
+    "cleared": 229,
     "not_cleared": 2,
-    "total": 230,
+    "total": 231,
     "rate": 0.991
   },
   "phase_duration": {
-    "average_days": 29.779661016949152,
-    "median_days": 26.0,
-    "average_business_days": 20.20762711864407,
-    "median_business_days": 18.0,
+    "average_days": 29.79746835443038,
+    "median_days": 26,
+    "average_business_days": 20.223628691983123,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
         "count": 49,
-        "percentage": 20.8
+        "percentage": 20.7
       },
       "day20": {
         "count": 173,
-        "percentage": 73.3
+        "percentage": 73.0
       },
       "day30": {
-        "count": 219,
+        "count": 220,
         "percentage": 92.8
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-60035",
+      "merger_name": "L'Or\u00e9al \u2013 Gucci Beauty Licence",
+      "determination": "Approved",
+      "determination_date": "2026-09-22T12:00:00Z",
+      "page_modified_datetime": "2026-09-22T12:51:59+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-05051",
       "merger_name": "Apax Funds \u2013 Remy & Geiser GmbH and Gerresheimer Primary Packaging Plastics GmbH",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-60042",
-      "merger_name": "Kirin \u2013 Jamieson Wellness",
-      "determination": "Not approved",
-      "determination_date": "2026-09-15T12:00:00Z",
-      "page_modified_datetime": "2026-09-15T17:16:01+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]
