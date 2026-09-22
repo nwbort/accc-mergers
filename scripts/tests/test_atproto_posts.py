@@ -10,6 +10,7 @@ import pytest
 from scripts.atproto import config, post_bluesky
 from scripts.atproto.post_bluesky import (
     MAX_POST_CHARS,
+    POST_HASHTAG,
     link_facets,
     load_state,
     main,
@@ -18,6 +19,7 @@ from scripts.atproto.post_bluesky import (
     post_record,
     post_text,
     save_state,
+    tag_facets,
 )
 
 
@@ -168,7 +170,8 @@ def test_a_post_fits_the_limit_and_keeps_the_link_and_the_matter_id():
     text = post_text(milestone)
 
     assert len(text) <= MAX_POST_CHARS
-    assert text.endswith("https://mergers.fyi/mergers/MN-01016")
+    assert "https://mergers.fyi/mergers/MN-01016" in text
+    assert text.endswith("#accc")
     assert "MN-01016 ·" in text
     assert "…" in text, "the title is what gives, and it should say so"
 
@@ -183,6 +186,37 @@ def test_the_link_facet_is_measured_in_utf8_bytes():
     start, end = facet["index"]["byteStart"], facet["index"]["byteEnd"]
     assert encoded[start:end].decode("utf-8") == milestone.url
     assert start != text.find(milestone.url), "byte and character offsets differ here"
+
+
+def test_every_post_carries_the_accc_hashtag():
+    text = post_text(milestones(matter())[0])
+    assert text.endswith(f"#{POST_HASHTAG}")
+    assert POST_HASHTAG == "accc"
+
+
+def test_the_hashtag_is_faceted_so_bluesky_indexes_it_as_a_tag():
+    """An unfaceted hashtag is eight characters of text and nothing else."""
+    milestone = milestones(matter(merger_name="Asahi – Warehouse"))[0]
+    text = post_text(milestone)
+    facet = tag_facets(text, POST_HASHTAG)[0]
+
+    encoded = text.encode("utf-8")
+    start, end = facet["index"]["byteStart"], facet["index"]["byteEnd"]
+    assert encoded[start:end].decode("utf-8") == "#accc"
+    assert facet["features"][0] == {
+        "$type": "app.bsky.richtext.facet#tag",
+        "tag": "accc",
+    }
+    assert start != text.find("#accc"), "byte and character offsets differ here"
+
+
+def test_a_post_record_carries_the_link_and_the_tag_in_byte_order():
+    record = post_record(milestones(matter())[0], created_at="2026-09-22T00:00:00Z")
+    kinds = [facet["features"][0]["$type"] for facet in record["facets"]]
+
+    assert kinds == ["app.bsky.richtext.facet#link", "app.bsky.richtext.facet#tag"]
+    starts = [facet["index"]["byteStart"] for facet in record["facets"]]
+    assert starts == sorted(starts)
 
 
 def test_the_post_record_is_a_bluesky_post_with_a_link_card():
