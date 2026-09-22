@@ -35,7 +35,7 @@ Build configuration is codified in the repo:
 - **`wrangler.toml`** — Pages project settings (name, output directory, compatibility date)
 - **`scripts/build.sh`** — Build script that compiles the frontend and copies PDFs into the output
 
-The build script runs `npm ci && npm run build`, then copies all PDFs from `data/raw/matters/` into `dist/mergers/`, preserving the folder structure (e.g., `dist/mergers/MN-40008/file.pdf`). Documents are served at `mergers.fyi/mergers/{id}/file.pdf`.
+The build script runs `npm ci && npm run build`, then writes the site's ATProto DID to `dist/.well-known/atproto-did` (only when one is configured — see [`atproto.md`](atproto.md)) and copies all PDFs from `data/raw/matters/` into `dist/mergers/`, preserving the folder structure (e.g., `dist/mergers/MN-40008/file.pdf`). Documents are served at `mergers.fyi/mergers/{id}/file.pdf`.
 
 ### Dashboard settings
 
@@ -58,6 +58,7 @@ Under **Settings → Build → Build watch paths**. Include paths:
 frontend/*
 functions/*
 data/raw/matters/*
+atproto/identity.json
 scripts/build.sh
 wrangler.toml
 ```
@@ -65,8 +66,10 @@ wrangler.toml
 Between them these cover everything that reaches the deployed output: the SPA
 and its committed JSON (`frontend/`), the Pages Function serving
 `/mergers/{matter}/*.pdf` (`functions/`), the PDFs `build.sh` copies into
-`dist/mergers/` (`data/raw/matters/`), and the two files that decide how the
-build itself runs.
+`dist/mergers/` (`data/raw/matters/`), the DID `build.sh` writes to
+`/.well-known/atproto-did` (`atproto/identity.json` — see
+[`atproto.md`](atproto.md)), and the two files that decide how the build
+itself runs.
 
 Two things to know before editing this list:
 

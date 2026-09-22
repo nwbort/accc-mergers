@@ -6,10 +6,13 @@ on:
   # them. fixtures/ is in here for the same reason it is there — slug-cases.json
   # and shard-cases.json are what stop scripts/slug.py and scripts/shard.py
   # drifting from their JS counterparts, so a change to either has to re-run the
-  # Python side too.
+  # Python side too. atproto/ is in here because the lexicon suite reads the
+  # schema files themselves — a lexicon whose id disagrees with its filename
+  # publishes happily and then resolves to nothing.
   pull_request:
     paths:
       - 'scripts/**'
+      - 'atproto/**'
       - 'fixtures/*.json'
       - '.github/workflows/test.yml'
   workflow_dispatch:

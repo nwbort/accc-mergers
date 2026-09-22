@@ -26,4 +26,9 @@ tests run without network or PDF tooling installed.
 | `test_static_data_filters.py` | `generate/static_data/filters.py`. |
 | `test_static_data_outputs.py` | Per-merger / list / stats writers in `generate/static_data/outputs/`. |
 | `test_utils.py` | `date_utils.py` and `normalization.py`. |
+| `test_atproto_lexicons.py` | The `fyi.mergers.*` schemas in `atproto/lexicons/`: filename/id agreement, the NSID authority, and that every `ref` resolves. |
+| `test_atproto_records.py` | `atproto/records.py` — the merger → `fyi.mergers.matter` mapping, including the date-not-timestamp rule and the content digest. |
+| `test_atproto_client.py` | `atproto/client.py` — the XRPC client's session, retries and rate-limit handling, against a fake transport. |
+| `test_atproto_publish.py` | Incremental publishing in `atproto/publish_matters.py`, and the credential gate in `atproto/connect.py`. |
+| `test_atproto_posts.py` | `atproto/post_bluesky.py` — which milestones are posted, the 300-character budget, and the seeding rule that stops a backfill. |
 | `test_commit_message_hook.py` | `.claude/hooks/check_commit_message.py` — which commit messages the Claude Code hook blocks. |
