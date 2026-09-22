@@ -229,6 +229,47 @@
         "completed_count": 1
       }
     },
+    "johns-lyng-steamatic-australia-pty-ltd": {
+      "id": "johns-lyng-steamatic-australia-pty-ltd",
+      "canonical_name": "Johns Lyng Steamatic Australia Pty Ltd",
+      "members": [
+        {
+          "name": "JOHNS LYNG STEAMATIC AUSTRALIA PTY LTD",
+          "identifier": "77 645 080 440",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-35044",
+            "merger_name": "Steamatic Australia \u2013 Steamatic Epsom franchisee",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-20T12:00:00Z",
+            "determination_date": "2026-09-22T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 33.0,
+        "median_days": 33,
+        "average_business_days": 23.0,
+        "median_business_days": 23,
+        "completed_count": 1
+      }
+    },
     "mclean-care-ltd": {
       "id": "mclean-care-ltd",
       "canonical_name": "Mclean Care Ltd",

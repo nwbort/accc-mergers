@@ -239,7 +239,7 @@
         "26": 4
       },
       "17": {
-        "23": 5,
+        "23": 6,
         "24": 2,
         "25": 8,
         "26": 2,
@@ -276,13 +276,13 @@
       "22": {
         "30": 2,
         "31": 1,
-        "32": 1,
+        "32": 2,
         "33": 1,
         "34": 1
       },
       "23": {
         "31": 1,
-        "33": 2
+        "33": 3
       },
       "24": {
         "36": 1,
@@ -291,17 +291,17 @@
     },
     "stats": {
       "average": 13.7,
-      "median": 14,
+      "median": 14.0,
       "min": 2,
       "max": 24,
-      "count": 413
+      "count": 416
     },
     "calendar_stats": {
-      "average": 20.0,
-      "median": 20,
+      "average": 20.1,
+      "median": 20.0,
       "min": 2,
       "max": 39,
-      "count": 413
+      "count": 416
     }
   },
   "monthly_volume": {
@@ -347,7 +347,7 @@
       67,
       61,
       72,
-      59,
+      62,
       1
     ]
   },
@@ -419,12 +419,12 @@
           "median_delta": 1
         },
         "waivers": {
-          "median": 18.0,
-          "average": 16.7,
+          "median": 18,
+          "average": 16.8,
           "p90": 21,
           "min": 6,
-          "max": 22,
-          "count": 66,
+          "max": 23,
+          "count": 69,
           "duration_histogram": {
             "6": 1,
             "7": 2,
@@ -436,12 +436,13 @@
             "14": 2,
             "15": 3,
             "16": 5,
-            "17": 5,
+            "17": 6,
             "18": 12,
             "19": 12,
             "20": 7,
             "21": 5,
-            "22": 2
+            "22": 3,
+            "23": 1
           },
           "median_delta": 4.0
         }
@@ -484,12 +485,12 @@
           "median_delta": 0
         },
         "waivers": {
-          "median": 16.0,
-          "average": 15.8,
+          "median": 16,
+          "average": 15.9,
           "p90": 21,
           "min": 6,
           "max": 23,
-          "count": 182,
+          "count": 185,
           "duration_histogram": {
             "6": 3,
             "7": 2,
@@ -502,13 +503,13 @@
             "14": 13,
             "15": 16,
             "16": 15,
-            "17": 12,
+            "17": 13,
             "18": 28,
             "19": 16,
             "20": 12,
             "21": 13,
-            "22": 3,
-            "23": 3
+            "22": 4,
+            "23": 4
           },
           "median_delta": 2.0
         }
@@ -524,12 +525,12 @@
         "count": 237
       },
       "waivers": {
-        "median": 14,
+        "median": 14.0,
         "average": 13.7,
         "p90": 20,
         "min": 2,
         "max": 24,
-        "count": 413
+        "count": 416
       }
     },
     "pre_notification": {
@@ -720,9 +721,9 @@
           "count": 71
         },
         {
-          "median": 18,
-          "average": 16.7,
-          "count": 43
+          "median": 18.0,
+          "average": 16.9,
+          "count": 46
         }
       ],
       "open_caseload": [
@@ -910,9 +911,9 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 509,
+      "count": 512,
       "outcome_mix": {
-        "Approved": 509
+        "Approved": 512
       },
       "median_phase_1_business_days": 17
     },

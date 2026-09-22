@@ -1,6 +1,6 @@
 {
   "total_mergers": 261,
-  "total_waivers": 413,
+  "total_waivers": 416,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 231,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 394,
+    "Approved": 397,
     "Not approved": 19
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.024213075060533,
-    "median_days": 20,
-    "average_business_days": 13.656174334140436,
-    "median_business_days": 14
+    "average_days": 20.091346153846153,
+    "median_days": 20.0,
+    "average_business_days": 13.70673076923077,
+    "median_business_days": 14.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 140
+      "count": 141
     },
     {
       "name": "Computer System Design and Related Services",
@@ -64,7 +64,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 70
+      "count": 71
     },
     {
       "name": "Software Publishing",
@@ -91,8 +91,8 @@
       "count": 20
     },
     {
-      "name": "Supermarket and Grocery Stores",
-      "count": 19
+      "name": "Scientific Research Services",
+      "count": 20
     }
   ],
   "recent_mergers": [
@@ -219,6 +219,39 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-35047",
+      "merger_name": "REST \u2013 Quinbrook III Partnership and Quinbrook III (AU) Co-Investment Trust",
+      "determination": "Approved",
+      "determination_date": "2026-09-22T12:00:00Z",
+      "page_modified_datetime": "2026-09-22T16:45:16+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-35044",
+      "merger_name": "Steamatic Australia \u2013 Steamatic Epsom franchisee",
+      "determination": "Approved",
+      "determination_date": "2026-09-22T12:00:00Z",
+      "page_modified_datetime": "2026-09-22T16:43:12+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-30039",
+      "merger_name": "Advent \u2013 NZCR Group Holdings",
+      "determination": "Approved",
+      "determination_date": "2026-09-22T12:00:00Z",
+      "page_modified_datetime": "2026-09-22T16:40:44+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-25050",
       "merger_name": "National Dental Care \u2013 business assets comprising the Integrated Dental Health clinic, Katoomba, NSW",
       "determination": "Approved",
@@ -312,39 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-17T12:00:00Z",
       "page_modified_datetime": "2026-09-17T17:16:34+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-10033",
-      "merger_name": "Australian Venue Co \u2013 assets of The Clock Hotel, Surry Hills and The Bank Hotel, Newtown, NSW",
-      "determination": "Approved",
-      "determination_date": "2026-09-17T12:00:00Z",
-      "page_modified_datetime": "2026-09-17T17:15:15+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-75053",
-      "merger_name": "Oakley Capital \u2013 Graphwise",
-      "determination": "Approved",
-      "determination_date": "2026-09-16T12:00:00Z",
-      "page_modified_datetime": "2026-09-16T19:07:48+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-80040",
-      "merger_name": "Sims \u2013 business assets of OneStop Metal Recycling in TAS",
-      "determination": "Not approved",
-      "determination_date": "2026-09-16T12:00:00Z",
-      "page_modified_datetime": "2026-09-16T17:35:31+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

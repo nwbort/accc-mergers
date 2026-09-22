@@ -1,6 +1,151 @@
 {
   "mergers": [
     {
+      "merger_id": "WA-75055",
+      "merger_name": "The Procter & Gamble Company - Thorne",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-27T12:00:00Z",
+      "determination_publication_date": "2026-09-07T12:00:00Z",
+      "end_of_determination_period": null,
+      "latest_event_date": "2026-09-07T12:00:00Z",
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "The Procter & Gamble Company"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Healthspan Topco, LLC (trading as Thorne)"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3720",
+          "name": "Pharmaceutical and Toiletry Goods Wholesaling"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-20037",
+      "merger_name": "Investissement Qu\u00e9bec, Fonds de solidarit\u00e9 des travailleurs et des travailleuses du Qu\u00e9bec and Placement Louis Bibeau Inc. \u2013 Australian Defence Apparel",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-29T12:00:00Z",
+      "determination_publication_date": "2026-09-08T12:00:00Z",
+      "end_of_determination_period": null,
+      "latest_event_date": "2026-09-08T12:00:00Z",
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "9571-9241 Qu\u00e9bec Inc."
+        }
+      ],
+      "targets": [
+        {
+          "name": "Logistik Unicorp Holdings Inc."
+        },
+        {
+          "name": "AUSTRALIAN DEFENCE APPAREL PTY LTD"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Fonds de solidarit\u00e9 des travailleurs et des travailleuses du Qu\u00e9bec (FTQ)"
+        },
+        {
+          "name": "Placement Louis Bibeau Inc"
+        },
+        {
+          "name": "Investissement Qu\u00e9bec"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1351",
+          "name": "Clothing Manufacturing"
+        },
+        {
+          "code": "4251",
+          "name": "Clothing Retailing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-30039",
+      "merger_name": "Advent \u2013 NZCR Group Holdings",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-30T12:00:00Z",
+      "determination_publication_date": "2026-09-22T12:00:00Z",
+      "end_of_determination_period": null,
+      "latest_event_date": "2026-09-22T12:00:00Z",
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Trident NZ BidCo Limited"
+        }
+      ],
+      "targets": [
+        {
+          "name": "NZCR Group Holdings Limited"
+        },
+        {
+          "name": "NZCR Nominee Limited"
+        },
+        {
+          "name": "Waterman NZCR LP"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "CMAX CLINICAL RESEARCH PTY LTD"
+        },
+        {
+          "name": "Advent International, L.P.",
+          "canonical": {
+            "name": "Advent International"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6411",
+          "name": "Financial Asset Broking Services"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "6910",
+          "name": "Scientific Research Services"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-35030",
       "merger_name": "MUFG Pension & Market Services - Grow Technology Services",
       "status": "Under assessment",

@@ -329,6 +329,47 @@
         "median_business_days": 12,
         "completed_count": 1
       }
+    },
+    "steamatic-restoration-and-recovery-pty-ltd": {
+      "id": "steamatic-restoration-and-recovery-pty-ltd",
+      "canonical_name": "Steamatic Restoration And Recovery Pty Ltd",
+      "members": [
+        {
+          "name": "STEAMATIC RESTORATION AND RECOVERY PTY LTD",
+          "identifier": "29 128 384 912",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "WA-35044",
+            "merger_name": "Steamatic Australia \u2013 Steamatic Epsom franchisee",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-20T12:00:00Z",
+            "determination_date": "2026-09-22T12:00:00Z"
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 33.0,
+        "median_days": 33,
+        "average_business_days": 23.0,
+        "median_business_days": 23,
+        "completed_count": 1
+      }
     }
   }
 }
