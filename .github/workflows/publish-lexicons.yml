@@ -1,0 +1,84 @@
+name: Publish ATProto Lexicons
+
+# Writes the two `com.atproto.lexicon.schema` records that make `fyi.mergers.*`
+# resolvable. See docs/atproto.md.
+#
+# This is deliberately its own workflow, which looks like the standalone
+# workflows this repo went out of its way to delete (detect-duplicates.yml and
+# friends, all now steps inside pipeline.yml). The difference is the trigger,
+# not the file. Those were *crons* on a fresh checkout, guessing when their
+# inputs had changed — and a detector's inputs only ever change when the
+# pipeline changes them, so every run was either early or late. A lexicon
+# changes only when a person edits a schema in atproto/lexicons/, which is a
+# push: a path-filtered push trigger knows exactly when that happened rather
+# than guessing. Folding it into pipeline.yml would instead re-read these two
+# records on every pipeline run — several times a day, thousands of times a
+# year — to learn that nothing had changed.
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'atproto/lexicons/**'
+      - '.github/workflows/publish-lexicons.yml'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (validate the schemas and print the DNS record, write nothing)'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-lexicons
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      # publish_lexicons reads two JSON files and speaks XRPC over HTTP — that
+      # is the whole dependency. scripts/requirements.txt would pull pdfplumber
+      # and lxml in to write two records.
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      # An absent secret is a skip everywhere else in this repo (a fork has
+      # none, and a data pipeline does not go red because it could not reach a
+      # social network), and publish_lexicons honours that itself: it prints the
+      # reason and exits 0. That is the right answer for a push. It is the wrong
+      # answer for a manual run, where somebody asked for the records to be
+      # written and would otherwise get a green tick for nothing happening — so
+      # a real dispatch checks first. A dry run needs no credentials at all.
+      - name: Require credentials on a manual run
+        if: github.event_name == 'workflow_dispatch' && !inputs.dry_run
+        env:
+          ATPROTO_APP_PASSWORD: ${{ secrets.ATPROTO_APP_PASSWORD }}
+        run: |
+          if [ -z "$ATPROTO_APP_PASSWORD" ]; then
+            echo "::error::ATPROTO_APP_PASSWORD is not set, so this run would publish nothing. Add the repository secret — see docs/atproto.md."
+            exit 1
+          fi
+
+      - name: Publish lexicons
+        env:
+          ATPROTO_APP_PASSWORD: ${{ secrets.ATPROTO_APP_PASSWORD }}
+          ATPROTO_IDENTIFIER: ${{ vars.ATPROTO_IDENTIFIER }}
+          # Empty on a push, where the inputs context does not exist.
+          ARGS: ${{ inputs.dry_run && '--dry-run' || '' }}
+        run: python -m scripts.atproto.publish_lexicons $ARGS

@@ -169,6 +169,11 @@ Two conventions worth knowing before reading a record:
 
 ### Publishing the schemas
 
+`publish-lexicons.yml` does this automatically on any push to `main` that
+touches `atproto/lexicons/**`, which is the point: a schema edit cannot be
+merged and then forgotten. The same workflow can be dispatched by hand, with a
+`dry_run` input, for the first publish or a re-run. Locally:
+
 ```bash
 python -m scripts.atproto.publish_lexicons --dry-run   # validate, print the DNS record
 python -m scripts.atproto.publish_lexicons             # write them to the repo
@@ -269,9 +274,24 @@ into a stranger's repo — is not one worth discovering afterwards.
 
 ## Where it runs
 
-`pipeline.yml`, right after the static data is generated and before the commit,
-so the two state files land in the same commit as the data they describe. Both
-steps skip in a fork or a PR run, where no secret exists.
+The matters and the posts run in `pipeline.yml`, right after the static data is
+generated and before the commit, so the two state files land in the same commit
+as the data they describe. Both steps skip in a fork or a PR run, where no
+secret exists.
+
+The lexicons have their own workflow, `publish-lexicons.yml`, triggered by a
+push to `main` touching `atproto/lexicons/**` (or the workflow file) and by
+`workflow_dispatch`, which takes a `dry_run` input. They are on a different
+clock from the data: a schema moves only when a person edits one, so a
+path-filtered push fires exactly then, where the pipeline would re-read both
+records several times a day to learn that nothing had changed. It installs only
+`requests`, since `publish_lexicons` reaches nothing else.
+
+A missing `ATPROTO_APP_PASSWORD` behaves differently in the two cases, on
+purpose. On a push it is a skip, like everywhere else in this repo — a fork has
+no secrets and absent credentials never turn a run red. On a manual run it is an
+error: somebody asked for the records to be written, and a green tick for
+nothing happening is the wrong report.
 
 ## Trying it out without touching production
 
