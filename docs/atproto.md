@@ -61,7 +61,8 @@ Four things that are not obvious from the signup flow:
   `mergers.fyi` afterwards. It cannot happen the other way round: verifying the
   domain requires the site to already serve the DID of an account that exists.
   So the order is sign up → take the DID → commit it → deploy → then change the
-  handle.
+  handle. Nothing else waits on that last step: the publishers log in by DID,
+  so records and posts work before the handle switch as well as after.
 - **The DID is permanent; the handle is not.** Changing the handle later breaks
   no `at://` URI, because every record is addressed by DID. That is why
   `identity.json` carries the DID and the handle is only a convenience.
@@ -254,7 +255,7 @@ committed copy that the publishers, the build and this document all read.
 | Name | Where | Purpose |
 | --- | --- | --- |
 | `ATPROTO_APP_PASSWORD` | Repo secret | App password for the account. **Not** the account password — create one under Settings → Privacy and security → App passwords. |
-| `ATPROTO_IDENTIFIER` | Repo variable (optional) | Login handle, if it differs from the handle in `identity.json`. |
+| `ATPROTO_IDENTIFIER` | Repo variable (optional) | Login identifier. Defaults to the DID in `identity.json`, which is always correct; only needed to point a run at a different account. |
 | `ATPROTO_POST_ENABLED` | Repo variable | `true` switches Bluesky posting on. |
 | `ATPROTO_DID` / `ATPROTO_SERVICE` | Env (optional) | Override the identity file — how the publishers get exercised against a throwaway account before the real one exists. |
 

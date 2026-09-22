@@ -184,6 +184,31 @@ def test_no_credentials_is_a_skip_not_a_failure(monkeypatch, state_file):
     assert main([]) == 0
 
 
+# -- credentials ------------------------------------------------------------
+
+
+def test_no_password_means_no_credentials(monkeypatch):
+    monkeypatch.delenv("ATPROTO_APP_PASSWORD", raising=False)
+    assert config.load_credentials() is None
+
+
+def test_login_defaults_to_the_did_not_the_intended_handle(monkeypatch):
+    """During setup the account does not yet hold the handle in identity.json."""
+    monkeypatch.setenv("ATPROTO_APP_PASSWORD", "pw")
+    monkeypatch.setenv("ATPROTO_DID", "did:plc:example")
+    monkeypatch.delenv("ATPROTO_IDENTIFIER", raising=False)
+
+    assert config.load_credentials().identifier == "did:plc:example"
+
+
+def test_an_explicit_identifier_overrides_the_did(monkeypatch):
+    monkeypatch.setenv("ATPROTO_APP_PASSWORD", "pw")
+    monkeypatch.setenv("ATPROTO_DID", "did:plc:example")
+    monkeypatch.setenv("ATPROTO_IDENTIFIER", "mergers-fyi.bsky.social")
+
+    assert config.load_credentials().identifier == "mergers-fyi.bsky.social"
+
+
 # -- the connect gate -------------------------------------------------------
 
 

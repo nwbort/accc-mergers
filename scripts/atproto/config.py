@@ -113,16 +113,22 @@ def load_identity(path: Path | None = None) -> Identity:
 def load_credentials() -> Credentials | None:
     """Return the app-password login, or ``None`` when it is not configured.
 
-    ``ATPROTO_IDENTIFIER`` defaults to the handle in the identity file, so the
-    only secret a deployment has to set is the password itself.
+    The identifier defaults to the **DID**, not the handle, so the only secret
+    a deployment has to set is the password itself. ``createSession`` takes
+    either, and the DID is the one that is always true: the handle in this file
+    is the one the site intends to use, which during setup is a handle the
+    account has not been given yet, and after a migration may briefly be one it
+    no longer holds. ``ATPROTO_IDENTIFIER`` overrides both.
     """
     password = os.environ.get("ATPROTO_APP_PASSWORD", "").strip()
     if not password:
         return None
 
+    identity = load_identity()
     identifier = (
         os.environ.get("ATPROTO_IDENTIFIER", "").strip()
-        or load_identity().handle
+        or identity.did
+        or identity.handle
     )
     if not identifier:
         return None
