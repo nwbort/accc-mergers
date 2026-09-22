@@ -24,6 +24,67 @@ social network.
 | Lexicons + matter records | Publishes the register as `fyi.mergers.matter` records | An account, an app password, one DNS record |
 | Bluesky posts | Posts milestones to a feed | The above, plus an explicit switch |
 
+All three hang off one account, so start there.
+
+---
+
+## The account
+
+All three pieces write into, or point at, one **account** — which in AT
+Protocol terms is a *repo*: a signed collection of typed JSON records. Concretely,
+you create one by signing up for a Bluesky account. There is no separate
+"ATProto account" to make: the signup provisions the repo, hands you a
+`did:plc:…` identifier, and that DID is what goes in `atproto/identity.json`.
+
+A repo is not partitioned by application. One account holds ordinary Bluesky
+posts and this site's `fyi.mergers.matter` records side by side, which is why
+the Bluesky posting and the data publishing here need one account between them
+rather than one each. `standard.site`'s repo is a good look at what that ends
+up like in practice:
+
+```console
+$ curl -sS "https://bsky.social/xrpc/com.atproto.repo.describeRepo?repo=standard.site"
+...
+  app.bsky.feed.post              # ordinary Bluesky posts
+  com.atproto.lexicon.schema      # the lexicons it publishes
+  site.standard.document          # its own records
+  sh.tangled.repo                 # a third-party app's records
+```
+
+Four things that are not obvious from the signup flow:
+
+- **Use a new, dedicated account, not a personal one.** The app password sitting
+  in CI can write anything into whatever repo it opens. Scoping that to an
+  account whose only job is the site is what keeps a bug from writing 673
+  records into your own repo.
+- **You will sign up with a `.bsky.social` handle first**, and switch to
+  `mergers.fyi` afterwards. It cannot happen the other way round: verifying the
+  domain requires the site to already serve the DID of an account that exists.
+  So the order is sign up → take the DID → commit it → deploy → then change the
+  handle.
+- **The DID is permanent; the handle is not.** Changing the handle later breaks
+  no `at://` URI, because every record is addressed by DID. That is why
+  `identity.json` carries the DID and the handle is only a convenience.
+- **The app password is not the login password.** Bluesky: Settings → Privacy
+  and security → App passwords. One can write records and post, but cannot
+  change the handle or delete the account, which is the right blast radius for
+  something living in CI.
+
+Finding the DID of an account you have just made:
+
+```console
+$ curl -sS "https://bsky.social/xrpc/com.atproto.repo.describeRepo?repo=<your>.bsky.social"
+{"handle": "...", "did": "did:plc:xxxxxxxxxxxxxxxxxxxxxxxx", ...}
+```
+
+### Not using bsky.social
+
+Nothing here assumes it. `service` in `atproto/identity.json` points at
+whichever PDS holds the repo, and `login()` follows the account's DID document
+to the real PDS regardless — so a self-hosted PDS (where `did:web` and full
+independence live) works the same, and migrating to one later is a supported
+path rather than a rewrite.
+
 ---
 
 ## 1. The handle
@@ -49,13 +110,14 @@ file.
 
 ### Setting it up
 
-1. Create the account (on `bsky.social` or any PDS) and find its DID —
-   Bluesky shows it under Settings → Account, or fetch
-   `https://bsky.social/xrpc/com.atproto.repo.describeRepo?repo=<handle>`.
-2. Put it in `atproto/identity.json` and merge. The next Pages deploy serves
-   `/.well-known/atproto-did`.
+1. Create the account and take its DID — see [The account](#the-account)
+   above, which is also where the reasons for doing it in this order are.
+2. Put the DID in `atproto/identity.json` and merge. The next Pages deploy
+   serves `/.well-known/atproto-did`.
 3. In the Bluesky app: Settings → Handle → *I have my own domain* → enter
-   `mergers.fyi` → verify.
+   `mergers.fyi` → verify. The old `.bsky.social` handle stays reserved to the
+   account rather than being freed for anyone else (Bluesky changed that in
+   December 2024), and existing mentions of it keep resolving.
 
 **If verification fails on the content type**, the DNS method is the
 documented alternative and does not involve this repo at all: a TXT record at
