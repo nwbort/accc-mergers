@@ -379,69 +379,64 @@ function MergerDetail() {
             <MergerTimeline merger={merger} />
           </div>
 
-          {/* Stage & determination */}
-          <div className={`grid grid-cols-1 ${
-            showDeterminationField && merger.appeal
-              ? 'md:grid-cols-3'
-              : (showDeterminationField || merger.appeal)
-                ? 'md:grid-cols-2'
-                : 'md:grid-cols-1'
-          } gap-6 mt-6 pt-6 border-t border-gray-100`}>
-            <div>
-              <h2 className={`${SECTION_HEADING} mb-1.5`}>Stage</h2>
-              <p className="text-sm font-medium text-gray-900">{merger.stage || 'N/A'}</p>
-            </div>
-            {showDeterminationField && (
-              <div>
-                <h2 className={`${SECTION_HEADING} mb-1.5`}>
-                  Determination
-                </h2>
-                <p className="text-sm font-medium text-gray-900">
-                  {determinationDocUrl ? (
-                    <a
-                      href={determinationDocUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-primary hover:text-primary-dark transition-colors"
-                      aria-label={`View determination document: ${merger.accc_determination} (opens in new tab)`}
-                    >
-                      {merger.accc_determination}
-                      <ExternalLinkIcon />
-                    </a>
-                  ) : (
-                    merger.accc_determination
-                  )}
-                </p>
-              </div>
-            )}
-            {merger.appeal && (
-              <div>
-                <h2 className={`${SECTION_HEADING} mb-1.5`}>
-                  Tribunal appeal
-                </h2>
-                <p className="text-sm font-medium text-gray-900">
-                  {merger.appeal.tribunal_url ? (
-                    <a
-                      href={merger.appeal.tribunal_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-primary hover:text-primary-dark transition-colors"
-                      aria-label={`View this matter on the Australian Competition Tribunal website${merger.appeal.tribunal_number ? ` (${merger.appeal.tribunal_number})` : ''}`}
-                    >
-                      {merger.appeal.status === APPEAL_STATUS.CONCLUDED
+          {/* Determination & appeal. The stage that used to lead this row
+              now rides on the status line above the title. */}
+          {(showDeterminationField || merger.appeal) && (
+            <div className={`grid grid-cols-1 ${
+              showDeterminationField && merger.appeal ? 'md:grid-cols-2' : 'md:grid-cols-1'
+            } gap-6 mt-6 pt-6 border-t border-gray-100`}>
+              {showDeterminationField && (
+                <div>
+                  <h2 className={`${SECTION_HEADING} mb-1.5`}>
+                    Determination
+                  </h2>
+                  <p className="text-sm font-medium text-gray-900">
+                    {determinationDocUrl ? (
+                      <a
+                        href={determinationDocUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-primary hover:text-primary-dark transition-colors"
+                        aria-label={`View determination document: ${merger.accc_determination} (opens in new tab)`}
+                      >
+                        {merger.accc_determination}
+                        <ExternalLinkIcon />
+                      </a>
+                    ) : (
+                      merger.accc_determination
+                    )}
+                  </p>
+                </div>
+              )}
+              {merger.appeal && (
+                <div>
+                  <h2 className={`${SECTION_HEADING} mb-1.5`}>
+                    Tribunal appeal
+                  </h2>
+                  <p className="text-sm font-medium text-gray-900">
+                    {merger.appeal.tribunal_url ? (
+                      <a
+                        href={merger.appeal.tribunal_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-primary hover:text-primary-dark transition-colors"
+                        aria-label={`View this matter on the Australian Competition Tribunal website${merger.appeal.tribunal_number ? ` (${merger.appeal.tribunal_number})` : ''}`}
+                      >
+                        {merger.appeal.status === APPEAL_STATUS.CONCLUDED
+                          ? (APPEAL_OUTCOME_LABELS[merger.appeal.outcome] || 'Concluded')
+                          : 'Ongoing'}
+                        <ExternalLinkIcon />
+                      </a>
+                    ) : (
+                      merger.appeal.status === APPEAL_STATUS.CONCLUDED
                         ? (APPEAL_OUTCOME_LABELS[merger.appeal.outcome] || 'Concluded')
-                        : 'Ongoing'}
-                      <ExternalLinkIcon />
-                    </a>
-                  ) : (
-                    merger.appeal.status === APPEAL_STATUS.CONCLUDED
-                      ? (APPEAL_OUTCOME_LABELS[merger.appeal.outcome] || 'Concluded')
-                      : 'Ongoing'
-                  )}
-                </p>
-              </div>
-            )}
-          </div>
+                        : 'Ongoing'
+                    )}
+                  </p>
+                </div>
+              )}
+            </div>
+          )}
         </div>
 
         {/* Estimated start of pre-notification (inferred, mandatory-regime

@@ -188,3 +188,42 @@ describe('MergerOutcomeHeading', () => {
     expect(screen.getByText('Under assessment')).toBeInTheDocument();
   });
 });
+
+describe('MergerOutcomeHeading stage', () => {
+  it('puts the short phase beside the outcome', () => {
+    render(<MergerOutcomeHeading merger={completed} />);
+    expect(screen.getByText('Phase 1')).toBeInTheDocument();
+    expect(screen.queryByText(/initial assessment/)).not.toBeInTheDocument();
+  });
+
+  it('puts the phase beside a live status', () => {
+    render(
+      <MergerOutcomeHeading
+        merger={{ status: 'Under assessment', accc_determination: null, stage: 'Phase 2 - detailed assessment' }}
+      />
+    );
+    expect(screen.getByText('Phase 2')).toBeInTheDocument();
+  });
+
+  it('leaves the stage off a waiver, whose chip already says so', () => {
+    render(
+      <MergerOutcomeHeading
+        merger={{ ...completed, is_waiver: true, stage: 'Waiver application' }}
+      />
+    );
+    expect(screen.queryByText('Waiver application')).not.toBeInTheDocument();
+  });
+
+  it('does not repeat a phase the status already names', () => {
+    render(
+      <MergerOutcomeHeading
+        merger={{
+          status: 'Under assessment',
+          accc_determination: 'Referred to phase 2',
+          stage: 'Phase 2 - detailed assessment',
+        }}
+      />
+    );
+    expect(screen.queryByText('Phase 2')).not.toBeInTheDocument();
+  });
+});
