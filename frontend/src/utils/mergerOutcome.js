@@ -76,16 +76,13 @@ export function getHeaderStatus(merger) {
 }
 
 /**
- * How the public benefit phase qualifies a matter's standing, or null.
+ * How the public benefit phase qualifies a decided matter's outcome, or null.
  *
- * While a public benefit application runs the matter is live again (the
- * pipeline clears its headline determination and reads it as under
- * assessment), so the status alone would not say why a matter with a Phase 2
- * determination is being assessed. Once decided, the outcome is one reached on
- * public benefit grounds, not the competition test.
+ * Once decided, the outcome is one reached on public benefit grounds, not the
+ * competition test. While the application runs the status line says only
+ * "Under assessment", like any live matter — the stage field says which phase.
  */
 export function getPublicBenefitQualifier(merger) {
-  if (merger?.public_benefit_in_progress) return 'public benefit phase';
   if (merger?.public_benefits_determination) return 'after public benefit review';
   return null;
 }

@@ -45,9 +45,7 @@ function MergerOutcomeHeading({ merger }) {
   // "Approved with conditions" is the outcome's own name (see
   // MERGER_STATUS.APPROVED_WITH_CONDITIONS); a concluded appeal's result takes
   // a dot, since "Not approved confirmed on appeal" would read as one phrase.
-  // The public benefit phase qualifies the standing the same way: a matter
-  // back under assessment after a Phase 2 determination says which assessment
-  // it is under, and an outcome reached there says so.
+  // An outcome reached in the public benefit phase says so, the same way.
   const publicBenefit = getPublicBenefitQualifier(merger);
   const outcome =
     `${label}${showConditions ? ' with conditions' : ''}${publicBenefit ? ` · ${publicBenefit}` : ''}${appealSuffix ? ` · ${appealSuffix}` : ''}`;

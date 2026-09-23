@@ -173,7 +173,7 @@ describe('MergerOutcomeHeading', () => {
     expect(screen.queryByText('Waiver')).not.toBeInTheDocument();
   });
 
-  it('says a live matter is in the public benefit phase', () => {
+  it('states a live public benefit matter as plainly under assessment', () => {
     render(
       <MergerOutcomeHeading
         merger={{
@@ -185,6 +185,6 @@ describe('MergerOutcomeHeading', () => {
         }}
       />
     );
-    expect(screen.getByText('Under assessment · public benefit phase')).toBeInTheDocument();
+    expect(screen.getByText('Under assessment')).toBeInTheDocument();
   });
 });

@@ -74,9 +74,10 @@ const DEFAULT_EVENT_TYPE = {
 const getEventType = (type) => EVENT_TYPES[type] || DEFAULT_EVENT_TYPE;
 
 // Within a single calendar day, surface the most consequential deadlines
-// first: a tribunal hearing outranks a determination, which ranks above
-// concerns notices, which rank above consultations; Phase 2 outranks Phase 1;
-// ties fall back to the merger name so the order is stable.
+// first: the later the phase the higher it ranks (public benefit, then Phase
+// 2, then Phase 1); within a phase a tribunal hearing outranks a
+// determination, which ranks above concerns notices, which rank above
+// consultations; ties fall back to the merger name so the order is stable.
 const EVENT_TYPE_ORDER = {
   tribunal_hearing: 0,
   determination_due: 1,
@@ -94,12 +95,12 @@ const phaseRank = (stage) => {
 };
 
 function compareWithinDay(a, b) {
+  const phaseDelta = phaseRank(a.stage) - phaseRank(b.stage);
+  if (phaseDelta !== 0) return phaseDelta;
+
   const typeDelta =
     (EVENT_TYPE_ORDER[a.type] ?? 99) - (EVENT_TYPE_ORDER[b.type] ?? 99);
   if (typeDelta !== 0) return typeDelta;
-
-  const phaseDelta = phaseRank(a.stage) - phaseRank(b.stage);
-  if (phaseDelta !== 0) return phaseDelta;
 
   return a.merger_name.localeCompare(b.merger_name);
 }
@@ -129,8 +130,8 @@ const LATER_URGENCY = { dot: 'bg-primary', text: 'text-gray-900' };
 const LATER_KEY = 'later';
 
 // Split a day's already-sorted events into runs of consecutive same-type
-// events. compareWithinDay sorts by type first, so each type appears in at
-// most one run per day.
+// events. compareWithinDay sorts by phase and then type, so a type can appear
+// in more than one run on a day only when another type sits between them.
 function groupByType(events) {
   const groups = [];
   events.forEach((event) => {

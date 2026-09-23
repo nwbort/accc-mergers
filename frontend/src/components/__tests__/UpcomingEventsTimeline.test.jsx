@@ -78,7 +78,7 @@ describe('UpcomingEventsTimeline', () => {
     expect(screen.getByText('Gamma – Delta')).toBeInTheDocument();
   });
 
-  it('orders events within a day: determinations first, Phase 2 above Phase 1, then name', () => {
+  it('orders events within a day: later phase first, then determinations, then name', () => {
     renderTimeline([
       makeEvent({
         date: '2026-06-30T12:00:00Z',
@@ -126,6 +126,37 @@ describe('UpcomingEventsTimeline', () => {
       // …and consultations last.
       'Zeta – Consultation P1',
     ]);
+  });
+
+  it('ranks the public benefit phase above Phase 2 and Phase 2 above Phase 1, whatever the type', () => {
+    renderTimeline([
+      makeEvent({
+        merger_id: 'MN-1',
+        merger_name: 'Alpha – Determination P1',
+        type: 'determination_due',
+        stage: 'Phase 1 - initial assessment',
+      }),
+      makeEvent({
+        merger_id: 'MN-2',
+        merger_name: 'Beta – Consultation P2',
+        type: 'consultation_due',
+        stage: 'Phase 2 - detailed assessment',
+      }),
+      makeEvent({
+        merger_id: 'MN-3',
+        merger_name: 'Gamma – Assessment PB',
+        type: 'public_benefit_assessment',
+        stage: 'Public benefit phase',
+      }),
+    ]);
+
+    const names = screen.getAllByRole('link').map((link) => within(link).getByText(/–/).textContent);
+    expect(names).toEqual([
+      'Gamma – Assessment PB',
+      'Beta – Consultation P2',
+      'Alpha – Determination P1',
+    ]);
+    expect(screen.getByText('Public benefit assessment')).toBeInTheDocument();
   });
 
   it('labels by calendar day, not elapsed 24-hour periods', () => {

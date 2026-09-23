@@ -37,8 +37,8 @@ describe('isPublicBenefitStage', () => {
 });
 
 describe('getPublicBenefitQualifier', () => {
-  it('says which assessment a live matter is under', () => {
-    expect(getPublicBenefitQualifier(applied)).toBe('public benefit phase');
+  it('adds nothing while the application runs', () => {
+    expect(getPublicBenefitQualifier(applied)).toBeNull();
   });
 
   it('says how a decided one was decided', () => {
