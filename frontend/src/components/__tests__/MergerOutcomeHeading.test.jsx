@@ -227,3 +227,14 @@ describe('MergerOutcomeHeading stage', () => {
     expect(screen.queryByText('Phase 2')).not.toBeInTheDocument();
   });
 });
+
+describe('MergerOutcomeHeading public benefit stage', () => {
+  it('reads the running public benefit phase as "Public benefits"', () => {
+    render(
+      <MergerOutcomeHeading
+        merger={{ status: 'Under assessment', accc_determination: null, stage: 'Public benefit phase' }}
+      />
+    );
+    expect(screen.getByText('Public benefits')).toBeInTheDocument();
+  });
+});
