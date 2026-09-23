@@ -401,3 +401,61 @@ def test_state_written_before_the_fix_still_counts_as_posted():
         "MN-1", accc_determination="Not approved", determination_publication_date="2026-09-23T12:00:00Z"
     )
     assert [m.key for m in pending([decided], state)] == ["MN-1:notified:2026-08-15"]
+
+
+def test_a_referral_and_the_phase_2_decision_after_it_are_both_posted(
+    monkeypatch, state_file, fake_client
+):
+    """Once per kind, not once per matter: the referral must not swallow the
+    decision it leads to, nor the decision the public benefit steps after it."""
+    use_matters(monkeypatch, [matter("MN-1")])
+    monkeypatch.setenv("ATPROTO_POST_ENABLED", "true")
+    main([])
+
+    referred = dict(
+        stage="Phase 2 - detailed assessment",
+        phase_1_determination="Referred to phase 2",
+        phase_1_determination_date="2026-04-16T12:00:00Z",
+    )
+    use_matters(monkeypatch, [matter("MN-1", accc_determination="Referred to phase 2", **referred)])
+    main([])
+
+    # Decided before the register carries a date: nothing yet.
+    decided = dict(referred, status="Assessment completed", accc_determination="Not approved")
+    use_matters(monkeypatch, [matter("MN-1", **decided)])
+    main([])
+
+    decided.update(
+        phase_2_determination="Not approved",
+        phase_2_determination_date="2026-09-22T12:00:00Z",
+    )
+    use_matters(monkeypatch, [matter("MN-1", **decided)])
+    main([])
+
+    public_benefit = dict(
+        decided,
+        stage="Public benefit phase",
+        status="Under assessment",
+        accc_determination=None,
+        public_benefit_in_progress=True,
+        public_benefit_application_date="2026-10-01T12:00:00Z",
+    )
+    use_matters(monkeypatch, [matter("MN-1", **public_benefit)])
+    main([])
+
+    public_benefit.update(
+        public_benefits_determination="Approved",
+        public_benefits_determination_date="2026-12-10T12:00:00Z",
+        public_benefit_in_progress=False,
+    )
+    use_matters(monkeypatch, [matter("MN-1", **public_benefit)])
+    main([])
+    main([])
+
+    assert [post["text"].split(":")[0] for post in fake_client.posts] == [
+        "Referred to Phase 2",
+        "Not approved by the ACCC",
+        "Public benefit determination sought",
+        "Cleared by the ACCC on public benefit grounds",
+    ]
+    assert "22 Sep 2026" in fake_client.posts[1]["text"]
