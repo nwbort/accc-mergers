@@ -269,6 +269,17 @@ people rather than to files:
 batch of matters cannot flood a feed; the overflow goes out next run, oldest
 first.
 
+Each kind of milestone is posted **once per matter**, whatever its date. The
+state file keys posts as `MN-65005:determined:2026-09-22`, but the date is only
+a record: the register re-dates things after the fact, and matching on it
+announced MN-65005's refusal three times (under the referral date while the
+Phase 2 date was still blank, then under each of two determination dates).
+
+A determination is posted as soon as the register says the matter is decided,
+even before it carries a determination date. The date then comes from the
+determination document on the matter's timeline, and failing that the post goes
+out undated (keyed `…:determined:undated`) rather than waiting a run for one.
+
 ---
 
 ## Configuration

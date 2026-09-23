@@ -140,6 +140,38 @@ def test_a_referral_is_posted_once_as_a_referral_not_twice_as_a_determination():
     assert [m.headline for m in found] == ["Notified to the ACCC", "Referred to Phase 2"]
 
 
+def test_a_phase_2_decision_is_not_dated_on_the_day_it_was_referred():
+    """MN-65005: the register said "Not approved" before it carried a Phase 2
+    date, and the referral's date stood in for it."""
+    found = milestones(
+        matter(
+            stage="Phase 2 - detailed assessment",
+            status="Assessment completed",
+            accc_determination="Not approved",
+            phase_1_determination="Referred to phase 2",
+            phase_1_determination_date="2026-04-16T12:00:00Z",
+        )
+    )
+    assert found[-1].headline == "Not approved by the ACCC"
+    assert found[-1].key == "MN-01016:determined:undated"
+    assert "Apr" not in post_text(found[-1])
+
+    found = milestones(
+        matter(
+            stage="Phase 2 - detailed assessment",
+            status="Assessment completed",
+            accc_determination="Not approved",
+            events=[
+                {"date": "2026-04-16T12:00:00Z", "title": "IAG-RACI - Phase 1 determination"},
+                {"date": "2026-09-22T12:00:00Z", "title": "IAG-RACI - Phase 2 determination"},
+            ],
+            phase_1_determination="Referred to phase 2",
+            phase_1_determination_date="2026-04-16T12:00:00Z",
+        )
+    )
+    assert found[-1].key == "MN-01016:determined:2026-09-22"
+
+
 def test_both_review_forums_get_their_own_milestone():
     found = milestones(
         matter(
@@ -349,3 +381,93 @@ def test_dry_run_needs_neither_the_switch_nor_credentials(monkeypatch, state_fil
 def test_state_survives_a_round_trip(state_file):
     save_state({"posted": {"MN-1:notified:2026-08-15": {"uri": "at://x"}}})
     assert load_state()["posted"]["MN-1:notified:2026-08-15"]["uri"] == "at://x"
+
+
+def test_a_re_dated_milestone_is_not_posted_again(monkeypatch, state_file, fake_client):
+    """MN-65005 was announced as not approved three times, once per date the
+    register gave its determination."""
+    decided = dict(accc_determination="Not approved", status="Assessment completed")
+    use_matters(monkeypatch, [matter("MN-1")])
+    monkeypatch.setenv("ATPROTO_POST_ENABLED", "true")
+    main([])
+
+    use_matters(monkeypatch, [matter("MN-1", determination_publication_date="2026-09-22T12:00:00Z", **decided)])
+    main([])
+    assert len(fake_client.posts) == 1
+
+    use_matters(monkeypatch, [matter("MN-1", determination_publication_date="2026-09-23T12:00:00Z", **decided)])
+    assert main([]) == 0
+    assert len(fake_client.posts) == 1
+
+
+def test_state_written_before_the_fix_still_counts_as_posted():
+    state = {"posted": {"MN-1:determined:2026-04-16": {"uri": "at://x"}}}
+    decided = matter(
+        "MN-1", accc_determination="Not approved", determination_publication_date="2026-09-23T12:00:00Z"
+    )
+    assert [m.key for m in pending([decided], state)] == ["MN-1:notified:2026-08-15"]
+
+
+def test_a_referral_and_the_phase_2_decision_after_it_are_both_posted(
+    monkeypatch, state_file, fake_client
+):
+    """Once per kind, not once per matter: the referral must not swallow the
+    decision it leads to, nor the decision the public benefit steps after it."""
+    use_matters(monkeypatch, [matter("MN-1")])
+    monkeypatch.setenv("ATPROTO_POST_ENABLED", "true")
+    main([])
+
+    referred = dict(
+        stage="Phase 2 - detailed assessment",
+        phase_1_determination="Referred to phase 2",
+        phase_1_determination_date="2026-04-16T12:00:00Z",
+    )
+    use_matters(monkeypatch, [matter("MN-1", accc_determination="Referred to phase 2", **referred)])
+    main([])
+
+    # Decided before the register carries a date: posted now, dated from the
+    # determination document on the timeline, and not again once it has one.
+    decided = dict(
+        referred,
+        status="Assessment completed",
+        accc_determination="Not approved",
+        events=[{"date": "2026-09-22T12:00:00Z", "title": "Phase 2 determination"}],
+    )
+    use_matters(monkeypatch, [matter("MN-1", **decided)])
+    main([])
+    assert len(fake_client.posts) == 2
+
+    decided.update(
+        phase_2_determination="Not approved",
+        phase_2_determination_date="2026-09-22T12:00:00Z",
+    )
+    use_matters(monkeypatch, [matter("MN-1", **decided)])
+    main([])
+
+    public_benefit = dict(
+        decided,
+        stage="Public benefit phase",
+        status="Under assessment",
+        accc_determination=None,
+        public_benefit_in_progress=True,
+        public_benefit_application_date="2026-10-01T12:00:00Z",
+    )
+    use_matters(monkeypatch, [matter("MN-1", **public_benefit)])
+    main([])
+
+    public_benefit.update(
+        public_benefits_determination="Approved",
+        public_benefits_determination_date="2026-12-10T12:00:00Z",
+        public_benefit_in_progress=False,
+    )
+    use_matters(monkeypatch, [matter("MN-1", **public_benefit)])
+    main([])
+    main([])
+
+    assert [post["text"].split(":")[0] for post in fake_client.posts] == [
+        "Referred to Phase 2",
+        "Not approved by the ACCC",
+        "Public benefit determination sought",
+        "Cleared by the ACCC on public benefit grounds",
+    ]
+    assert "22 Sep 2026" in fake_client.posts[1]["text"]
