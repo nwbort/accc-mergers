@@ -56,7 +56,7 @@ fi
 # equivalent to a copy while skipping the bulk data write entirely.
 #
 # The destination is shared with the prerendered merger pages
-# (dist/mergers/<id>/<slug>/index.html), so this step must only ever add files
+# (dist/mergers/<id>/<slug>.html), so this step must only ever add files
 # to dist/mergers — never clear it.
 #
 # Pages refuses to deploy at all if *any* single asset is over 25 MiB, so PDFs
