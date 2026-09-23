@@ -909,7 +909,7 @@ def _merge_events(scraped_events, existing_merger_data, merger_id, frozen_events
             continue
         if 'url' in existing_event:
             url = existing_event['url']
-            if url in scraped_by_url:
+            if url in scraped_by_url and url not in existing_urls_processed:
                 updated_event = scraped_by_url[url].copy()
                 if 'display_title' in existing_event:
                     updated_event['display_title'] = existing_event['display_title']
@@ -978,10 +978,34 @@ def _merge_events(scraped_events, existing_merger_data, merger_id, frozen_events
                     matching_scraped['is_determination_event'] = existing_event['is_determination_event']
                 merged_events.append(matching_scraped)
                 scraped_without_url.remove(matching_scraped)
-            else:
-                if 'display_title' not in existing_event:
-                    existing_event['display_title'] = existing_event['title']
-                merged_events.append(existing_event)
+                continue
+
+            # The ACCC sometimes attaches a document to an event that was
+            # previously a plain (URL-less) timeline row — e.g. it flips a
+            # matter's determination to "Not approved" and adds a dated
+            # "... determination" row before the instrument PDF is uploaded
+            # (MN-65005). Without this match the URL-less row survives
+            # unchanged and the newly url'd row is appended alongside it as a
+            # duplicate of the same timeline entry.
+            newly_linked = next(
+                (e for e in scraped_by_url.values()
+                 if e['url'] not in existing_urls_processed
+                 and _same_event_identity(e, existing_event)),
+                None
+            )
+            if newly_linked is not None:
+                updated_event = newly_linked.copy()
+                if 'display_title' in existing_event:
+                    updated_event['display_title'] = existing_event['display_title']
+                if existing_event.get('is_determination_event'):
+                    updated_event['is_determination_event'] = existing_event['is_determination_event']
+                merged_events.append(updated_event)
+                existing_urls_processed.add(updated_event['url'])
+                continue
+
+            if 'display_title' not in existing_event:
+                existing_event['display_title'] = existing_event['title']
+            merged_events.append(existing_event)
 
     for url, event in scraped_by_url.items():
         if url not in existing_urls_processed:
