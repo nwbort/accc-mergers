@@ -60,3 +60,14 @@ export function computeEcdf(histogram, calendarDays) {
   }
   return computeEcdfFromCounts(counts);
 }
+
+/**
+ * Index of the step that is in force at `value`: the last point at or before
+ * it. That is how the curve is drawn (`stepped: 'before'` runs flat until the
+ * next point), so it is the curve's reading at that x.
+ */
+export function stepIndexAt(points, value) {
+  let index = -1;
+  for (let i = 0; i < points.length && points[i].x <= value; i++) index = i;
+  return index;
+}

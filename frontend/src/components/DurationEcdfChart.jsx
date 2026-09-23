@@ -1,6 +1,31 @@
 import { Scatter } from 'react-chartjs-2';
+import { Interaction } from 'chart.js';
+import { getRelativePosition } from 'chart.js/helpers';
 import '../utils/chartSetup';
+import { stepIndexAt } from '../utils/durationEcdf';
 import { CHART_PALETTE as COLORS } from '../constants/chartColors';
+
+/**
+ * Hover mode for the curve. Chart.js's default for a scatter chart only fires
+ * with the pointer directly on a point, and the curve's points are just its
+ * step corners, so the tooltip needed pixel-precise aim. This mode answers
+ * anywhere over the plot area by reading the curve at the pointer's x, and
+ * ignores the two reference lines, whose meaning is in the legend.
+ */
+Interaction.modes.ecdfStep = (chart, e) => {
+  const position = getRelativePosition(e, chart);
+  const { chartArea, scales } = chart;
+  if (position.x < chartArea.left || position.x > chartArea.right
+    || position.y < chartArea.top || position.y > chartArea.bottom) return [];
+  const datasetIndex = chart.data.datasets.findIndex(d => d.ecdfCurve);
+  if (datasetIndex < 0 || !chart.isDatasetVisible(datasetIndex)) return [];
+  const index = stepIndexAt(
+    chart.data.datasets[datasetIndex].data,
+    scales.x.getValueForPixel(position.x),
+  );
+  if (index < 0) return [];
+  return [{ element: chart.getDatasetMeta(datasetIndex).data[index], datasetIndex, index }];
+};
 
 /**
  * "Share of matters concluded by day N" — one empirical CDF curve.
@@ -69,6 +94,7 @@ function DurationEcdfChart({
         borderColor: color,
         backgroundColor: color,
         stepped: 'before',
+        ecdfCurve: true,
         borderWidth: 2,
         pointRadius: 0,
         pointHoverRadius: 5,
@@ -81,6 +107,7 @@ function DurationEcdfChart({
     responsive: true,
     maintainAspectRatio: false,
     animation: false,
+    interaction: { mode: 'ecdfStep', intersect: false },
     plugins: {
       legend: {
         position: 'bottom',
@@ -93,9 +120,6 @@ function DurationEcdfChart({
       tooltip: {
         callbacks: {
           label: (item) => {
-            // The two reference lines carry their whole meaning in the label;
-            // only the curve has a reading at this x.
-            if (item.dataset.label !== seriesLabel) return item.dataset.label;
             const { x, y, n, total } = item.raw;
             return `by ${shortUnit} ${x}: ${y}% (${n} of ${total})`;
           },
