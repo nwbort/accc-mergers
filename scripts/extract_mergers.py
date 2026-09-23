@@ -1213,6 +1213,32 @@ def _infer_determination_date_from_events(merger_data):
         )['date']
 
 
+def _infer_determination_date_from_unlinked_event(merger_data):
+    """Last-resort fallback: set determination_publication_date from a determination
+    event that has no document link yet.
+
+    The ACCC sometimes flips the "ACCC determination" field to a final outcome
+    and adds a row to the events table for it before linking any document to
+    that row at all (e.g. MN-65005: "Not approved" was published on the page
+    with a dated "IAG-RACI - Phase 2 determination" events-table row, but no
+    PDF attached) -- so _infer_determination_date_from_events, which only
+    trusts url-linked events, finds nothing either. Without this, the merger's
+    determination_publication_date stays unset until the ACCC gets around to
+    attaching the document, silently dropping it from the dashboard's Recent
+    determinations and from the phase 1/2 determination stats in the meantime.
+    """
+    if not merger_data.get('accc_determination') or merger_data.get('determination_publication_date'):
+        return
+    det_events = [
+        e for e in merger_data.get('events', [])
+        if 'determination' in e.get('title', '').lower()
+    ]
+    if det_events:
+        merger_data['determination_publication_date'] = max(
+            det_events, key=lambda e: e.get('date', '')
+        )['date']
+
+
 def _calculate_missing_end_of_determination_period(merger_data, merger_id):
     """Calculate end_of_determination_period as effective_notification_datetime + 30 business days.
 
@@ -1369,6 +1395,7 @@ def parse_merger_file(filepath, existing_merger_data=None, frozen_events_mergers
         )
 
         _infer_determination_date_from_events(merger_data)
+        _infer_determination_date_from_unlinked_event(merger_data)
         _calculate_missing_end_of_determination_period(merger_data, merger_id)
         _add_synthetic_events(merger_data)
 
