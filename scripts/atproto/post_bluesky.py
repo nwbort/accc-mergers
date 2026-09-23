@@ -154,9 +154,13 @@ def milestones(matter: dict) -> list[Milestone]:
     # as the referral above; posting it twice would say the same thing in two
     # different voices.
     if outcome and outcome != "Referred to phase 2":
+        # A referred matter's phase 1 date is the referral's, not this
+        # determination's: falling back to it posts a phase 2 decision under
+        # the day it was referred. Wait for a real date instead.
+        referred = matter.get("phase_1_determination") == "Referred to phase 2"
         decided = (
             _date(matter.get("phase_2_determination_date"))
-            or _date(matter.get("phase_1_determination_date"))
+            or (None if referred else _date(matter.get("phase_1_determination_date")))
             or _date(matter.get("determination_publication_date"))
         )
         headline = _OUTCOME_HEADLINES.get((outcome, is_waiver), outcome)
@@ -325,9 +329,19 @@ def save_state(state: dict, path: Path | None = None) -> None:
 
 
 def pending(matters: list[dict], state: dict) -> list[Milestone]:
-    """Milestones not yet posted, oldest first so a backlog drains in order."""
-    posted = state.get("posted", {})
-    found = [m for matter in matters for m in milestones(matter) if m.key not in posted]
+    """Milestones not yet posted, oldest first so a backlog drains in order.
+
+    Each kind of milestone happens at most once per matter, so "already
+    posted" is decided on the matter and the kind alone. The date stays in the
+    key as a record of what was posted, but the register revises dates after
+    the fact (a determination published on one day and re-dated to the next),
+    and matching on it would announce the same decision again each time.
+    """
+    seen = {_milestone_event(key) for key in state.get("posted", {})}
+    found = [
+        m for matter in matters for m in milestones(matter)
+        if _milestone_event(m.key) not in seen
+    ]
     found.sort(key=lambda m: (m.date, m.key))
     return found
 
@@ -404,6 +418,11 @@ def main(argv: list[str] | None = None) -> int:
     if failures:
         return 1
     return 0
+
+
+def _milestone_event(key: str) -> str:
+    """``MN-01016:determined:2026-09-05`` -> ``MN-01016:determined``."""
+    return key.rsplit(":", 1)[0]
 
 
 def _facet(start: int, span: str, feature: dict) -> dict:

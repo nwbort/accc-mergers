@@ -140,6 +140,33 @@ def test_a_referral_is_posted_once_as_a_referral_not_twice_as_a_determination():
     assert [m.headline for m in found] == ["Notified to the ACCC", "Referred to Phase 2"]
 
 
+def test_a_phase_2_decision_is_not_dated_on_the_day_it_was_referred():
+    """MN-65005: the register said "Not approved" before it carried a Phase 2
+    date, and the referral's date stood in for it."""
+    found = milestones(
+        matter(
+            stage="Phase 2 - detailed assessment",
+            status="Assessment completed",
+            accc_determination="Not approved",
+            phase_1_determination="Referred to phase 2",
+            phase_1_determination_date="2026-04-16T12:00:00Z",
+        )
+    )
+    assert [m.headline for m in found] == ["Notified to the ACCC", "Referred to Phase 2"]
+
+    found = milestones(
+        matter(
+            stage="Phase 2 - detailed assessment",
+            status="Assessment completed",
+            accc_determination="Not approved",
+            determination_publication_date="2026-09-22T12:00:00Z",
+            phase_1_determination="Referred to phase 2",
+            phase_1_determination_date="2026-04-16T12:00:00Z",
+        )
+    )
+    assert found[-1].key == "MN-01016:determined:2026-09-22"
+
+
 def test_both_review_forums_get_their_own_milestone():
     found = milestones(
         matter(
@@ -349,3 +376,28 @@ def test_dry_run_needs_neither_the_switch_nor_credentials(monkeypatch, state_fil
 def test_state_survives_a_round_trip(state_file):
     save_state({"posted": {"MN-1:notified:2026-08-15": {"uri": "at://x"}}})
     assert load_state()["posted"]["MN-1:notified:2026-08-15"]["uri"] == "at://x"
+
+
+def test_a_re_dated_milestone_is_not_posted_again(monkeypatch, state_file, fake_client):
+    """MN-65005 was announced as not approved three times, once per date the
+    register gave its determination."""
+    decided = dict(accc_determination="Not approved", status="Assessment completed")
+    use_matters(monkeypatch, [matter("MN-1")])
+    monkeypatch.setenv("ATPROTO_POST_ENABLED", "true")
+    main([])
+
+    use_matters(monkeypatch, [matter("MN-1", determination_publication_date="2026-09-22T12:00:00Z", **decided)])
+    main([])
+    assert len(fake_client.posts) == 1
+
+    use_matters(monkeypatch, [matter("MN-1", determination_publication_date="2026-09-23T12:00:00Z", **decided)])
+    assert main([]) == 0
+    assert len(fake_client.posts) == 1
+
+
+def test_state_written_before_the_fix_still_counts_as_posted():
+    state = {"posted": {"MN-1:determined:2026-04-16": {"uri": "at://x"}}}
+    decided = matter(
+        "MN-1", accc_determination="Not approved", determination_publication_date="2026-09-23T12:00:00Z"
+    )
+    assert [m.key for m in pending([decided], state)] == ["MN-1:notified:2026-08-15"]
