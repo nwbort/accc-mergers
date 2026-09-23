@@ -26,6 +26,7 @@ from scripts.extract_mergers import (
     _scrape_events,
     detect_inferred_phase_2,
     _infer_determination_date_from_events,
+    _infer_determination_date_from_unlinked_event,
     _extract_anzsic_codes,
     _extract_dates_and_status,
     _merge_events,
@@ -1685,6 +1686,66 @@ class TestInferDeterminationDateFromEvents:
             {'title': 'Merger notified to ACCC', 'date': '2025-10-10T12:00:00Z', 'url': 'https://accc.gov.au/n.pdf'},
         ]
         _infer_determination_date_from_events(m)
+        assert m['determination_publication_date'] is None
+
+
+# ---------------------------------------------------------------------------
+# extract_mergers: _infer_determination_date_from_unlinked_event
+# ---------------------------------------------------------------------------
+
+class TestInferDeterminationDateFromUnlinkedEvent:
+    def _base(self):
+        return {
+            'accc_determination': 'Not approved',
+            'determination_publication_date': None,
+            'events': [],
+        }
+
+    def test_infers_date_from_unlinked_determination_event(self):
+        # MN-65005: the ACCC determination field is flipped and the events
+        # table carries a dated determination row, but no document is linked
+        # to it yet.
+        m = self._base()
+        m['events'] = [
+            {'title': 'IAG-RACI - Phase 2 determination', 'date': '2026-09-22T12:00:00Z'},
+            {'title': 'IAG-RACI - Phase 2 determination - Summary of reasons', 'date': '2026-09-22T12:00:00Z'},
+        ]
+        _infer_determination_date_from_unlinked_event(m)
+        assert m['determination_publication_date'] == '2026-09-22T12:00:00Z'
+
+    def test_uses_latest_date_when_multiple_unlinked_events(self):
+        m = self._base()
+        m['events'] = [
+            {'title': 'Phase 1 determination - Referred to Phase 2', 'date': '2026-01-20T12:00:00Z'},
+            {'title': 'Phase 2 determination', 'date': '2026-06-02T12:00:00Z'},
+        ]
+        _infer_determination_date_from_unlinked_event(m)
+        assert m['determination_publication_date'] == '2026-06-02T12:00:00Z'
+
+    def test_no_op_when_determination_publication_date_already_set(self):
+        m = self._base()
+        m['determination_publication_date'] = '2026-01-01T12:00:00Z'
+        m['events'] = [
+            {'title': 'Phase 2 determination', 'date': '2026-06-02T12:00:00Z'},
+        ]
+        _infer_determination_date_from_unlinked_event(m)
+        assert m['determination_publication_date'] == '2026-01-01T12:00:00Z'
+
+    def test_no_op_when_no_accc_determination(self):
+        m = self._base()
+        m['accc_determination'] = None
+        m['events'] = [
+            {'title': 'Phase 2 determination', 'date': '2026-06-02T12:00:00Z'},
+        ]
+        _infer_determination_date_from_unlinked_event(m)
+        assert m['determination_publication_date'] is None
+
+    def test_no_op_when_no_determination_events(self):
+        m = self._base()
+        m['events'] = [
+            {'title': 'Merger notified to ACCC', 'date': '2025-10-10T12:00:00Z'},
+        ]
+        _infer_determination_date_from_unlinked_event(m)
         assert m['determination_publication_date'] is None
 
 

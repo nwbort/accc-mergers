@@ -1,6 +1,69 @@
 {
   "items": [
     {
+      "merger_id": "MN-65005",
+      "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-03-03T12:00:00Z",
+      "determination_publication_date": null,
+      "determination_url": null,
+      "stage": "Phase 2 - detailed assessment",
+      "acquirers": [
+        {
+          "name": "INSURANCE AUSTRALIA GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "60 090 739 923",
+          "party_page": {
+            "id": "insurance-australia-group-limited",
+            "name": "Insurance Australia Group Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "RACI PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "40 008 671 805",
+          "canonical": {
+            "id": "rac",
+            "name": "RAC"
+          },
+          "party_page": {
+            "id": "rac",
+            "name": "RAC"
+          }
+        },
+        {
+          "name": "RAC INSURANCE PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "59 094 685 882",
+          "canonical": {
+            "id": "rac",
+            "name": "RAC"
+          },
+          "party_page": {
+            "id": "rac",
+            "name": "RAC"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6322",
+          "name": "General Insurance"
+        }
+      ],
+      "comments": [
+        {
+          "commentary": "Following the ACCC's Phase 2 determination not to approve the acquisition, IAG has [confirmed](https://www.iag.com.au/newsroom/iag-acknowledges-accc-phase-2-determination) it will make a public benefits application.",
+          "tags": [],
+          "date": "2026-09-23"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-01068",
       "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
       "status": "Assessment completed",
@@ -1036,5 +1099,5 @@
       ]
     }
   ],
-  "count": 17
+  "count": 18
 }
