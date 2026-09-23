@@ -6,9 +6,7 @@ date, NOCC due/issued, and end of determination period. All milestone inputs
 are already computed by :func:`static_data.enrichment.enrich_merger`.
 """
 
-from scripts.constants import merger_status
-
-from ..enrichment import is_phase_2_referral_event, phase_2_outcome
+from ..enrichment import is_phase_2_referral_event, phase_2_outcome, reached_phase_2
 from ..filters import filter_notifications
 from ..loaders import FORWARD_REFILE_RELATIONSHIPS
 
@@ -54,6 +52,11 @@ def _entry(merger: dict) -> dict:
         # the completed-matter card flags the difference.
         'has_conditions': bool(merger.get('has_conditions', False)),
         'phase_2_inferred': bool(merger.get('phase_2_inferred')),
+        # The parties have applied for a public benefit determination after
+        # the Phase 2 determination (see enrichment._set_public_benefit_timetable),
+        # or one has been made — the completed card says which.
+        'public_benefit_in_progress': bool(merger.get('public_benefit_in_progress')),
+        'public_benefits_determination': merger.get('public_benefits_determination'),
         # Whether the matter is under review at the Australian Competition
         # Tribunal — surfaces an "Under appeal" chip on the completed card.
         'under_appeal': bool(merger.get('under_appeal')),
@@ -71,9 +74,11 @@ def generate(mergers: list) -> dict:
 
     # Waivers are never Phase 2 matters, but ceased assessments must stay in
     # so their cessation can surface as a completed Phase 2 outcome below.
+    # A matter that has gone on to the public benefit phase stays in, as a
+    # completed Phase 2 review: its Phase 2 determination is still its Phase 2
+    # outcome, whatever the stage says now.
     for merger in filter_notifications(mergers):
-        stage = merger.get('stage') or ''
-        if merger_status.PHASE_2 not in stage:
+        if not reached_phase_2(merger):
             continue
 
         entry = _entry(merger)

@@ -81,6 +81,33 @@ describe('MergerTimeline', () => {
     ).toBeInTheDocument();
   });
 
+  it('marks the Phase 2 determination of a matter now in the public benefit phase', () => {
+    vi.setSystemTime(new Date('2026-10-20T00:00:00Z'));
+    render(
+      <MergerTimeline
+        merger={{
+          effective_notification_datetime: '2026-03-03T12:00:00Z',
+          end_of_determination_period: '2026-12-14T12:00:00Z',
+          stage: 'Public benefit phase',
+          status: 'Under assessment',
+          accc_determination: null,
+          public_benefit_in_progress: true,
+          phase_1_determination: 'Referred to phase 2',
+          phase_1_determination_date: '2026-04-16T12:00:00Z',
+          phase_2_determination: 'Not approved',
+          phase_2_determination_date: '2026-09-22T12:00:00Z',
+        }}
+      />
+    );
+
+    // Still running: the axis ends on the public benefit deadline.
+    expect(screen.getByText('Today')).toBeInTheDocument();
+    expect(screen.getByText('14 Dec 2026')).toBeInTheDocument();
+    expect(
+      screen.getByLabelText('Phase 2 determination: Not approved, made on 22 Sep 2026')
+    ).toBeInTheDocument();
+  });
+
   it('does not add a Phase 1 marker for a single-phase merger', () => {
     render(
       <MergerTimeline

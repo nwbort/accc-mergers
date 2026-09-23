@@ -326,11 +326,14 @@ export function TrackingProvider({ children }) {
           if (merger.end_of_determination_period) {
             const dueDate = new Date(merger.end_of_determination_period);
             if (dueDate > now) {
+              const label = merger.public_benefit_in_progress
+                ? 'Public benefit determination due'
+                : 'Determination due';
               syntheticUpcomingEvents.push({
                 type: 'determination_due',
-                event_type_display: 'Determination due',
-                display_title: 'Determination due',
-                title: 'Determination due',
+                event_type_display: label,
+                display_title: label,
+                title: label,
                 date: merger.end_of_determination_period,
                 merger_id: merger.merger_id,
                 merger_name: merger.merger_name,
@@ -360,6 +363,29 @@ export function TrackingProvider({ children }) {
               });
             }
           }
+
+          // Public benefit phase milestones (mirrors upcoming_events.py): the
+          // ACCC's public benefit assessment (BD 20) and the parties' last day
+          // to respond to it or offer a remedy (BD 35).
+          [
+            ['public_benefit_assessment_date', 'public_benefit_assessment', 'Public benefit assessment'],
+            ['public_benefit_response_date', 'public_benefit_response_due', 'Public benefit responses due'],
+          ].forEach(([field, type, label]) => {
+            if (!merger[field] || new Date(merger[field]) <= now) return;
+            syntheticUpcomingEvents.push({
+              type,
+              event_type_display: label,
+              display_title: label,
+              title: label,
+              date: merger[field],
+              merger_id: merger.merger_id,
+              merger_name: merger.merger_name,
+              status: merger.status,
+              stage: merger.stage,
+              effective_notification_datetime: merger.effective_notification_datetime,
+              is_waiver: merger.is_waiver,
+            });
+          });
 
           if (merger.competition_concerns_notice_date) {
             const dueDate = new Date(merger.competition_concerns_notice_date);

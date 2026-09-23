@@ -24,7 +24,11 @@ Raw data scraped from the ACCC website by `scripts/scrape.sh`:
 Intermediate JSON written by the extraction pipeline (mainly
 `extract_mergers.py`):
 
-- `mergers.json` — master merger data extracted from `raw/`
+- `mergers.json` — master merger data extracted from `raw/`. A matter that
+  has moved on to the public benefit phase also carries
+  `stage_determinations`, the determination each phase reached, since the
+  register's single headline determination can no longer say which was Phase
+  2's (see `scripts/stage_determinations.py`)
 - `questionnaire_data.json` — parsed questionnaire metadata
 - `commentary.json` — hand-authored commentary keyed by `merger_id`
   (edited via `scripts/tools/commentary.py`)

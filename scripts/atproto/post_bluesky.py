@@ -6,8 +6,9 @@ milestones as ordinary ``app.bsky.feed.post`` records, so the register shows
 up in a feed.
 
 What counts as worth posting is deliberately narrow: a matter arriving, being
-referred to phase 2, being decided, having its assessment ceased, or going to
-the Tribunal or the Federal Court. Questionnaires, timeline extensions and
+referred to phase 2, being decided, the parties applying for a public benefit
+determination and that being decided, having its assessment ceased, or going
+to the Tribunal or the Federal Court. Questionnaires, timeline extensions and
 remedy offers are all on the site and in the records, and posting them would
 turn a useful account into a firehose. A waiver application's arrival is not
 posted either: the ACCC only publishes a waiver once it has been determined,
@@ -67,6 +68,15 @@ _OUTCOME_HEADLINES = {
     ("Not opposed", True): "Notification waiver granted",
     ("Not approved", True): "Notification waiver refused",
     ("Declined", True): "Notification waiver refused",
+}
+
+#: The public benefit determination's outcome -> headline. It is not a second
+#: go at the competition test but a different one, so the headline says which.
+_PUBLIC_BENEFIT_HEADLINES = {
+    "Approved": "Cleared by the ACCC on public benefit grounds",
+    "Not opposed": "Cleared by the ACCC on public benefit grounds",
+    "Not approved": "Not approved by the ACCC after public benefit review",
+    "Declined": "Not approved by the ACCC after public benefit review",
 }
 
 
@@ -129,7 +139,17 @@ def milestones(matter: dict) -> list[Milestone]:
             _detail(merger_id, "Phase 2 - detailed assessment", referred),
         )
 
-    outcome = matter.get("phase_2_determination") or matter.get("accc_determination")
+    # The competition determination: Phase 2's if there was one, else the
+    # headline. Once the parties have applied for a public benefit
+    # determination the headline is that application's (empty while it runs),
+    # so the phase 1 determination it followed stands in for it.
+    public_benefit = matter.get("public_benefits_determination")
+    phase_2 = matter.get("phase_2_determination")
+    outcome = (
+        phase_2
+        or (None if public_benefit else matter.get("accc_determination"))
+        or matter.get("phase_1_determination")
+    )
     # A phase 1 referral is a determination on the register, but it is posted
     # as the referral above; posting it twice would say the same thing in two
     # different voices.
@@ -140,9 +160,30 @@ def milestones(matter: dict) -> list[Milestone]:
             or _date(matter.get("determination_publication_date"))
         )
         headline = _OUTCOME_HEADLINES.get((outcome, is_waiver), outcome)
-        if matter.get("has_conditions") and "Cleared" in headline:
+        # has_conditions describes whichever determination now stands, which
+        # is only this one until a public benefit determination is made.
+        if matter.get("has_conditions") and "Cleared" in headline and not public_benefit:
             headline = "Cleared with conditions by the ACCC"
-        add("determined", decided, headline, _detail(merger_id, matter.get("stage"), decided))
+        stage = "Phase 2 - detailed assessment" if phase_2 else matter.get("stage")
+        if not phase_2 and (public_benefit or matter.get("public_benefit_in_progress")):
+            stage = "Phase 1 - initial assessment"
+        add("determined", decided, headline, _detail(merger_id, stage, decided))
+
+    applied = _date(matter.get("public_benefit_application_date"))
+    add(
+        "public-benefit",
+        applied,
+        "Public benefit determination sought",
+        _detail(merger_id, "Public benefit phase", applied),
+    )
+
+    if public_benefit:
+        decided = _date(matter.get("public_benefits_determination_date"))
+        headline = _PUBLIC_BENEFIT_HEADLINES.get(public_benefit, public_benefit)
+        if matter.get("has_conditions") and headline.startswith("Cleared"):
+            headline = headline.replace("Cleared", "Cleared with conditions", 1)
+        add("public-benefit-determined", decided, headline,
+            _detail(merger_id, "Public benefit phase", decided))
 
     if matter.get("status") == "Assessment ceased":
         add(

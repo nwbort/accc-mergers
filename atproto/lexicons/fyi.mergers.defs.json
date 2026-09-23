@@ -51,7 +51,7 @@
     },
     "determination": {
       "type": "object",
-      "description": "A determination the ACCC made on a matter. A matter can carry more than one: a phase 1 referral to phase 2 is itself a determination, and is followed by a phase 2 determination.",
+      "description": "A determination the ACCC made on a matter. A matter can carry more than one: a phase 1 referral to phase 2 is itself a determination, and is followed by a phase 2 determination, which a public benefit determination can follow in turn if the parties apply for one.",
       "required": [
         "outcome"
       ],
@@ -74,7 +74,8 @@
           "knownValues": [
             "Waiver application",
             "Phase 1 - initial assessment",
-            "Phase 2 - detailed assessment"
+            "Phase 2 - detailed assessment",
+            "Public benefit phase"
           ]
         },
         "decidedOn": {
@@ -117,7 +118,8 @@
           "knownValues": [
             "Waiver",
             "Phase 1",
-            "Phase 2"
+            "Phase 2",
+            "Public benefit"
           ],
           "description": "Phase the event falls in. A shorter vocabulary than a matter's phase, because it is the label the register puts on the timeline entry itself."
         },
@@ -129,6 +131,8 @@
             "questionnaire",
             "competition-concerns-notice",
             "phase-2-referral",
+            "public-benefit-application",
+            "public-benefit-assessment",
             "timeline-extension",
             "remedy-offer",
             "undertaking",

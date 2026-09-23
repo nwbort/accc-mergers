@@ -9,7 +9,7 @@ import {
 } from 'react-icons/fa6';
 import { mergerPath } from '../utils/slug';
 import { formatWeekday, formatDateRange, getCalendarDaysUntil } from '../utils/dates';
-import { PHASES } from '../constants/mergerStatus';
+import { PHASES, isPublicBenefitStage } from '../constants/mergerStatus';
 import { CARD } from '../utils/classNames';
 import EmptyStateCard from './EmptyStateCard';
 
@@ -37,6 +37,18 @@ const EVENT_TYPES = {
     Icon: FaTriangleExclamation,
     tile: 'bg-amber-50 text-amber-700',
     chip: 'bg-amber-50 text-amber-700 border-amber-200/60',
+  },
+  public_benefit_assessment: {
+    label: 'Public benefit assessment',
+    Icon: FaScaleBalanced,
+    tile: 'bg-teal-50 text-teal-700',
+    chip: 'bg-teal-50 text-teal-700 border-teal-200/60',
+  },
+  public_benefit_response_due: {
+    label: 'Public benefit responses',
+    Icon: FaRegComments,
+    tile: 'bg-teal-50 text-teal-700',
+    chip: 'bg-teal-50 text-teal-700 border-teal-200/60',
   },
   determination_due: {
     label: 'Determination',
@@ -68,11 +80,18 @@ const getEventType = (type) => EVENT_TYPES[type] || DEFAULT_EVENT_TYPE;
 const EVENT_TYPE_ORDER = {
   tribunal_hearing: 0,
   determination_due: 1,
+  public_benefit_assessment: 2,
   notice_of_competition_concerns: 2,
+  public_benefit_response_due: 3,
   consultation_due: 3,
 };
 
-const phaseRank = (stage) => (stage && stage.includes(PHASES.PHASE_2) ? 0 : 1);
+// The later the phase, the more is riding on it: a public benefit
+// determination is the last word before the Tribunal.
+const phaseRank = (stage) => {
+  if (isPublicBenefitStage(stage)) return 0;
+  return stage && stage.includes(PHASES.PHASE_2) ? 1 : 2;
+};
 
 function compareWithinDay(a, b) {
   const typeDelta =

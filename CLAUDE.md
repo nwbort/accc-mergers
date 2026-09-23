@@ -55,7 +55,8 @@ secret means skip, not fail). See [`docs/atproto.md`](docs/atproto.md).
   midday-UTC storage form; `indexedAt` is the only datetime and only moves when
   the matter does, which is what makes the incremental publish possible.
 - **Bluesky posts.** Deliberately narrow (arrival, phase 2 referral,
-  determination, cessation, Tribunal/Federal Court review). Needs
+  determination, public benefit application and determination, cessation,
+  Tribunal/Federal Court review). Needs
   `ATPROTO_POST_ENABLED` on top of the credentials, and the first *enabled* run
   seeds rather than posts, so switching it on can't replay the back catalogue.
 
@@ -461,6 +462,34 @@ Two consequences worth knowing:
 The ACCC also now deletes the whole Consultation section once a consultation
 closes, where it previously left a "the period … has concluded" blurb behind —
 `consultation_response_due_date` still falls back to the stored value.
+
+### Public benefit phase
+
+After a Phase 2 determination that refuses a merger or clears it on
+conditions, the parties have 21 calendar days to apply for a public benefit
+determination. The register's stage then becomes **"Public benefit phase"**
+(lower-case "benefit", unlike the phase labels — match stages with
+`merger_status.stage_phase()` / `isPublicBenefitStage()`, never a bare `in`).
+The phase runs 50 business days: public benefit assessment by BD 20, the
+parties' responses or remedy offer by BD 35. MN-65005 was the first matter
+expected to reach it.
+
+- **Per-phase determinations.** The register has one headline determination,
+  so once the stage moves on it can't say which phase a determination belongs
+  to. `scripts/stage_determinations.py` records each phase's determination as
+  it is seen and carries it forward in `mergers.json` (`stage_determinations`,
+  stored only when it differs from what the headline says). Enrichment reads
+  `phase_*_determination` and `public_benefits_determination` from it, and
+  extraction uses it to keep the Phase 2 determination event's title and flag.
+- **The matter is live again.** While the application runs
+  (`public_benefit_in_progress`), enrichment clears the headline determination
+  and reads the status as under assessment, as for a matter still in Phase 2.
+  The Phase 2 outcome stays in `phase_2_determination`, and the matter stays on
+  the Phase 2 tracker and in every Phase 2 count (`enrichment.reached_phase_2`,
+  not the stage).
+- **Timetable.** A leftover Phase 2 deadline is replaced with BD 50 from the
+  application (or dropped until one appears); `public_benefit_assessment_date`
+  and `public_benefit_response_date` feed upcoming events and follow alerts.
 
 ## Static Data Files
 

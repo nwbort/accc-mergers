@@ -93,6 +93,32 @@ def generate(mergers: list, days_ahead: int = 60) -> dict:
                 except (ValueError, AttributeError):
                     pass
 
+        # Public benefit phase milestones, computed by enrichment from the
+        # phase's deadline: the ACCC's public benefit assessment (BD 20, only
+        # until it is published) and the parties' last day to respond to it or
+        # offer a remedy (BD 35).
+        for field, event_type, display in (
+            ('public_benefit_assessment_date', 'public_benefit_assessment',
+             'Public benefit assessment'),
+            ('public_benefit_response_date', 'public_benefit_response_due',
+             'Public benefit responses due'),
+        ):
+            milestone = m.get(field)
+            parsed = parse_iso_datetime(milestone) if milestone else None
+            if parsed is None:
+                continue
+            if now <= parsed.replace(tzinfo=None) <= future:
+                events.append({
+                    "type": event_type,
+                    "event_type_display": display,
+                    "date": milestone,
+                    "merger_id": merger_id,
+                    "merger_name": merger_name,
+                    "status": status,
+                    "stage": stage,
+                    "effective_notification_datetime": notification_date,
+                })
+
         # Determination period end
         determination_due = m.get('end_of_determination_period')
         if determination_due:
@@ -104,7 +130,10 @@ def generate(mergers: list, days_ahead: int = 60) -> dict:
                 if now <= due_date <= future:
                     events.append({
                         "type": "determination_due",
-                        "event_type_display": "Determination due",
+                        "event_type_display": (
+                            "Public benefit determination due"
+                            if m.get('public_benefit_in_progress') else "Determination due"
+                        ),
                         "date": determination_due,
                         "merger_id": merger_id,
                         "merger_name": merger_name,

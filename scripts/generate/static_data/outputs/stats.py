@@ -6,7 +6,7 @@ from statistics import median
 from scripts.constants import merger_status
 
 from ..durations import collect_phase_1_durations, collect_waiver_durations
-from ..enrichment import is_phase_2_referral_event, phase_2_outcome
+from ..enrichment import is_phase_2_referral_event, phase_2_outcome, reached_phase_2
 from ..filters import filter_notifications, filter_waivers
 from ..loaders import BACKWARD_REFILE_RELATIONSHIPS
 
@@ -115,7 +115,7 @@ def generate(mergers: list) -> dict:
     # from an unconditional one.
     by_phase_2_determination = defaultdict(int)
     for m in notification_mergers:
-        if merger_status.PHASE_2 not in (m.get('stage') or ''):
+        if not reached_phase_2(m):
             continue
         det, det_date = phase_2_outcome(m)
         if not (det and det_date):
@@ -261,6 +261,28 @@ def generate(mergers: list) -> dict:
                 # The register records a conditional clearance as a plain
                 # "Approved"; the dashboard cards flag the difference.
                 "has_conditions": bool(m.get('has_conditions', False)),
+            })
+
+        # A Phase 2 determination that has since been followed by a public
+        # benefit application is no longer the headline determination (the
+        # matter is live again, see enrichment), but it was still made on the
+        # day it was made. Once the public benefit determination lands it
+        # becomes the headline and is listed above, beside this one.
+        p2_det = m.get('phase_2_determination')
+        p2_date = m.get('phase_2_determination_date')
+        if p2_det and p2_date and p2_date != det_date:
+            determination_events.append({
+                "merger_id": merger_id,
+                "merger_name": merger_name,
+                "determination": p2_det,
+                "determination_date": p2_date,
+                "page_modified_datetime": page_modified,
+                "determination_type": "phase_2",
+                "is_waiver": is_waiver,
+                "stage": merger_status.PHASE_2_STAGE,
+                "has_conditions": bool(
+                    p2_det == merger_status.APPROVED and m.get('has_conditions', False)
+                ),
             })
 
         # Check for Phase 2 referrals (stage transitions)

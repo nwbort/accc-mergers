@@ -19,6 +19,7 @@ from scripts.industry_division import (
 
 from .. import anzsic
 from ..durations import phase_1_duration_stats, waiver_duration_stats
+from ..enrichment import reached_phase_2
 from ..prune import prune_stale_files
 
 
@@ -26,13 +27,13 @@ def classify_phase(m: dict) -> str:
     """Bucket a merger into Phase 2 / Phase 1 / Waiver.
 
     Mirrors the Phase/Waiver split used on the Mergers page: waivers first,
-    then anything currently in Phase 2, with everything else treated as
+    then anything that has been through Phase 2 (including a matter since
+    moved on to the public benefit phase), with everything else treated as
     Phase 1. Returns one of ``merger_status.WAIVER``/``PHASE_2``/``PHASE_1``.
     """
     if m.get('is_waiver'):
         return merger_status.WAIVER
-    stage = m.get('stage') or ''
-    if merger_status.PHASE_2 in stage:
+    if reached_phase_2(m):
         return merger_status.PHASE_2
     return merger_status.PHASE_1
 

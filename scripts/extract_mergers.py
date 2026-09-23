@@ -30,6 +30,7 @@ from scripts.merger_filters import save_mergers
 from scripts.date_utils import parse_text_to_iso, parse_iso_datetime
 from scripts.generate.static_data.enrichment import is_phase_2_referral_event
 from scripts.constants import merger_status
+from scripts import stage_determinations
 
 BASE_URL = "https://www.accc.gov.au"
 MATTERS_DIR = "./data/raw/matters"
@@ -1283,8 +1284,15 @@ def _calculate_missing_end_of_determination_period(merger_data, merger_id):
         merger_data['end_of_determination_period'] = end_dt.strftime('%Y-%m-%dT%H:%M:%SZ')
 
 
-def _add_synthetic_events(merger_data):
-    """Add notification and determination synthetic events if not already present."""
+def _add_synthetic_events(merger_data, records=None):
+    """Add notification and determination synthetic events if not already present.
+
+    ``records`` is the matter's per-phase determinations
+    (:func:`stage_determinations.resolve`). It decides which phase the headline
+    determination is titled with: once a matter has moved on to the public
+    benefit phase, a headline still showing the Phase 2 outcome keeps its Phase
+    2 title rather than being relabelled as a public benefit determination.
+    """
     events = merger_data['events']
 
     # Notification event
@@ -1303,6 +1311,10 @@ def _add_synthetic_events(merger_data):
 
     determination = merger_data.get('accc_determination', 'Decision made')
     phase = merger_data.get('stage', 'Phase 1')
+    if records:
+        owner = stage_determinations.headline_phase(merger_data, records)
+        if owner and owner != merger_status.stage_phase(phase) and records.get(owner, {}).get('stage'):
+            phase = records[owner]['stage']
     determination_title = f"{phase} determination: {determination}"
     det_date = merger_data['determination_publication_date']
 
@@ -1352,17 +1364,19 @@ def _add_synthetic_events(merger_data):
         existing_det_event['is_determination_event'] = True
         # Earlier data may carry the flag on a different event (e.g. a reasons
         # document that used to be picked); clear it so exactly one event is
-        # the determination event.
+        # the determination event for this phase. Another phase's
+        # determination keeps its flag: a public benefit determination doesn't
+        # stop the Phase 2 determination before it being one.
         for e in events:
-            if e is not existing_det_event and e.get('is_determination_event'):
+            if e is not existing_det_event and e.get('is_determination_event') \
+                    and not _is_other_phase_determination(e, phase):
                 del e['is_determination_event']
                 if e.get('display_title') == determination_title:
                     e['display_title'] = e['title']
         if 'phase' not in existing_det_event:
-            if 'waiver' in phase.lower():
-                existing_det_event['phase'] = 'Waiver'
-            else:
-                existing_det_event['phase'] = phase.split(' - ')[0] if ' - ' in phase else phase
+            existing_det_event['phase'] = merger_status.stage_phase(phase) or (
+                phase.split(' - ')[0] if ' - ' in phase else phase
+            )
         # Remove any redundant plain-text status row with the same title that
         # the ACCC sometimes publishes alongside the document row.
         merger_data['events'] = [
@@ -1377,6 +1391,19 @@ def _add_synthetic_events(merger_data):
                 'display_title': determination_title,
                 'is_determination_event': True,
             })
+
+
+def _is_other_phase_determination(event, phase):
+    """True when ``event`` is flagged as a different phase's determination.
+
+    Read from the "<stage> determination: <outcome>" display title
+    _add_synthetic_events gives a determination event.
+    """
+    title = event.get('display_title') or ''
+    if ' determination: ' not in title:
+        return False
+    event_phase = merger_status.stage_phase(title.split(' determination: ')[0])
+    return bool(event_phase) and event_phase != merger_status.stage_phase(phase)
 
 
 def parse_merger_file(filepath, existing_merger_data=None, frozen_events_mergers=None, field_overrides=None):
@@ -1421,7 +1448,11 @@ def parse_merger_file(filepath, existing_merger_data=None, frozen_events_mergers
         _infer_determination_date_from_events(merger_data)
         _infer_determination_date_from_unlinked_event(merger_data)
         _calculate_missing_end_of_determination_period(merger_data, merger_id)
-        _add_synthetic_events(merger_data)
+        records = stage_determinations.resolve(merger_data, existing_merger_data)
+        persisted = stage_determinations.to_persist(merger_data, records)
+        if persisted:
+            merger_data[stage_determinations.FIELD] = persisted
+        _add_synthetic_events(merger_data, records)
 
         if field_overrides and merger_id in field_overrides:
             merger_data.update(field_overrides[merger_id])
@@ -1718,7 +1749,10 @@ def detect_inferred_phase_2(all_mergers_data):
             continue
 
         stage = merger.get('stage') or ''
-        if merger_status.PHASE_2 in stage:
+        # A matter now in the public benefit phase has been through Phase 2
+        # (the application follows a Phase 2 determination), so the register
+        # has caught up just as surely as a Phase 2 stage says it has.
+        if merger_status.stage_phase(stage) in (merger_status.PHASE_2, merger_status.PUBLIC_BENEFITS):
             # The register has caught up — close any open tracking issue.
             confirmed.append(merger_id)
             continue

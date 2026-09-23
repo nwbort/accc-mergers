@@ -240,6 +240,8 @@ def build_text_email(digest: dict) -> str:
         f"Ongoing phase 1      : {len(digest['ongoing_phase_1'])}",
         f"Ongoing phase 2      : {len(digest['ongoing_phase_2'])}",
     ]
+    if digest.get('ongoing_public_benefit'):
+        lines.append(f"Public benefit phase : {len(digest['ongoing_public_benefit'])}")
     if ongoing_appeals:
         lines.append(f"Under appeal         : {len(ongoing_appeals)}")
     lines.append("")
@@ -326,6 +328,14 @@ def build_text_email(digest: dict) -> str:
     ]
     lines.append(_text_section("ONGOING – PHASE 2 – DETAILED ASSESSMENT", ["Merger", "Notified"], phase2_rows, "No ongoing phase 2 mergers."))
     lines.append("")
+
+    if digest.get("ongoing_public_benefit"):
+        public_benefit_rows = [
+            [m.get("merger_name", m["merger_id"]), format_date(m.get("end_of_determination_period"))]
+            for m in digest["ongoing_public_benefit"]
+        ]
+        lines.append(_text_section("ONGOING – PUBLIC BENEFIT PHASE", ["Merger", "Determination due"], public_benefit_rows, ""))
+        lines.append("")
 
     if ongoing_appeals:
         appeal_rows = [
@@ -786,8 +796,8 @@ def _phase_group_row(label: str, color: dict, count: int) -> str:
 
 
 def build_pipeline(digest: dict) -> str:
-    """All ongoing assessments as a compact list, grouped by phase (phase 2
-    first) and sorted by decision due date within each group. Dates due
+    """All ongoing assessments as a compact list, grouped by phase (public
+    benefit, then phase 2, first) and sorted by decision due date within each group. Dates due
     within a fortnight are shown in amber."""
     far_future = datetime(9999, 1, 1, tzinfo=timezone.utc)
 
@@ -795,6 +805,9 @@ def build_pipeline(digest: dict) -> str:
         return parse_iso_datetime(m.get("end_of_determination_period") or "")
 
     groups = [
+        # Shares the phase 2 colour: a public benefit application only follows
+        # a Phase 2 determination, and it is the later, weightier stage.
+        ("Public benefit phase", "phase_2", sorted(digest.get("ongoing_public_benefit") or [], key=lambda m: due_dt(m) or far_future)),
         ("Phase 2 – detailed assessment", "phase_2", sorted(digest["ongoing_phase_2"], key=lambda m: due_dt(m) or far_future)),
         ("Phase 1 – initial assessment", "phase_1", sorted(digest["ongoing_phase_1"], key=lambda m: due_dt(m) or far_future)),
     ]

@@ -72,7 +72,9 @@ def _reason_detail(title: str) -> str:
 
 
 def _escalated_to_phase_2(merger: dict) -> bool:
-    if (merger.get('stage') or '').startswith(merger_status.PHASE_2):
+    if merger_status.stage_phase(merger.get('stage')) == merger_status.PHASE_2:
+        return True
+    if merger.get('phase_2_determination'):
         return True
     if merger.get('phase_1_determination') == merger_status.REFERRED_TO_PHASE_2:
         return True

@@ -257,6 +257,8 @@ def create_merger_summary(merger: Dict[str, Any]) -> Dict[str, Any]:
         'phase_1_determination': merger.get('phase_1_determination'),
         'phase_1_determination_date': merger.get('phase_1_determination_date'),
         'phase_2_determination': merger.get('phase_2_determination'),
+        'phase_2_determination_date': merger.get('phase_2_determination_date'),
+        'public_benefit_in_progress': merger.get('public_benefit_in_progress', False),
         'ceased_date': merger.get('ceased_date'),
         'merger_description': truncated_description,
         'events': determination_pdf_events(merger),
@@ -316,6 +318,7 @@ def generate_weekly_digest(
         'deals_appealed_to_tribunal': [],
         'ongoing_phase_1': [],
         'ongoing_phase_2': [],
+        'ongoing_public_benefit': [],
         'ongoing_tribunal_appeals': [],
     }
 
@@ -340,8 +343,15 @@ def generate_weekly_digest(
         # already surfaced in last week's digest. This is how a Friday
         # determination that only appeared on the register the following
         # Monday — too late for last week's digest — gets caught here.
+        # A Phase 2 determination is followed by a public benefit application
+        # within 21 days, which clears the headline determination (the matter
+        # is live again), so a Phase 2 outcome is also caught on its own date.
+        determinations = None
         if is_in_week_range(determination_date, lookback_start, period_end):
             determinations = {accc_determination, phase_1_determination, phase_2_determination}
+        elif is_in_week_range(merger.get('phase_2_determination_date'), lookback_start, period_end):
+            determinations = {phase_2_determination}
+        if determinations:
             if determinations & merger_status.CLEARED_DETERMINATIONS:
                 if merger_id not in already_cleared:
                     digest['deals_cleared'].append(create_merger_summary(merger))
@@ -388,6 +398,9 @@ def generate_weekly_digest(
             stage == 'Phase 2 - detailed assessment'):
             digest['ongoing_phase_2'].append(create_merger_summary(merger))
 
+        if merger.get('public_benefit_in_progress') and status == merger_status.UNDER_ASSESSMENT:
+            digest['ongoing_public_benefit'].append(create_merger_summary(merger))
+
         # Deals with a *current* Australian Competition Tribunal appeal. Like
         # the ongoing phase lists, this is a live snapshot (not week-scoped),
         # so no dedup applies — a matter stays here until the appeal concludes.
@@ -400,15 +413,16 @@ def generate_weekly_digest(
     )
 
     # Sort cleared, referred, and declined by determination date (ascending)
-    digest['deals_cleared'].sort(
-        key=lambda x: x.get('determination_publication_date') or ''
-    )
+    # A Phase 2 outcome caught on its own date (the matter has since moved on
+    # to the public benefit phase) has no headline date to sort by.
+    def decided_on(x):
+        return x.get('determination_publication_date') or x.get('phase_2_determination_date') or ''
+
+    digest['deals_cleared'].sort(key=decided_on)
     digest['deals_referred_to_phase_2'].sort(
         key=lambda x: x.get('phase_1_determination_date') or ''
     )
-    digest['deals_declined'].sort(
-        key=lambda x: x.get('determination_publication_date') or ''
-    )
+    digest['deals_declined'].sort(key=decided_on)
 
     # Sort ceased by cessation date (ascending)
     digest['deals_assessment_ceased'].sort(
@@ -425,6 +439,9 @@ def generate_weekly_digest(
         key=lambda x: x.get('effective_notification_datetime') or ''
     )
     digest['ongoing_phase_2'].sort(
+        key=lambda x: x.get('effective_notification_datetime') or ''
+    )
+    digest['ongoing_public_benefit'].sort(
         key=lambda x: x.get('effective_notification_datetime') or ''
     )
 

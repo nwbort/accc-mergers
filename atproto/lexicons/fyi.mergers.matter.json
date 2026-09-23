@@ -59,9 +59,10 @@
             "knownValues": [
               "Waiver application",
               "Phase 1 - initial assessment",
-              "Phase 2 - detailed assessment"
+              "Phase 2 - detailed assessment",
+              "Public benefit phase"
             ],
-            "description": "Stage the matter has reached. A matter referred to phase 2 keeps its phase 1 determination in determinations."
+            "description": "Stage the matter has reached. A matter referred to phase 2 keeps its phase 1 determination in determinations, and one that moves on to the public benefit phase keeps its phase 2 determination."
           },
           "url": {
             "type": "string",

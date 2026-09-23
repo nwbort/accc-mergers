@@ -17,7 +17,7 @@ import { dataCache } from '../utils/dataCache';
 import { useTracking } from '../context/TrackingContext';
 import { useDebounce } from '../hooks/useDebounce';
 import { buildSearchIndex, searchMergers, clearSearchIndex } from '../utils/searchIndex';
-import { PHASES } from '../constants/mergerStatus';
+import { PHASES, isPublicBenefitStage } from '../constants/mergerStatus';
 import { getOutcomeRail } from '../constants/outcomeRail';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
@@ -225,7 +225,11 @@ function Mergers() {
     if (phaseFilter === 'phase1') {
       filtered = filtered.filter((m) => m.stage && m.stage.includes(PHASES.PHASE_1));
     } else if (phaseFilter === 'phase2') {
-      filtered = filtered.filter((m) => m.stage && m.stage.includes(PHASES.PHASE_2));
+      // reached_phase_2 keeps a matter that has since moved on to the public
+      // benefit phase (see outputs/list.py).
+      filtered = filtered.filter((m) => m.reached_phase_2 || (m.stage && m.stage.includes(PHASES.PHASE_2)));
+    } else if (phaseFilter === 'public-benefit') {
+      filtered = filtered.filter((m) => isPublicBenefitStage(m.stage));
     } else if (phaseFilter === 'waivers') {
       filtered = filtered.filter((m) => m.is_waiver);
     }
@@ -427,6 +431,7 @@ function Mergers() {
                     <option value="all">All phases</option>
                     <option value="phase1">{PHASES.PHASE_1}</option>
                     <option value="phase2">{PHASES.PHASE_2}</option>
+                    <option value="public-benefit">{PHASES.PUBLIC_BENEFITS}</option>
                     <option value="waivers">{PHASES.WAIVER}</option>
                   </select>
                 </div>

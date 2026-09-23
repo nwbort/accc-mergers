@@ -8,6 +8,9 @@ Writes:
 import json
 from pathlib import Path
 
+from scripts.constants import merger_status
+
+from ..enrichment import reached_phase_2
 from ..loaders import FORWARD_REFILE_RELATIONSHIPS
 from ..prune import prune_stale_files
 
@@ -94,6 +97,12 @@ def _lightweight(m: dict) -> dict:
     appeal = _appeal_summary(m)
     if appeal:
         entry["appeal"] = appeal
+    # A matter that has moved on from Phase 2 to the public benefit phase no
+    # longer says "Phase 2" in its stage, but the list's Phase 2 filter should
+    # still find it. Carried only where the stage doesn't already say so, so
+    # the ordinary entry is no larger.
+    if reached_phase_2(m) and merger_status.stage_phase(m.get('stage')) != merger_status.PHASE_2:
+        entry["reached_phase_2"] = True
     return entry
 
 

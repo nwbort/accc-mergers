@@ -32,13 +32,26 @@ export const MERGER_STATUS = {
   APPROVED_WITH_CONDITIONS: 'Approved with conditions',
 };
 
-// Values that appear in merger.stage.
+// Substrings of the values that appear in merger.stage (the register's full
+// labels are "Phase 1 - initial assessment", "Phase 2 - detailed assessment",
+// "Public benefit phase" and "Waiver application"), and the values of
+// event.phase. Test a stage for the public benefit phase with
+// isPublicBenefitStage rather than a bare includes(): its label isn't
+// capitalised the way the other three are.
 export const PHASES = {
   PHASE_1: 'Phase 1',
   PHASE_2: 'Phase 2',
-  PUBLIC_BENEFITS: 'Public Benefits',
+  PUBLIC_BENEFITS: 'Public benefit',
   WAIVER: 'Waiver',
 };
+
+// The public benefit phase follows a Phase 2 determination that refused the
+// acquisition or cleared it on conditions, if the parties apply within 21
+// days. It runs 50 business days: the ACCC's public benefit assessment by day
+// 20, the parties' responses (or a remedy offer) by day 35.
+export function isPublicBenefitStage(stage) {
+  return Boolean(stage) && stage.toLowerCase().includes(PHASES.PUBLIC_BENEFITS.toLowerCase());
+}
 
 // Abbreviated labels for the compact card header used by the dashboard's
 // recent-determination cards and the Phase 2 completed-matters cards.

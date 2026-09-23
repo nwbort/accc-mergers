@@ -2,7 +2,7 @@ import { FaGavel } from 'react-icons/fa';
 import { MERGER_STATUS } from '../constants/mergerStatus';
 import { getOutcomeHeaderStyle } from '../constants/outcomeHeader';
 import { OUTCOME_ICONS } from '../constants/outcomeIcons';
-import { getHeaderStatus } from '../utils/mergerOutcome';
+import { getHeaderStatus, getPublicBenefitQualifier } from '../utils/mergerOutcome';
 import Phase2OddsReveal from './Phase2OddsReveal';
 import WaiverBadge from './WaiverBadge';
 
@@ -45,8 +45,12 @@ function MergerOutcomeHeading({ merger }) {
   // "Approved with conditions" is the outcome's own name (see
   // MERGER_STATUS.APPROVED_WITH_CONDITIONS); a concluded appeal's result takes
   // a dot, since "Not approved confirmed on appeal" would read as one phrase.
+  // The public benefit phase qualifies the standing the same way: a matter
+  // back under assessment after a Phase 2 determination says which assessment
+  // it is under, and an outcome reached there says so.
+  const publicBenefit = getPublicBenefitQualifier(merger);
   const outcome =
-    `${label}${showConditions ? ' with conditions' : ''}${appealSuffix ? ` · ${appealSuffix}` : ''}`;
+    `${label}${showConditions ? ' with conditions' : ''}${publicBenefit ? ` · ${publicBenefit}` : ''}${appealSuffix ? ` · ${appealSuffix}` : ''}`;
 
   return (
     <p className={`flex items-center gap-x-4 gap-y-2 flex-wrap mb-2 text-sm font-bold uppercase tracking-widest ${style.heading}`}>
