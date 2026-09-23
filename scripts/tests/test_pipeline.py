@@ -284,6 +284,79 @@ class TestMergeEventsDocumentReuploaded:
 
 
 # ---------------------------------------------------------------------------
+# _merge_events: a document attached to a previously URL-less event must not
+# duplicate its timeline entry
+# ---------------------------------------------------------------------------
+
+class TestMergeEventsDocumentNewlyLinked:
+    """The ACCC sometimes flips a matter's determination to a final outcome
+    and adds a dated events-table row for it before attaching the instrument
+    PDF. The next scrape then finds the same row now carrying a document
+    link. Without matching it back to the URL-less existing event, the old
+    row survives untouched and the newly url'd row is appended alongside it
+    as a duplicate — the MN-65005 "IAG-RACI - Phase 2 determination" case.
+    """
+
+    TITLE = "IAG-RACI - Phase 2 determination"
+    URL = "https://accc.gov.au/system/files/moderated_files/determination.pdf"
+
+    def _existing(self, **extra):
+        return {
+            "events": [
+                {
+                    "date": "2026-09-22T12:00:00Z",
+                    "title": self.TITLE,
+                    "display_title": self.TITLE,
+                    "phase": "Phase 2",
+                    **extra,
+                },
+            ],
+        }
+
+    def _scraped(self):
+        return [
+            {
+                "date": "2026-09-22T12:00:00Z",
+                "title": self.TITLE,
+                "display_title": "Phase 2 - detailed assessment determination: Not approved",
+                "url": self.URL,
+                "phase": "Phase 2",
+                "status": "live",
+            },
+        ]
+
+    def test_newly_linked_document_rebinds_instead_of_duplicating(self):
+        merged = _merge_events(self._scraped(), self._existing(), "MN-65005", set())
+        assert len(merged) == 1, "no duplicate should be created"
+        assert merged[0]["url"] == self.URL
+
+    def test_rebind_preserves_display_title_and_determination_flag(self):
+        existing = self._existing(is_determination_event=True)
+        existing["events"][0]["display_title"] = "Custom display title"
+        merged = _merge_events(self._scraped(), existing, "MN-65005", set())
+        assert len(merged) == 1
+        assert merged[0]["display_title"] == "Custom display title"
+        assert merged[0]["is_determination_event"] is True
+
+    def test_stale_duplicate_pair_is_collapsed(self):
+        # Data poisoned by a scrape made before this rebind existed: both the
+        # URL-less row and its newly url'd duplicate are already stored. The
+        # next merge must collapse them back to one event.
+        existing = {
+            "events": [
+                self._existing(is_determination_event=True)["events"][0],
+                self._scraped()[0],
+            ],
+        }
+        merged = _merge_events(self._scraped(), existing, "MN-65005", set())
+        assert len(merged) == 1
+        ev = merged[0]
+        assert ev["url"] == self.URL
+        assert ev["is_determination_event"] is True
+        assert ev.get("status") != "removed"
+
+
+# ---------------------------------------------------------------------------
 # _merge_events: freezing (whole-list and selective)
 # ---------------------------------------------------------------------------
 
