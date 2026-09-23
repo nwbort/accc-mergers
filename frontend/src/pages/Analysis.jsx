@@ -163,6 +163,9 @@ function Analysis() {
       responsive: true,
       maintainAspectRatio: false,
       animation: false,
+      // Snap to the nearest month anywhere over the plot, rather than only
+      // with the pointer on a point.
+      interaction: { mode: 'index', intersect: false },
       plugins: {
         legend: { display: false },
         tooltip: {
