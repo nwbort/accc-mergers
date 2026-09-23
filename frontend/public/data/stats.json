@@ -3,12 +3,12 @@
   "total_waivers": 416,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 232,
-    "Under assessment": 24,
+    "Assessment completed": 233,
+    "Under assessment": 23,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 224,
+    "Approved": 225,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,28 +22,28 @@
     "Not approved": 19
   },
   "clearance_rate": {
-    "cleared": 229,
+    "cleared": 230,
     "not_cleared": 3,
-    "total": 232,
+    "total": 233,
     "rate": 0.987
   },
   "phase_duration": {
-    "average_days": 29.79746835443038,
-    "median_days": 26,
-    "average_business_days": 20.223628691983123,
-    "median_business_days": 18,
+    "average_days": 29.76050420168067,
+    "median_days": 26.0,
+    "average_business_days": 20.201680672268907,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
-        "count": 49,
-        "percentage": 20.7
+        "count": 50,
+        "percentage": 21.0
       },
       "day20": {
-        "count": 173,
-        "percentage": 73.0
+        "count": 174,
+        "percentage": 73.1
       },
       "day30": {
-        "count": 220,
-        "percentage": 92.8
+        "count": 221,
+        "percentage": 92.9
       }
     }
   },
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-75054",
+      "merger_name": "I Squared Capital \u2013 oOh!media",
+      "determination": "Approved",
+      "determination_date": "2026-09-23T12:00:00Z",
+      "page_modified_datetime": "2026-09-23T16:46:03+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-65005",
       "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
       "determination": "Not approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-65034",
-      "merger_name": "Cinven and La Caisse \u2013 Optio Group",
-      "determination": "Approved",
-      "determination_date": "2026-09-17T12:00:00Z",
-      "page_modified_datetime": "2026-09-17T17:19:52+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]

@@ -2,7 +2,7 @@
   "phase1_duration": {
     "duration_histogram": {
       "15": {
-        "21": 24,
+        "21": 25,
         "22": 13,
         "23": 3,
         "24": 4,
@@ -130,17 +130,17 @@
     },
     "stats": {
       "average": 20.2,
-      "median": 18,
+      "median": 18.0,
       "min": 15,
       "max": 59,
-      "count": 237
+      "count": 238
     },
     "calendar_stats": {
       "average": 29.8,
-      "median": 26,
+      "median": 26.0,
       "min": 21,
       "max": 103,
-      "count": 237
+      "count": 238
     }
   },
   "waiver_duration": {
@@ -382,7 +382,7 @@
       41,
       46,
       37,
-      24
+      23
     ],
     "as_at": "2026-09-23"
   },
@@ -393,14 +393,14 @@
         "days": 30,
         "notifications_filed": 25,
         "notifications": {
-          "median": 19.0,
-          "average": 21.2,
+          "median": 19,
+          "average": 21.1,
           "p90": 28,
           "min": 15,
           "max": 52,
-          "count": 50,
+          "count": 51,
           "duration_histogram": {
-            "15": 9,
+            "15": 10,
             "16": 6,
             "17": 2,
             "18": 7,
@@ -451,14 +451,14 @@
         "days": 90,
         "notifications_filed": 112,
         "notifications": {
-          "median": 18,
-          "average": 21.3,
-          "p90": 34,
+          "median": 18.0,
+          "average": 21.2,
+          "p90": 33,
           "min": 15,
           "max": 56,
-          "count": 119,
+          "count": 120,
           "duration_histogram": {
-            "15": 17,
+            "15": 18,
             "16": 21,
             "17": 10,
             "18": 14,
@@ -482,7 +482,7 @@
             "52": 2,
             "56": 1
           },
-          "median_delta": 0
+          "median_delta": 0.0
         },
         "waivers": {
           "median": 17,
@@ -517,12 +517,12 @@
     ],
     "all_time": {
       "notifications": {
-        "median": 18,
+        "median": 18.0,
         "average": 20.2,
         "p90": 28,
         "min": 15,
         "max": 59,
-        "count": 237
+        "count": 238
       },
       "waivers": {
         "median": 14.0,
@@ -649,9 +649,9 @@
           "count": 45
         },
         {
-          "median": 19,
-          "average": 21.8,
-          "count": 33
+          "median": 19.0,
+          "average": 21.6,
+          "count": 34
         }
       ],
       "waivers": [
@@ -740,7 +740,7 @@
         41,
         46,
         37,
-        24
+        23
       ]
     }
   },
@@ -856,11 +856,11 @@
     {
       "code": "M",
       "name": "Professional, Scientific and Technical Services",
-      "average_business_days": 20.7,
-      "median_business_days": 18.0,
-      "average_calendar_days": 30.9,
-      "median_calendar_days": 26.0,
-      "count": 58
+      "average_business_days": 20.6,
+      "median_business_days": 18,
+      "average_calendar_days": 30.7,
+      "median_calendar_days": 26,
+      "count": 59
     },
     {
       "code": "C",
@@ -892,11 +892,11 @@
     {
       "code": "K",
       "name": "Financial and Insurance Services",
-      "average_business_days": 19.0,
-      "median_business_days": 17.0,
-      "average_calendar_days": 27.5,
-      "median_calendar_days": 25.0,
-      "count": 42
+      "average_business_days": 18.9,
+      "median_business_days": 17,
+      "average_calendar_days": 27.3,
+      "median_calendar_days": 25,
+      "count": 43
     },
     {
       "code": "J",
@@ -911,11 +911,11 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 512,
+      "count": 513,
       "outcome_mix": {
-        "Approved": 512
+        "Approved": 513
       },
-      "median_phase_1_business_days": 17
+      "median_phase_1_business_days": 17.0
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -938,9 +938,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 22,
+      "count": 21,
       "outcome_mix": {
-        "Unknown": 22
+        "Unknown": 21
       },
       "median_phase_1_business_days": null
     },
@@ -980,7 +980,7 @@
   ],
   "deadline_utilisation": {
     "histogram": {
-      "15": 49,
+      "15": 50,
       "16": 40,
       "17": 25,
       "18": 27,
@@ -1004,9 +1004,9 @@
     },
     "stats": {
       "mean_used_bd": 18.2,
-      "median_used_bd": 17,
+      "median_used_bd": 17.0,
       "pct_decided_final_3_bd": 3.2,
-      "count": 217
+      "count": 218
     },
     "extended_count": 11
   },
@@ -1083,20 +1083,20 @@
     {
       "code": "M",
       "name": "Professional, Scientific and Technical Services",
-      "approved": 55,
+      "approved": 56,
       "not_approved": 0,
       "referred": 3,
-      "in_progress": 7,
-      "phase2_referral_rate": 0.052
+      "in_progress": 6,
+      "phase2_referral_rate": 0.051
     },
     {
       "code": "K",
       "name": "Financial and Insurance Services",
-      "approved": 40,
+      "approved": 41,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 13,
-      "phase2_referral_rate": 0.048
+      "in_progress": 12,
+      "phase2_referral_rate": 0.047
     },
     {
       "code": "E",
