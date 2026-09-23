@@ -2,7 +2,7 @@ import { FaGavel } from 'react-icons/fa';
 import { MERGER_STATUS } from '../constants/mergerStatus';
 import { getOutcomeHeaderStyle } from '../constants/outcomeHeader';
 import { OUTCOME_ICONS } from '../constants/outcomeIcons';
-import { getHeaderStatus, getPublicBenefitQualifier } from '../utils/mergerOutcome';
+import { getHeaderStatus, getPublicBenefitQualifier, getStageLabel } from '../utils/mergerOutcome';
 import Phase2OddsReveal from './Phase2OddsReveal';
 import WaiverBadge from './WaiverBadge';
 
@@ -50,6 +50,10 @@ function MergerOutcomeHeading({ merger }) {
   const outcome =
     `${label}${showConditions ? ' with conditions' : ''}${publicBenefit ? ` · ${publicBenefit}` : ''}${appealSuffix ? ` · ${appealSuffix}` : ''}`;
 
+  // The phase rides on the same line, after a dot, rather than in a field of
+  // its own further down the card.
+  const stage = getStageLabel(merger);
+
   return (
     <p className={`flex items-center gap-x-4 gap-y-2 flex-wrap mb-2 text-sm font-bold uppercase tracking-widest ${style.heading}`}>
       <span className="inline-flex items-center gap-2">
@@ -63,6 +67,12 @@ function MergerOutcomeHeading({ merger }) {
         <Phase2OddsReveal merger={merger}>
           <span>{outcome}</span>
         </Phase2OddsReveal>
+        {stage && (
+          <>
+            <span aria-hidden="true">·</span>
+            <span>{stage}</span>
+          </>
+        )}
       </span>
       {/* A live appeal is a status in its own right, not a qualifier: the ACCC's
           position stands, and the Tribunal's is a second thing the matter is

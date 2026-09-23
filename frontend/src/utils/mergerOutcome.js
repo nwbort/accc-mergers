@@ -9,7 +9,7 @@
  * and the heading cannot disagree.
  */
 
-import { MERGER_STATUS } from '../constants/mergerStatus';
+import { MERGER_STATUS, PHASES, isPublicBenefitStage } from '../constants/mergerStatus';
 import { resolveEffectiveDetermination } from '../constants/appeal';
 
 // Determinations that end a matter. A live matter's accc_determination is null,
@@ -80,11 +80,30 @@ export function getHeaderStatus(merger) {
  *
  * Once decided, the outcome is one reached on public benefit grounds, not the
  * competition test. While the application runs the status line says only
- * "Under assessment", like any live matter — the stage field says which phase.
+ * "Under assessment", like any live matter, with the phase set beside it.
  */
 export function getPublicBenefitQualifier(merger) {
   if (merger?.public_benefits_determination) return 'after public benefit review';
   return null;
+}
+
+/**
+ * The phase a matter is in (or was decided in), short enough to sit beside the
+ * status on the header line: "Phase 1", not "Phase 1 - initial assessment".
+ *
+ * Null where the line already says it — a waiver wears its own chip, "Referred
+ * to phase 2" names the phase, and "after public benefit review" names the
+ * public benefit phase. The register's "Public benefit phase" is shortened to
+ * "Public benefits".
+ */
+export function getStageLabel(merger) {
+  const stage = merger?.stage;
+  if (!stage || merger.is_waiver || stage.startsWith(PHASES.WAIVER)) return null;
+  if (getPublicBenefitQualifier(merger)) return null;
+  const short = isPublicBenefitStage(stage) ? 'Public benefits' : stage.split(' - ')[0].trim();
+  const headerLabel = getHeaderStatus(merger)?.label ?? '';
+  if (headerLabel.toLowerCase().includes(short.toLowerCase())) return null;
+  return short;
 }
 
 /**
