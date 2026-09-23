@@ -383,12 +383,20 @@ function readJson(path) {
   return JSON.parse(readFileSync(path, 'utf8'));
 }
 
-// `/mergers/MN-1/foo` -> `dist/mergers/MN-1/foo/index.html`; `/` -> `dist/index.html`.
+// `/mergers/MN-1/foo` -> `dist/mergers/MN-1/foo.html`.
+//
+// A sibling `.html` file, not `foo/index.html`: Cloudflare Pages serves
+// `foo.html` at `/foo`, but serves `foo/index.html` only at `/foo/` and
+// 308-redirects `/foo` there. Every canonical, sitemap entry and in-app link
+// on the site is slashless, so the directory form made each of them point at
+// a redirect — and Google, seeing the redirect win, overrode the declared
+// canonical with the slashed URL ("Page with redirect" in Search Console).
+//
 // The root is skipped by the caller: overwriting dist/index.html would replace
 // the template every other page is stamped from, and the SPA fallback already
 // serves it.
 function writePage(outDir, path, html) {
-  const outFile = join(outDir, path.replace(/^\//, ''), 'index.html');
+  const outFile = join(outDir, `${path.replace(/^\//, '')}.html`);
   mkdirSync(dirname(outFile), { recursive: true });
   writeFileSync(outFile, html);
 }
