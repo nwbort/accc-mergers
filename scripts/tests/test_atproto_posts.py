@@ -152,14 +152,19 @@ def test_a_phase_2_decision_is_not_dated_on_the_day_it_was_referred():
             phase_1_determination_date="2026-04-16T12:00:00Z",
         )
     )
-    assert [m.headline for m in found] == ["Notified to the ACCC", "Referred to Phase 2"]
+    assert found[-1].headline == "Not approved by the ACCC"
+    assert found[-1].key == "MN-01016:determined:undated"
+    assert "Apr" not in post_text(found[-1])
 
     found = milestones(
         matter(
             stage="Phase 2 - detailed assessment",
             status="Assessment completed",
             accc_determination="Not approved",
-            determination_publication_date="2026-09-22T12:00:00Z",
+            events=[
+                {"date": "2026-04-16T12:00:00Z", "title": "IAG-RACI - Phase 1 determination"},
+                {"date": "2026-09-22T12:00:00Z", "title": "IAG-RACI - Phase 2 determination"},
+            ],
             phase_1_determination="Referred to phase 2",
             phase_1_determination_date="2026-04-16T12:00:00Z",
         )
@@ -420,10 +425,17 @@ def test_a_referral_and_the_phase_2_decision_after_it_are_both_posted(
     use_matters(monkeypatch, [matter("MN-1", accc_determination="Referred to phase 2", **referred)])
     main([])
 
-    # Decided before the register carries a date: nothing yet.
-    decided = dict(referred, status="Assessment completed", accc_determination="Not approved")
+    # Decided before the register carries a date: posted now, dated from the
+    # determination document on the timeline, and not again once it has one.
+    decided = dict(
+        referred,
+        status="Assessment completed",
+        accc_determination="Not approved",
+        events=[{"date": "2026-09-22T12:00:00Z", "title": "Phase 2 determination"}],
+    )
     use_matters(monkeypatch, [matter("MN-1", **decided)])
     main([])
+    assert len(fake_client.posts) == 2
 
     decided.update(
         phase_2_determination="Not approved",

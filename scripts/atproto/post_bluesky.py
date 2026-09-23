@@ -57,6 +57,10 @@ DEFAULT_MAX_POSTS = 10
 #: would otherwise have, so keep the list short.
 POST_HASHTAGS = ("accc",)
 
+#: Stands in for the date in a milestone's key when the register has none
+#: yet. Sorts after every real date, so an undated post drains last.
+UNDATED = "undated"
+
 #: Cleared-vs-blocked wording, keyed by the register's own determination value
 #: and whether the matter is a waiver application.
 _OUTCOME_HEADLINES = {
@@ -102,13 +106,15 @@ def milestones(matter: dict) -> list[Milestone]:
     is_waiver = bool(matter.get("is_waiver"))
     found: list[Milestone] = []
 
-    def add(kind: str, date: str | None, headline: str, detail: str) -> None:
-        if not date:
+    def add(
+        kind: str, date: str | None, headline: str, detail: str, *, undated: bool = False
+    ) -> None:
+        if not date and not undated:
             return
         found.append(
             Milestone(
-                key=f"{merger_id}:{kind}:{date}",
-                date=date,
+                key=f"{merger_id}:{kind}:{date or UNDATED}",
+                date=date or UNDATED,
                 headline=headline,
                 title=title,
                 detail=detail,
@@ -156,12 +162,18 @@ def milestones(matter: dict) -> list[Milestone]:
     if outcome and outcome != "Referred to phase 2":
         # A referred matter's phase 1 date is the referral's, not this
         # determination's: falling back to it posts a phase 2 decision under
-        # the day it was referred. Wait for a real date instead.
+        # the day it was referred. The register can say a matter is decided a
+        # run before it carries the date, so take the determination document's
+        # date from the timeline, and failing that post without one: the news
+        # is the outcome, and holding it back for a date delays it for nothing.
         referred = matter.get("phase_1_determination") == "Referred to phase 2"
         decided = (
             _date(matter.get("phase_2_determination_date"))
             or (None if referred else _date(matter.get("phase_1_determination_date")))
             or _date(matter.get("determination_publication_date"))
+            or _determination_event_date(
+                matter, after=_date(matter.get("phase_1_determination_date")) if referred else None
+            )
         )
         headline = _OUTCOME_HEADLINES.get((outcome, is_waiver), outcome)
         # has_conditions describes whichever determination now stands, which
@@ -171,7 +183,7 @@ def milestones(matter: dict) -> list[Milestone]:
         stage = "Phase 2 - detailed assessment" if phase_2 else matter.get("stage")
         if not phase_2 and (public_benefit or matter.get("public_benefit_in_progress")):
             stage = "Phase 1 - initial assessment"
-        add("determined", decided, headline, _detail(merger_id, stage, decided))
+        add("determined", decided, headline, _detail(merger_id, stage, decided), undated=True)
 
     applied = _date(matter.get("public_benefit_application_date"))
     add(
@@ -418,6 +430,22 @@ def main(argv: list[str] | None = None) -> int:
     if failures:
         return 1
     return 0
+
+
+def _determination_event_date(matter: dict, *, after: str | None = None) -> str | None:
+    """The latest determination document's date on the timeline, if any.
+
+    ``after`` skips anything on or before it - for a referred matter, the
+    phase 1 determination that did the referring.
+    """
+    dates = [
+        date
+        for event in matter.get("events") or []
+        if event.get("is_determination_event")
+        or "determination" in (event.get("title") or "").lower()
+        if (date := _date(event.get("date"))) and (after is None or date > after)
+    ]
+    return max(dates, default=None)
 
 
 def _milestone_event(key: str) -> str:
