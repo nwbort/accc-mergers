@@ -19,6 +19,13 @@ from scripts.constants import merger_status
 # Default cutoff period after determination/waiver decision
 CUTOFF_WEEKS = 3
 
+# Floor on the cutoff for a clearance granted on conditions. The parties can
+# apply for a public benefit determination within 21 calendar days of it, and
+# the ACCC publishes the application on the register a business day or so
+# later — which a three-week cutoff would only just miss. (A refusal is never
+# cut off at all, so it needs no floor.)
+CONDITIONAL_CUTOFF_WEEKS = 5
+
 
 def is_waiver_merger(merger: dict) -> bool:
     """Check if a merger is a waiver application."""
@@ -47,6 +54,10 @@ def get_cutoff_date(merger: dict, cutoff_weeks: int = CUTOFF_WEEKS) -> datetime:
     # For regular notifications: only cut off if approved
     determination = merger.get('accc_determination', '')
     if determination == merger_status.APPROVED:
+        # Imported here: enrichment imports this module.
+        from scripts.generate.static_data.enrichment import detect_has_conditions
+        if detect_has_conditions(merger):
+            cutoff_weeks = max(cutoff_weeks, CONDITIONAL_CUTOFF_WEEKS)
         return determination_date + timedelta(weeks=cutoff_weeks)
 
     # Not approved or no determination - keep processing

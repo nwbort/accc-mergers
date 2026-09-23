@@ -9,7 +9,7 @@ import {
 } from 'react-icons/fa6';
 import { mergerPath } from '../utils/slug';
 import { formatWeekday, formatDateRange, getCalendarDaysUntil } from '../utils/dates';
-import { PHASES } from '../constants/mergerStatus';
+import { PHASES, isPublicBenefitStage } from '../constants/mergerStatus';
 import { CARD } from '../utils/classNames';
 import EmptyStateCard from './EmptyStateCard';
 
@@ -38,6 +38,18 @@ const EVENT_TYPES = {
     tile: 'bg-amber-50 text-amber-700',
     chip: 'bg-amber-50 text-amber-700 border-amber-200/60',
   },
+  public_benefit_assessment: {
+    label: 'Public benefit assessment',
+    Icon: FaScaleBalanced,
+    tile: 'bg-teal-50 text-teal-700',
+    chip: 'bg-teal-50 text-teal-700 border-teal-200/60',
+  },
+  public_benefit_response_due: {
+    label: 'Public benefit responses',
+    Icon: FaRegComments,
+    tile: 'bg-teal-50 text-teal-700',
+    chip: 'bg-teal-50 text-teal-700 border-teal-200/60',
+  },
   determination_due: {
     label: 'Determination',
     Icon: FaGavel,
@@ -62,25 +74,33 @@ const DEFAULT_EVENT_TYPE = {
 const getEventType = (type) => EVENT_TYPES[type] || DEFAULT_EVENT_TYPE;
 
 // Within a single calendar day, surface the most consequential deadlines
-// first: a tribunal hearing outranks a determination, which ranks above
-// concerns notices, which rank above consultations; Phase 2 outranks Phase 1;
-// ties fall back to the merger name so the order is stable.
+// first: the later the phase the higher it ranks (public benefit, then Phase
+// 2, then Phase 1); within a phase a tribunal hearing outranks a
+// determination, which ranks above concerns notices, which rank above
+// consultations; ties fall back to the merger name so the order is stable.
 const EVENT_TYPE_ORDER = {
   tribunal_hearing: 0,
   determination_due: 1,
+  public_benefit_assessment: 2,
   notice_of_competition_concerns: 2,
+  public_benefit_response_due: 3,
   consultation_due: 3,
 };
 
-const phaseRank = (stage) => (stage && stage.includes(PHASES.PHASE_2) ? 0 : 1);
+// The later the phase, the more is riding on it: a public benefit
+// determination is the last word before the Tribunal.
+const phaseRank = (stage) => {
+  if (isPublicBenefitStage(stage)) return 0;
+  return stage && stage.includes(PHASES.PHASE_2) ? 1 : 2;
+};
 
 function compareWithinDay(a, b) {
+  const phaseDelta = phaseRank(a.stage) - phaseRank(b.stage);
+  if (phaseDelta !== 0) return phaseDelta;
+
   const typeDelta =
     (EVENT_TYPE_ORDER[a.type] ?? 99) - (EVENT_TYPE_ORDER[b.type] ?? 99);
   if (typeDelta !== 0) return typeDelta;
-
-  const phaseDelta = phaseRank(a.stage) - phaseRank(b.stage);
-  if (phaseDelta !== 0) return phaseDelta;
 
   return a.merger_name.localeCompare(b.merger_name);
 }
@@ -110,8 +130,8 @@ const LATER_URGENCY = { dot: 'bg-primary', text: 'text-gray-900' };
 const LATER_KEY = 'later';
 
 // Split a day's already-sorted events into runs of consecutive same-type
-// events. compareWithinDay sorts by type first, so each type appears in at
-// most one run per day.
+// events. compareWithinDay sorts by phase and then type, so a type can appear
+// in more than one run on a day only when another type sits between them.
 function groupByType(events) {
   const groups = [];
   events.forEach((event) => {

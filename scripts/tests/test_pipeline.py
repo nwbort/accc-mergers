@@ -1990,10 +1990,10 @@ class TestExtractPhaseFromEvent:
         assert extract_phase_from_event("Phase 2 - Detailed Assessment") == "Phase 2"
 
     def test_public_benefits(self):
-        assert extract_phase_from_event("Public Benefits Test") == "Public Benefits"
+        assert extract_phase_from_event("Public Benefits Test") == "Public benefit"
 
     def test_public_benefits_lowercase(self):
-        assert extract_phase_from_event("Applying public benefits test") == "Public Benefits"
+        assert extract_phase_from_event("Applying public benefits test") == "Public benefit"
 
     def test_waiver(self):
         assert extract_phase_from_event("Waiver Application") == "Waiver"

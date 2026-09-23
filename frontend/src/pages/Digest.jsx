@@ -394,6 +394,7 @@ function Digest() {
   const appealedMergers = digest.deals_appealed_to_tribunal || [];
   const ongoingPhase1 = digest.ongoing_phase_1 || [];
   const ongoingPhase2 = digest.ongoing_phase_2 || [];
+  const ongoingPublicBenefit = digest.ongoing_public_benefit || [];
   const ongoingAppeals = digest.ongoing_tribunal_appeals || [];
 
   // A chip and its table appear together, or not at all — an empty section is
@@ -407,6 +408,7 @@ function Digest() {
     { id: 'mergers-appealed', colorKey: DIGEST_COLOR_KEYS.TRIBUNAL_APPEAL, count: appealedMergers.length, label: 'Appealed to tribunal' },
     { id: 'ongoing-phase-1', colorKey: DIGEST_COLOR_KEYS.PHASE_1, count: ongoingPhase1.length, label: 'Ongoing phase 1' },
     { id: 'ongoing-phase-2', colorKey: DIGEST_COLOR_KEYS.PHASE_2, count: ongoingPhase2.length, label: 'Ongoing phase 2' },
+    { id: 'ongoing-public-benefit', colorKey: DIGEST_COLOR_KEYS.PHASE_2, count: ongoingPublicBenefit.length, label: 'Public benefit phase' },
     { id: 'ongoing-tribunal-appeals', colorKey: DIGEST_COLOR_KEYS.TRIBUNAL_APPEAL, count: ongoingAppeals.length, label: 'Ongoing ACT appeals' },
   ].filter(({ count }) => count > 0);
 
@@ -654,12 +656,18 @@ function Digest() {
             />
           )}
 
-          {ongoingPhase2.length > 0 && (
+          {/* The public benefit phase follows a Phase 2 determination and is
+              laid out the same way, in the same colour. */}
+          {[
+            { id: 'ongoing-phase-2', title: 'Ongoing - phase 2 - detailed assessment', mergers: ongoingPhase2 },
+            { id: 'ongoing-public-benefit', title: 'Ongoing - public benefit phase', mergers: ongoingPublicBenefit },
+          ].filter(({ mergers }) => mergers.length > 0).map(({ id, title, mergers }) => (
             <DigestSection
-              id="ongoing-phase-2"
-              title="Ongoing - phase 2 - detailed assessment"
+              key={id}
+              id={id}
+              title={title}
               colorKey={DIGEST_COLOR_KEYS.PHASE_2}
-              mergers={ongoingPhase2}
+              mergers={mergers}
               columns={['Merger', { label: 'Notification date', thClassName: 'hidden sm:table-cell' }, { label: 'Determination due date', thClassName: 'hidden sm:table-cell' }, 'Summary']}
               renderRow={(merger) => (
                 <tr key={merger.merger_id} className="relative hover:bg-phase-2-pale/40 transition-colors">
@@ -701,7 +709,7 @@ function Digest() {
                 </tr>
               )}
             />
-          )}
+          ))}
 
           {ongoingAppeals.length > 0 && (
             <DigestSection

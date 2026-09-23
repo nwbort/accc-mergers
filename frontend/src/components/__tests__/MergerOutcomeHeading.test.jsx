@@ -172,4 +172,19 @@ describe('MergerOutcomeHeading', () => {
     render(<MergerOutcomeHeading merger={completed} />);
     expect(screen.queryByText('Waiver')).not.toBeInTheDocument();
   });
+
+  it('states a live public benefit matter as plainly under assessment', () => {
+    render(
+      <MergerOutcomeHeading
+        merger={{
+          status: 'Under assessment',
+          accc_determination: null,
+          stage: 'Public benefit phase',
+          public_benefit_in_progress: true,
+          phase_2_determination: 'Not approved',
+        }}
+      />
+    );
+    expect(screen.getByText('Under assessment')).toBeInTheDocument();
+  });
 });

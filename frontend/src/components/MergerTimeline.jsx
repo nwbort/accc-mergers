@@ -294,6 +294,29 @@ function MergerTimeline({ merger }) {
     }
   }
 
+  // A matter that went on to the public benefit phase had a Phase 2
+  // determination along the way, which no longer ends its axis (the public
+  // benefit deadline or determination does). Marked like the referral: a small
+  // dot in the Phase 2 outcome's colour, with the detail on hover or tap.
+  const wentToPublicBenefit = Boolean(
+    merger.public_benefit_in_progress || merger.public_benefits_determination
+  );
+  let phase2Pct = null;
+  if (wentToPublicBenefit && merger.phase_2_determination_date) {
+    const phase2 = parseDateOnly(merger.phase_2_determination_date);
+    if (isValid(phase2) && phase2 > start && phase2 < end) {
+      phase2Pct = axisPct(phase2, start, end);
+    }
+  }
+  const phase2Label = phase2Pct === null ? null
+    : `Phase 2 determination: ${merger.phase_2_determination}`;
+  const phase2Hint = phase2Pct === null ? null : {
+    title: phase2Label,
+    body: `Made on ${formatDateMedium(merger.phase_2_determination_date)}; the parties then applied for a public benefit determination.`,
+  };
+  const phase2Dot = phase2Pct === null ? null
+    : getOutcomeDot({ determination: merger.phase_2_determination }).dot;
+
   // Progress + "today" marker, only while the assessment is still running.
   // Overdue is judged on calendar days (ACCC's Australian "today") rather than
   // the raw current instant, so the deadline's own day reads as "due today"
@@ -487,7 +510,8 @@ function MergerTimeline({ merger }) {
 
   const openHint = openHintId === 'expected' ? expectedHint
     : openHintId === 'phase-1' ? phase1Hint
-      : null;
+      : openHintId === 'phase-2' ? phase2Hint
+        : null;
 
   return (
     // Wraps the row so an opened explanation can use the full width rather than
@@ -555,6 +579,19 @@ function MergerTimeline({ merger }) {
                 style={{ left: `${phase1Pct}%`, transform: 'translate(-50%, -50%)' }}
                 title={`Referred to Phase 2 · ${formatDateMedium(merger.phase_1_determination_date)}`}
                 label={`Referred to Phase 2 on ${formatDateMedium(merger.phase_1_determination_date)}`}
+              />
+            )}
+            {/* Phase 2 determination marker, for a matter that went on to the
+                public benefit phase. Same size and treatment as the referral. */}
+            {phase2Pct !== null && (
+              <HintMarker
+                hintId="phase-2"
+                openHintId={openHintId}
+                onToggle={toggleHint}
+                className={`absolute top-1/2 h-2.5 w-2.5 rounded-full ${phase2Dot} ring-2 ring-white cursor-help`}
+                style={{ left: `${phase2Pct}%`, transform: 'translate(-50%, -50%)' }}
+                title={`${phase2Label} · ${formatDateMedium(merger.phase_2_determination_date)}`}
+                label={`${phase2Label}, made on ${formatDateMedium(merger.phase_2_determination_date)}`}
               />
             )}
 

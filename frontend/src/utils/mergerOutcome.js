@@ -76,6 +76,48 @@ export function getHeaderStatus(merger) {
 }
 
 /**
+ * How the public benefit phase qualifies a decided matter's outcome, or null.
+ *
+ * Once decided, the outcome is one reached on public benefit grounds, not the
+ * competition test. While the application runs the status line says only
+ * "Under assessment", like any live matter — the stage field says which phase.
+ */
+export function getPublicBenefitQualifier(merger) {
+  if (merger?.public_benefits_determination) return 'after public benefit review';
+  return null;
+}
+
+/**
+ * The determination a determination event records. A matter that went on to
+ * the public benefit phase has two — the Phase 2 determination and the public
+ * benefit one — so the event is matched to its phase by date, falling back to
+ * the headline determination.
+ */
+export function determinationForEvent(merger, event) {
+  const day = event?.date?.slice(0, 10);
+  if (day) {
+    if (merger?.public_benefits_determination
+      && merger.public_benefits_determination_date?.slice(0, 10) === day) {
+      return merger.public_benefits_determination;
+    }
+    if (merger?.phase_2_determination
+      && merger.phase_2_determination_date?.slice(0, 10) === day) {
+      return merger.phase_2_determination;
+    }
+  }
+  return merger?.accc_determination ?? null;
+}
+
+// Latest-dated of the events matching `predicate` — a matter that went on to
+// the public benefit phase carries its Phase 2 documents as well as the public
+// benefit ones, and it is the latest that the headline determination is about.
+function latestEvent(events, predicate) {
+  return events
+    .filter(predicate)
+    .reduce((latest, e) => (!latest || (e.date || '') > (latest.date || '') ? e : latest), null);
+}
+
+/**
  * The document that carries the ACCC's reasons: a Phase 2 matter publishes a
  * separate statement of reasons, everything else puts them in the
  * determination itself.
@@ -83,10 +125,11 @@ export function getHeaderStatus(merger) {
 export function getDeterminationDocUrl(merger) {
   const events = merger?.events || [];
   if (merger?.phase_2_determination) {
-    const statement = events.find(
+    const statement = latestEvent(
+      events,
       (e) => e.url_gh && e.title?.toLowerCase().includes('statement of reasons')
     );
     if (statement) return statement.url_gh;
   }
-  return events.find((e) => e.is_determination_event)?.url_gh ?? null;
+  return latestEvent(events, (e) => e.is_determination_event)?.url_gh ?? null;
 }

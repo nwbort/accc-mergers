@@ -7,6 +7,7 @@ All downstream generators consume the already-enriched objects.
 import re
 from datetime import timedelta
 
+from scripts import stage_determinations
 from scripts.constants import merger_status, tribunal
 from scripts.cutoff import is_waiver_merger
 from scripts.date_utils import parse_iso_datetime
@@ -73,12 +74,14 @@ def extract_phase_from_event(event_title: str) -> str | None:
     """Extract phase information from event title."""
     if not event_title:
         return None
-    if merger_status.PHASE_1 in event_title:
+    # Public benefit first: its events can name the Phase 2 determination they
+    # follow ("... following the Phase 2 determination").
+    if merger_status.PUBLIC_BENEFITS.lower() in event_title.lower():
+        return merger_status.PUBLIC_BENEFITS
+    elif merger_status.PHASE_1 in event_title:
         return merger_status.PHASE_1
     elif merger_status.PHASE_2 in event_title:
         return merger_status.PHASE_2
-    elif merger_status.PUBLIC_BENEFITS in event_title or 'public benefits' in event_title:
-        return merger_status.PUBLIC_BENEFITS
     elif merger_status.WAIVER in event_title or 'waiver' in event_title:
         return merger_status.WAIVER
     elif 'notified' in event_title:
@@ -102,6 +105,22 @@ def is_phase_2_referral_event(event_title: str) -> bool:
         or 'proceed to a phase 2' in lower
         or 'proceed to phase 2' in lower
         or 'phase 2 notice' in lower
+    )
+
+
+def reached_phase_2(merger: dict) -> bool:
+    """True for an (enriched) matter that has been through a Phase 2 review.
+
+    Not just "the stage says Phase 2": a matter that has moved on to the public
+    benefit phase after a Phase 2 determination is still a Phase 2 matter for
+    every count and tracker that asks. A public benefit application can also
+    follow a conditional Phase 1 clearance, which is why the public benefit
+    stage alone doesn't qualify — the Phase 2 referral or determination does.
+    """
+    return (
+        merger_status.stage_phase(merger.get('stage')) == merger_status.PHASE_2
+        or bool(merger.get('phase_2_determination'))
+        or merger.get('phase_1_determination') == merger_status.REFERRED_TO_PHASE_2
     )
 
 
@@ -151,6 +170,13 @@ def strip_event_status(merger: dict) -> dict:
 SITE_UNUSED_MERGER_FIELDS = frozenset({
     'accc_determination_raw',        # normalised into accc_determination
     'page_modified_datetime',        # register bookkeeping
+    stage_determinations.FIELD,      # read into the phase_*_determination fields
+})
+
+# Fields the site reads but that are empty on all but the rare matter that has
+# been through the public benefit phase, so the deployed file carries them only
+# when they say something.
+SITE_SPARSE_MERGER_FIELDS = frozenset({
     'public_benefits_determination',
     'public_benefits_determination_date',
 })
@@ -190,7 +216,11 @@ def slim_for_site(merger: dict) -> dict:
     determination-table rows the page never renders. The input merger is left
     unmutated because the same object feeds other outputs.
     """
-    slim = {k: v for k, v in merger.items() if k not in SITE_UNUSED_MERGER_FIELDS}
+    slim = {
+        k: v for k, v in merger.items()
+        if k not in SITE_UNUSED_MERGER_FIELDS
+        and not (k in SITE_SPARSE_MERGER_FIELDS and not v)
+    }
 
     events = slim.get('events')
     if not events:
@@ -215,6 +245,83 @@ def slim_for_site(merger: dict) -> dict:
 # ACCC register's own stage field has caught up. Mirrors the value the ACCC
 # uses for matters it has already moved into Phase 2.
 INFERRED_PHASE_2_STAGE = 'Phase 2 - detailed assessment'
+
+
+def is_public_benefit_assessment_event(event_title: str) -> bool:
+    """Return True if ``event_title`` is the ACCC's public benefit assessment.
+
+    Issued by business day 20 of the public benefit phase — the public benefit
+    phase's counterpart to Phase 2's notice of competition concerns.
+    """
+    lower = (event_title or '').lower()
+    return 'public benefit' in lower and 'assessment' in lower and 'application' not in lower
+
+
+def public_benefit_application_date(m: dict, after: str | None) -> str | None:
+    """Date the public benefit application appeared on the register, if it has.
+
+    The earliest public benefit event dated after ``after`` (the determination
+    the application follows). The register publishes details of the
+    application on business day 1 of the phase, so this is also that day.
+    """
+    after_day = (after or '')[:10]
+    dates = sorted(
+        e['date'] for e in m.get('events', [])
+        if e.get('date')
+        and extract_phase_from_event(e.get('title', '')) == merger_status.PUBLIC_BENEFITS
+        and e['date'][:10] > after_day
+    )
+    return dates[0] if dates else None
+
+
+def _set_public_benefit_timetable(m: dict, phase_2_det_date: str | None) -> None:
+    """Fill in the statutory dates of a public benefit phase still running.
+
+    The register's end-of-determination date can still hold the Phase 2
+    deadline when the stage moves on (it did the same at the Phase 1 → Phase 2
+    transition, see the referral handling above; MN-65005's Phase 2 deadline
+    fell the day after its determination). The application comes within 21
+    calendar days of the determination it follows and the phase then runs 50
+    business days, so a genuine deadline is well over 45 business days after
+    that determination; one short of that can only be the leftover. It is
+    replaced with business day 50 counted from the day the application was
+    published on the register — business day 1 of the phase — or dropped if no
+    application event has appeared yet, since a past deadline on a live matter
+    would read as overdue. The register's own date supersedes the derived one
+    as soon as it is published, and folds in any extension.
+
+    From the deadline, business day 1 is recovered the way the Phase 2 notice
+    date is, and the two interim milestones are set: the public benefit
+    assessment (BD 20, until one appears among the events) and the parties'
+    last day to respond or offer a remedy (BD 35).
+    """
+    period_end = m.get('end_of_determination_period')
+    det_dt = parse_iso_datetime(phase_2_det_date) if phase_2_det_date else None
+    stale_before = (
+        add_business_days(det_dt.replace(tzinfo=None), 45).strftime('%Y-%m-%d')
+        if det_dt else ''
+    )
+    if not period_end or period_end[:10] < stale_before:
+        application = public_benefit_application_date(m, phase_2_det_date)
+        start = parse_iso_datetime(application) if application else None
+        if start is None:
+            m['end_of_determination_period'] = None
+            return
+        end = add_business_days(start.replace(tzinfo=None), merger_status.PUBLIC_BENEFIT_BUSINESS_DAYS)
+        m['end_of_determination_period'] = end.strftime('%Y-%m-%dT12:00:00Z')
+        m['end_of_determination_period_derived'] = True
+
+    end_dt = parse_iso_datetime(m['end_of_determination_period'])
+    if end_dt is None:
+        return
+    first_day = subtract_business_days(
+        end_dt.replace(tzinfo=None), merger_status.PUBLIC_BENEFIT_BUSINESS_DAYS
+    )
+    if not any(is_public_benefit_assessment_event(e.get('title', '')) for e in m.get('events', [])):
+        assessment = add_business_days(first_day, merger_status.PUBLIC_BENEFIT_ASSESSMENT_BD)
+        m['public_benefit_assessment_date'] = assessment.strftime('%Y-%m-%dT12:00:00Z')
+    response = add_business_days(first_day, merger_status.PUBLIC_BENEFIT_RESPONSE_BD)
+    m['public_benefit_response_date'] = response.strftime('%Y-%m-%dT12:00:00Z')
 
 
 def enrich_merger(
@@ -261,20 +368,46 @@ def enrich_merger(
             phase_2_referral_date = event.get('date')
             break
 
-    if m.get('accc_determination') and m.get('determination_publication_date'):
-        stage = m.get('stage', merger_status.PHASE_1)
-        det = m['accc_determination']
-        det_date = m['determination_publication_date']
+    # Each phase's determination comes from the per-phase record rather than
+    # from the current stage alone: once a matter moves on to the public
+    # benefit phase, its Phase 2 determination is no longer the one the stage
+    # names (see scripts/stage_determinations.py). A record-less merger whose
+    # stage key is missing altogether is read as Phase 1, as it always was.
+    records = stage_determinations.resolve(
+        m if 'stage' in m else {**m, 'stage': merger_status.PHASE_1}
+    )
+    if merger_status.PHASE_1 in records:
+        phase_1_det = records[merger_status.PHASE_1]['determination']
+        phase_1_det_date = records[merger_status.PHASE_1]['date']
+    if merger_status.PHASE_2 in records:
+        phase_2_det = records[merger_status.PHASE_2]['determination']
+        phase_2_det_date = records[merger_status.PHASE_2]['date']
+    if merger_status.PUBLIC_BENEFITS in records:
+        pb_det = records[merger_status.PUBLIC_BENEFITS]['determination']
+        pb_det_date = records[merger_status.PUBLIC_BENEFITS]['date']
 
-        if merger_status.PHASE_1 in stage:
-            phase_1_det = det
-            phase_1_det_date = det_date
-        elif merger_status.PHASE_2 in stage:
-            phase_2_det = det
-            phase_2_det_date = det_date
-        elif 'Public' in stage or 'Benefits' in stage:
-            pb_det = det
-            pb_det_date = det_date
+    # A public benefit application reopens the matter: the ACCC has 50
+    # business days to decide it, and until it does the matter is live again,
+    # whatever the headline fields still say. So the headline is cleared (the
+    # Phase 2 outcome stays in phase_2_determination) and a completed status is
+    # read as under assessment, exactly as a matter in Phase 2 carries no
+    # determination until its Phase 2 determination lands.
+    in_public_benefit_phase = (
+        merger_status.is_public_benefit_stage(m.get('stage')) and not pb_det
+    )
+    if in_public_benefit_phase:
+        # Set only when true, like phase_2_inferred: every other matter reads
+        # it as absent.
+        m['public_benefit_in_progress'] = True
+        m['accc_determination'] = None
+        m['determination_publication_date'] = None
+        if m.get('status') == merger_status.ASSESSMENT_COMPLETED:
+            m['status'] = merger_status.UNDER_ASSESSMENT
+        # has_conditions describes the determination that stands, which while
+        # the application runs is the Phase 2 one.
+        m['has_conditions'] = (
+            phase_2_det == merger_status.APPROVED and detect_has_conditions(m)
+        )
 
     m['phase_1_determination'] = phase_1_det
     m['phase_1_determination_date'] = phase_1_det_date
@@ -343,6 +476,15 @@ def enrich_merger(
         except (ValueError, AttributeError):
             pass
 
+    if merger_status.is_public_benefit_stage(m.get('stage')):
+        # What the application follows: the Phase 2 determination, or a
+        # conditional Phase 1 clearance.
+        m['public_benefit_application_date'] = public_benefit_application_date(
+            m, phase_2_det_date or phase_1_det_date
+        )
+    if in_public_benefit_phase:
+        _set_public_benefit_timetable(m, phase_2_det_date or phase_1_det_date)
+
     # Infer Phase 2 when the ACCC register lags behind a Phase 2 notice.
     # The register sometimes issues a Phase 2 notice (or a "subject to / proceed
     # to Phase 2" decision) before updating the matter's stage field, leaving it
@@ -354,7 +496,12 @@ def enrich_merger(
     # detect_inferred_phase_2 in extract_mergers.py), which auto-closes once the
     # register's own stage catches up. The override is done last so every
     # stage-dependent computation above uses the genuine ACCC stage.
-    if merger_status.PHASE_2 not in (m.get('stage') or '') and any(
+    # A matter in the public benefit phase has already been through Phase 2 —
+    # the application follows a Phase 2 determination — so its stage is not
+    # lagging and must not be pulled back to Phase 2.
+    if merger_status.stage_phase(m.get('stage')) not in (
+        merger_status.PHASE_2, merger_status.PUBLIC_BENEFITS
+    ) and any(
         is_phase_2_referral_event(event.get('title', '')) for event in m.get('events', [])
     ):
         m['phase_2_inferred'] = True

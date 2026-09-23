@@ -5,6 +5,17 @@ import { FaBell, FaCheckCircle } from 'react-icons/fa';
 import { useTracking } from '../context/TrackingContext';
 import { formatDate, getCalendarDaysUntil, isDatePast } from '../utils/dates';
 
+// Event types synthesised from a followed matter's upcoming deadlines (see
+// TrackingContext), as opposed to things that have already happened.
+const UPCOMING_EVENT_TYPES = new Set([
+  'consultation_due',
+  'determination_due',
+  'notice_of_competition_concerns',
+  'public_benefit_assessment',
+  'public_benefit_response_due',
+  'tribunal_hearing',
+]);
+
 function PanelEmptyState({ iconBg, iconColor, Icon, title, subtitle }) {
   return (
     <div className="px-5 py-10 text-center">
@@ -53,7 +64,7 @@ function MergerEventGroup({ group, onClose, wasUnseenOnOpen }) {
           // Calendar-day count so the chip agrees with UpcomingEventsTimeline,
           // which counts day boundaries rather than full 24-hour periods.
           const daysRemaining = getCalendarDaysUntil(event.date);
-          const isUpcoming = event.type === 'consultation_due' || event.type === 'determination_due' || event.type === 'notice_of_competition_concerns' || event.type === 'tribunal_hearing';
+          const isUpcoming = UPCOMING_EVENT_TYPES.has(event.type);
           const isNew = wasUnseenOnOpen(event);
 
           return (

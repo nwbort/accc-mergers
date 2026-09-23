@@ -44,10 +44,12 @@ MAX_EVENTS = 200
 _EVENT_KIND_PHRASES: tuple[tuple[str, str], ...] = (
     ("notice of competition concerns", "competition-concerns-notice"),
     ("subject to phase 2", "phase-2-referral"),
+    ("public benefit assessment", "public-benefit-assessment"),
     ("timeline extended", "timeline-extension"),
     ("remedy offer", "remedy-offer"),
     ("undertaking", "undertaking"),
     ("questionnaire", "questionnaire"),
+    ("public benefit application", "public-benefit-application"),
     ("notified to accc", "notification"),
 )
 
@@ -219,7 +221,8 @@ def _determinations(merger: dict) -> list[dict]:
     """Every determination made on the matter, oldest first.
 
     A referral to phase 2 is a phase 1 determination in its own right, so a
-    phase 2 matter carries two. ``accc_determination`` is the register's
+    phase 2 matter carries two, and one that goes on to the public benefit
+    phase carries a third once that is decided. ``accc_determination`` is the register's
     single headline field and duplicates the phase-specific ones wherever
     those exist, so it is only used when neither does - which is every waiver,
     where there are no phases to split.
@@ -230,6 +233,9 @@ def _determinations(merger: dict) -> list[dict]:
     for phase_key, phase_label, event_phase in (
         ("phase_1", "Phase 1 - initial assessment", "Phase 1"),
         ("phase_2", "Phase 2 - detailed assessment", "Phase 2"),
+        # A public benefit determination follows a Phase 2 determination (or a
+        # conditional clearance) when the parties apply for one.
+        ("public_benefits", "Public benefit phase", "Public benefit"),
     ):
         outcome = merger.get(f"{phase_key}_determination")
         if not outcome:
@@ -248,8 +254,10 @@ def _determinations(merger: dict) -> list[dict]:
 
     # Conditions attach to the clearance itself, which is always the last
     # determination: a matter cleared with conditions at phase 2 was not
-    # cleared with conditions when it was referred there.
-    if out and merger.get("has_conditions"):
+    # cleared with conditions when it was referred there. The same holds while
+    # a public benefit application runs, when the enriched record describes
+    # the Phase 2 determination that stands (enrichment.enrich_merger).
+    if out and merger.get("has_conditions") and out[-1]["outcome"] == "Approved":
         out[-1]["withConditions"] = True
 
     return out

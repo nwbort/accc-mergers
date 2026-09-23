@@ -22,7 +22,7 @@ import { API_ENDPOINTS } from '../config';
 import { PROSE_MARKDOWN, CARD, SECTION_HEADING } from '../utils/classNames';
 import { slugify, mergerPath, industryPath, partyPath } from '../utils/slug';
 import { mergerMeta } from '../utils/pageMeta';
-import { getDecidedOutcome, getHeaderStatus, getDeterminationDocUrl } from '../utils/mergerOutcome';
+import { getDecidedOutcome, getHeaderStatus, getDeterminationDocUrl, determinationForEvent } from '../utils/mergerOutcome';
 import { MERGER_STATUS } from '../constants/mergerStatus';
 import { APPEAL_TYPE_LABELS, DEFAULT_APPEAL_LABEL, APPEAL_STATUS, APPEAL_OUTCOME_LABELS } from '../constants/appeal';
 import { OUTCOME_DOT_COLORS, DEFAULT_OUTCOME_DOT, APPEAL_DOT, getOutcomeDot } from '../constants/outcomeDotColors';
@@ -228,7 +228,7 @@ function MergerDetail() {
     if (isCeasedEvent(event)) return OUTCOME_DOT_COLORS[MERGER_STATUS.ASSESSMENT_CEASED];
     if (isPhase2ReferralEvent(event)) return OUTCOME_DOT_COLORS[MERGER_STATUS.REFERRED_TO_PHASE_2];
     if (event.is_determination_event) {
-      return getOutcomeDot({ determination: merger.accc_determination });
+      return getOutcomeDot({ determination: determinationForEvent(merger, event) });
     }
     return DEFAULT_OUTCOME_DOT;
   };

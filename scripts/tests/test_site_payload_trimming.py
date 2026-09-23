@@ -79,6 +79,18 @@ def test_slim_for_site_drops_fields_no_page_reads():
     assert slim['accc_determination'] == 'Approved'
 
 
+def test_slim_for_site_keeps_a_public_benefit_determination_once_made():
+    slim = slim_for_site(_merger(
+        public_benefits_determination='Approved',
+        public_benefits_determination_date='2026-12-01T12:00:00Z',
+        stage_determinations={'Phase 2': {'determination': 'Not approved'}},
+    ))
+
+    assert slim['public_benefits_determination'] == 'Approved'
+    assert slim['public_benefits_determination_date'] == '2026-12-01T12:00:00Z'
+    assert 'stage_determinations' not in slim
+
+
 def test_slim_for_site_keeps_only_the_rendered_determination_rows():
     slim = slim_for_site(_merger())
 

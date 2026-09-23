@@ -34,6 +34,19 @@ function Phase2CompletedCards({ matters }) {
                 With conditions
               </span>
             )}
+            {/* The parties applied for a public benefit determination after
+                this Phase 2 determination; the chip says the matter isn't over,
+                or what the public benefit determination was. */}
+            {item.public_benefit_in_progress && (
+              <span className={`${CHIP_BASE_CLASS} font-medium bg-teal-50 text-teal-700`}>
+                Public benefit phase
+              </span>
+            )}
+            {!item.public_benefit_in_progress && item.public_benefits_determination && (
+              <span className={`${CHIP_BASE_CLASS} font-medium bg-teal-50 text-teal-700`}>
+                Public benefit: {item.public_benefits_determination}
+              </span>
+            )}
             {item.is_refiled && (
               <span className={`${CHIP_BASE_CLASS} font-medium ${style.chip}`}>
                 Refiled
