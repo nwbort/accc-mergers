@@ -479,7 +479,10 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "Sumitomo Mitsui Trust Bank, Limited"
+          "name": "Sumitomo Mitsui Trust Bank, Limited",
+          "canonical": {
+            "name": "Sumitomo Mitsui Trust Bank, Limited"
+          }
         }
       ],
       "targets": [
