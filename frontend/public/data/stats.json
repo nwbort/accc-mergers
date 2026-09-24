@@ -1,6 +1,6 @@
 {
   "total_mergers": 261,
-  "total_waivers": 418,
+  "total_waivers": 419,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 233,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 398,
+    "Approved": 399,
     "Not approved": 20
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.14354066985646,
-    "median_days": 20.0,
-    "average_business_days": 13.746411483253588,
-    "median_business_days": 14.0
+    "average_days": 20.136038186157517,
+    "median_days": 20,
+    "average_business_days": 13.744630071599046,
+    "median_business_days": 14
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 142
+      "count": 143
     },
     {
       "name": "Computer System Design and Related Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-30040",
+      "merger_name": "Jaybro \u2013 Fastway Civil Supplies",
+      "determination": "Approved",
+      "determination_date": "2026-09-24T12:00:00Z",
+      "page_modified_datetime": "2026-09-24T16:46:14+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-85048",
       "merger_name": "Partners Group \u2013 Aroma-Zone",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-21T12:00:00Z",
       "page_modified_datetime": "2026-09-21T16:41:46+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-75050",
-      "merger_name": "Perun (TPG) - Zembl",
-      "determination": "Approved",
-      "determination_date": "2026-09-18T12:00:00Z",
-      "page_modified_datetime": "2026-09-18T18:00:54+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

@@ -63606,6 +63606,10 @@
           "name": "Eurazeo SE",
           "identifier_type": null,
           "identifier": "SIREN 692 030 992",
+          "canonical": {
+            "id": "eurazeo-se",
+            "name": "Eurazeo SE"
+          },
           "party_page": {
             "id": "eurazeo-se",
             "name": "Eurazeo SE"
@@ -83387,6 +83391,135 @@
           "targets": [
             "Encora US Holdco, Inc",
             "Encora Holdings Limited"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/jaybro-%E2%80%93-fastway-civil-supplies",
+      "merger_name": "Jaybro \u2013 Fastway Civil Supplies",
+      "status": "Assessment completed",
+      "merger_id": "WA-30040",
+      "effective_notification_datetime": "2026-09-07T12:00:00Z",
+      "original_notification_datetime": "2026-09-07T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-09-24T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-09-24T16:46:14+10:00",
+      "acquirers": [
+        {
+          "name": "JAYBRO GROUP PTY LTD.",
+          "identifier_type": "ABN",
+          "identifier": "48 159 122 488",
+          "party_page": {
+            "id": "jaybro-group-pty-ltd",
+            "name": "Jaybro Group Pty Ltd."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "FASTWAY CIVIL SUPPLIES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "45 123 855 069",
+          "party_page": {
+            "id": "fastway-civil-supplies-pty-ltd",
+            "name": "Fastway Civil Supplies Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "QPE No. 7A Pty Limited",
+          "identifier_type": "ACN",
+          "identifier": "643 261 545",
+          "party_page": {
+            "id": "qpe-no-7a-pty-limited",
+            "name": "QPE No. 7A Pty Limited"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3339",
+          "name": "Other Hardware Goods Wholesaling"
+        },
+        {
+          "code": "3419",
+          "name": "Other Specialised Industrial Machinery and Equipment Wholesaling"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "merger_description": "Jaybro Group Pty Ltd (**Jaybro**) is currently negotiating a business and asset sale agreement for the acquisition of all of the business and assets of Fastway Civil Supplies Pty Ltd (**Fastway**) (the **Acquisition**).\n\nJaybro is an Australian incorporated proprietary company that specialises in the supply of infrastructure services, materials and consumables to civil and construction contractors. Through its Jaybro and Cadia brands, Jaybro supplies a range of pipe products used in civil construction and related civil consumables, with a particular focus on agricultural and stormwater drainage pipes.\n\nJaybro is majority owned by Quadrant Private Equity No. 7A (of which the trustee entity is QPE No. 7A Pty Limited) (**Quadrant Fund 7**). Quadrant Fund 7 completed its acquisition of Jaybro from CPE Capital on 28 February 2022. Quadrant Fund 7 is a fund of Quadrant Private Equity.\n\nFastway is an Australian supplier of primarily electrical and telecommunications pipes, as well as associated civil consumable products. It supplies civil products to a range of industries in Australia, including the road, rail, drainage, boring, electrical and communications industries. Fastway operates in Australia, with its head office in Victoria.\n\nJaybro (through its Jaybro and Cadia brand) and Fastway both supply:\n\n* pipes used for agricultural and stormwater drainage purposes (**A&S pipes**). A&S pipes are required to be relatively flexible in order to adjust to soil shifts underground and to bend around environmental obstructions. They also have higher pressure specifications due to having to withstand high volumes of water and liquid waste being pumped through them.\n* pipes and conduits used for electrical and telecommunications applications (**E&T pipes**). E&T pipes are generally required to be rigid and have thick walls to protect the electrical contents within the piping tube including to withstand damage from external forces. E&T pipes are also required to meet specific Australian standards and safety requirements for electrical installations, which requires a level of electrical insulation as well as UV protection. These additional protections are not required for A&S pipes.\n\nJaybro and Fastway also provide a range of civil consumables such as pipe fittings and connections, safety tape, pedestrian bollards, traffic cones, safety mesh fence, tape and rope. These civil consumables can be used for a range of different applications and customer bases.",
+      "events": [
+        {
+          "date": "2026-09-24T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Notification waiver determination published",
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-09-07T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-09-24T12:00:00Z",
+          "title": "Waiver application determination: Approved",
+          "display_title": "Waiver application determination: Approved",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-20015",
+          "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
+          "acquirers": [
+            "HERRON TODD WHITE (BIDCO) PTY LTD"
+          ],
+          "targets": [
+            "CJA Lee Property Pty Ltd",
+            "C McMahon Enterprises Pty Ltd"
+          ],
+          "accc_determination": "Not approved"
+        },
+        {
+          "merger_id": "WA-70029",
+          "merger_name": "Apollo - Bayer Asset Management",
+          "acquirers": [
+            "Apollo Capital Management, L.P.",
+            "AP Emerald (Luxembourg) S.\u00e0 r.l."
+          ],
+          "targets": [
+            "Bayer Global Investments B.V.",
+            "Bayer Asset Management B.V."
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-60019",
+          "merger_name": "QIC \u2013 CopperString Project assets from Powerlink Queensland",
+          "acquirers": [
+            "NORTH QUEENSLAND REGIONAL ENERGY CO PTY LTD",
+            "QBF NO. 2 PTY LTD"
+          ],
+          "targets": [
+            "QUEENSLAND ELECTRICITY TRANSMISSION CORPORATION LIMITED"
           ],
           "accc_determination": "Approved"
         }
@@ -123572,6 +123705,10 @@
           "name": "Eurazeo S.E.",
           "identifier_type": null,
           "identifier": "SIREN \u2013 692 030 992",
+          "canonical": {
+            "id": "eurazeo-se",
+            "name": "Eurazeo SE"
+          },
           "party_page": {
             "id": "eurazeo-se",
             "name": "Eurazeo SE"
