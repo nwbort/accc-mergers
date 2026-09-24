@@ -53912,15 +53912,15 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 9,
-        "min_days": null,
+        "estimated_days": 5,
+        "min_days": 0,
         "max_days": 16,
-        "id_issued_estimated": "2026-08-18",
-        "id_issued_before": null,
+        "id_issued_estimated": "2026-08-22",
+        "id_issued_before": "2026-08-27",
         "id_issued_after": "2026-08-11",
-        "min_days_witness": null,
+        "min_days_witness": "WA-85048",
         "max_days_witness": "WA-85046",
-        "basis": "upper-bound-only",
+        "basis": "bracketed",
         "method_version": 1
       }
     },
@@ -123510,6 +123510,156 @@
           "targets": [
             "Vivax Metrotech Sdn. Bhd.",
             "Vivax-Metrotech Ltd."
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/partners-group-%E2%80%93-aroma-zone",
+      "merger_name": "Partners Group \u2013 Aroma-Zone",
+      "status": "Assessment completed",
+      "merger_id": "WA-85048",
+      "effective_notification_datetime": "2026-08-27T12:00:00Z",
+      "original_notification_datetime": "2026-08-27T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-09-24T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-09-24T16:44:03+10:00",
+      "acquirers": [
+        {
+          "name": "Elixis BidCo",
+          "identifier_type": null,
+          "identifier": "R.C.S  100878529",
+          "party_page": {
+            "id": "elixis-bidco",
+            "name": "Elixis BidCo"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Legendre Holding 91 SAS",
+          "identifier_type": null,
+          "identifier": "R.C.S \u2013 898 295 035",
+          "party_page": {
+            "id": "legendre-holding-91-sas",
+            "name": "Legendre Holding 91 SAS"
+          }
+        },
+        {
+          "name": "Aroma Zone Topco SAS",
+          "identifier_type": null,
+          "identifier": "R.C.S  898345723",
+          "party_page": {
+            "id": "aroma-zone-topco-sas",
+            "name": "Aroma Zone Topco SAS"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Partners Group Holding AG",
+          "identifier_type": null,
+          "identifier": "CHE108.562.489",
+          "party_page": {
+            "id": "partners-group-holding-ag",
+            "name": "Partners Group Holding AG"
+          }
+        },
+        {
+          "name": "Eurazeo S.E.",
+          "identifier_type": null,
+          "identifier": "SIREN \u2013 692 030 992",
+          "party_page": {
+            "id": "eurazeo-se",
+            "name": "Eurazeo SE"
+          }
+        },
+        {
+          "name": "Partners Group AG",
+          "identifier_type": null,
+          "identifier": "UID  CHE108.431.605",
+          "party_page": {
+            "id": "partners-group-ag",
+            "name": "Partners Group AG"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4271",
+          "name": "Pharmaceutical, Cosmetic and Toiletry Goods Retailing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "merger_description": "Partners Group AG (**Partners Group**) proposes to indirectly acquire joint control over Legendre Holding 91 SAS (**Legendre**) and Aroma Zone Topco SAS (**Aroma-Zone**) by way of share purchase agreement (the **Acquisition**).\n\nThe Acquisition will be implemented by funds advised and/or managed by Partners Group through Elixis BidCo, an investment vehicle.\n\nPartners Group is registered and headquartered in Switzerland and is a wholly owned subsidiary of Partners Group Holding AG. Partners Group Holding AG is a stock corporation incorporated under Swiss law and listed on the SIX Swiss Exchange. Partners Group is a global investment management firm with USD 186 billion in assets under management across private equity, private infrastructure, debt, royalties and real estate.\n\nAroma-Zone is a French retailer of natural cosmetics, essential oils, supplements, aromatherapy products and wellness solutions, selling directly to customers through its online platform and retail stores. Aroma-Zone is currently solely controlled by Eurazeo S.E. (**Eurazeo**). Eurazeo will reinvest indirectly and retain indirectly a co-controlling stake in Aroma-Zone through Elixis BidCo.\n\nEurazeo is a listed investment company headquartered in Paris, France, with a portfolio of several billions of euros in diversified assets. Its purpose is to detect, accelerate and enhance the potential transformation of companies of all sizes in which they invest. It has three main activities: private equity, private debt and real assets.\n\nLegendre is a holding company.",
+      "events": [
+        {
+          "date": "2026-09-24T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Notification waiver determination published",
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-08-27T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-09-24T12:00:00Z",
+          "title": "Waiver application determination: Approved",
+          "display_title": "Waiver application determination: Approved",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-05007",
+          "merger_name": "Eiffel and Eurazeo \u2013 Segula",
+          "acquirers": [
+            "Eiffel Investment Group SAS",
+            "Eurazeo SE"
+          ],
+          "targets": [
+            "Segula Holding SAS"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-65034",
+          "merger_name": "Cinven and La Caisse \u2013 Optio Group",
+          "acquirers": [
+            "Welling Bidco Limited"
+          ],
+          "targets": [
+            "Spring Topco Limited",
+            "Optio Group Limited"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-70034",
+          "merger_name": "Vista \u2013 Quantios",
+          "acquirers": [
+            "Queso Bidco Limited"
+          ],
+          "targets": [
+            "Tanqueray Topco Limited"
           ],
           "accc_determination": "Approved"
         }

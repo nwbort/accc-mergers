@@ -1,6 +1,6 @@
 {
   "total_mergers": 261,
-  "total_waivers": 417,
+  "total_waivers": 418,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 233,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 397,
+    "Approved": 398,
     "Not approved": 20
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.124700239808153,
-    "median_days": 20,
-    "average_business_days": 13.731414868105515,
-    "median_business_days": 14
+    "average_days": 20.14354066985646,
+    "median_days": 20.0,
+    "average_business_days": 13.746411483253588,
+    "median_business_days": 14.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 141
+      "count": 142
     },
     {
       "name": "Computer System Design and Related Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-85048",
+      "merger_name": "Partners Group \u2013 Aroma-Zone",
+      "determination": "Approved",
+      "determination_date": "2026-09-24T12:00:00Z",
+      "page_modified_datetime": "2026-09-24T16:44:03+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-70036",
       "merger_name": "Australian Venue Co \u2013 assets of The Breakwater, Hillarys and Print Hall, Perth",
       "determination": "Not approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-85047",
-      "merger_name": "Blackstone funds and Perpetual Trustees \u2013 HSBC loan portfolio",
-      "determination": "Approved",
-      "determination_date": "2026-09-18T12:00:00Z",
-      "page_modified_datetime": "2026-09-18T16:39:49+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]
