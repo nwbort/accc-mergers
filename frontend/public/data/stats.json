@@ -1,6 +1,6 @@
 {
   "total_mergers": 261,
-  "total_waivers": 422,
+  "total_waivers": 423,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 233,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 401,
+    "Approved": 402,
     "Not approved": 21
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.201421800947866,
-    "median_days": 20.0,
-    "average_business_days": 13.793838862559241,
-    "median_business_days": 14.0
+    "average_days": 20.210401891252957,
+    "median_days": 20,
+    "average_business_days": 13.803782505910165,
+    "median_business_days": 14
   },
   "top_industries": [
     {
@@ -60,7 +60,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 72
+      "count": 73
     },
     {
       "name": "Computer System Design and Related Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-20038",
+      "merger_name": "Sumitomo Mitsui Trust Bank \u2013 Morrison",
+      "determination": "Approved",
+      "determination_date": "2026-09-24T12:00:00Z",
+      "page_modified_datetime": "2026-09-24T17:59:46+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-20036",
       "merger_name": "Sinopec \u2013 Park Fuels",
       "determination": "Not approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-22T12:00:00Z",
       "page_modified_datetime": "2026-09-22T16:45:16+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-30039",
-      "merger_name": "Advent \u2013 NZCR Group Holdings",
-      "determination": "Approved",
-      "determination_date": "2026-09-22T12:00:00Z",
-      "page_modified_datetime": "2026-09-22T16:40:44+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
