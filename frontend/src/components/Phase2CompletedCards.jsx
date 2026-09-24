@@ -52,8 +52,11 @@ function Phase2CompletedCards({ matters }) {
                 Refiled
               </span>
             )}
+            {/* Same darkened-fill chip as "With conditions" and "Refiled", so
+                it sits on the card's outcome colour rather than as a pale
+                indigo patch pinned onto it. */}
             {item.under_appeal && (
-              <span className={`${CHIP_BASE_CLASS} font-medium bg-indigo-100 text-indigo-700`}>
+              <span className={`${CHIP_BASE_CLASS} font-medium ${style.chip}`}>
                 Under appeal
               </span>
             )}
