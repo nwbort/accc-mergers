@@ -155,6 +155,41 @@
       },
       "waiver_duration": null
     },
+    "elc-operations-australia-pty-ltd-as-trustee-for-elc-operations-australia-unit-tr": {
+      "id": "elc-operations-australia-pty-ltd-as-trustee-for-elc-operations-australia-unit-tr",
+      "canonical_name": "ELC Operations Australia Pty Ltd as trustee for ELC Operations Australia Unit Trust",
+      "members": [
+        {
+          "name": "ELC Operations Australia Pty Ltd as trustee for ELC Operations Australia Unit Trust",
+          "identifier": "99 225 138 419",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-05049",
+            "merger_name": "Imagine Education \u2013 Eden Academy",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-23T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "fjord-merger-sub-inc": {
       "id": "fjord-merger-sub-inc",
       "canonical_name": "Fjord Merger Sub, Inc.",

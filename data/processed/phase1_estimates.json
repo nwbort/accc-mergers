@@ -476,6 +476,20 @@
     "estimated_at": "2026-09-08",
     "method_version": 2
   },
+  "MN-05049": {
+    "expected_business_days": 20,
+    "range_business_days": [
+      16,
+      26
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "6-9",
+    "question_count": 6,
+    "sample_size": 20,
+    "as_of": "2026-09-23",
+    "estimated_at": "2026-09-24",
+    "method_version": 2
+  },
   "MN-10001": {
     "expected_business_days": 17,
     "range_business_days": [

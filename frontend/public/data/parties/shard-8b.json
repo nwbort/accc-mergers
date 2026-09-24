@@ -95,6 +95,41 @@
         "completed_count": 2
       }
     },
+    "bardon-operations-pty-ltd-as-trustee-for-bardon-operations-unit-trust": {
+      "id": "bardon-operations-pty-ltd-as-trustee-for-bardon-operations-unit-trust",
+      "canonical_name": "Bardon Operations Pty Ltd as trustee for Bardon Operations Unit Trust",
+      "members": [
+        {
+          "name": "Bardon Operations Pty Ltd as trustee for Bardon Operations Unit Trust",
+          "identifier": "94 510 552 611",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-05049",
+            "merger_name": "Imagine Education \u2013 Eden Academy",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-23T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "cg-panther-parentco-l-p": {
       "id": "cg-panther-parentco-l-p",
       "canonical_name": "CG Panther Parentco, L.P.",

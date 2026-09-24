@@ -207,6 +207,41 @@
         "completed_count": 1
       }
     },
+    "eden-academy-operations-pty-ltd-as-trustee-for-eden-academy-operations-unit-trus": {
+      "id": "eden-academy-operations-pty-ltd-as-trustee-for-eden-academy-operations-unit-trus",
+      "canonical_name": "Eden Academy Operations Pty Ltd as trustee for Eden Academy Operations Unit Trust",
+      "members": [
+        {
+          "name": "Eden Academy Operations Pty Ltd as trustee for Eden Academy Operations Unit Trust",
+          "identifier": "96 741 671 993",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-05049",
+            "merger_name": "Imagine Education \u2013 Eden Academy",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-23T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "edify-new-south-wales-landco-pty-ltd": {
       "id": "edify-new-south-wales-landco-pty-ltd",
       "canonical_name": "Edify New South Wales LandCo Pty Ltd",

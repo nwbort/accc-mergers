@@ -130,6 +130,41 @@
       },
       "waiver_duration": null
     },
+    "elc-no-2-operations-pty-ltd-as-trustee-for-the-elc-no-2-operations-unit-trust": {
+      "id": "elc-no-2-operations-pty-ltd-as-trustee-for-the-elc-no-2-operations-unit-trust",
+      "canonical_name": "ELC No.2 Operations Pty Ltd as trustee for the ELC No.2 Operations Unit Trust",
+      "members": [
+        {
+          "name": "ELC No.2 Operations Pty Ltd as trustee for the ELC No.2 Operations Unit Trust",
+          "identifier": "29 256 933 688",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-05049",
+            "merger_name": "Imagine Education \u2013 Eden Academy",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-23T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "ik-partners": {
       "id": "ik-partners",
       "canonical_name": "IK Partners",

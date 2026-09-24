@@ -84,6 +84,41 @@
         "completed_count": 1
       }
     },
+    "eden-academy-investment-holdings-pty-ltd": {
+      "id": "eden-academy-investment-holdings-pty-ltd",
+      "canonical_name": "Eden Academy Investment Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "Eden Academy Investment Holdings Pty Ltd",
+          "identifier": "63 660 727 659",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-05049",
+            "merger_name": "Imagine Education \u2013 Eden Academy",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-23T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "fluent-retail-pty-ltd": {
       "id": "fluent-retail-pty-ltd",
       "canonical_name": "Fluent Retail Pty Ltd",
