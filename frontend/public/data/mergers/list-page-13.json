@@ -1894,6 +1894,38 @@
       ]
     },
     {
+      "merger_id": "WA-45026",
+      "merger_name": "The Disability Trust - LEAD Disability Services",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-21T12:00:00Z",
+      "determination_publication_date": "2026-09-24T12:00:00Z",
+      "end_of_determination_period": null,
+      "latest_event_date": "2026-09-24T12:00:00Z",
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "The Disability Trust Limited"
+        }
+      ],
+      "targets": [
+        {
+          "name": "LEAD Disability Services Ltd"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "8790",
+          "name": "Other Social Assistance Services"
+        }
+      ]
+    },
+    {
       "merger_id": "WA-55035",
       "merger_name": "Itochu Corporation \u2013 TC Skyward Aviation (Aviation Capital Group)",
       "status": "Assessment completed",
@@ -2589,52 +2621,6 @@
         {
           "code": "6712",
           "name": "Non-Residential Property Operators"
-        }
-      ]
-    },
-    {
-      "merger_id": "WA-95041",
-      "merger_name": "OceanaGold - Ausgold",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "has_conditions": false,
-      "is_waiver": true,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-08-26T12:00:00Z",
-      "determination_publication_date": "2026-09-17T12:00:00Z",
-      "end_of_determination_period": null,
-      "latest_event_date": "2026-09-17T12:00:00Z",
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "OceanaGold (Australia) Pty Ltd",
-          "canonical": {
-            "name": "OceanaGold Corporation"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "AUSGOLD LIMITED"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "OceanaGold Corporation",
-          "canonical": {
-            "name": "OceanaGold Corporation"
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "0803",
-          "name": "Copper Ore Mining"
-        },
-        {
-          "code": "0804",
-          "name": "Gold Ore Mining"
         }
       ]
     }

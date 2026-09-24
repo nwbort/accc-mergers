@@ -1,6 +1,6 @@
 {
   "total_mergers": 261,
-  "total_waivers": 419,
+  "total_waivers": 421,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 233,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 399,
+    "Approved": 401,
     "Not approved": 20
   },
   "clearance_rate": {
@@ -48,9 +48,9 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.136038186157517,
+    "average_days": 20.18527315914489,
     "median_days": 20,
-    "average_business_days": 13.744630071599046,
+    "average_business_days": 13.78147268408551,
     "median_business_days": 14
   },
   "top_industries": [
@@ -59,12 +59,12 @@
       "count": 143
     },
     {
-      "name": "Computer System Design and Related Services",
+      "name": "Other Auxiliary Finance and Investment Services",
       "count": 72
     },
     {
-      "name": "Other Auxiliary Finance and Investment Services",
-      "count": 71
+      "name": "Computer System Design and Related Services",
+      "count": 72
     },
     {
       "name": "Software Publishing",
@@ -219,6 +219,28 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-10034",
+      "merger_name": "DigitalBridge \u2013 PLUS ES smart metering division",
+      "determination": "Approved",
+      "determination_date": "2026-09-24T12:00:00Z",
+      "page_modified_datetime": "2026-09-24T17:51:18+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-45026",
+      "merger_name": "The Disability Trust - LEAD Disability Services",
+      "determination": "Approved",
+      "determination_date": "2026-09-24T12:00:00Z",
+      "page_modified_datetime": "2026-09-24T16:49:56+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-30040",
       "merger_name": "Jaybro \u2013 Fastway Civil Supplies",
       "determination": "Approved",
@@ -274,6 +296,17 @@
       "has_conditions": false
     },
     {
+      "merger_id": "MN-60035",
+      "merger_name": "L'Or\u00e9al \u2013 Gucci Beauty Licence",
+      "determination": "Approved",
+      "determination_date": "2026-09-22T12:00:00Z",
+      "page_modified_datetime": "2026-09-24T17:37:48+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-35044",
       "merger_name": "Steamatic Australia \u2013 Steamatic Epsom franchisee",
       "determination": "Approved",
@@ -312,39 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-22T12:00:00Z",
       "page_modified_datetime": "2026-09-22T16:38:59+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-60035",
-      "merger_name": "L'Or\u00e9al \u2013 Gucci Beauty Licence",
-      "determination": "Approved",
-      "determination_date": "2026-09-22T12:00:00Z",
-      "page_modified_datetime": "2026-09-22T12:51:59+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-05051",
-      "merger_name": "Apax Funds \u2013 Remy & Geiser GmbH and Gerresheimer Primary Packaging Plastics GmbH",
-      "determination": "Approved",
-      "determination_date": "2026-09-21T12:00:00Z",
-      "page_modified_datetime": "2026-09-21T16:47:52+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-60043",
-      "merger_name": "Global Lithium Resources \u2013 IGO Nova Operation",
-      "determination": "Approved",
-      "determination_date": "2026-09-21T12:00:00Z",
-      "page_modified_datetime": "2026-09-21T16:41:46+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
