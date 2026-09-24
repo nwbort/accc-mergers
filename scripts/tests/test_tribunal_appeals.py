@@ -160,6 +160,25 @@ class TestLinkTribunalAppeals:
         assert ev['tribunal_number'] == 'ACT 1 of 2026'
         assert 'Application for Review' in ev['display_title']
 
+    def test_comment_appended_to_title_in_parentheses(self):
+        appeal = _appeal()
+        appeal['MN-0001']['documents'][0]['comment'] = '  re application under s100S '
+        mergers = [enrich_merger(_phase2_not_approved())]
+        link_tribunal_appeals(mergers, appeal)
+        ev = next(e for e in mergers[0]['events'] if e.get('is_appeal'))
+        assert ev['title'] == 'Application for Review (re application under s100S)'
+        assert ev['display_title'] == (
+            'Tribunal appeal – Application for Review (re application under s100S)'
+        )
+
+    def test_blank_comment_leaves_title_alone(self):
+        appeal = _appeal()
+        appeal['MN-0001']['documents'][0]['comment'] = '   '
+        mergers = [enrich_merger(_phase2_not_approved())]
+        link_tribunal_appeals(mergers, appeal)
+        ev = next(e for e in mergers[0]['events'] if e.get('is_appeal'))
+        assert ev['title'] == 'Application for Review'
+
     def test_blank_filed_by_defaults_to_tribunal(self):
         # A tribunal-issued document (order/direction/reasons) has no filing
         # party; the matter page leaves the column blank or shows a lone dash.

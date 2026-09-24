@@ -654,6 +654,13 @@ def _normalise_appeal_filed_by(value: str | None) -> str:
 def _appeal_event(doc: dict, appeal: dict) -> dict:
     """Turn a tribunal appeal document into a merger timeline event."""
     description = doc.get('description') or 'Tribunal document'
+    # A hand-added ``comment`` disambiguates otherwise identical tribunal
+    # descriptions ("Submissions" twice over) and is shown in parentheses,
+    # e.g. "Directions (re application under s100S)". The scraper never
+    # writes the key, so it survives re-scrapes (scrape_tribunal._apply_scraped).
+    comment = (doc.get('comment') or '').strip()
+    if comment:
+        description = f"{description} ({comment})"
     return {
         'date': _normalise_appeal_date(doc.get('date')),
         'title': description,
