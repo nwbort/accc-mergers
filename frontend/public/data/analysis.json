@@ -385,30 +385,30 @@
       37,
       24
     ],
-    "as_at": "2026-09-24"
+    "as_at": "2026-09-25"
   },
   "current_status": {
-    "as_at": "2026-09-24",
+    "as_at": "2026-09-25",
     "windows": [
       {
         "days": 30,
-        "notifications_filed": 25,
+        "notifications_filed": 24,
         "notifications": {
           "median": 19,
-          "average": 21.4,
+          "average": 21.7,
           "p90": 38,
           "min": 15,
           "max": 52,
-          "count": 47,
+          "count": 43,
           "duration_histogram": {
-            "15": 8,
-            "16": 6,
+            "15": 7,
+            "16": 5,
             "17": 2,
             "18": 6,
-            "19": 6,
+            "19": 5,
             "20": 2,
             "21": 5,
-            "23": 3,
+            "23": 2,
             "24": 1,
             "25": 2,
             "28": 1,
@@ -420,12 +420,12 @@
           "median_delta": 1.0
         },
         "waivers": {
-          "median": 18.0,
+          "median": 18,
           "average": 17.0,
           "p90": 21,
           "min": 6,
           "max": 24,
-          "count": 74,
+          "count": 73,
           "duration_histogram": {
             "6": 1,
             "7": 2,
@@ -441,12 +441,12 @@
             "18": 13,
             "19": 13,
             "20": 7,
-            "21": 5,
+            "21": 4,
             "22": 3,
             "23": 1,
             "24": 2
           },
-          "median_delta": 4.0
+          "median_delta": 4
         }
       },
       {
@@ -539,14 +539,14 @@
     "pre_notification": {
       "windows": [
         {
-          "median": 15,
-          "average": 21.5,
+          "median": 15.0,
+          "average": 21.6,
           "p90": 46,
           "min": 4,
           "max": 72,
-          "count": 25,
+          "count": 24,
           "days": 30,
-          "median_delta": 1
+          "median_delta": 1.0
         },
         {
           "median": 15.0,
