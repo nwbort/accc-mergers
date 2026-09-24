@@ -797,6 +797,55 @@ def save_page_snapshot(merger_id: str, html: str) -> None:
     (path / f"{merger_id}.html").write_text(html, encoding="utf-8")
 
 
+def fresh_page_url(url: str) -> str:
+    """``url`` with a throwaway query parameter, so no cache can answer it.
+
+    The matter page is cached upstream of the tribunal's CMS: on 24 Sep 2026
+    the scraper was served the same stale copy (newest filing 21 Sep) on runs
+    two hours apart, byte for byte, while a phone loading the page at the same
+    minute saw the 24 Sep filing. A query string the cache has never seen
+    forces it back to the origin. Only the navigation uses this URL; documents
+    are still resolved against, and recorded under, the canonical one.
+    """
+    separator = "&" if urlparse(url).query else "?"
+    return f"{url}{separator}_={int(time.time())}"
+
+
+# Response headers that say whether, and for how long, a cache served the page.
+_CACHE_HEADERS = ("cf-cache-status", "age", "cache-control", "last-modified", "x-cache")
+
+_CACHE_HEADERS_JS = """
+(async () => {
+  try {
+    const r = await fetch(%s, {cache: "no-store", credentials: "include"});
+    return JSON.stringify(Object.fromEntries(
+      %s.map(h => [h, r.headers.get(h)]).filter(([, v]) => v !== null)));
+  } catch (e) {
+    return "error:" + e;
+  }
+})()
+"""
+
+
+async def log_cache_headers(tab, url: str) -> None:
+    """Print the cache headers the canonical page URL is served with.
+
+    Diagnostic only, so a stale copy shows up in the run log as an ``age`` or a
+    cache HIT rather than as a run that quietly reports "No changes".
+    """
+    try:
+        result = await _with_timeout(
+            tab.evaluate(
+                _CACHE_HEADERS_JS % (json.dumps(url), json.dumps(list(_CACHE_HEADERS))),
+                await_promise=True,
+            ),
+            "tab.evaluate (cache headers)",
+        )
+    except Exception as e:
+        result = f"error:{e}"
+    print(f"    cache headers for the canonical URL: {result}", flush=True)
+
+
 def looks_like_challenge(html: str) -> bool:
     return any(marker in html for marker in CHALLENGE_MARKERS)
 
@@ -995,7 +1044,7 @@ async def clear_challenge_by_visiting(browser, doc_url: str, matter_url: str):
                 f"    Warning: the challenge on {doc_url} did not clear either",
                 file=sys.stderr,
             )
-        tab, html = await fetch_page(browser, matter_url)
+        tab, html = await fetch_page(browser, fresh_page_url(matter_url))
     except Exception as e:
         # Navigating to a document is best-effort: some of them are served as a
         # download rather than a page, which Chrome reports as an aborted
@@ -1193,7 +1242,7 @@ async def scrape_matters(
                 continue
 
             print(f"Scraping {mid}: {url}", flush=True)
-            tab, html = await fetch_page(browser, url)
+            tab, html = await fetch_page(browser, fresh_page_url(url))
             if html is None:
                 print(
                     f"  FAILED: challenge did not clear for {mid} ({url})",
@@ -1206,6 +1255,7 @@ async def scrape_matters(
                 failed.append(mid)
                 continue
 
+            await log_cache_headers(tab, url)
             save_page_snapshot(mid, html)
             scraped = parse_matter_page(html, url)
             missed = unparsed_document_links(html, url, scraped)

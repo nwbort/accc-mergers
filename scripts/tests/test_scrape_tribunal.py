@@ -216,6 +216,16 @@ class TestUnparsedDocumentLinks:
         assert scrape_tribunal.unparsed_document_links(html, BASE_URL, docs) == []
 
 
+class TestFreshPageUrl:
+    def test_adds_a_cache_busting_query(self, monkeypatch):
+        monkeypatch.setattr(scrape_tribunal.time, 'time', lambda: 1790000000.5)
+        assert scrape_tribunal.fresh_page_url(BASE_URL) == BASE_URL + '?_=1790000000'
+
+    def test_appends_to_an_existing_query(self, monkeypatch):
+        monkeypatch.setattr(scrape_tribunal.time, 'time', lambda: 1790000000)
+        assert scrape_tribunal.fresh_page_url(BASE_URL + '?a=1') == BASE_URL + '?a=1&_=1790000000'
+
+
 class TestSavePageSnapshot:
     def test_writes_page_when_dir_is_set(self, tmp_path, monkeypatch):
         monkeypatch.setenv('TRIBUNAL_PAGE_SNAPSHOT_DIR', str(tmp_path / 'pages'))
@@ -580,6 +590,7 @@ class TestClearChallengeByVisiting:
 
     def _patch_fetch_page(self, monkeypatch, matter_html):
         visited = []
+        monkeypatch.setattr(scrape_tribunal, 'fresh_page_url', lambda url: url)
 
         async def _fetch_page(browser, url):
             visited.append(url)
@@ -632,6 +643,7 @@ class TestScrapeMattersChallengeRecovery:
     ):
         warnings = []
         visited = []
+        monkeypatch.setattr(scrape_tribunal, 'fresh_page_url', lambda url: url)
         monkeypatch.setattr(scrape_tribunal, 'uc', types.SimpleNamespace(
             start=lambda **kwargs: _async_value(FakeBrowser()),
         ))
