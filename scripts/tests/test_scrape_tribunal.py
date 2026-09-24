@@ -713,6 +713,11 @@ class TestMergeDocuments:
         merged = scrape_tribunal.merge_documents(existing, [_doc('2026-08-13', 'A')])
         assert merged[0]['url_gh'] == '/mergers/MN-1/A.pdf'
 
+    def test_hand_added_comment_is_carried_over(self):
+        existing = [_doc('2026-08-13', 'A', comment='re application under s100S')]
+        merged = scrape_tribunal.merge_documents(existing, [_doc('2026-08-13', 'A')])
+        assert merged[0]['comment'] == 're application under s100S'
+
     def test_document_deleted_from_the_page_is_kept_in_place(self):
         existing = [
             _doc('2026-08-20', 'B'),
