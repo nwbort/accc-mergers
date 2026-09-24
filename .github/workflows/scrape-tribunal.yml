@@ -86,8 +86,24 @@ jobs:
     - name: Run the tribunal scraper
       # xvfb-run gives Chrome a display so it runs headful, which is far less
       # likely to be flagged by Cloudflare than headless.
+      # Each fetched matter page is saved for the artifact below.
+      env:
+        TRIBUNAL_PAGE_SNAPSHOT_DIR: ${{ runner.temp }}/tribunal-pages
       run: |
         xvfb-run -a python -m scripts.scrape.scrape_tribunal ${{ github.event.inputs.merger_ids }}
+
+    - name: Upload fetched tribunal pages
+      # The tribunal site is behind Cloudflare, so the page as the scraper saw
+      # it can't be re-fetched afterwards with curl. Keep it, so a run that
+      # reports "No changes" while the live page lists a new document can be
+      # diagnosed from what was actually parsed.
+      if: always()
+      uses: actions/upload-artifact@v7
+      with:
+        name: tribunal-pages
+        path: ${{ runner.temp }}/tribunal-pages
+        if-no-files-found: ignore
+        retention-days: 14
 
     - name: Compress oversized PDFs
       # Cloudflare Pages rejects an entire deployment if any single asset is
