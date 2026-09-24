@@ -1,6 +1,6 @@
 {
   "total_mergers": 261,
-  "total_waivers": 416,
+  "total_waivers": 417,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 233,
@@ -19,7 +19,7 @@
   },
   "by_waiver_determination": {
     "Approved": 397,
-    "Not approved": 19
+    "Not approved": 20
   },
   "clearance_rate": {
     "cleared": 230,
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.091346153846153,
-    "median_days": 20.0,
-    "average_business_days": 13.70673076923077,
-    "median_business_days": 14.0
+    "average_days": 20.124700239808153,
+    "median_days": 20,
+    "average_business_days": 13.731414868105515,
+    "median_business_days": 14
   },
   "top_industries": [
     {
@@ -76,7 +76,7 @@
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 33
+      "count": 34
     },
     {
       "name": "Accommodation",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-70036",
+      "merger_name": "Australian Venue Co \u2013 assets of The Breakwater, Hillarys and Print Hall, Perth",
+      "determination": "Not approved",
+      "determination_date": "2026-09-24T12:00:00Z",
+      "page_modified_datetime": "2026-09-24T16:41:47+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-65005",
       "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
       "determination": "Not approved",
@@ -241,22 +252,22 @@
       "has_conditions": false
     },
     {
-      "merger_id": "WA-35047",
-      "merger_name": "REST \u2013 Quinbrook III Partnership and Quinbrook III (AU) Co-Investment Trust",
+      "merger_id": "WA-35044",
+      "merger_name": "Steamatic Australia \u2013 Steamatic Epsom franchisee",
       "determination": "Approved",
       "determination_date": "2026-09-22T12:00:00Z",
-      "page_modified_datetime": "2026-09-22T16:45:16+10:00",
+      "page_modified_datetime": "2026-09-24T15:50:02+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
       "has_conditions": false
     },
     {
-      "merger_id": "WA-35044",
-      "merger_name": "Steamatic Australia \u2013 Steamatic Epsom franchisee",
+      "merger_id": "WA-35047",
+      "merger_name": "REST \u2013 Quinbrook III Partnership and Quinbrook III (AU) Co-Investment Trust",
       "determination": "Approved",
       "determination_date": "2026-09-22T12:00:00Z",
-      "page_modified_datetime": "2026-09-22T16:43:12+10:00",
+      "page_modified_datetime": "2026-09-22T16:45:16+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-18T12:00:00Z",
       "page_modified_datetime": "2026-09-18T16:39:49+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-85043",
-      "merger_name": "Lone Star Funds - ContiTech",
-      "determination": "Approved",
-      "determination_date": "2026-09-18T12:00:00Z",
-      "page_modified_datetime": "2026-09-18T11:40:26+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",

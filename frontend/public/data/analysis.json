@@ -285,23 +285,24 @@
         "33": 3
       },
       "24": {
+        "34": 1,
         "36": 1,
         "39": 1
       }
     },
     "stats": {
       "average": 13.7,
-      "median": 14.0,
+      "median": 14,
       "min": 2,
       "max": 24,
-      "count": 416
+      "count": 417
     },
     "calendar_stats": {
       "average": 20.1,
-      "median": 20.0,
+      "median": 20,
       "min": 2,
       "max": 39,
-      "count": 416
+      "count": 417
     }
   },
   "monthly_volume": {
@@ -347,7 +348,7 @@
       67,
       61,
       72,
-      62,
+      63,
       1
     ]
   },
@@ -419,12 +420,12 @@
           "median_delta": 1.0
         },
         "waivers": {
-          "median": 18,
-          "average": 16.8,
+          "median": 18.0,
+          "average": 16.9,
           "p90": 21,
           "min": 6,
-          "max": 23,
-          "count": 67,
+          "max": 24,
+          "count": 68,
           "duration_histogram": {
             "6": 1,
             "7": 2,
@@ -442,7 +443,8 @@
             "20": 6,
             "21": 5,
             "22": 3,
-            "23": 1
+            "23": 1,
+            "24": 1
           },
           "median_delta": 4.0
         }
@@ -485,12 +487,12 @@
           "median_delta": 0.0
         },
         "waivers": {
-          "median": 17.0,
+          "median": 17,
           "average": 16.1,
           "p90": 21,
           "min": 6,
-          "max": 23,
-          "count": 176,
+          "max": 24,
+          "count": 177,
           "duration_histogram": {
             "6": 1,
             "7": 2,
@@ -509,9 +511,10 @@
             "20": 12,
             "21": 13,
             "22": 4,
-            "23": 4
+            "23": 4,
+            "24": 1
           },
-          "median_delta": 3.0
+          "median_delta": 3
         }
       }
     ],
@@ -525,12 +528,12 @@
         "count": 238
       },
       "waivers": {
-        "median": 14.0,
+        "median": 14,
         "average": 13.7,
         "p90": 20,
         "min": 2,
         "max": 24,
-        "count": 416
+        "count": 417
       }
     },
     "pre_notification": {
@@ -721,9 +724,9 @@
           "count": 71
         },
         {
-          "median": 18.0,
-          "average": 16.9,
-          "count": 46
+          "median": 18,
+          "average": 17.1,
+          "count": 47
         }
       ],
       "open_caseload": [
@@ -946,10 +949,11 @@
     },
     {
       "division": "Unknown",
-      "count": 4,
+      "count": 5,
       "outcome_mix": {
         "Approved": 2,
-        "Unknown": 2
+        "Unknown": 2,
+        "Not approved": 1
       },
       "median_phase_1_business_days": 40.0
     },

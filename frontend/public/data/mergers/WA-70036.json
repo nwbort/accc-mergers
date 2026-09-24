@@ -1,0 +1,126 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/australian-venue-co-%E2%80%93-assets-of-the-breakwater-hillarys-and-print-hall-perth",
+  "merger_name": "Australian Venue Co \u2013 assets of The Breakwater, Hillarys and Print Hall, Perth",
+  "status": "Assessment completed",
+  "merger_id": "WA-70036",
+  "effective_notification_datetime": "2026-08-21T12:00:00Z",
+  "original_notification_datetime": "2026-08-21T12:00:00Z",
+  "stage": "Waiver application",
+  "determination_publication_date": "2026-09-24T12:00:00Z",
+  "accc_determination": "Not approved",
+  "acquirers": [
+    {
+      "name": "AVC OPERATIONS PTY LIMITED",
+      "identifier_type": "ABN",
+      "identifier": "81 607 832 299",
+      "canonical": {
+        "id": "australian-venue-co",
+        "name": "Australian Venue Co"
+      },
+      "party_page": {
+        "id": "australian-venue-co",
+        "name": "Australian Venue Co"
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "WINTIME NOMINEES PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "81 628 155 199",
+      "party_page": {
+        "id": "wintime-nominees-pty-ltd",
+        "name": "Wintime Nominees Pty Ltd"
+      }
+    },
+    {
+      "name": "SUNLINER HOLDINGS PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "11 636 821 853",
+      "party_page": {
+        "id": "sunliner-holdings-pty-ltd",
+        "name": "Sunliner Holdings Pty Ltd"
+      }
+    }
+  ],
+  "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "4511",
+      "name": "Cafes and Restaurants"
+    },
+    {
+      "code": "4520",
+      "name": "Pubs, Taverns and Bars"
+    },
+    {
+      "code": "9139",
+      "name": "Amusement and Other Recreational Activities n.e.c."
+    }
+  ],
+  "merger_description": "AVC Operations Pty Ltd (**AVC**) proposes to acquire substantially all of the assets of the licensed venues trading as The Breakwater and Print Hall (including the exclusive right to carry on the business in succession of the vendor and the benefit of the existing lease) from Wintime Nominees Pty Ltd and Sunliner Holdings Pty Ltd respectively (the **Acquisition**). The business assets of The Breakwater and Print Hall are currently owned and operated by each respective vendor as part of Night Owl Group.\n\nAVC is a subsidiary of Australian Venue Co. Holdings Limited which operates over 200 licensed venues throughout Australia and New Zealand, primarily pubs, as well as some bars, clubs and licensed restaurants. Its venues are individually branded and are mostly located in inner-city and metropolitan areas, offering a range of products and services including food, alcoholic and non-alcoholic beverages, function rooms, live entertainment and gaming facilities.\n\nThe Breakwater is a licensed venue located at 203/58 Southside Drive, Hillarys WA 6025. The venue is a waterfront destination featuring multiple bars, a restaurant, entertainment facilities (i.e. bowling and shuffleboard) and function rooms.\n\nPrint Hall is a multi-level licensed venue located at Brookfield Place, 125 St Georges Terrace, Perth WA 6000. The venue is a heritage-listed entertainment precinct featuring multiple bars, a cellar wine bar, restaurants and a rooftop terrace.\n\nAVC will commence hospitality operations from each venue by taking on the existing leases following completion of the Acquisition.",
+  "events": [
+    {
+      "date": "2026-09-24T12:00:00Z",
+      "title": "Notification waiver determination published",
+      "display_title": "Notification waiver determination published",
+      "phase": "Waiver"
+    },
+    {
+      "date": "2026-08-21T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    },
+    {
+      "date": "2026-09-24T12:00:00Z",
+      "title": "Waiver application determination: Not approved",
+      "display_title": "Waiver application determination: Not approved",
+      "is_determination_event": true,
+      "phase": "Waiver"
+    }
+  ],
+  "is_waiver": true,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-10006",
+      "merger_name": "Australian Venue Co. \u2013 four licensed venues in metropolitan Sydney (Public House Petersham, The Erko, The Golden Sheaf and Barangaroo House)",
+      "acquirers": [
+        "AVC Operations Pty Limited"
+      ],
+      "targets": [
+        "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
+        "Barangaroo Pty Limited as trustee for Barangaroo Trust"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "MN-15034",
+      "merger_name": "Australian Venue Co \u2013 assets of Black Nugget Hotel Motel, Bartletts Tavern and all associated detached bottle shops",
+      "acquirers": [
+        "AVC OPERATIONS PTY LIMITED"
+      ],
+      "targets": [
+        "Central Hospitality Services Pty Ltd",
+        "ATHENA HOSPITALITY GROUP PTY LTD"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "MN-65007",
+      "merger_name": "Australian Venue Co. \u2013 An Sibin Irish Pub",
+      "acquirers": [
+        "AVC OPERATIONS PTY LIMITED"
+      ],
+      "targets": [
+        "ASH PROMOTIONS PTY LTD"
+      ],
+      "accc_determination": "Approved"
+    }
+  ]
+}

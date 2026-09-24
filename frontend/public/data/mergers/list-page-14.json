@@ -1,6 +1,67 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-85047",
+      "merger_name": "Blackstone funds and Perpetual Trustees \u2013 HSBC loan portfolio",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-08-27T12:00:00Z",
+      "determination_publication_date": "2026-09-18T12:00:00Z",
+      "end_of_determination_period": "2026-10-09T12:00:00Z",
+      "latest_event_date": "2026-09-18T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "VIRGO BIDCO PTY LTD"
+        },
+        {
+          "name": "ABF Whole Loan Pty Ltd"
+        },
+        {
+          "name": "PERPETUAL CORPORATE TRUST LIMITED",
+          "canonical": {
+            "name": "Perpetual Corporate Trust Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "HSBC BANK AUSTRALIA LIMITED"
+        },
+        {
+          "name": "Lion Series 2023-1 Trust"
+        },
+        {
+          "name": "Lion Series 2020-1 Trust"
+        },
+        {
+          "name": "Lion Series 2024-1 Trust"
+        },
+        {
+          "name": "Lion Series 2022-1 Trust"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "6221",
+          "name": "Banking"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ]
+    },
+    {
       "merger_id": "WA-75055",
       "merger_name": "The Procter & Gamble Company - Thorne",
       "status": "Assessment completed",
