@@ -179,6 +179,66 @@ class TestParseMatterPageMultipleTables:
         assert docs[0]['description'] == 'Application'
 
 
+class TestUnparsedDocumentLinks:
+    def test_reports_document_links_outside_a_recognised_table(self):
+        # A filing listed anywhere but a recognised document table is skipped
+        # by the parser; it must be reported, not silently dropped.
+        html = """
+        <main>
+          <table class="table-bordered">
+            <tr><th>Date</th><th>Document</th></tr>
+            <tr><td>21 September 2026</td>
+                <td><a href="/__data/assets/pdf_file/0011/607367/Directions.pdf">Directions</a></td></tr>
+          </table>
+          <table><tr><th>Item</th></tr>
+            <tr><td><a href="/__data/assets/pdf_file/0001/608000/Orders.pdf">Orders (PDF, 1 MB)</a></td></tr>
+          </table>
+          <ul><li><a href="/x/Outline.docx">Outline</a></li></ul>
+          <p><a href="/hearings">Hearing list</a></p>
+        </main>
+        """
+        docs = scrape_tribunal.parse_matter_page(html, BASE_URL)
+        missed = scrape_tribunal.unparsed_document_links(html, BASE_URL, docs)
+        assert missed == [
+            ('https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0001/608000/Orders.pdf',
+             'Orders (PDF, 1 MB)'),
+            ('https://www.competitiontribunal.gov.au/x/Outline.docx', 'Outline'),
+        ]
+
+    def test_nothing_reported_when_every_link_was_parsed(self):
+        html = """
+        <main><table>
+          <tr><th>Date</th><th>Document</th></tr>
+          <tr><td>15 July 2026</td><td><a href="/x/App.pdf">Application</a></td></tr>
+        </table></main>
+        """
+        docs = scrape_tribunal.parse_matter_page(html, BASE_URL)
+        assert scrape_tribunal.unparsed_document_links(html, BASE_URL, docs) == []
+
+
+class TestFreshPageUrl:
+    def test_adds_a_cache_busting_query(self, monkeypatch):
+        monkeypatch.setattr(scrape_tribunal.time, 'time', lambda: 1790000000.5)
+        assert scrape_tribunal.fresh_page_url(BASE_URL) == BASE_URL + '?_=1790000000'
+
+    def test_appends_to_an_existing_query(self, monkeypatch):
+        monkeypatch.setattr(scrape_tribunal.time, 'time', lambda: 1790000000)
+        assert scrape_tribunal.fresh_page_url(BASE_URL + '?a=1') == BASE_URL + '?a=1&_=1790000000'
+
+
+class TestSavePageSnapshot:
+    def test_writes_page_when_dir_is_set(self, tmp_path, monkeypatch):
+        monkeypatch.setenv('TRIBUNAL_PAGE_SNAPSHOT_DIR', str(tmp_path / 'pages'))
+        scrape_tribunal.save_page_snapshot('MN-0001', '<html>x</html>')
+        assert (tmp_path / 'pages' / 'MN-0001.html').read_text() == '<html>x</html>'
+
+    def test_noop_when_dir_is_unset(self, tmp_path, monkeypatch):
+        monkeypatch.delenv('TRIBUNAL_PAGE_SNAPSHOT_DIR', raising=False)
+        monkeypatch.chdir(tmp_path)
+        scrape_tribunal.save_page_snapshot('MN-0001', '<html>x</html>')
+        assert list(tmp_path.iterdir()) == []
+
+
 class TestDownloadDocument:
     def test_off_domain_url_is_not_mirrored(self, tmp_path, monkeypatch):
         monkeypatch.setattr(scrape_tribunal, 'MATTERS_DIR', tmp_path)
@@ -530,6 +590,7 @@ class TestClearChallengeByVisiting:
 
     def _patch_fetch_page(self, monkeypatch, matter_html):
         visited = []
+        monkeypatch.setattr(scrape_tribunal, 'fresh_page_url', lambda url: url)
 
         async def _fetch_page(browser, url):
             visited.append(url)
@@ -582,6 +643,7 @@ class TestScrapeMattersChallengeRecovery:
     ):
         warnings = []
         visited = []
+        monkeypatch.setattr(scrape_tribunal, 'fresh_page_url', lambda url: url)
         monkeypatch.setattr(scrape_tribunal, 'uc', types.SimpleNamespace(
             start=lambda **kwargs: _async_value(FakeBrowser()),
         ))

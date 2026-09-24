@@ -14,6 +14,11 @@ on:
         description: 'Optional space-separated merger_ids to scrape (default: all with a tribunal_url)'
         required: false
         default: ''
+      save_pages:
+        description: 'Upload each fetched matter page as a workflow artifact (for diagnosing a missed document)'
+        type: boolean
+        required: false
+        default: false
   schedule:
     # Hourly, minute :23, from 8am to 7pm Sydney time, weekdays only. The
     # `timezone` field (same pattern as pipeline.yml/weekly-digest.yml) has
@@ -86,8 +91,25 @@ jobs:
     - name: Run the tribunal scraper
       # xvfb-run gives Chrome a display so it runs headful, which is far less
       # likely to be flagged by Cloudflare than headless.
+      # With save_pages, each fetched matter page is saved for the artifact
+      # below; an empty TRIBUNAL_PAGE_SNAPSHOT_DIR saves nothing.
+      env:
+        TRIBUNAL_PAGE_SNAPSHOT_DIR: ${{ inputs.save_pages && format('{0}/tribunal-pages', runner.temp) || '' }}
       run: |
         xvfb-run -a python -m scripts.scrape.scrape_tribunal ${{ github.event.inputs.merger_ids }}
+
+    - name: Upload fetched tribunal pages
+      # The tribunal site is behind Cloudflare, so the page as the scraper saw
+      # it can't be re-fetched afterwards with curl. Keep it, so a run that
+      # reports "No changes" while the live page lists a new document can be
+      # diagnosed from what was actually parsed. Opt-in via save_pages.
+      if: always() && inputs.save_pages
+      uses: actions/upload-artifact@v7
+      with:
+        name: tribunal-pages
+        path: ${{ runner.temp }}/tribunal-pages
+        if-no-files-found: ignore
+        retention-days: 14
 
     - name: Compress oversized PDFs
       # Cloudflare Pages rejects an entire deployment if any single asset is
