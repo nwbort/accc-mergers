@@ -18544,13 +18544,13 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 11,
+        "estimated_days": 9,
         "min_days": 0,
         "max_days": 25,
-        "id_issued_estimated": "2026-08-07",
+        "id_issued_estimated": "2026-08-09",
         "id_issued_before": "2026-08-18",
         "id_issued_after": "2026-07-24",
-        "min_days_witness": "WA-20037",
+        "min_days_witness": "WA-20036",
         "max_days_witness": "WA-20033",
         "basis": "bracketed",
         "method_version": 1
@@ -76065,6 +76065,171 @@
           ],
           "targets": [
             "Shrika Pty Ltd"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/sinopec-%E2%80%93-park-fuels",
+      "merger_name": "Sinopec \u2013 Park Fuels",
+      "status": "Assessment completed",
+      "merger_id": "WA-20036",
+      "effective_notification_datetime": "2026-08-28T12:00:00Z",
+      "original_notification_datetime": "2026-08-28T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-09-24T12:00:00Z",
+      "accc_determination": "Not approved",
+      "accc_determination_raw": "ACCC determinationNot approved",
+      "page_modified_datetime": "2026-09-24T17:58:08+10:00",
+      "acquirers": [
+        {
+          "name": "Sinopec (Hong Kong) Limited",
+          "identifier_type": null,
+          "identifier": "BRN Code: 13184467",
+          "party_page": {
+            "id": "sinopec-hong-kong-limited",
+            "name": "Sinopec (Hong Kong) Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "AUSTRALIAN TERMINALS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "83 149 518 481",
+          "party_page": {
+            "id": "australian-terminals-pty-ltd",
+            "name": "Australian Terminals Pty Ltd"
+          }
+        },
+        {
+          "name": "BINTAN PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "18 095 076 421",
+          "party_page": {
+            "id": "bintan-pty-ltd",
+            "name": "Bintan Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "1701",
+          "name": "Petroleum Refining and Petroleum Fuel Manufacturing"
+        },
+        {
+          "code": "3321",
+          "name": "Petroleum Product Wholesaling"
+        },
+        {
+          "code": "4000",
+          "name": "Fuel Retailing"
+        },
+        {
+          "code": "4610",
+          "name": "Road Freight Transport"
+        },
+        {
+          "code": "5212",
+          "name": "Port and Water Transport Terminal Operations"
+        },
+        {
+          "code": "5299",
+          "name": "Other Transport Support Services n.e.c."
+        },
+        {
+          "code": "5309",
+          "name": "Other Warehousing and Storage Services"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "merger_description": "Sinopec (Hong Kong) Limited (**Sinopec**) proposes to acquire (directly or via a wholly owned subsidiary) 75% of the issued and outstanding shares of Bintan Pty Limited and Australian Terminals Pty Limited and their respective subsidiaries (which are collectively the holding companies of the **Park Fuels** business) (the **Acquisition**).\n\nSinopec is a subsidiary of the China Petrochemical Corporation (**Sinopec Group**), a Chinese, state-owned oil and gas enterprise. Sinopec Group's activities include oil and gas exploration and production, oil refining, petrochemicals and chemical products, and the import and export of crude oil, natural gas, refining oil products, and chemicals. In Australia, Sinopec Group (through its subsidiaries) is engaged in the wholesale and retail supply of fuel products in Victoria and Western Australia, as well as the supply of coal, petrochemical products, and equipment and materials produced by Sinopec Group.\n\nPark Fuels is an Australian fuel supply company headquartered in Albion Park Rail, New South Wales. Park Fuels imports fuel into Australia via its terminal operations at Kooragang Island and Port Kembla in New South Wales, and offers fuel terminal and storage services to third parties from these locations. Park Fuels is also engaged in the wholesale supply of fuel, primarily in New South Wales and Queensland, and operates fuel retail sites in various locations across New South Wales.",
+      "events": [
+        {
+          "date": "2026-09-24T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Not approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Sinopec%20-%20Park%20Fuels%20%28WA-20036%29%20-%20Notification%20waiver%20determination%20-%2024%20September%202026.pdf",
+          "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Sinopec (Hong Kong) Limited (Sinopec) applied for a notification\nwaiver in respect of its proposed acquisition of 75% of the issued\nand outstanding shares of Bintan Pty Limited and Australian\nTerminals Pty Limited and their respective subsidiaries (which are\ncollectively the holding companies of the Park Fuels business), as\ndescribed in the transaction documents provided as part of the\napplication (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(b) of the Competition and\nConsumer Act 2010 (Cth) not to make the notification waiver\ndetermination applied for."
+            },
+            {
+              "item": "Date of determination",
+              "details": "24 September 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, Sinopec, is a subsidiary of the China Petrochemical\nCorporation, a Chinese, state-owned oil and gas enterprise (together\nwith its subsidiaries, Sinopec Group). Sinopec Group\u2019s activities\ninclude oil and gas exploration and production, oil refining,\npetrochemicals and chemical products, and the import and export of\ncrude oil, natural gas, refining oil products, and chemicals. In\nAustralia, Sinopec Group (through its subsidiaries) is engaged in the\nwholesale and retail supply of fuel products in Victoria and Western\nAustralia, as well as the supply of coal, petrochemical products, and\nequipment and materials produced by Sinopec Group.\nThe target, Park Fuels, is an Australian fuel supply company\nheadquartered in Albion Park Rail, New South Wales. Park Fuels\nimports fuel into Australia via its terminal operations at Kooragang\nIsland and Port Kembla in New South Wales, and offers fuel terminal\nand storage services to third parties from these locations. Park Fuels\nis also engaged in the supply of fuel transport and logistics services,\nthe wholesale supply of fuel, primarily in New South Wales and\nQueensland, and operates fuel retail sites in various locations across\nNew South Wales."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (ACCC) has considered the\ninformation provided with the notification waiver application, and\nhad regard to the factors in section 51ABV(2)(b) of the Act.\nBased on the information provided in the application, including the\nparties\u2019 (and their connected entities) revenues in Australia, the\nACCC considers it is likely that, if the Acquisition were put into effect,\nthe notification thresholds would be met.\nThe ACCC is unable to reach a view that the Acquisition would not be\nlikely to raise competition issues in any market based on the\ninformation provided, given:\na. there are multiple potential vertical relationships\nbetween the products and services supplied by the\nparties in Australia, and the impact of the Acquisition on\nthe merged entity\u2019s ability and/or incentive to foreclose\nrivals is uncertain\nb. the extent to which the merged entity would likely be\nconstrained by alternative providers of fuel terminal and\nstorage services in New South Wales or elsewhere in\nAustralia is unclear\nc. it is unclear whether Sinopec Group would otherwise\nexpand its operations in Australia absent the Acquisition\nand therefore, whether the Acquisition may result in a\nloss of future competition.\nThe ACCC considers that the Acquisition warrants consideration\nthrough the notification process, including via consultation with third\nparties.\nGiven the above, the ACCC has determined not to make the\nnotification waiver determination applied for.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-20036/Sinopec - Park Fuels (WA-20036) - Notification waiver determination - 24 September 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-08-28T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-15034",
+          "merger_name": "Australian Venue Co \u2013 assets of Black Nugget Hotel Motel, Bartletts Tavern and all associated detached bottle shops",
+          "acquirers": [
+            "AVC OPERATIONS PTY LIMITED"
+          ],
+          "targets": [
+            "Central Hospitality Services Pty Ltd",
+            "ATHENA HOSPITALITY GROUP PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-10033",
+          "merger_name": "Australian Venue Co \u2013 assets of The Clock Hotel, Surry Hills and The Bank Hotel, Newtown, NSW",
+          "acquirers": [
+            "AVC OPERATIONS PTY LIMITED"
+          ],
+          "targets": [
+            "AMALGAMATED HOTELS PTY LIMITED"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-25005",
+          "merger_name": "Australian Venue Co. \u2013 leasehold and certain other assets of Quay Restaurant, Sydney",
+          "acquirers": [
+            "AVC OPERATIONS PTY LIMITED",
+            "Australian Venue Co. Holdings Limited"
+          ],
+          "targets": [
+            "Q.R.A. PTY LIMITED"
           ],
           "accc_determination": "Approved"
         }
