@@ -119,7 +119,7 @@ function HintPanel({ hint, onClose }) {
           type="button"
           onClick={onClose}
           aria-label="Close explanation"
-          className="-m-1 shrink-0 p-1 text-sm leading-none text-gray-400 hover:text-gray-600"
+          className="-m-1 shrink-0 p-1 text-sm leading-none text-gray-500 hover:text-gray-700 transition-colors"
         >
           &times;
         </button>

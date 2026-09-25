@@ -18,7 +18,7 @@ import { industryPath } from '../utils/slug';
 import { readIndustryNode, industryDivisionCacheKey } from '../utils/industryNode';
 import { industryMeta } from '../utils/pageMeta';
 import { MERGER_STATUS, PHASES } from '../constants/mergerStatus';
-import { CARD, SECTION_HEADING } from '../utils/classNames';
+import { CARD, SECTION_HEADING, CARD_TITLE } from '../utils/classNames';
 
 function IndustryDetail() {
   const decodedCode = useDecodedParam('code');
@@ -229,7 +229,7 @@ function IndustryDetail() {
         {/* Sub-industries: children one level down, for drilling into the tree. */}
         {children.length > 0 && (
           <div className={`${CARD} p-6 mb-6`}>
-            <h2 className={`${SECTION_HEADING} mb-3`}>
+            <h2 className={`${CARD_TITLE} mb-3`}>
               Sub-industries
             </h2>
             <ul className="divide-y divide-gray-50">

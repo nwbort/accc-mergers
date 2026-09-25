@@ -15,13 +15,13 @@ export default function PrivacyPolicy() {
         url="/privacy"
       />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 animate-fade-in">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
 
         {/* Header */}
-        <div className="mb-10">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Privacy Policy</h1>
-          <p className="text-sm text-gray-500">Last updated: 15 September 2026</p>
-        </div>
+        <header className="mb-6">
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">Privacy policy</h1>
+          <p className="mt-1 text-sm text-gray-500">Last updated: 15 September 2026</p>
+        </header>
 
         {/* 1. Introduction */}
         <section className={`${CARD} p-8 mb-6`}>
@@ -35,9 +35,9 @@ export default function PrivacyPolicy() {
           </p>
         </section>
 
-        {/* 2. Information We Collect */}
+        {/* 2. Information we collect */}
         <section className={`${CARD} p-8 mb-6`}>
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">2. Information We Collect</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">2. Information we collect</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             We collect only the minimum personal information necessary to provide our services.
           </p>
@@ -50,9 +50,9 @@ export default function PrivacyPolicy() {
           </p>
         </section>
 
-        {/* 3. How We Use Your Information */}
+        {/* 3. How we use your information */}
         <section className={`${CARD} p-8 mb-6`}>
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">3. How We Use Your Information</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">3. How we use your information</h2>
           <p className="text-gray-700 leading-relaxed mb-3">We use your email address solely to:</p>
           <ul className="list-disc list-inside text-gray-700 space-y-1 mb-4">
             <li>send you the mergers.fyi weekly digest; and</li>
@@ -65,9 +65,9 @@ export default function PrivacyPolicy() {
           </ul>
         </section>
 
-        {/* 4. Email Delivery and Third-Party Services */}
+        {/* 4. Email delivery and third-party services */}
         <section className={`${CARD} p-8 mb-6`}>
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">4. Email Delivery and Third-Party Services</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">4. Email delivery and third-party services</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             We use Resend to store email addresses and deliver our email digest.
           </p>
@@ -78,9 +78,9 @@ export default function PrivacyPolicy() {
           </ul>
         </section>
 
-        {/* 5. Data Storage and Security */}
+        {/* 5. Data storage and security */}
         <section className={`${CARD} p-8 mb-6`}>
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">5. Data Storage and Security</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">5. Data storage and security</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             We take reasonable steps to protect your information from misuse, loss, or unauthorised access.
           </p>
@@ -102,9 +102,9 @@ export default function PrivacyPolicy() {
           </p>
         </section>
 
-        {/* 7. Cookies and Analytics */}
+        {/* 7. Cookies and analytics */}
         <section className={`${CARD} p-8 mb-6`}>
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">7. Cookies and Analytics</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">7. Cookies and analytics</h2>
           <p className="text-gray-700 leading-relaxed mb-3">We do not use cookies to track individual users. You browser
             stores some limited information locally, ie:</p>
           <ul className="list-disc list-inside text-gray-700 space-y-1 mb-4">
@@ -123,9 +123,9 @@ export default function PrivacyPolicy() {
 
         </section>
 
-        {/* 8. Access and Correction */}
+        {/* 8. Access and correction */}
         <section className={`${CARD} p-8 mb-6`}>
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">8. Access and Correction</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">8. Access and correction</h2>
           <p className="text-gray-700 leading-relaxed">
             If you would like to access, update, or delete your email address, you can contact us at{' '}
             <a
@@ -138,9 +138,9 @@ export default function PrivacyPolicy() {
           </p>
         </section>
 
-        {/* 9. Changes to This Policy */}
+        {/* 9. Changes to this policy */}
         <section className={`${CARD} p-8 mb-6`}>
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">9. Changes to This Policy</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">9. Changes to this policy</h2>
           <p className="text-gray-700 leading-relaxed">
             We may update this Privacy Policy from time to time. Any changes will be posted on this page
             with an updated effective date.

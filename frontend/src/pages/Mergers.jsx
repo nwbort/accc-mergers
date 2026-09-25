@@ -5,7 +5,7 @@ import { mergerPath } from '../utils/slug';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
 import StatusBadge from '../components/StatusBadge';
-import BellIcon from '../components/BellIcon';
+import TrackButton from '../components/TrackButton';
 import WaiverBadge from '../components/WaiverBadge';
 import AppealBadge from '../components/AppealBadge';
 import RefiledBadge from '../components/RefiledBadge';
@@ -631,24 +631,21 @@ function Mergers() {
                         {merger.merger_id} · {merger.stage || 'N/A'}
                       </p>
                     </div>
-                    <div className="flex items-center gap-2 flex-shrink-0">
-                      <button
+                    {/* The same control the detail page's header carries, so
+                        tracking looks the same wherever it's offered. */}
+                    <div className="hidden md:flex items-center gap-2 flex-shrink-0">
+                      <TrackButton
+                        active={tracked}
                         onClick={(e) => {
                           e.preventDefault();
                           e.stopPropagation();
                           toggleTracking(merger.merger_id);
                         }}
-                        className={`hidden md:inline-flex items-center justify-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg transition-all duration-200 ${
-                          tracked
-                            ? 'bg-primary text-white hover:bg-primary-dark shadow-sm'
-                            : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                        }`}
-                        aria-pressed={tracked}
-                        aria-label={tracked ? 'Stop tracking this merger' : 'Track this merger for updates'}
-                      >
-                        <BellIcon filled={tracked} className="w-3.5 h-3.5" />
-                        {tracked ? 'Tracking' : 'Track'}
-                      </button>
+                        activeLabel="Tracking"
+                        inactiveLabel="Track"
+                        activeAriaLabel="Stop tracking this merger"
+                        inactiveAriaLabel="Track this merger for updates"
+                      />
                     </div>
                   </div>
 
@@ -706,7 +703,7 @@ function Mergers() {
                           than its neighbours in the list. */}
                       {merger.anzsic_codes.length > MAX_VISIBLE_INDUSTRY_CHIPS && (
                         <span
-                          className="inline-flex items-center px-2 py-1 rounded-md text-xs leading-none bg-gray-50 text-gray-400 border border-gray-100"
+                          className="inline-flex items-center px-2 py-1 rounded-md text-xs leading-none bg-gray-50 text-gray-500 border border-gray-100"
                           title={merger.anzsic_codes.slice(MAX_VISIBLE_INDUSTRY_CHIPS).map((code) => code.name).join(', ')}
                         >
                           +{merger.anzsic_codes.length - MAX_VISIBLE_INDUSTRY_CHIPS} more
