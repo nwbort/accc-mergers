@@ -591,7 +591,10 @@
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "Retail Employees Superannuation Pty Limited as the Trustee for RETAIL EMPLOYEES SUPERANNUATION TRUST"
+          "name": "Retail Employees Superannuation Pty Limited as the Trustee for RETAIL EMPLOYEES SUPERANNUATION TRUST",
+          "canonical": {
+            "name": "The Trustee for RETAIL EMPLOYEES SUPERANNUATION TRUST"
+          }
         }
       ],
       "targets": [
@@ -927,7 +930,10 @@
       ],
       "other_parties": [
         {
-          "name": "GEOSYNTEC CONSULTANTS PTY LTD"
+          "name": "GEOSYNTEC CONSULTANTS PTY LTD",
+          "canonical": {
+            "name": "Geosyntec Consultants, Inc"
+          }
         },
         {
           "name": "Geosyntec Holdings, LLC"
@@ -939,10 +945,16 @@
           "name": "JBS&G AUSTRALIA PTY LTD"
         },
         {
-          "name": "Geosyntec Consultants (Australia) Holdings Pty Ltd"
+          "name": "Geosyntec Consultants (Australia) Holdings Pty Ltd",
+          "canonical": {
+            "name": "Geosyntec Consultants, Inc"
+          }
         },
         {
-          "name": "Geosyntec Consultants, Inc"
+          "name": "Geosyntec Consultants, Inc",
+          "canonical": {
+            "name": "Geosyntec Consultants, Inc"
+          }
         },
         {
           "name": "REE1 Pty Ltd"
