@@ -43,6 +43,41 @@
       },
       "waiver_duration": null
     },
+    "biocatch-ltd": {
+      "id": "biocatch-ltd",
+      "canonical_name": "BioCatch Ltd",
+      "members": [
+        {
+          "name": "BioCatch Ltd",
+          "identifier": "0514522895",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-75056",
+            "merger_name": "Visa - BioCatch",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-24T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "cshc-fund-blocker-llc": {
       "id": "cshc-fund-blocker-llc",
       "canonical_name": "CSHC Fund Blocker, LLC",

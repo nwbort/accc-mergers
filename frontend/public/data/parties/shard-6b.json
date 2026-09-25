@@ -341,6 +341,41 @@
         "median_business_days": 13.5,
         "completed_count": 2
       }
+    },
+    "visa-open-connect-limited": {
+      "id": "visa-open-connect-limited",
+      "canonical_name": "Visa Open Connect Limited",
+      "members": [
+        {
+          "name": "Visa Open Connect Limited",
+          "identifier": "12227688",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-75056",
+            "merger_name": "Visa - BioCatch",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-24T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
     }
   }
 }

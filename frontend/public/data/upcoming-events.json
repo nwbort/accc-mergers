@@ -31,6 +31,16 @@
       "effective_notification_datetime": "2026-09-23T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-10-01T12:00:00Z",
+      "merger_id": "MN-75056",
+      "merger_name": "Visa - BioCatch",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-09-24T12:00:00Z"
+    },
+    {
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-10-13T12:00:00Z",
@@ -251,6 +261,16 @@
       "effective_notification_datetime": "2026-09-23T12:00:00Z"
     },
     {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-11-06T12:00:00Z",
+      "merger_id": "MN-75056",
+      "merger_name": "Visa - BioCatch",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-09-24T12:00:00Z"
+    },
+    {
       "type": "tribunal_hearing",
       "event_type_display": "Tribunal hearing",
       "date": "2026-11-09T12:00:00Z",
@@ -262,6 +282,6 @@
       "tribunal_number": "ACT 1 of 2026"
     }
   ],
-  "count": 26,
+  "count": 28,
   "days_ahead": 60
 }

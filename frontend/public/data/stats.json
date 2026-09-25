@@ -1,10 +1,10 @@
 {
-  "total_mergers": 262,
+  "total_mergers": 263,
   "total_waivers": 423,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 233,
-    "Under assessment": 24,
+    "Under assessment": 25,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -60,11 +60,11 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 73
+      "count": 74
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 72
+      "count": 73
     },
     {
       "name": "Software Publishing",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-75056",
+      "merger_name": "Visa - BioCatch",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-09-24T12:00:00Z",
+      "page_modified_datetime": "2026-09-25T13:14:51+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-05049",
       "merger_name": "Imagine Education \u2013 Eden Academy",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-09-10T12:00:00Z",
       "page_modified_datetime": "2026-09-11T08:41:31+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-55024",
-      "merger_name": "PSP Investments - AAA Egg Company",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-09-10T12:00:00Z",
-      "page_modified_datetime": "2026-09-10T13:46:46+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

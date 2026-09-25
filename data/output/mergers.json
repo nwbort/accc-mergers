@@ -49288,6 +49288,141 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/visa-biocatch",
+      "merger_name": "Visa - BioCatch",
+      "status": "Under assessment",
+      "merger_id": "MN-75056",
+      "effective_notification_datetime": "2026-09-24T12:00:00Z",
+      "original_notification_datetime": "2026-09-24T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-11-06T12:00:00Z",
+      "page_modified_datetime": "2026-09-25T13:14:51+10:00",
+      "consultation_response_due_date": "2026-10-01T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Visa Open Connect Limited",
+          "identifier_type": null,
+          "identifier": "12227688",
+          "party_page": {
+            "id": "visa-open-connect-limited",
+            "name": "Visa Open Connect Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "BioCatch Ltd",
+          "identifier_type": null,
+          "identifier": "0514522895",
+          "party_page": {
+            "id": "biocatch-ltd",
+            "name": "BioCatch Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Visa Inc",
+          "identifier_type": null,
+          "identifier": "4233619",
+          "party_page": {
+            "id": "visa-inc",
+            "name": "Visa Inc"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "merger_description": "Visa, Inc., through its indirect wholly owned subsidiary, Visa Open Connect Limited (**Visa**) intends to acquire all of the shares in BioCatch Ltd (**BioCatch**) (the **Acquisition**).\n\nVisa is a global payments technology company that supplies payment products and services and commercial and money movement solutions. Visa also offers services designed to support and enhance payments \u2013 including fraud, authentication, authorisation, tokenisation, and risk management solutions. Its fraud and risk solutions are primarily marketed under the \u2018Visa Protect\u2019 brand. It also offers risk solutions for account-to-account payments through \u2018Visa Protect Account to Account\u2019, which helps financial institutions detect and prevent payment fraud and scams.\n\nBioCatch is an Israeli based security software company with operations globally. It supplies software solutions that discern different users\u2019 patterns of behaviour on devices to identify cyber threats in real-time by analysing patterns of behaviour across online and mobile applications and deviations in that behaviour. Its technology uses machine learning to monitor various behavioural parameters to detect anomalies suggesting compromised access by bots, fraudsters, and remote access tools.",
+      "events": [
+        {
+          "date": "2026-09-24T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-45024",
+          "merger_name": "OEConnection - Epyx",
+          "acquirers": [
+            "OEC Bidco Limited"
+          ],
+          "targets": [
+            "Quadrum Investments Group Ltd (trading as \"Epyx\")"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-25008",
+          "merger_name": "Five V Capital - FTP Group",
+          "acquirers": [
+            "OVERWATCH BIDCO PTY LTD"
+          ],
+          "targets": [
+            "FTP GROUP HOLDINGS PTY LTD",
+            "FAARM BIDCO PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-25049",
+          "merger_name": "Merck KGaA / Bio-Techne",
+          "acquirers": [
+            "EMD Holdings NewCo Inc."
+          ],
+          "targets": [
+            "Bio-Techne Corporation"
+          ],
+          "status": "Under assessment"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 18,
+        "range_business_days": [
+          16,
+          21
+        ],
+        "basis": "global",
+        "question_bucket": null,
+        "question_count": null,
+        "sample_size": 238,
+        "as_of": "2026-09-24",
+        "estimated_at": "2026-09-25",
+        "method_version": 2
+      },
+      "pre_notification": {
+        "estimated_days": 28,
+        "min_days": null,
+        "max_days": 35,
+        "id_issued_estimated": "2026-08-27",
+        "id_issued_before": null,
+        "id_issued_after": "2026-08-20",
+        "min_days_witness": null,
+        "max_days_witness": "WA-75055",
+        "basis": "upper-bound-only",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/bain-capital-%E2%80%93-mcj",
       "merger_name": "Bain Capital \u2013 MCJ",
       "status": "Assessment completed",
