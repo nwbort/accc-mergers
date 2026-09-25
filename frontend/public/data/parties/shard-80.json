@@ -247,6 +247,11 @@
       "canonical_name": "Retail Employees Superannuation Trust",
       "members": [
         {
+          "name": "Retail Employees Superannuation Pty Limited as the Trustee for RETAIL EMPLOYEES SUPERANNUATION TRUST",
+          "identifier": "62 653 671 394",
+          "identifier_type": "ABN"
+        },
+        {
           "name": "Retail Employees Superannuation Trust",
           "identifier": "62 653 671 394",
           "identifier_type": "ABN"
@@ -259,6 +264,17 @@
       ],
       "mergers": {
         "acquirer": [
+          {
+            "merger_id": "WA-80041",
+            "merger_name": "REST - Perth Airport",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-31T12:00:00Z",
+            "determination_date": "2026-09-25T12:00:00Z"
+          },
           {
             "merger_id": "WA-35047",
             "merger_name": "REST \u2013 Quinbrook III Partnership and Quinbrook III (AU) Co-Investment Trust",
@@ -286,10 +302,10 @@
           }
         ]
       },
-      "merger_count": 2,
+      "merger_count": 3,
       "phase_1_count": 1,
       "phase_2_count": 0,
-      "waiver_count": 1,
+      "waiver_count": 2,
       "active_count": 0,
       "phase_duration": {
         "average_days": 30.0,
@@ -299,11 +315,11 @@
         "completed_count": 1
       },
       "waiver_duration": {
-        "average_days": 32.0,
-        "median_days": 32,
-        "average_business_days": 22.0,
-        "median_business_days": 22,
-        "completed_count": 1
+        "average_days": 28.5,
+        "median_days": 28.5,
+        "average_business_days": 20.5,
+        "median_business_days": 20.5,
+        "completed_count": 2
       }
     },
     "salads-of-australia-pty-limited-receivers-managers-appointed-administrators-appo": {

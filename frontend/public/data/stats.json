@@ -1,6 +1,6 @@
 {
   "total_mergers": 263,
-  "total_waivers": 424,
+  "total_waivers": 425,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 233,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 403,
+    "Approved": 404,
     "Not approved": 21
   },
   "clearance_rate": {
@@ -48,15 +48,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.202830188679247,
-    "median_days": 20.0,
-    "average_business_days": 13.80188679245283,
-    "median_business_days": 14.0
+    "average_days": 20.214117647058824,
+    "median_days": 20,
+    "average_business_days": 13.814117647058824,
+    "median_business_days": 14
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 145
+      "count": 146
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-80041",
+      "merger_name": "REST - Perth Airport",
+      "determination": "Approved",
+      "determination_date": "2026-09-25T12:00:00Z",
+      "page_modified_datetime": "2026-09-25T17:03:48+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-10037",
       "merger_name": "Blackstone \u2013 Flow Control Holdings",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-35044",
-      "merger_name": "Steamatic Australia \u2013 Steamatic Epsom franchisee",
-      "determination": "Approved",
-      "determination_date": "2026-09-22T12:00:00Z",
-      "page_modified_datetime": "2026-09-24T15:50:02+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]

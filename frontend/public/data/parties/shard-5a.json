@@ -78,6 +78,47 @@
       "phase_duration": null,
       "waiver_duration": null
     },
+    "gardior-pty-ltd-as-trustee-for-the-infrastructure-fund": {
+      "id": "gardior-pty-ltd-as-trustee-for-the-infrastructure-fund",
+      "canonical_name": "GARDIOR PTY LTD as trustee for THE INFRASTRUCTURE FUND",
+      "members": [
+        {
+          "name": "GARDIOR PTY LTD as trustee for THE INFRASTRUCTURE FUND",
+          "identifier": "71 076 835 955",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-80041",
+            "merger_name": "REST - Perth Airport",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-08-31T12:00:00Z",
+            "determination_date": "2026-09-25T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 25.0,
+        "median_days": 25,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
     "globalia-corporaci-n-empresarial-s-a": {
       "id": "globalia-corporaci-n-empresarial-s-a",
       "canonical_name": "Globalia Corporaci\u00f3n Empresarial, S.A.",
