@@ -29,7 +29,6 @@ const NickTwort = lazy(() => import('./pages/NickTwort'));
 const Analysis = lazy(() => import('./pages/Analysis'));
 const Phase2 = lazy(() => import('./pages/Phase2'));
 const RefiledNotifications = lazy(() => import('./pages/RefiledNotifications'));
-const Extensions = lazy(() => import('./pages/Extensions'));
 const CurrentStatus = lazy(() => import('./pages/CurrentStatus'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const Feedback = lazy(() => import('./pages/Feedback'));
@@ -68,7 +67,6 @@ function AppContent() {
             <Route path="/analysis" element={<Analysis />} />
             <Route path="/phase-2" element={<Phase2 />} />
             <Route path="/refiled-notifications" element={<RefiledNotifications />} />
-            <Route path="/extensions" element={<Extensions />} />
             <Route path="/current-status" element={<CurrentStatus />} />
             <Route path="/nick-twort" element={<NickTwort />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
