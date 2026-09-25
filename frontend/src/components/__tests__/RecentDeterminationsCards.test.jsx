@@ -46,4 +46,26 @@ describe('RecentDeterminationsCards', () => {
     expect(screen.getByText('Waiver')).toBeInTheDocument();
     expect(screen.getByText('With conditions')).toBeInTheDocument();
   });
+
+  it('flags a determination decided in Phase 2', () => {
+    renderCards([{ ...approval, determination: 'Not approved', stage: 'Phase 2 - detailed assessment' }]);
+    expect(screen.getByText('Phase 2')).toBeInTheDocument();
+  });
+
+  it('leaves a Phase 1 determination unflagged', () => {
+    renderCards([{ ...approval, stage: 'Phase 1 - initial assessment' }]);
+    expect(screen.queryByText('Phase 2')).not.toBeInTheDocument();
+  });
+
+  it('does not duplicate the Phase 2 chip on the referral event itself', () => {
+    renderCards([
+      {
+        ...approval,
+        determination: 'Referred to phase 2',
+        determination_type: 'phase_transition',
+        stage: 'Phase 2 - detailed assessment',
+      },
+    ]);
+    expect(screen.queryByText('Phase 2')).not.toBeInTheDocument();
+  });
 });
