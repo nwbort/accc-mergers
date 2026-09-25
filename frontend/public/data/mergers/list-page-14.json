@@ -1834,7 +1834,10 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "Visa Open Connect Limited"
+          "name": "Visa Open Connect Limited",
+          "canonical": {
+            "name": "Visa"
+          }
         }
       ],
       "targets": [
@@ -1844,7 +1847,10 @@
       ],
       "other_parties": [
         {
-          "name": "Visa Inc"
+          "name": "Visa Inc",
+          "canonical": {
+            "name": "Visa"
+          }
         }
       ],
       "anzsic_codes": [
