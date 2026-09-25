@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { FaExclamationTriangle } from 'react-icons/fa';
+import ErrorCard from './ErrorCard';
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -20,28 +21,17 @@ class ErrorBoundary extends Component {
 
   render() {
     if (this.state.hasError) {
+      // AppContent (navbar and all) is gone, so this stands alone on the
+      // page background rather than inside <main>.
       return (
-        <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
-          <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8">
-            <div className="flex items-center justify-center w-12 h-12 mx-auto bg-red-100 rounded-full">
-              <FaExclamationTriangle
-                className="w-6 h-6 text-red-600"
-                role="img"
-                aria-label="Error icon"
-              />
-            </div>
-            <h1 className="mt-4 text-xl font-semibold text-gray-900 text-center">
-              Something went wrong
-            </h1>
-            <p className="mt-2 text-sm text-gray-600 text-center">
-              An unexpected error occurred. Please try refreshing the page.
-            </p>
-            <button
-              onClick={() => window.location.reload()}
-              className="mt-6 w-full bg-primary hover:bg-primary-dark text-white font-medium py-2 px-4 rounded-md transition-colors"
-            >
-              Refresh page
-            </button>
+        <div className="min-h-screen gradient-mesh flex items-center">
+          <div className="w-full">
+            <ErrorCard
+              icon={FaExclamationTriangle}
+              title="Something went wrong"
+              message="An unexpected error occurred. Please try refreshing the page."
+              primaryAction={{ label: 'Refresh page', onClick: () => window.location.reload() }}
+            />
           </div>
         </div>
       );

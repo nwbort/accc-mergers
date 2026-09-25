@@ -2,7 +2,7 @@ import { FaChevronDown } from 'react-icons/fa6';
 
 // A thin horizontal rule with the toggle label set in the middle of the line,
 // in place of a standalone button. The label's background matches the page
-// (slate-50, #f8fafc) so the rule appears to pass behind the text.
+// (surface-50, #f8fafc) so the rule appears to pass behind the text.
 function ShowMoreDivider({ expanded, onToggle, className = '' }) {
   return (
     <div className={`relative my-5 ${className}`}>
@@ -14,7 +14,7 @@ function ShowMoreDivider({ expanded, onToggle, className = '' }) {
           type="button"
           onClick={onToggle}
           aria-expanded={expanded}
-          className="inline-flex items-center gap-1.5 bg-slate-50 px-3 text-sm font-medium text-gray-500 transition-colors hover:text-primary"
+          className="inline-flex items-center gap-1.5 bg-surface-50 px-3 text-sm font-medium text-gray-500 transition-colors hover:text-primary"
         >
           {expanded ? 'Show less' : 'Show more'}
           <FaChevronDown

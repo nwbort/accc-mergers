@@ -56,12 +56,12 @@ export default function NickTwort() {
         structuredData={structuredData}
       />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 animate-fade-in">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
 
         {/* Header */}
-        <div className="mb-10">
-          <div className="flex items-center gap-3 mb-2">
-            <h1 className="text-3xl font-bold text-gray-900">Nick Twort</h1>
+        <header className="mb-8">
+          <div className="flex items-center gap-3 mb-1">
+            <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">Nick Twort</h1>
             <a
               href="https://www.linkedin.com/in/nick-twort"
               target="_blank"
@@ -89,7 +89,7 @@ export default function NickTwort() {
             </a>
           </div>
           <p className="text-lg text-emerald-700 font-medium">Competition Economist – Australia &amp; New Zealand</p>
-        </div>
+        </header>
 
         {/* Overview */}
         <section className={`${CARD} p-8 mb-8`}>
@@ -115,7 +115,7 @@ export default function NickTwort() {
 
         {/* Merger Clearance Expertise */}
         <section className={`${CARD} p-8 mb-8`}>
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">Merger Clearance &amp; the Australian Merger Regime</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">Merger clearance &amp; the Australian merger regime</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             Merger clearance is a central pillar of Nick's practice and he has been a vocal commentator on the transition
             to the new merger regime. He has provided training for several leading Australian law firms on the renewed
@@ -139,9 +139,9 @@ export default function NickTwort() {
           </p>
         </section>
 
-        {/* Antitrust Practice Areas */}
+        {/* Antitrust practice areas */}
         <section className={`${CARD} p-8 mb-8`}>
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">Antitrust Practice Areas</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">Antitrust practice areas</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             Beyond mergers, Nick advises across the full range of competition law matters:
           </p>
@@ -172,9 +172,9 @@ export default function NickTwort() {
           </div>
         </section>
 
-        {/* Industry Experience */}
+        {/* Industry experience */}
         <section className={`${CARD} p-8 mb-8`}>
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">Industry Experience</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">Industry experience</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             Nick has worked across a broad range of Australian industries and markets, bringing sector-specific
             economic knowledge to each engagement:
@@ -231,7 +231,7 @@ export default function NickTwort() {
 
         {/* Analytical Approach */}
         <section className={`${CARD} p-8 mb-8`}>
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">Empirical &amp; Analytical Methods</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">Empirical &amp; analytical methods</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             A distinguishing feature of Nick's practice is his use of data and advanced quantitative methods to
             generate novel economic insights. Competition economics increasingly relies on empirical evidence –
@@ -251,9 +251,9 @@ export default function NickTwort() {
           </p>
         </section>
 
-        {/* About This Site */}
+        {/* About this site */}
         <section className="bg-emerald-50 rounded-2xl border border-emerald-200 p-8">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">About This Site</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">About this site</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             Nick is the creator of <a href="https://mergers.fyi" className="text-emerald-700 font-medium hover:underline">mergers.fyi</a>,
             the Australian Merger Tracker – a public tool that tracks merger reviews by the ACCC in real time.

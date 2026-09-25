@@ -71,11 +71,11 @@ export default function Feedback() {
         url="/feedback"
       />
 
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12 animate-fade-in">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Share feedback</h1>
-          <p className="text-gray-500">Got a suggestion or spotted an issue? Let me know.</p>
-        </div>
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
+        <header className="mb-6">
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">Share feedback</h1>
+          <p className="mt-1 text-sm text-gray-500">Got a suggestion or spotted an issue? Let me know.</p>
+        </header>
 
         <div className={`${CARD} p-8`}>
           {status === 'success' ? (

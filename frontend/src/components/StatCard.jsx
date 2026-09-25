@@ -4,16 +4,22 @@ import { CARD } from '../utils/classNames';
 function StatCard({ title, value, subtitle, icon, href, reserveTitleLines = true }) {
   const Wrapper = href ? Link : 'div';
   const wrapperProps = href ? { to: href } : {};
+  // Only a card that goes somewhere lifts on hover: on a plain one the lift
+  // promises a click that does nothing.
 
   return (
     <Wrapper
       {...wrapperProps}
-      className={`block ${CARD} hover:shadow-card-hover transition-all duration-200 overflow-hidden group`}
+      className={`block ${CARD} overflow-hidden group ${
+        href ? 'hover:shadow-card-hover transition-all duration-200' : ''
+      }`}
     >
       <div className="p-6">
         <div className="flex items-start gap-4">
           {icon && (
-            <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center text-xl text-primary group-hover:scale-105 transition-transform duration-200">
+            <div className={`flex-shrink-0 w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center text-xl text-primary${
+              href ? ' group-hover:scale-105 transition-transform duration-200' : ''
+            }`}>
               {icon}
             </div>
           )}
@@ -23,11 +29,13 @@ function StatCard({ title, value, subtitle, icon, href, reserveTitleLines = true
                 card's label wraps. Without it, a one-line label lifts its
                 number 20px above its neighbours'. A row whose labels all fit on
                 one line doesn't need the reserve and reads as a gap under the
-                label, so it can be turned off (reserveTitleLines={false}). */}
+                label, so it can be turned off (reserveTitleLines={false}). It
+                only applies from `sm` up: every grid using StatCard is a
+                single column below that, with no neighbour to line up with. */}
             <dl>
               <dt
                 className={`text-sm font-medium text-gray-500 leading-5 mb-1 ${
-                  reserveTitleLines ? 'min-h-10' : ''
+                  reserveTitleLines ? 'sm:min-h-10' : ''
                 }`}
               >
                 {title}

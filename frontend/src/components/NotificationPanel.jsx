@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { mergerPath, industryPath } from '../utils/slug';
 import { FaBell, FaCheckCircle } from 'react-icons/fa';
 import { useTracking } from '../context/TrackingContext';
+import { Spinner } from './LoadingSpinner';
 import { formatDate, getCalendarDaysUntil, isDatePast } from '../utils/dates';
 
 // Event types synthesised from a followed matter's upcoming deadlines (see
@@ -437,7 +438,7 @@ function NotificationPanel({ isOpen, onClose }) {
           />
         ) : loading ? (
           <div className="px-5 py-10 text-center">
-            <div className="animate-spin h-8 w-8 border-2 border-primary border-t-transparent rounded-full mx-auto mb-3"></div>
+            <Spinner className="mx-auto mb-3" />
             <p className="text-sm text-gray-500">Loading events...</p>
           </div>
         ) : noRecentActivity ? (

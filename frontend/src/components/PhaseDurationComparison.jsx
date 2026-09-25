@@ -1,5 +1,5 @@
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
-import { CARD, SECTION_HEADING } from '../utils/classNames';
+import { CARD, SECTION_HEADING, CARD_TITLE } from '../utils/classNames';
 
 // A single horizontal bar with its value to the right and a caption (plus an
 // optional delta chip) underneath.
@@ -46,7 +46,7 @@ function DeltaChip({ current, comparison }) {
       ) : (
         <FaArrowDown className="w-2.5 h-2.5" aria-hidden="true" />
       )}
-      {Math.abs(delta)} days {longer ? 'longer' : 'shorter'}
+      {Math.abs(delta)} {Math.abs(delta) === 1 ? 'day' : 'days'} {longer ? 'longer' : 'shorter'}
       {pct != null && pct !== 0 && <span className="text-gray-500">({Math.abs(pct)}%)</span>}
     </span>
   );
@@ -143,7 +143,7 @@ function PhaseDurationComparison({
   return (
     <div className={`${CARD} p-6`}>
       <div className="flex items-baseline justify-between gap-3 mb-5">
-        <h2 className={SECTION_HEADING}>
+        <h2 className={CARD_TITLE}>
           {title}
         </h2>
         <span className="text-[11px] text-gray-500">business days</span>

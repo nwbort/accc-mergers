@@ -250,11 +250,6 @@ export const STATIC_PAGE_META = {
     description:
       'Mergers originally filed with the ACCC as a waiver application, declined, and then re-filed as a formal notification.',
   },
-  '/extensions': {
-    title: 'Phase 1 extensions',
-    description:
-      'How often, how long and why the ACCC extends its 30-business-day Phase 1 merger clock — and how strongly an extension foreshadows a Phase 2 escalation.',
-  },
   '/current-status': {
     title: 'Current status',
     description:
