@@ -68,6 +68,18 @@ export function isConditionalApproval(item) {
   return Boolean(item?.has_conditions) && item?.determination === MERGER_STATUS.APPROVED;
 }
 
+// True when a card entry's determination was decided in Phase 2 rather than
+// Phase 1 or a waiver application. Excludes the Phase 2 referral event
+// itself (determination_type "phase_transition"), whose label already reads
+// "Referred to phase 2" — a Phase 2 chip beside it would be redundant.
+export function isPhase2Determination(item) {
+  return (
+    Boolean(item?.stage) &&
+    item.stage.includes(PHASES.PHASE_2) &&
+    item?.determination_type !== 'phase_transition'
+  );
+}
+
 // Fixed order for the Phase 2 outcome breakdowns, running cleared -> blocked,
 // so a chart or bar doesn't reshuffle as determinations land. "Assessment
 // ceased" sits last because it isn't a determination at all - it's a Phase 2
