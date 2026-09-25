@@ -166,6 +166,47 @@
       },
       "waiver_duration": null
     },
+    "geosyntec-consultants-pty-ltd": {
+      "id": "geosyntec-consultants-pty-ltd",
+      "canonical_name": "Geosyntec Consultants Pty Ltd",
+      "members": [
+        {
+          "name": "GEOSYNTEC CONSULTANTS PTY LTD",
+          "identifier": "23 154 745 525",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "WA-10035",
+            "merger_name": "Geosyntec Consultants \u2013 WRM Water & Environment",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-04T12:00:00Z",
+            "determination_date": "2026-09-25T12:00:00Z"
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 21.0,
+        "median_days": 21,
+        "average_business_days": 15.0,
+        "median_business_days": 15,
+        "completed_count": 1
+      }
+    },
     "h-e-parts-international-mining-solutions-cooling-division-pty-ltd": {
       "id": "h-e-parts-international-mining-solutions-cooling-division-pty-ltd",
       "canonical_name": "H-E Parts International Mining Solutions Cooling Division Pty Ltd",
