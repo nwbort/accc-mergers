@@ -8,19 +8,22 @@ and the length budget, which a PDS enforces by rejecting the post.
 import pytest
 
 from scripts.atproto import config, post_bluesky
+from scripts.atproto.client import XrpcError
 from scripts.atproto.post_bluesky import (
     MAX_POST_CHARS,
     POST_HASHTAGS,
     hashtag_line,
-    link_facets,
     load_state,
     main,
     milestones,
+    already_posted,
     pending,
+    plain_text,
     post_record,
     post_text,
     save_state,
     tag_facets,
+    upload_card_image,
 )
 
 
@@ -39,9 +42,29 @@ def matter(merger_id="MN-01016", **overrides):
     return record
 
 
+BLOB = {"$type": "blob", "ref": {"$link": "bafk"}, "mimeType": "image/png", "size": 3}
+
+
 class FakeClient:
-    def __init__(self):
+    def __init__(self, upload_fails=False):
         self.posts = []
+        self.uploads = []
+        self.upload_fails = upload_fails
+        self.listed = []
+        self.list_fails = False
+
+    def list_records(self, collection, limit=100):
+        if self.list_fails:
+            raise XrpcError("listRecords failed (500 error): boom", status=500)
+        # Newest first, as the PDS returns them.
+        return list(reversed(self.listed + [{"uri": f"at://p/{i}", "value": p}
+                                            for i, p in enumerate(self.posts)]))[:limit]
+
+    def upload_blob(self, data, mime_type):
+        if self.upload_fails:
+            raise XrpcError("uploadBlob failed (500 error): boom", status=500)
+        self.uploads.append((data, mime_type))
+        return BLOB
 
     def create_record(self, collection, record, validate=None):
         self.posts.append(record)
@@ -198,27 +221,34 @@ def test_routine_timeline_traffic_is_not_a_milestone():
 # -- the post itself --------------------------------------------------------
 
 
-def test_a_post_fits_the_limit_and_keeps_the_link_and_the_matter_id():
+def test_a_post_fits_the_limit_and_keeps_the_matter_id():
     milestone = milestones(matter(merger_name="A " * 400))[0]
     text = post_text(milestone)
 
     assert len(text) <= MAX_POST_CHARS
-    assert "https://mergers.fyi/mergers/MN-01016" in text
     assert text.endswith(hashtag_line())
     assert "MN-01016 ·" in text
     assert "…" in text, "the title is what gives, and it should say so"
 
 
-def test_the_link_facet_is_measured_in_utf8_bytes():
+def test_the_link_is_the_card_not_the_text():
+    """The card is what gets tapped; a URL in the text only repeated it."""
+    milestone = milestones(matter())[0]
+    record = post_record(milestone, created_at="2026-09-22T00:00:00Z")
+
+    assert "mergers.fyi/" not in record["text"]
+    assert record["embed"]["external"]["uri"] == "https://mergers.fyi/mergers/MN-01016"
+
+
+def test_the_tag_facet_is_measured_in_utf8_bytes():
     """A dash in a party name shifts every byte offset after it."""
-    milestone = milestones(matter(merger_name="Asahi – Warehouse"))[0]
-    text = post_text(milestone)
-    facet = link_facets(text, milestone.url)[0]
+    text = post_text(milestones(matter(merger_name="Asahi – Warehouse"))[0])
+    facet = tag_facets(text)[0]
 
     encoded = text.encode("utf-8")
     start, end = facet["index"]["byteStart"], facet["index"]["byteEnd"]
-    assert encoded[start:end].decode("utf-8") == milestone.url
-    assert start != text.find(milestone.url), "byte and character offsets differ here"
+    assert encoded[start:end].decode("utf-8") == "#accc"
+    assert start != text.find("#accc"), "byte and character offsets differ here"
 
 
 def test_every_post_carries_the_accc_hashtag():
@@ -251,13 +281,11 @@ def test_a_hash_in_the_title_is_not_mistaken_for_the_hashtag():
     assert facet["index"]["byteStart"] == text.encode("utf-8").rfind(b"#accc")
 
 
-def test_a_post_record_carries_the_link_and_the_tags_in_byte_order():
+def test_a_post_record_carries_the_tags_in_byte_order():
     record = post_record(milestones(matter())[0], created_at="2026-09-22T00:00:00Z")
     kinds = [facet["features"][0]["$type"] for facet in record["facets"]]
 
-    assert kinds == ["app.bsky.richtext.facet#link"] + [
-        "app.bsky.richtext.facet#tag"
-    ] * len(POST_HASHTAGS)
+    assert kinds == ["app.bsky.richtext.facet#tag"] * len(POST_HASHTAGS)
     starts = [facet["index"]["byteStart"] for facet in record["facets"]]
     assert starts == sorted(starts)
 
@@ -282,8 +310,57 @@ def test_the_post_record_is_a_bluesky_post_with_a_link_card():
 
     assert record["$type"] == "app.bsky.feed.post"
     assert record["langs"] == ["en-AU"]
-    assert record["facets"][0]["features"][0]["$type"] == "app.bsky.richtext.facet#link"
+    assert record["embed"]["$type"] == "app.bsky.embed.external"
     assert record["embed"]["external"]["uri"] == "https://mergers.fyi/mergers/MN-01016"
+
+
+def test_the_card_carries_a_thumbnail_only_when_one_was_uploaded():
+    milestone = milestones(matter())[0]
+    bare = post_record(milestone, created_at="2026-09-22T00:00:00Z")
+    pictured = post_record(milestone, created_at="2026-09-22T00:00:00Z", thumb=BLOB)
+
+    assert "thumb" not in bare["embed"]["external"]
+    assert pictured["embed"]["external"]["thumb"] == BLOB
+
+
+def test_the_card_image_is_the_sites_own_og_image():
+    assert config.CARD_IMAGE_PATH.name == "og-image.png"
+    assert config.CARD_IMAGE_PATH.read_bytes()[:8] == b"\x89PNG\r\n\x1a\n"
+    # Bluesky rejects a thumbnail over 1,000,000 bytes.
+    assert config.CARD_IMAGE_PATH.stat().st_size < 1_000_000
+
+
+def test_a_missing_or_rejected_card_image_falls_back_to_a_text_card(tmp_path):
+    assert upload_card_image(FakeClient(), tmp_path / "missing.png") is None
+    image = tmp_path / "card.png"
+    image.write_bytes(b"png")
+    assert upload_card_image(FakeClient(upload_fails=True), image) is None
+    client = FakeClient()
+    assert upload_card_image(client, image) == BLOB
+    assert client.uploads == [(b"png", "image/png")]
+
+
+def test_the_card_description_has_no_markdown_left_in_it():
+    record = post_record(
+        milestones(
+            matter(
+                merger_description=(
+                    "Coles Group Limited (**Coles**) operates:\n\n"
+                    "* supermarkets; and\n* [liquor stores](https://example.com)."
+                )
+            )
+        )[0],
+        created_at="2026-09-22T00:00:00Z",
+    )
+    assert record["embed"]["external"]["description"] == (
+        "Coles Group Limited (Coles) operates: supermarkets; and liquor stores."
+    )
+
+
+def test_plain_text_leaves_ordinary_asterisks_and_numbers_alone():
+    assert plain_text("1. *one* and 2*3") == "one and 2*3"
+    assert plain_text("updated on 3 September**2026") == "updated on 3 September 2026"
+    assert plain_text("Pty Ltd (__Acme__)") == "Pty Ltd (Acme)"
 
 
 def test_a_long_summary_is_trimmed_to_fit_the_card():
@@ -341,6 +418,7 @@ def test_what_happens_after_seeding_is_what_gets_posted(monkeypatch, state_file,
     assert main([]) == 0
     assert len(fake_client.posts) == 1
     assert "MN-2" in fake_client.posts[0]["text"]
+    assert fake_client.posts[0]["embed"]["external"]["thumb"] == BLOB
 
 
 def test_a_posted_milestone_is_never_posted_again(monkeypatch, state_file, fake_client):
@@ -471,3 +549,67 @@ def test_a_referral_and_the_phase_2_decision_after_it_are_both_posted(
         "Cleared by the ACCC on public benefit grounds",
     ]
     assert "22 Sep 2026" in fake_client.posts[1]["text"]
+
+
+# -- a run whose commit was lost -------------------------------------------
+
+
+def posted(milestone, uri="at://p/old"):
+    return {"uri": uri, "value": post_record(milestone, created_at="2026-09-22T00:00:00Z")}
+
+
+def test_a_recent_post_is_recognised_by_its_card_and_headline():
+    notified = milestones(matter())[0]
+    recent = [posted(notified)]
+
+    assert already_posted(notified, recent) == "at://p/old"
+    other = milestones(matter("MN-2"))[0]
+    assert already_posted(other, recent) is None
+
+
+def test_a_headline_that_prefixes_another_is_not_a_match():
+    cleared = milestones(matter(accc_determination="Approved", phase_1_determination="Approved",
+                                phase_1_determination_date="2026-09-01T12:00:00Z"))[-1]
+    assert cleared.headline == "Cleared by the ACCC"
+    lookalike = {
+        "uri": "at://p/pb",
+        "value": {
+            "text": "Cleared by the ACCC on public benefit grounds: Asahi",
+            "embed": {"external": {"uri": cleared.url}},
+        },
+    }
+    assert already_posted(cleared, [lookalike]) is None
+
+
+def test_a_milestone_posted_by_a_run_that_lost_its_commit_is_not_posted_again(
+    monkeypatch, state_file, fake_client
+):
+    use_matters(monkeypatch, [matter("MN-1")])
+    monkeypatch.setenv("ATPROTO_POST_ENABLED", "true")
+    main([])
+
+    use_matters(monkeypatch, [matter("MN-1"), matter("MN-2")])
+    main([])
+    assert len(fake_client.posts) == 1
+
+    # That run's commit never reached main: its state is gone, its post is not.
+    lost_state = load_state()
+    del lost_state["posted"]["MN-2:notified:2026-08-15"]
+    save_state(lost_state)
+
+    assert main([]) == 0
+    assert len(fake_client.posts) == 1
+    assert load_state()["posted"]["MN-2:notified:2026-08-15"]["recovered"] is True
+
+
+def test_nothing_is_posted_when_recent_posts_cannot_be_read(
+    monkeypatch, state_file, fake_client
+):
+    use_matters(monkeypatch, [matter("MN-1")])
+    monkeypatch.setenv("ATPROTO_POST_ENABLED", "true")
+    main([])
+    use_matters(monkeypatch, [matter("MN-1"), matter("MN-2")])
+    fake_client.list_fails = True
+
+    assert main([]) == 1
+    assert fake_client.posts == []

@@ -238,24 +238,33 @@ date, the link, and `#accc`:
 Notification waiver granted: OceanaGold - Ausgold
 
 WA-95041 · Waiver application · 17 Sep 2026
-https://mergers.fyi/mergers/WA-95041
 
 #accc
 ```
 
 The tags come from `POST_HASHTAGS` and are published as
-`app.bsky.richtext.facet#tag` facets alongside the link facet, not just as
+`app.bsky.richtext.facet#tag` facets, not just as
 text — Bluesky indexes tags from the facet, so an unfaceted `#accc` would be
 invisible to the search it was added for. Adding a tag to that tuple is all
 there is to it, but each one costs characters the matter name would otherwise
 have.
+
+The link to the matter page is not in the text: it is the post's link card
+(`app.bsky.embed.external`), which is what people tap anyway, and a URL in the
+text only repeated it, truncated, in characters the matter name could have had.
+The card has the matter's name as the title, its description (with the
+register's Markdown flattened to plain text) as the blurb, and the site's own
+`frontend/public/og-image.png` as the thumbnail. Bluesky never unfurls a link
+by itself — the card has to be in the record — and the image has to be
+uploaded as a blob first. That happens once per run, and every post in the run
+reuses it. If the upload fails the posts still go out, with a text-only card.
 
 ```bash
 python -m scripts.atproto.post_bluesky --dry-run       # see what is due
 python -m scripts.atproto.post_bluesky [--max-posts N]
 ```
 
-Two safeguards, because this is the only part of the pipeline that speaks to
+Three safeguards, because this is the only part of the pipeline that speaks to
 people rather than to files:
 
 - Posting needs `ATPROTO_POST_ENABLED` **on top of** the credentials, so adding
@@ -264,6 +273,13 @@ people rather than to files:
   the register as already seen and posts nothing. Switching posting on
   therefore cannot dump the back catalogue into a feed — whatever happens next
   is what gets posted.
+- Before posting, the account's own last 100 posts are **read back**, and a
+  milestone already among them (same card link, same headline) is recorded as
+  posted rather than posted again. The state file only reaches `main` if the
+  pipeline's commit does, and a run that loses its commit to a rebase conflict
+  has already posted — the fresh run it triggers posted WA-10035's waiver a
+  second time before this check existed. If the posts can't be read back, the
+  run posts nothing and the next one tries again.
 
 `--max-posts` (default 10) caps a single run, so a re-scrape that rediscovers a
 batch of matters cannot flood a feed; the overflow goes out next run, oldest

@@ -1,13 +1,13 @@
 """A small XRPC client for writing records to an AT Protocol repo.
 
 Deliberately hand-rolled on ``requests`` rather than pulling in an ATProto
-SDK. The publishers here need five endpoints - open a session, put, create,
-delete and read a record - and ``scripts/requirements.txt`` is installed on
+SDK. The publishers here need seven endpoints - open a session, put, create,
+delete, read and list records, and upload a blob for a link card's thumbnail - and ``scripts/requirements.txt`` is installed on
 every pipeline run, so a dependency that exists to save fifty lines is a poor
 trade against the install time it costs several times a day.
 
 What this does not do: refresh tokens (a session outlives any run here),
-blobs, or any read side beyond fetching a record back. Reach for an SDK if
+or any read side beyond fetching records back from its own repo. Reach for an SDK if
 those are ever needed.
 """
 
@@ -162,6 +162,30 @@ class AtprotoClient:
                 return None
             raise
 
+    def list_records(self, collection: str, *, limit: int = 100) -> list[dict]:
+        """The newest ``limit`` records in a collection (one page, max 100)."""
+        payload = self._get(
+            "com.atproto.repo.listRecords",
+            {"repo": self.did, "collection": collection, "limit": limit},
+        )
+        return payload.get("records") or []
+
+    # -- blobs -----------------------------------------------------------
+
+    def upload_blob(self, data: bytes, mime_type: str) -> dict:
+        """Upload raw bytes and return the blob reference to embed in a record.
+
+        The PDS holds an upload only until a record references it, so the
+        returned blob has to be written into one within the same session.
+        """
+        payload = self._call(
+            "POST",
+            "com.atproto.repo.uploadBlob",
+            data=data,
+            content_type=mime_type,
+        )
+        return payload["blob"]
+
     # -- transport -------------------------------------------------------
 
     def _write(self, nsid: str, body: dict) -> dict:
@@ -190,6 +214,8 @@ class AtprotoClient:
         *,
         json: dict | None = None,
         params: dict | None = None,
+        data: bytes | None = None,
+        content_type: str | None = None,
         service: str | None = None,
         authed: bool = True,
     ) -> dict:
@@ -197,6 +223,8 @@ class AtprotoClient:
         url = f"{base.rstrip('/')}/xrpc/{nsid}"
 
         headers = {}
+        if content_type:
+            headers["Content-Type"] = content_type
         if authed:
             if self.session is None:
                 raise XrpcError(f"{nsid} needs a session; call login() first")
@@ -206,7 +234,7 @@ class AtprotoClient:
         for attempt in range(MAX_ATTEMPTS):
             try:
                 response = self.http.request(
-                    method, url, json=json, params=params,
+                    method, url, json=json, params=params, data=data,
                     headers=headers, timeout=TIMEOUT,
                 )
             except requests.RequestException as exc:
