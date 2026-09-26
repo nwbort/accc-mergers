@@ -288,8 +288,12 @@ def facets(text: str, url: str) -> list[dict]:
     return link_facets(text, url) + tag_facets(text)
 
 
-def post_record(milestone: Milestone, *, created_at: str) -> dict:
-    """The ``app.bsky.feed.post`` record for one milestone."""
+def post_record(milestone: Milestone, *, created_at: str, thumb: dict | None = None) -> dict:
+    """The ``app.bsky.feed.post`` record for one milestone.
+
+    ``thumb`` is an uploaded blob for the link card's image. Without one the
+    card still renders, as text only.
+    """
     text = post_text(milestone)
     record: dict = {
         "$type": config.POST_COLLECTION,
@@ -301,22 +305,42 @@ def post_record(milestone: Milestone, *, created_at: str) -> dict:
     if found:
         record["facets"] = found
 
-    # An external embed gives the post a card without needing a blob upload,
-    # which would mean fetching and re-encoding an image on every post.
+    # Bluesky does not unfurl a link on its own: a post only gets a card if
+    # the record carries one, which is what the app's composer does for you.
     embed_description = milestone.summary.replace("\n", " ").strip()
-    record["embed"] = {
-        "$type": "app.bsky.embed.external",
-        "external": {
-            "uri": milestone.url,
-            "title": milestone.title[:300],
-            "description": (
-                embed_description[:299] + "…"
-                if len(embed_description) > 300
-                else embed_description
-            ),
-        },
+    external = {
+        "uri": milestone.url,
+        "title": milestone.title[:300],
+        "description": (
+            embed_description[:299] + "…"
+            if len(embed_description) > 300
+            else embed_description
+        ),
     }
+    if thumb:
+        external["thumb"] = thumb
+    record["embed"] = {"$type": "app.bsky.embed.external", "external": external}
     return record
+
+
+def upload_card_image(client, path: Path | None = None) -> dict | None:
+    """Upload the link card thumbnail once for the run, or ``None`` if it can't be.
+
+    One upload serves every post in the run: a blob can be referenced by any
+    number of records. A failure here costs the cards their picture, not the
+    run its posts.
+    """
+    path = Path(path) if path else config.CARD_IMAGE_PATH
+    try:
+        data = path.read_bytes()
+    except OSError as exc:
+        print(f"  no card image ({exc}); posting text-only cards", file=sys.stderr)
+        return None
+    try:
+        return client.upload_blob(data, "image/png")
+    except XrpcError as exc:
+        print(f"  card image upload failed ({exc}); posting text-only cards", file=sys.stderr)
+        return None
 
 
 def load_state(path: Path | None = None) -> dict:
@@ -403,6 +427,7 @@ def main(argv: list[str] | None = None) -> int:
     if opened is None:
         return 0
     client, _ = opened
+    thumb = upload_card_image(client)
 
     failures = 0
     try:
@@ -410,7 +435,8 @@ def main(argv: list[str] | None = None) -> int:
             created_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
             try:
                 result = client.create_record(
-                    config.POST_COLLECTION, post_record(milestone, created_at=created_at)
+                    config.POST_COLLECTION,
+                    post_record(milestone, created_at=created_at, thumb=thumb),
                 )
             except XrpcError as exc:
                 print(f"  FAILED  {milestone.key}: {exc}", file=sys.stderr)

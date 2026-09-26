@@ -61,6 +61,10 @@ MATTER_DATA_DIR = REPO_ROOT / "frontend" / "public" / "data" / "mergers"
 
 SITE_URL = "https://mergers.fyi"
 
+#: Thumbnail for a post's link card: the site's own Open Graph image, so a
+#: card on Bluesky looks like the one any other link preview of the site shows.
+CARD_IMAGE_PATH = REPO_ROOT / "frontend" / "public" / "og-image.png"
+
 DEFAULT_SERVICE = "https://bsky.social"
 
 

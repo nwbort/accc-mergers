@@ -250,6 +250,13 @@ invisible to the search it was added for. Adding a tag to that tuple is all
 there is to it, but each one costs characters the matter name would otherwise
 have.
 
+Each post also carries a link card (`app.bsky.embed.external`) for the matter
+page: its name as the title, its description as the blurb, and the site's own
+`frontend/public/og-image.png` as the thumbnail. Bluesky never unfurls a link
+by itself — the card has to be in the record — and the image has to be
+uploaded as a blob first. That happens once per run, and every post in the run
+reuses it. If the upload fails the posts still go out, with a text-only card.
+
 ```bash
 python -m scripts.atproto.post_bluesky --dry-run       # see what is due
 python -m scripts.atproto.post_bluesky [--max-posts N]

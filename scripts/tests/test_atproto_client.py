@@ -39,9 +39,16 @@ class FakeHttp:
         self.responses = list(responses)
         self.calls = []
 
-    def request(self, method, url, json=None, params=None, headers=None, timeout=None):
+    def request(self, method, url, json=None, params=None, data=None, headers=None, timeout=None):
         self.calls.append(
-            {"method": method, "url": url, "json": json, "params": params, "headers": headers or {}}
+            {
+                "method": method,
+                "url": url,
+                "json": json,
+                "params": params,
+                "data": data,
+                "headers": headers or {},
+            }
         )
         response = self.responses.pop(0)
         if isinstance(response, Exception):
@@ -107,6 +114,19 @@ def test_put_record_sends_the_repo_collection_and_key():
     assert "validate" not in body, "unset means the PDS's own best-effort default"
     assert result["cid"] == "cid1"
     assert http.calls[1]["headers"]["Authorization"] == "Bearer jwt"
+
+
+def test_upload_blob_sends_raw_bytes_with_their_content_type():
+    blob = {"$type": "blob", "ref": {"$link": "bafk"}, "mimeType": "image/png", "size": 3}
+    client, http = logged_in([FakeResponse(payload={"blob": blob})])
+
+    assert client.upload_blob(b"png", "image/png") == blob
+    call = http.calls[-1]
+    assert call["url"] == "https://bsky.social/xrpc/com.atproto.repo.uploadBlob"
+    assert call["data"] == b"png"
+    assert call["json"] is None
+    assert call["headers"]["Content-Type"] == "image/png"
+    assert call["headers"]["Authorization"] == "Bearer jwt"
 
 
 def test_validate_is_sent_only_when_asked_for():

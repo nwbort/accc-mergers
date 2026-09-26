@@ -8,6 +8,7 @@ and the length budget, which a PDS enforces by rejecting the post.
 import pytest
 
 from scripts.atproto import config, post_bluesky
+from scripts.atproto.client import XrpcError
 from scripts.atproto.post_bluesky import (
     MAX_POST_CHARS,
     POST_HASHTAGS,
@@ -21,6 +22,7 @@ from scripts.atproto.post_bluesky import (
     post_text,
     save_state,
     tag_facets,
+    upload_card_image,
 )
 
 
@@ -39,9 +41,20 @@ def matter(merger_id="MN-01016", **overrides):
     return record
 
 
+BLOB = {"$type": "blob", "ref": {"$link": "bafk"}, "mimeType": "image/png", "size": 3}
+
+
 class FakeClient:
-    def __init__(self):
+    def __init__(self, upload_fails=False):
         self.posts = []
+        self.uploads = []
+        self.upload_fails = upload_fails
+
+    def upload_blob(self, data, mime_type):
+        if self.upload_fails:
+            raise XrpcError("uploadBlob failed (500 error): boom", status=500)
+        self.uploads.append((data, mime_type))
+        return BLOB
 
     def create_record(self, collection, record, validate=None):
         self.posts.append(record)
@@ -286,6 +299,32 @@ def test_the_post_record_is_a_bluesky_post_with_a_link_card():
     assert record["embed"]["external"]["uri"] == "https://mergers.fyi/mergers/MN-01016"
 
 
+def test_the_card_carries_a_thumbnail_only_when_one_was_uploaded():
+    milestone = milestones(matter())[0]
+    bare = post_record(milestone, created_at="2026-09-22T00:00:00Z")
+    pictured = post_record(milestone, created_at="2026-09-22T00:00:00Z", thumb=BLOB)
+
+    assert "thumb" not in bare["embed"]["external"]
+    assert pictured["embed"]["external"]["thumb"] == BLOB
+
+
+def test_the_card_image_is_the_sites_own_og_image():
+    assert config.CARD_IMAGE_PATH.name == "og-image.png"
+    assert config.CARD_IMAGE_PATH.read_bytes()[:8] == b"\x89PNG\r\n\x1a\n"
+    # Bluesky rejects a thumbnail over 1,000,000 bytes.
+    assert config.CARD_IMAGE_PATH.stat().st_size < 1_000_000
+
+
+def test_a_missing_or_rejected_card_image_falls_back_to_a_text_card(tmp_path):
+    assert upload_card_image(FakeClient(), tmp_path / "missing.png") is None
+    image = tmp_path / "card.png"
+    image.write_bytes(b"png")
+    assert upload_card_image(FakeClient(upload_fails=True), image) is None
+    client = FakeClient()
+    assert upload_card_image(client, image) == BLOB
+    assert client.uploads == [(b"png", "image/png")]
+
+
 def test_a_long_summary_is_trimmed_to_fit_the_card():
     record = post_record(
         milestones(matter(merger_description="x" * 900))[0], created_at="2026-09-22T00:00:00Z"
@@ -341,6 +380,7 @@ def test_what_happens_after_seeding_is_what_gets_posted(monkeypatch, state_file,
     assert main([]) == 0
     assert len(fake_client.posts) == 1
     assert "MN-2" in fake_client.posts[0]["text"]
+    assert fake_client.posts[0]["embed"]["external"]["thumb"] == BLOB
 
 
 def test_a_posted_milestone_is_never_posted_again(monkeypatch, state_file, fake_client):
