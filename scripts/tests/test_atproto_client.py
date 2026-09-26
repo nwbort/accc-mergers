@@ -129,6 +129,21 @@ def test_upload_blob_sends_raw_bytes_with_their_content_type():
     assert call["headers"]["Authorization"] == "Bearer jwt"
 
 
+def test_list_records_reads_one_page_of_the_accounts_own_repo():
+    records = [{"uri": "at://did:plc:example/app.bsky.feed.post/1", "value": {"text": "hi"}}]
+    client, http = logged_in([FakeResponse(payload={"records": records, "cursor": "x"})])
+
+    assert client.list_records("app.bsky.feed.post", limit=50) == records
+    call = http.calls[-1]
+    assert call["method"] == "GET"
+    assert call["url"] == "https://bsky.social/xrpc/com.atproto.repo.listRecords"
+    assert call["params"] == {
+        "repo": "did:plc:example",
+        "collection": "app.bsky.feed.post",
+        "limit": 50,
+    }
+
+
 def test_validate_is_sent_only_when_asked_for():
     client, http = logged_in([FakeResponse(payload={})])
     client.put_record("fyi.mergers.matter", "MN-1", {}, validate=False)

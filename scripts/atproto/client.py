@@ -1,13 +1,13 @@
 """A small XRPC client for writing records to an AT Protocol repo.
 
 Deliberately hand-rolled on ``requests`` rather than pulling in an ATProto
-SDK. The publishers here need six endpoints - open a session, put, create,
-delete and read a record, and upload a blob for a link card's thumbnail - and ``scripts/requirements.txt`` is installed on
+SDK. The publishers here need seven endpoints - open a session, put, create,
+delete, read and list records, and upload a blob for a link card's thumbnail - and ``scripts/requirements.txt`` is installed on
 every pipeline run, so a dependency that exists to save fifty lines is a poor
 trade against the install time it costs several times a day.
 
 What this does not do: refresh tokens (a session outlives any run here),
-or any read side beyond fetching a record back. Reach for an SDK if
+or any read side beyond fetching records back from its own repo. Reach for an SDK if
 those are ever needed.
 """
 
@@ -161,6 +161,14 @@ class AtprotoClient:
             if exc.status == 400 and exc.error == "RecordNotFound":
                 return None
             raise
+
+    def list_records(self, collection: str, *, limit: int = 100) -> list[dict]:
+        """The newest ``limit`` records in a collection (one page, max 100)."""
+        payload = self._get(
+            "com.atproto.repo.listRecords",
+            {"repo": self.did, "collection": collection, "limit": limit},
+        )
+        return payload.get("records") or []
 
     # -- blobs -----------------------------------------------------------
 

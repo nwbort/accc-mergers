@@ -14,10 +14,14 @@ turn a useful account into a firehose. A waiver application's arrival is not
 posted either: the ACCC only publishes a waiver once it has been determined,
 so the notification date arrives already spent.
 
+The link to the matter page travels as the post's link card rather than in
+its text: the card is what people tap, and a URL in the text only repeated it,
+truncated, in characters the matter name could have had.
+
 Every post ends with ``POST_HASHTAGS``, faceted so Bluesky's tag search can
 see them - it indexes tags from the facet, not from the ``#``.
 
-Two safeguards, because this is the only part of the pipeline that speaks to
+Three safeguards, because this is the only part of the pipeline that speaks to
 people rather than to files:
 
 * Posting needs ``ATPROTO_POST_ENABLED`` on top of the credentials, so adding
@@ -25,6 +29,11 @@ people rather than to files:
 * The first enabled run *seeds* - it records every milestone on the register
   as already seen and posts nothing - so switching it on cannot dump 673
   matters into a feed. Whatever happens next is what gets posted.
+* Before posting, the account's own recent posts are read back, and a
+  milestone already among them is recorded rather than posted again. The state
+  file only reaches ``main`` if the pipeline's commit does, and a run that
+  loses its commit to a rebase conflict has already posted - the fresh run it
+  triggers would otherwise post the same thing a second time.
 
 Usage:
     python -m scripts.atproto.post_bluesky [--dry-run] [--max-posts N]
@@ -34,6 +43,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -56,6 +66,11 @@ DEFAULT_MAX_POSTS = 10
 #: Hashtags every post carries, in order. They cost characters the title
 #: would otherwise have, so keep the list short.
 POST_HASHTAGS = ("accc",)
+
+#: How far back the account's own posts are checked for a milestone that went
+#: out on a run whose state never reached ``main``. One page of the API; a lost
+#: run posts at most ``DEFAULT_MAX_POSTS``, so this covers several of them.
+RECENT_POSTS_CHECKED = 100
 
 #: Stands in for the date in a milestone's key when the register has none
 #: yet. Sorts after every real date, so an undated post drains last.
@@ -231,12 +246,12 @@ def milestones(matter: dict) -> list[Milestone]:
 def post_text(milestone: Milestone) -> str:
     """Lay out the post, trimming the title rather than anything structural.
 
-    The URL has to survive intact - it is the only part of the post that does
-    any work - and so does the matter id, so the title is the one thing that
-    gives if the 300-character budget is tight.
+    The matter id has to survive intact, so the title is the one thing that
+    gives if the 300-character budget is tight. The link is not in the text at
+    all - it is the post's card (see ``post_record``).
     """
     tags = hashtag_line()
-    tail = f"\n\n{milestone.detail}\n{milestone.url}" + (f"\n\n{tags}" if tags else "")
+    tail = f"\n\n{milestone.detail}" + (f"\n\n{tags}" if tags else "")
     budget = MAX_POST_CHARS - len(tail) - len(milestone.headline) - len(": ")
     title = milestone.title
     if budget < 1:
@@ -251,16 +266,6 @@ def hashtag_line(tags: tuple[str, ...] | None = None) -> str:
     """The trailing hashtag line, e.g. ``#accc #mergers``."""
     tags = POST_HASHTAGS if tags is None else tags
     return " ".join(f"#{tag}" for tag in tags)
-
-
-def link_facets(text: str, url: str) -> list[dict]:
-    """A single link facet over ``url``, in UTF-8 byte offsets as the spec wants."""
-    encoded = text.encode("utf-8")
-    start = encoded.find(url.encode("utf-8"))
-    if start < 0:
-        return []
-    feature = {"$type": "app.bsky.richtext.facet#link", "uri": url}
-    return [_facet(start, url, feature)]
 
 
 def tag_facets(text: str, tags: tuple[str, ...] | None = None) -> list[dict]:
@@ -283,11 +288,6 @@ def tag_facets(text: str, tags: tuple[str, ...] | None = None) -> list[dict]:
     return found
 
 
-def facets(text: str, url: str) -> list[dict]:
-    """Every facet a post carries, in byte order as the spec wants."""
-    return link_facets(text, url) + tag_facets(text)
-
-
 def post_record(milestone: Milestone, *, created_at: str, thumb: dict | None = None) -> dict:
     """The ``app.bsky.feed.post`` record for one milestone.
 
@@ -301,13 +301,13 @@ def post_record(milestone: Milestone, *, created_at: str, thumb: dict | None = N
         "createdAt": created_at,
         "langs": ["en-AU"],
     }
-    found = facets(text, milestone.url)
+    found = tag_facets(text)
     if found:
         record["facets"] = found
 
     # Bluesky does not unfurl a link on its own: a post only gets a card if
     # the record carries one, which is what the app's composer does for you.
-    embed_description = milestone.summary.replace("\n", " ").strip()
+    embed_description = plain_text(milestone.summary)
     external = {
         "uri": milestone.url,
         "title": milestone.title[:300],
@@ -321,6 +321,22 @@ def post_record(milestone: Milestone, *, created_at: str, thumb: dict | None = N
         external["thumb"] = thumb
     record["embed"] = {"$type": "app.bsky.embed.external", "external": external}
     return record
+
+
+def plain_text(markdown: str) -> str:
+    """The register's Markdown descriptions flattened to one line of prose.
+
+    A card shows its description verbatim, so ``(**Coles**)`` would arrive
+    with its asterisks. Only what the descriptions actually use is handled:
+    emphasis, bullet and numbered lists, and the odd link.
+    """
+    text = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", markdown)
+    text = re.sub(r"^\s*(?:[-*+]|\d+\.)\s+", "", text, flags=re.M)
+    text = re.sub(r"(\*\*|__)(.+?)\1", r"\2", text, flags=re.S)
+    text = re.sub(r"(?<![\w*])\*(?!\s)(.+?)(?<!\s)\*(?![\w*])", r"\1", text, flags=re.S)
+    # An unpaired ``**`` is a typo on the register ("3 September**2026").
+    text = text.replace("**", " ")
+    return " ".join(text.split())
 
 
 def upload_card_image(client, path: Path | None = None) -> dict | None:
@@ -341,6 +357,26 @@ def upload_card_image(client, path: Path | None = None) -> dict | None:
     except XrpcError as exc:
         print(f"  card image upload failed ({exc}); posting text-only cards", file=sys.stderr)
         return None
+
+
+def already_posted(milestone: Milestone, recent: list[dict]) -> str | None:
+    """The at:// URI of a recent post that already announced ``milestone``.
+
+    A post is matched on its card's link (the matter) and the headline its
+    text opens with (the kind of milestone). The headline is compared whole,
+    up to the ``: `` before the title, since one headline can be a prefix of
+    another ("Cleared by the ACCC" and "... on public benefit grounds").
+    """
+    for post in recent:
+        value = post.get("value") or {}
+        card = ((value.get("embed") or {}).get("external") or {}).get("uri")
+        first_line = (value.get("text") or "").split("\n", 1)[0]
+        if card == milestone.url and (
+            first_line == milestone.headline
+            or first_line.startswith(f"{milestone.headline}: ")
+        ):
+            return post.get("uri", "")
+    return None
 
 
 def load_state(path: Path | None = None) -> dict:
@@ -427,6 +463,29 @@ def main(argv: list[str] | None = None) -> int:
     if opened is None:
         return 0
     client, _ = opened
+    try:
+        recent = client.list_records(config.POST_COLLECTION, limit=RECENT_POSTS_CHECKED)
+    except XrpcError as exc:
+        # Without the check a lost run's posts would go out twice; waiting a
+        # run costs a few hours at most.
+        print(f"Could not read back recent posts ({exc}); posting nothing.", file=sys.stderr)
+        return 1
+
+    fresh = []
+    for milestone in due:
+        uri = already_posted(milestone, recent)
+        if uri is None:
+            fresh.append(milestone)
+            continue
+        state["posted"][milestone.key] = {"uri": uri, "recovered": True}
+        print(f"  already posted  {milestone.key}")
+    if len(fresh) < len(due):
+        save_state(state)
+    due = fresh
+    if not due:
+        print("Nothing to post.")
+        return 0
+
     thumb = upload_card_image(client)
 
     failures = 0
