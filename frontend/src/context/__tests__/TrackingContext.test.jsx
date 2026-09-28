@@ -451,3 +451,67 @@ describe('TrackingContext auto-tracking of Phase 2 matters', () => {
     expect(second.result.current.trackedMergerIds).toContain('MN-1');
   });
 });
+
+describe('TrackingContext tribunal appeal document comments', () => {
+  const appealEvent = (comment) => {
+    const base = 'Tribunal appeal – Directions';
+    const display = comment ? `${base} (${comment})` : base;
+    return {
+      date: '2026-09-21T12:00:00Z',
+      title: display.replace('Tribunal appeal – ', ''),
+      display_title: display,
+      appeal_base_title: base,
+      url: 'https://tribunal.example/260921-Directions.pdf',
+      is_appeal: true,
+    };
+  };
+  const merger = (comment) => ({
+    'MN-1': { merger_id: 'MN-1', merger_name: 'Appealed', events: [appealEvent(comment)] },
+  });
+
+  beforeEach(() => {
+    localStorage.clear();
+    vi.spyOn(console, 'error').mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    globalThis.fetch = originalFetch;
+    vi.restoreAllMocks();
+  });
+
+  const renderTracking = async () => {
+    localStorage.setItem('merger_tracker_tracked', JSON.stringify(['MN-1']));
+    const { result } = renderHook(() => useTracking(), { wrapper });
+    await waitFor(() => {
+      expect(result.current.trackedEvents.some((e) => e.is_appeal)).toBe(true);
+    });
+    return result;
+  };
+  const unseenAppeals = (result) => result.current.unseenEvents.filter((e) => e.is_appeal).length;
+
+  it('does not re-announce a seen document once a comment is added to it', async () => {
+    mockFetchFromMergers(merger(null));
+    const first = await renderTracking();
+    expect(unseenAppeals(first)).toBe(1);
+    act(() => first.current.markEventsAsSeen(first.current.trackedEvents));
+    await waitFor(() => expect(unseenAppeals(first)).toBe(0));
+
+    mockFetchFromMergers(merger('re timetabling'));
+    const second = await renderTracking();
+    expect(unseenAppeals(second)).toBe(0);
+  });
+
+  it.each([
+    ['without its comment', null],
+    ['with its comment', 're timetabling'],
+  ])('keeps a document seen under its old title-based key (%s) seen', async (_label, seenWith) => {
+    const legacyTitle = appealEvent(seenWith).display_title;
+    localStorage.setItem(
+      'merger_tracker_seen_events',
+      JSON.stringify([`MN-1_2026-09-21T12:00:00Z_${legacyTitle}`])
+    );
+    mockFetchFromMergers(merger('re timetabling'));
+    const result = await renderTracking();
+    await waitFor(() => expect(unseenAppeals(result)).toBe(0));
+  });
+});

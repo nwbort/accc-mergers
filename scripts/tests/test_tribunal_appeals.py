@@ -170,6 +170,9 @@ class TestLinkTribunalAppeals:
         assert ev['display_title'] == (
             'Tribunal appeal – Application for Review (re application under s100S)'
         )
+        # The uncommented title rides along so notification keys and feed ids
+        # don't change when a comment is added.
+        assert ev['appeal_base_title'] == 'Tribunal appeal – Application for Review'
 
     def test_blank_comment_leaves_title_alone(self):
         appeal = _appeal()

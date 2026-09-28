@@ -33,16 +33,37 @@ const FORWARD_REFILE_RELATIONSHIPS = new Set([
   'suspended_refiled_as',
 ]);
 
-// Generate a unique key for an event
-// Use a consistent order and normalize the title field for stability
-const getEventKey = (event) => {
-  // Normalize title: prefer display_title, then title, then event_type_display, finally type
-  const title = event.display_title || event.title || event.event_type_display || event.type || '';
+// Key an event by its merger, date and title.
+const titleKey = (event, title) => {
   // Industry-follow events are scoped to the industry they were surfaced from,
   // so the same merger filed under two followed industries stays distinct (and
   // distinct from the merger's own tracked timeline events).
   const prefix = event.industry_code ? `ind_${event.industry_code}_` : '';
   return `${prefix}${event.merger_id}_${event.date}_${title}`;
+};
+
+// Generate a unique key for an event
+// Use a consistent order and normalize the title field for stability
+const getEventKey = (event) => {
+  // A tribunal appeal document is keyed by its document link, not its title:
+  // the title carries a comment added by hand, often after followers have
+  // already been notified, and a title-based key would announce the same
+  // document again.
+  const docUrl = event.is_appeal && (event.url || event.url_gh);
+  if (docUrl) return `${event.merger_id}_${event.date}_appeal_${docUrl}`;
+  // Normalize title: prefer display_title, then title, then event_type_display, finally type
+  const title = event.display_title || event.title || event.event_type_display || event.type || '';
+  return titleKey(event, title);
+};
+
+// Keys an appeal document may already have been marked seen under, from
+// before appeal documents were keyed by link: its title with the comment (seen
+// after the comment was added) and without it (seen before).
+const getLegacyEventKeys = (event) => {
+  if (!event.is_appeal) return [];
+  return [event.display_title, event.appeal_base_title]
+    .filter(Boolean)
+    .map((title) => titleKey(event, title));
 };
 
 // Deduplicate events by their event key
@@ -268,12 +289,27 @@ export function TrackingProvider({ children }) {
               merger_id: merger.merger_id,
               merger_name: merger.merger_name,
               phase: event.phase,
-              is_waiver: merger.is_waiver
+              is_waiver: merger.is_waiver,
+              is_appeal: event.is_appeal,
+              appeal_base_title: event.appeal_base_title
             });
           });
         });
 
         setTimelineEvents(timelineEventsFromMergers);
+
+        // Carry "seen" over to the link-based key for appeal documents already
+        // seen under a title-based one, so the change of key doesn't re-announce them.
+        setSeenEventKeys((prev) => {
+          const migrated = timelineEventsFromMergers
+            .filter((e) => !prev.has(getEventKey(e)))
+            .filter((e) => getLegacyEventKeys(e).some((k) => prev.has(k)))
+            .map(getEventKey);
+          if (migrated.length === 0) return prev;
+          const next = new Set(prev);
+          migrated.forEach((k) => next.add(k));
+          return next;
+        });
         allFetchedEvents = [...allFetchedEvents, ...timelineEventsFromMergers];
 
         // Synthesize upcoming events directly from individual merger data for tracked mergers.
