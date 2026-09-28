@@ -113,6 +113,72 @@ class TestDecisionRows:
         assert 'WITH CONDITIONS' not in html
 
 
+class TestDecisionOrder:
+    """Tribunal, then public benefit, phase 2, phase 1, waiver; within each
+    group declines and referrals to phase 2, then ceased, then clearances."""
+
+    def _order(self, **buckets):
+        digest = _digest()
+        digest.update(buckets)
+        return [e["merger"]["merger_id"] for e in swe._decision_entries(digest)]
+
+    def test_groups_run_tribunal_to_waiver_with_adverse_outcomes_first(self):
+        order = self._order(
+            deals_cleared=[
+                _cleared('W-OK', 'Waiver ok', is_waiver=True, phase_1_determination=None),
+                _cleared('P1-OK', 'Phase 1 ok'),
+                _cleared('P2-OK', 'Phase 2 ok', phase_1_determination='Referred to phase 2',
+                         phase_2_determination='Approved'),
+                _cleared('PB-OK', 'PB ok', phase_1_determination='Referred to phase 2',
+                         phase_2_determination='Not approved',
+                         public_benefits_determination='Approved'),
+            ],
+            deals_declined=[
+                _cleared('W-NO', 'Waiver no', is_waiver=True, accc_determination='Declined',
+                         phase_1_determination=None),
+                _cleared('P2-NO', 'Phase 2 no', accc_determination='Not approved',
+                         phase_1_determination='Referred to phase 2',
+                         phase_2_determination='Not approved'),
+            ],
+            deals_referred_to_phase_2=[{
+                'merger_id': 'P1-REF', 'merger_name': 'Referred',
+                'phase_1_determination': 'Referred to phase 2',
+            }],
+            deals_decided_by_tribunal=[
+                {'merger_id': 'T-OK', 'merger_name': 'Tribunal ok',
+                 'appeal': {'outcome': 'set_aside', 'effective_determination': 'Approved'}},
+                {'merger_id': 'T-NO', 'merger_name': 'Tribunal no',
+                 'appeal': {'outcome': 'affirmed', 'effective_determination': 'Not approved'}},
+            ],
+        )
+        assert order == [
+            'T-NO', 'T-OK', 'PB-OK', 'P2-NO', 'P2-OK', 'P1-REF', 'P1-OK', 'W-NO', 'W-OK',
+        ]
+
+    def test_ceased_assessment_sits_between_declines_and_clearances(self):
+        order = self._order(
+            deals_cleared=[_cleared('P2-OK', 'Phase 2 ok', phase_2_determination='Approved')],
+            deals_declined=[_cleared('P2-NO', 'Phase 2 no', accc_determination='Not approved',
+                                     phase_2_determination='Not approved')],
+            deals_assessment_ceased=[{
+                'merger_id': 'P2-CEASED', 'merger_name': 'Ceased',
+                'stage': 'Phase 2 - detailed assessment',
+            }],
+        )
+        assert order == ['P2-NO', 'P2-CEASED', 'P2-OK']
+
+    def test_tribunal_row_states_the_outcome(self):
+        digest = _digest()
+        digest['deals_decided_by_tribunal'] = [{
+            'merger_id': 'T-1', 'merger_name': 'Tribunal one',
+            'appeal': {'outcome': 'affirmed', 'effective_determination': 'Not approved',
+                       'concluded_date': '2026-03-05'},
+        }]
+        html = _text(swe.build_decisions(digest))
+        assert 'DECLINED' in html
+        assert 'ACCC decision affirmed' in html
+
+
 class TestTextEmail:
     def test_summary_count_and_table_row_both_say_with_conditions(self):
         digest = _digest(cleared=[
