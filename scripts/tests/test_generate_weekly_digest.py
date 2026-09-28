@@ -506,6 +506,37 @@ class TestWeeklyDigestBuckets:
         assert summary['appeal']['tribunal_number'] == 'ACT 1 of 2025'
         assert summary['appeal']['filed_date'] == '2025-04-16'
 
+    def _concluded_appeal(self, merger_id, concluded_date):
+        merger = self._appealed_merger(merger_id, '2025-03-01', under_appeal=False)
+        merger['appeal'].update({
+            'status': 'concluded',
+            'outcome': 'affirmed',
+            'effective_determination': merger_status.NOT_APPROVED,
+            'concluded_date': concluded_date,
+        })
+        return merger
+
+    def test_appeal_concluded_in_window_is_a_tribunal_decision(self, monkeypatch):
+        merger = self._concluded_appeal('MN-40006', '2025-04-16')
+        digest = self._run([merger], monkeypatch)
+        assert [m['merger_id'] for m in digest['deals_decided_by_tribunal']] == ['MN-40006']
+
+    def test_appeal_concluded_outside_window_is_excluded(self, monkeypatch):
+        merger = self._concluded_appeal('MN-40007', '2025-03-28')
+        digest = self._run([merger], monkeypatch)
+        assert digest['deals_decided_by_tribunal'] == []
+
+    def test_tribunal_decision_in_previous_digest_is_not_repeated(self, monkeypatch):
+        merger = self._concluded_appeal('MN-40008', '2025-04-11')
+        previous_digest = {'deals_decided_by_tribunal': [{'merger_id': 'MN-40008'}]}
+        digest = self._run([merger], monkeypatch, previous_digest=previous_digest)
+        assert digest['deals_decided_by_tribunal'] == []
+
+    def test_current_appeal_is_not_a_tribunal_decision(self, monkeypatch):
+        merger = self._appealed_merger('MN-40009', '2025-04-16')
+        digest = self._run([merger], monkeypatch)
+        assert digest['deals_decided_by_tribunal'] == []
+
     def test_merger_without_appeal_is_absent_from_bucket(self, monkeypatch):
         merger = {
             'merger_id': 'MN-40005',

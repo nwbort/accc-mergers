@@ -29,7 +29,8 @@ from zoneinfo import ZoneInfo
 
 import requests
 
-from scripts.constants.tribunal import appeal_type_label
+from scripts.constants import merger_status
+from scripts.constants.tribunal import APPEAL_OUTCOME_LABELS, appeal_type_label
 from scripts.date_utils import parse_iso_datetime
 
 # ---------------------------------------------------------------------------
@@ -216,6 +217,7 @@ def build_text_email(digest: dict) -> str:
     referred = digest.get("deals_referred_to_phase_2") or []
     ceased = digest.get("deals_assessment_ceased") or []
     appealed = digest.get("deals_appealed_to_tribunal") or []
+    tribunal_decided = digest.get("deals_decided_by_tribunal") or []
     ongoing_appeals = digest.get("ongoing_tribunal_appeals") or []
 
     lines = [
@@ -236,6 +238,8 @@ def build_text_email(digest: dict) -> str:
     ]
     if appealed:
         lines.append(f"Appealed to tribunal : {len(appealed)}")
+    if tribunal_decided:
+        lines.append(f"Decided by tribunal  : {len(tribunal_decided)}")
     lines += [
         f"Ongoing phase 1      : {len(digest['ongoing_phase_1'])}",
         f"Ongoing phase 2      : {len(digest['ongoing_phase_2'])}",
@@ -311,6 +315,19 @@ def build_text_email(digest: dict) -> str:
             for m in appealed
         ]
         lines.append(_text_section("APPEALED TO TRIBUNAL", ["Merger", "Filed", "Type"], appealed_rows, ""))
+        lines.append("")
+        lines.append("")
+
+    if tribunal_decided:
+        tribunal_rows = [
+            [
+                m.get("merger_name", m["merger_id"]),
+                format_date((m.get("appeal") or {}).get("concluded_date")),
+                APPEAL_OUTCOME_LABELS.get((m.get("appeal") or {}).get("outcome"), "N/A"),
+            ]
+            for m in tribunal_decided
+        ]
+        lines.append(_text_section("DECIDED BY TRIBUNAL", ["Merger", "Concluded", "Outcome"], tribunal_rows, ""))
         lines.append("")
         lines.append("")
 
@@ -593,59 +610,123 @@ def build_new_deals(mergers: list) -> str:
     return section_table(rows)
 
 
-def _cleared_phase(merger: dict) -> str:
-    """Return 'phase2', 'phase1', or 'merger' for a cleared deal."""
-    if merger.get("phase_2_determination") == "Approved":
-        return "phase2"
-    if merger.get("phase_1_determination") == "Approved":
-        return "phase1"
-    return "merger"
+# Decision groups, in the order the Decisions section lists them: the
+# tribunal's decisions first, then the ACCC's from the latest stage back.
+TRIBUNAL, PUBLIC_BENEFIT, PHASE_2, PHASE_1, WAIVER = (
+    "tribunal", "public_benefit", "phase_2", "phase_1", "waiver",
+)
+_DECISION_GROUP_ORDER = [TRIBUNAL, PUBLIC_BENEFIT, PHASE_2, PHASE_1, WAIVER]
+_DECISION_GROUP_LABELS = {
+    TRIBUNAL: "Tribunal",
+    PUBLIC_BENEFIT: "Public benefit",
+    PHASE_2: "Phase 2",
+    PHASE_1: "Phase 1",
+    WAIVER: "Waiver",
+}
+_STAGE_GROUPS = {
+    merger_status.PUBLIC_BENEFITS: PUBLIC_BENEFIT,
+    merger_status.PHASE_2: PHASE_2,
+    merger_status.PHASE_1: PHASE_1,
+    merger_status.WAIVER: WAIVER,
+}
+
+# Within a group, adverse outcomes (a refusal, a referral to phase 2) lead,
+# then clearances, then anything else (a ceased assessment, a withdrawn appeal).
+_ADVERSE, _CLEARANCE, _OTHER = 0, 1, 2
+
+
+def _determination_group(merger: dict) -> str:
+    """The stage whose determination put a cleared or declined deal in the
+    digest. A Phase 2 outcome caught on its own date after the matter moved on
+    to the public benefit phase has no public benefit determination yet, so it
+    stays a Phase 2 decision."""
+    if merger.get("public_benefits_determination"):
+        return PUBLIC_BENEFIT
+    if merger.get("phase_2_determination"):
+        return PHASE_2
+    if merger.get("is_waiver"):
+        return WAIVER
+    return PHASE_1
+
+
+_CLEARED_GROUP_LABELS = {
+    PUBLIC_BENEFIT: "Public benefit phase",
+    PHASE_2: "Phase 2 – detailed assessment",
+    PHASE_1: "Phase 1 – initial assessment",
+    WAIVER: "Waiver",
+}
 
 
 def _cleared_groups(mergers: list) -> list[tuple[str, list]]:
-    """Return non-empty (label, items) groups sorted phase2→phase1→merger."""
-    phase2 = [m for m in mergers if _cleared_phase(m) == "phase2"]
-    phase1 = [m for m in mergers if _cleared_phase(m) == "phase1"]
-    general = [m for m in mergers if _cleared_phase(m) == "merger"]
+    """Return non-empty (label, items) groups, latest stage first."""
     return [
         (label, items)
-        for label, items in [
-            ("Phase 2 – detailed assessment", phase2),
-            ("Phase 1 – initial assessment", phase1),
-            ("Waiver", general),
-        ]
-        if items
+        for group, label in _CLEARED_GROUP_LABELS.items()
+        if (items := [m for m in mergers if _determination_group(m) == group])
     ]
 
 
 _GENERIC_DETERMINATIONS = {"approved", "not approved", "declined", "referred to phase 2"}
 
 
+def _specific(det: str) -> str:
+    """A determination worth printing: blank for the generic outcomes the chip
+    already states."""
+    return det if det.lower() not in _GENERIC_DETERMINATIONS else ""
+
+
+def _headline_determination(m: dict) -> str:
+    return (
+        m.get("accc_determination")
+        or m.get("public_benefits_determination")
+        or m.get("phase_1_determination")
+        or m.get("phase_2_determination")
+        or ""
+    )
+
+
+def _tribunal_entry(m: dict) -> dict:
+    appeal = m.get("appeal") or {}
+    effective = appeal.get("effective_determination") or ""
+    if effective in merger_status.BLOCKED_DETERMINATIONS:
+        chip_label, color, rank = "DECLINED", COLORS["declined"], _ADVERSE
+    elif effective in merger_status.CLEARED_DETERMINATIONS:
+        chip_label, color, rank = "CLEARED", COLORS["cleared"], _CLEARANCE
+    else:
+        chip_label, color, rank = "TRIBUNAL", COLORS["tribunal_appeal"], _OTHER
+    return {
+        "merger": m,
+        "chip_label": chip_label,
+        "color": color,
+        "context": _DECISION_GROUP_LABELS[TRIBUNAL],
+        "date": appeal.get("concluded_date"),
+        "detail": APPEAL_OUTCOME_LABELS.get(appeal.get("outcome"), ""),
+        "group": TRIBUNAL,
+        "rank": rank,
+    }
+
+
 def _decision_entries(digest: dict) -> list[dict]:
-    """Flatten the week's outcomes into one list, with phase 2 activity
-    (decisions made in phase 2 and referrals to phase 2) at the top."""
-    entries = []
-    cleared_group_labels = {"Phase 2 – detailed assessment": "Phase 2",
-                            "Phase 1 – initial assessment": "Phase 1",
-                            "Waiver": "Waiver"}
-    for label, group in _cleared_groups(digest["deals_cleared"]):
-        for m in group:
-            det = (
-                m.get("accc_determination")
-                or m.get("phase_1_determination")
-                or m.get("phase_2_determination")
-                or ""
-            )
-            entries.append({
-                "merger": m,
-                "chip_label": "CLEARED",
-                "color": COLORS["cleared"],
-                "context": cleared_group_labels[label],
-                "date": m.get("determination_publication_date"),
-                "detail": det if det.lower() not in _GENERIC_DETERMINATIONS else "",
-                "is_phase2": label == "Phase 2 – detailed assessment",
-                "with_conditions": with_conditions(m),
-            })
+    """Flatten the week's outcomes into one list, grouped tribunal → public
+    benefit → phase 2 → phase 1 → waiver, and within each group declines and
+    referrals to phase 2 before clearances."""
+    entries = [_tribunal_entry(m) for m in digest.get("deals_decided_by_tribunal") or []]
+    for m in digest["deals_cleared"]:
+        group = _determination_group(m)
+        entries.append({
+            "merger": m,
+            "chip_label": "CLEARED",
+            "color": COLORS["cleared"],
+            "context": _DECISION_GROUP_LABELS[group],
+            "date": (
+                m.get("determination_publication_date")
+                or m.get("phase_2_determination_date")
+            ),
+            "detail": _specific(_headline_determination(m)),
+            "group": group,
+            "rank": _CLEARANCE,
+            "with_conditions": with_conditions(m),
+        })
     for m in digest.get("deals_referred_to_phase_2") or []:
         det = m.get("accc_determination") or m.get("phase_1_determination") or ""
         entries.append({
@@ -654,24 +735,24 @@ def _decision_entries(digest: dict) -> list[dict]:
             "color": COLORS["phase_2_referral"],
             "context": "Phase 1 determination",
             "date": m.get("phase_1_determination_date"),
-            "detail": det if det.lower() not in _GENERIC_DETERMINATIONS else "",
-            "is_phase2": True,
+            "detail": _specific(det),
+            "group": PHASE_1,
+            "rank": _ADVERSE,
         })
     for m in digest["deals_declined"]:
-        det = (
-            m.get("accc_determination")
-            or m.get("phase_1_determination")
-            or m.get("phase_2_determination")
-            or ""
-        )
+        group = _determination_group(m)
         entries.append({
             "merger": m,
             "chip_label": "DECLINED",
             "color": COLORS["declined"],
-            "context": "",
-            "date": m.get("determination_publication_date"),
-            "detail": det if det.lower() not in _GENERIC_DETERMINATIONS else "",
-            "is_phase2": bool(m.get("phase_2_determination")),
+            "context": _DECISION_GROUP_LABELS[group],
+            "date": (
+                m.get("determination_publication_date")
+                or m.get("phase_2_determination_date")
+            ),
+            "detail": _specific(_headline_determination(m)),
+            "group": group,
+            "rank": _ADVERSE,
         })
     for m in digest.get("deals_assessment_ceased") or []:
         entries.append({
@@ -681,10 +762,11 @@ def _decision_entries(digest: dict) -> list[dict]:
             "context": m.get("stage") or "",
             "date": m.get("ceased_date"),
             "detail": "",
-            "is_phase2": "phase 2" in (m.get("stage") or "").lower(),
+            "group": _STAGE_GROUPS.get(merger_status.stage_phase(m.get("stage")), PHASE_1),
+            "rank": _OTHER,
         })
-    # Stable sort: phase 2 activity first, otherwise keep grouped order
-    entries.sort(key=lambda e: not e["is_phase2"])
+    # Stable sort, so each bucket's own date order survives within a rank.
+    entries.sort(key=lambda e: (_DECISION_GROUP_ORDER.index(e["group"]), e["rank"]))
     return entries
 
 
