@@ -385,10 +385,10 @@
       37,
       26
     ],
-    "as_at": "2026-09-28"
+    "as_at": "2026-09-29"
   },
   "current_status": {
-    "as_at": "2026-09-28",
+    "as_at": "2026-09-29",
     "windows": [
       {
         "days": 30,
@@ -449,19 +449,19 @@
       },
       {
         "days": 90,
-        "notifications_filed": 106,
+        "notifications_filed": 101,
         "notifications": {
-          "median": 18,
+          "median": 18.0,
           "average": 21.1,
           "p90": 33,
           "min": 15,
           "max": 56,
-          "count": 117,
+          "count": 114,
           "duration_histogram": {
             "15": 18,
-            "16": 20,
+            "16": 19,
             "17": 10,
-            "18": 14,
+            "18": 12,
             "19": 12,
             "20": 6,
             "21": 8,
@@ -490,7 +490,7 @@
           "p90": 21,
           "min": 6,
           "max": 24,
-          "count": 180,
+          "count": 178,
           "duration_histogram": {
             "6": 1,
             "7": 2,
@@ -502,8 +502,8 @@
             "13": 10,
             "14": 13,
             "15": 17,
-            "16": 13,
-            "17": 13,
+            "16": 12,
+            "17": 12,
             "18": 27,
             "19": 18,
             "20": 13,
@@ -547,14 +547,14 @@
           "median_delta": 2
         },
         {
-          "median": 15.5,
-          "average": 19.6,
-          "p90": 36,
+          "median": 15,
+          "average": 18.2,
+          "p90": 29,
           "min": 0,
           "max": 112,
-          "count": 106,
+          "count": 101,
           "days": 90,
-          "median_delta": 1.5
+          "median_delta": 1
         }
       ],
       "all_time": {
