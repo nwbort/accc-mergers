@@ -25,6 +25,7 @@ from scripts.extract_mergers import (
     _extract_consultation_date,
     _scrape_events,
     detect_inferred_phase_2,
+    detect_missing_questionnaires,
     _infer_determination_date_from_events,
     _infer_determination_date_from_unlinked_event,
     _extract_anzsic_codes,
@@ -2360,6 +2361,54 @@ class TestDetectInferredPhase2:
             'stage': 'Phase 1 - initial assessment',
             'events': [],
         }])
+        assert not out.exists()
+
+
+# ---------------------------------------------------------------------------
+# extract_mergers: detect_missing_questionnaires
+# ---------------------------------------------------------------------------
+
+class TestDetectMissingQuestionnaires:
+    def _run(self, mergers, tmp_path, monkeypatch):
+        out = tmp_path / "missing_questionnaires.json"
+        monkeypatch.setattr(extract_mergers, "MISSING_QUESTIONNAIRES_PATH", str(out))
+        detect_missing_questionnaires(mergers)
+        if not out.exists():
+            return None
+        with open(out) as f:
+            return json.load(f)
+
+    def test_opens_issue_for_notification_without_questionnaire(self, tmp_path, monkeypatch):
+        mergers = [{
+            'merger_id': 'MN-75056',
+            'merger_name': 'Visa - BioCatch',
+            'events': [{'title': 'Merger notified', 'date': '2026-09-24T12:00:00Z'}],
+        }]
+        result = self._run(mergers, tmp_path, monkeypatch)
+        assert [i['merger_id'] for i in result['open']] == ['MN-75056']
+        assert 'MN-75056' in result['open'][0]['title']
+        assert result['resolved'] == []
+
+    def test_questionnaire_by_title_or_flag_resolves(self, tmp_path, monkeypatch):
+        mergers = [
+            {'merger_id': 'MN-1', 'events': [{'title': 'Questionnaire released'}]},
+            {'merger_id': 'MN-2', 'events': [
+                {'title': 'X - Phase 1 consultation', 'is_questionnaire_event': True}]},
+            {'merger_id': 'MN-3', 'events': []},
+        ]
+        result = self._run(mergers, tmp_path, monkeypatch)
+        assert [i['merger_id'] for i in result['open']] == ['MN-3']
+        assert result['resolved'] == ['MN-1', 'MN-2']
+
+    def test_waivers_are_ignored(self, tmp_path, monkeypatch):
+        mergers = [{'merger_id': 'WA-1', 'is_waiver': True, 'events': []}]
+        assert self._run(mergers, tmp_path, monkeypatch) is None
+
+    def test_removes_stale_file_when_no_notifications(self, tmp_path, monkeypatch):
+        out = tmp_path / "missing_questionnaires.json"
+        out.write_text('{"open": [{"merger_id": "MN-OLD"}], "resolved": []}')
+        monkeypatch.setattr(extract_mergers, "MISSING_QUESTIONNAIRES_PATH", str(out))
+        detect_missing_questionnaires([])
         assert not out.exists()
 
 

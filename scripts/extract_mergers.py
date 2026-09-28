@@ -1811,6 +1811,101 @@ def detect_inferred_phase_2(all_mergers_data):
         )
 
 
+MISSING_QUESTIONNAIRES_PATH = 'data/processed/missing_questionnaires.json'
+
+
+def _has_questionnaire_event(merger):
+    """True when the matter's timeline carries a questionnaire, in either page format.
+
+    Mirrors the classification in ``outputs/questionnaires.py``: the structural
+    flag set for new-format consultation sections first, the title second. An
+    event the ACCC has since removed from the page still counts — the
+    questionnaire was published, which is all this asks.
+    """
+    return any(
+        event.get('is_questionnaire_event')
+        or 'questionnaire' in (event.get('title') or '').lower()
+        for event in merger.get('events', [])
+    )
+
+
+def detect_missing_questionnaires(all_mergers_data):
+    """Find notifications on the register that have no questionnaire document.
+
+    The ACCC publishes a questionnaire for a notified acquisition a median of a
+    business day after notification. A notification without one is either
+    genuinely missing (an upload the ACCC forgot) or was never going to have one
+    (an assessment run confidentially). This can't tell the two apart, so it
+    reports both and leaves the owner to close the issue for the second kind.
+    Waivers are skipped: they carry no questionnaire.
+
+    Writes ``MISSING_QUESTIONNAIRES_PATH`` with two lists for the pipeline:
+
+      - ``open``:     issue content for each notification with no questionnaire.
+      - ``resolved``: IDs of notifications that do have one — any open tracking
+                      issue for them should be closed.
+
+    The pipeline never reopens or re-creates an issue that exists in any state,
+    so closing one is the owner's way of saying "this one is expected".
+
+    Removes the file when there are no notifications at all.
+    """
+    to_open = []
+    resolved = []
+
+    for merger in all_mergers_data:
+        merger_id = merger.get('merger_id')
+        if not merger_id or merger.get('is_waiver'):
+            continue
+        if _has_questionnaire_event(merger):
+            resolved.append(merger_id)
+            continue
+
+        name = merger.get('merger_name', '')
+        url = merger.get('url', '')
+        notified = (merger.get('effective_notification_datetime') or '')[:10]
+        body = (
+            f"**{name}** is a notified acquisition on the ACCC register with no "
+            f"questionnaire document on its page.\n\n"
+            f"### Details\n\n"
+            f"| Merger | [{name}]({url}) |\n"
+            f"|--------|---------------|\n"
+            f"| Merger ID | `{merger_id}` |\n"
+            f"| Notified | {notified or '—'} |\n"
+            f"| ACCC stage | {merger.get('stage') or '—'} |\n"
+            f"| Status | {merger.get('status') or '—'} |\n\n"
+            f"### Why this issue exists\n\n"
+            f"Either the ACCC hasn't uploaded the questionnaire yet, or this matter "
+            f"was assessed confidentially and never will.\n\n"
+            f"- This issue will **close automatically** once a questionnaire appears "
+            f"on the register.\n"
+            f"- If none is expected, close this issue manually. The pipeline never "
+            f"reopens or re-creates a closed issue.\n\n"
+            f"[View on mergers.fyi]({mergers_fyi_url(merger_id)})"
+        )
+        to_open.append({
+            'merger_id': merger_id,
+            'merger_name': name,
+            'title': f"Missing questionnaire: {name} ({merger_id})",
+            'body': body,
+        })
+
+    if not to_open and not resolved:
+        if os.path.exists(MISSING_QUESTIONNAIRES_PATH):
+            os.remove(MISSING_QUESTIONNAIRES_PATH)
+        return
+
+    with open(MISSING_QUESTIONNAIRES_PATH, 'w', encoding='utf-8') as f:
+        json.dump({'open': to_open, 'resolved': resolved}, f, indent=2)
+
+    if to_open:
+        print(
+            f"No questionnaire on the register for: "
+            f"{', '.join(sorted(i['merger_id'] for i in to_open))}",
+            file=sys.stderr,
+        )
+
+
 def extract_nocc_data():
     """Parse all NOCC summary PDFs and write the standalone JSON manifest.
 
@@ -1943,6 +2038,8 @@ def run_pdf_enrichment(all_mergers_data, frozen_events_mergers):
     5. Detect mergers carrying a Phase 2 notice whose ACCC stage still shows
        Phase 1 (the site treats these as Phase 2), writing tracking-issue
        content for the pipeline.
+    6. Detect notifications with no questionnaire document, writing
+       tracking-issue content for the pipeline.
 
     Returns the merger list. Step 1 may return a new list, so callers must use
     the return value rather than relying on in-place mutation alone.
@@ -1952,6 +2049,7 @@ def run_pdf_enrichment(all_mergers_data, frozen_events_mergers):
     extract_phase2_notice_data(all_mergers_data)
     auto_fix_missing_event_dates(all_mergers_data, frozen_events_mergers)
     detect_inferred_phase_2(all_mergers_data)
+    detect_missing_questionnaires(all_mergers_data)
     return all_mergers_data
 
 def main():
