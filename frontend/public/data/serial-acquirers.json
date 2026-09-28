@@ -206,6 +206,36 @@
       "count": 3
     },
     {
+      "acquirer_name": "Vets Central Holdings Pty Ltd",
+      "canonical_id": "vets-central-holdings-pty-ltd",
+      "anzsic_code": "697",
+      "anzsic_name": "Veterinary Services",
+      "merger_ids": [
+        "MN-40017",
+        "MN-85042"
+      ],
+      "dates": [
+        "2026-07-01T12:00:00Z",
+        "2026-09-25T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "Vets Central Holdings Pty Ltd",
+      "canonical_id": "vets-central-holdings-pty-ltd",
+      "anzsic_code": "953",
+      "anzsic_name": "Other Personal Services",
+      "merger_ids": [
+        "MN-40017",
+        "MN-85042"
+      ],
+      "dates": [
+        "2026-07-01T12:00:00Z",
+        "2026-09-25T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
       "acquirer_name": "Eli Lilly",
       "canonical_id": "eli-lilly-and-company",
       "anzsic_code": "624",
@@ -671,5 +701,5 @@
       "count": 2
     }
   ],
-  "count": 42
+  "count": 44
 }

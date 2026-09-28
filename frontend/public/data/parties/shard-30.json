@@ -384,6 +384,41 @@
         "median_business_days": 9,
         "completed_count": 1
       }
+    },
+    "vets-central-hamilton-holdings-pty-ltd": {
+      "id": "vets-central-hamilton-holdings-pty-ltd",
+      "canonical_name": "Vets Central Hamilton Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "VETS CENTRAL HAMILTON HOLDINGS PTY LTD",
+          "identifier": "91 695 874 901",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-85042",
+            "merger_name": "Vets Central \u2013 Vital Vet Animal Hospital",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-25T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
     }
   }
 }
