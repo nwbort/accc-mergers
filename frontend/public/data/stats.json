@@ -1,6 +1,6 @@
 {
   "total_mergers": 264,
-  "total_waivers": 426,
+  "total_waivers": 427,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 233,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 405,
+    "Approved": 406,
     "Not approved": 21
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.215962441314552,
-    "median_days": 20.0,
-    "average_business_days": 13.816901408450704,
-    "median_business_days": 14.0
+    "average_days": 20.217798594847775,
+    "median_days": 20,
+    "average_business_days": 13.819672131147541,
+    "median_business_days": 14
   },
   "top_industries": [
     {
@@ -72,7 +72,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 38
+      "count": 39
     },
     {
       "name": "Pubs, Taverns and Bars",
@@ -87,11 +87,11 @@
       "count": 23
     },
     {
-      "name": "Liquor Retailing",
+      "name": "Supermarket and Grocery Stores",
       "count": 20
     },
     {
-      "name": "Scientific Research Services",
+      "name": "Liquor Retailing",
       "count": 20
     }
   ],
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-65037",
+      "merger_name": "Coles \u2013 shopping centre in Albion Park, NSW",
+      "determination": "Approved",
+      "determination_date": "2026-09-28T12:00:00Z",
+      "page_modified_datetime": "2026-09-28T17:04:35+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-10035",
       "merger_name": "Geosyntec Consultants \u2013 WRM Water & Environment",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 2 - detailed assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-75054",
-      "merger_name": "I Squared Capital \u2013 oOh!media",
-      "determination": "Approved",
-      "determination_date": "2026-09-23T12:00:00Z",
-      "page_modified_datetime": "2026-09-23T16:46:03+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]
