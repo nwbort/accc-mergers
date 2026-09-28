@@ -39,10 +39,14 @@ def collect_feed_entries(mergers: list) -> list:
             if not date or not title:
                 continue
 
+            # A tribunal document's hand-added comment changes its title but
+            # not the document, so the id is built from the uncommented title
+            # and adding a comment doesn't republish the entry.
+            id_title = event.get('appeal_base_title') or title
             entries.append({
                 "title": f"{merger_name}: {title}",
                 "link": merger_url,
-                "id": f"{merger_url}#{date}-{title[:50]}",
+                "id": f"{merger_url}#{date}-{id_title[:50]}",
                 "updated": date,
                 "summary": f"Merger: {merger_name} ({merger_id}). Event: {title}.",
             })

@@ -653,7 +653,8 @@ def _normalise_appeal_filed_by(value: str | None) -> str:
 
 def _appeal_event(doc: dict, appeal: dict) -> dict:
     """Turn a tribunal appeal document into a merger timeline event."""
-    description = doc.get('description') or 'Tribunal document'
+    base_description = doc.get('description') or 'Tribunal document'
+    description = base_description
     # A hand-added ``comment`` disambiguates otherwise identical tribunal
     # descriptions ("Submissions" twice over) and is shown in parentheses,
     # e.g. "Directions (re application under s100S)". The scraper never
@@ -665,6 +666,13 @@ def _appeal_event(doc: dict, appeal: dict) -> dict:
         'date': _normalise_appeal_date(doc.get('date')),
         'title': description,
         'display_title': f"Tribunal appeal – {description}",
+        # The title as it reads without the comment. Comments are added by
+        # hand, usually after followers have already been told about the
+        # document, so anything that identifies an event across runs (the
+        # tracked-merger notification key, the RSS entry id) keys on this
+        # rather than on the display title, or adding a comment would
+        # announce the same document a second time.
+        'appeal_base_title': f"Tribunal appeal – {base_description}",
         'url': doc.get('url'),
         'url_gh': doc.get('url_gh'),
         # Flags the event as originating from the tribunal appeal rather than
