@@ -823,6 +823,106 @@ jobs:
           done
           echo "Confirmed Phase 2 mergers: ${CLOSE_COUNT}; tracking issues closed: ${CLOSED}"
 
+      # --- Manage missing-questionnaire tracking issues ---
+      # detect_missing_questionnaires writes missing_questionnaires.json listing
+      # notifications with no questionnaire document. We open one issue per
+      # matter and ntfy about the new ones, and auto-close an issue once the
+      # questionnaire appears. An issue that exists in ANY state is never
+      # re-created, so closing one is how a matter with no questionnaire by
+      # design (e.g. a confidential assessment) is marked as expected.
+
+      - name: Manage missing questionnaire issues
+        id: missing_questionnaires
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          FILE=data/processed/missing_questionnaires.json
+          echo "created=0" >> "$GITHUB_OUTPUT"
+          if [ ! -f "$FILE" ]; then
+            echo "No missing questionnaire data to process"
+            exit 0
+          fi
+
+          ALL_ISSUES="${RUNNER_TEMP}/missing-questionnaire-all.json"
+          gh issue list \
+            --label "missing-questionnaire" \
+            --state all \
+            --limit 500 \
+            --json number,title,state > "$ALL_ISSUES"
+
+          ALL_TITLES="${RUNNER_TEMP}/missing-questionnaire-titles.txt"
+          jq -r '.[].title' "$ALL_ISSUES" > "$ALL_TITLES"
+
+          OPEN_COUNT=$(jq '.open | length' "$FILE")
+          echo "Notifications missing a questionnaire: $OPEN_COUNT"
+
+          if [ "$OPEN_COUNT" -gt 0 ]; then
+            gh label create "missing-questionnaire" \
+              --description "Notified merger with no questionnaire document on the ACCC register" \
+              --color "fbca04" \
+              --force
+          fi
+
+          CREATED=0
+          NAMES=""
+          for i in $(seq 0 $((OPEN_COUNT - 1))); do
+            MERGER_ID=$(jq -r ".open[$i].merger_id" "$FILE")
+
+            # Skip if an issue already exists in ANY state, so we never reopen
+            # one the owner deliberately closed.
+            if grep -qF -- "($MERGER_ID)" "$ALL_TITLES"; then
+              echo "Issue already exists for $MERGER_ID — skipping"
+              continue
+            fi
+
+            TITLE=$(jq -r ".open[$i].title" "$FILE")
+            jq -n \
+              --argjson idx "$i" \
+              --slurpfile data "$FILE" \
+              '{"title": $data[0].open[$idx].title,
+                "body":  $data[0].open[$idx].body,
+                "labels": ["missing-questionnaire"]}' | \
+            gh api "repos/$GITHUB_REPOSITORY/issues" --method POST --input -
+            echo "$TITLE" >> "$ALL_TITLES"
+            echo "Created missing questionnaire issue: $TITLE"
+            CREATED=$((CREATED + 1))
+            NAMES="${NAMES}$(jq -r ".open[$i].merger_name" "$FILE") (${MERGER_ID})"$'\n'
+          done
+
+          # Close the issue of any matter whose questionnaire has appeared.
+          OPEN_ISSUES="${RUNNER_TEMP}/missing-questionnaire-open.json"
+          jq '[.[] | select(.state | ascii_upcase == "OPEN")]' "$ALL_ISSUES" > "$OPEN_ISSUES"
+          for MERGER_ID in $(jq -r '.resolved[]' "$FILE"); do
+            NUMBER=$(jq -r --arg id "($MERGER_ID)" \
+              'map(select(.title | contains($id))) | .[0].number // empty' \
+              "$OPEN_ISSUES")
+            if [ -n "$NUMBER" ]; then
+              gh issue comment "$NUMBER" \
+                --body "A questionnaire is now on the ACCC register for this merger — closing automatically."
+              gh issue close "$NUMBER"
+              echo "Closed missing questionnaire issue #$NUMBER for $MERGER_ID"
+            fi
+          done
+
+          echo "created=$CREATED" >> "$GITHUB_OUTPUT"
+          {
+            echo "names<<MISSING_Q_EOF"
+            printf '%s' "$NAMES"
+            echo "MISSING_Q_EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Notify missing questionnaires
+        if: steps.missing_questionnaires.outputs.created != '0'
+        uses: ./.github/actions/ntfy
+        with:
+          topic: ${{ secrets.NTFY_TOPIC }}
+          token: ${{ secrets.NTFY_TOKEN }}
+          server: ${{ vars.NTFY_SERVER || 'https://ntfy.sh' }}
+          title: 'Missing questionnaire'
+          message: ${{ steps.missing_questionnaires.outputs.names }}
+          tags: 'page_facing_up'
+          click: ${{ github.server_url }}/${{ github.repository }}/issues?q=is%3Aopen+label%3Amissing-questionnaire
+
       # --- Detection (create/refresh review PRs) ---
       # Every detector lives here now; the standalone detect-duplicates.yml,
       # detect-related-mergers.yml, detect-related-parties.yml and
