@@ -1817,14 +1817,18 @@ MISSING_QUESTIONNAIRES_PATH = 'data/processed/missing_questionnaires.json'
 def _has_questionnaire_event(merger):
     """True when the matter's timeline carries a questionnaire, in either page format.
 
-    Mirrors the classification in ``outputs/questionnaires.py``: the structural
-    flag set for new-format consultation sections first, the title second. An
-    event the ACCC has since removed from the page still counts — the
-    questionnaire was published, which is all this asks.
+    Mirrors the classification in ``outputs/questionnaires.py`` (the structural
+    flag set for new-format consultation sections, then the title), and adds the
+    attachment's URL as a third signal: MN-60025's title reads "Phase 1
+    Quesionnaire" while its file is "... Phase 1 Questionnaire.docx", and a
+    typo in the title must not read as a missing document. An event the ACCC has
+    since removed from the page still counts — the questionnaire was published,
+    which is all this asks.
     """
     return any(
         event.get('is_questionnaire_event')
         or 'questionnaire' in (event.get('title') or '').lower()
+        or 'questionnaire' in unquote(event.get('url') or '').lower()
         for event in merger.get('events', [])
     )
 

@@ -2400,6 +2400,15 @@ class TestDetectMissingQuestionnaires:
         assert [i['merger_id'] for i in result['open']] == ['MN-3']
         assert result['resolved'] == ['MN-1', 'MN-2']
 
+    def test_misspelled_title_is_recognised_from_the_attachment_url(self, tmp_path, monkeypatch):
+        mergers = [{'merger_id': 'MN-60025', 'events': [{
+            'title': 'Acrow - Phase 1 Quesionnaire',
+            'url': 'https://accc.gov.au/documents/Acrow%20-%20Phase%201%20Questionnaire.docx',
+        }]}]
+        result = self._run(mergers, tmp_path, monkeypatch)
+        assert result['open'] == []
+        assert result['resolved'] == ['MN-60025']
+
     def test_waivers_are_ignored(self, tmp_path, monkeypatch):
         mergers = [{'merger_id': 'WA-1', 'is_waiver': True, 'events': []}]
         assert self._run(mergers, tmp_path, monkeypatch) is None
