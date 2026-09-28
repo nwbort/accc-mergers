@@ -630,9 +630,10 @@ _STAGE_GROUPS = {
     merger_status.WAIVER: WAIVER,
 }
 
-# Within a group, adverse outcomes (a refusal, a referral to phase 2) lead,
-# then clearances, then anything else (a ceased assessment, a withdrawn appeal).
-_ADVERSE, _CLEARANCE, _OTHER = 0, 1, 2
+# Within a group the least routine outcomes lead: adverse ones (a refusal, a
+# referral to phase 2), then anything else out of the ordinary (a ceased
+# assessment, a withdrawn appeal), then clearances.
+_ADVERSE, _OTHER, _CLEARANCE = 0, 1, 2
 
 
 def _determination_group(merger: dict) -> str:
@@ -709,7 +710,7 @@ def _tribunal_entry(m: dict) -> dict:
 def _decision_entries(digest: dict) -> list[dict]:
     """Flatten the week's outcomes into one list, grouped tribunal → public
     benefit → phase 2 → phase 1 → waiver, and within each group declines and
-    referrals to phase 2 before clearances."""
+    referrals to phase 2 first, then ceased assessments, then clearances."""
     entries = [_tribunal_entry(m) for m in digest.get("deals_decided_by_tribunal") or []]
     for m in digest["deals_cleared"]:
         group = _determination_group(m)

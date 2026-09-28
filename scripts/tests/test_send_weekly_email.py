@@ -115,7 +115,7 @@ class TestDecisionRows:
 
 class TestDecisionOrder:
     """Tribunal, then public benefit, phase 2, phase 1, waiver; within each
-    group declines and referrals to phase 2 before clearances."""
+    group declines and referrals to phase 2, then ceased, then clearances."""
 
     def _order(self, **buckets):
         digest = _digest()
@@ -155,15 +155,17 @@ class TestDecisionOrder:
             'T-NO', 'T-OK', 'PB-OK', 'P2-NO', 'P2-OK', 'P1-REF', 'P1-OK', 'W-NO', 'W-OK',
         ]
 
-    def test_ceased_assessment_follows_the_clearances_in_its_stage(self):
+    def test_ceased_assessment_sits_between_declines_and_clearances(self):
         order = self._order(
             deals_cleared=[_cleared('P2-OK', 'Phase 2 ok', phase_2_determination='Approved')],
+            deals_declined=[_cleared('P2-NO', 'Phase 2 no', accc_determination='Not approved',
+                                     phase_2_determination='Not approved')],
             deals_assessment_ceased=[{
                 'merger_id': 'P2-CEASED', 'merger_name': 'Ceased',
                 'stage': 'Phase 2 - detailed assessment',
             }],
         )
-        assert order == ['P2-OK', 'P2-CEASED']
+        assert order == ['P2-NO', 'P2-CEASED', 'P2-OK']
 
     def test_tribunal_row_states_the_outcome(self):
         digest = _digest()
