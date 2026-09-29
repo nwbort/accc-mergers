@@ -334,7 +334,7 @@
       36,
       44,
       38,
-      25
+      26
     ],
     "waivers": [
       0,
@@ -383,7 +383,7 @@
       41,
       46,
       37,
-      25
+      26
     ],
     "as_at": "2026-09-29"
   },
@@ -392,7 +392,7 @@
     "windows": [
       {
         "days": 30,
-        "notifications_filed": 26,
+        "notifications_filed": 27,
         "notifications": {
           "median": 18,
           "average": 21.1,
@@ -449,7 +449,7 @@
       },
       {
         "days": 90,
-        "notifications_filed": 102,
+        "notifications_filed": 103,
         "notifications": {
           "median": 18.0,
           "average": 21.1,
@@ -537,33 +537,33 @@
     "pre_notification": {
       "windows": [
         {
-          "median": 18.0,
-          "average": 22.4,
+          "median": 20,
+          "average": 22.5,
           "p90": 46,
           "min": 7,
           "max": 72,
-          "count": 26,
+          "count": 27,
           "days": 30,
-          "median_delta": 4.0
+          "median_delta": 6
         },
         {
-          "median": 15.0,
-          "average": 18.2,
+          "median": 15,
+          "average": 18.3,
           "p90": 29,
           "min": 0,
           "max": 112,
-          "count": 102,
+          "count": 103,
           "days": 90,
-          "median_delta": 1.0
+          "median_delta": 1
         }
       ],
       "all_time": {
-        "median": 14.0,
-        "average": 17.1,
+        "median": 14,
+        "average": 17.2,
         "p90": 34,
         "min": 0,
         "max": 112,
-        "count": 252
+        "count": 253
       }
     },
     "monthly": {
@@ -741,7 +741,7 @@
         41,
         46,
         37,
-        25
+        26
       ]
     }
   },
@@ -912,11 +912,11 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 523,
+      "count": 524,
       "outcome_mix": {
-        "Approved": 523
+        "Approved": 524
       },
-      "median_phase_1_business_days": 17
+      "median_phase_1_business_days": 17.0
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -939,20 +939,20 @@
     },
     {
       "division": "Not yet determined",
-      "count": 23,
+      "count": 24,
       "outcome_mix": {
-        "Unknown": 23
+        "Unknown": 24
       },
       "median_phase_1_business_days": null
     },
     {
       "division": "Unknown",
-      "count": 5,
+      "count": 4,
       "outcome_mix": {
-        "Approved": 3,
+        "Approved": 2,
         "Unknown": 2
       },
-      "median_phase_1_business_days": 21
+      "median_phase_1_business_days": 40.0
     },
     {
       "division": "Chair Cass-Gottlieb",
@@ -1069,7 +1069,7 @@
       "approved": 19,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 2,
+      "in_progress": 3,
       "phase2_referral_rate": 0.095
     },
     {
@@ -1096,7 +1096,7 @@
       "approved": 43,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 12,
+      "in_progress": 13,
       "phase2_referral_rate": 0.044
     },
     {
@@ -1105,7 +1105,7 @@
       "approved": 23,
       "not_approved": 0,
       "referred": 1,
-      "in_progress": 0,
+      "in_progress": 1,
       "phase2_referral_rate": 0.042
     },
     {
@@ -1114,7 +1114,7 @@
       "approved": 70,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 7,
+      "in_progress": 8,
       "phase2_referral_rate": 0.028
     },
     {
@@ -1132,7 +1132,7 @@
       "approved": 11,
       "not_approved": 0,
       "referred": 0,
-      "in_progress": 3,
+      "in_progress": 4,
       "phase2_referral_rate": 0.0
     },
     {
@@ -1222,7 +1222,7 @@
     },
     {
       "quarter": "2026-Q3",
-      "notifications": 107,
+      "notifications": 108,
       "referred": 1
     }
   ]

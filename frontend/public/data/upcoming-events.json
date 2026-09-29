@@ -61,6 +61,16 @@
       "effective_notification_datetime": "2026-09-28T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-10-07T12:00:00Z",
+      "merger_id": "MN-25048",
+      "merger_name": "Colas \u2013 Quarry Products Harlaxton",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-09-28T12:00:00Z"
+    },
+    {
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-10-13T12:00:00Z",
@@ -295,6 +305,16 @@
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-11-10T12:00:00Z",
+      "merger_id": "MN-25048",
+      "merger_name": "Colas \u2013 Quarry Products Harlaxton",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-09-28T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-11-10T12:00:00Z",
       "merger_id": "MN-85054",
       "merger_name": "Xylem - Flow Controls",
       "status": "Under assessment",
@@ -312,6 +332,6 @@
       "effective_notification_datetime": "2026-05-12T12:00:00Z"
     }
   ],
-  "count": 31,
+  "count": 33,
   "days_ahead": 60
 }

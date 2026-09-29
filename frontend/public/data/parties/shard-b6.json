@@ -347,6 +347,41 @@
         "completed_count": 1
       }
     },
+    "sanbeg-pty-ltd": {
+      "id": "sanbeg-pty-ltd",
+      "canonical_name": "Sanbeg Pty. Ltd.",
+      "members": [
+        {
+          "name": "SANBEG PTY. LTD.",
+          "identifier": "83 010 102 771",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-25048",
+            "merger_name": "Colas \u2013 Quarry Products Harlaxton",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-28T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "wentworth-inn-opco-i-pty-ltd": {
       "id": "wentworth-inn-opco-i-pty-ltd",
       "canonical_name": "Wentworth Inn OpCo I Pty Ltd",
