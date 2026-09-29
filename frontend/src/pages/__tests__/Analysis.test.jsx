@@ -254,3 +254,32 @@ describe('Analysis open caseload', () => {
     expect(screen.queryByText(/Open caseload/)).not.toBeInTheDocument();
   });
 });
+
+describe('Analysis decision-maker chart', () => {
+  beforeEach(() => {
+    dataCache.clear();
+    vi.spyOn(console, 'error').mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+    dataCache.clear();
+  });
+
+  it('lists each decision-maker in the accessible table and omits undecided matters', async () => {
+    const fixture = {
+      ...analysisFixture,
+      by_commission_division: [
+        { division: 'Commissioner Williams', count: 3, outcome_mix: { Approved: 3 }, median_phase_1_business_days: 17 },
+        { division: 'A division of the Commission (s19 direction)', count: 2, outcome_mix: { Approved: 1, 'Not approved': 1 }, median_phase_1_business_days: 30 },
+        { division: 'Not yet determined', count: 4, outcome_mix: { Unknown: 4 }, median_phase_1_business_days: null },
+      ],
+    };
+    vi.spyOn(globalThis, 'fetch').mockImplementation(() => Promise.resolve(ok(fixture)));
+    renderAnalysis();
+    const table = (await screen.findByText('Determinations by decision-maker and outcome')).closest('table');
+    expect(within(table).getByText('Commissioner Williams')).toBeTruthy();
+    expect(within(table).getByText('A division of the Commission (s19 direction)')).toBeTruthy();
+    expect(within(table).queryByText('Not yet determined')).toBeNull();
+  });
+});

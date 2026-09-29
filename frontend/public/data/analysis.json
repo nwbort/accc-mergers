@@ -912,21 +912,21 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 523,
+      "count": 524,
       "outcome_mix": {
-        "Approved": 523
+        "Approved": 524
       },
-      "median_phase_1_business_days": 17
+      "median_phase_1_business_days": 17.0
     },
     {
       "division": "A division of the Commission (s19 direction)",
-      "count": 110,
+      "count": 111,
       "outcome_mix": {
-        "Approved": 82,
+        "Approved": 83,
         "Not approved": 23,
         "Unknown": 5
       },
-      "median_phase_1_business_days": 20
+      "median_phase_1_business_days": 20.0
     },
     {
       "division": "Commissioner Woodward",
@@ -961,22 +961,6 @@
         "Approved": 2
       },
       "median_phase_1_business_days": null
-    },
-    {
-      "division": "Determination made by a division of the Commission constituted by a direction issued pursuant to a section 19 of the Act",
-      "count": 1,
-      "outcome_mix": {
-        "Approved": 1
-      },
-      "median_phase_1_business_days": 38
-    },
-    {
-      "division": "Commissioner Wiliams",
-      "count": 1,
-      "outcome_mix": {
-        "Approved": 1
-      },
-      "median_phase_1_business_days": 15
     }
   ],
   "deadline_utilisation": {
