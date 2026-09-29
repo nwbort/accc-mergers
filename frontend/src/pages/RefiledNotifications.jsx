@@ -118,14 +118,14 @@ function RefiledCard({ pair, showOutcome }) {
 
       <div className="flex items-stretch gap-2 sm:gap-4">
         <div className="relative w-14 sm:w-20 shrink-0 h-11">
-          <span className={`${ABOVE_LINE} inset-x-0 text-right text-[11px] font-medium text-gray-500`}>Waiver filed</span>
+          <span className={`${ABOVE_LINE} inset-x-0 text-right text-2xs font-medium text-gray-500`}>Waiver filed</span>
           <span className={`${BELOW_LINE} inset-x-0 text-right text-xs font-medium text-gray-900`}>{formatDateMedium(start)}</span>
         </div>
 
         <div className="relative flex-1 min-w-0 h-11">
           {referralPercent !== null && (
             <span
-              className={`${ABOVE_LINE} whitespace-nowrap text-[10px] font-semibold text-phase-2-dark`}
+              className={`${ABOVE_LINE} whitespace-nowrap text-2xs font-semibold text-phase-2-dark`}
               style={phase2LabelStyle}
             >
               Phase 2
@@ -156,7 +156,7 @@ function RefiledCard({ pair, showOutcome }) {
             )}
             {gapPercent !== null && daysToRefile !== null && (
               <span
-                className="absolute top-1/2 whitespace-nowrap text-[10px] font-semibold text-gray-800"
+                className="absolute top-1/2 whitespace-nowrap text-2xs font-semibold text-gray-800"
                 style={gapLabelStyle}
               >
                 {daysToRefile} day{daysToRefile !== 1 ? 's' : ''}
@@ -194,7 +194,7 @@ function RefiledCard({ pair, showOutcome }) {
         </div>
 
         <div className="relative w-14 sm:w-20 shrink-0 h-11">
-          <span className={`${ABOVE_LINE} inset-x-0 text-left text-[11px] font-medium text-gray-500`}>
+          <span className={`${ABOVE_LINE} inset-x-0 text-left text-2xs font-medium text-gray-500`}>
             {endLabel}
           </span>
           <span className={`${BELOW_LINE} inset-x-0 text-left text-xs font-medium text-gray-900`}>
@@ -264,7 +264,7 @@ function RefiledNotifications() {
       />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
         <header className="mb-6">
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
+          <h1 className="type-page-title">
             Waivers re-filed as notifications
           </h1>
         </header>

@@ -83,7 +83,7 @@ function MergerEventGroup({ group, onClose, wasUnseenOnOpen }) {
                   <p className={`truncate ${isNew ? 'text-gray-900 font-medium' : 'text-gray-700'}`}>
                     {event.display_title || event.event_type_display || event.title}
                     {isNew && (
-                      <span className="ml-1.5 inline-block align-middle text-[10px] font-semibold uppercase tracking-wide text-emerald-700">
+                      <span className="ml-1.5 inline-block align-middle text-2xs font-semibold uppercase tracking-wide text-emerald-700">
                         New
                       </span>
                     )}
@@ -113,7 +113,7 @@ function MergerEventGroup({ group, onClose, wasUnseenOnOpen }) {
               <div className="flex-1 min-w-0">
                 <p className="text-gray-900 font-medium truncate">
                   {event.display_title || event.event_type_display || event.title}
-                  <span className="ml-1.5 inline-block align-middle text-[10px] font-semibold uppercase tracking-wide text-emerald-700">
+                  <span className="ml-1.5 inline-block align-middle text-2xs font-semibold uppercase tracking-wide text-emerald-700">
                     New
                   </span>
                 </p>
@@ -196,7 +196,7 @@ function IndustryEventGroup({ group, onClose, wasUnseenOnOpen }) {
           <p className="text-gray-500">
             {event.display_title} · {formatDate(event.date)}
             {isNew && (
-              <span className="ml-1.5 inline-block align-middle text-[10px] font-semibold uppercase tracking-wide text-emerald-700">
+              <span className="ml-1.5 inline-block align-middle text-2xs font-semibold uppercase tracking-wide text-emerald-700">
                 New
               </span>
             )}
@@ -454,7 +454,7 @@ function NotificationPanel({ isOpen, onClose }) {
             {mergerGroups.length > 0 && (
               <>
                 <div className="px-5 py-2 bg-gray-50/60 border-y border-gray-100">
-                  <h3 className="text-[11px] font-semibold uppercase tracking-wider text-gray-500">
+                  <h3 className="text-2xs font-semibold uppercase tracking-wider text-gray-500">
                     Tracked mergers
                   </h3>
                 </div>
@@ -474,7 +474,7 @@ function NotificationPanel({ isOpen, onClose }) {
             {industryGroups.length > 0 && (
               <>
                 <div className="px-5 py-2 bg-gray-50/60 border-y border-gray-100">
-                  <h3 className="text-[11px] font-semibold uppercase tracking-wider text-gray-500">
+                  <h3 className="text-2xs font-semibold uppercase tracking-wider text-gray-500">
                     Followed industries
                   </h3>
                 </div>

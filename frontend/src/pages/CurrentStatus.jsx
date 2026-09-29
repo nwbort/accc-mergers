@@ -136,7 +136,7 @@ function CurrentStatus() {
       <>
         <SEO title={PAGE_META.title} description={PAGE_META.description} url="/current-status" />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
+          <h1 className="type-page-title">
             Current status
           </h1>
           <p className="mt-3 text-sm text-gray-600">
@@ -155,7 +155,7 @@ function CurrentStatus() {
       <SEO title={PAGE_META.title} description={PAGE_META.description} url="/current-status" />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
         <header className="mb-5 flex flex-wrap items-center justify-between gap-3">
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
+          <h1 className="type-page-title">
             Current status
           </h1>
           <SegmentedToggle

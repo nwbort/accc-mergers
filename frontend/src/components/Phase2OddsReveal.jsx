@@ -94,7 +94,7 @@ function Phase2OddsReveal({ merger, children }) {
           // figures. Each line below sets the weight and case it wants.
           className="absolute right-0 top-full mt-2 z-30 w-48 rounded-xl border border-amber-200/70 bg-white px-3 py-2.5 text-left normal-case tracking-normal font-normal shadow-lg animate-fade-in"
         >
-          <span className="block text-[10px] font-semibold uppercase tracking-wider text-amber-700">
+          <span className="block text-2xs font-semibold uppercase tracking-wider text-amber-700">
             Est. probability of Phase 2 referral
           </span>
           {percent != null ? (
@@ -102,7 +102,7 @@ function Phase2OddsReveal({ merger, children }) {
               <span className="block text-xl font-bold leading-tight text-gray-900">
                 {percent}%
               </span>
-              <span className="block text-[11px] leading-snug text-gray-500">
+              <span className="block text-2xs leading-snug text-gray-500">
                 at business day {progress.elapsed} of {progress.total}
               </span>
             </>

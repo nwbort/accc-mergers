@@ -16,22 +16,69 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+/* Metric-matched stand-in for Inter while the woff2 loads (font-display: swap
+   below). Arial scaled to Inter's proportions, so the swap reflows almost
+   nothing instead of shifting every line on the page. Values are the standard
+   Inter-over-Arial overrides. */
+@font-face {
+  font-family: 'Inter Fallback';
+  src: local('Arial');
+  size-adjust: 107.4%;
+  ascent-override: 90.2%;
+  descent-override: 22.48%;
+  line-gap-override: 0%;
+}
+
 html {
   overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
   @apply bg-surface-50 text-gray-900;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: theme('fontFamily.sans');
+  font-optical-sizing: auto;
+  /* Inter's contextual alternates (arrows, ->, :: and friends) and kerning. */
+  font-feature-settings: 'calt', 'kern';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Headings break into even lines instead of stranding a word; prose avoids a
+   one-word last line. Both are progressive enhancement: unsupported browsers
+   just wrap as before. */
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+
+p, li, dd {
+  text-wrap: pretty;
+}
+
+/* Figures line up in columns of numbers: durations, counts and percentages sit
+   in tables and stat grids where digits of different widths read as jitter. */
+table {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Underlines that clear descenders instead of cutting through them. */
+a {
+  text-underline-offset: 0.18em;
+}
+
+code, kbd, samp, pre {
+  font-family: theme('fontFamily.mono');
+  font-size: 0.9em;
+}
+
+/* The type roles that were being re-spelled on every page. Each is a role,
+   not a size: change it here and every page follows. */
+@layer components {
+  /* The page's h1. */
+  .type-page-title {
+    @apply text-2xl sm:text-3xl font-bold text-gray-900;
+  }
 }
 
 /* Modern gradient background for hero sections */

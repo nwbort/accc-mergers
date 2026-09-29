@@ -54,3 +54,11 @@ ChartJS.register(
   Tooltip,
   Legend
 );
+
+// Chart.js draws on a canvas, which inherits nothing from CSS: left alone its
+// axis ticks and legends render in Helvetica while the page around them is
+// Inter. Set the site's face once here rather than per chart (the per-chart
+// `family` options that remain are now redundant, not load-bearing).
+ChartJS.defaults.font.family =
+  "Inter, 'Inter Fallback', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif";
+ChartJS.defaults.color = '#4b5563'; // gray-600: 7.6:1 on white

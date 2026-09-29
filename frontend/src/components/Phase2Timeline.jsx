@@ -40,7 +40,7 @@ function MatterBar({ matter }) {
       <div className="flex items-stretch gap-2 sm:gap-4">
         {/* Start endpoint — outside the track, hugging it from the left */}
         <div className="relative w-16 sm:w-20 shrink-0 h-11">
-          <span className={`${ABOVE_LINE} inset-x-0 text-right text-[11px] font-medium text-gray-500`}>Referred</span>
+          <span className={`${ABOVE_LINE} inset-x-0 text-right text-2xs font-medium text-gray-500`}>Referred</span>
           <span className={`${BELOW_LINE} inset-x-0 text-right text-xs font-medium text-gray-900`}>{formatDateMedium(referral_date)}</span>
         </div>
 
@@ -48,7 +48,7 @@ function MatterBar({ matter }) {
         <div className="relative flex-1 min-w-0 h-11">
           {noccPercent !== null && nocc_date && (
             <span
-              className={`${ABOVE_LINE} text-[11px] text-gray-500 whitespace-nowrap`}
+              className={`${ABOVE_LINE} text-2xs text-gray-500 whitespace-nowrap`}
               style={noccLabelStyle}
             >
               {nocc_issued ? 'NOCC issued' : 'NOCC due'} {formatDateMedium(nocc_date)}
@@ -82,7 +82,7 @@ function MatterBar({ matter }) {
 
         {/* End endpoint — outside the track, hugging it from the right */}
         <div className="relative w-16 sm:w-20 shrink-0 h-11">
-          <span className={`${ABOVE_LINE} inset-x-0 text-left text-[11px] font-medium text-gray-500`}>Determination</span>
+          <span className={`${ABOVE_LINE} inset-x-0 text-left text-2xs font-medium text-gray-500`}>Determination</span>
           <span className={`${BELOW_LINE} inset-x-0 text-left text-xs font-medium text-gray-900`}>{formatDateMedium(end_of_determination_period)}</span>
         </div>
       </div>

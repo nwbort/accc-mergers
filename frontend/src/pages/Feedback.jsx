@@ -73,7 +73,7 @@ export default function Feedback() {
 
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
         <header className="mb-6">
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">Share feedback</h1>
+          <h1 className="type-page-title">Share feedback</h1>
           <p className="mt-1 text-sm text-gray-500">Got a suggestion or spotted an issue? Let me know.</p>
         </header>
 

@@ -11,6 +11,24 @@ export default {
   ],
   theme: {
     extend: {
+      // One stack, named once. index.css (body, code) and utils/chartSetup.js
+      // (Chart.js canvas text) read the same list, so the canvas never falls
+      // back to Chart.js's own Helvetica default.
+      fontFamily: {
+        sans: ['Inter', 'Inter Fallback', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', 'monospace'],
+      },
+      // Below text-xs. Replaces the ad-hoc text-[10px]/text-[11px] values with
+      // one named step, and sits at 11px rather than 10px: Inter's x-height
+      // gets hard to read under that, especially in uppercase.
+      fontSize: {
+        '2xs': ['0.6875rem', { lineHeight: '1rem' }],
+        // Big and small headings get tighter tracking than Inter's default,
+        // which is drawn for body sizes.
+        '2xl': ['1.5rem', { lineHeight: '2rem', letterSpacing: '-0.02em' }],
+        '3xl': ['1.875rem', { lineHeight: '2.25rem', letterSpacing: '-0.022em' }],
+        '5xl': ['3rem', { lineHeight: '1', letterSpacing: '-0.03em' }],
+      },
       colors: {
         primary: '#335145',
         'primary-light': '#4a6d5e',

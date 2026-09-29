@@ -481,7 +481,7 @@ function MergerDetail() {
                 {merger.appeal.appellant ? `Decision appealed by ${merger.appeal.appellant}` : (APPEAL_TYPE_LABELS[merger.appeal.appeal_type] || DEFAULT_APPEAL_LABEL)}
                 {merger.appeal.filed_date ? ` on ${formatDateLong(merger.appeal.filed_date)}` : ''}
                 {merger.appeal.status === APPEAL_STATUS.CONCLUDED && (
-                  <span className="ml-2 inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-medium bg-gray-100 text-gray-600 align-middle">
+                  <span className="ml-2 inline-flex items-center px-1.5 py-0.5 rounded text-2xs font-medium bg-gray-100 text-gray-600 align-middle">
                     Concluded
                   </span>
                 )}

@@ -30,6 +30,10 @@ function sourceFiles(dir, acc = []) {
 // module registers what the site's charts ask for, and that every module
 // drawing a chart pulls that module in.
 describe('chartSetup', () => {
+  it('draws canvas text in the site face, not Chart.js\'s Helvetica default', () => {
+    expect(ChartJS.defaults.font.family).toMatch(/^Inter,/);
+  });
+
   it('registers every scale and element the site\'s charts use', () => {
     // category + linear: every axis on the line, bar and scatter charts.
     // arc: the dashboard's phase 2 doughnut. line/point: the trend and ECDF

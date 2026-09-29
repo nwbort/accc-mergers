@@ -33,7 +33,7 @@ function Phase2() {
       />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
         <header className="mb-6 flex items-center justify-between gap-4">
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
+          <h1 className="type-page-title">
             Phase 2 tracker
           </h1>
           <button

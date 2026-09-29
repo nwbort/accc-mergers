@@ -19,18 +19,18 @@ export default function PrivacyPolicy() {
 
         {/* Header */}
         <header className="mb-6">
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">Privacy policy</h1>
+          <h1 className="type-page-title">Privacy policy</h1>
           <p className="mt-1 text-sm text-gray-500">Last updated: 15 September 2026</p>
         </header>
 
         {/* 1. Introduction */}
         <section className={`${CARD} p-8 mb-6`}>
           <h2 className="text-xl font-semibold text-gray-900 mb-4">1. Introduction</h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
+          <p className="text-gray-700 leading-relaxed max-w-prose mb-4">
             Welcome to mergers.fyi (&#34;we&#34;, &#34;us&#34;, &#34;our&#34;). We are committed to protecting your privacy and
             handling your personal information in a transparent and secure manner.
           </p>
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-gray-700 leading-relaxed max-w-prose">
             This Privacy Policy explains how we collect, use, and store your information when you use our website.
           </p>
         </section>
@@ -38,14 +38,14 @@ export default function PrivacyPolicy() {
         {/* 2. Information we collect */}
         <section className={`${CARD} p-8 mb-6`}>
           <h2 className="text-xl font-semibold text-gray-900 mb-4">2. Information we collect</h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
+          <p className="text-gray-700 leading-relaxed max-w-prose mb-4">
             We collect only the minimum personal information necessary to provide our services.
           </p>
-          <p className="text-gray-700 leading-relaxed mb-3">Information you provide:</p>
-          <ul className="list-disc list-inside text-gray-700 space-y-1 mb-4">
+          <p className="text-gray-700 leading-relaxed max-w-prose mb-3">Information you provide:</p>
+          <ul className="list-disc pl-5 text-gray-700 space-y-1 max-w-prose mb-4">
             <li>email address - when you sign up to receive our weekly email digest.</li>
           </ul>
-          <p className="text-gray-700 leading-relaxed mt-4">
+          <p className="text-gray-700 leading-relaxed max-w-prose mt-4">
             We do not collect any other personal information.
           </p>
         </section>
@@ -53,13 +53,13 @@ export default function PrivacyPolicy() {
         {/* 3. How we use your information */}
         <section className={`${CARD} p-8 mb-6`}>
           <h2 className="text-xl font-semibold text-gray-900 mb-4">3. How we use your information</h2>
-          <p className="text-gray-700 leading-relaxed mb-3">We use your email address solely to:</p>
-          <ul className="list-disc list-inside text-gray-700 space-y-1 mb-4">
+          <p className="text-gray-700 leading-relaxed max-w-prose mb-3">We use your email address solely to:</p>
+          <ul className="list-disc pl-5 text-gray-700 space-y-1 max-w-prose mb-4">
             <li>send you the mergers.fyi weekly digest; and</li>
             <li>manage and maintain our email subscriber list.</li>
           </ul>
-          <p className="text-gray-700 leading-relaxed mb-3">We do not use your information for:</p>
-          <ul className="list-disc list-inside text-gray-700 space-y-1">
+          <p className="text-gray-700 leading-relaxed max-w-prose mb-3">We do not use your information for:</p>
+          <ul className="list-disc pl-5 text-gray-700 space-y-1 max-w-prose">
             <li>marketing unrelated products or services; or</li>
             <li>selling or renting your data to third parties</li>
           </ul>
@@ -68,11 +68,11 @@ export default function PrivacyPolicy() {
         {/* 4. Email delivery and third-party services */}
         <section className={`${CARD} p-8 mb-6`}>
           <h2 className="text-xl font-semibold text-gray-900 mb-4">4. Email delivery and third-party services</h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
+          <p className="text-gray-700 leading-relaxed max-w-prose mb-4">
             We use Resend to store email addresses and deliver our email digest.
           </p>
-          <p className="text-gray-700 leading-relaxed mb-3">This means:</p>
-          <ul className="list-disc list-inside text-gray-700 space-y-1 mb-4">
+          <p className="text-gray-700 leading-relaxed max-w-prose mb-3">This means:</p>
+          <ul className="list-disc pl-5 text-gray-700 space-y-1 max-w-prose mb-4">
             <li>your email address is securely stored by Resend on our behalf; and</li>
             <li>Resend processes your data only to send emails for us.</li>
           </ul>
@@ -81,10 +81,10 @@ export default function PrivacyPolicy() {
         {/* 5. Data storage and security */}
         <section className={`${CARD} p-8 mb-6`}>
           <h2 className="text-xl font-semibold text-gray-900 mb-4">5. Data storage and security</h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
+          <p className="text-gray-700 leading-relaxed max-w-prose mb-4">
             We take reasonable steps to protect your information from misuse, loss, or unauthorised access.
           </p>
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-gray-700 leading-relaxed max-w-prose">
             Your email address is stored securely through our email service provider (Resend), which implements
             its own security measures.
           </p>
@@ -93,11 +93,11 @@ export default function PrivacyPolicy() {
         {/* 6. Unsubscribing */}
         <section className={`${CARD} p-8 mb-6`}>
           <h2 className="text-xl font-semibold text-gray-900 mb-4">6. Unsubscribing</h2>
-          <p className="text-gray-700 leading-relaxed mb-3">You can unsubscribe at any time by:</p>
-          <ul className="list-disc list-inside text-gray-700 space-y-1 mb-4">
+          <p className="text-gray-700 leading-relaxed max-w-prose mb-3">You can unsubscribe at any time by:</p>
+          <ul className="list-disc pl-5 text-gray-700 space-y-1 max-w-prose mb-4">
             <li>Clicking the &#34;unsubscribe&#34; link in any email we send</li>
           </ul>
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-gray-700 leading-relaxed max-w-prose">
             Once you unsubscribe, your email address will be removed from our mailing list.
           </p>
         </section>
@@ -105,14 +105,14 @@ export default function PrivacyPolicy() {
         {/* 7. Cookies and analytics */}
         <section className={`${CARD} p-8 mb-6`}>
           <h2 className="text-xl font-semibold text-gray-900 mb-4">7. Cookies and analytics</h2>
-          <p className="text-gray-700 leading-relaxed mb-3">We do not use cookies to track individual users. You browser
+          <p className="text-gray-700 leading-relaxed max-w-prose mb-3">We do not use cookies to track individual users. You browser
             stores some limited information locally, ie:</p>
-          <ul className="list-disc list-inside text-gray-700 space-y-1 mb-4">
+          <ul className="list-disc pl-5 text-gray-700 space-y-1 max-w-prose mb-4">
             <li>the specific mergers you have chosen to follow;</li>
             <li>the list of mergers on the homepage that you have seen, so we can attach &lsquo;new&rsquo; tags; and</li>
             <li>whether you have dismissed feedback popups, so we can stop bothering you.</li>
           </ul>
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-gray-700 leading-relaxed max-w-prose">
             We do not otherwise collect or transmit your individual information. We monitor how often certain
             features of our website are used so we can understand where to focus our development efforts. This
             information is collected and stored in an aggregated manner that does not allow for any
@@ -126,7 +126,7 @@ export default function PrivacyPolicy() {
         {/* 8. Access and correction */}
         <section className={`${CARD} p-8 mb-6`}>
           <h2 className="text-xl font-semibold text-gray-900 mb-4">8. Access and correction</h2>
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-gray-700 leading-relaxed max-w-prose">
             If you would like to access, update, or delete your email address, you can contact us at{' '}
             <a
               href="mailto:help@mergers.fyi"
@@ -141,7 +141,7 @@ export default function PrivacyPolicy() {
         {/* 9. Changes to this policy */}
         <section className={`${CARD} p-8 mb-6`}>
           <h2 className="text-xl font-semibold text-gray-900 mb-4">9. Changes to this policy</h2>
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-gray-700 leading-relaxed max-w-prose">
             We may update this Privacy Policy from time to time. Any changes will be posted on this page
             with an updated effective date.
           </p>
@@ -150,7 +150,7 @@ export default function PrivacyPolicy() {
         {/* 10. Contact */}
         <section className={`${CARD} p-8`}>
           <h2 className="text-xl font-semibold text-gray-900 mb-4">10. Contact</h2>
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-gray-700 leading-relaxed max-w-prose">
             If you have any questions about this Privacy Policy, you can contact us at{' '}
             <a
               href="mailto:help@mergers.fyi"

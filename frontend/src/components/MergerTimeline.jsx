@@ -543,7 +543,7 @@ function MergerTimeline({ merger }) {
               the "Today" label above. */}
           {showExpectedLabel && (
             <span
-              className={`${aboveLine} text-[10px] font-semibold text-phase-1-dark uppercase tracking-wider leading-tight`}
+              className={`${aboveLine} text-2xs font-semibold text-phase-1-dark uppercase tracking-wider leading-tight`}
               style={expectedStyle}
             >
               Expected determination
@@ -554,7 +554,7 @@ function MergerTimeline({ merger }) {
               "Today" label. */}
           {showSoonLabel && (
             <span
-              className={`${aboveLine} text-[10px] font-semibold text-phase-1-dark uppercase tracking-wider leading-tight`}
+              className={`${aboveLine} text-2xs font-semibold text-phase-1-dark uppercase tracking-wider leading-tight`}
               style={soonLabelStyle}
             >
               Expected determination soon
@@ -674,12 +674,12 @@ function MergerTimeline({ merger }) {
                 <>
                   <span className={`block ${dateClass}`}>{formatDateMedium(effectiveDeterminationDate)}</span>
                   {durationStr && (
-                    <span className="block text-[11px] font-normal text-gray-500">{durationStr}</span>
+                    <span className="block text-2xs font-normal text-gray-500">{durationStr}</span>
                   )}
                 </>
               ) : (
                 remainingStr && (
-                  <span className="block text-[11px] font-normal text-gray-500">{remainingStr}</span>
+                  <span className="block text-2xs font-normal text-gray-500">{remainingStr}</span>
                 )
               )}
             </span>
@@ -691,7 +691,7 @@ function MergerTimeline({ merger }) {
           <span className={`${aboveLine} inset-x-0 text-left ${labelClass}`}>{endLabel}</span>
           <span className={`${belowLine} inset-x-0 text-left`}>
             <span className={`block ${dateClass}`}>{formatDateMedium(endStr)}</span>
-            {endNote && <span className={`block text-[11px] ${endNoteClass}`}>{endNote}</span>}
+            {endNote && <span className={`block text-2xs ${endNoteClass}`}>{endNote}</span>}
           </span>
         </div>
       </div>

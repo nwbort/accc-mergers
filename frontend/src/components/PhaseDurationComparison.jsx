@@ -18,7 +18,7 @@ function Bar({ widthPct, value, barClass, valueClass, caption, delta }) {
         </span>
       </div>
       <div className="flex items-center justify-between gap-2 mt-1">
-        <p className="text-[11px] text-gray-500 truncate min-w-0" title={typeof caption === 'string' ? caption : undefined}>{caption}</p>
+        <p className="text-2xs text-gray-500 truncate min-w-0" title={typeof caption === 'string' ? caption : undefined}>{caption}</p>
         {delta}
       </div>
     </>
@@ -31,13 +31,13 @@ function DeltaChip({ current, comparison }) {
   if (comparison == null) return null;
   const delta = current - comparison;
   if (delta === 0) {
-    return <span className="text-[11px] font-medium text-gray-500 shrink-0">Same</span>;
+    return <span className="text-2xs font-medium text-gray-500 shrink-0">Same</span>;
   }
   const longer = delta > 0;
   const pct = comparison > 0 ? Math.round((delta / comparison) * 100) : null;
   return (
     <span
-      className={`inline-flex items-center gap-1 text-[11px] font-semibold shrink-0 ${
+      className={`inline-flex items-center gap-1 text-2xs font-semibold shrink-0 ${
         longer ? 'text-amber-700' : 'text-emerald-700'
       }`}
     >
@@ -146,7 +146,7 @@ function PhaseDurationComparison({
         <h2 className={CARD_TITLE}>
           {title}
         </h2>
-        <span className="text-[11px] text-gray-500">business days</span>
+        <span className="text-2xs text-gray-500">business days</span>
       </div>
 
       <div className="grid sm:grid-cols-2 gap-x-8 gap-y-6">
