@@ -3287,3 +3287,17 @@ class TestExtensionsGenerate:
         assert s['phase_2_preceded_by_extension_pct'] == 100.0
         escalated = next(m for m in payload['matters'] if m['merger_id'] == 'MN-0005')
         assert escalated['escalated_to_phase_2'] is True
+
+
+def test_normalise_division_folds_variants():
+    from scripts.generate.static_data.outputs.analysis import _normalise_division
+
+    # "a section 19" (stray article) is still the s19 division, not a raw sentence.
+    assert _normalise_division(
+        'Determination made by a division of the Commission constituted by a '
+        'direction issued pursuant to a section 19 of the Act'
+    ) == 'A division of the Commission (s19 direction)'
+    # A published typo folds into the correct commissioner.
+    assert _normalise_division(
+        'Determination made by Commissioner Wiliams pursuant to a delegation under section 25(1) of the Act'
+    ) == 'Commissioner Williams'

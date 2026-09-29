@@ -67,6 +67,10 @@ _SYDNEY_TZ = ZoneInfo('Australia/Sydney')
 # ..." so the delegate's name can be canonicalised to "<title> <surname>",
 # collapsing variants that do/don't spell out a first name (e.g.
 # "Commissioner Philip Williams" vs "Commissioner Williams").
+# Typos the ACCC has published in a determination's attribution line, folded
+# into the correct spelling so one commissioner isn't split across two rows.
+_KNOWN_MISSPELLINGS = {'commissioner wiliams': 'Commissioner Williams'}
+
 _DELEGATE_PATTERN = re.compile(
     r'^(?:Determination|Decision) made by (?P<person>.+?) pursuant to a delegation\b',
     re.IGNORECASE,
@@ -78,7 +82,7 @@ _DELEGATE_PATTERN = re.compile(
 # trailing Act-reference wording (see module docstring).
 _DIVISION_PATTERN = re.compile(
     r'^(?:Determination|Decision) made by a division of the Commission '
-    r'constituted by a direction issued pursuant to section (?P<section>\d+)\b',
+    r'constituted by a direction issued pursuant to (?:a )?section (?P<section>\d+)\b',
     re.IGNORECASE,
 )
 
@@ -158,8 +162,10 @@ def _normalise_division(raw: str | None) -> str | None:
     if match:
         words = match.group('person').split()
         if len(words) >= 2:
-            return f'{words[0]} {words[-1]}'
-        return match.group('person')
+            label = f'{words[0]} {words[-1]}'
+        else:
+            label = match.group('person')
+        return _KNOWN_MISSPELLINGS.get(label.casefold(), label)
 
     match = _DIVISION_PATTERN.match(label)
     if match:
