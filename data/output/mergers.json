@@ -7226,7 +7226,7 @@
       "determination_publication_date": "2026-09-29T12:00:00Z",
       "accc_determination": "Approved",
       "accc_determination_raw": "ACCC determinationApproved",
-      "page_modified_datetime": "2026-09-29T13:52:14+10:00",
+      "page_modified_datetime": "2026-09-29T14:31:17+10:00",
       "consultation_response_due_date": "2026-09-14T12:00:00Z",
       "acquirers": [
         {
@@ -54891,6 +54891,15 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-09-29T12:00:00Z",
+          "title": "Phase 1 consultation",
+          "display_title": "Phase 1 consultation",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Xylem%20-%20Flow%20Controls%20-%20third-party%20questionnaire.docx",
+          "url_gh": "/mergers/MN-85054/Xylem - Flow Controls - third-party questionnaire.pdf",
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
@@ -54902,6 +54911,7 @@
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
+      "has_questionnaire": true,
       "similar_mergers": [
         {
           "merger_id": "WA-60032",
