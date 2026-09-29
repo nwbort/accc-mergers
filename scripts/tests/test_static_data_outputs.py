@@ -2064,105 +2064,52 @@ class TestByCommissionDivision:
         assert divisions[0]['division'] == 'Chair Cass-Gottlieb'
         assert divisions[0]['median_phase_1_business_days'] is None
 
-    def test_collapses_division_of_commission_wording_variants(self):
-        # A determination says "Determination made by ... of the Act"; a
-        # Phase 2 Notice says "Decision made by ... of the Competition and
-        # Consumer Act 2010 (Cth)" for the same kind of body. Both should
-        # collapse to one canonical bucket.
-        raw = [
-            {
-                'merger_id': 'MN-3001',
-                'merger_name': 'Tau acquires Upsilon',
-                'status': 'Determined',
-                'accc_determination': 'Approved',
-                'stage': 'Phase 1 - preliminary assessment',
-                'effective_notification_datetime': '2025-06-01T09:00:00Z',
-                'determination_publication_date': '2025-06-30T12:00:00Z',
-                'page_modified_datetime': '2025-06-30T12:30:00Z',
-                'anzsic_codes': [],
-                'acquirers': [], 'targets': [], 'other_parties': [],
-                'url': 'https://example.com/MN-3001',
-                'events': [{
-                    'title': 'Phase 1 - Determination',
-                    'date': '2025-06-30T12:00:00Z',
-                    'url': 'e7',
-                    'determination_commission_division': (
-                        'Determination made by a division of the Commission '
-                        'constituted by a direction issued pursuant to section 19 of the Act'
-                    ),
-                }],
-            },
-            {
-                'merger_id': 'MN-3002',
-                'merger_name': 'Phi acquires Chi',
-                'status': 'Assessment ceased',
-                'accc_determination': None,
-                'stage': 'Phase 2 - detailed assessment',
+    def test_phase_2_matters_are_excluded(self):
+        # The chart covers Phase 1 decisions only. A matter that reached
+        # Phase 2 (decided, ceased, or attributed only via its Phase 2 Notice)
+        # is left out of every bucket, including "Unknown".
+        def matter(mid, stage, status, determination, event):
+            return {
+                'merger_id': mid,
+                'merger_name': f'{mid} deal',
+                'status': status,
+                'accc_determination': determination,
+                'stage': stage,
                 'effective_notification_datetime': '2025-06-05T09:00:00Z',
-                'determination_publication_date': None,
-                'page_modified_datetime': '2025-07-01T09:30:00Z',
+                'determination_publication_date': '2025-07-30T12:00:00Z' if determination else None,
+                'page_modified_datetime': '2025-07-30T12:30:00Z',
                 'anzsic_codes': [],
                 'acquirers': [], 'targets': [], 'other_parties': [],
-                'url': 'https://example.com/MN-3002',
-                'events': [{
-                    'title': 'Phi - Chi - Phase 2 Notice',
-                    'date': '2025-07-01T09:00:00Z',
-                    'url': 'e8',
-                    'phase2_notice_matters_to_investigate': [],
-                    'phase2_notice_commission_division': (
-                        'Decision made by a division of the Commission constituted by a '
-                        'direction issued pursuant to section 19 of the Competition and '
-                        'Consumer Act 2010 (Cth)'
-                    ),
-                }],
-            },
+                'url': f'https://example.com/{mid}',
+                'events': [event],
+            }
+
+        s19 = (
+            'Determination made by a division of the Commission constituted by a '
+            'direction issued pursuant to a section 19 of the Act'
+        )
+        raw = [
+            matter('MN-3001', 'Phase 1 - preliminary assessment', 'Determined', 'Approved', {
+                'title': 'Phase 1 - Determination', 'date': '2025-07-30T12:00:00Z', 'url': 'e7',
+                'determination_commission_division': s19,
+            }),
+            matter('MN-3002', 'Phase 2 - detailed assessment', 'Assessment ceased', None, {
+                'title': 'Phi - Chi - Phase 2 Notice', 'date': '2025-07-01T09:00:00Z', 'url': 'e8',
+                'phase2_notice_matters_to_investigate': [],
+                'phase2_notice_commission_division': s19,
+            }),
+            matter('MN-3003', 'Phase 2 - detailed assessment', 'Determined', 'Approved', {
+                'title': 'Phase 2 - Determination', 'date': '2025-09-01T12:00:00Z', 'url': 'e10',
+                'determination_commission_division': (
+                    'Determination made by Commissioner Woodward pursuant to a '
+                    'delegation under section 25(1) of the Act'
+                ),
+            }),
         ]
         divisions = analysis.generate([enrich_merger(m) for m in raw])['by_commission_division']
-        assert len(divisions) == 1
-        assert divisions[0]['division'] == 'A division of the Commission (s19 direction)'
-        assert divisions[0]['count'] == 2
-
-    def test_final_determination_takes_precedence_over_phase2_notice(self):
-        # A matter referred to Phase 2 and later determined by a named
-        # delegate shouldn't have its bucket overridden by the earlier Phase
-        # 2 Notice's division event.
-        raw = [{
-            'merger_id': 'MN-3003',
-            'merger_name': 'Psi acquires Omega',
-            'status': 'Determined',
-            'accc_determination': 'Approved',
-            'stage': 'Phase 2 - detailed assessment',
-            'effective_notification_datetime': '2025-06-05T09:00:00Z',
-            'determination_publication_date': '2025-09-01T12:00:00Z',
-            'page_modified_datetime': '2025-09-01T12:30:00Z',
-            'anzsic_codes': [],
-            'acquirers': [], 'targets': [], 'other_parties': [],
-            'url': 'https://example.com/MN-3003',
-            'events': [
-                {
-                    'title': 'Psi - Omega - Phase 2 Notice',
-                    'date': '2025-07-01T09:00:00Z',
-                    'url': 'e9',
-                    'phase2_notice_matters_to_investigate': [],
-                    'phase2_notice_commission_division': (
-                        'Decision made by a division of the Commission constituted by a '
-                        'direction issued pursuant to section 19 of the Competition and '
-                        'Consumer Act 2010 (Cth)'
-                    ),
-                },
-                {
-                    'title': 'Phase 2 - Determination',
-                    'date': '2025-09-01T12:00:00Z',
-                    'url': 'e10',
-                    'determination_commission_division': (
-                        'Determination made by Commissioner Woodward pursuant to a '
-                        'delegation under section 25(1) of the Act'
-                    ),
-                },
-            ],
-        }]
-        divisions = analysis.generate([enrich_merger(m) for m in raw])['by_commission_division']
-        assert divisions[0]['division'] == 'Commissioner Woodward'
+        assert [(d['division'], d['count']) for d in divisions] == [
+            ('A division of the Commission (s19 direction)', 1),
+        ]
 
 
 # ---------------------------------------------------------------------------

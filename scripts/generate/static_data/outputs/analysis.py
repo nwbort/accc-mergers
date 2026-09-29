@@ -50,6 +50,7 @@ from scripts.constants.regime import is_voluntary_period_notification
 
 from .. import anzsic
 from ..business_days import calculate_business_days, calculate_calendar_days
+from ..enrichment import reached_phase_2
 from ..durations import collect_phase_1_durations, phase_1_end_date
 from ..filters import filter_notifications, filter_waivers, is_waiver
 
@@ -208,6 +209,9 @@ _PENDING_STATUSES = {merger_status.UNDER_ASSESSMENT, merger_status.ASSESSMENT_SU
 def by_commission_division(mergers: list) -> list[dict]:
     """Determination counts, outcome mix, and Phase 1 duration per commission division.
 
+    Covers Phase 1 decisions only (waivers included): matters that reached
+    Phase 2 are left out entirely.
+
     See the module docstring for the label normalisation rules. Divisions are
     sorted by determination count, descending. Mergers with no recoverable
     division are split into two buckets rather than one blanket "Unknown":
@@ -217,6 +221,10 @@ def by_commission_division(mergers: list) -> list[dict]:
     couldn't be identified (a data gap worth investigating, not an absence
     of data).
     """
+    # Phase 1 decisions only: a matter that went through Phase 2 was finally
+    # decided by a different body on a different timetable, and its only
+    # attribution may be the Phase 2 Notice rather than a determination.
+    mergers = [m for m in mergers if not reached_phase_2(m)]
     groups: dict[str, dict] = {}
     pending = []
     unknown = []

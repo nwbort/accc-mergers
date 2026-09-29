@@ -610,7 +610,7 @@ function Analysis() {
               <div className="px-6 py-5 border-b border-gray-100">
                 <h2 id="chart-decision-makers-title" className="text-base font-semibold text-gray-900">Who decides mergers</h2>
                 <p className="text-sm text-gray-500 mt-0.5">
-                  Determinations by decision-maker: a commissioner acting under delegation, or a division of the Commission constituted for the matter. Attribution is read from the determination PDF.
+                  Phase 1 decisions by decision-maker: a commissioner acting under delegation, or a division of the Commission constituted for the matter. Includes waivers; matters that went to Phase 2 are excluded. Attribution is read from the determination PDF.
                 </p>
               </div>
               <div className="p-6">
