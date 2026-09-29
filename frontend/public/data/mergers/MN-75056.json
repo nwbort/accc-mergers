@@ -66,6 +66,15 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-09-25T12:00:00Z",
+      "title": "Phase 1 consultation",
+      "display_title": "Phase 1 consultation",
+      "is_questionnaire_event": true,
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Visa-BioCatch%20-%20Third%20party%20questionnaire.docx",
+      "url_gh": "/mergers/MN-75056/Visa-BioCatch - Third party questionnaire.pdf",
+      "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
@@ -75,6 +84,7 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
+  "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-45024",
