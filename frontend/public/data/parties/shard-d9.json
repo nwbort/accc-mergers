@@ -160,6 +160,41 @@
       },
       "waiver_duration": null
     },
+    "high-tide-technologies-llc": {
+      "id": "high-tide-technologies-llc",
+      "canonical_name": "High Tide Technologies, LLC",
+      "members": [
+        {
+          "name": "High Tide Technologies, LLC",
+          "identifier": "Company number (Delaware): 5953795",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-85054",
+            "merger_name": "Xylem - Flow Controls",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-28T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "hotdoc-online-pty-ltd": {
       "id": "hotdoc-online-pty-ltd",
       "canonical_name": "Hotdoc Online Pty Ltd",

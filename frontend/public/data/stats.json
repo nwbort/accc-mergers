@@ -1,10 +1,10 @@
 {
-  "total_mergers": 264,
+  "total_mergers": 265,
   "total_waivers": 427,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 233,
-    "Under assessment": 26,
+    "Under assessment": 27,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -56,7 +56,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 147
+      "count": 148
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -64,7 +64,7 @@
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 73
+      "count": 74
     },
     {
       "name": "Software Publishing",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-85054",
+      "merger_name": "Xylem - Flow Controls",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-09-28T12:00:00Z",
+      "page_modified_datetime": "2026-09-29T11:16:35+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-85042",
       "merger_name": "Vets Central \u2013 Vital Vet Animal Hospital",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-09-10T12:00:00Z",
       "page_modified_datetime": "2026-09-11T11:25:28+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-65036",
-      "merger_name": "ENEOS \u2013 Chevron Australia Downstream",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-09-10T12:00:00Z",
-      "page_modified_datetime": "2026-09-11T10:55:39+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

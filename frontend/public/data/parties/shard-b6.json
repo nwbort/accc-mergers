@@ -387,6 +387,41 @@
         "median_business_days": 16,
         "completed_count": 1
       }
+    },
+    "xylem-water-solutions-u-s-a-inc": {
+      "id": "xylem-water-solutions-u-s-a-inc",
+      "canonical_name": "Xylem Water Solutions U.S.A., Inc.",
+      "members": [
+        {
+          "name": "Xylem Water Solutions U.S.A., Inc.",
+          "identifier": "Company number (Delaware): 4977487",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-85054",
+            "merger_name": "Xylem - Flow Controls",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-28T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
     }
   }
 }
