@@ -3,12 +3,12 @@
   "total_waivers": 427,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 233,
-    "Under assessment": 27,
+    "Assessment completed": 234,
+    "Under assessment": 26,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 225,
+    "Approved": 226,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 21
   },
   "clearance_rate": {
-    "cleared": 230,
+    "cleared": 231,
     "not_cleared": 3,
-    "total": 233,
+    "total": 234,
     "rate": 0.987
   },
   "phase_duration": {
-    "average_days": 29.76050420168067,
-    "median_days": 26.0,
-    "average_business_days": 20.201680672268907,
-    "median_business_days": 18.0,
+    "average_days": 29.740585774058577,
+    "median_days": 26,
+    "average_business_days": 20.188284518828453,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
         "count": 50,
-        "percentage": 21.0
+        "percentage": 20.9
       },
       "day20": {
-        "count": 174,
-        "percentage": 73.1
+        "count": 175,
+        "percentage": 73.2
       },
       "day30": {
-        "count": 221,
+        "count": 222,
         "percentage": 92.9
       }
     }
@@ -122,7 +122,7 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-09-24T12:00:00Z",
-      "page_modified_datetime": "2026-09-25T13:14:51+10:00",
+      "page_modified_datetime": "2026-09-29T13:48:33+10:00",
       "is_waiver": false,
       "is_refiled": false
     },
@@ -218,6 +218,17 @@
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "MN-01122",
+      "merger_name": "Flick \u2013 GC Pest Control",
+      "determination": "Approved",
+      "determination_date": "2026-09-29T12:00:00Z",
+      "page_modified_datetime": "2026-09-29T13:52:14+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
     {
       "merger_id": "WA-65037",
       "merger_name": "Coles \u2013 shopping centre in Albion Park, NSW",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-65005",
-      "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
-      "determination": "Not approved",
-      "determination_date": "2026-09-23T12:00:00Z",
-      "page_modified_datetime": "2026-09-24T15:48:32+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 2 - detailed assessment",
       "has_conditions": false
     }
   ]
