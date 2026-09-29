@@ -184,7 +184,7 @@ function IndustryDetail() {
         <div className={`${CARD} p-6 mb-6 card-accent`}>
           <div className="pt-1 flex items-start justify-between gap-4">
             <div>
-              <h1 className="text-2xl font-bold text-gray-900 tracking-tight">
+              <h1 className="type-title text-gray-900">
                 {industryName}
               </h1>
               <p className="text-sm text-gray-500 mt-1">

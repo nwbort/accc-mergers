@@ -16,6 +16,8 @@ export default {
       // back to Chart.js's own Helvetica default.
       fontFamily: {
         sans: ['Inter', 'Inter Fallback', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+        // Page titles only (h1). Body, UI and every figure stay in Inter.
+        serif: ['"Source Serif 4"', '"Source Serif 4 Fallback"', 'Georgia', 'Cambria', '"Times New Roman"', 'serif'],
         mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', 'monospace'],
       },
       // Below text-xs. Replaces the ad-hoc text-[10px]/text-[11px] values with

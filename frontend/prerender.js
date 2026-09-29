@@ -179,7 +179,7 @@ function breadcrumbHtml(trail, current) {
 function headerCard(title, subtitle, extra = '') {
   return (
     `<div class="${CARD} p-6 mb-6 card-accent">` +
-    `<h1 class="text-2xl font-bold text-gray-900 tracking-tight">${escapeHtml(title)}</h1>` +
+    `<h1 class="type-title text-gray-900">${escapeHtml(title)}</h1>` +
     (subtitle ? `<p class="text-sm text-gray-500 mt-1">${escapeHtml(subtitle)}</p>` : '') +
     extra +
     `</div>`

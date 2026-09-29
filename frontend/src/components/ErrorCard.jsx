@@ -65,7 +65,7 @@ function ErrorCard({
         <div className="w-16 h-16 mx-auto mb-5 rounded-2xl bg-gray-100 flex items-center justify-center">
           <Icon className="w-8 h-8 text-gray-500" aria-hidden="true" />
         </div>
-        <h1 className="text-2xl font-bold text-gray-900 mb-3 tracking-tight">{title}</h1>
+        <h1 className="type-title text-gray-900 mb-3">{title}</h1>
         <p className="text-gray-500 mb-6">{message}</p>
         {(primary || secondaryAction) && (
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">

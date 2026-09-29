@@ -308,7 +308,7 @@ describe('prerendered bodies are styled', () => {
   });
 
   it.each(Object.entries(bodies))('%s body styles its heading', (_name, body) => {
-    expect(body).toContain('<h1 class="text-2xl font-bold text-gray-900 tracking-tight">');
+    expect(body).toContain('<h1 class="type-title text-gray-900">');
   });
 
   it('keeps a zero-valued stat card rather than dropping it', () => {
