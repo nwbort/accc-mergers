@@ -3,12 +3,12 @@
   "total_waivers": 427,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 234,
-    "Under assessment": 26,
+    "Assessment completed": 235,
+    "Under assessment": 25,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 226,
+    "Approved": 227,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 21
   },
   "clearance_rate": {
-    "cleared": 231,
+    "cleared": 232,
     "not_cleared": 3,
-    "total": 234,
+    "total": 235,
     "rate": 0.987
   },
   "phase_duration": {
-    "average_days": 29.740585774058577,
-    "median_days": 26,
-    "average_business_days": 20.188284518828453,
-    "median_business_days": 18,
+    "average_days": 29.704166666666666,
+    "median_days": 26.0,
+    "average_business_days": 20.166666666666668,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
-        "count": 50,
-        "percentage": 20.9
+        "count": 51,
+        "percentage": 21.2
       },
       "day20": {
-        "count": 175,
-        "percentage": 73.2
+        "count": 176,
+        "percentage": 73.3
       },
       "day30": {
-        "count": 222,
+        "count": 223,
         "percentage": 92.9
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-01124",
+      "merger_name": "Prysmian - Atkore",
+      "determination": "Approved",
+      "determination_date": "2026-09-29T12:00:00Z",
+      "page_modified_datetime": "2026-09-29T14:52:24+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-01122",
       "merger_name": "Flick \u2013 GC Pest Control",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-24T12:00:00Z",
       "page_modified_datetime": "2026-09-24T16:44:03+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-70036",
-      "merger_name": "Australian Venue Co \u2013 assets of The Breakwater, Hillarys and Print Hall, Perth",
-      "determination": "Not approved",
-      "determination_date": "2026-09-24T12:00:00Z",
-      "page_modified_datetime": "2026-09-24T16:41:47+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

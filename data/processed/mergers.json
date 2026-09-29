@@ -4208,13 +4208,16 @@
   {
     "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/prysmian-atkore",
     "merger_name": "Prysmian - Atkore",
-    "status": "Under assessment",
+    "status": "Assessment completed",
     "merger_id": "MN-01124",
     "effective_notification_datetime": "2026-09-08T12:00:00Z",
     "original_notification_datetime": "2026-09-08T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-10-21T12:00:00Z",
-    "page_modified_datetime": "2026-09-09T14:24:25+10:00",
+    "determination_publication_date": "2026-09-29T12:00:00Z",
+    "accc_determination": "Approved",
+    "accc_determination_raw": "ACCC determinationApproved",
+    "page_modified_datetime": "2026-09-29T14:52:24+10:00",
     "consultation_response_due_date": "2026-09-16T12:00:00Z",
     "acquirers": [
       {
@@ -4274,6 +4277,17 @@
         "date": "2026-09-08T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
+      },
+      {
+        "date": "2026-09-29T12:00:00Z",
+        "title": "Prysmian - Atkore - Phase 1 determination",
+        "display_title": "Prysmian - Atkore - Phase 1 determination"
+      },
+      {
+        "date": "2026-09-29T12:00:00Z",
+        "title": "Phase 1 - initial assessment determination: Approved",
+        "display_title": "Phase 1 - initial assessment determination: Approved",
+        "is_determination_event": true
       }
     ],
     "is_waiver": false
