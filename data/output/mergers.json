@@ -49913,10 +49913,176 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 28,
-        "min_days": null,
+        "estimated_days": 14,
+        "min_days": 0,
         "max_days": 35,
-        "id_issued_estimated": "2026-08-27",
+        "id_issued_estimated": "2026-09-10",
+        "id_issued_before": "2026-09-24",
+        "id_issued_after": "2026-08-20",
+        "min_days_witness": "MN-75058",
+        "max_days_witness": "WA-75055",
+        "basis": "bracketed",
+        "method_version": 1
+      }
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/kinetic-tassielink",
+      "merger_name": "Kinetic - Tassielink",
+      "status": "Under assessment",
+      "merger_id": "MN-75058",
+      "effective_notification_datetime": "2026-09-29T12:00:00Z",
+      "original_notification_datetime": "2026-09-29T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-11-11T12:00:00Z",
+      "page_modified_datetime": "2026-09-30T16:33:38+10:00",
+      "consultation_response_due_date": "2026-10-07T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "KINETIC HOLDING COMPANY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "49 601 254 880",
+          "canonical": {
+            "id": "kinetic",
+            "name": "Kinetic"
+          },
+          "party_page": {
+            "id": "kinetic",
+            "name": "Kinetic"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Tassielink Group Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "643 785 611",
+          "party_page": {
+            "id": "tassielink-group-pty-ltd",
+            "name": "Tassielink Group Pty Ltd"
+          }
+        },
+        {
+          "name": "TASMANIAN TOURS & TRAVEL PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "43 080 290 393",
+          "party_page": {
+            "id": "tasmanian-tours-travel-pty-ltd",
+            "name": "Tasmanian Tours & Travel Pty. Ltd."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "TPG Inc.",
+          "identifier_type": null,
+          "identifier": "SEC  872063362",
+          "canonical": {
+            "id": "tpg-inc",
+            "name": "TPG Inc."
+          },
+          "party_page": {
+            "id": "tpg-inc",
+            "name": "TPG Inc."
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4621",
+          "name": "Interurban and Rural Bus Transport"
+        },
+        {
+          "code": "4622",
+          "name": "Urban Bus Transport (Including Tramway)"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "merger_description": "Kinetic Holding Company Pty Ltd (Kinetic) proposes to acquire 100% of the shares in Tassielink Group Pty Ltd and Tasmanian Tours & Travel Pty Ltd (together, Tassielink) pursuant to a Share Sale Agreement (the Acquisition).\n\nKinetic is a transportation company that operates bus services in Australia (including Tasmania) and overseas. In Australia, Kinetic is a national operator of public (general access), school and charter bus services (including under the Greyhound Resources and SkyBus brands).\n\nKinetic is ultimately controlled by funds managed and/or advised by affiliates of TPG Inc. (TPG). TPG is a global alternative asset management firm.\n\nTassielink is a family-owned bus operator based in Hobart, Tasmania. It operates general access and charter bus services.",
+      "events": [
+        {
+          "date": "2026-09-30T12:00:00Z",
+          "title": "Phase 1 consultation",
+          "display_title": "Phase 1 consultation",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/MN-75058%20-%20Kinetic%20-%20Tassielink%20-%20questionnaire_1.docx",
+          "url_gh": "/mergers/MN-75058/MN-75058 - Kinetic - Tassielink - questionnaire_1.pdf",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-09-29T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-35017",
+          "merger_name": "KINETIC - DYSONS BUS SERVICES",
+          "acquirers": [
+            "KINETIC HOLDING COMPANY PTY LTD"
+          ],
+          "targets": [
+            "L.C. DYSON'S BUS SERVICES PROPRIETARY LIMITED"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-25003",
+          "merger_name": "Delinea (TPG) - StrongDM",
+          "acquirers": [
+            "Delinea Inc."
+          ],
+          "targets": [
+            "StrongDM, Inc"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-40016",
+          "merger_name": "Creative Planning \u2013 MASECO",
+          "acquirers": [
+            "CP Britannia Bidco Limited",
+            "Creative Planning Holdco, LLC"
+          ],
+          "targets": [
+            "MASECO LLP"
+          ],
+          "accc_determination": "Approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 19,
+        "range_business_days": [
+          16,
+          27
+        ],
+        "basis": "questionnaire",
+        "question_bucket": "4-5",
+        "question_count": 5,
+        "sample_size": 28,
+        "as_of": "2026-09-29",
+        "estimated_at": "2026-09-30",
+        "method_version": 2
+      },
+      "pre_notification": {
+        "estimated_days": 19,
+        "min_days": null,
+        "max_days": 40,
+        "id_issued_estimated": "2026-09-10",
         "id_issued_before": null,
         "id_issued_after": "2026-08-20",
         "min_days_witness": null,

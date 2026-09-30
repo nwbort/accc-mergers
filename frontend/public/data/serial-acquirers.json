@@ -289,6 +289,21 @@
       "count": 2
     },
     {
+      "acquirer_name": "Kinetic",
+      "canonical_id": "kinetic",
+      "anzsic_code": "462",
+      "anzsic_name": "Road Passenger Transport",
+      "merger_ids": [
+        "MN-35017",
+        "MN-75058"
+      ],
+      "dates": [
+        "2026-06-30T12:00:00Z",
+        "2026-09-29T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
       "acquirer_name": "Vets Central Holdings Pty Ltd",
       "canonical_id": "vets-central-holdings-pty-ltd",
       "anzsic_code": "697",
@@ -754,5 +769,5 @@
       "count": 2
     }
   ],
-  "count": 47
+  "count": 48
 }
