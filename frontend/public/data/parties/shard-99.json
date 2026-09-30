@@ -84,6 +84,41 @@
       },
       "waiver_duration": null
     },
+    "goulburn-valley-equine-hospital-pty-ltd": {
+      "id": "goulburn-valley-equine-hospital-pty-ltd",
+      "canonical_name": "Goulburn Valley Equine Hospital Pty Ltd",
+      "members": [
+        {
+          "name": "GOULBURN VALLEY EQUINE HOSPITAL PTY LTD",
+          "identifier": "66 007 039 750",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-80045",
+            "merger_name": "Apiam - Goulburn Valley Equine Hospital",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-30T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "kanda-healthcare-pty-ltd": {
       "id": "kanda-healthcare-pty-ltd",
       "canonical_name": "Kanda Healthcare Pty Ltd",

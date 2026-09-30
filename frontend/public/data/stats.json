@@ -1,10 +1,10 @@
 {
-  "total_mergers": 266,
+  "total_mergers": 267,
   "total_waivers": 428,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 235,
-    "Under assessment": 26,
+    "Under assessment": 27,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-80045",
+      "merger_name": "Apiam - Goulburn Valley Equine Hospital",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-09-30T12:00:00Z",
+      "page_modified_datetime": "2026-09-30T13:04:54+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-25048",
       "merger_name": "Colas \u2013 Quarry Products Harlaxton",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-09-11T12:00:00Z",
       "page_modified_datetime": "2026-09-14T16:32:24+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-01121",
-      "merger_name": "Amplitude / OG Energy - Artisan Gas Field",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-09-11T12:00:00Z",
-      "page_modified_datetime": "2026-09-14T16:07:36+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

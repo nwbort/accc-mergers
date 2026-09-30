@@ -3066,6 +3066,20 @@
     "estimated_at": "2026-09-11",
     "method_version": 2
   },
+  "MN-80045": {
+    "expected_business_days": 19,
+    "range_business_days": [
+      16,
+      27
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 4,
+    "sample_size": 28,
+    "as_of": "2026-09-30",
+    "estimated_at": "2026-09-30",
+    "method_version": 2
+  },
   "MN-85002": {
     "expected_business_days": 16,
     "range_business_days": [

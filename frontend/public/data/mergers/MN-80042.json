@@ -134,15 +134,15 @@
     "method_version": 2
   },
   "pre_notification": {
-    "estimated_days": 10,
-    "min_days": null,
+    "estimated_days": 5,
+    "min_days": 0,
     "max_days": 17,
-    "id_issued_estimated": "2026-08-31",
-    "id_issued_before": null,
+    "id_issued_estimated": "2026-09-05",
+    "id_issued_before": "2026-09-10",
     "id_issued_after": "2026-08-24",
-    "min_days_witness": null,
+    "min_days_witness": "MN-80045",
     "max_days_witness": "WA-80041",
-    "basis": "upper-bound-only",
+    "basis": "bracketed",
     "method_version": 1
   }
 }
