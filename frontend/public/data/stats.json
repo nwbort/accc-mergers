@@ -1,6 +1,6 @@
 {
   "total_mergers": 269,
-  "total_waivers": 429,
+  "total_waivers": 430,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 235,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 408,
+    "Approved": 409,
     "Not approved": 21
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.177156177156178,
-    "median_days": 20,
-    "average_business_days": 13.794871794871796,
-    "median_business_days": 14
+    "average_days": 20.193023255813955,
+    "median_days": 20.0,
+    "average_business_days": 13.806976744186047,
+    "median_business_days": 14.0
   },
   "top_industries": [
     {
@@ -76,7 +76,7 @@
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 35
+      "count": 36
     },
     {
       "name": "Accommodation",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-25052",
+      "merger_name": "Australian Venue Co \u2013 assets of Hervey Bay Hotel & Resort, Pialba, QLD",
+      "determination": "Approved",
+      "determination_date": "2026-09-30T12:00:00Z",
+      "page_modified_datetime": "2026-09-30T16:56:20+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-90038",
       "merger_name": "Waymark Hotels Group \u2013 The Queensland Hotel, Goondiwindi, QLD",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-24T12:00:00Z",
       "page_modified_datetime": "2026-09-24T17:51:18+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-45026",
-      "merger_name": "The Disability Trust - LEAD Disability Services",
-      "determination": "Approved",
-      "determination_date": "2026-09-24T12:00:00Z",
-      "page_modified_datetime": "2026-09-24T16:49:56+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

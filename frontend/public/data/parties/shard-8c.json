@@ -92,6 +92,17 @@
       "mergers": {
         "acquirer": [
           {
+            "merger_id": "WA-25052",
+            "merger_name": "Australian Venue Co \u2013 assets of Hervey Bay Hotel & Resort, Pialba, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-03T12:00:00Z",
+            "determination_date": "2026-09-30T12:00:00Z"
+          },
+          {
             "merger_id": "WA-70036",
             "merger_name": "Australian Venue Co \u2013 assets of The Breakwater, Hillarys and Print Hall, Perth",
             "is_waiver": true,
@@ -238,10 +249,10 @@
         "target": [],
         "other": []
       },
-      "merger_count": 13,
+      "merger_count": 14,
       "phase_1_count": 3,
       "phase_2_count": 0,
-      "waiver_count": 10,
+      "waiver_count": 11,
       "active_count": 0,
       "phase_duration": {
         "average_days": 24.0,
@@ -251,11 +262,11 @@
         "completed_count": 3
       },
       "waiver_duration": {
-        "average_days": 22.1,
-        "median_days": 21.5,
-        "average_business_days": 15.2,
-        "median_business_days": 15.0,
-        "completed_count": 10
+        "average_days": 22.545454545454547,
+        "median_days": 24,
+        "average_business_days": 15.545454545454545,
+        "median_business_days": 18,
+        "completed_count": 11
       }
     },
     "bureau-veritas-commodities-trade-inc": {
