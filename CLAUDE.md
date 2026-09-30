@@ -357,7 +357,9 @@ data/
 │                         #   a method migration recomputes history without hindsight. The
 │                         #   earliest matters have too little history and get no estimate
 │                         #   (invisible on the site — the forecast renders only while a
-│                         #   matter is open). Attached to each notification merger as
+│                         #   matter is open). A matter frozen before its questionnaire was
+│                         #   published (no question_count) is recomputed once the
+│                         #   questionnaire appears, still forward-chained to the same as_of. Attached to each notification merger as
 │                         #   phase_1_estimate (see mergers/{id}.json). Backend-only.
 │   processed/atproto_records.json # Digest of each fyi.mergers.matter record as last
 │                         #   published, so a run rewrites only what moved. Written by

@@ -260,6 +260,18 @@ def save_store(store: dict) -> None:
         json.dump(payload, f, indent=2)
 
 
+def _questionnaire_arrived(estimate: dict, count: int | None) -> bool:
+    """Whether a frozen estimate was made without a questionnaire that now exists.
+
+    Occasionally a matter reaches the register before its questionnaire, so the
+    estimate froze on the whole-of-market median with no question count. Once
+    the questionnaire lands the bucketed estimate is the better one, and the
+    recompute stays honest because it is still forward-chained to the same
+    filing date (``as_of``); only ``estimated_at`` moves.
+    """
+    return count is not None and estimate.get("question_count") is None
+
+
 def attach_phase_1_estimates(
     enriched: list,
     questionnaire_data: dict | None = None,
@@ -272,8 +284,9 @@ def attach_phase_1_estimates(
     computed from the review history that had concluded by their filing date,
     frozen into the store. Mergers already in the store keep their frozen value
     so it reflects the filing-time prediction rather than drifting as data
-    grows — unless that value predates ``METHOD_VERSION``, in which case it is
-    recomputed under the current method. The recompute is safe precisely
+    grows — unless that value predates ``METHOD_VERSION`` (recomputed under the
+    current method) or was frozen before the matter's questionnaire had been
+    published (recomputed once it has, see :func:`_questionnaire_arrived`). The recompute is safe precisely
     because :func:`compute_estimate` is forward-chained: it rebuilds what the
     current method *would* have said at filing, not what hindsight knows.
 
@@ -295,7 +308,11 @@ def attach_phase_1_estimates(
         if not merger_id:
             continue
         estimate = store.get(merger_id)
-        if estimate is None or estimate.get("method_version") != METHOD_VERSION:
+        if (
+            estimate is None
+            or estimate.get("method_version") != METHOD_VERSION
+            or _questionnaire_arrived(estimate, question_counts.get(merger_id))
+        ):
             estimate = compute_estimate(merger, pool, estimated_at, question_counts)
             if estimate is None:
                 # Waiver, undated, or filed before there was history to learn
