@@ -11,7 +11,7 @@ function DetailStatGrid({ statCards }) {
       {statCards.map(({ label, value, subtitle }) => (
         <div key={label} className={`${CARD} p-5`}>
           <p className={SECTION_HEADING}>{label}</p>
-          <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight tabular-nums">
+          <p className="font-serif text-3xl font-semibold text-gray-900 mt-1.5 tracking-tight tabular-nums">
             {value}
           </p>
           {subtitle && (

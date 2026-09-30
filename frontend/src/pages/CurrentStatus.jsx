@@ -55,7 +55,7 @@ function Headline({ label, value, delta, footnote }) {
       ) : (
         <>
           <div className="flex items-baseline gap-2 mt-2 flex-wrap">
-            <p className={`text-5xl font-bold tracking-tight leading-none ${tone}`}>
+            <p className={`font-serif text-5xl font-semibold tracking-tight leading-none ${tone}`}>
               {formatMedian(value)}
             </p>
             <p className="text-sm text-gray-500">business days</p>

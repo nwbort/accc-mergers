@@ -69,7 +69,14 @@ body {
    one-word last line. Both are progressive enhancement: unsupported browsers
    just wrap as before. */
 h1, h2, h3, h4 {
+  font-family: theme('fontFamily.serif');
   text-wrap: balance;
+}
+
+/* Small-caps style labels are UI chrome, not editorial headings: keep them in
+   the sans even when they're marked up as h2/h3. */
+:is(h1, h2, h3, h4):where(.uppercase, .font-sans) {
+  font-family: theme('fontFamily.sans');
 }
 
 p, li, dd {

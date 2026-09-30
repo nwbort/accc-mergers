@@ -55,7 +55,7 @@ function PromoCard({ campaign, to, icon: Icon, title, description }) {
           </div>
         )}
         <div className="flex-1 min-w-0">
-          <h2 className="text-base font-semibold text-white">{title}</h2>
+          <h2 className="font-sans text-base font-semibold text-white">{title}</h2>
           {description && <p className="text-sm text-white/80 mt-0.5">{description}</p>}
         </div>
       </Link>

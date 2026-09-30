@@ -48,7 +48,7 @@ function FeedbackPopup() {
       className="fixed bottom-4 right-4 z-50 w-72 rounded-2xl bg-white shadow-elevated border border-gray-200 overflow-hidden animate-slide-up"
     >
       <div className="flex items-center justify-between px-4 py-3 bg-gray-50 border-b border-gray-100">
-        <h3 className="text-sm font-semibold text-gray-800">Got feedback?</h3>
+        <h3 className="font-sans text-sm font-semibold text-gray-800">Got feedback?</h3>
         <button
           onClick={dismiss}
           aria-label="Dismiss"

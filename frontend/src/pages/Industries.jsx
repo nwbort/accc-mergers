@@ -140,7 +140,7 @@ function Industries() {
             { label: 'avg / sector', value: industries.length > 0 ? (sumOfIndustryCounts / industries.length).toFixed(1) : 0 },
           ].map(({ label, value }) => (
             <div key={label}>
-              <div className="text-2xl font-bold tracking-tight text-gray-900 tabular-nums">{value}</div>
+              <div className="font-serif text-3xl font-semibold tracking-tight text-gray-900 tabular-nums">{value}</div>
               <div className="text-xs text-gray-500">{label}</div>
             </div>
           ))}

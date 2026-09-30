@@ -77,7 +77,7 @@ function Parties() {
           </div>
           <div className="flex gap-6 shrink-0">
             <div>
-              <div className="text-2xl font-bold tracking-tight text-gray-900 tabular-nums">{totalParties}</div>
+              <div className="font-serif text-3xl font-semibold tracking-tight text-gray-900 tabular-nums">{totalParties}</div>
               <div className="text-xs text-gray-500">parties</div>
             </div>
           </div>

@@ -183,7 +183,7 @@ function Navbar({ onOpenSearch }) {
             aria-hidden="true"
             className="absolute top-0 left-0 invisible pointer-events-none flex items-center h-16 whitespace-nowrap"
           >
-            <span className="text-lg font-bold tracking-tight">australian merger tracker</span>
+            <span className="font-serif text-xl font-semibold tracking-normal">australian merger tracker</span>
             <div className="ml-10 flex space-x-1">
               {navLinks.map(({ label }) => (
                 <span key={label} className="px-3 py-2 text-sm font-medium">{label}</span>
@@ -201,7 +201,7 @@ function Navbar({ onOpenSearch }) {
             aria-hidden="true"
             className="absolute top-0 left-0 invisible pointer-events-none flex items-center h-16 whitespace-nowrap"
           >
-            <span className="text-lg font-bold tracking-tight">australian merger tracker</span>
+            <span className="font-serif text-xl font-semibold tracking-normal">australian merger tracker</span>
             <div className="ml-10 flex space-x-1">
               <span className="px-3 py-2 text-sm font-medium">Dashboard</span>
               <span className="px-3 py-2 text-sm font-medium">Mergers</span>
@@ -219,7 +219,7 @@ function Navbar({ onOpenSearch }) {
             aria-hidden="true"
             className="absolute top-0 left-0 invisible pointer-events-none flex items-center h-16 whitespace-nowrap"
           >
-            <span className="text-lg font-bold tracking-tight">australian merger tracker</span>
+            <span className="font-serif text-xl font-semibold tracking-normal">australian merger tracker</span>
             <div className="ml-4 flex items-center gap-1">
               <div className="w-9 h-9" />
               <div className="w-9 h-9" />
@@ -230,7 +230,7 @@ function Navbar({ onOpenSearch }) {
           {/* Left: brand + nav links */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-2.5 group">
-              <span className="text-lg font-bold text-primary tracking-tight">
+              <span className="font-serif text-xl font-semibold text-primary tracking-normal">
                 australian merger tracker
               </span>
             </Link>

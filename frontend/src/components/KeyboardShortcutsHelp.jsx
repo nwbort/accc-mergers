@@ -96,7 +96,7 @@ export default function KeyboardShortcutsHelp({ isOpen, onClose }) {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between mb-5">
-          <h2 className="text-lg font-semibold text-gray-900">Keyboard shortcuts</h2>
+          <h2 className="font-sans text-lg font-semibold text-gray-900">Keyboard shortcuts</h2>
           <button
             onClick={onClose}
             className="p-1 text-gray-500 hover:text-gray-700 transition-colors rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"

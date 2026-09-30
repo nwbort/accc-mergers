@@ -121,7 +121,7 @@ function statGrid(pairs) {
       ([label, value]) =>
         `<div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-card">` +
         `<p class="${SECTION_HEADING}">${escapeHtml(label)}</p>` +
-        `<p class="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight tabular-nums">${escapeHtml(value)}</p>` +
+        `<p class="font-serif text-3xl font-semibold text-gray-900 mt-1.5 tracking-tight tabular-nums">${escapeHtml(value)}</p>` +
         `</div>`,
     )
     .join('');
@@ -196,7 +196,7 @@ function shell(inner) {
     `<div class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">` +
     `<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">` +
     `<div class="flex items-center h-16">` +
-    `<a href="/" class="text-lg font-bold tracking-tight text-gray-900">australian merger tracker</a>` +
+    `<a href="/" class="font-serif text-xl font-semibold tracking-normal text-gray-900">australian merger tracker</a>` +
     `</div></div></div>` +
     `<main id="main-content" class="flex-grow pt-16">` +
     `<div class="${PAGE_WRAP}">${inner}</div>` +

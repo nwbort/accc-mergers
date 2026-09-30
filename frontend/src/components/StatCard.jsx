@@ -41,7 +41,7 @@ function StatCard({ title, value, subtitle, icon, href, reserveTitleLines = true
                 {title}
               </dt>
               <dd>
-                <div className="text-xl font-bold text-gray-900 tracking-tight tabular-nums">
+                <div className="font-serif text-2xl font-semibold text-gray-900 tracking-tight tabular-nums">
                   {value}
                 </div>
               </dd>
