@@ -48841,6 +48841,8 @@
           "date": "2026-09-30T12:00:00Z",
           "title": "Questionnaire",
           "display_title": "Questionnaire",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Coles%20-%20supermarket%20site%20in%20Angle%20Vale%2C%20SA%20-%20Questionnaire.docx",
+          "url_gh": "/mergers/MN-75042/Coles - supermarket site in Angle Vale, SA - Questionnaire.pdf",
           "phase": null
         },
         {
@@ -48859,6 +48861,7 @@
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
+      "has_questionnaire": true,
       "similar_mergers": [
         {
           "merger_id": "MN-01068",
@@ -48895,15 +48898,15 @@
         }
       ],
       "phase_1_estimate": {
-        "expected_business_days": 18,
+        "expected_business_days": 17,
         "range_business_days": [
-          16,
-          21
+          15,
+          19
         ],
-        "basis": "global",
-        "question_bucket": null,
-        "question_count": null,
-        "sample_size": 240,
+        "basis": "questionnaire",
+        "question_bucket": "3 or fewer",
+        "question_count": 3,
+        "sample_size": 170,
         "as_of": "2026-09-30",
         "estimated_at": "2026-09-30",
         "method_version": 2
@@ -129593,6 +129596,226 @@
           "targets": [
             "Central Hospitality Services Pty Ltd",
             "ATHENA HOSPITALITY GROUP PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/waymark-hotels-group-%E2%80%93-the-queensland-hotel-goondiwindi-qld",
+      "merger_name": "Waymark Hotels Group \u2013 The Queensland Hotel, Goondiwindi, QLD",
+      "status": "Assessment completed",
+      "merger_id": "WA-90038",
+      "effective_notification_datetime": "2026-09-14T12:00:00Z",
+      "original_notification_datetime": "2026-09-14T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-09-30T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-09-30T16:55:13+10:00",
+      "acquirers": [
+        {
+          "name": "Waymark Hotels Properties No 45 Pty Ltd ATF the Goondiwindi Property Trust",
+          "identifier_type": "ACN",
+          "identifier": "698 797 741",
+          "party_page": {
+            "id": "waymark-hotels-properties-no-45-pty-ltd-atf-the-goondiwindi-property-trust",
+            "name": "Waymark Hotels Properties No 45 Pty Ltd ATF the Goondiwindi Property Trust"
+          }
+        },
+        {
+          "name": "QL Hotel Op Co Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "65 698 860 892",
+          "party_page": {
+            "id": "ql-hotel-op-co-pty-ltd",
+            "name": "QL Hotel Op Co Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Carter & Co Hotel Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "27 643 268 704",
+          "party_page": {
+            "id": "carter-co-hotel-pty-ltd",
+            "name": "Carter & Co Hotel Pty Ltd"
+          }
+        },
+        {
+          "name": "Carter & Co Assets Pty Ltd ATF Carter & Co Unit Trust",
+          "identifier_type": "ABN",
+          "identifier": "89 467 877 652",
+          "party_page": {
+            "id": "carter-co-assets-pty-ltd-atf-carter-co-unit-trust",
+            "name": "Carter & Co Assets Pty Ltd ATF Carter & Co Unit Trust"
+          }
+        },
+        {
+          "name": "Carter & Co Motel Pty Ltd ATF Carter & Co Motel Unit Trust",
+          "identifier_type": "ACN",
+          "identifier": "684 303 142",
+          "party_page": {
+            "id": "carter-co-motel-pty-ltd-atf-carter-co-motel-unit-trust",
+            "name": "Carter & Co Motel Pty Ltd ATF Carter & Co Motel Unit Trust"
+          }
+        },
+        {
+          "name": "Carter & Co Quarters Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "49 673 127 449",
+          "party_page": {
+            "id": "carter-co-quarters-pty-ltd",
+            "name": "Carter & Co Quarters Pty Ltd"
+          }
+        },
+        {
+          "name": "Mendes Superannuation Pty Ltd ATF Mendes Family Super Fund",
+          "identifier_type": "ACN",
+          "identifier": "645 394 565",
+          "party_page": {
+            "id": "mendes-superannuation-pty-ltd-atf-mendes-family-super-fund",
+            "name": "Mendes Superannuation Pty Ltd ATF Mendes Family Super Fund"
+          }
+        },
+        {
+          "name": "J & C Carter Super Pty Ltd ATF Jeff Carter Family Super Fund",
+          "identifier_type": "ABN",
+          "identifier": "24 193 001 009",
+          "party_page": {
+            "id": "j-c-carter-super-pty-ltd-atf-jeff-carter-family-super-fund",
+            "name": "J & C Carter Super Pty Ltd ATF Jeff Carter Family Super Fund"
+          }
+        },
+        {
+          "name": "AJ & VM Carter Super Pty Ltd ATF AJ & VM Carter Super Fund",
+          "identifier_type": "ABN",
+          "identifier": "14 765 425 766",
+          "party_page": {
+            "id": "aj-vm-carter-super-pty-ltd-atf-aj-vm-carter-super-fund",
+            "name": "AJ & VM Carter Super Pty Ltd ATF AJ & VM Carter Super Fund"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Waymark Hotel Group Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "92 621 426 999",
+          "party_page": {
+            "id": "waymark-hotel-group-pty-ltd",
+            "name": "Waymark Hotel Group Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4123",
+          "name": "Liquor Retailing"
+        },
+        {
+          "code": "4400",
+          "name": "Accommodation"
+        },
+        {
+          "code": "4520",
+          "name": "Pubs, Taverns and Bars"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        }
+      ],
+      "merger_description": "QL Hotel Op Co Pty Ltd and Waymark Hotels Properties No 45 Pty Ltd, which are part of the Waymark Hotels Group, propose to acquire the land and business of The Queensland Hotel in Goondiwindi, Queensland and the land comprising the nearby motel and residential premises (the **Acquisition**). The Waymark Hotels Group owns and operates hotels (pubs) that provide hospitality services (food and drink, including alcohol), gaming machines, accommodation services, and takeaway liquor retailing (bottle shops). It currently operates pubs and bottle shops in regional Qld and the NT.\n\nThe Queensland Hotel is a commercial hotel business located at 134 Marshall Street, Goondiwindi, Qld, which provides hospitality and accommodation services, and has a drive-through bottle shop for the retail service of alcohol. In addition to the accommodation onsite at The Queensland Hotel, there are further motel accommodation facilities at 67 and 71 Bowen Street, Goondiwindi and a residential premises at 73 Bowen\u00a0Street, Goondiwindi which are on adjoining and adjacent blocks, and which form part of the Acquisition.",
+      "events": [
+        {
+          "date": "2026-09-30T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Waymark%20Hotels%20Group%20%E2%80%93%20The%20Queensland%20Hotel%2C%20Goondiwindi%2C%20QLD%20%28WA-90038%29%20-%20Notification%20waiver%20determination%20-%2030%20September%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "QL Hotel Op Co Pty Ltd and Waymark Hotels Properties No 45 Pty\nLtd as trustee for the Goondiwindi Property Trust (the Acquirers)\napplied for a notification waiver in respect of their proposed\nacquisition of the land and business of the Queensland Hotel in\nGoondiwindi, Queensland and the land comprising the nearby motel\nand residential premises on adjoining and adjacent blocks (the\nQueensland Hotel), as described in the transaction documents\nprovided as part of the application (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "30 September 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The Acquirers are part of the Waymark Hotels Group which owns\nand operates hotels (pubs) that provide food, drink (including\nalcohol), gaming, accommodation services, and takeaway liquor\nretailing (bottle shops). The Waymark Hotels Group currently\noperates pubs and bottle shops in regional Qld and the NT. It is part\nof the Vinta Group, a private real estate group.\nThe target, the Queensland Hotel, is a commercial hotel business in\nGoondiwindi, Queensland, which offers hospitality and\naccommodation services and has a drive-through bottle shop for the\nretail service of alcohol. In addition to the accommodation offered\nonsite at the Queensland Hotel, the target has further motel\naccommodation facilities and a residential premises on adjoining\nand adjacent blocks."
+            },
+            {
+              "item": "Explanation for\ndetermination\n\u2022",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to material competition\nconcerns given there is no horizontal overlap between the Waymark\nHotels Group and the Queensland Hotel in the supply of on-premises\nand takeaway packaged liquor, dining, gaming and accommodation\nservices in the area surrounding the Queensland Hotel.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met."
+            },
+            {
+              "item": "\u2022\n\u2022",
+              "details": "Given that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-90038/Waymark Hotels Group \u2013 The Queensland Hotel, Goondiwindi, QLD (WA-90038) - Notification waiver determination - 30 September 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-09-14T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-15035",
+          "merger_name": "Waymark Hotels Group \u2013 Howard Springs Tavern, Howard Springs, NT",
+          "acquirers": [
+            "Howard Springs Op Co Pty Ltd",
+            "Waymark Hotels Properties No 43 Pty Ltd (ATF Howard Springs Property Trust)"
+          ],
+          "targets": [
+            "Majestic Logistics Pty Limited",
+            "Majestic Ventures Pty Limited ATF Elsdon Family Trust"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-40040",
+          "merger_name": "Waymark Hotels Group \u2013 Criterion Hotel Motel, Rockhampton, QLD",
+          "acquirers": [
+            "Criterion Rocky Op Co Pty Ltd",
+            "Waymark Hotels Properties No 46 Pty Ltd as trustee for Criterion Rockhampton Property Trust"
+          ],
+          "targets": [
+            "Turnbull Hotels (Qld) Pty Ltd as trustee for Turnbull Family Trust",
+            "Turnbull Hotels Enterprises Pty Ltd as trustee for Turnbull Hotels Investment Trust"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-70010",
+          "merger_name": "Waymark Hotels Group \u2013 Warrego Hotel Motel Cunnamulla, Queensland",
+          "acquirers": [
+            "Waymark Hotels Properties No 42 Pty Ltd",
+            "WARREGO OP CO PTY LTD"
+          ],
+          "targets": [
+            "G.A.A. Pty Ltd"
           ],
           "accc_determination": "Approved"
         }

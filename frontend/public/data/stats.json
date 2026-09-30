@@ -1,6 +1,6 @@
 {
   "total_mergers": 269,
-  "total_waivers": 428,
+  "total_waivers": 429,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 235,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 407,
+    "Approved": 408,
     "Not approved": 21
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.186915887850468,
-    "median_days": 20.0,
-    "average_business_days": 13.799065420560748,
-    "median_business_days": 14.0
+    "average_days": 20.177156177156178,
+    "median_days": 20,
+    "average_business_days": 13.794871794871796,
+    "median_business_days": 14
   },
   "top_industries": [
     {
@@ -68,7 +68,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 41
+      "count": 42
     },
     {
       "name": "Software Publishing",
@@ -76,14 +76,14 @@
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 34
-    },
-    {
-      "name": "Engineering Design and Engineering Consulting Services",
-      "count": 23
+      "count": 35
     },
     {
       "name": "Accommodation",
+      "count": 24
+    },
+    {
+      "name": "Engineering Design and Engineering Consulting Services",
       "count": 23
     },
     {
@@ -92,7 +92,7 @@
     },
     {
       "name": "Liquor Retailing",
-      "count": 20
+      "count": 21
     }
   ],
   "recent_mergers": [
@@ -207,17 +207,28 @@
       "is_refiled": false
     },
     {
-      "merger_id": "MN-55037",
-      "merger_name": "Covetrus \u2014 MWI",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "merger_id": "WA-90038",
+      "merger_name": "Waymark Hotels Group \u2013 The Queensland Hotel, Goondiwindi, QLD",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "effective_notification_datetime": "2026-09-14T12:00:00Z",
-      "page_modified_datetime": "2026-09-15T12:11:03+10:00",
-      "is_waiver": false,
+      "page_modified_datetime": "2026-09-30T16:55:13+10:00",
+      "is_waiver": true,
       "is_refiled": false
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "WA-90038",
+      "merger_name": "Waymark Hotels Group \u2013 The Queensland Hotel, Goondiwindi, QLD",
+      "determination": "Approved",
+      "determination_date": "2026-09-30T12:00:00Z",
+      "page_modified_datetime": "2026-09-30T16:55:13+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
     {
       "merger_id": "WA-85055",
       "merger_name": "One Equity Partners \u2013 Myriad360",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-24T12:00:00Z",
       "page_modified_datetime": "2026-09-24T16:49:56+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-30040",
-      "merger_name": "Jaybro \u2013 Fastway Civil Supplies",
-      "determination": "Approved",
-      "determination_date": "2026-09-24T12:00:00Z",
-      "page_modified_datetime": "2026-09-24T16:46:14+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

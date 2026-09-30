@@ -286,6 +286,47 @@
         "completed_count": 1
       }
     },
+    "j-c-carter-super-pty-ltd-atf-jeff-carter-family-super-fund": {
+      "id": "j-c-carter-super-pty-ltd-atf-jeff-carter-family-super-fund",
+      "canonical_name": "J & C Carter Super Pty Ltd ATF Jeff Carter Family Super Fund",
+      "members": [
+        {
+          "name": "J & C Carter Super Pty Ltd ATF Jeff Carter Family Super Fund",
+          "identifier": "24 193 001 009",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-90038",
+            "merger_name": "Waymark Hotels Group \u2013 The Queensland Hotel, Goondiwindi, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-14T12:00:00Z",
+            "determination_date": "2026-09-30T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
     "kelonia-therapeutics-inc": {
       "id": "kelonia-therapeutics-inc",
       "canonical_name": "Kelonia Therapeutics, Inc.",

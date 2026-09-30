@@ -2,6 +2,47 @@
   "shard": 53,
   "shard_count": 256,
   "parties": {
+    "aj-vm-carter-super-pty-ltd-atf-aj-vm-carter-super-fund": {
+      "id": "aj-vm-carter-super-pty-ltd-atf-aj-vm-carter-super-fund",
+      "canonical_name": "AJ & VM Carter Super Pty Ltd ATF AJ & VM Carter Super Fund",
+      "members": [
+        {
+          "name": "AJ & VM Carter Super Pty Ltd ATF AJ & VM Carter Super Fund",
+          "identifier": "14 765 425 766",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-90038",
+            "merger_name": "Waymark Hotels Group \u2013 The Queensland Hotel, Goondiwindi, QLD",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-14T12:00:00Z",
+            "determination_date": "2026-09-30T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 16.0,
+        "median_days": 16,
+        "average_business_days": 12.0,
+        "median_business_days": 12,
+        "completed_count": 1
+      }
+    },
     "aub-group": {
       "id": "aub-group",
       "canonical_name": "AUB Group",
