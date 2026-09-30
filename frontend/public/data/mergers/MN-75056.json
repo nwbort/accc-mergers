@@ -122,17 +122,17 @@
     }
   ],
   "phase_1_estimate": {
-    "expected_business_days": 18,
+    "expected_business_days": 17,
     "range_business_days": [
-      16,
-      21
+      15,
+      19
     ],
-    "basis": "global",
-    "question_bucket": null,
-    "question_count": null,
-    "sample_size": 238,
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 168,
     "as_of": "2026-09-24",
-    "estimated_at": "2026-09-25",
+    "estimated_at": "2026-09-30",
     "method_version": 2
   },
   "pre_notification": {
