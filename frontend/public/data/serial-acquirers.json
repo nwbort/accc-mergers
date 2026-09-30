@@ -12,7 +12,8 @@
         "MN-25029",
         "MN-70022",
         "MN-05030",
-        "MN-05046"
+        "MN-05046",
+        "MN-75042"
       ],
       "dates": [
         "2025-11-27T12:00:00Z",
@@ -21,9 +22,10 @@
         "2026-06-09T12:00:00Z",
         "2026-06-23T12:00:00Z",
         "2026-07-24T12:00:00Z",
-        "2026-08-19T12:00:00Z"
+        "2026-08-19T12:00:00Z",
+        "2026-09-30T12:00:00Z"
       ],
-      "count": 7
+      "count": 8
     },
     {
       "acquirer_name": "Eli Lilly",
@@ -68,6 +70,25 @@
       "count": 5
     },
     {
+      "acquirer_name": "Coles Group",
+      "canonical_id": "coles",
+      "anzsic_code": "671",
+      "anzsic_name": "Property Operators",
+      "merger_ids": [
+        "MN-01068",
+        "MN-01090",
+        "MN-05046",
+        "MN-75042"
+      ],
+      "dates": [
+        "2025-11-27T12:00:00Z",
+        "2026-03-12T12:00:00Z",
+        "2026-08-19T12:00:00Z",
+        "2026-09-30T12:00:00Z"
+      ],
+      "count": 4
+    },
+    {
       "acquirer_name": "Opal HealthCare",
       "canonical_id": "opal-healthcare",
       "anzsic_code": "860",
@@ -89,17 +110,34 @@
     {
       "acquirer_name": "Coles Group",
       "canonical_id": "coles",
-      "anzsic_code": "671",
-      "anzsic_name": "Property Operators",
+      "anzsic_code": "412",
+      "anzsic_name": "Specialised Food Retailing",
       "merger_ids": [
         "MN-01068",
-        "MN-01090",
-        "MN-05046"
+        "MN-05046",
+        "MN-75042"
       ],
       "dates": [
         "2025-11-27T12:00:00Z",
-        "2026-03-12T12:00:00Z",
-        "2026-08-19T12:00:00Z"
+        "2026-08-19T12:00:00Z",
+        "2026-09-30T12:00:00Z"
+      ],
+      "count": 3
+    },
+    {
+      "acquirer_name": "Coles Group",
+      "canonical_id": "coles",
+      "anzsic_code": "427",
+      "anzsic_name": "Pharmaceutical and Other Store-Based Retailing",
+      "merger_ids": [
+        "MN-65028",
+        "MN-05046",
+        "MN-75042"
+      ],
+      "dates": [
+        "2026-07-09T12:00:00Z",
+        "2026-08-19T12:00:00Z",
+        "2026-09-30T12:00:00Z"
       ],
       "count": 3
     },
@@ -307,36 +345,6 @@
       "dates": [
         "2026-06-26T12:00:00Z",
         "2026-08-26T12:00:00Z"
-      ],
-      "count": 2
-    },
-    {
-      "acquirer_name": "Coles Group",
-      "canonical_id": "coles",
-      "anzsic_code": "412",
-      "anzsic_name": "Specialised Food Retailing",
-      "merger_ids": [
-        "MN-01068",
-        "MN-05046"
-      ],
-      "dates": [
-        "2025-11-27T12:00:00Z",
-        "2026-08-19T12:00:00Z"
-      ],
-      "count": 2
-    },
-    {
-      "acquirer_name": "Coles Group",
-      "canonical_id": "coles",
-      "anzsic_code": "427",
-      "anzsic_name": "Pharmaceutical and Other Store-Based Retailing",
-      "merger_ids": [
-        "MN-65028",
-        "MN-05046"
-      ],
-      "dates": [
-        "2026-07-09T12:00:00Z",
-        "2026-08-19T12:00:00Z"
       ],
       "count": 2
     },

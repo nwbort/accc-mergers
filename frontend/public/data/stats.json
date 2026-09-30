@@ -1,10 +1,10 @@
 {
-  "total_mergers": 267,
+  "total_mergers": 268,
   "total_waivers": 428,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 235,
-    "Under assessment": 27,
+    "Under assessment": 28,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -67,12 +67,12 @@
       "count": 75
     },
     {
-      "name": "Software Publishing",
+      "name": "Non-Residential Property Operators",
       "count": 41
     },
     {
-      "name": "Non-Residential Property Operators",
-      "count": 40
+      "name": "Software Publishing",
+      "count": 41
     },
     {
       "name": "Pubs, Taverns and Bars",
@@ -88,7 +88,7 @@
     },
     {
       "name": "Supermarket and Grocery Stores",
-      "count": 20
+      "count": 21
     },
     {
       "name": "Liquor Retailing",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-75042",
+      "merger_name": "Coles - supermarket site in Angle Vale, SA",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-09-30T12:00:00Z",
+      "page_modified_datetime": "2026-09-30T16:03:10+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-80045",
       "merger_name": "Apiam - Goulburn Valley Equine Hospital",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-09-14T12:00:00Z",
       "page_modified_datetime": "2026-09-14T16:27:22+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-65033",
-      "merger_name": "Challenger - Channel Capital and Fidante",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-09-11T12:00:00Z",
-      "page_modified_datetime": "2026-09-14T16:32:24+10:00",
       "is_waiver": false,
       "is_refiled": false
     }
