@@ -43,7 +43,11 @@ export function markItemsAsSeen(itemIds) {
 
   const seenItems = getSeenItems();
   itemIds.forEach(id => {
-    if (id) seenItems.add(id);
+    if (!id) return;
+    // A Set keeps an id's original insertion slot on re-add, so an item still
+    // on the dashboard would age out of the prune below and flip back to "New".
+    seenItems.delete(id);
+    seenItems.add(id);
   });
 
   const prunedItems = pruneSeenItems(seenItems);
