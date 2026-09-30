@@ -341,6 +341,41 @@
         "completed_count": 1
       }
     },
+    "schreiber-foods-inc": {
+      "id": "schreiber-foods-inc",
+      "canonical_name": "Schreiber Foods Inc.",
+      "members": [
+        {
+          "name": "Schreiber Foods Inc.",
+          "identifier": "Schreiber Foods Inc.",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-45029",
+            "merger_name": "Schreiber Foods \u2013 Real Dairy Australia",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-30T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "the-aes-corporation": {
       "id": "the-aes-corporation",
       "canonical_name": "The AES Corporation",

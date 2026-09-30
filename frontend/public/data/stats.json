@@ -1,10 +1,10 @@
 {
-  "total_mergers": 269,
+  "total_mergers": 270,
   "total_waivers": 430,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 235,
-    "Under assessment": 29,
+    "Under assessment": 30,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-45029",
+      "merger_name": "Schreiber Foods \u2013 Real Dairy Australia",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-09-30T12:00:00Z",
+      "page_modified_datetime": "2026-10-01T09:25:06+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-75042",
       "merger_name": "Coles - supermarket site in Angle Vale, SA",
@@ -204,16 +214,6 @@
       "effective_notification_datetime": "2026-09-21T12:00:00Z",
       "page_modified_datetime": "2026-09-22T12:00:17+10:00",
       "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "WA-90038",
-      "merger_name": "Waymark Hotels Group \u2013 The Queensland Hotel, Goondiwindi, QLD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "effective_notification_datetime": "2026-09-14T12:00:00Z",
-      "page_modified_datetime": "2026-09-30T16:55:13+10:00",
-      "is_waiver": true,
       "is_refiled": false
     }
   ],
