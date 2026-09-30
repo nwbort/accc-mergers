@@ -25,10 +25,37 @@
           "name": "COLAS QUEENSLAND PTY LTD",
           "identifier": "91 169 872 208",
           "identifier_type": "ABN"
+        },
+        {
+          "name": "HUTCHISON QUARRIES PTY LTD",
+          "identifier": "22 010 207 888",
+          "identifier_type": "ABN"
+        },
+        {
+          "name": "Hutchison Quarries Toowoomba Pty Ltd",
+          "identifier": "701 502 249",
+          "identifier_type": "ACN"
+        },
+        {
+          "name": "SAMI GROUP HOLDINGS PTY LTD",
+          "identifier": "96 001 631 045",
+          "identifier_type": "ABN"
         }
       ],
       "mergers": {
-        "acquirer": [],
+        "acquirer": [
+          {
+            "merger_id": "MN-25048",
+            "merger_name": "Colas \u2013 Quarry Products Harlaxton",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-28T12:00:00Z",
+            "determination_date": null
+          }
+        ],
         "target": [
           {
             "merger_id": "MN-50012",
@@ -43,17 +70,6 @@
           }
         ],
         "other": [
-          {
-            "merger_id": "MN-25048",
-            "merger_name": "Colas \u2013 Quarry Products Harlaxton",
-            "is_waiver": false,
-            "status": "Under assessment",
-            "determination": null,
-            "has_conditions": false,
-            "phase": "Phase 1",
-            "notification_date": "2026-09-28T12:00:00Z",
-            "determination_date": null
-          },
           {
             "merger_id": "MN-30022",
             "merger_name": "VSA - SprayLine",

@@ -2355,7 +2355,10 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "Hutchison Quarries Toowoomba Pty Ltd"
+          "name": "Hutchison Quarries Toowoomba Pty Ltd",
+          "canonical": {
+            "name": "Colas"
+          }
         }
       ],
       "targets": [
@@ -2368,7 +2371,10 @@
       ],
       "other_parties": [
         {
-          "name": "HUTCHISON QUARRIES PTY LTD"
+          "name": "HUTCHISON QUARRIES PTY LTD",
+          "canonical": {
+            "name": "Colas"
+          }
         },
         {
           "name": "COLAS AUSTRALIA GROUP PTY LTD",
@@ -2383,7 +2389,10 @@
           }
         },
         {
-          "name": "SAMI GROUP HOLDINGS PTY LTD"
+          "name": "SAMI GROUP HOLDINGS PTY LTD",
+          "canonical": {
+            "name": "Colas"
+          }
         }
       ],
       "anzsic_codes": [
