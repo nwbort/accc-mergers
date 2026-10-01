@@ -3,12 +3,12 @@
   "total_waivers": 432,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 236,
-    "Under assessment": 30,
+    "Assessment completed": 237,
+    "Under assessment": 29,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 228,
+    "Approved": 229,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,28 +22,28 @@
     "Not approved": 21
   },
   "clearance_rate": {
-    "cleared": 233,
+    "cleared": 234,
     "not_cleared": 3,
-    "total": 236,
+    "total": 237,
     "rate": 0.987
   },
   "phase_duration": {
-    "average_days": 29.66804979253112,
-    "median_days": 26,
-    "average_business_days": 20.145228215767634,
-    "median_business_days": 18,
+    "average_days": 29.665289256198346,
+    "median_days": 26.0,
+    "average_business_days": 20.14876033057851,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
         "count": 52,
-        "percentage": 21.6
+        "percentage": 21.5
       },
       "day20": {
         "count": 177,
-        "percentage": 73.4
+        "percentage": 73.1
       },
       "day30": {
-        "count": 224,
-        "percentage": 92.9
+        "count": 225,
+        "percentage": 93.0
       }
     }
   },
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-10028",
+      "merger_name": "BBFIT - Hanes Australasia",
+      "determination": "Approved",
+      "determination_date": "2026-10-01T12:00:00Z",
+      "page_modified_datetime": "2026-10-01T17:02:49+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-25054",
       "merger_name": "Kanda Healthcare - Connecting Families",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-25T12:00:00Z",
       "page_modified_datetime": "2026-09-25T17:03:48+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-10037",
-      "merger_name": "Blackstone \u2013 Flow Control Holdings",
-      "determination": "Approved",
-      "determination_date": "2026-09-25T12:00:00Z",
-      "page_modified_datetime": "2026-09-25T16:54:08+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
