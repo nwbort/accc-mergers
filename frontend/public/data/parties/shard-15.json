@@ -43,6 +43,41 @@
       },
       "waiver_duration": null
     },
+    "apex-custodian-nominees-nz-limited": {
+      "id": "apex-custodian-nominees-nz-limited",
+      "canonical_name": "Apex Custodian Nominees (NZ) Limited",
+      "members": [
+        {
+          "name": "Apex Custodian Nominees (NZ) Limited",
+          "identifier": "NZBN: 9429039820525",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-70039",
+            "merger_name": "Architectus \u2013 SBA",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-30T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "atmos-queensland-solar-pty-ltd": {
       "id": "atmos-queensland-solar-pty-ltd",
       "canonical_name": "Atmos Queensland Solar Pty Ltd",

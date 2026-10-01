@@ -2,6 +2,41 @@
   "shard": 182,
   "shard_count": 256,
   "parties": {
+    "architectus-services-holdco-pty-ltd": {
+      "id": "architectus-services-holdco-pty-ltd",
+      "canonical_name": "Architectus Services HoldCo Pty Ltd",
+      "members": [
+        {
+          "name": "Architectus Services HoldCo Pty Ltd",
+          "identifier": "31 654 274 629",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-70039",
+            "merger_name": "Architectus \u2013 SBA",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-09-30T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "c-mcmahon-enterprises-pty-ltd": {
       "id": "c-mcmahon-enterprises-pty-ltd",
       "canonical_name": "C McMahon Enterprises Pty Ltd",
