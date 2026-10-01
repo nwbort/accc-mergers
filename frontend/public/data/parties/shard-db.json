@@ -130,6 +130,47 @@
       },
       "waiver_duration": null
     },
+    "connecting-families-group-pty-ltd": {
+      "id": "connecting-families-group-pty-ltd",
+      "canonical_name": "Connecting Families Group Pty Ltd",
+      "members": [
+        {
+          "name": "CONNECTING FAMILIES GROUP PTY LTD",
+          "identifier": "62 627 336 145",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-25054",
+            "merger_name": "Kanda Healthcare - Connecting Families",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-05T12:00:00Z",
+            "determination_date": "2026-10-01T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 26.0,
+        "median_days": 26,
+        "average_business_days": 19.0,
+        "median_business_days": 19,
+        "completed_count": 1
+      }
+    },
     "elc-no-2-operations-pty-ltd-as-trustee-for-the-elc-no-2-operations-unit-trust": {
       "id": "elc-no-2-operations-pty-ltd-as-trustee-for-the-elc-no-2-operations-unit-trust",
       "canonical_name": "ELC No.2 Operations Pty Ltd as trustee for the ELC No.2 Operations Unit Trust",

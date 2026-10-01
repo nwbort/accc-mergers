@@ -255,6 +255,7 @@
       },
       "19": {
         "25": 3,
+        "26": 1,
         "27": 18,
         "28": 2,
         "29": 6,
@@ -292,17 +293,17 @@
     },
     "stats": {
       "average": 13.8,
-      "median": 14,
+      "median": 14.0,
       "min": 2,
       "max": 24,
-      "count": 431
+      "count": 432
     },
     "calendar_stats": {
       "average": 20.2,
-      "median": 20,
+      "median": 20.0,
       "min": 2,
       "max": 39,
-      "count": 431
+      "count": 432
     }
   },
   "monthly_volume": {
@@ -349,7 +350,7 @@
       61,
       72,
       69,
-      9
+      10
     ]
   },
   "open_caseload": {
@@ -421,12 +422,12 @@
           "median_delta": 0.0
         },
         "waivers": {
-          "median": 18,
+          "median": 18.0,
           "average": 17.0,
           "p90": 21,
           "min": 5,
           "max": 24,
-          "count": 61,
+          "count": 62,
           "duration_histogram": {
             "5": 1,
             "6": 1,
@@ -440,14 +441,14 @@
             "16": 5,
             "17": 4,
             "18": 9,
-            "19": 12,
+            "19": 13,
             "20": 6,
             "21": 4,
             "22": 1,
             "23": 1,
             "24": 2
           },
-          "median_delta": 4
+          "median_delta": 4.0
         }
       },
       {
@@ -488,12 +489,12 @@
           "median_delta": 0
         },
         "waivers": {
-          "median": 17.0,
+          "median": 17,
           "average": 16.2,
           "p90": 21,
           "min": 5,
           "max": 24,
-          "count": 178,
+          "count": 179,
           "duration_histogram": {
             "5": 1,
             "6": 1,
@@ -509,7 +510,7 @@
             "16": 12,
             "17": 12,
             "18": 26,
-            "19": 17,
+            "19": 18,
             "20": 13,
             "21": 14,
             "22": 4,
@@ -530,12 +531,12 @@
         "count": 241
       },
       "waivers": {
-        "median": 14,
+        "median": 14.0,
         "average": 13.8,
         "p90": 20,
         "min": 2,
         "max": 24,
-        "count": 431
+        "count": 432
       }
     },
     "pre_notification": {
@@ -739,7 +740,7 @@
         {
           "median": null,
           "average": null,
-          "count": 1
+          "count": 2
         }
       ],
       "open_caseload": [
@@ -928,9 +929,9 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 528,
+      "count": 529,
       "outcome_mix": {
-        "Approved": 528
+        "Approved": 529
       },
       "median_phase_1_business_days": 17.0
     },

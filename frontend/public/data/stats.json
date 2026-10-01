@@ -1,6 +1,6 @@
 {
   "total_mergers": 271,
-  "total_waivers": 431,
+  "total_waivers": 432,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 236,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 410,
+    "Approved": 411,
     "Not approved": 21
   },
   "clearance_rate": {
@@ -48,19 +48,19 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.213457076566126,
-    "median_days": 20,
-    "average_business_days": 13.823665893271462,
-    "median_business_days": 14
+    "average_days": 20.22685185185185,
+    "median_days": 20.0,
+    "average_business_days": 13.835648148148149,
+    "median_business_days": 14.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 152
+      "count": 153
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 75
+      "count": 76
     },
     {
       "name": "Computer System Design and Related Services",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-25054",
+      "merger_name": "Kanda Healthcare - Connecting Families",
+      "determination": "Approved",
+      "determination_date": "2026-10-01T12:00:00Z",
+      "page_modified_datetime": "2026-10-01T16:58:45+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-25051",
       "merger_name": "St Vincent's Private Hospitals Limited \u2013 St Vincent's Private Hospital Sydney",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-25T12:00:00Z",
       "page_modified_datetime": "2026-09-25T16:54:08+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-20038",
-      "merger_name": "Sumitomo Mitsui Trust Bank \u2013 Morrison",
-      "determination": "Approved",
-      "determination_date": "2026-09-24T12:00:00Z",
-      "page_modified_datetime": "2026-09-24T17:59:46+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
