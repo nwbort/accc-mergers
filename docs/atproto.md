@@ -253,11 +253,19 @@ The link to the matter page is not in the text: it is the post's link card
 (`app.bsky.embed.external`), which is what people tap anyway, and a URL in the
 text only repeated it, truncated, in characters the matter name could have had.
 The card has the matter's name as the title, its description (with the
-register's Markdown flattened to plain text) as the blurb, and the site's own
-`frontend/public/og-image.png` as the thumbnail. Bluesky never unfurls a link
-by itself — the card has to be in the record — and the image has to be
-uploaded as a blob first. That happens once per run, and every post in the run
-reuses it. If the upload fails the posts still go out, with a text-only card.
+register's Markdown flattened to plain text) as the blurb, and a thumbnail
+drawn for that post by `scripts/atproto/card_image.py`: the milestone's
+headline, the matter's name and id, on the colour the site gives that outcome
+(green cleared, red refused, amber Phase 2, indigo Tribunal/Federal Court,
+purple ceased, the site green otherwise). Bluesky never unfurls a link by
+itself — the card has to be in the record — and the image has to be uploaded
+as a blob first. The image is drawn in memory and uploaded straight away; it
+is never written to the repo or the Pages deployment, so it costs nothing
+against the 20,000-file cap. The PDS keeps each blob for as long as its post
+exists. If the card can't be drawn (no font on the runner) or its upload
+fails, the post falls back to the site's own `frontend/public/og-image.png`,
+uploaded once per run; if that fails too the posts still go out, with a
+text-only card.
 
 ```bash
 python -m scripts.atproto.post_bluesky --dry-run       # see what is due

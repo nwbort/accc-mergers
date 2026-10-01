@@ -24,6 +24,7 @@ from scripts.atproto.post_bluesky import (
     save_state,
     tag_facets,
     upload_card_image,
+    upload_milestone_card,
 )
 
 
@@ -613,3 +614,38 @@ def test_nothing_is_posted_when_recent_posts_cannot_be_read(
 
     assert main([]) == 1
     assert fake_client.posts == []
+
+
+def test_each_post_gets_its_own_card_image_and_the_shared_one_is_the_fallback(monkeypatch):
+    from scripts.atproto import card_image
+
+    milestone = milestones(matter())[0]
+    client = FakeClient()
+    assert upload_milestone_card(client, milestone, {"shared": True}) == BLOB
+    data, mime = client.uploads[0]
+    assert mime == "image/png" and data[:8] == b"\x89PNG\r\n\x1a\n"
+    assert len(data) < 1_000_000  # Bluesky's thumbnail limit
+
+    assert upload_milestone_card(FakeClient(upload_fails=True), milestone, {"shared": True}) == {"shared": True}
+    monkeypatch.setattr(post_bluesky, "render_card", lambda **_: None)
+    assert upload_milestone_card(FakeClient(), milestone, {"shared": True}) == {"shared": True}
+
+
+def test_card_colour_follows_the_outcome():
+    from scripts.atproto.card_image import TONES, tone_for
+
+    assert tone_for("MN-1:determined:2026-09-05", "Cleared by the ACCC") == "cleared"
+    assert tone_for("MN-1:determined:2026-09-05", "Not approved by the ACCC") == "refused"
+    assert tone_for("MN-1:public-benefit-determined:undated", "Cleared by the ACCC on public benefit grounds") == "cleared"
+    assert tone_for("MN-1:phase-2:2026-09-05", "Referred to Phase 2") == "phase-2"
+    assert tone_for("MN-1:tribunal:2026-09-05", "Under review in the Competition Tribunal") == "contested"
+    assert tone_for("MN-1:notified:2026-09-05", "Notified to the ACCC") == "live"
+    assert set(TONES) >= {"cleared", "refused", "ceased", "phase-2", "contested", "live"}
+
+
+def test_a_very_long_title_still_renders():
+    from scripts.atproto.card_image import render_card
+
+    png = render_card(key="MN-1:notified:2026-09-05", headline="Notified to the ACCC",
+                      title="Supercalifragilistic " * 40, detail="MN-1 · Phase 1")
+    assert png is not None and png[:8] == b"\x89PNG\r\n\x1a\n"
