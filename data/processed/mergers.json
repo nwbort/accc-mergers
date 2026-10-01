@@ -24516,13 +24516,16 @@
   {
     "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/eneos-%E2%80%93-chevron-australia-downstream",
     "merger_name": "ENEOS \u2013 Chevron Australia Downstream",
-    "status": "Under assessment",
+    "status": "Assessment completed",
     "merger_id": "MN-65036",
     "effective_notification_datetime": "2026-09-10T12:00:00Z",
     "original_notification_datetime": "2026-09-10T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-10-23T12:00:00Z",
-    "page_modified_datetime": "2026-09-11T10:55:39+10:00",
+    "determination_publication_date": "2026-10-01T12:00:00Z",
+    "accc_determination": "Approved",
+    "accc_determination_raw": "ACCC determinationApproved",
+    "page_modified_datetime": "2026-10-01T16:50:58+10:00",
     "consultation_response_due_date": "2026-09-18T12:00:00Z",
     "acquirers": [
       {
@@ -24558,7 +24561,7 @@
         "name": "Financial Asset Investing"
       }
     ],
-    "merger_description": "ENEOS Holdings, Inc. via a wholly owned subsidiary (**ENEOS**), proposes to acquire 100% of the share capital of Chevron Australia Downstream Holdings Pty Ltd (**Chevron Australia Downstream**) (the **Acquisition**).\n\nENEOS Holdings is a Japanese petroleum and energy group. It operates five key business segments including petroleum products, oil and natural gas exploration and production, high performance materials, and electricity and renewable energy. In Australia, ENEOS\u2019 relevant operations are focused on the downstream wholesale distribution of fuels and lubricants, with a nominal retail fuel footprint in rural New South Wales.\n\nChevron Corporation is a US based multinational integrated energy company. It operates two key business segments including the upstream exploration, development, and production of crude oil and natural gas and the downstream refining, marketing, transportation, and distribution of petroleum products, petrochemicals, lubricants, and additives.\n\nChevron Australia Downstream encompasses Chevron\u2019s integrated downstream platform that distributes fuels and lubricants across Australia and includes three Queensland based proprietary terminals and a national network of retail service stations operated by either the company or third-party retailers.",
+    "merger_description": "ENEOS Holdings, Inc. via a wholly owned subsidiary (**ENEOS**), proposes to acquire 100% of the share capital of Chevron Australia Downstream Holdings Pty Ltd (**Chevron Australia Downstream**) (the **Acquisition**).\n\n  \n\nENEOS Holdings is a Japanese petroleum and energy group. It operates five key business segments including petroleum products, oil and natural gas exploration and production, high performance materials, and electricity and renewable energy. In Australia, ENEOS\u2019 relevant operations are focused on the downstream wholesale distribution of fuels and lubricants, with a nominal retail fuel footprint in rural New South Wales.\n\n  \n\nChevron Corporation is a US based multinational integrated energy company. It operates two key business segments including the upstream exploration, development, and production of crude oil and natural gas and the downstream refining, marketing, transportation, and distribution of petroleum products, petrochemicals, lubricants, and additives.\u00a0  \n\n\nChevron Australia Downstream encompasses Chevron\u2019s integrated downstream platform that distributes fuels and lubricants across Australia and includes three Queensland based proprietary terminals and a national network of retail service stations operated by either the company or third-party retailers.",
     "events": [
       {
         "date": "2026-09-11T12:00:00Z",
@@ -24573,6 +24576,17 @@
         "date": "2026-09-10T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
+      },
+      {
+        "date": "2026-10-01T12:00:00Z",
+        "title": "ENEOS \u2013 Chevron Australia Downstream - Phase 1 determination",
+        "display_title": "ENEOS \u2013 Chevron Australia Downstream - Phase 1 determination"
+      },
+      {
+        "date": "2026-10-01T12:00:00Z",
+        "title": "Phase 1 - initial assessment determination: Approved",
+        "display_title": "Phase 1 - initial assessment determination: Approved",
+        "is_determination_event": true
       }
     ],
     "is_waiver": false
@@ -47844,6 +47858,93 @@
       },
       {
         "date": "2026-08-31T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": true
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/st-vincents-private-hospitals-limited-%E2%80%93-st-vincents-private-hospital-sydney",
+    "merger_name": "St Vincent's Private Hospitals Limited \u2013 St Vincent's Private Hospital Sydney",
+    "status": "Assessment completed",
+    "merger_id": "WA-25051",
+    "effective_notification_datetime": "2026-09-02T12:00:00Z",
+    "original_notification_datetime": "2026-09-02T12:00:00Z",
+    "stage": "Waiver application",
+    "determination_publication_date": "2026-10-01T12:00:00Z",
+    "accc_determination": "Approved",
+    "accc_determination_raw": "ACCC determinationApproved",
+    "page_modified_datetime": "2026-10-01T16:57:28+10:00",
+    "acquirers": [
+      {
+        "name": "St Vincent's Private Hospitals Limited",
+        "identifier_type": "ABN",
+        "identifier": "61 083 645 505"
+      }
+    ],
+    "targets": [
+      {
+        "name": "Trustees of the Sisters of Charity of Australia",
+        "identifier_type": "ABN",
+        "identifier": "73 052 275 501"
+      },
+      {
+        "name": "The Congregation of the Religious Sisters of Charity of Australia",
+        "identifier_type": "ABN",
+        "identifier": "99 269 630 262"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "St Vincent's Health Australia Limited",
+        "identifier_type": "ABN",
+        "identifier": "75 073 503 536"
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "8401",
+        "name": "Hospitals (Except Psychiatric Hospitals)"
+      }
+    ],
+    "merger_description": "St Vincent's Private Hospitals Limited (the **Acquirer**), a subsidiary of St Vincent's Health Australia Limited (**St Vincent's Health Australia**), proposes to acquire the assets and operations of St Vincent's Private Hospital Sydney (**Hospital**) from the Congregation of the Religious Sisters of Charity of Australia (**Congregation**) and the Trustees of the Sisters of Charity of Australia (**TSCA**) in both its personal capacity and as trustee for the SVPH Sydney Trust (the **Acquisition**).\n\nThe Acquirer is a not-for-profit operator of 9 private hospitals in Australia, with facilities in Victoria, New South Wales and Queensland. St Vincent's Health Australia is an incorporated not-for-profit organisation which acts as the parent company for the majority of charitable health and aged care services previously operated by TSCA.\n\nThe Hospital is a 310-bed leading medical and surgical hospital located in Darlinghurst, New South Wales, that provides overnight and day-only care across a broad spectrum of specialties, including cardiology, neurosurgery and orthopaedics.\n\nThe application arises out of the unique governance structure of the Hospital. While it functions as part of the Acquirer group of hospitals, it is a separate legal entity because of a bequest which requires it to continue to be operated by TSCA and the Congregation.\n\nTSCA and the Congregation are both registered charities with the Australian Charities and Not-for-profits Commission. TSCA is a statutory\u00a0body corporate formed under the Roman Catholic Church Communities' Lands Act 1942 (NSW).\n\nThe Acquisition will not change the operation of the Hospital, nor the other facilities operated by the Acquirer.",
+    "events": [
+      {
+        "date": "2026-10-01T12:00:00Z",
+        "title": "Notification waiver determination published",
+        "display_title": "Waiver application determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/moderated_files/St%20Vincent%27s%20Private%20Hospitals%20Limited%20%E2%80%93%20St%20Vincent%27s%20Private%20Hospital%20Sydney%20%28WA-25051%29%20-%20Notification%20waiver%20determination%20-%201%20October%202026.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Acquisition",
+            "details": "St Vincent's Private Hospitals Limited, a subsidiary of St Vincent's\nHealth Australia Limited, applied for a notification waiver in respect\nof its proposed acquisition of the assets and operations of St\nVincent's Private Hospital Sydney (the Hospital) from the\nCongregation of the Religious Sisters of Charity of Australia (the\nCongregation) and the Trustees of the Sisters of Charity of Australia\nin both its personal capacity and as trustee for the St Vincent\u2019s\nPrivate Hospital Sydney Trust (together, the Vendors), as described\nin the transaction documents provided as part of the application (the\nAcquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+          },
+          {
+            "item": "Date of determination",
+            "details": "1 October 2026"
+          },
+          {
+            "item": "Parties to the\nAcquisition",
+            "details": "The acquirer, St Vincent's Private Hospitals Limited, is a not-for-profit\noperator of 9 private hospitals in Australia, with facilities in Victoria,\nNew South Wales and Queensland. Its parent company, St Vincent's\nHealth Australia Limited, is an incorporated not-for-profit\norganisation which has a number of wholly owned subsidiaries\nwhich operate public hospitals, private hospitals and/or aged care\nfacilities in Australia.\nThe target, the Hospital, is a private acute-care medical and surgical\nhospital located in Darlinghurst, Sydney and collocated with St\nVincent\u2019s public hospital. The Hospital is a medical and surgical\nhospital that provides overnight and day only care across a broad\nspectrum of specialties, including cardiology, neurosurgery and\northopaedics.\nPursuant to a delegated authority from the Vendors, St Vincent's\nHealth Australia Limited has managed the Hospital under a\nmanagement agreement since 2009."
+          },
+          {
+            "item": "Explanation for\ndetermination",
+            "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. There will be no horizontal consolidation, removal of a\ncompetitor, or practical change to the daily management and\noperation of the Hospital post-Acquisition.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC also considered the potential application of section\n51ABD of the Act. However, the applicant submitted there is some\nuncertainty as to whether section 51ABD would apply given the\nnature of the relationship between the parties. Having regard to the\nparticular circumstances, including the consequences of non-\nnotification in reliance on section 51ABD if it was found not to apply,\nthe ACCC considers it appropriate to make a determination on the\nbasis that the acquisition provisions in the Act apply to the\nAcquisition.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+          }
+        ],
+        "url_gh": "/mergers/WA-25051/St Vincent's Private Hospitals Limited \u2013 St Vincent's Private Hospital Sydney (WA-25051) - Notification waiver determination - 1 October 2026.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Waiver"
+      },
+      {
+        "date": "2026-09-02T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
       }

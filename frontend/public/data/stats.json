@@ -1,14 +1,14 @@
 {
   "total_mergers": 271,
-  "total_waivers": 430,
+  "total_waivers": 431,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 235,
-    "Under assessment": 31,
+    "Assessment completed": 236,
+    "Under assessment": 30,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 227,
+    "Approved": 228,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -18,40 +18,40 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 409,
+    "Approved": 410,
     "Not approved": 21
   },
   "clearance_rate": {
-    "cleared": 232,
+    "cleared": 233,
     "not_cleared": 3,
-    "total": 235,
+    "total": 236,
     "rate": 0.987
   },
   "phase_duration": {
-    "average_days": 29.704166666666666,
-    "median_days": 26.0,
-    "average_business_days": 20.166666666666668,
-    "median_business_days": 18.0,
+    "average_days": 29.66804979253112,
+    "median_days": 26,
+    "average_business_days": 20.145228215767634,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
-        "count": 51,
-        "percentage": 21.2
+        "count": 52,
+        "percentage": 21.6
       },
       "day20": {
-        "count": 176,
-        "percentage": 73.3
+        "count": 177,
+        "percentage": 73.4
       },
       "day30": {
-        "count": 223,
+        "count": 224,
         "percentage": 92.9
       }
     }
   },
   "waiver_duration": {
-    "average_days": 20.193023255813955,
-    "median_days": 20.0,
-    "average_business_days": 13.806976744186047,
-    "median_business_days": 14.0
+    "average_days": 20.213457076566126,
+    "median_days": 20,
+    "average_business_days": 13.823665893271462,
+    "median_business_days": 14
   },
   "top_industries": [
     {
@@ -219,6 +219,28 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-25051",
+      "merger_name": "St Vincent's Private Hospitals Limited \u2013 St Vincent's Private Hospital Sydney",
+      "determination": "Approved",
+      "determination_date": "2026-10-01T12:00:00Z",
+      "page_modified_datetime": "2026-10-01T16:57:28+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "MN-65036",
+      "merger_name": "ENEOS \u2013 Chevron Australia Downstream",
+      "determination": "Approved",
+      "determination_date": "2026-10-01T12:00:00Z",
+      "page_modified_datetime": "2026-10-01T16:50:58+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-25052",
       "merger_name": "Australian Venue Co \u2013 assets of Hervey Bay Hotel & Resort, Pialba, QLD",
       "determination": "Approved",
@@ -323,28 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-24T12:00:00Z",
       "page_modified_datetime": "2026-09-24T17:59:46+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-20036",
-      "merger_name": "Sinopec \u2013 Park Fuels",
-      "determination": "Not approved",
-      "determination_date": "2026-09-24T12:00:00Z",
-      "page_modified_datetime": "2026-09-24T17:58:08+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-10034",
-      "merger_name": "DigitalBridge \u2013 PLUS ES smart metering division",
-      "determination": "Approved",
-      "determination_date": "2026-09-24T12:00:00Z",
-      "page_modified_datetime": "2026-09-24T17:51:18+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
