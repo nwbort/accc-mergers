@@ -119,6 +119,41 @@
       "phase_duration": null,
       "waiver_duration": null
     },
+    "huntsman-polyurethanes-australia-pty-ltd": {
+      "id": "huntsman-polyurethanes-australia-pty-ltd",
+      "canonical_name": "Huntsman Polyurethanes (Australia) Pty Ltd",
+      "members": [
+        {
+          "name": "HUNTSMAN POLYURETHANES (AUSTRALIA) PTY LTD",
+          "identifier": "40 090 446 165",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [],
+        "other": [
+          {
+            "merger_id": "MN-95044",
+            "merger_name": "Olin - Huntsman",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-01T12:00:00Z",
+            "determination_date": null
+          }
+        ]
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "kanda-healthcare-pty-ltd": {
       "id": "kanda-healthcare-pty-ltd",
       "canonical_name": "Kanda Healthcare Pty Ltd",

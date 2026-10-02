@@ -62774,6 +62774,147 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/olin-huntsman",
+      "merger_name": "Olin - Huntsman",
+      "status": "Under assessment",
+      "merger_id": "MN-95044",
+      "effective_notification_datetime": "2026-10-01T12:00:00Z",
+      "original_notification_datetime": "2026-10-01T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-11-13T12:00:00Z",
+      "page_modified_datetime": "2026-10-02T10:51:52+10:00",
+      "consultation_response_due_date": "2026-10-09T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Olin Corporation",
+          "identifier_type": null,
+          "identifier": "Virginia Entity Number  00149039",
+          "party_page": {
+            "id": "olin-corporation",
+            "name": "Olin Corporation"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Huntsman Corporation",
+          "identifier_type": null,
+          "identifier": "Delaware File Number  3869690",
+          "party_page": {
+            "id": "huntsman-corporation",
+            "name": "Huntsman Corporation"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "HUNTSMAN POLYURETHANES (AUSTRALIA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "40 090 446 165",
+          "party_page": {
+            "id": "huntsman-polyurethanes-australia-pty-ltd",
+            "name": "Huntsman Polyurethanes (Australia) Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1812",
+          "name": "Basic Organic Chemical Manufacturing"
+        },
+        {
+          "code": "1813",
+          "name": "Basic Inorganic Chemical Manufacturing"
+        },
+        {
+          "code": "1821",
+          "name": "Synthetic Resin and Synthetic Rubber Manufacturing"
+        }
+      ],
+      "merger_description": "Olin Corporation (**Olin**) proposes to acquire 100% of the shares in Huntsman Corporation (**Huntsman**) (the **Acquisition**). Following the Acquisition, the combined company will be renamed OlinHunstman Corporation (**OlinHuntsman**).\n\nOlin is a Virginia corporation, incorporated in 1892, having its principal executive office in Clayton, Missouri, United States (**US**). Olin is a manufacturer and distributor of chemical products concentrated in three business segments: (i) Chlor Alkali Products and Vinyls, (ii) Epoxy, and (iii) Winchester. In Australia, Olin is only physically present through Winchester. However, Olin supplies caustic soda, epoxy resins and curing agents to Australian customers via imports.\n\nHuntsman is a US-based, Delaware corporation headquartered in The Woodlands, Texas, US and employs approximately 6,000 employees globally. Huntsman is active in the production and global distribution of chemicals via three business divisions: (i) Polyurethanes, (ii) Performance Products, and (iii) Advanced Materials. In Australia, Huntsman supplies polyurethane systems from its facility at Deer Park, Victoria, and ethyleneamines, polyetheramines, epoxy resins and curing agents to Australian customers via imports.",
+      "events": [
+        {
+          "date": "2026-10-01T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-35028",
+          "merger_name": "efex - OnPlatinum",
+          "acquirers": [
+            "THINKEX HOLDINGS PTY LTD"
+          ],
+          "targets": [
+            "COMMS GROUP LTD",
+            "ON GROUP HOLDINGS PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-55012",
+          "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
+          "acquirers": [
+            "Argo Bowen 2 Pty Ltd"
+          ],
+          "targets": [
+            "LENTON MANAGEMENT AND MARKETING PTY LTD",
+            "COKING COAL ONE PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-80014",
+          "merger_name": "ANZ Banking Group - Worldline Australia",
+          "acquirers": [
+            "AUSTRALIA AND NEW ZEALAND BANKING GROUP LIMITED"
+          ],
+          "targets": [
+            "Worldline SA",
+            "WORLDLINE AUSTRALIA PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 18,
+        "range_business_days": [
+          16,
+          21
+        ],
+        "basis": "global",
+        "question_bucket": null,
+        "question_count": null,
+        "sample_size": 240,
+        "as_of": "2026-10-01",
+        "estimated_at": "2026-10-02",
+        "method_version": 2
+      },
+      "pre_notification": {
+        "estimated_days": 36,
+        "min_days": null,
+        "max_days": 43,
+        "id_issued_estimated": "2026-08-26",
+        "id_issued_before": null,
+        "id_issued_after": "2026-08-19",
+        "min_days_witness": null,
+        "max_days_witness": "WA-95041",
+        "basis": "upper-bound-only",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/accenture-%E2%80%93-faculty-science",
       "merger_name": "Accenture \u2013 Faculty Science",
       "status": "Assessment completed",

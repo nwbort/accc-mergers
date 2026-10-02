@@ -188,6 +188,41 @@
         "completed_count": 1
       }
     },
+    "huntsman-corporation": {
+      "id": "huntsman-corporation",
+      "canonical_name": "Huntsman Corporation",
+      "members": [
+        {
+          "name": "Huntsman Corporation",
+          "identifier": "Delaware File Number  3869690",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-95044",
+            "merger_name": "Olin - Huntsman",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-01T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "ironbark-investment-partners-pty-ltd": {
       "id": "ironbark-investment-partners-pty-ltd",
       "canonical_name": "Ironbark Investment Partners Pty Ltd",

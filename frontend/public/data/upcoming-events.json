@@ -91,6 +91,16 @@
       "effective_notification_datetime": "2026-09-30T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-10-09T12:00:00Z",
+      "merger_id": "MN-95044",
+      "merger_name": "Olin - Huntsman",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-10-01T12:00:00Z"
+    },
+    {
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-10-13T12:00:00Z",
@@ -354,6 +364,16 @@
     {
       "type": "determination_due",
       "event_type_display": "Determination due",
+      "date": "2026-11-13T12:00:00Z",
+      "merger_id": "MN-95044",
+      "merger_name": "Olin - Huntsman",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-10-01T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
       "date": "2026-11-27T12:00:00Z",
       "merger_id": "MN-05013",
       "merger_name": "Zoetis \u2013 Neogen Genomics Business",
@@ -362,6 +382,6 @@
       "effective_notification_datetime": "2026-05-12T12:00:00Z"
     }
   ],
-  "count": 36,
+  "count": 38,
   "days_ahead": 60
 }
