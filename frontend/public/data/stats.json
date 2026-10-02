@@ -1,14 +1,14 @@
 {
-  "total_mergers": 271,
+  "total_mergers": 273,
   "total_waivers": 432,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 238,
-    "Under assessment": 28,
+    "Assessment completed": 239,
+    "Under assessment": 29,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 230,
+    "Approved": 231,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 21
   },
   "clearance_rate": {
-    "cleared": 235,
+    "cleared": 236,
     "not_cleared": 3,
-    "total": 238,
+    "total": 239,
     "rate": 0.987
   },
   "phase_duration": {
-    "average_days": 29.62962962962963,
-    "median_days": 26,
-    "average_business_days": 20.127572016460906,
-    "median_business_days": 18,
+    "average_days": 29.59426229508197,
+    "median_days": 26.0,
+    "average_business_days": 20.10655737704918,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
-        "count": 53,
-        "percentage": 21.8
+        "count": 54,
+        "percentage": 22.1
       },
       "day20": {
-        "count": 178,
-        "percentage": 73.3
+        "count": 179,
+        "percentage": 73.4
       },
       "day30": {
-        "count": 226,
+        "count": 227,
         "percentage": 93.0
       }
     }
@@ -56,7 +56,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 153
+      "count": 154
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -96,6 +96,26 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-65039",
+      "merger_name": "ASSA ABLOY \u2013 Gunnebo Entrance Control",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-01T12:00:00Z",
+      "page_modified_datetime": "2026-10-02T11:44:28+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
+    {
+      "merger_id": "MN-95044",
+      "merger_name": "Olin - Huntsman",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-01T12:00:00Z",
+      "page_modified_datetime": "2026-10-02T11:10:10+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-70039",
       "merger_name": "Architectus \u2013 SBA",
@@ -195,29 +215,20 @@
       "page_modified_datetime": "2026-09-24T18:37:30+10:00",
       "is_waiver": false,
       "is_refiled": false
-    },
-    {
-      "merger_id": "WA-85055",
-      "merger_name": "One Equity Partners \u2013 Myriad360",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "effective_notification_datetime": "2026-09-22T12:00:00Z",
-      "page_modified_datetime": "2026-09-29T17:01:14+10:00",
-      "is_waiver": true,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-20039",
-      "merger_name": "Calvary \u2013 Southern Cross Care (Tasmania)",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-09-22T12:00:00Z",
-      "page_modified_datetime": "2026-09-22T11:57:20+10:00",
-      "is_waiver": false,
-      "is_refiled": false
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "MN-01121",
+      "merger_name": "Amplitude / OG Energy - Artisan Gas Field",
+      "determination": "Approved",
+      "determination_date": "2026-10-02T12:00:00Z",
+      "page_modified_datetime": "2026-10-02T10:03:06+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
     {
       "merger_id": "MN-80042",
       "merger_name": "Eli Lilly \u2013 Merida Biosciences",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-28T12:00:00Z",
       "page_modified_datetime": "2026-09-28T17:04:35+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-10035",
-      "merger_name": "Geosyntec Consultants \u2013 WRM Water & Environment",
-      "determination": "Approved",
-      "determination_date": "2026-09-25T12:00:00Z",
-      "page_modified_datetime": "2026-09-25T17:04:56+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

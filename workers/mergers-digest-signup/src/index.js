@@ -29,17 +29,25 @@ const ALLOWED_ORIGIN = "https://mergers.fyi";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // Feature-usage events the frontend is allowed to ping. Each entry is an
-// aggregate daily counter only — no identifiers of any kind are ever
+// aggregate daily counter only — no user identifiers of any kind are ever
 // attached. To start tracking a new feature, add its event name here and
 // have the frontend call pingFeatureEvent() (frontend/src/utils/trackEvent.js)
 // at the point of use; no schema change or new endpoint is needed.
 const ALLOWED_EVENT_TYPES = new Set([
-  "track_merger", // a merger was added to the user's tracked list
   "feedback_popup_dismissed", // the feedback popup's close button was clicked
   "feedback_popup_clicked", // the feedback popup's "Share feedback" link was clicked
   "promo_card_dismissed", // the dashboard promo card's close button was clicked
   "promo_card_clicked", // the dashboard promo card was clicked through
 ]);
+
+// A merger was added to the user's tracked list: `track_merger_{id}`, one
+// counter per merger (e.g. track_merger_MN-01016). Matched by pattern, not
+// listed, since the set of merger ids grows with the register.
+const TRACK_MERGER_EVENT_RE = /^track_merger_(MN|WA)-\d{5}$/;
+
+function isAllowedEventType(type) {
+  return ALLOWED_EVENT_TYPES.has(type) || TRACK_MERGER_EVENT_RE.test(type);
+}
 
 // ---------------------------------------------------------------------------
 // CORS helpers
@@ -312,7 +320,7 @@ async function handleEvent(request, env, origin) {
   }
 
   const type = (body.type || "").trim();
-  if (!ALLOWED_EVENT_TYPES.has(type)) {
+  if (!isAllowedEventType(type)) {
     return jsonResponse({ error: "Unknown event type" }, 400, origin, env);
   }
 

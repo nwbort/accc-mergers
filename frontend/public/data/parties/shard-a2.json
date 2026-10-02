@@ -283,6 +283,41 @@
       },
       "waiver_duration": null
     },
+    "olin-corporation": {
+      "id": "olin-corporation",
+      "canonical_name": "Olin Corporation",
+      "members": [
+        {
+          "name": "Olin Corporation",
+          "identifier": "Virginia Entity Number  00149039",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-95044",
+            "merger_name": "Olin - Huntsman",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-01T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "pantheon-llc": {
       "id": "pantheon-llc",
       "canonical_name": "Pantheon LLC",

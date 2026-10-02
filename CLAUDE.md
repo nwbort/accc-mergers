@@ -251,6 +251,8 @@ frontend/src/
 scripts/                  # A Python package — entry points run as `python -m scripts.…`
 ├── extract_mergers.py    # Parse HTML → merger data JSON
 ├── enrich_pdfs.py        # Run questionnaire/NOCC/Phase 2 Notice PDF parsing, auto-fix missing dates
+├── questionnaire_probe.py # Guess a missing questionnaire's URL from recent filename shapes (HEAD
+│                         #   probe); used by detect_missing_questionnaires, report-only
 ├── check_phase2_notice_ocr_needed.py # CI helper: does a pending Phase 2 Notice need OCR?
 ├── send_weekly_email.py  # Send weekly digest email via Cloudflare Worker
 ├── fix_missing_notification_dates.py # Suggest freezing missing notification dates (review PR

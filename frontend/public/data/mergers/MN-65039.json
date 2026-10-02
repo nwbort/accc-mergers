@@ -1,0 +1,139 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/assa-abloy-%E2%80%93-gunnebo-entrance-control",
+  "merger_name": "ASSA ABLOY \u2013 Gunnebo Entrance Control",
+  "status": "Under assessment",
+  "merger_id": "MN-65039",
+  "effective_notification_datetime": "2026-10-01T12:00:00Z",
+  "original_notification_datetime": "2026-10-01T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-11-13T12:00:00Z",
+  "consultation_response_due_date": "2026-10-12T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "ASSA ABLOY Holding AB",
+      "identifier_type": null,
+      "identifier": "(SE) Reg. no 5591808646",
+      "party_page": {
+        "id": "assa-abloy-holding-ab",
+        "name": "ASSA ABLOY Holding AB"
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "Gunnebo Entrance Control AB",
+      "identifier_type": null,
+      "identifier": "(SE) Reg. no 5590966064",
+      "party_page": {
+        "id": "gunnebo-entrance-control-ab",
+        "name": "Gunnebo Entrance Control AB"
+      }
+    }
+  ],
+  "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "2299",
+      "name": "Other Fabricated Metal Product Manufacturing n.e.c."
+    },
+    {
+      "code": "6240",
+      "name": "Financial Asset Investing"
+    },
+    {
+      "code": "9429",
+      "name": "Other Machinery and Equipment Repair and Maintenance"
+    }
+  ],
+  "merger_description": "ASSA ABLOY Holding AB, a holding company in the ASSA ABLOY Group (**ASSA ABLOY**), proposes to acquire 100% of the shares in Gunnebo Entrance Control AB and its subsidiaries (**GEC**) (The\u00a0**Acquisition**).\n\nASSA ABLOY is a provider of access solutions, including locking, access control systems and components, and entrance automation (e.g., automatic pedestrian doors and industrials doors). ASSA ABLOY Entrance Systems (**AAES**) is a division of ASSA ABLOY which focuses on the manufacture and supply of entrance automation, operating globally under brands including ASSA ABLOY and agta record. ASSA ABLOY also distributes other products, which broadly encompasses physical security and storage solutions, access and locking solutions, doors and secure transfer solutions.\n\nASSA ABLOY and AAES are active in production and sales of security entrance control equipment, but do not provide after-sales services for these products.\n\nIn Australia, GEC is active in security entrance control equipment and services, supplying speed gates, turnstiles, mass transit gates, retail gates and security revolving doors which it manufactures at its four production sites located in Italy, Czechia, the USA and China. GEC offers after-sales services in relation to its own security entrance control equipment. GEC also distributes third-party products including safes, cabinets, vaults, manual doors and bollards.",
+  "events": [
+    {
+      "date": "2026-10-02T12:00:00Z",
+      "title": "ASSA ABLOY \u2013 Gunnebo Entrance Control - Questionnaire",
+      "display_title": "ASSA ABLOY \u2013 Gunnebo Entrance Control - Questionnaire",
+      "is_questionnaire_event": true,
+      "url": "https://www.accc.gov.au/system/files/moderated_files/ASSA%20ABLOY%20%E2%80%93%20Gunnebo%20Entrance%20Control%20-%20Questionnaire.docx",
+      "url_gh": "/mergers/MN-65039/ASSA ABLOY \u2013 Gunnebo Entrance Control - Questionnaire.pdf",
+      "phase": null
+    },
+    {
+      "date": "2026-10-01T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-25014",
+      "merger_name": "CVC Capital Partners \u2013 The animal nutrition and health division of the DSM-Firmenich Group",
+      "acquirers": [
+        "Essential Bidco B.V.",
+        "Specialty (U.S.) Bidco, Inc."
+      ],
+      "targets": [
+        "SpecialtyCo US LLC",
+        "Biomin Phytogenics GmbH (Germany)"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "WA-30019",
+      "merger_name": "KKR \u2013 Fresha.com",
+      "acquirers": [
+        "Flamingo UK LP",
+        "Flamingo UK GP Ltd"
+      ],
+      "targets": [
+        "Fresha.com Holding Inc."
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "WA-85048",
+      "merger_name": "Partners Group \u2013 Aroma-Zone",
+      "acquirers": [
+        "Elixis BidCo"
+      ],
+      "targets": [
+        "Legendre Holding 91 SAS",
+        "Aroma Zone Topco SAS"
+      ],
+      "accc_determination": "Approved"
+    }
+  ],
+  "phase_1_estimate": {
+    "expected_business_days": 17,
+    "range_business_days": [
+      15,
+      19
+    ],
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 170,
+    "as_of": "2026-10-01",
+    "estimated_at": "2026-10-02",
+    "method_version": 2
+  },
+  "pre_notification": {
+    "estimated_days": 24,
+    "min_days": null,
+    "max_days": 31,
+    "id_issued_estimated": "2026-09-07",
+    "id_issued_before": null,
+    "id_issued_after": "2026-08-31",
+    "min_days_witness": null,
+    "max_days_witness": "WA-65037",
+    "basis": "upper-bound-only",
+    "method_version": 1
+  }
+}
