@@ -43,7 +43,7 @@
         "33": 2
       },
       "21": {
-        "29": 9,
+        "29": 10,
         "30": 1,
         "32": 1,
         "50": 1
@@ -130,17 +130,17 @@
     },
     "stats": {
       "average": 20.1,
-      "median": 18.0,
+      "median": 18,
       "min": 15,
       "max": 59,
-      "count": 244
+      "count": 245
     },
     "calendar_stats": {
       "average": 29.6,
-      "median": 26.0,
+      "median": 26,
       "min": 21,
       "max": 103,
-      "count": 244
+      "count": 245
     }
   },
   "waiver_duration": {
@@ -389,7 +389,7 @@
       46,
       37,
       31,
-      30
+      29
     ],
     "as_at": "2026-10-02"
   },
@@ -400,12 +400,12 @@
         "days": 30,
         "notifications_filed": 32,
         "notifications": {
-          "median": 18,
+          "median": 18.0,
           "average": 20.8,
           "p90": 38,
           "min": 15,
           "max": 49,
-          "count": 37,
+          "count": 38,
           "duration_histogram": {
             "15": 10,
             "16": 3,
@@ -413,7 +413,7 @@
             "18": 6,
             "19": 2,
             "20": 2,
-            "21": 4,
+            "21": 5,
             "23": 1,
             "24": 1,
             "25": 1,
@@ -458,12 +458,12 @@
         "days": 90,
         "notifications_filed": 109,
         "notifications": {
-          "median": 18.0,
+          "median": 18,
           "average": 20.7,
           "p90": 29,
           "min": 15,
           "max": 56,
-          "count": 116,
+          "count": 117,
           "duration_histogram": {
             "15": 21,
             "16": 18,
@@ -471,7 +471,7 @@
             "18": 12,
             "19": 12,
             "20": 6,
-            "21": 9,
+            "21": 10,
             "22": 1,
             "23": 4,
             "24": 4,
@@ -489,7 +489,7 @@
             "52": 1,
             "56": 1
           },
-          "median_delta": 0.0
+          "median_delta": 0
         },
         "waivers": {
           "median": 17,
@@ -526,12 +526,12 @@
     ],
     "all_time": {
       "notifications": {
-        "median": 18.0,
+        "median": 18,
         "average": 20.1,
         "p90": 28,
         "min": 15,
         "max": 59,
-        "count": 244
+        "count": 245
       },
       "waivers": {
         "median": 14.0,
@@ -664,9 +664,9 @@
           "count": 36
         },
         {
-          "median": null,
-          "average": null,
-          "count": 4
+          "median": 15,
+          "average": 17.4,
+          "count": 5
         }
       ],
       "waivers": [
@@ -761,7 +761,7 @@
         46,
         37,
         31,
-        30
+        29
       ]
     }
   },
@@ -814,11 +814,11 @@
     {
       "code": "A",
       "name": "Agriculture, Forestry and Fishing",
-      "average_business_days": 22.6,
-      "median_business_days": 18,
-      "average_calendar_days": 32.9,
-      "median_calendar_days": 27,
-      "count": 7
+      "average_business_days": 22.4,
+      "median_business_days": 18.5,
+      "average_calendar_days": 32.4,
+      "median_calendar_days": 27.5,
+      "count": 8
     },
     {
       "code": "B",
@@ -878,10 +878,10 @@
       "code": "M",
       "name": "Professional, Scientific and Technical Services",
       "average_business_days": 20.5,
-      "median_business_days": 17.5,
+      "median_business_days": 18,
       "average_calendar_days": 30.5,
-      "median_calendar_days": 26.0,
-      "count": 60
+      "median_calendar_days": 26,
+      "count": 61
     },
     {
       "code": "O",
@@ -949,14 +949,6 @@
       "median_phase_1_business_days": 20
     },
     {
-      "division": "Not yet determined",
-      "count": 28,
-      "outcome_mix": {
-        "Unknown": 28
-      },
-      "median_phase_1_business_days": null
-    },
-    {
       "division": "Commissioner Woodward",
       "count": 27,
       "outcome_mix": {
@@ -966,13 +958,21 @@
       "median_phase_1_business_days": 18
     },
     {
-      "division": "Unknown",
-      "count": 4,
+      "division": "Not yet determined",
+      "count": 27,
       "outcome_mix": {
-        "Approved": 2,
+        "Unknown": 27
+      },
+      "median_phase_1_business_days": null
+    },
+    {
+      "division": "Unknown",
+      "count": 5,
+      "outcome_mix": {
+        "Approved": 3,
         "Unknown": 2
       },
-      "median_phase_1_business_days": 40.0
+      "median_phase_1_business_days": 21
     },
     {
       "division": "Chair Cass-Gottlieb",
@@ -1007,7 +1007,7 @@
       "18": 27,
       "19": 21,
       "20": 11,
-      "21": 12,
+      "21": 13,
       "22": 6,
       "23": 4,
       "24": 6,
@@ -1025,9 +1025,9 @@
     },
     "stats": {
       "mean_used_bd": 18.2,
-      "median_used_bd": 17.0,
+      "median_used_bd": 17,
       "pct_decided_final_3_bd": 3.1,
-      "count": 224
+      "count": 225
     },
     "extended_count": 11
   },
@@ -1068,11 +1068,11 @@
     {
       "code": "A",
       "name": "Agriculture, Forestry and Fishing",
-      "approved": 6,
+      "approved": 7,
       "not_approved": 0,
       "referred": 1,
-      "in_progress": 3,
-      "phase2_referral_rate": 0.143
+      "in_progress": 2,
+      "phase2_referral_rate": 0.125
     },
     {
       "code": "L",
@@ -1104,11 +1104,11 @@
     {
       "code": "M",
       "name": "Professional, Scientific and Technical Services",
-      "approved": 57,
+      "approved": 58,
       "not_approved": 0,
       "referred": 3,
-      "in_progress": 10,
-      "phase2_referral_rate": 0.05
+      "in_progress": 9,
+      "phase2_referral_rate": 0.049
     },
     {
       "code": "E",
