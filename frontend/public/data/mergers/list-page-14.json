@@ -1894,6 +1894,71 @@
       ]
     },
     {
+      "merger_id": "WA-70038",
+      "merger_name": "Herron Todd White Group - Mitchell Brandtman",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-09-10T12:00:00Z",
+      "determination_publication_date": "2026-10-02T12:00:00Z",
+      "end_of_determination_period": null,
+      "latest_event_date": "2026-10-02T12:00:00Z",
+      "page_modified_datetime": "2026-10-02T17:22:40+10:00",
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "HERRON TODD WHITE (ONE) PTY LTD"
+        }
+      ],
+      "targets": [
+        {
+          "name": "MITCHELL BRANDTMAN PTY LTD"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "HERRON TODD WHITE (HOLDINGS) PTY LTD"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3011",
+          "name": "House Construction"
+        },
+        {
+          "code": "3020",
+          "name": "Non-Residential Building Construction"
+        },
+        {
+          "code": "6221",
+          "name": "Banking"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        },
+        {
+          "code": "6720",
+          "name": "Real Estate Services"
+        },
+        {
+          "code": "6921",
+          "name": "Architectural Services"
+        },
+        {
+          "code": "6923",
+          "name": "Engineering Design and Engineering Consulting Services"
+        },
+        {
+          "code": "6931",
+          "name": "Legal Services"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-01121",
       "merger_name": "Amplitude / OG Energy - Artisan Gas Field",
       "status": "Assessment completed",
@@ -2826,78 +2891,6 @@
         {
           "code": "6712",
           "name": "Non-Residential Property Operators"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-85054",
-      "merger_name": "Xylem - Flow Controls",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-09-28T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-11-10T12:00:00Z",
-      "latest_event_date": "2026-09-29T12:00:00Z",
-      "page_modified_datetime": "2026-09-29T11:16:35+10:00",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Xylem Water Solutions U.S.A., Inc."
-        }
-      ],
-      "targets": [
-        {
-          "name": "Dynamatic, LLC"
-        },
-        {
-          "name": "Cornell Pump Company LLC"
-        },
-        {
-          "name": "Flow Controls Parent, LLC"
-        },
-        {
-          "name": "Roper Pump Company LLC"
-        },
-        {
-          "name": "Flow Controls Holding, LLC"
-        },
-        {
-          "name": "High Tide Technologies, LLC"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "Xylem Inc."
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "2419",
-          "name": "Other Professional and Scientific Equipment Manufacturing"
-        },
-        {
-          "code": "2439",
-          "name": "Other Electrical Equipment Manufacturing"
-        },
-        {
-          "code": "2451",
-          "name": "Pump and Compressor Manufacturing"
-        },
-        {
-          "code": "2499",
-          "name": "Other Machinery and Equipment Manufacturing n.e.c."
-        },
-        {
-          "code": "6240",
-          "name": "Financial Asset Investing"
-        },
-        {
-          "code": "7000",
-          "name": "Computer System Design and Related Services"
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
   "total_mergers": 276,
-  "total_waivers": 434,
+  "total_waivers": 435,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 240,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 413,
+    "Approved": 414,
     "Not approved": 21
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.225806451612904,
-    "median_days": 20.0,
-    "average_business_days": 13.841013824884792,
-    "median_business_days": 14.0
+    "average_days": 20.229885057471265,
+    "median_days": 20,
+    "average_business_days": 13.845977011494252,
+    "median_business_days": 14
   },
   "top_industries": [
     {
@@ -67,24 +67,24 @@
       "count": 77
     },
     {
-      "name": "Software Publishing",
+      "name": "Non-Residential Property Operators",
       "count": 43
     },
     {
-      "name": "Non-Residential Property Operators",
-      "count": 42
+      "name": "Software Publishing",
+      "count": 43
     },
     {
       "name": "Pubs, Taverns and Bars",
       "count": 36
     },
     {
-      "name": "Accommodation",
+      "name": "Engineering Design and Engineering Consulting Services",
       "count": 24
     },
     {
-      "name": "Engineering Design and Engineering Consulting Services",
-      "count": 23
+      "name": "Accommodation",
+      "count": 24
     },
     {
       "name": "Supermarket and Grocery Stores",
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-70038",
+      "merger_name": "Herron Todd White Group - Mitchell Brandtman",
+      "determination": "Approved",
+      "determination_date": "2026-10-02T12:00:00Z",
+      "page_modified_datetime": "2026-10-02T17:22:40+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-35048",
       "merger_name": "Kiwa - CSA Group",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-09-30T12:00:00Z",
       "page_modified_datetime": "2026-09-30T16:55:13+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-85055",
-      "merger_name": "One Equity Partners \u2013 Myriad360",
-      "determination": "Approved",
-      "determination_date": "2026-09-29T12:00:00Z",
-      "page_modified_datetime": "2026-09-29T17:01:14+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

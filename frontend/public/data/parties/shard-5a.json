@@ -283,6 +283,47 @@
       },
       "waiver_duration": null
     },
+    "mitchell-brandtman-pty-ltd": {
+      "id": "mitchell-brandtman-pty-ltd",
+      "canonical_name": "Mitchell Brandtman Pty Ltd",
+      "members": [
+        {
+          "name": "MITCHELL BRANDTMAN PTY LTD",
+          "identifier": "97 701 314 374",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-70038",
+            "merger_name": "Herron Todd White Group - Mitchell Brandtman",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-10T12:00:00Z",
+            "determination_date": "2026-10-02T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 22.0,
+        "median_days": 22,
+        "average_business_days": 16.0,
+        "median_business_days": 16,
+        "completed_count": 1
+      }
+    },
     "peel-motor-group-pty-ltd": {
       "id": "peel-motor-group-pty-ltd",
       "canonical_name": "Peel Motor Group Pty Ltd",
