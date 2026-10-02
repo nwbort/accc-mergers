@@ -2,6 +2,41 @@
   "shard": 250,
   "shard_count": 256,
   "parties": {
+    "converge-international-pty-ltd": {
+      "id": "converge-international-pty-ltd",
+      "canonical_name": "Converge International Pty Ltd",
+      "members": [
+        {
+          "name": "CONVERGE INTERNATIONAL PTY LTD",
+          "identifier": "12 113 688 627",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-25053",
+            "merger_name": "Altius \u2013 Converge International",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-01T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "elevate-bidco-gmbh": {
       "id": "elevate-bidco-gmbh",
       "canonical_name": "Elevate BidCo GmbH",

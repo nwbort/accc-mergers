@@ -104,6 +104,16 @@
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
       "date": "2026-10-12T12:00:00Z",
+      "merger_id": "MN-25053",
+      "merger_name": "Altius \u2013 Converge International",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-10-01T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-10-12T12:00:00Z",
       "merger_id": "MN-65039",
       "merger_name": "ASSA ABLOY \u2013 Gunnebo Entrance Control",
       "status": "Under assessment",
@@ -375,6 +385,16 @@
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-11-13T12:00:00Z",
+      "merger_id": "MN-25053",
+      "merger_name": "Altius \u2013 Converge International",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-10-01T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-11-13T12:00:00Z",
       "merger_id": "MN-65039",
       "merger_name": "ASSA ABLOY \u2013 Gunnebo Entrance Control",
       "status": "Under assessment",
@@ -402,6 +422,6 @@
       "effective_notification_datetime": "2026-05-12T12:00:00Z"
     }
   ],
-  "count": 40,
+  "count": 42,
   "days_ahead": 60
 }
