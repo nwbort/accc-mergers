@@ -62782,7 +62782,7 @@
       "original_notification_datetime": "2026-10-01T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-11-13T12:00:00Z",
-      "page_modified_datetime": "2026-10-02T10:51:52+10:00",
+      "page_modified_datetime": "2026-10-02T11:10:10+10:00",
       "consultation_response_due_date": "2026-10-09T12:00:00Z",
       "acquirers": [
         {
@@ -62838,6 +62838,15 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-10-02T12:00:00Z",
+          "title": "Phase 1 consultation",
+          "display_title": "Phase 1 consultation",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Olin%20-%20Hunstman%20-%20third-party%20questionnaire.docx",
+          "url_gh": "/mergers/MN-95044/Olin - Hunstman - third-party questionnaire.pdf",
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
@@ -62849,6 +62858,7 @@
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
+      "has_questionnaire": true,
       "similar_mergers": [
         {
           "merger_id": "WA-35028",
@@ -62888,15 +62898,15 @@
         }
       ],
       "phase_1_estimate": {
-        "expected_business_days": 18,
+        "expected_business_days": 17,
         "range_business_days": [
-          16,
-          21
+          15,
+          19
         ],
-        "basis": "global",
-        "question_bucket": null,
-        "question_count": null,
-        "sample_size": 240,
+        "basis": "questionnaire",
+        "question_bucket": "3 or fewer",
+        "question_count": 3,
+        "sample_size": 170,
         "as_of": "2026-10-01",
         "estimated_at": "2026-10-02",
         "method_version": 2
