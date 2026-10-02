@@ -659,15 +659,15 @@
     "method_version": 2
   },
   "MN-10032": {
-    "expected_business_days": 18,
+    "expected_business_days": 26,
     "range_business_days": [
-      16,
-      21
+      22,
+      32
     ],
-    "basis": "global",
-    "question_bucket": null,
-    "question_count": null,
-    "sample_size": 243,
+    "basis": "questionnaire",
+    "question_bucket": "10 or more",
+    "question_count": 11,
+    "sample_size": 20,
     "as_of": "2026-10-02",
     "estimated_at": "2026-10-02",
     "method_version": 2
