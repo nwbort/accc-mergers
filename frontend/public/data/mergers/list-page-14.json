@@ -2140,6 +2140,108 @@
       ]
     },
     {
+      "merger_id": "WA-40043",
+      "merger_name": "Blackbird Ventures - Heidi Health",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-09-14T12:00:00Z",
+      "determination_publication_date": "2026-10-02T12:00:00Z",
+      "end_of_determination_period": null,
+      "latest_event_date": "2026-10-02T12:00:00Z",
+      "page_modified_datetime": "2026-10-02T17:20:15+10:00",
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "The Trustee for Blackbird FSA Co-Investment Trust",
+          "canonical": {
+            "name": "Blackbird Ventures"
+          }
+        },
+        {
+          "name": "The Trustee for Blackbird Guardians Coinvestment Trust"
+        },
+        {
+          "name": "The Trustee for Blackbird NGS Co-investment Trust"
+        },
+        {
+          "name": "The Trustee for Blackbird Aware Super Co-investment Vehicle Trust"
+        },
+        {
+          "name": "The Trustee for Blackbird Hotham Co-Investment Trust"
+        },
+        {
+          "name": "The Trustee for Blackbird CB Co-Investment Trust"
+        }
+      ],
+      "targets": [
+        {
+          "name": "OSCER ENTERPRISES PTY LTD"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "BLACKBIRD VENTURES PTY LTD",
+          "canonical": {
+            "name": "Blackbird Ventures"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5420",
+          "name": "Software Publishing"
+        },
+        {
+          "code": "5700",
+          "name": "Internet Publishing and Broadcasting"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "6910",
+          "name": "Scientific Research Services"
+        },
+        {
+          "code": "6970",
+          "name": "Veterinary Services"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        },
+        {
+          "code": "8401",
+          "name": "Hospitals (Except Psychiatric Hospitals)"
+        },
+        {
+          "code": "8511",
+          "name": "General Practice Medical Services"
+        },
+        {
+          "code": "8512",
+          "name": "Specialist Medical Services"
+        },
+        {
+          "code": "8531",
+          "name": "Dental Services"
+        },
+        {
+          "code": "8539",
+          "name": "Other Allied Health Services"
+        },
+        {
+          "code": "8601",
+          "name": "Aged Care Residential Services"
+        }
+      ]
+    },
+    {
       "merger_id": "WA-90038",
       "merger_name": "Waymark Hotels Group \u2013 The Queensland Hotel, Goondiwindi, QLD",
       "status": "Assessment completed",
@@ -2813,46 +2915,6 @@
         {
           "code": "6240",
           "name": "Financial Asset Investing"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-45029",
-      "merger_name": "Schreiber Foods \u2013 Real Dairy Australia",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-09-30T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-11-12T12:00:00Z",
-      "latest_event_date": "2026-10-01T12:00:00Z",
-      "page_modified_datetime": "2026-10-01T09:25:06+10:00",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Schreiber Foods Inc."
-        }
-      ],
-      "targets": [
-        {
-          "name": "REAL DAIRY AUSTRALIA PTY LTD"
-        },
-        {
-          "name": "GET REAL FOODS PTY LTD"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "1133",
-          "name": "Cheese and Other Dairy Product Manufacturing"
-        },
-        {
-          "code": "3603",
-          "name": "Dairy Produce Wholesaling"
         }
       ]
     }
