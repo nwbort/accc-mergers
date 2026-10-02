@@ -26,7 +26,8 @@ used here (there's no user content to protect), just the same per-IP KV
 rate limit as the other routes.
 
 Only event names listed in `ALLOWED_EVENT_TYPES` (`src/index.js`) are
-accepted. To start tracking a new feature's usage:
+accepted, plus the per-merger follow counters `track_merger_{id}` (e.g.
+`track_merger_MN-01016`), which are matched by `TRACK_MERGER_EVENT_RE`. To start tracking a new feature's usage:
 
 1. Add its event name to `ALLOWED_EVENT_TYPES`.
 2. In the frontend, call `pingFeatureEvent('your_event_name')` from

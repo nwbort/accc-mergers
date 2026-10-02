@@ -20,7 +20,7 @@ export default function PrivacyPolicy() {
         {/* Header */}
         <header className="mb-6">
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">Privacy policy</h1>
-          <p className="mt-1 text-sm text-gray-500">Last updated: 15 September 2026</p>
+          <p className="mt-1 text-sm text-gray-500">Last updated: 2 October 2026</p>
         </header>
 
         {/* 1. Introduction */}
@@ -113,7 +113,7 @@ export default function PrivacyPolicy() {
             <li>whether you have dismissed feedback popups, so we can stop bothering you.</li>
           </ul>
           <p className="text-gray-700 leading-relaxed">
-            We do not otherwise collect or transmit your individual information. We monitor how often certain
+            We do not otherwise collect or transmit your personal information. We monitor how often certain
             features of our website are used so we can understand where to focus our development efforts. This
             information is collected and stored in an aggregated manner that does not allow for any
             identification of individual users. For example, we do not collect any cookies, device IDs, IP
