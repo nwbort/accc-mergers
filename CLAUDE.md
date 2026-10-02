@@ -231,6 +231,8 @@ frontend/src/
 │                         #   mirrors scripts/industry_division.py) and industryNode.js (reads one
 │                         #   node back out of that file; the only module that knows the packing),
 │                         #   treemapTail.js, mergerOutcome.js, partyMembers.js, durationEcdf.js,
+│                         #   eventOrder.js (the detail page's newest-first event list; a
+│                         #   same-day notification always sorts as the oldest event),
 │                         #   mergerSort.js (the merger list's ?sort= vocabulary: the field table
 │                         #   the select is built from and the comparator it drives),
 │                         #   timelineAxis.js (the horizontal milestone track's geometry —
