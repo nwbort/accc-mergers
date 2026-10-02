@@ -88,6 +88,12 @@ def _lightweight(m: dict) -> dict:
         "determination_publication_date": m.get('determination_publication_date'),
         "end_of_determination_period": m.get('end_of_determination_period'),
         "latest_event_date": _latest_event_date(m),
+        # The register page's real modified timestamp (to the second). Event
+        # dates are all stored at a nominal midday, so this is the only thing
+        # that orders matters updated on the same day; it is the list's
+        # "Last updated" tie-break, never its primary key (the ACCC rewriting
+        # an old page would otherwise float it to the top).
+        "page_modified_datetime": m.get('page_modified_datetime'),
         "stage": m.get('stage'),
         "acquirers": _party_names(m.get('acquirers')),
         "targets": _party_names(m.get('targets')),
