@@ -18,6 +18,7 @@ import MergerOutcomeHeading from '../components/MergerOutcomeHeading';
 import { useTracking } from '../context/TrackingContext';
 import { useFetchData } from '../hooks/useFetchData';
 import { formatDateMedium, formatDateLong } from '../utils/dates';
+import { sortEventsNewestFirst } from '../utils/eventOrder';
 import { API_ENDPOINTS } from '../config';
 import { PROSE_MARKDOWN, CARD, CARD_TITLE, SECTION_HEADING } from '../utils/classNames';
 import { slugify, mergerPath, industryPath, partyPath } from '../utils/slug';
@@ -168,9 +169,7 @@ function MergerDetail() {
 
   const businessDayProgress = getBusinessDayProgress(merger);
 
-  const sortedEvents = merger.events
-    ? [...merger.events].sort((a, b) => new Date(b.date) - new Date(a.date))
-    : [];
+  const sortedEvents = sortEventsNewestFirst(merger.events);
 
   // Tribunal appeal documents tend to arrive in a burst and clutter the
   // timeline. When more than two land back-to-back (most recent first,
