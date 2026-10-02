@@ -1,10 +1,10 @@
 {
-  "total_mergers": 274,
+  "total_mergers": 275,
   "total_waivers": 432,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 240,
-    "Under assessment": 29,
+    "Under assessment": 30,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-10032",
+      "merger_name": "TurOSI / Cordina",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-02T12:00:00Z",
+      "page_modified_datetime": "2026-10-02T15:01:48+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-25053",
       "merger_name": "Altius \u2013 Converge International",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-09-25T12:00:00Z",
       "page_modified_datetime": "2026-09-28T16:08:33+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-75056",
-      "merger_name": "Visa - BioCatch",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-09-24T12:00:00Z",
-      "page_modified_datetime": "2026-09-29T13:48:33+10:00",
       "is_waiver": false,
       "is_refiled": false
     }
