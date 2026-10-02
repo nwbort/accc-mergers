@@ -1,0 +1,111 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/kiwa-csa-group",
+  "merger_name": "Kiwa - CSA Group",
+  "status": "Assessment completed",
+  "merger_id": "WA-35048",
+  "effective_notification_datetime": "2026-09-10T12:00:00Z",
+  "original_notification_datetime": "2026-09-10T12:00:00Z",
+  "stage": "Waiver application",
+  "determination_publication_date": "2026-10-02T12:00:00Z",
+  "accc_determination": "Approved",
+  "acquirers": [
+    {
+      "name": "Kiwa Holding Canada Inc.",
+      "identifier_type": null,
+      "identifier": "",
+      "party_page": {
+        "id": "kiwa-holding-canada-inc",
+        "name": "Kiwa Holding Canada Inc."
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "CSA Group Testing & Certification Inc.",
+      "identifier_type": null,
+      "identifier": "Canadian Business Number  802680769RC0002",
+      "party_page": {
+        "id": "csa-group-testing-certification-inc",
+        "name": "CSA Group Testing & Certification Inc."
+      }
+    }
+  ],
+  "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "6925",
+      "name": "Scientific Testing and Analysis Services"
+    },
+    {
+      "code": "7720",
+      "name": "Regulatory Services"
+    }
+  ],
+  "merger_description": "Kiwa Holding Canada Inc. (**Kiwa**), a wholly owned subsidiary of Kiwa N.V. and SHV Holdings, proposes to acquire 100% of the shares in CSA Group Testing & Certification Inc (**CSA Group**).\n\nKiwa N.V. is a global testing, inspection and certification (**TIC**) company for clients across a broad range of industries. It is wholly owned by SHV Holdings, a Dutch conglomerate.\n\nIn Australia, Kiwa N.V. has four business lines, providing testing for mining, civil construction and infrastructure services, construction materials testing, geotechnical services consulting and ISO certification.\n\nCSA Group is a global TIC company based in Canada. It has a limited presence in Australia, in factory certification.",
+  "events": [
+    {
+      "date": "2026-10-02T12:00:00Z",
+      "title": "Notification waiver determination published",
+      "display_title": "Waiver application determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Kiwa%20-%20CSA%20Group%20%28WA-35048%29%20-%20Notification%20waiver%20determination%20-%202%20October%202026.pdf",
+      "determination_table_content": [
+        {
+          "item": "Explanation for\ndetermination",
+          "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition given there is no horizontal overlap\nbetween Kiwa and CSA Group in the supply of factory auditing\nservices in Australia.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+        }
+      ],
+      "url_gh": "/mergers/WA-35048/Kiwa - CSA Group (WA-35048) - Notification waiver determination - 2 October 2026.pdf",
+      "is_determination_event": true,
+      "phase": "Waiver"
+    },
+    {
+      "date": "2026-09-10T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": true,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-01107",
+      "merger_name": "WSP - Geotechnical Testing and Interpretation",
+      "acquirers": [
+        "WSP AUSTRALIA PTY LIMITED"
+      ],
+      "targets": [
+        "GEOTECHNICAL TESTING AND INTERPRETATION PTY LTD"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "MN-35017",
+      "merger_name": "KINETIC - DYSONS BUS SERVICES",
+      "acquirers": [
+        "KINETIC HOLDING COMPANY PTY LTD"
+      ],
+      "targets": [
+        "L.C. DYSON'S BUS SERVICES PROPRIETARY LIMITED"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "MN-35034",
+      "merger_name": "The Independents Group \u2013 acquisition of entities within the Smuggler Group",
+      "acquirers": [
+        "The Independents Creative Collective UK Ltd.",
+        "The Independents Group Inc."
+      ],
+      "targets": [
+        "Smuggler LLC",
+        "Sidepiece LLC"
+      ],
+      "accc_determination": "Approved"
+    }
+  ]
+}

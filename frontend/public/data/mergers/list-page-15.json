@@ -1,6 +1,60 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-75058",
+      "merger_name": "Kinetic - Tassielink",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-09-29T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-11-11T12:00:00Z",
+      "latest_event_date": "2026-09-30T12:00:00Z",
+      "page_modified_datetime": "2026-09-30T16:33:38+10:00",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "KINETIC HOLDING COMPANY PTY LTD",
+          "canonical": {
+            "name": "Kinetic"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Tassielink Group Pty Ltd"
+        },
+        {
+          "name": "TASMANIAN TOURS & TRAVEL PTY. LTD."
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "TPG Inc.",
+          "canonical": {
+            "name": "TPG Inc."
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4621",
+          "name": "Interurban and Rural Bus Transport"
+        },
+        {
+          "code": "4622",
+          "name": "Urban Bus Transport (Including Tramway)"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-45029",
       "merger_name": "Schreiber Foods \u2013 Real Dairy Australia",
       "status": "Under assessment",

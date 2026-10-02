@@ -1857,6 +1857,43 @@
       ]
     },
     {
+      "merger_id": "WA-35048",
+      "merger_name": "Kiwa - CSA Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-09-10T12:00:00Z",
+      "determination_publication_date": "2026-10-02T12:00:00Z",
+      "end_of_determination_period": null,
+      "latest_event_date": "2026-10-02T12:00:00Z",
+      "page_modified_datetime": "2026-10-02T17:21:32+10:00",
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Kiwa Holding Canada Inc."
+        }
+      ],
+      "targets": [
+        {
+          "name": "CSA Group Testing & Certification Inc."
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "6925",
+          "name": "Scientific Testing and Analysis Services"
+        },
+        {
+          "code": "7720",
+          "name": "Regulatory Services"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-01121",
       "merger_name": "Amplitude / OG Energy - Artisan Gas Field",
       "status": "Assessment completed",
@@ -2861,60 +2898,6 @@
         {
           "code": "7000",
           "name": "Computer System Design and Related Services"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-75058",
-      "merger_name": "Kinetic - Tassielink",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-09-29T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-11-11T12:00:00Z",
-      "latest_event_date": "2026-09-30T12:00:00Z",
-      "page_modified_datetime": "2026-09-30T16:33:38+10:00",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "KINETIC HOLDING COMPANY PTY LTD",
-          "canonical": {
-            "name": "Kinetic"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "Tassielink Group Pty Ltd"
-        },
-        {
-          "name": "TASMANIAN TOURS & TRAVEL PTY. LTD."
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "TPG Inc.",
-          "canonical": {
-            "name": "TPG Inc."
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "4621",
-          "name": "Interurban and Rural Bus Transport"
-        },
-        {
-          "code": "4622",
-          "name": "Urban Bus Transport (Including Tramway)"
-        },
-        {
-          "code": "6240",
-          "name": "Financial Asset Investing"
         }
       ]
     }
