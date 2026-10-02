@@ -3,12 +3,12 @@
   "total_waivers": 437,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 240,
-    "Under assessment": 31,
+    "Assessment completed": 241,
+    "Under assessment": 30,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 232,
+    "Approved": 233,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 21
   },
   "clearance_rate": {
-    "cleared": 237,
+    "cleared": 238,
     "not_cleared": 3,
-    "total": 240,
+    "total": 241,
     "rate": 0.988
   },
   "phase_duration": {
-    "average_days": 29.591836734693878,
-    "median_days": 26,
-    "average_business_days": 20.110204081632652,
-    "median_business_days": 18,
+    "average_days": 29.556910569105693,
+    "median_days": 26.0,
+    "average_business_days": 20.089430894308943,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
-        "count": 54,
-        "percentage": 22.0
+        "count": 55,
+        "percentage": 22.4
       },
       "day20": {
-        "count": 179,
-        "percentage": 73.1
+        "count": 180,
+        "percentage": 73.2
       },
       "day30": {
-        "count": 228,
+        "count": 229,
         "percentage": 93.1
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-65033",
+      "merger_name": "Challenger - Channel Capital and Fidante",
+      "determination": "Approved",
+      "determination_date": "2026-10-02T12:00:00Z",
+      "page_modified_datetime": "2026-10-02T17:36:09+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-15044",
       "merger_name": "Australian Venue Co \u2013 assets of the Stock Exchange Hotel, Brisbane CBD, QLD",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-65036",
-      "merger_name": "ENEOS \u2013 Chevron Australia Downstream",
-      "determination": "Approved",
-      "determination_date": "2026-10-01T12:00:00Z",
-      "page_modified_datetime": "2026-10-01T16:50:58+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]

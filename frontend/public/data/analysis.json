@@ -2,7 +2,7 @@
   "phase1_duration": {
     "duration_histogram": {
       "15": {
-        "21": 29,
+        "21": 30,
         "22": 13,
         "23": 3,
         "24": 4,
@@ -130,17 +130,17 @@
     },
     "stats": {
       "average": 20.1,
-      "median": 18,
+      "median": 18.0,
       "min": 15,
       "max": 59,
-      "count": 245
+      "count": 246
     },
     "calendar_stats": {
       "average": 29.6,
-      "median": 26,
+      "median": 26.0,
       "min": 21,
       "max": 103,
-      "count": 245
+      "count": 246
     }
   },
   "waiver_duration": {
@@ -389,7 +389,7 @@
       46,
       37,
       31,
-      31
+      30
     ],
     "as_at": "2026-10-02"
   },
@@ -400,14 +400,14 @@
         "days": 30,
         "notifications_filed": 34,
         "notifications": {
-          "median": 18.0,
-          "average": 20.8,
+          "median": 18,
+          "average": 20.6,
           "p90": 38,
           "min": 15,
           "max": 49,
-          "count": 38,
+          "count": 39,
           "duration_histogram": {
-            "15": 10,
+            "15": 11,
             "16": 3,
             "17": 2,
             "18": 6,
@@ -458,14 +458,14 @@
         "days": 90,
         "notifications_filed": 111,
         "notifications": {
-          "median": 18,
+          "median": 18.0,
           "average": 20.7,
           "p90": 29,
           "min": 15,
           "max": 56,
-          "count": 117,
+          "count": 118,
           "duration_histogram": {
-            "15": 21,
+            "15": 22,
             "16": 18,
             "17": 11,
             "18": 12,
@@ -489,7 +489,7 @@
             "52": 1,
             "56": 1
           },
-          "median_delta": 0
+          "median_delta": 0.0
         },
         "waivers": {
           "median": 17.0,
@@ -526,12 +526,12 @@
     ],
     "all_time": {
       "notifications": {
-        "median": 18,
+        "median": 18.0,
         "average": 20.1,
         "p90": 28,
         "min": 15,
         "max": 59,
-        "count": 245
+        "count": 246
       },
       "waivers": {
         "median": 14,
@@ -664,9 +664,9 @@
           "count": 36
         },
         {
-          "median": 15,
-          "average": 17.4,
-          "count": 5
+          "median": 15.0,
+          "average": 17.0,
+          "count": 6
         }
       ],
       "waivers": [
@@ -761,7 +761,7 @@
         46,
         37,
         31,
-        31
+        30
       ]
     }
   },
@@ -922,11 +922,11 @@
     {
       "code": "K",
       "name": "Financial and Insurance Services",
-      "average_business_days": 18.7,
-      "median_business_days": 16.5,
-      "average_calendar_days": 26.9,
-      "median_calendar_days": 25.0,
-      "count": 48
+      "average_business_days": 18.6,
+      "median_business_days": 16,
+      "average_calendar_days": 26.8,
+      "median_calendar_days": 25,
+      "count": 49
     }
   ],
   "by_commission_division": [
@@ -950,9 +950,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 29,
+      "count": 28,
       "outcome_mix": {
-        "Unknown": 29
+        "Unknown": 28
       },
       "median_phase_1_business_days": null
     },
@@ -967,12 +967,12 @@
     },
     {
       "division": "Unknown",
-      "count": 4,
+      "count": 5,
       "outcome_mix": {
-        "Approved": 2,
+        "Approved": 3,
         "Unknown": 2
       },
-      "median_phase_1_business_days": 40.0
+      "median_phase_1_business_days": 21
     },
     {
       "division": "Chair Cass-Gottlieb",
@@ -1001,7 +1001,7 @@
   ],
   "deadline_utilisation": {
     "histogram": {
-      "15": 54,
+      "15": 55,
       "16": 40,
       "17": 26,
       "18": 27,
@@ -1025,9 +1025,9 @@
     },
     "stats": {
       "mean_used_bd": 18.2,
-      "median_used_bd": 17,
+      "median_used_bd": 17.0,
       "pct_decided_final_3_bd": 3.1,
-      "count": 225
+      "count": 226
     },
     "extended_count": 11
   },
@@ -1122,11 +1122,11 @@
     {
       "code": "K",
       "name": "Financial and Insurance Services",
-      "approved": 46,
+      "approved": 47,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 14,
-      "phase2_referral_rate": 0.042
+      "in_progress": 13,
+      "phase2_referral_rate": 0.041
     },
     {
       "code": "C",

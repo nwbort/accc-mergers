@@ -43105,7 +43105,7 @@
           "targets": [
             "CHANNEL GROUP HOLDINGS PTY LTD"
           ],
-          "status": "Under assessment"
+          "accc_determination": "Approved"
         },
         {
           "merger_id": "WA-50029",
@@ -43836,13 +43836,16 @@
     {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/challenger-channel-capital-and-fidante",
       "merger_name": "Challenger - Channel Capital and Fidante",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-65033",
       "effective_notification_datetime": "2026-09-11T12:00:00Z",
       "original_notification_datetime": "2026-09-11T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-10-26T12:00:00Z",
-      "page_modified_datetime": "2026-09-14T16:32:24+10:00",
+      "determination_publication_date": "2026-10-02T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-10-02T17:36:09+10:00",
       "consultation_response_due_date": "2026-09-21T12:00:00Z",
       "acquirers": [
         {
@@ -43921,13 +43924,25 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-10-02T12:00:00Z",
+          "title": "Challenger - Channel Capital and Fidante - Phase 1 determination",
+          "display_title": "Challenger - Channel Capital and Fidante - Phase 1 determination",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-10-02T12:00:00Z",
+          "title": "Phase 1 - initial assessment determination: Approved",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
       "has_conditions": false,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-10-02T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -64290,7 +64305,7 @@
           "targets": [
             "CHANNEL GROUP HOLDINGS PTY LTD"
           ],
-          "status": "Under assessment"
+          "accc_determination": "Approved"
         },
         {
           "merger_id": "WA-50029",
@@ -86900,7 +86915,7 @@
           "targets": [
             "CHANNEL GROUP HOLDINGS PTY LTD"
           ],
-          "status": "Under assessment"
+          "accc_determination": "Approved"
         }
       ]
     },
