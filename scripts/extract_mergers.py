@@ -31,6 +31,7 @@ from scripts.date_utils import parse_text_to_iso, parse_iso_datetime
 from scripts.generate.static_data.enrichment import is_phase_2_referral_event
 from scripts.constants import merger_status
 from scripts import stage_determinations
+from scripts.questionnaire_probe import probe_questionnaire
 
 BASE_URL = "https://www.accc.gov.au"
 MATTERS_DIR = "./data/raw/matters"
@@ -1812,6 +1813,10 @@ def detect_inferred_phase_2(all_mergers_data):
 
 
 MISSING_QUESTIONNAIRES_PATH = 'data/processed/missing_questionnaires.json'
+# Only matters notified this recently are probed for a guessed questionnaire
+# URL: the ACCC publishes within days, and a confidential matter that never will
+# would otherwise cost a few hundred requests on every run for good.
+PROBE_WINDOW_DAYS = 21
 
 
 def _has_questionnaire_event(merger):
@@ -1833,7 +1838,20 @@ def _has_questionnaire_event(merger):
     )
 
 
-def detect_missing_questionnaires(all_mergers_data):
+def _recently_notified(merger, today=None):
+    """True when the matter was notified within PROBE_WINDOW_DAYS (or has no date)."""
+    notified = (merger.get('effective_notification_datetime') or '')[:10]
+    if not notified:
+        return True
+    try:
+        age = (today or datetime.now(timezone.utc).date()) - datetime.strptime(
+            notified, '%Y-%m-%d').date()
+    except ValueError:
+        return True
+    return age.days <= PROBE_WINDOW_DAYS
+
+
+def detect_missing_questionnaires(all_mergers_data, probe=None):
     """Find notifications on the register that have no questionnaire document.
 
     The ACCC publishes a questionnaire for a notified acquisition a median of a
@@ -1842,6 +1860,12 @@ def detect_missing_questionnaires(all_mergers_data):
     (an assessment run confidentially). This can't tell the two apart, so it
     reports both and leaves the owner to close the issue for the second kind.
     Waivers are skipped: they carry no questionnaire.
+
+    ``probe``, when given, is called with each recently notified matter that is
+    missing one and returns a URL guessed from recent filenames (or None). A hit
+    is reported in the issue as ``probed_url`` and never added to the timeline:
+    it says the file exists, not that the ACCC means to list it. Left None the
+    detector makes no network requests.
 
     Writes ``MISSING_QUESTIONNAIRES_PATH`` with two lists for the pipeline:
 
@@ -1868,6 +1892,13 @@ def detect_missing_questionnaires(all_mergers_data):
         name = merger.get('merger_name', '')
         url = merger.get('url', '')
         notified = (merger.get('effective_notification_datetime') or '')[:10]
+        probed_url = probe(merger) if probe and _recently_notified(merger) else None
+        probed_note = (
+            f"### Found by probing\n\n"
+            f"A file that looks like the questionnaire is served at "
+            f"<{probed_url}>, but the matter page doesn't list it. The ACCC "
+            f"may have forgotten to link it.\n\n"
+        ) if probed_url else ''
         body = (
             f"**{name}** is a notified acquisition on the ACCC register with no "
             f"questionnaire document on its page.\n\n"
@@ -1878,6 +1909,7 @@ def detect_missing_questionnaires(all_mergers_data):
             f"| Notified | {notified or '—'} |\n"
             f"| ACCC stage | {merger.get('stage') or '—'} |\n"
             f"| Status | {merger.get('status') or '—'} |\n\n"
+            f"{probed_note}"
             f"### Why this issue exists\n\n"
             f"Either the ACCC hasn't uploaded the questionnaire yet, or this matter "
             f"was assessed confidentially and never will.\n\n"
@@ -1892,6 +1924,7 @@ def detect_missing_questionnaires(all_mergers_data):
             'merger_name': name,
             'title': f"Missing questionnaire: {name} ({merger_id})",
             'body': body,
+            'probed_url': probed_url,
         })
 
     if not to_open and not resolved:
@@ -2053,7 +2086,7 @@ def run_pdf_enrichment(all_mergers_data, frozen_events_mergers):
     extract_phase2_notice_data(all_mergers_data)
     auto_fix_missing_event_dates(all_mergers_data, frozen_events_mergers)
     detect_inferred_phase_2(all_mergers_data)
-    detect_missing_questionnaires(all_mergers_data)
+    detect_missing_questionnaires(all_mergers_data, probe=probe_questionnaire)
     return all_mergers_data
 
 def main():
