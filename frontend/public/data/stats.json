@@ -1,10 +1,10 @@
 {
-  "total_mergers": 275,
+  "total_mergers": 276,
   "total_waivers": 432,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 240,
-    "Under assessment": 30,
+    "Under assessment": 31,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -56,15 +56,15 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 154
+      "count": 155
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 76
+      "count": 77
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 75
+      "count": 76
     },
     {
       "name": "Non-Residential Property Operators",
@@ -72,7 +72,7 @@
     },
     {
       "name": "Software Publishing",
-      "count": 41
+      "count": 42
     },
     {
       "name": "Pubs, Taverns and Bars",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-90037",
+      "merger_name": "Stripe - OpenRouter",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-02T12:00:00Z",
+      "page_modified_datetime": "2026-10-02T15:38:17+10:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-10032",
       "merger_name": "TurOSI / Cordina",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-09-28T12:00:00Z",
       "page_modified_datetime": "2026-09-29T11:16:35+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-85042",
-      "merger_name": "Vets Central \u2013 Vital Vet Animal Hospital",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-09-25T12:00:00Z",
-      "page_modified_datetime": "2026-09-28T16:08:33+10:00",
       "is_waiver": false,
       "is_refiled": false
     }

@@ -33826,6 +33826,81 @@
     "is_waiver": false
   },
   {
+    "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/stripe-openrouter",
+    "merger_name": "Stripe - OpenRouter",
+    "status": "Under assessment",
+    "merger_id": "MN-90037",
+    "effective_notification_datetime": "2026-10-02T12:00:00Z",
+    "original_notification_datetime": "2026-10-02T12:00:00Z",
+    "stage": "Phase 1 - initial assessment",
+    "end_of_determination_period": "2026-11-16T12:00:00Z",
+    "page_modified_datetime": "2026-10-02T15:38:17+10:00",
+    "consultation_response_due_date": "2026-10-12T12:00:00Z",
+    "acquirers": [
+      {
+        "name": "Stripe, LLC",
+        "identifier_type": null,
+        "identifier": "Delaware File Number  4675506"
+      }
+    ],
+    "targets": [
+      {
+        "name": "OpenRouter, Inc.",
+        "identifier_type": null,
+        "identifier": "Delaware File Number  7412265"
+      }
+    ],
+    "other_parties": [],
+    "anzsic_codes": [
+      {
+        "code": "5420",
+        "name": "Software Publishing"
+      },
+      {
+        "code": "5910",
+        "name": "Internet Service Providers and Web Search Portals"
+      },
+      {
+        "code": "5921",
+        "name": "Data Processing and Web Hosting Services"
+      },
+      {
+        "code": "6230",
+        "name": "Non-Depository Financing"
+      },
+      {
+        "code": "6240",
+        "name": "Financial Asset Investing"
+      },
+      {
+        "code": "6419",
+        "name": "Other Auxiliary Finance and Investment Services"
+      },
+      {
+        "code": "7000",
+        "name": "Computer System Design and Related Services"
+      }
+    ],
+    "merger_description": "Stripe, LLC (**Stripe**) proposes to acquire 100% of the outstanding capital stock of OpenRouter Inc. (**OpenRouter**).\n\nStripe is a financial technology group\u00a0active in the provision of payment processing and financial infrastructure software for businesses. Stripe\u2019s services grant companies the ability to accept credit card payments, digital wallets, and global currency transactions. Stripe provides an AI gateway feature as part of a token billing service for Stripe customers.\n\nOpenRouter is a technology company active within the wider artificial intelligence sector, in the provision of infrastructure services that facilitate access to Large Language Models and other generative AI models. OpenRouter\u2019s business focuses on enabling access, comparison and use AI models from different providers through a single interface. The AI gateway is OpenRouter\u2019s only product.",
+    "events": [
+      {
+        "date": "2026-10-02T12:00:00Z",
+        "title": "Stripe - OpenRouter - Phase 1 Questionnaire",
+        "display_title": "Stripe - OpenRouter - Phase 1 Questionnaire",
+        "is_questionnaire_event": true,
+        "url": "https://www.accc.gov.au/system/files/moderated_files/Stripe%20-%20OpenRouter%20-%20third-party%20questionnaire.docx",
+        "url_gh": "/mergers/MN-90037/Stripe - OpenRouter - third-party questionnaire.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2026-10-02T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": false
+  },
+  {
     "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/sembcorp-industries-ltd-alinta-energy",
     "merger_name": "Sembcorp Industries Ltd - Alinta Energy",
     "status": "Assessment completed",
