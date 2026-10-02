@@ -32,32 +32,26 @@ from scripts.normalization import normalize_dashes
 
 BASE_URL = 'https://www.accc.gov.au/system/files/moderated_files/'
 DOC_CONTENT_TYPES = ('officedocument', 'msword', 'pdf')
-EXTENSIONS = ('docx', 'pdf')
-SUFFIXES = ('', '_0', '_1', '_2', '_3', '_4')
-# Consultation titles carry the day the ACCC published, which has run from two
-# days before the notified date to three days after it.
-CONSULTATION_DAY_OFFSETS = range(-3, 6)
-DATED_SUFFIXES = ('', '_0')
+# Every questionnaire published since mid-September 2026 is a Word document.
+EXTENSIONS = ('docx',)
+SUFFIXES = ('', '_0', '_1')
+# The dated "Phase 1 consultation" title carries the day the ACCC published,
+# which has run from the notified date to three days after it.
+CONSULTATION_DAY_OFFSETS = range(0, 6)
 
-# {n} is the matter name, {d} a 'D Month YYYY' date. Order is rough likelihood
-# of a hit, so the common cases are reached before the long tail.
+# {n} is the matter name, {d} a 'D Month YYYY' date. Only shapes seen on
+# questionnaires published since mid-September 2026 are tried; older shapes
+# (' - Questionnaires', PDFs, 'Third Party Questionnaire') have not recurred.
 STEM_TEMPLATES = (
     '{n} - Questionnaire',
     'Questionnaire - {n}',
     '{n} - third-party questionnaire',
     '{n} - Third party questionnaire',
-    '{n} - Third Party Questionnaire',
-    '{n} - Questionnaires',
-    '{n} - questionnaire',
     '{id} - {n} - questionnaire',
 )
 DATED_STEM_TEMPLATES = (
     '{n} - Third-party questionnaire - Phase 1 consultation - {d}',
-    '{n} - third-party questionnaire - {d}',
-    '{n} - Questionnaire - {d}',
 )
-# Every dated file seen so far was a Word document.
-DATED_EXTENSIONS = ('docx',)
 REQUEST_TIMEOUT = 15
 MAX_WORKERS = 8
 
@@ -101,10 +95,7 @@ def candidate_urls(merger: dict) -> list[str]:
 
     urls = [
         f'{BASE_URL}{quote(stem + suffix)}.{ext}'
-        for stem, suffix, ext in product(stems, SUFFIXES, EXTENSIONS)
-    ] + [
-        f'{BASE_URL}{quote(stem + suffix)}.{ext}'
-        for stem, suffix, ext in product(dated, DATED_SUFFIXES, DATED_EXTENSIONS)
+        for stem, suffix, ext in product(stems + dated, SUFFIXES, EXTENSIONS)
     ]
     return list(dict.fromkeys(urls))
 

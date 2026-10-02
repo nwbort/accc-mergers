@@ -16,16 +16,21 @@ class TestCandidateUrls:
         assert BASE + 'Architectus%20-%20SBA%20-%20third-party%20questionnaire.docx' in urls
         assert BASE + 'Questionnaire%20-%20Architectus%20-%20SBA.docx' in urls
         assert BASE + 'Architectus%20-%20SBA%20-%20Questionnaire_0.docx' in urls
-        assert BASE + 'Architectus%20-%20SBA%20-%20Questionnaire.pdf' in urls
+        assert not any(u.endswith('.pdf') for u in urls)
         assert BASE + 'MN-70039%20-%20Architectus%20-%20SBA%20-%20questionnaire_1.docx' in urls
 
     def test_dated_consultation_title_uses_the_notification_day(self):
         urls = set(qp.candidate_urls({
             'merger_id': 'MN-85042', 'merger_name': 'Vets Central - Vital Vet',
-            'effective_notification_datetime': '2026-09-28T12:00:00Z'}))
+            'effective_notification_datetime': '2026-09-25T12:00:00Z'}))
         assert BASE + (
             'Vets%20Central%20-%20Vital%20Vet%20-%20Third-party%20questionnaire'
             '%20-%20Phase%201%20consultation%20-%2028%20September%202026.docx') in urls
+
+    def test_suffixes_are_blank_0_or_1_only(self):
+        urls = qp.candidate_urls({'merger_id': 'MN-1', 'merger_name': 'A - B'})
+        assert BASE + 'A%20-%20B%20-%20Questionnaire_2.docx' not in urls
+        assert BASE + 'A%20-%20B%20-%20Questionnaire_1.docx' in urls
 
     def test_drops_a_trailing_parenthetical_the_acc_omits(self):
         urls = set(qp.candidate_urls({
