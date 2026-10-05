@@ -2157,6 +2157,76 @@
       ]
     },
     {
+      "merger_id": "WA-35050",
+      "merger_name": "National Dental Care - Sunshine Dental and Gisborne Dental, VIC",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-09-11T12:00:00Z",
+      "determination_publication_date": "2026-10-05T12:00:00Z",
+      "end_of_determination_period": null,
+      "latest_event_date": "2026-10-05T12:00:00Z",
+      "page_modified_datetime": "2026-10-05T16:29:53+11:00",
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "NDC AUSTRALIA PTY LIMITED",
+          "canonical": {
+            "name": "National Dental Care"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "CARE FAMILY DENTAL PTY LTD"
+        },
+        {
+          "name": "The Trustee for Care Family Dental Gisborne Trust"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "NDC HOLDCO PTY LTD",
+          "canonical": {
+            "name": "National Dental Care"
+          }
+        },
+        {
+          "name": "NDC FINCO PTY LTD",
+          "canonical": {
+            "name": "National Dental Care"
+          }
+        },
+        {
+          "name": "NATIONAL DENTAL CARE LIMITED",
+          "canonical": {
+            "name": "National Dental Care"
+          }
+        },
+        {
+          "name": "NDC SERVICE CO PTY LIMITED",
+          "canonical": {
+            "name": "National Dental Care"
+          }
+        },
+        {
+          "name": "NDC PROPERTY CO PTY LIMITED",
+          "canonical": {
+            "name": "National Dental Care"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "8531",
+          "name": "Dental Services"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-55037",
       "merger_name": "Covetrus \u2014 MWI",
       "status": "Under assessment",
@@ -2734,53 +2804,6 @@
         {
           "code": "8710",
           "name": "Child Care Services"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-75056",
-      "merger_name": "Visa - BioCatch",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-09-24T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-11-06T12:00:00Z",
-      "latest_event_date": "2026-09-25T12:00:00Z",
-      "page_modified_datetime": "2026-09-29T13:48:33+10:00",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Visa Open Connect Limited",
-          "canonical": {
-            "name": "Visa"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "BioCatch Ltd"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "Visa Inc",
-          "canonical": {
-            "name": "Visa"
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "6419",
-          "name": "Other Auxiliary Finance and Investment Services"
-        },
-        {
-          "code": "7000",
-          "name": "Computer System Design and Related Services"
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
   "total_mergers": 277,
-  "total_waivers": 437,
+  "total_waivers": 438,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 241,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 416,
+    "Approved": 417,
     "Not approved": 21
   },
   "clearance_rate": {
@@ -48,10 +48,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.237986270022883,
-    "median_days": 20,
-    "average_business_days": 13.8558352402746,
-    "median_business_days": 14
+    "average_days": 20.246575342465754,
+    "median_days": 20.0,
+    "average_business_days": 13.858447488584474,
+    "median_business_days": 14.0
   },
   "top_industries": [
     {
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-35050",
+      "merger_name": "National Dental Care - Sunshine Dental and Gisborne Dental, VIC",
+      "determination": "Approved",
+      "determination_date": "2026-10-05T12:00:00Z",
+      "page_modified_datetime": "2026-10-05T16:29:53+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-65033",
       "merger_name": "Challenger - Channel Capital and Fidante",
       "determination": "Approved",
@@ -334,17 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-01T12:00:00Z",
       "page_modified_datetime": "2026-10-01T16:58:45+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-25051",
-      "merger_name": "St Vincent's Private Hospitals Limited \u2013 St Vincent's Private Hospital Sydney",
-      "determination": "Approved",
-      "determination_date": "2026-10-01T12:00:00Z",
-      "page_modified_datetime": "2026-10-01T16:57:28+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
