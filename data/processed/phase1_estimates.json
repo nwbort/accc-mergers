@@ -3333,15 +3333,15 @@
     "method_version": 2
   },
   "MN-85049": {
-    "expected_business_days": 18,
+    "expected_business_days": 17,
     "range_business_days": [
-      16,
-      21
+      15,
+      19
     ],
-    "basis": "global",
-    "question_bucket": null,
-    "question_count": null,
-    "sample_size": 243,
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 173,
     "as_of": "2026-10-02",
     "estimated_at": "2026-10-05",
     "method_version": 2

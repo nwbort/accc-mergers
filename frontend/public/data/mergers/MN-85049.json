@@ -58,6 +58,15 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-10-05T12:00:00Z",
+      "title": "Phase 1 consultation",
+      "display_title": "Phase 1 consultation",
+      "is_questionnaire_event": true,
+      "url": "https://www.accc.gov.au/system/files/moderated_files/APEM%20-%20Resource%20Strategies%20-%20third-party%20questionnaire.docx",
+      "url_gh": "/mergers/MN-85049/APEM - Resource Strategies - third-party questionnaire.pdf",
+      "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
@@ -67,6 +76,7 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
+  "has_questionnaire": true,
   "similar_mergers": [
     {
       "merger_id": "MN-10005",
@@ -105,15 +115,15 @@
     }
   ],
   "phase_1_estimate": {
-    "expected_business_days": 18,
+    "expected_business_days": 17,
     "range_business_days": [
-      16,
-      21
+      15,
+      19
     ],
-    "basis": "global",
-    "question_bucket": null,
-    "question_count": null,
-    "sample_size": 243,
+    "basis": "questionnaire",
+    "question_bucket": "3 or fewer",
+    "question_count": 3,
+    "sample_size": 173,
     "as_of": "2026-10-02",
     "estimated_at": "2026-10-05",
     "method_version": 2
