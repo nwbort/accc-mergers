@@ -139,6 +139,19 @@ jobs:
             ./scripts/scrape/scrape.sh
           fi
 
+      # The register index page is gitignored (it churns on every fetch), so
+      # without this there is no way to see what the ACCC served on a run that
+      # found no matters — a block page and a markup change look the same in
+      # the log. Kept briefly: it is a debugging aid, not a record.
+      - name: Upload register page
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: acquisitions-register-html
+          path: data/raw/acquisitions-register.html
+          if-no-files-found: warn
+          retention-days: 7
+
       # Record which merger IDs this run actually fetched, which of their
       # pages changed, and which matters were skipped past cutoff, so a run
       # can be spot checked against an ACCC register notification email.
