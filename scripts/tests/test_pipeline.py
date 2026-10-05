@@ -26,6 +26,7 @@ from scripts.extract_mergers import (
     _scrape_events,
     detect_inferred_phase_2,
     detect_missing_questionnaires,
+    detect_missing_waiver_determinations,
     _infer_determination_date_from_events,
     _infer_determination_date_from_unlinked_event,
     _extract_anzsic_codes,
@@ -2418,6 +2419,71 @@ class TestDetectMissingQuestionnaires:
         out.write_text('{"open": [{"merger_id": "MN-OLD"}], "resolved": []}')
         monkeypatch.setattr(extract_mergers, "MISSING_QUESTIONNAIRES_PATH", str(out))
         detect_missing_questionnaires([])
+        assert not out.exists()
+
+
+# ---------------------------------------------------------------------------
+# extract_mergers: detect_missing_waiver_determinations
+# ---------------------------------------------------------------------------
+
+class TestDetectMissingWaiverDeterminations:
+    def _run(self, mergers, tmp_path, monkeypatch):
+        out = tmp_path / "missing_waiver_determinations.json"
+        monkeypatch.setattr(extract_mergers, "MISSING_WAIVER_DETERMINATIONS_PATH", str(out))
+        detect_missing_waiver_determinations(mergers)
+        if not out.exists():
+            return None
+        with open(out) as f:
+            return json.load(f)
+
+    def test_determination_row_without_attachment_opens_issue(self, tmp_path, monkeypatch):
+        # WA-35050: the row is listed, the PDF isn't attached yet.
+        mergers = [{
+            'merger_id': 'WA-35050',
+            'merger_name': 'National Dental Care - Sunshine Dental',
+            'accc_determination': 'Approved',
+            'determination_publication_date': '2026-10-05T12:00:00Z',
+            'events': [{'title': 'Notification waiver determination published',
+                        'date': '2026-10-05T12:00:00Z'}],
+        }]
+        result = self._run(mergers, tmp_path, monkeypatch)
+        assert [i['merger_id'] for i in result['open']] == ['WA-35050']
+        assert '(WA-35050)' in result['open'][0]['title']
+        assert result['resolved'] == []
+
+    def test_document_by_flag_title_or_url_resolves(self, tmp_path, monkeypatch):
+        decided = {'accc_determination': 'Approved'}
+        mergers = [
+            {'merger_id': 'WA-1', **decided, 'events': [{
+                'title': 'Notiification waiver determination', 'url': 'https://x/a.pdf',
+                'is_determination_event': True}]},
+            {'merger_id': 'WA-2', **decided, 'events': [{
+                'title': 'Notification waiver determination published', 'url': 'https://x/b.pdf'}]},
+            {'merger_id': 'WA-3', **decided, 'events': [{
+                'title': 'Acme - Target', 'url': 'https://x/Acme%20-%20Waiver%20determination.pdf'}]},
+        ]
+        result = self._run(mergers, tmp_path, monkeypatch)
+        assert result['open'] == []
+        assert result['resolved'] == ['WA-1', 'WA-2', 'WA-3']
+
+    def test_waiver_recognised_by_stage_without_is_waiver_flag(self, tmp_path, monkeypatch):
+        mergers = [{'merger_id': 'XX-1', 'stage': 'Waiver application',
+                    'accc_determination': 'Not approved', 'events': []}]
+        result = self._run(mergers, tmp_path, monkeypatch)
+        assert [i['merger_id'] for i in result['open']] == ['XX-1']
+
+    def test_notifications_and_undecided_waivers_are_ignored(self, tmp_path, monkeypatch):
+        mergers = [
+            {'merger_id': 'MN-1', 'accc_determination': 'Approved', 'events': []},
+            {'merger_id': 'WA-2', 'events': []},
+        ]
+        assert self._run(mergers, tmp_path, monkeypatch) is None
+
+    def test_removes_stale_file_when_no_decided_waivers(self, tmp_path, monkeypatch):
+        out = tmp_path / "missing_waiver_determinations.json"
+        out.write_text('{"open": [{"merger_id": "WA-OLD"}], "resolved": []}')
+        monkeypatch.setattr(extract_mergers, "MISSING_WAIVER_DETERMINATIONS_PATH", str(out))
+        detect_missing_waiver_determinations([])
         assert not out.exists()
 
 
