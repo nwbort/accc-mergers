@@ -1812,6 +1812,62 @@ def detect_inferred_phase_2(all_mergers_data):
         )
 
 
+def _tracking_issue(merger, heading, kind, summary, rows, explanation, extra=''):
+    """Build one tracking-issue entry for a matter missing a document.
+
+    The shape ``.github/actions/tracking-issues`` reads. The title is
+    "{heading}: {name} ({merger_id})" — the action matches an issue to its
+    matter by that "(merger_id)", so it is built here and nowhere else. The
+    body is the details table (``rows`` after the merger link and ID), any
+    ``extra`` section, then ``explanation`` and the standard auto-close note.
+    """
+    merger_id = merger['merger_id']
+    name = merger.get('merger_name', '')
+    table = ''.join(f"| {label} | {value or '—'} |\n" for label, value in rows)
+    body = (
+        f"**{name}** {summary}\n\n"
+        f"### Details\n\n"
+        f"| Merger | [{name}]({merger.get('url', '')}) |\n"
+        f"|--------|---------------|\n"
+        f"| Merger ID | `{merger_id}` |\n"
+        f"{table}\n"
+        f"{extra}"
+        f"### Why this issue exists\n\n"
+        f"{explanation}\n\n"
+        f"- This issue will **close automatically** once {kind} appears "
+        f"on the register.\n"
+        f"- If none is expected, close this issue manually. The pipeline never "
+        f"reopens or re-creates a closed issue.\n\n"
+        f"[View on mergers.fyi]({mergers_fyi_url(merger_id)})"
+    )
+    return {
+        'merger_id': merger_id,
+        'merger_name': name,
+        'title': f"{heading}: {name} ({merger_id})",
+        'body': body,
+    }
+
+
+def _write_tracking_issues(path, to_open, resolved, report):
+    """Write a detector's ``{open, resolved}`` file for the tracking-issues action.
+
+    Removes the file when there is nothing in either list, so a stale one can
+    never outlive the matters it described. ``report`` prefixes the stderr
+    line naming the matters flagged.
+    """
+    if not to_open and not resolved:
+        if os.path.exists(path):
+            os.remove(path)
+        return
+
+    with open(path, 'w', encoding='utf-8') as f:
+        json.dump({'open': to_open, 'resolved': resolved}, f, indent=2)
+
+    if to_open:
+        print(f"{report}: {', '.join(sorted(i['merger_id'] for i in to_open))}",
+              file=sys.stderr)
+
+
 MISSING_QUESTIONNAIRES_PATH = 'data/processed/missing_questionnaires.json'
 # Only matters notified this recently are probed for a guessed questionnaire
 # URL: the ACCC publishes within days, and a confidential matter that never will
@@ -1889,8 +1945,6 @@ def detect_missing_questionnaires(all_mergers_data, probe=None):
             resolved.append(merger_id)
             continue
 
-        name = merger.get('merger_name', '')
-        url = merger.get('url', '')
         notified = (merger.get('effective_notification_datetime') or '')[:10]
         probed_url = probe(merger) if probe and _recently_notified(merger) else None
         probed_note = (
@@ -1899,48 +1953,24 @@ def detect_missing_questionnaires(all_mergers_data, probe=None):
             f"<{probed_url}>, but the matter page doesn't list it. The ACCC "
             f"may have forgotten to link it.\n\n"
         ) if probed_url else ''
-        body = (
-            f"**{name}** is a notified acquisition on the ACCC register with no "
-            f"questionnaire document on its page.\n\n"
-            f"### Details\n\n"
-            f"| Merger | [{name}]({url}) |\n"
-            f"|--------|---------------|\n"
-            f"| Merger ID | `{merger_id}` |\n"
-            f"| Notified | {notified or '—'} |\n"
-            f"| ACCC stage | {merger.get('stage') or '—'} |\n"
-            f"| Status | {merger.get('status') or '—'} |\n\n"
-            f"{probed_note}"
-            f"### Why this issue exists\n\n"
-            f"Either the ACCC hasn't uploaded the questionnaire yet, or this matter "
-            f"was assessed confidentially and never will.\n\n"
-            f"- This issue will **close automatically** once a questionnaire appears "
-            f"on the register.\n"
-            f"- If none is expected, close this issue manually. The pipeline never "
-            f"reopens or re-creates a closed issue.\n\n"
-            f"[View on mergers.fyi]({mergers_fyi_url(merger_id)})"
+        issue = _tracking_issue(
+            merger,
+            heading='Missing questionnaire',
+            kind='a questionnaire',
+            summary=('is a notified acquisition on the ACCC register with no '
+                     'questionnaire document on its page.'),
+            rows=[('Notified', notified),
+                  ('ACCC stage', merger.get('stage')),
+                  ('Status', merger.get('status'))],
+            explanation=("Either the ACCC hasn't uploaded the questionnaire yet, "
+                         "or this matter was assessed confidentially and never will."),
+            extra=probed_note,
         )
-        to_open.append({
-            'merger_id': merger_id,
-            'merger_name': name,
-            'title': f"Missing questionnaire: {name} ({merger_id})",
-            'body': body,
-            'probed_url': probed_url,
-        })
+        issue['probed_url'] = probed_url
+        to_open.append(issue)
 
-    if not to_open and not resolved:
-        if os.path.exists(MISSING_QUESTIONNAIRES_PATH):
-            os.remove(MISSING_QUESTIONNAIRES_PATH)
-        return
-
-    with open(MISSING_QUESTIONNAIRES_PATH, 'w', encoding='utf-8') as f:
-        json.dump({'open': to_open, 'resolved': resolved}, f, indent=2)
-
-    if to_open:
-        print(
-            f"No questionnaire on the register for: "
-            f"{', '.join(sorted(i['merger_id'] for i in to_open))}",
-            file=sys.stderr,
-        )
+    _write_tracking_issues(MISSING_QUESTIONNAIRES_PATH, to_open, resolved,
+                           'No questionnaire on the register for')
 
 
 MISSING_WAIVER_DETERMINATIONS_PATH = 'data/processed/missing_waiver_determinations.json'
@@ -2004,52 +2034,25 @@ def detect_missing_waiver_determinations(all_mergers_data):
             resolved.append(merger_id)
             continue
 
-        name = merger.get('merger_name', '')
-        url = merger.get('url', '')
-        decided = (merger.get('determination_publication_date') or '')[:10]
-        body = (
-            f"**{name}** is a decided waiver application on the ACCC register "
-            f"with no determination document on its page.\n\n"
-            f"### Details\n\n"
-            f"| Merger | [{name}]({url}) |\n"
-            f"|--------|---------------|\n"
-            f"| Merger ID | `{merger_id}` |\n"
-            f"| Determination | {merger.get('accc_determination') or '—'} |\n"
-            f"| Published | {decided or '—'} |\n"
-            f"| ACCC stage | {merger.get('stage') or '—'} |\n\n"
-            f"### Why this issue exists\n\n"
-            f"The ACCC publishes a determination with every waiver decision. "
-            f"Either it hasn't been uploaded yet, or the page links to the wrong "
-            f"thing.\n\n"
-            f"- This issue will **close automatically** once a determination "
-            f"document appears on the register.\n"
-            f"- If none is expected, close this issue manually. The pipeline never "
-            f"reopens or re-creates a closed issue.\n"
-            f"- Waivers stop being scraped three weeks after the decision, so a "
-            f"document uploaded later than that won't be picked up on its own.\n\n"
-            f"[View on mergers.fyi]({mergers_fyi_url(merger_id)})"
+        issue = _tracking_issue(
+            merger,
+            heading='Missing waiver determination',
+            kind='a determination document',
+            summary=('is a decided waiver application on the ACCC register '
+                     'with no determination document on its page.'),
+            rows=[('Determination', merger.get('accc_determination')),
+                  ('Published', (merger.get('determination_publication_date') or '')[:10]),
+                  ('ACCC stage', merger.get('stage'))],
+            explanation=("The ACCC publishes a determination with every waiver "
+                         "decision. Either it hasn't been uploaded yet, or the page "
+                         "links to the wrong thing. Waivers stop being scraped three "
+                         "weeks after the decision, so a document uploaded later than "
+                         "that won't be picked up on its own."),
         )
-        to_open.append({
-            'merger_id': merger_id,
-            'merger_name': name,
-            'title': f"Missing waiver determination: {name} ({merger_id})",
-            'body': body,
-        })
+        to_open.append(issue)
 
-    if not to_open and not resolved:
-        if os.path.exists(MISSING_WAIVER_DETERMINATIONS_PATH):
-            os.remove(MISSING_WAIVER_DETERMINATIONS_PATH)
-        return
-
-    with open(MISSING_WAIVER_DETERMINATIONS_PATH, 'w', encoding='utf-8') as f:
-        json.dump({'open': to_open, 'resolved': resolved}, f, indent=2)
-
-    if to_open:
-        print(
-            f"No determination document on the register for waivers: "
-            f"{', '.join(sorted(i['merger_id'] for i in to_open))}",
-            file=sys.stderr,
-        )
+    _write_tracking_issues(MISSING_WAIVER_DETERMINATIONS_PATH, to_open, resolved,
+                           'No determination document on the register for waivers')
 
 
 def extract_nocc_data():

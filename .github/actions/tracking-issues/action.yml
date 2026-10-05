@@ -1,0 +1,159 @@
+name: Missing-document tracking issues
+description: >-
+  Open one tracking issue per matter a detector lists as missing a document,
+  push an ntfy notification for the new ones, and auto-close an issue once
+  the document appears.
+
+# The missing-questionnaire and missing-waiver-determination checks in
+# pipeline.yml share one lifecycle, so they share this action rather than two
+# near-identical copies of the plumbing. Each detector in
+# scripts/extract_mergers.py writes a JSON file of the shape
+#
+#   {"open":     [{"merger_id", "merger_name", "title", "body"}, ...],
+#    "resolved": ["MN-...", ...]}
+#
+# (via _write_tracking_issues) and this action turns it into issues:
+#
+# - An issue is matched to its matter by "(merger_id)" in the title, so every
+#   title the detector writes must end with it.
+# - An issue that exists in ANY state is never re-created, so closing one by
+#   hand is how the owner marks a matter's missing document as expected (a
+#   confidential assessment, say). The pipeline never reopens it.
+# - A matter in `resolved` has its open issue (if any) closed with a comment.
+# - No file means the detector had nothing to say: the action does nothing.
+
+inputs:
+  file:
+    description: The detector's JSON output.
+    required: true
+  label:
+    description: Label applied to, and used to find, this kind of issue.
+    required: true
+  label-description:
+    description: Description for the label, created on first use.
+    required: true
+  close-comment:
+    description: Comment posted when closing an issue whose document has appeared.
+    required: true
+  notify-title:
+    description: ntfy notification title for newly opened issues.
+    required: true
+  ntfy-topic:
+    description: ntfy topic (a secret, so the caller passes it). Empty skips the push.
+    required: false
+    default: ''
+  ntfy-token:
+    description: ntfy access token, if the topic needs one.
+    required: false
+    default: ''
+  ntfy-server:
+    description: ntfy server base URL.
+    required: false
+    default: 'https://ntfy.sh'
+  github-token:
+    description: Token for the gh CLI.
+    required: true
+
+outputs:
+  created:
+    description: Number of issues opened this run.
+    value: ${{ steps.issues.outputs.created }}
+
+runs:
+  using: composite
+  steps:
+    - name: Open and close tracking issues
+      id: issues
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.github-token }}
+        FILE: ${{ inputs.file }}
+        LABEL: ${{ inputs.label }}
+        LABEL_DESCRIPTION: ${{ inputs.label-description }}
+        CLOSE_COMMENT: ${{ inputs.close-comment }}
+      run: |
+        echo "created=0" >> "$GITHUB_OUTPUT"
+        if [ ! -f "$FILE" ]; then
+          echo "No $LABEL data to process"
+          exit 0
+        fi
+
+        ALL_ISSUES="${RUNNER_TEMP}/${LABEL}-all.json"
+        gh issue list \
+          --label "$LABEL" \
+          --state all \
+          --limit 500 \
+          --json number,title,state > "$ALL_ISSUES"
+
+        ALL_TITLES="${RUNNER_TEMP}/${LABEL}-titles.txt"
+        jq -r '.[].title' "$ALL_ISSUES" > "$ALL_TITLES"
+
+        OPEN_COUNT=$(jq '.open | length' "$FILE")
+        echo "Matters flagged ($LABEL): $OPEN_COUNT"
+
+        if [ "$OPEN_COUNT" -gt 0 ]; then
+          gh label create "$LABEL" \
+            --description "$LABEL_DESCRIPTION" \
+            --color "fbca04" \
+            --force
+        fi
+
+        CREATED=0
+        NAMES=""
+        for i in $(seq 0 $((OPEN_COUNT - 1))); do
+          MERGER_ID=$(jq -r ".open[$i].merger_id" "$FILE")
+
+          # Skip if an issue already exists in ANY state, so we never reopen
+          # one the owner deliberately closed.
+          if grep -qF -- "($MERGER_ID)" "$ALL_TITLES"; then
+            echo "Issue already exists for $MERGER_ID — skipping"
+            continue
+          fi
+
+          TITLE=$(jq -r ".open[$i].title" "$FILE")
+          jq -n \
+            --argjson idx "$i" \
+            --arg label "$LABEL" \
+            --slurpfile data "$FILE" \
+            '{"title": $data[0].open[$idx].title,
+              "body":  $data[0].open[$idx].body,
+              "labels": [$label]}' | \
+          gh api "repos/$GITHUB_REPOSITORY/issues" --method POST --input -
+          echo "$TITLE" >> "$ALL_TITLES"
+          echo "Created issue: $TITLE"
+          CREATED=$((CREATED + 1))
+          NAMES="${NAMES}$(jq -r ".open[$i].merger_name" "$FILE") (${MERGER_ID})"$'\n'
+        done
+
+        # Close the issue of any matter whose document has appeared.
+        OPEN_ISSUES="${RUNNER_TEMP}/${LABEL}-open.json"
+        jq '[.[] | select(.state | ascii_upcase == "OPEN")]' "$ALL_ISSUES" > "$OPEN_ISSUES"
+        for MERGER_ID in $(jq -r '.resolved[]' "$FILE"); do
+          NUMBER=$(jq -r --arg id "($MERGER_ID)" \
+            'map(select(.title | contains($id))) | .[0].number // empty' \
+            "$OPEN_ISSUES")
+          if [ -n "$NUMBER" ]; then
+            gh issue comment "$NUMBER" --body "$CLOSE_COMMENT"
+            gh issue close "$NUMBER"
+            echo "Closed issue #$NUMBER for $MERGER_ID"
+          fi
+        done
+
+        echo "created=$CREATED" >> "$GITHUB_OUTPUT"
+        {
+          echo "names<<TRACKING_ISSUES_EOF"
+          printf '%s' "$NAMES"
+          echo "TRACKING_ISSUES_EOF"
+        } >> "$GITHUB_OUTPUT"
+
+    - name: Notify new tracking issues
+      if: steps.issues.outputs.created != '0'
+      uses: ./.github/actions/ntfy
+      with:
+        topic: ${{ inputs.ntfy-topic }}
+        token: ${{ inputs.ntfy-token }}
+        server: ${{ inputs.ntfy-server }}
+        title: ${{ inputs.notify-title }}
+        message: ${{ steps.issues.outputs.names }}
+        tags: 'page_facing_up'
+        click: ${{ github.server_url }}/${{ github.repository }}/issues?q=is%3Aopen+label%3A${{ inputs.label }}

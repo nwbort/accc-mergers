@@ -656,6 +656,13 @@ re-read two records that move perhaps once a year.
   is *today*, so re-deriving would re-date every unreviewed candidate and
   discard corrections made on the branch), the other three ignore it.
 - `ntfy/` — publish a push notification to an [ntfy](https://ntfy.sh) topic.
+- `tracking-issues/` — the missing-document issue lifecycle shared by the
+  `missing-questionnaire` and `missing-waiver-determination` checks: one issue
+  per matter a detector lists, an ntfy push for new ones, auto-close once the
+  document appears, and never re-create an issue that exists in any state. The
+  detectors write its input through `_write_tracking_issues` /
+  `_tracking_issue` in `extract_mergers.py`; a third check is another call to
+  each, not another copy.
 
 ### Push notifications
 
