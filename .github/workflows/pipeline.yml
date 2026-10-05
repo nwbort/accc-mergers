@@ -150,7 +150,7 @@ jobs:
           name: acquisitions-register-html
           path: data/raw/acquisitions-register.html
           if-no-files-found: warn
-          retention-days: 7
+          retention-days: 1
 
       # Record which merger IDs this run actually fetched, which of their
       # pages changed, and which matters were skipped past cutoff, so a run

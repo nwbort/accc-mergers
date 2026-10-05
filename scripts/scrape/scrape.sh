@@ -55,10 +55,6 @@ export BASE_URL="https://www.accc.gov.au"
 export REGISTER_URL="${BASE_URL}/public-registers/acquisitions-and-mergers-registers/acquisitions-register?init=1&items_per_page=50"
 export MAIN_PAGE_FILE="data/raw/acquisitions-register.html"
 export SUBFOLDER="data/raw/matters"
-# A plain browser User-Agent, not the honest "mergers-fyi/1.0" one this used to
-# send: since 2026-10-05 the ACCC's Akamai edge 403s any bot or self-identifying
-# UA (even a browser UA with a suffix appended). See scripts/accc_http.py for
-# what the edge checks; accc_curl below sends the rest of what it wants.
 export USER_AGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
 export MERGERS_JSON="data/processed/mergers.json"
 export REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
@@ -80,10 +76,6 @@ fi
 
 # --- Functions ---
 
-# curl as a browser navigation. The Sec-Fetch-* headers are what the ACCC's CDN
-# actually keys on alongside the User-Agent; the others make the request a
-# consistent browser one rather than a minimal pass. Every request to the ACCC
-# goes through this. Exported for the xargs subshells.
 accc_curl() {
   curl -s -L --compressed -A "$USER_AGENT" \
     -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8' \

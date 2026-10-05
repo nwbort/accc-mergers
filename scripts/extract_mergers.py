@@ -239,8 +239,6 @@ def download_attachment(merger_id, attachment_url, event_title=None, cached_dete
         # Check if the file already exists before downloading
         if not os.path.exists(local_filepath):
             # Download the file
-            # Through accc_http, not requests: the ACCC's CDN refuses anything
-            # that doesn't look like a browser (see that module).
             response = accc_http.get(attachment_url, stream=True, timeout=30)
             response.raise_for_status()  # Raise an exception for bad status codes
 

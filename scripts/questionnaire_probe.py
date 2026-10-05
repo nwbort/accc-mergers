@@ -110,12 +110,7 @@ def _is_document(url: str, session) -> bool:
 
 
 def probe_questionnaire(merger: dict, session=None) -> str | None:
-    """Return the first candidate URL that serves a document, else None.
-
-    ``session`` is anything with a requests-style ``head()``; tests pass a
-    fake. It defaults to ``accc_http``, whose module-level ``head`` the ACCC's
-    CDN will answer and which is safe to share across the worker threads.
-    """
+    """Return the first candidate URL that serves a document, else None."""
     urls = candidate_urls(merger)
     if not urls:
         return None
