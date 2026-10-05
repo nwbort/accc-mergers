@@ -55,7 +55,7 @@ export BASE_URL="https://www.accc.gov.au"
 export REGISTER_URL="${BASE_URL}/public-registers/acquisitions-and-mergers-registers/acquisitions-register?init=1&items_per_page=50"
 export MAIN_PAGE_FILE="data/raw/acquisitions-register.html"
 export SUBFOLDER="data/raw/matters"
-export USER_AGENT="Mozilla/5.0 (compatible; mergers-fyi/1.0; +https://mergers.fyi)"
+export USER_AGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
 export MERGERS_JSON="data/processed/mergers.json"
 export REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 # The Python helpers are package modules (python -m scripts.…), so the repo
@@ -75,6 +75,19 @@ if [ -n "$SCRAPE_REPORT_DIR" ]; then
 fi
 
 # --- Functions ---
+
+accc_curl() {
+  curl -s -L --compressed -A "$USER_AGENT" \
+    -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8' \
+    -H 'Accept-Language: en-AU,en;q=0.9' \
+    -H 'Upgrade-Insecure-Requests: 1' \
+    -H 'Sec-Fetch-Dest: document' \
+    -H 'Sec-Fetch-Mode: navigate' \
+    -H 'Sec-Fetch-Site: none' \
+    -H 'Sec-Fetch-User: ?1' \
+    "$@"
+}
+export -f accc_curl
 
 # Function to clean dynamic content from a single HTML file.
 # Exported so it can be called from subshells spawned by xargs.
@@ -160,7 +173,7 @@ fetch_matter_page() {
   trap 'rm -f "$temp_html"' RETURN
 
   # Download the page. The --fail flag ensures curl exits with an error on HTTP failures (like 404).
-  if ! curl -s -L --compressed -A "$USER_AGENT" --fail "$full_url" -o "$temp_html"; then
+  if ! accc_curl --fail "$full_url" -o "$temp_html"; then
       echo "FAILED: $full_url" >&2
       record_fetch "failed" "" "$link"
       # Returning a non-zero status will cause xargs to stop
@@ -210,7 +223,11 @@ export -f fetch_matter_page
 # Exported so it can be called from subshells spawned by xargs.
 fetch_register_page() {
   local page="$1"
-  curl -s -L --compressed -A "$USER_AGENT" "${REGISTER_URL}&page=${page}" -o "${PAGE_TEMP_DIR}/page_${page}.html"
+  local status
+  status=$(accc_curl -w '%{http_code}' "${REGISTER_URL}&page=${page}" -o "${PAGE_TEMP_DIR}/page_${page}.html")
+  if [ "$status" != "200" ]; then
+    echo "    Warning: register page ${page} returned HTTP ${status}" >&2
+  fi
 }
 export -f fetch_register_page
 
@@ -228,13 +245,17 @@ echo "Downloading main register page from $REGISTER_URL..."
 
 # Up to 2 attempts (1 retry) with 30-second per-attempt timeout. Curl handles
 # the retry/backoff itself.
-if curl -s -L --compressed -A "$USER_AGENT" \
+# No --fail here, deliberately: a block page (Akamai "Access Denied", a
+# Cloudflare challenge) still arrives as an HTML body, and keeping it lets the
+# zero-links diagnostics below show what the ACCC actually served. The status
+# code is captured instead and reported either way.
+if main_http_status=$(accc_curl \
      --max-time 30 --retry 1 --retry-delay 30 --retry-max-time 90 \
-     "$REGISTER_URL" -o "$MAIN_PAGE_FILE"; then
-  echo "Saved main page to '$MAIN_PAGE_FILE'"
+     -w '%{http_code}' "$REGISTER_URL" -o "$MAIN_PAGE_FILE"); then
+  echo "Saved main page to '$MAIN_PAGE_FILE' (HTTP ${main_http_status}, $(wc -c < "$MAIN_PAGE_FILE" | tr -d ' ') bytes)"
   clean_file "$MAIN_PAGE_FILE"
 else
-  echo "Failed to download main page after retries"
+  echo "Failed to download main page after retries (HTTP ${main_http_status:-none})"
   exit 1
 fi
 
@@ -278,8 +299,30 @@ if [ -n "$last_page_href" ]; then
 fi
 
 if [ -z "$relative_links" ]; then
-  echo "Warning: No acquisition links found on the register. The website structure might have changed."
-  exit 0
+  # The register always lists matters, so an empty listing means the fetch was
+  # blocked or the markup changed. Either way the run has scraped nothing, and
+  # exiting 0 here let three runs in a row pass green while doing no work.
+  # Dump enough of the page to tell the two apart, then fail the step.
+  echo "::error::No acquisition links found on the register (HTTP ${main_http_status}). The fetch was blocked or the website structure changed."
+  echo "--- Register page diagnostics ---"
+  echo "URL:    $REGISTER_URL"
+  echo "Status: HTTP ${main_http_status}"
+  echo "Size:   $(wc -c < "$MAIN_PAGE_FILE" | tr -d ' ') bytes"
+  echo "Title:  $(pup 'title text{}' < "$MAIN_PAGE_FILE" | tr -s '[:space:]' ' ' | head -c 200)"
+  echo "Selector counts:"
+  for sel in '.accc-collapsed-card__header a' '.accc-collapsed-card' \
+             'a[href*="/acquisitions-register/"]' 'a[title="Go to last page"]' \
+             '.views-row' 'table tbody tr'; do
+    printf '  %-45s %s\n' "$sel" "$(pup "$sel" < "$MAIN_PAGE_FILE" | grep -c '^<' || true)"
+  done
+  echo "Response headers (fresh HEAD request):"
+  accc_curl -I --max-time 30 "$REGISTER_URL" \
+    | grep -iE '^(HTTP/|server|content-type|content-length|location|x-akamai|akamai|cf-|x-cache|x-reference|set-cookie)' \
+    | sed 's/^/  /' || true
+  echo "First 60 lines of the page body:"
+  head -n 60 "$MAIN_PAGE_FILE" | cut -c1-300 | sed 's/^/  | /'
+  echo "--- End register page diagnostics ---"
+  exit 1
 fi
 
 # 4. Work out which matters to fetch.

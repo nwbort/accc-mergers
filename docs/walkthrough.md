@@ -39,7 +39,7 @@ export BASE_URL="https://www.accc.gov.au"
 export REGISTER_URL="${BASE_URL}/public-registers/acquisitions-and-mergers-registers/acquisitions-register?init=1&items_per_page=50"
 export MAIN_PAGE_FILE="data/raw/acquisitions-register.html"
 export SUBFOLDER="data/raw/matters"
-export USER_AGENT="Mozilla/5.0 (compatible; mergers-fyi/1.0; +https://mergers.fyi)"
+export USER_AGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
 export MERGERS_JSON="data/processed/mergers.json"
 export REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 # The Python helpers are package modules (python -m scripts.…), so the repo

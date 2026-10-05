@@ -6,7 +6,6 @@ from concurrent.futures import ProcessPoolExecutor
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse, unquote
 import unicodedata
-import requests
 import re
 from datetime import datetime, timedelta, timezone
 from markdownify import markdownify as md
@@ -30,7 +29,7 @@ from scripts.merger_filters import save_mergers
 from scripts.date_utils import parse_text_to_iso, parse_iso_datetime
 from scripts.generate.static_data.enrichment import is_phase_2_referral_event
 from scripts.constants import merger_status
-from scripts import stage_determinations
+from scripts import accc_http, stage_determinations
 from scripts.questionnaire_probe import probe_questionnaire
 
 BASE_URL = "https://www.accc.gov.au"
@@ -240,7 +239,7 @@ def download_attachment(merger_id, attachment_url, event_title=None, cached_dete
         # Check if the file already exists before downloading
         if not os.path.exists(local_filepath):
             # Download the file
-            response = requests.get(attachment_url, stream=True, timeout=30)
+            response = accc_http.get(attachment_url, stream=True, timeout=30)
             response.raise_for_status()  # Raise an exception for bad status codes
 
             # Save the file
@@ -261,7 +260,7 @@ def download_attachment(merger_id, attachment_url, event_title=None, cached_dete
                     print(f"Error parsing determination PDF {filename}: {e}", file=sys.stderr)
                     determination_data = None
 
-    except requests.exceptions.RequestException as e:
+    except accc_http.RequestException as e:
         print(f"Error downloading {attachment_url}: {e}", file=sys.stderr)
     except IOError as e:
         print(f"Error saving file {local_filepath}: {e}", file=sys.stderr)
