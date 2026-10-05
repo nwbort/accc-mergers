@@ -618,7 +618,7 @@ exists rather than 404ing into the SPA's `index.html`.
 
 | Workflow | Trigger | Purpose |
 |----------|---------|---------|
-| `pipeline.yml` | Push to `main`, weekdays 4×/day + Sunday once (Sydney time), `repository_dispatch` (email-triggered), manual | End-to-end scrape → extract → convert DOCX → enrich → generate static files (incl. `feed.xml` and `sitemap.xml`) → publish to the ATmosphere → commit; publishes `cli.sqlite`, opens tracking issues when needed (including one per notification with no questionnaire document, `missing-questionnaire`, with an ntfy push; a closed issue is never reopened, which is how a confidential matter is marked as expected), then runs all four detectors. The two ATmosphere steps are `continue-on-error` and skip without `ATPROTO_APP_PASSWORD` — an unreachable PDS must not cost the run its scrape |
+| `pipeline.yml` | Push to `main`, weekdays 4×/day + Sunday once (Sydney time), `repository_dispatch` (email-triggered), manual | End-to-end scrape → extract → convert DOCX → enrich → generate static files (incl. `feed.xml` and `sitemap.xml`) → publish to the ATmosphere → commit; publishes `cli.sqlite`, opens tracking issues when needed (including one per notification with no questionnaire document, `missing-questionnaire`, with an ntfy push; a closed issue is never reopened, which is how a confidential matter is marked as expected; likewise one per decided waiver with no determination document, `missing-waiver-determination`), then runs all four detectors. The two ATmosphere steps are `continue-on-error` and skip without `ATPROTO_APP_PASSWORD` — an unreachable PDS must not cost the run its scrape |
 | `publish-cli-sqlite.yml` | Manual | Republish `cli.sqlite` + manifest to the orphan `cli-dist` branch |
 | `publish-lexicons.yml` | Push to `main` touching `atproto/lexicons/**` or the workflow itself, manual (with a `dry_run` input) | Publish the `fyi.mergers.*` schemas as `com.atproto.lexicon.schema` records. Its own workflow rather than a pipeline step: a lexicon changes only when a person edits one, so a path-filtered push fires exactly then, where `pipeline.yml` would re-read both records several times a day to learn nothing moved. A missing `ATPROTO_APP_PASSWORD` skips a push run and fails a manual one |
 | `scrape-tribunal.yml` | Hourly at :23 from 8am-7pm Sydney time, weekdays only (`23 8-19 * * 1-5` with `timezone: Australia/Sydney`), manual | Scrape Australian Competition Tribunal matter pages into `tribunal_appeals.json` and commit. Drives a real Chrome via nodriver (headful under Xvfb) to get past the tribunal site's Cloudflare challenge, so it runs in CI. Deps: `scripts/requirements-tribunal.txt` |
@@ -656,6 +656,13 @@ re-read two records that move perhaps once a year.
   is *today*, so re-deriving would re-date every unreviewed candidate and
   discard corrections made on the branch), the other three ignore it.
 - `ntfy/` — publish a push notification to an [ntfy](https://ntfy.sh) topic.
+- `tracking-issues/` — the missing-document issue lifecycle shared by the
+  `missing-questionnaire` and `missing-waiver-determination` checks: one issue
+  per matter a detector lists, an ntfy push for new ones, auto-close once the
+  document appears, and never re-create an issue that exists in any state. The
+  detectors write its input through `_write_tracking_issues` /
+  `_tracking_issue` in `extract_mergers.py`; a third check is another call to
+  each, not another copy.
 
 ### Push notifications
 
