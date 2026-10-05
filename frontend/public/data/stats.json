@@ -1,10 +1,10 @@
 {
-  "total_mergers": 276,
+  "total_mergers": 277,
   "total_waivers": 437,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 241,
-    "Under assessment": 30,
+    "Under assessment": 31,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -80,7 +80,7 @@
     },
     {
       "name": "Engineering Design and Engineering Consulting Services",
-      "count": 24
+      "count": 25
     },
     {
       "name": "Accommodation",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-85049",
+      "merger_name": "APEM Group - Resource Strategies",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-02T12:00:00Z",
+      "page_modified_datetime": "2026-10-05T13:27:31+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-90037",
       "merger_name": "Stripe - OpenRouter",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-09-28T12:00:00Z",
       "page_modified_datetime": "2026-09-30T10:12:18+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-85054",
-      "merger_name": "Xylem - Flow Controls",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-09-28T12:00:00Z",
-      "page_modified_datetime": "2026-09-29T11:16:35+10:00",
       "is_waiver": false,
       "is_refiled": false
     }
