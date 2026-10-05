@@ -26,8 +26,7 @@ from datetime import datetime, timedelta
 from itertools import product
 from urllib.parse import quote
 
-import requests
-
+from scripts import accc_http
 from scripts.normalization import normalize_dashes
 
 BASE_URL = 'https://www.accc.gov.au/system/files/moderated_files/'
@@ -100,7 +99,7 @@ def candidate_urls(merger: dict) -> list[str]:
     return list(dict.fromkeys(urls))
 
 
-def _is_document(url: str, session: requests.Session) -> bool:
+def _is_document(url: str, session) -> bool:
     """True when the URL serves a document. Network errors read as 'not found'."""
     try:
         response = session.head(url, timeout=REQUEST_TIMEOUT, allow_redirects=False)
@@ -110,12 +109,17 @@ def _is_document(url: str, session: requests.Session) -> bool:
     return response.status_code == 200 and any(t in content_type for t in DOC_CONTENT_TYPES)
 
 
-def probe_questionnaire(merger: dict, session: requests.Session | None = None) -> str | None:
-    """Return the first candidate URL that serves a document, else None."""
+def probe_questionnaire(merger: dict, session=None) -> str | None:
+    """Return the first candidate URL that serves a document, else None.
+
+    ``session`` is anything with a requests-style ``head()``; tests pass a
+    fake. It defaults to ``accc_http``, whose module-level ``head`` the ACCC's
+    CDN will answer and which is safe to share across the worker threads.
+    """
     urls = candidate_urls(merger)
     if not urls:
         return None
-    session = session or requests.Session()
+    session = session or accc_http
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
         # map() keeps candidate order, so the likeliest hit wins a tie.
         for url, found in zip(urls, pool.map(lambda u: _is_document(u, session), urls)):

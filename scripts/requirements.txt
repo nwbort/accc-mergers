@@ -1,6 +1,9 @@
 beautifulsoup4==4.12.3
 lxml==6.1.0
 requests==2.32.3
+# Requests to accc.gov.au only: impersonates Chrome's TLS fingerprint, which
+# the ACCC's CDN checks (see scripts/accc_http.py). Pinned like the rest.
+curl_cffi==0.16.3
 markdownify==0.14.1
 pdfplumber==0.11.9
 cryptography==41.0.7
