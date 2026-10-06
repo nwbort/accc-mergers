@@ -223,6 +223,58 @@
       "url": "https://www.accc.gov.au/system/files/moderated_files/IAG-RACI%20-%20Phase%202%20Annexure%20A.pdf",
       "url_gh": "/mergers/MN-65005/IAG-RACI - Phase 2 Annexure A.pdf",
       "phase": "Phase 2"
+    },
+    {
+      "date": "2026-10-05T12:00:00Z",
+      "title": "Notice of Address for Service",
+      "display_title": "Tribunal appeal \u2013 Notice of Address for Service",
+      "appeal_base_title": "Tribunal appeal \u2013 Notice of Address for Service",
+      "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0011/608267/ACCC-Notice-of-address-for-service.pdf",
+      "url_gh": null,
+      "is_appeal": true,
+      "appeal_filed_by": "Australian Competition and Consumer Commission",
+      "appeal_confidentiality": "Non-confidential",
+      "tribunal_number": "ACT 3 of 2026",
+      "phase": null
+    },
+    {
+      "date": "2026-10-01T12:00:00Z",
+      "title": "Application for Review",
+      "display_title": "Tribunal appeal \u2013 Application for Review",
+      "appeal_base_title": "Tribunal appeal \u2013 Application for Review",
+      "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0007/608155/01.-IAG-Application-for-review-by-Insurance-Australia-Group-Limited.pdf",
+      "url_gh": null,
+      "is_appeal": true,
+      "appeal_filed_by": "Insurance Australia Group Limited",
+      "appeal_confidentiality": "Non-confidential",
+      "tribunal_number": "ACT 3 of 2026",
+      "phase": null
+    },
+    {
+      "date": "2026-10-06T12:00:00Z",
+      "title": "Notice of Address for Service",
+      "display_title": "Tribunal appeal \u2013 Notice of Address for Service",
+      "appeal_base_title": "Tribunal appeal \u2013 Notice of Address for Service",
+      "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0007/608317/ACCC-Notice-of-address-for-service-ACT4.pdf",
+      "url_gh": null,
+      "is_appeal": true,
+      "appeal_filed_by": "Australian Competition and Consumer Commission",
+      "appeal_confidentiality": "Non-confidential",
+      "tribunal_number": "ACT 4 of 2026",
+      "phase": null
+    },
+    {
+      "date": "2026-10-05T12:00:00Z",
+      "title": "Application to Tribunal for Review",
+      "display_title": "Tribunal appeal \u2013 Application to Tribunal for Review",
+      "appeal_base_title": "Tribunal appeal \u2013 Application to Tribunal for Review",
+      "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0009/608292/RACWA-Application-for-Review.pdf",
+      "url_gh": null,
+      "is_appeal": true,
+      "appeal_filed_by": "RACWA Holdings Pty Ltd",
+      "appeal_confidentiality": "Non-confidential",
+      "tribunal_number": "ACT 4 of 2026",
+      "phase": null
     }
   ],
   "is_waiver": false,
@@ -275,6 +327,77 @@
       "accc_determination": "Approved"
     }
   ],
+  "under_appeal": true,
+  "appeals": [
+    {
+      "tribunal_number": "ACT 3 of 2026",
+      "tribunal_url": "https://www.competitiontribunal.gov.au/current-matters/act-3-of-2026",
+      "appeal_type": "party_denial",
+      "appellant": "IAG",
+      "status": "current",
+      "outcome": null,
+      "effective_determination": null,
+      "filed_date": "2026-10-01",
+      "hearing_date": null,
+      "concluded_date": null,
+      "documents": [
+        {
+          "date": "2026-10-05",
+          "filed_by": "Australian Competition and Consumer Commission",
+          "description": "Notice of Address for Service",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0011/608267/ACCC-Notice-of-address-for-service.pdf"
+        },
+        {
+          "date": "2026-10-01",
+          "filed_by": "Insurance Australia Group Limited",
+          "description": "Application for Review",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0007/608155/01.-IAG-Application-for-review-by-Insurance-Australia-Group-Limited.pdf"
+        }
+      ]
+    },
+    {
+      "tribunal_number": "ACT 4 of 2026",
+      "tribunal_url": "https://www.competitiontribunal.gov.au/current-matters/act-4-of-2026",
+      "appeal_type": "party_denial",
+      "appellant": "RACWA",
+      "status": "current",
+      "outcome": null,
+      "effective_determination": null,
+      "filed_date": "2026-10-05",
+      "hearing_date": null,
+      "concluded_date": null,
+      "documents": [
+        {
+          "date": "2026-10-06",
+          "filed_by": "Australian Competition and Consumer Commission",
+          "description": "Notice of Address for Service",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0007/608317/ACCC-Notice-of-address-for-service-ACT4.pdf"
+        },
+        {
+          "date": "2026-10-05",
+          "filed_by": "RACWA Holdings Pty Ltd",
+          "description": "Application to Tribunal for Review",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0009/608292/RACWA-Application-for-Review.pdf"
+        }
+      ]
+    }
+  ],
+  "appeal": {
+    "tribunal_number": "ACT 3 of 2026 and ACT 4 of 2026",
+    "tribunal_url": "https://www.competitiontribunal.gov.au/current-matters/act-3-of-2026",
+    "appeal_type": "party_denial",
+    "appellant": "IAG and RACWA",
+    "status": "current",
+    "outcome": null,
+    "effective_determination": null,
+    "filed_date": "2026-10-01",
+    "hearing_date": null,
+    "concluded_date": null
+  },
   "phase_1_estimate": {
     "expected_business_days": 17,
     "range_business_days": [
