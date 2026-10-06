@@ -3,12 +3,12 @@
   "total_waivers": 438,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 241,
-    "Under assessment": 32,
+    "Assessment completed": 242,
+    "Under assessment": 31,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 233,
+    "Approved": 234,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 21
   },
   "clearance_rate": {
-    "cleared": 238,
+    "cleared": 239,
     "not_cleared": 3,
-    "total": 241,
+    "total": 242,
     "rate": 0.988
   },
   "phase_duration": {
-    "average_days": 29.556910569105693,
-    "median_days": 26.0,
-    "average_business_days": 20.089430894308943,
-    "median_business_days": 18.0,
+    "average_days": 29.582995951417004,
+    "median_days": 26,
+    "average_business_days": 20.10931174089069,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
         "count": 55,
-        "percentage": 22.4
+        "percentage": 22.3
       },
       "day20": {
         "count": 180,
-        "percentage": 73.2
+        "percentage": 72.9
       },
       "day30": {
-        "count": 229,
+        "count": 230,
         "percentage": 93.1
       }
     }
@@ -219,6 +219,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-35030",
+      "merger_name": "MUFG Pension & Market Services - Grow Technology Services",
+      "determination": "Approved",
+      "determination_date": "2026-10-06T12:00:00Z",
+      "page_modified_datetime": "2026-10-06T16:04:13+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-35050",
       "merger_name": "National Dental Care - Sunshine Dental and Gisborne Dental, VIC",
       "determination": "Approved",
@@ -337,17 +348,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-25054",
-      "merger_name": "Kanda Healthcare - Connecting Families",
-      "determination": "Approved",
-      "determination_date": "2026-10-01T12:00:00Z",
-      "page_modified_datetime": "2026-10-01T16:58:45+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]

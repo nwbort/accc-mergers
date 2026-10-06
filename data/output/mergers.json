@@ -11768,7 +11768,7 @@
           "targets": [
             "GROW TECHNOLOGY SERVICES LTD"
           ],
-          "status": "Under assessment"
+          "accc_determination": "Approved"
         },
         {
           "merger_id": "MN-80016",
@@ -26184,7 +26184,7 @@
           "targets": [
             "GROW TECHNOLOGY SERVICES LTD"
           ],
-          "status": "Under assessment"
+          "accc_determination": "Approved"
         },
         {
           "merger_id": "WA-60039",
@@ -27120,13 +27120,16 @@
     {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/mufg-pension-market-services-grow-technology-services",
       "merger_name": "MUFG Pension & Market Services - Grow Technology Services",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-35030",
       "effective_notification_datetime": "2026-08-31T12:00:00Z",
       "original_notification_datetime": "2026-08-31T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-10-13T12:00:00Z",
-      "page_modified_datetime": "2026-09-01T15:12:37+10:00",
+      "determination_publication_date": "2026-10-06T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-10-06T16:04:13+11:00",
       "consultation_response_due_date": "2026-09-08T12:00:00Z",
       "acquirers": [
         {
@@ -27183,13 +27186,25 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-10-06T12:00:00Z",
+          "title": "MPMS Grow - Phase 1 Determination",
+          "display_title": "MPMS Grow - Phase 1 Determination",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-10-06T12:00:00Z",
+          "title": "Phase 1 - initial assessment determination: Approved",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
       "has_conditions": false,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-10-06T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -68041,7 +68056,7 @@
           "targets": [
             "GROW TECHNOLOGY SERVICES LTD"
           ],
-          "status": "Under assessment"
+          "accc_determination": "Approved"
         },
         {
           "merger_id": "WA-65015",
