@@ -283,6 +283,41 @@
         "completed_count": 1
       }
     },
+    "strathfield-strata-management-pty-ltd": {
+      "id": "strathfield-strata-management-pty-ltd",
+      "canonical_name": "Strathfield Strata Management Pty Ltd",
+      "members": [
+        {
+          "name": "STRATHFIELD STRATA MANAGEMENT PTY LTD",
+          "identifier": "34 075 915 570",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "MN-95043",
+            "merger_name": "Bright & Duggan \u2013 Civium",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-02T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "tablissement-cosmeplast": {
       "id": "tablissement-cosmeplast",
       "canonical_name": "\u00c9tablissement Cosmeplast",

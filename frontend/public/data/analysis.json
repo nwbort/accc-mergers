@@ -337,7 +337,7 @@
       44,
       38,
       31,
-      6
+      7
     ],
     "waivers": [
       0,
@@ -389,7 +389,7 @@
       46,
       37,
       31,
-      31
+      32
     ],
     "as_at": "2026-10-06"
   },
@@ -398,7 +398,7 @@
     "windows": [
       {
         "days": 30,
-        "notifications_filed": 31,
+        "notifications_filed": 32,
         "notifications": {
           "median": 18,
           "average": 20.1,
@@ -456,7 +456,7 @@
       },
       {
         "days": 90,
-        "notifications_filed": 109,
+        "notifications_filed": 110,
         "notifications": {
           "median": 18.0,
           "average": 20.7,
@@ -545,33 +545,33 @@
     "pre_notification": {
       "windows": [
         {
-          "median": 18,
-          "average": 21.6,
+          "median": 17.0,
+          "average": 21.0,
           "p90": 38,
           "min": 4,
           "max": 72,
-          "count": 31,
+          "count": 32,
           "days": 30,
-          "median_delta": 4.0
+          "median_delta": 3.0
         },
         {
-          "median": 16,
-          "average": 18.8,
-          "p90": 31,
+          "median": 16.0,
+          "average": 18.7,
+          "p90": 29,
           "min": 0,
           "max": 112,
-          "count": 109,
+          "count": 110,
           "days": 90,
           "median_delta": 2.0
         }
       ],
       "all_time": {
-        "median": 14.0,
-        "average": 17.3,
+        "median": 14,
+        "average": 17.2,
         "p90": 34,
         "min": 0,
         "max": 112,
-        "count": 264
+        "count": 265
       }
     },
     "monthly": {
@@ -761,7 +761,7 @@
         46,
         37,
         31,
-        31
+        32
       ]
     }
   },
@@ -950,9 +950,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 29,
+      "count": 30,
       "outcome_mix": {
-        "Unknown": 29
+        "Unknown": 30
       },
       "median_phase_1_business_days": null
     },
@@ -1080,7 +1080,7 @@
       "approved": 19,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 4,
+      "in_progress": 5,
       "phase2_referral_rate": 0.095
     },
     {
@@ -1116,7 +1116,7 @@
       "approved": 23,
       "not_approved": 0,
       "referred": 1,
-      "in_progress": 1,
+      "in_progress": 2,
       "phase2_referral_rate": 0.042
     },
     {
@@ -1125,7 +1125,7 @@
       "approved": 47,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 13,
+      "in_progress": 14,
       "phase2_referral_rate": 0.041
     },
     {
@@ -1247,7 +1247,7 @@
     },
     {
       "quarter": "2026-Q4",
-      "notifications": 6,
+      "notifications": 7,
       "referred": 0
     }
   ]
