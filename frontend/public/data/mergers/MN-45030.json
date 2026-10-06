@@ -1,0 +1,137 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/shepparton-automotive-group-darryl-twitt-motors-dealerships-in-shepparton-east-victoria-0",
+  "merger_name": "Shepparton Automotive Group - Darryl Twitt Motors dealerships in Shepparton East, Victoria",
+  "status": "Under assessment",
+  "merger_id": "MN-45030",
+  "effective_notification_datetime": "2026-10-06T12:00:00Z",
+  "original_notification_datetime": "2026-10-06T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-11-17T12:00:00Z",
+  "consultation_response_due_date": "2026-10-13T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "JASNIC AUTOMOTIVE PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "11 677 246 534",
+      "party_page": {
+        "id": "jasnic-automotive-pty-ltd",
+        "name": "Jasnic Automotive Pty Ltd"
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "Goulburn Motor Group (Vic) Pty Ltd",
+      "identifier_type": "ABN",
+      "identifier": "21 100 318 705",
+      "party_page": {
+        "id": "goulburn-motor-group-vic-pty-ltd",
+        "name": "Goulburn Motor Group (Vic) Pty Ltd"
+      }
+    }
+  ],
+  "other_parties": [
+    {
+      "name": "HARRISON MOTORING GROUP PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "62 005 752 269",
+      "party_page": {
+        "id": "harrison-motoring-group-pty-ltd",
+        "name": "Harrison Motoring Group Pty Ltd"
+      }
+    }
+  ],
+  "anzsic_codes": [
+    {
+      "code": "3911",
+      "name": "Car Retailing"
+    },
+    {
+      "code": "3921",
+      "name": "Motor Vehicle Parts Retailing"
+    },
+    {
+      "code": "9419",
+      "name": "Other Automotive Repair and Maintenance"
+    }
+  ],
+  "merger_description": "Jasnic Automotive Pty Ltd trading as Shepparton Automotive Group proposes to acquire the business assets of Goulburn Motor Group (Vic) Pty Ltd trading as Darryl Twitt Motors, by way of a business sale agreement (the **Acquisition**).\n\nShepparton Automotive Group operates a single automotive dealership located at 80 Benalla Rd, Shepparton. It supplies new vehicles as the authorised representative for Hyundai, Mitsubishi, and Suzuki, and associated vehicle servicing. Shepparton Automotive Group also supplies used vehicles and vehicle financing. Shepparton Automotive Group supplies genuine parts to consumers as part of any scheduled services performed by the dealership.\n\nDarryl Twitt Motors operates two dealerships located at 325-329 Midland Highway, Shepparton East and 2-8 Carroll Road, Shepparton East. It supplies new vehicles as the authorised representative for Ford, Honda, Volkswagen, Audi, BYD, Geely, Land Rover, and LDV, and associated vehicle servicing. Darryl Twitt Motors also supplies used vehicles, spare parts, and vehicle financing, as well as servicing for Skoda vehicles.\n\nDarryl Twitt Motors' Land Rover and LDV sales, service, and parts businesses are not included in the Acquisition.",
+  "events": [
+    {
+      "date": "2026-10-06T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-15040",
+      "merger_name": "Shepparton Automotive Group - Darryl Twitt Motors dealerships in Shepparton East, Victoria",
+      "acquirers": [
+        "JASNIC AUTOMOTIVE PTY LTD"
+      ],
+      "targets": [
+        "Goulburn Motor Group (Vic) Pty Ltd"
+      ],
+      "accc_determination": "Not approved"
+    },
+    {
+      "merger_id": "MN-90028",
+      "merger_name": "Peter Warren - Wakeling Automotive",
+      "acquirers": [
+        "PETER WARREN AUTOMOTIVE HOLDINGS LIMITED"
+      ],
+      "targets": [
+        "Wakeling South Coast Pty Ltd",
+        "S A Wakeling Nominees Pty Ltd as trustee for S.A. Wakeling Trust"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "WA-85017",
+      "merger_name": "Regent Motors Group - Lane Group's Mandurah Dealerships",
+      "acquirers": [
+        "MANDURAH AUTO GROUP PTY LTD",
+        "PEEL MOTOR GROUP PTY LTD"
+      ],
+      "targets": [
+        "WA AUTOMOTIVE PTY LTD"
+      ],
+      "accc_determination": "Approved"
+    }
+  ],
+  "phase_1_estimate": {
+    "expected_business_days": 18,
+    "range_business_days": [
+      16,
+      21
+    ],
+    "basis": "global",
+    "question_bucket": null,
+    "question_count": null,
+    "sample_size": 246,
+    "as_of": "2026-10-06",
+    "estimated_at": "2026-10-06",
+    "method_version": 2
+  },
+  "pre_notification": {
+    "estimated_days": 26,
+    "min_days": null,
+    "max_days": 53,
+    "id_issued_estimated": "2026-09-10",
+    "id_issued_before": null,
+    "id_issued_after": "2026-08-14",
+    "min_days_witness": null,
+    "max_days_witness": "WA-45026",
+    "basis": "upper-bound-only",
+    "method_version": 1
+  }
+}

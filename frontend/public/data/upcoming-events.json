@@ -134,6 +134,16 @@
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
       "date": "2026-10-13T12:00:00Z",
+      "merger_id": "MN-45030",
+      "merger_name": "Shepparton Automotive Group - Darryl Twitt Motors dealerships in Shepparton East, Victoria",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-10-06T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-10-13T12:00:00Z",
       "merger_id": "MN-85049",
       "merger_name": "APEM Group - Resource Strategies",
       "status": "Under assessment",
@@ -454,6 +464,16 @@
     {
       "type": "determination_due",
       "event_type_display": "Determination due",
+      "date": "2026-11-17T12:00:00Z",
+      "merger_id": "MN-45030",
+      "merger_name": "Shepparton Automotive Group - Darryl Twitt Motors dealerships in Shepparton East, Victoria",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-10-06T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
       "date": "2026-11-27T12:00:00Z",
       "merger_id": "MN-05013",
       "merger_name": "Zoetis \u2013 Neogen Genomics Business",
@@ -472,6 +492,6 @@
       "effective_notification_datetime": "2026-04-27T12:00:00Z"
     }
   ],
-  "count": 47,
+  "count": 49,
   "days_ahead": 60
 }

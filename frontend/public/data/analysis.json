@@ -337,7 +337,7 @@
       44,
       38,
       31,
-      7
+      8
     ],
     "waivers": [
       0,
@@ -389,7 +389,7 @@
       46,
       37,
       31,
-      31
+      32
     ],
     "as_at": "2026-10-06"
   },
@@ -398,7 +398,7 @@
     "windows": [
       {
         "days": 30,
-        "notifications_filed": 32,
+        "notifications_filed": 33,
         "notifications": {
           "median": 18.0,
           "average": 20.3,
@@ -456,7 +456,7 @@
       },
       {
         "days": 90,
-        "notifications_filed": 110,
+        "notifications_filed": 111,
         "notifications": {
           "median": 18,
           "average": 20.8,
@@ -545,33 +545,33 @@
     "pre_notification": {
       "windows": [
         {
-          "median": 17.0,
-          "average": 21.0,
+          "median": 16,
+          "average": 20.5,
           "p90": 38,
           "min": 4,
           "max": 72,
-          "count": 32,
+          "count": 33,
           "days": 30,
-          "median_delta": 3.0
+          "median_delta": 2.0
         },
         {
-          "median": 16.0,
-          "average": 18.7,
+          "median": 16,
+          "average": 18.5,
           "p90": 29,
           "min": 0,
           "max": 112,
-          "count": 110,
+          "count": 111,
           "days": 90,
           "median_delta": 2.0
         }
       ],
       "all_time": {
-        "median": 14,
+        "median": 14.0,
         "average": 17.2,
         "p90": 34,
         "min": 0,
         "max": 112,
-        "count": 265
+        "count": 266
       }
     },
     "monthly": {
@@ -761,7 +761,7 @@
         46,
         37,
         31,
-        31
+        32
       ]
     }
   },
@@ -940,19 +940,19 @@
     },
     {
       "division": "A division of the Commission (s19 direction)",
-      "count": 110,
+      "count": 111,
       "outcome_mix": {
-        "Approved": 82,
+        "Approved": 83,
         "Not approved": 23,
         "Unknown": 5
       },
-      "median_phase_1_business_days": 20
+      "median_phase_1_business_days": 20.0
     },
     {
       "division": "Not yet determined",
-      "count": 29,
+      "count": 30,
       "outcome_mix": {
-        "Unknown": 29
+        "Unknown": 30
       },
       "median_phase_1_business_days": null
     },
@@ -967,12 +967,12 @@
     },
     {
       "division": "Unknown",
-      "count": 5,
+      "count": 4,
       "outcome_mix": {
-        "Approved": 3,
+        "Approved": 2,
         "Unknown": 2
       },
-      "median_phase_1_business_days": 25
+      "median_phase_1_business_days": 40.0
     },
     {
       "division": "Chair Cass-Gottlieb",
@@ -1062,7 +1062,7 @@
       "approved": 8,
       "not_approved": 0,
       "referred": 3,
-      "in_progress": 4,
+      "in_progress": 5,
       "phase2_referral_rate": 0.273
     },
     {
@@ -1089,7 +1089,7 @@
       "approved": 29,
       "not_approved": 0,
       "referred": 3,
-      "in_progress": 3,
+      "in_progress": 4,
       "phase2_referral_rate": 0.094
     },
     {
@@ -1247,7 +1247,7 @@
     },
     {
       "quarter": "2026-Q4",
-      "notifications": 7,
+      "notifications": 8,
       "referred": 0
     }
   ]

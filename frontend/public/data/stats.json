@@ -1,10 +1,10 @@
 {
-  "total_mergers": 278,
+  "total_mergers": 279,
   "total_waivers": 438,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 242,
-    "Under assessment": 31,
+    "Under assessment": 32,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-45030",
+      "merger_name": "Shepparton Automotive Group - Darryl Twitt Motors dealerships in Shepparton East, Victoria",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-06T12:00:00Z",
+      "page_modified_datetime": "2026-10-06T16:53:31+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-95043",
       "merger_name": "Bright & Duggan \u2013 Civium",
@@ -203,16 +213,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-09-30T12:00:00Z",
       "page_modified_datetime": "2026-09-30T13:04:54+10:00",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-75058",
-      "merger_name": "Kinetic - Tassielink",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-09-29T12:00:00Z",
-      "page_modified_datetime": "2026-09-30T16:33:38+10:00",
       "is_waiver": false,
       "is_refiled": false
     }
