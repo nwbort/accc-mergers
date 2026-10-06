@@ -33261,18 +33261,12 @@
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
+      "related_merger": {
+        "merger_id": "WA-15040",
+        "relationship": "refiled_from",
+        "merger_name": "Shepparton Automotive Group - Darryl Twitt Motors dealerships in Shepparton East, Victoria"
+      },
       "similar_mergers": [
-        {
-          "merger_id": "WA-15040",
-          "merger_name": "Shepparton Automotive Group - Darryl Twitt Motors dealerships in Shepparton East, Victoria",
-          "acquirers": [
-            "JASNIC AUTOMOTIVE PTY LTD"
-          ],
-          "targets": [
-            "Goulburn Motor Group (Vic) Pty Ltd"
-          ],
-          "accc_determination": "Not approved"
-        },
         {
           "merger_id": "MN-90028",
           "merger_name": "Peter Warren - Wakeling Automotive",
@@ -57191,13 +57185,13 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 33,
-        "min_days": 10,
+        "estimated_days": 34,
+        "min_days": 29,
         "max_days": 43,
-        "id_issued_estimated": "2026-08-30",
-        "id_issued_before": "2026-09-22",
+        "id_issued_estimated": "2026-08-29",
+        "id_issued_before": "2026-09-03",
         "id_issued_after": "2026-08-20",
-        "min_days_witness": "WA-85055",
+        "min_days_witness": "WA-85051",
         "max_days_witness": "WA-85048",
         "basis": "bracketed",
         "method_version": 1
@@ -57398,14 +57392,14 @@
         "method_version": 2
       },
       "pre_notification": {
-        "estimated_days": 10,
+        "estimated_days": 11,
         "min_days": 6,
-        "max_days": 39,
-        "id_issued_estimated": "2026-09-18",
+        "max_days": 32,
+        "id_issued_estimated": "2026-09-17",
         "id_issued_before": "2026-09-22",
-        "id_issued_after": "2026-08-20",
+        "id_issued_after": "2026-08-27",
         "min_days_witness": "WA-85055",
-        "max_days_witness": "WA-85048",
+        "max_days_witness": "WA-85051",
         "basis": "bracketed",
         "method_version": 1
       }
@@ -77396,6 +77390,11 @@
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
+      "related_merger": {
+        "merger_id": "MN-45030",
+        "relationship": "refiled_as",
+        "merger_name": "Shepparton Automotive Group - Darryl Twitt Motors dealerships in Shepparton East, Victoria"
+      },
       "similar_mergers": [
         {
           "merger_id": "MN-90028",
@@ -130977,6 +130976,114 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/medhealth-%E2%80%93-integrity-medico-legal",
+      "merger_name": "MedHealth \u2013 Integrity Medico-Legal",
+      "status": "Assessment completed",
+      "merger_id": "WA-85051",
+      "effective_notification_datetime": "2026-09-03T12:00:00Z",
+      "original_notification_datetime": "2026-09-03T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-10-06T12:00:00Z",
+      "accc_determination": "Not approved",
+      "accc_determination_raw": "ACCC determinationNot approved",
+      "page_modified_datetime": "2026-10-06T17:06:43+11:00",
+      "acquirers": [
+        {
+          "name": "MedHealth Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "32 141 219 785",
+          "party_page": {
+            "id": "medhealth-pty-limited",
+            "name": "MedHealth Pty Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "INTEGRITY MEDICO-LEGAL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "31 622 067 387",
+          "party_page": {
+            "id": "integrity-medico-legal-pty-ltd",
+            "name": "Integrity Medico-Legal Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "8599",
+          "name": "Other Health Care Services n.e.c."
+        }
+      ],
+      "merger_description": "MedHealth Pty Ltd (**MedHealth**) proposes to acquire the business and assets of Integrity Medico-Legal Pty Ltd (**Integrity Medico-Legal**) pursuant to a business sale and purchase agreement (the **Acquisition**).\n\nMedHealth is an Australian subsidiary of the US-based ExamWorks Group, which provides health and injury claim services and related services.  \n\nIntegrity Medico-Legal is an Australian company providing independent medical assessments, medico-legal assessments, reports, advice and related services.\n\nIntegrity Medico-Legal operates from a single premise at 11 Abbotsford Road, Bowen Hills QLD 4006 and provides services nationally, including via telehealth, with the majority of its revenue generated in Queensland and smaller proportions generated in Tasmania and the ACT.\n\nBoth MedHealth and Integrity Medico-Legal supply claim services related to health and injury, principally medico-legal assessments and independent medical assessments. MedHealth also supplies claims management and rehabilitation and return to work services among other things.",
+      "events": [
+        {
+          "date": "2026-10-06T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Notification waiver determination published",
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-09-03T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-10-06T12:00:00Z",
+          "title": "Waiver application determination: Not approved",
+          "display_title": "Waiver application determination: Not approved",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-30014",
+          "merger_name": "MedHealth \u2013 Connect Allied Health",
+          "acquirers": [
+            "MedHealth Pty Limited"
+          ],
+          "targets": [
+            "CONNECT ALLIED HEALTH PTY LTD"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-50026",
+          "merger_name": "Stonepeak-led consortium - Estia Health",
+          "acquirers": [
+            "Wisdom BidCo Pty Ltd"
+          ],
+          "targets": [
+            "Estia Health Holdings Ltd"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-01100",
+          "merger_name": "Ochre Health - Airlie Women's Clinic, VIC",
+          "acquirers": [
+            "Ochre Health Pty Limited",
+            "Ochre Group Commercial Property Pty Ltd"
+          ],
+          "targets": [
+            "Airlie Womens Clinic Pty Ltd"
+          ],
+          "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/one-equity-partners-%E2%80%93-myriad360",
       "merger_name": "One Equity Partners \u2013 Myriad360",
       "status": "Assessment completed",
@@ -131114,6 +131221,138 @@
             "Insight Venture Partners, LLC"
           ],
           "accc_determination": "Approved"
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/goodstart-%E2%80%93-certain-edge-early-learning-centres-in-administration",
+      "merger_name": "Goodstart \u2013 certain Edge Early Learning centres (in administration)",
+      "status": "Assessment completed",
+      "merger_id": "WA-85056",
+      "effective_notification_datetime": "2026-09-30T12:00:00Z",
+      "original_notification_datetime": "2026-09-30T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-10-06T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-10-06T17:06:47+11:00",
+      "acquirers": [
+        {
+          "name": "GOODSTART EARLY LEARNING LTD",
+          "identifier_type": "ABN",
+          "identifier": "69 139 967 794",
+          "party_page": {
+            "id": "goodstart-early-learning-ltd",
+            "name": "Goodstart Early Learning Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "EDGE EARLY LEARNING HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "34 618 453 197",
+          "party_page": {
+            "id": "edge-early-learning-holdings-pty-ltd",
+            "name": "Edge Early Learning Holdings Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "8010",
+          "name": "Preschool Education"
+        },
+        {
+          "code": "8710",
+          "name": "Child Care Services"
+        }
+      ],
+      "merger_description": "Goodstart Early Learning Ltd (**Goodstart**) proposes to acquire the business and assets of 31 childcare centres operated by Edge Early Learning Holdings Pty Ltd (Administrators Appointed) (**Edge**) (the **Acquisition**).\n\nGoodstart is a national provider of early learning and childcare services, operating a network of 666 childcare centres across Australia. Goodstart is a not-for-profit provider formed by The Benevolent Society, Mission Australia, the Brotherhood of St Laurence and Social Ventures Australia.\n\nEdge is an Australian early childhood education provider which operates a network of 64 childcare centres across Queensland and South Australia. Edge is in administration and the Acquisition will take place following a sale process conducted by the Administrators.\n\nBoth Goodstart and Edge provide centre-based childcare and early childhood education services (**long day care**) for children aged 0-6 years in relevant local areas in Queensland and South Australia. This includes kindergarten and preschool programs where applicable.\n\nThe parties have entered into a Heads of Agreement which provides the terms on which Goodstart will acquire the assets and business of the relevant Edge childcare centres, including leasehold interests, plant and equipment, contracts, and regulatory approvals.",
+      "events": [
+        {
+          "date": "2026-10-06T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Goodstart%20Early%20Learning%20-%20certain%20Edge%20Early%20Learning%20centres%20%28in%20administration%29%20%28WA-85056%29%20-%20Notification%20waiver%20determination%20-%206%20October%202026.pdf",
+          "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Goodstart Early Learning Ltd (Goodstart) applied for a notification\nwaiver in respect of its proposed acquisition of the business and\nassets of 31 childcare centres operated by Edge Early Learning\nHoldings Pty Ltd (Administrators Appointed) (Edge), as described in\nthe transaction documents provided as part of the application (the\nAcquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "6 October 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, Goodstart, is a national provider of early learning and\nchildcare services, operating a network of 666 childcare centres\nacross Australia. It is a not-for-profit provider formed by The\nBenevolent Society, Mission Australia, the Brotherhood of St\nLaurence, and Social Ventures Australia.\nThe vendor, Edge, is an Australian early childhood education provider\nwhich operates a network of 64 childcare centres across Queensland\nand South Australia. Edge is in voluntary administration, and the\nAcquisition will take place following a sale process conducted by the\nadministrators.\nBoth Goodstart and Edge provide centre-based childcare and early\nchildhood education services (long day care services) for children\naged 0-6 years in relevant local areas in Queensland and South\nAustralia."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nother relevant information available to it. The ACCC has also had\nregard to the factors in section 51ABV(2)(b) of the Competition and\nConsumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition because:\na. in respect of 23 target Edge long day care centres, there is\nno geographic overlap between the target centre and any\nexisting Goodstart centre in the relevant local areas\n\u2022 b. in respect of the remaining 8 target Edge long day care\ncentres where there is geographic overlap between the\ntarget centre and an existing Goodstart centre, Goodstart\nwould face competition from multiple alternative providers\nof long day care services in the local area post-Acquisition\nc. absent the Acquisition, some of the target Edge centres may\notherwise close, reducing or removing consumers\u2019 access to\nlong day care services in the relevant local areas.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition and continuity of service for essential childcare\nservices.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s guidance on notification\nwaivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-85056/Goodstart Early Learning - certain Edge Early Learning centres (in administration) (WA-85056) - Notification waiver determination - 6 October 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-09-30T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-80038",
+          "merger_name": "Imagine Education \u2013 Bumper Bears Early Learning Centre in Kippa-Ring, QLD",
+          "acquirers": [
+            "Children First Property Pty Ltd as trustee for the Children First Property Trust",
+            "IMAGINE EDUCATION EARLY LEARNING CENTRES NO. 40 PTY LTD"
+          ],
+          "targets": [
+            "Stephen James Sourris, James Peter Sourris, Christopher Peter Sourris, Marie-Christine Sourris, Peter Christopher Sourris and Peter James Sourris trading as \u2018Bumper Bears Early Learning Centres\u2019"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "WA-10035",
+          "merger_name": "Geosyntec Consultants \u2013 WRM Water & Environment",
+          "acquirers": [
+            "Geosyntec Consultants (Australia) Intermediate Holding Pty Ltd"
+          ],
+          "targets": [
+            "WRM Water & Environment Pty Ltd"
+          ],
+          "accc_determination": "Approved"
+        },
+        {
+          "merger_id": "MN-05049",
+          "merger_name": "Imagine Education \u2013 Eden Academy",
+          "acquirers": [
+            "Imagine Education Holdings Pty Ltd"
+          ],
+          "targets": [
+            "Eden Academy Operations Pty Ltd as trustee for Eden Academy Operations Unit Trust",
+            "SCGG Operations Pty Ltd as trustee for the SCGG Operations Unit Trust"
+          ],
+          "status": "Under assessment"
         }
       ]
     },

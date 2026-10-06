@@ -1,0 +1,104 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/medhealth-%E2%80%93-integrity-medico-legal",
+  "merger_name": "MedHealth \u2013 Integrity Medico-Legal",
+  "status": "Assessment completed",
+  "merger_id": "WA-85051",
+  "effective_notification_datetime": "2026-09-03T12:00:00Z",
+  "original_notification_datetime": "2026-09-03T12:00:00Z",
+  "stage": "Waiver application",
+  "determination_publication_date": "2026-10-06T12:00:00Z",
+  "accc_determination": "Not approved",
+  "acquirers": [
+    {
+      "name": "MedHealth Pty Limited",
+      "identifier_type": "ABN",
+      "identifier": "32 141 219 785",
+      "party_page": {
+        "id": "medhealth-pty-limited",
+        "name": "MedHealth Pty Limited"
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "INTEGRITY MEDICO-LEGAL PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "31 622 067 387",
+      "party_page": {
+        "id": "integrity-medico-legal-pty-ltd",
+        "name": "Integrity Medico-Legal Pty Ltd"
+      }
+    }
+  ],
+  "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "8599",
+      "name": "Other Health Care Services n.e.c."
+    }
+  ],
+  "merger_description": "MedHealth Pty Ltd (**MedHealth**) proposes to acquire the business and assets of Integrity Medico-Legal Pty Ltd (**Integrity Medico-Legal**) pursuant to a business sale and purchase agreement (the **Acquisition**).\n\nMedHealth is an Australian subsidiary of the US-based ExamWorks Group, which provides health and injury claim services and related services.  \n\nIntegrity Medico-Legal is an Australian company providing independent medical assessments, medico-legal assessments, reports, advice and related services.\n\nIntegrity Medico-Legal operates from a single premise at 11 Abbotsford Road, Bowen Hills QLD 4006 and provides services nationally, including via telehealth, with the majority of its revenue generated in Queensland and smaller proportions generated in Tasmania and the ACT.\n\nBoth MedHealth and Integrity Medico-Legal supply claim services related to health and injury, principally medico-legal assessments and independent medical assessments. MedHealth also supplies claims management and rehabilitation and return to work services among other things.",
+  "events": [
+    {
+      "date": "2026-10-06T12:00:00Z",
+      "title": "Notification waiver determination published",
+      "display_title": "Notification waiver determination published",
+      "phase": "Waiver"
+    },
+    {
+      "date": "2026-09-03T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    },
+    {
+      "date": "2026-10-06T12:00:00Z",
+      "title": "Waiver application determination: Not approved",
+      "display_title": "Waiver application determination: Not approved",
+      "is_determination_event": true,
+      "phase": "Waiver"
+    }
+  ],
+  "is_waiver": true,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-30014",
+      "merger_name": "MedHealth \u2013 Connect Allied Health",
+      "acquirers": [
+        "MedHealth Pty Limited"
+      ],
+      "targets": [
+        "CONNECT ALLIED HEALTH PTY LTD"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "MN-50026",
+      "merger_name": "Stonepeak-led consortium - Estia Health",
+      "acquirers": [
+        "Wisdom BidCo Pty Ltd"
+      ],
+      "targets": [
+        "Estia Health Holdings Ltd"
+      ],
+      "accc_determination": "Approved"
+    },
+    {
+      "merger_id": "WA-01100",
+      "merger_name": "Ochre Health - Airlie Women's Clinic, VIC",
+      "acquirers": [
+        "Ochre Health Pty Limited",
+        "Ochre Group Commercial Property Pty Ltd"
+      ],
+      "targets": [
+        "Airlie Womens Clinic Pty Ltd"
+      ],
+      "accc_determination": "Approved"
+    }
+  ]
+}

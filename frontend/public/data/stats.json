@@ -1,6 +1,6 @@
 {
   "total_mergers": 279,
-  "total_waivers": 438,
+  "total_waivers": 440,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 242,
@@ -18,8 +18,8 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 417,
-    "Not approved": 21
+    "Approved": 418,
+    "Not approved": 22
   },
   "clearance_rate": {
     "cleared": 239,
@@ -48,9 +48,9 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.246575342465754,
+    "average_days": 20.243181818181817,
     "median_days": 20.0,
-    "average_business_days": 13.858447488584474,
+    "average_business_days": 13.852272727272727,
     "median_business_days": 14.0
   },
   "top_industries": [
@@ -104,7 +104,7 @@
       "effective_notification_datetime": "2026-10-06T12:00:00Z",
       "page_modified_datetime": "2026-10-06T16:53:31+11:00",
       "is_waiver": false,
-      "is_refiled": false
+      "is_refiled": true
     },
     {
       "merger_id": "MN-95043",
@@ -177,6 +177,16 @@
       "is_refiled": false
     },
     {
+      "merger_id": "WA-85056",
+      "merger_name": "Goodstart \u2013 certain Edge Early Learning centres (in administration)",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "effective_notification_datetime": "2026-09-30T12:00:00Z",
+      "page_modified_datetime": "2026-10-06T17:06:47+11:00",
+      "is_waiver": true,
+      "is_refiled": false
+    },
+    {
       "merger_id": "MN-70039",
       "merger_name": "Architectus \u2013 SBA",
       "status": "Under assessment",
@@ -205,19 +215,31 @@
       "page_modified_datetime": "2026-09-30T16:03:10+10:00",
       "is_waiver": false,
       "is_refiled": false
-    },
-    {
-      "merger_id": "MN-80045",
-      "merger_name": "Apiam - Goulburn Valley Equine Hospital",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-09-30T12:00:00Z",
-      "page_modified_datetime": "2026-09-30T13:04:54+10:00",
-      "is_waiver": false,
-      "is_refiled": false
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "WA-85056",
+      "merger_name": "Goodstart \u2013 certain Edge Early Learning centres (in administration)",
+      "determination": "Approved",
+      "determination_date": "2026-10-06T12:00:00Z",
+      "page_modified_datetime": "2026-10-06T17:06:47+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
+      "merger_id": "WA-85051",
+      "merger_name": "MedHealth \u2013 Integrity Medico-Legal",
+      "determination": "Not approved",
+      "determination_date": "2026-10-06T12:00:00Z",
+      "page_modified_datetime": "2026-10-06T17:06:43+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
     {
       "merger_id": "MN-35030",
       "merger_name": "MUFG Pension & Market Services - Grow Technology Services",
@@ -323,28 +345,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-02T12:00:00Z",
       "page_modified_datetime": "2026-10-02T10:03:06+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-80042",
-      "merger_name": "Eli Lilly \u2013 Merida Biosciences",
-      "determination": "Approved",
-      "determination_date": "2026-10-01T12:00:00Z",
-      "page_modified_datetime": "2026-10-01T17:43:53+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-10028",
-      "merger_name": "BBFIT - Hanes Australasia",
-      "determination": "Approved",
-      "determination_date": "2026-10-01T12:00:00Z",
-      "page_modified_datetime": "2026-10-01T17:02:49+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
