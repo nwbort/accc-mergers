@@ -28,6 +28,7 @@ def collect_feed_entries(mergers: list) -> list:
     """Collect all events from mergers and return as feed entries."""
     entries = []
 
+    seen_ids: set[str] = set()
     for m in mergers:
         merger_id = m.get('merger_id', '')
         merger_name = m.get('merger_name', '')
@@ -43,10 +44,18 @@ def collect_feed_entries(mergers: list) -> list:
             # not the document, so the id is built from the uncommented title
             # and adding a comment doesn't republish the entry.
             id_title = event.get('appeal_base_title') or title
+            entry_id = f"{merger_url}#{date}-{id_title[:50]}"
+            # Two tribunal matters on one merger can each file the same
+            # document on the same day (the ACCC's notice of address for
+            # service, say). Only the later of a clashing pair takes its
+            # matter's number, so no existing entry's id moves.
+            if entry_id in seen_ids and event.get('tribunal_number'):
+                entry_id = f"{entry_id}-{event['tribunal_number']}"
+            seen_ids.add(entry_id)
             entries.append({
                 "title": f"{merger_name}: {title}",
                 "link": merger_url,
-                "id": f"{merger_url}#{date}-{id_title[:50]}",
+                "id": entry_id,
                 "updated": date,
                 "summary": f"Merger: {merger_name} ({merger_id}). Event: {title}.",
             })

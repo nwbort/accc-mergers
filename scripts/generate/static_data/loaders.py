@@ -2,6 +2,7 @@
 
 import json
 
+from scripts.constants import tribunal
 from scripts.merger_filters import load_mergers as _load_mergers
 from scripts.paths import REPO_ROOT
 
@@ -127,8 +128,10 @@ def load_similar_mergers() -> dict:
 def load_tribunal_appeals() -> dict:
     """Load Australian Competition Tribunal appeal data from tribunal_appeals.json.
 
-    Returns a dict keyed by merger_id mapping to the appeal record (tribunal
-    number, tribunal URL, appeal type, appellant, filed date and documents).
+    Returns a dict keyed by merger_id mapping to the list of tribunal matters
+    filed against that merger (each with tribunal number, tribunal URL, appeal
+    type, appellant, filed date and documents) — see
+    ``constants.tribunal.appeal_records``.
     Metadata keys (starting with ``_``) are stripped. Returns an empty dict if
     the file is missing or malformed.
     """
@@ -138,7 +141,11 @@ def load_tribunal_appeals() -> dict:
     try:
         with open(TRIBUNAL_APPEALS_JSON, 'r', encoding='utf-8') as f:
             data = json.load(f)
-        return {k: v for k, v in data.items() if not k.startswith('_')}
+        return {
+            k: tribunal.appeal_records(v)
+            for k, v in data.items()
+            if not k.startswith('_')
+        }
     except (json.JSONDecodeError, IOError) as e:
         print(f"Warning: Could not load tribunal_appeals.json: {e}")
         return {}

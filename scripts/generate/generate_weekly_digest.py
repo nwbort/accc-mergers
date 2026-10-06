@@ -386,10 +386,14 @@ def generate_weekly_digest(
         # within the lookback window, keyed on the appeal's filed date, minus
         # anything already surfaced in last week's digest. A late-appearing
         # tribunal filing is caught here the same way a late determination is.
+        # Every tribunal matter counts, not just the first: a second applicant
+        # lodging its own application is news even if the first was not.
         appeal = merger.get('appeal')
         if appeal:
-            appeal_filed_date = appeal.get('filed_date')
-            if (is_in_week_range(appeal_filed_date, lookback_start, period_end) and
+            filed_dates = [
+                a.get('filed_date') for a in merger.get('appeals') or [appeal]
+            ]
+            if (any(is_in_week_range(d, lookback_start, period_end) for d in filed_dates) and
                 merger_id not in already_appealed):
                 digest['deals_appealed_to_tribunal'].append(create_merger_summary(merger))
 

@@ -1,371 +1,431 @@
 {
-  "_comment": "Manually-maintained Australian Competition Tribunal appeal data, keyed by ACCC merger_id. Merged into the frontend data by scripts/static_data (see loaders.load_tribunal_appeals and enrichment.link_tribunal_appeals). IMPORTANT: an entry here does NOT by itself make a merger 'under appeal' — a matter stays listed after it finishes. A merger is shown as under appeal only while 'status' is 'current' (anything other than 'concluded' counts as current; a finished/withdrawn appeal must be marked 'concluded'). Fields: tribunal_number (e.g. 'ACT 1 of 2026'), tribunal_url (the tribunal matter page), appeal_type (one of party_denial / party_conditional_clearance / third_party_clearance — see scripts/constants/tribunal.py), appellant (who lodged the review), status ('current' | 'concluded'), filed_date, hearing_date (optional; the date the tribunal hearing starts, as a bare ISO 'YYYY-MM-DD' — while the appeal is current and the date is still in the future it is surfaced as a 'Tribunal hearing' upcoming/tracked event, exempt from the usual look-ahead window since a hearing is scheduled months in advance), and documents[] which are folded into the merger's event timeline regardless of status. Once concluded, also set: outcome (one of affirmed / set_aside / varied / withdrawn / dismissed), effective_determination (the ACCC-style determination that now stands — same as the ACCC's when affirmed, the opposite when set aside, e.g. 'Approved' / 'Not approved' — used to render the status badge like 'Approved · on appeal'), and concluded_date. Each document: date, filed_by, description, confidentiality ('Confidential' | 'Non-confidential'), url (direct tribunal link, treated like an ACCC url), optionally url_gh (local mirror served from data/raw/matters/{id}/), and optionally section (the H3 heading a document was listed under, e.g. 'Submissions by interested party'; absent for the main first table), and optionally comment (hand-added free text appended to the timeline event title in parentheses, e.g. 're application under s100S' renders as 'Directions (re application under s100S)'; the scraper never overwrites it). The documents[] list is populated from the live tribunal matter pages by scripts/scrape_tribunal.py (run via the 'Scrape Tribunal' workflow), which uses each entry's tribunal_url as the page to scrape, downloads each linked file into data/raw/matters/{merger_id}/ and sets its url_gh serve path automatically; every other field here is still maintained by hand.",
-  "MN-01068": {
-    "tribunal_number": "ACT 1 of 2026",
-    "tribunal_url": "https://www.competitiontribunal.gov.au/current-matters/act-1-of-2026",
-    "appeal_type": "party_denial",
-    "appellant": "Coles",
-    "status": "current",
-    "outcome": null,
-    "effective_determination": null,
-    "filed_date": "2026-07-15",
-    "hearing_date": "2026-11-09",
-    "concluded_date": null,
-    "documents": [
-      {
-        "date": "2026-10-02",
-        "filed_by": "Joint Document (Coles Supermarkets & O'Connor Fresh IGA)",
-        "description": "Uncontested Findings",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0003/608268/Joint-document-Uncontested-findings-Public-Version.pdf",
-        "url_gh": "/mergers/MN-01068/Joint-document-Uncontested-findings-Public-Version.pdf"
-      },
-      {
-        "date": "2026-09-30",
-        "filed_by": "Coles Supermarkets",
-        "description": "Affidavit of Saurav Sachdev",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0010/608266/34.-Coles-Affidavit-of-Saurav-Sachdev-11.09.2026-PUBLIC-VERSION.pdf",
-        "url_gh": "/mergers/MN-01068/34.-Coles-Affidavit-of-Saurav-Sachdev-11.09.2026-PUBLIC-VERSION.pdf"
-      },
-      {
-        "date": "2026-09-29",
-        "filed_by": "Coles Supermarkets",
-        "description": "Submissions on corrections to s155 notice responses",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0009/608265/33.-Coles-Written-Submissions-on-the-Provision-of-to-the-Tribunal-of-Corrections-to-Section-155-Notice-Responses-PUBLIC-VERSION.pdf",
-        "url_gh": "/mergers/MN-01068/33.-Coles-Written-Submissions-on-the-Provision-of-to-the-Tribunal-of-Corrections-to-Section-155-Notice-Responses-PUBLIC-VERSION.pdf"
-      },
-      {
-        "date": "2026-09-28",
-        "filed_by": "-",
-        "description": "Directions",
-        "comment": "re timetabling",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0007/607813/260928-Direction.pdf",
-        "url_gh": "/mergers/MN-01068/260928-Direction.pdf"
-      },
-      {
-        "date": "2026-09-25",
-        "filed_by": "O'Connor Fresh IGA",
-        "description": "Affidavit of Reece Neville Grant",
-        "comment": "re IGA's Uber Eats delivery service",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0009/607806/32.-IGA-Affidavit-of-Mr-Reece-Neville-Grant-PUBLIC-VERSION.pdf",
-        "url_gh": "/mergers/MN-01068/32.-IGA-Affidavit-of-Mr-Reece-Neville-Grant-PUBLIC-VERSION.pdf"
-      },
-      {
-        "date": "2026-09-16",
-        "filed_by": "Australian Competition and Consumer Commission",
-        "description": "Affidavit of Katrina Mary Close",
-        "comment": "re Coles' s100S(2)(b) application",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0008/607805/31.-ACCC-Affidavit-of-Katrina-Mary-Close.pdf",
-        "url_gh": "/mergers/MN-01068/31.-ACCC-Affidavit-of-Katrina-Mary-Close.pdf"
-      },
-      {
-        "date": "2026-09-16",
-        "filed_by": "Australian Competition and Consumer Commission",
-        "description": "Submissions on Application under s100S(2)(b) (Document number 30)",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0007/607804/30.-ACCC-Submissions-PUBLIC-VERSION.pdf",
-        "url_gh": "/mergers/MN-01068/30.-ACCC-Submissions-PUBLIC-VERSION.pdf"
-      },
-      {
-        "date": "2026-09-16",
-        "filed_by": "Australian Competition and Consumer Commission",
-        "description": "Submissions on Application under s100S(2)(a) (Document number 29)",
-        "comment": "re IGA's Uber Eats delivery service",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0006/607803/29.-ACCC-Submissions.pdf",
-        "url_gh": "/mergers/MN-01068/29.-ACCC-Submissions.pdf"
-      },
-      {
-        "date": "2026-08-21",
-        "filed_by": "-",
-        "description": "Directions",
-        "comment": "re confidentiality regime",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0010/607807/260821-Directions.pdf",
-        "url_gh": "/mergers/MN-01068/260821-Directions.pdf"
-      },
-      {
-        "date": "2026-09-24",
-        "filed_by": "-",
-        "description": "Determination",
-        "comment": "s100S applications allowed in part",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0006/607641/Determination.pdf",
-        "url_gh": "/mergers/MN-01068/Determination.pdf"
-      },
-      {
-        "date": "2026-09-21",
-        "filed_by": "-",
-        "description": "Directions",
-        "comment": "re timetabling",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0011/607367/260921-Directions.pdf",
-        "url_gh": "/mergers/MN-01068/260921-Directions.pdf"
-      },
-      {
-        "date": "2026-09-09",
-        "filed_by": "-",
-        "description": "Directions",
-        "comment": "re timetabling",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0017/607130/260909-Directions-2-.pdf",
-        "url_gh": "/mergers/MN-01068/260909-Directions-2-.pdf"
-      },
-      {
-        "date": "2026-09-09",
-        "filed_by": "-",
-        "description": "Directions",
-        "comment": "re timetabling",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0018/607131/260909-Directions.pdf",
-        "url_gh": "/mergers/MN-01068/260909-Directions.pdf"
-      },
-      {
-        "date": "2026-09-11",
-        "filed_by": "Australian Competition and Consumer Commission",
-        "description": "Concise Statement of Contentions",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0008/606833/28.-ACCC-Concise-Statement-of-Contentions-PUBLIC-VERSION.pdf",
-        "url_gh": "/mergers/MN-01068/28.-ACCC-Concise-Statement-of-Contentions-PUBLIC-VERSION.pdf"
-      },
-      {
-        "date": "2026-09-04",
-        "filed_by": "O'Connor Fresh IGA",
-        "description": "Application under s100S(2)",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0005/606830/25.-IGA-s100S2-Application.pdf",
-        "url_gh": "/mergers/MN-01068/25.-IGA-s100S2-Application.pdf"
-      },
-      {
-        "date": "2026-09-04",
-        "filed_by": "O'Connor Fresh IGA",
-        "description": "Submissions on Application for Further Directions",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0006/606831/26.-IGA-Submissions-on-Application-for-Further-Directions-PUBLIC-VERSION.pdf",
-        "url_gh": "/mergers/MN-01068/26.-IGA-Submissions-on-Application-for-Further-Directions-PUBLIC-VERSION.pdf"
-      },
-      {
-        "date": "2026-09-04",
-        "filed_by": "O'Connor Fresh IGA",
-        "description": "Affidavit of Reece Neville Grant",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0007/606832/27.-IGA-Affidavit-of-Mr-Reece-Neville-Grant-PUBLIC-VERSION.pdf",
-        "url_gh": "/mergers/MN-01068/27.-IGA-Affidavit-of-Mr-Reece-Neville-Grant-PUBLIC-VERSION.pdf"
-      },
-      {
-        "date": "2026-09-04",
-        "filed_by": "Coles Supermarkets",
-        "description": "Submissions in Support of Application under s100S(2)(b)",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0010/606826/21.-Coles-Submissions-in-Support-of-Application-under-s100S2b-PUBLIC.pdf",
-        "url_gh": "/mergers/MN-01068/21.-Coles-Submissions-in-Support-of-Application-under-s100S2b-PUBLIC.pdf"
-      },
-      {
-        "date": "2026-09-04",
-        "filed_by": "Coles Supermarkets",
-        "description": "Application under s100S(2)(b)",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0009/606825/20.-Coles-s100S2b-Application.pdf",
-        "url_gh": "/mergers/MN-01068/20.-Coles-s100S2b-Application.pdf"
-      },
-      {
-        "date": "2026-09-04",
-        "filed_by": "Coles Supermarkets",
-        "description": "Affidavit of Andrew Eastwood",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0011/606827/22.-Coles-Affidavit-of-Andrew-Eastwood-PUBLIC.pdf",
-        "url_gh": "/mergers/MN-01068/22.-Coles-Affidavit-of-Andrew-Eastwood-PUBLIC.pdf"
-      },
-      {
-        "date": "2026-09-04",
-        "filed_by": "Coles Supermarkets",
-        "description": "Affidavit of Linda Evans",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0003/606828/23.-Coles-Affidavit-of-Linda-Evans-PUBLIC.pdf",
-        "url_gh": "/mergers/MN-01068/23.-Coles-Affidavit-of-Linda-Evans-PUBLIC.pdf"
-      },
-      {
-        "date": "2026-09-04",
-        "filed_by": "Coles Supermarkets",
-        "description": "Affidavit of Liza Carver",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0004/606829/24.-Coles-Affidavit-of-Liza-Carver-sworn-27-August-2026-PUBLIC.pdf",
-        "url_gh": "/mergers/MN-01068/24.-Coles-Affidavit-of-Liza-Carver-sworn-27-August-2026-PUBLIC.pdf"
-      },
-      {
-        "date": "2026-08-31",
-        "filed_by": "O'Connor Fresh IGA",
-        "description": "Concise Statement of Contentions",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0019/605161/IGA-Concise-statement.pdf",
-        "url_gh": "/mergers/MN-01068/IGA-Concise-statement.pdf"
-      },
-      {
-        "date": "2026-08-24",
-        "filed_by": "Australian Competition and Consumer Commission",
-        "description": "Further amended documentary index",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0019/604414/18.-ACCC-Further-Amended-Documentary-Index-PUBLIC-VERSION.pdf",
-        "url_gh": "/mergers/MN-01068/18.-ACCC-Further-Amended-Documentary-Index-PUBLIC-VERSION.pdf"
-      },
-      {
-        "date": "2026-08-20",
-        "filed_by": "Coles Supermarkets",
-        "description": "Concise Statement of Contentions",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0005/604148/Coles-Supermarkets-Concise-statement-of-contention.pdf",
-        "url_gh": "/mergers/MN-01068/Coles-Supermarkets-Concise-statement-of-contention.pdf"
-      },
-      {
-        "date": "2026-08-14",
-        "filed_by": "Australian Competition and Consumer Commission",
-        "description": "Amended Documentary Index",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0016/603241/Amended-Documentary-Index.pdf",
-        "url_gh": "/mergers/MN-01068/Amended-Documentary-Index.pdf"
-      },
-      {
-        "date": "2026-08-13",
-        "filed_by": "-",
-        "description": "Directions",
-        "comment": "re documentary index",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0005/603239/260813-Directions.pdf",
-        "url_gh": "/mergers/MN-01068/260813-Directions.pdf"
-      },
-      {
-        "date": "2026-08-10",
-        "filed_by": "-",
-        "description": "Directions",
-        "comment": "re confidentiality regime",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0004/603238/260810-Directions.pdf",
-        "url_gh": "/mergers/MN-01068/260810-Directions.pdf"
-      },
-      {
-        "date": "2026-08-07",
-        "filed_by": "Metcash Trading Limited",
-        "description": "Submissions in Support of Further Directions",
-        "comment": "re confidentiality regime",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0018/603243/Metcash-Submissions-in-support-of-further-directions.pdf",
-        "url_gh": "/mergers/MN-01068/Metcash-Submissions-in-support-of-further-directions.pdf"
-      },
-      {
-        "date": "2026-08-07",
-        "filed_by": "Woolworths Group Limited",
-        "description": "Submissions in Support of Further Directions",
-        "comment": "re confidentiality regime",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0019/603244/Woolworths-Submissions-in-support-of-further-directions.pdf",
-        "url_gh": "/mergers/MN-01068/Woolworths-Submissions-in-support-of-further-directions.pdf"
-      },
-      {
-        "date": "2026-08-07",
-        "filed_by": "ALDI Stores",
-        "description": "Submissions in Support of Further Directions",
-        "comment": "re confidentiality regime",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0015/603240/ALDI-Submissions-in-support-of-further-directions.pdf",
-        "url_gh": "/mergers/MN-01068/ALDI-Submissions-in-support-of-further-directions.pdf"
-      },
-      {
-        "date": "2026-08-03",
-        "filed_by": "ALDI Stores",
-        "description": "Application for Further Directions",
-        "comment": "re confidentiality regime",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0016/602170/ALDI-Application-for-Further-Directions.pdf",
-        "url_gh": "/mergers/MN-01068/ALDI-Application-for-Further-Directions.pdf"
-      },
-      {
-        "date": "2026-08-03",
-        "filed_by": "ALDI Stores",
-        "description": "Affidavit of Radu Popescu",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0006/602169/Affidavit-of-Radu-Popescu.pdf",
-        "url_gh": "/mergers/MN-01068/Affidavit-of-Radu-Popescu.pdf"
-      },
-      {
-        "date": "2026-08-03",
-        "filed_by": "Woolworths Group Limited",
-        "description": "Application for Further Directions",
-        "comment": "re confidentiality regime",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0018/602172/Woolworths-Application-for-Further-Directions.pdf",
-        "url_gh": "/mergers/MN-01068/Woolworths-Application-for-Further-Directions.pdf"
-      },
-      {
-        "date": "2026-08-03",
-        "filed_by": "Woolworths Group Limited",
-        "description": "Affidavit of Benjamin James Welk",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0004/602167/Affidavit-of-Benjamin-James-Welk.pdf",
-        "url_gh": "/mergers/MN-01068/Affidavit-of-Benjamin-James-Welk.pdf"
-      },
-      {
-        "date": "2026-08-03",
-        "filed_by": "Metcash Trading Limited",
-        "description": "Application for Further Directions",
-        "comment": "re confidentiality regime",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0017/602171/Metcash-Application-for-Further-Directions.pdf",
-        "url_gh": "/mergers/MN-01068/Metcash-Application-for-Further-Directions.pdf"
-      },
-      {
-        "date": "2026-08-03",
-        "filed_by": "Metcash Trading Limited",
-        "description": "Affidavit of J Chamberlain",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0005/602168/Affidavit-of-J-Chamberlain.pdf",
-        "url_gh": "/mergers/MN-01068/Affidavit-of-J-Chamberlain.pdf"
-      },
-      {
-        "date": "2026-07-28",
-        "filed_by": "Australian Competition and Consumer Commission",
-        "description": "Documentary Index",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0008/601001/Documentary-Index.pdf",
-        "url_gh": "/mergers/MN-01068/Documentary-Index.pdf"
-      },
-      {
-        "date": "2026-07-21",
-        "filed_by": "-",
-        "description": "Directions",
-        "comment": "O'Connor IGA allowed to intervene",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0020/600284/Directions.pdf",
-        "url_gh": "/mergers/MN-01068/Directions.pdf"
-      },
-      {
-        "date": "2026-07-20",
-        "filed_by": "O'Connor Fresh IGA",
-        "description": "Application for Leave to Intervene",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0003/600285/OConnor-Fresh-IGA-Application-for-Leave-to-Intervene.pdf",
-        "url_gh": "/mergers/MN-01068/OConnor-Fresh-IGA-Application-for-Leave-to-Intervene.pdf"
-      },
-      {
-        "date": "2026-07-15",
-        "filed_by": "Australian Competition and Consumer Commission",
-        "description": "Notice of address for service",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0012/599808/Notice-of-Address-for-Service-ACCC.pdf",
-        "url_gh": "/mergers/MN-01068/Notice-of-Address-for-Service-ACCC.pdf"
-      },
-      {
-        "date": "2026-07-15",
-        "filed_by": "Coles Supermarkets",
-        "description": "Application for review",
-        "confidentiality": "Non-confidential",
-        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0008/599732/Application-for-Review.pdf",
-        "url_gh": "/mergers/MN-01068/Application-for-Review.pdf"
-      }
-    ]
-  }
+  "_comment": "Manually-maintained Australian Competition Tribunal appeal data, keyed by ACCC merger_id. Each value is a LIST of appeal records, one per tribunal matter: one ACCC decision can be taken to the Tribunal more than once, by different applicants (MN-65005 has ACT 3 of 2026 by IAG and ACT 4 of 2026 by RACWA). A bare record is still read as a list of one, but write lists. On the site each merger gets 'appeals' (one entry per matter) plus a merger-level 'appeal' summary (under appeal while any matter is current; see enrichment.summarise_appeals). Merged into the frontend data by scripts/static_data (see loaders.load_tribunal_appeals and enrichment.link_tribunal_appeals). IMPORTANT: a record here does NOT by itself make a merger 'under appeal' — a matter stays listed after it finishes. A merger is shown as under appeal only while 'status' is 'current' (anything other than 'concluded' counts as current; a finished/withdrawn appeal must be marked 'concluded'). Fields of each record: tribunal_number (e.g. 'ACT 1 of 2026'), tribunal_url (the tribunal matter page), appeal_type (one of party_denial / party_conditional_clearance / third_party_clearance — see scripts/constants/tribunal.py), appellant (who lodged the review), status ('current' | 'concluded'), filed_date, hearing_date (optional; the date the tribunal hearing starts, as a bare ISO 'YYYY-MM-DD' — while the appeal is current and the date is still in the future it is surfaced as a 'Tribunal hearing' upcoming/tracked event, exempt from the usual look-ahead window since a hearing is scheduled months in advance), and documents[] which are folded into the merger's event timeline regardless of status. Once concluded, also set: outcome (one of affirmed / set_aside / varied / withdrawn / dismissed), effective_determination (the ACCC-style determination that now stands — same as the ACCC's when affirmed, the opposite when set aside, e.g. 'Approved' / 'Not approved' — used to render the status badge like 'Approved · on appeal'), and concluded_date. Each document: date, filed_by, description, confidentiality ('Confidential' | 'Non-confidential'), url (direct tribunal link, treated like an ACCC url), optionally url_gh (local mirror served from data/raw/matters/{id}/), and optionally section (the H3 heading a document was listed under, e.g. 'Submissions by interested party'; absent for the main first table), and optionally comment (hand-added free text appended to the timeline event title in parentheses, e.g. 're application under s100S' renders as 'Directions (re application under s100S)'; the scraper never overwrites it). The documents[] list is populated from the live tribunal matter pages by scripts/scrape_tribunal.py (run via the 'Scrape Tribunal' workflow), which uses each record's tribunal_url as the page to scrape, filling that record's own documents[], downloads each linked file into data/raw/matters/{merger_id}/ and sets its url_gh serve path automatically; every other field here is still maintained by hand.",
+  "MN-01068": [
+    {
+      "tribunal_number": "ACT 1 of 2026",
+      "tribunal_url": "https://www.competitiontribunal.gov.au/current-matters/act-1-of-2026",
+      "appeal_type": "party_denial",
+      "appellant": "Coles",
+      "status": "current",
+      "outcome": null,
+      "effective_determination": null,
+      "filed_date": "2026-07-15",
+      "hearing_date": "2026-11-09",
+      "concluded_date": null,
+      "documents": [
+        {
+          "date": "2026-10-02",
+          "filed_by": "Joint Document (Coles Supermarkets & O'Connor Fresh IGA)",
+          "description": "Uncontested Findings",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0003/608268/Joint-document-Uncontested-findings-Public-Version.pdf",
+          "url_gh": "/mergers/MN-01068/Joint-document-Uncontested-findings-Public-Version.pdf"
+        },
+        {
+          "date": "2026-09-30",
+          "filed_by": "Coles Supermarkets",
+          "description": "Affidavit of Saurav Sachdev",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0010/608266/34.-Coles-Affidavit-of-Saurav-Sachdev-11.09.2026-PUBLIC-VERSION.pdf",
+          "url_gh": "/mergers/MN-01068/34.-Coles-Affidavit-of-Saurav-Sachdev-11.09.2026-PUBLIC-VERSION.pdf"
+        },
+        {
+          "date": "2026-09-29",
+          "filed_by": "Coles Supermarkets",
+          "description": "Submissions on corrections to s155 notice responses",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0009/608265/33.-Coles-Written-Submissions-on-the-Provision-of-to-the-Tribunal-of-Corrections-to-Section-155-Notice-Responses-PUBLIC-VERSION.pdf",
+          "url_gh": "/mergers/MN-01068/33.-Coles-Written-Submissions-on-the-Provision-of-to-the-Tribunal-of-Corrections-to-Section-155-Notice-Responses-PUBLIC-VERSION.pdf"
+        },
+        {
+          "date": "2026-09-28",
+          "filed_by": "-",
+          "description": "Directions",
+          "comment": "re timetabling",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0007/607813/260928-Direction.pdf",
+          "url_gh": "/mergers/MN-01068/260928-Direction.pdf"
+        },
+        {
+          "date": "2026-09-25",
+          "filed_by": "O'Connor Fresh IGA",
+          "description": "Affidavit of Reece Neville Grant",
+          "comment": "re IGA's Uber Eats delivery service",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0009/607806/32.-IGA-Affidavit-of-Mr-Reece-Neville-Grant-PUBLIC-VERSION.pdf",
+          "url_gh": "/mergers/MN-01068/32.-IGA-Affidavit-of-Mr-Reece-Neville-Grant-PUBLIC-VERSION.pdf"
+        },
+        {
+          "date": "2026-09-16",
+          "filed_by": "Australian Competition and Consumer Commission",
+          "description": "Affidavit of Katrina Mary Close",
+          "comment": "re Coles' s100S(2)(b) application",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0008/607805/31.-ACCC-Affidavit-of-Katrina-Mary-Close.pdf",
+          "url_gh": "/mergers/MN-01068/31.-ACCC-Affidavit-of-Katrina-Mary-Close.pdf"
+        },
+        {
+          "date": "2026-09-16",
+          "filed_by": "Australian Competition and Consumer Commission",
+          "description": "Submissions on Application under s100S(2)(b) (Document number 30)",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0007/607804/30.-ACCC-Submissions-PUBLIC-VERSION.pdf",
+          "url_gh": "/mergers/MN-01068/30.-ACCC-Submissions-PUBLIC-VERSION.pdf"
+        },
+        {
+          "date": "2026-09-16",
+          "filed_by": "Australian Competition and Consumer Commission",
+          "description": "Submissions on Application under s100S(2)(a) (Document number 29)",
+          "comment": "re IGA's Uber Eats delivery service",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0006/607803/29.-ACCC-Submissions.pdf",
+          "url_gh": "/mergers/MN-01068/29.-ACCC-Submissions.pdf"
+        },
+        {
+          "date": "2026-08-21",
+          "filed_by": "-",
+          "description": "Directions",
+          "comment": "re confidentiality regime",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0010/607807/260821-Directions.pdf",
+          "url_gh": "/mergers/MN-01068/260821-Directions.pdf"
+        },
+        {
+          "date": "2026-09-24",
+          "filed_by": "-",
+          "description": "Determination",
+          "comment": "s100S applications allowed in part",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0006/607641/Determination.pdf",
+          "url_gh": "/mergers/MN-01068/Determination.pdf"
+        },
+        {
+          "date": "2026-09-21",
+          "filed_by": "-",
+          "description": "Directions",
+          "comment": "re timetabling",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0011/607367/260921-Directions.pdf",
+          "url_gh": "/mergers/MN-01068/260921-Directions.pdf"
+        },
+        {
+          "date": "2026-09-09",
+          "filed_by": "-",
+          "description": "Directions",
+          "comment": "re timetabling",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0017/607130/260909-Directions-2-.pdf",
+          "url_gh": "/mergers/MN-01068/260909-Directions-2-.pdf"
+        },
+        {
+          "date": "2026-09-09",
+          "filed_by": "-",
+          "description": "Directions",
+          "comment": "re timetabling",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0018/607131/260909-Directions.pdf",
+          "url_gh": "/mergers/MN-01068/260909-Directions.pdf"
+        },
+        {
+          "date": "2026-09-11",
+          "filed_by": "Australian Competition and Consumer Commission",
+          "description": "Concise Statement of Contentions",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0008/606833/28.-ACCC-Concise-Statement-of-Contentions-PUBLIC-VERSION.pdf",
+          "url_gh": "/mergers/MN-01068/28.-ACCC-Concise-Statement-of-Contentions-PUBLIC-VERSION.pdf"
+        },
+        {
+          "date": "2026-09-04",
+          "filed_by": "O'Connor Fresh IGA",
+          "description": "Application under s100S(2)",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0005/606830/25.-IGA-s100S2-Application.pdf",
+          "url_gh": "/mergers/MN-01068/25.-IGA-s100S2-Application.pdf"
+        },
+        {
+          "date": "2026-09-04",
+          "filed_by": "O'Connor Fresh IGA",
+          "description": "Submissions on Application for Further Directions",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0006/606831/26.-IGA-Submissions-on-Application-for-Further-Directions-PUBLIC-VERSION.pdf",
+          "url_gh": "/mergers/MN-01068/26.-IGA-Submissions-on-Application-for-Further-Directions-PUBLIC-VERSION.pdf"
+        },
+        {
+          "date": "2026-09-04",
+          "filed_by": "O'Connor Fresh IGA",
+          "description": "Affidavit of Reece Neville Grant",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0007/606832/27.-IGA-Affidavit-of-Mr-Reece-Neville-Grant-PUBLIC-VERSION.pdf",
+          "url_gh": "/mergers/MN-01068/27.-IGA-Affidavit-of-Mr-Reece-Neville-Grant-PUBLIC-VERSION.pdf"
+        },
+        {
+          "date": "2026-09-04",
+          "filed_by": "Coles Supermarkets",
+          "description": "Submissions in Support of Application under s100S(2)(b)",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0010/606826/21.-Coles-Submissions-in-Support-of-Application-under-s100S2b-PUBLIC.pdf",
+          "url_gh": "/mergers/MN-01068/21.-Coles-Submissions-in-Support-of-Application-under-s100S2b-PUBLIC.pdf"
+        },
+        {
+          "date": "2026-09-04",
+          "filed_by": "Coles Supermarkets",
+          "description": "Application under s100S(2)(b)",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0009/606825/20.-Coles-s100S2b-Application.pdf",
+          "url_gh": "/mergers/MN-01068/20.-Coles-s100S2b-Application.pdf"
+        },
+        {
+          "date": "2026-09-04",
+          "filed_by": "Coles Supermarkets",
+          "description": "Affidavit of Andrew Eastwood",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0011/606827/22.-Coles-Affidavit-of-Andrew-Eastwood-PUBLIC.pdf",
+          "url_gh": "/mergers/MN-01068/22.-Coles-Affidavit-of-Andrew-Eastwood-PUBLIC.pdf"
+        },
+        {
+          "date": "2026-09-04",
+          "filed_by": "Coles Supermarkets",
+          "description": "Affidavit of Linda Evans",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0003/606828/23.-Coles-Affidavit-of-Linda-Evans-PUBLIC.pdf",
+          "url_gh": "/mergers/MN-01068/23.-Coles-Affidavit-of-Linda-Evans-PUBLIC.pdf"
+        },
+        {
+          "date": "2026-09-04",
+          "filed_by": "Coles Supermarkets",
+          "description": "Affidavit of Liza Carver",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0004/606829/24.-Coles-Affidavit-of-Liza-Carver-sworn-27-August-2026-PUBLIC.pdf",
+          "url_gh": "/mergers/MN-01068/24.-Coles-Affidavit-of-Liza-Carver-sworn-27-August-2026-PUBLIC.pdf"
+        },
+        {
+          "date": "2026-08-31",
+          "filed_by": "O'Connor Fresh IGA",
+          "description": "Concise Statement of Contentions",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0019/605161/IGA-Concise-statement.pdf",
+          "url_gh": "/mergers/MN-01068/IGA-Concise-statement.pdf"
+        },
+        {
+          "date": "2026-08-24",
+          "filed_by": "Australian Competition and Consumer Commission",
+          "description": "Further amended documentary index",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0019/604414/18.-ACCC-Further-Amended-Documentary-Index-PUBLIC-VERSION.pdf",
+          "url_gh": "/mergers/MN-01068/18.-ACCC-Further-Amended-Documentary-Index-PUBLIC-VERSION.pdf"
+        },
+        {
+          "date": "2026-08-20",
+          "filed_by": "Coles Supermarkets",
+          "description": "Concise Statement of Contentions",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0005/604148/Coles-Supermarkets-Concise-statement-of-contention.pdf",
+          "url_gh": "/mergers/MN-01068/Coles-Supermarkets-Concise-statement-of-contention.pdf"
+        },
+        {
+          "date": "2026-08-14",
+          "filed_by": "Australian Competition and Consumer Commission",
+          "description": "Amended Documentary Index",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0016/603241/Amended-Documentary-Index.pdf",
+          "url_gh": "/mergers/MN-01068/Amended-Documentary-Index.pdf"
+        },
+        {
+          "date": "2026-08-13",
+          "filed_by": "-",
+          "description": "Directions",
+          "comment": "re documentary index",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0005/603239/260813-Directions.pdf",
+          "url_gh": "/mergers/MN-01068/260813-Directions.pdf"
+        },
+        {
+          "date": "2026-08-10",
+          "filed_by": "-",
+          "description": "Directions",
+          "comment": "re confidentiality regime",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0004/603238/260810-Directions.pdf",
+          "url_gh": "/mergers/MN-01068/260810-Directions.pdf"
+        },
+        {
+          "date": "2026-08-07",
+          "filed_by": "Metcash Trading Limited",
+          "description": "Submissions in Support of Further Directions",
+          "comment": "re confidentiality regime",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0018/603243/Metcash-Submissions-in-support-of-further-directions.pdf",
+          "url_gh": "/mergers/MN-01068/Metcash-Submissions-in-support-of-further-directions.pdf"
+        },
+        {
+          "date": "2026-08-07",
+          "filed_by": "Woolworths Group Limited",
+          "description": "Submissions in Support of Further Directions",
+          "comment": "re confidentiality regime",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0019/603244/Woolworths-Submissions-in-support-of-further-directions.pdf",
+          "url_gh": "/mergers/MN-01068/Woolworths-Submissions-in-support-of-further-directions.pdf"
+        },
+        {
+          "date": "2026-08-07",
+          "filed_by": "ALDI Stores",
+          "description": "Submissions in Support of Further Directions",
+          "comment": "re confidentiality regime",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0015/603240/ALDI-Submissions-in-support-of-further-directions.pdf",
+          "url_gh": "/mergers/MN-01068/ALDI-Submissions-in-support-of-further-directions.pdf"
+        },
+        {
+          "date": "2026-08-03",
+          "filed_by": "ALDI Stores",
+          "description": "Application for Further Directions",
+          "comment": "re confidentiality regime",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0016/602170/ALDI-Application-for-Further-Directions.pdf",
+          "url_gh": "/mergers/MN-01068/ALDI-Application-for-Further-Directions.pdf"
+        },
+        {
+          "date": "2026-08-03",
+          "filed_by": "ALDI Stores",
+          "description": "Affidavit of Radu Popescu",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0006/602169/Affidavit-of-Radu-Popescu.pdf",
+          "url_gh": "/mergers/MN-01068/Affidavit-of-Radu-Popescu.pdf"
+        },
+        {
+          "date": "2026-08-03",
+          "filed_by": "Woolworths Group Limited",
+          "description": "Application for Further Directions",
+          "comment": "re confidentiality regime",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0018/602172/Woolworths-Application-for-Further-Directions.pdf",
+          "url_gh": "/mergers/MN-01068/Woolworths-Application-for-Further-Directions.pdf"
+        },
+        {
+          "date": "2026-08-03",
+          "filed_by": "Woolworths Group Limited",
+          "description": "Affidavit of Benjamin James Welk",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0004/602167/Affidavit-of-Benjamin-James-Welk.pdf",
+          "url_gh": "/mergers/MN-01068/Affidavit-of-Benjamin-James-Welk.pdf"
+        },
+        {
+          "date": "2026-08-03",
+          "filed_by": "Metcash Trading Limited",
+          "description": "Application for Further Directions",
+          "comment": "re confidentiality regime",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0017/602171/Metcash-Application-for-Further-Directions.pdf",
+          "url_gh": "/mergers/MN-01068/Metcash-Application-for-Further-Directions.pdf"
+        },
+        {
+          "date": "2026-08-03",
+          "filed_by": "Metcash Trading Limited",
+          "description": "Affidavit of J Chamberlain",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0005/602168/Affidavit-of-J-Chamberlain.pdf",
+          "url_gh": "/mergers/MN-01068/Affidavit-of-J-Chamberlain.pdf"
+        },
+        {
+          "date": "2026-07-28",
+          "filed_by": "Australian Competition and Consumer Commission",
+          "description": "Documentary Index",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0008/601001/Documentary-Index.pdf",
+          "url_gh": "/mergers/MN-01068/Documentary-Index.pdf"
+        },
+        {
+          "date": "2026-07-21",
+          "filed_by": "-",
+          "description": "Directions",
+          "comment": "O'Connor IGA allowed to intervene",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0020/600284/Directions.pdf",
+          "url_gh": "/mergers/MN-01068/Directions.pdf"
+        },
+        {
+          "date": "2026-07-20",
+          "filed_by": "O'Connor Fresh IGA",
+          "description": "Application for Leave to Intervene",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0003/600285/OConnor-Fresh-IGA-Application-for-Leave-to-Intervene.pdf",
+          "url_gh": "/mergers/MN-01068/OConnor-Fresh-IGA-Application-for-Leave-to-Intervene.pdf"
+        },
+        {
+          "date": "2026-07-15",
+          "filed_by": "Australian Competition and Consumer Commission",
+          "description": "Notice of address for service",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0012/599808/Notice-of-Address-for-Service-ACCC.pdf",
+          "url_gh": "/mergers/MN-01068/Notice-of-Address-for-Service-ACCC.pdf"
+        },
+        {
+          "date": "2026-07-15",
+          "filed_by": "Coles Supermarkets",
+          "description": "Application for review",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0008/599732/Application-for-Review.pdf",
+          "url_gh": "/mergers/MN-01068/Application-for-Review.pdf"
+        }
+      ]
+    }
+  ],
+  "MN-65005": [
+    {
+      "tribunal_number": "ACT 3 of 2026",
+      "tribunal_url": "https://www.competitiontribunal.gov.au/current-matters/act-3-of-2026",
+      "appeal_type": "party_denial",
+      "appellant": "IAG",
+      "status": "current",
+      "outcome": null,
+      "effective_determination": null,
+      "filed_date": "2026-10-01",
+      "hearing_date": null,
+      "concluded_date": null,
+      "documents": [
+        {
+          "date": "2026-10-05",
+          "filed_by": "Australian Competition and Consumer Commission",
+          "description": "Notice of Address for Service",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0011/608267/ACCC-Notice-of-address-for-service.pdf"
+        },
+        {
+          "date": "2026-10-01",
+          "filed_by": "Insurance Australia Group Limited",
+          "description": "Application for Review",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0007/608155/01.-IAG-Application-for-review-by-Insurance-Australia-Group-Limited.pdf"
+        }
+      ]
+    },
+    {
+      "tribunal_number": "ACT 4 of 2026",
+      "tribunal_url": "https://www.competitiontribunal.gov.au/current-matters/act-4-of-2026",
+      "appeal_type": "party_denial",
+      "appellant": "RACWA",
+      "status": "current",
+      "outcome": null,
+      "effective_determination": null,
+      "filed_date": "2026-10-05",
+      "hearing_date": null,
+      "concluded_date": null,
+      "documents": [
+        {
+          "date": "2026-10-06",
+          "filed_by": "Australian Competition and Consumer Commission",
+          "description": "Notice of Address for Service",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0007/608317/ACCC-Notice-of-address-for-service-ACT4.pdf"
+        },
+        {
+          "date": "2026-10-05",
+          "filed_by": "RACWA Holdings Pty Ltd",
+          "description": "Application to Tribunal for Review",
+          "confidentiality": "Non-confidential",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0009/608292/RACWA-Application-for-Review.pdf"
+        }
+      ]
+    }
+  ]
 }

@@ -321,11 +321,19 @@ data/
 │                         #   tribunal_appeals.json is a hand-maintained overlay of Australian
 │                         #   Competition Tribunal appeals, keyed by merger_id, merged in at
 │                         #   generate_static_data time (loaders.load_tribunal_appeals +
-│                         #   enrichment.link_tribunal_appeals). It sets the merger's under_appeal
-│                         #   flag + appeal record and folds the appeal documents into the event
+│                         #   enrichment.link_tribunal_appeals). Each value is a *list*, one
+│                         #   record per tribunal matter, since each applicant can lodge its
+│                         #   own (MN-65005: ACT 3 by IAG, ACT 4 by RACWA). The merger gets
+│                         #   `appeals` (one entry per matter: the detail page's cards, the
+│                         #   ATProto record) and `appeal`, a merger-level summary that keeps
+│                         #   the old single-record shape for everything else (badges, digest,
+│                         #   email, dashboard, hearing date): under appeal while any matter is
+│                         #   current, appellants and numbers joined. See
+│                         #   enrichment.summarise_appeals. It sets the merger's under_appeal
+│                         #   flag and folds every matter's documents into the event
 │                         #   timeline, without touching the ACCC-scraped status/determination.
-│                         #   The documents[] list is filled in automatically from the live
-│                         #   tribunal matter pages by scripts/scrape/scrape_tribunal.py (the daily
+│                         #   Each record's documents[] list is filled in automatically from its
+│                         #   own tribunal matter page by scripts/scrape/scrape_tribunal.py (the daily
 │                         #   scrape-tribunal.yml workflow, which drives a real Chrome via
 │                         #   nodriver to clear Cloudflare); the other fields are hand-maintained.
 │                         #   That scrape is additive: the tribunal prunes its own filings table
