@@ -83,6 +83,25 @@ def is_current_appeal(appeal: dict) -> bool:
     return appeal.get('status', DEFAULT_APPEAL_STATUS) != APPEAL_STATUS_CONCLUDED
 
 
+def appeal_records(entry) -> list[dict]:
+    """The tribunal matters filed against one merger, as a list.
+
+    A ``tribunal_appeals.json`` entry is a list with one record per tribunal
+    matter, because one ACCC decision can be taken to the Tribunal more than
+    once — both parties to MN-65005 lodged their own application (ACT 3 and
+    ACT 4 of 2026). A bare record is accepted as a list of one, so a
+    hand-edited entry in the old single-record shape still loads. Anything
+    else (a missing entry, ``null``, an empty record) is no matter at all.
+    The returned dicts are the entry's own objects, so a caller may update
+    them in place.
+    """
+    if isinstance(entry, dict):
+        return [entry] if entry else []
+    if isinstance(entry, list):
+        return [record for record in entry if isinstance(record, dict) and record]
+    return []
+
+
 # Tribunal outcome once an appeal is concluded — what the tribunal did with the
 # ACCC decision under review.
 OUTCOME_AFFIRMED = 'affirmed'      # ACCC decision upheld

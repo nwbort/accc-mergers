@@ -267,8 +267,11 @@ def _appeals(merger: dict) -> list[dict]:
     """Tribunal merits review and Federal Court judicial review, in that order."""
     out = []
 
-    appeal = merger.get("appeal") or {}
-    if appeal:
+    # One entry per tribunal matter: each applicant can lodge its own
+    # (MN-65005 has two), and each is a separate case with its own number.
+    # A detail file generated before ``appeals`` existed has only ``appeal``.
+    appeals = merger.get("appeals") or [a for a in [merger.get("appeal")] if a]
+    for appeal in appeals:
         entry = {"forum": "australian-competition-tribunal"}
         _set(entry, "caseNumber", appeal.get("tribunal_number"))
         _set(entry, "caseUrl", appeal.get("tribunal_url"))

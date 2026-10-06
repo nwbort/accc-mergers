@@ -82,7 +82,11 @@ class TestLinkTribunalAppeals:
         assert m['appeal']['appeal_type'] == tribunal.PARTY_DENIAL
         assert m['appeal']['appellant'] == 'Coles'
         assert m['appeal']['status'] == tribunal.APPEAL_STATUS_CURRENT
-        assert len(m['appeal']['documents']) == 1
+        # Documents live on the per-matter records, not the summary.
+        assert 'documents' not in m['appeal']
+        assert len(m['appeals']) == 1
+        assert m['appeals'][0]['tribunal_number'] == 'ACT 1 of 2026'
+        assert len(m['appeals'][0]['documents']) == 1
 
     def test_hearing_date_propagated(self):
         # An optional scheduled hearing start date is carried through onto the
@@ -333,6 +337,166 @@ class TestDashboardRecentActivity:
         assert appeal_cards[0]['under_appeal'] is False
 
 
+def _matter(number, appellant, filed_date, **extra):
+    n = number.split()[1]
+    record = {
+        'tribunal_number': number,
+        'tribunal_url': f'https://www.competitiontribunal.gov.au/current-matters/act-{n}-of-2026',
+        'appeal_type': tribunal.PARTY_DENIAL,
+        'appellant': appellant,
+        'filed_date': filed_date,
+        'documents': [
+            {
+                'date': filed_date,
+                'filed_by': appellant,
+                'description': 'Application for Review',
+                'confidentiality': 'Non-confidential',
+                'url': f'https://www.competitiontribunal.gov.au/x/{n}/Application.pdf',
+            },
+        ],
+    }
+    record.update(extra)
+    return record
+
+
+def _concluded(record, outcome, effective, concluded_date):
+    record.update(
+        status=tribunal.APPEAL_STATUS_CONCLUDED,
+        outcome=outcome,
+        effective_determination=effective,
+        concluded_date=concluded_date,
+    )
+    return record
+
+
+class TestAppealRecords:
+    def test_list_is_returned_as_is(self):
+        records = [{'tribunal_number': 'ACT 3 of 2026'}]
+        assert tribunal.appeal_records(records) == records
+
+    def test_bare_record_is_a_list_of_one(self):
+        record = {'tribunal_number': 'ACT 1 of 2026'}
+        assert tribunal.appeal_records(record) == [record]
+        # The same object, so a caller can update it in place.
+        assert tribunal.appeal_records(record)[0] is record
+
+    def test_missing_entry_is_no_matters(self):
+        assert tribunal.appeal_records(None) == []
+        assert tribunal.appeal_records({}) == []
+        assert tribunal.appeal_records([None, 'x', {}]) == []
+
+
+class TestMultipleTribunalMatters:
+    """One ACCC decision taken to the Tribunal by two applicants (MN-65005)."""
+
+    def _link(self, *records):
+        mergers = [enrich_merger(_phase2_not_approved())]
+        link_tribunal_appeals(mergers, {'MN-0001': list(records)})
+        return mergers[0]
+
+    def test_each_matter_is_kept_oldest_filing_first(self):
+        m = self._link(
+            _matter('ACT 4 of 2026', 'RACWA', '2026-10-05'),
+            _matter('ACT 3 of 2026', 'IAG', '2026-10-01'),
+        )
+        assert [a['tribunal_number'] for a in m['appeals']] == [
+            'ACT 3 of 2026', 'ACT 4 of 2026'
+        ]
+        assert all(len(a['documents']) == 1 for a in m['appeals'])
+
+    def test_summary_joins_the_matters(self):
+        m = self._link(
+            _matter('ACT 3 of 2026', 'IAG', '2026-10-01'),
+            _matter('ACT 4 of 2026', 'RACWA', '2026-10-05'),
+        )
+        assert m['under_appeal'] is True
+        assert m['appeal']['appellant'] == 'IAG and RACWA'
+        assert m['appeal']['tribunal_number'] == 'ACT 3 of 2026 and ACT 4 of 2026'
+        assert m['appeal']['tribunal_url'].endswith('act-3-of-2026')
+        assert m['appeal']['filed_date'] == '2026-10-01'
+        assert m['appeal']['status'] == tribunal.APPEAL_STATUS_CURRENT
+
+    def test_the_same_appellant_is_named_once(self):
+        m = self._link(
+            _matter('ACT 3 of 2026', 'IAG', '2026-10-01'),
+            _matter('ACT 4 of 2026', 'IAG', '2026-10-05'),
+        )
+        assert m['appeal']['appellant'] == 'IAG'
+
+    def test_every_matters_documents_reach_the_timeline(self):
+        m = self._link(
+            _matter('ACT 3 of 2026', 'IAG', '2026-10-01'),
+            _matter('ACT 4 of 2026', 'RACWA', '2026-10-05'),
+        )
+        appeal_events = [e for e in m['events'] if e.get('is_appeal')]
+        assert [e['tribunal_number'] for e in appeal_events] == [
+            'ACT 3 of 2026', 'ACT 4 of 2026'
+        ]
+
+    def test_under_appeal_while_any_matter_is_current(self):
+        m = self._link(
+            _concluded(
+                _matter('ACT 3 of 2026', 'IAG', '2026-10-01'),
+                tribunal.OUTCOME_WITHDRAWN, 'Not approved', '2026-11-01',
+            ),
+            _matter('ACT 4 of 2026', 'RACWA', '2026-10-05'),
+        )
+        assert m['under_appeal'] is True
+        assert m['appeal']['status'] == tribunal.APPEAL_STATUS_CURRENT
+        # No outcome until every matter has concluded.
+        assert m['appeal']['outcome'] is None
+        assert m['appeal']['effective_determination'] is None
+        assert m['appeal']['concluded_date'] is None
+
+    def test_a_decided_matter_outranks_a_withdrawn_one(self):
+        m = self._link(
+            _concluded(
+                _matter('ACT 3 of 2026', 'IAG', '2026-10-01'),
+                tribunal.OUTCOME_SET_ASIDE, 'Approved', '2027-02-01',
+            ),
+            _concluded(
+                _matter('ACT 4 of 2026', 'RACWA', '2026-10-05'),
+                tribunal.OUTCOME_WITHDRAWN, 'Not approved', '2027-03-01',
+            ),
+        )
+        assert m['under_appeal'] is False
+        assert m['appeal']['status'] == tribunal.APPEAL_STATUS_CONCLUDED
+        assert m['appeal']['outcome'] == tribunal.OUTCOME_SET_ASIDE
+        assert m['appeal']['effective_determination'] == 'Approved'
+        assert m['appeal']['concluded_date'] == '2027-03-01'
+
+    def test_all_withdrawn_reads_as_withdrawn(self):
+        m = self._link(
+            _concluded(
+                _matter('ACT 3 of 2026', 'IAG', '2026-10-01'),
+                tribunal.OUTCOME_WITHDRAWN, 'Not approved', '2026-11-01',
+            ),
+            _concluded(
+                _matter('ACT 4 of 2026', 'RACWA', '2026-10-05'),
+                tribunal.OUTCOME_WITHDRAWN, 'Not approved', '2026-11-08',
+            ),
+        )
+        assert m['appeal']['outcome'] == tribunal.OUTCOME_WITHDRAWN
+
+    def test_hearing_is_the_earliest_among_current_matters(self):
+        m = self._link(
+            _concluded(
+                _matter('ACT 3 of 2026', 'IAG', '2026-10-01', hearing_date='2026-11-01'),
+                tribunal.OUTCOME_WITHDRAWN, 'Not approved', '2026-10-20',
+            ),
+            _matter('ACT 4 of 2026', 'RACWA', '2026-10-05', hearing_date='2027-02-01'),
+        )
+        assert m['appeal']['hearing_date'] == '2027-02-01'
+
+    def test_dashboard_card_dates_from_the_first_lodgement(self):
+        first = _matter('ACT 3 of 2026', 'IAG', '2026-10-01')
+        second = _matter('ACT 4 of 2026', 'RACWA', '2026-10-05')
+        first['filed_date'] = second['filed_date'] = None
+        m = self._link(first, second)
+        card = stats._appeal_card(m)
+        assert card['appeal_date'] == '2026-10-01T12:00:00Z'
+
+
 class TestLoader:
     def test_strips_metadata_keys(self, tmp_path, monkeypatch):
         path = tmp_path / 'tribunal_appeals.json'
@@ -340,6 +504,15 @@ class TestLoader:
         monkeypatch.setattr(loaders, 'TRIBUNAL_APPEALS_JSON', path)
         data = loaders.load_tribunal_appeals()
         assert set(data.keys()) == {'MN-0001'}
+
+    def test_entries_are_lists(self, tmp_path, monkeypatch):
+        path = tmp_path / 'tribunal_appeals.json'
+        bare = _appeal()['MN-0001']
+        listed = [_matter('ACT 3 of 2026', 'IAG', '2026-10-01')]
+        path.write_text(json.dumps({'MN-0001': bare, 'MN-0002': listed}))
+        monkeypatch.setattr(loaders, 'TRIBUNAL_APPEALS_JSON', path)
+        data = loaders.load_tribunal_appeals()
+        assert data == {'MN-0001': [bare], 'MN-0002': listed}
 
     def test_missing_file_returns_empty(self, tmp_path, monkeypatch):
         monkeypatch.setattr(loaders, 'TRIBUNAL_APPEALS_JSON', tmp_path / 'nope.json')
@@ -352,18 +525,23 @@ class TestRealDataFile:
         repo_root = Path(__file__).resolve().parent.parent.parent
         path = repo_root / 'data' / 'processed' / 'tribunal_appeals.json'
         data = json.loads(path.read_text())
-        appeals = {k: v for k, v in data.items() if not k.startswith('_')}
-        assert appeals, 'expected at least one tribunal appeal'
-        for merger_id, appeal in appeals.items():
-            assert appeal['tribunal_number']
-            assert appeal['tribunal_url'].startswith('https://')
-            assert appeal['appeal_type'] in tribunal.APPEAL_TYPES
-            status = appeal.get('status', tribunal.DEFAULT_APPEAL_STATUS)
-            assert status in tribunal.APPEAL_STATUSES
-            if status == tribunal.APPEAL_STATUS_CONCLUDED:
-                # A concluded appeal must record what the tribunal decided.
-                assert appeal.get('outcome') in tribunal.APPEAL_OUTCOMES
-                assert appeal.get('effective_determination')
-            for doc in appeal.get('documents', []):
-                assert doc['date']
-                assert doc['description']
+        entries = {k: v for k, v in data.items() if not k.startswith('_')}
+        assert entries, 'expected at least one tribunal appeal'
+        for merger_id, entry in entries.items():
+            # Written as lists, one record per tribunal matter.
+            assert isinstance(entry, list) and entry, merger_id
+            numbers = [appeal['tribunal_number'] for appeal in entry]
+            assert len(set(numbers)) == len(numbers), f'{merger_id} repeats a matter'
+            for appeal in entry:
+                assert appeal['tribunal_number']
+                assert appeal['tribunal_url'].startswith('https://')
+                assert appeal['appeal_type'] in tribunal.APPEAL_TYPES
+                status = appeal.get('status', tribunal.DEFAULT_APPEAL_STATUS)
+                assert status in tribunal.APPEAL_STATUSES
+                if status == tribunal.APPEAL_STATUS_CONCLUDED:
+                    # A concluded appeal must record what the tribunal decided.
+                    assert appeal.get('outcome') in tribunal.APPEAL_OUTCOMES
+                    assert appeal.get('effective_determination')
+                for doc in appeal.get('documents', []):
+                    assert doc['date']
+                    assert doc['description']
