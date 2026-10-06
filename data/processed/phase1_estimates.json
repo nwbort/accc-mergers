@@ -3711,15 +3711,15 @@
     "method_version": 2
   },
   "MN-95043": {
-    "expected_business_days": 18,
+    "expected_business_days": 19,
     "range_business_days": [
       16,
-      21
+      27
     ],
-    "basis": "global",
-    "question_bucket": null,
-    "question_count": null,
-    "sample_size": 243,
+    "basis": "questionnaire",
+    "question_bucket": "4-5",
+    "question_count": 5,
+    "sample_size": 28,
     "as_of": "2026-10-02",
     "estimated_at": "2026-10-06",
     "method_version": 2
