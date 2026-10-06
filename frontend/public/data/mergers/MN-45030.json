@@ -62,6 +62,15 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-10-06T12:00:00Z",
+      "title": "Phase 1 consultation",
+      "display_title": "Phase 1 consultation",
+      "is_questionnaire_event": true,
+      "url": "https://www.accc.gov.au/system/files/moderated_files/Shepparton%20Automotive%20Group%20%E2%80%93%20Darryl%20Twitt%20Motors%20dealerships%20in%20Shepparton%20East%2C%20Victoria%20-%20Phase%201%20consultation.docx",
+      "url_gh": "/mergers/MN-45030/Shepparton Automotive Group \u2013 Darryl Twitt Motors dealerships in Shepparton East, Victoria - Phase 1 consultation.pdf",
+      "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
@@ -71,6 +80,7 @@
   "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
+  "has_questionnaire": true,
   "related_merger": {
     "merger_id": "WA-15040",
     "relationship": "refiled_from",
@@ -103,15 +113,15 @@
     }
   ],
   "phase_1_estimate": {
-    "expected_business_days": 18,
+    "expected_business_days": 20,
     "range_business_days": [
       16,
-      21
+      26
     ],
-    "basis": "global",
-    "question_bucket": null,
-    "question_count": null,
-    "sample_size": 246,
+    "basis": "questionnaire",
+    "question_bucket": "6-9",
+    "question_count": 6,
+    "sample_size": 20,
     "as_of": "2026-10-06",
     "estimated_at": "2026-10-06",
     "method_version": 2

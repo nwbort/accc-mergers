@@ -1793,15 +1793,15 @@
     "method_version": 2
   },
   "MN-45030": {
-    "expected_business_days": 18,
+    "expected_business_days": 20,
     "range_business_days": [
       16,
-      21
+      26
     ],
-    "basis": "global",
-    "question_bucket": null,
-    "question_count": null,
-    "sample_size": 246,
+    "basis": "questionnaire",
+    "question_bucket": "6-9",
+    "question_count": 6,
+    "sample_size": 20,
     "as_of": "2026-10-06",
     "estimated_at": "2026-10-06",
     "method_version": 2
