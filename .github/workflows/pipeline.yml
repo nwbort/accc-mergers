@@ -142,9 +142,11 @@ jobs:
       # The register index page is gitignored (it churns on every fetch), so
       # without this there is no way to see what the ACCC served on a run that
       # found no matters — a block page and a markup change look the same in
-      # the log. Kept briefly: it is a debugging aid, not a record.
+      # the log. Only uploaded when the run fails, and kept briefly: it is a
+      # debugging aid, not a record. failure() covers any earlier step, so a
+      # scraper that dies part-way still leaves the page behind.
       - name: Upload register page
-        if: ${{ !cancelled() }}
+        if: failure()
         uses: actions/upload-artifact@v7
         with:
           name: acquisitions-register-html
