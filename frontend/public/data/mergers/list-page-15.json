@@ -1108,24 +1108,42 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "Airbus SE"
+          "name": "Airbus SE",
+          "canonical": {
+            "name": "Airbus"
+          }
         },
         {
-          "name": "Thales S.A."
+          "name": "Thales S.A.",
+          "canonical": {
+            "name": "Thales"
+          }
         },
         {
-          "name": "Leonardo S.p.A."
+          "name": "Leonardo S.p.A.",
+          "canonical": {
+            "name": "Leonardo"
+          }
         }
       ],
       "targets": [
         {
-          "name": "Airbus Defence and Space GmbH"
+          "name": "Airbus Defence and Space GmbH",
+          "canonical": {
+            "name": "Airbus"
+          }
         },
         {
-          "name": "Telespazio S.p.A."
+          "name": "Telespazio S.p.A.",
+          "canonical": {
+            "name": "Leonardo"
+          }
         },
         {
-          "name": "Thales Alenia Space S.A.S."
+          "name": "Thales Alenia Space S.A.S.",
+          "canonical": {
+            "name": "Thales"
+          }
         }
       ],
       "other_parties": [],

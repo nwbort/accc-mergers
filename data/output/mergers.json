@@ -41744,27 +41744,39 @@
           "name": "Airbus SE",
           "identifier_type": null,
           "identifier": "KVK24288945",
+          "canonical": {
+            "id": "airbus",
+            "name": "Airbus"
+          },
           "party_page": {
-            "id": "airbus-se",
-            "name": "Airbus SE"
+            "id": "airbus",
+            "name": "Airbus"
           }
         },
         {
           "name": "Thales S.A.",
           "identifier_type": null,
           "identifier": "SIREN552059024",
+          "canonical": {
+            "id": "thales",
+            "name": "Thales"
+          },
           "party_page": {
-            "id": "thales-s-a",
-            "name": "Thales S.A."
+            "id": "thales",
+            "name": "Thales"
           }
         },
         {
           "name": "Leonardo S.p.A.",
           "identifier_type": null,
           "identifier": "00401990585",
+          "canonical": {
+            "id": "leonardo",
+            "name": "Leonardo"
+          },
           "party_page": {
-            "id": "leonardo-s-p-a",
-            "name": "Leonardo S.p.A."
+            "id": "leonardo",
+            "name": "Leonardo"
           }
         }
       ],
@@ -41773,27 +41785,39 @@
           "name": "Airbus Defence and Space GmbH",
           "identifier_type": null,
           "identifier": "HRB107648",
+          "canonical": {
+            "id": "airbus",
+            "name": "Airbus"
+          },
           "party_page": {
-            "id": "airbus-defence-and-space-gmbh",
-            "name": "Airbus Defence and Space GmbH"
+            "id": "airbus",
+            "name": "Airbus"
           }
         },
         {
           "name": "Telespazio S.p.A.",
           "identifier_type": null,
           "identifier": "04812701003",
+          "canonical": {
+            "id": "leonardo",
+            "name": "Leonardo"
+          },
           "party_page": {
-            "id": "telespazio-s-p-a",
-            "name": "Telespazio S.p.A."
+            "id": "leonardo",
+            "name": "Leonardo"
           }
         },
         {
           "name": "Thales Alenia Space S.A.S.",
           "identifier_type": null,
           "identifier": "SIREN439990748",
+          "canonical": {
+            "id": "thales",
+            "name": "Thales"
+          },
           "party_page": {
-            "id": "thales-alenia-space-s-a-s",
-            "name": "Thales Alenia Space S.A.S."
+            "id": "thales",
+            "name": "Thales"
           }
         }
       ],

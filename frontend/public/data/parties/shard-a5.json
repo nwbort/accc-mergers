@@ -294,6 +294,46 @@
         "completed_count": 1
       }
     },
+    "leonardo": {
+      "id": "leonardo",
+      "canonical_name": "Leonardo",
+      "members": [
+        {
+          "name": "Leonardo S.p.A.",
+          "identifier": "00401990585",
+          "identifier_type": null
+        },
+        {
+          "name": "Telespazio S.p.A.",
+          "identifier": "04812701003",
+          "identifier_type": null
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-60044",
+            "merger_name": "Airbus, Leonardo and Thales \u2013 Space activities joint venture",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-06T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "meerlen-pty-limited-as-trustee-of-vic-on-the-park-trust": {
       "id": "meerlen-pty-limited-as-trustee-of-vic-on-the-park-trust",
       "canonical_name": "Meerlen Pty Limited as trustee of Vic on the Park Trust",
