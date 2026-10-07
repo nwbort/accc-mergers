@@ -44,7 +44,7 @@
       },
       "21": {
         "29": 10,
-        "30": 1,
+        "30": 2,
         "32": 1,
         "50": 1
       },
@@ -130,17 +130,17 @@
     },
     "stats": {
       "average": 20.1,
-      "median": 18,
+      "median": 18.0,
       "min": 15,
       "max": 59,
-      "count": 247
+      "count": 248
     },
     "calendar_stats": {
       "average": 29.6,
-      "median": 26,
+      "median": 26.0,
       "min": 21,
       "max": 103,
-      "count": 247
+      "count": 248
     }
   },
   "waiver_duration": {
@@ -389,7 +389,7 @@
       46,
       37,
       31,
-      33
+      32
     ],
     "as_at": "2026-10-07"
   },
@@ -400,12 +400,12 @@
         "days": 30,
         "notifications_filed": 33,
         "notifications": {
-          "median": 18,
+          "median": 18.0,
           "average": 20.3,
           "p90": 28,
           "min": 15,
           "max": 49,
-          "count": 37,
+          "count": 38,
           "duration_histogram": {
             "15": 11,
             "16": 3,
@@ -413,7 +413,7 @@
             "18": 5,
             "19": 2,
             "20": 2,
-            "21": 4,
+            "21": 5,
             "23": 1,
             "24": 1,
             "25": 2,
@@ -422,7 +422,7 @@
             "41": 1,
             "49": 1
           },
-          "median_delta": 0
+          "median_delta": 0.0
         },
         "waivers": {
           "median": 18.0,
@@ -459,12 +459,12 @@
         "days": 90,
         "notifications_filed": 111,
         "notifications": {
-          "median": 18,
+          "median": 18.0,
           "average": 20.8,
           "p90": 29,
           "min": 15,
           "max": 56,
-          "count": 115,
+          "count": 116,
           "duration_histogram": {
             "15": 22,
             "16": 16,
@@ -472,7 +472,7 @@
             "18": 12,
             "19": 11,
             "20": 6,
-            "21": 10,
+            "21": 11,
             "22": 1,
             "23": 4,
             "24": 4,
@@ -490,7 +490,7 @@
             "52": 1,
             "56": 1
           },
-          "median_delta": 0
+          "median_delta": 0.0
         },
         "waivers": {
           "median": 17.0,
@@ -528,12 +528,12 @@
     ],
     "all_time": {
       "notifications": {
-        "median": 18,
+        "median": 18.0,
         "average": 20.1,
         "p90": 28,
         "min": 15,
         "max": 59,
-        "count": 247
+        "count": 248
       },
       "waivers": {
         "median": 14.0,
@@ -666,9 +666,9 @@
           "count": 36
         },
         {
-          "median": 15,
-          "average": 18.1,
-          "count": 7
+          "median": 18.0,
+          "average": 18.5,
+          "count": 8
         }
       ],
       "waivers": [
@@ -763,7 +763,7 @@
         46,
         37,
         31,
-        33
+        32
       ]
     }
   },
@@ -898,10 +898,10 @@
       "code": "C",
       "name": "Manufacturing",
       "average_business_days": 19.9,
-      "median_business_days": 18,
+      "median_business_days": 18.0,
       "average_calendar_days": 29.2,
-      "median_calendar_days": 27,
-      "count": 73
+      "median_calendar_days": 27.0,
+      "count": 74
     },
     {
       "code": "E",
@@ -934,11 +934,11 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 541,
+      "count": 542,
       "outcome_mix": {
-        "Approved": 541
+        "Approved": 542
       },
-      "median_phase_1_business_days": 17.0
+      "median_phase_1_business_days": 17
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -952,9 +952,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 31,
+      "count": 30,
       "outcome_mix": {
-        "Unknown": 31
+        "Unknown": 30
       },
       "median_phase_1_business_days": null
     },
@@ -1009,7 +1009,7 @@
       "18": 27,
       "19": 21,
       "20": 11,
-      "21": 13,
+      "21": 14,
       "22": 6,
       "23": 4,
       "24": 6,
@@ -1027,9 +1027,9 @@
     },
     "stats": {
       "mean_used_bd": 18.2,
-      "median_used_bd": 17,
+      "median_used_bd": 17.0,
       "pct_decided_final_3_bd": 3.1,
-      "count": 227
+      "count": 228
     },
     "extended_count": 11
   },
@@ -1133,10 +1133,10 @@
     {
       "code": "C",
       "name": "Manufacturing",
-      "approved": 71,
+      "approved": 72,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 12,
+      "in_progress": 11,
       "phase2_referral_rate": 0.027
     },
     {

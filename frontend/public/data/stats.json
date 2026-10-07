@@ -3,12 +3,12 @@
   "total_waivers": 440,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 242,
-    "Under assessment": 33,
+    "Assessment completed": 243,
+    "Under assessment": 32,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 234,
+    "Approved": 235,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 22
   },
   "clearance_rate": {
-    "cleared": 239,
+    "cleared": 240,
     "not_cleared": 3,
-    "total": 242,
+    "total": 243,
     "rate": 0.988
   },
   "phase_duration": {
-    "average_days": 29.582995951417004,
-    "median_days": 26,
-    "average_business_days": 20.10931174089069,
-    "median_business_days": 18,
+    "average_days": 29.58467741935484,
+    "median_days": 26.0,
+    "average_business_days": 20.112903225806452,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
         "count": 55,
-        "percentage": 22.3
+        "percentage": 22.2
       },
       "day20": {
         "count": 180,
-        "percentage": 72.9
+        "percentage": 72.6
       },
       "day30": {
-        "count": 230,
+        "count": 231,
         "percentage": 93.1
       }
     }
@@ -224,6 +224,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-75043",
+      "merger_name": "Hyne Pallets - Advance Pallets",
+      "determination": "Approved",
+      "determination_date": "2026-10-07T12:00:00Z",
+      "page_modified_datetime": "2026-10-07T15:25:16+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-85056",
       "merger_name": "Goodstart \u2013 certain Edge Early Learning centres (in administration)",
       "determination": "Approved",
@@ -339,17 +350,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-02T12:00:00Z",
       "page_modified_datetime": "2026-10-02T11:48:23+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-01121",
-      "merger_name": "Amplitude / OG Energy - Artisan Gas Field",
-      "determination": "Approved",
-      "determination_date": "2026-10-02T12:00:00Z",
-      "page_modified_datetime": "2026-10-02T10:03:06+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
