@@ -3850,6 +3850,48 @@
           "identifier": ""
         }
       ]
+    },
+    {
+      "id": "airbus",
+      "canonical_name": "Airbus",
+      "members": [
+        {
+          "name": "Airbus SE",
+          "identifier": "KVK24288945"
+        },
+        {
+          "name": "Airbus Defence and Space GmbH",
+          "identifier": "HRB107648"
+        }
+      ]
+    },
+    {
+      "id": "thales",
+      "canonical_name": "Thales",
+      "members": [
+        {
+          "name": "Thales S.A.",
+          "identifier": "SIREN552059024"
+        },
+        {
+          "name": "Thales Alenia Space S.A.S.",
+          "identifier": "SIREN439990748"
+        }
+      ]
+    },
+    {
+      "id": "leonardo",
+      "canonical_name": "Leonardo",
+      "members": [
+        {
+          "name": "Leonardo S.p.A.",
+          "identifier": "00401990585"
+        },
+        {
+          "name": "Telespazio S.p.A.",
+          "identifier": "04812701003"
+        }
+      ]
     }
   ]
 }
