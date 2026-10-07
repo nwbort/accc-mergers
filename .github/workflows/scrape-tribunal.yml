@@ -95,8 +95,12 @@ jobs:
       # below; an empty TRIBUNAL_PAGE_SNAPSHOT_DIR saves nothing.
       env:
         TRIBUNAL_PAGE_SNAPSHOT_DIR: ${{ inputs.save_pages && format('{0}/tribunal-pages', runner.temp) || '' }}
+        # Passed through env, never interpolated into the script, and split
+        # into an array so each id stays one argument.
+        MERGER_IDS: ${{ inputs.merger_ids }}
       run: |
-        xvfb-run -a python -m scripts.scrape.scrape_tribunal ${{ github.event.inputs.merger_ids }}
+        read -ra merger_ids <<< "$MERGER_IDS"
+        xvfb-run -a python -m scripts.scrape.scrape_tribunal "${merger_ids[@]}"
 
     - name: Upload fetched tribunal pages
       # The tribunal site is behind Cloudflare, so the page as the scraper saw
