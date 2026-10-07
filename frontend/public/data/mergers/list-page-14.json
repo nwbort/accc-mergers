@@ -1606,6 +1606,74 @@
       ]
     },
     {
+      "merger_id": "WA-90036",
+      "merger_name": "KKR and ECP - DCC Energy",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-09-08T12:00:00Z",
+      "determination_publication_date": "2026-10-07T12:00:00Z",
+      "end_of_determination_period": null,
+      "latest_event_date": "2026-10-07T12:00:00Z",
+      "page_modified_datetime": "2026-10-07T16:40:54+11:00",
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "KKR, & Co. Inc."
+        },
+        {
+          "name": "Dragon Bidco Limited"
+        },
+        {
+          "name": "Krypton Holdco II Limited"
+        },
+        {
+          "name": "ECP Dragon Holdco Ltd"
+        },
+        {
+          "name": "Bridgepoint Group plc"
+        }
+      ],
+      "targets": [
+        {
+          "name": "DCC Energy plc"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "ECP Dragon Holdings, LP"
+        },
+        {
+          "name": "KKR Krypton Aggregator LP"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3492",
+          "name": "Computer and Computer Peripheral Wholesaling"
+        },
+        {
+          "code": "3493",
+          "name": "Telecommunication Goods Wholesaling"
+        },
+        {
+          "code": "3494",
+          "name": "Other Electrical and Electronic Goods Wholesaling"
+        },
+        {
+          "code": "3739",
+          "name": "Other Goods Wholesaling n.e.c."
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-25049",
       "merger_name": "Merck KGaA / Bio-Techne",
       "status": "Under assessment",
@@ -2739,47 +2807,6 @@
         {
           "code": "8790",
           "name": "Other Social Assistance Services"
-        }
-      ]
-    },
-    {
-      "merger_id": "WA-85055",
-      "merger_name": "One Equity Partners \u2013 Myriad360",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "has_conditions": false,
-      "is_waiver": true,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-09-22T12:00:00Z",
-      "determination_publication_date": "2026-09-29T12:00:00Z",
-      "end_of_determination_period": null,
-      "latest_event_date": "2026-09-29T12:00:00Z",
-      "page_modified_datetime": "2026-09-29T17:01:14+10:00",
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "Metronome Bidco, LLC"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Myriad360, LLC"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "One Equity Partners IX, L.P."
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "6240",
-          "name": "Financial Asset Investing"
-        },
-        {
-          "code": "7000",
-          "name": "Computer System Design and Related Services"
         }
       ]
     }
