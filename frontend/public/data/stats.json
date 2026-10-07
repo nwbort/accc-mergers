@@ -1,6 +1,6 @@
 {
   "total_mergers": 280,
-  "total_waivers": 442,
+  "total_waivers": 443,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 243,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 420,
+    "Approved": 421,
     "Not approved": 22
   },
   "clearance_rate": {
@@ -48,19 +48,19 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.248868778280542,
-    "median_days": 20.0,
-    "average_business_days": 13.855203619909503,
-    "median_business_days": 14.0
+    "average_days": 20.23476297968397,
+    "median_days": 20,
+    "average_business_days": 13.844243792325056,
+    "median_business_days": 14
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 158
+      "count": 159
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 79
+      "count": 80
     },
     {
       "name": "Computer System Design and Related Services",
@@ -224,6 +224,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-30041",
+      "merger_name": "FVS Services Group \u2013 Alexon and Jetfire Fire Protection",
+      "determination": "Approved",
+      "determination_date": "2026-10-07T12:00:00Z",
+      "page_modified_datetime": "2026-10-07T16:44:39+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "WA-35052",
       "merger_name": "FVS Services Group \u2013 Fire & Wire",
       "determination": "Approved",
@@ -339,17 +350,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-02T12:00:00Z",
       "page_modified_datetime": "2026-10-02T17:22:40+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-35048",
-      "merger_name": "Kiwa - CSA Group",
-      "determination": "Approved",
-      "determination_date": "2026-10-02T12:00:00Z",
-      "page_modified_datetime": "2026-10-02T17:21:32+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",

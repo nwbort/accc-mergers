@@ -84,6 +84,47 @@
       },
       "waiver_duration": null
     },
+    "jpk-cellier-holdings-pty-ltd": {
+      "id": "jpk-cellier-holdings-pty-ltd",
+      "canonical_name": "Jpk Cellier Holdings Pty Ltd",
+      "members": [
+        {
+          "name": "JPK CELLIER HOLDINGS PTY LTD",
+          "identifier": "61 080 269 414",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [],
+        "target": [
+          {
+            "merger_id": "WA-30041",
+            "merger_name": "FVS Services Group \u2013 Alexon and Jetfire Fire Protection",
+            "is_waiver": true,
+            "status": "Assessment completed",
+            "determination": "Approved",
+            "has_conditions": false,
+            "phase": "Waiver",
+            "notification_date": "2026-09-23T12:00:00Z",
+            "determination_date": "2026-10-07T12:00:00Z"
+          }
+        ],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 0,
+      "phase_2_count": 0,
+      "waiver_count": 1,
+      "active_count": 0,
+      "phase_duration": null,
+      "waiver_duration": {
+        "average_days": 14.0,
+        "median_days": 14,
+        "average_business_days": 9.0,
+        "median_business_days": 9,
+        "completed_count": 1
+      }
+    },
     "mindbody-inc-us": {
       "id": "mindbody-inc-us",
       "canonical_name": "MindBody, Inc.(US)",
