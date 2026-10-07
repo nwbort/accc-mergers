@@ -154,6 +154,27 @@ async function turnstileGate(token, request, env, origin) {
 }
 
 // ---------------------------------------------------------------------------
+// Request body helpers
+// ---------------------------------------------------------------------------
+
+// Parse the JSON body as a plain object, or return null. A body of `null`, an
+// array or a bare scalar is valid JSON but not a request we understand.
+async function readJsonObject(request) {
+  try {
+    const body = await request.json();
+    return body && typeof body === "object" && !Array.isArray(body) ? body : null;
+  } catch {
+    return null;
+  }
+}
+
+// A trimmed string field, or "" when it is missing or not a string, so a
+// mistyped field fails validation as a 400 rather than throwing.
+function stringField(body, key) {
+  return typeof body[key] === "string" ? body[key].trim() : "";
+}
+
+// ---------------------------------------------------------------------------
 // Handler: POST / — digest email signup
 // ---------------------------------------------------------------------------
 
@@ -169,15 +190,13 @@ async function handleSubscribe(request, env, origin) {
     );
   }
 
-  let body;
-  try {
-    body = await request.json();
-  } catch {
+  const body = await readJsonObject(request);
+  if (!body) {
     return jsonResponse({ error: "Invalid request body" }, 400, origin, env);
   }
 
-  const email = (body.email || "").trim().toLowerCase();
-  const turnstileToken = body["cf-turnstile-response"] || "";
+  const email = stringField(body, "email").toLowerCase();
+  const turnstileToken = stringField(body, "cf-turnstile-response");
 
   if (!email) {
     return jsonResponse({ error: "Email address is required" }, 400, origin, env);
@@ -250,16 +269,14 @@ async function handleFeedback(request, env, origin) {
     );
   }
 
-  let body;
-  try {
-    body = await request.json();
-  } catch {
+  const body = await readJsonObject(request);
+  if (!body) {
     return jsonResponse({ error: "Invalid request body" }, 400, origin, env);
   }
 
-  const message = (body.message || "").trim();
-  const email = (body.email || "").trim().toLowerCase();
-  const turnstileToken = body["cf-turnstile-response"] || "";
+  const message = stringField(body, "message");
+  const email = stringField(body, "email").toLowerCase();
+  const turnstileToken = stringField(body, "cf-turnstile-response");
 
   if (!message) {
     return jsonResponse({ error: "Message is required" }, 400, origin, env);
@@ -312,14 +329,12 @@ async function handleEvent(request, env, origin) {
     return jsonResponse({ error: "Too many requests" }, 429, origin, env);
   }
 
-  let body;
-  try {
-    body = await request.json();
-  } catch {
+  const body = await readJsonObject(request);
+  if (!body) {
     return jsonResponse({ error: "Invalid request body" }, 400, origin, env);
   }
 
-  const type = (body.type || "").trim();
+  const type = stringField(body, "type");
   if (!isAllowedEventType(type)) {
     return jsonResponse({ error: "Unknown event type" }, 400, origin, env);
   }
