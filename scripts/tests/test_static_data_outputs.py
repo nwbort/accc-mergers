@@ -925,7 +925,7 @@ class TestAnalysisGenerate:
         json.dumps(payload)
         assert set(payload.keys()) == {
             'phase1_duration', 'waiver_duration', 'monthly_volume', 'industry_phase1_duration',
-            'by_commission_division',
+            'by_commission_division', 'waiver_by_commission_division',
             'deadline_utilisation', 'notification_restarts', 'restart_rate',
             'outcomes_by_division', 'referrals_by_quarter', 'open_caseload',
             'current_status',
@@ -1986,13 +1986,21 @@ class TestByCommissionDivision:
     def test_collapses_delegate_name_variants(self):
         divisions = analysis.generate(_commission_division_fixture())['by_commission_division']
         williams = next(d for d in divisions if 'Williams' in d['division'])
-        # MN-1001 ("Philip Williams"), MN-1002 ("Williams", different
-        # case/whitespace) and WA-1005 ("Williams") all collapse to one
-        # delegate.
-        assert williams['count'] == 3
+        # MN-1001 ("Philip Williams") and MN-1002 ("Williams", different
+        # case/whitespace) collapse to one delegate. WA-1005 is a waiver, so
+        # it is charted separately (see test_waivers_are_reported_separately).
+        assert williams['count'] == 2
         # Display label is canonicalised to "<title> <surname>", not the raw sentence.
         assert williams['division'] == 'Commissioner Williams'
-        assert williams['outcome_mix'] == {'Approved': 2, 'Not opposed': 1}
+        assert williams['outcome_mix'] == {'Approved': 1, 'Not opposed': 1}
+
+    def test_waivers_are_reported_separately(self):
+        payload = analysis.generate(_commission_division_fixture())
+        waivers = payload['waiver_by_commission_division']
+        assert [(d['division'], d['count']) for d in waivers] == [('Commissioner Williams', 1)]
+        # Measured notification to determination: 1 Apr -> 15 Apr 2025.
+        assert waivers[0]['median_business_days'] == 10
+        assert all('WA-' not in d['division'] for d in payload['by_commission_division'])
 
     def test_corrupted_and_missing_values_fold_into_unknown(self):
         divisions = analysis.generate(_commission_division_fixture())['by_commission_division']
@@ -2026,18 +2034,14 @@ class TestByCommissionDivision:
         unknown = next(d for d in divisions if d['division'] == 'Unknown')
         assert unknown['count'] == 2
 
-    def test_median_phase_1_business_days_uses_the_subset(self):
+    def test_median_business_days_uses_the_subset(self):
         divisions = analysis.generate(_commission_division_fixture())['by_commission_division']
         williams = next(d for d in divisions if 'Williams' in d['division'])
-        # WA-1005 is a waiver and contributes no Phase 1 duration, but
-        # MN-1001/MN-1002 do, so the bucket's median isn't null just because
-        # one contributing merger has no Phase 1 review.
-        assert williams['median_phase_1_business_days'] is not None
+        assert williams['median_business_days'] is not None
 
-    def test_waiver_only_division_has_null_median(self):
-        # A delegate whose only determinations in this fixture are waivers
-        # has no Phase 1 duration to report — expected, not a bug, since
-        # collect_phase_1_durations only measures notifications.
+    def test_waiver_division_median_is_end_to_end(self):
+        # Waivers have no Phase 1 clock, so their median is measured
+        # notification -> determination (1 May -> 15 May 2025).
         raw = [{
             'merger_id': 'WA-2001',
             'merger_name': 'Sigma waiver',
@@ -2060,9 +2064,9 @@ class TestByCommissionDivision:
                 ),
             }],
         }]
-        divisions = analysis.generate([enrich_merger(m) for m in raw])['by_commission_division']
+        divisions = analysis.generate([enrich_merger(m) for m in raw])['waiver_by_commission_division']
         assert divisions[0]['division'] == 'Chair Cass-Gottlieb'
-        assert divisions[0]['median_phase_1_business_days'] is None
+        assert divisions[0]['median_business_days'] == 10
 
     def test_phase_2_matters_are_excluded(self):
         # The chart covers Phase 1 decisions only. A matter that reached

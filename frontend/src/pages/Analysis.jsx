@@ -10,12 +10,12 @@ import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
 import { formatDateMedium, formatMonthLabel } from '../utils/dates';
 import { industryPath } from '../utils/slug';
-import { CHART_PALETTE as COLORS, DETERMINATION_COLORS } from '../constants/chartColors';
-import { MERGER_STATUS } from '../constants/mergerStatus';
+import { CHART_PALETTE as COLORS } from '../constants/chartColors';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
 import { STATIC_PAGE_META } from '../utils/pageMeta';
 import { computeEcdf } from '../utils/durationEcdf';
 import DurationEcdfChart from '../components/DurationEcdfChart';
+import DecisionMakerChart from '../components/DecisionMakerChart';
 import { PHASE_1_DEADLINE_BD, WAIVER_DEADLINE_BD } from '../constants/statutoryDeadlines';
 
 // Title and description live in the shared table so this page and the
@@ -293,94 +293,6 @@ function Analysis() {
     },
   };
 
-  // --- Who decided ---
-  // One row per decision-maker (a delegated commissioner, or a division of the
-  // Commission constituted under s19), stacked by outcome. Matters still under
-  // assessment have no decision-maker yet, so they are left off.
-  const decisionMakerRows = (data.by_commission_division ?? [])
-    .filter(d => d.division !== 'Not yet determined')
-    .map(d => {
-      const mix = d.outcome_mix ?? {};
-      const approved = mix[MERGER_STATUS.APPROVED] ?? 0;
-      const conditional = mix[MERGER_STATUS.APPROVED_WITH_CONDITIONS] ?? 0;
-      const notApproved = mix[MERGER_STATUS.NOT_APPROVED] ?? 0;
-      return {
-        ...d,
-        label: d.division === 'Unknown' ? 'Not identified' : d.division,
-        approved,
-        conditional,
-        notApproved,
-        other: d.count - approved - conditional - notApproved,
-      };
-    });
-
-  const decisionMakerSeries = [
-    { key: 'approved', label: 'Approved', color: DETERMINATION_COLORS[MERGER_STATUS.APPROVED] },
-    { key: 'conditional', label: 'Approved with conditions', color: DETERMINATION_COLORS[MERGER_STATUS.APPROVED_WITH_CONDITIONS] },
-    { key: 'notApproved', label: 'Not approved', color: DETERMINATION_COLORS[MERGER_STATUS.NOT_APPROVED] },
-    { key: 'other', label: 'Other', color: COLORS.sage },
-  ].filter(series => decisionMakerRows.some(row => row[series.key] > 0));
-
-  const decisionMakerData = {
-    labels: decisionMakerRows.map(row => row.label),
-    datasets: decisionMakerSeries.map(series => ({
-      label: series.label,
-      data: decisionMakerRows.map(row => row[series.key]),
-      backgroundColor: series.color,
-      borderRadius: 2,
-      maxBarThickness: 26,
-    })),
-  };
-
-  const decisionMakerOptions = {
-    indexAxis: 'y',
-    responsive: true,
-    maintainAspectRatio: false,
-    animation: false,
-    plugins: {
-      legend: {
-        position: 'bottom',
-        labels: {
-          usePointStyle: true,
-          pointStyle: 'rectRounded',
-          padding: 16,
-          font: { size: 12, family: 'Inter, sans-serif' },
-        },
-      },
-      tooltip: {
-        callbacks: {
-          afterBody: (items) => {
-            const row = decisionMakerRows[items[0].dataIndex];
-            const median = row.median_phase_1_business_days;
-            return [
-              `${row.count} matter${row.count === 1 ? '' : 's'} decided`,
-              median == null ? '' : `Median phase 1: ${median} business days`,
-            ].filter(Boolean);
-          },
-        },
-      },
-    },
-    scales: {
-      x: {
-        stacked: true,
-        beginAtZero: true,
-        title: {
-          display: true,
-          text: 'Matters decided',
-          font: { size: 12, family: 'Inter, sans-serif' },
-          color: '#6b7280',
-        },
-        grid: { color: 'rgba(0,0,0,0.04)' },
-        ticks: { font: { size: 11 } },
-      },
-      y: {
-        stacked: true,
-        grid: { display: false },
-        ticks: { font: { size: 11 } },
-      },
-    },
-  };
-
   return (
     <>
       <SEO
@@ -603,52 +515,21 @@ function Analysis() {
           </section>
         )}
 
-        {/* Who decided */}
-        {decisionMakerRows.length > 0 && (
-          <section className="mb-8">
-            <div className={`${CARD} overflow-hidden`}>
-              <div className="px-6 py-5 border-b border-gray-100">
-                <h2 id="chart-decision-makers-title" className="text-base font-semibold text-gray-900">Who decides mergers</h2>
-                <p className="text-sm text-gray-500 mt-0.5">
-                  Phase 1 decisions by decision-maker: a commissioner acting under delegation, or a division of the Commission constituted for the matter. Includes waivers; matters that went to Phase 2 are excluded. Attribution is read from the determination PDF.
-                </p>
-              </div>
-              <div className="p-6">
-                <div
-                  style={{ height: `${Math.max(240, decisionMakerRows.length * 48 + 90)}px` }}
-                  role="img"
-                  aria-labelledby="chart-decision-makers-title"
-                  aria-describedby="chart-decision-makers-summary"
-                >
-                  <Bar data={decisionMakerData} options={decisionMakerOptions} role="presentation" />
-                </div>
-                <div className="sr-only">
-                  <table id="chart-decision-makers-summary">
-                    <caption>Determinations by decision-maker and outcome</caption>
-                    <thead>
-                      <tr>
-                        <th>Decision-maker</th>
-                        <th>Matters</th>
-                        {decisionMakerSeries.map(series => <th key={series.key}>{series.label}</th>)}
-                        <th>Median phase 1 (business days)</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {decisionMakerRows.map(row => (
-                        <tr key={row.label}>
-                          <td>{row.label}</td>
-                          <td>{row.count}</td>
-                          {decisionMakerSeries.map(series => <td key={series.key}>{row[series.key]}</td>)}
-                          <td>{row.median_phase_1_business_days ?? 'N/A'}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
+        <DecisionMakerChart
+          id="chart-decision-makers"
+          title="Who decides mergers"
+          description="Phase 1 notification decisions by decision-maker: a commissioner acting under delegation, or a division of the Commission constituted for the matter. Matters that went to Phase 2 are excluded. Attribution is read from the determination PDF."
+          rows={data.by_commission_division}
+          medianLabel="Median phase 1"
+        />
+
+        <DecisionMakerChart
+          id="chart-waiver-decision-makers"
+          title="Who decides waivers"
+          description="Waiver decisions by decision-maker, with the same attribution rules as the chart above."
+          rows={data.waiver_by_commission_division}
+          medianLabel="Median"
+        />
 
         {/* Phase 1 Duration ECDF */}
         {ecdfPoints.length > 0 && (

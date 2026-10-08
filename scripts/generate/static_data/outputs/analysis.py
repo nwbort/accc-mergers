@@ -51,7 +51,7 @@ from scripts.constants.regime import is_voluntary_period_notification
 from .. import anzsic
 from ..business_days import calculate_business_days, calculate_calendar_days
 from ..enrichment import reached_phase_2
-from ..durations import collect_phase_1_durations, phase_1_end_date
+from ..durations import collect_phase_1_durations, collect_waiver_durations, phase_1_end_date
 from ..filters import filter_notifications, filter_waivers, is_waiver
 
 _MAX_DIVISION_LABEL_LENGTH = 200
@@ -206,11 +206,14 @@ def _commission_division_for(merger: dict) -> str | None:
 _PENDING_STATUSES = {merger_status.UNDER_ASSESSMENT, merger_status.ASSESSMENT_SUSPENDED}
 
 
-def by_commission_division(mergers: list) -> list[dict]:
+def by_commission_division(mergers: list, waivers: bool = False) -> list[dict]:
     """Determination counts, outcome mix, and Phase 1 duration per commission division.
 
-    Covers Phase 1 decisions only (waivers included): matters that reached
-    Phase 2 are left out entirely.
+    Covers Phase 1 decisions only: matters that reached Phase 2 are left out
+    entirely. Pass the notifications for the default reading, or the waivers
+    with ``waivers=True``; the two are charted separately, and ``waivers``
+    only changes which duration the median is taken over (a waiver has no
+    Phase 1 clock, so it is measured notification to determination).
 
     See the module docstring for the label normalisation rules. Divisions are
     sorted by determination count, descending. Mergers with no recoverable
@@ -251,12 +254,13 @@ def by_commission_division(mergers: list) -> list[dict]:
         outcome_mix = defaultdict(int)
         for m in group:
             outcome_mix[m.get('accc_determination') or 'Unknown'] += 1
-        _, business_days = collect_phase_1_durations(group)
+        collect = collect_waiver_durations if waivers else collect_phase_1_durations
+        _, business_days = collect(group)
         results.append({
             "division": bucket["label"],
             "count": len(group),
             "outcome_mix": dict(outcome_mix),
-            "median_phase_1_business_days": stat_median(business_days) if business_days else None,
+            "median_business_days": stat_median(business_days) if business_days else None,
         })
 
     results.sort(key=lambda x: -x['count'])
@@ -1040,7 +1044,8 @@ def generate(mergers: list) -> dict:
         "open_caseload": open_caseload(mergers),
         "current_status": current_status(mergers),
         "industry_phase1_duration": industry_phase1_duration(mergers),
-        "by_commission_division": by_commission_division(mergers),
+        "by_commission_division": by_commission_division(notification_mergers),
+        "waiver_by_commission_division": by_commission_division(waiver_mergers, waivers=True),
         "deadline_utilisation": deadline_utilisation(mergers),
         "notification_restarts": restarts,
         "restart_rate": restart_rate,
