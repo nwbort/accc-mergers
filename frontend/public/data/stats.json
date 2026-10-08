@@ -3,12 +3,12 @@
   "total_waivers": 443,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 244,
-    "Under assessment": 32,
+    "Assessment completed": 245,
+    "Under assessment": 31,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 236,
+    "Approved": 237,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 22
   },
   "clearance_rate": {
-    "cleared": 241,
+    "cleared": 242,
     "not_cleared": 3,
-    "total": 244,
+    "total": 245,
     "rate": 0.988
   },
   "phase_duration": {
-    "average_days": 29.582329317269075,
-    "median_days": 26,
-    "average_business_days": 20.11244979919679,
-    "median_business_days": 18,
+    "average_days": 29.56,
+    "median_days": 26.0,
+    "average_business_days": 20.1,
+    "median_business_days": 18.0,
     "percentiles": {
       "day15": {
         "count": 55,
-        "percentage": 22.1
+        "percentage": 22.0
       },
       "day20": {
-        "count": 181,
-        "percentage": 72.7
+        "count": 182,
+        "percentage": 72.8
       },
       "day30": {
-        "count": 232,
+        "count": 233,
         "percentage": 93.2
       }
     }
@@ -224,6 +224,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-55037",
+      "merger_name": "Covetrus \u2014 MWI",
+      "determination": "Approved",
+      "determination_date": "2026-10-08T12:00:00Z",
+      "page_modified_datetime": "2026-10-08T14:25:19+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-25049",
       "merger_name": "Merck KGaA\u2013Bio-Techne",
       "determination": "Approved",
@@ -339,17 +350,6 @@
       "determination": "Approved",
       "determination_date": "2026-10-02T12:00:00Z",
       "page_modified_datetime": "2026-10-02T17:26:07+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-60047",
-      "merger_name": "Sekisui Chemical \u2013 Ausbuild",
-      "determination": "Approved",
-      "determination_date": "2026-10-02T12:00:00Z",
-      "page_modified_datetime": "2026-10-02T17:23:45+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
