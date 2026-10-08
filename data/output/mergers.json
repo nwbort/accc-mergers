@@ -25920,7 +25920,7 @@
       "original_notification_datetime": "2026-10-07T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-11-18T12:00:00Z",
-      "page_modified_datetime": "2026-10-08T14:12:26+11:00",
+      "page_modified_datetime": "2026-10-08T18:30:42+11:00",
       "consultation_response_due_date": "2026-10-16T12:00:00Z",
       "acquirers": [
         {
@@ -25991,12 +25991,12 @@
       "events": [
         {
           "date": "2026-10-08T12:00:00Z",
-          "title": "Phase 1 consultation",
+          "title": "Brown & Hurley - Schmitz Cargobull and Freighter Group - third party questionnaire",
           "display_title": "Phase 1 consultation",
           "is_questionnaire_event": true,
-          "url": "https://www.accc.gov.au/system/files/moderated_files/Brown%20%26%20Hurley%20-%20Schmitz%20Cargobull%20and%20Freighter%20Group%20-%20Questionnaire.docx",
-          "url_gh": "/mergers/MN-30033/Brown and Hurley - Schmitz Cargobull and Freighter Group - Questionnaire.pdf",
-          "phase": "Phase 1"
+          "url": "https://www.accc.gov.au/system/files/moderated_files/Brown%20%26%20Hurley%20-%20Schmitz%20Cargobull%20and%20Freighter%20Group%20-%20Questionnaire_0.docx",
+          "url_gh": "/mergers/MN-30033/Brown and Hurley - Schmitz Cargobull and Freighter Group - Questionnaire_0.pdf",
+          "phase": null
         },
         {
           "date": "2026-10-07T12:00:00Z",
@@ -52523,6 +52523,15 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-10-08T12:00:00Z",
+          "title": "Macquarie Global Infrastructure Fund - SERV - questionnaire",
+          "display_title": "Macquarie Global Infrastructure Fund - SERV - questionnaire",
+          "is_questionnaire_event": true,
+          "url": "https://www.accc.gov.au/system/files/moderated_files/MN-75059%20-%20MGIF-SERV%20-%20third-party%20questionnaire%20-%20Sept%202026_0.docx",
+          "url_gh": "/mergers/MN-75059/MN-75059 - MGIF-SERV - third-party questionnaire - Sept 2026_0.pdf",
+          "phase": null
         }
       ],
       "is_waiver": false,
@@ -52534,6 +52543,7 @@
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
+      "has_questionnaire": true,
       "similar_mergers": [
         {
           "merger_id": "WA-80034",
@@ -52573,15 +52583,15 @@
         }
       ],
       "phase_1_estimate": {
-        "expected_business_days": 18,
+        "expected_business_days": 17,
         "range_business_days": [
-          16,
-          21
+          15,
+          19
         ],
-        "basis": "global",
-        "question_bucket": null,
-        "question_count": null,
-        "sample_size": 247,
+        "basis": "questionnaire",
+        "question_bucket": "3 or fewer",
+        "question_count": 3,
+        "sample_size": 175,
         "as_of": "2026-10-07",
         "estimated_at": "2026-10-08",
         "method_version": 2
