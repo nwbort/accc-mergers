@@ -939,10 +939,10 @@
     },
     {
       "division": "A division of the Commission (s19 direction)",
-      "count": 74,
+      "count": 76,
       "outcome_mix": {
-        "Approved": 67,
-        "Referred to phase 2": 7
+        "Referred to phase 2": 9,
+        "Approved": 67
       },
       "median_business_days": 20.0
     },
@@ -955,21 +955,20 @@
       "median_business_days": null
     },
     {
-      "division": "Unknown",
-      "count": 3,
-      "outcome_mix": {
-        "Referred to phase 2": 2,
-        "Approved": 1
-      },
-      "median_business_days": 30
-    },
-    {
       "division": "Commissioner Woodward",
       "count": 1,
       "outcome_mix": {
         "Approved": 1
       },
       "median_business_days": 18
+    },
+    {
+      "division": "Unknown",
+      "count": 1,
+      "outcome_mix": {
+        "Approved": 1
+      },
+      "median_business_days": 21
     }
   ],
   "waiver_by_commission_division": [
