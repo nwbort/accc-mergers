@@ -1,10 +1,10 @@
 {
-  "total_mergers": 280,
+  "total_mergers": 281,
   "total_waivers": 443,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 244,
-    "Under assessment": 31,
+    "Under assessment": 32,
     "Assessment ceased": 5
   },
   "by_determination": {
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-30033",
+      "merger_name": "Brown & Hurley - Schmitz Cargobull and Freighter Group",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-07T12:00:00Z",
+      "page_modified_datetime": "2026-10-08T14:12:26+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-60044",
       "merger_name": "Airbus, Leonardo and Thales \u2013 Space activities joint venture",
@@ -209,16 +219,6 @@
       "effective_notification_datetime": "2026-09-30T12:00:00Z",
       "page_modified_datetime": "2026-10-06T17:06:47+11:00",
       "is_waiver": true,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-70039",
-      "merger_name": "Architectus \u2013 SBA",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-09-30T12:00:00Z",
-      "page_modified_datetime": "2026-10-01T13:45:06+10:00",
-      "is_waiver": false,
       "is_refiled": false
     }
   ],
