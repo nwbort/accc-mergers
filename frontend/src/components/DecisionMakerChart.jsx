@@ -20,7 +20,7 @@ const SERIES = [
  * the notification and the waiver chart, which differ only in their data and
  * the label on the median.
  */
-function DecisionMakerChart({ id, title, description, rows: sourceRows, medianLabel }) {
+function DecisionMakerChart({ id, title, rows: sourceRows, medianLabel }) {
   const rows = (sourceRows ?? [])
     .filter(d => d.division !== 'Not yet determined')
     .map(d => {
@@ -109,7 +109,6 @@ function DecisionMakerChart({ id, title, description, rows: sourceRows, medianLa
       <div className={`${CARD} overflow-hidden`}>
         <div className="px-6 py-5 border-b border-gray-100">
           <h2 id={`${id}-title`} className="text-base font-semibold text-gray-900">{title}</h2>
-          <p className="text-sm text-gray-500 mt-0.5">{description}</p>
         </div>
         <div className="p-6">
           <div
