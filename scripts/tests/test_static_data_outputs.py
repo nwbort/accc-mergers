@@ -3252,3 +3252,21 @@ def test_normalise_division_folds_variants():
     assert _normalise_division(
         'Determination made by Commissioner Wiliams pursuant to a delegation under section 25(1) of the Act'
     ) == 'Commissioner Williams'
+
+
+def test_ceased_phase_1_assessments_are_excluded_from_division_stats():
+    raw = [{
+        'merger_id': 'MN-5001',
+        'merger_name': 'Ceased deal',
+        'status': 'Assessment ceased',
+        'accc_determination': None,
+        'stage': 'Phase 1 - preliminary assessment',
+        'effective_notification_datetime': '2025-06-05T09:00:00Z',
+        'determination_publication_date': None,
+        'page_modified_datetime': '2025-06-20T09:30:00Z',
+        'anzsic_codes': [],
+        'acquirers': [], 'targets': [], 'other_parties': [],
+        'url': 'https://example.com/MN-5001',
+        'events': [{'title': 'Consideration of Notification ceased', 'date': '2025-06-20T09:00:00Z', 'url': 'e1'}],
+    }]
+    assert analysis.generate([enrich_merger(m) for m in raw])['by_commission_division'] == []

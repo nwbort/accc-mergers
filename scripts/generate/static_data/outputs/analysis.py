@@ -210,8 +210,9 @@ def by_commission_division(mergers: list, waivers: bool = False) -> list[dict]:
     """Determination counts, outcome mix, and Phase 1 duration per commission division.
 
     Covers Phase 1 decisions only: matters that reached Phase 2 are left out
-    entirely. Pass the notifications for the default reading, or the waivers
-    with ``waivers=True``; the two are charted separately, and ``waivers``
+    entirely, as are ceased assessments (no determination to attribute). Pass
+    the notifications for the default reading, or the waivers with
+    ``waivers=True``; the two are charted separately, and ``waivers``
     only changes which duration the median is taken over (a waiver has no
     Phase 1 clock, so it is measured notification to determination).
 
@@ -227,7 +228,12 @@ def by_commission_division(mergers: list, waivers: bool = False) -> list[dict]:
     # Phase 1 decisions only: a matter that went through Phase 2 was finally
     # decided by a different body on a different timetable, and its only
     # attribution may be the Phase 2 Notice rather than a determination.
-    mergers = [m for m in mergers if not reached_phase_2(m)]
+    # A ceased assessment ends without a determination, so there is nobody to
+    # attribute a decision to.
+    mergers = [
+        m for m in mergers
+        if not reached_phase_2(m) and m.get('status') != merger_status.ASSESSMENT_CEASED
+    ]
     groups: dict[str, dict] = {}
     pending = []
     unknown = []
