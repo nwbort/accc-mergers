@@ -2258,6 +2258,66 @@
       ]
     },
     {
+      "merger_id": "WA-15045",
+      "merger_name": "CVC Capital Partners \u2013 Ambrose Construct Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-09-11T12:00:00Z",
+      "determination_publication_date": "2026-10-08T12:00:00Z",
+      "end_of_determination_period": null,
+      "latest_event_date": "2026-10-08T12:00:00Z",
+      "page_modified_datetime": "2026-10-08T16:38:39+11:00",
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "AVOCA AUS BIDCO PTY LTD"
+        }
+      ],
+      "targets": [
+        {
+          "name": "INSURANCE BUILDING AUSTRALIA HOLDINGS PTY LTD"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "CVC CAPITAL PARTNERS PLC",
+          "canonical": {
+            "name": "CVC Capital Partners"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3011",
+          "name": "House Construction"
+        },
+        {
+          "code": "3019",
+          "name": "Other Residential Building Construction"
+        },
+        {
+          "code": "3020",
+          "name": "Non-Residential Building Construction"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "7311",
+          "name": "Building and Other Industrial Cleaning Services"
+        }
+      ]
+    },
+    {
       "merger_id": "WA-35050",
       "merger_name": "National Dental Care - Sunshine Dental and Gisborne Dental, VIC",
       "status": "Assessment completed",
@@ -2755,58 +2815,6 @@
         {
           "code": "6950",
           "name": "Market Research and Statistical Services"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-20039",
-      "merger_name": "Calvary \u2013 Southern Cross Care (Tasmania)",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-09-22T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-11-04T12:00:00Z",
-      "latest_event_date": "2026-09-22T12:00:00Z",
-      "page_modified_datetime": "2026-09-22T11:57:20+10:00",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "CALVARY AGED CARE LIMITED"
-        }
-      ],
-      "targets": [
-        {
-          "name": "SOUTHERN CROSS CARE (TASMANIA) INC"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "CALVARY HOME CARE SERVICES LIMITED"
-        },
-        {
-          "name": "LITTLE COMPANY OF MARY HEALTH CARE LIMITED"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "6711",
-          "name": "Residential Property Operators"
-        },
-        {
-          "code": "8401",
-          "name": "Hospitals (Except Psychiatric Hospitals)"
-        },
-        {
-          "code": "8601",
-          "name": "Aged Care Residential Services"
-        },
-        {
-          "code": "8790",
-          "name": "Other Social Assistance Services"
         }
       ]
     }

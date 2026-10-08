@@ -1,6 +1,6 @@
 {
   "total_mergers": 281,
-  "total_waivers": 443,
+  "total_waivers": 444,
   "total_conditional_approvals": 5,
   "by_status": {
     "Assessment completed": 245,
@@ -18,7 +18,7 @@
     "Assessment ceased": 3
   },
   "by_waiver_determination": {
-    "Approved": 421,
+    "Approved": 422,
     "Not approved": 22
   },
   "clearance_rate": {
@@ -48,19 +48,19 @@
     }
   },
   "waiver_duration": {
-    "average_days": 20.23476297968397,
-    "median_days": 20,
-    "average_business_days": 13.844243792325056,
-    "median_business_days": 14
+    "average_days": 20.25,
+    "median_days": 20.0,
+    "average_business_days": 13.853603603603604,
+    "median_business_days": 14.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 159
+      "count": 160
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 80
+      "count": 81
     },
     {
       "name": "Computer System Design and Related Services",
@@ -224,6 +224,17 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-15045",
+      "merger_name": "CVC Capital Partners \u2013 Ambrose Construct Group",
+      "determination": "Approved",
+      "determination_date": "2026-10-08T12:00:00Z",
+      "page_modified_datetime": "2026-10-08T16:38:39+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application",
+      "has_conditions": false
+    },
+    {
       "merger_id": "MN-55037",
       "merger_name": "Covetrus \u2014 MWI",
       "determination": "Approved",
@@ -342,17 +353,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "WA-15044",
-      "merger_name": "Australian Venue Co \u2013 assets of the Stock Exchange Hotel, Brisbane CBD, QLD",
-      "determination": "Approved",
-      "determination_date": "2026-10-02T12:00:00Z",
-      "page_modified_datetime": "2026-10-02T17:26:07+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application",
       "has_conditions": false
     }
   ]
