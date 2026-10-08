@@ -43,6 +43,41 @@
       },
       "waiver_duration": null
     },
+    "dawn-coal-pty-ltd": {
+      "id": "dawn-coal-pty-ltd",
+      "canonical_name": "Dawn Coal Pty Ltd",
+      "members": [
+        {
+          "name": "DAWN COAL PTY LTD",
+          "identifier": "86 701 725 448",
+          "identifier_type": "ABN"
+        }
+      ],
+      "mergers": {
+        "acquirer": [
+          {
+            "merger_id": "MN-05054",
+            "merger_name": "Stanmore \u2013 Exxaro Australia Holdings",
+            "is_waiver": false,
+            "status": "Under assessment",
+            "determination": null,
+            "has_conditions": false,
+            "phase": "Phase 1",
+            "notification_date": "2026-10-07T12:00:00Z",
+            "determination_date": null
+          }
+        ],
+        "target": [],
+        "other": []
+      },
+      "merger_count": 1,
+      "phase_1_count": 1,
+      "phase_2_count": 0,
+      "waiver_count": 0,
+      "active_count": 1,
+      "phase_duration": null,
+      "waiver_duration": null
+    },
     "eynesbury-ak1-pty-ltd-atf-eynesbury-ak1-trust": {
       "id": "eynesbury-ak1-pty-ltd-atf-eynesbury-ak1-trust",
       "canonical_name": "Eynesbury AK1 Pty Ltd atf Eynesbury AK1 Trust",

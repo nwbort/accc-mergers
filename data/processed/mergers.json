@@ -6175,6 +6175,67 @@
     "is_waiver": false
   },
   {
+    "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/stanmore-%E2%80%93-exxaro-australia-holdings",
+    "merger_name": "Stanmore \u2013 Exxaro Australia Holdings",
+    "status": "Under assessment",
+    "merger_id": "MN-05054",
+    "effective_notification_datetime": "2026-10-07T12:00:00Z",
+    "original_notification_datetime": "2026-10-07T12:00:00Z",
+    "stage": "Phase 1 - initial assessment",
+    "end_of_determination_period": "2026-11-18T12:00:00Z",
+    "page_modified_datetime": "2026-10-08T16:47:07+11:00",
+    "consultation_response_due_date": "2026-10-15T12:00:00Z",
+    "acquirers": [
+      {
+        "name": "DAWN COAL PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "86 701 725 448"
+      }
+    ],
+    "targets": [
+      {
+        "name": "EXXARO AUSTRALIA HOLDINGS PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "84 151 112 015"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "STANMORE RESOURCES LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "27 131 920 968"
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "0600",
+        "name": "Coal Mining"
+      },
+      {
+        "code": "6240",
+        "name": "Financial Asset Investing"
+      }
+    ],
+    "merger_description": "Stanmore Resources Limited (ASX: SMR) (**Stanmore Resources**), via its subsidiary Dawn Coal Pty Ltd, proposes to acquire 100% of the shareholdings in Exxaro Australia Holdings Pty Ltd (**Exxaro Australia)** (the **Acquisition**).\n\nExxaro Australia owns an interest in mining assets, consisting of\u00a0two mineral development licences and an exploration permit for an undeveloped\u00a0underground coal project located in Moranbah South, Queensland. Exxaro Australia is owned by Exxaro Resources Limited, a South African mining company which produces both thermal coal (used for power generation) and metallurgical (coking) coal.\n\nStanmore Resources is a majority owned subsidiary of Golden Energy and Resources Pte Ltd (**GEAR**), a resources and investment company headquartered in Singapore. In Australia, Stanmore Resources (and its connected entities, including GEAR) explore, develop and produce metallurgical coal.",
+    "events": [
+      {
+        "date": "2026-10-08T12:00:00Z",
+        "title": "Phase 1 consultation",
+        "display_title": "Phase 1 consultation",
+        "is_questionnaire_event": true,
+        "url": "https://www.accc.gov.au/system/files/moderated_files/Stanmore%20Resources%20-%20Exxaro%20Australia%20-%20third-party%20questionnaire_0.docx",
+        "url_gh": "/mergers/MN-05054/Stanmore Resources - Exxaro Australia - third-party questionnaire_0.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2026-10-07T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": false
+  },
+  {
     "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/ibm-confluent",
     "merger_name": "IBM - Confluent",
     "status": "Assessment completed",
@@ -18007,13 +18068,16 @@
   {
     "url": "https://www.accc.gov.au/public-registers/acquisitions-and-mergers-registers/acquisitions-register/woolworths-supermarket-site-in-homestead-rd-orchard-hills-nsw",
     "merger_name": "Woolworths - supermarket site in Homestead Rd, Orchard Hills, NSW",
-    "status": "Under assessment",
+    "status": "Assessment completed",
     "merger_id": "MN-40034",
     "effective_notification_datetime": "2026-09-03T12:00:00Z",
     "original_notification_datetime": "2026-09-03T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-10-16T12:00:00Z",
-    "page_modified_datetime": "2026-09-04T12:52:49+10:00",
+    "determination_publication_date": "2026-10-08T12:00:00Z",
+    "accc_determination": "Approved",
+    "accc_determination_raw": "ACCC determinationApproved",
+    "page_modified_datetime": "2026-10-08T17:05:42+11:00",
     "consultation_response_due_date": "2026-09-11T12:00:00Z",
     "acquirers": [
       {
@@ -18049,7 +18113,7 @@
         "name": "Non-Residential Property Operators"
       }
     ],
-    "merger_description": "Woolworths Group Limited (**Woolworths**) is an Australian public company (**ASX: WOW**) that primarily:\n\n* operates supermarkets nationwide as Woolworths or Woolworths Metro, and\n* purchases or leases of land through its wholly owned subsidiary, Fabcot Pty Ltd (**Fabcot**).\n\nThe vendors of the site are private individuals. [Names of the landholders are withheld under section 5-3 of the *Competition and Consumer (Notification of Acquisitions) Determination 2025 (Cth)*].\n\nWoolworths, via its subsidiary, Fabcot, proposes to acquire a freehold interest in 158-162 Homestead Road, Orchard Hills, NSW (the\u00a0**Acquisition**). The target site is located in a residential area.\n\nWoolworths proposes to construct a new neighbourhood centre which would include a Woolworths supermarket which is anticipated to open in July 2033.",
+    "merger_description": "Woolworths Group Limited (Woolworths) is an Australian public company (ASX: WOW) that primarily:\n\n* operates supermarkets nationwide as Woolworths or Woolworths Metro, and\n* purchases or leases of land through its wholly owned subsidiary, Fabcot Pty Ltd (Fabcot).\n\nThe vendors of the site are private individuals. [Names of the landholders are withheld under section 5-3 of the Competition and Consumer (Notification of Acquisitions) Determination 2025 (Cth)].\n\nWoolworths, via its subsidiary, Fabcot, proposes to acquire a freehold interest in 158-162 Homestead Road, Orchard Hills, NSW (the\u00a0Acquisition). The target site is located in a residential area.\n\nWoolworths proposes to construct a new neighbourhood centre which would include a Woolworths supermarket which is anticipated to open in July 2033.",
     "events": [
       {
         "date": "2026-09-04T12:00:00Z",
@@ -18063,6 +18127,17 @@
         "date": "2026-09-03T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
+      },
+      {
+        "date": "2026-10-08T12:00:00Z",
+        "title": "Woolworths - Orchard Hills - Phase 1 determination",
+        "display_title": "Woolworths - Orchard Hills - Phase 1 determination"
+      },
+      {
+        "date": "2026-10-08T12:00:00Z",
+        "title": "Phase 1 - initial assessment determination: Approved",
+        "display_title": "Phase 1 - initial assessment determination: Approved",
+        "is_determination_event": true
       }
     ],
     "is_waiver": false

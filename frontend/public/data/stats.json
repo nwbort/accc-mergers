@@ -1,14 +1,14 @@
 {
-  "total_mergers": 281,
+  "total_mergers": 282,
   "total_waivers": 444,
   "total_conditional_approvals": 5,
   "by_status": {
-    "Assessment completed": 245,
+    "Assessment completed": 246,
     "Under assessment": 31,
     "Assessment ceased": 5
   },
   "by_determination": {
-    "Approved": 237,
+    "Approved": 238,
     "Referred to phase 2": 9,
     "Approved with conditions": 4
   },
@@ -22,27 +22,27 @@
     "Not approved": 22
   },
   "clearance_rate": {
-    "cleared": 242,
+    "cleared": 243,
     "not_cleared": 3,
-    "total": 245,
+    "total": 246,
     "rate": 0.988
   },
   "phase_duration": {
-    "average_days": 29.56,
-    "median_days": 26.0,
-    "average_business_days": 20.1,
-    "median_business_days": 18.0,
+    "average_days": 29.58167330677291,
+    "median_days": 26,
+    "average_business_days": 20.115537848605577,
+    "median_business_days": 18,
     "percentiles": {
       "day15": {
         "count": 55,
-        "percentage": 22.0
+        "percentage": 21.9
       },
       "day20": {
         "count": 182,
-        "percentage": 72.8
+        "percentage": 72.5
       },
       "day30": {
-        "count": 233,
+        "count": 234,
         "percentage": 93.2
       }
     }
@@ -56,7 +56,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 160
+      "count": 161
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -96,6 +96,16 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-05054",
+      "merger_name": "Stanmore \u2013 Exxaro Australia Holdings",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-10-07T12:00:00Z",
+      "page_modified_datetime": "2026-10-08T16:47:07+11:00",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-30033",
       "merger_name": "Brown & Hurley - Schmitz Cargobull and Freighter Group",
@@ -210,19 +220,20 @@
       "effective_determination": null,
       "tribunal_number": "ACT 3 of 2026 and ACT 4 of 2026",
       "appeal_date": "2026-10-01T12:00:00Z"
-    },
-    {
-      "merger_id": "WA-85056",
-      "merger_name": "Goodstart \u2013 certain Edge Early Learning centres (in administration)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "effective_notification_datetime": "2026-09-30T12:00:00Z",
-      "page_modified_datetime": "2026-10-06T17:06:47+11:00",
-      "is_waiver": true,
-      "is_refiled": false
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "MN-40034",
+      "merger_name": "Woolworths - supermarket site in Homestead Rd, Orchard Hills, NSW",
+      "determination": "Approved",
+      "determination_date": "2026-10-08T12:00:00Z",
+      "page_modified_datetime": "2026-10-08T17:05:42+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment",
+      "has_conditions": false
+    },
     {
       "merger_id": "WA-15045",
       "merger_name": "CVC Capital Partners \u2013 Ambrose Construct Group",
@@ -342,17 +353,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application",
-      "has_conditions": false
-    },
-    {
-      "merger_id": "MN-65033",
-      "merger_name": "Challenger - Channel Capital and Fidante",
-      "determination": "Approved",
-      "determination_date": "2026-10-02T12:00:00Z",
-      "page_modified_datetime": "2026-10-05T10:56:22+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment",
       "has_conditions": false
     }
   ]
