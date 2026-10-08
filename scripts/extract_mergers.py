@@ -723,6 +723,7 @@ def _scrape_events(soup, merger_id, existing_merger_data=None):
                 cached_phase2_notice_by_url[url] = {
                     'matters_to_investigate': existing_event['phase2_notice_matters_to_investigate'],
                     'commission_division': existing_event.get('phase2_notice_commission_division'),
+                    'division_checked': existing_event.get('phase2_notice_division_checked', False),
                 }
 
     scraped_events = []
@@ -796,6 +797,8 @@ def _attach_document(event, merger_id, url, cached_determination_by_url,
         cached_notice = cached_phase2_notice_by_url[url]
         event['phase2_notice_matters_to_investigate'] = cached_notice['matters_to_investigate']
         event['phase2_notice_commission_division'] = cached_notice['commission_division']
+        if cached_notice['division_checked']:
+            event['phase2_notice_division_checked'] = True
 
     parsed_url = urlparse(url)
     original_filename = unquote(os.path.basename(parsed_url.path)).strip()
@@ -2098,12 +2101,22 @@ def find_pending_phase2_notice_events(all_mergers_data):
     ``phase2_notice_matters_to_investigate`` (written even as an empty list
     on a successful-but-empty parse), so a matter like Ampol-EG Australia
     is never re-parsed once it has a result.
+
+    One exception: the decision-attribution sentence was added after the first
+    notices were parsed, and the cache then backfilled it as ``None`` rather
+    than leaving it absent. An event with no attribution and no
+    ``phase2_notice_division_checked`` marker is therefore re-parsed once; the
+    marker (set on every parse) stops a notice that genuinely has no
+    attribution sentence from being re-read, and re-OCR'd, on every run.
     """
     pending = []
     for merger in all_mergers_data:
         merger_id = merger.get('merger_id')
         for event in merger.get('events', []):
-            if 'phase2_notice_matters_to_investigate' in event:
+            if 'phase2_notice_matters_to_investigate' in event and (
+                event.get('phase2_notice_commission_division') is not None
+                or event.get('phase2_notice_division_checked')
+            ):
                 continue
             if not is_phase_2_referral_event(event.get('title', '')):
                 continue
@@ -2150,6 +2163,7 @@ def extract_phase2_notice_data(all_mergers_data):
             data = parse_phase2_notice_pdf(local_path)
             event['phase2_notice_matters_to_investigate'] = data.get('matters_to_investigate', [])
             event['phase2_notice_commission_division'] = data.get('commission_division')
+            event['phase2_notice_division_checked'] = True
             parsed_count += 1
         except Exception as e:
             print(f"Error parsing Phase 2 Notice PDF for {merger_id}: {e}", file=sys.stderr)

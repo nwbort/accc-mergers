@@ -2544,8 +2544,28 @@ class TestFindPendingPhase2NoticeEvents:
                 'title': 'ACCC decided notification is subject to Phase 2 review',
                 'url_gh': '/mergers/MN-01019/Notice.pdf',
                 'phase2_notice_matters_to_investigate': [],
+                'phase2_notice_division_checked': True,
             }],
         }]
+        assert find_pending_phase2_notice_events(mergers) == []
+
+    def test_reparses_event_parsed_before_attribution_was_captured(self, tmp_path, monkeypatch):
+        # Notices parsed before the attribution field existed were backfilled
+        # with None; they are re-read once, then marked so a notice that truly
+        # has no attribution sentence isn't re-read on every run.
+        monkeypatch.setattr(extract_mergers, 'MATTERS_DIR', str(tmp_path))
+        matter_dir = tmp_path / 'MN-01019'
+        matter_dir.mkdir()
+        (matter_dir / 'Notice.pdf').write_bytes(b'%PDF-1.4 fake')
+        event = {
+            'title': 'ACCC decided notification is subject to Phase 2 review',
+            'url_gh': '/mergers/MN-01019/Notice.pdf',
+            'phase2_notice_matters_to_investigate': [],
+            'phase2_notice_commission_division': None,
+        }
+        mergers = [{'merger_id': 'MN-01019', 'events': [event]}]
+        assert len(find_pending_phase2_notice_events(mergers)) == 1
+        event['phase2_notice_division_checked'] = True
         assert find_pending_phase2_notice_events(mergers) == []
 
     def test_skips_non_phase2_events(self, tmp_path, monkeypatch):

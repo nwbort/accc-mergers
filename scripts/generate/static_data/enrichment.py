@@ -184,6 +184,7 @@ SITE_SPARSE_MERGER_FIELDS = frozenset({
 SITE_UNUSED_EVENT_FIELDS = frozenset({
     'determination_commission_division',
     'phase2_notice_commission_division',
+    'phase2_notice_division_checked',
 })
 
 # The only determination-table rows the site renders. MergerDetail shows the
