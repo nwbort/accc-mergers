@@ -2068,10 +2068,10 @@ class TestByCommissionDivision:
         assert divisions[0]['division'] == 'Chair Cass-Gottlieb'
         assert divisions[0]['median_business_days'] == 10
 
-    def test_phase_2_matters_are_excluded(self):
-        # The chart covers Phase 1 decisions only. A matter that reached
-        # Phase 2 (decided, ceased, or attributed only via its Phase 2 Notice)
-        # is left out of every bucket, including "Unknown".
+    def test_phase_2_determinations_are_excluded_but_phase_2_ceased_are_kept(self):
+        # The chart covers Phase 1 decisions only. A matter decided in Phase 2
+        # is left out of every bucket, including "Unknown". One ceased in
+        # Phase 2 stays, attributed by its Phase 2 Notice (the Phase 1 referral).
         def matter(mid, stage, status, determination, event):
             return {
                 'merger_id': mid,
@@ -2112,7 +2112,7 @@ class TestByCommissionDivision:
         ]
         divisions = analysis.generate([enrich_merger(m) for m in raw])['by_commission_division']
         assert [(d['division'], d['count']) for d in divisions] == [
-            ('A division of the Commission (s19 direction)', 1),
+            ('A division of the Commission (s19 direction)', 2),
         ]
 
 
