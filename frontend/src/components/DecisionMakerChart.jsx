@@ -8,7 +8,7 @@ const SERIES = [
   { key: 'approved', label: 'Approved', color: DETERMINATION_COLORS[MERGER_STATUS.APPROVED] },
   { key: 'conditional', label: 'Approved with conditions', color: DETERMINATION_COLORS[MERGER_STATUS.APPROVED_WITH_CONDITIONS] },
   { key: 'notApproved', label: 'Not approved', color: DETERMINATION_COLORS[MERGER_STATUS.NOT_APPROVED] },
-  { key: 'referred', label: 'Referred to Phase 2', color: COLORS.referral },
+  { key: 'referred', label: 'Referred to Phase 2', color: DETERMINATION_COLORS[MERGER_STATUS.REFERRED_TO_PHASE_2] },
   { key: 'other', label: 'Other', color: COLORS.sage },
 ];
 
