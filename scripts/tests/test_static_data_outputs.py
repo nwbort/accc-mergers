@@ -2068,10 +2068,11 @@ class TestByCommissionDivision:
         assert divisions[0]['division'] == 'Chair Cass-Gottlieb'
         assert divisions[0]['median_business_days'] == 10
 
-    def test_phase_2_determinations_are_excluded_but_phase_2_ceased_are_kept(self):
-        # The chart covers Phase 1 decisions only. A matter decided in Phase 2
-        # is left out of every bucket, including "Unknown". One ceased in
-        # Phase 2 stays, attributed by its Phase 2 Notice (the Phase 1 referral).
+    def test_phase_2_matters_are_counted_by_their_referral(self):
+        # The chart covers Phase 1 decisions only. A matter that went to Phase 2
+        # is counted by its referral, attributed by the Phase 2 Notice and
+        # reported as "Referred to phase 2" whatever happened next. The final
+        # Phase 2 determination (here a different decision-maker) is ignored.
         def matter(mid, stage, status, determination, event):
             return {
                 'merger_id': mid,
@@ -2108,11 +2109,15 @@ class TestByCommissionDivision:
                     'Determination made by Commissioner Woodward pursuant to a '
                     'delegation under section 25(1) of the Act'
                 ),
+                'phase2_notice_commission_division': s19,
+            }),
+            matter('MN-3004', 'Phase 1 - preliminary assessment', 'Assessment ceased', None, {
+                'title': 'Consideration of Notification ceased', 'date': '2025-06-20T09:00:00Z', 'url': 'e11',
             }),
         ]
         divisions = analysis.generate([enrich_merger(m) for m in raw])['by_commission_division']
-        assert [(d['division'], d['count']) for d in divisions] == [
-            ('A division of the Commission (s19 direction)', 2),
+        assert [(d['division'], d['count'], d['outcome_mix']) for d in divisions] == [
+            ('A division of the Commission (s19 direction)', 3, {'Approved': 1, 'Referred to phase 2': 2}),
         ]
 
 

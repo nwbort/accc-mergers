@@ -8,6 +8,7 @@ const SERIES = [
   { key: 'approved', label: 'Approved', color: DETERMINATION_COLORS[MERGER_STATUS.APPROVED] },
   { key: 'conditional', label: 'Approved with conditions', color: DETERMINATION_COLORS[MERGER_STATUS.APPROVED_WITH_CONDITIONS] },
   { key: 'notApproved', label: 'Not approved', color: DETERMINATION_COLORS[MERGER_STATUS.NOT_APPROVED] },
+  { key: 'referred', label: 'Referred to Phase 2', color: COLORS.referral },
   { key: 'other', label: 'Other', color: COLORS.sage },
 ];
 
@@ -27,13 +28,15 @@ function DecisionMakerChart({ id, title, description, rows: sourceRows, medianLa
       const approved = mix[MERGER_STATUS.APPROVED] ?? 0;
       const conditional = mix[MERGER_STATUS.APPROVED_WITH_CONDITIONS] ?? 0;
       const notApproved = mix[MERGER_STATUS.NOT_APPROVED] ?? 0;
+      const referred = mix[MERGER_STATUS.REFERRED_TO_PHASE_2] ?? 0;
       return {
         ...d,
         label: d.division === 'Unknown' ? 'Not identified' : d.division,
         approved,
         conditional,
         notApproved,
-        other: d.count - approved - conditional - notApproved,
+        referred,
+        other: d.count - approved - conditional - notApproved - referred,
       };
     });
 

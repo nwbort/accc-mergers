@@ -22,6 +22,8 @@ export const CHART_PALETTE = {
   // (badges, timeline dots, digest), muted to sit beside the earth tones
   // above rather than dominate the chart.
   ceased: '#7e5aa8',
+  // A Phase 1 decision to refer a matter to Phase 2 — amber, as the status badge is.
+  referral: '#d4a037',
 };
 
 // Fallback order for chart segments whose label has no explicit colour

@@ -206,12 +206,37 @@ def _commission_division_for(merger: dict) -> str | None:
 _PENDING_STATUSES = {merger_status.UNDER_ASSESSMENT, merger_status.ASSESSMENT_SUSPENDED}
 
 
+def _phase_1_decision_maker(merger: dict) -> str | None:
+    """Who made the matter's Phase 1 decision.
+
+    For a matter that went to Phase 2 that decision is the referral, which the
+    Phase 2 Notice attributes; its final determination belongs to Phase 2 and
+    is deliberately not read. Anything else is attributed by its determination
+    (see :func:`_commission_division_for`).
+    """
+    if not reached_phase_2(merger):
+        return _commission_division_for(merger)
+    for event in merger.get('events') or []:
+        raw = event.get('phase2_notice_commission_division')
+        if raw is not None:
+            return _normalise_division(raw)
+    return None
+
+
+def _phase_1_outcome(merger: dict) -> str:
+    """The outcome of the Phase 1 decision: a referral for any Phase 2 matter."""
+    if reached_phase_2(merger):
+        return merger_status.REFERRED_TO_PHASE_2
+    return merger.get('accc_determination') or 'Unknown'
+
+
 def by_commission_division(mergers: list, waivers: bool = False) -> list[dict]:
     """Determination counts, outcome mix, and Phase 1 duration per commission division.
 
-    Covers Phase 1 decisions only: matters decided in Phase 2 are left out, as
-    are assessments ceased in Phase 1 (no decision to attribute). A matter
-    ceased in Phase 2 is kept, attributed by its Phase 2 Notice. Pass
+    Covers Phase 1 decisions only. A matter that went to Phase 2 is counted by
+    its Phase 1 decision, the referral, attributed by its Phase 2 Notice and
+    reported as "Referred to phase 2" whatever happened next. Assessments
+    ceased in Phase 1 are left out (no decision to attribute). Pass
     the notifications for the default reading, or the waivers with
     ``waivers=True``; the two are charted separately, and ``waivers``
     only changes which duration the median is taken over (a waiver has no
@@ -226,21 +251,18 @@ def by_commission_division(mergers: list, waivers: bool = False) -> list[dict]:
     couldn't be identified (a data gap worth investigating, not an absence
     of data).
     """
-    # Phase 1 decisions only. A matter decided in Phase 2 is out: a different
-    # body ruled on a different timetable. A matter ceased in Phase 2 stays in,
-    # since the Phase 1 decision to refer it is real and its Phase 2 Notice
-    # says who made it. One ceased in Phase 1 has no decision to attribute.
+    # A matter ceased in Phase 1 has no decision to attribute.
     mergers = [
         m for m in mergers
-        if (m.get('status') == merger_status.ASSESSMENT_CEASED) == reached_phase_2(m)
+        if not (m.get('status') == merger_status.ASSESSMENT_CEASED and not reached_phase_2(m))
     ]
     groups: dict[str, dict] = {}
     pending = []
     unknown = []
     for m in mergers:
-        label = _commission_division_for(m)
+        label = _phase_1_decision_maker(m)
         if label is None:
-            if m.get('status') in _PENDING_STATUSES:
+            if m.get('status') in _PENDING_STATUSES and not reached_phase_2(m):
                 pending.append(m)
             else:
                 unknown.append(m)
@@ -259,7 +281,7 @@ def by_commission_division(mergers: list, waivers: bool = False) -> list[dict]:
         group = bucket["mergers"]
         outcome_mix = defaultdict(int)
         for m in group:
-            outcome_mix[m.get('accc_determination') or 'Unknown'] += 1
+            outcome_mix[_phase_1_outcome(m)] += 1
         collect = collect_waiver_durations if waivers else collect_phase_1_durations
         _, business_days = collect(group)
         results.append({

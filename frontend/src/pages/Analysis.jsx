@@ -518,7 +518,7 @@ function Analysis() {
         <DecisionMakerChart
           id="chart-decision-makers"
           title="Who decides mergers"
-          description="Phase 1 notification decisions by decision-maker: a commissioner acting under delegation, or a division of the Commission constituted for the matter. Matters decided in Phase 2, or ceased in Phase 1, are excluded; a matter ceased in Phase 2 counts under whoever referred it. Attribution is read from the determination PDF."
+          description="Phase 1 notification decisions by decision-maker: a commissioner acting under delegation, or a division of the Commission constituted for the matter. A matter that went to Phase 2 is counted by its Phase 1 decision, the referral. Matters ceased in Phase 1 are excluded. Attribution is read from the determination PDF."
           rows={data.by_commission_division}
           medianLabel="Median phase 1"
         />
